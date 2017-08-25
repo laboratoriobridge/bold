@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AsyncSelect deve renderizar corretamente 1`] = `
+<Async
+  autoload={false}
+  backspaceRemoves={false}
+  cache={false}
+  clearValueText="Limpar seleção"
+  clearable={true}
+  ignoreAccents={false}
+  ignoreCase={true}
+  labelKey="nome"
+  loadOptions={[Function]}
+  loadingPlaceholder="Carregando..."
+  multi={false}
+  noResultsText="Nenhum item encontrado."
+  onBlur={[Function]}
+  options={Array []}
+  pageSize={10}
+  placeholder=""
+  searchDelay={500}
+  searchPromptText="Digite para pesquisar"
+  url="/api/select"
+  valueKey="id"
+/>
+`;

@@ -1,0 +1,9 @@
+.vscode
+.DS_Store
+node_modules
+coverage
+npm-debug.log
+
+lib
+lib-esm
+_bundles

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton render 1`] = `
+<span
+  className="radio-wrapper"
+>
+  <label
+    className="radio"
+  >
+    <Input
+      name="radio1"
+      type="radio"
+      value="radio1"
+    />
+    <span
+      className="radio-indicator"
+    />
+    <span
+      className="radio-label"
+    >
+      label
+    </span>
+  </label>
+</span>
+`;
+
+exports[`RadioButton render checked 1`] = `
+<span
+  className="radio-wrapper"
+>
+  <label
+    className="radio"
+  >
+    <Input
+      checked={true}
+      name="radio1"
+      type="radio"
+      value="radio1"
+    />
+    <span
+      className="radio-indicator"
+    />
+    <span
+      className="radio-label"
+    >
+      label
+    </span>
+  </label>
+</span>
+`;
+
+exports[`RadioButton render checked disabled 1`] = `
+<span
+  className="radio-wrapper"
+>
+  <label
+    className="radio disabled"
+  >
+    <Input
+      checked={true}
+      disabled={true}
+      name="radio1"
+      type="radio"
+      value="radio1"
+    />
+    <span
+      className="radio-indicator"
+    />
+    <span
+      className="radio-label"
+    >
+      label
+    </span>
+  </label>
+</span>
+`;
+
+exports[`RadioButton render disabled 1`] = `
+<span
+  className="radio-wrapper"
+>
+  <label
+    className="radio disabled"
+  >
+    <Input
+      disabled={true}
+      name="radio1"
+      type="radio"
+      value="radio1"
+    />
+    <span
+      className="radio-indicator"
+    />
+    <span
+      className="radio-label"
+    >
+      label
+    </span>
+  </label>
+</span>
+`;

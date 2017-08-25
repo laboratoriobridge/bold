@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MaskLabel cnpj 1`] = `
+<ComposedLabel
+  placeholder="Não informada"
+  title="label"
+>
+  123.1234.1234/1234-12
+</ComposedLabel>
+`;
+
+exports[`MaskLabel cns 1`] = `
+<ComposedLabel
+  placeholder="Não informada"
+  title="label"
+>
+  123.1234.1234.1234
+</ComposedLabel>
+`;
+
+exports[`MaskLabel cpf 1`] = `
+<ComposedLabel
+  name="name"
+  placeholder="Não informada"
+  title="label"
+>
+  077.884.909-06
+</ComposedLabel>
+`;
+
+exports[`MaskLabel render 1`] = `
+<ComposedLabel
+  placeholder="Não informada"
+  title="label"
+>
+  12.34
+</ComposedLabel>
+`;

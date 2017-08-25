@@ -1,0 +1,193 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlertModal deve renderizar AlertModalConfirmacao 1`] = `
+<AlertModal
+  info={true}
+>
+  <Component
+    title="Sucesso"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Button
+      onClick={[Function]}
+      size="medium"
+    >
+      Cancelar
+    </Button>
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="primary"
+    >
+      Confirmar
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalConfirmacao visível 1`] = `
+<AlertModal
+  active={true}
+  info={true}
+>
+  <Component
+    title="Sucesso"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Button
+      onClick={[Function]}
+      size="medium"
+    >
+      Cancelar
+    </Button>
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="primary"
+    >
+      Confirmar
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalDelete 1`] = `
+<Component
+  onClose={[Function]}
+  onOk={[Function]}
+  title="Confirmar exclusão!"
+>
+  Tem certeza que deseja excluir esse item?
+</Component>
+`;
+
+exports[`AlertModal deve renderizar AlertModalDelete visível 1`] = `
+<Component
+  active={true}
+  onClose={[Function]}
+  onOk={[Function]}
+  title="Confirmar exclusão!"
+>
+  Tem certeza que deseja excluir esse item?
+</Component>
+`;
+
+exports[`AlertModal deve renderizar AlertModalError 1`] = `
+<AlertModal
+  error={true}
+>
+  <Component
+    title="AlertModalError"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="primary"
+    >
+      OK
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalError visível 1`] = `
+<AlertModal
+  active={true}
+  error={true}
+>
+  <Component
+    title="AlertModalError"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="primary"
+    >
+      OK
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalLeave visível 1`] = `
+<AlertModal
+  active={true}
+  info={true}
+>
+  <Component
+    title="Deseja sair?"
+  >
+    Você preencheu alguns dados, se você sair agora esses dados serão perdidos. Tem certeza que deseja sair?
+  </Component>
+  <Component>
+    <Button
+      onClick={[Function]}
+      size="medium"
+    >
+      Cancelar
+    </Button>
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="primary"
+    >
+      Sair
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalSuccess 1`] = `
+<AlertModal
+  success={true}
+>
+  <Component
+    title="Sucesso"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Linha />
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="success"
+    >
+      OK
+    </Button>
+  </Component>
+</AlertModal>
+`;
+
+exports[`AlertModal deve renderizar AlertModalSuccess visível 1`] = `
+<AlertModal
+  active={true}
+  success={true}
+>
+  <Component
+    title="Sucesso"
+  >
+    Descrição
+  </Component>
+  <Component>
+    <Linha />
+    <Button
+      onClick={[Function]}
+      size="medium"
+      type="success"
+    >
+      OK
+    </Button>
+  </Component>
+</AlertModal>
+`;

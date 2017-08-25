@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Linha render 1`] = `
+<hr
+  className=""
+/>
+`;
+
+exports[`Linha render com tamanho médio 1`] = `
+<hr
+  className="medium"
+/>
+`;

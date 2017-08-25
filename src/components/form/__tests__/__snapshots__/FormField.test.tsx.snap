@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField deve renderizar a unidade 1`] = `
+<div
+  className="field is-vertical"
+>
+  <div
+    className="field is-grouped"
+  >
+    <Control
+      unit="unidade"
+    />
+    <p
+      className="control"
+    >
+      <span
+        className="unit"
+      >
+        unidade
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar corretamente 1`] = `
+<div
+  className="field is-vertical"
+>
+  <div
+    className="field"
+  >
+    <Control />
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar o label 1`] = `
+<div
+  className="field is-vertical"
+>
+  <FormLabel
+    label="label teste"
+  />
+  <div
+    className="field"
+  >
+    <Control
+      label="label teste"
+    />
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar o label com o símbolo de required 1`] = `
+<div
+  className="field is-vertical"
+>
+  <FormLabel
+    label="label teste"
+    required={true}
+  />
+  <div
+    className="field"
+  >
+    <Control
+      label="label teste"
+      required={true}
+    />
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar o ícone 1`] = `
+<div
+  className="field is-vertical"
+>
+  <div
+    className="field"
+  >
+    <Control
+      icon="login"
+    />
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar o ícone na direita 1`] = `
+<div
+  className="field is-vertical"
+>
+  <div
+    className="field"
+  >
+    <Control
+      icon="login"
+      iconRight={true}
+    />
+  </div>
+</div>
+`;
+
+exports[`FormField deve renderizar os filhos 1`] = `
+<div
+  className="field is-vertical"
+>
+  <div
+    className="field"
+  >
+    <Control>
+      <Input
+        type="text"
+      />
+    </Control>
+  </div>
+</div>
+`;

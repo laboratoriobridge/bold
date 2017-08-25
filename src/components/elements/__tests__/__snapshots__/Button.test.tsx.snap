@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button deve renderizar corretamente 1`] = `
+<button
+  className="button"
+  onClick={[Function]}
+  onKeyPress={[Function]}
+  type="button"
+/>
+`;
