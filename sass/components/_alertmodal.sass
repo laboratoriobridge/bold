@@ -1,0 +1,50 @@
+.alertmodal-card
+    align-items: center
+    background-color: $white
+    border-radius: 4px
+    box-shadow: 0 0 10px 0 rgba(51, 51, 51, 0.1), 0 6px 8px 0 rgba(0, 0, 0, 0.05)
+    display: flex
+    flex-direction: column
+    padding: 80px
+    &.is-success
+        padding: 100px
+        .alertmodal-icon
+            color: $green
+        .alertmodal-content
+            max-width: 454px
+        .alertmodal-buttonbar
+            margin-top: 29px
+    &.is-error
+        .alertmodal-icon
+            color: $red
+    &.is-info
+        .alertmodal-icon
+            color: $blue
+
+.alertmodal-icon
+    margin-bottom: 35px
+    text-align: center
+    height: 128px
+    font-size: 128px !important
+
+.alertmodal-content
+    color: $grey-darker
+    font-size: 14px
+    max-width: 291px
+    margin-bottom: 5px
+    text-align: center
+    .is-title
+        font-size: 18px
+        color: $black
+        margin-bottom: 5px
+
+.alertmodal-buttonbar
+    align-items: center
+    display: flex
+    flex-direction: column
+    margin-top: 30px
+    text-align: center
+    hr
+        width: 617px
+    .button
+        min-width: 160px

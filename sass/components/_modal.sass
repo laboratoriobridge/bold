@@ -1,0 +1,51 @@
+.modal-background
+    background-color: #eeeeee
+    opacity: 0.75
+
+.modal-content
+    width: inherit
+    &:focus
+        outline: none
+
+.modal-card
+    width: 780px
+    border-radius: 2px
+    overflow: visible
+    box-shadow: 0 0 10px 0 rgba($black, 0.1), 0 6px 8px 0 rgba($black, 0.05)
+    &:focus
+        outline: none
+
+.modal-card-head
+    background-color: $blue-white
+    border-top-left-radius: 0px
+    border-top-right-radius: 0px
+    border-bottom: 1px solid $blue-lighter
+    padding: 27px 80px
+    .delete
+        background-color: $white
+        box-shadow: 0 1px 2px 0 rgba($black, 0.2)
+        height: 44px
+        max-height: 44px
+        max-width: 44px
+        right: -135px
+        top: -50px
+        width: 44px
+        &:before, &:after
+            background-color: $grey-darker
+        &:before
+            width: 19px            
+        &:after
+            height: 19px
+        
+
+.modal-card-title
+    +text-large-1
+    color: $blue
+
+.modal-subtitle
+    +text-medium-1
+    color: $grey-darker
+    margin-bottom: 10px
+
+.modal-card-body
+    padding: 40px 80px

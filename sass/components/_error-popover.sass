@@ -1,0 +1,24 @@
+$popover-background-color: $red-dark
+
+.popover.error-popover
+    &.left
+        &:before, &:after
+            border-left-color: $popover-background-color
+    &.right
+        &:before, &:after
+            border-right-color: $popover-background-color
+    &.top
+        &:before, &:after
+            border-top-color: $popover-background-color
+    &.bottom
+        &:before, &:after
+            border-bottom-color: $popover-background-color
+    .popover-content
+        color: $white
+        background-color: $popover-background-color
+        box-shadow: 0 0 2px 0 $popover-background-color
+        border: 1px solid $popover-background-color
+        .error-title
+            +text-medium-2
+        .error-message
+            +text-micro-1

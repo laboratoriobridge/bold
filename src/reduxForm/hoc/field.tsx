@@ -43,7 +43,7 @@ export default function field(userConfig?: FieldConfig) {
             }
 
             renderComponent(props) {
-                const { input: { onChange, ...inputRest }, ...rest } = props
+                const { input: { onChange, ...inputRest }, className, ...rest } = props
 
                 const mergedOnChange = (value) => {
                     onChange(value)
@@ -62,6 +62,7 @@ export default function field(userConfig?: FieldConfig) {
                             unit={props.unit}
                             hasAddons={resultConfig.hasAddons}
                             hasControl={resultConfig.hasControl}
+                            className={className}
                         >
                             <WrappedComponent {...rest} input={{ onChange: mergedOnChange, ...inputRest }} />
                         </FormField>

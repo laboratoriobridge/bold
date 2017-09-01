@@ -1,0 +1,63 @@
+.checkbox
+    color: $black-bis
+    display: inline-flex
+    line-height: $input-height
+    min-height: $input-height
+    user-select: none
+    &:hover
+        color: $black-bis
+    &.disabled
+        cursor: default
+    input
+        opacity: 0
+        position: absolute
+        &:checked
+            & + .check-indicator:before
+                opacity: 1
+            & + .check-indicator + .check-label
+                color: $primary
+        &:checked:not(:disabled)
+            & + .check-indicator
+                background-color: $primary
+                border: solid 1px $primary       
+        &:disabled
+            & + .check-indicator
+                background-color: $grey-light
+                color: $grey-dark
+    .check-indicator
+        margin-top: 10px
+        margin-right: 5px
+        width: 14px
+        height: 14px
+        background-color: $white
+        border: 1px solid $grey-dark
+        border-radius: .15rem
+        color: $white
+        transition: all $transition-time
+        font-size: 12px
+        &:before
+            opacity: 0
+    .check-label
+        line-height: 21px
+        margin-top: 6px
+        margin-bottom: 5px
+
+.checkbox:hover input:not(:checked):not(:disabled) + .check-indicator
+    background-color: $blue-white
+    border: solid 1px $primary
+
+.checkbox input:focus + .check-indicator
+    background-color: $blue-white
+    box-shadow: 0 0 2px 0 $primary
+    border: solid 1px $primary
+
+.checkbox.disabled
+    input + .check-indicator + .check-label
+        color: $grey-dark
+
+.control
+    .checkbox + .checkbox
+        margin-left: 10px
+    &.is-vertical-flow
+        .checkbox + .checkbox
+            margin-left: 0px

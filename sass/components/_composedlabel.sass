@@ -1,0 +1,27 @@
+.composed-label
+    +text-medium-1
+    .label-title
+        +text-medium-2
+        display: block
+        .rnicons
+            vertical-align: text-top
+    &:not(:last-child)
+        margin-bottom: 5px
+    &.small
+        +text-micro-1
+        .label-title
+            +text-micro-2
+    &.is-horizontal
+        .label-title
+            display: initial
+div
+    &.composed-label
+    &.is-italic
+        color: #b2b2b2
+        font-style: italic
+    &.padding-bottom
+        padding-bottom: 20px
+div > span
+    &.label-title
+        color: $black-bis
+        font-style: normal

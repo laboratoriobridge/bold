@@ -1,0 +1,105 @@
+$popover-background-color: $white-ter
+$popover-border-color: $grey-light
+$popover-arrow-size: 5px
+$popover-indicator-color: $black-bis
+
+@mixin popover-left($arrow-size, $border-color, $background-color)
+    margin-left: -3px
+    padding: 0 $arrow-size
+    &:before, &:after
+        top: 50%
+        right: 0
+        margin-top: -$arrow-size
+        border-width: $arrow-size 0 $arrow-size $arrow-size
+        border-left-color: $border-color
+    &:after
+        margin-right: 2px
+        border-left-color: $background-color
+
+@mixin popover-right($arrow-size, $border-color, $background-color)
+    margin-left: 12px
+    padding: 0 $arrow-size
+    &:before, &:after
+        top: 50%
+        left: 0
+        margin-top: -$arrow-size
+        border-width: $arrow-size $arrow-size $arrow-size 0
+        border-right-color: $border-color
+    &:after
+        margin-left: 2px
+        border-right-color: $background-color
+
+@mixin popover-top($arrow-size, $border-color, $background-color)
+    margin-top: -3px
+    padding: $arrow-size 0
+    &:before, &:after
+        left: 50%
+        bottom: 0
+        margin-left: -$arrow-size
+        border-width: $arrow-size $arrow-size 0
+        border-top-color: $border-color
+    &:after
+        margin-bottom: 2px
+        border-top-color: $background-color
+
+@mixin popover-bottom($arrow-size, $border-color, $background-color)
+    margin-bottom: 3px
+    padding: $arrow-size 0
+    &:before, &:after
+        top: 0
+        left: 50%
+        margin-left: -$arrow-size
+        border-width: 0 $arrow-size $arrow-size
+        border-bottom-color: $border-color
+    &:after
+        margin-top: 2px
+        border-bottom-color: $background-color
+
+@mixin popover($arrow-size, $border-color, $background-color)
+    position: absolute
+    padding: 0 5px
+    z-index: 1986 !important
+    .popover-content
+        border-radius: $border-radius
+        border: 1px solid $border-color
+        background-color: $background-color
+        max-width: 250px
+        padding: 15px 25px
+        text-align: left
+    &:before, &:after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border-color: transparent
+        border-style: solid
+    &.left
+        @include popover-left($arrow-size, $border-color, $background-color)
+    &.right
+        @include popover-right($arrow-size, $border-color, $background-color)
+    &.top
+        @include popover-top($arrow-size, $border-color, $background-color)
+    &.bottom
+        @include popover-bottom($arrow-size, $border-color, $background-color)
+
+.popover
+    @include popover($popover-arrow-size, $white, $white)
+    margin-top: -5px
+    .popover-content
+        box-shadow: 0 3px 8px 0 rgba($black, 0.2)
+
+    // alternative colors
+    &.grey
+        @include popover($popover-arrow-size, $popover-border-color, $popover-background-color)
+    &.dark-grey
+        @include popover($popover-arrow-size,$popover-indicator-color, $popover-indicator-color)
+        .popover-content
+            color: $white
+    &.primary
+        @include popover($primary,$primary, $primary)
+        .popover-content
+            color: $white
+            font-weight: 600
+            font-size: 12px
+            line-height: 1.17
+                        
