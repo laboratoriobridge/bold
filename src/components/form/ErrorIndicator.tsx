@@ -10,6 +10,8 @@ export interface ErrorIndicatorProps {
 
 export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
 
+    private icon: Icon
+
     constructor(props) {
         super(props)
         this.state = {
@@ -20,14 +22,14 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
     render() {
         return (
             <span>
-                <Icon ref='errorIndicator' className='error-indicator' size='small' icon='invalido'
+                <Icon ref={icon => this.icon = icon} className='error-indicator' size='small' icon='invalido'
                     onMouseOver={() => this.setState({ showErrorPopover: true })}
                     onMouseLeave={() => this.setState({ showErrorPopover: false })}
                 />
                 <Popover
                     show={this.state.showErrorPopover}
                     placement='right'
-                    target={props => findDOMNode(this.refs['errorIndicator'])}
+                    target={props => findDOMNode(this.icon)}
                     className='error-popover'
                 >
                     <p className='error-title'>{this.props.error.get('titulo')}</p>
