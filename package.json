@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "publishConfig": {
+    "registry": "http://nexus.bridge.ufsc.br/content/repositories/npm-private/"
+  },
   "scripts": {
     "clean": "shx rm -rf _bundles lib lib-esm",
     "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && webpack",
