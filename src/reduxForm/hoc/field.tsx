@@ -64,11 +64,11 @@ export default function field(userConfig?: FieldConfig) {
                             hasControl={resultConfig.hasControl}
                             className={className}
                         >
-                            <WrappedComponent {...rest} input={{ onChange: mergedOnChange, ...inputRest }} />
+                            <WrappedComponent {...rest} className={className} input={{ onChange: mergedOnChange, ...inputRest }} />
                         </FormField>
                     )
                 }
-                return (<WrappedComponent {...rest} input={{ onChange: mergedOnChange, ...inputRest }} />)
+                return (<WrappedComponent {...rest} className={className} input={{ onChange: mergedOnChange, ...inputRest }} />)
             }
         }
     }
