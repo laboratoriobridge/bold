@@ -141,7 +141,6 @@ export interface AlertModalSuccessProps {
     active?: boolean
     icon?: string
     onClose: () => void
-    onOk: () => void
     result?: any
     title?: string
 }
