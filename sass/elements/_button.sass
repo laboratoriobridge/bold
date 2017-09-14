@@ -1,15 +1,15 @@
 .button
   border-radius: 100px
   color: $grey-darker
-  font-size: 11px
+  font-size: 13px
   font-weight: 600
   height: 34px
   padding-left: 20px
   padding-right: 20px
   transition: all $transition-time
   .icon:first-child:not(:last-child)
-    margin-right: 8px
-    margin-top: 2px
+    margin-left: unset
+    margin-right: 5px
   .icon
     .rnicons
       font-size: 12px
@@ -38,6 +38,9 @@
     border: 1px solid $grey
     font-weight: 600
     letter-spacing: 0.5px
+  &.is-neon
+    color: #fff
+    background-color: $blue-neon
   &.is-primary
     font-weight: bold
     &.has-shadow

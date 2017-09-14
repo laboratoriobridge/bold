@@ -43,6 +43,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             'is-grey': this.props.type && this.props.type === 'grey',
             'is-primary': this.props.type && this.props.type === 'primary',
             'is-transparent': this.props.type && this.props.type === 'transparent',
+            'is-neon': this.props.type && this.props.type === 'neon',
             'is-success': this.props.type && this.props.type === 'success',
             'is-danger': this.props.type && this.props.type === 'danger',
             'is-warning': this.props.type && this.props.type === 'warning',

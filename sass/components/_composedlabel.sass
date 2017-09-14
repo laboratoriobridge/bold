@@ -1,12 +1,8 @@
-.composed-label
+.composed-label     
     +text-medium-1
     .label-title
         +text-medium-2
         display: block
-        .rnicons
-            vertical-align: text-top
-    &:not(:last-child)
-        margin-bottom: 5px
     &.small
         +text-micro-1
         .label-title
@@ -14,6 +10,17 @@
     &.is-horizontal
         .label-title
             display: initial
+
+.label-title
+    color: $black-bis
+    font-style: normal
+    &.is-muted
+        @extend .is-muted
+    @for $i from 1 through length($report-colors)   
+        $color: nth($report-colors, $i)
+        &.is-report-color-#{$i}
+            color: $color
+
 div
     &.composed-label
     &.is-italic
@@ -21,7 +28,12 @@ div
         font-style: italic
     &.padding-bottom
         padding-bottom: 20px
-div > span
-    &.label-title
-        color: $black-bis
-        font-style: normal
+
+.composed-label.is-inverted
+    display: flex
+    flex-direction: column-reverse
+
+.composed-label.big    
+    font-size: 2.15rem
+    .label-title
+        font-size: 0.8rem
