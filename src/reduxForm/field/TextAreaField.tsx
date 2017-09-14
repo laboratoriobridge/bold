@@ -7,7 +7,7 @@ import field, { FieldProps } from '../hoc/field'
 export interface TextAreaFieldProps extends FormFieldProps, TextAreaProps, Partial<WrappedFieldProps<any>> {
 }
 
-export class _TextAreaFieldCmp extends React.Component<TextAreaFieldProps> {
+class TextAreaFieldCmp extends React.Component<TextAreaFieldProps> {
 
     render() {
         return (
@@ -21,4 +21,4 @@ export class _TextAreaFieldCmp extends React.Component<TextAreaFieldProps> {
 
 }
 
-export const TextAreaField: React.ComponentClass<FieldProps & TextAreaFieldProps> = field()(_TextAreaFieldCmp)
+export const TextAreaField: React.ComponentClass<FieldProps & TextAreaFieldProps> = field()(TextAreaFieldCmp)

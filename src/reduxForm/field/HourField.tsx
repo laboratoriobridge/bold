@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TextField } from './TextField';
+import { TextField } from './TextField'
 
 export const normalize = (value) => {
     const onlyNums = value.replace(/[^\d]/g, '')

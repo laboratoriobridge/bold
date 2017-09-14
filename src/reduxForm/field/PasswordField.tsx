@@ -7,7 +7,7 @@ export interface PasswordFieldProps extends PasswordInputProps, Partial<WrappedF
 }
 
 
-export class _PasswordFieldCmp extends React.Component<PasswordFieldProps> {
+class PasswordFieldCmp extends React.Component<PasswordFieldProps> {
 
     render() {
         return (
@@ -17,4 +17,4 @@ export class _PasswordFieldCmp extends React.Component<PasswordFieldProps> {
 
 }
 
-export const PasswordField: React.ComponentClass<FieldProps & PasswordFieldProps> = field()(_PasswordFieldCmp)
+export const PasswordField: React.ComponentClass<FieldProps & PasswordFieldProps> = field()(PasswordFieldCmp)

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import MaskedInput from 'react-maskedinput'
+import * as MaskedInput from 'react-maskedinput'
 import { WrappedFieldProps } from 'redux-form'
 import { FormFieldProps } from '../../components/form/FormField'
 import field, { FieldProps } from '../hoc/field'
@@ -13,7 +13,7 @@ export interface MaskedFieldProps extends FormFieldProps, Partial<WrappedFieldPr
 
 const cleanMask = value => value.replace(/[^A-Za-z\d]/g, '')
 
-export class _MaskedFieldCmp extends React.Component<MaskedFieldProps> {
+class MaskedFieldCmp extends React.Component<MaskedFieldProps> {
 
     render() {
         return (
@@ -30,4 +30,4 @@ export class _MaskedFieldCmp extends React.Component<MaskedFieldProps> {
     }
 }
 
-export const MaskedField: React.ComponentClass<FieldProps & MaskedFieldProps> = field({ parse: cleanMask })(_MaskedFieldCmp)
+export const MaskedField: React.ComponentClass<FieldProps & MaskedFieldProps> = field({ parse: cleanMask })(MaskedFieldCmp)
