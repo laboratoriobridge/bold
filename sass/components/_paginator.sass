@@ -1,0 +1,31 @@
+.paginator
+    padding-bottom: 30px
+    padding-top: 30px
+    border: none
+    .botoes
+        padding-left: 150px
+        a
+            background-color: $white
+            border: solid 1px $grey-light
+            color: $black-bis
+            display: inline-block
+            height: 40px
+            line-height: 35px
+            text-align: center
+            width: 40px
+            &:not(:last-child)
+                border-right: none
+            &.is-disabled
+                color: $grey-light
+                cursor: not-allowed
+            &.active
+                background-color: $white-ter
+                color: $black-bis
+                cursor: not-allowed
+                font-weight: 600
+    .page-indicator
+        color: $grey-darker
+        font-size: 11px
+        font-weight: 600
+        text-align: right
+        width: 150px

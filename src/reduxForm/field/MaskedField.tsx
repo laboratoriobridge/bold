@@ -1,5 +1,5 @@
 import * as React from 'react'
-import * as MaskedInput from 'react-maskedinput'
+import MaskedInputDefault, * as MaskedInput from 'react-maskedinput'
 import { WrappedFieldProps } from 'redux-form'
 import { FormFieldProps } from '../../components/form/FormField'
 import field, { FieldProps } from '../hoc/field'
@@ -16,8 +16,9 @@ const cleanMask = value => value.replace(/[^A-Za-z\d]/g, '')
 class MaskedFieldCmp extends React.Component<MaskedFieldProps> {
 
     render() {
+        const MI = MaskedInputDefault || MaskedInput
         return (
-            <MaskedInput
+            <MI
                 className='input'
                 {...this.props.input}
                 onKeyPress={this.props.onKeyPress}
