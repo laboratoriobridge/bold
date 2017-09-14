@@ -7,7 +7,7 @@ export interface ChecklistItemFieldProps extends ChecklistItemProps, Partial<Wra
 
 }
 
-class ChecklistItemFieldComponent extends React.Component<ChecklistItemFieldProps, any> {
+export class _ChecklistItemFieldCmp extends React.Component<ChecklistItemFieldProps, any> {
 
     render() {
         return (
@@ -17,4 +17,4 @@ class ChecklistItemFieldComponent extends React.Component<ChecklistItemFieldProp
 
 }
 
-export const ChecklistItemField: React.ComponentClass<FieldProps & ChecklistItemFieldProps> = field({ hasWrapper: false })(ChecklistItemFieldComponent)
+export const ChecklistItemField: React.ComponentClass<FieldProps & ChecklistItemFieldProps> = field({ hasWrapper: false })(_ChecklistItemFieldCmp)

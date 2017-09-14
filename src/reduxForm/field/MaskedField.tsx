@@ -13,7 +13,7 @@ export interface MaskedFieldProps extends FormFieldProps, Partial<WrappedFieldPr
 
 const cleanMask = value => value.replace(/[^A-Za-z\d]/g, '')
 
-class MaskedFieldCmp extends React.Component<MaskedFieldProps> {
+export class _MaskedFieldCmp extends React.Component<MaskedFieldProps> {
 
     render() {
         return (
@@ -30,4 +30,4 @@ class MaskedFieldCmp extends React.Component<MaskedFieldProps> {
     }
 }
 
-export const MaskedField: React.ComponentClass<FieldProps & MaskedFieldProps> = field({ parse: cleanMask })(MaskedFieldCmp)
+export const MaskedField: React.ComponentClass<FieldProps & MaskedFieldProps> = field({ parse: cleanMask })(_MaskedFieldCmp)

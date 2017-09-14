@@ -7,7 +7,7 @@ export interface CheckboxFieldProps extends CheckboxProps, Partial<WrappedFieldP
 }
 
 
-class CheckboxFieldCmp extends React.Component<CheckboxFieldProps> {
+export class _CheckboxFieldCmp extends React.Component<CheckboxFieldProps> {
 
     render() {
         return (
@@ -18,4 +18,4 @@ class CheckboxFieldCmp extends React.Component<CheckboxFieldProps> {
 }
 
 // normalize resolve a issue: https://github.com/erikras/redux-form/issues/2922
-export const CheckboxField: React.ComponentClass<FieldProps & CheckboxFieldProps> = field({ type: 'checkbox', hasWrapper: false, normalize: v => !!v })(CheckboxFieldCmp)
+export const CheckboxField: React.ComponentClass<FieldProps & CheckboxFieldProps> = field({ type: 'checkbox', hasWrapper: false, normalize: v => !!v })(_CheckboxFieldCmp)

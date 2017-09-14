@@ -7,7 +7,7 @@ export interface RadioFieldProps extends RadioButtonProps, Partial<WrappedFieldP
 
 }
 
-class RadioFieldComponent extends React.Component<RadioFieldProps, any> {
+export class _RadioFieldCmp extends React.Component<RadioFieldProps, any> {
 
     render() {
         return (
@@ -17,4 +17,4 @@ class RadioFieldComponent extends React.Component<RadioFieldProps, any> {
 
 }
 
-export const RadioField: React.ComponentClass<FieldProps & RadioFieldProps> = field({ type: 'radio', hasWrapper: false })(RadioFieldComponent)
+export const RadioField: React.ComponentClass<FieldProps & RadioFieldProps> = field({ type: 'radio', hasWrapper: false })(_RadioFieldCmp)

@@ -7,7 +7,7 @@ import { FormFieldProps } from '../../components/form/FormField'
 export interface TextFieldProps extends FormFieldProps, TextInputProps, Partial<WrappedFieldProps<any>> {
 }
 
-class TextFieldCmp extends React.Component<TextFieldProps> {
+export class _TextFieldCmp extends React.Component<TextFieldProps> {
 
     render() {
         return (
@@ -22,4 +22,4 @@ class TextFieldCmp extends React.Component<TextFieldProps> {
 
 }
 
-export const TextField: React.ComponentClass<FieldProps & TextFieldProps> = field()(TextFieldCmp)
+export const TextField: React.ComponentClass<FieldProps & TextFieldProps> = field()(_TextFieldCmp)
