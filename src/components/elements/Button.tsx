@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as classnames from 'classnames'
 import { helpersClassnames, filterProps, UtilProps } from '../../util/Util'
 import { Icon } from './Icon'
+import withHint, { WithHintProps } from '../decorators/withHint'
 
 export interface ButtonProps extends UtilProps {
     className?: string
@@ -24,7 +25,7 @@ export interface ButtonState {
     loading: boolean
 }
 
-export class Button extends React.Component<ButtonProps, ButtonState> {
+export class ButtonComponent extends React.Component<ButtonProps, ButtonState> {
 
     private timeout: number
 
@@ -117,6 +118,8 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
 
 }
+
+export const Button: React.ComponentClass<WithHintProps & ButtonProps> = withHint(ButtonComponent)
 
 
 const excludedProps = [

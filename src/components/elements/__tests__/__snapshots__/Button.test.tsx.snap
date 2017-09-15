@@ -1,5 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Button deve adicionar um hint custom automaticamente 1`] = `
+<Hint
+  componente={<ButtonComponent />}
+  type="normal"
+>
+  <span>
+    hint complexo teste
+  </span>
+</Hint>
+`;
+
+exports[`Button deve adicionar um hint string automaticamente 1`] = `
+<Hint
+  componente={<ButtonComponent />}
+  type="normal"
+>
+  hint teste
+</Hint>
+`;
+
 exports[`Button deve renderizar corretamente 1`] = `
 <button
   className="button"

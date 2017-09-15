@@ -1,4 +1,4 @@
-import * as DateUtil from '../DateUtil'
+import DateUtil from '../DateUtil'
 import '../../__tests__/test.defaults'
 
 describe('DateUtil', () => {

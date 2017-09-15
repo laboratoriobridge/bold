@@ -8,7 +8,6 @@
       "dom"
     ],
     "outDir": "lib",
-    "allowSyntheticDefaultImports": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,

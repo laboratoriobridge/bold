@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChecklistItem deve conter a classe css "disabled" 1`] = `
+<Checkbox
+  checked={false}
+  disabled={true}
+  label="check"
+  onBlur={[Function]}
+  onChange={[Function]}
+  value="VALOR"
+/>
+`;
+
+exports[`ChecklistItem deve renderizar corretamente 1`] = `
+<Checkbox
+  checked={false}
+  label="check"
+  onBlur={[Function]}
+  onChange={[Function]}
+  value="VALOR"
+/>
+`;

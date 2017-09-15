@@ -1,4 +1,4 @@
-import * as ByteUtil from '../ByteUtil'
+import ByteUtil from '../ByteUtil'
 
 describe('ByteUtil', () => {
     it('deve retornar 0 Bytes', function () {

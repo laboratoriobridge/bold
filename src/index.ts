@@ -1,4 +1,4 @@
-export * from './components/elements/Button'
+export { Button } from './components/elements/Button'
 export * from './components/elements/Hint'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'
@@ -60,6 +60,7 @@ import DateUtil from './util/DateUtil'
 import NumberUtil from './util/NumberUtil'
 import ByteUtil from './util/ByteUtil'
 import UUID from './util/UUID'
+import { Button } from './components/elements/Button'
 
 export {
     field,
