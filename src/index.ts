@@ -60,7 +60,6 @@ import DateUtil from './util/DateUtil'
 import NumberUtil from './util/NumberUtil'
 import ByteUtil from './util/ByteUtil'
 import UUID from './util/UUID'
-import { Button } from './components/elements/Button'
 
 export {
     field,

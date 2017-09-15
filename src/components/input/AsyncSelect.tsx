@@ -36,16 +36,17 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
         super()
         this.typingTimer
         this.loadOptions = this.loadOptions.bind(this)
+        this.blur = this.blur.bind(this)
     }
 
     render() {
-        const { value, ...rest } = this.props
+        const { value, onBlur, ...rest } = this.props
         return (
             <Select.Async
                 options={[]}
                 {...rest}
                 value={value && value.toJS ? value.toJS() : value}
-                onBlur={() => this.props.onBlur && this.props.onBlur(this.props.value)}
+                onBlur={this.blur()}
                 loadOptions={this.loadOptions}
             />
         )
@@ -76,5 +77,17 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             }).catch(error => {
                 callback(error, null)
             })
+    }
+
+    private blur(): React.EventHandler<React.FocusEvent<{}>> {
+        return () => {
+            if (this.props.onBlur) {
+                if (this.props.value && this.props.value[this.props.labelKey]) {
+                    this.props.onBlur(this.props.value)
+                } else {
+                    this.props.onBlur(null)
+                }
+            }
+        }
     }
 }
