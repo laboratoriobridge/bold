@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table render correctly 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th
+        className=""
+      >
+        Test
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      className="row"
+      data-name={NaN}
+    >
+      <td>
+        <label>
+          0
+           - 
+          #1
+        </label>
+      </td>
+    </tr>
+    <tr
+      className="row"
+      data-name={NaN}
+    >
+      <td>
+        <label>
+          1
+           - 
+          #2
+        </label>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Table render empty 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr />
+  </thead>
+  <tbody />
+</table>
+`;

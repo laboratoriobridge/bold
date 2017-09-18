@@ -58,7 +58,7 @@ class TableRow extends React.Component<any, any> {
 }
 
 export interface TableColumnHeaderProps {
-    render: (props) => JSX.Element
+    render: (props: any, idx: number) => JSX.Element
     title: string
     className?: string
     size?: string

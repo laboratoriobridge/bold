@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Renderer from 'react-test-renderer'
+import * as Renderer from 'react-test-renderer'
 import { shallow, ShallowWrapper } from 'enzyme'
 import { reduxForm, reducer as reduxFormReducer } from 'redux-form/immutable'
 import { Provider } from 'react-redux'
@@ -28,10 +28,6 @@ export function shallowRenderAndMatch<P>(componentJsx: React.ReactElement<P>): S
 
 export const shallowMatch = (wrapper) => {
     expect(wrapper).toMatchSnapshot()
-}
-
-export interface State {
-    form: any
 }
 
 const reducer = combineReducers({
