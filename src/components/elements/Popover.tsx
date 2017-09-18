@@ -2,15 +2,17 @@ import * as React from 'react'
 import { Overlay } from 'react-overlays'
 import * as classnames from 'classnames'
 
+export type Placement = 'top' | 'right' | 'bottom' | 'left'
+
 export interface PopoverProps {
     borderColor?: string
     className?: string
     color?: string
-    onHide?: Function
-    placement?: string
+    onHide?: any
+    placement?: Placement
     rootClose?: boolean
     show?: boolean
-    target?: Function
+    target?: React.ReactNode | Function
 }
 
 export class Popover extends React.Component<PopoverProps> {
