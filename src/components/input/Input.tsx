@@ -10,6 +10,7 @@ export interface PublicInputProps extends Partial<WrappedFieldInputProps> {
   id?: string
   maxLength?: number
   name?: string
+  onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   placeholder?: string
 }
 
