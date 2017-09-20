@@ -7,7 +7,8 @@ export interface AsyncSelectProps extends Partial<Select.ReactAsyncSelectProps> 
     value?: any
     pageSize?: number
     searchDelay?: number
-    customizeParams?: any
+    customizeParams?: any,
+    maxLength?: number
 }
 
 export class AsyncSelect extends React.Component<AsyncSelectProps> {
@@ -45,6 +46,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             <Select.Async
                 options={[]}
                 {...rest}
+                inputProps={{maxLength: this.props.maxLength}}
                 value={value && value.toJS ? value.toJS() : value}
                 onBlur={this.blur()}
                 loadOptions={this.loadOptions}
