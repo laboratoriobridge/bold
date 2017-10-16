@@ -8,6 +8,11 @@ exports[`Table render correctly 1`] = `
     <tr>
       <th
         className=""
+        style={
+          Object {
+            "width": "20px",
+          }
+        }
       >
         Test
       </th>
@@ -18,7 +23,13 @@ exports[`Table render correctly 1`] = `
       className="row"
       data-name={NaN}
     >
-      <td>
+      <td
+        style={
+          Object {
+            "width": "20px",
+          }
+        }
+      >
         <label>
           0
            - 
@@ -30,7 +41,13 @@ exports[`Table render correctly 1`] = `
       className="row"
       data-name={NaN}
     >
-      <td>
+      <td
+        style={
+          Object {
+            "width": "20px",
+          }
+        }
+      >
         <label>
           1
            - 

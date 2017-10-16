@@ -9,7 +9,7 @@ describe('Table', () => {
     it('render correctly', () => {
         renderAndMatchSnapshot(
             <Table values={['#1', '#2']}>
-                <TableColumnHeader title='Test' render={(row, idx) => (
+                <TableColumnHeader title='Test' style={{ width: '20px' }} render={(row, idx) => (
                     <label>{idx} - {row}</label>
                 )} />
             </Table>
