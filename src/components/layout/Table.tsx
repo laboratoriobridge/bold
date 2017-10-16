@@ -50,14 +50,15 @@ class TableRow extends React.Component<any, any> {
                     if (!child) {
                         return
                     }
-                    return <td>{child.props.render(this.props.value, this.props.index)}</td>
+                    const { render, title, size, offset, ...cellProps } = child.props
+                    return <td {...cellProps}>{child.props.render(this.props.value, this.props.index)}</td>
                 })}
             </tr>
         )
     }
 }
 
-export interface TableColumnHeaderProps {
+export interface TableColumnHeaderProps extends React.DetailedHTMLProps<React.TdHTMLAttributes<HTMLTableDataCellElement>, HTMLTableDataCellElement> {
     render: (props: any, idx: number) => JSX.Element
     title: string
     className?: string
@@ -67,8 +68,10 @@ export interface TableColumnHeaderProps {
 
 export class TableColumnHeader extends React.Component<TableColumnHeaderProps> {
     render() {
+        const { render, title, size, offset, ...cellProps } = this.props
+
         return (
-            <th className={resolveColumnClass(this.props)}>{this.props.title}</th>
+            <th className={resolveColumnClass(this.props)} {...cellProps}>{title}</th>
         )
     }
 }
