@@ -7,7 +7,7 @@ exports[`ComposedLabel horizontal 1`] = `
   <span
     className="label-title"
   >
-    label: 
+    label
   </span>
   valor
 </div>
@@ -20,7 +20,7 @@ exports[`ComposedLabel horizontal e small 1`] = `
   <span
     className="label-title"
   >
-    label: 
+    label
   </span>
   valor
 </div>
