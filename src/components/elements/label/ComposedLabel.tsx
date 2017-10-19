@@ -30,7 +30,7 @@ export class ComposedLabel extends React.Component<ComposedLabelProps, any> {
             'big': this.props.big,
         })
 
-        const title = this.props.horizontal ? this.props.title + ': ' : this.props.title
+        const title = this.props.title
         return (
             <div className={classes} data-name={this.props.name}>
                 <span className={classnames('label-title', this.props.labelClassName)}>{this.props.customizeTitle ? this.props.customizeTitle(title) : title}</span>
