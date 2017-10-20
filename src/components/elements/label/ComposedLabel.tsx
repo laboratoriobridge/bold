@@ -18,7 +18,7 @@ export class ComposedLabel extends React.Component<ComposedLabelProps, any> {
 
     static defaultProps: ComposedLabelProps = {
         title: '',
-        placeholder: 'Não informada'
+        placeholder: 'Não informado'
     }
 
     render() {
