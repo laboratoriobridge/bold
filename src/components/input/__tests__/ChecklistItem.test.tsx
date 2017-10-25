@@ -38,4 +38,23 @@ describe('ChecklistItem', () => {
 
         expect(onChange).toBeCalledWith([])
     })
+    it('deve adicionar o valor à Immutable.List', function () {
+        const onChange = jest.fn()
+
+        const wrapper = shallow(<ChecklistItem label='check' optionValue='VALOR' onChange={onChange} value={List(['2'])} />)
+
+        wrapper.find('Checkbox').simulate('change', { target: { checked: true } })
+
+        // toBeCalledWith não usa o equals, compara a instância, dessa maneira comparamos o equals do primeiro parâmetro enviado no método
+        expect(onChange.mock.calls[0][0]).toEqual(List(['2', 'VALOR']))
+    })
+    it('deve remover o valor da Immutable.List', function () {
+        const onChange = jest.fn()
+
+        const wrapper = shallow(<ChecklistItem value={List(['VALOR'])} label='check' optionValue='VALOR' onChange={onChange} />)
+
+        wrapper.find('Checkbox').simulate('change', { target: { checked: false } })
+
+        expect(onChange.mock.calls[0][0]).toEqual(List([]))
+    })
 })

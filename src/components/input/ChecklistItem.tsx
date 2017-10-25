@@ -33,12 +33,20 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
 
     handleChange(event) {
         const { onChange } = this.props
-        const values = this.getCurrentValues()
+        let values: any = this.getCurrentValues()
 
         if (event.target.checked) {
-            values.push(this.props.optionValue)
+            if (List.isList(values)) {
+                values = values.push(this.props.optionValue)
+            } else {
+                values.push(this.props.optionValue)
+            }
         } else {
-            values.splice(values.indexOf(this.props.optionValue), 1)
+            if (List.isList(values)) {
+                values = values.splice(values.indexOf(this.props.optionValue), 1)
+            } else {
+                values.splice(values.indexOf(this.props.optionValue), 1)
+            }
         }
 
         return onChange(values as any)

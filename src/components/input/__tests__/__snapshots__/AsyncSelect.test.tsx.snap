@@ -9,6 +9,11 @@ exports[`AsyncSelect deve renderizar corretamente 1`] = `
   clearable={true}
   ignoreAccents={false}
   ignoreCase={true}
+  inputProps={
+    Object {
+      "maxLength": undefined,
+    }
+  }
   labelKey="nome"
   loadOptions={[Function]}
   loadingPlaceholder="Carregando..."
