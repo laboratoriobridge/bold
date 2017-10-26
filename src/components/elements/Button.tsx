@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { MouseEventHandler } from 'react'
 import * as classnames from 'classnames'
 import { helpersClassnames, filterProps, UtilProps } from '../../util/Util'
 import { Icon } from './Icon'
@@ -14,9 +13,9 @@ export interface ButtonProps extends UtilProps {
     icon?: string
     loading?: boolean
     name?: string,
-    onClick?: MouseEventHandler<HTMLButtonElement>
-    onMouseEnter?: MouseEventHandler<HTMLButtonElement>
-    onMouseLeave?: MouseEventHandler<HTMLButtonElement>
+    onClick?: Function
+    onMouseEnter?: Function
+    onMouseLeave?: Function
     outlined?: boolean
     shadow?: boolean
     size?: string
