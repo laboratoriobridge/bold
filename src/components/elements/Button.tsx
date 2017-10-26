@@ -1,8 +1,11 @@
 import * as React from 'react'
+import { MouseEventHandler } from 'react'
 import * as classnames from 'classnames'
 import { helpersClassnames, filterProps, UtilProps } from '../../util/Util'
 import { Icon } from './Icon'
 import withHint, { WithHintProps } from '../decorators/withHint'
+
+export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
 
 export interface ButtonProps extends UtilProps {
     className?: string
@@ -11,14 +14,16 @@ export interface ButtonProps extends UtilProps {
     icon?: string
     loading?: boolean
     name?: string,
-    onClick?: Function
+    onClick?: MouseEventHandler<HTMLButtonElement>
+    onMouseEnter?: MouseEventHandler<HTMLButtonElement>
+    onMouseLeave?: MouseEventHandler<HTMLButtonElement>
     outlined?: boolean
     shadow?: boolean
     size?: string
     square?: boolean
     tabIndex?: number
     title?: string
-    type?: string
+    type?: Type
 }
 
 export interface ButtonState {
