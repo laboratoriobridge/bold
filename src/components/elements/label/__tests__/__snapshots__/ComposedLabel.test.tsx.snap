@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ComposedLabel classNames props 1`] = `
+<div
+  className="composed-label has-text-centered is-horizontal small"
+>
+  <span
+    className="label-title"
+  >
+    label
+  </span>
+  valor
+</div>
+`;
+
 exports[`ComposedLabel horizontal 1`] = `
 <div
   className="composed-label is-horizontal"

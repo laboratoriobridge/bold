@@ -31,4 +31,11 @@ describe('ComposedLabel', () => {
             </ComposedLabel>
         )
     })
+    it('classNames props', () => {
+        shallowRenderAndMatch(
+            <ComposedLabel className='has-text-centered' title='label' horizontal size='small'>
+                valor
+            </ComposedLabel>
+        )
+    })
 })
