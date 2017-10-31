@@ -7,6 +7,7 @@ export interface ComposedLabelProps {
     horizontal?: boolean
     inverted?: boolean
     italic?: boolean
+    className?: string
     labelClassName?: string
     name?: string
     placeholder?: string
@@ -22,7 +23,7 @@ export class ComposedLabel extends React.Component<ComposedLabelProps, any> {
     }
 
     render() {
-        const classes = classnames('composed-label', {
+        const classes = classnames('composed-label', this.props.className, {
             'is-horizontal': this.props.horizontal,
             'small': this.props.size === 'small',
             'is-italic': !this.props.children,
