@@ -1,21 +1,30 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
 import { Checkbox, CheckboxProps } from '../../components/input/Checkbox'
-import field, { FieldProps } from '../hoc/field'
+import { Field } from '../hoc/Field'
 
-export interface CheckboxFieldProps extends CheckboxProps, Partial<WrappedFieldProps<any>> {
+export interface CheckboxFieldProps extends CheckboxProps {
+    name: string
 }
 
 
-class CheckboxFieldCmp extends React.Component<CheckboxFieldProps> {
+export class CheckboxField extends React.Component<CheckboxFieldProps> {
 
     render() {
         return (
-            <Checkbox {...this.props.input} label={this.props.label} disabled={this.props.disabled} />
+            <Field
+                {...this.props}
+                type='checkbox'
+                hasWrapper={false}
+                // normalize resolve a issue: https://github.com/erikras/redux-form/issues/2922
+                normalize={v => !!v}
+                render={props =>
+                    <Checkbox
+                        {...this.props}
+                        {...props.input}
+                    />
+                }
+            />
         )
     }
 
 }
-
-// normalize resolve a issue: https://github.com/erikras/redux-form/issues/2922
-export const CheckboxField: React.ComponentClass<FieldProps & CheckboxFieldProps> = field({ type: 'checkbox', hasWrapper: false, normalize: v => !!v })(CheckboxFieldCmp)

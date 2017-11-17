@@ -1,25 +1,26 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
 import { TextInputProps, TextInput } from '../../components/input/TextInput'
-import field, { FieldProps } from '../hoc/field'
+import { Field, FieldProps } from '../hoc/Field'
 import { FormFieldProps } from '../../components/form/FormField'
 
-export interface TextFieldProps extends FormFieldProps, TextInputProps, Partial<WrappedFieldProps<any>> {
+export interface TextFieldProps extends FormFieldProps, TextInputProps, Pick<FieldProps, 'normalize' | 'parse' | 'format'> {
+    name: string
 }
 
-class TextFieldCmp extends React.Component<TextFieldProps> {
+export class TextField extends React.Component<TextFieldProps> {
 
     render() {
         return (
-            <TextInput
-                {...this.props.input}
-                placeholder={this.props.placeholder}
-                maxLength={this.props.maxLength}
-                disabled={this.props.disabled}
+            <Field
+                {...this.props}
+                render={props =>
+                    <TextInput
+                        {...this.props}
+                        {...props.input}
+                    />
+                }
             />
         )
     }
 
 }
-
-export const TextField: React.ComponentClass<FieldProps & TextFieldProps> = field()(TextFieldCmp)

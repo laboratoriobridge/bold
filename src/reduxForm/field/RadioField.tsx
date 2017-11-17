@@ -1,20 +1,27 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
 import { RadioButtonProps, RadioButton } from '../../components/input/RadioButton'
-import field, { FieldProps } from '../hoc/field'
+import { Field } from '../hoc/Field'
 
-export interface RadioFieldProps extends RadioButtonProps, Partial<WrappedFieldProps<any>> {
-
+export interface RadioFieldProps extends RadioButtonProps {
+    name: string
 }
 
-class RadioFieldCmp extends React.Component<RadioFieldProps, any> {
+export class RadioField extends React.Component<RadioFieldProps, any> {
 
     render() {
         return (
-            <RadioButton {...this.props.input} label={this.props.label} disabled={this.props.disabled} />
+            <Field
+                {...this.props}
+                type='radio'
+                hasWrapper={false}
+                render={props =>
+                    <RadioButton
+                        {...this.props}
+                        {...props.input}
+                    />
+                }
+            />
         )
     }
 
 }
-
-export const RadioField: React.ComponentClass<FieldProps & RadioFieldProps> = field({ type: 'radio', hasWrapper: false })(RadioFieldCmp)

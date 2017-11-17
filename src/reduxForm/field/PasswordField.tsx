@@ -1,20 +1,26 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
 import { PasswordInputProps, PasswordInput } from '../../components/input/PasswordInput'
-import field, { FieldProps } from '../hoc/field'
+import { Field } from '../hoc/Field'
 
-export interface PasswordFieldProps extends PasswordInputProps, Partial<WrappedFieldProps<any>> {
+export interface PasswordFieldProps extends PasswordInputProps {
+    name: string
 }
 
 
-class PasswordFieldCmp extends React.Component<PasswordFieldProps> {
+export class PasswordField extends React.Component<PasswordFieldProps> {
 
     render() {
         return (
-            <PasswordInput {...this.props.input} placeholder={this.props.placeholder} />
+            <Field
+                {...this.props}
+                render={props =>
+                    <PasswordInput
+                        {...this.props}
+                        {...props.input}
+                    />
+                }
+            />
         )
     }
 
 }
-
-export const PasswordField: React.ComponentClass<FieldProps & PasswordFieldProps> = field()(PasswordFieldCmp)

@@ -1,32 +1,45 @@
 import * as React from 'react'
-import { WrappedFieldInputProps } from 'redux-form'
+import { EventOrValueHandler } from 'redux-form'
 import * as classnames from 'classnames'
-import { helpersClassnames } from '../../util/Util'
+import { helpersClassnames, extractProps } from '../../util/Util'
+import { ChangeEvent, FocusEvent } from 'react'
 
-export interface PublicInputProps extends Partial<WrappedFieldInputProps> {
+export interface PublicInputProps {
   className?: string
   checked?: boolean
   disabled?: boolean
   id?: string
   maxLength?: number
   name?: string
+  onBlur?: EventOrValueHandler<FocusEvent<any>>
+  onChange?: EventOrValueHandler<ChangeEvent<any>>
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   placeholder?: string
+  value?: any
 }
 
 export interface InputProps extends PublicInputProps {
   type: string
 }
 
+const propsToKeep = [
+  'checked',
+  'disabled',
+  'id',
+  'maxLength',
+  'name',
+  'onBlur',
+  'onChange',
+  'onKeyPress',
+  'placeholder',
+  'type',
+  'value'
+]
+
 export class Input extends React.Component<InputProps, any> {
   public input: HTMLInputElement
 
-  constructor() {
-    super()
-    this.ref = this.ref.bind(this)
-  }
-
-  private ref(elem: HTMLInputElement) {
+  private ref = (elem: HTMLInputElement) => {
     this.input = elem
   }
 
@@ -42,7 +55,7 @@ export class Input extends React.Component<InputProps, any> {
     const classes = classnames('input', this.props.className, helpersClassnames(this.props))
 
     return (
-      <input ref={this.ref} {...this.props} className={classes} />
+      <input ref={this.ref} {...extractProps(this.props, ...propsToKeep) } className={classes} />
     )
   }
 

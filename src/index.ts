@@ -35,6 +35,10 @@ export * from './components/layout/LoadingContainer'
 export * from './components/layout/ScrollToTop'
 export * from './components/layout/Table'
 
+export * from './reactRouter/Breadcrumbs'
+export * from './reactRouter/Breadcrumb'
+export * from './reactRouter/CrumbRoute'
+
 export * from './reduxForm/field/AlfaNumberField'
 export * from './reduxForm/field/CheckboxField'
 export * from './reduxForm/field/ChecklistItemField'
@@ -50,10 +54,9 @@ export * from './reduxForm/field/RadioField'
 export * from './reduxForm/field/TextAreaField'
 export * from './reduxForm/field/TextField'
 
-import field from './reduxForm/hoc/field'
+export { Field, FieldProps } from './reduxForm/hoc/Field'
 import form from './reduxForm/hoc/form'
 
-export * from './reduxForm/hoc/field'
 export * from './reduxForm/hoc/form'
 
 import DateUtil from './util/DateUtil'
@@ -62,7 +65,6 @@ import ByteUtil from './util/ByteUtil'
 import UUID from './util/UUID'
 
 export {
-    field,
     form,
     ByteUtil,
     DateUtil,

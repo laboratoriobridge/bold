@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { UtilProps, helpersClassnames, filterProps } from '../../util/Util'
+import { UtilProps, helpersClassnames, excludeProps } from '../../util/Util'
 
 export interface IconProps extends UtilProps {
     icon: string
@@ -26,7 +26,7 @@ export class Icon extends React.Component<IconProps, any> {
             'is-12px': this.props.size && this.props.size === 'is-12px'
         })
         return (
-            <i {...filterProps(this.props, ...excludedProps) } title={this.props.title} className={classes}></i>
+            <i {...excludeProps(this.props, ...excludedProps) } title={this.props.title} className={classes}></i>
         )
     }
 

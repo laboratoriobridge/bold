@@ -71,8 +71,17 @@ export function helpersClassnames(props: UtilProps) {
     })
 }
 
+export function extractProps(props: UtilProps, ...propsToExtract: string[]) {
+    return Object.keys(props)
+        .filter(propName => propsToExtract.indexOf(propName) !== -1)
+        .reduce((obj, propName) => {
+            obj[propName] = props[propName]
 
-export function filterProps(props: UtilProps, ...exclude: string[]) {
+            return obj
+        }, {})
+}
+
+export function excludeProps(props: UtilProps, ...exclude: string[]) {
 
     let finalExclude: string[] = [
         ...helperProps,

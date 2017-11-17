@@ -1,6 +1,6 @@
 {
   "name": "bridge-react",
-  "version": "0.1.16",
+  "version": "1.0.0-alpha.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "publishConfig": {

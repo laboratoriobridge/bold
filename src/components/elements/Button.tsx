@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { helpersClassnames, filterProps, UtilProps } from '../../util/Util'
+import { helpersClassnames, excludeProps, UtilProps } from '../../util/Util'
 import { Icon } from './Icon'
 import withHint, { WithHintProps } from '../decorators/withHint'
 
@@ -67,7 +67,7 @@ export class ButtonComponent extends React.Component<ButtonProps, ButtonState> {
 
         return (
             <button
-                {...filterProps(this.props, ...excludedProps) }
+                {...excludeProps(this.props, ...excludedProps) }
                 className={classes}
                 name={this.props.name}
                 onClick={this.onClick}
