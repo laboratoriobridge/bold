@@ -54,10 +54,8 @@ export * from './reduxForm/field/RadioField'
 export * from './reduxForm/field/TextAreaField'
 export * from './reduxForm/field/TextField'
 
-export { Field, FieldProps } from './reduxForm/hoc/Field'
-import form from './reduxForm/hoc/form'
-
-export * from './reduxForm/hoc/form'
+export * from './reduxForm/hoc/Field'
+export * from './reduxForm/hoc/Form'
 
 import DateUtil from './util/DateUtil'
 import NumberUtil from './util/NumberUtil'
@@ -65,7 +63,6 @@ import ByteUtil from './util/ByteUtil'
 import UUID from './util/UUID'
 
 export {
-    form,
     ByteUtil,
     DateUtil,
     NumberUtil,
