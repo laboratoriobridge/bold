@@ -17,12 +17,12 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const classes = classnames('checkbox', {
             'disabled': this.props.disabled
         })
-        const { label, ...rest } = this.props
+        const { label, children, ...rest } = this.props
         return (
             <label className={classes} >
                 <Input {...rest} type='checkbox' />
                 <Icon className='check-indicator' icon='checkbox-check' />
-                <span className='check-label'>{this.props.label || this.props.children}</span>
+                <span className='check-label'>{label || children}</span>
             </label>
         )
     }
