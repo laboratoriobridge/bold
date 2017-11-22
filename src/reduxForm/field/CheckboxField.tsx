@@ -11,7 +11,9 @@ class CheckboxFieldCmp extends React.Component<CheckboxFieldProps> {
 
     render() {
         return (
-            <Checkbox {...this.props.input} label={this.props.label} disabled={this.props.disabled} />
+            <Checkbox {...this.props.input} label={this.props.label} disabled={this.props.disabled}>
+                {this.props.children}
+            </Checkbox>
         )
     }
 

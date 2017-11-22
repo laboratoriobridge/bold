@@ -11,7 +11,9 @@ class ChecklistItemFieldCmp extends React.Component<ChecklistItemFieldProps, any
 
     render() {
         return (
-            <ChecklistItem {...this.props.input} optionValue={this.props.optionValue} label={this.props.label} disabled={this.props.disabled} />
+            <ChecklistItem {...this.props.input} optionValue={this.props.optionValue} label={this.props.label} disabled={this.props.disabled}>
+                {this.props.children}
+            </ChecklistItem>
         )
     }
 
