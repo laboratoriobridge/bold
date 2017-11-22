@@ -22,7 +22,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             <label className={classes} >
                 <Input {...rest} type='checkbox' />
                 <Icon className='check-indicator' icon='checkbox-check' />
-                <span className='check-label'>{this.props.label}</span>
+                <span className='check-label'>{this.props.label || this.props.children}</span>
             </label>
         )
     }
