@@ -1,4 +1,4 @@
-export { Button } from './components/elements/Button'
+export { Button } from './components/elements/Button/Button'
 export * from './components/elements/Hint'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'

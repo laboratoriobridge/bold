@@ -1,8 +1,8 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { helpersClassnames, excludeProps, UtilProps } from '../../util/Util'
-import { Icon } from './Icon'
-import withHint, { WithHintProps } from '../decorators/withHint'
+import { helpersClassnames, excludeProps, UtilProps } from '../../../util/Util'
+import { Icon } from '../Icon'
+import withHint, { WithHintProps } from '../../decorators/withHint'
 
 export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
 

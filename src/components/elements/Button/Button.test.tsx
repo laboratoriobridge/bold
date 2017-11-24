@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Button, ButtonComponent } from '../Button'
+import { Button, ButtonComponent } from './Button'
 import { shallowRenderAndMatch } from '../../../__tests__/test.defaults'
 
 jest.useFakeTimers()

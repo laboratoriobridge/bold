@@ -11,9 +11,17 @@
     "build": "npm run clean && tsc && tsc -m es6 --outDir lib-esm && webpack",
     "test": "jest",
     "test:watch": "jest --watch --collectCoverage=false",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "3.2.16",
+    "@storybook/addon-info": "3.2.16",
+    "@storybook/addon-knobs": "3.2.16",
+    "@storybook/addon-links": "3.2.16",
+    "@storybook/addon-options": "3.2.16",
+    "@storybook/react": "3.2.16",
     "@types/classnames": "0.0.32",
     "@types/enzyme": "2.8.4",
     "@types/jest": "18.1.1",
@@ -25,6 +33,12 @@
     "@types/react-test-renderer": "15.5.3",
     "@types/redux-form": "6.6.7",
     "@types/redux-ui": "0.0.10",
+    "@types/storybook__react": "3.0.5",
+    "@types/storybook__addon-actions": "3.0.1",
+    "@types/storybook__addon-info": "3.2.1",
+    "@types/storybook__addon-knobs": "3.2.1",
+    "@types/storybook__addon-links": "3.0.2",
+    "@types/storybook__addon-options": "3.2.0",
     "awesome-typescript-loader": "3.2.3",
     "axios": "0.15.3",
     "babel-jest": "20.0.3",
@@ -51,7 +65,7 @@
     "shx": "0.2.2",
     "ts-jest": "20.0.5",
     "tslint": "5.2.0",
-    "typescript": "2.4.2",
+    "typescript": "2.6.1",
     "webpack": "3.5.5"
   },
   "peerDependencies": {
