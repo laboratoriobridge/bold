@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Select from 'react-select'
 import axios from 'axios'
 
-export interface AsyncSelectProps extends Partial<Select.ReactAsyncSelectProps> {
+export interface AsyncSelectProps extends Select.ReactAsyncSelectProps {
     url: string
     value?: any
     pageSize?: number
@@ -33,20 +33,13 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
         clearable: true,
     }
 
-    constructor() {
-        super()
-        this.typingTimer
-        this.loadOptions = this.loadOptions.bind(this)
-        this.blur = this.blur.bind(this)
-    }
-
     render() {
         const { value, onBlur, ...rest } = this.props
         return (
             <Select.Async
                 options={[]}
                 {...rest}
-                inputProps={{maxLength: this.props.maxLength}}
+                inputProps={{ maxLength: this.props.maxLength }}
                 value={value && value.toJS ? value.toJS() : value}
                 onBlur={this.blur()}
                 loadOptions={this.loadOptions}
@@ -54,7 +47,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
         )
     }
 
-    private loadOptions(query, callback) {
+    private loadOptions = (query, callback) => {
         clearTimeout(this.typingTimer)
         if (this.typingTimer) {
             clearTimeout(this.typingTimer)
@@ -81,7 +74,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             })
     }
 
-    private blur(): React.EventHandler<React.FocusEvent<{}>> {
+    private blur = (): React.EventHandler<React.FocusEvent<{}>> => {
         return () => {
             if (this.props.onBlur) {
                 if (this.props.value && this.props.value[this.props.labelKey]) {

@@ -10,14 +10,8 @@ export interface ChecklistItemProps extends CheckboxProps {
 }
 
 export class ChecklistItem extends React.Component<ChecklistItemProps> {
-    constructor() {
-        super()
 
-        this.getCurrentValues = this.getCurrentValues.bind(this)
-        this.handleChange = this.handleChange.bind(this)
-    }
-
-    getCurrentValues() {
+    getCurrentValues = () => {
         const { value } = this.props
 
         let previousValues = []
@@ -31,7 +25,7 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
         return currentValues
     }
 
-    handleChange(event) {
+    handleChange = (event) => {
         const { onChange } = this.props
         let values: any = this.getCurrentValues()
 

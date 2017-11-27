@@ -11,13 +11,6 @@ export interface PaginatorProps {
 
 export class Paginator extends React.Component<PaginatorProps> {
 
-    constructor() {
-        super()
-
-        this.previous = this.previous.bind(this)
-        this.next = this.next.bind(this)
-    }
-
     render() {
         const paginatorClasses = {
             first: classnames({ 'is-disabled': this.props.first }),
@@ -39,11 +32,11 @@ export class Paginator extends React.Component<PaginatorProps> {
         )
     }
 
-    private previous() {
+    private previous = () => {
         this.props.onChange(this.props.pageNumber - 1)
     }
 
-    private next() {
+    private next = () => {
         this.props.onChange(this.props.pageNumber + 1)
     }
 

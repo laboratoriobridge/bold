@@ -33,8 +33,8 @@ export class ButtonComponent extends React.Component<ButtonProps, ButtonState> {
 
     private timeout: number
 
-    constructor() {
-        super()
+    constructor(props, context?) {
+        super(props, context)
         this.handleOnKeyPress = this.handleOnKeyPress.bind(this)
         this.onClick = this.onClick.bind(this)
 

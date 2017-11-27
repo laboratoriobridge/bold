@@ -16,8 +16,8 @@ export interface BreadcrumbState {
 
 class BreadcrumbCmp extends React.PureComponent<BreadcrumbProps & RouteComponentProps<any>, BreadcrumbState> {
 
-    constructor() {
-        super()
+    constructor(props, context?) {
+        super(props, context)
 
         this.state = {
             id: UUID.generateUUID()

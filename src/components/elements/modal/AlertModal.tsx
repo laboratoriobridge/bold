@@ -17,12 +17,7 @@ export interface AlertModalProps {
 
 export class AlertModal extends React.Component<AlertModalProps, any> {
 
-    constructor() {
-        super()
-
-        this.getIcon = this.getIcon.bind(this)
-    }
-    getIcon() {
+    getIcon = () => {
         if (this.props.icon) {
             return this.props.icon
         }
@@ -85,15 +80,12 @@ export interface AlertModalLeaveProps {
 
 export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> {
 
-    constructor() {
-        super()
+    constructor(props, context?) {
+        super(props, context)
 
         this.state = {
             active: true
         }
-
-        this.onCancel = this.onCancel.bind(this)
-        this.onLeave = this.onLeave.bind(this)
     }
 
     componentWillReceiveProps() {
@@ -102,12 +94,12 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
         }
     }
 
-    onCancel() {
+    onCancel = () => {
         this.props.callback(false)
         this.close()
     }
 
-    onLeave() {
+    onLeave = () => {
         this.props.callback(true)
         this.close()
     }

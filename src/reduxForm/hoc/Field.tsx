@@ -8,10 +8,10 @@ export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps, 'parse'
     hasWrapper?: boolean
     name: string
     type?: string
-    render(props: WrappedFieldProps<any>): JSX.Element
+    render(props: WrappedFieldProps): JSX.Element
 }
 
-interface FieldComponentProps extends FormFieldProps, WrappedFieldProps<any> {
+interface FieldComponentProps extends FormFieldProps, WrappedFieldProps {
     custom: {
         onChange: EventOrValueHandler<ChangeEvent<any>>
     }

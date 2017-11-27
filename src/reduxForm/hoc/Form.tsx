@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Prompt } from 'react-router-dom'
-import { Config as ReduxFormConfig, FormProps as ReduxFormProps } from 'redux-form'
+import { ConfigProps as ReduxFormConfigProps, InjectedFormProps as InjectedFormProps, DecoratedComponentClass } from 'redux-form'
 import { reduxForm, SubmissionError } from 'redux-form/immutable'
 import ui, { ReduxUIProps } from 'redux-ui'
 import { AlertModalError, AlertModalSuccess } from '../../components/elements/modal/AlertModal'
@@ -40,7 +40,7 @@ export type UIStateShape = {
     result: any
 }
 
-export interface FormProps extends ReduxFormConfig<any, any, any>, Partial<ReduxUIProps<UIStateShape>> {
+export interface FormProps extends ReduxFormConfigProps<any, any>, Partial<ReduxUIProps<UIStateShape>> {
     errorIcon?: string,
     errorModal?: React.SFC<ErrorModalProps> | React.ComponentClass<ErrorModalProps>,
     hasErrorModal?: boolean,
@@ -56,7 +56,7 @@ export interface FormProps extends ReduxFormConfig<any, any, any>, Partial<Redux
     render?(props: FormComponentProps): JSX.Element
 }
 
-export interface FormComponentProps extends ReduxFormProps<any, any, any> {
+export interface FormComponentProps extends Partial<InjectedFormProps> {
 }
 
 @ui({
@@ -71,7 +71,7 @@ export class Form extends React.Component<FormProps> {
 
     static defaultProps: Partial<FormProps> = defaultConfig
 
-    private ReduxWrappedForm: React.ComponentClass<WrapperFormProps>
+    private ReduxWrappedForm: DecoratedComponentClass<any, WrapperFormProps>
 
     componentWillMount() {
         this.ReduxWrappedForm = reduxForm(this.props)(WrappedForm)
@@ -186,7 +186,7 @@ export class Form extends React.Component<FormProps> {
 
 }
 
-interface WrapperFormProps extends ReduxFormProps<any, any, any> {
+interface WrapperFormProps extends Partial<InjectedFormProps<any, any>> {
     onSubmit: any
     onSubmitSuccess: any
     onSubmitFail: any
