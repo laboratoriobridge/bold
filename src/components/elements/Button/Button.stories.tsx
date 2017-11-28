@@ -8,4 +8,4 @@ import { Button } from './Button'
 
 storiesOf('Button', module)
     .addDecorator(withKnobs)
-    .add('with text', withInfo({ text: 'la' })(() => <Button disabled={boolean('disabled', true)}>{text('label', 'Hello')}</Button>))
+    .add('with text', withInfo({ text: 'Texto sobre o botão' })(() => <Button disabled={boolean('disabled', true)}>{text('label', 'Hello')}</Button>))

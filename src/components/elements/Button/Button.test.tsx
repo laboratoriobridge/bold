@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { shallow } from 'enzyme'
-import { Button, ButtonComponent } from './Button'
+import { Button } from './Button'
 import { shallowRenderAndMatch } from '../../../__tests__/test.defaults'
 
 jest.useFakeTimers()
 
 describe('Button', () => {
     it('deve renderizar corretamente', function () {
-        shallowRenderAndMatch(<ButtonComponent />)
+        shallowRenderAndMatch(<Button />)
     })
 
     it('deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise', () => {
@@ -17,7 +17,7 @@ describe('Button', () => {
             })
         }
 
-        const wrapper = shallow(<ButtonComponent onClick={delayedFunction} />)
+        const wrapper = shallow(<Button onClick={delayedFunction} />)
         expect(wrapper.state().loading).toBe(false)
 
         wrapper.simulate('click')
@@ -27,7 +27,7 @@ describe('Button', () => {
     it('não deve ter animação com "onClick" que não seja promise', () => {
         const func = jest.fn()
 
-        const wrapper = shallow(<ButtonComponent onClick={func} />)
+        const wrapper = shallow(<Button onClick={func} />)
         expect(wrapper.state().loading).toBe(false)
 
         wrapper.simulate('click')

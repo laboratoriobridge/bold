@@ -6,7 +6,7 @@ import withHint, { WithHintProps } from '../../decorators/withHint'
 
 export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
 
-export interface ButtonProps extends UtilProps {
+export interface ButtonProps extends UtilProps, WithHintProps {
     className?: string
     dashed?: boolean
     disabled?: boolean
@@ -29,7 +29,8 @@ export interface ButtonState {
     loading: boolean
 }
 
-export class ButtonComponent extends React.Component<ButtonProps, ButtonState> {
+@withHint
+export class Button extends React.Component<ButtonProps, ButtonState> {
 
     private timeout: number
 
@@ -122,9 +123,6 @@ export class ButtonComponent extends React.Component<ButtonProps, ButtonState> {
     }
 
 }
-
-export const Button: React.ComponentClass<WithHintProps & ButtonProps> = withHint(ButtonComponent)
-
 
 const excludedProps = [
     'dashed',

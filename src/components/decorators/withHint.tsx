@@ -8,8 +8,9 @@ export interface WithHintProps {
     hintType?: 'normal' | 'primary',
 }
 
-export default function withHint<WrappedComponentsProps>(WrappedComponent: React.SFC<WrappedComponentsProps> | React.ComponentClass<WrappedComponentsProps>): React.ComponentClass<WithHintProps & WrappedComponentsProps> {
-    return class ComponentWithHint extends React.Component<WithHintProps & WrappedComponentsProps> {
+export default function withHint<P extends WithHintProps, T extends React.ComponentClass<P>>(WrappedComponent: T): T {
+    class WithHint extends React.Component<P> {
+
         render() {
             const { hint, hintClassName, hintPlacement, hintType, ...rest } = this.props as any
             if (hint) {
@@ -28,4 +29,8 @@ export default function withHint<WrappedComponentsProps>(WrappedComponent: React
             }
         }
     }
+
+    (WithHint as any).displayName = `${WrappedComponent.displayName || WrappedComponent.name}`
+
+    return WithHint as T
 }
