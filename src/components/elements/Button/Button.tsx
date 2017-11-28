@@ -1,12 +1,14 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { helpersClassnames, excludeProps, UtilProps } from '../../../util/Util'
+import { helpersClassnames, UtilProps } from '../../../util/Util'
 import { Icon } from '../Icon'
 import withHint, { WithHintProps } from '../../decorators/withHint'
+import { withStyles, WithStylesProps, css } from '../../decorators/withStyles'
+import { MouseEventHandler } from 'react'
 
 export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
 
-export interface ButtonProps extends UtilProps, WithHintProps {
+export interface ButtonProps extends UtilProps, WithHintProps, WithStylesProps {
     className?: string
     dashed?: boolean
     disabled?: boolean
@@ -14,8 +16,8 @@ export interface ButtonProps extends UtilProps, WithHintProps {
     loading?: boolean
     name?: string,
     onClick?: Function
-    onMouseEnter?: Function
-    onMouseLeave?: Function
+    onMouseEnter?: MouseEventHandler<any>
+    onMouseLeave?: MouseEventHandler<any>
     outlined?: boolean
     shadow?: boolean
     size?: string
@@ -29,6 +31,7 @@ export interface ButtonState {
     loading: boolean
 }
 
+@withStyles
 @withHint
 export class Button extends React.Component<ButtonProps, ButtonState> {
 
@@ -36,8 +39,6 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
     constructor(props, context?) {
         super(props, context)
-        this.handleOnKeyPress = this.handleOnKeyPress.bind(this)
-        this.onClick = this.onClick.bind(this)
 
         this.state = {
             loading: false
@@ -45,7 +46,28 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
 
     render() {
-        const classes: string = classnames('button', this.props.className, helpersClassnames(this.props), {
+        const styles = this.props.createStyles(theme => ({
+            button: {
+                borderRadius: 100,
+                cursor: 'pointer',
+                fontSize: 13,
+                fontWeight: 600,
+                height: 34,
+                paddingLeft: 20,
+                paddingRight: 20
+            },
+            primary: {
+                backgroundColor: theme.primary,
+                border: '1px solid' + theme.primary,
+                color: 'white'
+            }
+        }))
+
+        const classes = css(
+            styles.button,
+            this.props.type === 'primary' && styles.primary
+        )
+        classnames('button', this.props.className, helpersClassnames(this.props), {
             'is-grey': this.props.type && this.props.type === 'grey',
             'is-primary': this.props.type && this.props.type === 'primary',
             'is-transparent': this.props.type && this.props.type === 'transparent',
@@ -68,11 +90,12 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
         return (
             <button
-                {...excludeProps(this.props, ...excludedProps) }
                 className={classes}
                 name={this.props.name}
                 onClick={this.onClick}
                 onKeyPress={this.handleOnKeyPress}
+                onMouseEnter={this.props.onMouseEnter}
+                onMouseLeave={this.props.onMouseLeave}
                 tabIndex={this.props.tabIndex}
                 title={this.props.title}
                 type='button'
@@ -83,7 +106,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         )
     }
 
-    private handleOnKeyPress(event) {
+    private handleOnKeyPress = (event) => {
         event.preventDefault()
         if (!event) { event = window.event } // cross-browser shenanigans
         if (event.charCode === 32 || event.charCode === 13 && this.props.onClick) { // this is the spacebar
@@ -97,7 +120,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         this.timeout = -1
     }
 
-    private onClick(event) {
+    private onClick = (event) => {
         if (this.props.onClick) {
 
             const promise = this.props.onClick(event)
@@ -123,14 +146,3 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
 
 }
-
-const excludedProps = [
-    'dashed',
-    'icon',
-    'loading',
-    'outlined',
-    'shadow',
-    'square',
-    'size',
-    'type',
-]

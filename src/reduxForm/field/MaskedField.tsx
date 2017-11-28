@@ -1,7 +1,7 @@
 import * as React from 'react'
 import MaskedInputDefault, * as MaskedInput from 'react-maskedinput'
 import { FormFieldProps } from '../../components/form/FormField'
-import { Field } from '../hoc/Field'
+import { Field } from '../Field'
 
 export interface MaskedFieldProps extends FormFieldProps {
     mask: string

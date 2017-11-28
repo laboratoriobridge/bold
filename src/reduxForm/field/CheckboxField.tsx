@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Checkbox, CheckboxProps } from '../../components/input/Checkbox'
-import { Field } from '../hoc/Field'
+import { Field } from '../Field'
 
 export interface CheckboxFieldProps extends CheckboxProps {
     name: string

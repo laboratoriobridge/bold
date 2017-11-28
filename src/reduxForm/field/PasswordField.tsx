@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { PasswordInputProps, PasswordInput } from '../../components/input/PasswordInput'
-import { Field } from '../hoc/Field'
+import { Field } from '../Field'
 
 export interface PasswordFieldProps extends PasswordInputProps {
     name: string

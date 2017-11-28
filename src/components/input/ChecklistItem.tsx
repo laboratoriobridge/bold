@@ -1,6 +1,6 @@
 import * as React from 'react'
-import * as isUndefined from 'lodash/isUndefined'
-import * as isArray from 'lodash/isArray'
+import isUndefined = require('lodash/isUndefined')
+import isArray = require('lodash/isArray')
 import { CheckboxProps, Checkbox } from './Checkbox'
 import { excludeProps } from '../../util/Util'
 import { List } from 'immutable'

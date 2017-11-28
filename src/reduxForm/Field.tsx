@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ChangeEvent } from 'react'
 import { Field as ReduxFormField } from 'redux-form/immutable'
 import { WrappedFieldProps, EventOrValueHandler, BaseFieldProps } from 'redux-form'
-import { FormField, FormFieldProps } from '../../components/form/FormField'
+import { FormField, FormFieldProps } from '../components/form/FormField'
 
 export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps, 'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
     hasWrapper?: boolean

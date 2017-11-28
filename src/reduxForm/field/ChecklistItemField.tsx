@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { ChecklistItem, ChecklistItemProps } from '../../components/input/ChecklistItem'
-import { Field } from '../hoc/Field'
+import { Field } from '../Field'
 
 export interface ChecklistItemFieldProps extends ChecklistItemProps {
     name: string

@@ -1,4 +1,12 @@
-export { Button } from './components/elements/Button/Button'
+import cssGlobal from './styles/cssGlobal'
+import normalizeCss from './styles/normalizeCss'
+
+cssGlobal(normalizeCss)
+
+export * from './components/decorators/withHint'
+export * from './components/decorators/withStyles'
+
+export * from './components/elements/Button/Button'
 export * from './components/elements/Hint'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'
@@ -54,7 +62,7 @@ export * from './reduxForm/field/RadioField'
 export * from './reduxForm/field/TextAreaField'
 export * from './reduxForm/field/TextField'
 
-export * from './reduxForm/hoc/Field'
+export * from './reduxForm/Field'
 export * from './reduxForm/hoc/Form'
 
 import DateUtil from './util/DateUtil'

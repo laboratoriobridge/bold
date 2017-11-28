@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { TextInputProps, TextInput } from '../../components/input/TextInput'
-import { Field, FieldProps } from '../hoc/Field'
+import { Field, FieldProps } from '../Field'
 import { FormFieldProps } from '../../components/form/FormField'
 
 export interface TextFieldProps extends FormFieldProps, TextInputProps, Pick<FieldProps, 'normalize' | 'parse' | 'format'> {
