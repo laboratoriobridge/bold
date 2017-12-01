@@ -1,6 +1,7 @@
 .*
 **/tsconfig.json
 **/webpack.config.js
+**/stories-addons
 
 node_modules
 src

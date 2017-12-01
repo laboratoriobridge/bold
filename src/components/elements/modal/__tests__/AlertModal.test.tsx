@@ -13,10 +13,10 @@ describe('AlertModal', () => {
         shallowRenderAndMatch(<AlertModalLeave callback={() => undefined} />)
     })
     it('deve renderizar AlertModalSuccess visível', function () {
-        shallowRenderAndMatch(<AlertModalSuccess active={true} title='Sucesso' onOk={() => undefined} onClose={() => undefined}>Descrição</AlertModalSuccess>)
+        shallowRenderAndMatch(<AlertModalSuccess active={true} title='Sucesso' onClose={() => undefined}>Descrição</AlertModalSuccess>)
     })
     it('deve renderizar AlertModalSuccess', function () {
-        shallowRenderAndMatch(<AlertModalSuccess title='Sucesso' onOk={() => undefined} onClose={() => undefined}>Descrição</AlertModalSuccess>)
+        shallowRenderAndMatch(<AlertModalSuccess title='Sucesso' onClose={() => undefined}>Descrição</AlertModalSuccess>)
     })
     it('deve renderizar AlertModalDelete visível', function () {
         shallowRenderAndMatch(<AlertModalDelete active={true} onOk={() => undefined} onClose={() => undefined} />)

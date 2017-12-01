@@ -1,9 +1,8 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { helpersClassnames, UtilProps } from '../../util/Util'
 import { Icon } from '../elements/Icon'
 
-export interface ControlProps extends UtilProps {
+export interface ControlProps {
     className?: string
     icon?: string
     iconRight?: boolean
@@ -13,7 +12,7 @@ export interface ControlProps extends UtilProps {
 export class Control extends React.Component<ControlProps, any> {
 
     render() {
-        const controlClasses = classnames('control', this.props.className, helpersClassnames(this.props), {
+        const controlClasses = classnames('control', this.props.className, {
             'has-icon': this.props.icon !== undefined,
             'has-icon-right': this.props.iconRight
         })

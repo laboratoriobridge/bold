@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as Select from 'react-select'
 import axios from 'axios'
 
-export interface AsyncSelectProps extends Select.ReactAsyncSelectProps {
+export interface AsyncSelectProps extends Partial<Select.ReactAsyncSelectProps> {
     url: string
     value?: any
     pageSize?: number

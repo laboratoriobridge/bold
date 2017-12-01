@@ -13,7 +13,8 @@
     "test:watch": "jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate-prop-types": "babel-node ./tools/generatePropTypes.js"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.16",
@@ -29,6 +30,7 @@
     "@types/lodash": "4.14.85",
     "@types/prop-types": "15.5.2",
     "@types/react": "16.0.25",
+    "@types/react-addons-create-fragment": "0.14.17",
     "@types/react-overlays": "0.6.9",
     "@types/react-redux": "5.0.13",
     "@types/react-router": "4.0.18",
@@ -58,7 +60,9 @@
     "moment": "2.17.1",
     "prop-types": "15.6.0",
     "react": "16.1.1",
+    "react-addons-create-fragment": "15.6.2",
     "react-dom": "16.1.1",
+    "react-docgen-typescript": "1.1.0",
     "react-maskedinput": "4.0.0",
     "react-overlays": "0.8.3",
     "react-redux": "5.0.6",
@@ -70,7 +74,7 @@
     "shx": "0.2.2",
     "ts-jest": "20.0.5",
     "tslint": "5.2.0",
-    "typescript": "2.6.1",
+    "typescript": "2.6.2",
     "webpack": "3.5.5"
   },
   "peerDependencies": {

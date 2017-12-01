@@ -13,10 +13,6 @@ export interface IconProps extends UtilProps {
 
 export class Icon extends React.Component<IconProps, any> {
 
-    static defaultProps: IconProps = {
-        icon: ''
-    }
-
     render() {
         const classes: string = classnames('rnicons', 'rnicons-' + this.props.icon, this.props.className, helpersClassnames(this.props), {
             'is-small': this.props.size && this.props.size === 'small',

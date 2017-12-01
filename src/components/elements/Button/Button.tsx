@@ -1,14 +1,16 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { helpersClassnames, UtilProps } from '../../../util/Util'
 import { Icon } from '../Icon'
-import withHint, { WithHintProps } from '../../decorators/withHint'
-import { withStyles, WithStylesProps, css } from '../../decorators/withStyles'
+import withHint, { WithHintProps } from '../../../decorators/withHint'
+import { withStyles, WithStylesProps, css } from '../../../decorators/withStyles'
 import { MouseEventHandler } from 'react'
 
 export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
 
-export interface ButtonProps extends UtilProps, WithHintProps, WithStylesProps {
+export interface ButtonProps extends WithHintProps, WithStylesProps {
+    /**
+     * css className
+     */
     className?: string
     dashed?: boolean
     disabled?: boolean
@@ -46,7 +48,22 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
     }
 
     render() {
-        const styles = this.props.createStyles(theme => ({
+        const {
+            children,
+            className,
+            createStyles,
+            dashed,
+            icon,
+            loading,
+            outlined,
+            shadow,
+            size,
+            square,
+            type,
+            ...rest
+        } = this.props
+
+        const styles = createStyles(theme => ({
             button: {
                 borderRadius: 100,
                 cursor: 'pointer',
@@ -58,50 +75,46 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             },
             primary: {
                 backgroundColor: theme.primary,
-                border: '1px solid' + theme.primary,
+                border: '1px solid ' + theme.primary,
                 color: 'white'
             }
         }))
 
         const classes = css(
             styles.button,
-            this.props.type === 'primary' && styles.primary
+            type === 'primary' && styles.primary
         )
-        classnames('button', this.props.className, helpersClassnames(this.props), {
-            'is-grey': this.props.type && this.props.type === 'grey',
-            'is-primary': this.props.type && this.props.type === 'primary',
-            'is-transparent': this.props.type && this.props.type === 'transparent',
-            'is-neon': this.props.type && this.props.type === 'neon',
-            'is-success': this.props.type && this.props.type === 'success',
-            'is-danger': this.props.type && this.props.type === 'danger',
-            'is-warning': this.props.type && this.props.type === 'warning',
-            'is-info': this.props.type && this.props.type === 'info',
-            'is-link': this.props.type && this.props.type === 'link',
-            'is-small': this.props.size && this.props.size === 'small',
-            'is-normal': this.props.size && this.props.size === 'normal',
-            'is-medium': this.props.size && this.props.size === 'medium',
-            'is-large': this.props.size && this.props.size === 'large',
-            'is-dashed': this.props.dashed,
-            'is-loading': this.props.loading || this.state.loading,
-            'is-outlined': this.props.outlined,
-            'is-square': this.props.square,
-            'has-shadow': this.props.shadow,
+        classnames('button', className, {
+            'is-grey': type && type === 'grey',
+            'is-primary': type && type === 'primary',
+            'is-transparent': type && type === 'transparent',
+            'is-neon': type && type === 'neon',
+            'is-success': type && type === 'success',
+            'is-danger': type && type === 'danger',
+            'is-warning': type && type === 'warning',
+            'is-info': type && type === 'info',
+            'is-link': type && type === 'link',
+            'is-small': size && size === 'small',
+            'is-normal': size && size === 'normal',
+            'is-medium': size && size === 'medium',
+            'is-large': size && size === 'large',
+            'is-dashed': dashed,
+            'is-loading': loading || this.state.loading,
+            'is-outlined': outlined,
+            'is-square': square,
+            'has-shadow': shadow,
         })
 
         return (
             <button
+                {...rest}
                 className={classes}
-                name={this.props.name}
                 onClick={this.onClick}
                 onKeyPress={this.handleOnKeyPress}
-                onMouseEnter={this.props.onMouseEnter}
-                onMouseLeave={this.props.onMouseLeave}
-                tabIndex={this.props.tabIndex}
-                title={this.props.title}
                 type='button'
             >
-                {this.props.icon && <span className='icon'><Icon icon={this.props.icon} /></span>}
-                {this.props.children && <span>{this.props.children}</span>}
+                {icon && <span className='icon'><Icon icon={icon} /></span>}
+                {children && <span>{children}</span>}
             </button>
         )
     }

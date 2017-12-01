@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Table, TableColumnHeader } from '../Table'
-import { shallowRenderAndMatch, renderAndMatchSnapshot } from '../../../__tests__/test.defaults'
+import { renderAndMatchSnapshot } from '../../../__tests__/test.defaults'
 
 describe('Table', () => {
     it('render empty', () => {

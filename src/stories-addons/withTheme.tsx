@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { RenderFunction, Renderable } from '@storybook/react'
-import { ThemeProvider, Theme } from '../components/decorators/withStyles'
+import { ThemeProvider, Theme } from '../decorators/withStyles'
 import defaultTheme from '../styles/defaultTheme'
 import cssGlobal from '../styles/cssGlobal'
 import normalizeCss from '../styles/normalizeCss'
