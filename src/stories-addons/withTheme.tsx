@@ -1,15 +1,14 @@
 import * as React from 'react'
 import { RenderFunction, Renderable } from '@storybook/react'
-import { ThemeProvider, Theme } from '../decorators/withStyles'
 import defaultTheme from '../styles/defaultTheme'
-import cssGlobal from '../styles/cssGlobal'
-import normalizeCss from '../styles/normalizeCss'
+import ThemeProvider from '../components/style/ThemeProvider'
+import ThemeDefinition from '../components/style/ThemeDefinition'
+import '../styles/initializeDefault'
 
-cssGlobal(normalizeCss)
 
-export const withTheme = (theme: Theme = defaultTheme) => (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
+export const withTheme = (theme: ThemeDefinition = defaultTheme) => (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider themeDef={theme}>
             {story()}
         </ThemeProvider>
     )

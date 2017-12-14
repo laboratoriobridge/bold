@@ -21,7 +21,11 @@ const propTypes: {[key in string]: ComponentDoc} = {`)
         if (a > b) return 1
         return 0
     }).map(file => {
-        if (!file.endsWith('.test.tsx') && !file.endsWith('.snap') && !file.endsWith('.stories.tsx')) {
+        if (!file.endsWith('js')
+            && !file.endsWith('jsx')
+            && !file.endsWith('.test.tsx')
+            && !file.endsWith('.snap')
+            && !file.endsWith('.stories.tsx')) {
             parse(file).map(doc => {
                 if (doc.displayName.substring(0, 1) !== doc.displayName.substring(0, 1).toLowerCase()) { // ignora funções encontradas
                     writeStream.write(`

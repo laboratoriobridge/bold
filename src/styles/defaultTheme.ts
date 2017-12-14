@@ -1,7 +1,8 @@
-import { Theme } from '../decorators/withStyles'
+import ThemeDefinition from '../components/style/ThemeDefinition'
 
-const defaultTheme: Theme = {
-    primary: '#438ccc'
+const defaultTheme: ThemeDefinition = {
+    primary: '#1e98ff',
+    white: '#ffffff'
 }
 
 export default defaultTheme

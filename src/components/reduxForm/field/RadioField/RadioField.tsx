@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { RadioButtonProps, RadioButton } from '../../input/RadioButton'
-import { Field } from '../Field'
+import { RadioButtonProps, RadioButton } from '../../../input/RadioButton'
+import { Field } from '../../Field'
 
 export interface RadioFieldProps extends RadioButtonProps {
     name: string

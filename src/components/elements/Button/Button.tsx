@@ -2,28 +2,25 @@ import * as React from 'react'
 import * as classnames from 'classnames'
 import { Icon } from '../Icon'
 import withHint, { WithHintProps } from '../../../decorators/withHint'
-import { withStyles, WithStylesProps, css } from '../../../decorators/withStyles'
+import withStyles, { WithStylesProps, css } from '../../../decorators/withStyles'
 import { MouseEventHandler } from 'react'
 
-export type Type = 'success' | 'grey' | 'primary' | 'transparent' | 'neon' | 'danger' | 'warning' | 'info' | 'link'
+export type Type = 'normal' | 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'link'
 
 export interface ButtonProps extends WithHintProps, WithStylesProps {
     /**
      * css className
      */
     className?: string
-    dashed?: boolean
     disabled?: boolean
     icon?: string
+    label: string
     loading?: boolean
     name?: string,
     onClick?: Function
     onMouseEnter?: MouseEventHandler<any>
     onMouseLeave?: MouseEventHandler<any>
-    outlined?: boolean
-    shadow?: boolean
     size?: string
-    square?: boolean
     tabIndex?: number
     title?: string
     type?: Type
@@ -38,6 +35,9 @@ export interface ButtonState {
 export class Button extends React.Component<ButtonProps, ButtonState> {
 
     private timeout: number
+    static defaultProps: Partial<ButtonProps> = {
+        type: 'normal'
+    }
 
     constructor(props, context?) {
         super(props, context)
@@ -49,34 +49,45 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
     render() {
         const {
-            children,
+            label,
             className,
             createStyles,
-            dashed,
             icon,
             loading,
-            outlined,
-            shadow,
             size,
-            square,
             type,
             ...rest
         } = this.props
 
         const styles = createStyles(theme => ({
             button: {
-                borderRadius: 100,
+                backgroundColor: theme.white,
+                border: '1px solid ' + theme.gray3,
+                borderRadius: 2,
+                color: theme.gray5,
                 cursor: 'pointer',
-                fontSize: 13,
-                fontWeight: 600,
-                height: 34,
-                paddingLeft: 20,
-                paddingRight: 20
+                fontSize: 12,
+                fontWeight: 'bold',
+                height: 48,
+                lineHeight: 1.58,
+                letterSpacing: 1,
+                paddingLeft: 40,
+                paddingRight: 40,
+                ':active': {
+                    boxShadow: 'inset 0 2px 8px 0 ' + theme.gray1,
+                },
+                ':disabled': {
+                    opacity: 0.5
+                },
+                ':focus': {
+                    border: '1px solid ' + theme.primary,
+                    outline: 'none'
+                },
             },
             primary: {
                 backgroundColor: theme.primary,
                 border: '1px solid ' + theme.primary,
-                color: 'white'
+                color: theme.white
             }
         }))
 
@@ -85,10 +96,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             type === 'primary' && styles.primary
         )
         classnames('button', className, {
-            'is-grey': type && type === 'grey',
             'is-primary': type && type === 'primary',
-            'is-transparent': type && type === 'transparent',
-            'is-neon': type && type === 'neon',
             'is-success': type && type === 'success',
             'is-danger': type && type === 'danger',
             'is-warning': type && type === 'warning',
@@ -98,11 +106,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             'is-normal': size && size === 'normal',
             'is-medium': size && size === 'medium',
             'is-large': size && size === 'large',
-            'is-dashed': dashed,
             'is-loading': loading || this.state.loading,
-            'is-outlined': outlined,
-            'is-square': square,
-            'has-shadow': shadow,
         })
 
         return (
@@ -114,7 +118,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 type='button'
             >
                 {icon && <span className='icon'><Icon icon={icon} /></span>}
-                {children && <span>{children}</span>}
+                {label && <span>{label}</span>}
             </button>
         )
     }

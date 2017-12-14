@@ -1,7 +1,4 @@
-import cssGlobal from './styles/cssGlobal'
-import normalizeCss from './styles/normalizeCss'
-
-cssGlobal(normalizeCss)
+import './styles/initializeDefault'
 
 export * from './decorators/withHint'
 export * from './decorators/withStyles'
@@ -23,13 +20,12 @@ export * from './components/elements/modal/AlertModal'
 export * from './components/elements/modal/AlertModalButtonBar'
 export * from './components/elements/modal/AlertModalContent'
 
-export * from './components/form/Control'
 export * from './components/form/ErrorIndicator'
 export * from './components/form/FormField'
 export * from './components/form/FormLabel'
 
 export * from './components/input/AsyncSelect'
-export * from './components/input/Checkbox'
+export * from './components/input/Checkbox/Checkbox'
 export * from './components/input/ChecklistItem'
 export * from './components/input/Input'
 export * from './components/input/PasswordInput'
@@ -48,7 +44,7 @@ export * from './components/reactRouter/Breadcrumb'
 export * from './components/reactRouter/CrumbRoute'
 
 export * from './components/reduxForm/field/AlfaNumberField'
-export * from './components/reduxForm/field/CheckboxField'
+export * from './components/reduxForm/field/CheckboxField/CheckboxField'
 export * from './components/reduxForm/field/ChecklistItemField'
 export { DecimalField, DecimalFieldProps } from './components/reduxForm/field/DecimalField'
 export { EmailField, EmailFieldProps } from './components/reduxForm/field/EmailField'
@@ -58,12 +54,12 @@ export * from './components/reduxForm/field/MaskedField'
 export { NumberField, NumberFieldProps } from './components/reduxForm/field/NumberField'
 export * from './components/reduxForm/field/PasswordField'
 export { PriceField, PriceFieldProps } from './components/reduxForm/field/PriceField'
-export * from './components/reduxForm/field/RadioField'
+export * from './components/reduxForm/field/RadioField/RadioField'
 export * from './components/reduxForm/field/TextAreaField'
 export * from './components/reduxForm/field/TextField/TextField'
 
 export * from './components/reduxForm/Field'
-export * from './components/reduxForm/hoc/Form'
+export * from './components/reduxForm/Form'
 
 import DateUtil from './util/DateUtil'
 import NumberUtil from './util/NumberUtil'

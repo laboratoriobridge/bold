@@ -3,7 +3,7 @@ import { Prompt } from 'react-router-dom'
 import { ConfigProps as ReduxFormConfigProps, InjectedFormProps as InjectedFormProps, DecoratedComponentClass } from 'redux-form'
 import { reduxForm, SubmissionError } from 'redux-form/immutable'
 import ui, { ReduxUIProps } from 'redux-ui'
-import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
+import { AlertModalError, AlertModalSuccess } from '../elements/modal/AlertModal'
 
 export interface FormModalProps {
     active?: boolean

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import isUndefined = require('lodash/isUndefined')
 import isArray = require('lodash/isArray')
-import { CheckboxProps, Checkbox } from './Checkbox'
-import { excludeProps } from '../../util/Util'
+import { CheckboxProps, Checkbox } from './Checkbox/Checkbox'
 import { List } from 'immutable'
 
 export interface ChecklistItemProps extends CheckboxProps {
@@ -47,12 +46,12 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
     }
 
     render() {
-        const { optionValue } = this.props
+        const { optionValue, ...rest } = this.props
         const values = this.getCurrentValues()
 
         const isChecked = values.indexOf(optionValue) > -1
         return (
-            <Checkbox {...excludeProps(this.props, ...excludedProps) }
+            <Checkbox {...rest }
                 onChange={this.handleChange}
                 checked={isChecked}
                 onBlur={() => { }}
@@ -60,7 +59,3 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
         )
     }
 }
-
-const excludedProps = [
-    'optionValue'
-]

@@ -66,7 +66,7 @@ export const AlertModalError: React.SFC<AlertModalErrorProps> = (props) => {
                 {props.children}
             </AlertModalContent>
             <AlertModalButtonBar>
-                <Button type='primary' size='medium' onClick={props.onClose}>OK</Button>
+                <Button type='primary' size='medium' onClick={props.onClose} label='OK' />
             </AlertModalButtonBar>
         </AlertModal>
     )
@@ -117,11 +117,13 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
                 <AlertModalButtonBar >
                     <Button
                         size='medium'
-                        onClick={this.onCancel}>Cancelar</Button>
+                        onClick={this.onCancel}
+                        label='Cancelar' />
                     <Button
                         type='primary'
                         size='medium'
-                        onClick={this.onLeave}>Sair</Button>
+                        onClick={this.onLeave}
+                        label='Sair' />
                 </AlertModalButtonBar>
             </AlertModal>
         )
@@ -148,7 +150,8 @@ export const AlertModalSuccess: React.SFC<AlertModalSuccessProps> = (props) => {
                 <Button
                     type='success'
                     size='medium'
-                    onClick={props.onClose}>OK</Button>
+                    onClick={props.onClose}
+                    label='OK' />
             </AlertModalButtonBar>
         </AlertModal>
     )
@@ -183,8 +186,8 @@ export const AlertModalConfirmacao: React.SFC<AlertModalConfirmacaoProps> = (pro
                 {props.children}
             </AlertModalContent>
             <AlertModalButtonBar>
-                <Button size='medium' onClick={props.onClose}>Cancelar</Button>
-                <Button type='primary' size='medium' onClick={props.onOk}>Confirmar</Button>
+                <Button size='medium' onClick={props.onClose} label='Cancelar' />
+                <Button type='primary' size='medium' onClick={props.onOk} label='Confirmar' />
             </AlertModalButtonBar>
         </AlertModal>
     )

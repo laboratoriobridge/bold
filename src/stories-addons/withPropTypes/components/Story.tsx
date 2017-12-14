@@ -2,6 +2,7 @@ import * as React from 'react'
 import PropTable from './PropTable'
 import Node from './Node'
 import Pre from './markdown/Pre'
+import marksy from 'marksy'
 
 const baseFonts = {
     fontFamily:
@@ -52,7 +53,6 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
         padding: '20px 40px 40px',
         borderRadius: '2px',
         backgroundColor: '#fff',
-        marginTop: '50px',
     },
     infoContent: {
         marginBottom: 0,
@@ -64,7 +64,7 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
     },
     header: {
         h1: {
-            margin: 0,
+            marginTop: '10px',
             padding: 0,
             fontSize: '35px',
         },
@@ -76,8 +76,7 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
         },
         body: {
             borderBottom: '1px solid #eee',
-            paddingTop: 10,
-            marginBottom: 10,
+            marginBottom: '10px',
         },
     },
     source: {
@@ -94,6 +93,8 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
 }
 
 interface StoryProps {
+    context: { kind: string, story: string }
+    info?: string
     maxPropsIntoLine: number,
     maxPropObjectKeys: number,
     maxPropArrayLength: number,
@@ -101,9 +102,47 @@ interface StoryProps {
 }
 
 export default class Story extends React.PureComponent<StoryProps> {
+    private marksy: (content: any, ...args: any[]) => { [x: string]: any; tree: any; toc: any; }
+
+    constructor(props, context) {
+        super(props, context)
+
+        this.marksy = marksy({ createElement: React.createElement })
+    }
+
+    private renderInlineHeader() {
+        if (!this.props.context) {
+            return null
+        }
+
+        return (
+            <div style={stylesheet.header.body}>
+                <h1 style={stylesheet.header.h1}>{this.props.context.kind}</h1>
+                <h2 style={stylesheet.header.h2}>{this.props.context.story}</h2>
+            </div>
+        )
+    }
 
     private renderStory() {
         return <div style={stylesheet.infoStory}>{this.props.children}</div>
+    }
+
+    private renderInfoContent() {
+        if (!this.props.info) {
+            return ''
+        }
+
+        const lines = this.props.info.split('\n')
+        while (lines[0].trim() === '') {
+            lines.shift()
+        }
+        let padding = 0
+        const matches = lines[0].match(/^ */)
+        if (matches) {
+            padding = matches[0].length
+        }
+        const source = lines.map(s => s.slice(padding)).join('\n')
+        return <div style={stylesheet.infoContent}>{this.marksy(source).tree}</div>
     }
 
     private renderSourceCode() {
@@ -154,12 +193,17 @@ export default class Story extends React.PureComponent<StoryProps> {
 
         extract(this.props.children)
 
-        const propTables = Array.from(types.keys()).map(type => (
-            <div key={type.displayName || type.name}>
-                <h2 style={stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
-                <PropTable key={type.displayName || type.name} type={type.displayName || type.name} />
-            </div>
-        ))
+        const propTables = Array.from(types.keys()).map(type => {
+            if (!type.displayName && !type.name) {
+                return null
+            }
+            return (
+                <div key={type.displayName || type.name}>
+                    <h2 style={stylesheet.propTableHead}>"{type.displayName || type.name}" Component</h2>
+                    <PropTable key={type.displayName || type.name} type={type.displayName || type.name} />
+                </div>
+            )
+        })
 
         if (!propTables || propTables.length === 0) {
             return null
@@ -175,12 +219,12 @@ export default class Story extends React.PureComponent<StoryProps> {
 
     render() {
         return (
-            <div>
+            <div style={stylesheet.infoBody}>
+                {this.renderInlineHeader()}
                 {this.renderStory()}
-                <div style={stylesheet.infoBody}>
-                    {this.renderSourceCode()}
-                    {this.renderPropTables()}
-                </div>
+                {this.renderInfoContent()}
+                {this.renderSourceCode()}
+                {this.renderPropTables()}
             </div>
         )
     }

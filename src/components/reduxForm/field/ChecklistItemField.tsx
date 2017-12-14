@@ -9,13 +9,15 @@ export interface ChecklistItemFieldProps extends ChecklistItemProps {
 export class ChecklistItemField extends React.Component<ChecklistItemFieldProps, any> {
 
     render() {
+        const { label, ...rest } = this.props
         return (
             <Field
-                {...this.props}
+                {...rest}
                 hasWrapper={false}
                 render={props =>
                     <ChecklistItem
-                        {...this.props}
+                        label={label}
+                        {...rest}
                         {...props.input}
                     />
                 }

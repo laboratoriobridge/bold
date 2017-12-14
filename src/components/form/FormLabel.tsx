@@ -7,10 +7,9 @@ export interface FormLabelProps {
     error?: any
     label?: string
     required?: boolean
-    disabled?: boolean
 }
 
-export class FormLabel extends React.Component<FormLabelProps, any> {
+export class FormLabel extends React.Component<FormLabelProps> {
 
     render() {
         const errorIndicator = (
@@ -22,11 +21,13 @@ export class FormLabel extends React.Component<FormLabelProps, any> {
         )
 
         return (
-            <Label disabled={this.props.disabled}>
+            <Label value={
+                <>
                 <span>{this.props.label}</span>
                 {fieldRequired}
                 {errorIndicator}
-            </Label>
+                </>
+            } />
         )
     }
 

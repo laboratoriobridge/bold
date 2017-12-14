@@ -21,7 +21,9 @@ module.exports = {
         loader: 'awesome-typescript-loader',
         exclude: /node_modules/,
         include: [SRC_PATH]
-      }
+      },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
     ],
   },
 }

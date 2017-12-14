@@ -7,9 +7,11 @@ import Story from './components/Story'
  * @param story
  * @param context
  */
-export const withPropTypes = (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
+export const withPropTypes = (info?: string) => (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
     return (
         <Story
+            context={context}
+            info={info}
             maxPropsIntoLine={3}
             maxPropObjectKeys={3}
             maxPropArrayLength={3}

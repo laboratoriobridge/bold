@@ -17,7 +17,8 @@
     "jsx": "react"
   },
   "files": [
-    "src/index.ts"
+    "src/index.ts",
+    "typings/imports.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

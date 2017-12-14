@@ -1,20 +1,24 @@
 import * as React from 'react'
-import { PublicInputProps, Input } from './Input'
-import withStyles, { WithStylesProps, css } from '../../decorators/withStyles'
+import { WrappedFieldInputProps } from 'redux-form'
+import { Input } from '../Input'
+import withStyles, { WithStylesProps, css } from '../../../decorators/withStyles'
 
-export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
-    label: string
+
+export interface CheckboxProps extends Partial<WrappedFieldInputProps>, WithStylesProps {
+    checked?: boolean
+    disabled?: boolean
+    label: React.ReactNode
 }
 
 @withStyles
-export class RadioButton extends React.Component<RadioButtonProps, any> {
+export class Checkbox extends React.Component<CheckboxProps, any> {
 
     render() {
         const checkStyles = this.props.createStyles(theme => ({
             check: {
-                backgroundColor: '#fff',
-                border: '1px solid #C8CCD4',
-                borderRadius: 100,
+                backgroundColor: theme.white,
+                border: '1px solid ' + theme.gray3,
+                borderRadius: 2,
                 display: 'inline-block',
                 height: 14,
                 position: 'relative',
@@ -22,22 +26,21 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 verticalAlign: 'middle',
                 width: 14,
                 ':after': {
-                    backgroundColor: '#fff',
-                    border: '2px solid white',
-                    borderRadius: 100,
+                    borderRight: '2px solid ' + theme.white,
+                    borderBottom: '2px solid ' + theme.white,
                     content: '""',
-                    display: 'block',
-                    height: 2,
-                    marginLeft: 4,
-                    marginTop: 4,
+                    height: 8,
+                    left: 4,
                     opacity: 0,
-                    textAlign: 'center',
+                    position: 'absolute',
+                    top: 1,
                     transition: 'all .2s ease',
-                    width: 2,
+                    transform: 'rotate(45deg) scale(1)',
+                    width: 4,
                 }
             },
             label: {
-                color: '#4d4d4d',
+                color: theme.gray7,
                 fontSize: 12,
                 marginLeft: 10,
                 verticalAlign: 'middle'
@@ -48,30 +51,33 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         const labelClasses = css(checkStyles.label)
 
         const styles = this.props.createStyles(theme => ({
-            radio: {
+            checkbox: {
                 cursor: 'pointer',
+            },
+            checkboxDisabled: {
+                cursor: 'not-allowed'
             },
             input: {
                 display: 'none',
                 [`&:hover + .${checkClasses}`]: {
-                    borderColor: '#808080',
+                    borderColor: theme.gray4,
                 },
                 [`&:checked + .${checkClasses}`]: {
-                    backgroundColor: '#1e98ff',
-                    borderColor: '#1e98ff',
+                    backgroundColor: theme.primary,
+                    borderColor: theme.primary,
                     ':after': {
                         opacity: 1
                     }
                 },
                 [`&:focus + .${checkClasses}`]: {
-                    borderColor: '#1e98ff',
+                    borderColor: theme.primary,
                 },
                 [`&:disabled + .${checkClasses}`]: {
                     backgroundColor: '#f2f2f7',
-                    borderColor: '#e6e6e6',
+                    borderColor: theme.gray1,
                 },
                 [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                    color: '#b3b3b3',
+                    color: theme.gray3,
                 }
             }
         }))
@@ -79,10 +85,10 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         const { label, ...rest } = this.props
 
         return (
-            <label className={css(styles.radio)}>
-                <Input {...rest} type='radio' className={css(styles.input)} />
+            <label className={css(styles.checkbox, this.props.disabled && styles.checkboxDisabled)} >
+                <Input {...rest} type='checkbox' className={css(styles.input)} />
                 <span className={checkClasses}></span>
-                <span className={labelClasses}>{label}</span>
+                <span className={labelClasses}>{this.props.label}</span>
             </label>
         )
     }
