@@ -16,9 +16,9 @@ storiesOf('RadioField', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())
-    .add('playground', () =>
+    .add('playground', () => (
         <div>
             <RadioField name='radio1' label={text('label', 'Component label')} value='1' disabled={boolean('disabled', false)} />
             <RadioField name='radio1' label={text('label', 'Component label')} value='2' disabled={boolean('disabled', false)} />
         </div>
-    )
+    ))

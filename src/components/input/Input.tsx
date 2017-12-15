@@ -55,7 +55,7 @@ export class Input extends React.Component<InputProps, any> {
     const classes = classnames('input', this.props.className, helpersClassnames(this.props))
 
     return (
-      <input ref={this.ref} {...extractProps(this.props, ...propsToKeep) } className={classes} />
+      <input ref={this.ref} {...extractProps(this.props, ...propsToKeep)} className={classes} />
     )
   }
 

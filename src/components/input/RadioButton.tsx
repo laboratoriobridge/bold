@@ -81,7 +81,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         return (
             <label className={css(styles.radio)}>
                 <Input {...rest} type='radio' className={css(styles.input)} />
-                <span className={checkClasses}></span>
+                <span className={checkClasses} />
                 <span className={labelClasses}>{label}</span>
             </label>
         )

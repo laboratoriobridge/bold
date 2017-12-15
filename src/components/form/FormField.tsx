@@ -13,7 +13,7 @@ export class FormField extends React.Component<FormFieldProps, any> {
 
         return (
             <div title={title} data-name={name}>
-                {this.props.label && <FormLabel {...rest } />}
+                {this.props.label && <FormLabel {...rest} />}
                 <div>
                     {children}
                 </div>

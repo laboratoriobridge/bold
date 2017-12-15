@@ -26,10 +26,10 @@ storiesOf('Components', module)
     `))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
-    .add('Button', () =>
+    .add('Button', () => (
         <Button
             disabled={boolean('disabled', false)}
             type={select('type', typeOptions, 'normal')}
             label={text('label', 'BUTTON')}
         />
-    )
+    ))

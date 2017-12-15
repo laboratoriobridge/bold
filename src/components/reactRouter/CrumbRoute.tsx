@@ -24,13 +24,15 @@ export class CrumbRoute extends React.PureComponent<CrumbRouteProps> {
                 location={location}
                 path={path}
                 strict={strict}
-                render={routeProps => (
-                    <Breadcrumb {...rest}>
-                        {Component ? <Component { ...routeProps } /> : render(routeProps)}
-                    </Breadcrumb>
-                )}
+                render={this.renderBreadcrumb(rest)}
             />
         )
     }
+
+    private renderBreadcrumb = (props: BreadcrumbProps) => (routeProps) => (
+        <Breadcrumb {...props}>
+            {this.props.component ? <this.props.component {...routeProps} /> : this.props.render(routeProps)}
+        </Breadcrumb>
+    )
 
 }

@@ -87,7 +87,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         return (
             <label className={css(styles.checkbox, this.props.disabled && styles.checkboxDisabled)} >
                 <Input {...rest} type='checkbox' className={css(styles.input)} />
-                <span className={checkClasses}></span>
+                <span className={checkClasses} />
                 <span className={labelClasses}>{this.props.label}</span>
             </label>
         )

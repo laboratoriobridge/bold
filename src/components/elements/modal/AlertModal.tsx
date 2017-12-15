@@ -61,12 +61,12 @@ export interface AlertModalErrorProps {
 export const AlertModalError: React.SFC<AlertModalErrorProps> = (props) => {
 
     return (
-        <AlertModal active={props.active} icon={props.icon} error>
+        <AlertModal active={props.active} icon={props.icon} error={true}>
             <AlertModalContent title={props.title}>
                 {props.children}
             </AlertModalContent>
             <AlertModalButtonBar>
-                <Button type='primary' size='medium' onClick={props.onClose} label='OK' />
+                <Button type='primary' onClick={props.onClose} label='OK' />
             </AlertModalButtonBar>
         </AlertModal>
     )
@@ -110,20 +110,20 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
 
     render() {
         return (
-            <AlertModal active={this.state.active} info>
+            <AlertModal active={this.state.active} info={true}>
                 <AlertModalContent title='Deseja sair?'>
                     Você preencheu alguns dados, se você sair agora esses dados serão perdidos. Tem certeza que deseja sair?
                 </AlertModalContent>
                 <AlertModalButtonBar >
                     <Button
-                        size='medium'
                         onClick={this.onCancel}
-                        label='Cancelar' />
+                        label='Cancelar'
+                    />
                     <Button
                         type='primary'
-                        size='medium'
                         onClick={this.onLeave}
-                        label='Sair' />
+                        label='Sair'
+                    />
                 </AlertModalButtonBar>
             </AlertModal>
         )
@@ -141,7 +141,7 @@ export interface AlertModalSuccessProps {
 
 export const AlertModalSuccess: React.SFC<AlertModalSuccessProps> = (props) => {
     return (
-        <AlertModal active={props.active} icon={props.icon} success>
+        <AlertModal active={props.active} icon={props.icon} success={true}>
             <AlertModalContent title={props.title}>
                 {props.children}
             </AlertModalContent>
@@ -149,9 +149,9 @@ export const AlertModalSuccess: React.SFC<AlertModalSuccessProps> = (props) => {
                 <Linha />
                 <Button
                     type='success'
-                    size='medium'
                     onClick={props.onClose}
-                    label='OK' />
+                    label='OK'
+                />
             </AlertModalButtonBar>
         </AlertModal>
     )
@@ -181,13 +181,13 @@ export interface AlertModalConfirmacaoProps {
 
 export const AlertModalConfirmacao: React.SFC<AlertModalConfirmacaoProps> = (props) => {
     return (
-        <AlertModal active={props.active} icon={props.icon} info>
+        <AlertModal active={props.active} icon={props.icon} info={true}>
             <AlertModalContent title={props.title}>
                 {props.children}
             </AlertModalContent>
             <AlertModalButtonBar>
-                <Button size='medium' onClick={props.onClose} label='Cancelar' />
-                <Button type='primary' size='medium' onClick={props.onOk} label='Confirmar' />
+                <Button onClick={props.onClose} label='Cancelar' />
+                <Button type='primary' onClick={props.onOk} label='Confirmar' />
             </AlertModalButtonBar>
         </AlertModal>
     )

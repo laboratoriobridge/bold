@@ -18,10 +18,10 @@ storiesOf('Components', module)
     `))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
-    .add('Checkbox', () =>
+    .add('Checkbox', () => (
         <Checkbox
             name='check'
             disabled={boolean('disabled', false)}
             label={text('label', 'Component label')}
         />
-    )
+    ))

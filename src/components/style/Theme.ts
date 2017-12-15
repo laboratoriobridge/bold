@@ -1,3 +1,5 @@
+export type Color = 'primary' | 'white' | 'gray1' | 'gray2' | 'gray3' | 'gray4' | 'gray5' | 'gray6' | 'gray7' | 'gray8' | 'gray9'
+
 export default interface Theme {
     primary: string
     white: string

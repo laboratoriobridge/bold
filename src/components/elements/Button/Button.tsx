@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as classnames from 'classnames'
 import { Icon } from '../Icon'
 import withHint, { WithHintProps } from '../../../decorators/withHint'
 import withStyles, { WithStylesProps, css } from '../../../decorators/withStyles'
@@ -20,7 +19,6 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
     onClick?: Function
     onMouseEnter?: MouseEventHandler<any>
     onMouseLeave?: MouseEventHandler<any>
-    size?: string
     tabIndex?: number
     title?: string
     type?: Type
@@ -54,7 +52,6 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             createStyles,
             icon,
             loading,
-            size,
             type,
             ...rest
         } = this.props
@@ -66,13 +63,11 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 borderRadius: 2,
                 color: theme.gray5,
                 cursor: 'pointer',
-                fontSize: 12,
+                fontSize: '0.75rem',
                 fontWeight: 'bold',
-                height: 48,
                 lineHeight: 1.58,
                 letterSpacing: 1,
-                paddingLeft: 40,
-                paddingRight: 40,
+                padding: '0.85rem 2.5rem',
                 ':active': {
                     boxShadow: 'inset 0 2px 8px 0 ' + theme.gray1,
                 },
@@ -95,19 +90,6 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             styles.button,
             type === 'primary' && styles.primary
         )
-        classnames('button', className, {
-            'is-primary': type && type === 'primary',
-            'is-success': type && type === 'success',
-            'is-danger': type && type === 'danger',
-            'is-warning': type && type === 'warning',
-            'is-info': type && type === 'info',
-            'is-link': type && type === 'link',
-            'is-small': size && size === 'small',
-            'is-normal': size && size === 'normal',
-            'is-medium': size && size === 'medium',
-            'is-large': size && size === 'large',
-            'is-loading': loading || this.state.loading,
-        })
 
         return (
             <button

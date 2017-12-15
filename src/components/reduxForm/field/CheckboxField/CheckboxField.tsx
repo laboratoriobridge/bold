@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Checkbox, CheckboxProps } from '../../../input/Checkbox/Checkbox'
 import { Field } from '../../Field'
+import { WrappedFieldProps } from 'redux-form'
 
 export interface CheckboxFieldProps extends CheckboxProps {
     name: string
@@ -10,23 +11,25 @@ export interface CheckboxFieldProps extends CheckboxProps {
 export class CheckboxField extends React.Component<CheckboxFieldProps> {
 
     render() {
-        const { label, ...rest } = this.props
         return (
             <Field
-                {...rest}
+                {...this.props}
                 type='checkbox'
                 hasWrapper={false}
                 // normalize resolve a issue: https://github.com/erikras/redux-form/issues/2922
-                normalize={v => !!v}
-                render={props =>
-                    <Checkbox
-                        label={label}
-                        {...rest}
-                        {...props.input}
-                    />
-                }
+                normalize={this.normalize}
+                render={this.renderCheck}
             />
         )
     }
+
+    private renderCheck = (props: WrappedFieldProps) => (
+        <Checkbox
+            {...this.props}
+            {...props.input}
+        />
+    )
+
+    private normalize = (value) => !!value
 
 }

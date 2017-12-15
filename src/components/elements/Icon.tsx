@@ -22,7 +22,7 @@ export class Icon extends React.Component<IconProps, any> {
             'is-12px': this.props.size && this.props.size === 'is-12px'
         })
         return (
-            <i {...excludeProps(this.props, ...excludedProps) } title={this.props.title} className={classes}></i>
+            <i {...excludeProps(this.props, ...excludedProps)} title={this.props.title} className={classes} />
         )
     }
 

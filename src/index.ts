@@ -1,5 +1,3 @@
-import './styles/initializeDefault'
-
 export * from './decorators/withHint'
 export * from './decorators/withStyles'
 

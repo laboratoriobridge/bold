@@ -5,7 +5,7 @@ import { Label } from '../elements/Label'
 
 export interface FormLabelProps {
     error?: any
-    label?: string
+    label?: React.ReactNode
     required?: boolean
 }
 
@@ -20,14 +20,15 @@ export class FormLabel extends React.Component<FormLabelProps> {
             this.props.required && !this.props.error && <Icon className='field-required' size='small' icon='obrigatorio' />
         )
 
+        const label =
+            <>
+            <span>{this.props.label}</span>
+            {fieldRequired}
+            {errorIndicator}
+            </>
+
         return (
-            <Label value={
-                <>
-                <span>{this.props.label}</span>
-                {fieldRequired}
-                {errorIndicator}
-                </>
-            } />
+            <Label value={label} />
         )
     }
 

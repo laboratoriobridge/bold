@@ -20,10 +20,10 @@ storiesOf('Form', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())
-    .add('CheckboxField', () =>
+    .add('CheckboxField', () => (
         <CheckboxField
             name='check'
             disabled={boolean('disabled', false)}
             label={text('label', 'Component label')}
         />
-    )
+    ))

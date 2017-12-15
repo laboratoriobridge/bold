@@ -4,6 +4,7 @@ import defaultTheme from '../../styles/defaultTheme'
 import ThemeDefinition from './ThemeDefinition'
 import createTheme from './createTheme'
 import Theme from './Theme'
+import initializeDefault from '../../styles/initializeDefault'
 
 export interface ThemeProviderProps {
     themeDef?: ThemeDefinition
@@ -24,6 +25,7 @@ export default class ThemeProvider extends React.PureComponent<ThemeProviderProp
     constructor(props, context) {
         super(props, context)
         this.theme = createTheme(props.themeDef)
+        initializeDefault(this.theme)
     }
 
     getChildContext() {

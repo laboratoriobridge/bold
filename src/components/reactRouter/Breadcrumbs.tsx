@@ -38,13 +38,14 @@ export class Breadcrumbs extends React.PureComponent<BreadcrumbsProps> {
 
         const crumbs = Store.getState().crumbs
 
+        const items = crumbs
+            .sort((a, b) => a.match.path.length - b.match.path.length)
+            .map((crumb, i, arr) => this.renderItem(crumb, i === arr.length - 1))
+
         return (
             <div className='breadcrumbs'>
                 <Wrapper>
-                    {crumbs
-                        .sort((a, b) => a.match.path.length - b.match.path.length)
-                        .map((crumb, i, arr) => this.renderItem(crumb, i === arr.length - 1))
-                    }
+                    {items}
                 </Wrapper>
             </div>
         )
@@ -55,13 +56,14 @@ export class Breadcrumbs extends React.PureComponent<BreadcrumbsProps> {
             crumb.icon && <Icon key='icon' icon={crumb.icon} />,
             crumb.title
         ])
+
+        const itemBody = active ?
+            <a>{breadcrumbItem}</a> :
+            <Link to={crumb.match.url}>{breadcrumbItem}</Link>
+
         return (
             <li key={crumb.id} className={active ? 'breadcrumb-active' : undefined}>
-                {
-                    active ?
-                        <a>{breadcrumbItem}</a> :
-                        <Link to={crumb.match.url}>{breadcrumbItem}</Link>
-                }
+                {itemBody}
             </li>
         )
 

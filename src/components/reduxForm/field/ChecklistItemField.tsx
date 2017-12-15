@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { ChecklistItem, ChecklistItemProps } from '../../input/ChecklistItem'
 import { Field } from '../Field'
+import { WrappedFieldProps } from 'redux-form'
 
 export interface ChecklistItemFieldProps extends ChecklistItemProps {
     name: string
@@ -9,20 +10,20 @@ export interface ChecklistItemFieldProps extends ChecklistItemProps {
 export class ChecklistItemField extends React.Component<ChecklistItemFieldProps, any> {
 
     render() {
-        const { label, ...rest } = this.props
         return (
             <Field
-                {...rest}
+                {...this.props}
                 hasWrapper={false}
-                render={props =>
-                    <ChecklistItem
-                        label={label}
-                        {...rest}
-                        {...props.input}
-                    />
-                }
+                render={this.renderCheck}
             />
         )
     }
+
+    private renderCheck = (props: WrappedFieldProps) => (
+        <ChecklistItem
+            {...this.props}
+            {...props.input}
+        />
+    )
 
 }

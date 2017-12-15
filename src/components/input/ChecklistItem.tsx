@@ -51,11 +51,15 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
 
         const isChecked = values.indexOf(optionValue) > -1
         return (
-            <Checkbox {...rest }
+            <Checkbox
+                {...rest}
                 onChange={this.handleChange}
                 checked={isChecked}
-                onBlur={() => { }}
-                value={optionValue} />
+                onBlur={this.onBlur}
+                value={optionValue}
+            />
         )
     }
+
+    private onBlur = () => { }
 }

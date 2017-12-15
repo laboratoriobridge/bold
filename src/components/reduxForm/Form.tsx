@@ -101,12 +101,7 @@ export class Form extends React.Component<FormProps> {
                     onSubmit={this.onSubmit}
                     onSubmitFail={this.onSubmitFail}
                     onSubmitSuccess={this.onSubmitSuccess}
-                    render={props => (
-                        <div className='is-full-height is-vertical-flow'>
-                            <Prompt when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded} message='mensagem não usada' />
-                            {this.props.render(props)}
-                        </div>
-                    )}
+                    render={this.renderForm}
                 />
                 <ErrorModal
                     active={this.props.ui.modalErrorActive}
@@ -129,6 +124,13 @@ export class Form extends React.Component<FormProps> {
             </div>
         )
     }
+
+    private renderForm = (props: FormComponentProps) => (
+        <div className='is-full-height is-vertical-flow'>
+            <Prompt when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded} message='mensagem não usada' />
+            {this.props.render(props)}
+        </div>
+    )
 
     private onSubmit = (values) => {
         const result = this.props.onSubmit(values)
