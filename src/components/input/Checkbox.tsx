@@ -9,6 +9,8 @@ export interface CheckboxProps extends Partial<WrappedFieldInputProps> {
     checked?: boolean
     disabled?: boolean
     label?: string
+    onMouseOver?: (event: React.MouseEvent<HTMLElement>) => void
+    onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void
 }
 
 export class Checkbox extends React.Component<CheckboxProps, any> {

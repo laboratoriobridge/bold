@@ -11,6 +11,8 @@ export interface PublicInputProps extends Partial<WrappedFieldInputProps> {
   maxLength?: number
   name?: string
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
+  onMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void
+  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void
   placeholder?: string
 }
 
