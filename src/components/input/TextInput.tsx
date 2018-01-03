@@ -26,6 +26,7 @@ export class TextInput extends React.Component<TextInputProps> {
                 border: 'solid 1px ' + theme.gray30,
                 borderRadius: 2,
                 fontSize: '0.75rem',
+                lineHeight: '1',
                 padding: '0.5rem 1rem',
                 ':hover': {
                     borderColor: theme.gray40
