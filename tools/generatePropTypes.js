@@ -12,7 +12,7 @@ filewalker(path.join(__dirname, '../src/components'), (err, data) => {
 
     let writeStream = fs.createWriteStream(path.join(__dirname, '../src/propTypes.ts'))
 
-    writeStream.write(`import { ComponentDoc } from 'react-docgen-typescript'
+    writeStream.write(`import { ComponentDoc } from 'react-docgen-typescript/lib/parser'
 
 const propTypes: {[key in string]: ComponentDoc} = {`)
 

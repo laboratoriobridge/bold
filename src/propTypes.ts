@@ -1,4 +1,4 @@
-import { ComponentDoc } from 'react-docgen-typescript'
+import { ComponentDoc } from 'react-docgen-typescript/lib/parser'
 
 const propTypes: {[key in string]: ComponentDoc} = {
     'Button': {
