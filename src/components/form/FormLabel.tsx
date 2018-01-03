@@ -22,7 +22,7 @@ export class FormLabel extends React.Component<FormLabelProps> {
 
         const label =
             <>
-            <span>{this.props.label}</span>
+            {this.props.label}
             {fieldRequired}
             {errorIndicator}
             </>

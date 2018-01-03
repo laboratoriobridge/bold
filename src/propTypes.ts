@@ -95,15 +95,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'size': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
             'tabIndex': {
                 defaultValue: 'null',
                 description: ``,
@@ -123,7 +114,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'type': {
-                defaultValue: '[object Object]',
+                defaultValue: 'normal',
                 description: ``,
                 required: false,
                 type: {
@@ -210,7 +201,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'type': {
-                defaultValue: '[object Object]',
+                defaultValue: 'normal',
                 description: ``,
                 required: false,
                 type: {
@@ -765,7 +756,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'placeholder': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Não informada',
                 description: ``,
                 required: false,
                 type: {
@@ -783,7 +774,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'title': {
-                defaultValue: '[object Object]',
+                defaultValue: '',
                 description: ``,
                 required: true,
                 type: {
@@ -1717,7 +1708,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -1759,7 +1750,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -1806,7 +1797,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'pageSize': {
-                defaultValue: '[object Object]',
+                defaultValue: '10',
                 description: ``,
                 required: false,
                 type: {
@@ -1815,7 +1806,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'searchDelay': {
-                defaultValue: '[object Object]',
+                defaultValue: '500',
                 description: ``,
                 required: false,
                 type: {
@@ -1842,7 +1833,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'autoload': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `Whether to auto-load the default async options set.`,
                 required: false,
                 type: {
@@ -1851,7 +1842,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'cache': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `object to use to cache results; can be null to disable cache`,
                 required: false,
                 type: {
@@ -1860,7 +1851,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'ignoreAccents': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `whether to strip diacritics when filtering (shared with Select)`,
                 required: false,
                 type: {
@@ -1869,7 +1860,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'ignoreCase': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: `whether to perform case-insensitive filtering (shared with Select)`,
                 required: false,
                 type: {
@@ -1896,7 +1887,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'loadingPlaceholder': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Carregando...',
                 description: `replaces the placeholder while options are loading`,
                 required: false,
                 type: {
@@ -1914,7 +1905,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'noResultsText': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Nenhum item encontrado.',
                 description: `placeholder displayed when there are no matching search results (shared with Select)`,
                 required: false,
                 type: {
@@ -1923,7 +1914,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'placeholder': {
-                defaultValue: '[object Object]',
+                defaultValue: '',
                 description: `field placeholder; displayed when there's no value (shared with Select)`,
                 required: false,
                 type: {
@@ -1932,7 +1923,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'searchPromptText': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Digite para pesquisar',
                 description: `label to prompt for search input`,
                 required: false,
                 type: {
@@ -1950,7 +1941,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'addLabelText': {
-                defaultValue: '[object Object]',
+                defaultValue: '\`Add "{label}"?\`',
                 description: `text to display when \`allowCreate\` is true.`,
                 required: false,
                 type: {
@@ -1959,7 +1950,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'arrowRenderer': {
-                defaultValue: '[object Object]',
+                defaultValue: 'undefined',
                 description: `renders a custom drop-down arrow to be shown in the right-hand side of the select.`,
                 required: false,
                 type: {
@@ -1968,7 +1959,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'autoBlur': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `blurs the input element after a selection has been made. Handy for lowering the keyboard on mobile devices.`,
                 required: false,
                 type: {
@@ -1977,7 +1968,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'autofocus': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `autofocus the component on mount`,
                 required: false,
                 type: {
@@ -1995,7 +1986,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'backspaceRemoves': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `whether pressing backspace removes the last item when there is no input value`,
                 required: false,
                 type: {
@@ -2004,7 +1995,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'backspaceToRemoveMessage': {
-                defaultValue: '[object Object]',
+                defaultValue: '"Press backspace to remove..."',
                 description: `Message to use for screenreaders to press backspace to remove the current item
 {label} is replaced with the item label`,
                 required: false,
@@ -2023,7 +2014,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'clearAllText': {
-                defaultValue: '[object Object]',
+                defaultValue: '"Clear all"',
                 description: `title for the "clear" control when \`multi\` is true`,
                 required: false,
                 type: {
@@ -2032,7 +2023,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'clearValueText': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Limpar seleção',
                 description: `title for the "clear" control`,
                 required: false,
                 type: {
@@ -2041,7 +2032,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'clearable': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: `whether it is possible to reset value. if enabled, an X button will appear at the right side.`,
                 required: false,
                 type: {
@@ -2050,7 +2041,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'delimiter': {
-                defaultValue: '[object Object]',
+                defaultValue: '","',
                 description: `delimiter to use to join multiple values`,
                 required: false,
                 type: {
@@ -2059,7 +2050,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'disabled': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `whether the Select is disabled or not`,
                 required: false,
                 type: {
@@ -2068,7 +2059,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'escapeClearsValue': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: `whether escape clears the value when the menu is closed`,
                 required: false,
                 type: {
@@ -2095,7 +2086,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'inputProps': {
-                defaultValue: '[object Object]',
+                defaultValue: '{}',
                 description: `custom attributes for the Input (in the Select-control) e.g: {'data-foo': 'bar'}`,
                 required: false,
                 type: {
@@ -2123,7 +2114,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'joinValues': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `(legacy mode) joins multiple values into a single form field with the delimiter`,
                 required: false,
                 type: {
@@ -2132,7 +2123,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'labelKey': {
-                defaultValue: '[object Object]',
+                defaultValue: 'nome',
                 description: `the option property to use for the label`,
                 required: false,
                 type: {
@@ -2141,7 +2132,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'matchPos': {
-                defaultValue: '[object Object]',
+                defaultValue: '"any"',
                 description: `(any, start) match the start or entire string when filtering`,
                 required: false,
                 type: {
@@ -2150,7 +2141,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'matchProp': {
-                defaultValue: '[object Object]',
+                defaultValue: '"any"',
                 description: `(any, label, value) which option property to filter on`,
                 required: false,
                 type: {
@@ -2159,7 +2150,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'menuBuffer': {
-                defaultValue: '[object Object]',
+                defaultValue: '0',
                 description: `buffer of px between the base of the dropdown and the viewport to shift if menu doesnt fit in viewport`,
                 required: false,
                 type: {
@@ -2195,7 +2186,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'multi': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `multi-value input`,
                 required: false,
                 type: {
@@ -2222,7 +2213,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'onBlurResetsInput': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: `whether to clear input on blur or not`,
                 required: false,
                 type: {
@@ -2303,7 +2294,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'openAfterFocus': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `boolean to enable opening dropdown when focused`,
                 required: false,
                 type: {
@@ -2312,7 +2303,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'openOnFocus': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `open the options menu when the input gets focus (requires searchable = true)`,
                 required: false,
                 type: {
@@ -2348,7 +2339,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'options': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `array of Select options`,
                 required: false,
                 type: {
@@ -2357,7 +2348,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'required': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `applies HTML5 required attribute when needed`,
                 required: false,
                 type: {
@@ -2375,7 +2366,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'scrollMenuIntoView': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: `whether the viewport will shift to display the entire menu when engaged`,
                 required: false,
                 type: {
@@ -2384,7 +2375,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'searchable': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true;',
                 description: `whether to enable searching feature or not`,
                 required: false,
                 type: {
@@ -2402,7 +2393,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'valueKey': {
-                defaultValue: '[object Object]',
+                defaultValue: 'id',
                 description: `the option property to use for the value`,
                 required: false,
                 type: {
@@ -2411,7 +2402,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'valueRenderer': {
-                defaultValue: '[object Object]',
+                defaultValue: 'false',
                 description: `function which returns a custom way to render the value selected`,
                 required: false,
                 type: {
@@ -3668,7 +3659,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'loadingText': {
-                defaultValue: '[object Object]',
+                defaultValue: 'CARREGANDO',
                 description: ``,
                 required: false,
                 type: {
@@ -5687,7 +5678,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'hasWrapper': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: ``,
                 required: false,
                 type: {
@@ -5745,7 +5736,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -5828,7 +5819,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'errorIcon': {
-                defaultValue: '[object Object]',
+                defaultValue: 'modal-erro',
                 description: ``,
                 required: false,
                 type: {
@@ -5846,7 +5837,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'hasErrorModal': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: ``,
                 required: false,
                 type: {
@@ -5855,7 +5846,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'hasLeaveModal': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: ``,
                 required: false,
                 type: {
@@ -5864,7 +5855,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'hasSuccessModal': {
-                defaultValue: '[object Object]',
+                defaultValue: 'true',
                 description: ``,
                 required: false,
                 type: {
@@ -5882,7 +5873,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'successIcon': {
-                defaultValue: '[object Object]',
+                defaultValue: 'modal-sucesso',
                 description: ``,
                 required: false,
                 type: {
@@ -5900,7 +5891,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'successTitle': {
-                defaultValue: '[object Object]',
+                defaultValue: 'Cadastro realizado com sucesso!',
                 description: ``,
                 required: false,
                 type: {
@@ -6510,7 +6501,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -6780,7 +6771,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -7134,7 +7125,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -7221,7 +7212,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'string',
+                    name: 'ReactNode',
                     value: 'undefined'
                 }
             },
@@ -7381,6 +7372,48 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'ThemeDefinition',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Text': {
+        displayName: 'Text',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'color': {
+                defaultValue: 'gray70',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Color',
+                    value: 'undefined'
+                }
+            },
+            'size': {
+                defaultValue: '1',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'weight': {
+                defaultValue: 'normal',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Weight',
                     value: 'undefined'
                 }
             }

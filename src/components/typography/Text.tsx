@@ -1,27 +1,38 @@
 import * as React from 'react'
+import * as PropTypes from 'prop-types'
 import { Color } from '../style/Theme'
 
-export type Weight = 'regular' | 'semibold' | 'bold'
-export type Transform = 'uppercase' | 'lowercase' | 'capitalize'
+export type Weight = 'normal' | 'bold'
 
-interface TextProps {
+export interface TextProps {
     color?: Color
-    className?: string
+    size?: number
     weight?: Weight
-    transform?: Transform
-    italic?: boolean
 }
 
 export class Text extends React.PureComponent<TextProps> {
 
+    static defaultProps: Partial<TextProps> = {
+        color: 'gray70',
+        size: 1,
+        weight: 'normal'
+    }
+
+    static contextTypes = {
+        theme: PropTypes.object
+    }
+
     render() {
+        const style: React.CSSProperties = {
+            color: this.context.theme[this.props.color],
+            fontSize: this.props.size + 'rem',
+            fontWeight: this.props.weight
+        }
         return (
-            <span>
+            <span style={style}>
                 {this.props.children}
             </span>
         )
     }
 
 }
-
-export default Text

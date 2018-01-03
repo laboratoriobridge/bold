@@ -34,7 +34,7 @@ const propTypes: {[key in string]: ComponentDoc} = {`)
         description: \`${doc.description}\`,
         props: {${Object.keys(doc.props).map(prop => `
             '${prop}': {
-                defaultValue: '${doc.props[prop].defaultValue}',
+                defaultValue: '${doc.props[prop].defaultValue && doc.props[prop].defaultValue.value.replace(/\'/g, '\\`')}',
                 description: \`${doc.props[prop].description.replace(/\`/g, '\\`')}\`,
                 required: ${doc.props[prop].required},
                 type: {

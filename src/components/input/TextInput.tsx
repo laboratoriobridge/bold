@@ -23,12 +23,12 @@ export class TextInput extends React.Component<TextInputProps> {
         const styles = this.props.createStyles(theme => ({
             input: {
                 backgroundColor: theme.white,
-                border: 'solid 1px ' + theme.gray3,
+                border: 'solid 1px ' + theme.gray30,
                 borderRadius: 2,
-                fontSize: 12,
-                padding: '8px 17px',
+                fontSize: '0.75rem',
+                padding: '0.5rem 1rem',
                 ':hover': {
-                    borderColor: theme.gray4
+                    borderColor: theme.gray40
                 },
                 ':focus': {
                     borderColor: theme.primary,

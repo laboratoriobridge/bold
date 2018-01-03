@@ -12,8 +12,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
     render() {
         const checkStyles = this.props.createStyles(theme => ({
             check: {
-                backgroundColor: '#fff',
-                border: '1px solid #C8CCD4',
+                backgroundColor: theme.white,
+                border: '1px solid ' + theme.gray30,
                 borderRadius: 100,
                 display: 'inline-block',
                 height: 14,
@@ -22,8 +22,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 verticalAlign: 'middle',
                 width: 14,
                 ':after': {
-                    backgroundColor: '#fff',
-                    border: '2px solid white',
+                    backgroundColor: theme.white,
+                    border: '2px solid ' + theme.white,
                     borderRadius: 100,
                     content: '""',
                     display: 'block',
@@ -37,7 +37,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 }
             },
             label: {
-                color: '#4d4d4d',
+                color: theme.gray70,
                 fontSize: 12,
                 marginLeft: 10,
                 verticalAlign: 'middle'
@@ -54,24 +54,24 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
             input: {
                 display: 'none',
                 [`&:hover + .${checkClasses}`]: {
-                    borderColor: '#808080',
+                    borderColor: theme.gray50,
                 },
                 [`&:checked + .${checkClasses}`]: {
-                    backgroundColor: '#1e98ff',
-                    borderColor: '#1e98ff',
+                    backgroundColor: theme.primary,
+                    borderColor: theme.primary,
                     ':after': {
                         opacity: 1
                     }
                 },
                 [`&:focus + .${checkClasses}`]: {
-                    borderColor: '#1e98ff',
+                    borderColor: theme.primary,
                 },
                 [`&:disabled + .${checkClasses}`]: {
                     backgroundColor: '#f2f2f7',
-                    borderColor: '#e6e6e6',
+                    borderColor: theme.gray10,
                 },
                 [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                    color: '#b3b3b3',
+                    color: theme.gray30,
                 }
             }
         }))
