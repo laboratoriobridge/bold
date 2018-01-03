@@ -10,7 +10,7 @@ export interface ThemeProviderProps {
     themeDef?: ThemeDefinition
 }
 
-export default class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
+export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
     static childContextTypes = {
         theme: PropTypes.object

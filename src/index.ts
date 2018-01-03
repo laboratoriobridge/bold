@@ -41,6 +41,8 @@ export * from './components/reactRouter/Breadcrumbs'
 export * from './components/reactRouter/Breadcrumb'
 export * from './components/reactRouter/CrumbRoute'
 
+export * from './components/style/ThemeProvider'
+
 export * from './components/reduxForm/field/AlfaNumberField'
 export * from './components/reduxForm/field/CheckboxField/CheckboxField'
 export * from './components/reduxForm/field/ChecklistItemField'
