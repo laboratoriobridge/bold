@@ -1,6 +1,4 @@
 import * as React from 'react'
-import isUndefined = require('lodash/isUndefined')
-import isArray = require('lodash/isArray')
 import { CheckboxProps, Checkbox } from './Checkbox/Checkbox'
 import { List } from 'immutable'
 
@@ -15,11 +13,11 @@ export class ChecklistItem extends React.Component<ChecklistItemProps> {
 
         let previousValues = []
 
-        if (!isUndefined(value) && value !== '') {
+        if (value !== undefined && value !== '') {
             previousValues = value
         }
 
-        const currentValues = isArray(previousValues) ? [...previousValues] : List.isList(previousValues) ? previousValues : [previousValues]
+        const currentValues = Array.isArray(previousValues) ? [...previousValues] : List.isList(previousValues) ? previousValues : [previousValues]
 
         return currentValues
     }
