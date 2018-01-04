@@ -6,6 +6,7 @@ exports[`TextField deve ser renderizado de forma correta 1`] = `
 >
   <div>
     <input
+      class="input_1wd9fxb"
       maxlength="2"
       name="test"
       placeholder="Test"

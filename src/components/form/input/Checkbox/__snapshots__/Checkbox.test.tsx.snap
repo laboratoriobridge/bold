@@ -1,25 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox deve conter a classe css "disabled" 1`] = `
-<label>
+<label
+  class="checkbox_13xlah4-o_O-checkboxDisabled_14ak7oz"
+>
   <input
+    class="input_ufi05b"
     disabled=""
     type="checkbox"
   />
-  <span />
-  <span>
+  <span
+    class="check_67q8ve"
+  />
+  <span
+    class="label_hqebz6"
+  >
     check
   </span>
 </label>
 `;
 
 exports[`Checkbox deve renderizar corretamente 1`] = `
-<label>
+<label
+  class="checkbox_13xlah4"
+>
   <input
+    class="input_ufi05b"
     type="checkbox"
   />
-  <span />
-  <span>
+  <span
+    class="check_67q8ve"
+  />
+  <span
+    class="label_hqebz6"
+  >
     check
   </span>
 </label>

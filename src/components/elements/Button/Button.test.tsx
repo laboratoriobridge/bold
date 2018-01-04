@@ -1,9 +1,7 @@
 import * as React from 'react'
-import { shallow, render, mount } from 'enzyme'
+import { render, mount, shallow } from 'enzyme'
 import { withTheme } from '../../../test'
 import { Button } from './Button'
-
-jest.useFakeTimers()
 
 describe('Button', () => {
     it('deve renderizar corretamente', () => {
@@ -19,20 +17,19 @@ describe('Button', () => {
         }
 
         const wrapper = mount(<Button label='Botão' onClick={delayedFunction} />)
-        expect(wrapper.find('button').prop('data-loading')).toBe(false)
+        expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')
-        expect(wrapper.find('button').prop('data-loading')).toBe(true)
+        expect(wrapper).toMatchSnapshot()
     })
 
     it('não deve ter animação com "onClick" que não seja promise', () => {
-        const func = jest.fn()
+        const func = () => { }
         const wrapper = mount(<Button label='Botão' onClick={func} />)
-        expect(wrapper.find('button').prop('data-loading')).toBe(false)
+        expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')
-        expect(func).toBeCalled()
-        expect(wrapper.find('button').prop('data-loading')).toBe(false)
+        expect(wrapper).toMatchSnapshot()
     })
 
     it('deve adicionar um hint string automaticamente', () => {

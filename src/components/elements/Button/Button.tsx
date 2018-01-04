@@ -84,11 +84,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 backgroundColor: theme.color.primary,
                 border: '1px solid ' + theme.color.primary,
                 color: theme.color.white
+            },
+            loading: {
             }
         }))
 
         const classes = css(
             styles.button,
+            this.state.loading && styles.loading,
             type === 'primary' && styles.primary
         )
 
@@ -99,7 +102,6 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 onClick={this.onClick}
                 onKeyPress={this.handleOnKeyPress}
                 type='button'
-                data-loading={this.state.loading}
             >
                 {icon && <span className='icon'><Icon icon={icon} /></span>}
                 {label && <span>{label}</span>}

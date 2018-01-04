@@ -5,7 +5,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   class="hint-wrapper"
 >
   <button
-    data-loading="false"
+    class="button_1k61xie"
     type="button"
   >
     <span>
@@ -20,7 +20,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   class="hint-wrapper"
 >
   <button
-    data-loading="false"
+    class="button_1k61xie"
     type="button"
   >
     <span>
@@ -32,11 +32,135 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 
 exports[`Button deve renderizar corretamente 1`] = `
 <button
-  data-loading="false"
+  class="button_1k61xie"
   type="button"
 >
   <span>
     Botão
   </span>
 </button>
+`;
+
+exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 1`] = `
+<Button
+  label="Botão"
+  onClick={[Function]}
+>
+  <Button
+    createStyles={[Function]}
+    label="Botão"
+    onClick={[Function]}
+  >
+    <Button
+      createStyles={[Function]}
+      label="Botão"
+      onClick={[Function]}
+      type="normal"
+    >
+      <button
+        className="button_1k61xie"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        type="button"
+      >
+        <span>
+          Botão
+        </span>
+      </button>
+    </Button>
+  </Button>
+</Button>
+`;
+
+exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 2`] = `
+<Button
+  label="Botão"
+  onClick={[Function]}
+>
+  <Button
+    createStyles={[Function]}
+    label="Botão"
+    onClick={[Function]}
+  >
+    <Button
+      createStyles={[Function]}
+      label="Botão"
+      onClick={[Function]}
+      type="normal"
+    >
+      <button
+        className="button_1k61xie-o_O-loading_3hmsj"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        type="button"
+      >
+        <span>
+          Botão
+        </span>
+      </button>
+    </Button>
+  </Button>
+</Button>
+`;
+
+exports[`Button não deve ter animação com "onClick" que não seja promise 1`] = `
+<Button
+  label="Botão"
+  onClick={[Function]}
+>
+  <Button
+    createStyles={[Function]}
+    label="Botão"
+    onClick={[Function]}
+  >
+    <Button
+      createStyles={[Function]}
+      label="Botão"
+      onClick={[Function]}
+      type="normal"
+    >
+      <button
+        className="button_1k61xie"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        type="button"
+      >
+        <span>
+          Botão
+        </span>
+      </button>
+    </Button>
+  </Button>
+</Button>
+`;
+
+exports[`Button não deve ter animação com "onClick" que não seja promise 2`] = `
+<Button
+  label="Botão"
+  onClick={[Function]}
+>
+  <Button
+    createStyles={[Function]}
+    label="Botão"
+    onClick={[Function]}
+  >
+    <Button
+      createStyles={[Function]}
+      label="Botão"
+      onClick={[Function]}
+      type="normal"
+    >
+      <button
+        className="button_1k61xie"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        type="button"
+      >
+        <span>
+          Botão
+        </span>
+      </button>
+    </Button>
+  </Button>
+</Button>
 `;
