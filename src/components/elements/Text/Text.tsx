@@ -3,19 +3,19 @@ import * as PropTypes from 'prop-types'
 import { Color } from '../../../styles/theme/Theme'
 
 export type Weight = 'normal' | 'bold'
+export type TextTag = 'span' | 'p' | 'div' | 'label'
 
 export interface TextProps {
     color?: Color
     size?: number
     weight?: Weight
+    tag?: TextTag
 }
 
 export class Text extends React.PureComponent<TextProps> {
 
     static defaultProps: Partial<TextProps> = {
-        color: 'gray70',
-        size: 1,
-        weight: 'normal'
+        tag: 'span',
     }
 
     static contextTypes = {
@@ -28,11 +28,10 @@ export class Text extends React.PureComponent<TextProps> {
             fontSize: this.props.size + 'rem',
             fontWeight: this.props.weight
         }
-        return (
-            <span style={style}>
-                {this.props.children}
-            </span>
-        )
+
+        return React.createElement(this.props.tag, {
+            style: style
+        }, this.props.children)
     }
 
 }
