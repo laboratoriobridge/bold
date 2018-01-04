@@ -37,17 +37,22 @@ export class Hint extends React.Component<HintProps, HintState> {
                     color='dark-grey'
                     show={this.state.showPopover}
                     placement={this.props.placement}
-                    target={this.instance}>
+                    target={this.instance}
+                >
                     {this.props.children}
                 </Popover>
-                {this.props.componente && React.cloneElement(this.props.componente, {
-                    onMouseOver: () => this.setState({ showPopover: true }),
-                    onMouseLeave: () => this.setState({ showPopover: false }),
-                    ref: elem => this.instance = elem,
-                })}
+                {this.props.componente && this.cloneComponent()}
 
             </span>
         )
+    }
+
+    cloneComponent() {
+        return React.cloneElement(this.props.componente, {
+            onMouseOver: () => this.setState({ showPopover: true }),
+            onMouseLeave: () => this.setState({ showPopover: false }),
+            ref: elem => this.instance = elem,
+        })
     }
 
 }

@@ -19,6 +19,18 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
         }
     }
 
+    handleMouseOver = () => {
+        this.setState({ showErrorPopover: true })
+    }
+
+    handleMouseLeave = () => {
+        this.setState({ showErrorPopover: false })
+    }
+
+    findTarget = () => {
+        return findDOMNode(this.icon)
+    }
+
     render() {
         return (
             <span>
@@ -27,13 +39,13 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
                     className='error-indicator'
                     size='small'
                     icon='invalido'
-                    onMouseOver={() => this.setState({ showErrorPopover: true })}
-                    onMouseLeave={() => this.setState({ showErrorPopover: false })}
+                    onMouseOver={this.handleMouseOver}
+                    onMouseLeave={this.handleMouseLeave}
                 />
                 <Popover
                     show={this.state.showErrorPopover}
                     placement='right'
-                    target={props => findDOMNode(this.icon)}
+                    target={this.findTarget}
                     className='error-popover'
                 >
                     <p className='error-title'>{this.props.error.get('titulo')}</p>

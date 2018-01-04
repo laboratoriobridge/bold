@@ -1,5 +1,7 @@
 {
-    "extends": "tslint-react",
+    "extends": [
+        "tslint-react"
+    ],
     "jsRules": {
         "class-name": true,
         "comment-format": [
@@ -47,7 +49,10 @@
             "check-space"
         ],
         "curly": true,
-        "jsx-boolean-value": [true, "never"],
+        "jsx-boolean-value": [
+            true,
+            "never"
+        ],
         "no-eval": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,

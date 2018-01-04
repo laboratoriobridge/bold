@@ -20,12 +20,13 @@ export class FormLabel extends React.Component<FormLabelProps> {
             this.props.required && !this.props.error && <Icon className='field-required' size='small' icon='obrigatorio' />
         )
 
-        const label =
+        const label = (
             <>
             {this.props.label}
             {fieldRequired}
             {errorIndicator}
             </>
+        )
 
         return (
             <Label value={label} />
