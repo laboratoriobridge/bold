@@ -47,6 +47,7 @@
             "check-space"
         ],
         "curly": true,
+        "jsx-boolean-value": [true, "never"],
         "no-eval": true,
         "no-internal-module": true,
         "no-trailing-whitespace": true,
