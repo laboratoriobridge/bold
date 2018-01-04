@@ -4,19 +4,21 @@
     "module": "commonjs",
     "target": "es5",
     "lib": [
-      "es2015",
+      "es2017",
       "dom"
     ],
     "outDir": "lib",
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
     "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
     "jsx": "react"
   },
   "files": [
-    "src/index.ts"
+    "src/index.ts",
+    "typings/imports.d.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

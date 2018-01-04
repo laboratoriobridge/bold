@@ -22,7 +22,11 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
     render() {
         return (
             <span>
-                <Icon ref={icon => this.icon = icon} className='error-indicator' size='small' icon='invalido'
+                <Icon
+                    ref={icon => this.icon = icon}
+                    className='error-indicator'
+                    size='small'
+                    icon='invalido'
                     onMouseOver={() => this.setState({ showErrorPopover: true })}
                     onMouseLeave={() => this.setState({ showErrorPopover: false })}
                 />

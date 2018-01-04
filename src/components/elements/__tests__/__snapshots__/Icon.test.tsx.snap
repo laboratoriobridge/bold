@@ -9,6 +9,5 @@ exports[`Icon deve renderizar corretamente 1`] = `
 exports[`Icon deve renderizar tamanho grande 1`] = `
 <i
   className="rnicons rnicons-login is-large"
-  size="large"
 />
 `;

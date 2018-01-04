@@ -5,12 +5,11 @@ import { Label } from '../elements/Label'
 
 export interface FormLabelProps {
     error?: any
-    label?: string
+    label?: React.ReactNode
     required?: boolean
-    disabled?: boolean
 }
 
-export class FormLabel extends React.Component<FormLabelProps, any> {
+export class FormLabel extends React.Component<FormLabelProps> {
 
     render() {
         const errorIndicator = (
@@ -21,12 +20,15 @@ export class FormLabel extends React.Component<FormLabelProps, any> {
             this.props.required && !this.props.error && <Icon className='field-required' size='small' icon='obrigatorio' />
         )
 
+        const label =
+            <>
+            {this.props.label}
+            {fieldRequired}
+            {errorIndicator}
+            </>
+
         return (
-            <Label disabled={this.props.disabled}>
-                <span>{this.props.label}</span>
-                {fieldRequired}
-                {errorIndicator}
-            </Label>
+            <Label value={label} />
         )
     }
 
