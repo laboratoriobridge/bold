@@ -24,7 +24,7 @@ export class Text extends React.PureComponent<TextProps> {
 
     render() {
         const style: React.CSSProperties = {
-            color: this.context.theme[this.props.color],
+            color: this.context.theme.color[this.props.color],
             fontSize: this.props.size + 'rem',
             fontWeight: this.props.weight
         }

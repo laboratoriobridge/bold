@@ -58,31 +58,32 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
         const styles = createStyles(theme => ({
             button: {
-                backgroundColor: theme.white,
-                border: '1px solid ' + theme.gray30,
+                backgroundColor: theme.color.white,
+                border: '1px solid ' + theme.color.gray30,
                 borderRadius: 2,
-                color: theme.gray50,
+                color: theme.color.gray50,
                 cursor: 'pointer',
+                fontFamily: theme.font.textFamily,
                 fontSize: '0.75rem',
                 fontWeight: 'bold',
                 lineHeight: 1.58,
                 letterSpacing: 1,
                 padding: '0.85rem 2.5rem',
                 ':active': {
-                    boxShadow: 'inset 0 2px 8px 0 ' + theme.gray10,
+                    boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray10,
                 },
                 ':disabled': {
                     opacity: 0.5
                 },
                 ':focus': {
-                    border: '1px solid ' + theme.primary,
+                    border: '1px solid ' + theme.color.primary,
                     outline: 'none'
                 },
             },
             primary: {
-                backgroundColor: theme.primary,
-                border: '1px solid ' + theme.primary,
-                color: theme.white
+                backgroundColor: theme.color.primary,
+                border: '1px solid ' + theme.color.primary,
+                color: theme.color.white
             }
         }))
 
