@@ -1,19 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label render 1`] = `
-<label
-  className="label"
-/>
-`;
-
-exports[`Label render custom classes 1`] = `
-<label
-  className="label test"
-/>
-`;
-
-exports[`Label render disabled 1`] = `
-<label
-  className="label is-disabled"
-/>
+<label>
+  <Text
+    color="gray70"
+    size={0.75}
+    weight="bold"
+  >
+    Label
+  </Text>
+</label>
 `;

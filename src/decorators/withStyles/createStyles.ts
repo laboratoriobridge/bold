@@ -1,5 +1,5 @@
 import { StyleSheet, StyleDeclaration } from 'aphrodite'
-import Theme from '../../components/style/Theme'
+import Theme from '../../styles/theme/Theme'
 
 const childSelectorExtension = {
     selectorHandler: (selector, baseSelector, generateSubtreeStyles) => {

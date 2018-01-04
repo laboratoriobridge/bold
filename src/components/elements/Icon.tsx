@@ -1,8 +1,7 @@
 import * as React from 'react'
 import * as classnames from 'classnames'
-import { UtilProps, helpersClassnames, excludeProps } from '../../util/Util'
 
-export interface IconProps extends UtilProps {
+export interface IconProps {
     icon: string
     className?: string
     size?: 'small' | 'medium' | 'large' | 'is-12px' | 'gigantic'
@@ -14,7 +13,7 @@ export interface IconProps extends UtilProps {
 export class Icon extends React.Component<IconProps, any> {
 
     render() {
-        const classes: string = classnames('rnicons', 'rnicons-' + this.props.icon, this.props.className, helpersClassnames(this.props), {
+        const classes: string = classnames('rnicons', 'rnicons-' + this.props.icon, this.props.className, {
             'is-small': this.props.size && this.props.size === 'small',
             'is-medium': this.props.size && this.props.size === 'medium',
             'is-large': this.props.size && this.props.size === 'large',
@@ -22,12 +21,8 @@ export class Icon extends React.Component<IconProps, any> {
             'is-12px': this.props.size && this.props.size === 'is-12px'
         })
         return (
-            <i {...excludeProps(this.props, ...excludedProps)} title={this.props.title} className={classes} />
+            <i title={this.props.title} className={classes} />
         )
     }
 
 }
-
-const excludedProps = [
-    'icon'
-]

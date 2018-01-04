@@ -1,28 +1,16 @@
 import * as React from 'react'
-import { shallowRenderAndMatch } from '../../../__tests__/test.defaults'
 import { FormField } from '../FormField'
-import { Input } from '../../input/Input'
+import { Input } from '../input/Input/Input'
+import { shallow } from 'enzyme'
 
 describe('FormField', () => {
     it('deve renderizar corretamente', function () {
-        shallowRenderAndMatch(<FormField />)
-    })
-    it('deve renderizar o ícone', function () {
-        shallowRenderAndMatch(<FormField icon='login' />)
-    })
-    it('deve renderizar o ícone na direita', function () {
-        shallowRenderAndMatch(<FormField icon='login' iconRight />)
+        expect(shallow(<FormField />)).toMatchSnapshot()
     })
     it('deve renderizar o label', function () {
-        shallowRenderAndMatch(<FormField label='label teste' />)
-    })
-    it('deve renderizar o label com o símbolo de required', function () {
-        shallowRenderAndMatch(<FormField label='label teste' required />)
-    })
-    it('deve renderizar a unidade', function () {
-        shallowRenderAndMatch(<FormField unit='unidade' />)
+        expect(shallow(<FormField label='label teste' />)).toMatchSnapshot()
     })
     it('deve renderizar os filhos', function () {
-        shallowRenderAndMatch(<FormField><Input type='text' /></FormField>)
+        expect(shallow(<FormField><Input type='text' /></FormField>)).toMatchSnapshot()
     })
 })

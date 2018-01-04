@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Text } from '../typography/Text'
+import { Text } from './Text/Text'
 
 export interface LabelProps {
     value: React.ReactNode
