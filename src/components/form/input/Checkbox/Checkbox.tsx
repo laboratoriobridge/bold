@@ -50,7 +50,9 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const checkClasses = css(checkStyles.check)
         const labelClasses = css(checkStyles.label)
 
-        const styles = this.props.createStyles(theme => ({
+        const { createStyles, label, ...rest } = this.props
+
+        const styles = createStyles(theme => ({
             checkbox: {
                 cursor: 'pointer',
             },
@@ -82,7 +84,6 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             }
         }))
 
-        const { label, ...rest } = this.props
 
         return (
             <label className={css(styles.checkbox, this.props.disabled && styles.checkboxDisabled)} >

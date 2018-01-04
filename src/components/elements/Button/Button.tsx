@@ -99,6 +99,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 onClick={this.onClick}
                 onKeyPress={this.handleOnKeyPress}
                 type='button'
+                data-loading={this.state.loading}
             >
                 {icon && <span className='icon'><Icon icon={icon} /></span>}
                 {label && <span>{label}</span>}

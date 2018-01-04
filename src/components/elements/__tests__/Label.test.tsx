@@ -1,9 +1,11 @@
 import * as React from 'react'
 import { Label } from '../Label'
-import { shallow } from 'enzyme'
+import { render } from 'enzyme'
+import { withTheme } from '../../../test'
 
 describe('Label', () => {
     it('render', () => {
-        expect(shallow(<Label value='Label' />)).toMatchSnapshot()
+        const wrapper = render(withTheme(<Label value='Label' />))
+        expect(wrapper).toMatchSnapshot()
     })
 })

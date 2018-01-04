@@ -115,7 +115,7 @@
     "testPathIgnorePatterns": [
       "/__tests__/test.defaults.ts"
     ],
-    "testRegex": "/__tests__/.*\\.(ts|tsx)$",
+    "testRegex": ".*\\.test\\.(ts|tsx)$",
     "moduleDirectories": [
       "node_modules",
       "<rootDir>/src"

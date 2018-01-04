@@ -9,21 +9,15 @@ exports[`AlertModal deve renderizar AlertModalConfirmacao 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-    >
-      Cancelar
-    </ComponentWithHint>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="primary"
-    >
-      Confirmar
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="Cancelar"
+    onClick={[Function]}
+  />
+  <Button
+    label="Confirmar"
+    onClick={[Function]}
+    type="primary"
+  />
 </AlertModal>
 `;
 
@@ -37,21 +31,15 @@ exports[`AlertModal deve renderizar AlertModalConfirmacao visível 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-    >
-      Cancelar
-    </ComponentWithHint>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="primary"
-    >
-      Confirmar
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="Cancelar"
+    onClick={[Function]}
+  />
+  <Button
+    label="Confirmar"
+    onClick={[Function]}
+    type="primary"
+  />
 </AlertModal>
 `;
 
@@ -85,15 +73,11 @@ exports[`AlertModal deve renderizar AlertModalError 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="primary"
-    >
-      OK
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="OK"
+    onClick={[Function]}
+    type="primary"
+  />
 </AlertModal>
 `;
 
@@ -107,15 +91,11 @@ exports[`AlertModal deve renderizar AlertModalError visível 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="primary"
-    >
-      OK
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="OK"
+    onClick={[Function]}
+    type="primary"
+  />
 </AlertModal>
 `;
 
@@ -129,21 +109,15 @@ exports[`AlertModal deve renderizar AlertModalLeave visível 1`] = `
   >
     Você preencheu alguns dados, se você sair agora esses dados serão perdidos. Tem certeza que deseja sair?
   </Component>
-  <Component>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-    >
-      Cancelar
-    </ComponentWithHint>
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="primary"
-    >
-      Sair
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="Cancelar"
+    onClick={[Function]}
+  />
+  <Button
+    label="Sair"
+    onClick={[Function]}
+    type="primary"
+  />
 </AlertModal>
 `;
 
@@ -156,16 +130,11 @@ exports[`AlertModal deve renderizar AlertModalSuccess 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <Linha />
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="success"
-    >
-      OK
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="OK"
+    onClick={[Function]}
+    type="success"
+  />
 </AlertModal>
 `;
 
@@ -179,15 +148,10 @@ exports[`AlertModal deve renderizar AlertModalSuccess visível 1`] = `
   >
     Descrição
   </Component>
-  <Component>
-    <Linha />
-    <ComponentWithHint
-      onClick={[Function]}
-      size="medium"
-      type="success"
-    >
-      OK
-    </ComponentWithHint>
-  </Component>
+  <Button
+    label="OK"
+    onClick={[Function]}
+    type="success"
+  />
 </AlertModal>
 `;

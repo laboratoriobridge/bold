@@ -2,12 +2,12 @@
 
 exports[`Icon deve renderizar corretamente 1`] = `
 <i
-  className="rnicons rnicons-login"
+  class="rnicons rnicons-login"
 />
 `;
 
 exports[`Icon deve renderizar tamanho grande 1`] = `
 <i
-  className="rnicons rnicons-login is-large"
+  class="rnicons rnicons-login is-large"
 />
 `;

@@ -1,5 +1,9 @@
 import ThemeDefinition from '../ThemeDefinition'
-import * as font from './fonts/NotoSans-Regular.ttf'
+
+let font = ''
+if (process.env.NODE_ENV !== 'test') {
+    font = require('./fonts/NotoSans-Regular.ttf')
+}
 
 const notoSans = {
     fontFamily: 'Noto Sans',

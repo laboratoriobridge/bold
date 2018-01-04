@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label render 1`] = `
-<Text
-  size={0.75}
-  tag="label"
-  weight="bold"
+<label
+  style="font-size:0.75rem;font-weight:bold"
 >
   Label
-</Text>
+</label>
 `;
