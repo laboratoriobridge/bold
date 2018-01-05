@@ -1,7 +1,9 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
+
 import { Button } from '../Button/Button'
 import { Icon } from '../Icon'
+
 import { AlertModalContent } from './AlertModalContent'
 import { Modal } from './Modal'
 

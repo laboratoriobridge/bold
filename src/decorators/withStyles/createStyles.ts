@@ -1,4 +1,5 @@
 import { StyleDeclaration, StyleSheet } from 'aphrodite'
+
 import Theme from '../../styles/theme/Theme'
 
 const childSelectorExtension = {

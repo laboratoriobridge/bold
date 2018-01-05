@@ -1,5 +1,6 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
+
 import { Placement, Popover } from './Popover'
 
 export interface HintProps {

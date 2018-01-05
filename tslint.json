@@ -45,6 +45,15 @@
         ],
         "object-literal-key-quotes": false,
         "object-literal-sort-keys": false,
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "case-insensitive",
+                "module-source-path": "full",
+                "named-imports-order": "case-insensitive",
+                "grouped-imports": true
+            }
+        ],
         "quotemark": [
             true,
             "single",
@@ -106,6 +115,15 @@
         ],
         "object-literal-key-quotes": false,
         "object-literal-sort-keys": false,
+        "ordered-imports": [
+            true,
+            {
+                "import-sources-order": "case-insensitive",
+                "module-source-path": "full",
+                "named-imports-order": "case-insensitive",
+                "grouped-imports": true
+            }
+        ],
         "quotemark": [
             true,
             "single",

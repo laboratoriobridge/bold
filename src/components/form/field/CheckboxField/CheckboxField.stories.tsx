@@ -1,11 +1,10 @@
-import * as React from 'react'
-
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import { withTheme } from '../../../../stories-addons/withTheme'
-import { withPropTypes } from '../../../../stories-addons/withPropTypes'
-import { CheckboxField } from './CheckboxField'
+import * as React from 'react'
 import { withForm } from '../../../../stories-addons/withForm'
+import { withPropTypes } from '../../../../stories-addons/withPropTypes'
+import { withTheme } from '../../../../stories-addons/withTheme'
+import { CheckboxField } from './CheckboxField'
 
 storiesOf('Form', module)
     .addDecorator(withPropTypes(`

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { WrappedFieldProps } from 'redux-form'
+
 import { FormFieldProps } from '../../../form/FormField'
 import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
 import { Field, FieldProps } from '../../reduxForm/Field'

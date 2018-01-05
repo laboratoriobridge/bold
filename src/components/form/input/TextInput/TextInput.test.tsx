@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { render } from 'enzyme'
-import { TextInput } from './TextInput'
+import * as React from 'react'
 import { withTheme } from '../../../../test/index'
+import { TextInput } from './TextInput'
 
 describe('TextInput', () => {
     it('render', () => {

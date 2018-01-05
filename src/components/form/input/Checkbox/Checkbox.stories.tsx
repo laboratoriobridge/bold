@@ -1,9 +1,8 @@
-import * as React from 'react'
-
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { withKnobs, text, boolean } from '@storybook/addon-knobs'
-import { withTheme } from '../../../../stories-addons/withTheme'
+import * as React from 'react'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes/index'
+import { withTheme } from '../../../../stories-addons/withTheme'
 import { Checkbox } from './Checkbox'
 
 storiesOf('Components', module)

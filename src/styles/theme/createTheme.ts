@@ -1,4 +1,5 @@
 import { shade } from '../utils'
+
 import Theme from './Theme'
 import ThemeDefinition from './ThemeDefinition'
 

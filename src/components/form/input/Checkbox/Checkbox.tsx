@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { WrappedFieldInputProps } from 'redux-form'
+
 import withStyles, { css, WithStylesProps } from '../../../../decorators/withStyles'
 import { Input } from '../Input/Input'
 

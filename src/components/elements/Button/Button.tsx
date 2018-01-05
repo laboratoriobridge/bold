@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { MouseEventHandler } from 'react'
+
 import withHint, { WithHintProps } from '../../../decorators/withHint'
 import withStyles, { css, WithStylesProps } from '../../../decorators/withStyles'
 import { Icon } from '../Icon'
@@ -17,8 +17,8 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
     loading?: boolean
     name?: string,
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => any
-    onMouseEnter?: MouseEventHandler<any>
-    onMouseLeave?: MouseEventHandler<any>
+    onMouseEnter?: React.MouseEventHandler<any>
+    onMouseLeave?: React.MouseEventHandler<any>
     tabIndex?: number
     title?: string
     type?: Type

@@ -5,5 +5,4 @@ coverage
 npm-debug.log
 
 lib
-lib-esm
-_bundles
+storybook-static
