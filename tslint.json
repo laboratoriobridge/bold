@@ -5,6 +5,7 @@
     ],
     "rules": {
         "arrow-parens": false,
+        "ban-types": false,
         "interface-name": false,
         "jsx-boolean-value": false,
         "max-classes-per-file": [
@@ -68,6 +69,7 @@
     },
     "jsRules": {
         "arrow-parens": false,
+        "ban-types": false,
         "max-classes-per-file": [
             true,
             7
