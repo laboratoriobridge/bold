@@ -7,14 +7,15 @@
     "registry": "http://nexus.bridge.ufsc.br/content/repositories/npm-private/"
   },
   "scripts": {
-    "clean": "shx rm -rf _bundles lib",
+    "start": "npm run build && tsc --watch",
+    "clean": "shx rm -rf lib",
     "copyfiles": "copyfiles -u 1 ./src/styles/theme/**/fonts/** lib/",
-    "build": "npm run clean && tsc && npm run copyfiles && webpack",
+    "build": "npm run clean && tsc && npm run copyfiles",
     "test": "npm run lint && jest",
     "test:watch": "jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "npm run generate-prop-types && build-storybook",
     "generate-prop-types": "babel-node ./tools/generatePropTypes.js"
   },
   "devDependencies": {

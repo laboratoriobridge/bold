@@ -73,7 +73,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'Function',
+                    name: '(event: MouseEvent<HTMLButtonElement>) => any',
                     value: 'undefined'
                 }
             },
@@ -832,7 +832,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: true,
                 type: {
-                    name: 'Map<string, string>',
+                    name: '{ titulo: string; mensagem: string; }',
                     value: 'undefined'
                 }
             }
@@ -2312,42 +2312,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: '(values: any, props: any) => FormWarnings<any, void>',
-                    value: 'undefined'
-                }
-            },
-            'uiKey': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'ui': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'UIStateShape',
-                    value: 'undefined'
-                }
-            },
-            'updateUI': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '{ (obj: UIStateShape): void; (key: string, value: any): void; }',
-                    value: 'undefined'
-                }
-            },
-            'resetUI': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '() => void',
                     value: 'undefined'
                 }
             }
