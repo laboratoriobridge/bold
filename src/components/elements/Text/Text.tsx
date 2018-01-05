@@ -1,5 +1,5 @@
-import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import * as React from 'react'
 import { Color } from '../../../styles/theme/Theme'
 
 export type Weight = 'normal' | 'bold'
@@ -19,19 +19,17 @@ export class Text extends React.PureComponent<TextProps> {
     }
 
     static contextTypes = {
-        theme: PropTypes.object
+        theme: PropTypes.object,
     }
 
     render() {
         const style: React.CSSProperties = {
             color: this.context.theme.color[this.props.color],
             fontSize: this.props.size + 'rem',
-            fontWeight: this.props.weight
+            fontWeight: this.props.weight,
         }
 
-        return React.createElement(this.props.tag, {
-            style: style
-        }, this.props.children)
+        return React.createElement(this.props.tag, { style }, this.props.children)
     }
 
 }

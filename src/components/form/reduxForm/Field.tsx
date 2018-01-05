@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { ChangeEvent } from 'react'
+import { BaseFieldProps, EventOrValueHandler, WrappedFieldProps } from 'redux-form'
 import { Field as ReduxFormField } from 'redux-form/immutable'
-import { WrappedFieldProps, EventOrValueHandler, BaseFieldProps } from 'redux-form'
 import { FormField, FormFieldProps } from '../FormField'
 
-export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps, 'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
+export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps,
+    'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
     hasWrapper?: boolean
     name: string
     type?: string
@@ -20,7 +21,7 @@ interface FieldComponentProps extends FormFieldProps, WrappedFieldProps {
 export class Field extends React.PureComponent<FieldProps> {
 
     static defaultProps: Partial<FieldProps> = {
-        hasWrapper: true
+        hasWrapper: true,
     }
 
     render() {

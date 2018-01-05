@@ -9,8 +9,8 @@
   "scripts": {
     "clean": "shx rm -rf _bundles lib",
     "copyfiles": "copyfiles -u 1 ./src/styles/theme/**/fonts/** lib/",
-    "build": "npm run clean && tsc && npm run copyfiles && webpack --progress",
-    "test": "jest",
+    "build": "npm run clean && tsc && npm run copyfiles && webpack",
+    "test": "npm run lint && jest",
     "test:watch": "jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
@@ -118,6 +118,9 @@
       "node_modules",
       "<rootDir>/src"
     ],
+    "moduleNameMapper": {
+      "\\.(svg|woff2|ttf)$": "<rootDir>/src/test/__mocks__/fileMock.ts"
+    },
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "snapshotSerializers": [

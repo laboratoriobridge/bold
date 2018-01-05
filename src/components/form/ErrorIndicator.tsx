@@ -1,6 +1,6 @@
+import { Map } from 'immutable'
 import * as React from 'react'
 import { findDOMNode } from 'react-dom'
-import { Map } from 'immutable'
 import { Icon } from '../elements/Icon'
 import { Popover } from '../elements/Popover'
 
@@ -15,7 +15,7 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
     constructor(props) {
         super(props)
         this.state = {
-            showErrorPopover: false
+            showErrorPopover: false,
         }
     }
 

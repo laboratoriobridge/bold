@@ -1,5 +1,5 @@
-import * as React from 'react'
 import * as classnames from 'classnames'
+import * as React from 'react'
 import { Modal as OverlayModal } from 'react-overlays'
 import * as ModalManager from 'react-overlays/lib/ModalManager'
 
@@ -11,7 +11,7 @@ export class Modal extends React.Component<ModalProps> {
 
     render() {
         const classes = classnames('modal', {
-            'is-active': this.props.active
+            'is-active': this.props.active,
         })
 
         /**

@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { StyleDeclaration } from 'aphrodite'
 
 /**

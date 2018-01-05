@@ -1,10 +1,10 @@
-import * as React from 'react'
 import * as PropTypes from 'prop-types'
+import * as React from 'react'
+import createTheme from './createTheme'
 import defaultTheme from './default/defaultTheme'
 import initializeDefault from './default/initializeDefault'
-import ThemeDefinition from './ThemeDefinition'
-import createTheme from './createTheme'
 import Theme from './Theme'
+import ThemeDefinition from './ThemeDefinition'
 
 export interface ThemeProviderProps {
     themeDef?: ThemeDefinition
@@ -13,11 +13,11 @@ export interface ThemeProviderProps {
 export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
     static childContextTypes = {
-        theme: PropTypes.object
+        theme: PropTypes.object,
     }
 
     static defaultProps: Partial<ThemeProviderProps> = {
-        themeDef: defaultTheme
+        themeDef: defaultTheme,
     }
 
     private theme: Theme

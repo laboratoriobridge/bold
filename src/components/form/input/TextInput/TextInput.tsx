@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Input, PublicInputProps } from '../Input/Input'
 import withStyles, { WithStylesProps } from '../../../../decorators/withStyles'
 import { css } from '../../../../decorators/withStyles/createStyles'
+import { Input, PublicInputProps } from '../Input/Input'
 
 export interface TextInputProps extends PublicInputProps, WithStylesProps {
 
@@ -30,17 +30,17 @@ export class TextInput extends React.Component<TextInputProps> {
                 lineHeight: '1',
                 padding: '0.5rem 1rem',
                 ':hover': {
-                    borderColor: theme.color.gray40
+                    borderColor: theme.color.gray40,
                 },
                 ':focus': {
                     borderColor: theme.color.primary,
-                    outline: 'none'
+                    outline: 'none',
                 },
                 ':active': {
                     borderColor: theme.color.primary,
-                    boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)'
-                }
-            }
+                    boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+                },
+            },
         }))
 
         return (

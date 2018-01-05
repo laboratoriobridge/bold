@@ -7,7 +7,7 @@ const myGlobalExtension = {
         }
 
         return generateSubtreeStyles(selector.slice(1))
-    }
+    },
 }
 
 const { css } = (StyleSheet as any).extend([myGlobalExtension])

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { RadioButtonProps, RadioButton } from '../../input/RadioButton/RadioButton'
-import { Field } from '../../reduxForm/Field'
 import { WrappedFieldProps } from 'redux-form'
+import { RadioButton, RadioButtonProps } from '../../input/RadioButton/RadioButton'
+import { Field } from '../../reduxForm/Field'
 
 export interface RadioFieldProps extends RadioButtonProps {
     name: string

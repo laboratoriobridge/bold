@@ -1,6 +1,6 @@
-import * as React from 'react'
 import * as classnames from 'classnames'
-import { Popover, Placement } from './Popover'
+import * as React from 'react'
+import { Placement, Popover } from './Popover'
 
 export interface HintProps {
     placement?: Placement
@@ -16,7 +16,7 @@ export interface HintState {
 export class Hint extends React.Component<HintProps, HintState> {
 
     static defaultProps: Partial<HintProps> = {
-        type: 'normal'
+        type: 'normal',
     }
 
     private instance: any
@@ -24,7 +24,7 @@ export class Hint extends React.Component<HintProps, HintState> {
     constructor(props) {
         super(props)
         this.state = {
-            showPopover: false
+            showPopover: false,
         }
     }
 

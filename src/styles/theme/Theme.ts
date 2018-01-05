@@ -1,4 +1,5 @@
-export type Color = 'primary' | 'white' | 'gray10' | 'gray20' | 'gray30' | 'gray40' | 'gray50' | 'gray60' | 'gray70' | 'gray80' | 'gray90'
+export type Color = 'primary' | 'white'
+    | 'gray10' | 'gray20' | 'gray30' | 'gray40' | 'gray50' | 'gray60' | 'gray70' | 'gray80' | 'gray90'
 
 export const colors: {[key in Color]: string} = {
     'primary': 'primary',
@@ -11,7 +12,7 @@ export const colors: {[key in Color]: string} = {
     'gray60': 'gray60',
     'gray70': 'gray70',
     'gray80': 'gray80',
-    'gray90': 'gray90'
+    'gray90': 'gray90',
 }
 
 export default interface Theme {

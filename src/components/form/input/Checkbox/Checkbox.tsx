@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { WrappedFieldInputProps } from 'redux-form'
+import withStyles, { css, WithStylesProps } from '../../../../decorators/withStyles'
 import { Input } from '../Input/Input'
-import withStyles, { WithStylesProps, css } from '../../../../decorators/withStyles'
-
 
 export interface CheckboxProps extends Partial<WrappedFieldInputProps>, WithStylesProps {
     checked?: boolean
@@ -37,14 +36,14 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                     transition: 'all .2s ease',
                     transform: 'rotate(45deg) scale(1)',
                     width: 4,
-                }
+                },
             },
             label: {
                 color: theme.color.gray70,
                 fontSize: 12,
                 marginLeft: 10,
-                verticalAlign: 'middle'
-            }
+                verticalAlign: 'middle',
+            },
         }))
 
         const checkClasses = css(checkStyles.check)
@@ -57,7 +56,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 cursor: 'pointer',
             },
             checkboxDisabled: {
-                cursor: 'not-allowed'
+                cursor: 'not-allowed',
             },
             input: {
                 display: 'none',
@@ -68,8 +67,8 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                     backgroundColor: theme.color.primary,
                     borderColor: theme.color.primary,
                     ':after': {
-                        opacity: 1
-                    }
+                        opacity: 1,
+                    },
                 },
                 [`&:focus + .${checkClasses}`]: {
                     borderColor: theme.color.primary,
@@ -80,10 +79,9 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 },
                 [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
                     color: theme.color.gray30,
-                }
-            }
+                },
+            },
         }))
-
 
         return (
             <label className={css(styles.checkbox, this.props.disabled && styles.checkboxDisabled)} >

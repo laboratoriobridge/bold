@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { TextInputProps, TextInput } from '../../input/TextInput/TextInput'
-import { Field, FieldProps } from '../../reduxForm/Field'
-import { FormFieldProps } from '../../../form/FormField'
 import { WrappedFieldProps } from 'redux-form'
+import { FormFieldProps } from '../../../form/FormField'
+import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
+import { Field, FieldProps } from '../../reduxForm/Field'
 
-export interface TextFieldProps extends FormFieldProps, TextInputProps, Pick<FieldProps, 'normalize' | 'parse' | 'format'> {
+export interface TextFieldProps extends FormFieldProps, TextInputProps,
+    Pick<FieldProps, 'normalize' | 'parse' | 'format'> {
     name: string
 }
 
