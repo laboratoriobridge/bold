@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { WrappedFieldProps } from 'redux-form'
+
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
 import { Field } from '../../reduxForm/Field'
 

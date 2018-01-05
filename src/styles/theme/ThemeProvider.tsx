@@ -1,5 +1,6 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
+
 import createTheme from './createTheme'
 import defaultTheme from './default/defaultTheme'
 import initializeDefault from './default/initializeDefault'

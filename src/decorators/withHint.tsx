@@ -1,4 +1,5 @@
 import * as React from 'react'
+
 import { Hint } from '../components/elements/Hint'
 
 export interface WithHintProps {

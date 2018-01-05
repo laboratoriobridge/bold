@@ -1,9 +1,10 @@
 import * as React from 'react'
 import { Prompt } from 'react-router-dom'
 import {
-    ConfigProps as ReduxFormConfigProps, DecoratedComponentClass, InjectedFormProps as InjectedFormProps
+    ConfigProps as ReduxFormConfigProps, DecoratedComponentClass,
+    InjectedFormProps as InjectedFormProps, reduxForm, SubmissionError
 } from 'redux-form'
-import { reduxForm, SubmissionError } from 'redux-form'
+
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
 
 export interface FormModalProps {

@@ -1,4 +1,5 @@
 import ThemeDefinition from '../ThemeDefinition'
+
 import * as font from './fonts/NotoSans-Regular.ttf'
 
 const notoSans = {

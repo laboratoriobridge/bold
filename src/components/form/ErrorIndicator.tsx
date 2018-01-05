@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { findDOMNode } from 'react-dom'
+
 import { Icon } from '../elements/Icon'
 import { Popover } from '../elements/Popover'
 
