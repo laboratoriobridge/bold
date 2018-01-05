@@ -10,7 +10,7 @@
     "clean": "shx rm -rf _bundles lib",
     "copyfiles": "copyfiles -u 1 ./src/styles/theme/**/fonts/** lib/",
     "build": "npm run clean && tsc && npm run copyfiles && webpack --progress",
-    "test": "jest",
+    "test": "npm run lint && jest",
     "test:watch": "jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
