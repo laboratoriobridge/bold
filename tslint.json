@@ -43,6 +43,7 @@
             "allow-new"
         ],
         "object-literal-key-quotes": false,
+        "object-literal-sort-keys": false,
         "quotemark": [
             true,
             "single",
@@ -102,6 +103,7 @@
             "allow-new"
         ],
         "object-literal-key-quotes": false,
+        "object-literal-sort-keys": false,
         "quotemark": [
             true,
             "single",
