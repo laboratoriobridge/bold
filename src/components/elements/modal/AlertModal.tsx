@@ -116,7 +116,8 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
         return (
             <AlertModal active={this.state.active} info>
                 <AlertModalContent title='Deseja sair?'>
-                    Você preencheu alguns dados, se você sair agora esses dados serão perdidos. Tem certeza que deseja sair?
+                    Você preencheu alguns dados, se você sair agora esses dados serão perdidos.
+                    Tem certeza que deseja sair?
                 </AlertModalContent>
 
                 <Button label='Cancelar' onClick={this.onCancel} />

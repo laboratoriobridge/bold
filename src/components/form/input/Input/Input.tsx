@@ -23,10 +23,6 @@ export interface InputProps extends PublicInputProps {
 export class Input extends React.Component<InputProps, any> {
   public input: HTMLInputElement
 
-  private ref = (elem: HTMLInputElement) => {
-    this.input = elem
-  }
-
   focus() {
     this.input.focus()
   }
@@ -39,6 +35,10 @@ export class Input extends React.Component<InputProps, any> {
     return (
       <input ref={this.ref} {...this.props} />
     )
+  }
+
+  private ref = (elem: HTMLInputElement) => {
+    this.input = elem
   }
 
 }

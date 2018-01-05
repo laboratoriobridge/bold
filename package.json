@@ -118,6 +118,9 @@
       "node_modules",
       "<rootDir>/src"
     ],
+    "moduleNameMapper": {
+      "\\.(svg|woff2|ttf)$": "<rootDir>/src/test/__mocks__/fileMock.ts"
+    },
     "coverageDirectory": "./coverage/",
     "collectCoverage": true,
     "snapshotSerializers": [

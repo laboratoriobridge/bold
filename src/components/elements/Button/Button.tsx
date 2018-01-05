@@ -16,7 +16,7 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
     label: string
     loading?: boolean
     name?: string,
-    onClick?: Function
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => any
     onMouseEnter?: MouseEventHandler<any>
     onMouseLeave?: MouseEventHandler<any>
     tabIndex?: number
@@ -32,10 +32,11 @@ export interface ButtonState {
 @withHint
 export class Button extends React.Component<ButtonProps, ButtonState> {
 
-    private timeout: number
     static defaultProps: Partial<ButtonProps> = {
         type: 'normal',
     }
+
+    private timeout: number
 
     constructor(props, context?) {
         super(props, context)
@@ -43,6 +44,11 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         this.state = {
             loading: false,
         }
+    }
+
+    componentWillUnmount() {
+        clearTimeout(this.timeout)
+        this.timeout = -1
     }
 
     render() {
@@ -118,12 +124,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         return true // treat all other keys normally;
     }
 
-    componentWillUnmount() {
-        clearTimeout(this.timeout)
-        this.timeout = -1
-    }
-
-    private onClick = (event) => {
+    private onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         if (this.props.onClick) {
 
             const promise = this.props.onClick(event)

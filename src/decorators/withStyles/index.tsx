@@ -9,7 +9,8 @@ export interface WithStylesProps {
     createStyles?: StyleCreator
 }
 
-export default function withStyles<P extends WithStylesProps, T extends React.ComponentClass<P>>(WrappedComponent: T): T {
+export default function withStyles<P extends WithStylesProps,
+    T extends React.ComponentClass<P>>(WrappedComponent: T): T {
     class WithStyles extends React.Component<P> {
 
         static contextTypes = {

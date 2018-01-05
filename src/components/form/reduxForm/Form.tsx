@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Prompt } from 'react-router-dom'
-import { ConfigProps as ReduxFormConfigProps, DecoratedComponentClass, InjectedFormProps as InjectedFormProps } from 'redux-form'
+import {
+    ConfigProps as ReduxFormConfigProps, DecoratedComponentClass, InjectedFormProps as InjectedFormProps
+} from 'redux-form'
 import { reduxForm, SubmissionError } from 'redux-form/immutable'
 import ui, { ReduxUIProps } from 'redux-ui'
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
@@ -127,7 +129,10 @@ export class Form extends React.Component<FormProps> {
 
     private renderForm = (props: FormComponentProps) => (
         <div className='is-full-height is-vertical-flow'>
-            <Prompt when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded} message='mensagem não usada' />
+            <Prompt
+                when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded}
+                message='mensagem não usada'
+            />
             {this.props.render(props)}
         </div>
     )

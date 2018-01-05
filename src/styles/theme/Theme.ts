@@ -1,4 +1,5 @@
-export type Color = 'primary' | 'white' | 'gray10' | 'gray20' | 'gray30' | 'gray40' | 'gray50' | 'gray60' | 'gray70' | 'gray80' | 'gray90'
+export type Color = 'primary' | 'white'
+    | 'gray10' | 'gray20' | 'gray30' | 'gray40' | 'gray50' | 'gray60' | 'gray70' | 'gray80' | 'gray90'
 
 export const colors: {[key in Color]: string} = {
     'primary': 'primary',

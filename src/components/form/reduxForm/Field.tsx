@@ -4,7 +4,8 @@ import { BaseFieldProps, EventOrValueHandler, WrappedFieldProps } from 'redux-fo
 import { Field as ReduxFormField } from 'redux-form/immutable'
 import { FormField, FormFieldProps } from '../FormField'
 
-export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps, 'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
+export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps,
+    'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
     hasWrapper?: boolean
     name: string
     type?: string
