@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ChangeEvent } from 'react'
 import { BaseFieldProps, EventOrValueHandler, WrappedFieldProps } from 'redux-form'
-import { Field as ReduxFormField } from 'redux-form/immutable'
+import { Field as ReduxFormField } from 'redux-form'
 import { FormField, FormFieldProps } from '../FormField'
 
 export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps,

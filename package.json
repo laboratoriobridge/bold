@@ -35,7 +35,6 @@
     "@types/react-router": "4.0.18",
     "@types/react-select": "1.0.48",
     "@types/redux-form": "7.0.9",
-    "@types/redux-ui": "0.0.13",
     "@types/storybook__addon-actions": "3.0.1",
     "@types/storybook__addon-knobs": "3.2.1",
     "@types/storybook__addon-links": "3.0.2",
@@ -43,17 +42,13 @@
     "@types/storybook__react": "3.0.5",
     "aphrodite": "1.2.5",
     "awesome-typescript-loader": "3.2.3",
-    "axios": "0.17.1",
     "babel-cli": "6.26.0",
     "babel-jest": "21.2.0",
-    "bulma": "0.4.2",
     "classnames": "2.2.5",
     "copyfiles": "1.2.0",
     "enzyme": "3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "3.3.0",
-    "immutable": "3.8.1",
-    "inputmask-core": "2.2.0",
     "jest": "22.0.4",
     "jest-cli": "22.0.4",
     "marksy": "5.0.0",
@@ -63,13 +58,10 @@
     "react-addons-create-fragment": "15.6.2",
     "react-docgen-typescript": "1.1.0",
     "react-dom": "16.2.0",
-    "react-maskedinput": "4.0.0",
     "react-overlays": "0.8.3",
     "react-redux": "5.0.6",
     "react-router-dom": "4.2.2",
-    "react-select": "1.0.1",
     "redux-form": "7.1.2",
-    "redux-ui": "0.1.1",
     "shx": "0.2.2",
     "ts-jest": "22.0.0",
     "tslint": "5.8.0",
@@ -81,20 +73,11 @@
   "peerDependencies": {
     "aphrodite": "1.x",
     "axios": "0.17.x",
-    "bulma": "0.4.x",
-    "classnames": "2.x",
-    "immutable": "3.x",
-    "inputmask-core": "2.x",
-    "moment": "2.x",
     "react": "16.2.x",
     "react-dom": "16.2.x",
-    "react-maskedinput": "4.x",
     "react-overlays": "0.8.x",
     "react-redux": "5.x",
-    "react-router-dom": "4.x",
-    "react-select": "1.x",
-    "redux-form": "7.x",
-    "redux-ui": "0.x"
+    "redux-form": "7.x"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -110,10 +93,7 @@
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "mapCoverage": true,
-    "testPathIgnorePatterns": [
-      "/__tests__/test.defaults.ts"
-    ],
-    "testRegex": ".*\\.test\\.(ts|tsx)$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleDirectories": [
       "node_modules",
       "<rootDir>/src"

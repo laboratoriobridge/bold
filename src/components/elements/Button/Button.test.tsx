@@ -1,5 +1,5 @@
+import { mount, render, shallow } from 'enzyme'
 import * as React from 'react'
-import { render, mount, shallow } from 'enzyme'
 import { withTheme } from '../../../test'
 import { Button } from './Button'
 

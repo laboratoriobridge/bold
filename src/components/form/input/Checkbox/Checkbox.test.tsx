@@ -1,7 +1,7 @@
-import * as React from 'react'
 import { render } from 'enzyme'
-import { Checkbox } from './Checkbox'
+import * as React from 'react'
 import { withTheme } from '../../../../test/'
+import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
     it('deve renderizar corretamente', () => {

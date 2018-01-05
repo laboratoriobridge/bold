@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Label } from '../Label'
 import { render } from 'enzyme'
+import * as React from 'react'
 import { withTheme } from '../../../test'
+import { Label } from '../Label'
 
 describe('Label', () => {
     it('render', () => {

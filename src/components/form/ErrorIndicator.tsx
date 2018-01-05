@@ -1,11 +1,13 @@
-import { Map } from 'immutable'
 import * as React from 'react'
 import { findDOMNode } from 'react-dom'
 import { Icon } from '../elements/Icon'
 import { Popover } from '../elements/Popover'
 
 export interface ErrorIndicatorProps {
-    error: Map<string, string>
+    error: {
+        titulo: string
+        mensagem: string
+    }
 }
 
 export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
@@ -48,8 +50,8 @@ export class ErrorIndicator extends React.Component<ErrorIndicatorProps, any> {
                     target={this.findTarget}
                     className='error-popover'
                 >
-                    <p className='error-title'>{this.props.error.get('titulo')}</p>
-                    <p className='error-message'>{this.props.error.get('mensagem')}</p>
+                    <p className='error-title'>{this.props.error.titulo}</p>
+                    <p className='error-message'>{this.props.error.mensagem}</p>
                 </Popover>
             </span>
         )

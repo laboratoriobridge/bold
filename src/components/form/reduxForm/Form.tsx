@@ -3,8 +3,7 @@ import { Prompt } from 'react-router-dom'
 import {
     ConfigProps as ReduxFormConfigProps, DecoratedComponentClass, InjectedFormProps as InjectedFormProps
 } from 'redux-form'
-import { reduxForm, SubmissionError } from 'redux-form/immutable'
-import ui, { ReduxUIProps } from 'redux-ui'
+import { reduxForm, SubmissionError } from 'redux-form'
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
 
 export interface FormModalProps {
@@ -22,14 +21,14 @@ export interface SuccessModalProps extends FormModalProps {
     result?: any
 }
 
-export interface UIStateShape {
+export interface FormState {
     error: any
     modalErrorActive: boolean
     modalSuccessActive: boolean
     result: any
 }
 
-export interface FormProps extends ReduxFormConfigProps<any, any>, Partial<ReduxUIProps<UIStateShape>> {
+export interface FormProps extends ReduxFormConfigProps<any, any> {
     errorIcon?: string,
     errorModal?: React.SFC<ErrorModalProps> | React.ComponentClass<ErrorModalProps>,
     hasErrorModal?: boolean,
@@ -48,15 +47,7 @@ export interface FormProps extends ReduxFormConfigProps<any, any>, Partial<Redux
 export interface FormComponentProps extends Partial<InjectedFormProps> {
 }
 
-@ui({
-    state: {
-        error: undefined,
-        modalErrorActive: false,
-        modalSuccessActive: false,
-        result: undefined,
-    },
-})
-export class Form extends React.Component<FormProps> {
+export class Form extends React.Component<FormProps, FormState> {
 
     static defaultProps: Partial<FormProps> = {
         errorIcon: 'modal-erro',
@@ -71,6 +62,16 @@ export class Form extends React.Component<FormProps> {
     }
 
     private ReduxWrappedForm: DecoratedComponentClass<any, WrapperFormProps>
+
+    constructor(props: FormProps, context) {
+        super(props, context)
+        this.state = {
+            error: undefined,
+            modalErrorActive: false,
+            modalSuccessActive: false,
+            result: undefined,
+        }
+    }
 
     componentWillMount() {
         this.ReduxWrappedForm = reduxForm(this.props)(WrappedForm)
@@ -89,7 +90,7 @@ export class Form extends React.Component<FormProps> {
         let errorTitle
         let errorContent
 
-        if (this.props.ui.error && !this.props.ui.error._error) {
+        if (this.state.error && !this.state.error._error) {
             errorTitle = 'Preenchimento incorreto!'
             errorContent = (<span>Alguns dados podem ter sido preenchidos incorretamente.</span>)
         } else {
@@ -106,8 +107,8 @@ export class Form extends React.Component<FormProps> {
                     render={this.renderForm}
                 />
                 <ErrorModal
-                    active={this.props.ui.modalErrorActive}
-                    error={this.props.ui.error}
+                    active={this.state.modalErrorActive}
+                    error={this.state.error}
                     onClose={this.closeError}
                     icon={errorIcon}
                     title={errorTitle}
@@ -115,10 +116,10 @@ export class Form extends React.Component<FormProps> {
                     {errorContent}
                 </ErrorModal>
                 <SuccessModal
-                    active={this.props.ui.modalSuccessActive}
+                    active={this.state.modalSuccessActive}
                     onClose={this.closeSuccess}
                     icon={successIcon}
-                    result={this.props.ui.result}
+                    result={this.state.result}
                     title={successTitle}
                 >
                     {successContent}
@@ -156,8 +157,7 @@ export class Form extends React.Component<FormProps> {
 
     private onSubmitFail = (errors) => {
         if (this.props.hasErrorModal) {
-            this.props.updateUI('error', errors)
-            this.props.updateUI('modalErrorActive', true)
+            this.setState({ error: errors, modalErrorActive: true })
         } else {
             this.props.onSubmitFail && this.props.onSubmitFail(errors)
         }
@@ -165,23 +165,20 @@ export class Form extends React.Component<FormProps> {
 
     private onSubmitSuccess = (result) => {
         if (this.props.hasSuccessModal) {
-            this.props.updateUI('result', result)
-            this.props.updateUI('modalSuccessActive', true)
+            this.setState({ result, modalSuccessActive: true })
         } else {
             this.props.onSubmitSuccess && this.props.onSubmitSuccess(result)
         }
     }
 
     private closeError = () => {
-        this.props.updateUI('modalErrorActive', false)
-        this.props.onSubmitFail && this.props.onSubmitFail(this.props.ui.error)
-        this.props.updateUI('error', undefined)
+        this.props.onSubmitFail && this.props.onSubmitFail(this.state.error)
+        this.setState({ modalErrorActive: false, error: undefined })
     }
 
     private closeSuccess = () => {
-        this.props.updateUI('modalSuccessActive', false)
-        this.props.onSubmitSuccess && this.props.onSubmitSuccess(this.props.ui.result)
-        this.props.updateUI('result', undefined)
+        this.props.onSubmitSuccess && this.props.onSubmitSuccess(this.state.result)
+        this.setState({ modalSuccessActive: false, result: undefined })
     }
 
     private isPromise = (arg: any): arg is Promise<any> => {

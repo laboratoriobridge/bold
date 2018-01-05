@@ -1,8 +1,8 @@
+import { Renderable, RenderFunction } from '@storybook/react'
 import * as React from 'react'
-import { RenderFunction, Renderable } from '@storybook/react'
-import { reduxForm, reducer as reduxFormReducer } from 'redux-form/immutable'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from 'redux'
+import { combineReducers, createStore } from 'redux'
+import { reducer as reduxFormReducer, reduxForm } from 'redux-form'
 
 const reducer = combineReducers({
     form: reduxFormReducer,
@@ -14,14 +14,15 @@ export const createStoryStore = () => {
     )
 }
 
-export const withForm = (form = 'storyForm', store = createStoryStore()) => (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
-    const StoryForm = reduxForm({
-        form: form
-    })(() => <form>{story()}</form>)
+export const withForm = (form = 'storyForm', store = createStoryStore()) =>
+    (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
+        const StoryForm = reduxForm({
+            form,
+        })(() => <form>{story()}</form>)
 
-    return (
-        <Provider store={store} >
-            <StoryForm />
-        </Provider>
-    )
-}
+        return (
+            <Provider store={store} >
+                <StoryForm />
+            </Provider>
+        )
+    }
