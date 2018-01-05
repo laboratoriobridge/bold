@@ -1,4 +1,11 @@
 export default interface ThemeDefinition {
-    primary: string
-    white: string
+    font: {
+        textFamily: any[]
+        titleFamily: any[]
+        textSize: number
+    }
+    color: {
+        primary: string
+        white: string
+    }
 }

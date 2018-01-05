@@ -1,12 +1,15 @@
 import * as React from 'react'
-import { shallowRenderAndMatch } from '../../../__tests__/test.defaults'
-import { Checkbox } from '../Checkbox'
+import { render } from 'enzyme'
+import { Checkbox } from './Checkbox'
+import { withTheme } from '../../../../test/'
 
 describe('Checkbox', () => {
-    it('deve renderizar corretamente', function () {
-        shallowRenderAndMatch(<Checkbox label='check' />)
+    it('deve renderizar corretamente', () => {
+        const wrapper = render(withTheme(<Checkbox label='check' />))
+        expect(wrapper).toMatchSnapshot()
     })
-    it('deve conter a classe css "disabled"', function () {
-        shallowRenderAndMatch(<Checkbox label='check' disabled />)
+    it('deve conter a classe css "disabled"', () => {
+        const wrapper = render(withTheme(<Checkbox label='check' disabled />))
+        expect(wrapper).toMatchSnapshot()
     })
 })
