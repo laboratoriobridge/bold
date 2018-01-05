@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ErrorIndicator } from './ErrorIndicator'
 import { Icon } from '../elements/Icon'
 import { Label } from '../elements/Label'
+import { ErrorIndicator } from './ErrorIndicator'
 
 export interface FormLabelProps {
     error?: any

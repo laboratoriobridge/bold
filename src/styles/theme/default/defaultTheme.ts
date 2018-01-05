@@ -9,7 +9,7 @@ const notoSans = {
     fontFamily: 'Noto Sans',
     fontStyle: 'normal',
     fontWeight: '400',
-    src: 'url(' + font + ') format("truetype")'
+    src: 'url(' + font + ') format("truetype")',
 }
 
 const defaultTheme: ThemeDefinition = {

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Icon } from '../Icon'
-import withHint, { WithHintProps } from '../../../decorators/withHint'
-import withStyles, { WithStylesProps, css } from '../../../decorators/withStyles'
 import { MouseEventHandler } from 'react'
+import withHint, { WithHintProps } from '../../../decorators/withHint'
+import withStyles, { css, WithStylesProps } from '../../../decorators/withStyles'
+import { Icon } from '../Icon'
 
 export type Type = 'normal' | 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'link'
 
@@ -34,14 +34,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
     private timeout: number
     static defaultProps: Partial<ButtonProps> = {
-        type: 'normal'
+        type: 'normal',
     }
 
     constructor(props, context?) {
         super(props, context)
 
         this.state = {
-            loading: false
+            loading: false,
         }
     }
 
@@ -53,7 +53,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             icon,
             loading,
             type,
-            ...rest
+            ...rest,
         } = this.props
 
         const styles = createStyles(theme => ({
@@ -73,20 +73,20 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                     boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray10,
                 },
                 ':disabled': {
-                    opacity: 0.5
+                    opacity: 0.5,
                 },
                 ':focus': {
                     border: '1px solid ' + theme.color.primary,
-                    outline: 'none'
+                    outline: 'none',
                 },
             },
             primary: {
                 backgroundColor: theme.color.primary,
                 border: '1px solid ' + theme.color.primary,
-                color: theme.color.white
+                color: theme.color.white,
             },
             loading: {
-            }
+            },
         }))
 
         const classes = css(

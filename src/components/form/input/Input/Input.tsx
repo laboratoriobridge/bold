@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { EventOrValueHandler } from 'redux-form'
 import { ChangeEvent, FocusEvent } from 'react'
+import { EventOrValueHandler } from 'redux-form'
 
 export interface PublicInputProps {
   className?: string

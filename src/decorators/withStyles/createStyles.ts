@@ -1,4 +1,4 @@
-import { StyleSheet, StyleDeclaration } from 'aphrodite'
+import { StyleDeclaration, StyleSheet } from 'aphrodite'
 import Theme from '../../styles/theme/Theme'
 
 const childSelectorExtension = {
@@ -8,7 +8,7 @@ const childSelectorExtension = {
         }
 
         return generateSubtreeStyles(`${baseSelector}${selector.slice(1)}`)
-    }
+    },
 }
 
 export const { css } = (StyleSheet as any).extend([childSelectorExtension])

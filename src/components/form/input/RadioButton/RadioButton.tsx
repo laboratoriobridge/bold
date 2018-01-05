@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { PublicInputProps, Input } from '../Input/Input'
-import withStyles, { WithStylesProps, css } from '../../../../decorators/withStyles'
+import withStyles, { css, WithStylesProps } from '../../../../decorators/withStyles'
+import { Input, PublicInputProps } from '../Input/Input'
 
 export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
     label: string
@@ -34,14 +34,14 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                     textAlign: 'center',
                     transition: 'all .2s ease',
                     width: 2,
-                }
+                },
             },
             label: {
                 color: theme.color.gray70,
                 fontSize: 12,
                 marginLeft: 10,
-                verticalAlign: 'middle'
-            }
+                verticalAlign: 'middle',
+            },
         }))
 
         const checkClasses = css(checkStyles.check)
@@ -60,8 +60,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                     backgroundColor: theme.color.primary,
                     borderColor: theme.color.primary,
                     ':after': {
-                        opacity: 1
-                    }
+                        opacity: 1,
+                    },
                 },
                 [`&:focus + .${checkClasses}`]: {
                     borderColor: theme.color.primary,
@@ -72,8 +72,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 },
                 [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
                     color: theme.color.gray30,
-                }
-            }
+                },
+            },
         }))
 
         const { label, ...rest } = this.props

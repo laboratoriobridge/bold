@@ -11,7 +11,7 @@ export const colors: {[key in Color]: string} = {
     'gray60': 'gray60',
     'gray70': 'gray70',
     'gray80': 'gray80',
-    'gray90': 'gray90'
+    'gray90': 'gray90',
 }
 
 export default interface Theme {

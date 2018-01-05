@@ -7,7 +7,7 @@ export default function initializeDefault(theme: Theme) {
         html: {
             fontSize: theme.font.textSize,
             fontFamily: theme.font.textFamily,
-        }
+        },
     })
     cssGlobal(normalizeCss)
 }

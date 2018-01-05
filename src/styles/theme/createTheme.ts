@@ -1,11 +1,11 @@
-import ThemeDefinition from './ThemeDefinition'
-import Theme from './Theme'
 import { shade } from '../utils'
+import Theme from './Theme'
+import ThemeDefinition from './ThemeDefinition'
 
 export default function createTheme(themeDef: ThemeDefinition): Theme {
     return {
         font: {
-            ...themeDef.font
+            ...themeDef.font,
         },
         color: {
             primary: themeDef.color.primary,
@@ -19,6 +19,6 @@ export default function createTheme(themeDef: ThemeDefinition): Theme {
             gray70: shade(-0.7, themeDef.color.white),
             gray80: shade(-0.8, themeDef.color.white),
             gray90: shade(-0.9, themeDef.color.white),
-        }
+        },
     }
 }

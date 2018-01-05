@@ -1,9 +1,9 @@
-import * as React from 'react'
 import * as classnames from 'classnames'
-import { Modal } from './Modal'
-import { Icon } from '../Icon'
+import * as React from 'react'
 import { Button } from '../Button/Button'
+import { Icon } from '../Icon'
 import { AlertModalContent } from './AlertModalContent'
+import { Modal } from './Modal'
 
 export interface AlertModalProps {
     active?: boolean
@@ -38,7 +38,7 @@ export class AlertModal extends React.Component<AlertModalProps, any> {
         const tipo = classnames('alertmodal-card modal-content', {
             ' is-success': this.props.success,
             ' is-error': this.props.error,
-            ' is-info': this.props.info
+            ' is-info': this.props.info,
         })
 
         return (
@@ -85,7 +85,7 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
         super(props, context)
 
         this.state = {
-            active: true
+            active: true,
         }
 
         this.onCancel = this.onCancel.bind(this)
@@ -94,7 +94,7 @@ export class AlertModalLeave extends React.Component<AlertModalLeaveProps, any> 
 
     componentWillReceiveProps() {
         this.state = {
-            active: true
+            active: true,
         }
     }
 

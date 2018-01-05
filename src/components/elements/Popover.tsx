@@ -1,6 +1,6 @@
+import * as classnames from 'classnames'
 import * as React from 'react'
 import { Overlay } from 'react-overlays'
-import * as classnames from 'classnames'
 
 export type Placement = 'top' | 'right' | 'bottom' | 'left'
 
@@ -39,14 +39,14 @@ export class Popover extends React.Component<PopoverProps> {
 }
 
 const PopoverContent = props => {
-    let {
+    const {
         style,
-        children
+        children,
     } = props
 
     const classes = classnames('popover', props.className, props.placement, {
         'grey': props.color && props.color === 'grey',
-        'dark-grey': props.color && props.color === 'dark-grey'
+        'dark-grey': props.color && props.color === 'dark-grey',
     })
 
     return (

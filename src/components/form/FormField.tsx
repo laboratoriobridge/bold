@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { FormLabelProps, FormLabel } from './FormLabel'
+import { FormLabel, FormLabelProps } from './FormLabel'
 
 export interface FormFieldProps extends FormLabelProps {
     name?: string

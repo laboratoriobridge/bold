@@ -1,5 +1,5 @@
-import * as React from 'react'
 import * as classnames from 'classnames'
+import * as React from 'react'
 
 export interface IconProps {
     icon: string
@@ -18,7 +18,7 @@ export class Icon extends React.Component<IconProps, any> {
             'is-medium': this.props.size && this.props.size === 'medium',
             'is-large': this.props.size && this.props.size === 'large',
             'is-gigantic': this.props.size && this.props.size === 'gigantic',
-            'is-12px': this.props.size && this.props.size === 'is-12px'
+            'is-12px': this.props.size && this.props.size === 'is-12px',
         })
         return (
             <i title={this.props.title} className={classes} />

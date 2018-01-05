@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Prompt } from 'react-router-dom'
-import { ConfigProps as ReduxFormConfigProps, InjectedFormProps as InjectedFormProps, DecoratedComponentClass } from 'redux-form'
+import { ConfigProps as ReduxFormConfigProps, DecoratedComponentClass, InjectedFormProps as InjectedFormProps } from 'redux-form'
 import { reduxForm, SubmissionError } from 'redux-form/immutable'
 import ui, { ReduxUIProps } from 'redux-ui'
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
@@ -20,7 +20,7 @@ export interface SuccessModalProps extends FormModalProps {
     result?: any
 }
 
-export type UIStateShape = {
+export interface UIStateShape {
     error: any
     modalErrorActive: boolean
     modalSuccessActive: boolean
@@ -52,7 +52,7 @@ export interface FormComponentProps extends Partial<InjectedFormProps> {
         modalErrorActive: false,
         modalSuccessActive: false,
         result: undefined,
-    }
+    },
 })
 export class Form extends React.Component<FormProps> {
 
@@ -81,7 +81,7 @@ export class Form extends React.Component<FormProps> {
             successContent,
             successIcon,
             successModal: SuccessModal,
-            successTitle
+            successTitle,
         } = this.props
 
         let errorTitle
