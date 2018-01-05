@@ -1,9 +1,11 @@
 import * as React from 'react'
-import { shallowRenderAndMatch } from '../../../__tests__/test.defaults'
-import { TextInput } from '../TextInput'
+import { render } from 'enzyme'
+import { TextInput } from './TextInput'
+import { withTheme } from '../../../../test/index'
 
 describe('TextInput', () => {
-    it('render', function () {
-        shallowRenderAndMatch(<TextInput />)
+    it('render', () => {
+        const wrapper = render(withTheme(<TextInput />))
+        expect(wrapper).toMatchSnapshot()
     })
 })

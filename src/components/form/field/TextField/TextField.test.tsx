@@ -1,9 +1,11 @@
 import * as React from 'react'
-import { TextField } from '../TextField'
-import { shallowRenderAndMatch, testForm } from '../../../../__tests__/test.defaults'
+import { render } from 'enzyme'
+import { TextField } from './TextField'
+import { withForm } from '../../../../test/index'
 
 describe('TextField', () => {
     it('deve ser renderizado de forma correta', () => {
-        shallowRenderAndMatch(testForm(() => <TextField name='test' placeholder='Test' maxLength={2} disabled={false} />))
+        const wrapper = render(withForm(<TextField name='test' placeholder='Test' maxLength={2} disabled={false} />))
+        expect(wrapper).toMatchSnapshot()
     })
 })

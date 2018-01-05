@@ -1,3 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField deve ser renderizado de forma correta 1`] = `<ReduxForm />`;
+exports[`TextField deve ser renderizado de forma correta 1`] = `
+<div
+  data-name="test"
+>
+  <div>
+    <input
+      class="input_1wd9fxb"
+      maxlength="2"
+      name="test"
+      placeholder="Test"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

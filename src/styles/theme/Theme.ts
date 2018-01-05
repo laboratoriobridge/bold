@@ -15,42 +15,50 @@ export const colors: {[key in Color]: string} = {
 }
 
 export default interface Theme {
-    primary: string
-    white: string
-    /**
-     * Theme.white escurecido 10%
-     */
-    gray10: string
-    /**
-     * Theme.white escurecido 20%
-     */
-    gray20: string
-    /**
-     * Theme.white escurecido 30%
-     */
-    gray30: string
-    /**
-     * Theme.white escurecido 40%
-     */
-    gray40: string
-    /**
-     * Theme.white escurecido 50%
-     */
-    gray50: string
-    /**
-     * Theme.white escurecido 60%
-     */
-    gray60: string
-    /**
-     * Theme.white escurecido 70%
-     */
-    gray70: string
-    /**
-     * Theme.white escurecido 80%
-     */
-    gray80: string
-    /**
-     * Theme.white escurecido 90%
-     */
-    gray90: string
+    font: {
+        textFamily: any[]
+        titleFamily: any[]
+        textSize: number
+    }
+    color: {
+        primary: string
+        white: string
+
+        /**
+         * Theme.white escurecido 10%
+         */
+        gray10: string
+        /**
+         * Theme.white escurecido 20%
+         */
+        gray20: string
+        /**
+         * Theme.white escurecido 30%
+         */
+        gray30: string
+        /**
+         * Theme.white escurecido 40%
+         */
+        gray40: string
+        /**
+         * Theme.white escurecido 50%
+         */
+        gray50: string
+        /**
+         * Theme.white escurecido 60%
+         */
+        gray60: string
+        /**
+         * Theme.white escurecido 70%
+         */
+        gray70: string
+        /**
+         * Theme.white escurecido 80%
+         */
+        gray80: string
+        /**
+         * Theme.white escurecido 90%
+         */
+        gray90: string
+    }
 }

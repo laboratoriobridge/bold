@@ -2,18 +2,18 @@
 
 exports[`Checkbox deve conter a classe css "disabled" 1`] = `
 <label
-  className="checkbox disabled"
+  class="checkbox_13xlah4-o_O-checkboxDisabled_14ak7oz"
 >
-  <Input
-    disabled={true}
+  <input
+    class="input_ufi05b"
+    disabled=""
     type="checkbox"
   />
-  <Icon
-    className="check-indicator"
-    icon="checkbox-check"
+  <span
+    class="check_67q8ve"
   />
   <span
-    className="check-label"
+    class="label_hqebz6"
   >
     check
   </span>
@@ -22,17 +22,17 @@ exports[`Checkbox deve conter a classe css "disabled" 1`] = `
 
 exports[`Checkbox deve renderizar corretamente 1`] = `
 <label
-  className="checkbox"
+  class="checkbox_13xlah4"
 >
-  <Input
+  <input
+    class="input_ufi05b"
     type="checkbox"
   />
-  <Icon
-    className="check-indicator"
-    icon="checkbox-check"
+  <span
+    class="check_67q8ve"
   />
   <span
-    className="check-label"
+    class="label_hqebz6"
   >
     check
   </span>
