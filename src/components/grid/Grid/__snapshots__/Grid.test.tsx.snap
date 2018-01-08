@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid deve renderizar corretamente 1`] = `
+<div
+  class="grid_1ysn792"
+>
+  Content
+</div>
+`;
+
+exports[`Grid deve renderizar corretamente 2`] = `
+<div
+  class="grid_1ysn792-o_O-wrap_5xnc6m"
+>
+  Content
+</div>
+`;
+
+exports[`Grid deve renderizar corretamente 3`] = `
+<div
+  class="grid_1ysn792-o_O-justify__space-between_1sh8tod"
+>
+  Content
+</div>
+`;
+
+exports[`Grid deve renderizar corretamente 4`] = `
+<div
+  class="grid_1ysn792-o_O-align__center_1moixrt"
+>
+  Content
+</div>
+`;
+
+exports[`Grid deve renderizar corretamente 5`] = `
+<div
+  class="grid_1ysn792-o_O-direction__column_1jtvojh"
+>
+  Content
+</div>
+`;

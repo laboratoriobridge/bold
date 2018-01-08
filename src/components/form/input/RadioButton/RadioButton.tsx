@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import withStyles, { css, WithStylesProps } from '../../../../decorators/withStyles'
+import { withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
@@ -11,7 +11,9 @@ export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
 export class RadioButton extends React.Component<RadioButtonProps, any> {
 
     render() {
-        const checkStyles = this.props.createStyles(theme => ({
+        const { label, createStyles, css, ...rest } = this.props
+
+        const checkStyles = createStyles(theme => ({
             check: {
                 backgroundColor: theme.color.white,
                 border: '1px solid ' + theme.color.gray30,
@@ -48,7 +50,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         const checkClasses = css(checkStyles.check)
         const labelClasses = css(checkStyles.label)
 
-        const styles = this.props.createStyles(theme => ({
+        const styles = createStyles(theme => ({
             radio: {
                 cursor: 'pointer',
             },
@@ -76,8 +78,6 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 },
             },
         }))
-
-        const { label, ...rest } = this.props
 
         return (
             <label className={css(styles.radio)}>

@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import withStyles, { WithStylesProps } from '../../../../decorators/withStyles'
-import { css } from '../../../../decorators/withStyles/createStyles'
+import { withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface TextInputProps extends PublicInputProps, WithStylesProps {
@@ -21,7 +20,7 @@ export class TextInput extends React.Component<TextInputProps> {
     }
 
     render() {
-        const { createStyles, ...rest } = this.props
+        const { createStyles, css, ...rest } = this.props
         const styles = createStyles(theme => ({
             input: {
                 backgroundColor: theme.color.white,

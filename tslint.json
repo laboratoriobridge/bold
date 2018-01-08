@@ -35,6 +35,10 @@
                 ]
             }
         ],
+        "no-console": {
+            "severity": "warning"
+        },
+        "no-empty-interface": false,
         "no-string-literal": {
             "severity": "warning"
         },
@@ -105,6 +109,9 @@
                 ]
             }
         ],
+        "no-console": {
+            "severity": "warning"
+        },
         "no-string-literal": {
             "severity": "warning"
         },

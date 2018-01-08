@@ -1,9 +1,9 @@
-import { configure } from '@storybook/react'
 import { setOptions } from '@storybook/addon-options'
+import { configure } from '@storybook/react'
 
 setOptions({
   name: 'Bridge React',
-  url: 'https://github.com/laboratoriobridge/bridge-react'
+  url: 'https://github.com/laboratoriobridge/bridge-react',
 })
 
 const req = require.context('../src', true, /.stories.tsx?$/)

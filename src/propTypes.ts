@@ -158,12 +158,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -1043,12 +1061,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -1175,12 +1211,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -1334,12 +1388,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             },
@@ -1475,12 +1547,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -1730,12 +1820,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -1853,12 +1961,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
             'createStyles': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }
@@ -2312,6 +2438,186 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: '(values: any, props: any) => FormWarnings<any, void>',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Cell': {
+        displayName: 'Cell',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'size': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'alignSelf': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'AlignSelf',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'createStyles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Grid': {
+        displayName: 'Grid',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'wrap': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'alignItems': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'AlignItems',
+                    value: 'undefined'
+                }
+            },
+            'justifyContent': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'JustifyContent',
+                    value: 'undefined'
+                }
+            },
+            'direction': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Direction',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'createStyles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'PageContainer': {
+        displayName: 'PageContainer',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'createStyles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }

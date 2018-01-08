@@ -26,7 +26,6 @@
     "build",
     "coverage",
     "lib",
-    "lib-esm",
     "node",
     "node_modules",
     "target"

@@ -2,10 +2,10 @@ import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
 import createTheme from './createTheme'
-import defaultTheme from './default/defaultTheme'
+import { defaultTheme } from './default/defaultTheme'
 import initializeDefault from './default/initializeDefault'
-import Theme from './Theme'
-import ThemeDefinition from './ThemeDefinition'
+import { Theme } from './Theme'
+import { ThemeDefinition } from './ThemeDefinition'
 
 export interface ThemeProviderProps {
     themeDef?: ThemeDefinition

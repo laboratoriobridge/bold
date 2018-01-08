@@ -20,6 +20,8 @@ export * from './components/form/input/RadioButton/RadioButton'
 export * from './components/form/reduxForm/Field'
 export * from './components/form/reduxForm/Form'
 
+export * from './components/grid'
+
 /**
  * Theme
  */
