@@ -26,7 +26,7 @@ describe('Button', () => {
     })
 
     it('não deve ter animação com "onClick" que não seja promise', () => {
-        const func = () => { }
+        const func = () => undefined
         const wrapper = mount(<Button label='Botão' onClick={func} />)
         expect(wrapper).toMatchSnapshot()
 
