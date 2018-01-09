@@ -12,6 +12,7 @@ export default function createTheme(themeDef: ThemeDefinition): Theme {
             small: `@media (max-width: ${themeDef.breakpoint.small}px)`,
         },
         color: {
+            text: themeDef.color.text,
             primary: themeDef.color.primary,
             red: themeDef.color.red,
             white: themeDef.color.white,
