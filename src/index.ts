@@ -21,6 +21,7 @@ export * from './components/form/reduxForm/Field'
 export * from './components/form/reduxForm/Form'
 
 export * from './components/grid'
+export * from './components/layout'
 
 /**
  * Theme

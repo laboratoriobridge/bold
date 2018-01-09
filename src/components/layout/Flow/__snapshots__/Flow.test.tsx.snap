@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flow deve envelopar cada filho em um elemento que crie espaçamento horizontal 1`] = `
+<div
+  class="flowHorizontal_1joc06t"
+  style="margin:0 -0.5rem"
+>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      1
+    </span>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      2
+    </span>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      3
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Flow deve suportar o parâmetro direction 1`] = `
+<div
+  class="flowVertical_wgmchy"
+  style="margin:0 -0.5rem"
+>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <div>
+      1
+    </div>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <div>
+      2
+    </div>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+  >
+    <div>
+      3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Flow deve suportar o parâmetro hSpacing 1`] = `
+<div
+  class="flowHorizontal_1joc06t"
+  style="margin:0 -0.25rem"
+>
+  <div
+    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+  >
+    <span>
+      1
+    </span>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+  >
+    <span>
+      2
+    </span>
+  </div>
+  <div
+    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+  >
+    <span>
+      3
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Flow deve suportar o parâmetro vSpacing 1`] = `
+<div
+  class="flowHorizontal_1joc06t"
+  style="margin:0 -0.5rem"
+>
+  <div
+    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      1
+    </span>
+  </div>
+  <div
+    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      2
+    </span>
+  </div>
+  <div
+    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+  >
+    <span>
+      3
+    </span>
+  </div>
+</div>
+`;

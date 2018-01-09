@@ -5,7 +5,7 @@ import { makeOptionClasses, Theme, withStyles, WithStylesProps } from '../../../
 export type AlignSelf = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
 
 export interface CellProps extends WithStylesProps {
-    size?: number
+    size?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
     alignSelf?: AlignSelf
 }
 

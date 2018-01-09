@@ -2461,7 +2461,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'number',
+                    name: '1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12',
                     value: 'undefined'
                 }
             },
@@ -2618,6 +2618,135 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Flow': {
+        displayName: 'Flow',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'direction': {
+                defaultValue: 'horizontal',
+                description: ``,
+                required: false,
+                type: {
+                    name: '"horizontal" | "vertical"',
+                    value: 'undefined'
+                }
+            },
+            'vSpacing': {
+                defaultValue: '0',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'hSpacing': {
+                defaultValue: '1',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'createStyles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StyleCreator',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Spacing': {
+        displayName: 'Spacing',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'top': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'right': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'bottom': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'left': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'block': {
+                defaultValue: 'false',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
                     value: 'undefined'
                 }
             }
