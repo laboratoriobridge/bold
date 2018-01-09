@@ -104,11 +104,13 @@ export default class Node extends React.PureComponent<NodeProps> {
             )
         }
 
+        const finalName = name !== 'Unknown' && name
+
         // tag with children
         return (
             <div>
                 <div style={containerStyleCopy}>
-                    <span style={tagStyle}>&lt;{name}</span>
+                    <span style={tagStyle}>&lt;{finalName}</span>
                     <Props
                         node={node}
                         maxPropsIntoLine={maxPropsIntoLine}
@@ -130,7 +132,7 @@ export default class Node extends React.PureComponent<NodeProps> {
                     />
                 ))}
                 <div style={containerStyleCopy}>
-                    <span style={tagStyle}>&lt;/{name}&gt;</span>
+                    <span style={tagStyle}>&lt;/{finalName}&gt;</span>
                 </div>
             </div>
         )
