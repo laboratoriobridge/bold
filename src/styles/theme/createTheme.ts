@@ -13,6 +13,7 @@ export default function createTheme(themeDef: ThemeDefinition): Theme {
         },
         color: {
             primary: themeDef.color.primary,
+            red: themeDef.color.red,
             white: themeDef.color.white,
             gray10: shade(-0.1, themeDef.color.white),
             gray20: shade(-0.2, themeDef.color.white),

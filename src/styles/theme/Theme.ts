@@ -1,8 +1,9 @@
-export type Color = 'primary' | 'white'
+export type Color = 'primary' | 'red' | 'white'
     | 'gray10' | 'gray20' | 'gray30' | 'gray40' | 'gray50' | 'gray60' | 'gray70' | 'gray80' | 'gray90'
 
 export const colors: {[key in Color]: string} = {
     'primary': 'primary',
+    'red': 'red',
     'white': 'white',
     'gray10': 'gray10',
     'gray20': 'gray20',
@@ -26,6 +27,7 @@ export interface Theme {
     }
     color: {
         primary: string
+        red: string
         white: string
 
         /**
