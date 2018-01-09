@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageContainer deve renderizar corretamente 1`] = `
+<div
+  class="container_96lsxt"
+>
+  Content
+</div>
+`;

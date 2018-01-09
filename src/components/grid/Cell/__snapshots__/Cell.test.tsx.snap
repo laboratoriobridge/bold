@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cell deve renderizar corretamente 1`] = `
+<div
+  class="cell_1nl17fg-o_O-autoSize_t0tx82"
+>
+  Content
+</div>
+`;
+
+exports[`Cell deve renderizar corretamente 2`] = `
+<div
+  class="cell_1nl17fg-o_O-size6_uxtoz"
+>
+  Content
+</div>
+`;
+
+exports[`Cell deve renderizar corretamente 3`] = `
+<div
+  class="cell_1nl17fg-o_O-autoSize_t0tx82-o_O-alignSelf__center_1h7v6hv"
+>
+  Content
+</div>
+`;

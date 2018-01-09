@@ -2,15 +2,16 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
-import createStyles, { StyleCreator } from './createStyles'
-
-export { css } from './createStyles'
+import createStyles, { css, StyleCreator } from './createStyles'
 
 export interface WithStylesProps {
+    styles?: React.CSSProperties
+
     createStyles?: StyleCreator
+    css?: (...styles: any[]) => string
 }
 
-export default function withStyles<P extends WithStylesProps,
+export function withStyles<P extends WithStylesProps,
     T extends React.ComponentClass<P>>(WrappedComponent: T): T {
     class WithStyles extends React.Component<P> {
 
@@ -27,7 +28,17 @@ export default function withStyles<P extends WithStylesProps,
         }
 
         render() {
-            return <WrappedComponent {...this.props} createStyles={WrappedComponent['styleCreator']} />
+            return (
+                <WrappedComponent
+                    {...this.props}
+                    createStyles={WrappedComponent['styleCreator']}
+                    css={this.css}
+                />
+            )
+        }
+
+        private css = (...styles) => {
+            return css(styles, this.props.styles)
         }
 
     }

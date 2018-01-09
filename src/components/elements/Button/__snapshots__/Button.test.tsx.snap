@@ -48,11 +48,13 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 >
   <Button
     createStyles={[Function]}
+    css={[Function]}
     label="Botão"
     onClick={[Function]}
   >
     <Button
       createStyles={[Function]}
+      css={[Function]}
       label="Botão"
       onClick={[Function]}
       type="normal"
@@ -79,11 +81,13 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 >
   <Button
     createStyles={[Function]}
+    css={[Function]}
     label="Botão"
     onClick={[Function]}
   >
     <Button
       createStyles={[Function]}
+      css={[Function]}
       label="Botão"
       onClick={[Function]}
       type="normal"
@@ -110,11 +114,13 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 >
   <Button
     createStyles={[Function]}
+    css={[Function]}
     label="Botão"
     onClick={[Function]}
   >
     <Button
       createStyles={[Function]}
+      css={[Function]}
       label="Botão"
       onClick={[Function]}
       type="normal"
@@ -141,11 +147,13 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
 >
   <Button
     createStyles={[Function]}
+    css={[Function]}
     label="Botão"
     onClick={[Function]}
   >
     <Button
       createStyles={[Function]}
+      css={[Function]}
       label="Botão"
       onClick={[Function]}
       type="normal"

@@ -1,12 +1,15 @@
 import { shade } from '../utils'
 
-import Theme from './Theme'
-import ThemeDefinition from './ThemeDefinition'
+import { Theme } from './Theme'
+import { ThemeDefinition } from './ThemeDefinition'
 
 export default function createTheme(themeDef: ThemeDefinition): Theme {
     return {
         font: {
             ...themeDef.font,
+        },
+        breakpoint: {
+            small: `@media (max-width: ${themeDef.breakpoint.small}px)`,
         },
         color: {
             primary: themeDef.color.primary,

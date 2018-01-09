@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import withHint, { WithHintProps } from '../../../decorators/withHint'
-import withStyles, { css, WithStylesProps } from '../../../decorators/withStyles'
+import { withStyles, WithStylesProps } from '../../../styles'
+import { withHint, WithHintProps } from '../Hint'
 import { Icon } from '../Icon'
 
 export type Type = 'normal' | 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'link'
@@ -56,6 +56,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             label,
             className,
             createStyles,
+            css,
             icon,
             loading,
             type,

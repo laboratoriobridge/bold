@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { reduxForm, InjectedFormProps } from 'redux-form'
+import { createStore } from 'redux'
+import { InjectedFormProps, reduxForm } from 'redux-form'
 
-import { ThemeProvider } from '../styles/theme/ThemeProvider'
-import ThemeDefinition from '../styles/theme/ThemeDefinition'
-import defaultTheme from '../styles/theme/default/defaultTheme'
+import { defaultTheme, ThemeDefinition, ThemeProvider } from '../styles/'
 
 const reducer = (state, action) => {
     return state
@@ -45,7 +43,7 @@ export const withForm = (node: React.ReactElement<any>, formName = 'test', store
     }
 
     const TestForm = reduxForm({
-        form: formName
+        form: formName,
     })(FormWrapper)
 
     return withRedux(withTheme(<TestForm />))

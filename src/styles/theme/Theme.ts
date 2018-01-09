@@ -15,11 +15,14 @@ export const colors: {[key in Color]: string} = {
     'gray90': 'gray90',
 }
 
-export default interface Theme {
+export interface Theme {
     font: {
         textFamily: any[]
         titleFamily: any[]
         textSize: number
+    }
+    breakpoint: {
+        small: string
     }
     color: {
         primary: string

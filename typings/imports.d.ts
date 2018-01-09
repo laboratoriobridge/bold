@@ -1,1 +1,2 @@
-declare module '*';
+declare module '*.svg'
+declare module '*.ttf'

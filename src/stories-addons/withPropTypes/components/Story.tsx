@@ -1,12 +1,14 @@
-import * as React from 'react'
-import PropTable from './PropTable'
-import Node from './Node'
-import Pre from './markdown/Pre'
 import marksy from 'marksy'
+import * as React from 'react'
+
+import Pre from './markdown/Pre'
+import Node from './Node'
+import PropTable from './PropTable'
 
 const baseFonts = {
-    fontFamily:
-        '-apple-system, ".SFNSText-Regular", "San Francisco", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Lucida Grande", "Arial", sans-serif',
+    fontFamily: ['-apple-system', '".SFNSText-Regular"', '"San Francisco"', 'BlinkMacSystemFont',
+        '"Segoe UI"', '"Roboto"', '"Oxygen"', '"Ubuntu"', '"Cantarell"', '"Fira Sans"', '"Droid Sans"',
+        '"Helvetica Neue"', '"Lucida Grande"', '"Arial"', 'sans-serif'],
     color: '#444',
     WebkitFontSmoothing: 'antialiased',
 }
@@ -110,6 +112,18 @@ export default class Story extends React.PureComponent<StoryProps> {
         this.marksy = marksy({ createElement: React.createElement })
     }
 
+    render() {
+        return (
+            <div style={stylesheet.infoBody}>
+                {this.renderInlineHeader()}
+                {this.renderStory()}
+                {this.renderInfoContent()}
+                {this.renderSourceCode()}
+                {this.renderPropTables()}
+            </div>
+        )
+    }
+
     private renderInlineHeader() {
         if (!this.props.context) {
             return null
@@ -146,6 +160,17 @@ export default class Story extends React.PureComponent<StoryProps> {
     }
 
     private renderSourceCode() {
+        return (
+            <div>
+                <h1 style={stylesheet.source.h1}>Story Source</h1>
+                <Pre>
+                    {React.Children.map(this.props.children, (root, idx) => this.renderNode(root, idx))}
+                </Pre>
+            </div>
+        )
+    }
+
+    private renderNode = (root, idx) => {
         const {
             maxPropsIntoLine,
             maxPropObjectKeys,
@@ -154,22 +179,15 @@ export default class Story extends React.PureComponent<StoryProps> {
         } = this.props
 
         return (
-            <div>
-                <h1 style={stylesheet.source.h1}>Story Source</h1>
-                <Pre>
-                    {React.Children.map(this.props.children, (root, idx) => (
-                        <Node
-                            key={idx}
-                            node={root}
-                            depth={0}
-                            maxPropsIntoLine={maxPropsIntoLine}
-                            maxPropObjectKeys={maxPropObjectKeys}
-                            maxPropArrayLength={maxPropArrayLength}
-                            maxPropStringLength={maxPropStringLength}
-                        />
-                    ))}
-                </Pre>
-            </div>
+            <Node
+                key={idx}
+                node={root}
+                depth={0}
+                maxPropsIntoLine={maxPropsIntoLine}
+                maxPropObjectKeys={maxPropObjectKeys}
+                maxPropArrayLength={maxPropArrayLength}
+                maxPropStringLength={maxPropStringLength}
+            />
         )
     }
 
@@ -216,17 +234,4 @@ export default class Story extends React.PureComponent<StoryProps> {
             </div>
         )
     }
-
-    render() {
-        return (
-            <div style={stylesheet.infoBody}>
-                {this.renderInlineHeader()}
-                {this.renderStory()}
-                {this.renderInfoContent()}
-                {this.renderSourceCode()}
-                {this.renderPropTables()}
-            </div>
-        )
-    }
-
 }

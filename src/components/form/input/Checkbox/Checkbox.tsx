@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { WrappedFieldInputProps } from 'redux-form'
 
-import withStyles, { css, WithStylesProps } from '../../../../decorators/withStyles'
+import { withStyles, WithStylesProps } from '../../../../styles'
 import { Input } from '../Input/Input'
 
 export interface CheckboxProps extends Partial<WrappedFieldInputProps>, WithStylesProps {
@@ -47,10 +47,10 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             },
         }))
 
+        const { createStyles, label, css, ...rest } = this.props
+
         const checkClasses = css(checkStyles.check)
         const labelClasses = css(checkStyles.label)
-
-        const { createStyles, label, ...rest } = this.props
 
         const styles = createStyles(theme => ({
             checkbox: {
