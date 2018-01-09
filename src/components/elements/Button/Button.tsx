@@ -76,6 +76,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 lineHeight: 1.58,
                 letterSpacing: 1,
                 padding: '0.85rem 2.5rem',
+                textTransform: 'uppercase',
                 ':active': {
                     boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray10,
                 },

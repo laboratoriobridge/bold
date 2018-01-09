@@ -1,15 +1,16 @@
+import { number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { storiesOf } from '@storybook/react'
-import { withKnobs, text, number, select } from '@storybook/addon-knobs'
-import { Text, Weight, TextTag } from './Text'
 import { withPropTypes } from '../../../stories-addons/withPropTypes/index'
 import { withTheme } from '../../../stories-addons/withTheme'
 import { colors } from '../../../styles/theme/Theme'
 
+import { Text, TextTag, Weight } from './Text'
+
 const weights: {[key in Weight]} = {
     'normal': 'Normal',
-    'bold': 'Bold'
+    'bold': 'Bold',
 }
 
 const tags: {[key in TextTag]} = {

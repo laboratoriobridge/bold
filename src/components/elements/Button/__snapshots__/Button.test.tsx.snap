@@ -5,7 +5,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   class="hint-wrapper"
 >
   <button
-    class="button_10cza06"
+    class="button_6mv6nr"
     type="button"
   >
     <span>
@@ -20,7 +20,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   class="hint-wrapper"
 >
   <button
-    class="button_10cza06"
+    class="button_6mv6nr"
     type="button"
   >
     <span>
@@ -32,7 +32,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 
 exports[`Button deve renderizar corretamente 1`] = `
 <button
-  class="button_10cza06"
+  class="button_6mv6nr"
   type="button"
 >
   <span>
@@ -60,7 +60,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
       type="normal"
     >
       <button
-        className="button_10cza06"
+        className="button_6mv6nr"
         onClick={[Function]}
         onKeyPress={[Function]}
         type="button"
@@ -93,7 +93,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
       type="normal"
     >
       <button
-        className="button_10cza06-o_O-loading_3hmsj"
+        className="button_6mv6nr-o_O-loading_3hmsj"
         onClick={[Function]}
         onKeyPress={[Function]}
         type="button"
@@ -126,7 +126,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
       type="normal"
     >
       <button
-        className="button_10cza06"
+        className="button_6mv6nr"
         onClick={[Function]}
         onKeyPress={[Function]}
         type="button"
@@ -159,7 +159,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
       type="normal"
     >
       <button
-        className="button_10cza06"
+        className="button_6mv6nr"
         onClick={[Function]}
         onKeyPress={[Function]}
         type="button"

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'aphrodite'
+import { StyleSheet } from 'aphrodite/no-important'
 
 const myGlobalExtension = {
     selectorHandler: (selector, _, generateSubtreeStyles) => {

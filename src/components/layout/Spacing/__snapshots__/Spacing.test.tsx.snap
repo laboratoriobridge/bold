@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spacing deve renderizar corretamente 1`] = `
+<div
+  style="margin-top:1rem;margin-right:2rem;margin-bottom:3rem;margin-left:4rem;display:inline-block"
+>
+  Content
+</div>
+`;
+
+exports[`Spacing deve renderizar corretamente 2`] = `
+<div
+  style="margin-top:1rem;margin-right:2rem;margin-bottom:3rem;margin-left:4rem;display:"
+>
+  Content
+</div>
+`;
