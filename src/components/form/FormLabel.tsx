@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Label } from '../elements/Label'
-import { Text } from '../elements/Text/Text'
+import { Text } from '../elements/textual/Text/Text'
 import { Spacing } from '../layout/Spacing/Spacing'
 
 export interface FormLabelProps {

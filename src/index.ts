@@ -2,7 +2,6 @@
  * Elements
  */
 export * from './components/elements/Button/Button'
-export * from './components/elements/Text/Text'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'
 
