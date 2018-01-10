@@ -25,6 +25,7 @@ export class TextField extends React.Component<TextFieldProps> {
         <TextInput
             {...this.props}
             {...props.input}
+            status={props.meta.touched && props.meta.error && 'error'}
         />
     )
 
