@@ -50,6 +50,7 @@
     "enzyme": "3.2.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "3.3.0",
+    "intl": "1.2.5",
     "jest": "22.0.4",
     "jest-cli": "22.0.4",
     "marksy": "6.0.3",

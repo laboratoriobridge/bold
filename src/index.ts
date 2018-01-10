@@ -6,6 +6,8 @@ export * from './components/elements/Text/Text'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'
 
+export * from './components/elements/textual'
+
 /**
  * Form
  */
