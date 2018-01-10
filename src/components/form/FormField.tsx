@@ -2,10 +2,11 @@ import * as React from 'react'
 
 import { Spacing } from '../layout/Spacing/Spacing'
 
+import { FormError } from './FormError'
 import { FormLabel, FormLabelProps } from './FormLabel'
 
 export interface FormFieldProps extends FormLabelProps {
-    error?: any
+    error?: string
     name?: string
     title?: string
 }
@@ -13,11 +14,17 @@ export interface FormFieldProps extends FormLabelProps {
 export class FormField extends React.Component<FormFieldProps, any> {
 
     render() {
-        const { children, name, title, ...rest } = this.props
+        const { children, name, title, error, ...rest } = this.props
 
         const label = this.props.label && (
             <Spacing bottom={0.25}>
                 <FormLabel {...rest} />
+            </Spacing>
+        )
+
+        const errorCmp = this.props.error && (
+            <Spacing top={0.25}>
+                <FormError error={error} />
             </Spacing>
         )
 
@@ -27,6 +34,7 @@ export class FormField extends React.Component<FormFieldProps, any> {
                 <div>
                     {children}
                 </div>
+                {errorCmp}
             </div>
         )
     }
