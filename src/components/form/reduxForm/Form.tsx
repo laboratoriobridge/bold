@@ -142,7 +142,7 @@ export class Form extends React.Component<FormProps, FormState> {
     private onSubmit = (values) => {
         const result = this.props.onSubmit(values)
 
-        if (this.isPromise(result)) {
+        if (result && this.isPromise(result)) {
             return result.catch(error => {
                 if (error.response.status === 400) {
                     throw new SubmissionError(error.response.data)
@@ -153,7 +153,6 @@ export class Form extends React.Component<FormProps, FormState> {
         } else {
             return result
         }
-
     }
 
     private onSubmitFail = (errors) => {
