@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
@@ -18,13 +19,9 @@ storiesOf('Form', module)
     .addDecorator(withTheme())
     .addDecorator(withStore())
     .add('Form example', () => {
-        const submit = form => {
-            window.alert(JSON.stringify(form))
-            return true
-        }
         const renderForm = createRenderForm((props: FormComponentProps) => (
             <Flow vSpacing={1} direction='vertical'>
-                <TextField name='Nome' label='Nome' />
+                <TextField name='nome' label='Nome' />
                 <Flow>
                     <RadioField name='radio' label='Option1' value='1' />
                     <RadioField name='radio' label='Option2' value='2' />
@@ -37,7 +34,7 @@ storiesOf('Form', module)
         return (
             <Form
                 form='example'
-                onSubmit={submit}
+                onSubmit={action('submit')}
                 render={renderForm}
                 hasSuccessModal={false}
             />
