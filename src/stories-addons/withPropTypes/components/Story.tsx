@@ -5,14 +5,6 @@ import Pre from './markdown/Pre'
 import Node from './Node'
 import PropTable from './PropTable'
 
-const baseFonts = {
-    fontFamily: ['-apple-system', '".SFNSText-Regular"', '"San Francisco"', 'BlinkMacSystemFont',
-        '"Segoe UI"', '"Roboto"', '"Oxygen"', '"Ubuntu"', '"Cantarell"', '"Fira Sans"', '"Droid Sans"',
-        '"Helvetica Neue"', '"Lucida Grande"', '"Arial"', 'sans-serif'],
-    color: '#444',
-    WebkitFontSmoothing: 'antialiased',
-}
-
 const stylesheet: {[key in string]: React.CSSProperties} = {
     button: {
         base: {
@@ -48,7 +40,6 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
         zIndex: 0,
     },
     infoBody: {
-        ...baseFonts,
         fontWeight: 300,
         lineHeight: 1.45,
         fontSize: '15px',

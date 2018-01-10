@@ -9,6 +9,7 @@ export default function initializeDefault(theme: Theme) {
             fontSize: theme.font.textSize,
             fontFamily: theme.font.textFamily,
             boxSizing: 'border-box',
+            color: theme.color.text,
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',

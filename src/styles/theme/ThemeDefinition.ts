@@ -8,6 +8,7 @@ export interface ThemeDefinition {
         small: number
     }
     color: {
+        text: string
         primary: string
         red: string
         white: string

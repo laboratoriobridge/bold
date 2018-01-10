@@ -6,6 +6,11 @@
     "rules": {
         "arrow-parens": false,
         "ban-types": false,
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
         "interface-name": false,
         "jsx-boolean-value": false,
         "max-classes-per-file": [

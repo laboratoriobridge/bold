@@ -19,6 +19,7 @@ export const defaultTheme: ThemeDefinition = {
         small: 1280,
     },
     color: {
+        text: '#4d4d4d',
         primary: '#1e98ff',
         red: '#f6001c',
         white: '#ffffff',

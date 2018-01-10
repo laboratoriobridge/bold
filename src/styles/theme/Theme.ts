@@ -29,6 +29,7 @@ export interface Theme {
         primary: string
         red: string
         white: string
+        text: string
 
         /**
          * Theme.white escurecido 10%
