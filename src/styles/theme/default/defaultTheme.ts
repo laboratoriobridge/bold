@@ -20,6 +20,7 @@ export const defaultTheme: ThemeDefinition = {
     },
     color: {
         primary: '#1e98ff',
+        red: '#f6001c',
         white: '#ffffff',
     },
 }

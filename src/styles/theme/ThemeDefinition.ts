@@ -9,6 +9,7 @@ export interface ThemeDefinition {
     }
     color: {
         primary: string
+        red: string
         white: string
     }
 }

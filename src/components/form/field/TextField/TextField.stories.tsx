@@ -8,11 +8,11 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { TextField } from './TextField'
 
-storiesOf('TextField', module)
+storiesOf('Form', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())
-    .add('default', () =>
-        <TextField name='nome' label='Nome' placeholder='Nome' />
+    .add('TextField', () =>
+        <TextField name='nome' label='Nome' placeholder='Nome' required />
     )

@@ -5,12 +5,12 @@ exports[`Checkbox deve conter a classe css "disabled" 1`] = `
   class="checkbox_13xlah4-o_O-checkboxDisabled_14ak7oz"
 >
   <input
-    class="input_ufi05b"
+    class="input_1uzp2sp"
     disabled=""
     type="checkbox"
   />
   <span
-    class="check_67q8ve"
+    class="check_1yv4wi9"
   />
   <span
     class="label_hqebz6"
@@ -25,11 +25,11 @@ exports[`Checkbox deve renderizar corretamente 1`] = `
   class="checkbox_13xlah4"
 >
   <input
-    class="input_ufi05b"
+    class="input_1uzp2sp"
     type="checkbox"
   />
   <span
-    class="check_67q8ve"
+    class="check_1yv4wi9"
   />
   <span
     class="label_hqebz6"

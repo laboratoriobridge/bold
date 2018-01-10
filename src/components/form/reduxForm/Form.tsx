@@ -42,7 +42,7 @@ export interface FormProps extends ReduxFormConfigProps<any, any> {
     onSubmit: any
     onSubmitSuccess?: any
     onSubmitFail?: any
-    render(props: FormComponentProps): JSX.Element
+    render(props: FormComponentProps): React.ReactNode
 }
 
 export interface FormComponentProps extends Partial<InjectedFormProps> {

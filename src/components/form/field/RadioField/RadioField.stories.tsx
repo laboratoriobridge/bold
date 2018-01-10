@@ -6,10 +6,11 @@ import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withText } from '../../../../stories-addons/withText'
 import { withTheme } from '../../../../stories-addons/withTheme'
+import { Flow } from '../../../layout/Flow/Flow'
 
 import { RadioField } from './RadioField'
 
-storiesOf('RadioField', module)
+storiesOf('Form', module)
     .addDecorator(withPropTypes())
     .addDecorator(withText(`
         test
@@ -17,8 +18,8 @@ storiesOf('RadioField', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())
-    .add('playground', () => (
-        <div>
+    .add('RadioField', () => (
+        <Flow>
             <RadioField
                 name='radio1'
                 label={text('label', 'Component label')}
@@ -31,5 +32,5 @@ storiesOf('RadioField', module)
                 value='2'
                 disabled={boolean('disabled', false)}
             />
-        </div>
+        </Flow>
     ))

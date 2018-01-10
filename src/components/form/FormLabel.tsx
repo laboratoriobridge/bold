@@ -1,12 +1,10 @@
 import * as React from 'react'
 
-import { Icon } from '../elements/Icon'
 import { Label } from '../elements/Label'
-
-import { ErrorIndicator } from './ErrorIndicator'
+import { Text } from '../elements/Text/Text'
+import { Spacing } from '../layout/Spacing/Spacing'
 
 export interface FormLabelProps {
-    error?: any
     label?: React.ReactNode
     required?: boolean
 }
@@ -14,25 +12,16 @@ export interface FormLabelProps {
 export class FormLabel extends React.Component<FormLabelProps> {
 
     render() {
-        const errorIndicator = (
-            this.props.error && <ErrorIndicator error={this.props.error} />
-        )
-
         const fieldRequired = (
-            this.props.required && !this.props.error &&
-            <Icon className='field-required' size='small' icon='obrigatorio' />
-        )
-
-        const label = (
-            <>
-            {this.props.label}
-            {fieldRequired}
-            {errorIndicator}
-            </>
+            this.props.required &&
+            <Spacing left={0.25}><Text tag='label' color='red' size={0.75} weight='bold'>&#42;</Text></Spacing>
         )
 
         return (
-            <Label value={label} />
+            <>
+            <Label value={this.props.label} />
+            {fieldRequired}
+            </>
         )
     }
 
