@@ -1,17 +1,29 @@
+import axios from 'axios'
+import * as MockAdapter from 'axios-mock-adapter'
+import httpAdapter from 'axios/lib/adapters/http'
 import * as React from 'react'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import { InjectedFormProps, reduxForm } from 'redux-form'
+import configureMockStore from 'redux-mock-store'
+import thunkMiddleware from 'redux-thunk'
 
+import requesterReducer from '../store/requester'
 import { defaultTheme, ThemeDefinition, ThemeProvider } from '../styles/'
 
-const reducer = (state, action) => {
-    return state
-}
+export const axiosMock = new MockAdapter(axios)
+
+const reducer = combineReducers({
+    requester: requesterReducer,
+})
+
+const middlewares = [thunkMiddleware]
 
 export const createTestStore = (initialState = {}) => {
-    return createStore(reducer, initialState)
+    return createStore(reducer, initialState, compose(applyMiddleware(...middlewares)))
 }
+
+export const mockStore = configureMockStore(middlewares)
 
 export const withTheme = (node: React.ReactElement<any>, theme: ThemeDefinition = defaultTheme) => {
     return (
