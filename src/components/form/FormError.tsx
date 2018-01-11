@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Text } from '../elements/Text/Text'
+import { Text } from '../elements/textual'
 
 export interface FormErrorProps {
     error?: string
