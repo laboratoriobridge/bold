@@ -19,9 +19,19 @@ storiesOf('Form', module)
     .addDecorator(withTheme())
     .addDecorator(withStore())
     .add('Form example', () => {
+        const validate = form => {
+            const errors: any = {}
+
+            if (!form.nome) {
+                errors.nome = 'Preenchimento obrigatório.'
+            }
+
+            return errors
+        }
+
         const renderForm = createRenderForm((props: FormComponentProps) => (
             <Flow vSpacing={1} direction='vertical'>
-                <TextField name='nome' label='Nome' />
+                <TextField name='nome' label='Nome' required />
                 <Flow>
                     <RadioField name='radio' label='Option1' value='1' />
                     <RadioField name='radio' label='Option2' value='2' />
@@ -37,6 +47,7 @@ storiesOf('Form', module)
                 onSubmit={action('submit')}
                 render={renderForm}
                 hasSuccessModal={false}
+                validate={validate}
             />
         )
     })
