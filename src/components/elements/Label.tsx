@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Text } from './Text/Text'
+import { Text } from './textual/'
 
 export interface LabelProps {
     value: React.ReactNode
