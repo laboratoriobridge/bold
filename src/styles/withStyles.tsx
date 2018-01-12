@@ -2,7 +2,7 @@ import { css } from 'emotion'
 import { withTheme } from 'emotion-theming'
 import * as React from 'react'
 
-import { Theme } from '../../lib/styles/theme/Theme'
+import { Theme } from './theme/Theme'
 
 export interface WithStylesProps {
     styles?: React.CSSProperties

@@ -1,4 +1,4 @@
-import { Theme } from '../../../../lib/styles/theme/Theme'
+import { Theme } from '../../theme/Theme'
 import { shade } from '../../utils'
 
 import * as font from './fonts/NotoSans-Regular.ttf'
