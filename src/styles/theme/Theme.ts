@@ -17,9 +17,10 @@ export const colors: {[key in Color]: string} = {
 }
 
 export interface Theme {
+    global?: any
     font: {
-        textFamily: any[]
-        titleFamily: any[]
+        textFamily: string
+        titleFamily: string
         textSize: number
     }
     breakpoint: {
@@ -29,6 +30,7 @@ export interface Theme {
         primary: string
         red: string
         white: string
+        text: string
 
         /**
          * Theme.white escurecido 10%

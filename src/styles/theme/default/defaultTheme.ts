@@ -4,22 +4,26 @@ import { shade } from '../../utils'
 import * as font from './fonts/NotoSans-Regular.ttf'
 
 const notoSans = {
-    fontFamily: 'Noto Sans',
+    fontFamily: '"Noto Sans"',
     fontStyle: 'normal',
     fontWeight: '400',
     src: 'url(' + font + ') format("truetype")',
 }
 
 export const defaultTheme: Theme = {
+    global: {
+        '@font-face': notoSans,
+    },
     font: {
-        textFamily: [notoSans, 'sans-serif'],
-        titleFamily: [notoSans, 'sans-serif'],
+        textFamily: '"Noto Sans", sans-serif',
+        titleFamily: '"Noto Sans", sans-serif',
         textSize: 16,
     },
     breakpoint: {
         small: '@media (max-width: 1280px)',
     },
     color: {
+        text: '#4d4d4d',
         primary: '#1e98ff',
         red: '#f6001c',
         white: '#ffffff',

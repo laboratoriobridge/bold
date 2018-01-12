@@ -832,6 +832,219 @@ const propTypes: {[key in string]: ComponentDoc} = {
             }
         }
     },
+    'Currency': {
+        displayName: 'Currency',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'value': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Number': {
+        displayName: 'Number',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'value': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'minDecimalPlaces': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'maxDecimalPlaces': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'placeholder': {
+                defaultValue: '',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'title': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'abbrev': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'prefix': {
+                defaultValue: '',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'sufix': {
+                defaultValue: '',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Percentage': {
+        displayName: 'Percentage',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'value': {
+                defaultValue: 'null',
+                description: `Número de 0 a 1 representando o quociente que será transformado para porcentagem`,
+                required: true,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'minDecimalPlaces': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'maxDecimalPlaces': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'placeholder': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'title': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Plural': {
+        displayName: 'Plural',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'word': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'count': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'inclusive': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
     'ErrorIndicator': {
         displayName: 'ErrorIndicator',
         description: ``,
@@ -869,6 +1082,15 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'error': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined'
+                }
+            },
             'name': {
                 defaultValue: 'null',
                 description: ``,
@@ -884,15 +1106,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'error': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
                     value: 'undefined'
                 }
             },
@@ -926,15 +1139,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'error': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
                     value: 'undefined'
                 }
             },
@@ -1262,21 +1466,21 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'title': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
             'error': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
+                    value: 'undefined'
+                }
+            },
+            'title': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -2039,21 +2243,21 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'title': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
             'error': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
+                    value: 'undefined'
+                }
+            },
+            'title': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -2257,7 +2461,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: true,
                 type: {
-                    name: '(props: FormComponentProps) => Element',
+                    name: '(props: FormComponentProps) => ReactNode',
                     value: 'undefined'
                 }
             },

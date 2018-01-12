@@ -2,9 +2,8 @@ import { number, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes } from '../../../stories-addons/withPropTypes/index'
-import { withTheme } from '../../../stories-addons/withTheme'
-import { colors } from '../../../styles/theme/Theme'
+import { withPropTypes, withTheme } from '../../../../stories-addons'
+import { colors } from '../../../../styles/theme/Theme'
 
 import { Text, TextTag, Weight } from './Text'
 
@@ -20,7 +19,7 @@ const tags: {[key in TextTag]} = {
     'p': 'p',
 }
 
-storiesOf('Components', module)
+storiesOf('Textual', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

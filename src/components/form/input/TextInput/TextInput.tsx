@@ -4,7 +4,7 @@ import { withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface TextInputProps extends PublicInputProps, WithStylesProps {
-
+    status?: '' | 'error'
 }
 
 @withStyles
@@ -20,7 +20,7 @@ export class TextInput extends React.Component<TextInputProps> {
     }
 
     render() {
-        const { css, theme, ...rest } = this.props
+        const { css, status, theme, ...rest } = this.props
         const styles = {
             input: {
                 backgroundColor: theme.color.white,
@@ -41,10 +41,16 @@ export class TextInput extends React.Component<TextInputProps> {
                     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
                 },
             },
+            error: {
+                border: 'solid 1px ' + theme.color.red,
+            },
         }
 
+        const classes = css(styles.input,
+            status === 'error' && styles.error)
+
         return (
-            <Input ref={input => this.input = input} {...rest} className={css(styles.input)} type='text' />
+            <Input ref={input => this.input = input} {...rest} className={classes} type='text' />
         )
     }
 
