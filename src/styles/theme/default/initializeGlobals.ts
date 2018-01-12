@@ -1,6 +1,6 @@
 import { injectGlobal } from 'emotion'
+import normalizeCss from 'normalize.css'
 
-import normalizeCss from '../../normalizeCss'
 import { Theme } from '../Theme'
 
 export default function initializeGlobals(theme: Theme) {
