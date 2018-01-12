@@ -19,9 +19,9 @@ export class Flow extends React.PureComponent<FlowProps> {
     }
 
     render() {
-        const { createStyles, css, direction, hSpacing } = this.props
+        const { css, direction, hSpacing } = this.props
 
-        const styles = createStyles(theme => ({
+        const styles = {
             flowHorizontal: {
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -30,7 +30,7 @@ export class Flow extends React.PureComponent<FlowProps> {
                 display: 'flex',
                 flexDirection: 'column',
             },
-        }))
+        }
 
         return (
             <div

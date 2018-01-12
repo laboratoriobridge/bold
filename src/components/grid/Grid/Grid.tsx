@@ -16,7 +16,8 @@ export interface GridProps extends WithStylesProps, Pick<React.CSSProperties, 'a
 @withStyles
 export class Grid extends React.PureComponent<GridProps> {
     render() {
-        const styles = this.props.createStyles(theme => ({
+        const { theme } = this.props
+        const styles = {
             grid: {
                 display: 'flex',
                 marginLeft: '-1rem',
@@ -37,7 +38,7 @@ export class Grid extends React.PureComponent<GridProps> {
             ...makeOptionClasses('justify__', 'justifyContent', ['flex-start', 'flex-end', 'center', 'space-between',
                 'space-around', 'space-evenly']),
             ...makeOptionClasses('direction__', 'flexDirection', ['row', 'row-reverse', 'column', 'column-reverse']),
-        }))
+        }
 
         const classes = this.props.css(
             styles.grid,

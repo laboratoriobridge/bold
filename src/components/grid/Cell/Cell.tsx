@@ -21,7 +21,8 @@ const createCellStyle = (theme: Theme, size: number) => {
 @withStyles
 export class Cell extends React.PureComponent<CellProps> {
     render() {
-        const styles = this.props.createStyles(theme => ({
+        const { theme } = this.props
+        const styles = {
             cell: {
                 margin: '1rem',
                 padding: '0.5rem',
@@ -50,7 +51,7 @@ export class Cell extends React.PureComponent<CellProps> {
 
             ...makeOptionClasses('alignSelf__', 'alignSelf',
                 ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']),
-        }))
+        }
 
         const classes = this.props.css(
             styles.cell,

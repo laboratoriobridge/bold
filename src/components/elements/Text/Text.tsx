@@ -1,31 +1,28 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
 
 import { Color } from '../../../styles/theme/Theme'
+import { withStyles, WithStylesProps } from '../../../styles/withStyles'
 
 export type Weight = 'normal' | 'bold'
 export type TextTag = 'span' | 'p' | 'div' | 'label'
 
-export interface TextProps {
+export interface TextProps extends WithStylesProps {
     color?: Color
     size?: number
     weight?: Weight
     tag?: TextTag
 }
 
+@withStyles
 export class Text extends React.PureComponent<TextProps> {
 
     static defaultProps: Partial<TextProps> = {
         tag: 'span',
     }
 
-    static contextTypes = {
-        theme: PropTypes.object,
-    }
-
     render() {
         const style: React.CSSProperties = {
-            color: this.context.theme.color[this.props.color],
+            color: this.props.theme.color[this.props.color],
             fontSize: this.props.size + 'rem',
             fontWeight: this.props.weight,
         }

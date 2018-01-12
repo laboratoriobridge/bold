@@ -1,40 +1,30 @@
-import * as PropTypes from 'prop-types'
+import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
 import * as React from 'react'
 
-import createTheme from './createTheme'
 import { defaultTheme } from './default/defaultTheme'
-import initializeDefault from './default/initializeDefault'
+import initializeGlobals from './default/initializeGlobals'
 import { Theme } from './Theme'
-import { ThemeDefinition } from './ThemeDefinition'
 
 export interface ThemeProviderProps {
-    themeDef?: ThemeDefinition
+    theme?: Theme
 }
 
 export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
-    static childContextTypes = {
-        theme: PropTypes.object,
-    }
-
     static defaultProps: Partial<ThemeProviderProps> = {
-        themeDef: defaultTheme,
+        theme: defaultTheme,
     }
 
-    private theme: Theme
-
-    constructor(props, context) {
-        super(props, context)
-        this.theme = createTheme(props.themeDef)
-        initializeDefault(this.theme)
-    }
-
-    getChildContext() {
-        return { theme: this.theme }
+    componentWillMount() {
+        initializeGlobals(this.props.theme)
     }
 
     render() {
-        return this.props.children
+        return (
+            <EmotionThemeProvider theme={this.props.theme}>
+                {this.props.children}
+            </EmotionThemeProvider>
+        )
     }
 
 }

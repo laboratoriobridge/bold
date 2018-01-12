@@ -1,6 +1,5 @@
 import { number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { StyleSheet } from 'aphrodite'
 import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../stories-addons'
@@ -9,11 +8,11 @@ import {
     AlignItems, AlignSelf, Cell as CellRaiz, Direction, Grid, JustifyContent, PageContainer as PageContainerRaiz
 } from './'
 
-const styles = StyleSheet.create({
+const styles = {
     bg: {
         backgroundColor: '#eee',
     },
-})
+}
 
 const justifyContentOptions: {[key in JustifyContent]: string} = {
     'flex-start': 'flex-start',
