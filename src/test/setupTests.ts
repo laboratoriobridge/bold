@@ -1,10 +1,8 @@
+import * as emotion from 'emotion'
 import { configure } from 'enzyme'
 import * as Adapter from 'enzyme-adapter-react-16'
+import { createSerializer } from 'jest-emotion'
 
 configure({ adapter: new Adapter() })
 
-jest.useFakeTimers()
-
-afterEach(() => {
-    jest.runAllTimers()
-})
+expect.addSnapshotSerializer(createSerializer(emotion))

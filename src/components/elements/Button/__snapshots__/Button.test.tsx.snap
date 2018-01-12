@@ -1,11 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button deve adicionar um hint custom automaticamente 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <span
   class="hint-wrapper"
 >
   <button
-    class="css-96lcq"
+    class="emotion-0"
     type="button"
   >
     <span>
@@ -16,11 +47,42 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
 `;
 
 exports[`Button deve adicionar um hint string automaticamente 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <span
   class="hint-wrapper"
 >
   <button
-    class="css-96lcq"
+    class="emotion-0"
     type="button"
   >
     <span>
@@ -31,8 +93,39 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 `;
 
 exports[`Button deve renderizar corretamente 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <button
-  class="css-96lcq"
+  class="emotion-0"
   type="button"
 >
   <span>
@@ -42,6 +135,37 @@ exports[`Button deve renderizar corretamente 1`] = `
 `;
 
 exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <ThemeProvider
   theme={
     Object {
@@ -241,7 +365,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             type="normal"
           >
             <button
-              className="css-96lcq"
+              className="emotion-0"
               onClick={[Function]}
               onKeyPress={[Function]}
               type="button"
@@ -259,6 +383,37 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 `;
 
 exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 2`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <ThemeProvider
   theme={
     Object {
@@ -458,7 +613,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             type="normal"
           >
             <button
-              className="css-96lcq"
+              className="emotion-0"
               onClick={[Function]}
               onKeyPress={[Function]}
               type="button"
@@ -476,6 +631,37 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 `;
 
 exports[`Button não deve ter animação com "onClick" que não seja promise 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <ThemeProvider
   theme={
     Object {
@@ -675,7 +861,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
             type="normal"
           >
             <button
-              className="css-96lcq"
+              className="emotion-0"
               onClick={[Function]}
               onKeyPress={[Function]}
               type="button"
@@ -693,6 +879,37 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 `;
 
 exports[`Button não deve ter animação com "onClick" que não seja promise 2`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  color: #808080;
+  cursor: pointer;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: 1.58;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 0.85rem 2.5rem;
+  text-transform: uppercase;
+}
+
+.emotion-0:active {
+  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
 <ThemeProvider
   theme={
     Object {
@@ -892,7 +1109,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
             type="normal"
           >
             <button
-              className="css-96lcq"
+              className="emotion-0"
               onClick={[Function]}
               onKeyPress={[Function]}
               type="button"

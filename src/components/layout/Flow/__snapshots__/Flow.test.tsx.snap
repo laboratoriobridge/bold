@@ -1,25 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Flow deve envelopar cada filho em um elemento que crie espaçamento horizontal 1`] = `
+.emotion-3 {
+  margin: 0 -0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-0 {
+  margin-top: 0rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
 <div
-  class="css-1k5rx2j"
+  class="emotion-3"
 >
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <span>
       1
     </span>
   </div>
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <span>
       2
     </span>
   </div>
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <span>
       3
@@ -29,25 +48,44 @@ exports[`Flow deve envelopar cada filho em um elemento que crie espaçamento hor
 `;
 
 exports[`Flow deve suportar o parâmetro direction 1`] = `
+.emotion-0 {
+  margin-top: 0rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.emotion-3 {
+  margin: 0 -0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 <div
-  class="css-1n0xhs7"
+  class="emotion-3"
 >
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <div>
       1
     </div>
   </div>
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <div>
       2
     </div>
   </div>
   <div
-    class="css-1ueujd4"
+    class="emotion-0"
   >
     <div>
       3
@@ -57,25 +95,44 @@ exports[`Flow deve suportar o parâmetro direction 1`] = `
 `;
 
 exports[`Flow deve suportar o parâmetro hSpacing 1`] = `
+.emotion-3 {
+  margin: 0 -0.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-0 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
 <div
-  class="css-16nph7i"
+  class="emotion-3"
 >
   <div
-    class="css-w6y3nz"
+    class="emotion-0"
   >
     <span>
       1
     </span>
   </div>
   <div
-    class="css-w6y3nz"
+    class="emotion-0"
   >
     <span>
       2
     </span>
   </div>
   <div
-    class="css-w6y3nz"
+    class="emotion-0"
   >
     <span>
       3
@@ -85,25 +142,44 @@ exports[`Flow deve suportar o parâmetro hSpacing 1`] = `
 `;
 
 exports[`Flow deve suportar o parâmetro vSpacing 1`] = `
+.emotion-3 {
+  margin: 0 -0.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-0 {
+  margin-top: 1.25rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1.25rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
 <div
-  class="css-1k5rx2j"
+  class="emotion-3"
 >
   <div
-    class="css-pmvu5p"
+    class="emotion-0"
   >
     <span>
       1
     </span>
   </div>
   <div
-    class="css-pmvu5p"
+    class="emotion-0"
   >
     <span>
       2
     </span>
   </div>
   <div
-    class="css-pmvu5p"
+    class="emotion-0"
   >
     <span>
       3

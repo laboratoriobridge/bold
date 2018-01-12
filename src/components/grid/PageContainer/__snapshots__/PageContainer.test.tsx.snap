@@ -1,8 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PageContainer deve renderizar corretamente 1`] = `
+.emotion-0 {
+  width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    width: 768px;
+  }
+}
+
 <div
-  class="css-uy642r"
+  class="emotion-0"
 >
   Content
 </div>

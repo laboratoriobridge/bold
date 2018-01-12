@@ -2,7 +2,7 @@
 
 exports[`Text deve renderizar corretamente 1`] = `
 <span
-  class="css-1meovlr"
+  class="emotion-0"
 >
   Test 1
 </span>
@@ -10,31 +10,43 @@ exports[`Text deve renderizar corretamente 1`] = `
 
 exports[`Text deve renderizar corretamente 2`] = `
 <p
-  class="css-1meovlr"
+  class="emotion-0"
 >
   Test with p tag
 </p>
 `;
 
 exports[`Text deve renderizar corretamente 3`] = `
+.emotion-0 {
+  font-weight: bold;
+}
+
 <span
-  class="css-1wltwh9"
+  class="emotion-0"
 >
   Test weight
 </span>
 `;
 
 exports[`Text deve renderizar corretamente 4`] = `
+.emotion-0 {
+  font-size: 2rem;
+}
+
 <span
-  class="css-tzv5vs"
+  class="emotion-0"
 >
   Test size
 </span>
 `;
 
 exports[`Text deve renderizar corretamente 5`] = `
+.emotion-0 {
+  color: #1e98ff;
+}
+
 <span
-  class="css-1jjmsa4"
+  class="emotion-0"
 >
   Test color
 </span>

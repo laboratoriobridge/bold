@@ -1,24 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Cell deve renderizar corretamente 1`] = `
+.emotion-0 {
+  margin: 1rem;
+  padding: 0.5rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    margin: 0.5rem;
+  }
+}
+
 <div
-  class="css-18dl9eo"
+  class="emotion-0"
 >
   Content
 </div>
 `;
 
 exports[`Cell deve renderizar corretamente 2`] = `
+.emotion-0 {
+  margin: 1rem;
+  padding: 0.5rem;
+  -webkit-flex-basis: calc((100% / 12 * 6) - 2rem);
+  -ms-flex-preferred-size: calc((100% / 12 * 6) - 2rem);
+  flex-basis: calc((100% / 12 * 6) - 2rem);
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    -webkit-flex-basis: calc((100% / 12 * 6) - 1rem);
+    -ms-flex-preferred-size: calc((100% / 12 * 6) - 1rem);
+    flex-basis: calc((100% / 12 * 6) - 1rem);
+  }
+}
+
 <div
-  class="css-1rhfvo5"
+  class="emotion-0"
 >
   Content
 </div>
 `;
 
 exports[`Cell deve renderizar corretamente 3`] = `
+.emotion-0 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    margin: 0.5rem;
+  }
+}
+
 <div
-  class="css-f72zs4"
+  class="emotion-0"
 >
   Content
 </div>
