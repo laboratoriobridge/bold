@@ -28,3 +28,8 @@ export * from './components/layout'
  * Theme
  */
 export * from './styles/theme/ThemeProvider'
+
+/**
+ * Store
+ */
+import './store/requester'
