@@ -9,7 +9,7 @@ import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
 import requesterReducer from '../store/requester'
-import { defaultTheme, ThemeDefinition, ThemeProvider } from '../styles/'
+import { defaultTheme, Theme, ThemeProvider } from '../styles/'
 
 export const axiosMock = new MockAdapter(axios)
 
@@ -25,9 +25,9 @@ export const createTestStore = (initialState = {}) => {
 
 export const mockStore = configureMockStore(middlewares)
 
-export const withTheme = (node: React.ReactElement<any>, theme: ThemeDefinition = defaultTheme) => {
+export const withTheme = (node: React.ReactElement<any>, theme: Theme = defaultTheme) => {
     return (
-        <ThemeProvider themeDef={theme}>
+        <ThemeProvider theme={theme}>
             {node}
         </ThemeProvider>
     )

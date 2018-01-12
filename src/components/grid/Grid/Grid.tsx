@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { makeOptionClasses, withStyles, WithStylesProps } from '../../../styles'
+import { withStyles, WithStylesProps } from '../../../styles'
 
 export type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
 export type JustifyContent = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
@@ -19,7 +19,10 @@ export class Grid extends React.PureComponent<GridProps> {
         const { theme } = this.props
         const styles = {
             grid: {
+                alignItems: this.props.alignItems,
                 display: 'flex',
+                flexDirection: this.props.direction,
+                justifyContent: this.props.justifyContent,
                 marginLeft: '-1rem',
                 marginRight: '-1rem',
                 height: '100%',
@@ -33,19 +36,11 @@ export class Grid extends React.PureComponent<GridProps> {
             wrap: {
                 flexWrap: 'wrap',
             },
-
-            ...makeOptionClasses('align__', 'alignItems', ['flex-start', 'flex-end', 'center', 'baseline', 'stretch']),
-            ...makeOptionClasses('justify__', 'justifyContent', ['flex-start', 'flex-end', 'center', 'space-between',
-                'space-around', 'space-evenly']),
-            ...makeOptionClasses('direction__', 'flexDirection', ['row', 'row-reverse', 'column', 'column-reverse']),
         }
 
         const classes = this.props.css(
             styles.grid,
-            this.props.wrap && styles.wrap,
-            this.props.alignItems && styles['align__' + this.props.alignItems],
-            this.props.justifyContent && styles['justify__' + this.props.justifyContent],
-            this.props.direction && styles['direction__' + this.props.direction]
+            this.props.wrap && styles.wrap
         )
 
         return (

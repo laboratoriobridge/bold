@@ -2,7 +2,7 @@
 
 exports[`PageContainer deve renderizar corretamente 1`] = `
 <div
-  class="container_96lsxt"
+  class="css-uy642r"
 >
   Content
 </div>

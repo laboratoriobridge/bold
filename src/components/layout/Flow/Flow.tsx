@@ -22,6 +22,9 @@ export class Flow extends React.PureComponent<FlowProps> {
         const { css, direction, hSpacing } = this.props
 
         const styles = {
+            flow: {
+                margin: `0 ${-hSpacing / 2}rem`,
+            },
             flowHorizontal: {
                 display: 'flex',
                 flexWrap: 'wrap',
@@ -34,8 +37,7 @@ export class Flow extends React.PureComponent<FlowProps> {
 
         return (
             <div
-                style={{ margin: `0 ${-hSpacing / 2}rem` }}
-                className={css(direction === 'horizontal' ? styles.flowHorizontal : styles.flowVertical)}
+                className={css(styles.flow, direction === 'horizontal' ? styles.flowHorizontal : styles.flowVertical)}
             >
                 {React.Children.map(this.props.children, (child) => this.renderChild(child))}
             </div>

@@ -27,7 +27,7 @@ export class Text extends React.PureComponent<TextProps> {
             fontWeight: this.props.weight,
         }
 
-        return React.createElement(this.props.tag, { style }, this.props.children)
+        return React.createElement(this.props.tag, { className: this.props.css(style) }, this.props.children)
     }
 
 }

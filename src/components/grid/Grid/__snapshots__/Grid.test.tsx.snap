@@ -2,7 +2,7 @@
 
 exports[`Grid deve renderizar corretamente 1`] = `
 <div
-  class="grid_1ysn792"
+  class="css-1amqo09"
 >
   Content
 </div>
@@ -10,7 +10,7 @@ exports[`Grid deve renderizar corretamente 1`] = `
 
 exports[`Grid deve renderizar corretamente 2`] = `
 <div
-  class="grid_1ysn792-o_O-wrap_5xnc6m"
+  class="css-1dis21i"
 >
   Content
 </div>
@@ -18,7 +18,7 @@ exports[`Grid deve renderizar corretamente 2`] = `
 
 exports[`Grid deve renderizar corretamente 3`] = `
 <div
-  class="grid_1ysn792-o_O-justify__space-between_1sh8tod"
+  class="css-li5rtm"
 >
   Content
 </div>
@@ -26,7 +26,7 @@ exports[`Grid deve renderizar corretamente 3`] = `
 
 exports[`Grid deve renderizar corretamente 4`] = `
 <div
-  class="grid_1ysn792-o_O-align__center_1moixrt"
+  class="css-1fuy4u2"
 >
   Content
 </div>
@@ -34,7 +34,7 @@ exports[`Grid deve renderizar corretamente 4`] = `
 
 exports[`Grid deve renderizar corretamente 5`] = `
 <div
-  class="grid_1ysn792-o_O-direction__column_1jtvojh"
+  class="css-36t976"
 >
   Content
 </div>

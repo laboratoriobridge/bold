@@ -2,7 +2,7 @@
 
 exports[`TextInput render 1`] = `
 <input
-  class="input_1wd9fxb"
+  class="css-120vq3d"
   type="text"
 />
 `;

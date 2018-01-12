@@ -1,20 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Text deve renderizar corretamente 1`] = `
-<span>
+<span
+  class="css-1meovlr"
+>
   Test 1
 </span>
 `;
 
 exports[`Text deve renderizar corretamente 2`] = `
-<p>
+<p
+  class="css-1meovlr"
+>
   Test with p tag
 </p>
 `;
 
 exports[`Text deve renderizar corretamente 3`] = `
 <span
-  style="font-weight:bold"
+  class="css-1wltwh9"
 >
   Test weight
 </span>
@@ -22,7 +26,7 @@ exports[`Text deve renderizar corretamente 3`] = `
 
 exports[`Text deve renderizar corretamente 4`] = `
 <span
-  style="font-size:2rem"
+  class="css-tzv5vs"
 >
   Test size
 </span>
@@ -30,7 +34,7 @@ exports[`Text deve renderizar corretamente 4`] = `
 
 exports[`Text deve renderizar corretamente 5`] = `
 <span
-  style="color:#1e98ff"
+  class="css-1jjmsa4"
 >
   Test color
 </span>

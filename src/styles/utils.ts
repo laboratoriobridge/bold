@@ -1,5 +1,3 @@
-import { CSSProperties } from 'react'
-
 /**
  * https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
  */
@@ -25,28 +23,3 @@ export function shade(p, from, to = undefined) {
     else return "#" + (0x100000000 + (f[3] > -1 && t[3] > -1 ? r(((t[3] - f[3]) * p + f[3]) * 255) : t[3] > -1 ? r(t[3] * 255) : f[3] > -1 ? r(f[3] * 255) : 255) * 0x1000000 + r((t[0] - f[0]) * p + f[0]) * 0x10000 + r((t[1] - f[1]) * p + f[1]) * 0x100 + r((t[2] - f[2]) * p + f[2])).toString(16).slice(f[3] > -1 || t[3] > -1 ? 1 : 3);
 }
 /* tslint:enable */
-
-/**
- * Cria um conjunto de classes com uma única propriedade contendo a lista de opções como valor.
- *
- * @param sufix Sufixo que será atribuído aos nomes de classe criados.
- * @param prop Propriedade CSS que será incluida em cada classe criada.
- * @param opts Lista de valores que a propriedade CSS terá.
- * @return Um objeto contendo `sufix + valor` como chaves e `{ prop: valor }` como value.
- *
- * @example `makeProps('align__', 'alignItems', ['flex-start', 'flex-end'])` terá como resultado:
- *      <code>
- *      {
- *          'align__flex-start': { alignItems: 'flex-start' },
- *          'align__flex-end': { alignItems: 'flex-end' },
- *      }
- *      </code>
- */
-export const makeOptionClasses = (sufix: string, prop: keyof CSSProperties, opts: any[]) => {
-    return opts.reduce((prev, curr) => ({
-        ...prev,
-        [sufix + curr]: {
-            [prop]: curr,
-        },
-    }), {})
-}
