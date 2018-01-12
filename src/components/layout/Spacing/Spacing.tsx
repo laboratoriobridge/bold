@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-export interface SpacingProps {
+import { withStyles, WithStylesProps } from '../../../styles/index'
+
+export interface SpacingProps extends WithStylesProps {
     top?: number
     right?: number
     bottom?: number
@@ -8,6 +10,7 @@ export interface SpacingProps {
     block?: boolean
 }
 
+@withStyles
 export class Spacing extends React.PureComponent<SpacingProps> {
 
     static defaultProps: SpacingProps = {
@@ -24,7 +27,7 @@ export class Spacing extends React.PureComponent<SpacingProps> {
         }
 
         return (
-            <div style={styles}>{this.props.children}</div>
+            <div className={this.props.css(styles)}>{this.props.children}</div>
         )
     }
 }

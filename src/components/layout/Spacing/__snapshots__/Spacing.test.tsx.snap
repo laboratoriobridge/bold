@@ -2,7 +2,7 @@
 
 exports[`Spacing deve renderizar corretamente 1`] = `
 <div
-  style="margin-top:1rem;margin-right:2rem;margin-bottom:3rem;margin-left:4rem;display:inline-block"
+  class="css-182ieb3"
 >
   Content
 </div>
@@ -10,7 +10,7 @@ exports[`Spacing deve renderizar corretamente 1`] = `
 
 exports[`Spacing deve renderizar corretamente 2`] = `
 <div
-  style="margin-top:1rem;margin-right:2rem;margin-bottom:3rem;margin-left:4rem;display:"
+  class="css-jjzf72"
 >
   Content
 </div>

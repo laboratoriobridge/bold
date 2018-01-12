@@ -20,8 +20,8 @@ export class TextInput extends React.Component<TextInputProps> {
     }
 
     render() {
-        const { createStyles, css, status, ...rest } = this.props
-        const styles = createStyles(theme => ({
+        const { css, status, theme, ...rest } = this.props
+        const styles = {
             input: {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray30,
@@ -44,7 +44,7 @@ export class TextInput extends React.Component<TextInputProps> {
             error: {
                 border: 'solid 1px ' + theme.color.red,
             },
-        }))
+        }
 
         const classes = css(styles.input,
             status === 'error' && styles.error)

@@ -2,7 +2,7 @@
 
 exports[`Cell deve renderizar corretamente 1`] = `
 <div
-  class="cell_1nl17fg-o_O-autoSize_t0tx82"
+  class="css-18dl9eo"
 >
   Content
 </div>
@@ -10,7 +10,7 @@ exports[`Cell deve renderizar corretamente 1`] = `
 
 exports[`Cell deve renderizar corretamente 2`] = `
 <div
-  class="cell_1nl17fg-o_O-size6_uxtoz"
+  class="css-1rhfvo5"
 >
   Content
 </div>
@@ -18,7 +18,7 @@ exports[`Cell deve renderizar corretamente 2`] = `
 
 exports[`Cell deve renderizar corretamente 3`] = `
 <div
-  class="cell_1nl17fg-o_O-autoSize_t0tx82-o_O-alignSelf__center_1h7v6hv"
+  class="css-f72zs4"
 >
   Content
 </div>

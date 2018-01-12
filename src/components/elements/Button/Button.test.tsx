@@ -18,7 +18,7 @@ describe('Button', () => {
             })
         }
 
-        const wrapper = mount(<Button label='Botão' onClick={delayedFunction} />)
+        const wrapper = mount(withTheme(<Button label='Botão' onClick={delayedFunction} />))
         expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')
@@ -27,7 +27,7 @@ describe('Button', () => {
 
     it('não deve ter animação com "onClick" que não seja promise', () => {
         const func = () => undefined
-        const wrapper = mount(<Button label='Botão' onClick={func} />)
+        const wrapper = mount(withTheme(<Button label='Botão' onClick={func} />))
         expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')

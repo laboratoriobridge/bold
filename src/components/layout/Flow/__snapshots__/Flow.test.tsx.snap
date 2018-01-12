@@ -2,25 +2,24 @@
 
 exports[`Flow deve envelopar cada filho em um elemento que crie espaçamento horizontal 1`] = `
 <div
-  class="flowHorizontal_1joc06t"
-  style="margin:0 -0.5rem"
+  class="css-1k5rx2j"
 >
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <span>
       1
     </span>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <span>
       2
     </span>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <span>
       3
@@ -31,25 +30,24 @@ exports[`Flow deve envelopar cada filho em um elemento que crie espaçamento hor
 
 exports[`Flow deve suportar o parâmetro direction 1`] = `
 <div
-  class="flowVertical_wgmchy"
-  style="margin:0 -0.5rem"
+  class="css-1n0xhs7"
 >
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <div>
       1
     </div>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <div>
       2
     </div>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.5rem;margin-bottom:0rem;margin-left:0.5rem;display:inline-block"
+    class="css-1ueujd4"
   >
     <div>
       3
@@ -60,25 +58,24 @@ exports[`Flow deve suportar o parâmetro direction 1`] = `
 
 exports[`Flow deve suportar o parâmetro hSpacing 1`] = `
 <div
-  class="flowHorizontal_1joc06t"
-  style="margin:0 -0.25rem"
+  class="css-16nph7i"
 >
   <div
-    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+    class="css-w6y3nz"
   >
     <span>
       1
     </span>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+    class="css-w6y3nz"
   >
     <span>
       2
     </span>
   </div>
   <div
-    style="margin-top:0rem;margin-right:0.25rem;margin-bottom:0rem;margin-left:0.25rem;display:inline-block"
+    class="css-w6y3nz"
   >
     <span>
       3
@@ -89,25 +86,24 @@ exports[`Flow deve suportar o parâmetro hSpacing 1`] = `
 
 exports[`Flow deve suportar o parâmetro vSpacing 1`] = `
 <div
-  class="flowHorizontal_1joc06t"
-  style="margin:0 -0.5rem"
+  class="css-1k5rx2j"
 >
   <div
-    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+    class="css-pmvu5p"
   >
     <span>
       1
     </span>
   </div>
   <div
-    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+    class="css-pmvu5p"
   >
     <span>
       2
     </span>
   </div>
   <div
-    style="margin-top:1.25rem;margin-right:0.5rem;margin-bottom:1.25rem;margin-left:0.5rem;display:inline-block"
+    class="css-pmvu5p"
   >
     <span>
       3

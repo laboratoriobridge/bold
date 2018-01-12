@@ -14,79 +14,75 @@ export interface CheckboxProps extends Partial<WrappedFieldInputProps>, WithStyl
 export class Checkbox extends React.Component<CheckboxProps, any> {
 
     render() {
-        const checkStyles = this.props.createStyles(theme => ({
-            check: {
-                backgroundColor: theme.color.white,
-                border: '1px solid ' + theme.color.gray30,
-                borderRadius: 2,
-                display: 'inline-block',
-                height: 16,
-                position: 'relative',
+        const { css, label, theme, ...rest } = this.props
+
+        const checkClasses = css({
+            backgroundColor: theme.color.white,
+            border: '1px solid ' + theme.color.gray30,
+            borderRadius: 2,
+            display: 'inline-block',
+            height: 16,
+            position: 'relative',
+            transition: 'all .2s ease',
+            verticalAlign: 'middle',
+            width: 16,
+            ':after': {
+                borderRight: '2px solid ' + theme.color.white,
+                borderBottom: '2px solid ' + theme.color.white,
+                content: '""',
+                height: 10,
+                left: 4,
+                opacity: 0,
+                position: 'absolute',
+                top: 1,
                 transition: 'all .2s ease',
-                verticalAlign: 'middle',
-                width: 16,
+                transform: 'rotate(45deg) scale(1)',
+                width: 6,
+            },
+        })
+
+        const labelClasses = css({
+            color: theme.color.gray70,
+            fontSize: 12,
+            marginLeft: 10,
+            verticalAlign: 'middle',
+        })
+
+        const checkboxClass = css({
+            cursor: 'pointer',
+        })
+
+        const checkboxDisabledClass = css({
+            cursor: 'not-allowed',
+        })
+
+        const inputClass = css({
+            display: 'none',
+            [`&:hover + .${checkClasses}`]: {
+                borderColor: theme.color.gray40,
+            },
+            [`&:checked + .${checkClasses}`]: {
+                backgroundColor: theme.color.primary,
+                borderColor: theme.color.primary,
                 ':after': {
-                    borderRight: '2px solid ' + theme.color.white,
-                    borderBottom: '2px solid ' + theme.color.white,
-                    content: '""',
-                    height: 10,
-                    left: 4,
-                    opacity: 0,
-                    position: 'absolute',
-                    top: 1,
-                    transition: 'all .2s ease',
-                    transform: 'rotate(45deg) scale(1)',
-                    width: 6,
+                    opacity: 1,
                 },
             },
-            label: {
-                color: theme.color.gray70,
-                fontSize: 12,
-                marginLeft: 10,
-                verticalAlign: 'middle',
+            [`&:focus + .${checkClasses}`]: {
+                borderColor: theme.color.primary,
             },
-        }))
-
-        const { createStyles, label, css, ...rest } = this.props
-
-        const checkClasses = css(checkStyles.check)
-        const labelClasses = css(checkStyles.label)
-
-        const styles = createStyles(theme => ({
-            checkbox: {
-                cursor: 'pointer',
+            [`&:disabled + .${checkClasses}`]: {
+                backgroundColor: '#f2f2f7',
+                borderColor: theme.color.gray10,
             },
-            checkboxDisabled: {
-                cursor: 'not-allowed',
+            [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
+                color: theme.color.gray30,
             },
-            input: {
-                display: 'none',
-                [`&:hover + .${checkClasses}`]: {
-                    borderColor: theme.color.gray40,
-                },
-                [`&:checked + .${checkClasses}`]: {
-                    backgroundColor: theme.color.primary,
-                    borderColor: theme.color.primary,
-                    ':after': {
-                        opacity: 1,
-                    },
-                },
-                [`&:focus + .${checkClasses}`]: {
-                    borderColor: theme.color.primary,
-                },
-                [`&:disabled + .${checkClasses}`]: {
-                    backgroundColor: '#f2f2f7',
-                    borderColor: theme.color.gray10,
-                },
-                [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                    color: theme.color.gray30,
-                },
-            },
-        }))
+        })
 
         return (
-            <label className={css(styles.checkbox, this.props.disabled && styles.checkboxDisabled)} >
-                <Input {...rest} type='checkbox' className={css(styles.input)} />
+            <label className={css(checkboxClass, this.props.disabled && checkboxDisabledClass)} >
+                <Input {...rest} type='checkbox' className={inputClass} />
                 <span className={checkClasses} />
                 <span className={labelClasses}>{this.props.label}</span>
             </label>

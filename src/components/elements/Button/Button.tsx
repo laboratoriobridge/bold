@@ -55,15 +55,15 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         const {
             label,
             className,
-            createStyles,
             css,
             icon,
             loading,
+            theme,
             type,
             ...rest,
         } = this.props
 
-        const styles = createStyles(theme => ({
+        const styles = {
             button: {
                 backgroundColor: theme.color.white,
                 border: '1px solid ' + theme.color.gray30,
@@ -95,7 +95,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             },
             loading: {
             },
-        }))
+        }
 
         const classes = css(
             styles.button,

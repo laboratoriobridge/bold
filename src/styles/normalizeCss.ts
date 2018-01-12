@@ -1,12 +1,11 @@
 /* tslint:disable */
-import { StyleDeclaration } from 'aphrodite'
 
 /**
  * Regex ([\w-]*): (.*);
  * '$1': '$2',
  */
 
-const normalizeCss: StyleDeclaration = {
+const normalizeCss = {
     /**
      * 1. Correct the line height in all browsers.
      * 2. Prevent adjustments of font size after orientation changes in

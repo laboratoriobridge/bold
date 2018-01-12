@@ -2,7 +2,7 @@
 
 exports[`Label render 1`] = `
 <label
-  style="font-size:0.75rem;font-weight:bold"
+  class="css-112whna"
 >
   Label
 </label>
