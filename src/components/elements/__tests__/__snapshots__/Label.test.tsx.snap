@@ -1,8 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Label render 1`] = `
+.emotion-0 {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
 <label
-  class="css-112whna"
+  class="emotion-0"
 >
   Label
 </label>

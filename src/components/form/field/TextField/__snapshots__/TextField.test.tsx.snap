@@ -1,12 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextField deve ser renderizado de forma correta 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+}
+
+.emotion-0:hover {
+  border-color: #999999;
+}
+
+.emotion-0:focus {
+  border-color: #1e98ff;
+  outline: none;
+}
+
+.emotion-0:active {
+  border-color: #1e98ff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
 <div
   data-name="test"
 >
   <div>
     <input
-      class="css-120vq3d"
+      class="emotion-0"
       maxlength="2"
       name="test"
       placeholder="Test"

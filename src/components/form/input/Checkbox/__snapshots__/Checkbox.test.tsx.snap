@@ -1,19 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox deve conter a classe css "disabled" 1`] = `
+.emotion-1 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  display: inline-block;
+  height: 16px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.emotion-1:after {
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  content: "";
+  height: 10px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  width: 6px;
+}
+
+.emotion-2 {
+  color: #4d4d4d;
+  font-size: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.emotion-0 {
+  display: none;
+}
+
+.emotion-0:hover + .emotion-1 {
+  border-color: #999999;
+}
+
+.emotion-0:checked + .emotion-1 {
+  background-color: #1e98ff;
+  border-color: #1e98ff;
+}
+
+.emotion-0:checked + .emotion-1:after {
+  opacity: 1;
+}
+
+.emotion-0:focus + .emotion-1 {
+  border-color: #1e98ff;
+}
+
+.emotion-0:disabled + .emotion-1 {
+  background-color: #f2f2f7;
+  border-color: #e6e6e6;
+}
+
+.emotion-0:disabled + .emotion-1 + .emotion-2 {
+  color: #b3b3b3;
+}
+
+.emotion-3 {
+  cursor: pointer;
+  cursor: not-allowed;
+}
+
 <label
-  class="css-zm9nki"
+  class="emotion-3"
 >
   <input
-    class="css-gh4k11"
+    class="emotion-0"
     disabled=""
     type="checkbox"
   />
   <span
-    class="css-181e7ho"
+    class="emotion-1"
   />
   <span
-    class="css-lyjr2k"
+    class="emotion-2"
   >
     check
   </span>
@@ -21,18 +93,89 @@ exports[`Checkbox deve conter a classe css "disabled" 1`] = `
 `;
 
 exports[`Checkbox deve renderizar corretamente 1`] = `
+.emotion-1 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 2px;
+  display: inline-block;
+  height: 16px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.emotion-1:after {
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  content: "";
+  height: 10px;
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  top: 1px;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  width: 6px;
+}
+
+.emotion-2 {
+  color: #4d4d4d;
+  font-size: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.emotion-3 {
+  cursor: pointer;
+}
+
+.emotion-0 {
+  display: none;
+}
+
+.emotion-0:hover + .emotion-1 {
+  border-color: #999999;
+}
+
+.emotion-0:checked + .emotion-1 {
+  background-color: #1e98ff;
+  border-color: #1e98ff;
+}
+
+.emotion-0:checked + .emotion-1:after {
+  opacity: 1;
+}
+
+.emotion-0:focus + .emotion-1 {
+  border-color: #1e98ff;
+}
+
+.emotion-0:disabled + .emotion-1 {
+  background-color: #f2f2f7;
+  border-color: #e6e6e6;
+}
+
+.emotion-0:disabled + .emotion-1 + .emotion-2 {
+  color: #b3b3b3;
+}
+
 <label
-  class="css-4g6ai3"
+  class="emotion-3"
 >
   <input
-    class="css-gh4k11"
+    class="emotion-0"
     type="checkbox"
   />
   <span
-    class="css-181e7ho"
+    class="emotion-1"
   />
   <span
-    class="css-lyjr2k"
+    class="emotion-2"
   >
     check
   </span>
