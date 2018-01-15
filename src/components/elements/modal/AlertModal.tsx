@@ -1,4 +1,3 @@
-import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { Button } from '../Button/Button'
@@ -37,15 +36,15 @@ export class AlertModal extends React.Component<AlertModalProps, any> {
     }
 
     render() {
-        const tipo = classnames('alertmodal-card modal-content', {
+        /*const tipo = classnames('alertmodal-card modal-content', {
             ' is-success': this.props.success,
             ' is-error': this.props.error,
             ' is-info': this.props.info,
-        })
+        })*/
 
         return (
             <Modal active={this.props.active}>
-                <div className={tipo}>
+                <div className='alertmodal-card modal-content'>
                     <Icon icon={this.getIcon()} className='alertmodal-icon' />
                     {this.props.children}
                 </div>
