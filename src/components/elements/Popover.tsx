@@ -1,4 +1,3 @@
-import * as classnames from 'classnames'
 import * as React from 'react'
 import { Overlay } from 'react-overlays'
 
@@ -44,13 +43,8 @@ const PopoverContent = props => {
         children,
     } = props
 
-    const classes = classnames('popover', props.className, props.placement, {
-        'grey': props.color && props.color === 'grey',
-        'dark-grey': props.color && props.color === 'dark-grey',
-    })
-
     return (
-        <div className={classes} style={{ ...style }}>
+        <div className='popover' style={{ ...style }}>
             <div className='popover-content'>
                 {children}
             </div>

@@ -45,7 +45,6 @@
     "axios-mock-adapter": "1.10.0",
     "babel-cli": "6.26.0",
     "babel-jest": "21.2.0",
-    "classnames": "2.2.5",
     "copyfiles": "1.2.0",
     "emotion": "9.0.0-1",
     "emotion-theming": "9.0.0-1",
@@ -80,7 +79,9 @@
   },
   "peerDependencies": {
     "axios": "0.17.x",
-    "emotion": "8.x",
+    "emotion": "9.x",
+    "emotion-theming": "9.x",
+    "normalize.css": "x",
     "react": "16.2.x",
     "react-dom": "16.2.x",
     "react-overlays": "0.8.x",

@@ -1,4 +1,3 @@
-import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { Placement, Popover } from './Popover'
@@ -30,11 +29,10 @@ export class Hint extends React.Component<HintProps, HintState> {
     }
 
     render() {
-        const classes = classnames('hint', this.props.type)
         return (
-            <span className={classnames('hint-wrapper', this.props.className)}>
+            <span className='hint-wrapper'>
                 <Popover
-                    className={classes}
+                    className='hint'
                     color='dark-grey'
                     show={this.state.showPopover}
                     placement={this.props.placement}
