@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Icon deve renderizar corretamente 1`] = `
-<i
-  class="rnicons rnicons-login"
-/>
-`;
+exports[`Icon deve renderizar corretamente 1`] = `<i />`;
 
-exports[`Icon deve renderizar tamanho grande 1`] = `
-<i
-  class="rnicons rnicons-login is-large"
-/>
-`;
+exports[`Icon deve renderizar tamanho grande 1`] = `<i />`;
