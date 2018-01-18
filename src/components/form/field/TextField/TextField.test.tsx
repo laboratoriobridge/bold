@@ -1,7 +1,9 @@
-import * as React from 'react'
 import { render } from 'enzyme'
-import { TextField } from './TextField'
+import * as React from 'react'
+
 import { withForm } from '../../../../test/index'
+
+import { TextField } from './TextField'
 
 describe('TextField', () => {
     it('deve ser renderizado de forma correta', () => {
