@@ -1,14 +1,20 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { Input, PublicInputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input/Input'
 
-export interface TextInputProps extends PublicInputProps, WithStylesProps {
+export interface TextInputProps extends InputProps, WithStylesProps {
     status?: '' | 'error'
+    type?: 'text' | 'password'
 }
 
 @withStyles
 export class TextInput extends React.Component<TextInputProps> {
+
+    static defaultProps: Partial<TextInputProps> = {
+        type: 'text',
+    }
+
     public input: Input
 
     focus() {
@@ -50,7 +56,7 @@ export class TextInput extends React.Component<TextInputProps> {
             status === 'error' && styles.error)
 
         return (
-            <Input ref={input => this.input = input} {...rest} className={classes} type='text' />
+            <Input ref={input => this.input = input} {...rest} className={classes} />
         )
     }
 

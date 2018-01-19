@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ChangeEvent, FocusEvent } from 'react'
 import { EventOrValueHandler } from 'redux-form'
 
-export interface PublicInputProps {
+export interface InputProps {
   className?: string
   checked?: boolean
   disabled?: boolean
@@ -13,11 +13,8 @@ export interface PublicInputProps {
   onChange?: EventOrValueHandler<ChangeEvent<any>>
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   placeholder?: string
+  type?: string
   value?: any
-}
-
-export interface InputProps extends PublicInputProps {
-  type: string
 }
 
 export class Input extends React.Component<InputProps, any> {
