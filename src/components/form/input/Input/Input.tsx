@@ -1,20 +1,22 @@
 import * as React from 'react'
-import { ChangeEvent, FocusEvent } from 'react'
-import { EventOrValueHandler } from 'redux-form'
 
-export interface InputProps {
+export interface PublicInputProps {
   className?: string
   checked?: boolean
   disabled?: boolean
   id?: string
   maxLength?: number
   name?: string
-  onBlur?: EventOrValueHandler<FocusEvent<any>>
-  onChange?: EventOrValueHandler<ChangeEvent<any>>
+  onBlur?: <T>(event?: React.FocusEvent<T>) => void
+  onChange?: <T>(event: React.ChangeEvent<T> | any) => void
+  onFocus?: <T>(event?: React.FocusEvent<T>) => void
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   placeholder?: string
-  type?: string
   value?: any
+}
+
+export interface InputProps extends PublicInputProps {
+  type?: string
 }
 
 export class Input extends React.Component<InputProps, any> {

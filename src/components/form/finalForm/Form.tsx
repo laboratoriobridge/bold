@@ -1,9 +1,7 @@
+import { FORM_ERROR } from 'final-form'
 import * as React from 'react'
+import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 import { Prompt } from 'react-router-dom'
-import {
-    ConfigProps as ReduxFormConfigProps, DecoratedComponentClass,
-    InjectedFormProps as InjectedFormProps, reduxForm, SubmissionError
-} from 'redux-form'
 
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
 
@@ -18,18 +16,13 @@ export interface ErrorModalProps extends FormModalProps {
     error?: any
 }
 
-export interface SuccessModalProps extends FormModalProps {
-    result?: any
-}
-
 export interface FormState {
     error: any
     modalErrorActive: boolean
     modalSuccessActive: boolean
-    result: any
 }
 
-export interface FormProps extends ReduxFormConfigProps<any, any> {
+export interface FormProps extends FinalFormProps {
     errorIcon?: string,
     errorModal?: React.SFC<ErrorModalProps> | React.ComponentClass<ErrorModalProps>,
     hasErrorModal?: boolean,
@@ -37,15 +30,10 @@ export interface FormProps extends ReduxFormConfigProps<any, any> {
     hasSuccessModal?: boolean,
     successContent?: JSX.Element,
     successIcon?: string,
-    successModal?: React.SFC<SuccessModalProps> | React.ComponentClass<SuccessModalProps>,
+    successModal?: React.SFC<FormModalProps> | React.ComponentClass<FormModalProps>,
     successTitle?: string
-    onSubmit: any
-    onSubmitSuccess?: any
-    onSubmitFail?: any
-    render(props: FormComponentProps): React.ReactNode
-}
-
-export interface FormComponentProps extends Partial<InjectedFormProps> {
+    onSubmitSuccess?(): void
+    onSubmitFail?(erros: object): void
 }
 
 export class Form extends React.Component<FormProps, FormState> {
@@ -62,20 +50,13 @@ export class Form extends React.Component<FormProps, FormState> {
         successTitle: 'Cadastro realizado com sucesso!',
     }
 
-    private ReduxWrappedForm: DecoratedComponentClass<any, WrapperFormProps>
-
     constructor(props: FormProps, context) {
         super(props, context)
         this.state = {
             error: undefined,
             modalErrorActive: false,
             modalSuccessActive: false,
-            result: undefined,
         }
-    }
-
-    componentWillMount() {
-        this.ReduxWrappedForm = reduxForm(this.props)(WrappedForm)
     }
 
     render() {
@@ -101,10 +82,9 @@ export class Form extends React.Component<FormProps, FormState> {
 
         return (
             <div className='is-full-height is-vertical-flow'>
-                <this.ReduxWrappedForm
+                <FinalForm
+                    {...this.props}
                     onSubmit={this.onSubmit}
-                    onSubmitFail={this.onSubmitFail}
-                    onSubmitSuccess={this.onSubmitSuccess}
                     render={this.renderForm}
                 />
                 <ErrorModal
@@ -120,7 +100,6 @@ export class Form extends React.Component<FormProps, FormState> {
                     active={this.state.modalSuccessActive}
                     onClose={this.closeSuccess}
                     icon={successIcon}
-                    result={this.state.result}
                     title={successTitle}
                 >
                     {successContent}
@@ -129,7 +108,7 @@ export class Form extends React.Component<FormProps, FormState> {
         )
     }
 
-    private renderForm = (props: FormComponentProps) => (
+    private renderForm = (props: FormRenderProps) => (
         <div className='is-full-height is-vertical-flow'>
             <Prompt
                 when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded}
@@ -139,19 +118,28 @@ export class Form extends React.Component<FormProps, FormState> {
         </div>
     )
 
-    private onSubmit = (values) => {
-        const result = this.props.onSubmit(values)
+    private onSubmit = (values, form) => {
+        const result = this.props.onSubmit(values, form)
 
-        if (result && this.isPromise(result)) {
-            return result.catch(error => {
-                if (error.response.status === 400) {
-                    throw new SubmissionError(error.response.data)
-                } else {
-                    throw new SubmissionError({ _error: error.response.data })
-                }
-            })
+        if (result) {
+            if (this.isPromise(result)) {
+                return result.then(() => this.onSubmitSuccess())
+                    .catch(error => {
+                        let errors
+                        if (error.response.status === 400) {
+                            errors = error.response.data
+                        } else {
+                            errors = { [FORM_ERROR]: error.response.data }
+                        }
+
+                        return Promise.resolve(errors).then(() => this.onSubmitFail(errors))
+                    })
+            } else {
+                this.onSubmitFail(result)
+                return result
+            }
         } else {
-            return result
+            this.onSubmitSuccess()
         }
     }
 
@@ -163,11 +151,11 @@ export class Form extends React.Component<FormProps, FormState> {
         }
     }
 
-    private onSubmitSuccess = (result) => {
+    private onSubmitSuccess = () => {
         if (this.props.hasSuccessModal) {
-            this.setState({ result, modalSuccessActive: true })
+            this.setState({ modalSuccessActive: true })
         } else {
-            this.props.onSubmitSuccess && this.props.onSubmitSuccess(result)
+            this.props.onSubmitSuccess && this.props.onSubmitSuccess()
         }
     }
 
@@ -177,27 +165,12 @@ export class Form extends React.Component<FormProps, FormState> {
     }
 
     private closeSuccess = () => {
-        this.props.onSubmitSuccess && this.props.onSubmitSuccess(this.state.result)
-        this.setState({ modalSuccessActive: false, result: undefined })
+        this.props.onSubmitSuccess && this.props.onSubmitSuccess()
+        this.setState({ modalSuccessActive: false })
     }
 
     private isPromise = (arg: any): arg is Promise<any> => {
         return arg.catch !== undefined
-    }
-
-}
-
-interface WrapperFormProps extends Partial<InjectedFormProps<any, any>> {
-    onSubmit: any
-    onSubmitSuccess: any
-    onSubmitFail: any
-    render(props: FormComponentProps): JSX.Element
-}
-
-class WrappedForm extends React.Component<WrapperFormProps> {
-
-    render() {
-        return this.props.render(this.props) as any
     }
 
 }

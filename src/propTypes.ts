@@ -73,7 +73,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: '(event: MouseEvent<HTMLButtonElement>) => any',
+                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
                     value: 'undefined'
                 }
             },
@@ -167,12 +167,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -413,57 +413,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'string | number | boolean | {} | Function | ReactElement<any> | (string | number | boolean | any[...',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'Text': {
-        displayName: 'Text',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'color': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Color',
-                    value: 'undefined'
-                }
-            },
-            'size': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'number',
-                    value: 'undefined'
-                }
-            },
-            'weight': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Weight',
-                    value: 'undefined'
-                }
-            },
-            'tag': {
-                defaultValue: 'span',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'TextTag',
                     value: 'undefined'
                 }
             }
@@ -1045,6 +994,84 @@ const propTypes: {[key in string]: ComponentDoc} = {
             }
         }
     },
+    'Text': {
+        displayName: 'Text',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'color': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Color',
+                    value: 'undefined'
+                }
+            },
+            'size': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'weight': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Weight',
+                    value: 'undefined'
+                }
+            },
+            'tag': {
+                defaultValue: 'span',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'TextTag',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'theme': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
     'ErrorIndicator': {
         displayName: 'ErrorIndicator',
         description: ``,
@@ -1069,6 +1096,30 @@ const propTypes: {[key in string]: ComponentDoc} = {
             }
         }
     },
+    'FormError': {
+        displayName: 'FormError',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'error': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
     'FormField': {
         displayName: 'FormField',
         description: ``,
@@ -1087,7 +1138,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'any',
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -1184,6 +1235,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
+            'label': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'className': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
             'checked': {
                 defaultValue: 'null',
                 description: ``,
@@ -1202,12 +1271,66 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'label': {
+            'id': {
                 defaultValue: 'null',
                 description: ``,
-                required: true,
+                required: false,
                 type: {
-                    name: 'ReactNode',
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'maxLength': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined'
+                }
+            },
+            'onBlur': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
+                    value: 'undefined'
+                }
+            },
+            'onChange': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
+                    value: 'undefined'
+                }
+            },
+            'onKeyPress': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: KeyboardEvent<HTMLInputElement>) => void',
+                    value: 'undefined'
+                }
+            },
+            'placeholder': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -1220,51 +1343,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'onBlur': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onChange': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onDragStart': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventHandler<DragEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onDrop': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventHandler<DragEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onFocus': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventHandler<FocusEvent<any>>',
-                    value: 'undefined'
-                }
-            },
             'styles': {
                 defaultValue: 'null',
                 description: ``,
@@ -1274,12 +1352,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -1375,7 +1453,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1384,7 +1462,16 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1424,12 +1511,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -1471,7 +1558,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'any',
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -1494,6 +1581,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 }
             },
             'required': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'status': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '"" | "error"',
+                    value: 'undefined'
+                }
+            },
+            'password': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
@@ -1552,7 +1657,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1561,7 +1666,16 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1601,12 +1715,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -1619,21 +1733,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'normalize': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Normalizer',
-                    value: 'undefined'
-                }
-            },
             'parse': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'Parser',
+                    name: '(value: any, name: string) => any',
                     value: 'undefined'
                 }
             },
@@ -1642,7 +1747,340 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'Formatter',
+                    name: '(value: any, name: string) => any',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Field': {
+        displayName: 'Field',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string | number | boolean | {} | ReactElement<any> | (string | number | boolean | any[] | ReactEl...',
+                    value: 'undefined'
+                }
+            },
+            'allowNull': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'format': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(value: any, name: string) => any',
+                    value: 'undefined'
+                }
+            },
+            'parse': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(value: any, name: string) => any',
+                    value: 'undefined'
+                }
+            },
+            'name': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'subscription': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'FieldSubscription',
+                    value: 'undefined'
+                }
+            },
+            'validate': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(value: any, allValues: object) => any',
+                    value: 'undefined'
+                }
+            },
+            'value': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined'
+                }
+            },
+            'component': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string | ComponentClass<FieldRenderProps> | StatelessComponent<FieldRenderProps>',
+                    value: 'undefined'
+                }
+            },
+            'render': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(props: FieldRenderProps) => ReactNode',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'Form': {
+        displayName: 'Form',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string | number | boolean | {} | ReactElement<any> | (string | number | boolean | any[] | ReactEl...',
+                    value: 'undefined'
+                }
+            },
+            'errorIcon': {
+                defaultValue: 'modal-erro',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'errorModal': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StatelessComponent<ErrorModalProps> | ComponentClass<ErrorModalProps>',
+                    value: 'undefined'
+                }
+            },
+            'hasErrorModal': {
+                defaultValue: 'true',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'hasLeaveModal': {
+                defaultValue: 'true',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'hasSuccessModal': {
+                defaultValue: 'true',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'successContent': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Element',
+                    value: 'undefined'
+                }
+            },
+            'successIcon': {
+                defaultValue: 'modal-sucesso',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'successModal': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'StatelessComponent<FormModalProps> | ComponentClass<FormModalProps>',
+                    value: 'undefined'
+                }
+            },
+            'successTitle': {
+                defaultValue: 'Cadastro realizado com sucesso!',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'onSubmitSuccess': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '() => void',
+                    value: 'undefined'
+                }
+            },
+            'onSubmitFail': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(erros: object) => void',
+                    value: 'undefined'
+                }
+            },
+            'subscription': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'FormSubscription',
+                    value: 'undefined'
+                }
+            },
+            'decorators': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Decorator[]',
+                    value: 'undefined'
+                }
+            },
+            'debug': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'DebugFunction',
+                    value: 'undefined'
+                }
+            },
+            'initialValues': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'object',
+                    value: 'undefined'
+                }
+            },
+            'mutators': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '{ [key: string]: Mutator; }',
+                    value: 'undefined'
+                }
+            },
+            'onSubmit': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: '(values: object, form: FormApi, callback?: (errors?: object) => void) => void | object | Promise<...',
+                    value: 'undefined'
+                }
+            },
+            'validate': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(values: object) => object | Promise<object>',
+                    value: 'undefined'
+                }
+            },
+            'validateOnBlur': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'component': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string | ComponentClass<FieldRenderProps> | StatelessComponent<FieldRenderProps>',
+                    value: 'undefined'
+                }
+            },
+            'render': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(props: FormRenderProps) => ReactNode',
+                    value: 'undefined'
+                }
+            }
+        }
+    },
+    'SubmitButton': {
+        displayName: 'SubmitButton',
+        description: ``,
+        props: {
+            'children': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'label': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'handleSubmit': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: '(event?: SyntheticEvent<HTMLFormElement>) => void',
                     value: 'undefined'
                 }
             }
@@ -1658,6 +2096,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'label': {
+                defaultValue: 'null',
+                description: ``,
+                required: true,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'className': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
                     value: 'undefined'
                 }
             },
@@ -1679,21 +2135,21 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'label': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'value': {
+            'id': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'any',
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'maxLength': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
                     value: 'undefined'
                 }
             },
@@ -1711,7 +2167,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1720,25 +2176,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onDragStart': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventHandler<DragEvent<any>>',
-                    value: 'undefined'
-                }
-            },
-            'onDrop': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'EventHandler<DragEvent<any>>',
+                    name: '<T>(event: any) => void',
                     value: 'undefined'
                 }
             },
@@ -1747,7 +2185,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
+                    value: 'undefined'
+                }
+            },
+            'onKeyPress': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: KeyboardEvent<HTMLInputElement>) => void',
+                    value: 'undefined'
+                }
+            },
+            'placeholder': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined'
+                }
+            },
+            'value': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
                     value: 'undefined'
                 }
             },
@@ -1760,12 +2225,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -1796,7 +2261,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
             'type': {
                 defaultValue: 'null',
                 description: ``,
-                required: true,
+                required: false,
                 type: {
                     name: 'string',
                     value: 'undefined'
@@ -1861,7 +2326,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1870,7 +2335,16 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1984,7 +2458,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -1993,7 +2467,16 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -2033,12 +2516,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2063,6 +2546,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'ReactNode',
+                    value: 'undefined'
+                }
+            },
+            'status': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '"" | "error"',
+                    value: 'undefined'
+                }
+            },
+            'password': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
                     value: 'undefined'
                 }
             },
@@ -2125,7 +2626,7 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<FocusEvent<any>>',
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -2134,7 +2635,16 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 description: ``,
                 required: false,
                 type: {
-                    name: 'EventOrValueHandler<ChangeEvent<any>>',
+                    name: '<T>(event: any) => void',
+                    value: 'undefined'
+                }
+            },
+            'onFocus': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '<T>(event?: FocusEvent<T>) => void',
                     value: 'undefined'
                 }
             },
@@ -2174,12 +2684,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2189,459 +2699,6 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'Field': {
-        displayName: 'Field',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'hasWrapper': {
-                defaultValue: 'true',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'name': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'type': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'render': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: '(props: WrappedFieldProps) => Element',
-                    value: 'undefined'
-                }
-            },
-            'error': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'title': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'label': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'required': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'parse': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Parser',
-                    value: 'undefined'
-                }
-            },
-            'format': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Formatter',
-                    value: 'undefined'
-                }
-            },
-            'normalize': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Normalizer',
-                    value: 'undefined'
-                }
-            },
-            'validate': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Validator | Validator[]',
-                    value: 'undefined'
-                }
-            },
-            'warn': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Validator | Validator[]',
-                    value: 'undefined'
-                }
-            },
-            'withRef': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'Form': {
-        displayName: 'Form',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'errorIcon': {
-                defaultValue: 'modal-erro',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'errorModal': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'StatelessComponent<ErrorModalProps> | ComponentClass<ErrorModalProps>',
-                    value: 'undefined'
-                }
-            },
-            'hasErrorModal': {
-                defaultValue: 'true',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'hasLeaveModal': {
-                defaultValue: 'true',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'hasSuccessModal': {
-                defaultValue: 'true',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'successContent': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Element',
-                    value: 'undefined'
-                }
-            },
-            'successIcon': {
-                defaultValue: 'modal-sucesso',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'successModal': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'StatelessComponent<SuccessModalProps> | ComponentClass<SuccessModalProps>',
-                    value: 'undefined'
-                }
-            },
-            'successTitle': {
-                defaultValue: 'Cadastro realizado com sucesso!',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'onSubmit': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'onSubmitSuccess': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'onSubmitFail': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'render': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: '(props: FormComponentProps) => ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'form': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'asyncBlurFields': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string[]',
-                    value: 'undefined'
-                }
-            },
-            'asyncValidate': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(values: any, dispatch: Dispatch<any>, props: any, blurredField: string) => Promise<any>',
-                    value: 'undefined'
-                }
-            },
-            'destroyOnUnmount': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'enableReinitialize': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'forceUnregisterOnUnmount': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'getFormState': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(state: any) => FormStateMap',
-                    value: 'undefined'
-                }
-            },
-            'immutableProps': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string[]',
-                    value: 'undefined'
-                }
-            },
-            'initialValues': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Partial<any>',
-                    value: 'undefined'
-                }
-            },
-            'keepDirtyOnReinitialize': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'onChange': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(values: Partial<any>, dispatch: Dispatch<any>, props: any) => void',
-                    value: 'undefined'
-                }
-            },
-            'propNamespace': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'pure': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'shouldValidate': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(params: ValidateCallback<any, any>) => boolean',
-                    value: 'undefined'
-                }
-            },
-            'shouldAsyncValidate': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(params: AsyncValidateCallback<any>) => boolean',
-                    value: 'undefined'
-                }
-            },
-            'touchOnBlur': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'touchOnChange': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'persistentSubmitErrors': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'validate': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(values: any, props: any) => FormErrors<any, void>',
-                    value: 'undefined'
-                }
-            },
-            'warn': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(values: any, props: any) => FormWarnings<any, void>',
                     value: 'undefined'
                 }
             }
@@ -2687,12 +2744,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2765,12 +2822,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2807,12 +2864,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2876,12 +2933,12 @@ const propTypes: {[key in string]: ComponentDoc} = {
                     value: 'undefined'
                 }
             },
-            'createStyles': {
+            'theme': {
                 defaultValue: 'null',
                 description: ``,
                 required: false,
                 type: {
-                    name: 'StyleCreator',
+                    name: 'Theme',
                     value: 'undefined'
                 }
             },
@@ -2951,6 +3008,33 @@ const propTypes: {[key in string]: ComponentDoc} = {
                 required: false,
                 type: {
                     name: 'boolean',
+                    value: 'undefined'
+                }
+            },
+            'styles': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'CSSProperties',
+                    value: 'undefined'
+                }
+            },
+            'theme': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined'
+                }
+            },
+            'css': {
+                defaultValue: 'null',
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
                     value: 'undefined'
                 }
             }

@@ -1,19 +1,15 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { Input, InputProps } from '../Input/Input'
+import { Input, PublicInputProps } from '../Input/Input'
 
-export interface TextInputProps extends InputProps, WithStylesProps {
+export interface TextInputProps extends PublicInputProps, WithStylesProps {
     status?: '' | 'error'
-    type?: 'text' | 'password'
+    password?: boolean
 }
 
 @withStyles
 export class TextInput extends React.Component<TextInputProps> {
-
-    static defaultProps: Partial<TextInputProps> = {
-        type: 'text',
-    }
 
     public input: Input
 
@@ -26,7 +22,7 @@ export class TextInput extends React.Component<TextInputProps> {
     }
 
     render() {
-        const { css, status, theme, ...rest } = this.props
+        const { css, password, status, theme, ...rest } = this.props
         const styles = {
             input: {
                 backgroundColor: theme.color.white,
@@ -56,7 +52,12 @@ export class TextInput extends React.Component<TextInputProps> {
             status === 'error' && styles.error)
 
         return (
-            <Input ref={input => this.input = input} {...rest} className={classes} />
+            <Input
+                ref={input => this.input = input}
+                {...rest}
+                className={classes}
+                type={password ? 'password' : 'text'}
+            />
         )
     }
 

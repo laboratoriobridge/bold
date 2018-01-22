@@ -1,21 +1,18 @@
 import * as React from 'react'
-import { ChangeEvent } from 'react'
-import { BaseFieldProps, EventOrValueHandler, WrappedFieldProps } from 'redux-form'
-import { Field as ReduxFormField } from 'redux-form'
+import { Field as FinalFormField, FieldProps, FieldRenderProps } from 'react-final-form'
 
 import { FormField, FormFieldProps } from '../FormField'
 
-export interface FieldProps extends FormFieldProps, Pick<BaseFieldProps,
-    'parse' | 'format' | 'normalize' | 'validate' | 'warn' | 'withRef'> {
+export interface FieldProps extends FormFieldProps, Pick<FieldProps,
+    'parse' | 'format' | 'validate'> {
     hasWrapper?: boolean
     name: string
-    type?: string
-    render(props: WrappedFieldProps): JSX.Element
+    render(props: FieldRenderProps): JSX.Element
 }
 
-interface FieldComponentProps extends FormFieldProps, WrappedFieldProps {
+interface FieldComponentProps extends FormFieldProps, FieldRenderProps {
     custom: {
-        onChange: EventOrValueHandler<ChangeEvent<any>>
+        onChange: <T>(event: React.ChangeEvent<T> | any) => void
     }
 }
 
@@ -28,7 +25,7 @@ export class Field extends React.PureComponent<FieldProps> {
     render() {
         const { onChange, ...rest } = this.props as any
         return (
-            <ReduxFormField {...rest} custom={{ onChange }} component={this.renderComponent} />
+            <FinalFormField {...rest} custom={{ onChange }} component={this.renderComponent} />
         )
     }
 
@@ -47,7 +44,7 @@ export class Field extends React.PureComponent<FieldProps> {
             return (
                 <FormField
                     {...rest}
-                    error={meta.touched && meta.error}
+                    error={meta.touched && (meta.error || !(meta as any).dirtySinceLastSubmit && meta.submitError)}
                     name={inputRest.name}
                 >
                     {this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })}

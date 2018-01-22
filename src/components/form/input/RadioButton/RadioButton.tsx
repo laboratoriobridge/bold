@@ -1,9 +1,9 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { Input, InputProps } from '../Input/Input'
+import { Input, PublicInputProps } from '../Input/Input'
 
-export interface RadioButtonProps extends InputProps, WithStylesProps {
+export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
     label: string
 }
 

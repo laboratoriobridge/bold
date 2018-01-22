@@ -2,9 +2,9 @@ import axios from 'axios'
 import * as MockAdapter from 'axios-mock-adapter'
 import httpAdapter from 'axios/lib/adapters/http'
 import * as React from 'react'
+import { Form } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-import { InjectedFormProps, reduxForm } from 'redux-form'
 import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
@@ -49,14 +49,10 @@ export const withRedux = (node: React.ReactElement<any>, store = createTestStore
  * @param {string} formName Nome do form.
  * @param {Store} store Store a ser utilizado pelo form.
  */
-export const withForm = (node: React.ReactElement<any>, formName = 'test', store = createTestStore()) => {
-    class FormWrapper extends React.Component<InjectedFormProps, any> {
-        render() { return node }
-    }
+export const withForm = (node: React.ReactNode, formName = 'test', store = createTestStore()) => {
+    const submit = () => undefined
 
-    const TestForm = reduxForm({
-        form: formName,
-    })(FormWrapper)
+    const render = () => node
 
-    return withRedux(withTheme(<TestForm />))
+    return withTheme(<Form render={render} onSubmit={submit} />)
 }

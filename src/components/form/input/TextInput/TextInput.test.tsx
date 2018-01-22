@@ -12,7 +12,7 @@ describe('TextInput', () => {
     })
 
     it('render password', () => {
-        const wrapper = render(withTheme(<TextInput type='password' />))
+        const wrapper = render(withTheme(<TextInput password />))
         expect(wrapper).toMatchSnapshot()
     })
 })
