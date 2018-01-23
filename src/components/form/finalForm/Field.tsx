@@ -44,7 +44,7 @@ export class Field extends React.PureComponent<FieldProps> {
             return (
                 <FormField
                     {...rest}
-                    error={meta.touched && (meta.error || !(meta as any).dirtySinceLastSubmit && meta.submitError)}
+                    error={meta.touched && (meta.error || !meta.dirtySinceLastSubmit && meta.submitError)}
                     name={inputRest.name}
                 >
                     {this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })}
