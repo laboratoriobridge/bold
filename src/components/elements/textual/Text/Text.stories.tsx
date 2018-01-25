@@ -25,7 +25,7 @@ storiesOf('Textual', module)
     .addDecorator(withTheme())
     .add('Text', () => (
         <Text
-            color={select('color', colors, 'gray70')}
+            color={select('color', colors, 'gray30')}
             size={number('size', 1)}
             weight={select('weight', weights, 'normal')}
             tag={select('tag', tags, 'span')}

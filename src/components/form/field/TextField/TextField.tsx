@@ -21,12 +21,16 @@ export class TextField extends React.Component<TextFieldProps> {
         )
     }
 
-    private renderInput = (props: WrappedFieldProps) => (
-        <TextInput
-            {...this.props}
-            {...props.input}
-            status={props.meta.touched && props.meta.error && 'error'}
-        />
-    )
+    private renderInput = (props: WrappedFieldProps) => {
+        const { format, normalize, parse, ...rest } = this.props
+
+        return (
+            <TextInput
+                {...rest}
+                {...props.input}
+                status={props.meta.touched && props.meta.error && 'error'}
+            />
+        )
+    }
 
 }

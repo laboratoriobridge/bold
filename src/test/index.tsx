@@ -4,7 +4,7 @@ import httpAdapter from 'axios/lib/adapters/http'
 import * as React from 'react'
 import { Provider } from 'react-redux'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-import { InjectedFormProps, reduxForm } from 'redux-form'
+import { InjectedFormProps, reducer as formReducer, reduxForm } from 'redux-form'
 import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
@@ -14,6 +14,7 @@ import { defaultTheme, Theme, ThemeProvider } from '../styles/'
 export const axiosMock = new MockAdapter(axios)
 
 const reducer = combineReducers({
+    form: formReducer,
     requester: requesterReducer,
 })
 

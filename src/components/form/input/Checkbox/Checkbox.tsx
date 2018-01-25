@@ -18,7 +18,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
 
         const checkClasses = css({
             backgroundColor: theme.color.white,
-            border: '1px solid ' + theme.color.gray30,
+            border: '1px solid ' + theme.color.gray70,
             borderRadius: 2,
             display: 'inline-block',
             height: 16,
@@ -42,7 +42,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         })
 
         const labelClasses = css({
-            color: theme.color.gray70,
+            color: theme.color.gray30,
             fontSize: 12,
             marginLeft: 10,
             verticalAlign: 'middle',
@@ -59,7 +59,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const inputClass = css({
             display: 'none',
             [`&:hover + .${checkClasses}`]: {
-                borderColor: theme.color.gray40,
+                borderColor: theme.color.gray60,
             },
             [`&:checked + .${checkClasses}`]: {
                 backgroundColor: theme.color.primary,
@@ -72,11 +72,11 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 borderColor: theme.color.primary,
             },
             [`&:disabled + .${checkClasses}`]: {
-                backgroundColor: '#f2f2f7',
-                borderColor: theme.color.gray10,
+                backgroundColor: theme.color.background,
+                borderColor: theme.color.gray90,
             },
             [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                color: theme.color.gray30,
+                color: theme.color.gray70,
             },
         })
 

@@ -1,4 +1,4 @@
-import { withKnobs } from '@storybook/addon-knobs'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
@@ -13,9 +13,15 @@ storiesOf('Form', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())
-    .add('TextField', () =>
-        <TextField name='nome' label='Nome' placeholder='Nome' required />
-    )
+    .add('TextField', () => (
+        <TextField
+            disabled={boolean('disabled', false)}
+            name='nome'
+            label='Nome'
+            placeholder='Nome'
+            required
+        />
+    ))
     .add('TextField type=\'password\'', () =>
         <TextField name='senha' label='Senha' placeholder='Senha' type='password' required />
     )
