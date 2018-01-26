@@ -6,7 +6,7 @@ import * as React from 'react'
 import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
-import { AsyncSelectRequestParams } from '../../input/Select/AsyncSelect'
+import { AsyncSelectRequestParams } from '../../select/AsyncSelect/AsyncSelect'
 
 import { AsyncSelectField } from './AsyncSelectField'
 

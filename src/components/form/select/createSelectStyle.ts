@@ -1,14 +1,14 @@
-import { Theme } from '../../../../styles/index'
+import { Theme } from '../../../styles/index'
 
 const createSelectStyle = (theme: Theme) => {
     return {
         default: {
+            fontSize: '0.75rem',
             '.Select-control': {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,
                 borderRadius: 2,
                 color: theme.color.gray30,
-                fontSize: '0.75rem',
                 height: 30,
                 lineHeight: '1',
                 ':hover': {
@@ -46,6 +46,9 @@ const createSelectStyle = (theme: Theme) => {
                     paddingRight: 0,
                     width: 30,
                 },
+                '.Select-menu-outer': {
+                    fontSize: '1rem',
+                },
             },
             '&.is-focused': {
                 '.Select-control': {
@@ -55,6 +58,11 @@ const createSelectStyle = (theme: Theme) => {
                     borderColor: theme.color.primary,
                     borderRadius: 2,
                     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+                },
+            },
+            '&.is-focused:not(.is-opened)': {
+                '.Select-control': {
+                    boxShadow: 'none',
                 },
             },
         },

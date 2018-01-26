@@ -64,7 +64,7 @@ export class Select extends React.Component<SelectProps> {
     private blur(): React.EventHandler<React.FocusEvent<{}>> {
         return () => {
             if (this.props.onBlur) {
-                if (this.props.value && this.props.value[this.props.labelKey]) {
+                if (this.props.value) {
                     this.props.onBlur(this.props.value)
                 } else {
                     this.props.onBlur(null)

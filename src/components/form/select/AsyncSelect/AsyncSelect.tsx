@@ -44,19 +44,19 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
 
     static defaultProps: Partial<AsyncSelectProps> = {
         autoload: false,
-        pageSize: 10,
-        searchDelay: 500,
-        multi: false,
+        backspaceRemoves: false,
         cache: false,
-        placeholder: '',
+        clearable: true,
         clearValueText: 'Limpar seleção',
         loadingPlaceholder: 'Carregando...',
-        searchPromptText: 'Digite para pesquisar',
-        noResultsText: 'Nenhum item encontrado.',
-        backspaceRemoves: false,
         ignoreAccents: false,
         ignoreCase: true,
-        clearable: true,
+        multi: false,
+        noResultsText: 'Nenhum item encontrado.',
+        pageSize: 10,
+        placeholder: '',
+        searchDelay: 500,
+        searchPromptText: 'Digite para pesquisar',
     }
 
     private typingTimer: number
@@ -82,11 +82,14 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
     }
 
     private loadOptions = (query, callback) => {
-        clearTimeout(this.typingTimer)
         if (this.typingTimer) {
             clearTimeout(this.typingTimer)
         }
-        this.typingTimer = setTimeout(this.getPage(query, callback), this.props.searchDelay)
+        if (query !== '') {
+            this.typingTimer = setTimeout(this.getPage(query, callback), this.props.searchDelay)
+        } else {
+            callback(null, {})
+        }
     }
 
     private getPage = (query, callback) => {
@@ -95,7 +98,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             pageSize: this.props.pageSize,
         }
 
-        return this.props.getPage(params)
+        this.props.getPage(params)
             .then(result => {
                 const response = {
                     options: result.data,
@@ -109,7 +112,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
     private blur(): React.EventHandler<React.FocusEvent<{}>> {
         return () => {
             if (this.props.onBlur) {
-                if (this.props.value && this.props.value[this.props.labelKey]) {
+                if (this.props.value) {
                     this.props.onBlur(this.props.value)
                 } else {
                     this.props.onBlur(null)
