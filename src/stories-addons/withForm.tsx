@@ -1,16 +1,19 @@
 import { Renderable, RenderFunction } from '@storybook/react'
 import * as React from 'react'
-import { reduxForm } from 'redux-form'
+import { Form } from 'react-final-form'
 
 import { withStore } from './withStore'
 
-export const withForm = (form = 'storyForm', store?) =>
+export const withForm = (store?) =>
     (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
         return withStore(store)(() => {
-            const StoryForm = reduxForm({
-                form,
-            })(() => <div>{story()}</div>)
-
-            return (<StoryForm />)
+            const submit = () => undefined
+            return (
+                <Form
+                    onSubmit={submit}
+                >
+                    {() => story()}
+                </Form>
+            )
         }, context)
     }

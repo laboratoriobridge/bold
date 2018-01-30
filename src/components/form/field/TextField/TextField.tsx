@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
+import { FieldRenderProps } from 'react-final-form'
 
 import { FormFieldProps } from '../../../form/FormField'
+import { Field, FieldProps } from '../../finalForm/Field'
 import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
-import { Field, FieldProps } from '../../reduxForm/Field'
 
 export interface TextFieldProps extends FormFieldProps, TextInputProps,
-    Pick<FieldProps, 'normalize' | 'parse' | 'format'> {
+    Pick<FieldProps, 'parse' | 'format'> {
     name: string
 }
 
@@ -21,9 +21,8 @@ export class TextField extends React.Component<TextFieldProps> {
         )
     }
 
-    private renderInput = (props: WrappedFieldProps) => {
-        const { format, normalize, parse, ...rest } = this.props
-
+    private renderInput = (props: FieldRenderProps) => {
+        const { format, parse, ...rest } = this.props
         return (
             <TextInput
                 {...rest}

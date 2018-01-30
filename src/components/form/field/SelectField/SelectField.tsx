@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
+import { FieldRenderProps } from 'react-final-form'
 
+import { Field } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
-import { Field } from '../../reduxForm/Field'
 import { Select, SelectProps } from '../../select/Select/Select'
 
 export interface SelectFieldProps extends FormFieldProps, SelectProps {
@@ -20,7 +20,7 @@ export class SelectField extends React.Component<SelectFieldProps> {
         )
     }
 
-    private renderSelect = (props: WrappedFieldProps) => (
+    private renderSelect = (props: FieldRenderProps) => (
         <Select
             {...this.props}
             {...props.input}

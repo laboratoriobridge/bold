@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
+import { FieldRenderProps } from 'react-final-form'
 
+import { Field } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
-import { Field } from '../../reduxForm/Field'
 import { AsyncSelect, AsyncSelectProps } from '../../select/AsyncSelect/AsyncSelect'
 
 export interface AsyncSelectFieldProps extends FormFieldProps, AsyncSelectProps {
@@ -20,7 +20,7 @@ export class AsyncSelectField extends React.Component<AsyncSelectFieldProps> {
         )
     }
 
-    private renderSelect = (props: WrappedFieldProps) => (
+    private renderSelect = (props: FieldRenderProps) => (
         <AsyncSelect
             {...this.props}
             {...props.input}

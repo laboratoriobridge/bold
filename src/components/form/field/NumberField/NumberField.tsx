@@ -11,7 +11,7 @@ export class NumberField extends React.Component<NumberFieldProps> {
 
     render() {
         return (
-            <TextField {...this.props} normalize={parse} />
+            <TextField {...this.props} parse={parse} />
         )
     }
 

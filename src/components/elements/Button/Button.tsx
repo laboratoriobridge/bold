@@ -6,6 +6,8 @@ import { Icon } from '../Icon'
 
 export type Type = 'normal' | 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'link'
 
+export type OnClickWithPromise = (event: React.MouseEvent<any>) => any
+
 export interface ButtonProps extends WithHintProps, WithStylesProps {
     /**
      * css className
@@ -16,7 +18,7 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
     label: string
     loading?: boolean
     name?: string,
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => any
+    onClick?: React.MouseEventHandler<any> | OnClickWithPromise
     onMouseEnter?: React.MouseEventHandler<any>
     onMouseLeave?: React.MouseEventHandler<any>
     tabIndex?: number
@@ -77,7 +79,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 letterSpacing: 1,
                 padding: '0.85rem 2.5rem',
                 textTransform: 'uppercase',
-                ':active': {
+                ':not(:disabled):active': {
                     boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray90,
                 },
                 ':disabled': {
@@ -126,7 +128,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         return true // treat all other keys normally;
     }
 
-    private onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    private onClick = (event: React.MouseEvent<any>) => {
         if (this.props.onClick) {
 
             const promise = this.props.onClick(event)

@@ -1,12 +1,9 @@
 import * as React from 'react'
-import { WrappedFieldInputProps } from 'redux-form'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { Input } from '../Input/Input'
+import { Input, PublicInputProps } from '../Input/Input'
 
-export interface CheckboxProps extends Partial<WrappedFieldInputProps>, WithStylesProps {
-    checked?: boolean
-    disabled?: boolean
+export interface CheckboxProps extends PublicInputProps, WithStylesProps {
     label: React.ReactNode
 }
 

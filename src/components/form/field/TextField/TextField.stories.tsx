@@ -22,6 +22,6 @@ storiesOf('Form', module)
             required
         />
     ))
-    .add('TextField type=\'password\'', () =>
-        <TextField name='senha' label='Senha' placeholder='Senha' type='password' required />
+    .add('TextField password', () =>
+        <TextField name='senha' label='Senha' placeholder='Senha' password required />
     )
