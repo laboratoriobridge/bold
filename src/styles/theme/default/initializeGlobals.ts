@@ -16,7 +16,7 @@ export default function initializeGlobals(theme: Theme) {
             boxSizing: 'inherit',
         },
         hr: {
-            backgroundColor: theme.color.gray10,
+            backgroundColor: theme.color.gray90,
             border: 'none',
             height: 1,
             margin: '1rem 0',

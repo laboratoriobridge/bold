@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField deve ser renderizado de forma correta 1`] = `
+exports[`NumberField Field render 1`] = `
 .emotion-0 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
@@ -45,14 +45,12 @@ exports[`TextField deve ser renderizado de forma correta 1`] = `
 }
 
 <div
-  data-name="test"
+  data-name="number"
 >
   <div>
     <input
       class="emotion-0"
-      maxlength="2"
-      name="test"
-      placeholder="Test"
+      name="number"
       type="text"
       value=""
     />

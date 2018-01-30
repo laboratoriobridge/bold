@@ -20,7 +20,7 @@ export interface InputProps extends PublicInputProps {
 }
 
 export class Input extends React.Component<InputProps, any> {
-  public input: HTMLInputElement
+  private input: HTMLInputElement
 
   focus() {
     this.input.focus()

@@ -10,13 +10,18 @@ export * from './components/elements/textual'
 /**
  * Form
  */
+export * from './components/form/field/AsyncSelectField/AsyncSelectField'
 export * from './components/form/field/CheckboxField/CheckboxField'
+export * from './components/form/field/NumberField/NumberField'
 export * from './components/form/field/RadioField/RadioField'
+export * from './components/form/field/SelectField/SelectField'
 export * from './components/form/field/TextField/TextField'
 
 export * from './components/form/input/Checkbox/Checkbox'
 export * from './components/form/input/Input/Input'
 export * from './components/form/input/RadioButton/RadioButton'
+export * from './components/form/select/AsyncSelect/AsyncSelect'
+export * from './components/form/select/Select/Select'
 
 export * from './components/form/finalForm/Field'
 export * from './components/form/finalForm/Form'

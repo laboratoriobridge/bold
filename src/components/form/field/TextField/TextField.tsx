@@ -21,12 +21,15 @@ export class TextField extends React.Component<TextFieldProps> {
         )
     }
 
-    private renderInput = (props: FieldRenderProps) => (
-        <TextInput
-            {...this.props}
-            {...props.input}
-            status={props.meta.touched && props.meta.error && 'error'}
-        />
-    )
+    private renderInput = (props: FieldRenderProps) => {
+        const { format, parse, ...rest } = this.props
+        return (
+            <TextInput
+                {...rest}
+                {...props.input}
+                status={props.meta.touched && props.meta.error && 'error'}
+            />
+        )
+    }
 
 }

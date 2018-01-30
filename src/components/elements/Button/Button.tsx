@@ -68,7 +68,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         const styles = {
             button: {
                 backgroundColor: theme.color.white,
-                border: '1px solid ' + theme.color.gray30,
+                border: '1px solid ' + theme.color.gray70,
                 borderRadius: 2,
                 color: theme.color.gray50,
                 cursor: 'pointer',
@@ -80,7 +80,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 padding: '0.85rem 2.5rem',
                 textTransform: 'uppercase',
                 ':not(:disabled):active': {
-                    boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray10,
+                    boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray90,
                 },
                 ':disabled': {
                     opacity: 0.5,
