@@ -1,3 +1,5 @@
+import 'react-select/dist/react-select.css'
+
 import { Theme } from '../../../styles/index'
 
 const createSelectStyle = (theme: Theme) => {
