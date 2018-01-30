@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
+import { FieldRenderProps } from 'react-final-form'
 
+import { Field } from '../../finalForm/Field'
 import { RadioButton, RadioButtonProps } from '../../input/RadioButton/RadioButton'
-import { Field } from '../../reduxForm/Field'
 
 export interface RadioFieldProps extends RadioButtonProps {
     name: string
@@ -21,7 +21,7 @@ export class RadioField extends React.Component<RadioFieldProps, any> {
         )
     }
 
-    private renderRadio = (props: WrappedFieldProps) => (
+    private renderRadio = (props: FieldRenderProps) => (
         <RadioButton
             {...this.props}
             {...props.input}

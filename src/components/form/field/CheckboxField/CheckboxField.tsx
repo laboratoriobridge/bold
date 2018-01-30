@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { WrappedFieldProps } from 'redux-form'
+import { FieldRenderProps } from 'react-final-form'
 
+import { Field } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
-import { Field } from '../../reduxForm/Field'
 
 export interface CheckboxFieldProps extends CheckboxProps {
     name: string
@@ -23,7 +23,7 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
         )
     }
 
-    private renderCheck = (props: WrappedFieldProps) => (
+    private renderCheck = (props: FieldRenderProps) => (
         <Checkbox
             {...this.props}
             {...props.input}

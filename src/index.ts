@@ -18,8 +18,8 @@ export * from './components/form/input/Checkbox/Checkbox'
 export * from './components/form/input/Input/Input'
 export * from './components/form/input/RadioButton/RadioButton'
 
-export * from './components/form/reduxForm/Field'
-export * from './components/form/reduxForm/Form'
+export * from './components/form/finalForm/Field'
+export * from './components/form/finalForm/Form'
 
 export * from './components/grid'
 export * from './components/layout'
