@@ -13,6 +13,7 @@
         ],
         "interface-name": false,
         "jsx-boolean-value": false,
+        "jsx-no-multiline-js": false,
         "max-classes-per-file": [
             true,
             7
@@ -88,6 +89,7 @@
     "jsRules": {
         "arrow-parens": false,
         "ban-types": false,
+        "jsx-no-multiline-js": false,
         "max-classes-per-file": [
             true,
             7

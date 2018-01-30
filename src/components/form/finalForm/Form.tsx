@@ -1,6 +1,9 @@
 import { FORM_ERROR } from 'final-form'
 import * as React from 'react'
-import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
+import {
+    Form as FinalForm,
+    FormProps as FinalFormProps, FormRenderProps, FormSpy, FormSpyRenderProps
+} from 'react-final-form'
 import { Prompt } from 'react-router-dom'
 
 import { AlertModalError, AlertModalSuccess } from '../../elements/modal/AlertModal'
@@ -32,8 +35,8 @@ export interface FormProps extends FinalFormProps {
     successIcon?: string,
     successModal?: React.SFC<FormModalProps> | React.ComponentClass<FormModalProps>,
     successTitle?: string
-    onSubmitSuccess?(): void
-    onSubmitFail?(erros: object): void
+    onSubmitSucceeded?(): void
+    onSubmitFailed?(erros: object): void
 }
 
 export class Form extends React.Component<FormProps, FormState> {
@@ -81,41 +84,49 @@ export class Form extends React.Component<FormProps, FormState> {
         }
 
         return (
-            <div className='is-full-height is-vertical-flow'>
-                <FinalForm
-                    {...this.props}
-                    onSubmit={this.onSubmit}
-                    render={this.renderForm}
-                />
-                <ErrorModal
-                    active={this.state.modalErrorActive}
-                    error={this.state.error}
-                    onClose={this.closeError}
-                    icon={errorIcon}
-                    title={errorTitle}
-                >
-                    {errorContent}
-                </ErrorModal>
-                <SuccessModal
-                    active={this.state.modalSuccessActive}
-                    onClose={this.closeSuccess}
-                    icon={successIcon}
-                    title={successTitle}
-                >
-                    {successContent}
-                </SuccessModal>
-            </div>
+            <>
+            <FinalForm
+                {...this.props}
+                onSubmit={this.onSubmit}
+                render={this.renderForm}
+            />
+            <ErrorModal
+                active={this.state.modalErrorActive}
+                error={this.state.error}
+                onClose={this.closeError}
+                icon={errorIcon}
+                title={errorTitle}
+            >
+                {errorContent}
+            </ErrorModal>
+            <SuccessModal
+                active={this.state.modalSuccessActive}
+                onClose={this.closeSuccess}
+                icon={successIcon}
+                title={successTitle}
+            >
+                {successContent}
+            </SuccessModal>
+            </>
         )
     }
 
     private renderForm = (props: FormRenderProps) => (
-        <div className='is-full-height is-vertical-flow'>
-            <Prompt
-                when={this.props.hasLeaveModal && !props.pristine && !props.submitSucceeded}
-                message='mensagem não usada'
-            />
-            {this.props.render(props)}
-        </div>
+        <>
+        <FormSpy
+            subscription={{ pristine: true, submitErrors: true, submitFailed: true, submitSucceeded: true }}
+        >
+            {spyProps => (
+                <FormListener
+                    {...spyProps}
+                    hasLeaveModal={this.props.hasLeaveModal}
+                    onSubmitSucceeded={this.onSubmitSucceeded}
+                    onSubmitFailed={this.onSubmitFailed}
+                />
+            )}
+        </FormSpy>
+        {this.props.render(props)}
+        </>
     )
 
     private onSubmit = (values, form) => {
@@ -123,7 +134,7 @@ export class Form extends React.Component<FormProps, FormState> {
 
         if (result) {
             if (this.isPromise(result)) {
-                return result.then(() => this.onSubmitSuccess())
+                return result.then(() => Promise.resolve())
                     .catch(error => {
                         let errors
                         if (error.response.status === 400) {
@@ -132,45 +143,68 @@ export class Form extends React.Component<FormProps, FormState> {
                             errors = { [FORM_ERROR]: error.response.data }
                         }
 
-                        return Promise.resolve(errors).then(() => this.onSubmitFail(errors))
+                        return Promise.resolve(errors)
                     })
             } else {
-                this.onSubmitFail(result)
                 return result
             }
-        } else {
-            this.onSubmitSuccess()
         }
     }
 
-    private onSubmitFail = (errors) => {
+    private onSubmitFailed = (errors) => {
         if (this.props.hasErrorModal) {
             this.setState({ error: errors, modalErrorActive: true })
         } else {
-            this.props.onSubmitFail && this.props.onSubmitFail(errors)
+            this.props.onSubmitFailed && this.props.onSubmitFailed(errors)
         }
     }
 
-    private onSubmitSuccess = () => {
+    private onSubmitSucceeded = () => {
         if (this.props.hasSuccessModal) {
             this.setState({ modalSuccessActive: true })
         } else {
-            this.props.onSubmitSuccess && this.props.onSubmitSuccess()
+            this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
         }
     }
 
     private closeError = () => {
-        this.props.onSubmitFail && this.props.onSubmitFail(this.state.error)
+        this.props.onSubmitFailed && this.props.onSubmitFailed(this.state.error)
         this.setState({ modalErrorActive: false, error: undefined })
     }
 
     private closeSuccess = () => {
-        this.props.onSubmitSuccess && this.props.onSubmitSuccess()
+        this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
         this.setState({ modalSuccessActive: false })
     }
 
     private isPromise = (arg: any): arg is Promise<any> => {
         return arg.catch !== undefined
+    }
+
+}
+
+interface FormListenerProps extends FormSpyRenderProps {
+    hasLeaveModal: boolean,
+    onSubmitSucceeded(): void
+    onSubmitFailed(erros: object): void
+}
+
+class FormListener extends React.PureComponent<FormListenerProps> {
+
+    componentDidUpdate(prevProps, prevState, prevContext) {
+        !prevProps.submitSucceeded && this.props.submitSucceeded &&
+            setTimeout(() => this.props.onSubmitSucceeded())
+        !prevProps.submitFailed && this.props.submitFailed &&
+            setTimeout(() => this.props.onSubmitFailed(this.props.submitErrors))
+    }
+
+    render() {
+        return (
+            <Prompt
+                when={this.props.hasLeaveModal && !this.props.pristine && !this.props.submitSucceeded}
+                message='mensagem não usada'
+            />
+        )
     }
 
 }
