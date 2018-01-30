@@ -3,23 +3,43 @@
 exports[`TextField deve ser renderizado de forma correta 1`] = `
 .emotion-0 {
   background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  border: solid 1px #cccccc;
   border-radius: 2px;
   font-size: 0.75rem;
   line-height: 1;
   padding: 0.5rem 1rem;
 }
 
-.emotion-0:hover {
+.emotion-0::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0::placeholder {
+  color: #cccccc;
+}
+
+.emotion-0:disabled {
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-0:focus {
+.emotion-0:not(:disabled):focus {
   border-color: #1e98ff;
   outline: none;
 }
 
-.emotion-0:active {
+.emotion-0:not(:disabled):active {
   border-color: #1e98ff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
