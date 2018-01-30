@@ -22,9 +22,10 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
 
     private renderButton = (props: FormSpyRenderProps) => (
         <Button
-            disabled={!props.valid}
+            // disabled={!props.valid}
             label={this.props.label}
             loading={props.submitting}
+            onClick={this.props.handleSubmit}
             type='primary'
         />
     )

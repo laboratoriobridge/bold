@@ -25,6 +25,7 @@ export * from './components/form/select/Select/Select'
 
 export * from './components/form/finalForm/Field'
 export * from './components/form/finalForm/Form'
+export * from './components/form/finalForm/SubmitButton'
 
 export * from './components/grid'
 export * from './components/layout'
