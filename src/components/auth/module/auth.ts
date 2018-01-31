@@ -1,10 +1,13 @@
 import { AxiosPromise } from 'axios'
 
 import Auth, { AuthConfig } from '../api/Auth'
-export const LOGIN_REQUEST = 'bridge/auth/LOGIN_REQUEST'
-export const LOGIN_SUCCESS = 'bridge/auth/LOGIN_SUCCESS'
-export const LOGIN_FAILURE = 'bridge/auth/LOGIN_FAILURE'
-export const LOGOUT_SUCCESS = 'bridge/auth/LOGOUT_SUCCESS'
+
+export const actionTypes = {
+    LOGIN_REQUEST: 'bridge/auth/LOGIN_REQUEST',
+    LOGIN_SUCCESS: 'bridge/auth/LOGIN_SUCCESS',
+    LOGIN_FAILURE: 'bridge/auth/LOGIN_FAILURE',
+    LOGOUT_SUCCESS: 'bridge/auth/LOGOUT_SUCCESS',
+}
 
 export interface AuthState<T> extends Readonly<{
     error?: any
@@ -13,13 +16,13 @@ export interface AuthState<T> extends Readonly<{
 
 export function reducer(state: AuthState<any> = {}, action: any): AuthState<any> {
     switch (action.type) {
-        case LOGIN_REQUEST:
+        case actionTypes.LOGIN_REQUEST:
             return { ...state, error: undefined, user: undefined }
-        case LOGIN_SUCCESS:
+        case actionTypes.LOGIN_SUCCESS:
             return { ...state, error: undefined, user: action.user }
-        case LOGIN_FAILURE:
+        case actionTypes.LOGIN_FAILURE:
             return { ...state, error: action.error, user: undefined }
-        case LOGOUT_SUCCESS:
+        case actionTypes.LOGOUT_SUCCESS:
             return { ...state, user: undefined }
         default:
             return state
@@ -28,21 +31,21 @@ export function reducer(state: AuthState<any> = {}, action: any): AuthState<any>
 
 export const actions = {
     loginRequest: () => ({
-        type: LOGIN_REQUEST,
+        type: actionTypes.LOGIN_REQUEST,
     }),
 
     loginSuccess: (user: any) => ({
-        type: LOGIN_SUCCESS,
+        type: actionTypes.LOGIN_SUCCESS,
         user,
     }),
 
     loginFailure: (error: any) => ({
-        type: LOGIN_FAILURE,
+        type: actionTypes.LOGIN_FAILURE,
         error,
     }),
 
     logoutSuccess: () => ({
-        type: LOGOUT_SUCCESS,
+        type: actionTypes.LOGOUT_SUCCESS,
     }),
 
     login: (username: string, password: string, config?: AuthConfig) => (dispatch: any): AxiosPromise<any> => {
@@ -88,7 +91,6 @@ export const actions = {
     },
 
     logout: (config?: AuthConfig) => (dispatch: any) => {
-        dispatch(actions.logoutSuccess())
-        Auth.logout(config)
+        return Auth.logout(config).then(() => dispatch(actions.logoutSuccess()))
     },
 }
