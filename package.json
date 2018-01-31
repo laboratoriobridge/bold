@@ -34,7 +34,7 @@
     "@types/react": "16.0.33",
     "@types/react-addons-create-fragment": "0.14.17",
     "@types/react-overlays": "0.6.9",
-    "@types/react-redux": "5.0.13",
+    "@types/react-redux": "5.0.14",
     "@types/react-router": "4.0.18",
     "@types/react-select": "1.1.1",
     "@types/storybook__addon-actions": "3.0.1",
