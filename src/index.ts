@@ -39,6 +39,7 @@ export * from './components/layout'
 /**
  * Theme
  */
+export * from './styles/withStyles'
 export * from './styles/theme/ThemeProvider'
 
 /**

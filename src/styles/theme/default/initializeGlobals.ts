@@ -24,6 +24,12 @@ export default function initializeGlobals(theme: Theme) {
         'h1, h2, h3, h4, h5, h6': {
             fontFamily: theme.font.titleFamily,
         },
+        p: {
+            margin: '0',
+        },
+        a: {
+            cursor: 'pointer',
+        },
     })
     injectGlobal(theme.global)
 }
