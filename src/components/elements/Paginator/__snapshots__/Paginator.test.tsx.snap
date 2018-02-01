@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve renderizar corretamente 1`] = `
+.emotion-13 {
+  display: inline-block;
+  background: #ffffff;
+  padding: 0.5rem;
+  margin: 0px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+.emotion-13 li {
+  display: inline-block;
+  font-size: 0.75rem;
+  margin: 0 1px;
+}
+
+.emotion-0 {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+}
+
+.emotion-0:hover {
+  background: #e6e6e6;
+}
+
+.emotion-2 {
+  padding: 0.25rem 0.5rem;
+}
+
+.emotion-3 {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+}
+
+.emotion-3:hover {
+  background: #e6e6e6;
+}
+
+.emotion-6 {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  background: #1e98ff;
+  color: #ffffff;
+  cursor: initial;
+}
+
+.emotion-6:hover {
+  background: #e6e6e6;
+}
+
+.emotion-6:hover {
+  background: #1e98ff;
+}
+
+<ul
+  class="emotion-13"
+>
+  <li>
+    <a
+      class="emotion-0"
+      title="Primeira página"
+    >
+      «
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-0"
+      title="Página anterior"
+    >
+      &lt;
+    </a>
+  </li>
+  <li
+    class="emotion-2"
+  >
+    …
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 2"
+    >
+      2
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 3"
+    >
+      3
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 4"
+    >
+      4
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-6"
+      title="Página 5"
+    >
+      5
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 6"
+    >
+      6
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 7"
+    >
+      7
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 8"
+    >
+      8
+    </a>
+  </li>
+  <li
+    class="emotion-2"
+  >
+    …
+  </li>
+  <li>
+    <a
+      class="emotion-0"
+      title="Próxima página"
+    >
+      &gt;
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-0"
+      title="Última página"
+    >
+      »
+    </a>
+  </li>
+</ul>
+`;
