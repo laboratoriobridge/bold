@@ -5,7 +5,7 @@ import * as React from 'react'
 import { Theme } from './theme/Theme'
 
 export interface WithStylesProps {
-    styles?: React.CSSProperties
+    styles?: any
 
     theme?: Theme
     css?: (...styles: any[]) => string
