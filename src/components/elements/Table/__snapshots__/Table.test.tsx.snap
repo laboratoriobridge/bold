@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve renderizar corretamente 1`] = `
+.emotion-6 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+  color: red;
+}
+
+.emotion-0 {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+<table
+  class="emotion-6"
+>
+  <thead>
+    <tr>
+      <th
+        class="emotion-0"
+      >
+        Column ID
+      </th>
+      <th
+        class="emotion-0"
+      >
+        Column name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        class="emotion-0"
+      >
+        <span>
+          1
+        </span>
+      </td>
+      <td
+        class="emotion-0"
+      >
+        <span>
+          MARIA MACHADO DE JESUS
+        </span>
+      </td>
+    </tr>
+    <tr>
+      <td
+        class="emotion-0"
+      >
+        <span>
+          2
+        </span>
+      </td>
+      <td
+        class="emotion-0"
+      >
+        <span>
+          MARIA MACHADO DE JESUS
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
