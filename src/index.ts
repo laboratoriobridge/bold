@@ -10,6 +10,7 @@ export { actions as authActions, reducer as authReducer, AuthState } from './com
 export * from './components/elements/Button/Button'
 export * from './components/elements/Icon'
 export * from './components/elements/Label'
+export * from './components/elements/Paginator/Paginator'
 export * from './components/elements/Table/Table'
 
 export * from './components/elements/textual'
