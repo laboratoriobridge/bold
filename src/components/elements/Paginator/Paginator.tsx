@@ -18,7 +18,8 @@ export class Paginator extends React.Component<PaginatorProps> {
     }
 
     render() {
-        const { css, theme, page, range, total } = this.props
+        const { css, theme, range, total } = this.props
+        const page = this.currentPage()
         const styles = {
             paginator: {
                 display: 'inline-block',
@@ -108,24 +109,28 @@ export class Paginator extends React.Component<PaginatorProps> {
         )
     }
 
+    private currentPage = () => {
+        return this.props.page + 1
+    }
+
     private hasMore = () => {
-        return this.props.total > this.props.page + this.props.range
+        return this.props.total > this.currentPage() + this.props.range
     }
 
     private hasLess = () => {
-        return this.props.page - this.props.range > 1
+        return this.currentPage() - this.props.range > 1
     }
 
     private isLastPage = () => {
-        return this.props.page >= this.props.total
+        return this.currentPage() >= this.props.total
     }
 
     private isFirstPage = () => {
-        return this.props.page === 1
+        return this.currentPage() === 1
     }
 
     private go = (page: number) => {
-        this.props.onChange && this.props.onChange(page)
+        this.props.onChange && this.props.onChange(page - 1)
     }
 
     private first = () => {
@@ -137,11 +142,11 @@ export class Paginator extends React.Component<PaginatorProps> {
     }
 
     private previous = () => {
-        this.go(this.props.page - 1)
+        this.go(this.currentPage() - 1)
     }
 
     private next = () => {
-        this.go(this.props.page + 1)
+        this.go(this.currentPage() + 1)
     }
 
     private makeSelectPage = (page: number) => {
