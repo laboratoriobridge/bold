@@ -89,14 +89,6 @@ exports[`deve renderizar corretamente 1`] = `
   <li>
     <a
       class="emotion-3"
-      title="Página 2"
-    >
-      2
-    </a>
-  </li>
-  <li>
-    <a
-      class="emotion-3"
       title="Página 3"
     >
       3
@@ -112,7 +104,7 @@ exports[`deve renderizar corretamente 1`] = `
   </li>
   <li>
     <a
-      class="emotion-6"
+      class="emotion-3"
       title="Página 5"
     >
       5
@@ -120,7 +112,7 @@ exports[`deve renderizar corretamente 1`] = `
   </li>
   <li>
     <a
-      class="emotion-3"
+      class="emotion-6"
       title="Página 6"
     >
       6
@@ -140,6 +132,14 @@ exports[`deve renderizar corretamente 1`] = `
       title="Página 8"
     >
       8
+    </a>
+  </li>
+  <li>
+    <a
+      class="emotion-3"
+      title="Página 9"
+    >
+      9
     </a>
   </li>
   <li

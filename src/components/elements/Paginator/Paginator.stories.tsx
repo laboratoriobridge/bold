@@ -14,7 +14,7 @@ storiesOf('Components', module)
     .addDecorator(withTheme())
     .add('Paginator', () => (
         <Paginator
-            page={number('page', 5)}
+            page={number('page', 4)}
             total={number('total', 20)}
             range={number('range', 3)}
             onChange={action('page-changed')}
