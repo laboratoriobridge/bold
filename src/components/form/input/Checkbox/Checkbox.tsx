@@ -41,12 +41,13 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const labelClasses = css({
             color: theme.color.gray30,
             fontSize: 12,
-            marginLeft: 10,
-            verticalAlign: 'middle',
+            marginLeft: '0.5rem',
         })
 
         const checkboxClass = css({
             cursor: 'pointer',
+            display: 'inline-flex',
+            alignItems: 'center',
         })
 
         const checkboxDisabledClass = css({
