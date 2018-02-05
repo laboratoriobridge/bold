@@ -3,7 +3,6 @@
 exports[`Cell deve renderizar corretamente 1`] = `
 .emotion-0 {
   margin: 1rem;
-  padding: 0.5rem;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -26,7 +25,6 @@ exports[`Cell deve renderizar corretamente 1`] = `
 exports[`Cell deve renderizar corretamente 2`] = `
 .emotion-0 {
   margin: 1rem;
-  padding: 0.5rem;
   -webkit-flex-basis: calc((100% / 12 * 6) - 2rem);
   -ms-flex-preferred-size: calc((100% / 12 * 6) - 2rem);
   flex-basis: calc((100% / 12 * 6) - 2rem);
@@ -59,7 +57,6 @@ exports[`Cell deve renderizar corretamente 3`] = `
   -ms-flex-item-align: center;
   align-self: center;
   margin: 1rem;
-  padding: 0.5rem;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;

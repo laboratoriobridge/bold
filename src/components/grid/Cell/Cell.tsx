@@ -17,7 +17,6 @@ export class Cell extends React.PureComponent<CellProps> {
             cell: {
                 alignSelf: this.props.alignSelf,
                 margin: '1rem',
-                padding: '0.5rem',
 
                 [theme.breakpoint.small]: {
                     margin: '0.5rem',
