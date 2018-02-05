@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 import { Form } from '../form/finalForm/Form'
 
@@ -30,7 +31,7 @@ class LoginComponent extends React.Component<LoginComponentProps> {
 
     render() {
         if (this.props.user) {
-            return React.createElement(this.props.homeComponent, this.props)
+            return this.props.renderHome({})
         }
         return (
             <Form
@@ -70,9 +71,11 @@ const mapDispatchToProps = (dispatch: any, ownProps: OwnProps) => ({
 
 export interface LoginProps {
     config?: AuthConfig
-    homeComponent: React.ComponentType<any>
+    renderHome(props: any): React.ReactNode
     onLogin?(): void
     renderForm(props: FormRenderProps, userFieldName: string, passwordFieldName: string): React.ReactNode
 }
 
-export const Login: React.ComponentClass<LoginProps> = connect(mapStateToProps, mapDispatchToProps)(LoginComponent)
+export const Login: React.ComponentClass<LoginProps> = withRouter(
+    connect(mapStateToProps, mapDispatchToProps)(LoginComponent)
+)
