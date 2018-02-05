@@ -83,7 +83,7 @@ export class Paginator extends React.Component<PaginatorProps> {
                     <li key={idx}>
                         <a
                             className={css(styles.button, styles.buttonNumber, n === page && styles.active)}
-                            onClick={page !== n && this.makeSelectPage(n)}
+                            onClick={page !== n ? this.makeSelectPage(n) : undefined}
                             title={`Página ${n}`}
                         >
                             {n}
