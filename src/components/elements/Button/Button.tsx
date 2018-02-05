@@ -80,7 +80,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 padding: '0.85rem 2.5rem',
                 textTransform: 'uppercase',
                 ':not(:disabled):active': {
-                    boxShadow: 'inset 0 2px 8px 0 ' + theme.color.gray90,
+                    boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
                 },
                 ':disabled': {
                     opacity: 0.5,
