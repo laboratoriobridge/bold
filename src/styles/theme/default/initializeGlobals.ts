@@ -7,10 +7,13 @@ export default function initializeGlobals(theme: Theme) {
     injectGlobal(normalizeCss)
     injectGlobal({
         html: {
-            fontSize: theme.font.textSize,
+            fontSize: theme.baseSize,
             fontFamily: theme.font.textFamily,
             boxSizing: 'border-box',
             color: theme.color.text,
+        },
+        body: {
+            fontSize: theme.font.textSize,
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',

@@ -14,10 +14,11 @@ export const defaultTheme: Theme = {
     global: {
         '@font-face': notoSans,
     },
+    baseSize: 16,
     font: {
+        textSize: '0.75rem',
         textFamily: '"Noto Sans", sans-serif',
         titleFamily: '"Noto Sans", sans-serif',
-        textSize: 16,
     },
     breakpoint: {
         small: '@media (max-width: 1280px)',

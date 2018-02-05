@@ -20,10 +20,11 @@ export const colors: {[key in Color]: string} = {
 
 export interface Theme {
     global?: any
+    baseSize: number
     font: {
+        textSize: string
         textFamily: string
         titleFamily: string
-        textSize: number
     }
     breakpoint: {
         small: string
