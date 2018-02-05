@@ -69,15 +69,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             button: {
                 backgroundColor: theme.color.white,
                 border: '1px solid ' + theme.color.gray70,
-                borderRadius: 2,
+                borderRadius: 4,
                 color: theme.color.gray50,
                 cursor: 'pointer',
                 fontFamily: theme.font.textFamily,
                 fontSize: '0.75rem',
                 fontWeight: 'bold',
-                lineHeight: 1.58,
                 letterSpacing: 1,
-                padding: '0.85rem 2.5rem',
+                padding: '1rem 2.5rem',
                 textTransform: 'uppercase',
                 ':not(:disabled):active': {
                     boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
@@ -113,8 +112,8 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 onKeyPress={this.handleOnKeyPress}
                 type='button'
             >
-                {icon && <span className='icon'><Icon icon={icon} /></span>}
-                {label && <span>{label}</span>}
+                {icon && <Icon icon={icon} />}
+                {label}
             </button>
         )
     }

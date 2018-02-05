@@ -11,12 +11,16 @@ export default function initializeGlobals(theme: Theme) {
             fontFamily: theme.font.textFamily,
             boxSizing: 'border-box',
             color: theme.color.text,
+            lineHeight: 1,
         },
         body: {
             fontSize: theme.font.textSize,
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',
+        },
+        'button, input, optgroup, select, textarea': {
+            lineHeight: 1,
         },
         hr: {
             backgroundColor: theme.color.gray90,
