@@ -31,6 +31,7 @@ export class TextInput extends React.Component<TextInputProps> {
                 fontSize: '0.75rem',
                 lineHeight: '1',
                 padding: '0.5rem 1rem',
+                width: '100%',
                 '::placeholder': {
                     color: theme.color.gray80,
                 },

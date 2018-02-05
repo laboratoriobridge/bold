@@ -8,6 +8,7 @@ exports[`TextInput render 1`] = `
   font-size: 0.75rem;
   line-height: 1;
   padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -58,6 +59,7 @@ exports[`TextInput render password 1`] = `
   font-size: 0.75rem;
   line-height: 1;
   padding: 0.5rem 1rem;
+  width: 100%;
 }
 
 .emotion-0::-webkit-input-placeholder {
