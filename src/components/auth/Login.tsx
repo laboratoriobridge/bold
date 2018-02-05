@@ -1,14 +1,14 @@
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
+import { RouteComponentProps, withRouter } from 'react-router'
 
 import { Form } from '../form/finalForm/Form'
 
 import { AuthConfig } from './api/Auth'
 import { actions } from './module/auth'
 
-interface LoginComponentProps extends LoginProps {
+export interface LoginComponentProps extends LoginProps, RouteComponentProps<any> {
     user: any
     checkLogin(): Promise<any>
     login(form: any): Promise<any>
@@ -55,7 +55,7 @@ class LoginComponent extends React.Component<LoginComponentProps> {
 
 }
 
-interface OwnProps {
+export interface OwnProps {
     config?: AuthConfig
 }
 
@@ -70,12 +70,11 @@ const mapDispatchToProps = (dispatch: any, ownProps: OwnProps) => ({
 })
 
 export interface LoginProps {
-    config?: AuthConfig
-    renderHome(props: any): React.ReactNode
     onLogin?(): void
+    renderHome(props: any): React.ReactNode
     renderForm(props: FormRenderProps, userFieldName: string, passwordFieldName: string): React.ReactNode
 }
 
-export const Login: React.ComponentClass<LoginProps> = withRouter(
+export const Login = withRouter(
     connect(mapStateToProps, mapDispatchToProps)(LoginComponent)
 )
