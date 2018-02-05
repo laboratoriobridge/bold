@@ -27,7 +27,7 @@ export class TextInput extends React.Component<TextInputProps> {
             input: {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,
-                borderRadius: 2,
+                borderRadius: theme.baseRadius,
                 fontSize: '0.75rem',
                 lineHeight: '1',
                 padding: '0.5rem 1rem',

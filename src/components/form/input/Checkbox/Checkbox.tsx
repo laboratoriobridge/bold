@@ -16,7 +16,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const checkClasses = css({
             backgroundColor: theme.color.white,
             border: '1px solid ' + theme.color.gray70,
-            borderRadius: 2,
+            borderRadius: theme.baseRadius,
             display: 'inline-block',
             height: 16,
             position: 'relative',

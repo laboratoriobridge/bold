@@ -4,23 +4,22 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -39,9 +38,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
     class="emotion-0"
     type="button"
   >
-    <span>
-      Botão
-    </span>
+    Botão
   </button>
 </span>
 `;
@@ -50,23 +47,22 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -85,9 +81,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
     class="emotion-0"
     type="button"
   >
-    <span>
-      Botão
-    </span>
+    Botão
   </button>
 </span>
 `;
@@ -96,23 +90,22 @@ exports[`Button deve renderizar corretamente 1`] = `
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -128,9 +121,7 @@ exports[`Button deve renderizar corretamente 1`] = `
   class="emotion-0"
   type="button"
 >
-  <span>
-    Botão
-  </span>
+  Botão
 </button>
 `;
 
@@ -138,23 +129,22 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -169,6 +159,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 <ThemeProvider
   theme={
     Object {
+      "baseRadius": 2,
+      "baseSize": 16,
       "breakpoint": Object {
         "small": "@media (max-width: 1280px)",
       },
@@ -191,7 +183,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
       },
       "font": Object {
         "textFamily": "\\"Noto Sans\\", sans-serif",
-        "textSize": 16,
+        "textSize": "0.75rem",
         "titleFamily": "\\"Noto Sans\\", sans-serif",
       },
       "global": Object {
@@ -208,6 +200,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   <ThemeProvider
     theme={
       Object {
+        "baseRadius": 2,
+        "baseSize": 16,
         "breakpoint": Object {
           "small": "@media (max-width: 1280px)",
         },
@@ -230,7 +224,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         },
         "font": Object {
           "textFamily": "\\"Noto Sans\\", sans-serif",
-          "textSize": 16,
+          "textSize": "0.75rem",
           "titleFamily": "\\"Noto Sans\\", sans-serif",
         },
         "global": Object {
@@ -253,6 +247,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         onClick={[Function]}
         theme={
           Object {
+            "baseRadius": 2,
+            "baseSize": 16,
             "breakpoint": Object {
               "small": "@media (max-width: 1280px)",
             },
@@ -275,7 +271,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             },
             "font": Object {
               "textFamily": "\\"Noto Sans\\", sans-serif",
-              "textSize": 16,
+              "textSize": "0.75rem",
               "titleFamily": "\\"Noto Sans\\", sans-serif",
             },
             "global": Object {
@@ -295,6 +291,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           onClick={[Function]}
           theme={
             Object {
+              "baseRadius": 2,
+              "baseSize": 16,
               "breakpoint": Object {
                 "small": "@media (max-width: 1280px)",
               },
@@ -317,7 +315,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               },
               "font": Object {
                 "textFamily": "\\"Noto Sans\\", sans-serif",
-                "textSize": 16,
+                "textSize": "0.75rem",
                 "titleFamily": "\\"Noto Sans\\", sans-serif",
               },
               "global": Object {
@@ -337,6 +335,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             onClick={[Function]}
             theme={
               Object {
+                "baseRadius": 2,
+                "baseSize": 16,
                 "breakpoint": Object {
                   "small": "@media (max-width: 1280px)",
                 },
@@ -359,7 +359,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 },
                 "font": Object {
                   "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": 16,
+                  "textSize": "0.75rem",
                   "titleFamily": "\\"Noto Sans\\", sans-serif",
                 },
                 "global": Object {
@@ -380,9 +380,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               onKeyPress={[Function]}
               type="button"
             >
-              <span>
-                Botão
-              </span>
+              Botão
             </button>
           </Button>
         </Button>
@@ -396,23 +394,22 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -427,6 +424,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 <ThemeProvider
   theme={
     Object {
+      "baseRadius": 2,
+      "baseSize": 16,
       "breakpoint": Object {
         "small": "@media (max-width: 1280px)",
       },
@@ -449,7 +448,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
       },
       "font": Object {
         "textFamily": "\\"Noto Sans\\", sans-serif",
-        "textSize": 16,
+        "textSize": "0.75rem",
         "titleFamily": "\\"Noto Sans\\", sans-serif",
       },
       "global": Object {
@@ -466,6 +465,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   <ThemeProvider
     theme={
       Object {
+        "baseRadius": 2,
+        "baseSize": 16,
         "breakpoint": Object {
           "small": "@media (max-width: 1280px)",
         },
@@ -488,7 +489,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         },
         "font": Object {
           "textFamily": "\\"Noto Sans\\", sans-serif",
-          "textSize": 16,
+          "textSize": "0.75rem",
           "titleFamily": "\\"Noto Sans\\", sans-serif",
         },
         "global": Object {
@@ -511,6 +512,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         onClick={[Function]}
         theme={
           Object {
+            "baseRadius": 2,
+            "baseSize": 16,
             "breakpoint": Object {
               "small": "@media (max-width: 1280px)",
             },
@@ -533,7 +536,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             },
             "font": Object {
               "textFamily": "\\"Noto Sans\\", sans-serif",
-              "textSize": 16,
+              "textSize": "0.75rem",
               "titleFamily": "\\"Noto Sans\\", sans-serif",
             },
             "global": Object {
@@ -553,6 +556,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           onClick={[Function]}
           theme={
             Object {
+              "baseRadius": 2,
+              "baseSize": 16,
               "breakpoint": Object {
                 "small": "@media (max-width: 1280px)",
               },
@@ -575,7 +580,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               },
               "font": Object {
                 "textFamily": "\\"Noto Sans\\", sans-serif",
-                "textSize": 16,
+                "textSize": "0.75rem",
                 "titleFamily": "\\"Noto Sans\\", sans-serif",
               },
               "global": Object {
@@ -595,6 +600,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             onClick={[Function]}
             theme={
               Object {
+                "baseRadius": 2,
+                "baseSize": 16,
                 "breakpoint": Object {
                   "small": "@media (max-width: 1280px)",
                 },
@@ -617,7 +624,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 },
                 "font": Object {
                   "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": 16,
+                  "textSize": "0.75rem",
                   "titleFamily": "\\"Noto Sans\\", sans-serif",
                 },
                 "global": Object {
@@ -638,9 +645,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               onKeyPress={[Function]}
               type="button"
             >
-              <span>
-                Botão
-              </span>
+              Botão
             </button>
           </Button>
         </Button>
@@ -654,23 +659,22 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -685,6 +689,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 <ThemeProvider
   theme={
     Object {
+      "baseRadius": 2,
+      "baseSize": 16,
       "breakpoint": Object {
         "small": "@media (max-width: 1280px)",
       },
@@ -707,7 +713,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
       },
       "font": Object {
         "textFamily": "\\"Noto Sans\\", sans-serif",
-        "textSize": 16,
+        "textSize": "0.75rem",
         "titleFamily": "\\"Noto Sans\\", sans-serif",
       },
       "global": Object {
@@ -724,6 +730,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   <ThemeProvider
     theme={
       Object {
+        "baseRadius": 2,
+        "baseSize": 16,
         "breakpoint": Object {
           "small": "@media (max-width: 1280px)",
         },
@@ -746,7 +754,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
         },
         "font": Object {
           "textFamily": "\\"Noto Sans\\", sans-serif",
-          "textSize": 16,
+          "textSize": "0.75rem",
           "titleFamily": "\\"Noto Sans\\", sans-serif",
         },
         "global": Object {
@@ -769,6 +777,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
         onClick={[Function]}
         theme={
           Object {
+            "baseRadius": 2,
+            "baseSize": 16,
             "breakpoint": Object {
               "small": "@media (max-width: 1280px)",
             },
@@ -791,7 +801,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
             },
             "font": Object {
               "textFamily": "\\"Noto Sans\\", sans-serif",
-              "textSize": 16,
+              "textSize": "0.75rem",
               "titleFamily": "\\"Noto Sans\\", sans-serif",
             },
             "global": Object {
@@ -811,6 +821,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
           onClick={[Function]}
           theme={
             Object {
+              "baseRadius": 2,
+              "baseSize": 16,
               "breakpoint": Object {
                 "small": "@media (max-width: 1280px)",
               },
@@ -833,7 +845,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
               },
               "font": Object {
                 "textFamily": "\\"Noto Sans\\", sans-serif",
-                "textSize": 16,
+                "textSize": "0.75rem",
                 "titleFamily": "\\"Noto Sans\\", sans-serif",
               },
               "global": Object {
@@ -853,6 +865,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
             onClick={[Function]}
             theme={
               Object {
+                "baseRadius": 2,
+                "baseSize": 16,
                 "breakpoint": Object {
                   "small": "@media (max-width: 1280px)",
                 },
@@ -875,7 +889,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
                 },
                 "font": Object {
                   "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": 16,
+                  "textSize": "0.75rem",
                   "titleFamily": "\\"Noto Sans\\", sans-serif",
                 },
                 "global": Object {
@@ -896,9 +910,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
               onKeyPress={[Function]}
               type="button"
             >
-              <span>
-                Botão
-              </span>
+              Botão
             </button>
           </Button>
         </Button>
@@ -912,23 +924,22 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
 .emotion-0 {
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #808080;
   cursor: pointer;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
-  line-height: 1.58;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 0.85rem 2.5rem;
+  padding: 1rem 2.5rem;
   text-transform: uppercase;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 #e6e6e6;
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
 }
 
 .emotion-0:disabled {
@@ -943,6 +954,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
 <ThemeProvider
   theme={
     Object {
+      "baseRadius": 2,
+      "baseSize": 16,
       "breakpoint": Object {
         "small": "@media (max-width: 1280px)",
       },
@@ -965,7 +978,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
       },
       "font": Object {
         "textFamily": "\\"Noto Sans\\", sans-serif",
-        "textSize": 16,
+        "textSize": "0.75rem",
         "titleFamily": "\\"Noto Sans\\", sans-serif",
       },
       "global": Object {
@@ -982,6 +995,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   <ThemeProvider
     theme={
       Object {
+        "baseRadius": 2,
+        "baseSize": 16,
         "breakpoint": Object {
           "small": "@media (max-width: 1280px)",
         },
@@ -1004,7 +1019,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
         },
         "font": Object {
           "textFamily": "\\"Noto Sans\\", sans-serif",
-          "textSize": 16,
+          "textSize": "0.75rem",
           "titleFamily": "\\"Noto Sans\\", sans-serif",
         },
         "global": Object {
@@ -1027,6 +1042,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
         onClick={[Function]}
         theme={
           Object {
+            "baseRadius": 2,
+            "baseSize": 16,
             "breakpoint": Object {
               "small": "@media (max-width: 1280px)",
             },
@@ -1049,7 +1066,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
             },
             "font": Object {
               "textFamily": "\\"Noto Sans\\", sans-serif",
-              "textSize": 16,
+              "textSize": "0.75rem",
               "titleFamily": "\\"Noto Sans\\", sans-serif",
             },
             "global": Object {
@@ -1069,6 +1086,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
           onClick={[Function]}
           theme={
             Object {
+              "baseRadius": 2,
+              "baseSize": 16,
               "breakpoint": Object {
                 "small": "@media (max-width: 1280px)",
               },
@@ -1091,7 +1110,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
               },
               "font": Object {
                 "textFamily": "\\"Noto Sans\\", sans-serif",
-                "textSize": 16,
+                "textSize": "0.75rem",
                 "titleFamily": "\\"Noto Sans\\", sans-serif",
               },
               "global": Object {
@@ -1111,6 +1130,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
             onClick={[Function]}
             theme={
               Object {
+                "baseRadius": 2,
+                "baseSize": 16,
                 "breakpoint": Object {
                   "small": "@media (max-width: 1280px)",
                 },
@@ -1133,7 +1154,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
                 },
                 "font": Object {
                   "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": 16,
+                  "textSize": "0.75rem",
                   "titleFamily": "\\"Noto Sans\\", sans-serif",
                 },
                 "global": Object {
@@ -1154,9 +1175,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
               onKeyPress={[Function]}
               type="button"
             >
-              <span>
-                Botão
-              </span>
+              Botão
             </button>
           </Button>
         </Button>

@@ -15,6 +15,7 @@ export const defaultTheme: Theme = {
         '@font-face': notoSans,
     },
     baseSize: 16,
+    baseRadius: 2,
     font: {
         textSize: '0.75rem',
         textFamily: '"Noto Sans", sans-serif',
