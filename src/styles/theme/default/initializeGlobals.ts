@@ -15,6 +15,7 @@ export default function initializeGlobals(theme: Theme) {
         },
         body: {
             fontSize: theme.font.textSize,
+            overflowY: 'scroll',
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',
