@@ -6,6 +6,8 @@ import { withPropTypes, withTheme } from '../../../stories-addons'
 import { Button } from '../../elements/Button/Button'
 
 import { Flow } from './Flow'
+import { VFlow } from './VFlow';
+import { HFlow } from './HFlow';
 
 const directionOptions = {
     'horizontal': 'horizontal',
@@ -39,4 +41,18 @@ storiesOf('Layout', module)
             <Button label='Botão 3' />
         </Flow>
         </>
+    ))
+    .add('VFlow', () => (
+        <VFlow>
+            <Button label='Botão 1' type='primary' />
+            <Button label='Botão 2' />
+            <Button label='Botão 3' />
+        </VFlow>
+    ))
+    .add('HFlow', () => (
+        <HFlow>
+            <Button label='Botão 1' type='primary' />
+            <Button label='Botão 2' />
+            <Button label='Botão 3' />
+        </HFlow>
     ))
