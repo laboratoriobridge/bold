@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Theme, withStyles, WithStylesProps } from '../../../styles'
 import { withHint, WithHintProps } from '../Hint'
 import { Icon } from '../Icon'
 
@@ -29,6 +29,40 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
 export interface ButtonState {
     loading: boolean
 }
+
+export const createStyles = (theme: Theme) => ({
+    button: {
+        backgroundColor: theme.color.white,
+        border: '1px solid ' + theme.color.gray70,
+        borderRadius: 4,
+        color: theme.color.gray50,
+        cursor: 'pointer',
+        display: 'inline-block',
+        fontFamily: theme.font.textFamily,
+        fontSize: '0.75rem',
+        fontWeight: 'bold',
+        letterSpacing: 1,
+        padding: '1rem 2.5rem',
+        textTransform: 'uppercase',
+        ':not(:disabled):active': {
+            boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
+        },
+        ':disabled': {
+            opacity: 0.5,
+        },
+        ':focus': {
+            border: '1px solid ' + theme.color.primary,
+            outline: 'none',
+        },
+    },
+    primary: {
+        backgroundColor: theme.color.primary,
+        border: '1px solid ' + theme.color.primary,
+        color: theme.color.white,
+    },
+    loading: {
+    },
+})
 
 @withStyles
 @withHint
@@ -65,38 +99,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             ...rest,
         } = this.props
 
-        const styles = {
-            button: {
-                backgroundColor: theme.color.white,
-                border: '1px solid ' + theme.color.gray70,
-                borderRadius: 4,
-                color: theme.color.gray50,
-                cursor: 'pointer',
-                fontFamily: theme.font.textFamily,
-                fontSize: '0.75rem',
-                fontWeight: 'bold',
-                letterSpacing: 1,
-                padding: '1rem 2.5rem',
-                textTransform: 'uppercase',
-                ':not(:disabled):active': {
-                    boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
-                },
-                ':disabled': {
-                    opacity: 0.5,
-                },
-                ':focus': {
-                    border: '1px solid ' + theme.color.primary,
-                    outline: 'none',
-                },
-            },
-            primary: {
-                backgroundColor: theme.color.primary,
-                border: '1px solid ' + theme.color.primary,
-                color: theme.color.white,
-            },
-            loading: {
-            },
-        }
+        const styles = createStyles(theme)
 
         const classes = css(
             styles.button,

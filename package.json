@@ -35,7 +35,8 @@
     "@types/react-addons-create-fragment": "0.14.17",
     "@types/react-overlays": "0.6.9",
     "@types/react-redux": "5.0.14",
-    "@types/react-router": "4.0.18",
+    "@types/react-router": "4.0.21",
+    "@types/react-router-dom": "4.2.3",
     "@types/react-select": "1.1.1",
     "@types/storybook__addon-actions": "3.0.1",
     "@types/storybook__addon-knobs": "3.2.1",
@@ -120,5 +121,6 @@
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ]
-  }
+  },
+  "dependencies": {}
 }

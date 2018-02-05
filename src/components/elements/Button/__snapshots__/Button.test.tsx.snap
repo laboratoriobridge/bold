@@ -7,6 +7,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -50,6 +51,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -93,6 +95,7 @@ exports[`Button deve renderizar corretamente 1`] = `
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -132,6 +135,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -397,6 +401,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -662,6 +667,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
@@ -927,6 +933,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   border-radius: 4px;
   color: #808080;
   cursor: pointer;
+  display: inline-block;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   font-weight: bold;
