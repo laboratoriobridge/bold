@@ -13,7 +13,7 @@ export interface ConformedResult {
     meta: any
 }
 
-interface MaskedTextConfig {
+export interface MaskedTextConfig {
     mask: MaskType
     guide?: boolean
     placeholderChar?: string
