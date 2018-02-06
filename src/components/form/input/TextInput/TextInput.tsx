@@ -27,10 +27,12 @@ export class TextInput extends React.Component<TextInputProps> {
             input: {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,
-                borderRadius: 2,
+                borderRadius: theme.baseRadius,
+                fontFamily: theme.font.textFamily,
                 fontSize: '0.75rem',
                 lineHeight: '1',
                 padding: '0.5rem 1rem',
+                width: '100%',
                 '::placeholder': {
                     color: theme.color.gray80,
                 },

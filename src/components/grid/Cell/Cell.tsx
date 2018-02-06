@@ -16,11 +16,10 @@ export class Cell extends React.PureComponent<CellProps> {
         const styles = {
             cell: {
                 alignSelf: this.props.alignSelf,
-                margin: '1rem',
-                padding: '0.5rem',
+                margin: '0.5rem 1rem',
 
                 [theme.breakpoint.small]: {
-                    margin: '0.5rem',
+                    margin: '0.25rem 0.5rem',
                 },
             },
 

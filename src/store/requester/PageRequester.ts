@@ -5,7 +5,7 @@ import { Requester } from './Requester'
 export interface PageParams {
     page?: number
     size?: number
-    sort?: string
+    sort?: string[]
 }
 
 export interface Page<T> {

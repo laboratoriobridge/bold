@@ -42,12 +42,13 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         const labelClasses = css({
             color: theme.color.gray30,
             fontSize: 12,
-            marginLeft: 10,
-            verticalAlign: 'middle',
+            marginLeft: '0.5rem',
         })
 
         const radioClasses = css({
             cursor: 'pointer',
+            display: 'inline-flex',
+            alignItems: 'center',
         })
 
         const inputClasses = css({

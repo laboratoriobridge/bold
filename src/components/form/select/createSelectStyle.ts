@@ -9,7 +9,7 @@ const createSelectStyle = (theme: Theme) => {
             '.Select-control': {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,
-                borderRadius: 2,
+                borderRadius: theme.baseRadius,
                 color: theme.color.gray30,
                 height: 30,
                 lineHeight: '1',
@@ -58,7 +58,7 @@ const createSelectStyle = (theme: Theme) => {
                 },
                 '.Select-menu-outer': {
                     borderColor: theme.color.primary,
-                    borderRadius: 2,
+                    borderRadius: theme.baseRadius,
                     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
                 },
             },

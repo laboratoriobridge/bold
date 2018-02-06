@@ -27,7 +27,7 @@ export class Paginator extends React.Component<PaginatorProps> {
                 padding: '0.5rem',
                 margin: '0',
                 border: `1px solid ` + theme.color.gray90,
-                borderRadius: '2px',
+                borderRadius: theme.baseRadius,
                 'li': {
                     display: 'inline-block',
                     fontSize: '0.75rem',
@@ -36,7 +36,7 @@ export class Paginator extends React.Component<PaginatorProps> {
             },
             button: {
                 transition: '0.2s all',
-                borderRadius: '2px',
+                borderRadius: theme.baseRadius,
                 padding: '0.25rem 0.5rem',
                 '&:hover': {
                     background: theme.color.gray90,
@@ -83,7 +83,7 @@ export class Paginator extends React.Component<PaginatorProps> {
                     <li key={idx}>
                         <a
                             className={css(styles.button, styles.buttonNumber, n === page && styles.active)}
-                            onClick={page !== n && this.makeSelectPage(n)}
+                            onClick={page !== n ? this.makeSelectPage(n) : undefined}
                             title={`Página ${n}`}
                         >
                             {n}

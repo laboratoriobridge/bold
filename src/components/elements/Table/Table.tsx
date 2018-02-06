@@ -65,7 +65,8 @@ export class Table<T> extends React.Component<TableProps<T>> {
 }
 
 export interface TableColumnProps<T> extends WithStylesProps {
-    title?: string
+    title?: React.ReactNode
+    name?: string
     render(row: T): React.ReactNode
 }
 
@@ -82,10 +83,10 @@ class Th<T> extends React.Component<TableColumnProps<T>> {
     }
 
     render() {
-        const { css, title } = this.props
+        const { css, title, name } = this.props
 
         return (
-            <th className={css()}>
+            <th className={css()} data-name={name}>
                 {title}
             </th>
         )
@@ -99,10 +100,10 @@ interface TdProps<T> extends TableColumnProps<T> {
 @withStyles
 class Td<T> extends React.Component<TdProps<T>> {
     render() {
-        const { css, render, row } = this.props
+        const { css, render, row, name } = this.props
 
         return (
-            <td className={css()}>
+            <td className={css()} data-name={name}>
                 {render(row)}
             </td>
         )
