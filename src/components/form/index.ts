@@ -1,5 +1,7 @@
 export * from './field/AsyncSelectField/AsyncSelectField'
 export * from './field/CheckboxField/CheckboxField'
+export * from './field/MaskedField/MaskedField'
+export * from './field/MaskedField/masks'
 export * from './field/NumberField/NumberField'
 export * from './field/RadioField/RadioField'
 export * from './field/SelectField/SelectField'

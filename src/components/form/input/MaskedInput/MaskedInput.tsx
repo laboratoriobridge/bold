@@ -5,15 +5,16 @@ import { withStyles, WithStylesProps } from '../../../../styles'
 import { createStyles, InputStatus } from '../TextInput/TextInput'
 
 // types from: https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md
-type MaskArray = Array<string | RegExp>
-type MaskFunction = (rawValue: string) => MaskArray
-interface ConformedResult {
+export type MaskArray = Array<string | RegExp>
+export type MaskFunction = (rawValue: string) => MaskArray
+export type MaskType = MaskArray | MaskFunction
+export interface ConformedResult {
     conformedValue: string
     meta: any
 }
 
 interface MaskedTextConfig {
-    mask: MaskArray | MaskFunction
+    mask: MaskType
     guide?: boolean
     placeholderChar?: string
     keepCharPositions?: boolean
