@@ -2,7 +2,7 @@
 
 exports[`Cell deve renderizar corretamente 1`] = `
 .emotion-0 {
-  margin: 1rem;
+  margin: 0.5rem 1rem;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -11,7 +11,7 @@ exports[`Cell deve renderizar corretamente 1`] = `
 
 @media (max-width:1280px) {
   .emotion-0 {
-    margin: 0.5rem;
+    margin: 0.25rem 0.5rem;
   }
 }
 
@@ -24,7 +24,7 @@ exports[`Cell deve renderizar corretamente 1`] = `
 
 exports[`Cell deve renderizar corretamente 2`] = `
 .emotion-0 {
-  margin: 1rem;
+  margin: 0.5rem 1rem;
   -webkit-flex-basis: calc((100% / 12 * 6) - 2rem);
   -ms-flex-preferred-size: calc((100% / 12 * 6) - 2rem);
   flex-basis: calc((100% / 12 * 6) - 2rem);
@@ -32,7 +32,7 @@ exports[`Cell deve renderizar corretamente 2`] = `
 
 @media (max-width:1280px) {
   .emotion-0 {
-    margin: 0.5rem;
+    margin: 0.25rem 0.5rem;
   }
 }
 
@@ -56,7 +56,7 @@ exports[`Cell deve renderizar corretamente 3`] = `
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 1rem;
+  margin: 0.5rem 1rem;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -65,7 +65,7 @@ exports[`Cell deve renderizar corretamente 3`] = `
 
 @media (max-width:1280px) {
   .emotion-0 {
-    margin: 0.5rem;
+    margin: 0.25rem 0.5rem;
   }
 }
 

@@ -73,6 +73,18 @@ storiesOf('Grid', module)
         </Grid>
     ))
     .add('Grid playground', () => (
+        <>
+        <Grid
+            alignItems={select('alignItems', alignItemsOptions, 'center')}
+            justifyContent={select('justifyContent', justifyContentOptions, 'center')}
+            direction={select('direction', directionOptions, 'row')}
+            wrap
+        >
+            <Cell size={6}>1</Cell>
+            <Cell size={6}>2</Cell>
+            <Cell size={6}>3</Cell>
+        </Grid>
+        <hr />
         <div style={{ height: 300 }}>
             <Grid
                 alignItems={select('alignItems', alignItemsOptions, 'center')}
@@ -84,6 +96,7 @@ storiesOf('Grid', module)
                 <Cell size={1}>3</Cell>
             </Grid>
         </div>
+        </>
     ))
     .add('Cell playground', () => (
         <Grid alignItems='flex-start'>

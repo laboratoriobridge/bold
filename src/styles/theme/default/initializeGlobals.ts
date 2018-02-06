@@ -32,6 +32,9 @@ export default function initializeGlobals(theme: Theme) {
         'h1, h2, h3, h4, h5, h6': {
             fontFamily: theme.font.titleFamily,
         },
+        'h1': { fontSize: '1.25rem' },
+        'h2': { fontSize: '1rem' },
+        'h3': { fontSize: '0.75rem' },
         p: {
             margin: '0',
         },
