@@ -72,6 +72,7 @@
     "react-redux": "5.0.6",
     "react-router-dom": "4.2.2",
     "react-select": "1.2.1",
+    "react-text-mask": "5.1.0",
     "redux-mock-store": "1.4.0",
     "redux-thunk": "2.2.0",
     "shx": "0.2.2",
@@ -92,7 +93,8 @@
     "react-dom": "16.2.x",
     "react-final-form": "3.x",
     "react-overlays": "0.8.x",
-    "react-redux": "5.x"
+    "react-redux": "5.x",
+    "react-text-mask": "5.x"
   },
   "jest": {
     "testEnvironment": "jsdom",
@@ -121,6 +123,5 @@
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ]
-  },
-  "dependencies": {}
+  }
 }

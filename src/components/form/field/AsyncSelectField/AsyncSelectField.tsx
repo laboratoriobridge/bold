@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { FieldRenderProps } from 'react-final-form'
 
-import { Field } from '../../finalForm/Field'
+import { Field, RenderProps } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
 import { AsyncSelect, AsyncSelectProps } from '../../select/AsyncSelect/AsyncSelect'
 
@@ -20,11 +19,11 @@ export class AsyncSelectField extends React.Component<AsyncSelectFieldProps> {
         )
     }
 
-    private renderSelect = (props: FieldRenderProps) => (
+    private renderSelect = (props: RenderProps) => (
         <AsyncSelect
             {...this.props}
             {...props.input}
-            status={props.meta.touched && props.meta.error && 'error'}
+            status={props.hasError && 'error'}
         />
     )
 

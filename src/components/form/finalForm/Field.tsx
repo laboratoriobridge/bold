@@ -1,16 +1,23 @@
 import * as React from 'react'
-import { Field as FinalFormField, FieldProps, FieldRenderProps } from 'react-final-form'
+import {
+    Field as FinalFormField,
+    FieldProps as FinalFieldProps,
+    FieldRenderProps as FinalRenderProps
+} from 'react-final-form'
 
 import { FormField, FormFieldProps } from '../FormField'
 
-export interface FieldProps extends FormFieldProps, Pick<FieldProps,
-    'parse' | 'format' | 'validate'> {
-    hasWrapper?: boolean
-    name: string
-    render(props: FieldRenderProps): JSX.Element
+export interface RenderProps extends FinalRenderProps {
+    hasError?: boolean
 }
 
-interface FieldComponentProps extends FormFieldProps, FieldRenderProps {
+export interface FieldProps extends FormFieldProps, Pick<FinalFieldProps, 'parse' | 'format' | 'validate'> {
+    hasWrapper?: boolean
+    name: string
+    render(props: RenderProps): JSX.Element
+}
+
+interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
     custom: {
         onChange: <T>(event: React.ChangeEvent<T> | any) => void
     }
@@ -44,10 +51,14 @@ export class Field extends React.PureComponent<FieldProps> {
             return (
                 <FormField
                     {...rest}
-                    error={meta.touched && (meta.error || !meta.dirtySinceLastSubmit && meta.submitError)}
+                    error={meta.touched && meta.error || !meta.dirtySinceLastSubmit && meta.submitError}
                     name={inputRest.name}
                 >
-                    {this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })}
+                    {this.props.render({
+                        meta,
+                        input: { onChange: mergedOnChange, ...inputRest },
+                        hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
+                    })}
                 </FormField>
             )
         }

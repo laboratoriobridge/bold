@@ -194,7 +194,7 @@ describe('Axios config', () => {
             return axios.get('/api/test-error')
         })
 
-        return store.dispatch(r.request()).then(success => {
+        return store.dispatch(r.request()).catch(err => {
             expect(r.getError(store.getState())).toEqual({ message: 'not found' })
         })
     })
