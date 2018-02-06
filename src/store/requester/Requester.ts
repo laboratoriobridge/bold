@@ -134,9 +134,11 @@ export class Requester<T, P = {}, R = AxiosResponse<T>> {
             })
             .catch(err => {
                 if (axios.isCancel(err)) {
-                    return dispatch(this.requestCancel())
+                    dispatch(this.requestCancel())
+                    return Promise.reject(err)
                 } else {
-                    return dispatch(this.requestFailure(this.transformError(err)))
+                    dispatch(this.requestFailure(this.transformError(err)))
+                    return Promise.reject(err)
                 }
             })
     }
