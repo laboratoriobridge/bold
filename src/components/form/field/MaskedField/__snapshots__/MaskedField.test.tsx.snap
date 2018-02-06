@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve ser renderizado de forma correta 1`] = `
+.emotion-1 {
+  margin-top: undefinedrem;
+  margin-right: undefinedrem;
+  margin-bottom: 0.25rem;
+  margin-left: undefinedrem;
+  display: inline-block;
+}
+
+.emotion-0 {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.emotion-2 {
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #cccccc;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-2::placeholder {
+  color: #cccccc;
+}
+
+.emotion-2:disabled {
+  background-color: #f2f2f7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-2:not(:disabled):focus {
+  border-color: #1e98ff;
+  outline: none;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #1e98ff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div
+  data-name="test"
+>
+  <div
+    class="emotion-1"
+  >
+    <label
+      class="emotion-0"
+    >
+      Mask test
+    </label>
+  </div>
+  <div>
+    <input
+      class="emotion-2"
+      label="Mask test"
+      name="test"
+      placeholder="Test"
+      value=""
+    />
+  </div>
+</div>
+`;
