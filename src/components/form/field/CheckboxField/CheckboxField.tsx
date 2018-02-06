@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { FieldRenderProps } from 'react-final-form'
 
-import { Field } from '../../finalForm/Field'
+import { Field, RenderProps } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
 
 export interface CheckboxFieldProps extends CheckboxProps {
@@ -14,22 +13,20 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
         return (
             <Field
                 {...this.props}
-                type='checkbox'
                 hasWrapper={false}
-                // normalize resolve a issue: https://github.com/erikras/redux-form/issues/2922
-                normalize={this.normalize}
+                parse={this.parse}
                 render={this.renderCheck}
             />
         )
     }
 
-    private renderCheck = (props: FieldRenderProps) => (
+    private renderCheck = (props: RenderProps) => (
         <Checkbox
             {...this.props}
             {...props.input}
         />
     )
 
-    private normalize = (value) => !!value
+    private parse = (value) => !!value
 
 }

@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { FieldRenderProps } from 'react-final-form'
 
 import { FormFieldProps } from '../../../form/FormField'
-import { Field, FieldProps } from '../../finalForm/Field'
+import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { MaskedInput, MaskedInputProps } from '../../input/MaskedInput/MaskedInput'
 
 export interface MaskedFieldProps extends FormFieldProps, MaskedInputProps,
@@ -21,13 +20,13 @@ export class MaskedField extends React.Component<MaskedFieldProps> {
         )
     }
 
-    private renderInput = (props: FieldRenderProps) => {
+    private renderInput = (props: RenderProps) => {
         const { format, parse, ...rest } = this.props
         return (
             <MaskedInput
                 {...rest}
                 {...props.input}
-                status={props.meta.touched && props.meta.error && 'error'}
+                status={props.hasError && 'error'}
             />
         )
     }

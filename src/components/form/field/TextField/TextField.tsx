@@ -1,8 +1,7 @@
 import * as React from 'react'
-import { FieldRenderProps } from 'react-final-form'
 
 import { FormFieldProps } from '../../../form/FormField'
-import { Field, FieldProps } from '../../finalForm/Field'
+import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
 
 export interface TextFieldProps extends FormFieldProps, TextInputProps,
@@ -21,13 +20,13 @@ export class TextField extends React.Component<TextFieldProps> {
         )
     }
 
-    private renderInput = (props: FieldRenderProps) => {
+    private renderInput = (props: RenderProps) => {
         const { format, parse, ...rest } = this.props
         return (
             <TextInput
                 {...rest}
                 {...props.input}
-                status={props.meta.touched && props.meta.error && 'error'}
+                status={props.hasError && 'error'}
             />
         )
     }
