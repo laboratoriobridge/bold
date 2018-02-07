@@ -1,3 +1,5 @@
+import { keyframes } from 'emotion'
+
 import { Theme } from '../../theme/Theme'
 import { shade } from '../../utils'
 
@@ -40,5 +42,15 @@ export const defaultTheme: Theme = {
         gray30: shade(0.3, '#000000'),
         gray20: shade(0.2, '#000000'),
         gray10: shade(0.1, '#000000'),
+    },
+    animation: {
+        spinAround: keyframes({
+            from: {
+                transform: 'rotate(0deg)',
+            },
+            to: {
+                transform: 'rotate(359deg)',
+            },
+        }),
     },
 }

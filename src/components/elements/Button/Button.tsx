@@ -39,11 +39,17 @@ export const createStyles = (theme: Theme) => ({
         cursor: 'pointer',
         display: 'inline-block',
         fontFamily: theme.font.textFamily,
+        position: 'relative',
+        userSelect: 'none',
         fontSize: '0.75rem',
         fontWeight: 'bold',
         letterSpacing: 1,
         padding: '1rem 2.5rem',
         textTransform: 'uppercase',
+        transition: 'all .2s',
+        'span': {
+            transition: 'all .2s',
+        },
         ':not(:disabled):active': {
             boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
         },
@@ -61,6 +67,24 @@ export const createStyles = (theme: Theme) => ({
         color: theme.color.white,
     },
     loading: {
+        pointerEvents: 'none',
+        'span': {
+            color: 'transparent',
+        },
+        ':after': {
+            animation: `${theme.animation.spinAround} 500ms infinite linear`,
+            border: '3px solid currentColor',
+            borderRadius: '50%',
+            borderRightColor: 'transparent',
+            borderTopColor: 'transparent',
+            content: '""',
+            display: 'block',
+            height: '1.5em',
+            width: '1.5em',
+            position: 'absolute',
+            left: 'calc(50% - (1.5em / 2))',
+            top: 'calc(50% - (1.5em / 2))',
+        },
     },
 })
 
@@ -103,8 +127,8 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
 
         const classes = css(
             styles.button,
-            this.state.loading && styles.loading,
-            type === 'primary' && styles.primary
+            type === 'primary' && styles.primary,
+            (this.state.loading || loading) && styles.loading
         )
 
         return (
@@ -115,8 +139,10 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 onKeyPress={this.handleOnKeyPress}
                 type='button'
             >
-                {icon && <Icon icon={icon} />}
-                {label}
+                <span>
+                    {icon && <Icon icon={icon} />}
+                    {label}
+                </span>
             </button>
         )
     }

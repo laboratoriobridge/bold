@@ -22,6 +22,7 @@ export interface Theme {
     global?: any
     baseSize: number
     baseRadius: number
+    animation?: { [key: string]: any },
     font: {
         textSize: string
         textFamily: string

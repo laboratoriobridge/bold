@@ -43,4 +43,9 @@ describe('Button', () => {
         const wrapper = render(withTheme(<Button label='Botão' hint={(<span>hint complexo teste</span>)} />))
         expect(wrapper).toMatchSnapshot()
     })
+
+    it('deve ter animação de loading', () => {
+        const wrapper = render(withTheme(<Button label='Botão' loading={true} />))
+        expect(wrapper).toMatchSnapshot()
+    })
 })
