@@ -11,7 +11,7 @@ export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
-export interface FieldProps extends FormFieldProps, Pick<FinalFieldProps, 'parse' | 'format' | 'validate'> {
+export interface FieldProps extends FormFieldProps, FinalFieldProps {
     hasWrapper?: boolean
     name: string
     render(props: RenderProps): JSX.Element

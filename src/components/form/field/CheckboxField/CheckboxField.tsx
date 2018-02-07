@@ -13,6 +13,7 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
         return (
             <Field
                 {...this.props}
+                type='checkbox'
                 hasWrapper={false}
                 parse={this.parse}
                 render={this.renderCheck}

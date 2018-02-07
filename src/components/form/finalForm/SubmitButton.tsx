@@ -13,7 +13,7 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
     render() {
         return (
             <FormSpy
-                subscription={{ submitting: true, valid: true }}
+                subscription={{ pristine: true, submitting: true }}
             >
                 {this.renderButton}
             </FormSpy>
@@ -22,7 +22,7 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
 
     private renderButton = (props: FormSpyRenderProps) => (
         <Button
-            // disabled={!props.valid}
+            disabled={props.pristine}
             label={this.props.label}
             loading={props.submitting}
             onClick={this.props.handleSubmit}

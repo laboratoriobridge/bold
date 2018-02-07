@@ -13,6 +13,7 @@ export class RadioField extends React.Component<RadioFieldProps, any> {
         return (
             <Field
                 {...this.props}
+                type='radio'
                 hasWrapper={false}
                 render={this.renderRadio}
             />
