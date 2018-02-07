@@ -9,6 +9,11 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -17,6 +22,13 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -39,7 +51,9 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
     class="emotion-0"
     type="button"
   >
-    Botão
+    <span>
+      Botão
+    </span>
   </button>
 </span>
 `;
@@ -53,6 +67,11 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -61,6 +80,13 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -83,7 +109,9 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
     class="emotion-0"
     type="button"
   >
-    Botão
+    <span>
+      Botão
+    </span>
   </button>
 </span>
 `;
@@ -97,6 +125,11 @@ exports[`Button deve renderizar corretamente 1`] = `
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -105,6 +138,13 @@ exports[`Button deve renderizar corretamente 1`] = `
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -124,7 +164,9 @@ exports[`Button deve renderizar corretamente 1`] = `
   class="emotion-0"
   type="button"
 >
-  Botão
+  <span>
+    Botão
+  </span>
 </button>
 `;
 
@@ -137,6 +179,11 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -145,6 +192,13 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -163,6 +217,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 <ThemeProvider
   theme={
     Object {
+      "animation": Object {
+        "spinAround": "animation-1scjtrl",
+      },
       "baseRadius": 2,
       "baseSize": 16,
       "breakpoint": Object {
@@ -204,6 +261,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   <ThemeProvider
     theme={
       Object {
+        "animation": Object {
+          "spinAround": "animation-1scjtrl",
+        },
         "baseRadius": 2,
         "baseSize": 16,
         "breakpoint": Object {
@@ -251,6 +311,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         onClick={[Function]}
         theme={
           Object {
+            "animation": Object {
+              "spinAround": "animation-1scjtrl",
+            },
             "baseRadius": 2,
             "baseSize": 16,
             "breakpoint": Object {
@@ -295,6 +358,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           onClick={[Function]}
           theme={
             Object {
+              "animation": Object {
+                "spinAround": "animation-1scjtrl",
+              },
               "baseRadius": 2,
               "baseSize": 16,
               "breakpoint": Object {
@@ -339,6 +405,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             onClick={[Function]}
             theme={
               Object {
+                "animation": Object {
+                  "spinAround": "animation-1scjtrl",
+                },
                 "baseRadius": 2,
                 "baseSize": 16,
                 "breakpoint": Object {
@@ -384,7 +453,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               onKeyPress={[Function]}
               type="button"
             >
-              Botão
+              <span>
+                Botão
+              </span>
             </button>
           </Button>
         </Button>
@@ -403,6 +474,11 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -411,6 +487,14 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -426,9 +510,32 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   outline: none;
 }
 
+.emotion-0 span {
+  color: transparent;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 500ms infinite linear;
+  animation: animation-1scjtrl 500ms infinite linear;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  position: absolute;
+  left: calc(50% - (1.5em / 2));
+  top: calc(50% - (1.5em / 2));
+}
+
 <ThemeProvider
   theme={
     Object {
+      "animation": Object {
+        "spinAround": "animation-1scjtrl",
+      },
       "baseRadius": 2,
       "baseSize": 16,
       "breakpoint": Object {
@@ -470,6 +577,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   <ThemeProvider
     theme={
       Object {
+        "animation": Object {
+          "spinAround": "animation-1scjtrl",
+        },
         "baseRadius": 2,
         "baseSize": 16,
         "breakpoint": Object {
@@ -517,6 +627,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         onClick={[Function]}
         theme={
           Object {
+            "animation": Object {
+              "spinAround": "animation-1scjtrl",
+            },
             "baseRadius": 2,
             "baseSize": 16,
             "breakpoint": Object {
@@ -561,6 +674,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           onClick={[Function]}
           theme={
             Object {
+              "animation": Object {
+                "spinAround": "animation-1scjtrl",
+              },
               "baseRadius": 2,
               "baseSize": 16,
               "breakpoint": Object {
@@ -605,6 +721,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
             onClick={[Function]}
             theme={
               Object {
+                "animation": Object {
+                  "spinAround": "animation-1scjtrl",
+                },
                 "baseRadius": 2,
                 "baseSize": 16,
                 "breakpoint": Object {
@@ -650,7 +769,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               onKeyPress={[Function]}
               type="button"
             >
-              Botão
+              <span>
+                Botão
+              </span>
             </button>
           </Button>
         </Button>
@@ -658,6 +779,81 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
     </Button>
   </ThemeProvider>
 </ThemeProvider>
+`;
+
+exports[`Button deve ter animação de loading 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #808080;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 0.75rem;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  pointer-events: none;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
+}
+
+.emotion-0:disabled {
+  opacity: 0.5;
+}
+
+.emotion-0:focus {
+  border: 1px solid #1e98ff;
+  outline: none;
+}
+
+.emotion-0 span {
+  color: transparent;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 500ms infinite linear;
+  animation: animation-1scjtrl 500ms infinite linear;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1.5em;
+  width: 1.5em;
+  position: absolute;
+  left: calc(50% - (1.5em / 2));
+  top: calc(50% - (1.5em / 2));
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Botão
+  </span>
+</button>
 `;
 
 exports[`Button não deve ter animação com "onClick" que não seja promise 1`] = `
@@ -669,6 +865,11 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -677,6 +878,13 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -695,6 +903,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 <ThemeProvider
   theme={
     Object {
+      "animation": Object {
+        "spinAround": "animation-1scjtrl",
+      },
       "baseRadius": 2,
       "baseSize": 16,
       "breakpoint": Object {
@@ -736,6 +947,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   <ThemeProvider
     theme={
       Object {
+        "animation": Object {
+          "spinAround": "animation-1scjtrl",
+        },
         "baseRadius": 2,
         "baseSize": 16,
         "breakpoint": Object {
@@ -783,6 +997,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
         onClick={[Function]}
         theme={
           Object {
+            "animation": Object {
+              "spinAround": "animation-1scjtrl",
+            },
             "baseRadius": 2,
             "baseSize": 16,
             "breakpoint": Object {
@@ -827,6 +1044,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
           onClick={[Function]}
           theme={
             Object {
+              "animation": Object {
+                "spinAround": "animation-1scjtrl",
+              },
               "baseRadius": 2,
               "baseSize": 16,
               "breakpoint": Object {
@@ -871,6 +1091,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
             onClick={[Function]}
             theme={
               Object {
+                "animation": Object {
+                  "spinAround": "animation-1scjtrl",
+                },
                 "baseRadius": 2,
                 "baseSize": 16,
                 "breakpoint": Object {
@@ -916,7 +1139,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
               onKeyPress={[Function]}
               type="button"
             >
-              Botão
+              <span>
+                Botão
+              </span>
             </button>
           </Button>
         </Button>
@@ -935,6 +1160,11 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -943,6 +1173,13 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
@@ -961,6 +1198,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
 <ThemeProvider
   theme={
     Object {
+      "animation": Object {
+        "spinAround": "animation-1scjtrl",
+      },
       "baseRadius": 2,
       "baseSize": 16,
       "breakpoint": Object {
@@ -1002,6 +1242,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   <ThemeProvider
     theme={
       Object {
+        "animation": Object {
+          "spinAround": "animation-1scjtrl",
+        },
         "baseRadius": 2,
         "baseSize": 16,
         "breakpoint": Object {
@@ -1049,6 +1292,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
         onClick={[Function]}
         theme={
           Object {
+            "animation": Object {
+              "spinAround": "animation-1scjtrl",
+            },
             "baseRadius": 2,
             "baseSize": 16,
             "breakpoint": Object {
@@ -1093,6 +1339,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
           onClick={[Function]}
           theme={
             Object {
+              "animation": Object {
+                "spinAround": "animation-1scjtrl",
+              },
               "baseRadius": 2,
               "baseSize": 16,
               "breakpoint": Object {
@@ -1137,6 +1386,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
             onClick={[Function]}
             theme={
               Object {
+                "animation": Object {
+                  "spinAround": "animation-1scjtrl",
+                },
                 "baseRadius": 2,
                 "baseSize": 16,
                 "breakpoint": Object {
@@ -1182,7 +1434,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
               onKeyPress={[Function]}
               type="button"
             >
-              Botão
+              <span>
+                Botão
+              </span>
             </button>
           </Button>
         </Button>

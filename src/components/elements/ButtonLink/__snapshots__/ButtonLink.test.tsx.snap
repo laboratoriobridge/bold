@@ -9,6 +9,11 @@ exports[`deve renderizar corretamente 1`] = `
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   font-size: 0.75rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
@@ -17,7 +22,14 @@ exports[`deve renderizar corretamente 1`] = `
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
   text-transform: uppercase;
+  -webkit-transition: all .2s;
+  transition: all .2s;
   text-decoration: none;
+}
+
+.emotion-0 span {
+  -webkit-transition: all .2s;
+  transition: all .2s;
 }
 
 .emotion-0:not(:disabled):active {
