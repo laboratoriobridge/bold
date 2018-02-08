@@ -94,7 +94,8 @@
     "react-final-form": "3.x",
     "react-overlays": "0.8.x",
     "react-redux": "5.x",
-    "react-text-mask": "5.x"
+    "react-text-mask": "5.x",
+    "tslint-react": "3.x"
   },
   "jest": {
     "testEnvironment": "jsdom",
