@@ -76,6 +76,7 @@
     "redux-mock-store": "1.4.0",
     "redux-thunk": "2.2.0",
     "shx": "0.2.2",
+    "text-mask-core": "5.0.1",
     "ts-jest": "22.0.1",
     "tslint": "5.8.0",
     "tslint-react": "3.3.3",
