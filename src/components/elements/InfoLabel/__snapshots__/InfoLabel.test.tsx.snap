@@ -1,12 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve renderizar corretamente 1`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
 .emotion-0 {
   font-weight: bold;
 }
 
 <div
-  class="emotion-1"
+  class="emotion-2"
 >
   <div
     class="emotion-0"
@@ -22,13 +26,17 @@ exports[`deve renderizar corretamente 1`] = `
 `;
 
 exports[`deve renderizar corretamente 2`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
 .emotion-0 {
   font-weight: bold;
   color: red;
 }
 
 <div
-  class="emotion-1"
+  class="emotion-2"
 >
   <div
     class="emotion-0"
@@ -44,6 +52,10 @@ exports[`deve renderizar corretamente 2`] = `
 `;
 
 exports[`deve renderizar corretamente 3`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
 .emotion-0 {
   font-weight: bold;
 }
