@@ -5,9 +5,9 @@ import * as React from 'react'
 import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes/index'
 import { withTheme } from '../../../../stories-addons/withTheme'
+import { CpfField, TelefoneField } from '../maskedFields/maskedFields'
 
 import { MaskedField } from './MaskedField'
-import { CpfField, TelefoneField } from './masks'
 
 storiesOf('Form', module)
     .addDecorator(withPropTypes(`
@@ -26,27 +26,27 @@ storiesOf('Form', module)
     .addDecorator(withForm())
     .add('MaskedField', () => (
         <>
-        <MaskedField
-            mask={['(', /\d/, /\d/, /\d/, ')']}
-            name='generico'
-            label='Masked Field Genérico'
-            disabled={boolean('disabled', false)}
-            guide={boolean('guide', true)}
-            keepCharPositions={boolean('keepCharPositions', false)}
-        />
-        <CpfField
-            name='cpf'
-            label='CPF'
-            disabled={boolean('disabled', false)}
-            guide={boolean('guide', true)}
-            keepCharPositions={boolean('keepCharPositions', false)}
-        />
-        <TelefoneField
-            name='telefone'
-            label='Telefone'
-            disabled={boolean('disabled', false)}
-            guide={boolean('guide', true)}
-            keepCharPositions={boolean('keepCharPositions', false)}
-        />
+            <MaskedField
+                mask={['(', /\d/, /\d/, /\d/, ')']}
+                name='generico'
+                label='Masked Field Genérico'
+                disabled={boolean('disabled', false)}
+                guide={boolean('guide', true)}
+                keepCharPositions={boolean('keepCharPositions', false)}
+            />
+            <CpfField
+                name='cpf'
+                label='CPF'
+                disabled={boolean('disabled', false)}
+                guide={boolean('guide', true)}
+                keepCharPositions={boolean('keepCharPositions', false)}
+            />
+            <TelefoneField
+                name='telefone'
+                label='Telefone'
+                disabled={boolean('disabled', false)}
+                guide={boolean('guide', true)}
+                keepCharPositions={boolean('keepCharPositions', false)}
+            />
         </>
     ))
