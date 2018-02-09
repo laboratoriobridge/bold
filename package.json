@@ -88,6 +88,7 @@
     "emotion": "9.x",
     "emotion-theming": "9.x",
     "final-form": "4.x",
+    "moment": "2.x",
     "normalize.css": "x",
     "react": "16.2.x",
     "react-dom": "16.2.x",

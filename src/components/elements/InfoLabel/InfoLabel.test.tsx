@@ -18,3 +18,9 @@ it('deve renderizar corretamente', () => {
         <InfoLabel title='Test' childStyles={{ color: 'blue' }}>Content</InfoLabel>
     ))).toMatchSnapshot()
 })
+
+it('deve aceitar a prop placeholder', () => {
+    expect(render(withTheme(
+        <InfoLabel title='Test' placeholder='Nenhum valor informado' />
+    ))).toMatchSnapshot()
+})

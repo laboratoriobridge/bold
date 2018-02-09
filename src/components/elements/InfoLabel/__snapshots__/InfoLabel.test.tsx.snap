@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`deve aceitar a prop placeholder 1`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
+.emotion-0 {
+  font-weight: bold;
+}
+
+.emotion-1:empty::before {
+  content: "Nenhum valor informado";
+  color: #808080;
+  font-style: italic;
+}
+
+<div
+  class="emotion-2"
+>
+  <div
+    class="emotion-0"
+  >
+    Test
+  </div>
+  <div
+    class="emotion-1"
+  />
+</div>
+`;
+
 exports[`deve renderizar corretamente 1`] = `
 .emotion-2 {
   line-height: 1.5;
@@ -7,6 +36,12 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-0 {
   font-weight: bold;
+}
+
+.emotion-1:empty::before {
+  content: "-";
+  color: #808080;
+  font-style: italic;
 }
 
 <div
@@ -28,6 +63,12 @@ exports[`deve renderizar corretamente 1`] = `
 exports[`deve renderizar corretamente 2`] = `
 .emotion-2 {
   line-height: 1.5;
+}
+
+.emotion-1:empty::before {
+  content: "-";
+  color: #808080;
+  font-style: italic;
 }
 
 .emotion-0 {
@@ -62,6 +103,12 @@ exports[`deve renderizar corretamente 3`] = `
 
 .emotion-1 {
   color: blue;
+}
+
+.emotion-1:empty::before {
+  content: "-";
+  color: #808080;
+  font-style: italic;
 }
 
 <div

@@ -11,7 +11,10 @@ storiesOf('Components', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('InfoLabel', () => (
-        <InfoLabel title={text('title', 'Nome')}>
-            João da Silva
-        </InfoLabel>
+        <>
+            <InfoLabel title={text('title', 'Nome')} placeholder={text('placeholder', '-')}>
+                João da Silva
+            </InfoLabel>
+            <InfoLabel title={text('title', 'Nome')} placeholder={text('placeholder', '-')} />
+        </>
     ))

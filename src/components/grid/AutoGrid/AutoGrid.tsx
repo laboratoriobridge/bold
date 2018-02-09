@@ -7,7 +7,7 @@ export interface AutoGridProps {
     cellSize?: CellSize
 }
 
-export class AutoGrid extends React.Component<AutoGridProps> {
+export class AutoGrid extends React.PureComponent<AutoGridProps> {
     render() {
         const { children, cellSize } = this.props
         return (
