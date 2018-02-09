@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve renderizar corretamente 1`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
+.emotion-0 {
+  font-weight: bold;
+}
+
+<div
+  class="emotion-2"
+>
+  <div
+    class="emotion-0"
+  >
+    Test
+  </div>
+  <div
+    class="emotion-1"
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`deve renderizar corretamente 2`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  color: red;
+}
+
+<div
+  class="emotion-2"
+>
+  <div
+    class="emotion-0"
+  >
+    Test
+  </div>
+  <div
+    class="emotion-1"
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`deve renderizar corretamente 3`] = `
+.emotion-2 {
+  line-height: 1.5;
+}
+
+.emotion-0 {
+  font-weight: bold;
+}
+
+.emotion-1 {
+  color: blue;
+}
+
+<div
+  class="emotion-2"
+>
+  <div
+    class="emotion-0"
+  >
+    Test
+  </div>
+  <div
+    class="emotion-1"
+  >
+    Content
+  </div>
+</div>
+`;
