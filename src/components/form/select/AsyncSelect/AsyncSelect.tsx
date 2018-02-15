@@ -85,7 +85,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             clearTimeout(this.typingTimer)
         }
         if (query !== '') {
-            this.typingTimer = setTimeout(this.getPage(query, callback), this.props.searchDelay)
+            this.typingTimer = window.setTimeout(() => this.getPage(query, callback), this.props.searchDelay)
         } else {
             callback(null, {})
         }
