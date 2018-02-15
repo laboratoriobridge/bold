@@ -1,6 +1,5 @@
 import axios from 'axios'
 import * as MockAdapter from 'axios-mock-adapter'
-import httpAdapter from 'axios/lib/adapters/http'
 import * as React from 'react'
 import { Form } from 'react-final-form'
 import { Provider } from 'react-redux'

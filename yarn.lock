@@ -7029,6 +7029,10 @@ test-exclude@^4.1.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
+text-mask-core@5.0.1:
+  version "5.0.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/text-mask-core/-/text-mask-core-5.0.1.tgz#86db742bdfe3b4c383bb51a3b4ca342c86110639"
+
 throat@^4.0.0:
   version "4.1.0"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/throat/-/throat-4.1.0.tgz#89037cbc92c56ab18926e6ba4cbb200e15672a6a"
