@@ -1,8 +1,9 @@
 import 'react-select/dist/react-select.css'
 
-import { Theme } from '../../../styles/index'
+import { Theme } from '../../../styles'
 
 const createSelectStyle = (theme: Theme) => {
+    const height = 'calc(2rem - 2px)'
     return {
         default: {
             fontSize: '0.75rem',
@@ -11,8 +12,8 @@ const createSelectStyle = (theme: Theme) => {
                 border: 'solid 1px ' + theme.color.gray80,
                 borderRadius: theme.baseRadius,
                 color: theme.color.gray30,
-                height: 30,
-                lineHeight: '1',
+                height,
+                lineHeight: '1rem',
                 ':hover': {
                     borderColor: theme.color.gray60,
                     boxShadow: 'none',
@@ -23,23 +24,22 @@ const createSelectStyle = (theme: Theme) => {
                         color: theme.color.primary,
                     },
                     '.Select-clear': {
-                        height: 30,
                         fontSize: '1.5rem',
-                        lineHeight: '1.7rem',
+                        lineHeight: '1.5rem',
                     },
                 },
                 '.Select-placeholder, .Select-value': {
                     padding: '0 1rem',
-                    lineHeight: '2rem',
+                    lineHeight: height,
                 },
                 '.Select-value-label': {
-                    color: theme.color.gray30, // não funciona ainda
+                    color: theme.color.gray30 + ' !important',
                 },
                 '.Select-input': {
-                    height: 30,
+                    height,
                     padding: '0 1rem',
                     'input': {
-                        lineHeight: '1',
+                        lineHeight: '1rem',
                         padding: '0.4rem 0',
                     },
                 },

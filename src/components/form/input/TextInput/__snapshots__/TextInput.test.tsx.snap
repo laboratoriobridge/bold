@@ -7,8 +7,8 @@ exports[`TextInput render 1`] = `
   border-radius: 2px;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
-  line-height: 1;
-  padding: 0.5rem 1rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 1rem;
   width: 100%;
 }
 
@@ -59,8 +59,8 @@ exports[`TextInput render password 1`] = `
   border-radius: 2px;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
-  line-height: 1;
-  padding: 0.5rem 1rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 1rem;
   width: 100%;
 }
 

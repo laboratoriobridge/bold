@@ -17,8 +17,8 @@ export const createStyles = (theme) => ({
         borderRadius: theme.baseRadius,
         fontFamily: theme.font.textFamily,
         fontSize: '0.75rem',
-        lineHeight: '1',
-        padding: '0.5rem 1rem',
+        lineHeight: '1rem',
+        padding: 'calc(0.5rem - 1px) 1rem',
         width: '100%',
         '::placeholder': {
             color: theme.color.gray80,
