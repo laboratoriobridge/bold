@@ -46,16 +46,6 @@ export const createStyles = (theme) => ({
 @withStyles
 export class TextInput extends React.Component<TextInputProps> {
 
-    public input: Input
-
-    focus() {
-        this.input.focus()
-    }
-
-    blur() {
-        this.input.blur()
-    }
-
     render() {
         const { css, password, status, theme, ...rest } = this.props
         const styles = createStyles(theme)
@@ -65,7 +55,6 @@ export class TextInput extends React.Component<TextInputProps> {
 
         return (
             <Input
-                ref={input => this.input = input}
                 {...rest}
                 className={classes}
                 type={password ? 'password' : 'text'}

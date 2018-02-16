@@ -1,5 +1,10 @@
 import * as React from 'react'
 
+export interface InputController {
+  focus(): any
+  blur(): any
+}
+
 export interface PublicInputProps {
   className?: string
   checked?: boolean
@@ -13,6 +18,7 @@ export interface PublicInputProps {
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
   placeholder?: string
   value?: any
+  provideController?: (controller: InputController) => void
 }
 
 export interface InputProps extends PublicInputProps {
@@ -22,17 +28,22 @@ export interface InputProps extends PublicInputProps {
 export class Input extends React.Component<InputProps, any> {
   private input: HTMLInputElement
 
-  focus() {
-    this.input.focus()
+  componentDidMount() {
+    this.props.provideController && this.props.provideController({
+      focus: () => this.input.focus(),
+      blur: () => this.input.blur(),
+    })
   }
 
-  blur() {
-    this.input.blur()
+  componentWillUnmount() {
+    this.props.provideController && this.props.provideController(null)
   }
 
   render() {
+    const { provideController, ...rest } = this.props
+
     return (
-      <input ref={this.ref} {...this.props} />
+      <input ref={this.ref} {...rest} />
     )
   }
 

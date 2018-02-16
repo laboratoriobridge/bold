@@ -1,7 +1,7 @@
 import axios from 'axios'
 import * as MockAdapter from 'axios-mock-adapter'
 import * as React from 'react'
-import { Form } from 'react-final-form'
+import { Form, FormSpy } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
 import configureMockStore from 'redux-mock-store'
@@ -44,14 +44,10 @@ export const withRedux = (node: React.ReactElement<any>, store = createTestStore
  * Envelopa o componente com o wrapper Provider do redux, o ThemeProvider e o wrapper do redux-form.
  * Utilizado para testes de fields do redux-form.
  *
- * @param {*} component Componente a ser "envelopado"
- * @param {string} formName Nome do form.
- * @param {Store} store Store a ser utilizado pelo form.
+ * @param component Componente a ser "envelopado"
  */
-export const withForm = (node: React.ReactNode, formName = 'test', store = createTestStore()) => {
-    const submit = () => undefined
-
+export const withForm = (node: React.ReactNode) => {
+    const onSubmit = () => undefined
     const render = () => node
-
-    return withTheme(<Form render={render} onSubmit={submit} />)
+    return withTheme(<Form render={render} onSubmit={onSubmit} />)
 }

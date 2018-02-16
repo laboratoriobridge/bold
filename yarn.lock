@@ -267,6 +267,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-datepicker@1.1.1":
+  version "1.1.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-datepicker/-/react-datepicker-1.1.1.tgz#ff2cfa27bbf3f28803e92353dcf651ebce21f552"
+  dependencies:
+    "@types/react" "*"
+    moment ">=2.14.0"
+
 "@types/react-overlays@0.6.9":
   version "0.6.9"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-overlays/-/react-overlays-0.6.9.tgz#72b01dc6cfae71bfed7b36c7701e1dc220b83bdd"
@@ -4875,7 +4882,7 @@ moment@2.17.1:
   version "2.17.1"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/moment/-/moment-2.17.1.tgz#fed9506063f36b10f066c8b59a144d7faebe1d82"
 
-moment@^2.19.2:
+moment@>=2.14.0, moment@^2.19.2:
   version "2.20.1"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/moment/-/moment-2.20.1.tgz#d6eb1a46cbcc14a2b2f9434112c1ff8907f313fd"
 
@@ -5408,6 +5415,10 @@ podda@^1.2.2:
     babel-runtime "^6.11.6"
     immutable "^3.8.1"
 
+popper.js@^1.12.5:
+  version "1.12.9"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/popper.js/-/popper.js-1.12.9.tgz#0dfbc2dff96c451bb332edcfcfaaf566d331d5b3"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
@@ -5909,6 +5920,15 @@ react-color@^2.11.4:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
+react-datepicker@1.1.0:
+  version "1.1.0"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/react-datepicker/-/react-datepicker-1.1.0.tgz#af3892384fb6d1dcafc30b48e81cc7fb976806f4"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.0"
+    react-onclickoutside "^6.7.1"
+    react-popper "^0.7.4"
+
 react-datetime@^2.11.0:
   version "2.12.0"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/react-datetime/-/react-datetime-2.12.0.tgz#9226a11730b7be1273c12f018a4d5613496e831c"
@@ -5993,7 +6013,7 @@ react-modal@^3.1.10:
     prop-types "^15.5.10"
     warning "^3.0.0"
 
-react-onclickoutside@^6.5.0:
+react-onclickoutside@^6.5.0, react-onclickoutside@^6.7.1:
   version "6.7.1"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
 
@@ -6007,6 +6027,13 @@ react-overlays@0.8.3:
     prop-types-extra "^1.0.1"
     react-transition-group "^2.2.0"
     warning "^3.0.0"
+
+react-popper@^0.7.4:
+  version "0.7.5"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/react-popper/-/react-popper-0.7.5.tgz#71c25946f291db381231281f6b95729e8b801596"
+  dependencies:
+    popper.js "^1.12.5"
+    prop-types "^15.5.10"
 
 react-reconciler@^0.7.0:
   version "0.7.0"
