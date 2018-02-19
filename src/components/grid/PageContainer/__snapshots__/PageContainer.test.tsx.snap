@@ -4,7 +4,10 @@ exports[`PageContainer deve renderizar corretamente 1`] = `
 .emotion-0 {
   width: 960px;
   margin: 0 auto;
-  padding: 0.75rem 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 @media (max-width:1280px) {
