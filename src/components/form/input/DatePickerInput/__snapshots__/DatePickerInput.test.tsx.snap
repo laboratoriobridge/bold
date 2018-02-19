@@ -1,6 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextInput render 1`] = `
+exports[`deve conter a classe css "disabled" 1`] = `
+.emotion-1 .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.emotion-1 .react-datepicker__input-container {
+  width: 100%;
+}
+
 .emotion-0 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
@@ -46,13 +54,38 @@ exports[`TextInput render 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<input
-  class="emotion-0"
-  type="text"
-/>
+<div
+  class="emotion-1"
+>
+  <div>
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="emotion-0"
+          disabled=""
+          placeholder="dd/mm/yyyy"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
 `;
 
-exports[`TextInput render password 1`] = `
+exports[`deve renderizar corretamente 1`] = `
+.emotion-1 .react-datepicker-wrapper {
+  width: 100%;
+}
+
+.emotion-1 .react-datepicker__input-container {
+  width: 100%;
+}
+
 .emotion-0 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
@@ -98,8 +131,24 @@ exports[`TextInput render password 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<input
-  class="emotion-0"
-  type="password"
-/>
+<div
+  class="emotion-1"
+>
+  <div>
+    <div
+      class="react-datepicker-wrapper"
+    >
+      <div
+        class="react-datepicker__input-container"
+      >
+        <input
+          class="emotion-0"
+          placeholder="dd/mm/yyyy"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
 `;
