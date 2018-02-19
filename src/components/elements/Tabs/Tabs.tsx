@@ -29,7 +29,7 @@ const createStyles = (theme: Theme) => {
             textTransform: 'uppercase',
             letterSpacing: '1px',
             lineHeight: '1rem',
-            transition: '.2s all',
+            transition: '.2s color',
 
             '&.active': active,
         },

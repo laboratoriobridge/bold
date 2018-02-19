@@ -25,8 +25,8 @@ exports[`deve renderizar corretamente 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .2s all;
-  transition: .2s all;
+  -webkit-transition: .2s color;
+  transition: .2s color;
 }
 
 .emotion-0.active {
