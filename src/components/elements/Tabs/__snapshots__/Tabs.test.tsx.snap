@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve renderizar corretamente 1`] = `
+.emotion-6 {
+  list-style: none;
+  padding: 0px;
+  margin: 0 -1rem;
+  font-size: 0.75rem;
+}
+
+.emotion-1 {
+  display: inline-block;
+}
+
+.emotion-0 {
+  display: inline-block;
+  text-decoration: none;
+  color: #808080;
+  font-weight: bold;
+  padding: 0.5rem 0;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  -webkit-transition: .2s all;
+  transition: .2s all;
+}
+
+.emotion-0.active {
+  color: #1e98ff;
+  border-bottom: 2px solid currentColor;
+}
+
+.emotion-5 {
+  display: inline-block;
+}
+
+.emotion-5 a {
+  color: #1e98ff;
+  border-bottom: 2px solid currentColor;
+}
+
+<ul
+  class="emotion-6"
+>
+  <li
+    class="emotion-1"
+  >
+    <a
+      aria-current="true"
+      class="emotion-0 active"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+  <li
+    class="emotion-1"
+  >
+    <a
+      aria-current="false"
+      class="emotion-0"
+      href="/test"
+    >
+      Test
+    </a>
+  </li>
+  <li
+    class="emotion-5"
+  >
+    <a
+      aria-current="false"
+      class="emotion-0"
+      href="/active"
+    >
+      Active
+    </a>
+  </li>
+</ul>
+`;

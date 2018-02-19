@@ -287,17 +287,24 @@
     "@types/react" "*"
     redux "^3.6.0"
 
-"@types/react-router-dom@4.2.3":
-  version "4.2.3"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-router-dom/-/react-router-dom-4.2.3.tgz#06e0b67ff536adc0681dffdbe592ae91fb85887d"
+"@types/react-router-dom@4.2.4":
+  version "4.2.4"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-router-dom/-/react-router-dom-4.2.4.tgz#02c43274129ffe0ac42b348f7c8c4a9a4e127c8a"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@4.0.21":
+"@types/react-router@*":
   version "4.0.21"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-router/-/react-router-4.0.21.tgz#d6c7ea3b45dba02eb8f869629f3b7d7b6e9a7938"
+  dependencies:
+    "@types/history" "*"
+    "@types/react" "*"
+
+"@types/react-router@4.0.22":
+  version "4.0.22"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react-router/-/react-router-4.0.22.tgz#2b97336eddfdf5886973539539b8ce7037cf629b"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -951,15 +958,15 @@ babel-plugin-dynamic-import-node@1.1.0:
     babel-template "^6.26.0"
     babel-types "^6.26.0"
 
-babel-plugin-emotion@^9.0.0:
-  version "9.0.0"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/babel-plugin-emotion/-/babel-plugin-emotion-9.0.0.tgz#aa8491343fe8685b03b17e00be459c9a84eaf0df"
+babel-plugin-emotion@^9.0.1:
+  version "9.0.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/babel-plugin-emotion/-/babel-plugin-emotion-9.0.1.tgz#1c1ec14a5d6f40c64bd68e805f074fea60a580a7"
   dependencies:
     "@babel/helper-module-imports" "7.0.0-beta.32"
     babel-plugin-macros "^2.0.0"
     babel-plugin-syntax-jsx "^6.18.0"
     convert-source-map "^1.5.0"
-    emotion-utils "^9.0.0"
+    emotion-utils "^9.0.1"
     find-root "^1.1.0"
     source-map "^0.5.7"
     touch "^1.0.0"
@@ -2285,11 +2292,11 @@ create-ecdh@^4.0.0:
     bn.js "^4.1.0"
     elliptic "^6.0.0"
 
-create-emotion@^9.0.0:
-  version "9.0.0"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/create-emotion/-/create-emotion-9.0.0.tgz#ad0f24002fccadb0e9c09c5ba55c672b22580bb1"
+create-emotion@^9.0.1:
+  version "9.0.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/create-emotion/-/create-emotion-9.0.1.tgz#fe9ea0e0f74c13d7d1e64b3eede37e64fbc89b89"
   dependencies:
-    emotion-utils "^9.0.0"
+    emotion-utils "^9.0.1"
     stylis "^3.3.2"
     stylis-rule-sheet "^0.0.5"
 
@@ -2727,16 +2734,16 @@ emotion-theming@9.0.0:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-emotion-utils@^9.0.0:
-  version "9.0.0"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/emotion-utils/-/emotion-utils-9.0.0.tgz#e34099f6f8566d4f30932363cffbc29fbdcd3294"
+emotion-utils@^9.0.1:
+  version "9.0.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/emotion-utils/-/emotion-utils-9.0.1.tgz#db1034410d8ac4e399845d346471c3f2db5124d7"
 
-emotion@9.0.0:
-  version "9.0.0"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/emotion/-/emotion-9.0.0.tgz#dfc5761f04658b4e315cfd3bb399320fb0190f27"
+emotion@9.0.1:
+  version "9.0.1"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/emotion/-/emotion-9.0.1.tgz#e6e8aaa6cfb703c4652de222cba87aa5bfeeae39"
   dependencies:
-    babel-plugin-emotion "^9.0.0"
-    create-emotion "^9.0.0"
+    babel-plugin-emotion "^9.0.1"
+    create-emotion "^9.0.1"
 
 encodeurl@~1.0.1:
   version "1.0.2"
@@ -6275,7 +6282,7 @@ redux-thunk@2.2.0:
   version "2.2.0"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
-redux@^3.6.0, redux@^3.7.2:
+redux@3.7.2, redux@^3.6.0, redux@^3.7.2:
   version "3.7.2"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/redux/-/redux-3.7.2.tgz#06b73123215901d25d065be342eb026bc1c8537b"
   dependencies:
