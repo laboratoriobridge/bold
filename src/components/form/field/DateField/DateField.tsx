@@ -1,8 +1,8 @@
 import * as moment from 'moment'
 import * as React from 'react'
-import { Omit } from 'react-redux'
 
 import { formats } from '../../../../util/dateTime'
+import { Omit } from '../../../../util/types'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DatePickerInput/DatePickerInput'
