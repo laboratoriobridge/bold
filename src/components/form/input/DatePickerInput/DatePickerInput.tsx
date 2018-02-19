@@ -1,24 +1,25 @@
 import * as moment from 'moment'
 import * as React from 'react'
-import * as DatePicker from 'react-datepicker'
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
+import * as TestPicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { InputController } from '../Input/Input'
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
 
-export interface DatePickerInputProps extends WithStylesProps, DatePicker.ReactDatePickerProps,
+export interface DatePickerInputProps extends WithStylesProps, ReactDatePickerProps,
     Pick<TextInputProps, 'status'> {
 
 }
 
-const Picker = DatePicker.default || DatePicker as any
+const Picker = DatePicker || TestPicker as any
 
 @withStyles
 export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
     render() {
-        const { css, value, ...rest } = this.props
+        const { css, value, status, ...rest } = this.props
         const styles = {
             container: {
                 '& .react-datepicker-wrapper': { width: '100%' },
@@ -32,13 +33,13 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
             <div className={css(styles.container)}>
                 <Picker
                     {...rest}
-                    selected={mom}
+                    selected={mom as any}
                     todayButton='Hoje'
                     locale='pt-br'
                     showYearDropdown
                     dropdownMode='select'
                     disabledKeyboardNavigation
-                    customInput={<DateInput />}
+                    customInput={<DateInput status={status} />}
                 />
             </div>
         )
