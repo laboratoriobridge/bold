@@ -14,7 +14,10 @@ export class PageContainer extends React.PureComponent<PageContainerProps> {
             container: {
                 width: '960px',
                 margin: '0 auto',
-                padding: '0.75rem 1rem',
+                paddingTop: '0.75rem',
+                paddingBottom: '0.75rem',
+                paddingLeft: '1rem',
+                paddingRight: '1rem',
 
                 [theme.breakpoint.small]: {
                     width: '768px',
