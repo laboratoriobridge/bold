@@ -94,6 +94,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                     value={this.state.inputValue}
                     onChange={this.handleInputChange}
                     onBlur={this.handleInputBlur}
+                    onKeyPress={this.handleInputKeyPress}
                 />
 
                 <span>de {total}</span>
@@ -115,11 +116,23 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
         this.setState({ inputValue: e.target.value })
     }
 
+    private handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            this.applyInputValue()
+        }
+    }
+
     private handleInputBlur = (e) => {
-        if (this.state.inputValue >= 1 && this.state.inputValue <= this.props.total) {
-            this.props.onChange && this.props.onChange(this.state.inputValue - 1)
-        } else {
-            this.setState({ inputValue: this.props.page + 1 })
+        this.applyInputValue()
+    }
+
+    private applyInputValue = () => {
+        if (this.state.inputValue !== this.currentPage()) {
+            if (this.state.inputValue >= 1 && this.state.inputValue <= this.props.total) {
+                this.props.onChange && this.props.onChange(this.state.inputValue - 1)
+            } else {
+                this.setState({ inputValue: this.props.page + 1 })
+            }
         }
     }
 

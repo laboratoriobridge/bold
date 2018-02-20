@@ -11,7 +11,7 @@ it('deve renderizar corretamente', () => {
     expect(render(withTheme(<Paginator page={0} total={9} />))).toMatchSnapshot()
 })
 
-it('deve conter os números corretos de acordo com a configuração', () => {
+it('deve chamar onChange com os valores corretos', () => {
     const handleChange = jest.fn()
     const wrapper = mount(withTheme(<Paginator page={4} total={10} onChange={handleChange} />))
     expect(handleChange).not.toHaveBeenCalled()
@@ -30,4 +30,23 @@ it('deve conter os números corretos de acordo com a configuração', () => {
 
     wrapper.find('input').simulate('change', { target: { value: '1' } }).simulate('blur')
     expect(handleChange).toHaveBeenLastCalledWith(0)
+})
+
+it('deve chamar onChange e fazer blur ao usar ENTER', () => {
+    const handleChange = jest.fn()
+    const wrapper = mount(withTheme(<Paginator page={4} total={10} onChange={handleChange} />))
+
+    wrapper.find('input')
+        .simulate('change', { target: { value: '8' } })
+        .simulate('keypress', { key: 'Enter' })
+
+    expect(handleChange).toHaveBeenLastCalledWith(7)
+})
+
+it('deve chamar onChange somente uma vez', () => {
+    const handleChange = jest.fn()
+    const wrapper = mount(withTheme(<Paginator page={4} total={10} onChange={handleChange} />))
+
+    wrapper.find('input').simulate('change', { target: { value: '3' } }).simulate('blur')
+    expect(handleChange).toHaveBeenCalledTimes(1)
 })
