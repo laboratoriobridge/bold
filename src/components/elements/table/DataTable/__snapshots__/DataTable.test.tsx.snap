@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`deve renderizar corretamente 1`] = `
+.emotion-8 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+}
+
+.emotion-1 {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-0 {
+  margin-left: 0.25rem;
+}
+
+.emotion-15 {
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 1px solid #e6e6e6;
+  border-top: none;
+}
+
+.emotion-9 {
+  font-weight: bold;
+  border-right: 1px solid #e6e6e6;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border-top: none;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 4px 1rem;
+  border-top: none;
+}
+
+.emotion-13 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px;
+  font-size: 0.75rem;
+}
+
+.emotion-13 > *:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.emotion-10 {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  border-radius: 2px;
+  padding: 0.25rem 0.5rem;
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+.emotion-10:hover {
+  background: #e6e6e6;
+}
+
+.emotion-10:hover {
+  background: transparent;
+}
+
+.emotion-11 {
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 1rem;
+  width: 100%;
+  width: 47px;
+  text-align: center;
+}
+
+.emotion-11::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-11::-moz-placeholder {
+  color: #cccccc;
+}
+
+.emotion-11:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-11::placeholder {
+  color: #cccccc;
+}
+
+.emotion-11:disabled {
+  background-color: #f2f2f7;
+}
+
+.emotion-11:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-11:not(:disabled):focus {
+  border-color: #1e98ff;
+  outline: none;
+}
+
+.emotion-11:not(:disabled):active {
+  border-color: #1e98ff;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div
+  class="emotion-16"
+>
+  <table
+    class="emotion-8"
+  >
+    <thead>
+      <tr>
+        <th
+          class="emotion-1"
+          data-name="id"
+        >
+          <a>
+            Column ID
+            <span
+              class="emotion-0"
+            >
+              ▴
+            </span>
+          </a>
+        </th>
+        <th
+          class="emotion-1"
+          data-name="nome"
+        >
+          <a>
+            Column name
+            <span
+              class="emotion-0"
+            >
+              ▾
+            </span>
+          </a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td
+          class="emotion-1"
+          data-name="id"
+        >
+          <span>
+            1
+          </span>
+        </td>
+        <td
+          class="emotion-1"
+          data-name="nome"
+        >
+          <span>
+            MARIA MACHADO DE JESUS
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td
+          class="emotion-1"
+          data-name="id"
+        >
+          <span>
+            2
+          </span>
+        </td>
+        <td
+          class="emotion-1"
+          data-name="nome"
+        >
+          <span>
+            MARIA MACHADO DE JESUS
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="emotion-15"
+  >
+    <span
+      class="emotion-9"
+    >
+      <span
+        title="2"
+      >
+        2 resultados
+      </span>
+    </span>
+    <div
+      class="emotion-14"
+    >
+      <span>
+        Mostrar: 10
+      </span>
+      <div
+        class="emotion-13"
+      >
+        <span>
+          <a
+            class="emotion-10"
+            title="Página anterior"
+          >
+            &lt;
+          </a>
+        </span>
+        <input
+          class="emotion-11"
+          styles="[object Object]"
+          type="text"
+          value="1"
+        />
+        <span>
+          de 1
+        </span>
+        <span>
+          <a
+            class="emotion-10"
+            title="Próxima página"
+          >
+            &gt;
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;

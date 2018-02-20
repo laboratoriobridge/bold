@@ -29,6 +29,7 @@ export class Number extends React.Component<NumberLabelProps> {
             placeholder,
             title,
             abbrev,
+            prefix,
             sufix,
             ...rest,
         } = this.props

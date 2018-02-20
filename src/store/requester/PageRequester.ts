@@ -8,6 +8,14 @@ export interface PageParams {
     sort?: string[]
 }
 
+export interface SortSpec {
+    readonly property: string
+    readonly direction: 'ASC' | 'DESC'
+    readonly nullHandling?: 'NATIVE' | 'NULLS_FIRST' | 'NULLS_LAST'
+    readonly ascending?: boolean
+    readonly ignoreCase?: boolean
+}
+
 export interface Page<T> {
     readonly content: T[]
     readonly first: boolean
@@ -15,7 +23,7 @@ export interface Page<T> {
     readonly number: number
     readonly numberOfElements: number
     readonly size: number
-    readonly sort: string
+    readonly sort: SortSpec[]
     readonly totalPages: number
     readonly totalElements: number
 }
@@ -42,15 +50,15 @@ export class PageRequester<T, P, R = AxiosResponse<Page<T>>> extends Requester<P
     public setPageNumber = (page: number) => (dispatch, getState) => {
         const currentParams = this.getParams(getState())
         dispatch(this.setParams({
-            ...currentParams as any,
+            ...currentParams,
             page,
         }))
     }
 
-    public setSort = (sort: string) => (dispatch, getState) => {
+    public setSort = (sort: string[]) => (dispatch, getState) => {
         const currentParams = this.getParams(getState())
         dispatch(this.setParams({
-            ...currentParams as any,
+            ...currentParams,
             sort,
         }))
     }
@@ -58,7 +66,7 @@ export class PageRequester<T, P, R = AxiosResponse<Page<T>>> extends Requester<P
     public setPageSize = (size: number) => (dispatch, getState) => {
         const currentParams = this.getParams(getState())
         dispatch(this.setParams({
-            ...currentParams as any,
+            ...currentParams,
             size,
         }))
     }
