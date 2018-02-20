@@ -1,7 +1,8 @@
 import { mount, render } from 'enzyme'
 import * as React from 'react'
 
-import { withTheme } from '../../../test'
+import { Page } from '../../../../store/requester'
+import { withTheme } from '../../../../test'
 
 import { DataTable, DataTableColumn } from './DataTable'
 
@@ -15,10 +16,24 @@ const rows = [
     { id: 2, name: 'MARIA MACHADO DE JESUS' },
 ]
 
+const page: Page<Row> = {
+    content: rows,
+    first: true,
+    last: true,
+    number: 0,
+    numberOfElements: 10,
+    totalElements: rows.length,
+    size: rows.length,
+    sort: [{ property: 'nome', direction: 'ASC' }, { property: 'id', direction: 'DESC' }],
+    totalPages: 1,
+}
+
 const sortHandler = jest.fn()
+const pageHandler = jest.fn()
+const sizeHandler = jest.fn()
 const table = withTheme(
     // tslint:disable jsx-no-lambda
-    <DataTable rows={rows} sort={['nome', 'id,DESC']} onSort={sortHandler}>
+    <DataTable page={page} onSortChange={sortHandler} onPageChange={pageHandler} onSizeChange={sizeHandler}>
         <DataTableColumn
             name='id'
             title='Column ID'
@@ -40,11 +55,11 @@ it('deve renderizar corretamente', () => {
     expect(render(table)).toMatchSnapshot()
 })
 
-it('deve chamar onSort com os parâmetros corretos ao clicar sobre o título de uma coluna', () => {
+it('deve chamar onSortChange com os parâmetros corretos ao clicar sobre o título de uma coluna', () => {
     const wrapper = mount(table)
     wrapper.find('th[data-name="id"] > a').simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith(['id'])
+    expect(sortHandler).toHaveBeenLastCalledWith(['id,ASC'])
 
     wrapper.find('th[data-name="nome"] > a').simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith(['nome'])
+    expect(sortHandler).toHaveBeenLastCalledWith(['nome,DESC'])
 })

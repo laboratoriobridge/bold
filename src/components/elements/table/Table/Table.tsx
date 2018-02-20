@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { withStyles, WithStylesProps } from '../../../../styles'
 
 export interface TableProps<T> extends WithStylesProps {
     rows: T[]

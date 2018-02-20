@@ -1,13 +1,11 @@
-import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes } from '../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../stories-addons/withTheme'
-import { TableColumn } from '../Table/Table'
-import { Text } from '../textual/Text/Text'
+import { withPropTypes, withTheme } from '../../../../stories-addons'
 
-import { DataTable, DataTableColumn } from './DataTable'
+import { Text } from '../../textual/Text/Text'
+
+import { Table, TableColumn } from './Table'
 
 interface Row {
     id: number
@@ -26,38 +24,34 @@ storiesOf('Components', module)
     // .addDecorator(withKnobs)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
-    .add('DataTable', () => (
+    .add('Table', () => (
         // tslint:disable jsx-no-lambda
-        <DataTable sort={['cns,DESC', 'nome']} onSort={action('sort')} rows={rows}>
+        <Table rows={rows}>
             <TableColumn
                 title='ID'
                 render={(row: Row) => (
                     <Text>{row.id}</Text>
                 )}
             />
-            <DataTableColumn
+            <TableColumn
                 title='Profissional'
-                name='nome'
                 render={(row: Row) => (
                     <Text>{row.name}</Text>
                 )}
             />
-            <DataTableColumn
+            <TableColumn
                 title='CNS'
-                name='cns'
                 render={(row: Row) => (
                     <Text>{row.cns}</Text>
                 )}
             />
-            <DataTableColumn
+            <TableColumn
                 title='CPF'
-                name='cpf'
                 render={(row: Row) => (
                     <Text>{row.cpf}</Text>
                 )}
             />
-            <DataTableColumn
-                name='buttons'
+            <TableColumn
                 render={(row: Row) => (
                     <div>
                         <a href=''>a</a>
@@ -66,5 +60,5 @@ storiesOf('Components', module)
                     </div>
                 )}
             />
-        </DataTable>
+        </Table>
     ))

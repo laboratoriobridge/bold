@@ -1,7 +1,7 @@
 import { render } from 'enzyme'
 import * as React from 'react'
 
-import { withTheme } from '../../../test'
+import { withTheme } from '../../../../test'
 
 import { Table, TableColumn } from './Table'
 
