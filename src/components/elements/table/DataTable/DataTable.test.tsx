@@ -21,9 +21,9 @@ const page: Page<Row> = {
     first: true,
     last: true,
     number: 0,
-    numberOfElements: 10,
+    size: 10,
+    numberOfElements: 3,
     totalElements: rows.length,
-    size: rows.length,
     sort: [{ property: 'nome', direction: 'ASC' }, { property: 'id', direction: 'DESC' }],
     totalPages: 1,
 }

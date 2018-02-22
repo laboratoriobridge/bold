@@ -29,7 +29,7 @@ const page: Page<Row> = {
     number: 0,
     numberOfElements: 10,
     totalElements: rows.length,
-    size: rows.length,
+    size: 10,
     sort: [{ property: 'cns', direction: 'DESC' }, { property: 'nome', direction: 'ASC' }],
     totalPages: 1,
 }
