@@ -17,7 +17,7 @@ export interface DataTableProps<T> extends Omit<TableProps<T>, 'rows'> {
 export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
 
     render() {
-        const { css, children, page, onPageChange, ...tableProps } = this.props
+        const { css, children, page, onPageChange, onSizeChange, ...tableProps } = this.props
         return (
             <div className={css()}>
                 <Table rows={page.content} {...tableProps}>
@@ -37,9 +37,11 @@ export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
                 <TableFooter
                     styles={{ borderTop: 'none' }}
                     page={page.number}
+                    pageSize={page.size}
                     totalPages={page.totalPages}
                     totalElements={page.totalElements}
                     onPageChange={onPageChange}
+                    onSizeChange={onSizeChange}
                 />
             </div>
         )

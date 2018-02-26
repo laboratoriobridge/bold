@@ -18,7 +18,7 @@ exports[`deve renderizar corretamente 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-15 {
+.emotion-18 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,7 +48,7 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-14 {
+.emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,7 +68,16 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-13 {
+.emotion-12 {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.emotion-11 {
+  font-weight: bold;
+}
+
+.emotion-16 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -81,11 +90,11 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-13 > *:not(:last-child) {
+.emotion-16 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-10 {
+.emotion-13 {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   border-radius: 2px;
@@ -94,15 +103,15 @@ exports[`deve renderizar corretamente 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-10:hover {
+.emotion-13:hover {
   background: #e6e6e6;
 }
 
-.emotion-10:hover {
+.emotion-13:hover {
   background: transparent;
 }
 
-.emotion-11 {
+.emotion-14 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -115,42 +124,42 @@ exports[`deve renderizar corretamente 1`] = `
   text-align: center;
 }
 
-.emotion-11::-webkit-input-placeholder {
+.emotion-14::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-11::-moz-placeholder {
+.emotion-14::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-11:-ms-input-placeholder {
+.emotion-14:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-11::placeholder {
+.emotion-14::placeholder {
   color: #cccccc;
 }
 
-.emotion-11:disabled {
+.emotion-14:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-11:not(:disabled):focus {
+.emotion-14:not(:disabled):focus {
   border-color: #1e98ff;
   outline: none;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #1e98ff;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 <div
-  class="emotion-16"
+  class="emotion-19"
 >
   <table
     class="emotion-8"
@@ -225,7 +234,7 @@ exports[`deve renderizar corretamente 1`] = `
     </tbody>
   </table>
   <div
-    class="emotion-15"
+    class="emotion-18"
   >
     <span
       class="emotion-9"
@@ -237,24 +246,38 @@ exports[`deve renderizar corretamente 1`] = `
       </span>
     </span>
     <div
-      class="emotion-14"
+      class="emotion-17"
     >
       <span>
-        Mostrar: 10
+        Mostrar:
+        <span
+          class="emotion-12"
+        >
+          <a
+            class="emotion-11"
+          >
+            10 
+            <span
+              class="emotion-0"
+            >
+              ▾
+            </span>
+          </a>
+        </span>
       </span>
       <div
-        class="emotion-13"
+        class="emotion-16"
       >
         <span>
           <a
-            class="emotion-10"
+            class="emotion-13"
             title="Página anterior"
           >
             &lt;
           </a>
         </span>
         <input
-          class="emotion-11"
+          class="emotion-14"
           styles="[object Object]"
           type="text"
           value="1"
@@ -264,7 +287,7 @@ exports[`deve renderizar corretamente 1`] = `
         </span>
         <span>
           <a
-            class="emotion-10"
+            class="emotion-13"
             title="Próxima página"
           >
             &gt;
