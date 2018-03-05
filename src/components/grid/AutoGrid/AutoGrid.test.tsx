@@ -19,4 +19,11 @@ describe('AutoGrid', () => {
             </AutoGrid>
         ))).toMatchSnapshot()
     })
+    it('deve aceitar as GridProps', () => {
+        expect(render(withTheme(
+            <AutoGrid alignItems='flex-end' justifyContent='space-evenly' direction='row-reverse' wrap={true}>
+                <span>1</span>
+            </AutoGrid>
+        ))).toMatchSnapshot()
+    })
 })
