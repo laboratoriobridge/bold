@@ -70,7 +70,7 @@ export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
     }
 
     private handleTitleClick = (colProps: DataTableColumnProps<T>) => {
-        const direction = getPropertyDirection(colProps.name, this.props.page.sort)
+        const direction = getPropertyDirection(colProps.name, this.props.page.sort || [])
         const sort = colProps.name + ',' + (toggleDirection(direction) || 'ASC')
 
         // TODO: permitir ordenamento múltiplo (segurando shift ao ordenar?)
