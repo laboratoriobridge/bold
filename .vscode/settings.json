@@ -4,8 +4,6 @@
     "editor.insertSpaces": true,
     "editor.renderIndentGuides": false,
     "files.insertFinalNewline": true,
-    "tsimporter.emitSemicolon": false,
-    "tsimporter.noStatusBar": true,
     "vsicons.presets.angular": false,
     "typescript.tsdk": "./node_modules/typescript/lib",
     "typescript.useCodeSnippetsOnMethodSuggest": true,

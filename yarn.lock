@@ -800,6 +800,12 @@
   version "16.0.36"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/react/-/react-16.0.36.tgz#ceb5639013bdb92a94147883052e69bb2c22c69b"
 
+"@types/redux-mock-store@0.0.13":
+  version "0.0.13"
+  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/redux-mock-store/-/redux-mock-store-0.0.13.tgz#f7ec160214b854f2d976ca12525997a21512b2ea"
+  dependencies:
+    redux "^3.6.0"
+
 "@types/storybook__addon-actions@3.0.1":
   version "3.0.1"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/@types/storybook__addon-actions/-/storybook__addon-actions-3.0.1.tgz#e76b6cc3e6221d6578962a2ae59c3c33b6762453"

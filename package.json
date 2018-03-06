@@ -44,6 +44,7 @@
     "@types/react-router": "4.0.22",
     "@types/react-router-dom": "4.2.4",
     "@types/react-select": "1.2.0",
+    "@types/redux-mock-store": "0.0.13",
     "@types/storybook__addon-actions": "3.0.1",
     "@types/storybook__addon-knobs": "3.2.1",
     "@types/storybook__addon-links": "3.0.2",
