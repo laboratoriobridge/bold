@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { Icon } from '..'
 import { Theme, withStyles, WithStylesProps } from '../../../styles'
 import { withHint, WithHintProps } from '../Hint'
 import { Icons } from '../Icon/generated/Icons'
+import { Icon } from '../Icon/Icon'
 
 export type Type = 'normal' | 'primary'
 
