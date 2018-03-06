@@ -12,11 +12,6 @@ import { ButtonLink } from './ButtonLink'
 const typeOptions: {[key in Type]: string} = {
     'normal': 'normal',
     'primary': 'primary',
-    'danger': 'danger',
-    'info': 'info',
-    'success': 'success',
-    'warning': 'warning',
-    'link': 'link',
 }
 
 storiesOf('Components', module)

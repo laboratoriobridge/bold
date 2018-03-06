@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import { Button } from '../Button/Button'
-import { Icon } from '../Icon'
 
 import { AlertModalContent } from './AlertModalContent'
 import { Modal } from './Modal'
@@ -45,7 +44,7 @@ export class AlertModal extends React.Component<AlertModalProps, any> {
         return (
             <Modal active={this.props.active}>
                 <div className='alertmodal-card modal-content'>
-                    <Icon icon={this.getIcon()} className='alertmodal-icon' />
+                    {/*<Icon icon={this.getIcon()} className='alertmodal-icon' />*/}
                     {this.props.children}
                 </div>
             </Modal>
@@ -144,7 +143,7 @@ export const AlertModalSuccess: React.SFC<AlertModalSuccessProps> = (props) => {
                 {props.children}
             </AlertModalContent>
 
-            <Button label='OK' type='success' onClick={props.onClose} />
+            <Button label='OK' onClick={props.onClose} />
         </AlertModal>
     )
 }

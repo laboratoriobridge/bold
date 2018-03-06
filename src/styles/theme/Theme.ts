@@ -1,5 +1,5 @@
 export type Color = 'background' | 'black' | 'primary' | 'red' | 'white'
-    | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10'
+    | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10' | 'text'
 
 export const colors: {[key in Color]: string} = {
     'background': 'background',
@@ -16,6 +16,7 @@ export const colors: {[key in Color]: string} = {
     'gray30': 'gray30',
     'gray20': 'gray20',
     'gray10': 'gray10',
+    'text': 'text',
 }
 
 export interface Theme {

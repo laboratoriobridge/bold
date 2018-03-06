@@ -46,8 +46,8 @@ exports[`Checkbox deve conter a classe css "disabled" 1`] = `
 }
 
 .emotion-0:checked + .emotion-1 {
-  background-color: #1e98ff;
-  border-color: #1e98ff;
+  background-color: #056DFF;
+  border-color: #056DFF;
 }
 
 .emotion-0:checked + .emotion-1:after {
@@ -55,7 +55,7 @@ exports[`Checkbox deve conter a classe css "disabled" 1`] = `
 }
 
 .emotion-0:focus + .emotion-1 {
-  border-color: #1e98ff;
+  border-color: #056DFF;
 }
 
 .emotion-0:disabled + .emotion-1 {
@@ -157,8 +157,8 @@ exports[`Checkbox deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:checked + .emotion-1 {
-  background-color: #1e98ff;
-  border-color: #1e98ff;
+  background-color: #056DFF;
+  border-color: #056DFF;
 }
 
 .emotion-0:checked + .emotion-1:after {
@@ -166,7 +166,7 @@ exports[`Checkbox deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:focus + .emotion-1 {
-  border-color: #1e98ff;
+  border-color: #056DFF;
 }
 
 .emotion-0:disabled + .emotion-1 {

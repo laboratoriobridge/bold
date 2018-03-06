@@ -30,7 +30,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0.active {
-  color: #1e98ff;
+  color: #056DFF;
   border-bottom: 2px solid currentColor;
 }
 
@@ -39,7 +39,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-5 a {
-  color: #1e98ff;
+  color: #056DFF;
   border-bottom: 2px solid currentColor;
 }
 

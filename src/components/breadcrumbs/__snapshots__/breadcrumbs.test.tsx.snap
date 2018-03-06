@@ -9,7 +9,7 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  color: #808080;
+  color: #666666;
   margin-right: .25rem;
 }
 
@@ -20,11 +20,11 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
 
 .emotion-1:last-child a {
   pointer-events: none;
-  color: #1e98ff;
+  color: #056DFF;
 }
 
 .emotion-0 {
-  color: #808080;
+  color: #666666;
   text-decoration: none;
   font-weight: bold;
   font-size: 0.75rem;
@@ -34,7 +34,7 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:hover {
-  color: #1e98ff;
+  color: #056DFF;
 }
 
 <ul

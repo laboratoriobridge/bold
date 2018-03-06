@@ -5,7 +5,7 @@ export * from './Paginator/Paginator'
 export * from './Tabs/Tabs'
 
 export * from './Hint'
-export * from './Icon'
+export * from './Icon/Icon'
 export * from './Label'
 export * from './Popover'
 

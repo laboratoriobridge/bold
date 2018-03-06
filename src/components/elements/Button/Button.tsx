@@ -1,10 +1,11 @@
 import * as React from 'react'
 
+import { Icon } from '..'
 import { Theme, withStyles, WithStylesProps } from '../../../styles'
 import { withHint, WithHintProps } from '../Hint'
-import { Icon } from '../Icon'
+import { Icons } from '../Icon/generated/Icons'
 
-export type Type = 'normal' | 'primary' | 'success' | 'danger' | 'warning' | 'info' | 'link'
+export type Type = 'normal' | 'primary'
 
 export type OnClickWithPromise = (event: React.MouseEvent<any>) => any
 
@@ -14,7 +15,7 @@ export interface ButtonProps extends WithHintProps, WithStylesProps {
      */
     className?: string
     disabled?: boolean
-    icon?: string
+    icon?: Icons
     label: string
     loading?: boolean
     name?: string,

@@ -29,8 +29,8 @@ export const defaultTheme: Theme = {
     color: {
         background: '#f2f2f7',
         black: '#000000',
-        primary: '#1e98ff',
-        red: '#f6001c',
+        primary: '#056DFF',
+        red: '#E0001A',
         text: '#4d4d4d',
         white: '#ffffff',
         gray90: shade(0.9, '#000000'),

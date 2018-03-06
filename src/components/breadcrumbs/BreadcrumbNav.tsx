@@ -50,7 +50,7 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
             },
             item: {
                 display: 'inline-block',
-                color: theme.color.gray50,
+                color: theme.color.gray40,
                 marginRight: '.25rem',
 
                 '&:not(:last-child)::after': {
@@ -64,7 +64,7 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
                 },
             },
             link: {
-                color: theme.color.gray50,
+                color: theme.color.gray40,
                 textDecoration: 'none',
                 fontWeight: 'bold',
                 fontSize: '0.75rem',
