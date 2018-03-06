@@ -18,7 +18,6 @@ export * from './finalForm/Field'
 export * from './finalForm/Form'
 export * from './finalForm/SubmitButton'
 
-export * from './ErrorIndicator'
 export * from './FormError'
 export * from './FormField'
 export * from './FormLabel'

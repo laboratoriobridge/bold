@@ -41,7 +41,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 

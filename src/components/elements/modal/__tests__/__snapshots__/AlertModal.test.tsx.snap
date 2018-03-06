@@ -133,7 +133,6 @@ exports[`AlertModal deve renderizar AlertModalSuccess 1`] = `
   <Button
     label="OK"
     onClick={[Function]}
-    type="success"
   />
 </AlertModal>
 `;
@@ -151,7 +150,6 @@ exports[`AlertModal deve renderizar AlertModalSuccess visível 1`] = `
   <Button
     label="OK"
     onClick={[Function]}
-    type="success"
   />
 </AlertModal>
 `;

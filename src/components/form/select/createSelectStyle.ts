@@ -67,6 +67,11 @@ const createSelectStyle = (theme: Theme) => {
                     boxShadow: 'none',
                 },
             },
+            '&.is-disabled': {
+                '.Select-control': {
+                    backgroundColor: theme.color.background,
+                },
+            },
         },
         error: {
             '.Select-control': {

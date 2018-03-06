@@ -38,6 +38,7 @@ export class Table<T> extends React.Component<TableProps<T>> {
                                     {...child.props}
                                 />
                             } else {
+                                /* tslint:disable-next-line */
                                 console.warn('<Table> aceita apenas <TableColumn> como children')
                             }
                         })}

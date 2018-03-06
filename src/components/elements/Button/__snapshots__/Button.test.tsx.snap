@@ -40,7 +40,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -98,7 +98,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -156,7 +156,7 @@ exports[`Button deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -210,7 +210,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -237,8 +237,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         "gray70": "#b3b3b3",
         "gray80": "#cccccc",
         "gray90": "#e6e6e6",
-        "primary": "#1e98ff",
-        "red": "#f6001c",
+        "primary": "#056DFF",
+        "red": "#E0001A",
         "text": "#4d4d4d",
         "white": "#ffffff",
       },
@@ -281,8 +281,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           "gray70": "#b3b3b3",
           "gray80": "#cccccc",
           "gray90": "#e6e6e6",
-          "primary": "#1e98ff",
-          "red": "#f6001c",
+          "primary": "#056DFF",
+          "red": "#E0001A",
           "text": "#4d4d4d",
           "white": "#ffffff",
         },
@@ -331,8 +331,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               "gray70": "#b3b3b3",
               "gray80": "#cccccc",
               "gray90": "#e6e6e6",
-              "primary": "#1e98ff",
-              "red": "#f6001c",
+              "primary": "#056DFF",
+              "red": "#E0001A",
               "text": "#4d4d4d",
               "white": "#ffffff",
             },
@@ -378,8 +378,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 "gray70": "#b3b3b3",
                 "gray80": "#cccccc",
                 "gray90": "#e6e6e6",
-                "primary": "#1e98ff",
-                "red": "#f6001c",
+                "primary": "#056DFF",
+                "red": "#E0001A",
                 "text": "#4d4d4d",
                 "white": "#ffffff",
               },
@@ -425,8 +425,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                   "gray70": "#b3b3b3",
                   "gray80": "#cccccc",
                   "gray90": "#e6e6e6",
-                  "primary": "#1e98ff",
-                  "red": "#f6001c",
+                  "primary": "#056DFF",
+                  "red": "#E0001A",
                   "text": "#4d4d4d",
                   "white": "#ffffff",
                 },
@@ -506,7 +506,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -553,8 +553,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         "gray70": "#b3b3b3",
         "gray80": "#cccccc",
         "gray90": "#e6e6e6",
-        "primary": "#1e98ff",
-        "red": "#f6001c",
+        "primary": "#056DFF",
+        "red": "#E0001A",
         "text": "#4d4d4d",
         "white": "#ffffff",
       },
@@ -597,8 +597,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           "gray70": "#b3b3b3",
           "gray80": "#cccccc",
           "gray90": "#e6e6e6",
-          "primary": "#1e98ff",
-          "red": "#f6001c",
+          "primary": "#056DFF",
+          "red": "#E0001A",
           "text": "#4d4d4d",
           "white": "#ffffff",
         },
@@ -647,8 +647,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               "gray70": "#b3b3b3",
               "gray80": "#cccccc",
               "gray90": "#e6e6e6",
-              "primary": "#1e98ff",
-              "red": "#f6001c",
+              "primary": "#056DFF",
+              "red": "#E0001A",
               "text": "#4d4d4d",
               "white": "#ffffff",
             },
@@ -694,8 +694,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 "gray70": "#b3b3b3",
                 "gray80": "#cccccc",
                 "gray90": "#e6e6e6",
-                "primary": "#1e98ff",
-                "red": "#f6001c",
+                "primary": "#056DFF",
+                "red": "#E0001A",
                 "text": "#4d4d4d",
                 "white": "#ffffff",
               },
@@ -741,8 +741,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                   "gray70": "#b3b3b3",
                   "gray80": "#cccccc",
                   "gray90": "#e6e6e6",
-                  "primary": "#1e98ff",
-                  "red": "#f6001c",
+                  "primary": "#056DFF",
+                  "red": "#E0001A",
                   "text": "#4d4d4d",
                   "white": "#ffffff",
                 },
@@ -822,7 +822,7 @@ exports[`Button deve ter animação de loading 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -896,7 +896,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -923,8 +923,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
         "gray70": "#b3b3b3",
         "gray80": "#cccccc",
         "gray90": "#e6e6e6",
-        "primary": "#1e98ff",
-        "red": "#f6001c",
+        "primary": "#056DFF",
+        "red": "#E0001A",
         "text": "#4d4d4d",
         "white": "#ffffff",
       },
@@ -967,8 +967,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
           "gray70": "#b3b3b3",
           "gray80": "#cccccc",
           "gray90": "#e6e6e6",
-          "primary": "#1e98ff",
-          "red": "#f6001c",
+          "primary": "#056DFF",
+          "red": "#E0001A",
           "text": "#4d4d4d",
           "white": "#ffffff",
         },
@@ -1017,8 +1017,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
               "gray70": "#b3b3b3",
               "gray80": "#cccccc",
               "gray90": "#e6e6e6",
-              "primary": "#1e98ff",
-              "red": "#f6001c",
+              "primary": "#056DFF",
+              "red": "#E0001A",
               "text": "#4d4d4d",
               "white": "#ffffff",
             },
@@ -1064,8 +1064,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
                 "gray70": "#b3b3b3",
                 "gray80": "#cccccc",
                 "gray90": "#e6e6e6",
-                "primary": "#1e98ff",
-                "red": "#f6001c",
+                "primary": "#056DFF",
+                "red": "#E0001A",
                 "text": "#4d4d4d",
                 "white": "#ffffff",
               },
@@ -1111,8 +1111,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
                   "gray70": "#b3b3b3",
                   "gray80": "#cccccc",
                   "gray90": "#e6e6e6",
-                  "primary": "#1e98ff",
-                  "red": "#f6001c",
+                  "primary": "#056DFF",
+                  "red": "#E0001A",
                   "text": "#4d4d4d",
                   "white": "#ffffff",
                 },
@@ -1191,7 +1191,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
 }
 
 .emotion-0:focus {
-  border: 1px solid #1e98ff;
+  border: 1px solid #056DFF;
   outline: none;
 }
 
@@ -1218,8 +1218,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
         "gray70": "#b3b3b3",
         "gray80": "#cccccc",
         "gray90": "#e6e6e6",
-        "primary": "#1e98ff",
-        "red": "#f6001c",
+        "primary": "#056DFF",
+        "red": "#E0001A",
         "text": "#4d4d4d",
         "white": "#ffffff",
       },
@@ -1262,8 +1262,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
           "gray70": "#b3b3b3",
           "gray80": "#cccccc",
           "gray90": "#e6e6e6",
-          "primary": "#1e98ff",
-          "red": "#f6001c",
+          "primary": "#056DFF",
+          "red": "#E0001A",
           "text": "#4d4d4d",
           "white": "#ffffff",
         },
@@ -1312,8 +1312,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
               "gray70": "#b3b3b3",
               "gray80": "#cccccc",
               "gray90": "#e6e6e6",
-              "primary": "#1e98ff",
-              "red": "#f6001c",
+              "primary": "#056DFF",
+              "red": "#E0001A",
               "text": "#4d4d4d",
               "white": "#ffffff",
             },
@@ -1359,8 +1359,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
                 "gray70": "#b3b3b3",
                 "gray80": "#cccccc",
                 "gray90": "#e6e6e6",
-                "primary": "#1e98ff",
-                "red": "#f6001c",
+                "primary": "#056DFF",
+                "red": "#E0001A",
                 "text": "#4d4d4d",
                 "white": "#ffffff",
               },
@@ -1406,8 +1406,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
                   "gray70": "#b3b3b3",
                   "gray80": "#cccccc",
                   "gray90": "#e6e6e6",
-                  "primary": "#1e98ff",
-                  "red": "#f6001c",
+                  "primary": "#056DFF",
+                  "red": "#E0001A",
                   "text": "#4d4d4d",
                   "white": "#ffffff",
                 },

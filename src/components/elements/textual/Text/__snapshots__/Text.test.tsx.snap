@@ -42,7 +42,7 @@ exports[`Text deve renderizar corretamente 4`] = `
 
 exports[`Text deve renderizar corretamente 5`] = `
 .emotion-0 {
-  color: #1e98ff;
+  color: #056DFF;
 }
 
 <span

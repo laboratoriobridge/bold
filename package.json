@@ -10,6 +10,7 @@
     "registry": "http://nexus.bridge.ufsc.br/content/repositories/npm-private/"
   },
   "scripts": {
+    "precommit": "npm run generate-icons && git add ./src/components/elements/Icon/generated && npm test",
     "start": "npm run build && tsc --watch",
     "clean": "shx rm -rf lib",
     "copyfiles": "copyfiles -u 1 ./src/styles/theme/**/fonts/** lib/",
@@ -19,7 +20,11 @@
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "npm run generate-prop-types && build-storybook",
-    "generate-prop-types": "babel-node ./tools/generatePropTypes.js"
+    "generate-prop-types": "babel-node ./tools/generatePropTypes.js",
+    "generate-icons": "npm run clean-icons && npm run generate-svg-icons && npm run generate-icons-index",
+    "clean-icons": "rm -r ./src/components/elements/Icon/generated",
+    "generate-svg-icons": "svgr --no-semi --ids --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
+    "generate-icons-index": "babel-node ./tools/generateIconsIndex.js"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.2.17",
@@ -56,6 +61,7 @@
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.1",
     "final-form": "4.2.0",
+    "husky": "0.14.3",
     "intl": "1.2.5",
     "jest": "22.1.4",
     "jest-cli": "22.1.4",
@@ -79,6 +85,7 @@
     "redux-mock-store": "1.4.0",
     "redux-thunk": "2.2.0",
     "shx": "0.2.2",
+    "svgr": "1.8.1",
     "text-mask-core": "5.0.1",
     "ts-jest": "22.0.1",
     "tslint": "5.8.0",
@@ -102,6 +109,7 @@
     "react-redux": "5.x",
     "react-select": "1.x",
     "react-text-mask": "5.x",
+    "svgr.macro": "1.x",
     "text-mask-core": "5.x",
     "tslint-react": "3.x"
   },

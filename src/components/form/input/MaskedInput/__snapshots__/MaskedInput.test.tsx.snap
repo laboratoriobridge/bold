@@ -37,12 +37,12 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:not(:disabled):focus {
-  border-color: #1e98ff;
+  border-color: #056DFF;
   outline: none;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #1e98ff;
+  border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
