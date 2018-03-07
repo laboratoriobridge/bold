@@ -4,11 +4,6 @@ import { NavLink, NavLinkProps } from 'react-router-dom'
 import { Theme, withStyles, WithStylesProps } from '../../../styles'
 
 const createStyles = (theme: Theme) => {
-    const active = {
-        color: theme.color.primary,
-        borderBottom: '2px solid currentColor',
-    }
-
     return {
         ul: {
             listStyle: 'none',
@@ -31,10 +26,10 @@ const createStyles = (theme: Theme) => {
             lineHeight: '1rem',
             transition: '.2s color',
 
-            '&.active': active,
-        },
-        active: {
-            'a': active,
+            '&.active': {
+                color: theme.color.primary,
+                borderBottom: '2px solid currentColor',
+            },
         },
     }
 }
@@ -49,7 +44,7 @@ export class Tabs extends React.Component<TabsProps> {
         const styles = createStyles(theme)
 
         return (
-            <ul className={css(styles.ul)}>
+            <ul className={css(styles.ul)} role='tablist'>
                 {children}
             </ul>
         )
@@ -71,9 +66,20 @@ export class TabLink extends React.Component<TabLinkProps> {
         const styles = createStyles(theme)
 
         return (
-            <li className={css(styles.li, active && styles.active)}>
-                <NavLink className={css(styles.a)} {...rest}>{children}</NavLink>
+            <li className={css(styles.li)} role='presentation'>
+                <NavLink
+                    className={css(styles.a)}
+                    isActive={this.isActive}
+                    role='tab'
+                    {...rest}
+                >
+                    {children}
+                </NavLink>
             </li>
         )
+    }
+
+    private isActive = (match, location) => {
+        return this.props.active || match
     }
 }

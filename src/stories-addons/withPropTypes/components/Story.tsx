@@ -49,6 +49,7 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
     },
     infoContent: {
         marginBottom: 0,
+        marginTop: 16,
     },
     infoStory: {},
     jsxInfoContent: {

@@ -37,28 +37,33 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   color: #056DFF;
 }
 
-<ul
-  class="emotion-4"
+<nav
+  aria-label="Breadcrumbs"
+  role="navigation"
 >
-  <li
-    class="emotion-1"
+  <ol
+    class="emotion-4"
   >
-    <a
-      class="emotion-0"
-      href="/"
+    <li
+      class="emotion-1"
     >
-      Entry #1
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-  >
-    <a
-      class="emotion-0"
-      href="/second"
+      <a
+        class="emotion-0"
+        href="/"
+      >
+        Entry #1
+      </a>
+    </li>
+    <li
+      class="emotion-1"
     >
-      Entry #2
-    </a>
-  </li>
-</ul>
+      <a
+        class="emotion-0"
+        href="/second"
+      >
+        Entry #2
+      </a>
+    </li>
+  </ol>
+</nav>
 `;
