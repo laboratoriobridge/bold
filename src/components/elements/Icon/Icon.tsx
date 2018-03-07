@@ -9,6 +9,7 @@ export interface IconProps extends WithStylesProps {
     icon: Icons
     color?: Color
     size?: number
+    title?: string
 }
 
 @withStyles
@@ -27,7 +28,11 @@ export class Icon extends React.PureComponent<IconProps> {
             fontSize: this.props.size && this.props.size + 'rem',
         }
 
-        return <SelectedIcon className={this.props.css(styles)} />
+        return (
+            <span title={this.props.title}>
+                <SelectedIcon className={this.props.css(styles)} aria-hidden='true' />
+            </span>
+        )
     }
 
 }

@@ -1,12 +1,15 @@
 import 'react-select/dist/react-select.css'
 
-import { Theme } from '../../../styles'
+import { focusBoxShadow, focusErrorBoxShadow, Theme } from '../../../styles'
 
 const createSelectStyle = (theme: Theme) => {
     const height = 'calc(2rem - 2px)'
     return {
         default: {
             fontSize: '0.75rem',
+            borderRadius: theme.baseRadius,
+            transition: 'box-shadow .2s',
+            transform: 'translate3d(0,0,0)',
             '.Select-control': {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,
@@ -53,17 +56,17 @@ const createSelectStyle = (theme: Theme) => {
                 },
             },
             '&.is-focused': {
-                '.Select-control': {
-                    borderColor: theme.color.primary,
-                },
+                boxShadow: focusBoxShadow(theme),
                 '.Select-menu-outer': {
-                    borderColor: theme.color.primary,
-                    borderRadius: theme.baseRadius,
+                    borderColor: theme.color.gray80,
+                    borderBottomLeftRadius: theme.baseRadius,
+                    borderBottomRightRadius: theme.baseRadius,
                     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
                 },
             },
             '&.is-focused:not(.is-opened)': {
                 '.Select-control': {
+                    borderColor: theme.color.gray80,
                     boxShadow: 'none',
                 },
             },
@@ -76,6 +79,9 @@ const createSelectStyle = (theme: Theme) => {
         error: {
             '.Select-control': {
                 borderColor: theme.color.red,
+            },
+            '&.is-focused': {
+                boxShadow: focusErrorBoxShadow(theme),
             },
         },
     }

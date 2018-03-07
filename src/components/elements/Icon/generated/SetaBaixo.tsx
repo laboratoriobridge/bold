@@ -2,14 +2,13 @@
 import * as React from "react"
 import GeneratedIconProps from "../GeneratedIconProps"
 
-const Check = (props: GeneratedIconProps) => (
+const SetaBaixo = (props: GeneratedIconProps) => (
   <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
     <path
-      d="M10.71 16.21l7-7-1.42-1.42-5.59 5.6-2.99-3-1.42 1.42"
-      id="Layer_23"
-      data-name="Layer 23"
+      d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
+      id="Seta-baixo"
     />
   </svg>
 )
 
-export default Check
+export default SetaBaixo

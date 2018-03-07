@@ -20,7 +20,7 @@ export default function initializeGlobals(theme: Theme) {
         '*, *:before, *:after': {
             boxSizing: 'inherit',
         },
-        'button, input, optgroup, select, textarea': {
+        'div, button, input, optgroup, select, textarea': {
             lineHeight: 1,
         },
         hr: {

@@ -16,7 +16,7 @@ storiesOf('Components', module)
     .add('Icon', () => (
         <>
             {Object.keys(IconMap).map((key: any) =>
-                <Icon key={key} icon={key} color={select('color', colors, 'text')} />)
+                <Icon key={key} icon={key} color={select('color', colors, 'text')} title={key} />)
             }
         </>
     ))

@@ -30,7 +30,7 @@ storiesOf('Components', module)
         <Button
             disabled={boolean('disabled', false)}
             type={select('type', typeOptions, 'normal')}
-            label={text('label', 'BUTTON')}
+            label={text('label', 'Button')}
             loading={boolean('loading', false)}
         />
     ))

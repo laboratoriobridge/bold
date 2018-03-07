@@ -29,15 +29,14 @@ filewalker(path.join(__dirname, '../src/components/elements/Icon/generated'), (e
 
     writeStream.write('export type Icons =\n')
     components.forEach(component =>
-        writeStream.write(`    | '${component.substring(0, 1).toLowerCase()
-            + component.substring(1).toLowerCase()}' \n`))
+        writeStream.write(`    | '${component.substring(0, 1).toLowerCase() + component.substring(1)}' \n`))
 
     writeStream.write('\n')
 
     writeStream.write('export const IconMap = {\n')
 
     components.forEach(component => writeStream.write(`    '${component.substring(0, 1).toLowerCase()
-        + component.substring(1).toLowerCase()}': ${component},\n`))
+        + component.substring(1)}': ${component},\n`))
 
     writeStream.write('}')
     writeStream.write('\n')
