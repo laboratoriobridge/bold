@@ -77,13 +77,15 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
             },
         }
         return (
-            <ul className={css(styles.list)}>
-                {entries.map(({ title, to }, idx) => (
-                    <li key={idx} className={css(styles.item)}>
-                        <Link className={css(styles.link)} to={to}>{title}</Link>
-                    </li>
-                ))}
-            </ul>
+            <nav role='navigation' aria-label='Breadcrumbs'>
+                <ol className={css(styles.list)}>
+                    {entries.map(({ title, to }, idx) => (
+                        <li key={idx} className={css(styles.item)}>
+                            <Link className={css(styles.link)} to={to}>{title}</Link>
+                        </li>
+                    ))}
+                </ol>
+            </nav>
         )
     }
 

@@ -34,47 +34,45 @@ exports[`deve renderizar corretamente 1`] = `
   border-bottom: 2px solid currentColor;
 }
 
-.emotion-5 {
-  display: inline-block;
-}
-
-.emotion-5 a {
-  color: #056DFF;
-  border-bottom: 2px solid currentColor;
-}
-
 <ul
   class="emotion-6"
+  role="tablist"
 >
   <li
     class="emotion-1"
+    role="presentation"
   >
     <a
       aria-current="true"
       class="emotion-0 active"
       href="/"
+      role="tab"
     >
       Home
     </a>
   </li>
   <li
     class="emotion-1"
+    role="presentation"
   >
     <a
       aria-current="false"
       class="emotion-0"
       href="/test"
+      role="tab"
     >
       Test
     </a>
   </li>
   <li
-    class="emotion-5"
+    class="emotion-1"
+    role="presentation"
   >
     <a
-      aria-current="false"
-      class="emotion-0"
+      aria-current="true"
+      class="emotion-0 active"
       href="/active"
+      role="tab"
     >
       Active
     </a>
