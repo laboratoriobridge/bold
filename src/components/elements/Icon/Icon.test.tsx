@@ -7,7 +7,7 @@ import { Icon } from './Icon'
 
 it('deve renderizar corretamente', () => {
     const wrapper = render(withTheme(
-        <Icon icon='editar' />
+        <Icon icon='lapis' />
     ))
     expect(wrapper).toMatchSnapshot()
 })

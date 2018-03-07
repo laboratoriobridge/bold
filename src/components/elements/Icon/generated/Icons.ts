@@ -1,107 +1,107 @@
 /* tslint:disable */
 // @ts-ignore
 import GeneratedIconProps from '../GeneratedIconProps'
-import Alerta from './Alerta'
-import Alerta1 from './Alerta1'
-import AlertaCirculo from './AlertaCirculo'
+import Ajuste from './Ajuste'
 import Calendario from './Calendario'
+import Check from './Check'
+import CheckCirculo from './CheckCirculo'
 import Codigo from './Codigo'
-import Configuracoes from './Configuracoes'
-import Copiar from './Copiar'
+import Copia from './Copia'
+import Dots from './Dots'
 import Download from './Download'
-import Editar from './Editar'
-import Erro from './Erro'
-import Excluir from './Excluir'
-import Fechar from './Fechar'
+import Engrenagem from './Engrenagem'
+import Exclamacao from './Exclamacao'
+import ExclamacaoCirculo from './ExclamacaoCirculo'
+import ExclamacaoTriangulo from './ExclamacaoTriangulo'
 import Filtro from './Filtro'
-import FiltroAjuste from './FiltroAjuste'
 import Informacao from './Informacao'
 import InformacaoCirculo from './InformacaoCirculo'
+import Lapis from './Lapis'
+import Lixeira from './Lixeira'
 import Localizacao from './Localizacao'
 import LocalizacaoPreenchido from './LocalizacaoPreenchido'
+import Lupa from './Lupa'
 import Mapa from './Mapa'
-import MenuDots from './MenuDots'
-import MenuHamburguer from './MenuHamburguer'
-import Pesquisar from './Pesquisar'
+import Menu from './Menu'
 import Pessoa from './Pessoa'
-import PularDireita from './PularDireita'
-import PularEsquerda from './PularEsquerda'
+import PredioSaude from './PredioSaude'
 import SetaBaixo from './SetaBaixo'
 import SetaCima from './SetaCima'
 import SetaDireita from './SetaDireita'
 import SetaEsquerda from './SetaEsquerda'
-import Sucesso from './Sucesso'
-import SucessoCirculo from './SucessoCirculo'
-import UnidadeDeSaude from './UnidadeDeSaude'
+import SetasDireita from './SetasDireita'
+import SetasEsquerda from './SetasEsquerda'
+import Sino from './Sino'
 import Upload from './Upload'
+import X from './X'
 
 export type Icons =
-    | 'alerta' 
-    | 'alerta1' 
-    | 'alertaCirculo' 
+    | 'ajuste' 
     | 'calendario' 
+    | 'check' 
+    | 'checkCirculo' 
     | 'codigo' 
-    | 'configuracoes' 
-    | 'copiar' 
+    | 'copia' 
+    | 'dots' 
     | 'download' 
-    | 'editar' 
-    | 'erro' 
-    | 'excluir' 
-    | 'fechar' 
+    | 'engrenagem' 
+    | 'exclamacao' 
+    | 'exclamacaoCirculo' 
+    | 'exclamacaoTriangulo' 
     | 'filtro' 
-    | 'filtroAjuste' 
     | 'informacao' 
     | 'informacaoCirculo' 
+    | 'lapis' 
+    | 'lixeira' 
     | 'localizacao' 
     | 'localizacaoPreenchido' 
+    | 'lupa' 
     | 'mapa' 
-    | 'menuDots' 
-    | 'menuHamburguer' 
-    | 'pesquisar' 
+    | 'menu' 
     | 'pessoa' 
-    | 'pularDireita' 
-    | 'pularEsquerda' 
+    | 'predioSaude' 
     | 'setaBaixo' 
     | 'setaCima' 
     | 'setaDireita' 
     | 'setaEsquerda' 
-    | 'sucesso' 
-    | 'sucessoCirculo' 
-    | 'unidadeDeSaude' 
+    | 'setasDireita' 
+    | 'setasEsquerda' 
+    | 'sino' 
     | 'upload' 
+    | 'x' 
 
 export const IconMap = {
-    'alerta': Alerta,
-    'alerta1': Alerta1,
-    'alertaCirculo': AlertaCirculo,
+    'ajuste': Ajuste,
     'calendario': Calendario,
+    'check': Check,
+    'checkCirculo': CheckCirculo,
     'codigo': Codigo,
-    'configuracoes': Configuracoes,
-    'copiar': Copiar,
+    'copia': Copia,
+    'dots': Dots,
     'download': Download,
-    'editar': Editar,
-    'erro': Erro,
-    'excluir': Excluir,
-    'fechar': Fechar,
+    'engrenagem': Engrenagem,
+    'exclamacao': Exclamacao,
+    'exclamacaoCirculo': ExclamacaoCirculo,
+    'exclamacaoTriangulo': ExclamacaoTriangulo,
     'filtro': Filtro,
-    'filtroAjuste': FiltroAjuste,
     'informacao': Informacao,
     'informacaoCirculo': InformacaoCirculo,
+    'lapis': Lapis,
+    'lixeira': Lixeira,
     'localizacao': Localizacao,
     'localizacaoPreenchido': LocalizacaoPreenchido,
+    'lupa': Lupa,
     'mapa': Mapa,
-    'menuDots': MenuDots,
-    'menuHamburguer': MenuHamburguer,
-    'pesquisar': Pesquisar,
+    'menu': Menu,
     'pessoa': Pessoa,
-    'pularDireita': PularDireita,
-    'pularEsquerda': PularEsquerda,
+    'predioSaude': PredioSaude,
     'setaBaixo': SetaBaixo,
     'setaCima': SetaCima,
     'setaDireita': SetaDireita,
     'setaEsquerda': SetaEsquerda,
-    'sucesso': Sucesso,
-    'sucessoCirculo': SucessoCirculo,
-    'unidadeDeSaude': UnidadeDeSaude,
+    'setasDireita': SetasDireita,
+    'setasEsquerda': SetasEsquerda,
+    'sino': Sino,
     'upload': Upload,
+    'x': X,
 }
