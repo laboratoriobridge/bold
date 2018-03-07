@@ -23,7 +23,7 @@ interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
     }
 }
 
-export class Field extends React.PureComponent<FieldProps> {
+export class Field extends React.Component<FieldProps> {
 
     static defaultProps: Partial<FieldProps> = {
         hasWrapper: true,
