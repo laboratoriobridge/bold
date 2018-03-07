@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, focusErrorBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export type InputStatus = '' | 'error'
@@ -20,6 +20,8 @@ export const createStyles = (theme) => ({
         lineHeight: '1rem',
         padding: 'calc(0.5rem - 1px) 1rem',
         width: '100%',
+        transition: 'all .2s',
+        transform: 'translate3d(0,0,0)',
         '::placeholder': {
             color: theme.color.gray80,
         },
@@ -30,8 +32,8 @@ export const createStyles = (theme) => ({
             borderColor: theme.color.gray60,
         },
         ':not(:disabled):focus': {
-            borderColor: theme.color.primary,
             outline: 'none',
+            boxShadow: focusBoxShadow(theme),
         },
         ':not(:disabled):active': {
             borderColor: theme.color.primary,
@@ -40,6 +42,10 @@ export const createStyles = (theme) => ({
     },
     error: {
         border: 'solid 1px ' + theme.color.red,
+        ':not(:disabled):focus': {
+            border: 'solid 1px ' + theme.color.gray80,
+            boxShadow: focusErrorBoxShadow(theme),
+        },
     },
 })
 

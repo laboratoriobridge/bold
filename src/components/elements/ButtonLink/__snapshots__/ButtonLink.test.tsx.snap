@@ -5,7 +5,7 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
-  color: #808080;
+  color: #666666;
   cursor: pointer;
   display: inline-block;
   font-family: "Noto Sans",sans-serif;
@@ -14,26 +14,28 @@ exports[`deve renderizar corretamente 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   padding: 1rem 2.5rem;
-  text-transform: uppercase;
   -webkit-transition: all .2s;
   transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
   text-decoration: none;
 }
 
 .emotion-0 span {
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition: color .2s;
+  transition: color .2s;
 }
 
 .emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,.1);
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:disabled {
@@ -41,8 +43,12 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:focus {
-  border: 1px solid #056DFF;
   outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:hover {
+  background-color: #ebebeb;
 }
 
 <a

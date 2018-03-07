@@ -1,12 +1,14 @@
 import * as React from 'react'
+
 import propsTypes from '../../../propTypes'
+
 import PropVal from './PropVal'
 
 const stylesheet = {
     propTable: {
         marginLeft: -10,
         borderSpacing: '10px 5px',
-        borderCollapse: 'separate'
+        borderCollapse: 'separate',
     },
 }
 

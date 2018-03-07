@@ -1,8 +1,11 @@
 import * as React from 'react'
+
 import Props from './Props'
 
 const stylesheet = {
-    containerStyle: {},
+    containerStyle: {
+        lineHeight: 1.45,
+    },
     tagStyle: {
         color: '#777',
     },

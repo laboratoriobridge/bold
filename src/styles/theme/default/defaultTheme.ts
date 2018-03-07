@@ -54,3 +54,9 @@ export const defaultTheme: Theme = {
         }),
     },
 }
+
+export const focusBoxShadow = (theme: Theme) =>
+    '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color.primary
+
+export const focusErrorBoxShadow = (theme: Theme) =>
+    '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color.red

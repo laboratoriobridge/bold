@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface CheckboxProps extends PublicInputProps, WithStylesProps {
@@ -21,6 +21,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             height: 16,
             position: 'relative',
             transition: 'all .2s ease',
+            transform: 'translate3d(0,0,0)',
             verticalAlign: 'middle',
             width: 16,
             ':after': {
@@ -55,7 +56,8 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         })
 
         const inputClass = css({
-            display: 'none',
+            opacity: 0,
+            marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
                 borderColor: theme.color.gray60,
             },
@@ -67,7 +69,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 },
             },
             [`&:focus + .${checkClasses}`]: {
-                borderColor: theme.color.primary,
+                boxShadow: focusBoxShadow(theme),
             },
             [`&:disabled + .${checkClasses}`]: {
                 backgroundColor: theme.color.background,

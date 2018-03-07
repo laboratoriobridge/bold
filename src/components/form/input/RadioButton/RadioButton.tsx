@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
@@ -21,6 +21,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
             height: 16,
             position: 'relative',
             transition: 'all .2s ease',
+            transform: 'translate3d(0,0,0)',
             verticalAlign: 'middle',
             width: 16,
             ':after': {
@@ -52,7 +53,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         })
 
         const inputClasses = css({
-            display: 'none',
+            opacity: 0,
+            marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
                 borderColor: theme.color.gray50,
             },
@@ -64,7 +66,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 },
             },
             [`&:focus + .${checkClasses}`]: {
-                borderColor: theme.color.primary,
+                boxShadow: focusBoxShadow(theme),
             },
             [`&:disabled + .${checkClasses}`]: {
                 backgroundColor: theme.color.background,

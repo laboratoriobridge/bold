@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { focusBoxShadow, shade, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { withHint, WithHintProps } from '../Hint'
 import { Icons } from '../Icon/generated/Icons'
 import { Icon } from '../Icon/Icon'
@@ -35,37 +35,43 @@ export const createStyles = (theme: Theme) => ({
     button: {
         backgroundColor: theme.color.white,
         border: '1px solid ' + theme.color.gray70,
-        borderRadius: 4,
-        color: theme.color.gray50,
+        borderRadius: theme.baseRadius + 2,
+        color: theme.color.gray40,
         cursor: 'pointer',
         display: 'inline-block',
         fontFamily: theme.font.textFamily,
         position: 'relative',
         userSelect: 'none',
-        fontSize: '0.75rem',
+        fontSize: '0.875rem',
         fontWeight: 'bold',
         letterSpacing: 1,
         padding: '1rem 2.5rem',
-        textTransform: 'uppercase',
         transition: 'all .2s',
+        transform: 'translate3d(0,0,0)',
         'span': {
-            transition: 'all .2s',
+            transition: 'color .2s',
         },
         ':not(:disabled):active': {
-            boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, .1)',
+            boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
         },
         ':disabled': {
             opacity: 0.5,
         },
         ':focus': {
-            border: '1px solid ' + theme.color.primary,
             outline: 'none',
+            boxShadow: focusBoxShadow(theme),
+        },
+        ':hover': {
+            backgroundColor: shade(-0.08, theme.color.white),
         },
     },
     primary: {
         backgroundColor: theme.color.primary,
         border: '1px solid ' + theme.color.primary,
         color: theme.color.white,
+        ':hover': {
+            backgroundColor: shade(-0.08, theme.color.primary),
+        },
     },
     loading: {
         pointerEvents: 'none',

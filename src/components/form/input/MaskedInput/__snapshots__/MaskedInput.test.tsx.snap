@@ -10,6 +10,11 @@ exports[`deve renderizar corretamente 1`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 1rem;
   width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -37,8 +42,8 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0:not(:disabled):focus {
-  border-color: #056DFF;
   outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):active {
