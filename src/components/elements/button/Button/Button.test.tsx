@@ -1,7 +1,7 @@
 import { mount, render, shallow } from 'enzyme'
 import * as React from 'react'
 
-import { withTheme } from '../../../test'
+import { withTheme } from '../../../../test'
 
 import { Button } from './Button'
 

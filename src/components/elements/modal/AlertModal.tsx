@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Button } from '../Button/Button'
+import { Button } from '../button/Button/Button'
 
 import { AlertModalContent } from './AlertModalContent'
 import { Modal } from './Modal'

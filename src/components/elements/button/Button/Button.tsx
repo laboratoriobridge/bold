@@ -1,29 +1,16 @@
 import * as React from 'react'
 
-import { focusBoxShadow, shade, Theme, withStyles, WithStylesProps } from '../../../styles'
-import { withHint, WithHintProps } from '../Hint'
-import { Icons } from '../Icon/generated/Icons'
-import { Icon } from '../Icon/Icon'
+import { focusBoxShadow, shade, Theme, withStyles, WithStylesProps } from '../../../../styles'
+import { Icons } from '../../Icon/generated/Icons'
+import { Icon } from '../../Icon/Icon'
+import { BaseButton, BaseButtonProps } from '../BaseButton'
 
 export type Type = 'normal' | 'primary'
 
-export type OnClickWithPromise = (event: React.MouseEvent<any>) => any
-
-export interface ButtonProps extends WithHintProps, WithStylesProps {
-    /**
-     * css className
-     */
-    className?: string
-    disabled?: boolean
+export interface ButtonProps extends BaseButtonProps, WithStylesProps {
     icon?: Icons
     label: string
     loading?: boolean
-    name?: string,
-    onClick?: React.MouseEventHandler<any> | OnClickWithPromise
-    onMouseEnter?: React.MouseEventHandler<any>
-    onMouseLeave?: React.MouseEventHandler<any>
-    tabIndex?: number
-    title?: string
     type?: Type
 }
 
@@ -96,14 +83,11 @@ export const createStyles = (theme: Theme) => ({
 })
 
 @withStyles
-@withHint
 export class Button extends React.Component<ButtonProps, ButtonState> {
 
     static defaultProps: Partial<ButtonProps> = {
         type: 'normal',
     }
-
-    private timeout: number
 
     constructor(props, context?) {
         super(props, context)
@@ -113,15 +97,9 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         }
     }
 
-    componentWillUnmount() {
-        clearTimeout(this.timeout)
-        this.timeout = -1
-    }
-
     render() {
         const {
             label,
-            className,
             css,
             icon,
             loading,
@@ -139,53 +117,21 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
         )
 
         return (
-            <button
+            <BaseButton
                 {...rest}
                 className={classes}
-                onClick={this.onClick}
-                onKeyPress={this.handleOnKeyPress}
-                type='button'
+                onLoadingChange={this.onLoadingChange}
             >
                 <span>
                     {icon && <Icon icon={icon} />}
                     {label}
                 </span>
-            </button>
+            </BaseButton>
         )
     }
 
-    private handleOnKeyPress = (event) => {
-        event.preventDefault()
-        if (!event) { event = window.event } // cross-browser shenanigans
-        if (event.charCode === 32 || event.charCode === 13 && this.props.onClick) { // this is the spacebar
-            this.onClick(event)
-        }
-        return true // treat all other keys normally;
-    }
-
-    private onClick = (event: React.MouseEvent<any>) => {
-        if (this.props.onClick) {
-
-            const promise = this.props.onClick(event)
-            if (promise && promise.then) {
-                this.setState({ loading: true })
-                promise
-                    .then(() => this.stopLoading())
-                    .catch((error) => {
-                        this.stopLoading()
-                        throw new Error(error)
-                    })
-            }
-        }
-    }
-
-    private stopLoading() {
-        if (!this.timeout) {
-            this.timeout = window.setTimeout(() => {
-                this.setState({ loading: false })
-                this.timeout = null
-            }, 10)
-        }
+    private onLoadingChange = (loading: boolean) => {
+        this.setState({ loading })
     }
 
 }

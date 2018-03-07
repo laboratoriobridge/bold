@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
 
-import { withPropTypes } from '../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../stories-addons/withTheme'
+import { withPropTypes } from '../../../../stories-addons/withPropTypes'
+import { withTheme } from '../../../../stories-addons/withTheme'
 import { Type } from '../Button/Button'
 
 import { ButtonLink } from './ButtonLink'

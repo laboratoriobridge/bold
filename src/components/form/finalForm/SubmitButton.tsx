@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { FormSpy, FormSpyRenderProps } from 'react-final-form'
 
-import { Button } from '../../elements/Button/Button'
+import { Button } from '../../elements/button/Button/Button'
 
 export interface SubmitButtonProps {
     label: string

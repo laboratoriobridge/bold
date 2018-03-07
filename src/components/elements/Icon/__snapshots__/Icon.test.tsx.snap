@@ -1,12 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve renderizar corretamente 1`] = `
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-0 {
   fill: #4d4d4d;
   font-size: 1.5rem;
 }
 
-<span>
+<span
+  class="emotion-1"
+>
   <svg
     aria-hidden="true"
     class="emotion-0"

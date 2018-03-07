@@ -24,13 +24,18 @@ export class Icon extends React.PureComponent<IconProps> {
         const SelectedIcon = IconMap[this.props.icon]
 
         const styles = {
-            fill: this.props.theme.color[this.props.color],
-            fontSize: this.props.size && this.props.size + 'rem',
+            icon: {
+                fill: this.props.theme.color[this.props.color],
+                fontSize: this.props.size && this.props.size + 'rem',
+            },
+            span: {
+                display: 'inline-flex',
+            },
         }
 
         return (
-            <span title={this.props.title}>
-                <SelectedIcon className={this.props.css(styles)} aria-hidden='true' />
+            <span title={this.props.title} className={this.props.css(styles.span)}>
+                <SelectedIcon className={this.props.css(styles.icon)} aria-hidden='true' />
             </span>
         )
     }
