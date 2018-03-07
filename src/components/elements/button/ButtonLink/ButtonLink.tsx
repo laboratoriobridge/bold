@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { withStyles, WithStylesProps } from '../../../../styles'
 import { createStyles, Type } from '../Button/Button'
 
 export interface ButtonLinkProps extends WithStylesProps, Pick<LinkProps, 'to' | 'replace'> {

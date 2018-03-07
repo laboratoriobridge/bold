@@ -2,7 +2,7 @@ import { mount, render, shallow } from 'enzyme'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
 
-import { withTheme } from '../../../test'
+import { withTheme } from '../../../../test'
 
 import { ButtonLink } from './ButtonLink'
 

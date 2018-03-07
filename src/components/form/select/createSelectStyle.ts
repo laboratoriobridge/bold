@@ -1,6 +1,6 @@
 import 'react-select/dist/react-select.css'
 
-import { focusBoxShadow, focusErrorBoxShadow, Theme } from '../../../styles'
+import { focusBoxShadow, Theme } from '../../../styles'
 
 const createSelectStyle = (theme: Theme) => {
     const height = 'calc(2rem - 2px)'
@@ -81,7 +81,7 @@ const createSelectStyle = (theme: Theme) => {
                 borderColor: theme.color.red,
             },
             '&.is-focused': {
-                boxShadow: focusErrorBoxShadow(theme),
+                boxShadow: focusBoxShadow(theme, 'red'),
             },
         },
     }

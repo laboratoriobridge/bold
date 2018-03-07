@@ -422,66 +422,30 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               },
             }
           }
+          type="normal"
         >
-          <Button
-            css={[Function]}
-            label="Botão"
+          <BaseButton
+            className="emotion-0"
             onClick={[Function]}
-            theme={
-              Object {
-                "animation": Object {
-                  "spinAround": "animation-1scjtrl",
-                },
-                "baseRadius": 2,
-                "baseSize": 16,
-                "breakpoint": Object {
-                  "small": "@media (max-width: 1280px)",
-                },
-                "color": Object {
-                  "background": "#f2f2f7",
-                  "black": "#000000",
-                  "gray10": "#1a1a1a",
-                  "gray20": "#333333",
-                  "gray30": "#4d4d4d",
-                  "gray40": "#666666",
-                  "gray50": "#808080",
-                  "gray60": "#999999",
-                  "gray70": "#b3b3b3",
-                  "gray80": "#cccccc",
-                  "gray90": "#e6e6e6",
-                  "primary": "#056DFF",
-                  "red": "#E0001A",
-                  "text": "#4d4d4d",
-                  "white": "#ffffff",
-                },
-                "font": Object {
-                  "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": "0.75rem",
-                  "titleFamily": "\\"Noto Sans\\", sans-serif",
-                },
-                "global": Object {
-                  "@font-face": Object {
-                    "fontFamily": "\\"Noto Sans\\"",
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "src": "url(test-file-stub) format(\\"truetype\\")",
-                  },
-                },
-              }
-            }
-            type="normal"
+            onLoadingChange={[Function]}
           >
-            <button
+            <BaseButton
               className="emotion-0"
               onClick={[Function]}
-              onKeyPress={[Function]}
-              type="button"
+              onLoadingChange={[Function]}
             >
-              <span>
-                Botão
-              </span>
-            </button>
-          </Button>
+              <button
+                className="emotion-0"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                type="button"
+              >
+                <span>
+                  Botão
+                </span>
+              </button>
+            </BaseButton>
+          </BaseButton>
         </Button>
       </WithStyles>
     </Button>
@@ -744,66 +708,30 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
               },
             }
           }
+          type="normal"
         >
-          <Button
-            css={[Function]}
-            label="Botão"
+          <BaseButton
+            className="emotion-0"
             onClick={[Function]}
-            theme={
-              Object {
-                "animation": Object {
-                  "spinAround": "animation-1scjtrl",
-                },
-                "baseRadius": 2,
-                "baseSize": 16,
-                "breakpoint": Object {
-                  "small": "@media (max-width: 1280px)",
-                },
-                "color": Object {
-                  "background": "#f2f2f7",
-                  "black": "#000000",
-                  "gray10": "#1a1a1a",
-                  "gray20": "#333333",
-                  "gray30": "#4d4d4d",
-                  "gray40": "#666666",
-                  "gray50": "#808080",
-                  "gray60": "#999999",
-                  "gray70": "#b3b3b3",
-                  "gray80": "#cccccc",
-                  "gray90": "#e6e6e6",
-                  "primary": "#056DFF",
-                  "red": "#E0001A",
-                  "text": "#4d4d4d",
-                  "white": "#ffffff",
-                },
-                "font": Object {
-                  "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": "0.75rem",
-                  "titleFamily": "\\"Noto Sans\\", sans-serif",
-                },
-                "global": Object {
-                  "@font-face": Object {
-                    "fontFamily": "\\"Noto Sans\\"",
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "src": "url(test-file-stub) format(\\"truetype\\")",
-                  },
-                },
-              }
-            }
-            type="normal"
+            onLoadingChange={[Function]}
           >
-            <button
+            <BaseButton
               className="emotion-0"
               onClick={[Function]}
-              onKeyPress={[Function]}
-              type="button"
+              onLoadingChange={[Function]}
             >
-              <span>
-                Botão
-              </span>
-            </button>
-          </Button>
+              <button
+                className="emotion-0"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                type="button"
+              >
+                <span>
+                  Botão
+                </span>
+              </button>
+            </BaseButton>
+          </BaseButton>
         </Button>
       </WithStyles>
     </Button>
@@ -1126,66 +1054,30 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
               },
             }
           }
+          type="normal"
         >
-          <Button
-            css={[Function]}
-            label="Botão"
+          <BaseButton
+            className="emotion-0"
             onClick={[Function]}
-            theme={
-              Object {
-                "animation": Object {
-                  "spinAround": "animation-1scjtrl",
-                },
-                "baseRadius": 2,
-                "baseSize": 16,
-                "breakpoint": Object {
-                  "small": "@media (max-width: 1280px)",
-                },
-                "color": Object {
-                  "background": "#f2f2f7",
-                  "black": "#000000",
-                  "gray10": "#1a1a1a",
-                  "gray20": "#333333",
-                  "gray30": "#4d4d4d",
-                  "gray40": "#666666",
-                  "gray50": "#808080",
-                  "gray60": "#999999",
-                  "gray70": "#b3b3b3",
-                  "gray80": "#cccccc",
-                  "gray90": "#e6e6e6",
-                  "primary": "#056DFF",
-                  "red": "#E0001A",
-                  "text": "#4d4d4d",
-                  "white": "#ffffff",
-                },
-                "font": Object {
-                  "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": "0.75rem",
-                  "titleFamily": "\\"Noto Sans\\", sans-serif",
-                },
-                "global": Object {
-                  "@font-face": Object {
-                    "fontFamily": "\\"Noto Sans\\"",
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "src": "url(test-file-stub) format(\\"truetype\\")",
-                  },
-                },
-              }
-            }
-            type="normal"
+            onLoadingChange={[Function]}
           >
-            <button
+            <BaseButton
               className="emotion-0"
               onClick={[Function]}
-              onKeyPress={[Function]}
-              type="button"
+              onLoadingChange={[Function]}
             >
-              <span>
-                Botão
-              </span>
-            </button>
-          </Button>
+              <button
+                className="emotion-0"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                type="button"
+              >
+                <span>
+                  Botão
+                </span>
+              </button>
+            </BaseButton>
+          </BaseButton>
         </Button>
       </WithStyles>
     </Button>
@@ -1427,66 +1319,30 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
               },
             }
           }
+          type="normal"
         >
-          <Button
-            css={[Function]}
-            label="Botão"
+          <BaseButton
+            className="emotion-0"
             onClick={[Function]}
-            theme={
-              Object {
-                "animation": Object {
-                  "spinAround": "animation-1scjtrl",
-                },
-                "baseRadius": 2,
-                "baseSize": 16,
-                "breakpoint": Object {
-                  "small": "@media (max-width: 1280px)",
-                },
-                "color": Object {
-                  "background": "#f2f2f7",
-                  "black": "#000000",
-                  "gray10": "#1a1a1a",
-                  "gray20": "#333333",
-                  "gray30": "#4d4d4d",
-                  "gray40": "#666666",
-                  "gray50": "#808080",
-                  "gray60": "#999999",
-                  "gray70": "#b3b3b3",
-                  "gray80": "#cccccc",
-                  "gray90": "#e6e6e6",
-                  "primary": "#056DFF",
-                  "red": "#E0001A",
-                  "text": "#4d4d4d",
-                  "white": "#ffffff",
-                },
-                "font": Object {
-                  "textFamily": "\\"Noto Sans\\", sans-serif",
-                  "textSize": "0.75rem",
-                  "titleFamily": "\\"Noto Sans\\", sans-serif",
-                },
-                "global": Object {
-                  "@font-face": Object {
-                    "fontFamily": "\\"Noto Sans\\"",
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "src": "url(test-file-stub) format(\\"truetype\\")",
-                  },
-                },
-              }
-            }
-            type="normal"
+            onLoadingChange={[Function]}
           >
-            <button
+            <BaseButton
               className="emotion-0"
               onClick={[Function]}
-              onKeyPress={[Function]}
-              type="button"
+              onLoadingChange={[Function]}
             >
-              <span>
-                Botão
-              </span>
-            </button>
-          </Button>
+              <button
+                className="emotion-0"
+                onClick={[Function]}
+                onKeyPress={[Function]}
+                type="button"
+              >
+                <span>
+                  Botão
+                </span>
+              </button>
+            </BaseButton>
+          </BaseButton>
         </Button>
       </WithStyles>
     </Button>

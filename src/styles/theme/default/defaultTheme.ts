@@ -1,6 +1,6 @@
 import { keyframes } from 'emotion'
 
-import { Theme } from '../../theme/Theme'
+import { Color, Theme } from '../../theme/Theme'
 import { shade } from '../../utils'
 
 import * as font from './fonts/NotoSans-Regular.ttf'
@@ -55,8 +55,12 @@ export const defaultTheme: Theme = {
     },
 }
 
-export const focusBoxShadow = (theme: Theme) =>
-    '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color.primary
+type FocusBoxShadow = 'single' | 'double'
 
-export const focusErrorBoxShadow = (theme: Theme) =>
-    '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color.red
+export const focusBoxShadow = (theme: Theme, color: Color = 'primary', type: FocusBoxShadow = 'double') => {
+    if (type === 'single') {
+        return '0 0 0 2px ' + theme.color[color]
+    } else {
+        return '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color[color]
+    }
+}

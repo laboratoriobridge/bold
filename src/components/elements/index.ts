@@ -1,5 +1,4 @@
-export * from './Button/Button'
-export * from './ButtonLink/ButtonLink'
+export * from './button'
 export * from './InfoLabel/InfoLabel'
 export * from './Paginator/Paginator'
 export * from './Tabs/Tabs'

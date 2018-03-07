@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { focusBoxShadow, focusErrorBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export type InputStatus = '' | 'error'
@@ -44,7 +44,7 @@ export const createStyles = (theme) => ({
         border: 'solid 1px ' + theme.color.red,
         ':not(:disabled):focus': {
             border: 'solid 1px ' + theme.color.gray80,
-            boxShadow: focusErrorBoxShadow(theme),
+            boxShadow: focusBoxShadow(theme, 'red'),
         },
     },
 })
