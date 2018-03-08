@@ -1,7 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../..'
-import { Color } from '../../../styles'
+import { Color, withStyles, WithStylesProps } from '../../../styles'
 
 import { IconMap, Icons } from './generated/Icons'
 
