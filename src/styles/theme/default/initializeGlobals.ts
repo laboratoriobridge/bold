@@ -21,7 +21,7 @@ export default function initializeGlobals(theme: Theme) {
             boxSizing: 'inherit',
         },
         'div, button, input, optgroup, select, textarea': {
-            lineHeight: 1,
+            lineHeight: 'inherit',
         },
         hr: {
             backgroundColor: theme.color.gray90,

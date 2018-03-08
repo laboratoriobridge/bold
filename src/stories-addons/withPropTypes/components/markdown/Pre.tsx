@@ -7,7 +7,6 @@ interface PreProps {
 export default class Pre extends React.PureComponent<PreProps> {
     render() {
         const style: React.CSSProperties = {
-            fontSize: '.88em',
             fontFamily: 'Menlo, Monaco, "Courier New", monospace',
             backgroundColor: '#fafafa',
             padding: '.5rem',

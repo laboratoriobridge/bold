@@ -110,7 +110,6 @@
     "react-redux": "5.x",
     "react-select": "1.x",
     "react-text-mask": "5.x",
-    "svgr.macro": "1.x",
     "text-mask-core": "5.x",
     "tslint-react": "3.x"
   },
