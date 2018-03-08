@@ -4,7 +4,6 @@ import Props from './Props'
 
 const stylesheet = {
     containerStyle: {
-        lineHeight: 1.45,
     },
     tagStyle: {
         color: '#777',
