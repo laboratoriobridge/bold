@@ -50,7 +50,7 @@ exports[`IconButton deve adicionar um hint custom automaticamente 1`] = `
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -136,7 +136,7 @@ exports[`IconButton deve adicionar um hint string automaticamente 1`] = `
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -222,7 +222,7 @@ exports[`IconButton deve renderizar corretamente 1`] = `
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -304,7 +304,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -559,7 +559,6 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                       }
                     >
                       <Icon
-                        color="text"
                         css={[Function]}
                         icon="lapis"
                         size={1.5}
@@ -653,7 +652,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -971,7 +970,6 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                       }
                     >
                       <Icon
-                        color="text"
                         css={[Function]}
                         icon="lapis"
                         size={1.5}
@@ -1065,7 +1063,7 @@ exports[`IconButton deve ter animação de loading 1`] = `
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -1210,7 +1208,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -1465,7 +1463,6 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                       }
                     >
                       <Icon
-                        color="text"
                         css={[Function]}
                         icon="lapis"
                         size={1.5}
@@ -1600,7 +1597,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
 }
 
 .emotion-0 {
-  fill: #4d4d4d;
+  fill: currentColor;
   font-size: 1.5rem;
 }
 
@@ -1855,7 +1852,6 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                       }
                     >
                       <Icon
-                        color="text"
                         css={[Function]}
                         icon="lapis"
                         size={1.5}

@@ -15,7 +15,6 @@ export interface IconProps extends WithStylesProps {
 export class Icon extends React.PureComponent<IconProps> {
 
     static defaultProps: Partial<IconProps> = {
-        color: 'text',
         size: 1.5,
     }
 
@@ -24,7 +23,7 @@ export class Icon extends React.PureComponent<IconProps> {
 
         const styles = {
             icon: {
-                fill: this.props.theme.color[this.props.color],
+                fill: this.props.color ? this.props.theme.color[this.props.color] : 'currentColor',
                 fontSize: this.props.size && this.props.size + 'rem',
             },
             span: {

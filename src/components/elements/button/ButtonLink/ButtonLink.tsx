@@ -2,7 +2,8 @@ import * as React from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { createStyles, Type } from '../Button/Button'
+import { Type } from '../Button/Button'
+import { createStyles } from '../Button/skins/default'
 
 export interface ButtonLinkProps extends WithStylesProps, Pick<LinkProps, 'to' | 'replace'> {
     label: string

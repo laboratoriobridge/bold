@@ -1,16 +1,21 @@
 import * as React from 'react'
 
-import { focusBoxShadow, shade, Theme, withStyles, WithStylesProps } from '../../../../styles'
+import { Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Icons } from '../../Icon/generated/Icons'
 import { Icon } from '../../Icon/Icon'
 import { BaseButton, BaseButtonProps } from '../BaseButton'
 
+import { skinMap, Skins } from './ButtonSkins'
+
 export type Type = 'normal' | 'primary'
+export type Size = 'medium' | 'small'
 
 export interface ButtonProps extends BaseButtonProps, WithStylesProps {
     icon?: Icons
     label: string
     loading?: boolean
+    skin?: Skins
+    size?: Size
     type?: Type
 }
 
@@ -18,46 +23,29 @@ export interface ButtonState {
     loading: boolean
 }
 
-export const createStyles = (theme: Theme) => ({
+const createBaseStyles = (theme: Theme) => ({
     button: {
-        backgroundColor: theme.color.white,
-        border: '1px solid ' + theme.color.gray70,
-        borderRadius: theme.baseRadius + 2,
-        color: theme.color.gray40,
-        cursor: 'pointer',
-        display: 'inline-block',
+        backfaceVisibility: 'hidden',
+        display: 'inline-flex',
         fontFamily: theme.font.textFamily,
+        lineHeight: '1.5rem',
         position: 'relative',
         userSelect: 'none',
-        fontSize: '0.875rem',
-        fontWeight: 'bold',
-        letterSpacing: 1,
-        padding: '1rem 2.5rem',
         transition: 'all .2s',
-        transform: 'translate3d(0,0,0)',
-        'span': {
-            transition: 'color .2s',
-        },
-        ':not(:disabled):active': {
-            boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
-        },
         ':disabled': {
+            cursor: 'not-allowed',
             opacity: 0.5,
         },
-        ':focus': {
-            outline: 'none',
-            boxShadow: focusBoxShadow(theme),
+        ':not(:disabled)': {
+            cursor: 'pointer',
         },
-        ':hover': {
-            backgroundColor: shade(-0.08, theme.color.white),
-        },
-    },
-    primary: {
-        backgroundColor: theme.color.primary,
-        border: '1px solid ' + theme.color.primary,
-        color: theme.color.white,
-        ':hover': {
-            backgroundColor: shade(-0.08, theme.color.primary),
+        '& > span': {
+            alignItems: 'center',
+            display: 'inline-flex',
+            transition: 'color .2s',
+            '& > :not(:last-child)': {
+                marginRight: '0.5rem',
+            },
         },
     },
     loading: {
@@ -82,11 +70,28 @@ export const createStyles = (theme: Theme) => ({
     },
 })
 
+export const createSizeStyles = (theme: Theme) => ({
+    medium: {
+        fontSize: '0.875rem',
+        fontWeight: 'bold',
+        letterSpacing: 1,
+        padding: 'calc(0.75rem - 1px) 2.5rem',
+    },
+    small: {
+        fontSize: '0.875rem',
+        fontWeight: 'bold',
+        letterSpacing: 1,
+        padding: 'calc(0.25rem - 1px) 1rem',
+    },
+})
+
 @withStyles
 export class Button extends React.Component<ButtonProps, ButtonState> {
 
     static defaultProps: Partial<ButtonProps> = {
         type: 'normal',
+        skin: 'default',
+        size: 'medium',
     }
 
     constructor(props, context?) {
@@ -103,17 +108,24 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             css,
             icon,
             loading,
+            skin,
+            size,
             theme,
             type,
             ...rest,
         } = this.props
 
-        const styles = createStyles(theme)
+        const skinStyles = skinMap[skin](theme)
+        const sizeStyles = createSizeStyles(theme)
+        const baseStyles = createBaseStyles(theme)
 
         const classes = css(
-            styles.button,
-            type === 'primary' && styles.primary,
-            (this.state.loading || loading) && styles.loading
+            baseStyles.button,
+            skinStyles.button,
+            type === 'primary' && skinStyles.primary,
+            size === 'medium' && sizeStyles.medium,
+            size === 'small' && sizeStyles.small,
+            (this.state.loading || loading) && baseStyles.loading
         )
 
         return (
@@ -124,7 +136,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             >
                 <span>
                     {icon && <Icon icon={icon} />}
-                    {label}
+                    {label && <span>{label}</span>}
                 </span>
             </BaseButton>
         )

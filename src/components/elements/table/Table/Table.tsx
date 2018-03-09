@@ -21,7 +21,7 @@ export class Table<T> extends React.Component<TableProps<T>> {
             // Aplicado ao th e td
             cell: {
                 textAlign: 'left',
-                padding: '0.75rem 1rem',
+                padding: '0.5rem 1rem',
                 borderBottom: `1px solid ${theme.color.gray90}`,
             },
         }
@@ -32,10 +32,11 @@ export class Table<T> extends React.Component<TableProps<T>> {
                     <tr>
                         {React.Children.map(children, (child: any, idx) => {
                             if (child && child.type === TableColumn) {
+                                const { styles: childStyles, ...rest } = child.props
                                 return <Th
                                     key={idx}
-                                    styles={styles.cell}
-                                    {...child.props}
+                                    styles={{ ...styles.cell, ...childStyles }}
+                                    {...rest}
                                 />
                             } else {
                                 /* tslint:disable-next-line */
@@ -49,11 +50,12 @@ export class Table<T> extends React.Component<TableProps<T>> {
                         <tr key={rowIdx}>
                             {React.Children.map(children, (child: any, colIdx) => {
                                 if (child && child.type === TableColumn) {
+                                    const { styles: childStyles, ...rest } = child.props
                                     return <Td
                                         key={rowIdx + '-' + colIdx}
-                                        styles={styles.cell}
+                                        styles={{ ...styles.cell, ...childStyles }}
                                         row={row}
-                                        {...child.props}
+                                        {...rest}
                                     />
                                 }
                             })}
