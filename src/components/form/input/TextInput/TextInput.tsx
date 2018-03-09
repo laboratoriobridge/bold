@@ -15,6 +15,7 @@ export const createStyles = (theme) => ({
         backgroundColor: theme.color.white,
         border: 'solid 1px ' + theme.color.gray80,
         borderRadius: theme.baseRadius,
+        color: theme.color.text,
         fontFamily: theme.font.textFamily,
         fontSize: '0.75rem',
         lineHeight: '1rem',
