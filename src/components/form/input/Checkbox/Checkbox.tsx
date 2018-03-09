@@ -21,7 +21,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             height: 16,
             position: 'relative',
             transition: 'all .2s ease',
-            transform: 'translate3d(0,0,0)',
+            backfaceVisibility: 'hidden', // fixes box-shadow transition bug
             verticalAlign: 'middle',
             width: 16,
             ':after': {

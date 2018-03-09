@@ -3756,7 +3756,7 @@ fbjs@^0.8.12, fbjs@^0.8.16, fbjs@^0.8.4, fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
-file-loader@^1.1.11, file-loader@^1.1.5:
+file-loader@1.1.11, file-loader@^1.1.5:
   version "1.1.11"
   resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/file-loader/-/file-loader-1.1.11.tgz#6fe886449b0f2a936e43cabaac0cdbfb369506f8"
   dependencies:
