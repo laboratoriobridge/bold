@@ -9,7 +9,7 @@ exports[`FormField deve renderizar corretamente 1`] = `
 exports[`FormField deve renderizar o label 1`] = `
 <div>
   <Spacing
-    bottom={0.25}
+    bottom={0.5}
   >
     <FormLabel
       label="label teste"

@@ -17,13 +17,13 @@ export class FormField extends React.Component<FormFieldProps, any> {
         const { children, name, title, error, ...rest } = this.props
 
         const label = this.props.label && (
-            <Spacing bottom={0.25}>
+            <Spacing bottom={0.5}>
                 <FormLabel {...rest} />
             </Spacing>
         )
 
         const errorCmp = this.props.error && (
-            <Spacing top={0.25}>
+            <Spacing top={0.5}>
                 <FormError error={error} />
             </Spacing>
         )

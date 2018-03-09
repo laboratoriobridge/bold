@@ -4,7 +4,7 @@ exports[`deve ser renderizado de forma correta 1`] = `
 .emotion-1 {
   margin-top: undefinedrem;
   margin-right: undefinedrem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   margin-left: undefinedrem;
   display: inline-block;
 }
