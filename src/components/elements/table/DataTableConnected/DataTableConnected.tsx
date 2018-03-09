@@ -5,16 +5,19 @@ import { Page, PageParams, PageRequester } from '../../../../store/requester'
 import { DataTable, DataTableProps } from '../DataTable/DataTable'
 
 export interface DataTableConnectedProps<T> extends DataTableProps<T> {
-    requester: PageRequester<any, any, any>
+    requester: PageRequester<T, any, any>
     initialParams?: PageParams
     loadOnMount?: boolean
+    clearOnUnmount?: boolean
     load(params: PageParams): void
+    clear(): void
 }
 
-class DataTableConnectedCmp<T> extends React.Component<DataTableConnectedProps<T>> {
+export class DataTableConnectedCmp<T> extends React.Component<DataTableConnectedProps<T>> {
 
     static defaultProps: Partial<DataTableConnectedProps<any>> = {
         loadOnMount: true,
+        clearOnUnmount: true,
         initialParams: {
             page: 0,
         },
@@ -26,8 +29,14 @@ class DataTableConnectedCmp<T> extends React.Component<DataTableConnectedProps<T
         }
     }
 
+    componentWillUnmount() {
+        if (this.props.clearOnUnmount) {
+            this.props.clear()
+        }
+    }
+
     render() {
-        const { requester, load, initialParams, loadOnMount, ...rest } = this.props
+        const { requester, load, clear, initialParams, loadOnMount, ...rest } = this.props
         return <DataTable {...rest} />
     }
 }
@@ -68,6 +77,9 @@ export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
         dispatch(ownProps.requester.setPageNumber(0))
         dispatch(ownProps.requester.setPageSize(size))
         dispatch(ownProps.requester.request())
+    },
+    clear() {
+        dispatch(ownProps.requester.clearResult())
     },
 })
 
