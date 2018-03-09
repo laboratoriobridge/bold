@@ -55,6 +55,9 @@ const createSelectStyle = (theme: Theme) => {
                     fontSize: '1rem',
                 },
             },
+            '.Select-option:hover, .Select-option.is-focused': {
+                background: theme.color.background,
+            },
             '&.is-focused': {
                 boxShadow: focusBoxShadow(theme),
                 '.Select-menu-outer': {
