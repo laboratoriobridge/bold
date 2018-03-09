@@ -9,7 +9,7 @@ const createSelectStyle = (theme: Theme) => {
             fontSize: '0.75rem',
             borderRadius: theme.baseRadius,
             transition: 'box-shadow .2s',
-            transform: 'translate3d(0,0,0)',
+            backfaceVisibility: 'hidden', // fixes box-shadow transition bug
             '.Select-control': {
                 backgroundColor: theme.color.white,
                 border: 'solid 1px ' + theme.color.gray80,

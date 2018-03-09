@@ -100,9 +100,8 @@ exports[`deve renderizar corretamente 1`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   width: 47px;
   text-align: center;
 }

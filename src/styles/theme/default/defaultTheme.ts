@@ -61,6 +61,6 @@ export const focusBoxShadow = (theme: Theme, color: Color = 'primary', type: Foc
     if (type === 'single') {
         return '0 0 0 2px ' + theme.color[color]
     } else {
-        return '0 0 0 2px ' + theme.color.background + ',0 0 0 4px ' + theme.color[color]
+        return '0 0 0 2px ' + theme.color.background + ', 0 0 0 4px ' + theme.color[color]
     }
 }
