@@ -2,43 +2,62 @@
 
 exports[`Button deve adicionar um hint custom automaticamente 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -46,7 +65,7 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -58,7 +77,9 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
     type="button"
   >
     <span>
-      Botão
+      <span>
+        Botão
+      </span>
     </span>
   </button>
 </span>
@@ -66,43 +87,62 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
 
 exports[`Button deve adicionar um hint string automaticamente 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -110,7 +150,7 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -122,7 +162,9 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
     type="button"
   >
     <span>
-      Botão
+      <span>
+        Botão
+      </span>
     </span>
   </button>
 </span>
@@ -130,43 +172,62 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
 
 exports[`Button deve renderizar corretamente 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -174,7 +235,7 @@ exports[`Button deve renderizar corretamente 1`] = `
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -183,50 +244,71 @@ exports[`Button deve renderizar corretamente 1`] = `
   type="button"
 >
   <span>
-    Botão
+    <span>
+      Botão
+    </span>
   </span>
 </button>
 `;
 
 exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -234,7 +316,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -380,6 +462,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           css={[Function]}
           label="Botão"
           onClick={[Function]}
+          size="medium"
+          skin="default"
           theme={
             Object {
               "animation": Object {
@@ -441,7 +525,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 type="button"
               >
                 <span>
-                  Botão
+                  <span>
+                    Botão
+                  </span>
                 </span>
               </button>
             </BaseButton>
@@ -455,44 +541,63 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 
 exports[`Button deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise 2`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -500,7 +605,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -666,6 +771,8 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           css={[Function]}
           label="Botão"
           onClick={[Function]}
+          size="medium"
+          skin="default"
           theme={
             Object {
               "animation": Object {
@@ -727,7 +834,9 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
                 type="button"
               >
                 <span>
-                  Botão
+                  <span>
+                    Botão
+                  </span>
                 </span>
               </button>
             </BaseButton>
@@ -741,44 +850,63 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
 
 exports[`Button deve ter animação de loading 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -786,7 +914,7 @@ exports[`Button deve ter animação de loading 1`] = `
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -815,50 +943,71 @@ exports[`Button deve ter animação de loading 1`] = `
   type="button"
 >
   <span>
-    Botão
+    <span>
+      Botão
+    </span>
   </span>
 </button>
 `;
 
 exports[`Button não deve ter animação com "onClick" que não seja promise 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -866,7 +1015,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -1012,6 +1161,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
           css={[Function]}
           label="Botão"
           onClick={[Function]}
+          size="medium"
+          skin="default"
           theme={
             Object {
               "animation": Object {
@@ -1073,7 +1224,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
                 type="button"
               >
                 <span>
-                  Botão
+                  <span>
+                    Botão
+                  </span>
                 </span>
               </button>
             </BaseButton>
@@ -1087,43 +1240,62 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
 
 exports[`Button não deve ter animação com "onClick" que não seja promise 2`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
-  display: inline-block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
   font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-0 span {
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
 }
 
-.emotion-0:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
 }
 
-.emotion-0:disabled {
-  opacity: 0.5;
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-0:focus {
@@ -1131,7 +1303,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-0:hover {
+.emotion-0:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
@@ -1277,6 +1449,8 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
           css={[Function]}
           label="Botão"
           onClick={[Function]}
+          size="medium"
+          skin="default"
           theme={
             Object {
               "animation": Object {
@@ -1338,7 +1512,9 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
                 type="button"
               >
                 <span>
-                  Botão
+                  <span>
+                    Botão
+                  </span>
                 </span>
               </button>
             </BaseButton>

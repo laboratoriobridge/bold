@@ -1,18 +1,12 @@
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
 
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
-import { Type } from '../Button/ButtonSkins'
 
-import { ButtonLink } from './ButtonLink'
-
-const typeOptions: {[key in Type]: string} = {
-    'normal': 'normal',
-    'primary': 'primary',
-}
+import { IconButtonLink } from './IconButtonLink'
 
 storiesOf('Components', module)
     .addDecorator(withPropTypes(`
@@ -20,12 +14,11 @@ storiesOf('Components', module)
     `))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
-    .add('ButtonLink', () => (
+    .add('IconButtonLink', () => (
         <MemoryRouter initialEntries={['/']} initialIndex={0}>
-            <ButtonLink
+            <IconButtonLink
                 to={text('to', '/')}
-                label={text('label', 'LINK')}
-                type={select('type', typeOptions, 'normal')}
+                icon='lapis'
             />
         </MemoryRouter>
     ))
