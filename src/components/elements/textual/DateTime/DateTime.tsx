@@ -16,6 +16,10 @@ export class DateTime extends React.PureComponent<DateTimeProps> {
     render() {
         const { value, mode, render } = this.props
 
+        if (!value) {
+            return null
+        }
+
         const mom = moment.isMoment(value) ? value : moment(value)
 
         const formatted =
