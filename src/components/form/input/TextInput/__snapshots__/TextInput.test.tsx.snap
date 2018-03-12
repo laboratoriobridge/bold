@@ -5,6 +5,7 @@ exports[`TextInput render 1`] = `
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
+  color: #4d4d4d;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -61,6 +62,7 @@ exports[`TextInput render password 1`] = `
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
+  color: #4d4d4d;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
