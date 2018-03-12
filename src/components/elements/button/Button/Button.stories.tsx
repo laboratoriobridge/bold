@@ -5,8 +5,8 @@ import * as React from 'react'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
 
-import { Button, Size, Type } from './Button'
-import { Skins } from './ButtonSkins'
+import { Button } from './Button'
+import { Size, Skins, Type } from './ButtonSkins'
 
 const typeOptions: {[key in Type]: string} = {
     'normal': 'normal',

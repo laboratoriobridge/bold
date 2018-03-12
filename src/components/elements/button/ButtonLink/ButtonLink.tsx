@@ -2,28 +2,40 @@ import * as React from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { Type } from '../Button/Button'
-import { createStyles } from '../Button/skins/default'
+import { createBaseStyles, createSizeStyles, skinMap, SkinProps } from '../Button/ButtonSkins'
 
-export interface ButtonLinkProps extends WithStylesProps, Pick<LinkProps, 'to' | 'replace'> {
+export interface ButtonLinkProps extends SkinProps, WithStylesProps, Pick<LinkProps, 'to' | 'replace'> {
     label: string
-    type?: Type
 }
 
 @withStyles
 export class ButtonLink extends React.PureComponent<ButtonLinkProps> {
+
+    static defaultProps: Partial<ButtonLinkProps> = {
+        type: 'normal',
+        skin: 'default',
+        size: 'medium',
+    }
+
     render() {
-        const { css, theme, label, type, ...rest } = this.props
+        const { css, theme, label, size, skin, type, ...rest } = this.props
         const styles = {
-            ...createStyles(theme),
             link: {
                 textDecoration: 'none',
             },
         }
+
+        const skinStyles = skinMap[skin](theme)
+        const sizeStyles = createSizeStyles(theme)
+        const baseStyles = createBaseStyles(theme)
+
         const classes = css(
-            styles.button,
             styles.link,
-            type === 'primary' && styles.primary
+            baseStyles.button,
+            skinStyles.button,
+            type === 'primary' && skinStyles.primary,
+            size === 'medium' && sizeStyles.medium,
+            size === 'small' && sizeStyles.small
         )
 
         return (
