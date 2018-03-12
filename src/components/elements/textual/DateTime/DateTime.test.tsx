@@ -35,5 +35,5 @@ it('deve aceitar a prop "mode" indicando o formatter padrão', () => {
 it('deve possuir como title a data/hora completa', () => {
     const wrapper = mount(<DateTime value={moment('2018-02-09T14:57:23.046')} />)
     expect(wrapper.find('span').props().title)
-        .toEqual('9 de Fevereiro de 2018 às 14:57')
+        .toEqual('9 de fevereiro de 2018 às 14:57')
 })
