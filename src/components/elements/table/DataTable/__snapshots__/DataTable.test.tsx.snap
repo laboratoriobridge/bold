@@ -18,7 +18,7 @@ exports[`deve renderizar corretamente 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-18 {
+.emotion-22 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,7 +48,7 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-17 {
+.emotion-21 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -77,7 +77,7 @@ exports[`deve renderizar corretamente 1`] = `
   font-weight: bold;
 }
 
-.emotion-16 {
+.emotion-20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -90,28 +90,68 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-16 > *:not(:last-child) {
+.emotion-20 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-13 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
-  color: #cccccc;
-  cursor: not-allowed;
+.emotion-15 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
-.emotion-13:hover {
+.emotion-15 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-15:disabled {
+  opacity: 0.5;
+}
+
+.emotion-15:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-15:hover {
   background: #e6e6e6;
 }
 
-.emotion-13:hover {
-  background: transparent;
+.emotion-14 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.emotion-14 {
+.emotion-13 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-16 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -129,42 +169,42 @@ exports[`deve renderizar corretamente 1`] = `
   text-align: center;
 }
 
-.emotion-14::-webkit-input-placeholder {
+.emotion-16::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-14::-moz-placeholder {
+.emotion-16::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-14:-ms-input-placeholder {
+.emotion-16:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-14::placeholder {
+.emotion-16::placeholder {
   color: #cccccc;
 }
 
-.emotion-14:disabled {
+.emotion-16:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-14:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-14:not(:disabled):focus {
+.emotion-16:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-14:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 <div
-  class="emotion-19"
+  class="emotion-23"
 >
   <table
     class="emotion-8"
@@ -239,7 +279,7 @@ exports[`deve renderizar corretamente 1`] = `
     </tbody>
   </table>
   <div
-    class="emotion-18"
+    class="emotion-22"
   >
     <span
       class="emotion-9"
@@ -251,7 +291,7 @@ exports[`deve renderizar corretamente 1`] = `
       </span>
     </span>
     <div
-      class="emotion-17"
+      class="emotion-21"
     >
       <span>
         Mostrar:
@@ -271,19 +311,37 @@ exports[`deve renderizar corretamente 1`] = `
         </span>
       </span>
       <div
-        class="emotion-16"
+        class="emotion-20"
       >
         <span>
-          <a
-            class="emotion-13"
+          <button
+            class="emotion-15"
+            disabled=""
             title="Página anterior"
+            type="button"
           >
-            &lt;
-          </a>
+            <span>
+              <span
+                class="emotion-14"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="emotion-13"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+                    id="Seta-esquerda"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
         </span>
         <input
-          class="emotion-14"
-          styles="[object Object]"
+          class="emotion-16"
           type="text"
           value="1"
         />
@@ -291,12 +349,31 @@ exports[`deve renderizar corretamente 1`] = `
           de 1
         </span>
         <span>
-          <a
-            class="emotion-13"
+          <button
+            class="emotion-15"
+            disabled=""
             title="Próxima página"
+            type="button"
           >
-            &gt;
-          </a>
+            <span>
+              <span
+                class="emotion-14"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="emotion-13"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+                    id="Seta-direita"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button>
         </span>
       </div>
     </div>

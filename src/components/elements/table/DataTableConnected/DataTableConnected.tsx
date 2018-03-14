@@ -9,8 +9,9 @@ export interface DataTableConnectedProps<T> extends DataTableProps<T> {
     initialParams?: PageParams
     loadOnMount?: boolean
     clearOnUnmount?: boolean
-    load(params: PageParams): void
     clear(): void
+    request(): void
+    setParams(params: PageParams): void
 }
 
 export class DataTableConnectedCmp<T> extends React.Component<DataTableConnectedProps<T>> {
@@ -24,8 +25,10 @@ export class DataTableConnectedCmp<T> extends React.Component<DataTableConnected
     }
 
     componentDidMount() {
+        this.props.setParams(this.props.initialParams)
+
         if (this.props.loadOnMount) {
-            this.props.load(this.props.initialParams)
+            this.props.request()
         }
     }
 
@@ -36,7 +39,7 @@ export class DataTableConnectedCmp<T> extends React.Component<DataTableConnected
     }
 
     render() {
-        const { requester, load, clear, initialParams, loadOnMount, ...rest } = this.props
+        const { requester, request, setParams, clear, initialParams, loadOnMount, ...rest } = this.props
         return <DataTable {...rest} />
     }
 }
@@ -60,9 +63,14 @@ export const mapStateToProps = (state: any, ownProps: ExternalProps) => ({
 })
 
 export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
-    load(params: PageParams) {
+    setParams(params: PageParams) {
         dispatch(ownProps.requester.setParams(params))
+    },
+    request() {
         dispatch(ownProps.requester.request())
+    },
+    clear() {
+        dispatch(ownProps.requester.clearResult())
     },
     onPageChange(page: number) {
         dispatch(ownProps.requester.setPageNumber(page))
@@ -77,9 +85,6 @@ export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
         dispatch(ownProps.requester.setPageNumber(0))
         dispatch(ownProps.requester.setPageSize(size))
         dispatch(ownProps.requester.request())
-    },
-    clear() {
-        dispatch(ownProps.requester.clearResult())
     },
 })
 

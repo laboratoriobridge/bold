@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
+import { IconButton } from '../button/IconButton/IconButton'
 
 export interface PaginatorProps extends WithStylesProps {
     /**
@@ -68,9 +69,6 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 textAlign: 'center',
             },
             button: {
-                transition: '0.2s all',
-                borderRadius: theme.baseRadius,
-                padding: '0.25rem 0.5rem',
                 '&:hover': {
                     background: theme.color.gray90,
                 },
@@ -80,13 +78,13 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
         return (
             <div className={css(styles.paginator)}>
                 <span>
-                    <a
-                        className={css(styles.button, this.isFirstPage() && styles.disabled)}
-                        onClick={!this.isFirstPage() ? this.previous : undefined}
+                    <IconButton
+                        styles={styles.button}
+                        icon='setaEsquerda'
+                        disabled={this.isFirstPage()}
                         title='Página anterior'
-                    >
-                        &lt;
-                    </a>
+                        onClick={!this.isFirstPage() ? this.previous : undefined}
+                    />
                 </span>
 
                 <TextInput
@@ -100,13 +98,13 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 <span>de {total}</span>
 
                 <span>
-                    <a
-                        className={css(styles.button, this.isLastPage() && styles.disabled)}
-                        onClick={!this.isLastPage() ? this.next : undefined}
+                    <IconButton
+                        styles={styles.button}
+                        icon='setaDireita'
+                        disabled={this.isLastPage()}
                         title='Próxima página'
-                    >
-                        &gt;
-                    </a>
+                        onClick={!this.isLastPage() ? this.next : undefined}
+                    />
                 </span>
             </div>
         )
