@@ -41,6 +41,8 @@ const stylesheet: {[key in string]: React.CSSProperties} = {
         padding: '20px 40px 40px',
         borderRadius: '2px',
         backgroundColor: '#fff',
+        lineHeight: '1.5',
+        fontSize: '14px',
     },
     infoContent: {
         marginBottom: 0,
