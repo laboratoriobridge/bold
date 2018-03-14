@@ -16,9 +16,11 @@ export function withStyles<P extends WithStylesProps,
     class WithStyles extends React.Component<P> {
 
         render() {
+            const { styles, ...rest } = this.props as any
+
             return (
                 <WrappedComponent
-                    {...this.props}
+                    {...rest}
                     css={this.css}
                 />
             )

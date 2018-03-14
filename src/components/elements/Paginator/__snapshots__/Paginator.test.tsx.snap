@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve renderizar corretamente 1`] = `
-.emotion-3 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -14,22 +14,68 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-3 > *:not(:last-child) {
+.emotion-7 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-0 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
+.emotion-2 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
 }
 
-.emotion-0:hover {
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:hover {
   background: #e6e6e6;
 }
 
 .emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -47,54 +93,71 @@ exports[`deve renderizar corretamente 1`] = `
   text-align: center;
 }
 
-.emotion-1::-webkit-input-placeholder {
+.emotion-3::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::-moz-placeholder {
+.emotion-3::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-1:-ms-input-placeholder {
+.emotion-3:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::placeholder {
+.emotion-3::placeholder {
   color: #cccccc;
 }
 
-.emotion-1:disabled {
+.emotion-3:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-1:not(:disabled):focus {
+.emotion-3:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 <div
-  class="emotion-3"
+  class="emotion-7"
 >
   <span>
-    <a
-      class="emotion-0"
+    <button
+      class="emotion-2"
       title="Página anterior"
+      type="button"
     >
-      &lt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+              id="Seta-esquerda"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
   <input
-    class="emotion-1"
-    styles="[object Object]"
+    class="emotion-3"
     type="text"
     value="6"
   />
@@ -102,18 +165,36 @@ exports[`deve renderizar corretamente 1`] = `
     de 10
   </span>
   <span>
-    <a
-      class="emotion-0"
+    <button
+      class="emotion-2"
       title="Próxima página"
+      type="button"
     >
-      &gt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+              id="Seta-direita"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
 </div>
 `;
 
 exports[`deve renderizar corretamente 2`] = `
-.emotion-3 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -126,15 +207,49 @@ exports[`deve renderizar corretamente 2`] = `
   font-size: 0.75rem;
 }
 
-.emotion-3 > *:not(:last-child) {
+.emotion-7 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
 .emotion-2 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
 }
 
 .emotion-2:hover {
@@ -142,6 +257,18 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -159,71 +286,72 @@ exports[`deve renderizar corretamente 2`] = `
   text-align: center;
 }
 
-.emotion-1::-webkit-input-placeholder {
+.emotion-3::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::-moz-placeholder {
+.emotion-3::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-1:-ms-input-placeholder {
+.emotion-3:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::placeholder {
+.emotion-3::placeholder {
   color: #cccccc;
 }
 
-.emotion-1:disabled {
+.emotion-3:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-1:not(:disabled):focus {
+.emotion-3:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-0 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
-  color: #cccccc;
-  cursor: not-allowed;
-}
-
-.emotion-0:hover {
-  background: #e6e6e6;
-}
-
-.emotion-0:hover {
-  background: transparent;
-}
-
 <div
-  class="emotion-3"
+  class="emotion-7"
 >
   <span>
-    <a
-      class="emotion-0"
+    <button
+      class="emotion-2"
+      disabled=""
       title="Página anterior"
+      type="button"
     >
-      &lt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+              id="Seta-esquerda"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
   <input
-    class="emotion-1"
-    styles="[object Object]"
+    class="emotion-3"
     type="text"
     value="1"
   />
@@ -231,18 +359,36 @@ exports[`deve renderizar corretamente 2`] = `
     de 10
   </span>
   <span>
-    <a
+    <button
       class="emotion-2"
       title="Próxima página"
+      type="button"
     >
-      &gt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+              id="Seta-direita"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
 </div>
 `;
 
 exports[`deve renderizar corretamente 3`] = `
-.emotion-3 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -255,15 +401,49 @@ exports[`deve renderizar corretamente 3`] = `
   font-size: 0.75rem;
 }
 
-.emotion-3 > *:not(:last-child) {
+.emotion-7 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
 .emotion-2 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
 }
 
 .emotion-2:hover {
@@ -271,6 +451,18 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -288,71 +480,72 @@ exports[`deve renderizar corretamente 3`] = `
   text-align: center;
 }
 
-.emotion-1::-webkit-input-placeholder {
+.emotion-3::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::-moz-placeholder {
+.emotion-3::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-1:-ms-input-placeholder {
+.emotion-3:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-1::placeholder {
+.emotion-3::placeholder {
   color: #cccccc;
 }
 
-.emotion-1:disabled {
+.emotion-3:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-1:not(:disabled):focus {
+.emotion-3:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-0 {
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
-  border-radius: 2px;
-  padding: 0.25rem 0.5rem;
-  color: #cccccc;
-  cursor: not-allowed;
-}
-
-.emotion-0:hover {
-  background: #e6e6e6;
-}
-
-.emotion-0:hover {
-  background: transparent;
-}
-
 <div
-  class="emotion-3"
+  class="emotion-7"
 >
   <span>
-    <a
-      class="emotion-0"
+    <button
+      class="emotion-2"
+      disabled=""
       title="Página anterior"
+      type="button"
     >
-      &lt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+              id="Seta-esquerda"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
   <input
-    class="emotion-1"
-    styles="[object Object]"
+    class="emotion-3"
     type="text"
     value="1"
   />
@@ -360,12 +553,30 @@ exports[`deve renderizar corretamente 3`] = `
     de 9
   </span>
   <span>
-    <a
+    <button
       class="emotion-2"
       title="Próxima página"
+      type="button"
     >
-      &gt;
-    </a>
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+              id="Seta-direita"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
   </span>
 </div>
 `;

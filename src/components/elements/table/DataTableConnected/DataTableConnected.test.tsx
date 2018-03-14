@@ -39,13 +39,19 @@ describe('mapStateToProps', () => {
 })
 
 describe('mapDispatchToProps', () => {
-    it(`#load should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
+    it(`#setParams should dispatch ${SET_PARAMS} action`, () => {
         const store = mockStore()
         const actions = mapDispatchToProps(store.dispatch, ownProps)
-        actions.load({ page: 2 })
-        expect(store.getActions()).toHaveLength(2)
+        actions.setParams({ page: 2 })
+        expect(store.getActions()).toHaveLength(1)
         expect(store.getActions()[0].type).toContain(SET_PARAMS)
-        expect(store.getActions()[1].type).toContain(REQUEST)
+    })
+    it(`#request should dispatch ${REQUEST} action`, () => {
+        const store = mockStore()
+        const actions = mapDispatchToProps(store.dispatch, ownProps)
+        actions.request()
+        expect(store.getActions()).toHaveLength(1)
+        expect(store.getActions()[0].type).toContain(REQUEST)
     })
     it(`#onPageChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
         const store = mockStore()
@@ -82,38 +88,48 @@ describe('Component', () => {
 
     const createCmp = (config = {}) => {
         const defaultConfig = {
-            load: jest.fn(),
+            setParams: jest.fn(),
+            request: jest.fn(),
             clear: jest.fn(),
             loadOnMount: true,
             clearOnUnmount: true,
+            initialParams: {},
         }
         const c = { ...defaultConfig, ...config }
         return mount(withTheme(withRedux(
             <DataTableConnectedCmp
                 requester={requester}
                 page={result}
-                load={c.load}
+                setParams={c.setParams}
+                request={c.request}
                 clear={c.clear}
                 onSortChange={jest.fn()}
                 onPageChange={jest.fn()}
                 onSizeChange={jest.fn()}
                 loadOnMount={c.loadOnMount}
                 clearOnUnmount={c.clearOnUnmount}
+                initialParams={c.initialParams}
             />
         )))
     }
 
-    it('should call #load prop on componentDidMount', () => {
-        const load = jest.fn()
-        const clear = jest.fn()
-        const wrapper = createCmp({ load })
-        expect(load).toHaveBeenCalledTimes(1)
+    it('should call #setParams prop on componentDidMount with initialParams', () => {
+        const initialParams = { size: 42 }
+        const setParams = jest.fn()
+        const wrapper = createCmp({ setParams, initialParams })
+        expect(setParams).toHaveBeenCalledTimes(1)
+        expect(setParams).toHaveBeenLastCalledWith(initialParams)
     })
-    it('should NOT call #load prop on componentDidMount if loadOnMount is false', () => {
-        const load = jest.fn()
-        const clear = jest.fn()
-        const wrapper = createCmp({ load, loadOnMount: false })
-        expect(load).not.toBeCalled()
+
+    it('should call #request prop on componentDidMount', () => {
+        const request = jest.fn()
+        const wrapper = createCmp({ request })
+        expect(request).toHaveBeenCalledTimes(1)
+    })
+    it('should NOT call #request prop on componentDidMount if loadOnMount is false', () => {
+        const request = jest.fn()
+        const wrapper = createCmp({ request, loadOnMount: false })
+        expect(request).not.toBeCalled()
     })
     it('should call #clear prop on componentWillUnmount', () => {
         const clear = jest.fn()
