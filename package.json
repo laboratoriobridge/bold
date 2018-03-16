@@ -7,7 +7,7 @@
     "url": "https://github.com/laboratoriobridge/bridge-react"
   },
   "publishConfig": {
-    "registry": "http://nexus.bridge.ufsc.br/content/repositories/npm-private/"
+    "registry": "https://repositorio.bridge.ufsc.br/content/repositories/npm-private/"
   },
   "scripts": {
     "precommit": "npm run generate-icons && git add ./src/components/elements/Icon/generated && npm test",
