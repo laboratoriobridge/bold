@@ -13,7 +13,7 @@ filewalker(path.join(__dirname, '../src/components/elements/Icon/generated'), (e
 
     writeStream.write(`/* tslint:disable */\n`)
     writeStream.write(`// @ts-ignore\n`)
-    writeStream.write(`import GeneratedIconProps from '../GeneratedIconProps'\n`)
+    writeStream.write(`import { GeneratedIconProps } from '../GeneratedIconProps'\n`)
 
     data.sort((a, b) => {
         if (a < b) { return -1 }
@@ -21,7 +21,7 @@ filewalker(path.join(__dirname, '../src/components/elements/Icon/generated'), (e
         return 0
     }).map(file => {
         const fileName = file.substring(file.lastIndexOf('/') + 1, file.indexOf('.tsx'))
-        writeStream.write(`import ${fileName} from './${fileName}'\n`)
+        writeStream.write(`import { ${fileName} } from './${fileName}'\n`)
         components.push(fileName)
     })
 

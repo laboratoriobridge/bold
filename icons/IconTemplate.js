@@ -12,9 +12,8 @@ module.exports = (opts = {}) => {
     return (code, state) => `
 /* tslint:disable */
 import * as React from 'react'
-import GeneratedIconProps from '../GeneratedIconProps'
+import { GeneratedIconProps } from '../GeneratedIconProps'
 
-const ${state.componentName} = (${props}: GeneratedIconProps) => ${code}
-
-export default ${state.componentName}`
+export const ${state.componentName} = (${props}: GeneratedIconProps) => ${code}
+`
 }

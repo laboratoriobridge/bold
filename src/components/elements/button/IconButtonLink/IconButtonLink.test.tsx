@@ -9,7 +9,7 @@ import { IconButtonLink } from './IconButtonLink'
 it('deve renderizar corretamente', () => {
     const wrapper = render(withTheme(
         <MemoryRouter initialEntries={['/']} initialIndex={0} >
-            <IconButtonLink to='/' icon='lapis' />
+            <IconButtonLink to='/' icon='pen' />
         </MemoryRouter >
     ))
     expect(wrapper).toMatchSnapshot()

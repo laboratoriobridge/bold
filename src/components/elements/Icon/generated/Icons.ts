@@ -1,107 +1,200 @@
 /* tslint:disable */
 // @ts-ignore
-import GeneratedIconProps from '../GeneratedIconProps'
-import Ajuste from './Ajuste'
-import Calendario from './Calendario'
-import Check from './Check'
-import CheckCirculo from './CheckCirculo'
-import Codigo from './Codigo'
-import Copia from './Copia'
-import Dots from './Dots'
-import Download from './Download'
-import Engrenagem from './Engrenagem'
-import Exclamacao from './Exclamacao'
-import ExclamacaoCirculo from './ExclamacaoCirculo'
-import ExclamacaoTriangulo from './ExclamacaoTriangulo'
-import Filtro from './Filtro'
-import Informacao from './Informacao'
-import InformacaoCirculo from './InformacaoCirculo'
-import Lapis from './Lapis'
-import Lixeira from './Lixeira'
-import Localizacao from './Localizacao'
-import LocalizacaoPreenchido from './LocalizacaoPreenchido'
-import Lupa from './Lupa'
-import Mapa from './Mapa'
-import Menu from './Menu'
-import Pessoa from './Pessoa'
-import PredioSaude from './PredioSaude'
-import SetaBaixo from './SetaBaixo'
-import SetaCima from './SetaCima'
-import SetaDireita from './SetaDireita'
-import SetaEsquerda from './SetaEsquerda'
-import SetasDireita from './SetasDireita'
-import SetasEsquerda from './SetasEsquerda'
-import Sino from './Sino'
-import Upload from './Upload'
-import X from './X'
+import { GeneratedIconProps } from '../GeneratedIconProps'
+import { Adjust } from './Adjust'
+import { AlignCenter } from './AlignCenter'
+import { AlignJustify } from './AlignJustify'
+import { AlignLeft } from './AlignLeft'
+import { AlignRight } from './AlignRight'
+import { AngleDoubleLeft } from './AngleDoubleLeft'
+import { AngleDoubleRight } from './AngleDoubleRight'
+import { AngleDown } from './AngleDown'
+import { AngleLeft } from './AngleLeft'
+import { AngleRight } from './AngleRight'
+import { AngleUp } from './AngleUp'
+import { Ban } from './Ban'
+import { Bell } from './Bell'
+import { Bold } from './Bold'
+import { Calendar } from './Calendar'
+import { Check } from './Check'
+import { CheckCircle } from './CheckCircle'
+import { ClearFormat } from './ClearFormat'
+import { Clock } from './Clock'
+import { Code } from './Code'
+import { Contrast } from './Contrast'
+import { Copy } from './Copy'
+import { DecreaseFont } from './DecreaseFont'
+import { Dots } from './Dots'
+import { Download } from './Download'
+import { Exclamation } from './Exclamation'
+import { ExclamationCircle } from './ExclamationCircle'
+import { ExclamationTriangle } from './ExclamationTriangle'
+import { File } from './File'
+import { FileItens } from './FileItens'
+import { Filter } from './Filter'
+import { Gear } from './Gear'
+import { Hospital } from './Hospital'
+import { IncreaseFont } from './IncreaseFont'
+import { Info } from './Info'
+import { InformationCircle } from './InformationCircle'
+import { Italic } from './Italic'
+import { Map } from './Map'
+import { MapMarker } from './MapMarker'
+import { MapMarkerFilled } from './MapMarkerFilled'
+import { Menu } from './Menu'
+import { Minus } from './Minus'
+import { Modules } from './Modules'
+import { Pause } from './Pause'
+import { Pen } from './Pen'
+import { Play } from './Play'
+import { Plus } from './Plus'
+import { Printer } from './Printer'
+import { QuoteLeft } from './QuoteLeft'
+import { QuoteRigh } from './QuoteRigh'
+import { Redo } from './Redo'
+import { Search } from './Search'
+import { SearchMinus } from './SearchMinus'
+import { SearchPlus } from './SearchPlus'
+import { Sort } from './Sort'
+import { Stop } from './Stop'
+import { Strikethrough } from './Strikethrough'
+import { Times } from './Times'
+import { Trashcan } from './Trashcan'
+import { TriangleDown } from './TriangleDown'
+import { TriangleUp } from './TriangleUp'
+import { Underline } from './Underline'
+import { Upload } from './Upload'
+import { User } from './User'
 
 export type Icons =
-    | 'ajuste' 
-    | 'calendario' 
+    | 'adjust' 
+    | 'alignCenter' 
+    | 'alignJustify' 
+    | 'alignLeft' 
+    | 'alignRight' 
+    | 'angleDoubleLeft' 
+    | 'angleDoubleRight' 
+    | 'angleDown' 
+    | 'angleLeft' 
+    | 'angleRight' 
+    | 'angleUp' 
+    | 'ban' 
+    | 'bell' 
+    | 'bold' 
+    | 'calendar' 
     | 'check' 
-    | 'checkCirculo' 
-    | 'codigo' 
-    | 'copia' 
+    | 'checkCircle' 
+    | 'clearFormat' 
+    | 'clock' 
+    | 'code' 
+    | 'contrast' 
+    | 'copy' 
+    | 'decreaseFont' 
     | 'dots' 
     | 'download' 
-    | 'engrenagem' 
-    | 'exclamacao' 
-    | 'exclamacaoCirculo' 
-    | 'exclamacaoTriangulo' 
-    | 'filtro' 
-    | 'informacao' 
-    | 'informacaoCirculo' 
-    | 'lapis' 
-    | 'lixeira' 
-    | 'localizacao' 
-    | 'localizacaoPreenchido' 
-    | 'lupa' 
-    | 'mapa' 
+    | 'exclamation' 
+    | 'exclamationCircle' 
+    | 'exclamationTriangle' 
+    | 'file' 
+    | 'fileItens' 
+    | 'filter' 
+    | 'gear' 
+    | 'hospital' 
+    | 'increaseFont' 
+    | 'info' 
+    | 'informationCircle' 
+    | 'italic' 
+    | 'map' 
+    | 'mapMarker' 
+    | 'mapMarkerFilled' 
     | 'menu' 
-    | 'pessoa' 
-    | 'predioSaude' 
-    | 'setaBaixo' 
-    | 'setaCima' 
-    | 'setaDireita' 
-    | 'setaEsquerda' 
-    | 'setasDireita' 
-    | 'setasEsquerda' 
-    | 'sino' 
+    | 'minus' 
+    | 'modules' 
+    | 'pause' 
+    | 'pen' 
+    | 'play' 
+    | 'plus' 
+    | 'printer' 
+    | 'quoteLeft' 
+    | 'quoteRigh' 
+    | 'redo' 
+    | 'search' 
+    | 'searchMinus' 
+    | 'searchPlus' 
+    | 'sort' 
+    | 'stop' 
+    | 'strikethrough' 
+    | 'times' 
+    | 'trashcan' 
+    | 'triangleDown' 
+    | 'triangleUp' 
+    | 'underline' 
     | 'upload' 
-    | 'x' 
+    | 'user' 
 
 export const IconMap = {
-    'ajuste': Ajuste,
-    'calendario': Calendario,
+    'adjust': Adjust,
+    'alignCenter': AlignCenter,
+    'alignJustify': AlignJustify,
+    'alignLeft': AlignLeft,
+    'alignRight': AlignRight,
+    'angleDoubleLeft': AngleDoubleLeft,
+    'angleDoubleRight': AngleDoubleRight,
+    'angleDown': AngleDown,
+    'angleLeft': AngleLeft,
+    'angleRight': AngleRight,
+    'angleUp': AngleUp,
+    'ban': Ban,
+    'bell': Bell,
+    'bold': Bold,
+    'calendar': Calendar,
     'check': Check,
-    'checkCirculo': CheckCirculo,
-    'codigo': Codigo,
-    'copia': Copia,
+    'checkCircle': CheckCircle,
+    'clearFormat': ClearFormat,
+    'clock': Clock,
+    'code': Code,
+    'contrast': Contrast,
+    'copy': Copy,
+    'decreaseFont': DecreaseFont,
     'dots': Dots,
     'download': Download,
-    'engrenagem': Engrenagem,
-    'exclamacao': Exclamacao,
-    'exclamacaoCirculo': ExclamacaoCirculo,
-    'exclamacaoTriangulo': ExclamacaoTriangulo,
-    'filtro': Filtro,
-    'informacao': Informacao,
-    'informacaoCirculo': InformacaoCirculo,
-    'lapis': Lapis,
-    'lixeira': Lixeira,
-    'localizacao': Localizacao,
-    'localizacaoPreenchido': LocalizacaoPreenchido,
-    'lupa': Lupa,
-    'mapa': Mapa,
+    'exclamation': Exclamation,
+    'exclamationCircle': ExclamationCircle,
+    'exclamationTriangle': ExclamationTriangle,
+    'file': File,
+    'fileItens': FileItens,
+    'filter': Filter,
+    'gear': Gear,
+    'hospital': Hospital,
+    'increaseFont': IncreaseFont,
+    'info': Info,
+    'informationCircle': InformationCircle,
+    'italic': Italic,
+    'map': Map,
+    'mapMarker': MapMarker,
+    'mapMarkerFilled': MapMarkerFilled,
     'menu': Menu,
-    'pessoa': Pessoa,
-    'predioSaude': PredioSaude,
-    'setaBaixo': SetaBaixo,
-    'setaCima': SetaCima,
-    'setaDireita': SetaDireita,
-    'setaEsquerda': SetaEsquerda,
-    'setasDireita': SetasDireita,
-    'setasEsquerda': SetasEsquerda,
-    'sino': Sino,
+    'minus': Minus,
+    'modules': Modules,
+    'pause': Pause,
+    'pen': Pen,
+    'play': Play,
+    'plus': Plus,
+    'printer': Printer,
+    'quoteLeft': QuoteLeft,
+    'quoteRigh': QuoteRigh,
+    'redo': Redo,
+    'search': Search,
+    'searchMinus': SearchMinus,
+    'searchPlus': SearchPlus,
+    'sort': Sort,
+    'stop': Stop,
+    'strikethrough': Strikethrough,
+    'times': Times,
+    'trashcan': Trashcan,
+    'triangleDown': TriangleDown,
+    'triangleUp': TriangleUp,
+    'underline': Underline,
     'upload': Upload,
-    'x': X,
+    'user': User,
 }
