@@ -13,7 +13,7 @@ storiesOf('Components', module)
     .addDecorator(withTheme())
     .add('IconButton', () => (
         <IconButton
-            icon='lapis'
+            icon='pen'
             disabled={boolean('disabled', false)}
             loading={boolean('loading', false)}
         />

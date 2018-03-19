@@ -6696,9 +6696,9 @@ react-datetime@^2.11.0:
     prop-types "^15.5.7"
     react-onclickoutside "^6.5.0"
 
-react-docgen-typescript@1.1.0:
-  version "1.1.0"
-  resolved "http://nexus.bridge.ufsc.br/content/groups/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.1.0.tgz#be37f45808b53ce7fbf48016025525d1c44eb77c"
+react-docgen-typescript@1.2.6:
+  version "1.2.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.2.6.tgz#d1140c58ee9bfff5481320b9ebd1d0659ecf9913"
 
 react-docgen@^2.20.0:
   version "2.20.1"

@@ -19,7 +19,7 @@ storiesOf('Form', module)
     .addDecorator(withTheme())
     .add('InputIconDecorator', () => (
         <InputIconDecorator
-            icon='lupa'
+            icon='search'
             position={select('position', positionOptions, 'right')}
             onClick={action('icon-clicked')}
         >
