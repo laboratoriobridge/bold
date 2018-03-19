@@ -80,7 +80,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 <span>
                     <IconButton
                         styles={styles.button}
-                        icon='setaEsquerda'
+                        icon='angleLeft'
                         disabled={this.isFirstPage()}
                         title='Página anterior'
                         onClick={!this.isFirstPage() ? this.previous : undefined}
@@ -100,7 +100,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 <span>
                     <IconButton
                         styles={styles.button}
-                        icon='setaDireita'
+                        icon='angleRight'
                         disabled={this.isLastPage()}
                         title='Próxima página'
                         onClick={!this.isLastPage() ? this.next : undefined}

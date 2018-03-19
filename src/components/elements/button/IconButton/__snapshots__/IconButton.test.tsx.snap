@@ -397,11 +397,11 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
     }
   >
     <IconButton
-      icon="lapis"
+      icon="pen"
       onClick={[Function]}
     >
       <WithStyles
-        icon="lapis"
+        icon="pen"
         onClick={[Function]}
         theme={
           Object {
@@ -448,7 +448,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
       >
         <IconButton
           css={[Function]}
-          icon="lapis"
+          icon="pen"
           onClick={[Function]}
           theme={
             Object {
@@ -511,10 +511,10 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
               >
                 <span>
                   <Icon
-                    icon="lapis"
+                    icon="pen"
                   >
                     <WithStyles
-                      icon="lapis"
+                      icon="pen"
                       theme={
                         Object {
                           "animation": Object {
@@ -560,7 +560,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                     >
                       <Icon
                         css={[Function]}
-                        icon="lapis"
+                        icon="pen"
                         size={1.5}
                         theme={
                           Object {
@@ -608,7 +608,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                         <span
                           className="emotion-2"
                         >
-                          <Lapis
+                          <Component
                             aria-hidden="true"
                             className="emotion-0"
                           >
@@ -627,7 +627,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                                 />
                               </g>
                             </svg>
-                          </Lapis>
+                          </Component>
                         </span>
                       </Icon>
                     </WithStyles>
@@ -808,11 +808,11 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
     }
   >
     <IconButton
-      icon="lapis"
+      icon="pen"
       onClick={[Function]}
     >
       <WithStyles
-        icon="lapis"
+        icon="pen"
         onClick={[Function]}
         theme={
           Object {
@@ -859,7 +859,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
       >
         <IconButton
           css={[Function]}
-          icon="lapis"
+          icon="pen"
           onClick={[Function]}
           theme={
             Object {
@@ -922,10 +922,10 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
               >
                 <span>
                   <Icon
-                    icon="lapis"
+                    icon="pen"
                   >
                     <WithStyles
-                      icon="lapis"
+                      icon="pen"
                       theme={
                         Object {
                           "animation": Object {
@@ -971,7 +971,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                     >
                       <Icon
                         css={[Function]}
-                        icon="lapis"
+                        icon="pen"
                         size={1.5}
                         theme={
                           Object {
@@ -1019,7 +1019,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                         <span
                           className="emotion-2"
                         >
-                          <Lapis
+                          <Component
                             aria-hidden="true"
                             className="emotion-0"
                           >
@@ -1038,7 +1038,7 @@ exports[`IconButton deve ter animação de "carregando" ao especificar onClick c
                                 />
                               </g>
                             </svg>
-                          </Lapis>
+                          </Component>
                         </span>
                       </Icon>
                     </WithStyles>
@@ -1301,11 +1301,11 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
     }
   >
     <IconButton
-      icon="lapis"
+      icon="pen"
       onClick={[Function]}
     >
       <WithStyles
-        icon="lapis"
+        icon="pen"
         onClick={[Function]}
         theme={
           Object {
@@ -1352,7 +1352,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
       >
         <IconButton
           css={[Function]}
-          icon="lapis"
+          icon="pen"
           onClick={[Function]}
           theme={
             Object {
@@ -1415,10 +1415,10 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
               >
                 <span>
                   <Icon
-                    icon="lapis"
+                    icon="pen"
                   >
                     <WithStyles
-                      icon="lapis"
+                      icon="pen"
                       theme={
                         Object {
                           "animation": Object {
@@ -1464,7 +1464,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                     >
                       <Icon
                         css={[Function]}
-                        icon="lapis"
+                        icon="pen"
                         size={1.5}
                         theme={
                           Object {
@@ -1512,7 +1512,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                         <span
                           className="emotion-2"
                         >
-                          <Lapis
+                          <Component
                             aria-hidden="true"
                             className="emotion-0"
                           >
@@ -1531,7 +1531,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                                 />
                               </g>
                             </svg>
-                          </Lapis>
+                          </Component>
                         </span>
                       </Icon>
                     </WithStyles>
@@ -1690,11 +1690,11 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
     }
   >
     <IconButton
-      icon="lapis"
+      icon="pen"
       onClick={[Function]}
     >
       <WithStyles
-        icon="lapis"
+        icon="pen"
         onClick={[Function]}
         theme={
           Object {
@@ -1741,7 +1741,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
       >
         <IconButton
           css={[Function]}
-          icon="lapis"
+          icon="pen"
           onClick={[Function]}
           theme={
             Object {
@@ -1804,10 +1804,10 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
               >
                 <span>
                   <Icon
-                    icon="lapis"
+                    icon="pen"
                   >
                     <WithStyles
-                      icon="lapis"
+                      icon="pen"
                       theme={
                         Object {
                           "animation": Object {
@@ -1853,7 +1853,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                     >
                       <Icon
                         css={[Function]}
-                        icon="lapis"
+                        icon="pen"
                         size={1.5}
                         theme={
                           Object {
@@ -1901,7 +1901,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                         <span
                           className="emotion-2"
                         >
-                          <Lapis
+                          <Component
                             aria-hidden="true"
                             className="emotion-0"
                           >
@@ -1920,7 +1920,7 @@ exports[`IconButton não deve ter animação com "onClick" que não seja promise
                                 />
                               </g>
                             </svg>
-                          </Lapis>
+                          </Component>
                         </span>
                       </Icon>
                     </WithStyles>

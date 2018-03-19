@@ -1,3 +1,4 @@
+/* tslint:disable */
 import { ComponentDoc } from 'react-docgen-typescript/lib/parser'
 
 const propTypes: {[key in string]: ComponentDoc} = {
@@ -5,49 +6,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Login',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'onLogin': {
-                defaultValue: 'null',
+                name: 'onLogin',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'renderHome': {
-                defaultValue: 'null',
+                name: 'renderHome',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(props: any) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'renderForm': {
-                defaultValue: 'null',
+                name: 'renderForm',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(props: FormRenderProps, userFieldName: string, passwordFieldName: string) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'config': {
-                defaultValue: 'null',
+                name: 'config',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'AuthConfig',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -56,31 +52,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Breadcrumb',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'to': {
-                defaultValue: 'null',
+                name: 'to',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'LocationDescriptor',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -89,40 +78,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'BreadcrumbNav',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -131,286 +114,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'BreadcrumbProvider',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'store': {
-                defaultValue: 'null',
+                name: 'store',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'BreadcrumbStore',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'Button': {
-        displayName: 'Button',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'className': {
-                defaultValue: 'null',
-                description: `css className`,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'disabled': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'icon': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'label': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'loading': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
-                }
-            },
-            'name': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'onClick': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
-                    value: 'undefined'
-                }
-            },
-            'onMouseEnter': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(event: MouseEvent<any>) => void',
-                    value: 'undefined'
-                }
-            },
-            'onMouseLeave': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(event: MouseEvent<any>) => void',
-                    value: 'undefined'
-                }
-            },
-            'tabIndex': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'number',
-                    value: 'undefined'
-                }
-            },
-            'title': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'type': {
-                defaultValue: 'normal',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Type',
-                    value: 'undefined'
-                }
-            },
-            'hint': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'hintClassName': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'hintPlacement': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'hintType': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '"normal" | "primary"',
-                    value: 'undefined'
-                }
-            },
-            'styles': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'theme': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Theme',
-                    value: 'undefined'
-                }
-            },
-            'css': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(...styles: any[]) => string',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'ButtonLink': {
-        displayName: 'ButtonLink',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'label': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'type': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Type',
-                    value: 'undefined'
-                }
-            },
-            'styles': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
-            'theme': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'Theme',
-                    value: 'undefined'
-                }
-            },
-            'css': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: '(...styles: any[]) => string',
-                    value: 'undefined'
-                }
-            },
-            'to': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: 'LocationDescriptor',
-                    value: 'undefined'
-                }
-            },
-            'replace': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -419,40 +130,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DropdownMenu',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -461,49 +166,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DropdownItem',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'onClick': {
-                defaultValue: 'null',
+                name: 'onClick',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(e: any) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -512,49 +212,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Hint',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'placement': {
-                defaultValue: 'null',
+                name: 'placement',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Placement',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'componente': {
-                defaultValue: 'null',
+                name: 'componente',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'type': {
-                defaultValue: 'normal',
+                name: 'type',
+                defaultValue: `normal`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"normal" | "primary"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -563,67 +258,1098 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Icon',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'icon': {
-                defaultValue: 'null',
+                name: 'icon',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'Icons',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'color': {
-                defaultValue: 'text',
+                name: 'color',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Color',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'size': {
-                defaultValue: '1.5',
+                name: 'size',
+                defaultValue: `1.5`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            },
+            'title': {
+                name: 'title',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Adjust': {
+        displayName: 'Adjust',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AlignCenter': {
+        displayName: 'AlignCenter',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AlignJustify': {
+        displayName: 'AlignJustify',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AlignLeft': {
+        displayName: 'AlignLeft',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AlignRight': {
+        displayName: 'AlignRight',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleDoubleLeft': {
+        displayName: 'AngleDoubleLeft',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleDoubleRight': {
+        displayName: 'AngleDoubleRight',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleDown': {
+        displayName: 'AngleDown',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleLeft': {
+        displayName: 'AngleLeft',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleRight': {
+        displayName: 'AngleRight',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'AngleUp': {
+        displayName: 'AngleUp',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Ban': {
+        displayName: 'Ban',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Bell': {
+        displayName: 'Bell',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Bold': {
+        displayName: 'Bold',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Calendar': {
+        displayName: 'Calendar',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Check': {
+        displayName: 'Check',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'CheckCircle': {
+        displayName: 'CheckCircle',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'ClearFormat': {
+        displayName: 'ClearFormat',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Clock': {
+        displayName: 'Clock',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Code': {
+        displayName: 'Code',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Contrast': {
+        displayName: 'Contrast',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Copy': {
+        displayName: 'Copy',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'DecreaseFont': {
+        displayName: 'DecreaseFont',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Dots': {
+        displayName: 'Dots',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Download': {
+        displayName: 'Download',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Exclamation': {
+        displayName: 'Exclamation',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'ExclamationCircle': {
+        displayName: 'ExclamationCircle',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'ExclamationTriangle': {
+        displayName: 'ExclamationTriangle',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'File': {
+        displayName: 'File',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'FileItens': {
+        displayName: 'FileItens',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Filter': {
+        displayName: 'Filter',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Gear': {
+        displayName: 'Gear',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Hospital': {
+        displayName: 'Hospital',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'IncreaseFont': {
+        displayName: 'IncreaseFont',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Info': {
+        displayName: 'Info',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'InformationCircle': {
+        displayName: 'InformationCircle',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Italic': {
+        displayName: 'Italic',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Map': {
+        displayName: 'Map',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'MapMarker': {
+        displayName: 'MapMarker',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'MapMarkerFilled': {
+        displayName: 'MapMarkerFilled',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Menu': {
+        displayName: 'Menu',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Minus': {
+        displayName: 'Minus',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Modules': {
+        displayName: 'Modules',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Pause': {
+        displayName: 'Pause',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Pen': {
+        displayName: 'Pen',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Play': {
+        displayName: 'Play',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Plus': {
+        displayName: 'Plus',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Printer': {
+        displayName: 'Printer',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'QuoteLeft': {
+        displayName: 'QuoteLeft',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'QuoteRigh': {
+        displayName: 'QuoteRigh',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Redo': {
+        displayName: 'Redo',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Search': {
+        displayName: 'Search',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'SearchMinus': {
+        displayName: 'SearchMinus',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'SearchPlus': {
+        displayName: 'SearchPlus',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Sort': {
+        displayName: 'Sort',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Stop': {
+        displayName: 'Stop',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Strikethrough': {
+        displayName: 'Strikethrough',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Times': {
+        displayName: 'Times',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Trashcan': {
+        displayName: 'Trashcan',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'TriangleDown': {
+        displayName: 'TriangleDown',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'TriangleUp': {
+        displayName: 'TriangleUp',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Underline': {
+        displayName: 'Underline',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Upload': {
+        displayName: 'Upload',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'User': {
+        displayName: 'User',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
                 }
             }
         }
@@ -632,76 +1358,74 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'InfoLabel',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'titleStyles': {
-                defaultValue: 'null',
+                name: 'titleStyles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'childStyles': {
-                defaultValue: 'null',
+                name: 'childStyles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -710,22 +1434,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Label',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -734,49 +1450,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'OverlayContent',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'style': {
-                defaultValue: 'null',
+                name: 'style',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -785,67 +1496,64 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Paginator',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'page': {
-                defaultValue: 'null',
+                name: 'page',
+                defaultValue: `null`,
                 description: `Página atual, 0-indexada.`,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'total': {
-                defaultValue: 'null',
+                name: 'total',
+                defaultValue: `null`,
                 description: `Número total de páginas.`,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: `Chamado quando a página for alterada.`,
                 required: false,
                 type: {
                     name: '(page: number) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -854,85 +1562,84 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Popover',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'borderColor': {
-                defaultValue: 'null',
+                name: 'borderColor',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'color': {
-                defaultValue: 'null',
+                name: 'color',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onHide': {
-                defaultValue: 'null',
+                name: 'onHide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placement': {
-                defaultValue: 'null',
+                name: 'placement',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Placement',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'rootClose': {
-                defaultValue: 'null',
+                name: 'rootClose',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'show': {
-                defaultValue: 'null',
+                name: 'show',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'target': {
-                defaultValue: 'null',
+                name: 'target',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | number | boolean | {} | Function | ReactElement<any> | (string | number | boolean | any[...',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -941,40 +1648,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Tabs',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -983,76 +1684,784 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TabLink',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'active': {
-                defaultValue: 'false',
+                name: 'active',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'to': {
-                defaultValue: 'null',
+                name: 'to',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'LocationDescriptor',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'replace': {
-                defaultValue: 'null',
+                name: 'replace',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'exact': {
-                defaultValue: 'null',
+                name: 'exact',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'BaseButton': {
+        displayName: 'BaseButton',
+        description: ``,
+        props: {
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: `css className`,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'disabled': {
+                name: 'disabled',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'name': {
+                name: 'name',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'onClick': {
+                name: 'onClick',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
+                    value: 'undefined',
+                }
+            },
+            'onLoadingChange': {
+                name: 'onLoadingChange',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(loading: boolean) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseEnter': {
+                name: 'onMouseEnter',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseLeave': {
+                name: 'onMouseLeave',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'tabIndex': {
+                name: 'tabIndex',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined',
+                }
+            },
+            'title': {
+                name: 'title',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hint': {
+                name: 'hint',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined',
+                }
+            },
+            'hintClassName': {
+                name: 'hintClassName',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintPlacement': {
+                name: 'hintPlacement',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintType': {
+                name: 'hintType',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '"normal" | "primary"',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'Button': {
+        displayName: 'Button',
+        description: ``,
+        props: {
+            'icon': {
+                name: 'icon',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Icons',
+                    value: 'undefined',
+                }
+            },
+            'label': {
+                name: 'label',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'loading': {
+                name: 'loading',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'skin': {
+                name: 'skin',
+                defaultValue: `default`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Skins',
+                    value: 'undefined',
+                }
+            },
+            'size': {
+                name: 'size',
+                defaultValue: `medium`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Size',
+                    value: 'undefined',
+                }
+            },
+            'type': {
+                name: 'type',
+                defaultValue: `normal`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Type',
+                    value: 'undefined',
+                }
+            },
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: `css className`,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'disabled': {
+                name: 'disabled',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'name': {
+                name: 'name',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'onClick': {
+                name: 'onClick',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
+                    value: 'undefined',
+                }
+            },
+            'onLoadingChange': {
+                name: 'onLoadingChange',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(loading: boolean) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseEnter': {
+                name: 'onMouseEnter',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseLeave': {
+                name: 'onMouseLeave',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'tabIndex': {
+                name: 'tabIndex',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined',
+                }
+            },
+            'title': {
+                name: 'title',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hint': {
+                name: 'hint',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined',
+                }
+            },
+            'hintClassName': {
+                name: 'hintClassName',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintPlacement': {
+                name: 'hintPlacement',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintType': {
+                name: 'hintType',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Type',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'ButtonLink': {
+        displayName: 'ButtonLink',
+        description: ``,
+        props: {
+            'label': {
+                name: 'label',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'skin': {
+                name: 'skin',
+                defaultValue: `default`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Skins',
+                    value: 'undefined',
+                }
+            },
+            'size': {
+                name: 'size',
+                defaultValue: `medium`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Size',
+                    value: 'undefined',
+                }
+            },
+            'type': {
+                name: 'type',
+                defaultValue: `normal`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Type',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            },
+            'to': {
+                name: 'to',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'LocationDescriptor',
+                    value: 'undefined',
+                }
+            },
+            'replace': {
+                name: 'replace',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'IconButton': {
+        displayName: 'IconButton',
+        description: ``,
+        props: {
+            'icon': {
+                name: 'icon',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'Icons',
+                    value: 'undefined',
+                }
+            },
+            'loading': {
+                name: 'loading',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'className': {
+                name: 'className',
+                defaultValue: `null`,
+                description: `css className`,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'disabled': {
+                name: 'disabled',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'name': {
+                name: 'name',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'onClick': {
+                name: 'onClick',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
+                    value: 'undefined',
+                }
+            },
+            'onLoadingChange': {
+                name: 'onLoadingChange',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(loading: boolean) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseEnter': {
+                name: 'onMouseEnter',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'onMouseLeave': {
+                name: 'onMouseLeave',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(event: MouseEvent<any>) => void',
+                    value: 'undefined',
+                }
+            },
+            'tabIndex': {
+                name: 'tabIndex',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'number',
+                    value: 'undefined',
+                }
+            },
+            'title': {
+                name: 'title',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hint': {
+                name: 'hint',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'ReactNode',
+                    value: 'undefined',
+                }
+            },
+            'hintClassName': {
+                name: 'hintClassName',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintPlacement': {
+                name: 'hintPlacement',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'string',
+                    value: 'undefined',
+                }
+            },
+            'hintType': {
+                name: 'hintType',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '"normal" | "primary"',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'IconButtonLink': {
+        displayName: 'IconButtonLink',
+        description: ``,
+        props: {
+            'icon': {
+                name: 'icon',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'Icons',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            },
+            'to': {
+                name: 'to',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'LocationDescriptor',
+                    value: 'undefined',
+                }
+            },
+            'replace': {
+                name: 'replace',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
                 }
             }
         }
@@ -1061,58 +2470,54 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'AlertModal',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'icon': {
-                defaultValue: 'null',
+                name: 'icon',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'info': {
-                defaultValue: 'null',
+                name: 'info',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'success': {
-                defaultValue: 'null',
+                name: 'success',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1122,57 +2527,53 @@ const propTypes: {[key in string]: ComponentDoc} = {
         description: ``,
         props: {
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'icon': {
-                defaultValue: 'null',
+                name: 'icon',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClose': {
-                defaultValue: 'null',
+                name: 'onClose',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1181,31 +2582,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'AlertModalLeave',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'callback': {
-                defaultValue: 'null',
+                name: 'callback',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(shouldNavigate: boolean) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1215,57 +2609,53 @@ const propTypes: {[key in string]: ComponentDoc} = {
         description: ``,
         props: {
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'icon': {
-                defaultValue: 'null',
+                name: 'icon',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClose': {
-                defaultValue: 'null',
+                name: 'onClose',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'result': {
-                defaultValue: 'null',
+                name: 'result',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1275,39 +2665,33 @@ const propTypes: {[key in string]: ComponentDoc} = {
         description: ``,
         props: {
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClose': {
-                defaultValue: 'null',
+                name: 'onClose',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onOk': {
-                defaultValue: 'null',
+                name: 'onOk',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
-                }
-            },
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1317,57 +2701,53 @@ const propTypes: {[key in string]: ComponentDoc} = {
         description: ``,
         props: {
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'icon': {
-                defaultValue: 'null',
+                name: 'icon',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClose': {
-                defaultValue: 'null',
+                name: 'onClose',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onOk': {
-                defaultValue: 'null',
+                name: 'onOk',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1377,21 +2757,13 @@ const propTypes: {[key in string]: ComponentDoc} = {
         description: ``,
         props: {
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            },
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1400,22 +2772,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Modal',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'active': {
-                defaultValue: 'null',
+                name: 'active',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1424,76 +2788,74 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DataTable',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'page': {
-                defaultValue: 'null',
+                name: 'page',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'Page<T>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSortChange': {
-                defaultValue: 'null',
+                name: 'onSortChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(sort: string[]) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onPageChange': {
-                defaultValue: 'null',
+                name: 'onPageChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(page: number) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSizeChange': {
-                defaultValue: 'null',
+                name: 'onSizeChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(size: number) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1502,67 +2864,288 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DataTableColumn',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'render': {
-                defaultValue: 'null',
+                name: 'render',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(row: T) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'DataTableConnectedCmp': {
+        displayName: 'DataTableConnectedCmp',
+        description: ``,
+        props: {
+            'requester': {
+                name: 'requester',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'PageRequester<T, any, any>',
+                    value: 'undefined',
+                }
+            },
+            'initialParams': {
+                name: 'initialParams',
+                defaultValue: `{
+            page: 0,
+        }`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'PageParams',
+                    value: 'undefined',
+                }
+            },
+            'loadOnMount': {
+                name: 'loadOnMount',
+                defaultValue: `true`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'clearOnUnmount': {
+                name: 'clearOnUnmount',
+                defaultValue: `true`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'clear': {
+                name: 'clear',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '() => void',
+                    value: 'undefined',
+                }
+            },
+            'request': {
+                name: 'request',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '() => void',
+                    value: 'undefined',
+                }
+            },
+            'setParams': {
+                name: 'setParams',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '(params: PageParams) => void',
+                    value: 'undefined',
+                }
+            },
+            'page': {
+                name: 'page',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'Page<T>',
+                    value: 'undefined',
+                }
+            },
+            'onSortChange': {
+                name: 'onSortChange',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '(sort: string[]) => void',
+                    value: 'undefined',
+                }
+            },
+            'onPageChange': {
+                name: 'onPageChange',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '(page: number) => void',
+                    value: 'undefined',
+                }
+            },
+            'onSizeChange': {
+                name: 'onSizeChange',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: '(size: number) => void',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'DataTableConnected': {
+        displayName: 'DataTableConnected',
+        description: ``,
+        props: {
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            },
+            'requester': {
+                name: 'requester',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'PageRequester<any, any, any>',
+                    value: 'undefined',
+                }
+            },
+            'initialParams': {
+                name: 'initialParams',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'PageParams',
+                    value: 'undefined',
+                }
+            },
+            'loadOnMount': {
+                name: 'loadOnMount',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'clearOnUnmount': {
+                name: 'clearOnUnmount',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
                 }
             }
         }
@@ -1571,49 +3154,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Table',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'rows': {
-                defaultValue: 'null',
+                name: 'rows',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'T[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1622,67 +3200,64 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TableColumn',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'render': {
-                defaultValue: 'null',
+                name: 'render',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(row: T) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1691,94 +3266,94 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TableFooter',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'page': {
-                defaultValue: 'null',
+                name: 'page',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'totalPages': {
-                defaultValue: 'null',
+                name: 'totalPages',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'totalElements': {
-                defaultValue: 'null',
+                name: 'totalElements',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pageSize': {
-                defaultValue: 'null',
+                name: 'pageSize',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onPageChange': {
-                defaultValue: 'null',
+                name: 'onPageChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(page: number) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSizeChange': {
-                defaultValue: 'null',
+                name: 'onSizeChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(size: number) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1787,22 +3362,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Currency',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1811,40 +3378,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DateTime',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string | Moment | Date',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'mode': {
-                defaultValue: 'null',
+                name: 'mode',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"date" | "time" | "dateTime"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'render': {
-                defaultValue: 'null',
+                name: 'render',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(moment: Moment) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1853,85 +3414,84 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Number',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minDecimalPlaces': {
-                defaultValue: 'null',
+                name: 'minDecimalPlaces',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxDecimalPlaces': {
-                defaultValue: 'null',
+                name: 'maxDecimalPlaces',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: '',
+                name: 'placeholder',
+                defaultValue: ``,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'abbrev': {
-                defaultValue: 'null',
+                name: 'abbrev',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'prefix': {
-                defaultValue: '',
+                name: 'prefix',
+                defaultValue: ``,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'sufix': {
-                defaultValue: '',
+                name: 'sufix',
+                defaultValue: ``,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -1940,58 +3500,54 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Percentage',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: `Número de 0 a 1 representando o quociente que será transformado para porcentagem`,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minDecimalPlaces': {
-                defaultValue: 'null',
+                name: 'minDecimalPlaces',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxDecimalPlaces': {
-                defaultValue: 'null',
+                name: 'maxDecimalPlaces',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2000,40 +3556,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Plural',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'word': {
-                defaultValue: 'null',
+                name: 'word',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'count': {
-                defaultValue: 'null',
+                name: 'count',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'inclusive': {
-                defaultValue: 'null',
+                name: 'inclusive',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2042,76 +3592,74 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Text',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'color': {
-                defaultValue: 'null',
+                name: 'color',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Color',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'size': {
-                defaultValue: 'null',
+                name: 'size',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'weight': {
-                defaultValue: 'null',
+                name: 'weight',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Weight',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'tag': {
-                defaultValue: 'span',
+                name: 'tag',
+                defaultValue: `span`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'TextTag',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2120,22 +3668,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Telefone',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2144,22 +3684,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Cpf',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2168,46 +3700,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Cep',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
-                }
-            }
-        }
-    },
-    'ErrorIndicator': {
-        displayName: 'ErrorIndicator',
-        description: ``,
-        props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
-            'error': {
-                defaultValue: 'null',
-                description: ``,
-                required: true,
-                type: {
-                    name: '{ titulo: string; mensagem: string; }',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2216,22 +3716,14 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'FormError',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2240,58 +3732,54 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'FormField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2300,31 +3788,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'FormLabel',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2333,292 +3814,314 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'AsyncSelectField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'getPage': {
-                defaultValue: 'null',
+                name: 'getPage',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(params: AsyncSelectRequestParams) => Promise<any>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pageSize': {
-                defaultValue: 'null',
+                name: 'pageSize',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'searchDelay': {
-                defaultValue: 'null',
+                name: 'searchDelay',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"" | "error"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoload': {
-                defaultValue: 'null',
+                name: 'autoload',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'backspaceRemoves': {
-                defaultValue: 'null',
+                name: 'backspaceRemoves',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'cache': {
-                defaultValue: 'null',
+                name: 'cache',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean | { [key: string]: any; }',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearable': {
-                defaultValue: 'null',
+                name: 'clearable',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearValueText': {
-                defaultValue: 'null',
+                name: 'clearValueText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'labelKey': {
-                defaultValue: 'null',
+                name: 'labelKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'loadingPlaceholder': {
-                defaultValue: 'null',
+                name: 'loadingPlaceholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreAccents': {
-                defaultValue: 'null',
+                name: 'ignoreAccents',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreCase': {
-                defaultValue: 'null',
+                name: 'ignoreCase',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'multi': {
-                defaultValue: 'null',
+                name: 'multi',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'noResultsText': {
-                defaultValue: 'null',
+                name: 'noResultsText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLDivElement | HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'OnChangeHandler<OptionValues, Option<OptionValues> | Option<OptionValues>[]>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'searchPromptText': {
-                defaultValue: 'null',
+                name: 'searchPromptText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'valueKey': {
-                defaultValue: 'null',
+                name: 'valueKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2627,166 +4130,174 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'CheckboxField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -2795,769 +4306,844 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DateField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'adjustDateOnChange': {
-                defaultValue: 'null',
+                name: 'adjustDateOnChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'allowSameDay': {
-                defaultValue: 'null',
+                name: 'allowSameDay',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoComplete': {
-                defaultValue: 'null',
+                name: 'autoComplete',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoFocus': {
-                defaultValue: 'null',
+                name: 'autoFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'calendarClassName': {
-                defaultValue: 'null',
+                name: 'calendarClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'customInput': {
-                defaultValue: 'null',
+                name: 'customInput',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'customInputRef': {
-                defaultValue: 'null',
+                name: 'customInputRef',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dateFormat': {
-                defaultValue: 'null',
+                name: 'dateFormat',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | string[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dateFormatCalendar': {
-                defaultValue: 'null',
+                name: 'dateFormatCalendar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dayClassName': {
-                defaultValue: 'null',
+                name: 'dayClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabledKeyboardNavigation': {
-                defaultValue: 'null',
+                name: 'disabledKeyboardNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dropdownMode': {
-                defaultValue: 'null',
+                name: 'dropdownMode',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"scroll" | "select"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'endDate': {
-                defaultValue: 'null',
+                name: 'endDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'excludeDates': {
-                defaultValue: 'null',
+                name: 'excludeDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'filterDate': {
-                defaultValue: 'null',
+                name: 'filterDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'fixedHeight': {
-                defaultValue: 'null',
+                name: 'fixedHeight',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'forceShowMonthNavigation': {
-                defaultValue: 'null',
+                name: 'forceShowMonthNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'formatWeekNumber': {
-                defaultValue: 'null',
+                name: 'formatWeekNumber',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => ReactText',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'highlightDates': {
-                defaultValue: 'null',
+                name: 'highlightDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'includeDates': {
-                defaultValue: 'null',
+                name: 'includeDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'includeTimes': {
-                defaultValue: 'null',
+                name: 'includeTimes',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'inline': {
-                defaultValue: 'null',
+                name: 'inline',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'isClearable': {
-                defaultValue: 'null',
+                name: 'isClearable',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'locale': {
-                defaultValue: 'null',
+                name: 'locale',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxDate': {
-                defaultValue: 'null',
+                name: 'maxDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minDate': {
-                defaultValue: 'null',
+                name: 'minDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'monthsShown': {
-                defaultValue: 'null',
+                name: 'monthsShown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChangeRaw': {
-                defaultValue: 'null',
+                name: 'onChangeRaw',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClickOutside': {
-                defaultValue: 'null',
+                name: 'onClickOutside',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: MouseEvent<HTMLDivElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyDown': {
-                defaultValue: 'null',
+                name: 'onKeyDown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLDivElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onMonthChange': {
-                defaultValue: 'null',
+                name: 'onMonthChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSelect': {
-                defaultValue: 'null',
+                name: 'onSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment, event: SyntheticEvent<any>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onWeekSelect': {
-                defaultValue: 'null',
+                name: 'onWeekSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(firstDayOfWeek: Moment, weekNumber: ReactText, event: SyntheticEvent<any>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onYearChange': {
-                defaultValue: 'null',
+                name: 'onYearChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'openToDate': {
-                defaultValue: 'null',
+                name: 'openToDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'peekNextMonth': {
-                defaultValue: 'null',
+                name: 'peekNextMonth',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderText': {
-                defaultValue: 'null',
+                name: 'placeholderText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperClassName': {
-                defaultValue: 'null',
+                name: 'popperClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperModifiers': {
-                defaultValue: 'null',
+                name: 'popperModifiers',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperPlacement': {
-                defaultValue: 'null',
+                name: 'popperPlacement',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'preventOpenOnFocus': {
-                defaultValue: 'null',
+                name: 'preventOpenOnFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'readOnly': {
-                defaultValue: 'null',
+                name: 'readOnly',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'scrollableYearDropdown': {
-                defaultValue: 'null',
+                name: 'scrollableYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'scrollableMonthYearDropdown': {
-                defaultValue: 'null',
+                name: 'scrollableMonthYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selected': {
-                defaultValue: 'null',
+                name: 'selected',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selectsEnd': {
-                defaultValue: 'null',
+                name: 'selectsEnd',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selectsStart': {
-                defaultValue: 'null',
+                name: 'selectsStart',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showDisabledMonthNavigation': {
-                defaultValue: 'null',
+                name: 'showDisabledMonthNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMonthDropdown': {
-                defaultValue: 'null',
+                name: 'showMonthDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMonthYearDropdown': {
-                defaultValue: 'null',
+                name: 'showMonthYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showWeekNumbers': {
-                defaultValue: 'null',
+                name: 'showWeekNumbers',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showYearDropdown': {
-                defaultValue: 'null',
+                name: 'showYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'startDate': {
-                defaultValue: 'null',
+                name: 'startDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'tabIndex': {
-                defaultValue: 'null',
+                name: 'tabIndex',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'todayButton': {
-                defaultValue: 'null',
+                name: 'todayButton',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'useWeekdaysShort': {
-                defaultValue: 'null',
+                name: 'useWeekdaysShort',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'useShortMonthInDropdown': {
-                defaultValue: 'null',
+                name: 'useShortMonthInDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'utcOffset': {
-                defaultValue: 'null',
+                name: 'utcOffset',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'weekLabel': {
-                defaultValue: 'null',
+                name: 'weekLabel',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'withPortal': {
-                defaultValue: 'null',
+                name: 'withPortal',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'yearDropdownItemNumber': {
-                defaultValue: 'null',
+                name: 'yearDropdownItemNumber',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'shouldCloseOnSelect': {
-                defaultValue: 'null',
+                name: 'shouldCloseOnSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showTimeSelect': {
-                defaultValue: 'null',
+                name: 'showTimeSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'timeFormat': {
-                defaultValue: 'null',
+                name: 'timeFormat',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'timeIntervals': {
-                defaultValue: 'null',
+                name: 'timeIntervals',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minTime': {
-                defaultValue: 'null',
+                name: 'minTime',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxTime': {
-                defaultValue: 'null',
+                name: 'maxTime',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'excludeTimes': {
-                defaultValue: 'null',
+                name: 'excludeTimes',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'validate': {
-                defaultValue: 'null',
+                name: 'validate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, allValues: object) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -3566,193 +5152,204 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'MaskedField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'mask': {
-                defaultValue: 'null',
+                name: 'mask',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'MaskType',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'guide': {
-                defaultValue: 'null',
+                name: 'guide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderChar': {
-                defaultValue: 'null',
+                name: 'placeholderChar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'keepCharPositions': {
-                defaultValue: 'null',
+                name: 'keepCharPositions',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMask': {
-                defaultValue: 'null',
+                name: 'showMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pipe': {
-                defaultValue: 'null',
+                name: 'pipe',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(conformedValue: string, config: MaskedTextConfig) => string | false | object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'conformToMask': {
-                defaultValue: 'null',
+                name: 'conformToMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(text: string, mask: (string | RegExp)[], config?: MaskedTextConfig) => ConformedResult',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -3761,49 +5358,44 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'NumberField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -3812,166 +5404,174 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'RadioField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -3980,229 +5580,244 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'SelectField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'options': {
-                defaultValue: 'null',
+                name: 'options',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'SelectOption[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"" | "error"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'backspaceRemoves': {
-                defaultValue: 'null',
+                name: 'backspaceRemoves',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearable': {
-                defaultValue: 'null',
+                name: 'clearable',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearValueText': {
-                defaultValue: 'null',
+                name: 'clearValueText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'labelKey': {
-                defaultValue: 'null',
+                name: 'labelKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreAccents': {
-                defaultValue: 'null',
+                name: 'ignoreAccents',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreCase': {
-                defaultValue: 'null',
+                name: 'ignoreCase',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'multi': {
-                defaultValue: 'null',
+                name: 'multi',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'noResultsText': {
-                defaultValue: 'null',
+                name: 'noResultsText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLDivElement | HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'OnChangeHandler<OptionValues, Option<OptionValues> | Option<OptionValues>[]>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'valueKey': {
-                defaultValue: 'null',
+                name: 'valueKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -4211,229 +5826,244 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TextField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'password': {
-                defaultValue: 'null',
+                name: 'password',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -4442,184 +6072,194 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TelefoneField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'guide': {
-                defaultValue: 'null',
+                name: 'guide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderChar': {
-                defaultValue: 'null',
+                name: 'placeholderChar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'keepCharPositions': {
-                defaultValue: 'null',
+                name: 'keepCharPositions',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMask': {
-                defaultValue: 'null',
+                name: 'showMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pipe': {
-                defaultValue: 'null',
+                name: 'pipe',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(conformedValue: string, config: MaskedTextConfig) => string | false | object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'conformToMask': {
-                defaultValue: 'null',
+                name: 'conformToMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(text: string, mask: (string | RegExp)[], config?: MaskedTextConfig) => ConformedResult',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -4628,184 +6268,194 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'CpfField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'guide': {
-                defaultValue: 'null',
+                name: 'guide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderChar': {
-                defaultValue: 'null',
+                name: 'placeholderChar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'keepCharPositions': {
-                defaultValue: 'null',
+                name: 'keepCharPositions',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMask': {
-                defaultValue: 'null',
+                name: 'showMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pipe': {
-                defaultValue: 'null',
+                name: 'pipe',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(conformedValue: string, config: MaskedTextConfig) => string | false | object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'conformToMask': {
-                defaultValue: 'null',
+                name: 'conformToMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(text: string, mask: (string | RegExp)[], config?: MaskedTextConfig) => ConformedResult',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -4814,184 +6464,194 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'CepField',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'guide': {
-                defaultValue: 'null',
+                name: 'guide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderChar': {
-                defaultValue: 'null',
+                name: 'placeholderChar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'keepCharPositions': {
-                defaultValue: 'null',
+                name: 'keepCharPositions',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMask': {
-                defaultValue: 'null',
+                name: 'showMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pipe': {
-                defaultValue: 'null',
+                name: 'pipe',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(conformedValue: string, config: MaskedTextConfig) => string | false | object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'conformToMask': {
-                defaultValue: 'null',
+                name: 'conformToMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(text: string, mask: (string | RegExp)[], config?: MaskedTextConfig) => ConformedResult',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -5000,139 +6660,144 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Field',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string | number | boolean | {} | ReactElement<any> | (string | number | boolean | any[] | ReactEl...',
-                    value: 'undefined'
-                }
-            },
             'hasWrapper': {
-                defaultValue: 'true',
+                name: 'hasWrapper',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'render': {
-                defaultValue: 'null',
+                name: 'render',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(props: RenderProps) => Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'error': {
-                defaultValue: 'null',
+                name: 'error',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'allowNull': {
-                defaultValue: 'null',
+                name: 'allowNull',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'format': {
-                defaultValue: 'null',
+                name: 'format',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'parse': {
-                defaultValue: 'null',
+                name: 'parse',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, name: string) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'subscription': {
-                defaultValue: 'null',
+                name: 'subscription',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'FieldSubscription',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'validate': {
-                defaultValue: 'null',
+                name: 'validate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(value: any, allValues: object) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'component': {
-                defaultValue: 'null',
+                name: 'component',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | ComponentClass<FieldRenderProps> | StatelessComponent<FieldRenderProps>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -5141,202 +6806,214 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Form',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'string | number | boolean | {} | ReactElement<any> | (string | number | boolean | any[] | ReactEl...',
-                    value: 'undefined'
-                }
-            },
             'errorIcon': {
-                defaultValue: 'modal-erro',
+                name: 'errorIcon',
+                defaultValue: `modal-erro`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'errorModal': {
-                defaultValue: 'null',
+                name: 'errorModal',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'StatelessComponent<ErrorModalProps> | ComponentClass<ErrorModalProps>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hasErrorModal': {
-                defaultValue: 'true',
+                name: 'hasErrorModal',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hasLeaveModal': {
-                defaultValue: 'true',
+                name: 'hasLeaveModal',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hasSuccessModal': {
-                defaultValue: 'true',
+                name: 'hasSuccessModal',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'successContent': {
-                defaultValue: 'null',
+                name: 'successContent',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'successIcon': {
-                defaultValue: 'modal-sucesso',
+                name: 'successIcon',
+                defaultValue: `modal-sucesso`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'successModal': {
-                defaultValue: 'null',
+                name: 'successModal',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'StatelessComponent<FormModalProps> | ComponentClass<FormModalProps>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'successTitle': {
-                defaultValue: 'Cadastro realizado com sucesso!',
+                name: 'successTitle',
+                defaultValue: `Cadastro realizado com sucesso!`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSubmitSucceeded': {
-                defaultValue: 'null',
+                name: 'onSubmitSucceeded',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '() => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSubmitFailed': {
-                defaultValue: 'null',
+                name: 'onSubmitFailed',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(erros: object) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'subscription': {
-                defaultValue: 'null',
+                name: 'subscription',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'FormSubscription',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'decorators': {
-                defaultValue: 'null',
+                name: 'decorators',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Decorator[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'debug': {
-                defaultValue: 'null',
+                name: 'debug',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'DebugFunction',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'initialValues': {
-                defaultValue: 'null',
+                name: 'initialValues',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'mutators': {
-                defaultValue: 'null',
+                name: 'mutators',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '{ [key: string]: Mutator; }',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSubmit': {
-                defaultValue: 'null',
+                name: 'onSubmit',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(values: object, form: FormApi, callback?: (errors?: object) => void) => void | object | Promise<...',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'validate': {
-                defaultValue: 'null',
+                name: 'validate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(values: object) => object | Promise<object>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'validateOnBlur': {
-                defaultValue: 'null',
+                name: 'validateOnBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'component': {
-                defaultValue: 'null',
+                name: 'component',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | ComponentClass<FormRenderProps> | StatelessComponent<FormRenderProps>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'render': {
-                defaultValue: 'null',
+                name: 'render',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(props: FormRenderProps) => ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -5345,31 +7022,24 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'SubmitButton',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'handleSubmit': {
-                defaultValue: 'null',
+                name: 'handleSubmit',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(event?: SyntheticEvent<HTMLFormElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -5378,166 +7048,174 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Checkbox',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -5546,751 +7224,824 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'DatePickerInput',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'any',
-                    value: 'undefined'
-                }
-            },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'adjustDateOnChange': {
-                defaultValue: 'null',
+                name: 'adjustDateOnChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'allowSameDay': {
-                defaultValue: 'null',
+                name: 'allowSameDay',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoComplete': {
-                defaultValue: 'null',
+                name: 'autoComplete',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoFocus': {
-                defaultValue: 'null',
+                name: 'autoFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'calendarClassName': {
-                defaultValue: 'null',
+                name: 'calendarClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'customInput': {
-                defaultValue: 'null',
+                name: 'customInput',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'ReactNode',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'customInputRef': {
-                defaultValue: 'null',
+                name: 'customInputRef',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dateFormat': {
-                defaultValue: 'null',
+                name: 'dateFormat',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | string[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dateFormatCalendar': {
-                defaultValue: 'null',
+                name: 'dateFormatCalendar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dayClassName': {
-                defaultValue: 'null',
+                name: 'dayClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabledKeyboardNavigation': {
-                defaultValue: 'null',
+                name: 'disabledKeyboardNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'dropdownMode': {
-                defaultValue: 'null',
+                name: 'dropdownMode',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"scroll" | "select"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'endDate': {
-                defaultValue: 'null',
+                name: 'endDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'excludeDates': {
-                defaultValue: 'null',
+                name: 'excludeDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'filterDate': {
-                defaultValue: 'null',
+                name: 'filterDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'fixedHeight': {
-                defaultValue: 'null',
+                name: 'fixedHeight',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'forceShowMonthNavigation': {
-                defaultValue: 'null',
+                name: 'forceShowMonthNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'formatWeekNumber': {
-                defaultValue: 'null',
+                name: 'formatWeekNumber',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => ReactText',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'highlightDates': {
-                defaultValue: 'null',
+                name: 'highlightDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'includeDates': {
-                defaultValue: 'null',
+                name: 'includeDates',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'includeTimes': {
-                defaultValue: 'null',
+                name: 'includeTimes',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'inline': {
-                defaultValue: 'null',
+                name: 'inline',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'isClearable': {
-                defaultValue: 'null',
+                name: 'isClearable',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'locale': {
-                defaultValue: 'null',
+                name: 'locale',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxDate': {
-                defaultValue: 'null',
+                name: 'maxDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minDate': {
-                defaultValue: 'null',
+                name: 'minDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'monthsShown': {
-                defaultValue: 'null',
+                name: 'monthsShown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(date: Moment, event: SyntheticEvent<any>) => any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChangeRaw': {
-                defaultValue: 'null',
+                name: 'onChangeRaw',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onClickOutside': {
-                defaultValue: 'null',
+                name: 'onClickOutside',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: MouseEvent<HTMLDivElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyDown': {
-                defaultValue: 'null',
+                name: 'onKeyDown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLDivElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onMonthChange': {
-                defaultValue: 'null',
+                name: 'onMonthChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onSelect': {
-                defaultValue: 'null',
+                name: 'onSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment, event: SyntheticEvent<any>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onWeekSelect': {
-                defaultValue: 'null',
+                name: 'onWeekSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(firstDayOfWeek: Moment, weekNumber: ReactText, event: SyntheticEvent<any>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onYearChange': {
-                defaultValue: 'null',
+                name: 'onYearChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(date: Moment) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'openToDate': {
-                defaultValue: 'null',
+                name: 'openToDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'peekNextMonth': {
-                defaultValue: 'null',
+                name: 'peekNextMonth',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderText': {
-                defaultValue: 'null',
+                name: 'placeholderText',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperClassName': {
-                defaultValue: 'null',
+                name: 'popperClassName',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperModifiers': {
-                defaultValue: 'null',
+                name: 'popperModifiers',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'popperPlacement': {
-                defaultValue: 'null',
+                name: 'popperPlacement',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'preventOpenOnFocus': {
-                defaultValue: 'null',
+                name: 'preventOpenOnFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'readOnly': {
-                defaultValue: 'null',
+                name: 'readOnly',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'required': {
-                defaultValue: 'null',
+                name: 'required',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'scrollableYearDropdown': {
-                defaultValue: 'null',
+                name: 'scrollableYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'scrollableMonthYearDropdown': {
-                defaultValue: 'null',
+                name: 'scrollableMonthYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selected': {
-                defaultValue: 'null',
+                name: 'selected',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selectsEnd': {
-                defaultValue: 'null',
+                name: 'selectsEnd',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'selectsStart': {
-                defaultValue: 'null',
+                name: 'selectsStart',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showDisabledMonthNavigation': {
-                defaultValue: 'null',
+                name: 'showDisabledMonthNavigation',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMonthDropdown': {
-                defaultValue: 'null',
+                name: 'showMonthDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMonthYearDropdown': {
-                defaultValue: 'null',
+                name: 'showMonthYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showWeekNumbers': {
-                defaultValue: 'null',
+                name: 'showWeekNumbers',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showYearDropdown': {
-                defaultValue: 'null',
+                name: 'showYearDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'startDate': {
-                defaultValue: 'null',
+                name: 'startDate',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'tabIndex': {
-                defaultValue: 'null',
+                name: 'tabIndex',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'title': {
-                defaultValue: 'null',
+                name: 'title',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'todayButton': {
-                defaultValue: 'null',
+                name: 'todayButton',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'useWeekdaysShort': {
-                defaultValue: 'null',
+                name: 'useWeekdaysShort',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'useShortMonthInDropdown': {
-                defaultValue: 'null',
+                name: 'useShortMonthInDropdown',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'utcOffset': {
-                defaultValue: 'null',
+                name: 'utcOffset',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'weekLabel': {
-                defaultValue: 'null',
+                name: 'weekLabel',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'withPortal': {
-                defaultValue: 'null',
+                name: 'withPortal',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'yearDropdownItemNumber': {
-                defaultValue: 'null',
+                name: 'yearDropdownItemNumber',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'shouldCloseOnSelect': {
-                defaultValue: 'null',
+                name: 'shouldCloseOnSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showTimeSelect': {
-                defaultValue: 'null',
+                name: 'showTimeSelect',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'timeFormat': {
-                defaultValue: 'null',
+                name: 'timeFormat',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'timeIntervals': {
-                defaultValue: 'null',
+                name: 'timeIntervals',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'minTime': {
-                defaultValue: 'null',
+                name: 'minTime',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxTime': {
-                defaultValue: 'null',
+                name: 'maxTime',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Moment',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'excludeTimes': {
-                defaultValue: 'null',
+                name: 'excludeTimes',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -6299,139 +8050,210 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Input',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'type': {
-                defaultValue: 'null',
+                name: 'type',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            }
+        }
+    },
+    'InputIconDecorator': {
+        displayName: 'InputIconDecorator',
+        description: ``,
+        props: {
+            'icon': {
+                name: 'icon',
+                defaultValue: `null`,
+                description: ``,
+                required: true,
+                type: {
+                    name: 'Icons',
+                    value: 'undefined',
+                }
+            },
+            'position': {
+                name: 'position',
+                defaultValue: `right`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '"left" | "right"',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
+                }
+            },
+            'onClick': {
+                name: 'onClick',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '((event: MouseEvent<any>) => void) | OnClickWithPromise',
+                    value: 'undefined',
                 }
             }
         }
@@ -6440,130 +8262,134 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'MaskedInput',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'mask': {
-                defaultValue: 'null',
+                name: 'mask',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'MaskType',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'guide': {
-                defaultValue: 'null',
+                name: 'guide',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholderChar': {
-                defaultValue: 'null',
+                name: 'placeholderChar',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'keepCharPositions': {
-                defaultValue: 'null',
+                name: 'keepCharPositions',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'showMask': {
-                defaultValue: 'null',
+                name: 'showMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pipe': {
-                defaultValue: 'null',
+                name: 'pipe',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(conformedValue: string, config: MaskedTextConfig) => string | false | object',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'conformToMask': {
-                defaultValue: 'null',
+                name: 'conformToMask',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(text: string, mask: (string | RegExp)[], config?: MaskedTextConfig) => ConformedResult',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -6572,166 +8398,174 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'RadioButton',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'label': {
-                defaultValue: 'null',
+                name: 'label',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -6740,175 +8574,184 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'TextInput',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'InputStatus',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'password': {
-                defaultValue: 'null',
+                name: 'password',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'className': {
-                defaultValue: 'null',
+                name: 'className',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'checked': {
-                defaultValue: 'null',
+                name: 'checked',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'id': {
-                defaultValue: 'null',
+                name: 'id',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'name': {
-                defaultValue: 'null',
+                name: 'name',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event: any) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onFocus': {
-                defaultValue: 'null',
+                name: 'onFocus',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '<T>(event?: FocusEvent<T>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onKeyPress': {
-                defaultValue: 'null',
+                name: 'onKeyPress',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: KeyboardEvent<HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: 'null',
+                name: 'placeholder',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'provideController': {
-                defaultValue: 'null',
+                name: 'provideController',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(controller: InputController) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -6917,247 +8760,264 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'AsyncSelect',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'getPage': {
-                defaultValue: 'null',
+                name: 'getPage',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: '(params: AsyncSelectRequestParams) => Promise<any>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'maxLength': {
-                defaultValue: 'null',
+                name: 'maxLength',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'pageSize': {
-                defaultValue: '10',
+                name: 'pageSize',
+                defaultValue: `10`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'searchDelay': {
-                defaultValue: '500',
+                name: 'searchDelay',
+                defaultValue: `500`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"" | "error"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'autoload': {
-                defaultValue: 'false',
+                name: 'autoload',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'backspaceRemoves': {
-                defaultValue: 'false',
+                name: 'backspaceRemoves',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'cache': {
-                defaultValue: 'false',
+                name: 'cache',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean | { [key: string]: any; }',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearable': {
-                defaultValue: 'true',
+                name: 'clearable',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearValueText': {
-                defaultValue: 'Limpar seleção',
+                name: 'clearValueText',
+                defaultValue: `Limpar seleção`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'labelKey': {
-                defaultValue: 'null',
+                name: 'labelKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'loadingPlaceholder': {
-                defaultValue: 'Carregando...',
+                name: 'loadingPlaceholder',
+                defaultValue: `Carregando...`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreAccents': {
-                defaultValue: 'false',
+                name: 'ignoreAccents',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreCase': {
-                defaultValue: 'true',
+                name: 'ignoreCase',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'multi': {
-                defaultValue: 'false',
+                name: 'multi',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'noResultsText': {
-                defaultValue: 'Nenhum item encontrado.',
+                name: 'noResultsText',
+                defaultValue: `Nenhum item encontrado.`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLDivElement | HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'OnChangeHandler<OptionValues, Option<OptionValues> | Option<OptionValues>[]>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: '',
+                name: 'placeholder',
+                defaultValue: ``,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'searchPromptText': {
-                defaultValue: 'Digite para pesquisar',
+                name: 'searchPromptText',
+                defaultValue: `Digite para pesquisar`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'valueKey': {
-                defaultValue: 'null',
+                name: 'valueKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7166,184 +9026,194 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Select',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'options': {
-                defaultValue: 'null',
+                name: 'options',
+                defaultValue: `null`,
                 description: ``,
                 required: true,
                 type: {
                     name: 'SelectOption[]',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'status': {
-                defaultValue: 'null',
+                name: 'status',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"" | "error"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'value': {
-                defaultValue: 'null',
+                name: 'value',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'backspaceRemoves': {
-                defaultValue: 'false',
+                name: 'backspaceRemoves',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearable': {
-                defaultValue: 'true',
+                name: 'clearable',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'clearValueText': {
-                defaultValue: 'Limpar seleção',
+                name: 'clearValueText',
+                defaultValue: `Limpar seleção`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'disabled': {
-                defaultValue: 'null',
+                name: 'disabled',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'labelKey': {
-                defaultValue: 'null',
+                name: 'labelKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreAccents': {
-                defaultValue: 'true',
+                name: 'ignoreAccents',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'ignoreCase': {
-                defaultValue: 'true',
+                name: 'ignoreCase',
+                defaultValue: `true`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'multi': {
-                defaultValue: 'false',
+                name: 'multi',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'noResultsText': {
-                defaultValue: 'Nenhum item encontrado.',
+                name: 'noResultsText',
+                defaultValue: `Nenhum item encontrado.`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onBlur': {
-                defaultValue: 'null',
+                name: 'onBlur',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(event: FocusEvent<HTMLDivElement | HTMLInputElement>) => void',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'onChange': {
-                defaultValue: 'null',
+                name: 'onChange',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'OnChangeHandler<OptionValues, Option<OptionValues> | Option<OptionValues>[]>',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'placeholder': {
-                defaultValue: '',
+                name: 'placeholder',
+                defaultValue: ``,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string | Element',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'valueKey': {
-                defaultValue: 'null',
+                name: 'valueKey',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7352,22 +9222,84 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'AutoGrid',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'cellSize': {
-                defaultValue: 'null',
+                name: 'cellSize',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'CellSize',
-                    value: 'undefined'
+                    value: 'undefined',
+                }
+            },
+            'wrap': {
+                name: 'wrap',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'boolean',
+                    value: 'undefined',
+                }
+            },
+            'alignItems': {
+                name: 'alignItems',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'AlignItems',
+                    value: 'undefined',
+                }
+            },
+            'justifyContent': {
+                name: 'justifyContent',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'JustifyContent',
+                    value: 'undefined',
+                }
+            },
+            'direction': {
+                name: 'direction',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Direction',
+                    value: 'undefined',
+                }
+            },
+            'styles': {
+                name: 'styles',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'any',
+                    value: 'undefined',
+                }
+            },
+            'theme': {
+                name: 'theme',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: 'Theme',
+                    value: 'undefined',
+                }
+            },
+            'css': {
+                name: 'css',
+                defaultValue: `null`,
+                description: ``,
+                required: false,
+                type: {
+                    name: '(...styles: any[]) => string',
+                    value: 'undefined',
                 }
             }
         }
@@ -7376,58 +9308,54 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Cell',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'size': {
-                defaultValue: 'null',
+                name: 'size',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'CellSize',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'alignSelf': {
-                defaultValue: 'null',
+                name: 'alignSelf',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'AlignSelf',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7436,76 +9364,74 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Grid',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'wrap': {
-                defaultValue: 'null',
+                name: 'wrap',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'alignItems': {
-                defaultValue: 'null',
+                name: 'alignItems',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'AlignItems',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'justifyContent': {
-                defaultValue: 'null',
+                name: 'justifyContent',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'JustifyContent',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'direction': {
-                defaultValue: 'null',
+                name: 'direction',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Direction',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7514,40 +9440,34 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'PageContainer',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7556,67 +9476,64 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Flow',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'direction': {
-                defaultValue: 'horizontal',
+                name: 'direction',
+                defaultValue: `horizontal`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"horizontal" | "vertical"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'vSpacing': {
-                defaultValue: '0',
+                name: 'vSpacing',
+                defaultValue: `0`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hSpacing': {
-                defaultValue: '1',
+                name: 'hSpacing',
+                defaultValue: `1`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7625,67 +9542,64 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'HFlow',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'direction': {
-                defaultValue: 'null',
+                name: 'direction',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"horizontal" | "vertical"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'vSpacing': {
-                defaultValue: 'null',
+                name: 'vSpacing',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hSpacing': {
-                defaultValue: 'null',
+                name: 'hSpacing',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7694,67 +9608,64 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'VFlow',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'direction': {
-                defaultValue: 'null',
+                name: 'direction',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '"horizontal" | "vertical"',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'vSpacing': {
-                defaultValue: 'null',
+                name: 'vSpacing',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'hSpacing': {
-                defaultValue: 'null',
+                name: 'hSpacing',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }
@@ -7763,85 +9674,84 @@ const propTypes: {[key in string]: ComponentDoc} = {
         displayName: 'Spacing',
         description: ``,
         props: {
-            'children': {
-                defaultValue: 'null',
-                description: ``,
-                required: false,
-                type: {
-                    name: 'ReactNode',
-                    value: 'undefined'
-                }
-            },
             'top': {
-                defaultValue: 'null',
+                name: 'top',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'right': {
-                defaultValue: 'null',
+                name: 'right',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'bottom': {
-                defaultValue: 'null',
+                name: 'bottom',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'left': {
-                defaultValue: 'null',
+                name: 'left',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'number',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'block': {
-                defaultValue: 'false',
+                name: 'block',
+                defaultValue: `false`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'boolean',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'styles': {
-                defaultValue: 'null',
+                name: 'styles',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'any',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'theme': {
-                defaultValue: 'null',
+                name: 'theme',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: 'Theme',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             },
             'css': {
-                defaultValue: 'null',
+                name: 'css',
+                defaultValue: `null`,
                 description: ``,
                 required: false,
                 type: {
                     name: '(...styles: any[]) => string',
-                    value: 'undefined'
+                    value: 'undefined',
                 }
             }
         }

@@ -18,7 +18,7 @@ storiesOf('Components', module)
         <MemoryRouter initialEntries={['/']} initialIndex={0}>
             <IconButtonLink
                 to={text('to', '/')}
-                icon='lapis'
+                icon='pen'
             />
         </MemoryRouter>
     ))

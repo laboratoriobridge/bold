@@ -1,8 +1,8 @@
 /* tslint:disable */
 import * as React from "react"
-import GeneratedIconProps from "../GeneratedIconProps"
+import { GeneratedIconProps } from "../GeneratedIconProps"
 
-const Dots = (props: GeneratedIconProps) => (
+export const Dots = (props: GeneratedIconProps) => (
   <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
     <g id="Menu-dots">
       <circle cx={12} cy={6} r={2} />
@@ -11,5 +11,3 @@ const Dots = (props: GeneratedIconProps) => (
     </g>
   </svg>
 )
-
-export default Dots

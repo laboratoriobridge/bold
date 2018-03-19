@@ -1,3 +1,3 @@
-export default interface GeneratedIconProps {
+export interface GeneratedIconProps {
     className?: string
 }

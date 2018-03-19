@@ -12,6 +12,7 @@ filewalker(path.join(__dirname, '../src/components'), (err, data) => {
 
     let writeStream = fs.createWriteStream(path.join(__dirname, '../src/propTypes.ts'))
 
+    writeStream.write(`/* tslint:disable */\n`)
     writeStream.write(`import { ComponentDoc } from 'react-docgen-typescript/lib/parser'
 
 const propTypes: {[key in string]: ComponentDoc} = {`)
@@ -36,13 +37,14 @@ const propTypes: {[key in string]: ComponentDoc} = {`)
         description: \`${doc.description}\`,
         props: {${Object.keys(doc.props).map(prop => `
             '${prop}': {
-                defaultValue: '${doc.props[prop].defaultValue
-                            && doc.props[prop].defaultValue.value.replace(/\'/g, '\\`')}',
+                name: '${prop}',
+                defaultValue: \`${doc.props[prop].defaultValue
+                            && doc.props[prop].defaultValue.value.replace(/\'/g, '\\`')}\`,
                 description: \`${doc.props[prop].description.replace(/\`/g, '\\`')}\`,
                 required: ${doc.props[prop].required},
                 type: {
                     name: '${doc.props[prop].type.name}',
-                    value: '${doc.props[prop].type.value}'
+                    value: '${doc.props[prop].type.value}',
                 }
             }`)}
         }

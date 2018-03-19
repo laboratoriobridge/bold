@@ -7,7 +7,7 @@ import { IconButton } from './IconButton'
 
 describe('IconButton', () => {
     it('deve renderizar corretamente', () => {
-        const wrapper = render(withTheme(<IconButton icon='lapis' />))
+        const wrapper = render(withTheme(<IconButton icon='pen' />))
         expect(wrapper).toMatchSnapshot()
     })
 
@@ -18,7 +18,7 @@ describe('IconButton', () => {
             })
         }
 
-        const wrapper = mount(withTheme(<IconButton icon='lapis' onClick={delayedFunction} />))
+        const wrapper = mount(withTheme(<IconButton icon='pen' onClick={delayedFunction} />))
         expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')
@@ -27,7 +27,7 @@ describe('IconButton', () => {
 
     it('não deve ter animação com "onClick" que não seja promise', () => {
         const func = () => undefined
-        const wrapper = mount(withTheme(<IconButton icon='lapis' onClick={func} />))
+        const wrapper = mount(withTheme(<IconButton icon='pen' onClick={func} />))
         expect(wrapper).toMatchSnapshot()
 
         wrapper.simulate('click')
@@ -35,17 +35,17 @@ describe('IconButton', () => {
     })
 
     it('deve adicionar um hint string automaticamente', () => {
-        const wrapper = render(withTheme(<IconButton icon='lapis' hint='hint teste' />))
+        const wrapper = render(withTheme(<IconButton icon='pen' hint='hint teste' />))
         expect(wrapper).toMatchSnapshot()
     })
 
     it('deve adicionar um hint custom automaticamente', () => {
-        const wrapper = render(withTheme(<IconButton icon='lapis' hint={(<span>hint complexo teste</span>)} />))
+        const wrapper = render(withTheme(<IconButton icon='pen' hint={(<span>hint complexo teste</span>)} />))
         expect(wrapper).toMatchSnapshot()
     })
 
     it('deve ter animação de loading', () => {
-        const wrapper = render(withTheme(<IconButton icon='lapis' loading={true} />))
+        const wrapper = render(withTheme(<IconButton icon='pen' loading={true} />))
         expect(wrapper).toMatchSnapshot()
     })
 })
