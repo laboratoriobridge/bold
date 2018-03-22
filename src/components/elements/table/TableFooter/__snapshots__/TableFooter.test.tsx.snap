@@ -222,32 +222,30 @@ exports[`deve renderizar corretamente 1`] = `
     <div
       class="emotion-11"
     >
-      <span>
-        <button
-          class="emotion-6"
-          title="Página anterior"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-5"
+      <button
+        class="emotion-6"
+        title="Página anterior"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-5"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-4"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
-                class="emotion-4"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-                  id="Seta-esquerda"
-                />
-              </svg>
-            </span>
+              <path
+                d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+                id="Seta-esquerda"
+              />
+            </svg>
           </span>
-        </button>
-      </span>
+        </span>
+      </button>
       <input
         class="emotion-7"
         type="text"
@@ -256,32 +254,30 @@ exports[`deve renderizar corretamente 1`] = `
       <span>
         de 10
       </span>
-      <span>
-        <button
-          class="emotion-6"
-          title="Próxima página"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-5"
+      <button
+        class="emotion-6"
+        title="Próxima página"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-5"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-4"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
-                class="emotion-4"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-                  id="Seta-direita"
-                />
-              </svg>
-            </span>
+              <path
+                d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+                id="Seta-direita"
+              />
+            </svg>
           </span>
-        </button>
-      </span>
+        </span>
+      </button>
     </div>
   </div>
 </div>
