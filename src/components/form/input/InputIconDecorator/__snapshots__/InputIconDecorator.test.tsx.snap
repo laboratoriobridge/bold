@@ -1,0 +1,265 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-3 {
+  position: relative;
+}
+
+.emotion-3 input {
+  padding-right: 2.5rem;
+}
+
+.emotion-2 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.25rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:focus {
+  box-shadow: none;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-0:focus {
+  box-shadow: none;
+}
+
+<p
+  class="emotion-3"
+>
+  <input />
+  <span
+    class="emotion-2"
+  >
+    <span
+      class="emotion-1"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+          id="Pesquisar"
+        />
+      </svg>
+    </span>
+  </span>
+</p>
+`;
+
+exports[`should render correctly with button 1`] = `
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-right: 2.5rem;
+}
+
+.emotion-3 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.25rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-2 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:focus {
+  box-shadow: none;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<p
+  class="emotion-4"
+>
+  <input />
+  <span
+    class="emotion-3"
+  >
+    <button
+      class="emotion-2"
+      tabindex="-1"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+              id="Pesquisar"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
+  </span>
+</p>
+`;
+
+exports[`should render correctly with left position 1`] = `
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:focus {
+  box-shadow: none;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-0:focus {
+  box-shadow: none;
+}
+
+.emotion-3 {
+  position: relative;
+}
+
+.emotion-3 input {
+  padding-left: 2.5rem;
+}
+
+.emotion-2 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.25rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+<p
+  class="emotion-3"
+>
+  <input />
+  <span
+    class="emotion-2"
+  >
+    <span
+      class="emotion-1"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+          id="Pesquisar"
+        />
+      </svg>
+    </span>
+  </span>
+</p>
+`;
