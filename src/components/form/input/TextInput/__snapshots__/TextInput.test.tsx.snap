@@ -113,3 +113,177 @@ exports[`TextInput render password 1`] = `
   type="password"
 />
 `;
+
+exports[`TextInput should render correctly with input 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 1rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.emotion-0::placeholder {
+  color: #cccccc;
+}
+
+.emotion-0:disabled {
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-5 {
+  position: relative;
+}
+
+.emotion-5 input {
+  padding-left: 2.5rem;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.25rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+.emotion-3 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.emotion-3 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-3:disabled {
+  opacity: 0.5;
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<p
+  class="emotion-5"
+>
+  <input
+    class="emotion-0"
+    type="text"
+  />
+  <span
+    class="emotion-4"
+  >
+    <button
+      class="emotion-3"
+      tabindex="-1"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-2"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-1"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <g
+              id="Ajustes"
+            >
+              <path
+                d="M16 12a4 4 0 1 0-3.86-5H4v1.88h8.1A4 4 0 0 0 16 12zm0-6a2 2 0 1 1-2 2 2 2 0 0 1 2-2zM8 12a4 4 0 1 0 3.9 4.88H20V15h-8.14A4 4 0 0 0 8 12zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"
+              />
+            </g>
+          </svg>
+        </span>
+      </span>
+    </button>
+  </span>
+</p>
+`;

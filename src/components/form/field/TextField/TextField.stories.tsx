@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
@@ -25,3 +26,10 @@ storiesOf('Form', module)
     .add('TextField password', () =>
         <TextField name='senha' label='Senha' placeholder='Senha' password required />
     )
+    .add('Input with icon', () => (
+        <TextField
+            name='iconized'
+            label='Input with icon'
+            icon={{ icon: 'search', onClick: action('icon-clicked') }}
+        />
+    ))

@@ -2,12 +2,14 @@ import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
+import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
 export type InputStatus = '' | 'error'
 
 export interface TextInputProps extends PublicInputProps, WithStylesProps {
     status?: InputStatus
     password?: boolean
+    icon?: InputIconDecoratorProps
 }
 
 export const createStyles = (theme) => ({
@@ -54,19 +56,29 @@ export const createStyles = (theme) => ({
 export class TextInput extends React.Component<TextInputProps> {
 
     render() {
-        const { css, password, status, theme, ...rest } = this.props
+        const { css, password, status, theme, icon, ...rest } = this.props
         const styles = createStyles(theme)
 
         const classes = css(styles.input,
             status === 'error' && styles.error)
 
-        return (
+        const input = (
             <Input
                 {...rest}
                 className={classes}
                 type={password ? 'password' : 'text'}
             />
         )
+
+        if (icon) {
+            return (
+                <InputIconDecorator {...icon}>
+                    {input}
+                </InputIconDecorator>
+            )
+        } else {
+            return input
+        }
     }
 
 }
