@@ -42,10 +42,6 @@ exports[`should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-0:focus {
-  box-shadow: none;
-}
-
 <p
   class="emotion-3"
 >
@@ -97,6 +93,11 @@ exports[`should render correctly with button 1`] = `
   top: 1px;
   bottom: 1px;
   right: 1px;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
 }
 
 .emotion-2 {
@@ -151,11 +152,6 @@ exports[`should render correctly with button 1`] = `
   display: inline-flex;
 }
 
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
 <p
   class="emotion-4"
 >
@@ -206,10 +202,6 @@ exports[`should render correctly with left position 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-0:focus {
-  box-shadow: none;
 }
 
 .emotion-3 {
