@@ -1,3 +1,4 @@
+import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 
 import { Color, withStyles, WithStylesProps } from '../../../styles'
@@ -33,7 +34,7 @@ export class Icon extends React.PureComponent<IconProps> {
 
         return (
             <span title={this.props.title} className={this.props.css(styles.span)}>
-                <SelectedIcon className={this.props.css(styles.icon)} aria-hidden='true' />
+                <SelectedIcon className={emotionCss(styles.icon)} aria-hidden='true' />
             </span>
         )
     }
