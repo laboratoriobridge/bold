@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { Icon } from '../..'
 import { Page, SortSpec } from '../../../../store/requester'
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { Omit } from '../../../../util/types'
@@ -49,19 +50,28 @@ export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
 
     private renderColumnTitle = (colProps: DataTableColumnProps<T>, sort: SortSpec[]) => {
         const handleClick = () => this.handleTitleClick(colProps)
+        const { css } = this.props
 
         if (colProps.title) {
             const dir = sort && getPropertyDirection(colProps.name, sort)
             const styles = {
+                link: {
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                },
                 sort: {
                     marginLeft: '0.25rem',
                 },
             }
 
+            if (!colProps.sortable) {
+                return colProps.title || colProps.name
+            }
+
             return (
-                <a onClick={handleClick}>
+                <a className={css(styles.link)} onClick={handleClick}>
                     {colProps.title || colProps.name}
-                    {dir && <Sort styles={styles.sort} dir={dir} />}
+                    <Sort styles={styles.sort} dir={dir} />
                 </a>
             )
         } else {
@@ -81,29 +91,39 @@ export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
 
 export interface DataTableColumnProps<T> extends TableColumnProps<T> {
     name: string
+    sortable?: boolean
 }
 
 export class DataTableColumn<T> extends React.Component<DataTableColumnProps<T>> {
+    static defaultProps = {
+        sortable: false,
+    }
+
     render() {
         return null
     }
 }
 
 interface SortProps extends WithStylesProps {
-    dir: 'ASC' | 'DESC'
+    dir: 'ASC' | 'DESC' | ''
 }
 
 @withStyles
 class Sort extends React.Component<SortProps> {
     render() {
-        const { css, dir } = this.props
-        if (dir === 'ASC') {
-            return <span className={css()}>▾</span>
-        } else if (dir === 'DESC') {
-            return <span className={css()}>▴</span>
-        } else {
-            return null
-        }
+        const { dir } = this.props
+        const icon = (dir === 'ASC' && 'angleDown')
+            || (dir === 'DESC' && 'angleUp')
+            || 'sort'
+
+        return (
+            <Icon
+                styles={{ marginLeft: '0.25rem' }}
+                color={icon === 'sort' ? 'gray80' : 'primary'}
+                size={1}
+                icon={icon}
+            />
+        )
     }
 }
 

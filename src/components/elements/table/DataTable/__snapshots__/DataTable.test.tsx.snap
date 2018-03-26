@@ -1,24 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
-.emotion-8 {
+exports[`should render correctyle 1`] = `
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-15 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
   border: 1px solid #e6e6e6;
 }
 
-.emotion-1 {
+.emotion-3 {
   text-align: left;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #e6e6e6;
 }
 
-.emotion-0 {
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   margin-left: 0.25rem;
 }
 
-.emotion-22 {
+.emotion-0 {
+  fill: #056DFF;
+  font-size: 1rem;
+}
+
+.emotion-29 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -32,7 +52,7 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-9 {
+.emotion-16 {
   font-weight: bold;
   border-right: 1px solid #e6e6e6;
   display: -webkit-box;
@@ -48,7 +68,7 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-21 {
+.emotion-28 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,16 +88,20 @@ exports[`deve renderizar corretamente 1`] = `
   border-top: none;
 }
 
-.emotion-12 {
+.emotion-19 {
   position: relative;
   margin-left: 0.5rem;
 }
 
-.emotion-11 {
+.emotion-18 {
   font-weight: bold;
 }
 
-.emotion-20 {
+.emotion-17 {
+  margin-left: 0.25rem;
+}
+
+.emotion-27 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -90,11 +114,11 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-20 > *:not(:last-child) {
+.emotion-27 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-15 {
+.emotion-22 {
   background-color: transparent;
   border: none;
   border-radius: 4px;
@@ -117,7 +141,7 @@ exports[`deve renderizar corretamente 1`] = `
   transform: translate3d(0,0,0);
 }
 
-.emotion-15 span {
+.emotion-22 span {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -126,32 +150,32 @@ exports[`deve renderizar corretamente 1`] = `
   transition: color .2s;
 }
 
-.emotion-15:disabled {
+.emotion-22:disabled {
   opacity: 0.5;
 }
 
-.emotion-15:focus {
+.emotion-22:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-15:hover {
+.emotion-22:hover {
   background: #e6e6e6;
 }
 
-.emotion-14 {
+.emotion-21 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-13 {
+.emotion-20 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-16 {
+.emotion-23 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -169,80 +193,112 @@ exports[`deve renderizar corretamente 1`] = `
   text-align: center;
 }
 
-.emotion-16::-webkit-input-placeholder {
+.emotion-23::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-16::-moz-placeholder {
+.emotion-23::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-16:-ms-input-placeholder {
+.emotion-23:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-16::placeholder {
+.emotion-23::placeholder {
   color: #cccccc;
 }
 
-.emotion-16:disabled {
+.emotion-23:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-23:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-16:not(:disabled):focus {
+.emotion-23:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-23:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 <div
-  class="emotion-23"
+  class="emotion-30"
 >
   <table
-    class="emotion-8"
+    class="emotion-15"
   >
     <thead>
       <tr>
         <th
-          class="emotion-1"
+          class="emotion-3"
           data-name="id"
         >
-          <a>
+          <a
+            class="emotion-2"
+          >
             Column ID
             <span
-              class="emotion-0"
+              class="emotion-1"
             >
-              ▴
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M18.36 14.47l-1.41 1.42L12 10.94l-4.95 4.95-1.41-1.42L12 8.11l6.36 6.36z"
+                  id="Seta-cima"
+                />
+              </svg>
             </span>
           </a>
         </th>
         <th
-          class="emotion-1"
+          class="emotion-3"
           data-name="nome"
         >
-          <a>
+          <a
+            class="emotion-2"
+          >
             Column name
             <span
-              class="emotion-0"
+              class="emotion-1"
             >
-              ▾
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
+                  id="Seta-baixo"
+                />
+              </svg>
             </span>
           </a>
+        </th>
+        <th
+          class="emotion-3"
+          data-name="actions"
+        >
+          Column actions
         </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td
-          class="emotion-1"
+          class="emotion-3"
           data-name="id"
         >
           <span>
@@ -250,17 +306,23 @@ exports[`deve renderizar corretamente 1`] = `
           </span>
         </td>
         <td
-          class="emotion-1"
+          class="emotion-3"
           data-name="nome"
         >
           <span>
             MARIA MACHADO DE JESUS
           </span>
         </td>
+        <td
+          class="emotion-3"
+          data-name="actions"
+        >
+          <span />
+        </td>
       </tr>
       <tr>
         <td
-          class="emotion-1"
+          class="emotion-3"
           data-name="id"
         >
           <span>
@@ -268,21 +330,27 @@ exports[`deve renderizar corretamente 1`] = `
           </span>
         </td>
         <td
-          class="emotion-1"
+          class="emotion-3"
           data-name="nome"
         >
           <span>
             MARIA MACHADO DE JESUS
           </span>
         </td>
+        <td
+          class="emotion-3"
+          data-name="actions"
+        >
+          <span />
+        </td>
       </tr>
     </tbody>
   </table>
   <div
-    class="emotion-22"
+    class="emotion-29"
   >
     <span
-      class="emotion-9"
+      class="emotion-16"
     >
       <span
         title="2"
@@ -291,19 +359,19 @@ exports[`deve renderizar corretamente 1`] = `
       </span>
     </span>
     <div
-      class="emotion-21"
+      class="emotion-28"
     >
       <span>
         Mostrar:
         <span
-          class="emotion-12"
+          class="emotion-19"
         >
           <a
-            class="emotion-11"
+            class="emotion-18"
           >
             10 
             <span
-              class="emotion-0"
+              class="emotion-17"
             >
               ▾
             </span>
@@ -311,21 +379,21 @@ exports[`deve renderizar corretamente 1`] = `
         </span>
       </span>
       <div
-        class="emotion-20"
+        class="emotion-27"
       >
         <button
-          class="emotion-15"
+          class="emotion-22"
           disabled=""
           title="Página anterior"
           type="button"
         >
           <span>
             <span
-              class="emotion-14"
+              class="emotion-21"
             >
               <svg
                 aria-hidden="true"
-                class="emotion-13"
+                class="emotion-20"
                 height="1em"
                 viewBox="0 0 24 24"
                 width="1em"
@@ -339,7 +407,7 @@ exports[`deve renderizar corretamente 1`] = `
           </span>
         </button>
         <input
-          class="emotion-16"
+          class="emotion-23"
           type="text"
           value="1"
         />
@@ -347,18 +415,18 @@ exports[`deve renderizar corretamente 1`] = `
           de 1
         </span>
         <button
-          class="emotion-15"
+          class="emotion-22"
           disabled=""
           title="Próxima página"
           type="button"
         >
           <span>
             <span
-              class="emotion-14"
+              class="emotion-21"
             >
               <svg
                 aria-hidden="true"
-                class="emotion-13"
+                class="emotion-20"
                 height="1em"
                 viewBox="0 0 24 24"
                 width="1em"
