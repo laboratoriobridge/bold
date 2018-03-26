@@ -23,6 +23,16 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
             wrapper: {
                 position: 'relative',
             },
+            left: {
+                'input': {
+                    paddingLeft: '2.5rem',
+                },
+            },
+            right: {
+                'input': {
+                    paddingRight: '2.5rem',
+                },
+            },
             iconWrapper: {
                 position: 'absolute',
                 backgroundColor: theme.color.background,
@@ -38,35 +48,29 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
             iconRight: {
                 right: 1,
             },
-            inputLeft: {
-                paddingLeft: '2.5rem',
-            },
-            inputRight: {
-                paddingRight: '2.5rem',
-            },
             icon: {
                 '&:focus': {
                     boxShadow: 'none',
                 },
             },
         }
-        const classes = [
+
+        const wrapperClasses = [
+            styles.wrapper,
+            position === 'left' && styles.left,
+            position === 'right' && styles.right,
+        ]
+        const iconBoxClasses = [
             styles.iconWrapper,
             position === 'left' && styles.iconLeft,
             position === 'right' && styles.iconRight,
         ]
-        const inputStyles = [
-            position === 'left' && styles.inputLeft,
-            position === 'right' && styles.inputRight,
-        ]
 
         return (
-            <p className={css(styles.wrapper)}>
-                {React.Children.map(children, (child: any) =>
-                    React.cloneElement(child, { styles: inputStyles })
-                )}
+            <p className={css(wrapperClasses)}>
+                {children}
 
-                <span className={css(classes)}>
+                <span className={css(iconBoxClasses)}>
                     {onClick ?
                         <IconButton
                             icon={icon}

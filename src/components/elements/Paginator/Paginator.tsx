@@ -77,15 +77,13 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
         return (
             <div className={css(styles.paginator)}>
-                <span>
-                    <IconButton
-                        styles={styles.button}
-                        icon='angleLeft'
-                        disabled={this.isFirstPage()}
-                        title='Página anterior'
-                        onClick={!this.isFirstPage() ? this.previous : undefined}
-                    />
-                </span>
+                <IconButton
+                    styles={styles.button}
+                    icon='angleLeft'
+                    disabled={this.isFirstPage()}
+                    title='Página anterior'
+                    onClick={!this.isFirstPage() ? this.previous : undefined}
+                />
 
                 <TextInput
                     styles={styles.input}
@@ -97,15 +95,13 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
                 <span>de {total}</span>
 
-                <span>
-                    <IconButton
-                        styles={styles.button}
-                        icon='angleRight'
-                        disabled={this.isLastPage()}
-                        title='Próxima página'
-                        onClick={!this.isLastPage() ? this.next : undefined}
-                    />
-                </span>
+                <IconButton
+                    styles={styles.button}
+                    icon='angleRight'
+                    disabled={this.isLastPage()}
+                    title='Próxima página'
+                    onClick={!this.isLastPage() ? this.next : undefined}
+                />
             </div>
         )
     }

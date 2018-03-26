@@ -15,4 +15,9 @@ describe('TextInput', () => {
         const wrapper = render(withTheme(<TextInput password />))
         expect(wrapper).toMatchSnapshot()
     })
+
+    it('should render correctly with input', () => {
+        const wrapper = render(withTheme(<TextInput icon={{ icon: 'adjust', position: 'left', onClick: jest.fn() }} />))
+        expect(wrapper).toMatchSnapshot()
+    })
 })
