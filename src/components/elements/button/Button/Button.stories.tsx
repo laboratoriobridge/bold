@@ -2,8 +2,7 @@ import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes } from '../../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../../stories-addons/withTheme'
+import { withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { Button } from './Button'
 import * as Doc from './Button.md'
