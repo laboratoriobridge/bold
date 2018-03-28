@@ -55,6 +55,7 @@ storiesOf('Components', module)
             <DataTableColumn
                 title='Profissional'
                 name='nome'
+                sortable={true}
                 render={(row: Row) => (
                     <Text>{row.name}</Text>
                 )}
@@ -62,6 +63,7 @@ storiesOf('Components', module)
             <DataTableColumn
                 title='CNS'
                 name='cns'
+                sortable={true}
                 render={(row: Row) => (
                     <Text>{row.cns}</Text>
                 )}
@@ -69,6 +71,7 @@ storiesOf('Components', module)
             <DataTableColumn
                 title='CPF'
                 name='cpf'
+                sortable={true}
                 render={(row: Row) => (
                     <Text>{row.cpf}</Text>
                 )}

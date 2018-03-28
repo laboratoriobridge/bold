@@ -36,6 +36,7 @@ const table = withTheme(
     <DataTable page={page} onSortChange={sortHandler} onPageChange={pageHandler} onSizeChange={sizeHandler}>
         <DataTableColumn
             name='id'
+            sortable={true}
             title='Column ID'
             render={(row: Row) => (
                 <span>{row.id}</span>
@@ -43,23 +44,33 @@ const table = withTheme(
         />
         <DataTableColumn
             name='nome'
+            sortable={true}
             title='Column name'
             render={(row: Row) => (
                 <span>{row.name}</span>
             )}
         />
+        <DataTableColumn
+            name='actions'
+            title='Column actions'
+            render={(row: Row) => (
+                <span />
+            )}
+        />
     </DataTable>
 )
 
-it('deve renderizar corretamente', () => {
+it('should render correctyle', () => {
     expect(render(table)).toMatchSnapshot()
 })
 
-it('deve chamar onSortChange com os parâmetros corretos ao clicar sobre o título de uma coluna', () => {
+it('should call onSortChange with right parameters when clicked over column title', () => {
     const wrapper = mount(table)
     wrapper.find('th[data-name="id"] > a').simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith(['id,ASC'])
 
     wrapper.find('th[data-name="nome"] > a').simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith(['nome,DESC'])
+
+    expect(wrapper.find('th[data-name="actions"] > a').exists()).toBeFalsy()
 })
