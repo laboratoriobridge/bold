@@ -8,16 +8,15 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 import { Type } from '../Button/ButtonSkins'
 
 import { ButtonLink } from './ButtonLink'
+import * as Doc from './ButtonLink.md'
 
-const typeOptions: {[key in Type]: string} = {
+const typeOptions: { [key in Type]: string } = {
     'normal': 'normal',
     'primary': 'primary',
 }
 
 storiesOf('Components', module)
-    .addDecorator(withPropTypes(`
-    Botão que renderiza um link com a tag <a> ao invés de um <button>.
-    `))
+    .addDecorator(withPropTypes(Doc))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('ButtonLink', () => (

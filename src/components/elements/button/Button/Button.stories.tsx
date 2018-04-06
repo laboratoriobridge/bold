@@ -8,18 +8,18 @@ import { Button } from './Button'
 import * as Doc from './Button.md'
 import { Size, Skins, Type } from './ButtonSkins'
 
-const typeOptions: {[key in Type]: string} = {
+const typeOptions: { [key in Type]: string } = {
     'normal': 'normal',
     'primary': 'primary',
 }
 
-const skinOptions: {[key in Skins]: string} = {
+const skinOptions: { [key in Skins]: string } = {
     'default': 'default',
     'ghost': 'ghost',
     'secondary': 'secondary',
 }
 
-const sizeOptions: {[key in Size]: string} = {
+const sizeOptions: { [key in Size]: string } = {
     'small': 'small',
     'medium': 'medium',
 }

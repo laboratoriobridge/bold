@@ -3,7 +3,7 @@ import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes } from '../../../../stories-addons/withPropTypes/index'
+import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { DatePickerInput } from './DatePickerInput'
