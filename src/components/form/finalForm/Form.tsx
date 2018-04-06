@@ -85,47 +85,47 @@ export class Form extends React.Component<FormProps, FormState> {
 
         return (
             <>
-            <FinalForm
-                {...this.props}
-                onSubmit={this.onSubmit}
-                render={this.renderForm}
-            />
-            <ErrorModal
-                active={this.state.modalErrorActive}
-                error={this.state.error}
-                onClose={this.closeError}
-                icon={errorIcon}
-                title={errorTitle}
-            >
-                {errorContent}
-            </ErrorModal>
-            <SuccessModal
-                active={this.state.modalSuccessActive}
-                onClose={this.closeSuccess}
-                icon={successIcon}
-                title={successTitle}
-            >
-                {successContent}
-            </SuccessModal>
+                <FinalForm
+                    {...this.props}
+                    onSubmit={this.onSubmit}
+                    render={this.renderForm}
+                />
+                <ErrorModal
+                    active={this.state.modalErrorActive}
+                    error={this.state.error}
+                    onClose={this.closeError}
+                    icon={errorIcon}
+                    title={errorTitle}
+                >
+                    {errorContent}
+                </ErrorModal>
+                <SuccessModal
+                    active={this.state.modalSuccessActive}
+                    onClose={this.closeSuccess}
+                    icon={successIcon}
+                    title={successTitle}
+                >
+                    {successContent}
+                </SuccessModal>
             </>
         )
     }
 
     private renderForm = (props: FormRenderProps) => (
         <>
-        <FormSpy
-            subscription={{ pristine: true, submitErrors: true, submitFailed: true, submitSucceeded: true }}
-        >
-            {spyProps => (
-                <FormListener
-                    {...spyProps}
-                    hasLeaveModal={this.props.hasLeaveModal}
-                    onSubmitSucceeded={this.onSubmitSucceeded}
-                    onSubmitFailed={this.onSubmitFailed}
-                />
-            )}
-        </FormSpy>
-        {this.props.render(props)}
+            <FormSpy
+                subscription={{ pristine: true, submitErrors: true, submitFailed: true, submitSucceeded: true }}
+            >
+                {spyProps => (
+                    <FormListener
+                        {...spyProps}
+                        hasLeaveModal={this.props.hasLeaveModal}
+                        onSubmitSucceeded={this.onSubmitSucceeded}
+                        onSubmitFailed={this.onSubmitFailed}
+                    />
+                )}
+            </FormSpy>
+            {this.props.render(props)}
         </>
     )
 

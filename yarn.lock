@@ -4066,9 +4066,9 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-final-form@4.2.0:
-  version "4.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.2.0.tgz#8743efbb75933ea3c7d1718b5c5ab9eb23b60026"
+final-form@4.4.0:
+  version "4.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.4.0.tgz#3eaa1305d7b03d1e5698ace5ff361d4d20d44ac0"
 
 finalhandler@1.1.1:
   version "1.1.1"
@@ -7207,10 +7207,6 @@ raw-body@2.3.2:
     iconv-lite "0.4.19"
     unpipe "1.0.0"
 
-raw-loader@0.5.1:
-  version "0.5.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
-
 rc@^1.1.7:
   version "1.2.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rc/-/rc-1.2.6.tgz#eb18989c6d4f4f162c399f79ddd29f3835568092"
@@ -7324,9 +7320,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-final-form@3.1.0:
-  version "3.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.1.0.tgz#79711cd54631354981562cac3f924f786be2c232"
+react-final-form@3.1.5:
+  version "3.1.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.1.5.tgz#6fa0e4c61e49b691b679ef4c8a5ad3fe92df0956"
 
 react-fuzzy@^0.5.2:
   version "0.5.2"
