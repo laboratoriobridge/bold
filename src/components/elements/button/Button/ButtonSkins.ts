@@ -6,7 +6,7 @@ import { createStyles as createSecondary } from './skins/secondary'
 
 export type Skins = 'default' | 'ghost' | 'secondary'
 export type Type = 'normal' | 'primary'
-export type Size = 'medium' | 'small'
+export type Size = 'large' | 'medium' | 'small'
 
 export interface Skin {
     button: any,
@@ -29,11 +29,14 @@ export const createBaseStyles = (theme: Theme) => ({
     button: {
         backfaceVisibility: 'hidden',
         display: 'inline-flex',
+        justifyContent: 'center',
         fontFamily: theme.font.textFamily,
         lineHeight: '1.5rem',
         position: 'relative',
         userSelect: 'none',
         transition: 'all .2s',
+        fontWeight: 'bold',
+        letterSpacing: 1,
         ':disabled': {
             cursor: 'not-allowed',
             opacity: 0.5,
@@ -70,19 +73,22 @@ export const createBaseStyles = (theme: Theme) => ({
             top: 'calc(50% - (1.5em / 2))',
         },
     },
+    block: {
+        width: '100%',
+    },
 })
 
 export const createSizeStyles = (theme: Theme) => ({
+    large: {
+        padding: 'calc(1.25rem - 1px) 3.25rem',
+        fontSize: '0.875rem',
+    },
     medium: {
         fontSize: '0.875rem',
-        fontWeight: 'bold',
-        letterSpacing: 1,
         padding: 'calc(0.75rem - 1px) 2.5rem',
     },
     small: {
         fontSize: '0.875rem',
-        fontWeight: 'bold',
-        letterSpacing: 1,
         padding: 'calc(0.25rem - 1px) 1rem',
     },
 })

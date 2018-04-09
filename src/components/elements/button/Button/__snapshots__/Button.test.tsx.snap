@@ -8,6 +8,10 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -17,16 +21,16 @@ exports[`Button deve adicionar um hint custom automaticamente 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -93,6 +97,10 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -102,16 +110,16 @@ exports[`Button deve adicionar um hint string automaticamente 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -178,6 +186,10 @@ exports[`Button deve renderizar corretamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -187,16 +199,16 @@ exports[`Button deve renderizar corretamente 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -259,6 +271,10 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -268,16 +284,16 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -547,6 +563,10 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -556,16 +576,16 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
 }
@@ -856,6 +876,10 @@ exports[`Button deve ter animação de loading 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -865,16 +889,16 @@ exports[`Button deve ter animação de loading 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
 }
@@ -958,6 +982,10 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -967,16 +995,16 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -1246,6 +1274,10 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -1255,16 +1287,16 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 

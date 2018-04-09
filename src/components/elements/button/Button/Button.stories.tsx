@@ -8,20 +8,21 @@ import { Button } from './Button'
 import * as Doc from './Button.md'
 import { Size, Skins, Type } from './ButtonSkins'
 
-const typeOptions: { [key in Type]: string } = {
+const typeOptions: {[key in Type]: string } = {
     'normal': 'normal',
     'primary': 'primary',
 }
 
-const skinOptions: { [key in Skins]: string } = {
+const skinOptions: {[key in Skins]: string } = {
     'default': 'default',
     'ghost': 'ghost',
     'secondary': 'secondary',
 }
 
-const sizeOptions: { [key in Size]: string } = {
+const sizeOptions: {[key in Size]: string } = {
     'small': 'small',
     'medium': 'medium',
+    'large': 'large',
 }
 
 storiesOf('Components', module)
@@ -30,11 +31,12 @@ storiesOf('Components', module)
     .addDecorator(withTheme())
     .add('Button', () => (
         <Button
-            disabled={boolean('disabled', false)}
             label={text('label', 'Button')}
-            loading={boolean('loading', false)}
             skin={select('skin', skinOptions, 'default')}
             size={select('size', sizeOptions, 'medium')}
             type={select('type', typeOptions, 'normal')}
+            loading={boolean('loading', false)}
+            disabled={boolean('disabled', false)}
+            block={boolean('block', false)}
         />
     ))
