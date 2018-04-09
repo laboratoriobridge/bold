@@ -26,6 +26,7 @@ export interface AsyncSelectProps extends WithStylesProps,
     'noResultsText' |
     'onBlur' |
     'onChange' |
+    'optionRenderer' |
     'placeholder' |
     'searchPromptText' |
     'valueKey'
@@ -100,7 +101,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
         this.props.getPage(params)
             .then(result => {
                 const response = {
-                    options: result.data,
+                    options: result.data || result,
                 }
                 callback(null, response)
             }).catch(error => {
