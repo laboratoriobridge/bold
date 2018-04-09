@@ -10,9 +10,10 @@ import { SelectField } from './SelectField'
 
 const options = [
     { value: '1', label: 'value1' },
+    { value: '2', label: 'value2' },
 ]
 
-storiesOf('Form', module)
+storiesOf('Form/Select', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

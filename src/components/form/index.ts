@@ -17,6 +17,7 @@ export * from './select/Select/Select'
 export * from './finalForm/Field'
 export * from './finalForm/Form'
 export * from './finalForm/SubmitButton'
+export * from './finalForm/wizard'
 
 export * from './FormError'
 export * from './FormField'
