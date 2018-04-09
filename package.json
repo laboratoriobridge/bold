@@ -1,6 +1,6 @@
 {
   "name": "bridge-react",
-  "version": "1.0.0-alpha.21",
+  "version": "1.0.0-alpha.22",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": {
@@ -26,12 +26,12 @@
     "generate-icons-index": "babel-node ./tools/generateIconsIndex.js"
   },
   "devDependencies": {
-    "@storybook/addons": "3.4.0",
     "@storybook/addon-actions": "3.4.0",
-    "@storybook/addon-knobs": "3.4.0",
     "@storybook/addon-info": "3.4.0",
+    "@storybook/addon-knobs": "3.4.0",
     "@storybook/addon-links": "3.4.0",
     "@storybook/addon-options": "3.4.0",
+    "@storybook/addons": "3.4.0",
     "@storybook/react": "3.4.0",
     "@types/classnames": "2.2.3",
     "@types/enzyme": "3.1.5",
@@ -47,8 +47,8 @@
     "@types/react-select": "1.2.0",
     "@types/redux-mock-store": "0.0.13",
     "@types/storybook__addon-actions": "3.0.3",
-    "@types/storybook__addon-knobs": "3.2.3",
     "@types/storybook__addon-info": "3.2.2",
+    "@types/storybook__addon-knobs": "3.2.3",
     "@types/storybook__addon-links": "3.3.0",
     "@types/storybook__addon-options": "3.2.0",
     "@types/storybook__react": "3.0.7",
@@ -80,6 +80,7 @@
     "react-addons-create-fragment": "15.6.2",
     "react-datepicker": "1.1.0",
     "react-docgen-typescript": "1.2.6",
+    "react-docgen-typescript-webpack-plugin": "1.1.0",
     "react-dom": "16.2.0",
     "react-final-form": "3.1.5",
     "react-overlays": "0.8.3",
@@ -87,7 +88,6 @@
     "react-router-dom": "4.2.2",
     "react-select": "1.2.1",
     "react-text-mask": "5.1.0",
-    "react-docgen-typescript-webpack-plugin": "1.1.0",
     "redux": "3.7.2",
     "redux-mock-store": "1.4.0",
     "redux-thunk": "2.2.0",
