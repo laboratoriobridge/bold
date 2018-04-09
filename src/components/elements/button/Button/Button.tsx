@@ -11,6 +11,7 @@ export interface ButtonProps extends SkinProps, BaseButtonProps, WithStylesProps
     icon?: Icons
     label: string
     loading?: boolean
+    block?: boolean
 }
 
 export interface ButtonState {
@@ -44,6 +45,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             size,
             theme,
             type,
+            block,
             ...rest,
         } = this.props
 
@@ -55,9 +57,11 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             baseStyles.button,
             skinStyles.button,
             type === 'primary' && skinStyles.primary,
+            size === 'large' && sizeStyles.large,
             size === 'medium' && sizeStyles.medium,
             size === 'small' && sizeStyles.small,
-            (this.state.loading || loading) && baseStyles.loading
+            (this.state.loading || loading) && baseStyles.loading,
+            block && baseStyles.block
         )
 
         return (

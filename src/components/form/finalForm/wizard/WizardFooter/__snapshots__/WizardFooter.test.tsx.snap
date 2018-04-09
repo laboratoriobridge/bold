@@ -19,6 +19,10 @@ exports[`rendering should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -28,16 +32,16 @@ exports[`rendering should render correctly 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
   font-weight: bold;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
@@ -87,6 +91,10 @@ exports[`rendering should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
@@ -96,6 +104,11 @@ exports[`rendering should render correctly 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
@@ -104,11 +117,6 @@ exports[`rendering should render correctly 1`] = `
   border: 1px solid #056DFF;
   color: #ffffff;
   font-size: 0.875rem;
-  font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
