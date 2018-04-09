@@ -55,6 +55,45 @@ const createSelectStyle = (theme: Theme) => {
                     fontSize: '1rem',
                 },
             },
+            // Multi-Select
+            '&.Select--multi': {
+                '.Select-control': {
+                    '.Select-multi-value-wrapper': {
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                    },
+                    '.Select-input': {
+                        padding: '0 .5rem',
+                    },
+                    '.Select-value': {
+                        padding: 0,
+                        margin: 0,
+                        lineHeight: 'calc(1rem - 2px)',
+                        background: theme.color.white,
+                        border: '1px solid ' + theme.color.gray80,
+                        fontSize: '1em',
+                        fontWeight: 'bold',
+                        display: 'inline-flex',
+                        marginLeft: '0.5rem',
+                    },
+                    '.Select-value-label': {
+                        color: theme.color.gray30 + ' !important',
+                        padding: '3px 8px',
+                        alignSelf: 'center',
+                    },
+                    '.Select-value-icon': {
+                        background: theme.color.background,
+                        color: theme.color.text,
+                        fontSize: '1.5em',
+                        fontWeight: 'normal',
+                        border: 0,
+                        order: 1,
+                        padding: '0 .25rem',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                    },
+                },
+            },
             '.Select-option:hover, .Select-option.is-focused': {
                 background: theme.color.background,
             },
