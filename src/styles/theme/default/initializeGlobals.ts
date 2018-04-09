@@ -37,6 +37,7 @@ export default function initializeGlobals(theme: Theme) {
         'h3': { fontSize: '0.75rem' },
         p: {
             margin: '0',
+            lineHeight: 1.5,
         },
         a: {
             cursor: 'pointer',
