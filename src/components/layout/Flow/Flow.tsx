@@ -1,12 +1,15 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
+import { AlignItems, JustifyContent } from '../../grid/Grid/Grid'
 import { Spacing } from '../Spacing/Spacing'
 
 export interface FlowProps extends WithStylesProps {
     direction?: 'horizontal' | 'vertical'
     vSpacing?: number
     hSpacing?: number
+    alignItems?: AlignItems
+    justifyContent?: JustifyContent
 }
 
 @withStyles
@@ -24,6 +27,8 @@ export class Flow extends React.PureComponent<FlowProps> {
         const styles = {
             flow: {
                 margin: `0 ${-hSpacing / 2}rem`,
+                alignItems: this.props.alignItems,
+                justifyContent: this.props.justifyContent,
             },
             flowHorizontal: {
                 display: 'flex',

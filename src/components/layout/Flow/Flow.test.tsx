@@ -6,7 +6,7 @@ import { withTheme } from '../../../test'
 import { Flow } from './Flow'
 
 describe('Flow', () => {
-    it('deve envelopar cada filho em um elemento que crie espaçamento horizontal', () => {
+    it('should wrap each child on an element with horizontal spacing', () => {
         const wrapper = render(withTheme(
             <Flow>
                 <span>1</span>
@@ -16,7 +16,7 @@ describe('Flow', () => {
         ))
         expect(wrapper).toMatchSnapshot()
     })
-    it('deve suportar o parâmetro vSpacing', () => {
+    it('should accept vSpacing prop', () => {
         const wrapper = render(withTheme(
             <Flow vSpacing={2.5}>
                 <span>1</span>
@@ -26,7 +26,7 @@ describe('Flow', () => {
         ))
         expect(wrapper).toMatchSnapshot()
     })
-    it('deve suportar o parâmetro hSpacing', () => {
+    it('should accept hSpacing prop', () => {
         const wrapper = render(withTheme(
             <Flow hSpacing={0.5}>
                 <span>1</span>
@@ -36,9 +36,29 @@ describe('Flow', () => {
         ))
         expect(wrapper).toMatchSnapshot()
     })
-    it('deve suportar o parâmetro direction', () => {
+    it('should accept direction prop', () => {
         const wrapper = render(withTheme(
             <Flow direction='vertical'>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </Flow>
+        ))
+        expect(wrapper).toMatchSnapshot()
+    })
+    it('should accept justifyContent prop', () => {
+        const wrapper = render(withTheme(
+            <Flow justifyContent='flex-end'>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </Flow>
+        ))
+        expect(wrapper).toMatchSnapshot()
+    })
+    it('should accept alignItems prop', () => {
+        const wrapper = render(withTheme(
+            <Flow alignItems='center'>
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
