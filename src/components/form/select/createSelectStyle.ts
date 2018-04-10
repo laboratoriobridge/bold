@@ -3,7 +3,6 @@ import 'react-select/dist/react-select.css'
 import { focusBoxShadow, Theme } from '../../../styles'
 
 const createSelectStyle = (theme: Theme) => {
-    const height = 'calc(2rem - 2px)'
     return {
         default: {
             fontSize: '0.75rem',
@@ -15,8 +14,7 @@ const createSelectStyle = (theme: Theme) => {
                 border: 'solid 1px ' + theme.color.gray80,
                 borderRadius: theme.baseRadius,
                 color: theme.color.gray30,
-                height,
-                lineHeight: '1rem',
+                height: '2rem',
                 ':hover': {
                     borderColor: theme.color.gray60,
                     boxShadow: 'none',
@@ -33,13 +31,16 @@ const createSelectStyle = (theme: Theme) => {
                 },
                 '.Select-placeholder, .Select-value': {
                     padding: '0 1rem',
-                    lineHeight: height,
+                    lineHeight: 1,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    height: 'auto',
                 },
                 '.Select-value-label': {
                     color: theme.color.gray30 + ' !important',
                 },
                 '.Select-input': {
-                    height,
+                    height: 'auto',
                     padding: '0 1rem',
                     'input': {
                         lineHeight: '1rem',
@@ -61,25 +62,32 @@ const createSelectStyle = (theme: Theme) => {
                     '.Select-multi-value-wrapper': {
                         display: 'inline-flex',
                         alignItems: 'center',
+                        flexWrap: 'wrap',
                     },
                     '.Select-input': {
                         padding: '0 .5rem',
+                        height: 'auto',
                     },
                     '.Select-value': {
                         padding: 0,
-                        margin: 0,
-                        lineHeight: 'calc(1rem - 2px)',
+                        margin: '0.25rem 0',
+                        lineHeight: '1em',
                         background: theme.color.white,
                         border: '1px solid ' + theme.color.gray80,
                         fontSize: '1em',
                         fontWeight: 'bold',
                         display: 'inline-flex',
+                        alignItems: 'stretch',
                         marginLeft: '0.5rem',
                     },
                     '.Select-value-label': {
                         color: theme.color.gray30 + ' !important',
-                        padding: '3px 8px',
+                        padding: '4px 8px',
                         alignSelf: 'center',
+                        whiteSpace: 'nowrap',
+                        maxWidth: '200px',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
                     },
                     '.Select-value-icon': {
                         background: theme.color.background,
