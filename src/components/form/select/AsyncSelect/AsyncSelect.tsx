@@ -77,6 +77,7 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
                 inputProps={{ maxLength: this.props.maxLength }}
                 loadOptions={this.loadOptions}
                 onBlur={this.blur}
+                closeOnSelect={!this.props.multi}
             />
         )
     }

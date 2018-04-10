@@ -27,9 +27,10 @@ storiesOf('Form/Select', module)
             name='select'
             valueKey='id'
             labelKey='name'
-            disabled={boolean('disabled', false)}
-            label={text('label', 'Component label')}
             placeholder='Select'
             getPage={getPage}
+            label={text('label', 'Component label')}
+            disabled={boolean('disabled', false)}
+            multi={boolean('multi', false)}
         />
     ))

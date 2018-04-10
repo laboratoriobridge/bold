@@ -55,6 +55,7 @@ export class Select extends React.Component<SelectProps> {
         return (
             <ReactSelect
                 {...rest}
+                closeOnSelect={!this.props.multi}
                 className={classes}
                 onBlur={this.blur}
             />

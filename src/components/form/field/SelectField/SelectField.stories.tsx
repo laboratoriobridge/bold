@@ -9,8 +9,11 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 import { SelectField } from './SelectField'
 
 const options = [
-    { value: '1', label: 'value1' },
-    { value: '2', label: 'value2' },
+    { value: '1', label: 'Value #1' },
+    { value: '2', label: 'Value #2' },
+    { value: '3', label: 'Value #3' },
+    { value: '4', label: 'Value #4' },
+    { value: '5', label: 'Value #5' },
 ]
 
 storiesOf('Form/Select', module)
@@ -21,9 +24,10 @@ storiesOf('Form/Select', module)
     .add('SelectField', () => (
         <SelectField
             name='select'
-            disabled={boolean('disabled', false)}
             label={text('label', 'Component label')}
             options={options}
             placeholder='Select'
+            disabled={boolean('disabled', false)}
+            multi={boolean('multi', false)}
         />
     ))
