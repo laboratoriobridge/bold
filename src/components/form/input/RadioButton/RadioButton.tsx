@@ -4,7 +4,7 @@ import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
-    label: string
+    label: React.ReactNode
 }
 
 @withStyles

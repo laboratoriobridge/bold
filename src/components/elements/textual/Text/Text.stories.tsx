@@ -5,18 +5,23 @@ import * as React from 'react'
 import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { colors } from '../../../../styles/theme/Theme'
 
-import { Text, TextTag, Weight } from './Text'
+import { FontStyle, Text, TextTag, Weight } from './Text'
 
-const weights: {[key in Weight]} = {
-    'normal': 'Normal',
-    'bold': 'Bold',
+const weights: { [key in Weight] } = {
+    'normal': 'normal',
+    'bold': 'bold',
 }
 
-const tags: {[key in TextTag]} = {
+const tags: { [key in TextTag] } = {
     'span': 'span',
     'label': 'label',
     'div': 'div',
     'p': 'p',
+}
+
+const fontStyles: { [key in FontStyle] } = {
+    'normal': 'normal',
+    'italic': 'italic',
 }
 
 storiesOf('Textual', module)
@@ -25,10 +30,11 @@ storiesOf('Textual', module)
     .addDecorator(withTheme())
     .add('Text', () => (
         <Text
-            color={select('color', colors, 'gray30')}
             size={number('size', 1)}
+            color={select('color', colors, 'gray30')}
             weight={select('weight', weights, 'normal')}
             tag={select('tag', tags, 'span')}
+            fontStyle={select('fontStyle', fontStyles, 'normal')}
         >
             {text('text', 'text here')}
         </Text>

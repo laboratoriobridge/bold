@@ -9,19 +9,23 @@ exports[`Flow should accept alignItems prop 1`] = `
   display: inline-block;
 }
 
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
+}
+
 .emotion-3 {
-  margin: 0 -0.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 <div
@@ -52,6 +56,16 @@ exports[`Flow should accept alignItems prop 1`] = `
 `;
 
 exports[`Flow should accept direction prop 1`] = `
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
 .emotion-0 {
   margin-top: 0rem;
   margin-right: 0.5rem;
@@ -60,15 +74,12 @@ exports[`Flow should accept direction prop 1`] = `
   display: inline-block;
 }
 
-.emotion-3 {
-  margin: 0 -0.5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.emotion-0:first-child {
+  margin-top: 0;
+}
+
+.emotion-0:last-child {
+  margin-bottom: 0;
 }
 
 <div
@@ -100,14 +111,10 @@ exports[`Flow should accept direction prop 1`] = `
 
 exports[`Flow should accept hSpacing prop 1`] = `
 .emotion-3 {
-  margin: 0 -0.25rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .emotion-0 {
@@ -116,6 +123,14 @@ exports[`Flow should accept hSpacing prop 1`] = `
   margin-bottom: 0rem;
   margin-left: 0.25rem;
   display: inline-block;
+}
+
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
 }
 
 <div
@@ -154,19 +169,23 @@ exports[`Flow should accept justifyContent prop 1`] = `
   display: inline-block;
 }
 
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
+}
+
 .emotion-3 {
-  margin: 0 -0.5rem;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
 }
 
 <div
@@ -198,14 +217,10 @@ exports[`Flow should accept justifyContent prop 1`] = `
 
 exports[`Flow should accept vSpacing prop 1`] = `
 .emotion-3 {
-  margin: 0 -0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .emotion-0 {
@@ -214,6 +229,14 @@ exports[`Flow should accept vSpacing prop 1`] = `
   margin-bottom: 1.25rem;
   margin-left: 0.5rem;
   display: inline-block;
+}
+
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
 }
 
 <div
@@ -245,14 +268,10 @@ exports[`Flow should accept vSpacing prop 1`] = `
 
 exports[`Flow should wrap each child on an element with horizontal spacing 1`] = `
 .emotion-3 {
-  margin: 0 -0.5rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 
 .emotion-0 {
@@ -261,6 +280,14 @@ exports[`Flow should wrap each child on an element with horizontal spacing 1`] =
   margin-bottom: 0rem;
   margin-left: 0.5rem;
   display: inline-block;
+}
+
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
 }
 
 <div

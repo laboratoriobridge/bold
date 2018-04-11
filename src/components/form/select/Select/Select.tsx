@@ -2,7 +2,6 @@ import * as React from 'react'
 import ReactSelect, { Option, ReactSelectProps } from 'react-select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
-
 import createSelectStyle from '../createSelectStyle'
 
 export interface SelectOption extends Option {
@@ -34,6 +33,8 @@ export interface SelectProps extends WithStylesProps,
 export class Select extends React.Component<SelectProps> {
 
     static defaultProps: Partial<SelectProps> = {
+        labelKey: 'label',
+        valueKey: 'value',
         clearable: true,
         multi: false,
         placeholder: '',
@@ -55,8 +56,10 @@ export class Select extends React.Component<SelectProps> {
         return (
             <ReactSelect
                 {...rest}
+                closeOnSelect={!this.props.multi}
                 className={classes}
                 onBlur={this.blur}
+                valueRenderer={this.renderValue}
             />
         )
     }
@@ -73,4 +76,11 @@ export class Select extends React.Component<SelectProps> {
         }
     }
 
+    private renderValue = (option) => {
+        const label = option[this.props.labelKey]
+
+        return (
+            <span title={label}>{label}</span>
+        )
+    }
 }

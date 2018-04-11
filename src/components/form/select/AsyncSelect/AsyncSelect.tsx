@@ -43,6 +43,8 @@ export interface AsyncSelectProps extends WithStylesProps,
 export class AsyncSelect extends React.Component<AsyncSelectProps> {
 
     static defaultProps: Partial<AsyncSelectProps> = {
+        labelKey: 'label',
+        valueKey: 'value',
         autoload: false,
         backspaceRemoves: false,
         cache: false,
@@ -77,6 +79,8 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
                 inputProps={{ maxLength: this.props.maxLength }}
                 loadOptions={this.loadOptions}
                 onBlur={this.blur}
+                closeOnSelect={!this.props.multi}
+                valueRenderer={this.renderValue}
             />
         )
     }
@@ -119,5 +123,13 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
                 }
             }
         }
+    }
+
+    private renderValue = (option) => {
+        const label = option[this.props.labelKey]
+
+        return (
+            <span title={label}>{label}</span>
+        )
     }
 }

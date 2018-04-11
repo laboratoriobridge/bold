@@ -12,5 +12,6 @@ describe('Text', () => {
         expect(render(withTheme(<Text weight='bold'>Test weight</Text>))).toMatchSnapshot()
         expect(render(withTheme(<Text size={2}>Test size</Text>))).toMatchSnapshot()
         expect(render(withTheme(<Text color='primary'>Test color</Text>))).toMatchSnapshot()
+        expect(render(withTheme(<Text fontStyle='italic'>Test italic</Text>))).toMatchSnapshot()
     })
 })

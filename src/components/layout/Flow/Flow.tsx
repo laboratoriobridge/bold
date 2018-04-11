@@ -22,20 +22,17 @@ export class Flow extends React.PureComponent<FlowProps> {
     }
 
     render() {
-        const { css, direction, hSpacing } = this.props
+        const { css, direction } = this.props
 
         const styles = {
             flow: {
-                margin: `0 ${-hSpacing / 2}rem`,
+                display: 'flex',
                 alignItems: this.props.alignItems,
                 justifyContent: this.props.justifyContent,
             },
             flowHorizontal: {
-                display: 'flex',
-                flexWrap: 'wrap',
             },
             flowVertical: {
-                display: 'flex',
                 flexDirection: 'column',
             },
         }
@@ -50,8 +47,24 @@ export class Flow extends React.PureComponent<FlowProps> {
     }
 
     renderChild = (child) => {
-        return (
+        const { direction } = this.props
+
+        const styles = {
+            child: {
+                ':first-child': {
+                    marginTop: direction === 'vertical' && 0,
+                    marginLeft: direction === 'horizontal' && 0,
+                },
+                ':last-child': {
+                    marginBottom: direction === 'vertical' && 0,
+                    marginRight: direction === 'horizontal' && 0,
+                },
+            },
+        }
+
+        return child && (
             <Spacing
+                styles={styles.child}
                 top={this.props.vSpacing / 2}
                 bottom={this.props.vSpacing / 2}
                 left={this.props.hSpacing / 2}

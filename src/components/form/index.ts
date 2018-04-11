@@ -14,6 +14,7 @@ export * from './input/RadioButton/RadioButton'
 export * from './select/AsyncSelect/AsyncSelect'
 export * from './select/Select/Select'
 
+export * from './finalForm/ErrorField'
 export * from './finalForm/Field'
 export * from './finalForm/Form'
 export * from './finalForm/SubmitButton'

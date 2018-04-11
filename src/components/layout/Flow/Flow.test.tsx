@@ -1,7 +1,8 @@
-import { render } from 'enzyme'
+import { mount, render, shallow } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../test'
+import { Spacing } from '../Spacing/Spacing'
 
 import { Flow } from './Flow'
 
@@ -65,5 +66,14 @@ describe('Flow', () => {
             </Flow>
         ))
         expect(wrapper).toMatchSnapshot()
+    })
+    it('should not wrap empty elements', () => {
+        expect(mount(withTheme(
+            <Flow>
+                <div>1</div>
+                {false && <div>2</div>}
+                <div>3</div>
+            </Flow>
+        )).find(Spacing).length).toEqual(2)
     })
 })

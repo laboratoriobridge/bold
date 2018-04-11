@@ -51,3 +51,15 @@ exports[`Text deve renderizar corretamente 5`] = `
   Test color
 </span>
 `;
+
+exports[`Text deve renderizar corretamente 6`] = `
+.emotion-0 {
+  font-style: italic;
+}
+
+<span
+  class="emotion-0"
+>
+  Test italic
+</span>
+`;
