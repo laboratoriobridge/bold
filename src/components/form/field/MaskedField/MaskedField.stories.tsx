@@ -9,7 +9,7 @@ import { CpfField, TelefoneField } from '../maskedFields/maskedFields'
 
 import { MaskedField } from './MaskedField'
 
-storiesOf('Form', module)
+storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes(`
     A prop 'mask' é um array de strings ou expressões regulares, sendo as strings os caracteres fixos da máscara
     e as expressões regulares a expressão que pode ser digitada pelo usuário nesta posição.

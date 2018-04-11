@@ -16,7 +16,7 @@ const options = [
     { value: '5', label: 'Value #5' },
 ]
 
-storiesOf('Form/Select', module)
+storiesOf('Form/Fields/Select', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
