@@ -35,7 +35,6 @@ class LoginComponent extends React.Component<LoginComponentProps> {
         }
         return (
             <Form
-                hasSuccessModal={false}
                 onSubmit={this.props.login}
                 onSubmitSucceeded={this.props.onLogin}
                 render={this.renderForm}

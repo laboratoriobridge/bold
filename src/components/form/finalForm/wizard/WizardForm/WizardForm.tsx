@@ -111,8 +111,6 @@ export class WizardForm extends React.Component<WizardFormProps, WizardFormState
             <Form
                 {...this.props}
                 key={this.state.step} // Force form reconstruction for each step, resetting form meta values
-                hasSuccessModal={false}
-                hasErrorModal={false}
                 initialValues={this.state.values}
                 validate={this.validate}
                 onSubmit={this.handleSubmit}
