@@ -7,7 +7,7 @@ import { withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { TableFooter } from './TableFooter'
 
-storiesOf('Components', module)
+storiesOf('Components/Table', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

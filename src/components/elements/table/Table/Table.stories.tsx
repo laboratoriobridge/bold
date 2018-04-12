@@ -20,7 +20,7 @@ const rows: Row[] = [
     { id: 3, name: 'MARIA MACHADO DE JESUS', cns: '000.000', cpf: '000.111.222-33' },
 ]
 
-storiesOf('Components', module)
+storiesOf('Components/Table', module)
     // .addDecorator(withKnobs)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
