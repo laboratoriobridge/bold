@@ -7,11 +7,10 @@ import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { IconButtonLink } from './IconButtonLink'
+import * as Doc from './IconButtonLink.md'
 
-storiesOf('Components', module)
-    .addDecorator(withPropTypes(`
-    Botão que renderiza um link com a tag <a> ao invés de um <button>.
-    `))
+storiesOf('Components/Buttons', module)
+    .addDecorator(withPropTypes(Doc))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('IconButtonLink', () => (

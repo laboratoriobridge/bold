@@ -15,7 +15,7 @@ const typeOptions: { [key in Type]: string } = {
     'primary': 'primary',
 }
 
-storiesOf('Components', module)
+storiesOf('Components/Buttons', module)
     .addDecorator(withPropTypes(Doc))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
