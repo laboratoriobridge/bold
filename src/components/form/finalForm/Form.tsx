@@ -15,7 +15,7 @@ export interface FormProps extends FinalFormProps {
 export class Form extends React.Component<FormProps> {
 
     static defaultProps: Partial<FormProps> = {
-        hasLeaveModal: true,
+        hasLeaveModal: false,
     }
 
     render() {
@@ -101,7 +101,7 @@ class FormListener extends React.PureComponent<FormListenerProps> {
         return (
             <Prompt
                 when={this.props.hasLeaveModal && !this.props.pristine && !this.props.submitSucceeded}
-                message='mensagem não usada'
+                message='Deseja sair e perder as informações não salvas?'
             />
         )
     }
