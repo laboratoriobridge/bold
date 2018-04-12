@@ -8,7 +8,7 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { NumberField } from './NumberField'
 
-storiesOf('Form', module)
+storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

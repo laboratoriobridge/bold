@@ -10,7 +10,7 @@ import { Flow } from '../../../layout/Flow/Flow'
 
 import { RadioField } from './RadioField'
 
-storiesOf('Form', module)
+storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes())
     .addDecorator(withText(`
         test

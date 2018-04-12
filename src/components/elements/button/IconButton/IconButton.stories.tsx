@@ -7,7 +7,7 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { IconButton } from './IconButton'
 
-storiesOf('Components', module)
+storiesOf('Components/Buttons', module)
     .addDecorator(withPropTypes(``))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

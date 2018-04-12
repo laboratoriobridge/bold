@@ -17,7 +17,7 @@ const getPage = (params: AsyncSelectRequestParams) => {
         })
 }
 
-storiesOf('Form/Select', module)
+storiesOf('Form/Fields/Select', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())

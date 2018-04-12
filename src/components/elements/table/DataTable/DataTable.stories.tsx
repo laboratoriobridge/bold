@@ -34,7 +34,7 @@ const page: Page<Row> = {
     totalPages: 1,
 }
 
-storiesOf('Components', module)
+storiesOf('Components/Table', module)
     // .addDecorator(withKnobs)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())

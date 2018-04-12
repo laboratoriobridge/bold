@@ -1,12 +1,12 @@
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-import { withForm } from '../../../../stories-addons/withForm'
-import { withPropTypes } from '../../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../../stories-addons/withTheme'
+
+import { withForm, withPropTypes, withTheme } from '../../../../stories-addons'
+
 import { CheckboxField } from './CheckboxField'
 
-storiesOf('Form', module)
+storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes(`
     São usados quando há uma lista de opções e o usuário pode selecionar múltiplas escolhas, incluindo todas ou nenhuma.
 

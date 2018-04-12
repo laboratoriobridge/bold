@@ -9,7 +9,7 @@ import { withTheme } from '../../../../stories-addons/withTheme'
 
 import { TextField } from './TextField'
 
-storiesOf('Form', module)
+storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
@@ -26,7 +26,7 @@ storiesOf('Form', module)
     .add('TextField password', () =>
         <TextField name='senha' label='Senha' placeholder='Senha' password required />
     )
-    .add('Input with icon', () => (
+    .add('TextField with icon', () => (
         <TextField
             name='iconized'
             label='Input with icon'

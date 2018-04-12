@@ -45,7 +45,6 @@ storiesOf('Form', module)
             <Form
                 onSubmit={submit}
                 render={renderForm}
-                hasSuccessModal={false}
                 validate={validate}
             />
         )
