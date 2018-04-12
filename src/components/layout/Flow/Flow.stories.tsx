@@ -42,8 +42,8 @@ storiesOf('Layout', module)
                 hSpacing={number('hSpacing', 1)}
                 vSpacing={number('vSpacing', 0)}
                 direction={select('direction', directionOptions, 'horizontal')}
-                alignItems={select('alignItems', alignItemsOptions, null)}
-                justifyContent={select('justifyContent', justifyContentOptions, null)}
+                alignItems={select('alignItems', alignItemsOptions, 'stretch')}
+                justifyContent={select('justifyContent', justifyContentOptions, 'flex-start')}
             >
                 <span>1</span>
                 <span>2</span>
@@ -55,8 +55,8 @@ storiesOf('Layout', module)
                 hSpacing={number('hSpacing', 1)}
                 vSpacing={number('vSpacing', 0)}
                 direction={select('direction', directionOptions, 'horizontal')}
-                alignItems={select('alignItems', alignItemsOptions, null)}
-                justifyContent={select('justifyContent', justifyContentOptions, null)}
+                alignItems={select('alignItems', alignItemsOptions, 'stretch')}
+                justifyContent={select('justifyContent', justifyContentOptions, 'flex-start')}
             >
                 <Button label='Botão 1' type='primary' />
                 <Button label='Botão 2' />
