@@ -1,4 +1,5 @@
 import { FORM_ERROR } from 'final-form'
+import createFocusOnErrorDecorator from 'final-form-focus'
 import * as React from 'react'
 import {
     Form as FinalForm,
@@ -7,23 +8,34 @@ import {
 import { Prompt } from 'react-router-dom'
 
 export interface FormProps extends FinalFormProps {
+    focusOnError?: boolean
     hasLeaveModal?: boolean
     onSubmitSucceeded?(): void
     onSubmitFailed?(erros: object): void
 }
 
+const focusOnErrorDecorator = createFocusOnErrorDecorator()
+
 export class Form extends React.Component<FormProps> {
 
     static defaultProps: Partial<FormProps> = {
         hasLeaveModal: false,
+        focusOnError: true,
+        decorators: [],
     }
 
     render() {
+        const decorators = this.props.decorators ? this.props.decorators : []
+        if (this.props.focusOnError) {
+            decorators.push(focusOnErrorDecorator)
+        }
+
         return (
             <FinalForm
                 {...this.props}
                 onSubmit={this.onSubmit}
                 render={this.renderForm}
+                decorators={decorators}
             />
         )
     }

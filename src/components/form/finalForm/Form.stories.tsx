@@ -1,3 +1,4 @@
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
@@ -14,6 +15,7 @@ import { SubmitButton } from './SubmitButton'
 
 storiesOf('Form', module)
     .addDecorator(withPropTypes())
+    .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withStore())
     .add('Form example', () => {
@@ -46,6 +48,7 @@ storiesOf('Form', module)
                 onSubmit={submit}
                 render={renderForm}
                 validate={validate}
+                focusOnError={boolean('focusOnError', true)}
             />
         )
     })
