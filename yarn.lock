@@ -4064,6 +4064,10 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
+final-form-focus@1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-focus/-/final-form-focus-1.0.0.tgz#51b7652ea6aac9774234a2c871e9f9a434b2b983"
+
 final-form@4.4.0:
   version "4.4.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.4.0.tgz#3eaa1305d7b03d1e5698ace5ff361d4d20d44ac0"
