@@ -6,6 +6,10 @@ import { Theme } from '../Theme'
 export default function initializeGlobals(theme: Theme) {
     injectGlobal(normalizeCss)
     injectGlobal({
+        'html, body': {
+            height: '100%',
+            margin: 0,
+        },
         html: {
             fontSize: theme.baseSize,
             fontFamily: theme.font.textFamily,
