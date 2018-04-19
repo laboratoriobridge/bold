@@ -9,19 +9,20 @@ export const actionTypes = {
     LOGOUT_SUCCESS: 'bridge/auth/LOGOUT_SUCCESS',
 }
 
-export interface AuthState<T> extends Readonly<{
-    error?: any
-    user?: T
-}> { }
+export interface AuthState<T> {
+    readonly error?: any
+    readonly user?: T
+    readonly pending?: boolean
+}
 
 export function reducer(state: AuthState<any> = {}, action: any): AuthState<any> {
     switch (action.type) {
         case actionTypes.LOGIN_REQUEST:
-            return { ...state, error: undefined, user: undefined }
+            return { ...state, error: undefined, user: undefined, pending: true }
         case actionTypes.LOGIN_SUCCESS:
-            return { ...state, error: undefined, user: action.user }
+            return { ...state, error: undefined, user: action.user, pending: false }
         case actionTypes.LOGIN_FAILURE:
-            return { ...state, error: action.error, user: undefined }
+            return { ...state, error: action.error, user: undefined, pending: false }
         case actionTypes.LOGOUT_SUCCESS:
             return { ...state, user: undefined }
         default:

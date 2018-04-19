@@ -6,10 +6,10 @@ import { RouteComponentProps, withRouter } from 'react-router'
 import { Form } from '../form/finalForm/Form'
 
 import { AuthConfig } from './api/Auth'
-import { actions } from './module/auth'
+import { actions, AuthState } from './module/auth'
 
 export interface LoginComponentProps extends LoginProps, RouteComponentProps<any> {
-    user: any
+    authState: AuthState<any>
     checkLogin(): Promise<any>
     login(form: any): Promise<any>
     logout(): any
@@ -30,8 +30,8 @@ class LoginComponent extends React.Component<LoginComponentProps> {
     }
 
     render() {
-        if (this.props.user) {
-            return this.props.renderHome({})
+        if (this.props.authState.user) {
+            return this.props.renderHome(this.props.authState)
         }
         return (
             <Form
@@ -42,7 +42,10 @@ class LoginComponent extends React.Component<LoginComponentProps> {
         )
     }
 
-    private renderForm = (props: FormRenderProps) => this.props.renderForm(props, 'username', 'password')
+    private renderForm = (props: FormRenderProps) =>
+        this.props.renderForm(props, {
+            userFieldName: 'username', passwordFieldName: 'password',
+        }, this.props.authState)
 
     private storageListener = (event: any) => {
         if (event.key === 'login') {
@@ -59,7 +62,7 @@ export interface OwnProps {
 }
 
 const mapStateToProps = (state: any) => ({
-    user: state.auth.user,
+    authState: state.auth,
 })
 
 const mapDispatchToProps = (dispatch: any, ownProps: OwnProps) => ({
@@ -68,10 +71,15 @@ const mapDispatchToProps = (dispatch: any, ownProps: OwnProps) => ({
     logout: () => dispatch(actions.logoutSuccess()),
 })
 
+export interface FormConfig {
+    userFieldName: string
+    passwordFieldName: string
+}
+
 export interface LoginProps {
     onLogin?(): void
-    renderHome(props: any): React.ReactNode
-    renderForm(props: FormRenderProps, userFieldName: string, passwordFieldName: string): React.ReactNode
+    renderHome(state: AuthState<any>): React.ReactNode
+    renderForm(props: FormRenderProps, config: FormConfig, state: AuthState<any>): React.ReactNode
 }
 
 export const Login = withRouter(
