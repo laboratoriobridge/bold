@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { Icon } from '../..'
 import { Page, SortSpec } from '../../../../store/requester'
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { withStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
+import { SortableLabel, SortDirection } from '../SortableLabel/SortableLabel'
 import { Table, TableColumn, TableColumnProps, TableProps } from '../Table/Table'
 import { TableFooter } from '../TableFooter/TableFooter'
 
@@ -49,40 +49,27 @@ export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
     }
 
     private renderColumnTitle = (colProps: DataTableColumnProps<T>, sort: SortSpec[]) => {
-        const handleClick = () => this.handleTitleClick(colProps)
-        const { css } = this.props
+        const handleSortChange = (dir: SortDirection) => this.handleSortChange(colProps, dir)
 
         if (colProps.title) {
             const dir = sort && getPropertyDirection(colProps.name, sort)
-            const styles = {
-                link: {
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                },
-                sort: {
-                    marginLeft: '0.25rem',
-                },
-            }
 
             if (!colProps.sortable) {
                 return colProps.title || colProps.name
             }
 
             return (
-                <a className={css(styles.link)} onClick={handleClick}>
+                <SortableLabel dir={dir} onChange={handleSortChange}>
                     {colProps.title || colProps.name}
-                    <Sort styles={styles.sort} dir={dir} />
-                </a>
+                </SortableLabel>
             )
         } else {
             return null
         }
     }
 
-    private handleTitleClick = (colProps: DataTableColumnProps<T>) => {
-        const direction = getPropertyDirection(colProps.name, this.props.page.sort || [])
-        const sort = colProps.name + ',' + (toggleDirection(direction) || 'ASC')
-
+    private handleSortChange = (colProps: DataTableColumnProps<T>, dir: SortDirection) => {
+        const sort = colProps.name + ',' + dir
         // TODO: permitir ordenamento múltiplo (segurando shift ao ordenar?)
         this.props.onSortChange([sort])
     }
@@ -104,29 +91,6 @@ export class DataTableColumn<T> extends React.Component<DataTableColumnProps<T>>
     }
 }
 
-interface SortProps extends WithStylesProps {
-    dir: 'ASC' | 'DESC' | ''
-}
-
-@withStyles
-class Sort extends React.Component<SortProps> {
-    render() {
-        const { dir } = this.props
-        const icon = (dir === 'ASC' && 'angleDown')
-            || (dir === 'DESC' && 'angleUp')
-            || 'sort'
-
-        return (
-            <Icon
-                styles={{ marginLeft: '0.25rem' }}
-                color={icon === 'sort' ? 'gray80' : 'primary'}
-                size={1}
-                icon={icon}
-            />
-        )
-    }
-}
-
 const getPropertyDirection = (property: string, sort: SortSpec[]) => {
     for (const s of sort) {
         if (s.property === property) {
@@ -135,10 +99,4 @@ const getPropertyDirection = (property: string, sort: SortSpec[]) => {
     }
 
     return null
-}
-
-const toggleDirection = (dir: 'ASC' | 'DESC') => {
-    return (dir === 'ASC' && 'DESC')
-        || (dir === 'DESC' && 'ASC')
-        || null
 }
