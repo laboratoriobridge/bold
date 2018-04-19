@@ -15,7 +15,6 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
                 {...this.props}
                 type='checkbox'
                 hasWrapper={false}
-                parse={this.parse}
                 render={this.renderCheck}
             />
         )
@@ -27,7 +26,5 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
             {...props.input}
         />
     )
-
-    private parse = (value) => !!value
 
 }
