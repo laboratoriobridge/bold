@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { FormSpy, FormSpyRenderProps } from 'react-final-form'
 
-import { Button } from '../../elements/button/Button/Button'
+import { Button, ButtonProps } from '../../elements/button/Button/Button'
 
-export interface SubmitButtonProps {
+export interface SubmitButtonProps extends ButtonProps {
     label: string
     handleSubmit: (event?: React.SyntheticEvent<HTMLFormElement>) => void
 }
@@ -20,14 +20,17 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
         )
     }
 
-    private renderButton = (props: FormSpyRenderProps) => (
-        <Button
-            disabled={props.pristine}
-            label={this.props.label}
-            loading={props.submitting}
-            onClick={this.props.handleSubmit}
-            type='primary'
-        />
-    )
+    private renderButton = (props: FormSpyRenderProps) => {
+        const { handleSubmit, ...rest } = this.props
+        return (
+            <Button
+                disabled={props.pristine}
+                loading={props.submitting}
+                onClick={handleSubmit}
+                type='primary'
+                {...rest}
+            />
+        )
+    }
 
 }

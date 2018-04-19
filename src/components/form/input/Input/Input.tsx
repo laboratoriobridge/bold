@@ -19,6 +19,7 @@ export interface PublicInputProps {
   placeholder?: string
   value?: any
   provideController?: (controller: InputController) => void
+  autoFocus?: boolean
 }
 
 export interface InputProps extends PublicInputProps {
