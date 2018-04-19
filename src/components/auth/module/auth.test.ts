@@ -49,7 +49,7 @@ describe('ações assíncronas', () => {
         })
     })
 
-    it('check login já logado', () => {
+    it('check login já logado', async () => {
 
         const expectedActions = [
             // nenhuma, o usuário já está logado
@@ -57,12 +57,11 @@ describe('ações assíncronas', () => {
 
         const store = mockStore({ auth: { user } })
 
-        return store.dispatch(actions.checkLogin()).then(() => {
-            expect(store.getActions()).toEqual(expectedActions)
-        })
+        await store.dispatch(actions.checkLogin())
+        expect(store.getActions()).toEqual(expectedActions)
     })
 
-    it('check login logado sessão', () => {
+    it('check login logado sessão', async () => {
         axiosMock.onGet('/api/users/current').reply(200, user)
 
         const expectedActions = [
@@ -72,9 +71,8 @@ describe('ações assíncronas', () => {
 
         const store = mockStore({ auth: {} })
 
-        return store.dispatch(actions.checkLogin()).then(() => {
-            expect(store.getActions()).toEqual(expectedActions)
-        })
+        await store.dispatch(actions.checkLogin())
+        expect(store.getActions()).toEqual(expectedActions)
     })
 
     it('check login não logado sessão', () => {
@@ -142,13 +140,13 @@ describe('reducer', () => {
         expect(reducer(undefined, {})).toEqual({})
     })
     it('handle LOGIN_REQUEST', () => {
-        expect(reducer(undefined, actions.loginRequest())).toEqual({})
+        expect(reducer(undefined, actions.loginRequest())).toEqual({ pending: true })
     })
     it('handle LOGIN_SUCCESS', () => {
-        expect(reducer(undefined, actions.loginSuccess(user))).toEqual({ user })
+        expect(reducer(undefined, actions.loginSuccess(user))).toEqual({ user, pending: false })
     })
     it('handle LOGIN_FAILURE', () => {
-        expect(reducer(undefined, actions.loginFailure(401))).toEqual({ error: 401 })
+        expect(reducer(undefined, actions.loginFailure(401))).toEqual({ error: 401, pending: false })
     })
     it('handle LOGOUT_SUCCESS', () => {
         expect(reducer(undefined, actions.logoutSuccess())).toEqual({})
