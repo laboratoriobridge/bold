@@ -1,10 +1,11 @@
+import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface CheckboxProps extends PublicInputProps, WithStylesProps {
-    label: React.ReactNode
+    label?: React.ReactNode
 }
 
 @withStyles
@@ -13,7 +14,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
     render() {
         const { css, label, theme, ...rest } = this.props
 
-        const checkClasses = css({
+        const checkClasses = emotionCss({
             backgroundColor: theme.color.white,
             border: '1px solid ' + theme.color.gray70,
             borderRadius: theme.baseRadius,
@@ -39,23 +40,23 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             },
         })
 
-        const labelClasses = css({
+        const labelClasses = emotionCss({
             color: theme.color.gray30,
             fontSize: 12,
             marginLeft: '0.5rem',
         })
 
-        const checkboxClass = css({
+        const checkboxClass = emotionCss({
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
         })
 
-        const checkboxDisabledClass = css({
+        const checkboxDisabledClass = emotionCss({
             cursor: 'not-allowed',
         })
 
-        const inputClass = css({
+        const inputClass = emotionCss({
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
@@ -84,7 +85,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             <label className={css(checkboxClass, this.props.disabled && checkboxDisabledClass)} >
                 <Input {...rest} type='checkbox' className={inputClass} />
                 <span className={checkClasses} />
-                <span className={labelClasses}>{this.props.label}</span>
+                {this.props.label && <span className={labelClasses}>{this.props.label}</span>}
             </label>
         )
     }
