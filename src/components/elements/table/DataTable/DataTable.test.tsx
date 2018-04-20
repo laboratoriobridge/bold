@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { Page } from '../../../../store/requester'
 import { withTheme } from '../../../../test'
+import { SortableLabel } from '../SortableLabel/SortableLabel'
 
 import { DataTable, DataTableColumn } from './DataTable'
 
@@ -66,11 +67,11 @@ it('should render correctyle', () => {
 
 it('should call onSortChange with right parameters when clicked over column title', () => {
     const wrapper = mount(table)
-    wrapper.find('th[data-name="id"] > a').simulate('click')
+    wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith(['id,ASC'])
 
-    wrapper.find('th[data-name="nome"] > a').simulate('click')
+    wrapper.find('th[data-name="nome"]').find(SortableLabel).simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith(['nome,DESC'])
 
-    expect(wrapper.find('th[data-name="actions"] > a').exists()).toBeFalsy()
+    expect(wrapper.find('th[data-name="actions"]').find(SortableLabel).exists()).toBeFalsy()
 })
