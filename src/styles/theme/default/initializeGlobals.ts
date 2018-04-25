@@ -38,7 +38,8 @@ export default function initializeGlobals(theme: Theme) {
         },
         'h1': { fontSize: '1.25rem' },
         'h2': { fontSize: '1rem' },
-        'h3': { fontSize: '0.75rem' },
+        'h3': { fontSize: '0.875rem' },
+        'h4': { fontSize: '0.75rem' },
         p: {
             margin: '0',
             lineHeight: 1.5,
