@@ -5,17 +5,10 @@ import * as React from 'react'
 import { withForm, withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { CheckboxField } from './CheckboxField'
+import * as Doc from './CheckboxField.md'
 
 storiesOf('Form/Fields', module)
-    .addDecorator(withPropTypes(`
-    São usados quando há uma lista de opções e o usuário pode selecionar múltiplas escolhas, incluindo todas ou nenhuma.
-
-    ### BOAS PRÁTICAS:
-    - Checkboxes são desmarcados por default.
-    - A seleção deve acontecer tanto pelo clique diretamente na caixa ou pelo click na label.
-    - Labels aparecem à direita da caixa de seleção.
-
-    `))
+    .addDecorator(withPropTypes(Doc))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withForm())

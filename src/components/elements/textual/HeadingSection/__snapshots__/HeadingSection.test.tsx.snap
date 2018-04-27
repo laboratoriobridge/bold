@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h1
+    class="emotion-0"
+  >
+    Heading section title 1
+  </h1>
+  Content section 1
+</div>
+`;
+
+exports[`should render correctly 2`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h2
+    class="emotion-0"
+  >
+    Heading section title 2
+  </h2>
+  Content section 2
+</div>
+`;
+
+exports[`should render correctly 3`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h3
+    class="emotion-0"
+  >
+    Heading section title 3
+  </h3>
+  Content section 3
+</div>
+`;
+
+exports[`should render correctly 4`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h4
+    class="emotion-0"
+  >
+    Heading section title 4
+  </h4>
+  Content section 4
+</div>
+`;
+
+exports[`should render correctly 5`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h5
+    class="emotion-0"
+  >
+    Heading section title 5
+  </h5>
+  Content section 5
+</div>
+`;
+
+exports[`should render correctly 6`] = `
+.emotion-0 {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <h6
+    class="emotion-0"
+  >
+    Heading section title 6
+  </h6>
+  Content section 6
+</div>
+`;
