@@ -24,6 +24,10 @@ exports[`deve aceitar Flow props 1`] = `
   margin-right: 0;
 }
 
+.emotion-0:empty {
+  display: none;
+}
+
 <div
   class="emotion-3"
 >
@@ -73,6 +77,10 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-0:last-child {
   margin-right: 0;
+}
+
+.emotion-0:empty {
+  display: none;
 }
 
 <div
