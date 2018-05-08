@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
@@ -9,11 +10,11 @@ import { IconDropdown } from './IconDropdown'
 const options = [
     {
         title: 'Option 1',
-        onClick: () => alert('Option 1 selected'),
+        onClick: action('Option 1 selected'),
     },
     {
         title: 'Option 2',
-        onClick: () => alert('Option 2 selected'),
+        onClick: action('Option 2 selected'),
     },
 ]
 
