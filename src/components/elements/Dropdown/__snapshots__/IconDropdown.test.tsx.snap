@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconDropdown deve renderizar corretamente 1`] = `
+.emotion-4 {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.emotion-3 {
+  font-weight: bold;
+}
+
+.emotion-2 {
+  margin-left: 0.25rem;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<span
+  class="emotion-4"
+>
+  <a
+    class="emotion-3"
+  >
+    <span
+      class="emotion-2"
+    >
+      <span
+        class="emotion-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M12 17.21l6-7.22H6l6 7.22z"
+            id="triangle-down"
+          />
+        </svg>
+      </span>
+    </span>
+  </a>
+</span>
+`;
