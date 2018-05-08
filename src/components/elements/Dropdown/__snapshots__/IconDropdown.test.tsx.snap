@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconDropdown deve renderizar corretamente 1`] = `
+exports[`IconDropdown should render correctly 1`] = `
 .emotion-4 {
   position: relative;
   margin-left: 0.5rem;
