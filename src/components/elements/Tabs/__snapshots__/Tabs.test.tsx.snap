@@ -14,6 +14,7 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-0 {
   display: inline-block;
+  -webkit-text-decoration: none;
   text-decoration: none;
   color: #808080;
   font-weight: bold;

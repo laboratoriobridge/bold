@@ -28,7 +28,6 @@ export interface AsyncSelectProps extends WithStylesProps,
     'onChange' |
     'optionRenderer' |
     'placeholder' |
-    'searchPromptText' |
     'valueKey'
     > {
     getPage: (params: AsyncSelectRequestParams) => Promise<any>
@@ -58,7 +57,6 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
         pageSize: 10,
         placeholder: '',
         searchDelay: 500,
-        searchPromptText: 'Digite para pesquisar',
     }
 
     private typingTimer: number
