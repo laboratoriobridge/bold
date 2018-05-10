@@ -2,6 +2,7 @@
 
 exports[`deve renderizar corretamente 1`] = `
 .emotion-0 {
+  -webkit-text-decoration: none;
   text-decoration: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
