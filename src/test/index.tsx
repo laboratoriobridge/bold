@@ -5,7 +5,7 @@ import { Form, FormSpy } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router'
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
-import configureMockStore from 'redux-mock-store'
+import * as configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
 import requesterReducer from '../store/requester'
