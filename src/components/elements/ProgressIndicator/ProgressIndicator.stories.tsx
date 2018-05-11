@@ -11,5 +11,5 @@ storiesOf('Components', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('ProgressIndicator', () => (
-        <ProgressIndicator value={number('percetual', 60)} />
+        <ProgressIndicator value={number('percentage', 60)} />
     ))
