@@ -1,5 +1,6 @@
 export { Badge, BadgeProps } from './Badge/Badge'
 export { InfoLabel, InfoLabelProps } from './InfoLabel/InfoLabel'
+export { ProgressIndicator, ProgressIndicatorProps } from './ProgressIndicator/ProgressIndicator'
 export { Paginator, PaginatorProps } from './Paginator/Paginator'
 export { Tabs, TabsProps, TabLink, TabLinkProps } from './Tabs/Tabs'
 
