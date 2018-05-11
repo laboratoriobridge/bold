@@ -59,6 +59,9 @@ export class Flow extends React.PureComponent<FlowProps> {
                     marginBottom: direction === 'vertical' && 0,
                     marginRight: direction === 'horizontal' && 0,
                 },
+                ':empty': {
+                    display: 'none',
+                },
             },
         }
 

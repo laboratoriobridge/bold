@@ -13,14 +13,19 @@ export class FormLabel extends React.Component<FormLabelProps> {
 
     render() {
         const fieldRequired = (
-            this.props.required &&
-            <Spacing left={0.25}><Text tag='label' color='red' size={0.75} weight='bold'>&#42;</Text></Spacing>
+            this.props.required && (
+                <Spacing left={0.25}>
+                    <Text tag='label' color='red' size={0.75} weight='bold'>
+                        <span aria-label='Campo obrigatório'>&#42;</span>
+                    </Text>
+                </Spacing>
+            )
         )
 
         return (
             <>
-            <Label value={this.props.label} />
-            {fieldRequired}
+                <Label value={this.props.label} />
+                {fieldRequired}
             </>
         )
     }

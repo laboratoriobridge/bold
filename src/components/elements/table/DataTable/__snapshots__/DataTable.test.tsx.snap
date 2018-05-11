@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctyle 1`] = `
-.emotion-2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-15 {
   width: 100%;
   border-collapse: collapse;
@@ -23,6 +12,18 @@ exports[`should render correctyle 1`] = `
   text-align: left;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .emotion-1 {
@@ -239,7 +240,7 @@ exports[`should render correctyle 1`] = `
           class="emotion-3"
           data-name="id"
         >
-          <a
+          <span
             class="emotion-2"
           >
             Column ID
@@ -259,13 +260,13 @@ exports[`should render correctyle 1`] = `
                 />
               </svg>
             </span>
-          </a>
+          </span>
         </th>
         <th
           class="emotion-3"
           data-name="nome"
         >
-          <a
+          <span
             class="emotion-2"
           >
             Column name
@@ -285,7 +286,7 @@ exports[`should render correctyle 1`] = `
                 />
               </svg>
             </span>
-          </a>
+          </span>
         </th>
         <th
           class="emotion-3"

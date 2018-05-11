@@ -9,7 +9,7 @@ const createStyles = (theme: Theme) => {
             listStyle: 'none',
             padding: '0',
             margin: '0 -1rem',
-            fontSize: '0.75rem',
+            fontSize: '0.875rem',
         },
         li: {
             display: 'inline-block',
@@ -21,7 +21,6 @@ const createStyles = (theme: Theme) => {
             fontWeight: 'bold',
             padding: '0.5rem 0',
             margin: '0 1rem',
-            textTransform: 'uppercase',
             letterSpacing: '1px',
             lineHeight: '1rem',
             transition: '.2s color',

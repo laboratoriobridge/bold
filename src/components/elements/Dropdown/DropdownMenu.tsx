@@ -12,7 +12,11 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
         const { css, theme } = this.props
         const styles = {
             list: {
-                fontSize: '0.75rem',
+                fontSize: '0.875rem',
+                fontWeight: 'bold',
+                color: theme.color.gray40,
+                letterSpacing: '1px',
+                whiteSpace: 'nowrap',
                 listStyle: 'none',
                 margin: 0,
                 padding: 0,
@@ -53,7 +57,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
                 },
             },
             link: {
-                padding: '.5rem 1rem',
+                padding: '1rem',
                 display: 'block',
                 '&:hover': {
                     background: theme.color.background,
