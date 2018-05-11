@@ -34,9 +34,7 @@ describe('Notification', () => {
 
     it('should call function on close click', () => {
         const wrapper = mount(withTheme(<Notification message='Information.' type='info' onCloseClick={f} />))
-        wrapper.find(IconButton).forEach((e) => {
-            e.simulate('click')
-        })
+        wrapper.find(IconButton).simulate('click')
         expect(f).toHaveBeenCalled()
     })
 

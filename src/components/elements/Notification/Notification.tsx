@@ -67,7 +67,6 @@ export class Notification extends React.PureComponent<NotificationProps> {
                 alignItems: 'center',
                 borderStyle: 'solid',
                 borderWidth: '1px',
-
             },
             icon: {
                 marginRight: '0.5rem',
