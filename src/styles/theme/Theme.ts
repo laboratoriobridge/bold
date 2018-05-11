@@ -1,7 +1,7 @@
 export type Color = 'background' | 'black' | 'primary' | 'red' | 'white'
     | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10' | 'text'
 
-export const colors: {[key in Color]: string} = {
+export const colors: { [key in Color]: string } = {
     'background': 'background',
     'black': 'black',
     'primary': 'primary',
@@ -37,6 +37,13 @@ export interface Theme {
         black: string
         primary: string
         red: string
+        redBg: string
+        green: string
+        greenBg: string
+        blue: string
+        blueBg: string
+        orange: string
+        orangeBg: string
         text: string
         white: string
 
