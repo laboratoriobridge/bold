@@ -8,6 +8,7 @@ export { Icon, IconProps } from './Icon/Icon'
 export { Label, LabelProps } from './Label'
 export { Popover, PopoverProps } from './Popover'
 export { IconDropdown, IconDropdownProps, IconDropdownState, OptionItem } from './Dropdown/IconDropdown'
+export { Notification } from './Notification/Notification'
 
 export * from './button'
 export * from './table'

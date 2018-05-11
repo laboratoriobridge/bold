@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { IconButton } from '../button/IconButton/IconButton'
 import { Icon } from '../Icon/Icon'
 
 export type NotificationType =
@@ -73,7 +74,6 @@ export class Notification extends React.PureComponent<NotificationProps> {
             },
             closeButton: {
                 marginLeft: 'auto',
-                cursor: 'pointer',
             },
         }
 
@@ -81,9 +81,9 @@ export class Notification extends React.PureComponent<NotificationProps> {
             <div>
                 <div className={css(styles.notification, typeStyle[type].style)}>
                     <Icon icon={typeStyle[type].icon} styles={styles.icon} />{message}
-                    <span className={css(styles.closeButton)} onClick={onCloseClick}>
-                        {onCloseClick && <Icon icon={'times'} />}
-                    </span>
+                    {onCloseClick && <span className={css(styles.closeButton)}>
+                        <IconButton icon='times' onClick={onCloseClick} />
+                    </span>}
                 </div>
             </div>
         )
