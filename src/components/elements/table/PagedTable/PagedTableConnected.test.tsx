@@ -6,8 +6,8 @@ import { mockStore, withRedux, withTheme } from '../../../../test'
 import { DataTable } from '../DataTable/DataTable'
 
 import {
-    DataTableConnected, DataTableConnectedCmp, emptyPage, mapDispatchToProps, mapStateToProps
-} from './DataTableConnected'
+    emptyPage, mapDispatchToProps, mapStateToProps, PagedTableConnected, PagedTableConnectedCmp
+} from './PagedTableConnected'
 
 const result: Page<number> = {
     content: [1, 2, 3, 4, 5],
@@ -62,7 +62,7 @@ describe('mapDispatchToProps', () => {
     it(`#onSortChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
         const store = mockStore()
         const actions = mapDispatchToProps(store.dispatch, ownProps)
-        actions.onSortChange(['id'])
+        actions.onSortChange({ id: 'ASC' })
         expect(store.getActions()).toHaveLength(3)
     })
     it(`#onSizeChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
@@ -82,7 +82,7 @@ describe('mapDispatchToProps', () => {
 
 describe('Component', () => {
     it('should mount correctly', () => {
-        const wrapper = mount(withTheme(withRedux(<DataTableConnected requester={requester} />)))
+        const wrapper = mount(withTheme(withRedux(<PagedTableConnected requester={requester} columns={[]} />)))
         expect(wrapper.find(DataTable)).toBeTruthy()
     })
 
@@ -97,8 +97,9 @@ describe('Component', () => {
         }
         const c = { ...defaultConfig, ...config }
         return mount(withTheme(withRedux(
-            <DataTableConnectedCmp
+            <PagedTableConnectedCmp
                 requester={requester}
+                columns={[]}
                 page={result}
                 setParams={c.setParams}
                 request={c.request}

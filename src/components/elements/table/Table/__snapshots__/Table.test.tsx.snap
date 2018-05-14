@@ -1,12 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
-.emotion-6 {
+exports[`Table should render corretly 1`] = `
+.emotion-18 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
   border: 1px solid #e6e6e6;
-  color: red;
 }
 
 .emotion-0 {
@@ -15,54 +14,121 @@ exports[`deve renderizar corretamente 1`] = `
   border-bottom: 1px solid #e6e6e6;
 }
 
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 0.25rem;
+}
+
+.emotion-2 {
+  fill: #056DFF;
+  font-size: 1rem;
+}
+
 <table
-  class="emotion-6"
+  class="emotion-18"
 >
-  <thead>
-    <tr>
+  <thead
+    class="emotion-1"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <th
+        class="emotion-0"
+        colspan="2"
+      >
+        Headers
+      </th>
+    </tr>
+    <tr
+      class="emotion-1"
+    >
       <th
         class="emotion-0"
       >
-        Column ID
+        <span
+          class="emotion-4"
+        >
+          Header #1
+          <span
+            class="emotion-3"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-2"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
+                id="Seta-baixo"
+              />
+            </svg>
+          </span>
+        </span>
       </th>
       <th
         class="emotion-0"
       >
-        Column name
+        Header #2
       </th>
     </tr>
   </thead>
-  <tbody>
-    <tr>
+  <tbody
+    class="emotion-1"
+  >
+    <tr
+      class="emotion-1"
+    >
       <td
         class="emotion-0"
+        colspan="2"
       >
-        <span>
-          1
-        </span>
-      </td>
-      <td
-        class="emotion-0"
-      >
-        <span>
-          MARIA MACHADO DE JESUS
-        </span>
+        Row #1
       </td>
     </tr>
-    <tr>
+    <tr
+      class="emotion-1"
+    >
       <td
         class="emotion-0"
       >
-        <span>
-          2
-        </span>
+        Row #2 - Cell #1
       </td>
       <td
         class="emotion-0"
       >
-        <span>
-          MARIA MACHADO DE JESUS
-        </span>
+        Row #2 - Cell #2
+      </td>
+    </tr>
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+      >
+        Row #3 - Cell #1
+      </td>
+      <td
+        class="emotion-0"
+      >
+        Row #3 - Cell #2
       </td>
     </tr>
   </tbody>

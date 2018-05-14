@@ -1,4 +1,5 @@
-export { Table, TableColumn, TableProps, TableColumnProps } from './Table/Table'
-export { DataTable, DataTableColumn, DataTableProps, DataTableColumnProps } from './DataTable/DataTable'
-export { DataTableConnected, DataTableConnectedProps } from './DataTableConnected/DataTableConnected'
+export * from './Table'
+
+export { DataTable, DataTableProps } from './DataTable/DataTable'
+export { PagedTable, PagedTableProps } from './PagedTable/PagedTable'
 export { TableFooter, TableFooterProps } from './TableFooter/TableFooter'

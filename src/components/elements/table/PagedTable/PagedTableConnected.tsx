@@ -2,9 +2,11 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { Page, PageParams, PageRequester } from '../../../../store/requester'
-import { DataTable, DataTableProps } from '../DataTable/DataTable'
+import { SortMap } from '../DataTable/DataTable'
 
-export interface DataTableConnectedProps<T> extends DataTableProps<T> {
+import { PagedTable, PagedTableProps } from './PagedTable'
+
+export interface PagedTableConnectedProps<T> extends PagedTableProps<T> {
     requester: PageRequester<T, any, any>
     initialParams?: PageParams
     loadOnMount?: boolean
@@ -14,9 +16,9 @@ export interface DataTableConnectedProps<T> extends DataTableProps<T> {
     setParams(params: PageParams): void
 }
 
-export class DataTableConnectedCmp<T> extends React.Component<DataTableConnectedProps<T>> {
+export class PagedTableConnectedCmp<T> extends React.Component<PagedTableConnectedProps<T>> {
 
-    static defaultProps: Partial<DataTableConnectedProps<any>> = {
+    static defaultProps: Partial<PagedTableConnectedProps<any>> = {
         loadOnMount: true,
         clearOnUnmount: true,
         initialParams: {
@@ -39,12 +41,12 @@ export class DataTableConnectedCmp<T> extends React.Component<DataTableConnected
     }
 
     render() {
-        const { requester, request, setParams, clear, initialParams, loadOnMount, ...rest } = this.props
-        return <DataTable {...rest} />
+        const { requester, request, setParams, clear, initialParams, loadOnMount, clearOnUnmount, ...rest } = this.props
+        return <PagedTable {...rest} />
     }
 }
 
-export type ExternalProps = Pick<DataTableConnectedProps<any>, 'requester' | 'loadOnMount'>
+export type ExternalProps = Pick<PagedTableConnectedProps<any>, 'requester' | 'loadOnMount'>
 
 export const emptyPage: Page<any> = {
     content: [],
@@ -76,9 +78,12 @@ export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
         dispatch(ownProps.requester.setPageNumber(page))
         dispatch(ownProps.requester.request())
     },
-    onSortChange(sort: string[]) {
+    onSortChange(sort: SortMap) {
+        // TODO: remove this logic from here:
+        const sortSpec = Object.keys(sort).map(prop => `${prop},${sort[prop]}`)
+
         dispatch(ownProps.requester.setPageNumber(0))
-        dispatch(ownProps.requester.setSort(sort))
+        dispatch(ownProps.requester.setSort(sortSpec))
         dispatch(ownProps.requester.request())
     },
     onSizeChange(size: number) {
@@ -88,4 +93,4 @@ export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
     },
 })
 
-export const DataTableConnected = connect(mapStateToProps, mapDispatchToProps)(DataTableConnectedCmp)
+export const PagedTableConnected = connect(mapStateToProps, mapDispatchToProps)(PagedTableConnectedCmp)
