@@ -15,7 +15,7 @@ export interface PagedTableProps<T> extends Omit<DataTableProps<T>, 'rows' | 'so
 
 export class PagedTable<T> extends React.PureComponent<PagedTableProps<T>> {
     render() {
-        const { page, onSortChange, onPageChange, onSizeChange, ...rest } = this.props
+        const { page, onPageChange, onSizeChange, ...rest } = this.props
 
         return (
             <TableContainer>

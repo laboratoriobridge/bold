@@ -62,6 +62,7 @@ export const emptyPage: Page<any> = {
 
 export const mapStateToProps = (state: any, ownProps: ExternalProps) => ({
     page: ownProps.requester.getResult(state) || emptyPage,
+    loading: ownProps.requester.getIsFetching(state),
 })
 
 export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({

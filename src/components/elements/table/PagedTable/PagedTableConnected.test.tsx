@@ -1,7 +1,7 @@
 import { mount } from 'enzyme'
 import * as React from 'react'
 
-import { CLEAR_RESULT, Page, PageRequester, REQUEST, SET_PARAMS } from '../../../../store/requester'
+import { CLEAR_RESULT, Page, PageRequester, REQUEST, RequestState, SET_PARAMS } from '../../../../store/requester'
 import { mockStore, withRedux, withTheme } from '../../../../test'
 import { DataTable } from '../DataTable/DataTable'
 
@@ -29,12 +29,24 @@ describe('mapStateToProps', () => {
         const emptyState = mapStateToProps({}, ownProps)
         expect(emptyState.page).toEqual(emptyPage)
 
+        const requestState: RequestState<any, any> = { result, params: {}, error: null, readyState: 'success' }
         const state = mapStateToProps({
             requester: {
-                test: { result },
+                test: requestState,
             },
         }, ownProps)
         expect(state.page).toEqual(result)
+    })
+    it('should map the current loading state', () => {
+        expect(mapStateToProps({}, ownProps).loading).toEqual(undefined)
+
+        const requestState: RequestState<any, any> = { result: null, params: {}, error: null, readyState: 'request' }
+        const state = mapStateToProps({
+            requester: {
+                test: requestState,
+            },
+        }, ownProps)
+        expect(state.loading).toEqual(true)
     })
 })
 
