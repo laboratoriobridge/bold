@@ -46,6 +46,9 @@ it('should call onSortChange with right parameters when clicked over column titl
 
     wrapper.find('th[data-name="name"]').find(SortableLabel).simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith({ name: 'ASC' })
+
+    wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click', { shiftKey: true })
+    expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC', name: 'DESC' })
 })
 
 it('should render TableLoadingRow when loading prop is on', () => {

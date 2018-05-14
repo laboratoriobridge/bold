@@ -60,6 +60,6 @@ describe('TableHeader', () => {
         ))
         expect(sortChange).not.toHaveBeenCalled()
         wrapper.find(SortableLabel).simulate('click')
-        expect(sortChange).toHaveBeenCalledWith('DESC')
+        expect(sortChange).toHaveBeenCalledWith('DESC', undefined)
     })
 })

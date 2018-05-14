@@ -57,10 +57,11 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         onSortChange: this.handleSortChange(col),
     })
 
-    private handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection) => {
-        // TODO: allow multiple ordering (holding shift on press)
-        this.props.onSortChange({
-            [col.name]: sortDirection,
-        })
+    private handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection, shiftKey: boolean) => {
+        if (shiftKey) {
+            this.props.onSortChange({ ...this.props.sort, [col.name]: sortDirection })
+        } else {
+            this.props.onSortChange({ [col.name]: sortDirection })
+        }
     }
 }

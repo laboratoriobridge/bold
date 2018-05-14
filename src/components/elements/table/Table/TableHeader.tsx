@@ -9,7 +9,7 @@ import { createTableStyles } from './styles'
 export interface TableHeaderProps extends WithStylesProps, Omit<React.ThHTMLAttributes<any>, 'css'> {
     sortable?: boolean
     sortDirection?: SortDirection
-    onSortChange?(direction: SortDirection): any
+    onSortChange?(direction: SortDirection, shiftKey?: boolean): any
 }
 
 @withStyles
@@ -30,7 +30,7 @@ export class TableHeader extends React.PureComponent<TableHeaderProps> {
 
         return (
             <th className={css(styles.th)} {...rest}>
-                <SortableLabel dir={sortDirection} onChange={onSortChange}>
+                <SortableLabel direction={sortDirection} onChange={onSortChange}>
                     {this.props.children}
                 </SortableLabel>
             </th>
