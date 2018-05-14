@@ -1,8 +1,6 @@
-import { memoize } from 'lodash'
-
 import { Theme } from '../../../../styles'
 
-export const createTableStyles = memoize((theme: Theme) => ({
+export const createTableStyles = (theme: Theme) => ({
     table: {
         width: '100%',
         borderCollapse: 'collapse',
@@ -22,4 +20,4 @@ export const createTableStyles = memoize((theme: Theme) => ({
         padding: '0.5rem 1rem',
         borderBottom: `1px solid ${theme.color.gray90}`,
     },
-}))
+})
