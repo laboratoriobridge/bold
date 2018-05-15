@@ -1,0 +1,6 @@
+export { Table, TableProps } from './Table'
+export { TableHead, TableHeadProps } from './TableHead'
+export { TableHeader, TableHeaderProps } from './TableHeader'
+export { TableBody, TableBodyProps } from './TableBody'
+export { TableRow, TableRowProps } from './TableRow'
+export { TableCell, TableCellProps } from './TableCell'

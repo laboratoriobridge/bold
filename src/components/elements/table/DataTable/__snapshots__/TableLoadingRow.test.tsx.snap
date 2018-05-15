@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-1 > *:first-child {
+  margin-right: 0.5rem;
+}
+
+.emotion-2 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f2f2f7;
+  color: #056DFF;
+  font-weight: bold;
+}
+
+.emotion-0 {
+  pointer-events: none;
+}
+
+.emotion-0 span {
+  color: transparent;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 450ms infinite linear;
+  animation: animation-1scjtrl 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  line-height: 1rem;
+}
+
+<tr
+  class="emotion-3"
+>
+  <td
+    class="emotion-2"
+    colspan="3"
+  >
+    <div
+      class="emotion-1"
+    >
+      <span
+        class="emotion-0"
+      />
+      Carregando resultados
+    </div>
+  </td>
+</tr>
+`;
+
+exports[`should render correctly 2`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-1 > *:first-child {
+  margin-right: 0.5rem;
+}
+
+.emotion-2 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  background: #f2f2f7;
+  color: #056DFF;
+  font-weight: bold;
+}
+
+.emotion-0 {
+  pointer-events: none;
+}
+
+.emotion-0 span {
+  color: transparent;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 450ms infinite linear;
+  animation: animation-1scjtrl 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  line-height: 1rem;
+}
+
+<tr
+  class="emotion-3"
+>
+  <td
+    class="emotion-2"
+    colspan="2"
+  >
+    <div
+      class="emotion-1"
+    >
+      <span
+        class="emotion-0"
+      />
+      Loading...
+    </div>
+  </td>
+</tr>
+`;

@@ -5,73 +5,80 @@ import { Page } from '../../../../store/requester'
 import { withTheme } from '../../../../test'
 import { SortableLabel } from '../SortableLabel/SortableLabel'
 
-import { DataTable, DataTableColumn } from './DataTable'
+import { DataTable, DataTableProps } from './DataTable'
+import { TableLoadingRow } from './TableLoadingRow'
 
 interface Row {
     id: number
     name: string
+    age: number
 }
 
-const rows = [
-    { id: 1, name: 'MARIA MACHADO DE JESUS' },
-    { id: 2, name: 'MARIA MACHADO DE JESUS' },
+const rows: Row[] = [
+    { id: 1, name: 'MARIA MACHADO DE JESUS', age: 42 },
+    { id: 2, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
+    { id: 3, name: 'ALICE BARBOSA', age: 27 },
 ]
 
-const page: Page<Row> = {
-    content: rows,
-    first: true,
-    last: true,
-    number: 0,
-    size: 10,
-    numberOfElements: 3,
-    totalElements: rows.length,
-    sort: [{ property: 'nome', direction: 'ASC' }, { property: 'id', direction: 'DESC' }],
-    totalPages: 1,
-}
-
 const sortHandler = jest.fn()
-const pageHandler = jest.fn()
-const sizeHandler = jest.fn()
 const table = withTheme(
     // tslint:disable jsx-no-lambda
-    <DataTable page={page} onSortChange={sortHandler} onPageChange={pageHandler} onSizeChange={sizeHandler}>
-        <DataTableColumn
-            name='id'
-            sortable={true}
-            title='Column ID'
-            render={(row: Row) => (
-                <span>{row.id}</span>
-            )}
-        />
-        <DataTableColumn
-            name='nome'
-            sortable={true}
-            title='Column name'
-            render={(row: Row) => (
-                <span>{row.name}</span>
-            )}
-        />
-        <DataTableColumn
-            name='actions'
-            title='Column actions'
-            render={(row: Row) => (
-                <span />
-            )}
-        />
-    </DataTable>
+    <DataTable
+        rows={rows}
+        onSortChange={sortHandler}
+        sort={{ id: 'ASC', name: 'DESC' }}
+        columns={[
+            { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
+            { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
+            { name: 'age', header: 'Age', render: (row: Row) => row.age },
+        ]}
+    />
 )
 
-it('should render correctyle', () => {
+it('should render correctly', () => {
     expect(render(table)).toMatchSnapshot()
 })
 
 it('should call onSortChange with right parameters when clicked over column title', () => {
     const wrapper = mount(table)
     wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith(['id,ASC'])
+    expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC' })
 
-    wrapper.find('th[data-name="nome"]').find(SortableLabel).simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith(['nome,DESC'])
+    wrapper.find('th[data-name="name"]').find(SortableLabel).simulate('click')
+    expect(sortHandler).toHaveBeenLastCalledWith({ name: 'ASC' })
 
-    expect(wrapper.find('th[data-name="actions"]').find(SortableLabel).exists()).toBeFalsy()
+    wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click', { shiftKey: true })
+    expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC', name: 'DESC' })
+})
+
+it('should render TableLoadingRow when loading prop is on', () => {
+    const notLoading = mount(withTheme(
+        <DataTable
+            rows={[]}
+            columns={[]}
+            loading={false}
+        />
+    ))
+    expect(notLoading.find(TableLoadingRow).length).toEqual(0)
+
+    const loading = mount(withTheme(
+        <DataTable
+            rows={[]}
+            columns={[]}
+            loading={true}
+        />
+    ))
+    expect(loading.find(TableLoadingRow).length).toEqual(1)
+})
+
+it('should accept the render prop', () => {
+    expect(render(withTheme(
+        <DataTable
+            rows={[]}
+            columns={[]}
+            render={(renderProps: DataTableProps) => {
+                return <div />
+            }}
+        />
+    ))).toMatchSnapshot()
 })

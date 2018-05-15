@@ -19,7 +19,7 @@ storiesOf('Components/Table', module)
     .addDecorator(withKnobs)
     .add('SortableLabel', () => (
         <SortableLabel
-            dir={select('dir', dirOptions, '')}
+            direction={select('direction', dirOptions, '')}
             onChange={action('onChange')}
         >
             Property

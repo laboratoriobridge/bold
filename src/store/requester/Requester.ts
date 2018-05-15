@@ -21,11 +21,6 @@ export interface RequestState<T, P = any> {
 
 export interface RequesterConfig<T, R> {
     /**
-     * Define se os valores antigos de `result` e `error` serão mantidos na store em caso de um novo REQUEST.
-     */
-    stale?: boolean
-
-    /**
      * Transforma o resultado da requisição para o valor que será armazenado em `result` na store.
      */
     transformResult?(result: R): T
@@ -37,7 +32,6 @@ export interface RequesterConfig<T, R> {
 }
 
 export const axiosConfig: RequesterConfig<any, any> = {
-    stale: false,
     transformResult: (result: AxiosResponse<any>): any => {
         return result && result.data
     },
@@ -107,7 +101,7 @@ export class Requester<T, P = {}, R = AxiosResponse<T>> {
     /**
      * Cria uma ação REQUEST para iniciar a requisição.
      */
-    public request = () => (dispatch, getState) => {
+    public request = (config = { stale: true }) => (dispatch, getState) => {
         const state = getState()
         const params = this.getParams(state)
         const readyState = this.getReadyState(state)
@@ -118,7 +112,7 @@ export class Requester<T, P = {}, R = AxiosResponse<T>> {
 
         dispatch({
             type: this.createActionType(REQUEST),
-            meta: { ...this.meta(), params, stale: this.config.stale },
+            meta: { ...this.meta(), params, stale: config.stale },
         })
 
         const cancelTokenSource = axios.CancelToken.source()

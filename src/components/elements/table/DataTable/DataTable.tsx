@@ -1,102 +1,91 @@
 import * as React from 'react'
 
-import { Page, SortSpec } from '../../../../store/requester'
-import { withStyles } from '../../../../styles'
-import { Omit } from '../../../../util/types'
-import { SortableLabel, SortDirection } from '../SortableLabel/SortableLabel'
-import { Table, TableColumn, TableColumnProps, TableProps } from '../Table/Table'
-import { TableFooter } from '../TableFooter/TableFooter'
+import { SortDirection } from '../SortableLabel/SortableLabel'
+import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow } from '../Table'
 
-export interface DataTableProps<T> extends Omit<TableProps<T>, 'rows'> {
-    page: Page<T>
-    onSortChange(sort: string[]): void
-    onPageChange(page: number): void
-    onSizeChange(size: number): void
+import { TableFilledBody } from './TableFilledBody'
+
+export interface SortMap { [key: string]: SortDirection }
+
+export interface TableColumnConfig<T = any> {
+    name: string
+    header?: React.ReactNode
+    sortable?: boolean
+    styles?: any
+    render(row: T): React.ReactNode
 }
 
-@withStyles
-export class DataTable<T> extends React.PureComponent<DataTableProps<T>> {
+export interface DataTableProps<T = any> extends TableProps {
+    rows: T[]
+    columns: Array<TableColumnConfig<T>>
+    loading?: boolean
+    sort?: SortMap
+    onSortChange?(sort: SortMap): void
+    render?(renderProps: DataTableRenderProps): React.ReactNode
+}
+
+export interface DataTableRenderProps extends DataTableProps {
+    getHeaderProps(column: TableColumnConfig): TableHeaderProps
+}
+
+export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
+    static defaultProps: Partial<DataTableProps<any>> = {
+        loading: false,
+        sort: {},
+        onSortChange: () => null,
+        render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
+    }
 
     render() {
-        const { css, children, page, onPageChange, onSizeChange, ...tableProps } = this.props
+        return this.props.render({
+            ...this.props,
+            getHeaderProps: this.getHeaderProps,
+        })
+    }
+
+    private getHeaderProps = (col: TableColumnConfig) => ({
+        key: col.name,
+        'data-name': col.name,
+        sortable: col.sortable,
+        sortDirection: this.props.sort[col.name],
+        onSortChange: this.handleSortChange(col),
+    })
+
+    private handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection, shiftKey: boolean) => {
+        if (shiftKey) {
+            this.props.onSortChange({ ...this.props.sort, [col.name]: sortDirection })
+        } else {
+            this.props.onSortChange({ [col.name]: sortDirection })
+        }
+    }
+}
+
+export class DataTableDefault extends React.PureComponent<DataTableRenderProps> {
+    render() {
+        const {
+            columns,
+            rows,
+            loading,
+            onSortChange,
+            sort,
+            getHeaderProps,
+            render,
+            ...rest,
+        } = this.props
+
         return (
-            <div className={css()}>
-                <Table rows={page.content} {...tableProps}>
-                    {React.Children.map(children, (child: any, idx) => {
-                        if (child && child.type === DataTableColumn) {
-                            return (
-                                <TableColumn
-                                    {...child.props}
-                                    title={this.renderColumnTitle(child.props, page.sort)}
-                                />
-                            )
-                        } else {
-                            return child
-                        }
-                    })}
-                </Table>
-                <TableFooter
-                    styles={{ borderTop: 'none' }}
-                    page={page.number}
-                    pageSize={page.size}
-                    totalPages={page.totalPages}
-                    totalElements={page.totalElements}
-                    onPageChange={onPageChange}
-                    onSizeChange={onSizeChange}
-                />
-            </div>
+            <Table {...rest}>
+                <TableHead>
+                    <TableRow>
+                        {columns.map(col => (
+                            <TableHeader {...getHeaderProps(col)}>
+                                {col.header}
+                            </TableHeader>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableFilledBody rows={rows} columns={columns} loading={loading} />
+            </Table>
         )
     }
-
-    private renderColumnTitle = (colProps: DataTableColumnProps<T>, sort: SortSpec[]) => {
-        const handleSortChange = (dir: SortDirection) => this.handleSortChange(colProps, dir)
-
-        if (colProps.title) {
-            const dir = sort && getPropertyDirection(colProps.name, sort)
-
-            if (!colProps.sortable) {
-                return colProps.title || colProps.name
-            }
-
-            return (
-                <SortableLabel dir={dir} onChange={handleSortChange}>
-                    {colProps.title || colProps.name}
-                </SortableLabel>
-            )
-        } else {
-            return null
-        }
-    }
-
-    private handleSortChange = (colProps: DataTableColumnProps<T>, dir: SortDirection) => {
-        const sort = colProps.name + ',' + dir
-        // TODO: permitir ordenamento múltiplo (segurando shift ao ordenar?)
-        this.props.onSortChange([sort])
-    }
-
-}
-
-export interface DataTableColumnProps<T> extends TableColumnProps<T> {
-    name: string
-    sortable?: boolean
-}
-
-export class DataTableColumn<T> extends React.Component<DataTableColumnProps<T>> {
-    static defaultProps = {
-        sortable: false,
-    }
-
-    render() {
-        return null
-    }
-}
-
-const getPropertyDirection = (property: string, sort: SortSpec[]) => {
-    for (const s of sort) {
-        if (s.property === property) {
-            return s.direction
-        }
-    }
-
-    return null
 }

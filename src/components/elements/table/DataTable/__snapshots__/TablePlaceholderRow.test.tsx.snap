@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+}
+
+<tr
+  class="emotion-1"
+>
+  <td
+    class="emotion-0"
+    colspan="3"
+  >
+    Nenhum registro encontrado
+  </td>
+</tr>
+`;
+
+exports[`should render correctly 2`] = `
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+  color: #666666;
+  font-style: italic;
+  text-align: center;
+}
+
+<tr
+  class="emotion-1"
+>
+  <td
+    class="emotion-0"
+    colspan="2"
+  >
+    No results
+  </td>
+</tr>
+`;
