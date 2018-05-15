@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { SortDirection } from '../SortableLabel/SortableLabel'
-import { Table, TableHead, TableHeader, TableProps, TableRow } from '../Table'
+import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow } from '../Table'
 
 import { TableFilledBody } from './TableFilledBody'
 
@@ -21,6 +21,11 @@ export interface DataTableProps<T = any> extends TableProps {
     loading?: boolean
     sort?: SortMap
     onSortChange?(sort: SortMap): void
+    render?(renderProps: DataTableRenderProps): React.ReactNode
+}
+
+export interface DataTableRenderProps extends DataTableProps {
+    getHeaderProps(column: TableColumnConfig): TableHeaderProps
 }
 
 export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
@@ -28,25 +33,14 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         loading: false,
         sort: {},
         onSortChange: () => null,
+        render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
     }
 
     render() {
-        const { columns, rows, loading, onSortChange, sort, ...rest } = this.props
-
-        return (
-            <Table {...rest}>
-                <TableHead>
-                    <TableRow>
-                        {columns.map((col, idx) => (
-                            <TableHeader {...this.getHeaderProps(col)}>
-                                {col.header}
-                            </TableHeader>
-                        ))}
-                    </TableRow>
-                </TableHead>
-                <TableFilledBody rows={rows} columns={columns} loading={loading} />
-            </Table>
-        )
+        return this.props.render({
+            ...this.props,
+            getHeaderProps: this.getHeaderProps,
+        })
     }
 
     private getHeaderProps = (col: TableColumnConfig) => ({
@@ -63,5 +57,35 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         } else {
             this.props.onSortChange({ [col.name]: sortDirection })
         }
+    }
+}
+
+export class DataTableDefault extends React.PureComponent<DataTableRenderProps> {
+    render() {
+        const {
+            columns,
+            rows,
+            loading,
+            onSortChange,
+            sort,
+            getHeaderProps,
+            render,
+            ...rest,
+        } = this.props
+
+        return (
+            <Table {...rest}>
+                <TableHead>
+                    <TableRow>
+                        {columns.map(col => (
+                            <TableHeader {...getHeaderProps(col)}>
+                                {col.header}
+                            </TableHeader>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableFilledBody rows={rows} columns={columns} loading={loading} />
+            </Table>
+        )
     }
 }

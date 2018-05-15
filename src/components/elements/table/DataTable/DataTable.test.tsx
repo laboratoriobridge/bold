@@ -5,7 +5,7 @@ import { Page } from '../../../../store/requester'
 import { withTheme } from '../../../../test'
 import { SortableLabel } from '../SortableLabel/SortableLabel'
 
-import { DataTable } from './DataTable'
+import { DataTable, DataTableProps } from './DataTable'
 import { TableLoadingRow } from './TableLoadingRow'
 
 interface Row {
@@ -69,4 +69,16 @@ it('should render TableLoadingRow when loading prop is on', () => {
         />
     ))
     expect(loading.find(TableLoadingRow).length).toEqual(1)
+})
+
+it('should accept the render prop', () => {
+    expect(render(withTheme(
+        <DataTable
+            rows={[]}
+            columns={[]}
+            render={(renderProps: DataTableProps) => {
+                return <div />
+            }}
+        />
+    ))).toMatchSnapshot()
 })
