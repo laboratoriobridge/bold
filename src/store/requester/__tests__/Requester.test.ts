@@ -101,7 +101,7 @@ describe('Requester', () => {
                 store.dispatch(r.request())
 
                 expect(store.getActions()).toEqual([
-                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: false } },
+                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: true } },
                 ])
             })
             it('deve conter os parâmetros atualmente no store dentro do meta', () => {
@@ -115,11 +115,11 @@ describe('Requester', () => {
                 store.dispatch(r.request())
 
                 expect(store.getActions()).toEqual([
-                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: false, params: { test: true } } },
+                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: true, params: { test: true } } },
                 ])
             })
             it('deve incluir a config stale no meta', () => {
-                const r2 = new Requester<number, any, number>('test', () => Promise.resolve(4), { stale: true })
+                const r2 = new Requester<number, any, number>('test', () => Promise.resolve(4))
                 const store = mockStore({
                     requester: {
                         test: {
@@ -127,10 +127,10 @@ describe('Requester', () => {
                         },
                     },
                 })
-                store.dispatch(r2.request())
+                store.dispatch(r2.request({ stale: false }))
 
                 expect(store.getActions()).toEqual([
-                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: true, params: { test: true } } },
+                    { type: `${REQUEST}/test`, meta: { key: 'test', stale: false, params: { test: true } } },
                 ])
             })
         })
