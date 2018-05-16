@@ -877,6 +877,12 @@
     "@types/react" "*"
     moment ">=2.14.0"
 
+"@types/react-dropzone@4.2.0":
+  version "4.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-dropzone/-/react-dropzone-4.2.0.tgz#c4a290c784456e3c939dff75dba6b66b61f212e5"
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-overlays@0.8.4":
   version "0.8.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-overlays/-/react-overlays-0.8.4.tgz#45a189df6fb1882f7a9db93b03efe4b976a51916"
@@ -1395,6 +1401,12 @@ asynckit@^0.4.0:
 atob@^2.0.0:
   version "2.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
+
+attr-accept@^1.0.3:
+  version "1.1.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/attr-accept/-/attr-accept-1.1.2.tgz#6836bfe054e4ef1ee3076fdde56cec9bb3ffead6"
+  dependencies:
+    core-js "^2.5.0"
 
 autoprefixer@^6.3.1:
   version "6.7.7"
@@ -7426,6 +7438,13 @@ react-dom@16.3.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-dropzone@4.2.9:
+  version "4.2.9"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.9.tgz#98156ce4d4cb018f7c5099eeb2eaff6dc21836fd"
+  dependencies:
+    attr-accept "^1.0.3"
+    prop-types "^15.5.7"
 
 react-error-overlay@^4.0.0:
   version "4.0.0"

@@ -1,0 +1,618 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render complete state 1`] = `
+.emotion-15 {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.emotion-6 .accept-dashed-border {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid transparent;
+  border-style: dashed;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-2:first-child {
+  margin-left: 0;
+}
+
+.emotion-2:last-child {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: #666666;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.emotion-14 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 2px solid #cccccc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+.emotion-13 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.emotion-7 {
+  color: #666666;
+  font-weight: bold;
+  background-color: #f2f2f7;
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+}
+
+.emotion-12 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-10 {
+  color: #4d4d4d;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.emotion-11 {
+  font-size: 0.75rem;
+}
+
+.emotion-9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 5px;
+}
+
+.emotion-8 {
+  fill: #056DFF;
+  font-size: 1rem;
+}
+
+<div
+  class="emotion-15"
+>
+  <div
+    aria-disabled="false"
+    class="emotion-6"
+  >
+    <div
+      class="accept-dashed-border"
+    >
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <g
+                id="Upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-3"
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      autocomplete="off"
+      style="display:none"
+      type="file"
+    />
+  </div>
+  <div
+    class="emotion-14"
+  >
+    <span
+      class="emotion-7"
+    >
+      PDF
+    </span>
+    <div
+      class="emotion-13"
+    >
+      <div
+        class="emotion-12"
+      >
+        <span
+          class="emotion-9"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-8"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M10.71 16.21l7-7-1.42-1.42-5.59 5.6-2.99-3-1.42 1.42"
+              id="Sucesso"
+            />
+          </svg>
+        </span>
+        <span
+          class="emotion-10"
+        >
+          file_test.pdf
+        </span>
+        <span
+          class="emotion-11"
+        >
+          4 KB
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render initial state 1`] = `
+.emotion-7 {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.emotion-6 .accept-dashed-border {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid transparent;
+  border-style: dashed;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-2:first-child {
+  margin-left: 0;
+}
+
+.emotion-2:last-child {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: #666666;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+<div
+  class="emotion-7"
+>
+  <div
+    aria-disabled="false"
+    class="emotion-6"
+  >
+    <div
+      class="accept-dashed-border"
+    >
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <g
+                id="Upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-3"
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      autocomplete="off"
+      style="display:none"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render uploading state 1`] = `
+.emotion-14 {
+  background-color: #ffffff;
+  border-radius: 2px;
+  border: 1px solid #cccccc;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.emotion-6 .accept-dashed-border {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border: 1px solid transparent;
+  border-style: dashed;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-2:first-child {
+  margin-left: 0;
+}
+
+.emotion-2:last-child {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: #666666;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  color: #666666;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.emotion-13 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-top: 2px solid #cccccc;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+.emotion-12 {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+
+.emotion-7 {
+  color: #666666;
+  font-weight: bold;
+  background-color: #f2f2f7;
+  border: 1px solid #e6e6e6;
+  padding: 1rem;
+}
+
+.emotion-10 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-8 {
+  color: #4d4d4d;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.emotion-9 {
+  font-size: 0.75rem;
+}
+
+.emotion-11 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4px;
+  width: 100%;
+}
+
+.emotion-11::-webkit-progress-bar {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}
+
+.emotion-11::-webkit-progress-value {
+  background-color: #056DFF;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.emotion-11::-moz-progress-bar {
+  background-color: #056DFF;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+<div
+  class="emotion-14"
+>
+  <div
+    aria-disabled="false"
+    class="emotion-6"
+  >
+    <div
+      class="accept-dashed-border"
+    >
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <g
+                id="Upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div
+          class="emotion-2"
+        >
+          <span
+            class="emotion-3"
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      autocomplete="off"
+      style="display:none"
+      type="file"
+    />
+  </div>
+  <div
+    class="emotion-13"
+  >
+    <span
+      class="emotion-7"
+    >
+      PDF
+    </span>
+    <div
+      class="emotion-12"
+    >
+      <div
+        class="emotion-10"
+      >
+        <span
+          class="emotion-8"
+        >
+          file_test.pdf
+        </span>
+        <span
+          class="emotion-9"
+        >
+          4 KB
+        </span>
+      </div>
+      <progress
+        class="emotion-11"
+        max="100"
+        value="40"
+      />
+    </div>
+  </div>
+</div>
+`;
