@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+<table>
+  <tbody
+    class="emotion-2"
+  >
+    <tr
+      class="emotion-2"
+    >
+      <td
+        class="emotion-0"
+      >
+        1
+      </td>
+      <td
+        class="emotion-0"
+      >
+        MARIA MACHADO DE JESUS
+      </td>
+    </tr>
+    <tr
+      class="emotion-2"
+    >
+      <td
+        class="emotion-0"
+      >
+        2
+      </td>
+      <td
+        class="emotion-0"
+      >
+        JOSÉ DA SILVA MOREIRA
+      </td>
+    </tr>
+    <tr
+      class="emotion-2"
+    >
+      <td
+        class="emotion-0"
+      >
+        3
+      </td>
+      <td
+        class="emotion-0"
+      >
+        ALICE BARBOSA
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

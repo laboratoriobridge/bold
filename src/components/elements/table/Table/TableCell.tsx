@@ -5,13 +5,13 @@ import { Omit } from '../../../../util/types'
 
 import { createTableStyles } from './styles'
 
-export interface TableProps extends WithStylesProps, Omit<React.TableHTMLAttributes<any>, 'css'> { }
+export interface TableCellProps extends WithStylesProps, Omit<React.TdHTMLAttributes<any>, 'css'> { }
 
 @withStyles
-export class Table extends React.PureComponent<TableProps> {
+export class TableCell extends React.PureComponent<TableCellProps> {
     render() {
         const { theme, css, ...rest } = this.props
         const styles = createTableStyles(theme)
-        return <table className={css(styles.table)} {...rest} />
+        return <td className={css(styles.cell)} {...rest} />
     }
 }

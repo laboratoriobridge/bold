@@ -1,13 +1,13 @@
 import { mount } from 'enzyme'
 import * as React from 'react'
 
-import { CLEAR_RESULT, Page, PageRequester, REQUEST, SET_PARAMS } from '../../../../store/requester'
+import { CLEAR_RESULT, Page, PageRequester, REQUEST, RequestState, SET_PARAMS } from '../../../../store/requester'
 import { mockStore, withRedux, withTheme } from '../../../../test'
 import { DataTable } from '../DataTable/DataTable'
 
 import {
-    DataTableConnected, DataTableConnectedCmp, emptyPage, mapDispatchToProps, mapStateToProps
-} from './DataTableConnected'
+    emptyPage, mapDispatchToProps, mapStateToProps, PagedTableConnected, PagedTableConnectedCmp
+} from './PagedTableConnected'
 
 const result: Page<number> = {
     content: [1, 2, 3, 4, 5],
@@ -29,12 +29,24 @@ describe('mapStateToProps', () => {
         const emptyState = mapStateToProps({}, ownProps)
         expect(emptyState.page).toEqual(emptyPage)
 
+        const requestState: RequestState<any, any> = { result, params: {}, error: null, readyState: 'success' }
         const state = mapStateToProps({
             requester: {
-                test: { result },
+                test: requestState,
             },
         }, ownProps)
         expect(state.page).toEqual(result)
+    })
+    it('should map the current loading state', () => {
+        expect(mapStateToProps({}, ownProps).loading).toEqual(undefined)
+
+        const requestState: RequestState<any, any> = { result: null, params: {}, error: null, readyState: 'request' }
+        const state = mapStateToProps({
+            requester: {
+                test: requestState,
+            },
+        }, ownProps)
+        expect(state.loading).toEqual(true)
     })
 })
 
@@ -62,7 +74,7 @@ describe('mapDispatchToProps', () => {
     it(`#onSortChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
         const store = mockStore()
         const actions = mapDispatchToProps(store.dispatch, ownProps)
-        actions.onSortChange(['id'])
+        actions.onSortChange({ id: 'ASC' })
         expect(store.getActions()).toHaveLength(3)
     })
     it(`#onSizeChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
@@ -82,7 +94,7 @@ describe('mapDispatchToProps', () => {
 
 describe('Component', () => {
     it('should mount correctly', () => {
-        const wrapper = mount(withTheme(withRedux(<DataTableConnected requester={requester} />)))
+        const wrapper = mount(withTheme(withRedux(<PagedTableConnected requester={requester} columns={[]} />)))
         expect(wrapper.find(DataTable)).toBeTruthy()
     })
 
@@ -97,8 +109,9 @@ describe('Component', () => {
         }
         const c = { ...defaultConfig, ...config }
         return mount(withTheme(withRedux(
-            <DataTableConnectedCmp
+            <PagedTableConnectedCmp
                 requester={requester}
+                columns={[]}
                 page={result}
                 setParams={c.setParams}
                 request={c.request}

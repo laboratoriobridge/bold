@@ -6,14 +6,14 @@ import { Icon } from '../../Icon/Icon'
 export type SortDirection = 'ASC' | 'DESC' | ''
 
 export interface SortableLabelProps extends WithStylesProps {
-    dir: SortDirection
-    onChange(dir: SortDirection): any
+    direction: SortDirection
+    onChange(sortDirection: SortDirection, shiftKey?: boolean): any
 }
 
 @withStyles
 export class SortableLabel extends React.Component<SortableLabelProps> {
     render() {
-        const { css, dir } = this.props
+        const { css, direction } = this.props
         const styles = {
             wrapper: {
                 display: 'inline-flex',
@@ -22,8 +22,8 @@ export class SortableLabel extends React.Component<SortableLabelProps> {
             },
         }
 
-        const icon = (dir === 'ASC' && 'angleDown')
-            || (dir === 'DESC' && 'angleUp')
+        const icon = (direction === 'ASC' && 'angleDown')
+            || (direction === 'DESC' && 'angleUp')
             || 'sort'
 
         return (
@@ -39,8 +39,8 @@ export class SortableLabel extends React.Component<SortableLabelProps> {
         )
     }
 
-    private handleClick = () => {
-        this.props.onChange(toggleDirection(this.props.dir))
+    private handleClick = (event: React.MouseEvent<any>) => {
+        this.props.onChange(toggleDirection(this.props.direction), event.shiftKey)
     }
 }
 
