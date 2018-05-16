@@ -7,8 +7,8 @@ import { withPropTypes, withTheme } from '../../../stories-addons'
 import { Spinner } from './Spinner'
 
 storiesOf('Components', module)
-    .addDecorator(withKnobs)
     .addDecorator(withPropTypes())
+    .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('Spinner', () => (
         <Spinner size={number('size', 1)} borderWidth={number('borderWidth', 2)} />
