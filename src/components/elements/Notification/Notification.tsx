@@ -56,9 +56,9 @@ export interface NotificationProps extends WithStylesProps {
 @withStyles
 export class Notification extends React.PureComponent<NotificationProps> {
     render() {
-        const { theme, css, type, message, onCloseClick } = this.props
+        const { theme, css, styles, type, message, onCloseClick } = this.props
         const typeStyle = createTypesStyles(theme)
-        const styles = {
+        const defaultStyles = {
             notification: {
                 padding: '0.75rem 3rem 0.75rem 3rem',
                 borderRadius: '2px',
@@ -78,9 +78,9 @@ export class Notification extends React.PureComponent<NotificationProps> {
 
         return (
             <div>
-                <div className={css(styles.notification, typeStyle[type].style)}>
-                    <Icon icon={typeStyle[type].icon} styles={styles.icon} />{message}
-                    {onCloseClick && <span className={css(styles.closeButton)}>
+                <div className={css(defaultStyles.notification, typeStyle[type].style, styles)}>
+                    <Icon icon={typeStyle[type].icon} styles={defaultStyles.icon} />{message}
+                    {onCloseClick && <span className={css(defaultStyles.closeButton)}>
                         <IconButton icon='times' onClick={onCloseClick} />
                     </span>}
                 </div>
