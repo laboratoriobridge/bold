@@ -1,28 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-2 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .emotion-0 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
   height: 4px;
-  margin-right: 25px;
   width: 100%;
 }
 
@@ -45,25 +29,9 @@ exports[`should render correctly 1`] = `
   transition: all .3s;
 }
 
-.emotion-1 {
-  color: #4d4d4d;
-  font-size: 1rem;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-<div
-  class="emotion-2"
->
-  <progress
-    class="emotion-0"
-    max="100"
-    value="40"
-  />
-  <span
-    class="emotion-1"
-  >
-    40 %
-  </span>
-</div>
+<progress
+  class="emotion-0"
+  max="100"
+  value="40"
+/>
 `;
