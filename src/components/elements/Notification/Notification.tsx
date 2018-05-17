@@ -50,16 +50,18 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
 export interface NotificationProps extends WithStylesProps {
     type: NotificationType,
     message: string,
-    onCloseClick?: any
+    onCloseClick?: any,
+    animated?: boolean
 }
 
 @withStyles
 export class Notification extends React.PureComponent<NotificationProps> {
     render() {
-        const { theme, css, styles, type, message, onCloseClick } = this.props
+        const { theme, css, styles, type, message, onCloseClick, animated } = this.props
         const typeStyle = createTypesStyles(theme)
         const defaultStyles = {
             notification: {
+                animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
                 padding: '0.75rem 3rem 0.75rem 3rem',
                 borderRadius: '2px',
                 fontSize: '0.75rem',

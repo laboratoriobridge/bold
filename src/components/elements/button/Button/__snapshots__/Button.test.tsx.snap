@@ -340,6 +340,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   theme={
     Object {
       "animation": Object {
+        "fadeInFromTop": "animation-10wpg4t",
         "spinAround": "animation-1scjtrl",
       },
       "baseRadius": 2,
@@ -391,6 +392,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
     theme={
       Object {
         "animation": Object {
+          "fadeInFromTop": "animation-10wpg4t",
           "spinAround": "animation-1scjtrl",
         },
         "baseRadius": 2,
@@ -448,6 +450,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         theme={
           Object {
             "animation": Object {
+              "fadeInFromTop": "animation-10wpg4t",
               "spinAround": "animation-1scjtrl",
             },
             "baseRadius": 2,
@@ -504,6 +507,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           theme={
             Object {
               "animation": Object {
+                "fadeInFromTop": "animation-10wpg4t",
                 "spinAround": "animation-1scjtrl",
               },
               "baseRadius": 2,
@@ -681,6 +685,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
   theme={
     Object {
       "animation": Object {
+        "fadeInFromTop": "animation-10wpg4t",
         "spinAround": "animation-1scjtrl",
       },
       "baseRadius": 2,
@@ -732,6 +737,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
     theme={
       Object {
         "animation": Object {
+          "fadeInFromTop": "animation-10wpg4t",
           "spinAround": "animation-1scjtrl",
         },
         "baseRadius": 2,
@@ -789,6 +795,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
         theme={
           Object {
             "animation": Object {
+              "fadeInFromTop": "animation-10wpg4t",
               "spinAround": "animation-1scjtrl",
             },
             "baseRadius": 2,
@@ -845,6 +852,7 @@ exports[`Button deve ter animação de "carregando" ao especificar onClick com r
           theme={
             Object {
               "animation": Object {
+                "fadeInFromTop": "animation-10wpg4t",
                 "spinAround": "animation-1scjtrl",
               },
               "baseRadius": 2,
@@ -1107,6 +1115,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
   theme={
     Object {
       "animation": Object {
+        "fadeInFromTop": "animation-10wpg4t",
         "spinAround": "animation-1scjtrl",
       },
       "baseRadius": 2,
@@ -1158,6 +1167,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
     theme={
       Object {
         "animation": Object {
+          "fadeInFromTop": "animation-10wpg4t",
           "spinAround": "animation-1scjtrl",
         },
         "baseRadius": 2,
@@ -1215,6 +1225,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
         theme={
           Object {
             "animation": Object {
+              "fadeInFromTop": "animation-10wpg4t",
               "spinAround": "animation-1scjtrl",
             },
             "baseRadius": 2,
@@ -1271,6 +1282,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 1`]
           theme={
             Object {
               "animation": Object {
+                "fadeInFromTop": "animation-10wpg4t",
                 "spinAround": "animation-1scjtrl",
               },
               "baseRadius": 2,
@@ -1427,6 +1439,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
   theme={
     Object {
       "animation": Object {
+        "fadeInFromTop": "animation-10wpg4t",
         "spinAround": "animation-1scjtrl",
       },
       "baseRadius": 2,
@@ -1478,6 +1491,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
     theme={
       Object {
         "animation": Object {
+          "fadeInFromTop": "animation-10wpg4t",
           "spinAround": "animation-1scjtrl",
         },
         "baseRadius": 2,
@@ -1535,6 +1549,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
         theme={
           Object {
             "animation": Object {
+              "fadeInFromTop": "animation-10wpg4t",
               "spinAround": "animation-1scjtrl",
             },
             "baseRadius": 2,
@@ -1591,6 +1606,7 @@ exports[`Button não deve ter animação com "onClick" que não seja promise 2`]
           theme={
             Object {
               "animation": Object {
+                "fadeInFromTop": "animation-10wpg4t",
                 "spinAround": "animation-1scjtrl",
               },
               "baseRadius": 2,

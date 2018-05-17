@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StickyContainer should render correctly 1`] = `
+.emotion-0 {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+
+<div
+  class="emotion-0"
+/>
+`;
