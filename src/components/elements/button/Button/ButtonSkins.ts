@@ -13,7 +13,7 @@ export interface Skin {
     primary: any
 }
 
-export const skinMap: {[key in Skins]: (theme: Theme) => Skin} = {
+export const skinMap: { [key in Skins]: (theme: Theme) => Skin } = {
     'default': createDefault,
     'ghost': createGhost,
     'secondary': createSecondary,
@@ -30,7 +30,7 @@ export const createBaseStyles = (theme: Theme) => ({
         backfaceVisibility: 'hidden',
         display: 'inline-flex',
         justifyContent: 'center',
-        fontFamily: theme.font.textFamily,
+        fontFamily: theme.typography.fontFamily,
         lineHeight: '1.5rem',
         position: 'relative',
         userSelect: 'none',

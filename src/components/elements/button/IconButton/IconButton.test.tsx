@@ -19,19 +19,19 @@ describe('IconButton', () => {
         }
 
         const wrapper = mount(withTheme(<IconButton icon='pen' onClick={delayedFunction} />))
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
 
         wrapper.simulate('click')
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find('button').prop('data-loading')).toEqual(true)
     })
 
     it('não deve ter animação com "onClick" que não seja promise', () => {
         const func = () => undefined
         const wrapper = mount(withTheme(<IconButton icon='pen' onClick={func} />))
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
 
         wrapper.simulate('click')
-        expect(wrapper).toMatchSnapshot()
+        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
     })
 
     it('deve adicionar um hint string automaticamente', () => {

@@ -1,14 +1,14 @@
 import * as React from 'react'
 
-import { Color } from '../../../../styles/theme/Theme'
-import { withStyles, WithStylesProps } from '../../../../styles/withStyles'
+import { TextColor, withStyles, WithStylesProps } from '../../../../styles'
+import { getTextColor } from '../../../../styles/theme/createTheme'
 
 export type Weight = 'normal' | 'bold'
 export type TextTag = 'span' | 'p' | 'div' | 'label'
 export type FontStyle = 'normal' | 'italic'
 
 export interface TextProps extends WithStylesProps {
-    color?: Color
+    color?: TextColor
     size?: number
     weight?: Weight
     tag?: TextTag
@@ -24,7 +24,7 @@ export class Text extends React.PureComponent<TextProps> {
 
     render() {
         const style: React.CSSProperties = {
-            color: this.props.color && this.props.theme.color[this.props.color],
+            color: this.props.color && getTextColor(this.props.theme, this.props.color),
             fontSize: this.props.size && this.props.size + 'rem',
             fontWeight: this.props.weight,
             fontStyle: this.props.fontStyle,

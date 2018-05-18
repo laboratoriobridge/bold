@@ -27,11 +27,11 @@ export class TableFooter extends React.Component<TableFooterProps> {
                 fontSize: '0.75rem',
                 display: 'flex',
                 alignItems: 'stretch',
-                border: '1px solid ' + theme.color.gray90,
+                border: '1px solid ' + theme.pallete.divider,
             },
             results: {
                 fontWeight: 'bold',
-                borderRight: '1px solid ' + theme.color.gray90,
+                borderRight: '1px solid ' + theme.pallete.divider,
                 display: 'flex',
                 alignItems: 'center',
                 paddingRight: '1rem',

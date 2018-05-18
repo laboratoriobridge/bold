@@ -19,7 +19,7 @@ export class Cell extends React.PureComponent<CellProps> {
                 alignSelf: this.props.alignSelf,
                 margin: '0.5rem 1rem',
 
-                [theme.breakpoint.small]: {
+                [theme.breakpoints.down('small')]: {
                     margin: '0.25rem 0.5rem',
                 },
             },
@@ -30,7 +30,7 @@ export class Cell extends React.PureComponent<CellProps> {
 
             fixedSize: {
                 flexBasis: `calc((100% / 12 * ${size}) - 2rem)`,
-                [theme.breakpoint.small]: {
+                [theme.breakpoints.down('small')]: {
                     flexBasis: `calc((100% / 12 * ${size}) - 1rem)`,
                 },
             },

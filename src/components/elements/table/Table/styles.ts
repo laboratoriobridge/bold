@@ -5,7 +5,7 @@ export const createTableStyles = (theme: Theme) => ({
         width: '100%',
         borderCollapse: 'collapse',
         fontSize: '0.75rem',
-        border: `1px solid ${theme.color.gray90}`,
+        border: `1px solid ${theme.pallete.divider}`,
     },
     thead: {},
     tbody: {},
@@ -13,11 +13,11 @@ export const createTableStyles = (theme: Theme) => ({
     th: {
         textAlign: 'left',
         padding: '0.5rem 1rem',
-        borderBottom: `1px solid ${theme.color.gray90}`,
+        borderBottom: `1px solid ${theme.pallete.divider}`,
     },
     cell: {
         textAlign: 'left',
         padding: '0.5rem 1rem',
-        borderBottom: `1px solid ${theme.color.gray90}`,
+        borderBottom: `1px solid ${theme.pallete.divider}`,
     },
 })

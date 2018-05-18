@@ -12,8 +12,8 @@ export class Badge extends React.PureComponent<BadgeProps> {
         const { css, theme } = this.props
         const styles = {
             badge: {
-                background: theme.color.background,
-                color: theme.color.gray40,
+                background: theme.pallete.surface.background,
+                color: theme.pallete.gray.c40,
                 padding: '0.25rem',
                 fontWeight: 'bold',
                 borderRadius: '3px',

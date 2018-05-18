@@ -60,19 +60,19 @@ export class FileUploader extends React.Component<FileUploaderProps> {
                 },
             },
             dropzoneAccept: {
-                backgroundColor: theme.color.background,
+                backgroundColor: theme.pallete.surface.background,
                 '& .accept-dashed-border': {
-                    borderColor: theme.color.gray80 + '!important',
+                    borderColor: theme.pallete.divider + '!important',
                 },
             },
             file: {
-                borderTop: '2px solid ' + theme.color.gray80,
+                borderTop: '2px solid ' + theme.pallete.divider,
                 padding: '1rem',
             },
             wrapper: {
-                backgroundColor: theme.color.white,
-                borderRadius: 2,
-                border: '1px solid ' + theme.color.gray80,
+                backgroundColor: theme.pallete.surface.main,
+                borderRadius: theme.radius.main,
+                border: '1px solid ' + theme.pallete.divider,
             },
         }
 
@@ -120,7 +120,7 @@ class FileDetails extends React.Component<FileDetailsProps> {
             },
             wrapper: {
                 alignItems: 'center',
-                borderTop: '2px solid ' + this.props.theme.color.gray80,
+                borderTop: '2px solid ' + this.props.theme.pallete.divider,
                 display: 'flex',
                 padding: '1rem',
             },
@@ -180,8 +180,8 @@ class FileExtension extends React.PureComponent<FileExtensionProps> {
 
     render() {
         const styles = {
-            backgroundColor: this.props.theme.color.background,
-            border: '1px solid ' + this.props.theme.color.gray90,
+            backgroundColor: this.props.theme.pallete.surface.background,
+            border: '1px solid ' + this.props.theme.pallete.divider,
             padding: '1rem',
         }
 

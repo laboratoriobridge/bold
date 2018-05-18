@@ -16,7 +16,7 @@ export class WizardFooter extends React.Component<WizardFooterProps> {
         const { css, theme, isFirstStep, isLastStep, onPrevious, onSubmit } = this.props
         const styles = {
             container: {
-                borderTop: '1px solid ' + theme.color.gray90,
+                borderTop: '1px solid ' + theme.pallete.divider,
                 padding: '1rem 0',
                 margin: '2rem 0',
                 textAlign: 'right',

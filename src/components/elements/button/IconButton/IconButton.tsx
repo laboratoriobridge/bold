@@ -18,8 +18,8 @@ export const createStyles = (theme: Theme) => ({
     button: {
         backgroundColor: 'transparent',
         border: 'none',
-        borderRadius: theme.baseRadius + 2,
-        color: theme.color.gray40,
+        borderRadius: theme.radius.button,
+        color: theme.pallete.gray.c40,
         cursor: 'pointer',
         display: 'inline-flex',
         padding: 0,
@@ -98,6 +98,7 @@ export class IconButton extends React.Component<IconButtonProps, IconButtonState
                 {...rest}
                 className={classes}
                 onLoadingChange={this.onLoadingChange}
+                {...(this.state.loading) && { 'data-loading': this.state.loading }}
             >
                 <span>
                     <Icon icon={icon} />

@@ -1,9 +1,10 @@
 import * as React from 'react'
 
-import { Color, withStyles, WithStylesProps } from '../../../styles'
+import { TextColor, withStyles, WithStylesProps } from '../../../styles'
+import { getTextColor } from '../../../styles/theme/createTheme'
 
 export interface ProgressIndicatorProps extends WithStylesProps {
-    color?: Color
+    color?: TextColor
     max?: number
     value: number
 }
@@ -32,16 +33,16 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
                 height: 4,
                 width: '100%',
                 '&::-webkit-progress-bar': {
-                    backgroundColor: theme.color.gray90,
+                    backgroundColor: theme.pallete.gray.c90,
                     borderRadius: 4,
                 },
                 '&::-webkit-progress-value': {
-                    backgroundColor: theme.color[color],
+                    backgroundColor: getTextColor(theme, color),
                     borderRadius: 4,
                     transition: 'all .3s',
                 },
                 '&::-moz-progress-bar': {
-                    backgroundColor: theme.color[color],
+                    backgroundColor: getTextColor(theme, color),
                     borderRadius: 4,
                     transition: 'all .3s',
                 },

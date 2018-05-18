@@ -19,7 +19,7 @@ export class PageContainer extends React.PureComponent<PageContainerProps> {
                 paddingLeft: '1rem',
                 paddingRight: '1rem',
 
-                [theme.breakpoint.small]: {
+                [theme.breakpoints.down('small')]: {
                     width: '768px',
                     padding: '0.25rem 0.5rem',
                 },

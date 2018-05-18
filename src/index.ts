@@ -2,21 +2,20 @@
  * Auth
  */
 export * from './components/auth'
-export * from './components/breadcrumbs'
 
 /**
  * Components
  */
+export * from './components/breadcrumbs'
 export * from './components/elements'
 export * from './components/form'
 export * from './components/grid'
 export * from './components/layout'
 
 /**
- * Theme
+ * Styles
  */
-export * from './styles/withStyles'
-export * from './styles/theme/ThemeProvider'
+export * from './styles'
 
 /**
  * Store

@@ -27,7 +27,7 @@ export class Grid extends React.PureComponent<GridProps> {
                 marginRight: '-1rem',
                 height: '100%',
 
-                [theme.breakpoint.small]: {
+                [theme.breakpoints.down('small')]: {
                     marginLeft: '-0.5rem',
                     marginRight: '-0.5rem',
                 },

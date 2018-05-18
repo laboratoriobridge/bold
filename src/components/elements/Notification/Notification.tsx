@@ -16,33 +16,33 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
         'info': {
             icon: 'informationCircle',
             style: {
-                background: theme.color.blueBg,
-                color: theme.color.blue,
-                borderColor: theme.color.blue,
+                background: theme.pallete.status.info.background,
+                color: theme.pallete.status.info.main,
+                borderColor: theme.pallete.status.info.main,
             },
         },
         'success': {
             icon: 'checkCircle',
             style: {
-                background: theme.color.greenBg,
-                color: theme.color.green,
-                borderColor: theme.color.green,
+                background: theme.pallete.status.success.background,
+                color: theme.pallete.status.success.main,
+                borderColor: theme.pallete.status.success.main,
             },
         },
         'alert': {
             icon: 'exclamationTriangle',
             style: {
-                background: theme.color.orangeBg,
-                color: theme.color.orange,
-                borderColor: theme.color.orange,
+                background: theme.pallete.status.alert.background,
+                color: theme.pallete.status.alert.main,
+                borderColor: theme.pallete.status.alert.main,
             },
         },
         'error': {
             icon: 'ban',
             style: {
-                background: theme.color.redBg,
-                color: theme.color.red,
-                borderColor: theme.color.red,
+                background: theme.pallete.status.error.background,
+                color: theme.pallete.status.error.main,
+                borderColor: theme.pallete.status.error.main,
             },
         },
     }

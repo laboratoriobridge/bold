@@ -15,9 +15,9 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const { css, label, theme, ...rest } = this.props
 
         const checkClasses = emotionCss({
-            backgroundColor: theme.color.white,
-            border: '1px solid ' + theme.color.gray70,
-            borderRadius: theme.baseRadius,
+            backgroundColor: theme.pallete.surface.main,
+            border: '1px solid ' + theme.pallete.gray.c70,
+            borderRadius: theme.radius.main,
             display: 'inline-block',
             height: 16,
             position: 'relative',
@@ -26,8 +26,8 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             verticalAlign: 'middle',
             width: 16,
             ':after': {
-                borderRight: '2px solid ' + theme.color.white,
-                borderBottom: '2px solid ' + theme.color.white,
+                borderRight: '2px solid ' + theme.pallete.surface.main,
+                borderBottom: '2px solid ' + theme.pallete.surface.main,
                 content: '""',
                 height: 10,
                 left: 4,
@@ -41,7 +41,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         })
 
         const labelClasses = emotionCss({
-            color: theme.color.gray30,
+            color: theme.pallete.gray.c30,
             fontSize: 12,
             marginLeft: '0.5rem',
         })
@@ -60,11 +60,11 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
-                borderColor: theme.color.gray60,
+                borderColor: theme.pallete.gray.c60,
             },
             [`&:checked + .${checkClasses}`]: {
-                backgroundColor: theme.color.primary,
-                borderColor: theme.color.primary,
+                backgroundColor: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
                 ':after': {
                     opacity: 1,
                 },
@@ -73,11 +73,11 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 boxShadow: focusBoxShadow(theme),
             },
             [`&:disabled + .${checkClasses}`]: {
-                backgroundColor: theme.color.background,
-                borderColor: theme.color.gray90,
+                backgroundColor: theme.pallete.surface.background,
+                borderColor: theme.pallete.gray.c90,
             },
             [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                color: theme.color.gray70,
+                color: theme.pallete.gray.c70,
             },
         })
 

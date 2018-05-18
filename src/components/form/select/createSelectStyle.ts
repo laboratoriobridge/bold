@@ -6,23 +6,23 @@ const createSelectStyle = (theme: Theme) => {
     return {
         default: {
             fontSize: '0.75rem',
-            borderRadius: theme.baseRadius,
+            borderRadius: theme.radius.main,
             transition: 'box-shadow .2s',
             backfaceVisibility: 'hidden', // fixes box-shadow transition bug
             '.Select-control': {
-                backgroundColor: theme.color.white,
-                border: 'solid 1px ' + theme.color.gray80,
-                borderRadius: theme.baseRadius,
-                color: theme.color.gray30,
+                backgroundColor: theme.pallete.surface.main,
+                border: 'solid 1px ' + theme.pallete.gray.c80,
+                borderRadius: theme.radius.main,
+                color: theme.pallete.gray.c30,
                 height: '2rem',
                 ':hover': {
-                    borderColor: theme.color.gray60,
+                    borderColor: theme.pallete.gray.c60,
                     boxShadow: 'none',
                 },
                 '.Select-clear-zone': {
                     paddingRight: '0.5rem',
                     ':hover': {
-                        color: theme.color.primary,
+                        color: theme.pallete.primary.main,
                     },
                     '.Select-clear': {
                         fontSize: '1.5rem',
@@ -37,7 +37,7 @@ const createSelectStyle = (theme: Theme) => {
                     height: 'auto',
                 },
                 '.Select-value-label': {
-                    color: theme.color.gray30 + ' !important',
+                    color: theme.pallete.gray.c30 + ' !important',
                 },
                 '.Select-input': {
                     height: 'auto',
@@ -48,7 +48,7 @@ const createSelectStyle = (theme: Theme) => {
                     },
                 },
                 '.Select-arrow-zone': {
-                    backgroundColor: theme.color.background,
+                    backgroundColor: theme.pallete.surface.background,
                     paddingRight: 0,
                     width: 30,
                 },
@@ -72,8 +72,8 @@ const createSelectStyle = (theme: Theme) => {
                         padding: 0,
                         margin: '0.25rem 0',
                         lineHeight: '1em',
-                        background: theme.color.white,
-                        border: '1px solid ' + theme.color.gray80,
+                        background: theme.pallete.surface.main,
+                        border: '1px solid ' + theme.pallete.gray.c80,
                         fontSize: '1em',
                         fontWeight: 'bold',
                         display: 'inline-flex',
@@ -81,7 +81,7 @@ const createSelectStyle = (theme: Theme) => {
                         marginLeft: '0.5rem',
                     },
                     '.Select-value-label': {
-                        color: theme.color.gray30 + ' !important',
+                        color: theme.pallete.gray.c30 + ' !important',
                         padding: '4px 8px',
                         alignSelf: 'center',
                         whiteSpace: 'nowrap',
@@ -90,8 +90,8 @@ const createSelectStyle = (theme: Theme) => {
                         textOverflow: 'ellipsis',
                     },
                     '.Select-value-icon': {
-                        background: theme.color.background,
-                        color: theme.color.text,
+                        background: theme.pallete.surface.background,
+                        color: theme.pallete.text.main,
                         fontSize: '1.5em',
                         fontWeight: 'normal',
                         border: 0,
@@ -103,35 +103,35 @@ const createSelectStyle = (theme: Theme) => {
                 },
             },
             '.Select-option:hover, .Select-option.is-focused': {
-                background: theme.color.background,
+                background: theme.pallete.surface.background,
             },
             '&.is-focused': {
                 boxShadow: focusBoxShadow(theme),
                 '.Select-menu-outer': {
-                    borderColor: theme.color.gray80,
-                    borderBottomLeftRadius: theme.baseRadius,
-                    borderBottomRightRadius: theme.baseRadius,
+                    borderColor: theme.pallete.gray.c80,
+                    borderBottomLeftRadius: theme.radius.main,
+                    borderBottomRightRadius: theme.radius.main,
                     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
                 },
             },
             '&.is-focused:not(.is-opened)': {
                 '.Select-control': {
-                    borderColor: theme.color.gray80,
+                    borderColor: theme.pallete.gray.c80,
                     boxShadow: 'none',
                 },
             },
             '&.is-disabled': {
                 '.Select-control': {
-                    backgroundColor: theme.color.background,
+                    backgroundColor: theme.pallete.surface.background,
                 },
             },
         },
         error: {
             '.Select-control': {
-                borderColor: theme.color.red,
+                borderColor: theme.pallete.status.error.main,
             },
             '&.is-focused': {
-                boxShadow: focusBoxShadow(theme, 'red'),
+                boxShadow: focusBoxShadow(theme, 'error'),
             },
         },
     }

@@ -1,24 +1,27 @@
-import { injectGlobal } from 'emotion'
-import normalizeCss from 'normalize.css'
+import { Interpolation } from 'emotion'
 
-import { Theme } from '../Theme'
+import { Pallete } from './createPallete'
+import { Typography } from './createTypography'
 
-export default function initializeGlobals(theme: Theme) {
-    injectGlobal(normalizeCss)
-    injectGlobal({
+export type Global = Interpolation
+
+export const createGlobals = (pallete: Pallete, typography: Typography): Global => {
+    return {
+        '@font-face': [typography.fontFaces],
         'html, body': {
             height: '100%',
             margin: 0,
         },
         html: {
-            fontSize: theme.baseSize,
-            fontFamily: theme.font.textFamily,
+            fontSize: typography.htmlFontSize,
+            fontFamily: typography.fontFamily,
             boxSizing: 'border-box',
-            color: theme.color.text,
+            color: pallete.text.main,
             lineHeight: 1,
         },
         body: {
-            fontSize: theme.font.textSize,
+            backgroundColor: pallete.surface.background,
+            fontSize: typography.fontSize,
             overflowY: 'scroll',
         },
         '*, *:before, *:after': {
@@ -28,13 +31,13 @@ export default function initializeGlobals(theme: Theme) {
             lineHeight: 'inherit',
         },
         hr: {
-            backgroundColor: theme.color.gray90,
+            backgroundColor: pallete.divider,
             border: 'none',
             height: 1,
             margin: '1rem 0',
         },
         'h1, h2, h3, h4, h5, h6': {
-            fontFamily: theme.font.titleFamily,
+            fontFamily: typography.fontFamily,
             margin: 0,
         },
         'h1': { fontSize: '1.25rem' },
@@ -50,6 +53,5 @@ export default function initializeGlobals(theme: Theme) {
         a: {
             cursor: 'pointer',
         },
-    })
-    injectGlobal(theme.global)
+    }
 }

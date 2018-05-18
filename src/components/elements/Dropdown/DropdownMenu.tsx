@@ -14,19 +14,19 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
             list: {
                 fontSize: '0.875rem',
                 fontWeight: 'bold',
-                color: theme.color.gray40,
+                color: theme.pallete.text.main,
                 letterSpacing: '1px',
                 whiteSpace: 'nowrap',
                 listStyle: 'none',
                 margin: 0,
                 padding: 0,
                 boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-                border: '1px solid ' + theme.color.gray90,
+                border: '1px solid ' + theme.pallete.divider,
                 borderRadius: 3,
                 display: 'inline-block',
                 width: 'auto',
                 minWidth: '150px',
-                background: theme.color.white,
+                background: theme.pallete.surface.main,
             },
         }
         return (
@@ -53,14 +53,14 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
             item: {
                 margin: 0,
                 '&:not(:last-child)': {
-                    borderBottom: '1px solid ' + theme.color.gray90,
+                    borderBottom: '1px solid ' + theme.pallete.divider,
                 },
             },
             link: {
                 padding: '1rem',
                 display: 'block',
                 '&:hover': {
-                    background: theme.color.background,
+                    background: theme.pallete.surface.background,
                 },
             },
         }
