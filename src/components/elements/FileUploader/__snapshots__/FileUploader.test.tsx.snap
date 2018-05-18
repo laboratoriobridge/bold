@@ -4,7 +4,7 @@ exports[`should render complete state 1`] = `
 .emotion-15 {
   background-color: #ffffff;
   border-radius: 2px;
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
 }
 
 .emotion-6 {
@@ -84,7 +84,7 @@ exports[`should render complete state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 2px solid #cccccc;
+  border-top: 2px solid #e6e6e6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -244,7 +244,7 @@ exports[`should render initial state 1`] = `
 .emotion-7 {
   background-color: #ffffff;
   border-radius: 2px;
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
 }
 
 .emotion-6 {
@@ -377,7 +377,7 @@ exports[`should render uploading state 1`] = `
 .emotion-14 {
   background-color: #ffffff;
   border-radius: 2px;
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
 }
 
 .emotion-6 {
@@ -457,7 +457,7 @@ exports[`should render uploading state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 2px solid #cccccc;
+  border-top: 2px solid #e6e6e6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

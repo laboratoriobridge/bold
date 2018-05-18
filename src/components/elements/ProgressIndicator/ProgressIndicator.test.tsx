@@ -8,3 +8,7 @@ import { ProgressIndicator } from './ProgressIndicator'
 it('should render correctly', () => {
     expect(render(withTheme(<ProgressIndicator value={40} />))).toMatchSnapshot()
 })
+
+it('should accept color prop', () => {
+    expect(render(withTheme(<ProgressIndicator value={40} color='error' />))).toMatchSnapshot()
+})
