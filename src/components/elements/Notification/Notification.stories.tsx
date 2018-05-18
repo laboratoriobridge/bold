@@ -30,6 +30,7 @@ storiesOf('Components', module)
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
+                animated
             >Success message.
             </Notification>
             <Notification
@@ -45,6 +46,7 @@ storiesOf('Components', module)
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
+                animated
             >Error message.
             </Notification>
         </VFlow>
