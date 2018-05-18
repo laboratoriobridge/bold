@@ -8,16 +8,44 @@ import { VFlow } from '../../layout/Flow/VFlow'
 
 import { Notification } from './Notification'
 
-const a = action('Close has been clicked')
+const click = action('Close has been clicked')
+const enter = action('Mouve enter')
+const leave = action('Mouve leave')
 
 storiesOf('Components', module)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
     .add('Notification', () => (
         <VFlow>
-            <Notification message='Information.' type='info' onCloseClick={a} />
-            <Notification message='Success message.' type='success' onCloseClick={a} />
-            <Notification message='Alert message.' type='alert' onCloseClick={a} />
-            <Notification message='Error message.' type='error' onCloseClick={a} />
+            <Notification
+                type='info'
+                onCloseClick={click}
+                onMouseEnter={enter}
+                onMouseLeave={leave}
+                animated
+            >Information.
+            </Notification>
+            <Notification
+                type='success'
+                onCloseClick={click}
+                onMouseEnter={enter}
+                onMouseLeave={leave}
+            >Success message.
+            </Notification>
+            <Notification
+                type='alert'
+                onCloseClick={click}
+                onMouseEnter={enter}
+                onMouseLeave={leave}
+                animated
+            >Alert message.
+            </Notification>
+            <Notification
+                type='error'
+                onCloseClick={click}
+                onMouseEnter={enter}
+                onMouseLeave={leave}
+            >Error message.
+            </Notification>
         </VFlow>
     ))
