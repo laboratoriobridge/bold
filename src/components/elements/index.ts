@@ -1,3 +1,4 @@
+export { AriaControlNav, AriaControlNavProps } from './AriaControlNav/AriaControlNav'
 export { Badge, BadgeProps } from './Badge/Badge'
 export { InfoLabel, InfoLabelProps } from './InfoLabel/InfoLabel'
 export { ProgressIndicator, ProgressIndicatorProps } from './ProgressIndicator/ProgressIndicator'

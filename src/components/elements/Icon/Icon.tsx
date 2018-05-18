@@ -1,13 +1,14 @@
 import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 
-import { Color, withStyles, WithStylesProps } from '../../../styles'
+import { TextColor, withStyles, WithStylesProps } from '../../../styles'
+import { getTextColor } from '../../../styles/theme/createTheme'
 
 import { IconMap, Icons } from './generated/Icons'
 
 export interface IconProps extends WithStylesProps {
     icon: Icons
-    color?: Color
+    color?: TextColor
     size?: number
     title?: string
 }
@@ -24,7 +25,7 @@ export class Icon extends React.PureComponent<IconProps> {
 
         const styles = {
             icon: {
-                fill: this.props.color ? this.props.theme.color[this.props.color] : 'currentColor',
+                fill: this.props.color ? getTextColor(this.props.theme, this.props.color) : 'currentColor',
                 fontSize: this.props.size && this.props.size + 'rem',
             },
             span: {

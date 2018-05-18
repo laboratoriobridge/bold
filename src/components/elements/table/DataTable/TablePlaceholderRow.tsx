@@ -18,7 +18,7 @@ export class TablePlaceholderRow extends React.PureComponent<TablePlaceholderRow
         const { theme, colSpan, message } = this.props
         const styles = {
             cell: {
-                color: theme.color.gray40,
+                color: theme.pallete.text.secondary,
                 fontStyle: 'italic',
                 textAlign: 'center',
             },

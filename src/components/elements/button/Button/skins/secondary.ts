@@ -4,9 +4,9 @@ import { Skin } from '../ButtonSkins'
 export const createStyles = (theme: Theme): Skin => ({
     button: {
         backgroundColor: 'transparent',
-        border: '1px solid ' + theme.color.gray70,
-        borderRadius: theme.baseRadius + 2,
-        color: theme.color.gray40,
+        border: '1px solid ' + theme.pallete.gray.c70,
+        borderRadius: theme.radius.button,
+        color: theme.pallete.gray.c40,
         ':not(:disabled):active': {
             boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
         },
@@ -15,14 +15,14 @@ export const createStyles = (theme: Theme): Skin => ({
             boxShadow: focusBoxShadow(theme),
         },
         ':not(:disabled):hover': {
-            backgroundColor: hexToRGB(theme.color.gray50, 0.16),
+            backgroundColor: hexToRGB(theme.pallete.gray.c50, 0.16),
         },
     },
     primary: {
-        border: '1px solid ' + theme.color.primary,
-        color: theme.color.primary,
+        border: '1px solid ' + theme.pallete.primary.main,
+        color: theme.pallete.primary.main,
         ':not(:disabled):hover': {
-            backgroundColor: hexToRGB(theme.color.primary, 0.16),
+            backgroundColor: hexToRGB(theme.pallete.primary.main, 0.16),
         },
     },
 })

@@ -58,7 +58,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 },
             },
             disabled: {
-                color: theme.color.gray80,
+                color: theme.pallete.text.disabled,
                 cursor: 'not-allowed',
                 '&:hover': {
                     background: 'transparent',
@@ -70,7 +70,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
             },
             button: {
                 '&:hover': {
-                    background: theme.color.gray90,
+                    background: theme.pallete.gray.c90,
                 },
             },
         }

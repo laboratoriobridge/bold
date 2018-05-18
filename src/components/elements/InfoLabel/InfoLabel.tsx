@@ -24,7 +24,7 @@ export class InfoLabel extends React.PureComponent<InfoLabelProps> {
             child: {
                 ':empty::before': {
                     content: `"${placeholder || '-'}"`,
-                    color: theme.color.gray50,
+                    color: theme.pallete.text.secondary,
                     fontStyle: 'italic',
                 },
             },

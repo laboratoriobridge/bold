@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
@@ -12,13 +12,13 @@ export interface TextInputProps extends PublicInputProps, WithStylesProps {
     icon?: InputIconDecoratorProps
 }
 
-export const createStyles = (theme) => ({
+export const createStyles = (theme: Theme) => ({
     input: {
-        backgroundColor: theme.color.white,
-        border: 'solid 1px ' + theme.color.gray80,
-        borderRadius: theme.baseRadius,
-        color: theme.color.text,
-        fontFamily: theme.font.textFamily,
+        backgroundColor: theme.pallete.surface.main,
+        border: 'solid 1px ' + theme.pallete.gray.c80,
+        borderRadius: theme.radius.main,
+        color: theme.pallete.text.main,
+        fontFamily: theme.typography.fontFamily,
         fontSize: '0.75rem',
         lineHeight: '1rem',
         padding: 'calc(0.5rem - 1px) 1rem',
@@ -26,28 +26,28 @@ export const createStyles = (theme) => ({
         transition: 'all .2s',
         backfaceVisibility: 'hidden', // fixes box-shadow transition bug
         '::placeholder': {
-            color: theme.color.gray80,
+            color: theme.pallete.gray.c80,
         },
         ':disabled': {
-            backgroundColor: theme.color.background,
+            backgroundColor: theme.pallete.surface.background,
         },
         ':not(:disabled):hover': {
-            borderColor: theme.color.gray60,
+            borderColor: theme.pallete.gray.c60,
         },
         ':not(:disabled):focus': {
             outline: 'none',
             boxShadow: focusBoxShadow(theme),
         },
         ':not(:disabled):active': {
-            borderColor: theme.color.primary,
+            borderColor: theme.pallete.primary.main,
             boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
         },
     },
     error: {
-        border: 'solid 1px ' + theme.color.red,
+        border: 'solid 1px ' + theme.pallete.status.error.main,
         ':not(:disabled):focus': {
-            border: 'solid 1px ' + theme.color.gray80,
-            boxShadow: focusBoxShadow(theme, 'red'),
+            border: 'solid 1px ' + theme.pallete.gray.c80,
+            boxShadow: focusBoxShadow(theme, 'error'),
         },
     },
 })

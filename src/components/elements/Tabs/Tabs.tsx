@@ -17,7 +17,7 @@ const createStyles = (theme: Theme) => {
         a: {
             display: 'inline-block',
             textDecoration: 'none',
-            color: theme.color.gray50,
+            color: theme.pallete.gray.c50,
             fontWeight: 'bold',
             padding: '0.5rem 0',
             margin: '0 1rem',
@@ -26,7 +26,7 @@ const createStyles = (theme: Theme) => {
             transition: '.2s color',
 
             '&.active': {
-                color: theme.color.primary,
+                color: theme.pallete.primary.main,
                 borderBottom: '2px solid currentColor',
             },
         },

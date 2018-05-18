@@ -35,7 +35,7 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
             },
             iconWrapper: {
                 position: 'absolute',
-                backgroundColor: theme.color.background,
+                backgroundColor: theme.pallete.surface.background,
                 display: 'flex',
                 alignItems: 'center',
                 padding: '0.25rem',

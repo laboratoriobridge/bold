@@ -1,9 +1,8 @@
 import * as React from 'react'
 
-import { Color, withStyles, WithStylesProps } from '../../../styles'
+import { withStyles, WithStylesProps } from '../../../styles'
 
 export interface ProgressIndicatorProps extends WithStylesProps {
-    color?: Color
     max?: number
     value: number
 }
@@ -12,13 +11,11 @@ export interface ProgressIndicatorProps extends WithStylesProps {
 export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProps> {
 
     static defaultProps: Partial<ProgressIndicatorProps> = {
-        color: 'primary',
         max: 100,
     }
 
     render() {
         const {
-            color,
             css,
             value,
             max,
@@ -32,16 +29,16 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
                 height: 4,
                 width: '100%',
                 '&::-webkit-progress-bar': {
-                    backgroundColor: theme.color.gray90,
+                    backgroundColor: theme.pallete.gray.c90,
                     borderRadius: 4,
                 },
                 '&::-webkit-progress-value': {
-                    backgroundColor: theme.color[color],
+                    backgroundColor: theme.pallete.primary.main,
                     borderRadius: 4,
                     transition: 'all .3s',
                 },
                 '&::-moz-progress-bar': {
-                    backgroundColor: theme.color[color],
+                    backgroundColor: theme.pallete.primary.main,
                     borderRadius: 4,
                     transition: 'all .3s',
                 },

@@ -3,10 +3,10 @@ import { Skin } from '../ButtonSkins'
 
 export const createStyles = (theme: Theme): Skin => ({
     button: {
-        backgroundColor: theme.color.white,
-        border: '1px solid ' + theme.color.gray70,
-        borderRadius: theme.baseRadius + 2,
-        color: theme.color.gray40,
+        backgroundColor: theme.pallete.surface.main,
+        border: '1px solid ' + theme.pallete.gray.c70,
+        borderRadius: theme.radius.button,
+        color: theme.pallete.gray.c40,
         ':not(:disabled):active': {
             boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
         },
@@ -15,15 +15,15 @@ export const createStyles = (theme: Theme): Skin => ({
             boxShadow: focusBoxShadow(theme),
         },
         ':not(:disabled):hover': {
-            backgroundColor: shade(-0.08, theme.color.white),
+            backgroundColor: shade(-0.08, theme.pallete.surface.main),
         },
     },
     primary: {
-        backgroundColor: theme.color.primary,
-        border: '1px solid ' + theme.color.primary,
-        color: theme.color.white,
+        backgroundColor: theme.pallete.primary.main,
+        border: '1px solid ' + theme.pallete.primary.main,
+        color: theme.pallete.surface.main,
         ':not(:disabled):hover': {
-            backgroundColor: shade(-0.08, theme.color.primary),
+            backgroundColor: shade(-0.08, theme.pallete.primary.main),
         },
     },
 })

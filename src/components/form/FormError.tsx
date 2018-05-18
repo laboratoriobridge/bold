@@ -13,8 +13,8 @@ export class FormError extends React.Component<FormErrorProps, any> {
     render() {
         return (
             <HFlow hSpacing={0.25}>
-                <Text color='red' size={0.75}>{this.props.error}</Text>
-                <Icon icon='informationCircle' color='red' size={1} />
+                <Text color='error' size={0.75}>{this.props.error}</Text>
+                <Icon icon='informationCircle' color='error' size={1} />
             </HFlow>
         )
     }

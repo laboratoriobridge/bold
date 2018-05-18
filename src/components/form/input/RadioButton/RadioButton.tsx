@@ -14,8 +14,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         const { label, css, theme, ...rest } = this.props
 
         const checkClasses = css({
-            backgroundColor: theme.color.white,
-            border: '1px solid ' + theme.color.gray70,
+            backgroundColor: theme.pallete.surface.main,
+            border: '1px solid ' + theme.pallete.gray.c70,
             borderRadius: 100,
             display: 'inline-block',
             height: 16,
@@ -25,8 +25,8 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
             verticalAlign: 'middle',
             width: 16,
             ':after': {
-                backgroundColor: theme.color.white,
-                border: '3px solid ' + theme.color.white,
+                backgroundColor: theme.pallete.surface.main,
+                border: '3px solid ' + theme.pallete.surface.main,
                 borderRadius: 100,
                 content: '""',
                 display: 'block',
@@ -41,7 +41,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
         })
 
         const labelClasses = css({
-            color: theme.color.gray30,
+            color: theme.pallete.gray.c30,
             fontSize: 12,
             marginLeft: '0.5rem',
         })
@@ -56,11 +56,11 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
-                borderColor: theme.color.gray50,
+                borderColor: theme.pallete.gray.c50,
             },
             [`&:checked + .${checkClasses}`]: {
-                backgroundColor: theme.color.primary,
-                borderColor: theme.color.primary,
+                backgroundColor: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
                 ':after': {
                     opacity: 1,
                 },
@@ -69,11 +69,11 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
                 boxShadow: focusBoxShadow(theme),
             },
             [`&:disabled + .${checkClasses}`]: {
-                backgroundColor: theme.color.background,
-                borderColor: theme.color.gray90,
+                backgroundColor: theme.pallete.surface.background,
+                borderColor: theme.pallete.gray.c90,
             },
             [`&:disabled + .${checkClasses} + .${labelClasses}`]: {
-                color: theme.color.gray70,
+                color: theme.pallete.gray.c70,
             },
         })
 

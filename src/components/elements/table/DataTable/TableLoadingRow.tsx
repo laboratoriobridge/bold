@@ -19,8 +19,8 @@ export class TableLoadingRow extends React.PureComponent<TableLoadingRowProps> {
         const { css, theme, colSpan } = this.props
         const styles = {
             cell: {
-                background: theme.color.background,
-                color: theme.color.primary,
+                background: theme.pallete.surface.background,
+                color: theme.pallete.primary.main,
                 fontWeight: 'bold',
             },
             container: {

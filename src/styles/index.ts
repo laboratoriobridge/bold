@@ -1,5 +1,8 @@
-export * from './withStyles'
 export * from './utils'
-export * from './theme/Theme'
-export * from './theme/ThemeProvider'
-export * from './theme/default/defaultTheme'
+export { withStyles, WithStylesProps } from './withStyles'
+
+export { ThemeProvider, ThemeProviderProps } from './theme/ThemeContext'
+export { CssGlobal, CssGlobalProps } from './theme/CssGlobal'
+export { createTheme, Theme, focusBoxShadow } from './theme/createTheme'
+export { createPallete, Pallete, TextColor } from './theme/createPallete'
+export { createTypography, Typography } from './theme/createTypography'

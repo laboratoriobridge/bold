@@ -69,6 +69,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
                 {...rest}
                 className={classes}
                 onLoadingChange={this.onLoadingChange}
+                {...(this.state.loading) && { 'data-loading': this.state.loading }}
             >
                 <span>
                     {icon && <Icon icon={icon} />}
