@@ -1,22 +1,24 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
-import { Text } from '../textual/Text/Text'
+import { Color, withStyles, WithStylesProps } from '../../../styles'
 
 export interface ProgressIndicatorProps extends WithStylesProps {
-    value: number
+    color?: Color
     max?: number
+    value: number
 }
 
 @withStyles
 export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProps> {
 
     static defaultProps: Partial<ProgressIndicatorProps> = {
+        color: 'primary',
         max: 100,
     }
 
     render() {
         const {
+            color,
             css,
             value,
             max,
@@ -24,28 +26,22 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
         } = this.props
 
         const styles = {
-            wrapper: {
-                alignItems: 'center',
-                display: 'flex',
-            },
             progress: {
                 appearance: 'none',
                 border: 'none',
-                flexGrow: 1,
                 height: 4,
-                marginRight: 25,
                 width: '100%',
                 '&::-webkit-progress-bar': {
                     backgroundColor: theme.color.gray90,
                     borderRadius: 4,
                 },
                 '&::-webkit-progress-value': {
-                    backgroundColor: theme.color.primary,
+                    backgroundColor: theme.color[color],
                     borderRadius: 4,
                     transition: 'all .3s',
                 },
                 '&::-moz-progress-bar': {
-                    backgroundColor: theme.color.primary,
+                    backgroundColor: theme.color[color],
                     borderRadius: 4,
                     transition: 'all .3s',
                 },
@@ -53,10 +49,7 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
         }
 
         return (
-            <div className={css(styles.wrapper)}>
-                <progress className={css(styles.progress)} value={value} max={max} />
-                <Text styles={{ whiteSpace: 'nowrap' }} weight='bold' color='gray30' size={1}>{value || '0'} %</Text>
-            </div>
+            <progress className={css(styles.progress)} value={value} max={max} />
         )
     }
 
