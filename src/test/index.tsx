@@ -1,15 +1,15 @@
 import axios from 'axios'
-import * as MockAdapter from 'axios-mock-adapter'
+import MockAdapter from 'axios-mock-adapter'
 import * as React from 'react'
 import { Form, FormSpy } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router'
-import { applyMiddleware, combineReducers, compose, createStore } from 'redux'
+import { applyMiddleware, combineReducers, compose, createStore, Middleware } from 'redux'
 import * as configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
 import requesterReducer from '../store/requester'
-import { defaultTheme, Theme, ThemeProvider } from '../styles/'
+import { createTheme, Theme, ThemeProvider } from '../styles/'
 
 export const axiosMock = new MockAdapter(axios)
 
@@ -17,7 +17,7 @@ const reducer = combineReducers({
     requester: requesterReducer,
 })
 
-const middlewares = [thunkMiddleware]
+const middlewares: Middleware[] = [thunkMiddleware]
 
 export const createTestStore = (initialState = {}) => {
     return createStore(reducer, initialState, compose(applyMiddleware(...middlewares)))
@@ -32,7 +32,7 @@ export const mockStore = configureMockStore(middlewares)
  * @param node Componente a ser "envelopado"
  * @param theme Tema a ser utilizado.
  */
-export const withTheme = (node: React.ReactElement<any>, theme: Theme = defaultTheme) => {
+export const withTheme = (node: React.ReactElement<any>, theme: Theme = createTheme()) => {
     return (
         <ThemeProvider theme={theme}>
             {node}
