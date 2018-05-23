@@ -1,0 +1,457 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render closed 1`] = `
+.emotion-8 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-6 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.08);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  width: 768px;
+  z-index: 1040;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.emotion-2 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-5 {
+  background-color: #f2f2f7;
+  padding: 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-4 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-4:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-4 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-4 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-4:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-4:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-7 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.08);
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-6"
+  >
+    <button
+      class="emotion-2"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              id="Fechar"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
+    <div
+      class="emotion-3"
+    >
+      Testing.
+    </div>
+    <div
+      class="emotion-5"
+    >
+      <button
+        class="emotion-4"
+        type="button"
+      >
+        <span>
+          <span>
+            Action
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  />
+</div>
+`;
+
+exports[`Modal should render open 1`] = `
+.emotion-6 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.08);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  width: 768px;
+  z-index: 1040;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.emotion-2 {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #666666;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  -webkit-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.emotion-2 span {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2:disabled {
+  opacity: 0.5;
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-5 {
+  background-color: #f2f2f7;
+  padding: 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-4 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-4:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-4:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-4 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-4 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-4:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-4:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-7 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.08);
+}
+
+.emotion-8 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+<div
+  class="emotion-8"
+>
+  <div
+    class="emotion-6"
+  >
+    <button
+      class="emotion-2"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              id="Fechar"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
+    <div
+      class="emotion-3"
+    >
+      Testing.
+    </div>
+    <div
+      class="emotion-5"
+    >
+      <button
+        class="emotion-4"
+        type="button"
+      >
+        <span>
+          <span>
+            Action
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  />
+</div>
+`;
