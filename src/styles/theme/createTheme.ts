@@ -4,13 +4,15 @@ import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createGlobals, Global } from './createGlobals'
 import { Color, createPallete, Pallete, TextColor, textColorMap } from './createPallete'
 import { createTypography, Typography } from './createTypography'
+import { zIndex, ZIndex } from './zIndex'
 
 export interface Theme {
     pallete: Pallete
     typography: Typography
     breakpoints: Breakpoints
     global: Global
-    radius: { main: string | number, button: string | number }
+    zIndex: ZIndex
+    radius: { main: number, button: number }
     animation: any
 }
 
@@ -23,6 +25,7 @@ export const createTheme = (): Theme => {
         typography,
         breakpoints: createBreakpoints(),
         global: createGlobals(pallete, typography),
+        zIndex,
         radius: {
             main: 2,
             button: 4,
