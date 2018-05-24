@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { Label } from '../elements/Label'
 import { Text } from '../elements/textual/Text/Text'
 import { Spacing } from '../layout/Spacing/Spacing'
 
@@ -24,7 +23,7 @@ export class FormLabel extends React.Component<FormLabelProps> {
 
         return (
             <>
-                <Label value={this.props.label} />
+                <Text tag='label' size={0.75} weight='bold'>{this.props.label}</Text>
                 {fieldRequired}
             </>
         )
