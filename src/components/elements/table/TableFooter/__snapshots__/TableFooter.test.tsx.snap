@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve renderizar corretamente 1`] = `
-.emotion-13 {
+.emotion-25 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -29,7 +29,7 @@ exports[`deve renderizar corretamente 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-12 {
+.emotion-24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,9 +48,13 @@ exports[`deve renderizar corretamente 1`] = `
   padding: 4px 1rem;
 }
 
-.emotion-3 {
+.emotion-15 {
   position: relative;
   margin-left: 0.5rem;
+}
+
+.emotion-3 {
+  display: inline-block;
 }
 
 .emotion-2 {
@@ -61,7 +65,54 @@ exports[`deve renderizar corretamente 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-11 {
+.emotion-13 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-12 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4d4d4d;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #ffffff;
+}
+
+.emotion-5 {
+  margin: 0;
+}
+
+.emotion-5:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-4 {
+  padding: 1rem;
+  display: block;
+}
+
+.emotion-4:hover {
+  background: #f2f2f7;
+}
+
+.emotion-23 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -74,11 +125,11 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-11 > *:not(:last-child) {
+.emotion-23 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-6 {
+.emotion-18 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -111,16 +162,16 @@ exports[`deve renderizar corretamente 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-6:disabled {
+.emotion-18:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-6:not(:disabled) {
+.emotion-18:not(:disabled) {
   cursor: pointer;
 }
 
-.emotion-6 > span {
+.emotion-18 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -133,40 +184,40 @@ exports[`deve renderizar corretamente 1`] = `
   transition: color .2s;
 }
 
-.emotion-6 > span > :not(:last-child) {
+.emotion-18 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-18:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-18:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-18:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
 }
 
-.emotion-6:hover {
+.emotion-18:hover {
   background: #e6e6e6;
 }
 
-.emotion-5 {
+.emotion-17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-4 {
+.emotion-16 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-7 {
+.emotion-19 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -184,42 +235,42 @@ exports[`deve renderizar corretamente 1`] = `
   text-align: center;
 }
 
-.emotion-7::-webkit-input-placeholder {
+.emotion-19::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-7::-moz-placeholder {
+.emotion-19::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-7:-ms-input-placeholder {
+.emotion-19:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-7::placeholder {
+.emotion-19::placeholder {
   color: #cccccc;
 }
 
-.emotion-7:disabled {
+.emotion-19:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-7:not(:disabled):hover {
+.emotion-19:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-7:not(:disabled):focus {
+.emotion-19:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-7:not(:disabled):active {
+.emotion-19:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 <div
-  class="emotion-13"
+  class="emotion-25"
 >
   <span
     class="emotion-0"
@@ -231,40 +282,93 @@ exports[`deve renderizar corretamente 1`] = `
     </span>
   </span>
   <div
-    class="emotion-12"
+    class="emotion-24"
   >
     <span>
       Mostrar:
       <span
-        class="emotion-3"
+        class="emotion-15"
       >
-        <a
-          class="emotion-2"
+        <div
+          class="emotion-3"
         >
-          10 
-          <span
-            class="emotion-1"
+          <div
+            class="emotion-3"
           >
-            ▾
-          </span>
-        </a>
+            <a
+              class="emotion-2"
+            >
+              10 
+              <span
+                class="emotion-1"
+              >
+                ▾
+              </span>
+            </a>
+          </div>
+          <div
+            class="emotion-13"
+            style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+          >
+            <ul
+              class="emotion-12"
+            >
+              <li
+                class="emotion-5"
+              >
+                <a
+                  class="emotion-4"
+                >
+                  10
+                </a>
+              </li>
+              <li
+                class="emotion-5"
+              >
+                <a
+                  class="emotion-4"
+                >
+                  30
+                </a>
+              </li>
+              <li
+                class="emotion-5"
+              >
+                <a
+                  class="emotion-4"
+                >
+                  50
+                </a>
+              </li>
+              <li
+                class="emotion-5"
+              >
+                <a
+                  class="emotion-4"
+                >
+                  100
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </span>
     </span>
     <div
-      class="emotion-11"
+      class="emotion-23"
     >
       <button
-        class="emotion-6"
+        class="emotion-18"
         title="Página anterior"
         type="button"
       >
         <span>
           <span
-            class="emotion-5"
+            class="emotion-17"
           >
             <svg
               aria-hidden="true"
-              class="emotion-4"
+              class="emotion-16"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"
@@ -278,7 +382,7 @@ exports[`deve renderizar corretamente 1`] = `
         </span>
       </button>
       <input
-        class="emotion-7"
+        class="emotion-19"
         type="text"
         value="2"
       />
@@ -286,17 +390,17 @@ exports[`deve renderizar corretamente 1`] = `
         de 10
       </span>
       <button
-        class="emotion-6"
+        class="emotion-18"
         title="Próxima página"
         type="button"
       >
         <span>
           <span
-            class="emotion-5"
+            class="emotion-17"
           >
             <svg
               aria-hidden="true"
-              class="emotion-4"
+              class="emotion-16"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"

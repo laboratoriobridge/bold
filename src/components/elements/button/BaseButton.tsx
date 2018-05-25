@@ -1,10 +1,8 @@
 import * as React from 'react'
 
-import { withHint, WithHintProps } from '../Hint'
-
 export type OnClickWithPromise = (event: React.MouseEvent<any>) => any
 
-export interface BaseButtonProps extends WithHintProps {
+export interface BaseButtonProps {
     /**
      * css className
      */
@@ -19,7 +17,6 @@ export interface BaseButtonProps extends WithHintProps {
     title?: string
 }
 
-@withHint
 export class BaseButton extends React.Component<BaseButtonProps> {
 
     private timeout: number

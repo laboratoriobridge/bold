@@ -179,20 +179,17 @@ exports[`Button should automatically have a hint 1`] = `
   background-color: #ebebeb;
 }
 
-<span
-  class="hint-wrapper"
+<button
+  class="emotion-0"
+  hint="hint teste"
+  type="button"
 >
-  <button
-    class="emotion-0"
-    type="button"
-  >
+  <span>
     <span>
-      <span>
-        Botão
-      </span>
+      Botão
     </span>
-  </button>
-</span>
+  </span>
+</button>
 `;
 
 exports[`Button should render correctly with icon only 1`] = `
@@ -1010,18 +1007,15 @@ exports[`Button shouold automatically have a custom hint 1`] = `
   background-color: #ebebeb;
 }
 
-<span
-  class="hint-wrapper"
+<button
+  class="emotion-0"
+  hint="[object Object]"
+  type="button"
 >
-  <button
-    class="emotion-0"
-    type="button"
-  >
+  <span>
     <span>
-      <span>
-        Botão
-      </span>
+      Botão
     </span>
-  </button>
-</span>
+  </span>
+</button>
 `;
