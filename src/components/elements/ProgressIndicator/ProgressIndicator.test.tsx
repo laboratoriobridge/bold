@@ -10,5 +10,5 @@ it('should render correctly', () => {
 })
 
 it('should accept color prop', () => {
-    expect(render(withTheme(<ProgressIndicator value={40} color='error' />))).toMatchSnapshot()
+    expect(render(withTheme(<ProgressIndicator value={40} color='danger' />))).toMatchSnapshot()
 })

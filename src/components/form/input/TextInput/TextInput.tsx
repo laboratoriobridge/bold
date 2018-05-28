@@ -44,10 +44,10 @@ export const createStyles = (theme: Theme) => ({
         },
     },
     error: {
-        border: 'solid 1px ' + theme.pallete.status.error.main,
+        border: 'solid 1px ' + theme.pallete.status.danger.main,
         ':not(:disabled):focus': {
             border: 'solid 1px ' + theme.pallete.gray.c80,
-            boxShadow: focusBoxShadow(theme, 'error'),
+            boxShadow: focusBoxShadow(theme, 'danger'),
         },
     },
 })

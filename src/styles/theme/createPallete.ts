@@ -3,6 +3,7 @@ export type Color = string
 export interface StatusColorMap {
     main: Color
     background: Color
+    onColor: Color
 }
 
 export interface ColorScale {
@@ -23,7 +24,7 @@ export interface Pallete {
     divider: Color
     primary: { main: Color }
     status: {
-        error: StatusColorMap
+        danger: StatusColorMap
         success: StatusColorMap
         info: StatusColorMap
         alert: StatusColorMap
@@ -59,34 +60,38 @@ export const createPallete = (): Pallete => {
             main: '#056DFF',
         },
         status: {
-            error: {
+            danger: {
                 main: '#E0001A',
                 background: '#FAF0F2',
+                onColor: '#FFFFFF',
             },
             success: {
                 main: '#00821a',
                 background: '#f0faf2',
+                onColor: '#FFFFFF',
             },
             info: {
                 main: '#0066f5',
                 background: '#f1f7ff',
+                onColor: '#FFFFFF',
             },
             alert: {
                 main: '#d43900',
                 background: '#fff9f4',
+                onColor: '#FFFFFF',
             },
         },
         gray,
     }
 }
 
-export type TextColor = 'normal' | 'primary' | 'error' | 'success' | 'info' | 'alert'
+export type TextColor = 'normal' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
     | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10'
 
 export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } = {
     'normal': (pallete) => pallete.text.main,
     'primary': (pallete) => pallete.primary.main,
-    'error': (pallete) => pallete.status.error.main,
+    'danger': (pallete) => pallete.status.danger.main,
     'success': (pallete) => pallete.status.success.main,
     'info': (pallete) => pallete.status.info.main,
     'alert': (pallete) => pallete.status.alert.main,
