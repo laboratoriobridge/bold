@@ -12,6 +12,7 @@ import { AngleDown } from './AngleDown'
 import { AngleLeft } from './AngleLeft'
 import { AngleRight } from './AngleRight'
 import { AngleUp } from './AngleUp'
+import { ArrowLeft } from './ArrowLeft'
 import { Ban } from './Ban'
 import { Bell } from './Bell'
 import { Bold } from './Bold'
@@ -78,6 +79,7 @@ export type Icons =
     | 'angleLeft' 
     | 'angleRight' 
     | 'angleUp' 
+    | 'arrowLeft' 
     | 'ban' 
     | 'bell' 
     | 'bold' 
@@ -144,6 +146,7 @@ export const IconMap = {
     'angleLeft': AngleLeft,
     'angleRight': AngleRight,
     'angleUp': AngleUp,
+    'arrowLeft': ArrowLeft,
     'ban': Ban,
     'bell': Bell,
     'bold': Bold,
