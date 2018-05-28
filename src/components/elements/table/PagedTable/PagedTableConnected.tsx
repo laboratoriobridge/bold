@@ -27,9 +27,8 @@ export class PagedTableConnectedCmp<T> extends React.Component<PagedTableConnect
     }
 
     componentDidMount() {
-        this.props.setParams(this.props.initialParams)
-
         if (this.props.loadOnMount) {
+            this.props.setParams(this.props.initialParams)
             this.props.request()
         }
     }

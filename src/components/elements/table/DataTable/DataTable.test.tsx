@@ -82,3 +82,49 @@ it('should accept the render prop', () => {
         />
     ))).toMatchSnapshot()
 })
+
+describe(DataTable.prototype.getColumn, () => {
+    const dataTable = new DataTable({
+        rows: [],
+        columns: [
+            { name: 'foo', render: () => null, sortable: true },
+        ],
+    })
+
+    it('should return the column configuration by its name', () => {
+        expect(dataTable.getColumn('foo').name).toEqual('foo')
+        expect(dataTable.getColumn('foo').sortable).toEqual(true)
+    })
+
+    it('should return undefined for inexistent columns', () => {
+        expect(dataTable.getColumn('baz')).toBeUndefined()
+    })
+})
+
+describe(DataTable.prototype.getHeaderProps, () => {
+    const dataTable = new DataTable({
+        ...DataTable.defaultProps,
+        rows: [],
+        columns: [
+            { name: 'foo', render: () => null, sortable: true },
+        ],
+    })
+
+    it('should return the table header props of a column configuration', () => {
+        const config = dataTable.getHeaderProps({
+            name: 'bar',
+            render: () => null,
+            sortable: true,
+        })
+
+        expect(config).toMatchObject({
+            'key': 'bar',
+            'data-name': 'bar',
+        })
+        expect(config).toHaveProperty('onSortChange')
+    })
+
+    it('should throw an error for inexistent columns', () => {
+        expect(() => dataTable.getHeaderProps('baz')).toThrowError()
+    })
+})
