@@ -139,6 +139,11 @@ describe('Component', () => {
         const wrapper = createCmp({ request })
         expect(request).toHaveBeenCalledTimes(1)
     })
+    it('should NOT call #setParams prop on componentDidMount if loadOnMount is false', () => {
+        const setParams = jest.fn()
+        const wrapper = createCmp({ setParams, loadOnMount: false })
+        expect(setParams).not.toBeCalled()
+    })
     it('should NOT call #request prop on componentDidMount if loadOnMount is false', () => {
         const request = jest.fn()
         const wrapper = createCmp({ request, loadOnMount: false })
