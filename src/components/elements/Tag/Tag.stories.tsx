@@ -3,11 +3,11 @@ import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../stories-addons'
 
-import { Badge } from './Badge'
+import { Tag } from './Tag'
 
 storiesOf('Components', module)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
-    .add('Badge', () => (
-        <Badge>Inativo</Badge>
+    .add('Tag', () => (
+        <Tag>Normal</Tag>
     ))

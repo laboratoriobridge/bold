@@ -3,8 +3,8 @@ import * as React from 'react'
 
 import { withTheme } from '../../../test'
 
-import { Badge } from './Badge'
+import { Tag } from './Tag'
 
 it('should render correctly', () => {
-    expect(render(withTheme(<Badge>Test</Badge>))).toMatchSnapshot()
+    expect(render(withTheme(<Tag>Test</Tag>))).toMatchSnapshot()
 })

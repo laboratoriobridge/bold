@@ -2,12 +2,12 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 
-export interface BadgeProps extends WithStylesProps {
+export interface TagProps extends WithStylesProps {
 
 }
 
 @withStyles
-export class Badge extends React.PureComponent<BadgeProps> {
+export class Tag extends React.PureComponent<TagProps> {
     render() {
         const { css, theme } = this.props
         const styles = {
