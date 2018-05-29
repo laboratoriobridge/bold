@@ -1,4 +1,5 @@
 import { action } from '@storybook/addon-actions'
+import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
@@ -7,11 +8,11 @@ import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
 storiesOf('Components/Table', module)
-    // .addDecorator(withKnobs)
     .addDecorator(withPropTypes())
+    .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('Table', () => (
-        <Table>
+        <Table hovered={boolean('hovered', false)}>
             <TableHead>
                 <TableRow>
                     <TableHeader
@@ -34,7 +35,7 @@ storiesOf('Components/Table', module)
                     <TableCell>Row #2 - Cell #1</TableCell>
                     <TableCell>Row #2 - Cell #2</TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow onClick={action('row-click')}>
                     <TableCell>Row #3 - Cell #1</TableCell>
                     <TableCell>Row #3 - Cell #2</TableCell>
                 </TableRow>

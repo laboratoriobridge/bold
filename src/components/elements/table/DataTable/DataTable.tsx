@@ -22,6 +22,7 @@ export interface DataTableProps<T = any> extends TableProps {
     sort?: SortMap
     onSortChange?(sort: SortMap): void
     render?(renderProps: DataTableRenderProps): React.ReactNode
+    onRowClick?(row: T): any
 }
 
 export interface DataTableRenderProps extends DataTableProps {
@@ -35,6 +36,7 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         sort: {},
         onSortChange: () => null,
         render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
+        onRowClick: null,
     }
 
     render() {
@@ -85,11 +87,12 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
             getHeaderProps,
             getColumn,
             render,
+            onRowClick,
             ...rest,
         } = this.props
 
         return (
-            <Table {...rest}>
+            <Table hovered={!!onRowClick} {...rest}>
                 <TableHead>
                     <TableRow>
                         {columns.map(col => (
@@ -99,7 +102,7 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
                         ))}
                     </TableRow>
                 </TableHead>
-                <TableFilledBody rows={rows} columns={columns} loading={loading} />
+                <TableFilledBody rows={rows} columns={columns} loading={loading} onRowClick={onRowClick} />
             </Table>
         )
     }

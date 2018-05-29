@@ -12,6 +12,8 @@ export class TableRow extends React.PureComponent<TableRowProps> {
     render() {
         const { theme, css, ...rest } = this.props
         const styles = createTableStyles(theme)
-        return <tr className={css(styles.row)} {...rest} />
+        return (
+            <tr className={css(styles.row, this.props.onClick && styles.pointer)} {...rest} />
+        )
     }
 }

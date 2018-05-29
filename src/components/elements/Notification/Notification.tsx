@@ -40,9 +40,9 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
         'error': {
             icon: 'ban',
             style: {
-                background: theme.pallete.status.error.background,
-                color: theme.pallete.status.error.main,
-                borderColor: theme.pallete.status.error.main,
+                background: theme.pallete.status.danger.background,
+                color: theme.pallete.status.danger.main,
+                borderColor: theme.pallete.status.danger.main,
             },
         },
     }

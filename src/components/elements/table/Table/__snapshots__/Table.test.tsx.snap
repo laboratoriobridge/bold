@@ -1,5 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Table should accept the hovered prop 1`] = `
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 0.25rem;
+}
+
+.emotion-2 {
+  fill: #056DFF;
+  font-size: 1rem;
+}
+
+.emotion-18 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+}
+
+.emotion-18 tr:hover td {
+  background: #f2f2f7;
+}
+
+<table
+  class="emotion-18"
+>
+  <thead
+    class="emotion-1"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <th
+        class="emotion-0"
+        colspan="2"
+      >
+        Headers
+      </th>
+    </tr>
+    <tr
+      class="emotion-1"
+    >
+      <th
+        class="emotion-0"
+      >
+        <span
+          class="emotion-4"
+        >
+          Header #1
+          <span
+            class="emotion-3"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-2"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
+                id="Seta-baixo"
+              />
+            </svg>
+          </span>
+        </span>
+      </th>
+      <th
+        class="emotion-0"
+      >
+        Header #2
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    class="emotion-1"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+        colspan="2"
+      >
+        Row #1
+      </td>
+    </tr>
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+      >
+        Row #2 - Cell #1
+      </td>
+      <td
+        class="emotion-0"
+      >
+        Row #2 - Cell #2
+      </td>
+    </tr>
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+      >
+        Row #3 - Cell #1
+      </td>
+      <td
+        class="emotion-0"
+      >
+        Row #3 - Cell #2
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
 exports[`Table should render corretly 1`] = `
 .emotion-18 {
   width: 100%;
@@ -129,6 +268,76 @@ exports[`Table should render corretly 1`] = `
         class="emotion-0"
       >
         Row #3 - Cell #2
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`TableRow should have the pointer class if onClick is specified 1`] = `
+.emotion-3 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+}
+
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+<table
+  class="emotion-3"
+>
+  <tbody
+    class="emotion-1"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+      >
+        Test
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`TableRow should have the pointer class if onClick is specified 2`] = `
+.emotion-3 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+}
+
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-1 {
+  cursor: pointer;
+}
+
+<table
+  class="emotion-3"
+>
+  <tbody
+    class="emotion-2"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <td
+        class="emotion-0"
+      >
+        Test
       </td>
     </tr>
   </tbody>
