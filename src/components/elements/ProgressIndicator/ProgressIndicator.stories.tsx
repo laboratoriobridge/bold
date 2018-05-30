@@ -10,7 +10,7 @@ import { ProgressIndicator } from './ProgressIndicator'
 const colors: { [key in TextColor] } = {
     'normal': 'normal',
     'primary': 'primary',
-    'error': 'error',
+    'danger': 'danger',
     'info': 'info',
     'alert': 'alert',
     'success': 'success',

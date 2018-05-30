@@ -128,10 +128,10 @@ const createSelectStyle = (theme: Theme) => {
         },
         error: {
             '.Select-control': {
-                borderColor: theme.pallete.status.error.main,
+                borderColor: theme.pallete.status.danger.main,
             },
             '&.is-focused': {
-                boxShadow: focusBoxShadow(theme, 'error'),
+                boxShadow: focusBoxShadow(theme, 'danger'),
             },
         },
     }

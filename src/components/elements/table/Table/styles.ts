@@ -7,6 +7,11 @@ export const createTableStyles = (theme: Theme) => ({
         fontSize: '0.75rem',
         border: `1px solid ${theme.pallete.divider}`,
     },
+    tableHover: {
+        'tr:hover td': {
+            background: theme.pallete.surface.background,
+        },
+    },
     thead: {},
     tbody: {},
     row: {},
@@ -19,5 +24,8 @@ export const createTableStyles = (theme: Theme) => ({
         textAlign: 'left',
         padding: '0.5rem 1rem',
         borderBottom: `1px solid ${theme.pallete.divider}`,
+    },
+    pointer: {
+        cursor: 'pointer',
     },
 })

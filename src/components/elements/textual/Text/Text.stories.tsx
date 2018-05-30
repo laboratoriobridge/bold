@@ -27,7 +27,7 @@ const fontStyles: { [key in FontStyle] } = {
 const colors: { [key in TextColor] } = {
     'normal': 'normal',
     'primary': 'primary',
-    'error': 'error',
+    'danger': 'danger',
     'info': 'info',
     'alert': 'alert',
     'success': 'success',

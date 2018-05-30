@@ -22,10 +22,12 @@ export interface DataTableProps<T = any> extends TableProps {
     sort?: SortMap
     onSortChange?(sort: SortMap): void
     render?(renderProps: DataTableRenderProps): React.ReactNode
+    onRowClick?(row: T): any
 }
 
 export interface DataTableRenderProps extends DataTableProps {
     getHeaderProps(column: TableColumnConfig): TableHeaderProps
+    getColumn(columnName: string): TableColumnConfig
 }
 
 export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
@@ -34,24 +36,38 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         sort: {},
         onSortChange: () => null,
         render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
+        onRowClick: null,
     }
 
     render() {
         return this.props.render({
             ...this.props,
             getHeaderProps: this.getHeaderProps,
+            getColumn: this.getColumn,
         })
     }
 
-    private getHeaderProps = (col: TableColumnConfig) => ({
-        key: col.name,
-        'data-name': col.name,
-        sortable: col.sortable,
-        sortDirection: this.props.sort[col.name],
-        onSortChange: this.handleSortChange(col),
-    })
+    getColumn = (columnName: string): TableColumnConfig => {
+        return this.props.columns.find(col => col.name === columnName)
+    }
 
-    private handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection, shiftKey: boolean) => {
+    getHeaderProps = (column: TableColumnConfig | string): TableHeaderProps & { key, 'data-name' } => {
+        const col = typeof column === 'string' ? this.getColumn(column) : column
+
+        if (!col) {
+            throw new Error(`Column '${column}' not found.`)
+        }
+
+        return {
+            key: col.name,
+            'data-name': col.name,
+            sortable: col.sortable,
+            sortDirection: this.props.sort[col.name],
+            onSortChange: this.handleSortChange(col),
+        }
+    }
+
+    handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection, shiftKey: boolean) => {
         if (shiftKey) {
             this.props.onSortChange({ ...this.props.sort, [col.name]: sortDirection })
         } else {
@@ -69,12 +85,14 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
             onSortChange,
             sort,
             getHeaderProps,
+            getColumn,
             render,
+            onRowClick,
             ...rest,
         } = this.props
 
         return (
-            <Table {...rest}>
+            <Table hovered={!!onRowClick} {...rest}>
                 <TableHead>
                     <TableRow>
                         {columns.map(col => (
@@ -84,7 +102,7 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
                         ))}
                     </TableRow>
                 </TableHead>
-                <TableFilledBody rows={rows} columns={columns} loading={loading} />
+                <TableFilledBody rows={rows} columns={columns} loading={loading} onRowClick={onRowClick} />
             </Table>
         )
     }

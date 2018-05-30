@@ -21,7 +21,7 @@ const rows: Row[] = [
 ]
 
 const sortHandler = jest.fn()
-const table = withTheme(
+const createTable = (props: Partial<DataTableProps> = {}) => withTheme(
     // tslint:disable jsx-no-lambda
     <DataTable
         rows={rows}
@@ -32,15 +32,16 @@ const table = withTheme(
             { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
             { name: 'age', header: 'Age', render: (row: Row) => row.age },
         ]}
+        {...props}
     />
 )
 
 it('should render correctly', () => {
-    expect(render(table)).toMatchSnapshot()
+    expect(render(createTable())).toMatchSnapshot()
 })
 
 it('should call onSortChange with right parameters when clicked over column title', () => {
-    const wrapper = mount(table)
+    const wrapper = mount(createTable())
     wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click')
     expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC' })
 
@@ -81,4 +82,65 @@ it('should accept the render prop', () => {
             }}
         />
     ))).toMatchSnapshot()
+})
+
+describe('onRowClick prop', () => {
+    it('should call the prop with the clicked row', () => {
+        const clickHandler = jest.fn()
+        const wrapper = mount(createTable({
+            onRowClick: clickHandler,
+        }))
+        expect(clickHandler).not.toHaveBeenCalled()
+        wrapper.find('tbody tr').first().simulate('click')
+        expect(clickHandler).toHaveBeenLastCalledWith(rows[0])
+
+        wrapper.find('tbody tr').last().simulate('click')
+        expect(clickHandler).toHaveBeenLastCalledWith(rows[rows.length - 1])
+    })
+})
+
+describe(DataTable.prototype.getColumn, () => {
+    const dataTable = new DataTable({
+        rows: [],
+        columns: [
+            { name: 'foo', render: () => null, sortable: true },
+        ],
+    })
+
+    it('should return the column configuration by its name', () => {
+        expect(dataTable.getColumn('foo').name).toEqual('foo')
+        expect(dataTable.getColumn('foo').sortable).toEqual(true)
+    })
+
+    it('should return undefined for inexistent columns', () => {
+        expect(dataTable.getColumn('baz')).toBeUndefined()
+    })
+})
+
+describe(DataTable.prototype.getHeaderProps, () => {
+    const dataTable = new DataTable({
+        ...DataTable.defaultProps,
+        rows: [],
+        columns: [
+            { name: 'foo', render: () => null, sortable: true },
+        ],
+    })
+
+    it('should return the table header props of a column configuration', () => {
+        const config = dataTable.getHeaderProps({
+            name: 'bar',
+            render: () => null,
+            sortable: true,
+        })
+
+        expect(config).toMatchObject({
+            'key': 'bar',
+            'data-name': 'bar',
+        })
+        expect(config).toHaveProperty('onSortChange')
+    })
+
+    it('should throw an error for inexistent columns', () => {
+        expect(() => dataTable.getHeaderProps('baz')).toThrowError()
+    })
 })
