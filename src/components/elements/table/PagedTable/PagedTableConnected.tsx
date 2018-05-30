@@ -2,23 +2,40 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { Page, PageParams, PageRequester } from '../../../../store/requester'
+import { Omit } from '../../../../util/types'
 import { SortMap } from '../DataTable/DataTable'
 
 import { PagedTable, PagedTableProps } from './PagedTable'
 
-export interface PagedTableConnectedProps<T> extends PagedTableProps<T> {
-    requester: PageRequester<T, any, any>
-    initialParams?: PageParams
-    loadOnMount?: boolean
-    clearOnUnmount?: boolean
+/**
+ * PagedTableProps provided by the connect HOC
+ */
+export type ProvidedProps = 'page' | 'onPageChange' | 'onSizeChange' | 'onSortChange'
+
+/**
+ * All props provided by the connect HOC
+ */
+export interface ConnectedProps<T> extends Pick<PagedTableProps<T>, ProvidedProps> {
     clear(): void
     request(): void
     setParams(params: PageParams): void
 }
 
-export class PagedTableConnectedCmp<T> extends React.Component<PagedTableConnectedProps<T>> {
+/**
+ * External component props
+ */
+export interface PagedTableConnectedProps<T> extends Omit<PagedTableProps<T>, ProvidedProps> {
+    requester: PageRequester<T, any, any>
+    initialParams?: PageParams
+    loadOnMount?: boolean
+    clearOnUnmount?: boolean
+}
 
-    static defaultProps: Partial<PagedTableConnectedProps<any>> = {
+export type ComponentProps<T> = PagedTableConnectedProps<T> & ConnectedProps<T>
+
+export class PagedTableConnectedCmp<T> extends React.Component<ComponentProps<T>> {
+
+    static defaultProps: Partial<ComponentProps<any>> = {
         loadOnMount: true,
         clearOnUnmount: true,
         initialParams: {
@@ -45,8 +62,6 @@ export class PagedTableConnectedCmp<T> extends React.Component<PagedTableConnect
     }
 }
 
-export type ExternalProps = Pick<PagedTableConnectedProps<any>, 'requester' | 'loadOnMount'>
-
 export const emptyPage: Page<any> = {
     content: [],
     number: 0,
@@ -59,12 +74,12 @@ export const emptyPage: Page<any> = {
     sort: [],
 }
 
-export const mapStateToProps = (state: any, ownProps: ExternalProps) => ({
+export const mapStateToProps = (state: any, ownProps: PagedTableConnectedProps<any>) => ({
     page: ownProps.requester.getResult(state) || emptyPage,
     loading: ownProps.requester.getIsFetching(state),
 })
 
-export const mapDispatchToProps = (dispatch: any, ownProps: ExternalProps) => ({
+export const mapDispatchToProps = (dispatch: any, ownProps: PagedTableConnectedProps<any>) => ({
     setParams(params: PageParams) {
         dispatch(ownProps.requester.setParams(params))
     },
