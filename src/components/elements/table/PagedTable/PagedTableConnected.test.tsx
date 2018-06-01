@@ -22,7 +22,7 @@ const result: Page<number> = {
 }
 
 const requester = new PageRequester<number, any, Page<number>>('test', (params) => Promise.resolve(result))
-const ownProps = { requester }
+const ownProps = { requester, columns: [] }
 
 describe('mapStateToProps', () => {
     it('should correctly map the current page', () => {
