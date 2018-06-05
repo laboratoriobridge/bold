@@ -13,14 +13,14 @@ import { createTheme, Theme, ThemeProvider } from '../styles/'
 
 export const axiosMock = new MockAdapter(axios)
 
-const reducer = combineReducers({
+const defaultReducers = combineReducers({
     requester: requesterReducer,
 })
 
 const middlewares: Middleware[] = [thunkMiddleware]
 
-export const createTestStore = (initialState = {}) => {
-    return createStore(reducer, initialState, compose(applyMiddleware(...middlewares)))
+export const createTestStore = (initialState = {}, reducers: any = defaultReducers) => {
+    return createStore(reducers, initialState, compose(applyMiddleware(...middlewares)))
 }
 
 export const mockStore = configureMockStore(middlewares)
