@@ -9,8 +9,14 @@ export * from './field/SelectField/SelectField'
 export * from './field/TextField/TextField'
 
 export * from './input/Checkbox/Checkbox'
+export * from './input/DatePickerInput/DatePickerInput'
 export * from './input/Input/Input'
+export * from './input/InputIconDecorator/InputIconDecorator'
+export * from './input/MaskedInput/MaskedInput'
 export * from './input/RadioButton/RadioButton'
+export * from './input/Switch/Switch'
+export * from './input/TextInput/TextInput'
+
 export * from './select/AsyncSelect/AsyncSelect'
 export * from './select/Select/Select'
 
