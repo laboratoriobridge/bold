@@ -1,6 +1,8 @@
 import { render } from 'enzyme'
 import * as React from 'react'
+
 import { withTheme } from '../../../../test/'
+
 import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
