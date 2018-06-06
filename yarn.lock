@@ -2,110 +2,110 @@
 # yarn lockfile v1
 
 
-"@babel/code-frame@7.0.0-beta.46", "@babel/code-frame@^7.0.0-beta.35":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/code-frame/-/code-frame-7.0.0-beta.46.tgz#e0d002100805daab1461c0fcb32a07e304f3a4f4"
+"@babel/code-frame@7.0.0-beta.49", "@babel/code-frame@^7.0.0-beta.35":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/code-frame/-/code-frame-7.0.0-beta.49.tgz#becd805482734440c9d137e46d77340e64d7f51b"
   dependencies:
-    "@babel/highlight" "7.0.0-beta.46"
+    "@babel/highlight" "7.0.0-beta.49"
 
-"@babel/core@^7.0.0-beta.40":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/core/-/core-7.0.0-beta.46.tgz#dbe2189bcdef9a2c84becb1ec624878d31a95689"
+"@babel/core@^7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/core/-/core-7.0.0-beta.49.tgz#73de2081dd652489489f0cb4aa97829a1133314e"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.46"
-    "@babel/generator" "7.0.0-beta.46"
-    "@babel/helpers" "7.0.0-beta.46"
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    babylon "7.0.0-beta.46"
+    "@babel/code-frame" "7.0.0-beta.49"
+    "@babel/generator" "7.0.0-beta.49"
+    "@babel/helpers" "7.0.0-beta.49"
+    "@babel/parser" "7.0.0-beta.49"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
     convert-source-map "^1.1.0"
     debug "^3.1.0"
     json5 "^0.5.0"
-    lodash "^4.2.0"
+    lodash "^4.17.5"
     micromatch "^2.3.11"
     resolve "^1.3.2"
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/generator@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/generator/-/generator-7.0.0-beta.46.tgz#6f57159bcc28bf8c3ed6b549789355cebfa3faa7"
+"@babel/generator@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/generator/-/generator-7.0.0-beta.49.tgz#e9cffda913996accec793bbc25ab91bc19d0bf7a"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
     jsesc "^2.5.1"
-    lodash "^4.2.0"
+    lodash "^4.17.5"
     source-map "^0.5.0"
     trim-right "^1.0.1"
 
-"@babel/helper-annotate-as-pure@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0-beta.46.tgz#4cd76d5c93409ea01d31be66395a3b98a372792e"
+"@babel/helper-annotate-as-pure@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.0.0-beta.49.tgz#7d9005d54fe7ad6cb876790251e75575419186e9"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-builder-binary-assignment-operator-visitor@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-builder-binary-assignment-operator-visitor/-/helper-builder-binary-assignment-operator-visitor-7.0.0-beta.46.tgz#b6c8de48693b66bf90239e99856be4c2257e43ba"
+"@babel/helper-builder-binary-assignment-operator-visitor@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-builder-binary-assignment-operator-visitor/-/helper-builder-binary-assignment-operator-visitor-7.0.0-beta.49.tgz#c62dd5042b54a590d5e71e6020c46b91d6c6c875"
   dependencies:
-    "@babel/helper-explode-assignable-expression" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-explode-assignable-expression" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-builder-react-jsx@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.0.0-beta.46.tgz#d399c1892f48bbe68ce6ccca14b127b00cbc656f"
+"@babel/helper-builder-react-jsx@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-builder-react-jsx/-/helper-builder-react-jsx-7.0.0-beta.49.tgz#e6c35f8c88e90093139fa7b3027d05cceb47f43d"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
     esutils "^2.0.0"
 
-"@babel/helper-call-delegate@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-call-delegate/-/helper-call-delegate-7.0.0-beta.46.tgz#a9e8b46cece47726308f015ce979293ef3d36ab7"
+"@babel/helper-call-delegate@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-call-delegate/-/helper-call-delegate-7.0.0-beta.49.tgz#4b5d41782a683d5dc6497834a32310a8d02a3af9"
   dependencies:
-    "@babel/helper-hoist-variables" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-hoist-variables" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-define-map@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-define-map/-/helper-define-map-7.0.0-beta.46.tgz#994219751ef48bf1ec32604b43935f2b24d617fa"
+"@babel/helper-define-map@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-define-map/-/helper-define-map-7.0.0-beta.49.tgz#4ea067aa720937240df395cd073c24fcad9c2b3b"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/helper-function-name" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
 
-"@babel/helper-explode-assignable-expression@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-explode-assignable-expression/-/helper-explode-assignable-expression-7.0.0-beta.46.tgz#6a34a7533761b97ce4f7bf6fc586dcfb204ffa11"
+"@babel/helper-explode-assignable-expression@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-explode-assignable-expression/-/helper-explode-assignable-expression-7.0.0-beta.49.tgz#2bfb95df7ec130735bf655e44a217a70d3b13e93"
   dependencies:
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-function-name@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.46.tgz#d0c4eed2e220e180f91b02e008dcc4594afe1d39"
+"@babel/helper-function-name@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-function-name/-/helper-function-name-7.0.0-beta.49.tgz#a25c1119b9f035278670126e0225c03041c8de32"
   dependencies:
-    "@babel/helper-get-function-arity" "7.0.0-beta.46"
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-get-function-arity" "7.0.0-beta.49"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-get-function-arity@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.46.tgz#7161bfe449b4183dbe25d1fe5579338b7429e5f2"
+"@babel/helper-get-function-arity@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-get-function-arity/-/helper-get-function-arity-7.0.0-beta.49.tgz#cf5023f32d2ad92d087374939cec0951bcb51441"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-hoist-variables@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-hoist-variables/-/helper-hoist-variables-7.0.0-beta.46.tgz#2d656215bea3f044ff1ee391fc51d55fce46ddf5"
+"@babel/helper-hoist-variables@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-hoist-variables/-/helper-hoist-variables-7.0.0-beta.49.tgz#d9740651c93bb4fa79c1b6bac634051fc4d03ff5"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-member-expression-to-functions@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.0.0-beta.46.tgz#736344c1d68fb2c4b75cbe62370eb610c0578427"
+"@babel/helper-member-expression-to-functions@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-member-expression-to-functions/-/helper-member-expression-to-functions-7.0.0-beta.49.tgz#2f642b003d45155e0a9e7a4ad0e688d91bbc1583"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
 "@babel/helper-module-imports@7.0.0-beta.32":
   version "7.0.0-beta.32"
@@ -114,453 +114,456 @@
     "@babel/types" "7.0.0-beta.32"
     lodash "^4.2.0"
 
-"@babel/helper-module-imports@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.46.tgz#8bd2e1fcfae883d28149a350e31ce606aa24eda6"
+"@babel/helper-module-imports@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-module-imports/-/helper-module-imports-7.0.0-beta.49.tgz#41d7d59891016c493432a46f7464446552890c75"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
 
-"@babel/helper-module-transforms@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-module-transforms/-/helper-module-transforms-7.0.0-beta.46.tgz#90ad981f3a0020d9a8e526296555a5dd7e87cf5e"
+"@babel/helper-module-transforms@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-module-transforms/-/helper-module-transforms-7.0.0-beta.49.tgz#fc660bda9d6497412e18776a71aed9a9e2e5f7ad"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.46"
-    "@babel/helper-simple-access" "7.0.0-beta.46"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.46"
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/helper-module-imports" "7.0.0-beta.49"
+    "@babel/helper-simple-access" "7.0.0-beta.49"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.49"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
 
-"@babel/helper-optimise-call-expression@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.0.0-beta.46.tgz#50f060b4e4af01c73b40986fa593ae7958422e89"
+"@babel/helper-optimise-call-expression@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-optimise-call-expression/-/helper-optimise-call-expression-7.0.0-beta.49.tgz#a98b43c3a6c54bef48f87b10dc4568dec0b41bf7"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-plugin-utils@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.46.tgz#f630adbd9d645d0ba2e43f4955b4ad61f44ccdf4"
+"@babel/helper-plugin-utils@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-plugin-utils/-/helper-plugin-utils-7.0.0-beta.49.tgz#0e9fcbb834f878bb365d2a8ea90eee21ba3ccd23"
 
-"@babel/helper-regex@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-regex/-/helper-regex-7.0.0-beta.46.tgz#df3675cec700e062d823225c52830e012f32308f"
+"@babel/helper-regex@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-regex/-/helper-regex-7.0.0-beta.49.tgz#ff244f19c2a2f167ff4b3165a636b08fd641816b"
   dependencies:
-    lodash "^4.2.0"
+    lodash "^4.17.5"
 
-"@babel/helper-remap-async-to-generator@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-remap-async-to-generator/-/helper-remap-async-to-generator-7.0.0-beta.46.tgz#275d455dbced4c807543f001302a40303a3f0914"
+"@babel/helper-remap-async-to-generator@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-remap-async-to-generator/-/helper-remap-async-to-generator-7.0.0-beta.49.tgz#b3fdaab412784d7e8657bacab286923efc9498b8"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.46"
-    "@babel/helper-wrap-function" "7.0.0-beta.46"
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.49"
+    "@babel/helper-wrap-function" "7.0.0-beta.49"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-replace-supers@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-replace-supers/-/helper-replace-supers-7.0.0-beta.46.tgz#921c0f25d875026a8fb12feda1b72323595ea156"
+"@babel/helper-replace-supers@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-replace-supers/-/helper-replace-supers-7.0.0-beta.49.tgz#e7444c718057f6a0a3645caf8e78fb546ffb0d9f"
   dependencies:
-    "@babel/helper-member-expression-to-functions" "7.0.0-beta.46"
-    "@babel/helper-optimise-call-expression" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-member-expression-to-functions" "7.0.0-beta.49"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-simple-access@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-simple-access/-/helper-simple-access-7.0.0-beta.46.tgz#8eb0edf978c85915d11b6a7aa8591434e158170d"
+"@babel/helper-simple-access@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-simple-access/-/helper-simple-access-7.0.0-beta.49.tgz#97a41e2789a9bf8a6c30536a258b79e7444c5d82"
   dependencies:
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
 
-"@babel/helper-split-export-declaration@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.46.tgz#6903893c72bb2a3d54ed20b5ff2aa8a28e8d2ea1"
+"@babel/helper-split-export-declaration@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-split-export-declaration/-/helper-split-export-declaration-7.0.0-beta.49.tgz#40d78eda0968d011b1c52866e5746cfb23e57548"
   dependencies:
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helper-wrap-function@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-wrap-function/-/helper-wrap-function-7.0.0-beta.46.tgz#d0fb836516d8a38ab80df1b434e4b76015be9035"
+"@babel/helper-wrap-function@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helper-wrap-function/-/helper-wrap-function-7.0.0-beta.49.tgz#385591460b4d93ef96ee3819539c0cdc9bbd4758"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.46"
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/helper-function-name" "7.0.0-beta.49"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/helpers@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helpers/-/helpers-7.0.0-beta.46.tgz#b5f988dfd77f4f713792cf7818b687050736ee52"
+"@babel/helpers@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/helpers/-/helpers-7.0.0-beta.49.tgz#054d84032d4e94286a80586500068e41005a51d0"
   dependencies:
-    "@babel/template" "7.0.0-beta.46"
-    "@babel/traverse" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
+    "@babel/template" "7.0.0-beta.49"
+    "@babel/traverse" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
 
-"@babel/highlight@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/highlight/-/highlight-7.0.0-beta.46.tgz#c553c51e65f572bdedd6eff66fc0bb563016645e"
+"@babel/highlight@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/highlight/-/highlight-7.0.0-beta.49.tgz#96bdc6b43e13482012ba6691b1018492d39622cc"
   dependencies:
     chalk "^2.0.0"
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
-"@babel/plugin-proposal-async-generator-functions@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.0.0-beta.46.tgz#395330d1d5d7fb76c33b7bd99750adeafc37c68c"
-  dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-remap-async-to-generator" "7.0.0-beta.46"
-    "@babel/plugin-syntax-async-generators" "7.0.0-beta.46"
+"@babel/parser@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/parser/-/parser-7.0.0-beta.49.tgz#944d0c5ba2812bb159edbd226743afd265179bdc"
 
-"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.46", "@babel/plugin-proposal-object-rest-spread@^7.0.0-beta.40":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.46.tgz#fb3979488a52c1246cdced4a438ace0f47ac985b"
+"@babel/plugin-proposal-async-generator-functions@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-async-generator-functions/-/plugin-proposal-async-generator-functions-7.0.0-beta.49.tgz#8761a5e2d8b5251e70df28f4d0aa64aa28a596b1"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-remap-async-to-generator" "7.0.0-beta.49"
+    "@babel/plugin-syntax-async-generators" "7.0.0-beta.49"
 
-"@babel/plugin-proposal-optional-catch-binding@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.0.0-beta.46.tgz#fda50deaab3272500a8a1c7088d7d55148f54048"
+"@babel/plugin-proposal-object-rest-spread@7.0.0-beta.49", "@babel/plugin-proposal-object-rest-spread@^7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-object-rest-spread/-/plugin-proposal-object-rest-spread-7.0.0-beta.49.tgz#6d0cd60f7a7bd7c444a371c4e9470bff02f5777c"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.49"
 
-"@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.46.tgz#b422a602094d7feeea4a7b81e7e32d1687337123"
+"@babel/plugin-proposal-optional-catch-binding@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-optional-catch-binding/-/plugin-proposal-optional-catch-binding-7.0.0-beta.49.tgz#1f53d36785101d5eb4b55d65686aa2b39fa21c4b"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-regex" "7.0.0-beta.46"
-    regexpu-core "^4.1.3"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.49"
 
-"@babel/plugin-syntax-async-generators@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0-beta.46.tgz#b35149e02748922d8e39506b0ac001a27bf449ed"
+"@babel/plugin-proposal-unicode-property-regex@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-proposal-unicode-property-regex/-/plugin-proposal-unicode-property-regex-7.0.0-beta.49.tgz#0ef5fb9abda980cd1585ef4c8e8f680b63263c72"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-regex" "7.0.0-beta.49"
+    regexpu-core "^4.1.4"
 
-"@babel/plugin-syntax-jsx@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.46.tgz#ed2e8a43716e7904ae33dca71d5f2b436f0f25e8"
+"@babel/plugin-syntax-async-generators@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-async-generators/-/plugin-syntax-async-generators-7.0.0-beta.49.tgz#50ee943002aedc9ab3a8d12292bd35dd9edb1df8"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-syntax-object-rest-spread@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.0.0-beta.46.tgz#03d46637f549757b2d6877b6449901698059d7d8"
+"@babel/plugin-syntax-jsx@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.0.0-beta.49.tgz#15b832504b49f116f9c484e8e40a5e17c542ed13"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.46.tgz#701ba500cc154dd87c4d16a41fa858e9ffc6db89"
+"@babel/plugin-syntax-object-rest-spread@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-object-rest-spread/-/plugin-syntax-object-rest-spread-7.0.0-beta.49.tgz#4784b3880823ff12e742c26b41e9857f701d639e"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-arrow-functions@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.46.tgz#130e79b1d4508767c47e5febb809f8dca80c05f5"
+"@babel/plugin-syntax-optional-catch-binding@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-syntax-optional-catch-binding/-/plugin-syntax-optional-catch-binding-7.0.0-beta.49.tgz#3e1dd3d5daeb4270e4ee4863641d4faa06bbcd11"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-async-to-generator@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.0.0-beta.46.tgz#29fd5967f5056ca80f3a97db4d2ffa38a0dc2dce"
+"@babel/plugin-transform-arrow-functions@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-arrow-functions/-/plugin-transform-arrow-functions-7.0.0-beta.49.tgz#dd3845b63c683d187d5186ee0e882c4046c4f0e3"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-remap-async-to-generator" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-block-scoped-functions@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-block-scoped-functions/-/plugin-transform-block-scoped-functions-7.0.0-beta.46.tgz#0925a549931f61b45880618b0b42da4790b7c0b3"
+"@babel/plugin-transform-async-to-generator@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-async-to-generator/-/plugin-transform-async-to-generator-7.0.0-beta.49.tgz#911a40eb93040186ceb693105ca76def7fe97d03"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-module-imports" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-remap-async-to-generator" "7.0.0-beta.49"
 
-"@babel/plugin-transform-block-scoping@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.0.0-beta.46.tgz#da42dd17fbed675c72233988dbad9ace5ab9e4a7"
+"@babel/plugin-transform-block-scoped-functions@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-block-scoped-functions/-/plugin-transform-block-scoped-functions-7.0.0-beta.49.tgz#7aa9f46fdf873b7211aaa2eb0d37c4c371a1abd2"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-classes@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.46.tgz#00c856feda2ee756c4cc6ef8c97d17d070acebf7"
+"@babel/plugin-transform-block-scoping@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-block-scoping/-/plugin-transform-block-scoping-7.0.0-beta.49.tgz#dd5a9ddd986775c8b20cf5b61065afb3dd9eaac9"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.46"
-    "@babel/helper-define-map" "7.0.0-beta.46"
-    "@babel/helper-function-name" "7.0.0-beta.46"
-    "@babel/helper-optimise-call-expression" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-replace-supers" "7.0.0-beta.46"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    lodash "^4.17.5"
+
+"@babel/plugin-transform-classes@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-classes/-/plugin-transform-classes-7.0.0-beta.49.tgz#5342471d2e6a3337332ea246b46c0bddf5fc544d"
+  dependencies:
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.49"
+    "@babel/helper-define-map" "7.0.0-beta.49"
+    "@babel/helper-function-name" "7.0.0-beta.49"
+    "@babel/helper-optimise-call-expression" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-replace-supers" "7.0.0-beta.49"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.49"
     globals "^11.1.0"
 
-"@babel/plugin-transform-computed-properties@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.46.tgz#ca1ece27615f7324345713fb6a93dd288788e891"
+"@babel/plugin-transform-computed-properties@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-computed-properties/-/plugin-transform-computed-properties-7.0.0-beta.49.tgz#b8259d174bf07ab4b56566562b46ee6520c3dfd2"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-destructuring@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.0.0-beta.46.tgz#6e6a097da31063f545f7818afe48ef09165ce5ff"
+"@babel/plugin-transform-destructuring@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-destructuring/-/plugin-transform-destructuring-7.0.0-beta.49.tgz#4366392c9c82d1231056c1d0029438a60d362b82"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-dotall-regex@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.46.tgz#e5bbd78c1a94455e6d5dd1c77f32357b84355e06"
+"@babel/plugin-transform-dotall-regex@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-dotall-regex/-/plugin-transform-dotall-regex-7.0.0-beta.49.tgz#35ae2bc187bee752d0f7785d2704e52b87377369"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-regex" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-regex" "7.0.0-beta.49"
     regexpu-core "^4.1.3"
 
-"@babel/plugin-transform-duplicate-keys@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.0.0-beta.46.tgz#7e94e42099b099742617838237b0d6e1a9b2690f"
+"@babel/plugin-transform-duplicate-keys@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-duplicate-keys/-/plugin-transform-duplicate-keys-7.0.0-beta.49.tgz#fac244809ddecbf095e375558ccb716da1042316"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-exponentiation-operator@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.46.tgz#95ae2e03456e417d2f5eace6d05a8fccb7af1bcc"
+"@babel/plugin-transform-exponentiation-operator@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.0.0-beta.49.tgz#457b2d09004794684aa6e1b04015080b80a08a14"
   dependencies:
-    "@babel/helper-builder-binary-assignment-operator-visitor" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-builder-binary-assignment-operator-visitor" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-for-of@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.46.tgz#ce643487384c96d1bd1f57a112b2ccba6c34da5c"
+"@babel/plugin-transform-for-of@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-for-of/-/plugin-transform-for-of-7.0.0-beta.49.tgz#3ec72726bf1d89a0d4d511be7a9549066f57aade"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-function-name@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-function-name/-/plugin-transform-function-name-7.0.0-beta.46.tgz#2479f5188de9ab1f99396bce83b3b9d39bc13bdb"
+"@babel/plugin-transform-function-name@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-function-name/-/plugin-transform-function-name-7.0.0-beta.49.tgz#af39f60e7aefce9b25eb4adcedd04d50866ce218"
   dependencies:
-    "@babel/helper-function-name" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-function-name" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-literals@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.46.tgz#84f5bcfe914b9fd4385c0ddf469f9ed403ee68bd"
+"@babel/plugin-transform-literals@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-literals/-/plugin-transform-literals-7.0.0-beta.49.tgz#07c838254d65e6867e86513eb0f22d5f26b0a56a"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-modules-amd@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-amd/-/plugin-transform-modules-amd-7.0.0-beta.46.tgz#01aeb4887c7df7059cefe4a206eefdf190c79f48"
+"@babel/plugin-transform-modules-amd@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-amd/-/plugin-transform-modules-amd-7.0.0-beta.49.tgz#16d07480954b0415ea70f1ec3edbd0597bd3ddfe"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-module-transforms" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-modules-commonjs@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.0.0-beta.46.tgz#9dcb42e1282b281c1a2075f98b4a850533acfd9c"
+"@babel/plugin-transform-modules-commonjs@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-commonjs/-/plugin-transform-modules-commonjs-7.0.0-beta.49.tgz#09fb345d5927c2ba3bd89e7cdb13a55067ed39a0"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-simple-access" "7.0.0-beta.46"
+    "@babel/helper-module-transforms" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-simple-access" "7.0.0-beta.49"
 
-"@babel/plugin-transform-modules-systemjs@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.46.tgz#313e13e8edccaae6c645e3798a043521cf73df04"
+"@babel/plugin-transform-modules-systemjs@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-systemjs/-/plugin-transform-modules-systemjs-7.0.0-beta.49.tgz#68225a3ae1312771bc5a36f71ff10d02c1243d9f"
   dependencies:
-    "@babel/helper-hoist-variables" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-hoist-variables" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-modules-umd@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.46.tgz#ad0ef488a123f479825c1ffe75c5bba9954a449c"
+"@babel/plugin-transform-modules-umd@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-modules-umd/-/plugin-transform-modules-umd-7.0.0-beta.49.tgz#7048ca5a77189706f4b3e96e4b996eb30590dd63"
   dependencies:
-    "@babel/helper-module-transforms" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-module-transforms" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-new-target@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-new-target/-/plugin-transform-new-target-7.0.0-beta.46.tgz#e3219c15a2175a29afa33b9b2f4c18dc1ae3c8cc"
+"@babel/plugin-transform-new-target@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-new-target/-/plugin-transform-new-target-7.0.0-beta.49.tgz#c2ffef1ebbaf724a9e58dde114e57e3e6864a5e7"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-object-super@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.0.0-beta.46.tgz#b5376fe93f5e154b765468f1a58a717717f95827"
+"@babel/plugin-transform-object-super@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-object-super/-/plugin-transform-object-super-7.0.0-beta.49.tgz#b302f55702847343c10ff4fb8435cc3574755fe3"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-replace-supers" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-replace-supers" "7.0.0-beta.49"
 
-"@babel/plugin-transform-parameters@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.0.0-beta.46.tgz#33bbd2e3bd499d99016034dcaf8c6b72c2a69ec3"
+"@babel/plugin-transform-parameters@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-parameters/-/plugin-transform-parameters-7.0.0-beta.49.tgz#1cad71a2a33281e5efbb1a4623a964c073ce9a2d"
   dependencies:
-    "@babel/helper-call-delegate" "7.0.0-beta.46"
-    "@babel/helper-get-function-arity" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-call-delegate" "7.0.0-beta.49"
+    "@babel/helper-get-function-arity" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-react-constant-elements@^7.0.0-beta.40":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-constant-elements/-/plugin-transform-react-constant-elements-7.0.0-beta.46.tgz#beaa603a93dedb4d06ab7853bd9443e2a2d735db"
+"@babel/plugin-transform-react-constant-elements@^7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-constant-elements/-/plugin-transform-react-constant-elements-7.0.0-beta.49.tgz#79fbfa9f5ce669a83e2f00d9d46d0639e72b3ad1"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-react-display-name@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.0.0-beta.46.tgz#2ad4a6c63ff67cb90f3199ff41061bcd7b6f5e7c"
+"@babel/plugin-transform-react-display-name@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.0.0-beta.49.tgz#242a006bf4122a93b273f69dfe6c394a0fcec638"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-react-jsx-self@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.0.0-beta.46.tgz#0c3d89727f5fadc87294ca58463b392466b5906e"
+"@babel/plugin-transform-react-jsx-self@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx-self/-/plugin-transform-react-jsx-self-7.0.0-beta.49.tgz#a11828ba38035c1aa93fd44099b9897019fa546c"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.49"
 
-"@babel/plugin-transform-react-jsx-source@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.0.0-beta.46.tgz#5777f7bbfb6a13417896c5294d64aa5fc593f586"
+"@babel/plugin-transform-react-jsx-source@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx-source/-/plugin-transform-react-jsx-source-7.0.0-beta.49.tgz#05bb7429b6dd44cbdca69585481347a809caa8ca"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.49"
 
-"@babel/plugin-transform-react-jsx@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.0.0-beta.46.tgz#9aa0c491ced30a0d1a8414da2d45462c66912d1e"
+"@babel/plugin-transform-react-jsx@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.0.0-beta.49.tgz#0f2789fde305c3c14151848f8514a2af1441af58"
   dependencies:
-    "@babel/helper-builder-react-jsx" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.46"
+    "@babel/helper-builder-react-jsx" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-syntax-jsx" "7.0.0-beta.49"
 
-"@babel/plugin-transform-regenerator@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.0.0-beta.46.tgz#875ceb5b37ec0e898c23b60af760715d9d462b4f"
+"@babel/plugin-transform-regenerator@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.0.0-beta.49.tgz#d4ed7967033f4f5b49363c203503899b8357cae2"
   dependencies:
     regenerator-transform "^0.12.3"
 
-"@babel/plugin-transform-shorthand-properties@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.0.0-beta.46.tgz#aa21512b0fef7b916fc5cbc87df717465c25515c"
+"@babel/plugin-transform-shorthand-properties@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-shorthand-properties/-/plugin-transform-shorthand-properties-7.0.0-beta.49.tgz#49f134dbde4f655834c21524e9e61a58d4e17900"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-spread@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-spread/-/plugin-transform-spread-7.0.0-beta.46.tgz#48eabb219f1e0c16e9b0a6166072ae9d4c7cd397"
+"@babel/plugin-transform-spread@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-spread/-/plugin-transform-spread-7.0.0-beta.49.tgz#6abab05fc0cca829aaf9e2a85044b79763e681ca"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-sticky-regex@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.46.tgz#c96c41f31272ec1cdc47dd91a22c6d75c4db70d2"
+"@babel/plugin-transform-sticky-regex@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-sticky-regex/-/plugin-transform-sticky-regex-7.0.0-beta.49.tgz#08cc5b64cf6a5942a87bdd9b4a4818d4cba12df3"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-regex" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-regex" "7.0.0-beta.49"
 
-"@babel/plugin-transform-template-literals@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-template-literals/-/plugin-transform-template-literals-7.0.0-beta.46.tgz#e8bcc798dece29807893e8ee27ccf3176f658c62"
+"@babel/plugin-transform-template-literals@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-template-literals/-/plugin-transform-template-literals-7.0.0-beta.49.tgz#e609aed6b8fcc7e1ebccacf22138a647202940a2"
   dependencies:
-    "@babel/helper-annotate-as-pure" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-annotate-as-pure" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-typeof-symbol@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.46.tgz#643529184cbb07199237c94537c89ea9a721fa0a"
+"@babel/plugin-transform-typeof-symbol@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-typeof-symbol/-/plugin-transform-typeof-symbol-7.0.0-beta.49.tgz#365141ba355bf739eefd6c2bb9df1c3b7146e450"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
 
-"@babel/plugin-transform-unicode-regex@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.46.tgz#10e6edcc8eb0db71ff2f0e3fc87ed88337d24fb9"
+"@babel/plugin-transform-unicode-regex@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/plugin-transform-unicode-regex/-/plugin-transform-unicode-regex-7.0.0-beta.49.tgz#c375db5709757621523d41acb62a9abf0d4374b8"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/helper-regex" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/helper-regex" "7.0.0-beta.49"
     regexpu-core "^4.1.3"
 
-"@babel/preset-env@^7.0.0-beta.40":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/preset-env/-/preset-env-7.0.0-beta.46.tgz#ae1b731ef71c2bb50c47e0cda4b6359ea2c61f09"
+"@babel/preset-env@^7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/preset-env/-/preset-env-7.0.0-beta.49.tgz#4a8a8b92139f51fa2f90fbf6f1fad7597532aebc"
   dependencies:
-    "@babel/helper-module-imports" "7.0.0-beta.46"
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-proposal-async-generator-functions" "7.0.0-beta.46"
-    "@babel/plugin-proposal-object-rest-spread" "7.0.0-beta.46"
-    "@babel/plugin-proposal-optional-catch-binding" "7.0.0-beta.46"
-    "@babel/plugin-proposal-unicode-property-regex" "7.0.0-beta.46"
-    "@babel/plugin-syntax-async-generators" "7.0.0-beta.46"
-    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.46"
-    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.46"
-    "@babel/plugin-transform-arrow-functions" "7.0.0-beta.46"
-    "@babel/plugin-transform-async-to-generator" "7.0.0-beta.46"
-    "@babel/plugin-transform-block-scoped-functions" "7.0.0-beta.46"
-    "@babel/plugin-transform-block-scoping" "7.0.0-beta.46"
-    "@babel/plugin-transform-classes" "7.0.0-beta.46"
-    "@babel/plugin-transform-computed-properties" "7.0.0-beta.46"
-    "@babel/plugin-transform-destructuring" "7.0.0-beta.46"
-    "@babel/plugin-transform-dotall-regex" "7.0.0-beta.46"
-    "@babel/plugin-transform-duplicate-keys" "7.0.0-beta.46"
-    "@babel/plugin-transform-exponentiation-operator" "7.0.0-beta.46"
-    "@babel/plugin-transform-for-of" "7.0.0-beta.46"
-    "@babel/plugin-transform-function-name" "7.0.0-beta.46"
-    "@babel/plugin-transform-literals" "7.0.0-beta.46"
-    "@babel/plugin-transform-modules-amd" "7.0.0-beta.46"
-    "@babel/plugin-transform-modules-commonjs" "7.0.0-beta.46"
-    "@babel/plugin-transform-modules-systemjs" "7.0.0-beta.46"
-    "@babel/plugin-transform-modules-umd" "7.0.0-beta.46"
-    "@babel/plugin-transform-new-target" "7.0.0-beta.46"
-    "@babel/plugin-transform-object-super" "7.0.0-beta.46"
-    "@babel/plugin-transform-parameters" "7.0.0-beta.46"
-    "@babel/plugin-transform-regenerator" "7.0.0-beta.46"
-    "@babel/plugin-transform-shorthand-properties" "7.0.0-beta.46"
-    "@babel/plugin-transform-spread" "7.0.0-beta.46"
-    "@babel/plugin-transform-sticky-regex" "7.0.0-beta.46"
-    "@babel/plugin-transform-template-literals" "7.0.0-beta.46"
-    "@babel/plugin-transform-typeof-symbol" "7.0.0-beta.46"
-    "@babel/plugin-transform-unicode-regex" "7.0.0-beta.46"
+    "@babel/helper-module-imports" "7.0.0-beta.49"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-proposal-async-generator-functions" "7.0.0-beta.49"
+    "@babel/plugin-proposal-object-rest-spread" "7.0.0-beta.49"
+    "@babel/plugin-proposal-optional-catch-binding" "7.0.0-beta.49"
+    "@babel/plugin-proposal-unicode-property-regex" "7.0.0-beta.49"
+    "@babel/plugin-syntax-async-generators" "7.0.0-beta.49"
+    "@babel/plugin-syntax-object-rest-spread" "7.0.0-beta.49"
+    "@babel/plugin-syntax-optional-catch-binding" "7.0.0-beta.49"
+    "@babel/plugin-transform-arrow-functions" "7.0.0-beta.49"
+    "@babel/plugin-transform-async-to-generator" "7.0.0-beta.49"
+    "@babel/plugin-transform-block-scoped-functions" "7.0.0-beta.49"
+    "@babel/plugin-transform-block-scoping" "7.0.0-beta.49"
+    "@babel/plugin-transform-classes" "7.0.0-beta.49"
+    "@babel/plugin-transform-computed-properties" "7.0.0-beta.49"
+    "@babel/plugin-transform-destructuring" "7.0.0-beta.49"
+    "@babel/plugin-transform-dotall-regex" "7.0.0-beta.49"
+    "@babel/plugin-transform-duplicate-keys" "7.0.0-beta.49"
+    "@babel/plugin-transform-exponentiation-operator" "7.0.0-beta.49"
+    "@babel/plugin-transform-for-of" "7.0.0-beta.49"
+    "@babel/plugin-transform-function-name" "7.0.0-beta.49"
+    "@babel/plugin-transform-literals" "7.0.0-beta.49"
+    "@babel/plugin-transform-modules-amd" "7.0.0-beta.49"
+    "@babel/plugin-transform-modules-commonjs" "7.0.0-beta.49"
+    "@babel/plugin-transform-modules-systemjs" "7.0.0-beta.49"
+    "@babel/plugin-transform-modules-umd" "7.0.0-beta.49"
+    "@babel/plugin-transform-new-target" "7.0.0-beta.49"
+    "@babel/plugin-transform-object-super" "7.0.0-beta.49"
+    "@babel/plugin-transform-parameters" "7.0.0-beta.49"
+    "@babel/plugin-transform-regenerator" "7.0.0-beta.49"
+    "@babel/plugin-transform-shorthand-properties" "7.0.0-beta.49"
+    "@babel/plugin-transform-spread" "7.0.0-beta.49"
+    "@babel/plugin-transform-sticky-regex" "7.0.0-beta.49"
+    "@babel/plugin-transform-template-literals" "7.0.0-beta.49"
+    "@babel/plugin-transform-typeof-symbol" "7.0.0-beta.49"
+    "@babel/plugin-transform-unicode-regex" "7.0.0-beta.49"
     browserslist "^3.0.0"
     invariant "^2.2.2"
     semver "^5.3.0"
 
-"@babel/preset-react@^7.0.0-beta.40":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/preset-react/-/preset-react-7.0.0-beta.46.tgz#f2c7f05ce0c9f1bf25516f1acaf00ca0dfc1bfa5"
+"@babel/preset-react@^7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/preset-react/-/preset-react-7.0.0-beta.49.tgz#0c86770f6e78a49af6f86942f5980beb5feb76c5"
   dependencies:
-    "@babel/helper-plugin-utils" "7.0.0-beta.46"
-    "@babel/plugin-syntax-jsx" "7.0.0-beta.46"
-    "@babel/plugin-transform-react-display-name" "7.0.0-beta.46"
-    "@babel/plugin-transform-react-jsx" "7.0.0-beta.46"
-    "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.46"
-    "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.46"
+    "@babel/helper-plugin-utils" "7.0.0-beta.49"
+    "@babel/plugin-transform-react-display-name" "7.0.0-beta.49"
+    "@babel/plugin-transform-react-jsx" "7.0.0-beta.49"
+    "@babel/plugin-transform-react-jsx-self" "7.0.0-beta.49"
+    "@babel/plugin-transform-react-jsx-source" "7.0.0-beta.49"
 
-"@babel/template@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/template/-/template-7.0.0-beta.46.tgz#8b23982411d5b5dbfa479437bfe414adb1411bb9"
+"@babel/template@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/template/-/template-7.0.0-beta.49.tgz#e38abe8217cb9793f461a5306d7ad745d83e1d27"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    babylon "7.0.0-beta.46"
-    lodash "^4.2.0"
+    "@babel/code-frame" "7.0.0-beta.49"
+    "@babel/parser" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
 
-"@babel/traverse@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/traverse/-/traverse-7.0.0-beta.46.tgz#29a0c0395b3642f0297e6f8e475bde89f9343755"
+"@babel/traverse@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/traverse/-/traverse-7.0.0-beta.49.tgz#4f2a73682a18334ed6625d100a8d27319f7c2d68"
   dependencies:
-    "@babel/code-frame" "7.0.0-beta.46"
-    "@babel/generator" "7.0.0-beta.46"
-    "@babel/helper-function-name" "7.0.0-beta.46"
-    "@babel/helper-split-export-declaration" "7.0.0-beta.46"
-    "@babel/types" "7.0.0-beta.46"
-    babylon "7.0.0-beta.46"
+    "@babel/code-frame" "7.0.0-beta.49"
+    "@babel/generator" "7.0.0-beta.49"
+    "@babel/helper-function-name" "7.0.0-beta.49"
+    "@babel/helper-split-export-declaration" "7.0.0-beta.49"
+    "@babel/parser" "7.0.0-beta.49"
+    "@babel/types" "7.0.0-beta.49"
     debug "^3.1.0"
     globals "^11.1.0"
     invariant "^2.2.0"
-    lodash "^4.2.0"
+    lodash "^4.17.5"
 
 "@babel/types@7.0.0-beta.32":
   version "7.0.0-beta.32"
@@ -570,12 +573,12 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@babel/types@7.0.0-beta.46":
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/types/-/types-7.0.0-beta.46.tgz#eb84399a699af9fcb244440cce78e1acbeb40e0c"
+"@babel/types@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/types/-/types-7.0.0-beta.49.tgz#b7e3b1c3f4d4cfe11bdf8c89f1efd5e1617b87a6"
   dependencies:
     esutils "^2.0.2"
-    lodash "^4.2.0"
+    lodash "^4.17.5"
     to-fast-properties "^2.0.0"
 
 "@emotion/hash@^0.6.2":
@@ -587,18 +590,18 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/memoize/-/memoize-0.6.2.tgz#138e00b332d519b4e307bded6159e5ba48aba3ae"
 
 "@emotion/stylis@^0.6.5":
-  version "0.6.7"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/stylis/-/stylis-0.6.7.tgz#730a6aa2198257124940014d7fffac7cf3e6614c"
+  version "0.6.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/stylis/-/stylis-0.6.8.tgz#6ad4e8d32b19b440efa4481bbbcb98a8c12765bb"
 
 "@emotion/unitless@^0.6.2":
   version "0.6.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/unitless/-/unitless-0.6.3.tgz#65682e68a82701c70eefb38d7f941a2c0bfa90de"
 
-"@storybook/addon-actions@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-3.4.3.tgz#27ac798cb0085c9588c4fd0a1c4cbfa32ce3bd54"
+"@storybook/addon-actions@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-3.4.6.tgz#70ca84a4754ea2969640428890d9a3c9369261f6"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.6"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     glamor "^2.20.40"
@@ -609,12 +612,12 @@
     react-inspector "^2.2.2"
     uuid "^3.2.1"
 
-"@storybook/addon-info@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-3.4.3.tgz#c47d4ffef43e3662d3b0d54f400716ff9907dcfd"
+"@storybook/addon-info@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-3.4.6.tgz#212c47d7d9e80b4dfda3c2251d035f929e29a538"
   dependencies:
-    "@storybook/client-logger" "3.4.3"
-    "@storybook/components" "3.4.3"
+    "@storybook/client-logger" "3.4.6"
+    "@storybook/components" "3.4.6"
     babel-runtime "^6.26.0"
     glamor "^2.20.40"
     glamorous "^4.12.1"
@@ -625,11 +628,11 @@
     react-addons-create-fragment "^15.5.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-3.4.3.tgz#0d002c3519470787d1dd355106ccf391e462b3cb"
+"@storybook/addon-knobs@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-3.4.6.tgz#900586a218e12540256884af7a0ba1f684f1f436"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.6"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     global "^4.3.2"
@@ -642,58 +645,58 @@
     react-textarea-autosize "^5.2.1"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-3.4.3.tgz#93bb28e10830b1b230be8b1710265d5d06453bde"
+"@storybook/addon-links@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-3.4.6.tgz#0e167c03932ddfcbeba02215af1a420c0d3f0843"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.6"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-options@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-3.4.3.tgz#7760ae64f37b5a104b5d8ce948755c3882f917c9"
+"@storybook/addon-options@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-3.4.6.tgz#8f27400c4a2a852657e939d9b733086bb6c3349c"
   dependencies:
     babel-runtime "^6.26.0"
 
-"@storybook/addons@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-3.4.3.tgz#537311d621cb3d582d581a160813608d6b27e4bd"
+"@storybook/addons@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-3.4.6.tgz#8275e46b8dfe7c751f2f18a431bc3339c999a2ae"
 
-"@storybook/channel-postmessage@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-3.4.3.tgz#0e9e9860b00d927ddd184e5aaf26d101f5f7ccf6"
+"@storybook/channel-postmessage@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-3.4.6.tgz#acb7d6096bd060a3d224d7e753e33c22f21fabdb"
   dependencies:
-    "@storybook/channels" "3.4.3"
+    "@storybook/channels" "3.4.6"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-3.4.3.tgz#045fc72787b38dd71210b5fb20c9daa739a2f601"
+"@storybook/channels@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-3.4.6.tgz#4147b4e171763f168cd523a3f83e7e125c9523c2"
 
-"@storybook/client-logger@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-3.4.3.tgz#72ea30e23e05a4dc13b3b1970665e40407368ffe"
+"@storybook/client-logger@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-3.4.6.tgz#2f2b271d6825c7325f999f6b17d7ef69984faa18"
 
-"@storybook/components@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-3.4.3.tgz#d21a9eb63c61529cfbb802d96ceaa67fb7fd50b0"
+"@storybook/components@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-3.4.6.tgz#34bddcfa21bddc59ef57a052d157285fab7ba003"
   dependencies:
     glamor "^2.20.40"
     glamorous "^4.12.1"
     prop-types "^15.6.1"
 
-"@storybook/core@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-3.4.3.tgz#40375ad652e3b22e2c3373e05cb9cff0456f3865"
+"@storybook/core@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-3.4.6.tgz#3261dc89bff2c716579270da3f5cf83a374eca5c"
   dependencies:
-    "@storybook/addons" "3.4.3"
-    "@storybook/channel-postmessage" "3.4.3"
-    "@storybook/client-logger" "3.4.3"
-    "@storybook/node-logger" "3.4.3"
-    "@storybook/ui" "3.4.3"
+    "@storybook/addons" "3.4.6"
+    "@storybook/channel-postmessage" "3.4.6"
+    "@storybook/client-logger" "3.4.6"
+    "@storybook/node-logger" "3.4.6"
+    "@storybook/ui" "3.4.6"
     autoprefixer "^7.2.6"
     babel-runtime "^6.26.0"
     chalk "^2.3.2"
@@ -725,9 +728,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-3.4.3.tgz#d8014cfbaca0e6b5bbeb05f419ba08363c3aa5f6"
+"@storybook/node-logger@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-3.4.6.tgz#aed4f5bd102e033391584ef82bd3fec055659448"
   dependencies:
     npmlog "^4.1.2"
 
@@ -763,18 +766,18 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-3.4.3.tgz#d5b17921eb0a0910415f8624f145d940456b47f4"
+"@storybook/react@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-3.4.6.tgz#8bc0c1e10305d7539decb8f8c781b5970ff951ff"
   dependencies:
-    "@storybook/addon-actions" "3.4.3"
-    "@storybook/addon-links" "3.4.3"
-    "@storybook/addons" "3.4.3"
-    "@storybook/channel-postmessage" "3.4.3"
-    "@storybook/client-logger" "3.4.3"
-    "@storybook/core" "3.4.3"
-    "@storybook/node-logger" "3.4.3"
-    "@storybook/ui" "3.4.3"
+    "@storybook/addon-actions" "3.4.6"
+    "@storybook/addon-links" "3.4.6"
+    "@storybook/addons" "3.4.6"
+    "@storybook/channel-postmessage" "3.4.6"
+    "@storybook/client-logger" "3.4.6"
+    "@storybook/core" "3.4.6"
+    "@storybook/node-logger" "3.4.6"
+    "@storybook/ui" "3.4.6"
     airbnb-js-shims "^1.4.1"
     babel-loader "^7.1.4"
     babel-plugin-macros "^2.2.0"
@@ -807,11 +810,11 @@
     webpack "^3.11.0"
     webpack-hot-middleware "^2.22.1"
 
-"@storybook/ui@3.4.3":
-  version "3.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-3.4.3.tgz#8f3f43da32290abab2e4293d2567316b2d2ce91a"
+"@storybook/ui@3.4.6":
+  version "3.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-3.4.6.tgz#c25c93d0843c4250b77b2a3614533a7d5790893d"
   dependencies:
-    "@storybook/components" "3.4.3"
+    "@storybook/components" "3.4.6"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.3"
@@ -837,9 +840,9 @@
   version "0.22.7"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/cheerio/-/cheerio-0.22.7.tgz#4a92eafedfb2b9f4437d3a4410006d81114c66ce"
 
-"@types/classnames@2.2.3":
-  version "2.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/classnames/-/classnames-2.2.3.tgz#3f0ff6873da793870e20a260cada55982f38a9e5"
+"@types/classnames@2.2.4":
+  version "2.2.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/classnames/-/classnames-2.2.4.tgz#d3ee9ebf714aa34006707b8f4a58fd46b642305a"
 
 "@types/enzyme@3.1.10":
   version "3.1.10"
@@ -852,21 +855,21 @@
   version "4.6.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/history/-/history-4.6.2.tgz#12cfaba693ba20f114ed5765467ff25fdf67ddb0"
 
-"@types/jest@22.2.3":
-  version "22.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/jest/-/jest-22.2.3.tgz#0157c0316dc3722c43a7b71de3fdf3acbccef10d"
+"@types/jest@23.0.0":
+  version "23.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/jest/-/jest-23.0.0.tgz#760cac74f00bb9c3075587716d2b3b4435663bc0"
 
-"@types/lodash@4.14.108":
-  version "4.14.108"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/lodash/-/lodash-4.14.108.tgz#02656af3add2e5b3174f830862c47421c00ef817"
+"@types/lodash@4.14.109":
+  version "4.14.109"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/lodash/-/lodash-4.14.109.tgz#b1c4442239730bf35cabaf493c772b18c045886d"
 
 "@types/node@*":
-  version "10.0.7"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/node/-/node-10.0.7.tgz#c1c9e2a68be8c1544c8761012cd6cf722949691f"
+  version "10.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/node/-/node-10.3.1.tgz#51092fbacaed768a122a293814474fbf6e5e8b6d"
 
-"@types/prop-types@15.5.2":
-  version "15.5.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/prop-types/-/prop-types-15.5.2.tgz#3c6b8dceb2906cc87fe4358e809f9d20c8d59be1"
+"@types/prop-types@15.5.3":
+  version "15.5.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/prop-types/-/prop-types-15.5.3.tgz#bef071852dca2a2dbb65fecdb7bfb30cedae2de2"
 
 "@types/react-addons-create-fragment@0.14.18":
   version "0.14.18"
@@ -894,24 +897,24 @@
     "@types/react" "*"
     "@types/react-transition-group" "*"
 
-"@types/react-redux@6.0.0":
-  version "6.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-redux/-/react-redux-6.0.0.tgz#31711592b13ed6d6d2fd4506e5447b00e1f0b484"
+"@types/react-redux@6.0.2":
+  version "6.0.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-redux/-/react-redux-6.0.2.tgz#10069b53db8e0920fd8656e068dcf10c53c9ad2a"
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
 
-"@types/react-router-dom@4.2.6":
-  version "4.2.6"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-router-dom/-/react-router-dom-4.2.6.tgz#9f7eb3c0e6661a9607d878ff8675cc4ea95cd276"
+"@types/react-router-dom@4.2.7":
+  version "4.2.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-router-dom/-/react-router-dom-4.2.7.tgz#9d36bfe175f916dd8d7b6b0237feed6cce376b4c"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
     "@types/react-router" "*"
 
-"@types/react-router@*", "@types/react-router@4.0.25":
-  version "4.0.25"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-router/-/react-router-4.0.25.tgz#1e25490780b80e0d8f96bf649379cca8638c1e5a"
+"@types/react-router@*", "@types/react-router@4.0.26":
+  version "4.0.26"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-router/-/react-router-4.0.26.tgz#4489c873642baa633014294a6d0a290001ba9860"
   dependencies:
     "@types/history" "*"
     "@types/react" "*"
@@ -923,14 +926,14 @@
     "@types/react" "*"
 
 "@types/react-transition-group@*":
-  version "2.0.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-transition-group/-/react-transition-group-2.0.9.tgz#ed6a71fb711e524345844defec2a861c1a222a03"
+  version "2.0.11"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-transition-group/-/react-transition-group-2.0.11.tgz#feb274676a39383fffaa0dff710958d2251abefb"
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@16.3.14":
-  version "16.3.14"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react/-/react-16.3.14.tgz#f90ac6834de172e13ecca430dcb6814744225d36"
+"@types/react@*", "@types/react@16.3.16":
+  version "16.3.16"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react/-/react-16.3.16.tgz#78fc44a90b45701f50c8a7008f733680ba51fc86"
   dependencies:
     csstype "^2.2.0"
 
@@ -962,9 +965,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/storybook__addon-options@3.2.0":
-  version "3.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.0.tgz#244dedfb1d548f5d42db994bcfa700220d65e9ef"
+"@types/storybook__addon-options@3.2.1":
+  version "3.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.1.tgz#e5a319245992c29efab57e490dabd493d2fd47b3"
 
 "@types/storybook__react@3.0.7":
   version "3.0.7"
@@ -977,118 +980,142 @@
   version "1.13.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/webpack-env/-/webpack-env-1.13.6.tgz#128d1685a7c34d31ed17010fc87d6a12c1de6976"
 
-"@webassemblyjs/ast@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ast/-/ast-1.3.1.tgz#3081b4b3ff0af733aa5ba573af998f33711293f8"
+"@webassemblyjs/ast@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ast/-/ast-1.5.10.tgz#7f1e81149ca4e103c9e7cc321ea0dcb83a392512"
   dependencies:
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
-    webassemblyjs "1.3.1"
+    "@webassemblyjs/helper-module-context" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/wast-parser" "1.5.10"
+    debug "^3.1.0"
+    mamacro "^0.0.3"
 
-"@webassemblyjs/floating-point-hex-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.3.1.tgz#82646903ba25c3e5d88dec41ecb4e4d770615bfc"
+"@webassemblyjs/floating-point-hex-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.5.10.tgz#ae48705fd58927df62023f114520b8215330ff86"
 
-"@webassemblyjs/helper-buffer@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-buffer/-/helper-buffer-1.3.1.tgz#aa66bb6c274a7e5610d7468f94a2702186713bc6"
+"@webassemblyjs/helper-api-error@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-api-error/-/helper-api-error-1.5.10.tgz#0baf9453ce2fd8db58f0fdb4fb2852557c71d5a7"
 
-"@webassemblyjs/helper-code-frame@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.3.1.tgz#b5eba87cf37992e8a62c402545aed87dfd02be83"
+"@webassemblyjs/helper-buffer@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-buffer/-/helper-buffer-1.5.10.tgz#abee4284161e9cd6ba7619785ca277bfcb8052ce"
   dependencies:
-    "@webassemblyjs/wast-printer" "1.3.1"
+    debug "^3.1.0"
 
-"@webassemblyjs/helper-fsm@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-fsm/-/helper-fsm-1.3.1.tgz#297113d09a9541613eaeb265d7f948c5e03eb0a2"
-
-"@webassemblyjs/helper-wasm-bytecode@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.3.1.tgz#53b0308988e3a0cad836c83fc0801255906608f8"
-
-"@webassemblyjs/helper-wasm-section@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.3.1.tgz#3df13898e89a376ffb89439d216d9f0001bf9632"
+"@webassemblyjs/helper-code-frame@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.5.10.tgz#4e23c05431665f16322104580af7c06253d4b4e0"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
+    "@webassemblyjs/wast-printer" "1.5.10"
 
-"@webassemblyjs/leb128@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/leb128/-/leb128-1.3.1.tgz#e0cf1c585c72955637eeeabab1e2ab37c12c2338"
+"@webassemblyjs/helper-fsm@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-fsm/-/helper-fsm-1.5.10.tgz#490bab613ea255a9272b764826d3cc9d15170676"
+
+"@webassemblyjs/helper-module-context@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-module-context/-/helper-module-context-1.5.10.tgz#6fca93585228bf33e6da076d0a1373db1fdd6580"
+  dependencies:
+    mamacro "^0.0.3"
+
+"@webassemblyjs/helper-wasm-bytecode@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.5.10.tgz#90f6da93c7a186bfb2f587de442982ff533c4b44"
+
+"@webassemblyjs/helper-wasm-section@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.5.10.tgz#d64292a19f7f357c49719461065efdf7ec975d66"
+  dependencies:
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
+    debug "^3.1.0"
+
+"@webassemblyjs/ieee754@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ieee754/-/ieee754-1.5.10.tgz#257cad440dd6c8a339402d31e035ba2e38e9c245"
+  dependencies:
+    ieee754 "^1.1.11"
+
+"@webassemblyjs/leb128@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/leb128/-/leb128-1.5.10.tgz#a8e4fe5f4b16daadb241fcc44d9735e9f27b05a3"
   dependencies:
     leb "^0.3.0"
 
-"@webassemblyjs/validation@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/validation/-/validation-1.3.1.tgz#ed0129d7ccca7858a3f46e7e47a6889008547a39"
-  dependencies:
-    "@webassemblyjs/ast" "1.3.1"
+"@webassemblyjs/utf8@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/utf8/-/utf8-1.5.10.tgz#0b3b6bc86b7619c5dc7b2789db6665aa35689983"
 
-"@webassemblyjs/wasm-edit@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-edit/-/wasm-edit-1.3.1.tgz#a16ca4d9a12144b1b28d4e66ad1ad66ec65e479e"
+"@webassemblyjs/wasm-edit@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-edit/-/wasm-edit-1.5.10.tgz#0fe80f19e57f669eab1caa8c1faf9690b259d5b9"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/helper-wasm-section" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
-    "@webassemblyjs/wasm-opt" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    "@webassemblyjs/wast-printer" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/helper-wasm-section" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
+    "@webassemblyjs/wasm-opt" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
+    "@webassemblyjs/wast-printer" "1.5.10"
     debug "^3.1.0"
 
-"@webassemblyjs/wasm-gen@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-gen/-/wasm-gen-1.3.1.tgz#43263fc56a0570e0564e407bbcd4c02e85167398"
+"@webassemblyjs/wasm-gen@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-gen/-/wasm-gen-1.5.10.tgz#8b29ddd3651259408ae5d5c816a011fb3f3f3584"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/leb128" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/ieee754" "1.5.10"
+    "@webassemblyjs/leb128" "1.5.10"
+    "@webassemblyjs/utf8" "1.5.10"
 
-"@webassemblyjs/wasm-opt@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-opt/-/wasm-opt-1.3.1.tgz#172601dcdaaacd6b0b002df1252033198c65eceb"
+"@webassemblyjs/wasm-opt@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-opt/-/wasm-opt-1.5.10.tgz#569e45ab1b2bf0a7706cdf6d1b51d1188e9e4c7b"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-buffer" "1.3.1"
-    "@webassemblyjs/wasm-gen" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-buffer" "1.5.10"
+    "@webassemblyjs/wasm-gen" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
+    debug "^3.1.0"
 
-"@webassemblyjs/wasm-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-parser/-/wasm-parser-1.3.1.tgz#76727be6c313a9b775170ed38a126558eed7e8ef"
+"@webassemblyjs/wasm-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-parser/-/wasm-parser-1.5.10.tgz#3e1017e49f833f46b840db7cf9d194d4f00037ff"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/helper-wasm-bytecode" "1.3.1"
-    "@webassemblyjs/leb128" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    webassemblyjs "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-api-error" "1.5.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.5.10"
+    "@webassemblyjs/ieee754" "1.5.10"
+    "@webassemblyjs/leb128" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
 
-"@webassemblyjs/wast-parser@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-parser/-/wast-parser-1.3.1.tgz#62b6eba09580477868dd394cee3e3f5c64e1f3f8"
+"@webassemblyjs/wast-parser@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-parser/-/wast-parser-1.5.10.tgz#1a3235926483c985a00ee8ebca856ffda9544934"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/floating-point-hex-parser" "1.3.1"
-    "@webassemblyjs/helper-code-frame" "1.3.1"
-    "@webassemblyjs/helper-fsm" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/floating-point-hex-parser" "1.5.10"
+    "@webassemblyjs/helper-api-error" "1.5.10"
+    "@webassemblyjs/helper-code-frame" "1.5.10"
+    "@webassemblyjs/helper-fsm" "1.5.10"
     long "^3.2.0"
-    webassemblyjs "1.3.1"
+    mamacro "^0.0.3"
 
-"@webassemblyjs/wast-printer@1.3.1":
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-printer/-/wast-printer-1.3.1.tgz#3e75b889e6f1ba2dfa854e4436b4287e7687e82c"
+"@webassemblyjs/wast-printer@1.5.10":
+  version "1.5.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-printer/-/wast-printer-1.5.10.tgz#adb38831ba45efd0a5c7971b666e179b64f68bba"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/wast-parser" "1.5.10"
     long "^3.2.0"
 
-abab@^1.0.3, abab@^1.0.4:
+abab@^1.0.4:
   version "1.0.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
 
@@ -1115,37 +1142,32 @@ acorn-dynamic-import@^3.0.0:
   dependencies:
     acorn "^5.0.0"
 
-acorn-globals@^3.1.0:
-  version "3.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/acorn-globals/-/acorn-globals-3.1.0.tgz#fd8270f71fbb4996b004fa880ee5d46573a731bf"
-  dependencies:
-    acorn "^4.0.4"
-
 acorn-globals@^4.1.0:
   version "4.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/acorn-globals/-/acorn-globals-4.1.0.tgz#ab716025dbe17c54d3ef81d32ece2b2d99fe2538"
   dependencies:
     acorn "^5.0.0"
 
-acorn@^4.0.3, acorn@^4.0.4:
+acorn@^4.0.3:
   version "4.0.13"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/acorn/-/acorn-4.0.13.tgz#105495ae5361d697bd195c825192e1ad7f253787"
 
 acorn@^5.0.0, acorn@^5.3.0:
-  version "5.5.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
+  version "5.6.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/acorn/-/acorn-5.6.2.tgz#b1da1d7be2ac1b4a327fb9eab851702c5045b4e7"
 
 address@1.0.3, address@^1.0.1:
   version "1.0.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/address/-/address-1.0.3.tgz#b5f50631f8d6cec8bd20c963963afb55e06cbce9"
 
 airbnb-js-shims@^1.4.1:
-  version "1.4.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/airbnb-js-shims/-/airbnb-js-shims-1.4.1.tgz#cc3e8eb8d35877f9d0fdc6583e26b0ee75b98ad0"
+  version "1.6.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/airbnb-js-shims/-/airbnb-js-shims-1.6.0.tgz#b0675d05113e928c89bfa5b7b80b7399de8cee2a"
   dependencies:
     array-includes "^3.0.3"
-    array.prototype.flatmap "^1.2.0"
-    array.prototype.flatten "^1.2.0"
+    array.prototype.flat "^1.2.1"
+    array.prototype.flatmap "^1.2.1"
+    array.prototype.flatten "^1.2.1"
     es5-shim "^4.5.10"
     es6-shim "^0.35.3"
     function.prototype.name "^1.1.0"
@@ -1153,8 +1175,10 @@ airbnb-js-shims@^1.4.1:
     object.getownpropertydescriptors "^2.0.3"
     object.values "^1.0.4"
     promise.prototype.finally "^3.1.0"
+    string.prototype.matchall "^3.0.0"
     string.prototype.padend "^3.0.0"
     string.prototype.padstart "^3.0.0"
+    symbol.prototype.description "^1.0.0"
 
 ajv-keywords@^3.1.0:
   version "3.2.0"
@@ -1249,8 +1273,8 @@ aproba@^1.0.3, aproba@^1.1.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/aproba/-/aproba-1.2.0.tgz#6802e6264efd18c790a1b0d517f0f2627bf2c94a"
 
 are-we-there-yet@~1.1.2:
-  version "1.1.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/are-we-there-yet/-/are-we-there-yet-1.1.4.tgz#bb5dca382bb94f05e15194373d16fd3ba1ca110d"
+  version "1.1.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/are-we-there-yet/-/are-we-there-yet-1.1.5.tgz#4b35c2944f062a8bfcda66410760350fe9ddfc21"
   dependencies:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
@@ -1318,7 +1342,15 @@ array-unique@^0.3.2:
   version "0.3.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array-unique/-/array-unique-0.3.2.tgz#a894b75d4bc4f6cd679ef3244a9fd8f46ae2d428"
 
-array.prototype.flatmap@^1.2.0:
+array.prototype.flat@^1.2.1:
+  version "1.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array.prototype.flat/-/array.prototype.flat-1.2.1.tgz#812db8f02cad24d3fab65dd67eabe3b8903494a4"
+  dependencies:
+    define-properties "^1.1.2"
+    es-abstract "^1.10.0"
+    function-bind "^1.1.1"
+
+array.prototype.flatmap@^1.2.1:
   version "1.2.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array.prototype.flatmap/-/array.prototype.flatmap-1.2.1.tgz#3103cd4826ef90019c9b0a4839b2535fa6faf4e9"
   dependencies:
@@ -1326,7 +1358,7 @@ array.prototype.flatmap@^1.2.0:
     es-abstract "^1.10.0"
     function-bind "^1.1.1"
 
-array.prototype.flatten@^1.2.0:
+array.prototype.flatten@^1.2.1:
   version "1.2.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array.prototype.flatten/-/array.prototype.flatten-1.2.1.tgz#a77ae1b64524ce373b137fade324d12040d3c680"
   dependencies:
@@ -1393,16 +1425,16 @@ async@^1.4.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
 async@^2.1.2, async@^2.1.4:
-  version "2.6.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
+  version "2.6.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
   dependencies:
-    lodash "^4.14.0"
+    lodash "^4.17.10"
 
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
-atob@^2.0.0:
+atob@^2.1.1:
   version "2.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/atob/-/atob-2.1.1.tgz#ae2d5a729477f289d60dd7f96a6314a22dd6c22a"
 
@@ -1434,18 +1466,17 @@ autoprefixer@^7.2.6:
     postcss "^6.0.17"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@3.2.3:
-  version "3.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/awesome-typescript-loader/-/awesome-typescript-loader-3.2.3.tgz#aa2119b7c808a031e2b28945b031450a8975367f"
+awesome-typescript-loader@3.5.0:
+  version "3.5.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/awesome-typescript-loader/-/awesome-typescript-loader-3.5.0.tgz#4d4d10cba7a04ed433dfa0334250846fb11a1a5a"
   dependencies:
-    colors "^1.1.2"
+    chalk "^2.3.1"
     enhanced-resolve "3.3.0"
     loader-utils "^1.1.0"
     lodash "^4.17.4"
     micromatch "^3.0.3"
     mkdirp "^0.5.1"
-    object-assign "^4.1.1"
-    source-map-support "^0.4.15"
+    source-map-support "^0.5.3"
 
 aws-sign2@~0.7.0:
   version "0.7.0"
@@ -1688,12 +1719,12 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@22.4.3, babel-jest@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-jest/-/babel-jest-22.4.3.tgz#4b7a0b6041691bbd422ab49b3b73654a49a6627a"
+babel-jest@23.0.1, babel-jest@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-jest/-/babel-jest-23.0.1.tgz#bbad3bf523fb202da05ed0a6540b48c84eed13a6"
   dependencies:
-    babel-plugin-istanbul "^4.1.5"
-    babel-preset-jest "^22.4.3"
+    babel-plugin-istanbul "^4.1.6"
+    babel-preset-jest "^23.0.1"
 
 babel-loader@^7.1.4:
   version "7.1.4"
@@ -1731,7 +1762,7 @@ babel-plugin-emotion@^9.1.2:
     source-map "^0.5.7"
     touch "^1.0.0"
 
-babel-plugin-istanbul@^4.1.5, babel-plugin-istanbul@^4.1.6:
+babel-plugin-istanbul@^4.1.6:
   version "4.1.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-istanbul/-/babel-plugin-istanbul-4.1.6.tgz#36c59b2192efce81c5b378321b74175add1c9a45"
   dependencies:
@@ -1740,13 +1771,17 @@ babel-plugin-istanbul@^4.1.5, babel-plugin-istanbul@^4.1.6:
     istanbul-lib-instrument "^1.10.1"
     test-exclude "^4.2.1"
 
-babel-plugin-jest-hoist@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.4.3.tgz#7d8bcccadc2667f96a0dcc6afe1891875ee6c14a"
+babel-plugin-jest-hoist@^22.4.4:
+  version "22.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.4.4.tgz#b9851906eab34c7bf6f8c895a2b08bea1a844c0b"
+
+babel-plugin-jest-hoist@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-23.0.1.tgz#eaa11c964563aea9c21becef2bdf7853f7f3c148"
 
 babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.2.0:
-  version "2.2.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-macros/-/babel-plugin-macros-2.2.1.tgz#7cc0f84735aa86f776b51860793a98928f43a7fa"
+  version "2.2.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-macros/-/babel-plugin-macros-2.2.2.tgz#049c93f4b934453688a6ec38bba529c55bf0fa1f"
   dependencies:
     cosmiconfig "^4.0.0"
 
@@ -2131,16 +2166,16 @@ babel-plugin-transform-inline-consecutive-adds@^0.3.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-inline-consecutive-adds/-/babel-plugin-transform-inline-consecutive-adds-0.3.0.tgz#f07d93689c0002ed2b2b62969bdd99f734e03f57"
 
 babel-plugin-transform-member-expression-literals@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-member-expression-literals/-/babel-plugin-transform-member-expression-literals-6.9.2.tgz#1f397ab961a5c3a401f2a747af06e72004afcb76"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-member-expression-literals/-/babel-plugin-transform-member-expression-literals-6.9.4.tgz#37039c9a0c3313a39495faac2ff3a6b5b9d038bf"
 
 babel-plugin-transform-merge-sibling-variables@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-merge-sibling-variables/-/babel-plugin-transform-merge-sibling-variables-6.9.2.tgz#994a9004a79c79f0c91c496e8a2dbc7e9b73f7b4"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-merge-sibling-variables/-/babel-plugin-transform-merge-sibling-variables-6.9.4.tgz#85b422fc3377b449c9d1cde44087203532401dae"
 
 babel-plugin-transform-minify-booleans@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-minify-booleans/-/babel-plugin-transform-minify-booleans-6.9.2.tgz#cf995be067a0303cb526549f03dcd9682419430d"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-minify-booleans/-/babel-plugin-transform-minify-booleans-6.9.4.tgz#acbb3e56a3555dd23928e4b582d285162dd2b198"
 
 babel-plugin-transform-object-rest-spread@^6.22.0:
   version "6.26.0"
@@ -2150,8 +2185,8 @@ babel-plugin-transform-object-rest-spread@^6.22.0:
     babel-runtime "^6.26.0"
 
 babel-plugin-transform-property-literals@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-property-literals/-/babel-plugin-transform-property-literals-6.9.2.tgz#a58d0996cf2adaf224f7ce848ad1cde4cd8cf275"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-property-literals/-/babel-plugin-transform-property-literals-6.9.4.tgz#98c1d21e255736573f93ece54459f6ce24985d39"
   dependencies:
     esutils "^2.0.2"
 
@@ -2194,12 +2229,12 @@ babel-plugin-transform-regexp-constructors@^0.3.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-regexp-constructors/-/babel-plugin-transform-regexp-constructors-0.3.0.tgz#9bb2c8dd082271a5cb1b3a441a7c52e8fd07e0f5"
 
 babel-plugin-transform-remove-console@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.2.tgz#e8a0c27d56c9503ca16e284f6b64dbd4b95d21e9"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-remove-console/-/babel-plugin-transform-remove-console-6.9.4.tgz#b980360c067384e24b357a588d807d3c83527780"
 
 babel-plugin-transform-remove-debugger@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-remove-debugger/-/babel-plugin-transform-remove-debugger-6.9.2.tgz#536c87bdb6200d1460c996dd95d179cf38c24ee1"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-remove-debugger/-/babel-plugin-transform-remove-debugger-6.9.4.tgz#42b727631c97978e1eb2d199a7aec84a18339ef2"
 
 babel-plugin-transform-remove-undefined@^0.3.0:
   version "0.3.0"
@@ -2214,8 +2249,8 @@ babel-plugin-transform-runtime@^6.23.0:
     babel-runtime "^6.22.0"
 
 babel-plugin-transform-simplify-comparison-operators@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-simplify-comparison-operators/-/babel-plugin-transform-simplify-comparison-operators-6.9.2.tgz#0c0e9afa732924f03aa982fd63c92d0408bd5656"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-simplify-comparison-operators/-/babel-plugin-transform-simplify-comparison-operators-6.9.4.tgz#f62afe096cab0e1f68a2d753fdf283888471ceb9"
 
 babel-plugin-transform-strict-mode@^6.24.1:
   version "6.24.1"
@@ -2225,8 +2260,8 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-types "^6.24.1"
 
 babel-plugin-transform-undefined-to-void@^6.9.0:
-  version "6.9.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.2.tgz#165fde73393276bea02a739658878dcced0b9ebb"
+  version "6.9.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.9.4.tgz#be241ca81404030678b748717322b89d0c8fe280"
 
 babel-polyfill@^6.26.0:
   version "6.26.0"
@@ -2237,8 +2272,8 @@ babel-polyfill@^6.26.0:
     regenerator-runtime "^0.10.5"
 
 babel-preset-env@^1.6.1:
-  version "1.6.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-preset-env/-/babel-preset-env-1.6.1.tgz#a18b564cc9b9afdf4aae57ae3c1b0d99188e6f48"
+  version "1.7.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-preset-env/-/babel-preset-env-1.7.0.tgz#dea79fa4ebeb883cd35dab07e260c1c9c04df77a"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -2267,7 +2302,7 @@ babel-preset-env@^1.6.1:
     babel-plugin-transform-es2015-unicode-regex "^6.22.0"
     babel-plugin-transform-exponentiation-operator "^6.22.0"
     babel-plugin-transform-regenerator "^6.22.0"
-    browserslist "^2.1.2"
+    browserslist "^3.2.6"
     invariant "^2.2.2"
     semver "^5.3.0"
 
@@ -2278,10 +2313,17 @@ babel-preset-flow@^6.23.0:
     babel-plugin-transform-flow-strip-types "^6.22.0"
 
 babel-preset-jest@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-preset-jest/-/babel-preset-jest-22.4.3.tgz#e92eef9813b7026ab4ca675799f37419b5a44156"
+  version "22.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-preset-jest/-/babel-preset-jest-22.4.4.tgz#ec9fbd8bcd7dfd24b8b5320e0e688013235b7c39"
   dependencies:
-    babel-plugin-jest-hoist "^22.4.3"
+    babel-plugin-jest-hoist "^22.4.4"
+    babel-plugin-syntax-object-rest-spread "^6.13.0"
+
+babel-preset-jest@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-preset-jest/-/babel-preset-jest-23.0.1.tgz#631cc545c6cf021943013bcaf22f45d87fe62198"
+  dependencies:
+    babel-plugin-jest-hoist "^23.0.1"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
 babel-preset-minify@^0.3.0:
@@ -2418,10 +2460,6 @@ babylon@7.0.0-beta.31:
   version "7.0.0-beta.31"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babylon/-/babylon-7.0.0-beta.31.tgz#7ec10f81e0e456fd0f855ad60fa30c2ac454283f"
 
-babylon@7.0.0-beta.46:
-  version "7.0.0-beta.46"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babylon/-/babylon-7.0.0-beta.46.tgz#b6ddaba81bbb130313932757ff9c195d527088b6"
-
 babylon@^6.18.0:
   version "6.18.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
@@ -2490,18 +2528,6 @@ body-parser@1.18.2:
 boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
-
-boom@4.x.x:
-  version "4.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/boom/-/boom-4.3.1.tgz#4f8a3005cb4a7e3889f749030fd25b96e01d2e31"
-  dependencies:
-    hoek "4.x.x"
-
-boom@5.x.x:
-  version "5.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/boom/-/boom-5.2.0.tgz#5dd9da6ee3a5f302077436290cb717d3f4a54e02"
-  dependencies:
-    hoek "4.x.x"
 
 bowser@^1.0.0, bowser@^1.7.3:
   version "1.9.3"
@@ -2614,19 +2640,19 @@ browserslist@^1.3.6, browserslist@^1.5.2, browserslist@^1.7.6:
     caniuse-db "^1.0.30000639"
     electron-to-chromium "^1.2.7"
 
-browserslist@^2.1.2, browserslist@^2.11.3:
+browserslist@^2.11.3:
   version "2.11.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-2.11.3.tgz#fe36167aed1bbcde4827ebfe71347a2cc70b99b2"
   dependencies:
     caniuse-lite "^1.0.30000792"
     electron-to-chromium "^1.3.30"
 
-browserslist@^3.0.0:
-  version "3.2.6"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-3.2.6.tgz#138a44d04a9af64443679191d041f28ce5b965d5"
+browserslist@^3.0.0, browserslist@^3.2.6:
+  version "3.2.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-3.2.8.tgz#b0005361d6471f0f5952797a76fc985f1f978fc6"
   dependencies:
-    caniuse-lite "^1.0.30000830"
-    electron-to-chromium "^1.3.42"
+    caniuse-lite "^1.0.30000844"
+    electron-to-chromium "^1.3.47"
 
 bser@^2.0.0:
   version "2.0.0"
@@ -2635,8 +2661,8 @@ bser@^2.0.0:
     node-int64 "^0.4.0"
 
 buffer-from@^1.0.0:
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/buffer-from/-/buffer-from-1.0.0.tgz#4cb8832d23612589b0406e9e2956c17f06fdf531"
+  version "1.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/buffer-from/-/buffer-from-1.1.0.tgz#87fcaa3a298358e0ade6e442cfce840740d1ad04"
 
 buffer-xor@^1.0.3:
   version "1.0.3"
@@ -2723,12 +2749,12 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.5.0"
 
 caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-  version "1.0.30000836"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-db/-/caniuse-db-1.0.30000836.tgz#788b6c8f6f02991743b18cdbbd54f96d05b4b95a"
+  version "1.0.30000849"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-db/-/caniuse-db-1.0.30000849.tgz#d452f53d7dcfb84e7f5fd34c077c30ad2b7b9c7b"
 
-caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000830:
-  version "1.0.30000836"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30000836.tgz#c08f405b884d36dc44fa4c9a85c2c06cdab1dbb5"
+caniuse-lite@^1.0.30000792, caniuse-lite@^1.0.30000805, caniuse-lite@^1.0.30000844:
+  version "1.0.30000849"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30000849.tgz#7e1aa48e6d58917dcd70aabf7e7a33514a258f91"
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -2761,7 +2787,7 @@ chalk@1.1.3, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.3.2, chalk@^2.4.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.3.2, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   dependencies:
@@ -2962,10 +2988,6 @@ colors@0.5.x:
   version "0.5.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-0.5.1.tgz#7d0023eaeb154e8ee9fce75dcb923d0ed1667774"
 
-colors@^1.1.2:
-  version "1.2.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-1.2.4.tgz#e0cb41d3e4b20806b3bfc27f4559f01b94bc2f7c"
-
 colors@~1.1.2:
   version "1.1.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
@@ -2976,7 +2998,7 @@ combined-stream@1.0.6, combined-stream@~1.0.5:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@2.15.x, commander@^2.11.0, commander@^2.12.1, commander@^2.15.0, commander@^2.9.0, commander@~2.15.0:
+commander@2.15.x, commander@^2.11.0, commander@^2.12.1, commander@^2.15.0, commander@^2.15.1, commander@^2.9.0, commander@~2.15.0:
   version "2.15.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
 
@@ -2985,18 +3007,16 @@ commander@~2.13.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
 
 common-tags@^1.7.2:
-  version "1.7.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/common-tags/-/common-tags-1.7.2.tgz#24d9768c63d253a56ecff93845b44b4df1d52771"
-  dependencies:
-    babel-runtime "^6.26.0"
+  version "1.8.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/common-tags/-/common-tags-1.8.0.tgz#8e3153e542d4a39e9b10554434afaaf98956a937"
 
 commondir@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commondir/-/commondir-1.0.1.tgz#ddd800da0c66127393cca5950ea968a3aaf1253b"
 
 compare-versions@^3.1.0:
-  version "3.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/compare-versions/-/compare-versions-3.1.0.tgz#43310256a5c555aaed4193c04d8f154cf9c6efd5"
+  version "3.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/compare-versions/-/compare-versions-3.2.1.tgz#a49eb7689d4caaf0b6db5220173fd279614000f7"
 
 component-emitter@^1.2.1:
   version "1.2.1"
@@ -3032,10 +3052,6 @@ constants-browserify@^1.0.0:
 content-disposition@0.5.2:
   version "0.5.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/content-disposition/-/content-disposition-0.5.2.tgz#0cf68bb9ddf5f2be7961c3a85178cb85dba78cb4"
-
-content-type-parser@^1.0.1:
-  version "1.0.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/content-type-parser/-/content-type-parser-1.0.2.tgz#caabe80623e63638b2502fd4c7f12ff4ce2352e7"
 
 content-type@~1.0.4:
   version "1.0.4"
@@ -3084,8 +3100,8 @@ core-js@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/core-js/-/core-js-1.2.7.tgz#652294c14651db28fa93bd2d5ff2983a4f08c636"
 
 core-js@^2.4.0, core-js@^2.4.1, core-js@^2.5.0, core-js@^2.5.3:
-  version "2.5.6"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/core-js/-/core-js-2.5.6.tgz#0fe6d45bf3cac3ac364a9d72de7576f4eb221b9d"
+  version "2.5.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -3182,12 +3198,6 @@ cross-spawn@5.1.0, cross-spawn@^5.0.1:
     lru-cache "^4.0.1"
     shebang-command "^1.2.0"
     which "^1.2.9"
-
-cryptiles@3.x.x:
-  version "3.1.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cryptiles/-/cryptiles-3.1.2.tgz#a89fbb220f5ce25ec56e8c4aa8a4fd7b5b0d29fe"
-  dependencies:
-    boom "5.x.x"
 
 crypto-browserify@^3.11.0:
   version "3.12.0"
@@ -3354,15 +3364,15 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cssom/-/cssom-0.3.2.tgz#b8036170c79f07a90ff2f16e22284027a243848b"
 
-"cssstyle@>= 0.2.37 < 0.3.0":
-  version "0.2.37"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cssstyle/-/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
+"cssstyle@>= 0.3.1 < 0.4.0":
+  version "0.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cssstyle/-/cssstyle-0.3.1.tgz#6da9b4cff1bc5d716e6e5fe8e04fcb1b50a49adf"
   dependencies:
     cssom "0.3.x"
 
 csstype@^2.2.0:
-  version "2.5.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/csstype/-/csstype-2.5.0.tgz#53e1c242f422d5d976b81f42707bd9b8934492ee"
+  version "2.5.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/csstype/-/csstype-2.5.3.tgz#2504152e6e1cc59b32098b7f5d6a63f16294c1f7"
 
 cyclist@~0.2.2:
   version "0.2.2"
@@ -3416,9 +3426,9 @@ deep-equal@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
-deep-extend@^0.5.1:
-  version "0.5.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/deep-extend/-/deep-extend-0.5.1.tgz#b894a9dd90d3023fbf1c55a394fb858eb2066f1f"
+deep-extend@^0.6.0:
+  version "0.6.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
 
 deep-is@~0.1.3:
   version "0.1.3"
@@ -3602,8 +3612,8 @@ domutils@^1.5.1:
     domelementtype "1"
 
 dotenv-webpack@^1.5.5:
-  version "1.5.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/dotenv-webpack/-/dotenv-webpack-1.5.5.tgz#3441094f04d304b6119e6b72524e62fb3252f5f2"
+  version "1.5.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/dotenv-webpack/-/dotenv-webpack-1.5.7.tgz#c44395ab21d1fd28d79a90942a7b14b1debd145f"
   dependencies:
     dotenv "^5.0.1"
 
@@ -3634,9 +3644,9 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.42:
-  version "1.3.45"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.45.tgz#458ac1b1c5c760ce8811a16d2bfbd97ec30bafb8"
+electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
+  version "1.3.48"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.48.tgz#d3b0d8593814044e092ece2108fc3ac9aea4b900"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -3733,9 +3743,9 @@ enzyme-adapter-utils@^1.3.0:
     object.assign "^4.0.4"
     prop-types "^15.6.0"
 
-enzyme-to-json@3.3.3:
-  version "3.3.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/enzyme-to-json/-/enzyme-to-json-3.3.3.tgz#ede45938fb309cd87ebd4386f60c754525515a07"
+enzyme-to-json@3.3.4:
+  version "3.3.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/enzyme-to-json/-/enzyme-to-json-3.3.4.tgz#67c6040e931182f183418af2eb9f4323258aa77f"
   dependencies:
     lodash "^4.17.4"
 
@@ -3772,9 +3782,9 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   dependencies:
     is-arrayish "^0.2.1"
 
-es-abstract@^1.10.0, es-abstract@^1.4.3, es-abstract@^1.5.1, es-abstract@^1.6.1, es-abstract@^1.7.0, es-abstract@^1.9.0:
-  version "1.11.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/es-abstract/-/es-abstract-1.11.0.tgz#cce87d518f0496893b1a30cd8461835535480681"
+es-abstract@^1.10.0, es-abstract@^1.12.0, es-abstract@^1.4.3, es-abstract@^1.5.1, es-abstract@^1.6.1, es-abstract@^1.7.0, es-abstract@^1.9.0:
+  version "1.12.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/es-abstract/-/es-abstract-1.12.0.tgz#9dbbdd27c6856f0001421ca18782d786bf8a6165"
   dependencies:
     es-to-primitive "^1.1.1"
     function-bind "^1.1.1"
@@ -3791,8 +3801,8 @@ es-to-primitive@^1.1.1:
     is-symbol "^1.0.1"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
-  version "0.10.42"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/es5-ext/-/es5-ext-0.10.42.tgz#8c07dd33af04d5dcd1310b5cef13bea63a89ba8d"
+  version "0.10.45"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/es5-ext/-/es5-ext-0.10.45.tgz#0bfdf7b473da5919d5adf3bd25ceb754fccc3653"
   dependencies:
     es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
@@ -3870,7 +3880,7 @@ escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1
   version "1.0.5"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-escodegen@^1.6.1, escodegen@^1.9.0:
+escodegen@^1.9.0:
   version "1.9.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/escodegen/-/escodegen-1.9.1.tgz#dbae17ef96c8e4bedb1356f4504fa4cc2f7cb7e2"
   dependencies:
@@ -3939,8 +3949,8 @@ events@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
 
 events@^2.0.0:
-  version "2.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/events/-/events-2.0.0.tgz#cbbb56bf3ab1ac18d71c43bb32c86255062769f2"
+  version "2.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/events/-/events-2.1.0.tgz#2a9a1e18e6106e0e812aa9ebd4a819b3c29c0ba5"
 
 eventsource@0.1.6:
   version "0.1.6"
@@ -4011,7 +4021,7 @@ expand-tilde@^2.0.0, expand-tilde@^2.0.2:
   dependencies:
     homedir-polyfill "^1.0.1"
 
-expect@^22.4.3:
+expect@^22.4.0:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/expect/-/expect-22.4.3.tgz#d5a29d0a0e1fb2153557caef2674d4547e914674"
   dependencies:
@@ -4021,6 +4031,17 @@ expect@^22.4.3:
     jest-matcher-utils "^22.4.3"
     jest-message-util "^22.4.3"
     jest-regex-util "^22.4.3"
+
+expect@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/expect/-/expect-23.1.0.tgz#bfdfd57a2a20170d875999ee9787cc71f01c205f"
+  dependencies:
+    ansi-styles "^3.2.0"
+    jest-diff "^23.0.1"
+    jest-get-type "^22.1.0"
+    jest-matcher-utils "^23.0.1"
+    jest-message-util "^23.1.0"
+    jest-regex-util "^23.0.0"
 
 express@^4.16.3:
   version "4.16.3"
@@ -4126,8 +4147,8 @@ fast-levenshtein@~2.0.4:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
 
 fast-memoize@^2.2.7:
-  version "2.3.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-memoize/-/fast-memoize-2.3.2.tgz#f6b9eb8e06a754029cca25b4cd3945f2f6242c90"
+  version "2.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-memoize/-/fast-memoize-2.4.0.tgz#2f79eca41c41112b0b70cf53ac3940e206574648"
 
 fastparse@^1.1.1:
   version "1.1.1"
@@ -4208,9 +4229,9 @@ final-form-focus@1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-focus/-/final-form-focus-1.0.0.tgz#51b7652ea6aac9774234a2c871e9f9a434b2b983"
 
-final-form@4.6.1:
-  version "4.6.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.6.1.tgz#e3f3058524c2eb8b950be452087ffe124e39554d"
+final-form@4.7.3:
+  version "4.7.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.7.3.tgz#8442c7f243afce64e43305cf6b239316a0b252d3"
 
 finalhandler@1.1.1:
   version "1.1.1"
@@ -4265,8 +4286,8 @@ flush-write-stream@^1.0.0:
     readable-stream "^2.0.4"
 
 follow-redirects@^1.3.0:
-  version "1.4.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/follow-redirects/-/follow-redirects-1.4.1.tgz#d8120f4518190f55aac65bb6fc7b85fcd666d6aa"
+  version "1.5.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/follow-redirects/-/follow-redirects-1.5.0.tgz#234f49cf770b7f35b40e790f636ceba0c3a0ab77"
   dependencies:
     debug "^3.1.0"
 
@@ -4349,11 +4370,11 @@ fs.realpath@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
 fsevents@^1.0.0, fsevents@^1.1.2, fsevents@^1.2.3:
-  version "1.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fsevents/-/fsevents-1.2.3.tgz#08292982e7059f6674c93d8b829c1e8604979ac0"
+  version "1.2.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fsevents/-/fsevents-1.2.4.tgz#f41dcb1af2582af3692da36fc55cbd8e1041c426"
   dependencies:
     nan "^2.9.2"
-    node-pre-gyp "^0.9.0"
+    node-pre-gyp "^0.10.0"
 
 function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
@@ -4413,8 +4434,8 @@ glamor@^2.20.40:
     through "^2.3.8"
 
 glamorous@^4.12.1:
-  version "4.13.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/glamorous/-/glamorous-4.13.0.tgz#4ac5cb05633aa49a0396d409f665dd9b614f1b5a"
+  version "4.13.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/glamorous/-/glamorous-4.13.1.tgz#8909afcbc7f09133c6eb26bedcc1250c1f774312"
   dependencies:
     brcast "^3.0.0"
     csstype "^2.2.0"
@@ -4509,41 +4530,42 @@ gzip-size@3.0.0:
   dependencies:
     duplexer "^0.1.1"
 
-h2x-core@^0.1.9:
-  version "0.1.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-core/-/h2x-core-0.1.9.tgz#9ffd02b438f6c14505ae4d834db9ad1dcb596368"
+h2x-core@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-core/-/h2x-core-1.0.0.tgz#5135fda1a8688ebc8ce2450d89f1dc6837511e7b"
   dependencies:
-    h2x-generate "^0.1.9"
-    h2x-parse "^0.1.0"
-    h2x-traverse "^0.1.9"
+    h2x-generate "^1.0.0"
+    h2x-parse "^1.0.0"
+    h2x-traverse "^1.0.0"
 
-h2x-generate@^0.1.9:
-  version "0.1.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-generate/-/h2x-generate-0.1.9.tgz#8f94edfe1845a3805aa7d3069355c0668974aa90"
+h2x-generate@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-generate/-/h2x-generate-1.0.0.tgz#72e8020ecede3e589f7acab81e85a8346cc54126"
   dependencies:
-    h2x-traverse "^0.1.9"
+    h2x-traverse "^1.0.0"
 
-h2x-parse@^0.1.0:
-  version "0.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-parse/-/h2x-parse-0.1.0.tgz#d0508b936f3feaef9251270c2d8d3f6a5c7f84b1"
+h2x-parse@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-parse/-/h2x-parse-1.0.0.tgz#3d377642d6d5f5e3fa9940e3620f11ba2d072e99"
   dependencies:
-    jsdom "11.1.0"
+    h2x-types "^1.0.0"
+    jsdom "^11.10.0"
 
-h2x-plugin-jsx@^0.1.9:
-  version "0.1.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-plugin-jsx/-/h2x-plugin-jsx-0.1.9.tgz#2ef41f4da1e2c92680fac3425fcce63696107f11"
+h2x-plugin-jsx@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-plugin-jsx/-/h2x-plugin-jsx-1.0.0.tgz#9307cc58d75bd241f6c25aef152501fda2bdf43d"
   dependencies:
-    h2x-types "^0.1.0"
+    h2x-types "^1.0.0"
 
-h2x-traverse@^0.1.9:
-  version "0.1.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-traverse/-/h2x-traverse-0.1.9.tgz#2f75b232b1cdd0d4b6dce6dcc06dad8a22dae64f"
+h2x-traverse@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-traverse/-/h2x-traverse-1.0.0.tgz#6f651d41f14e3b4362ea2a909213a43511982de1"
   dependencies:
-    h2x-types "^0.1.0"
+    h2x-types "^1.0.0"
 
-h2x-types@^0.1.0:
-  version "0.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-types/-/h2x-types-0.1.0.tgz#0528342cd63631ec147f98ffa7a25279b5bd0f1f"
+h2x-types@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/h2x-types/-/h2x-types-1.0.0.tgz#4822816ffddf51e4a383aa00594770e8ce230d1f"
 
 handlebars@^4.0.3:
   version "4.0.11"
@@ -4620,10 +4642,10 @@ has-values@^1.0.0:
     kind-of "^4.0.0"
 
 has@^1.0.1:
-  version "1.0.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/has/-/has-1.0.1.tgz#8461733f538b0837c9361e39a9ab9e9704dc2f28"
+  version "1.0.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/has/-/has-1.0.3.tgz#722d7cbfc1f6aa8241f16dd814e011e1f41e8796"
   dependencies:
-    function-bind "^1.0.2"
+    function-bind "^1.1.1"
 
 hash-base@^3.0.0:
   version "3.0.4"
@@ -4638,15 +4660,6 @@ hash.js@^1.0.0, hash.js@^1.0.3:
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
-
-hawk@~6.0.2:
-  version "6.0.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hawk/-/hawk-6.0.2.tgz#af4d914eb065f9b5ce4d9d11c1cb2126eecc3038"
-  dependencies:
-    boom "4.x.x"
-    cryptiles "3.x.x"
-    hoek "4.x.x"
-    sntp "2.x.x"
 
 he@1.1.x, he@^1.1.1:
   version "1.1.1"
@@ -4669,10 +4682,6 @@ hmac-drbg@^1.0.0:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
-
-hoek@4.x.x:
-  version "4.2.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
 
 hoist-non-react-statics@1.x.x, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
@@ -4707,7 +4716,7 @@ html-element-attributes@^1.0.0:
   version "1.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-element-attributes/-/html-element-attributes-1.3.1.tgz#9fa6a2e37e6b61790a303e87ddbbb9746e8c035f"
 
-html-encoding-sniffer@^1.0.1, html-encoding-sniffer@^1.0.2:
+html-encoding-sniffer@^1.0.2:
   version "1.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-encoding-sniffer/-/html-encoding-sniffer-1.0.2.tgz#e70d84b94da53aa375e11fe3a351be6642ca46f8"
   dependencies:
@@ -4728,8 +4737,8 @@ html-loader@^0.5.5:
     object-assign "^4.1.1"
 
 html-minifier@^3.2.3, html-minifier@^3.5.8:
-  version "3.5.15"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-minifier/-/html-minifier-3.5.15.tgz#f869848d4543cbfd84f26d5514a2a87cbf9a05e0"
+  version "3.5.16"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-minifier/-/html-minifier-3.5.16.tgz#39f5aabaf78bdfc057fe67334226efd7f3851175"
   dependencies:
     camel-case "3.0.x"
     clean-css "4.1.x"
@@ -4793,8 +4802,8 @@ http-errors@~1.6.2:
     statuses ">= 1.4.0 < 2"
 
 http-parser-js@>=0.4.0:
-  version "0.4.12"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/http-parser-js/-/http-parser-js-0.4.12.tgz#b9cfbf4a2cf26f0fc34b10ca1489a27771e3474f"
+  version "0.4.13"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/http-parser-js/-/http-parser-js-0.4.13.tgz#3bd6d6fde6e3172c9334c3b33b6c193d80fe1137"
 
 http-signature@~1.2.0:
   version "1.2.0"
@@ -4840,7 +4849,7 @@ icss-utils@^2.1.0:
   dependencies:
     postcss "^6.0.1"
 
-ieee754@^1.1.4:
+ieee754@^1.1.11, ieee754@^1.1.4:
   version "1.1.11"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ieee754/-/ieee754-1.1.11.tgz#c16384ffe00f5b7835824e67b6f2bd44a5229455"
 
@@ -5244,7 +5253,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-istanbul-api@^1.1.14:
+istanbul-api@^1.3.1:
   version "1.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-api/-/istanbul-api-1.3.1.tgz#4c3b05d18c0016d1022e079b98dc82c40f488954"
   dependencies:
@@ -5261,7 +5270,7 @@ istanbul-api@^1.1.14:
     mkdirp "^0.5.1"
     once "^1.4.0"
 
-istanbul-lib-coverage@^1.1.1, istanbul-lib-coverage@^1.1.2, istanbul-lib-coverage@^1.2.0:
+istanbul-lib-coverage@^1.2.0:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-lib-coverage/-/istanbul-lib-coverage-1.2.0.tgz#f7d8f2e42b97e37fe796114cb0f9d68b5e3a4341"
 
@@ -5271,7 +5280,7 @@ istanbul-lib-hook@^1.2.0:
   dependencies:
     append-transform "^0.4.0"
 
-istanbul-lib-instrument@^1.10.1, istanbul-lib-instrument@^1.8.0:
+istanbul-lib-instrument@^1.10.1:
   version "1.10.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-lib-instrument/-/istanbul-lib-instrument-1.10.1.tgz#724b4b6caceba8692d3f1f9d0727e279c401af7b"
   dependencies:
@@ -5292,19 +5301,9 @@ istanbul-lib-report@^1.1.4:
     path-parse "^1.0.5"
     supports-color "^3.1.2"
 
-istanbul-lib-source-maps@^1.2.1:
-  version "1.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-lib-source-maps/-/istanbul-lib-source-maps-1.2.3.tgz#20fb54b14e14b3fb6edb6aca3571fd2143db44e6"
-  dependencies:
-    debug "^3.1.0"
-    istanbul-lib-coverage "^1.1.2"
-    mkdirp "^0.5.1"
-    rimraf "^2.6.1"
-    source-map "^0.5.3"
-
 istanbul-lib-source-maps@^1.2.4:
-  version "1.2.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-lib-source-maps/-/istanbul-lib-source-maps-1.2.4.tgz#cc7ccad61629f4efff8e2f78adb8c522c9976ec7"
+  version "1.2.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/istanbul-lib-source-maps/-/istanbul-lib-source-maps-1.2.5.tgz#ffe6be4e7ab86d3603e4290d54990b14506fc9b1"
   dependencies:
     debug "^3.1.0"
     istanbul-lib-coverage "^1.2.0"
@@ -5318,15 +5317,15 @@ istanbul-reports@^1.3.0:
   dependencies:
     handlebars "^4.0.3"
 
-jest-changed-files@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-changed-files/-/jest-changed-files-22.4.3.tgz#8882181e022c38bd46a2e4d18d44d19d90a90fb2"
+jest-changed-files@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-changed-files/-/jest-changed-files-23.0.1.tgz#f79572d0720844ea5df84c2a448e862c2254f60c"
   dependencies:
     throat "^4.0.0"
 
-jest-cli@22.4.3, jest-cli@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-cli/-/jest-cli-22.4.3.tgz#bf16c4a5fb7edc3fa5b9bb7819e34139e88a72c7"
+jest-cli@23.1.0, jest-cli@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-cli/-/jest-cli-23.1.0.tgz#eb8bdd4ce0d15250892e31ad9b69bc99d2a8f6bf"
   dependencies:
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
@@ -5335,24 +5334,25 @@ jest-cli@22.4.3, jest-cli@^22.4.3:
     graceful-fs "^4.1.11"
     import-local "^1.0.0"
     is-ci "^1.0.10"
-    istanbul-api "^1.1.14"
-    istanbul-lib-coverage "^1.1.1"
-    istanbul-lib-instrument "^1.8.0"
-    istanbul-lib-source-maps "^1.2.1"
-    jest-changed-files "^22.4.3"
-    jest-config "^22.4.3"
-    jest-environment-jsdom "^22.4.3"
-    jest-get-type "^22.4.3"
-    jest-haste-map "^22.4.3"
-    jest-message-util "^22.4.3"
-    jest-regex-util "^22.4.3"
-    jest-resolve-dependencies "^22.4.3"
-    jest-runner "^22.4.3"
-    jest-runtime "^22.4.3"
-    jest-snapshot "^22.4.3"
-    jest-util "^22.4.3"
-    jest-validate "^22.4.3"
-    jest-worker "^22.4.3"
+    istanbul-api "^1.3.1"
+    istanbul-lib-coverage "^1.2.0"
+    istanbul-lib-instrument "^1.10.1"
+    istanbul-lib-source-maps "^1.2.4"
+    jest-changed-files "^23.0.1"
+    jest-config "^23.1.0"
+    jest-environment-jsdom "^23.1.0"
+    jest-get-type "^22.1.0"
+    jest-haste-map "^23.1.0"
+    jest-message-util "^23.1.0"
+    jest-regex-util "^23.0.0"
+    jest-resolve-dependencies "^23.0.1"
+    jest-runner "^23.1.0"
+    jest-runtime "^23.1.0"
+    jest-snapshot "^23.0.1"
+    jest-util "^23.1.0"
+    jest-validate "^23.0.1"
+    jest-watcher "^23.1.0"
+    jest-worker "^23.0.1"
     micromatch "^2.3.11"
     node-notifier "^5.2.1"
     realpath-native "^1.0.0"
@@ -5361,25 +5361,43 @@ jest-cli@22.4.3, jest-cli@^22.4.3:
     string-length "^2.0.0"
     strip-ansi "^4.0.0"
     which "^1.2.12"
-    yargs "^10.0.3"
+    yargs "^11.0.0"
 
-jest-config@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-config/-/jest-config-22.4.3.tgz#0e9d57db267839ea31309119b41dc2fa31b76403"
+jest-config@^22.4.3, jest-config@^22.4.4:
+  version "22.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-config/-/jest-config-22.4.4.tgz#72a521188720597169cd8b4ff86934ef5752d86a"
   dependencies:
     chalk "^2.0.1"
     glob "^7.1.1"
-    jest-environment-jsdom "^22.4.3"
-    jest-environment-node "^22.4.3"
-    jest-get-type "^22.4.3"
-    jest-jasmine2 "^22.4.3"
-    jest-regex-util "^22.4.3"
-    jest-resolve "^22.4.3"
-    jest-util "^22.4.3"
-    jest-validate "^22.4.3"
-    pretty-format "^22.4.3"
+    jest-environment-jsdom "^22.4.1"
+    jest-environment-node "^22.4.1"
+    jest-get-type "^22.1.0"
+    jest-jasmine2 "^22.4.4"
+    jest-regex-util "^22.1.0"
+    jest-resolve "^22.4.2"
+    jest-util "^22.4.1"
+    jest-validate "^22.4.4"
+    pretty-format "^22.4.0"
 
-jest-diff@^22.4.3:
+jest-config@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-config/-/jest-config-23.1.0.tgz#708ca0f431d356ee424fb4895d3308006bdd8241"
+  dependencies:
+    babel-core "^6.0.0"
+    babel-jest "^23.0.1"
+    chalk "^2.0.1"
+    glob "^7.1.1"
+    jest-environment-jsdom "^23.1.0"
+    jest-environment-node "^23.1.0"
+    jest-get-type "^22.1.0"
+    jest-jasmine2 "^23.1.0"
+    jest-regex-util "^23.0.0"
+    jest-resolve "^23.1.0"
+    jest-util "^23.1.0"
+    jest-validate "^23.0.1"
+    pretty-format "^23.0.1"
+
+jest-diff@^22.4.0, jest-diff@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-diff/-/jest-diff-22.4.3.tgz#e18cc3feff0aeef159d02310f2686d4065378030"
   dependencies:
@@ -5388,11 +5406,27 @@ jest-diff@^22.4.3:
     jest-get-type "^22.4.3"
     pretty-format "^22.4.3"
 
-jest-docblock@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-docblock/-/jest-docblock-22.4.3.tgz#50886f132b42b280c903c592373bb6e93bb68b19"
+jest-diff@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-diff/-/jest-diff-23.0.1.tgz#3d49137cee12c320a4b4d2b4a6fa6e82d491a16a"
+  dependencies:
+    chalk "^2.0.1"
+    diff "^3.2.0"
+    jest-get-type "^22.1.0"
+    pretty-format "^23.0.1"
+
+jest-docblock@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-docblock/-/jest-docblock-23.0.1.tgz#deddd18333be5dc2415260a04ef3fce9276b5725"
   dependencies:
     detect-newline "^2.1.0"
+
+jest-each@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-each/-/jest-each-23.1.0.tgz#16146b592c354867a5ae5e13cdf15c6c65b696c6"
+  dependencies:
+    chalk "^2.0.1"
+    pretty-format "^23.0.1"
 
 jest-emotion@9.1.3:
   version "9.1.3"
@@ -5400,7 +5434,7 @@ jest-emotion@9.1.3:
   dependencies:
     css "^2.2.1"
 
-jest-environment-jsdom@^22.4.3:
+jest-environment-jsdom@^22.4.1:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-environment-jsdom/-/jest-environment-jsdom-22.4.3.tgz#d67daa4155e33516aecdd35afd82d4abf0fa8a1e"
   dependencies:
@@ -5408,52 +5442,83 @@ jest-environment-jsdom@^22.4.3:
     jest-util "^22.4.3"
     jsdom "^11.5.1"
 
-jest-environment-node@^22.4.3:
+jest-environment-jsdom@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-environment-jsdom/-/jest-environment-jsdom-23.1.0.tgz#85929914e23bed3577dac9755f4106d0697c479c"
+  dependencies:
+    jest-mock "^23.1.0"
+    jest-util "^23.1.0"
+    jsdom "^11.5.1"
+
+jest-environment-node@^22.4.1:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-environment-node/-/jest-environment-node-22.4.3.tgz#54c4eaa374c83dd52a9da8759be14ebe1d0b9129"
   dependencies:
     jest-mock "^22.4.3"
     jest-util "^22.4.3"
 
-jest-get-type@^22.4.3:
+jest-environment-node@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-environment-node/-/jest-environment-node-23.1.0.tgz#452c0bf949cfcbbacda1e1762eeed70bc784c7d5"
+  dependencies:
+    jest-mock "^23.1.0"
+    jest-util "^23.1.0"
+
+jest-get-type@^22.1.0, jest-get-type@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-get-type/-/jest-get-type-22.4.3.tgz#e3a8504d8479342dd4420236b322869f18900ce4"
 
-jest-haste-map@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-haste-map/-/jest-haste-map-22.4.3.tgz#25842fa2ba350200767ac27f658d58b9d5c2e20b"
+jest-haste-map@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-haste-map/-/jest-haste-map-23.1.0.tgz#18e6c7d5a8d27136f91b7d9852f85de0c7074c49"
   dependencies:
     fb-watchman "^2.0.0"
     graceful-fs "^4.1.11"
-    jest-docblock "^22.4.3"
-    jest-serializer "^22.4.3"
-    jest-worker "^22.4.3"
+    jest-docblock "^23.0.1"
+    jest-serializer "^23.0.1"
+    jest-worker "^23.0.1"
     micromatch "^2.3.11"
     sane "^2.0.0"
 
-jest-jasmine2@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-jasmine2/-/jest-jasmine2-22.4.3.tgz#4daf64cd14c793da9db34a7c7b8dcfe52a745965"
+jest-jasmine2@^22.4.4:
+  version "22.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-jasmine2/-/jest-jasmine2-22.4.4.tgz#c55f92c961a141f693f869f5f081a79a10d24e23"
   dependencies:
     chalk "^2.0.1"
     co "^4.6.0"
-    expect "^22.4.3"
+    expect "^22.4.0"
     graceful-fs "^4.1.11"
     is-generator-fn "^1.0.0"
-    jest-diff "^22.4.3"
-    jest-matcher-utils "^22.4.3"
-    jest-message-util "^22.4.3"
-    jest-snapshot "^22.4.3"
-    jest-util "^22.4.3"
+    jest-diff "^22.4.0"
+    jest-matcher-utils "^22.4.0"
+    jest-message-util "^22.4.0"
+    jest-snapshot "^22.4.0"
+    jest-util "^22.4.1"
     source-map-support "^0.5.0"
 
-jest-leak-detector@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-leak-detector/-/jest-leak-detector-22.4.3.tgz#2b7b263103afae8c52b6b91241a2de40117e5b35"
+jest-jasmine2@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-jasmine2/-/jest-jasmine2-23.1.0.tgz#4afab31729b654ddcd2b074add849396f13b30b8"
   dependencies:
-    pretty-format "^22.4.3"
+    chalk "^2.0.1"
+    co "^4.6.0"
+    expect "^23.1.0"
+    is-generator-fn "^1.0.0"
+    jest-diff "^23.0.1"
+    jest-each "^23.1.0"
+    jest-matcher-utils "^23.0.1"
+    jest-message-util "^23.1.0"
+    jest-snapshot "^23.0.1"
+    jest-util "^23.1.0"
+    pretty-format "^23.0.1"
 
-jest-matcher-utils@^22.4.3:
+jest-leak-detector@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-leak-detector/-/jest-leak-detector-23.0.1.tgz#9dba07505ac3495c39d3ec09ac1e564599e861a0"
+  dependencies:
+    pretty-format "^23.0.1"
+
+jest-matcher-utils@^22.4.0, jest-matcher-utils@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-matcher-utils/-/jest-matcher-utils-22.4.3.tgz#4632fe428ebc73ebc194d3c7b65d37b161f710ff"
   dependencies:
@@ -5461,9 +5526,27 @@ jest-matcher-utils@^22.4.3:
     jest-get-type "^22.4.3"
     pretty-format "^22.4.3"
 
-jest-message-util@^22.4.3:
+jest-matcher-utils@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-matcher-utils/-/jest-matcher-utils-23.0.1.tgz#0c6c0daedf9833c2a7f36236069efecb4c3f6e5f"
+  dependencies:
+    chalk "^2.0.1"
+    jest-get-type "^22.1.0"
+    pretty-format "^23.0.1"
+
+jest-message-util@^22.4.0, jest-message-util@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-message-util/-/jest-message-util-22.4.3.tgz#cf3d38aafe4befddbfc455e57d65d5239e399eb7"
+  dependencies:
+    "@babel/code-frame" "^7.0.0-beta.35"
+    chalk "^2.0.1"
+    micromatch "^2.3.11"
+    slash "^1.0.0"
+    stack-utils "^1.0.1"
+
+jest-message-util@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-message-util/-/jest-message-util-23.1.0.tgz#9a809ba487ecac5ce511d4e698ee3b5ee2461ea9"
   dependencies:
     "@babel/code-frame" "^7.0.0-beta.35"
     chalk "^2.0.1"
@@ -5475,69 +5558,89 @@ jest-mock@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
 
-jest-regex-util@^22.4.3:
+jest-mock@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-mock/-/jest-mock-23.1.0.tgz#a381c31b121ab1f60c462a2dadb7b86dcccac487"
+
+jest-regex-util@^22.1.0, jest-regex-util@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-regex-util/-/jest-regex-util-22.4.3.tgz#a826eb191cdf22502198c5401a1fc04de9cef5af"
 
-jest-resolve-dependencies@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-resolve-dependencies/-/jest-resolve-dependencies-22.4.3.tgz#e2256a5a846732dc3969cb72f3c9ad7725a8195e"
-  dependencies:
-    jest-regex-util "^22.4.3"
+jest-regex-util@^23.0.0:
+  version "23.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-regex-util/-/jest-regex-util-23.0.0.tgz#dd5c1fde0c46f4371314cf10f7a751a23f4e8f76"
 
-jest-resolve@^22.4.3:
+jest-resolve-dependencies@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-resolve-dependencies/-/jest-resolve-dependencies-23.0.1.tgz#d01a10ddad9152c4cecdf5eac2b88571c4b6a64d"
+  dependencies:
+    jest-regex-util "^23.0.0"
+    jest-snapshot "^23.0.1"
+
+jest-resolve@^22.4.2:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-resolve/-/jest-resolve-22.4.3.tgz#0ce9d438c8438229aa9b916968ec6b05c1abb4ea"
   dependencies:
     browser-resolve "^1.11.2"
     chalk "^2.0.1"
 
-jest-runner@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-runner/-/jest-runner-22.4.3.tgz#298ddd6a22b992c64401b4667702b325e50610c3"
+jest-resolve@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-resolve/-/jest-resolve-23.1.0.tgz#b9e316eecebd6f00bc50a3960d1527bae65792d2"
+  dependencies:
+    browser-resolve "^1.11.2"
+    chalk "^2.0.1"
+    realpath-native "^1.0.0"
+
+jest-runner@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-runner/-/jest-runner-23.1.0.tgz#fa20a933fff731a5432b3561e7f6426594fa29b5"
   dependencies:
     exit "^0.1.2"
-    jest-config "^22.4.3"
-    jest-docblock "^22.4.3"
-    jest-haste-map "^22.4.3"
-    jest-jasmine2 "^22.4.3"
-    jest-leak-detector "^22.4.3"
-    jest-message-util "^22.4.3"
-    jest-runtime "^22.4.3"
-    jest-util "^22.4.3"
-    jest-worker "^22.4.3"
+    graceful-fs "^4.1.11"
+    jest-config "^23.1.0"
+    jest-docblock "^23.0.1"
+    jest-haste-map "^23.1.0"
+    jest-jasmine2 "^23.1.0"
+    jest-leak-detector "^23.0.1"
+    jest-message-util "^23.1.0"
+    jest-runtime "^23.1.0"
+    jest-util "^23.1.0"
+    jest-worker "^23.0.1"
+    source-map-support "^0.5.6"
     throat "^4.0.0"
 
-jest-runtime@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-runtime/-/jest-runtime-22.4.3.tgz#b69926c34b851b920f666c93e86ba2912087e3d0"
+jest-runtime@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-runtime/-/jest-runtime-23.1.0.tgz#b4ae0e87259ecacfd4a884b639db07cf4dd620af"
   dependencies:
     babel-core "^6.0.0"
-    babel-jest "^22.4.3"
-    babel-plugin-istanbul "^4.1.5"
+    babel-plugin-istanbul "^4.1.6"
     chalk "^2.0.1"
     convert-source-map "^1.4.0"
     exit "^0.1.2"
+    fast-json-stable-stringify "^2.0.0"
     graceful-fs "^4.1.11"
-    jest-config "^22.4.3"
-    jest-haste-map "^22.4.3"
-    jest-regex-util "^22.4.3"
-    jest-resolve "^22.4.3"
-    jest-util "^22.4.3"
-    jest-validate "^22.4.3"
-    json-stable-stringify "^1.0.1"
+    jest-config "^23.1.0"
+    jest-haste-map "^23.1.0"
+    jest-message-util "^23.1.0"
+    jest-regex-util "^23.0.0"
+    jest-resolve "^23.1.0"
+    jest-snapshot "^23.0.1"
+    jest-util "^23.1.0"
+    jest-validate "^23.0.1"
     micromatch "^2.3.11"
     realpath-native "^1.0.0"
     slash "^1.0.0"
     strip-bom "3.0.0"
     write-file-atomic "^2.1.0"
-    yargs "^10.0.3"
+    yargs "^11.0.0"
 
-jest-serializer@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-serializer/-/jest-serializer-22.4.3.tgz#a679b81a7f111e4766235f4f0c46d230ee0f7436"
+jest-serializer@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-serializer/-/jest-serializer-23.0.1.tgz#a3776aeb311e90fe83fab9e533e85102bd164165"
 
-jest-snapshot@^22.4.3:
+jest-snapshot@^22.4.0:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-snapshot/-/jest-snapshot-22.4.3.tgz#b5c9b42846ffb9faccb76b841315ba67887362d2"
   dependencies:
@@ -5548,7 +5651,18 @@ jest-snapshot@^22.4.3:
     natural-compare "^1.4.0"
     pretty-format "^22.4.3"
 
-jest-util@^22.4.3:
+jest-snapshot@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-snapshot/-/jest-snapshot-23.0.1.tgz#6674fa19b9eb69a99cabecd415bddc42d6af3e7e"
+  dependencies:
+    chalk "^2.0.1"
+    jest-diff "^23.0.1"
+    jest-matcher-utils "^23.0.1"
+    mkdirp "^0.5.1"
+    natural-compare "^1.4.0"
+    pretty-format "^23.0.1"
+
+jest-util@^22.4.1, jest-util@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-util/-/jest-util-22.4.3.tgz#c70fec8eec487c37b10b0809dc064a7ecf6aafac"
   dependencies:
@@ -5560,40 +5674,70 @@ jest-util@^22.4.3:
     mkdirp "^0.5.1"
     source-map "^0.6.0"
 
-jest-validate@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-validate/-/jest-validate-22.4.3.tgz#0780954a5a7daaeec8d3c10834b9280865976b30"
+jest-util@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-util/-/jest-util-23.1.0.tgz#c0251baf34644c6dd2fea78a962f4263ac55772d"
+  dependencies:
+    callsites "^2.0.0"
+    chalk "^2.0.1"
+    graceful-fs "^4.1.11"
+    is-ci "^1.0.10"
+    jest-message-util "^23.1.0"
+    mkdirp "^0.5.1"
+    slash "^1.0.0"
+    source-map "^0.6.0"
+
+jest-validate@^22.4.4:
+  version "22.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-validate/-/jest-validate-22.4.4.tgz#1dd0b616ef46c995de61810d85f57119dbbcec4d"
   dependencies:
     chalk "^2.0.1"
-    jest-config "^22.4.3"
-    jest-get-type "^22.4.3"
+    jest-config "^22.4.4"
+    jest-get-type "^22.1.0"
     leven "^2.1.0"
-    pretty-format "^22.4.3"
+    pretty-format "^22.4.0"
 
-jest-worker@^22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-worker/-/jest-worker-22.4.3.tgz#5c421417cba1c0abf64bf56bd5fb7968d79dd40b"
+jest-validate@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-validate/-/jest-validate-23.0.1.tgz#cd9f01a89d26bb885f12a8667715e9c865a5754f"
+  dependencies:
+    chalk "^2.0.1"
+    jest-get-type "^22.1.0"
+    leven "^2.1.0"
+    pretty-format "^23.0.1"
+
+jest-watcher@^23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-watcher/-/jest-watcher-23.1.0.tgz#a8d5842e38d9fb4afff823df6abb42a58ae6cdbd"
+  dependencies:
+    ansi-escapes "^3.0.0"
+    chalk "^2.0.1"
+    string-length "^2.0.0"
+
+jest-worker@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-worker/-/jest-worker-23.0.1.tgz#9e649dd963ff4046026f91c4017f039a6aa4a7bc"
   dependencies:
     merge-stream "^1.0.1"
 
-jest@22.4.3:
-  version "22.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest/-/jest-22.4.3.tgz#2261f4b117dc46d9a4a1a673d2150958dee92f16"
+jest@23.1.0:
+  version "23.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest/-/jest-23.1.0.tgz#bbb7f893100a11a742dd8bd0d047a54b0968ad1a"
   dependencies:
     import-local "^1.0.0"
-    jest-cli "^22.4.3"
+    jest-cli "^23.1.0"
 
 js-base64@^2.1.9:
-  version "2.4.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/js-base64/-/js-base64-2.4.3.tgz#2e545ec2b0f2957f41356510205214e98fad6582"
+  version "2.4.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/js-base64/-/js-base64-2.4.5.tgz#e293cd3c7c82f070d700fc7a1ca0a2e69f101f92"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
 js-yaml@^3.4.3, js-yaml@^3.7.0, js-yaml@^3.9.0:
-  version "3.11.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/js-yaml/-/js-yaml-3.11.0.tgz#597c1a8bd57152f26d622ce4117851a51f5ebaef"
+  version "3.12.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
@@ -5616,48 +5760,22 @@ jsbn@~0.1.0:
   version "0.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
-jsdom@11.1.0:
-  version "11.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jsdom/-/jsdom-11.1.0.tgz#6c48d7a48ffc5c300283c312904d15da8360509b"
-  dependencies:
-    abab "^1.0.3"
-    acorn "^4.0.4"
-    acorn-globals "^3.1.0"
-    array-equal "^1.0.0"
-    content-type-parser "^1.0.1"
-    cssom ">= 0.3.2 < 0.4.0"
-    cssstyle ">= 0.2.37 < 0.3.0"
-    escodegen "^1.6.1"
-    html-encoding-sniffer "^1.0.1"
-    nwmatcher "^1.4.1"
-    parse5 "^3.0.2"
-    pn "^1.0.0"
-    request "^2.79.0"
-    request-promise-native "^1.0.3"
-    sax "^1.2.1"
-    symbol-tree "^3.2.1"
-    tough-cookie "^2.3.2"
-    webidl-conversions "^4.0.0"
-    whatwg-encoding "^1.0.1"
-    whatwg-url "^6.1.0"
-    xml-name-validator "^2.0.1"
-
-jsdom@^11.5.1:
-  version "11.10.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jsdom/-/jsdom-11.10.0.tgz#a42cd54e88895dc765f03f15b807a474962ac3b5"
+jsdom@^11.10.0, jsdom@^11.5.1:
+  version "11.11.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jsdom/-/jsdom-11.11.0.tgz#df486efad41aee96c59ad7a190e2449c7eb1110e"
   dependencies:
     abab "^1.0.4"
     acorn "^5.3.0"
     acorn-globals "^4.1.0"
     array-equal "^1.0.0"
     cssom ">= 0.3.2 < 0.4.0"
-    cssstyle ">= 0.2.37 < 0.3.0"
+    cssstyle ">= 0.3.1 < 0.4.0"
     data-urls "^1.0.0"
     domexception "^1.0.0"
     escodegen "^1.9.0"
     html-encoding-sniffer "^1.0.2"
     left-pad "^1.2.0"
-    nwmatcher "^1.4.3"
+    nwsapi "^2.0.0"
     parse5 "4.0.0"
     pn "^1.1.0"
     request "^2.83.0"
@@ -5669,7 +5787,7 @@ jsdom@^11.5.1:
     webidl-conversions "^4.0.2"
     whatwg-encoding "^1.0.3"
     whatwg-mimetype "^2.1.0"
-    whatwg-url "^6.4.0"
+    whatwg-url "^6.4.1"
     ws "^4.0.0"
     xml-name-validator "^3.0.0"
 
@@ -5689,7 +5807,7 @@ json-loader@^0.5.4, json-loader@^0.5.7:
   version "0.5.7"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
 
-json-parse-better-errors@^1.0.1:
+json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
 
@@ -5700,12 +5818,6 @@ json-schema-traverse@^0.3.0:
 json-schema@0.2.3:
   version "0.2.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13"
-
-json-stable-stringify@^1.0.1:
-  version "1.0.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz#9a759d39c5f2ff503fd5300646ed445f88c4f9af"
-  dependencies:
-    jsonify "~0.0.0"
 
 json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   version "5.0.1"
@@ -5902,7 +6014,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.10, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
+lodash@4.17.10, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.10, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0:
   version "4.17.10"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -5931,13 +6043,9 @@ lru-cache@^4.0.1, lru-cache@^4.1.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
-macaddress@^0.2.8:
-  version "0.2.8"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
-
 make-dir@^1.0.0:
-  version "1.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/make-dir/-/make-dir-1.2.0.tgz#6d6a49eead4aae296c53bbf3a1a008bd6c89469b"
+  version "1.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/make-dir/-/make-dir-1.3.0.tgz#79c1033b80515bd6d24ec9933e860ca75ee27f0c"
   dependencies:
     pify "^3.0.0"
 
@@ -5950,6 +6058,10 @@ makeerror@1.0.x:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/makeerror/-/makeerror-1.0.11.tgz#e01a5c9109f2af79660e4e8b9587790184f5a96c"
   dependencies:
     tmpl "1.0.x"
+
+mamacro@^0.0.3:
+  version "0.0.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/mamacro/-/mamacro-0.0.3.tgz#ad2c9576197c9f1abf308d0787865bd975a3f3e4"
 
 map-cache@^0.2.2:
   version "0.2.2"
@@ -5981,8 +6093,8 @@ marksy@6.0.3, marksy@^6.0.3:
     marked "^0.3.9"
 
 material-colors@^1.2.1:
-  version "1.2.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/material-colors/-/material-colors-1.2.5.tgz#5292593e6754cb1bcc2b98030e4e0d6a3afc9ea1"
+  version "1.2.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/material-colors/-/material-colors-1.2.6.tgz#6d1958871126992ceecc72f4bcc4d8f010865f46"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
@@ -6000,8 +6112,8 @@ md5.js@^1.3.4:
     inherits "^2.0.1"
 
 mdn-data@^1.0.0:
-  version "1.1.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/mdn-data/-/mdn-data-1.1.2.tgz#ceaa6a831b4de494352af984d301e3a8f2cad6e5"
+  version "1.1.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/mdn-data/-/mdn-data-1.1.3.tgz#d0929cdf73db32b0afd6d3ab8ef3da2b29b6f76b"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -6145,11 +6257,11 @@ minimist@~0.0.1:
   version "0.0.10"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
-minipass@^2.2.1, minipass@^2.2.4:
-  version "2.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/minipass/-/minipass-2.3.0.tgz#2e11b1c46df7fe7f1afbe9a490280add21ffe384"
+minipass@^2.2.1, minipass@^2.3.3:
+  version "2.3.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/minipass/-/minipass-2.3.3.tgz#a7dcc8b7b833f5d368759cce544dccb55f50f233"
   dependencies:
-    safe-buffer "^5.1.1"
+    safe-buffer "^5.1.2"
     yallist "^3.0.0"
 
 minizlib@^1.1.0:
@@ -6186,9 +6298,9 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@2.22.1, moment@>=2.14.0, moment@^2.21.0:
-  version "2.22.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
+moment@2.22.2, moment@>=2.14.0, moment@^2.21.0:
+  version "2.22.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -6339,9 +6451,9 @@ node-notifier@^5.2.1:
     shellwords "^0.1.1"
     which "^1.3.0"
 
-node-pre-gyp@^0.9.0:
-  version "0.9.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-pre-gyp/-/node-pre-gyp-0.9.1.tgz#f11c07516dd92f87199dbc7e1838eab7cd56c9e0"
+node-pre-gyp@^0.10.0:
+  version "0.10.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-pre-gyp/-/node-pre-gyp-0.10.0.tgz#6e4ef5bb5c5203c6552448828c852c40111aac46"
   dependencies:
     detect-libc "^1.0.2"
     mkdirp "^0.5.1"
@@ -6457,9 +6569,9 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
-nwmatcher@^1.4.1, nwmatcher@^1.4.3:
-  version "1.4.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/nwmatcher/-/nwmatcher-1.4.4.tgz#2285631f34a95f0d0395cd900c96ed39b58f346e"
+nwsapi@^2.0.0:
+  version "2.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/nwsapi/-/nwsapi-2.0.1.tgz#a50d59a2dcb14b6931401171713ced2d0eb3468f"
 
 oauth-sign@~0.8.2:
   version "0.8.2"
@@ -6589,10 +6701,10 @@ optionator@^0.8.1:
     wordwrap "~1.0.0"
 
 original@>=0.0.5:
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/original/-/original-1.0.0.tgz#9147f93fa1696d04be61e01bd50baeaca656bd3b"
+  version "1.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/original/-/original-1.0.1.tgz#b0a53ff42ba997a8c9cd1fb5daaeb42b9d693190"
   dependencies:
-    url-parse "1.0.x"
+    url-parse "~1.4.0"
 
 os-browserify@^0.3.0:
   version "0.3.0"
@@ -6715,7 +6827,7 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
-parse5@^3.0.1, parse5@^3.0.2:
+parse5@^3.0.1:
   version "3.0.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
   dependencies:
@@ -6821,7 +6933,7 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-pn@^1.0.0, pn@^1.1.0:
+pn@^1.1.0:
   version "1.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pn/-/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
@@ -6888,11 +7000,10 @@ postcss-discard-unused@^2.2.1:
     uniqs "^2.0.0"
 
 postcss-filter-plugins@^2.0.0:
-  version "2.0.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss-filter-plugins/-/postcss-filter-plugins-2.0.2.tgz#6d85862534d735ac420e4a85806e1f5d4286d84c"
+  version "2.0.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss-filter-plugins/-/postcss-filter-plugins-2.0.3.tgz#82245fdf82337041645e477114d8e593aa18b8ec"
   dependencies:
     postcss "^5.0.4"
-    uniqid "^4.0.0"
 
 postcss-flexbugs-fixes@^3.2.0:
   version "3.3.1"
@@ -7129,9 +7240,9 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.11.1:
-  version "1.12.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/prettier/-/prettier-1.12.1.tgz#c1ad20e803e7749faf905a409d2367e06bbe7325"
+prettier@^1.13.0:
+  version "1.13.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/prettier/-/prettier-1.13.4.tgz#31bbae6990f13b1093187c731766a14036fa72e6"
 
 pretty-error@^2.0.2:
   version "2.1.1"
@@ -7140,9 +7251,16 @@ pretty-error@^2.0.2:
     renderkid "^2.0.1"
     utila "~0.4"
 
-pretty-format@^22.4.3:
+pretty-format@^22.4.0, pretty-format@^22.4.3:
   version "22.4.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pretty-format/-/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
+  dependencies:
+    ansi-regex "^3.0.0"
+    ansi-styles "^3.2.0"
+
+pretty-format@^23.0.1:
+  version "23.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pretty-format/-/pretty-format-23.0.1.tgz#d61d065268e4c759083bccbca27a01ad7c7601f4"
   dependencies:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
@@ -7211,6 +7329,10 @@ pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pseudomap/-/pseudomap-1.0.2.tgz#f052a28da70e618917ef0a8ac34c1ae5a68286b3"
 
+psl@^1.1.24:
+  version "1.1.27"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/psl/-/psl-1.1.27.tgz#2b2c77019db86855170d903532400bf71ee085b6"
+
 public-encrypt@^4.0.0:
   version "4.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/public-encrypt/-/public-encrypt-4.0.2.tgz#46eb9107206bf73489f8b85b69d91334c6610994"
@@ -7229,8 +7351,8 @@ pump@^2.0.0, pump@^2.0.1:
     once "^1.3.1"
 
 pumpify@^1.3.3:
-  version "1.5.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pumpify/-/pumpify-1.5.0.tgz#30c905a26c88fa0074927af07256672b474b1c15"
+  version "1.5.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pumpify/-/pumpify-1.5.1.tgz#36513be246ab27570b1a374a5ce278bfd74370ce"
   dependencies:
     duplexify "^3.6.0"
     inherits "^2.0.3"
@@ -7245,8 +7367,8 @@ punycode@^1.2.4, punycode@^1.4.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
 punycode@^2.1.0:
-  version "2.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/punycode/-/punycode-2.1.0.tgz#5f863edc89b96db09074bad7947bf09056ca4e7d"
+  version "2.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
 
 q@^1.1.2:
   version "1.5.1"
@@ -7274,10 +7396,6 @@ querystring-es3@^0.2.0:
 querystring@0.2.0, querystring@^0.2.0:
   version "0.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
-
-querystringify@0.0.x:
-  version "0.0.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/querystringify/-/querystringify-0.0.4.tgz#0cf7f84f9463ff0ae51c4c4b142d95be37724d9c"
 
 querystringify@^2.0.0:
   version "2.0.0"
@@ -7344,10 +7462,10 @@ raw-body@2.3.2:
     unpipe "1.0.0"
 
 rc@^1.1.7:
-  version "1.2.7"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rc/-/rc-1.2.7.tgz#8a10ca30d588d00464360372b890d06dacd02297"
+  version "1.2.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
   dependencies:
-    deep-extend "^0.5.1"
+    deep-extend "^0.6.0"
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
@@ -7370,9 +7488,9 @@ react-color@^2.14.0:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-datepicker@1.4.1:
-  version "1.4.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datepicker/-/react-datepicker-1.4.1.tgz#ee171b71d9853e56f9eece5fc3186402f4648683"
+react-datepicker@1.5.0:
+  version "1.5.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datepicker/-/react-datepicker-1.5.0.tgz#7eacd9609313189c84a21bb7421486054939a4b2"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"
@@ -7418,9 +7536,9 @@ react-docgen-typescript-webpack-plugin@1.1.0:
     ajv "^6.1.1"
     react-docgen-typescript "^1.2.3"
 
-react-docgen-typescript@1.4.0, react-docgen-typescript@^1.2.3:
-  version "1.4.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.4.0.tgz#dfa84b33f942d1bb690b156ca22f02b0e5f0ea7c"
+react-docgen-typescript@1.5.0, react-docgen-typescript@^1.2.3:
+  version "1.5.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.5.0.tgz#64f5dd5ff6540c7095433189a7e0e78441041d93"
 
 react-docgen@^3.0.0-beta11:
   version "3.0.0-beta9"
@@ -7434,18 +7552,18 @@ react-docgen@^3.0.0-beta11:
     node-dir "^0.1.10"
     recast "^0.12.6"
 
-react-dom@16.3.2:
-  version "16.3.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
+react-dom@16.4.0:
+  version "16.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dom/-/react-dom-16.4.0.tgz#099f067dd5827ce36a29eaf9a6cdc7cbf6216b1e"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-dropzone@4.2.9:
-  version "4.2.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.9.tgz#98156ce4d4cb018f7c5099eeb2eaff6dc21836fd"
+react-dropzone@4.2.11:
+  version "4.2.11"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.11.tgz#c20ff6a62634c5803bed5f292ef1bd4b3e1f90c3"
   dependencies:
     attr-accept "^1.0.3"
     prop-types "^15.5.7"
@@ -7454,9 +7572,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-final-form@3.4.0:
-  version "3.4.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.4.0.tgz#8ed2268d00bce5a1d328e75c1dee4ba18c023b24"
+react-final-form@3.5.1:
+  version "3.5.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.5.1.tgz#5d66dc4af5c2063608176c5a206782c8b1dbb07b"
 
 react-fuzzy@^0.5.2:
   version "0.5.2"
@@ -7496,17 +7614,17 @@ react-inspector@^2.2.2:
     babel-runtime "^6.26.0"
     is-dom "^1.0.9"
 
-react-is@^16.3.2:
-  version "16.3.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-is/-/react-is-16.3.2.tgz#f4d3d0e2f5fbb6ac46450641eb2e25bf05d36b22"
+react-is@^16.3.2, react-is@^16.4.0:
+  version "16.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-is/-/react-is-16.4.0.tgz#cc9fdc855ac34d2e7d9d2eb7059bbc240d35ffcf"
 
 react-lifecycles-compat@^3.0.0:
-  version "3.0.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-lifecycles-compat/-/react-lifecycles-compat-3.0.3.tgz#473820154732f1ccd762e89324abab154255da6b"
+  version "3.0.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
 react-modal@^3.3.2:
-  version "3.4.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-modal/-/react-modal-3.4.4.tgz#e9dde25e9e85a59c76831f2a2b468712a546aded"
+  version "3.4.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-modal/-/react-modal-3.4.5.tgz#75a7eefb8f4c8247278d5ce1c41249d7785d9f69"
   dependencies:
     exenv "^1.2.0"
     prop-types "^15.5.10"
@@ -7601,13 +7719,13 @@ react-style-proptype@^3.0.0:
     prop-types "^15.5.4"
 
 react-test-renderer@^16.0.0-0:
-  version "16.3.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-test-renderer/-/react-test-renderer-16.3.2.tgz#3d1ed74fda8db42521fdf03328e933312214749a"
+  version "16.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-test-renderer/-/react-test-renderer-16.4.0.tgz#0dbe0e24263e94e1830c7afb1f403707fad313a3"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
-    react-is "^16.3.2"
+    react-is "^16.4.0"
 
 react-text-mask@5.4.1:
   version "5.4.1"
@@ -7640,9 +7758,9 @@ react-treebeard@^2.1.0:
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
 
-react@16.3.2:
-  version "16.3.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react/-/react-16.3.2.tgz#fdc8420398533a1e58872f59091b272ce2f91ea9"
+react@16.4.0:
+  version "16.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react/-/react-16.4.0.tgz#402c2db83335336fba1962c08b98c6272617d585"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"
@@ -7685,7 +7803,7 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6:
   version "2.3.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -7778,9 +7896,9 @@ redux-mock-store@1.5.1:
   dependencies:
     lodash.isplainobject "^4.0.6"
 
-redux-thunk@2.2.0:
-  version "2.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
+redux-thunk@2.3.0:
+  version "2.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
 
 redux@4.0.0, redux@^4.0.0:
   version "4.0.0"
@@ -7798,15 +7916,15 @@ redux@^3.6.0, redux@^3.7.2:
     loose-envify "^1.1.0"
     symbol-observable "^1.0.3"
 
-regenerate-unicode-properties@^5.1.1:
-  version "5.1.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerate-unicode-properties/-/regenerate-unicode-properties-5.1.3.tgz#54f5891543468f36f2274b67c6bc4c033c27b308"
+regenerate-unicode-properties@^6.0.0:
+  version "6.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerate-unicode-properties/-/regenerate-unicode-properties-6.0.0.tgz#0fc26f9d5142289df4e177dec58f303d2d097c16"
   dependencies:
     regenerate "^1.3.3"
 
-regenerate@^1.2.1, regenerate@^1.3.3:
-  version "1.3.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerate/-/regenerate-1.3.3.tgz#0c336d3980553d755c39b586ae3b20aa49c82b7f"
+regenerate@^1.2.1, regenerate@^1.3.3, regenerate@^1.4.0:
+  version "1.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerate/-/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
 
 regenerator-runtime@^0.10.5:
   version "0.10.5"
@@ -7825,8 +7943,8 @@ regenerator-transform@^0.10.0:
     private "^0.1.6"
 
 regenerator-transform@^0.12.3:
-  version "0.12.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerator-transform/-/regenerator-transform-0.12.3.tgz#459adfb64f6a27164ab991b7873f45ab969eca8b"
+  version "0.12.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerator-transform/-/regenerator-transform-0.12.4.tgz#aa9b6c59f4b97be080e972506c560b3bccbfcff0"
   dependencies:
     private "^0.1.6"
 
@@ -7842,6 +7960,12 @@ regex-not@^1.0.0, regex-not@^1.0.2:
   dependencies:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
+
+regexp.prototype.flags@^1.2.0:
+  version "1.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regexp.prototype.flags/-/regexp.prototype.flags-1.2.0.tgz#6b30724e306a27833eeb171b66ac8890ba37e41c"
+  dependencies:
+    define-properties "^1.1.2"
 
 regexpu-core@^1.0.0:
   version "1.0.0"
@@ -7859,14 +7983,14 @@ regexpu-core@^2.0.0:
     regjsgen "^0.2.0"
     regjsparser "^0.1.4"
 
-regexpu-core@^4.1.3:
-  version "4.1.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regexpu-core/-/regexpu-core-4.1.3.tgz#fb81616dbbc2a917a7419b33f8379144f51eb8d0"
+regexpu-core@^4.1.3, regexpu-core@^4.1.4:
+  version "4.1.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regexpu-core/-/regexpu-core-4.1.5.tgz#57fdfe1148f8a7a069086228515130cf1820ddd0"
   dependencies:
-    regenerate "^1.3.3"
-    regenerate-unicode-properties "^5.1.1"
-    regjsgen "^0.3.0"
-    regjsparser "^0.2.1"
+    regenerate "^1.4.0"
+    regenerate-unicode-properties "^6.0.0"
+    regjsgen "^0.4.0"
+    regjsparser "^0.3.0"
     unicode-match-property-ecmascript "^1.0.3"
     unicode-match-property-value-ecmascript "^1.0.1"
 
@@ -7874,9 +7998,9 @@ regjsgen@^0.2.0:
   version "0.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regjsgen/-/regjsgen-0.2.0.tgz#6c016adeac554f75823fe37ac05b92d5a4edb1f7"
 
-regjsgen@^0.3.0:
-  version "0.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regjsgen/-/regjsgen-0.3.0.tgz#0ee4a3e9276430cda25f1e789ea6c15b87b0cb43"
+regjsgen@^0.4.0:
+  version "0.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regjsgen/-/regjsgen-0.4.0.tgz#c1eb4c89a209263f8717c782591523913ede2561"
 
 regjsparser@^0.1.4:
   version "0.1.5"
@@ -7884,9 +8008,9 @@ regjsparser@^0.1.4:
   dependencies:
     jsesc "~0.5.0"
 
-regjsparser@^0.2.1:
-  version "0.2.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regjsparser/-/regjsparser-0.2.1.tgz#c3787553faf04e775c302102ef346d995000ec1c"
+regjsparser@^0.3.0:
+  version "0.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regjsparser/-/regjsparser-0.3.0.tgz#3c326da7fcfd69fa0d332575a41c8c0cdf588c96"
   dependencies:
     jsesc "~0.5.0"
 
@@ -7928,7 +8052,7 @@ request-promise-core@1.1.1:
   dependencies:
     lodash "^4.13.1"
 
-request-promise-native@^1.0.3, request-promise-native@^1.0.5:
+request-promise-native@^1.0.5:
   version "1.0.5"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/request-promise-native/-/request-promise-native-1.0.5.tgz#5281770f68e0c9719e5163fd3fab482215f4fda5"
   dependencies:
@@ -7936,9 +8060,9 @@ request-promise-native@^1.0.3, request-promise-native@^1.0.5:
     stealthy-require "^1.1.0"
     tough-cookie ">=2.3.3"
 
-request@^2.79.0, request@^2.83.0:
-  version "2.85.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/request/-/request-2.85.0.tgz#5a03615a47c61420b3eb99b7dba204f83603e1fa"
+request@^2.83.0:
+  version "2.87.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/request/-/request-2.87.0.tgz#32f00235cd08d482b4d0d68db93a829c0ed5756e"
   dependencies:
     aws-sign2 "~0.7.0"
     aws4 "^1.6.0"
@@ -7948,7 +8072,6 @@ request@^2.79.0, request@^2.83.0:
     forever-agent "~0.6.1"
     form-data "~2.3.1"
     har-validator "~5.0.3"
-    hawk "~6.0.2"
     http-signature "~1.2.0"
     is-typedarray "~1.0.0"
     isstream "~0.1.2"
@@ -7958,7 +8081,6 @@ request@^2.79.0, request@^2.83.0:
     performance-now "^2.1.0"
     qs "~6.5.1"
     safe-buffer "^5.1.1"
-    stringstream "~0.0.5"
     tough-cookie "~2.3.3"
     tunnel-agent "^0.6.0"
     uuid "^3.1.0"
@@ -7979,7 +8101,7 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/require-main-filename/-/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
-requires-port@1.0.x, requires-port@^1.0.0:
+requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
 
@@ -8095,7 +8217,7 @@ safe-regex@^1.1.0:
   dependencies:
     ret "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3":
+"safer-buffer@>= 2.1.2 < 3", safer-buffer@^2.0.2:
   version "2.1.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
 
@@ -8114,7 +8236,7 @@ sane@^2.0.0:
   optionalDependencies:
     fsevents "^1.2.3"
 
-sax@^1.2.1, sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
+sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   version "1.2.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
@@ -8309,12 +8431,6 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-sntp@2.x.x:
-  version "2.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sntp/-/sntp-2.1.0.tgz#2c6cec14fedc2222739caf9b5c3d85d1cc5a2cc8"
-  dependencies:
-    hoek "4.x.x"
-
 sockjs-client@1.1.4:
   version "1.1.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sockjs-client/-/sockjs-client-1.1.4.tgz#5babe386b775e4cf14e7520911452654016c8b12"
@@ -8337,10 +8453,10 @@ source-list-map@^2.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
 
 source-map-resolve@^0.5.0, source-map-resolve@^0.5.1:
-  version "0.5.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map-resolve/-/source-map-resolve-0.5.1.tgz#7ad0f593f2281598e854df80f19aae4b92d7a11a"
+  version "0.5.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map-resolve/-/source-map-resolve-0.5.2.tgz#72e2cc34095543e43b2c62b2c4c10d4a9054f259"
   dependencies:
-    atob "^2.0.0"
+    atob "^2.1.1"
     decode-uri-component "^0.2.0"
     resolve-url "^0.2.1"
     source-map-url "^0.4.0"
@@ -8352,9 +8468,9 @@ source-map-support@^0.4.15:
   dependencies:
     source-map "^0.5.6"
 
-source-map-support@^0.5.0:
-  version "0.5.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map-support/-/source-map-support-0.5.5.tgz#0d4af9e00493e855402e8ec36ebed2d266fceb90"
+source-map-support@^0.5.0, source-map-support@^0.5.3, source-map-support@^0.5.5, source-map-support@^0.5.6:
+  version "0.5.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map-support/-/source-map-support-0.5.6.tgz#4435cee46b1aab62b8e8610ce60f788091c51c13"
   dependencies:
     buffer-from "^1.0.0"
     source-map "^0.6.0"
@@ -8416,13 +8532,14 @@ sprintf-js@~1.0.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
 sshpk@^1.7.0:
-  version "1.14.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sshpk/-/sshpk-1.14.1.tgz#130f5975eddad963f1d56f92b9ac6c51fa9f83eb"
+  version "1.14.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/sshpk/-/sshpk-1.14.2.tgz#c6fc61648a3d9c4e764fd3fcdf4ea105e492ba98"
   dependencies:
     asn1 "~0.2.3"
     assert-plus "^1.0.0"
     dashdash "^1.12.0"
     getpass "^0.1.1"
+    safer-buffer "^2.0.2"
   optionalDependencies:
     bcrypt-pbkdf "^1.0.0"
     ecc-jsbn "~0.1.1"
@@ -8477,12 +8594,12 @@ stream-each@^1.1.0:
     stream-shift "^1.0.0"
 
 stream-http@^2.7.2:
-  version "2.8.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/stream-http/-/stream-http-2.8.1.tgz#d0441be1a457a73a733a8a7b53570bebd9ef66a4"
+  version "2.8.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/stream-http/-/stream-http-2.8.3.tgz#b2d242469288a5a27ec4fe8933acf623de6514fc"
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
-    readable-stream "^2.3.3"
+    readable-stream "^2.3.6"
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
 
@@ -8501,7 +8618,7 @@ string-length@^2.0.0:
     astral-regex "^1.0.0"
     strip-ansi "^4.0.0"
 
-string-width@^1.0.1, string-width@^1.0.2:
+string-width@^1.0.1:
   version "1.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
   dependencies:
@@ -8509,12 +8626,22 @@ string-width@^1.0.1, string-width@^1.0.2:
     is-fullwidth-code-point "^1.0.0"
     strip-ansi "^3.0.0"
 
-string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
+"string-width@^1.0.2 || 2", string-width@^2.0.0, string-width@^2.1.0, string-width@^2.1.1:
   version "2.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/string-width/-/string-width-2.1.1.tgz#ab93f27a8dc13d28cac815c462143a6d9012ae9e"
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string.prototype.matchall@^3.0.0:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/string.prototype.matchall/-/string.prototype.matchall-3.0.0.tgz#66f4d8dd5c6c6cea4dffb55ec5f3184a8dd0dd59"
+  dependencies:
+    define-properties "^1.1.2"
+    es-abstract "^1.12.0"
+    function-bind "^1.1.1"
+    has-symbols "^1.0.0"
+    regexp.prototype.flags "^1.2.0"
 
 string.prototype.padend@^3.0.0:
   version "3.0.0"
@@ -8541,10 +8668,6 @@ string_decoder@^1.0.0, string_decoder@~1.1.1:
 string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
-
-stringstream@~0.0.5:
-  version "0.0.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/stringstream/-/stringstream-0.0.5.tgz#4e484cd4de5a0bbbee18e46307710a8a81621878"
 
 strip-ansi@3.0.1, strip-ansi@^3.0.0, strip-ansi@^3.0.1:
   version "3.0.1"
@@ -8658,25 +8781,25 @@ svgo@^1.0.5:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-svgr@1.9.1:
-  version "1.9.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/svgr/-/svgr-1.9.1.tgz#ac56f6781b218f9f9d4ee9af4a7cce63ddd9b8da"
+svgr@1.10.0:
+  version "1.10.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/svgr/-/svgr-1.10.0.tgz#0f51c38deb2c009b790f30d3ae119a7d1f76bff9"
   dependencies:
-    "@babel/core" "^7.0.0-beta.40"
-    "@babel/plugin-proposal-object-rest-spread" "^7.0.0-beta.40"
-    "@babel/plugin-transform-react-constant-elements" "^7.0.0-beta.40"
-    "@babel/preset-env" "^7.0.0-beta.40"
-    "@babel/preset-react" "^7.0.0-beta.40"
-    chalk "^2.3.2"
-    commander "^2.15.0"
+    "@babel/core" "^7.0.0-beta.49"
+    "@babel/plugin-proposal-object-rest-spread" "^7.0.0-beta.49"
+    "@babel/plugin-transform-react-constant-elements" "^7.0.0-beta.49"
+    "@babel/preset-env" "^7.0.0-beta.49"
+    "@babel/preset-react" "^7.0.0-beta.49"
+    chalk "^2.4.1"
+    commander "^2.15.1"
     glob "^7.1.2"
-    h2x-core "^0.1.9"
-    h2x-plugin-jsx "^0.1.9"
+    h2x-core "^1.0.0"
+    h2x-plugin-jsx "^1.0.0"
     loader-utils "^1.1.0"
-    lodash "^4.17.5"
+    lodash "^4.17.10"
     mz "^2.6.0"
     output-file-sync "^2.0.1"
-    prettier "^1.11.1"
+    prettier "^1.13.0"
     recursive-readdir "^2.2.2"
     svgo "^1.0.5"
 
@@ -8684,9 +8807,15 @@ symbol-observable@^1.0.3, symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 
-symbol-tree@^3.2.1, symbol-tree@^3.2.2:
+symbol-tree@^3.2.2:
   version "3.2.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/symbol-tree/-/symbol-tree-3.2.2.tgz#ae27db38f660a7ae2e1c3b7d1bc290819b8519e6"
+
+symbol.prototype.description@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/symbol.prototype.description/-/symbol.prototype.description-1.0.0.tgz#6e355660eb1e44ca8ad53a68fdb72ef131ca4b12"
+  dependencies:
+    has-symbols "^1.0.0"
 
 tapable@^0.2.5, tapable@^0.2.7:
   version "0.2.8"
@@ -8697,12 +8826,12 @@ tapable@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tapable/-/tapable-1.0.0.tgz#cbb639d9002eed9c6b5975eb20598d7936f1f9f2"
 
 tar@^4:
-  version "4.4.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tar/-/tar-4.4.2.tgz#60685211ba46b38847b1ae7ee1a24d744a2cd462"
+  version "4.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tar/-/tar-4.4.4.tgz#ec8409fae9f665a4355cc3b4087d0820232bb8cd"
   dependencies:
     chownr "^1.0.1"
     fs-minipass "^1.2.5"
-    minipass "^2.2.4"
+    minipass "^2.3.3"
     minizlib "^1.1.0"
     mkdirp "^0.5.0"
     safe-buffer "^5.1.2"
@@ -8821,7 +8950,14 @@ touch@^1.0.0:
   dependencies:
     nopt "~1.0.10"
 
-tough-cookie@>=2.3.3, tough-cookie@^2.3.2, tough-cookie@^2.3.3, tough-cookie@~2.3.3:
+tough-cookie@>=2.3.3, tough-cookie@^2.3.3:
+  version "2.4.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tough-cookie/-/tough-cookie-2.4.2.tgz#aa9133154518b494efab98a58247bfc38818c00c"
+  dependencies:
+    psl "^1.1.24"
+    punycode "^1.4.1"
+
+tough-cookie@~2.3.3:
   version "2.3.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
@@ -8837,9 +8973,9 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-jest@22.4.5:
-  version "22.4.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ts-jest/-/ts-jest-22.4.5.tgz#b894f273c7208fa21a77e407dbe12d5e54e8ef72"
+ts-jest@22.4.6:
+  version "22.4.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ts-jest/-/ts-jest-22.4.6.tgz#a5d7f5e8b809626d1f4143209d301287472ec344"
   dependencies:
     babel-core "^6.26.3"
     babel-plugin-istanbul "^4.1.6"
@@ -8850,11 +8986,12 @@ ts-jest@22.4.5:
     jest-config "^22.4.3"
     lodash "^4.17.10"
     pkg-dir "^2.0.0"
+    source-map-support "^0.5.5"
     yargs "^11.0.0"
 
 tslib@^1.8.0, tslib@^1.8.1:
-  version "1.9.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tslib/-/tslib-1.9.0.tgz#e37a86fda8cbbaf23a057f473c9f4dc64e5fc2e8"
+  version "1.9.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tslib/-/tslib-1.9.2.tgz#8be0cc9a1f6dc7727c38deb16c2ebd1a2892988e"
 
 tslint-react@3.6.0:
   version "3.6.0"
@@ -8880,8 +9017,8 @@ tslint@5.10.0:
     tsutils "^2.12.1"
 
 tsutils@^2.12.1, tsutils@^2.13.1:
-  version "2.26.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tsutils/-/tsutils-2.26.2.tgz#a9f9f63434a456a5e0c95a45d9a59181cb32d3bf"
+  version "2.27.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/tsutils/-/tsutils-2.27.1.tgz#ab0276ac23664f36ce8fd4414daec4aebf4373ee"
   dependencies:
     tslib "^1.8.1"
 
@@ -8932,8 +9069,8 @@ uglify-es@^3.3.4:
     source-map "~0.6.1"
 
 uglify-js@3.3.x:
-  version "3.3.24"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uglify-js/-/uglify-js-3.3.24.tgz#abeae7690c602ebd006f4567387a0c0c333bdc0d"
+  version "3.3.28"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uglify-js/-/uglify-js-3.3.28.tgz#0efb9a13850e11303361c1051f64d2ec68d9be06"
   dependencies:
     commander "~2.15.0"
     source-map "~0.6.1"
@@ -9008,12 +9145,6 @@ uniq@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uniq/-/uniq-1.0.1.tgz#b31c5ae8254844a3a8281541ce2b04b865a734ff"
 
-uniqid@^4.0.0:
-  version "4.1.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uniqid/-/uniqid-4.1.1.tgz#89220ddf6b751ae52b5f72484863528596bb84c1"
-  dependencies:
-    macaddress "^0.2.8"
-
 uniqs@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uniqs/-/uniqs-2.0.0.tgz#ffede4b36b25290696e6e165d4a59edb998e6b02"
@@ -9050,16 +9181,16 @@ unset-value@^1.0.0:
     isobject "^3.0.0"
 
 upath@^1.0.0:
-  version "1.0.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/upath/-/upath-1.0.5.tgz#02cab9ecebe95bbec6d5fc2566325725ab6d1a73"
+  version "1.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
 
 upper-case@^1.1.1:
   version "1.1.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
 
 uri-js@^4.2.1:
-  version "4.2.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uri-js/-/uri-js-4.2.1.tgz#4595a80a51f356164e22970df64c7abd6ade9850"
+  version "4.2.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uri-js/-/uri-js-4.2.2.tgz#94c540e1ff772956e2299507c010aea6c8838eb0"
   dependencies:
     punycode "^2.1.0"
 
@@ -9083,16 +9214,9 @@ url-loader@^0.6.2:
     mime "^1.4.1"
     schema-utils "^0.3.0"
 
-url-parse@1.0.x:
-  version "1.0.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/url-parse/-/url-parse-1.0.5.tgz#0854860422afdcfefeb6c965c662d4800169927b"
-  dependencies:
-    querystringify "0.0.x"
-    requires-port "1.0.x"
-
-url-parse@^1.1.8:
-  version "1.4.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/url-parse/-/url-parse-1.4.0.tgz#6bfdaad60098c7fe06f623e42b22de62de0d3d75"
+url-parse@^1.1.8, url-parse@~1.4.0:
+  version "1.4.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/url-parse/-/url-parse-1.4.1.tgz#4dec9dad3dc8585f862fed461d2e19bbf623df30"
   dependencies:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
@@ -9125,11 +9249,17 @@ util.promisify@^1.0.0, util.promisify@~1.0.0:
     define-properties "^1.1.2"
     object.getownpropertydescriptors "^2.0.3"
 
-util@0.10.3, util@^0.10.3:
+util@0.10.3:
   version "0.10.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
+
+util@^0.10.3:
+  version "0.10.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/util/-/util-0.10.4.tgz#3aa0125bfe668a4672de58857d3ace27ecb76901"
+  dependencies:
+    inherits "2.0.3"
 
 utila@~0.3:
   version "0.3.3"
@@ -9232,17 +9362,7 @@ watchpack@^1.4.0, watchpack@^1.5.0:
     graceful-fs "^4.1.2"
     neo-async "^2.5.0"
 
-webassemblyjs@1.3.1:
-  version "1.3.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webassemblyjs/-/webassemblyjs-1.3.1.tgz#2bb8ebc724d0fe09b9562ab20e32ce3f5bac5c74"
-  dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/validation" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
-    "@webassemblyjs/wast-parser" "1.3.1"
-    long "^3.2.0"
-
-webidl-conversions@^4.0.0, webidl-conversions@^4.0.2:
+webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
 
@@ -9257,8 +9377,8 @@ webpack-dev-middleware@^1.12.2:
     time-stamp "^2.0.0"
 
 webpack-hot-middleware@^2.22.1:
-  version "2.22.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-hot-middleware/-/webpack-hot-middleware-2.22.1.tgz#2ff865bfebc8e9937bd1619f0f48d6ab601bfea0"
+  version "2.22.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-hot-middleware/-/webpack-hot-middleware-2.22.2.tgz#623b77ce591fcd4e1fb99f18167781443e50afac"
   dependencies:
     ansi-html "0.0.7"
     html-entities "^1.2.0"
@@ -9272,13 +9392,15 @@ webpack-sources@^1.0.1, webpack-sources@^1.1.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.8.1:
-  version "4.8.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.8.1.tgz#59e38f99f2751c931dd09a035aba7bec4b5f916e"
+webpack@4.11.0:
+  version "4.11.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.11.0.tgz#b7b68b4fe8a8963a18370a05f84d38d59ada4fbf"
   dependencies:
-    "@webassemblyjs/ast" "1.3.1"
-    "@webassemblyjs/wasm-edit" "1.3.1"
-    "@webassemblyjs/wasm-parser" "1.3.1"
+    "@webassemblyjs/ast" "1.5.10"
+    "@webassemblyjs/helper-module-context" "1.5.10"
+    "@webassemblyjs/wasm-edit" "1.5.10"
+    "@webassemblyjs/wasm-opt" "1.5.10"
+    "@webassemblyjs/wasm-parser" "1.5.10"
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
     ajv "^6.1.0"
@@ -9286,6 +9408,7 @@ webpack@4.8.1:
     chrome-trace-event "^0.1.1"
     enhanced-resolve "^4.0.0"
     eslint-scope "^3.7.1"
+    json-parse-better-errors "^1.0.2"
     loader-runner "^2.3.0"
     loader-utils "^1.1.0"
     memory-fs "~0.4.1"
@@ -9300,8 +9423,8 @@ webpack@4.8.1:
     webpack-sources "^1.0.1"
 
 webpack@^3.11.0:
-  version "3.11.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-3.11.0.tgz#77da451b1d7b4b117adaf41a1a93b5742f24d894"
+  version "3.12.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-3.12.0.tgz#3f9e34360370602fcf639e97939db486f4ec0d74"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^2.0.0"
@@ -9351,7 +9474,7 @@ whatwg-mimetype@^2.0.0, whatwg-mimetype@^2.1.0:
   version "2.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/whatwg-mimetype/-/whatwg-mimetype-2.1.0.tgz#f0f21d76cbba72362eb609dbed2a30cd17fcc7d4"
 
-whatwg-url@^6.1.0, whatwg-url@^6.4.0:
+whatwg-url@^6.4.0, whatwg-url@^6.4.1:
   version "6.4.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/whatwg-url/-/whatwg-url-6.4.1.tgz#fdb94b440fd4ad836202c16e9737d511f012fd67"
   dependencies:
@@ -9368,16 +9491,16 @@ which-module@^2.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/which-module/-/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
 
 which@^1.2.12, which@^1.2.14, which@^1.2.9, which@^1.3.0:
-  version "1.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
+  version "1.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
   dependencies:
     isexe "^2.0.0"
 
 wide-align@^1.1.0:
-  version "1.1.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/wide-align/-/wide-align-1.1.2.tgz#571e0f1b0604636ebc0dfc21b0339bbe31341710"
+  version "1.1.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/wide-align/-/wide-align-1.1.3.tgz#ae074e6bdc0c14a431e804e624549c633b000457"
   dependencies:
-    string-width "^1.0.2"
+    string-width "^1.0.2 || 2"
 
 window-size@0.1.0:
   version "0.1.0"
@@ -9427,10 +9550,6 @@ ws@^4.0.0:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
 
-xml-name-validator@^2.0.1:
-  version "2.0.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/xml-name-validator/-/xml-name-validator-2.0.1.tgz#4d8b8f1eccd3419aa362061becef515e1e559635"
-
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
@@ -9461,34 +9580,11 @@ yargs-parser@^7.0.0:
   dependencies:
     camelcase "^4.1.0"
 
-yargs-parser@^8.1.0:
-  version "8.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/yargs-parser/-/yargs-parser-8.1.0.tgz#f1376a33b6629a5d063782944da732631e966950"
-  dependencies:
-    camelcase "^4.1.0"
-
 yargs-parser@^9.0.2:
   version "9.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
   dependencies:
     camelcase "^4.1.0"
-
-yargs@^10.0.3:
-  version "10.1.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/yargs/-/yargs-10.1.2.tgz#454d074c2b16a51a43e2fb7807e4f9de69ccb5c5"
-  dependencies:
-    cliui "^4.0.0"
-    decamelize "^1.1.1"
-    find-up "^2.1.0"
-    get-caller-file "^1.0.1"
-    os-locale "^2.0.0"
-    require-directory "^2.1.1"
-    require-main-filename "^1.0.1"
-    set-blocking "^2.0.0"
-    string-width "^2.0.0"
-    which-module "^2.0.0"
-    y18n "^3.2.1"
-    yargs-parser "^8.1.0"
 
 yargs@^11.0.0:
   version "11.0.0"
