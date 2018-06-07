@@ -9,7 +9,7 @@ import { createBaseStyles, createSizeStyles, skinMap, SkinProps } from './Button
 
 export interface ButtonProps extends SkinProps, BaseButtonProps, WithStylesProps {
     icon?: Icons
-    label: string
+    label?: string
     loading?: boolean
     block?: boolean
 }

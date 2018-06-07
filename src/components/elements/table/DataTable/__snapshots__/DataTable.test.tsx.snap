@@ -41,6 +41,13 @@ exports[`should render correctly 1`] = `
   font-size: 1rem;
 }
 
+.emotion-11 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
 <table
   class="emotion-24"
 >
@@ -117,17 +124,17 @@ exports[`should render correctly 1`] = `
       class="emotion-9"
     >
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         1
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         MARIA MACHADO DE JESUS
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         42
       </td>
@@ -136,17 +143,17 @@ exports[`should render correctly 1`] = `
       class="emotion-9"
     >
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         2
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         JOSÉ DA SILVA MOREIRA
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         34
       </td>
@@ -155,17 +162,17 @@ exports[`should render correctly 1`] = `
       class="emotion-9"
     >
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         3
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         ALICE BARBOSA
       </td>
       <td
-        class="emotion-3"
+        class="emotion-11"
       >
         27
       </td>

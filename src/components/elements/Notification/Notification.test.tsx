@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { PageContainer } from '../../..'
 import { withTheme } from '../../../test'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
 import { Notification } from './Notification'
@@ -27,17 +27,17 @@ describe('Notification', () => {
 
     it('should have close button', () => {
         const wrapper = mount(withTheme(<Notification type='info' onCloseClick={click} >Information.</Notification>))
-        expect(wrapper.find(IconButton).length).toEqual(1)
+        expect(wrapper.find(Button).length).toEqual(1)
     })
 
     it('should NOT have close button', () => {
         const wrapper = mount(withTheme(<Notification type='info' >Information.</Notification>))
-        expect(wrapper.find(IconButton).length).toEqual(0)
+        expect(wrapper.find(Button).length).toEqual(0)
     })
 
     it('should call function on close click', () => {
         const wrapper = mount(withTheme(<Notification type='info' onCloseClick={click} >Information.</Notification>))
-        wrapper.find(IconButton).simulate('click')
+        wrapper.find(Button).simulate('click')
         expect(click).toHaveBeenCalled()
     })
 

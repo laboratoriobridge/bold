@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { PageContainer } from '../../..'
 import { Theme, withStyles, WithStylesProps } from '../../../styles'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
 export type NotificationType =
@@ -66,7 +66,8 @@ export class Notification extends React.PureComponent<NotificationProps> {
         const defaultStyles = {
             notification: {
                 animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
-                padding: '0.75rem 3rem 0.75rem 3rem',
+                padding: '0 3rem',
+                minHeight: 50,
                 borderRadius: '2px',
                 fontSize: '0.75rem',
                 display: 'flex',
@@ -117,7 +118,7 @@ const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick,
             <Icon icon={icon} styles={iconStyle} />
             <span className={childrenStyle}>{children}</span>
             {onCloseClick && <span className={closeButtonStyle}>
-                <IconButton icon='times' onClick={onCloseClick} />
+                <Button size='small' skin='ghost' icon='times' onClick={onCloseClick} />
             </span>}
         </ >
     )

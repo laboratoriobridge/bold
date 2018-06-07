@@ -89,6 +89,6 @@ export const createSizeStyles = (theme: Theme) => ({
     },
     small: {
         fontSize: '0.875rem',
-        padding: 'calc(0.25rem - 1px) 1rem',
+        padding: 'calc(0.25rem - 1px) calc(0.5rem - 1px)', // discount border size
     },
 })

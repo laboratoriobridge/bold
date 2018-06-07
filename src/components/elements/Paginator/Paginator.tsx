@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 
 export interface PaginatorProps extends WithStylesProps {
     /**
@@ -77,8 +77,10 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
         return (
             <div className={css(styles.paginator)}>
-                <IconButton
+                <Button
                     styles={styles.button}
+                    size='small'
+                    skin='ghost'
                     icon='angleLeft'
                     disabled={this.isFirstPage()}
                     title='Página anterior'
@@ -95,8 +97,10 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
                 <span>de {total}</span>
 
-                <IconButton
+                <Button
                     styles={styles.button}
+                    size='small'
+                    skin='ghost'
                     icon='angleRight'
                     disabled={this.isLastPage()}
                     title='Próxima página'

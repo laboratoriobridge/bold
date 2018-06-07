@@ -1,11 +1,11 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { IconButton, IconButtonProps } from '../../../elements/button/IconButton/IconButton'
+import { Button, ButtonProps } from '../../../elements/button/Button/Button'
 import { Icons } from '../../../elements/Icon/generated/Icons'
 import { Icon } from '../../../elements/Icon/Icon'
 
-export interface InputIconDecoratorProps extends WithStylesProps, Pick<IconButtonProps, 'onClick'> {
+export interface InputIconDecoratorProps extends WithStylesProps, Pick<ButtonProps, 'onClick'> {
     icon: Icons
     position?: 'left' | 'right'
 }
@@ -25,12 +25,12 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
             },
             left: {
                 'input': {
-                    paddingLeft: '2.5rem',
+                    paddingLeft: '3rem',
                 },
             },
             right: {
                 'input': {
-                    paddingRight: '2.5rem',
+                    paddingRight: '3rem',
                 },
             },
             iconWrapper: {
@@ -38,7 +38,9 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
                 backgroundColor: theme.pallete.surface.background,
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 padding: '0.25rem',
+                width: '2.5rem',
                 top: 1,
                 bottom: 1,
             },
@@ -49,6 +51,7 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
                 right: 1,
             },
             icon: {
+                borderRadius: 'inherit',
                 '&:focus': {
                     boxShadow: 'none',
                 },
@@ -72,7 +75,9 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
 
                 <span className={css(iconBoxClasses)}>
                     {onClick ?
-                        <IconButton
+                        <Button
+                            size='small'
+                            skin='ghost'
                             icon={icon}
                             tabIndex={-1}
                             styles={styles.icon}

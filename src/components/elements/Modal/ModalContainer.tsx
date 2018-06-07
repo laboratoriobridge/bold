@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 
 export type ModalSize = 'small' | 'large'
 
@@ -40,7 +40,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
         }
         return (
             <div className={css(styles.wrapper, styles.sizes[size])}>
-                <IconButton styles={styles.closeButton} icon='times' onClick={onClose} />
+                <Button size='small' skin='ghost' styles={styles.closeButton} icon='times' onClick={onClose} />
                 {this.props.children}
             </div>
         )

@@ -6,12 +6,17 @@ import { withTheme } from '../../../../test'
 import { Button } from './Button'
 
 describe('Button', () => {
-    it('deve renderizar corretamente', () => {
-        const wrapper = render(withTheme(<Button label='Botão' />))
+    it('should render correctly with label', () => {
+        const wrapper = render(withTheme(<Button label='Button' />))
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('deve ter animação de "carregando" ao especificar onClick com retorno do tipo Promise', () => {
+    it('should render correctly with icon only', () => {
+        const wrapper = render(withTheme(<Button icon='adjust' />))
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('should have a "loading" animation when onClick return is a Promise', () => {
         const delayedFunction = () => {
             return new Promise((resolve, reject) => {
                 setTimeout(resolve, 10)
@@ -25,7 +30,7 @@ describe('Button', () => {
         expect(wrapper.find('button').prop('data-loading')).toEqual(true)
     })
 
-    it('não deve ter animação com "onClick" que não seja promise', () => {
+    it('should NOT have animation when onClick return is not a Promise', () => {
         const func = () => undefined
         const wrapper = mount(withTheme(<Button label='Botão' onClick={func} />))
         expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
@@ -34,17 +39,17 @@ describe('Button', () => {
         expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
     })
 
-    it('deve adicionar um hint string automaticamente', () => {
+    it('should automatically have a hint', () => {
         const wrapper = render(withTheme(<Button label='Botão' hint='hint teste' />))
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('deve adicionar um hint custom automaticamente', () => {
+    it('shouold automatically have a custom hint', () => {
         const wrapper = render(withTheme(<Button label='Botão' hint={(<span>hint complexo teste</span>)} />))
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('deve ter animação de loading', () => {
+    it('should accept the loading prop', () => {
         const wrapper = render(withTheme(<Button label='Botão' loading={true} />))
         expect(wrapper).toMatchSnapshot()
     })
