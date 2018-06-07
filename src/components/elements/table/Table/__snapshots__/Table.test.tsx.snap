@@ -32,6 +32,13 @@ exports[`Table should accept the hovered prop 1`] = `
   font-size: 1rem;
 }
 
+.emotion-9 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
 .emotion-18 {
   width: 100%;
   border-collapse: collapse;
@@ -101,7 +108,7 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
         colspan="2"
       >
         Row #1
@@ -111,12 +118,12 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #2 - Cell #1
       </td>
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #2 - Cell #2
       </td>
@@ -125,12 +132,12 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #3 - Cell #1
       </td>
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #3 - Cell #2
       </td>
@@ -176,6 +183,13 @@ exports[`Table should render corretly 1`] = `
 .emotion-2 {
   fill: #056DFF;
   font-size: 1rem;
+}
+
+.emotion-9 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 <table
@@ -236,7 +250,7 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
         colspan="2"
       >
         Row #1
@@ -246,12 +260,12 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #2 - Cell #1
       </td>
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #2 - Cell #2
       </td>
@@ -260,12 +274,12 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #3 - Cell #1
       </td>
       <td
-        class="emotion-0"
+        class="emotion-9"
       >
         Row #3 - Cell #2
       </td>
@@ -284,7 +298,8 @@ exports[`TableRow should have the pointer class if onClick is specified 1`] = `
 
 .emotion-0 {
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -317,7 +332,8 @@ exports[`TableRow should have the pointer class if onClick is specified 2`] = `
 
 .emotion-0 {
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   border-bottom: 1px solid #e6e6e6;
 }
 

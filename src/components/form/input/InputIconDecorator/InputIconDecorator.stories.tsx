@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../../stories-addons'
+import { VFlow } from '../../../layout/Flow/VFlow'
 import { TextInput } from '../TextInput/TextInput'
 
 import { InputIconDecorator } from './InputIconDecorator'
@@ -18,11 +19,20 @@ storiesOf('Form', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('InputIconDecorator', () => (
-        <InputIconDecorator
-            icon='search'
-            position={select('position', positionOptions, 'right')}
-            onClick={action('icon-clicked')}
-        >
-            <TextInput />
-        </InputIconDecorator>
+        <VFlow>
+            <InputIconDecorator
+                icon='search'
+                position={select('position', positionOptions, 'right')}
+                onClick={action('icon-clicked')}
+            >
+                <TextInput />
+            </InputIconDecorator>
+
+            <InputIconDecorator
+                icon='search'
+                position={select('position', positionOptions, 'right')}
+            >
+                <TextInput />
+            </InputIconDecorator>
+        </VFlow>
     ))

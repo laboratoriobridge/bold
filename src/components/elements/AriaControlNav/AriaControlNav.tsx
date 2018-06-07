@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 import { HFlow } from '../../layout/Flow/HFlow'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 
 export interface AriaControlNavProps extends WithStylesProps {
 }
@@ -12,25 +12,22 @@ export class AriaControlNav extends React.Component<AriaControlNavProps> {
     render() {
         return (
             <HFlow hSpacing={0.5}>
-                <IconButton icon='decreaseFont' onClick={this.handleDecreaseFont} />
-                <IconButton icon='increaseFont' onClick={this.handleIncreaseFont} />
-                <IconButton icon='contrast' onClick={this.handleContrastChange} />
+                <Button size='small' skin='ghost' icon='decreaseFont' onClick={this.handleDecreaseFont} />
+                <Button size='small' skin='ghost' icon='increaseFont' onClick={this.handleIncreaseFont} />
+                <Button size='small' skin='ghost' icon='contrast' onClick={this.handleContrastChange} />
             </HFlow>
         )
     }
 
     private handleDecreaseFont = () => {
-        // this.props.theme.aria.increaseFont()
-        console.log('handleDecreaseFont')
+        return null
     }
 
     private handleIncreaseFont = () => {
-        // this.props.theme.aria.decreaseFont()
-        console.log('handleIncreaseFont')
+        return null
     }
 
     private handleContrastChange = () => {
-        // this.props.theme.aria.toggleContrastFont()
-        console.log('handleContrastChange')
+        return null
     }
 }

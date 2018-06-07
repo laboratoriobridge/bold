@@ -22,7 +22,8 @@ export const createTableStyles = (theme: Theme) => ({
     },
     cell: {
         textAlign: 'left',
-        padding: '0.5rem 1rem',
+        padding: '0 1rem',
+        height: '2.5rem', // works like min-height for table cells
         borderBottom: `1px solid ${theme.pallete.divider}`,
     },
     pointer: {

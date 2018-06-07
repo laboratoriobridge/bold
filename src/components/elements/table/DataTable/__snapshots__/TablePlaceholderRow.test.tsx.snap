@@ -3,7 +3,8 @@
 exports[`should render correctly 1`] = `
 .emotion-0 {
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   border-bottom: 1px solid #e6e6e6;
   color: #666666;
   font-style: italic;
@@ -25,7 +26,8 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly 2`] = `
 .emotion-0 {
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   border-bottom: 1px solid #e6e6e6;
   color: #666666;
   font-style: italic;

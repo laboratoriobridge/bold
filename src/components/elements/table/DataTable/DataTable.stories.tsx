@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../../stories-addons'
-import { IconButton } from '../../button/IconButton/IconButton'
+import { Button } from '../../button/Button/Button'
 
 import { DataTable } from './DataTable'
 
@@ -38,8 +38,13 @@ storiesOf('Components/Table', module)
                 { name: 'age', header: 'Age', render: (row: Row) => row.age },
                 {
                     name: 'buttons',
-                    styles: { textAlign: 'right' },
-                    render: (row: Row) => <IconButton icon='pen' />,
+                    styles: { textAlign: 'right', whiteSpace: 'nowrap' },
+                    render: (row: Row) => (
+                        <>
+                            <Button size='small' skin='ghost' icon='pen' />
+                            <Button size='small' skin='ghost' icon='dots' />
+                        </>
+                    ),
                 },
             ]}
         />
