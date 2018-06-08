@@ -65,6 +65,7 @@
     "emotion-theming": "9.1.2",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-context-patch": "0.0.8",
     "enzyme-to-json": "3.3.4",
     "file-loader": "1.1.11",
     "final-form": "4.7.3",

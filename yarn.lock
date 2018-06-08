@@ -3749,6 +3749,10 @@ enzyme-adapter-utils@^1.3.0:
     object.assign "^4.0.4"
     prop-types "^15.6.0"
 
+enzyme-context-patch@0.0.8:
+  version "0.0.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/enzyme-context-patch/-/enzyme-context-patch-0.0.8.tgz#ef47acae52f1dc755b92c8b2b8a35b8cc5eb924b"
+
 enzyme-to-json@3.3.4:
   version "3.3.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/enzyme-to-json/-/enzyme-to-json-3.3.4.tgz#67c6040e931182f183418af2eb9f4323258aa77f"
