@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+Array [
+  .emotion-0 {
+  display: inline-block;
+}
+
+<div
+    class="emotion-0"
+    data-show="false"
+  >
+    <span>
+      Testing
+    </span>
+  </div>,
+  .emotion-1 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #333333;
+  color: #e6e6e6;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+<div
+    class="emotion-1"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-0"
+    >
+      Tooltip text
+    </div>
+  </div>,
+]
+`;
