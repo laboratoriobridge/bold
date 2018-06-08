@@ -19,10 +19,20 @@ export const createStyles = (theme: Theme): Skin => ({
         },
     },
     primary: {
-        border: '1px solid ' + theme.pallete.primary.main,
+        border: `1px solid ${theme.pallete.primary.main}`,
         color: theme.pallete.primary.main,
         ':not(:disabled):hover': {
             backgroundColor: hexToRGB(theme.pallete.primary.main, 0.16),
+        },
+    },
+    danger: {
+        border: `1px solid ${theme.pallete.status.danger.main}`,
+        color: theme.pallete.status.danger.main,
+        ':not(:disabled):hover': {
+            backgroundColor: hexToRGB(theme.pallete.status.danger.main, 0.1),
+        },
+        ':focus': {
+            boxShadow: focusBoxShadow(theme, 'danger'),
         },
     },
 })

@@ -16,6 +16,18 @@ describe('Button', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
+    it('should render the primary type', () => {
+        expect(render(withTheme(<Button label='Button' type='primary' skin='default' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' type='primary' skin='secondary' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' type='primary' skin='ghost' />))).toMatchSnapshot()
+    })
+
+    it('should render the danger type', () => {
+        expect(render(withTheme(<Button label='Button' type='danger' skin='default' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' type='danger' skin='secondary' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' type='danger' skin='ghost' />))).toMatchSnapshot()
+    })
+
     it('should have a "loading" animation when onClick return is a Promise', () => {
         const delayedFunction = () => {
             return new Promise((resolve, reject) => {

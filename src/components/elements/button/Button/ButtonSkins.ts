@@ -5,12 +5,13 @@ import { createStyles as createGhost } from './skins/ghost'
 import { createStyles as createSecondary } from './skins/secondary'
 
 export type Skins = 'default' | 'ghost' | 'secondary'
-export type Type = 'normal' | 'primary'
+export type Type = 'normal' | 'primary' | 'danger'
 export type Size = 'large' | 'medium' | 'small'
 
 export interface Skin {
-    button: any,
+    button: any
     primary: any
+    danger: any
 }
 
 export const skinMap: { [key in Skins]: (theme: Theme) => Skin } = {

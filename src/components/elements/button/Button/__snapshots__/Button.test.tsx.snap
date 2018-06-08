@@ -393,6 +393,550 @@ exports[`Button should render correctly with label 1`] = `
 </button>
 `;
 
+exports[`Button should render the danger type 1`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  background-color: #E0001A;
+  color: #FFFFFF;
+  border: 1px solid #E0001A;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #ce0018;
+}
+
+.emotion-0:focus {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Button should render the danger type 2`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  border: 1px solid #E0001A;
+  color: #E0001A;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(224,0,26,0.1);
+}
+
+.emotion-0:focus {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Button should render the danger type 3`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Button should render the primary type 1`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  background-color: #056DFF;
+  color: #ffffff;
+  border: 1px solid #056DFF;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #0564eb;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Button should render the primary type 2`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  border: 1px solid #056DFF;
+  color: #056DFF;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(5,109,255,0.16);
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
+exports[`Button should render the primary type 3`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-0:not(:disabled) {
+  cursor: pointer;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    <span>
+      Button
+    </span>
+  </span>
+</button>
+`;
+
 exports[`Button shouold automatically have a custom hint 1`] = `
 .emotion-0 {
   -webkit-backface-visibility: hidden;
