@@ -4,7 +4,6 @@ import * as React from 'react'
 import { withPropTypes, withTheme } from '../../../stories-addons'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
-import { IconButton } from '../button/IconButton/IconButton'
 
 import { Popover } from './Popover'
 
@@ -25,7 +24,7 @@ storiesOf('Components/Popover', module)
                 text={`Ducimus velit consectetur est est corporis consectetur a
                 reprehenderit voluptas id provident iure incidunt`}
             >
-                <IconButton icon='informationCircle' />
+                <Button icon='informationCircle' skin='ghost' size='small' />
             </Popover>
         </HFlow>
     ))

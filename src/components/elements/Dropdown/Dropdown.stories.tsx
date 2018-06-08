@@ -6,7 +6,6 @@ import * as React from 'react'
 import { withPropTypes, withTheme } from '../../../stories-addons'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
-import { IconButton } from '../button/IconButton/IconButton'
 
 import { Dropdown } from './Dropdown'
 import { DropdownItem, DropdownMenu } from './DropdownMenu'
@@ -33,7 +32,7 @@ storiesOf('Components/Dropdown', module)
             </Dropdown>
             <Dropdown
                 renderTarget={(ctrl) => (
-                    <IconButton icon='dots' onClick={ctrl.toggle} />
+                    <Button icon='dots' skin='ghost' size='small' onClick={ctrl.toggle} />
                 )}
             >
                 {ctrl => (
