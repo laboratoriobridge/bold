@@ -21,7 +21,7 @@ export class Modal extends React.PureComponent<ModalProps> {
     }
 
     render() {
-        const { open, renderFooter, onBackdropClick, css, ...rest } = this.props
+        const { open, renderFooter, onBackdropClick, css, theme, ...rest } = this.props
         const styles = {
             wrapper: {
                 transition: 'all .2s',
@@ -35,7 +35,7 @@ export class Modal extends React.PureComponent<ModalProps> {
                 opacity: 0,
             },
             container: {
-                zIndex: 1040,
+                zIndex: theme.zIndex.modalContainer,
                 position: 'fixed',
                 left: '50%',
                 top: '50%',

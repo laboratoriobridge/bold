@@ -10,11 +10,11 @@ export interface ModalBackdropProps extends WithStylesProps {
 export class ModalBackdrop extends React.PureComponent<ModalBackdropProps> {
 
     render() {
-        const { css, onClick } = this.props
+        const { css, theme, onClick } = this.props
         const styles = {
             backdrop: {
                 position: 'fixed',
-                zIndex: 1030,
+                zIndex: theme.zIndex.modalBackdrop,
                 top: 0,
                 left: 0,
                 bottom: 0,

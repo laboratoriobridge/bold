@@ -1,13 +1,12 @@
 import * as React from 'react'
-import { Overlay } from 'react-overlays'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { pluralize } from '../../../../util/string'
 import { Paginator } from '../../Paginator/Paginator'
 import { Number } from '../../textual/Number/Number'
 
-import { DropdownItem, DropdownMenu } from '../../Dropdown/DropdownMenu'
-import { OverlayContent } from '../../Overlay/OverlayContent'
+import { Dropdown, DropdownController } from '../../Dropdown/Dropdown'
+import { DropdownItem } from '../../Dropdown/DropdownMenu'
 
 export interface TableFooterProps extends WithStylesProps {
     page: number
@@ -76,28 +75,15 @@ interface SizeDropdownProps extends WithStylesProps {
     onChange(size: number): any
 }
 
-interface SizeDropdownState {
-    show: boolean
-}
-
 @withStyles
-class SizeDropdown extends React.Component<SizeDropdownProps, SizeDropdownState> {
+class SizeDropdown extends React.Component<SizeDropdownProps> {
 
     static defaultProps: Partial<SizeDropdownProps> = {
         options: [10, 30, 50, 100],
     }
 
-    private trigger
-
-    constructor(props: SizeDropdownProps) {
-        super(props)
-        this.state = {
-            show: false,
-        }
-    }
-
     render() {
-        const { size, options, css } = this.props
+        const { options, css } = this.props
         const styles = {
             container: {
                 position: 'relative',
@@ -113,39 +99,41 @@ class SizeDropdown extends React.Component<SizeDropdownProps, SizeDropdownState>
 
         return (
             <span className={css(styles.container)}>
-                <a className={css(styles.button)} onClick={this.toggleShow} ref={this.triggerRef}>
-                    {size} <span className={css(styles.icon)}>▾</span>
-                </a>
-                <Overlay
-                    show={this.state.show}
-                    placement='bottom'
-                    container={this}
-                    target={this.trigger}
-                    rootClose={true}
-                    onHide={this.toggleShow}
-                >
-                    <OverlayContent>
-                        <DropdownMenu>
-                            {options.map((option, idx) => (
-                                <DropdownItem key={idx} onClick={this.handleClick(option)}>{option}</DropdownItem>
-                            ))}
-                        </DropdownMenu>
-                    </OverlayContent>
-                </Overlay>
+                <Dropdown renderTarget={this.renderDropdownTarget}>
+                    {ctrl =>
+                        options.map((option, idx) => (
+                            <DropdownItem key={idx} onClick={this.handleClick(ctrl, option)}>{option}</DropdownItem>
+                        ))
+                    }
+                </Dropdown>
             </span>
         )
     }
 
-    handleClick = (size: number) => (e) => {
+    renderDropdownTarget = (controller: DropdownController) => {
+        const { size, css } = this.props
+        const styles = {
+            button: {
+                fontWeight: 'bold',
+            },
+            icon: {
+                marginLeft: '0.25rem',
+            },
+        }
+
+        return (
+            <a className={css(styles.button)} onClick={controller.toggle}>
+                {size} <span className={css(styles.icon)}>▾</span>
+            </a>
+        )
+    }
+
+    handleClick = (ctrl: DropdownController, size: number) => (e) => {
+        ctrl.hide()
         this.props.onChange(size)
-        this.toggleShow()
     }
 
-    toggleShow = () => {
-        this.setState({ show: !this.state.show })
-    }
-
-    triggerRef = (elem) => {
-        this.trigger = elem
+    hide = () => {
+        this.setState({ show: false })
     }
 }

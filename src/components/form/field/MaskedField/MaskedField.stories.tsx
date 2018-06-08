@@ -5,6 +5,7 @@ import * as React from 'react'
 import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
+import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { MaskedField } from './MaskedField'
 import * as Doc from './MaskedField.md'
@@ -16,7 +17,7 @@ storiesOf('Form/Fields', module)
     .addDecorator(withTheme())
     .addDecorator(withForm())
     .add('MaskedField', () => (
-        <>
+        <VFlow>
             <MaskedField
                 mask={['(', /\d/, /\d/, /\d/, ')']}
                 name='generico'
@@ -39,5 +40,5 @@ storiesOf('Form/Fields', module)
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
             />
-        </>
+        </VFlow>
     ))

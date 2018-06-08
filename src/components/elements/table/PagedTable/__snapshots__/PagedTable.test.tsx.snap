@@ -46,7 +46,7 @@ exports[`should render correctly 1`] = `
   border-bottom: 1px solid #e6e6e6;
 }
 
-.emotion-38 {
+.emotion-50 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -76,7 +76,7 @@ exports[`should render correctly 1`] = `
   border-top: none;
 }
 
-.emotion-37 {
+.emotion-49 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -96,9 +96,13 @@ exports[`should render correctly 1`] = `
   border-top: none;
 }
 
-.emotion-28 {
+.emotion-40 {
   position: relative;
   margin-left: 0.5rem;
+}
+
+.emotion-28 {
+  display: inline-block;
 }
 
 .emotion-27 {
@@ -109,7 +113,54 @@ exports[`should render correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-36 {
+.emotion-38 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-37 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4d4d4d;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #ffffff;
+}
+
+.emotion-30 {
+  margin: 0;
+}
+
+.emotion-30:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-29 {
+  padding: 1rem;
+  display: block;
+}
+
+.emotion-29:hover {
+  background: #f2f2f7;
+}
+
+.emotion-48 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -122,11 +173,11 @@ exports[`should render correctly 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-36 > *:not(:last-child) {
+.emotion-48 > *:not(:last-child) {
   margin-right: 0.25rem;
 }
 
-.emotion-31 {
+.emotion-43 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -159,16 +210,16 @@ exports[`should render correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-31:disabled {
+.emotion-43:disabled {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.emotion-31:not(:disabled) {
+.emotion-43:not(:disabled) {
   cursor: pointer;
 }
 
-.emotion-31 > span {
+.emotion-43 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -181,40 +232,40 @@ exports[`should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-31 > span > :not(:last-child) {
+.emotion-43 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-31:not(:disabled):active {
+.emotion-43:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-31:focus {
+.emotion-43:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-31:not(:disabled):hover {
+.emotion-43:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
 }
 
-.emotion-31:hover {
+.emotion-43:hover {
   background: #e6e6e6;
 }
 
-.emotion-30 {
+.emotion-42 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-29 {
+.emotion-41 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-32 {
+.emotion-44 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -232,36 +283,36 @@ exports[`should render correctly 1`] = `
   text-align: center;
 }
 
-.emotion-32::-webkit-input-placeholder {
+.emotion-44::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-32::-moz-placeholder {
+.emotion-44::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-32:-ms-input-placeholder {
+.emotion-44:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-32::placeholder {
+.emotion-44::placeholder {
   color: #cccccc;
 }
 
-.emotion-32:disabled {
+.emotion-44:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-32:not(:disabled):hover {
+.emotion-44:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-32:not(:disabled):focus {
+.emotion-44:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-32:not(:disabled):active {
+.emotion-44:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
@@ -399,7 +450,7 @@ exports[`should render correctly 1`] = `
     </tbody>
   </table>
   <div
-    class="emotion-38"
+    class="emotion-50"
   >
     <span
       class="emotion-25"
@@ -411,41 +462,94 @@ exports[`should render correctly 1`] = `
       </span>
     </span>
     <div
-      class="emotion-37"
+      class="emotion-49"
     >
       <span>
         Mostrar:
         <span
-          class="emotion-28"
+          class="emotion-40"
         >
-          <a
-            class="emotion-27"
+          <div
+            class="emotion-28"
           >
-            10 
-            <span
-              class="emotion-26"
+            <div
+              class="emotion-28"
             >
-              ▾
-            </span>
-          </a>
+              <a
+                class="emotion-27"
+              >
+                10 
+                <span
+                  class="emotion-26"
+                >
+                  ▾
+                </span>
+              </a>
+            </div>
+            <div
+              class="emotion-38"
+              style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+            >
+              <ul
+                class="emotion-37"
+              >
+                <li
+                  class="emotion-30"
+                >
+                  <a
+                    class="emotion-29"
+                  >
+                    10
+                  </a>
+                </li>
+                <li
+                  class="emotion-30"
+                >
+                  <a
+                    class="emotion-29"
+                  >
+                    30
+                  </a>
+                </li>
+                <li
+                  class="emotion-30"
+                >
+                  <a
+                    class="emotion-29"
+                  >
+                    50
+                  </a>
+                </li>
+                <li
+                  class="emotion-30"
+                >
+                  <a
+                    class="emotion-29"
+                  >
+                    100
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </span>
       </span>
       <div
-        class="emotion-36"
+        class="emotion-48"
       >
         <button
-          class="emotion-31"
+          class="emotion-43"
           disabled=""
           title="Página anterior"
           type="button"
         >
           <span>
             <span
-              class="emotion-30"
+              class="emotion-42"
             >
               <svg
                 aria-hidden="true"
-                class="emotion-29"
+                class="emotion-41"
                 height="1em"
                 viewBox="0 0 24 24"
                 width="1em"
@@ -459,7 +563,7 @@ exports[`should render correctly 1`] = `
           </span>
         </button>
         <input
-          class="emotion-32"
+          class="emotion-44"
           type="text"
           value="1"
         />
@@ -467,18 +571,18 @@ exports[`should render correctly 1`] = `
           de 1
         </span>
         <button
-          class="emotion-31"
+          class="emotion-43"
           disabled=""
           title="Próxima página"
           type="button"
         >
           <span>
             <span
-              class="emotion-30"
+              class="emotion-42"
             >
               <svg
                 aria-hidden="true"
-                class="emotion-29"
+                class="emotion-41"
                 height="1em"
                 viewBox="0 0 24 24"
                 width="1em"
