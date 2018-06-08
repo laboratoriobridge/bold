@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 
-import { PopperFocus, PopperFocusProps } from '../poppers/PopperFocus'
+import { PopperFocus, PopperFocusProps } from '../Popper/PopperFocus'
 
 export interface TooltipProps {
     text: string
