@@ -114,8 +114,8 @@ exports[`rendering should render correctly 1`] = `
   border-radius: 4px;
   color: #666666;
   background-color: #056DFF;
-  border: 1px solid #056DFF;
   color: #ffffff;
+  border: 1px solid #056DFF;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }

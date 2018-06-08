@@ -14,6 +14,7 @@ import { ButtonLink } from './ButtonLink/ButtonLink'
 const typeOptions: { [key in Type]: string } = {
     'normal': 'normal',
     'primary': 'primary',
+    'danger': 'danger',
 }
 
 const skinOptions: { [key in Skins]: string } = {

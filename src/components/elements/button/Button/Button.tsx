@@ -57,6 +57,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             baseStyles.button,
             skinStyles.button,
             type === 'primary' && skinStyles.primary,
+            type === 'danger' && skinStyles.danger,
             size === 'large' && sizeStyles.large,
             size === 'medium' && sizeStyles.medium,
             size === 'small' && sizeStyles.small,
