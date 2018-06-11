@@ -22,7 +22,7 @@ export class Dropdown extends React.PureComponent<DropdownProps> {
         const { placement, renderTarget, children, ...rest } = this.props
 
         return (
-            <Popper placement={placement} renderTarget={renderTarget}>
+            <Popper placement={placement} renderTarget={renderTarget} offset={0.25}>
                 {(ctrl: PopperController) => (
                     <DropdownMenu {...rest}>
                         {children(ctrl)}

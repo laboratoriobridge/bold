@@ -18,7 +18,7 @@ export class Tooltip extends React.PureComponent<TooltipProps> {
 
     render() {
         return (
-            <PopperFocus placement={this.props.placement} renderPopper={this.renderPopper}>
+            <PopperFocus placement={this.props.placement} renderPopper={this.renderPopper} offset={0.25}>
                 {this.props.children}
             </PopperFocus>
         )

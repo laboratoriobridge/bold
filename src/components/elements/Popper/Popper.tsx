@@ -6,15 +6,19 @@ import { withStyles, WithStylesProps } from '../../../styles'
 import { PopperContent, PopperContentProps } from './PopperContent'
 
 export interface PopperProps extends WithStylesProps {
+    closeOnOutsideClick?: boolean
     placement?: PopperContentProps['placement']
+    offset?: PopperContentProps['offset']
     renderTarget(controller: PopperController): React.ReactNode
     children(controller: PopperController): React.ReactNode
+    control?(controller: PopperController): void
 }
 
 export interface PopperController {
     show(): any
     hide(): any
     toggle(): any
+    isShown(): boolean
 }
 
 export interface PopperState {
@@ -26,8 +30,11 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
 
     static defaultProps: PopperProps = {
         placement: 'bottom',
+        closeOnOutsideClick: true,
+        offset: 0,
         renderTarget: () => null,
         children: () => null,
+        control: () => null,
     }
 
     private wrapperRef
@@ -42,15 +49,22 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
             show: this.show,
             hide: this.hide,
             toggle: this.toggle,
+            isShown: this.isShown,
         }
     }
 
     componentDidMount() {
-        document.addEventListener('mousedown', this.handleClickOutside)
+        if (this.props.closeOnOutsideClick) {
+            document.addEventListener('mousedown', this.handleClickOutside)
+        }
+
+        this.props.control(this.controller)
     }
 
     componentWillUnmount() {
-        document.removeEventListener('mousedown', this.handleClickOutside)
+        if (this.props.closeOnOutsideClick) {
+            document.removeEventListener('mousedown', this.handleClickOutside)
+        }
     }
 
     handleClickOutside = (event) => {
@@ -80,7 +94,7 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
                             </div>
                         )}
                     </Reference>
-                    <PopperContent show={this.state.show} placement={this.props.placement}>
+                    <PopperContent show={this.state.show} placement={this.props.placement} offset={this.props.offset}>
                         {children(this.controller)}
                     </PopperContent>
                 </Manager>
@@ -98,5 +112,9 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
 
     hide = () => {
         this.setState({ show: false })
+    }
+
+    isShown = () => {
+        return this.state.show
     }
 }
