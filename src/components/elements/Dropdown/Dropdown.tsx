@@ -4,8 +4,7 @@ import { Popper, PopperController, PopperProps } from '../Popper'
 
 import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
 
-export interface DropdownProps extends DropdownMenuProps, PopperProps {
-    placement?: PopperProps['placement']
+export interface DropdownProps extends DropdownMenuProps {
     renderTarget: PopperProps['renderTarget']
     children: PopperProps['children']
 }
@@ -13,16 +12,15 @@ export interface DropdownProps extends DropdownMenuProps, PopperProps {
 export class Dropdown extends React.PureComponent<DropdownProps> {
 
     static defaultProps: DropdownProps = {
-        placement: 'bottom',
         renderTarget: () => null,
         children: () => null,
     }
 
     render() {
-        const { placement, renderTarget, children, ...rest } = this.props
+        const { renderTarget, children, ...rest } = this.props
 
         return (
-            <Popper placement={placement} renderTarget={renderTarget} offset={0.25}>
+            <Popper renderTarget={renderTarget} placement='bottom' offset={0.25}>
                 {(ctrl: PopperController) => (
                     <DropdownMenu {...rest}>
                         {children(ctrl)}
