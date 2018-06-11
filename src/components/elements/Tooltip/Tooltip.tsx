@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 
-import { PopperFocus, PopperFocusProps } from '../poppers/PopperFocus'
+import { PopperFocus, PopperFocusProps } from '../Popper/PopperFocus'
 
 export interface TooltipProps {
     text: string
@@ -18,7 +18,7 @@ export class Tooltip extends React.PureComponent<TooltipProps> {
 
     render() {
         return (
-            <PopperFocus placement={this.props.placement} renderPopper={this.renderPopper}>
+            <PopperFocus placement={this.props.placement} renderPopper={this.renderPopper} offset={0.25}>
                 {this.props.children}
             </PopperFocus>
         )

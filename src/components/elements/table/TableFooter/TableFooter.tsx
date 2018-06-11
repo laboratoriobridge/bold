@@ -5,8 +5,9 @@ import { pluralize } from '../../../../util/string'
 import { Paginator } from '../../Paginator/Paginator'
 import { Number } from '../../textual/Number/Number'
 
-import { Dropdown, DropdownController } from '../../Dropdown/Dropdown'
+import { Dropdown } from '../../Dropdown/Dropdown'
 import { DropdownItem } from '../../Dropdown/DropdownMenu'
+import { PopperController } from '../../Popper'
 
 export interface TableFooterProps extends WithStylesProps {
     page: number
@@ -110,7 +111,7 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
         )
     }
 
-    renderDropdownTarget = (controller: DropdownController) => {
+    renderDropdownTarget = (controller: PopperController) => {
         const { size, css } = this.props
         const styles = {
             button: {
@@ -128,7 +129,7 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
         )
     }
 
-    handleClick = (ctrl: DropdownController, size: number) => (e) => {
+    handleClick = (ctrl: PopperController, size: number) => (e) => {
         ctrl.hide()
         this.props.onChange(size)
     }

@@ -19,7 +19,7 @@ storiesOf('Components/Dropdown', module)
         <HFlow hSpacing={0.5} alignItems='center'>
             <Dropdown
                 renderTarget={(ctrl) => (
-                    <Button label='Menu' size='small' onClick={ctrl.toggle} />
+                    <Button label='Menu' size='small' onClick={ctrl.show} />
                 )}
             >
                 {ctrl => (
@@ -32,7 +32,7 @@ storiesOf('Components/Dropdown', module)
             </Dropdown>
             <Dropdown
                 renderTarget={(ctrl) => (
-                    <Button icon='dots' skin='ghost' size='small' onClick={ctrl.toggle} />
+                    <Button icon='dots' skin='ghost' size='small' onClick={ctrl.show} />
                 )}
             >
                 {ctrl => (
