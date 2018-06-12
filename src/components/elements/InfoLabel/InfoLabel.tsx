@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export interface InfoLabelProps extends WithStylesProps {
     title: string
@@ -14,7 +14,7 @@ export class InfoLabel extends React.PureComponent<InfoLabelProps> {
 
     render() {
         const { css, theme, title, children, titleStyles, childStyles, placeholder } = this.props
-        const styles = {
+        const styles: Styles = {
             infoLabel: {
                 lineHeight: 1.5,
             },

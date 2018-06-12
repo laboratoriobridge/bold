@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Button } from '../../../../../components/elements/button/Button/Button'
-import { withStyles, WithStylesProps } from '../../../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
 
 export interface WizardFooterProps extends WithStylesProps {
     isFirstStep: boolean
@@ -14,7 +14,7 @@ export interface WizardFooterProps extends WithStylesProps {
 export class WizardFooter extends React.Component<WizardFooterProps> {
     render() {
         const { css, theme, isFirstStep, isLastStep, onPrevious, onSubmit } = this.props
-        const styles = {
+        const styles: Styles = {
             container: {
                 borderTop: '1px solid ' + theme.pallete.divider,
                 padding: '1rem 0',

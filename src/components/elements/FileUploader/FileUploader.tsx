@@ -2,7 +2,7 @@ import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 import Dropzone, * as DropzoneAll from 'react-dropzone'
 
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { format } from '../../../util/byte'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Icon } from '../Icon/Icon'
@@ -45,7 +45,7 @@ export class FileUploader extends React.Component<FileUploaderProps> {
             theme,
         } = this.props
 
-        const styles = {
+        const styles: Styles = {
             dropzone: {
                 cursor: 'pointer',
                 padding: '0.25rem',
@@ -113,7 +113,7 @@ interface FileDetailsProps {
 class FileDetails extends React.Component<FileDetailsProps> {
 
     render() {
-        const styles = {
+        const styles: Styles = {
             info: {
                 flexGrow: 1,
                 marginLeft: '1rem',

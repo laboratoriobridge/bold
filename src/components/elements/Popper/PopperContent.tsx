@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Popper, PopperProps } from 'react-popper'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { Omit } from '../../../util/types'
 
 export interface PopperContentProps extends Omit<PopperProps, 'children'>, WithStylesProps {
@@ -18,7 +18,7 @@ export class PopperContent extends React.Component<PopperContentProps> {
 
     render() {
         const { css, theme, show, offset, ...rest } = this.props
-        const styles = {
+        const styles: Styles = {
             content: {
                 transition: 'opacity .2s',
                 zIndex: theme.zIndex.overlays,

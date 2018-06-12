@@ -1,5 +1,5 @@
 export * from './utils'
-export { withStyles, WithStylesProps } from './withStyles'
+export { withStyles, WithStylesProps, Styles } from './withStyles'
 
 export { ThemeProvider, ThemeProviderProps } from './theme/ThemeContext'
 export { CssGlobal, CssGlobalProps } from './theme/CssGlobal'

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export interface SpinnerProps extends WithStylesProps {
     size?: number
@@ -16,7 +16,7 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
 
     render() {
         const { css, theme, size, borderWidth } = this.props
-        const styles = {
+        const styles: Styles = {
             pointerEvents: 'none',
             'span': {
                 color: 'transparent',

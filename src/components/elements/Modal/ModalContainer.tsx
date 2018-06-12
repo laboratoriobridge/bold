@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { Button } from '../button/Button/Button'
 
 export type ModalSize = 'small' | 'large'
@@ -20,7 +20,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
 
     render() {
         const { css, theme, size, onClose } = this.props
-        const styles = {
+        const styles: Styles = {
             wrapper: {
                 border: `1px solid ${theme.pallete.divider}`,
                 boxShadow: `0px 2px 4px 0 rgba(0, 0, 0, 0.08)`,

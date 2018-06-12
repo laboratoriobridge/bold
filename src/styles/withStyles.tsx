@@ -11,6 +11,10 @@ export interface WithStylesProps {
     css?: (...styles: Interpolation[]) => string
 }
 
+export interface Styles {
+    [key: string]: Interpolation
+}
+
 export function withStyles<P extends WithStylesProps,
     T extends React.ComponentClass<P>>(WrappedComponent: T): T {
     class WithStyles extends React.Component<P> {

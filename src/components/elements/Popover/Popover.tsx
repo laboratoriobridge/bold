@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { PopperFocus, PopperFocusProps } from '../Popper/PopperFocus'
 
 export interface PopoverProps {
@@ -42,7 +42,7 @@ export interface PopoverBaseProps extends WithStylesProps {
 export class PopoverBase extends React.PureComponent<PopoverBaseProps> {
     render() {
         const { css, theme, title } = this.props
-        const styles = {
+        const styles: Styles = {
             base: {
                 borderRadius: theme.radius.main,
                 maxWidth: 300,

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { focusBoxShadow, Theme, withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
@@ -12,7 +12,7 @@ export interface TextInputProps extends PublicInputProps, WithStylesProps {
     icon?: InputIconDecoratorProps
 }
 
-export const createStyles = (theme: Theme) => ({
+export const createStyles = (theme: Theme): Styles => ({
     input: {
         backgroundColor: theme.pallete.surface.main,
         border: 'solid 1px ' + theme.pallete.gray.c80,

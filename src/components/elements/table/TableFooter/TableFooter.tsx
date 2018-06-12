@@ -1,13 +1,12 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { pluralize } from '../../../../util/string'
-import { Paginator } from '../../Paginator/Paginator'
-import { Number } from '../../textual/Number/Number'
-
 import { Dropdown } from '../../Dropdown/Dropdown'
 import { DropdownItem } from '../../Dropdown/DropdownMenu'
+import { Paginator } from '../../Paginator/Paginator'
 import { PopperController } from '../../Popper'
+import { Number } from '../../textual/Number/Number'
 
 export interface TableFooterProps extends WithStylesProps {
     page: number
@@ -22,7 +21,7 @@ export interface TableFooterProps extends WithStylesProps {
 export class TableFooter extends React.Component<TableFooterProps> {
     render() {
         const { css, theme } = this.props
-        const styles = {
+        const styles: Styles = {
             footer: {
                 fontSize: '0.75rem',
                 display: 'flex',
@@ -85,7 +84,7 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
 
     render() {
         const { options, css } = this.props
-        const styles = {
+        const styles: Styles = {
             container: {
                 position: 'relative',
                 marginLeft: '0.5rem',
@@ -113,7 +112,7 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
 
     renderDropdownTarget = (controller: PopperController) => {
         const { size, css } = this.props
-        const styles = {
+        const styles: Styles = {
             button: {
                 fontWeight: 'bold',
             },

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { AlignItems, JustifyContent } from '../../grid/Grid/Grid'
 import { Spacing } from '../Spacing/Spacing'
 
@@ -49,7 +49,7 @@ export class Flow extends React.PureComponent<FlowProps> {
     renderChild = (child) => {
         const { direction } = this.props
 
-        const styles = {
+        const styles: Styles = {
             child: {
                 ':first-child': {
                     marginTop: direction === 'vertical' && 0,
