@@ -1,4 +1,4 @@
-import { css } from 'emotion'
+import { css, Interpolation } from 'emotion'
 import { withTheme } from 'emotion-theming'
 import * as React from 'react'
 
@@ -8,7 +8,7 @@ export interface WithStylesProps {
     styles?: any
 
     theme?: Theme
-    css?: (...styles: any[]) => string
+    css?: (...styles: Interpolation[]) => string
 }
 
 export function withStyles<P extends WithStylesProps,
