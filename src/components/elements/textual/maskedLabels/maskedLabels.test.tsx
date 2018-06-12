@@ -8,6 +8,7 @@ import { Cep, Cpf, Telefone } from './maskedLabels'
 describe('Telefone', () => {
     it('deve formatar um telefone corretamente', () => {
         expect(mount(withTheme(<Telefone value='47997773734' />)).text()).toEqual('(47) 99777-3734')
+        expect(mount(withTheme(<Telefone value='4799777373' />)).text()).toEqual('(47) 9977-7373')
         expect(mount(withTheme(<Telefone value='123' />)).text()).toEqual('(12) 3')
         expect(mount(withTheme(<span><Telefone value='' /></span>)).text()).toEqual('')
         expect(mount(withTheme(<span><Telefone value={null} /></span>)).text()).toEqual('')
