@@ -5,18 +5,18 @@ import { conformToMask } from 'text-mask-core'
 import { masks } from '../../../../util/masks'
 import { MaskType } from '../../../form/input/MaskedInput/MaskedInput'
 
-export interface GenericMaskedLabelProps<T> {
-    value: T
+export interface GenericMaskedLabelProps {
+    value: string
 }
 
-function createMaskedLabel<T>(displayName: string, mask: MaskType) {
-    return class extends React.PureComponent<GenericMaskedLabelProps<T>> {
+function createMaskedLabel(displayName: string, mask: MaskType) {
+    return class extends React.PureComponent<GenericMaskedLabelProps> {
         static displayName = displayName
 
         render() {
             const { value } = this.props
 
-            if (!value) {
+            if (!value || value.trim() === '') {
                 return null
             }
 
@@ -26,6 +26,6 @@ function createMaskedLabel<T>(displayName: string, mask: MaskType) {
     }
 }
 
-export const Telefone = createMaskedLabel<string>('Telefone', masks.telefone)
-export const Cpf = createMaskedLabel<string>('Cpf', masks.cpf)
-export const Cep = createMaskedLabel<string>('Cep', masks.cep)
+export const Telefone = createMaskedLabel('Telefone', masks.telefone)
+export const Cpf = createMaskedLabel('Cpf', masks.cpf)
+export const Cep = createMaskedLabel('Cep', masks.cep)
