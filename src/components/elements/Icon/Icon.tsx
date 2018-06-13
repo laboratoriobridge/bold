@@ -1,7 +1,7 @@
-import { css as emotionCss } from 'emotion'
+import { css as emotionCss, Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { TextColor, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, TextColor, withStyles, WithStylesProps } from '../../../styles'
 import { getTextColor } from '../../../styles/theme/createTheme'
 
 import { IconMap, Icons } from './generated/Icons'
@@ -11,6 +11,7 @@ export interface IconProps extends WithStylesProps {
     color?: TextColor
     size?: number
     title?: string
+    style?: Interpolation
 }
 
 @withStyles
@@ -23,7 +24,7 @@ export class Icon extends React.PureComponent<IconProps> {
     render() {
         const SelectedIcon = IconMap[this.props.icon]
 
-        const styles = {
+        const styles: Styles = {
             icon: {
                 fill: this.props.color ? getTextColor(this.props.theme, this.props.color) : 'currentColor',
                 fontSize: this.props.size && this.props.size + 'rem',
@@ -34,7 +35,7 @@ export class Icon extends React.PureComponent<IconProps> {
         }
 
         return (
-            <span title={this.props.title} className={this.props.css(styles.span)}>
+            <span title={this.props.title} className={this.props.css(styles.span, this.props.style)}>
                 <SelectedIcon className={emotionCss(styles.icon)} aria-hidden='true' />
             </span>
         )

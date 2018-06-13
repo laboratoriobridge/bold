@@ -5,8 +5,6 @@ import * as React from 'react'
 import { Theme } from './theme/createTheme'
 
 export interface WithStylesProps {
-    styles?: any
-
     theme?: Theme
     css?: (...styles: Interpolation[]) => string
 }
@@ -20,20 +18,13 @@ export function withStyles<P extends WithStylesProps,
     class WithStyles extends React.Component<P> {
 
         render() {
-            const { styles, ...rest } = this.props as any
-
             return (
                 <WrappedComponent
-                    {...rest}
-                    css={this.css}
+                    {...this.props}
+                    css={css}
                 />
             )
         }
-
-        private css = (...styles) => {
-            return css(styles, this.props.styles)
-        }
-
     }
 
     const withThemeComponent = withTheme<P, Theme>(WithStyles)

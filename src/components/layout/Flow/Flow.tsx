@@ -67,7 +67,7 @@ export class Flow extends React.PureComponent<FlowProps> {
 
         return child && (
             <Spacing
-                styles={styles.child}
+                style={styles.child}
                 top={this.props.vSpacing / 2}
                 bottom={this.props.vSpacing / 2}
                 left={this.props.hSpacing / 2}

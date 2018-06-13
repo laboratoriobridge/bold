@@ -23,7 +23,7 @@ export class HeadingSection extends React.Component<HeadingSectionProps> {
 
         return (
             <div className={css(styles.section)}>
-                <Heading level={this.props.level} styles={styles.title}>{this.props.title}</Heading>
+                <Heading level={this.props.level} style={styles.title}>{this.props.title}</Heading>
                 {this.props.children}
             </div>
         )

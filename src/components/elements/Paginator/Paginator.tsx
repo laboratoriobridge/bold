@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles/withStyles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
 import { Button } from '../button/Button/Button'
 
@@ -47,7 +47,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
     render() {
         const { css, theme, total } = this.props
-        const styles = {
+        const styles: Styles = {
             paginator: {
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -78,7 +78,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
         return (
             <div className={css(styles.paginator)}>
                 <Button
-                    styles={styles.button}
+                    style={styles.button}
                     size='small'
                     skin='ghost'
                     icon='angleLeft'
@@ -88,7 +88,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 />
 
                 <TextInput
-                    styles={styles.input}
+                    style={styles.input}
                     value={this.state.inputValue}
                     onChange={this.handleInputChange}
                     onBlur={this.handleInputBlur}
@@ -98,7 +98,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 <span>de {total}</span>
 
                 <Button
-                    styles={styles.button}
+                    style={styles.button}
                     size='small'
                     skin='ghost'
                     icon='angleRight'

@@ -73,7 +73,6 @@ exports[`should render correctly 1`] = `
   align-items: center;
   padding-right: 1rem;
   padding-left: 1rem;
-  border-top: none;
 }
 
 .emotion-49 {
@@ -93,7 +92,6 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 4px 1rem;
-  border-top: none;
 }
 
 .emotion-40 {

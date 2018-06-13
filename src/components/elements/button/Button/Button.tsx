@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
@@ -12,6 +13,7 @@ export interface ButtonProps extends SkinProps, BaseButtonProps, WithStylesProps
     label?: string
     loading?: boolean
     block?: boolean
+    style?: Interpolation
 }
 
 export interface ButtonState {
@@ -46,6 +48,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             theme,
             type,
             block,
+            style,
             ...rest,
         } = this.props
 
@@ -62,7 +65,8 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             size === 'medium' && sizeStyles.medium,
             size === 'small' && sizeStyles.small,
             (this.state.loading || loading) && baseStyles.loading,
-            block && baseStyles.block
+            block && baseStyles.block,
+            style
         )
 
         return (

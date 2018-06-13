@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Spinner } from '../../../elements/Spinner/Spinner'
 import { TableCell, TableRow } from '../Table'
 
@@ -17,7 +17,7 @@ export class TableLoadingRow extends React.PureComponent<TableLoadingRowProps> {
 
     render() {
         const { css, theme, colSpan } = this.props
-        const styles = {
+        const styles: Styles = {
             cell: {
                 background: theme.pallete.surface.background,
                 color: theme.pallete.primary.main,
@@ -34,7 +34,7 @@ export class TableLoadingRow extends React.PureComponent<TableLoadingRowProps> {
         }
         return (
             <TableRow>
-                <TableCell colSpan={colSpan} styles={styles.cell}>
+                <TableCell colSpan={colSpan} style={styles.cell}>
                     <div className={css(styles.container)}>
                         <Spinner />
                         {this.props.message}

@@ -30,7 +30,7 @@ export class SortableLabel extends React.Component<SortableLabelProps> {
             <span className={css(styles.wrapper)} onClick={this.handleClick}>
                 {this.props.children}
                 <Icon
-                    styles={{ marginLeft: '0.25rem' }}
+                    style={{ marginLeft: '0.25rem' }}
                     color={icon === 'sort' ? 'gray80' : 'primary'}
                     size={1}
                     icon={icon}
