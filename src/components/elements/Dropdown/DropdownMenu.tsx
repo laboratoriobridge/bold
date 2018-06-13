@@ -27,6 +27,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 width: 'auto',
                 minWidth: '150px',
                 background: theme.pallete.surface.main,
+                textAlign: 'left',
             },
         }
         return (

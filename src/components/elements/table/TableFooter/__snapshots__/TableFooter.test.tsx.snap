@@ -93,6 +93,7 @@ exports[`deve renderizar corretamente 1`] = `
   width: auto;
   min-width: 150px;
   background: #ffffff;
+  text-align: left;
 }
 
 .emotion-5 {
