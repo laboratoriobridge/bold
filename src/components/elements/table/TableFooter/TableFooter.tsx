@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
@@ -13,6 +14,7 @@ export interface TableFooterProps extends WithStylesProps {
     totalPages: number
     totalElements: number
     pageSize: number
+    style?: Interpolation
     onPageChange(page: number): void
     onSizeChange(size: number): void
 }
@@ -20,7 +22,7 @@ export interface TableFooterProps extends WithStylesProps {
 @withStyles
 export class TableFooter extends React.Component<TableFooterProps> {
     render() {
-        const { css, theme } = this.props
+        const { css, theme, style } = this.props
         const styles: Styles = {
             footer: {
                 fontSize: '0.75rem',
@@ -45,7 +47,7 @@ export class TableFooter extends React.Component<TableFooterProps> {
             },
         }
         return (
-            <div className={css(styles.footer)}>
+            <div className={css(styles.footer, style)}>
                 <span className={css(styles.results)}>
                     <Number
                         value={this.props.totalElements}

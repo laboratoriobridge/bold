@@ -80,12 +80,12 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
                             skin='ghost'
                             icon={icon}
                             tabIndex={-1}
-                            styles={styles.icon}
                             onClick={this.props.onClick}
+                            style={styles.icon}
                         /> :
                         <Icon
                             icon={icon}
-                            styles={styles.icon}
+                            style={styles.icon}
                         />
                     }
                 </span>

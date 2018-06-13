@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles/index'
@@ -8,6 +9,7 @@ export interface SpacingProps extends WithStylesProps {
     bottom?: number
     left?: number
     block?: boolean
+    style?: Interpolation
 }
 
 @withStyles
@@ -27,7 +29,7 @@ export class Spacing extends React.PureComponent<SpacingProps> {
         }
 
         return (
-            <div className={this.props.css(styles)}>{this.props.children}</div>
+            <div className={this.props.css(styles, this.props.style)}>{this.props.children}</div>
         )
     }
 }

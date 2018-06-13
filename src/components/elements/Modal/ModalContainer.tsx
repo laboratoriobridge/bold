@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
@@ -7,6 +8,7 @@ export type ModalSize = 'small' | 'large'
 
 export interface ModalContainerProps extends WithStylesProps {
     size?: ModalSize
+    style?: Interpolation
     onClose?(): any
 }
 
@@ -19,7 +21,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
     }
 
     render() {
-        const { css, theme, size, onClose } = this.props
+        const { css, theme, size, style, onClose } = this.props
         const styles: Styles = {
             wrapper: {
                 border: `1px solid ${theme.pallete.divider}`,
@@ -39,8 +41,8 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
             },
         }
         return (
-            <div className={css(styles.wrapper, styles.sizes[size])}>
-                <Button size='small' skin='ghost' styles={styles.closeButton} icon='times' onClick={onClose} />
+            <div className={css(styles.wrapper, styles.sizes[size], style)}>
+                <Button size='small' skin='ghost' style={styles.closeButton} icon='times' onClick={onClose} />
                 {this.props.children}
             </div>
         )

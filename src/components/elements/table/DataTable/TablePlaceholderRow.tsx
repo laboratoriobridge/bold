@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { TableCell, TableRow } from '../Table'
 
 export interface TablePlaceholderRowProps extends WithStylesProps {
@@ -16,7 +16,7 @@ export class TablePlaceholderRow extends React.PureComponent<TablePlaceholderRow
 
     render() {
         const { theme, colSpan, message } = this.props
-        const styles = {
+        const styles: Styles = {
             cell: {
                 color: theme.pallete.text.secondary,
                 fontStyle: 'italic',
@@ -25,7 +25,7 @@ export class TablePlaceholderRow extends React.PureComponent<TablePlaceholderRow
         }
         return (
             <TableRow>
-                <TableCell colSpan={colSpan} styles={styles.cell}>
+                <TableCell colSpan={colSpan} style={styles.cell}>
                     {message}
                 </TableCell>
             </TableRow>

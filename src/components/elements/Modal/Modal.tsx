@@ -45,7 +45,7 @@ export class Modal extends React.PureComponent<ModalProps> {
 
         return (
             <div className={css(styles.wrapper, open ? styles.open : styles.close)}>
-                <ModalContainer styles={styles.container} {...rest}>
+                <ModalContainer style={styles.container} {...rest}>
                     <ModalBody>
                         {this.props.children}
                     </ModalBody>

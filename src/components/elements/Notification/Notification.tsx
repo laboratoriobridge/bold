@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { PageContainer } from '../../..'
@@ -55,12 +56,13 @@ export interface NotificationProps extends WithStylesProps {
     onMouseEnter?: any,
     onMouseLeave?: any
     contentContainer?: boolean
+    style?: Interpolation
 }
 
 @withStyles
 export class Notification extends React.PureComponent<NotificationProps> {
     render() {
-        const { theme, css, styles, type, animated,
+        const { theme, css, style, type, animated,
             onCloseClick, onMouseEnter, onMouseLeave, contentContainer } = this.props
         const typeStyle = createTypesStyles(theme)
         const defaultStyles: Styles = {
@@ -98,7 +100,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
 
         return (
             <div
-                className={css(defaultStyles.notification, typeStyle[type].style, styles)}
+                className={css(defaultStyles.notification, typeStyle[type].style, style)}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
@@ -115,7 +117,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
 const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
     return (
         <>
-            <Icon icon={icon} styles={iconStyle} />
+            <Icon icon={icon} style={iconStyle} />
             <span className={childrenStyle}>{children}</span>
             {onCloseClick && <span className={closeButtonStyle}>
                 <Button size='small' skin='ghost' icon='times' onClick={onCloseClick} />
@@ -126,7 +128,7 @@ const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick,
 
 const ContainerContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
     return (
-        <PageContainer styles={{ paddingTop: '0', paddingBottom: '0' }}>
+        <PageContainer style={{ paddingTop: '0', paddingBottom: '0' }}>
             <SimpleContent
                 icon={icon}
                 iconStyle={iconStyle}
