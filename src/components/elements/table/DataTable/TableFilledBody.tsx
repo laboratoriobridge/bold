@@ -28,7 +28,7 @@ export class TableFilledBody extends React.PureComponent<TableFilledBodyProps> {
                         onClick={onRowClick && this.handleClick(row)}
                     >
                         {columns.map((col, colIdx) => (
-                            <TableCell key={colIdx} style={col.styles}>
+                            <TableCell key={colIdx} style={col.style}>
                                 {col.render(row)}
                             </TableCell>
                         ))}

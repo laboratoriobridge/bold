@@ -30,7 +30,7 @@ const createTable = (props: Partial<DataTableProps> = {}) => withTheme(
         columns={[
             { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
             { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
-            { name: 'age', header: 'Age', render: (row: Row) => row.age },
+            { name: 'age', header: 'Age', style: { textAlign: 'right' }, render: (row: Row) => row.age },
         ]}
         {...props}
     />

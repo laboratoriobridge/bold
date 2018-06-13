@@ -48,6 +48,14 @@ exports[`should render correctly 1`] = `
   border-bottom: 1px solid #e6e6e6;
 }
 
+.emotion-13 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #e6e6e6;
+  text-align: right;
+}
+
 <table
   class="emotion-24"
 >
@@ -134,7 +142,7 @@ exports[`should render correctly 1`] = `
         MARIA MACHADO DE JESUS
       </td>
       <td
-        class="emotion-11"
+        class="emotion-13"
       >
         42
       </td>
@@ -153,7 +161,7 @@ exports[`should render correctly 1`] = `
         JOSÉ DA SILVA MOREIRA
       </td>
       <td
-        class="emotion-11"
+        class="emotion-13"
       >
         34
       </td>
@@ -172,7 +180,7 @@ exports[`should render correctly 1`] = `
         ALICE BARBOSA
       </td>
       <td
-        class="emotion-11"
+        class="emotion-13"
       >
         27
       </td>

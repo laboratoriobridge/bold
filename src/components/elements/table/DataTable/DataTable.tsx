@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { SortDirection } from '../SortableLabel/SortableLabel'
@@ -11,7 +12,7 @@ export interface TableColumnConfig<T = any> {
     name: string
     header?: React.ReactNode
     sortable?: boolean
-    styles?: any
+    style?: Interpolation
     render(row: T): React.ReactNode
 }
 

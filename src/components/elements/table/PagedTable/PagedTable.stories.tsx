@@ -52,7 +52,7 @@ storiesOf('Components/Table', module)
                 { name: 'age', header: 'Age', sortable: true, render: (row: Row) => row.age },
                 {
                     name: 'buttons',
-                    styles: { textAlign: 'right' },
+                    style: { textAlign: 'right' },
                     render: (row: Row) => <Button size='small' skin='ghost' icon='pen' />,
                 },
             ]}
