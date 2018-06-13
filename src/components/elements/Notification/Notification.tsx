@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { PageContainer } from '../../..'
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
@@ -63,7 +63,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
         const { theme, css, styles, type, animated,
             onCloseClick, onMouseEnter, onMouseLeave, contentContainer } = this.props
         const typeStyle = createTypesStyles(theme)
-        const defaultStyles = {
+        const defaultStyles: Styles = {
             notification: {
                 animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
                 padding: '0 3rem',

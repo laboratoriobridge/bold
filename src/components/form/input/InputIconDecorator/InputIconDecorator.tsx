@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Button, ButtonProps } from '../../../elements/button/Button/Button'
 import { Icons } from '../../../elements/Icon/generated/Icons'
 import { Icon } from '../../../elements/Icon/Icon'
@@ -19,7 +19,7 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
 
     render() {
         const { css, theme, children, icon, position, onClick } = this.props
-        const styles = {
+        const styles: Styles = {
             wrapper: {
                 position: 'relative',
             },

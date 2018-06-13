@@ -1,4 +1,4 @@
-import { Theme } from '../../../../styles'
+import { Styles, Theme } from '../../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
@@ -26,7 +26,7 @@ export interface SkinProps {
     type?: Type
 }
 
-export const createBaseStyles = (theme: Theme) => ({
+export const createBaseStyles = (theme: Theme): Styles => ({
     button: {
         backfaceVisibility: 'hidden',
         display: 'inline-flex',
@@ -79,7 +79,7 @@ export const createBaseStyles = (theme: Theme) => ({
     },
 })
 
-export const createSizeStyles = (theme: Theme) => ({
+export const createSizeStyles = (theme: Theme): Styles => ({
     large: {
         padding: 'calc(1.25rem - 1px) 3.25rem',
         fontSize: '0.875rem',

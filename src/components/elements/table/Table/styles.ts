@@ -1,6 +1,6 @@
-import { Theme } from '../../../../styles'
+import { Styles, Theme } from '../../../../styles'
 
-export const createTableStyles = (theme: Theme) => ({
+export const createTableStyles = (theme: Theme): Styles => ({
     table: {
         width: '100%',
         borderCollapse: 'collapse',

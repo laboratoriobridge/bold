@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
 export type JustifyContent = 'flex-start' | 'flex-end' | 'center' | 'space-between' | 'space-around' | 'space-evenly'
@@ -16,8 +16,8 @@ export interface GridProps extends WithStylesProps, Pick<React.CSSProperties, 'a
 @withStyles
 export class Grid extends React.PureComponent<GridProps> {
     render() {
-        const { theme } = this.props
-        const styles = {
+        const { css, theme } = this.props
+        const styles: Styles = {
             grid: {
                 alignItems: this.props.alignItems,
                 display: 'flex',
@@ -38,7 +38,7 @@ export class Grid extends React.PureComponent<GridProps> {
             },
         }
 
-        const classes = this.props.css(
+        const classes = css(
             styles.grid,
             this.props.wrap && styles.wrap
         )

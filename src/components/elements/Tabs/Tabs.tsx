@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 
-const createStyles = (theme: Theme) => {
+const createStyles = (theme: Theme): Styles => {
     return {
         ul: {
             listStyle: 'none',

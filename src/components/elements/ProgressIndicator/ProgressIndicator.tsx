@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { TextColor, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, TextColor, withStyles, WithStylesProps } from '../../../styles'
 import { getTextColor } from '../../../styles/theme/createTheme'
 
 export interface ProgressIndicatorProps extends WithStylesProps {
@@ -26,7 +26,7 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
             theme,
         } = this.props
 
-        const styles = {
+        const styles: Styles = {
             progress: {
                 appearance: 'none',
                 border: 'none',

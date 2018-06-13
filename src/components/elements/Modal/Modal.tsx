@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalBody } from './ModalBody'
@@ -22,7 +22,7 @@ export class Modal extends React.PureComponent<ModalProps> {
 
     render() {
         const { open, renderFooter, onBackdropClick, css, theme, ...rest } = this.props
-        const styles = {
+        const styles: Styles = {
             wrapper: {
                 transition: 'all .2s',
             },
