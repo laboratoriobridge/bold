@@ -155,21 +155,13 @@ exports[`deve renderizar corretamente 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-18:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-18:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-18 > span {

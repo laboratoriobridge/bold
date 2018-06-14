@@ -37,6 +37,7 @@ exports[`rendering should render correctly 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
@@ -46,15 +47,6 @@ exports[`rendering should render correctly 1`] = `
   border: 1px solid #056DFF;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-0:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-0:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-0 > span {

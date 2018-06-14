@@ -65,6 +65,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             size === 'medium' && sizeStyles.medium,
             size === 'small' && sizeStyles.small,
             (this.state.loading || loading) && baseStyles.loading,
+            this.props.disabled && baseStyles.disabled,
             block && baseStyles.block,
             style
         )

@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`deve have tabIndex -1 and aria-disabled when disabled 1`] = `
 .emotion-0 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -28,21 +26,102 @@ exports[`deve renderizar corretamente 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-0:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
-.emotion-0:not(:disabled) {
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-0 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-0:not(button) {
+  pointer-events: none;
+}
+
+<a
+  aria-disabled="true"
+  class="emotion-0"
+  href="/"
+  tabindex="-1"
+>
+  <span>
+    <span>
+      Link to home
+    </span>
+  </span>
+</a>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
   cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-0 > span {
@@ -79,6 +158,10 @@ exports[`deve renderizar corretamente 1`] = `
   class="emotion-0"
   href="/"
 >
-  Link to home
+  <span>
+    <span>
+      Link to home
+    </span>
+  </span>
 </a>
 `;

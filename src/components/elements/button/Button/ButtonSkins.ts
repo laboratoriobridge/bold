@@ -38,13 +38,7 @@ export const createBaseStyles = (theme: Theme): Styles => ({
         transition: 'all .2s',
         fontWeight: 'bold',
         letterSpacing: 1,
-        ':disabled': {
-            cursor: 'not-allowed',
-            opacity: 0.5,
-        },
-        ':not(:disabled)': {
-            cursor: 'pointer',
-        },
+        cursor: 'pointer',
         '& > span': {
             alignItems: 'center',
             display: 'inline-flex',
@@ -52,6 +46,14 @@ export const createBaseStyles = (theme: Theme): Styles => ({
             '& > :not(:last-child)': {
                 marginRight: '0.5rem',
             },
+        },
+    },
+    disabled: {
+        cursor: 'not-allowed',
+        opacity: 0.5,
+
+        '&:not(button)': {
+            pointerEvents: 'none',
         },
     },
     loading: {

@@ -43,21 +43,13 @@ exports[`deve renderizar corretamente 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-2:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-2:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-2 > span {
@@ -238,7 +230,7 @@ exports[`deve renderizar corretamente 2`] = `
   margin-right: 0.25rem;
 }
 
-.emotion-2 {
+.emotion-6 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -263,6 +255,7 @@ exports[`deve renderizar corretamente 2`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -271,16 +264,7 @@ exports[`deve renderizar corretamente 2`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-2:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-2:not(:disabled) {
-  cursor: pointer;
-}
-
-.emotion-2 > span {
+.emotion-6 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -293,24 +277,24 @@ exports[`deve renderizar corretamente 2`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-6 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
 }
 
-.emotion-2:hover {
+.emotion-6:hover {
   background: #e6e6e6;
 }
 
@@ -378,6 +362,80 @@ exports[`deve renderizar corretamente 2`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-2:not(button) {
+  pointer-events: none;
+}
+
+.emotion-2:hover {
+  background: #e6e6e6;
+}
+
 <div
   class="emotion-7"
 >
@@ -415,7 +473,7 @@ exports[`deve renderizar corretamente 2`] = `
     de 10
   </span>
   <button
-    class="emotion-2"
+    class="emotion-6"
     title="Próxima página"
     type="button"
   >
@@ -459,7 +517,7 @@ exports[`deve renderizar corretamente 3`] = `
   margin-right: 0.25rem;
 }
 
-.emotion-2 {
+.emotion-6 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -484,6 +542,7 @@ exports[`deve renderizar corretamente 3`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -492,16 +551,7 @@ exports[`deve renderizar corretamente 3`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-2:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-2:not(:disabled) {
-  cursor: pointer;
-}
-
-.emotion-2 > span {
+.emotion-6 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -514,24 +564,24 @@ exports[`deve renderizar corretamente 3`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-6 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
 }
 
-.emotion-2:hover {
+.emotion-6:hover {
   background: #e6e6e6;
 }
 
@@ -599,6 +649,80 @@ exports[`deve renderizar corretamente 3`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-2:not(button) {
+  pointer-events: none;
+}
+
+.emotion-2:hover {
+  background: #e6e6e6;
+}
+
 <div
   class="emotion-7"
 >
@@ -636,7 +760,7 @@ exports[`deve renderizar corretamente 3`] = `
     de 9
   </span>
   <button
-    class="emotion-2"
+    class="emotion-6"
     title="Próxima página"
     type="button"
   >
