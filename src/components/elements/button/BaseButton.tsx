@@ -20,7 +20,7 @@ export interface BaseButtonProps {
 
 export class BaseButton extends React.Component<BaseButtonProps> {
 
-    static defaultProps = {
+    static defaultProps: BaseButtonProps = {
         render: (props: any) => {
             return (
                 <button type='button' {...props} />
