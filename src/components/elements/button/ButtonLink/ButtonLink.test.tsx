@@ -15,11 +15,12 @@ it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot()
 })
 
-it('deve have tabIndex -1 and aria-disabled when disabled', () => {
-    const wrapper = render(withTheme(
+it('should have tabIndex -1 and aria-disabled when disabled', () => {
+    const wrapper = mount(withTheme(
         <MemoryRouter initialEntries={['/']} initialIndex={0} >
             <ButtonLink to='/' label='Link to home' disabled />
-        </MemoryRouter >
+        </MemoryRouter>
     ))
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper.find('a').first().prop('aria-disabled')).toEqual(true)
+    expect(wrapper.find('a').first().prop('tabIndex')).toEqual(-1)
 })
