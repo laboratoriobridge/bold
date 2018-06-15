@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
@@ -8,12 +9,13 @@ export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 export interface CellProps extends WithStylesProps {
     size?: CellSize
     alignSelf?: AlignSelf
+    style?: Interpolation
 }
 
 @withStyles
 export class Cell extends React.PureComponent<CellProps> {
     render() {
-        const { size, theme } = this.props
+        const { size, theme, style } = this.props
         const styles = {
             cell: {
                 alignSelf: this.props.alignSelf,
@@ -39,7 +41,8 @@ export class Cell extends React.PureComponent<CellProps> {
 
         const classes = this.props.css(
             styles.cell,
-            this.props.size ? styles.fixedSize : styles.autoSize
+            this.props.size ? styles.fixedSize : styles.autoSize,
+            style
         )
 
         return (
