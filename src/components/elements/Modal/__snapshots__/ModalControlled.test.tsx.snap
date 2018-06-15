@@ -49,6 +49,7 @@ exports[`ModalControlled should render correcly 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -58,15 +59,6 @@ exports[`ModalControlled should render correcly 1`] = `
   position: absolute;
   top: 1rem;
   right: 1rem;
-}
-
-.emotion-2:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-2:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-2 > span {
@@ -147,21 +139,13 @@ exports[`ModalControlled should render correcly 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-4:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-4:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-4 > span {
@@ -301,6 +285,7 @@ exports[`ModalControlled should render correcly 2`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -310,15 +295,6 @@ exports[`ModalControlled should render correcly 2`] = `
   position: absolute;
   top: 1rem;
   right: 1rem;
-}
-
-.emotion-2:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-2:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-2 > span {
@@ -399,21 +375,13 @@ exports[`ModalControlled should render correcly 2`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-4:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-4:not(:disabled) {
-  cursor: pointer;
 }
 
 .emotion-4 > span {

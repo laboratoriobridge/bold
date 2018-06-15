@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
@@ -11,12 +12,13 @@ export interface GridProps extends WithStylesProps, Pick<React.CSSProperties, 'a
     alignItems?: AlignItems
     justifyContent?: JustifyContent
     direction?: Direction
+    style?: Interpolation
 }
 
 @withStyles
 export class Grid extends React.PureComponent<GridProps> {
     render() {
-        const { css, theme } = this.props
+        const { css, theme, style } = this.props
         const styles: Styles = {
             grid: {
                 alignItems: this.props.alignItems,
@@ -40,7 +42,8 @@ export class Grid extends React.PureComponent<GridProps> {
 
         const classes = css(
             styles.grid,
-            this.props.wrap && styles.wrap
+            this.props.wrap && styles.wrap,
+            style
         )
 
         return (

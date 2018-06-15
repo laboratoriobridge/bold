@@ -1,7 +1,7 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-
 import { MemoryRouter } from 'react-router'
 
 import { withPropTypes, withTheme } from '../../../stories-addons'
@@ -42,6 +42,7 @@ storiesOf('Components/Button', module)
             loading={boolean('loading', false)}
             disabled={boolean('disabled', false)}
             block={boolean('block', false)}
+            onClick={action('button-clicked')}
         />
     ))
     .add('icon', () => (
@@ -53,14 +54,22 @@ storiesOf('Components/Button', module)
             loading={boolean('loading', false)}
             disabled={boolean('disabled', false)}
             block={boolean('block', false)}
+            onClick={action('button-clicked')}
         />
     ))
     .add('link', () => (
         <MemoryRouter initialEntries={['/']} initialIndex={0}>
             <ButtonLink
-                to={text('to', '/')}
+                to='/links'
+                icon='arrowLeft'
                 label={text('label', 'Link')}
+                skin={select('skin', skinOptions, 'default')}
+                size={select('size', sizeOptions, 'medium')}
                 type={select('type', typeOptions, 'normal')}
+                loading={boolean('loading', false)}
+                disabled={boolean('disabled', false)}
+                block={boolean('block', false)}
+                onClick={action('link-clicked')}
             />
         </MemoryRouter>
     ))

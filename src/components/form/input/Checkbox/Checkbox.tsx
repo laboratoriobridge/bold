@@ -1,4 +1,4 @@
-import { css as emotionCss } from 'emotion'
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
@@ -6,15 +6,16 @@ import { Input, PublicInputProps } from '../Input/Input'
 
 export interface CheckboxProps extends PublicInputProps, WithStylesProps {
     label?: React.ReactNode
+    style?: Interpolation
 }
 
 @withStyles
 export class Checkbox extends React.Component<CheckboxProps, any> {
 
     render() {
-        const { css, label, theme, ...rest } = this.props
+        const { css, label, theme, style, ...rest } = this.props
 
-        const checkClasses = emotionCss({
+        const checkClasses = css({
             backgroundColor: theme.pallete.surface.main,
             border: '1px solid ' + theme.pallete.gray.c70,
             borderRadius: theme.radius.main,
@@ -40,23 +41,23 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             },
         })
 
-        const labelClasses = emotionCss({
+        const labelClasses = css({
             color: theme.pallete.gray.c30,
             fontSize: 12,
             marginLeft: '0.5rem',
         })
 
-        const checkboxClass = emotionCss({
+        const checkboxClass = css({
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
         })
 
-        const checkboxDisabledClass = emotionCss({
+        const checkboxDisabledClass = css({
             cursor: 'not-allowed',
         })
 
-        const inputClass = emotionCss({
+        const inputClass = css({
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
@@ -82,7 +83,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         })
 
         return (
-            <label className={css(checkboxClass, this.props.disabled && checkboxDisabledClass)} >
+            <label className={css(checkboxClass, this.props.disabled && checkboxDisabledClass, style)} >
                 <Input {...rest} type='checkbox' className={inputClass} />
                 <span className={checkClasses} />
                 {this.props.label && <span className={labelClasses}>{this.props.label}</span>}

@@ -38,7 +38,7 @@ storiesOf('Components/Table', module)
                 { name: 'age', header: 'Age', render: (row: Row) => row.age },
                 {
                     name: 'buttons',
-                    styles: { textAlign: 'right', whiteSpace: 'nowrap' },
+                    style: { textAlign: 'right', whiteSpace: 'nowrap' },
                     render: (row: Row) => (
                         <>
                             <Button size='small' skin='ghost' icon='pen' />

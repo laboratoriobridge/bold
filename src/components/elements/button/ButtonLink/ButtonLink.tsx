@@ -1,47 +1,47 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
-import { createBaseStyles, createSizeStyles, skinMap, SkinProps } from '../Button/ButtonSkins'
+import { withStyles } from '../../../../styles'
+import { Button, ButtonProps } from '../Button/Button'
 
-export interface ButtonLinkProps extends SkinProps, WithStylesProps, Pick<LinkProps, 'to' | 'replace'> {
-    label: string
+export interface ButtonLinkProps extends ButtonProps, Pick<LinkProps, 'to' | 'replace'> {
 }
 
 @withStyles
 export class ButtonLink extends React.PureComponent<ButtonLinkProps> {
 
-    static defaultProps: Partial<ButtonLinkProps> = {
-        type: 'normal',
-        skin: 'default',
-        size: 'medium',
-    }
-
     render() {
-        const { css, theme, label, size, skin, type, ...rest } = this.props
-        const styles = {
-            link: {
-                textDecoration: 'none',
-            },
+        const { to, replace, style, ...other } = this.props
+
+        const linkStyle: Interpolation = {
+            textDecoration: 'none',
         }
 
-        const skinStyles = skinMap[skin](theme)
-        const sizeStyles = createSizeStyles(theme)
-        const baseStyles = createBaseStyles(theme)
-
-        const classes = css(
-            styles.link,
-            baseStyles.button,
-            skinStyles.button,
-            type === 'primary' && skinStyles.primary,
-            size === 'medium' && sizeStyles.medium,
-            size === 'small' && sizeStyles.small
+        return (
+            <Button
+                {...other}
+                style={{ ...linkStyle, ...style as any }}
+                render={this.renderLink}
+            />
         )
+    }
+
+    renderLink = (buttonProps: any) => {
+        const { to, replace } = this.props
+        const {
+            disabled, // a tag does not support the 'disabled' prop
+            ...other,
+        } = buttonProps
 
         return (
-            <Link className={classes} {...rest}>
-                {label}
-            </Link>
+            <Link
+                {...other}
+                to={to}
+                replace={replace}
+                aria-disabled={disabled === true ? true : undefined}
+                tabIndex={disabled ? -1 : buttonProps.tabIndex}
+            />
         )
     }
 }

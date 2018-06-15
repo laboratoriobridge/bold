@@ -8,16 +8,25 @@ export interface BaseButtonProps {
      */
     className?: string
     disabled?: boolean
-    name?: string,
+    name?: string
     onClick?: React.MouseEventHandler<any> | OnClickWithPromise
-    onLoadingChange?: (loading: boolean) => void
     onMouseEnter?: React.MouseEventHandler<any>
     onMouseLeave?: React.MouseEventHandler<any>
     tabIndex?: number
     title?: string
+    onLoadingChange?(loading: boolean): void
+    render?(props: any): React.ReactNode
 }
 
 export class BaseButton extends React.Component<BaseButtonProps> {
+
+    static defaultProps: BaseButtonProps = {
+        render: (props: any) => {
+            return (
+                <button type='button' {...props} />
+            )
+        },
+    }
 
     private timeout: number
 
@@ -27,17 +36,13 @@ export class BaseButton extends React.Component<BaseButtonProps> {
     }
 
     render() {
-        const { onLoadingChange, ...rest } = this.props
-        return (
-            <button
-                {...rest}
-                onClick={this.onClick}
-                onKeyPress={this.handleOnKeyPress}
-                type='button'
-            >
-                {this.props.children}
-            </button>
-        )
+        const { onLoadingChange, render, ...rest } = this.props
+
+        return render({
+            ...rest,
+            onClick: this.onClick,
+            onKeyPress: this.handleOnKeyPress,
+        })
     }
 
     private handleOnKeyPress = (event) => {

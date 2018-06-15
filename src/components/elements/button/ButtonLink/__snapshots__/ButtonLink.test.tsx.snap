@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-0 {
-  -webkit-text-decoration: none;
-  text-decoration: none;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -28,21 +26,15 @@ exports[`deve renderizar corretamente 1`] = `
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
+  cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-0:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.emotion-0:not(:disabled) {
-  cursor: pointer;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-0 > span {
@@ -79,6 +71,10 @@ exports[`deve renderizar corretamente 1`] = `
   class="emotion-0"
   href="/"
 >
-  Link to home
+  <span>
+    <span>
+      Link to home
+    </span>
+  </span>
 </a>
 `;
