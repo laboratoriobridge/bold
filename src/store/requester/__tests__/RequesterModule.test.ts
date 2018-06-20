@@ -3,7 +3,7 @@ import { combineReducers } from 'redux'
 
 import { axiosMock, createTestStore, mockStore } from '../../../test'
 import {
-    CLEAR_RESULT, REQUEST, REQUEST_CANCEL, REQUEST_FAILURE, REQUEST_SUCCESS, RequesterModule, SET_PARAMS
+    RequesterModule, requesterModuleActionTypes
 } from '../RequesterModule'
 
 describe('RequesterModule', () => {
@@ -94,7 +94,11 @@ describe('RequesterModule', () => {
                 store.dispatch(r.actions.setParams({ test: true, foo: 'bar' }))
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${SET_PARAMS}`, meta: { key: 'test' }, payload: { test: true, foo: 'bar' } },
+                    {
+                        type: `test/${requesterModuleActionTypes.SET_PARAMS}`,
+                        meta: { key: 'test' },
+                        payload: { test: true, foo: 'bar' },
+                    },
                 ])
             })
         })
@@ -107,7 +111,7 @@ describe('RequesterModule', () => {
                 store.dispatch(r.actions.clearResult())
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${CLEAR_RESULT}`, meta: { key: 'test' } },
+                    { type: `test/${requesterModuleActionTypes.CLEAR_RESULT}`, meta: { key: 'test' } },
                 ])
             })
         })
@@ -120,7 +124,7 @@ describe('RequesterModule', () => {
                 store.dispatch(r.actions.request())
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST}`, meta: { key: 'test', stale: true } },
+                    { type: `test/${requesterModuleActionTypes.REQUEST}`, meta: { key: 'test', stale: true } },
                 ])
             })
             it('deve conter os parâmetros atualmente no store dentro do meta', () => {
@@ -132,7 +136,10 @@ describe('RequesterModule', () => {
                 store.dispatch(r.actions.request())
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST}`, meta: { key: 'test', stale: true, params: { test: true } } },
+                    {
+                        type: `test/${requesterModuleActionTypes.REQUEST}`,
+                        meta: { key: 'test', stale: true, params: { test: true } },
+                    },
                 ])
             })
             it('deve incluir a config stale no meta', () => {
@@ -149,7 +156,10 @@ describe('RequesterModule', () => {
                 store.dispatch(r2.actions.request({ stale: false }))
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST}`, meta: { key: 'test', stale: false, params: { test: true } } },
+                    {
+                        type: `test/${requesterModuleActionTypes.REQUEST}`,
+                        meta: { key: 'test', stale: false, params: { test: true } },
+                    },
                 ])
             })
         })
@@ -160,7 +170,11 @@ describe('RequesterModule', () => {
                 store.dispatch(r['requestSuccess'](5))
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST_SUCCESS}`, meta: { key: 'test' }, payload: 5 },
+                    {
+                        type: `test/${requesterModuleActionTypes.REQUEST_SUCCESS}`,
+                        meta: { key: 'test' },
+                        payload: 5,
+                    },
                 ])
             })
         })
@@ -171,7 +185,11 @@ describe('RequesterModule', () => {
                 store.dispatch(r['requestFailure']({ message: 'not found' }))
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST_FAILURE}`, meta: { key: 'test' }, payload: { message: 'not found' } },
+                    {
+                        type: `test/${requesterModuleActionTypes.REQUEST_FAILURE}`,
+                        meta: { key: 'test' },
+                        payload: { message: 'not found' },
+                    },
                 ])
             })
         })
@@ -182,7 +200,7 @@ describe('RequesterModule', () => {
                 store.dispatch(r['requestCancel']())
 
                 expect(store.getActions()).toEqual([
-                    { type: `test/${REQUEST_CANCEL}`, meta: { key: 'test' } },
+                    { type: `test/${requesterModuleActionTypes.REQUEST_CANCEL}`, meta: { key: 'test' } },
                 ])
             })
         })
