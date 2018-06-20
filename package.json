@@ -23,7 +23,8 @@
     "generate-icons": "npm run clean-icons && npm run generate-svg-icons && npm run generate-icons-index",
     "clean-icons": "rm -r ./src/components/elements/Icon/generated",
     "generate-svg-icons": "svgr --no-semi --ids --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
-    "generate-icons-index": "babel-node ./tools/generateIconsIndex.js"
+    "generate-icons-index": "babel-node ./tools/generateIconsIndex.js",
+    "sonar": "sonar-scanner"
   },
   "devDependencies": {
     "@storybook/addon-actions": "3.4.6",
@@ -96,6 +97,7 @@
     "redux-mock-store": "1.5.1",
     "redux-thunk": "2.3.0",
     "shx": "0.3.0",
+    "sonar-scanner": "3.1.0",
     "svgr": "1.10.0",
     "text-mask-core": "5.1.1",
     "ts-jest": "22.4.6",
