@@ -37,7 +37,7 @@ pipeline {
                     -Dsonar.login=${SONARQUBE_TOKEN} \
                     -Dsonar.analysis.mode=preview \
                     -Dsonar.github.repository=laboratoriobridge/bridge-react \
-                    -Dsonar.github.pullRequest=${ghprbPullId} \
+                    -Dsonar.github.pullRequest=${env.CHANGE_ID} \
                     -Dsonar.github.oauth=${GITHUB_SECRET}"
 
                 step([$class: 'CompareCoverageAction', scmVars: [GIT_URL: env.GIT_URL]])
