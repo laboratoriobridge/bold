@@ -1,27 +1,29 @@
 // tslint:disable:member-ordering
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse, CancelTokenSource } from 'axios'
 
-export const REQUEST = 'requester/REQUEST'
-export const REQUEST_SUCCESS = 'requester/REQUEST_SUCCESS'
-export const REQUEST_FAILURE = 'requester/REQUEST_FAILURE'
-export const REQUEST_CANCEL = 'requester/REQUEST_CANCEL'
-export const SET_PARAMS = 'requester/SET_PARAMS'
-export const CLEAR_RESULT = 'requester/CLEAR_RESULT'
+export const requesterModuleActionTypes = {
+    REQUEST: 'requester/REQUEST',
+    REQUEST_SUCCESS: 'requester/REQUEST_SUCCESS',
+    REQUEST_FAILURE: 'requester/REQUEST_FAILURE',
+    REQUEST_CANCEL: 'requester/REQUEST_CANCEL',
+    SET_PARAMS: 'requester/SET_PARAMS',
+    CLEAR_RESULT: 'requester/CLEAR_RESULT',
+}
 
-export type ReadyState = 'success' | 'failure' | 'request'
+export type RequesterModuleReadyState = 'success' | 'failure' | 'request'
 
-export type RequestType<R, P> = (params: P, requestConfig: AxiosRequestConfig) => Promise<R>
+export type RequesterModuleRequestType<R, P> = (params: P, requestConfig: AxiosRequestConfig) => Promise<R>
 
-export interface RequestState<T, P = any> {
+export interface RequesterModuleRequestState<T, P = any> {
     readonly result?: T
-    readonly readyState?: ReadyState
+    readonly readyState?: RequesterModuleReadyState
     readonly params?: P
     readonly error?: any
 }
 
-export type GetRequestState<T, S> = (state: S) => RequestState<T>
+export type GetRequestState<T, S> = (state: S) => RequesterModuleRequestState<T>
 
-export const axiosConfig: Partial<RequesterModuleConfig<any, any, any>> = {
+export const requesterModuleAxiosConfig: Partial<RequesterModuleConfig<any, any, any>> = {
     transformResult: (result: AxiosResponse<any>): any => {
         return result && result.data
     },
@@ -33,7 +35,7 @@ export const axiosConfig: Partial<RequesterModuleConfig<any, any, any>> = {
 export interface RequesterModuleConfig<T, P = {}, R = AxiosResponse<T>> {
     actionKey: string
     getRequestState: GetRequestState<T, any>
-    req: RequestType<R, P>
+    req: RequesterModuleRequestType<R, P>
     /**
      * Transforma o resultado da requisição para o valor que será armazenado em `result` na store.
      */
@@ -61,7 +63,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
      */
     constructor(config: RequesterModuleConfig<T, P, R>) {
         this.config = {
-            ...axiosConfig,
+            ...requesterModuleAxiosConfig,
             ...config,
         }
     }
@@ -86,7 +88,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
          */
         setParams: (params: P) => {
             return {
-                type: this.createActionType(SET_PARAMS),
+                type: this.createActionType(requesterModuleActionTypes.SET_PARAMS),
                 meta: this.meta(),
                 payload: params,
             }
@@ -104,7 +106,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
             }
 
             dispatch({
-                type: this.createActionType(REQUEST),
+                type: this.createActionType(requesterModuleActionTypes.REQUEST),
                 meta: { ...this.meta(), params, stale: config.stale },
             })
 
@@ -131,7 +133,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
         },
         clearResult: () => {
             return {
-                type: this.createActionType(CLEAR_RESULT),
+                type: this.createActionType(requesterModuleActionTypes.CLEAR_RESULT),
                 meta: this.meta(),
             }
         },
@@ -147,7 +149,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
 
     protected requestSuccess = (result: T) => {
         return {
-            type: this.createActionType(REQUEST_SUCCESS),
+            type: this.createActionType(requesterModuleActionTypes.REQUEST_SUCCESS),
             meta: this.meta(),
             payload: result,
         }
@@ -155,7 +157,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
 
     protected requestFailure = (error: any) => {
         return {
-            type: this.createActionType(REQUEST_FAILURE),
+            type: this.createActionType(requesterModuleActionTypes.REQUEST_FAILURE),
             meta: this.meta(),
             payload: error,
         }
@@ -163,7 +165,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
 
     protected requestCancel = () => {
         return {
-            type: this.createActionType(REQUEST_CANCEL),
+            type: this.createActionType(requesterModuleActionTypes.REQUEST_CANCEL),
             meta: this.meta(),
         }
     }
@@ -184,10 +186,10 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
         getResult: (state: any): T => {
             return this.config.getRequestState(state).result
         },
-        getReadyState: (state: any): ReadyState => {
+        getReadyState: (state: any): RequesterModuleReadyState => {
             return this.config.getRequestState(state).readyState
         },
-        getRequestState: (state: any): RequestState<T> => {
+        getRequestState: (state: any): RequesterModuleRequestState<T> => {
             return this.config.getRequestState(state)
         },
         /**
@@ -205,24 +207,24 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
         },
     }
 
-    public reduce = (state: RequestState<T, P> = {}, action: any): RequestState<T, P> => {
+    public reduce = (state: RequesterModuleRequestState<T, P> = {}, action: any): RequesterModuleRequestState<T, P> => {
         const type: string = action.type || ''
 
-        if (type === this.createActionType(SET_PARAMS)) {
+        if (type === this.createActionType(requesterModuleActionTypes.SET_PARAMS)) {
             return {
                 ...state,
                 params: action.payload,
             }
         }
 
-        if (type === this.createActionType(CLEAR_RESULT)) {
+        if (type === this.createActionType(requesterModuleActionTypes.CLEAR_RESULT)) {
             return {
                 ...state,
                 result: null,
             }
         }
 
-        if (type === this.createActionType(REQUEST_SUCCESS)) {
+        if (type === this.createActionType(requesterModuleActionTypes.REQUEST_SUCCESS)) {
             return {
                 ...state,
                 result: action.payload,
@@ -230,7 +232,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
             }
         }
 
-        if (type === this.createActionType(REQUEST_FAILURE)) {
+        if (type === this.createActionType(requesterModuleActionTypes.REQUEST_FAILURE)) {
             return {
                 ...state,
                 error: action.payload,
@@ -238,7 +240,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
             }
         }
 
-        if (type === this.createActionType(REQUEST_CANCEL)) {
+        if (type === this.createActionType(requesterModuleActionTypes.REQUEST_CANCEL)) {
             return {
                 ...state,
                 error: 'Cancelled',
@@ -246,7 +248,7 @@ export class RequesterModule<T, P = {}, R = AxiosResponse<T>> {
             }
         }
 
-        if (type === this.createActionType(REQUEST)) {
+        if (type === this.createActionType(requesterModuleActionTypes.REQUEST)) {
             if (action.meta.stale) {
                 return {
                     ...state,
