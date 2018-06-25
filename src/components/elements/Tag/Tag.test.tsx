@@ -12,3 +12,7 @@ it('should render correctly', () => {
     expect(render(withTheme(<Tag type='info'>Info</Tag>))).toMatchSnapshot()
     expect(render(withTheme(<Tag type='success'>Success</Tag>))).toMatchSnapshot()
 })
+
+it('should accept the style prop', () => {
+    expect(render(withTheme(<Tag style={{ color: 'green' }}>Normal</Tag>))).toMatchSnapshot()
+})
