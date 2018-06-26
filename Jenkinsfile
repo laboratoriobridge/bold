@@ -50,4 +50,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            junit 'coverage/*.xml'
+        }
+    }
 }
