@@ -2,6 +2,7 @@ export { AriaControlNav, AriaControlNavProps } from './AriaControlNav/AriaContro
 export { Dropdown, DropdownProps } from './Dropdown/Dropdown'
 export { DropdownMenu, DropdownMenuProps } from './Dropdown/DropdownMenu'
 export { InfoLabel, InfoLabelProps } from './InfoLabel/InfoLabel'
+export * from './Modal'
 export { Paginator, PaginatorProps } from './Paginator/Paginator'
 export { Popover, PopoverProps } from './Popover/Popover'
 export * from './Popper'
