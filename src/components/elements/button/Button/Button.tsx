@@ -49,7 +49,7 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             type,
             block,
             style,
-            ...rest,
+            ...rest
         } = this.props
 
         const skinStyles = skinMap[skin](theme)
