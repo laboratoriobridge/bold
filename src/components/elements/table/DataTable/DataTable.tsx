@@ -89,7 +89,7 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
             getColumn,
             render,
             onRowClick,
-            ...rest,
+            ...rest
         } = this.props
 
         return (

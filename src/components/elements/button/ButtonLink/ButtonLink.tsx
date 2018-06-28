@@ -31,7 +31,7 @@ export class ButtonLink extends React.PureComponent<ButtonLinkProps> {
         const { to, replace } = this.props
         const {
             disabled, // a tag does not support the 'disabled' prop
-            ...other,
+            ...other
         } = buttonProps
 
         return (
