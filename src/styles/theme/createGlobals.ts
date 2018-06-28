@@ -53,5 +53,8 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
         a: {
             cursor: 'pointer',
         },
+        mark: {
+            background: pallete.highlight,
+        },
     }
 }
