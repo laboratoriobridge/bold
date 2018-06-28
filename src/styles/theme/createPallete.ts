@@ -29,6 +29,7 @@ export interface Pallete {
         info: StatusColorMap
         alert: StatusColorMap
     }
+    highlight: Color
     gray: ColorScale
 }
 
@@ -81,6 +82,7 @@ export const createPallete = (): Pallete => {
                 onColor: '#FFFFFF',
             },
         },
+        highlight: '#FFED94',
         gray,
     }
 }
