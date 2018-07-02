@@ -1,8 +1,7 @@
-import { mount, render } from 'enzyme'
+import { render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../../test'
-import { SortableLabel } from '../SortableLabel/SortableLabel'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableProps, TableRow } from './index'
 
@@ -35,7 +34,6 @@ const createTable = (props: TableProps = {}) => withTheme(
 
 describe('Table', () => {
     it('should render corretly', () => {
-        // tslint:disable jsx-no-lambda
         const wrapper = render(createTable())
         expect(wrapper).toMatchSnapshot()
     })
@@ -46,111 +44,5 @@ describe('Table', () => {
     it('should accept the style prop', () => {
         const wrapper = render(createTable({ style: { color: 'red' } }))
         expect(wrapper).toMatchSnapshot()
-    })
-})
-
-describe('TableHeader', () => {
-    it('should call onSortChange when clicked', () => {
-        const sortChange = jest.fn()
-        const wrapper = mount(withTheme(
-            <Table>
-                <TableHead>
-                    <TableRow>
-                        <TableHeader
-                            sortable={true}
-                            sortDirection='ASC'
-                            onSortChange={sortChange}
-                        >
-                            Header #1
-                        </TableHeader>
-                    </TableRow>
-                </TableHead>
-            </Table>
-        ))
-        expect(sortChange).not.toHaveBeenCalled()
-        wrapper.find(SortableLabel).simulate('click')
-        expect(sortChange).toHaveBeenCalledWith('DESC', undefined)
-    })
-})
-
-describe('TableRow', () => {
-    it('should have the pointer class if onClick is specified', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableBody>
-                    <TableRow><TableCell>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))).toMatchSnapshot()
-
-        const clickHandler = jest.fn()
-        const wrapper = mount(withTheme(
-            <Table>
-                <TableBody>
-                    <TableRow onClick={clickHandler}><TableCell>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))
-        expect(wrapper.render()).toMatchSnapshot()
-
-        wrapper.find('tr').simulate('click')
-        expect(clickHandler).toHaveBeenCalled()
-    })
-    it('should accept the style prop', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableBody>
-                    <TableRow style={{ color: 'red' }}><TableCell>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))).toMatchSnapshot()
-    })
-})
-
-describe('TableCell', () => {
-    it('should accept the style prop', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableBody>
-                    <TableRow><TableCell style={{ color: 'red' }}>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))).toMatchSnapshot()
-    })
-})
-
-describe('TableBody', () => {
-    it('should accept the style prop', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableBody style={{ color: 'red' }}>
-                    <TableRow><TableCell>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))).toMatchSnapshot()
-    })
-})
-
-describe('TableHead', () => {
-    it('should accept the style prop', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableHead style={{ color: 'red' }}>
-                    <TableRow><TableHeader>Test</TableHeader></TableRow>
-                </TableHead>
-            </Table>
-        ))).toMatchSnapshot()
-    })
-})
-
-describe('TableHeader', () => {
-    it('should accept the style prop', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableHead>
-                    <TableRow><TableHeader style={{ color: 'red' }}>Test</TableHeader></TableRow>
-                </TableHead>
-            </Table>
-        ))).toMatchSnapshot()
     })
 })
