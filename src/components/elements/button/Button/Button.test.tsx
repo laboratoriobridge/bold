@@ -51,16 +51,6 @@ describe('Button', () => {
         expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
     })
 
-    it('should automatically have a hint', () => {
-        const wrapper = render(withTheme(<Button label='Botão' hint='hint teste' />))
-        expect(wrapper).toMatchSnapshot()
-    })
-
-    it('shouold automatically have a custom hint', () => {
-        const wrapper = render(withTheme(<Button label='Botão' hint={(<span>hint complexo teste</span>)} />))
-        expect(wrapper).toMatchSnapshot()
-    })
-
     it('should accept the loading prop', () => {
         const wrapper = render(withTheme(<Button label='Botão' loading={true} />))
         expect(wrapper).toMatchSnapshot()
