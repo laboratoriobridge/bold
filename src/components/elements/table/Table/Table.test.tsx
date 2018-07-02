@@ -6,7 +6,7 @@ import { SortableLabel } from '../SortableLabel/SortableLabel'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableProps, TableRow } from './index'
 
-const createTable = (props: TableProps = {}) => (
+const createTable = (props: TableProps = {}) => withTheme(
     <Table {...props}>
         <TableHead>
             <TableRow>
@@ -36,11 +36,15 @@ const createTable = (props: TableProps = {}) => (
 describe('Table', () => {
     it('should render corretly', () => {
         // tslint:disable jsx-no-lambda
-        const wrapper = render(withTheme(createTable()))
+        const wrapper = render(createTable())
         expect(wrapper).toMatchSnapshot()
     })
     it('should accept the hovered prop', () => {
-        const wrapper = render(withTheme(createTable({ hovered: true })))
+        const wrapper = render(createTable({ hovered: true }))
+        expect(wrapper).toMatchSnapshot()
+    })
+    it('should accept the style prop', () => {
+        const wrapper = render(createTable({ style: { color: 'red' } }))
         expect(wrapper).toMatchSnapshot()
     })
 })
@@ -91,5 +95,62 @@ describe('TableRow', () => {
 
         wrapper.find('tr').simulate('click')
         expect(clickHandler).toHaveBeenCalled()
+    })
+    it('should accept the style prop', () => {
+        expect(render(withTheme(
+            <Table>
+                <TableBody>
+                    <TableRow style={{ color: 'red' }}><TableCell>Test</TableCell></TableRow>
+                </TableBody>
+            </Table>
+        ))).toMatchSnapshot()
+    })
+})
+
+describe('TableCell', () => {
+    it('should accept the style prop', () => {
+        expect(render(withTheme(
+            <Table>
+                <TableBody>
+                    <TableRow><TableCell style={{ color: 'red' }}>Test</TableCell></TableRow>
+                </TableBody>
+            </Table>
+        ))).toMatchSnapshot()
+    })
+})
+
+describe('TableBody', () => {
+    it('should accept the style prop', () => {
+        expect(render(withTheme(
+            <Table>
+                <TableBody style={{ color: 'red' }}>
+                    <TableRow><TableCell>Test</TableCell></TableRow>
+                </TableBody>
+            </Table>
+        ))).toMatchSnapshot()
+    })
+})
+
+describe('TableHead', () => {
+    it('should accept the style prop', () => {
+        expect(render(withTheme(
+            <Table>
+                <TableHead style={{ color: 'red' }}>
+                    <TableRow><TableHeader>Test</TableHeader></TableRow>
+                </TableHead>
+            </Table>
+        ))).toMatchSnapshot()
+    })
+})
+
+describe('TableHeader', () => {
+    it('should accept the style prop', () => {
+        expect(render(withTheme(
+            <Table>
+                <TableHead>
+                    <TableRow><TableHeader style={{ color: 'red' }}>Test</TableHeader></TableRow>
+                </TableHead>
+            </Table>
+        ))).toMatchSnapshot()
     })
 })
