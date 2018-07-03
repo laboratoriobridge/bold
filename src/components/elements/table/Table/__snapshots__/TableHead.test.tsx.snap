@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableHead should accept the style prop 1`] = `
+.emotion-3 {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  border: 1px solid #e6e6e6;
+}
+
+.emotion-2 {
+  color: red;
+}
+
+.emotion-0 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+<table
+  class="emotion-3"
+>
+  <thead
+    class="emotion-2"
+  >
+    <tr
+      class="emotion-1"
+    >
+      <th
+        class="emotion-0"
+      >
+        Test
+      </th>
+    </tr>
+  </thead>
+</table>
+`;
