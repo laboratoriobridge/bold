@@ -211,7 +211,6 @@ exports[`ModalControlled should render correcly 1`] = `
           >
             <path
               d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-              id="Fechar"
             />
           </svg>
         </span>
@@ -454,7 +453,6 @@ exports[`ModalControlled should render correcly 2`] = `
           >
             <path
               d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-              id="Fechar"
             />
           </svg>
         </span>

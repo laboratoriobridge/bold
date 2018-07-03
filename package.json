@@ -22,7 +22,7 @@
     "build-storybook": "build-storybook",
     "generate-icons": "npm run clean-icons && npm run generate-svg-icons && npm run generate-icons-index",
     "clean-icons": "rm -r ./src/components/elements/Icon/generated",
-    "generate-svg-icons": "svgr --no-semi --ids --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
+    "generate-svg-icons": "svgr --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
     "generate-icons-index": "babel-node ./tools/generateIconsIndex.js",
     "sonar": "sonar-scanner"
   },

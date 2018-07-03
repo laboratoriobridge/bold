@@ -149,6 +149,7 @@ exports[`should render complete state 1`] = `
   <div
     aria-disabled="false"
     class="emotion-6"
+    style="position:relative"
   >
     <div
       class="accept-dashed-border"
@@ -169,13 +170,9 @@ exports[`should render complete state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <g
-                id="Upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
             </svg>
           </span>
         </div>
@@ -190,7 +187,7 @@ exports[`should render complete state 1`] = `
     </div>
     <input
       autocomplete="off"
-      style="display:none"
+      style="position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.00001;pointer-events:none"
       type="file"
     />
   </div>
@@ -220,7 +217,6 @@ exports[`should render complete state 1`] = `
           >
             <path
               d="M10.71 16.21l7-7-1.42-1.42-5.59 5.6-2.99-3-1.42 1.42"
-              id="Sucesso"
             />
           </svg>
         </span>
@@ -325,6 +321,7 @@ exports[`should render initial state 1`] = `
   <div
     aria-disabled="false"
     class="emotion-6"
+    style="position:relative"
   >
     <div
       class="accept-dashed-border"
@@ -345,13 +342,9 @@ exports[`should render initial state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <g
-                id="Upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
             </svg>
           </span>
         </div>
@@ -366,7 +359,7 @@ exports[`should render initial state 1`] = `
     </div>
     <input
       autocomplete="off"
-      style="display:none"
+      style="position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.00001;pointer-events:none"
       type="file"
     />
   </div>
@@ -537,6 +530,7 @@ exports[`should render uploading state 1`] = `
   <div
     aria-disabled="false"
     class="emotion-6"
+    style="position:relative"
   >
     <div
       class="accept-dashed-border"
@@ -557,13 +551,9 @@ exports[`should render uploading state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <g
-                id="Upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
             </svg>
           </span>
         </div>
@@ -578,7 +568,7 @@ exports[`should render uploading state 1`] = `
     </div>
     <input
       autocomplete="off"
-      style="display:none"
+      style="position:absolute;top:0;right:0;bottom:0;left:0;opacity:0.00001;pointer-events:none"
       type="file"
     />
   </div>

@@ -344,7 +344,6 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M18.36 14.47l-1.41 1.42L12 10.94l-4.95 4.95-1.41-1.42L12 8.11l6.36 6.36z"
-                  id="Seta-cima"
                 />
               </svg>
             </span>
@@ -370,7 +369,6 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
-                  id="Seta-baixo"
                 />
               </svg>
             </span>
@@ -553,7 +551,6 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-                  id="Seta-esquerda"
                 />
               </svg>
             </span>
@@ -586,7 +583,6 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-                  id="Seta-direita"
                 />
               </svg>
             </span>
