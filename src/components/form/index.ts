@@ -7,6 +7,7 @@ export * from './field/MaskedField/maskedFields'
 export * from './field/NumberField/NumberField'
 export * from './field/RadioField/RadioField'
 export * from './field/SelectField/SelectField'
+export * from './field/SwitchField/SwitchField'
 export * from './field/TextField/TextField'
 
 export * from './input/Checkbox/Checkbox'
