@@ -153,8 +153,5 @@
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
     ]
-  },
-  "dependencies": {
-    "enzyme-react-adapter-future": "npm:enzyme-react-adapter-future"
   }
 }
