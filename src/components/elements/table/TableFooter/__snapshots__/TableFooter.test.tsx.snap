@@ -368,7 +368,6 @@ exports[`deve renderizar corretamente 1`] = `
             >
               <path
                 d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-                id="Seta-esquerda"
               />
             </svg>
           </span>
@@ -400,7 +399,6 @@ exports[`deve renderizar corretamente 1`] = `
             >
               <path
                 d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-                id="Seta-direita"
               />
             </svg>
           </span>
