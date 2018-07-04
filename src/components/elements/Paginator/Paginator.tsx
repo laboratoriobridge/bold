@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles/withStyles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Button } from '../button/Button/Button'
 
 export interface PaginatorProps extends WithStylesProps {
     /**
@@ -47,7 +47,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
     render() {
         const { css, theme, total } = this.props
-        const styles = {
+        const styles: Styles = {
             paginator: {
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -77,8 +77,10 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
         return (
             <div className={css(styles.paginator)}>
-                <IconButton
-                    styles={styles.button}
+                <Button
+                    style={styles.button}
+                    size='small'
+                    skin='ghost'
                     icon='angleLeft'
                     disabled={this.isFirstPage()}
                     title='Página anterior'
@@ -86,7 +88,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 />
 
                 <TextInput
-                    styles={styles.input}
+                    style={styles.input}
                     value={this.state.inputValue}
                     onChange={this.handleInputChange}
                     onBlur={this.handleInputBlur}
@@ -95,8 +97,10 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
 
                 <span>de {total}</span>
 
-                <IconButton
-                    styles={styles.button}
+                <Button
+                    style={styles.button}
+                    size='small'
+                    skin='ghost'
                     icon='angleRight'
                     disabled={this.isLastPage()}
                     title='Próxima página'

@@ -21,4 +21,7 @@ export const createStyles = (theme: Theme): Skin => ({
     primary: {
 
     },
+    danger: {
+
+    },
 })

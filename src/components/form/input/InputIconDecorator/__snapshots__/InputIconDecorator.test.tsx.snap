@@ -6,7 +6,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-3 input {
-  padding-right: 2.5rem;
+  padding-right: 3rem;
 }
 
 .emotion-2 {
@@ -20,7 +20,12 @@ exports[`should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.25rem;
+  width: 2.5rem;
   top: 1px;
   bottom: 1px;
   right: 1px;
@@ -31,6 +36,7 @@ exports[`should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  border-radius: inherit;
 }
 
 .emotion-1:focus {
@@ -61,7 +67,6 @@ exports[`should render correctly 1`] = `
       >
         <path
           d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
-          id="Pesquisar"
         />
       </svg>
     </span>
@@ -75,7 +80,7 @@ exports[`should render correctly with button 1`] = `
 }
 
 .emotion-4 input {
-  padding-right: 2.5rem;
+  padding-right: 3rem;
 }
 
 .emotion-3 {
@@ -89,7 +94,12 @@ exports[`should render correctly with button 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.25rem;
+  width: 2.5rem;
   top: 1px;
   bottom: 1px;
   right: 1px;
@@ -101,16 +111,18 @@ exports[`should render correctly with button 1`] = `
 }
 
 .emotion-2 {
-  background-color: transparent;
-  border: none;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -118,12 +130,26 @@ exports[`should render correctly with button 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
 }
 
-.emotion-2 span {
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -132,13 +158,21 @@ exports[`should render correctly with button 1`] = `
   transition: color .2s;
 }
 
-.emotion-2:disabled {
-  opacity: 0.5;
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
 }
 
 .emotion-2:focus {
@@ -177,7 +211,6 @@ exports[`should render correctly with button 1`] = `
           >
             <path
               d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
-              id="Pesquisar"
             />
           </svg>
         </span>
@@ -193,6 +226,7 @@ exports[`should render correctly with left position 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  border-radius: inherit;
 }
 
 .emotion-1:focus {
@@ -209,7 +243,7 @@ exports[`should render correctly with left position 1`] = `
 }
 
 .emotion-3 input {
-  padding-left: 2.5rem;
+  padding-left: 3rem;
 }
 
 .emotion-2 {
@@ -223,7 +257,12 @@ exports[`should render correctly with left position 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 0.25rem;
+  width: 2.5rem;
   top: 1px;
   bottom: 1px;
   left: 1px;
@@ -248,7 +287,6 @@ exports[`should render correctly with left position 1`] = `
       >
         <path
           d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
-          id="Pesquisar"
         />
       </svg>
     </span>

@@ -43,7 +43,7 @@ exports[`deve renderizar corretamente 1`] = `
     role="presentation"
   >
     <a
-      aria-current="true"
+      aria-current="page"
       class="emotion-0 active"
       href="/"
       role="tab"
@@ -56,7 +56,6 @@ exports[`deve renderizar corretamente 1`] = `
     role="presentation"
   >
     <a
-      aria-current="false"
       class="emotion-0"
       href="/test"
       role="tab"
@@ -69,7 +68,7 @@ exports[`deve renderizar corretamente 1`] = `
     role="presentation"
   >
     <a
-      aria-current="true"
+      aria-current="page"
       class="emotion-0 active"
       href="/active"
       role="tab"

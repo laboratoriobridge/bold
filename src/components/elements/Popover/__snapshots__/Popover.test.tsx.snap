@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+Array [
+  .emotion-0 {
+  display: inline-block;
+}
+
+<div
+    class="emotion-0"
+    data-show="false"
+  >
+    <span>
+      Testing with title
+    </span>
+  </div>,
+  .emotion-2 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.75rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-1 {
+  border-radius: 2px;
+  max-width: 300px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.14);
+  padding: 1rem;
+}
+
+.emotion-0 {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+<div
+    class="emotion-2"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-1"
+    >
+      <h4
+        class="emotion-0"
+      >
+        Title
+      </h4>
+      <p>
+        Popover text
+      </p>
+    </div>
+  </div>,
+]
+`;
+
+exports[`should render correctly 2`] = `
+Array [
+  .emotion-0 {
+  display: inline-block;
+}
+
+<div
+    class="emotion-0"
+    data-show="false"
+  >
+    <span>
+      Testing no title
+    </span>
+  </div>,
+  .emotion-1 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.75rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 300px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.14);
+  padding: 1rem;
+}
+
+<div
+    class="emotion-1"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-0"
+    >
+      <p>
+        Popover text
+      </p>
+    </div>
+  </div>,
+]
+`;

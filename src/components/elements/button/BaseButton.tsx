@@ -1,26 +1,32 @@
 import * as React from 'react'
 
-import { withHint, WithHintProps } from '../Hint'
-
 export type OnClickWithPromise = (event: React.MouseEvent<any>) => any
 
-export interface BaseButtonProps extends WithHintProps {
+export interface BaseButtonProps {
     /**
      * css className
      */
     className?: string
     disabled?: boolean
-    name?: string,
+    name?: string
     onClick?: React.MouseEventHandler<any> | OnClickWithPromise
-    onLoadingChange?: (loading: boolean) => void
     onMouseEnter?: React.MouseEventHandler<any>
     onMouseLeave?: React.MouseEventHandler<any>
     tabIndex?: number
     title?: string
+    onLoadingChange?(loading: boolean): void
+    render?(props: any): React.ReactNode
 }
 
-@withHint
 export class BaseButton extends React.Component<BaseButtonProps> {
+
+    static defaultProps: BaseButtonProps = {
+        render: (props: any) => {
+            return (
+                <button type='button' {...props} />
+            )
+        },
+    }
 
     private timeout: number
 
@@ -30,17 +36,13 @@ export class BaseButton extends React.Component<BaseButtonProps> {
     }
 
     render() {
-        const { onLoadingChange, ...rest } = this.props
-        return (
-            <button
-                {...rest}
-                onClick={this.onClick}
-                onKeyPress={this.handleOnKeyPress}
-                type='button'
-            >
-                {this.props.children}
-            </button>
-        )
+        const { onLoadingChange, render, ...rest } = this.props
+
+        return render({
+            ...rest,
+            onClick: this.onClick,
+            onKeyPress: this.handleOnKeyPress,
+        })
     }
 
     private handleOnKeyPress = (event) => {

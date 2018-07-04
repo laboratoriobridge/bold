@@ -1,8 +1,9 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { PageContainer } from '../../..'
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
-import { IconButton } from '../button/IconButton/IconButton'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
 export type NotificationType =
@@ -55,18 +56,20 @@ export interface NotificationProps extends WithStylesProps {
     onMouseEnter?: any,
     onMouseLeave?: any
     contentContainer?: boolean
+    style?: Interpolation
 }
 
 @withStyles
 export class Notification extends React.PureComponent<NotificationProps> {
     render() {
-        const { theme, css, styles, type, animated,
+        const { theme, css, style, type, animated,
             onCloseClick, onMouseEnter, onMouseLeave, contentContainer } = this.props
         const typeStyle = createTypesStyles(theme)
-        const defaultStyles = {
+        const defaultStyles: Styles = {
             notification: {
                 animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
-                padding: '0.75rem 3rem 0.75rem 3rem',
+                padding: '0 3rem',
+                minHeight: 50,
                 borderRadius: '2px',
                 fontSize: '0.75rem',
                 display: 'flex',
@@ -97,7 +100,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
 
         return (
             <div
-                className={css(defaultStyles.notification, typeStyle[type].style, styles)}
+                className={css(defaultStyles.notification, typeStyle[type].style, style)}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >
@@ -114,10 +117,10 @@ export class Notification extends React.PureComponent<NotificationProps> {
 const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
     return (
         <>
-            <Icon icon={icon} styles={iconStyle} />
+            <Icon icon={icon} style={iconStyle} />
             <span className={childrenStyle}>{children}</span>
             {onCloseClick && <span className={closeButtonStyle}>
-                <IconButton icon='times' onClick={onCloseClick} />
+                <Button size='small' skin='ghost' icon='times' onClick={onCloseClick} />
             </span>}
         </ >
     )
@@ -125,7 +128,7 @@ const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick,
 
 const ContainerContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
     return (
-        <PageContainer styles={{ paddingTop: '0', paddingBottom: '0' }}>
+        <PageContainer style={{ paddingTop: '0', paddingBottom: '0' }}>
             <SimpleContent
                 icon={icon}
                 iconStyle={iconStyle}

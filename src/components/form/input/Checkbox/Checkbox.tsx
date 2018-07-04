@@ -1,20 +1,31 @@
-import { css as emotionCss } from 'emotion'
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, PublicInputProps } from '../Input/Input'
+import { Input, InputController, PublicInputProps } from '../Input/Input'
 
 export interface CheckboxProps extends PublicInputProps, WithStylesProps {
     label?: React.ReactNode
+    style?: Interpolation
+    indeterminate?: boolean
 }
 
 @withStyles
 export class Checkbox extends React.Component<CheckboxProps, any> {
+    private input: HTMLInputElement
+
+    componentDidMount() {
+        this.input.indeterminate = this.props.indeterminate
+    }
+
+    componentDidUpdate() {
+        this.input.indeterminate = this.props.indeterminate
+    }
 
     render() {
-        const { css, label, theme, ...rest } = this.props
+        const { css, label, theme, style, indeterminate, ...rest } = this.props
 
-        const checkClasses = emotionCss({
+        const checkClasses = css({
             backgroundColor: theme.pallete.surface.main,
             border: '1px solid ' + theme.pallete.gray.c70,
             borderRadius: theme.radius.main,
@@ -25,38 +36,25 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             backfaceVisibility: 'hidden', // fixes box-shadow transition bug
             verticalAlign: 'middle',
             width: 16,
-            ':after': {
-                borderRight: '2px solid ' + theme.pallete.surface.main,
-                borderBottom: '2px solid ' + theme.pallete.surface.main,
-                content: '""',
-                height: 10,
-                left: 4,
-                opacity: 0,
-                position: 'absolute',
-                top: 1,
-                transition: 'all .2s ease',
-                transform: 'rotate(45deg) scale(1)',
-                width: 6,
-            },
         })
 
-        const labelClasses = emotionCss({
+        const labelClasses = css({
             color: theme.pallete.gray.c30,
             fontSize: 12,
             marginLeft: '0.5rem',
         })
 
-        const checkboxClass = emotionCss({
+        const checkboxClass = css({
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
         })
 
-        const checkboxDisabledClass = emotionCss({
+        const checkboxDisabledClass = css({
             cursor: 'not-allowed',
         })
 
-        const inputClass = emotionCss({
+        const inputClass = css({
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
@@ -66,7 +64,32 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 backgroundColor: theme.pallete.primary.main,
                 borderColor: theme.pallete.primary.main,
                 ':after': {
+                    content: '""',
+                    borderRight: '2px solid ' + theme.pallete.surface.main,
+                    borderBottom: '2px solid ' + theme.pallete.surface.main,
+                    position: 'absolute',
+                    width: 6,
+                    height: 10,
+                    top: 1,
+                    left: 4,
                     opacity: 1,
+                    transform: 'rotate(45deg) scale(1)',
+                    transition: 'opacity .2s ease',
+                },
+            },
+            [`&:indeterminate + .${checkClasses}`]: {
+                backgroundColor: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
+                ':after': {
+                    content: '""',
+                    borderBottom: '2px solid ' + theme.pallete.surface.main,
+                    position: 'absolute',
+                    top: -1,
+                    left: 3,
+                    width: 8,
+                    height: 10,
+                    opacity: 1,
+                    transition: 'opacity .2s ease',
                 },
             },
             [`&:focus + .${checkClasses}`]: {
@@ -82,12 +105,26 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         })
 
         return (
-            <label className={css(checkboxClass, this.props.disabled && checkboxDisabledClass)} >
-                <Input {...rest} type='checkbox' className={inputClass} />
+            <label
+                className={css(
+                    checkboxClass,
+                    this.props.disabled && checkboxDisabledClass,
+                    style
+                )}
+            >
+                <Input
+                    {...rest}
+                    provideController={this.setController}
+                    type='checkbox'
+                    className={inputClass}
+                />
                 <span className={checkClasses} />
                 {this.props.label && <span className={labelClasses}>{this.props.label}</span>}
             </label>
         )
     }
 
+    private setController = (controller: InputController) => {
+        this.input = controller && controller.getInput()
+    }
 }

@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
@@ -6,9 +7,10 @@ import { SortableLabel, SortDirection } from '../SortableLabel/SortableLabel'
 
 import { createTableStyles } from './styles'
 
-export interface TableHeaderProps extends WithStylesProps, Omit<React.ThHTMLAttributes<any>, 'css'> {
+export interface TableHeaderProps extends WithStylesProps, Omit<React.ThHTMLAttributes<any>, 'css' | 'style'> {
     sortable?: boolean
     sortDirection?: SortDirection
+    style?: Interpolation
     onSortChange?(direction: SortDirection, shiftKey?: boolean): any
 }
 
@@ -21,15 +23,15 @@ export class TableHeader extends React.PureComponent<TableHeaderProps> {
     }
 
     render() {
-        const { theme, css, sortable, sortDirection, onSortChange, ...rest } = this.props
+        const { theme, css, sortable, sortDirection, onSortChange, style, ...rest } = this.props
         const styles = createTableStyles(theme)
 
         if (!sortable) {
-            return <th className={css(styles.th)} {...rest} />
+            return <th className={css(styles.th, style)} {...rest} />
         }
 
         return (
-            <th className={css(styles.th)} {...rest}>
+            <th className={css(styles.th, style)} {...rest}>
                 <SortableLabel direction={sortDirection} onChange={onSortChange}>
                     {this.props.children}
                 </SortableLabel>

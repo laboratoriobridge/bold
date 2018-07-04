@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 export interface InputController {
+  getInput(): HTMLInputElement
   focus(): any
   blur(): any
 }
@@ -31,6 +32,7 @@ export class Input extends React.Component<InputProps, any> {
 
   componentDidMount() {
     this.props.provideController && this.props.provideController({
+      getInput: () => this.input,
       focus: () => this.input.focus(),
       blur: () => this.input.blur(),
     })

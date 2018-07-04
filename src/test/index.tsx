@@ -5,7 +5,7 @@ import { Form, FormSpy } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router'
 import { applyMiddleware, combineReducers, compose, createStore, Middleware } from 'redux'
-import * as configureMockStore from 'redux-mock-store'
+import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
 import requesterReducer from '../store/requester'
@@ -13,14 +13,14 @@ import { createTheme, Theme, ThemeProvider } from '../styles/'
 
 export const axiosMock = new MockAdapter(axios)
 
-const reducer = combineReducers({
+const defaultReducers = combineReducers({
     requester: requesterReducer,
 })
 
 const middlewares: Middleware[] = [thunkMiddleware]
 
-export const createTestStore = (initialState = {}) => {
-    return createStore(reducer, initialState, compose(applyMiddleware(...middlewares)))
+export const createTestStore = (initialState = {}, reducers: any = defaultReducers) => {
+    return createStore(reducers, initialState, compose(applyMiddleware(...middlewares)))
 }
 
 export const mockStore = configureMockStore(middlewares)

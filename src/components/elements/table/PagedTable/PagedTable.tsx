@@ -25,7 +25,7 @@ export class PagedTable<T> extends React.PureComponent<PagedTableProps<T>> {
                     {...rest}
                 />
                 <TableFooter
-                    styles={{ borderTop: 'none' }}
+                    style={{ borderTop: 'none' }}
                     page={page.number}
                     pageSize={page.size}
                     totalPages={page.totalPages}

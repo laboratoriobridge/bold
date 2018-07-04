@@ -1,11 +1,13 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export type TagType = 'normal' | 'danger' | 'info' | 'success' | 'alert'
 
 export interface TagProps extends WithStylesProps {
     type?: TagType
+    style?: Interpolation
 }
 
 @withStyles
@@ -15,8 +17,8 @@ export class Tag extends React.PureComponent<TagProps> {
     }
 
     render() {
-        const { css, theme, type } = this.props
-        const styles = {
+        const { css, theme, type, style } = this.props
+        const styles: Styles = {
             badge: {
                 padding: '0.25rem',
                 fontWeight: 'bold',
@@ -50,7 +52,7 @@ export class Tag extends React.PureComponent<TagProps> {
         }
 
         return (
-            <span className={css(styles.badge, typeStyles[type])}>{this.props.children}</span>
+            <span className={css(styles.badge, typeStyles[type], style)}>{this.props.children}</span>
         )
     }
 }

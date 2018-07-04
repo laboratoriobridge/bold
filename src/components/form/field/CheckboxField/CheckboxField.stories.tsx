@@ -15,7 +15,8 @@ storiesOf('Form/Fields', module)
     .add('CheckboxField', () => (
         <CheckboxField
             name='check'
-            disabled={boolean('disabled', false)}
             label={text('label', 'Component label')}
+            disabled={boolean('disabled', false)}
+            indeterminate={boolean('indeterminate', false)}
         />
     ))

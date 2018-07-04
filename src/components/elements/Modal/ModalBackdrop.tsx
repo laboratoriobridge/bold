@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export interface ModalBackdropProps extends WithStylesProps {
     onClick(): any
@@ -10,11 +10,11 @@ export interface ModalBackdropProps extends WithStylesProps {
 export class ModalBackdrop extends React.PureComponent<ModalBackdropProps> {
 
     render() {
-        const { css, onClick } = this.props
-        const styles = {
+        const { css, theme, onClick } = this.props
+        const styles: Styles = {
             backdrop: {
                 position: 'fixed',
-                zIndex: 1030,
+                zIndex: theme.zIndex.modalBackdrop,
                 top: 0,
                 left: 0,
                 bottom: 0,

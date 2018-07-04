@@ -1,6 +1,7 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { TextColor, withStyles, WithStylesProps } from '../../../../styles'
+import { Styles, TextColor, withStyles, WithStylesProps } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 
 export type Weight = 'normal' | 'bold'
@@ -13,6 +14,7 @@ export interface TextProps extends WithStylesProps {
     weight?: Weight
     tag?: TextTag
     fontStyle?: FontStyle
+    style?: Interpolation
 }
 
 @withStyles
@@ -23,14 +25,19 @@ export class Text extends React.PureComponent<TextProps> {
     }
 
     render() {
-        const style: React.CSSProperties = {
-            color: this.props.color && getTextColor(this.props.theme, this.props.color),
-            fontSize: this.props.size && this.props.size + 'rem',
-            fontWeight: this.props.weight,
-            fontStyle: this.props.fontStyle,
+        const { css, theme, style, color, size, weight, fontStyle } = this.props
+        const styles: Styles = {
+            text: {
+                color: color && getTextColor(theme, color),
+                fontSize: size && size + 'rem',
+                fontWeight: weight,
+                fontStyle,
+            },
         }
 
-        return React.createElement(this.props.tag, { className: this.props.css(style) }, this.props.children)
+        return React.createElement(this.props.tag, {
+            className: css(styles.text, style),
+        }, this.props.children)
     }
 
 }

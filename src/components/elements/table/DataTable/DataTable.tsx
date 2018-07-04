@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { SortDirection } from '../SortableLabel/SortableLabel'
@@ -11,7 +12,7 @@ export interface TableColumnConfig<T = any> {
     name: string
     header?: React.ReactNode
     sortable?: boolean
-    styles?: any
+    style?: Interpolation
     render(row: T): React.ReactNode
 }
 
@@ -26,7 +27,7 @@ export interface DataTableProps<T = any> extends TableProps {
 }
 
 export interface DataTableRenderProps extends DataTableProps {
-    getHeaderProps(column: TableColumnConfig): TableHeaderProps
+    getHeaderProps(column: TableColumnConfig | string): TableHeaderProps
     getColumn(columnName: string): TableColumnConfig
 }
 
@@ -88,7 +89,7 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
             getColumn,
             render,
             onRowClick,
-            ...rest,
+            ...rest
         } = this.props
 
         return (

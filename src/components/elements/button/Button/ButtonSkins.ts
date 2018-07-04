@@ -1,16 +1,17 @@
-import { Theme } from '../../../../styles'
+import { Styles, Theme } from '../../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
 import { createStyles as createSecondary } from './skins/secondary'
 
 export type Skins = 'default' | 'ghost' | 'secondary'
-export type Type = 'normal' | 'primary'
+export type Type = 'normal' | 'primary' | 'danger'
 export type Size = 'large' | 'medium' | 'small'
 
 export interface Skin {
-    button: any,
+    button: any
     primary: any
+    danger: any
 }
 
 export const skinMap: { [key in Skins]: (theme: Theme) => Skin } = {
@@ -25,7 +26,7 @@ export interface SkinProps {
     type?: Type
 }
 
-export const createBaseStyles = (theme: Theme) => ({
+export const createBaseStyles = (theme: Theme): Styles => ({
     button: {
         backfaceVisibility: 'hidden',
         display: 'inline-flex',
@@ -37,13 +38,7 @@ export const createBaseStyles = (theme: Theme) => ({
         transition: 'all .2s',
         fontWeight: 'bold',
         letterSpacing: 1,
-        ':disabled': {
-            cursor: 'not-allowed',
-            opacity: 0.5,
-        },
-        ':not(:disabled)': {
-            cursor: 'pointer',
-        },
+        cursor: 'pointer',
         '& > span': {
             alignItems: 'center',
             display: 'inline-flex',
@@ -51,6 +46,14 @@ export const createBaseStyles = (theme: Theme) => ({
             '& > :not(:last-child)': {
                 marginRight: '0.5rem',
             },
+        },
+    },
+    disabled: {
+        cursor: 'not-allowed',
+        opacity: 0.5,
+
+        '&:not(button)': {
+            pointerEvents: 'none',
         },
     },
     loading: {
@@ -78,7 +81,7 @@ export const createBaseStyles = (theme: Theme) => ({
     },
 })
 
-export const createSizeStyles = (theme: Theme) => ({
+export const createSizeStyles = (theme: Theme): Styles => ({
     large: {
         padding: 'calc(1.25rem - 1px) 3.25rem',
         fontSize: '0.875rem',
@@ -89,6 +92,6 @@ export const createSizeStyles = (theme: Theme) => ({
     },
     small: {
         fontSize: '0.875rem',
-        padding: 'calc(0.25rem - 1px) 1rem',
+        padding: 'calc(0.25rem - 1px) calc(0.5rem - 1px)', // discount border size
     },
 })

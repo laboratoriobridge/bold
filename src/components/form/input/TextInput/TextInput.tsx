@@ -1,6 +1,7 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { focusBoxShadow, Theme, withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, PublicInputProps } from '../Input/Input'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
@@ -10,9 +11,10 @@ export interface TextInputProps extends PublicInputProps, WithStylesProps {
     status?: InputStatus
     password?: boolean
     icon?: InputIconDecoratorProps
+    style?: Interpolation
 }
 
-export const createStyles = (theme: Theme) => ({
+export const createStyles = (theme: Theme): Styles => ({
     input: {
         backgroundColor: theme.pallete.surface.main,
         border: 'solid 1px ' + theme.pallete.gray.c80,
@@ -56,11 +58,13 @@ export const createStyles = (theme: Theme) => ({
 export class TextInput extends React.Component<TextInputProps> {
 
     render() {
-        const { css, password, status, theme, icon, ...rest } = this.props
+        const { css, password, status, theme, icon, style, ...rest } = this.props
         const styles = createStyles(theme)
 
         const classes = css(styles.input,
-            status === 'error' && styles.error)
+            status === 'error' && styles.error,
+            style
+        )
 
         const input = (
             <Input

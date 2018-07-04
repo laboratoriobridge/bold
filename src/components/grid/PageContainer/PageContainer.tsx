@@ -1,15 +1,16 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 
 export interface PageContainerProps extends WithStylesProps {
-
+    style?: Interpolation
 }
 
 @withStyles
 export class PageContainer extends React.PureComponent<PageContainerProps> {
     render() {
-        const { theme } = this.props
+        const { theme, style } = this.props
         const styles = {
             container: {
                 width: '960px',
@@ -27,7 +28,7 @@ export class PageContainer extends React.PureComponent<PageContainerProps> {
         }
 
         return (
-            <div className={this.props.css(styles.container)}>{this.props.children}</div>
+            <div className={this.props.css(styles.container, style)}>{this.props.children}</div>
         )
     }
 }

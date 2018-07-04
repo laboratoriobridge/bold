@@ -31,7 +31,7 @@ export class Number extends React.Component<NumberLabelProps> {
             abbrev,
             prefix,
             sufix,
-            ...rest,
+            ...rest
         } = this.props
 
         return (

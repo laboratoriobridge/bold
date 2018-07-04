@@ -5,7 +5,7 @@ import * as React from 'react'
 
 import { Page } from '../../../../store/requester'
 import { withPropTypes, withTheme } from '../../../../stories-addons'
-import { IconButton } from '../../button/IconButton/IconButton'
+import { Button } from '../../button/Button/Button'
 
 import { PagedTable } from './PagedTable'
 import { emptyPage } from './PagedTableConnected'
@@ -52,8 +52,8 @@ storiesOf('Components/Table', module)
                 { name: 'age', header: 'Age', sortable: true, render: (row: Row) => row.age },
                 {
                     name: 'buttons',
-                    styles: { textAlign: 'right' },
-                    render: (row: Row) => <IconButton icon='pen' />,
+                    style: { textAlign: 'right' },
+                    render: (row: Row) => <Button size='small' skin='ghost' icon='pen' />,
                 },
             ]}
         />

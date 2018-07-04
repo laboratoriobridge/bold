@@ -1,8 +1,8 @@
 import 'react-select/dist/react-select.css'
 
-import { focusBoxShadow, Theme } from '../../../styles'
+import { focusBoxShadow, Styles, Theme } from '../../../styles'
 
-const createSelectStyle = (theme: Theme) => {
+const createSelectStyle = (theme: Theme): Styles => {
     return {
         default: {
             fontSize: '0.75rem',

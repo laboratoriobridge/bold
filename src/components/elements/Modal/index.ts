@@ -1,0 +1,6 @@
+export { Modal, ModalProps } from './Modal'
+export { ModalBackdrop, ModalBackdropProps } from './ModalBackdrop'
+export { ModalBody, ModalBodyProps } from './ModalBody'
+export { ModalContainer, ModalContainerProps } from './ModalContainer'
+export { ModalControlled, ModalControlledProps, ModalController } from './ModalControlled'
+export { ModalFooter, ModalFooterProps } from './ModalFooter'

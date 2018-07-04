@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export interface DropdownMenuProps extends WithStylesProps {
 
@@ -10,7 +10,7 @@ export interface DropdownMenuProps extends WithStylesProps {
 export class DropdownMenu extends React.Component<DropdownMenuProps> {
     render() {
         const { css, theme } = this.props
-        const styles = {
+        const styles: Styles = {
             list: {
                 fontSize: '0.875rem',
                 fontWeight: 'bold',
@@ -27,6 +27,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 width: 'auto',
                 minWidth: '150px',
                 background: theme.pallete.surface.main,
+                textAlign: 'left',
             },
         }
         return (
@@ -49,7 +50,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
 
     render() {
         const { css, theme, onClick } = this.props
-        const styles = {
+        const styles: Styles = {
             item: {
                 margin: 0,
                 '&:not(:last-child)': {

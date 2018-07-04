@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
@@ -9,9 +10,10 @@ import { createBaseStyles, createSizeStyles, skinMap, SkinProps } from './Button
 
 export interface ButtonProps extends SkinProps, BaseButtonProps, WithStylesProps {
     icon?: Icons
-    label: string
+    label?: string
     loading?: boolean
     block?: boolean
+    style?: Interpolation
 }
 
 export interface ButtonState {
@@ -46,7 +48,8 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             theme,
             type,
             block,
-            ...rest,
+            style,
+            ...rest
         } = this.props
 
         const skinStyles = skinMap[skin](theme)
@@ -57,11 +60,14 @@ export class Button extends React.Component<ButtonProps, ButtonState> {
             baseStyles.button,
             skinStyles.button,
             type === 'primary' && skinStyles.primary,
+            type === 'danger' && skinStyles.danger,
             size === 'large' && sizeStyles.large,
             size === 'medium' && sizeStyles.medium,
             size === 'small' && sizeStyles.small,
             (this.state.loading || loading) && baseStyles.loading,
-            block && baseStyles.block
+            this.props.disabled && baseStyles.disabled,
+            block && baseStyles.block,
+            style
         )
 
         return (

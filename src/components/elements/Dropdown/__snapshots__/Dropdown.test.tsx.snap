@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  display: inline-block;
+}
+
+.emotion-6 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-5 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4d4d4d;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #ffffff;
+  text-align: left;
+}
+
+.emotion-2 {
+  margin: 0;
+}
+
+.emotion-2:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-1 {
+  padding: 1rem;
+  display: block;
+}
+
+.emotion-1:hover {
+  background: #f2f2f7;
+}
+
+<div
+  class="emotion-0"
+>
+  <div
+    class="emotion-0"
+  >
+    <span />
+  </div>
+  <div
+    class="emotion-6"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <ul
+      class="emotion-5"
+    >
+      <li
+        class="emotion-2"
+      >
+        <a
+          class="emotion-1"
+        >
+          Item #1
+        </a>
+      </li>
+      <li
+        class="emotion-2"
+      >
+        <a
+          class="emotion-1"
+        >
+          Item #2
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

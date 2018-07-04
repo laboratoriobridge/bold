@@ -2,7 +2,7 @@ import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 import Dropzone, * as DropzoneAll from 'react-dropzone'
 
-import { Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { format } from '../../../util/byte'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Icon } from '../Icon/Icon'
@@ -45,7 +45,7 @@ export class FileUploader extends React.Component<FileUploaderProps> {
             theme,
         } = this.props
 
-        const styles = {
+        const styles: Styles = {
             dropzone: {
                 cursor: 'pointer',
                 padding: '0.25rem',
@@ -113,7 +113,7 @@ interface FileDetailsProps {
 class FileDetails extends React.Component<FileDetailsProps> {
 
     render() {
-        const styles = {
+        const styles: Styles = {
             info: {
                 flexGrow: 1,
                 marginLeft: '1rem',
@@ -159,9 +159,9 @@ class FileInfo extends React.PureComponent<FileInfoProps> {
         return (
             <div className={emotionCss(styles.wrapper)}>
                 {!this.props.file.error && !this.props.file.uploading &&
-                    <Icon icon='check' color='primary' size={1} styles={{ marginRight: 5 }} />
+                    <Icon icon='check' color='primary' size={1} style={{ marginRight: 5 }} />
                 }
-                <Text color='gray30' size={0.75} weight='bold' styles={{ marginRight: 10 }}>
+                <Text color='gray30' size={0.75} weight='bold' style={{ marginRight: 10 }}>
                     {this.props.file.selectedFile.name}
                 </Text>
                 <Text size={0.75}>{format(this.props.file.selectedFile.size, 0)}</Text>
@@ -186,7 +186,7 @@ class FileExtension extends React.PureComponent<FileExtensionProps> {
         }
 
         return (
-            <Text color='gray40' styles={styles} weight='bold'>{this.props.extension}</Text>
+            <Text color='gray40' style={styles} weight='bold'>{this.props.extension}</Text>
         )
     }
 

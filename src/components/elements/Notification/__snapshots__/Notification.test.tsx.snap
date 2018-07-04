@@ -13,7 +13,8 @@ exports[`Notification should render correctly 1`] = `
 .emotion-7 {
   -webkit-animation: none;
   animation: none;
-  padding: 0.75rem 3rem 0.75rem 3rem;
+  padding: 0 3rem;
+  min-height: 50px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -45,16 +46,18 @@ exports[`Notification should render correctly 1`] = `
 }
 
 .emotion-5 {
-  background-color: transparent;
-  border: none;
-  border-radius: 4px;
-  color: #666666;
-  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  padding: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -62,12 +65,25 @@ exports[`Notification should render correctly 1`] = `
   user-select: none;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-transform: translate3d(0,0,0);
-  -ms-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0);
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-5 span {
+.emotion-5 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -76,13 +92,21 @@ exports[`Notification should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-5:disabled {
-  opacity: 0.5;
+.emotion-5 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-5:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
 .emotion-5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-5:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
 }
 
 .emotion-4 {
@@ -95,7 +119,8 @@ exports[`Notification should render correctly 1`] = `
 .emotion-15 {
   -webkit-animation: none;
   animation: none;
-  padding: 0.75rem 3rem 0.75rem 3rem;
+  padding: 0 3rem;
+  min-height: 50px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -116,7 +141,8 @@ exports[`Notification should render correctly 1`] = `
 .emotion-23 {
   -webkit-animation: none;
   animation: none;
-  padding: 0.75rem 3rem 0.75rem 3rem;
+  padding: 0 3rem;
+  min-height: 50px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -137,7 +163,8 @@ exports[`Notification should render correctly 1`] = `
 .emotion-31 {
   -webkit-animation: none;
   animation: none;
-  padding: 0.75rem 3rem 0.75rem 3rem;
+  padding: 0 3rem;
+  min-height: 50px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -172,7 +199,6 @@ exports[`Notification should render correctly 1`] = `
         <path
           d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 16h-2v-7h2zm-1-9a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 9z"
           data-name="Informação"
-          id="Informação-2"
         />
       </svg>
     </span>
@@ -201,7 +227,6 @@ exports[`Notification should render correctly 1`] = `
             >
               <path
                 d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-                id="Fechar"
               />
             </svg>
           </span>
@@ -224,7 +249,6 @@ exports[`Notification should render correctly 1`] = `
       >
         <path
           d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1.29 14.21l-4.42-4.4 1.42-1.42 3 3 5.59-5.6 1.42 1.42z"
-          id="Sucesso-circulo"
         />
       </svg>
     </span>
@@ -253,7 +277,6 @@ exports[`Notification should render correctly 1`] = `
             >
               <path
                 d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-                id="Fechar"
               />
             </svg>
           </span>
@@ -276,7 +299,6 @@ exports[`Notification should render correctly 1`] = `
       >
         <path
           d="M21.83 19L12.92 3.62a1 1 0 0 0-1.84 0L2.17 19c-.46.88.07 2 .92 2h17.82c.85 0 1.38-1.14.92-2zM11 7h2v7h-2zm1 12a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 19z"
-          id="Erro"
         />
       </svg>
     </span>
@@ -305,7 +327,6 @@ exports[`Notification should render correctly 1`] = `
             >
               <path
                 d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-                id="Fechar"
               />
             </svg>
           </span>
@@ -328,7 +349,6 @@ exports[`Notification should render correctly 1`] = `
       >
         <path
           d="M2 12A10 10 0 1 0 12 2 10 10 0 0 0 2 12zm2 0a7.92 7.92 0 0 1 1.69-4.9L16.9 18.31A7.92 7.92 0 0 1 12 20a8 8 0 0 1-8-8zm16 0a7.92 7.92 0 0 1-1.69 4.9L7.1 5.69A7.92 7.92 0 0 1 12 4a8 8 0 0 1 8 8z"
-          id="ban"
         />
       </svg>
     </span>
@@ -357,7 +377,6 @@ exports[`Notification should render correctly 1`] = `
             >
               <path
                 d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-                id="Fechar"
               />
             </svg>
           </span>

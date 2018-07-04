@@ -1,6 +1,7 @@
+import { PositionProperty } from 'csstype'
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 export interface StickyContainerProps extends WithStylesProps {
     top?: number
@@ -8,7 +9,7 @@ export interface StickyContainerProps extends WithStylesProps {
 }
 
 export interface StickContainerState {
-    position: string
+    position: PositionProperty
 }
 
 @withStyles
@@ -23,16 +24,18 @@ export class StickyContainer extends React.PureComponent<StickyContainerProps, S
 
     render() {
         const { css, top, left } = this.props
-        const styles = {
-            top: this.state.position === 'fixed' ? 0 : top,
-            position: this.state.position,
-            width: '100%',
-            zIndex: '2',
-            left,
+        const root: Styles = {
+            container: {
+                top: this.state.position === 'fixed' ? 0 : top,
+                position: this.state.position,
+                width: '100%',
+                zIndex: 2,
+                left,
+            },
         }
 
         return (
-            <div className={css(styles)}>{this.props.children}</div>
+            <div className={css(root.container)}>{this.props.children}</div>
         )
     }
 
