@@ -5,6 +5,7 @@ import { FormError } from '../FormError'
 
 export interface ErrorFieldProps {
     name: string
+    ignoreObjectError?: boolean
 }
 
 export class ErrorField extends React.Component<ErrorFieldProps> {
@@ -26,7 +27,10 @@ export class ErrorField extends React.Component<ErrorFieldProps> {
 
         const hasError = (!!error && touched) || (!!submitError && !dirtySinceLastSubmit)
 
-        if (hasError) {
+        const ignore = this.props.ignoreObjectError
+            && !(typeof error === 'string') && !(typeof submitError === 'string')
+
+        if (hasError && !ignore) {
             return <FormError error={error || submitError} />
         }
 
