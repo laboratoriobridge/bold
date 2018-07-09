@@ -1,7 +1,7 @@
 import * as moment from 'moment'
 
-import 'moment/locale/pt-br'
-
+// TODO: locale configuration strategy
+// import 'moment/locale/pt-br'
 moment.locale('pt-BR')
 
 export const formats = {

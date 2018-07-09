@@ -7,7 +7,6 @@ export type Global = Interpolation
 
 export const createGlobals = (pallete: Pallete, typography: Typography): Global => {
     return {
-        '@font-face': [typography.fontFaces],
         'html, body': {
             height: '100%',
             margin: 0,

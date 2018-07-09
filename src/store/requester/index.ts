@@ -3,5 +3,4 @@ export * from './RequesterModule'
 export * from './PageRequester'
 export * from './reducer'
 
-import { reducer } from './reducer'
-export default reducer
+export { reducer as requesterReducer } from './reducer'

@@ -1,7 +1,7 @@
 {
   "name": "bridge-react",
   "version": "1.0.0-alpha.41",
-  "main": "lib/index.js",
+  "main": "lib/bundle.js",
   "types": "lib/index.d.ts",
   "repository": {
     "url": "https://github.com/laboratoriobridge/bridge-react"
@@ -11,10 +11,9 @@
   },
   "scripts": {
     "precommit": "npm run generate-icons && git add ./src/components/elements/Icon/generated && npm test",
-    "start": "npm run build && tsc --watch",
+    "start": "npm run clean && webpack --progress",
     "clean": "shx rm -rf lib",
-    "copyfiles": "copyfiles -u 1 ./src/styles/theme/fonts/** lib/",
-    "build": "npm run clean && tsc && npm run copyfiles",
+    "build": "npm run clean && webpack --mode=production",
     "test": "npm run lint && jest",
     "test:watch": "jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
@@ -105,7 +104,8 @@
     "tslint-react": "3.6.0",
     "typescript": "2.9.2",
     "url-loader": "1.0.1",
-    "webpack": "4.14.0"
+    "webpack": "4.14.0",
+    "webpack-cli": "3.0.8"
   },
   "peerDependencies": {
     "axios": "^0.18.0",
@@ -122,6 +122,7 @@
     "react-final-form": "^3.4.2",
     "react-popper": "^1.0.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "react-select": "^1.2.1",
     "react-text-mask": "^5.4.1",
     "text-mask-core": "^5.1.1",

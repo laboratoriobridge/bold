@@ -1,5 +1,3 @@
-import 'react-select/dist/react-select.css'
-
 import { focusBoxShadow, Styles, Theme } from '../../../styles'
 
 const createSelectStyle = (theme: Theme): Styles => {
