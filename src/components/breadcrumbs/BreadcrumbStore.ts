@@ -1,9 +1,9 @@
-import { LocationDescriptor } from 'history'
+import { LinkProps } from 'react-router-dom'
 
 export interface BreadcrumbEntry {
     key: string
     title: string
-    to?: LocationDescriptor
+    to?: LinkProps['to']
 }
 
 export type BreadcrumbListener = (entries: BreadcrumbEntry[]) => void
