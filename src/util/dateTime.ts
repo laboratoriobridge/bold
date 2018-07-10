@@ -1,9 +1,5 @@
 import * as moment from 'moment'
 
-// TODO: locale configuration strategy
-// import 'moment/locale/pt-br'
-moment.locale('pt-BR')
-
 export const formats = {
     date: 'DD/MM/YYYY',
     time: 'HH:mm',
