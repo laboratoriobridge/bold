@@ -8219,6 +8219,10 @@ test-exclude@^4.2.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
+text-mask-addons@3.7.2:
+  version "3.7.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-addons/-/text-mask-addons-3.7.2.tgz#56d34780c94f2ee593a77de6e79b55d56f8a8bb8"
+
 text-mask-core@5.1.1:
   version "5.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-core/-/text-mask-core-5.1.1.tgz#a7f65634e11236818fd36a92668e17bf9368f357"

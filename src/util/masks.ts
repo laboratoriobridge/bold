@@ -11,4 +11,5 @@ export const masks: { [key: string]: MaskType } = {
     },
     cpf: [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/],
     cep: [/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/],
+    time: [/\d/, /\d/, ':', /\d/, /\d/],
 }
