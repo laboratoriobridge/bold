@@ -2,7 +2,7 @@ import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
-import { Styles, withStyles, WithStylesProps } from '../../styles'
+import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
 import { BreadcrumbEntry, BreadcrumbStore } from './BreadcrumbStore'
 
