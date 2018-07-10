@@ -3316,7 +3316,13 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion-theming@9.2.4, emotion-theming@^9.1.2:
+emotion-theming@9.2.5:
+  version "9.2.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.5.tgz#f33f210f11c80e113641b34aec9e0bf9e04cbd89"
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+
+emotion-theming@^9.1.2:
   version "9.2.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.4.tgz#975837861ef2028704a014a60c64ebfabd432755"
   dependencies:
@@ -7028,9 +7034,9 @@ react-dom@16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-dropzone@4.2.12:
-  version "4.2.12"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.12.tgz#b57f5b490102f24e1e8a970d46ef82f8cd71e222"
+react-dropzone@4.2.13:
+  version "4.2.13"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.13.tgz#31393c079b4e5ddcc176c095cebc3545d1248b9d"
   dependencies:
     attr-accept "^1.0.3"
     prop-types "^15.5.7"
