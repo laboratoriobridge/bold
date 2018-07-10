@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
 
-import { BreadcrumbEntry, BreadcrumbStore } from './BreadcrumbStore'
+import { BreadcrumbEntry, BreadcrumbStore, BreadcrumbUnsubscribeFunction } from './BreadcrumbStore'
 
 export interface BreadcrumbNavProps extends WithStylesProps {
 }
@@ -20,7 +20,7 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
         breadcrumbs: PropTypes.object,
     }
 
-    private unsubscribe
+    private unsubscribe: BreadcrumbUnsubscribeFunction
 
     constructor(props: BreadcrumbNavProps, context) {
         super(props)
@@ -29,7 +29,7 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
         }
     }
 
-    public componentWillMount() {
+    public componentDidMount() {
         this.unsubscribe = this.store().addChangeListener((entries) => {
             this.setState({ entries })
         })
