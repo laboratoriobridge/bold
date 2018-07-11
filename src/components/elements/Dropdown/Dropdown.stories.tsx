@@ -18,9 +18,9 @@ storiesOf('Components/Dropdown', module)
     .add('button', () => (
         <DropdownButton
             items={[
-                { render: 'Item #1', onClick: action('item 1 clicked') },
-                { render: 'Item #2', onClick: action('item 2 clicked') },
-                { render: 'Item #3' },
+                { content: 'Item #1', onClick: action('item 1 clicked') },
+                { content: 'Item #2', onClick: action('item 2 clicked') },
+                { content: 'Item #3' },
             ]}
         />
     ))
