@@ -10,7 +10,7 @@ import { DropdownItem } from './DropdownMenu'
 const createComponent = () => {
     return withTheme(
         // tslint:disable jsx-no-lambda
-        <Dropdown placement='top-start' renderTarget={() => <span />}>
+        <Dropdown renderTarget={() => <span />}>
             {(ctrl: PopperController) => (
                 <>
                     <DropdownItem>Item #1</DropdownItem>

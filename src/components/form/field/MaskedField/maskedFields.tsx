@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Omit } from 'react-redux'
+import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { masks, onlyNumbers } from '../../../../util/masks'
 import { MaskType } from '../../input/MaskedInput/MaskedInput'
@@ -32,4 +33,8 @@ export const CpfField = createMaskedField('CpfField', masks.cpf, {
 export const CepField = createMaskedField('CepField', masks.cep, {
     parse: onlyNumbers,
     placeholder: '_____-___',
+})
+export const TimeField = createMaskedField('TimeField', masks.time, {
+    placeholder: 'hh:mm',
+    pipe: createAutoCorrectedDatePipe('HH:MM'),
 })

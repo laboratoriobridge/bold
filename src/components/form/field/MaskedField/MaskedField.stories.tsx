@@ -9,7 +9,7 @@ import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { MaskedField } from './MaskedField'
 import * as Doc from './MaskedField.md'
-import { CpfField, TelefoneField } from './maskedFields'
+import { CpfField, TelefoneField, TimeField } from './maskedFields'
 
 storiesOf('Form/Fields', module)
     .addDecorator(withPropTypes(Doc))
@@ -36,6 +36,13 @@ storiesOf('Form/Fields', module)
             <TelefoneField
                 name='telefone'
                 label='Telefone'
+                disabled={boolean('disabled', false)}
+                guide={boolean('guide', true)}
+                keepCharPositions={boolean('keepCharPositions', false)}
+            />
+            <TimeField
+                name='time'
+                label='Time (hour:minute)'
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}

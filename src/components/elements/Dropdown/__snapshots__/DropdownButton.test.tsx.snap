@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DropdownButton should render correctly 1`] = `
+.emotion-5 {
+  margin: 0;
+}
+
+.emotion-5:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-4 {
+  padding: 1rem;
+  display: block;
+}
+
+.emotion-4:hover {
+  background: #f2f2f7;
+}
+
+.emotion-3 {
+  display: inline-block;
+}
+
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-9 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-8 {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #4d4d4d;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #ffffff;
+  text-align: left;
+}
+
+<div
+  class="emotion-3"
+>
+  <div
+    class="emotion-3"
+  >
+    <button
+      class="emotion-2"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-1"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <circle
+              cx="12"
+              cy="6"
+              r="2"
+            />
+            <circle
+              cx="12"
+              cy="12"
+              r="2"
+            />
+            <circle
+              cx="12"
+              cy="18"
+              r="2"
+            />
+          </svg>
+        </span>
+      </span>
+    </button>
+  </div>
+  <div
+    class="emotion-9"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <ul
+      class="emotion-8"
+    >
+      <li
+        class="emotion-5"
+      >
+        <a
+          class="emotion-4"
+        >
+          <span>
+            Item #1
+          </span>
+        </a>
+      </li>
+      <li
+        class="emotion-5"
+      >
+        <a
+          class="emotion-4"
+        >
+          <span>
+            Item #2
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`DropdownButtonItem should render correctly 1`] = `
+.emotion-1 {
+  margin: 0;
+}
+
+.emotion-1:not(:last-child) {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.emotion-0 {
+  padding: 1rem;
+  display: block;
+}
+
+.emotion-0:hover {
+  background: #f2f2f7;
+}
+
+<li
+  class="emotion-1"
+>
+  <a
+    class="emotion-0"
+  >
+    Item
+  </a>
+</li>
+`;

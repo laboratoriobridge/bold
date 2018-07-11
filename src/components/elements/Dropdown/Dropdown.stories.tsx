@@ -8,13 +8,23 @@ import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
 
 import { Dropdown } from './Dropdown'
+import { DropdownButton } from './DropdownButton'
 import { DropdownItem, DropdownMenu } from './DropdownMenu'
 
 storiesOf('Components/Dropdown', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
-    .add('trigger', () => (
+    .add('button', () => (
+        <DropdownButton
+            items={[
+                { content: 'Item #1', onClick: action('item 1 clicked') },
+                { content: 'Item #2', onClick: action('item 2 clicked') },
+                { content: 'Item #3' },
+            ]}
+        />
+    ))
+    .add('custom trigger', () => (
         // tslint:disable jsx-no-lambda
         <HFlow hSpacing={0.5} alignItems='center'>
             <Dropdown
