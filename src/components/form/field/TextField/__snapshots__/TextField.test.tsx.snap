@@ -54,15 +54,13 @@ exports[`TextField deve ser renderizado de forma correta 1`] = `
 <div
   data-name="test"
 >
-  <div>
-    <input
-      class="emotion-0"
-      maxlength="2"
-      name="test"
-      placeholder="Test"
-      type="text"
-      value=""
-    />
-  </div>
+  <input
+    class="emotion-0"
+    maxlength="2"
+    name="test"
+    placeholder="Test"
+    type="text"
+    value=""
+  />
 </div>
 `;

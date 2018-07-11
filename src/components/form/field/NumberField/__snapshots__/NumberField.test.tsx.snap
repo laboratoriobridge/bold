@@ -54,13 +54,11 @@ exports[`NumberField Field render 1`] = `
 <div
   data-name="number"
 >
-  <div>
-    <input
-      class="emotion-0"
-      name="number"
-      type="text"
-      value=""
-    />
-  </div>
+  <input
+    class="emotion-0"
+    name="number"
+    type="text"
+    value=""
+  />
 </div>
 `;
