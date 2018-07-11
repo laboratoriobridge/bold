@@ -2,7 +2,6 @@ import * as moment from 'moment'
 import * as React from 'react'
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 import * as TestPicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { InputController } from '../Input/Input'

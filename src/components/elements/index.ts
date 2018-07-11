@@ -1,6 +1,6 @@
 export { AriaControlNav, AriaControlNavProps } from './AriaControlNav/AriaControlNav'
-export { Dropdown, DropdownProps } from './Dropdown/Dropdown'
-export { DropdownMenu, DropdownMenuProps } from './Dropdown/DropdownMenu'
+export * from './Breadcrumb'
+export * from './Dropdown'
 export { InfoLabel, InfoLabelProps } from './InfoLabel/InfoLabel'
 export * from './Modal'
 export { Paginator, PaginatorProps } from './Paginator/Paginator'

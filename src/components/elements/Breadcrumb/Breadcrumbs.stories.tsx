@@ -2,16 +2,16 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withRouter, withTheme } from '../../stories-addons'
+import { withPropTypes, withRouter, withTheme } from '../../../stories-addons'
 
 import { Breadcrumb, BreadcrumbNav, BreadcrumbProvider } from '.'
 
-storiesOf('Components', module)
+storiesOf('Components/Breadcrumb', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withRouter())
-    .add('Breadcrumbs', () => (
+    .add('default', () => (
         <BreadcrumbProvider>
             <BreadcrumbNav />
 

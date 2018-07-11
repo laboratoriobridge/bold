@@ -3,7 +3,7 @@
 import { mount, render } from 'enzyme'
 import * as React from 'react'
 
-import { withRouter, withTheme } from '../../test'
+import { withRouter, withTheme } from '../../../test'
 
 import { Breadcrumb, BreadcrumbEntry, BreadcrumbNav, BreadcrumbProvider, BreadcrumbSimpleStore } from './'
 

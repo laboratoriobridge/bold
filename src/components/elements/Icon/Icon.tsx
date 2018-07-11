@@ -5,6 +5,7 @@ import { Styles, TextColor, withStyles, WithStylesProps } from '../../../styles'
 import { getTextColor } from '../../../styles/theme/createTheme'
 
 import { IconMap, Icons } from './generated/Icons'
+import './GeneratedIconProps'
 
 export interface IconProps extends WithStylesProps {
     icon: Icons

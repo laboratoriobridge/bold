@@ -1,18 +1,19 @@
-import { LocationDescriptor } from 'history'
+import { LinkProps } from 'react-router-dom'
 
 export interface BreadcrumbEntry {
     key: string
     title: string
-    to?: LocationDescriptor
+    to?: LinkProps['to']
 }
 
 export type BreadcrumbListener = (entries: BreadcrumbEntry[]) => void
+export type BreadcrumbUnsubscribeFunction = () => void
 
 export interface BreadcrumbStore {
     push(entry: BreadcrumbEntry)
     pop(entry: BreadcrumbEntry)
     getEntries(): BreadcrumbEntry[]
-    addChangeListener(BreadcrumbListener): void
+    addChangeListener(BreadcrumbListener): BreadcrumbUnsubscribeFunction
 }
 
 export class BreadcrumbSimpleStore implements BreadcrumbStore {
@@ -41,6 +42,6 @@ export class BreadcrumbSimpleStore implements BreadcrumbStore {
     }
 
     private emitChange() {
-        this.listeners.map(listener => listener(this.entries))
+        this.listeners.forEach(listener => listener(this.entries))
     }
 }

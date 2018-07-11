@@ -2379,6 +2379,10 @@ chardet@^0.4.0:
   version "0.4.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
 
+chardet@^0.5.0:
+  version "0.5.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/chardet/-/chardet-0.5.0.tgz#fe3ac73c00c3d865ffcc02a0682e2c20b6a06029"
+
 cheerio@^1.0.0-rc.2:
   version "1.0.0-rc.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cheerio/-/cheerio-1.0.0-rc.2.tgz#4b9f53a81b27e4d5dac31c0ffd0cfa03cc6830db"
@@ -2802,7 +2806,7 @@ create-react-context@^0.2.1:
     fbjs "^0.8.0"
     gud "^1.0.0"
 
-cross-spawn@6.0.5:
+cross-spawn@6.0.5, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   dependencies:
@@ -3312,7 +3316,13 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion-theming@9.2.4, emotion-theming@^9.1.2:
+emotion-theming@9.2.5:
+  version "9.2.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.5.tgz#f33f210f11c80e113641b34aec9e0bf9e04cbd89"
+  dependencies:
+    hoist-non-react-statics "^2.3.1"
+
+emotion-theming@^9.1.2:
   version "9.2.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.4.tgz#975837861ef2028704a014a60c64ebfabd432755"
   dependencies:
@@ -3667,6 +3677,14 @@ external-editor@^2.1.0:
   dependencies:
     chardet "^0.4.0"
     iconv-lite "^0.4.17"
+    tmp "^0.0.33"
+
+external-editor@^3.0.0:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/external-editor/-/external-editor-3.0.0.tgz#dc35c48c6f98a30ca27a20e9687d7f3c77704bb6"
+  dependencies:
+    chardet "^0.5.0"
+    iconv-lite "^0.4.22"
     tmp "^0.0.33"
 
 extglob@^0.3.1:
@@ -4055,6 +4073,10 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+global-modules-path@^2.1.0:
+  version "2.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/global-modules-path/-/global-modules-path-2.1.0.tgz#923ec524e8726bb0c1a4ed4b8e21e1ff80c88bbb"
+
 global-modules@1.0.0, global-modules@^1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/global-modules/-/global-modules-1.0.0.tgz#6d770f0eb523ac78164d72b5e71a8877265cc3ea"
@@ -4397,7 +4419,7 @@ iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
 
-iconv-lite@^0.4.17, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@^0.4.17, iconv-lite@^0.4.22, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.23"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/iconv-lite/-/iconv-lite-0.4.23.tgz#297871f63be507adcfbfca715d0cd0eed84e9a63"
   dependencies:
@@ -4494,6 +4516,24 @@ inquirer@5.1.0:
     mute-stream "0.0.7"
     run-async "^2.2.0"
     rxjs "^5.5.2"
+    string-width "^2.1.0"
+    strip-ansi "^4.0.0"
+    through "^2.3.6"
+
+inquirer@^6.0.0:
+  version "6.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/inquirer/-/inquirer-6.0.0.tgz#e8c20303ddc15bbfc2c12a6213710ccd9e1413d8"
+  dependencies:
+    ansi-escapes "^3.0.0"
+    chalk "^2.0.0"
+    cli-cursor "^2.1.0"
+    cli-width "^2.0.0"
+    external-editor "^3.0.0"
+    figures "^2.0.0"
+    lodash "^4.3.0"
+    mute-stream "0.0.7"
+    run-async "^2.2.0"
+    rxjs "^6.1.0"
     string-width "^2.1.0"
     strip-ansi "^4.0.0"
     through "^2.3.6"
@@ -6994,9 +7034,9 @@ react-dom@16.4.1:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-dropzone@4.2.12:
-  version "4.2.12"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.12.tgz#b57f5b490102f24e1e8a970d46ef82f8cd71e222"
+react-dropzone@4.2.13:
+  version "4.2.13"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-4.2.13.tgz#31393c079b4e5ddcc176c095cebc3545d1248b9d"
   dependencies:
     attr-accept "^1.0.3"
     prop-types "^15.5.7"
@@ -7555,6 +7595,12 @@ rxjs@^5.5.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rxjs/-/rxjs-5.5.11.tgz#f733027ca43e3bec6b994473be4ab98ad43ced87"
   dependencies:
     symbol-observable "1.0.1"
+
+rxjs@^6.1.0:
+  version "6.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rxjs/-/rxjs-6.2.1.tgz#246cebec189a6cbc143a3ef9f62d6f4c91813ca1"
+  dependencies:
+    tslib "^1.9.0"
 
 safe-buffer@5.1.1:
   version "5.1.1"
@@ -8581,6 +8627,10 @@ uuid@^3.1.0, uuid@^3.2.1:
   version "3.3.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
+v8-compile-cache@^2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/v8-compile-cache/-/v8-compile-cache-2.0.0.tgz#526492e35fc616864284700b7043e01baee09f0a"
+
 v8flags@^2.1.1:
   version "2.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
@@ -8675,6 +8725,22 @@ watchpack@^1.5.0:
 webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+
+webpack-cli@3.0.8:
+  version "3.0.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-cli/-/webpack-cli-3.0.8.tgz#90eddcf04a4bfc31aa8c0edc4c76785bc4f1ccd9"
+  dependencies:
+    chalk "^2.4.1"
+    cross-spawn "^6.0.5"
+    enhanced-resolve "^4.0.0"
+    global-modules-path "^2.1.0"
+    import-local "^1.0.0"
+    inquirer "^6.0.0"
+    interpret "^1.1.0"
+    loader-utils "^1.1.0"
+    supports-color "^5.4.0"
+    v8-compile-cache "^2.0.0"
+    yargs "^11.1.0"
 
 webpack-dev-middleware@^3.1.3:
   version "3.1.3"
@@ -8884,7 +8950,7 @@ yargs-parser@^9.0.2:
   dependencies:
     camelcase "^4.1.0"
 
-yargs@^11.0.0:
+yargs@^11.0.0, yargs@^11.1.0:
   version "11.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/yargs/-/yargs-11.1.0.tgz#90b869934ed6e871115ea2ff58b03f4724ed2d77"
   dependencies:
