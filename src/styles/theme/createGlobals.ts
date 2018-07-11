@@ -21,6 +21,7 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
         body: {
             backgroundColor: pallete.surface.background,
             fontSize: typography.fontSize,
+            lineHeight: typography.lineHeight,
             overflowY: 'scroll',
         },
         '*, *:before, *:after': {
