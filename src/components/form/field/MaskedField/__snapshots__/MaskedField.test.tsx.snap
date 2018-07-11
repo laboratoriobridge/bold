@@ -1,20 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve ser renderizado de forma correta 1`] = `
-.emotion-1 {
-  margin-top: undefinedrem;
-  margin-right: undefinedrem;
-  margin-bottom: 0.5rem;
-  margin-left: undefinedrem;
-  display: inline-block;
-}
-
 .emotion-0 {
-  font-size: 0.75rem;
   font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
 }
 
-.emotion-2 {
+.emotion-1 {
   background-color: #ffffff;
   border: solid 1px #cccccc;
   border-radius: 2px;
@@ -30,36 +23,36 @@ exports[`deve ser renderizado de forma correta 1`] = `
   backface-visibility: hidden;
 }
 
-.emotion-2::-webkit-input-placeholder {
+.emotion-1::-webkit-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-2::-moz-placeholder {
+.emotion-1::-moz-placeholder {
   color: #cccccc;
 }
 
-.emotion-2:-ms-input-placeholder {
+.emotion-1:-ms-input-placeholder {
   color: #cccccc;
 }
 
-.emotion-2::placeholder {
+.emotion-1::placeholder {
   color: #cccccc;
 }
 
-.emotion-2:disabled {
+.emotion-1:disabled {
   background-color: #f2f2f7;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   border-color: #999999;
 }
 
-.emotion-2:not(:disabled):focus {
+.emotion-1:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   border-color: #056DFF;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
@@ -67,23 +60,18 @@ exports[`deve ser renderizado de forma correta 1`] = `
 <div
   data-name="test"
 >
-  <div
-    class="emotion-1"
+  <label
+    class="emotion-0"
+    for="test"
   >
-    <label
-      class="emotion-0"
-    >
-      Mask test
-    </label>
-  </div>
-  <div>
-    <input
-      class="emotion-2"
-      label="Mask test"
-      name="test"
-      placeholder="Test"
-      value=""
-    />
-  </div>
+    Mask test
+  </label>
+  <input
+    class="emotion-1"
+    label="Mask test"
+    name="test"
+    placeholder="Test"
+    value=""
+  />
 </div>
 `;

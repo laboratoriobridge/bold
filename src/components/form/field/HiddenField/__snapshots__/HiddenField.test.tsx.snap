@@ -4,12 +4,10 @@ exports[`HiddenField should be rendered correctly 1`] = `
 <div
   data-name="test"
 >
-  <div>
-    <input
-      name="test"
-      type="hidden"
-      value=""
-    />
-  </div>
+  <input
+    name="test"
+    type="hidden"
+    value=""
+  />
 </div>
 `;

@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<div>
+  Test
+</div>
+`;
+
+exports[`should render correctly 2`] = `
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #E0001A;
+  margin-top: 0.25rem;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-left: 0.25rem;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1rem;
+}
+
+<div
+  data-name="test"
+>
+  <label
+    class="emotion-0"
+    for="test"
+  >
+    Label
+  </label>
+  Teste
+  <div
+    class="emotion-3"
+  >
+    Error
+    <span
+      class="emotion-2"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-1"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 16h-2v-7h2zm-1-9a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 9z"
+          data-name="Informação"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;

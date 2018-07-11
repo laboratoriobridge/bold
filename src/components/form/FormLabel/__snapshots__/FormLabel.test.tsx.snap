@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept the style prop 1`] = `
+.emotion-0 {
+  font-weight: bold;
+  color: blue;
+}
+
+<label
+  class="emotion-0"
+>
+  Label
+</label>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  font-weight: bold;
+}
+
+<label
+  class="emotion-0"
+>
+  Label
+</label>
+`;
+
+exports[`should render correctly 2`] = `
+.emotion-1 {
+  font-weight: bold;
+}
+
+.emotion-0 {
+  color: #E0001A;
+  margin-left: 0.25rem;
+}
+
+<label
+  class="emotion-1"
+  for="test"
+>
+  Label
+  <span
+    aria-label="Campo obrigatório"
+    class="emotion-0"
+  >
+    *
+  </span>
+</label>
+`;
