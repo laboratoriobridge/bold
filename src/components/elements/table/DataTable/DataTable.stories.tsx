@@ -29,7 +29,7 @@ storiesOf('Components/Table', module)
         <DataTable
             rows={boolean('empty', false) ? [] : rows}
             onSortChange={action('sort-change')}
-            sort={{ id: 'ASC', name: 'DESC' }}
+            sort={['id', '-name']}
             loading={boolean('loading', false)}
             onRowClick={action('row-click')}
             columns={[

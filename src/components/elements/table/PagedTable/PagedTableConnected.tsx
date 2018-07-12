@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 import { Page, PageParams, PageRequester } from '../../../../store/requester'
 import { Omit } from '../../../../util/types'
-import { SortMap } from '../DataTable/DataTable'
 
 import { PagedTable, PagedTableProps } from './PagedTable'
 
@@ -93,12 +92,9 @@ export const mapDispatchToProps = (dispatch: any, ownProps: PagedTableConnectedP
         dispatch(ownProps.requester.setPageNumber(page))
         dispatch(ownProps.requester.request())
     },
-    onSortChange(sort: SortMap) {
-        // TODO: remove this logic from here:
-        const sortSpec = Object.keys(sort).map(prop => `${prop},${sort[prop]}`)
-
+    onSortChange(sort: string[]) {
         dispatch(ownProps.requester.setPageNumber(0))
-        dispatch(ownProps.requester.setSort(sortSpec))
+        dispatch(ownProps.requester.setSort(sort))
         dispatch(ownProps.requester.request())
     },
     onSizeChange(size: number) {
