@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Page, SortSpec } from '../../../../store/requester'
 import { Omit } from '../../../../util/types'
-import { DataTable, DataTableProps, SortMap } from '../DataTable/DataTable'
+import { DataTable, DataTableProps } from '../DataTable/DataTable'
 import { TableFooter } from '../TableFooter/TableFooter'
 
 import { TableContainer } from './TableContainer'
@@ -38,10 +38,7 @@ export class PagedTable<T> extends React.PureComponent<PagedTableProps<T>> {
     }
 }
 
-export const transformSortResult = (sort: SortSpec[]): SortMap => {
+export const transformSortResult = (sort: SortSpec[]): string[] => {
     // TODO: remove this logic from here
-    return sort.reduce((map, s) => ({
-        ...map,
-        [s.property]: s.direction,
-    }), {})
+    return sort.map(s => s.ascending ? s.property : `-${s.property}`)
 }

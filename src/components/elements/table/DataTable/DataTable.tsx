@@ -6,8 +6,6 @@ import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow }
 
 import { TableFilledBody } from './TableFilledBody'
 
-export interface SortMap { [key: string]: SortDirection }
-
 export interface TableColumnConfig<T = any> {
     name: string
     header?: React.ReactNode
@@ -20,8 +18,8 @@ export interface DataTableProps<T = any> extends TableProps {
     rows: T[]
     columns: Array<TableColumnConfig<T>>
     loading?: boolean
-    sort?: SortMap
-    onSortChange?(sort: SortMap): void
+    sort?: string[]
+    onSortChange?(sort: string[]): void
     render?(renderProps: DataTableRenderProps): React.ReactNode
     onRowClick?(row: T): any
 }
@@ -34,7 +32,7 @@ export interface DataTableRenderProps extends DataTableProps {
 export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
     static defaultProps: Partial<DataTableProps<any>> = {
         loading: false,
-        sort: {},
+        sort: null,
         onSortChange: () => null,
         render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
         onRowClick: null,
@@ -63,18 +61,44 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
             key: col.name,
             'data-name': col.name,
             sortable: col.sortable,
-            sortDirection: this.props.sort[col.name],
+            sortDirection: this.getSortDirection(col),
             onSortChange: this.handleSortChange(col),
         }
     }
 
     handleSortChange = (col: TableColumnConfig) => (sortDirection: SortDirection, shiftKey: boolean) => {
         if (shiftKey) {
-            this.props.onSortChange({ ...this.props.sort, [col.name]: sortDirection })
+            this.props.onSortChange(changeSort(this.props.sort, col.name, sortDirection))
         } else {
-            this.props.onSortChange({ [col.name]: sortDirection })
+            this.props.onSortChange([sortDirection === 'ASC' ? col.name : `-${col.name}`])
         }
     }
+
+    getSortDirection = (col: TableColumnConfig): SortDirection => {
+        const sorts = this.props.sort || []
+        const name = col.name
+        for (const sort of sorts) {
+            if (sort === name) {
+                return 'ASC'
+            } else if (sort === `-${name}`) {
+                return 'DESC'
+            }
+        }
+        return null
+    }
+}
+
+const changeSort = (sort: string[], name: string, dir: SortDirection): string[] => {
+    const newSort = dir === 'ASC' ? name : `-${name}`
+    let swap = false
+    const newArray = sort.map(s => {
+        if (s === name || s === `-${name}`) {
+            swap = true
+            return newSort
+        }
+        return s
+    })
+    return swap ? newArray : [...newArray, newSort]
 }
 
 export class DataTableDefault extends React.PureComponent<DataTableRenderProps> {

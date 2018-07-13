@@ -26,11 +26,17 @@ const createTable = (props: Partial<DataTableProps> = {}) => withTheme(
     <DataTable
         rows={rows}
         onSortChange={sortHandler}
-        sort={{ id: 'ASC', name: 'DESC' }}
+        sort={['id', '-name']}
         columns={[
             { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
             { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
-            { name: 'age', header: 'Age', style: { textAlign: 'right' }, render: (row: Row) => row.age },
+            {
+                name: 'age',
+                header: 'Age',
+                sortable: true,
+                style: { textAlign: 'right' },
+                render: (row: Row) => row.age,
+            },
         ]}
         {...props}
     />
@@ -43,13 +49,16 @@ it('should render correctly', () => {
 it('should call onSortChange with right parameters when clicked over column title', () => {
     const wrapper = mount(createTable())
     wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC' })
+    expect(sortHandler).toHaveBeenLastCalledWith(['-id'])
 
     wrapper.find('th[data-name="name"]').find(SortableLabel).simulate('click')
-    expect(sortHandler).toHaveBeenLastCalledWith({ name: 'ASC' })
+    expect(sortHandler).toHaveBeenLastCalledWith(['name'])
 
     wrapper.find('th[data-name="id"]').find(SortableLabel).simulate('click', { shiftKey: true })
-    expect(sortHandler).toHaveBeenLastCalledWith({ id: 'DESC', name: 'DESC' })
+    expect(sortHandler).toHaveBeenLastCalledWith(['-id', '-name'])
+
+    wrapper.find('th[data-name="age"]').find(SortableLabel).simulate('click', { shiftKey: true })
+    expect(sortHandler).toHaveBeenLastCalledWith(['id', '-name', 'age'])
 })
 
 it('should render TableLoadingRow when loading prop is on', () => {

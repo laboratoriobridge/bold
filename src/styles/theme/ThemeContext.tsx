@@ -1,5 +1,5 @@
 import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
-import * as normalizeCss from 'normalize.css'
+import normalizeCss from 'normalize.css'
 import * as React from 'react'
 import * as reactDatePicker from 'react-datepicker/dist/react-datepicker.css'
 import * as reactSelect from 'react-select/dist/react-select.css'
