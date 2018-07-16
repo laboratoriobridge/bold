@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should render all components from state 1`] = `
+<div>
+  <span>
+    1
+  </span>
+  <span>
+    2
+  </span>
+</div>
+`;
+
+exports[`when mounted should throw an error if multiple ModalAutoMountingTarget are mounted 1`] = `"There must be a single <ModalAutoMountingTarget /> in your application."`;
