@@ -16,7 +16,10 @@ const result: Page<number> = {
     number: 0,
     numberOfElements: 10,
     size: 5,
-    sort: null,
+    sort: [{
+        property: 'id',
+        direction: 'ASC',
+    }],
     totalPages: 2,
     totalElements: 10,
 }
@@ -27,7 +30,15 @@ const ownProps = { requester, columns: [] }
 describe('mapStateToProps', () => {
     it('should correctly map the current page', () => {
         const emptyState = mapStateToProps({}, ownProps)
-        expect(emptyState.page).toEqual(emptyPage)
+        expect(emptyState).toEqual({
+            page: 0,
+            rows: [],
+            size: 0,
+            totalPages: 0,
+            totalElements: 0,
+            sort: [],
+            loading: undefined,
+        })
 
         const requestState: RequestState<any, any> = { result, params: {}, error: null, readyState: 'success' }
         const state = mapStateToProps({
@@ -35,7 +46,15 @@ describe('mapStateToProps', () => {
                 test: requestState,
             },
         }, ownProps)
-        expect(state.page).toEqual(result)
+        expect(state).toEqual({
+            page: result.number,
+            rows: result.content,
+            size: result.size,
+            totalPages: result.totalPages,
+            totalElements: result.totalElements,
+            sort: ['id'],
+            loading: false,
+        })
     })
     it('should map the current loading state', () => {
         expect(mapStateToProps({}, ownProps).loading).toEqual(undefined)
@@ -74,7 +93,7 @@ describe('mapDispatchToProps', () => {
     it(`#onSortChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
         const store = mockStore()
         const actions = mapDispatchToProps(store.dispatch, ownProps)
-        actions.onSortChange({ id: 'ASC' })
+        actions.onSortChange(['id'])
         expect(store.getActions()).toHaveLength(3)
     })
     it(`#onSizeChange should dispatch ${SET_PARAMS} and ${REQUEST} actions`, () => {
@@ -112,7 +131,11 @@ describe('Component', () => {
             <PagedTableConnectedCmp
                 requester={requester}
                 columns={[]}
-                page={result}
+                rows={result.content}
+                page={result.number}
+                size={result.size}
+                totalPages={result.totalPages}
+                totalElements={result.totalElements}
                 setParams={c.setParams}
                 request={c.request}
                 clear={c.clear}

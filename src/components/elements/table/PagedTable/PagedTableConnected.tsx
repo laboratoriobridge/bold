@@ -1,15 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 
-import { Page, PageParams, PageRequester } from '../../../../store/requester'
+import { Page, PageParams, PageRequester, SortSpec } from '../../../../store/requester'
 import { Omit } from '../../../../util/types'
 
 import { PagedTable, PagedTableProps } from './PagedTable'
 
-/**
- * PagedTableProps provided by the connect HOC
- */
-export type ProvidedProps = 'page' | 'onPageChange' | 'onSizeChange' | 'onSortChange'
+export type ProvidedProps = 'rows' | 'page' | 'size' | 'totalPages' | 'totalElements' | 'sort' | 'loading'
+    | 'onPageChange' | 'onSizeChange' | 'onSortChange'
 
 /**
  * All props provided by the connect HOC
@@ -73,10 +71,25 @@ export const emptyPage: Page<any> = {
     sort: [],
 }
 
-export const mapStateToProps = (state: any, ownProps: PagedTableConnectedProps<any>) => ({
-    page: ownProps.requester.getResult(state) || emptyPage,
-    loading: ownProps.requester.getIsFetching(state),
-})
+export const transformSortResult = (sort: SortSpec[]): string[] => {
+    return sort.map(s => s.direction === 'ASC' ? s.property : `-${s.property}`)
+}
+
+export const mapStateToProps = (state: any, ownProps: PagedTableConnectedProps<any>) => {
+    const result = ownProps.requester.getResult(state) || emptyPage
+    const loading = ownProps.requester.getIsFetching(state)
+    const sort = result.sort && transformSortResult(result.sort)
+
+    return {
+        rows: result.content,
+        page: result.number,
+        size: result.size,
+        totalPages: result.totalPages,
+        totalElements: result.totalElements,
+        sort,
+        loading,
+    }
+}
 
 export const mapDispatchToProps = (dispatch: any, ownProps: PagedTableConnectedProps<any>) => ({
     setParams(params: PageParams) {
@@ -93,8 +106,16 @@ export const mapDispatchToProps = (dispatch: any, ownProps: PagedTableConnectedP
         dispatch(ownProps.requester.request())
     },
     onSortChange(sort: string[]) {
+        const sortSpec = sort.map(prop => {
+            if (prop.startsWith('-')) {
+                return `${prop.substr(1)},DESC`
+            } else {
+                return `${prop},ASC`
+            }
+        })
+
         dispatch(ownProps.requester.setPageNumber(0))
-        dispatch(ownProps.requester.setSort(sort))
+        dispatch(ownProps.requester.setSort(sortSpec))
         dispatch(ownProps.requester.request())
     },
     onSizeChange(size: number) {
