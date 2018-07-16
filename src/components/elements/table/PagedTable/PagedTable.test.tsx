@@ -1,7 +1,6 @@
 import { render } from 'enzyme'
 import * as React from 'react'
 
-import { Page } from '../../../../store/requester'
 import { withTheme } from '../../../../test'
 
 import { PagedTable } from './PagedTable'
@@ -18,25 +17,18 @@ const rows: Row[] = [
     { id: 3, name: 'ALICE BARBOSA', age: 27 },
 ]
 
-const page: Page<Row> = {
-    content: rows,
-    first: true,
-    last: true,
-    number: 0,
-    numberOfElements: 10,
-    totalElements: rows.length,
-    size: 10,
-    sort: [{ property: 'id', direction: 'DESC' }, { property: 'name', direction: 'ASC' }],
-    totalPages: 1,
-}
-
 const sortHandler = jest.fn()
 const pageHandler = jest.fn()
 const sizeHandler = jest.fn()
 const table = withTheme(
     // tslint:disable jsx-no-lambda
     <PagedTable
-        page={page}
+        rows={rows}
+        page={0}
+        size={10}
+        totalPages={1}
+        totalElements={3}
+        sort={['-id', 'name']}
         onSortChange={sortHandler}
         onPageChange={pageHandler}
         onSizeChange={sizeHandler}

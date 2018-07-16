@@ -1,44 +1,61 @@
 import * as React from 'react'
 
-import { Page, SortSpec } from '../../../../store/requester'
-import { Omit } from '../../../../util/types'
 import { DataTable, DataTableProps } from '../DataTable/DataTable'
 import { TableFooter } from '../TableFooter/TableFooter'
 
 import { TableContainer } from './TableContainer'
 
-export interface PagedTableProps<T> extends Omit<DataTableProps<T>, 'rows' | 'sort'> {
-    page: Page<T>
+export interface PagedTableProps<T> extends DataTableProps<T> {
+    /**
+     * Current page, 0-indexed.
+     */
+    page: number
+
+    /**
+     * Size of the current page.
+     */
+    size: number
+
+    /**
+     * Total number of pages.
+     */
+    totalPages: number
+
+    /**
+     * Total number of elements.
+     */
+    totalElements: number
+
+    /**
+     * Called when the current page is changed.
+     * @param page The selected page.
+     */
     onPageChange(page: number): void
+
+    /**
+     * Called when the current page size is changed.
+     * @param size The selected page size.
+     */
     onSizeChange(size: number): void
 }
 
 export class PagedTable<T> extends React.PureComponent<PagedTableProps<T>> {
     render() {
-        const { page, onPageChange, onSizeChange, ...rest } = this.props
+        const { onPageChange, onSizeChange, page, size, totalPages, totalElements, ...rest } = this.props
 
         return (
             <TableContainer>
-                <DataTable
-                    rows={page.content}
-                    sort={page.sort && transformSortResult(page.sort)}
-                    {...rest}
-                />
+                <DataTable {...rest} />
                 <TableFooter
                     style={{ borderTop: 'none' }}
-                    page={page.number}
-                    pageSize={page.size}
-                    totalPages={page.totalPages}
-                    totalElements={page.totalElements}
+                    page={page}
+                    pageSize={size}
+                    totalPages={totalPages}
+                    totalElements={totalElements}
                     onPageChange={onPageChange}
                     onSizeChange={onSizeChange}
                 />
             </TableContainer>
         )
     }
-}
-
-export const transformSortResult = (sort: SortSpec[]): string[] => {
-    // TODO: remove this logic from here
-    return sort.map(s => s.ascending ? s.property : `-${s.property}`)
 }
