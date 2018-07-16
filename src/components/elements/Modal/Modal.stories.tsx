@@ -7,11 +7,12 @@ import { withPropTypes, withTheme } from '../../../stories-addons'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
 
+import { modal } from './auto'
+import { ModalAutoMountingTarget } from './auto/ModalAutoMountingTarget'
 import { Modal } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer, ModalSize } from './ModalContainer'
-import { ModalController } from './ModalControlled'
-import { ModalControlled } from './ModalControlled'
+import { ModalControlled, ModalController } from './ModalControlled'
 import { ModalFooter } from './ModalFooter'
 
 const sizes: { [key in ModalSize]: any } = {
@@ -42,6 +43,22 @@ storiesOf('Components/Modal', module)
         >
             Lorem ipsum.
         </Modal>
+    ))
+    .add('auto', () => (
+        <>
+            <Button
+                label='Auto modal'
+                onClick={modal({
+                    size: 'small',
+                    render: () => 'Confirm?',
+                    actions: [
+                        { label: 'Cancel', onClick: action('Cancel') },
+                        { label: 'Ok', type: 'primary', onClick: action('Ok') },
+                    ],
+                })}
+            />
+            <ModalAutoMountingTarget />
+        </>
     ))
     .add('controlled/trigger', () => (
         // tslint:disable jsx-no-lambda
