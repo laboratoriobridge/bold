@@ -5,6 +5,8 @@ import { Omit } from '../../../../util/types'
 import { ModalAuto, ModalAutoProps } from './ModalAuto'
 import { ModalAutoMountingTarget, ModalAutoRenderProps } from './ModalAutoMountingTarget'
 
+export { ModalAutoMountingTarget, ModalAutoRenderFunction, ModalAutoRenderProps } from './ModalAutoMountingTarget'
+
 export interface ModalConfig extends Omit<ModalAutoProps, 'dispose'> {
 }
 
@@ -13,7 +15,7 @@ export const modal = (config: ModalConfig) => {
         const append = ModalAutoMountingTarget.append
 
         if (!append) {
-            throw new Error(`Your must include a <${ModalAutoMountingTarget.name} /> component in your application.`)
+            throw new Error(`Your must include a <ModalAutoMountingTarget /> component in your application.`)
         }
 
         append((props: ModalAutoRenderProps) => (

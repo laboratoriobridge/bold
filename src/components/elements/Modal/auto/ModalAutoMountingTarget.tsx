@@ -24,7 +24,7 @@ export class ModalAutoMountingTarget extends React.Component<any, ConfirmMountin
 
     componentDidMount() {
         if (ModalAutoMountingTarget.append) {
-            throw new Error(`There must be a single <${ModalAutoMountingTarget.name} /> in your application.`)
+            throw new Error(`There must be a single <ModalAutoMountingTarget /> in your application.`)
         }
 
         ModalAutoMountingTarget.append = this.append
