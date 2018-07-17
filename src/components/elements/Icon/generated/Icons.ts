@@ -30,6 +30,8 @@ import { Download } from './Download'
 import { Exclamation } from './Exclamation'
 import { ExclamationCircle } from './ExclamationCircle'
 import { ExclamationTriangle } from './ExclamationTriangle'
+import { Expand } from './Expand'
+import { Eye } from './Eye'
 import { File } from './File'
 import { FileItens } from './FileItens'
 import { Filter } from './Filter'
@@ -39,10 +41,12 @@ import { IncreaseFont } from './IncreaseFont'
 import { Info } from './Info'
 import { InformationCircle } from './InformationCircle'
 import { Italic } from './Italic'
+import { Lock } from './Lock'
 import { Map } from './Map'
 import { MapMarker } from './MapMarker'
 import { MapMarkerFilled } from './MapMarkerFilled'
 import { Menu } from './Menu'
+import { Minimize } from './Minimize'
 import { Minus } from './Minus'
 import { Modules } from './Modules'
 import { Pause } from './Pause'
@@ -50,6 +54,8 @@ import { Pen } from './Pen'
 import { Play } from './Play'
 import { Plus } from './Plus'
 import { Printer } from './Printer'
+import { QuestionMark } from './QuestionMark'
+import { QuestionMarkCircle } from './QuestionMarkCircle'
 import { QuoteLeft } from './QuoteLeft'
 import { QuoteRigh } from './QuoteRigh'
 import { Redo } from './Redo'
@@ -97,6 +103,8 @@ export type Icons =
     | 'exclamation' 
     | 'exclamationCircle' 
     | 'exclamationTriangle' 
+    | 'expand' 
+    | 'eye' 
     | 'file' 
     | 'fileItens' 
     | 'filter' 
@@ -106,10 +114,12 @@ export type Icons =
     | 'info' 
     | 'informationCircle' 
     | 'italic' 
+    | 'lock' 
     | 'map' 
     | 'mapMarker' 
     | 'mapMarkerFilled' 
     | 'menu' 
+    | 'minimize' 
     | 'minus' 
     | 'modules' 
     | 'pause' 
@@ -117,6 +127,8 @@ export type Icons =
     | 'play' 
     | 'plus' 
     | 'printer' 
+    | 'questionMark' 
+    | 'questionMarkCircle' 
     | 'quoteLeft' 
     | 'quoteRigh' 
     | 'redo' 
@@ -164,6 +176,8 @@ export const IconMap = {
     'exclamation': Exclamation,
     'exclamationCircle': ExclamationCircle,
     'exclamationTriangle': ExclamationTriangle,
+    'expand': Expand,
+    'eye': Eye,
     'file': File,
     'fileItens': FileItens,
     'filter': Filter,
@@ -173,10 +187,12 @@ export const IconMap = {
     'info': Info,
     'informationCircle': InformationCircle,
     'italic': Italic,
+    'lock': Lock,
     'map': Map,
     'mapMarker': MapMarker,
     'mapMarkerFilled': MapMarkerFilled,
     'menu': Menu,
+    'minimize': Minimize,
     'minus': Minus,
     'modules': Modules,
     'pause': Pause,
@@ -184,6 +200,8 @@ export const IconMap = {
     'play': Play,
     'plus': Plus,
     'printer': Printer,
+    'questionMark': QuestionMark,
+    'questionMarkCircle': QuestionMarkCircle,
     'quoteLeft': QuoteLeft,
     'quoteRigh': QuoteRigh,
     'redo': Redo,
