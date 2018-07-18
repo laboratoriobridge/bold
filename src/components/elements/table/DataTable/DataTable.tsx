@@ -36,6 +36,7 @@ export class DataTable<T = any> extends React.PureComponent<DataTableProps<T>> {
         onSortChange: () => null,
         render: (renderProps: DataTableRenderProps) => <DataTableDefault {...renderProps} />,
         onRowClick: null,
+        hovered: true,
     }
 
     render() {
@@ -117,7 +118,7 @@ export class DataTableDefault extends React.PureComponent<DataTableRenderProps> 
         } = this.props
 
         return (
-            <Table hovered={!!onRowClick} {...rest}>
+            <Table {...rest}>
                 <TableHead>
                     <TableRow>
                         {columns.map(col => (
