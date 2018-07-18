@@ -31,7 +31,6 @@ storiesOf('Components/Table', module)
             onSortChange={action('sort-change')}
             sort={['id', '-name']}
             loading={boolean('loading', false)}
-            onRowClick={action('row-click')}
             columns={[
                 { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
                 { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },

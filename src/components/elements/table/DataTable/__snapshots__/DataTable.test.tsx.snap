@@ -10,6 +10,10 @@ exports[`should render correctly 1`] = `
   border: 1px solid #e6e6e6;
 }
 
+.emotion-27 tr:hover td {
+  background: #f2f2f7;
+}
+
 .emotion-3 {
   text-align: left;
   padding: 0.5rem 1rem;
