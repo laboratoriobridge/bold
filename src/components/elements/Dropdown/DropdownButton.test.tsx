@@ -44,6 +44,9 @@ describe('DropdownButton', () => {
     it('should render correctly', () => {
         expect(render(withTheme(
             <DropdownButton
+                icon='dots'
+                size='small'
+                skin='ghost'
                 items={[
                     { content: <span>Item #1</span> },
                     { content: <span>Item #2</span>, onClick: jest.fn(), autoClose: false },

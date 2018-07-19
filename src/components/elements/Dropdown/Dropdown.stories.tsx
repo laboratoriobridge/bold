@@ -17,6 +17,9 @@ storiesOf('Components/Dropdown', module)
     .addDecorator(withTheme())
     .add('button', () => (
         <DropdownButton
+            icon='dots'
+            size='small'
+            skin='ghost'
             items={[
                 { content: 'Item #1', onClick: action('item 1 clicked') },
                 { content: 'Item #2', onClick: action('item 2 clicked') },

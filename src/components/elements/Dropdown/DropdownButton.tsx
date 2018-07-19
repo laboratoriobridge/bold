@@ -15,11 +15,6 @@ export interface DropdownButtonProps extends ButtonProps {
 
 export class DropdownButton extends React.PureComponent<DropdownButtonProps> {
 
-    static defaultProps: ButtonProps = {
-        icon: 'dots',
-        size: 'small',
-    }
-
     render() {
         const { items } = this.props
         return (

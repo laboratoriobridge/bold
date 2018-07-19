@@ -48,8 +48,8 @@ exports[`DropdownButton should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
@@ -79,11 +79,11 @@ exports[`DropdownButton should render correctly 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #056DFF;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: rgba(128,128,128,0.16);
 }
 
 .emotion-1 {
