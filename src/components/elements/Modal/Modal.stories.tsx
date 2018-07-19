@@ -8,7 +8,7 @@ import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
 
 import { modal } from './auto'
-import { ModalAutoMountingTarget } from './auto/ModalAutoMountingTarget'
+import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer, ModalSize } from './ModalContainer'
@@ -57,7 +57,7 @@ storiesOf('Components/Modal', module)
                     ],
                 })}
             />
-            <ModalAutoMountingTarget />
+            <ModalMountTarget />
         </>
     ))
     .add('controlled/trigger', () => (

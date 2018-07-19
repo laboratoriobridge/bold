@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should render all components from state 1`] = `
+<div>
+  <span>
+    1
+  </span>
+  <span>
+    2
+  </span>
+</div>
+`;
