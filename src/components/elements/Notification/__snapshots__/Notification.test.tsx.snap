@@ -14,7 +14,7 @@ exports[`Notification should render correctly 1`] = `
   -webkit-animation: none;
   animation: none;
   padding: 0 3rem;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -120,7 +120,7 @@ exports[`Notification should render correctly 1`] = `
   -webkit-animation: none;
   animation: none;
   padding: 0 3rem;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -142,7 +142,7 @@ exports[`Notification should render correctly 1`] = `
   -webkit-animation: none;
   animation: none;
   padding: 0 3rem;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;
@@ -164,7 +164,7 @@ exports[`Notification should render correctly 1`] = `
   -webkit-animation: none;
   animation: none;
   padding: 0 3rem;
-  min-height: 50px;
+  min-height: 40px;
   border-radius: 2px;
   font-size: 0.75rem;
   display: -webkit-box;

@@ -12,10 +12,10 @@ const click = action('Close has been clicked')
 const enter = action('Mouve enter')
 const leave = action('Mouve leave')
 
-storiesOf('Components', module)
+storiesOf('Components/Notification', module)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
-    .add('Notification', () => (
+    .add('default', () => (
         <VFlow>
             <Notification
                 type='info'
