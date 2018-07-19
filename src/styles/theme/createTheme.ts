@@ -3,6 +3,7 @@ import { keyframes } from 'emotion'
 import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createGlobals, Global } from './createGlobals'
 import { Color, createPallete, Pallete, TextColor, textColorMap } from './createPallete'
+import { createShadows, Shadows } from './createShadows'
 import { createTypography, Typography } from './createTypography'
 import { zIndex, ZIndex } from './zIndex'
 
@@ -13,6 +14,7 @@ export interface Theme {
     global: Global
     zIndex: ZIndex
     radius: { main: number, button: number }
+    shadows: Shadows
     animation: any
 }
 
@@ -30,6 +32,7 @@ export const createTheme = (): Theme => {
             main: 2,
             button: 4,
         },
+        shadows: createShadows(),
         animation: {
             spinAround: keyframes({
                 from: {
