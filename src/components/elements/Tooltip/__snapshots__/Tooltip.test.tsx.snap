@@ -27,10 +27,11 @@ Array [
   border-radius: 2px;
   max-width: 1280px;
   background: #333333;
-  color: #e6e6e6;
+  color: #fff;
   padding: 0.5rem 1rem;
   font-weight: bold;
   text-align: center;
+  font-size: 0.75rem;
 }
 
 <div

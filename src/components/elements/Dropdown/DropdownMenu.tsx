@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Tooltip } from '../Tooltip/Tooltip'
 
 export interface DropdownMenuProps extends WithStylesProps {
 
@@ -12,10 +13,8 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
         const { css, theme } = this.props
         const styles: Styles = {
             list: {
-                fontSize: '0.875rem',
                 fontWeight: 'bold',
                 color: theme.pallete.text.main,
-                letterSpacing: '1px',
                 whiteSpace: 'nowrap',
                 listStyle: 'none',
                 margin: 0,
@@ -39,37 +38,64 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 }
 
 export interface DropdownItemProps extends WithStylesProps {
+    hint?: string
+    disabled?: boolean
+    type?: 'normal' | 'danger'
     onClick?(e): any
 }
 
 @withStyles
 export class DropdownItem extends React.Component<DropdownItemProps> {
-    static defaultProps: Partial<DropdownItemProps> = {
+    static defaultProps: DropdownItemProps = {
+        disabled: false,
+        type: 'normal',
         onClick: () => null,
     }
 
     render() {
-        const { css, theme, onClick } = this.props
+        const { css, theme, onClick, type, disabled, hint } = this.props
         const styles: Styles = {
             item: {
                 margin: 0,
-                '&:not(:last-child)': {
-                    borderBottom: '1px solid ' + theme.pallete.divider,
+                'div': {
+                    display: 'block', // override inline-block defined by tooltip wrapper
                 },
             },
             link: {
-                padding: '1rem',
                 display: 'block',
+                padding: '0.5rem 1rem',
+                fontSize: '0.875rem',
+                letterSpacing: '1px',
+                color: theme.pallete.gray.c40,
                 '&:hover': {
                     background: theme.pallete.surface.background,
                 },
             },
+            disabled: {
+                color: theme.pallete.gray.c70,
+                '&:hover': {
+                    background: 'transparent',
+                    cursor: 'not-allowed',
+                },
+            },
+            danger: {
+                color: theme.pallete.status.danger.main,
+            },
         }
+        const classes = css(styles.link,
+            type === 'danger' && styles.danger,
+            disabled && styles.disabled
+        )
+
+        const link = (
+            <a onClick={disabled ? null : onClick} className={classes}>
+                {this.props.children}
+            </a>
+        )
+
         return (
             <li className={css(styles.item)}>
-                <a onClick={onClick} className={css(styles.link)}>
-                    {this.props.children}
-                </a>
+                {hint ? <Tooltip text={hint}>{link}</Tooltip> : link}
             </li>
         )
     }

@@ -43,8 +43,7 @@ export interface DropdownButtonItemProps extends DropdownItemProps {
     autoClose?: boolean
 }
 
-export class DropdownButtonItem
-    extends React.PureComponent<DropdownButtonItemProps> {
+export class DropdownButtonItem extends React.PureComponent<DropdownButtonItemProps> {
 
     static defaultProps: Partial<DropdownButtonItemProps> = {
         content: '',

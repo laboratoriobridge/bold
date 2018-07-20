@@ -41,10 +41,11 @@ export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
                 borderRadius: theme.radius.main,
                 maxWidth: theme.breakpoints.size.small,
                 background: theme.pallete.gray.c20,
-                color: theme.pallete.gray.c90,
+                color: '#fff',
                 padding: '0.5rem 1rem',
                 fontWeight: 'bold',
                 textAlign: 'center',
+                fontSize: '0.75rem',
             },
         }
         return (

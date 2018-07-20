@@ -15,13 +15,8 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-5 {
-  font-size: 0.875rem;
   font-weight: bold;
   color: #4d4d4d;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   white-space: nowrap;
   list-style: none;
   margin: 0;
@@ -36,21 +31,27 @@ exports[`should render correctly 1`] = `
   text-align: left;
 }
 
-.emotion-2 {
-  margin: 0;
-}
-
-.emotion-2:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-
 .emotion-1 {
-  padding: 1rem;
   display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #666666;
 }
 
 .emotion-1:hover {
   background: #f2f2f7;
+}
+
+.emotion-2 {
+  margin: 0;
+}
+
+.emotion-2 div {
+  display: block;
 }
 
 <div
