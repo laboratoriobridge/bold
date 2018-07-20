@@ -50,10 +50,10 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
 }
 
 export interface NotificationProps extends WithStylesProps {
-    type: NotificationType,
+    type: NotificationType
     animated?: boolean
-    onCloseClick?: any,
-    onMouseEnter?: any,
+    onCloseClick?: any
+    onMouseEnter?: any
     onMouseLeave?: any
     contentContainer?: boolean
     style?: Interpolation
@@ -69,7 +69,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
             notification: {
                 animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
                 padding: '0 3rem',
-                minHeight: 50,
+                minHeight: 40,
                 borderRadius: '2px',
                 fontSize: '0.75rem',
                 display: 'flex',
@@ -122,7 +122,7 @@ const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick,
             {onCloseClick && <span className={closeButtonStyle}>
                 <Button size='small' skin='ghost' icon='times' onClick={onCloseClick} />
             </span>}
-        </ >
+        </>
     )
 }
 

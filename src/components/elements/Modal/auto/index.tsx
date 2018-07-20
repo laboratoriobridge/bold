@@ -3,22 +3,19 @@ import * as React from 'react'
 import { Omit } from '../../../../util/types'
 
 import { ModalAuto, ModalAutoProps } from './ModalAuto'
-import { ModalAutoMountingTarget, ModalAutoRenderProps } from './ModalAutoMountingTarget'
+import defaultStore, { ModalStore, ModalStoreAppendProps } from './ModalStore'
 
-export { ModalAutoMountingTarget, ModalAutoRenderFunction, ModalAutoRenderProps } from './ModalAutoMountingTarget'
+export { ModalStore } from './ModalStore'
 
 export interface ModalConfig extends Omit<ModalAutoProps, 'dispose'> {
+    store?: ModalStore
 }
 
 export const modal = (config: ModalConfig) => {
     return () => {
-        const append = ModalAutoMountingTarget.append
+        const store = config.store || defaultStore
 
-        if (!append) {
-            throw new Error(`Your must include a <ModalAutoMountingTarget /> component in your application.`)
-        }
-
-        append((props: ModalAutoRenderProps) => (
+        store.append((props: ModalStoreAppendProps) => (
             <ModalAuto
                 {...config}
                 dispose={props.dispose}
