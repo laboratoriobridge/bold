@@ -6,13 +6,13 @@ import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
-export type NotificationType =
+export type AlertType =
     | 'info'
     | 'success'
-    | 'alert'
-    | 'error'
+    | 'warning'
+    | 'danger'
 
-export const createTypesStyles = (theme: Theme): { [key in NotificationType]: any } => {
+export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => {
     return {
         'info': {
             icon: 'informationCircle',
@@ -30,7 +30,7 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
                 borderColor: theme.pallete.status.success.main,
             },
         },
-        'alert': {
+        'warning': {
             icon: 'exclamationTriangle',
             style: {
                 background: theme.pallete.status.alert.background,
@@ -38,7 +38,7 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
                 borderColor: theme.pallete.status.alert.main,
             },
         },
-        'error': {
+        'danger': {
             icon: 'ban',
             style: {
                 background: theme.pallete.status.danger.background,
@@ -49,8 +49,8 @@ export const createTypesStyles = (theme: Theme): { [key in NotificationType]: an
     }
 }
 
-export interface NotificationProps extends WithStylesProps {
-    type: NotificationType
+export interface AlertProps extends WithStylesProps {
+    type: AlertType
     animated?: boolean
     onCloseClick?: any
     onMouseEnter?: any
@@ -60,13 +60,13 @@ export interface NotificationProps extends WithStylesProps {
 }
 
 @withStyles
-export class Notification extends React.PureComponent<NotificationProps> {
+export class Alert extends React.PureComponent<AlertProps> {
     render() {
         const { theme, css, style, type, animated,
             onCloseClick, onMouseEnter, onMouseLeave, contentContainer } = this.props
         const typeStyle = createTypesStyles(theme)
         const defaultStyles: Styles = {
-            notification: {
+            alert: {
                 animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
                 padding: '0 3rem',
                 minHeight: 40,
@@ -100,7 +100,7 @@ export class Notification extends React.PureComponent<NotificationProps> {
 
         return (
             <div
-                className={css(defaultStyles.notification, typeStyle[type].style, style)}
+                className={css(defaultStyles.alert, typeStyle[type].style, style)}
                 onMouseEnter={onMouseEnter}
                 onMouseLeave={onMouseLeave}
             >

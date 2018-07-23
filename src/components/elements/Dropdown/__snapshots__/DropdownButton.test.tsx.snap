@@ -1,21 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownButton should render correctly 1`] = `
-.emotion-5 {
-  margin: 0;
-}
-
-.emotion-5:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-
 .emotion-4 {
-  padding: 1rem;
   display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #666666;
 }
 
 .emotion-4:hover {
   background: #f2f2f7;
+}
+
+.emotion-5 {
+  margin: 0;
+}
+
+.emotion-5 div {
+  display: block;
 }
 
 .emotion-3 {
@@ -108,13 +114,8 @@ exports[`DropdownButton should render correctly 1`] = `
 }
 
 .emotion-8 {
-  font-size: 0.875rem;
   font-weight: bold;
   color: #4d4d4d;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   white-space: nowrap;
   list-style: none;
   margin: 0;
@@ -205,21 +206,27 @@ exports[`DropdownButton should render correctly 1`] = `
 `;
 
 exports[`DropdownButtonItem should render correctly 1`] = `
-.emotion-1 {
-  margin: 0;
-}
-
-.emotion-1:not(:last-child) {
-  border-bottom: 1px solid #e6e6e6;
-}
-
 .emotion-0 {
-  padding: 1rem;
   display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  color: #666666;
 }
 
 .emotion-0:hover {
   background: #f2f2f7;
+}
+
+.emotion-1 {
+  margin: 0;
+}
+
+.emotion-1 div {
+  display: block;
 }
 
 <li

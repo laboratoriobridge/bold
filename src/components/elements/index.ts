@@ -10,7 +10,7 @@ export { ProgressIndicator, ProgressIndicatorProps } from './ProgressIndicator/P
 export { Spinner, SpinnerProps } from './Spinner/Spinner'
 export { Tooltip, TooltipProps } from './Tooltip/Tooltip'
 export { Icon, IconProps } from './Icon/Icon'
-export { Notification } from './Notification/Notification'
+export * from './Alert'
 export { StickyContainer } from './StickyContainer/StickyContainer'
 export { Tabs, TabsProps, TabLink, TabLinkProps } from './Tabs/Tabs'
 export { Tag, TagProps } from './Tag/Tag'

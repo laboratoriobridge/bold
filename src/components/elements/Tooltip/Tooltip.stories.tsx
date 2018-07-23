@@ -15,7 +15,12 @@ storiesOf('Components/Tooltip', module)
             <Tooltip text='Action button description'>
                 <Button label='Action' size='small' />
             </Tooltip>
-            <Tooltip text='Action icon description' placement='bottom-start'>
+            <Tooltip
+                text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                In non urna sit amet eros finibus auctor ut vitae magna.
+                Donec mollis eu velit nec ullamcorper.'
+                placement='bottom-start'
+            >
                 <Button icon='trashcan' skin='ghost' size='small' />
             </Tooltip>
         </HFlow>

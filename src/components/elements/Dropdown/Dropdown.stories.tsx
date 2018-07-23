@@ -22,8 +22,8 @@ storiesOf('Components/Dropdown', module)
             skin='ghost'
             items={[
                 { content: 'Item #1', onClick: action('item 1 clicked') },
-                { content: 'Item #2', onClick: action('item 2 clicked') },
-                { content: 'Item #3' },
+                { content: 'Item #2', onClick: action('item 2 clicked'), type: 'danger' },
+                { content: 'Item #3', onClick: action('item 3 clicked'), disabled: true, hint: 'This is disabled' },
             ]}
         />
     ))
@@ -61,7 +61,9 @@ storiesOf('Components/Dropdown', module)
     .add('menu', () => (
         <DropdownMenu>
             <DropdownItem onClick={action('clicked item 1')}>Item 1</DropdownItem>
-            <DropdownItem onClick={action('clicked item 2')}>Item 2</DropdownItem>
-            <DropdownItem onClick={action('clicked item 3')}>Item 3</DropdownItem>
+            <DropdownItem onClick={action('clicked item 2')} disabled hint='Disabled just because'>Item 2</DropdownItem>
+            <DropdownItem onClick={action('clicked item 3')} type='danger' hint='Some danger option'>
+                Item 3
+            </DropdownItem>
         </DropdownMenu>
     ))

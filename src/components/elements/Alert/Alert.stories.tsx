@@ -6,48 +6,48 @@ import * as React from 'react'
 import { withPropTypes, withTheme } from '../../../stories-addons'
 import { VFlow } from '../../layout/Flow/VFlow'
 
-import { Notification } from './Notification'
+import { Alert } from './Alert'
 
 const click = action('Close has been clicked')
 const enter = action('Mouve enter')
 const leave = action('Mouve leave')
 
-storiesOf('Components/Notification', module)
+storiesOf('Components/Alert', module)
     .addDecorator(withPropTypes())
     .addDecorator(withTheme())
     .add('default', () => (
         <VFlow>
-            <Notification
+            <Alert
                 type='info'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
                 animated
             >Information.
-            </Notification>
-            <Notification
+            </Alert>
+            <Alert
                 type='success'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
                 animated
             >Success message.
-            </Notification>
-            <Notification
-                type='alert'
+            </Alert>
+            <Alert
+                type='warning'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
                 animated
             >Alert message.
-            </Notification>
-            <Notification
-                type='error'
+            </Alert>
+            <Alert
+                type='danger'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
                 animated
             >Error message.
-            </Notification>
+            </Alert>
         </VFlow>
     ))

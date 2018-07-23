@@ -6,6 +6,7 @@ import { ModalAuto, ModalAutoProps } from './ModalAuto'
 import defaultStore, { ModalStore, ModalStoreAppendProps } from './ModalStore'
 
 export { ModalStore } from './ModalStore'
+export { ModalMountTarget } from './ModalMountTarget'
 
 export interface ModalConfig extends Omit<ModalAutoProps, 'dispose'> {
     store?: ModalStore

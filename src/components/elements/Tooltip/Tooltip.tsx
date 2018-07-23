@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
-
 import { PopperFocus, PopperFocusProps } from '../Popper/PopperFocus'
 
 export interface TooltipProps {
@@ -25,30 +24,43 @@ export class Tooltip extends React.PureComponent<TooltipProps> {
     }
 
     renderPopper = () => {
-        return <TooltipBase>{this.props.text}</TooltipBase>
+        return <TooltipBase text={this.props.text} />
     }
 }
 
 export interface TooltipBaseProps extends WithStylesProps {
+    text: string
 }
 
 @withStyles
 export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
+
     render() {
-        const { css, theme } = this.props
+        const { css, theme, text } = this.props
         const styles: Styles = {
             base: {
                 borderRadius: theme.radius.main,
                 maxWidth: theme.breakpoints.size.small,
                 background: theme.pallete.gray.c20,
-                color: theme.pallete.gray.c90,
-                padding: '0.5rem 1rem',
+                color: '#fff',
                 fontWeight: 'bold',
+                fontSize: '0.75rem',
+            },
+            small: {
                 textAlign: 'center',
+                padding: '0.5rem',
+            },
+            big: {
+                textAlign: 'left',
+                padding: '1rem',
+                maxWidth: 277,
             },
         }
+
+        const size = text.length > 60 ? 'big' : 'small'
+
         return (
-            <div className={css(styles.base)}>{this.props.children}</div>
+            <div className={css(styles.base, styles[size])}>{text}</div>
         )
     }
 }
