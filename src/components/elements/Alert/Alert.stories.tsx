@@ -34,7 +34,7 @@ storiesOf('Components/Alert', module)
             >Success message.
             </Alert>
             <Alert
-                type='alert'
+                type='warning'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}
@@ -42,7 +42,7 @@ storiesOf('Components/Alert', module)
             >Alert message.
             </Alert>
             <Alert
-                type='error'
+                type='danger'
                 onCloseClick={click}
                 onMouseEnter={enter}
                 onMouseLeave={leave}

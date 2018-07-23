@@ -9,8 +9,8 @@ import { Icon } from '../Icon/Icon'
 export type AlertType =
     | 'info'
     | 'success'
-    | 'alert'
-    | 'error'
+    | 'warning'
+    | 'danger'
 
 export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => {
     return {
@@ -30,7 +30,7 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
                 borderColor: theme.pallete.status.success.main,
             },
         },
-        'alert': {
+        'warning': {
             icon: 'exclamationTriangle',
             style: {
                 background: theme.pallete.status.alert.background,
@@ -38,7 +38,7 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
                 borderColor: theme.pallete.status.alert.main,
             },
         },
-        'error': {
+        'danger': {
             icon: 'ban',
             style: {
                 background: theme.pallete.status.danger.background,
