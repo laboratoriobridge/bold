@@ -6,6 +6,7 @@ import { PopperFocus, PopperFocusProps } from '../Popper/PopperFocus'
 export interface TooltipProps {
     text: string
     placement?: PopperFocusProps['placement']
+    offset?: PopperFocusProps['offset']
 }
 
 export class Tooltip extends React.PureComponent<TooltipProps> {
@@ -13,11 +14,13 @@ export class Tooltip extends React.PureComponent<TooltipProps> {
     static defaultProps: TooltipProps = {
         text: '',
         placement: 'top',
+        offset: 0.25,
     }
 
     render() {
+        const { placement, offset } = this.props
         return (
-            <PopperFocus placement={this.props.placement} renderPopper={this.renderPopper} offset={0.25}>
+            <PopperFocus placement={placement} renderPopper={this.renderPopper} offset={offset}>
                 {this.props.children}
             </PopperFocus>
         )
