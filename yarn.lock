@@ -7052,9 +7052,9 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
-react-final-form@3.6.4:
-  version "3.6.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.6.4.tgz#1ca37935c2af0bc659a53b293dd84a75d2381548"
+react-final-form@3.6.5:
+  version "3.6.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-final-form/-/react-final-form-3.6.5.tgz#191324bc686b20e9e49c929a79949f34b38ba8e5"
 
 react-fuzzy@^0.5.2:
   version "0.5.2"
