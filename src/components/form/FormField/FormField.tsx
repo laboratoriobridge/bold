@@ -13,7 +13,7 @@ export interface FormFieldProps {
 export class FormField extends React.Component<FormFieldProps> {
 
     render() {
-        const { children, name, error, label } = this.props
+        const { children, name, error, label, required } = this.props
         const styles = {
             label: {
                 display: 'block',
@@ -27,7 +27,7 @@ export class FormField extends React.Component<FormFieldProps> {
         return (
             <div data-name={name}>
                 {label &&
-                    <FormLabel style={styles.label} htmlFor={name} label={label} />
+                    <FormLabel required={required} style={styles.label} htmlFor={name} label={label} />
                 }
                 {children}
                 {error &&

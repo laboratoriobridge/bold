@@ -7,13 +7,18 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
-.emotion-0 {
+.emotion-1 {
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
 }
 
-.emotion-3 {
+.emotion-0 {
+  color: #E0001A;
+  margin-left: 0.25rem;
+}
+
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -26,7 +31,7 @@ exports[`should render correctly 2`] = `
   margin-top: 0.25rem;
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -34,7 +39,7 @@ exports[`should render correctly 2`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-1 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1rem;
 }
@@ -43,22 +48,28 @@ exports[`should render correctly 2`] = `
   data-name="test"
 >
   <label
-    class="emotion-0"
+    class="emotion-1"
     for="test"
   >
     Label
+    <span
+      aria-label="Campo obrigatório"
+      class="emotion-0"
+    >
+      *
+    </span>
   </label>
   Teste
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     Error
     <span
-      class="emotion-2"
+      class="emotion-3"
     >
       <svg
         aria-hidden="true"
-        class="emotion-1"
+        class="emotion-2"
         height="1em"
         viewBox="0 0 24 24"
         width="1em"
