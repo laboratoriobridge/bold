@@ -16,6 +16,7 @@ exports[`ModalControlled should render correcly 1`] = `
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   width: 100%;
+  pointer-events: none;
   z-index: 1040;
   display: -webkit-box;
   display: -webkit-flex;
@@ -34,6 +35,7 @@ exports[`ModalControlled should render correcly 1`] = `
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
+  pointer-events: auto;
   max-height: 80vh;
   overflow: auto;
   width: 850px;
@@ -270,6 +272,7 @@ exports[`ModalControlled should render correcly 2`] = `
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   width: 100%;
+  pointer-events: none;
   z-index: 1040;
   display: -webkit-box;
   display: -webkit-flex;
@@ -288,6 +291,7 @@ exports[`ModalControlled should render correcly 2`] = `
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
+  pointer-events: auto;
   max-height: 80vh;
   overflow: auto;
   width: 850px;

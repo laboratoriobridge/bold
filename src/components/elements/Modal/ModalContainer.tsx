@@ -26,6 +26,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
                 backgroundColor: theme.pallete.surface.main,
                 position: 'relative',
                 minWidth: 520,
+                pointerEvents: 'auto',
             },
             closeButton: {
                 position: 'absolute',
