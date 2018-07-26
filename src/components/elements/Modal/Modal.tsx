@@ -51,6 +51,10 @@ export class Modal extends React.PureComponent<ModalProps> {
                 display: 'flex',
                 justifyContent: 'center',
             },
+            container: {
+                maxHeight: '80vh',
+                overflow: 'auto',
+            },
             sizes: {
                 large: { width: 850 },
                 small: { width: 520 },
@@ -61,7 +65,7 @@ export class Modal extends React.PureComponent<ModalProps> {
         return (
             <div className={css(styles.wrapper, open ? styles.open : styles.close)}>
                 <div className={css(styles.modal)}>
-                    <ModalContainer style={css(styles.sizes[size], style)} onClose={onClose}>
+                    <ModalContainer style={css(styles.container, styles.sizes[size], style)} onClose={onClose}>
                         <ModalBody>
                             {this.props.children}
                         </ModalBody>

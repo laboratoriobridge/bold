@@ -34,6 +34,8 @@ exports[`ModalControlled should render correcly 1`] = `
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
   width: 850px;
 }
 
@@ -198,7 +200,7 @@ exports[`ModalControlled should render correcly 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.08);
+  background: rgba(230,230,230,0.7);
 }
 
 <div
@@ -286,6 +288,8 @@ exports[`ModalControlled should render correcly 2`] = `
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
   width: 850px;
 }
 
@@ -450,7 +454,7 @@ exports[`ModalControlled should render correcly 2`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.08);
+  background: rgba(230,230,230,0.7);
 }
 
 .emotion-9 {
