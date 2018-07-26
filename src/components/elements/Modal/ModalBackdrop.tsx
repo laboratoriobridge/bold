@@ -19,7 +19,7 @@ export class ModalBackdrop extends React.PureComponent<ModalBackdropProps> {
                 left: 0,
                 bottom: 0,
                 right: 0,
-                backgroundColor: 'rgba(0, 0, 0, 0.08)',
+                background: 'rgba(230, 230, 230, 0.7)',
             },
         }
         return (

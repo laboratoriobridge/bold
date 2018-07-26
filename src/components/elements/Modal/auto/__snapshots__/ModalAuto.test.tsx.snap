@@ -1,27 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-10 {
+.emotion-11 {
   -webkit-transition: all .2s;
   transition: all .2s;
   visibility: hidden;
   opacity: 0;
 }
 
-.emotion-8 {
-  border: 1px solid #e6e6e6;
-  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.08);
-  border-radius: 2px;
-  background-color: #ffffff;
-  position: relative;
-  width: 480px;
-  z-index: 1040;
+.emotion-9 {
   position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-8 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 520px;
 }
 
 .emotion-2 {
@@ -210,76 +225,80 @@ exports[`should render correctly 1`] = `
   background-color: #ebebeb;
 }
 
-.emotion-9 {
+.emotion-10 {
   position: fixed;
   z-index: 1030;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.08);
+  background: rgba(230,230,230,0.7);
 }
 
 <div
-  class="emotion-10"
+  class="emotion-11"
 >
   <div
-    class="emotion-8"
+    class="emotion-9"
   >
-    <button
-      class="emotion-2"
-      type="button"
+    <div
+      class="emotion-8"
     >
-      <span>
-        <span
-          class="emotion-1"
-        >
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
           >
-            <path
-              d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-            />
-          </svg>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
+          </span>
         </span>
-      </span>
-    </button>
-    <div
-      class="emotion-3"
-    >
-      <span>
-        Body
-      </span>
-    </div>
-    <div
-      class="emotion-7"
-    >
+      </button>
       <div
-        class="emotion-6"
+        class="emotion-3"
+      >
+        <span>
+          Body
+        </span>
+      </div>
+      <div
+        class="emotion-7"
       >
         <div
-          class="emotion-5"
+          class="emotion-6"
         >
-          <button
-            class="emotion-4"
-            type="button"
+          <div
+            class="emotion-5"
           >
-            <span>
+            <button
+              class="emotion-4"
+              type="button"
+            >
               <span>
-                Confirm
+                <span>
+                  Confirm
+                </span>
               </span>
-            </span>
-          </button>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div
-    class="emotion-9"
+    class="emotion-10"
   />
 </div>
 `;

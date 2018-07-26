@@ -30,15 +30,17 @@ storiesOf('Form', module)
         }
 
         const renderForm = (props: FormRenderProps) => (
-            <Flow vSpacing={1} direction='vertical'>
-                <TextField name='nome' label='Nome' required />
-                <Flow>
-                    <RadioField name='radio' label='Option1' value='1' />
-                    <RadioField name='radio' label='Option2' value='2' />
+            <form onSubmit={props.handleSubmit}>
+                <Flow vSpacing={1} direction='vertical'>
+                    <TextField name='nome' label='Nome' required />
+                    <Flow>
+                        <RadioField name='radio' label='Option1' value='1' />
+                        <RadioField name='radio' label='Option2' value='2' />
+                    </Flow>
+                    <CheckboxField name='check' label='Check' />
+                    <SubmitButton label='Submit' handleSubmit={props.handleSubmit} />
                 </Flow>
-                <CheckboxField name='check' label='Check' />
-                <SubmitButton label='Submit' handleSubmit={props.handleSubmit} />
-            </Flow>
+            </form>
         )
 
         const submit = () => ({ nome: 'test' })

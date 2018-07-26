@@ -1,27 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal should render closed 1`] = `
-.emotion-8 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-6 {
-  border: 1px solid #e6e6e6;
-  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.08);
-  border-radius: 2px;
-  background-color: #ffffff;
-  position: relative;
-  width: 768px;
-  z-index: 1040;
+exports[`Modal accept style prop 1`] = `
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .emotion-2 {
@@ -107,156 +103,98 @@ exports[`Modal should render closed 1`] = `
   padding: 3rem;
 }
 
-.emotion-5 {
-  background-color: #f2f2f7;
-  padding: 1rem;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-4 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: "Noto Sans",sans-serif;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
-  border-radius: 4px;
-  color: #666666;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-4 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-4 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-4:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-4:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
-}
-
-.emotion-4:not(:disabled):hover {
-  background-color: #ebebeb;
-}
-
-.emotion-7 {
+.emotion-6 {
   position: fixed;
   z-index: 1030;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.08);
+  background: rgba(230,230,230,0.7);
+}
+
+.emotion-7 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.emotion-4 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 850px;
+  color: red;
 }
 
 <div
-  class="emotion-8"
+  class="emotion-7"
 >
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
-    <button
-      class="emotion-2"
-      type="button"
-    >
-      <span>
-        <span
-          class="emotion-1"
-        >
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-            />
-          </svg>
-        </span>
-      </span>
-    </button>
     <div
-      class="emotion-3"
-    >
-      Testing.
-    </div>
-    <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <button
-        class="emotion-4"
+        class="emotion-2"
         type="button"
       >
         <span>
-          <span>
-            Action
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
           </span>
         </span>
       </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
     </div>
   </div>
   <div
-    class="emotion-7"
+    class="emotion-6"
   />
 </div>
 `;
 
-exports[`Modal should render open 1`] = `
-.emotion-6 {
-  border: 1px solid #e6e6e6;
-  box-shadow: 0px 2px 4px 0 rgba(0,0,0,0.08);
-  border-radius: 2px;
-  background-color: #ffffff;
-  position: relative;
-  width: 768px;
-  z-index: 1040;
+exports[`Modal render different sizes 1`] = `
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .emotion-2 {
@@ -342,14 +280,112 @@ exports[`Modal should render open 1`] = `
   padding: 3rem;
 }
 
-.emotion-5 {
-  background-color: #f2f2f7;
-  padding: 1rem;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+.emotion-6 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+.emotion-7 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: visible;
+  opacity: 1;
 }
 
 .emotion-4 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 520px;
+}
+
+<div
+  class="emotion-7"
+>
+  <div
+    class="emotion-5"
+  >
+    <div
+      class="emotion-4"
+    >
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-6"
+  />
+</div>
+`;
+
+exports[`Modal render different sizes 2`] = `
+.emotion-5 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-4 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 850px;
+}
+
+.emotion-2 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: -webkit-inline-box;
@@ -375,15 +411,18 @@ exports[`Modal should render open 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 4px;
   color: #666666;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
-.emotion-4 > span {
+.emotion-2 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -396,34 +435,50 @@ exports[`Modal should render open 1`] = `
   transition: color .2s;
 }
 
-.emotion-4 > span > :not(:last-child) {
+.emotion-2 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-4:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-4:focus {
+.emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #056DFF;
 }
 
-.emotion-4:not(:disabled):hover {
-  background-color: #ebebeb;
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
 }
 
-.emotion-7 {
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1030;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0,0,0,0.08);
+  background: rgba(230,230,230,0.7);
 }
 
-.emotion-8 {
+.emotion-7 {
   -webkit-transition: all .2s;
   transition: all .2s;
   visibility: visible;
@@ -431,55 +486,743 @@ exports[`Modal should render open 1`] = `
 }
 
 <div
-  class="emotion-8"
+  class="emotion-7"
 >
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
-    <button
-      class="emotion-2"
-      type="button"
-    >
-      <span>
-        <span
-          class="emotion-1"
-        >
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
-            />
-          </svg>
-        </span>
-      </span>
-    </button>
     <div
-      class="emotion-3"
-    >
-      Testing.
-    </div>
-    <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <button
-        class="emotion-4"
+        class="emotion-2"
         type="button"
       >
         <span>
-          <span>
-            Action
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
           </span>
         </span>
       </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
     </div>
   </div>
   <div
+    class="emotion-6"
+  />
+</div>
+`;
+
+exports[`Modal render different sizes 3`] = `
+.emotion-5 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-6 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+.emotion-7 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.emotion-4 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  max-width: 80%;
+}
+
+<div
+  class="emotion-7"
+>
+  <div
+    class="emotion-5"
+  >
+    <div
+      class="emotion-4"
+    >
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-6"
+  />
+</div>
+`;
+
+exports[`Modal should render closed 1`] = `
+.emotion-9 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-7 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 850px;
+}
+
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-5 {
+  background-color: #f2f2f7;
+  padding: 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-4 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-4 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-4 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-4:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-4:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-8 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+<div
+  class="emotion-9"
+>
+  <div
     class="emotion-7"
+  >
+    <div
+      class="emotion-6"
+    >
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
+      <div
+        class="emotion-5"
+      >
+        <button
+          class="emotion-4"
+          type="button"
+        >
+          <span>
+            <span>
+              Action
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-8"
+  />
+</div>
+`;
+
+exports[`Modal should render open 1`] = `
+.emotion-7 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  z-index: 1040;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 2px;
+  background-color: #ffffff;
+  position: relative;
+  min-width: 520px;
+  max-height: 80vh;
+  overflow: auto;
+  width: 850px;
+}
+
+.emotion-2 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-2 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  padding: 3rem;
+}
+
+.emotion-5 {
+  background-color: #f2f2f7;
+  padding: 1rem;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-4 {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-4 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-4 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-4:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-4:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+.emotion-8 {
+  position: fixed;
+  z-index: 1030;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+.emotion-9 {
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+<div
+  class="emotion-9"
+>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-6"
+    >
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+              />
+            </svg>
+          </span>
+        </span>
+      </button>
+      <div
+        class="emotion-3"
+      >
+        Testing.
+      </div>
+      <div
+        class="emotion-5"
+      >
+        <button
+          class="emotion-4"
+          type="button"
+        >
+          <span>
+            <span>
+              Action
+            </span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    class="emotion-8"
   />
 </div>
 `;
