@@ -1,4 +1,4 @@
-export { Modal, ModalProps } from './Modal'
+export { Modal, ModalProps, ModalSize } from './Modal'
 export { ModalBackdrop, ModalBackdropProps } from './ModalBackdrop'
 export { ModalBody, ModalBodyProps } from './ModalBody'
 export { ModalContainer, ModalContainerProps } from './ModalContainer'

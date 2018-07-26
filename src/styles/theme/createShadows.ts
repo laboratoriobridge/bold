@@ -14,7 +14,7 @@ export interface Shadows {
     outer: OuterShadows
 }
 
-/* tslint:disable */
+// tslint:disable max-line-length
 export const createShadows = (): Shadows => {
     return {
         outer: {

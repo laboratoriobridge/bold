@@ -50,4 +50,14 @@ describe('Modal', () => {
         ))
         expect(noFooter.find(ModalFooter).length).toEqual(0)
     })
+
+    it('render different sizes', () => {
+        expect(render(withTheme(<Modal open={true} size='small'>Testing.</Modal>))).toMatchSnapshot()
+        expect(render(withTheme(<Modal open={true} size='large'>Testing.</Modal>))).toMatchSnapshot()
+        expect(render(withTheme(<Modal open={true} size='auto'>Testing.</Modal>))).toMatchSnapshot()
+    })
+
+    it('accept style prop', () => {
+        expect(render(withTheme(<Modal open={true} style={{ color: 'red' }}>Testing.</Modal>))).toMatchSnapshot()
+    })
 })

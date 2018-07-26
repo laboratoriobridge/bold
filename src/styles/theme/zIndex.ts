@@ -1,6 +1,17 @@
 export interface ZIndex {
+    /**
+     * Modal backdrop
+     */
     modalBackdrop: number
+
+    /**
+     * Modal container
+     */
     modalContainer: number
+
+    /**
+     * Popper items (Tooltip, Dropdown, Popper and PopperFocus)
+     */
     overlays: number
 }
 
