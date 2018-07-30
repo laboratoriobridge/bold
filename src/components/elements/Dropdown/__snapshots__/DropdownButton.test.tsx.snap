@@ -10,6 +10,8 @@ exports[`DropdownButton should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-4:hover {
@@ -215,6 +217,8 @@ exports[`DropdownButtonItem should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-0:hover {

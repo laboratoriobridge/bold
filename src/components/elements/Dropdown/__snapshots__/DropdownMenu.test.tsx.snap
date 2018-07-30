@@ -27,6 +27,8 @@ exports[`should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-0:hover {
@@ -50,6 +52,8 @@ exports[`should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   color: #b3b3b3;
 }
 
@@ -71,6 +75,8 @@ exports[`should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   color: #E0001A;
 }
 

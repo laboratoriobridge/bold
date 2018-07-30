@@ -117,6 +117,8 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
         const styles: Styles = {
             button: {
                 fontWeight: 'bold',
+                textDecoration: 'none',
+                color: 'inherit',
             },
             icon: {
                 marginLeft: '0.25rem',

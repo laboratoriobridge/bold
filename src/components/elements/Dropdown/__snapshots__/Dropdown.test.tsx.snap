@@ -31,6 +31,8 @@ exports[`should accept Popper props 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-1:hover {
@@ -132,6 +134,8 @@ exports[`should render correctly 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-1:hover {
