@@ -59,6 +59,9 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-2 {
   font-weight: bold;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: inherit;
 }
 
 .emotion-1 {
@@ -100,6 +103,8 @@ exports[`deve renderizar corretamente 1`] = `
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   color: #666666;
+  -webkit-text-decoration: none;
+  text-decoration: none;
 }
 
 .emotion-4:hover {

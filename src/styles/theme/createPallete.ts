@@ -20,6 +20,7 @@ export interface ColorScale {
 
 export interface Pallete {
     text: { main: Color, secondary: Color, disabled: Color }
+    link: { main: Color }
     surface: { main: Color, background: Color }
     divider: Color
     primary: { main: Color }
@@ -51,6 +52,9 @@ export const createPallete = (): Pallete => {
             main: gray.c30,
             secondary: gray.c40,
             disabled: gray.c70,
+        },
+        link: {
+            main: '#0066f5',
         },
         divider: gray.c90,
         surface: {
