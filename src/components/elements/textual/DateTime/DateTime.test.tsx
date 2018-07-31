@@ -19,7 +19,7 @@ it('should accept moment as value', () => {
 })
 
 it('should accept number (timestamp) as value', () => {
-    expect(render(<DateTime value={1533060604544} />).text()).toEqual('31/07/2018 15:10')
+    expect(render(<DateTime value={1533060604544} />).text()).toEqual('31/07/2018 18:10')
 })
 
 it('should accept a render prop receiving the parsed moment as parameter', () => {
