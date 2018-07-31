@@ -6,7 +6,7 @@ import { formatDateOrDateTime, formats } from '../../../../util/dateTime'
 export const dateTimeFormats = formats
 
 export interface DateTimeProps {
-    value: moment.Moment | string | Date
+    value: moment.Moment | string | number | Date
     mode?: 'date' | 'time' | 'dateTime'
     render?(moment: moment.Moment): React.ReactNode
 }
