@@ -39,7 +39,7 @@ it('should accept the "mode" prop', () => {
 it('should have the complete date/time as title', () => {
     const wrapper = mount(<DateTime value={moment('2018-02-09T14:57:23.046')} />)
     expect(wrapper.find('span').props().title)
-        .toEqual('9 de fevereiro de 2018 às 14:57')
+        .toEqual('February 9, 2018 2:57 PM')
 })
 
 it('should treat null values', () => {

@@ -1,13 +1,10 @@
 import { select, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as moment from 'moment'
 import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { DateTime } from './DateTime'
-
-moment.locale('pt-BR')
 
 const options = {
     '': '',
