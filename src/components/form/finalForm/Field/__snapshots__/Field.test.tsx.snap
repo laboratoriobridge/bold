@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convert should throw an exception if convert is defined but necessary mutator is not set on context 1`] = `"Form must have a setFielData mutator so Field can define a convert function"`;
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.emotion-0 {
+  color: #E0001A;
+  margin-left: 0.25rem;
+}
+
+<div
+  data-name="field1"
+>
+  <label
+    class="emotion-1"
+    for="field1"
+  >
+    Field #1
+    <span
+      aria-label="Campo obrigatório"
+      class="emotion-0"
+    >
+      *
+    </span>
+  </label>
+  <input
+    name="field1"
+    value=""
+  />
+</div>
+`;

@@ -3,15 +3,15 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
-import { withStore } from '../../../stories-addons/withStore'
-import { Flow } from '../../layout/Flow/Flow'
-import { CheckboxField } from '../field/CheckboxField/CheckboxField'
-import { RadioField } from '../field/RadioField/RadioField'
-import { TextField } from '../field/TextField/TextField'
+import { withPropTypes, withTheme } from '../../../../stories-addons'
+import { withStore } from '../../../../stories-addons/withStore'
+import { Flow } from '../../../layout/Flow/Flow'
+import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
+import { RadioField } from '../../field/RadioField/RadioField'
+import { TextField } from '../../field/TextField/TextField'
+import { SubmitButton } from '../SubmitButton'
 
 import { Form } from './Form'
-import { SubmitButton } from './SubmitButton'
 
 storiesOf('Form', module)
     .addDecorator(withPropTypes())

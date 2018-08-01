@@ -6,17 +6,28 @@ import { AsyncSelect, AsyncSelectProps } from '../../select/AsyncSelect/AsyncSel
 
 export interface AsyncSelectFieldProps extends FormFieldProps, AsyncSelectProps {
     name: string
+    convertToValueKey?: boolean
 }
 
 export class AsyncSelectField extends React.Component<AsyncSelectFieldProps> {
+
+    static defaultProps: Partial<AsyncSelectFieldProps> = {
+        valueKey: 'value',
+        convertToValueKey: true,
+    }
 
     render() {
         return (
             <Field
                 {...this.props}
                 render={this.renderSelect}
+                convert={this.convert}
             />
         )
+    }
+
+    private convert = (value: any) => {
+        return this.props.convertToValueKey ? value[this.props.valueKey] : value
     }
 
     private renderSelect = (props: RenderProps) => (

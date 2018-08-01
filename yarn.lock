@@ -3816,13 +3816,17 @@ fill-range@^4.0.0:
     repeat-string "^1.6.1"
     to-regex-range "^2.1.0"
 
-final-form-focus@1.0.0:
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-focus/-/final-form-focus-1.0.0.tgz#51b7652ea6aac9774234a2c871e9f9a434b2b983"
+final-form-focus@1.1.0:
+  version "1.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-focus/-/final-form-focus-1.1.0.tgz#a4b0e6792dda637461d448a20f594d57e3380411"
 
-final-form@4.8.3:
-  version "4.8.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.8.3.tgz#86a03da6cd6459ed8fe3737dbd9dc87ed40c11d7"
+final-form-set-field-data@1.0.1:
+  version "1.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-set-field-data/-/final-form-set-field-data-1.0.1.tgz#edb1794812731831bfef6976746fcc82d75dcdec"
+
+final-form@4.9.1:
+  version "4.9.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.9.1.tgz#1afd6c61b4946b153b592c07eba7440979f257ed"
 
 finalhandler@1.1.1:
   version "1.1.1"

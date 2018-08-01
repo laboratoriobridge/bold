@@ -1,5 +1,6 @@
-import { FORM_ERROR } from 'final-form'
+import { FORM_ERROR, FormApi, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
+import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
 import {
     Form as FinalForm,
@@ -30,12 +31,15 @@ export class Form extends React.Component<FormProps> {
             decorators.push(focusOnErrorDecorator)
         }
 
+        const mutators = { ...this.props.mutators, setFieldData: setFieldData.default || setFieldData }
+
         return (
             <FinalForm
                 {...this.props}
                 onSubmit={this.onSubmit}
                 render={this.renderForm}
                 decorators={decorators}
+                mutators={mutators}
             />
         )
     }
@@ -58,8 +62,24 @@ export class Form extends React.Component<FormProps> {
         </>
     )
 
-    private onSubmit = (values, form) => {
-        const result = this.props.onSubmit(values, form)
+    private getConvertedValues = (values: Object, form: FormApi) => {
+        let newValues = values
+
+        for (const field of form.getRegisteredFields()) {
+            const fieldState = form.getFieldState(field)
+            const convert = fieldState.data ? fieldState.data.convert : null
+            if (convert) {
+                const fieldValue = getIn(values, field)
+                newValues = setIn(newValues, field, convert(fieldValue))
+            }
+        }
+
+        return newValues
+    }
+
+    private onSubmit = (values: Object, form: FormApi) => {
+        const newValues = this.getConvertedValues(values, form)
+        const result = this.props.onSubmit(newValues, form)
 
         if (result) {
             if (this.isPromise(result)) {
