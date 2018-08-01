@@ -1,30 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
-.emotion-4 {
+.emotion-6 {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.emotion-1 {
-  display: inline-block;
-  color: #666666;
-  margin-right: .25rem;
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.emotion-1:not(:last-child)::after {
-  margin-left: .25rem;
-  content: "»";
-}
-
-.emotion-1:last-child a {
+.emotion-3:last-child a {
   pointer-events: none;
   color: #056DFF;
 }
 
 .emotion-0 {
-  color: #666666;
+  color: #4d4d4d;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: bold;
@@ -38,15 +34,30 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   color: #056DFF;
 }
 
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #b3b3b3;
+  margin: 0 .5rem;
+  font-size: 1rem;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1rem;
+}
+
 <nav
   aria-label="Breadcrumbs"
   role="navigation"
 >
   <ol
-    class="emotion-4"
+    class="emotion-6"
   >
     <li
-      class="emotion-1"
+      class="emotion-3"
     >
       <a
         class="emotion-0"
@@ -54,9 +65,24 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
       >
         Entry #1
       </a>
+      <span
+        class="emotion-2"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          height="1em"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+          />
+        </svg>
+      </span>
     </li>
     <li
-      class="emotion-1"
+      class="emotion-3"
     >
       <a
         class="emotion-0"
