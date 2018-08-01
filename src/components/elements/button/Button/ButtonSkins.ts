@@ -2,9 +2,9 @@ import { Styles, Theme } from '../../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
-import { createStyles as createSecondary } from './skins/secondary'
+import { createStyles as createOutline } from './skins/outline'
 
-export type Skins = 'default' | 'ghost' | 'secondary'
+export type Skins = 'default' | 'ghost' | 'outline'
 export type Type = 'normal' | 'primary' | 'danger'
 export type Size = 'large' | 'medium' | 'small'
 
@@ -17,7 +17,7 @@ export interface Skin {
 export const skinMap: { [key in Skins]: (theme: Theme) => Skin } = {
     'default': createDefault,
     'ghost': createGhost,
-    'secondary': createSecondary,
+    'outline': createOutline,
 }
 
 export interface SkinProps {

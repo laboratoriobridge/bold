@@ -19,9 +19,12 @@ export const createStyles = (theme: Theme): Skin => ({
         },
     },
     primary: {
-
+        color: theme.pallete.primary.main,
     },
     danger: {
-
+        color: theme.pallete.status.danger.main,
+        ':focus': {
+            boxShadow: focusBoxShadow(theme, 'danger'),
+        },
     },
 })

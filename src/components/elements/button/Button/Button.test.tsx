@@ -16,16 +16,22 @@ describe('Button', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('should render the primary type', () => {
-        expect(render(withTheme(<Button label='Button' type='primary' skin='default' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' type='primary' skin='secondary' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' type='primary' skin='ghost' />))).toMatchSnapshot()
+    it('should render the default skin', () => {
+        expect(render(withTheme(<Button label='Button' skin='default' type='normal' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='default' type='primary' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='default' type='danger' />))).toMatchSnapshot()
     })
 
-    it('should render the danger type', () => {
-        expect(render(withTheme(<Button label='Button' type='danger' skin='default' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' type='danger' skin='secondary' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' type='danger' skin='ghost' />))).toMatchSnapshot()
+    it('should render the ghost skin', () => {
+        expect(render(withTheme(<Button label='Button' skin='ghost' type='normal' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='ghost' type='primary' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='ghost' type='danger' />))).toMatchSnapshot()
+    })
+
+    it('should render the outline skin', () => {
+        expect(render(withTheme(<Button label='Button' skin='outline' type='normal' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='outline' type='primary' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button label='Button' skin='outline' type='danger' />))).toMatchSnapshot()
     })
 
     it('should have a "loading" animation when onClick return is a Promise', () => {
