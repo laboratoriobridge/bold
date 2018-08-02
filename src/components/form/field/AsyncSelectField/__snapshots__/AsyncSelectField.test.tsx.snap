@@ -1,0 +1,534 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should render correctly 1`] = `
+.emotion-0 {
+  font-size: 0.75rem;
+  border-radius: 2px;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.emotion-0 .Select-control {
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  color: #4d4d4d;
+  height: 2rem;
+}
+
+.emotion-0 .Select-control:hover {
+  border-color: #999999;
+  box-shadow: none;
+}
+
+.emotion-0 .Select-control .Select-clear-zone {
+  padding-right: 0.5rem;
+}
+
+.emotion-0 .Select-control .Select-clear-zone:hover {
+  color: #056DFF;
+}
+
+.emotion-0 .Select-control .Select-clear-zone .Select-clear {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.emotion-0 .Select-control .Select-placeholder,
+.emotion-0 .Select-control .Select-value {
+  padding: 0 1rem;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: auto;
+}
+
+.emotion-0 .Select-control .Select-value-label {
+  color: #4d4d4d !important;
+}
+
+.emotion-0 .Select-control .Select-input {
+  height: auto;
+  padding: 0 1rem;
+}
+
+.emotion-0 .Select-control .Select-input input {
+  line-height: 1rem;
+  padding: 0.4rem 0;
+}
+
+.emotion-0 .Select-control .Select-arrow-zone {
+  background-color: #f2f2f7;
+  padding-right: 0;
+  width: 30px;
+}
+
+.emotion-0 .Select-control .Select-menu-outer {
+  font-size: 1rem;
+}
+
+.emotion-0.Select--multi .Select-control .Select-multi-value-wrapper {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-0.Select--multi .Select-control .Select-input {
+  padding: 0 .5rem;
+  height: auto;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value {
+  padding: 0;
+  margin: 0.25rem 0;
+  line-height: 1em;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  font-size: 1em;
+  font-weight: bold;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin-left: 0.5rem;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value-label {
+  color: #4d4d4d !important;
+  padding: 4px 8px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value-icon {
+  background: #f2f2f7;
+  color: #4d4d4d;
+  font-size: 1.5em;
+  font-weight: normal;
+  border: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding: 0 .25rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0 .Select-option:hover,
+.emotion-0 .Select-option.is-focused {
+  background: #f2f2f7;
+}
+
+.emotion-0.is-focused {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0.is-focused .Select-menu-outer {
+  border-color: #cccccc;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0.is-focused:not(.is-opened) .Select-control {
+  border-color: #cccccc;
+  box-shadow: none;
+}
+
+.emotion-0.is-disabled .Select-control {
+  background-color: #f2f2f7;
+}
+
+<div
+  data-name="select1"
+>
+  <div
+    class="Select emotion-0 has-value is-clearable is-searchable Select--single"
+  >
+    <input
+      name="select1"
+      type="hidden"
+      value="1"
+    />
+    <div
+      class="Select-control"
+    >
+      <span
+        class="Select-multi-value-wrapper"
+        id="react-select-2--value"
+      >
+        <div
+          class="Select-value"
+        >
+          <span
+            aria-selected="true"
+            class="Select-value-label"
+            id="react-select-2--value-item"
+            role="option"
+          >
+            <span
+              title="Item #1"
+            >
+              Item #1
+            </span>
+          </span>
+        </div>
+        <div
+          class="Select-input"
+          style="display: inline-block;"
+        >
+          <input
+            aria-activedescendant="react-select-2--value"
+            aria-expanded="false"
+            aria-haspopup="false"
+            aria-owns=""
+            role="combobox"
+            style="box-sizing: content-box; width: 5px;"
+            value=""
+          />
+          <div
+            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+          />
+        </div>
+      </span>
+      <span
+        aria-label="Limpar seleção"
+        class="Select-clear-zone"
+        title="Limpar seleção"
+      >
+        <span
+          class="Select-clear"
+        >
+          ×
+        </span>
+      </span>
+      <span
+        class="Select-arrow-zone"
+      >
+        <span
+          class="Select-arrow"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`render should render correctly when multivalue 1`] = `
+.emotion-0 {
+  font-size: 0.75rem;
+  border-radius: 2px;
+  -webkit-transition: box-shadow .2s;
+  transition: box-shadow .2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.emotion-0 .Select-control {
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 2px;
+  color: #4d4d4d;
+  height: 2rem;
+}
+
+.emotion-0 .Select-control:hover {
+  border-color: #999999;
+  box-shadow: none;
+}
+
+.emotion-0 .Select-control .Select-clear-zone {
+  padding-right: 0.5rem;
+}
+
+.emotion-0 .Select-control .Select-clear-zone:hover {
+  color: #056DFF;
+}
+
+.emotion-0 .Select-control .Select-clear-zone .Select-clear {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.emotion-0 .Select-control .Select-placeholder,
+.emotion-0 .Select-control .Select-value {
+  padding: 0 1rem;
+  line-height: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: auto;
+}
+
+.emotion-0 .Select-control .Select-value-label {
+  color: #4d4d4d !important;
+}
+
+.emotion-0 .Select-control .Select-input {
+  height: auto;
+  padding: 0 1rem;
+}
+
+.emotion-0 .Select-control .Select-input input {
+  line-height: 1rem;
+  padding: 0.4rem 0;
+}
+
+.emotion-0 .Select-control .Select-arrow-zone {
+  background-color: #f2f2f7;
+  padding-right: 0;
+  width: 30px;
+}
+
+.emotion-0 .Select-control .Select-menu-outer {
+  font-size: 1rem;
+}
+
+.emotion-0.Select--multi .Select-control .Select-multi-value-wrapper {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-0.Select--multi .Select-control .Select-input {
+  padding: 0 .5rem;
+  height: auto;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value {
+  padding: 0;
+  margin: 0.25rem 0;
+  line-height: 1em;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  font-size: 1em;
+  font-weight: bold;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  margin-left: 0.5rem;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value-label {
+  color: #4d4d4d !important;
+  padding: 4px 8px;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.emotion-0.Select--multi .Select-control .Select-value-icon {
+  background: #f2f2f7;
+  color: #4d4d4d;
+  font-size: 1.5em;
+  font-weight: normal;
+  border: 0;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding: 0 .25rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-0 .Select-option:hover,
+.emotion-0 .Select-option.is-focused {
+  background: #f2f2f7;
+}
+
+.emotion-0.is-focused {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0.is-focused .Select-menu-outer {
+  border-color: #cccccc;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0.is-focused:not(.is-opened) .Select-control {
+  border-color: #cccccc;
+  box-shadow: none;
+}
+
+.emotion-0.is-disabled .Select-control {
+  background-color: #f2f2f7;
+}
+
+<div
+  data-name="select1"
+>
+  <div
+    class="Select emotion-0 has-value is-clearable is-searchable Select--multi"
+  >
+    <input
+      name="select1"
+      type="hidden"
+      value="1"
+    />
+    <input
+      name="select1"
+      type="hidden"
+      value="2"
+    />
+    <div
+      class="Select-control"
+    >
+      <span
+        class="Select-multi-value-wrapper"
+        id="react-select-3--value"
+      >
+        <div
+          class="Select-value"
+        >
+          <span
+            aria-hidden="true"
+            class="Select-value-icon"
+          >
+            ×
+          </span>
+          <span
+            aria-selected="true"
+            class="Select-value-label"
+            id="react-select-3--value-0"
+            role="option"
+          >
+            <span
+              title="Item #1"
+            >
+              Item #1
+            </span>
+            <span
+              class="Select-aria-only"
+            >
+               
+            </span>
+          </span>
+        </div>
+        <div
+          class="Select-value"
+        >
+          <span
+            aria-hidden="true"
+            class="Select-value-icon"
+          >
+            ×
+          </span>
+          <span
+            aria-selected="true"
+            class="Select-value-label"
+            id="react-select-3--value-1"
+            role="option"
+          >
+            <span
+              title="Item #2"
+            >
+              Item #2
+            </span>
+            <span
+              class="Select-aria-only"
+            >
+               
+            </span>
+          </span>
+        </div>
+        <div
+          class="Select-input"
+          style="display: inline-block;"
+        >
+          <input
+            aria-activedescendant="react-select-3--value"
+            aria-expanded="false"
+            aria-haspopup="false"
+            aria-owns=""
+            role="combobox"
+            style="box-sizing: content-box; width: 5px;"
+            value=""
+          />
+          <div
+            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+          />
+        </div>
+      </span>
+      <span
+        aria-label="Clear all"
+        class="Select-clear-zone"
+        title="Clear all"
+      >
+        <span
+          class="Select-clear"
+        >
+          ×
+        </span>
+      </span>
+      <span
+        class="Select-arrow-zone"
+      >
+        <span
+          class="Select-arrow"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;

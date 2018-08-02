@@ -2,9 +2,7 @@ import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withForm } from '../../../../stories-addons/withForm'
-import { withPropTypes } from '../../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../../stories-addons/withTheme'
+import { withForm, withPropTypes, withRouter, withTheme } from '../../../../stories-addons'
 
 import { SelectField } from './SelectField'
 
@@ -20,6 +18,7 @@ storiesOf('Form/Fields/Select', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
+    .addDecorator(withRouter())
     .addDecorator(withForm())
     .add('SelectField', () => (
         <SelectField
@@ -29,5 +28,6 @@ storiesOf('Form/Fields/Select', module)
             placeholder='Select'
             disabled={boolean('disabled', false)}
             multi={boolean('multi', false)}
+            convertToValueKey
         />
     ))

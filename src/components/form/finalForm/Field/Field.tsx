@@ -1,20 +1,29 @@
+import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import {
     Field as FinalFormField,
     FieldProps as FinalFieldProps,
-    FieldRenderProps as FinalRenderProps
+    FieldRenderProps as FinalRenderProps,
+    ReactContext
 } from 'react-final-form'
 
-import { FormField, FormFieldProps } from '../FormField'
+import { FormField, FormFieldProps } from '../../FormField'
 
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
 export interface FieldProps extends FormFieldProps, FinalFieldProps {
-    hasWrapper?: boolean
     name: string
-    render(props: RenderProps): JSX.Element
+    hasWrapper?: boolean
+    render(props: RenderProps): React.ReactNode
+
+    /**
+     * Converts the field value to another before sending it to submit handler.
+     * @param value The field original value.
+     * @return The converted value.
+     */
+    convert?(value: any): any
 }
 
 interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
@@ -25,8 +34,25 @@ interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
 
 export class Field extends React.Component<FieldProps> {
 
+    static contextTypes = {
+        reactFinalForm: PropTypes.object,
+    }
+
     static defaultProps: Partial<FieldProps> = {
         hasWrapper: true,
+    }
+
+    componentDidMount() {
+        if (this.props.convert) {
+            const setFieldData = this.getFormApi().mutators.setFieldData
+            if (setFieldData) {
+                setFieldData(this.props.name, {
+                    convert: this.props.convert,
+                })
+            } else {
+                throw new Error('Form must have a setFielData mutator so Field can define a convert function')
+            }
+        }
     }
 
     render() {
@@ -37,10 +63,12 @@ export class Field extends React.Component<FieldProps> {
     }
 
     private renderComponent = (props: FieldComponentProps) => {
-        const { input: { onChange, ...inputRest },
+        const {
+            input: { onChange, ...inputRest },
             custom,
             meta,
-            ...rest } = props
+            ...rest
+        } = props
 
         const mergedOnChange = (value) => {
             onChange(value)
@@ -65,4 +93,7 @@ export class Field extends React.Component<FieldProps> {
         return this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })
     }
 
+    private getFormApi(): ReactContext['reactFinalForm'] {
+        return this.context.reactFinalForm
+    }
 }
