@@ -5,7 +5,6 @@ exports[`should accept the style prop 1`] = `
   padding: 0.25rem;
   font-weight: bold;
   background: #f2f2f7;
-  color: #666666;
   color: green;
 }
 
@@ -21,7 +20,6 @@ exports[`should render correctly 1`] = `
   padding: 0.25rem;
   font-weight: bold;
   background: #f2f2f7;
-  color: #666666;
 }
 
 <span

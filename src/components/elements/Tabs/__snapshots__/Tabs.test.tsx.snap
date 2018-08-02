@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
-.emotion-6 {
+exports[`renders correctly 1`] = `
+.emotion-8 {
   list-style: none;
   padding: 0px;
   margin: 0 -1rem;
@@ -16,17 +16,19 @@ exports[`deve renderizar corretamente 1`] = `
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #808080;
+  color: #666666;
   font-weight: bold;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
   margin: 0 1rem;
   -webkit-letter-spacing: 1px;
   -moz-letter-spacing: 1px;
   -ms-letter-spacing: 1px;
   letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .2s color;
-  transition: .2s color;
+  -webkit-transition: .15s all;
+  transition: .15s all;
+  border-radius: 2px;
+  outline: 0;
 }
 
 .emotion-0.active {
@@ -34,8 +36,60 @@ exports[`deve renderizar corretamente 1`] = `
   border-bottom: 2px solid currentColor;
 }
 
+.emotion-0:not(.disabled):hover {
+  background: #e6e6e6;
+}
+
+.emotion-0:not(.disabled):focus {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(.disabled):active {
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
+.emotion-6 {
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #666666;
+  font-weight: bold;
+  padding: 0.5rem 0.75rem;
+  margin: 0 1rem;
+  -webkit-letter-spacing: 1px;
+  -moz-letter-spacing: 1px;
+  -ms-letter-spacing: 1px;
+  letter-spacing: 1px;
+  line-height: 1rem;
+  -webkit-transition: .15s all;
+  transition: .15s all;
+  border-radius: 2px;
+  outline: 0;
+  color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.emotion-6.active {
+  color: #056DFF;
+  border-bottom: 2px solid currentColor;
+}
+
+.emotion-6:not(.disabled):hover {
+  background: #e6e6e6;
+}
+
+.emotion-6:not(.disabled):focus {
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-6:not(.disabled):active {
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
+}
+
 <ul
-  class="emotion-6"
+  class="emotion-8"
   role="tablist"
 >
   <li
@@ -74,6 +128,20 @@ exports[`deve renderizar corretamente 1`] = `
       role="tab"
     >
       Active
+    </a>
+  </li>
+  <li
+    class="emotion-1"
+    role="presentation"
+  >
+    <a
+      aria-disabled="true"
+      class="emotion-6 disabled"
+      href="/active"
+      role="tab"
+      tabindex="-1"
+    >
+      Disabled
     </a>
   </li>
 </ul>

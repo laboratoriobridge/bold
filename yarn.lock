@@ -37,6 +37,13 @@
     esutils "^2.0.2"
     js-tokens "^3.0.0"
 
+"@babel/runtime@^7.0.0-beta.52":
+  version "7.0.0-beta.55"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/runtime/-/runtime-7.0.0-beta.55.tgz#0bc33aa5a6ac0b012f37e25b9e6aaa2e489a916b"
+  dependencies:
+    core-js "^2.5.7"
+    regenerator-runtime "^0.12.0"
+
 "@babel/types@7.0.0-beta.40":
   version "7.0.0-beta.40"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/types/-/types-7.0.0-beta.40.tgz#25c3d7aae14126abe05fcb098c65a66b6d6b8c14"
@@ -112,13 +119,13 @@
   version "1.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@nodelib/fs.stat/-/fs.stat-1.1.0.tgz#50c1e2260ac0ed9439a181de3725a0168d59c48a"
 
-"@storybook/addon-actions@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0-alpha.11.tgz#2a77333dbf0a4ecc1542e9c23cafde5e4bbf18f9"
+"@storybook/addon-actions@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0-alpha.14.tgz#1e8fd174a6bbab2eca1dea8bf808396b90d7b814"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
-    "@storybook/components" "4.0.0-alpha.11"
-    "@storybook/core-events" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
+    "@storybook/components" "4.0.0-alpha.14"
+    "@storybook/core-events" "4.0.0-alpha.14"
     babel-runtime "^6.26.0"
     deep-equal "^1.0.1"
     emotion-theming "^9.1.2"
@@ -130,13 +137,13 @@
     react-inspector "^2.3.0"
     uuid "^3.2.1"
 
-"@storybook/addon-info@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0-alpha.11.tgz#19acecac01d6bf11c7eac56ddde94ffdc33c9f3c"
+"@storybook/addon-info@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0-alpha.14.tgz#d6a3ed2ef278d565bdc068dbbb3436d3690c8a3e"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
-    "@storybook/client-logger" "4.0.0-alpha.11"
-    "@storybook/components" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
+    "@storybook/client-logger" "4.0.0-alpha.14"
+    "@storybook/components" "4.0.0-alpha.14"
     babel-runtime "^6.26.0"
     core-js "2.5.7"
     global "^4.3.2"
@@ -148,13 +155,13 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0-alpha.11.tgz#dad098c5c33f7f6254701cba13ea680350aa1b5e"
+"@storybook/addon-knobs@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0-alpha.14.tgz#3a08ba8996f284326c3432eebb6b7b9809d44d31"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
-    "@storybook/components" "4.0.0-alpha.11"
-    "@storybook/core-events" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
+    "@storybook/components" "4.0.0-alpha.14"
+    "@storybook/core-events" "4.0.0-alpha.14"
     babel-runtime "^6.26.0"
     copy-to-clipboard "^3.0.8"
     escape-html "^1.0.3"
@@ -167,52 +174,52 @@
     react-emotion "^9.1.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0-alpha.11.tgz#0001f0ad1899a6ce490275d83c0c55bfdc18f991"
+"@storybook/addon-links@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0-alpha.14.tgz#658f78e68063f4662044680435cb2acdef15422f"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
-    "@storybook/components" "4.0.0-alpha.11"
-    "@storybook/core-events" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
+    "@storybook/components" "4.0.0-alpha.14"
+    "@storybook/core-events" "4.0.0-alpha.14"
     babel-runtime "^6.26.0"
     global "^4.3.2"
     prop-types "^15.6.1"
 
-"@storybook/addon-options@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0-alpha.11.tgz#4358d66f72a70901b6a99a692f527c638064f410"
+"@storybook/addon-options@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0-alpha.14.tgz#7596fde5dee0d43704ffd5fcbe89a67f3cf667a6"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
     babel-runtime "^6.26.0"
 
-"@storybook/addons@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0-alpha.11.tgz#9073cdb636abfcb493c09be791996e6cdd9c4831"
+"@storybook/addons@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0-alpha.14.tgz#682be365820a1f4c0b9a90be53916b43b20d36e5"
   dependencies:
-    "@storybook/channels" "4.0.0-alpha.11"
-    "@storybook/components" "4.0.0-alpha.11"
+    "@storybook/channels" "4.0.0-alpha.14"
+    "@storybook/components" "4.0.0-alpha.14"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-alpha.11.tgz#e1c240829c4095fb16c20353753888d5c8588335"
+"@storybook/channel-postmessage@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-alpha.14.tgz#0beda522582ebb96b5e7b7617211c2572c4a60c6"
   dependencies:
-    "@storybook/channels" "4.0.0-alpha.11"
+    "@storybook/channels" "4.0.0-alpha.14"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0-alpha.11.tgz#127a182b805f7567da68eeb49630f0dde2c8c365"
+"@storybook/channels@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0-alpha.14.tgz#8b6ab4a865c056497ee1c3232745e2287fe55da8"
 
-"@storybook/client-logger@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0-alpha.11.tgz#1c0d312b5e11967345c7a166c14cdf7001068d73"
+"@storybook/client-logger@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0-alpha.14.tgz#ef7385058d932e781ef51fd46c42667371a1af02"
 
-"@storybook/components@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0-alpha.11.tgz#877995ae0b531395a150e6aa5574cf9348358b91"
+"@storybook/components@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0-alpha.14.tgz#ed66c7d5d4686cfdf934ee9a3c16f50cf25d60b2"
   dependencies:
     emotion "^9.1.3"
     emotion-theming "^9.1.2"
@@ -226,21 +233,21 @@
     react-textarea-autosize "^6.1.0"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0-alpha.11.tgz#8c11dd469f7ceb0fda689bca957f167283280536"
+"@storybook/core-events@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0-alpha.14.tgz#8f70a6f93da733b207ae1648e1db292d6dbf43f0"
 
-"@storybook/core@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0-alpha.11.tgz#344a1e07713c400df49039622c895723389b823e"
+"@storybook/core@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0-alpha.14.tgz#010a0bd91ba2bc0800e508bc0f4f450135e22254"
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.11"
-    "@storybook/channel-postmessage" "4.0.0-alpha.11"
-    "@storybook/client-logger" "4.0.0-alpha.11"
-    "@storybook/core-events" "4.0.0-alpha.11"
-    "@storybook/node-logger" "4.0.0-alpha.11"
+    "@storybook/addons" "4.0.0-alpha.14"
+    "@storybook/channel-postmessage" "4.0.0-alpha.14"
+    "@storybook/client-logger" "4.0.0-alpha.14"
+    "@storybook/core-events" "4.0.0-alpha.14"
+    "@storybook/node-logger" "4.0.0-alpha.14"
     "@storybook/react-dev-utils" "^5.0.0"
-    "@storybook/ui" "4.0.0-alpha.11"
+    "@storybook/ui" "4.0.0-alpha.14"
     airbnb-js-shims "^1.6.0"
     autoprefixer "^8.6.0"
     babel-loader "^7.1.4"
@@ -276,7 +283,7 @@
     shelljs "^0.8.2"
     style-loader "^0.21.0"
     svg-url-loader "^2.3.2"
-    universal-dotenv "^1.5.1"
+    universal-dotenv "^1.8.0"
     url-loader "^1.0.1"
     webpack "^4.10.2"
     webpack-dev-middleware "^3.1.3"
@@ -290,9 +297,9 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0-alpha.11.tgz#1b26c72f0fd8a212b3929e188cdadd52813d4425"
+"@storybook/node-logger@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0-alpha.14.tgz#e654b18221df8e643378447c8cc3f3dfcd2157c9"
   dependencies:
     npmlog "^4.1.2"
 
@@ -355,11 +362,11 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0-alpha.11.tgz#33870bb55697bfd6bdbb7d9e4ebc7bfc948166d8"
+"@storybook/react@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0-alpha.14.tgz#656eabf7273097583cc487e6de506f71cd0f107c"
   dependencies:
-    "@storybook/core" "4.0.0-alpha.11"
+    "@storybook/core" "4.0.0-alpha.14"
     "@storybook/react-dev-utils" "^5.0.0"
     babel-plugin-react-docgen "^2.0.0-rc.1"
     babel-preset-react "^6.24.1"
@@ -370,13 +377,13 @@
     prop-types "^15.6.1"
     react-emotion "^9.1.3"
 
-"@storybook/ui@4.0.0-alpha.11":
-  version "4.0.0-alpha.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0-alpha.11.tgz#254871d7dc01d8ce13d884e891f114c2fb5b9ec6"
+"@storybook/ui@4.0.0-alpha.14":
+  version "4.0.0-alpha.14"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0-alpha.14.tgz#2be547200c1105110968c38c770b37b330f81dd0"
   dependencies:
     "@ndelangen/react-treebeard" "^2.1.0"
-    "@storybook/components" "4.0.0-alpha.11"
-    "@storybook/core-events" "4.0.0-alpha.11"
+    "@storybook/components" "4.0.0-alpha.14"
+    "@storybook/core-events" "4.0.0-alpha.14"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.4"
@@ -523,13 +530,13 @@
   dependencies:
     redux "^4.0.0"
 
-"@types/storybook__addon-actions@3.0.3":
-  version "3.0.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-actions/-/storybook__addon-actions-3.0.3.tgz#99287c0b9ee6b84ea571ee4cb42d0779c56af208"
+"@types/storybook__addon-actions@3.4.0":
+  version "3.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-actions/-/storybook__addon-actions-3.4.0.tgz#9a8d9b3c7478e6557a6c50a06c8216d1bdca9fe4"
 
-"@types/storybook__addon-info@3.2.3":
-  version "3.2.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-info/-/storybook__addon-info-3.2.3.tgz#cfaa9b6511b0f336c11bd6c0b42726e804b55a5e"
+"@types/storybook__addon-info@3.4.0":
+  version "3.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-info/-/storybook__addon-info-3.4.0.tgz#036fe5213eeb0a4893cfd2bb60711177ddf6dd82"
   dependencies:
     "@types/react" "*"
 
@@ -549,9 +556,9 @@
   version "3.2.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
 
-"@types/storybook__react@3.0.7":
-  version "3.0.7"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.7.tgz#2ca6ab78e5fe777737aa5880b0bb5228f564e137"
+"@types/storybook__react@3.0.8":
+  version "3.0.8"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.8.tgz#58deb593361b7d5e6a6eca09bc7889b613980925"
   dependencies:
     "@types/react" "*"
     "@types/webpack-env" "*"
@@ -7358,6 +7365,10 @@ regenerator-runtime@^0.11.0:
   version "0.11.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
 
+regenerator-runtime@^0.12.0:
+  version "0.12.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerator-runtime/-/regenerator-runtime-0.12.0.tgz#8052ac952d85b10f3425192cd0c53f45cf65c6cb"
+
 regenerator-transform@^0.10.0:
   version "0.10.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/regenerator-transform/-/regenerator-transform-0.10.1.tgz#1e4996837231da8b7f3cf4114d71b5691a0680dd"
@@ -8515,11 +8526,13 @@ unique-slug@^2.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
-universal-dotenv@^1.5.1:
-  version "1.5.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/universal-dotenv/-/universal-dotenv-1.5.3.tgz#e1691c6150c7b6bb5fb54073e4bf53d514093788"
+universal-dotenv@^1.8.0:
+  version "1.8.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/universal-dotenv/-/universal-dotenv-1.8.0.tgz#200764f704d7a516bb564253b5c1b77eb7802e3d"
   dependencies:
+    "@babel/runtime" "^7.0.0-beta.52"
     app-root-dir "^1.0.2"
+    core-js "^2.5.7"
     dotenv "^6.0.0"
     dotenv-expand "^4.2.0"
 

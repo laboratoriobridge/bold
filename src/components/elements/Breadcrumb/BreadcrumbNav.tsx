@@ -3,6 +3,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Icon } from '../Icon/Icon'
 
 import { BreadcrumbEntry, BreadcrumbStore, BreadcrumbUnsubscribeFunction } from './BreadcrumbStore'
 
@@ -49,22 +50,20 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
                 margin: 0,
             },
             item: {
-                display: 'inline-block',
-                color: theme.pallete.gray.c40,
-                marginRight: '.25rem',
-
-                '&:not(:last-child)::after': {
-                    marginLeft: '.25rem',
-                    content: '"»"',
-                },
+                display: 'inline-flex',
 
                 '&:last-child a': {
                     pointerEvents: 'none',
                     color: theme.pallete.primary.main,
                 },
             },
+            separator: {
+                color: theme.pallete.text.disabled,
+                margin: '0 .5rem',
+                fontSize: '1rem',
+            },
             link: {
-                color: theme.pallete.gray.c40,
+                color: theme.pallete.text.main,
                 textDecoration: 'none',
                 fontWeight: 'bold',
                 fontSize: '0.75rem',
@@ -82,6 +81,9 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
                     {entries.map(({ title, to }, idx) => (
                         <li key={idx} className={css(styles.item)}>
                             <Link className={css(styles.link)} to={to}>{title}</Link>
+                            {idx !== entries.length - 1 &&
+                                <Icon style={styles.separator} size={1} icon='angleRight' />
+                            }
                         </li>
                     ))}
                 </ol>

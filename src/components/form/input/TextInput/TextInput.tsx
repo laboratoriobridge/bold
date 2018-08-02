@@ -17,20 +17,21 @@ export interface TextInputProps extends PublicInputProps, WithStylesProps {
 export const createStyles = (theme: Theme): Styles => ({
     input: {
         backgroundColor: theme.pallete.surface.main,
-        border: 'solid 1px ' + theme.pallete.gray.c80,
+        border: 'solid 1px ' + theme.pallete.gray.c70,
         borderRadius: theme.radius.main,
         color: theme.pallete.text.main,
         fontFamily: theme.typography.fontFamily,
         fontSize: '0.75rem',
         lineHeight: '1rem',
-        padding: 'calc(0.5rem - 1px) 1rem',
+        padding: 'calc(0.5rem - 1px) 0.5rem',
         width: '100%',
         transition: 'all .2s',
         backfaceVisibility: 'hidden', // fixes box-shadow transition bug
         '::placeholder': {
-            color: theme.pallete.gray.c80,
+            color: theme.pallete.text.disabled,
         },
         ':disabled': {
+            borderColor: theme.pallete.gray.c80,
             backgroundColor: theme.pallete.surface.background,
         },
         ':not(:disabled):hover': {

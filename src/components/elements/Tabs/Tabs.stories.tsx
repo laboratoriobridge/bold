@@ -7,7 +7,7 @@ import { withRouter } from '../../../stories-addons/withRouter'
 
 import { TabLink, Tabs } from './Tabs'
 
-storiesOf('Components', module)
+storiesOf('Components/Tabs', module)
     .addDecorator(withPropTypes(`
     <p>
         Active é obtido através da prop <code>active</code> ou caso ocorra um match entre a URL
@@ -17,11 +17,12 @@ storiesOf('Components', module)
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .addDecorator(withRouter(['/test-4'], 1))
-    .add('Tabs', () => (
+    .add('default', () => (
         <Tabs>
-            <TabLink to='/test-1'>Primeiro item</TabLink>
-            <TabLink to='/test-2' active>Segundo item</TabLink>
-            <TabLink to='/test-3'>Terceiro item</TabLink>
-            <TabLink to='/test-4'>Quarto item</TabLink>
+            <TabLink to='/test-1'>First item</TabLink>
+            <TabLink to='/test-2' active>Second item</TabLink>
+            <TabLink to='/test-3'>Third item</TabLink>
+            <TabLink to='/test-4'>Fourth item</TabLink>
+            <TabLink to='/test-5' disabled>Disabled item</TabLink>
         </Tabs>
     ))

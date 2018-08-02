@@ -10,8 +10,13 @@ export interface OuterShadows {
     240: Shadow
 }
 
+export interface InnerShadows {
+    10: Shadow
+}
+
 export interface Shadows {
     outer: OuterShadows
+    inner: InnerShadows
 }
 
 // tslint:disable max-line-length
@@ -25,6 +30,9 @@ export const createShadows = (): Shadows => {
             80: '0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 8px 9px 1px rgba(0, 0, 0, 0.14)',
             160: '0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 16px 24px 2px rgba(0, 0, 0, 0.14)',
             240: '0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 16px 24px 2px rgba(0, 0, 0, 0.14)',
+        },
+        inner: {
+            10: 'inset 0 1px 4px 0 rgba(0, 0, 0, 0.14), inset 0 2px 4px 0 rgba(0, 0, 0, 0.08)',
         },
     }
 }
