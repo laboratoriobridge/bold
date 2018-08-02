@@ -22,7 +22,6 @@ const createStyles = (theme: Theme): Styles => {
             fontWeight: 'bold',
             padding: '0.5rem 0.75rem',
             margin: '0 1rem',
-            letterSpacing: '1px',
             lineHeight: '1rem',
             transition: '.15s all',
             borderRadius: 2,

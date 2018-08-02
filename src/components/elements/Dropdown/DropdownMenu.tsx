@@ -65,7 +65,6 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
                 display: 'block',
                 padding: '0.5rem 1rem',
                 fontSize: '0.875rem',
-                letterSpacing: '1px',
                 color: theme.pallete.gray.c40,
                 textDecoration: 'none',
                 '&:hover': {

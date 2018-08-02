@@ -37,7 +37,6 @@ export const createBaseStyles = (theme: Theme): Styles => ({
         userSelect: 'none',
         transition: 'all .2s',
         fontWeight: 'bold',
-        letterSpacing: 1,
         cursor: 'pointer',
         '& > span': {
             alignItems: 'center',

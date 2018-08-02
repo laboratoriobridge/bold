@@ -62,10 +62,6 @@ exports[`ModalControlled should render correcly 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -152,10 +148,6 @@ exports[`ModalControlled should render correcly 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
@@ -318,10 +310,6 @@ exports[`ModalControlled should render correcly 2`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -408,10 +396,6 @@ exports[`ModalControlled should render correcly 2`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;

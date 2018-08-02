@@ -42,10 +42,6 @@ exports[`Modal accept style prop 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -221,10 +217,6 @@ exports[`Modal render different sizes 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -412,10 +404,6 @@ exports[`Modal render different sizes 2`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -577,10 +565,6 @@ exports[`Modal render different sizes 3`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -775,10 +759,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -865,10 +845,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
@@ -1031,10 +1007,6 @@ exports[`Modal should render open 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -1121,10 +1093,6 @@ exports[`Modal should render open 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: #ffffff;
   border: 1px solid #b3b3b3;
