@@ -15,12 +15,18 @@ export interface TableFooterProps extends WithStylesProps {
     totalElements: number
     pageSize: number
     style?: Interpolation
+    sizeOptions?: number[]
     onPageChange(page: number): void
     onSizeChange(size: number): void
 }
 
 @withStyles
 export class TableFooter extends React.Component<TableFooterProps> {
+
+    static defaultProps: Partial<TableFooterProps> = {
+        sizeOptions: [10, 30, 50, 100],
+    }
+
     render() {
         const { css, theme, style } = this.props
         const styles: Styles = {
@@ -29,16 +35,17 @@ export class TableFooter extends React.Component<TableFooterProps> {
                 display: 'flex',
                 alignItems: 'stretch',
                 border: '1px solid ' + theme.pallete.divider,
+                height: 40,
             },
             results: {
                 fontWeight: 'bold',
-                borderRight: '1px solid ' + theme.pallete.divider,
                 display: 'flex',
                 alignItems: 'center',
                 paddingRight: '1rem',
                 paddingLeft: '1rem',
             },
             pagination: {
+                borderLeft: '1px solid ' + theme.pallete.divider,
                 display: 'flex',
                 alignItems: 'center',
                 flex: 1,
@@ -55,34 +62,40 @@ export class TableFooter extends React.Component<TableFooterProps> {
                         abbrev
                     />
                 </span>
-                <div className={css(styles.pagination)}>
-                    <span>
-                        Mostrar:
-                        <SizeDropdown size={this.props.pageSize} onChange={this.props.onSizeChange} />
-                    </span>
-                    <Paginator
-                        page={this.props.page}
-                        total={this.props.totalPages}
-                        onChange={this.props.onPageChange}
-                    />
-                </div>
+                {this.showPagination() &&
+                    <div className={css(styles.pagination)}>
+                        <span>
+                            Mostrar:
+                            <SizeDropdown
+                                options={this.props.sizeOptions}
+                                size={this.props.pageSize}
+                                onChange={this.props.onSizeChange}
+                            />
+                        </span>
+                        <Paginator
+                            page={this.props.page}
+                            total={this.props.totalPages}
+                            onChange={this.props.onPageChange}
+                        />
+                    </div>
+                }
             </div>
         )
+    }
+
+    showPagination() {
+        return this.props.totalElements > Math.min(...this.props.sizeOptions)
     }
 }
 
 interface SizeDropdownProps extends WithStylesProps {
     size: number
-    options?: number[]
+    options: number[]
     onChange(size: number): any
 }
 
 @withStyles
 class SizeDropdown extends React.Component<SizeDropdownProps> {
-
-    static defaultProps: Partial<SizeDropdownProps> = {
-        options: [10, 30, 50, 100],
-    }
 
     render() {
         const { options, css } = this.props
