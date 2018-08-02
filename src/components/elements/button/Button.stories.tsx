@@ -20,7 +20,7 @@ const typeOptions: { [key in Type]: string } = {
 const skinOptions: { [key in Skins]: string } = {
     'default': 'default',
     'ghost': 'ghost',
-    'secondary': 'secondary',
+    'outline': 'outline',
 }
 
 const sizeOptions: { [key in Size]: string } = {
