@@ -10,9 +10,13 @@ exports[`render should render correctly 1`] = `
   backface-visibility: hidden;
 }
 
+.emotion-0.is-open .Select-arrow {
+  border-bottom-color: #666666 !important;
+}
+
 .emotion-0 .Select-control {
   background-color: #ffffff;
-  border: solid 1px #cccccc;
+  border: solid 1px #b3b3b3;
   border-radius: 2px;
   color: #4d4d4d;
   height: 2rem;
@@ -23,12 +27,17 @@ exports[`render should render correctly 1`] = `
   box-shadow: none;
 }
 
+.emotion-0 .Select-control:hover .Select-clear-zone {
+  color: #666666;
+}
+
 .emotion-0 .Select-control .Select-clear-zone {
   padding-right: 0.5rem;
+  color: #b3b3b3;
 }
 
 .emotion-0 .Select-control .Select-clear-zone:hover {
-  color: #056DFF;
+  color: #E0001A;
 }
 
 .emotion-0 .Select-control .Select-clear-zone .Select-clear {
@@ -36,9 +45,13 @@ exports[`render should render correctly 1`] = `
   line-height: 1.5rem;
 }
 
+.emotion-0 .Select-control .Select-placeholder {
+  color: #b3b3b3;
+}
+
 .emotion-0 .Select-control .Select-placeholder,
 .emotion-0 .Select-control .Select-value {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   line-height: 1;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -57,7 +70,7 @@ exports[`render should render correctly 1`] = `
 
 .emotion-0 .Select-control .Select-input {
   height: auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .emotion-0 .Select-control .Select-input input {
@@ -66,9 +79,14 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0 .Select-control .Select-arrow-zone {
+  color: #666666 !important;
   background-color: #f2f2f7;
   padding-right: 0;
   width: 30px;
+}
+
+.emotion-0 .Select-control .Select-arrow-zone .Select-arrow {
+  border-top-color: #666666 !important;
 }
 
 .emotion-0 .Select-control .Select-menu-outer {
@@ -90,7 +108,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0.Select--multi .Select-control .Select-input {
-  padding: 0 .5rem;
+  padding: 0px;
   height: auto;
 }
 
@@ -99,7 +117,7 @@ exports[`render should render correctly 1`] = `
   margin: 0.25rem 0;
   line-height: 1em;
   background: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #b3b3b3;
   font-size: 1em;
   font-weight: bold;
   display: -webkit-inline-box;
@@ -162,12 +180,13 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0.is-focused:not(.is-opened) .Select-control {
-  border-color: #cccccc;
+  border-color: #b3b3b3;
   box-shadow: none;
 }
 
 .emotion-0.is-disabled .Select-control {
   background-color: #f2f2f7;
+  border-color: #cccccc;
 }
 
 <div
@@ -255,9 +274,13 @@ exports[`render should render correctly when multivalue 1`] = `
   backface-visibility: hidden;
 }
 
+.emotion-0.is-open .Select-arrow {
+  border-bottom-color: #666666 !important;
+}
+
 .emotion-0 .Select-control {
   background-color: #ffffff;
-  border: solid 1px #cccccc;
+  border: solid 1px #b3b3b3;
   border-radius: 2px;
   color: #4d4d4d;
   height: 2rem;
@@ -268,12 +291,17 @@ exports[`render should render correctly when multivalue 1`] = `
   box-shadow: none;
 }
 
+.emotion-0 .Select-control:hover .Select-clear-zone {
+  color: #666666;
+}
+
 .emotion-0 .Select-control .Select-clear-zone {
   padding-right: 0.5rem;
+  color: #b3b3b3;
 }
 
 .emotion-0 .Select-control .Select-clear-zone:hover {
-  color: #056DFF;
+  color: #E0001A;
 }
 
 .emotion-0 .Select-control .Select-clear-zone .Select-clear {
@@ -281,9 +309,13 @@ exports[`render should render correctly when multivalue 1`] = `
   line-height: 1.5rem;
 }
 
+.emotion-0 .Select-control .Select-placeholder {
+  color: #b3b3b3;
+}
+
 .emotion-0 .Select-control .Select-placeholder,
 .emotion-0 .Select-control .Select-value {
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   line-height: 1;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -302,7 +334,7 @@ exports[`render should render correctly when multivalue 1`] = `
 
 .emotion-0 .Select-control .Select-input {
   height: auto;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
 }
 
 .emotion-0 .Select-control .Select-input input {
@@ -311,9 +343,14 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-0 .Select-control .Select-arrow-zone {
+  color: #666666 !important;
   background-color: #f2f2f7;
   padding-right: 0;
   width: 30px;
+}
+
+.emotion-0 .Select-control .Select-arrow-zone .Select-arrow {
+  border-top-color: #666666 !important;
 }
 
 .emotion-0 .Select-control .Select-menu-outer {
@@ -335,7 +372,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-0.Select--multi .Select-control .Select-input {
-  padding: 0 .5rem;
+  padding: 0px;
   height: auto;
 }
 
@@ -344,7 +381,7 @@ exports[`render should render correctly when multivalue 1`] = `
   margin: 0.25rem 0;
   line-height: 1em;
   background: #ffffff;
-  border: 1px solid #cccccc;
+  border: 1px solid #b3b3b3;
   font-size: 1em;
   font-weight: bold;
   display: -webkit-inline-box;
@@ -407,12 +444,13 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-0.is-focused:not(.is-opened) .Select-control {
-  border-color: #cccccc;
+  border-color: #b3b3b3;
   box-shadow: none;
 }
 
 .emotion-0.is-disabled .Select-control {
   background-color: #f2f2f7;
+  border-color: #cccccc;
 }
 
 <div

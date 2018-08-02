@@ -7,28 +7,41 @@ const createSelectStyle = (theme: Theme): Styles => {
             borderRadius: theme.radius.main,
             transition: 'box-shadow .2s',
             backfaceVisibility: 'hidden', // fixes box-shadow transition bug
+            '&.is-open': {
+                '.Select-arrow': {
+                    borderBottomColor: `${theme.pallete.text.secondary} !important`,
+                },
+            },
             '.Select-control': {
                 backgroundColor: theme.pallete.surface.main,
-                border: 'solid 1px ' + theme.pallete.gray.c80,
+                border: 'solid 1px ' + theme.pallete.gray.c70,
                 borderRadius: theme.radius.main,
                 color: theme.pallete.gray.c30,
                 height: '2rem',
                 ':hover': {
                     borderColor: theme.pallete.gray.c60,
                     boxShadow: 'none',
+
+                    '.Select-clear-zone': {
+                        color: theme.pallete.text.secondary,
+                    },
                 },
                 '.Select-clear-zone': {
                     paddingRight: '0.5rem',
+                    color: theme.pallete.text.disabled,
                     ':hover': {
-                        color: theme.pallete.primary.main,
+                        color: theme.pallete.status.danger.main,
                     },
                     '.Select-clear': {
                         fontSize: '1.5rem',
                         lineHeight: '1.5rem',
                     },
                 },
+                '.Select-placeholder': {
+                    color: theme.pallete.text.disabled,
+                },
                 '.Select-placeholder, .Select-value': {
-                    padding: '0 1rem',
+                    padding: '0 0.5rem',
                     lineHeight: 1,
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -39,16 +52,20 @@ const createSelectStyle = (theme: Theme): Styles => {
                 },
                 '.Select-input': {
                     height: 'auto',
-                    padding: '0 1rem',
+                    padding: '0 0.5rem',
                     'input': {
                         lineHeight: '1rem',
                         padding: '0.4rem 0',
                     },
                 },
                 '.Select-arrow-zone': {
+                    color: `${theme.pallete.text.secondary} !important`,
                     backgroundColor: theme.pallete.surface.background,
                     paddingRight: 0,
                     width: 30,
+                    '.Select-arrow': {
+                        borderTopColor: `${theme.pallete.text.secondary} !important`,
+                    },
                 },
                 '.Select-menu-outer': {
                     fontSize: '1rem',
@@ -63,7 +80,7 @@ const createSelectStyle = (theme: Theme): Styles => {
                         flexWrap: 'wrap',
                     },
                     '.Select-input': {
-                        padding: '0 .5rem',
+                        padding: '0',
                         height: 'auto',
                     },
                     '.Select-value': {
@@ -71,7 +88,7 @@ const createSelectStyle = (theme: Theme): Styles => {
                         margin: '0.25rem 0',
                         lineHeight: '1em',
                         background: theme.pallete.surface.main,
-                        border: '1px solid ' + theme.pallete.gray.c80,
+                        border: '1px solid ' + theme.pallete.gray.c70,
                         fontSize: '1em',
                         fontWeight: 'bold',
                         display: 'inline-flex',
@@ -114,13 +131,14 @@ const createSelectStyle = (theme: Theme): Styles => {
             },
             '&.is-focused:not(.is-opened)': {
                 '.Select-control': {
-                    borderColor: theme.pallete.gray.c80,
+                    borderColor: theme.pallete.gray.c70,
                     boxShadow: 'none',
                 },
             },
             '&.is-disabled': {
                 '.Select-control': {
                     backgroundColor: theme.pallete.surface.background,
+                    borderColor: theme.pallete.gray.c80,
                 },
             },
         },

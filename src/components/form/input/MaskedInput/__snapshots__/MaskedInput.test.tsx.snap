@@ -3,13 +3,13 @@
 exports[`deve renderizar corretamente 1`] = `
 .emotion-0 {
   background-color: #ffffff;
-  border: solid 1px #cccccc;
+  border: solid 1px #b3b3b3;
   border-radius: 2px;
   color: #4d4d4d;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
-  padding: calc(0.5rem - 1px) 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
@@ -18,22 +18,23 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #cccccc;
+  color: #b3b3b3;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #cccccc;
+  color: #b3b3b3;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #cccccc;
+  color: #b3b3b3;
 }
 
 .emotion-0::placeholder {
-  color: #cccccc;
+  color: #b3b3b3;
 }
 
 .emotion-0:disabled {
+  border-color: #cccccc;
   background-color: #f2f2f7;
 }
 
