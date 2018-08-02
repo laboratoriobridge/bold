@@ -21,9 +21,8 @@ const createStyles = (theme: Theme): Styles => {
             color: theme.pallete.gray.c40,
             fontWeight: 'bold',
             padding: '0.5rem 0.75rem',
-            margin: '0 1rem',
             lineHeight: '1rem',
-            transition: '.15s all',
+            transition: 'background .15s',
             borderRadius: 2,
             outline: 0,
 

@@ -19,14 +19,9 @@ exports[`renders correctly 1`] = `
   color: #666666;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
-  margin: 0 1rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .15s all;
-  transition: .15s all;
+  -webkit-transition: background .15s;
+  transition: background .15s;
   border-radius: 2px;
   outline: 0;
 }
@@ -56,14 +51,9 @@ exports[`renders correctly 1`] = `
   color: #666666;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
-  margin: 0 1rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .15s all;
-  transition: .15s all;
+  -webkit-transition: background .15s;
+  transition: background .15s;
   border-radius: 2px;
   outline: 0;
   color: #b3b3b3;
