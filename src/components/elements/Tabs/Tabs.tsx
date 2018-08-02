@@ -1,7 +1,8 @@
+import { cx } from 'emotion'
 import * as React from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
-import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 
 const createStyles = (theme: Theme): Styles => {
     return {
@@ -17,18 +18,37 @@ const createStyles = (theme: Theme): Styles => {
         a: {
             display: 'inline-block',
             textDecoration: 'none',
-            color: theme.pallete.gray.c50,
+            color: theme.pallete.gray.c40,
             fontWeight: 'bold',
-            padding: '0.5rem 0',
+            padding: '0.5rem 0.75rem',
             margin: '0 1rem',
             letterSpacing: '1px',
             lineHeight: '1rem',
-            transition: '.2s color',
+            transition: '.15s all',
+            borderRadius: 2,
+            outline: 0,
 
             '&.active': {
                 color: theme.pallete.primary.main,
                 borderBottom: '2px solid currentColor',
             },
+
+            '&:not(.disabled):hover': {
+                background: theme.pallete.gray.c90,
+            },
+
+            '&:not(.disabled):focus': {
+                boxShadow: focusBoxShadow(theme, 'primary'),
+            },
+
+            '&:not(.disabled):active': {
+                background: theme.pallete.gray.c90,
+                boxShadow: theme.shadows.inner['10'],
+            },
+        },
+        disabled: {
+            color: theme.pallete.text.disabled,
+            cursor: 'not-allowed',
         },
     }
 }
@@ -52,24 +72,28 @@ export class Tabs extends React.Component<TabsProps> {
 
 export interface TabLinkProps extends WithStylesProps, Pick<NavLinkProps, 'to' | 'replace' | 'exact'> {
     active?: boolean
+    disabled?: boolean
 }
 
 @withStyles
 export class TabLink extends React.Component<TabLinkProps> {
     static defaultProps: Partial<TabLinkProps> = {
         active: false,
+        disabled: false,
     }
 
     render() {
-        const { css, theme, active, children, ...rest } = this.props
+        const { css, theme, active, children, disabled, ...rest } = this.props
         const styles = createStyles(theme)
 
         return (
             <li className={css(styles.li)} role='presentation'>
                 <NavLink
-                    className={css(styles.a)}
+                    className={cx(css(styles.a, disabled && styles.disabled), { disabled })}
                     isActive={this.isActive}
                     role='tab'
+                    aria-disabled={disabled === true ? disabled : undefined}
+                    tabIndex={disabled ? -1 : undefined}
                     {...rest}
                 >
                     {children}
