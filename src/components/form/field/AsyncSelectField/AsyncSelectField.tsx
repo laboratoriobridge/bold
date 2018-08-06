@@ -27,7 +27,7 @@ export class AsyncSelectField extends React.Component<AsyncSelectFieldProps> {
     }
 
     private convert = (value: any) => {
-        return this.props.convertToValueKey ? value[this.props.valueKey] : value
+        return this.props.convertToValueKey && value ? value[this.props.valueKey] : value
     }
 
     private renderSelect = (props: RenderProps) => (
