@@ -46,4 +46,9 @@ describe('convert', () => {
         const select = wrapper.find(SelectField).instance()
         expect(select['convert'](options[1])).toEqual(options[1])
     })
+    it('should return the own value if value is null', () => {
+        const wrapper = createFormAndField({}, { initialValues: {} })
+        const select = wrapper.find(SelectField).instance()
+        expect(select['convert'](null)).toEqual(null)
+    })
 })
