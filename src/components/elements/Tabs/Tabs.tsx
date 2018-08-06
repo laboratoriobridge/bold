@@ -2,7 +2,7 @@ import { cx } from 'emotion'
 import * as React from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
-import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 
 const createStyles = (theme: Theme): Styles => {
     return {
@@ -22,13 +22,16 @@ const createStyles = (theme: Theme): Styles => {
             fontWeight: 'bold',
             padding: '0.5rem 0.75rem',
             lineHeight: '1rem',
-            transition: 'background .15s',
-            borderRadius: 2,
+            borderRadius: 4,
             outline: 0,
+            border: '2px solid transparent',
+            transition: 'background .15s, border-color .15s',
 
             '&.active': {
                 color: theme.pallete.primary.main,
-                borderBottom: '2px solid currentColor',
+                borderBottomColor: theme.pallete.primary.main,
+                borderBottomLeftRadius: 0,
+                borderBottomRightRadius: 0,
             },
 
             '&:not(.disabled):hover': {
@@ -36,7 +39,9 @@ const createStyles = (theme: Theme): Styles => {
             },
 
             '&:not(.disabled):focus': {
-                boxShadow: focusBoxShadow(theme, 'primary'),
+                borderColor: theme.pallete.primary.main,
+                borderBottomLeftRadius: 4,
+                borderBottomRightRadius: 4,
             },
 
             '&:not(.disabled):active': {
