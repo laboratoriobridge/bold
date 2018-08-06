@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`renders correctly 1`] = `
 .emotion-25 {
   font-size: 0.75rem;
   display: -webkit-box;
@@ -12,11 +12,11 @@ exports[`deve renderizar corretamente 1`] = `
   -ms-flex-align: stretch;
   align-items: stretch;
   border: 1px solid #e6e6e6;
+  height: 40px;
 }
 
 .emotion-0 {
   font-weight: bold;
-  border-right: 1px solid #e6e6e6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -30,6 +30,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-24 {
+  border-left: 1px solid #e6e6e6;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -98,10 +99,6 @@ exports[`deve renderizar corretamente 1`] = `
   display: block;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   color: #666666;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -157,10 +154,6 @@ exports[`deve renderizar corretamente 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -308,7 +301,7 @@ exports[`deve renderizar corretamente 1`] = `
           </div>
           <div
             class="emotion-13"
-            style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
           >
             <ul
               class="emotion-12"
@@ -413,5 +406,49 @@ exports[`deve renderizar corretamente 1`] = `
       </button>
     </div>
   </div>
+</div>
+`;
+
+exports[`renders without pagination 1`] = `
+.emotion-1 {
+  font-size: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 1px solid #e6e6e6;
+  height: 40px;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+<div
+  class="emotion-1"
+>
+  <span
+    class="emotion-0"
+  >
+    <span
+      title="10"
+    >
+      10 resultados
+    </span>
+  </span>
 </div>
 `;

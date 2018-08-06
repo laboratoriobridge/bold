@@ -19,21 +19,19 @@ exports[`renders correctly 1`] = `
   color: #666666;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
-  margin: 0 1rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .15s all;
-  transition: .15s all;
-  border-radius: 2px;
+  border-radius: 4px;
   outline: 0;
+  border: 2px solid transparent;
+  -webkit-transition: background .15s,border-color .15s;
+  transition: background .15s,border-color .15s;
 }
 
 .emotion-0.active {
   color: #056DFF;
-  border-bottom: 2px solid currentColor;
+  border-bottom-color: #056DFF;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .emotion-0:not(.disabled):hover {
@@ -41,7 +39,9 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-0:not(.disabled):focus {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  border-color: #056DFF;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .emotion-0:not(.disabled):active {
@@ -56,23 +56,21 @@ exports[`renders correctly 1`] = `
   color: #666666;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
-  margin: 0 1rem;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   line-height: 1rem;
-  -webkit-transition: .15s all;
-  transition: .15s all;
-  border-radius: 2px;
+  border-radius: 4px;
   outline: 0;
+  border: 2px solid transparent;
+  -webkit-transition: background .15s,border-color .15s;
+  transition: background .15s,border-color .15s;
   color: #b3b3b3;
   cursor: not-allowed;
 }
 
 .emotion-6.active {
   color: #056DFF;
-  border-bottom: 2px solid currentColor;
+  border-bottom-color: #056DFF;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .emotion-6:not(.disabled):hover {
@@ -80,7 +78,9 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-6:not(.disabled):focus {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  border-color: #056DFF;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .emotion-6:not(.disabled):active {

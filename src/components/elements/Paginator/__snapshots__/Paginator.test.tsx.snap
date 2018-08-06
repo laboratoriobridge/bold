@@ -39,10 +39,6 @@ exports[`deve renderizar corretamente 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -250,10 +246,6 @@ exports[`deve renderizar corretamente 2`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -383,10 +375,6 @@ exports[`deve renderizar corretamente 2`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -536,10 +524,6 @@ exports[`deve renderizar corretamente 3`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
@@ -669,10 +653,6 @@ exports[`deve renderizar corretamente 3`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   font-weight: bold;
-  -webkit-letter-spacing: 1px;
-  -moz-letter-spacing: 1px;
-  -ms-letter-spacing: 1px;
-  letter-spacing: 1px;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
