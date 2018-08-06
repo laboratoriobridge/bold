@@ -58,7 +58,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             opacity: 0,
             marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
-                borderColor: theme.pallete.gray.c60,
+                borderColor: theme.pallete.gray.c40,
             },
             [`&:checked + .${checkClasses}`]: {
                 backgroundColor: theme.pallete.primary.main,

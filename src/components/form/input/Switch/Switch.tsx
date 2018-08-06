@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
-
 import { Input, PublicInputProps } from '../Input/Input'
 
 export interface SwitchProps extends PublicInputProps, WithStylesProps {
@@ -22,7 +21,7 @@ export class Switch extends React.PureComponent<SwitchProps> {
                 display: 'inline-block',
                 width: '3rem',
                 lineHeight: 0,
-                border: `1px solid ${theme.pallete.divider}`,
+                border: `1px solid ${theme.pallete.gray.c70}`,
                 transition: 'all .2s',
             }),
             knob: css({
@@ -32,11 +31,7 @@ export class Switch extends React.PureComponent<SwitchProps> {
                 width: '1rem',
                 height: '1rem',
                 transition: 'all .2s',
-                boxShadow: `
-                    0 1px 3px 0 rgba(0, 0, 0, 0.2),
-                    0 2px 1px -1px rgba(0, 0, 0, 0.12),
-                    0 1px 1px 0 rgba(0, 0, 0, 0.14)
-                `,
+                boxShadow: theme.shadows.outer['20'],
             }),
             text: css({
                 marginLeft: '0.5rem',
@@ -48,7 +43,7 @@ export class Switch extends React.PureComponent<SwitchProps> {
             cursor: 'pointer',
             [`&:hover .${classes.switch}`]: {
                 cursor: 'pointer',
-                borderColor: theme.pallete.gray.c70,
+                borderColor: theme.pallete.gray.c40,
             },
         })
         const inputClasses = css({

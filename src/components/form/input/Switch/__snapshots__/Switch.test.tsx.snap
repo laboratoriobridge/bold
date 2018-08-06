@@ -9,7 +9,7 @@ exports[`should render correctly 1`] = `
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #b3b3b3;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -22,7 +22,7 @@ exports[`should render correctly 1`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
 .emotion-3 {
@@ -39,7 +39,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-3:hover .emotion-2 {
   cursor: pointer;
-  border-color: #b3b3b3;
+  border-color: #666666;
 }
 
 .emotion-0 {
@@ -98,7 +98,7 @@ exports[`should render correctly 2`] = `
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #b3b3b3;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -111,7 +111,7 @@ exports[`should render correctly 2`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
 .emotion-3 {
@@ -132,7 +132,7 @@ exports[`should render correctly 2`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #b3b3b3;
+  border-color: #666666;
 }
 
 .emotion-0 {
@@ -198,7 +198,7 @@ exports[`should render correctly 3`] = `
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #b3b3b3;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -211,7 +211,7 @@ exports[`should render correctly 3`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.14);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
 .emotion-3 {
@@ -232,7 +232,7 @@ exports[`should render correctly 3`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #b3b3b3;
+  border-color: #666666;
 }
 
 .emotion-0 {

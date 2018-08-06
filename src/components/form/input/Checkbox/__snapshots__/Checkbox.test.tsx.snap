@@ -40,7 +40,7 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .emotion-0:hover + .emotion-1 {
-  border-color: #999999;
+  border-color: #666666;
 }
 
 .emotion-0:checked + .emotion-1 {
@@ -142,7 +142,7 @@ exports[`Checkbox should render correctly when disabled 1`] = `
 }
 
 .emotion-0:hover + .emotion-1 {
-  border-color: #999999;
+  border-color: #666666;
 }
 
 .emotion-0:checked + .emotion-1 {
@@ -270,7 +270,7 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
 }
 
 .emotion-0:hover + .emotion-1 {
-  border-color: #999999;
+  border-color: #666666;
 }
 
 .emotion-0:checked + .emotion-1 {
