@@ -2,13 +2,16 @@ import { StylesConfig } from 'react-select/lib/styles'
 
 import { focusBoxShadow, Theme } from '../../../styles'
 
-export const createSelectStyles = (theme: Theme): StylesConfig => ({
+export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfig => ({
     control: (base, state) => ({
         ...base,
         background: state.isDisabled ? theme.pallete.surface.background : theme.pallete.surface.main,
-        borderColor: state.isDisabled ? theme.pallete.gray.c80 : theme.pallete.gray.c70,
+        borderColor:
+            (state.isDisabled && theme.pallete.gray.c80) ||
+            (hasError && theme.pallete.status.danger.main) ||
+            theme.pallete.gray.c70,
         borderRadius: theme.radius.main,
-        boxShadow: state.isFocused && focusBoxShadow(theme),
+        boxShadow: state.isFocused && (hasError ? focusBoxShadow(theme, 'danger') : focusBoxShadow(theme)),
         cursor: 'text',
         transition: 'all .2s',
         minHeight: 'auto',

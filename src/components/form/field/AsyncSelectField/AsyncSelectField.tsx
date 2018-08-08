@@ -34,9 +34,9 @@ export class AsyncSelectField<OptionType = DefaultOptionType> extends
 
     private renderSelect = (props: RenderProps) => (
         <AsyncSelect
-            {...this.props}
-            {...props.input}
             status={props.hasError && 'error'}
+            {...props.input}
+            {...this.props}
         />
     )
 

@@ -33,9 +33,9 @@ export class SelectField<OptionType = any> extends React.Component<SelectFieldPr
     private renderSelect = (props: RenderProps) => {
         return (
             <Select
-                {...this.props}
-                {...props.input}
                 status={props.hasError && 'error'}
+                {...props.input}
+                {...this.props}
             />
         )
     }

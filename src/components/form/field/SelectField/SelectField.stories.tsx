@@ -29,6 +29,7 @@ storiesOf('Form/Fields/Select', module)
             placeholder='Select a value...'
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
+            status={boolean('hasError', false) && 'error'}
             convertToValueKey
         />
     ))

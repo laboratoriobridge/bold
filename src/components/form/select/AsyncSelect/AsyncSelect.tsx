@@ -43,10 +43,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
     render() {
         const { css, theme, status, disabled, ...rest } = this.props
 
-        const styles = createSelectStyles(theme)
-
-        // const classes = css(styles.default,
-        //     status === 'error' && styles.error)
+        const styles = createSelectStyles(theme, status === 'error')
 
         return (
             <ReactAsyncSelect

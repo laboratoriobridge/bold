@@ -44,6 +44,7 @@ storiesOf('Form/Fields/Select', module)
             label={text('label', 'Component label')}
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
+            status={boolean('hasError', false) && 'error'}
             defaultOptions={[]}
             cacheOptions={false}
         />

@@ -37,10 +37,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
     render() {
         const { css, theme, status, disabled, ...rest } = this.props
 
-        const styles = createSelectStyles(theme)
-
-        // const classes = css(styles.default,
-        // status === 'error' && styles.error)
+        const styles = createSelectStyles(theme, status === 'error')
 
         return (
             <ReactSelect
