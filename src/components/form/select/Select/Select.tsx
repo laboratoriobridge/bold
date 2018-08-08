@@ -3,8 +3,7 @@ import ReactSelect, { createFilter } from 'react-select'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
-
-import createSelectStyle from '../createSelectStyle'
+import { createSelectStyles } from '../createSelectStyle'
 
 export interface DefaultOptionType {
     value: any
@@ -30,7 +29,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
         isMulti: false,
         isClearable: true,
         filterOption: defaultFilter,
-        noOptionsMessage: () => 'Nenhum item encontrado',
+        noOptionsMessage: () => 'Nenhum resultado encontrado.',
         getOptionLabel: (option) => option && option.label,
         getOptionValue: (option) => option && option.value,
     }
@@ -38,16 +37,17 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
     render() {
         const { css, theme, status, disabled, ...rest } = this.props
 
-        const styles = createSelectStyle(theme)
+        const styles = createSelectStyles(theme)
 
-        const classes = css(styles.default,
-            status === 'error' && styles.error)
+        // const classes = css(styles.default,
+        // status === 'error' && styles.error)
 
         return (
             <ReactSelect
+                classNamePrefix='react-select'
+                styles={styles}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
-                className={classes}
                 {...rest}
             />
         )

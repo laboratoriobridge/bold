@@ -4,7 +4,7 @@ import { OptionsType } from 'react-select/lib/types'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
-import createSelectStyle from '../createSelectStyle'
+import { createSelectStyles } from '../createSelectStyle'
 import { DefaultOptionType } from '../Select/Select'
 
 export interface AsyncSelectRequestParams {
@@ -33,7 +33,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
         isMulti: false,
         isClearable: true,
         loadingMessage: () => 'Carregando...',
-        noOptionsMessage: () => 'Nenhum item encontrado',
+        noOptionsMessage: () => 'Nenhum resultado encontrado.',
         getOptionLabel: (option) => option && option.label,
         getOptionValue: (option) => option && option.value,
     }
@@ -43,14 +43,15 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
     render() {
         const { css, theme, status, disabled, ...rest } = this.props
 
-        const styles = createSelectStyle(theme)
+        const styles = createSelectStyles(theme)
 
-        const classes = css(styles.default,
-            status === 'error' && styles.error)
+        // const classes = css(styles.default,
+        //     status === 'error' && styles.error)
 
         return (
             <ReactAsyncSelect
-                className={classes}
+                classNamePrefix='react-select-async'
+                styles={styles}
                 loadOptions={this.loadOptions}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
@@ -59,7 +60,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
         )
     }
 
-    private loadOptions = (inputValue: string, callback: ((options: OptionsType<OptionType>) => void)) => {
+    private loadOptions = (inputValue: string, callback: (options: OptionsType<OptionType>) => void) => {
         if (this.typingTimer) {
             clearTimeout(this.typingTimer)
         }
@@ -67,7 +68,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
         this.typingTimer = window.setTimeout(() => this.getPage(inputValue, callback), this.props.searchDelay)
     }
 
-    private getPage = (inputValue: string, callback: ((options: OptionsType<OptionType>) => void)) => {
+    private getPage = (inputValue: string, callback: (options: OptionsType<OptionType>) => void) => {
         this.props.getPage({
             query: inputValue,
             pageSize: this.props.pageSize,

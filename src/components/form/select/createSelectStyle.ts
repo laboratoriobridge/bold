@@ -1,156 +1,99 @@
-import { focusBoxShadow, Styles, Theme } from '../../../styles'
+import { StylesConfig } from 'react-select/lib/styles'
 
-const createSelectStyle = (theme: Theme): Styles => {
-    return {
-        default: {
-            fontSize: '0.75rem',
-            borderRadius: theme.radius.main,
-            transition: 'box-shadow .2s',
-            backfaceVisibility: 'hidden', // fixes box-shadow transition bug
-            '&.is-open': {
-                '.Select-arrow': {
-                    borderBottomColor: `${theme.pallete.text.secondary} !important`,
-                },
-            },
-            '.Select-control': {
-                backgroundColor: theme.pallete.surface.main,
-                border: 'solid 1px ' + theme.pallete.gray.c70,
-                borderRadius: theme.radius.main,
-                color: theme.pallete.gray.c30,
-                height: '2rem',
-                ':hover': {
-                    borderColor: theme.pallete.gray.c60,
-                    boxShadow: 'none',
+import { focusBoxShadow, Theme } from '../../../styles'
 
-                    '.Select-clear-zone': {
-                        color: theme.pallete.text.secondary,
-                    },
-                },
-                '.Select-clear-zone': {
-                    paddingRight: '0.5rem',
-                    color: theme.pallete.text.disabled,
-                    ':hover': {
-                        color: theme.pallete.status.danger.main,
-                    },
-                    '.Select-clear': {
-                        fontSize: '1.5rem',
-                        lineHeight: '1.5rem',
-                    },
-                },
-                '.Select-placeholder': {
-                    color: theme.pallete.text.disabled,
-                },
-                '.Select-placeholder, .Select-value': {
-                    padding: '0 0.5rem',
-                    lineHeight: 1,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    height: 'auto',
-                },
-                '.Select-value-label': {
-                    color: theme.pallete.gray.c30 + ' !important',
-                },
-                '.Select-input': {
-                    height: 'auto',
-                    padding: '0 0.5rem',
-                    'input': {
-                        lineHeight: '1rem',
-                        padding: '0.4rem 0',
-                    },
-                },
-                '.Select-arrow-zone': {
-                    color: `${theme.pallete.text.secondary} !important`,
-                    backgroundColor: theme.pallete.surface.background,
-                    paddingRight: 0,
-                    width: 30,
-                    '.Select-arrow': {
-                        borderTopColor: `${theme.pallete.text.secondary} !important`,
-                    },
-                },
-                '.Select-menu-outer': {
-                    fontSize: '1rem',
-                },
-            },
-            // Multi-Select
-            '&.Select--multi': {
-                '.Select-control': {
-                    '.Select-multi-value-wrapper': {
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        flexWrap: 'wrap',
-                    },
-                    '.Select-input': {
-                        padding: '0',
-                        height: 'auto',
-                    },
-                    '.Select-value': {
-                        padding: 0,
-                        margin: '0.25rem 0',
-                        lineHeight: '1em',
-                        background: theme.pallete.surface.main,
-                        border: '1px solid ' + theme.pallete.gray.c70,
-                        fontSize: '1em',
-                        fontWeight: 'bold',
-                        display: 'inline-flex',
-                        alignItems: 'stretch',
-                        marginLeft: '0.5rem',
-                    },
-                    '.Select-value-label': {
-                        color: theme.pallete.gray.c30 + ' !important',
-                        padding: '4px 8px',
-                        alignSelf: 'center',
-                        whiteSpace: 'nowrap',
-                        maxWidth: '200px',
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                    },
-                    '.Select-value-icon': {
-                        background: theme.pallete.surface.background,
-                        color: theme.pallete.text.main,
-                        fontSize: '1.5em',
-                        fontWeight: 'normal',
-                        border: 0,
-                        order: 1,
-                        padding: '0 .25rem',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                    },
-                },
-            },
-            '.Select-option:hover, .Select-option.is-focused': {
-                background: theme.pallete.surface.background,
-            },
-            '&.is-focused': {
-                boxShadow: focusBoxShadow(theme),
-                '.Select-menu-outer': {
-                    borderColor: theme.pallete.gray.c80,
-                    borderBottomLeftRadius: theme.radius.main,
-                    borderBottomRightRadius: theme.radius.main,
-                    boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-                },
-            },
-            '&.is-focused:not(.is-opened)': {
-                '.Select-control': {
-                    borderColor: theme.pallete.gray.c70,
-                    boxShadow: 'none',
-                },
-            },
-            '&.is-disabled': {
-                '.Select-control': {
-                    backgroundColor: theme.pallete.surface.background,
-                    borderColor: theme.pallete.gray.c80,
-                },
-            },
+export const createSelectStyles = (theme: Theme): StylesConfig => ({
+    control: (base, state) => ({
+        ...base,
+        background: state.isDisabled ? theme.pallete.surface.background : theme.pallete.surface.main,
+        borderColor: state.isDisabled ? theme.pallete.gray.c80 : theme.pallete.gray.c70,
+        borderRadius: theme.radius.main,
+        boxShadow: state.isFocused && focusBoxShadow(theme),
+        cursor: 'text',
+        transition: 'all .2s',
+        minHeight: 'auto',
+        '&:hover': {
+            borderColor: theme.pallete.gray.c60,
         },
-        error: {
-            '.Select-control': {
-                borderColor: theme.pallete.status.danger.main,
-            },
-            '&.is-focused': {
-                boxShadow: focusBoxShadow(theme, 'danger'),
-            },
+    }),
+    singleValue: (base) => ({
+        ...base,
+        color: theme.pallete.text.main,
+    }),
+    indicatorSeparator: (base) => ({
+        ...base,
+        display: 'none',
+    }),
+    dropdownIndicator: (base) => ({
+        ...base,
+        cursor: 'pointer',
+        background: theme.pallete.surface.background,
+        color: theme.pallete.text.main,
+        padding: '5px 8px',
+        '&:hover': {
+            color: theme.pallete.text.main,
         },
-    }
-}
-
-export default createSelectStyle
+    }),
+    clearIndicator: (base) => ({
+        ...base,
+        cursor: 'pointer',
+        color: theme.pallete.text.disabled,
+        padding: '5px 8px',
+        '&:hover': {
+            color: theme.pallete.status.danger.main,
+        },
+    }),
+    noOptionsMessage: (base) => ({
+        ...base,
+        background: theme.pallete.surface.background,
+        color: theme.pallete.text.main,
+        textAlign: 'left',
+    }),
+    loadingMessage: (base) => ({
+        ...base,
+        background: theme.pallete.surface.background,
+        color: theme.pallete.text.main,
+        textAlign: 'left',
+    }),
+    menu: (base) => ({
+        ...base,
+        margin: 0,
+        borderRadius: theme.radius.main,
+    }),
+    menuList: (base) => ({
+        ...base,
+        padding: 0,
+    }),
+    option: (base, state) => ({
+        ...base,
+        color: theme.pallete.text.main,
+        cursor: 'pointer',
+        background: state.isFocused ? theme.pallete.surface.background : theme.pallete.surface.main,
+        '&:not(:last-child)': {
+            borderBottom: `1px solid ${theme.pallete.divider}`,
+        },
+        '&:hover': {
+            background: theme.pallete.surface.background,
+        },
+    }),
+    multiValue: (base) => ({
+        ...base,
+        border: `1px solid ${theme.pallete.gray.c70}`,
+    }),
+    multiValueLabel: (base) => ({
+        ...base,
+        background: theme.pallete.surface.main,
+        color: theme.pallete.text.main,
+        fontSize: '0.75rem',
+        padding: '1px 0.5rem',
+    }),
+    multiValueRemove: (base) => ({
+        ...base,
+        cursor: 'pointer',
+        background: theme.pallete.surface.background,
+        '&:hover': {
+            background: theme.pallete.surface.background,
+            color: theme.pallete.status.danger.main,
+        },
+    }),
+})
