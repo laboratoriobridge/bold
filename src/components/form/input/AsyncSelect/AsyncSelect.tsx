@@ -4,7 +4,7 @@ import { OptionsType } from 'react-select/lib/types'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
-import { createSelectStyles } from '../createSelectStyle'
+import { createSelectStyles } from '../Select/createSelectStyle'
 import { DefaultOptionType } from '../Select/Select'
 
 export interface AsyncSelectRequestParams {

@@ -1,6 +1,6 @@
 import { StylesConfig } from 'react-select/lib/styles'
 
-import { focusBoxShadow, Theme } from '../../../styles'
+import { focusBoxShadow, Theme } from '../../../../styles'
 
 export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfig => ({
     control: (base, state) => ({

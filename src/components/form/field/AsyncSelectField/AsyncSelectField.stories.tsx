@@ -7,7 +7,7 @@ import { createFilter } from 'react-select'
 import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
-import { AsyncSelectRequestParams } from '../../select/AsyncSelect/AsyncSelect'
+import { AsyncSelectRequestParams } from '../../input/AsyncSelect/AsyncSelect'
 
 import { AsyncSelectField } from './AsyncSelectField'
 

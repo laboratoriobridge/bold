@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Field, RenderProps } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
-import { Select, SelectProps } from '../../select/Select/Select'
+import { Select, SelectProps } from '../../input/Select/Select'
 
 export interface SelectFieldProps<OptionType> extends FormFieldProps, SelectProps<OptionType> {
     name: string

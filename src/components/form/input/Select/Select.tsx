@@ -3,7 +3,8 @@ import ReactSelect, { createFilter } from 'react-select'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
-import { createSelectStyles } from '../createSelectStyle'
+
+import { createSelectStyles } from './createSelectStyle'
 
 export interface DefaultOptionType {
     value: any

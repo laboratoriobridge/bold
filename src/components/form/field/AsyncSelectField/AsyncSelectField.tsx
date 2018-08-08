@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { Field, RenderProps } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
-import { AsyncSelect, AsyncSelectProps } from '../../select/AsyncSelect/AsyncSelect'
-import { DefaultOptionType } from '../../select/Select/Select'
+import { AsyncSelect, AsyncSelectProps } from '../../input/AsyncSelect/AsyncSelect'
+import { DefaultOptionType } from '../../input/Select/Select'
 
 export interface AsyncSelectFieldProps<OptionType> extends FormFieldProps, AsyncSelectProps<OptionType> {
     name: string
