@@ -4,15 +4,15 @@ import { Field, RenderProps } from '../../finalForm/Field'
 import { FormFieldProps } from '../../FormField'
 import { Select, SelectProps } from '../../select/Select/Select'
 
-export interface SelectFieldProps extends FormFieldProps, SelectProps {
+export interface SelectFieldProps<OptionType> extends FormFieldProps, SelectProps<OptionType> {
     name: string
     convertToValueKey?: boolean
 }
 
-export class SelectField extends React.Component<SelectFieldProps> {
+export class SelectField<OptionType = any> extends React.Component<SelectFieldProps<OptionType>> {
 
-    static defaultProps: Partial<SelectFieldProps> = {
-        valueKey: 'value',
+    static defaultProps: Partial<SelectFieldProps<any>> = {
+        ...Select.defaultProps,
         convertToValueKey: true,
     }
 
@@ -26,8 +26,8 @@ export class SelectField extends React.Component<SelectFieldProps> {
         )
     }
 
-    private convert = (value: any) => {
-        return this.props.convertToValueKey && value ? value[this.props.valueKey] : value
+    private convert = (value: OptionType) => {
+        return this.props.convertToValueKey ? this.props.getOptionValue(value) : value
     }
 
     private renderSelect = (props: RenderProps) => {

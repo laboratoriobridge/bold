@@ -1,68 +1,47 @@
 import * as React from 'react'
-import * as Select from 'react-select'
+import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/lib/Async'
+import { OptionsType } from 'react-select/lib/types'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
-
+import { Omit } from '../../../../util/types'
 import createSelectStyle from '../createSelectStyle'
+import { DefaultOptionType } from '../Select/Select'
 
 export interface AsyncSelectRequestParams {
     query: string
     pageSize: number
 }
 
-export interface AsyncSelectProps extends WithStylesProps,
-    Pick<Select.ReactAsyncSelectProps,
-    'autoload' |
-    'backspaceRemoves' |
-    'cache' |
-    'clearable' |
-    'clearValueText' |
-    'disabled' |
-    'labelKey' |
-    'loadingPlaceholder' |
-    'ignoreAccents' |
-    'ignoreCase' |
-    'multi' |
-    'noResultsText' |
-    'onBlur' |
-    'onChange' |
-    'optionRenderer' |
-    'placeholder' |
-    'valueKey'
-    > {
+export interface AsyncSelectProps<OptionType> extends WithStylesProps,
+    Omit<ReactAsyncSelectProps<OptionType>, 'loadOptions'> {
     getPage: (params: AsyncSelectRequestParams) => Promise<any>
-    maxLength?: number
     pageSize?: number
     searchDelay?: number
     status?: '' | 'error'
     value?: any
+    disabled?: boolean
 }
 
 @withStyles
-export class AsyncSelect extends React.Component<AsyncSelectProps> {
+export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component<AsyncSelectProps<OptionType>> {
 
-    static defaultProps: Partial<AsyncSelectProps> = {
-        labelKey: 'label',
-        valueKey: 'value',
-        autoload: false,
-        backspaceRemoves: false,
-        cache: false,
-        clearable: true,
-        clearValueText: 'Limpar seleção',
-        loadingPlaceholder: 'Carregando...',
-        ignoreAccents: false,
-        ignoreCase: true,
-        multi: false,
-        noResultsText: 'Nenhum item encontrado.',
+    static defaultProps: Partial<AsyncSelectProps<any>> = {
         pageSize: 10,
-        placeholder: '',
         searchDelay: 500,
+        cacheOptions: false,
+        backspaceRemovesValue: false,
+        isMulti: false,
+        isClearable: true,
+        loadingMessage: () => 'Carregando...',
+        noOptionsMessage: () => 'Nenhum item encontrado',
+        getOptionLabel: (option) => option && option.label,
+        getOptionValue: (option) => option && option.value,
     }
 
     private typingTimer: number
 
     render() {
-        const { css, theme, status, ...rest } = this.props
+        const { css, theme, status, disabled, ...rest } = this.props
 
         const styles = createSelectStyle(theme)
 
@@ -70,64 +49,30 @@ export class AsyncSelect extends React.Component<AsyncSelectProps> {
             status === 'error' && styles.error)
 
         return (
-            <Select.Async
+            <ReactAsyncSelect
                 className={classes}
-                options={[]}
-                {...rest}
-                inputProps={{ maxLength: this.props.maxLength }}
                 loadOptions={this.loadOptions}
-                onBlur={this.blur}
-                closeOnSelect={!this.props.multi}
-                valueRenderer={this.renderValue}
+                isDisabled={disabled}
+                closeMenuOnSelect={!this.props.isMulti}
+                {...rest}
             />
         )
     }
 
-    private loadOptions = (query, callback) => {
+    private loadOptions = (inputValue: string, callback: ((options: OptionsType<OptionType>) => void)) => {
         if (this.typingTimer) {
             clearTimeout(this.typingTimer)
         }
-        if (query !== '') {
-            this.typingTimer = window.setTimeout(() => this.getPage(query, callback), this.props.searchDelay)
-        } else {
-            callback(null, {})
-        }
+
+        this.typingTimer = window.setTimeout(() => this.getPage(inputValue, callback), this.props.searchDelay)
     }
 
-    private getPage = (query, callback) => {
-        const params = {
-            query,
+    private getPage = (inputValue: string, callback: ((options: OptionsType<OptionType>) => void)) => {
+        this.props.getPage({
+            query: inputValue,
             pageSize: this.props.pageSize,
-        }
-
-        this.props.getPage(params)
-            .then(result => {
-                const response = {
-                    options: result.data || result,
-                }
-                callback(null, response)
-            }).catch(error => {
-                callback(error, null)
-            })
-    }
-
-    private blur(): React.EventHandler<React.FocusEvent<{}>> {
-        return () => {
-            if (this.props.onBlur) {
-                if (this.props.value) {
-                    this.props.onBlur(this.props.value)
-                } else {
-                    this.props.onBlur(null)
-                }
-            }
-        }
-    }
-
-    private renderValue = (option) => {
-        const label = option[this.props.labelKey]
-
-        return (
-            <span title={label}>{label}</span>
-        )
+        }).then(result => {
+            callback(result.data || result)
+        })
     }
 }

@@ -1,52 +1,42 @@
 import * as React from 'react'
-import ReactSelect, { Option, ReactSelectProps } from 'react-select'
+import ReactSelect, { createFilter } from 'react-select'
+import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
+
 import createSelectStyle from '../createSelectStyle'
 
-export interface SelectOption extends Option {
-
+export interface DefaultOptionType {
+    value: any
+    label: string
 }
 
-export interface SelectProps extends WithStylesProps,
-    Pick<ReactSelectProps,
-    'backspaceRemoves' |
-    'clearable' |
-    'clearValueText' |
-    'disabled' |
-    'labelKey' |
-    'ignoreAccents' |
-    'ignoreCase' |
-    'multi' |
-    'noResultsText' |
-    'onBlur' |
-    'onChange' |
-    'placeholder' |
-    'valueKey'
-    > {
-    options: SelectOption[]
+export interface SelectProps<OptionType> extends WithStylesProps, ReactSelectProps<OptionType> {
     status?: '' | 'error'
     value?: any
+    disabled?: boolean
 }
 
-@withStyles
-export class Select extends React.Component<SelectProps> {
+export const defaultFilter = createFilter({
+    ignoreAccents: true,
+    ignoreCase: true,
+})
 
-    static defaultProps: Partial<SelectProps> = {
-        labelKey: 'label',
-        valueKey: 'value',
-        clearable: true,
-        multi: false,
-        placeholder: '',
-        clearValueText: 'Limpar seleção',
-        noResultsText: 'Nenhum item encontrado.',
-        backspaceRemoves: false,
-        ignoreAccents: true,
-        ignoreCase: true,
+@withStyles
+export class Select<OptionType = DefaultOptionType> extends React.Component<SelectProps<OptionType>> {
+
+    static defaultProps: SelectProps<any> = {
+        backspaceRemovesValue: false,
+        isMulti: false,
+        isClearable: true,
+        filterOption: defaultFilter,
+        noOptionsMessage: () => 'Nenhum item encontrado',
+        getOptionLabel: (option) => option && option.label,
+        getOptionValue: (option) => option && option.value,
     }
 
     render() {
-        const { css, theme, status, ...rest } = this.props
+        const { css, theme, status, disabled, ...rest } = this.props
 
         const styles = createSelectStyle(theme)
 
@@ -55,32 +45,11 @@ export class Select extends React.Component<SelectProps> {
 
         return (
             <ReactSelect
-                {...rest}
-                closeOnSelect={!this.props.multi}
+                isDisabled={disabled}
+                closeMenuOnSelect={!this.props.isMulti}
                 className={classes}
-                onBlur={this.blur}
-                valueRenderer={this.renderValue}
+                {...rest}
             />
-        )
-    }
-
-    private blur(): React.EventHandler<React.FocusEvent<{}>> {
-        return () => {
-            if (this.props.onBlur) {
-                if (this.props.value) {
-                    this.props.onBlur(this.props.value)
-                } else {
-                    this.props.onBlur(null)
-                }
-            }
-        }
-    }
-
-    private renderValue = (option) => {
-        const label = option[this.props.labelKey]
-
-        return (
-            <span title={label}>{label}</span>
         )
     }
 }
