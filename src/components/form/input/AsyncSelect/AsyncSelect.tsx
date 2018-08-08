@@ -12,7 +12,7 @@ export interface AsyncSelectRequestParams {
     pageSize: number
 }
 
-export interface AsyncSelectProps<OptionType> extends WithStylesProps,
+export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     Omit<ReactAsyncSelectProps<OptionType>, 'loadOptions'> {
     getPage: (params: AsyncSelectRequestParams) => Promise<any>
     pageSize?: number

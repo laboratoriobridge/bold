@@ -11,7 +11,7 @@ export interface DefaultOptionType {
     label: string
 }
 
-export interface SelectProps<OptionType> extends WithStylesProps, ReactSelectProps<OptionType> {
+export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesProps, ReactSelectProps<OptionType> {
     status?: '' | 'error'
     value?: any
     disabled?: boolean

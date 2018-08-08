@@ -1,571 +1,611 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render should render correctly 1`] = `
-.emotion-0 {
-  font-size: 0.75rem;
-  border-radius: 2px;
-  -webkit-transition: box-shadow .2s;
-  transition: box-shadow .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.emotion-10 {
+  position: relative;
+  box-sizing: border-box;
 }
 
-.emotion-0.is-open .Select-arrow {
-  border-bottom-color: #666666 !important;
-}
-
-.emotion-0 .Select-control {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
-  border-radius: 2px;
-  color: #4d4d4d;
-  height: 2rem;
-}
-
-.emotion-0 .Select-control:hover {
-  border-color: #999999;
-  box-shadow: none;
-}
-
-.emotion-0 .Select-control:hover .Select-clear-zone {
-  color: #666666;
-}
-
-.emotion-0 .Select-control .Select-clear-zone {
-  padding-right: 0.5rem;
-  color: #b3b3b3;
-}
-
-.emotion-0 .Select-control .Select-clear-zone:hover {
-  color: #E0001A;
-}
-
-.emotion-0 .Select-control .Select-clear-zone .Select-clear {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-}
-
-.emotion-0 .Select-control .Select-placeholder {
-  color: #b3b3b3;
-}
-
-.emotion-0 .Select-control .Select-placeholder,
-.emotion-0 .Select-control .Select-value {
-  padding: 0 0.5rem;
-  line-height: 1;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: auto;
-}
-
-.emotion-0 .Select-control .Select-value-label {
-  color: #4d4d4d !important;
-}
-
-.emotion-0 .Select-control .Select-input {
-  height: auto;
-  padding: 0 0.5rem;
-}
-
-.emotion-0 .Select-control .Select-input input {
-  line-height: 1rem;
-  padding: 0.4rem 0;
-}
-
-.emotion-0 .Select-control .Select-arrow-zone {
-  color: #666666 !important;
-  background-color: #f2f2f7;
-  padding-right: 0;
-  width: 30px;
-}
-
-.emotion-0 .Select-control .Select-arrow-zone .Select-arrow {
-  border-top-color: #666666 !important;
-}
-
-.emotion-0 .Select-control .Select-menu-outer {
-  font-size: 1rem;
-}
-
-.emotion-0.Select--multi .Select-control .Select-multi-value-wrapper {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  background-color: hsl(0,0%,98%);
+  border-color: #b3b3b3;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.emotion-0.Select--multi .Select-control .Select-input {
-  padding: 0px;
-  height: auto;
-}
-
-.emotion-0.Select--multi .Select-control .Select-value {
-  padding: 0;
-  margin: 0.25rem 0;
-  line-height: 1em;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: auto;
+  outline: 0 !important;
+  position: relative;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #b3b3b3;
-  font-size: 1em;
-  font-weight: bold;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  margin-left: 0.5rem;
 }
 
-.emotion-0.Select--multi .Select-control .Select-value-label {
-  color: #4d4d4d !important;
-  padding: 4px 8px;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  white-space: nowrap;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.emotion-9:hover {
+  border-color: #999999;
 }
 
-.emotion-0.Select--multi .Select-control .Select-value-icon {
-  background: #f2f2f7;
-  color: #4d4d4d;
-  font-size: 1.5em;
-  font-weight: normal;
-  border: 0;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  padding: 0 .25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-2 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.emotion-0 .Select-option:hover,
-.emotion-0 .Select-option.is-focused {
+.emotion-0 {
+  color: #4d4d4d;
+  margin-left: 2px;
+  margin-right: 2px;
+  max-width: calc(100% - 8px);
+  overflow: hidden;
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+
+.emotion-1 {
+  margin: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  visibility: visible;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.emotion-8 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.emotion-4 {
+  color: #b3b3b3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 8px;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.emotion-4:hover {
+  color: hsl(0,0%,60%);
+}
+
+.emotion-4:hover {
+  color: #E0001A;
+}
+
+.emotion-3 {
+  display: inline-block;
+  fill: currentColor;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 0;
+}
+
+.emotion-5 {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: hsl(0,0%,80%);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.emotion-7 {
+  color: #4d4d4d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 8px;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  box-sizing: border-box;
+  cursor: pointer;
   background: #f2f2f7;
 }
 
-.emotion-0.is-focused {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+.emotion-7:hover {
+  color: hsl(0,0%,60%);
 }
 
-.emotion-0.is-focused .Select-menu-outer {
-  border-color: #cccccc;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-0.is-focused:not(.is-opened) .Select-control {
-  border-color: #b3b3b3;
-  box-shadow: none;
-}
-
-.emotion-0.is-disabled .Select-control {
-  background-color: #f2f2f7;
-  border-color: #cccccc;
+.emotion-7:hover {
+  color: #4d4d4d;
 }
 
 <div
   data-name="select1"
 >
   <div
-    class="Select emotion-0 has-value is-clearable is-searchable Select--single"
+    class="emotion-10"
   >
+    <div
+      class="emotion-9 react-select__control"
+    >
+      <div
+        class="emotion-2 react-select__value-container react-select__value-container--has-value"
+      >
+        <div
+          class="emotion-0 react-select__single-value"
+        >
+          Item #1
+        </div>
+        <div
+          class="emotion-1"
+        >
+          <div
+            class="react-select__input"
+            style="display: inline-block;"
+          >
+            <input
+              aria-autocomplete="list"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              id="react-select-2-input"
+              spellcheck="false"
+              style="box-sizing: content-box; width: 2px; border: 0px; font-size: inherit; opacity: 1; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+            <div
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-8 react-select__indicators"
+      >
+        <div
+          aria-hidden="true"
+          class="emotion-4 react-select__indicator react-select__clear-indicator"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-3"
+            focusable="false"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+            />
+          </svg>
+        </div>
+        <span
+          class="emotion-5 react-select__indicator-separator"
+        />
+        <div
+          aria-hidden="true"
+          class="emotion-7 react-select__indicator react-select__dropdown-indicator"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-3"
+            focusable="false"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
     <input
       name="select1"
       type="hidden"
       value="1"
     />
-    <div
-      class="Select-control"
-    >
-      <span
-        class="Select-multi-value-wrapper"
-        id="react-select-2--value"
-      >
-        <div
-          class="Select-value"
-        >
-          <span
-            aria-selected="true"
-            class="Select-value-label"
-            id="react-select-2--value-item"
-            role="option"
-          >
-            <span
-              title="Item #1"
-            >
-              Item #1
-            </span>
-          </span>
-        </div>
-        <div
-          class="Select-input"
-          style="display: inline-block;"
-        >
-          <input
-            aria-activedescendant="react-select-2--value"
-            aria-expanded="false"
-            aria-haspopup="false"
-            aria-owns=""
-            role="combobox"
-            style="box-sizing: content-box; width: 5px;"
-            value=""
-          />
-          <div
-            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-          />
-        </div>
-      </span>
-      <span
-        aria-label="Limpar seleção"
-        class="Select-clear-zone"
-        title="Limpar seleção"
-      >
-        <span
-          class="Select-clear"
-        >
-          ×
-        </span>
-      </span>
-      <span
-        class="Select-arrow-zone"
-      >
-        <span
-          class="Select-arrow"
-        />
-      </span>
-    </div>
   </div>
 </div>
 `;
 
 exports[`render should render correctly when multivalue 1`] = `
-.emotion-0 {
-  font-size: 0.75rem;
-  border-radius: 2px;
-  -webkit-transition: box-shadow .2s;
-  transition: box-shadow .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.emotion-17 {
+  position: relative;
+  box-sizing: border-box;
 }
 
-.emotion-0.is-open .Select-arrow {
-  border-bottom-color: #666666 !important;
-}
-
-.emotion-0 .Select-control {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
-  border-radius: 2px;
-  color: #4d4d4d;
-  height: 2rem;
-}
-
-.emotion-0 .Select-control:hover {
-  border-color: #999999;
-  box-shadow: none;
-}
-
-.emotion-0 .Select-control:hover .Select-clear-zone {
-  color: #666666;
-}
-
-.emotion-0 .Select-control .Select-clear-zone {
-  padding-right: 0.5rem;
-  color: #b3b3b3;
-}
-
-.emotion-0 .Select-control .Select-clear-zone:hover {
-  color: #E0001A;
-}
-
-.emotion-0 .Select-control .Select-clear-zone .Select-clear {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-}
-
-.emotion-0 .Select-control .Select-placeholder {
-  color: #b3b3b3;
-}
-
-.emotion-0 .Select-control .Select-placeholder,
-.emotion-0 .Select-control .Select-value {
-  padding: 0 0.5rem;
-  line-height: 1;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-16 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  height: auto;
-}
-
-.emotion-0 .Select-control .Select-value-label {
-  color: #4d4d4d !important;
-}
-
-.emotion-0 .Select-control .Select-input {
-  height: auto;
-  padding: 0 0.5rem;
-}
-
-.emotion-0 .Select-control .Select-input input {
-  line-height: 1rem;
-  padding: 0.4rem 0;
-}
-
-.emotion-0 .Select-control .Select-arrow-zone {
-  color: #666666 !important;
-  background-color: #f2f2f7;
-  padding-right: 0;
-  width: 30px;
-}
-
-.emotion-0 .Select-control .Select-arrow-zone .Select-arrow {
-  border-top-color: #666666 !important;
-}
-
-.emotion-0 .Select-control .Select-menu-outer {
-  font-size: 1rem;
-}
-
-.emotion-0.Select--multi .Select-control .Select-multi-value-wrapper {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  background-color: hsl(0,0%,98%);
+  border-color: #b3b3b3;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-.emotion-0.Select--multi .Select-control .Select-input {
-  padding: 0px;
-  height: auto;
-}
-
-.emotion-0.Select--multi .Select-control .Select-value {
-  padding: 0;
-  margin: 0.25rem 0;
-  line-height: 1em;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  min-height: auto;
+  outline: 0 !important;
+  position: relative;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #b3b3b3;
-  font-size: 1em;
-  font-weight: bold;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  margin-left: 0.5rem;
 }
 
-.emotion-0.Select--multi .Select-control .Select-value-label {
-  color: #4d4d4d !important;
-  padding: 4px 8px;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  white-space: nowrap;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.emotion-16:hover {
+  border-color: #999999;
 }
 
-.emotion-0.Select--multi .Select-control .Select-value-icon {
-  background: #f2f2f7;
-  color: #4d4d4d;
-  font-size: 1.5em;
-  font-weight: normal;
-  border: 0;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  padding: 0 .25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2px 8px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  box-sizing: border-box;
 }
 
-.emotion-0 .Select-option:hover,
-.emotion-0 .Select-option.is-focused {
+.emotion-8 {
+  margin: 2px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  visibility: visible;
+  color: #222;
+  box-sizing: border-box;
+}
+
+.emotion-15 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.emotion-11 {
+  color: #b3b3b3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 8px;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.emotion-11:hover {
+  color: hsl(0,0%,60%);
+}
+
+.emotion-11:hover {
+  color: #E0001A;
+}
+
+.emotion-1 {
+  display: inline-block;
+  fill: currentColor;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 0;
+}
+
+.emotion-12 {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  background-color: hsl(0,0%,80%);
+  margin-bottom: 8px;
+  margin-top: 8px;
+  width: 1px;
+  box-sizing: border-box;
+  display: none;
+}
+
+.emotion-14 {
+  color: #4d4d4d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 8px;
+  -webkit-transition: color 150ms;
+  transition: color 150ms;
+  box-sizing: border-box;
+  cursor: pointer;
   background: #f2f2f7;
 }
 
-.emotion-0.is-focused {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+.emotion-14:hover {
+  color: hsl(0,0%,60%);
 }
 
-.emotion-0.is-focused .Select-menu-outer {
-  border-color: #cccccc;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+.emotion-14:hover {
+  color: #4d4d4d;
 }
 
-.emotion-0.is-focused:not(.is-opened) .Select-control {
-  border-color: #b3b3b3;
-  box-shadow: none;
+.emotion-3 {
+  background-color: hsl(0,0%,90%);
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 2px;
+  min-width: 0;
+  box-sizing: border-box;
+  border: 1px solid #b3b3b3;
 }
 
-.emotion-0.is-disabled .Select-control {
-  background-color: #f2f2f7;
-  border-color: #cccccc;
+.emotion-0 {
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-size: 0.75rem;
+  overflow: hidden;
+  padding: 1px 0.5rem;
+  padding-left: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.emotion-2 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 4px;
+  padding-right: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: #f2f2f7;
+}
+
+.emotion-2:hover {
+  background-color: #FFBDAD;
+  color: #DE350B;
+}
+
+.emotion-2:hover {
+  background: #f2f2f7;
+  color: #E0001A;
 }
 
 <div
   data-name="select1"
 >
   <div
-    class="Select emotion-0 has-value is-clearable is-searchable Select--multi"
+    class="emotion-17"
   >
-    <input
-      name="select1"
-      type="hidden"
-      value="1"
-    />
-    <input
-      name="select1"
-      type="hidden"
-      value="2"
-    />
     <div
-      class="Select-control"
+      class="emotion-16 react-select__control"
     >
-      <span
-        class="Select-multi-value-wrapper"
-        id="react-select-3--value"
+      <div
+        class="emotion-9 react-select__value-container react-select__value-container--is-multi react-select__value-container--has-value"
       >
         <div
-          class="Select-value"
+          class="emotion-3 react-select__multi-value"
         >
-          <span
-            aria-hidden="true"
-            class="Select-value-icon"
-          >
-            ×
-          </span>
-          <span
-            aria-selected="true"
-            class="Select-value-label"
-            id="react-select-3--value-0"
-            role="option"
-          >
-            <span
-              title="Item #1"
-            >
-              Item #1
-            </span>
-            <span
-              class="Select-aria-only"
-            >
-               
-            </span>
-          </span>
-        </div>
-        <div
-          class="Select-value"
-        >
-          <span
-            aria-hidden="true"
-            class="Select-value-icon"
-          >
-            ×
-          </span>
-          <span
-            aria-selected="true"
-            class="Select-value-label"
-            id="react-select-3--value-1"
-            role="option"
-          >
-            <span
-              title="Item #2"
-            >
-              Item #2
-            </span>
-            <span
-              class="Select-aria-only"
-            >
-               
-            </span>
-          </span>
-        </div>
-        <div
-          class="Select-input"
-          style="display: inline-block;"
-        >
-          <input
-            aria-activedescendant="react-select-3--value"
-            aria-expanded="false"
-            aria-haspopup="false"
-            aria-owns=""
-            role="combobox"
-            style="box-sizing: content-box; width: 5px;"
-            value=""
-          />
           <div
-            style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
-          />
+            class="emotion-0 react-select__multi-value__label"
+          >
+            Item #1
+          </div>
+          <div
+            class="emotion-2 react-select__multi-value__remove"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              focusable="false"
+              height="14"
+              viewBox="0 0 20 20"
+              width="14"
+            >
+              <path
+                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+              />
+            </svg>
+          </div>
         </div>
-      </span>
-      <span
-        aria-label="Clear all"
-        class="Select-clear-zone"
-        title="Clear all"
-      >
-        <span
-          class="Select-clear"
+        <div
+          class="emotion-3 react-select__multi-value"
         >
-          ×
-        </span>
-      </span>
-      <span
-        class="Select-arrow-zone"
+          <div
+            class="emotion-0 react-select__multi-value__label"
+          >
+            Item #2
+          </div>
+          <div
+            class="emotion-2 react-select__multi-value__remove"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              focusable="false"
+              height="14"
+              viewBox="0 0 20 20"
+              width="14"
+            >
+              <path
+                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          class="emotion-8"
+        >
+          <div
+            class="react-select__input"
+            style="display: inline-block;"
+          >
+            <input
+              aria-autocomplete="list"
+              autocapitalize="none"
+              autocomplete="off"
+              autocorrect="off"
+              id="react-select-3-input"
+              spellcheck="false"
+              style="box-sizing: content-box; width: 2px; border: 0px; font-size: inherit; opacity: 1; outline: 0; padding: 0px;"
+              tabindex="0"
+              type="text"
+              value=""
+            />
+            <div
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-15 react-select__indicators"
       >
+        <div
+          aria-hidden="true"
+          class="emotion-11 react-select__indicator react-select__clear-indicator"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-1"
+            focusable="false"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+            />
+          </svg>
+        </div>
         <span
-          class="Select-arrow"
+          class="emotion-12 react-select__indicator-separator"
         />
-      </span>
+        <div
+          aria-hidden="true"
+          class="emotion-14 react-select__indicator react-select__dropdown-indicator"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-1"
+            focusable="false"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div>
+      <input
+        name="select1"
+        type="hidden"
+        value="1"
+      />
+      <input
+        name="select1"
+        type="hidden"
+        value="2"
+      />
     </div>
   </div>
 </div>

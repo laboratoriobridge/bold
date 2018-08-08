@@ -30,7 +30,8 @@ describe('render', () => {
         expect(createFormAndField().render()).toMatchSnapshot()
     })
     it('should render correctly when multivalue', () => {
-        expect(createFormAndField({ multi: true }, { initialValues: { select1: options } }).render()).toMatchSnapshot()
+        const wrapper = createFormAndField({ isMulti: true }, { initialValues: { select1: options } })
+        expect(wrapper.render()).toMatchSnapshot()
     })
 })
 
