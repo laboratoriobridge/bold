@@ -45,7 +45,5 @@ storiesOf('Form/Fields/Select', module)
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
             status={boolean('hasError', false) && 'error'}
-            defaultOptions={[]}
-            cacheOptions={false}
         />
     ))

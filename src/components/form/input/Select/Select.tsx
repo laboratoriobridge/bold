@@ -1,5 +1,6 @@
 import * as React from 'react'
 import ReactSelect, { createFilter } from 'react-select'
+import Option, { OptionProps } from 'react-select/lib/components/Option'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
@@ -30,6 +31,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
         isMulti: false,
         isClearable: true,
         filterOption: defaultFilter,
+        placeholder: null,
         noOptionsMessage: () => 'Nenhum resultado encontrado.',
         getOptionLabel: (option) => option && option.label,
         getOptionValue: (option) => option && option.value,
@@ -46,8 +48,18 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
                 styles={styles}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
+                components={{ Option: SelectOption }}
                 {...rest}
             />
         )
+    }
+}
+
+export interface SelectOptionProps<OptionType = any> extends OptionProps<OptionType> {
+}
+
+export class SelectOption<OptionType = any> extends React.Component<SelectOptionProps<OptionType>> {
+    render() {
+        return <Option {...this.props} />
     }
 }

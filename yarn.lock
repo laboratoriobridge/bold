@@ -534,9 +534,9 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-select@2.0.1":
-  version "2.0.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-select/-/react-select-2.0.1.tgz#2b378fe6a1ca5986a59cb57ae6b96b28784e48bc"
+"@types/react-select@2.0.2":
+  version "2.0.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-select/-/react-select-2.0.2.tgz#50436f488e6c706e11fdcbab3cf931d3669122c8"
   dependencies:
     "@types/react" "*"
     "@types/react-dom" "*"

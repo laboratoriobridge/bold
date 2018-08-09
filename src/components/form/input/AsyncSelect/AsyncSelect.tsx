@@ -7,13 +7,15 @@ import { Omit } from '../../../../util/types'
 import { createSelectStyles } from '../Select/createSelectStyle'
 import { DefaultOptionType } from '../Select/Select'
 
+export type OmitProps = 'loadOptions' | 'defaultOptions' | 'cacheOptions'
+
 export interface AsyncSelectRequestParams {
     query: string
     pageSize: number
 }
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
-    Omit<ReactAsyncSelectProps<OptionType>, 'loadOptions'> {
+    Omit<ReactAsyncSelectProps<OptionType>, OmitProps> {
     getPage: (params: AsyncSelectRequestParams) => Promise<any>
     pageSize?: number
     searchDelay?: number
@@ -28,10 +30,10 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
     static defaultProps: Partial<AsyncSelectProps<any>> = {
         pageSize: 10,
         searchDelay: 500,
-        cacheOptions: false,
         backspaceRemovesValue: false,
         isMulti: false,
         isClearable: true,
+        placeholder: null,
         loadingMessage: () => 'Carregando...',
         noOptionsMessage: () => 'Nenhum resultado encontrado.',
         getOptionLabel: (option) => option && option.label,
@@ -52,6 +54,8 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
                 loadOptions={this.loadOptions}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
+                cacheOptions={false}
+                defaultOptions={[]}
                 {...rest}
             />
         )
