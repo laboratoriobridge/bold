@@ -3,10 +3,11 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withPropTypes, withRouter, withTheme } from '../../../../stories-addons'
+import { DefaultOptionType } from '../../input/Select/Select'
 
 import { SelectField } from './SelectField'
 
-const options = [
+const options: DefaultOptionType[] = [
     { value: '1', label: 'Value #1' },
     { value: '2', label: 'Value #2' },
     { value: '3', label: 'Value #3' },
@@ -25,9 +26,10 @@ storiesOf('Form/Fields/Select', module)
             name='select'
             label={text('label', 'Component label')}
             options={options}
-            placeholder='Select'
+            placeholder='Select a value...'
             disabled={boolean('disabled', false)}
-            multi={boolean('multi', false)}
+            isMulti={boolean('isMulti', false)}
+            status={boolean('hasError', false) && 'error'}
             convertToValueKey
         />
     ))
