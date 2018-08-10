@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
@@ -39,6 +40,7 @@ storiesOf('Form/Fields', module)
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
+                icon={{ icon: 'search', onClick: action('clicked') }}
             />
             <TimeField
                 name='time'

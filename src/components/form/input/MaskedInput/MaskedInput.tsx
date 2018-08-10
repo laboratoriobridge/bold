@@ -2,6 +2,7 @@ import * as React from 'react'
 import ReactTextMask from 'react-text-mask'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
+import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 import { createStyles, InputStatus } from '../TextInput/TextInput'
 
 // types from: https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md
@@ -27,6 +28,7 @@ export interface MaskedInputProps extends MaskedTextConfig, WithStylesProps {
     status?: InputStatus
     placeholder?: string
     disabled?: boolean
+    icon?: InputIconDecoratorProps
 }
 
 @withStyles
@@ -35,16 +37,26 @@ export class MaskedInput extends React.Component<MaskedInputProps> {
     }
 
     render() {
-        const { css, theme, status, ...rest } = this.props
+        const { css, theme, status, icon, ...rest } = this.props
         const styles = createStyles(theme)
         const classes = css(styles.input,
             status === 'error' && styles.error)
 
-        return (
+        const input = (
             <ReactTextMask
                 className={classes}
                 {...rest}
             />
         )
+
+        if (icon) {
+            return (
+                <InputIconDecorator {...icon}>
+                    {input}
+                </InputIconDecorator>
+            )
+        }
+
+        return input
     }
 }
