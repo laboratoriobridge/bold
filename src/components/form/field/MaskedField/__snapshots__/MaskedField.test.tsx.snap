@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve ser renderizado de forma correta 1`] = `
+exports[`render correctly 1`] = `
 .emotion-0 {
   font-weight: bold;
   display: block;
