@@ -1,16 +1,12 @@
 import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { PageContainer } from '../../..'
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Omit } from '../../../util/types'
 import { Button } from '../button/Button/Button'
 import { Icon } from '../Icon/Icon'
 
-export type AlertType =
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'danger'
+export type AlertType = 'info' | 'success' | 'warning' | 'danger'
 
 export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => {
     return {
@@ -49,94 +45,80 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
     }
 }
 
-export interface AlertProps extends WithStylesProps {
+export interface AlertProps extends WithStylesProps, Omit<React.HTMLAttributes<HTMLDivElement>, 'css'> {
     type: AlertType
-    animated?: boolean
     onCloseClick?: any
-    onMouseEnter?: any
-    onMouseLeave?: any
-    contentContainer?: boolean
-    style?: Interpolation
+    inline?: boolean
+    styles?: {
+        wrapper?: Interpolation
+        container?: Interpolation
+    }
 }
 
 @withStyles
 export class Alert extends React.PureComponent<AlertProps> {
+
     render() {
-        const { theme, css, style, type, animated,
-            onCloseClick, onMouseEnter, onMouseLeave, contentContainer } = this.props
-        const typeStyle = createTypesStyles(theme)
+        const { theme, css, styles, type, children, onCloseClick, inline, ...rest } = this.props
+
+        const typeStyle = createTypesStyles(theme)[type]
         const defaultStyles: Styles = {
-            alert: {
-                animation: animated ? `${theme.animation.fadeInFromTop} 400ms linear` : 'none',
-                padding: '0 3rem',
-                minHeight: 40,
+            wrapper: {
+                padding: inline ? '0 0.5rem' : '0 1rem',
+                minHeight: inline ? '2rem' : '2.5rem',
                 borderRadius: '2px',
                 fontSize: '0.75rem',
-                display: 'flex',
-                alignItems: 'center',
                 borderStyle: 'solid',
                 borderWidth: '1px',
+                display: inline ? 'inline-flex' : 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
             },
-            children: {
-                verticalAlign: 'super',
+            container: {
+                display: 'flex',
+                alignItems: 'center',
+                flex: 1,
             },
             icon: {
                 marginRight: '0.5rem',
             },
-            closeButton: {
-                float: 'right',
-                marginLeft: 'auto',
+            content: {
+                flex: 1,
             },
-        }
-
-        const contentProps = {
-            icon: typeStyle[type].icon,
-            iconStyle: defaultStyles.icon,
-            children: this.props.children,
-            childrenStyle: css(defaultStyles.children),
-            onCloseClick,
-            closeButtonStyle: css(defaultStyles.closeButton),
+            closeButtonWrapper: {
+                marginLeft: 'auto',
+                paddingLeft: '1rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+            },
+            closeButton: {
+                padding: inline && 0,
+            },
         }
 
         return (
             <div
-                className={css(defaultStyles.alert, typeStyle[type].style, style)}
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
+                className={css(defaultStyles.wrapper, typeStyle.style, styles && styles.wrapper)}
+                {...rest}
             >
-                {contentContainer ? (
-                    <ContainerContent {...contentProps} />
-                ) : (
-                        <SimpleContent {...contentProps} />
-                    )}
+                <div className={css(defaultStyles.container, styles && styles.container)}>
+                    <Icon icon={typeStyle.icon} style={defaultStyles.icon} size={inline ? 1 : undefined} />
+
+                    <div className={css(defaultStyles.content)}>
+                        {children}
+                    </div>
+
+                    {onCloseClick && <span className={css(defaultStyles.closeButtonWrapper)}>
+                        <Button
+                            size='small'
+                            skin='ghost'
+                            icon='times'
+                            style={defaultStyles.closeButton}
+                            onClick={onCloseClick}
+                        />
+                    </span>}
+                </div>
             </div>
         )
     }
-}
-
-const SimpleContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
-    return (
-        <>
-            <Icon icon={icon} style={iconStyle} />
-            <span className={childrenStyle}>{children}</span>
-            {onCloseClick && <span className={closeButtonStyle}>
-                <Button size='small' skin='ghost' icon='times' onClick={onCloseClick} />
-            </span>}
-        </>
-    )
-}
-
-const ContainerContent = ({ icon, iconStyle, children, childrenStyle, onCloseClick, closeButtonStyle }) => {
-    return (
-        <PageContainer style={{ paddingTop: '0', paddingBottom: '0' }}>
-            <SimpleContent
-                icon={icon}
-                iconStyle={iconStyle}
-                children={children}
-                childrenStyle={childrenStyle}
-                onCloseClick={onCloseClick}
-                closeButtonStyle={closeButtonStyle}
-            />
-        </PageContainer>
-    )
 }
