@@ -3365,9 +3365,9 @@ emojis-list@^2.0.0:
   version "2.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emojis-list/-/emojis-list-2.1.0.tgz#4daa4d9db00f9819880c79fa457ae5b09a1fd389"
 
-emotion-theming@9.2.5:
-  version "9.2.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.5.tgz#f33f210f11c80e113641b34aec9e0bf9e04cbd89"
+emotion-theming@9.2.6:
+  version "9.2.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion-theming/-/emotion-theming-9.2.6.tgz#ca69b94e28f66a5d9ca1e259633246beaa24afbc"
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
@@ -3377,19 +3377,19 @@ emotion-theming@^9.1.2:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-emotion@9.2.4, emotion@^9.1.3:
-  version "9.2.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion/-/emotion-9.2.4.tgz#0139e7cc154b2845f4b9afaa996dd4de13bb90e3"
-  dependencies:
-    babel-plugin-emotion "^9.2.4"
-    create-emotion "^9.2.4"
-
-emotion@^9.1.2:
+emotion@9.2.6, emotion@^9.1.2:
   version "9.2.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion/-/emotion-9.2.6.tgz#48517515e769bca6d8f7ff18425a7f133b010f22"
   dependencies:
     babel-plugin-emotion "^9.2.6"
     create-emotion "^9.2.6"
+
+emotion@^9.1.3:
+  version "9.2.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion/-/emotion-9.2.4.tgz#0139e7cc154b2845f4b9afaa996dd4de13bb90e3"
+  dependencies:
+    babel-plugin-emotion "^9.2.4"
+    create-emotion "^9.2.4"
 
 encodeurl@~1.0.2:
   version "1.0.2"
@@ -5036,9 +5036,9 @@ jest-each@^23.2.0:
     chalk "^2.0.1"
     pretty-format "^23.2.0"
 
-jest-emotion@9.2.4:
-  version "9.2.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-emotion/-/jest-emotion-9.2.4.tgz#a5cfe4374082a3c3dd42b7f0186a8c898f677cb8"
+jest-emotion@9.2.7:
+  version "9.2.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jest-emotion/-/jest-emotion-9.2.7.tgz#7a854156d1d5ceb95d8f36095a3f81d04109f125"
   dependencies:
     "@types/jest" "^23.0.2"
     chalk "^2.4.1"
