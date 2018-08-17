@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:8-alpine'
+        }
+    }
 
     stages {
         stage("Checkout") {
