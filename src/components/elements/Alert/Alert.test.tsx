@@ -24,17 +24,35 @@ describe('Alert', () => {
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('should have close button', () => {
+    it('should render correctly when inline', () => {
+        const wrapper = render(withTheme(
+            <div>
+                <Alert type='info' inline>Information.</Alert>
+                <Alert type='success' inline>Success message.</Alert>
+                <Alert type='warning' inline>Alert message.</Alert>
+                <Alert type='danger' inline>Error message.</Alert>
+            </div>
+        ))
+        expect(wrapper).toMatchSnapshot()
+    })
+
+    it('should allow styles override', () => {
+        expect(render(withTheme(
+            <Alert type='info' styles={{ wrapper: { color: 'red' }, container: { color: 'blue' } }}>Information.</Alert>
+        ))).toMatchSnapshot()
+    })
+
+    it('should have close button if onCloseClick is defined', () => {
         const wrapper = mount(withTheme(<Alert type='info' onCloseClick={click}>Information.</Alert>))
         expect(wrapper.find(Button).length).toEqual(1)
     })
 
-    it('should NOT have close button', () => {
+    it('should NOT have close button if onCloseClick is undefined', () => {
         const wrapper = mount(withTheme(<Alert type='info' >Information.</Alert>))
         expect(wrapper.find(Button).length).toEqual(0)
     })
 
-    it('should call function on close click', () => {
+    it('should call onCloseClick prop when button is clicked', () => {
         const wrapper = mount(withTheme(<Alert type='info' onCloseClick={click}>Information.</Alert>))
         wrapper.find(Button).simulate('click')
         expect(click).toHaveBeenCalled()
@@ -50,13 +68,6 @@ describe('Alert', () => {
         const wrapper = mount(withTheme(<Alert type='info' onMouseLeave={leave}>Information.</Alert>))
         wrapper.find(Alert).simulate('mouseLeave')
         expect(leave).toHaveBeenCalled()
-    })
-
-    it('should have page container', () => {
-        const wrapper = mount(withTheme(
-            <Alert type='info' onCloseClick={click} contentContainer>Information.</Alert>)
-        )
-        expect(wrapper.find(PageContainer).length).toEqual(1)
     })
 
 })
