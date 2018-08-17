@@ -84,7 +84,8 @@ export class TableFooter extends React.Component<TableFooterProps> {
     }
 
     showPagination() {
-        return this.props.totalElements > Math.min(...this.props.sizeOptions)
+        return this.props.totalElements > this.props.pageSize ||
+            this.props.totalElements > Math.min(...this.props.sizeOptions)
     }
 }
 
