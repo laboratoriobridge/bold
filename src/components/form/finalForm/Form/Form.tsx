@@ -1,18 +1,20 @@
-import { FORM_ERROR, FormApi, getIn, setIn } from 'final-form'
+import { FormApi, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
 import {
-    Form as FinalForm,
-    FormProps as FinalFormProps, FormRenderProps, FormSpy, FormSpyRenderProps
+    Form as FinalForm, FormProps as FinalFormProps, FormRenderProps, FormSpy, FormSpyRenderProps
 } from 'react-final-form'
 import { Prompt } from 'react-router-dom'
+
+export type ResultType = object | Promise<object | undefined> | undefined | void
 
 export interface FormProps extends FinalFormProps {
     focusOnError?: boolean
     hasLeaveModal?: boolean
     onSubmitSucceeded?(): void
     onSubmitFailed?(erros: object): void
+    transformResult?(result: ResultType): ResultType
 }
 
 const focusOnErrorDecorator = createFocusOnErrorDecorator()
@@ -23,6 +25,7 @@ export class Form extends React.Component<FormProps> {
         hasLeaveModal: false,
         focusOnError: true,
         decorators: [],
+        transformResult: result => result,
     }
 
     render() {
@@ -80,24 +83,7 @@ export class Form extends React.Component<FormProps> {
     private onSubmit = (values: Object, form: FormApi) => {
         const newValues = this.getConvertedValues(values, form)
         const result = this.props.onSubmit(newValues, form)
-
-        if (result) {
-            if (this.isPromise(result)) {
-                return result.then(() => Promise.resolve())
-                    .catch(error => {
-                        let errors
-                        if (error.response.status === 400) {
-                            errors = error.response.data
-                        } else {
-                            errors = { [FORM_ERROR]: error.response.data }
-                        }
-
-                        return Promise.resolve(errors)
-                    })
-            } else {
-                return result
-            }
-        }
+        return this.props.transformResult(result)
     }
 
     private onSubmitFailed = (errors) => {
@@ -106,10 +92,6 @@ export class Form extends React.Component<FormProps> {
 
     private onSubmitSucceeded = () => {
         this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
-    }
-
-    private isPromise = (arg: any): arg is Promise<any> => {
-        return arg.catch !== undefined
     }
 
 }
