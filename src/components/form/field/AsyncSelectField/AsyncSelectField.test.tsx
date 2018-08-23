@@ -11,10 +11,6 @@ const options = [
     { value: 2, label: 'Item #2' },
 ]
 
-const getPage = () => {
-    return Promise.resolve(options)
-}
-
 const createFormAndField = (fieldProps?: Partial<AsyncSelectFieldProps>, formProps?: Partial<FormProps>) => {
     // tslint:disable jsx-no-lambda
     return mount(withTheme(withRouter(
@@ -23,7 +19,13 @@ const createFormAndField = (fieldProps?: Partial<AsyncSelectFieldProps>, formPro
             initialValues={{ select1: options[0] }}
             {...formProps}
             render={() => (
-                <AsyncSelectField name='select1' getPage={getPage} {...fieldProps} />
+                <AsyncSelectField
+                    name='select1'
+                    defaultOptions
+                    loadOptions={() => Promise.resolve(options)}
+                    cacheOptions={false}
+                    {...fieldProps}
+                />
             )}
         />
     )))
@@ -34,7 +36,8 @@ describe('render', () => {
         expect(createFormAndField().render()).toMatchSnapshot()
     })
     it('should render correctly when multivalue', () => {
-        expect(createFormAndField({ multi: true }, { initialValues: { select1: options } }).render()).toMatchSnapshot()
+        const wrapper = createFormAndField({ isMulti: true }, { initialValues: { select1: options } })
+        expect(wrapper.render()).toMatchSnapshot()
     })
 })
 

@@ -7,7 +7,6 @@ import { createFilter } from 'react-select'
 import { withForm } from '../../../../stories-addons/withForm'
 import { withPropTypes } from '../../../../stories-addons/withPropTypes'
 import { withTheme } from '../../../../stories-addons/withTheme'
-import { AsyncSelectRequestParams } from '../../input/AsyncSelect/AsyncSelect'
 
 import { AsyncSelectField } from './AsyncSelectField'
 
@@ -16,15 +15,15 @@ const filter = createFilter({
     ignoreCase: true,
 })
 
-const getPage = (params: AsyncSelectRequestParams) => {
+const loadOptions = (query: string, callback) => {
     return axios.get('https://api.github.com/users/laboratoriobridge/repos', {
-        params: { per_page: params.pageSize },
+        params: { per_page: 10 },
     }).then(respose => {
-        return respose.data.filter(option => filter({
+        callback(respose.data.filter(option => filter({
             label: option.name,
             value: option.id,
             data: option,
-        }, params.query))
+        }, query)))
     })
 }
 
@@ -39,8 +38,10 @@ storiesOf('Form/Fields/Select', module)
             name='select'
             getOptionLabel={option => option && option.name}
             getOptionValue={option => option && option.id}
+            loadOptions={loadOptions}
+            defaultOptions={[]}
+            cacheOptions={false}
             placeholder='Select a value...'
-            getPage={getPage}
             label={text('label', 'Component label')}
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
