@@ -62,5 +62,8 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
         mark: {
             background: pallete.highlight,
         },
+        'input:required': {
+            boxShadow: 'none',
+        },
     }
 }
