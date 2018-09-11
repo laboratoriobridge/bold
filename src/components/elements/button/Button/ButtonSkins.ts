@@ -50,10 +50,8 @@ export const createBaseStyles = (theme: Theme): Styles => ({
     disabled: {
         cursor: 'not-allowed',
         opacity: 0.5,
+        pointerEvents: 'none',
 
-        '&:not(button)': {
-            pointerEvents: 'none',
-        },
     },
     loading: {
         pointerEvents: 'none',

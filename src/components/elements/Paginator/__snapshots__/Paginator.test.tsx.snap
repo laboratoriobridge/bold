@@ -384,6 +384,7 @@ exports[`deve renderizar corretamente 2`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .emotion-2 > span {
@@ -414,10 +415,6 @@ exports[`deve renderizar corretamente 2`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
-}
-
-.emotion-2:not(button) {
-  pointer-events: none;
 }
 
 .emotion-2:hover {
@@ -662,6 +659,7 @@ exports[`deve renderizar corretamente 3`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .emotion-2 > span {
@@ -692,10 +690,6 @@ exports[`deve renderizar corretamente 3`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(128,128,128,0.16);
-}
-
-.emotion-2:not(button) {
-  pointer-events: none;
 }
 
 .emotion-2:hover {
