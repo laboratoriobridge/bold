@@ -197,7 +197,7 @@ exports[`ModalControlled should render correcly 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-<div
+<span
   class="emotion-9"
 >
   <div
@@ -252,7 +252,7 @@ exports[`ModalControlled should render correcly 1`] = `
   <div
     class="emotion-8"
   />
-</div>
+</span>
 `;
 
 exports[`ModalControlled should render correcly 2`] = `
@@ -452,7 +452,7 @@ exports[`ModalControlled should render correcly 2`] = `
   opacity: 1;
 }
 
-<div
+<span
   class="emotion-9"
 >
   <div
@@ -507,5 +507,5 @@ exports[`ModalControlled should render correcly 2`] = `
   <div
     class="emotion-8"
   />
-</div>
+</span>
 `;

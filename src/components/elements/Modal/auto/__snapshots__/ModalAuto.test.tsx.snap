@@ -229,7 +229,7 @@ exports[`should render correctly 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-<div
+<span
   class="emotion-11"
 >
   <div
@@ -294,5 +294,5 @@ exports[`should render correctly 1`] = `
   <div
     class="emotion-10"
   />
-</div>
+</span>
 `;

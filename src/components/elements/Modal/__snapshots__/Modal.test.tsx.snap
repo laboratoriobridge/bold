@@ -131,7 +131,7 @@ exports[`Modal accept style prop 1`] = `
   color: red;
 }
 
-<div
+<span
   class="emotion-7"
 >
   <div
@@ -172,7 +172,7 @@ exports[`Modal accept style prop 1`] = `
   <div
     class="emotion-6"
   />
-</div>
+</span>
 `;
 
 exports[`Modal render different sizes 1`] = `
@@ -305,7 +305,7 @@ exports[`Modal render different sizes 1`] = `
   width: 520px;
 }
 
-<div
+<span
   class="emotion-7"
 >
   <div
@@ -346,7 +346,7 @@ exports[`Modal render different sizes 1`] = `
   <div
     class="emotion-6"
   />
-</div>
+</span>
 `;
 
 exports[`Modal render different sizes 2`] = `
@@ -479,7 +479,7 @@ exports[`Modal render different sizes 2`] = `
   opacity: 1;
 }
 
-<div
+<span
   class="emotion-7"
 >
   <div
@@ -520,7 +520,7 @@ exports[`Modal render different sizes 2`] = `
   <div
     class="emotion-6"
   />
-</div>
+</span>
 `;
 
 exports[`Modal render different sizes 3`] = `
@@ -653,7 +653,7 @@ exports[`Modal render different sizes 3`] = `
   max-width: 80%;
 }
 
-<div
+<span
   class="emotion-7"
 >
   <div
@@ -694,7 +694,7 @@ exports[`Modal render different sizes 3`] = `
   <div
     class="emotion-6"
   />
-</div>
+</span>
 `;
 
 exports[`Modal should render closed 1`] = `
@@ -894,7 +894,7 @@ exports[`Modal should render closed 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-<div
+<span
   class="emotion-9"
 >
   <div
@@ -949,7 +949,7 @@ exports[`Modal should render closed 1`] = `
   <div
     class="emotion-8"
   />
-</div>
+</span>
 `;
 
 exports[`Modal should render open 1`] = `
@@ -1149,7 +1149,7 @@ exports[`Modal should render open 1`] = `
   opacity: 1;
 }
 
-<div
+<span
   class="emotion-9"
 >
   <div
@@ -1204,5 +1204,5 @@ exports[`Modal should render open 1`] = `
   <div
     class="emotion-8"
   />
-</div>
+</span>
 `;

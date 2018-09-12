@@ -64,7 +64,7 @@ export class Modal extends React.PureComponent<ModalProps> {
         }
 
         return (
-            <div className={css(styles.wrapper, open ? styles.open : styles.close)}>
+            <span className={css(styles.wrapper, open ? styles.open : styles.close)}>
                 <div className={css(styles.modal)}>
                     <ModalContainer style={css(styles.container, styles.sizes[size], style)} onClose={onClose}>
                         <ModalBody>
@@ -80,7 +80,7 @@ export class Modal extends React.PureComponent<ModalProps> {
                 </div>
 
                 <ModalBackdrop onClick={onBackdropClick} />
-            </div>
+            </span>
         )
     }
 }
