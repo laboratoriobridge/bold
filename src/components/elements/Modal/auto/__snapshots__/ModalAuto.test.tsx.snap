@@ -4,6 +4,7 @@ exports[`should render correctly 1`] = `
 .emotion-11 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: hidden;
   opacity: 0;
 }

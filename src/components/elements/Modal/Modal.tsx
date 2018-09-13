@@ -32,6 +32,7 @@ export class Modal extends React.PureComponent<ModalProps> {
         const styles: Styles = {
             wrapper: {
                 transition: 'all .2s',
+                display: 'inline',
             },
             open: {
                 visibility: 'visible',

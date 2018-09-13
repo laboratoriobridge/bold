@@ -4,6 +4,7 @@ exports[`ModalControlled should render correcly 1`] = `
 .emotion-9 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: hidden;
   opacity: 0;
 }
@@ -448,6 +449,7 @@ exports[`ModalControlled should render correcly 2`] = `
 .emotion-9 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
