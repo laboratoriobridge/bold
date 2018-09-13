@@ -113,6 +113,7 @@ exports[`Modal accept style prop 1`] = `
 .emotion-7 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
@@ -131,7 +132,7 @@ exports[`Modal accept style prop 1`] = `
   color: red;
 }
 
-<span
+<div
   class="emotion-7"
 >
   <div
@@ -172,7 +173,7 @@ exports[`Modal accept style prop 1`] = `
   <div
     class="emotion-6"
   />
-</span>
+</div>
 `;
 
 exports[`Modal render different sizes 1`] = `
@@ -288,6 +289,7 @@ exports[`Modal render different sizes 1`] = `
 .emotion-7 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
@@ -305,7 +307,7 @@ exports[`Modal render different sizes 1`] = `
   width: 520px;
 }
 
-<span
+<div
   class="emotion-7"
 >
   <div
@@ -346,7 +348,7 @@ exports[`Modal render different sizes 1`] = `
   <div
     class="emotion-6"
   />
-</span>
+</div>
 `;
 
 exports[`Modal render different sizes 2`] = `
@@ -475,11 +477,12 @@ exports[`Modal render different sizes 2`] = `
 .emotion-7 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
 
-<span
+<div
   class="emotion-7"
 >
   <div
@@ -520,7 +523,7 @@ exports[`Modal render different sizes 2`] = `
   <div
     class="emotion-6"
   />
-</span>
+</div>
 `;
 
 exports[`Modal render different sizes 3`] = `
@@ -636,6 +639,7 @@ exports[`Modal render different sizes 3`] = `
 .emotion-7 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
@@ -653,7 +657,7 @@ exports[`Modal render different sizes 3`] = `
   max-width: 80%;
 }
 
-<span
+<div
   class="emotion-7"
 >
   <div
@@ -694,13 +698,14 @@ exports[`Modal render different sizes 3`] = `
   <div
     class="emotion-6"
   />
-</span>
+</div>
 `;
 
 exports[`Modal should render closed 1`] = `
 .emotion-9 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: hidden;
   opacity: 0;
 }
@@ -894,7 +899,7 @@ exports[`Modal should render closed 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-<span
+<div
   class="emotion-9"
 >
   <div
@@ -949,7 +954,7 @@ exports[`Modal should render closed 1`] = `
   <div
     class="emotion-8"
   />
-</span>
+</div>
 `;
 
 exports[`Modal should render open 1`] = `
@@ -1145,11 +1150,12 @@ exports[`Modal should render open 1`] = `
 .emotion-9 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: visible;
   opacity: 1;
 }
 
-<span
+<div
   class="emotion-9"
 >
   <div
@@ -1204,5 +1210,5 @@ exports[`Modal should render open 1`] = `
   <div
     class="emotion-8"
   />
-</span>
+</div>
 `;

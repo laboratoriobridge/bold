@@ -4,6 +4,7 @@ exports[`should render correctly 1`] = `
 .emotion-11 {
   -webkit-transition: all .2s;
   transition: all .2s;
+  display: inline;
   visibility: hidden;
   opacity: 0;
 }
@@ -229,7 +230,7 @@ exports[`should render correctly 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-<span
+<div
   class="emotion-11"
 >
   <div
@@ -294,5 +295,5 @@ exports[`should render correctly 1`] = `
   <div
     class="emotion-10"
   />
-</span>
+</div>
 `;
