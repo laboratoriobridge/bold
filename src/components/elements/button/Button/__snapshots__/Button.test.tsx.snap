@@ -2,8 +2,6 @@
 
 exports[`Button should accept the loading prop 1`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -96,8 +94,6 @@ exports[`Button should accept the loading prop 1`] = `
 
 exports[`Button should render correctly with icon only 1`] = `
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -193,8 +189,6 @@ exports[`Button should render correctly with icon only 1`] = `
 
 exports[`Button should render correctly with label 1`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -266,8 +260,6 @@ exports[`Button should render correctly with label 1`] = `
 
 exports[`Button should render the default skin 1`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -339,8 +331,6 @@ exports[`Button should render the default skin 1`] = `
 
 exports[`Button should render the default skin 2`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -419,8 +409,6 @@ exports[`Button should render the default skin 2`] = `
 
 exports[`Button should render the default skin 3`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -503,8 +491,6 @@ exports[`Button should render the default skin 3`] = `
 
 exports[`Button should render the ghost skin 1`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -576,8 +562,6 @@ exports[`Button should render the ghost skin 1`] = `
 
 exports[`Button should render the ghost skin 2`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -650,8 +634,6 @@ exports[`Button should render the ghost skin 2`] = `
 
 exports[`Button should render the ghost skin 3`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -728,8 +710,6 @@ exports[`Button should render the ghost skin 3`] = `
 
 exports[`Button should render the outline skin 1`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -801,8 +781,6 @@ exports[`Button should render the outline skin 1`] = `
 
 exports[`Button should render the outline skin 2`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -880,8 +858,6 @@ exports[`Button should render the outline skin 2`] = `
 
 exports[`Button should render the outline skin 3`] = `
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

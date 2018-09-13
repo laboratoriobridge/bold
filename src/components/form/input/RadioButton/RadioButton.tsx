@@ -21,7 +21,6 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
             height: 16,
             position: 'relative',
             transition: 'all .2s ease',
-            backfaceVisibility: 'hidden', // fixes box-shadow transition bug
             verticalAlign: 'middle',
             width: 16,
             ':after': {

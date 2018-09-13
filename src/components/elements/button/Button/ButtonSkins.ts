@@ -28,7 +28,6 @@ export interface SkinProps {
 
 export const createBaseStyles = (theme: Theme): Styles => ({
     button: {
-        backfaceVisibility: 'hidden',
         display: 'inline-flex',
         justifyContent: 'center',
         fontFamily: theme.typography.fontFamily,

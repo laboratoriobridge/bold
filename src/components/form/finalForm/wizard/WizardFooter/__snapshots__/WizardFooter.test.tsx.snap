@@ -13,8 +13,6 @@ exports[`rendering should render correctly 1`] = `
 }
 
 .emotion-0 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -73,8 +71,6 @@ exports[`rendering should render correctly 1`] = `
 }
 
 .emotion-1 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

@@ -13,8 +13,6 @@ exports[`TextField deve ser renderizado de forma correta 1`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .emotion-0::-webkit-input-placeholder {

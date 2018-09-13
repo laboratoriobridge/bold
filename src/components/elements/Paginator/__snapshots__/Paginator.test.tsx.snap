@@ -19,8 +19,6 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -106,8 +104,6 @@ exports[`deve renderizar corretamente 1`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   width: 47px;
   text-align: center;
 }
@@ -226,8 +222,6 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-6 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -313,8 +307,6 @@ exports[`deve renderizar corretamente 2`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   width: 47px;
   text-align: center;
 }
@@ -355,8 +347,6 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -501,8 +491,6 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-6 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -588,8 +576,6 @@ exports[`deve renderizar corretamente 3`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   width: 47px;
   text-align: center;
 }
@@ -630,8 +616,6 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
