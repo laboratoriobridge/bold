@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
@@ -10,6 +11,7 @@ export interface FlowProps extends WithStylesProps {
     hSpacing?: number
     alignItems?: AlignItems
     justifyContent?: JustifyContent
+    style?: Interpolation
 }
 
 @withStyles
@@ -22,7 +24,7 @@ export class Flow extends React.PureComponent<FlowProps> {
     }
 
     render() {
-        const { css, direction } = this.props
+        const { css, direction, style } = this.props
 
         const styles = {
             flow: {
@@ -37,10 +39,12 @@ export class Flow extends React.PureComponent<FlowProps> {
             },
         }
 
+        const classes = css(styles.flow,
+            direction === 'horizontal' ? styles.flowHorizontal : styles.flowVertical,
+            style)
+
         return (
-            <div
-                className={css(styles.flow, direction === 'horizontal' ? styles.flowHorizontal : styles.flowVertical)}
-            >
+            <div className={classes}>
                 {React.Children.map(this.props.children, (child) => this.renderChild(child))}
             </div>
         )

@@ -231,6 +231,55 @@ exports[`Flow should accept justifyContent prop 1`] = `
 </div>
 `;
 
+exports[`Flow should accept the style prop 1`] = `
+.emotion-0 {
+  margin-top: 0rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.emotion-0:first-child {
+  margin-left: 0;
+}
+
+.emotion-0:last-child {
+  margin-right: 0;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10rem;
+}
+
+<div
+  class="emotion-2"
+>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      1
+    </div>
+  </div>
+  <div
+    class="emotion-0"
+  >
+    <div>
+      2
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Flow should accept vSpacing prop 1`] = `
 .emotion-3 {
   display: -webkit-box;
