@@ -26,7 +26,6 @@ export const createStyles = (theme: Theme): Styles => ({
         padding: 'calc(0.5rem - 1px) 0.5rem',
         width: '100%',
         transition: 'all .2s',
-        backfaceVisibility: 'hidden', // fixes box-shadow transition bug
         '::placeholder': {
             color: theme.pallete.text.disabled,
         },

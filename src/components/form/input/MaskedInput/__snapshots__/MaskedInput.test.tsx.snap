@@ -13,8 +13,6 @@ exports[`deve renderizar corretamente 1`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
 }
 
 .emotion-0::-webkit-input-placeholder {

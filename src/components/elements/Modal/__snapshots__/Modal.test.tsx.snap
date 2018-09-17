@@ -22,8 +22,6 @@ exports[`Modal accept style prop 1`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -198,8 +196,6 @@ exports[`Modal render different sizes 1`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -386,8 +382,6 @@ exports[`Modal render different sizes 2`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -548,8 +542,6 @@ exports[`Modal render different sizes 3`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -744,8 +736,6 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -830,8 +820,6 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-4 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -992,8 +980,6 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-2 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1078,8 +1064,6 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-4 {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
