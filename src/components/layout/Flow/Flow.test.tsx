@@ -76,4 +76,13 @@ describe('Flow', () => {
             </Flow>
         )).find(Spacing).length).toEqual(2)
     })
+    it('should accept the style prop', () => {
+        const wrapper = render(withTheme(
+            <Flow style={{ padding: '10rem' }}>
+                <div>1</div>
+                <div>2</div>
+            </Flow>
+        ))
+        expect(wrapper).toMatchSnapshot()
+    })
 })

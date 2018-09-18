@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, TextColor, withStyles, WithStylesProps } from '../../../styles'
@@ -7,6 +8,7 @@ export interface ProgressIndicatorProps extends WithStylesProps {
     color?: TextColor
     max?: number
     value: number
+    style?: Interpolation
 }
 
 @withStyles
@@ -24,6 +26,7 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
             value,
             max,
             theme,
+            style,
         } = this.props
 
         const styles: Styles = {
@@ -50,7 +53,7 @@ export class ProgressIndicator extends React.PureComponent<ProgressIndicatorProp
         }
 
         return (
-            <progress className={css(styles.progress)} value={value} max={max} />
+            <progress className={css(styles.progress, style)} value={value} max={max} />
         )
     }
 
