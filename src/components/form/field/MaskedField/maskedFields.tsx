@@ -38,3 +38,6 @@ export const TimeField = createMaskedField('TimeField', masks.time, {
     placeholder: 'hh:mm',
     pipe: createAutoCorrectedDatePipe('HH:MM'),
 })
+export const CnsField = createMaskedField('CnsField', masks.cns, {
+    parse: onlyNumbers,
+})
