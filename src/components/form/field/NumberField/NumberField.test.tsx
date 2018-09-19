@@ -2,7 +2,6 @@ import { mount, render } from 'enzyme'
 import * as React from 'react'
 
 import { withForm } from '../../../../test/index'
-import { TextInput } from '../../input/TextInput/TextInput'
 
 import { NumberField, parse } from './NumberField'
 
@@ -19,12 +18,11 @@ describe('NumberField', () => {
             expect(wrapper).toMatchSnapshot()
         })
 
-        /* it('deve aceitar somente números', () => {
+        it('deve aceitar somente números', () => {
             const wrapper = mount(withForm(<NumberField name='number' />))
 
-            const inputWrapper = wrapper.find('[name="number"]')
-            inputWrapper.simulate('change', { target: { value: 'abc123a!' } })
-            expect(inputWrapper.props().value).toEqual('123')
-        })*/
+            wrapper.find(NumberField).find('input').simulate('change', { target: { value: '\'\"@#$*/+./ªºabc123a!' } })
+            expect(wrapper.find(NumberField).find('input').prop('value')).toEqual('123')
+        })
     })
 })
