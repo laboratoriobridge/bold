@@ -3882,9 +3882,9 @@ final-form-set-field-data@1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form-set-field-data/-/final-form-set-field-data-1.0.1.tgz#edb1794812731831bfef6976746fcc82d75dcdec"
 
-final-form@4.9.1:
-  version "4.9.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.9.1.tgz#1afd6c61b4946b153b592c07eba7440979f257ed"
+final-form@4.10.0:
+  version "4.10.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/final-form/-/final-form-4.10.0.tgz#6179bca7676925202510e9877eb1ad2ad1cd3460"
 
 finalhandler@1.1.1:
   version "1.1.1"
@@ -7231,9 +7231,9 @@ react-test-renderer@^16.0.0-0:
     prop-types "^15.6.0"
     react-is "^16.4.1"
 
-react-text-mask@5.4.2:
-  version "5.4.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-text-mask/-/react-text-mask-5.4.2.tgz#6c9ecce97d354698557d14699963081f9621e997"
+react-text-mask@5.4.3:
+  version "5.4.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-text-mask/-/react-text-mask-5.4.3.tgz#991efb4299e30c2e6c2c46d13f617169463e0d2d"
   dependencies:
     prop-types "^15.5.6"
 
@@ -8246,13 +8246,13 @@ test-exclude@^4.2.1:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
-text-mask-addons@3.7.2:
-  version "3.7.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-addons/-/text-mask-addons-3.7.2.tgz#56d34780c94f2ee593a77de6e79b55d56f8a8bb8"
+text-mask-addons@3.8.0:
+  version "3.8.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-addons/-/text-mask-addons-3.8.0.tgz#17b61ef665a4f36811f2ea1f01a223b4be61ab26"
 
-text-mask-core@5.1.1:
-  version "5.1.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-core/-/text-mask-core-5.1.1.tgz#a7f65634e11236818fd36a92668e17bf9368f357"
+text-mask-core@5.1.2:
+  version "5.1.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-core/-/text-mask-core-5.1.2.tgz#80dd5ebe04825757e46619e691407a9f8b3c1b6f"
 
 text-table@0.2.0:
   version "0.2.0"
