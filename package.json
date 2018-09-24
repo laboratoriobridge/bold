@@ -28,7 +28,7 @@
   "peerDependencies": {
     "axios": "^0.18.0",
     "emotion": "^9.2.3",
-    "final-form": "^4.9.1",
+    "final-form": "^4.10.0",
     "moment": "^2.22.1",
     "react": "^16.3.2",
     "react-final-form": "^3.6.5",
@@ -45,9 +45,9 @@
     "react-dropzone": "4.2.13",
     "react-popper": "1.0.0",
     "react-select": "2.0.0",
-    "react-text-mask": "5.4.2",
-    "text-mask-addons": "3.7.2",
-    "text-mask-core": "5.1.1"
+    "react-text-mask": "5.4.3",
+    "text-mask-addons": "3.8.0",
+    "text-mask-core": "5.1.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "4.0.0-alpha.14",
@@ -91,7 +91,7 @@
     "enzyme-adapter-react-16": "1.2.0",
     "enzyme-to-json": "3.3.4",
     "file-loader": "1.1.11",
-    "final-form": "4.9.1",
+    "final-form": "4.10.0",
     "husky": "0.14.3",
     "intl": "1.2.5",
     "jest": "23.2.0",
