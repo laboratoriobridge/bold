@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve conter a classe css "disabled" 1`] = `
-.emotion-1 .react-datepicker-wrapper {
+.emotion-6 .react-datepicker-wrapper {
   width: 100%;
 }
 
-.emotion-1 .react-datepicker__input-container {
+.emotion-6 .react-datepicker__input-container {
   width: 100%;
 }
 
@@ -58,8 +58,113 @@ exports[`deve conter a classe css "disabled" 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-5 {
+  position: relative;
+}
+
+.emotion-5 input {
+  padding-right: 3rem;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-3 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-3 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-3:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
 <div
-  class="emotion-1"
+  class="emotion-6"
 >
   <div>
     <div
@@ -68,13 +173,47 @@ exports[`deve conter a classe css "disabled" 1`] = `
       <div
         class="react-datepicker__input-container"
       >
-        <input
-          class="emotion-0"
-          disabled=""
-          placeholder="dd/mm/yyyy"
-          type="text"
-          value=""
-        />
+        <p
+          class="emotion-5"
+        >
+          <input
+            class="emotion-0"
+            disabled=""
+            placeholder="dd/mm/yyyy"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
+          >
+            <button
+              class="emotion-3"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <span
+                  class="emotion-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      d="M18 5h-2V3h-2v2h-4V3H8v2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 14H6V9h12z"
+                    />
+                    <path
+                      d="M8 11h8v2H8zM8 15h8v2H8z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </span>
+        </p>
       </div>
     </div>
   </div>
@@ -82,11 +221,11 @@ exports[`deve conter a classe css "disabled" 1`] = `
 `;
 
 exports[`deve renderizar corretamente 1`] = `
-.emotion-1 .react-datepicker-wrapper {
+.emotion-6 .react-datepicker-wrapper {
   width: 100%;
 }
 
-.emotion-1 .react-datepicker__input-container {
+.emotion-6 .react-datepicker__input-container {
   width: 100%;
 }
 
@@ -139,8 +278,113 @@ exports[`deve renderizar corretamente 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-5 {
+  position: relative;
+}
+
+.emotion-5 input {
+  padding-right: 3rem;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #f2f2f7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #666666;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-3 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-3 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-3:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #056DFF;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(128,128,128,0.16);
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
 <div
-  class="emotion-1"
+  class="emotion-6"
 >
   <div>
     <div
@@ -149,12 +393,46 @@ exports[`deve renderizar corretamente 1`] = `
       <div
         class="react-datepicker__input-container"
       >
-        <input
-          class="emotion-0"
-          placeholder="dd/mm/yyyy"
-          type="text"
-          value=""
-        />
+        <p
+          class="emotion-5"
+        >
+          <input
+            class="emotion-0"
+            placeholder="dd/mm/yyyy"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
+          >
+            <button
+              class="emotion-3"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <span
+                  class="emotion-2"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      d="M18 5h-2V3h-2v2h-4V3H8v2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 14H6V9h12z"
+                    />
+                    <path
+                      d="M8 11h8v2H8zM8 15h8v2H8z"
+                    />
+                  </svg>
+                </span>
+              </span>
+            </button>
+          </span>
+        </p>
       </div>
     </div>
   </div>

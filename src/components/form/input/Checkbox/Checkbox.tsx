@@ -2,9 +2,9 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, InputController, PublicInputProps } from '../Input/Input'
+import { Input, InputController, InputProps } from '../Input/Input'
 
-export interface CheckboxProps extends PublicInputProps, WithStylesProps {
+export interface CheckboxProps extends InputProps, WithStylesProps {
     label?: React.ReactNode
     style?: Interpolation
     indeterminate?: boolean

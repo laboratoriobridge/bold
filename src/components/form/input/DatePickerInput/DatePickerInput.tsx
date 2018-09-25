@@ -1,18 +1,14 @@
 import * as moment from 'moment'
 import * as React from 'react'
 import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
-import * as TestPicker from 'react-datepicker'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { InputController } from '../Input/Input'
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
 
 export interface DatePickerInputProps extends WithStylesProps, ReactDatePickerProps,
     Pick<TextInputProps, 'status'> {
 
 }
-
-const Picker = DatePicker || TestPicker as any
 
 @withStyles
 export class DatePickerInput extends React.Component<DatePickerInputProps> {
@@ -30,15 +26,14 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
         return (
             <div className={css(styles.container)}>
-                <Picker
-                    {...rest}
+                <DatePicker
                     selected={mom as any}
                     todayButton='Hoje'
                     locale='pt-br'
                     showYearDropdown
                     dropdownMode='select'
-                    disabledKeyboardNavigation
                     customInput={<DateInput status={status} />}
+                    {...rest}
                 />
             </div>
         )
@@ -49,21 +44,18 @@ interface DateInputProps extends TextInputProps {
 }
 
 class DateInput extends React.Component<DateInputProps> {
-    private controller: InputController
 
     render() {
         return (
             <TextInput
                 {...this.props}
-                provideController={this.setInputController}
+                icon={{ icon: 'calendar', position: 'right', onClick: this.props.onClick }}
                 onChange={this.handleChange}
                 placeholder='dd/mm/yyyy'
+                onFocus={null} // do not open datepicker when focused
+                onClick={null} // do not open datepicker when clicked
             />
         )
-    }
-
-    setInputController = (controller: InputController) => {
-        this.controller = controller
     }
 
     handleChange = (e) => {
@@ -83,10 +75,6 @@ class DateInput extends React.Component<DateInputProps> {
         } else {
             return onlyNums.slice(0, 2) + '/' + onlyNums.slice(2, 4) + '/' + onlyNums.slice(4, 8)
         }
-    }
-
-    focus = () => {
-        this.controller.focus()
     }
 
 }
