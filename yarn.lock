@@ -491,9 +491,9 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-datepicker@1.1.5":
-  version "1.1.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-datepicker/-/react-datepicker-1.1.5.tgz#2070d5ab86eacf69f5e9573b1d69af9982841c02"
+"@types/react-datepicker@1.1.7":
+  version "1.1.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-datepicker/-/react-datepicker-1.1.7.tgz#0722040fbd0d3d39c3fdec21d2559acb9b15ec0a"
   dependencies:
     "@types/react" "*"
     moment ">=2.14.0"
@@ -7005,9 +7005,9 @@ react-color@^2.14.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-datepicker@1.5.0:
-  version "1.5.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datepicker/-/react-datepicker-1.5.0.tgz#7eacd9609313189c84a21bb7421486054939a4b2"
+react-datepicker@1.6.0:
+  version "1.6.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datepicker/-/react-datepicker-1.6.0.tgz#6b7a87e949f3bbd94872554be6a0119bd908a987"
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.0"

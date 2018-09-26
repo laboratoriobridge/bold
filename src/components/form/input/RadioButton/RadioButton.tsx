@@ -1,9 +1,9 @@
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, PublicInputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input/Input'
 
-export interface RadioButtonProps extends PublicInputProps, WithStylesProps {
+export interface RadioButtonProps extends InputProps, WithStylesProps {
     label: React.ReactNode
 }
 

@@ -2,12 +2,12 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, PublicInputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input/Input'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
 export type InputStatus = '' | 'error'
 
-export interface TextInputProps extends PublicInputProps, WithStylesProps {
+export interface TextInputProps extends InputProps, WithStylesProps {
     status?: InputStatus
     password?: boolean
     icon?: InputIconDecoratorProps

@@ -1,30 +1,15 @@
 import * as React from 'react'
 
+import { Omit } from '../../../../util/types'
+
 export interface InputController {
   getInput(): HTMLInputElement
   focus(): any
   blur(): any
 }
 
-export interface PublicInputProps {
-  className?: string
-  checked?: boolean
-  disabled?: boolean
-  id?: string
-  maxLength?: number
-  name?: string
-  onBlur?: <T>(event?: React.FocusEvent<T>) => void
-  onChange?: <T>(event: React.ChangeEvent<T> | any) => void
-  onFocus?: <T>(event?: React.FocusEvent<T>) => void
-  onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void
-  placeholder?: string
-  value?: any
+export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'css' | 'style'> {
   provideController?: (controller: InputController) => void
-  autoFocus?: boolean
-}
-
-export interface InputProps extends PublicInputProps {
-  type?: string
 }
 
 export class Input extends React.Component<InputProps, any> {
