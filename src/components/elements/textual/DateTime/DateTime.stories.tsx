@@ -1,25 +1,25 @@
-import { select, text, withKnobs } from '@storybook/addon-knobs'
+import { text, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../../stories-addons'
+import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { DateTime } from './DateTime'
-
-const options = {
-    '': '',
-    'date': 'date',
-    'time': 'time',
-    'dateTime': 'dateTime',
-}
+import * as Doc from './DateTime.md'
 
 storiesOf('Textual', module)
-    .addDecorator(withPropTypes())
+    .addDecorator(withPropTypes(Doc))
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('DateTime', () => (
-        <DateTime
-            value={text('value', '2010-09-18T11:57:23.046')}
-            mode={select('mode', options, null)}
-        />
+        <VFlow>
+            <DateTime
+                value={text('value', '2016-08-19T19:08:16')}
+            />
+            <DateTime
+                value={text('value', '2016-08-19T19:08:16')}
+                format={text('format', 'DD/MM/YYYY HH:mm:ss')}
+            />
+        </VFlow>
     ))

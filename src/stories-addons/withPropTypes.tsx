@@ -8,5 +8,5 @@ import { Renderable, RenderFunction } from '@storybook/react'
  */
 export const withPropTypes = (info?: string) =>
     (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
-        return (withInfo(info && `<div>${info}</div>`)(story) as any)(context)
+        return (withInfo(info)(story) as any)(context)
     }

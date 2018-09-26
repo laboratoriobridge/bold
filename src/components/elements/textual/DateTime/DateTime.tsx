@@ -1,35 +1,26 @@
 import * as moment from 'moment'
 import * as React from 'react'
 
-import { formatDateOrDateTime, formats } from '../../../../util/dateTime'
-
-export const dateTimeFormats = formats
-
 export interface DateTimeProps {
     value: moment.Moment | string | number | Date
-    mode?: 'date' | 'time' | 'dateTime'
-    render?(moment: moment.Moment): React.ReactNode
+    format?: string
 }
 
 export class DateTime extends React.PureComponent<DateTimeProps> {
 
-    render() {
-        const { value, mode, render } = this.props
+    static defaultProps: Partial<DateTimeProps> = { format: 'LLL' }
 
-        if (!value) {
+    render() {
+        const { value, format } = this.props
+
+        const mom = moment(value)
+
+        if (!mom.isValid()) {
             return null
         }
 
-        const mom = moment.isMoment(value) ? value : moment(value)
-
-        const formatted =
-            (render && render(mom)) ||
-            (mode && mom.format(formats[mode])) ||
-            (typeof value === 'string' && formatDateOrDateTime(value)) ||
-            mom.format(formats.dateTime)
-
         return (
-            <span title={mom.format('LLL')}>{formatted}</span>
+            <time>{mom.format(format)}</time>
         )
     }
 }
