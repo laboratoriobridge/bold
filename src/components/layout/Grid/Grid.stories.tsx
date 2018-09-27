@@ -2,9 +2,8 @@ import { number, select, withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../stories-addons'
-
-import { AlignItems, AlignSelf, Cell as CellRaiz, Direction, Grid, JustifyContent } from './'
+import { AlignItems, AlignSelf, Cell, Direction, Grid, JustifyContent } from '../'
+import { withPropTypes, withTheme } from '../../../stories-addons'
 
 const styles = {
     bg: {
@@ -45,20 +44,16 @@ const directionOptions: { [key in Direction]: string } = {
     'column-reverse': 'column-reverse',
 }
 
-const Cell = (props) => {
-    return <CellRaiz {...props} styles={styles.bg} />
-}
-
 storiesOf('Grid', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
     .add('Grid/Cell', () => (
         <Grid>
-            <Cell size={6}>1</Cell>
-            <Cell size={3}>2</Cell>
-            <Cell>3</Cell>
-            <Cell>4</Cell>
+            <Cell size={6} style={styles.bg}>1</Cell>
+            <Cell size={3} style={styles.bg}>2</Cell>
+            <Cell style={styles.bg}>3</Cell>
+            <Cell style={styles.bg}>4</Cell>
         </Grid>
     ))
     .add('Grid playground', () => (
@@ -69,9 +64,9 @@ storiesOf('Grid', module)
                 direction={select('direction', directionOptions, 'row')}
                 wrap
             >
-                <Cell size={6}>1</Cell>
-                <Cell size={6}>2</Cell>
-                <Cell size={6}>3</Cell>
+                <Cell size={6} style={styles.bg}>1</Cell>
+                <Cell size={6} style={styles.bg}>2</Cell>
+                <Cell size={6} style={styles.bg}>3</Cell>
             </Grid>
             <hr />
             <div style={{ height: 300 }}>
@@ -80,23 +75,24 @@ storiesOf('Grid', module)
                     justifyContent={select('justifyContent', justifyContentOptions, 'center')}
                     direction={select('direction', directionOptions, 'row')}
                 >
-                    <Cell size={1}>1</Cell>
-                    <Cell size={1}><div style={{ height: 60 }}>2</div></Cell>
-                    <Cell size={1}>3</Cell>
+                    <Cell size={1} style={styles.bg}>1</Cell>
+                    <Cell size={1} style={styles.bg}><div style={{ height: 60 }}>2</div></Cell>
+                    <Cell size={1} style={styles.bg}>3</Cell>
                 </Grid>
             </div>
         </>
     ))
     .add('Cell playground', () => (
         <Grid alignItems='flex-start'>
-            <Cell size={1}>1</Cell>
-            <Cell size={1}><div style={{ height: 60 }}>2</div></Cell>
+            <Cell size={1} style={styles.bg}>1</Cell>
+            <Cell size={1} style={styles.bg}><div style={{ height: 60 }}>2</div></Cell>
             <Cell
-                size={number('size', 2)}
+                size={number('size', 2) as any}
                 alignSelf={select('alignSelf', alignSelfOptions, 'auto')}
+                style={styles.bg}
             >
                 <strong>3</strong>
             </Cell>
-            <Cell size={1}>4</Cell>
+            <Cell size={1} style={styles.bg}>4</Cell>
         </Grid>
     ))

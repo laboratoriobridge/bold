@@ -4,7 +4,7 @@ import * as React from 'react'
 
 import { withPropTypes, withTheme } from '../../../stories-addons'
 import { Button } from '../../elements/button/Button/Button'
-import { AlignItems, JustifyContent } from '../../grid/Grid/Grid'
+import { AlignItems, JustifyContent } from '../Grid/Grid'
 
 import { Flow } from './Flow'
 import { HFlow } from './HFlow'
