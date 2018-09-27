@@ -1,4 +1,4 @@
 export * from './AutoGrid/AutoGrid'
 export * from './Cell/Cell'
 export * from './Grid/Grid'
-export * from './PageContainer/PageContainer'
+export * from './Container'

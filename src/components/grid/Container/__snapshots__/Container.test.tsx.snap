@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept the style prop 1`] = `
+.emotion-0 {
+  width: 960px;
+  margin: 0 auto;
+  padding: 5rem;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    width: 768px;
+  }
+}
+
+<div
+  class="emotion-0"
+>
+  Content
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  width: 960px;
+  margin: 0 auto;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    width: 768px;
+  }
+}
+
+<div
+  class="emotion-0"
+>
+  Content
+</div>
+`;
