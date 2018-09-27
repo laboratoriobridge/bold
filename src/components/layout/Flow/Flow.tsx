@@ -2,7 +2,7 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
-import { AlignItems, JustifyContent } from '../../grid/Grid/Grid'
+import { AlignItems, JustifyContent } from '../Grid/Grid'
 import { Spacing } from '../Spacing/Spacing'
 
 export interface FlowProps extends WithStylesProps {
