@@ -14,7 +14,7 @@ exports[`should accept Popper props 1`] = `
   padding: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
   border: 1px solid #e6e6e6;
-  border-radius: 3px;
+  border-radius: 2px;
   display: inline-block;
   width: auto;
   min-width: 150px;
@@ -41,6 +41,16 @@ exports[`should accept Popper props 1`] = `
 
 .emotion-2 div {
   display: block;
+}
+
+.emotion-2:first-child a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-2:last-child a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 .emotion-6 {
@@ -113,7 +123,7 @@ exports[`should render correctly 1`] = `
   padding: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
   border: 1px solid #e6e6e6;
-  border-radius: 3px;
+  border-radius: 2px;
   display: inline-block;
   width: auto;
   min-width: 150px;
@@ -140,6 +150,16 @@ exports[`should render correctly 1`] = `
 
 .emotion-2 div {
   display: block;
+}
+
+.emotion-2:first-child a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-2:last-child a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
 
 <div
