@@ -9,7 +9,7 @@ const createStyles = (theme: Theme): Styles => {
         ul: {
             listStyle: 'none',
             padding: '0',
-            margin: '0 -1rem',
+            margin: '0',
             fontSize: '0.875rem',
         },
         li: {
