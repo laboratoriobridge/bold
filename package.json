@@ -10,7 +10,6 @@
     "registry": "https://repositorio.bridge.ufsc.br/repository/npm-private/"
   },
   "scripts": {
-    "precommit": "npm run generate-icons && git add ./src/components/elements/Icon/generated && npm test",
     "start": "npm run clean && webpack --progress --watch",
     "clean": "shx rm -rf lib",
     "build": "npm run clean && webpack --mode=production",
@@ -19,11 +18,16 @@
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "generate-icons": "npm run clean-icons && npm run generate-svg-icons && npm run generate-icons-index",
-    "clean-icons": "rm -r ./src/components/elements/Icon/generated",
-    "generate-svg-icons": "svgr --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
-    "generate-icons-index": "babel-node ./tools/generateIconsIndex.js",
+    "icons": "npm run icons:clean && npm run icons:svgr && npm run icons:index",
+    "icons:clean": "rm -r ./src/components/elements/Icon/generated",
+    "icons:svgr": "svgr --ext tsx --icon --template ./icons/IconTemplate.js -d ./src/components/elements/Icon/generated ./icons/svgs",
+    "icons:index": "babel-node ./tools/generateIconsIndex.js",
     "sonar": "sonar-scanner"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "peerDependencies": {
     "axios": "^0.18.0",
