@@ -5,9 +5,7 @@ import { CLEAR_RESULT, Page, PageRequester, REQUEST, RequestState, SET_PARAMS } 
 import { mockStore, withRedux, withTheme } from '../../../../test'
 import { DataTable } from '../DataTable/DataTable'
 
-import {
-    emptyPage, mapDispatchToProps, mapStateToProps, PagedTableConnected, PagedTableConnectedCmp
-} from './PagedTableConnected'
+import { mapDispatchToProps, mapStateToProps, PagedTableConnected, PagedTableConnectedCmp } from './PagedTableConnected'
 
 const result: Page<number> = {
     content: [1, 2, 3, 4, 5],
@@ -152,24 +150,24 @@ describe('Component', () => {
     it('should call #setParams prop on componentDidMount with initialParams', () => {
         const initialParams = { size: 42 }
         const setParams = jest.fn()
-        const wrapper = createCmp({ setParams, initialParams })
+        createCmp({ setParams, initialParams })
         expect(setParams).toHaveBeenCalledTimes(1)
         expect(setParams).toHaveBeenLastCalledWith(initialParams)
     })
 
     it('should call #request prop on componentDidMount', () => {
         const request = jest.fn()
-        const wrapper = createCmp({ request })
+        createCmp({ request })
         expect(request).toHaveBeenCalledTimes(1)
     })
     it('should NOT call #setParams prop on componentDidMount if loadOnMount is false', () => {
         const setParams = jest.fn()
-        const wrapper = createCmp({ setParams, loadOnMount: false })
+        createCmp({ setParams, loadOnMount: false })
         expect(setParams).not.toBeCalled()
     })
     it('should NOT call #request prop on componentDidMount if loadOnMount is false', () => {
         const request = jest.fn()
-        const wrapper = createCmp({ request, loadOnMount: false })
+        createCmp({ request, loadOnMount: false })
         expect(request).not.toBeCalled()
     })
     it('should call #clear prop on componentWillUnmount', () => {

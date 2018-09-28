@@ -15,9 +15,6 @@ describe('RequesterModule', () => {
             req: () => Promise.resolve(4),
         })
 
-        const store = createTestStore({}, combineReducers({
-            test: r.reduce,
-        }))
         describe('#getRequestState', () => {
             it('deve retornar o estado completo da requisição', () => {
                 expect(r.selectors.getRequestState({ test: {} })).toEqual({})

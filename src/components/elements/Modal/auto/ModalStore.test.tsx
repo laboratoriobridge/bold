@@ -28,9 +28,9 @@ describe('append', () => {
 describe('dispose', () => {
     it('should return a new function that removes a component from state by its key', () => {
         const store = new ModalStore()
-        const key1 = store.append(() => <span>1</span>)
+        store.append(() => <span>1</span>)
         const key2 = store.append(() => <span>2</span>)
-        const key3 = store.append(() => <span>3</span>)
+        store.append(() => <span>3</span>)
         store['dispose'](key2)()
         expect(store['value'].items).toHaveLength(2)
     })

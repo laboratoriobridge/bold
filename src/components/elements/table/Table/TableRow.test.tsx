@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { withTheme } from '../../../../test'
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
+import { Table, TableBody, TableCell, TableRow } from './index'
 
 describe('TableRow', () => {
     it('should have the pointer class if onClick is specified', () => {

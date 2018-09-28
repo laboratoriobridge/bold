@@ -1,9 +1,7 @@
-import { mount, render, shallow } from 'enzyme'
+import { mount, render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../test'
-import { IconButton } from '../button/IconButton/IconButton'
-import { Icon } from '../Icon/Icon'
 
 import { StickyContainer } from './StickyContainer'
 

@@ -1,11 +1,3 @@
-if (process.env.NODE_ENV === 'test') {
-    // É necessário adicionar um polifyll para o contexto de teste a fim de disponibilizar o locale 'pt-BR',
-    // já que Node não possui locales do Intl, a não ser o 'en'
-
-    // tslint:disable-next-line:no-var-requires
-    global.Intl = require('intl')
-}
-
 /**
  * Formata um valor numérico para sua representação utilizando o número de casas decimais informadas.
  *

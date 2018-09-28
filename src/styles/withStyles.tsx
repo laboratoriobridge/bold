@@ -13,13 +13,17 @@ export interface Styles {
     [key: string]: Interpolation
 }
 
-export function withStyles<P extends WithStylesProps,
-    T extends React.ComponentClass<P>>(WrappedComponent: T): T {
+export function withStyles<P extends WithStylesProps, T extends React.ComponentClass<P>>(
+    WrappedComponent: T
+): T {
+
+    const Cmp = WrappedComponent as React.ComponentClass<P>
+
     class WithStyles extends React.Component<P> {
 
         render() {
             return (
-                <WrappedComponent
+                <Cmp
                     {...this.props}
                     css={css}
                 />

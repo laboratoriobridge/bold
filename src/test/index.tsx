@@ -1,7 +1,7 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import * as React from 'react'
-import { Form, FormSpy } from 'react-final-form'
+import { Form } from 'react-final-form'
 import { Provider } from 'react-redux'
 import { MemoryRouter } from 'react-router'
 import { applyMiddleware, combineReducers, compose, createStore, Middleware } from 'redux'
@@ -20,10 +20,10 @@ const defaultReducers = combineReducers({
 const middlewares: Middleware[] = [thunkMiddleware]
 
 export const createTestStore = (initialState = {}, reducers: any = defaultReducers) => {
-    return createStore(reducers, initialState, compose(applyMiddleware(...middlewares)))
+    return createStore<{}, any, any, {}>(reducers, initialState, compose(applyMiddleware(...middlewares)))
 }
 
-export const mockStore = configureMockStore(middlewares)
+export const mockStore = configureMockStore<any, any>(middlewares)
 
 /**
  * Envelopa o componente com o <ThemeProvider> do emotion.

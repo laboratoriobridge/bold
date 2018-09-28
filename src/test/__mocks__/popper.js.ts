@@ -1,7 +1,7 @@
 import * as PopperJs from 'popper.js'
 
 export default class Popper {
-    static placements = PopperJs.placements
+    static placements = (PopperJs as any).placements
 
     constructor() {
         return {

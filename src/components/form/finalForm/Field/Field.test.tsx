@@ -1,9 +1,8 @@
 import { mount } from 'enzyme'
-import { FieldState, FormState } from 'final-form'
+import { FieldState } from 'final-form'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
-import { Form } from 'react-final-form'
-import { Field as FinalField } from 'react-final-form'
+import { Field as FinalField, Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
 import { FormField } from '../../FormField'

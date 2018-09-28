@@ -1,5 +1,3 @@
-import * as moment from 'moment'
-
 import { formatDateOrDateTime } from '../dateTime'
 
 describe('dateTime utils', () => {

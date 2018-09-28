@@ -4,8 +4,14 @@
     "module": "commonjs",
     "target": "es5",
     "lib": [
+      "es5",
+      "es6",
+      "es7",
       "es2017",
       "dom"
+    ],
+    "types": [
+      "webpack-env"
     ],
     "outDir": "lib",
     "suppressImplicitAnyIndexErrors": true,

@@ -1,7 +1,6 @@
 import { mount, render } from 'enzyme'
 import * as React from 'react'
 
-import { PageContainer } from '../../..'
 import { withTheme } from '../../../test'
 import { Button } from '../button/Button/Button'
 
