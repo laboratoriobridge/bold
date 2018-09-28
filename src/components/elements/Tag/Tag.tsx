@@ -22,6 +22,7 @@ export class Tag extends React.PureComponent<TagProps> {
             badge: {
                 padding: '0.25rem',
                 fontWeight: 'bold',
+                borderRadius: 4,
             },
         }
         const typeStyles: { [key in TagType]: any } = {
