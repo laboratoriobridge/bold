@@ -42,7 +42,7 @@ export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
         const { css, theme, text } = this.props
         const styles: Styles = {
             base: {
-                borderRadius: theme.radius.main,
+                borderRadius: theme.radius.popper,
                 maxWidth: theme.breakpoints.size.small,
                 background: theme.pallete.gray.c20,
                 color: '#fff',

@@ -71,7 +71,7 @@ export class FileUploader extends React.Component<FileUploaderProps> {
             },
             wrapper: {
                 backgroundColor: theme.pallete.surface.main,
-                borderRadius: theme.radius.main,
+                borderRadius: theme.radius.paper,
                 border: '1px solid ' + theme.pallete.divider,
             },
         }
