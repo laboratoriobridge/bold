@@ -1,6 +1,3 @@
-import { mount } from 'enzyme'
-import * as React from 'react'
-
 import { pluralize } from '../string'
 
 describe('pluralize', () => {

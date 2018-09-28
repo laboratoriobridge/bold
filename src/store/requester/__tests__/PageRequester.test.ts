@@ -103,12 +103,12 @@ describe('PageRequester', () => {
         describe('#setSort', () => {
             it(`deve disparar uma ação de ${SET_PARAMS} com o novo sort`, () => {
                 const store = mockStore()
-                store.dispatch(r.setSort('-id'))
+                store.dispatch(r.setSort(['-id']))
 
                 expect(store.getActions()).toEqual([
                     {
                         type: `${SET_PARAMS}/test`, meta: { key: 'test' },
-                        payload: { ...DEFAULT_PAGINATION_PARAMS, sort: '-id' },
+                        payload: { ...DEFAULT_PAGINATION_PARAMS, sort: ['-id'] },
                     },
                 ])
             })

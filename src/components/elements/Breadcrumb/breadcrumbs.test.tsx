@@ -82,7 +82,7 @@ describe('Breadcrumb', () => {
 
     it('deve adicionar a entry no store ao ser montado', () => {
         const store = new BreadcrumbSimpleStore()
-        const wrapper = mount(withTheme(withRouter(
+        mount(withTheme(withRouter(
             <BreadcrumbProvider store={store}>
                 <Breadcrumb title='Entry #1' to='/1' />
             </BreadcrumbProvider>

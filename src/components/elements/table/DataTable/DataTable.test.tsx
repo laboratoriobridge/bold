@@ -1,7 +1,6 @@
 import { mount, render } from 'enzyme'
 import * as React from 'react'
 
-import { Page } from '../../../../store/requester'
 import { withTheme } from '../../../../test'
 import { SortableLabel } from '../SortableLabel/SortableLabel'
 

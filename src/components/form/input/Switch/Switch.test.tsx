@@ -1,4 +1,4 @@
-import { mount, render } from 'enzyme'
+import { render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../../test/'
@@ -11,10 +11,10 @@ it('should render correctly', () => {
     ))).toMatchSnapshot()
 
     expect(render(withTheme(
-        <Switch label='Active' value={true} />
+        <Switch label='Active' value='true' />
     ))).toMatchSnapshot()
 
     expect(render(withTheme(
-        <Switch label='Disabled' value={true} disabled />
+        <Switch label='Disabled' value='true' disabled />
     ))).toMatchSnapshot()
 })

@@ -4,7 +4,6 @@ import { FormRenderProps } from 'react-final-form'
 
 import { Omit } from '../../../../../util/types'
 import { Form, FormProps } from '../../Form'
-
 import { WizardFooter } from '../WizardFooter/WizardFooter'
 
 export interface WizardStepProps extends Pick<FormProps, 'render' | 'validate'> {

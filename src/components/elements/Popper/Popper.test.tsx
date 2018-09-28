@@ -33,24 +33,24 @@ describe('render', () => {
 
 describe('controller', () => {
     it('#isShown should return the visibility status when called', () => {
-        const { wrapper, controller } = createComponent()
+        const { controller } = createComponent()
         expect(controller.isShown()).toEqual(false)
     })
     it('#show should show children when called', () => {
-        const { wrapper, controller } = createComponent()
+        const { controller } = createComponent()
         expect(controller.isShown()).toEqual(false)
         controller.show()
         expect(controller.isShown()).toEqual(true)
     })
     it('#hide should hide children when called', () => {
-        const { wrapper, controller } = createComponent()
+        const { controller } = createComponent()
         controller.show()
         expect(controller.isShown()).toEqual(true)
         controller.hide()
         expect(controller.isShown()).toEqual(false)
     })
     it('#toggle should toggle the visibility of children when called', () => {
-        const { wrapper, controller } = createComponent()
+        const { controller } = createComponent()
         expect(controller.isShown()).toEqual(false)
         controller.toggle()
         expect(controller.isShown()).toEqual(true)

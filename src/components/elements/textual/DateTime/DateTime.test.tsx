@@ -1,4 +1,4 @@
-import { mount, render } from 'enzyme'
+import { render } from 'enzyme'
 import * as moment from 'moment'
 import * as React from 'react'
 

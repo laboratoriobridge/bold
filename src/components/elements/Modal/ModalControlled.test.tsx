@@ -1,4 +1,4 @@
-import { mount, ReactWrapper, render, shallow } from 'enzyme'
+import { mount } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../test'

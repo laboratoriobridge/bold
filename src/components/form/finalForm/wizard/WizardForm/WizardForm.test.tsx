@@ -1,8 +1,7 @@
-import { mount, render, shallow } from 'enzyme'
+import { render } from 'enzyme'
 import * as React from 'react'
 
 import { withForm, withRouter, withTheme } from '../../../../../test'
-import { Button } from '../../../../elements/button/Button/Button'
 
 import { WizardForm, WizardRenderProps, WizardStep } from './WizardForm'
 
