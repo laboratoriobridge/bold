@@ -77,11 +77,11 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 },
             },
             [`&:indeterminate + .${checkClasses}`]: {
-                backgroundColor: theme.pallete.primary.main,
+                backgroundColor: theme.pallete.surface.main,
                 borderColor: theme.pallete.primary.main,
                 ':after': {
                     content: '""',
-                    borderBottom: '2px solid ' + theme.pallete.surface.main,
+                    borderBottom: '2px solid ' + theme.pallete.primary.main,
                     position: 'absolute',
                     top: -1,
                     left: 3,
