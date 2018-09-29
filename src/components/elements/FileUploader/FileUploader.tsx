@@ -66,12 +66,12 @@ export class FileUploader extends React.Component<FileUploaderProps> {
                 },
             },
             file: {
-                borderTop: '2px solid ' + theme.pallete.divider,
+                borderTop: '1px solid ' + theme.pallete.divider,
                 padding: '1rem',
             },
             wrapper: {
                 backgroundColor: theme.pallete.surface.main,
-                borderRadius: theme.radius.main,
+                borderRadius: theme.radius.paper,
                 border: '1px solid ' + theme.pallete.divider,
             },
         }
@@ -120,7 +120,7 @@ class FileDetails extends React.Component<FileDetailsProps> {
             },
             wrapper: {
                 alignItems: 'center',
-                borderTop: '2px solid ' + this.props.theme.pallete.divider,
+                borderTop: '1px solid ' + this.props.theme.pallete.divider,
                 display: 'flex',
                 padding: '1rem',
             },

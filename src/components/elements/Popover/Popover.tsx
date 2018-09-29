@@ -44,7 +44,7 @@ export class PopoverBase extends React.PureComponent<PopoverBaseProps> {
         const { css, theme, title } = this.props
         const styles: Styles = {
             base: {
-                borderRadius: theme.radius.main,
+                borderRadius: theme.radius.popper,
                 maxWidth: 300,
                 background: theme.pallete.surface.main,
                 boxShadow: `

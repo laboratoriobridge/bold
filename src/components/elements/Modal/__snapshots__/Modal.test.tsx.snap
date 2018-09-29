@@ -119,7 +119,7 @@ exports[`Modal accept style prop 1`] = `
 .emotion-4 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -293,7 +293,7 @@ exports[`Modal render different sizes 1`] = `
 .emotion-4 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -371,7 +371,7 @@ exports[`Modal render different sizes 2`] = `
 .emotion-4 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -639,7 +639,7 @@ exports[`Modal render different sizes 3`] = `
 .emotion-4 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -725,7 +725,7 @@ exports[`Modal should render closed 1`] = `
 .emotion-6 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -815,8 +815,8 @@ exports[`Modal should render closed 1`] = `
 .emotion-5 {
   background-color: #f2f2f7;
   padding: 1rem;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .emotion-4 {
@@ -969,7 +969,7 @@ exports[`Modal should render open 1`] = `
 .emotion-6 {
   border: 1px solid #e6e6e6;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 2px;
+  border-radius: 4px;
   background-color: #ffffff;
   position: relative;
   min-width: 520px;
@@ -1059,8 +1059,8 @@ exports[`Modal should render open 1`] = `
 .emotion-5 {
   background-color: #f2f2f7;
   padding: 1rem;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .emotion-4 {

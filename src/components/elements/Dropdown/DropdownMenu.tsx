@@ -21,7 +21,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 padding: 0,
                 boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
                 border: '1px solid ' + theme.pallete.divider,
-                borderRadius: 3,
+                borderRadius: theme.radius.popper,
                 display: 'inline-block',
                 width: 'auto',
                 minWidth: '150px',
@@ -60,6 +60,14 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
                 'div': {
                     display: 'block', // override inline-block defined by tooltip wrapper
                 },
+                '&:first-child a': {
+                    borderTopLeftRadius: theme.radius.popper,
+                    borderTopRightRadius: theme.radius.popper,
+                },
+                '&:last-child a': {
+                    borderBottomLeftRadius: theme.radius.popper,
+                    borderBottomRightRadius: theme.radius.popper,
+                },
             },
             link: {
                 display: 'block',
@@ -80,6 +88,10 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
             },
             danger: {
                 color: theme.pallete.status.danger.main,
+                '&:hover': {
+                    color: theme.pallete.surface.main,
+                    background: theme.pallete.status.danger.main,
+                },
             },
         }
         const classes = css(styles.link,

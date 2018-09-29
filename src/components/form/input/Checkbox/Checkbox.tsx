@@ -28,7 +28,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
         const checkClasses = css({
             backgroundColor: theme.pallete.surface.main,
             border: '1px solid ' + theme.pallete.gray.c70,
-            borderRadius: theme.radius.main,
+            borderRadius: theme.radius.input,
             display: 'inline-block',
             height: 16,
             position: 'relative',
@@ -77,11 +77,11 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 },
             },
             [`&:indeterminate + .${checkClasses}`]: {
-                backgroundColor: theme.pallete.primary.main,
+                backgroundColor: theme.pallete.surface.main,
                 borderColor: theme.pallete.primary.main,
                 ':after': {
                     content: '""',
-                    borderBottom: '2px solid ' + theme.pallete.surface.main,
+                    borderBottom: '2px solid ' + theme.pallete.primary.main,
                     position: 'absolute',
                     top: -1,
                     left: 3,

@@ -22,7 +22,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
             wrapper: {
                 border: `1px solid ${theme.pallete.divider}`,
                 boxShadow: theme.shadows.outer['160'],
-                borderRadius: theme.radius.main,
+                borderRadius: theme.radius.modal,
                 backgroundColor: theme.pallete.surface.main,
                 position: 'relative',
                 minWidth: 520,

@@ -11,7 +11,8 @@
       "dom"
     ],
     "types": [
-      "webpack-env"
+      "webpack-env",
+      "jest"
     ],
     "outDir": "lib",
     "suppressImplicitAnyIndexErrors": true,

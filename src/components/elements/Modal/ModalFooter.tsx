@@ -14,8 +14,8 @@ export class ModalFooter extends React.PureComponent<ModalFooterProps> {
             footer: {
                 backgroundColor: theme.pallete.surface.background,
                 padding: '1rem',
-                borderBottomLeftRadius: theme.radius.main,
-                borderBottomRightRadius: theme.radius.main,
+                borderBottomLeftRadius: theme.radius.modal,
+                borderBottomRightRadius: theme.radius.modal,
             },
         }
         return (

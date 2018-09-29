@@ -18,7 +18,7 @@ export class Paper extends React.Component<PaperProps> {
         const styles: Styles = {
             paper: {
                 border: '1px solid ' + theme.pallete.gray.c80,
-                borderRadius: theme.radius.button,
+                borderRadius: theme.radius.paper,
             },
         }
         return (

@@ -4,6 +4,7 @@ exports[`should accept the style prop 1`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #f2f2f7;
   color: green;
 }
@@ -19,6 +20,7 @@ exports[`should render correctly 1`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #f2f2f7;
 }
 
@@ -33,6 +35,7 @@ exports[`should render correctly 2`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #d43900;
   color: #FFFFFF;
 }
@@ -48,6 +51,7 @@ exports[`should render correctly 3`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #E0001A;
   color: #FFFFFF;
 }
@@ -63,6 +67,7 @@ exports[`should render correctly 4`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #0066f5;
   color: #FFFFFF;
 }
@@ -78,6 +83,7 @@ exports[`should render correctly 5`] = `
 .emotion-0 {
   padding: 0.25rem;
   font-weight: bold;
+  border-radius: 4px;
   background: #00821a;
   color: #FFFFFF;
 }

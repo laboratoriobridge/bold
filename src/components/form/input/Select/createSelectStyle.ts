@@ -10,7 +10,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
             (state.isDisabled && theme.pallete.gray.c80) ||
             (hasError && theme.pallete.status.danger.main) ||
             theme.pallete.gray.c70,
-        borderRadius: theme.radius.main,
+        borderRadius: theme.radius.input,
         boxShadow: state.isFocused && (hasError ? focusBoxShadow(theme, 'danger') : focusBoxShadow(theme)),
         cursor: 'text',
         transition: 'all .2s',
@@ -61,7 +61,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
     menu: (base) => ({
         ...base,
         margin: 0,
-        borderRadius: theme.radius.main,
+        borderRadius: theme.radius.input,
     }),
     menuList: (base) => ({
         ...base,
