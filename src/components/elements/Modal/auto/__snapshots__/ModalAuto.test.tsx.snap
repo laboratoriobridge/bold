@@ -116,7 +116,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-7 {

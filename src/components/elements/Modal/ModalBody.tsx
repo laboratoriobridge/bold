@@ -12,7 +12,7 @@ export class ModalBody extends React.PureComponent<ModalBodyProps> {
         const { css } = this.props
         const styles = {
             body: {
-                padding: '3rem',
+                padding: '2.5rem',
             },
         }
         return (

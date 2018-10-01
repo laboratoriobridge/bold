@@ -116,7 +116,7 @@ exports[`ModalControlled should render correcly 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-5 {
@@ -360,7 +360,7 @@ exports[`ModalControlled should render correcly 2`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-5 {

@@ -95,7 +95,7 @@ exports[`Modal accept style prop 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-6 {
@@ -269,7 +269,7 @@ exports[`Modal render different sizes 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-6 {
@@ -455,7 +455,7 @@ exports[`Modal render different sizes 2`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-6 {
@@ -615,7 +615,7 @@ exports[`Modal render different sizes 3`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-6 {
@@ -809,7 +809,7 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-5 {
@@ -1053,7 +1053,7 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-3 {
-  padding: 3rem;
+  padding: 2.5rem;
 }
 
 .emotion-5 {
