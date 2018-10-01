@@ -3,8 +3,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
-import { withStore } from '../../../../stories-addons/withStore'
+import { withPropTypes, withRouter, withTheme } from '../../../../stories-addons'
 import { Flow } from '../../../layout/Flow/Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
 import { RadioField } from '../../field/RadioField/RadioField'
@@ -17,7 +16,7 @@ storiesOf('Form', module)
     .addDecorator(withPropTypes())
     .addDecorator(withKnobs)
     .addDecorator(withTheme())
-    .addDecorator(withStore())
+    .addDecorator(withRouter())
     .add('Form example', () => {
         const validate = form => {
             const errors: any = {}
