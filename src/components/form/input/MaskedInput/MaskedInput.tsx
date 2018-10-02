@@ -1,33 +1,15 @@
 import * as React from 'react'
-import ReactTextMask from 'react-text-mask'
+import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-text-mask'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
+import { Omit } from '../../../../util/types'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 import { createStyles, InputStatus } from '../TextInput/TextInput'
 
-// types from: https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md
-export type MaskArray = Array<string | RegExp>
-export type MaskFunction = (rawValue: string) => MaskArray
-export type MaskType = MaskArray | MaskFunction
-export interface ConformedResult {
-    conformedValue: string
-    meta: any
-}
+export type MaskType = ReactMaskedInputProps['mask']
 
-export interface MaskedTextConfig {
-    mask: MaskType
-    guide?: boolean
-    placeholderChar?: string
-    keepCharPositions?: boolean
-    showMask?: boolean
-    pipe?(conformedValue: string, config: MaskedTextConfig): false | string | object
-    conformToMask?(text: string, mask: MaskArray, config?: MaskedTextConfig): ConformedResult
-}
-
-export interface MaskedInputProps extends MaskedTextConfig, WithStylesProps {
+export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'css'>, WithStylesProps {
     status?: InputStatus
-    placeholder?: string
-    disabled?: boolean
     icon?: InputIconDecoratorProps
 }
 

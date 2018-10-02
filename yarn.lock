@@ -1246,6 +1246,13 @@
     "@types/react-dom" "*"
     "@types/react-transition-group" "*"
 
+"@types/react-text-mask@5.4.2":
+  version "5.4.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-text-mask/-/react-text-mask-5.4.2.tgz#90fe616fb223da6360a72c52527351c5ba59c171"
+  integrity sha512-R4h07wAeOPh6xc6E9qYPMgYpeuUJ1w3rs3oWwp9oWIVPtnAGxPGDuCPEs2+ynlP5syeM7heZeZeM8saAHRgENA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@*":
   version "2.0.14"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-transition-group/-/react-transition-group-2.0.14.tgz#afd0cd785a97f070b55765e9f9d76ff568269001"
