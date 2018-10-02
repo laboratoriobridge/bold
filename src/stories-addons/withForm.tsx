@@ -1,5 +1,6 @@
 import { Renderable, RenderFunction } from '@storybook/react'
 import * as React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 import { Form } from '../components/form/finalForm/Form'
 
@@ -7,13 +8,13 @@ import { Form } from '../components/form/finalForm/Form'
 
 export const withForm = (store?) =>
     (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
-        return () => {
-            const submit = () => undefined
-            return (
+        const submit = () => undefined
+        return (
+            <BrowserRouter>
                 <Form
                     onSubmit={submit}
                     render={() => story()}
                 />
-            )
-        }
+            </BrowserRouter>
+        )
     }
