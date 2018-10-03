@@ -153,21 +153,25 @@ exports[`DropdownButton should render correctly 1`] = `
             viewBox="0 0 24 24"
             width="1em"
           >
-            <circle
-              cx="12"
-              cy="6"
-              r="2"
-            />
-            <circle
-              cx="12"
-              cy="12"
-              r="2"
-            />
-            <circle
-              cx="12"
-              cy="18"
-              r="2"
-            />
+            <g
+              data-name="dots"
+            >
+              <circle
+                cx="12"
+                cy="6"
+                r="2"
+              />
+              <circle
+                cx="12"
+                cy="12"
+                r="2"
+              />
+              <circle
+                cx="12"
+                cy="18"
+                r="2"
+              />
+            </g>
           </svg>
         </span>
       </span>
