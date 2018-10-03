@@ -1,10 +1,12 @@
 import * as React from 'react'
 import ReactSelect, { createFilter } from 'react-select'
 import { DropdownIndicator } from 'react-select/lib/components/indicators'
+import { MultiValueRemove } from 'react-select/lib/components/MultiValue'
 import Option, { OptionProps } from 'react-select/lib/components/Option'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
+import { Times } from '../../../elements/Icon/generated/Times'
 import { TriangleDown } from '../../../elements/Icon/generated/TriangleDown'
 
 import { createSelectStyles } from './createSelectStyle'
@@ -53,6 +55,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
                 components={{
                     Option: SelectOption,
                     DropdownIndicator: SelectDropdownIndicator,
+                    MultiValueRemove: SelectMultiValueRemove,
                 }}
                 {...rest}
             />
@@ -74,5 +77,13 @@ export const SelectDropdownIndicator = (props: any) => {
         <DropdownIndicator {...props}>
             <TriangleDown width={20} height={20} />
         </DropdownIndicator>
+    )
+}
+
+export const SelectMultiValueRemove = (props: any) => {
+    return (
+        <MultiValueRemove {...props}>
+            <Times width={22} height={22} style={{ fill: 'currentColor' }} />
+        </MultiValueRemove>
     )
 }
