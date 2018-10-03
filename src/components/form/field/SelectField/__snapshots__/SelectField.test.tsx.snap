@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render should render correctly 1`] = `
-.emotion-10 {
+.emotion-9 {
   position: relative;
   box-sizing: border-box;
 }
 
-.emotion-9 {
+.emotion-8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -37,7 +37,7 @@ exports[`render should render correctly 1`] = `
   background: #ffffff;
 }
 
-.emotion-9:hover {
+.emotion-8:hover {
   border-color: #999999;
 }
 
@@ -87,7 +87,7 @@ exports[`render should render correctly 1`] = `
   box-sizing: border-box;
 }
 
-.emotion-8 {
+.emotion-7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -146,7 +146,7 @@ exports[`render should render correctly 1`] = `
   display: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   color: #4d4d4d;
   display: -webkit-box;
   display: -webkit-flex;
@@ -160,11 +160,11 @@ exports[`render should render correctly 1`] = `
   background: #f2f2f7;
 }
 
-.emotion-7:hover {
+.emotion-6:hover {
   color: hsl(0,0%,60%);
 }
 
-.emotion-7:hover {
+.emotion-6:hover {
   color: #4d4d4d;
 }
 
@@ -172,10 +172,10 @@ exports[`render should render correctly 1`] = `
   data-name="select1"
 >
   <div
-    class="emotion-10"
+    class="emotion-9"
   >
     <div
-      class="emotion-9 react-select__control"
+      class="emotion-8 react-select__control"
     >
       <div
         class="emotion-2 react-select__value-container react-select__value-container--has-value"
@@ -211,7 +211,7 @@ exports[`render should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-8 react-select__indicators"
+        class="emotion-7 react-select__indicators"
       >
         <div
           aria-hidden="true"
@@ -235,18 +235,15 @@ exports[`render should render correctly 1`] = `
         />
         <div
           aria-hidden="true"
-          class="emotion-7 react-select__indicator react-select__dropdown-indicator"
+          class="emotion-6 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
-            aria-hidden="true"
-            class="emotion-3"
-            focusable="false"
             height="20"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
             width="20"
           >
             <path
-              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              d="M12 17.21l6-7.22H6l6 7.22z"
             />
           </svg>
         </div>
@@ -262,12 +259,12 @@ exports[`render should render correctly 1`] = `
 `;
 
 exports[`render should render correctly when multivalue 1`] = `
-.emotion-17 {
+.emotion-16 {
   position: relative;
   box-sizing: border-box;
 }
 
-.emotion-16 {
+.emotion-15 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -298,7 +295,7 @@ exports[`render should render correctly when multivalue 1`] = `
   background: #ffffff;
 }
 
-.emotion-16:hover {
+.emotion-15:hover {
   border-color: #999999;
 }
 
@@ -332,7 +329,7 @@ exports[`render should render correctly when multivalue 1`] = `
   box-sizing: border-box;
 }
 
-.emotion-15 {
+.emotion-14 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -391,7 +388,7 @@ exports[`render should render correctly when multivalue 1`] = `
   display: none;
 }
 
-.emotion-14 {
+.emotion-13 {
   color: #4d4d4d;
   display: -webkit-box;
   display: -webkit-flex;
@@ -405,11 +402,11 @@ exports[`render should render correctly when multivalue 1`] = `
   background: #f2f2f7;
 }
 
-.emotion-14:hover {
+.emotion-13:hover {
   color: hsl(0,0%,60%);
 }
 
-.emotion-14:hover {
+.emotion-13:hover {
   color: #4d4d4d;
 }
 
@@ -470,10 +467,10 @@ exports[`render should render correctly when multivalue 1`] = `
   data-name="select1"
 >
   <div
-    class="emotion-17"
+    class="emotion-16"
   >
     <div
-      class="emotion-16 react-select__control"
+      class="emotion-15 react-select__control"
     >
       <div
         class="emotion-9 react-select__value-container react-select__value-container--is-multi react-select__value-container--has-value"
@@ -554,7 +551,7 @@ exports[`render should render correctly when multivalue 1`] = `
         </div>
       </div>
       <div
-        class="emotion-15 react-select__indicators"
+        class="emotion-14 react-select__indicators"
       >
         <div
           aria-hidden="true"
@@ -578,18 +575,15 @@ exports[`render should render correctly when multivalue 1`] = `
         />
         <div
           aria-hidden="true"
-          class="emotion-14 react-select__indicator react-select__dropdown-indicator"
+          class="emotion-13 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
-            aria-hidden="true"
-            class="emotion-1"
-            focusable="false"
             height="20"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
             width="20"
           >
             <path
-              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              d="M12 17.21l6-7.22H6l6 7.22z"
             />
           </svg>
         </div>

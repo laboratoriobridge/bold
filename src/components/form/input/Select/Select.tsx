@@ -1,9 +1,11 @@
 import * as React from 'react'
 import ReactSelect, { createFilter } from 'react-select'
+import { DropdownIndicator } from 'react-select/lib/components/indicators'
 import Option, { OptionProps } from 'react-select/lib/components/Option'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
+import { TriangleDown } from '../../../elements/Icon/generated/TriangleDown'
 
 import { createSelectStyles } from './createSelectStyle'
 
@@ -48,7 +50,10 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
                 styles={styles}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
-                components={{ Option: SelectOption }}
+                components={{
+                    Option: SelectOption,
+                    DropdownIndicator: SelectDropdownIndicator,
+                }}
                 {...rest}
             />
         )
@@ -62,4 +67,12 @@ export class SelectOption<OptionType = any> extends React.Component<SelectOption
     render() {
         return <Option {...this.props} />
     }
+}
+
+export const SelectDropdownIndicator = (props: any) => {
+    return (
+        <DropdownIndicator {...props}>
+            <TriangleDown width={20} height={20} />
+        </DropdownIndicator>
+    )
 }
