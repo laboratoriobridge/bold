@@ -1,21 +1,11 @@
-export type Color = string
+import { Color } from 'csstype'
+
+import { ColorScale } from '../colors'
 
 export interface StatusColorMap {
     main: Color
     background: Color
     onColor: Color
-}
-
-export interface ColorScale {
-    c10: Color
-    c20: Color
-    c30: Color
-    c40: Color
-    c50: Color
-    c60: Color
-    c70: Color
-    c80: Color
-    c90: Color
 }
 
 export interface Pallete {
@@ -35,6 +25,7 @@ export interface Pallete {
 }
 
 export const gray: ColorScale = {
+    c100: '#ffffff',
     c90: '#e6e6e6',
     c80: '#cccccc',
     c70: '#b3b3b3',
