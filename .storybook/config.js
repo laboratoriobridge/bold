@@ -1,6 +1,8 @@
 import { setDefaults } from '@storybook/addon-info'
 import { setOptions } from '@storybook/addon-options'
-import { configure } from '@storybook/react'
+import { addDecorator, configure } from '@storybook/react'
+
+import { withTheme } from '../src/stories-addons'
 
 setOptions({
   name: 'Bridge React',
@@ -25,6 +27,8 @@ setDefaults({
     },
   },
 })
+
+addDecorator(withTheme())
 
 const req = require.context('../src', true, /.stories.tsx?$/)
 
