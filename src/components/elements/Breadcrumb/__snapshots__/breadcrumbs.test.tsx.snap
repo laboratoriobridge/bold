@@ -20,7 +20,7 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
 }
 
 .emotion-0 {
-  color: #41484F;
+  color: #2D343B;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: bold;

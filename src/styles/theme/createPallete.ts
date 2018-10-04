@@ -26,7 +26,7 @@ export interface Pallete {
 export const createPallete = (): Pallete => {
     return {
         text: {
-            main: gray.c30,
+            main: gray.c20,
             secondary: gray.c40,
             disabled: gray.c70,
         },

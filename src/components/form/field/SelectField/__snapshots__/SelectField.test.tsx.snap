@@ -63,7 +63,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0 {
-  color: #41484F;
+  color: #2D343B;
   margin-left: 2px;
   margin-right: 2px;
   max-width: calc(100% - 8px);
@@ -147,7 +147,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-7 {
-  color: #41484F;
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -165,7 +165,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-7:hover {
-  color: #41484F;
+  color: #2D343B;
 }
 
 <div
@@ -392,7 +392,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-14 {
-  color: #41484F;
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -410,7 +410,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-14:hover {
-  color: #41484F;
+  color: #2D343B;
 }
 
 .emotion-3 {
@@ -428,7 +428,7 @@ exports[`render should render correctly when multivalue 1`] = `
 
 .emotion-0 {
   border-radius: 2px;
-  color: #41484F;
+  color: #2D343B;
   font-size: 0.75rem;
   overflow: hidden;
   padding: 1px 0.5rem;

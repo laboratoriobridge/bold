@@ -96,7 +96,7 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #41484F;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -299,7 +299,7 @@ exports[`deve renderizar corretamente 2`] = `
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #41484F;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -568,7 +568,7 @@ exports[`deve renderizar corretamente 3`] = `
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #41484F;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;

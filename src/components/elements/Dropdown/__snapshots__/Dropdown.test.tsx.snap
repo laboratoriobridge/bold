@@ -7,7 +7,7 @@ exports[`should accept Popper props 1`] = `
 
 .emotion-5 {
   font-weight: bold;
-  color: #41484F;
+  color: #2D343B;
   white-space: nowrap;
   list-style: none;
   margin: 0;
@@ -116,7 +116,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-5 {
   font-weight: bold;
-  color: #41484F;
+  color: #2D343B;
   white-space: nowrap;
   list-style: none;
   margin: 0;
