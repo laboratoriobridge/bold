@@ -31,7 +31,7 @@ export class SortableLabel extends React.Component<SortableLabelProps> {
                 {this.props.children}
                 <Icon
                     style={{ marginLeft: '0.25rem' }}
-                    color={icon === 'sort' ? 'gray80' : 'primary'}
+                    color={icon === 'sort' ? 'disabled' : 'primary'}
                     size={1}
                     icon={icon}
                 />

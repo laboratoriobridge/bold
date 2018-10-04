@@ -65,8 +65,7 @@ export const createPallete = (): Pallete => {
     }
 }
 
-export type TextColor = 'normal' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
-    | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10'
+export type TextColor = 'normal' | 'secondary' | 'disabled' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
 
 export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } = {
     'normal': (pallete) => pallete.text.main,
@@ -75,13 +74,6 @@ export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } =
     'success': (pallete) => pallete.status.success.main,
     'info': (pallete) => pallete.status.info.main,
     'alert': (pallete) => pallete.status.alert.main,
-    'gray90': (pallete) => pallete.gray.c90,
-    'gray80': (pallete) => pallete.gray.c80,
-    'gray70': (pallete) => pallete.gray.c70,
-    'gray60': (pallete) => pallete.gray.c60,
-    'gray50': (pallete) => pallete.gray.c50,
-    'gray40': (pallete) => pallete.gray.c40,
-    'gray30': (pallete) => pallete.gray.c30,
-    'gray20': (pallete) => pallete.gray.c20,
-    'gray10': (pallete) => pallete.gray.c10,
+    'secondary': (pallete) => pallete.text.secondary,
+    'disabled': (pallete) => pallete.text.disabled,
 }

@@ -88,8 +88,8 @@ export class FileUploader extends React.Component<FileUploaderProps> {
                 >
                     <div className='accept-dashed-border'>
                         <HFlow alignItems='center' hSpacing={0.5}>
-                            <Icon color='gray40' icon='upload' />
-                            <Text color='gray40' size={0.875} weight='bold'>{this.props.text}</Text>
+                            <Icon color='secondary' icon='upload' />
+                            <Text color='secondary' size={0.875} weight='bold'>{this.props.text}</Text>
                         </HFlow>
                     </div>
                 </DropzoneCmp>
@@ -161,7 +161,7 @@ class FileInfo extends React.PureComponent<FileInfoProps> {
                 {!this.props.file.error && !this.props.file.uploading &&
                     <Icon icon='check' color='primary' size={1} style={{ marginRight: 5 }} />
                 }
-                <Text color='gray30' size={0.75} weight='bold' style={{ marginRight: 10 }}>
+                <Text size={0.75} weight='bold' style={{ marginRight: 10 }}>
                     {this.props.file.selectedFile.name}
                 </Text>
                 <Text size={0.75}>{format(this.props.file.selectedFile.size, 0)}</Text>
@@ -186,7 +186,7 @@ class FileExtension extends React.PureComponent<FileExtensionProps> {
         }
 
         return (
-            <Text color='gray40' style={styles} weight='bold'>{this.props.extension}</Text>
+            <Text color='secondary' style={styles} weight='bold'>{this.props.extension}</Text>
         )
     }
 

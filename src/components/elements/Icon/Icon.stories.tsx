@@ -11,20 +11,13 @@ import { Icon } from './Icon'
 
 const colors: { [key in TextColor] } = {
     'normal': 'normal',
+    'secondary': 'secondary',
+    'disabled': 'disabled',
     'primary': 'primary',
     'danger': 'danger',
     'info': 'info',
     'alert': 'alert',
     'success': 'success',
-    'gray90': 'gray90',
-    'gray80': 'gray80',
-    'gray70': 'gray70',
-    'gray60': 'gray60',
-    'gray50': 'gray50',
-    'gray40': 'gray40',
-    'gray30': 'gray30',
-    'gray20': 'gray20',
-    'gray10': 'gray10',
 }
 
 storiesOf('Components', module)
