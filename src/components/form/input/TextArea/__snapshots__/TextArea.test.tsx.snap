@@ -1,0 +1,374 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept style prop 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: green;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<textarea
+  class="emotion-0"
+  name="input"
+/>
+`;
+
+exports[`should render character counter 1`] = `
+Array [
+  .emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<textarea
+    class="emotion-0"
+    maxlength="200"
+    name="input"
+  >
+    Testing counter
+  </textarea>,
+  .emotion-0 {
+  text-align: right;
+}
+
+<div
+    class="emotion-0"
+  >
+    15/200 caracteres
+  </div>,
+]
+`;
+
+exports[`should render character counter 2`] = `
+Array [
+  .emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<textarea
+    class="emotion-0"
+    maxlength="200"
+    name="input"
+  />,
+  .emotion-0 {
+  text-align: right;
+}
+
+<div
+    class="emotion-0"
+  >
+    0/200 caracteres
+  </div>,
+]
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<textarea
+  class="emotion-0"
+  name="input"
+  placeholder="Test"
+>
+  Value
+</textarea>
+`;
+
+exports[`should render disabled 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<textarea
+  class="emotion-0"
+  disabled=""
+  name="input"
+/>
+`;
+
+exports[`should render with error status 1`] = `
+.emotion-0 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  border: solid 1px #E0001A;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-0:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0:not(:disabled):focus {
+  border: solid 1px #cccccc;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+}
+
+<textarea
+  class="emotion-0"
+  name="input"
+/>
+`;

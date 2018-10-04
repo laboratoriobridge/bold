@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-1 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.emotion-0 {
+  color: #E0001A;
+  margin-left: 0.25rem;
+}
+
+.emotion-2 {
+  background-color: #ffffff;
+  border: solid 1px #b3b3b3;
+  border-radius: 2px;
+  color: #4d4d4d;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-2::placeholder {
+  color: #b3b3b3;
+}
+
+.emotion-2:disabled {
+  border-color: #cccccc;
+  background-color: #f2f2f7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #999999;
+}
+
+.emotion-2:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #056DFF;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-3 {
+  text-align: right;
+}
+
+<div
+  data-name="textarea"
+>
+  <label
+    class="emotion-1"
+    for="textarea"
+  >
+    Label
+    <span
+      aria-label="Campo obrigatório"
+      class="emotion-0"
+    >
+      *
+    </span>
+  </label>
+  <textarea
+    class="emotion-2"
+    label="Label"
+    maxlength="100"
+    name="textarea"
+    required=""
+  >
+    Value
+  </textarea>
+  <div
+    class="emotion-3"
+  >
+    5/100 caracteres
+  </div>
+</div>
+`;
