@@ -16,14 +16,14 @@ exports[`should accept color prop 1`] = `
 }
 
 .emotion-0::-webkit-progress-value {
-  background-color: #E0001A;
+  background-color: #D83A2E;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-0::-moz-progress-bar {
-  background-color: #E0001A;
+  background-color: #D83A2E;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;

@@ -36,7 +36,7 @@ exports[`should render correctly 2`] = `
   padding: 0.25rem;
   font-weight: bold;
   border-radius: 4px;
-  background: #d43900;
+  background: #BF4600;
   color: #FFFFFF;
 }
 
@@ -52,7 +52,7 @@ exports[`should render correctly 3`] = `
   padding: 0.25rem;
   font-weight: bold;
   border-radius: 4px;
-  background: #E0001A;
+  background: #D83A2E;
   color: #FFFFFF;
 }
 
@@ -68,7 +68,7 @@ exports[`should render correctly 4`] = `
   padding: 0.25rem;
   font-weight: bold;
   border-radius: 4px;
-  background: #0066f5;
+  background: #0A67D1;
   color: #FFFFFF;
 }
 
@@ -84,7 +84,7 @@ exports[`should render correctly 5`] = `
   padding: 0.25rem;
   font-weight: bold;
   border-radius: 4px;
-  background: #00821a;
+  background: #097D05;
   color: #FFFFFF;
 }
 

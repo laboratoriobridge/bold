@@ -39,9 +39,9 @@ exports[`Alert should allow styles override 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
   color: red;
 }
 
@@ -111,9 +111,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-7 {
@@ -246,9 +246,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-26 {
@@ -270,9 +270,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-35 {
@@ -294,9 +294,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>
@@ -568,9 +568,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0 {
@@ -597,9 +597,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-14 {
@@ -621,9 +621,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-19 {
@@ -645,9 +645,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>

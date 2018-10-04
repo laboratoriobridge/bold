@@ -576,7 +576,7 @@ exports[`render should render correctly when multivalue 1`] = `
 
 .emotion-2:hover {
   background: #F2F2F7;
-  color: #E0001A;
+  color: #D83A2E;
 }
 
 <div

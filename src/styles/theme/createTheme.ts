@@ -1,8 +1,9 @@
+import { Color } from 'csstype'
 import { keyframes } from 'emotion'
 
 import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createGlobals, Global } from './createGlobals'
-import { Color, createPallete, Pallete, TextColor, textColorMap } from './createPallete'
+import { createPallete, Pallete, TextColor, textColorMap } from './createPallete'
 import { createShadows, Shadows } from './createShadows'
 import { createTypography, Typography } from './createTypography'
 import { radius, Radius } from './radius'

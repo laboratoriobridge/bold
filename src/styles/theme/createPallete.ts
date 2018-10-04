@@ -1,6 +1,6 @@
 import { Color } from 'csstype'
 
-import { ColorScale, gray } from '../colors'
+import { blue, ColorScale, gray, green, orange, red } from '../colors'
 
 export interface StatusColorMap {
     main: Color
@@ -44,24 +44,24 @@ export const createPallete = (): Pallete => {
         },
         status: {
             danger: {
-                main: '#E0001A',
-                background: '#FAF0F2',
-                onColor: '#FFFFFF',
+                main: red.c40,
+                background: red.c90,
+                onColor: red.c100,
             },
             success: {
-                main: '#00821a',
-                background: '#f0faf2',
-                onColor: '#FFFFFF',
+                main: green.c40,
+                background: green.c90,
+                onColor: green.c100,
             },
             info: {
-                main: '#0066f5',
-                background: '#f1f7ff',
-                onColor: '#FFFFFF',
+                main: blue.c40,
+                background: blue.c90,
+                onColor: blue.c100,
             },
             alert: {
-                main: '#d43900',
-                background: '#fff9f4',
-                onColor: '#FFFFFF',
+                main: orange.c40,
+                background: orange.c90,
+                onColor: orange.c100,
             },
         },
         highlight: '#FFED94',

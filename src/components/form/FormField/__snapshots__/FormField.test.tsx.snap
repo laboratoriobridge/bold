@@ -14,7 +14,7 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-0 {
-  color: #E0001A;
+  color: #D83A2E;
   margin-left: 0.25rem;
 }
 
@@ -27,7 +27,7 @@ exports[`should render correctly 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #E0001A;
+  color: #D83A2E;
   margin-top: 0.25rem;
 }
 
