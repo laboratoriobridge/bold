@@ -1,4 +1,5 @@
 import { Color } from 'csstype'
+import { merge } from 'lodash'
 
 import { blue, ColorScale, gray, green, orange, red } from '../colors'
 
@@ -23,45 +24,65 @@ export interface Pallete {
     gray: ColorScale
 }
 
-export const createPallete = (): Pallete => {
+export interface PalleteConfig {
+    grayScale?: ColorScale
+    primaryScale?: ColorScale
+    successScale?: ColorScale
+    dangerScale?: ColorScale
+    alertScale?: ColorScale
+    infoScale?: ColorScale
+}
+
+export const defaultConfig: PalleteConfig = {
+    grayScale: gray,
+    primaryScale: blue,
+    successScale: green,
+    dangerScale: red,
+    alertScale: orange,
+    infoScale: blue,
+}
+
+export const createPallete = (userConfig?: PalleteConfig): Pallete => {
+    const config = merge({}, defaultConfig, userConfig)
+
     return {
-        text: {
-            main: gray.c20,
-            secondary: gray.c40,
-            disabled: gray.c70,
-        },
-        divider: gray.c90,
-        surface: {
-            main: gray.c100,
-            background: gray.c90,
-        },
+        gray: config.grayScale,
+        divider: config.grayScale.c90,
         primary: {
-            main: blue.c40,
+            main: config.primaryScale.c40,
+        },
+        text: {
+            main: config.grayScale.c20,
+            secondary: config.grayScale.c40,
+            disabled: config.grayScale.c70,
+        },
+        surface: {
+            main: config.grayScale.c100,
+            background: config.grayScale.c90,
         },
         status: {
             danger: {
-                main: red.c40,
-                background: red.c90,
-                onColor: red.c100,
+                main: config.dangerScale.c40,
+                background: config.dangerScale.c90,
+                onColor: config.dangerScale.c100,
             },
             success: {
-                main: green.c40,
-                background: green.c90,
-                onColor: green.c100,
+                main: config.successScale.c40,
+                background: config.successScale.c90,
+                onColor: config.successScale.c100,
             },
             info: {
-                main: blue.c40,
-                background: blue.c90,
-                onColor: blue.c100,
+                main: config.infoScale.c40,
+                background: config.infoScale.c90,
+                onColor: config.infoScale.c100,
             },
             alert: {
-                main: orange.c40,
-                background: orange.c90,
-                onColor: orange.c100,
+                main: config.alertScale.c40,
+                background: config.alertScale.c90,
+                onColor: config.alertScale.c100,
             },
         },
         highlight: '#FFED94',
-        gray,
     }
 }
 
