@@ -10,10 +10,10 @@ exports[`deve conter a classe css "disabled" 1`] = `
 }
 
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #41484F;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -24,33 +24,33 @@ exports[`deve conter a classe css "disabled" 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):active {
@@ -68,7 +68,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
 
 .emotion-4 {
   position: absolute;
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -111,7 +111,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -144,7 +144,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
 }
 
 .emotion-3:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-3:focus {
@@ -230,10 +230,10 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #41484F;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -244,33 +244,33 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):active {
@@ -288,7 +288,7 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-4 {
   position: absolute;
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -331,7 +331,7 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -364,7 +364,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-3:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-3:focus {

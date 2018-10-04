@@ -7,17 +7,17 @@ exports[`should render correctly 1`] = `
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-27 tr:hover td {
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
 .emotion-3 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
 .emotion-2 {
@@ -46,7 +46,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-8 {
-  fill: #cccccc;
+  fill: #DCDCE0;
   font-size: 1rem;
 }
 
@@ -54,14 +54,14 @@ exports[`should render correctly 1`] = `
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
 .emotion-16 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
   text-align: right;
 }
 

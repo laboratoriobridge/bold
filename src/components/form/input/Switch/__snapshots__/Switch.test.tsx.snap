@@ -3,19 +3,19 @@
 exports[`should render correctly 1`] = `
 .emotion-2 {
   outline: 0;
-  background: #f2f2f7;
+  background: #F2F2F7;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .emotion-1 {
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 50%;
   display: inline-block;
   width: 1rem;
@@ -39,7 +39,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-3:hover .emotion-2 {
   cursor: pointer;
-  border-color: #666666;
+  border-color: #53595E;
 }
 
 .emotion-0 {
@@ -64,7 +64,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -92,19 +92,19 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly 2`] = `
 .emotion-2 {
   outline: 0;
-  background: #f2f2f7;
+  background: #F2F2F7;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .emotion-1 {
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 50%;
   display: inline-block;
   width: 1rem;
@@ -132,7 +132,7 @@ exports[`should render correctly 2`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #666666;
+  border-color: #53595E;
 }
 
 .emotion-0 {
@@ -157,7 +157,7 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -192,19 +192,19 @@ exports[`should render correctly 2`] = `
 exports[`should render correctly 3`] = `
 .emotion-2 {
   outline: 0;
-  background: #f2f2f7;
+  background: #F2F2F7;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
 
 .emotion-1 {
-  background: #ffffff;
+  background: #FFFFFF;
   border-radius: 50%;
   display: inline-block;
   width: 1rem;
@@ -232,7 +232,7 @@ exports[`should render correctly 3`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #666666;
+  border-color: #53595E;
 }
 
 .emotion-0 {
@@ -257,7 +257,7 @@ exports[`should render correctly 3`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:disabled + .emotion-2 {

@@ -41,7 +41,7 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -73,11 +73,11 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 .emotion-1 {
@@ -93,10 +93,10 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-3 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #41484F;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -109,33 +109,33 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-3::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-3:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-3:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-3:not(:disabled):active {
@@ -244,7 +244,7 @@ exports[`deve renderizar corretamente 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -276,11 +276,11 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-6:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-6:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 .emotion-1 {
@@ -296,10 +296,10 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-3 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #41484F;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -312,33 +312,33 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-3::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-3:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-3:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-3:not(:disabled):active {
@@ -369,7 +369,7 @@ exports[`deve renderizar corretamente 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
@@ -404,11 +404,11 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 <div
@@ -513,7 +513,7 @@ exports[`deve renderizar corretamente 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -545,11 +545,11 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-6:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-6:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 .emotion-1 {
@@ -565,10 +565,10 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-3 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #41484F;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -581,33 +581,33 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-3::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-3:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-3:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-3:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-3:not(:disabled):active {
@@ -638,7 +638,7 @@ exports[`deve renderizar corretamente 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
@@ -673,11 +673,11 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 <div

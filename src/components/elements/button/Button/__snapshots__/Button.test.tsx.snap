@@ -21,10 +21,10 @@ exports[`Button should accept the loading prop 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
@@ -53,7 +53,7 @@ exports[`Button should accept the loading prop 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -113,10 +113,10 @@ exports[`Button should render correctly with icon only 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -144,7 +144,7 @@ exports[`Button should render correctly with icon only 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-2:not(:disabled):hover {
@@ -208,10 +208,10 @@ exports[`Button should render correctly with label 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -239,7 +239,7 @@ exports[`Button should render correctly with label 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -279,10 +279,10 @@ exports[`Button should render the default skin 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -310,7 +310,7 @@ exports[`Button should render the default skin 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -350,12 +350,12 @@ exports[`Button should render the default skin 2`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   background-color: #056DFF;
-  color: #ffffff;
+  color: #FFFFFF;
   border: 1px solid #056DFF;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -384,7 +384,7 @@ exports[`Button should render the default skin 2`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -428,10 +428,10 @@ exports[`Button should render the default skin 3`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   background-color: #E0001A;
   color: #FFFFFF;
   border: 1px solid #E0001A;
@@ -462,7 +462,7 @@ exports[`Button should render the default skin 3`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -474,7 +474,7 @@ exports[`Button should render the default skin 3`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #E0001A;
 }
 
 <button
@@ -513,7 +513,7 @@ exports[`Button should render the ghost skin 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -545,7 +545,7 @@ exports[`Button should render the ghost skin 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 <button
@@ -584,7 +584,7 @@ exports[`Button should render the ghost skin 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   color: #056DFF;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -617,7 +617,7 @@ exports[`Button should render the ghost skin 2`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 <button
@@ -656,7 +656,7 @@ exports[`Button should render the ghost skin 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   color: #E0001A;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -689,11 +689,11 @@ exports[`Button should render the ghost skin 3`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-0:focus {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #E0001A;
 }
 
 <button
@@ -730,9 +730,9 @@ exports[`Button should render the outline skin 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -760,11 +760,11 @@ exports[`Button should render the outline skin 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 <button
@@ -801,9 +801,9 @@ exports[`Button should render the outline skin 2`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   border: 1px solid #056DFF;
   color: #056DFF;
   font-size: 0.875rem;
@@ -833,11 +833,11 @@ exports[`Button should render the outline skin 2`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-0:not(:disabled):hover {
@@ -878,9 +878,9 @@ exports[`Button should render the outline skin 3`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   border: 1px solid #E0001A;
   color: #E0001A;
   font-size: 0.875rem;
@@ -910,11 +910,11 @@ exports[`Button should render the outline skin 3`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-0:not(:disabled):hover {
@@ -922,7 +922,7 @@ exports[`Button should render the outline skin 3`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #E0001A;
 }
 
 <button

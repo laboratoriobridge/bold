@@ -1,6 +1,6 @@
 import { Color } from 'csstype'
 
-import { ColorScale } from '../colors'
+import { ColorScale, gray } from '../colors'
 
 export interface StatusColorMap {
     main: Color
@@ -24,19 +24,6 @@ export interface Pallete {
     gray: ColorScale
 }
 
-export const gray: ColorScale = {
-    c100: '#ffffff',
-    c90: '#e6e6e6',
-    c80: '#cccccc',
-    c70: '#b3b3b3',
-    c60: '#999999',
-    c50: '#808080',
-    c40: '#666666',
-    c30: '#4d4d4d',
-    c20: '#333333',
-    c10: '#1a1a1a',
-}
-
 export const createPallete = (): Pallete => {
     return {
         text: {
@@ -49,8 +36,8 @@ export const createPallete = (): Pallete => {
         },
         divider: gray.c90,
         surface: {
-            main: '#ffffff',
-            background: '#f2f2f7',
+            main: gray.c100,
+            background: gray.c90,
         },
         primary: {
             main: '#056DFF',

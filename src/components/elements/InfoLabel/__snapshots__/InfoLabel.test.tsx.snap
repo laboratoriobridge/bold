@@ -11,7 +11,7 @@ exports[`deve aceitar a prop placeholder 1`] = `
 
 .emotion-1:empty::before {
   content: "Nenhum valor informado";
-  color: #666666;
+  color: #53595E;
   font-style: italic;
 }
 
@@ -40,7 +40,7 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-1:empty::before {
   content: "-";
-  color: #666666;
+  color: #53595E;
   font-style: italic;
 }
 
@@ -67,7 +67,7 @@ exports[`deve renderizar corretamente 2`] = `
 
 .emotion-1:empty::before {
   content: "-";
-  color: #666666;
+  color: #53595E;
   font-style: italic;
 }
 
@@ -107,7 +107,7 @@ exports[`deve renderizar corretamente 3`] = `
 
 .emotion-1:empty::before {
   content: "-";
-  color: #666666;
+  color: #53595E;
   font-style: italic;
 }
 

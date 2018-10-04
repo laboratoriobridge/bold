@@ -22,7 +22,7 @@ exports[`SortableLabel should render correctly 1`] = `
 }
 
 .emotion-0 {
-  fill: #cccccc;
+  fill: #DCDCE0;
   font-size: 1rem;
 }
 
