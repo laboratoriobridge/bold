@@ -36,7 +36,7 @@ export const createPallete = (): Pallete => {
             background: gray.c90,
         },
         primary: {
-            main: '#056DFF',
+            main: blue.c40,
         },
         status: {
             danger: {

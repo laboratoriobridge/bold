@@ -54,7 +54,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {

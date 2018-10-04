@@ -138,7 +138,7 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-8 {
-  fill: #056DFF;
+  fill: #0A67D1;
   font-size: 1rem;
 }
 
@@ -509,14 +509,14 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-11::-webkit-progress-value {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-11::-moz-progress-bar {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;

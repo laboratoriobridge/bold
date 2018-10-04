@@ -53,7 +53,7 @@ exports[`Button should accept the loading prop 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -144,7 +144,7 @@ exports[`Button should render correctly with icon only 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
@@ -239,7 +239,7 @@ exports[`Button should render correctly with label 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -310,7 +310,7 @@ exports[`Button should render the default skin 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -354,9 +354,9 @@ exports[`Button should render the default skin 2`] = `
   border: 1px solid #B9B9BD;
   border-radius: 4px;
   color: #53595E;
-  background-color: #056DFF;
+  background-color: #0A67D1;
   color: #FFFFFF;
-  border: 1px solid #056DFF;
+  border: 1px solid #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -384,7 +384,7 @@ exports[`Button should render the default skin 2`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -392,7 +392,7 @@ exports[`Button should render the default skin 2`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #0564eb;
+  background-color: #095fc0;
 }
 
 <button
@@ -462,7 +462,7 @@ exports[`Button should render the default skin 3`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -541,7 +541,7 @@ exports[`Button should render the ghost skin 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -585,7 +585,7 @@ exports[`Button should render the ghost skin 2`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #53595E;
-  color: #056DFF;
+  color: #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -613,7 +613,7 @@ exports[`Button should render the ghost skin 2`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -685,7 +685,7 @@ exports[`Button should render the ghost skin 3`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -760,7 +760,7 @@ exports[`Button should render the outline skin 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -804,8 +804,8 @@ exports[`Button should render the outline skin 2`] = `
   border: 1px solid #B9B9BD;
   border-radius: 4px;
   color: #53595E;
-  border: 1px solid #056DFF;
-  color: #056DFF;
+  border: 1px solid #0A67D1;
+  color: #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -833,7 +833,7 @@ exports[`Button should render the outline skin 2`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -841,7 +841,7 @@ exports[`Button should render the outline skin 2`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: rgba(5,109,255,0.16);
+  background-color: rgba(10,103,209,0.16);
 }
 
 <button
@@ -910,7 +910,7 @@ exports[`Button should render the outline skin 3`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {

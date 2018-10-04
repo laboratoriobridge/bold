@@ -49,12 +49,12 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #056DFF;
-  border-color: #056DFF;
+  background: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #056DFF;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -64,7 +64,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -142,12 +142,12 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #056DFF;
-  border-color: #056DFF;
+  background: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #056DFF;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -157,7 +157,7 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -242,12 +242,12 @@ exports[`should render correctly 3`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #056DFF;
-  border-color: #056DFF;
+  background: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #056DFF;
+  border-color: #0A67D1;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -257,7 +257,7 @@ exports[`should render correctly 3`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:disabled + .emotion-2 {

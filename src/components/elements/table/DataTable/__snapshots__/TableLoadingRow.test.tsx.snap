@@ -26,7 +26,7 @@ exports[`should render correctly 1`] = `
   height: 2.5rem;
   border-bottom: 1px solid #F2F2F7;
   background: #F2F2F7;
-  color: #056DFF;
+  color: #0A67D1;
   font-weight: bold;
 }
 
@@ -96,7 +96,7 @@ exports[`should render correctly 2`] = `
   height: 2.5rem;
   border-bottom: 1px solid #F2F2F7;
   background: #F2F2F7;
-  color: #056DFF;
+  color: #0A67D1;
   font-weight: bold;
 }
 

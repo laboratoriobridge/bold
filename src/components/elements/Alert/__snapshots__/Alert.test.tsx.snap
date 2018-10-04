@@ -213,7 +213,7 @@ exports[`Alert should render correctly 1`] = `
 
 .emotion-5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-5:not(:disabled):hover {

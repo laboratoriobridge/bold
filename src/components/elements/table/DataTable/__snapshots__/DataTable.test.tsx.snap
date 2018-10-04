@@ -41,7 +41,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0 {
-  fill: #056DFF;
+  fill: #0A67D1;
   font-size: 1rem;
 }
 

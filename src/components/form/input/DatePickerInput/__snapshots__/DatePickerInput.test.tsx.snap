@@ -50,11 +50,11 @@ exports[`deve conter a classe css "disabled" 1`] = `
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -140,7 +140,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
 
 .emotion-3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-3:not(:disabled):hover {
@@ -270,11 +270,11 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -360,7 +360,7 @@ exports[`deve renderizar corretamente 1`] = `
 
 .emotion-3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-3:not(:disabled):hover {
