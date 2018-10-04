@@ -1,8 +1,7 @@
-import { number, select, text, withKnobs } from '@storybook/addon-knobs'
+import { number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { TextColor } from '../../../../styles'
 
 import { FontStyle, Text, TextTag, Weight } from './Text'
@@ -36,9 +35,6 @@ const colors: { [key in TextColor] } = {
 }
 
 storiesOf('Textual', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('Text', () => (
         <Text
             size={number('size', 1)}

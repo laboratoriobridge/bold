@@ -1,21 +1,20 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
 import { withRouter } from '../../../stories-addons/withRouter'
 
 import { TabLink, Tabs } from './Tabs'
 
 storiesOf('Components/Tabs', module)
-    .addDecorator(withPropTypes(`
-    <p>
-        Active é obtido através da prop <code>active</code> ou caso ocorra um match entre a URL
-        atual e o link (Quarto item).
-    </p>
-    `))
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
+    // @ts-ignore
+    .addParameters({
+        info: {
+            text: `
+                Active é obtido através da prop <code>active</code> ou caso ocorra um match entre a URL
+                atual e o link (Quarto item).
+            `,
+        },
+    })
     .addDecorator(withRouter(['/test-4'], 1))
     .add('default', () => (
         <Tabs>

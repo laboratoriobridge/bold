@@ -1,14 +1,11 @@
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { Heading } from './Heading'
 
 storiesOf('Textual', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withTheme())
     .add('Heading', () => (
         <VFlow>
             <Heading level={1}>Heading level 1</Heading>

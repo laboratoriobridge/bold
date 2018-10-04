@@ -1,8 +1,7 @@
-import { number, select, withKnobs } from '@storybook/addon-knobs'
+import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
 import { Button } from '../../elements/button/Button/Button'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
 
@@ -33,9 +32,6 @@ const alignItemsOptions: { [key in AlignItems]: string } = {
 }
 
 storiesOf('Layout', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('Flow', () => (
         <>
             <Flow

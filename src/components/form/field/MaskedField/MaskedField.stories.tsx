@@ -1,11 +1,9 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withForm } from '../../../../stories-addons/withForm'
-import { withPropTypes } from '../../../../stories-addons/withPropTypes'
-import { withTheme } from '../../../../stories-addons/withTheme'
+import { withForm } from '../../../../stories-addons'
 import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { MaskedField } from './MaskedField'
@@ -13,9 +11,10 @@ import * as Doc from './MaskedField.md'
 import { CnsField, CpfField, TelefoneField, TimeField } from './maskedFields'
 
 storiesOf('Form/Fields', module)
-    .addDecorator(withPropTypes(Doc))
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
+    // @ts-ignore
+    .addParameters({
+        info: { text: Doc },
+    })
     .addDecorator(withForm())
     .add('MaskedField', () => (
         <VFlow>

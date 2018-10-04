@@ -1,9 +1,8 @@
-import { number, select, withKnobs } from '@storybook/addon-knobs'
+import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { AlignItems, AlignSelf, Cell, Direction, Grid, JustifyContent } from '../'
-import { withPropTypes, withTheme } from '../../../stories-addons'
 
 const styles = {
     bg: {
@@ -45,9 +44,6 @@ const directionOptions: { [key in Direction]: string } = {
 }
 
 storiesOf('Grid', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('Grid/Cell', () => (
         <Grid>
             <Cell size={6} style={styles.bg}>1</Cell>
