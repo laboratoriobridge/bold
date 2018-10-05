@@ -109,6 +109,7 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M18.36 14.47l-1.41 1.42L12 10.94l-4.95 4.95-1.41-1.42L12 8.11l6.36 6.36z"
+                  data-name="angle-up"
                 />
               </svg>
             </span>
@@ -134,6 +135,7 @@ exports[`should render correctly 1`] = `
               >
                 <path
                   d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
+                  data-name="angle-down"
                 />
               </svg>
             </span>
