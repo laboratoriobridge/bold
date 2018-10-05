@@ -51,15 +51,16 @@ exports[`should accept style prop 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<textarea
-  class="emotion-0"
-  name="input"
-/>
+<div>
+  <textarea
+    class="emotion-0"
+    name="input"
+  />
+</div>
 `;
 
 exports[`should render character counter 1`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   background-color: #ffffff;
   border: solid 1px #b3b3b3;
   border-radius: 2px;
@@ -108,28 +109,28 @@ Array [
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<textarea
+.emotion-1 {
+  text-align: right;
+}
+
+<div>
+  <textarea
     class="emotion-0"
     maxlength="200"
     name="input"
   >
     Testing counter
-  </textarea>,
-  .emotion-0 {
-  text-align: right;
-}
-
-<div
-    class="emotion-0"
+  </textarea>
+  <div
+    class="emotion-1"
   >
     15/200 caracteres
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`should render character counter 2`] = `
-Array [
-  .emotion-0 {
+.emotion-0 {
   background-color: #ffffff;
   border: solid 1px #b3b3b3;
   border-radius: 2px;
@@ -178,21 +179,22 @@ Array [
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<textarea
-    class="emotion-0"
-    maxlength="200"
-    name="input"
-  />,
-  .emotion-0 {
+.emotion-1 {
   text-align: right;
 }
 
-<div
+<div>
+  <textarea
     class="emotion-0"
+    maxlength="200"
+    name="input"
+  />
+  <div
+    class="emotion-1"
   >
     0/200 caracteres
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`should render correctly 1`] = `
@@ -245,13 +247,15 @@ exports[`should render correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<textarea
-  class="emotion-0"
-  name="input"
-  placeholder="Test"
->
-  Value
-</textarea>
+<div>
+  <textarea
+    class="emotion-0"
+    name="input"
+    placeholder="Test"
+  >
+    Value
+  </textarea>
+</div>
 `;
 
 exports[`should render disabled 1`] = `
@@ -304,11 +308,13 @@ exports[`should render disabled 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<textarea
-  class="emotion-0"
-  disabled=""
-  name="input"
-/>
+<div>
+  <textarea
+    class="emotion-0"
+    disabled=""
+    name="input"
+  />
+</div>
 `;
 
 exports[`should render with error status 1`] = `
@@ -367,8 +373,10 @@ exports[`should render with error status 1`] = `
   box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
 }
 
-<textarea
-  class="emotion-0"
-  name="input"
-/>
+<div>
+  <textarea
+    class="emotion-0"
+    name="input"
+  />
+</div>
 `;

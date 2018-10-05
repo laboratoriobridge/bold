@@ -80,19 +80,21 @@ exports[`should render correctly 1`] = `
       *
     </span>
   </label>
-  <textarea
-    class="emotion-2"
-    label="Label"
-    maxlength="100"
-    name="textarea"
-    required=""
-  >
-    Value
-  </textarea>
-  <div
-    class="emotion-3"
-  >
-    5/100 caracteres
+  <div>
+    <textarea
+      class="emotion-2"
+      label="Label"
+      maxlength="100"
+      name="textarea"
+      required=""
+    >
+      Value
+    </textarea>
+    <div
+      class="emotion-3"
+    >
+      5/100 caracteres
+    </div>
   </div>
 </div>
 `;

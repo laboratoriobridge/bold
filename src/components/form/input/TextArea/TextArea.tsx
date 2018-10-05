@@ -30,12 +30,12 @@ export class TextArea extends React.PureComponent<TextAreaProps> {
         const currentLength = this.valueLength() || this.defaultValueLength() || 0
 
         return (
-            <>
+            <div>
                 <textarea className={classes} {...rest} />
                 {this.props.maxLength &&
                     <div className={css(styles.counter)}>{currentLength}/{this.props.maxLength} caracteres</div>
                 }
-            </>
+            </div>
         )
     }
 
