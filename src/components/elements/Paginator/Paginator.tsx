@@ -51,11 +51,8 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
             paginator: {
                 display: 'inline-flex',
                 alignItems: 'center',
-                margin: '0',
+                margin: 0,
                 fontSize: '0.75rem',
-                '& > *:not(:last-child)': {
-                    marginRight: '0.25rem',
-                },
             },
             disabled: {
                 color: theme.pallete.text.disabled,
@@ -67,18 +64,16 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
             input: {
                 width: 40 + this.state.inputValue.toString().length * 7,
                 textAlign: 'center',
+                margin: '0 0.5rem 0 0.25rem',
             },
-            button: {
-                '&:hover': {
-                    background: theme.pallete.gray.c90,
-                },
-            },
+            leftButton: {},
+            rightButton: { marginLeft: '0.25rem' },
         }
 
         return (
             <div className={css(styles.paginator)}>
                 <Button
-                    style={styles.button}
+                    style={styles.leftButton}
                     size='small'
                     skin='ghost'
                     icon='angleLeft'
@@ -98,7 +93,7 @@ export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
                 <span>de {total}</span>
 
                 <Button
-                    style={styles.button}
+                    style={styles.rightButton}
                     size='small'
                     skin='ghost'
                     icon='angleRight'

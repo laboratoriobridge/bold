@@ -10,12 +10,8 @@ exports[`deve renderizar corretamente 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0px;
+  margin: 0;
   font-size: 0.75rem;
-}
-
-.emotion-7 > *:not(:last-child) {
-  margin-right: 0.25rem;
 }
 
 .emotion-2 {
@@ -76,10 +72,6 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: rgba(103,108,112,0.16);
 }
 
-.emotion-2:hover {
-  background: #F2F2F7;
-}
-
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -106,6 +98,7 @@ exports[`deve renderizar corretamente 1`] = `
   transition: all .2s;
   width: 47px;
   text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
 }
 
 .emotion-3::-webkit-input-placeholder {
@@ -141,6 +134,65 @@ exports[`deve renderizar corretamente 1`] = `
 .emotion-3:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #53595E;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  margin-left: 0.25rem;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-6 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(103,108,112,0.16);
 }
 
 <div
@@ -179,7 +231,7 @@ exports[`deve renderizar corretamente 1`] = `
     de 10
   </span>
   <button
-    class="emotion-2"
+    class="emotion-6"
     title="Próxima página"
     type="button"
   >
@@ -215,74 +267,8 @@ exports[`deve renderizar corretamente 2`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0px;
+  margin: 0;
   font-size: 0.75rem;
-}
-
-.emotion-7 > *:not(:last-child) {
-  margin-right: 0.25rem;
-}
-
-.emotion-6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: "Noto Sans",sans-serif;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #53595E;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-6 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-6:hover {
-  background: #F2F2F7;
 }
 
 .emotion-1 {
@@ -311,6 +297,7 @@ exports[`deve renderizar corretamente 2`] = `
   transition: all .2s;
   width: 47px;
   text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
 }
 
 .emotion-3::-webkit-input-placeholder {
@@ -346,6 +333,65 @@ exports[`deve renderizar corretamente 2`] = `
 .emotion-3:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #53595E;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  margin-left: 0.25rem;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-6 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2 {
@@ -407,10 +453,6 @@ exports[`deve renderizar corretamente 2`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-2:hover {
-  background: #F2F2F7;
 }
 
 <div
@@ -486,74 +528,8 @@ exports[`deve renderizar corretamente 3`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 0px;
+  margin: 0;
   font-size: 0.75rem;
-}
-
-.emotion-7 > *:not(:last-child) {
-  margin-right: 0.25rem;
-}
-
-.emotion-6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  font-family: "Noto Sans",sans-serif;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #53595E;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-6 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-6:hover {
-  background: #F2F2F7;
 }
 
 .emotion-1 {
@@ -582,6 +558,7 @@ exports[`deve renderizar corretamente 3`] = `
   transition: all .2s;
   width: 47px;
   text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
 }
 
 .emotion-3::-webkit-input-placeholder {
@@ -617,6 +594,65 @@ exports[`deve renderizar corretamente 3`] = `
 .emotion-3:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: "Noto Sans",sans-serif;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #53595E;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  margin-left: 0.25rem;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-6 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2 {
@@ -678,10 +714,6 @@ exports[`deve renderizar corretamente 3`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-2:hover {
-  background: #F2F2F7;
 }
 
 <div
