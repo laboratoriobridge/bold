@@ -30,6 +30,8 @@ import { Download } from './Download'
 import { Exclamation } from './Exclamation'
 import { ExclamationCircle } from './ExclamationCircle'
 import { ExclamationTriangle } from './ExclamationTriangle'
+import { ExclamationTriangleOutline } from './ExclamationTriangleOutline'
+import { Exit } from './Exit'
 import { Expand } from './Expand'
 import { Eye } from './Eye'
 import { File } from './File'
@@ -38,14 +40,16 @@ import { Filter } from './Filter'
 import { Gear } from './Gear'
 import { Hospital } from './Hospital'
 import { IncreaseFont } from './IncreaseFont'
-import { Info } from './Info'
+import { Information } from './Information'
 import { InformationCircle } from './InformationCircle'
 import { Italic } from './Italic'
-import { Lock } from './Lock'
+import { Locker } from './Locker'
+import { LockerFilled } from './LockerFilled'
 import { Map } from './Map'
 import { MapMarker } from './MapMarker'
 import { MapMarkerFilled } from './MapMarkerFilled'
 import { Menu } from './Menu'
+import { MenuHamburguer } from './MenuHamburguer'
 import { Minimize } from './Minimize'
 import { Minus } from './Minus'
 import { Modules } from './Modules'
@@ -103,6 +107,8 @@ export type Icons =
     | 'exclamation' 
     | 'exclamationCircle' 
     | 'exclamationTriangle' 
+    | 'exclamationTriangleOutline' 
+    | 'exit' 
     | 'expand' 
     | 'eye' 
     | 'file' 
@@ -111,14 +117,16 @@ export type Icons =
     | 'gear' 
     | 'hospital' 
     | 'increaseFont' 
-    | 'info' 
+    | 'information' 
     | 'informationCircle' 
     | 'italic' 
-    | 'lock' 
+    | 'locker' 
+    | 'lockerFilled' 
     | 'map' 
     | 'mapMarker' 
     | 'mapMarkerFilled' 
     | 'menu' 
+    | 'menuHamburguer' 
     | 'minimize' 
     | 'minus' 
     | 'modules' 
@@ -176,6 +184,8 @@ export const IconMap = {
     'exclamation': Exclamation,
     'exclamationCircle': ExclamationCircle,
     'exclamationTriangle': ExclamationTriangle,
+    'exclamationTriangleOutline': ExclamationTriangleOutline,
+    'exit': Exit,
     'expand': Expand,
     'eye': Eye,
     'file': File,
@@ -184,14 +194,16 @@ export const IconMap = {
     'gear': Gear,
     'hospital': Hospital,
     'increaseFont': IncreaseFont,
-    'info': Info,
+    'information': Information,
     'informationCircle': InformationCircle,
     'italic': Italic,
-    'lock': Lock,
+    'locker': Locker,
+    'lockerFilled': LockerFilled,
     'map': Map,
     'mapMarker': MapMarker,
     'mapMarkerFilled': MapMarkerFilled,
     'menu': Menu,
+    'menuHamburguer': MenuHamburguer,
     'minimize': Minimize,
     'minus': Minus,
     'modules': Modules,
