@@ -7,6 +7,7 @@ import { withPropTypes, withRouter, withTheme } from '../../../../stories-addons
 import { Flow } from '../../../layout/Flow/Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
 import { RadioField } from '../../field/RadioField/RadioField'
+import { TextAreaField } from '../../field/TextAreaField/TextAreaField'
 import { TextField } from '../../field/TextField/TextField'
 import { SubmitButton } from '../SubmitButton'
 
@@ -25,6 +26,10 @@ storiesOf('Form', module)
                 errors.nome = 'Preenchimento obrigatório.'
             }
 
+            if (!form.text) {
+                errors.text = 'Preenchimento obrigatório.'
+            }
+
             return errors
         }
 
@@ -32,6 +37,7 @@ storiesOf('Form', module)
             <form onSubmit={props.handleSubmit}>
                 <Flow vSpacing={1} direction='vertical'>
                     <TextField name='nome' label='Nome' required />
+                    <TextAreaField name='text' label='Text' maxLength={100} required />
                     <Flow>
                         <RadioField name='radio' label='Option1' value='1' />
                         <RadioField name='radio' label='Option2' value='2' />
