@@ -26,7 +26,7 @@ export interface PaginatorState {
 }
 
 @withStyles
-export class Paginator extends React.Component<PaginatorProps, PaginatorState> {
+export class Paginator extends React.PureComponent<PaginatorProps, PaginatorState> {
 
     static defaultProps: Partial<PaginatorProps> = {
         onChange: (page: number) => false,
