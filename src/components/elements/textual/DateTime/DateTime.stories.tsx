@@ -1,17 +1,12 @@
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { VFlow } from '../../../layout/Flow/VFlow'
 
 import { DateTime } from './DateTime'
-import * as Doc from './DateTime.md'
 
 storiesOf('Textual', module)
-    .addDecorator(withPropTypes(Doc))
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('DateTime', () => (
         <VFlow>
             <DateTime

@@ -11,7 +11,7 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   height: 40px;
 }
 
@@ -30,7 +30,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-24 {
-  border-left: 1px solid #e6e6e6;
+  border-left: 1px solid #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,18 +80,18 @@ exports[`renders correctly 1`] = `
 
 .emotion-12 {
   font-weight: bold;
-  color: #4d4d4d;
+  color: #2D343B;
   white-space: nowrap;
   list-style: none;
   margin: 0;
   padding: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   border-radius: 2px;
   display: inline-block;
   width: auto;
   min-width: 150px;
-  background: #ffffff;
+  background: #FFFFFF;
   text-align: left;
 }
 
@@ -99,13 +99,13 @@ exports[`renders correctly 1`] = `
   display: block;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  color: #666666;
+  color: #53595E;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
 
 .emotion-4:hover {
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
 .emotion-5 {
@@ -166,7 +166,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -194,15 +194,15 @@ exports[`renders correctly 1`] = `
 
 .emotion-18:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-18:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-18:hover {
-  background: #e6e6e6;
+  background: #F2F2F7;
 }
 
 .emotion-17 {
@@ -218,10 +218,10 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-19 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -234,37 +234,37 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-19::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-19::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-19:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-19::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-19:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-19:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-19:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-19:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -428,7 +428,7 @@ exports[`renders without pagination 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   height: 40px;
 }
 

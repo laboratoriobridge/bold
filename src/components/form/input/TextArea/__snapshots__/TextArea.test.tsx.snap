@@ -2,10 +2,10 @@
 
 exports[`should accept style prop 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -17,37 +17,37 @@ exports[`should accept style prop 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -61,10 +61,10 @@ exports[`should accept style prop 1`] = `
 
 exports[`should render character counter 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -75,37 +75,37 @@ exports[`should render character counter 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -131,10 +131,10 @@ exports[`should render character counter 1`] = `
 
 exports[`should render character counter 2`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -145,37 +145,37 @@ exports[`should render character counter 2`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -199,10 +199,10 @@ exports[`should render character counter 2`] = `
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -213,37 +213,37 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -260,10 +260,10 @@ exports[`should render correctly 1`] = `
 
 exports[`should render disabled 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -274,37 +274,37 @@ exports[`should render disabled 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -319,10 +319,10 @@ exports[`should render disabled 1`] = `
 
 exports[`should render with error status 1`] = `
 .emotion-0 {
-  background-color: #ffffff;
-  border: solid 1px #b3b3b3;
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-family: "Noto Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
@@ -330,47 +330,47 @@ exports[`should render with error status 1`] = `
   width: 100%;
   -webkit-transition: all .2s;
   transition: all .2s;
-  border: solid 1px #E0001A;
+  border: solid 1px #D83A2E;
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0::placeholder {
-  color: #b3b3b3;
+  color: #B9B9BD;
 }
 
 .emotion-0:disabled {
-  border-color: #cccccc;
-  background-color: #f2f2f7;
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #056DFF;
+  border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 .emotion-0:not(:disabled):focus {
-  border: solid 1px #cccccc;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #E0001A;
+  border: solid 1px #DCDCE0;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #D83A2E;
 }
 
 <div>

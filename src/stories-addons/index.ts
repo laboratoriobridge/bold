@@ -1,5 +1,3 @@
-export * from './withPropTypes'
 export * from './withForm'
 export * from './withRouter'
-export * from './withText'
 export * from './withTheme'

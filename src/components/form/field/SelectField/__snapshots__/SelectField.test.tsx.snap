@@ -12,7 +12,7 @@ exports[`render should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: hsl(0,0%,98%);
-  border-color: #b3b3b3;
+  border-color: #B9B9BD;
   border-radius: 2px;
   border-style: solid;
   border-width: 1px;
@@ -34,11 +34,11 @@ exports[`render should render correctly 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
 .emotion-8:hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-2 {
@@ -63,7 +63,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0 {
-  color: #4d4d4d;
+  color: #2D343B;
   margin-left: 2px;
   margin-right: 2px;
   max-width: calc(100% - 8px);
@@ -106,7 +106,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-4 {
-  color: #b3b3b3;
+  color: #B9B9BD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,7 +123,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-4:hover {
-  color: #E0001A;
+  color: #D83A2E;
 }
 
 .emotion-3 {
@@ -147,7 +147,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-6 {
-  color: #4d4d4d;
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -157,7 +157,7 @@ exports[`render should render correctly 1`] = `
   transition: color 150ms;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
 .emotion-6:hover {
@@ -165,7 +165,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-6:hover {
-  color: #4d4d4d;
+  color: #2D343B;
 }
 
 <div
@@ -271,7 +271,7 @@ exports[`render should render correctly when multivalue 1`] = `
   -ms-flex-align: center;
   align-items: center;
   background-color: hsl(0,0%,98%);
-  border-color: #b3b3b3;
+  border-color: #B9B9BD;
   border-radius: 2px;
   border-style: solid;
   border-width: 1px;
@@ -293,11 +293,11 @@ exports[`render should render correctly when multivalue 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
 .emotion-13:hover {
-  border-color: #999999;
+  border-color: #818489;
 }
 
 .emotion-6 {
@@ -328,7 +328,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-9 {
-  color: #b3b3b3;
+  color: #B9B9BD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -345,7 +345,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-9:hover {
-  color: #E0001A;
+  color: #D83A2E;
 }
 
 .emotion-8 {
@@ -369,7 +369,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-11 {
-  color: #4d4d4d;
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -379,7 +379,7 @@ exports[`render should render correctly when multivalue 1`] = `
   transition: color 150ms;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
 .emotion-11:hover {
@@ -387,7 +387,7 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-11:hover {
-  color: #4d4d4d;
+  color: #2D343B;
 }
 
 .emotion-7 {
@@ -421,12 +421,12 @@ exports[`render should render correctly when multivalue 1`] = `
   margin: 2px;
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
 }
 
 .emotion-0 {
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-size: 0.75rem;
   overflow: hidden;
   padding: 1px 0.5rem;
@@ -434,7 +434,7 @@ exports[`render should render correctly when multivalue 1`] = `
   text-overflow: ellipsis;
   white-space: nowrap;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
   border-top-left-radius: 4px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 4px;
@@ -456,7 +456,7 @@ exports[`render should render correctly when multivalue 1`] = `
   padding-right: 0;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
   border-top-left-radius: 0;
   border-top-right-radius: 4px;
   border-bottom-left-radius: 0;
@@ -469,8 +469,8 @@ exports[`render should render correctly when multivalue 1`] = `
 }
 
 .emotion-1:hover {
-  background: #f2f2f7;
-  color: #E0001A;
+  background: #F2F2F7;
+  color: #D83A2E;
 }
 
 <div

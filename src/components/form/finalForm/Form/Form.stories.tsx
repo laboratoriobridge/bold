@@ -1,9 +1,9 @@
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
-import { withPropTypes, withRouter, withTheme } from '../../../../stories-addons'
+import { withRouter } from '../../../../stories-addons'
 import { Flow } from '../../../layout/Flow/Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
 import { RadioField } from '../../field/RadioField/RadioField'
@@ -14,9 +14,6 @@ import { SubmitButton } from '../SubmitButton'
 import { Form } from './Form'
 
 storiesOf('Form', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .addDecorator(withRouter())
     .add('Form example', () => {
         const validate = form => {

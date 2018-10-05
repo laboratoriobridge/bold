@@ -44,7 +44,7 @@ exports[`Modal accept style prop 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -75,11 +75,11 @@ exports[`Modal accept style prop 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -117,10 +117,10 @@ exports[`Modal accept style prop 1`] = `
 }
 
 .emotion-4 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -219,7 +219,7 @@ exports[`Modal render different sizes 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -250,11 +250,11 @@ exports[`Modal render different sizes 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -292,10 +292,10 @@ exports[`Modal render different sizes 1`] = `
 }
 
 .emotion-4 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -371,10 +371,10 @@ exports[`Modal render different sizes 2`] = `
 }
 
 .emotion-4 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -406,7 +406,7 @@ exports[`Modal render different sizes 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -437,11 +437,11 @@ exports[`Modal render different sizes 2`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -567,7 +567,7 @@ exports[`Modal render different sizes 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -598,11 +598,11 @@ exports[`Modal render different sizes 3`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -640,10 +640,10 @@ exports[`Modal render different sizes 3`] = `
 }
 
 .emotion-4 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -727,10 +727,10 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-6 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -762,7 +762,7 @@ exports[`Modal should render closed 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -793,11 +793,11 @@ exports[`Modal should render closed 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -817,7 +817,7 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-5 {
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   padding: 1rem;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -843,10 +843,10 @@ exports[`Modal should render closed 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -874,7 +874,7 @@ exports[`Modal should render closed 1`] = `
 
 .emotion-4:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-4:not(:disabled):hover {
@@ -972,10 +972,10 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-6 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   position: relative;
   min-width: 520px;
   pointer-events: auto;
@@ -1007,7 +1007,7 @@ exports[`Modal should render open 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -1038,11 +1038,11 @@ exports[`Modal should render open 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-1 {
@@ -1062,7 +1062,7 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-5 {
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   padding: 1rem;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -1088,10 +1088,10 @@ exports[`Modal should render open 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -1119,7 +1119,7 @@ exports[`Modal should render open 1`] = `
 
 .emotion-4:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-4:not(:disabled):hover {

@@ -1,16 +1,11 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
 storiesOf('Components/Table', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('Table', () => (
         <Table hovered={boolean('hovered', false)}>
             <TableHead>

@@ -1,13 +1,15 @@
-import { setDefaults } from '@storybook/addon-info'
-import { setOptions } from '@storybook/addon-options'
-import { configure } from '@storybook/react'
+import { withInfo } from '@storybook/addon-info'
+import { withKnobs } from '@storybook/addon-knobs'
+import { withOptions } from '@storybook/addon-options'
+import { addDecorator, configure } from '@storybook/react'
 
-setOptions({
+import { withTheme } from '../src/stories-addons'
+
+addDecorator(withOptions({
   name: 'Bridge React',
   url: 'https://github.com/laboratoriobridge/bridge-react',
-})
-
-setDefaults({
+}))
+addDecorator(withInfo({
   inline: true,
   styles: {
     infoBody: {
@@ -24,7 +26,9 @@ setDefaults({
       padding: '0 45px 0 45px',
     },
   },
-})
+}))
+addDecorator(withTheme())
+addDecorator(withKnobs())
 
 const req = require.context('../src', true, /.stories.tsx?$/)
 

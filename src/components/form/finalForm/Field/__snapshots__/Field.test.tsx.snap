@@ -10,7 +10,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0 {
-  color: #E0001A;
+  color: #D83A2E;
   margin-left: 0.25rem;
 }
 

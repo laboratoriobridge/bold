@@ -1306,10 +1306,10 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
   integrity sha512-QYWklZ37+QOcjwuolrvb121oXR6kA+5ucg9ieb2w0J0lATUp8DeQ804oGvf3GUXzJPzJiTnbhcX/aE+F1vvxGQ==
 
-"@types/storybook__react@3.0.8":
-  version "3.0.8"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.8.tgz#58deb593361b7d5e6a6eca09bc7889b613980925"
-  integrity sha512-RrIL+m84ocoYT/D2ksYAzpC+DYHTtfgTLyrzmvCdhL/zsrXc0kgKHq0VVjiS80rnvhzlQPCWFDglEP/c/H/gAg==
+"@types/storybook__react@3.0.9":
+  version "3.0.9"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.9.tgz#aac193f0c037ddfc2342bd027d720553ac089a56"
+  integrity sha512-uhQMkyS/WZIKn8z222D8WJbWy7aXYaqazsrLKdpRLsHBz2YaAVbAmj4vr2rQDfA7+RgjwTMZKHs9Vrga8lRkbQ==
   dependencies:
     "@types/react" "*"
     "@types/webpack-env" "*"

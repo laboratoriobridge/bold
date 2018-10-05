@@ -1,9 +1,8 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, select, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
 
@@ -32,9 +31,6 @@ const createFooter = (ctrl: ModalController = null) => (
 )
 
 storiesOf('Components/Modal', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('default', () => (
         // tslint:disable jsx-no-lambda
         <Modal

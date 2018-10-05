@@ -39,9 +39,9 @@ exports[`Alert should allow styles override 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
   color: red;
 }
 
@@ -111,9 +111,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-7 {
@@ -185,7 +185,7 @@ exports[`Alert should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -213,11 +213,11 @@ exports[`Alert should render correctly 1`] = `
 
 .emotion-5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-5:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-4 {
@@ -246,9 +246,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-26 {
@@ -270,9 +270,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-35 {
@@ -294,9 +294,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>
@@ -575,9 +575,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0 {
@@ -604,9 +604,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-14 {
@@ -628,9 +628,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-19 {
@@ -652,9 +652,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>

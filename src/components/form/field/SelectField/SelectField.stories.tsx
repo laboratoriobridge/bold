@@ -1,8 +1,8 @@
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withForm, withPropTypes, withRouter, withTheme } from '../../../../stories-addons'
+import { withForm, withRouter } from '../../../../stories-addons'
 import { DefaultOptionType } from '../../input/Select/Select'
 
 import { SelectField } from './SelectField'
@@ -16,9 +16,6 @@ const options: DefaultOptionType[] = [
 ]
 
 storiesOf('Form/Fields/Select', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .addDecorator(withRouter())
     .addDecorator(withForm())
     .add('SelectField', () => (
