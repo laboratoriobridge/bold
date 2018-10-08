@@ -7,13 +7,13 @@ import {
     ReactContext
 } from 'react-final-form'
 
-import { FormField, FormFieldProps } from '../../FormField'
+import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
-export interface FieldProps extends FormFieldProps, FinalFieldProps {
+export interface FieldProps extends FieldWrapperProps, FinalFieldProps {
     name: string
     hasWrapper?: boolean
     render(props: RenderProps): React.ReactNode
@@ -24,12 +24,6 @@ export interface FieldProps extends FormFieldProps, FinalFieldProps {
      * @return The converted value.
      */
     convert?(value: any): any
-}
-
-interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
-    custom: {
-        onChange: <T>(event: React.ChangeEvent<T> | any) => void
-    }
 }
 
 export class Field extends React.Component<FieldProps> {
@@ -56,41 +50,32 @@ export class Field extends React.Component<FieldProps> {
     }
 
     render() {
-        const { onChange, ...rest } = this.props as any
         return (
-            <FinalFormField {...rest} custom={{ onChange }} component={this.renderComponent} />
+            <FinalFormField {...this.props} render={this.renderComponent} />
         )
     }
 
-    private renderComponent = (props: FieldComponentProps) => {
-        const {
-            input: { onChange, ...inputRest },
-            custom,
-            meta,
-            ...rest
-        } = props
-
-        const mergedOnChange = (value) => {
-            onChange(value)
-            custom.onChange && custom.onChange(value)
+    private renderComponent = (props: FinalRenderProps) => {
+        const { meta } = props
+        const renderProps = {
+            ...props,
+            hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
         }
 
         if (this.props.hasWrapper) {
             return (
-                <FormField
-                    {...rest}
+                <FieldWrapper
                     error={meta.touched && meta.error || !meta.dirtySinceLastSubmit && meta.submitError}
-                    name={inputRest.name}
+                    name={props.input.name}
+                    label={this.props.label}
+                    required={this.props.required}
                 >
-                    {this.props.render({
-                        meta,
-                        input: { onChange: mergedOnChange, ...inputRest },
-                        hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
-                    })}
-                </FormField>
+                    {this.props.render(renderProps)}
+                </FieldWrapper>
             )
         }
-        return this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })
+
+        return this.props.render(renderProps)
     }
 
     private getFormApi(): ReactContext['reactFinalForm'] {

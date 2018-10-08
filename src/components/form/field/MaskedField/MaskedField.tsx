@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { FormFieldProps } from '../../../form/FormField'
+import { FieldWrapperProps } from '../../../form/FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { MaskedInput, MaskedInputProps } from '../../input/MaskedInput/MaskedInput'
 
-export interface MaskedFieldProps extends FormFieldProps, MaskedInputProps,
+export interface MaskedFieldProps extends FieldWrapperProps, MaskedInputProps,
     Pick<FieldProps, 'parse' | 'format'> {
     name: string
 }

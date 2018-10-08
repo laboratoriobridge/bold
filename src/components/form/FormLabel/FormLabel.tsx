@@ -12,7 +12,7 @@ export interface FormLabelProps extends WithStylesProps,
 }
 
 @withStyles
-export class FormLabel extends React.Component<FormLabelProps> {
+export class FormLabel extends React.PureComponent<FormLabelProps> {
 
     render() {
         const { css, label, required, theme, style, ...rest } = this.props

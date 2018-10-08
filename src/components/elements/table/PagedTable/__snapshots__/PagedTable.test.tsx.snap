@@ -1,24 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-24 {
+.emotion-26 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 
-.emotion-24 tr:hover td {
+.emotion-26 tr:hover td {
   background: #F2F2F7;
 }
 
-.emotion-3 {
+.emotion-4 {
   text-align: left;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -30,27 +30,24 @@ exports[`should render correctly 1`] = `
   cursor: pointer;
 }
 
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-2 {
   margin-left: 0.25rem;
-}
-
-.emotion-0 {
-  fill: #0A67D1;
   font-size: 1rem;
+  fill: #B9B9BD;
 }
 
-.emotion-11 {
+.emotion-1 {
+  fill: #0A67D1;
+}
+
+.emotion-13 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
   border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-26 {
+.emotion-28 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -65,7 +62,7 @@ exports[`should render correctly 1`] = `
   border-top: none;
 }
 
-.emotion-25 {
+.emotion-27 {
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -81,68 +78,66 @@ exports[`should render correctly 1`] = `
 
 <div>
   <table
-    class="emotion-24"
+    class="emotion-26"
   >
     <thead
-      class="emotion-9"
+      class="emotion-11"
     >
       <tr
-        class="emotion-9"
+        class="emotion-11"
       >
         <th
-          class="emotion-3"
+          class="emotion-4"
           data-name="id"
         >
           <span
-            class="emotion-2"
+            class="emotion-3"
           >
             ID
-            <span
-              class="emotion-1"
+            <svg
+              class="emotion-2"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
+              <polygon
                 class="emotion-0"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M18.36 14.47l-1.41 1.42L12 10.94l-4.95 4.95-1.41-1.42L12 8.11l6.36 6.36z"
-                  data-name="angle-up"
-                />
-              </svg>
-            </span>
+                points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+              />
+              <polygon
+                class="emotion-1"
+                points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+              />
+            </svg>
           </span>
         </th>
         <th
-          class="emotion-3"
+          class="emotion-4"
           data-name="name"
         >
           <span
-            class="emotion-2"
+            class="emotion-3"
           >
             Name
-            <span
-              class="emotion-1"
+            <svg
+              class="emotion-2"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <svg
-                aria-hidden="true"
+              <polygon
+                class="emotion-1"
+                points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+              />
+              <polygon
                 class="emotion-0"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
-                  data-name="angle-down"
-                />
-              </svg>
-            </span>
+                points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+              />
+            </svg>
           </span>
         </th>
         <th
-          class="emotion-3"
+          class="emotion-4"
           data-name="age"
         >
           Age
@@ -150,61 +145,61 @@ exports[`should render correctly 1`] = `
       </tr>
     </thead>
     <tbody
-      class="emotion-9"
+      class="emotion-11"
     >
       <tr
-        class="emotion-9"
+        class="emotion-11"
       >
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           1
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           MARIA MACHADO DE JESUS
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           42
         </td>
       </tr>
       <tr
-        class="emotion-9"
+        class="emotion-11"
       >
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           2
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           JOSÉ DA SILVA MOREIRA
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           34
         </td>
       </tr>
       <tr
-        class="emotion-9"
+        class="emotion-11"
       >
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           3
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           ALICE BARBOSA
         </td>
         <td
-          class="emotion-11"
+          class="emotion-13"
         >
           27
         </td>
@@ -212,10 +207,10 @@ exports[`should render correctly 1`] = `
     </tbody>
   </table>
   <div
-    class="emotion-26"
+    class="emotion-28"
   >
     <span
-      class="emotion-25"
+      class="emotion-27"
     >
       <span
         title="3"
