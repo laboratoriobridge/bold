@@ -13,7 +13,7 @@ export interface Pallete {
     text: { main: Color, secondary: Color, disabled: Color }
     surface: { main: Color, background: Color }
     divider: Color
-    primary: { main: Color }
+    primary: ColorScale & { main: Color }
     status: {
         danger: StatusColorMap
         success: StatusColorMap
@@ -48,7 +48,9 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
     return {
         gray: config.grayScale,
         divider: config.grayScale.c90,
+        highlight: '#FFED94',
         primary: {
+            ...config.primaryScale,
             main: config.primaryScale.c40,
         },
         text: {
@@ -82,7 +84,6 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
                 onColor: config.alertScale.c100,
             },
         },
-        highlight: '#FFED94',
     }
 }
 

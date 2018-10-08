@@ -6,3 +6,7 @@ export { CssGlobal, CssGlobalProps } from './theme/CssGlobal'
 export { createTheme, Theme, focusBoxShadow } from './theme/createTheme'
 export { createPallete, Pallete, TextColor } from './theme/createPallete'
 export { createTypography, Typography } from './theme/createTypography'
+
+import * as palletes from './colors'
+
+export const colors = palletes
