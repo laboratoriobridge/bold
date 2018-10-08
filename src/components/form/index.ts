@@ -30,5 +30,5 @@ export * from './finalForm/SubmitButton'
 export * from './finalForm/wizard'
 
 export * from './FormError'
-export * from './FormField'
+export * from './FieldWrapper'
 export * from './FormLabel'

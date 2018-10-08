@@ -1,10 +1,10 @@
 import * as React from 'react'
 
+import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, RenderProps } from '../../finalForm/Field'
-import { FormFieldProps } from '../../FormField'
 import { DefaultOptionType, Select, SelectProps } from '../../input/Select/Select'
 
-export interface SelectFieldProps<OptionType = DefaultOptionType> extends FormFieldProps, SelectProps<OptionType> {
+export interface SelectFieldProps<OptionType = DefaultOptionType> extends FieldWrapperProps, SelectProps<OptionType> {
     name: string
     convertToValueKey?: boolean
 }

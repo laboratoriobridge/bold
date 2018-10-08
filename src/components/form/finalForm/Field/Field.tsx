@@ -7,13 +7,13 @@ import {
     ReactContext
 } from 'react-final-form'
 
-import { FormField, FormFieldProps } from '../../FormField'
+import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
-export interface FieldProps extends FormFieldProps, FinalFieldProps {
+export interface FieldProps extends FieldWrapperProps, FinalFieldProps {
     name: string
     hasWrapper?: boolean
     render(props: RenderProps): React.ReactNode
@@ -26,7 +26,7 @@ export interface FieldProps extends FormFieldProps, FinalFieldProps {
     convert?(value: any): any
 }
 
-interface FieldComponentProps extends FormFieldProps, FinalRenderProps {
+interface FieldComponentProps extends FieldWrapperProps, FinalRenderProps {
     custom: {
         onChange: <T>(event: React.ChangeEvent<T> | any) => void
     }
@@ -77,7 +77,7 @@ export class Field extends React.Component<FieldProps> {
 
         if (this.props.hasWrapper) {
             return (
-                <FormField
+                <FieldWrapper
                     {...rest}
                     error={meta.touched && meta.error || !meta.dirtySinceLastSubmit && meta.submitError}
                     name={inputRest.name}
@@ -87,7 +87,7 @@ export class Field extends React.Component<FieldProps> {
                         input: { onChange: mergedOnChange, ...inputRest },
                         hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
                     })}
-                </FormField>
+                </FieldWrapper>
             )
         }
         return this.props.render({ meta, input: { onChange: mergedOnChange, ...inputRest } })

@@ -5,7 +5,7 @@ import * as React from 'react'
 import { Field as FinalField, Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
-import { FormField } from '../../FormField'
+import { FieldWrapper } from '../../FieldWrapper'
 
 import { Field, FieldProps, RenderProps } from './Field'
 
@@ -25,7 +25,7 @@ it('should render correctly', () => {
 
 it('should NOT render wrapper if hasWrapper is false', () => {
     const wrapper = createFormAndField({ hasWrapper: false })
-    expect(wrapper.find(FormField).length).toEqual(0)
+    expect(wrapper.find(FieldWrapper).length).toEqual(0)
 })
 
 describe('convert', () => {

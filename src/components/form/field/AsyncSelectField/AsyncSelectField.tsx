@@ -1,11 +1,11 @@
 import * as React from 'react'
 
+import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, RenderProps } from '../../finalForm/Field'
-import { FormFieldProps } from '../../FormField'
 import { AsyncSelect, AsyncSelectProps } from '../../input/AsyncSelect/AsyncSelect'
 import { DefaultOptionType } from '../../input/Select/Select'
 
-export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends FormFieldProps,
+export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends FieldWrapperProps,
     AsyncSelectProps<OptionType> {
     name: string
     convertToValueKey?: boolean
