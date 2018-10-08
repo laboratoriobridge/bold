@@ -5,7 +5,7 @@ import { withTheme } from '../../../test'
 
 import { Tooltip, TooltipBase } from './Tooltip'
 
-describe(Tooltip, () => {
+describe('Tooltip', () => {
     it('should render correctly', () => {
         expect(render(withTheme(
             <Tooltip text='Tooltip text'>
@@ -20,9 +20,16 @@ describe(Tooltip, () => {
             </Tooltip>
         ))).toMatchSnapshot()
     })
+    it('should accept style prop', () => {
+        expect(render(withTheme(
+            <Tooltip text='Tooltip text' style={{ background: 'red' }}>
+                <span>Testing</span>
+            </Tooltip>
+        ))).toMatchSnapshot()
+    })
 })
 
-describe(TooltipBase, () => {
+describe('TooltipBase', () => {
     it('should render the small version when text length is <= 60', () => {
         expect(render(withTheme(
             <TooltipBase text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ' />
@@ -37,6 +44,11 @@ describe(TooltipBase, () => {
                     + 'Donec mollis eu velit nec ullamcorper.'
                 }
             />
+        ))).toMatchSnapshot()
+    })
+    it('should accept style prop', () => {
+        expect(render(withTheme(
+            <TooltipBase text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. In' style={{ color: 'red' }} />
         ))).toMatchSnapshot()
     })
 })
