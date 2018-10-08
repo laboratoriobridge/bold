@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import axios from 'axios'
@@ -41,5 +42,6 @@ storiesOf('Form/Fields/Select', module)
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
             status={boolean('hasError', false) && 'error'}
+            onChange={action('changed')}
         />
     ))

@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
@@ -13,5 +14,6 @@ storiesOf('Form/Fields', module)
             name='switch'
             label={text('label', '')}
             disabled={boolean('disabled', false)}
+            onChange={action('changed')}
         />
     ))

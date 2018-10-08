@@ -15,6 +15,7 @@ storiesOf('Form/Fields', module)
             name='nome'
             label='Nome'
             placeholder='Nome'
+            onChange={action('changed')}
             required
         />
     ))
