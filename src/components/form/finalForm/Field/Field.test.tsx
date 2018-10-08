@@ -19,13 +19,15 @@ const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
     ))
 }
 
-it('should render correctly', () => {
-    expect(createFormAndField({ label: 'Field #1', required: true }).render()).toMatchSnapshot()
-})
+describe('render', () => {
+    it('should render correctly', () => {
+        expect(createFormAndField({ label: 'Field #1', required: true }).render()).toMatchSnapshot()
+    })
 
-it('should NOT render wrapper if hasWrapper is false', () => {
-    const wrapper = createFormAndField({ hasWrapper: false })
-    expect(wrapper.find(FieldWrapper).length).toEqual(0)
+    it('should NOT render wrapper if hasWrapper is false', () => {
+        const wrapper = createFormAndField({ hasWrapper: false })
+        expect(wrapper.find(FieldWrapper).length).toEqual(0)
+    })
 })
 
 describe('convert', () => {

@@ -34,8 +34,8 @@ export class SelectField<OptionType = DefaultOptionType> extends React.Component
         return (
             <Select
                 status={props.hasError && 'error'}
-                {...props.input}
                 {...this.props}
+                {...props.input}
             />
         )
     }
