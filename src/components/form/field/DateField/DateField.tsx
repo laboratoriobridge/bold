@@ -6,7 +6,7 @@ import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DatePickerInput/DatePickerInput'
 
-export interface DateFieldProps extends DatePickerInputProps, FieldWrapperProps, Pick<FieldProps, 'validate'> {
+export interface DateFieldProps extends Partial<DatePickerInputProps>, FieldWrapperProps, Pick<FieldProps, 'validate'> {
     name: string
 }
 
