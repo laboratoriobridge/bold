@@ -50,15 +50,22 @@ export class Field extends React.Component<FieldProps> {
     }
 
     render() {
+        const { onChange, ...rest } = this.props
         return (
-            <FinalFormField {...this.props} render={this.renderComponent} />
+            <FinalFormField {...rest} custom={{ onChange }} render={this.renderComponent} />
         )
     }
 
-    private renderComponent = (props: FinalRenderProps) => {
+    private renderComponent = (props: FinalRenderProps & { custom: any }) => {
         const { meta } = props
+        const onChange = (value) => {
+            // External onChange prop is killed by final-form, so we merge the external and the internal one
+            props.input.onChange(value)
+            props.custom.onChange && props.custom.onChange(value)
+        }
         const renderProps = {
             ...props,
+            input: { ...props.input, onChange },
             hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
         }
 

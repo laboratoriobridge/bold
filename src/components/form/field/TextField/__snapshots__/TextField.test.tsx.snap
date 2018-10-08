@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField deve ser renderizado de forma correta 1`] = `
+exports[`should be rendered correctly 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;

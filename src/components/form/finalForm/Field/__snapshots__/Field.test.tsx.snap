@@ -2,7 +2,7 @@
 
 exports[`convert should throw an exception if convert is defined but necessary mutator is not set on context 1`] = `"Form must have a setFielData mutator so Field can define a convert function"`;
 
-exports[`should render correctly 1`] = `
+exports[`render should render correctly 1`] = `
 .emotion-1 {
   font-weight: bold;
   display: block;

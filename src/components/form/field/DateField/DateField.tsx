@@ -2,13 +2,11 @@ import * as moment from 'moment'
 import * as React from 'react'
 
 import { formats } from '../../../../util/dateTime'
-import { Omit } from '../../../../util/types'
 import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DatePickerInput/DatePickerInput'
 
-export interface DateFieldProps extends Omit<DatePickerInputProps, 'onChange'>,
-    FieldWrapperProps, Pick<FieldProps, 'validate'> {
+export interface DateFieldProps extends Partial<DatePickerInputProps>, FieldWrapperProps, Pick<FieldProps, 'validate'> {
     name: string
 }
 

@@ -25,6 +25,7 @@ storiesOf('Form/Fields', module)
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
+                onChange={action('changed')}
             />
             <CpfField
                 name='cpf'
@@ -32,6 +33,7 @@ storiesOf('Form/Fields', module)
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
+                onChange={action('changed')}
             />
             <TelefoneField
                 name='telefone'
@@ -40,6 +42,7 @@ storiesOf('Form/Fields', module)
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
                 icon={{ icon: 'search', onClick: action('clicked') }}
+                onChange={action('changed')}
             />
             <TimeField
                 name='time'
@@ -47,6 +50,7 @@ storiesOf('Form/Fields', module)
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
+                onChange={action('changed')}
             />
             <CnsField
                 name='CNS'
@@ -54,6 +58,7 @@ storiesOf('Form/Fields', module)
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
+                onChange={action('changed')}
             />
         </VFlow>
     ))
