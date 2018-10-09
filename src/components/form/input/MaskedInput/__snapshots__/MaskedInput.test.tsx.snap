@@ -1,6 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`should accept the style prop 1`] = `
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  font-family: "Noto Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  color: red;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<input
+  class="emotion-0"
+/>
+`;
+
+exports[`should render correctly 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
