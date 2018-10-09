@@ -23,7 +23,7 @@ const fontStyles: { [key in FontStyle] } = {
     'italic': 'italic',
 }
 
-const colors: { [key in TextColor] } = {
+export const colors: { [key in TextColor] } = {
     'normal': 'normal',
     'secondary': 'secondary',
     'disabled': 'disabled',
