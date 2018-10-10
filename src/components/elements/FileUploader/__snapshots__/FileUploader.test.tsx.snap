@@ -200,7 +200,7 @@ exports[`should render complete state 1`] = `
     <span
       class="emotion-7"
     >
-      PDF
+      pdf
     </span>
     <div
       class="emotion-13"
@@ -227,12 +227,12 @@ exports[`should render complete state 1`] = `
         <span
           class="emotion-10"
         >
-          file_test.pdf
+          teste.pdf
         </span>
         <span
           class="emotion-11"
         >
-          4 KB
+          0 Bytes
         </span>
       </div>
     </div>
@@ -589,7 +589,7 @@ exports[`should render uploading state 1`] = `
     <span
       class="emotion-7"
     >
-      PDF
+      pdf
     </span>
     <div
       class="emotion-12"
@@ -600,12 +600,12 @@ exports[`should render uploading state 1`] = `
         <span
           class="emotion-8"
         >
-          file_test.pdf
+          teste.pdf
         </span>
         <span
           class="emotion-9"
         >
-          4 KB
+          0 Bytes
         </span>
       </div>
       <progress

@@ -20,7 +20,7 @@ export interface FileUploaderProps extends WithStylesProps {
 export interface FileProps {
     error?: boolean
     progress?: number
-    selectedFile?: any
+    selectedFile?: File
     uploading?: boolean
 }
 
@@ -110,7 +110,7 @@ interface FileDetailsProps {
     theme: Theme
 }
 
-class FileDetails extends React.Component<FileDetailsProps> {
+export class FileDetails extends React.Component<FileDetailsProps> {
 
     render() {
         const styles: Styles = {
@@ -125,10 +125,9 @@ class FileDetails extends React.Component<FileDetailsProps> {
                 padding: '1rem',
             },
         }
-
         return (
             <div className={emotionCss(styles.wrapper)}>
-                <FileExtension extension='PDF' theme={this.props.theme} />
+                <FileExtension extension={this.returnExtension()} theme={this.props.theme} />
                 <div className={emotionCss(styles.info)}>
                     <FileInfo file={this.props.file} theme={this.props.theme} />
                     {this.props.file.uploading &&
@@ -137,6 +136,18 @@ class FileDetails extends React.Component<FileDetailsProps> {
                 </div>
             </div>
         )
+    }
+
+    private returnExtension = () => {
+        const { type } = this.props.file.selectedFile
+        const typeSplit = type.split('/')
+        if (typeSplit.length > 1) {
+            return typeSplit[1]
+        } else if (!typeSplit[0]) {
+            return null
+        } else {
+            return typeSplit[0]
+        }
     }
 
 }
@@ -176,7 +187,7 @@ interface FileExtensionProps {
     theme: Theme
 }
 
-class FileExtension extends React.PureComponent<FileExtensionProps> {
+export class FileExtension extends React.PureComponent<FileExtensionProps> {
 
     render() {
         const styles = {
