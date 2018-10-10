@@ -1,9 +1,11 @@
-import { render } from 'enzyme'
+import { mount, render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../test'
 
-import { FileUploader } from './FileUploader'
+import { FileExtension, FileUploader } from './FileUploader'
+
+const testFile: File = new File([], 'teste.pdf', { type: 'application/pdf' })
 
 it('should render initial state', () => {
     expect(render(withTheme(<FileUploader />))).toMatchSnapshot()
@@ -14,7 +16,7 @@ it('should render uploading state', () => {
         <FileUploader
             file={{
                 progress: 40,
-                selectedFile: { name: 'file_test.pdf', size: 4096 },
+                selectedFile: testFile,
                 uploading: true,
             }}
         />
@@ -25,8 +27,19 @@ it('should render complete state', () => {
     expect(render(withTheme(
         <FileUploader
             file={{
-                selectedFile: { name: 'file_test.pdf', size: 4096 },
+                selectedFile: testFile,
             }}
         />
     ))).toMatchSnapshot()
+})
+
+it('should render correct extension', () => {
+    expect(mount(withTheme(
+        <FileUploader
+            file={{
+                selectedFile: testFile,
+            }}
+        />
+    )).find(FileExtension).props().extension
+    ).toBe('pdf')
 })
