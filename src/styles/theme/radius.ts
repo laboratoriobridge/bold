@@ -4,6 +4,7 @@ export interface Radius {
     modal: number
     input: number
     paper: number
+    pill: number
 }
 
 export const radius: Radius = {
@@ -12,4 +13,5 @@ export const radius: Radius = {
     modal: 4,
     input: 2,
     paper: 4,
+    pill: 4,
 }

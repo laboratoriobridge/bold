@@ -13,3 +13,13 @@ it('should render correctly', () => {
     expect(render(withTheme(<Heading level={5}>Heading 5</Heading>))).toMatchSnapshot()
     expect(render(withTheme(<Heading level={6}>Heading 6</Heading>))).toMatchSnapshot()
 })
+
+it('should accept color prop', () => {
+    expect(render(withTheme(<Heading level={1} color='primary'>Heading Primary color</Heading>))).toMatchSnapshot()
+})
+
+it('should accept style prop', () => {
+    expect(render(withTheme(
+        <Heading level={1} style={{ fontStyle: 'italic' }}>Heading Primary color</Heading>
+    ))).toMatchSnapshot()
+})

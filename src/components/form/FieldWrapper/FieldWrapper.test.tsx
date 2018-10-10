@@ -3,18 +3,18 @@ import * as React from 'react'
 
 import { withTheme } from '../../../test'
 
-import { FormField } from './'
+import { FieldWrapper } from './'
 
 it('should render correctly', () => {
     expect(render(withTheme(
-        <FormField>
+        <FieldWrapper>
             Test
-        </FormField>
+        </FieldWrapper>
     ))).toMatchSnapshot()
 
     expect(render(withTheme(
-        <FormField name='test' label='Label' error='Error' required>
+        <FieldWrapper name='test' label='Label' error='Error' required>
             Teste
-        </FormField>
+        </FieldWrapper>
     ))).toMatchSnapshot()
 })

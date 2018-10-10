@@ -1,17 +1,13 @@
-import { number, withKnobs } from '@storybook/addon-knobs'
+import { number } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
 import { InfoLabel } from '../../elements/InfoLabel/InfoLabel'
 import { Cell } from '../Cell/Cell'
 
 import { AutoGrid } from './AutoGrid'
 
 storiesOf('Grid', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('AutoGrid', () => (
         <AutoGrid cellSize={number('cellSize', 4) as any}>
             <InfoLabel title='Title #1'>Content #1</InfoLabel>

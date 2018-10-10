@@ -2,7 +2,7 @@
 
 exports[`rendering should render correctly 1`] = `
 .emotion-1 {
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #F2F2F7;
   padding: 1rem 0;
   margin: 2rem 0;
   text-align: right;
@@ -32,13 +32,13 @@ exports[`rendering should render correctly 1`] = `
   transition: all .2s;
   font-weight: bold;
   cursor: pointer;
-  background-color: #ffffff;
-  border: 1px solid #b3b3b3;
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #666666;
-  background-color: #056DFF;
-  color: #ffffff;
-  border: 1px solid #056DFF;
+  color: #53595E;
+  background-color: #0A67D1;
+  color: #FFFFFF;
+  border: 1px solid #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -66,7 +66,7 @@ exports[`rendering should render correctly 1`] = `
 
 .emotion-0:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #f2f2f7,0 0 0 4px #056DFF;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:not(:disabled):hover {
@@ -74,7 +74,7 @@ exports[`rendering should render correctly 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #0564eb;
+  background-color: #095fc0;
 }
 
 <form>

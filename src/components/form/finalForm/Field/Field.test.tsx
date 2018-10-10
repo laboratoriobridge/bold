@@ -5,7 +5,7 @@ import * as React from 'react'
 import { Field as FinalField, Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
-import { FormField } from '../../FormField'
+import { FieldWrapper } from '../../FieldWrapper'
 
 import { Field, FieldProps, RenderProps } from './Field'
 
@@ -19,13 +19,15 @@ const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
     ))
 }
 
-it('should render correctly', () => {
-    expect(createFormAndField({ label: 'Field #1', required: true }).render()).toMatchSnapshot()
-})
+describe('render', () => {
+    it('should render correctly', () => {
+        expect(createFormAndField({ label: 'Field #1', required: true }).render()).toMatchSnapshot()
+    })
 
-it('should NOT render wrapper if hasWrapper is false', () => {
-    const wrapper = createFormAndField({ hasWrapper: false })
-    expect(wrapper.find(FormField).length).toEqual(0)
+    it('should NOT render wrapper if hasWrapper is false', () => {
+        const wrapper = createFormAndField({ hasWrapper: false })
+        expect(wrapper.find(FieldWrapper).length).toEqual(0)
+    })
 })
 
 describe('convert', () => {

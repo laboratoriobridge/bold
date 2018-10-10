@@ -24,9 +24,9 @@ exports[`should render correctly 1`] = `
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f2f2f7;
-  color: #056DFF;
+  border-bottom: 1px solid #F2F2F7;
+  background: #F2F2F7;
+  color: #0A67D1;
   font-weight: bold;
 }
 
@@ -94,9 +94,9 @@ exports[`should render correctly 2`] = `
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
-  background: #f2f2f7;
-  color: #056DFF;
+  border-bottom: 1px solid #F2F2F7;
+  background: #F2F2F7;
+  color: #0A67D1;
   font-weight: bold;
 }
 

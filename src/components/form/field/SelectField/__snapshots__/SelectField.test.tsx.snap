@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render should render correctly 1`] = `
-.emotion-10 {
+.emotion-9 {
   position: relative;
   box-sizing: border-box;
 }
 
-.emotion-9 {
+.emotion-8 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: hsl(0,0%,98%);
-  border-color: #b3b3b3;
+  border-color: #B9B9BD;
   border-radius: 2px;
   border-style: solid;
   border-width: 1px;
@@ -34,11 +34,11 @@ exports[`render should render correctly 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
-.emotion-9:hover {
-  border-color: #999999;
+.emotion-8:hover {
+  border-color: #818489;
 }
 
 .emotion-2 {
@@ -63,7 +63,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-0 {
-  color: #4d4d4d;
+  color: #2D343B;
   margin-left: 2px;
   margin-right: 2px;
   max-width: calc(100% - 8px);
@@ -87,7 +87,7 @@ exports[`render should render correctly 1`] = `
   box-sizing: border-box;
 }
 
-.emotion-8 {
+.emotion-7 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -106,7 +106,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-4 {
-  color: #b3b3b3;
+  color: #B9B9BD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -123,7 +123,7 @@ exports[`render should render correctly 1`] = `
 }
 
 .emotion-4:hover {
-  color: #E0001A;
+  color: #D83A2E;
 }
 
 .emotion-3 {
@@ -146,8 +146,8 @@ exports[`render should render correctly 1`] = `
   display: none;
 }
 
-.emotion-7 {
-  color: #4d4d4d;
+.emotion-6 {
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -157,25 +157,25 @@ exports[`render should render correctly 1`] = `
   transition: color 150ms;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
-.emotion-7:hover {
+.emotion-6:hover {
   color: hsl(0,0%,60%);
 }
 
-.emotion-7:hover {
-  color: #4d4d4d;
+.emotion-6:hover {
+  color: #2D343B;
 }
 
 <div
   data-name="select1"
 >
   <div
-    class="emotion-10"
+    class="emotion-9"
   >
     <div
-      class="emotion-9 react-select__control"
+      class="emotion-8 react-select__control"
     >
       <div
         class="emotion-2 react-select__value-container react-select__value-container--has-value"
@@ -211,7 +211,7 @@ exports[`render should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-8 react-select__indicators"
+        class="emotion-7 react-select__indicators"
       >
         <div
           aria-hidden="true"
@@ -235,18 +235,16 @@ exports[`render should render correctly 1`] = `
         />
         <div
           aria-hidden="true"
-          class="emotion-7 react-select__indicator react-select__dropdown-indicator"
+          class="emotion-6 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
-            aria-hidden="true"
-            class="emotion-3"
-            focusable="false"
             height="20"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
             width="20"
           >
             <path
-              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              d="M12 15.61l6-7.22H6l6 7.22z"
+              data-name="triangle-down"
             />
           </svg>
         </div>
@@ -262,18 +260,18 @@ exports[`render should render correctly 1`] = `
 `;
 
 exports[`render should render correctly when multivalue 1`] = `
-.emotion-17 {
+.emotion-14 {
   position: relative;
   box-sizing: border-box;
 }
 
-.emotion-16 {
+.emotion-13 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   background-color: hsl(0,0%,98%);
-  border-color: #b3b3b3;
+  border-color: #B9B9BD;
   border-radius: 2px;
   border-style: solid;
   border-width: 1px;
@@ -295,35 +293,14 @@ exports[`render should render correctly when multivalue 1`] = `
   -webkit-transition: all .2s;
   transition: all .2s;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
 }
 
-.emotion-16:hover {
-  border-color: #999999;
+.emotion-13:hover {
+  border-color: #818489;
 }
 
-.emotion-9 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 2px 8px;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  box-sizing: border-box;
-}
-
-.emotion-8 {
+.emotion-6 {
   margin: 2px;
   padding-bottom: 2px;
   padding-top: 2px;
@@ -332,7 +309,7 @@ exports[`render should render correctly when multivalue 1`] = `
   box-sizing: border-box;
 }
 
-.emotion-15 {
+.emotion-12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -350,8 +327,8 @@ exports[`render should render correctly when multivalue 1`] = `
   box-sizing: border-box;
 }
 
-.emotion-11 {
-  color: #b3b3b3;
+.emotion-9 {
+  color: #B9B9BD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -363,15 +340,15 @@ exports[`render should render correctly when multivalue 1`] = `
   cursor: pointer;
 }
 
-.emotion-11:hover {
+.emotion-9:hover {
   color: hsl(0,0%,60%);
 }
 
-.emotion-11:hover {
-  color: #E0001A;
+.emotion-9:hover {
+  color: #D83A2E;
 }
 
-.emotion-1 {
+.emotion-8 {
   display: inline-block;
   fill: currentColor;
   line-height: 1;
@@ -379,7 +356,7 @@ exports[`render should render correctly when multivalue 1`] = `
   stroke-width: 0;
 }
 
-.emotion-12 {
+.emotion-10 {
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
   align-self: stretch;
@@ -391,8 +368,8 @@ exports[`render should render correctly when multivalue 1`] = `
   display: none;
 }
 
-.emotion-14 {
-  color: #4d4d4d;
+.emotion-11 {
+  color: #2D343B;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -402,18 +379,39 @@ exports[`render should render correctly when multivalue 1`] = `
   transition: color 150ms;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
 }
 
-.emotion-14:hover {
+.emotion-11:hover {
   color: hsl(0,0%,60%);
 }
 
-.emotion-14:hover {
-  color: #4d4d4d;
+.emotion-11:hover {
+  color: #2D343B;
 }
 
-.emotion-3 {
+.emotion-7 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 2px;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.emotion-2 {
   background-color: hsl(0,0%,90%);
   border-radius: 2px;
   display: -webkit-box;
@@ -423,12 +421,12 @@ exports[`render should render correctly when multivalue 1`] = `
   margin: 2px;
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid #b3b3b3;
+  border: 1px solid #B9B9BD;
 }
 
 .emotion-0 {
   border-radius: 2px;
-  color: #4d4d4d;
+  color: #2D343B;
   font-size: 0.75rem;
   overflow: hidden;
   padding: 1px 0.5rem;
@@ -436,10 +434,15 @@ exports[`render should render correctly when multivalue 1`] = `
   text-overflow: ellipsis;
   white-space: nowrap;
   box-sizing: border-box;
-  background: #ffffff;
+  background: #FFFFFF;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  line-height: 1.25rem;
 }
 
-.emotion-2 {
+.emotion-1 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -449,37 +452,41 @@ exports[`render should render correctly when multivalue 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 0;
+  padding-right: 0;
   box-sizing: border-box;
   cursor: pointer;
-  background: #f2f2f7;
+  background: #F2F2F7;
+  border-top-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 4px;
 }
 
-.emotion-2:hover {
+.emotion-1:hover {
   background-color: #FFBDAD;
   color: #DE350B;
 }
 
-.emotion-2:hover {
-  background: #f2f2f7;
-  color: #E0001A;
+.emotion-1:hover {
+  background: #F2F2F7;
+  color: #D83A2E;
 }
 
 <div
   data-name="select1"
 >
   <div
-    class="emotion-17"
+    class="emotion-14"
   >
     <div
-      class="emotion-16 react-select__control"
+      class="emotion-13 react-select__control"
     >
       <div
-        class="emotion-9 react-select__value-container react-select__value-container--is-multi react-select__value-container--has-value"
+        class="emotion-7 react-select__value-container react-select__value-container--is-multi react-select__value-container--has-value"
       >
         <div
-          class="emotion-3 react-select__multi-value"
+          class="emotion-2 react-select__multi-value"
         >
           <div
             class="emotion-0 react-select__multi-value__label"
@@ -487,24 +494,23 @@ exports[`render should render correctly when multivalue 1`] = `
             Item #1
           </div>
           <div
-            class="emotion-2 react-select__multi-value__remove"
+            class="emotion-1 react-select__multi-value__remove"
           >
             <svg
-              aria-hidden="true"
-              class="emotion-1"
-              focusable="false"
-              height="14"
-              viewBox="0 0 20 20"
-              width="14"
+              height="22"
+              style="fill: currentColor;"
+              viewBox="0 0 24 24"
+              width="22"
             >
               <path
-                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                data-name="times"
               />
             </svg>
           </div>
         </div>
         <div
-          class="emotion-3 react-select__multi-value"
+          class="emotion-2 react-select__multi-value"
         >
           <div
             class="emotion-0 react-select__multi-value__label"
@@ -512,24 +518,23 @@ exports[`render should render correctly when multivalue 1`] = `
             Item #2
           </div>
           <div
-            class="emotion-2 react-select__multi-value__remove"
+            class="emotion-1 react-select__multi-value__remove"
           >
             <svg
-              aria-hidden="true"
-              class="emotion-1"
-              focusable="false"
-              height="14"
-              viewBox="0 0 20 20"
-              width="14"
+              height="22"
+              style="fill: currentColor;"
+              viewBox="0 0 24 24"
+              width="22"
             >
               <path
-                d="M14.348 14.849c-0.469 0.469-1.229 0.469-1.697 0l-2.651-3.030-2.651 3.029c-0.469 0.469-1.229 0.469-1.697 0-0.469-0.469-0.469-1.229 0-1.697l2.758-3.15-2.759-3.152c-0.469-0.469-0.469-1.228 0-1.697s1.228-0.469 1.697 0l2.652 3.031 2.651-3.031c0.469-0.469 1.228-0.469 1.697 0s0.469 1.229 0 1.697l-2.758 3.152 2.758 3.15c0.469 0.469 0.469 1.229 0 1.698z"
+                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                data-name="times"
               />
             </svg>
           </div>
         </div>
         <div
-          class="emotion-8"
+          class="emotion-6"
         >
           <div
             class="react-select__input"
@@ -554,15 +559,15 @@ exports[`render should render correctly when multivalue 1`] = `
         </div>
       </div>
       <div
-        class="emotion-15 react-select__indicators"
+        class="emotion-12 react-select__indicators"
       >
         <div
           aria-hidden="true"
-          class="emotion-11 react-select__indicator react-select__clear-indicator"
+          class="emotion-9 react-select__indicator react-select__clear-indicator"
         >
           <svg
             aria-hidden="true"
-            class="emotion-1"
+            class="emotion-8"
             focusable="false"
             height="20"
             viewBox="0 0 20 20"
@@ -574,22 +579,20 @@ exports[`render should render correctly when multivalue 1`] = `
           </svg>
         </div>
         <span
-          class="emotion-12 react-select__indicator-separator"
+          class="emotion-10 react-select__indicator-separator"
         />
         <div
           aria-hidden="true"
-          class="emotion-14 react-select__indicator react-select__dropdown-indicator"
+          class="emotion-11 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
-            aria-hidden="true"
-            class="emotion-1"
-            focusable="false"
             height="20"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
             width="20"
           >
             <path
-              d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+              d="M12 15.61l6-7.22H6l6 7.22z"
+              data-name="triangle-down"
             />
           </svg>
         </div>

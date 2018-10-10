@@ -1,10 +1,10 @@
 import * as React from 'react'
 
-import { FormFieldProps } from '../../../form/FormField'
+import { FieldWrapperProps } from '../../../form/FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
 
-export interface TextFieldProps extends FormFieldProps, TextInputProps,
+export interface TextFieldProps extends FieldWrapperProps, TextInputProps,
     Pick<FieldProps, 'parse' | 'format'> {
     name: string
 }

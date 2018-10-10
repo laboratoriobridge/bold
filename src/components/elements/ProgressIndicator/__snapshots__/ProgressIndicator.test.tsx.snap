@@ -11,19 +11,19 @@ exports[`should accept color prop 1`] = `
 }
 
 .emotion-0::-webkit-progress-bar {
-  background-color: #e6e6e6;
+  background-color: #F2F2F7;
   border-radius: 4px;
 }
 
 .emotion-0::-webkit-progress-value {
-  background-color: #E0001A;
+  background-color: #D83A2E;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-0::-moz-progress-bar {
-  background-color: #E0001A;
+  background-color: #D83A2E;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -48,19 +48,19 @@ exports[`should accept style prop 1`] = `
 }
 
 .emotion-0::-webkit-progress-bar {
-  background-color: #e6e6e6;
+  background-color: #F2F2F7;
   border-radius: 4px;
 }
 
 .emotion-0::-webkit-progress-value {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-0::-moz-progress-bar {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -84,19 +84,19 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-progress-bar {
-  background-color: #e6e6e6;
+  background-color: #F2F2F7;
   border-radius: 4px;
 }
 
 .emotion-0::-webkit-progress-value {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-0::-moz-progress-bar {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;

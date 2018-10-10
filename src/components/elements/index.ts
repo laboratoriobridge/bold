@@ -14,6 +14,7 @@ export * from './Alert'
 export { StickyContainer } from './StickyContainer/StickyContainer'
 export { Tabs, TabsProps, TabLink, TabLinkProps } from './Tabs/Tabs'
 export { Tag, TagProps } from './Tag/Tag'
+export { FileUploader } from './FileUploader/FileUploader'
 
 export * from './button'
 export * from './table'

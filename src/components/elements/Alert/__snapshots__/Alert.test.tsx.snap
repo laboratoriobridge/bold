@@ -39,9 +39,9 @@ exports[`Alert should allow styles override 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
   color: red;
 }
 
@@ -77,8 +77,8 @@ exports[`Alert should allow styles override 1`] = `
         width="1em"
       >
         <path
-          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 16h-2v-7h2zm-1-9a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 9z"
-          data-name="Informação"
+          d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3a1.75 1.75 0 1 1-1.75 1.75A1.75 1.75 0 0 1 12 5zm2.19 14H9.81v-1.75h.44a.44.44 0 0 0 .44-.44v-4.37a.44.44 0 0 0-.44-.44h-.44v-1.75h3.5v6.56a.44.44 0 0 0 .44.44h.44z"
+          data-name="information-circle"
         />
       </svg>
     </span>
@@ -111,9 +111,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-7 {
@@ -185,7 +185,7 @@ exports[`Alert should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -213,11 +213,11 @@ exports[`Alert should render correctly 1`] = `
 
 .emotion-5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-5:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-4 {
@@ -246,9 +246,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-26 {
@@ -270,9 +270,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-35 {
@@ -294,9 +294,9 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>
@@ -317,8 +317,8 @@ exports[`Alert should render correctly 1`] = `
           width="1em"
         >
           <path
-            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 16h-2v-7h2zm-1-9a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 9z"
-            data-name="Informação"
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3a1.75 1.75 0 1 1-1.75 1.75A1.75 1.75 0 0 1 12 5zm2.19 14H9.81v-1.75h.44a.44.44 0 0 0 .44-.44v-4.37a.44.44 0 0 0-.44-.44h-.44v-1.75h3.5v6.56a.44.44 0 0 0 .44.44h.44z"
+            data-name="information-circle"
           />
         </svg>
       </span>
@@ -346,7 +346,8 @@ exports[`Alert should render correctly 1`] = `
                 width="1em"
               >
                 <path
-                  d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+                  d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                  data-name="times"
                 />
               </svg>
             </span>
@@ -373,6 +374,7 @@ exports[`Alert should render correctly 1`] = `
         >
           <path
             d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1.29 14.21l-4.42-4.4 1.42-1.42 3 3 5.59-5.6 1.42 1.42z"
+            data-name="check-circle"
           />
         </svg>
       </span>
@@ -400,7 +402,8 @@ exports[`Alert should render correctly 1`] = `
                 width="1em"
               >
                 <path
-                  d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+                  d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                  data-name="times"
                 />
               </svg>
             </span>
@@ -427,6 +430,7 @@ exports[`Alert should render correctly 1`] = `
         >
           <path
             d="M21.83 19L12.92 3.62a1 1 0 0 0-1.84 0L2.17 19c-.46.88.07 2 .92 2h17.82c.85 0 1.38-1.14.92-2zM11 7h2v7h-2zm1 12a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 19z"
+            data-name="exclamation-triangle"
           />
         </svg>
       </span>
@@ -454,7 +458,8 @@ exports[`Alert should render correctly 1`] = `
                 width="1em"
               >
                 <path
-                  d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+                  d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                  data-name="times"
                 />
               </svg>
             </span>
@@ -481,6 +486,7 @@ exports[`Alert should render correctly 1`] = `
         >
           <path
             d="M2 12A10 10 0 1 0 12 2 10 10 0 0 0 2 12zm2 0a7.92 7.92 0 0 1 1.69-4.9L16.9 18.31A7.92 7.92 0 0 1 12 20a8 8 0 0 1-8-8zm16 0a7.92 7.92 0 0 1-1.69 4.9L7.1 5.69A7.92 7.92 0 0 1 12 4a8 8 0 0 1 8 8z"
+            data-name="ban"
           />
         </svg>
       </span>
@@ -508,7 +514,8 @@ exports[`Alert should render correctly 1`] = `
                 width="1em"
               >
                 <path
-                  d="M17.71 7.71l-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42 4.3 4.29-4.3 4.29 1.42 1.42 4.29-4.3 4.29 4.3 1.42-1.42-4.3-4.29 4.3-4.29z"
+                  d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+                  data-name="times"
                 />
               </svg>
             </span>
@@ -568,9 +575,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f1f7ff;
-  color: #0066f5;
-  border-color: #0066f5;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-0 {
@@ -597,9 +604,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #f0faf2;
-  color: #00821a;
-  border-color: #00821a;
+  background: #E3FAD2;
+  color: #097D05;
+  border-color: #097D05;
 }
 
 .emotion-14 {
@@ -621,9 +628,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #fff9f4;
-  color: #d43900;
-  border-color: #d43900;
+  background: #FAF0E8;
+  color: #BF4600;
+  border-color: #BF4600;
 }
 
 .emotion-19 {
@@ -645,9 +652,9 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #FAF0F2;
-  color: #E0001A;
-  border-color: #E0001A;
+  background: #FCF0F0;
+  color: #D83A2E;
+  border-color: #D83A2E;
 }
 
 <div>
@@ -668,8 +675,8 @@ exports[`Alert should render correctly when inline 1`] = `
           width="1em"
         >
           <path
-            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 16h-2v-7h2zm-1-9a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 9z"
-            data-name="Informação"
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 3a1.75 1.75 0 1 1-1.75 1.75A1.75 1.75 0 0 1 12 5zm2.19 14H9.81v-1.75h.44a.44.44 0 0 0 .44-.44v-4.37a.44.44 0 0 0-.44-.44h-.44v-1.75h3.5v6.56a.44.44 0 0 0 .44.44h.44z"
+            data-name="information-circle"
           />
         </svg>
       </span>
@@ -698,6 +705,7 @@ exports[`Alert should render correctly when inline 1`] = `
         >
           <path
             d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-1.29 14.21l-4.42-4.4 1.42-1.42 3 3 5.59-5.6 1.42 1.42z"
+            data-name="check-circle"
           />
         </svg>
       </span>
@@ -726,6 +734,7 @@ exports[`Alert should render correctly when inline 1`] = `
         >
           <path
             d="M21.83 19L12.92 3.62a1 1 0 0 0-1.84 0L2.17 19c-.46.88.07 2 .92 2h17.82c.85 0 1.38-1.14.92-2zM11 7h2v7h-2zm1 12a1.5 1.5 0 1 1 1.5-1.5A1.5 1.5 0 0 1 12 19z"
+            data-name="exclamation-triangle"
           />
         </svg>
       </span>
@@ -754,6 +763,7 @@ exports[`Alert should render correctly when inline 1`] = `
         >
           <path
             d="M2 12A10 10 0 1 0 12 2 10 10 0 0 0 2 12zm2 0a7.92 7.92 0 0 1 1.69-4.9L16.9 18.31A7.92 7.92 0 0 1 12 20a8 8 0 0 1-8-8zm16 0a7.92 7.92 0 0 1-1.69 4.9L7.1 5.69A7.92 7.92 0 0 1 12 4a8 8 0 0 1 8 8z"
+            data-name="ban"
           />
         </svg>
       </span>

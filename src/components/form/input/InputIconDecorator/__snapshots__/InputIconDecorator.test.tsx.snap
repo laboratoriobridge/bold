@@ -11,7 +11,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-2 {
   position: absolute;
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -67,6 +67,7 @@ exports[`should render correctly 1`] = `
       >
         <path
           d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+          data-name="search"
         />
       </svg>
     </span>
@@ -85,7 +86,7 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-3 {
   position: absolute;
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -133,7 +134,7 @@ exports[`should render correctly with button 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -162,11 +163,11 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #056DFF;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(128,128,128,0.16);
+  background-color: rgba(103,108,112,0.16);
 }
 
 .emotion-2:focus {
@@ -205,6 +206,7 @@ exports[`should render correctly with button 1`] = `
           >
             <path
               d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+              data-name="search"
             />
           </svg>
         </span>
@@ -242,7 +244,7 @@ exports[`should render correctly with left position 1`] = `
 
 .emotion-2 {
   position: absolute;
-  background-color: #f2f2f7;
+  background-color: #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -281,6 +283,7 @@ exports[`should render correctly with left position 1`] = `
       >
         <path
           d="M20.21 18.79l-5.32-5.32A5.93 5.93 0 0 0 16 10a6 6 0 1 0-6 6 5.93 5.93 0 0 0 3.47-1.11l5.32 5.32zM10 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"
+          data-name="search"
         />
       </svg>
     </span>

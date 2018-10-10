@@ -4,10 +4,10 @@ exports[`Table should accept the hovered prop 1`] = `
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -19,39 +19,36 @@ exports[`Table should accept the hovered prop 1`] = `
   cursor: pointer;
 }
 
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-4 {
   margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #B9B9BD;
 }
 
 .emotion-2 {
-  fill: #056DFF;
-  font-size: 1rem;
+  fill: #0A67D1;
 }
 
-.emotion-9 {
+.emotion-10 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-18 {
+.emotion-19 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
-.emotion-18 tr:hover td {
-  background: #f2f2f7;
+.emotion-19 tr:hover td {
+  background: #F2F2F7;
 }
 
 <table
-  class="emotion-18"
+  class="emotion-19"
 >
   <thead
     class="emotion-1"
@@ -73,24 +70,24 @@ exports[`Table should accept the hovered prop 1`] = `
         class="emotion-0"
       >
         <span
-          class="emotion-4"
+          class="emotion-5"
         >
           Header #1
-          <span
-            class="emotion-3"
+          <svg
+            class="emotion-4"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
+            <polygon
               class="emotion-2"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
-              />
-            </svg>
-          </span>
+              points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+            />
+            <polygon
+              class="emotion-3"
+              points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+            />
+          </svg>
         </span>
       </th>
       <th
@@ -107,7 +104,7 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
         colspan="2"
       >
         Row #1
@@ -117,12 +114,12 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #2
       </td>
@@ -131,12 +128,12 @@ exports[`Table should accept the hovered prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #2
       </td>
@@ -149,10 +146,10 @@ exports[`Table should accept the style prop 1`] = `
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -164,36 +161,33 @@ exports[`Table should accept the style prop 1`] = `
   cursor: pointer;
 }
 
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-4 {
   margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #B9B9BD;
 }
 
 .emotion-2 {
-  fill: #056DFF;
-  font-size: 1rem;
+  fill: #0A67D1;
 }
 
-.emotion-9 {
+.emotion-10 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-18 {
+.emotion-19 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
   color: red;
 }
 
 <table
-  class="emotion-18"
+  class="emotion-19"
 >
   <thead
     class="emotion-1"
@@ -215,24 +209,24 @@ exports[`Table should accept the style prop 1`] = `
         class="emotion-0"
       >
         <span
-          class="emotion-4"
+          class="emotion-5"
         >
           Header #1
-          <span
-            class="emotion-3"
+          <svg
+            class="emotion-4"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
+            <polygon
               class="emotion-2"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
-              />
-            </svg>
-          </span>
+              points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+            />
+            <polygon
+              class="emotion-3"
+              points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+            />
+          </svg>
         </span>
       </th>
       <th
@@ -249,7 +243,7 @@ exports[`Table should accept the style prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
         colspan="2"
       >
         Row #1
@@ -259,12 +253,12 @@ exports[`Table should accept the style prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #2
       </td>
@@ -273,12 +267,12 @@ exports[`Table should accept the style prop 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #2
       </td>
@@ -288,20 +282,20 @@ exports[`Table should accept the style prop 1`] = `
 `;
 
 exports[`Table should render corretly 1`] = `
-.emotion-18 {
+.emotion-19 {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -313,28 +307,25 @@ exports[`Table should render corretly 1`] = `
   cursor: pointer;
 }
 
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-4 {
   margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #B9B9BD;
 }
 
 .emotion-2 {
-  fill: #056DFF;
-  font-size: 1rem;
+  fill: #0A67D1;
 }
 
-.emotion-9 {
+.emotion-10 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
 }
 
 <table
-  class="emotion-18"
+  class="emotion-19"
 >
   <thead
     class="emotion-1"
@@ -356,24 +347,24 @@ exports[`Table should render corretly 1`] = `
         class="emotion-0"
       >
         <span
-          class="emotion-4"
+          class="emotion-5"
         >
           Header #1
-          <span
-            class="emotion-3"
+          <svg
+            class="emotion-4"
+            height="1em"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
+            <polygon
               class="emotion-2"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M5.64 9.53l1.41-1.42L12 13.06l4.95-4.95 1.41 1.42L12 15.89 5.64 9.53z"
-              />
-            </svg>
-          </span>
+              points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+            />
+            <polygon
+              class="emotion-3"
+              points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+            />
+          </svg>
         </span>
       </th>
       <th
@@ -390,7 +381,7 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
         colspan="2"
       >
         Row #1
@@ -400,12 +391,12 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #2 - Cell #2
       </td>
@@ -414,12 +405,12 @@ exports[`Table should render corretly 1`] = `
       class="emotion-1"
     >
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #1
       </td>
       <td
-        class="emotion-9"
+        class="emotion-10"
       >
         Row #3 - Cell #2
       </td>

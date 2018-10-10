@@ -2,15 +2,13 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withStore, withTheme } from '../../../../../stories-addons'
+import { withRouter } from '../../../../../stories-addons'
 import { TextField } from '../../../field/TextField/TextField'
 
 import { WizardForm, WizardStep } from './WizardForm'
 
 storiesOf('Form', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withTheme())
-    .addDecorator(withStore())
+    .addDecorator(withRouter())
     .add('WizardForm', () => {
         return (
             <WizardForm

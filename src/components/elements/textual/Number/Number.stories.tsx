@@ -1,15 +1,10 @@
-import { boolean, number, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
-
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 
 import { Number } from './Number'
 
 storiesOf('Textual', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('Number', () => (
         <Number
             value={number('value', 1234.56789)}
