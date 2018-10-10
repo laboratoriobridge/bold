@@ -1,4 +1,7 @@
-export type Color = string
+import { Color } from 'csstype'
+import { merge } from 'lodash'
+
+import { blue, ColorScale, gray, green, orange, red } from '../colors'
 
 export interface StatusColorMap {
     main: Color
@@ -6,24 +9,11 @@ export interface StatusColorMap {
     onColor: Color
 }
 
-export interface ColorScale {
-    c10: Color
-    c20: Color
-    c30: Color
-    c40: Color
-    c50: Color
-    c60: Color
-    c70: Color
-    c80: Color
-    c90: Color
-}
-
 export interface Pallete {
     text: { main: Color, secondary: Color, disabled: Color }
-    link: { main: Color }
     surface: { main: Color, background: Color }
     divider: Color
-    primary: { main: Color }
+    primary: ColorScale & { main: Color }
     status: {
         danger: StatusColorMap
         success: StatusColorMap
@@ -34,65 +24,70 @@ export interface Pallete {
     gray: ColorScale
 }
 
-export const gray: ColorScale = {
-    c90: '#e6e6e6',
-    c80: '#cccccc',
-    c70: '#b3b3b3',
-    c60: '#999999',
-    c50: '#808080',
-    c40: '#666666',
-    c30: '#4d4d4d',
-    c20: '#333333',
-    c10: '#1a1a1a',
+export interface PalleteConfig {
+    grayScale?: ColorScale
+    primaryScale?: ColorScale
+    successScale?: ColorScale
+    dangerScale?: ColorScale
+    alertScale?: ColorScale
+    infoScale?: ColorScale
 }
 
-export const createPallete = (): Pallete => {
+export const defaultConfig: PalleteConfig = {
+    grayScale: gray,
+    primaryScale: blue,
+    successScale: green,
+    dangerScale: red,
+    alertScale: orange,
+    infoScale: blue,
+}
+
+export const createPallete = (userConfig?: PalleteConfig): Pallete => {
+    const config = merge({}, defaultConfig, userConfig)
+
     return {
-        text: {
-            main: gray.c30,
-            secondary: gray.c40,
-            disabled: gray.c70,
-        },
-        link: {
-            main: '#0066f5',
-        },
-        divider: gray.c90,
-        surface: {
-            main: '#ffffff',
-            background: '#f2f2f7',
-        },
+        gray: config.grayScale,
+        divider: config.grayScale.c90,
+        highlight: '#FFED94',
         primary: {
-            main: '#056DFF',
+            ...config.primaryScale,
+            main: config.primaryScale.c40,
+        },
+        text: {
+            main: config.grayScale.c20,
+            secondary: config.grayScale.c40,
+            disabled: config.grayScale.c70,
+        },
+        surface: {
+            main: config.grayScale.c100,
+            background: config.grayScale.c90,
         },
         status: {
             danger: {
-                main: '#E0001A',
-                background: '#FAF0F2',
-                onColor: '#FFFFFF',
+                main: config.dangerScale.c40,
+                background: config.dangerScale.c90,
+                onColor: config.dangerScale.c100,
             },
             success: {
-                main: '#00821a',
-                background: '#f0faf2',
-                onColor: '#FFFFFF',
+                main: config.successScale.c40,
+                background: config.successScale.c90,
+                onColor: config.successScale.c100,
             },
             info: {
-                main: '#0066f5',
-                background: '#f1f7ff',
-                onColor: '#FFFFFF',
+                main: config.infoScale.c40,
+                background: config.infoScale.c90,
+                onColor: config.infoScale.c100,
             },
             alert: {
-                main: '#d43900',
-                background: '#fff9f4',
-                onColor: '#FFFFFF',
+                main: config.alertScale.c40,
+                background: config.alertScale.c90,
+                onColor: config.alertScale.c100,
             },
         },
-        highlight: '#FFED94',
-        gray,
     }
 }
 
-export type TextColor = 'normal' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
-    | 'gray90' | 'gray80' | 'gray70' | 'gray60' | 'gray50' | 'gray40' | 'gray30' | 'gray20' | 'gray10'
+export type TextColor = 'normal' | 'secondary' | 'disabled' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
 
 export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } = {
     'normal': (pallete) => pallete.text.main,
@@ -101,13 +96,6 @@ export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } =
     'success': (pallete) => pallete.status.success.main,
     'info': (pallete) => pallete.status.info.main,
     'alert': (pallete) => pallete.status.alert.main,
-    'gray90': (pallete) => pallete.gray.c90,
-    'gray80': (pallete) => pallete.gray.c80,
-    'gray70': (pallete) => pallete.gray.c70,
-    'gray60': (pallete) => pallete.gray.c60,
-    'gray50': (pallete) => pallete.gray.c50,
-    'gray40': (pallete) => pallete.gray.c40,
-    'gray30': (pallete) => pallete.gray.c30,
-    'gray20': (pallete) => pallete.gray.c20,
-    'gray10': (pallete) => pallete.gray.c10,
+    'secondary': (pallete) => pallete.text.secondary,
+    'disabled': (pallete) => pallete.text.disabled,
 }

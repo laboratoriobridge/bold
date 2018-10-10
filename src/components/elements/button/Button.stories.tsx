@@ -1,10 +1,8 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { MemoryRouter } from 'react-router'
-
-import { withPropTypes, withTheme } from '../../../stories-addons'
 
 import * as Doc from './Button.md'
 import { Button } from './Button/Button'
@@ -30,9 +28,10 @@ const sizeOptions: { [key in Size]: string } = {
 }
 
 storiesOf('Components/Button', module)
-    .addDecorator(withPropTypes(Doc))
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
+    // @ts-ignore
+    .addParameters({
+        info: { text: Doc },
+    })
     .add('default', () => (
         <Button
             label={text('label', 'Button')}

@@ -1,9 +1,8 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { Button } from '../../button/Button/Button'
 
 import { DataTable } from './DataTable'
@@ -21,9 +20,6 @@ const rows: Row[] = [
 ]
 
 storiesOf('Components/Table', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('DataTable', () => (
         // tslint:disable jsx-no-lambda
         <DataTable

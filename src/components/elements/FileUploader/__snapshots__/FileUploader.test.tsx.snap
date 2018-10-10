@@ -2,9 +2,9 @@
 
 exports[`should render complete state 1`] = `
 .emotion-15 {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 4px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-6 {
@@ -69,12 +69,12 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-0 {
-  fill: #666666;
+  fill: #53595E;
   font-size: 1.5rem;
 }
 
 .emotion-3 {
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -84,7 +84,7 @@ exports[`should render complete state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -101,10 +101,10 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-7 {
-  color: #666666;
+  color: #53595E;
   font-weight: bold;
-  background-color: #f2f2f7;
-  border: 1px solid #e6e6e6;
+  background-color: #F2F2F7;
+  border: 1px solid #F2F2F7;
   padding: 1rem;
 }
 
@@ -120,7 +120,6 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-10 {
-  color: #4d4d4d;
   font-size: 0.75rem;
   font-weight: bold;
   margin-right: 10px;
@@ -139,7 +138,7 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-8 {
-  fill: #056DFF;
+  fill: #0A67D1;
   font-size: 1rem;
 }
 
@@ -170,9 +169,13 @@ exports[`should render complete state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <path
-                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-              />
+              <g
+                data-name="upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
             </svg>
           </span>
         </div>
@@ -216,7 +219,8 @@ exports[`should render complete state 1`] = `
             width="1em"
           >
             <path
-              d="M10.71 16.21l7-7-1.42-1.42-5.59 5.6-2.99-3-1.42 1.42"
+              d="M19.99 7.76l-1.42-1.41-8.47 8.47-4.67-4.68-1.42 1.42 4.68 4.67 1.41 1.42h.01l1.41-1.41v-.01l8.47-8.47z"
+              data-name="check"
             />
           </svg>
         </span>
@@ -238,9 +242,9 @@ exports[`should render complete state 1`] = `
 
 exports[`should render initial state 1`] = `
 .emotion-7 {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 4px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-6 {
@@ -305,12 +309,12 @@ exports[`should render initial state 1`] = `
 }
 
 .emotion-0 {
-  fill: #666666;
+  fill: #53595E;
   font-size: 1.5rem;
 }
 
 .emotion-3 {
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -342,9 +346,13 @@ exports[`should render initial state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <path
-                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-              />
+              <g
+                data-name="upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
             </svg>
           </span>
         </div>
@@ -368,9 +376,9 @@ exports[`should render initial state 1`] = `
 
 exports[`should render uploading state 1`] = `
 .emotion-14 {
-  background-color: #ffffff;
+  background-color: #FFFFFF;
   border-radius: 4px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-6 {
@@ -435,12 +443,12 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-0 {
-  fill: #666666;
+  fill: #53595E;
   font-size: 1.5rem;
 }
 
 .emotion-3 {
-  color: #666666;
+  color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -450,7 +458,7 @@ exports[`should render uploading state 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -467,10 +475,10 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-7 {
-  color: #666666;
+  color: #53595E;
   font-weight: bold;
-  background-color: #f2f2f7;
-  border: 1px solid #e6e6e6;
+  background-color: #F2F2F7;
+  border: 1px solid #F2F2F7;
   padding: 1rem;
 }
 
@@ -486,7 +494,6 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-8 {
-  color: #4d4d4d;
   font-size: 0.75rem;
   font-weight: bold;
   margin-right: 10px;
@@ -506,19 +513,19 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-11::-webkit-progress-bar {
-  background-color: #e6e6e6;
+  background-color: #F2F2F7;
   border-radius: 4px;
 }
 
 .emotion-11::-webkit-progress-value {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
 .emotion-11::-moz-progress-bar {
-  background-color: #056DFF;
+  background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -551,9 +558,13 @@ exports[`should render uploading state 1`] = `
               viewBox="0 0 24 24"
               width="1em"
             >
-              <path
-                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-              />
+              <g
+                data-name="upload"
+              >
+                <path
+                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+                />
+              </g>
             </svg>
           </span>
         </div>

@@ -1,9 +1,8 @@
 import { action } from '@storybook/addon-actions'
-import { select, withKnobs } from '@storybook/addon-knobs'
+import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
 import { VFlow } from '../../../layout/Flow/VFlow'
 import { TextInput } from '../TextInput/TextInput'
 
@@ -15,9 +14,6 @@ const positionOptions = {
 }
 
 storiesOf('Form', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('InputIconDecorator', () => (
         <VFlow>
             <InputIconDecorator

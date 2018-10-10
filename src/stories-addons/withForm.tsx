@@ -1,21 +1,20 @@
 import { Renderable, RenderFunction } from '@storybook/react'
 import * as React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 import { Form } from '../components/form/finalForm/Form'
-
-import { withStore } from './withStore'
 
 // tslint:disable jsx-no-lambda
 
 export const withForm = (store?) =>
     (story: RenderFunction, context: { kind: string, story: string }): Renderable => {
-        return withStore(store)(() => {
-            const submit = () => undefined
-            return (
+        const submit = () => undefined
+        return (
+            <BrowserRouter>
                 <Form
                     onSubmit={submit}
                     render={() => story()}
                 />
-            )
-        }, context)
+            </BrowserRouter>
+        )
     }

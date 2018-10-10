@@ -1,9 +1,7 @@
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withPropTypes, withTheme } from '../../../stories-addons'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../button/Button/Button'
 
@@ -12,9 +10,6 @@ import { DropdownButton } from './DropdownButton'
 import { DropdownItem, DropdownMenu } from './DropdownMenu'
 
 storiesOf('Components/Dropdown', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
     .add('button', () => (
         <DropdownButton
             icon='dots'

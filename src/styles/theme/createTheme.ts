@@ -1,8 +1,9 @@
+import { Color } from 'csstype'
 import { keyframes } from 'emotion'
 
 import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createGlobals, Global } from './createGlobals'
-import { Color, createPallete, Pallete, TextColor, textColorMap } from './createPallete'
+import { createPallete, Pallete, PalleteConfig, TextColor, textColorMap } from './createPallete'
 import { createShadows, Shadows } from './createShadows'
 import { createTypography, Typography } from './createTypography'
 import { radius, Radius } from './radius'
@@ -19,8 +20,10 @@ export interface Theme {
     animation: any
 }
 
-export const createTheme = (): Theme => {
-    const pallete = createPallete()
+export interface ThemeConfig extends PalleteConfig { }
+
+export const createTheme = (config?: ThemeConfig): Theme => {
+    const pallete = createPallete(config)
     const typography = createTypography()
 
     return {

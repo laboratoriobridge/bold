@@ -1246,6 +1246,13 @@
     "@types/react-dom" "*"
     "@types/react-transition-group" "*"
 
+"@types/react-text-mask@5.4.2":
+  version "5.4.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-text-mask/-/react-text-mask-5.4.2.tgz#90fe616fb223da6360a72c52527351c5ba59c171"
+  integrity sha512-R4h07wAeOPh6xc6E9qYPMgYpeuUJ1w3rs3oWwp9oWIVPtnAGxPGDuCPEs2+ynlP5syeM7heZeZeM8saAHRgENA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@*":
   version "2.0.14"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-transition-group/-/react-transition-group-2.0.14.tgz#afd0cd785a97f070b55765e9f9d76ff568269001"
@@ -1299,10 +1306,10 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
   integrity sha512-QYWklZ37+QOcjwuolrvb121oXR6kA+5ucg9ieb2w0J0lATUp8DeQ804oGvf3GUXzJPzJiTnbhcX/aE+F1vvxGQ==
 
-"@types/storybook__react@3.0.8":
-  version "3.0.8"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.8.tgz#58deb593361b7d5e6a6eca09bc7889b613980925"
-  integrity sha512-RrIL+m84ocoYT/D2ksYAzpC+DYHTtfgTLyrzmvCdhL/zsrXc0kgKHq0VVjiS80rnvhzlQPCWFDglEP/c/H/gAg==
+"@types/storybook__react@3.0.9":
+  version "3.0.9"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.9.tgz#aac193f0c037ddfc2342bd027d720553ac089a56"
+  integrity sha512-uhQMkyS/WZIKn8z222D8WJbWy7aXYaqazsrLKdpRLsHBz2YaAVbAmj4vr2rQDfA7+RgjwTMZKHs9Vrga8lRkbQ==
   dependencies:
     "@types/react" "*"
     "@types/webpack-env" "*"
@@ -1455,6 +1462,18 @@
     "@webassemblyjs/wast-parser" "1.7.8"
     "@xtuc/long" "4.2.1"
 
+"@webpack-contrib/schema-utils@^1.0.0-beta.0":
+  version "1.0.0-beta.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webpack-contrib/schema-utils/-/schema-utils-1.0.0-beta.0.tgz#bf9638c9464d177b48209e84209e23bee2eb4f65"
+  integrity sha512-LonryJP+FxQQHsjGBi6W786TQB1Oym+agTpY0c+Kj8alnIw+DLUJb6SI8Y1GHGhLCH1yPRrucjObUmxNICQ1pg==
+  dependencies:
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
+    chalk "^2.3.2"
+    strip-ansi "^4.0.0"
+    text-table "^0.2.0"
+    webpack-log "^1.1.2"
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -1559,7 +1578,7 @@ ajv@^5.3.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.3.0"
 
-ajv@^6.1.0, ajv@^6.1.1:
+ajv@^6.1.0:
   version "6.5.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ajv/-/ajv-6.5.4.tgz#247d5274110db653706b550fcc2b797ca28cfc59"
   integrity sha512-4Wyjt8+t6YszqaXnLDfMmG/8AlO5Zbcsy3ATHncCzjW/NoPzAId8AK6749Ybjmdt+kUY1gP60fCu46oDxPv/mg==
@@ -2640,7 +2659,7 @@ caseless@~0.12.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-chalk@2.4.1, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.4.1:
+chalk@2.4.1, chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.2, chalk@^2.4.1:
   version "2.4.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/chalk/-/chalk-2.4.1.tgz#18c49ab16a037b6eb0152cc83e3471338215b66e"
   integrity sha512-ObN6h1v2fTJSmUXoS3nMQ92LbDK9be4TV+6G+omQlGJFdcUX5heKi1LZ1YnRMIgwTLEj3E24bT6tYni50rlCfQ==
@@ -7633,15 +7652,16 @@ react-dev-utils@6.0.0-next.2150693d:
     strip-ansi "4.0.0"
     text-table "0.2.0"
 
-react-docgen-typescript-webpack-plugin@1.1.0:
-  version "1.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript-webpack-plugin/-/react-docgen-typescript-webpack-plugin-1.1.0.tgz#4bfb8c3312fce487083924842cf03f66177ab9df"
-  integrity sha1-S/uMMxL85IcIOSSELPA/Zhd6ud8=
+react-docgen-typescript-loader@3.0.0:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript-loader/-/react-docgen-typescript-loader-3.0.0.tgz#4042e2854d29380e4d01e479d438c03ec00de8e8"
+  integrity sha512-xtE4bZrU9+7grFFzs8v6gWc+Wl2FCCL59hldHoX2DuQAXOmJIilUm2uPmDmRNA8RpxU1Ax+9Gl0JfUcWgx2QPA==
   dependencies:
-    ajv "^6.1.1"
-    react-docgen-typescript "^1.2.3"
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
+    loader-utils "^1.1.0"
+    react-docgen-typescript "^1.9.0"
 
-react-docgen-typescript@1.9.1, react-docgen-typescript@^1.2.3:
+react-docgen-typescript@^1.9.0:
   version "1.9.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.9.1.tgz#d1739a68ab192e9c6f7028fc969ad1891c302079"
   integrity sha512-BmRw0MBhEXr3+S/pLiOoJubnmuWI4ke2ahW6d7Mbdzfb+R5cj1RrU0oxYZeUkBi6WeACSmWaQGXAks3F85HvxA==
@@ -9021,7 +9041,7 @@ text-mask-core@5.1.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-mask-core/-/text-mask-core-5.1.2.tgz#80dd5ebe04825757e46619e691407a9f8b3c1b6f"
   integrity sha1-gN1evgSCV1fkZhnmkUB6n4s8G28=
 
-text-table@0.2.0:
+text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
@@ -9590,7 +9610,7 @@ webpack-hot-middleware@^2.24.2:
     querystring "^0.2.0"
     strip-ansi "^3.0.0"
 
-webpack-log@^1.2.0:
+webpack-log@^1.1.2, webpack-log@^1.2.0:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-log/-/webpack-log-1.2.0.tgz#a4b34cda6b22b518dbb0ab32e567962d5c72a43d"
   integrity sha512-U9AnICnu50HXtiqiDxuli5gLB5PGBo7VvcHx36jRZHwK4vzOYLbImqT4lwWwoMHdQWwEKw736fCHEekokTEKHA==

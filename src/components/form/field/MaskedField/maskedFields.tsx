@@ -1,9 +1,9 @@
 import * as moment from 'moment'
 import * as React from 'react'
-import { Omit } from 'react-redux'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { masks, onlyNumbers } from '../../../../util/masks'
+import { Omit } from '../../../../util/types'
 import { MaskType } from '../../input/MaskedInput/MaskedInput'
 import { MaskedField, MaskedFieldProps } from '../MaskedField/MaskedField'
 

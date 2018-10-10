@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
@@ -7,6 +8,7 @@ export interface TooltipProps {
     text: string
     placement?: PopperFocusProps['placement']
     offset?: PopperFocusProps['offset']
+    style?: Interpolation
 }
 
 export class Tooltip extends React.PureComponent<TooltipProps> {
@@ -27,19 +29,20 @@ export class Tooltip extends React.PureComponent<TooltipProps> {
     }
 
     renderPopper = () => {
-        return <TooltipBase text={this.props.text} />
+        return <TooltipBase text={this.props.text} style={this.props.style} />
     }
 }
 
 export interface TooltipBaseProps extends WithStylesProps {
     text: string
+    style?: Interpolation
 }
 
 @withStyles
 export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
 
     render() {
-        const { css, theme, text } = this.props
+        const { css, theme, style, text } = this.props
         const styles: Styles = {
             base: {
                 borderRadius: theme.radius.popper,
@@ -63,7 +66,7 @@ export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
         const size = text.length > 60 ? 'big' : 'small'
 
         return (
-            <div className={css(styles.base, styles[size])}>{text}</div>
+            <div className={css(styles.base, styles[size], style)}>{text}</div>
         )
     }
 }

@@ -5,13 +5,13 @@ exports[`TableHeader should accept the style prop 1`] = `
   width: 100%;
   border-collapse: collapse;
   font-size: 0.75rem;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #F2F2F7;
 }
 
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #F2F2F7;
   color: red;
 }
 

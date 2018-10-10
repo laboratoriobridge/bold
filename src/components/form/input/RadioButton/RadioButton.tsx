@@ -53,7 +53,7 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
 
         const inputClasses = css({
             opacity: 0,
-            marginRight: -18,
+            marginRight: -13,
             [`&:hover + .${checkClasses}`]: {
                 borderColor: theme.pallete.gray.c40,
             },

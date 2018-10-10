@@ -1,29 +1,30 @@
-import { boolean, withKnobs } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
-import { withPropTypes, withTheme } from '../../../../stories-addons'
-import { withStore } from '../../../../stories-addons/withStore'
+import { withRouter } from '../../../../stories-addons'
 import { Flow } from '../../../layout/Flow/Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
 import { RadioField } from '../../field/RadioField/RadioField'
+import { TextAreaField } from '../../field/TextAreaField/TextAreaField'
 import { TextField } from '../../field/TextField/TextField'
 import { SubmitButton } from '../SubmitButton'
 
 import { Form } from './Form'
 
 storiesOf('Form', module)
-    .addDecorator(withPropTypes())
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
-    .addDecorator(withStore())
+    .addDecorator(withRouter())
     .add('Form example', () => {
         const validate = form => {
             const errors: any = {}
 
             if (!form.nome) {
                 errors.nome = 'Preenchimento obrigatório.'
+            }
+
+            if (!form.text) {
+                errors.text = 'Preenchimento obrigatório.'
             }
 
             return errors
@@ -33,6 +34,7 @@ storiesOf('Form', module)
             <form onSubmit={props.handleSubmit}>
                 <Flow vSpacing={1} direction='vertical'>
                     <TextField name='nome' label='Nome' required />
+                    <TextAreaField name='text' label='Text' maxLength={100} required />
                     <Flow>
                         <RadioField name='radio' label='Option1' value='1' />
                         <RadioField name='radio' label='Option2' value='2' />

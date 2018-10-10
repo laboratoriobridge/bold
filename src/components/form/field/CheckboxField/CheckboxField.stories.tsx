@@ -1,16 +1,18 @@
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { withForm, withPropTypes, withTheme } from '../../../../stories-addons'
+import { withForm } from '../../../../stories-addons'
 
 import { CheckboxField } from './CheckboxField'
 import * as Doc from './CheckboxField.md'
 
 storiesOf('Form/Fields', module)
-    .addDecorator(withPropTypes(Doc))
-    .addDecorator(withKnobs)
-    .addDecorator(withTheme())
+    // @ts-ignore
+    .addParameters({
+        info: { text: Doc },
+    })
     .addDecorator(withForm())
     .add('CheckboxField', () => (
         <CheckboxField
@@ -18,5 +20,6 @@ storiesOf('Form/Fields', module)
             label={text('label', 'Component label')}
             disabled={boolean('disabled', false)}
             indeterminate={boolean('indeterminate', false)}
+            onChange={action('changed')}
         />
     ))

@@ -3,14 +3,14 @@ import * as React from 'react'
 import { FormError, FormErrorProps } from '../FormError'
 import { FormLabel, FormLabelProps } from '../FormLabel'
 
-export interface FormFieldProps {
+export interface FieldWrapperProps {
     label?: FormLabelProps['label']
     required?: FormLabelProps['required']
     error?: FormErrorProps['error']
     name?: string
 }
 
-export class FormField extends React.Component<FormFieldProps> {
+export class FieldWrapper extends React.PureComponent<FieldWrapperProps> {
 
     render() {
         const { children, name, error, label, required } = this.props
