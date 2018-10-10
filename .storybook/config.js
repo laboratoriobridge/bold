@@ -8,6 +8,9 @@ import { withTheme } from '../src/stories-addons'
 addDecorator(withOptions({
   name: 'Bridge React',
   url: 'https://github.com/laboratoriobridge/bridge-react',
+  addonPanelInRight: true,
+  sortStoriesByKind: true,
+  selectedAddonPanel: 'storybooks/storybook-addon-knobs',
 }))
 addDecorator(withInfo({
   inline: true,

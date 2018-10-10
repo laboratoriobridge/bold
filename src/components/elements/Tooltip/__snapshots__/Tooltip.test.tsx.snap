@@ -47,6 +47,54 @@ Array [
 ]
 `;
 
+exports[`Tooltip should accept style prop 1`] = `
+Array [
+  .emotion-0 {
+  display: inline-block;
+}
+
+<div
+    class="emotion-0"
+    data-show="false"
+  >
+    <span>
+      Testing
+    </span>
+  </div>,
+  .emotion-1 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0.25rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #2D343B;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: red;
+}
+
+<div
+    class="emotion-1"
+    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+  >
+    <div
+      class="emotion-0"
+    >
+      Tooltip text
+    </div>
+  </div>,
+]
+`;
+
 exports[`Tooltip should render correctly 1`] = `
 Array [
   .emotion-0 {
@@ -94,7 +142,27 @@ Array [
 ]
 `;
 
-exports[`WithTheme should render the big version when text length is > 60 1`] = `
+exports[`TooltipBase should accept style prop 1`] = `
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #2D343B;
+  color: #fff;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.5rem;
+  color: red;
+}
+
+<div
+  class="emotion-0"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+</div>
+`;
+
+exports[`TooltipBase should render the big version when text length is > 60 1`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
@@ -114,7 +182,7 @@ exports[`WithTheme should render the big version when text length is > 60 1`] = 
 </div>
 `;
 
-exports[`WithTheme should render the small version when text length is <= 60 1`] = `
+exports[`TooltipBase should render the small version when text length is <= 60 1`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
