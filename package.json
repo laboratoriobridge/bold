@@ -3,6 +3,10 @@
   "version": "1.0.0-alpha.66",
   "main": "lib/bundle.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "icons"
+  ],
   "repository": {
     "url": "https://github.com/laboratoriobridge/bridge-react"
   },
