@@ -9,7 +9,6 @@ export type InputStatus = '' | 'error'
 
 export interface TextInputProps extends InputProps, WithStylesProps {
     status?: InputStatus
-    password?: boolean
     icon?: InputIconDecoratorProps
     style?: Interpolation
 }
@@ -57,8 +56,12 @@ export const createStyles = (theme: Theme): Styles => ({
 @withStyles
 export class TextInput extends React.Component<TextInputProps> {
 
+    static defaultProps: Partial<TextInputProps> = {
+        type: 'text',
+    }
+
     render() {
-        const { css, password, status, theme, icon, style, ...rest } = this.props
+        const { css, status, theme, icon, style, ...rest } = this.props
         const styles = createStyles(theme)
 
         const classes = css(styles.input,
@@ -70,7 +73,6 @@ export class TextInput extends React.Component<TextInputProps> {
             <Input
                 {...rest}
                 className={classes}
-                type={password ? 'password' : 'text'}
             />
         )
 

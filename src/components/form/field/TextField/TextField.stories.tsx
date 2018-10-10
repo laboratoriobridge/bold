@@ -20,7 +20,7 @@ storiesOf('Form/Fields', module)
         />
     ))
     .add('TextField password', () =>
-        <TextField name='senha' label='Senha' placeholder='Senha' password required />
+        <TextField name='senha' label='Senha' placeholder='Senha' type='password' required />
     )
     .add('TextField with icon', () => (
         <TextField
