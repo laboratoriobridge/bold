@@ -5,7 +5,8 @@
   "types": "lib/index.d.ts",
   "files": [
     "lib",
-    "icons"
+    "icons",
+    "tslint.json"
   ],
   "repository": {
     "url": "https://github.com/laboratoriobridge/bridge-react"
