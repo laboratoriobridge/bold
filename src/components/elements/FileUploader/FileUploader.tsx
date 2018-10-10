@@ -138,7 +138,18 @@ export class FileDetails extends React.Component<FileDetailsProps> {
         )
     }
 
-    private returnExtension = () => (this.props.file.selectedFile.type.split('/')[1])
+    private returnExtension = () => {
+        const { type } = this.props.file.selectedFile
+        const typeSplit = type.split('/')
+        if (typeSplit.length > 1) {
+            return typeSplit[1]
+        } else if (!typeSplit[0]) {
+            return null
+        } else {
+            return typeSplit[0]
+        }
+    }
+
 }
 
 interface FileInfoProps {
