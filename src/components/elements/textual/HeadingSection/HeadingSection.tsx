@@ -14,10 +14,11 @@ export class HeadingSection extends React.Component<HeadingSectionProps> {
         const { css } = this.props
         const styles = {
             section: {
+                marginBottom: '2rem',
             },
             title: {
-                lineHeight: '1.5',
-                marginBottom: '0.5rem',
+                lineHeight: '1',
+                margin: '0 0.5rem 1rem 0.5rem',
             },
         }
 
