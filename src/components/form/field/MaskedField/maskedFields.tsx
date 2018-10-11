@@ -1,4 +1,3 @@
-import * as moment from 'moment'
 import * as React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
@@ -38,10 +37,8 @@ export const TimeField = createMaskedField('TimeField', masks.time, {
     placeholder: 'hh:mm',
     pipe: createAutoCorrectedDatePipe('HH:MM'),
     format: (value: string) => {
-        if (value) {
-            return moment(value, 'hh:mm').format('hh:mm')
-        }
-        return null
+        // Omit seconds in case the initial field value is in format 'HH:mm:ss'
+        return value ? value.slice(0, 5) : value
     },
 })
 export const CnsField = createMaskedField('CnsField', masks.cns, {
