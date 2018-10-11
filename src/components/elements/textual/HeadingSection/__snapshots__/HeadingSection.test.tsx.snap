@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
@@ -19,9 +23,13 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
@@ -37,9 +45,13 @@ exports[`should render correctly 2`] = `
 `;
 
 exports[`should render correctly 3`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
@@ -55,9 +67,13 @@ exports[`should render correctly 3`] = `
 `;
 
 exports[`should render correctly 4`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
@@ -73,9 +89,13 @@ exports[`should render correctly 4`] = `
 `;
 
 exports[`should render correctly 5`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
@@ -91,9 +111,13 @@ exports[`should render correctly 5`] = `
 `;
 
 exports[`should render correctly 6`] = `
+.emotion-1 {
+  margin-bottom: 2rem;
+}
+
 .emotion-0 {
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
+  line-height: 1;
+  margin: 0 0.5rem 1rem 0.5rem;
 }
 
 <div
