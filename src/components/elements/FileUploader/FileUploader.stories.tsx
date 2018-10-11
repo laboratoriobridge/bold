@@ -14,7 +14,7 @@ storiesOf('Components/FileUploader', module)
             text='Click or drop file here'
             file={{
                 progress: 40,
-                selectedFile: { name: 'file_test.pdf', size: 4096 },
+                selectedFile: new File([], 'file_test.pdf', { type: 'text/pdf' }),
                 uploading: true,
             }}
         />
@@ -23,7 +23,7 @@ storiesOf('Components/FileUploader', module)
         <FileUploader
             text='Click or drop file here'
             file={{
-                selectedFile: { name: 'file_test.pdf', size: 4096 },
+                selectedFile: new File([], 'file_test.pdf', { type: 'text/pdf' }),
             }}
         />
     ))
