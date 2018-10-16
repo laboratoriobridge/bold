@@ -14,7 +14,6 @@ export class HeadingSection extends React.Component<HeadingSectionProps> {
         const { css } = this.props
         const styles = {
             section: {
-                marginBottom: '2rem',
             },
             title: {
                 lineHeight: '1',
