@@ -16,8 +16,8 @@ export class HeadingSection extends React.Component<HeadingSectionProps> {
             section: {
             },
             title: {
-                lineHeight: '1',
-                margin: '0 0.5rem 1rem 0.5rem',
+                lineHeight: 1,
+                marginBottom: '1rem',
             },
         }
 

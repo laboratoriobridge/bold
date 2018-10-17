@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -21,7 +21,7 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly 2`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -39,7 +39,7 @@ exports[`should render correctly 2`] = `
 exports[`should render correctly 3`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -57,7 +57,7 @@ exports[`should render correctly 3`] = `
 exports[`should render correctly 4`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -75,7 +75,7 @@ exports[`should render correctly 4`] = `
 exports[`should render correctly 5`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -93,7 +93,7 @@ exports[`should render correctly 5`] = `
 exports[`should render correctly 6`] = `
 .emotion-0 {
   line-height: 1;
-  margin: 0 0.5rem 1rem 0.5rem;
+  margin-bottom: 1rem;
 }
 
 <div
