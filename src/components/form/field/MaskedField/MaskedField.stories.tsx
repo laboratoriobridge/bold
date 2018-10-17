@@ -20,8 +20,8 @@ storiesOf('Form/Fields', module)
         <VFlow>
             <MaskedField
                 mask={['(', /\d/, /\d/, /\d/, ')']}
-                name='generico'
-                label='Masked Field Genérico'
+                name='generic'
+                label='Generic masked field'
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
@@ -36,8 +36,8 @@ storiesOf('Form/Fields', module)
                 onChange={action('changed')}
             />
             <TelefoneField
-                name='telefone'
-                label='Telefone'
+                name='phone'
+                label='Phone (pt-br)'
                 disabled={boolean('disabled', false)}
                 guide={boolean('guide', true)}
                 keepCharPositions={boolean('keepCharPositions', false)}
