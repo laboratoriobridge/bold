@@ -10,7 +10,7 @@ exports[`Button should accept the loading prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -102,7 +102,7 @@ exports[`Button should render correctly with icon only 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -201,7 +201,7 @@ exports[`Button should render correctly with label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -272,7 +272,7 @@ exports[`Button should render the default skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -343,7 +343,7 @@ exports[`Button should render the default skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -421,7 +421,7 @@ exports[`Button should render the default skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -503,7 +503,7 @@ exports[`Button should render the ghost skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -574,7 +574,7 @@ exports[`Button should render the ghost skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -646,7 +646,7 @@ exports[`Button should render the ghost skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -722,7 +722,7 @@ exports[`Button should render the outline skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -793,7 +793,7 @@ exports[`Button should render the outline skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -870,7 +870,7 @@ exports[`Button should render the outline skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;

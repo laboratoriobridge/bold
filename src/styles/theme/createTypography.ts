@@ -12,6 +12,6 @@ export const createTypography = (): Typography => {
         htmlFontSize: 16,
         lineHeight: '1.5',
         fontSize: '0.75rem',
-        fontFamily: '"Noto Sans", sans-serif',
+        fontFamily: '"IBM Plex Sans", sans-serif',
     }
 }

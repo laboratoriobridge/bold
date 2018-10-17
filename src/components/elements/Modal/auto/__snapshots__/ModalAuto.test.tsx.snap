@@ -51,7 +51,7 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -166,7 +166,7 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;

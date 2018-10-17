@@ -6,7 +6,7 @@ exports[`should accept style prop 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -65,7 +65,7 @@ exports[`should render character counter 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -135,7 +135,7 @@ exports[`should render character counter 2`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -203,7 +203,7 @@ exports[`should render correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -264,7 +264,7 @@ exports[`should render disabled 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -323,7 +323,7 @@ exports[`should render with error status 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;

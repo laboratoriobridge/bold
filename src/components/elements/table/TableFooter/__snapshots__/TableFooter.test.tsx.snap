@@ -148,7 +148,7 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -214,7 +214,7 @@ exports[`renders correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
@@ -270,7 +270,7 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
+  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
