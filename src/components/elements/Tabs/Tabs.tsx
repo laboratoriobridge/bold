@@ -18,7 +18,7 @@ const createStyles = (theme: Theme): Styles => {
         a: {
             display: 'inline-block',
             textDecoration: 'none',
-            color: theme.pallete.gray.c40,
+            color: theme.pallete.text.main,
             fontWeight: 'bold',
             padding: '0.5rem 0.75rem',
             lineHeight: '1rem',

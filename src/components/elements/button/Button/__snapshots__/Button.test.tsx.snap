@@ -23,7 +23,7 @@ exports[`Button should accept the loading prop 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
@@ -114,7 +114,7 @@ exports[`Button should render correctly with icon only 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -212,7 +212,7 @@ exports[`Button should render correctly with label 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -282,7 +282,7 @@ exports[`Button should render the default skin 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -352,7 +352,7 @@ exports[`Button should render the default skin 2`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #0A67D1;
   color: #FFFFFF;
   border: 1px solid #0A67D1;
@@ -429,7 +429,7 @@ exports[`Button should render the default skin 3`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #D83A2E;
   color: #FFFFFF;
   border: 1px solid #D83A2E;

@@ -23,7 +23,7 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #0A67D1;
   color: #FFFFFF;
   border: 1px solid #0A67D1;

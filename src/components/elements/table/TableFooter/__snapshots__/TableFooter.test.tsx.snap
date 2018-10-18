@@ -98,7 +98,7 @@ exports[`renders correctly 1`] = `
   display: block;
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-  color: #53595E;
+  color: #2D343B;
   -webkit-text-decoration: none;
   text-decoration: none;
 }
