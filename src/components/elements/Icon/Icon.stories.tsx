@@ -2,12 +2,13 @@ import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { TextColor } from '../../../styles'
+import { Tooltip } from '../Tooltip/Tooltip'
 
 import { IconMap } from './generated/Icons'
-import { Icon } from './Icon'
+import { Icon, IconColor } from './Icon'
 
-const colors: { [key in TextColor] } = {
+const colors: { [key in IconColor] } = {
+    'none': 'none',
     'normal': 'normal',
     'secondary': 'secondary',
     'disabled': 'disabled',
@@ -21,8 +22,14 @@ const colors: { [key in TextColor] } = {
 storiesOf('Components', module)
     .add('Icon', () => (
         <>
-            {Object.keys(IconMap).map((key: any) =>
-                <Icon key={key} icon={key} color={select('color', colors, 'normal')} title={key} />)
-            }
+            {Object.keys(IconMap).map((key: any) => (
+                <Tooltip key={key} text={key}>
+                    <Icon
+                        icon={key}
+                        fill={select('fill', colors, 'normal')}
+                        stroke={select('stroke', colors, 'none')}
+                    />
+                </Tooltip>
+            ))}
         </>
     ))
