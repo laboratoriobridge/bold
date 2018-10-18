@@ -86,6 +86,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
     multiValue: (base) => ({
         ...base,
         border: `1px solid ${theme.pallete.gray.c70}`,
+        margin: '0 2px',
     }),
     multiValueLabel: (base) => ({
         ...base,

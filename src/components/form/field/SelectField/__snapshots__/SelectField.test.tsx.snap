@@ -418,7 +418,7 @@ exports[`render should render correctly when multivalue 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: 2px;
+  margin: 0 2px;
   min-width: 0;
   box-sizing: border-box;
   border: 1px solid #B9B9BD;
