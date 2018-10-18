@@ -9,22 +9,23 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
     return {
         html: {
             fontSize: typography.sizes.html,
-            fontFamily: typography.fontFamily,
             boxSizing: 'border-box',
-            color: pallete.text.main,
-            lineHeight: 1,
-        },
-        body: {
-            margin: 0,
-            backgroundColor: pallete.surface.background,
-            fontSize: typography.sizes.text,
-            lineHeight: typography.lineHeight,
-            overflowY: 'scroll',
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',
         },
-        'div, button, input, optgroup, select, textarea': {
+        body: {
+            margin: 0,
+            backgroundColor: pallete.surface.background,
+            color: pallete.text.main,
+            fontFamily: typography.fontFamily,
+            fontSize: typography.sizes.text,
+            lineHeight: typography.lineHeight,
+            overflowY: 'scroll',
+        },
+        'button, input, optgroup, select, textarea': {
+            /* Input elements do not inherit body's font styles */
+            fontFamily: typography.fontFamily,
             lineHeight: 'inherit',
         },
         hr: {

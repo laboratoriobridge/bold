@@ -255,7 +255,7 @@ exports[`render should render correctly 1`] = `
               value=""
             />
             <div
-              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: \\"IBM Plex Sans\\",sans-serif; letter-spacing: normal; text-transform: none;"
             />
           </div>
         </div>
@@ -650,7 +650,7 @@ exports[`render should render correctly when multivalue 1`] = `
               value=""
             />
             <div
-              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: \\"IBM Plex Sans\\",sans-serif; letter-spacing: normal; text-transform: none;"
             />
           </div>
         </div>
