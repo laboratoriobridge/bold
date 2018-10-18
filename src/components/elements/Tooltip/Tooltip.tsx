@@ -50,7 +50,6 @@ export class TooltipBase extends React.PureComponent<TooltipBaseProps> {
                 background: theme.pallete.gray.c20,
                 color: '#fff',
                 fontWeight: 'bold',
-                fontSize: '0.75rem',
             },
             small: {
                 textAlign: 'center',

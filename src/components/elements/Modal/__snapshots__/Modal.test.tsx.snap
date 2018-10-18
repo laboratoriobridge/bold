@@ -30,7 +30,6 @@ exports[`Modal accept style prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -205,7 +204,6 @@ exports[`Modal render different sizes 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -392,7 +390,6 @@ exports[`Modal render different sizes 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -553,7 +550,6 @@ exports[`Modal render different sizes 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -748,7 +744,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -832,7 +827,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -993,7 +987,6 @@ exports[`Modal should render open 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -1077,7 +1070,6 @@ exports[`Modal should render open 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;

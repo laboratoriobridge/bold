@@ -11,7 +11,6 @@ exports[`deve renderizar corretamente 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
-  font-size: 0.75rem;
 }
 
 .emotion-2 {
@@ -23,7 +22,6 @@ exports[`deve renderizar corretamente 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -89,8 +87,6 @@ exports[`deve renderizar corretamente 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -145,7 +141,6 @@ exports[`deve renderizar corretamente 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -268,7 +263,6 @@ exports[`deve renderizar corretamente 2`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
-  font-size: 0.75rem;
 }
 
 .emotion-1 {
@@ -288,8 +282,6 @@ exports[`deve renderizar corretamente 2`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -344,7 +336,6 @@ exports[`deve renderizar corretamente 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -403,7 +394,6 @@ exports[`deve renderizar corretamente 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -529,7 +519,6 @@ exports[`deve renderizar corretamente 3`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
-  font-size: 0.75rem;
 }
 
 .emotion-1 {
@@ -549,8 +538,6 @@ exports[`deve renderizar corretamente 3`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -605,7 +592,6 @@ exports[`deve renderizar corretamente 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -664,7 +650,6 @@ exports[`deve renderizar corretamente 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;

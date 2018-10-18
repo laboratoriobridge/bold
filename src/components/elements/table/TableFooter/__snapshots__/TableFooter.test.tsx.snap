@@ -2,7 +2,6 @@
 
 exports[`renders correctly 1`] = `
 .emotion-25 {
-  font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -136,7 +135,6 @@ exports[`renders correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   margin: 0;
-  font-size: 0.75rem;
 }
 
 .emotion-18 {
@@ -148,7 +146,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -214,8 +211,6 @@ exports[`renders correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.75rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -270,7 +265,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -471,7 +465,6 @@ exports[`renders correctly 1`] = `
 
 exports[`renders without pagination 1`] = `
 .emotion-1 {
-  font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

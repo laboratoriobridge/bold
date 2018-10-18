@@ -24,7 +24,6 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.75rem;
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline-block;

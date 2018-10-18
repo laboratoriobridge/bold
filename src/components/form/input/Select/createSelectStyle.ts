@@ -96,7 +96,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
         borderTopRightRadius: 0,
         borderBottomLeftRadius: theme.radius.pill,
         borderBottomRightRadius: 0,
-        fontSize: '0.75rem',
+        fontSize: theme.typography.sizes.text,
         padding: '1px 0.5rem',
         lineHeight: '1.25rem',
     }),

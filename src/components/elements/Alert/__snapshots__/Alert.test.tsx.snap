@@ -24,7 +24,6 @@ exports[`Alert should allow styles override 1`] = `
   padding: 0 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-box;
@@ -96,7 +95,6 @@ exports[`Alert should render correctly 1`] = `
   padding: 0 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-box;
@@ -171,7 +169,6 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "IBM Plex Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -231,7 +228,6 @@ exports[`Alert should render correctly 1`] = `
   padding: 0 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-box;
@@ -255,7 +251,6 @@ exports[`Alert should render correctly 1`] = `
   padding: 0 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-box;
@@ -279,7 +274,6 @@ exports[`Alert should render correctly 1`] = `
   padding: 0 1rem;
   min-height: 2.5rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-box;
@@ -560,7 +554,6 @@ exports[`Alert should render correctly when inline 1`] = `
   padding: 0 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-inline-box;
@@ -589,7 +582,6 @@ exports[`Alert should render correctly when inline 1`] = `
   padding: 0 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-inline-box;
@@ -613,7 +605,6 @@ exports[`Alert should render correctly when inline 1`] = `
   padding: 0 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-inline-box;
@@ -637,7 +628,6 @@ exports[`Alert should render correctly when inline 1`] = `
   padding: 0 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
-  font-size: 0.75rem;
   border-style: solid;
   border-width: 1px;
   display: -webkit-inline-box;

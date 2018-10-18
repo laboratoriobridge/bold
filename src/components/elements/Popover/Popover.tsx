@@ -55,7 +55,6 @@ export class PopoverBase extends React.PureComponent<PopoverBaseProps> {
                 padding: '1rem',
             },
             title: {
-                fontSize: theme.typography.fontSize,
                 textAlign: 'center',
                 marginBottom: '0.5rem',
             },

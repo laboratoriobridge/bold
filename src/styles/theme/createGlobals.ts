@@ -7,20 +7,17 @@ export type Global = Interpolation
 
 export const createGlobals = (pallete: Pallete, typography: Typography): Global => {
     return {
-        'html, body': {
-            height: '100%',
-            margin: 0,
-        },
         html: {
-            fontSize: typography.htmlFontSize,
+            fontSize: typography.sizes.html,
             fontFamily: typography.fontFamily,
             boxSizing: 'border-box',
             color: pallete.text.main,
             lineHeight: 1,
         },
         body: {
+            margin: 0,
             backgroundColor: pallete.surface.background,
-            fontSize: typography.fontSize,
+            fontSize: typography.sizes.text,
             lineHeight: typography.lineHeight,
             overflowY: 'scroll',
         },

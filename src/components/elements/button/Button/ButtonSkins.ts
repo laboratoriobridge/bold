@@ -30,7 +30,6 @@ export const createBaseStyles = (theme: Theme): Styles => ({
     button: {
         display: 'inline-flex',
         justifyContent: 'center',
-        fontFamily: theme.typography.fontFamily,
         lineHeight: '1.5rem',
         position: 'relative',
         userSelect: 'none',
@@ -80,14 +79,14 @@ export const createBaseStyles = (theme: Theme): Styles => ({
 export const createSizeStyles = (theme: Theme): Styles => ({
     large: {
         padding: 'calc(1.25rem - 1px) 3.25rem',
-        fontSize: '0.875rem',
+        fontSize: theme.typography.sizes.button,
     },
     medium: {
-        fontSize: '0.875rem',
+        fontSize: theme.typography.sizes.button,
         padding: 'calc(0.75rem - 1px) 2.5rem',
     },
     small: {
-        fontSize: '0.875rem',
+        fontSize: theme.typography.sizes.button,
         padding: 'calc(0.25rem - 1px) calc(0.5rem - 1px)', // discount border size
     },
 })

@@ -120,13 +120,8 @@ exports[`should render complete state 1`] = `
 }
 
 .emotion-10 {
-  font-size: 0.75rem;
   font-weight: bold;
   margin-right: 10px;
-}
-
-.emotion-11 {
-  font-size: 0.75rem;
 }
 
 .emotion-9 {
@@ -494,13 +489,8 @@ exports[`should render uploading state 1`] = `
 }
 
 .emotion-8 {
-  font-size: 0.75rem;
   font-weight: bold;
   margin-right: 10px;
-}
-
-.emotion-9 {
-  font-size: 0.75rem;
 }
 
 .emotion-11 {

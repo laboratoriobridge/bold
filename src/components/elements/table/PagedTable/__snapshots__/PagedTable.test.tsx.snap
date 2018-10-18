@@ -4,7 +4,6 @@ exports[`should render correctly 1`] = `
 .emotion-26 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 
@@ -48,7 +47,6 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-28 {
-  font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

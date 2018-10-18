@@ -66,7 +66,6 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
                 color: theme.pallete.text.main,
                 textDecoration: 'none',
                 fontWeight: 'bold',
-                fontSize: '0.75rem',
                 transition: 'all .2s',
                 display: 'inline-block',
 
