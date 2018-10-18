@@ -1,18 +1,26 @@
-import { css as emotionCss, Interpolation } from 'emotion'
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, TextColor, withStyles, WithStylesProps } from '../../../styles'
-import { getTextColor } from '../../../styles/theme/createTheme'
+import { getTextColor, Theme } from '../../../styles/theme/createTheme'
+import { Omit } from '../../../util/types'
 
 import { IconMap, Icons } from './generated/Icons'
 import './GeneratedIconProps'
 
-export interface IconProps extends WithStylesProps {
+export type IconColor = TextColor | 'none'
+
+export interface IconProps extends WithStylesProps, Omit<React.SVGAttributes<SVGElement>, 'style'> {
     icon: Icons
-    color?: TextColor
+    label?: string
+    fill?: IconColor
+    stroke?: IconColor
     size?: number
-    title?: string
     style?: Interpolation
+}
+
+export const getIconColor = (theme: Theme, color: IconColor) => {
+    return !color || color === 'none' ? color : getTextColor(theme, color)
 }
 
 @withStyles
@@ -23,22 +31,25 @@ export class Icon extends React.PureComponent<IconProps> {
     }
 
     render() {
-        const SelectedIcon = IconMap[this.props.icon]
+        const { style, css, label, theme, icon, fill, stroke, size, ...rest } = this.props
+        const SelectedIcon = IconMap[icon]
 
         const styles: Styles = {
             icon: {
-                fill: this.props.color ? getTextColor(this.props.theme, this.props.color) : 'currentColor',
-                fontSize: this.props.size && this.props.size + 'rem',
-            },
-            span: {
-                display: 'inline-flex',
+                fill: fill ? getIconColor(theme, fill) : 'currentColor',
+                stroke: stroke && getIconColor(theme, stroke),
+                fontSize: size && size + 'rem',
             },
         }
 
         return (
-            <span title={this.props.title} className={this.props.css(styles.span, this.props.style)}>
-                <SelectedIcon className={emotionCss(styles.icon)} aria-hidden='true' />
-            </span>
+            <SelectedIcon
+                role='img'
+                aria-label={label}
+                aria-hidden='true'
+                className={css(styles.icon, style)}
+                {...rest}
+            />
         )
     }
 

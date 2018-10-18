@@ -1,20 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
-.emotion-6 {
+.emotion-5 {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.emotion-3 {
+.emotion-2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
 }
 
-.emotion-3:last-child a {
+.emotion-2:last-child a {
   pointer-events: none;
   color: #0A67D1;
 }
@@ -33,18 +33,11 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   color: #0A67D1;
 }
 
-.emotion-2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  color: #B9B9BD;
-  margin: 0 .5rem;
-  font-size: 1rem;
-}
-
 .emotion-1 {
   fill: currentColor;
+  font-size: 1rem;
+  color: #B9B9BD;
+  margin: 0 .5rem;
   font-size: 1rem;
 }
 
@@ -53,10 +46,10 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   role="navigation"
 >
   <ol
-    class="emotion-6"
+    class="emotion-5"
   >
     <li
-      class="emotion-3"
+      class="emotion-2"
     >
       <a
         class="emotion-0"
@@ -64,25 +57,22 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
       >
         Entry #1
       </a>
-      <span
-        class="emotion-2"
+      <svg
+        aria-hidden="true"
+        class="emotion-1"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-1"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-            data-name="angle-right"
-          />
-        </svg>
-      </span>
+        <path
+          d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+          data-name="angle-right"
+        />
+      </svg>
     </li>
     <li
-      class="emotion-3"
+      class="emotion-2"
     >
       <a
         class="emotion-0"

@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render complete state 1`] = `
-.emotion-15 {
+.emotion-13 {
   background-color: #FFFFFF;
   border-radius: 4px;
   border: 1px solid #F2F2F7;
 }
 
-.emotion-6 {
+.emotion-5 {
   cursor: pointer;
   padding: 0.25rem;
 }
 
-.emotion-6 .accept-dashed-border {
+.emotion-5 .accept-dashed-border {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -30,7 +30,7 @@ exports[`should render complete state 1`] = `
   padding-top: 0.5rem;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -41,7 +41,7 @@ exports[`should render complete state 1`] = `
   align-items: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   margin-top: 0rem;
   margin-right: 0.25rem;
   margin-bottom: 0rem;
@@ -49,23 +49,16 @@ exports[`should render complete state 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-1:first-child {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-1:last-child {
   margin-right: 0;
 }
 
-.emotion-2:empty {
+.emotion-1:empty {
   display: none;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -73,13 +66,13 @@ exports[`should render complete state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
 
-.emotion-14 {
+.emotion-12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -92,7 +85,7 @@ exports[`should render complete state 1`] = `
   padding: 1rem;
 }
 
-.emotion-13 {
+.emotion-11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -100,7 +93,7 @@ exports[`should render complete state 1`] = `
   margin-left: 1rem;
 }
 
-.emotion-7 {
+.emotion-6 {
   color: #53595E;
   font-weight: bold;
   background-color: #F2F2F7;
@@ -108,7 +101,7 @@ exports[`should render complete state 1`] = `
   padding: 1rem;
 }
 
-.emotion-12 {
+.emotion-10 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -119,66 +112,56 @@ exports[`should render complete state 1`] = `
   display: flex;
 }
 
-.emotion-10 {
+.emotion-8 {
   font-weight: bold;
   margin-right: 10px;
 }
 
-.emotion-9 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.emotion-7 {
+  fill: #0A67D1;
+  font-size: 1rem;
   margin-right: 5px;
 }
 
-.emotion-8 {
-  fill: #0A67D1;
-  font-size: 1rem;
-}
-
 <div
-  class="emotion-15"
+  class="emotion-13"
 >
   <div
     aria-disabled="false"
-    class="emotion-6"
+    class="emotion-5"
     style="position:relative"
   >
     <div
       class="accept-dashed-border"
     >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
+            <g
+              data-name="upload"
             >
-              <g
-                data-name="upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
-            </svg>
-          </span>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
+            </g>
+          </svg>
         </div>
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
           <span
-            class="emotion-3"
+            class="emotion-2"
           />
         </div>
       </div>
@@ -190,42 +173,39 @@ exports[`should render complete state 1`] = `
     />
   </div>
   <div
-    class="emotion-14"
+    class="emotion-12"
   >
     <span
-      class="emotion-7"
+      class="emotion-6"
     >
       pdf
     </span>
     <div
-      class="emotion-13"
+      class="emotion-11"
     >
       <div
-        class="emotion-12"
+        class="emotion-10"
       >
-        <span
-          class="emotion-9"
+        <svg
+          aria-hidden="true"
+          class="emotion-7"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-8"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M19.99 7.76l-1.42-1.41-8.47 8.47-4.67-4.68-1.42 1.42 4.68 4.67 1.41 1.42h.01l1.41-1.41v-.01l8.47-8.47z"
-              data-name="check"
-            />
-          </svg>
-        </span>
+          <path
+            d="M19.99 7.76l-1.42-1.41-8.47 8.47-4.67-4.68-1.42 1.42 4.68 4.67 1.41 1.42h.01l1.41-1.41v-.01l8.47-8.47z"
+            data-name="check"
+          />
+        </svg>
         <span
-          class="emotion-10"
+          class="emotion-8"
         >
           teste.pdf
         </span>
         <span
-          class="emotion-11"
+          class="emotion-9"
         >
           0 Bytes
         </span>
@@ -236,18 +216,18 @@ exports[`should render complete state 1`] = `
 `;
 
 exports[`should render initial state 1`] = `
-.emotion-7 {
+.emotion-6 {
   background-color: #FFFFFF;
   border-radius: 4px;
   border: 1px solid #F2F2F7;
 }
 
-.emotion-6 {
+.emotion-5 {
   cursor: pointer;
   padding: 0.25rem;
 }
 
-.emotion-6 .accept-dashed-border {
+.emotion-5 .accept-dashed-border {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -265,7 +245,7 @@ exports[`should render initial state 1`] = `
   padding-top: 0.5rem;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -276,7 +256,7 @@ exports[`should render initial state 1`] = `
   align-items: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   margin-top: 0rem;
   margin-right: 0.25rem;
   margin-bottom: 0rem;
@@ -284,23 +264,16 @@ exports[`should render initial state 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-1:first-child {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-1:last-child {
   margin-right: 0;
 }
 
-.emotion-2:empty {
+.emotion-1:empty {
   display: none;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -308,54 +281,51 @@ exports[`should render initial state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
 
 <div
-  class="emotion-7"
+  class="emotion-6"
 >
   <div
     aria-disabled="false"
-    class="emotion-6"
+    class="emotion-5"
     style="position:relative"
   >
     <div
       class="accept-dashed-border"
     >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
+            <g
+              data-name="upload"
             >
-              <g
-                data-name="upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
-            </svg>
-          </span>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
+            </g>
+          </svg>
         </div>
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
           <span
-            class="emotion-3"
+            class="emotion-2"
           />
         </div>
       </div>
@@ -370,18 +340,18 @@ exports[`should render initial state 1`] = `
 `;
 
 exports[`should render uploading state 1`] = `
-.emotion-14 {
+.emotion-13 {
   background-color: #FFFFFF;
   border-radius: 4px;
   border: 1px solid #F2F2F7;
 }
 
-.emotion-6 {
+.emotion-5 {
   cursor: pointer;
   padding: 0.25rem;
 }
 
-.emotion-6 .accept-dashed-border {
+.emotion-5 .accept-dashed-border {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -399,7 +369,7 @@ exports[`should render uploading state 1`] = `
   padding-top: 0.5rem;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -410,7 +380,7 @@ exports[`should render uploading state 1`] = `
   align-items: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   margin-top: 0rem;
   margin-right: 0.25rem;
   margin-bottom: 0rem;
@@ -418,23 +388,16 @@ exports[`should render uploading state 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-1:first-child {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-1:last-child {
   margin-right: 0;
 }
 
-.emotion-2:empty {
+.emotion-1:empty {
   display: none;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -442,13 +405,13 @@ exports[`should render uploading state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   color: #53595E;
   font-size: 0.875rem;
   font-weight: bold;
 }
 
-.emotion-13 {
+.emotion-12 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -461,7 +424,7 @@ exports[`should render uploading state 1`] = `
   padding: 1rem;
 }
 
-.emotion-12 {
+.emotion-11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -469,7 +432,7 @@ exports[`should render uploading state 1`] = `
   margin-left: 1rem;
 }
 
-.emotion-7 {
+.emotion-6 {
   color: #53595E;
   font-weight: bold;
   background-color: #F2F2F7;
@@ -477,7 +440,7 @@ exports[`should render uploading state 1`] = `
   padding: 1rem;
 }
 
-.emotion-10 {
+.emotion-9 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -488,12 +451,12 @@ exports[`should render uploading state 1`] = `
   display: flex;
 }
 
-.emotion-8 {
+.emotion-7 {
   font-weight: bold;
   margin-right: 10px;
 }
 
-.emotion-11 {
+.emotion-10 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -502,19 +465,19 @@ exports[`should render uploading state 1`] = `
   width: 100%;
 }
 
-.emotion-11::-webkit-progress-bar {
+.emotion-10::-webkit-progress-bar {
   background-color: #F2F2F7;
   border-radius: 4px;
 }
 
-.emotion-11::-webkit-progress-value {
+.emotion-10::-webkit-progress-value {
   background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-.emotion-11::-moz-progress-bar {
+.emotion-10::-moz-progress-bar {
   background-color: #0A67D1;
   border-radius: 4px;
   -webkit-transition: all .3s;
@@ -522,47 +485,44 @@ exports[`should render uploading state 1`] = `
 }
 
 <div
-  class="emotion-14"
+  class="emotion-13"
 >
   <div
     aria-disabled="false"
-    class="emotion-6"
+    class="emotion-5"
     style="position:relative"
   >
     <div
       class="accept-dashed-border"
     >
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
+            <g
+              data-name="upload"
             >
-              <g
-                data-name="upload"
-              >
-                <path
-                  d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
-                />
-              </g>
-            </svg>
-          </span>
+              <path
+                d="M4 18h16v2H4zM11 7.94V16h2V7.94l3.95 4 1.41-1.42L12 4.11l-6.36 6.36 1.41 1.42zM12.06 7h-.12l.06-.06z"
+              />
+            </g>
+          </svg>
         </div>
         <div
-          class="emotion-2"
+          class="emotion-1"
         >
           <span
-            class="emotion-3"
+            class="emotion-2"
           />
         </div>
       </div>
@@ -574,32 +534,32 @@ exports[`should render uploading state 1`] = `
     />
   </div>
   <div
-    class="emotion-13"
+    class="emotion-12"
   >
     <span
-      class="emotion-7"
+      class="emotion-6"
     >
       pdf
     </span>
     <div
-      class="emotion-12"
+      class="emotion-11"
     >
       <div
-        class="emotion-10"
+        class="emotion-9"
       >
         <span
-          class="emotion-8"
+          class="emotion-7"
         >
           teste.pdf
         </span>
         <span
-          class="emotion-9"
+          class="emotion-8"
         >
           0 Bytes
         </span>
       </div>
       <progress
-        class="emotion-11"
+        class="emotion-10"
         max="100"
         value="40"
       />

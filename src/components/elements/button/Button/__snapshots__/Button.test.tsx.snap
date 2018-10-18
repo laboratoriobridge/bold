@@ -92,7 +92,7 @@ exports[`Button should accept the loading prop 1`] = `
 `;
 
 exports[`Button should render correctly with icon only 1`] = `
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -119,7 +119,7 @@ exports[`Button should render correctly with icon only 1`] = `
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -132,28 +132,21 @@ exports[`Button should render correctly with icon only 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: #ebebeb;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -162,29 +155,26 @@ exports[`Button should render correctly with icon only 1`] = `
 }
 
 <button
-  class="emotion-2"
+  class="emotion-1"
   type="button"
 >
   <span>
-    <span
-      class="emotion-1"
+    <svg
+      aria-hidden="true"
+      class="emotion-0"
+      height="1em"
+      role="img"
+      viewBox="0 0 24 24"
+      width="1em"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        viewBox="0 0 24 24"
-        width="1em"
+      <g
+        data-name="adjust"
       >
-        <g
-          data-name="adjust"
-        >
-          <path
-            d="M16 12a4 4 0 1 0-3.86-5H4v1.88h8.1A4 4 0 0 0 16 12zm0-6a2 2 0 1 1-2 2 2 2 0 0 1 2-2zM8 12a4 4 0 1 0 3.9 4.88H20V15h-8.14A4 4 0 0 0 8 12zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"
-          />
-        </g>
-      </svg>
-    </span>
+        <path
+          d="M16 12a4 4 0 1 0-3.86-5H4v1.88h8.1A4 4 0 0 0 16 12zm0-6a2 2 0 1 1-2 2 2 2 0 0 1 2-2zM8 12a4 4 0 1 0 3.9 4.88H20V15h-8.14A4 4 0 0 0 8 12zm0 6a2 2 0 1 1 2-2 2 2 0 0 1-2 2z"
+        />
+      </g>
+    </svg>
   </span>
 </button>
 `;
