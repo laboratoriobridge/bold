@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`deve renderizar corretamente 1`] = `
-.emotion-7 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -14,7 +14,7 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -42,7 +42,7 @@ exports[`deve renderizar corretamente 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -55,28 +55,21 @@ exports[`deve renderizar corretamente 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -84,7 +77,7 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -101,42 +94,42 @@ exports[`deve renderizar corretamente 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-3::-webkit-input-placeholder {
+.emotion-2::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::-moz-placeholder {
+.emotion-2::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:-ms-input-placeholder {
+.emotion-2:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::placeholder {
+.emotion-2::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:disabled {
+.emotion-2:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-3:not(:disabled):hover {
+.emotion-2:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-3:not(:disabled):focus {
+.emotion-2:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-3:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -165,7 +158,7 @@ exports[`deve renderizar corretamente 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-6 > span {
+.emotion-4 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -178,52 +171,49 @@ exports[`deve renderizar corretamente 1`] = `
   transition: color .2s;
 }
 
-.emotion-6 > span > :not(:last-child) {
+.emotion-4 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-4:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-4:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
 <div
-  class="emotion-7"
+  class="emotion-5"
 >
   <button
-    class="emotion-2"
+    class="emotion-1"
     title="Página anterior"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-            data-name="angle-left"
-          />
-        </svg>
-      </span>
+        <path
+          d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+          data-name="angle-left"
+        />
+      </svg>
     </span>
   </button>
   <input
-    class="emotion-3"
+    class="emotion-2"
     type="text"
     value="6"
   />
@@ -231,34 +221,31 @@ exports[`deve renderizar corretamente 1`] = `
     de 10
   </span>
   <button
-    class="emotion-6"
+    class="emotion-4"
     title="Próxima página"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-            data-name="angle-right"
-          />
-        </svg>
-      </span>
+        <path
+          d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+          data-name="angle-right"
+        />
+      </svg>
     </span>
   </button>
 </div>
 `;
 
 exports[`deve renderizar corretamente 2`] = `
-.emotion-7 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -271,19 +258,12 @@ exports[`deve renderizar corretamente 2`] = `
   font-size: 0.75rem;
 }
 
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -300,42 +280,42 @@ exports[`deve renderizar corretamente 2`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-3::-webkit-input-placeholder {
+.emotion-2::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::-moz-placeholder {
+.emotion-2::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:-ms-input-placeholder {
+.emotion-2:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::placeholder {
+.emotion-2::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:disabled {
+.emotion-2:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-3:not(:disabled):hover {
+.emotion-2:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-3:not(:disabled):focus {
+.emotion-2:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-3:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -364,7 +344,7 @@ exports[`deve renderizar corretamente 2`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-6 > span {
+.emotion-4 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -377,24 +357,24 @@ exports[`deve renderizar corretamente 2`] = `
   transition: color .2s;
 }
 
-.emotion-6 > span > :not(:last-child) {
+.emotion-4 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-4:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-4:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -425,7 +405,7 @@ exports[`deve renderizar corretamente 2`] = `
   pointer-events: none;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -438,53 +418,50 @@ exports[`deve renderizar corretamente 2`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
 <div
-  class="emotion-7"
+  class="emotion-5"
 >
   <button
-    class="emotion-2"
+    class="emotion-1"
     disabled=""
     title="Página anterior"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-            data-name="angle-left"
-          />
-        </svg>
-      </span>
+        <path
+          d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+          data-name="angle-left"
+        />
+      </svg>
     </span>
   </button>
   <input
-    class="emotion-3"
+    class="emotion-2"
     type="text"
     value="1"
   />
@@ -492,34 +469,31 @@ exports[`deve renderizar corretamente 2`] = `
     de 10
   </span>
   <button
-    class="emotion-6"
+    class="emotion-4"
     title="Próxima página"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-            data-name="angle-right"
-          />
-        </svg>
-      </span>
+        <path
+          d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+          data-name="angle-right"
+        />
+      </svg>
     </span>
   </button>
 </div>
 `;
 
 exports[`deve renderizar corretamente 3`] = `
-.emotion-7 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -532,19 +506,12 @@ exports[`deve renderizar corretamente 3`] = `
   font-size: 0.75rem;
 }
 
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -561,42 +528,42 @@ exports[`deve renderizar corretamente 3`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-3::-webkit-input-placeholder {
+.emotion-2::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::-moz-placeholder {
+.emotion-2::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:-ms-input-placeholder {
+.emotion-2:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3::placeholder {
+.emotion-2::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-3:disabled {
+.emotion-2:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-3:not(:disabled):hover {
+.emotion-2:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-3:not(:disabled):focus {
+.emotion-2:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-3:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -625,7 +592,7 @@ exports[`deve renderizar corretamente 3`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-6 > span {
+.emotion-4 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -638,24 +605,24 @@ exports[`deve renderizar corretamente 3`] = `
   transition: color .2s;
 }
 
-.emotion-6 > span > :not(:last-child) {
+.emotion-4 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-4:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-4:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -686,7 +653,7 @@ exports[`deve renderizar corretamente 3`] = `
   pointer-events: none;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -699,53 +666,50 @@ exports[`deve renderizar corretamente 3`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
 <div
-  class="emotion-7"
+  class="emotion-5"
 >
   <button
-    class="emotion-2"
+    class="emotion-1"
     disabled=""
     title="Página anterior"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-            data-name="angle-left"
-          />
-        </svg>
-      </span>
+        <path
+          d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+          data-name="angle-left"
+        />
+      </svg>
     </span>
   </button>
   <input
-    class="emotion-3"
+    class="emotion-2"
     type="text"
     value="1"
   />
@@ -753,27 +717,24 @@ exports[`deve renderizar corretamente 3`] = `
     de 9
   </span>
   <button
-    class="emotion-6"
+    class="emotion-4"
     title="Próxima página"
     type="button"
   >
     <span>
-      <span
-        class="emotion-1"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-            data-name="angle-right"
-          />
-        </svg>
-      </span>
+        <path
+          d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+          data-name="angle-right"
+        />
+      </svg>
     </span>
   </button>
 </div>

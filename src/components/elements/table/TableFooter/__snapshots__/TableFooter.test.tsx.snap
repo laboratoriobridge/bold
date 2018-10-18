@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-25 {
+.emotion-23 {
   font-size: 0.75rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-24 {
+.emotion-22 {
   border-left: 1px solid #F2F2F7;
   display: -webkit-box;
   display: -webkit-flex;
@@ -126,7 +126,7 @@ exports[`renders correctly 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-23 {
+.emotion-21 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -139,7 +139,7 @@ exports[`renders correctly 1`] = `
   font-size: 0.75rem;
 }
 
-.emotion-18 {
+.emotion-17 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -167,7 +167,7 @@ exports[`renders correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-18 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -180,28 +180,21 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-18 > span > :not(:last-child) {
+.emotion-17 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-18:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-17 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-16 {
@@ -209,7 +202,7 @@ exports[`renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-19 {
+.emotion-18 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -226,42 +219,42 @@ exports[`renders correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-19::-webkit-input-placeholder {
+.emotion-18::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-19::-moz-placeholder {
+.emotion-18::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-19:-ms-input-placeholder {
+.emotion-18:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-19::placeholder {
+.emotion-18::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-19:disabled {
+.emotion-18:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-19:not(:disabled):hover {
+.emotion-18:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-19:not(:disabled):focus {
+.emotion-18:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-19:not(:disabled):active {
+.emotion-18:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-22 {
+.emotion-20 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -290,7 +283,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-22 > span {
+.emotion-20 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -303,25 +296,25 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-22 > span > :not(:last-child) {
+.emotion-20 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-22:not(:disabled):active {
+.emotion-20:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-22:focus {
+.emotion-20:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-22:not(:disabled):hover {
+.emotion-20:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
 }
 
 <div
-  class="emotion-25"
+  class="emotion-23"
 >
   <span
     class="emotion-0"
@@ -333,7 +326,7 @@ exports[`renders correctly 1`] = `
     </span>
   </span>
   <div
-    class="emotion-24"
+    class="emotion-22"
   >
     <span>
       Mostrar:
@@ -406,34 +399,31 @@ exports[`renders correctly 1`] = `
       </span>
     </span>
     <div
-      class="emotion-23"
+      class="emotion-21"
     >
       <button
-        class="emotion-18"
+        class="emotion-17"
         title="Página anterior"
         type="button"
       >
         <span>
-          <span
-            class="emotion-17"
+          <svg
+            aria-hidden="true"
+            class="emotion-16"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-16"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-                data-name="angle-left"
-              />
-            </svg>
-          </span>
+            <path
+              d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+              data-name="angle-left"
+            />
+          </svg>
         </span>
       </button>
       <input
-        class="emotion-19"
+        class="emotion-18"
         type="text"
         value="2"
       />
@@ -441,27 +431,24 @@ exports[`renders correctly 1`] = `
         de 10
       </span>
       <button
-        class="emotion-22"
+        class="emotion-20"
         title="Próxima página"
         type="button"
       >
         <span>
-          <span
-            class="emotion-17"
+          <svg
+            aria-hidden="true"
+            class="emotion-16"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-16"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-                data-name="angle-right"
-              />
-            </svg>
-          </span>
+            <path
+              d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+              data-name="angle-right"
+            />
+          </svg>
         </span>
       </button>
     </div>

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal accept style prop 1`] = `
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -21,7 +21,7 @@ exports[`Modal accept style prop 1`] = `
   justify-content: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -52,7 +52,7 @@ exports[`Modal accept style prop 1`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -65,28 +65,21 @@ exports[`Modal accept style prop 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -94,11 +87,11 @@ exports[`Modal accept style prop 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-6 {
+.emotion-5 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -108,7 +101,7 @@ exports[`Modal accept style prop 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -116,7 +109,7 @@ exports[`Modal accept style prop 1`] = `
   opacity: 1;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -131,52 +124,49 @@ exports[`Modal accept style prop 1`] = `
 }
 
 <div
-  class="emotion-7"
+  class="emotion-6"
 >
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
     </div>
   </div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   />
 </div>
 `;
 
 exports[`Modal render different sizes 1`] = `
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -196,7 +186,7 @@ exports[`Modal render different sizes 1`] = `
   justify-content: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -227,7 +217,7 @@ exports[`Modal render different sizes 1`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -240,28 +230,21 @@ exports[`Modal render different sizes 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -269,11 +252,11 @@ exports[`Modal render different sizes 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-6 {
+.emotion-5 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -283,7 +266,7 @@ exports[`Modal render different sizes 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -291,7 +274,7 @@ exports[`Modal render different sizes 1`] = `
   opacity: 1;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -305,52 +288,49 @@ exports[`Modal render different sizes 1`] = `
 }
 
 <div
-  class="emotion-7"
+  class="emotion-6"
 >
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
     </div>
   </div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   />
 </div>
 `;
 
 exports[`Modal render different sizes 2`] = `
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -370,7 +350,7 @@ exports[`Modal render different sizes 2`] = `
   justify-content: center;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -383,7 +363,7 @@ exports[`Modal render different sizes 2`] = `
   width: 850px;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -414,7 +394,7 @@ exports[`Modal render different sizes 2`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -427,28 +407,21 @@ exports[`Modal render different sizes 2`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -456,11 +429,11 @@ exports[`Modal render different sizes 2`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-6 {
+.emotion-5 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -470,7 +443,7 @@ exports[`Modal render different sizes 2`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -479,52 +452,49 @@ exports[`Modal render different sizes 2`] = `
 }
 
 <div
-  class="emotion-7"
+  class="emotion-6"
 >
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
     </div>
   </div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   />
 </div>
 `;
 
 exports[`Modal render different sizes 3`] = `
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -544,7 +514,7 @@ exports[`Modal render different sizes 3`] = `
   justify-content: center;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -575,7 +545,7 @@ exports[`Modal render different sizes 3`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -588,28 +558,21 @@ exports[`Modal render different sizes 3`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -617,11 +580,11 @@ exports[`Modal render different sizes 3`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-6 {
+.emotion-5 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -631,7 +594,7 @@ exports[`Modal render different sizes 3`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -639,7 +602,7 @@ exports[`Modal render different sizes 3`] = `
   opacity: 1;
 }
 
-.emotion-4 {
+.emotion-3 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -653,52 +616,49 @@ exports[`Modal render different sizes 3`] = `
 }
 
 <div
-  class="emotion-7"
+  class="emotion-6"
 >
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
-      class="emotion-4"
+      class="emotion-3"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
     </div>
   </div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   />
 </div>
 `;
 
 exports[`Modal should render closed 1`] = `
-.emotion-9 {
+.emotion-8 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -706,7 +666,7 @@ exports[`Modal should render closed 1`] = `
   opacity: 0;
 }
 
-.emotion-7 {
+.emotion-6 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -726,7 +686,7 @@ exports[`Modal should render closed 1`] = `
   justify-content: center;
 }
 
-.emotion-6 {
+.emotion-5 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -739,7 +699,7 @@ exports[`Modal should render closed 1`] = `
   width: 850px;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -770,7 +730,7 @@ exports[`Modal should render closed 1`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -783,28 +743,21 @@ exports[`Modal should render closed 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -812,18 +765,18 @@ exports[`Modal should render closed 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-5 {
+.emotion-4 {
   background-color: #F2F2F7;
   padding: 1rem;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -851,7 +804,7 @@ exports[`Modal should render closed 1`] = `
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-4 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -864,24 +817,24 @@ exports[`Modal should render closed 1`] = `
   transition: color .2s;
 }
 
-.emotion-4 > span > :not(:last-child) {
+.emotion-3 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-4:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-4:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-4:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
-.emotion-8 {
+.emotion-7 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -892,47 +845,44 @@ exports[`Modal should render closed 1`] = `
 }
 
 <div
-  class="emotion-9"
+  class="emotion-8"
 >
   <div
-    class="emotion-7"
+    class="emotion-6"
   >
     <div
-      class="emotion-6"
+      class="emotion-5"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <button
-          class="emotion-4"
+          class="emotion-3"
           type="button"
         >
           <span>
@@ -945,13 +895,13 @@ exports[`Modal should render closed 1`] = `
     </div>
   </div>
   <div
-    class="emotion-8"
+    class="emotion-7"
   />
 </div>
 `;
 
 exports[`Modal should render open 1`] = `
-.emotion-7 {
+.emotion-6 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -971,7 +921,7 @@ exports[`Modal should render open 1`] = `
   justify-content: center;
 }
 
-.emotion-6 {
+.emotion-5 {
   border: 1px solid #F2F2F7;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -984,7 +934,7 @@ exports[`Modal should render open 1`] = `
   width: 850px;
 }
 
-.emotion-2 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1015,7 +965,7 @@ exports[`Modal should render open 1`] = `
   right: 1rem;
 }
 
-.emotion-2 > span {
+.emotion-1 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1028,28 +978,21 @@ exports[`Modal should render open 1`] = `
   transition: color .2s;
 }
 
-.emotion-2 > span > :not(:last-child) {
+.emotion-1 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-1:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   background-color: rgba(103,108,112,0.16);
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
 }
 
 .emotion-0 {
@@ -1057,18 +1000,18 @@ exports[`Modal should render open 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
   padding: 2.5rem;
 }
 
-.emotion-5 {
+.emotion-4 {
   background-color: #F2F2F7;
   padding: 1rem;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -1096,7 +1039,7 @@ exports[`Modal should render open 1`] = `
   padding: calc(0.75rem - 1px) 2.5rem;
 }
 
-.emotion-4 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1109,24 +1052,24 @@ exports[`Modal should render open 1`] = `
   transition: color .2s;
 }
 
-.emotion-4 > span > :not(:last-child) {
+.emotion-3 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-4:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-4:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-4:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: #ebebeb;
 }
 
-.emotion-8 {
+.emotion-7 {
   position: fixed;
   z-index: 1030;
   top: 0;
@@ -1136,7 +1079,7 @@ exports[`Modal should render open 1`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-9 {
+.emotion-8 {
   -webkit-transition: all .2s;
   transition: all .2s;
   display: inline;
@@ -1145,47 +1088,44 @@ exports[`Modal should render open 1`] = `
 }
 
 <div
-  class="emotion-9"
+  class="emotion-8"
 >
   <div
-    class="emotion-7"
+    class="emotion-6"
   >
     <div
-      class="emotion-6"
+      class="emotion-5"
     >
       <button
-        class="emotion-2"
+        class="emotion-1"
         type="button"
       >
         <span>
-          <span
-            class="emotion-1"
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
           >
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </span>
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
         </span>
       </button>
       <div
-        class="emotion-3"
+        class="emotion-2"
       >
         Testing.
       </div>
       <div
-        class="emotion-5"
+        class="emotion-4"
       >
         <button
-          class="emotion-4"
+          class="emotion-3"
           type="button"
         >
           <span>
@@ -1198,7 +1138,7 @@ exports[`Modal should render open 1`] = `
     </div>
   </div>
   <div
-    class="emotion-8"
+    class="emotion-7"
   />
 </div>
 `;

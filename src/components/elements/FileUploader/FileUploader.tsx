@@ -88,7 +88,7 @@ export class FileUploader extends React.Component<FileUploaderProps> {
                 >
                     <div className='accept-dashed-border'>
                         <HFlow alignItems='center' hSpacing={0.5}>
-                            <Icon color='secondary' icon='upload' />
+                            <Icon fill='secondary' icon='upload' />
                             <Text color='secondary' size={0.875} weight='bold'>{this.props.text}</Text>
                         </HFlow>
                     </div>
@@ -170,7 +170,7 @@ class FileInfo extends React.PureComponent<FileInfoProps> {
         return (
             <div className={emotionCss(styles.wrapper)}>
                 {!this.props.file.error && !this.props.file.uploading &&
-                    <Icon icon='check' color='primary' size={1} style={{ marginRight: 5 }} />
+                    <Icon icon='check' fill='primary' size={1} style={{ marginRight: 5 }} />
                 }
                 <Text size={0.75} weight='bold' style={{ marginRight: 10 }}>
                     {this.props.file.selectedFile.name}
