@@ -3,7 +3,7 @@ import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/l
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { createSelectStyles } from '../Select/createSelectStyle'
-import { DefaultOptionType } from '../Select/Select'
+import { DefaultOptionType, SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from '../Select/Select'
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     ReactAsyncSelectProps<OptionType> {
@@ -37,6 +37,11 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
                 styles={styles}
                 isDisabled={disabled}
                 closeMenuOnSelect={!this.props.isMulti}
+                components={{
+                    Option: SelectOption,
+                    DropdownIndicator: SelectDropdownIndicator,
+                    MultiValueRemove: SelectMultiValueRemove,
+                }}
                 {...rest}
             />
         )

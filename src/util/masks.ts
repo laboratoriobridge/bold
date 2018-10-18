@@ -1,8 +1,6 @@
-import { MaskType } from '../components/form/input/MaskedInput/MaskedInput'
-
 export const onlyNumbers = (value: string) => value.replace(/[^\d]/g, '')
 
-export const masks: { [key: string]: MaskType } = {
+export const masks = {
     telefone: rawValue => {
         if (!rawValue || rawValue.length < 11) {
             return ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]
