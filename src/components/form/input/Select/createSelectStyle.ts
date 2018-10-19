@@ -61,6 +61,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
     valueContainer: (base, state) => ({
         ...base,
         padding: state.isMulti && state.hasValue ? '2px' : '2px 8px',
+        lineHeight: 1,
     }),
     menu: (base) => ({
         ...base,
@@ -96,7 +97,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
         borderTopRightRadius: 0,
         borderBottomLeftRadius: theme.radius.pill,
         borderBottomRightRadius: 0,
-        fontSize: '0.75rem',
+        fontSize: theme.typography.sizes.text,
         padding: '1px 0.5rem',
         lineHeight: '1.25rem',
     }),

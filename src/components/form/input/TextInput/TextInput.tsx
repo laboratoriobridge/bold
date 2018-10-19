@@ -19,8 +19,6 @@ export const createStyles = (theme: Theme): Styles => ({
         border: 'solid 1px ' + theme.pallete.gray.c70,
         borderRadius: theme.radius.input,
         color: theme.pallete.text.main,
-        fontFamily: theme.typography.fontFamily,
-        fontSize: '0.75rem',
         lineHeight: '1rem',
         padding: 'calc(0.5rem - 1px) 0.5rem',
         width: '100%',

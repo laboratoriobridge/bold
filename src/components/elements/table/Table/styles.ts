@@ -4,7 +4,6 @@ export const createTableStyles = (theme: Theme): Styles => ({
     table: {
         width: '100%',
         borderCollapse: 'collapse',
-        fontSize: '0.75rem',
         border: `1px solid ${theme.pallete.divider}`,
     },
     tableHover: {

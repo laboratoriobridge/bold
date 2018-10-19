@@ -4,7 +4,6 @@ exports[`TableRow should accept the style prop 1`] = `
 .emotion-3 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 
@@ -42,7 +41,6 @@ exports[`TableRow should have the pointer class if onClick is specified 1`] = `
 .emotion-3 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 
@@ -76,7 +74,6 @@ exports[`TableRow should have the pointer class if onClick is specified 2`] = `
 .emotion-3 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 

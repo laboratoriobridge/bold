@@ -7,27 +7,25 @@ export type Global = Interpolation
 
 export const createGlobals = (pallete: Pallete, typography: Typography): Global => {
     return {
-        'html, body': {
-            height: '100%',
-            margin: 0,
-        },
         html: {
-            fontSize: typography.htmlFontSize,
-            fontFamily: typography.fontFamily,
+            fontSize: typography.sizes.html,
             boxSizing: 'border-box',
-            color: pallete.text.main,
-            lineHeight: 1,
-        },
-        body: {
-            backgroundColor: pallete.surface.background,
-            fontSize: typography.fontSize,
-            lineHeight: typography.lineHeight,
-            overflowY: 'scroll',
         },
         '*, *:before, *:after': {
             boxSizing: 'inherit',
         },
-        'div, button, input, optgroup, select, textarea': {
+        body: {
+            margin: 0,
+            backgroundColor: pallete.surface.background,
+            color: pallete.text.main,
+            fontFamily: typography.fontFamily,
+            fontSize: typography.sizes.text,
+            lineHeight: typography.lineHeight,
+            overflowY: 'scroll',
+        },
+        'button, input, optgroup, select, textarea': {
+            /* Input elements do not inherit body's font styles */
+            fontFamily: typography.fontFamily,
             lineHeight: 'inherit',
         },
         hr: {
@@ -36,16 +34,12 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
             height: 1,
             margin: '1rem 0',
         },
-        'h1, h2, h3, h4, h5, h6': {
-            fontFamily: typography.fontFamily,
-            margin: 0,
-        },
-        'h1': { fontSize: '1.25rem' },
-        'h2': { fontSize: '1rem' },
-        'h3': { fontSize: '0.875rem' },
-        'h4': { fontSize: '0.75rem' },
-        'h5': { fontSize: '0.625rem' },
-        'h6': { fontSize: '0.5rem' },
+        'h1': { margin: 0, fontSize: '1.5rem' /*, lineHeight: '2.5rem' */ },
+        'h2': { margin: 0, fontSize: '1.25rem' /*, lineHeight: '2rem' */ },
+        'h3': { margin: 0, fontSize: '1rem' /*, lineHeight: '1.5rem' */ },
+        'h4': { margin: 0, fontSize: '0.875rem' /*, lineHeight: '1.5rem' */ },
+        'h5': { margin: 0, fontSize: '0.8125rem' /*, lineHeight: '1.5rem' */ },
+        'h6': { margin: 0, fontSize: '0.75rem' /*, lineHeight: '1rem' */ },
         p: {
             margin: '0',
             lineHeight: 1.5,

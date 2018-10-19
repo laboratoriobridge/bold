@@ -67,7 +67,6 @@ export class Alert extends React.PureComponent<AlertProps> {
                 padding: inline ? '0 0.5rem' : '0 1rem',
                 minHeight: inline ? '2rem' : '2.5rem',
                 borderRadius: '2px',
-                fontSize: '0.75rem',
                 borderStyle: 'solid',
                 borderWidth: '1px',
                 display: inline ? 'inline-flex' : 'flex',

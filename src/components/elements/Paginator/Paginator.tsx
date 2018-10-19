@@ -52,7 +52,6 @@ export class Paginator extends React.PureComponent<PaginatorProps, PaginatorStat
                 display: 'inline-flex',
                 alignItems: 'center',
                 margin: 0,
-                fontSize: '0.75rem',
             },
             disabled: {
                 color: theme.pallete.text.disabled,

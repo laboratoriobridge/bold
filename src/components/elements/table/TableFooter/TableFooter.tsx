@@ -31,7 +31,6 @@ export class TableFooter extends React.Component<TableFooterProps> {
         const { css, theme, style } = this.props
         const styles: Styles = {
             footer: {
-                fontSize: '0.75rem',
                 display: 'flex',
                 alignItems: 'stretch',
                 border: '1px solid ' + theme.pallete.divider,

@@ -41,7 +41,6 @@ export class RadioButton extends React.Component<RadioButtonProps, any> {
 
         const labelClasses = css({
             color: theme.pallete.gray.c30,
-            fontSize: 12,
             marginLeft: '0.5rem',
         })
 

@@ -10,7 +10,6 @@ exports[`Button should accept the loading prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -24,7 +23,7 @@ exports[`Button should accept the loading prop 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   pointer-events: none;
@@ -102,7 +101,6 @@ exports[`Button should render correctly with icon only 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -116,7 +114,7 @@ exports[`Button should render correctly with icon only 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -191,7 +189,6 @@ exports[`Button should render correctly with label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -205,7 +202,7 @@ exports[`Button should render correctly with label 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -262,7 +259,6 @@ exports[`Button should render the default skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -276,7 +272,7 @@ exports[`Button should render the default skin 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -333,7 +329,6 @@ exports[`Button should render the default skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -347,7 +342,7 @@ exports[`Button should render the default skin 2`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #0A67D1;
   color: #FFFFFF;
   border: 1px solid #0A67D1;
@@ -411,7 +406,6 @@ exports[`Button should render the default skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -425,7 +419,7 @@ exports[`Button should render the default skin 3`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #D83A2E;
   color: #FFFFFF;
   border: 1px solid #D83A2E;
@@ -493,7 +487,6 @@ exports[`Button should render the ghost skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -507,7 +500,7 @@ exports[`Button should render the ghost skin 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -564,7 +557,6 @@ exports[`Button should render the ghost skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -578,7 +570,7 @@ exports[`Button should render the ghost skin 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   color: #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -636,7 +628,6 @@ exports[`Button should render the ghost skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -650,7 +641,7 @@ exports[`Button should render the ghost skin 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   color: #D83A2E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -712,7 +703,6 @@ exports[`Button should render the outline skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -726,7 +716,7 @@ exports[`Button should render the outline skin 1`] = `
   background-color: transparent;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -783,7 +773,6 @@ exports[`Button should render the outline skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -797,7 +786,7 @@ exports[`Button should render the outline skin 2`] = `
   background-color: transparent;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   border: 1px solid #0A67D1;
   color: #0A67D1;
   font-size: 0.875rem;
@@ -860,7 +849,6 @@ exports[`Button should render the outline skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -874,7 +862,7 @@ exports[`Button should render the outline skin 3`] = `
   background-color: transparent;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   border: 1px solid #D83A2E;
   color: #D83A2E;
   font-size: 0.875rem;

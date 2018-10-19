@@ -10,7 +10,6 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -24,7 +23,7 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   background-color: #0A67D1;
   color: #FFFFFF;
   border: 1px solid #0A67D1;

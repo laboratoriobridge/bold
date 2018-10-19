@@ -4,8 +4,9 @@ import * as React from 'react'
 import { TextColor } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 import { withStyles, WithStylesProps } from '../../../../styles/withStyles'
+import { Omit } from '../../../../util/types'
 
-export interface HeadingProps extends WithStylesProps {
+export interface HeadingProps extends WithStylesProps, Omit<React.HTMLAttributes<HTMLHeadingElement>, 'style' | 'css'> {
     level: 1 | 2 | 3 | 4 | 5 | 6
     color?: TextColor
     style?: Interpolation

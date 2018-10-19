@@ -16,7 +16,6 @@ exports[`Checkbox should render correctly 1`] = `
 
 .emotion-2 {
   color: #41484F;
-  font-size: 12px;
   margin-left: 0.5rem;
 }
 
@@ -128,7 +127,6 @@ exports[`Checkbox should render correctly when disabled 1`] = `
 
 .emotion-2 {
   color: #41484F;
-  font-size: 12px;
   margin-left: 0.5rem;
 }
 
@@ -242,7 +240,6 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
 
 .emotion-2 {
   color: #41484F;
-  font-size: 12px;
   margin-left: 0.5rem;
 }
 

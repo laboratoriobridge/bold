@@ -30,7 +30,6 @@ exports[`Modal accept style prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -44,7 +43,7 @@ exports[`Modal accept style prop 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -195,7 +194,6 @@ exports[`Modal render different sizes 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -209,7 +207,7 @@ exports[`Modal render different sizes 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -372,7 +370,6 @@ exports[`Modal render different sizes 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -386,7 +383,7 @@ exports[`Modal render different sizes 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -523,7 +520,6 @@ exports[`Modal render different sizes 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -537,7 +533,7 @@ exports[`Modal render different sizes 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -708,7 +704,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -722,7 +717,7 @@ exports[`Modal should render closed 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -785,7 +780,6 @@ exports[`Modal should render closed 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -799,7 +793,7 @@ exports[`Modal should render closed 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -943,7 +937,6 @@ exports[`Modal should render open 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -957,7 +950,7 @@ exports[`Modal should render open 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   position: absolute;
@@ -1020,7 +1013,6 @@ exports[`Modal should render open 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  font-family: "Noto Sans",sans-serif;
   line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
@@ -1034,7 +1026,7 @@ exports[`Modal should render open 1`] = `
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }

@@ -4,7 +4,6 @@ exports[`TableHead should accept the style prop 1`] = `
 .emotion-3 {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.75rem;
   border: 1px solid #F2F2F7;
 }
 

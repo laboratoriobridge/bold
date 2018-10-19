@@ -60,6 +60,7 @@ exports[`render should render correctly 1`] = `
   -webkit-overflow-scrolling: touch;
   position: relative;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 .emotion-0 {
@@ -205,7 +206,7 @@ exports[`render should render correctly 1`] = `
               value=""
             />
             <div
-              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: \\"IBM Plex Sans\\",sans-serif; letter-spacing: normal; text-transform: none;"
             />
           </div>
         </div>
@@ -409,6 +410,7 @@ exports[`render should render correctly when multivalue 1`] = `
   -webkit-overflow-scrolling: touch;
   position: relative;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 .emotion-2 {
@@ -427,7 +429,7 @@ exports[`render should render correctly when multivalue 1`] = `
 .emotion-0 {
   border-radius: 2px;
   color: #2D343B;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   overflow: hidden;
   padding: 1px 0.5rem;
   padding-left: 6px;
@@ -553,7 +555,7 @@ exports[`render should render correctly when multivalue 1`] = `
               value=""
             />
             <div
-              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: -webkit-small-control; letter-spacing: normal; text-transform: none;"
+              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: \\"IBM Plex Sans\\",sans-serif; letter-spacing: normal; text-transform: none;"
             />
           </div>
         </div>
