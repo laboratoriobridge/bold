@@ -1,30 +1,32 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles/withStyles'
-import { Heading } from '../Heading/Heading'
+import { Heading, HeadingProps } from '../Heading/Heading'
 
 export interface HeadingSectionProps extends WithStylesProps {
     title: React.ReactNode
-    level: 1 | 2 | 3 | 4 | 5 | 6
+    level: HeadingProps['level']
+    color?: HeadingProps['color']
+    style?: Interpolation
 }
 
 @withStyles
 export class HeadingSection extends React.Component<HeadingSectionProps> {
     render() {
-        const { css } = this.props
+        const { css, theme, style, title, children, ...rest } = this.props
         const styles = {
             section: {
             },
             title: {
-                lineHeight: 1,
                 marginBottom: '1rem',
             },
         }
 
         return (
-            <div className={css(styles.section)}>
-                <Heading level={this.props.level} style={styles.title}>{this.props.title}</Heading>
-                {this.props.children}
+            <div className={css(styles.section, style)}>
+                <Heading style={styles.title} {...rest}>{title}</Heading>
+                {children}
             </div>
         )
     }

@@ -51,6 +51,7 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
             },
             item: {
                 display: 'inline-flex',
+                alignItems: 'center',
 
                 '&:last-child a': {
                     pointerEvents: 'none',

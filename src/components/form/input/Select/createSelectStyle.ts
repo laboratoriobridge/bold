@@ -61,6 +61,7 @@ export const createSelectStyles = (theme: Theme, hasError: boolean): StylesConfi
     valueContainer: (base, state) => ({
         ...base,
         padding: state.isMulti && state.hasValue ? '2px' : '2px 8px',
+        lineHeight: 1,
     }),
     menu: (base) => ({
         ...base,

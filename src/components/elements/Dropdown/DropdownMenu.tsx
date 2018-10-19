@@ -72,7 +72,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
             link: {
                 display: 'block',
                 padding: '0.5rem 1rem',
-                fontSize: '0.875rem',
+                fontSize: theme.typography.sizes.button,
                 color: theme.pallete.text.main,
                 textDecoration: 'none',
                 '&:hover': {

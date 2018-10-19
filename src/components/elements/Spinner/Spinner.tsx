@@ -18,9 +18,8 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
         const { css, theme, size, borderWidth } = this.props
         const styles: Styles = {
             pointerEvents: 'none',
-            'span': {
-                color: 'transparent',
-            },
+            fontSize: `${size}rem`,
+            lineHeight: 1,
             ':after': {
                 animation: `${theme.animation.spinAround} 450ms infinite linear`,
                 border: `${borderWidth}px solid currentColor`,
@@ -30,7 +29,6 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
                 display: 'inline-block',
                 height: `${size}rem`,
                 width: `${size}rem`,
-                lineHeight: `${size}rem`,
             },
         }
         return (

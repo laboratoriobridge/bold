@@ -500,7 +500,7 @@ exports[`Button should render the ghost skin 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -570,7 +570,7 @@ exports[`Button should render the ghost skin 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   color: #0A67D1;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -641,7 +641,7 @@ exports[`Button should render the ghost skin 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #53595E;
+  color: #2D343B;
   color: #D83A2E;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;

@@ -60,6 +60,7 @@ exports[`render should render correctly 1`] = `
   -webkit-overflow-scrolling: touch;
   position: relative;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 .emotion-0 {
@@ -409,6 +410,7 @@ exports[`render should render correctly when multivalue 1`] = `
   -webkit-overflow-scrolling: touch;
   position: relative;
   box-sizing: border-box;
+  line-height: 1;
 }
 
 .emotion-2 {

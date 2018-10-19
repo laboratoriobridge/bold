@@ -10,7 +10,7 @@ const createStyles = (theme: Theme): Styles => {
             listStyle: 'none',
             padding: '0',
             margin: '0',
-            fontSize: '0.875rem',
+            fontSize: theme.typography.sizes.button,
         },
         li: {
             display: 'inline-block',
