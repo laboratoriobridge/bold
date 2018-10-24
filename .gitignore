@@ -6,3 +6,4 @@ yarn-error.log
 .scannerwork
 lib
 storybook-static
+.cache
