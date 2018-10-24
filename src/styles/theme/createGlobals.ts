@@ -26,6 +26,7 @@ export const createGlobals = (pallete: Pallete, typography: Typography): Global 
         'button, input, optgroup, select, textarea': {
             /* Input elements do not inherit body's font styles */
             fontFamily: typography.fontFamily,
+            fontSize: typography.sizes.text,
             lineHeight: 'inherit',
         },
         hr: {
