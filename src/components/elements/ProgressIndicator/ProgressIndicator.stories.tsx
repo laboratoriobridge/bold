@@ -17,7 +17,7 @@ const colors: { [key in TextColor] } = {
     'success': 'success',
 }
 
-storiesOf('Components', module)
-    .add('ProgressIndicator', () => (
+storiesOf('Components/ProgressIndicator', module)
+    .add('default', () => (
         <ProgressIndicator color={select('color', colors, 'primary')} value={number('percentage', 60)} />
     ))

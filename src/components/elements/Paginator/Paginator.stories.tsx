@@ -5,8 +5,8 @@ import * as React from 'react'
 
 import { Paginator } from './Paginator'
 
-storiesOf('Components', module)
-    .add('Paginator', () => (
+storiesOf('Components/Paginator', module)
+    .add('default', () => (
         <Paginator
             page={number('page', 4)}
             total={number('total', 20)}

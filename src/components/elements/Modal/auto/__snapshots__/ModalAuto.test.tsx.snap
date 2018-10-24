@@ -169,7 +169,7 @@ exports[`should render correctly 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;

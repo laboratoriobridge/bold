@@ -4,8 +4,8 @@ import * as React from 'react'
 
 import { InfoLabel } from './InfoLabel'
 
-storiesOf('Components', module)
-    .add('InfoLabel', () => (
+storiesOf('Components/InfoLabel', module)
+    .add('default', () => (
         <>
             <InfoLabel title={text('title', 'Nome')} placeholder={text('placeholder', '-')}>
                 João da Silva

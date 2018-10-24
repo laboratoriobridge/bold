@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Omit } from '../../../util/types'
-import { Button, ButtonProps } from '../button'
+import { Button, ButtonProps } from '../Button'
 import { PopperController } from '../Popper'
 
 import { Dropdown } from './Dropdown'

@@ -19,8 +19,8 @@ const colors: { [key in IconColor] } = {
     'success': 'success',
 }
 
-storiesOf('Components', module)
-    .add('Icon', () => (
+storiesOf('Components/Icon', module)
+    .add('all icons', () => (
         <>
             {Object.keys(IconMap).map((key: any) => (
                 <Tooltip key={key} text={key}>

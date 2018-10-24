@@ -2,7 +2,7 @@ import { mount, render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../test'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 
 import { Modal } from './Modal'
 import { ModalBody } from './ModalBody'

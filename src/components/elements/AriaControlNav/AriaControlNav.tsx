@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../styles'
 import { HFlow } from '../../layout/Flow/HFlow'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 
 export interface AriaControlNavProps extends WithStylesProps {
 }

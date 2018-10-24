@@ -6,8 +6,8 @@ import { Text } from '../textual/Text/Text'
 
 import { Paper } from './Paper'
 
-storiesOf('Components', module)
-    .add('Paper', () => (
+storiesOf('Components/Paper', module)
+    .add('default', () => (
         <Paper elevation={20} style={{ marginBottom: '2rem', marginTop: '0.5rem', padding: '1rem' }}>
             <Heading level={2}>Paper heading</Heading>
             <Text>Paper content</Text>

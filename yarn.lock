@@ -672,6 +672,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.1.2":
+  version "7.1.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/runtime/-/runtime-7.1.2.tgz#81c89935f4647706fc54541145e6b4ecfef4b8e3"
+  integrity sha512-Y3SCjmhSupzFB6wcv1KmmFucH6gDVnI30WjOcicV10ju0cZjak3Jcs67YLIXBrmZYw1xCrVeJPbycFwrqNyxpg==
+  dependencies:
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@^7.1.0":
   version "7.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/template/-/template-7.1.0.tgz#58cc9572e1bfe24fe1537fdf99d839d53e517e22"
@@ -826,52 +833,52 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/weak-memoize/-/weak-memoize-0.1.3.tgz#b700d97385fa91affed60c71dfd51c67e9dad762"
   integrity sha512-QsYGKdhhuDFNq7bjm2r44y0mp5xW3uO3csuTPDWZc0OIiMQv+AIY5Cqwd4mJiC5N8estVl7qlvOx1hbtOuUWbw==
 
-"@storybook/addon-actions@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0-alpha.23.tgz#6cced9449711963dcfff98fec77c998be78399c3"
-  integrity sha512-d1X6YvoilfR5xKx1/A48boQ4aZPkcMj4XrRxlNrMedlWygcOUz5siDb/HVNhza2rYLVnFgzNGLy3Y4hCpu/Ggw==
+"@storybook/addon-actions@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0-rc.3.tgz#03c2d47e1467b7ece34ccccbf66d38b0a5b428d6"
+  integrity sha512-nm1ByowJKS5+eMV3p9sx/akx29tQjXEs8ME0ZTWS0Dau+tVS66I5XSE9tClStKgZZVRjIJzF6ZmXANGzRaBtFQ==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-alpha.23"
-    "@storybook/components" "4.0.0-alpha.23"
-    "@storybook/core-events" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/core-events" "4.0.0-rc.3"
     deep-equal "^1.0.1"
     global "^4.3.2"
-    lodash.isequal "^4.5.0"
+    lodash "^4.17.11"
     make-error "^1.3.5"
     prop-types "^15.6.2"
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-info@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0-alpha.23.tgz#6e6c5e24a27c078d123153bd11fc78e964ec260d"
-  integrity sha512-UEFquVJgMPQxwO1MusUsPRyxq2dVngMqwthLxx7aqM4NjHWD3ji/Q3tchQHK7wXtwNSws8DBcz0jhNGDb5KQdg==
+"@storybook/addon-info@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0-rc.3.tgz#8f9fc74ab13910bd5204c95aa07a248dc16fd21d"
+  integrity sha512-5JKs4UhdzARMM3UrTBb9x4GabTXCQliaze25Il3XdTdY6jWDry1YLaXlwOaYqnWGp7W/PXhhVCpbA2Vg6jXmCQ==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-alpha.23"
-    "@storybook/client-logger" "4.0.0-alpha.23"
-    "@storybook/components" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/client-logger" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0-rc.3"
     core-js "2.5.7"
     global "^4.3.2"
-    marksy "^6.0.3"
+    marksy "^6.1.0"
     nested-object-assign "^1.0.1"
     prop-types "^15.6.2"
     react-addons-create-fragment "^15.5.3"
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0-alpha.23.tgz#8a0ab8467bcd80831f55b6b3fbdcfc2f5e6f4faa"
-  integrity sha512-hXRsB3YonSFQIPdpJ8H0j2O5TW3xF8ES5FxZ807lOvcoB+XKahFqbKphv+sgmriNK4E9PiDisPcJGBxz6CBduw==
+"@storybook/addon-knobs@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0-rc.3.tgz#ab3cb13e67c5b9d31a677e3a32f117a371a46db4"
+  integrity sha512-5Y67fATCeahZ4cvhG8R+gRAVRzyZUaD2nJo0q4Lvnnk5uskDZV8CCqgCMOdxvkN+6QINihjZyT6epqdDi1et2A==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-alpha.23"
-    "@storybook/components" "4.0.0-alpha.23"
-    "@storybook/core-events" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/core-events" "4.0.0-rc.3"
     copy-to-clipboard "^3.0.8"
     escape-html "^1.0.3"
     fast-deep-equal "^2.0.1"
@@ -879,106 +886,107 @@
     prop-types "^15.6.2"
     qs "^6.5.2"
     react-color "^2.14.1"
-    react-datetime "^2.15.0"
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0-alpha.23.tgz#98261eb702e78628fde3def93ce3eb7c6510a341"
-  integrity sha512-4pxjfenKzT4eZ1wjfOe4bV3DOz27tHfoHW88Tv6a21MzZ+OIlLxFsGSdalk6dwjT84rOan+cgrHKlkXLM2qPSw==
+"@storybook/addon-links@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0-rc.3.tgz#b0c88990d5176fd08e79d22d36cbd4eb3a6542ae"
+  integrity sha512-S4gbql02ShfOSwwMXB4iUWEWEvwK5GejnltNjymhdjVjAacPWYNrQO9abG8Wrye4O1JEd7lgwh+RCcVYBFl6YQ==
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.23"
-    "@storybook/components" "4.0.0-alpha.23"
-    "@storybook/core-events" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/core-events" "4.0.0-rc.3"
     global "^4.3.2"
     prop-types "^15.6.2"
 
-"@storybook/addon-options@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0-alpha.23.tgz#a1fb990d53c0fc7c76e4b7c8db28212b7dc479b2"
-  integrity sha512-QDUE+yuKr6iSoKOGG8WJWZ7jJW1sJmTtpuGGpFXGcJjDV/q2CS4qvVigWYf3+cuvQisUusxG9+cX/gcIDFgA/A==
+"@storybook/addon-options@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0-rc.3.tgz#17633986c92d8ba12a5b178f0d76b1933ccac502"
+  integrity sha512-eGkUyduob257Ur/d2OestG0oNLnyoIyKr+LwUSJHqaOlfhPOTy8sRxKaDFLmIFIHs/tBLS1W4qwu2a7TQjhw0w==
   dependencies:
-    "@storybook/addons" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0-alpha.23.tgz#329ba88b2da6652dfaadb71e9913df590920c7eb"
-  integrity sha512-gYEQ31bg8/vEb/Pijzogzd4Z2pJoE0PD+rS7ywGWVjDCIb8PUJ8TL++bN3G6BDGwZVYGh7BKwDUS4l031NBaCg==
+"@storybook/addons@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0-rc.3.tgz#1ae2f8a634995210bc40fd1b3419204d4bcdbb88"
+  integrity sha512-R6Nr9lzSYFyuzFBvdhTMZ6mn7ns0Cb4sJTMdC9cw53qaJPHtZR81mmDQtYmAw40ZtbJQOZ01ydsKgU8lDjCjqg==
   dependencies:
-    "@storybook/channels" "4.0.0-alpha.23"
-    "@storybook/components" "4.0.0-alpha.23"
+    "@storybook/channels" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0-rc.3"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-alpha.23.tgz#88acc717839b541d998b78c2aaee65b3675763fb"
-  integrity sha512-ieUhtQ9Kh7VNzW4l2ka8A+EyIPfCocpqnzy9lLcAYO8v3mIN6F/UrPDb3e/yxU7JSDFAnCZNLJpIcXDKehLifw==
+"@storybook/channel-postmessage@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-rc.3.tgz#1ae940fb7a57b8e571f6c753ab6595790a0e3d4c"
+  integrity sha512-dVks9bRv/+FlE8By/M3SREWBIjil3pX66Zp3o3KguQTCBJ3kAmDrcxP/ExSCbWASXX4M5daHx4Jeoyanq2zb/w==
   dependencies:
-    "@storybook/channels" "4.0.0-alpha.23"
+    "@storybook/channels" "4.0.0-rc.3"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0-alpha.23.tgz#5a2b24682c9d05f4d2b157f44b403bdc4bf5886e"
-  integrity sha512-2INU0L6SEQgQCbZkiieORkVE/0W0gXVv/9CdGEGFPi/KrE0rxYL1Qi6Qr6fT2T8lfy9HFXalcgPHI7VaeWaN9g==
+"@storybook/channels@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0-rc.3.tgz#2a500b8dab69199ba03674c0bbbd546ae38ee004"
+  integrity sha512-YM8Se2yel+U9IKOwuvr/RaFalxa+kItEVk4ZL15xa71X5mywwDQQEYWlDGKTDIpJy7NviETu08okBOyoRPifFA==
 
-"@storybook/client-logger@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0-alpha.23.tgz#be024926f8a330a56f58a450e79043cc21356636"
-  integrity sha512-jTTHU0m0oiYyZqvKVQ9N6S4yO32le2xvWYOxICwYLEtOw5bDtcfLu1gifoKRECEZGc3xINjFlFnBDmihrDHbLg==
+"@storybook/client-logger@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0-rc.3.tgz#52ed80c8580bd4900e306f18b335b4d9a585a788"
+  integrity sha512-+6fgCRjxr5v45nk1h40Tpw4alHmcSIkHiySO5x82CO3O1ZB6m4kJFEpbNMjd9WEVcKexIjWKvtVISGawUgIr7g==
 
-"@storybook/components@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0-alpha.23.tgz#b73b2edab0955de722699f949d1fcdd06cdda383"
-  integrity sha512-z1gWhMujEd6XizV/yXLsqHzWYEPtrHnPsaASJU6BXVLHnueiIKuZuJolDBKSAbK4vRgoiMsEHnxrKxHEliNtgQ==
+"@storybook/components@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0-rc.3.tgz#c079ab6edacceb276c8e0c18d56346da22eb64ff"
+  integrity sha512-tRqzheXJbmdZ6R0QJPKNiEfXuV6FS5/Pio4gQR/gpdgLUbbtsDIxJ6q+zBvtNtInK5ClWHppxGzfKozERezBhg==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
     global "^4.3.2"
-    lodash.pick "^4.4.0"
-    lodash.throttle "^4.1.1"
+    lodash "^4.17.11"
     prop-types "^15.6.2"
     react-inspector "^2.3.0"
     react-split-pane "^0.1.84"
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0-alpha.23.tgz#6051cc877c6b0a1dafcdd8b19c24b4d0fb53e865"
-  integrity sha512-mCraQOY7CyVH+0d2eFPpVlYmUyXYiJJI//Sc7eYMwCTU9K/5OnXRcmXmkU3eXPyjwtYTbdle9FnPBAdOfTrX7g==
+"@storybook/core-events@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0-rc.3.tgz#d4122b1b84a4278e331e693c69d7a0e526d876f1"
+  integrity sha512-wDq2GEyvp01xYV296DUdcRtihN0MzgzKfcifpOMKXEHaFR7xyrkr5hghwx2nuQtso7lH7kElyRiWIR9JWUPcKg==
 
-"@storybook/core@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0-alpha.23.tgz#e3610b9fc9871bd46a41f561d271e2e1fb34ebed"
-  integrity sha512-3yHHcDQD3VDfxEJ+CfZzNWj29frHRfF2hbSFQQQYtT9rUubu9JRRqEOLY543ZiMnWICdut5tBVVp3y+clE3ojA==
+"@storybook/core@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0-rc.3.tgz#8dcccf3c84fba26b7f6a6aca8651dc08544b230c"
+  integrity sha512-wp428qLt3cJirCXDoQVQZwIccuXrZEdU5qayPCausugQ4yCodxOjuotLiuXz9Q0yFN/yUn7gwxmfbYOjR4IoPA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-transform-regenerator" "^7.0.0"
     "@babel/plugin-transform-runtime" "^7.1.0"
     "@babel/preset-env" "^7.1.0"
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.1.2"
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-alpha.23"
-    "@storybook/channel-postmessage" "4.0.0-alpha.23"
-    "@storybook/client-logger" "4.0.0-alpha.23"
-    "@storybook/core-events" "4.0.0-alpha.23"
-    "@storybook/node-logger" "4.0.0-alpha.23"
-    "@storybook/ui" "4.0.0-alpha.23"
+    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/channel-postmessage" "4.0.0-rc.3"
+    "@storybook/client-logger" "4.0.0-rc.3"
+    "@storybook/core-events" "4.0.0-rc.3"
+    "@storybook/node-logger" "4.0.0-rc.3"
+    "@storybook/ui" "4.0.0-rc.3"
     airbnb-js-shims "^1 || ^2"
-    autoprefixer "^9.1.3"
-    babel-plugin-macros "^2.2.2"
+    autoprefixer "^9.2.1"
+    babel-plugin-macros "^2.4.2"
     babel-preset-minify "^0.5.0"
+    boxen "^2.0.0"
     case-sensitive-paths-webpack-plugin "^2.1.2"
     chalk "^2.4.1"
-    commander "^2.17.0"
+    cli-table3 "0.5.1"
+    commander "^2.19.0"
+    common-tags "^1.8.0"
     core-js "^2.5.7"
     css-loader "^1.0.0"
     detect-port "^1.2.3"
@@ -986,31 +994,34 @@
     ejs "^2.6.1"
     express "^4.16.3"
     file-loader "^2.0.0"
+    file-system-cache "^1.0.5"
     find-cache-dir "^2.0.0"
-    generate-page-webpack-plugin "^1.1.0"
     global "^4.3.2"
+    html-webpack-plugin "^4.0.0-beta.2"
     inquirer "^6.2.0"
     interpret "^1.1.0"
-    json5 "^2.0.1"
-    opn "^5.3.0"
+    ip "^1.1.5"
+    json5 "^2.1.0"
+    lazy-universal-dotenv "^2.0.0"
+    node-fetch "^2.2.0"
+    opn "^5.4.0"
     postcss-flexbugs-fixes "^4.1.0"
     postcss-loader "^3.0.0"
     prop-types "^15.6.2"
     qs "^6.5.2"
     raw-loader "^0.5.1"
-    react-dev-utils "6.0.0-next.2150693d"
-    redux "^4.0.0"
+    react-dev-utils "^6.0.5"
+    redux "^4.0.1"
     resolve "^1.8.1"
-    semver "^5.5.1"
+    semver "^5.6.0"
     serve-favicon "^2.5.0"
     shelljs "^0.8.2"
-    style-loader "^0.23.0"
+    style-loader "^0.23.1"
     svg-url-loader "^2.3.2"
-    universal-dotenv "^1.9.0"
-    url-loader "^1.1.1"
-    webpack "^4.20.0"
+    url-loader "^1.1.2"
+    webpack "^4.21.0"
     webpack-dev-middleware "^3.4.0"
-    webpack-hot-middleware "^2.24.2"
+    webpack-hot-middleware "^2.24.3"
 
 "@storybook/mantra-core@^1.7.2":
   version "1.7.2"
@@ -1021,12 +1032,19 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0-alpha.23.tgz#176c24f30605415f2a85ac0ecf4039010562435f"
-  integrity sha512-JDgWzzt8LyHMZkYMeL7wWnpYdsBYXnfMTyhZmBVI/CU0kfe1bNMbFr0QPieu2GGPyZ/8bEKcmuMV57hqo9Cl3w==
+"@storybook/node-logger@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0-rc.3.tgz#c682315db2e105a238454c6ca9b11d508147e570"
+  integrity sha512-T3NqndTBfpaino6/gKXMQyoddXykkMVDp4clyvGZzgu3uh5KKrbbGsCud4v2NRWPH4dhZC9Qi32/Fg4j3IvE9g==
   dependencies:
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.1.2"
+    npmlog "^4.1.2"
+
+"@storybook/node-logger@^3.4.11":
+  version "3.4.11"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-3.4.11.tgz#a6684a4c21f74dae937cd9f202deec0932d3f3b5"
+  integrity sha512-eCjvZsCwZTcjDOeG7JDEVs5bugyybpAFu/4+X3hfikxGBBjnx2NtjJIfIsriUKa1O559+aFGUG73wogYAjudhg==
+  dependencies:
     npmlog "^4.1.2"
 
 "@storybook/podda@^1.2.3":
@@ -1065,33 +1083,36 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0-alpha.23.tgz#204b48273d8d3ce28f002129c2783eb166e008b3"
-  integrity sha512-DkwXVCg2E6aS9/kw3khdX6S2lo+fnJiH4UOLrWd1CkEqzoob15aXVDeMuNsPlSwbfZfsVgyMQa31l2VarhxXYA==
+"@storybook/react@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0-rc.3.tgz#1bc87ec246224e8cb716bfc30f416b8028dbf061"
+  integrity sha512-ZZDwLICI9yBFQ2267acMXpBvE/xiOLdu8yDLONR5c3h4LWwHdE2uXTAwkefWSRIlhjwcA2invRLlRLg4I1yd/w==
   dependencies:
     "@babel/preset-flow" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
-    "@babel/runtime" "^7.0.0"
+    "@babel/runtime" "^7.1.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/core" "4.0.0-alpha.23"
-    babel-plugin-react-docgen "^2.0.0-babel7.0"
+    "@storybook/core" "4.0.0-rc.3"
+    "@storybook/node-logger" "^3.4.11"
+    babel-plugin-react-docgen "^2.0.0"
     common-tags "^1.8.0"
     global "^4.3.2"
-    lodash.flattendeep "^4.4.0"
+    lodash "^4.17.11"
     prop-types "^15.6.2"
-    react-dev-utils "6.0.0-next.2150693d"
+    react-dev-utils "^6.0.5"
+    semver "^5.6.0"
+    webpack "^4.21.0"
 
-"@storybook/ui@4.0.0-alpha.23":
-  version "4.0.0-alpha.23"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0-alpha.23.tgz#611b62964d288bb8d69a27c7e6a42973bc71cb74"
-  integrity sha512-f/bWytrQ+ZV4TXRDT8yq7gIlWnaa7ZVAvqBFrOoN+XCC3Phq/XD+xm6l7u8NSyTi/DztgedpP8Hkz9cFgSemwg==
+"@storybook/ui@4.0.0-rc.3":
+  version "4.0.0-rc.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0-rc.3.tgz#455d50a13613bda53ece7b0be49da5bdb6ad124f"
+  integrity sha512-UfFMrhonTEJcxuo6Snizcj/Vv/UrF5B6V3oFwhAu+u8CvwjjlstN/7X/oR71aSPP/DROVXWhjd4WaScAX8QMfA==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/components" "4.0.0-alpha.23"
-    "@storybook/core-events" "4.0.0-alpha.23"
+    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/core-events" "4.0.0-rc.3"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.4"
@@ -1100,15 +1121,12 @@
     fuse.js "^3.2.1"
     global "^4.3.2"
     keycode "^2.2.0"
-    lodash.debounce "^4.0.8"
-    lodash.pick "^4.4.0"
-    lodash.sortby "^4.7.0"
-    lodash.throttle "^4.1.1"
+    lodash "^4.17.11"
     prop-types "^15.6.2"
     qs "^6.5.2"
     react-fuzzy "^0.5.2"
     react-lifecycles-compat "^3.0.4"
-    react-modal "^3.5.1"
+    react-modal "^3.6.1"
     react-treebeard "^3.1.0"
 
 "@svgr/cli@2.4.1":
@@ -1319,6 +1337,15 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/webpack-env/-/webpack-env-1.13.6.tgz#128d1685a7c34d31ed17010fc87d6a12c1de6976"
   integrity sha512-5Th3OsZ4gTRdr9Mho83BQ23cex4sRhOR4XTG+m+cJc0FhtUBK9Vn62hBJ+pnQYnSxoPOsKoAPOx6FcphxBC8ng==
 
+"@webassemblyjs/ast@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ast/-/ast-1.7.10.tgz#0cfc61d61286240b72fc522cb755613699eea40a"
+  integrity sha512-wTUeaByYN2EA6qVqhbgavtGc7fLTOx0glG2IBsFlrFG51uXIGlYBTyIZMf4SPLo3v1bgV/7lBN3l7Z0R6Hswew==
+  dependencies:
+    "@webassemblyjs/helper-module-context" "1.7.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.10"
+    "@webassemblyjs/wast-parser" "1.7.10"
+
 "@webassemblyjs/ast@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ast/-/ast-1.7.8.tgz#f31f480debeef957f01b623f27eabc695fa4fe8f"
@@ -1328,20 +1355,42 @@
     "@webassemblyjs/helper-wasm-bytecode" "1.7.8"
     "@webassemblyjs/wast-parser" "1.7.8"
 
+"@webassemblyjs/floating-point-hex-parser@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.7.10.tgz#ee63d729c6311a85863e369a473f9983f984e4d9"
+  integrity sha512-gMsGbI6I3p/P1xL2UxqhNh1ga2HCsx5VBB2i5VvJFAaqAjd2PBTRULc3BpTydabUQEGlaZCzEUQhLoLG7TvEYQ==
+
 "@webassemblyjs/floating-point-hex-parser@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/floating-point-hex-parser/-/floating-point-hex-parser-1.7.8.tgz#1b3ed0e27e384032254e9322fc646dd3e70ef1b9"
   integrity sha512-kn2zNKGsbql5i56VAgRYkpG+VazqHhQQZQycT2uXAazrAEDs23gy+Odkh5VblybjnwX2/BITkDtNmSO76hdIvQ==
+
+"@webassemblyjs/helper-api-error@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-api-error/-/helper-api-error-1.7.10.tgz#bfcb3bbe59775357475790a2ad7b289f09b2f198"
+  integrity sha512-DoYRlPWtuw3yd5BOr9XhtrmB6X1enYF0/54yNvQWGXZEPDF5PJVNI7zQ7gkcKfTESzp8bIBWailaFXEK/jjCsw==
 
 "@webassemblyjs/helper-api-error@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-api-error/-/helper-api-error-1.7.8.tgz#a2b49c11f615e736f815ec927f035dcfa690d572"
   integrity sha512-xUwxDXsd1dUKArJEP5wWM5zxgCSwZApSOJyP1XO7M8rNUChUDblcLQ4FpzTpWG2YeylMwMl1MlP5Ztryiz1x4g==
 
+"@webassemblyjs/helper-buffer@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-buffer/-/helper-buffer-1.7.10.tgz#0a8c624c67ad0b214d2e003859921a1988cb151b"
+  integrity sha512-+RMU3dt/dPh4EpVX4u5jxsOlw22tp3zjqE0m3ftU2tsYxnPULb4cyHlgaNd2KoWuwasCQqn8Mhr+TTdbtj3LlA==
+
 "@webassemblyjs/helper-buffer@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-buffer/-/helper-buffer-1.7.8.tgz#3fc66bfa09c1c60e824cf3d5887826fac062877d"
   integrity sha512-WXiIMnuvuwlhWvVOm8xEXU9DnHaa3AgAU0ZPfvY8vO1cSsmYb2WbGbHnMLgs43vXnA7XAob9b56zuZaMkxpCBg==
+
+"@webassemblyjs/helper-code-frame@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-code-frame/-/helper-code-frame-1.7.10.tgz#0ab7e22fad0241a173178c73976fc0edf50832ce"
+  integrity sha512-UiytbpKAULOEab2hUZK2ywXen4gWJVrgxtwY3Kn+eZaaSWaRM8z/7dAXRSoamhKFiBh1uaqxzE/XD9BLlug3gw==
+  dependencies:
+    "@webassemblyjs/wast-printer" "1.7.10"
 
 "@webassemblyjs/helper-code-frame@1.7.8":
   version "1.7.8"
@@ -1350,20 +1399,45 @@
   dependencies:
     "@webassemblyjs/wast-printer" "1.7.8"
 
+"@webassemblyjs/helper-fsm@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-fsm/-/helper-fsm-1.7.10.tgz#0915e7713fbbb735620a9d3e4fa3d7951f97ac64"
+  integrity sha512-w2vDtUK9xeSRtt5+RnnlRCI7wHEvLjF0XdnxJpgx+LJOvklTZPqWkuy/NhwHSLP19sm9H8dWxKeReMR7sCkGZA==
+
 "@webassemblyjs/helper-fsm@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-fsm/-/helper-fsm-1.7.8.tgz#fe4607430af466912797c21acafd3046080182ea"
   integrity sha512-TjK0CnD8hAPkV5mbSp5aWl6SO1+H3WFcjWtixWoy8EMA99YnNzYhpc/WSYWhf7yrhpzkq5tZB0tvLK3Svr3IXA==
+
+"@webassemblyjs/helper-module-context@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-module-context/-/helper-module-context-1.7.10.tgz#9beb83f72740f5ac8075313b5cac5e796510f755"
+  integrity sha512-yE5x/LzZ3XdPdREmJijxzfrf+BDRewvO0zl8kvORgSWmxpRrkqY39KZSq6TSgIWBxkK4SrzlS3BsMCv2s1FpsQ==
 
 "@webassemblyjs/helper-module-context@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-module-context/-/helper-module-context-1.7.8.tgz#3c2e7ee93d14ff4768ba66fb1be42fdc9dc7160a"
   integrity sha512-uCutAKR7Nm0VsFixcvnB4HhAyHouNbj0Dx1p7eRjFjXGGZ+N7ftTaG1ZbWCasAEbtwGj54LP8+lkBZdTCPmLGg==
 
+"@webassemblyjs/helper-wasm-bytecode@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.7.10.tgz#797b1e734bbcfdea8399669cdc58308ef1c7ffc0"
+  integrity sha512-u5qy4SJ/OrxKxZqJ9N3qH4ZQgHaAzsopsYwLvoWJY6Q33r8PhT3VPyNMaJ7ZFoqzBnZlCcS/0f4Sp8WBxylXfg==
+
 "@webassemblyjs/helper-wasm-bytecode@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-bytecode/-/helper-wasm-bytecode-1.7.8.tgz#89bdb78cd6dd5209ae2ed2925de78d0f0e00b6f0"
   integrity sha512-AdCCE3BMW6V34WYaKUmPgVHa88t2Z14P4/0LjLwuGkI0X6pf7nzp0CehzVVk51cKm2ymVXjl9dCG+gR1yhITIQ==
+
+"@webassemblyjs/helper-wasm-section@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/helper-wasm-section/-/helper-wasm-section-1.7.10.tgz#c0ea3703c615d7bc3e3507c3b7991c8767b2f20e"
+  integrity sha512-Ecvww6sCkcjatcyctUrn22neSJHLN/TTzolMGG/N7S9rpbsTZ8c6Bl98GpSpV77EvzNijiNRHBG0+JO99qKz6g==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-buffer" "1.7.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.10"
+    "@webassemblyjs/wasm-gen" "1.7.10"
 
 "@webassemblyjs/helper-wasm-section@1.7.8":
   version "1.7.8"
@@ -1375,12 +1449,26 @@
     "@webassemblyjs/helper-wasm-bytecode" "1.7.8"
     "@webassemblyjs/wasm-gen" "1.7.8"
 
+"@webassemblyjs/ieee754@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ieee754/-/ieee754-1.7.10.tgz#62c1728b7ef0f66ef8221e2966a0afd75db430df"
+  integrity sha512-HRcWcY+YWt4+s/CvQn+vnSPfRaD4KkuzQFt5MNaELXXHSjelHlSEA8ZcqT69q0GTIuLWZ6JaoKar4yWHVpZHsQ==
+  dependencies:
+    "@xtuc/ieee754" "^1.2.0"
+
 "@webassemblyjs/ieee754@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/ieee754/-/ieee754-1.7.8.tgz#1f37974b13cb486a9237e73ce04cac7a2f1265ed"
   integrity sha512-tOarWChdG1a3y1yqCX0JMDKzrat5tQe4pV6K/TX19BcXsBLYxFQOL1DEDa5KG9syeyvCrvZ+i1+Mv1ExngvktQ==
   dependencies:
     "@xtuc/ieee754" "^1.2.0"
+
+"@webassemblyjs/leb128@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/leb128/-/leb128-1.7.10.tgz#167e0bb4b06d7701585772a73fba9f4df85439f6"
+  integrity sha512-og8MciYlA8hvzCLR71hCuZKPbVBfLQeHv7ImKZ4nlyxrYbG7uJHYtHiHu6OV9SqrGuD03H/HtXC4Bgdjfm9FHw==
+  dependencies:
+    "@xtuc/long" "4.2.1"
 
 "@webassemblyjs/leb128@1.7.8":
   version "1.7.8"
@@ -1389,10 +1477,29 @@
   dependencies:
     "@xtuc/long" "4.2.1"
 
+"@webassemblyjs/utf8@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/utf8/-/utf8-1.7.10.tgz#b6728f5b6f50364abc155be029f9670e6685605a"
+  integrity sha512-Ng6Pxv6siyZp635xCSnH3mKmIFgqWPCcGdoo0GBYgyGdxu7cUj4agV7Uu1a8REP66UYUFXJLudeGgd4RvuJAnQ==
+
 "@webassemblyjs/utf8@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/utf8/-/utf8-1.7.8.tgz#2b489d5cf43e0aebb93d8e2d792aff9879c61f05"
   integrity sha512-9X+f0VV+xNXW2ujfIRSXBJENGE6Qh7bNVKqu3yDjTFB3ar3nsThsGBBKdTG58aXOm2iUH6v28VIf88ymPXODHA==
+
+"@webassemblyjs/wasm-edit@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-edit/-/wasm-edit-1.7.10.tgz#83fe3140f5a58f5a30b914702be9f0e59a399092"
+  integrity sha512-e9RZFQlb+ZuYcKRcW9yl+mqX/Ycj9+3/+ppDI8nEE/NCY6FoK8f3dKBcfubYV/HZn44b+ND4hjh+4BYBt+sDnA==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-buffer" "1.7.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.10"
+    "@webassemblyjs/helper-wasm-section" "1.7.10"
+    "@webassemblyjs/wasm-gen" "1.7.10"
+    "@webassemblyjs/wasm-opt" "1.7.10"
+    "@webassemblyjs/wasm-parser" "1.7.10"
+    "@webassemblyjs/wast-printer" "1.7.10"
 
 "@webassemblyjs/wasm-edit@1.7.8":
   version "1.7.8"
@@ -1408,6 +1515,17 @@
     "@webassemblyjs/wasm-parser" "1.7.8"
     "@webassemblyjs/wast-printer" "1.7.8"
 
+"@webassemblyjs/wasm-gen@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-gen/-/wasm-gen-1.7.10.tgz#4de003806ae29c97ab3707782469b53299570174"
+  integrity sha512-M0lb6cO2Y0PzDye/L39PqwV+jvO+2YxEG5ax+7dgq7EwXdAlpOMx1jxyXJTScQoeTpzOPIb+fLgX/IkLF8h2yw==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.10"
+    "@webassemblyjs/ieee754" "1.7.10"
+    "@webassemblyjs/leb128" "1.7.10"
+    "@webassemblyjs/utf8" "1.7.10"
+
 "@webassemblyjs/wasm-gen@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-gen/-/wasm-gen-1.7.8.tgz#7e8abf1545eae74ac6781d545c034af3cfd0c7d5"
@@ -1419,6 +1537,16 @@
     "@webassemblyjs/leb128" "1.7.8"
     "@webassemblyjs/utf8" "1.7.8"
 
+"@webassemblyjs/wasm-opt@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-opt/-/wasm-opt-1.7.10.tgz#d151e31611934a556c82789fdeec41a814993c2a"
+  integrity sha512-R66IHGCdicgF5ZliN10yn5HaC7vwYAqrSVJGjtJJQp5+QNPBye6heWdVH/at40uh0uoaDN/UVUfXK0gvuUqtVg==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-buffer" "1.7.10"
+    "@webassemblyjs/wasm-gen" "1.7.10"
+    "@webassemblyjs/wasm-parser" "1.7.10"
+
 "@webassemblyjs/wasm-opt@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-opt/-/wasm-opt-1.7.8.tgz#7ada6e211914728fce02ff0ff9c344edc6d41f26"
@@ -1428,6 +1556,18 @@
     "@webassemblyjs/helper-buffer" "1.7.8"
     "@webassemblyjs/wasm-gen" "1.7.8"
     "@webassemblyjs/wasm-parser" "1.7.8"
+
+"@webassemblyjs/wasm-parser@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wasm-parser/-/wasm-parser-1.7.10.tgz#0367be7bf8f09e3e6abc95f8e483b9206487ec65"
+  integrity sha512-AEv8mkXVK63n/iDR3T693EzoGPnNAwKwT3iHmKJNBrrALAhhEjuPzo/lTE4U7LquEwyvg5nneSNdTdgrBaGJcA==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-api-error" "1.7.10"
+    "@webassemblyjs/helper-wasm-bytecode" "1.7.10"
+    "@webassemblyjs/ieee754" "1.7.10"
+    "@webassemblyjs/leb128" "1.7.10"
+    "@webassemblyjs/utf8" "1.7.10"
 
 "@webassemblyjs/wasm-parser@1.7.8":
   version "1.7.8"
@@ -1441,6 +1581,18 @@
     "@webassemblyjs/leb128" "1.7.8"
     "@webassemblyjs/utf8" "1.7.8"
 
+"@webassemblyjs/wast-parser@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-parser/-/wast-parser-1.7.10.tgz#058f598b52f730b23fc874d4775b6286b6247264"
+  integrity sha512-YTPEtOBljkCL0VjDp4sHe22dAYSm3ZwdJ9+2NTGdtC7ayNvuip1wAhaAS8Zt9Q6SW9E5Jf5PX7YE3XWlrzR9cw==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/floating-point-hex-parser" "1.7.10"
+    "@webassemblyjs/helper-api-error" "1.7.10"
+    "@webassemblyjs/helper-code-frame" "1.7.10"
+    "@webassemblyjs/helper-fsm" "1.7.10"
+    "@xtuc/long" "4.2.1"
+
 "@webassemblyjs/wast-parser@1.7.8":
   version "1.7.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-parser/-/wast-parser-1.7.8.tgz#f8aab9a450c048c1f9537695c89faeb92fabfba5"
@@ -1451,6 +1603,15 @@
     "@webassemblyjs/helper-api-error" "1.7.8"
     "@webassemblyjs/helper-code-frame" "1.7.8"
     "@webassemblyjs/helper-fsm" "1.7.8"
+    "@xtuc/long" "4.2.1"
+
+"@webassemblyjs/wast-printer@1.7.10":
+  version "1.7.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@webassemblyjs/wast-printer/-/wast-printer-1.7.10.tgz#d817909d2450ae96c66b7607624d98a33b84223b"
+  integrity sha512-mJ3QKWtCchL1vhU/kZlJnLPuQZnlDOdZsyP0bbLWPGdYsQDnSBvyTLhzwBA3QAMlzEL9V4JHygEmK6/OTEyytA==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/wast-parser" "1.7.10"
     "@xtuc/long" "4.2.1"
 
 "@webassemblyjs/wast-printer@1.7.8":
@@ -1587,6 +1748,13 @@ ajv@^6.1.0:
     fast-json-stable-stringify "^2.0.0"
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
+
+ansi-align@^2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
+  integrity sha1-w2rsy6VjuJzrVW82kPCx2eNUf38=
+  dependencies:
+    string-width "^2.0.0"
 
 ansi-colors@^3.0.0:
   version "3.0.6"
@@ -1843,17 +2011,17 @@ attr-accept@^1.1.3:
   dependencies:
     core-js "^2.5.0"
 
-autoprefixer@^9.1.3:
-  version "9.1.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/autoprefixer/-/autoprefixer-9.1.5.tgz#8675fd8d1c0d43069f3b19a2c316f3524e4f6671"
-  integrity sha512-kk4Zb6RUc58ld7gdosERHMF3DzIYJc2fp5sX46qEsGXQQy5bXsu8qyLjoxuY1NuQ/cJuCYnx99BfjwnRggrYIw==
+autoprefixer@^9.2.1:
+  version "9.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/autoprefixer/-/autoprefixer-9.3.1.tgz#71b622174de2b783d5fd99f9ad617b7a3c78443e"
+  integrity sha512-DY9gOh8z3tnCbJ13JIWaeQsoYncTGdsrgCceBaQSIL4nvdrLxgbRSBPevg2XbX7u4QCSfLheSJEEIUUSlkbx6Q==
   dependencies:
-    browserslist "^4.1.0"
-    caniuse-lite "^1.0.30000884"
+    browserslist "^4.3.3"
+    caniuse-lite "^1.0.30000898"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^7.0.2"
-    postcss-value-parser "^3.2.3"
+    postcss "^7.0.5"
+    postcss-value-parser "^3.3.1"
 
 awesome-typescript-loader@5.2.1:
   version "5.2.1"
@@ -2066,7 +2234,7 @@ babel-plugin-jest-hoist@^23.2.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-23.2.0.tgz#e61fae05a1ca8801aadee57a6d66b8cefaf44167"
   integrity sha1-5h+uBaHKiAGq3uV6bWa4zvr0QWc=
 
-babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.2.2:
+babel-plugin-macros@^2.0.0, babel-plugin-macros@^2.4.2:
   version "2.4.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-macros/-/babel-plugin-macros-2.4.2.tgz#21b1a2e82e2130403c5ff785cba6548e9b644b28"
   integrity sha512-NBVpEWN4OQ/bHnu1fyDaAaTPAjnhXCEPqr1RwqxrU7b6tZ2hypp+zX4hlNfmVGfClD5c3Sl6Hfj5TJNF5VG5aA==
@@ -2148,7 +2316,7 @@ babel-plugin-minify-type-constructors@^0.4.3:
   dependencies:
     babel-helper-is-void-0 "^0.4.3"
 
-babel-plugin-react-docgen@^2.0.0-babel7.0:
+babel-plugin-react-docgen@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/babel-plugin-react-docgen/-/babel-plugin-react-docgen-2.0.0.tgz#039d90f5a1a37131c8cc3015017eecafa8d78882"
   integrity sha512-AaA6IPxCF1EkzpFG41GkVh/VGdoBejPF6oIub2K8E6AD3kwnTZ0DIKG7f20a7zmqBEeO8GkFWdM7tYd9Owkc+Q==
@@ -2378,7 +2546,7 @@ binary-extensions@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/binary-extensions/-/binary-extensions-1.12.0.tgz#c2d780f53d45bba8317a8902d4ceeaf3a6385b14"
   integrity sha512-DYWGk01lDcxeS/K9IHPGWfT8PsJmbXRtRd2Sx72Tnb8pcYZQFF1oSDb8hJtS1vhp212q1Rzi5dUf9+nq0o9UIg==
 
-bluebird@^3.5.1:
+bluebird@^3.3.5, bluebird@^3.5.1:
   version "3.5.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/bluebird/-/bluebird-3.5.2.tgz#1be0908e054a751754549c270489c1505d4ab15a"
   integrity sha512-dhHTWMI7kMx5whMQntl7Vr9C6BvV10lFXDAasnqnrMYhXVCzzk6IO9Fo2L75jXHT07WrOngL1WDXOp+yYS91Yg==
@@ -2413,6 +2581,19 @@ bowser@^1.7.3:
   version "1.9.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
   integrity sha512-9IdMmj2KjigRq6oWhmwv1W36pDuA4STQZ8q6YO9um+x07xgYNCD3Oou+WP/3L1HNz7iqythGet3/p4wvc8AAwQ==
+
+boxen@^2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/boxen/-/boxen-2.0.0.tgz#46ba3953b1a3d99aaf89ad8c7104a32874934a58"
+  integrity sha512-9DK9PQqcOpsvlKOK3f3lVK+vQsqH4JDGMX73FCWcHRxQQtop1U8urn4owrt5rnc2NgZAJ6wWjTDBc7Fhv+vz/w==
+  dependencies:
+    ansi-align "^2.0.0"
+    camelcase "^5.0.0"
+    chalk "^2.4.1"
+    cli-boxes "^1.0.0"
+    string-width "^2.1.1"
+    term-size "^1.2.0"
+    widest-line "^2.0.0"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2523,15 +2704,7 @@ browserify-zlib@^0.2.0:
   dependencies:
     pako "~1.0.5"
 
-browserslist@3.2.6:
-  version "3.2.6"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-3.2.6.tgz#138a44d04a9af64443679191d041f28ce5b965d5"
-  integrity sha512-XCsMSg9V4S1VRdcp265dJ+8kBRjfuFXcavbisY7G6T9QI0H1Z24PP53vvs0WDYWqm38Mco1ILDtafcS8ZR4xiw==
-  dependencies:
-    caniuse-lite "^1.0.30000830"
-    electron-to-chromium "^1.3.42"
-
-browserslist@^4.1.0:
+browserslist@4.1.1, browserslist@^4.1.0:
   version "4.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-4.1.1.tgz#328eb4ff1215b12df6589e9ab82f8adaa4fc8cd6"
   integrity sha512-VBorw+tgpOtZ1BYhrVSVTzTt/3+vSE3eFUh0N2GCFK1HffceOaf32YS/bs6WiFhjDAblAFrx85jMy3BG9fBK2Q==
@@ -2539,6 +2712,15 @@ browserslist@^4.1.0:
     caniuse-lite "^1.0.30000884"
     electron-to-chromium "^1.3.62"
     node-releases "^1.0.0-alpha.11"
+
+browserslist@^4.3.3:
+  version "4.3.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/browserslist/-/browserslist-4.3.3.tgz#88a7d9ce2e5db561e160ab660bc59cb406a0c41d"
+  integrity sha512-6h84UD1mmHeuQ9IucX6yzBc+KBYcBBTLYt2CXtY7GYCra6iE5kOm7oM+zuGw/0tjGtbJxjm58OvxSBmogEMCRQ==
+  dependencies:
+    caniuse-lite "^1.0.30000898"
+    electron-to-chromium "^1.3.81"
+    node-releases "^1.0.0-alpha.15"
 
 bs-logger@0.x:
   version "0.2.5"
@@ -2627,6 +2809,14 @@ callsites@^2.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/callsites/-/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
   integrity sha1-BuuE8A7qQT2oav/vrL/7Ngk7PFA=
 
+camel-case@3.0.x:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/camel-case/-/camel-case-3.0.0.tgz#ca3c3688a4e9cf3a4cda777dc4dcbc713249cf73"
+  integrity sha1-yjw2iKTpzzpM2nd9xNy8cTJJz3M=
+  dependencies:
+    no-case "^2.2.0"
+    upper-case "^1.1.1"
+
 camelcase@^4.1.0:
   version "4.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/camelcase/-/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
@@ -2637,10 +2827,15 @@ camelcase@^5.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/camelcase/-/camelcase-5.0.0.tgz#03295527d58bd3cd4aa75363f35b2e8d97be2f42"
   integrity sha512-faqwZqnWxbxn+F1d399ygeamQNy3lPp/H9H6rNrqYh4FSVCtcY+3cub1MxA8o9mDd55mM8Aghuu/kuyYA6VTsA==
 
-caniuse-lite@^1.0.30000830, caniuse-lite@^1.0.30000884:
+caniuse-lite@^1.0.30000884:
   version "1.0.30000887"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30000887.tgz#1769458c27bbdcf61b0cb6b5072bb6cd11fd9c23"
   integrity sha512-AHpONWuGFWO8yY9igdXH94tikM6ERS84286r0cAMAXYFtJBk76lhiMhtCxBJNBZsD6hzlvpWZ2AtbVFEkf4JQA==
+
+caniuse-lite@^1.0.30000898:
+  version "1.0.30000898"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/caniuse-lite/-/caniuse-lite-1.0.30000898.tgz#651306e690ca83caca5814da5afa3eb4de0f86c2"
+  integrity sha512-ytlTZqO4hYe4rNAJhMynUAIUI33jsP2Bb1two/9OVC39wZjPZ8exIO0eCLw5mqAtegOGiGF0kkTWTn3B02L+mw==
 
 capture-exit@^1.2.0:
   version "1.2.0"
@@ -2678,11 +2873,6 @@ chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
-
-chardet@^0.4.0:
-  version "0.4.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
-  integrity sha1-tUc7M9yXxCTl2Y3IfVXU2KKci/I=
 
 chardet@^0.7.0:
   version "0.7.0"
@@ -2777,12 +2967,34 @@ classnames@^2.2.5:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
+clean-css@4.2.x:
+  version "4.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
+  integrity sha512-4ZxI6dy4lrY6FHzfiy1aEOXgu4LIsW2MhwG0VBKdcoGoH/XLFgaHSdLTGr4O8Be6A8r3MOphEiI8Gc1n0ecf3g==
+  dependencies:
+    source-map "~0.6.0"
+
+cli-boxes@^1.0.0:
+  version "1.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
+  integrity sha1-T6kXw+WclKAEzWH47lCdplFocUM=
+
 cli-cursor@^2.1.0:
   version "2.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cli-cursor/-/cli-cursor-2.1.0.tgz#b35dac376479facc3e94747d41d0d0f5238ffcb5"
   integrity sha1-s12sN2R5+sw+lHR9QdDQ9SOP/LU=
   dependencies:
     restore-cursor "^2.0.0"
+
+cli-table3@0.5.1:
+  version "0.5.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/cli-table3/-/cli-table3-0.5.1.tgz#0252372d94dfc40dbd8df06005f48f31f656f202"
+  integrity sha512-7Qg2Jrep1S/+Q3EceiZtQcDPWxhAvBw+ERf1162v4sikJrvojMHFqXt8QIVha8UlH9rgU0BeWPytZ9/TzYqlUw==
+  dependencies:
+    object-assign "^4.1.0"
+    string-width "^2.1.1"
+  optionalDependencies:
+    colors "^1.1.2"
 
 cli-width@^2.0.0:
   version "2.2.0"
@@ -2851,6 +3063,11 @@ colors@0.5.x:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-0.5.1.tgz#7d0023eaeb154e8ee9fce75dcb923d0ed1667774"
   integrity sha1-fQAj6usVTo7p/Oddy5I9DtFmd3Q=
 
+colors@^1.1.2:
+  version "1.3.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-1.3.2.tgz#2df8ff573dfbf255af562f8ce7181d6b971a359b"
+  integrity sha512-rhP0JSBGYvpcNQj4s5AdShMeE5ahMop96cTeDl/v9qQQm2fYClE2QXZRi8wLzc+GmXSxdIqqbOIAhyObEXDbfQ==
+
 colors@~1.1.2:
   version "1.1.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/colors/-/colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63"
@@ -2870,20 +3087,25 @@ combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.11.0, commander@^2.12.1, commander@^2.17.0, commander@^2.18.0, commander@^2.9.0:
+commander@2.17.x, commander@~2.17.1:
+  version "2.17.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+  integrity sha512-wPMUt6FnH2yzG95SA6mzjQOEKUU3aLaDEmzs1ti+1E9h+CsrZghRlqEM/EJ4KscsQVG8uNN4uVreUeT8+drlgg==
+
+commander@^2.11.0, commander@^2.12.1, commander@^2.18.0, commander@^2.9.0:
   version "2.18.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
   integrity sha512-6CYPa+JP2ftfRU2qkDK+UTVeQYosOg/2GbcjIcKPHfinyOLPVGXu/ovN86RP49Re5ndJK1N0kuiidFFuepc4ZQ==
+
+commander@^2.19.0:
+  version "2.19.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
+  integrity sha512-6tvAOO+D6OENvRAh524Dh9jcfKTYDQAqvqezbCW82xj5X0pSrcpxtvRKHLG0yBY6SD7PSDrJaj+0AiOcKVd1Xg==
 
 commander@~2.13.0:
   version "2.13.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.13.0.tgz#6964bca67685df7c1f1430c584f07d7597885b9c"
   integrity sha512-MVuS359B+YzaWqjCL/c+22gfryv+mCBPHAv3zyVI2GN8EY6IRP8VwtasXn8jyyhvvq84R4ImN1OKRtcbIasjYA==
-
-commander@~2.17.1:
-  version "2.17.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
-  integrity sha512-wPMUt6FnH2yzG95SA6mzjQOEKUU3aLaDEmzs1ti+1E9h+CsrZghRlqEM/EJ4KscsQVG8uNN4uVreUeT8+drlgg==
 
 common-tags@^1.8.0:
   version "1.8.0"
@@ -3073,7 +3295,7 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-create-react-class@^15.5.2, create-react-class@^15.6.2:
+create-react-class@^15.6.2:
   version "15.6.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
   integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -3158,6 +3380,16 @@ css-select-base-adapter@~0.1.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-select-base-adapter/-/css-select-base-adapter-0.1.0.tgz#0102b3d14630df86c3eb9fa9f5456270106cf990"
   integrity sha1-AQKz0UYw34bD65+p9UVicBBs+ZA=
 
+css-select@^1.1.0, css-select@~1.2.0:
+  version "1.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
+  integrity sha1-KzoRBTnFNV8c2NMUYj6HCxIeyFg=
+  dependencies:
+    boolbase "~1.0.0"
+    css-what "2.1"
+    domutils "1.5.1"
+    nth-check "~1.0.1"
+
 css-select@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-select/-/css-select-2.0.0.tgz#7aa2921392114831f68db175c0b6a555df74bbd5"
@@ -3167,16 +3399,6 @@ css-select@^2.0.0:
     css-what "2.1"
     domutils "^1.7.0"
     nth-check "^1.0.1"
-
-css-select@~1.2.0:
-  version "1.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-select/-/css-select-1.2.0.tgz#2b3a110539c5355f1cd8d314623e870b121ec858"
-  integrity sha1-KzoRBTnFNV8c2NMUYj6HCxIeyFg=
-  dependencies:
-    boolbase "~1.0.0"
-    css-what "2.1"
-    domutils "1.5.1"
-    nth-check "~1.0.1"
 
 css-selector-tokenizer@^0.7.0:
   version "0.7.0"
@@ -3471,6 +3693,13 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
+dom-converter@~0.2:
+  version "0.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/dom-converter/-/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
+  integrity sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==
+  dependencies:
+    utila "~0.4"
+
 dom-helpers@^3.3.1:
   version "3.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/dom-helpers/-/dom-helpers-3.3.1.tgz#fc1a4e15ffdf60ddde03a480a9c0fece821dd4a6"
@@ -3511,10 +3740,24 @@ domexception@^1.0.1:
   dependencies:
     webidl-conversions "^4.0.2"
 
+domhandler@2.1:
+  version "2.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/domhandler/-/domhandler-2.1.0.tgz#d2646f5e57f6c3bab11cf6cb05d3c0acf7412594"
+  integrity sha1-0mRvXlf2w7qxHPbLBdPArPdBJZQ=
+  dependencies:
+    domelementtype "1"
+
 domhandler@^2.3.0:
   version "2.4.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/domhandler/-/domhandler-2.4.2.tgz#8805097e933d65e85546f726d60f5eb88b44f803"
   integrity sha512-JiK04h0Ht5u/80fdLMCEmV4zkNh2BcoMFBmZ/91WtYZ8qVXSKjiw7fXMgFPnHcSZgOo3XdinHvmnDUeMf5R4wA==
+  dependencies:
+    domelementtype "1"
+
+domutils@1.1:
+  version "1.1.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/domutils/-/domutils-1.1.6.tgz#bddc3de099b9a2efacc51c623f28f416ecc57485"
+  integrity sha1-vdw94Jm5ou+sxRxiPyj0FuzFdIU=
   dependencies:
     domelementtype "1"
 
@@ -3589,10 +3832,15 @@ ejs@^2.6.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
   integrity sha512-0xy4A/twfrRCnkhfk8ErDi5DqdAsAqeGxht4xkCUrsvhhbQNs7E+4jV0CN7+NKIY0aHE72+XvqtBIXzD31ZbXQ==
 
-electron-to-chromium@^1.3.42, electron-to-chromium@^1.3.62:
+electron-to-chromium@^1.3.62:
   version "1.3.71"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.71.tgz#baecb282e8b27247bbfcf2f3e0254d6fe9a76789"
   integrity sha512-VjZ6mQbbgF3GZ3eeQOMMgkdP8pWAHoW9UA+CNAVB4qSaOES4usB9RVIW764mYffdT2GOWF10Udt82RIZnTCTMg==
+
+electron-to-chromium@^1.3.81:
+  version "1.3.81"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/electron-to-chromium/-/electron-to-chromium-1.3.81.tgz#32af69206ef78973b6a6771b0c8450c2ce253913"
+  integrity sha512-+rym2xtzwPWmoi8AYRrCdW65QOT0vfUHjZb5mjgh0VLyj31pGM3CpP3znKhQNBzQaWujR/KEl/mfC2lnKYgADA==
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -4034,15 +4282,6 @@ extend@~3.0.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
-external-editor@^2.1.0:
-  version "2.2.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/external-editor/-/external-editor-2.2.0.tgz#045511cfd8d133f3846673d1047c154e214ad3d5"
-  integrity sha512-bSn6gvGxKt+b7+6TKEv1ZycHleA7aHhRHyAqJyp5pbUFuYYNIzpZnQDk7AsYckyWdEnTeAnay0aCy2aV6iTk9A==
-  dependencies:
-    chardet "^0.4.0"
-    iconv-lite "^0.4.17"
-    tmp "^0.0.33"
-
 external-editor@^3.0.0:
   version "3.0.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/external-editor/-/external-editor-3.0.3.tgz#5866db29a97826dbe4bf3afd24070ead9ea43a27"
@@ -4158,6 +4397,15 @@ file-loader@2.0.0, file-loader@^2.0.0:
     loader-utils "^1.0.2"
     schema-utils "^1.0.0"
 
+file-system-cache@^1.0.5:
+  version "1.0.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/file-system-cache/-/file-system-cache-1.0.5.tgz#84259b36a2bbb8d3d6eb1021d3132ffe64cfff4f"
+  integrity sha1-hCWbNqK7uNPW6xAh0xMv/mTP/08=
+  dependencies:
+    bluebird "^3.3.5"
+    fs-extra "^0.30.0"
+    ramda "^0.21.0"
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
@@ -4248,6 +4496,13 @@ find-root@^1.1.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/find-root/-/find-root-1.1.0.tgz#abcfc8ba76f708c42a97b3d685b7e9450bfb9ce4"
   integrity sha512-NKfW6bec6GfKc0SGx1e07QZY9PE99u0Bft/0rzSD5k3sO/vwkVUpDUKVm5Gpp5Ue3YfShPFTX2070tDs5kB9Ng==
 
+find-up@3.0.0, find-up@^3.0.0:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
+  integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
+  dependencies:
+    locate-path "^3.0.0"
+
 find-up@^1.0.0:
   version "1.1.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/find-up/-/find-up-1.1.2.tgz#6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f"
@@ -4262,13 +4517,6 @@ find-up@^2.1.0:
   integrity sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
   dependencies:
     locate-path "^2.0.0"
-
-find-up@^3.0.0:
-  version "3.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/find-up/-/find-up-3.0.0.tgz#49169f1d7993430646da61ecc5ae355c21c97b73"
-  integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
-  dependencies:
-    locate-path "^3.0.0"
 
 flush-write-stream@^1.0.0:
   version "1.0.3"
@@ -4341,6 +4589,17 @@ from2@^2.1.0:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
 
+fs-extra@^0.30.0:
+  version "0.30.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fs-extra/-/fs-extra-0.30.0.tgz#f233ffcc08d4da7d432daa449776989db1df93f0"
+  integrity sha1-8jP/zAjU2n1DLapEl3aYnbHfk/A=
+  dependencies:
+    graceful-fs "^4.1.2"
+    jsonfile "^2.1.0"
+    klaw "^1.0.0"
+    path-is-absolute "^1.0.0"
+    rimraf "^2.2.8"
+
 fs-minipass@^1.2.5:
   version "1.2.5"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fs-minipass/-/fs-minipass-1.2.5.tgz#06c277218454ec288df77ada54a03b8702aacb9d"
@@ -4408,11 +4667,6 @@ gauge@~2.7.3:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
-
-generate-page-webpack-plugin@^1.1.0:
-  version "1.1.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/generate-page-webpack-plugin/-/generate-page-webpack-plugin-1.1.1.tgz#82208fb599f45d70940cbd6327a7a46e77c5ee2c"
-  integrity sha512-b782eo6JiJ06jYn4mcOtR/wkACN6eGRwAElM5djb/JCgbGbSzrPsnPTlX2Aa91sXe5pNszAQP6MRE1fVSGIz4g==
 
 get-caller-file@^1.0.1:
   version "1.0.3"
@@ -4519,7 +4773,7 @@ globals@^9.18.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
   integrity sha512-S0nG3CLEQiY/ILxqtztTWH/3iRRdyBLw6KMDxnKMchrtbj2OFmehVh0WUCfW3DUrIgx/qFrJPICrq4Z4sTR9UQ==
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
+graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
   integrity sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
@@ -4534,10 +4788,10 @@ gud@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/gud/-/gud-1.0.0.tgz#a489581b17e6a70beca9abe3ae57de7a499852c0"
   integrity sha512-zGEOVKFM5sVPPrYs7J5/hYEw2Pof8KCyOwyhG8sAF26mCAeUFAcYPu1mwB7hhpIP29zOIBaDqwuHdLp0jvZXjw==
 
-gzip-size@4.1.0:
-  version "4.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/gzip-size/-/gzip-size-4.1.0.tgz#8ae096257eabe7d69c45be2b67c448124ffb517c"
-  integrity sha1-iuCWJX6r59acRb4rZ8RIEk/7UXw=
+gzip-size@5.0.0:
+  version "5.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/gzip-size/-/gzip-size-5.0.0.tgz#a55ecd99222f4c48fd8c01c625ce3b349d0a0e80"
+  integrity sha512-5iI7omclyqrnWw4XbXAmGhPsABkSIDQonv2K0h61lybgofWa6iZyvrI3r2zsJH4P8Nb64fFVzlvfhs0g7BBxAA==
   dependencies:
     duplexer "^0.1.1"
     pify "^3.0.0"
@@ -4690,6 +4944,11 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
+he@1.1.x:
+  version "1.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
+  integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
+
 he@^1.1.1:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
@@ -4757,6 +5016,31 @@ html-entities@^1.2.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-entities/-/html-entities-1.2.1.tgz#0df29351f0721163515dfb9e5543e5f6eed5162f"
   integrity sha1-DfKTUfByEWNRXfueVUPl9u7VFi8=
 
+html-minifier@^3.5.20:
+  version "3.5.20"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-minifier/-/html-minifier-3.5.20.tgz#7b19fd3caa0cb79f7cde5ee5c3abdf8ecaa6bb14"
+  integrity sha512-ZmgNLaTp54+HFKkONyLFEfs5dd/ZOtlquKaTnqIWFmx3Av5zG6ZPcV2d0o9XM2fXOTxxIf6eDcwzFFotke/5zA==
+  dependencies:
+    camel-case "3.0.x"
+    clean-css "4.2.x"
+    commander "2.17.x"
+    he "1.1.x"
+    param-case "2.1.x"
+    relateurl "0.2.x"
+    uglify-js "3.4.x"
+
+html-webpack-plugin@^4.0.0-beta.2:
+  version "4.0.0-beta.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/html-webpack-plugin/-/html-webpack-plugin-4.0.0-beta.2.tgz#c3a212448ee198a17dacd06525678ee12f917420"
+  integrity sha512-153QgkvYPOc1X5/v1GFPcq7GTinNheGA1lMZUGRMFkwIQ4kegGna+wQ0ByJ8uNgw4u1aEg9FtsSKs4AzsYMi9g==
+  dependencies:
+    html-minifier "^3.5.20"
+    loader-utils "^1.1.0"
+    lodash "^4.17.11"
+    pretty-error "^2.1.1"
+    tapable "^1.1.0"
+    util.promisify "1.0.0"
+
 htmlparser2@^3.9.1:
   version "3.9.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
@@ -4768,6 +5052,16 @@ htmlparser2@^3.9.1:
     entities "^1.1.1"
     inherits "^2.0.1"
     readable-stream "^2.0.2"
+
+htmlparser2@~3.3.0:
+  version "3.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/htmlparser2/-/htmlparser2-3.3.0.tgz#cc70d05a59f6542e43f0e685c982e14c924a9efe"
+  integrity sha1-zHDQWln2VC5D8OaFyYLhTJJKnv4=
+  dependencies:
+    domelementtype "1"
+    domhandler "2.1"
+    domutils "1.1"
+    readable-stream "1.0"
 
 http-errors@1.6.2:
   version "1.6.2"
@@ -4841,7 +5135,7 @@ iconv-lite@0.4.23:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
-iconv-lite@^0.4.17, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
+iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
   integrity sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==
@@ -4953,26 +5247,7 @@ inline-style-prefixer@^3.0.6:
     bowser "^1.7.3"
     css-in-js-utils "^2.0.0"
 
-inquirer@5.1.0:
-  version "5.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/inquirer/-/inquirer-5.1.0.tgz#19da508931892328abbbdd4c477f1efc65abfd67"
-  integrity sha512-kn7N70US1MSZHZHSGJLiZ7iCwwncc7b0gc68YtlX29OjI3Mp0tSVV+snVXpZ1G+ONS3Ac9zd1m6hve2ibLDYfA==
-  dependencies:
-    ansi-escapes "^3.0.0"
-    chalk "^2.0.0"
-    cli-cursor "^2.1.0"
-    cli-width "^2.0.0"
-    external-editor "^2.1.0"
-    figures "^2.0.0"
-    lodash "^4.3.0"
-    mute-stream "0.0.7"
-    run-async "^2.2.0"
-    rxjs "^5.5.2"
-    string-width "^2.1.0"
-    strip-ansi "^4.0.0"
-    through "^2.3.6"
-
-inquirer@^6.2.0:
+inquirer@6.2.0, inquirer@^6.2.0:
   version "6.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/inquirer/-/inquirer-6.2.0.tgz#51adcd776f661369dc1e894859c2560a224abdd8"
   integrity sha512-QIEQG4YyQ2UYZGDC4srMZ7BjHOmNk1lR2JQj5UknBapklm6WHA+VVH7N+sUdX3A7NeCfGF8o4X1S3Ao7nAcIeg==
@@ -5017,6 +5292,11 @@ invert-kv@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/invert-kv/-/invert-kv-2.0.0.tgz#7393f5afa59ec9ff5f67a27620d11c226e3eec02"
   integrity sha512-wPVv/y/QQ/Uiirj/vh3oP+1Ww+AWehmi1g5fFWGPF6IpCBCDVrhgHRMvrLfdYcwDh3QJbGXDW4JAuzxElLSqKA==
+
+ip@^1.1.5:
+  version "1.1.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+  integrity sha1-vd7XARQpCCjAoDnnLvJfWq7ENUo=
 
 ipaddr.js@1.8.0:
   version "1.8.0"
@@ -5262,10 +5542,10 @@ is-regex@^1.0.4:
   dependencies:
     has "^1.0.1"
 
-is-root@1.0.0:
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/is-root/-/is-root-1.0.0.tgz#07b6c233bc394cd9d02ba15c966bd6660d6342d5"
-  integrity sha1-B7bCM7w5TNnQK6FclmvWZg1jQtU=
+is-root@2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/is-root/-/is-root-2.0.0.tgz#838d1e82318144e5a6f77819d90207645acc7019"
+  integrity sha512-F/pJIk8QD6OX5DNhRB7hWamLsUilmkDGho48KbgZ6xg/lmAZXHxzXQ91jzB3yRSw5kdQGGGc4yz8HYhTYIMWPg==
 
 is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
@@ -5881,7 +6161,7 @@ json3@^3.3.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json3/-/json3-3.3.2.tgz#3c0434743df93e2f5c42aee7b19bcb483575f4e1"
   integrity sha1-PAQ0dD35Pi9cQq7nsZvLSDV19OE=
 
-json5@2.x, json5@^2.0.1:
+json5@2.x:
   version "2.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json5/-/json5-2.0.1.tgz#3d6d0d1066039eb50984e66a7840e4f4b7a2c660"
   integrity sha512-t6N/86QDIRYvOL259jR5c5TbtMnekl2Ib314mGeMh37zAwjgbWHieqijPH7pWaogmJq1F2I4Sphg19U1s+ZnXQ==
@@ -5892,6 +6172,20 @@ json5@^0.5.0, json5@^0.5.1:
   version "0.5.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
   integrity sha1-Hq3nrMASA0rYTiOWdn6tn6VJWCE=
+
+json5@^2.1.0:
+  version "2.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/json5/-/json5-2.1.0.tgz#e7a0c62c48285c628d20a10b85c89bb807c32850"
+  integrity sha512-8Mh9h6xViijj36g7Dxi+Y4S6hNGV96vcJZr/SrlHh1LR/pEn/8j/+qIBbs44YKl69Lrfctp4QD+AdWLTMqEZAQ==
+  dependencies:
+    minimist "^1.2.0"
+
+jsonfile@^2.1.0:
+  version "2.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/jsonfile/-/jsonfile-2.4.0.tgz#3736a2b428b87bbda0cc83b53fa3d633a35c2ae8"
+  integrity sha1-NzaitCi4e72gzIO1P6PWM6NcKug=
+  optionalDependencies:
+    graceful-fs "^4.1.6"
 
 jsonify@~0.0.0:
   version "0.0.0"
@@ -5944,6 +6238,13 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
+klaw@^1.0.0:
+  version "1.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/klaw/-/klaw-1.3.1.tgz#4088433b46b3b1ba259d78785d8e96f73ba02439"
+  integrity sha1-QIhDO0azsbolnXh4XY6W9zugJDk=
+  optionalDependencies:
+    graceful-fs "^4.1.9"
+
 kleur@^2.0.1:
   version "2.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/kleur/-/kleur-2.0.2.tgz#b704f4944d95e255d038f0cb05fb8a602c55a300"
@@ -5958,6 +6259,17 @@ lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
   integrity sha1-odePw6UEdMuAhF07O24dpJpEbo4=
+
+lazy-universal-dotenv@^2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lazy-universal-dotenv/-/lazy-universal-dotenv-2.0.0.tgz#e015ad9f77be9ef811956d53ea9519b1c0ab0214"
+  integrity sha512-1Wi0zgZMfRLaRAK21g3odYuU+HE1d85Loe2tb44YhcNwIzhmD49mTPR9aKckpB9Q9Q9mA+hUMLI2xlkcCAe3yw==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    app-root-dir "^1.0.2"
+    core-js "^2.5.7"
+    dotenv "^6.0.0"
+    dotenv-expand "^4.2.0"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -6106,12 +6418,7 @@ lodash.sortby@^4.7.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
-  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
-
-lodash@4.17.11, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
+lodash@4.17.11, lodash@^4.0.1, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -6137,6 +6444,11 @@ loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+lower-case@^1.1.1:
+  version "1.1.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
+  integrity sha1-miyr0bno4K6ZOkv31YdcOcQujqw=
 
 lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.3"
@@ -6189,7 +6501,7 @@ marked@^0.3.12:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
   integrity sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==
 
-marksy@6.1.0, marksy@^6.0.3:
+marksy@6.1.0, marksy@^6.1.0:
   version "6.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/marksy/-/marksy-6.1.0.tgz#36482148a1115cc78570855f7ebd744bb453d5cc"
   integrity sha512-xVAuJQxwdAljvFVqlY7CIRewn5YHGvCqeJkY1bbcTBfZV4dNDSZpHWTREb1MNu/oXYzKgg5pmTfE1DIW6M1zrA==
@@ -6561,6 +6873,13 @@ nice-try@^1.0.4:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
+no-case@^2.2.0:
+  version "2.3.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
+  integrity sha512-rmTZ9kz+f3rCvK2TD1Ue/oZlns7OGoIWP4fc3llxxRXlOkHKoWPPWJOfFYpITabSow43QJbRIoHQXtt10VldyQ==
+  dependencies:
+    lower-case "^1.1.1"
+
 node-dir@^0.1.10:
   version "0.1.17"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-dir/-/node-dir-0.1.17.tgz#5f5665d93351335caabef8f1c554516cf5f1e4e5"
@@ -6575,6 +6894,11 @@ node-fetch@^1.0.1:
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
+
+node-fetch@^2.2.0:
+  version "2.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-fetch/-/node-fetch-2.2.0.tgz#4ee79bde909262f9775f731e3656d0db55ced5b5"
+  integrity sha512-OayFWziIxiHY8bCUyLX6sTpDH8Jsbp4FfYd1j1f7vZyfgkcOnAyM4oQR16f8a0s7Gl/viMGRey8eScYk4V4EZA==
 
 node-int64@^0.4.0:
   version "0.4.0"
@@ -6640,6 +6964,13 @@ node-releases@^1.0.0-alpha.11:
   version "1.0.0-alpha.12"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-releases/-/node-releases-1.0.0-alpha.12.tgz#32e461b879ea76ac674e511d9832cf29da345268"
   integrity sha512-VPB4rTPqpVyWKBHbSa4YPFme3+8WHsOSpvbp0Mfj0bWsC8TEjt4HQrLl1hsBDELlp1nB4lflSgSuGTYiuyaP7Q==
+  dependencies:
+    semver "^5.3.0"
+
+node-releases@^1.0.0-alpha.15:
+  version "1.0.0-alpha.15"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/node-releases/-/node-releases-1.0.0-alpha.15.tgz#bdb08730287cc50ddbfa3c1a358366a4a2f5d397"
+  integrity sha512-hKG6hd/g6a9OV/ARt2qrxbRhe/4WEMFohTLOB9PNyTYvvI59gICZFzt9/mMgpYUTts06qXlN8H6UjfbIRdnW8A==
   dependencies:
     semver "^5.3.0"
 
@@ -6757,11 +7088,6 @@ oauth-sign@~0.9.0:
   version "0.9.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
-
-object-assign@^3.0.0:
-  version "3.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
-  integrity sha1-m+3VygiXlJvKR+f/QIBi1Un1h/I=
 
 object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
@@ -6883,14 +7209,7 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-opn@5.3.0:
-  version "5.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/opn/-/opn-5.3.0.tgz#64871565c863875f052cfdf53d3e3cb5adb53b1c"
-  integrity sha512-bYJHo/LOmoTd+pfiYhfZDnf9zekVJrY+cnS2a5F2x+w5ppvTqObojTP7WiFG+kVZs9Inw+qQ/lw7TroWwhdd2g==
-  dependencies:
-    is-wsl "^1.1.0"
-
-opn@^5.3.0:
+opn@5.4.0, opn@^5.4.0:
   version "5.4.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/opn/-/opn-5.4.0.tgz#cb545e7aab78562beb11aa3bfabc7042e1761035"
   integrity sha512-YF9MNdVy/0qvJvDtunAOzFw9iasOQHpVthTCvGzxt61Il64AYSGdK+rYwld7NAfk9qJ7dt+hymBNSc9LNYS+Sw==
@@ -7049,6 +7368,13 @@ parallel-transform@^1.1.0:
     cyclist "~0.2.2"
     inherits "^2.0.3"
     readable-stream "^2.1.5"
+
+param-case@2.1.x:
+  version "2.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/param-case/-/param-case-2.1.1.tgz#df94fd8cf6531ecf75e6bef9a0858fbc72be2247"
+  integrity sha1-35T9jPZTHs915r75oIWPvHK+Ikc=
+  dependencies:
+    no-case "^2.2.0"
 
 parse-asn1@^5.0.0:
   version "5.1.1"
@@ -7313,10 +7639,15 @@ postcss-modules-values@^1.3.0:
     icss-replace-symbols "^1.1.0"
     postcss "^6.0.1"
 
-postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
+postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
   integrity sha1-h/OPnxj3dKSrTIojL1xc6IcqnRU=
+
+postcss-value-parser@^3.3.1:
+  version "3.3.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss-value-parser/-/postcss-value-parser-3.3.1.tgz#9ff822547e2893213cf1c30efa51ac5fd1ba8281"
+  integrity sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
 
 postcss@^6.0.1, postcss@^6.0.23:
   version "6.0.23"
@@ -7327,10 +7658,19 @@ postcss@^6.0.1, postcss@^6.0.23:
     source-map "^0.6.1"
     supports-color "^5.4.0"
 
-postcss@^7.0.0, postcss@^7.0.2:
+postcss@^7.0.0:
   version "7.0.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss/-/postcss-7.0.4.tgz#b5a059597d2c1a8a9916cb6efb0b294f70b4f309"
   integrity sha512-Bg1BrMZGKNOI0mkn8NtjJrOrZKgoHrl+geKJ45mTOkeY4WCsYq/mjd1BUWRgRvydHP/lA07Ys2n9m6Va5FsEsw==
+  dependencies:
+    chalk "^2.4.1"
+    source-map "^0.6.1"
+    supports-color "^5.5.0"
+
+postcss@^7.0.5:
+  version "7.0.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/postcss/-/postcss-7.0.5.tgz#70e6443e36a6d520b0fd4e7593fcca3635ee9f55"
+  integrity sha512-HBNpviAUFCKvEh7NZhw1e8MBPivRszIiUnhrJ+sBFVSYSqubrzwX3KG51mYgcRHX8j/cAgZJedONZcm5jTBdgQ==
   dependencies:
     chalk "^2.4.1"
     source-map "^0.6.1"
@@ -7350,6 +7690,14 @@ prettier@^1.14.2:
   version "1.14.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/prettier/-/prettier-1.14.3.tgz#90238dd4c0684b7edce5f83b0fb7328e48bd0895"
   integrity sha512-qZDVnCrnpsRJJq5nSsiHCE3BYMED2OtsI+cmzIzF1QIfqm5ALf8tEJcO27zV1gKNKRPdhjO0dNWnrzssDQ1tFg==
+
+pretty-error@^2.1.1:
+  version "2.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pretty-error/-/pretty-error-2.1.1.tgz#5f4f87c8f91e5ae3f3ba87ab4cf5e03b1a17f1a3"
+  integrity sha1-X0+HyPkeWuPzuoerTPXgOxoX8aM=
+  dependencies:
+    renderkid "^2.0.1"
+    utila "~0.4"
 
 pretty-format@^23.6.0:
   version "23.6.0"
@@ -7408,7 +7756,7 @@ prompts@^0.1.9:
     kleur "^2.0.1"
     sisteransi "^0.1.1"
 
-prop-types@15.6.2, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
+prop-types@15.6.2, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2:
   version "15.6.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
   integrity sha512-3pboPvLiWD7dkI3qf3KbUe6hKFKa52w+AE0VCqECtf+QHAKgOL37tTaNCnuX1nAAQ4ZhyP+kYVKf8rLmJ/feDQ==
@@ -7524,6 +7872,11 @@ railroad-diagrams@^1.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz#eb7e6267548ddedfb899c1b90e57374559cddb7e"
   integrity sha1-635iZ1SN3t+4mcG5Dlc3RVnN234=
 
+ramda@^0.21.0:
+  version "0.21.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ramda/-/ramda-0.21.0.tgz#a001abedb3ff61077d4ff1d577d44de77e8d0a35"
+  integrity sha1-oAGr7bP/YQd9T/HVd9RN536NCjU=
+
 randexp@0.4.6:
   version "0.4.6"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/randexp/-/randexp-0.4.6.tgz#e986ad5e5e31dae13ddd6f7b3019aa7c87f60ca3"
@@ -7616,36 +7969,28 @@ react-datepicker@1.6.0:
     react-onclickoutside "^6.7.1"
     react-popper "^0.9.1"
 
-react-datetime@^2.15.0:
-  version "2.15.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datetime/-/react-datetime-2.15.0.tgz#a8f7da6c58b6b45dbeea32d4e8485db17614e12c"
-  integrity sha512-RP5OqXVfrhdoFALJzMU8tKxRFaIZzJZqZEpf5oK7pvwG80a/bET/TdJ7jT7W9lyAf1nKNo6zyYkvHW3ZJ/ypvg==
-  dependencies:
-    create-react-class "^15.5.2"
-    object-assign "^3.0.0"
-    prop-types "^15.5.7"
-    react-onclickoutside "^6.5.0"
-
-react-dev-utils@6.0.0-next.2150693d:
-  version "6.0.0-next.2150693d"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dev-utils/-/react-dev-utils-6.0.0-next.2150693d.tgz#42216e01d389f68fdc8a94cdd44d95d480304256"
-  integrity sha512-mErObh6vUCdVeTus1An4r8OAfiKWNA3RNrt7o1M4Gn6BEgfpXxxBGhs38Tg7AW7cDh1/CdsDBavVKDNFe0lkJQ==
+react-dev-utils@^6.0.5:
+  version "6.0.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dev-utils/-/react-dev-utils-6.0.5.tgz#6ef34d0a416dc1c97ac20025031ea1f0d819b21d"
+  integrity sha512-X3/q2y8GHvcn6qzqlFhFNoIQgU4TfyerYpBTc5BrMtrSO0q1ctIheAaxDQawNeRgsm2W7L3QSQ9po+YLAGcYFQ==
   dependencies:
     "@babel/code-frame" "7.0.0"
     address "1.0.3"
-    browserslist "3.2.6"
+    browserslist "4.1.1"
     chalk "2.4.1"
     cross-spawn "6.0.5"
     detect-port-alt "1.1.6"
     escape-string-regexp "1.0.5"
     filesize "3.6.1"
+    find-up "3.0.0"
     global-modules "1.0.0"
-    gzip-size "4.1.0"
-    inquirer "5.1.0"
-    is-root "1.0.0"
-    opn "5.3.0"
+    gzip-size "5.0.0"
+    inquirer "6.2.0"
+    is-root "2.0.0"
+    loader-utils "1.1.0"
+    opn "5.4.0"
     pkg-up "2.0.0"
-    react-error-overlay "5.0.0-next.2150693d"
+    react-error-overlay "^5.0.5"
     recursive-readdir "2.2.2"
     shell-quote "1.6.1"
     sockjs-client "1.1.5"
@@ -7697,10 +8042,10 @@ react-dropzone@5.1.1:
     attr-accept "^1.1.3"
     prop-types "^15.6.2"
 
-react-error-overlay@5.0.0-next.2150693d:
-  version "5.0.0-next.2150693d"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-5.0.0-next.2150693d.tgz#72ca7fe78eb3e503060c276105a717c24c87087c"
-  integrity sha512-vHHbn/o3QDN/p+8hmc9mf3XDINREwLKTuECg9kRJHWYqwzOAuUupnH6SYFrt4RNJZrMu/Ov+R/AK+YqQvfeiYA==
+react-error-overlay@^5.0.5:
+  version "5.0.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-5.0.5.tgz#716ff1a92fda76bb89a39adf9ce046a5d740e71a"
+  integrity sha512-ab0HWBgxdIsngHtMGU8+8gYFdTBXpUGd4AE4lN2VZvOIlBmWx9dtaWEViihuGSIGosCKPeHCnzFoRWB42UtnLg==
 
 react-final-form@3.6.5:
   version "3.6.5"
@@ -7742,7 +8087,7 @@ react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-modal@^3.5.1:
+react-modal@^3.6.1:
   version "3.6.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-modal/-/react-modal-3.6.1.tgz#54d27a1ec2b493bbc451c7efaa3557b6af82332d"
   integrity sha512-vAhnawahH1fz8A5x/X/1X20KHMe6Q0mkfU5BKPgKSVPYhMhsxtRbNHSitsoJ7/oP27xZo3naZZlwYuuzuSO1xw==
@@ -7752,7 +8097,7 @@ react-modal@^3.5.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
-react-onclickoutside@^6.5.0, react-onclickoutside@^6.7.1:
+react-onclickoutside@^6.7.1:
   version "6.7.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
   integrity sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg==
@@ -7947,7 +8292,7 @@ read-pkg@^4.0.1:
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@~1.0.31:
+readable-stream@1.0, readable-stream@~1.0.31:
   version "1.0.34"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/readable-stream/-/readable-stream-1.0.34.tgz#125820e34bc842d2f2aaafafe4c2916ee32c157c"
   integrity sha1-Elgg40vIQtLyqq+v5MKRbuMsFXw=
@@ -8015,6 +8360,14 @@ redux@4.0.0, redux@^4.0.0:
   integrity sha512-NnnHF0h0WVE/hXyrB6OlX67LYRuaf/rJcbWvnHHEPCF/Xa/AZpwhs/20WyqzQae5x4SD2F9nPObgBh2rxAgLiA==
   dependencies:
     loose-envify "^1.1.0"
+    symbol-observable "^1.2.0"
+
+redux@^4.0.1:
+  version "4.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
+  integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
+  dependencies:
+    loose-envify "^1.4.0"
     symbol-observable "^1.2.0"
 
 regenerate-unicode-properties@^7.0.0:
@@ -8118,6 +8471,11 @@ regjsparser@^0.3.0:
   dependencies:
     jsesc "~0.5.0"
 
+relateurl@0.2.x:
+  version "0.2.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+  integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -8127,6 +8485,17 @@ render-fragment@^0.1.1:
   version "0.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/render-fragment/-/render-fragment-0.1.1.tgz#b231f259b7eee333d34256aee0ef3169be7bef30"
   integrity sha512-+DnAcalJYR8GE5VRuQGGu78Q0GDe8EXnkuk4DF8gbAhIeS6LRt4j+aaggLLj4PtQVfXNC61McXvXI58WqmRleQ==
+
+renderkid@^2.0.1:
+  version "2.0.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/renderkid/-/renderkid-2.0.2.tgz#12d310f255360c07ad8fde253f6c9e9de372d2aa"
+  integrity sha512-FsygIxevi1jSiPY9h7vZmBFUbAOcbYm9UwyiLNdVsLRs/5We9Ob5NMPbGYUTWiLq5L+ezlVdE0A8bbME5CWTpg==
+  dependencies:
+    css-select "^1.1.0"
+    dom-converter "~0.2"
+    htmlparser2 "~3.3.0"
+    strip-ansi "^3.0.0"
+    utila "^0.4.0"
 
 repeat-element@^1.1.2:
   version "1.1.3"
@@ -8262,7 +8631,7 @@ ret@~0.1.10:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
 
-rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
+rimraf@^2.2.8, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.6.2:
   version "2.6.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   integrity sha512-lreewLK/BlghmxtfH36YYVg1i8IAce4TI7oao75I1g245+6BctqTVQiBP3YUJ9C6DQOXJmkYR9X9fCLtCOJc5w==
@@ -8308,13 +8677,6 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   integrity sha1-6Eg5bwV9Ij8kOGkkYY4laUFh7Ec=
   dependencies:
     aproba "^1.1.1"
-
-rxjs@^5.5.2:
-  version "5.5.12"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/rxjs/-/rxjs-5.5.12.tgz#6fa61b8a77c3d793dbaf270bee2f43f652d741cc"
-  integrity sha512-xx2itnL5sBbqeeiVgNPVuQQ1nC8Jp2WfNJhXWHmElW9YmrpS9UVnNzhP3EH3HFqexO5Tlp8GhYY+WEcqcVMvGw==
-  dependencies:
-    symbol-observable "1.0.1"
 
 rxjs@^6.1.0:
   version "6.3.3"
@@ -8399,6 +8761,11 @@ semver-compare@^1.0.0:
   version "5.5.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/semver/-/semver-5.5.1.tgz#7dfdd8814bdb7cabc7be0fb1d734cfb66c940477"
   integrity sha512-PqpAxfrEhlSUWge8dwIp4tZnQ25DIOthpiaHNIthsjEFQD6EvqUKUDM7L8O2rShkFccYo1VjJR0coWfNkCubRw==
+
+semver@^5.6.0:
+  version "5.6.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
+  integrity sha512-RS9R6R35NYgQn++fkDWaOmqGoj4Ek9gGs+DPxNUZKuwE183xjJroKvyo1IzVFeXvUrvmALy6FWD5xrdJT25gMg==
 
 send@0.16.2:
   version "0.16.2"
@@ -8668,7 +9035,7 @@ source-map@^0.5.0, source-map@^0.5.3, source-map@^0.5.6, source-map@^0.5.7:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
   integrity sha1-igOdLRAh0i0eoUyA2OpGi6LvP8w=
 
-source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
+source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.0, source-map@~0.6.1:
   version "0.6.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
@@ -8915,13 +9282,13 @@ strip-json-comments@~2.0.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
 
-style-loader@^0.23.0:
-  version "0.23.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/style-loader/-/style-loader-0.23.0.tgz#8377fefab68416a2e05f1cabd8c3a3acfcce74f1"
-  integrity sha512-uCcN7XWHkqwGVt7skpInW6IGO1tG6ReyFQ1Cseh0VcN6VdcFQi62aG/2F3Y9ueA8x4IVlfaSUxpmQXQD9QrEuQ==
+style-loader@^0.23.1:
+  version "0.23.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/style-loader/-/style-loader-0.23.1.tgz#cb9154606f3e771ab6c4ab637026a1049174d925"
+  integrity sha512-XK+uv9kWwhZMZ1y7mysB+zoihsEj4wneFWAS5qoiLwzW0WzSqMrrsIy+a3zkQJq0ipFtBpX5W3MqyRIBF/WFGg==
   dependencies:
     loader-utils "^1.1.0"
-    schema-utils "^0.4.5"
+    schema-utils "^1.0.0"
 
 stylis-rule-sheet@^0.0.10:
   version "0.0.10"
@@ -8980,11 +9347,6 @@ svgo@^1.0.5:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-symbol-observable@1.0.1:
-  version "1.0.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
-  integrity sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
-
 symbol-observable@^1.2.0:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
@@ -9019,6 +9381,13 @@ tar@^4:
     mkdirp "^0.5.0"
     safe-buffer "^5.1.2"
     yallist "^3.0.2"
+
+term-size@^1.2.0:
+  version "1.2.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/term-size/-/term-size-1.2.0.tgz#458b83887f288fc56d6fffbfad262e26638efa69"
+  integrity sha1-RYuDiH8oj8Vtb/+/rSYuJmOO+mk=
+  dependencies:
+    execa "^0.7.0"
 
 test-exclude@^4.2.1:
   version "4.2.3"
@@ -9271,7 +9640,7 @@ uglify-es@^3.3.4:
     commander "~2.13.0"
     source-map "~0.6.1"
 
-uglify-js@^3.1.4:
+uglify-js@3.4.x, uglify-js@^3.1.4:
   version "3.4.9"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uglify-js/-/uglify-js-3.4.9.tgz#af02f180c1207d76432e473ed24a28f4a782bae3"
   integrity sha512-8CJsbKOtEbnJsTyv6LE6m6ZKniqMiFWmm9sRbopbkGs3gMPPfd3Fh8iIA4Ykv5MgaTbqHr4BaoGLJLZNhsrW1Q==
@@ -9345,17 +9714,6 @@ unique-slug@^2.0.0:
   dependencies:
     imurmurhash "^0.1.4"
 
-universal-dotenv@^1.9.0:
-  version "1.9.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/universal-dotenv/-/universal-dotenv-1.9.1.tgz#b19730a2d8a83b8c5b72e5db09ef44dc30539b83"
-  integrity sha512-38GhLyN0rAz7040sltVEDSkO/yTcShKJFBIX5/4Hi/c//wUS9UgvnP1GDTLVs9CR+XARLsihPBciSS9y+USyKA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    app-root-dir "^1.0.2"
-    core-js "^2.5.7"
-    dotenv "^6.0.0"
-    dotenv-expand "^4.2.0"
-
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
@@ -9379,6 +9737,11 @@ upath@^1.0.5:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/upath/-/upath-1.1.0.tgz#35256597e46a581db4793d0ce47fa9aebfc9fabd"
   integrity sha512-bzpH/oBhoS/QI/YtbkqCg6VEiPYjSZtrHQM6/QnJS6OL9pKUFLqb3aFh4Scvwm45+7iAgiMkLhSbaZxUqmrprw==
 
+upper-case@^1.1.1:
+  version "1.1.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/upper-case/-/upper-case-1.1.3.tgz#f6b4501c2ec4cdd26ba78be7222961de77621598"
+  integrity sha1-9rRQHC7EzdJrp4vnIilh3ndiFZg=
+
 uri-js@^4.2.2:
   version "4.2.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/uri-js/-/uri-js-4.2.2.tgz#94c540e1ff772956e2299507c010aea6c8838eb0"
@@ -9391,10 +9754,19 @@ urix@^0.1.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/urix/-/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
 
-url-loader@1.1.1, url-loader@^1.1.1:
+url-loader@1.1.1:
   version "1.1.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/url-loader/-/url-loader-1.1.1.tgz#4d1f3b4f90dde89f02c008e662d604d7511167c1"
   integrity sha512-vugEeXjyYFBCUOpX+ZuaunbK3QXMKaQ3zUnRfIpRBlGkY7QizCnzyyn2ASfcxsvyU3ef+CJppVywnl3Kgf13Gg==
+  dependencies:
+    loader-utils "^1.1.0"
+    mime "^2.0.3"
+    schema-utils "^1.0.0"
+
+url-loader@^1.1.2:
+  version "1.1.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/url-loader/-/url-loader-1.1.2.tgz#b971d191b83af693c5e3fea4064be9e1f2d7f8d8"
+  integrity sha512-dXHkKmw8FhPqu8asTc1puBfe3TehOCo2+RmOOev5suNCIYBcT626kxiWg1NBVkwc4rO8BGa7gP70W7VXuqHrjg==
   dependencies:
     loader-utils "^1.1.0"
     mime "^2.0.3"
@@ -9431,7 +9803,7 @@ util-deprecate@^1.0.2, util-deprecate@~1.0.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
-util.promisify@^1.0.0, util.promisify@~1.0.0:
+util.promisify@1.0.0, util.promisify@^1.0.0, util.promisify@~1.0.0:
   version "1.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/util.promisify/-/util.promisify-1.0.0.tgz#440f7165a459c9a16dc145eb8e72f35687097030"
   integrity sha512-i+6qA2MPhvoKLuxnJNpXAGhg7HphQOSUq2LKMZD0m15EiskXUkMvKdF4Uui0WYeCUGea+o2cw/ZuwehtfsrNkA==
@@ -9452,6 +9824,11 @@ util@^0.10.3:
   integrity sha512-0Pm9hTQ3se5ll1XihRic3FDIku70C+iHUdT/W926rSgHV5QgXsYbKZN8MSC3tJtSkhuROzvsQjAaFENRXr+19A==
   dependencies:
     inherits "2.0.3"
+
+utila@^0.4.0, utila@~0.4:
+  version "0.4.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
+  integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
 utils-merge@1.0.1:
   version "1.0.1"
@@ -9600,10 +9977,10 @@ webpack-dev-middleware@^3.4.0:
     range-parser "^1.0.3"
     webpack-log "^2.0.0"
 
-webpack-hot-middleware@^2.24.2:
-  version "2.24.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-hot-middleware/-/webpack-hot-middleware-2.24.2.tgz#0d2deeb813f67693e2997b87c3a9d9be324575dd"
-  integrity sha512-VsBGNMC5JDnab5hbReMjmIYtnvDMT+odLSP49EbLZHwuAoJJDNOi0YLhTe40vvP7u7Be+Ww1mYHjwwelqdnaKA==
+webpack-hot-middleware@^2.24.3:
+  version "2.24.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack-hot-middleware/-/webpack-hot-middleware-2.24.3.tgz#5bb76259a8fc0d97463ab517640ba91d3382d4a6"
+  integrity sha512-pPlmcdoR2Fn6UhYjAhp1g/IJy1Yc9hD+T6O9mjRcWV2pFbBjIFoJXhP0CoD0xPOhWJuWXuZXGBga9ybbOdzXpg==
   dependencies:
     ansi-html "0.0.7"
     html-entities "^1.2.0"
@@ -9636,7 +10013,7 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@4.20.2, webpack@^4.20.0:
+webpack@4.20.2:
   version "4.20.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.20.2.tgz#89f6486b6bb276a91b0823453d377501fc625b5a"
   integrity sha512-75WFUMblcWYcocjSLlXCb71QuGyH7egdBZu50FtBGl2Nso8CK3Ej+J7bTZz2FPFq5l6fzCisD9modB7t30ikuA==
@@ -9645,6 +10022,36 @@ webpack@4.20.2, webpack@^4.20.0:
     "@webassemblyjs/helper-module-context" "1.7.8"
     "@webassemblyjs/wasm-edit" "1.7.8"
     "@webassemblyjs/wasm-parser" "1.7.8"
+    acorn "^5.6.2"
+    acorn-dynamic-import "^3.0.0"
+    ajv "^6.1.0"
+    ajv-keywords "^3.1.0"
+    chrome-trace-event "^1.0.0"
+    enhanced-resolve "^4.1.0"
+    eslint-scope "^4.0.0"
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^2.3.0"
+    loader-utils "^1.1.0"
+    memory-fs "~0.4.1"
+    micromatch "^3.1.8"
+    mkdirp "~0.5.0"
+    neo-async "^2.5.0"
+    node-libs-browser "^2.0.0"
+    schema-utils "^0.4.4"
+    tapable "^1.1.0"
+    uglifyjs-webpack-plugin "^1.2.4"
+    watchpack "^1.5.0"
+    webpack-sources "^1.3.0"
+
+webpack@^4.21.0:
+  version "4.23.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.23.0.tgz#0cfbf324b7f6789ac2e6c98fa83eabe96fa56232"
+  integrity sha512-Osh/3U9y4swhEKDjy8fF48v2Qx5VC6VvdQ8bEm1HMaVVddiQBw4+mIyDrzVcVRCPT/+4uJFOcklPuoB+I3Zw0w==
+  dependencies:
+    "@webassemblyjs/ast" "1.7.10"
+    "@webassemblyjs/helper-module-context" "1.7.10"
+    "@webassemblyjs/wasm-edit" "1.7.10"
+    "@webassemblyjs/wasm-parser" "1.7.10"
     acorn "^5.6.2"
     acorn-dynamic-import "^3.0.0"
     ajv "^6.1.0"
@@ -9732,6 +10139,13 @@ wide-align@^1.1.0:
   integrity sha512-QGkOQc8XL6Bt5PwnsExKBPuMKBxnGxWWW3fU55Xt4feHozMUhdUMaBCk290qpm/wG5u/RSKzwdAC4i51YigihA==
   dependencies:
     string-width "^1.0.2 || 2"
+
+widest-line@^2.0.0:
+  version "2.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/widest-line/-/widest-line-2.0.1.tgz#7438764730ec7ef4381ce4df82fb98a53142a3fc"
+  integrity sha512-Ba5m9/Fa4Xt9eb2ELXt77JxVDV8w7qQrH0zS/TWSJdLyAwQjWoOzpzj5lwVftDz6n/EOu3tNACS84v509qwnJA==
+  dependencies:
+    string-width "^2.1.1"
 
 wordwrap@~0.0.2:
   version "0.0.3"

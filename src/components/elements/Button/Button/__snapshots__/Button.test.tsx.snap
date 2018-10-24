@@ -21,7 +21,7 @@ exports[`Button should accept the loading prop 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;
@@ -112,7 +112,7 @@ exports[`Button should render correctly with icon only 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;
@@ -200,7 +200,7 @@ exports[`Button should render correctly with label 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;
@@ -270,7 +270,7 @@ exports[`Button should render the default skin 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;
@@ -340,7 +340,7 @@ exports[`Button should render the default skin 2`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   background-color: #0A67D1;
@@ -417,7 +417,7 @@ exports[`Button should render the default skin 3`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   background-color: #D83A2E;
@@ -714,7 +714,7 @@ exports[`Button should render the outline skin 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   font-size: 0.875rem;
@@ -784,7 +784,7 @@ exports[`Button should render the outline skin 2`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   border: 1px solid #0A67D1;
@@ -860,7 +860,7 @@ exports[`Button should render the outline skin 3`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #818489;
   border-radius: 4px;
   color: #2D343B;
   border: 1px solid #D83A2E;

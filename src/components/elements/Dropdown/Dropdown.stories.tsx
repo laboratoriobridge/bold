@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { HFlow } from '../../layout/Flow/HFlow'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 
 import { Dropdown } from './Dropdown'
 import { DropdownButton } from './DropdownButton'

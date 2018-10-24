@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 > button:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.emotion-0 > button:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.emotion-0 > button:focus {
+  z-index: 1;
+}
+
+<div
+  class="emotion-0"
+  role="group"
+/>
+`;
+
+exports[`should should accept stlye prop 1`] = `
+.emotion-0 {
+  color: red;
+}
+
+.emotion-0 > button:not(:first-child) {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.emotion-0 > button:not(:last-child) {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.emotion-0 > button:focus {
+  z-index: 1;
+}
+
+<div
+  class="emotion-0"
+  role="group"
+/>
+`;

@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 
 export interface PaginatorProps extends WithStylesProps {
     /**

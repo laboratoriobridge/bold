@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
-import { Button, ButtonProps } from '../../../elements/button/Button/Button'
+import { Button, ButtonProps } from '../../../elements/Button'
 import { Icons } from '../../../elements/Icon/generated/Icons'
 import { Icon } from '../../../elements/Icon/Icon'
 
