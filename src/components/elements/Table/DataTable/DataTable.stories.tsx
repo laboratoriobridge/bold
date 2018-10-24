@@ -3,9 +3,9 @@ import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { Button } from '../../button/Button/Button'
+import { Button } from '../../Button'
 
-import { PagedTable } from './PagedTable'
+import { DataTable } from './DataTable'
 
 interface Row {
     id: number
@@ -20,27 +20,26 @@ const rows: Row[] = [
 ]
 
 storiesOf('Components/Table', module)
-    .add('PagedTable', () => (
+    .add('DataTable', () => (
         // tslint:disable jsx-no-lambda
-        <PagedTable
+        <DataTable
             rows={boolean('empty', false) ? [] : rows}
-            page={0}
-            size={10}
-            totalElements={10}
-            totalPages={1}
-            sort={['-id', 'name']}
-            onSortChange={action('sort')}
-            onPageChange={action('page-change')}
-            onSizeChange={action('size-change')}
+            onSortChange={action('sort-change')}
+            sort={['id', '-name']}
             loading={boolean('loading', false)}
             columns={[
                 { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
                 { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
-                { name: 'age', header: 'Age', sortable: true, render: (row: Row) => row.age },
+                { name: 'age', header: 'Age', render: (row: Row) => row.age },
                 {
                     name: 'buttons',
-                    style: { textAlign: 'right' },
-                    render: (row: Row) => <Button size='small' skin='ghost' icon='pen' />,
+                    style: { textAlign: 'right', whiteSpace: 'nowrap' },
+                    render: (row: Row) => (
+                        <>
+                            <Button size='small' skin='ghost' icon='pen' />
+                            <Button size='small' skin='ghost' icon='dots' />
+                        </>
+                    ),
                 },
             ]}
         />

@@ -2,7 +2,7 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 
 export interface ModalContainerProps extends WithStylesProps {
     style?: Interpolation

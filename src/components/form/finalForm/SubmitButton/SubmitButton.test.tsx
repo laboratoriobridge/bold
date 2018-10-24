@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
-import { Button } from '../../../elements/button/Button/Button'
+import { Button } from '../../../elements/Button'
 
 import { SubmitButton } from './SubmitButton'
 

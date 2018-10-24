@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { HFlow } from '../../../layout/Flow/HFlow'
-import { Button, ButtonProps } from '../../button/Button/Button'
+import { Button, ButtonProps } from '../../Button'
 import { Modal, ModalProps } from '../Modal'
 
 export interface ModalAutoProps {

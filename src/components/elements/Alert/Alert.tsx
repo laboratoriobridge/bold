@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { Omit } from '../../../util/types'
-import { Button } from '../button/Button/Button'
+import { Button } from '../Button'
 import { Icon } from '../Icon/Icon'
 
 export type AlertType = 'info' | 'success' | 'warning' | 'danger'

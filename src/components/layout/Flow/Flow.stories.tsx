@@ -2,7 +2,7 @@ import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import { Button } from '../../elements/button/Button/Button'
+import { Button } from '../../elements/Button'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
 
 import { Flow } from './Flow'
