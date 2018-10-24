@@ -1,5 +1,6 @@
 export { AriaControlNav, AriaControlNavProps } from './AriaControlNav/AriaControlNav'
 export * from './Breadcrumb'
+export * from './ButtonGroup'
 export * from './Dropdown'
 export { InfoLabel, InfoLabelProps } from './InfoLabel/InfoLabel'
 export * from './Modal'
