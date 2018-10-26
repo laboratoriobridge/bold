@@ -408,6 +408,7 @@ exports[`should be rendered correctly 1`] = `
                 >
                   <button
                     class="emotion-8"
+                    tabindex="-1"
                     type="button"
                   >
                     <span>
@@ -437,6 +438,7 @@ exports[`should be rendered correctly 1`] = `
                 >
                   <button
                     class="emotion-8"
+                    tabindex="-1"
                     type="button"
                   >
                     <span>
@@ -469,6 +471,7 @@ exports[`should be rendered correctly 1`] = `
                 >
                   <button
                     class="emotion-8"
+                    tabindex="-1"
                     type="button"
                   >
                     <span>
@@ -498,6 +501,7 @@ exports[`should be rendered correctly 1`] = `
                 >
                   <button
                     class="emotion-8"
+                    tabindex="-1"
                     type="button"
                   >
                     <span>

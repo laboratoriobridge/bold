@@ -25,9 +25,9 @@ export class MonthControl extends React.PureComponent<MonthControlProps> {
         const { visibleDate, renderMonth } = this.props
         return (
             <HFlow alignItems='center' hSpacing={0.5}>
-                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} />
+                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1} />
                 {renderMonth(visibleDate)}
-                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} />
+                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1} />
             </HFlow>
         )
     }

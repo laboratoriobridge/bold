@@ -10,6 +10,7 @@ exports[`should render correctly 1`] = `
     onClick={[Function]}
     size="small"
     skin="ghost"
+    tabIndex={-1}
   />
   2018
   <Button
@@ -17,6 +18,7 @@ exports[`should render correctly 1`] = `
     onClick={[Function]}
     size="small"
     skin="ghost"
+    tabIndex={-1}
   />
 </HFlow>
 `;
