@@ -1,7 +1,5 @@
-import * as moment from 'moment'
 import * as React from 'react'
 
-import { formats } from '../../../../util/dateTime'
 import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DatePickerInput/DatePickerInput'
@@ -17,7 +15,6 @@ export class DateField extends React.Component<DateFieldProps> {
             <Field
                 {...this.props}
                 render={this.renderInput}
-                validate={this.validate}
                 parse={this.parse}
                 format={this.format}
             />
@@ -25,54 +22,25 @@ export class DateField extends React.Component<DateFieldProps> {
     }
 
     renderInput = (props: RenderProps) => {
-        const handleBlur = this.handleBlur(props)
-
         return (
             <DatePickerInput
                 {...this.props}
                 {...props.input}
-                onChange={props.input.onChange}
-                onBlur={handleBlur}
                 status={props.hasError && 'error'}
             />
         )
     }
 
-    handleBlur = (renderProps: RenderProps) => (e) => {
-        renderProps.input.onBlur(e)
-
-        const value = e.target.value
-        if (value) {
-            const mom = moment(value, formats.date, true)
-            const formatted = mom.format(formats.serverDate)
-            renderProps.input.onChange(formatted)
-        } else {
-            renderProps.input.onChange(null)
-        }
+    parse = (value: Date) => {
+        return value ? value.toISOString().slice(0, 10) : null
     }
 
-    validate = (value) => {
-        const mom = moment(value, formats.serverDate, true)
-        if (value && !mom.isValid()) {
-            return 'Data inválida'
+    format = (value: string) => {
+        try {
+            return value ? new Date(value + 'T00:00:00') : null
+        } catch (err) {
+            return null
         }
-        return undefined
-    }
-
-    parse = (value: any) => {
-        const mom = moment(value, formats.date, true)
-        if (mom.isValid()) {
-            return mom.format(formats.serverDate)
-        }
-        return value
-    }
-
-    format = (value: any) => {
-        const mom = moment(value, formats.serverDate, true)
-        if (mom.isValid()) {
-            return mom
-        }
-        return value
     }
 
 }
