@@ -28,3 +28,7 @@ export const pluralize = (word: string, count: number, inclusive?: boolean) => {
         return rw
     }
 }
+
+export const capitalize = (word: string): string => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+}

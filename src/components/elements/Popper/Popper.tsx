@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 import { Manager, Reference } from 'react-popper'
 
@@ -9,6 +10,8 @@ export interface PopperProps extends WithStylesProps {
     closeOnOutsideClick?: boolean
     placement?: PopperContentProps['placement']
     offset?: PopperContentProps['offset']
+    style?: Interpolation
+    block?: boolean
     renderTarget(controller: PopperController): React.ReactNode
     children(controller: PopperController): React.ReactNode
     control?(controller: PopperController): void
@@ -32,6 +35,7 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
         placement: 'bottom',
         closeOnOutsideClick: true,
         offset: 0,
+        block: false,
         renderTarget: () => null,
         children: () => null,
         control: () => null,
@@ -78,14 +82,14 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
     }
 
     render() {
-        const { renderTarget, css, children } = this.props
+        const { renderTarget, css, children, style, block } = this.props
         const styles = {
             wrapper: {
-                display: 'inline-block',
+                display: block ? 'block' : 'inline-block',
             },
         }
         return (
-            <div ref={this.setWrapperRef} className={css(styles.wrapper)}>
+            <div ref={this.setWrapperRef} className={css(styles.wrapper, style)}>
                 <Manager>
                     <Reference>
                         {refProps => (

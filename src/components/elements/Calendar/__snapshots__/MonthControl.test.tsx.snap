@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<HFlow
+  alignItems="center"
+  hSpacing={0.5}
+>
+  <Button
+    icon="angleLeft"
+    onClick={[Function]}
+    size="small"
+    skin="ghost"
+  />
+  Oct
+  <Button
+    icon="angleRight"
+    onClick={[Function]}
+    size="small"
+    skin="ghost"
+  />
+</HFlow>
+`;

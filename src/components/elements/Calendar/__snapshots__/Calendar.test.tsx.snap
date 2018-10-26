@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  width: 288px;
+}
+
+<div
+  className="emotion-0"
+>
+  <HFlow
+    hSpacing={0.5}
+    justifyContent="space-around"
+    style={
+      Object {
+        "fontWeight": "bold",
+        "marginBottom": "0.5rem",
+      }
+    }
+  >
+    <MonthControl
+      onChange={[Function]}
+      renderMonth={[Function]}
+      visibleDate={2018-10-26T00:00:00.000Z}
+    />
+    <YearControl
+      onChange={[Function]}
+      renderYear={[Function]}
+      visibleDate={2018-10-26T00:00:00.000Z}
+    />
+  </HFlow>
+  <MonthView
+    createDayStyles={[Function]}
+    onDayClick={[Function]}
+    visibleDate={2018-10-26T00:00:00.000Z}
+  />
+</div>
+`;

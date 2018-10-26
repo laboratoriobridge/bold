@@ -1,12 +1,13 @@
-import * as moment from 'moment'
+import { Interpolation } from 'emotion'
 import * as React from 'react'
-import DatePicker, { ReactDatePickerProps } from 'react-datepicker'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { TextInput, TextInputProps } from '../TextInput/TextInput'
+import { Calendar, CalendarProps } from '../../../elements/Calendar'
+import { Popper, PopperController } from '../../../elements/Popper'
 
-export interface DatePickerInputProps extends WithStylesProps, ReactDatePickerProps,
-    Pick<TextInputProps, 'status'> {
+import { DateInput, DateInputProps } from './DateInput'
+
+export interface DatePickerInputProps extends WithStylesProps, DateInputProps {
 
 }
 
@@ -14,67 +15,56 @@ export interface DatePickerInputProps extends WithStylesProps, ReactDatePickerPr
 export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
     render() {
-        const { css, value, status, ...rest } = this.props
-        const styles = {
-            container: {
-                '& .react-datepicker-wrapper': { width: '100%' },
-                '& .react-datepicker__input-container': { width: '100%' },
-            },
-        }
-
-        const mom = value && moment.isMoment(value) ? value : null
-
+        const { value } = this.props
         return (
-            <div className={css(styles.container)}>
-                <DatePicker
-                    selected={mom as any}
-                    todayButton='Hoje'
-                    locale='pt-br'
-                    showYearDropdown
-                    dropdownMode='select'
-                    customInput={<DateInput status={status} />}
-                    {...rest}
-                />
-            </div>
+            <Popper renderTarget={this.renderTarget} placement='bottom-start' block>
+                {(ctrl: PopperController) => (
+                    <CalendarPopup
+                        key={value && value.getTime()}
+                        initialVisibleDate={value || new Date()}
+                        activeDate={value}
+                        onDayClick={this.handleDayClick(ctrl)}
+                    />
+                )}
+            </Popper>
         )
     }
-}
 
-interface DateInputProps extends TextInputProps {
-}
-
-class DateInput extends React.Component<DateInputProps> {
-
-    render() {
+    renderTarget = (ctrl: PopperController) => {
         return (
-            <TextInput
+            <DateInput
+                icon={{ icon: 'calendar', position: 'right', onClick: ctrl.show }}
                 {...this.props}
-                icon={{ icon: 'calendar', position: 'right', onClick: this.props.onClick }}
-                onChange={this.handleChange}
-                placeholder='dd/mm/yyyy'
-                onFocus={null} // do not open datepicker when focused
-                onClick={null} // do not open datepicker when clicked
+                onFocus={this.handleFocus(ctrl)}
             />
         )
     }
 
-    handleChange = (e) => {
-        e.target.value = this.normalize(e.target.value)
-
-        if (this.props.onChange) {
-            this.props.onChange(e)
-        }
+    handleDayClick = (ctrl: PopperController) => (day: Date) => {
+        ctrl.hide()
+        return this.props.onChange(day)
     }
 
-    normalize = (value) => {
-        const onlyNums = value.replace(/[^\d]/g, '')
-        if (onlyNums.length < 3) {
-            return onlyNums
-        } else if (onlyNums.length < 5) {
-            return onlyNums.slice(0, 2) + '/' + onlyNums.slice(2, 4)
-        } else {
-            return onlyNums.slice(0, 2) + '/' + onlyNums.slice(2, 4) + '/' + onlyNums.slice(4, 8)
-        }
+    handleFocus = (ctrl: PopperController) => (e) => {
+        ctrl.show()
+        return this.props.onFocus(e)
     }
+}
 
+@withStyles
+class CalendarPopup extends React.PureComponent<CalendarProps & WithStylesProps> {
+    render() {
+        const { css, theme, ...rest } = this.props
+        const styles: Interpolation = {
+            background: theme.pallete.surface.main,
+            boxShadow: theme.shadows.outer[40],
+            borderRadius: theme.radius.popper,
+            padding: '0.5rem .25rem .25rem .25rem',
+        }
+        return (
+            <div className={css(styles)}>
+                <Calendar {...rest} />
+            </div>
+        )
+    }
 }
