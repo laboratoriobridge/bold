@@ -8,7 +8,7 @@ import { MaskedInput, MaskedInputProps } from '../../input/MaskedInput/MaskedInp
 
 export interface DateInputProps extends Omit<MaskedInputProps, 'onChange' | 'value'> {
     value?: Date
-    onChange?(date: Date): void
+    onChange?(date: Date | null): void
 }
 
 const formatter = new Intl.DateTimeFormat(getUserLocale(), {
@@ -38,6 +38,11 @@ export class DateInput extends React.Component<DateInputProps> {
 
     handleChange = (e) => {
         const value = e.target.value
+
+        if (!value) {
+            this.props.onChange(null)
+        }
+
         const match = value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
 
         try {

@@ -24,9 +24,9 @@ export class YearControl extends React.PureComponent<YearControlProps> {
         const { visibleDate, renderYear } = this.props
         return (
             <HFlow alignItems='center' hSpacing={0.5}>
-                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} />
+                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1} />
                 {renderYear(visibleDate)}
-                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} />
+                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1} />
             </HFlow>
         )
     }
