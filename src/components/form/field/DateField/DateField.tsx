@@ -4,7 +4,7 @@ import { FieldWrapperProps } from '../../FieldWrapper'
 import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DatePickerInput/DatePickerInput'
 
-export interface DateFieldProps extends Partial<DatePickerInputProps>, FieldWrapperProps, Pick<FieldProps, 'validate'> {
+export interface DateFieldProps extends DatePickerInputProps, FieldWrapperProps, Pick<FieldProps, 'validate'> {
     name: string
 }
 
@@ -36,11 +36,7 @@ export class DateField extends React.Component<DateFieldProps> {
     }
 
     format = (value: string) => {
-        try {
-            return value ? new Date(value + 'T00:00:00') : null
-        } catch (err) {
-            return null
-        }
+        return value ? new Date(value) : null
     }
 
 }

@@ -833,17 +833,17 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/weak-memoize/-/weak-memoize-0.1.3.tgz#b700d97385fa91affed60c71dfd51c67e9dad762"
   integrity sha512-QsYGKdhhuDFNq7bjm2r44y0mp5xW3uO3csuTPDWZc0OIiMQv+AIY5Cqwd4mJiC5N8estVl7qlvOx1hbtOuUWbw==
 
-"@storybook/addon-actions@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0-rc.3.tgz#03c2d47e1467b7ece34ccccbf66d38b0a5b428d6"
-  integrity sha512-nm1ByowJKS5+eMV3p9sx/akx29tQjXEs8ME0ZTWS0Dau+tVS66I5XSE9tClStKgZZVRjIJzF6ZmXANGzRaBtFQ==
+"@storybook/addon-actions@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0.tgz#7dfd5f2c2d180d38faa29d111ed3ed31ce1e84e0"
+  integrity sha512-yg+oCofxOxoYq4K7V7r0fwpuIUnmGvCkwrT8Rx/TOtAVk47PqSToLWCJDmy58b+yWa9nl+EukclVpr/H9AmZVA==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-rc.3"
-    "@storybook/components" "4.0.0-rc.3"
-    "@storybook/core-events" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
+    "@storybook/components" "4.0.0"
+    "@storybook/core-events" "4.0.0"
     deep-equal "^1.0.1"
     global "^4.3.2"
     lodash "^4.17.11"
@@ -852,15 +852,15 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-info@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0-rc.3.tgz#8f9fc74ab13910bd5204c95aa07a248dc16fd21d"
-  integrity sha512-5JKs4UhdzARMM3UrTBb9x4GabTXCQliaze25Il3XdTdY6jWDry1YLaXlwOaYqnWGp7W/PXhhVCpbA2Vg6jXmCQ==
+"@storybook/addon-info@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0.tgz#6d3b9b1f154f39158fb2c58c9b028e17aef5c359"
+  integrity sha512-sMwA0y9sLj+fs/1fiuUmHO9l2nOvuDGXg58EbwWfsnuiPQK5b4m4mNoZOaANRqfXv71fsvTD3oQaNoDtTfXnUw==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-rc.3"
-    "@storybook/client-logger" "4.0.0-rc.3"
-    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
+    "@storybook/client-logger" "4.0.0"
+    "@storybook/components" "4.0.0"
     core-js "2.5.7"
     global "^4.3.2"
     marksy "^6.1.0"
@@ -870,15 +870,15 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0-rc.3.tgz#ab3cb13e67c5b9d31a677e3a32f117a371a46db4"
-  integrity sha512-5Y67fATCeahZ4cvhG8R+gRAVRzyZUaD2nJo0q4Lvnnk5uskDZV8CCqgCMOdxvkN+6QINihjZyT6epqdDi1et2A==
+"@storybook/addon-knobs@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0.tgz#0012a4ac39abd2fd72eb7eef1ff7641ec9af0c6c"
+  integrity sha512-6oovH0M3KOyBIggMUc8puMlmudbYRwaJrpovKOYkChu8Nq7Gz1B3MtHuPmkv/cylgOekz9XoLPlDYnjeR6G3cg==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-rc.3"
-    "@storybook/components" "4.0.0-rc.3"
-    "@storybook/core-events" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
+    "@storybook/components" "4.0.0"
+    "@storybook/core-events" "4.0.0"
     copy-to-clipboard "^3.0.8"
     escape-html "^1.0.3"
     fast-deep-equal "^2.0.1"
@@ -889,58 +889,58 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0-rc.3.tgz#b0c88990d5176fd08e79d22d36cbd4eb3a6542ae"
-  integrity sha512-S4gbql02ShfOSwwMXB4iUWEWEvwK5GejnltNjymhdjVjAacPWYNrQO9abG8Wrye4O1JEd7lgwh+RCcVYBFl6YQ==
+"@storybook/addon-links@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0.tgz#8b25148b2a3e30f0188070809c052a33abfb1617"
+  integrity sha512-a+durpAdlfWrQ1FYgJeWatMWohNk0PsxKBJBQ1OjgOaL3Al0J6GEcap2hr6fTzPBqnuhFwHD4pGGCEsWaqFwGA==
   dependencies:
-    "@storybook/addons" "4.0.0-rc.3"
-    "@storybook/components" "4.0.0-rc.3"
-    "@storybook/core-events" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
+    "@storybook/components" "4.0.0"
+    "@storybook/core-events" "4.0.0"
     global "^4.3.2"
     prop-types "^15.6.2"
 
-"@storybook/addon-options@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0-rc.3.tgz#17633986c92d8ba12a5b178f0d76b1933ccac502"
-  integrity sha512-eGkUyduob257Ur/d2OestG0oNLnyoIyKr+LwUSJHqaOlfhPOTy8sRxKaDFLmIFIHs/tBLS1W4qwu2a7TQjhw0w==
+"@storybook/addon-options@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0.tgz#51d5413aa1e02ac97a884192d91df1809b9d306f"
+  integrity sha512-8JBfZmyScLh6XYi6z6r6Px3pg6zR5yduftsRHuiPxgqOK39EKTqXwSNJVWAR3gNLiBG/nFIBmJF7TBlkRO/saA==
   dependencies:
-    "@storybook/addons" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0-rc.3.tgz#1ae2f8a634995210bc40fd1b3419204d4bcdbb88"
-  integrity sha512-R6Nr9lzSYFyuzFBvdhTMZ6mn7ns0Cb4sJTMdC9cw53qaJPHtZR81mmDQtYmAw40ZtbJQOZ01ydsKgU8lDjCjqg==
+"@storybook/addons@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0.tgz#b71b545a735b902fa62934ac98fd262b65c924f7"
+  integrity sha512-hIYM9I/7ZV5bojQiuOwQTPWQT/wBYB8iCY9yi3BiL1/ob/YOf8xeSmi4NGecCyPd2j0CKIB+vxvEv/6X3tgclQ==
   dependencies:
-    "@storybook/channels" "4.0.0-rc.3"
-    "@storybook/components" "4.0.0-rc.3"
+    "@storybook/channels" "4.0.0"
+    "@storybook/components" "4.0.0"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-rc.3.tgz#1ae940fb7a57b8e571f6c753ab6595790a0e3d4c"
-  integrity sha512-dVks9bRv/+FlE8By/M3SREWBIjil3pX66Zp3o3KguQTCBJ3kAmDrcxP/ExSCbWASXX4M5daHx4Jeoyanq2zb/w==
+"@storybook/channel-postmessage@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0.tgz#08d3911776f3ca559c42f5c978f80164ae848f01"
+  integrity sha512-KgBpgPUPl7rHEZ39ljzyK89aR1UWtb2Y6bAyHbhxy3o8qdinTS12tmSv9xOH/AgkSnp+AAgnkpS1hP7jSPN8yw==
   dependencies:
-    "@storybook/channels" "4.0.0-rc.3"
+    "@storybook/channels" "4.0.0"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0-rc.3.tgz#2a500b8dab69199ba03674c0bbbd546ae38ee004"
-  integrity sha512-YM8Se2yel+U9IKOwuvr/RaFalxa+kItEVk4ZL15xa71X5mywwDQQEYWlDGKTDIpJy7NviETu08okBOyoRPifFA==
+"@storybook/channels@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0.tgz#b712d711f67966028dbff5c57e6ddc6f53d5cbac"
+  integrity sha512-VJdct5WajZweZgl532ufGZKefk0kI8QI+SCWW93YEPrvgo+vGPBOlsZpWNZw0ozhESgnJwvSjNWYZYsSt/j1dQ==
 
-"@storybook/client-logger@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0-rc.3.tgz#52ed80c8580bd4900e306f18b335b4d9a585a788"
-  integrity sha512-+6fgCRjxr5v45nk1h40Tpw4alHmcSIkHiySO5x82CO3O1ZB6m4kJFEpbNMjd9WEVcKexIjWKvtVISGawUgIr7g==
+"@storybook/client-logger@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0.tgz#19bc4bda50cb9f0ceae0f58b3473337fb973b803"
+  integrity sha512-5V17VvvPck/dnqo2h04AeSeWTiy+x6KgXgjjIIoZzH8hD+ZhOVniacx8+beijzc1e4mIcZfW/7Hjuqogi6UQDQ==
 
-"@storybook/components@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0-rc.3.tgz#c079ab6edacceb276c8e0c18d56346da22eb64ff"
-  integrity sha512-tRqzheXJbmdZ6R0QJPKNiEfXuV6FS5/Pio4gQR/gpdgLUbbtsDIxJ6q+zBvtNtInK5ClWHppxGzfKozERezBhg==
+"@storybook/components@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0.tgz#5006f5b423eb1ae8b97fc82710b532c0e1b45805"
+  integrity sha512-H/jXW96OTUdDuJBltt5Cx+svLFH7BnAvU+XAb+/O/55ikxLoYJjtq+HnyZx3oY/y6br6mBESdOiovZisAnffhQ==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
@@ -953,15 +953,15 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0-rc.3.tgz#d4122b1b84a4278e331e693c69d7a0e526d876f1"
-  integrity sha512-wDq2GEyvp01xYV296DUdcRtihN0MzgzKfcifpOMKXEHaFR7xyrkr5hghwx2nuQtso7lH7kElyRiWIR9JWUPcKg==
+"@storybook/core-events@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0.tgz#9fc5e094044f161e4484139833c4cc2e743ec34c"
+  integrity sha512-RShVYSb8oB5ZGjxqZGAQuiHCYn+LCI9yFE2VLAc8a0UM4C+kQWxtFxIxjYgmF/ewTctz+Vl8miBAH3MhEDNXyA==
 
-"@storybook/core@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0-rc.3.tgz#8dcccf3c84fba26b7f6a6aca8651dc08544b230c"
-  integrity sha512-wp428qLt3cJirCXDoQVQZwIccuXrZEdU5qayPCausugQ4yCodxOjuotLiuXz9Q0yFN/yUn7gwxmfbYOjR4IoPA==
+"@storybook/core@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0.tgz#63b17855ab0106d34d159caf5fd7d8f193e9e0fe"
+  integrity sha512-Guha9o7L2SBlP/tqm3tkl0cY6iQrK/uDg5hh6Me7ntMgBm5I41M3VKF1C7NSkR5CWwx6l8FK24/lC8TC+QoHgA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-transform-regenerator" "^7.0.0"
@@ -971,12 +971,12 @@
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0-rc.3"
-    "@storybook/channel-postmessage" "4.0.0-rc.3"
-    "@storybook/client-logger" "4.0.0-rc.3"
-    "@storybook/core-events" "4.0.0-rc.3"
-    "@storybook/node-logger" "4.0.0-rc.3"
-    "@storybook/ui" "4.0.0-rc.3"
+    "@storybook/addons" "4.0.0"
+    "@storybook/channel-postmessage" "4.0.0"
+    "@storybook/client-logger" "4.0.0"
+    "@storybook/core-events" "4.0.0"
+    "@storybook/node-logger" "4.0.0"
+    "@storybook/ui" "4.0.0"
     airbnb-js-shims "^1 || ^2"
     autoprefixer "^9.2.1"
     babel-plugin-macros "^2.4.2"
@@ -1019,7 +1019,7 @@
     style-loader "^0.23.1"
     svg-url-loader "^2.3.2"
     url-loader "^1.1.2"
-    webpack "^4.21.0"
+    webpack "^4.23.1"
     webpack-dev-middleware "^3.4.0"
     webpack-hot-middleware "^2.24.3"
 
@@ -1032,19 +1032,12 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0-rc.3.tgz#c682315db2e105a238454c6ca9b11d508147e570"
-  integrity sha512-T3NqndTBfpaino6/gKXMQyoddXykkMVDp4clyvGZzgu3uh5KKrbbGsCud4v2NRWPH4dhZC9Qi32/Fg4j3IvE9g==
+"@storybook/node-logger@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0.tgz#92d103de080918b12d4184dfd1857a6825f761b1"
+  integrity sha512-c/x6xPs/vvFQbtIB5VSLj73X1RYAC4wOrSBLgnKM3ebBbl/IFQjySHArn8Kj4x4XeYPxEPXD0AQ/GNvqmR9r1Q==
   dependencies:
     "@babel/runtime" "^7.1.2"
-    npmlog "^4.1.2"
-
-"@storybook/node-logger@^3.4.11":
-  version "3.4.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-3.4.11.tgz#a6684a4c21f74dae937cd9f202deec0932d3f3b5"
-  integrity sha512-eCjvZsCwZTcjDOeG7JDEVs5bugyybpAFu/4+X3hfikxGBBjnx2NtjJIfIsriUKa1O559+aFGUG73wogYAjudhg==
-  dependencies:
     npmlog "^4.1.2"
 
 "@storybook/podda@^1.2.3":
@@ -1055,7 +1048,7 @@
     babel-runtime "^6.11.6"
     immutable "^3.8.1"
 
-"@storybook/react-komposer@^2.0.1", "@storybook/react-komposer@^2.0.4":
+"@storybook/react-komposer@^2.0.1":
   version "2.0.4"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react-komposer/-/react-komposer-2.0.4.tgz#c2c0d4a75d9b4a9c0c6b46f14ab050f458ad4bb0"
   integrity sha1-wsDUp12bSpwMa0bxSrBQ9FitS7A=
@@ -1065,6 +1058,17 @@
     hoist-non-react-statics "^1.2.0"
     lodash.pick "^4.4.0"
     shallowequal "^0.2.2"
+
+"@storybook/react-komposer@^2.0.5":
+  version "2.0.5"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react-komposer/-/react-komposer-2.0.5.tgz#0c23163f28b2e1bd2aeeb4421fed382bb512de0e"
+  integrity sha512-zX5UITgAh37tmD0MWnUFR29S5YM8URMHc/9iwczX/P1f3tM4nPn8VAzxG/UWQecg1xZVphmqkZoux+SDrtTZOQ==
+  dependencies:
+    "@storybook/react-stubber" "^1.0.0"
+    babel-runtime "^6.11.6"
+    hoist-non-react-statics "^1.2.0"
+    lodash "^4.17.11"
+    shallowequal "^1.1.0"
 
 "@storybook/react-simple-di@^1.2.1":
   version "1.3.0"
@@ -1083,42 +1087,43 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0-rc.3.tgz#1bc87ec246224e8cb716bfc30f416b8028dbf061"
-  integrity sha512-ZZDwLICI9yBFQ2267acMXpBvE/xiOLdu8yDLONR5c3h4LWwHdE2uXTAwkefWSRIlhjwcA2invRLlRLg4I1yd/w==
+"@storybook/react@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0.tgz#716c00367ab8f1294850567330f4dfbc8ab79db4"
+  integrity sha512-8svBcv+sdVUkLI5Z0BFB/ZnTTv2L8x2kfYBotWysehGz49y72XY6VzDJkuuTx6q/IZy0ZtlmKXiZvnaRqtkscw==
   dependencies:
     "@babel/preset-flow" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
     "@babel/runtime" "^7.1.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/core" "4.0.0-rc.3"
-    "@storybook/node-logger" "^3.4.11"
+    "@storybook/core" "4.0.0"
+    "@storybook/node-logger" "4.0.0"
     babel-plugin-react-docgen "^2.0.0"
     common-tags "^1.8.0"
     global "^4.3.2"
     lodash "^4.17.11"
+    mini-css-extract-plugin "^0.4.4"
     prop-types "^15.6.2"
     react-dev-utils "^6.0.5"
     semver "^5.6.0"
-    webpack "^4.21.0"
+    webpack "^4.23.1"
 
-"@storybook/ui@4.0.0-rc.3":
-  version "4.0.0-rc.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0-rc.3.tgz#455d50a13613bda53ece7b0be49da5bdb6ad124f"
-  integrity sha512-UfFMrhonTEJcxuo6Snizcj/Vv/UrF5B6V3oFwhAu+u8CvwjjlstN/7X/oR71aSPP/DROVXWhjd4WaScAX8QMfA==
+"@storybook/ui@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0.tgz#22997bbf2bde13a829153d134fca484cf85ee5a6"
+  integrity sha512-yBsGKNZQDyw53+Q3BrjHIvTrgCHL4YsGxac74KjvtuhZAteXY9rnOp9h7V6RPUTONBJwKwRUNtapSJJX+JFg0A==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/components" "4.0.0-rc.3"
-    "@storybook/core-events" "4.0.0-rc.3"
+    "@storybook/components" "4.0.0"
+    "@storybook/core-events" "4.0.0"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
-    "@storybook/react-komposer" "^2.0.4"
+    "@storybook/react-komposer" "^2.0.5"
     deep-equal "^1.0.1"
     events "^3.0.0"
-    fuse.js "^3.2.1"
+    fuse.js "^3.3.0"
     global "^4.3.2"
     keycode "^2.2.0"
     lodash "^4.17.11"
@@ -1205,15 +1210,6 @@
   integrity sha512-qC4WuEiQWp8MhkYgpaYtlZY04cR6VQSy4Cz/83K5maAtj+/zEvdX4BsNxYhZjMS9q1S1/tJdyCmWOSN1tkswJg==
   dependencies:
     "@types/react" "*"
-
-"@types/react-datepicker@1.1.7":
-  version "1.1.7"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-datepicker/-/react-datepicker-1.1.7.tgz#0722040fbd0d3d39c3fdec21d2559acb9b15ec0a"
-  integrity sha512-zVztg+0vxR2IA6GQxQtutNCljQI/R8lVlLgfYfVALC3bcqCuo4vtoxF+2r4FEmvJwdi91MbuTgkyPWZ4uTG3GQ==
-  dependencies:
-    "@types/react" "*"
-    moment ">=2.14.0"
-    popper.js "^1.14.1"
 
 "@types/react-dom@*":
   version "16.0.8"
@@ -4649,10 +4645,15 @@ function.prototype.name@^1.1.0:
     function-bind "^1.1.1"
     is-callable "^1.1.3"
 
-fuse.js@^3.0.1, fuse.js@^3.2.1:
+fuse.js@^3.0.1:
   version "3.2.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fuse.js/-/fuse.js-3.2.1.tgz#6320cb94ce56ec9755c89ade775bcdbb0358d425"
   integrity sha1-YyDLlM5W7JdVyJred1vNuwNY1CU=
+
+fuse.js@^3.3.0:
+  version "3.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fuse.js/-/fuse.js-3.3.0.tgz#1e4fe172a60687230fb54a5cb247eb96e2e7e885"
+  integrity sha512-ESBRkGLWMuVkapqYCcNO1uqMg5qbCKkgb+VS6wsy17Rix0/cMS9kSOZoYkjH8Ko//pgJ/EEGu0GTjk2mjX2LGQ==
 
 gauge@~2.7.3:
   version "2.7.4"
@@ -6678,6 +6679,15 @@ min-document@^2.19.0:
   dependencies:
     dom-walk "^0.1.0"
 
+mini-css-extract-plugin@^0.4.4:
+  version "0.4.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/mini-css-extract-plugin/-/mini-css-extract-plugin-0.4.4.tgz#c10410a004951bd3cedac1da69053940fccb625d"
+  integrity sha512-o+Jm+ocb0asEngdM6FsZWtZsRzA8koFUudIDwYUfl94M3PejPHG7Vopw5hN9V8WsMkSFpm3tZP3Fesz89EyrfQ==
+  dependencies:
+    loader-utils "^1.1.0"
+    schema-utils "^1.0.0"
+    webpack-sources "^1.1.0"
+
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz#2e194de044626d4a10e7f7fbc00ce73e83e4d5c7"
@@ -6764,7 +6774,7 @@ mkdirp@0.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-moment@2.22.2, moment@>=2.14.0:
+moment@2.22.2:
   version "2.22.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
   integrity sha1-PCV/mDn8DpP/UxSWMiOeuQeD/2Y=
@@ -7959,16 +7969,6 @@ react-color@^2.14.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-datepicker@1.6.0:
-  version "1.6.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-datepicker/-/react-datepicker-1.6.0.tgz#6b7a87e949f3bbd94872554be6a0119bd908a987"
-  integrity sha512-wfFfw3Tn+CCTtP7PPPhSAfkfVT3UTifFb8BmuhtwWKK3g4S83EEPRQE18XFtxd22dKGqp336NVtDTTyUJ1p9+g==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.6.0"
-    react-onclickoutside "^6.7.1"
-    react-popper "^0.9.1"
-
 react-dev-utils@^6.0.5:
   version "6.0.5"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dev-utils/-/react-dev-utils-6.0.5.tgz#6ef34d0a416dc1c97ac20025031ea1f0d819b21d"
@@ -8097,11 +8097,6 @@ react-modal@^3.6.1:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
-react-onclickoutside@^6.7.1:
-  version "6.7.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-onclickoutside/-/react-onclickoutside-6.7.1.tgz#6a5b5b8b4eae6b776259712c89c8a2b36b17be93"
-  integrity sha512-p84kBqGaMoa7VYT0vZ/aOYRfJB+gw34yjpda1Z5KeLflg70HipZOT+MXQenEhdkPAABuE2Astq4zEPdMqUQxcg==
-
 react-popper@1.0.2:
   version "1.0.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-popper/-/react-popper-1.0.2.tgz#0e72f338b7f15ab9f9ec884e36ae0dad78a3e301"
@@ -8113,14 +8108,6 @@ react-popper@1.0.2:
     prop-types "^15.6.1"
     typed-styles "^0.0.5"
     warning "^3.0.0"
-
-react-popper@^0.9.1:
-  version "0.9.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-popper/-/react-popper-0.9.5.tgz#02a24ef3eec33af9e54e8358ab70eb0e331edd05"
-  integrity sha1-AqJO8+7DOvnlToNYq3DrDjMe3QU=
-  dependencies:
-    popper.js "^1.14.1"
-    prop-types "^15.6.1"
 
 react-redux@5.0.7:
   version "5.0.7"
@@ -10043,10 +10030,10 @@ webpack@4.20.2:
     watchpack "^1.5.0"
     webpack-sources "^1.3.0"
 
-webpack@^4.21.0:
-  version "4.23.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.23.0.tgz#0cfbf324b7f6789ac2e6c98fa83eabe96fa56232"
-  integrity sha512-Osh/3U9y4swhEKDjy8fF48v2Qx5VC6VvdQ8bEm1HMaVVddiQBw4+mIyDrzVcVRCPT/+4uJFOcklPuoB+I3Zw0w==
+webpack@^4.23.1:
+  version "4.23.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/webpack/-/webpack-4.23.1.tgz#db7467b116771ae020c58bdfe2a0822785bb8239"
+  integrity sha512-iE5Cu4rGEDk7ONRjisTOjVHv3dDtcFfwitSxT7evtYj/rANJpt1OuC/Kozh1pBa99AUBr1L/LsaNB+D9Xz3CEg==
   dependencies:
     "@webassemblyjs/ast" "1.7.10"
     "@webassemblyjs/helper-module-context" "1.7.10"

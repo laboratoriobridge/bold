@@ -313,7 +313,7 @@ exports[`should be rendered correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-52 {
+.emotion-55 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -321,7 +321,7 @@ exports[`should be rendered correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-52:hover {
+.emotion-55:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -349,7 +349,6 @@ exports[`should be rendered correctly 1`] = `
           label="Date test"
           name="test"
           placeholder="dd/mm/yyyy"
-          value=""
         />
         <span
           class="emotion-4"
@@ -824,7 +823,7 @@ exports[`should be rendered correctly 1`] = `
                   data-date="2018-10-26"
                 >
                   <span
-                    class="emotion-52"
+                    class="emotion-27"
                     role="button"
                   >
                     26
@@ -856,7 +855,7 @@ exports[`should be rendered correctly 1`] = `
                   data-date="2018-10-29"
                 >
                   <span
-                    class="emotion-27"
+                    class="emotion-55"
                     role="button"
                   >
                     29
