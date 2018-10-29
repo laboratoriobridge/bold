@@ -47,7 +47,7 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
 
     return {
         gray: config.grayScale,
-        divider: config.grayScale.c90,
+        divider: config.grayScale.c80,
         highlight: '#FFED94',
         primary: {
             ...config.primaryScale,

@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #F2F2F7;
+  border: 1px solid #DCDCE0;
   height: 40px;
 }
 
@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-22 {
-  border-left: 1px solid #F2F2F7;
+  border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -85,7 +85,7 @@ exports[`renders correctly 1`] = `
   margin: 0;
   padding: 0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #F2F2F7;
+  border: 1px solid #DCDCE0;
   border-radius: 2px;
   display: inline-block;
   width: auto;
@@ -460,7 +460,7 @@ exports[`renders without pagination 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #F2F2F7;
+  border: 1px solid #DCDCE0;
   height: 40px;
 }
 
