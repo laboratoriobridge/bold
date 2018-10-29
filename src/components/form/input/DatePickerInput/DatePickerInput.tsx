@@ -14,6 +14,12 @@ export interface DatePickerInputProps extends WithStylesProps, DateInputProps {
 @withStyles
 export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
+    static defaultProps: Partial<DatePickerInputProps> = {
+        onChange: () => null,
+        onBlur: () => null,
+        onFocus: () => null,
+    }
+
     render() {
         const { value } = this.props
         return (
@@ -33,9 +39,11 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
     renderTarget = (ctrl: PopperController) => {
         return (
             <DateInput
-                icon={{ icon: 'calendar', position: 'right', onClick: ctrl.show }}
                 {...this.props}
+                icon={{ icon: 'calendar', position: 'right', onClick: ctrl.show }}
+                onChange={this.handleInputChange}
                 onFocus={this.handleFocus(ctrl)}
+                onBlur={this.handleBlur(ctrl)}
             />
         )
     }
@@ -45,9 +53,17 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
         return this.props.onChange(day)
     }
 
+    handleInputChange = (date) => {
+        return this.props.onChange(date)
+    }
+
     handleFocus = (ctrl: PopperController) => (e) => {
         ctrl.show()
         return this.props.onFocus(e)
+    }
+
+    handleBlur = (ctrl: PopperController) => (e) => {
+        return this.props.onBlur(e)
     }
 }
 

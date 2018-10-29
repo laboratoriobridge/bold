@@ -7,9 +7,9 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { TextField } from './TextField'
 
-storiesOf('Form/Fields', module)
+storiesOf('Form/TextField', module)
     .addDecorator(withForm())
-    .add('TextField', () => (
+    .add('default', () => (
         <TextField
             disabled={boolean('disabled', false)}
             name='nome'
@@ -19,10 +19,10 @@ storiesOf('Form/Fields', module)
             required
         />
     ))
-    .add('TextField password', () =>
-        <TextField name='senha' label='Senha' placeholder='Senha' type='password' required />
+    .add('password', () =>
+        <TextField name='password' label='Password' placeholder='Type your password...' type='password' required />
     )
-    .add('TextField with icon', () => (
+    .add('with icon', () => (
         <TextField
             name='iconized'
             label='Input with icon'

@@ -23,11 +23,11 @@ export class DateInput extends React.Component<DateInputProps> {
     }
 
     render() {
-        const { value } = this.props
+        const { value, ...rest } = this.props
         return (
             <MaskedInput
-                {...this.props}
-                value={value && formatter.format(value)}
+                {...rest}
+                value={value ? formatter.format(value) : undefined}
                 mask={masks.date}
                 onChange={this.handleChange}
                 placeholder='dd/mm/yyyy'
@@ -37,19 +37,16 @@ export class DateInput extends React.Component<DateInputProps> {
     }
 
     handleChange = (e) => {
-        const value = e.target.value
+        const value: string = e.target.value
 
         if (!value) {
             this.props.onChange(null)
         }
 
-        const match = value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
-
-        try {
-            const date = new Date(match[3], match[2] - 1, match[1])
+        const match: RegExpMatchArray = value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
+        if (match) {
+            const date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
             this.props.onChange(date)
-        } catch (err) {
-            // noop
         }
     }
 }

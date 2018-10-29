@@ -8,13 +8,13 @@ import { withForm } from '../../../../stories-addons'
 import { CheckboxField } from './CheckboxField'
 import * as Doc from './CheckboxField.md'
 
-storiesOf('Form/Fields', module)
+storiesOf('Form/CheckboxField', module)
     // @ts-ignore
     .addParameters({
         info: { text: Doc },
     })
     .addDecorator(withForm())
-    .add('CheckboxField', () => (
+    .add('default', () => (
         <CheckboxField
             name='check'
             label={text('label', 'Component label')}

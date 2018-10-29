@@ -8,9 +8,9 @@ import { Flow } from '../../../layout/Flow/Flow'
 
 import { RadioField } from './RadioField'
 
-storiesOf('Form/Fields', module)
+storiesOf('Form/RadioField', module)
     .addDecorator(withForm())
-    .add('RadioField', () => (
+    .add('default', () => (
         <Flow>
             <RadioField
                 name='radio1'

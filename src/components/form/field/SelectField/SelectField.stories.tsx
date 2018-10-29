@@ -16,10 +16,10 @@ const options: DefaultOptionType[] = [
     { value: '5', label: 'Value #5' },
 ]
 
-storiesOf('Form/Fields/Select', module)
+storiesOf('Form/SelectField', module)
     .addDecorator(withRouter())
     .addDecorator(withForm())
-    .add('SelectField', () => (
+    .add('default', () => (
         <SelectField
             name='select'
             label={text('label', 'Component label')}
