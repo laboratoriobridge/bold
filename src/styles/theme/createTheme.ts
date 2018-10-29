@@ -5,7 +5,7 @@ import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createGlobals, Global } from './createGlobals'
 import { createPallete, Pallete, PalleteConfig, TextColor, textColorMap } from './createPallete'
 import { createShadows, Shadows } from './createShadows'
-import { createTypography, Typography } from './createTypography'
+import { createTypography, Typography, TypographyConfig } from './createTypography'
 import { radius, Radius } from './radius'
 import { zIndex, ZIndex } from './zIndex'
 
@@ -20,11 +20,14 @@ export interface Theme {
     animation: any
 }
 
-export interface ThemeConfig extends PalleteConfig { }
+export type ThemeConfig = Partial<{
+    pallete: PalleteConfig
+    typography: TypographyConfig
+}>
 
-export const createTheme = (config?: ThemeConfig): Theme => {
-    const pallete = createPallete(config)
-    const typography = createTypography()
+export const createTheme = (config: ThemeConfig = {}): Theme => {
+    const pallete = createPallete(config.pallete)
+    const typography = createTypography(config.typography)
 
     return {
         pallete,
