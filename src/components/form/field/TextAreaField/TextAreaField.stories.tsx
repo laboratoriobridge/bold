@@ -7,9 +7,9 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { TextAreaField } from './TextAreaField'
 
-storiesOf('Form/Fields', module)
+storiesOf('Form/TextAreaField', module)
     .addDecorator(withForm())
-    .add('TextAreaField', () => (
+    .add('default', () => (
         <TextAreaField
             disabled={boolean('disabled', false)}
             name='nome'

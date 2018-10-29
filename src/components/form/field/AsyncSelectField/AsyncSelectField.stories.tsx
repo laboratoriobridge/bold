@@ -26,9 +26,9 @@ const loadOptions = (query: string, callback) => {
     })
 }
 
-storiesOf('Form/Fields/Select', module)
+storiesOf('Form/AsyncSelectField', module)
     .addDecorator(withForm())
-    .add('AsyncSelectField', () => (
+    .add('default', () => (
         // tslint:disable jsx-no-lambda
         <AsyncSelectField
             name='select'

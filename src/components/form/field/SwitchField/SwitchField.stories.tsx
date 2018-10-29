@@ -7,9 +7,9 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { SwitchField } from './SwitchField'
 
-storiesOf('Form/Fields', module)
+storiesOf('Form/SwitchField', module)
     .addDecorator(withForm())
-    .add('SwitchField', () => (
+    .add('default', () => (
         <SwitchField
             name='switch'
             label={text('label', '')}
