@@ -30,7 +30,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-7 {
-  border: 1px solid #F2F2F7;
+  border: 1px solid #DCDCE0;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;

@@ -4,7 +4,7 @@ exports[`TableHead should accept the style prop 1`] = `
 .emotion-3 {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #F2F2F7;
+  border: 1px solid #DCDCE0;
 }
 
 .emotion-2 {
@@ -14,7 +14,7 @@ exports[`TableHead should accept the style prop 1`] = `
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #F2F2F7;
+  border-bottom: 1px solid #DCDCE0;
 }
 
 <table
