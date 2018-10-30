@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly 1`] = `
+exports[`Calendar should render correctly 1`] = `
 .emotion-0 {
   width: 288px;
 }
@@ -35,4 +35,50 @@ exports[`should render correctly 1`] = `
     visibleDate={2018-10-26T00:00:00.000Z}
   />
 </div>
+`;
+
+exports[`createDayStyles should return merged styles from all modifiers that apply 1`] = `
+Object {
+  ":hover": Object {
+    "background": "#0A67D1",
+    "color": "#FFFFFF",
+  },
+  "background": "#0A67D1",
+  "color": "#FFFFFF",
+  "fontWeight": "bold",
+}
+`;
+
+exports[`modifierStyles should have "adjacentMonth" styles 1`] = `
+Object {
+  "color": "#B9B9BD",
+}
+`;
+
+exports[`modifierStyles should have "disabled" styles 1`] = `
+Object {
+  ":hover": Object {
+    "background": "initial",
+    "cursor": "not-allowed",
+  },
+  "color": "#B9B9BD",
+}
+`;
+
+exports[`modifierStyles should have "selected" styles 1`] = `
+Object {
+  ":hover": Object {
+    "background": "#0A67D1",
+    "color": "#FFFFFF",
+  },
+  "background": "#0A67D1",
+  "color": "#FFFFFF",
+  "fontWeight": "bold",
+}
+`;
+
+exports[`modifierStyles should have "today" styles 1`] = `
+Object {
+  "fontWeight": "bold",
+}
 `;

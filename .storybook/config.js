@@ -9,7 +9,7 @@ addDecorator(withOptions({
   name: 'Bridge React',
   url: 'https://github.com/laboratoriobridge/bridge-react',
   addonPanelInRight: true,
-  sortStoriesByKind: true,
+  sortStoriesByKind: false,
   selectedAddonPanel: 'storybooks/storybook-addon-knobs',
 }))
 addDecorator(withInfo({
