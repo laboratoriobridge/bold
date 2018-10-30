@@ -307,7 +307,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-54 {
+.emotion-55 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -315,7 +315,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
   font-weight: bold;
 }
 
-.emotion-54:hover {
+.emotion-55:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -839,7 +839,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
                 data-date="2018-10-29"
               >
                 <span
-                  class="emotion-54"
+                  class="emotion-26"
                   role="button"
                 >
                   29
@@ -849,7 +849,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
                 data-date="2018-10-30"
               >
                 <span
-                  class="emotion-26"
+                  class="emotion-55"
                   role="button"
                 >
                   30
@@ -1211,7 +1211,7 @@ exports[`deve renderizar corretamente 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-54 {
+.emotion-55 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1219,7 +1219,7 @@ exports[`deve renderizar corretamente 1`] = `
   font-weight: bold;
 }
 
-.emotion-54:hover {
+.emotion-55:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -1742,7 +1742,7 @@ exports[`deve renderizar corretamente 1`] = `
                 data-date="2018-10-29"
               >
                 <span
-                  class="emotion-54"
+                  class="emotion-26"
                   role="button"
                 >
                   29
@@ -1752,7 +1752,7 @@ exports[`deve renderizar corretamente 1`] = `
                 data-date="2018-10-30"
               >
                 <span
-                  class="emotion-26"
+                  class="emotion-55"
                   role="button"
                 >
                   30

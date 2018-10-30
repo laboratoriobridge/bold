@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { Calendar, CalendarProps } from '../../../elements/Calendar'
+import { isSameDay } from '../../../elements/Calendar/util'
 import { Popper, PopperController } from '../../../elements/Popper'
 
 import { DateInput, DateInputProps } from './DateInput'
@@ -28,8 +29,10 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
                     <CalendarPopup
                         key={value && value.getTime()}
                         initialVisibleDate={value || new Date()}
-                        activeDate={value}
                         onDayClick={this.handleDayClick(ctrl)}
+                        modifiers={{
+                            selected: (day) => value && isSameDay(day, value),
+                        }}
                     />
                 )}
             </Popper>

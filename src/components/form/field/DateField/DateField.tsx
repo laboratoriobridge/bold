@@ -36,7 +36,7 @@ export class DateField extends React.Component<DateFieldProps> {
     }
 
     format = (value: string) => {
-        return value ? new Date(value) : null
+        return value ? new Date(value + 'T00:00:00') : null
     }
 
 }
