@@ -4,9 +4,11 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm } from '../../../../stories-addons/withForm'
-import { DateInput } from '../../input/DatePickerInput/DateInput'
+import { DateInput } from '../../input/DateInput/DateInput'
 
 import { DateField } from './DateField'
+
+const todayMinus10 = new Date((new Date()).setDate(new Date().getDate() - 10))
 
 storiesOf('Form/DateField', module)
     .addDecorator(withForm())
@@ -16,6 +18,17 @@ storiesOf('Form/DateField', module)
             label='Data'
             disabled={boolean('disabled', false)}
             onChange={action('changed')}
+            required
+        />
+    ))
+    .add('min/max date', () => (
+        <DateField
+            name='date'
+            label='Data'
+            disabled={boolean('disabled', false)}
+            onChange={action('changed')}
+            minDate={todayMinus10}
+            maxDate={new Date()}
             required
         />
     ))

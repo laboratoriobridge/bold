@@ -13,7 +13,7 @@ export * from './field/TextAreaField/TextAreaField'
 
 export * from './input/AsyncSelect/AsyncSelect'
 export * from './input/Checkbox/Checkbox'
-export * from './input/DatePickerInput/DatePickerInput'
+export * from './input/DateInput'
 export * from './input/Input/Input'
 export * from './input/InputIconDecorator/InputIconDecorator'
 export * from './input/MaskedInput/MaskedInput'

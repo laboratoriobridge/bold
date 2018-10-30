@@ -8,11 +8,23 @@ import { Popper, PopperController } from '../../../elements/Popper'
 
 import { DateInput, DateInputProps } from './DateInput'
 
-export interface DatePickerInputProps extends WithStylesProps, DateInputProps {
+export interface DatePickerInputProps extends DateInputProps {
+    /**
+     * Minimum date that can be selected in the calendar
+     */
+    minDate?: Date
 
+    /**
+     * Maximum date that can be selected in the calendar.
+     */
+    maxDate?: Date
+
+    /**
+     * Props delegated to the Calendar
+     */
+    calendarProps?: CalendarProps
 }
 
-@withStyles
 export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
     static defaultProps: Partial<DatePickerInputProps> = {
@@ -22,7 +34,7 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
     }
 
     render() {
-        const { value } = this.props
+        const { value, calendarProps } = this.props
         return (
             <Popper renderTarget={this.renderTarget} placement='bottom-start' block>
                 {(ctrl: PopperController) => (
@@ -32,7 +44,9 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
                         onDayClick={this.handleDayClick(ctrl)}
                         modifiers={{
                             selected: (day) => value && isSameDay(day, value),
+                            disabled: disableByRange(this.props.minDate, this.props.maxDate),
                         }}
+                        {...calendarProps}
                     />
                 )}
             </Popper>
@@ -40,10 +54,11 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
     }
 
     renderTarget = (ctrl: PopperController) => {
+        const { calendarProps, minDate, maxDate, ...rest } = this.props
         return (
             <DateInput
-                {...this.props}
                 icon={{ icon: 'calendar', position: 'right', onClick: ctrl.show }}
+                {...rest}
                 onChange={this.handleInputChange}
                 onFocus={this.handleFocus(ctrl)}
                 onBlur={this.handleBlur(ctrl)}
@@ -85,5 +100,17 @@ class CalendarPopup extends React.PureComponent<CalendarProps & WithStylesProps>
                 <Calendar {...rest} />
             </div>
         )
+    }
+}
+
+export const disableByRange = (minDate?: Date, maxDate?: Date) => {
+    const realMinDate = new Date(minDate)
+    realMinDate.setHours(0, 0, 0, 0)
+
+    const realMaxDate = new Date(maxDate)
+    realMaxDate.setHours(23, 59, 59, 999)
+
+    return (day: Date) => {
+        return (minDate && day < realMinDate) || (maxDate && day > realMaxDate)
     }
 }

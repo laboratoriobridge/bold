@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve conter a classe css "disabled" 1`] = `
+exports[`DatePickerInput should render correctly 1`] = `
 .emotion-5 {
   display: block;
 }
@@ -331,7 +331,6 @@ exports[`deve conter a classe css "disabled" 1`] = `
     >
       <input
         class="emotion-0"
-        disabled=""
         placeholder="dd/mm/yyyy"
       />
       <span
@@ -904,7 +903,7 @@ exports[`deve conter a classe css "disabled" 1`] = `
 </div>
 `;
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`DatePickerInput should render correctly when disabled 1`] = `
 .emotion-5 {
   display: block;
 }
@@ -1235,6 +1234,7 @@ exports[`deve renderizar corretamente 1`] = `
     >
       <input
         class="emotion-0"
+        disabled=""
         placeholder="dd/mm/yyyy"
       />
       <span

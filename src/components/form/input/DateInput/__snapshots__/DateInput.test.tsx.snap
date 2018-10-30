@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+<MaskedInput
+  mask={
+    Array [
+      /\\\\d/,
+      /\\\\d/,
+      "/",
+      /\\\\d/,
+      /\\\\d/,
+      "/",
+      /\\\\d/,
+      /\\\\d/,
+      /\\\\d/,
+      /\\\\d/,
+    ]
+  }
+  onChange={[Function]}
+  pipe={[Function]}
+  placeholder="dd/mm/yyyy"
+/>
+`;
+
+exports[`should render correctly 2`] = `
+<MaskedInput
+  mask={
+    Array [
+      /\\\\d/,
+      /\\\\d/,
+      "/",
+      /\\\\d/,
+      /\\\\d/,
+      "/",
+      /\\\\d/,
+      /\\\\d/,
+      /\\\\d/,
+      /\\\\d/,
+    ]
+  }
+  onChange={[Function]}
+  pipe={[Function]}
+  placeholder="dd/mm/yyyy"
+  value="10/30/2018"
+/>
+`;
