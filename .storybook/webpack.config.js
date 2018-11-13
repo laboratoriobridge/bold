@@ -15,9 +15,9 @@ module.exports = (baseConfig, env, config) => {
         include: [SRC_PATH],
         use: [
             require.resolve('awesome-typescript-loader'),
-            ...(env === 'PRODUCTION' ?
-                [require.resolve('react-docgen-typescript-loader')] : []
-            ),
+            // ...(env === 'PRODUCTION' ?
+            // [require.resolve('react-docgen-typescript-loader')] : []
+            // ),
         ],
     })
     config.module.rules.push({
