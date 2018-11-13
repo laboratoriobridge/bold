@@ -313,19 +313,6 @@ exports[`should be rendered correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-56 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.emotion-56:hover {
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
 <div
   data-name="test"
 >
@@ -865,7 +852,7 @@ exports[`should be rendered correctly 1`] = `
                   data-date="2018-10-30"
                 >
                   <span
-                    class="emotion-56"
+                    class="emotion-27"
                     role="button"
                   >
                     30

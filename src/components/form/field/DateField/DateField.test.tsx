@@ -7,7 +7,12 @@ import { DateField } from './DateField'
 
 it('should be rendered correctly', () => {
     const wrapper = render(withForm(
-        <DateField label='Date test' name='test' disabled={false} />
+        <DateField
+            label='Date test'
+            name='test'
+            disabled={false}
+            calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
+        />
     ))
     expect(wrapper).toMatchSnapshot()
 })
