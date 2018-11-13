@@ -9,11 +9,22 @@ import { DatePickerInput, disableByRange } from './DatePickerInput'
 
 describe('DatePickerInput', () => {
     it('should render correctly', () => {
-        const wrapper = render(withTheme(<DatePickerInput onChange={jest.fn()} />))
+        const wrapper = render(withTheme(
+            <DatePickerInput
+                onChange={jest.fn()}
+                calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
+            />
+        ))
         expect(wrapper).toMatchSnapshot()
     })
     it('should render correctly when disabled', () => {
-        const wrapper = render(withTheme(<DatePickerInput onChange={jest.fn()} disabled />))
+        const wrapper = render(withTheme(
+            <DatePickerInput
+                onChange={jest.fn()}
+                calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
+                disabled
+            />
+        ))
         expect(wrapper).toMatchSnapshot()
     })
     it('should set the disabled modifier when using minDate and maxDate props', () => {

@@ -307,19 +307,6 @@ exports[`DatePickerInput should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-55 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.emotion-55:hover {
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
 <div
   class="emotion-5"
 >
@@ -848,7 +835,7 @@ exports[`DatePickerInput should render correctly 1`] = `
                 data-date="2018-10-30"
               >
                 <span
-                  class="emotion-55"
+                  class="emotion-26"
                   role="button"
                 >
                   30
@@ -1206,19 +1193,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
 }
 
 .emotion-26:hover {
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
-.emotion-55 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.emotion-55:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -1752,7 +1726,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                 data-date="2018-10-30"
               >
                 <span
-                  class="emotion-55"
+                  class="emotion-26"
                   role="button"
                 >
                   30

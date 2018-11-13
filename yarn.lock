@@ -833,17 +833,30 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@emotion/weak-memoize/-/weak-memoize-0.1.3.tgz#b700d97385fa91affed60c71dfd51c67e9dad762"
   integrity sha512-QsYGKdhhuDFNq7bjm2r44y0mp5xW3uO3csuTPDWZc0OIiMQv+AIY5Cqwd4mJiC5N8estVl7qlvOx1hbtOuUWbw==
 
-"@storybook/addon-actions@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.0.tgz#7dfd5f2c2d180d38faa29d111ed3ed31ce1e84e0"
-  integrity sha512-yg+oCofxOxoYq4K7V7r0fwpuIUnmGvCkwrT8Rx/TOtAVk47PqSToLWCJDmy58b+yWa9nl+EukclVpr/H9AmZVA==
+"@mrmlnc/readdir-enhanced@^2.2.1":
+  version "2.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
+  integrity sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==
+  dependencies:
+    call-me-maybe "^1.0.1"
+    glob-to-regexp "^0.3.0"
+
+"@nodelib/fs.stat@^1.1.2":
+  version "1.1.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
+  integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
+
+"@storybook/addon-actions@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-actions/-/addon-actions-4.0.6.tgz#7dd73f2308cef35a1de6d63e200b878c1acc88d5"
+  integrity sha512-hMCaMCiVcaZGPflo9uiMRx2Iad0zc4Yuf+LywmLsDfcdsDqZMGi3vnoChTAITa6Ki6opqBdnl3q9uAN3ynWSBw==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0"
-    "@storybook/components" "4.0.0"
-    "@storybook/core-events" "4.0.0"
+    "@storybook/addons" "4.0.6"
+    "@storybook/components" "4.0.6"
+    "@storybook/core-events" "4.0.6"
     deep-equal "^1.0.1"
     global "^4.3.2"
     lodash "^4.17.11"
@@ -852,15 +865,15 @@
     react-inspector "^2.3.0"
     uuid "^3.3.2"
 
-"@storybook/addon-info@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.0.tgz#6d3b9b1f154f39158fb2c58c9b028e17aef5c359"
-  integrity sha512-sMwA0y9sLj+fs/1fiuUmHO9l2nOvuDGXg58EbwWfsnuiPQK5b4m4mNoZOaANRqfXv71fsvTD3oQaNoDtTfXnUw==
+"@storybook/addon-info@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-info/-/addon-info-4.0.6.tgz#5f0fa63f60b7eed75145767983a7f229fd86b4f2"
+  integrity sha512-ZH/sljuE4Cee90Yy3KmVqs9HBTsNY+M5UpIjIiMrW4jUNZHOAqv1M9RNYGbWonHhG0XS2oDHDQSCBL+DsUdzhg==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0"
-    "@storybook/client-logger" "4.0.0"
-    "@storybook/components" "4.0.0"
+    "@storybook/addons" "4.0.6"
+    "@storybook/client-logger" "4.0.6"
+    "@storybook/components" "4.0.6"
     core-js "2.5.7"
     global "^4.3.2"
     marksy "^6.1.0"
@@ -870,15 +883,15 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.0.tgz#0012a4ac39abd2fd72eb7eef1ff7641ec9af0c6c"
-  integrity sha512-6oovH0M3KOyBIggMUc8puMlmudbYRwaJrpovKOYkChu8Nq7Gz1B3MtHuPmkv/cylgOekz9XoLPlDYnjeR6G3cg==
+"@storybook/addon-knobs@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-knobs/-/addon-knobs-4.0.6.tgz#2b2d57325b8efa22db83a814aab1f63eca36227d"
+  integrity sha512-bw7emFoGcbIOlTlm9/TPkwoRLC6VAi+GwD6LFxPnprs8YkSRkjKfiWsQBE54DowMefuz7Mo1Unwq7VDr6/zfEg==
   dependencies:
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0"
-    "@storybook/components" "4.0.0"
-    "@storybook/core-events" "4.0.0"
+    "@storybook/addons" "4.0.6"
+    "@storybook/components" "4.0.6"
+    "@storybook/core-events" "4.0.6"
     copy-to-clipboard "^3.0.8"
     escape-html "^1.0.3"
     fast-deep-equal "^2.0.1"
@@ -889,58 +902,58 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-links@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.0.tgz#8b25148b2a3e30f0188070809c052a33abfb1617"
-  integrity sha512-a+durpAdlfWrQ1FYgJeWatMWohNk0PsxKBJBQ1OjgOaL3Al0J6GEcap2hr6fTzPBqnuhFwHD4pGGCEsWaqFwGA==
+"@storybook/addon-links@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-links/-/addon-links-4.0.6.tgz#63a2735005195c06f367cd9132a8b9c3065c9eac"
+  integrity sha512-UBMJe8XB+hL+pv6/MEX/SE6lLdoTgS1k+i9cpaF4m47Mbsc2djAGXT+gCSFdVaZQuyMA0C2xm2XRmfIJiT6wEw==
   dependencies:
-    "@storybook/addons" "4.0.0"
-    "@storybook/components" "4.0.0"
-    "@storybook/core-events" "4.0.0"
+    "@storybook/addons" "4.0.6"
+    "@storybook/components" "4.0.6"
+    "@storybook/core-events" "4.0.6"
     global "^4.3.2"
     prop-types "^15.6.2"
 
-"@storybook/addon-options@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.0.tgz#51d5413aa1e02ac97a884192d91df1809b9d306f"
-  integrity sha512-8JBfZmyScLh6XYi6z6r6Px3pg6zR5yduftsRHuiPxgqOK39EKTqXwSNJVWAR3gNLiBG/nFIBmJF7TBlkRO/saA==
+"@storybook/addon-options@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addon-options/-/addon-options-4.0.6.tgz#9a0ed45f7162215208b8b351c23107df9e78ee04"
+  integrity sha512-5TFYD1NE1eGPGcsWRvx08dfVIBwODgfdNCNBb33VnSLrEMqTu62UY2Na57hGqWjb9fSDFK4EgvXbzWM/it+ZZg==
   dependencies:
-    "@storybook/addons" "4.0.0"
+    "@storybook/addons" "4.0.6"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.0.tgz#b71b545a735b902fa62934ac98fd262b65c924f7"
-  integrity sha512-hIYM9I/7ZV5bojQiuOwQTPWQT/wBYB8iCY9yi3BiL1/ob/YOf8xeSmi4NGecCyPd2j0CKIB+vxvEv/6X3tgclQ==
+"@storybook/addons@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/addons/-/addons-4.0.6.tgz#4af486c113145c46bbe0d8b5cf6efa04d005a00a"
+  integrity sha512-OTxuUfDxLzXFltUfsHl7XlKdUB6bqsnH9P0QUwa5j57Zfy5v4r24D/C5iUzKQBAtIDFhLl55pwcTeb3x+OOnlA==
   dependencies:
-    "@storybook/channels" "4.0.0"
-    "@storybook/components" "4.0.0"
+    "@storybook/channels" "4.0.6"
+    "@storybook/components" "4.0.6"
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/channel-postmessage@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.0.tgz#08d3911776f3ca559c42f5c978f80164ae848f01"
-  integrity sha512-KgBpgPUPl7rHEZ39ljzyK89aR1UWtb2Y6bAyHbhxy3o8qdinTS12tmSv9xOH/AgkSnp+AAgnkpS1hP7jSPN8yw==
+"@storybook/channel-postmessage@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channel-postmessage/-/channel-postmessage-4.0.6.tgz#8fe6261926b21b5349c3f27d1a356ec0e11b6fff"
+  integrity sha512-FNeAK1BMgyXVH2c5zTu2f+ACYLfMY5EE98PJlpIaFwLw3PN9Kqgt48r/SfMQkuiSjBn5YsoZwPzXRUy1uCvGCw==
   dependencies:
-    "@storybook/channels" "4.0.0"
+    "@storybook/channels" "4.0.6"
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.0.tgz#b712d711f67966028dbff5c57e6ddc6f53d5cbac"
-  integrity sha512-VJdct5WajZweZgl532ufGZKefk0kI8QI+SCWW93YEPrvgo+vGPBOlsZpWNZw0ozhESgnJwvSjNWYZYsSt/j1dQ==
+"@storybook/channels@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/channels/-/channels-4.0.6.tgz#479211c776fae9837d1537dd5468cfdf405ed49f"
+  integrity sha512-UxGOs3XuO2S8K9KTLwOLiX6bUYDtp3fGa/mb9wIL/S+tERrLcSRv+CaaNneAgEVuudaiOHjCso7W6cmZIKzrHQ==
 
-"@storybook/client-logger@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.0.tgz#19bc4bda50cb9f0ceae0f58b3473337fb973b803"
-  integrity sha512-5V17VvvPck/dnqo2h04AeSeWTiy+x6KgXgjjIIoZzH8hD+ZhOVniacx8+beijzc1e4mIcZfW/7Hjuqogi6UQDQ==
+"@storybook/client-logger@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/client-logger/-/client-logger-4.0.6.tgz#4c75fb555ac0c8ca6b543c9e0b6ee067d64c7d6f"
+  integrity sha512-Gak7O2um5nuKrUmlVse5OAOnQ/xHUoELmL8oWSt3y8WtKGh7PMPggaRg8xj7xNIN+AvxoVQb2KyrEmsV5/3QLg==
 
-"@storybook/components@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.0.tgz#5006f5b423eb1ae8b97fc82710b532c0e1b45805"
-  integrity sha512-H/jXW96OTUdDuJBltt5Cx+svLFH7BnAvU+XAb+/O/55ikxLoYJjtq+HnyZx3oY/y6br6mBESdOiovZisAnffhQ==
+"@storybook/components@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/components/-/components-4.0.6.tgz#9ff82a5b280295203f5ebabe1fb9668d7cf0e1b6"
+  integrity sha512-9xa+eIcb8OwlckwQwaPtwkfZXWLtmNz9yEHYf6mGjf7VOvS5oepxPsyk+a4/0EdDO9In6u1zX5DUdIYSL2vGRA==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
@@ -953,15 +966,15 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
-"@storybook/core-events@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.0.tgz#9fc5e094044f161e4484139833c4cc2e743ec34c"
-  integrity sha512-RShVYSb8oB5ZGjxqZGAQuiHCYn+LCI9yFE2VLAc8a0UM4C+kQWxtFxIxjYgmF/ewTctz+Vl8miBAH3MhEDNXyA==
+"@storybook/core-events@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core-events/-/core-events-4.0.6.tgz#4023ac7caba3f087ff5572b807aa6d6cd102f560"
+  integrity sha512-lExbWR55RLSi4erhRrBtBAgMdHu0xqnnxavkkaLZM9VaP331GVAWAtdS20H3QHdLrU56NZFX4sIPYlUeQDmfaA==
 
-"@storybook/core@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.0.tgz#63b17855ab0106d34d159caf5fd7d8f193e9e0fe"
-  integrity sha512-Guha9o7L2SBlP/tqm3tkl0cY6iQrK/uDg5hh6Me7ntMgBm5I41M3VKF1C7NSkR5CWwx6l8FK24/lC8TC+QoHgA==
+"@storybook/core@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/core/-/core-4.0.6.tgz#592dbb2de0e70ff0eca47d70bb4c1797dc8d25af"
+  integrity sha512-GDFWtSePiqKEyDah2YFkt4VPlDXga0eMhAfblkOI1vnCZ5f1xXulXe3/i0EoyyKAJ+Tlwhf98uFRIwmdSLyopA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-transform-regenerator" "^7.0.0"
@@ -971,14 +984,14 @@
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/addons" "4.0.0"
-    "@storybook/channel-postmessage" "4.0.0"
-    "@storybook/client-logger" "4.0.0"
-    "@storybook/core-events" "4.0.0"
-    "@storybook/node-logger" "4.0.0"
-    "@storybook/ui" "4.0.0"
+    "@storybook/addons" "4.0.6"
+    "@storybook/channel-postmessage" "4.0.6"
+    "@storybook/client-logger" "4.0.6"
+    "@storybook/core-events" "4.0.6"
+    "@storybook/node-logger" "4.0.6"
+    "@storybook/ui" "4.0.6"
     airbnb-js-shims "^1 || ^2"
-    autoprefixer "^9.2.1"
+    autoprefixer "^9.3.1"
     babel-plugin-macros "^2.4.2"
     babel-preset-minify "^0.5.0"
     boxen "^2.0.0"
@@ -988,7 +1001,7 @@
     commander "^2.19.0"
     common-tags "^1.8.0"
     core-js "^2.5.7"
-    css-loader "^1.0.0"
+    css-loader "^1.0.1"
     detect-port "^1.2.3"
     dotenv-webpack "^1.5.7"
     ejs "^2.6.1"
@@ -1010,7 +1023,7 @@
     prop-types "^15.6.2"
     qs "^6.5.2"
     raw-loader "^0.5.1"
-    react-dev-utils "^6.0.5"
+    react-dev-utils "^6.1.0"
     redux "^4.0.1"
     resolve "^1.8.1"
     semver "^5.6.0"
@@ -1032,10 +1045,10 @@
     "@storybook/react-simple-di" "^1.2.1"
     babel-runtime "6.x.x"
 
-"@storybook/node-logger@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.0.tgz#92d103de080918b12d4184dfd1857a6825f761b1"
-  integrity sha512-c/x6xPs/vvFQbtIB5VSLj73X1RYAC4wOrSBLgnKM3ebBbl/IFQjySHArn8Kj4x4XeYPxEPXD0AQ/GNvqmR9r1Q==
+"@storybook/node-logger@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/node-logger/-/node-logger-4.0.6.tgz#d31d185219d110645f8f97679e21a3820bf66388"
+  integrity sha512-dcqx4t3kpL4gGAhRGyPR2oSIOlazFkoNkhtK/0iUu04Yu+25CRRUd1zSarTHEnZLAuoZWk8tiCoeIOmAltOL4A==
   dependencies:
     "@babel/runtime" "^7.1.2"
     npmlog "^4.1.2"
@@ -1087,37 +1100,37 @@
   dependencies:
     babel-runtime "^6.5.0"
 
-"@storybook/react@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.0.tgz#716c00367ab8f1294850567330f4dfbc8ab79db4"
-  integrity sha512-8svBcv+sdVUkLI5Z0BFB/ZnTTv2L8x2kfYBotWysehGz49y72XY6VzDJkuuTx6q/IZy0ZtlmKXiZvnaRqtkscw==
+"@storybook/react@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/react/-/react-4.0.6.tgz#1f44cf1571c02811361214bf8399286ea6cc61d3"
+  integrity sha512-BjLZlc27Oeko35Dnha5Ia5kH3AYwruS1vk2wCbx9JkdqbFPEvTpTJ7fchIm0cZIrirYdY8X1BLYHSYjYW8jqpQ==
   dependencies:
     "@babel/preset-flow" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
     "@babel/runtime" "^7.1.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/core" "4.0.0"
-    "@storybook/node-logger" "4.0.0"
+    "@storybook/core" "4.0.6"
+    "@storybook/node-logger" "4.0.6"
     babel-plugin-react-docgen "^2.0.0"
     common-tags "^1.8.0"
     global "^4.3.2"
     lodash "^4.17.11"
     mini-css-extract-plugin "^0.4.4"
     prop-types "^15.6.2"
-    react-dev-utils "^6.0.5"
+    react-dev-utils "^6.1.0"
     semver "^5.6.0"
     webpack "^4.23.1"
 
-"@storybook/ui@4.0.0":
-  version "4.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.0.tgz#22997bbf2bde13a829153d134fca484cf85ee5a6"
-  integrity sha512-yBsGKNZQDyw53+Q3BrjHIvTrgCHL4YsGxac74KjvtuhZAteXY9rnOp9h7V6RPUTONBJwKwRUNtapSJJX+JFg0A==
+"@storybook/ui@4.0.6":
+  version "4.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@storybook/ui/-/ui-4.0.6.tgz#640bb40335484293f805e4ce83246368a1b9cf7c"
+  integrity sha512-P3te//P92F+HDa2dgD16iSxhyVnSNbAvlte03ngYVdULQC0IxHvHh0hAoSEs/XHjB3g7wYIMGJPyjpsBrvQ2lA==
   dependencies:
     "@emotion/core" "^0.13.1"
     "@emotion/provider" "^0.11.2"
     "@emotion/styled" "^0.10.6"
-    "@storybook/components" "4.0.0"
-    "@storybook/core-events" "4.0.0"
+    "@storybook/components" "4.0.6"
+    "@storybook/core-events" "4.0.6"
     "@storybook/mantra-core" "^1.7.2"
     "@storybook/podda" "^1.2.3"
     "@storybook/react-komposer" "^2.0.5"
@@ -1320,10 +1333,10 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__addon-options/-/storybook__addon-options-3.2.2.tgz#f42f81414fa9692cf20d947e9b49c60c4bdfbc4d"
   integrity sha512-QYWklZ37+QOcjwuolrvb121oXR6kA+5ucg9ieb2w0J0lATUp8DeQ804oGvf3GUXzJPzJiTnbhcX/aE+F1vvxGQ==
 
-"@types/storybook__react@3.0.9":
-  version "3.0.9"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-3.0.9.tgz#aac193f0c037ddfc2342bd027d720553ac089a56"
-  integrity sha512-uhQMkyS/WZIKn8z222D8WJbWy7aXYaqazsrLKdpRLsHBz2YaAVbAmj4vr2rQDfA7+RgjwTMZKHs9Vrga8lRkbQ==
+"@types/storybook__react@4.0.0":
+  version "4.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/storybook__react/-/storybook__react-4.0.0.tgz#52cc452fbab599568d595075a90142ef4a1233f6"
+  integrity sha512-Iq3RX953fqZRwWN3jywm8pUx1/Atev+x/9tF7/2CNA+Ii55sGSJJRWMRthUKQXTa3zOexcvfksfVYdUaIZY91w==
   dependencies:
     "@types/react" "*"
     "@types/webpack-env" "*"
@@ -1892,6 +1905,18 @@ array-reduce@~0.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array-reduce/-/array-reduce-0.0.0.tgz#173899d3ffd1c7d9383e4479525dbe278cab5f2b"
   integrity sha1-FziZ0//Rx9k4PkR5Ul2+J4yrXys=
 
+array-union@^1.0.1:
+  version "1.0.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array-union/-/array-union-1.0.2.tgz#9a34410e4f4e3da23dea375be5be70f24778ec39"
+  integrity sha1-mjRBDk9OPaI96jdb5b5w8kd47Dk=
+  dependencies:
+    array-uniq "^1.0.1"
+
+array-uniq@^1.0.1:
+  version "1.0.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array-uniq/-/array-uniq-1.0.3.tgz#af6ac877a25cc7f74e058894753858dfdb24fdb6"
+  integrity sha1-r2rId6Jcx/dOBYiUdThY39sk/bY=
+
 array-unique@^0.2.1:
   version "0.2.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/array-unique/-/array-unique-0.2.1.tgz#a1d97ccafcbc2625cc70fadceb36a50c58b01a53"
@@ -2007,7 +2032,7 @@ attr-accept@^1.1.3:
   dependencies:
     core-js "^2.5.0"
 
-autoprefixer@^9.2.1:
+autoprefixer@^9.3.1:
   version "9.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/autoprefixer/-/autoprefixer-9.3.1.tgz#71b622174de2b783d5fd99f9ad617b7a3c78443e"
   integrity sha512-DY9gOh8z3tnCbJ13JIWaeQsoYncTGdsrgCceBaQSIL4nvdrLxgbRSBPevg2XbX7u4QCSfLheSJEEIUUSlkbx6Q==
@@ -2800,6 +2825,11 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
+call-me-maybe@^1.0.1:
+  version "1.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/call-me-maybe/-/call-me-maybe-1.0.1.tgz#26d208ea89e37b5cbde60250a15f031c16a4d66b"
+  integrity sha1-JtII6onje1y95gJQoV8DHBak1ms=
+
 callsites@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/callsites/-/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
@@ -3353,16 +3383,16 @@ css-in-js-utils@^2.0.0:
     hyphenate-style-name "^1.0.2"
     isobject "^3.0.1"
 
-css-loader@^1.0.0:
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-loader/-/css-loader-1.0.0.tgz#9f46aaa5ca41dbe31860e3b62b8e23c42916bf56"
-  integrity sha512-tMXlTYf3mIMt3b0dDCOQFJiVvxbocJ5Ho577WiGPYPZcqVEO218L2iU22pDXzkTZCLDE+9AmGSUkWxeh/nZReA==
+css-loader@^1.0.1:
+  version "1.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/css-loader/-/css-loader-1.0.1.tgz#6885bb5233b35ec47b006057da01cc640b6b79fe"
+  integrity sha512-+ZHAZm/yqvJ2kDtPne3uX0C+Vr3Zn5jFn2N4HywtS5ujwvsVkyg0VArEXpl3BgczDA8anieki1FIzhchX4yrDw==
   dependencies:
     babel-code-frame "^6.26.0"
     css-selector-tokenizer "^0.7.0"
     icss-utils "^2.1.0"
     loader-utils "^1.0.2"
-    lodash.camelcase "^4.3.0"
+    lodash "^4.17.11"
     postcss "^6.0.23"
     postcss-modules-extract-imports "^1.2.0"
     postcss-modules-local-by-default "^1.2.0"
@@ -3676,6 +3706,14 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+dir-glob@^2.0.0:
+  version "2.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/dir-glob/-/dir-glob-2.0.0.tgz#0b205d2b6aef98238ca286598a8204d29d0a0034"
+  integrity sha512-37qirFDz8cA5fimp9feo43fSuRo2gHwaIn6dXL8Ber1dGwUosDrGZeCCXq57WnIqE4aQ+u3eQZzsk1yOzhdwag==
+  dependencies:
+    arrify "^1.0.1"
+    path-type "^3.0.0"
 
 discontinuous-range@1.0.0:
   version "1.0.0"
@@ -4328,6 +4366,18 @@ fast-deep-equal@^2.0.1:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz#7b05218ddf9667bf7f370bf7fdb2cb15fdd0aa49"
   integrity sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk=
 
+fast-glob@^2.0.2:
+  version "2.2.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-glob/-/fast-glob-2.2.4.tgz#e54f4b66d378040e0e4d6a68ec36bbc5b04363c0"
+  integrity sha512-FjK2nCGI/McyzgNtTESqaWP3trPvHyRyoyY70hxjc3oKPNmDe8taohLZpoVKoUjW85tbU5txaYUZCNtVzygl1g==
+  dependencies:
+    "@mrmlnc/readdir-enhanced" "^2.2.1"
+    "@nodelib/fs.stat" "^1.1.2"
+    glob-parent "^3.1.0"
+    is-glob "^4.0.0"
+    merge2 "^1.2.3"
+    micromatch "^3.1.10"
+
 fast-json-stable-stringify@2.x, fast-json-stable-stringify@^2.0.0:
   version "2.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/fast-json-stable-stringify/-/fast-json-stable-stringify-2.0.0.tgz#d5142c0caee6b1189f87d3a76111064f86c8bbf2"
@@ -4719,6 +4769,11 @@ glob-parent@^3.1.0:
     is-glob "^3.1.0"
     path-dirname "^1.0.0"
 
+glob-to-regexp@^0.3.0:
+  version "0.3.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/glob-to-regexp/-/glob-to-regexp-0.3.0.tgz#8c5a1494d2066c570cc3bfe4496175acc4d502ab"
+  integrity sha1-jFoUlNIGbFcMw7/kSWF1rMTVAqs=
+
 glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
   version "7.1.3"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/glob/-/glob-7.1.3.tgz#3960832d3f1574108342dafd3a67b332c0969df1"
@@ -4773,6 +4828,19 @@ globals@^9.18.0:
   version "9.18.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
   integrity sha512-S0nG3CLEQiY/ILxqtztTWH/3iRRdyBLw6KMDxnKMchrtbj2OFmehVh0WUCfW3DUrIgx/qFrJPICrq4Z4sTR9UQ==
+
+globby@8.0.1:
+  version "8.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/globby/-/globby-8.0.1.tgz#b5ad48b8aa80b35b814fc1281ecc851f1d2b5b50"
+  integrity sha512-oMrYrJERnKBLXNLVTqhm3vPEdJ/b2ZE28xN4YARiix1NOIOBPEpOUnm844K1iu/BkphCaf2WNFwMszv8Soi1pw==
+  dependencies:
+    array-union "^1.0.1"
+    dir-glob "^2.0.0"
+    fast-glob "^2.0.2"
+    glob "^7.1.2"
+    ignore "^3.3.5"
+    pify "^3.0.0"
+    slash "^1.0.0"
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
   version "4.1.11"
@@ -5171,6 +5239,16 @@ ignore-walk@^3.0.1:
   integrity sha512-DTVlMx3IYPe0/JJcYP7Gxg7ttZZu3IInhuEhbchuqneY9wWe5Ojy2mXLBaQFUQmo0AW2r3qG7m1mg86js+gnlQ==
   dependencies:
     minimatch "^3.0.4"
+
+ignore@^3.3.5:
+  version "3.3.10"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/ignore/-/ignore-3.3.10.tgz#0a97fb876986e8081c631160f8f9f389157f0043"
+  integrity sha512-Pgs951kaMm5GXP7MOvxERINe3gsaVjUWFm+UZPSq9xYriQAksyhg0csnS0KXSNRD5NmNdapXEpjxG49+AKh/ug==
+
+immer@1.7.2:
+  version "1.7.2"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/immer/-/immer-1.7.2.tgz#a51e9723c50b27e132f6566facbec1c85fc69547"
+  integrity sha512-4Urocwu9+XLDJw4Tc6ZCg7APVjjLInCFvO4TwGsAYV5zT6YYSor14dsZR0+0tHlDIN92cFUOq+i7fC00G5vTxA==
 
 immutable@^3.8.1:
   version "3.8.2"
@@ -6355,11 +6433,6 @@ lodash._getnative@^3.0.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash._getnative/-/lodash._getnative-3.9.1.tgz#570bc7dede46d61cdcde687d65d3eecbaa3aaff5"
   integrity sha1-VwvH3t5G1hzc3mh9ZdPuy6o6r/U=
 
-lodash.camelcase@^4.3.0:
-  version "4.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-  integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
-
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -6588,6 +6661,11 @@ merge-stream@^1.0.1:
   integrity sha1-QEEgLVCKNCugAXQAjfDCUbjBNeE=
   dependencies:
     readable-stream "^2.0.1"
+
+merge2@^1.2.3:
+  version "1.2.3"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
+  integrity sha512-gdUU1Fwj5ep4kplwcmftruWofEFt6lfpkkr3h860CXbAB9c3hGb55EOL2ali0Td5oebvW0E1+3Sr+Ur7XfKpRA==
 
 merge@^1.2.0:
   version "1.2.0"
@@ -7512,6 +7590,13 @@ path-type@^1.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+path-type@^3.0.0:
+  version "3.0.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
+  integrity sha512-T2ZUsdZFHgA3u4e5PfPbjd7HDDpxPnQb5jN0SrDsjNSuVXHJqtwTnWqG0B1jZrgmJ/7lj1EmVIByWt1gxGkWvg==
+  dependencies:
+    pify "^3.0.0"
+
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -7969,10 +8054,10 @@ react-color@^2.14.1:
     reactcss "^1.2.0"
     tinycolor2 "^1.4.1"
 
-react-dev-utils@^6.0.5:
-  version "6.0.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dev-utils/-/react-dev-utils-6.0.5.tgz#6ef34d0a416dc1c97ac20025031ea1f0d819b21d"
-  integrity sha512-X3/q2y8GHvcn6qzqlFhFNoIQgU4TfyerYpBTc5BrMtrSO0q1ctIheAaxDQawNeRgsm2W7L3QSQ9po+YLAGcYFQ==
+react-dev-utils@^6.1.0:
+  version "6.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dev-utils/-/react-dev-utils-6.1.1.tgz#a07e3e8923c4609d9f27e5af5207e3ca20724895"
+  integrity sha512-ThbJ86coVd6wV/QiTo8klDTvdAJ1WsFCGQN07+UkN+QN9CtCSsl/+YuDJToKGeG8X4j9HMGXNKbk2QhPAZr43w==
   dependencies:
     "@babel/code-frame" "7.0.0"
     address "1.0.3"
@@ -7984,13 +8069,15 @@ react-dev-utils@^6.0.5:
     filesize "3.6.1"
     find-up "3.0.0"
     global-modules "1.0.0"
+    globby "8.0.1"
     gzip-size "5.0.0"
+    immer "1.7.2"
     inquirer "6.2.0"
     is-root "2.0.0"
     loader-utils "1.1.0"
     opn "5.4.0"
     pkg-up "2.0.0"
-    react-error-overlay "^5.0.5"
+    react-error-overlay "^5.1.0"
     recursive-readdir "2.2.2"
     shell-quote "1.6.1"
     sockjs-client "1.1.5"
@@ -8007,9 +8094,9 @@ react-docgen-typescript-loader@3.0.0:
     react-docgen-typescript "^1.9.0"
 
 react-docgen-typescript@^1.9.0:
-  version "1.9.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.9.1.tgz#d1739a68ab192e9c6f7028fc969ad1891c302079"
-  integrity sha512-BmRw0MBhEXr3+S/pLiOoJubnmuWI4ke2ahW6d7Mbdzfb+R5cj1RrU0oxYZeUkBi6WeACSmWaQGXAks3F85HvxA==
+  version "1.12.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-docgen-typescript/-/react-docgen-typescript-1.12.0.tgz#be25d3604e05676f05a1248952f8d5823d7a216a"
+  integrity sha512-EAb2W5UNTTR75zTWm8bbn9iQmh+W/9DvnCazIdzDb+TnzvpcxEFCjRia+Rhpkx4FRRS3AYyJrw5Ar3zX51gJfQ==
 
 react-docgen@^3.0.0-rc.1:
   version "3.0.0-rc.1"
@@ -8042,10 +8129,10 @@ react-dropzone@5.1.1:
     attr-accept "^1.1.3"
     prop-types "^15.6.2"
 
-react-error-overlay@^5.0.5:
-  version "5.0.5"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-5.0.5.tgz#716ff1a92fda76bb89a39adf9ce046a5d740e71a"
-  integrity sha512-ab0HWBgxdIsngHtMGU8+8gYFdTBXpUGd4AE4lN2VZvOIlBmWx9dtaWEViihuGSIGosCKPeHCnzFoRWB42UtnLg==
+react-error-overlay@^5.1.0:
+  version "5.1.0"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-error-overlay/-/react-error-overlay-5.1.0.tgz#c516995a5652e7bfbed8b497910d5280df74a7e8"
+  integrity sha512-akMy/BQT5m1J3iJIHkSb4qycq2wzllWsmmolaaFVnb+LPV9cIJ/nTud40ZsiiT0H3P+/wXIdbjx2fzF61OaeOQ==
 
 react-final-form@3.6.5:
   version "3.6.5"
