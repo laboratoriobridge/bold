@@ -6,6 +6,7 @@ import Option, { OptionProps } from 'react-select/lib/components/Option'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
+import { Omit } from '../../../../util/types'
 import { Times } from '../../../elements/Icon/generated/Times'
 import { TriangleDown } from '../../../elements/Icon/generated/TriangleDown'
 
@@ -16,7 +17,8 @@ export interface DefaultOptionType {
     label: string
 }
 
-export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesProps, ReactSelectProps<OptionType> {
+export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
+    Omit<ReactSelectProps<OptionType>, 'theme'> {
     status?: '' | 'error'
     value?: any
     disabled?: boolean

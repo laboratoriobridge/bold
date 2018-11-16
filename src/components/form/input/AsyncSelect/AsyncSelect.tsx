@@ -2,11 +2,12 @@ import * as React from 'react'
 import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/lib/Async'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
+import { Omit } from '../../../../util/types'
 import { createSelectStyles } from '../Select/createSelectStyle'
 import { DefaultOptionType, SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from '../Select/Select'
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
-    ReactAsyncSelectProps<OptionType> {
+    Omit<ReactAsyncSelectProps<OptionType>, 'theme'> {
     status?: '' | 'error'
     disabled?: boolean
 }

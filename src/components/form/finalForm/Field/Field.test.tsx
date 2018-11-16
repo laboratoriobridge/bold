@@ -1,13 +1,12 @@
 import { mount } from 'enzyme'
-import { FieldState } from 'final-form'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
-import { Field as FinalField, Form } from 'react-final-form'
+import { Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
 import { FieldWrapper } from '../../FieldWrapper'
 
-import { Field, FieldProps, RenderProps } from './Field'
+import { Field, FieldCmp, FieldProps, RenderProps } from './Field'
 
 const input = jest.fn((props: RenderProps) => <input {...props.input} />)
 
@@ -44,8 +43,7 @@ describe('convert', () => {
                 {p => <Field name='field1' render={input} convert={convert} />}
             </Form>
         ))
-        const formDieldState = wrapper.find(FinalField).instance().state as any
-        const fieldState = formDieldState.state as FieldState
+        const fieldState = wrapper.find(FieldCmp).props().reactFinalForm.getFieldState('field1')
         expect(fieldState.data).toEqual({ convert })
     })
 })
