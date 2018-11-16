@@ -1264,10 +1264,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-select@2.0.4":
-  version "2.0.4"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-select/-/react-select-2.0.4.tgz#232c735539412acdc163751157c0a1c7d8aca40b"
-  integrity sha512-mUGEvFwemmlqePIw72ZEy2oub5GBzzezQLU0BWIuvP6kr1NneyZWaDskcUjmOmXvvJKjVTioIBzSTDT/02CkDg==
+"@types/react-select@2.0.7":
+  version "2.0.7"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-select/-/react-select-2.0.7.tgz#627e27a40a909aa7c10dc95a44557004ea1121f8"
+  integrity sha512-wFwz7EFG195Hf89suJYoGuwNTE7+PKgKkXvGYtyXuukca4+r+bbOd2Rz44/lCpipsIN9J3bLOiH/hdn7FcgdhA==
   dependencies:
     "@types/react" "*"
     "@types/react-dom" "*"
@@ -8233,10 +8233,10 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-select@2.0.0:
-  version "2.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-select/-/react-select-2.0.0.tgz#7e7ba31eff360b37ffc52b343a720f4248bd9b3b"
-  integrity sha512-i2yWg8tbsY37iPimIvQ0TtIrAzxgGWQTRDZrZPQ2QVNkyHPxDartMkzf2x2Enm6wRkt9I5+pEKSIcvkwIkkiAQ==
+react-select@2.1.1:
+  version "2.1.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-select/-/react-select-2.1.1.tgz#762d0babd8c7c46a944db51cbb72e4ee117253f9"
+  integrity sha512-ukie2LJStNfJEJ7wtqA+crAfzYpkpPr86urvmJGisECwsWJob9boCM4zjmKCi5QR7G8uY9+v7ZoliJpeCz/4xw==
   dependencies:
     classnames "^2.2.5"
     emotion "^9.1.2"
