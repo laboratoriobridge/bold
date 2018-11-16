@@ -1,19 +1,15 @@
 import * as PropTypes from 'prop-types'
 import * as React from 'react'
-import {
-    Field as FinalFormField,
-    FieldProps as FinalFieldProps,
-    FieldRenderProps as FinalRenderProps,
-    ReactContext
-} from 'react-final-form'
+import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProps as FinalRenderProps, ReactContext as ReactFinalFormContext, withReactFinalForm } from 'react-final-form'
 
+import { Omit } from '../../../../util/types'
 import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
-export interface FieldProps extends FieldWrapperProps, FinalFieldProps {
+export interface FieldProps extends FieldWrapperProps, FinalFieldProps, ReactFinalFormContext {
     name: string
     hasWrapper?: boolean
     render(props: RenderProps): React.ReactNode
@@ -26,7 +22,7 @@ export interface FieldProps extends FieldWrapperProps, FinalFieldProps {
     convert?(value: any): any
 }
 
-export class Field extends React.Component<FieldProps> {
+export class FieldCmp extends React.Component<FieldProps> {
 
     static contextTypes = {
         reactFinalForm: PropTypes.object,
@@ -38,7 +34,7 @@ export class Field extends React.Component<FieldProps> {
 
     componentDidMount() {
         if (this.props.convert) {
-            const setFieldData = this.getFormApi().mutators.setFieldData
+            const setFieldData = this.props.reactFinalForm.mutators.setFieldData
             if (setFieldData) {
                 setFieldData(this.props.name, {
                     convert: this.props.convert,
@@ -84,8 +80,6 @@ export class Field extends React.Component<FieldProps> {
 
         return this.props.render(renderProps)
     }
-
-    private getFormApi(): ReactContext['reactFinalForm'] {
-        return this.context.reactFinalForm
-    }
 }
+
+export const Field = withReactFinalForm(FieldCmp) as React.ComponentType<Omit<FieldProps, 'reactFinalForm'>>
