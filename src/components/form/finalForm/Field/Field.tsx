@@ -1,4 +1,3 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProps as FinalRenderProps, ReactContext as ReactFinalFormContext, withReactFinalForm } from 'react-final-form'
 
@@ -23,10 +22,6 @@ export interface FieldProps extends FieldWrapperProps, FinalFieldProps, ReactFin
 }
 
 export class FieldCmp extends React.Component<FieldProps> {
-
-    static contextTypes = {
-        reactFinalForm: PropTypes.object,
-    }
 
     static defaultProps: Partial<FieldProps> = {
         hasWrapper: true,
