@@ -1,7 +1,7 @@
 {
   "name": "bridge-react",
   "version": "1.0.0-alpha.73",
-  "main": "lib/bundle.js",
+  "main": "lib/main.js",
   "types": "lib/index.d.ts",
   "files": [
     "lib",

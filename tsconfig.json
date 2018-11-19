@@ -24,8 +24,8 @@
     "jsx": "react"
   },
   "files": [
-    "src/index.ts",
-    "typings/imports.d.ts"
+    "src/typings/imports.d.ts",
+    "src/index.ts"
   ],
   "compileOnSave": false,
   "buildOnSave": false,

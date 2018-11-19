@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { combineReducers } from 'redux'
 
-import { axiosMock, createTestStore, mockStore } from '../../../test'
+import { axiosMock, createTestStore, mockStore } from '../../test'
 import {
     RequesterModule, requesterModuleActionTypes
 } from '../RequesterModule'

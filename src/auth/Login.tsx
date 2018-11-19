@@ -3,7 +3,7 @@ import { FormRenderProps } from 'react-final-form'
 import { connect } from 'react-redux'
 import { RouteComponentProps, withRouter } from 'react-router'
 
-import { Form } from '../form/finalForm/Form'
+import { Form } from '../components/form/finalForm/Form'
 
 import { AuthConfig } from './api/Auth'
 import { actions, AuthState } from './module/auth'

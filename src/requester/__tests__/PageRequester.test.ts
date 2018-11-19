@@ -1,4 +1,4 @@
-import { mockStore } from '../../../test'
+import { mockStore } from '../../test'
 import { DEFAULT_PAGINATION_PARAMS, Page, PageRequester } from '../PageRequester'
 import { SET_PARAMS } from '../Requester'
 
