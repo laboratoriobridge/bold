@@ -1,13 +1,15 @@
-import * as PropTypes from 'prop-types'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Omit } from '../../../util/types'
 import { Icon } from '../Icon/Icon'
 
+import { BreadcrumbConsumer } from './BreadcrumbContext'
 import { BreadcrumbEntry, BreadcrumbStore, BreadcrumbUnsubscribeFunction } from './BreadcrumbStore'
 
 export interface BreadcrumbNavProps extends WithStylesProps {
+    store: BreadcrumbStore
 }
 
 export interface BreadcrumbNavState {
@@ -15,28 +17,24 @@ export interface BreadcrumbNavState {
 }
 
 @withStyles
-export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, BreadcrumbNavState> {
-
-    static contextTypes = {
-        breadcrumbs: PropTypes.object,
-    }
+class BreadcrumbNavCmp extends React.Component<BreadcrumbNavProps, BreadcrumbNavState> {
 
     private unsubscribe: BreadcrumbUnsubscribeFunction
 
-    constructor(props: BreadcrumbNavProps, context) {
+    constructor(props: BreadcrumbNavProps) {
         super(props)
         this.state = {
-            entries: context.breadcrumbs ? context.breadcrumbs.getEntries() : [],
+            entries: props.store.getEntries(),
         }
     }
 
-    public componentDidMount() {
-        this.unsubscribe = this.store().addChangeListener((entries) => {
+    componentDidMount() {
+        this.unsubscribe = this.props.store.addChangeListener((entries) => {
             this.setState({ entries })
         })
     }
 
-    public componentWillUnmount() {
+    componentWillUnmount() {
         this.unsubscribe()
     }
 
@@ -90,12 +88,10 @@ export class BreadcrumbNav extends React.Component<BreadcrumbNavProps, Breadcrum
             </nav>
         )
     }
-
-    private store(): BreadcrumbStore {
-        if (!this.context.breadcrumbs) {
-            throw new Error('No <BreadcrumbProvider> specified.')
-        }
-
-        return this.context.breadcrumbs
-    }
 }
+
+export const BreadcrumbNav = (props: Omit<BreadcrumbNavProps, 'store'>) => (
+    <BreadcrumbConsumer>
+        {value => <BreadcrumbNavCmp {...props} store={value} />}
+    </BreadcrumbConsumer>
+)
