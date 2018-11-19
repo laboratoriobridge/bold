@@ -70,7 +70,7 @@ describe('BreadcrumbNav', () => {
         store.push(entry2)
 
         const wrapper = render(withTheme(withRouter(
-            <BreadcrumbProvider store={store}>
+            <BreadcrumbProvider value={store}>
                 <BreadcrumbNav />
             </BreadcrumbProvider>
         )))
@@ -79,11 +79,10 @@ describe('BreadcrumbNav', () => {
 })
 
 describe('Breadcrumb', () => {
-
     it('deve adicionar a entry no store ao ser montado', () => {
         const store = new BreadcrumbSimpleStore()
         mount(withTheme(withRouter(
-            <BreadcrumbProvider store={store}>
+            <BreadcrumbProvider value={store}>
                 <Breadcrumb title='Entry #1' to='/1' />
             </BreadcrumbProvider>
         )))
@@ -97,7 +96,7 @@ describe('Breadcrumb', () => {
     it('deve remover a entry do store ao ser desmontado', () => {
         const store = new BreadcrumbSimpleStore()
         const wrapper = mount(withTheme(withRouter(
-            <BreadcrumbProvider store={store}>
+            <BreadcrumbProvider value={store}>
                 <Breadcrumb title='Entry #1' to='/1' />
             </BreadcrumbProvider>
         )))
