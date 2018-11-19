@@ -38,6 +38,7 @@ module.exports = {
         'react',
         'react-final-form',
         'react-redux',
+        'react-router',
         'react-router-dom',
         'tslint-react',
     ],
