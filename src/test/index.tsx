@@ -8,7 +8,7 @@ import { applyMiddleware, combineReducers, compose, createStore, Middleware } fr
 import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
 
-import { requesterReducer } from '../store/requester'
+import { requesterReducer } from '../requester'
 import { createTheme, Theme, ThemeProvider } from '../styles/'
 
 export const axiosMock = new MockAdapter(axios)

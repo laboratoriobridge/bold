@@ -1,5 +1,5 @@
 import { Color } from 'csstype'
-import { merge } from 'lodash'
+import merge = require('lodash/merge')
 
 import { blue, ColorScale, gray, green, orange, red } from '../colors'
 

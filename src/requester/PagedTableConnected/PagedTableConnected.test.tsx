@@ -1,9 +1,9 @@
 import { mount } from 'enzyme'
 import * as React from 'react'
 
-import { CLEAR_RESULT, Page, PageRequester, REQUEST, RequestState, SET_PARAMS } from '../../../../store/requester'
-import { mockStore, withRedux, withTheme } from '../../../../test'
-import { DataTable } from '../DataTable/DataTable'
+import { CLEAR_RESULT, Page, PageRequester, REQUEST, RequestState, SET_PARAMS } from '..'
+import { DataTable } from '../../components/elements/Table/DataTable/DataTable'
+import { mockStore, withRedux, withTheme } from '../../test'
 
 import { mapDispatchToProps, mapStateToProps, PagedTableConnected, PagedTableConnectedCmp } from './PagedTableConnected'
 

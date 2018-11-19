@@ -9,4 +9,3 @@ export { TableLoadingRow, TableLoadingRowProps } from './DataTable/TableLoadingR
 export { TablePlaceholderRow, TablePlaceholderRowProps } from './DataTable/TablePlaceholderRow'
 
 export { PagedTable, PagedTableProps } from './PagedTable/PagedTable'
-export { PagedTableConnected, PagedTableConnectedProps } from './PagedTable/PagedTableConnected'

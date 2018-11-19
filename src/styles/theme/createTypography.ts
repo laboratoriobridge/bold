@@ -1,5 +1,5 @@
 import { FontSizeProperty } from 'csstype'
-import { merge } from 'lodash'
+import merge = require('lodash/merge')
 
 import { DeepPartial } from '../../util/types'
 

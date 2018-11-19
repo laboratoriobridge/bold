@@ -2,11 +2,14 @@ const path = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 
 module.exports = {
-    // entry: './src/index.ts',
+    entry: {
+        main: './src/index.ts',
+        requester: './src/requester',
+        auth: './src/auth',
+    },
     mode: 'development',
     output: {
         path: path.resolve(__dirname, 'lib'),
-        filename: 'bundle.js',
         library: 'bridge-react',
         libraryTarget: 'umd',
     },
@@ -38,6 +41,7 @@ module.exports = {
         'react',
         'react-final-form',
         'react-redux',
+        'react-router',
         'react-router-dom',
         'tslint-react',
     ],

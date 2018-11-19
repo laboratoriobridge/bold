@@ -1,4 +1,4 @@
-import { axiosMock, mockStore } from '../../../test/index'
+import { axiosMock, mockStore } from '../../test'
 
 import { actions, actionTypes, reducer } from './auth'
 

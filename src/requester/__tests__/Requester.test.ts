@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { axiosMock, createTestStore, mockStore } from '../../../test'
+import { axiosMock, createTestStore, mockStore } from '../../test'
 import {
     CLEAR_RESULT, REQUEST, REQUEST_CANCEL, REQUEST_FAILURE, REQUEST_SUCCESS, Requester, SET_PARAMS
 } from '../Requester'
