@@ -47,7 +47,6 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
 
 <nav
   aria-label="Breadcrumbs"
-  role="navigation"
 >
   <ol
     class="emotion-5"
