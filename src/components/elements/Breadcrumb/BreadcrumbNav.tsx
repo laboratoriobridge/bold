@@ -74,7 +74,7 @@ class BreadcrumbNavCmp extends React.Component<BreadcrumbNavProps, BreadcrumbNav
             },
         }
         return (
-            <nav role='navigation' aria-label='Breadcrumbs'>
+            <nav aria-label='Breadcrumbs'>
                 <ol className={css(styles.list)}>
                     {entries.map(({ title, to }, idx) => (
                         <li key={idx} className={css(styles.item)}>
