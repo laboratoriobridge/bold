@@ -19,10 +19,11 @@ export class Tag extends React.PureComponent<TagProps> {
     render() {
         const { css, theme, type, style } = this.props
         const styles: Styles = {
-            badge: {
+            tag: {
                 padding: '0.25rem',
                 fontWeight: 'bold',
                 borderRadius: 4,
+                whiteSpace: 'nowrap',
             },
         }
         const typeStyles: { [key in TagType]: any } = {
@@ -48,7 +49,7 @@ export class Tag extends React.PureComponent<TagProps> {
         }
 
         return (
-            <span className={css(styles.badge, typeStyles[type], style)}>{this.props.children}</span>
+            <span className={css(styles.tag, typeStyles[type], style)}>{this.props.children}</span>
         )
     }
 }
