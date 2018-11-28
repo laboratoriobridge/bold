@@ -1,5 +1,6 @@
 const path = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
     entry: {
@@ -45,4 +46,20 @@ module.exports = {
         'react-router-dom',
         'tslint-react',
     ],
+    optimization: {
+        minimizer: [
+            new UglifyJsPlugin({
+                uglifyOptions: {
+                    // Keep function original names to preserve React component display names
+                    compress: {
+                        warnings: false,
+                        keep_fnames: true,
+                    },
+                    mangle: {
+                        keep_fnames: true,
+                    },
+                },
+            }),
+        ],
+    },
 }
