@@ -15,7 +15,7 @@ export const createStyles = (theme: Theme): Skin => ({
             boxShadow: focusBoxShadow(theme, 'primary', 'single'),
         },
         ':not(:disabled):hover': {
-            backgroundColor: hexToRGB(theme.pallete.gray.c50, 0.16),
+            backgroundColor: hexToRGB(theme.pallete.gray.c20, 0.1),
         },
     },
     primary: {

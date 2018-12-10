@@ -143,7 +143,7 @@ exports[`should be rendered correctly 1`] = `
 }
 
 .emotion-3:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-3:focus {
@@ -273,7 +273,7 @@ exports[`should be rendered correctly 1`] = `
 }
 
 .emotion-8:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-61 {
