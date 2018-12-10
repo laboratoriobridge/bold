@@ -20,7 +20,7 @@ it('should be rendered correctly', () => {
 it('should parse date to ISO string (date only)', () => {
     const dateField = new DateField({ name: 'test', label: 'Date test' })
     expect(dateField.parse(null)).toEqual(null)
-    expect(dateField.parse(new Date('2018-10-26T12:00:00'))).toEqual('2018-10-26')
+    expect(dateField.parse(new Date('2018-10-26T12:34:12'))).toEqual('2018-10-26')
 })
 
 it('should format ISO string (date only) from store to Date', () => {
