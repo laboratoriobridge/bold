@@ -191,7 +191,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-17:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-16 {
@@ -304,7 +304,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-20:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 <div

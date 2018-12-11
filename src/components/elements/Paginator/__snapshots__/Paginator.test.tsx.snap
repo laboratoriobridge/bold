@@ -67,7 +67,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -180,7 +180,7 @@ exports[`deve renderizar corretamente 1`] = `
 }
 
 .emotion-4:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 <div
@@ -362,7 +362,7 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-4:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-1 {
@@ -422,7 +422,7 @@ exports[`deve renderizar corretamente 2`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 <div
@@ -605,7 +605,7 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-4:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-1 {
@@ -665,7 +665,7 @@ exports[`deve renderizar corretamente 3`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 <div

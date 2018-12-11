@@ -137,7 +137,7 @@ exports[`DatePickerInput should render correctly 1`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-2:focus {
@@ -267,7 +267,7 @@ exports[`DatePickerInput should render correctly 1`] = `
 }
 
 .emotion-7:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-60 {
@@ -1027,7 +1027,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-2:focus {
@@ -1157,7 +1157,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
 }
 
 .emotion-7:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-60 {

@@ -151,7 +151,7 @@ exports[`should render correctly with button 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-1:focus {

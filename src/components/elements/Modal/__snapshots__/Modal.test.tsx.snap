@@ -78,7 +78,7 @@ exports[`Modal accept style prop 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -242,7 +242,7 @@ exports[`Modal render different sizes 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -418,7 +418,7 @@ exports[`Modal render different sizes 2`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -568,7 +568,7 @@ exports[`Modal render different sizes 3`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -752,7 +752,7 @@ exports[`Modal should render closed 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {
@@ -985,7 +985,7 @@ exports[`Modal should render open 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(103,108,112,0.16);
+  background-color: rgba(45,52,59,0.1);
 }
 
 .emotion-0 {

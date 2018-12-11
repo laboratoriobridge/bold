@@ -1,3 +1,4 @@
+import moment = require('moment')
 import * as React from 'react'
 
 import { FieldWrapperProps } from '../../FieldWrapper'
@@ -31,12 +32,12 @@ export class DateField extends React.Component<DateFieldProps> {
         )
     }
 
-    parse = (value: Date) => {
-        return value ? value.toISOString().slice(0, 10) : null
+    parse = (value: Date): string => {
+        return value ? moment(value).format('YYYY-MM-DD') : null
     }
 
-    format = (value: string) => {
-        return value ? new Date(value + 'T00:00:00') : null
+    format = (value: string): Date => {
+        return value ? moment(value, 'YYYY-MM-DD', true).toDate() : null
     }
 
 }
