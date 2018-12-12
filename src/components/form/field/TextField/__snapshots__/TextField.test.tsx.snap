@@ -61,3 +61,86 @@ exports[`should be rendered correctly 1`] = `
   />
 </div>
 `;
+
+exports[`should not include field props on rendered HTML 1`] = `
+.emotion-2 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-2:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-1 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.emotion-0 {
+  color: #D83A2E;
+  margin-left: 0.25rem;
+}
+
+<div
+  data-name="test"
+>
+  <label
+    class="emotion-1"
+    for="test"
+  >
+    Test
+    <span
+      aria-label="Campo obrigatório"
+      class="emotion-0"
+    >
+      *
+    </span>
+  </label>
+  <input
+    class="emotion-2"
+    name="test"
+    required=""
+    type="text"
+  />
+</div>
+`;

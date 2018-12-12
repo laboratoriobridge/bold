@@ -1,12 +1,9 @@
 import * as React from 'react'
 
-import { FieldWrapperProps } from '../../../form/FieldWrapper'
-import { Field, FieldProps, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
 
-export interface TextFieldProps extends FieldWrapperProps, TextInputProps,
-    Pick<FieldProps, 'parse' | 'format'> {
-    name: string
+export interface TextFieldProps extends BaseFieldProps<TextInputProps> {
 }
 
 export class TextField extends React.Component<TextFieldProps> {
@@ -21,10 +18,9 @@ export class TextField extends React.Component<TextFieldProps> {
     }
 
     private renderInput = (props: RenderProps) => {
-        const { format, parse, ...rest } = this.props
         return (
             <TextInput
-                {...rest}
+                {...extractInputProps(this.props)}
                 {...props.input}
                 status={props.hasError && 'error'}
             />
