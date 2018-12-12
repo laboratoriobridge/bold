@@ -48,6 +48,11 @@ describe('convert', () => {
         const select = wrapper.find(AsyncSelectField).instance()
         expect(select['convert'](options[0])).toEqual(1)
     })
+    it('should convert value to array of valueKey if convertToValueKey prop is true', () => {
+        const wrapper = createFormAndField()
+        const select = wrapper.find(AsyncSelectField).instance()
+        expect(select['convert'](options)).toEqual([1, 2])
+    })
     it('should NOT convert value if convertToValueKey is false', () => {
         const wrapper = createFormAndField({ convertToValueKey: false })
         const select = wrapper.find(AsyncSelectField).instance()

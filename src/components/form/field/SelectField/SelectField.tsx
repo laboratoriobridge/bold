@@ -26,8 +26,16 @@ export class SelectField<OptionType = DefaultOptionType> extends React.Component
         )
     }
 
-    private convert = (value: OptionType) => {
-        return this.props.convertToValueKey && this.props.getOptionValue ? this.props.getOptionValue(value) : value
+    private convert = (value: any) => {
+        if (this.props.convertToValueKey && this.props.getOptionValue) {
+            if (Array.isArray(value)) {
+                return value.map(item => this.props.getOptionValue(item))
+            } else {
+                return this.props.getOptionValue(value)
+            }
+        } else {
+            return value
+        }
     }
 
     private renderSelect = (props: RenderProps) => {
