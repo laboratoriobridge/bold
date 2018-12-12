@@ -328,7 +328,7 @@ exports[`should be rendered correctly 1`] = `
     <div
       class="emotion-6"
     >
-      <p
+      <div
         class="emotion-5"
       >
         <input
@@ -368,7 +368,7 @@ exports[`should be rendered correctly 1`] = `
             </span>
           </button>
         </span>
-      </p>
+      </div>
     </div>
     <div
       class="emotion-64"

@@ -313,7 +313,7 @@ exports[`DatePickerInput should render correctly 1`] = `
   <div
     class="emotion-5"
   >
-    <p
+    <div
       class="emotion-4"
     >
       <input
@@ -351,7 +351,7 @@ exports[`DatePickerInput should render correctly 1`] = `
           </span>
         </button>
       </span>
-    </p>
+    </div>
   </div>
   <div
     class="emotion-63"
@@ -1203,7 +1203,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
   <div
     class="emotion-5"
   >
-    <p
+    <div
       class="emotion-4"
     >
       <input
@@ -1242,7 +1242,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
           </span>
         </button>
       </span>
-    </p>
+    </div>
   </div>
   <div
     class="emotion-63"
