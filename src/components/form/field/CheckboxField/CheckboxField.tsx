@@ -1,10 +1,9 @@
 import * as React from 'react'
 
-import { Field, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
 
-export interface CheckboxFieldProps extends CheckboxProps {
-    name: string
+export interface CheckboxFieldProps extends BaseFieldProps<CheckboxProps> {
 }
 
 export class CheckboxField extends React.Component<CheckboxFieldProps> {
@@ -22,8 +21,9 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
 
     private renderCheck = (props: RenderProps) => (
         <Checkbox
-            {...this.props}
+            {...extractInputProps(this.props)}
             {...props.input}
+            label={this.props.label}
         />
     )
 

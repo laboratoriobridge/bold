@@ -5,7 +5,7 @@ import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../.
 import { Input, InputProps } from '../Input/Input'
 import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
 
-export type InputStatus = '' | 'error'
+export type InputStatus = 'error'
 
 export interface TextInputProps extends InputProps, WithStylesProps {
     status?: InputStatus

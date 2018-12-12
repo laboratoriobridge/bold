@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { Field, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { Switch, SwitchProps } from '../../input/Switch/Switch'
 
-export interface SwitchFieldProps extends SwitchProps {
+export interface SwitchFieldProps extends BaseFieldProps<SwitchProps> {
     name: string
 }
 
@@ -22,8 +22,9 @@ export class SwitchField extends React.Component<SwitchFieldProps> {
 
     private renderSwitch = (props: RenderProps) => (
         <Switch
-            {...this.props}
+            {...extractInputProps(this.props)}
             {...props.input}
+            label={this.props.label}
         />
     )
 

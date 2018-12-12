@@ -333,7 +333,6 @@ exports[`should be rendered correctly 1`] = `
       >
         <input
           class="emotion-1"
-          label="Date test"
           name="test"
           placeholder="dd/mm/yyyy"
         />

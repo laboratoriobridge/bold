@@ -1,13 +1,12 @@
 import * as React from 'react'
 
-import { Field, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { RadioButton, RadioButtonProps } from '../../input/RadioButton/RadioButton'
 
-export interface RadioFieldProps extends RadioButtonProps {
-    name: string
+export interface RadioFieldProps extends BaseFieldProps<RadioButtonProps> {
 }
 
-export class RadioField extends React.Component<RadioFieldProps, any> {
+export class RadioField extends React.Component<RadioFieldProps> {
 
     render() {
         return (
@@ -22,8 +21,9 @@ export class RadioField extends React.Component<RadioFieldProps, any> {
 
     private renderRadio = (props: RenderProps) => (
         <RadioButton
-            {...this.props}
+            {...extractInputProps(this.props)}
             {...props.input}
+            label={this.props.label}
         />
     )
 

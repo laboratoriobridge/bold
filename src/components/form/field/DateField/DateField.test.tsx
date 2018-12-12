@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { withForm } from '../../../../test'
 
-import { DateField } from './DateField'
+import { DateField, format, parse } from './DateField'
 
 it('should be rendered correctly', () => {
     const wrapper = render(withForm(
@@ -18,14 +18,12 @@ it('should be rendered correctly', () => {
 })
 
 it('should parse date to ISO string (date only)', () => {
-    const dateField = new DateField({ name: 'test', label: 'Date test' })
-    expect(dateField.parse(null)).toEqual(null)
-    expect(dateField.parse(new Date('2018-10-26T12:34:12'))).toEqual('2018-10-26')
+    expect(parse(null)).toEqual(null)
+    expect(parse(new Date('2018-10-26T12:34:12'))).toEqual('2018-10-26')
 })
 
 it('should format ISO string (date only) from store to Date', () => {
-    const dateField = new DateField({ name: 'test', label: 'Date test' })
-    expect(dateField.format(null)).toEqual(null)
-    expect(dateField.format('')).toEqual(null)
-    expect(dateField.format('2004-04-20')).toEqual(new Date('2004-04-20'))
+    expect(format(null)).toEqual(null)
+    expect(format('')).toEqual(null)
+    expect(format('2004-04-20')).toEqual(new Date('2004-04-20'))
 })

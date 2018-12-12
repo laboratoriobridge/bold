@@ -26,7 +26,7 @@ export class MaskedField extends React.Component<MaskedFieldProps> {
             <MaskedInput
                 {...rest}
                 {...props.input}
-                status={props.hasError && 'error'}
+                status={props.hasError ? 'error' : undefined}
             />
         )
     }

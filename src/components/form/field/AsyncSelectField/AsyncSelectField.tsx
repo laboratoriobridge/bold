@@ -1,13 +1,11 @@
 import * as React from 'react'
 
-import { FieldWrapperProps } from '../../FieldWrapper'
-import { Field, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { AsyncSelect, AsyncSelectProps } from '../../input/AsyncSelect/AsyncSelect'
 import { DefaultOptionType } from '../../input/Select/Select'
 
-export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends FieldWrapperProps,
-    AsyncSelectProps<OptionType> {
-    name: string
+export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends
+    BaseFieldProps<AsyncSelectProps<OptionType>> {
     convertToValueKey?: boolean
 }
 
@@ -43,9 +41,9 @@ export class AsyncSelectField<OptionType = DefaultOptionType> extends
 
     private renderSelect = (props: RenderProps) => (
         <AsyncSelect
-            status={props.hasError && 'error'}
-            {...this.props}
+            {...extractInputProps(this.props)}
             {...props.input}
+            status={props.hasError ? 'error' : undefined}
         />
     )
 
