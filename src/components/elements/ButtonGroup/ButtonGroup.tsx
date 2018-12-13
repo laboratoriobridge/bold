@@ -13,15 +13,15 @@ export class ButtonGroup extends React.PureComponent<ButtonGroupProps> {
         const { children, css, style } = this.props
         const styles: Styles = {
             root: {
-                '& > button:not(:first-child)': {
+                '& > button:not(:first-child), & > a:not(:first-child)': {
                     borderTopLeftRadius: '0',
                     borderBottomLeftRadius: '0',
                 },
-                '& > button:not(:last-child)': {
+                '& > button:not(:last-child), & > a:not(:last-child)': {
                     borderTopRightRadius: '0',
                     borderBottomRightRadius: '0',
                 },
-                '& > button:focus': {
+                '& > button:focus, & > a:focus': {
                     zIndex: 1, // prevent box-shadow overlapping
                 },
             },
