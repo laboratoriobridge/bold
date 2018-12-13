@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render should render correcly 1`] = `
+<MaskedInput
+  mask={
+    Array [
+      /\\\\d/,
+      /\\\\d/,
+      ":",
+      /\\\\d/,
+      /\\\\d/,
+    ]
+  }
+  maxLength={5}
+  name="time"
+  onBlur={[Function]}
+  onChange={[Function]}
+  pipe={[Function]}
+  placeholder="hh:mm"
+/>
+`;

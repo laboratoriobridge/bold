@@ -21,6 +21,7 @@ export * from './input/RadioButton/RadioButton'
 export * from './input/Switch/Switch'
 export * from './input/TextArea/TextArea'
 export * from './input/TextInput/TextInput'
+export * from './input/TimeInput'
 
 export * from './finalForm/ErrorField'
 export * from './finalForm/Field'
