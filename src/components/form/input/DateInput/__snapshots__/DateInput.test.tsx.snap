@@ -41,6 +41,6 @@ exports[`should render correctly 2`] = `
   onChange={[Function]}
   pipe={[Function]}
   placeholder="dd/mm/yyyy"
-  value="10/30/2018"
+  value="30/10/2018"
 />
 `;
