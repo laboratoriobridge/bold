@@ -1,4 +1,6 @@
-import { withField } from '../../finalForm/Field'
-import { TextArea } from '../../input/TextArea/TextArea'
+import { BaseFieldProps, withField } from '../../finalForm/Field'
+import { TextArea, TextAreaProps } from '../../input/TextArea/TextArea'
+
+export type TextAreaFieldProps = BaseFieldProps<TextAreaProps>
 
 export const TextAreaField = withField(TextArea)

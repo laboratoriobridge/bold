@@ -23,7 +23,6 @@ export class TimeInput extends React.PureComponent<TimeInputProps> {
                 mask={masks.time}
                 placeholder='hh:mm'
                 pipe={createAutoCorrectedDatePipe('HH:MM')}
-                maxLength={5}
                 {...rest}
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
