@@ -41,7 +41,7 @@ exports[`should render correctly 1`] = `
   box-shadow: none;
 }
 
-<p
+<div
   class="emotion-2"
 >
   <input />
@@ -62,7 +62,7 @@ exports[`should render correctly 1`] = `
       />
     </svg>
   </span>
-</p>
+</div>
 `;
 
 exports[`should render correctly with button 1`] = `
@@ -163,7 +163,7 @@ exports[`should render correctly with button 1`] = `
   font-size: 1.5rem;
 }
 
-<p
+<div
   class="emotion-3"
 >
   <input />
@@ -192,7 +192,7 @@ exports[`should render correctly with button 1`] = `
       </span>
     </button>
   </span>
-</p>
+</div>
 `;
 
 exports[`should render correctly with left position 1`] = `
@@ -236,7 +236,7 @@ exports[`should render correctly with left position 1`] = `
   left: 1px;
 }
 
-<p
+<div
   class="emotion-2"
 >
   <input />
@@ -257,5 +257,5 @@ exports[`should render correctly with left position 1`] = `
       />
     </svg>
   </span>
-</p>
+</div>
 `;

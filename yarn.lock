@@ -1290,6 +1290,13 @@
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/history/-/history-4.7.2.tgz#0e670ea254d559241b6eeb3894f8754991e73220"
   integrity sha512-ui3WwXmjTaY73fOQ3/m3nnajU/Orhi6cEu5rzX+BrAAJxa3eITXZ5ch9suPqtM03OWhAHhPSyBGCN4UKoxO20Q==
 
+"@types/hoist-non-react-statics@3.0.1":
+  version "3.0.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.0.1.tgz#dde7c53101912dae8f45a1807f9857a59ddf3919"
+  integrity sha512-3wTz66vV+WatOAjMST+hKCmo01KYPFgnsu+QeLcn0FuwPCoymX6aj1a4RvFCdVsfh2m0hfTPhE/zTv4M28ho1Q==
+  dependencies:
+    "@types/react" "*"
+
 "@types/jest@23.3.9", "@types/jest@^23.0.2":
   version "23.3.9"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/jest/-/jest-23.3.9.tgz#c16b55186ee73ae65e001fbee69d392c51337ad1"
@@ -4977,6 +4984,13 @@ hoist-non-react-statics@1.x.x, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
   integrity sha1-qkSM8JhtVcxAdzsXF0t90GbLfPs=
+
+hoist-non-react-statics@3.2.1:
+  version "3.2.1"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hoist-non-react-statics/-/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
+  integrity sha512-TFsu3TV3YLY+zFTZDrN8L2DTFanObwmBLpWvJs1qfUuEQ5bTAdFcwfx2T/bsCXfM9QHSLvjfP+nihEl0yvozxw==
+  dependencies:
+    react-is "^16.3.2"
 
 hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"

@@ -27,6 +27,13 @@ describe('Tooltip', () => {
             </Tooltip>
         ))).toMatchSnapshot()
     })
+    it('should not render tooltip if text is empty', () => {
+        expect(render(withTheme(
+            <Tooltip text=''>
+                <span>Testing</span>
+            </Tooltip>
+        ))).toMatchSnapshot()
+    })
 })
 
 describe('TooltipBase', () => {

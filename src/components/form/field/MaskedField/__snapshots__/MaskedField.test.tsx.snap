@@ -65,7 +65,6 @@ exports[`render correctly 1`] = `
   </label>
   <input
     class="emotion-1"
-    label="Mask test"
     name="test"
     placeholder="Test"
     value=""

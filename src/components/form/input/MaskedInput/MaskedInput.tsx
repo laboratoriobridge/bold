@@ -16,7 +16,7 @@ export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'css' | 's
 }
 
 @withStyles
-export class MaskedInput extends React.Component<MaskedInputProps> {
+export class MaskedInput extends React.PureComponent<MaskedInputProps> {
     static defaultProps: Partial<MaskedInputProps> = {
     }
 

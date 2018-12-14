@@ -9,6 +9,7 @@ import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
 import { Times } from '../../../elements/Icon/generated/Times'
 import { TriangleDown } from '../../../elements/Icon/generated/TriangleDown'
+import { InputStatus } from '../TextInput/TextInput'
 
 import { createSelectStyles } from './createSelectStyle'
 
@@ -19,7 +20,7 @@ export interface DefaultOptionType {
 
 export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     Omit<ReactSelectProps<OptionType>, 'theme'> {
-    status?: '' | 'error'
+    status?: InputStatus
     value?: any
     disabled?: boolean
 }

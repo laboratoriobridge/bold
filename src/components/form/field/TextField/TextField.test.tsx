@@ -10,6 +10,21 @@ it('should be rendered correctly', () => {
     expect(wrapper).toMatchSnapshot()
 })
 
+it('should not include field props on rendered HTML', () => {
+    const wrapper = render(withForm(
+        <TextField
+            name='test'
+            label='Test'
+            hasWrapper={true}
+            parse={jest.fn()}
+            format={jest.fn()}
+            convert={jest.fn()}
+            required
+        />
+    ))
+    expect(wrapper).toMatchSnapshot()
+})
+
 it('should call onChange with current value', () => {
     const change = jest.fn()
     const wrapper = mount(withForm(<TextField name='test' onChange={change} />))

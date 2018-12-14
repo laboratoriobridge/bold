@@ -1,11 +1,9 @@
 import * as React from 'react'
 
-import { FieldWrapperProps } from '../../FieldWrapper'
-import { Field, RenderProps } from '../../finalForm/Field'
+import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { DefaultOptionType, Select, SelectProps } from '../../input/Select/Select'
 
-export interface SelectFieldProps<OptionType = DefaultOptionType> extends FieldWrapperProps, SelectProps<OptionType> {
-    name: string
+export interface SelectFieldProps<OptionType = DefaultOptionType> extends BaseFieldProps<SelectProps<OptionType>> {
     convertToValueKey?: boolean
 }
 
@@ -41,9 +39,9 @@ export class SelectField<OptionType = DefaultOptionType> extends React.Component
     private renderSelect = (props: RenderProps) => {
         return (
             <Select
-                status={props.hasError && 'error'}
-                {...this.props}
+                {...extractInputProps(this.props)}
                 {...props.input}
+                status={props.hasError ? 'error' : undefined}
             />
         )
     }

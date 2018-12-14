@@ -70,7 +70,7 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
         ]
 
         return (
-            <p className={css(wrapperClasses)}>
+            <div className={css(wrapperClasses)}>
                 {children}
 
                 <span className={css(iconBoxClasses)}>
@@ -89,7 +89,7 @@ export class InputIconDecorator extends React.PureComponent<InputIconDecoratorPr
                         />
                     }
                 </span>
-            </p>
+            </div>
         )
     }
 }

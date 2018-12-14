@@ -5,10 +5,11 @@ import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
 import { createSelectStyles } from '../Select/createSelectStyle'
 import { DefaultOptionType, SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from '../Select/Select'
+import { InputStatus } from '../TextInput/TextInput'
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     Omit<ReactAsyncSelectProps<OptionType>, 'theme'> {
-    status?: '' | 'error'
+    status?: InputStatus
     disabled?: boolean
 }
 
