@@ -8,7 +8,7 @@ import { PopperContent, PopperContentProps } from './PopperContent'
 export interface PopperFocusProps extends WithStylesProps {
     placement?: PopperProps['placement']
     offset?: PopperContentProps['offset']
-    renderPopper(): React.ReactNode
+    renderPopper?(): React.ReactNode
 }
 
 export interface PopperFocusState {
@@ -21,9 +21,8 @@ export interface PopperFocusState {
 @withStyles
 export class PopperFocus extends React.PureComponent<PopperFocusProps, PopperFocusState> {
 
-    static defaultProps: PopperFocusProps = {
+    static defaultProps: Partial<PopperFocusProps> = {
         placement: 'right',
-        renderPopper: () => null,
     }
 
     constructor(props: PopperFocusProps) {
@@ -58,9 +57,11 @@ export class PopperFocus extends React.PureComponent<PopperFocusProps, PopperFoc
                         </div>
                     )}
                 </Reference>
-                <PopperContent show={this.state.show} placement={placement} offset={offset}>
-                    {this.props.renderPopper()}
-                </PopperContent>
+                {this.props.renderPopper &&
+                    <PopperContent show={this.state.show} placement={placement} offset={offset}>
+                        {this.props.renderPopper()}
+                    </PopperContent>
+                }
             </Manager>
         )
     }

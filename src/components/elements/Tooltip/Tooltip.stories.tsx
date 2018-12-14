@@ -9,7 +9,7 @@ import { Tooltip } from './Tooltip'
 storiesOf('Components/Tooltip', module)
     .add('default', () => (
         <HFlow hSpacing={0.5} alignItems='center'>
-            <Tooltip text='Action button description'>
+            <Tooltip text='Lorem ipsum'>
                 <Button label='Action' size='small' />
             </Tooltip>
             <Tooltip

@@ -93,6 +93,21 @@ Array [
 ]
 `;
 
+exports[`Tooltip should not render tooltip if text is empty 1`] = `
+.emotion-0 {
+  display: inline-block;
+}
+
+<div
+  class="emotion-0"
+  data-show="false"
+>
+  <span>
+    Testing
+  </span>
+</div>
+`;
+
 exports[`Tooltip should render correctly 1`] = `
 Array [
   .emotion-0 {
