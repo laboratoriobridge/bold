@@ -29,8 +29,9 @@ export function withField<P extends BaseInputProps>(
         }
 
         renderInput = (props: RenderProps) => {
+            const Inpt = InputComponent as any
             return (
-                <InputComponent
+                <Inpt
                     status={props.hasError ? 'error' : undefined}
                     {...extractInputProps(this.props)}
                     {...props.input}

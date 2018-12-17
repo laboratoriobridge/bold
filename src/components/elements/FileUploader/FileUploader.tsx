@@ -1,4 +1,3 @@
-import { css as emotionCss } from 'emotion'
 import * as React from 'react'
 import Dropzone, * as DropzoneAll from 'react-dropzone'
 
@@ -81,8 +80,8 @@ export class FileUploader extends React.Component<FileUploaderProps> {
                 <DropzoneCmp
                     maxSize={maxSize}
                     accept={accept}
-                    className={emotionCss(styles.dropzone)}
-                    acceptClassName={emotionCss(styles.dropzoneAccept)}
+                    className={css(styles.dropzone)}
+                    acceptClassName={css(styles.dropzoneAccept)}
                     onDrop={this.uploadImage}
                     multiple={false}
                 >
@@ -105,14 +104,16 @@ export class FileUploader extends React.Component<FileUploaderProps> {
 
 }
 
-interface FileDetailsProps {
+interface FileDetailsProps extends WithStylesProps {
     file: FileProps
     theme: Theme
 }
 
+@withStyles
 export class FileDetails extends React.Component<FileDetailsProps> {
 
     render() {
+        const { css } = this.props
         const styles: Styles = {
             info: {
                 flexGrow: 1,
@@ -126,9 +127,9 @@ export class FileDetails extends React.Component<FileDetailsProps> {
             },
         }
         return (
-            <div className={emotionCss(styles.wrapper)}>
+            <div className={css(styles.wrapper)}>
                 <FileExtension extension={this.returnExtension()} theme={this.props.theme} />
-                <div className={emotionCss(styles.info)}>
+                <div className={css(styles.info)}>
                     <FileInfo file={this.props.file} theme={this.props.theme} />
                     {this.props.file.uploading &&
                         <ProgressIndicator value={this.props.file.progress} />
@@ -152,14 +153,16 @@ export class FileDetails extends React.Component<FileDetailsProps> {
 
 }
 
-interface FileInfoProps {
+interface FileInfoProps extends WithStylesProps {
     file: FileProps
     theme: Theme
 }
 
+@withStyles
 class FileInfo extends React.PureComponent<FileInfoProps> {
 
     render() {
+        const { css } = this.props
         const styles = {
             wrapper: {
                 alignItems: 'center',
@@ -168,7 +171,7 @@ class FileInfo extends React.PureComponent<FileInfoProps> {
         }
 
         return (
-            <div className={emotionCss(styles.wrapper)}>
+            <div className={css(styles.wrapper)}>
                 {!this.props.file.error && !this.props.file.uploading &&
                     <Icon icon='check' fill='primary' size={1} style={{ marginRight: 5 }} />
                 }
