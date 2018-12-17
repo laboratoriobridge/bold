@@ -8,7 +8,7 @@ export { withField } from './withField'
  * This type exposes props from Field that must be public and overridables
  */
 export type BaseFieldProps<T> = T & Pick<FieldProps,
-    'name' | 'label' | 'hasWrapper' | 'parse' | 'format' | 'convert' | 'validate'>
+    'name' | 'label' | 'hasWrapper' | 'parse' | 'format' | 'convert' | 'required' | 'validate'>
 
 /**
  * Extract from a BaseFieldProps object only props that can be safely passed down to input elements
