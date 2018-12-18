@@ -6,6 +6,7 @@ import { FormRenderProps } from 'react-final-form'
 import { withRouter } from '../../../../stories-addons'
 import { Flow } from '../../../layout/Flow/Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
+import { CpfField } from '../../field/MaskedField/maskedFields'
 import { RadioField } from '../../field/RadioField/RadioField'
 import { TextAreaField } from '../../field/TextAreaField/TextAreaField'
 import { TextField } from '../../field/TextField/TextField'
@@ -23,6 +24,10 @@ storiesOf('Form', module)
                 errors.nome = 'Preenchimento obrigatório.'
             }
 
+            if (!form.cpf) {
+                errors.cpf = 'Preenchimento obrigatório.'
+            }
+
             if (!form.text) {
                 errors.text = 'Preenchimento obrigatório.'
             }
@@ -34,6 +39,7 @@ storiesOf('Form', module)
             <form onSubmit={props.handleSubmit}>
                 <Flow vSpacing={1} direction='vertical'>
                     <TextField name='nome' label='Nome' required />
+                    <CpfField name='cpf' label='CPF' required />
                     <TextAreaField name='text' label='Text' maxLength={100} required />
                     <Flow>
                         <RadioField name='radio' label='Option1' value='1' />

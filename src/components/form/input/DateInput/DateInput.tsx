@@ -7,6 +7,7 @@ import { MaskedInput, MaskedInputProps } from '../../input/MaskedInput/MaskedInp
 
 export interface DateInputProps extends Omit<MaskedInputProps, 'onChange' | 'value'> {
     value?: Date
+    onInputChange?: MaskedInputProps['onChange']
     onChange?(date: Date | null): void
 }
 
@@ -25,17 +26,22 @@ export class DateInput extends React.Component<DateInputProps> {
         const { value, ...rest } = this.props
         return (
             <MaskedInput
-                {...rest}
                 value={value ? formatter.format(value) : undefined}
                 mask={masks.date}
-                onChange={this.handleChange}
                 placeholder='dd/mm/yyyy'
                 pipe={createAutoCorrectedDatePipe('dd/mm/yyyy')}
+                autoComplete='off'
+                {...rest}
+                onChange={this.handleChange}
             />
         )
     }
 
-    handleChange = (e) => {
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (this.props.onInputChange) {
+            this.props.onInputChange(e)
+        }
+
         const value: string = e.target.value
 
         if (!value) {

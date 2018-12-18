@@ -10,16 +10,20 @@ export interface InputController {
 
 export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'css' | 'style'> {
   provideController?: (controller: InputController) => void
+  inputRef?: React.RefObject<HTMLInputElement>
 }
 
 export class Input extends React.Component<InputProps, any> {
-  private input: HTMLInputElement
+
+  static defaultProps: Partial<InputProps> = {
+    inputRef: React.createRef<HTMLInputElement>(),
+  }
 
   componentDidMount() {
     this.props.provideController && this.props.provideController({
-      getInput: () => this.input,
-      focus: () => this.input.focus(),
-      blur: () => this.input.blur(),
+      getInput: () => this.props.inputRef.current,
+      focus: () => this.props.inputRef.current.focus(),
+      blur: () => this.props.inputRef.current.blur(),
     })
   }
 
@@ -28,15 +32,11 @@ export class Input extends React.Component<InputProps, any> {
   }
 
   render() {
-    const { provideController, ...rest } = this.props
+    const { provideController, inputRef, ...rest } = this.props
 
     return (
-      <input ref={this.ref} {...rest} />
+      <input ref={inputRef} {...rest} />
     )
-  }
-
-  private ref = (elem: HTMLInputElement) => {
-    this.input = elem
   }
 
 }
