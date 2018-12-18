@@ -2,7 +2,7 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, InputController, InputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input/Input'
 
 export interface CheckboxProps extends InputProps, WithStylesProps {
     label?: React.ReactNode
@@ -12,14 +12,14 @@ export interface CheckboxProps extends InputProps, WithStylesProps {
 
 @withStyles
 export class Checkbox extends React.Component<CheckboxProps, any> {
-    private input: HTMLInputElement
+    private inputRef = React.createRef<HTMLInputElement>()
 
     componentDidMount() {
-        this.input.indeterminate = this.props.indeterminate
+        this.inputRef.current.indeterminate = this.props.indeterminate
     }
 
     componentDidUpdate() {
-        this.input.indeterminate = this.props.indeterminate
+        this.inputRef.current.indeterminate = this.props.indeterminate
     }
 
     render() {
@@ -112,7 +112,7 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
             >
                 <Input
                     {...rest}
-                    provideController={this.setController}
+                    inputRef={this.inputRef}
                     type='checkbox'
                     className={inputClass}
                 />
@@ -120,9 +120,5 @@ export class Checkbox extends React.Component<CheckboxProps, any> {
                 {this.props.label && <span className={labelClasses}>{this.props.label}</span>}
             </label>
         )
-    }
-
-    private setController = (controller: InputController) => {
-        this.input = controller && controller.getInput()
     }
 }
