@@ -30,3 +30,11 @@ it('should call onChange with null when input is cleared', () => {
     wrapper.simulate('change', { target: { value: '' } })
     expect(change).toHaveBeenCalledWith(null)
 })
+
+it('should call onInputChange prop when input value is changed', () => {
+    const inputChange = jest.fn()
+    const wrapper = shallow(<DateInput onInputChange={inputChange} />)
+    expect(inputChange).not.toHaveBeenCalled()
+    wrapper.simulate('change', { target: { value: '1' } })
+    expect(inputChange).toHaveBeenCalledWith(expect.objectContaining({ target: { value: '1' } }))
+})

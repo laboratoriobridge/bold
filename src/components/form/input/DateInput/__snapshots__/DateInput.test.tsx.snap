@@ -2,6 +2,7 @@
 
 exports[`should render correctly 1`] = `
 <MaskedInput
+  autoComplete="off"
   mask={
     Array [
       /\\\\d/,
@@ -24,6 +25,7 @@ exports[`should render correctly 1`] = `
 
 exports[`should render correctly 2`] = `
 <MaskedInput
+  autoComplete="off"
   mask={
     Array [
       /\\\\d/,

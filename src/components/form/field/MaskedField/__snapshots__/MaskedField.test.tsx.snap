@@ -67,6 +67,7 @@ exports[`render correctly 1`] = `
     class="emotion-1"
     name="test"
     placeholder="Test"
+    type="text"
     value=""
   />
 </div>

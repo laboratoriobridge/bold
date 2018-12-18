@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render children 1`] = `
+<div
+  onBlur={[Function]}
+  onFocus={[Function]}
+>
+  <span>
+    Children
+  </span>
+</div>
+`;

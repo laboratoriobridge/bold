@@ -1,47 +1,36 @@
-import { Interpolation } from 'emotion'
 import * as React from 'react'
 import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-text-mask'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
 import { Omit } from '../../../../util/types'
-import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
-import { createStyles, InputStatus } from '../TextInput/TextInput'
+import { TextInput, TextInputProps } from '../TextInput/TextInput'
 
 export type MaskType = ReactMaskedInputProps['mask']
 
-export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'css' | 'style'>, WithStylesProps {
-    status?: InputStatus
-    icon?: InputIconDecoratorProps
-    style?: Interpolation
+export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'css' | 'style'>, TextInputProps {
 }
 
-@withStyles
 export class MaskedInput extends React.PureComponent<MaskedInputProps> {
     static defaultProps: Partial<MaskedInputProps> = {
     }
 
     render() {
-        const { css, theme, style, status, icon, ...rest } = this.props
-        const styles = createStyles(theme)
-        const classes = css(styles.input,
-            status === 'error' && styles.error,
-            style)
-
-        const input = (
-            <ReactTextMask
-                className={classes}
-                {...rest}
-            />
+        const { css, style, inputRef, ...rest } = this.props
+        return (
+            <ReactTextMask render={this.renderInput} {...rest} />
         )
+    }
 
-        if (icon) {
-            return (
-                <InputIconDecorator {...icon}>
-                    {input}
-                </InputIconDecorator>
-            )
+    attachRef = (ref: (inputElement: HTMLElement) => void) => (el: HTMLInputElement) => {
+        ref(el)
+
+        if (this.props.inputRef) {
+            (this.props.inputRef as any).current = el
         }
+    }
 
-        return input
+    renderInput = (ref: (inputElement: HTMLElement) => void, props: any) => {
+        return (
+            <TextInput style={this.props.style} inputRef={this.attachRef(ref)} {...props} />
+        )
     }
 }
