@@ -46,9 +46,7 @@ exports[`Modal accept style prop 1`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {
@@ -113,7 +111,6 @@ exports[`Modal accept style prop 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -210,9 +207,7 @@ exports[`Modal render different sizes 1`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {
@@ -277,7 +272,6 @@ exports[`Modal render different sizes 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -353,7 +347,6 @@ exports[`Modal render different sizes 2`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -386,9 +379,7 @@ exports[`Modal render different sizes 2`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {
@@ -536,9 +527,7 @@ exports[`Modal render different sizes 3`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {
@@ -603,7 +592,6 @@ exports[`Modal render different sizes 3`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -687,7 +675,6 @@ exports[`Modal should render closed 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -720,9 +707,7 @@ exports[`Modal should render closed 1`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {
@@ -920,7 +905,6 @@ exports[`Modal should render open 1`] = `
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
   background-color: #FFFFFF;
-  position: relative;
   min-width: 520px;
   pointer-events: auto;
   max-height: 80vh;
@@ -953,9 +937,7 @@ exports[`Modal should render open 1`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+  float: right;
 }
 
 .emotion-1 > span {

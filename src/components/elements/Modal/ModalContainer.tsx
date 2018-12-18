@@ -24,14 +24,11 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
                 boxShadow: theme.shadows.outer['160'],
                 borderRadius: theme.radius.modal,
                 backgroundColor: theme.pallete.surface.main,
-                position: 'relative',
                 minWidth: 520,
                 pointerEvents: 'auto',
             },
             closeButton: {
-                position: 'absolute',
-                top: '1rem',
-                right: '1rem',
+                float: 'right',
             },
         }
         return (
