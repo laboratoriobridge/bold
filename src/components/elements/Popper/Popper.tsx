@@ -3,13 +3,12 @@ import * as React from 'react'
 import { Manager, Reference } from 'react-popper'
 
 import { withStyles, WithStylesProps } from '../../../styles'
+import { Omit } from '../../../util'
 
 import { PopperContent, PopperContentProps } from './PopperContent'
 
-export interface PopperProps extends WithStylesProps {
+export interface PopperProps extends Omit<PopperContentProps, 'show'>, WithStylesProps {
     closeOnOutsideClick?: boolean
-    placement?: PopperContentProps['placement']
-    offset?: PopperContentProps['offset']
     style?: Interpolation
     block?: boolean
     renderTarget(controller: PopperController): React.ReactNode
@@ -31,7 +30,7 @@ export interface PopperState {
 @withStyles
 export class Popper extends React.PureComponent<PopperProps, PopperState> {
 
-    static defaultProps: PopperProps = {
+    static defaultProps: Partial<PopperProps> = {
         placement: 'bottom',
         closeOnOutsideClick: true,
         offset: 0,
@@ -82,7 +81,7 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
     }
 
     render() {
-        const { renderTarget, css, children, style, block } = this.props
+        const { renderTarget, css, children, style, block, ...rest } = this.props
         const styles = {
             wrapper: {
                 display: block ? 'block' : 'inline-block',
@@ -98,7 +97,15 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
                             </div>
                         )}
                     </Reference>
-                    <PopperContent show={this.state.show} placement={this.props.placement} offset={this.props.offset}>
+                    <PopperContent
+                        show={this.state.show}
+                        modifiers={{
+                            preventOverflow: {
+                                boundariesElement: 'window',
+                            },
+                        }}
+                        {...rest}
+                    >
                         {children(this.controller)}
                     </PopperContent>
                 </Manager>

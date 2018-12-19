@@ -30,6 +30,7 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
 
     static defaultProps: Partial<DatePickerInputProps> = {
         onChange: () => null,
+        onFocus: () => null,
         onClick: () => null,
     }
 
@@ -40,7 +41,12 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
         const { value, calendarProps } = this.props
         return (
             <FocusManagerContainer onFocusIn={this.handleFocusIn} onFocusOut={this.handleFocusOut}>
-                <Popper control={this.setController} renderTarget={this.renderTarget} placement='bottom-start' block>
+                <Popper
+                    control={this.setController}
+                    renderTarget={this.renderTarget}
+                    placement='bottom-start'
+                    block
+                >
                     {(ctrl: PopperController) => (
                         <CalendarPopup
                             key={value && value.getTime()}
