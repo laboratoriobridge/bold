@@ -1,1 +1,1 @@
-export { DateField } from './DateField'
+export { DateField, DateFieldProps } from './DateField'
