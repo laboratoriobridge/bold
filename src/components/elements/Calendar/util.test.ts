@@ -1,4 +1,4 @@
-import { createMonthMatrix, createWeekArray, getFirstDayOfMonth, getLasyDayOfMonth, isSameDay } from './util'
+import { createMonthMatrix, createWeekArray, getFirstDayOfMonth, getLastDayOfMonth, isSameDay } from './util'
 
 describe('getFirstDayOfMonth', () => {
     it('should return the first day of a month', () => {
@@ -8,11 +8,11 @@ describe('getFirstDayOfMonth', () => {
     })
 })
 
-describe('getLasyDayOfMonth', () => {
+describe('getLastDayOfMonth', () => {
     it('should return the last day of a month', () => {
-        expect(getLasyDayOfMonth(new Date('2018-10-25'))).toEqual(new Date('2018-10-31'))
-        expect(getLasyDayOfMonth(new Date('2018-11-25'))).toEqual(new Date('2018-11-30'))
-        expect(getLasyDayOfMonth(new Date('2018-02-20'))).toEqual(new Date('2018-02-28'))
+        expect(getLastDayOfMonth(new Date('2018-10-25'))).toEqual(new Date('2018-10-31'))
+        expect(getLastDayOfMonth(new Date('2018-11-25'))).toEqual(new Date('2018-11-30'))
+        expect(getLastDayOfMonth(new Date('2018-02-20'))).toEqual(new Date('2018-02-28'))
     })
 })
 

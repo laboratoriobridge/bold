@@ -15,7 +15,7 @@ export const getFirstDayOfMonth = (target: Date): Date => {
  * @param target  Target month.
  * @returns A new date which is the last day of the target month.
  */
-export const getLasyDayOfMonth = (target: Date): Date => {
+export const getLastDayOfMonth = (target: Date): Date => {
     return new Date(target.getFullYear(), target.getMonth() + 1, 0)
 }
 
@@ -45,7 +45,7 @@ export const createWeekArray = (target: Date): Date[] => {
  */
 export const createMonthMatrix = (target: Date): Date[][] => {
     const firstDayOfMonth = getFirstDayOfMonth(target)
-    const lastDayOfMonth = getLasyDayOfMonth(target)
+    const lastDayOfMonth = getLastDayOfMonth(target)
     const weeks = []
 
     let curr = firstDayOfMonth
