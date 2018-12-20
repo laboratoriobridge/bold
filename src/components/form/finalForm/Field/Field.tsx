@@ -4,7 +4,7 @@ import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProp
 import { Omit } from '../../../../util/types'
 import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
-import { getActiveError, hasActiveError } from './util'
+import { getFieldError } from './util'
 
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
@@ -58,13 +58,13 @@ export class FieldCmp extends React.Component<FieldProps> {
         const renderProps = {
             ...props,
             input: { ...props.input, onChange },
-            hasError: hasActiveError(props.meta),
+            hasError: !!getFieldError(props),
         }
 
         if (this.props.hasWrapper) {
             return (
                 <FieldWrapper
-                    error={getActiveError(props.meta)}
+                    error={getFieldError(props)}
                     name={props.input.name}
                     label={this.props.label}
                     required={this.props.required}

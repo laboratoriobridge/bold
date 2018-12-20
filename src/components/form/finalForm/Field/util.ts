@@ -7,17 +7,9 @@ import { FieldProps } from './Field'
  *
  * @param fieldProps The react-final-form field render props.
  */
-export const getActiveError = (fieldMeta: FieldRenderProps['meta']): any => {
-    return fieldMeta.touched && fieldMeta.error || !fieldMeta.dirtySinceLastSubmit && fieldMeta.submitError
-}
-
-/**
- * Return a boolean indicating if the field has a current active error.
- *
- * @param fieldProps The react-final-form field render props.
- */
-export const hasActiveError = (fieldMeta: FieldRenderProps['meta']): boolean => {
-    return !!getActiveError(fieldMeta)
+export const getFieldError = (fieldProps: FieldRenderProps): any => {
+    const { meta } = fieldProps
+    return meta.touched && meta.error || !meta.dirtySinceLastSubmit && meta.submitError
 }
 
 /**

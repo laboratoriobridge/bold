@@ -1,26 +1,28 @@
-import { BaseFieldProps, extractInputProps, getActiveError, hasActiveError } from './util'
+import { FieldRenderProps } from 'react-final-form'
 
-describe('hasActiveError', () => {
-    it('should return true if field has an active error', () => {
-        expect(hasActiveError({})).toBeFalsy()
+import { BaseFieldProps, extractInputProps, getFieldError } from './util'
 
-        expect(hasActiveError({ error: 'Error!' })).toBeFalsy()
-        expect(hasActiveError({ error: 'Error!', touched: true })).toBeTruthy()
-
-        expect(hasActiveError({ submitError: 'Submit Error!', dirtySinceLastSubmit: true })).toBeFalsy()
-        expect(hasActiveError({ submitError: 'Submit Error!', dirtySinceLastSubmit: false })).toBeTruthy()
-    })
-})
-
-describe('getActiveError', () => {
+describe('getFieldError', () => {
     it('should return the current field active error', () => {
-        expect(getActiveError({})).toBeFalsy()
+        const baseFieldProps: FieldRenderProps = {
+            input: { name: '', checked: false, onBlur: jest.fn(), onChange: jest.fn(), onFocus: jest.fn(), value: '' },
+            meta: {},
+        }
 
-        expect(getActiveError({ error: 'Error!' })).toBeFalsy()
-        expect(getActiveError({ error: 'Error!', touched: true })).toEqual('Error!')
+        expect(getFieldError({ ...baseFieldProps })).toBeFalsy()
 
-        expect(getActiveError({ submitError: 'Submit Error!', dirtySinceLastSubmit: true })).toBeFalsy()
-        expect(getActiveError({ submitError: 'Submit Error!', dirtySinceLastSubmit: false })).toEqual('Submit Error!')
+        expect(getFieldError({ ...baseFieldProps, meta: { error: 'Error!' } })).toBeFalsy()
+        expect(getFieldError({ ...baseFieldProps, meta: { error: 'Error!', touched: true } })).toEqual('Error!')
+
+        expect(getFieldError({
+            ...baseFieldProps, meta: {
+                submitError: 'Submit Error!', dirtySinceLastSubmit: true,
+            },
+        })).toBeFalsy()
+        expect(getFieldError({
+            ...baseFieldProps,
+            meta: { submitError: 'Submit Error!', dirtySinceLastSubmit: false },
+        })).toEqual('Submit Error!')
     })
 })
 

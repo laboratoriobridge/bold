@@ -1,3 +1,3 @@
 export * from './Field'
+export * from './util'
 export { withField } from './withField'
-export { extractInputProps, BaseFieldProps } from './util'
