@@ -10,7 +10,7 @@ export class CheckboxField extends React.Component<CheckboxFieldProps> {
 
     render() {
         return (
-            <Field
+            <Field<boolean>
                 {...this.props}
                 type='checkbox'
                 hasWrapper={false}

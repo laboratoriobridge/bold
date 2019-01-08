@@ -3,6 +3,7 @@ import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
 import { Form } from 'react-final-form'
 
+import metaPath from '../../../../metaPath/metaPath'
 import { withTheme } from '../../../../test'
 import { FieldWrapper } from '../../FieldWrapper'
 
@@ -44,6 +45,25 @@ describe('convert', () => {
             </Form>
         ))
         const fieldState = wrapper.find(FieldCmp).props().reactFinalForm.getFieldState('field1')
+        expect(fieldState.data).toEqual({ convert })
+    })
+})
+
+interface FormType {
+    id: number
+    name: string
+}
+
+describe('meta', () => {
+    it('should work normally with metaPath', () => {
+        const path = metaPath<FormType>()
+        const convert = jest.fn()
+        const wrapper = mount(withTheme(
+            <Form onSubmit={jest.fn()} mutators={{ setFieldData: setFieldData.default || setFieldData }}>
+                {p => <Field<number> name={path.id} render={input} convert={convert} />}
+            </Form>
+        ))
+        const fieldState = wrapper.find(FieldCmp).props().reactFinalForm.getFieldState(path.id.getAbsolutePath())
         expect(fieldState.data).toEqual({ convert })
     })
 })

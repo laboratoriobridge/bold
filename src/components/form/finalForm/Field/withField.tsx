@@ -11,16 +11,16 @@ export interface BaseInputProps {
     status?: InputStatus
 }
 
-export function withField<P extends BaseInputProps>(
+export function withField<T, P extends BaseInputProps>(
     InputComponent: React.ComponentType<P>,
-    fieldProps: Partial<FieldProps> = {}
+    fieldProps: Partial<FieldProps<T>> = {}
 ) {
-    const WithField = class extends React.Component<BaseFieldProps<P>> {
+    const WithField = class extends React.Component<BaseFieldProps<P, T>> {
         static displayName = `Field(${InputComponent.displayName || InputComponent.name})`
 
         render() {
             return (
-                <Field
+                <Field<T>
                     {...this.props}
                     render={this.renderInput}
                     {...fieldProps}
