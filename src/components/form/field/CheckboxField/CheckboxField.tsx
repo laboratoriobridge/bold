@@ -3,7 +3,7 @@ import * as React from 'react'
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
 
-export interface CheckboxFieldProps extends BaseFieldProps<CheckboxProps, boolean> {
+export interface CheckboxFieldProps extends BaseFieldProps<CheckboxProps> {
 }
 
 export class CheckboxField extends React.Component<CheckboxFieldProps> {

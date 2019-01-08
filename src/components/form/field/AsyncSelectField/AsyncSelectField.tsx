@@ -4,22 +4,22 @@ import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../fin
 import { AsyncSelect, AsyncSelectProps } from '../../input/AsyncSelect/AsyncSelect'
 import { DefaultOptionType } from '../../input/Select/Select'
 
-export interface AsyncSelectFieldProps<T, OptionType = DefaultOptionType> extends
-    BaseFieldProps<AsyncSelectProps<OptionType>, T> {
+export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends
+    BaseFieldProps<AsyncSelectProps<OptionType>> {
     convertToValueKey?: boolean
 }
 
-export class AsyncSelectField<T, OptionType = DefaultOptionType> extends
-    React.Component<AsyncSelectFieldProps<T, OptionType>> {
+export class AsyncSelectField<OptionType = DefaultOptionType> extends
+    React.Component<AsyncSelectFieldProps<OptionType>> {
 
-    static defaultProps: Partial<AsyncSelectFieldProps<any, any>> = {
+    static defaultProps: Partial<AsyncSelectFieldProps<any>> = {
         convertToValueKey: true,
         getOptionValue: (option) => option && option.value,
     }
 
     render() {
         return (
-            <Field<T>
+            <Field
                 {...this.props}
                 render={this.renderSelect}
                 convert={this.convert}

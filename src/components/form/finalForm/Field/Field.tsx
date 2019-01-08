@@ -5,6 +5,8 @@ import { Meta } from '../../../../metaPath/metaPath'
 import { Omit } from '../../../../util/types'
 import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
+import { getFieldError } from './util'
+
 export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
@@ -24,6 +26,7 @@ export interface FieldProps<T = any> extends Omit<FieldWrapperProps, 'name'>,
     name: string | Meta<T>
     hasWrapper?: boolean
     onChange?: any
+    type?: string
     render(props: RenderProps): React.ReactNode
 
     /**
@@ -74,7 +77,6 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
     }
 
     private renderComponent = (props: FinalRenderProps & { custom: any }) => {
-        const { meta } = props
         const onChange = (value) => {
             // External onChange prop is killed by final-form, so we merge the external and the internal one
             props.input.onChange(value)
@@ -83,13 +85,13 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
         const renderProps = {
             ...props,
             input: { ...props.input, onChange },
-            hasError: meta.touched && !!meta.error || !meta.dirtySinceLastSubmit && !!meta.submitError,
+            hasError: !!getFieldError(props),
         }
 
         if (this.props.hasWrapper) {
             return (
                 <FieldWrapper
-                    error={meta.touched && meta.error || !meta.dirtySinceLastSubmit && meta.submitError}
+                    error={getFieldError(props)}
                     name={props.input.name}
                     label={this.props.label}
                     required={this.props.required}
