@@ -1,6 +1,6 @@
 import { BaseFieldProps, withField } from '../../finalForm/Field'
-import { TextInput } from '../../input/TextInput/TextInput'
+import { TextInput, TextInputProps } from '../../input/TextInput/TextInput'
 
-export type TextFieldProps = BaseFieldProps<TextInput>
+export type TextFieldProps = BaseFieldProps<TextInputProps, string>
 
-export const TextField = withField(TextInput)
+export const TextField = withField<string, TextInputProps>(TextInput)

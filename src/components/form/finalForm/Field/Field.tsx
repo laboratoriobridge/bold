@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProps as FinalRenderProps, ReactContext as ReactFinalFormContext, withReactFinalForm } from 'react-final-form'
 
+import { Meta } from '../../../../metaPath/metaPath'
 import { Omit } from '../../../../util/types'
 import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
@@ -8,9 +9,21 @@ export interface RenderProps extends FinalRenderProps {
     hasError?: boolean
 }
 
-export interface FieldProps extends FieldWrapperProps, FinalFieldProps, ReactFinalFormContext {
-    name: string
+type PickedFinalFieldProps =
+    | 'allowNull'
+    | 'format'
+    | 'formatOnBlur'
+    | 'parse'
+    | 'isEqual'
+    | 'subscription'
+    | 'validate'
+    | 'value'
+
+export interface FieldProps<T = any> extends Omit<FieldWrapperProps, 'name'>,
+    Pick<FinalFieldProps, PickedFinalFieldProps> {
+    name: string | Meta<T>
     hasWrapper?: boolean
+    onChange?: any
     render(props: RenderProps): React.ReactNode
 
     /**
@@ -21,9 +34,9 @@ export interface FieldProps extends FieldWrapperProps, FinalFieldProps, ReactFin
     convert?(value: any): any
 }
 
-export class FieldCmp extends React.Component<FieldProps> {
+export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFinalFormContext> {
 
-    static defaultProps: Partial<FieldProps> = {
+    static defaultProps: Partial<FieldProps<any>> = {
         hasWrapper: true,
     }
 
@@ -31,20 +44,33 @@ export class FieldCmp extends React.Component<FieldProps> {
         if (this.props.convert) {
             const setFieldData = this.props.reactFinalForm.mutators.setFieldData
             if (setFieldData) {
-                setFieldData(this.props.name, {
+                setFieldData(this.getFieldName(), {
                     convert: this.props.convert,
                 })
             } else {
-                throw new Error('Form must have a setFielData mutator so Field can define a convert function')
+                throw new Error('Form must have a setFieldData mutator so Field can define a convert function')
             }
         }
     }
 
     render() {
-        const { onChange, ...rest } = this.props
+        const { onChange, name, ...rest } = this.props
         return (
-            <FinalFormField {...rest} custom={{ onChange }} render={this.renderComponent} />
+            <FinalFormField
+                {...rest}
+                name={this.getFieldName()}
+                custom={{ onChange }}
+                render={this.renderComponent}
+            />
         )
+    }
+
+    private getFieldName = (): string => {
+        if (typeof this.props.name === 'string') {
+            return this.props.name
+        } else {
+            return (this.props.name as Meta<T>).getAbsolutePath().join('.')
+        }
     }
 
     private renderComponent = (props: FinalRenderProps & { custom: any }) => {
@@ -77,4 +103,10 @@ export class FieldCmp extends React.Component<FieldProps> {
     }
 }
 
-export const Field = withReactFinalForm(FieldCmp) as React.ComponentType<Omit<FieldProps, 'reactFinalForm'>>
+const FieldWrapped = withReactFinalForm(FieldCmp) as React.ComponentType<FieldProps>
+
+export class Field<T> extends React.Component<FieldProps<T>> {
+    render() {
+        return <FieldWrapped {...this.props} />
+    }
+}

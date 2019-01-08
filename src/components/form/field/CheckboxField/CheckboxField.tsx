@@ -3,14 +3,14 @@ import * as React from 'react'
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'
 
-export interface CheckboxFieldProps extends BaseFieldProps<CheckboxProps> {
+export interface CheckboxFieldProps extends BaseFieldProps<CheckboxProps, boolean> {
 }
 
 export class CheckboxField extends React.Component<CheckboxFieldProps> {
 
     render() {
         return (
-            <Field
+            <Field<boolean>
                 {...this.props}
                 type='checkbox'
                 hasWrapper={false}
