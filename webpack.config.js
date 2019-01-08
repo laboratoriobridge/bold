@@ -6,7 +6,6 @@ module.exports = {
     entry: {
         main: './src/index.ts',
         requester: './src/requester',
-        auth: './src/auth',
     },
     mode: 'development',
     output: {
