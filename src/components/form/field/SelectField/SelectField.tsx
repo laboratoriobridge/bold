@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
-import { DefaultOptionType, Select, SelectProps } from '../../input/Select/Select'
+import { DefaultOptionType, Select, SelectProps } from '../../input/Select'
 
 export interface SelectFieldProps<OptionType = DefaultOptionType> extends BaseFieldProps<SelectProps<OptionType>> {
     convertToValueKey?: boolean

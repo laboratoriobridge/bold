@@ -1,18 +1,14 @@
 import * as React from 'react'
-import ReactSelect, { createFilter } from 'react-select'
+import ReactSelect from 'react-select'
 import { Props as ReactSelectProps } from 'react-select/lib/Select'
 
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
 import { InputStatus } from '../TextInput/TextInput'
 
+import { DefaultOptionType, defaultSelectProps } from './base'
 import { SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from './components'
 import { createSelectStyles } from './createSelectStyle'
-
-export interface DefaultOptionType {
-    value: any
-    label: string
-}
 
 export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     Omit<ReactSelectProps<OptionType>, 'theme'> {
@@ -21,24 +17,10 @@ export interface SelectProps<OptionType = DefaultOptionType> extends WithStylesP
     disabled?: boolean
 }
 
-export const defaultFilter = createFilter({
-    ignoreAccents: true,
-    ignoreCase: true,
-})
-
 @withStyles
 export class Select<OptionType = DefaultOptionType> extends React.Component<SelectProps<OptionType>> {
 
-    static defaultProps: SelectProps<any> = {
-        backspaceRemovesValue: false,
-        isMulti: false,
-        isClearable: true,
-        filterOption: defaultFilter,
-        placeholder: null,
-        noOptionsMessage: () => 'Nenhum resultado encontrado.',
-        getOptionLabel: (option) => option && option.label,
-        getOptionValue: (option) => option && option.value,
-    }
+    static defaultProps: Partial<SelectProps<any>> = defaultSelectProps
 
     render() {
         const { css, theme, status, disabled, components, ...rest } = this.props

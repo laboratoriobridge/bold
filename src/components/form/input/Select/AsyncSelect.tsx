@@ -4,9 +4,9 @@ import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/l
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
 import { createSelectStyles } from '../Select/createSelectStyle'
-import { DefaultOptionType } from '../Select/Select'
 import { InputStatus } from '../TextInput/TextInput'
 
+import { DefaultOptionType, defaultSelectProps } from './base'
 import { SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from './components'
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
@@ -18,17 +18,7 @@ export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithSt
 @withStyles
 export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component<AsyncSelectProps<OptionType>> {
 
-    static defaultProps: Partial<AsyncSelectProps<any>> = {
-        pageSize: 10,
-        backspaceRemovesValue: false,
-        isMulti: false,
-        isClearable: true,
-        placeholder: null,
-        loadingMessage: () => 'Carregando...',
-        noOptionsMessage: () => 'Nenhum resultado encontrado.',
-        getOptionLabel: (option) => option && option.label,
-        getOptionValue: (option) => option && option.value,
-    }
+    static defaultProps: Partial<AsyncSelectProps<any>> = defaultSelectProps
 
     render() {
         const { css, theme, status, disabled, components, ...rest } = this.props

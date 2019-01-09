@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultOptionType } from '../../input/Select/Select'
+import { DefaultOptionType } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
