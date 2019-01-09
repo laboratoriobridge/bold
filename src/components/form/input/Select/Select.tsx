@@ -45,7 +45,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
     }
 
     render() {
-        const { css, theme, status, disabled, ...rest } = this.props
+        const { css, theme, status, disabled, components, ...rest } = this.props
 
         const styles = createSelectStyles(theme, status === 'error')
 
@@ -59,6 +59,7 @@ export class Select<OptionType = DefaultOptionType> extends React.Component<Sele
                     Option: SelectOption,
                     DropdownIndicator: SelectDropdownIndicator,
                     MultiValueRemove: SelectMultiValueRemove,
+                    ...components,
                 }}
                 {...rest}
             />

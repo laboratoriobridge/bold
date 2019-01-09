@@ -29,7 +29,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
     }
 
     render() {
-        const { css, theme, status, disabled, ...rest } = this.props
+        const { css, theme, status, disabled, components, ...rest } = this.props
 
         const styles = createSelectStyles(theme, status === 'error')
 
@@ -43,6 +43,7 @@ export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component
                     Option: SelectOption,
                     DropdownIndicator: SelectDropdownIndicator,
                     MultiValueRemove: SelectMultiValueRemove,
+                    ...components,
                 }}
                 {...rest}
             />
