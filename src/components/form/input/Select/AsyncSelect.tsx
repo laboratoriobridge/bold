@@ -4,8 +4,10 @@ import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/l
 import { withStyles, WithStylesProps } from '../../../../styles/index'
 import { Omit } from '../../../../util/types'
 import { createSelectStyles } from '../Select/createSelectStyle'
-import { DefaultOptionType, SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from '../Select/Select'
+import { DefaultOptionType } from '../Select/Select'
 import { InputStatus } from '../TextInput/TextInput'
+
+import { SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from './components'
 
 export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
     Omit<ReactAsyncSelectProps<OptionType>, 'theme'> {
