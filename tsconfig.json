@@ -23,19 +23,16 @@
     "declaration": true,
     "jsx": "react"
   },
-  "files": [
-    "src/typings/imports.d.ts",
-    "src/index.ts"
-  ],
-  "compileOnSave": false,
-  "buildOnSave": false,
   "exclude": [
-    "build",
-    "coverage",
-    "lib",
-    "node",
     "node_modules",
-    "target"
+    "**/*.test.ts*",
+    "**/__tests__",
+    "**/__mocks__",
+    "node",
+    "target",
+    "lib",
+    "build",
+    "coverage"
   ],
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true

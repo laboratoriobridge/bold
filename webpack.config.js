@@ -3,12 +3,10 @@ const { CheckerPlugin } = require('awesome-typescript-loader')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
-    entry: {
-        main: './src/index.ts',
-        requester: './src/requester',
-    },
+    entry: './src/index.ts',
     mode: 'development',
     output: {
+        filename: 'main.js',
         path: path.resolve(__dirname, 'lib'),
         library: 'bridge-react',
         libraryTarget: 'umd',
