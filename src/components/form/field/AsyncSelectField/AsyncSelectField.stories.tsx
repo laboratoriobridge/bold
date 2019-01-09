@@ -41,7 +41,6 @@ storiesOf('Form/AsyncSelectField', module)
             label={text('label', 'Component label')}
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
-            status={boolean('hasError', false) ? 'error' : undefined}
             onChange={action('changed')}
         />
     ))

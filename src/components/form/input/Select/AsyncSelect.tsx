@@ -1,44 +1,17 @@
 import * as React from 'react'
-import ReactAsyncSelect, { Props as ReactAsyncSelectProps } from 'react-select/lib/Async'
+import ReactAsyncSelect, { AsyncProps } from 'react-select/lib/Async'
 
-import { withStyles, WithStylesProps } from '../../../../styles/index'
-import { Omit } from '../../../../util/types'
-import { createSelectStyles } from '../Select/createSelectStyle'
-import { InputStatus } from '../TextInput/TextInput'
+import { withStyles } from '../../../../styles/index'
 
-import { DefaultOptionType, defaultSelectProps } from './base'
-import { SelectDropdownIndicator, SelectMultiValueRemove, SelectOption } from './components'
+import { BaseSelectProps, createSelectBaseProps, DefaultOptionType, defaultSelectProps } from './base'
 
-export interface AsyncSelectProps<OptionType = DefaultOptionType> extends WithStylesProps,
-    Omit<ReactAsyncSelectProps<OptionType>, 'theme'> {
-    status?: InputStatus
-    disabled?: boolean
-}
+export type AsyncSelectProps<T = DefaultOptionType> = BaseSelectProps<T> & AsyncProps<T>
 
 @withStyles
-export class AsyncSelect<OptionType = DefaultOptionType> extends React.Component<AsyncSelectProps<OptionType>> {
-
+export class AsyncSelect<T = DefaultOptionType> extends React.Component<AsyncSelectProps<T>> {
     static defaultProps: Partial<AsyncSelectProps<any>> = defaultSelectProps
 
     render() {
-        const { css, theme, status, disabled, components, ...rest } = this.props
-
-        const styles = createSelectStyles(theme, status === 'error')
-
-        return (
-            <ReactAsyncSelect
-                classNamePrefix='react-select-async'
-                styles={styles}
-                isDisabled={disabled}
-                closeMenuOnSelect={!this.props.isMulti}
-                components={{
-                    Option: SelectOption,
-                    DropdownIndicator: SelectDropdownIndicator,
-                    MultiValueRemove: SelectMultiValueRemove,
-                    ...components,
-                }}
-                {...rest}
-            />
-        )
+        return <ReactAsyncSelect {...createSelectBaseProps(this.props)} />
     }
 }

@@ -227,13 +227,13 @@ exports[`render should render correctly 1`] = `
     class="emotion-11"
   >
     <div
-      class="emotion-10 react-select-async__control"
+      class="emotion-10 react-select__control"
     >
       <div
-        class="emotion-2 react-select-async__value-container react-select-async__value-container--has-value"
+        class="emotion-2 react-select__value-container react-select__value-container--has-value"
       >
         <div
-          class="emotion-0 react-select-async__single-value"
+          class="emotion-0 react-select__single-value"
         >
           Item #1
         </div>
@@ -241,7 +241,7 @@ exports[`render should render correctly 1`] = `
           class="emotion-1"
         >
           <div
-            class="react-select-async__input"
+            class="react-select__input"
             style="display: inline-block;"
           >
             <input
@@ -263,11 +263,11 @@ exports[`render should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-9 react-select-async__indicators"
+        class="emotion-9 react-select__indicators"
       >
         <div
           aria-hidden="true"
-          class="emotion-6 react-select-async__indicator react-select-async__loading-indicator"
+          class="emotion-6 react-select__indicator react-select__loading-indicator"
         >
           <span
             class="emotion-3"
@@ -280,11 +280,11 @@ exports[`render should render correctly 1`] = `
           />
         </div>
         <span
-          class="emotion-7 react-select-async__indicator-separator"
+          class="emotion-7 react-select__indicator-separator"
         />
         <div
           aria-hidden="true"
-          class="emotion-8 react-select-async__indicator react-select-async__dropdown-indicator"
+          class="emotion-8 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
             height="20"
