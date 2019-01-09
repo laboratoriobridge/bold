@@ -4,6 +4,16 @@ import * as React from 'react'
 import { withTheme } from '../../../../test'
 
 import { AsyncSelect } from './AsyncSelect'
+import { DefaultOptionType } from './base'
+
+interface OptionType extends DefaultOptionType {
+    extra: string
+}
+
+const options: OptionType[] = [
+    { value: 1, label: 'Test #1', extra: 'foo' },
+    { value: 2, label: 'Test #2', extra: 'bar' },
+]
 
 it('should render correctly', () => {
     const wrapper = mount(withTheme(<AsyncSelect />))
@@ -11,7 +21,7 @@ it('should render correctly', () => {
 })
 
 it('should render correctly when multivalue', () => {
-    const wrapper = mount(withTheme(<AsyncSelect isMulti />))
+    const wrapper = mount(withTheme(<AsyncSelect<OptionType> options={options} value={[options[0]]} isMulti />))
     expect(wrapper.render()).toMatchSnapshot()
 })
 
