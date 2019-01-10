@@ -87,6 +87,7 @@ export class Paginator extends React.PureComponent<PaginatorProps, PaginatorStat
                     onChange={this.handleInputChange}
                     onBlur={this.handleInputBlur}
                     onKeyPress={this.handleInputKeyPress}
+                    clearable={false}
                 />
 
                 <span>de {total}</span>

@@ -42,12 +42,12 @@ export class DateInput extends React.Component<DateInputProps> {
             this.props.onInputChange(e)
         }
 
-        const value: string = e.target.value
-
-        if (!value) {
+        if (!e || !e.target.value) {
             this.props.onChange(null)
+            return
         }
 
+        const value = e.target.value
         const match: RegExpMatchArray = value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
         if (match) {
             const date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
