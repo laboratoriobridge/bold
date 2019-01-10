@@ -3,8 +3,8 @@ import * as React from 'react'
 
 import { withTheme } from '../../../../test'
 
+import { AsyncSelect } from './AsyncSelect'
 import { DefaultOptionType } from './base'
-import { Select } from './Select'
 
 interface OptionType extends DefaultOptionType {
     extra: string
@@ -16,18 +16,18 @@ const options: OptionType[] = [
 ]
 
 it('should render correctly', () => {
-    const wrapper = mount(withTheme(<Select />))
+    const wrapper = mount(withTheme(<AsyncSelect />))
     expect(wrapper.render()).toMatchSnapshot()
 })
 
 it('should render correctly when multivalue', () => {
-    const wrapper = mount(withTheme(<Select<OptionType> options={options} value={options[0]} isMulti />))
+    const wrapper = mount(withTheme(<AsyncSelect<OptionType> options={options} value={[options[0]]} isMulti />))
     expect(wrapper.render()).toMatchSnapshot()
 })
 
 it('should accept to override components', () => {
     const wrapper = mount(withTheme(
-        <Select
+        <AsyncSelect
             components={{
                 Placeholder: (p) => <span className='placeholder' />,
             }}

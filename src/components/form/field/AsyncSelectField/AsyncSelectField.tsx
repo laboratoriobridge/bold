@@ -1,8 +1,7 @@
 import * as React from 'react'
 
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
-import { AsyncSelect, AsyncSelectProps } from '../../input/AsyncSelect/AsyncSelect'
-import { DefaultOptionType } from '../../input/Select/Select'
+import { AsyncSelect, AsyncSelectProps, DefaultOptionType } from '../../input/Select'
 
 export interface AsyncSelectFieldProps<OptionType = DefaultOptionType> extends
     BaseFieldProps<AsyncSelectProps<OptionType>> {

@@ -227,13 +227,13 @@ exports[`render should render correctly 1`] = `
     class="emotion-11"
   >
     <div
-      class="emotion-10 react-select-async__control"
+      class="emotion-10 react-select__control"
     >
       <div
-        class="emotion-2 react-select-async__value-container react-select-async__value-container--has-value"
+        class="emotion-2 react-select__value-container react-select__value-container--has-value"
       >
         <div
-          class="emotion-0 react-select-async__single-value"
+          class="emotion-0 react-select__single-value"
         >
           Item #1
         </div>
@@ -241,7 +241,7 @@ exports[`render should render correctly 1`] = `
           class="emotion-1"
         >
           <div
-            class="react-select-async__input"
+            class="react-select__input"
             style="display: inline-block;"
           >
             <input
@@ -263,11 +263,11 @@ exports[`render should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-9 react-select-async__indicators"
+        class="emotion-9 react-select__indicators"
       >
         <div
           aria-hidden="true"
-          class="emotion-6 react-select-async__indicator react-select-async__loading-indicator"
+          class="emotion-6 react-select__indicator react-select__loading-indicator"
         >
           <span
             class="emotion-3"
@@ -280,11 +280,11 @@ exports[`render should render correctly 1`] = `
           />
         </div>
         <span
-          class="emotion-7 react-select-async__indicator-separator"
+          class="emotion-7 react-select__indicator-separator"
         />
         <div
           aria-hidden="true"
-          class="emotion-8 react-select-async__indicator react-select-async__dropdown-indicator"
+          class="emotion-8 react-select__indicator react-select__dropdown-indicator"
         >
           <svg
             height="20"
@@ -304,410 +304,6 @@ exports[`render should render correctly 1`] = `
       type="hidden"
       value="1"
     />
-  </div>
-</div>
-`;
-
-exports[`render should render correctly when multivalue 1`] = `
-.emotion-16 {
-  position: relative;
-  box-sizing: border-box;
-}
-
-.emotion-15 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  background-color: hsl(0,0%,100%);
-  border-color: #B9B9BD;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
-  cursor: text;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  min-height: auto;
-  outline: 0 !important;
-  position: relative;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  box-sizing: border-box;
-  background: #FFFFFF;
-}
-
-.emotion-15:hover {
-  border-color: #818489;
-}
-
-.emotion-6 {
-  margin: 2px;
-  padding-bottom: 2px;
-  padding-top: 2px;
-  visibility: visible;
-  color: hsl(0,0%,20%);
-  box-sizing: border-box;
-}
-
-.emotion-14 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-shrink: 0;
-  -ms-flex-negative: 0;
-  flex-shrink: 0;
-  box-sizing: border-box;
-}
-
-.emotion-11 {
-  color: hsl(0,0%,80%);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 8px;
-  -webkit-transition: color 150ms;
-  transition: color 150ms;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-  font-size: 4px;
-  line-height: 1;
-  margin-right: 4px;
-  text-align: center;
-  vertical-align: middle;
-  box-sizing: border-box;
-}
-
-.emotion-8 {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 0ms;
-  animation-delay: 0ms;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: react-select-loading-indicator;
-  animation-name: react-select-loading-indicator;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  background-color: hsl(0,0%,80%);
-  border-radius: 1em;
-  display: inline-block;
-  height: 1em;
-  vertical-align: top;
-  width: 1em;
-}
-
-.emotion-9 {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 160ms;
-  animation-delay: 160ms;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: react-select-loading-indicator;
-  animation-name: react-select-loading-indicator;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  background-color: hsl(0,0%,80%);
-  border-radius: 1em;
-  display: inline-block;
-  margin-left: 1em;
-  height: 1em;
-  vertical-align: top;
-  width: 1em;
-}
-
-.emotion-10 {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-delay: 320ms;
-  animation-delay: 320ms;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  -webkit-animation-name: react-select-loading-indicator;
-  animation-name: react-select-loading-indicator;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  background-color: hsl(0,0%,80%);
-  border-radius: 1em;
-  display: inline-block;
-  margin-left: 1em;
-  height: 1em;
-  vertical-align: top;
-  width: 1em;
-}
-
-.emotion-12 {
-  -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
-  align-self: stretch;
-  background-color: hsl(0,0%,80%);
-  margin-bottom: 8px;
-  margin-top: 8px;
-  width: 1px;
-  box-sizing: border-box;
-  display: none;
-}
-
-.emotion-13 {
-  color: #2D343B;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 5px 8px;
-  -webkit-transition: color 150ms;
-  transition: color 150ms;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
-.emotion-13:hover {
-  color: hsl(0,0%,60%);
-}
-
-.emotion-13:hover {
-  color: #2D343B;
-}
-
-.emotion-7 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  padding: 2px;
-  -webkit-overflow-scrolling: touch;
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-  line-height: 1;
-}
-
-.emotion-2 {
-  background-color: hsl(0,0%,90%);
-  border-radius: 2px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 2px;
-  min-width: 0;
-  box-sizing: border-box;
-  border: 1px solid #B9B9BD;
-}
-
-.emotion-0 {
-  border-radius: 2px;
-  color: #2D343B;
-  font-size: 0.8125rem;
-  overflow: hidden;
-  padding: 1px 0.5rem;
-  padding-left: 6px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  box-sizing: border-box;
-  background: #FFFFFF;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 0;
-  line-height: 1.25rem;
-}
-
-.emotion-1 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-radius: 2px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-left: 0;
-  padding-right: 0;
-  box-sizing: border-box;
-  cursor: pointer;
-  background: #F2F2F7;
-  border-top-left-radius: 0;
-  border-top-right-radius: 4px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 4px;
-}
-
-.emotion-1:hover {
-  background-color: #FFBDAD;
-  color: #DE350B;
-}
-
-.emotion-1:hover {
-  background: #F2F2F7;
-  color: #D83A2E;
-}
-
-<div
-  data-name="select1"
->
-  <div
-    class="emotion-16"
-  >
-    <div
-      class="emotion-15 react-select-async__control"
-    >
-      <div
-        class="emotion-7 react-select-async__value-container react-select-async__value-container--is-multi react-select-async__value-container--has-value"
-      >
-        <div
-          class="emotion-2 react-select-async__multi-value"
-        >
-          <div
-            class="emotion-0 react-select-async__multi-value__label"
-          >
-            Item #1
-          </div>
-          <div
-            class="emotion-1 react-select-async__multi-value__remove"
-          >
-            <svg
-              height="22"
-              style="fill: currentColor;"
-              viewBox="0 0 24 24"
-              width="22"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="emotion-2 react-select-async__multi-value"
-        >
-          <div
-            class="emotion-0 react-select-async__multi-value__label"
-          >
-            Item #2
-          </div>
-          <div
-            class="emotion-1 react-select-async__multi-value__remove"
-          >
-            <svg
-              height="22"
-              style="fill: currentColor;"
-              viewBox="0 0 24 24"
-              width="22"
-            >
-              <path
-                d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-                data-name="times"
-              />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="emotion-6"
-        >
-          <div
-            class="react-select-async__input"
-            style="display: inline-block;"
-          >
-            <input
-              aria-autocomplete="list"
-              autocapitalize="none"
-              autocomplete="off"
-              autocorrect="off"
-              id="react-select-3-input"
-              spellcheck="false"
-              style="box-sizing: content-box; width: 2px; border: 0px; font-size: inherit; opacity: 1; outline: 0; padding: 0px;"
-              tabindex="0"
-              type="text"
-              value=""
-            />
-            <div
-              style="position: absolute; top: 0px; left: 0px; visibility: hidden; height: 0px; overflow: scroll; white-space: pre; font-size: inherit; font-family: \\"IBM Plex Sans\\",sans-serif; letter-spacing: normal; text-transform: none;"
-            />
-          </div>
-        </div>
-      </div>
-      <div
-        class="emotion-14 react-select-async__indicators"
-      >
-        <div
-          aria-hidden="true"
-          class="emotion-11 react-select-async__indicator react-select-async__loading-indicator"
-        >
-          <span
-            class="emotion-8"
-          />
-          <span
-            class="emotion-9"
-          />
-          <span
-            class="emotion-10"
-          />
-        </div>
-        <span
-          class="emotion-12 react-select-async__indicator-separator"
-        />
-        <div
-          aria-hidden="true"
-          class="emotion-13 react-select-async__indicator react-select-async__dropdown-indicator"
-        >
-          <svg
-            height="20"
-            viewBox="0 0 24 24"
-            width="20"
-          >
-            <path
-              d="M12 15.61l6-7.22H6l6 7.22z"
-              data-name="triangle-down"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-    <div>
-      <input
-        name="select1"
-        type="hidden"
-        value="1"
-      />
-      <input
-        name="select1"
-        type="hidden"
-        value="2"
-      />
-    </div>
   </div>
 </div>
 `;

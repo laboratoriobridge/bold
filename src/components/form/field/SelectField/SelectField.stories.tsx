@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultOptionType } from '../../input/Select/Select'
+import { DefaultOptionType } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
@@ -27,7 +27,6 @@ storiesOf('Form/SelectField', module)
             placeholder='Select a value...'
             disabled={boolean('disabled', false)}
             isMulti={boolean('isMulti', false)}
-            status={boolean('hasError', false) ? 'error' : undefined}
             onChange={action('changed')}
             convertToValueKey
         />

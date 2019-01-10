@@ -13,11 +13,11 @@ export interface Styles {
     [key: string]: Interpolation
 }
 
-export function withStyles<P extends WithStylesProps, T extends React.ComponentClass<P>>(
+export function withStyles<P extends WithStylesProps, T extends React.ComponentType<P>>(
     WrappedComponent: T
 ): T {
 
-    const Cmp = WrappedComponent as React.ComponentClass<P>
+    const Cmp = WrappedComponent as React.ComponentType<P>
 
     class WithStyles extends React.Component<P> {
 
