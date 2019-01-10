@@ -1,5 +1,7 @@
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import * as React from 'react'
+
+import { withTheme } from '../../../../test'
 
 import { DateInput } from './DateInput'
 
@@ -37,4 +39,13 @@ it('should call onInputChange prop when input value is changed', () => {
     expect(inputChange).not.toHaveBeenCalled()
     wrapper.simulate('change', { target: { value: '1' } })
     expect(inputChange).toHaveBeenCalledWith(expect.objectContaining({ target: { value: '1' } }))
+})
+
+describe('clear', () => {
+    it('should clear the input value', () => {
+        const change = jest.fn()
+        const wrapper = mount(withTheme(<DateInput value={new Date()} onChange={change} />))
+        wrapper.find('span').simulate('click')
+        expect(change).toHaveBeenCalledWith(null)
+    })
 })
