@@ -31,6 +31,9 @@ export class TimeInput extends React.PureComponent<TimeInputProps> {
     }
 
     handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (!e) {
+            return this.props.onChange(null)
+        }
         if (this.props.onChange) {
             const value = e.target.value
             this.props.onChange(value)

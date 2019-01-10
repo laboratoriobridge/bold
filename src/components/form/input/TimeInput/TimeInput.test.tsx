@@ -1,5 +1,7 @@
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 import * as React from 'react'
+
+import { withTheme } from '../../../../test'
 
 import { padTime, TimeInput } from './TimeInput'
 
@@ -52,5 +54,14 @@ describe('padTime', () => {
         expect(padTime('13')).toEqual('13:00')
         expect(padTime('14:5')).toEqual('14:50')
         expect(padTime('23:56')).toEqual('23:56')
+    })
+})
+
+describe('clear', () => {
+    it('should clear the input value', () => {
+        const change = jest.fn()
+        const wrapper = mount(withTheme(<TimeInput defaultValue='11:00' name='time' onChange={change} />))
+        wrapper.find('span').simulate('click')
+        expect(change).toHaveBeenCalledWith(null)
     })
 })
