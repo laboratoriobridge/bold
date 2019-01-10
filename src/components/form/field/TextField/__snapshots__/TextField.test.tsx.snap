@@ -48,17 +48,25 @@ exports[`should be rendered correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 <div
   data-name="test"
 >
-  <input
-    class="emotion-0"
-    maxlength="2"
-    name="test"
-    placeholder="Test"
-    type="text"
-    value=""
-  />
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      maxlength="2"
+      name="test"
+      placeholder="Test"
+      type="text"
+      value=""
+    />
+  </div>
 </div>
 `;
 
@@ -110,6 +118,10 @@ exports[`should not include field props on rendered HTML 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-3 {
+  position: relative;
+}
+
 .emotion-1 {
   font-weight: bold;
   display: block;
@@ -136,11 +148,15 @@ exports[`should not include field props on rendered HTML 1`] = `
       *
     </span>
   </label>
-  <input
-    class="emotion-2"
-    name="test"
-    required=""
-    type="text"
-  />
+  <div
+    class="emotion-3"
+  >
+    <input
+      class="emotion-2"
+      name="test"
+      required=""
+      type="text"
+    />
+  </div>
 </div>
 `;

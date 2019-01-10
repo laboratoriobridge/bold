@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
+import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
@@ -26,6 +26,8 @@ storiesOf('Form/TextField', module)
         <TextField
             name='iconized'
             label='Input with icon'
-            icon={{ icon: 'search', onClick: action('icon-clicked') }}
+            icon='search'
+            iconPosition={select('iconPosition', ['left', 'right'], 'right')}
+            onIconClick={action('icon-clicked')}
         />
     ))

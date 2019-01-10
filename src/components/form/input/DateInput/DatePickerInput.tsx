@@ -72,7 +72,8 @@ export class DatePickerInput extends React.Component<DatePickerInputProps> {
         const { calendarProps, minDate, maxDate, ...rest } = this.props
         return (
             <DateInput
-                icon={{ icon: 'calendar', position: 'right', onClick: ctrl.show }}
+                icon={'calendar'}
+                onIconClick={ctrl.show}
                 {...rest}
                 inputRef={this.inputRef}
                 onClick={this.handleInputClick(ctrl)}

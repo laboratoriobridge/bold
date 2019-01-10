@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-23 {
+.emotion-26 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-22 {
+.emotion-25 {
   border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -125,7 +125,7 @@ exports[`renders correctly 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-21 {
+.emotion-24 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -249,7 +249,42 @@ exports[`renders correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-21 {
+  position: relative;
+}
+
+.emotion-21 input {
+  padding-right: 2rem;
+}
+
 .emotion-20 {
+  position: absolute;
+  right: 1px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  color: #53595E;
+}
+
+.emotion-20:hover {
+  color: #D83A2E;
+}
+
+.emotion-23 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -277,7 +312,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-20 > span {
+.emotion-23 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -290,25 +325,25 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-20 > span > :not(:last-child) {
+.emotion-23 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-20:not(:disabled):active {
+.emotion-23:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-20:focus {
+.emotion-23:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-20:not(:disabled):hover {
+.emotion-23:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
 <div
-  class="emotion-23"
+  class="emotion-26"
 >
   <span
     class="emotion-0"
@@ -320,7 +355,7 @@ exports[`renders correctly 1`] = `
     </span>
   </span>
   <div
-    class="emotion-22"
+    class="emotion-25"
   >
     <span>
       Mostrar:
@@ -393,7 +428,7 @@ exports[`renders correctly 1`] = `
       </span>
     </span>
     <div
-      class="emotion-21"
+      class="emotion-24"
     >
       <button
         class="emotion-17"
@@ -416,16 +451,39 @@ exports[`renders correctly 1`] = `
           </svg>
         </span>
       </button>
-      <input
-        class="emotion-18"
-        type="text"
-        value="2"
-      />
+      <div
+        class="emotion-21"
+      >
+        <input
+          class="emotion-18"
+          type="text"
+          value="2"
+        />
+        <button
+          class="emotion-20"
+          tabindex="-1"
+          title="Limpar"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-16"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
+        </button>
+      </div>
       <span>
         de 10
       </span>
       <button
-        class="emotion-20"
+        class="emotion-23"
         title="Próxima página"
         type="button"
       >

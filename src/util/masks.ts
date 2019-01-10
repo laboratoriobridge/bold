@@ -1,4 +1,4 @@
-export const onlyNumbers = (value: string) => value.replace(/[^\d]/g, '')
+export const onlyNumbers = (value: string) => value && value.replace(/[^\d]/g, '')
 
 export const masks = {
     telefone: rawValue => {

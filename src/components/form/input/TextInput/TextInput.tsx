@@ -3,13 +3,13 @@ import * as React from 'react'
 
 import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, InputProps } from '../Input/Input'
-import { InputIconDecorator, InputIconDecoratorProps } from '../InputIconDecorator/InputIconDecorator'
+
+import { InputWrapper, InputWrapperProps } from './InputWrapper'
 
 export type InputStatus = 'error'
 
-export interface TextInputProps extends InputProps, WithStylesProps {
+export interface TextInputProps extends InputProps, InputWrapperProps, WithStylesProps {
     status?: InputStatus
-    icon?: InputIconDecoratorProps
     style?: Interpolation
 }
 
@@ -59,7 +59,11 @@ export class TextInput extends React.Component<TextInputProps> {
     }
 
     render() {
-        const { css, status, theme, icon, style, ...rest } = this.props
+        const {
+            css, status, theme, style,
+            icon, iconPosition, onIconClick, clearVisible, onClear,
+            ...rest
+        } = this.props
         const styles = createStyles(theme)
 
         const classes = css(styles.input,
@@ -67,22 +71,27 @@ export class TextInput extends React.Component<TextInputProps> {
             style
         )
 
-        const input = (
-            <Input
-                {...rest}
-                className={classes}
-            />
+        return (
+            <InputWrapper
+                icon={icon}
+                iconPosition={iconPosition}
+                onIconClick={onIconClick}
+                clearVisible={clearVisible !== undefined ? clearVisible : this.isClearVisible()}
+                onClear={onClear ? onClear : this.handleClear}
+            >
+                <Input
+                    {...rest}
+                    className={classes}
+                />
+            </InputWrapper>
         )
+    }
 
-        if (icon) {
-            return (
-                <InputIconDecorator {...icon}>
-                    {input}
-                </InputIconDecorator>
-            )
-        } else {
-            return input
-        }
+    isClearVisible = (): boolean =>
+        !this.props.disabled && (!!this.props.value || !!this.props.defaultValue)
+
+    handleClear = () => {
+        this.props.onChange && this.props.onChange(null)
     }
 
 }
