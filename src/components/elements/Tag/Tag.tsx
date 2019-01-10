@@ -28,7 +28,7 @@ export class Tag extends React.PureComponent<TagProps> {
         }
         const typeStyles: { [key in TagType]: any } = {
             normal: {
-                background: theme.pallete.surface.background,
+                background: theme.pallete.gray.c80,
             },
             danger: {
                 background: theme.pallete.status.danger.main,
