@@ -17,7 +17,7 @@ describe('TextInput', () => {
     })
 
     it('should render correctly with input', () => {
-        const wrapper = render(withTheme(<TextInput icon={{ icon: 'adjust', position: 'left', onClick: jest.fn() }} />))
+        const wrapper = render(withTheme(<TextInput icon='adjust' iconPosition='left' onIconClick={jest.fn()} />))
         expect(wrapper).toMatchSnapshot()
     })
 })

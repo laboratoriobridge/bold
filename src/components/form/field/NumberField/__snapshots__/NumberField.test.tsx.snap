@@ -48,14 +48,22 @@ exports[`NumberField Field render 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 <div
   data-name="number"
 >
-  <input
-    class="emotion-0"
-    name="number"
-    type="text"
-    value=""
-  />
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      name="number"
+      type="text"
+      value=""
+    />
+  </div>
 </div>
 `;

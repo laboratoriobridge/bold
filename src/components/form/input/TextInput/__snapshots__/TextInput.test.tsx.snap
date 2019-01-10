@@ -48,10 +48,18 @@ exports[`TextInput render 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<input
-  class="emotion-0"
-  type="text"
-/>
+.emotion-1 {
+  position: relative;
+}
+
+<div
+  class="emotion-1"
+>
+  <input
+    class="emotion-0"
+    type="text"
+  />
+</div>
 `;
 
 exports[`TextInput render password 1`] = `
@@ -102,10 +110,18 @@ exports[`TextInput render password 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<input
-  class="emotion-0"
-  type="password"
-/>
+.emotion-1 {
+  position: relative;
+}
+
+<div
+  class="emotion-1"
+>
+  <input
+    class="emotion-0"
+    type="password"
+  />
+</div>
 `;
 
 exports[`TextInput should render correctly with input 1`] = `
