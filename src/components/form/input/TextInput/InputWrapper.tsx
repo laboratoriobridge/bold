@@ -51,6 +51,7 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                 alignItems: 'center',
                 outline: 0,
                 color: theme.pallete.text.secondary,
+                padding: '1px 6px',
                 '&:hover': {
                     color: theme.pallete.status.danger.main,
                 },
@@ -87,14 +88,15 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                 {children}
 
                 {clearVisible &&
-                    <button
+                    <span
+                        role='button'
                         title='Limpar'
                         tabIndex={-1}
                         onClick={onClear}
                         className={css(styles.clearButton)}
                     >
                         <Icon size={1.5} icon='times' />
-                    </button>
+                    </span>
                 }
 
                 {icon &&

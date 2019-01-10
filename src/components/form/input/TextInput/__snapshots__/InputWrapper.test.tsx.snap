@@ -30,6 +30,7 @@ exports[`should render correctly 1`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-1:hover {
@@ -45,8 +46,9 @@ exports[`should render correctly 1`] = `
   class="emotion-2"
 >
   <input />
-  <button
+  <span
     class="emotion-1"
+    role="button"
     tabindex="-1"
     title="Limpar"
   >
@@ -63,7 +65,7 @@ exports[`should render correctly 1`] = `
         data-name="times"
       />
     </svg>
-  </button>
+  </span>
 </div>
 `;
 
@@ -102,6 +104,7 @@ exports[`should render correctly with button 1`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-1:hover {
@@ -196,8 +199,9 @@ exports[`should render correctly with button 1`] = `
   class="emotion-5"
 >
   <input />
-  <button
+  <span
     class="emotion-1"
+    role="button"
     tabindex="-1"
     title="Limpar"
   >
@@ -214,7 +218,7 @@ exports[`should render correctly with button 1`] = `
         data-name="times"
       />
     </svg>
-  </button>
+  </span>
   <span
     class="emotion-4"
   >
@@ -265,6 +269,7 @@ exports[`should render correctly with left position 1`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-1:hover {
@@ -321,8 +326,9 @@ exports[`should render correctly with left position 1`] = `
   class="emotion-4"
 >
   <input />
-  <button
+  <span
     class="emotion-1"
+    role="button"
     tabindex="-1"
     title="Limpar"
   >
@@ -339,7 +345,7 @@ exports[`should render correctly with left position 1`] = `
         data-name="times"
       />
     </svg>
-  </button>
+  </span>
   <span
     class="emotion-3"
   >

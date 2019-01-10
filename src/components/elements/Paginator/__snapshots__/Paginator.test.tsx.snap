@@ -154,6 +154,7 @@ exports[`deve renderizar corretamente 1`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-4:hover {
@@ -250,8 +251,9 @@ exports[`deve renderizar corretamente 1`] = `
       type="text"
       value="6"
     />
-    <button
+    <span
       class="emotion-4"
+      role="button"
       tabindex="-1"
       title="Limpar"
     >
@@ -268,7 +270,7 @@ exports[`deve renderizar corretamente 1`] = `
           data-name="times"
         />
       </svg>
-    </button>
+    </span>
   </div>
   <span>
     de 10
@@ -394,6 +396,7 @@ exports[`deve renderizar corretamente 2`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-4:hover {
@@ -551,8 +554,9 @@ exports[`deve renderizar corretamente 2`] = `
       type="text"
       value="1"
     />
-    <button
+    <span
       class="emotion-4"
+      role="button"
       tabindex="-1"
       title="Limpar"
     >
@@ -569,7 +573,7 @@ exports[`deve renderizar corretamente 2`] = `
           data-name="times"
         />
       </svg>
-    </button>
+    </span>
   </div>
   <span>
     de 10
@@ -695,6 +699,7 @@ exports[`deve renderizar corretamente 3`] = `
   align-items: center;
   outline: 0;
   color: #53595E;
+  padding: 1px 6px;
 }
 
 .emotion-4:hover {
@@ -852,8 +857,9 @@ exports[`deve renderizar corretamente 3`] = `
       type="text"
       value="1"
     />
-    <button
+    <span
       class="emotion-4"
+      role="button"
       tabindex="-1"
       title="Limpar"
     >
@@ -870,7 +876,7 @@ exports[`deve renderizar corretamente 3`] = `
           data-name="times"
         />
       </svg>
-    </button>
+    </span>
   </div>
   <span>
     de 9
