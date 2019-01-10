@@ -8,9 +8,14 @@ import { InputWrapper, InputWrapperProps } from './InputWrapper'
 
 export type InputStatus = 'error'
 
-export interface TextInputProps extends InputProps, InputWrapperProps, WithStylesProps {
-    status?: InputStatus
+export interface TextInputProps extends WithStylesProps, InputProps,
+    Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'onIconClick'> {
+    /**
+     * Whether the input should show the clear icon button.
+     */
+    clearable?: boolean
     style?: Interpolation
+    status?: InputStatus
 }
 
 export const createStyles = (theme: Theme): Styles => ({
@@ -56,12 +61,13 @@ export class TextInput extends React.Component<TextInputProps> {
 
     static defaultProps: Partial<TextInputProps> = {
         type: 'text',
+        clearable: true,
     }
 
     render() {
         const {
             css, status, theme, style,
-            icon, iconPosition, onIconClick, clearVisible, onClear,
+            icon, iconPosition, onIconClick, clearable,
             ...rest
         } = this.props
         const styles = createStyles(theme)
@@ -76,8 +82,8 @@ export class TextInput extends React.Component<TextInputProps> {
                 icon={icon}
                 iconPosition={iconPosition}
                 onIconClick={onIconClick}
-                clearVisible={clearVisible !== undefined ? clearVisible : this.isClearVisible()}
-                onClear={onClear ? onClear : this.handleClear}
+                clearVisible={clearable && this.isClearVisible()}
+                onClear={this.handleClear}
             >
                 <Input
                     {...rest}
