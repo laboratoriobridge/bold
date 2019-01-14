@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectEmptyItem should render correctly 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: normal;
+  background: #F2F2F7;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Nenhum item encontrado
+</li>
+`;
+
+exports[`SelectHelperMenuItem should render correctly 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: normal;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Loading
+</li>
+`;
+
+exports[`SelectLoadingItem should render correctly 1`] = `
+.emotion-1 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: normal;
+  background: #F2F2F7;
+}
+
+.emotion-1:last-child {
+  border-bottom: none;
+}
+
+.emotion-1:hover {
+  background: #F2F2F7;
+}
+
+.emotion-0 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0A67D1;
+  float: right;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 450ms infinite linear;
+  animation: animation-1scjtrl 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+<li
+  class="emotion-1"
+>
+  Carregando...
+  <span
+    class="emotion-0"
+  />
+</li>
+`;
+
+exports[`SelectMenu should render correctly 1`] = `
+.emotion-0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+<ul
+  class="emotion-0"
+/>
+`;
+
+exports[`SelectMenuItem should render correctly 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: normal;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Item
+</li>
+`;
+
+exports[`SelectMenuItem should render correctly when custom style defined 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: normal;
+  color: red;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Item
+</li>
+`;
+
+exports[`SelectMenuItem should render correctly when highlighted 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F2F2F7;
+  font-weight: normal;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Item
+</li>
+`;
+
+exports[`SelectMenuItem should render correctly when selected 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-weight: bold;
+}
+
+.emotion-0:last-child {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<li
+  class="emotion-0"
+>
+  Item
+</li>
+`;
