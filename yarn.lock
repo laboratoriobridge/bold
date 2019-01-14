@@ -1534,13 +1534,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@*":
-  version "16.0.11"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-dom/-/react-dom-16.0.11.tgz#bd10ccb0d9260343f4b9a49d4f7a8330a5c1f081"
-  integrity sha512-x6zUx9/42B5Kl2Vl9HlopV8JF64wLpX3c+Pst9kc1HgzrsH+mkehe/zmHMQTplIrR48H2gpU7ZqurQolYu8XBA==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-dropzone@4.2.2":
   version "4.2.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-dropzone/-/react-dropzone-4.2.2.tgz#af0a2595169700c8ab1114e9096285499beaff40"
@@ -1573,26 +1566,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-select@2.0.10":
-  version "2.0.10"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-select/-/react-select-2.0.10.tgz#04bfec166e87f24d46c1048af44c1963ea6b82d4"
-  integrity sha512-KpgFYzrPvIEcQys3EBBub02plGgI2CunV4lMN+6+ELr+XGcXPpQ9jC54qTLbXHaHZYzXYlChrVUKdnsaYZx5Gg==
-  dependencies:
-    "@types/react" "*"
-    "@types/react-dom" "*"
-    "@types/react-transition-group" "*"
-
 "@types/react-text-mask@5.4.2":
   version "5.4.2"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-text-mask/-/react-text-mask-5.4.2.tgz#90fe616fb223da6360a72c52527351c5ba59c171"
   integrity sha512-R4h07wAeOPh6xc6E9qYPMgYpeuUJ1w3rs3oWwp9oWIVPtnAGxPGDuCPEs2+ynlP5syeM7heZeZeM8saAHRgENA==
-  dependencies:
-    "@types/react" "*"
-
-"@types/react-transition-group@*":
-  version "2.0.14"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-transition-group/-/react-transition-group-2.0.14.tgz#afd0cd785a97f070b55765e9f9d76ff568269001"
-  integrity sha512-pa7qB0/mkhwWMBFoXhX8BcntK8G4eQl4sIfSrJCxnivTYRQWjOWf2ClR9bWdm0EUFBDHzMbKYS+QYfDtBzkY4w==
   dependencies:
     "@types/react" "*"
 
@@ -4156,7 +4133,7 @@ emotion-theming@9.2.9:
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
-emotion@9.2.12, emotion@^9.1.2:
+emotion@9.2.12:
   version "9.2.12"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/emotion/-/emotion-9.2.12.tgz#53925aaa005614e65c6e43db8243c843574d1ea9"
   integrity sha512-hcx7jppaI8VoXxIWEhxpDW7I+B4kq9RNzQLmsrF6LY8BGKqe2N+gFAQr0EfuFucFlPs2A9HM4+xNj4NeqEWIOQ==
@@ -6824,11 +6801,6 @@ mem@^4.0.0:
     mimic-fn "^1.0.0"
     p-is-promise "^1.1.0"
 
-memoize-one@^4.0.0:
-  version "4.1.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
-  integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
-
 memory-fs@^0.4.0, memory-fs@~0.4.1:
   version "0.4.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/memory-fs/-/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
@@ -8357,13 +8329,6 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
-react-input-autosize@^2.2.1:
-  version "2.2.1"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
-  integrity sha512-3+K4CD13iE4lQQ2WlF8PuV5htfmTRLH6MDnfndHM6LuBRszuXnuyIfE7nhSKt8AzRBZ50bu0sAhkNMeS5pxQQA==
-  dependencies:
-    prop-types "^15.5.8"
-
 react-inspector@^2.3.0:
   version "2.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-inspector/-/react-inspector-2.3.1.tgz#f0eb7f520669b545b441af9d38ec6d706e5f649c"
@@ -8447,19 +8412,6 @@ react-router@^4.3.1:
     prop-types "^15.6.1"
     warning "^4.0.1"
 
-react-select@2.1.2:
-  version "2.1.2"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-select/-/react-select-2.1.2.tgz#7a3e4c2b9efcd8c44ae7cf6ebb8b060ef69c513c"
-  integrity sha512-+ceiz2KwIeEBxT/PgAXBIGohLXfa9YhkfwFSHMlqpTL55JYvjhgkGoBxoasGcMGeQ49J3RhAKZDD+x6ZHKmj6g==
-  dependencies:
-    classnames "^2.2.5"
-    emotion "^9.1.2"
-    memoize-one "^4.0.0"
-    prop-types "^15.6.0"
-    raf "^3.4.0"
-    react-input-autosize "^2.2.1"
-    react-transition-group "^2.2.1"
-
 react-split-pane@^0.1.84:
   version "0.1.85"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-split-pane/-/react-split-pane-0.1.85.tgz#64819946a99b617ffa2d20f6f45a0056b6ee4faa"
@@ -8503,7 +8455,7 @@ react-textarea-autosize@^7.0.4:
     "@babel/runtime" "^7.1.2"
     prop-types "^15.6.0"
 
-react-transition-group@^2.0.0, react-transition-group@^2.2.1:
+react-transition-group@^2.0.0:
   version "2.5.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-transition-group/-/react-transition-group-2.5.1.tgz#67fbd8d30ebb1c57a149d554dbb82eabefa61f0d"
   integrity sha512-8x/CxUL9SjYFmUdzsBPTgtKeCxt7QArjNSte0wwiLtF/Ix/o1nWNJooNy5o9XbHIKS31pz7J5VF2l41TwlvbHQ==

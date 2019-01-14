@@ -3,35 +3,30 @@ import * as React from 'react'
 
 import { withTheme } from '../../../../test'
 
-import { DefaultOptionType } from './base'
-import { Select } from './Select'
+import { DefaultItemType, Select, SelectProps } from './Select'
 
-interface OptionType extends DefaultOptionType {
-    extra: string
-}
-
-const options: OptionType[] = [
-    { value: 1, label: 'Test #1', extra: 'foo' },
-    { value: 2, label: 'Test #2', extra: 'bar' },
+const items: DefaultItemType[] = [
+    { value: 1, label: 'Apple' },
+    { value: 2, label: 'Banana' },
+    { value: 3, label: 'Grape' },
+    { value: 4, label: 'Orange' },
+    { value: 5, label: 'Pear' },
 ]
 
-it('should render correctly', () => {
-    const wrapper = mount(withTheme(<Select />))
-    expect(wrapper.render()).toMatchSnapshot()
-})
+// tslint:disable jsx-no-lambda
+const createSelect = (props: Partial<SelectProps> = {}) => {
+    return withTheme(
+        <Select items={items} itemToString={item => item.label} {...props} />
+    )
+}
 
-it('should render correctly when multivalue', () => {
-    const wrapper = mount(withTheme(<Select<OptionType> options={options} value={options[0]} isMulti />))
-    expect(wrapper.render()).toMatchSnapshot()
-})
-
-it('should accept to override components', () => {
-    const wrapper = mount(withTheme(
-        <Select
-            components={{
-                Placeholder: (p) => <span className='placeholder' />,
-            }}
-        />
-    ))
-    expect(wrapper.render()).toMatchSnapshot()
+describe('render', () => {
+    it('should render correctly when closed', () => {
+        const wrapper = mount(createSelect())
+        expect(wrapper.render()).toMatchSnapshot()
+    })
+    it('should render correctly when opened', () => {
+        const wrapper = mount(createSelect({ isOpen: true }))
+        expect(wrapper.render()).toMatchSnapshot()
+    })
 })

@@ -1,4 +1,2 @@
-export * from './base'
-export * from './components'
+export * from './SelectMenu'
 export * from './Select'
-export * from './AsyncSelect'
