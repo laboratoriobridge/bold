@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
@@ -5,6 +6,7 @@ import { Styles, withStyles, WithStylesProps } from '../../../styles'
 export interface SpinnerProps extends WithStylesProps {
     size?: number
     borderWidth?: number
+    style?: Interpolation
 }
 
 @withStyles
@@ -15,7 +17,7 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
     }
 
     render() {
-        const { css, theme, size, borderWidth } = this.props
+        const { css, theme, style, size, borderWidth } = this.props
         const styles: Styles = {
             pointerEvents: 'none',
             fontSize: `${size}rem`,
@@ -32,7 +34,7 @@ export class Spinner extends React.PureComponent<SpinnerProps> {
             },
         }
         return (
-            <span className={css(styles)} />
+            <span className={css(styles, style)} />
         )
     }
 }
