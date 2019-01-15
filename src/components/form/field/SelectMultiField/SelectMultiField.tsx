@@ -1,18 +1,19 @@
 import * as React from 'react'
 
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
-import { DefaultItemType, Select, SelectProps } from '../../input/Select'
+import { DefaultItemType } from '../../input/Select'
+import { SelectMulti, SelectMultiProps } from '../../input/SelectMulti'
 
-export interface SelectFieldProps<T = DefaultItemType> extends BaseFieldProps<SelectProps<T>> {
+export interface SelectMultiFieldProps<T = DefaultItemType> extends BaseFieldProps<SelectMultiProps<T>> {
 }
 
-export class SelectField<T = DefaultItemType> extends React.Component<SelectFieldProps<T>> {
+export class SelectMultiField<T = DefaultItemType> extends React.Component<SelectMultiFieldProps<T>> {
 
-    static defaultProps: Partial<SelectFieldProps<any>> = {}
+    static defaultProps: Partial<SelectMultiFieldProps<any>> = {}
 
     render() {
         return (
-            <Field<T>
+            <Field<T[]>
                 {...this.props}
                 render={this.renderSelect}
             />
@@ -21,7 +22,7 @@ export class SelectField<T = DefaultItemType> extends React.Component<SelectFiel
 
     private renderSelect = (props: RenderProps) => {
         return (
-            <Select<T>
+            <SelectMulti<T>
                 {...extractInputProps(this.props)}
                 {...props.input}
                 status={props.hasError ? 'error' : undefined}

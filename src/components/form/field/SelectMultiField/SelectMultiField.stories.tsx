@@ -4,9 +4,10 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, defaultSelectFilter, SelectMenu, SelectMenuItem } from '../../input/Select'
+import { DefaultItemType, defaultSelectFilter } from '../../input/Select'
+import { SelectMulti } from '../../input/SelectMulti'
 
-import { SelectField } from './SelectField'
+import { SelectMultiField } from './SelectMultiField'
 
 const items: DefaultItemType[] = [
     { value: 1, label: 'Apple' },
@@ -25,11 +26,11 @@ const loadItems = (inputValue: string) => {
 }
 
 // tslint:disable jsx-no-lambda
-storiesOf('Form/SelectField', module)
+storiesOf('Form/SelectMultiField', module)
     .addDecorator(withRouter())
     .addDecorator(withForm())
     .add('default', () => (
-        <SelectField<DefaultItemType>
+        <SelectMultiField<DefaultItemType>
             name='select'
             label={text('label', 'Component label')}
             items={items}
@@ -42,7 +43,7 @@ storiesOf('Form/SelectField', module)
         />
     ))
     .add('async', () => (
-        <SelectField<DefaultItemType>
+        <SelectMultiField<DefaultItemType>
             name='select'
             label={text('label', 'Component label')}
             items={loadItems}
@@ -53,7 +54,7 @@ storiesOf('Form/SelectField', module)
         />
     ))
     .add('custom menu item', () => (
-        <SelectField<DefaultItemType>
+        <SelectMultiField<DefaultItemType>
             name='select'
             label={text('label', 'Component label')}
             items={items}
@@ -69,12 +70,18 @@ storiesOf('Form/SelectField', module)
             disabled={boolean('disabled', false)}
         />
     ))
-    .add('select menu', () => (
-        <SelectMenu>
-            <SelectMenuItem>Item 1</SelectMenuItem>
-            <SelectMenuItem selected>Item 2 (selected)</SelectMenuItem>
-            <SelectMenuItem>Item 3</SelectMenuItem>
-            <SelectMenuItem>Item 4</SelectMenuItem>
-            <SelectMenuItem>Item 5</SelectMenuItem>
-        </SelectMenu>
+    .add('input', () => (
+        <SelectMulti<DefaultItemType>
+            items={items}
+            itemToString={(item) => item && item.label}
+            renderItem={(item) => (
+                <>
+                    <p><strong>{item.label}</strong></p>
+                    <p>yummy</p>
+                </>
+            )}
+            onChange={action('changed')}
+            onBlur={action('blur')}
+            disabled={boolean('disabled', false)}
+        />
     ))

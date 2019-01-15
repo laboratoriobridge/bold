@@ -11,7 +11,7 @@ export interface SelectMenuProps extends WithStylesProps,
 }
 
 @withStyles
-export class SelectMenu extends React.PureComponent<SelectMenuProps> {
+export class SelectMenu extends React.Component<SelectMenuProps> {
     render() {
         const { css, theme, style, ...rest } = this.props
         const styles: Interpolation = {
@@ -38,7 +38,7 @@ export interface SelectMenuItemProps extends WithStylesProps,
 }
 
 @withStyles
-export class SelectMenuItem extends React.PureComponent<SelectMenuItemProps> {
+export class SelectMenuItem extends React.Component<SelectMenuItemProps> {
     render() {
         const { css, theme, style, selected, highlighted, ...rest } = this.props
         const styles: Interpolation = {
@@ -47,7 +47,6 @@ export class SelectMenuItem extends React.PureComponent<SelectMenuItemProps> {
             padding: '0.325rem 0.5rem',
             transition: '.1s ease',
             background: highlighted && theme.pallete.surface.background,
-            fontWeight: selected ? 'bold' : 'normal',
 
             '&:last-child': {
                 borderBottom: 'none',

@@ -23,7 +23,7 @@ export type BaseFieldProps<T, K = any> = T & Pick<FieldProps<K>,
  * Extract from a BaseFieldProps object only props that can be safely passed down to input elements
  * This functions removes the Field specific props made available by the usage of BaseFieldProps
  */
-export function extractInputProps(fieldProps: BaseFieldProps<{}, any>) {
+export function extractInputProps<T>(fieldProps: BaseFieldProps<T, any>) {
     const {
         label,
         hasWrapper,
