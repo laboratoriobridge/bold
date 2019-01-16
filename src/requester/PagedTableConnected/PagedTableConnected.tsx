@@ -2,9 +2,8 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { Page, PageParams, PageRequester, SortSpec } from '../'
-import { Omit } from '../../util/types'
-
 import { PagedTable, PagedTableProps } from '../../components/elements/Table/PagedTable/PagedTable'
+import { Omit } from '../../util/types'
 
 export type ProvidedProps = 'rows' | 'page' | 'size' | 'totalPages' | 'totalElements' | 'sort' | 'loading'
     | 'onPageChange' | 'onSizeChange' | 'onSortChange'
