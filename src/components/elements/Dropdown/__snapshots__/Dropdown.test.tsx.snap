@@ -72,6 +72,7 @@ exports[`should accept Popper props 1`] = `
   </div>
   <div
     class="emotion-6"
+    data-visible="false"
     style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
   >
     <ul
@@ -172,6 +173,7 @@ exports[`should render correctly 1`] = `
   </div>
   <div
     class="emotion-6"
+    data-visible="false"
     style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
   >
     <ul

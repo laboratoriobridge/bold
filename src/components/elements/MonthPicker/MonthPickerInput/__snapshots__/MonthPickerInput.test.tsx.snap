@@ -1,0 +1,802 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonthPickerInput should render correctly with month and year 1`] = `
+.emotion-7 {
+  display: block;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  position: relative;
+}
+
+.emotion-6 input {
+  padding-right: 4.5rem;
+}
+
+.emotion-2 {
+  position: absolute;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  color: #53595E;
+  padding: 1px 6px;
+}
+
+.emotion-2:hover {
+  color: #D83A2E;
+}
+
+.emotion-5 {
+  position: absolute;
+  background-color: #F2F2F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-4 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-4 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-4:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-4:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-4:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-4:focus {
+  box-shadow: none;
+}
+
+.emotion-45 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1050;
+  padding: 0rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-44 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: #fff;
+  width: 21.25rem;
+  height: 13.5rem;
+  padding: 1rem;
+  border: 1px solid #DCDCE0;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-17 {
+  margin-top: 0.25rem;
+  margin-right: 0rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0rem;
+  display: inline-block;
+}
+
+.emotion-17:first-child {
+  margin-top: 0;
+}
+
+.emotion-17:last-child {
+  margin-bottom: 0;
+}
+
+.emotion-17:empty {
+  display: none;
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0rem 1.5rem 0rem 1rem;
+}
+
+.emotion-10 {
+  margin-top: 0rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+}
+
+.emotion-10:first-child {
+  margin-left: 0;
+}
+
+.emotion-10:last-child {
+  margin-right: 0;
+}
+
+.emotion-10:empty {
+  display: none;
+}
+
+.emotion-9 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-9 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-9 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-9:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-9:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-9:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-11 {
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.emotion-42 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.emotion-19 {
+  margin-top: 0.5rem;
+  margin-right: 0.1875rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.1875rem;
+  display: inline-block;
+}
+
+.emotion-19:first-child {
+  margin-left: 0;
+}
+
+.emotion-19:last-child {
+  margin-right: 0;
+}
+
+.emotion-19:empty {
+  display: none;
+}
+
+.emotion-18 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.25rem - 1px) 1.375rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  background: #0A67D1 !important;
+  color: #FFFFFF;
+}
+
+.emotion-18 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-18 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-18:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-18:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-18:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-20 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.25rem - 1px) 1.375rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+}
+
+.emotion-20 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: color .2s;
+  transition: color .2s;
+}
+
+.emotion-20 > span > :not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.emotion-20:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-20:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-20:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+<div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-6"
+      >
+        <input
+          class="emotion-0"
+          placeholder="mm/yyyy"
+          type="text"
+          value="01/2019"
+        />
+        <span
+          class="emotion-2"
+          role="button"
+          tabindex="-1"
+          title="Limpar"
+        >
+          <svg
+            aria-hidden="true"
+            class="emotion-1"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+              data-name="times"
+            />
+          </svg>
+        </span>
+        <span
+          class="emotion-5"
+        >
+          <button
+            class="emotion-4"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <g
+                  data-name="calendar"
+                >
+                  <path
+                    d="M18 5h-2V3h-2v2h-4V3H8v2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 14H6V9h12z"
+                  />
+                  <path
+                    d="M8 11h8v2H8zM8 15h8v2H8z"
+                  />
+                </g>
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
+    </div>
+    <div
+      class="emotion-45"
+      data-visible="false"
+      style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    >
+      <div>
+        <div
+          class="emotion-44"
+        >
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-16"
+            >
+              <div
+                class="emotion-10"
+              >
+                <button
+                  class="emotion-9"
+                  title="Ano anterior"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
+                        data-name="angle-left"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-10"
+              >
+                <span
+                  class="emotion-11"
+                >
+                  2019
+                </span>
+              </div>
+              <div
+                class="emotion-10"
+              >
+                <button
+                  class="emotion-9"
+                  title="Ano posterior"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
+                        data-name="angle-right"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emotion-17"
+          >
+            <div
+              class="emotion-42"
+            >
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-18"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Jan
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Fev
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Mar
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Abr
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Mai
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Jun
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Jul
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Ago
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Set
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Out
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Nov
+                    </span>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="emotion-19"
+              >
+                <button
+                  class="emotion-20"
+                  type="button"
+                >
+                  <span>
+                    <span>
+                      Dez
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
