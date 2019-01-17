@@ -35,7 +35,7 @@ storiesOf('Form/SelectField', module)
     .addDecorator(withForm())
     .add('default', () => (
         <SelectField<DefaultItemType>
-            name='select'
+            name='fruit'
             label={text('label', 'Component label')}
             items={items}
             itemToString={(item) => item && item.label}
@@ -48,7 +48,7 @@ storiesOf('Form/SelectField', module)
     ))
     .add('async', () => (
         <SelectField<DefaultItemType>
-            name='select'
+            name='fruit'
             label={text('label', 'Component label')}
             items={loadItems}
             itemToString={(item) => item && item.label}
@@ -59,7 +59,7 @@ storiesOf('Form/SelectField', module)
     ))
     .add('custom menu item', () => (
         <SelectField<DefaultItemType>
-            name='select'
+            name='fruit'
             label={text('label', 'Component label')}
             items={items}
             itemToString={(item) => item && item.label}

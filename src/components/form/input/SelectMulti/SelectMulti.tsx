@@ -12,6 +12,7 @@ import { MultiDownshift, MultiDownshiftProps } from './MultiDownshift'
 import { SelectMultiInput } from './SelectMultiInput'
 
 export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
+    value?: T[]
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     onBlur?: TextInputProps['onBlur']
     disabled?: TextInputProps['disabled']
@@ -24,10 +25,13 @@ export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftPro
 export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, ...rest } = this.props
+        const { css, theme, renderItem, disabled, onBlur, status, clearable, value, ...rest } = this.props
 
         return (
-            <MultiDownshift<T> {...rest}>
+            <MultiDownshift<T>
+                initialSelectedItems={value}
+                {...rest}
+            >
                 {(downshift) => {
                     const {
                         // isOpen,

@@ -1,0 +1,536 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly when closed 1`] = `
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-1:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0 {
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+<div>
+  <div
+    aria-expanded="false"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-0-label"
+    role="combobox"
+  >
+    <div
+      class="emotion-1"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-labelledby="downshift-0-label"
+        autocomplete="off"
+        class="emotion-0"
+        id="downshift-0-input"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="emotion-2"
+    />
+  </div>
+</div>
+`;
+
+exports[`should render correctly when opened 1`] = `
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-1:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-1:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0 {
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-38 {
+  position: relative;
+}
+
+.emotion-37 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1050;
+}
+
+.emotion-8 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-8:last-child {
+  border-bottom: none;
+}
+
+.emotion-8:hover {
+  background: #F2F2F7;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-5 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-5:first-child {
+  margin-left: 0;
+}
+
+.emotion-5:last-child {
+  margin-right: 0;
+}
+
+.emotion-5:empty {
+  display: none;
+}
+
+.emotion-3 {
+  background-color: #FFFFFF;
+  border: 1px solid #B9B9BD;
+  border-radius: 2px;
+  display: inline-block;
+  height: 16px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 16px;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+.emotion-2:hover + .emotion-3 {
+  border-color: #53595E;
+}
+
+.emotion-2:checked + .emotion-3 {
+  background-color: #0A67D1;
+  border-color: #0A67D1;
+}
+
+.emotion-2:checked + .emotion-3:after {
+  content: "";
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  top: 1px;
+  left: 4px;
+  opacity: 1;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-2:indeterminate + .emotion-3 {
+  background-color: #FFFFFF;
+  border-color: #0A67D1;
+}
+
+.emotion-2:indeterminate + .emotion-3:after {
+  content: "";
+  border-bottom: 2px solid #0A67D1;
+  position: absolute;
+  top: -1px;
+  left: 3px;
+  width: 8px;
+  height: 10px;
+  opacity: 1;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-2:focus + .emotion-3 {
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-2:disabled + .emotion-3 {
+  background-color: #F2F2F7;
+  border-color: #F2F2F7;
+}
+
+.emotion-2:disabled + .emotion-3 + .css-23ramq {
+  color: #B9B9BD;
+}
+
+<div>
+  <div
+    aria-expanded="true"
+    aria-haspopup="listbox"
+    aria-labelledby="downshift-1-label"
+    aria-owns="downshift-1-menu"
+    role="combobox"
+  >
+    <div
+      class="emotion-1"
+    >
+      <input
+        aria-autocomplete="list"
+        aria-controls="downshift-1-menu"
+        aria-labelledby="downshift-1-label"
+        autocomplete="off"
+        class="emotion-0"
+        id="downshift-1-input"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="emotion-38"
+    >
+      <ul
+        aria-labelledby="downshift-1-label"
+        class="emotion-37"
+        id="downshift-1-menu"
+        role="listbox"
+      >
+        <li
+          aria-selected="false"
+          class="emotion-8"
+          id="downshift-1-item-0"
+          role="option"
+        >
+          <div
+            class="emotion-7"
+          >
+            <div
+              class="emotion-5"
+            >
+              <label
+                class="emotion-4"
+              >
+                <input
+                  class="emotion-2"
+                  readonly=""
+                  tabindex="-1"
+                  type="checkbox"
+                />
+                <span
+                  class="emotion-3"
+                />
+              </label>
+            </div>
+            <div
+              class="emotion-5"
+            >
+              Apple
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-8"
+          id="downshift-1-item-1"
+          role="option"
+        >
+          <div
+            class="emotion-7"
+          >
+            <div
+              class="emotion-5"
+            >
+              <label
+                class="emotion-4"
+              >
+                <input
+                  class="emotion-2"
+                  readonly=""
+                  tabindex="-1"
+                  type="checkbox"
+                />
+                <span
+                  class="emotion-3"
+                />
+              </label>
+            </div>
+            <div
+              class="emotion-5"
+            >
+              Banana
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-8"
+          id="downshift-1-item-2"
+          role="option"
+        >
+          <div
+            class="emotion-7"
+          >
+            <div
+              class="emotion-5"
+            >
+              <label
+                class="emotion-4"
+              >
+                <input
+                  class="emotion-2"
+                  readonly=""
+                  tabindex="-1"
+                  type="checkbox"
+                />
+                <span
+                  class="emotion-3"
+                />
+              </label>
+            </div>
+            <div
+              class="emotion-5"
+            >
+              Grape
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-8"
+          id="downshift-1-item-3"
+          role="option"
+        >
+          <div
+            class="emotion-7"
+          >
+            <div
+              class="emotion-5"
+            >
+              <label
+                class="emotion-4"
+              >
+                <input
+                  class="emotion-2"
+                  readonly=""
+                  tabindex="-1"
+                  type="checkbox"
+                />
+                <span
+                  class="emotion-3"
+                />
+              </label>
+            </div>
+            <div
+              class="emotion-5"
+            >
+              Orange
+            </div>
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-8"
+          id="downshift-1-item-4"
+          role="option"
+        >
+          <div
+            class="emotion-7"
+          >
+            <div
+              class="emotion-5"
+            >
+              <label
+                class="emotion-4"
+              >
+                <input
+                  class="emotion-2"
+                  readonly=""
+                  tabindex="-1"
+                  type="checkbox"
+                />
+                <span
+                  class="emotion-3"
+                />
+              </label>
+            </div>
+            <div
+              class="emotion-5"
+            >
+              Pear
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

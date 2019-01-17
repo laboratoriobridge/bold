@@ -2,8 +2,10 @@ import * as React from 'react'
 import { cleanup, fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
+import { DefaultItemType } from '../Select/Select'
+import { SelectMulti } from '../SelectMulti'
 
-import { DefaultItemType, Select, SelectProps } from './Select'
+import { SelectMultiProps } from './SelectMulti'
 
 const items: DefaultItemType[] = [
     { value: 1, label: 'Apple' },
@@ -14,9 +16,9 @@ const items: DefaultItemType[] = [
 ]
 
 // tslint:disable jsx-no-lambda
-const createSelect = (props: Partial<SelectProps> = {}) => {
+const createSelect = (props: Partial<SelectMultiProps> = {}) => {
     return withTheme(
-        <Select items={items} itemToString={item => item.label} {...props} />
+        <SelectMulti items={items} itemToString={item => item.label} {...props} />
     )
 }
 
@@ -33,8 +35,10 @@ it('should render correctly when opened', () => {
 })
 
 it('should accept value prop', () => {
-    const { container } = render(createSelect({ value: items[4] }))
-    expect(container.querySelector('input').value).toEqual(items[4].label)
+    const { queryAllByText } = render(createSelect({ value: [items[0], items[4]] }))
+    expect(queryAllByText(items[0].label, { selector: 'span' }).length).toEqual(1)
+    expect(queryAllByText(items[1].label, { selector: 'span' }).length).toEqual(0)
+    expect(queryAllByText(items[4].label, { selector: 'span' }).length).toEqual(1)
 })
 
 it('should open the select menu when input is focused', () => {
@@ -49,5 +53,7 @@ it('should call the onChange event when an item is clicked', () => {
     const { getByText } = render(createSelect({ onChange, isOpen: true }))
     expect(onChange).not.toHaveBeenCalled()
     fireEvent.click(getByText(items[2].label))
-    expect(onChange).toHaveBeenCalledWith(items[2], expect.anything())
+    expect(onChange).toHaveBeenLastCalledWith([items[2]], expect.anything())
+    fireEvent.click(getByText(items[4].label))
+    expect(onChange).toHaveBeenLastCalledWith([items[2], items[4]], expect.anything())
 })

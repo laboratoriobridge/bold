@@ -1,5 +1,5 @@
-import { mount } from 'enzyme'
 import * as React from 'react'
+import { render } from 'react-testing-library'
 
 import { withRouter, withTheme } from '../../../../test'
 import { Form, FormProps } from '../../finalForm/Form'
@@ -13,20 +13,26 @@ const items = [
 
 const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: Partial<FormProps>) => {
     // tslint:disable jsx-no-lambda
-    return mount(withTheme(withRouter(
+    return withTheme(withRouter(
         <Form
             onSubmit={jest.fn()}
             initialValues={{ select1: items[0] }}
             {...formProps}
             render={() => (
-                <SelectField name='select1' items={items} {...fieldProps} />
+                <SelectField
+                    name='select1'
+                    items={items}
+                    itemToString={item => item.label}
+                    {...fieldProps}
+                />
             )}
         />
-    )))
+    ))
 }
 
 describe('render', () => {
     it('should render correctly', () => {
-        expect(createFormAndField().render()).toMatchSnapshot()
+        const { container } = render(createFormAndField())
+        expect(container).toMatchSnapshot()
     })
 })

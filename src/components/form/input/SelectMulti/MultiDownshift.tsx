@@ -7,6 +7,7 @@ import { Omit } from '../../../../util'
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../Select/SelectDownshift'
 
 export interface MultiDownshiftProps<T> extends Omit<SelectDownshiftProps<T>, 'onSelect' | 'onChange'> {
+    initialSelectedItems?: T[]
     onSelect?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
     onChange?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
     children?(downshift: MultiSelectRenderProps<T>): React.ReactNode
@@ -22,7 +23,17 @@ export interface MultiSelectRenderProps<T> extends SelectDownshiftRenderProps<T>
 }
 
 export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, MultiDownshiftState<T>> {
-    state = { selectedItems: [] }
+
+    static defaultProps: Partial<MultiDownshiftProps<any>> = {
+        initialSelectedItems: [],
+    }
+
+    constructor(props: MultiDownshiftProps<T>) {
+        super(props)
+        this.state = {
+            selectedItems: props.initialSelectedItems,
+        }
+    }
 
     stateReducer = (state: DownshiftState<T>, changes: StateChangeOptions<T>): Partial<StateChangeOptions<T>> => {
         const { inputValue, ...rest } = changes

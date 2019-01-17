@@ -9,6 +9,7 @@ import { SelectMultiField, SelectMultiFieldProps } from './SelectMultiField'
 const items = [
     { value: 1, label: 'Item #1' },
     { value: 2, label: 'Item #2' },
+    { value: 3, label: 'Item #3' },
 ]
 
 const createFormAndField = (fieldProps?: Partial<SelectMultiFieldProps>, formProps?: Partial<FormProps>) => {
@@ -16,10 +17,15 @@ const createFormAndField = (fieldProps?: Partial<SelectMultiFieldProps>, formPro
     return mount(withTheme(withRouter(
         <Form
             onSubmit={jest.fn()}
-            initialValues={{ select1: items[0] }}
+            initialValues={{ select1: [items[0], items[2]] }}
             {...formProps}
             render={() => (
-                <SelectMultiField name='select1' items={items} {...fieldProps} />
+                <SelectMultiField
+                    name='select1'
+                    items={items}
+                    itemToString={item => item && item.label}
+                    {...fieldProps}
+                />
             )}
         />
     )))

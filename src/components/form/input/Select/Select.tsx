@@ -12,6 +12,7 @@ export interface DefaultItemType {
 }
 
 export interface SelectProps<T = DefaultItemType> extends SelectDownshiftProps<T>, WithStylesProps {
+    value?: T
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
     onBlur?: TextInputProps['onBlur']
@@ -26,10 +27,13 @@ export interface SelectProps<T = DefaultItemType> extends SelectDownshiftProps<T
 export class Select<T> extends React.Component<SelectProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, style, ...rest } = this.props
+        const { css, theme, renderItem, disabled, onBlur, status, clearable, style, value, ...rest } = this.props
 
         return (
-            <SelectDownshift<T> {...rest}>
+            <SelectDownshift<T>
+                initialSelectedItem={value}
+                {...rest}
+            >
                 {(downshift) => {
                     const {
                         isOpen,

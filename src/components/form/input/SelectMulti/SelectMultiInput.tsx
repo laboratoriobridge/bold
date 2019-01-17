@@ -49,7 +49,7 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
 
         return (
             <div className={css(styles.wrapper, status === 'error' && styles.error)} onClick={this.handleWrapperClick}>
-                {items.map((item, key) => (
+                {items && items.map((item, key) => (
                     <SelectMultiItem
                         key={key}
                         onRemove={this.handleRemove(item)}
