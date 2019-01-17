@@ -24,6 +24,7 @@ exports[`render should render correctly 1`] = `
   </div>
   <div
     class="emotion-1"
+    data-visible="false"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
   >
     <div>

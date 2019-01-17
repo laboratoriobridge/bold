@@ -38,6 +38,7 @@ Array [
 
 <div
     class="emotion-2"
+    data-visible="false"
     style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
   >
     <div
@@ -89,6 +90,7 @@ Array [
 
 <div
     class="emotion-1"
+    data-visible="false"
     style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
   >
     <div
