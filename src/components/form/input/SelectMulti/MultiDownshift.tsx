@@ -1,6 +1,6 @@
 // From downshift examples
 
-import Downshift, { ControllerStateAndHelpers, DownshiftState, StateChangeOptions } from 'downshift'
+import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
 import * as React from 'react'
 
 import { Omit } from '../../../../util'
@@ -8,7 +8,7 @@ import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } fro
 
 export interface MultiDownshiftProps<T> extends Omit<SelectDownshiftProps<T>, 'onSelect' | 'onChange'> {
     onSelect?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
-    onChange?(selectedItem: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
+    onChange?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
     children?(downshift: MultiSelectRenderProps<T>): React.ReactNode
 }
 
@@ -18,14 +18,7 @@ export interface MultiDownshiftState<T> {
 
 export interface MultiSelectRenderProps<T> extends SelectDownshiftRenderProps<T> {
     selectedItems: T[]
-    getRemoveButtonProps(options: RemoveButtonOptions<T>): any
-    removeItem(item: T, callback: Function): void
-}
-
-export interface RemoveButtonOptions<T> {
-    item: T
-    onClick?(e): any
-    [otherProp: string]: any
+    removeItem(item: T): void
 }
 
 export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, MultiDownshiftState<T>> {
@@ -52,43 +45,37 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
         }
     }
 
-    handleSelection = (selectedItem: T, downshift: ControllerStateAndHelpers<T>) => {
-        const callOnChange = () => {
-            const { onSelect, onChange } = this.props
-            const { selectedItems } = this.state
-            if (onSelect) {
-                onSelect(selectedItems, this.getStateAndHelpers(downshift))
-            }
-            if (onChange) {
-                onChange(selectedItems, this.getStateAndHelpers(downshift))
-            }
-        }
+    handleChange = (selectedItem: T, downshift: SelectDownshiftRenderProps<T>) => {
         if (this.state.selectedItems.includes(selectedItem)) {
-            this.removeItem(selectedItem, callOnChange)
+            this.removeItem(selectedItem, downshift)
         } else {
-            this.addSelectedItem(selectedItem, callOnChange)
+            this.addItem(selectedItem, downshift)
         }
     }
 
-    removeItem = (item, cb?) => {
+    emitChange = (downshift: SelectDownshiftRenderProps<T>) => {
+        this.props.onChange && this.props.onChange(this.state.selectedItems, this.getStateAndHelpers(downshift))
+        this.props.onSelect && this.props.onSelect(this.state.selectedItems, this.getStateAndHelpers(downshift))
+    }
+
+    removeItem = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
         this.setState(({ selectedItems }) => ({
             selectedItems: selectedItems.filter(i => i !== item),
-        }), cb)
+        }), () => this.emitChange(downshift))
     }
 
-    addSelectedItem(item, cb?) {
+    addItem(item: T, downshift: SelectDownshiftRenderProps<T>) {
         this.setState(({ selectedItems }) => ({
             selectedItems: [...selectedItems, item],
-        }), cb)
+        }), () => this.emitChange(downshift))
     }
 
-    getStateAndHelpers(downshift) {
+    getStateAndHelpers(downshift: SelectDownshiftRenderProps<T>): MultiSelectRenderProps<T> {
         const { selectedItems } = this.state
-        const { removeItem } = this
         return {
-            removeItem,
-            selectedItems,
             ...downshift,
+            selectedItems,
+            removeItem: (item: T) => this.removeItem(item, downshift),
         }
     }
 
@@ -99,7 +86,7 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
             <SelectDownshift<T>
                 {...props}
                 stateReducer={this.stateReducer}
-                onChange={this.handleSelection}
+                onChange={this.handleChange}
                 selectedItem={null}
             >
                 {downshift => children(this.getStateAndHelpers(downshift))}
