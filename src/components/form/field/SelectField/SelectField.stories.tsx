@@ -16,12 +16,10 @@ const items: DefaultItemType[] = [
     { value: 5, label: 'Pear' },
 ]
 
-const loadItems = (inputValue: string) => {
-    return new Promise<any[]>((resolve, reject) => {
-        window.setTimeout(() => {
-            resolve(defaultSelectFilter(items, inputValue, (item) => item && item.label))
-        }, 1000)
-    })
+const loadItems = (inputValue: string, populate) => {
+    window.setTimeout(() => {
+        populate(defaultSelectFilter(items, inputValue, (item) => item && item.label))
+    }, 1000)
 }
 
 // tslint:disable jsx-no-lambda

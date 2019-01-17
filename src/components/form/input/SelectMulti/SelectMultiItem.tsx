@@ -1,21 +1,24 @@
+import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Times } from '../../../elements/Icon/generated/Times'
 
 export interface SelectMultiItemProps extends WithStylesProps {
+    style?: Interpolation
     onRemove(): void
 }
 
 @withStyles
 export class SelectMultiItem extends React.Component<SelectMultiItemProps> {
     render() {
-        const { theme, css, children, onRemove, ...rest } = this.props
+        const { theme, css, style, children, onRemove, ...rest } = this.props
         const styles: Styles = {
             root: {
                 border: `1px solid ${theme.pallete.divider}`,
                 borderRadius: theme.radius.button,
                 display: 'inline-flex',
+                alignItems: 'center',
                 fontWeight: 'bold',
             },
             text: {
@@ -37,7 +40,7 @@ export class SelectMultiItem extends React.Component<SelectMultiItemProps> {
             },
         }
         return (
-            <span className={css(styles.root)} {...rest}>
+            <span className={css(styles.root, style)} {...rest}>
                 <span className={css(styles.text)}>
                     {children}
                 </span>

@@ -9,8 +9,10 @@ exports[`TextInput render 1`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -71,8 +73,10 @@ exports[`TextInput render password 1`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -133,8 +137,10 @@ exports[`TextInput should render correctly with input 1`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
 }
 
 .emotion-0::-webkit-input-placeholder {

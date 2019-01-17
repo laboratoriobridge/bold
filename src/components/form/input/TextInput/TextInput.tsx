@@ -1,7 +1,7 @@
 import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { focusBoxShadow, Styles, Theme, withStyles, WithStylesProps } from '../../../../styles'
+import { focusBoxShadow, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, InputProps } from '../Input/Input'
 
 import { InputWrapper, InputWrapperProps } from './InputWrapper'
@@ -18,7 +18,7 @@ export interface TextInputProps extends WithStylesProps, InputProps,
     status?: InputStatus
 }
 
-export const createStyles = (theme: Theme): Styles => ({
+export const createStyles = (theme: Theme) => ({
     input: {
         backgroundColor: theme.pallete.surface.main,
         border: 'solid 1px ' + theme.pallete.gray.c70,
@@ -27,7 +27,8 @@ export const createStyles = (theme: Theme): Styles => ({
         lineHeight: '1rem',
         padding: 'calc(0.5rem - 1px) 0.5rem',
         width: '100%',
-        transition: 'all .2s',
+        transitionProperty: 'box-shadow',
+        transitionDuration: '.2s',
         '::placeholder': {
             color: theme.pallete.text.disabled,
         },

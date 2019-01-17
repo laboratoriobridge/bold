@@ -6,10 +6,10 @@ import { Checkbox } from '../Checkbox/Checkbox'
 import { DefaultItemType } from '../Select/Select'
 import { SelectDownshiftRenderProps } from '../Select/SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../Select/SelectDownshiftMenu'
-import { TextInput, TextInputProps } from '../TextInput/TextInput'
+import { TextInputProps } from '../TextInput/TextInput'
 
 import { MultiDownshift, MultiDownshiftProps } from './MultiDownshift'
-import { SelectMultiItem } from './SelectMultiItem'
+import { SelectMultiInput } from './SelectMultiInput'
 
 export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
@@ -30,7 +30,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
             <MultiDownshift<T> {...rest}>
                 {(downshift) => {
                     const {
-                        isOpen,
+                        // isOpen,
                         getInputProps,
                         selectedItems,
                         itemToString,
@@ -41,22 +41,17 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
                     return (
                         <div>
-                            {selectedItems.map((selectedItem, key) => (
-                                <SelectMultiItem
-                                    key={key}
-                                    onRemove={this.handleItemRemove(removeItem, selectedItem)}
-                                >
-                                    {itemToString(selectedItem)}
-                                </SelectMultiItem>
-                            ))}
-                            <TextInput
+                            <SelectMultiInput<T>
                                 {...getInputProps()}
-                                icon={isOpen ? 'triangleUp' : 'triangleDown'}
+                                items={selectedItems}
+                                renderItem={itemToString}
+                                onRemoveItem={this.handleItemRemove(removeItem)}
+                                // icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}
-                                clearable={clearable}
+                                // clearable={clearable}
                                 onBlur={this.handleInputBlur(downshift)}
-                                onIconClick={this.handleInputIconClick(downshift)}
+                                // onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
                             />
@@ -73,7 +68,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
         )
     }
 
-    handleItemRemove = (removeItem: Function, item: T) => () => removeItem(item)
+    handleItemRemove = (removeItem: Function) => (item: T) => removeItem(item)
 
     renderItem = (selectedItems: T[]) => (item: T) => (
         <HFlow hSpacing={0.5}>

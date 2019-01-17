@@ -1,13 +1,16 @@
 import Downshift, { ControllerStateAndHelpers, DownshiftProps, StateChangeOptions } from 'downshift'
-import * as matchSorter from 'match-sorter'
+import * as matchSorterAll from 'match-sorter'
 import * as React from 'react'
+
+// TODO: remove this dirty hack when storybook starts supporing allowSyntheticDefaultImports or a workaround is found
+const matchSorter = (matchSorterAll as any).default || matchSorterAll
 
 /**
  * Function to be used to asynchronously load the select items.
  * @param inputValue The string typed on the select input.
- * @returns The select items to be populated on the componente.
+ * @param populate Function that receive the loaded items to populate the select.
  */
-export type SelectLoadFn<T> = (inputValue: string) => Promise<T[]>
+export type SelectLoadFn<T> = (inputValue: string, populate: (items: T[]) => void) => void
 
 export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
     /**
@@ -67,15 +70,14 @@ export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>,
         const { items, filter, itemToString } = this.props
 
         if (typeof items === 'function') {
-            this.setState({ isLoading: true, loadedItems: [] })
-
-            return items(inputValue).then(res => {
-                this.setState({
-                    isLoading: false,
-                    isFirstLoading: false,
-                    loadedItems: res,
+            this.setState({ isLoading: true, loadedItems: [] }, () => {
+                items(inputValue, (loadedItems) => {
+                    this.setState({
+                        isLoading: false,
+                        isFirstLoading: false,
+                        loadedItems,
+                    })
                 })
-                return res
             })
         } else {
             this.setState({

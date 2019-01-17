@@ -83,8 +83,10 @@ exports[`deve renderizar corretamente 1`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
   width: 47px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
@@ -273,8 +275,10 @@ exports[`deve renderizar corretamente 2`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
   width: 47px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
@@ -524,8 +528,10 @@ exports[`deve renderizar corretamente 3`] = `
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
-  -webkit-transition: all .2s;
-  transition: all .2s;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
   width: 47px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
