@@ -10,7 +10,7 @@ storiesOf('Form/MonthField', module)
     .addDecorator(withForm())
     .add('default', () => (
         <MonthField
-            onValueChange={action('changed')}
+            onChange={action('changed')}
             name='month'
         />
     ))

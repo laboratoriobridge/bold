@@ -9,7 +9,7 @@ describe('MonthField', () => {
     it('should render correctly', () => {
         const { container } = render(withForm(
             <MonthField
-                onValueChange={jest.fn()}
+                onChange={jest.fn()}
                 name='month'
             />))
         expect(container).toMatchSnapshot()

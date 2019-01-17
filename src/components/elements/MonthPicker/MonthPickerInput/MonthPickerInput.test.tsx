@@ -13,14 +13,14 @@ describe('MonthPickerInput', () => {
     it('should render correctly', () => {
         const { container } = render(withTheme(
             <MonthPickerInput
-                onValueChange={fn}
+                onChange={fn}
             />))
         expect(container).toMatchSnapshot()
     })
     it('should render MonthPicker on focus', () => {
         const { container, getByTitle } = render(withTheme(
             <MonthPickerInput
-                onValueChange={fn}
+                onChange={fn}
                 title='Month Picker Input'
             />))
 
@@ -32,10 +32,10 @@ describe('MonthPickerInput', () => {
         const afterFocus = container.querySelector('[data-visible="true"]')
         expect(afterFocus).not.toBeNull()
     })
-    it('should call "onValueChange" when a valid date is typed', () => {
+    it('should call "onChange" when a valid date is typed', () => {
         const { getByTitle } = render(withTheme(
             <MonthPickerInput
-                onValueChange={fn}
+                onChange={fn}
                 title='Month Picker Input'
             />))
 
@@ -45,7 +45,7 @@ describe('MonthPickerInput', () => {
     it('should hide MonthPicker when a month is picked', () => {
         const { container, getByTitle, getByText } = render(withTheme(
             <MonthPickerInput
-                onValueChange={fn}
+                onChange={fn}
                 title='Month Picker Input'
             />))
 
