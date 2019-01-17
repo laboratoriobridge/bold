@@ -147,6 +147,10 @@ exports[`render should render correctly when closed 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-5 {
+  position: relative;
+}
+
 <div
   aria-expanded="false"
   aria-haspopup="listbox"
@@ -192,7 +196,7 @@ exports[`render should render correctly when closed 1`] = `
     </span>
   </div>
   <div
-    style="position: relative;"
+    class="emotion-5"
   />
 </div>
 `;
@@ -344,6 +348,10 @@ exports[`render should render correctly when opened 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-11 {
+  position: relative;
+}
+
 .emotion-10 {
   list-style: none;
   margin: 0;
@@ -352,6 +360,9 @@ exports[`render should render correctly when opened 1`] = `
   border-radius: 2px;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   width: 100%;
   z-index: 1050;
@@ -419,7 +430,7 @@ exports[`render should render correctly when opened 1`] = `
     </span>
   </div>
   <div
-    style="position: relative;"
+    class="emotion-11"
   >
     <ul
       aria-labelledby="downshift-1-label"

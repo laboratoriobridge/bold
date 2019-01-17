@@ -42,7 +42,6 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                     return (
                         <div>
                             <SelectMultiInput<T>
-                                {...getInputProps()}
                                 items={selectedItems}
                                 renderItem={itemToString}
                                 onRemoveItem={this.handleItemRemove(removeItem)}
@@ -54,6 +53,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                                 // onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
+                                {...getInputProps()}
                             />
                             <SelectDownshiftMenu
                                 downshift={downshift}

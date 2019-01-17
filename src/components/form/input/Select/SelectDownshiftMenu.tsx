@@ -62,7 +62,7 @@ export class SelectDownshiftMenu<T> extends React.Component<SelectDownshiftMenuP
 
     render() {
         const {
-            theme,
+            css,
             items,
             isLoading,
             components,
@@ -71,16 +71,9 @@ export class SelectDownshiftMenu<T> extends React.Component<SelectDownshiftMenuP
         const { LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
 
         return (
-            <div style={{ position: 'relative' }}>
+            <div className={css({ position: 'relative' })}>
                 {isOpen &&
-                    <SelectMenu
-                        {...getMenuProps()}
-                        style={{
-                            position: 'absolute',
-                            width: '100%',
-                            zIndex: theme.zIndex.overlays,
-                        }}
-                    >
+                    <SelectMenu {...getMenuProps()}>
                         {isLoading && <LoadingItem {...this.props} />}
 
                         {!isLoading && (items === null || items.length === 0) &&

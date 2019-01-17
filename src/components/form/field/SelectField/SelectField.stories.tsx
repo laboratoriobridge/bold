@@ -4,16 +4,23 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, defaultSelectFilter, SelectMenu, SelectMenuItem } from '../../input/Select'
+import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
 const items: DefaultItemType[] = [
     { value: 1, label: 'Apple' },
-    { value: 2, label: 'Banana' },
-    { value: 3, label: 'Grape' },
-    { value: 4, label: 'Orange' },
-    { value: 5, label: 'Pear' },
+    { value: 2, label: 'Avocado' },
+    { value: 3, label: 'Banana' },
+    { value: 4, label: 'Blueberry' },
+    { value: 5, label: 'Coconut' },
+    { value: 6, label: 'Grape' },
+    { value: 7, label: 'Lemon' },
+    { value: 8, label: 'Mango' },
+    { value: 9, label: 'Melon' },
+    { value: 10, label: 'Orange' },
+    { value: 11, label: 'Peach' },
+    { value: 12, label: 'Pear' },
 ]
 
 const loadItems = (inputValue: string, populate) => {
@@ -64,6 +71,17 @@ storiesOf('Form/SelectField', module)
             )}
             onChange={action('changed')}
             onBlur={action('blur')}
+            disabled={boolean('disabled', false)}
+        />
+    ))
+    .add('input', () => (
+        <Select<DefaultItemType>
+            items={items}
+            itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
+            onChange={action('changed')}
+            onBlur={action('blur')}
+            clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
         />
     ))

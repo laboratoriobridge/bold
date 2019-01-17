@@ -82,25 +82,10 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
         }), cb)
     }
 
-    getRemoveButtonProps = (options: RemoveButtonOptions<T>) => {
-        const { onClick, item, ...props } = options
-
-        return {
-            onClick: e => {
-                // TODO: use something like downshift's composeEventHandlers utility instead
-                onClick && onClick(e)
-                e.stopPropagation()
-                this.removeItem(item)
-            },
-            ...props,
-        }
-    }
-
     getStateAndHelpers(downshift) {
         const { selectedItems } = this.state
-        const { getRemoveButtonProps, removeItem } = this
+        const { removeItem } = this
         return {
-            getRemoveButtonProps,
             removeItem,
             selectedItems,
             ...downshift,

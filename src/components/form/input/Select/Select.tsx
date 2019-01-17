@@ -41,7 +41,6 @@ export class Select<T> extends React.Component<SelectProps<T>> {
                     return (
                         <div>
                             <TextInput
-                                {...getInputProps()}
                                 icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}
@@ -51,6 +50,7 @@ export class Select<T> extends React.Component<SelectProps<T>> {
                                 onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
+                                {...getInputProps()}
                             />
                             <SelectDownshiftMenu
                                 downshift={downshift}

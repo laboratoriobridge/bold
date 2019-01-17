@@ -147,6 +147,10 @@ exports[`render should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-5 {
+  position: relative;
+}
+
 <div
   data-name="select1"
 >
@@ -195,7 +199,7 @@ exports[`render should render correctly 1`] = `
       </span>
     </div>
     <div
-      style="position: relative;"
+      class="emotion-5"
     />
   </div>
 </div>

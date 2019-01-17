@@ -22,6 +22,12 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             borderRadius: theme.radius.popper,
             backgroundColor: theme.pallete.surface.main,
             boxShadow: theme.shadows.outer['40'],
+            maxHeight: '20rem',
+            overflowY: 'auto',
+            overflowX: 'hidden',
+            position: 'absolute',
+            width: '100%',
+            zIndex: theme.zIndex.overlays,
         }
 
         return (
