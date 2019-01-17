@@ -3,7 +3,7 @@ import { number } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
-import MonthPicker from './MonthPicker/MonthPicker'
+import { MonthPicker } from './MonthPicker/MonthPicker'
 import { MonthPickerInput } from './MonthPickerInput/MonthPickerInput'
 
 storiesOf('Components/MonthPicker', module)

@@ -3,10 +3,10 @@ import * as React from 'react'
 import { Omit } from 'react-dropzone'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
-import { MaskedInput, MaskedInputProps } from '../../../form'
+import { MaskedInput, MaskedInputProps } from '../../../form/input/MaskedInput/MaskedInput'
 import { Popper, PopperController } from '../../Popper'
 
-import MonthPicker from '../MonthPicker/MonthPicker'
+import { MonthPicker } from '../MonthPicker/MonthPicker'
 
 export interface MonthPickerInputProps extends MonthInputProps {
     onValueChange(date: Date): void

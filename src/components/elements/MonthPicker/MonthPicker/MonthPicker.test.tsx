@@ -3,7 +3,7 @@ import { cleanup, fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
 
-import MonthPicker from './MonthPicker'
+import { MonthPicker } from './MonthPicker'
 
 afterEach(cleanup)
 

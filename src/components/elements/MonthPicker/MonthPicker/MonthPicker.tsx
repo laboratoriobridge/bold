@@ -18,7 +18,7 @@ export interface MonthPickerState {
 }
 
 @withStyles
-class MonthPicker extends React.Component<MonthPickerProps, MonthPickerState> {
+export class MonthPicker extends React.Component<MonthPickerProps, MonthPickerState> {
 
     static defaultProps: Partial<MonthPickerProps> = {
         monthDescriptions: [
@@ -117,5 +117,3 @@ class MonthPicker extends React.Component<MonthPickerProps, MonthPickerState> {
         this.props.onValueChange(new Date(year, month))
     }
 }
-
-export default MonthPicker

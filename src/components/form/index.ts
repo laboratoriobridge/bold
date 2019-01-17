@@ -9,6 +9,7 @@ export * from './field/SelectField'
 export * from './field/SwitchField'
 export * from './field/TextField'
 export * from './field/TextAreaField'
+export * from './field/MonthField'
 
 export * from './input/Checkbox/Checkbox'
 export * from './input/DateInput'
