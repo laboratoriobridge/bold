@@ -10,7 +10,7 @@ export interface MonthPickerProps extends WithStylesProps {
     month: number
     year: number
     monthDescriptions?: string[]
-    onValueChange(date: Date): any
+    onChange(date: Date): any
 }
 
 export interface MonthPickerState {
@@ -114,6 +114,6 @@ export class MonthPicker extends React.Component<MonthPickerProps, MonthPickerSt
 
     private onMonthClick = (month: number) => () => {
         const year = this.state.visibleYear
-        this.props.onValueChange(new Date(year, month))
+        this.props.onChange(new Date(year, month))
     }
 }

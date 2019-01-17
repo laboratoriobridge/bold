@@ -351,8 +351,6 @@ exports[`MonthField should render correctly 1`] = `
   padding: calc(0.25rem - 1px) 1.375rem;
   -webkit-transition-property: background;
   transition-property: background;
-  background: #0A67D1 !important;
-  color: #FFFFFF;
 }
 
 .emotion-16 > span {
@@ -382,66 +380,6 @@ exports[`MonthField should render correctly 1`] = `
 }
 
 .emotion-16:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-18 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-  padding: calc(0.25rem - 1px) 1.375rem;
-  -webkit-transition-property: background;
-  transition-property: background;
-}
-
-.emotion-18 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-18 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-18:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-18:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
@@ -598,7 +536,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -612,7 +550,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -626,7 +564,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -640,7 +578,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -654,7 +592,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -668,7 +606,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -682,7 +620,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -696,7 +634,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -710,7 +648,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -724,7 +662,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
@@ -738,7 +676,7 @@ exports[`MonthField should render correctly 1`] = `
                   class="emotion-17"
                 >
                   <button
-                    class="emotion-18"
+                    class="emotion-16"
                     type="button"
                   >
                     <span>
