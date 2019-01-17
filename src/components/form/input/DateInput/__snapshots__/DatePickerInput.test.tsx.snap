@@ -361,6 +361,7 @@ exports[`DatePickerInput should render correctly 1`] = `
     </div>
     <div
       class="emotion-63"
+      data-visible="false"
       style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
     >
       <div
@@ -1260,6 +1261,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
     </div>
     <div
       class="emotion-63"
+      data-visible="false"
       style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
     >
       <div

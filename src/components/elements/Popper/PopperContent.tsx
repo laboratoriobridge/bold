@@ -41,6 +41,7 @@ export class PopperContent extends React.Component<PopperContentProps> {
                         ref={popperProps.ref}
                         style={popperProps.style}
                         className={css(styles.content, show ? styles.visible : styles.hidden)}
+                        data-visible={show}
                     >
                         {this.props.children}
                     </div>
