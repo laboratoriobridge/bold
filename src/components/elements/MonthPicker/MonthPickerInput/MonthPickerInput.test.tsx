@@ -10,7 +10,7 @@ afterEach(cleanup)
 const fn = jest.fn()
 
 describe('MonthPickerInput', () => {
-    it('should render correctly with month and year', () => {
+    it('should render correctly', () => {
         const { container } = render(withTheme(
             <MonthPickerInput
                 onValueChange={fn}
