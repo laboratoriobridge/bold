@@ -37,6 +37,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                         removeItem,
                         loadedItems,
                         isLoading,
+                        inputValue,
                     } = downshift
 
                     return (
@@ -54,6 +55,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
                                 {...getInputProps()}
+                                value={inputValue ? inputValue : ''}
                             />
                             <SelectDownshiftMenu
                                 downshift={downshift}
