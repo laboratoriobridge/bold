@@ -49,5 +49,5 @@ it('should call the onChange event when an item is clicked', () => {
     const { getByText } = render(createSelect({ onChange, isOpen: true }))
     expect(onChange).not.toHaveBeenCalled()
     fireEvent.click(getByText(items[2].label))
-    expect(onChange).toHaveBeenCalledWith(items[2], expect.anything())
+    expect(onChange).toHaveBeenLastCalledWith(items[2], expect.anything())
 })

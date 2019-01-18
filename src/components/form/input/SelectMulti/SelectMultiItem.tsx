@@ -6,7 +6,7 @@ import { Times } from '../../../elements/Icon/generated/Times'
 
 export interface SelectMultiItemProps extends WithStylesProps {
     style?: Interpolation
-    onRemove(): void
+    onRemove(e: React.MouseEvent<HTMLSpanElement>): void
 }
 
 @withStyles

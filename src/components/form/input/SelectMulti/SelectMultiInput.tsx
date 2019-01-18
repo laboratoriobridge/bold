@@ -68,6 +68,10 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
         )
     }
 
-    handleRemove = (item: T) => () => this.props.onRemoveItem(item)
+    handleRemove = (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
+        this.props.onRemoveItem(item)
+        e.stopPropagation() // Do not propagate so menu is not opened when item is removed
+    }
+
     handleWrapperClick = () => this.inputRef.current.focus()
 }
