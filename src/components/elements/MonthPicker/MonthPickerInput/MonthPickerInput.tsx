@@ -5,46 +5,40 @@ import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrect
 
 import { MaskedInput, MaskedInputProps } from '../../../form/input/MaskedInput/MaskedInput'
 import { Popper, PopperController } from '../../Popper'
-import { MonthPicker } from '../MonthPicker/MonthPicker'
+import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
 
-export interface MonthPickerInputProps extends MonthInputProps {
-    onValueChange(date: Date): void
+export interface MonthPickerInputProps extends Omit<MaskedInputProps, 'value' | 'onChange'> {
+    value?: ReferenceMonth
+    onChange?(referenceMonth: ReferenceMonth): void
 }
 
-export interface MonthPickerInputState {
-    date: Date
-}
-
-export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps, MonthPickerInputState> {
-
-    constructor(props: MonthPickerInputProps) {
-        super(props)
-        this.state = { date: new Date() }
-    }
+export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps> {
 
     render() {
+
+        const { value } = this.props
+
         return (
             <Popper renderTarget={this.renderInput} placement='bottom-start' closeOnOutsideClick={true} block>
                 {(ctrl: PopperController) =>
                     <MonthPicker
-                        month={this.state.date.getMonth()}
-                        year={this.state.date.getFullYear()}
-                        onValueChange={this.onValueChange(ctrl)}
+                        month={value && value.month}
+                        year={value && value.year}
+                        onChange={this.onValueChange(ctrl)}
                     />
                 }
             </Popper>
         )
     }
 
-    renderInput = (ctrl: PopperController) => {
-        const { onValueChange, ...rest } = this.props
-        const { date } = this.state
-        const value = moment(date).format('MM/YYYY')
+    private renderInput = (ctrl: PopperController) => {
+        const { onChange, value, ...rest } = this.props
+        const formatedValue = value && moment(new Date(value.year, value.month)).format('MM/YYYY')
         return (
             <MonthInput
                 onFocus={ctrl.show}
                 onChange={this.onInputChange}
-                value={value}
+                value={formatedValue}
                 onIconClick={ctrl.toggle}
                 icon='calendar'
                 {...rest}
@@ -52,19 +46,19 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps,
         )
     }
 
-    onValueChange = (ctrl: PopperController) => (date: Date) => {
+    private onValueChange = (ctrl: PopperController) => (referenceMonth: ReferenceMonth) => {
         ctrl.hide()
-        this.setState({ date })
-        this.props.onValueChange(date)
+        this.props.onChange(referenceMonth)
     }
 
-    onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value
-
-        const mom = moment(value, 'MM/YYYY', true)
-        if (mom.isValid()) {
-            this.setState({ date: mom.toDate() })
-            this.props.onValueChange(mom.toDate())
+    private onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e && e.target) {
+            const convertedValue = moment(e.target.value, 'MM/YYYY', true)
+            if (convertedValue.isValid()) {
+                this.props.onChange({ month: convertedValue.month(), year: convertedValue.year() })
+            }
+        } else {
+            this.props.onChange(null)
         }
     }
 }

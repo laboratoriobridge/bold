@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MonthPickerInput should render correctly 1`] = `
-.emotion-7 {
+.emotion-5 {
   display: block;
 }
 
@@ -54,43 +54,15 @@ exports[`MonthPickerInput should render correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-4 {
   position: relative;
 }
 
-.emotion-6 input {
-  padding-right: 4.5rem;
+.emotion-4 input {
+  padding-right: 3rem;
 }
 
-.emotion-2 {
-  position: absolute;
-  right: 2.5rem;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  height: 100%;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  outline: 0;
-  color: #53595E;
-  padding: 1px 6px;
-}
-
-.emotion-2:hover {
-  color: #D83A2E;
-}
-
-.emotion-5 {
+.emotion-3 {
   position: absolute;
   background-color: #F2F2F7;
   display: -webkit-box;
@@ -112,12 +84,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   right: 1px;
 }
 
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
+.emotion-2 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -145,7 +112,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-4 > span {
+.emotion-2 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -158,28 +125,33 @@ exports[`MonthPickerInput should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-4 > span > :not(:last-child) {
+.emotion-2 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-4:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-4:focus {
+.emotion-2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-4:not(:disabled):hover {
+.emotion-2:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-4:focus {
+.emotion-2:focus {
   box-shadow: none;
 }
 
-.emotion-45 {
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-43 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1050;
@@ -188,7 +160,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   opacity: 0;
 }
 
-.emotion-44 {
+.emotion-42 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -205,7 +177,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   border-radius: 2px;
 }
 
-.emotion-17 {
+.emotion-15 {
   margin-top: 0.25rem;
   margin-right: 0rem;
   margin-bottom: 0.25rem;
@@ -213,19 +185,19 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-17:first-child {
+.emotion-15:first-child {
   margin-top: 0;
 }
 
-.emotion-17:last-child {
+.emotion-15:last-child {
   margin-bottom: 0;
 }
 
-.emotion-17:empty {
+.emotion-15:empty {
   display: none;
 }
 
-.emotion-16 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -241,7 +213,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   padding: 0rem 1.5rem 0rem 1rem;
 }
 
-.emotion-10 {
+.emotion-8 {
   margin-top: 0rem;
   margin-right: 0.5rem;
   margin-bottom: 0rem;
@@ -249,19 +221,19 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-10:first-child {
+.emotion-8:first-child {
   margin-left: 0;
 }
 
-.emotion-10:last-child {
+.emotion-8:last-child {
   margin-right: 0;
 }
 
-.emotion-10:empty {
+.emotion-8:empty {
   display: none;
 }
 
-.emotion-9 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -288,7 +260,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-9 > span {
+.emotion-7 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -301,29 +273,29 @@ exports[`MonthPickerInput should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-9 > span > :not(:last-child) {
+.emotion-7 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-7:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-9:focus {
+.emotion-7:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-7:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-11 {
+.emotion-9 {
   font-size: 0.875rem;
   font-weight: bold;
 }
 
-.emotion-42 {
+.emotion-40 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -333,7 +305,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   flex-wrap: wrap;
 }
 
-.emotion-19 {
+.emotion-17 {
   margin-top: 0.5rem;
   margin-right: 0.1875rem;
   margin-bottom: 0.5rem;
@@ -341,81 +313,19 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-19:first-child {
+.emotion-17:first-child {
   margin-left: 0;
 }
 
-.emotion-19:last-child {
+.emotion-17:last-child {
   margin-right: 0;
 }
 
-.emotion-19:empty {
+.emotion-17:empty {
   display: none;
 }
 
-.emotion-18 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-  padding: calc(0.25rem - 1px) 1.375rem;
-  -webkit-transition-property: background;
-  transition-property: background;
-  background: #0A67D1 !important;
-  color: #FFFFFF;
-}
-
-.emotion-18 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-18 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-18:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-18:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-18:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-20 {
+.emotion-16 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -445,7 +355,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   transition-property: background;
 }
 
-.emotion-20 > span {
+.emotion-16 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -458,64 +368,44 @@ exports[`MonthPickerInput should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-20 > span > :not(:last-child) {
+.emotion-16 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-20:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-20:focus {
+.emotion-16:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-20:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
 <div>
   <div
-    class="emotion-7"
+    class="emotion-5"
   >
     <div
-      class="emotion-7"
+      class="emotion-5"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <input
           class="emotion-0"
           placeholder="mm/yyyy"
           type="text"
-          value="01/2019"
+          value=""
         />
         <span
-          class="emotion-2"
-          role="button"
-          tabindex="-1"
-          title="Limpar"
-        >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
-              data-name="times"
-            />
-          </svg>
-        </span>
-        <span
-          class="emotion-5"
+          class="emotion-3"
         >
           <button
-            class="emotion-4"
+            class="emotion-2"
             tabindex="-1"
             type="button"
           >
@@ -545,25 +435,25 @@ exports[`MonthPickerInput should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-45"
+      class="emotion-43"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
       <div>
         <div
-          class="emotion-44"
+          class="emotion-42"
         >
           <div
-            class="emotion-17"
+            class="emotion-15"
           >
             <div
-              class="emotion-16"
+              class="emotion-14"
             >
               <div
-                class="emotion-10"
+                class="emotion-8"
               >
                 <button
-                  class="emotion-9"
+                  class="emotion-7"
                   title="Ano anterior"
                   type="button"
                 >
@@ -585,19 +475,19 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-10"
+                class="emotion-8"
               >
                 <span
-                  class="emotion-11"
+                  class="emotion-9"
                 >
                   2019
                 </span>
               </div>
               <div
-                class="emotion-10"
+                class="emotion-8"
               >
                 <button
-                  class="emotion-9"
+                  class="emotion-7"
                   title="Ano posterior"
                   type="button"
                 >
@@ -621,16 +511,16 @@ exports[`MonthPickerInput should render correctly 1`] = `
             </div>
           </div>
           <div
-            class="emotion-17"
+            class="emotion-15"
           >
             <div
-              class="emotion-42"
+              class="emotion-40"
             >
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -641,10 +531,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -655,10 +545,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -669,10 +559,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -683,10 +573,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -697,10 +587,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -711,10 +601,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -725,10 +615,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -739,10 +629,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -753,10 +643,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -767,10 +657,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>
@@ -781,10 +671,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-19"
+                class="emotion-17"
               >
                 <button
-                  class="emotion-20"
+                  class="emotion-16"
                   type="button"
                 >
                   <span>

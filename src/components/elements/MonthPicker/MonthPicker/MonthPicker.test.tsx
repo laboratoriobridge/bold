@@ -41,30 +41,30 @@ describe('MonthPicker', () => {
         expect(getAllByText(expectedYear.toString())).toHaveLength(1)
     })
 
-    it('should call "onValueChange" when a month is selected', () => {
-        const onValueChange = jest.fn()
+    it('should call "onChange" when a month is selected', () => {
+        const onChange = jest.fn()
         const { getByText } = render(withTheme(
             <MonthPicker
                 month={now.getMonth()}
                 year={now.getFullYear()}
-                onValueChange={onValueChange}
+                onChange={onChange}
             />))
         fireEvent.click(getByText('Jan'))
-        expect(onValueChange).toHaveBeenCalledWith(new Date(now.getFullYear(), now.getMonth()))
+        expect(onChange).toHaveBeenCalledWith({ month: now.getMonth(), year: now.getFullYear() })
     })
 
-    it('should call "onValueChange" when a month is selected, with the given year', () => {
-        const onValueChange = jest.fn()
+    it('should call "onChange" when a month is selected, with the given year', () => {
+        const onChange = jest.fn()
         const { getByText, getByTitle } = render(withTheme(
             <MonthPicker
                 month={now.getMonth()}
                 year={now.getFullYear()}
-                onValueChange={onValueChange}
+                onChange={onChange}
             />))
         fireEvent.click(getByTitle('Ano anterior'))
         fireEvent.click(getByText('Jan'))
         const expectedYear = now.getFullYear() - 1
-        expect(onValueChange).toHaveBeenCalledWith(new Date(expectedYear, now.getMonth()))
+        expect(onChange).toHaveBeenCalledWith({ month: now.getMonth(), year: expectedYear })
     })
 
     it('should fill the prop year if non is given', () => {
