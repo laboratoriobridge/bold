@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../../styles'
-import { Input, InputProps } from '../Input/Input'
-import { createStyles, TextInputProps } from '../TextInput/TextInput'
+import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
+import { Input, InputProps } from '../../Input/Input'
+import { createStyles, TextInputProps } from '../../TextInput/TextInput'
 
 import { SelectMultiItem } from './SelectMultiItem'
 

@@ -3,8 +3,8 @@
 import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
 import * as React from 'react'
 
-import { Omit } from '../../../../util'
-import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../Select/SelectDownshift'
+import { Omit } from '../../../../../util'
+import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../SelectSingle/SelectDownshift'
 
 export interface MultiDownshiftProps<T> extends Omit<SelectDownshiftProps<T>, 'onSelect' | 'onChange'> {
     initialSelectedItems?: T[]

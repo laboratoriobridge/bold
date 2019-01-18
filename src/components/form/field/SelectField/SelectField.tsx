@@ -4,7 +4,6 @@ import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../fin
 import { DefaultItemType, Select, SelectProps } from '../../input/Select'
 
 export interface SelectFieldProps<T = DefaultItemType> extends BaseFieldProps<SelectProps<T>> {
-    multiple?: boolean
 }
 
 export class SelectField<T = DefaultItemType> extends React.Component<SelectFieldProps<T>> {
