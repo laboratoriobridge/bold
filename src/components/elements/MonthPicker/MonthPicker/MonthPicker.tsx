@@ -10,11 +10,21 @@ export interface MonthPickerProps extends WithStylesProps {
     month: number
     year: number
     monthDescriptions?: string[]
-    onChange(date: Date): any
+    onChange(referenceMonth: ReferenceMonth): any
 }
 
 export interface MonthPickerState {
     visibleYear: number
+}
+
+/**
+ * Interface representing the selected month.
+ *
+ * Months are zero indexed, so January is month 0.
+ */
+export interface ReferenceMonth {
+    month: number
+    year: number
 }
 
 @withStyles
@@ -114,6 +124,6 @@ export class MonthPicker extends React.Component<MonthPickerProps, MonthPickerSt
 
     private onMonthClick = (month: number) => () => {
         const year = this.state.visibleYear
-        this.props.onChange(new Date(year, month))
+        this.props.onChange({ month, year })
     }
 }
