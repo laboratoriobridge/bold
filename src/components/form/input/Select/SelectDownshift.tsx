@@ -18,6 +18,8 @@ export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
      */
     items: T[] | SelectLoadFn<T>
 
+    onChange?(item: T, downshift: SelectDownshiftRenderProps<T>): void
+
     children?(props: SelectDownshiftRenderProps<T>): React.ReactNode
 
     /**
@@ -89,25 +91,35 @@ export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>,
     }
 
     handleDownshiftChange = (options: StateChangeOptions<T>, stateAndHelpers: ControllerStateAndHelpers<T>) => {
-        if (this.state.isFirstLoading || options.type === Downshift.stateChangeTypes.changeInput) {
+        if (this.state.isFirstLoading // Reload items on first interaction
+            || options.type === Downshift.stateChangeTypes.changeInput // Reload items when inputValue is changed
+        ) {
             this.load(options.inputValue)
         }
+
+        this.props.onStateChange && this.props.onStateChange(options, this.getStateAndHelpers(stateAndHelpers))
     }
 
+    handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
+        this.props.onChange && this.props.onChange(item, this.getStateAndHelpers(downshift))
+    }
+
+    getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => ({
+        ...downshift,
+        ...this.state,
+        load: this.load,
+    })
+
     render() {
-        const { load } = this
         const { items, filter, children, ...rest } = this.props
 
         return (
             <Downshift
                 {...rest}
                 onStateChange={this.handleDownshiftChange}
+                onChange={this.handleChange}
             >
-                {downshift => children({
-                    ...downshift,
-                    ...this.state,
-                    load,
-                })}
+                {downshift => children(this.getStateAndHelpers(downshift))}
             </Downshift>
         )
     }

@@ -33,6 +33,7 @@ export class Select<T> extends React.Component<SelectProps<T>> {
             <SelectDownshift<T>
                 initialSelectedItem={value}
                 {...rest}
+                onChange={this.handleChange}
             >
                 {(downshift) => {
                     const {
@@ -51,6 +52,7 @@ export class Select<T> extends React.Component<SelectProps<T>> {
                                 status={status}
                                 clearable={clearable}
                                 style={style}
+                                onClear={this.handleClear(downshift)}
                                 onBlur={this.handleInputBlur(downshift)}
                                 onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
@@ -69,6 +71,17 @@ export class Select<T> extends React.Component<SelectProps<T>> {
                 }}
             </SelectDownshift>
         )
+    }
+
+    handleChange = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
+        // If an item is selected, reload the select list with initial state
+        downshift.load('')
+
+        this.props.onChange && this.props.onChange(item, downshift)
+    }
+
+    handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {
+        downshift.clearSelection()
     }
 
     handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()

@@ -16,6 +16,7 @@ export interface TextInputProps extends WithStylesProps, InputProps,
     clearable?: boolean
     style?: Interpolation
     status?: InputStatus
+    onClear?: InputWrapperProps['onClear']
 }
 
 export const createStyles = (theme: Theme) => ({
@@ -68,7 +69,7 @@ export class TextInput extends React.Component<TextInputProps> {
     render() {
         const {
             css, status, theme, style,
-            icon, iconPosition, onIconClick, clearable,
+            icon, iconPosition, onIconClick, clearable, onClear,
             ...rest
         } = this.props
         const styles = createStyles(theme)
@@ -84,7 +85,7 @@ export class TextInput extends React.Component<TextInputProps> {
                 iconPosition={iconPosition}
                 onIconClick={onIconClick}
                 clearVisible={clearable && this.isClearVisible()}
-                onClear={this.handleClear}
+                onClear={onClear ? onClear : this.handleClear}
             >
                 <Input
                     {...rest}
