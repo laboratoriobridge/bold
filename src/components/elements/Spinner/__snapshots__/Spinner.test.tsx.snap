@@ -1,5 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept style prop 1`] = `
+.emotion-0 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: red;
+}
+
+.emotion-0:after {
+  -webkit-animation: animation-1scjtrl 450ms infinite linear;
+  animation: animation-1scjtrl 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+<span
+  class="emotion-0"
+/>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   pointer-events: none;

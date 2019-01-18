@@ -1,44 +1,44 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
-import { TextInput, TextInputProps } from '../TextInput/TextInput'
+import { HFlow } from '../../../layout'
+import { Checkbox } from '../Checkbox/Checkbox'
+import { DefaultItemType } from '../Select/Select'
+import { SelectDownshiftRenderProps } from '../Select/SelectDownshift'
+import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../Select/SelectDownshiftMenu'
+import { TextInputProps } from '../TextInput/TextInput'
 
-import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
-import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'
+import { MultiDownshift, MultiDownshiftProps } from './MultiDownshift'
+import { SelectMultiInput } from './SelectMultiInput'
 
-export interface DefaultItemType {
-    value: any
-    label: string
-}
-
-export interface SelectProps<T = DefaultItemType> extends SelectDownshiftProps<T>, WithStylesProps {
-    value?: T
+export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
+    value?: T[]
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
-    components?: SelectDownshiftMenuProps<T>['components']
     onBlur?: TextInputProps['onBlur']
     disabled?: TextInputProps['disabled']
     status?: TextInputProps['status']
     placeholder?: TextInputProps['placeholder']
     clearable?: TextInputProps['clearable']
-    style?: TextInputProps['style']
 }
 
 @withStyles
-export class Select<T> extends React.Component<SelectProps<T>> {
+export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, style, value, ...rest } = this.props
+        const { css, theme, renderItem, disabled, onBlur, status, clearable, value, ...rest } = this.props
 
         return (
-            <SelectDownshift<T>
-                initialSelectedItem={value}
+            <MultiDownshift<T>
+                initialSelectedItems={value || []}
                 {...rest}
-                onChange={this.handleChange}
             >
                 {(downshift) => {
                     const {
-                        isOpen,
+                        // isOpen,
                         getInputProps,
+                        selectedItems,
+                        itemToString,
+                        removeItem,
                         loadedItems,
                         isLoading,
                         inputValue,
@@ -46,15 +46,16 @@ export class Select<T> extends React.Component<SelectProps<T>> {
 
                     return (
                         <div>
-                            <TextInput
-                                icon={isOpen ? 'triangleUp' : 'triangleDown'}
+                            <SelectMultiInput<T>
+                                items={selectedItems}
+                                renderItem={itemToString}
+                                onRemoveItem={this.handleItemRemove(removeItem)}
+                                // icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}
-                                clearable={clearable}
-                                style={style}
-                                onClear={this.handleClear(downshift)}
+                                // clearable={clearable}
                                 onBlur={this.handleInputBlur(downshift)}
-                                onIconClick={this.handleInputIconClick(downshift)}
+                                // onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
                                 {...getInputProps()}
@@ -64,25 +65,23 @@ export class Select<T> extends React.Component<SelectProps<T>> {
                                 downshift={downshift}
                                 items={loadedItems}
                                 isLoading={isLoading}
-                                renderItem={renderItem}
+                                renderItem={this.renderItem(selectedItems)}
                             />
                         </div>
                     )
                 }}
-            </SelectDownshift>
+            </MultiDownshift>
         )
     }
 
-    handleChange = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
-        // If an item is selected, reload the select list with initial state
-        downshift.load('')
+    handleItemRemove = (removeItem: Function) => (item: T) => removeItem(item)
 
-        this.props.onChange && this.props.onChange(item, downshift)
-    }
-
-    handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {
-        downshift.clearSelection()
-    }
+    renderItem = (selectedItems: T[]) => (item: T) => (
+        <HFlow hSpacing={0.5}>
+            <Checkbox checked={selectedItems.includes(item)} tabIndex={-1} readOnly />
+            {this.props.renderItem ? this.props.renderItem(item) : this.props.itemToString(item)}
+        </HFlow>
+    )
 
     handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
     handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()

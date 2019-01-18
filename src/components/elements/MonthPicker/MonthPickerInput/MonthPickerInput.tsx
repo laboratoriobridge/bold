@@ -5,7 +5,6 @@ import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrect
 
 import { MaskedInput, MaskedInputProps } from '../../../form/input/MaskedInput/MaskedInput'
 import { Popper, PopperController } from '../../Popper'
-
 import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
 
 export interface MonthPickerInputProps extends Omit<MaskedInputProps, 'value' | 'onChange'> {
