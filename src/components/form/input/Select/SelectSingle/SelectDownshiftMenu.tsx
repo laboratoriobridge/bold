@@ -1,7 +1,7 @@
 import { ControllerStateAndHelpers } from 'downshift'
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { withStyles, WithStylesProps } from '../../../../../styles'
 
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from './SelectMenu'
 

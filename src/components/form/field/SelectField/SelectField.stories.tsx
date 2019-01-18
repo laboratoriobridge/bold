@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from '../../input/Select'
+import { DefaultItemType, defaultSelectFilter, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
@@ -40,6 +40,7 @@ storiesOf('Form/SelectField', module)
             items={items}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
+            multiple={boolean('multiple', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
             clearable={boolean('clearable', true)}
@@ -52,6 +53,8 @@ storiesOf('Form/SelectField', module)
             label={text('label', 'Component label')}
             items={loadItems}
             itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
+            multiple={boolean('multiple', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
             disabled={boolean('disabled', false)}
@@ -63,19 +66,21 @@ storiesOf('Form/SelectField', module)
             label={text('label', 'Component label')}
             items={items}
             itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
             renderItem={(item) => (
                 <>
                     <p><strong>{item.label}</strong></p>
                     <p>yummy</p>
                 </>
             )}
+            multiple={boolean('multiple', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
             disabled={boolean('disabled', false)}
         />
     ))
-    .add('input', () => (
-        <Select<DefaultItemType>
+    .add('input (single value)', () => (
+        <SelectSingle<DefaultItemType>
             items={items}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
@@ -85,8 +90,20 @@ storiesOf('Form/SelectField', module)
             disabled={boolean('disabled', false)}
         />
     ))
+    .add('input (multiple value)', () => (
+        <SelectMulti<DefaultItemType>
+            items={items}
+            itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
+            onChange={action('changed')}
+            onBlur={action('blur')}
+            clearable={boolean('clearable', true)}
+            disabled={boolean('disabled', false)}
+        />
+    ))
+
     .add('select menu', () => (
-        <SelectMenu>
+        <SelectMenu style={{ position: 'static' }}>
             <SelectMenuItem>Item 1</SelectMenuItem>
             <SelectMenuItem selected>Item 2 (selected)</SelectMenuItem>
             <SelectMenuItem>Item 3</SelectMenuItem>

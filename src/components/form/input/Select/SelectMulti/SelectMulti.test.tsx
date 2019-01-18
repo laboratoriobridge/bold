@@ -1,11 +1,10 @@
 import * as React from 'react'
 import { cleanup, fireEvent, render } from 'react-testing-library'
 
-import { withTheme } from '../../../../test'
-import { DefaultItemType } from '../Select/Select'
-import { SelectMulti } from '../SelectMulti'
+import { withTheme } from '../../../../../test'
+import { DefaultItemType } from '../SelectSingle/SelectSingle'
 
-import { SelectMultiProps } from './SelectMulti'
+import { SelectMulti, SelectMultiProps } from './SelectMulti'
 
 const items: DefaultItemType[] = [
     { value: 1, label: 'Apple' },

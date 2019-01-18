@@ -1,9 +1,9 @@
 import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
-import { Omit } from '../../../../util'
-import { Spinner } from '../../../elements'
+import { withStyles, WithStylesProps } from '../../../../../styles'
+import { Omit } from '../../../../../util'
+import { Spinner } from '../../../../elements'
 
 export interface SelectMenuProps extends WithStylesProps,
     Omit<React.HTMLAttributes<HTMLUListElement>, 'css' | 'style'> {
