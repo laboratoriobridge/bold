@@ -16,7 +16,12 @@ const items: DefaultItemType[] = [
 // tslint:disable jsx-no-lambda
 const createSelect = (props: Partial<SelectSingleProps> = {}) => {
     return withTheme(
-        <SelectSingle items={items} itemToString={item => item.label} {...props} />
+        <SelectSingle
+            items={items}
+            itemToString={item => item.label}
+            placeholder='Select a value...'
+            {...props}
+        />
     )
 }
 
