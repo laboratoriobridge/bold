@@ -27,7 +27,9 @@ export interface SelectSingleProps<T = DefaultItemType> extends SelectDownshiftP
 export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, style, value, ...rest } = this.props
+        const {
+            css, theme, renderItem, disabled, onBlur, status, clearable, style, value, placeholder, ...rest
+        } = this.props
 
         return (
             <SelectDownshift<T>
@@ -52,6 +54,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                                 status={status}
                                 clearable={clearable}
                                 style={style}
+                                placeholder={placeholder}
                                 onClear={this.handleClear(downshift)}
                                 onBlur={this.handleInputBlur(downshift)}
                                 onIconClick={this.handleInputIconClick(downshift)}

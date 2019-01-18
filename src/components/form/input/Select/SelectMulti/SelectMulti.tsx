@@ -25,7 +25,7 @@ export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftPro
 export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, value, ...rest } = this.props
+        const { css, theme, renderItem, disabled, onBlur, status, clearable, value, placeholder, ...rest } = this.props
 
         return (
             <MultiDownshift<T>
@@ -53,6 +53,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                                 // icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}
+                                placeholder={placeholder}
                                 // clearable={clearable}
                                 onBlur={this.handleInputBlur(downshift)}
                                 // onIconClick={this.handleInputIconClick(downshift)}
