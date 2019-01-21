@@ -40,7 +40,6 @@ storiesOf('Form/SelectField', module)
             loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            onInputValueChange={action('input value changed')}
         />
     ))
     .add('custom menu item', () => (
@@ -62,7 +61,6 @@ storiesOf('Form/SelectField', module)
             loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            onInputValueChange={action('input value changed')}
         />
     ))
     .add('input (single value)', () => (
@@ -75,7 +73,6 @@ storiesOf('Form/SelectField', module)
             loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            onInputValueChange={action('input value changed')}
         />
     ))
     .add('input (multiple value)', () => (
@@ -88,7 +85,6 @@ storiesOf('Form/SelectField', module)
             loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            onInputValueChange={action('input value changed')}
         />
     ))
 

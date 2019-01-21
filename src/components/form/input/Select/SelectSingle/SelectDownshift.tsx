@@ -14,36 +14,66 @@ export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
     children?(props: SelectDownshiftRenderProps<T>): React.ReactNode
 
     /**
-     * Function used to filter the result list.
-     * @param items All the items of the Select.
-     * @param inputValue The string typed on the select input.
-     * @param itemToString The `itemToString` function prop used by the component.
-     * @returns The result item list.
+     * Called when the inputValue is changed.
+     * @param filter The `inputValue` or `null` if an item is selected.
+     * @param downshift The downshift controller and helpers.
      */
-    filter?(items: T[], inputValue: string, itemToString: DownshiftProps<T>['itemToString']): T[]
+    onFilterChange?(filter: string, downshift: SelectDownshiftRenderProps<T>): void
 }
 
-export interface SelectDownshiftRenderProps<T> extends ControllerStateAndHelpers<T> {
+export interface SelectDownshiftRenderProps<T> extends ControllerStateAndHelpers<T>, State<T> {
+    items: T[]
+    setVisibleItems(visibleItems: T[]): void
+}
+
+interface State<T> {
     visibleItems: T[]
 }
 
 /**
  * Default filter prop used by the Select component.
  */
-export const defaultSelectFilter: SelectDownshiftProps<any>['filter'] = (items, inputValue, itemToString) =>
-    matchSorter(items, inputValue, { keys: [itemToString] })
+export function defaultSelectFilter<T>(
+    items: T[], filter: string, itemToString: SelectDownshiftRenderProps<T>['itemToString']
+): T[] {
+    return matchSorter(items, filter, { keys: [itemToString] })
+}
 
 /**
  * Downshift extension with item and filter management.
  */
-export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>> {
+export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>, State<T>> {
 
     static defaultProps: Partial<SelectDownshiftProps<any>> = {
-        filter: defaultSelectFilter,
+        onFilterChange: (filter: string, downshift: SelectDownshiftRenderProps<any>) => {
+            const { setVisibleItems, items, itemToString } = downshift
+            setVisibleItems(defaultSelectFilter(items, filter, itemToString))
+        },
     }
 
-    handleDownshiftChange = (options: StateChangeOptions<T>, stateAndHelpers: ControllerStateAndHelpers<T>) => {
-        this.props.onStateChange && this.props.onStateChange(options, this.getStateAndHelpers(stateAndHelpers))
+    constructor(props: SelectDownshiftProps<T>) {
+        super(props)
+        this.state = {
+            visibleItems: props.items,
+        }
+    }
+
+    handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
+        if (options.isOpen) {
+            this.props.onFilterChange(null, this.getStateAndHelpers(downshift))
+        }
+
+        if (options.type === Downshift.stateChangeTypes.changeInput) {
+            this.props.onFilterChange(options.inputValue, this.getStateAndHelpers(downshift))
+        }
+
+        if (options.type === Downshift.stateChangeTypes.clickItem ||
+            options.type === Downshift.stateChangeTypes.keyDownEnter
+        ) {
+            this.props.onFilterChange(null, this.getStateAndHelpers(downshift))
+        }
+
+        this.props.onStateChange && this.props.onStateChange(options, this.getStateAndHelpers(downshift))
     }
 
     handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
@@ -51,21 +81,26 @@ export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>>
     }
 
     getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => {
-        const { items, itemToString, filter } = this.props
-        const { inputValue } = downshift
+        const { items } = this.props
+        const { visibleItems } = this.state
+        const { setVisibleItems } = this
         return {
             ...downshift,
-            visibleItems: filter(items, inputValue, itemToString),
+            items,
+            visibleItems,
+            setVisibleItems,
         }
     }
 
+    setVisibleItems = (visibleItems: T[]) => this.setState({ visibleItems })
+
     render() {
-        const { items, filter, children, ...rest } = this.props
+        const { items, onFilterChange, children, ...rest } = this.props
 
         return (
             <Downshift
                 {...rest}
-                onStateChange={this.handleDownshiftChange}
+                onStateChange={this.handleStateChange}
                 onChange={this.handleChange}
             >
                 {downshift => children(this.getStateAndHelpers(downshift))}
