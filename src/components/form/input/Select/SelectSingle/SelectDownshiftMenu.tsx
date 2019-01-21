@@ -76,11 +76,13 @@ export class SelectDownshiftMenu<T> extends React.Component<SelectDownshiftMenuP
                     <SelectMenu {...getMenuProps()}>
                         {isLoading && <LoadingItem {...this.props} />}
 
-                        {!isLoading && (items === null || items.length === 0) &&
+                        {!isLoading && (!items || items.length === 0) &&
                             <EmptyItem {...this.props} />
                         }
 
-                        {items.map((item, index) => <Item key={index} index={index} item={item} {...this.props} />)}
+                        {items && items.map((item, index) =>
+                            <Item key={index} index={index} item={item} {...this.props} />
+                        )}
                     </SelectMenu>
                 }
             </div>
