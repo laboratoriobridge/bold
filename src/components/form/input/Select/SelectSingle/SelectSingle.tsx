@@ -13,6 +13,7 @@ export interface DefaultItemType {
 
 export interface SelectSingleProps<T = DefaultItemType> extends SelectDownshiftProps<T>, WithStylesProps {
     value?: T
+    loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
     onBlur?: TextInputProps['onBlur']
@@ -28,21 +29,31 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
 
     render() {
         const {
-            css, theme, renderItem, disabled, onBlur, status, clearable, style, value, placeholder, ...rest
+            css,
+            theme,
+            renderItem,
+            loading,
+            components,
+            disabled,
+            onBlur,
+            status,
+            clearable,
+            style,
+            value,
+            placeholder,
+            ...rest
         } = this.props
 
         return (
             <SelectDownshift<T>
                 initialSelectedItem={value}
                 {...rest}
-                onChange={this.handleChange}
             >
                 {(downshift) => {
                     const {
                         isOpen,
                         getInputProps,
-                        loadedItems,
-                        isLoading,
+                        visibleItems,
                         inputValue,
                     } = downshift
 
@@ -65,22 +76,16 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                             />
                             <SelectDownshiftMenu
                                 downshift={downshift}
-                                items={loadedItems}
-                                isLoading={isLoading}
+                                items={visibleItems}
+                                loading={loading}
                                 renderItem={renderItem}
+                                components={components}
                             />
                         </div>
                     )
                 }}
             </SelectDownshift>
         )
-    }
-
-    handleChange = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
-        // If an item is selected, reload the select list with initial state
-        downshift.load('')
-
-        this.props.onChange && this.props.onChange(item, downshift)
     }
 
     handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {

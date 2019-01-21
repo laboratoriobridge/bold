@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, defaultSelectFilter, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
+import { DefaultItemType, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
@@ -23,12 +23,6 @@ const items: DefaultItemType[] = [
     { value: 12, label: 'Pear' },
 ]
 
-const loadItems = (inputValue: string, populate) => {
-    window.setTimeout(() => {
-        populate(defaultSelectFilter(items, inputValue, (item) => item && item.label))
-    }, 1000)
-}
-
 // tslint:disable jsx-no-lambda
 storiesOf('Form/SelectField', module)
     .addDecorator(withRouter())
@@ -36,47 +30,39 @@ storiesOf('Form/SelectField', module)
     .add('default', () => (
         <SelectField<DefaultItemType>
             name='fruit'
-            label={text('label', 'Component label')}
             items={items}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
+            label={text('label', 'Component label')}
             multiple={boolean('multiple', false)}
-            onChange={action('changed')}
-            onBlur={action('blur')}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
-        />
-    ))
-    .add('async', () => (
-        <SelectField<DefaultItemType>
-            name='fruit'
-            label={text('label', 'Component label')}
-            items={loadItems}
-            itemToString={(item) => item && item.label}
-            placeholder='Select a value...'
-            multiple={boolean('multiple', false)}
+            loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            disabled={boolean('disabled', false)}
+            onInputValueChange={action('input value changed')}
         />
     ))
     .add('custom menu item', () => (
         <SelectField<DefaultItemType>
-            name='fruit'
-            label={text('label', 'Component label')}
-            items={items}
-            itemToString={(item) => item && item.label}
-            placeholder='Select a value...'
             renderItem={(item) => (
                 <>
                     <p><strong>{item.label}</strong></p>
                     <p>yummy</p>
                 </>
             )}
+            name='fruit'
+            items={items}
+            itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
+            label={text('label', 'Component label')}
             multiple={boolean('multiple', false)}
+            clearable={boolean('clearable', true)}
+            disabled={boolean('disabled', false)}
+            loading={boolean('loading', false)}
             onChange={action('changed')}
             onBlur={action('blur')}
-            disabled={boolean('disabled', false)}
+            onInputValueChange={action('input value changed')}
         />
     ))
     .add('input (single value)', () => (
@@ -84,10 +70,12 @@ storiesOf('Form/SelectField', module)
             items={items}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
-            onChange={action('changed')}
-            onBlur={action('blur')}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
+            loading={boolean('loading', false)}
+            onChange={action('changed')}
+            onBlur={action('blur')}
+            onInputValueChange={action('input value changed')}
         />
     ))
     .add('input (multiple value)', () => (
@@ -95,10 +83,12 @@ storiesOf('Form/SelectField', module)
             items={items}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
-            onChange={action('changed')}
-            onBlur={action('blur')}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
+            loading={boolean('loading', false)}
+            onChange={action('changed')}
+            onBlur={action('blur')}
+            onInputValueChange={action('input value changed')}
         />
     ))
 
