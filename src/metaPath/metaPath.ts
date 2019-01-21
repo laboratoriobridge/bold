@@ -24,16 +24,20 @@ export class Meta<T> {
         this.alias = alias
     }
 
-    public absolutePath = (): string[] => {
-        let path: string[]
+    public absolutePath = (): string => {
+        let path: string
         if (this.parent && this.parent.absolutePath) {
             path = this.parent.absolutePath()
+        }
+
+        if (path) {
+            path += '.'
         } else {
-            path = []
+            path = ''
         }
 
         if (this.alias) {
-            path.push(this.alias)
+            path += this.alias
         }
 
         return path
