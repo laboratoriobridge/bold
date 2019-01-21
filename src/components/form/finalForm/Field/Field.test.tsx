@@ -63,7 +63,7 @@ describe('meta', () => {
                 {p => <Field<number> name={path.id} render={input} convert={convert} />}
             </Form>
         ))
-        const fieldState = wrapper.find(FieldCmp).props().reactFinalForm.getFieldState(path.id.getAbsolutePath())
+        const fieldState = wrapper.find(FieldCmp).props().reactFinalForm.getFieldState(path.id.absolutePath())
         expect(fieldState.data).toEqual({ convert })
     })
 })
