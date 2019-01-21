@@ -16,7 +16,7 @@ type MetaPath<T> = {
 
 export class Meta<T> {
     readonly a: T
-    private alias: string
+    readonly alias: string
     private parent: Meta<any>
 
     constructor(parent?: Meta<any>, alias?: string) {
@@ -24,10 +24,10 @@ export class Meta<T> {
         this.alias = alias
     }
 
-    public getAbsolutePath = (): string[] => {
+    public absolutePath = (): string[] => {
         let path: string[]
-        if (this.parent && this.parent.getAbsolutePath) {
-            path = this.parent.getAbsolutePath()
+        if (this.parent && this.parent.absolutePath) {
+            path = this.parent.absolutePath()
         } else {
             path = []
         }
