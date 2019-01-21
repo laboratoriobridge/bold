@@ -58,6 +58,10 @@ export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>,
         }
     }
 
+    componentWillReceiveProps(nextProps: SelectDownshiftProps<T>) {
+        this.setState({ visibleItems: nextProps.items })
+    }
+
     handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
         if (options.isOpen) {
             this.props.onFilterChange(null, this.getStateAndHelpers(downshift))
