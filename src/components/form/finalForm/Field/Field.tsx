@@ -72,7 +72,7 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
         if (typeof this.props.name === 'string') {
             return this.props.name
         } else {
-            return (this.props.name as Meta<T>).absolutePath().join('.')
+            return (this.props.name as Meta<T>).absolutePath()
         }
     }
 
