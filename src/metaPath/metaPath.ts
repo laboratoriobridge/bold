@@ -10,7 +10,7 @@ function wrap<T extends object>(objToProxy: Meta<T>): MetaPath<T> {
     })
 }
 
-type MetaPath<T> = {
+export type MetaPath<T> = {
     [P in keyof T]?: T[P] extends object ? MetaPath<T[P]> & Meta<T[P]> : Meta<T[P]>
 }
 
