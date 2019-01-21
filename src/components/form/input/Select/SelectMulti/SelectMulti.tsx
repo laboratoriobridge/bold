@@ -13,19 +13,36 @@ import { SelectMultiInput } from './SelectMultiInput'
 
 export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
     value?: T[]
+    loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
+    components?: SelectDownshiftMenuProps<T>['components']
     onBlur?: TextInputProps['onBlur']
     disabled?: TextInputProps['disabled']
     status?: TextInputProps['status']
     placeholder?: TextInputProps['placeholder']
     clearable?: TextInputProps['clearable']
+    style?: TextInputProps['style']
 }
 
 @withStyles
 export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
     render() {
-        const { css, theme, renderItem, disabled, onBlur, status, clearable, value, placeholder, ...rest } = this.props
+        const {
+            css,
+            theme,
+            renderItem,
+            loading,
+            components,
+            disabled,
+            onBlur,
+            status,
+            clearable,
+            style,
+            value,
+            placeholder,
+            ...rest
+        } = this.props
 
         return (
             <MultiDownshift<T>
@@ -39,9 +56,8 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                         selectedItems,
                         itemToString,
                         removeItem,
-                        loadedItems,
-                        isLoading,
                         inputValue,
+                        visibleItems,
                     } = downshift
 
                     return (
@@ -64,8 +80,8 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                             />
                             <SelectDownshiftMenu
                                 downshift={downshift}
-                                items={loadedItems}
-                                isLoading={isLoading}
+                                items={visibleItems}
+                                loading={loading}
                                 renderItem={this.renderItem(selectedItems)}
                             />
                         </div>

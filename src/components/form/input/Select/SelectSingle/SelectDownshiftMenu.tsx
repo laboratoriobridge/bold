@@ -7,7 +7,7 @@ import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '
 
 export interface SelectDownshiftMenuProps<T> extends WithStylesProps {
     items: T[]
-    isLoading: boolean
+    loading: boolean
     downshift: ControllerStateAndHelpers<T>
 
     components?: Partial<SelectMenuComponents<T>>
@@ -64,7 +64,7 @@ export class SelectDownshiftMenu<T> extends React.Component<SelectDownshiftMenuP
         const {
             css,
             items,
-            isLoading,
+            loading: isLoading,
             components,
             downshift: { isOpen, getMenuProps },
         } = this.props
