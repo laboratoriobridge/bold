@@ -62,6 +62,12 @@ it('should call the onChange event when an item is clicked', () => {
     expect(onChange).toHaveBeenLastCalledWith([items[2], items[4]], expect.anything())
 })
 
+it('should render current value and allow changes via prop', () => {
+    const { queryAllByText, rerender } = render(createSelect())
+    rerender(createSelect({ value: [{ value: 42, label: 'Foo' }] }))
+    expect(queryAllByText('Foo').length).toEqual(1)
+})
+
 describe('remove item', () => {
     it('should call onChange with the new value', () => {
         const onChange = jest.fn()

@@ -57,6 +57,14 @@ it('should call the onChange event when an item is clicked', () => {
     expect(onChange).toHaveBeenLastCalledWith(items[2], expect.anything())
 })
 
+it('should render current value and allow changes via prop', () => {
+    const { container, rerender } = render(createSelect())
+    const input = container.querySelector('input')
+    expect(input.value).toEqual('')
+    rerender(createSelect({ value: { value: 42, label: 'Foo' } }))
+    expect(input.value).toEqual('Foo')
+})
+
 describe('clear button', () => {
     it('should clear the input value', () => {
         const { container, getByTitle } = render(createSelect({ value: items[0] }))

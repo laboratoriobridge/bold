@@ -48,7 +48,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
         return (
             <MultiDownshift<T>
-                initialSelectedItems={value || []}
+                selectedItems={value || []}
                 {...rest}
             >
                 {(downshift) => {

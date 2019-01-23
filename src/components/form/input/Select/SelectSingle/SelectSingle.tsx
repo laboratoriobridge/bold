@@ -48,7 +48,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
 
         return (
             <SelectDownshift<T>
-                initialSelectedItem={value}
+                selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
                 {...rest}
             >
                 {(downshift) => {
