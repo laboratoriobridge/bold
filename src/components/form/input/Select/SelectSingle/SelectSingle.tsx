@@ -16,6 +16,7 @@ export interface SelectSingleProps<T = DefaultItemType> extends SelectDownshiftP
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
+    name?: TextInputProps['name']
     onBlur?: TextInputProps['onBlur']
     disabled?: TextInputProps['disabled']
     status?: TextInputProps['status']
@@ -35,6 +36,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
             loading,
             components,
             disabled,
+            name,
             onBlur,
             status,
             clearable,
@@ -60,6 +62,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                     return (
                         <div>
                             <TextInput
+                                name={name}
                                 icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}

@@ -30,9 +30,12 @@ const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: 
     ))
 }
 
-describe('render', () => {
-    it('should render correctly', () => {
-        const { container } = render(createFormAndField())
-        expect(container).toMatchSnapshot()
-    })
+it('should render correctly', () => {
+    const { container } = render(createFormAndField())
+    expect(container).toMatchSnapshot()
+})
+
+it('should render correctly when multiple', () => {
+    const { container } = render(createFormAndField({ multiple: true }, { initialValues: { select1: [items[0]] } }))
+    expect(container).toMatchSnapshot()
 })
