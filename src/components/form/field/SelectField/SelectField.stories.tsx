@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
+import { DefaultItemType, Select, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
@@ -55,6 +55,19 @@ storiesOf('Form/SelectField', module)
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
             label={text('label', 'Component label')}
+            multiple={boolean('multiple', false)}
+            clearable={boolean('clearable', true)}
+            disabled={boolean('disabled', false)}
+            loading={boolean('loading', false)}
+            onChange={action('changed')}
+            onBlur={action('blur')}
+        />
+    ))
+    .add('input', () => (
+        <Select<DefaultItemType>
+            items={items}
+            itemToString={(item) => item && item.label}
+            placeholder='Select a value...'
             multiple={boolean('multiple', false)}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}

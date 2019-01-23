@@ -14,7 +14,7 @@ export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps
 export class Select<T = DefaultItemType> extends React.Component<SelectProps<T>> {
     render() {
         const { multiple, onChange, value, ...rest } = this.props
-        let checkedValue = this.props.value
+        let checkedValue = value
 
         if (multiple && value && !Array.isArray(value)) {
             // tslint:disable-next-line no-console
