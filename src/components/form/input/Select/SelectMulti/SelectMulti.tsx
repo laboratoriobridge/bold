@@ -16,6 +16,7 @@ export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftPro
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
+    name?: TextInputProps['name']
     onBlur?: TextInputProps['onBlur']
     disabled?: TextInputProps['disabled']
     status?: TextInputProps['status']
@@ -35,6 +36,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
             loading,
             components,
             disabled,
+            name,
             onBlur,
             status,
             clearable,
@@ -63,6 +65,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                     return (
                         <div>
                             <SelectMultiInput<T>
+                                name={name}
                                 items={selectedItems}
                                 renderItem={itemToString}
                                 onRemoveItem={this.handleItemRemove(removeItem)}
