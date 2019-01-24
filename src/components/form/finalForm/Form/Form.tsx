@@ -2,10 +2,9 @@ import { FormApi, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
-import {
-    Form as FinalForm, FormProps as FinalFormProps, FormRenderProps, FormSpy, FormSpyRenderProps
-} from 'react-final-form'
-import { Prompt } from 'react-router-dom'
+import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
+
+import { FormListener } from '../FormListener'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
@@ -49,18 +48,11 @@ export class Form extends React.Component<FormProps> {
 
     private renderForm = (props: FormRenderProps) => (
         <>
-            <FormSpy
-                subscription={{ pristine: true, submitErrors: true, submitFailed: true, submitSucceeded: true }}
-            >
-                {spyProps => (
-                    <FormListener
-                        {...spyProps}
-                        hasLeaveModal={this.props.hasLeaveModal}
-                        onSubmitSucceeded={this.onSubmitSucceeded}
-                        onSubmitFailed={this.onSubmitFailed}
-                    />
-                )}
-            </FormSpy>
+            <FormListener
+                hasLeaveModal={this.props.hasLeaveModal}
+                onSubmitSucceeded={this.onSubmitSucceeded}
+                onSubmitFailed={this.onSubmitFailed}
+            />
             {this.props.render(props)}
         </>
     )
@@ -92,32 +84,6 @@ export class Form extends React.Component<FormProps> {
 
     private onSubmitSucceeded = () => {
         this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
-    }
-
-}
-
-interface FormListenerProps extends FormSpyRenderProps {
-    hasLeaveModal: boolean,
-    onSubmitSucceeded(): void
-    onSubmitFailed(erros: object): void
-}
-
-class FormListener extends React.PureComponent<FormListenerProps> {
-
-    componentDidUpdate(prevProps, prevState, prevContext) {
-        !prevProps.submitSucceeded && this.props.submitSucceeded &&
-            setTimeout(() => this.props.onSubmitSucceeded())
-        !prevProps.submitFailed && this.props.submitFailed &&
-            setTimeout(() => this.props.onSubmitFailed(this.props.submitErrors))
-    }
-
-    render() {
-        return (
-            <Prompt
-                when={this.props.hasLeaveModal && !this.props.pristine && !this.props.submitSucceeded}
-                message='Deseja sair e perder as informações não salvas?'
-            />
-        )
     }
 
 }
