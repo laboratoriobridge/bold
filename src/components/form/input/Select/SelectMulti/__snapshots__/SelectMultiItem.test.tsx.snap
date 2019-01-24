@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-2 {
+  border: 1px solid #DCDCE0;
+  border-radius: 4px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+  color: red;
+}
+
+.emotion-0 {
+  padding: calc(0.125rem - 1px) 0.25rem;
+}
+
+.emotion-1 {
+  background: #F2F2F7;
+  cursor: pointer;
+  font-size: 1.25rem;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: calc(0.125rem - 1px) 0;
+}
+
+.emotion-1:hover {
+  color: #D83A2E;
+}
+
+.emotion-1 svg {
+  fill: currentColor;
+}
+
+<div>
+  <span
+    class="emotion-2"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-1"
+      title="Remover"
+    >
+      <svg
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M18.36 7.05l-1.41-1.41L12 10.59 7.05 5.64 5.64 7.05 10.59 12l-4.95 4.95 1.41 1.41L12 13.41l4.95 4.95 1.41-1.41L13.41 12l4.95-4.95z"
+          data-name="times"
+        />
+      </svg>
+    </span>
+  </span>
+</div>
+`;

@@ -27,37 +27,11 @@ exports[`should render correctly when closed 1`] = `
   align-items: center;
 }
 
-.emotion-1::-webkit-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1::-moz-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1:-ms-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1::placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
-}
-
-.emotion-1:not(:disabled):hover {
+.emotion-1:hover {
   border-color: #818489;
 }
 
-.emotion-1:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-1:not(:disabled):active {
+.emotion-1:active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
@@ -74,6 +48,27 @@ exports[`should render correctly when closed 1`] = `
   flex: 1;
   border: 0;
   outline: 0;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-2 {
@@ -135,37 +130,11 @@ exports[`should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-1::-webkit-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1::-moz-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1:-ms-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1::placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-1:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
-}
-
-.emotion-1:not(:disabled):hover {
+.emotion-1:hover {
   border-color: #818489;
 }
 
-.emotion-1:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-1:not(:disabled):active {
+.emotion-1:active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
@@ -182,6 +151,27 @@ exports[`should render correctly when opened 1`] = `
   flex: 1;
   border: 0;
   outline: 0;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
 }
 
 .emotion-38 {
