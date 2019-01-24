@@ -68,6 +68,15 @@ it('should render current value and allow changes via prop', () => {
     expect(queryAllByText('Foo').length).toEqual(1)
 })
 
+it('should show placeholder only if selected items is empty', () => {
+    const { container, rerender } = render(createSelect({ placeholder: 'Select...' }))
+    const input = container.querySelector('input')
+    expect(input.placeholder).toEqual('Select...')
+
+    rerender(createSelect({ value: [items[0]] }))
+    expect(input.placeholder).toEqual('')
+})
+
 describe('remove item', () => {
     it('should call onChange with the new value', () => {
         const onChange = jest.fn()

@@ -72,7 +72,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                                 // icon={isOpen ? 'triangleUp' : 'triangleDown'}
                                 disabled={disabled}
                                 status={status}
-                                placeholder={placeholder}
+                                placeholder={(!selectedItems || selectedItems.length === 0) ? placeholder : undefined}
                                 // clearable={clearable}
                                 onBlur={this.handleInputBlur(downshift)}
                                 // onIconClick={this.handleInputIconClick(downshift)}

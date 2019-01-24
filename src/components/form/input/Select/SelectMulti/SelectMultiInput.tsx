@@ -18,11 +18,12 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
     private inputRef = React.createRef<HTMLInputElement>()
 
     render() {
-        const { css, theme, items, renderItem, onRemoveItem, status, ...rest } = this.props
+        const { css, theme, items, renderItem, onRemoveItem, status, disabled, ...rest } = this.props
         const textInputStyles = createStyles(theme)
+        const parts = textInputStyles.parts
         const styles: Styles = {
             wrapper: {
-                ...textInputStyles.input,
+                ...parts.base,
                 cursor: 'text',
 
                 display: 'flex',
@@ -30,8 +31,11 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
                 alignItems: 'center',
 
                 padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
-                '&:focus-within': textInputStyles.input[':not(:disabled):focus'],
+                '&:hover': !disabled && parts.hover,
+                '&:active': !disabled && parts.active,
+                '&:focus-within': !disabled && parts.focus,
             },
+            disabled: parts.disabled,
             error: {
                 ...textInputStyles.error,
                 '&:focus-within': textInputStyles.error[':not(:disabled):focus'],
@@ -44,11 +48,19 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
                 flex: 1,
                 border: 0,
                 outline: 0,
+                '::placeholder': parts.placeholder,
+                ':disabled': parts.disabled,
             },
         }
 
+        const wrapperClasses = css(
+            styles.wrapper,
+            status === 'error' && styles.error,
+            this.props.disabled && styles.disabled
+        )
+
         return (
-            <div className={css(styles.wrapper, status === 'error' && styles.error)} onClick={this.handleWrapperClick}>
+            <div className={wrapperClasses} onClick={this.handleWrapperClick}>
                 {items && items.map((item, key) => (
                     <SelectMultiItem
                         key={key}
@@ -62,6 +74,7 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
                     type='text'
                     inputRef={this.inputRef}
                     className={css(styles.input)}
+                    disabled={disabled}
                     {...rest}
                 />
             </div>
