@@ -66,6 +66,7 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
                         key={key}
                         onRemove={this.handleRemove(item)}
                         style={styles.item}
+                        disabled={disabled}
                     >
                         {renderItem(item)}
                     </SelectMultiItem>

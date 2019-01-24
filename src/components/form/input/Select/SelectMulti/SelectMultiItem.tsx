@@ -6,13 +6,14 @@ import { Times } from '../../../../elements/Icon/generated/Times'
 
 export interface SelectMultiItemProps extends WithStylesProps {
     style?: Interpolation
+    disabled?: boolean
     onRemove(e: React.MouseEvent<HTMLSpanElement>): void
 }
 
 @withStyles
 export class SelectMultiItem extends React.Component<SelectMultiItemProps> {
     render() {
-        const { theme, css, style, children, onRemove, ...rest } = this.props
+        const { theme, css, style, children, onRemove, disabled, ...rest } = this.props
         const styles: Styles = {
             root: {
                 border: `1px solid ${theme.pallete.divider}`,
@@ -22,7 +23,7 @@ export class SelectMultiItem extends React.Component<SelectMultiItemProps> {
                 fontWeight: 'bold',
             },
             text: {
-                padding: 'calc(0.125rem - 1px) 0.25rem',
+                padding: disabled ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.125rem - 1px) 0.25rem',
             },
             button: {
                 background: theme.pallete.surface.background,
@@ -44,9 +45,11 @@ export class SelectMultiItem extends React.Component<SelectMultiItemProps> {
                 <span className={css(styles.text)}>
                     {children}
                 </span>
-                <span className={css(styles.button)} onClick={onRemove} title='Remover'>
-                    <Times />
-                </span>
+                {!disabled &&
+                    <span className={css(styles.button)} onClick={onRemove} title='Remover'>
+                        <Times />
+                    </span>
+                }
             </span>
         )
     }
