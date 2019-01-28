@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { cleanup, render } from 'react-testing-library'
+import { render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
 import { Select } from '../Select'
@@ -15,7 +15,6 @@ const items: DefaultItemType[] = [
     { value: 5, label: 'Pear' },
 ]
 
-afterEach(cleanup)
 afterEach(jest.clearAllMocks)
 
 // tslint:disable jsx-no-lambda

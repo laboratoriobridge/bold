@@ -4,11 +4,10 @@ import { withStyles, WithStylesProps } from '../../../../../styles'
 import { HFlow } from '../../../../layout'
 import { Checkbox } from '../../Checkbox/Checkbox'
 import { TextInputProps } from '../../TextInput/TextInput'
-import { SelectDownshiftRenderProps } from '../SelectSingle/SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../SelectSingle/SelectDownshiftMenu'
 import { DefaultItemType } from '../SelectSingle/SelectSingle'
 
-import { MultiDownshift, MultiDownshiftProps } from './MultiDownshift'
+import { MultiDownshift, MultiDownshiftProps, MultiSelectRenderProps } from './MultiDownshift'
 import { SelectMultiInput } from './SelectMultiInput'
 
 export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
@@ -85,7 +84,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                                 downshift={downshift}
                                 items={visibleItems}
                                 loading={loading}
-                                renderItem={this.renderItem(selectedItems)}
+                                renderItem={this.renderItem(downshift)}
                             />
                         </div>
                     )
@@ -96,17 +95,17 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
 
     handleItemRemove = (removeItem: Function) => (item: T) => removeItem(item)
 
-    renderItem = (selectedItems: T[]) => (item: T) => (
+    renderItem = ({ isSelected }: MultiSelectRenderProps<T>) => (item: T) => (
         <HFlow hSpacing={0.5}>
-            <Checkbox checked={selectedItems.includes(item)} tabIndex={-1} readOnly />
+            <Checkbox checked={isSelected(item)} tabIndex={-1} readOnly />
             {this.props.renderItem ? this.props.renderItem(item) : this.props.itemToString(item)}
         </HFlow>
     )
 
-    handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
-    handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
-    handleInputClick = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
-    handleInputBlur = ({ closeMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
+    handleInputIconClick = ({ toggleMenu }: MultiSelectRenderProps<T>) => () => toggleMenu()
+    handleInputFocus = ({ openMenu }: MultiSelectRenderProps<T>) => () => openMenu()
+    handleInputClick = ({ openMenu }: MultiSelectRenderProps<T>) => () => openMenu()
+    handleInputBlur = ({ closeMenu }: MultiSelectRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
         closeMenu()
         this.props.onBlur && this.props.onBlur(e)
     }

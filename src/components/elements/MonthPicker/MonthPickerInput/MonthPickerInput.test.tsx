@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { cleanup, fireEvent, render } from 'react-testing-library'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
 
 import { MonthPickerInput } from './MonthPickerInput'
-
-afterEach(cleanup)
 
 const fn = jest.fn()
 
