@@ -2,17 +2,14 @@ import { FormApi, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
-import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
+import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps, FormSpyRenderProps } from 'react-final-form'
 
-import { FormListener } from '../FormListener'
+import { FormListener, FormListenerProps } from '../FormListener'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
-export interface FormProps extends FinalFormProps {
+export interface FormProps extends FinalFormProps, FormListenerProps {
     focusOnError?: boolean
-    hasLeaveModal?: boolean
-    onSubmitSucceeded?(): void
-    onSubmitFailed?(erros: object): void
     transformResult?(result: ResultType): ResultType
 }
 
@@ -78,12 +75,12 @@ export class Form extends React.Component<FormProps> {
         return this.props.transformResult(result)
     }
 
-    private onSubmitFailed = (errors) => {
-        this.props.onSubmitFailed && this.props.onSubmitFailed(errors)
+    private onSubmitFailed = (props: FormSpyRenderProps) => {
+        this.props.onSubmitFailed && this.props.onSubmitFailed(props)
     }
 
-    private onSubmitSucceeded = () => {
-        this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
+    private onSubmitSucceeded = (props: FormSpyRenderProps) => {
+        this.props.onSubmitSucceeded && this.props.onSubmitSucceeded(props)
     }
 
 }
