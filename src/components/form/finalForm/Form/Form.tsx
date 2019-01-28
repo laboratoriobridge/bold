@@ -4,11 +4,13 @@ import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
 import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 
-import { FormListener, FormListenerProps } from '../FormListener'
+import { FormPrompt } from '../FormPrompt'
+import { FormSubmissionListener, FormSubmissionListenerProps } from '../FormSubmissionListener'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
-export interface FormProps extends FinalFormProps, FormListenerProps {
+export interface FormProps extends FinalFormProps, FormSubmissionListenerProps {
+    hasLeaveModal?: boolean
     focusOnError?: boolean
     transformResult?(result: ResultType): ResultType
 }
@@ -45,11 +47,15 @@ export class Form extends React.Component<FormProps> {
 
     private renderForm = (props: FormRenderProps) => (
         <>
-            <FormListener
-                hasLeaveModal={this.props.hasLeaveModal}
-                onSubmitSucceeded={this.props.onSubmitSucceeded}
-                onSubmitFailed={this.props.onSubmitFailed}
-            />
+            {(this.props.onSubmitSucceeded || this.props.onSubmitSucceeded) &&
+                <FormSubmissionListener
+                    onSubmitSucceeded={this.props.onSubmitSucceeded}
+                    onSubmitFailed={this.props.onSubmitFailed}
+                />
+            }
+            {this.props.hasLeaveModal &&
+                <FormPrompt />
+            }
             {this.props.render(props)}
         </>
     )

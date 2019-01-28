@@ -1,9 +1,10 @@
 import axios from 'axios'
 import MockAdapter from 'axios-mock-adapter'
+import { createMemoryHistory, MemoryHistory } from 'history'
 import * as React from 'react'
 import { Form } from 'react-final-form'
 import { Provider } from 'react-redux'
-import { MemoryRouter } from 'react-router'
+import { Router } from 'react-router'
 import { applyMiddleware, combineReducers, compose, createStore, Middleware } from 'redux'
 import configureMockStore from 'redux-mock-store'
 import thunkMiddleware from 'redux-thunk'
@@ -26,11 +27,10 @@ export const createTestStore = (initialState = {}, reducers: any = defaultReduce
 export const mockStore = configureMockStore<any, any>(middlewares)
 
 /**
- * Envelopa o componente com o <ThemeProvider> do emotion.
- * Utilizado para testes de componentes que necessitam acesso ao contexto de styles.
+ * Wraps the component with emotion's <ThemeProvider>.
  *
- * @param node Componente a ser "envelopado"
- * @param theme Tema a ser utilizado.
+ * @param node Component to be wrapped
+ * @param theme Theme to be injected by provider.
  */
 export const withTheme = (node: React.ReactElement<any>, theme: Theme = createTheme()) => {
     return (
@@ -41,10 +41,9 @@ export const withTheme = (node: React.ReactElement<any>, theme: Theme = createTh
 }
 
 /**
- * Envelopa o componente com o <Provider> do react-redux.
- * Utilizado para testes de componentes que necessitam de store.
+ * Wraps the component with react-redux's <Provider />
  *
- * @param node Componente a ser "envelopado"
+ * @param node Component to be wrapped.
  */
 export const withRedux = (node: React.ReactElement<any>, store = createTestStore()) => {
     return (
@@ -55,6 +54,7 @@ export const withRedux = (node: React.ReactElement<any>, store = createTestStore
 }
 
 /**
+ * Wraps the component with redux's <Provider />, <ThemeProvider /> and redux-form's <Form />
  * Envelopa o componente com o wrapper Provider do redux, o ThemeProvider e o wrapper do redux-form.
  * Utilizado para testes de fields do redux-form.
  *
@@ -67,15 +67,15 @@ export const withForm = (node: React.ReactNode) => {
 }
 
 /**
- * Envelopa o componente com o MemoryRouter do react-router-dom.
- * Utilizado para testes de componentes que necessitam do <Router>.
+ * Wraps the component with react-router's <Router />.
  *
- * @param node Componente a ser "envelopado"
+ * @param node Component to be wrapped.
+ * @param history History to be used by the router. Uses history's `createMemoryHistory` as default
  */
-export const withRouter = (node: React.ReactNode) => {
+export const withRouter = (node: React.ReactNode, history: MemoryHistory = createMemoryHistory()) => {
     return (
-        <MemoryRouter initialEntries={['/']} initialIndex={0}>
+        <Router history={history}>
             {node}
-        </MemoryRouter>
+        </Router>
     )
 }
