@@ -29,5 +29,6 @@ storiesOf('Form/TextField', module)
             icon='search'
             iconPosition={select('iconPosition', ['left', 'right'], 'right')}
             onIconClick={action('icon-clicked')}
+            disabled={boolean('disabled', false)}
         />
     ))
