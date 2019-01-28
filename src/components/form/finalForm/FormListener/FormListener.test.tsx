@@ -1,12 +1,10 @@
 import * as React from 'react'
 import { Field, Form, FormProps } from 'react-final-form'
-import { cleanup, fireEvent, render, wait } from 'react-testing-library'
+import { fireEvent, render, wait } from 'react-testing-library'
 
 import { withRouter } from '../../../../test'
 
 import { FormListener, FormListenerProps } from './FormListener'
-
-afterEach(cleanup)
 
 const createComponent = (listenerProps: Partial<FormListenerProps> = {}, formProps: Partial<FormProps> = {}) => {
     return withRouter(

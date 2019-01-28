@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { cleanup, fireEvent, render } from 'react-testing-library'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../../test'
 import { DefaultItemType } from '../SelectSingle/SelectSingle'
@@ -25,8 +25,6 @@ const createSelect = (props: Partial<SelectMultiProps> = {}) => {
         />
     )
 }
-
-afterEach(cleanup)
 
 it('should render correctly when closed', () => {
     const { container } = render(createSelect())

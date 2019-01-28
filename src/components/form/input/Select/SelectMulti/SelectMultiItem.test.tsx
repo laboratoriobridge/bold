@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { cleanup, fireEvent, render } from 'react-testing-library'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../../test'
 
 import { SelectMultiItem } from './SelectMultiItem'
-
-afterEach(cleanup)
 
 it('should render correctly', () => {
     const { container } = render(withTheme(<SelectMultiItem style={{ color: 'red' }} onRemove={jest.fn()} />))

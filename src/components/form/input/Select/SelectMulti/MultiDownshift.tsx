@@ -1,6 +1,8 @@
 // From downshift examples
 
 import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
+import isEqual = require('lodash/isEqual')
+import some = require('lodash/some')
 import * as React from 'react'
 
 import { Omit } from '../../../../../util'
@@ -19,6 +21,8 @@ export interface MultiDownshiftState<T> {
 
 export interface MultiSelectRenderProps<T> extends SelectDownshiftRenderProps<T> {
     selectedItems: T[]
+    isSelected(item: T): boolean
+    addItem(item: T): void
     removeItem(item: T): void
 }
 
@@ -35,7 +39,7 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
         }
     }
 
-    componentDidUpdate(prevProps: MultiDownshiftProps<T>, prevState: MultiDownshiftState<T>) {
+    componentDidUpdate(prevProps: MultiDownshiftProps<T>) {
         if (this.props.selectedItems !== prevProps.selectedItems) {
             this.setState({ selectedItems: this.props.selectedItems })
         }
@@ -63,7 +67,7 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
     }
 
     handleChange = (selectedItem: T, downshift: SelectDownshiftRenderProps<T>) => {
-        if (this.state.selectedItems.includes(selectedItem)) {
+        if (this.isSelected(selectedItem)) {
             this.removeItem(selectedItem, downshift)
         } else {
             this.addItem(selectedItem, downshift)
@@ -75,23 +79,32 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
         this.props.onSelect && this.props.onSelect(this.state.selectedItems, this.getStateAndHelpers(downshift))
     }
 
-    removeItem = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
+    removeItem = (selectedItem: T, downshift: SelectDownshiftRenderProps<T>) => {
         this.setState(({ selectedItems }) => ({
-            selectedItems: selectedItems.filter(i => i !== item),
+            selectedItems: selectedItems.filter(item => !isEqual(selectedItem, item)),
         }), () => this.emitChange(downshift))
     }
 
-    addItem(item: T, downshift: SelectDownshiftRenderProps<T>) {
-        this.setState(({ selectedItems }) => ({
-            selectedItems: [...selectedItems, item],
-        }), () => this.emitChange(downshift))
+    addItem = (item: T, downshift: SelectDownshiftRenderProps<T>) => {
+        if (!this.isSelected(item)) {
+            this.setState(({ selectedItems }) => ({
+                selectedItems: [...selectedItems, item],
+            }), () => this.emitChange(downshift))
+        }
+    }
+
+    isSelected = (item: T) => {
+        return some(this.state.selectedItems, (i) => isEqual(i, item))
     }
 
     getStateAndHelpers(downshift: SelectDownshiftRenderProps<T>): MultiSelectRenderProps<T> {
         const { selectedItems } = this.state
+        const { isSelected } = this
         return {
             ...downshift,
             selectedItems,
+            isSelected,
+            addItem: (item: T) => this.addItem(item, downshift),
             removeItem: (item: T) => this.removeItem(item, downshift),
         }
     }
