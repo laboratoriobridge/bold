@@ -22,7 +22,7 @@ export class SelectField<T = DefaultItemType> extends React.Component<SelectFiel
     private renderSelect = (props: RenderProps) => {
         return (
             <Select<T>
-                {...extractInputProps(this.props)}
+                {...extractInputProps<SelectProps<T>>(this.props)}
                 {...props.input}
                 status={props.hasError ? 'error' : undefined}
             />

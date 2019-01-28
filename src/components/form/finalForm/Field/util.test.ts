@@ -28,7 +28,7 @@ describe('getFieldError', () => {
 
 describe('extractInputProps', () => {
     it('should remove Field specific props from object', () => {
-        const obj: BaseFieldProps<{ foo: string, bar: string }> = {
+        const obj: BaseFieldProps<{ foo: string, bar: string, name: string }> = {
             name: 'test',
             label: 'Test',
             hasWrapper: true,
