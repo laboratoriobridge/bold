@@ -4,15 +4,12 @@ import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
 import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 
-import { FormListener } from '../FormListener'
+import { FormListener, FormListenerProps } from '../FormListener'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
-export interface FormProps extends FinalFormProps {
+export interface FormProps extends FinalFormProps, FormListenerProps {
     focusOnError?: boolean
-    hasLeaveModal?: boolean
-    onSubmitSucceeded?(): void
-    onSubmitFailed?(erros: object): void
     transformResult?(result: ResultType): ResultType
 }
 
@@ -50,8 +47,8 @@ export class Form extends React.Component<FormProps> {
         <>
             <FormListener
                 hasLeaveModal={this.props.hasLeaveModal}
-                onSubmitSucceeded={this.onSubmitSucceeded}
-                onSubmitFailed={this.onSubmitFailed}
+                onSubmitSucceeded={this.props.onSubmitSucceeded}
+                onSubmitFailed={this.props.onSubmitFailed}
             />
             {this.props.render(props)}
         </>
@@ -76,14 +73,6 @@ export class Form extends React.Component<FormProps> {
         const newValues = this.getConvertedValues(values, form)
         const result = this.props.onSubmit(newValues, form)
         return this.props.transformResult(result)
-    }
-
-    private onSubmitFailed = (errors) => {
-        this.props.onSubmitFailed && this.props.onSubmitFailed(errors)
-    }
-
-    private onSubmitSucceeded = () => {
-        this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
     }
 
 }

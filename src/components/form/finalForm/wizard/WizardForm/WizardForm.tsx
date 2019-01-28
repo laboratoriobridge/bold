@@ -83,14 +83,6 @@ export class WizardForm extends React.Component<WizardFormProps, WizardFormState
         }
     }
 
-    handleSubmitSucceeded = () => {
-        return this.props.onSubmitSucceeded && this.props.onSubmitSucceeded()
-    }
-
-    handleSubmitFailed = (errors) => {
-        return this.props.onSubmitFailed && this.props.onSubmitFailed(errors)
-    }
-
     getWizardRenderProps = (renderProps: FormRenderProps): WizardRenderProps => {
         return {
             ...renderProps,
@@ -113,8 +105,6 @@ export class WizardForm extends React.Component<WizardFormProps, WizardFormState
                 initialValues={this.state.values}
                 validate={this.validate}
                 onSubmit={this.handleSubmit}
-                onSubmitSucceeded={this.handleSubmitSucceeded}
-                onSubmitFailed={this.handleSubmitFailed}
                 render={this.renderStep}
             />
         )
