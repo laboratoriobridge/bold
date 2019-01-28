@@ -9,7 +9,7 @@ import { InputWrapper, InputWrapperProps } from './InputWrapper'
 export type InputStatus = 'error'
 
 export interface TextInputProps extends WithStylesProps, InputProps,
-    Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'onIconClick'> {
+    Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick'> {
     /**
      * Whether the input should show the clear icon button.
      */
@@ -83,7 +83,7 @@ export class TextInput extends React.Component<TextInputProps> {
     render() {
         const {
             css, status, theme, style,
-            icon, iconPosition, onIconClick, clearable, onClear,
+            icon, iconPosition, iconDisabled, onIconClick, clearable, onClear,
             ...rest
         } = this.props
         const styles = createStyles(theme)
@@ -97,6 +97,7 @@ export class TextInput extends React.Component<TextInputProps> {
             <InputWrapper
                 icon={icon}
                 iconPosition={iconPosition}
+                iconDisabled={this.isIconDisabled()}
                 onIconClick={onIconClick}
                 clearVisible={clearable && this.isClearVisible()}
                 onClear={onClear ? onClear : this.handleClear}
@@ -111,6 +112,9 @@ export class TextInput extends React.Component<TextInputProps> {
 
     isClearVisible = (): boolean =>
         !this.props.disabled && (!!this.props.value || !!this.props.defaultValue)
+
+    isIconDisabled = (): boolean =>
+        this.props.iconDisabled !== undefined ? this.props.iconDisabled : this.props.disabled
 
     handleClear = () => {
         this.props.onChange && this.props.onChange(null)
