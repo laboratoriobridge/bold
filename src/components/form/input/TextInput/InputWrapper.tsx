@@ -8,6 +8,7 @@ import { Icon } from '../../../elements/Icon/Icon'
 export interface InputWrapperProps extends WithStylesProps {
     icon?: Icons
     iconPosition?: 'left' | 'right'
+    iconDisabled?: boolean
     clearVisible?: boolean
     onIconClick?: ButtonProps['onClick']
     onClear?(e: React.MouseEvent<HTMLButtonElement>): any
@@ -18,12 +19,15 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
 
     static defaultProps: Partial<InputWrapperProps> = {
         iconPosition: 'right',
+        iconDisabled: false,
         clearVisible: false,
         onClear: () => null,
     }
 
     render() {
-        const { css, theme, children, icon, iconPosition, onIconClick, clearVisible, onClear } = this.props
+        const {
+            css, theme, children, icon, iconPosition, iconDisabled, onIconClick, clearVisible, onClear,
+        } = this.props
 
         const paddingRight = iconPosition === 'right' ? (false
             || clearVisible && icon && '4.5rem'
@@ -109,6 +113,7 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                                 tabIndex={-1}
                                 onClick={onIconClick}
                                 style={styles.icon}
+                                disabled={iconDisabled}
                             /> :
                             <Icon
                                 icon={icon}
