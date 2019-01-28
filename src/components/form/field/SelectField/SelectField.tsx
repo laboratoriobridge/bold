@@ -3,7 +3,7 @@ import * as React from 'react'
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { DefaultItemType, Select, SelectProps } from '../../input/Select'
 
-export interface SelectFieldProps<T = DefaultItemType> extends BaseFieldProps<SelectProps<T>> {
+export interface SelectFieldProps<T = DefaultItemType> extends BaseFieldProps<SelectProps<T>, T | T[]> {
 }
 
 export class SelectField<T = DefaultItemType> extends React.Component<SelectFieldProps<T>> {
@@ -12,7 +12,7 @@ export class SelectField<T = DefaultItemType> extends React.Component<SelectFiel
 
     render() {
         return (
-            <Field<T>
+            <Field<T | T[]>
                 {...this.props}
                 render={this.renderSelect}
             />
