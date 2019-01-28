@@ -2,7 +2,7 @@ import { FormApi, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
 import * as setFieldData from 'final-form-set-field-data'
 import * as React from 'react'
-import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps, FormSpyRenderProps } from 'react-final-form'
+import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 
 import { FormListener, FormListenerProps } from '../FormListener'
 
@@ -47,8 +47,8 @@ export class Form extends React.Component<FormProps> {
         <>
             <FormListener
                 hasLeaveModal={this.props.hasLeaveModal}
-                onSubmitSucceeded={this.onSubmitSucceeded}
-                onSubmitFailed={this.onSubmitFailed}
+                onSubmitSucceeded={this.props.onSubmitSucceeded}
+                onSubmitFailed={this.props.onSubmitFailed}
             />
             {this.props.render(props)}
         </>
@@ -73,14 +73,6 @@ export class Form extends React.Component<FormProps> {
         const newValues = this.getConvertedValues(values, form)
         const result = this.props.onSubmit(newValues, form)
         return this.props.transformResult(result)
-    }
-
-    private onSubmitFailed = (props: FormSpyRenderProps) => {
-        this.props.onSubmitFailed && this.props.onSubmitFailed(props)
-    }
-
-    private onSubmitSucceeded = (props: FormSpyRenderProps) => {
-        this.props.onSubmitSucceeded && this.props.onSubmitSucceeded(props)
     }
 
 }

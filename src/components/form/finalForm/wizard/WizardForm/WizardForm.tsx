@@ -1,6 +1,6 @@
 import { FormApi } from 'final-form'
 import * as React from 'react'
-import { FormRenderProps, FormSpyRenderProps } from 'react-final-form'
+import { FormRenderProps } from 'react-final-form'
 
 import { Omit } from '../../../../../util/types'
 import { Form, FormProps } from '../../Form'
@@ -83,14 +83,6 @@ export class WizardForm extends React.Component<WizardFormProps, WizardFormState
         }
     }
 
-    handleSubmitSucceeded = (props: FormSpyRenderProps) => {
-        return this.props.onSubmitSucceeded && this.props.onSubmitSucceeded(props)
-    }
-
-    handleSubmitFailed = (props: FormSpyRenderProps) => {
-        return this.props.onSubmitFailed && this.props.onSubmitFailed(props)
-    }
-
     getWizardRenderProps = (renderProps: FormRenderProps): WizardRenderProps => {
         return {
             ...renderProps,
@@ -113,8 +105,6 @@ export class WizardForm extends React.Component<WizardFormProps, WizardFormState
                 initialValues={this.state.values}
                 validate={this.validate}
                 onSubmit={this.handleSubmit}
-                onSubmitSucceeded={this.handleSubmitSucceeded}
-                onSubmitFailed={this.handleSubmitFailed}
                 render={this.renderStep}
             />
         )
