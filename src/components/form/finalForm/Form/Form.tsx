@@ -47,7 +47,7 @@ export class Form extends React.Component<FormProps> {
 
     private renderForm = (props: FormRenderProps) => (
         <>
-            {(this.props.onSubmitSucceeded || this.props.onSubmitSucceeded) &&
+            {(this.props.onSubmitSucceeded || this.props.onSubmitFailed) &&
                 <FormSubmissionListener
                     onSubmitSucceeded={this.props.onSubmitSucceeded}
                     onSubmitFailed={this.props.onSubmitFailed}
