@@ -1,8 +1,8 @@
 import { Renderable, RenderFunction } from '@storybook/react'
-import merge = require('lodash/merge')
 import * as React from 'react'
 
 import { createTheme, Theme, ThemeProvider } from '../styles/'
+import { merge } from '../util'
 
 const storybookTheme = merge({}, createTheme(), {
     global: {

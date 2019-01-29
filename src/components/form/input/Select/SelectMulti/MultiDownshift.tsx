@@ -1,11 +1,9 @@
 // From downshift examples
 
 import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
-import isEqual = require('lodash/isEqual')
-import some = require('lodash/some')
 import * as React from 'react'
 
-import { Omit } from '../../../../../util'
+import { isEqual, Omit, some } from '../../../../../util'
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../SelectSingle/SelectDownshift'
 
 export interface MultiDownshiftProps<T> extends Omit<SelectDownshiftProps<T>, 'onSelect' | 'onChange'> {

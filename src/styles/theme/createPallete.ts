@@ -1,6 +1,6 @@
 import { Color } from 'csstype'
-import merge = require('lodash/merge')
 
+import { merge } from '../../util'
 import { blue, ColorScale, gray, green, orange, red } from '../colors'
 
 export interface StatusColorMap {
