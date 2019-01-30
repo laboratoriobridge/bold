@@ -1,5 +1,5 @@
 
-function wrap<T extends object>(objToProxy: Meta<T>): MetaPath<T> {
+function wrap<T>(objToProxy: Meta<T>): MetaRoot<T> {
     return new Proxy<any>(objToProxy, {
         get: (target, prop) => {
             if (target[prop] === undefined) {
@@ -10,27 +10,27 @@ function wrap<T extends object>(objToProxy: Meta<T>): MetaPath<T> {
     })
 }
 
-export type MetaPath<T> = {
-    [P in keyof T]?:
-    T[P] extends any[] ? MetaArray<T[P][0]> :
-    T[P] extends object ? MetaPath<T[P]> & Meta<T[P]> :
-    Meta<T[P]>
+export type MetaRoot<T> = {
+    [P in keyof T]?: MetaPath<T[P]>
 }
+
+export type MetaPath<T> =
+    T extends any[] ? MetaArray<T[0]> :
+    T extends object ? MetaRoot<T> & Meta<T> :
+    Meta<T>
 
 export interface Meta<T> {
     alias: string
+    readonly type: T
     absolutePath(): string
 }
 
 export interface MetaArray<T> extends Meta<T> {
-    get(index: number):
-        T extends any[] ? MetaArray<T[0]> :
-        T extends object ? MetaPath<T> & Meta<T> :
-        Meta<T>
+    get(index: number): MetaPath<T>
 }
 
 export class MetaImpl<T> implements MetaArray<T> {
-    readonly a: T
+    readonly type: T
     readonly alias: string
     private parent: Meta<any>
     private arrayItem: boolean
@@ -65,6 +65,6 @@ export class MetaImpl<T> implements MetaArray<T> {
     }
 }
 
-export default function metaPath<T extends object>(): MetaPath<T> {
+export default function metaPath<T extends object>(): MetaRoot<T> {
     return wrap(new MetaImpl<T>())
 }
