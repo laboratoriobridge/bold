@@ -1,6 +1,6 @@
 import { FontSizeProperty } from 'csstype'
-import merge = require('lodash/merge')
 
+import { merge } from '../../util'
 import { DeepPartial } from '../../util/types'
 
 export type FontSize = FontSizeProperty<string> | number
