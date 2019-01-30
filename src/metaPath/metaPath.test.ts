@@ -21,6 +21,7 @@ interface ObjChildItem {
 describe('metaPath', () => {
     it('should give the correct path', () => {
         const path = metaPath<ObjStructure>()
+
         expect(path.id.absolutePath()).toEqual('id')
         expect(path.child.id.absolutePath()).toEqual('child.id')
         expect(path.items.get(1).absolutePath()).toEqual('items[1]')
