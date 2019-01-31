@@ -20,6 +20,7 @@ export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputPr
     itemToString: SelectDownshiftProps<T>['itemToString']
     onChange?: SelectDownshiftProps<T>['onChange']
     isOpen?: SelectDownshiftProps<T>['isOpen']
+    onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
 
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
@@ -38,6 +39,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
             itemToString,
             onChange,
             isOpen,
+            onFilterChange,
             loading,
             renderItem,
             components,
@@ -51,6 +53,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                 itemToString={itemToString}
                 onChange={onChange}
                 isOpen={isOpen}
+                onFilterChange={onFilterChange}
             >
                 {(downshift) => {
                     const {

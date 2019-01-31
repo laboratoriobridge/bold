@@ -21,6 +21,7 @@ export interface SelectMultiProps<T = DefaultItemType> extends Omit<SelectMultiI
     itemToString: MultiDownshiftProps<T>['itemToString']
     onChange?: MultiDownshiftProps<T>['onChange']
     isOpen?: MultiDownshiftProps<T>['isOpen']
+    onFilterChange?: MultiDownshiftProps<T>['onFilterChange']
 
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
@@ -39,6 +40,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
             itemToString,
             onChange,
             isOpen,
+            onFilterChange,
             loading,
             renderItem,
             components,
@@ -53,6 +55,7 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                 itemToString={itemToString}
                 onChange={onChange}
                 isOpen={isOpen}
+                onFilterChange={onFilterChange}
             >
                 {(downshift) => {
                     const {

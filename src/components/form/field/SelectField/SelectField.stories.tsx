@@ -4,11 +4,11 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { withForm, withRouter } from '../../../../stories-addons'
-import { DefaultItemType, Select, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
+import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem, SelectMulti, SelectSingle } from '../../input/Select'
 
 import { SelectField } from './SelectField'
 
-const items: DefaultItemType[] = [
+const fruits: DefaultItemType[] = [
     { value: 1, label: 'Apple' },
     { value: 2, label: 'Avocado' },
     { value: 3, label: 'Banana' },
@@ -23,6 +23,37 @@ const items: DefaultItemType[] = [
     { value: 12, label: 'Pear' },
 ]
 
+const loadFruits = (query: string): Promise<DefaultItemType[]> => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(defaultSelectFilter([...fruits], query, item => item.label)), 1000)
+    })
+}
+
+interface SelectAsyncManagerProps {
+    children(renderProps: {
+        items: any[]
+        loading: boolean
+        loadItems(query: string): void
+    })
+}
+
+const SelectAsyncManager = (props: SelectAsyncManagerProps) => {
+    const [loading, setLoading] = React.useState(false)
+    const [items, setItems] = React.useState([])
+    const loadItems = (query: string) => {
+        setLoading(true)
+        loadFruits(query).then(data => {
+            setItems(data)
+            setLoading(false)
+        }).catch(err => setLoading(false))
+    }
+    return props.children({
+        items,
+        loading,
+        loadItems,
+    })
+}
+
 // tslint:disable jsx-no-lambda
 storiesOf('Form/SelectField', module)
     .addDecorator(withRouter())
@@ -30,10 +61,10 @@ storiesOf('Form/SelectField', module)
     .add('default', () => (
         <SelectField<DefaultItemType>
             name='fruit'
-            items={items}
+            items={fruits}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
-            label={text('label', 'Component label')}
+            label={text('label', 'Favorite fruit')}
             multiple={boolean('multiple', false)}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
@@ -51,10 +82,10 @@ storiesOf('Form/SelectField', module)
                 </>
             )}
             name='fruit'
-            items={items}
+            items={fruits}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
-            label={text('label', 'Component label')}
+            label={text('label', 'Favorite fruit')}
             multiple={boolean('multiple', false)}
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}
@@ -63,9 +94,29 @@ storiesOf('Form/SelectField', module)
             onBlur={action('blur')}
         />
     ))
+    .add('async items', () => (
+        <SelectAsyncManager>
+            {({ items, loading, loadItems }) => (
+                <SelectField<DefaultItemType>
+                    name='repository'
+                    items={items}
+                    itemToString={(item) => item && item.label}
+                    placeholder='Select a value...'
+                    label={text('label', 'Favorite fruit')}
+                    multiple={boolean('multiple', false)}
+                    clearable={boolean('clearable', true)}
+                    disabled={boolean('disabled', false)}
+                    loading={loading}
+                    onChange={action('changed')}
+                    onBlur={action('blur')}
+                    onFilterChange={loadItems}
+                />
+            )}
+        </SelectAsyncManager>
+    ))
     .add('input', () => (
         <Select<DefaultItemType>
-            items={items}
+            items={fruits}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
             multiple={boolean('multiple', false)}
@@ -78,7 +129,7 @@ storiesOf('Form/SelectField', module)
     ))
     .add('input (single value)', () => (
         <SelectSingle<DefaultItemType>
-            items={items}
+            items={fruits}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
             clearable={boolean('clearable', true)}
@@ -90,7 +141,7 @@ storiesOf('Form/SelectField', module)
     ))
     .add('input (multiple value)', () => (
         <SelectMulti<DefaultItemType>
-            items={items}
+            items={fruits}
             itemToString={(item) => item && item.label}
             placeholder='Select a value...'
             clearable={boolean('clearable', true)}
