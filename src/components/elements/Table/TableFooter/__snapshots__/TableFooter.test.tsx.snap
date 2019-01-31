@@ -199,6 +199,10 @@ exports[`renders correctly 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-19 {
+  position: relative;
+}
+
 .emotion-18 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -249,10 +253,6 @@ exports[`renders correctly 1`] = `
 .emotion-18:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-19 {
-  position: relative;
 }
 
 .emotion-21 {

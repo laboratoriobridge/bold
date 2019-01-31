@@ -1,27 +1,30 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../../styles'
+import { Omit } from '../../../../../util'
 import { HFlow } from '../../../../layout'
 import { Checkbox } from '../../Checkbox/Checkbox'
-import { TextInputProps } from '../../TextInput/TextInput'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../SelectSingle/SelectDownshiftMenu'
 import { DefaultItemType } from '../SelectSingle/SelectSingle'
 
 import { MultiDownshift, MultiDownshiftProps, MultiSelectRenderProps } from './MultiDownshift'
-import { SelectMultiInput } from './SelectMultiInput'
+import { SelectMultiInput, SelectMultiInputProps } from './SelectMultiInput'
 
-export interface SelectMultiProps<T = DefaultItemType> extends MultiDownshiftProps<T>, WithStylesProps {
+export interface SelectMultiProps<T = DefaultItemType> extends Omit<SelectMultiInputProps<T>,
+    'renderItem' | 'value' | 'onChange' | 'onRemoveItem'>, WithStylesProps {
     value?: T[]
+
+    // TODO!
+    clearable?: boolean
+
+    items: MultiDownshiftProps<T>['items']
+    itemToString: MultiDownshiftProps<T>['itemToString']
+    onChange?: MultiDownshiftProps<T>['onChange']
+    isOpen?: MultiDownshiftProps<T>['isOpen']
+
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
-    name?: TextInputProps['name']
-    onBlur?: TextInputProps['onBlur']
-    disabled?: TextInputProps['disabled']
-    status?: TextInputProps['status']
-    placeholder?: TextInputProps['placeholder']
-    clearable?: TextInputProps['clearable']
-    style?: TextInputProps['style']
 }
 
 @withStyles
@@ -31,16 +34,14 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
         const {
             css,
             theme,
-            renderItem,
-            loading,
-            components,
-            disabled,
-            name,
-            onBlur,
-            status,
-            clearable,
-            style,
             value,
+            items,
+            itemToString,
+            onChange,
+            isOpen,
+            loading,
+            renderItem,
+            components,
             placeholder,
             ...rest
         } = this.props
@@ -48,14 +49,16 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
         return (
             <MultiDownshift<T>
                 selectedItems={value || []}
-                {...rest}
+                items={items}
+                itemToString={itemToString}
+                onChange={onChange}
+                isOpen={isOpen}
             >
                 {(downshift) => {
                     const {
                         // isOpen,
                         getInputProps,
                         selectedItems,
-                        itemToString,
                         removeItem,
                         inputValue,
                         visibleItems,
@@ -64,19 +67,16 @@ export class SelectMulti<T> extends React.Component<SelectMultiProps<T>> {
                     return (
                         <div>
                             <SelectMultiInput<T>
-                                name={name}
                                 items={selectedItems}
-                                renderItem={itemToString}
-                                onRemoveItem={this.handleItemRemove(removeItem)}
-                                // icon={isOpen ? 'triangleUp' : 'triangleDown'}
-                                disabled={disabled}
-                                status={status}
+                                {...rest}
                                 placeholder={(!selectedItems || selectedItems.length === 0) ? placeholder : undefined}
-                                // clearable={clearable}
                                 onBlur={this.handleInputBlur(downshift)}
-                                // onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
+                                onRemoveItem={this.handleItemRemove(removeItem)}
+                                renderItem={itemToString}
+                                // icon={isOpen ? 'triangleUp' : 'triangleDown'}
+                                // onIconClick={this.handleInputIconClick(downshift)}
                                 {...getInputProps()}
                                 value={inputValue ? inputValue : ''}
                             />

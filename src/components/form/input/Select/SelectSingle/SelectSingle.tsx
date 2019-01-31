@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../../styles'
+import { Omit } from '../../../../../util'
 import { TextInput, TextInputProps } from '../../TextInput/TextInput'
 
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
@@ -11,18 +12,18 @@ export interface DefaultItemType {
     label: string
 }
 
-export interface SelectSingleProps<T = DefaultItemType> extends SelectDownshiftProps<T>, WithStylesProps {
+export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputProps, 'value' | 'onChange'>,
+    WithStylesProps {
     value?: T
+
+    items: SelectDownshiftProps<T>['items']
+    itemToString: SelectDownshiftProps<T>['itemToString']
+    onChange?: SelectDownshiftProps<T>['onChange']
+    isOpen?: SelectDownshiftProps<T>['isOpen']
+
     loading?: SelectDownshiftMenuProps<T>['loading']
     renderItem?: SelectDownshiftMenuProps<T>['renderItem']
     components?: SelectDownshiftMenuProps<T>['components']
-    name?: TextInputProps['name']
-    onBlur?: TextInputProps['onBlur']
-    disabled?: TextInputProps['disabled']
-    status?: TextInputProps['status']
-    placeholder?: TextInputProps['placeholder']
-    clearable?: TextInputProps['clearable']
-    style?: TextInputProps['style']
 }
 
 @withStyles
@@ -32,28 +33,28 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
         const {
             css,
             theme,
-            renderItem,
-            loading,
-            components,
-            disabled,
-            name,
-            onBlur,
-            status,
-            clearable,
-            style,
             value,
-            placeholder,
+            items,
+            itemToString,
+            onChange,
+            isOpen,
+            loading,
+            renderItem,
+            components,
             ...rest
         } = this.props
 
         return (
             <SelectDownshift<T>
                 selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
-                {...rest}
+                items={items}
+                itemToString={itemToString}
+                onChange={onChange}
+                isOpen={isOpen}
             >
                 {(downshift) => {
                     const {
-                        isOpen,
+                        isOpen: downshiftOpen,
                         getInputProps,
                         visibleItems,
                         inputValue,
@@ -62,18 +63,13 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                     return (
                         <div>
                             <TextInput
-                                name={name}
-                                icon={isOpen ? 'triangleUp' : 'triangleDown'}
-                                disabled={disabled}
-                                status={status}
-                                clearable={clearable}
-                                style={style}
-                                placeholder={placeholder}
-                                onClear={this.handleClear(downshift)}
+                                icon={downshiftOpen ? 'triangleUp' : 'triangleDown'}
+                                {...rest}
                                 onBlur={this.handleInputBlur(downshift)}
-                                onIconClick={this.handleInputIconClick(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}
                                 onClick={this.handleInputClick(downshift)}
+                                onClear={this.handleClear(downshift)}
+                                onIconClick={this.handleInputIconClick(downshift)}
                                 {...getInputProps()}
                                 value={inputValue ? inputValue : ''}
                             />

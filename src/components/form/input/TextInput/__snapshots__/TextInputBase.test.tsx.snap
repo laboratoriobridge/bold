@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NumberField Field render 1`] = `
-.emotion-1 {
-  position: relative;
-}
-
+exports[`should render correctly 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -54,18 +50,10 @@ exports[`NumberField Field render 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  data-name="number"
->
-  <div
-    class="emotion-1"
-  >
-    <input
-      class="emotion-0"
-      name="number"
-      type="text"
-      value=""
-    />
-  </div>
+<div>
+  <input
+    class="emotion-0"
+    type="text"
+  />
 </div>
 `;

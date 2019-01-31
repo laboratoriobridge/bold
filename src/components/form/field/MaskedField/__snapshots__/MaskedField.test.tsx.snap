@@ -7,6 +7,10 @@ exports[`render correctly 1`] = `
   margin-bottom: 0.25rem;
 }
 
+.emotion-2 {
+  position: relative;
+}
+
 .emotion-1 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -54,10 +58,6 @@ exports[`render correctly 1`] = `
 .emotion-1:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-2 {
-  position: relative;
 }
 
 <div

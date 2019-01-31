@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should be rendered correctly 1`] = `
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -50,10 +54,6 @@ exports[`should be rendered correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-1 {
-  position: relative;
-}
-
 <div
   data-name="test"
 >
@@ -73,6 +73,10 @@ exports[`should be rendered correctly 1`] = `
 `;
 
 exports[`should not include field props on rendered HTML 1`] = `
+.emotion-3 {
+  position: relative;
+}
+
 .emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -120,10 +124,6 @@ exports[`should not include field props on rendered HTML 1`] = `
 .emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-3 {
-  position: relative;
 }
 
 .emotion-1 {

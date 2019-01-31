@@ -188,6 +188,10 @@ exports[`icon should render correctly with icon 1`] = `
 `;
 
 exports[`should render correctly 1`] = `
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -235,10 +239,6 @@ exports[`should render correctly 1`] = `
 .emotion-0:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-1 {
-  position: relative;
 }
 
 <div>

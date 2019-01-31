@@ -5,7 +5,7 @@ import { Omit } from '../../../../util'
 import { SelectMulti } from './SelectMulti/SelectMulti'
 import { DefaultItemType, SelectSingle, SelectSingleProps } from './SelectSingle/SelectSingle'
 
-export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps<T>, 'value' | 'onSelect'> {
+export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps<T>, 'value'> {
     value?: T | T[]
     multiple?: boolean
     onChange?(item: T | T[]): void

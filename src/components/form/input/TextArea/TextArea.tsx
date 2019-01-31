@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Omit } from '../../../../util/types'
-import { createStyles, InputStatus } from '../TextInput/TextInput'
+import { createStyles, InputStatus } from '../TextInput/TextInputBase'
 
 export interface TextAreaProps extends WithStylesProps,
     Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'css' | 'style'> {

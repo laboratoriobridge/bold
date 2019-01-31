@@ -2,13 +2,13 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
 import { Input, InputProps } from '../../Input/Input'
-import { createStyles, TextInputProps } from '../../TextInput/TextInput'
+import { createStyles, InputStatus } from '../../TextInput/TextInputBase'
 
 import { SelectMultiItem } from './SelectMultiItem'
 
 export interface SelectMultiInputProps<T> extends InputProps, WithStylesProps {
     items: T[]
-    status?: TextInputProps['status']
+    status?: InputStatus
     renderItem(item: T): React.ReactNode
     onRemoveItem(item: T): void
 }
