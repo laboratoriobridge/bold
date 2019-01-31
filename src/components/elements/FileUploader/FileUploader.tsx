@@ -173,7 +173,7 @@ class FileInfo extends React.PureComponent<FileInfoProps> {
         return (
             <div className={css(styles.wrapper)}>
                 {!this.props.file.error && !this.props.file.uploading &&
-                    <Icon icon='check' fill='primary' size={1} style={{ marginRight: 5 }} />
+                    <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
                 }
                 <Text weight='bold' style={{ marginRight: 10 }}>
                     {this.props.file.selectedFile.name}

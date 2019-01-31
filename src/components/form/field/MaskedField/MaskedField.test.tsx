@@ -16,7 +16,7 @@ it('render correctly', () => {
 
 it('render with icon', () => {
     const wrapper = render(withForm(
-        <MaskedField mask={['(', /\w/, ')']} name='test' icon='search' onIconClick={jest.fn()} />
+        <MaskedField mask={['(', /\w/, ')']} name='test' icon='zoomOutline' onIconClick={jest.fn()} />
     ))
     expect(wrapper).toMatchSnapshot()
 })

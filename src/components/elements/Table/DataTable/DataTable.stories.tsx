@@ -36,7 +36,7 @@ storiesOf('Components/Table', module)
                     style: { textAlign: 'right', whiteSpace: 'nowrap' },
                     render: (row: Row) => (
                         <>
-                            <Button size='small' skin='ghost' icon='pen' />
+                            <Button size='small' skin='ghost' icon='penOutline' />
                             <Button size='small' skin='ghost' icon='dots' />
                         </>
                     ),

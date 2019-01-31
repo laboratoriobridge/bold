@@ -18,7 +18,7 @@ storiesOf('Components/Tooltip', module)
                 Donec mollis eu velit nec ullamcorper.'
                 placement='bottom-start'
             >
-                <Button icon='trashcan' skin='ghost' size='small' />
+                <Button icon='trashOutline' skin='ghost' size='small' />
             </Tooltip>
         </HFlow>
     ))

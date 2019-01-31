@@ -322,8 +322,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M14.47 5.64l1.42 1.41L10.94 12l4.95 4.95-1.42 1.41L8.11 12l6.36-6.36z"
-                    data-name="angle-left"
+                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
                   />
                 </svg>
               </span>
@@ -356,8 +355,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
                   width="1em"
                 >
                   <path
-                    d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-                    data-name="angle-right"
+                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
                   />
                 </svg>
               </span>

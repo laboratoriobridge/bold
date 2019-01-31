@@ -17,7 +17,7 @@ it('should render correctly', () => {
 
 it('should render correctly with button', () => {
     const wrapper = render(withTheme(
-        <InputWrapper icon='search' clearVisible={true} onIconClick={jest.fn()}>
+        <InputWrapper icon='zoomOutline' clearVisible={true} onIconClick={jest.fn()}>
             <Input />
         </InputWrapper>
     ))
@@ -26,7 +26,7 @@ it('should render correctly with button', () => {
 
 it('should render correctly with left position', () => {
     const wrapper = render(withTheme(
-        <InputWrapper icon='search' clearVisible={true} iconPosition='left'>
+        <InputWrapper icon='zoomOutline' clearVisible={true} iconPosition='left'>
             <Input />
         </InputWrapper>
     ))
@@ -35,7 +35,7 @@ it('should render correctly with left position', () => {
 
 it('should render correctly without clear icon', () => {
     const wrapper = render(withTheme(
-        <InputWrapper icon='search' clearVisible={false}>
+        <InputWrapper icon='zoomOutline' clearVisible={false}>
             <Input />
         </InputWrapper>
     ))
@@ -44,7 +44,7 @@ it('should render correctly without clear icon', () => {
 
 it('should render correctly without clear icon AND left position', () => {
     const wrapper = render(withTheme(
-        <InputWrapper icon='search' clearVisible={false} iconPosition='left' >
+        <InputWrapper icon='zoomOutline' clearVisible={false} iconPosition='left' >
             <Input />
         </InputWrapper>
     ))

@@ -43,7 +43,7 @@ storiesOf('Form/MaskedField', module)
             disabled={boolean('disabled', false)}
             guide={boolean('guide', true)}
             keepCharPositions={boolean('keepCharPositions', false)}
-            icon='search'
+            icon='zoomOutline'
             onIconClick={action('clicked')}
             onChange={action('changed')}
         />
