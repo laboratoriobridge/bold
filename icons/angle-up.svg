@@ -1,1 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>angle-up</title><g id="angle-up"><polygon id="angle-up-2" data-name="angle-up" points="18.36 14.47 16.95 15.89 12 10.94 7.05 15.89 5.64 14.47 12 8.11 18.36 14.47"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="#53595E" fill-rule="evenodd" d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z"/>
+</svg>

@@ -21,7 +21,7 @@ storiesOf('Components/Popover', module)
                 text={`Ducimus velit consectetur est est corporis consectetur a
                 reprehenderit voluptas id provident iure incidunt`}
             >
-                <Button icon='informationCircle' skin='ghost' size='small' />
+                <Button icon='infoCircleOutline' skin='ghost' size='small' />
             </Popover>
         </HFlow>
     ))

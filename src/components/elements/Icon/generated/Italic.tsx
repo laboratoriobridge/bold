@@ -2,11 +2,8 @@
 import * as React from "react";
 
 const SvgItalic = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" {...props} width="1em" height="1em">
-    <path
-      data-name="italic"
-      d="M12.83 18h-4.2l.17-.82 1.43-.34 2-9.68L11 6.84l.17-.84h4.2l-.16.84-1.45.32-2 9.68 1.3.34z"
-    />
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path d="M13 20H7c-.666 0-1-.333-1-.999 0-.665.334-.999 1-1.001h2l4-12h-2c-.662 0-.994-.334-.994-1 0-.668.332-1 .995-1h6.004c.663.04.995.374.995 1 0 .625-.332.958-.995 1h-2.003L11 18h2c.668 0 1.002.335 1.002 1.001 0 .667-.334 1-1.002.998z" />
   </svg>
 );
 

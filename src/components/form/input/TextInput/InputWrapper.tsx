@@ -99,7 +99,7 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                         onClick={onClear}
                         className={css(styles.clearButton)}
                     >
-                        <Icon size={1.5} icon='times' />
+                        <Icon size={1.5} icon='timesDefault' />
                     </span>
                 }
 

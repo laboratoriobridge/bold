@@ -2,7 +2,7 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
-import Times from '../../../../elements/Icon/generated/Times'
+import Times from '../../../../elements/Icon/generated/TimesDefault'
 
 export interface SelectMultiItemProps extends WithStylesProps {
     style?: Interpolation

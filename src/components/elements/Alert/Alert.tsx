@@ -4,14 +4,20 @@ import * as React from 'react'
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { Omit } from '../../../util/types'
 import { Button } from '../Button'
+import { Icons } from '../Icon'
 import { Icon } from '../Icon/Icon'
 
 export type AlertType = 'info' | 'success' | 'warning' | 'danger'
 
-export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => {
+export const createTypesStyles = (theme: Theme): {
+    [key in AlertType]: {
+        icon: Icons,
+        style: Interpolation
+    }
+} => {
     return {
         'info': {
-            icon: 'informationCircle',
+            icon: 'infoCircleOutline',
             style: {
                 background: theme.pallete.status.info.background,
                 color: theme.pallete.status.info.main,
@@ -19,7 +25,7 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
             },
         },
         'success': {
-            icon: 'checkCircle',
+            icon: 'checkCircleOutline',
             style: {
                 background: theme.pallete.status.success.background,
                 color: theme.pallete.status.success.main,
@@ -27,7 +33,7 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
             },
         },
         'warning': {
-            icon: 'exclamationTriangle',
+            icon: 'exclamationTriangleOutline',
             style: {
                 background: theme.pallete.status.alert.background,
                 color: theme.pallete.status.alert.main,
@@ -35,7 +41,7 @@ export const createTypesStyles = (theme: Theme): { [key in AlertType]: any } => 
             },
         },
         'danger': {
-            icon: 'ban',
+            icon: 'banOutline',
             style: {
                 background: theme.pallete.status.danger.background,
                 color: theme.pallete.status.danger.main,
@@ -111,7 +117,7 @@ export class Alert extends React.PureComponent<AlertProps> {
                         <Button
                             size='small'
                             skin='ghost'
-                            icon='times'
+                            icon='timesDefault'
                             style={defaultStyles.closeButton}
                             onClick={onCloseClick}
                         />

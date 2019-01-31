@@ -11,7 +11,6 @@ export type IconColor = TextColor | 'none'
 
 export interface IconProps extends WithStylesProps, Omit<React.SVGAttributes<SVGElement>, 'style'> {
     icon: Icons
-    label?: string
     fill?: IconColor
     stroke?: IconColor
     size?: number
@@ -30,7 +29,7 @@ export class Icon extends React.PureComponent<IconProps> {
     }
 
     render() {
-        const { style, css, label, theme, icon, fill, stroke, size, ...rest } = this.props
+        const { style, css, theme, icon, fill, stroke, size, ...rest } = this.props
         const SelectedIcon = IconMap[icon]
 
         const styles: Styles = {
@@ -44,7 +43,6 @@ export class Icon extends React.PureComponent<IconProps> {
         return (
             <SelectedIcon
                 role='img'
-                aria-label={label}
                 aria-hidden='true'
                 className={css(styles.icon, style)}
                 {...rest}

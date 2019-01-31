@@ -1,1 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>angle-double-right</title><g id="angle-double-right"><g id="angle-double-right-2" data-name="angle-double-right"><polygon points="6.53 5.64 5.11 7.05 10.06 12 5.11 16.95 6.53 18.36 12.89 12 6.53 5.64"/><polygon points="12.53 5.64 11.11 7.05 16.06 12 11.11 16.95 12.53 18.36 18.89 12 12.53 5.64"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <path fill="#53595E" fill-rule="evenodd" d="M11.294 7.707a1 1 0 0 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L15.587 12l-4.293-4.293zm-5 0a1 1 0 0 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L10.587 12 6.294 7.707z"/>
+</svg>

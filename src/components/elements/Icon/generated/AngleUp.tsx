@@ -2,11 +2,8 @@
 import * as React from "react";
 
 const SvgAngleUp = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" {...props} width="1em" height="1em">
-    <path
-      data-name="angle-up"
-      d="M18.36 14.47l-1.41 1.42L12 10.94l-4.95 4.95-1.41-1.42L12 8.11l6.36 6.36z"
-    />
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z" />
   </svg>
 );
 

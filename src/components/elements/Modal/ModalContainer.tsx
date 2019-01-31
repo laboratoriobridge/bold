@@ -33,7 +33,7 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
         }
         return (
             <div className={css(styles.wrapper, style)}>
-                <Button size='small' skin='ghost' style={styles.closeButton} icon='times' onClick={onClose} />
+                <Button size='small' skin='ghost' style={styles.closeButton} icon='timesDefault' onClick={onClose} />
                 {this.props.children}
             </div>
         )

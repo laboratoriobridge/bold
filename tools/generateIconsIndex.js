@@ -12,8 +12,8 @@ filewalker(path.join(__dirname, '../src/components/elements/Icon/generated'), (e
     const components = []
 
     data.sort((a, b) => {
-        if (a < b) { return -1 }
-        if (a > b) { return 1 }
+        if (a.toLowerCase() < b.toLowerCase()) { return -1 }
+        if (a.toLowerCase() > b.toLowerCase()) { return 1 }
         return 0
     }).map(file => {
         const fileName = file.substring(file.lastIndexOf('/') + 1, file.indexOf('.tsx'))
@@ -29,7 +29,9 @@ filewalker(path.join(__dirname, '../src/components/elements/Icon/generated'), (e
 
     writeStream.write('\n')
 
-    writeStream.write('export const IconMap = {\n')
+    writeStream.write('export const IconMap: {\n')
+    writeStream.write('    [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>\n')
+    writeStream.write('} = {\n')
 
     components.forEach(component => writeStream.write(`    '${component.substring(0, 1).toLowerCase()
         + component.substring(1)}': ${component},\n`))

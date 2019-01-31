@@ -2,11 +2,8 @@
 import * as React from "react";
 
 const SvgAngleDoubleLeft = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg viewBox="0 0 24 24" {...props} width="1em" height="1em">
-    <g data-name="angle-double-left">
-      <path d="M17.48 18.36l1.41-1.41L13.94 12l4.95-4.95-1.41-1.41L11.11 12l6.37 6.36z" />
-      <path d="M11.47 18.36l1.42-1.41L7.94 12l4.95-4.95-1.42-1.41L5.11 12l6.36 6.36z" />
-    </g>
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path d="M12.707 16.294a1 1 0 0 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293zm5 0a1 1 0 0 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z" />
   </svg>
 );
 

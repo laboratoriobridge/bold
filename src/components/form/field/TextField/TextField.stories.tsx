@@ -26,7 +26,7 @@ storiesOf('Form/TextField', module)
         <TextField
             name='iconized'
             label='Input with icon'
-            icon='search'
+            icon='zoomOutline'
             iconPosition={select('iconPosition', ['left', 'right'], 'right')}
             onIconClick={action('icon-clicked')}
             disabled={boolean('disabled', false)}

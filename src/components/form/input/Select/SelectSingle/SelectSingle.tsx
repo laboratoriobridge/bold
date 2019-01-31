@@ -63,7 +63,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                         <div>
                             <TextInput
                                 name={name}
-                                icon={isOpen ? 'triangleUp' : 'triangleDown'}
+                                icon={isOpen ? 'angleUp' : 'angleDown'}
                                 disabled={disabled}
                                 status={status}
                                 clearable={clearable}
