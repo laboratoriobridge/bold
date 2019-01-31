@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>pause</title><g id="pause"><g id="pause-2" data-name="pause"><rect x="8" y="6" width="2" height="12"/><rect x="14" y="6" width="2" height="12"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <path id="a" d="M8 17V7c0-.667.333-1 1-1s1 .333 1 1v10c0 .667-.333 1-1 1s-1-.333-1-1zm6 0V7c.005-.667.34-1 1.004-1 .664 0 .996.333.996 1v10c0 .667-.333 1-1 1s-1-.333-1-1z"/>
+    </defs>
+    <use fill="#53595E" fill-rule="evenodd" xlink:href="#a"/>
+</svg>

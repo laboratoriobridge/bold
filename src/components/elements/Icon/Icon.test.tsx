@@ -7,23 +7,23 @@ import { Icon } from './Icon'
 
 it('should render correctly', () => {
     const wrapper = render(withTheme(
-        <Icon icon='pen' />
+        <Icon icon='penOutline' />
     ))
     expect(wrapper).toMatchSnapshot()
 })
 
 it('should accept size prop', () => {
-    expect(render(withTheme(<Icon icon='bell' size={3} />))).toMatchSnapshot()
+    expect(render(withTheme(<Icon icon='bellOutline' size={3} />))).toMatchSnapshot()
 })
 
 it('should accept style prop', () => {
-    expect(render(withTheme(<Icon icon='bell' style={{ strokeWidth: 5 }} />))).toMatchSnapshot()
+    expect(render(withTheme(<Icon icon='bellOutline' style={{ strokeWidth: 5 }} />))).toMatchSnapshot()
 })
 
 it('should accept fill prop', () => {
-    expect(render(withTheme(<Icon icon='bell' fill='danger' />))).toMatchSnapshot()
+    expect(render(withTheme(<Icon icon='bellOutline' fill='danger' />))).toMatchSnapshot()
 })
 
 it('should accept stroke prop', () => {
-    expect(render(withTheme(<Icon icon='bell' stroke='alert' />))).toMatchSnapshot()
+    expect(render(withTheme(<Icon icon='bellOutline' stroke='alert' />))).toMatchSnapshot()
 })

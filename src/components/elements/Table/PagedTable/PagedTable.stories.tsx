@@ -40,7 +40,7 @@ storiesOf('Components/Table', module)
                 {
                     name: 'buttons',
                     style: { textAlign: 'right' },
-                    render: (row: Row) => <Button size='small' skin='ghost' icon='pen' />,
+                    render: (row: Row) => <Button size='small' skin='ghost' icon='penOutline' />,
                 },
             ]}
         />

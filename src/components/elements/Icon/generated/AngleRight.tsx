@@ -1,12 +1,10 @@
 /* tslint:disable */
 import * as React from "react";
-import { GeneratedIconProps } from "../GeneratedIconProps";
 
-export const AngleRight = (props: GeneratedIconProps) => (
-  <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
-    <path
-      data-name="angle-right"
-      d="M9.53 18.36l-1.42-1.41L13.06 12 8.11 7.05l1.42-1.41L15.89 12l-6.36 6.36z"
-    />
+const SvgAngleRight = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z" />
   </svg>
 );
+
+export default SvgAngleRight;

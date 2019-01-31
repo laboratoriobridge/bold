@@ -40,7 +40,7 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps>
                 onChange={this.onInputChange}
                 value={formatedValue}
                 onIconClick={ctrl.toggle}
-                icon='calendar'
+                icon='calendarOutline'
                 {...rest}
             />
         )

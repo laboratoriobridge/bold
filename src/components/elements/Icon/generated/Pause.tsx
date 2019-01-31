@@ -1,11 +1,16 @@
 /* tslint:disable */
 import * as React from "react";
-import { GeneratedIconProps } from "../GeneratedIconProps";
 
-export const Pause = (props: GeneratedIconProps) => (
-  <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
-    <g data-name="pause">
-      <path d="M8 6h2v12H8zM14 6h2v12h-2z" />
-    </g>
+const SvgPause = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <defs>
+      <path
+        id="pause_svg__a"
+        d="M8 17V7c0-.667.333-1 1-1s1 .333 1 1v10c0 .667-.333 1-1 1s-1-.333-1-1zm6 0V7c.005-.667.34-1 1.004-1 .664 0 .996.333.996 1v10c0 .667-.333 1-1 1s-1-.333-1-1z"
+      />
+    </defs>
+    <use xlinkHref="#pause_svg__a" />
   </svg>
 );
+
+export default SvgPause;

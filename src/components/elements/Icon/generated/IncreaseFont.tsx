@@ -1,12 +1,10 @@
 /* tslint:disable */
 import * as React from "react";
-import { GeneratedIconProps } from "../GeneratedIconProps";
 
-export const IncreaseFont = (props: GeneratedIconProps) => (
-  <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
-    <g data-name="increase-font">
-      <path d="M14 11.25h8v1.5h-8z" />
-      <path d="M17.33 8h1.5v8h-1.5zM6.33 6L1.94 18h2.84l.9-2.84h4.53l.9 2.84h2.83L9.54 6zm0 7c.9-2.72 1.43-4.45 1.67-5.14 0 .19.12.46.22.8s.53 1.79 1.36 4.34z" />
-    </g>
+const SvgIncreaseFont = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}>
+    <path d="M17 11V9c0-.667.333-1 1-1s1 .333 1 1v2h2c.667.002 1 .336 1 1.002 0 .665-.333.998-1 .998h-2v2c-.002.667-.336 1-1.002 1-.665 0-.998-.333-.998-1v-2h-2c-.667 0-1-.333-1-1s.333-1 1-1h2zm-7.888 4H4.913c-.32 1.35-.592 2.509-.734 3.116-.068.289-.43 1.05-1.388.852-.639-.132-.89-.554-.756-1.266l2.89-10.538C5.259 5.721 5.955 5 7.013 5c1.059 0 1.755.721 2.088 2.164l2.879 10.541c.098.743-.167 1.164-.796 1.263-.943.147-1.256-.563-1.325-.852A827.52 827.52 0 0 0 9.112 15zm-.488-2c-.727-2.962-1.5-6-1.61-6-.137 0-.904 3.038-1.621 6h3.231z" />
   </svg>
 );
+
+export default SvgIncreaseFont;

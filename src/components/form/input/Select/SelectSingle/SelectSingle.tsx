@@ -63,7 +63,7 @@ export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
                     return (
                         <div>
                             <TextInput
-                                icon={downshiftOpen ? 'triangleUp' : 'triangleDown'}
+                                icon={downshiftOpen ? 'angleUp' : 'angleDown'}
                                 {...rest}
                                 onBlur={this.handleInputBlur(downshift)}
                                 onFocus={this.handleInputFocus(downshift)}

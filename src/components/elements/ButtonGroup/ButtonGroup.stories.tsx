@@ -15,8 +15,8 @@ storiesOf('Components/ButtonGroup', module)
                 <Button label='Third' size='small' disabled />
             </ButtonGroup>
             <ButtonGroup>
-                <Button icon='trashcan' size='small' />
-                <Button icon='search' size='small' />
+                <Button icon='trashOutline' size='small' />
+                <Button icon='zoomOutline' size='small' />
             </ButtonGroup>
         </HFlow>
     ))
