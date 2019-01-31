@@ -1,23 +1,11 @@
-function getProps(config) {
-    const props = []
-    if (config.ref) { props.push('svgRef') }
-    if (config.titleProp) { props.push('title') }
-    if (config.expandProps) { props.push('...props') }
+module.exports = function({ template }, opts, { imports, componentName, props, jsx, exports }) {
+    const typeScriptTpl = template.smart({ plugins: ['typescript', 'tslint'] })
+    return typeScriptTpl.ast`
+${'/* tslint:disable */\n'}
 
-    if (props.length === 0) { return '()' }
-    if (props.length === 1 && config.expandProps) { return 'props' }
-
-    return `({ ${props.join(', ')} })`
-}
-
-module.exports = function(code, config, state) {
-    const props = getProps(config)
-
-    return `
-/* tslint:disable */
 import * as React from 'react'
-import { GeneratedIconProps } from '../GeneratedIconProps'
 
-export const ${state.componentName} = (${props}: GeneratedIconProps) => ${code}
+const ${componentName} = (props: React.SVGProps<SVGSVGElement>) => ${jsx}
+export default ${componentName};
 `
 }
