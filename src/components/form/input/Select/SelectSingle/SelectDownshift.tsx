@@ -7,7 +7,7 @@ const matchSorter = (matchSorterAll as any).default || matchSorterAll
 
 export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
     /**
-     * Items to be populated on the select component or a function to be used to asynchronously them.
+     * Items to be populated on the select component.
      */
     items: T[]
 
