@@ -4,16 +4,9 @@ import * as React from 'react'
 
 import { VFlow } from '../../../layout/Flow/VFlow'
 
-import { HeadingSection } from './HeadingSection'
+import { HeadingSection, HeadingSectionProps } from './HeadingSection'
 
-const levelOptions = {
-    '1': '1',
-    '2': '2',
-    '3': '3',
-    '4': '4',
-    '5': '5',
-    '6': '6',
-}
+const levelOptions: Array<HeadingSectionProps['level']> = [1, 2, 3, 4, 5, 6]
 
 storiesOf('Textual', module)
     .add('HeadingSection', () => (

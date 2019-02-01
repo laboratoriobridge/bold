@@ -9,23 +9,9 @@ import { Button } from './Button/Button'
 import { Size, Skins, Type } from './Button/ButtonSkins'
 import { ButtonLink } from './ButtonLink/ButtonLink'
 
-const typeOptions: { [key in Type]: string } = {
-    'normal': 'normal',
-    'primary': 'primary',
-    'danger': 'danger',
-}
-
-const skinOptions: { [key in Skins]: string } = {
-    'default': 'default',
-    'ghost': 'ghost',
-    'outline': 'outline',
-}
-
-const sizeOptions: { [key in Size]: string } = {
-    'small': 'small',
-    'medium': 'medium',
-    'large': 'large',
-}
+const typeOptions: Type[] = ['normal', 'primary', 'danger']
+const skinOptions: Skins[] = ['default', 'ghost', 'outline']
+const sizeOptions: Size[] = ['small', 'medium', 'large']
 
 storiesOf('Components/Button', module)
     // @ts-ignore

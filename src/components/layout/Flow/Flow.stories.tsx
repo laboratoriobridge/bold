@@ -5,31 +5,19 @@ import * as React from 'react'
 import { Button } from '../../elements/Button'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
 
-import { Flow } from './Flow'
+import { Flow, FlowProps } from './Flow'
 import { HFlow } from './HFlow'
 import { VFlow } from './VFlow'
 
-const directionOptions = {
-    'horizontal': 'horizontal',
-    'vertical': 'vertical',
-}
+const directionOptions: Array<FlowProps['direction']> = ['horizontal', 'vertical']
 
-const justifyContentOptions: { [key in JustifyContent]: string } = {
-    'flex-start': 'flex-start',
-    'flex-end': 'flex-end',
-    'center': 'center',
-    'space-between': 'space-between',
-    'space-around': 'space-around',
-    'space-evenly': 'space-evenly',
-}
+const justifyContentOptions: JustifyContent[] = [
+    'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly',
+]
 
-const alignItemsOptions: { [key in AlignItems]: string } = {
-    'flex-start': 'flex-start',
-    'flex-end': 'flex-end',
-    'center': 'center',
-    'baseline': 'baseline',
-    'stretch': 'stretch',
-}
+const alignItemsOptions: AlignItems[] = [
+    'flex-start', 'flex-end', 'center', 'baseline', 'stretch',
+]
 
 storiesOf('Layout', module)
     .add('Flow', () => (

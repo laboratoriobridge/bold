@@ -10,38 +10,18 @@ const styles = {
     },
 }
 
-const justifyContentOptions: { [key in JustifyContent]: string } = {
-    'flex-start': 'flex-start',
-    'flex-end': 'flex-end',
-    'center': 'center',
-    'space-between': 'space-between',
-    'space-around': 'space-around',
-    'space-evenly': 'space-evenly',
-}
-
-const alignItemsOptions: { [key in AlignItems]: string } = {
-    'flex-start': 'flex-start',
-    'flex-end': 'flex-end',
-    'center': 'center',
-    'baseline': 'baseline',
-    'stretch': 'stretch',
-}
-
-const alignSelfOptions: { [key in AlignSelf]: string } = {
-    'auto': 'auto',
-    'flex-start': 'flex-start',
-    'flex-end': 'flex-end',
-    'center': 'center',
-    'baseline': 'baseline',
-    'stretch': 'stretch',
-}
-
-const directionOptions: { [key in Direction]: string } = {
-    'row': 'row',
-    'row-reverse': 'row-reverse',
-    'column': 'column',
-    'column-reverse': 'column-reverse',
-}
+const justifyContentOptions: JustifyContent[] = [
+    'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly',
+]
+const alignItemsOptions: AlignItems[] = [
+    'flex-start', 'flex-end', 'center', 'baseline', 'stretch',
+]
+const alignSelfOptions: AlignSelf[] = [
+    'auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch',
+]
+const directionOptions: Direction[] = [
+    'row', 'row-reverse', 'column', 'column-reverse',
+]
 
 storiesOf('Grid', module)
     .add('Grid/Cell', () => (
