@@ -3,11 +3,12 @@
 import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
 import * as React from 'react'
 
-import { isEqual, Omit, some } from '../../../../../util'
+import { isEqual as deepIsEqual, Omit, some } from '../../../../../util'
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../SelectSingle/SelectDownshift'
 
 export interface MultiDownshiftProps<T> extends Omit<SelectDownshiftProps<T>, 'onSelect' | 'onChange'> {
     selectedItems?: T[]
+    isEqual?(a: T, b: T): boolean
     onSelect?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
     onChange?(selectedItems: T[], stateAndHelpers: MultiSelectRenderProps<T>): void
     children?(downshift: MultiSelectRenderProps<T>): React.ReactNode
@@ -28,6 +29,17 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
 
     static defaultProps: Partial<MultiDownshiftProps<any>> = {
         selectedItems: [],
+        isEqual: (a, b) => {
+            if (process.env.NODE_ENV !== 'production') {
+                // tslint:disable no-console
+                console.warn(
+                    'MultiDownshift: using default isEqual implementation for object comparision.'
+                    + ' You should probably provide your own `isEqual` implementation.'
+                )
+            }
+
+            return deepIsEqual(a, b)
+        },
     }
 
     constructor(props: MultiDownshiftProps<T>) {
@@ -79,7 +91,7 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
 
     removeItem = (selectedItem: T, downshift: SelectDownshiftRenderProps<T>) => {
         this.setState(({ selectedItems }) => ({
-            selectedItems: selectedItems.filter(item => !isEqual(selectedItem, item)),
+            selectedItems: selectedItems.filter(item => !this.props.isEqual(selectedItem, item)),
         }), () => this.emitChange(downshift))
     }
 
@@ -92,7 +104,7 @@ export class MultiDownshift<T> extends React.Component<MultiDownshiftProps<T>, M
     }
 
     isSelected = (item: T) => {
-        return some(this.state.selectedItems, (i) => isEqual(i, item))
+        return some(this.state.selectedItems, (i) => this.props.isEqual(i, item))
     }
 
     getStateAndHelpers(downshift: SelectDownshiftRenderProps<T>): MultiSelectRenderProps<T> {

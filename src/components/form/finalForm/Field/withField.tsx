@@ -1,7 +1,7 @@
 import hoistNonReactStatics = require('hoist-non-react-statics')
 import * as React from 'react'
 
-import { InputStatus } from '../../input/TextInput/TextInput'
+import { InputStatus } from '../../input/TextInput'
 
 import { Field, FieldProps, RenderProps } from './Field'
 import { BaseFieldProps, extractInputProps } from './index'

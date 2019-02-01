@@ -75,6 +75,10 @@ exports[`deve renderizar corretamente 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-3 {
+  position: relative;
+}
+
 .emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -125,10 +129,6 @@ exports[`deve renderizar corretamente 1`] = `
 .emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-3 {
-  position: relative;
 }
 
 .emotion-5 {
@@ -265,6 +265,10 @@ exports[`deve renderizar corretamente 2`] = `
   font-size: 1.5rem;
 }
 
+.emotion-3 {
+  position: relative;
+}
+
 .emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -315,10 +319,6 @@ exports[`deve renderizar corretamente 2`] = `
 .emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-3 {
-  position: relative;
 }
 
 .emotion-5 {
@@ -516,6 +516,10 @@ exports[`deve renderizar corretamente 3`] = `
   font-size: 1.5rem;
 }
 
+.emotion-3 {
+  position: relative;
+}
+
 .emotion-2 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -566,10 +570,6 @@ exports[`deve renderizar corretamente 3`] = `
 .emotion-2:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-3 {
-  position: relative;
 }
 
 .emotion-5 {

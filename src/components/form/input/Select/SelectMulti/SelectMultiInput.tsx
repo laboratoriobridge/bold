@@ -2,13 +2,14 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
 import { Input, InputProps } from '../../Input/Input'
-import { createStyles, TextInputProps } from '../../TextInput/TextInput'
+import { createStyles, InputStatus } from '../../TextInput/TextInputBase'
 
 import { SelectMultiItem } from './SelectMultiItem'
 
 export interface SelectMultiInputProps<T> extends InputProps, WithStylesProps {
     items: T[]
-    status?: TextInputProps['status']
+    status?: InputStatus
+    clearable?: boolean
     renderItem(item: T): React.ReactNode
     onRemoveItem(item: T): void
 }
@@ -18,7 +19,7 @@ export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T
     private inputRef = React.createRef<HTMLInputElement>()
 
     render() {
-        const { css, theme, items, renderItem, onRemoveItem, status, disabled, ...rest } = this.props
+        const { css, theme, items, renderItem, onRemoveItem, status, disabled, clearable, ...rest } = this.props
         const textInputStyles = createStyles(theme)
         const parts = textInputStyles.parts
         const styles: Styles = {

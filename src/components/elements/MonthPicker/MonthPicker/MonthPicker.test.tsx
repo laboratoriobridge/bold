@@ -9,10 +9,11 @@ const now = new Date()
 
 describe('MonthPicker', () => {
     it('should render correctly with month and year', () => {
+        const visibleDate = new Date('2019-01-31')
         const { container } = render(withTheme(
             <MonthPicker
-                month={new Date().getMonth()}
-                year={new Date().getFullYear()}
+                month={visibleDate.getMonth()}
+                year={visibleDate.getFullYear()}
             />))
         expect(container).toMatchSnapshot()
     })
@@ -48,7 +49,7 @@ describe('MonthPicker', () => {
                 onChange={onChange}
             />))
         fireEvent.click(getByText('Jan'))
-        expect(onChange).toHaveBeenCalledWith({ month: now.getMonth(), year: now.getFullYear() })
+        expect(onChange).toHaveBeenCalledWith({ month: 0, year: now.getFullYear() })
     })
 
     it('should call "onChange" when a month is selected, with the given year', () => {
@@ -62,7 +63,7 @@ describe('MonthPicker', () => {
         fireEvent.click(getByTitle('Ano anterior'))
         fireEvent.click(getByText('Jan'))
         const expectedYear = now.getFullYear() - 1
-        expect(onChange).toHaveBeenCalledWith({ month: now.getMonth(), year: expectedYear })
+        expect(onChange).toHaveBeenCalledWith({ month: 0, year: expectedYear })
     })
 
     it('should fill the prop year if non is given', () => {
