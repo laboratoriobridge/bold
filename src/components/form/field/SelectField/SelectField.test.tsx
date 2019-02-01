@@ -25,6 +25,7 @@ const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: 
                     name='select1'
                     items={items}
                     itemToString={item => item.label}
+                    itemIsEqual={(a, b) => a.value === b.value}
                     {...fieldProps}
                 />
             )}

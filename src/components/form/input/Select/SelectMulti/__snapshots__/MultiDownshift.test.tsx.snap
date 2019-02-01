@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`isEqual should emit a console warning when using the default isEqual prop 1`] = `
+exports[`itemIsEqual should emit a console warning when using the default itemIsEqual prop 1`] = `
 Array [
-  "MultiDownshift: using default isEqual implementation for object comparision. You should probably provide your own \`isEqual\` implementation.",
+  "MultiDownshift: using default itemIsEqual implementation for object comparision. You should probably provide your own \`itemIsEqual\` implementation.",
 ]
 `;

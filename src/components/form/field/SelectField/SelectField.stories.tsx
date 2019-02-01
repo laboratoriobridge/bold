@@ -63,6 +63,7 @@ storiesOf('Form/SelectField', module)
             name='fruit'
             items={fruits}
             itemToString={(item) => item && item.label}
+            itemIsEqual={(a, b) => a.value === b.value}
             placeholder='Select a value...'
             label={text('label', 'Favorite fruit')}
             multiple={boolean('multiple', false)}
@@ -84,6 +85,7 @@ storiesOf('Form/SelectField', module)
             name='fruit'
             items={fruits}
             itemToString={(item) => item && item.label}
+            itemIsEqual={(a, b) => a.value === b.value}
             placeholder='Select a value...'
             label={text('label', 'Favorite fruit')}
             multiple={boolean('multiple', false)}
@@ -101,6 +103,7 @@ storiesOf('Form/SelectField', module)
                     name='repository'
                     items={items}
                     itemToString={(item) => item && item.label}
+                    itemIsEqual={(a, b) => a.value === b.value}
                     placeholder='Select a value...'
                     label={text('label', 'Favorite fruit')}
                     multiple={boolean('multiple', false)}
@@ -118,6 +121,7 @@ storiesOf('Form/SelectField', module)
         <Select<DefaultItemType>
             items={fruits}
             itemToString={(item) => item && item.label}
+            itemIsEqual={(a, b) => a.value === b.value}
             placeholder='Select a value...'
             multiple={boolean('multiple', false)}
             clearable={boolean('clearable', true)}
@@ -143,6 +147,7 @@ storiesOf('Form/SelectField', module)
         <SelectMulti<DefaultItemType>
             items={fruits}
             itemToString={(item) => item && item.label}
+            itemIsEqual={(a, b) => a.value === b.value}
             placeholder='Select a value...'
             clearable={boolean('clearable', true)}
             disabled={boolean('disabled', false)}

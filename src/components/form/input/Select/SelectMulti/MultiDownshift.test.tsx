@@ -13,7 +13,7 @@ const items: DefaultItemType[] = [
     { value: 5, label: 'Pear' },
 ]
 
-// Mock console.warn to get rid of default isEqual prop warning
+// Mock console.warn to get rid of default itemIsEqual prop warning
 let consoleWarnSpy = null
 beforeEach(() => consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => null))
 
@@ -59,9 +59,9 @@ describe('isSelected', () => {
         expect(isSelected(items[0])).toBeTruthy()
         expect(isSelected(items[1])).toBeFalsy()
     })
-    it('should compare items using the provided isEqual prop', () => {
+    it('should compare items using the provided itemIsEqual prop', () => {
         const children = jest.fn()
-        render(createComponent({ selectedItems: [items[0]], children, isEqual: (a, b) => a.value === b.value }))
+        render(createComponent({ selectedItems: [items[0]], children, itemIsEqual: (a, b) => a.value === b.value }))
         const isSelected = children.mock.calls[0][0].isSelected
         expect(isSelected({ value: 1, label: 'Apple' })).toBeTruthy()
         expect(isSelected({ value: 2, label: 'Apple' })).toBeFalsy()
@@ -124,8 +124,8 @@ describe('removeItem', () => {
     })
 })
 
-describe('isEqual', () => {
-    it('should allow override of internal isEqual comparision by prop', () => {
+describe('itemIsEqual', () => {
+    it('should allow override of internal itemIsEqual comparision by prop', () => {
         const children = jest.fn()
         const copyItems = items.map(item => ({ ...item, __typename: 'Fruit' }))
 
@@ -134,7 +134,7 @@ describe('isEqual', () => {
             children,
             selectedItems: [items[0], items[1]],
             items: copyItems,
-            isEqual: (a, b) => a.value === b.value,
+            itemIsEqual: (a, b) => a.value === b.value,
         }))
 
         expect(children).toHaveBeenCalledTimes(3)
@@ -147,7 +147,7 @@ describe('isEqual', () => {
         expect(children).toHaveBeenCalledTimes(4)
         expect(children.mock.calls[3][0].selectedItems).toEqual([items[0]])
     })
-    it('should emit a console warning when using the default isEqual prop', () => {
+    it('should emit a console warning when using the default itemIsEqual prop', () => {
         render(createComponent())
         // Assert just first call (since it is called more than once for each downshift item)
         expect(consoleWarnSpy.mock.calls[0]).toMatchSnapshot()

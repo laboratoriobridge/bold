@@ -8,13 +8,13 @@ import { DefaultItemType, SelectSingle, SelectSingleProps } from './SelectSingle
 export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps<T>, 'value'> {
     value?: T | T[]
     multiple?: boolean
-    isEqual?: SelectMultiProps<T>['isEqual']
+    itemIsEqual?: SelectMultiProps<T>['itemIsEqual']
     onChange?(item: T | T[]): void
 }
 
 export class Select<T = DefaultItemType> extends React.Component<SelectProps<T>> {
     render() {
-        const { multiple, onChange, value, isEqual, ...rest } = this.props
+        const { multiple, onChange, value, itemIsEqual, ...rest } = this.props
         let checkedValue = value
 
         if (multiple && value && !Array.isArray(value)) {
@@ -42,7 +42,7 @@ export class Select<T = DefaultItemType> extends React.Component<SelectProps<T>>
                     {...rest}
                     value={checkedValue as T[]}
                     onChange={onChange}
-                    isEqual={isEqual}
+                    itemIsEqual={itemIsEqual}
                 />
             )
         } else {

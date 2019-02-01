@@ -21,7 +21,7 @@ const createSelect = (props: Partial<SelectMultiProps> = {}) => {
             items={items}
             itemToString={item => item.label}
             placeholder='Select a value...'
-            isEqual={(a, b) => a.value === b.value}
+            itemIsEqual={(a, b) => a.value === b.value}
             {...props}
         />
     )
