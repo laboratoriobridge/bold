@@ -5,7 +5,7 @@ import { TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 
 export type Weight = 'normal' | 'bold'
-export type TextTag = 'span' | 'p' | 'div' | 'label'
+export type TextTag = 'span' | 'p'
 export type FontStyle = 'normal' | 'italic'
 
 export interface TextProps {
@@ -30,6 +30,6 @@ export const Text = (props: TextProps) => {
     }))
 
     return React.createElement(tag, {
-        className: css(classes.root, style),
+        className: css(classes[tag], classes.root, style),
     }, props.children)
 }

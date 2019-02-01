@@ -6,33 +6,10 @@ import { TextColor } from '../../../../styles'
 
 import { FontStyle, Text, TextTag, Weight } from './Text'
 
-const weights: { [key in Weight] } = {
-    'normal': 'normal',
-    'bold': 'bold',
-}
-
-const tags: { [key in TextTag] } = {
-    'span': 'span',
-    'label': 'label',
-    'div': 'div',
-    'p': 'p',
-}
-
-const fontStyles: { [key in FontStyle] } = {
-    'normal': 'normal',
-    'italic': 'italic',
-}
-
-export const colors: { [key in TextColor] } = {
-    'normal': 'normal',
-    'secondary': 'secondary',
-    'disabled': 'disabled',
-    'primary': 'primary',
-    'danger': 'danger',
-    'info': 'info',
-    'alert': 'alert',
-    'success': 'success',
-}
+const weights: Weight[] = ['normal', 'bold']
+const tags: TextTag[] = ['span', 'p']
+const fontStyles: FontStyle[] = ['normal', 'italic']
+export const colors: TextColor[] = ['normal', 'secondary', 'disabled', 'primary', 'danger', 'info', 'alert', 'success']
 
 storiesOf('Textual', module)
     .add('Text', () => (
