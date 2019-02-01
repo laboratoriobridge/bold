@@ -13,10 +13,16 @@ const items: DefaultItemType[] = [
     { value: 5, label: 'Pear' },
 ]
 
+// Mock console.warn to get rid of default isEqual prop warning
+let consoleWarnSpy = null
+beforeEach(() => consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => null))
+
 const createComponent = (props: Partial<MultiDownshiftProps<DefaultItemType>> = {}) => {
+    // tslint:disable jsx-no-lambda
     return (
         <MultiDownshift
             items={items}
+            children={jest.fn()}
             {...props}
         />
     )
@@ -53,13 +59,13 @@ describe('isSelected', () => {
         expect(isSelected(items[0])).toBeTruthy()
         expect(isSelected(items[1])).toBeFalsy()
     })
-    it('should compare items by equality, not reference', () => {
+    it('should compare items using the provided isEqual prop', () => {
         const children = jest.fn()
-        render(createComponent({ selectedItems: [items[0]], children }))
+        render(createComponent({ selectedItems: [items[0]], children, isEqual: (a, b) => a.value === b.value }))
         const isSelected = children.mock.calls[0][0].isSelected
         expect(isSelected({ value: 1, label: 'Apple' })).toBeTruthy()
         expect(isSelected({ value: 2, label: 'Apple' })).toBeFalsy()
-        expect(isSelected({ value: 1, label: 'Banana' })).toBeFalsy()
+        expect(isSelected({ value: 1, label: 'Banana' })).toBeTruthy()
         expect(isSelected({ value: 2, label: 'Banana' })).toBeFalsy()
     })
 })
@@ -115,5 +121,35 @@ describe('removeItem', () => {
         const removeItem = children.mock.calls[0][0].removeItem
         removeItem(items[0])
         expect(handleChange).toHaveBeenLastCalledWith([], expect.anything())
+    })
+})
+
+describe('isEqual', () => {
+    it('should allow override of internal isEqual comparision by prop', () => {
+        const children = jest.fn()
+        const copyItems = items.map(item => ({ ...item, __typename: 'Fruit' }))
+
+        const { rerender } = render(createComponent({ children, selectedItems: [items[0], items[1]] }))
+        rerender(createComponent({
+            children,
+            selectedItems: [items[0], items[1]],
+            items: copyItems,
+            isEqual: (a, b) => a.value === b.value,
+        }))
+
+        expect(children).toHaveBeenCalledTimes(3)
+        const { isSelected, addItem, removeItem } = children.mock.calls[2][0]
+        expect(isSelected(copyItems[0])).toEqual(true)
+        expect(isSelected(copyItems[2])).toEqual(false)
+
+        addItem(copyItems[0])
+        removeItem(copyItems[1])
+        expect(children).toHaveBeenCalledTimes(4)
+        expect(children.mock.calls[3][0].selectedItems).toEqual([items[0]])
+    })
+    it('should emit a console warning when using the default isEqual prop', () => {
+        render(createComponent())
+        // Assert just first call (since it is called more than once for each downshift item)
+        expect(consoleWarnSpy.mock.calls[0]).toMatchSnapshot()
     })
 })

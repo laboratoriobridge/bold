@@ -1,8 +1,7 @@
 import * as emotion from 'emotion'
 import { configure } from 'enzyme'
 import * as Adapter from 'enzyme-adapter-react-16'
-import { createSerializer } from 'jest-emotion'
-import { createMatchers } from 'jest-emotion'
+import { createMatchers, createSerializer } from 'jest-emotion'
 import { cleanup } from 'react-testing-library'
 
 configure({ adapter: new Adapter() })
