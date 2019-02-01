@@ -9,6 +9,8 @@ export interface ThemeProviderProps {
     theme?: Theme
 }
 
+export const ThemeContext = React.createContext<Theme>(null)
+
 export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
     static defaultProps: Partial<ThemeProviderProps> = {
@@ -17,14 +19,16 @@ export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
 
     render() {
         return (
-            <EmotionThemeProvider theme={this.props.theme}>
-                <>
-                    <CssGlobal styles={normalizeCss} />
-                    <CssGlobal styles={this.props.theme.global} />
+            <ThemeContext.Provider value={this.props.theme}>
+                <EmotionThemeProvider theme={this.props.theme}>
+                    <>
+                        <CssGlobal styles={normalizeCss} />
+                        <CssGlobal styles={this.props.theme.global} />
 
-                    {this.props.children}
-                </>
-            </EmotionThemeProvider>
+                        {this.props.children}
+                    </>
+                </EmotionThemeProvider>
+            </ThemeContext.Provider>
         )
     }
 }

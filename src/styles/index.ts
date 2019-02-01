@@ -1,11 +1,11 @@
-export * from './utils'
-export { withStyles, WithStylesProps, Styles } from './withStyles'
-
-export { ThemeProvider, ThemeProviderProps } from './theme/ThemeContext'
-export { CssGlobal, CssGlobalProps } from './theme/CssGlobal'
-export { createTheme, Theme, focusBoxShadow } from './theme/createTheme'
+export * from './hooks'
 export { createPallete, Pallete, TextColor } from './theme/createPallete'
+export { createTheme, focusBoxShadow, Theme } from './theme/createTheme'
 export { createTypography, Typography } from './theme/createTypography'
+export { CssGlobal, CssGlobalProps } from './theme/CssGlobal'
+export { ThemeProvider, ThemeProviderProps } from './theme/ThemeContext'
+export * from './utils'
+export { Styles, withStyles, WithStylesProps } from './withStyles'
 
 import * as palletes from './colors'
 
