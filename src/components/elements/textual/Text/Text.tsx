@@ -1,43 +1,35 @@
 import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { Styles, TextColor, withStyles, WithStylesProps } from '../../../../styles'
+import { TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 
 export type Weight = 'normal' | 'bold'
 export type TextTag = 'span' | 'p' | 'div' | 'label'
 export type FontStyle = 'normal' | 'italic'
 
-export interface TextProps extends WithStylesProps {
+export interface TextProps {
     color?: TextColor
     size?: number
     weight?: Weight
     tag?: TextTag
     fontStyle?: FontStyle
     style?: Interpolation
+    children: React.ReactNode
 }
 
-@withStyles
-export class Text extends React.PureComponent<TextProps> {
+export const Text = (props: TextProps) => {
+    const { tag = 'span', color, size, weight, fontStyle, style } = props
+    const { classes, css } = useStyles(theme => ({
+        root: {
+            color: color && getTextColor(theme, color),
+            fontSize: size && size + 'rem',
+            fontWeight: weight,
+            fontStyle,
+        },
+    }))
 
-    static defaultProps: Partial<TextProps> = {
-        tag: 'span',
-    }
-
-    render() {
-        const { css, theme, style, color, size, weight, fontStyle } = this.props
-        const styles: Styles = {
-            text: {
-                color: color && getTextColor(theme, color),
-                fontSize: size && size + 'rem',
-                fontWeight: weight,
-                fontStyle,
-            },
-        }
-
-        return React.createElement(this.props.tag, {
-            className: css(styles.text, style),
-        }, this.props.children)
-    }
-
+    return React.createElement(tag, {
+        className: css(classes.root, style),
+    }, props.children)
 }
