@@ -1,3 +1,4 @@
+import { checkA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 import { withOptions } from '@storybook/addon-options'
@@ -30,6 +31,7 @@ addDecorator(withInfo({
     },
   },
 }))
+addDecorator(checkA11y)
 addDecorator(withTheme())
 addDecorator(withKnobs())
 
