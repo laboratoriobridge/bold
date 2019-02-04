@@ -1,43 +1,58 @@
+import Downshift, { ControllerStateAndHelpers, DownshiftProps } from 'downshift'
 import * as React from 'react'
+import { Manager, Popper, Reference, ReferenceChildrenProps } from 'react-popper'
 
-import { Popper, PopperController, PopperProps } from '../Popper'
+import { Portal } from '../Portal'
+import { FadeTransition } from '../Transition/FadeTransition'
 
-import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
-
-export interface DropdownProps extends DropdownMenuProps {
-    renderTarget: PopperProps['renderTarget']
-    children: PopperProps['children']
-    closeOnOutsideClick?: PopperProps['closeOnOutsideClick']
-    placement?: PopperProps['placement']
-    offset?: PopperProps['offset']
+export interface DropdownProps extends DownshiftProps<any> {
+    renderTarget(renderProps: DropdownTargetRenderProps): React.ReactNode
+    children(renderProps: DropdownRenderProps): React.ReactNode
 }
 
-export class Dropdown extends React.PureComponent<DropdownProps> {
+export type DropdownRenderProps = ControllerStateAndHelpers<any>
+export type DropdownTargetRenderProps = ControllerStateAndHelpers<any> & ReferenceChildrenProps
 
-    static defaultProps: DropdownProps = {
-        offset: 0.25,
-        closeOnOutsideClick: true,
-        placement: 'bottom',
-        renderTarget: () => null,
-        children: () => null,
-    }
+export class Dropdown extends React.Component<DropdownProps> {
 
-    render() {
-        const { renderTarget, children, closeOnOutsideClick, placement, offset, ...rest } = this.props
+    public render() {
+        const { children, renderTarget, ...rest } = this.props
 
         return (
-            <Popper
-                renderTarget={renderTarget}
-                placement={placement}
-                offset={offset}
-                closeOnOutsideClick={closeOnOutsideClick}
-            >
-                {(ctrl: PopperController) => (
-                    <DropdownMenu {...rest}>
-                        {children(ctrl)}
-                    </DropdownMenu>
-                )}
-            </Popper>
+            <Downshift itemToString={this.itemToString} suppressRefError {...rest}>
+                {(downshift) => {
+                    return (
+                        <Manager>
+                            <Reference>
+                                {(refProps) => renderTarget({ ...downshift, ...refProps })}
+                            </Reference>
+                            <FadeTransition in={downshift.isOpen}>
+                                {({ className }) => (
+                                    downshift.isOpen && (
+                                        <Portal>
+                                            <Popper placement='bottom'>
+                                                {({ ref, style, placement }) => (
+                                                    <div
+                                                        ref={ref}
+                                                        className={className}
+                                                        style={style}
+                                                        data-placement={placement}
+                                                    >
+                                                        {children(downshift)}
+                                                    </div>
+                                                )}
+                                            </Popper>
+                                        </Portal>
+                                    )
+                                )}
+                            </FadeTransition>
+                        </Manager>
+                    )
+                }}
+            </Downshift>
         )
     }
+
+    itemToString = () => null
+
 }

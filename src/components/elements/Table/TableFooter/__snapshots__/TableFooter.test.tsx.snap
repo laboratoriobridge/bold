@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-24 {
+.emotion-12 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-23 {
+.emotion-11 {
   border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,13 +48,9 @@ exports[`renders correctly 1`] = `
   padding: 4px 1rem;
 }
 
-.emotion-15 {
+.emotion-3 {
   position: relative;
   margin-left: 0.5rem;
-}
-
-.emotion-3 {
-  display: inline-block;
 }
 
 .emotion-2 {
@@ -68,64 +64,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-13 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1050;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-12 {
-  font-weight: bold;
-  color: #2D343B;
-  white-space: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-  text-align: left;
-}
-
-.emotion-4 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-4:hover {
-  background: #F2F2F7;
-}
-
-.emotion-5 {
-  margin: 0;
-}
-
-.emotion-5 div {
-  display: block;
-}
-
-.emotion-5:first-child a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-5:last-child a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-22 {
+.emotion-10 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -137,7 +76,7 @@ exports[`renders correctly 1`] = `
   margin: 0;
 }
 
-.emotion-17 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -164,7 +103,7 @@ exports[`renders correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-17 > span {
+.emotion-5 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -177,33 +116,33 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-17 > span > :not(:last-child) {
+.emotion-5 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-17:not(:disabled):active {
+.emotion-5:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-17:focus {
+.emotion-5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-17:not(:disabled):hover {
+.emotion-5:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-16 {
+.emotion-4 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-19 {
+.emotion-7 {
   position: relative;
 }
 
-.emotion-18 {
+.emotion-6 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -220,42 +159,42 @@ exports[`renders correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-18::-webkit-input-placeholder {
+.emotion-6::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18::-moz-placeholder {
+.emotion-6::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18:-ms-input-placeholder {
+.emotion-6:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18::placeholder {
+.emotion-6::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18:disabled {
+.emotion-6:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-18:not(:disabled):focus {
+.emotion-6:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-21 {
+.emotion-9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -283,7 +222,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-21 > span {
+.emotion-9 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -296,25 +235,25 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-21 > span > :not(:last-child) {
+.emotion-9 > span > :not(:last-child) {
   margin-right: 0.5rem;
 }
 
-.emotion-21:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-21:focus {
+.emotion-9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-21:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
 <div
-  class="emotion-24"
+  class="emotion-12"
 >
   <span
     class="emotion-0"
@@ -326,91 +265,42 @@ exports[`renders correctly 1`] = `
     </span>
   </span>
   <div
-    class="emotion-23"
+    class="emotion-11"
   >
     <span>
       Mostrar:
       <span
-        class="emotion-15"
+        class="emotion-3"
       >
-        <div
-          class="emotion-3"
+        <a
+          aria-haspopup="true"
+          aria-label="open menu"
+          class="emotion-2"
+          data-toggle="true"
+          role="button"
+          type="button"
         >
-          <div
-            class="emotion-3"
+          10 
+          <span
+            class="emotion-1"
           >
-            <a
-              class="emotion-2"
-            >
-              10 
-              <span
-                class="emotion-1"
-              >
-                ▾
-              </span>
-            </a>
-          </div>
-          <div
-            class="emotion-13"
-            data-visible="false"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-          >
-            <ul
-              class="emotion-12"
-            >
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  10
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  30
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  50
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  100
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+            ▾
+          </span>
+        </a>
       </span>
     </span>
     <div
-      class="emotion-22"
+      class="emotion-10"
     >
       <button
-        class="emotion-17"
+        class="emotion-5"
         title="Página anterior"
         type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-16"
+            class="emotion-4"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
@@ -423,10 +313,10 @@ exports[`renders correctly 1`] = `
         </span>
       </button>
       <div
-        class="emotion-19"
+        class="emotion-7"
       >
         <input
-          class="emotion-18"
+          class="emotion-6"
           type="text"
           value="2"
         />
@@ -435,14 +325,14 @@ exports[`renders correctly 1`] = `
         de 10
       </span>
       <button
-        class="emotion-21"
+        class="emotion-9"
         title="Próxima página"
         type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-16"
+            class="emotion-4"
             height="1em"
             role="img"
             viewBox="0 0 24 24"

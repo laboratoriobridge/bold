@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept style prop 1`] = `
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #2D343B;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+  color: red;
+}
+
+<div
+  class="emotion-0"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+</div>
+`;
+
+exports[`should render the big version when text length is > 60 1`] = `
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #2D343B;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: left;
+  padding: 1rem;
+  max-width: 277px;
+}
+
+<div
+  class="emotion-0"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non urna sit amet eros finibus auctor ut vitae magna. Donec mollis eu velit nec ullamcorper.
+</div>
+`;
+
+exports[`should render the small version when text length is <= 60 1`] = `
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #2D343B;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+<div
+  class="emotion-0"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+</div>
+`;

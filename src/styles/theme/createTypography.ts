@@ -9,7 +9,7 @@ export interface Typography {
     fontFamily: string
     lineHeight: string
     sizes: {
-        html: FontSize
+        html: number
         text: FontSize
         button: FontSize
     }

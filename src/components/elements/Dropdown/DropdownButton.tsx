@@ -2,12 +2,11 @@ import * as React from 'react'
 
 import { Omit } from '../../../util/types'
 import { Button, ButtonProps } from '../Button'
-import { PopperController } from '../Popper'
 
-import { Dropdown } from './Dropdown'
-import { DropdownItem, DropdownItemProps } from './DropdownMenu'
+import { Dropdown, DropdownTargetRenderProps } from './Dropdown'
+import { DropdownItem, DropdownItemProps, DropdownMenu } from './DropdownMenu'
 
-export type DropdownItemConfig = Omit<DropdownButtonItemProps, 'controller'>
+export type DropdownItemConfig = Omit<DropdownButtonItemProps, 'closeMenu'>
 
 export interface DropdownButtonProps extends ButtonProps {
     items: DropdownItemConfig[]
@@ -18,29 +17,45 @@ export class DropdownButton extends React.PureComponent<DropdownButtonProps> {
     render() {
         const { items } = this.props
         return (
-            <Dropdown renderTarget={this.renderButton}>
-                {(ctrl: PopperController) =>
-                    items.map((item, idx) => <DropdownButtonItem key={idx} controller={ctrl} {...item} />)
-                }
+            <Dropdown renderTarget={this.renderButton} onChange={this.handleChange}>
+                {({ closeMenu, highlightedIndex, getMenuProps, getItemProps }) => (
+                    <DropdownMenu highlightedIndex={highlightedIndex} {...getMenuProps()}>
+                        {items.map((item, idx) => (
+                            <DropdownButtonItem
+                                key={idx}
+                                closeMenu={closeMenu}
+                                {...getItemProps({ item })}
+                                highlighted={highlightedIndex === idx}
+                                {...item}
+                            />
+                        ))}
+                    </DropdownMenu>
+                )}
             </Dropdown>
         )
     }
 
-    renderButton = (ctrl: PopperController) => {
+    renderButton = ({ ref, getRootProps, getToggleButtonProps }: DropdownTargetRenderProps) => {
         const { items, ...other } = this.props
         return (
             <Button
-                onClick={ctrl.toggle}
+                innerRef={ref}
+                {...getRootProps()}
+                {...getToggleButtonProps()}
                 {...other}
             />
         )
+    }
+
+    handleChange = (item: DropdownItemConfig) => {
+        item.onClick()
     }
 }
 
 export interface DropdownButtonItemProps extends DropdownItemProps {
     content: React.ReactNode
-    controller: PopperController
     autoClose?: boolean
+    closeMenu?(): void
 }
 
 export class DropdownButtonItem extends React.PureComponent<DropdownButtonItemProps> {
@@ -51,16 +66,16 @@ export class DropdownButtonItem extends React.PureComponent<DropdownButtonItemPr
     }
 
     render() {
-        const { content, controller, autoClose, ...other } = this.props
+        const { content, closeMenu, autoClose, ...other } = this.props
         return <DropdownItem {...other} onClick={this.handleClick}>{content}</DropdownItem>
     }
 
-    handleClick = (e) => {
-        const { controller, onClick, autoClose } = this.props
+    handleClick = () => {
+        const { onClick, autoClose, closeMenu } = this.props
         if (autoClose) {
-            controller.hide()
+            closeMenu()
         }
-        onClick && onClick(e)
+        onClick && onClick()
     }
 
 }

@@ -1,41 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DropdownButton should render correctly 1`] = `
-.emotion-3 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-3:hover {
-  background: #F2F2F7;
-}
-
-.emotion-4 {
-  margin: 0;
-}
-
-.emotion-4 div {
-  display: block;
-}
-
-.emotion-4:first-child a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-4:last-child a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-2 {
-  display: inline-block;
-}
-
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -98,97 +63,37 @@ exports[`DropdownButton should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-8 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1050;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-7 {
-  font-weight: bold;
-  color: #2D343B;
-  white-space: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-  text-align: left;
-}
-
-<div
-  class="emotion-2"
+<button
+  aria-expanded="false"
+  aria-haspopup="true"
+  aria-label="open menu"
+  aria-labelledby="downshift-0-label"
+  class="emotion-1"
+  data-toggle="true"
+  role="button"
+  type="button"
 >
-  <div
-    class="emotion-2"
-  >
-    <button
-      class="emotion-1"
-      type="button"
+  <span>
+    <svg
+      aria-hidden="true"
+      class="emotion-0"
+      height="1em"
+      role="img"
+      viewBox="0 0 24 24"
+      width="1em"
     >
-      <span>
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <defs>
-            <path
-              d="M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z"
-              id="dots_svg__a"
-            />
-          </defs>
-          <use
-            href="#dots_svg__a"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-  <div
-    class="emotion-8"
-    data-visible="false"
-    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
-  >
-    <ul
-      class="emotion-7"
-    >
-      <li
-        class="emotion-4"
-      >
-        <a
-          class="emotion-3"
-        >
-          <span>
-            Item #1
-          </span>
-        </a>
-      </li>
-      <li
-        class="emotion-4"
-      >
-        <a
-          class="emotion-3"
-        >
-          <span>
-            Item #2
-          </span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+      <defs>
+        <path
+          d="M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z"
+          id="dots_svg__a"
+        />
+      </defs>
+      <use
+        href="#dots_svg__a"
+      />
+    </svg>
+  </span>
+</button>
 `;
 
 exports[`DropdownButtonItem should render correctly 1`] = `
