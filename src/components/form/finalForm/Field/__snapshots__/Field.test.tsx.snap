@@ -19,12 +19,11 @@ exports[`render should render correctly 1`] = `
 >
   <label
     class="emotion-1"
-    for="field1"
   >
     Field #1
     <span
-      aria-label="Campo obrigatório"
       class="emotion-0"
+      title="Campo obrigatório"
     >
       *
     </span>

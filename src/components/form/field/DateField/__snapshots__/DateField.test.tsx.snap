@@ -321,7 +321,6 @@ exports[`should be rendered correctly 1`] = `
 >
   <label
     class="emotion-0"
-    for="test"
   >
     Date test
   </label>

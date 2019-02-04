@@ -31,7 +31,7 @@ export class FormLabel extends React.PureComponent<FormLabelProps> {
                 {label}
 
                 {required &&
-                    <span aria-label='Campo obrigatório' className={css(styles.marker)}>&#42;</span>
+                    <span title='Campo obrigatório' className={css(styles.marker)}>&#42;</span>
                 }
             </label>
         )

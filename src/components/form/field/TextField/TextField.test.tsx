@@ -13,6 +13,7 @@ it('should be rendered correctly', () => {
 it('should not include field props on rendered HTML', () => {
     const wrapper = render(withForm(
         <TextField
+            id='test'
             name='test'
             label='Test'
             hasWrapper={true}

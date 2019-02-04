@@ -146,8 +146,8 @@ exports[`should not include field props on rendered HTML 1`] = `
   >
     Test
     <span
-      aria-label="Campo obrigatório"
       class="emotion-0"
+      title="Campo obrigatório"
     >
       *
     </span>
@@ -157,6 +157,7 @@ exports[`should not include field props on rendered HTML 1`] = `
   >
     <input
       class="emotion-2"
+      id="test"
       name="test"
       required=""
       type="text"

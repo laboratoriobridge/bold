@@ -4,16 +4,17 @@ import { FormError, FormErrorProps } from '../FormError'
 import { FormLabel, FormLabelProps } from '../FormLabel'
 
 export interface FieldWrapperProps {
+    id?: string
+    name?: string
     label?: FormLabelProps['label']
     required?: FormLabelProps['required']
     error?: FormErrorProps['error']
-    name?: string
 }
 
 export class FieldWrapper extends React.PureComponent<FieldWrapperProps> {
 
     render() {
-        const { children, name, error, label, required } = this.props
+        const { children, id, name, error, label, required } = this.props
         const styles = {
             label: {
                 display: 'block',
@@ -27,7 +28,7 @@ export class FieldWrapper extends React.PureComponent<FieldWrapperProps> {
         return (
             <div data-name={name}>
                 {label &&
-                    <FormLabel required={required} style={styles.label} htmlFor={name} label={label} />
+                    <FormLabel required={required} style={styles.label} htmlFor={id} label={label} />
                 }
                 {children}
                 {error &&

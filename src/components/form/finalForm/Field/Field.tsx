@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProps as FinalRenderProps, ReactContext as ReactFinalFormContext, withReactFinalForm } from 'react-final-form'
 
 import { Meta } from '../../../../metaPath/metaPath'
-import { Omit } from '../../../../util/types'
+import { Omit } from '../../../../util'
 import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
 
 import { getFieldError } from './util'
@@ -91,8 +91,9 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
         if (this.props.hasWrapper) {
             return (
                 <FieldWrapper
+                    id={this.props.id}
+                    name={this.getFieldName()}
                     error={getFieldError(props)}
-                    name={props.input.name}
                     label={this.props.label}
                     required={this.props.required}
                 >

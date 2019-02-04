@@ -11,19 +11,28 @@ storiesOf('Form/TextField', module)
     .addDecorator(withForm())
     .add('default', () => (
         <TextField
-            disabled={boolean('disabled', false)}
+            id='nome'
             name='nome'
             label='Nome'
             placeholder='Nome'
+            disabled={boolean('disabled', false)}
             onChange={action('changed')}
             required
         />
     ))
-    .add('password', () =>
-        <TextField name='password' label='Password' placeholder='Type your password...' type='password' required />
-    )
+    .add('password', () => (
+        <TextField
+            id='password'
+            name='password'
+            label='Password'
+            placeholder='Type your password...'
+            type='password'
+            required
+        />
+    ))
     .add('with icon', () => (
         <TextField
+            id='iconized'
             name='iconized'
             label='Input with icon'
             icon='zoomOutline'

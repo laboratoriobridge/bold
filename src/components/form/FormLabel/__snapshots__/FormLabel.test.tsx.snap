@@ -41,8 +41,8 @@ exports[`should render correctly 2`] = `
 >
   Label
   <span
-    aria-label="Campo obrigatório"
     class="emotion-0"
+    title="Campo obrigatório"
   >
     *
   </span>

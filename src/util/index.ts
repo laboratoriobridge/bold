@@ -1,5 +1,5 @@
-export * from './types'
 export * from './Observable'
+export * from './types'
 
 import _isEmpty = require('lodash/isEmpty')
 import _isEqual = require('lodash/isEqual')
@@ -11,6 +11,9 @@ export const isEqual = _isEqual
 export const merge = _merge
 export const some = _some
 
+/**
+ * Check whether the object is a promise.
+ */
 export const isPromise = (obj: any): obj is Promise<any> => {
     return obj && typeof obj.then === 'function'
 }

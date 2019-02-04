@@ -65,7 +65,6 @@ exports[`render correctly 1`] = `
 >
   <label
     class="emotion-0"
-    for="test"
   >
     Mask test
   </label>

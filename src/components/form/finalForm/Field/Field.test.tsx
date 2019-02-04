@@ -9,6 +9,11 @@ import { FieldWrapper } from '../../FieldWrapper'
 
 import { Field, FieldCmp, FieldProps, RenderProps } from './Field'
 
+interface FormType {
+    id: number
+    name: string
+}
+
 const input = jest.fn((props: RenderProps) => <input {...props.input} />)
 
 const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
@@ -48,11 +53,6 @@ describe('convert', () => {
         expect(fieldState.data).toEqual({ convert })
     })
 })
-
-interface FormType {
-    id: number
-    name: string
-}
 
 describe('meta', () => {
     it('should work normally with metaPath', () => {
