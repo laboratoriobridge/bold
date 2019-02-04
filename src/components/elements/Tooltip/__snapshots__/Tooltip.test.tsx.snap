@@ -1,20 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tooltip should accept PopperFocus props 1`] = `
-Array [
-  .emotion-0 {
-  display: inline-block;
-}
-
-<div
-    class="emotion-0"
-    data-show="false"
-  >
+exports[`should render correctly 1`] = `
+<body>
+  <div>
+    <div
+      id="portal-root"
+    />
+  </div>
+  <div>
     <span>
-      Testing PopperFocus props
+      Testing
     </span>
-  </div>,
-  .emotion-0 {
+  </div>
+</body>
+`;
+
+exports[`should render correctly 2`] = `
+<body>
+  <div>
+    <div
+      id="portal-root"
+    >
+      .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
   background: #2D343B;
@@ -26,195 +33,32 @@ Array [
 }
 
 .emotion-1 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1050;
-  padding: 2rem;
-  visibility: hidden;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
   opacity: 0;
+  opacity: 1;
 }
 
 <div
-    class="emotion-1"
-    data-visible="false"
-    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
-  >
-    <div
-      class="emotion-0"
-    >
-      Tooltip text
+        class="emotion-1"
+        id="tooltip-abc"
+        role="tooltip"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+      >
+        <div
+          class="emotion-0"
+        >
+          Tooltip text
+        </div>
+      </div>
     </div>
-  </div>,
-]
-`;
-
-exports[`Tooltip should accept style prop 1`] = `
-Array [
-  .emotion-0 {
-  display: inline-block;
-}
-
-<div
-    class="emotion-0"
-    data-show="false"
-  >
-    <span>
+  </div>
+  <div>
+    <span
+      aria-describedby="tooltip-abc"
+    >
       Testing
     </span>
-  </div>,
-  .emotion-1 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1050;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #2D343B;
-  color: #fff;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0.5rem;
-  background: red;
-}
-
-<div
-    class="emotion-1"
-    data-visible="false"
-    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
-  >
-    <div
-      class="emotion-0"
-    >
-      Tooltip text
-    </div>
-  </div>,
-]
-`;
-
-exports[`Tooltip should not render tooltip if text is empty 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
-<div
-  class="emotion-0"
-  data-show="false"
->
-  <span>
-    Testing
-  </span>
-</div>
-`;
-
-exports[`Tooltip should render correctly 1`] = `
-Array [
-  .emotion-0 {
-  display: inline-block;
-}
-
-<div
-    class="emotion-0"
-    data-show="false"
-  >
-    <span>
-      Testing
-    </span>
-  </div>,
-  .emotion-1 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1050;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #2D343B;
-  color: #fff;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-<div
-    class="emotion-1"
-    data-visible="false"
-    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
-  >
-    <div
-      class="emotion-0"
-    >
-      Tooltip text
-    </div>
-  </div>,
-]
-`;
-
-exports[`TooltipBase should accept style prop 1`] = `
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #2D343B;
-  color: #fff;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0.5rem;
-  color: red;
-}
-
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-</div>
-`;
-
-exports[`TooltipBase should render the big version when text length is > 60 1`] = `
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #2D343B;
-  color: #fff;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: left;
-  padding: 1rem;
-  max-width: 277px;
-}
-
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non urna sit amet eros finibus auctor ut vitae magna. Donec mollis eu velit nec ullamcorper.
-</div>
-`;
-
-exports[`TooltipBase should render the small version when text length is <= 60 1`] = `
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #2D343B;
-  color: #fff;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
-</div>
+  </div>
+</body>
 `;

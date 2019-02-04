@@ -14,6 +14,7 @@ export interface BaseButtonProps {
     onMouseLeave?: React.MouseEventHandler<any>
     tabIndex?: number
     title?: string
+    innerRef?: React.Ref<HTMLElement>
     onLoadingChange?(loading: boolean): void
     render?(props: any): React.ReactNode
 }
@@ -21,9 +22,9 @@ export interface BaseButtonProps {
 export class BaseButton extends React.Component<BaseButtonProps> {
 
     static defaultProps: BaseButtonProps = {
-        render: (props: any) => {
+        render: ({ innerRef, ...rest }: any) => {
             return (
-                <button type='button' {...props} />
+                <button type='button' ref={innerRef} {...rest} />
             )
         },
     }
