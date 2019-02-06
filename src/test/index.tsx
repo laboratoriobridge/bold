@@ -3,28 +3,11 @@ import MockAdapter from 'axios-mock-adapter'
 import { createMemoryHistory, MemoryHistory } from 'history'
 import * as React from 'react'
 import { Form } from 'react-final-form'
-import { Provider } from 'react-redux'
 import { Router } from 'react-router'
-import { applyMiddleware, combineReducers, compose, createStore, Middleware } from 'redux'
-import configureMockStore from 'redux-mock-store'
-import thunkMiddleware from 'redux-thunk'
 
-import { requesterReducer } from '../requester'
-import { createTheme, Theme, ThemeProvider } from '../styles/'
+import { createTheme, Theme, ThemeProvider } from '../styles'
 
 export const axiosMock = new MockAdapter(axios)
-
-const defaultReducers = combineReducers({
-    requester: requesterReducer,
-})
-
-const middlewares: Middleware[] = [thunkMiddleware]
-
-export const createTestStore = (initialState = {}, reducers: any = defaultReducers) => {
-    return createStore<{}, any, any, {}>(reducers, initialState, compose(applyMiddleware(...middlewares)))
-}
-
-export const mockStore = configureMockStore<any, any>(middlewares)
 
 /**
  * Wraps the component with emotion's <ThemeProvider>.
@@ -37,19 +20,6 @@ export const withTheme = (node: React.ReactElement<any>, theme: Theme = createTh
         <ThemeProvider theme={theme}>
             {node}
         </ThemeProvider>
-    )
-}
-
-/**
- * Wraps the component with react-redux's <Provider />
- *
- * @param node Component to be wrapped.
- */
-export const withRedux = (node: React.ReactElement<any>, store = createTestStore()) => {
-    return (
-        <Provider store={store}>
-            {node}
-        </Provider>
     )
 }
 

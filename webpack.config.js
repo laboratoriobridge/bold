@@ -38,7 +38,6 @@ module.exports = {
         'moment',
         'react',
         'react-final-form',
-        'react-redux',
         'react-router',
         'react-router-dom',
         'tslint-react',

@@ -860,7 +860,7 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5", "@babel/runtime@^7.2.0":
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.1.2", "@babel/runtime@^7.1.5":
   version "7.2.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@babel/runtime/-/runtime-7.2.0.tgz#b03e42eeddf5898e00646e4c840fa07ba8dcad7f"
   integrity sha512-oouEibCbHMVdZSDlJBO6bZmID/zA/G/Qx3H1d3rSNPTD+L8UNKvCat7aKWSJ74zYbm5zWGh0GQN0hKj8zYFTCg==
@@ -1573,14 +1573,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@6.0.12":
-  version "6.0.12"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-redux/-/react-redux-6.0.12.tgz#f3e9a400b8d40db43ffd8949ce14db4aa17a53ce"
-  integrity sha512-fvcpm7cfW/JMflRdZgegCVbSGYt/hyEWQKriesaLZDRDjBGKQsAiui08VCQg5lBpocPmulVGKFhICtOAcMUPOQ==
-  dependencies:
-    "@types/react" "*"
-    redux "^4.0.0"
-
 "@types/react-router-dom@4.3.1":
   version "4.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/react-router-dom/-/react-router-dom-4.3.1.tgz#71fe2918f8f60474a891520def40a63997dafe04"
@@ -1619,13 +1611,6 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
-
-"@types/redux-mock-store@1.0.0":
-  version "1.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/@types/redux-mock-store/-/redux-mock-store-1.0.0.tgz#e06bad2b4ca004bdd371f432c3e48a92c1857ed9"
-  integrity sha512-7+H3+O8VX4Mx2HNdDLP1MSNoWp+FXfq3HDGc08kY5vxyuml7OAudO4CAQFsKsDvbU5spApJMZ6buEi/c3hKjtQ==
-  dependencies:
-    redux "^4.0.0"
 
 "@types/storybook__addon-a11y@3.3.1":
   version "3.3.1"
@@ -5381,7 +5366,7 @@ hoist-non-react-statics@1.x.x, hoist-non-react-statics@^1.2.0:
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hoist-non-react-statics/-/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
   integrity sha1-qkSM8JhtVcxAdzsXF0t90GbLfPs=
 
-hoist-non-react-statics@3.2.1, hoist-non-react-statics@^3.2.1:
+hoist-non-react-statics@3.2.1:
   version "3.2.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/hoist-non-react-statics/-/hoist-non-react-statics-3.2.1.tgz#c09c0555c84b38a7ede6912b61efddafd6e75e1e"
   integrity sha512-TFsu3TV3YLY+zFTZDrN8L2DTFanObwmBLpWvJs1qfUuEQ5bTAdFcwfx2T/bsCXfM9QHSLvjfP+nihEl0yvozxw==
@@ -8490,7 +8475,7 @@ react-inspector@^2.3.0:
     is-dom "^1.0.9"
     prop-types "^15.6.1"
 
-react-is@^16.3.2, react-is@^16.5.2, react-is@^16.6.1, react-is@^16.6.3, react-is@^16.7.0:
+react-is@^16.3.2, react-is@^16.5.2, react-is@^16.6.1, react-is@^16.7.0:
   version "16.7.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-is/-/react-is-16.7.0.tgz#c1bd21c64f1f1364c6f70695ec02d69392f41bfa"
   integrity sha512-Z0VRQdF4NPDoI0tsXVMLkJLiwEBa+RP66g0xDHxgxysxSoCUccSten4RTF/UFvZF1dZvZ9Zu1sx+MDXwcOR34g==
@@ -8521,18 +8506,6 @@ react-popper@1.3.2:
     prop-types "^15.6.1"
     typed-styles "^0.0.7"
     warning "^4.0.2"
-
-react-redux@6.0.0:
-  version "6.0.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-redux/-/react-redux-6.0.0.tgz#09e86eeed5febb98e9442458ad2970c8f1a173ef"
-  integrity sha512-EmbC3uLl60pw2VqSSkj6HpZ6jTk12RMrwXMBdYtM6niq0MdEaRq9KYCwpJflkOZj349BLGQm1MI/JO1W96kLWQ==
-  dependencies:
-    "@babel/runtime" "^7.2.0"
-    hoist-non-react-statics "^3.2.1"
-    invariant "^2.2.4"
-    loose-envify "^1.4.0"
-    prop-types "^15.6.2"
-    react-is "^16.6.3"
 
 react-router-dom@4.3.1:
   version "4.3.1"
@@ -8757,19 +8730,7 @@ recursive-readdir@2.2.2, recursive-readdir@^2.2.2:
   dependencies:
     minimatch "3.0.4"
 
-redux-mock-store@1.5.3:
-  version "1.5.3"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux-mock-store/-/redux-mock-store-1.5.3.tgz#1f10528949b7ce8056c2532624f7cafa98576c6d"
-  integrity sha512-ryhkkb/4D4CUGpAV2ln1GOY/uh51aczjcRz9k2L2bPx/Xja3c5pSGJJPyR25GNVRXtKIExScdAgFdiXp68GmJA==
-  dependencies:
-    lodash.isplainobject "^4.0.6"
-
-redux-thunk@2.3.0:
-  version "2.3.0"
-  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
-  integrity sha512-km6dclyFnmcvxhAcrQV2AkZmPQjzPDjgVlQtR0EQjxZPyJ0BnMf3in1ryuR8A2qU0HldVRfxYXbFSKlI3N7Slw==
-
-redux@4.0.1, redux@^4.0.0, redux@^4.0.1:
+redux@^4.0.1:
   version "4.0.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
   integrity sha512-R7bAtSkk7nY6O/OYMVR9RiBI+XghjF9rlbl5806HJbQph0LJVHZrU5oaO4q70eUKiqMRqm4y07KLTlMZ2BlVmg==
