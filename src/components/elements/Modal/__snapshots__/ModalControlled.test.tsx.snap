@@ -18,7 +18,7 @@ exports[`ModalControlled should render correcly 1`] = `
   transform: translate(-50%,-50%);
   width: 100%;
   pointer-events: none;
-  z-index: 1040;
+  z-index: 1100;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -174,7 +174,7 @@ exports[`ModalControlled should render correcly 1`] = `
 
 .emotion-7 {
   position: fixed;
-  z-index: 1030;
+  z-index: 1050;
   top: 0;
   left: 0;
   bottom: 0;
@@ -247,7 +247,7 @@ exports[`ModalControlled should render correcly 2`] = `
   transform: translate(-50%,-50%);
   width: 100%;
   pointer-events: none;
-  z-index: 1040;
+  z-index: 1100;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -403,7 +403,7 @@ exports[`ModalControlled should render correcly 2`] = `
 
 .emotion-7 {
   position: fixed;
-  z-index: 1030;
+  z-index: 1050;
   top: 0;
   left: 0;
   bottom: 0;

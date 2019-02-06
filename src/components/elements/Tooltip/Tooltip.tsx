@@ -84,7 +84,10 @@ export const Tooltip = (props: TooltipProps) => {
                                             ref={ref}
                                             className={className}
                                             role='tooltip'
-                                            style={style}
+                                            style={{
+                                                ...style,
+                                                zIndex: theme.zIndex.tooltip,
+                                            }}
                                             data-placement={placement}
                                         >
                                             <TooltipPopper text={text} style={externalStyle} />

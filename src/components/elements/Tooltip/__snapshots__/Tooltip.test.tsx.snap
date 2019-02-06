@@ -43,7 +43,7 @@ exports[`should render correctly 2`] = `
         class="emotion-1"
         id="tooltip-abc"
         role="tooltip"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1400;"
       >
         <div
           class="emotion-0"

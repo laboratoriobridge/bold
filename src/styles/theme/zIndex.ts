@@ -1,22 +1,15 @@
 export interface ZIndex {
-    /**
-     * Modal backdrop
-     */
     modalBackdrop: number
-
-    /**
-     * Modal container
-     */
     modalContainer: number
-
-    /**
-     * Popper items (Tooltip, Dropdown, Popper and PopperFocus)
-     */
-    overlays: number
+    popper: number
+    dropdown: number
+    tooltip: number
 }
 
 export const zIndex: ZIndex = {
-    modalBackdrop: 1030,
-    modalContainer: 1040,
-    overlays: 1050,
+    modalBackdrop: 1050,
+    modalContainer: 1100,
+    popper: 1200,
+    dropdown: 1300,
+    tooltip: 1400,
 }
