@@ -16,7 +16,7 @@ export interface TooltipProps extends Omit<PopperProps, 'children'> {
     style?: Interpolation
     offset?: number
     target?: Element
-    children: React.ReactNode
+    children: React.ReactElement<any>
 }
 
 export interface TooltipState {

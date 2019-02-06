@@ -9,7 +9,7 @@ exports[`multiple should warn when value is NOT an array 1`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": null,
     },
   ],
@@ -25,7 +25,7 @@ exports[`single should warn when value is an array 1`] = `
   ],
   "results": Array [
     Object {
-      "isThrow": false,
+      "type": "return",
       "value": null,
     },
   ],
