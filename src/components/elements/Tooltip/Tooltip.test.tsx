@@ -4,19 +4,20 @@ import { fireEvent, render } from 'react-testing-library'
 import { withTheme } from '../../../test'
 import * as stringUtils from '../../../util/string'
 
-import { Tooltip } from './Tooltip'
+import { Tooltip, TooltipProps } from './Tooltip'
 
 (stringUtils as any).randomStr = jest.fn(() => 'abc')
 
 beforeEach(() => render(<div id='portal-root' />))
 
-const createComponent = () => {
+const createComponent = (props: Partial<TooltipProps> = {}) => {
     return withTheme(
         <Tooltip
             text='Tooltip text'
             offset={2}
             placement='bottom-start'
             target={document.getElementById('portal-root')}
+            {...props}
         >
             <span>Testing</span>
         </Tooltip>
@@ -29,6 +30,14 @@ it('should render correctly', () => {
 
     fireEvent.focus(getByText('Testing'))
     expect(document.body).toMatchSnapshot()
+})
+
+it('should not render tooltip if text if null or empty', () => {
+    const { getByText } = render(createComponent({ text: '' }))
+    expect(document.getElementById('portal-root').innerHTML).toEqual('')
+
+    fireEvent.focus(getByText('Testing'))
+    expect(document.getElementById('portal-root').innerHTML).toEqual('')
 })
 
 it('should show tooltip when mouse enters component', () => {

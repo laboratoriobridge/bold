@@ -67,33 +67,35 @@ export const Tooltip = (props: TooltipProps) => {
                     </RootRef>
                 )}
             </Reference>
-            <FadeTransition in={visible}>
-                {({ className }) => (
-                    visible && (
-                        <Portal target={target}>
-                            <Popper
-                                modifiers={{
-                                    offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
-                                }}
-                                {...rest}
-                            >
-                                {({ ref, style, placement }) => (
-                                    <div
-                                        id={tooltipIdRef.current}
-                                        ref={ref}
-                                        className={className}
-                                        role='tooltip'
-                                        style={style}
-                                        data-placement={placement}
-                                    >
-                                        <TooltipPopper text={text} style={externalStyle} />
-                                    </div>
-                                )}
-                            </Popper>
-                        </Portal>
-                    )
-                )}
-            </FadeTransition>
+            {text &&
+                <FadeTransition in={visible}>
+                    {({ className }) => (
+                        visible && (
+                            <Portal target={target}>
+                                <Popper
+                                    modifiers={{
+                                        offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+                                    }}
+                                    {...rest}
+                                >
+                                    {({ ref, style, placement }) => (
+                                        <div
+                                            id={tooltipIdRef.current}
+                                            ref={ref}
+                                            className={className}
+                                            role='tooltip'
+                                            style={style}
+                                            data-placement={placement}
+                                        >
+                                            <TooltipPopper text={text} style={externalStyle} />
+                                        </div>
+                                    )}
+                                </Popper>
+                            </Portal>
+                        )
+                    )}
+                </FadeTransition>
+            }
         </Manager>
     )
 }
