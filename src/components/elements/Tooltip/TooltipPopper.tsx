@@ -33,7 +33,7 @@ export class TooltipPopper extends React.PureComponent<TooltipPopperProps> {
             },
         }
 
-        const size = text.length > 60 ? 'big' : 'small'
+        const size = text && text.length > 60 ? 'big' : 'small'
 
         return (
             <div className={css(styles.base, styles[size], style)}>{text}</div>
