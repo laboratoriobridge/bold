@@ -31,7 +31,6 @@ module.exports = {
         new CheckerPlugin(),
     ],
     externals: [
-        'axios',
         'emotion',
         'final-form',
         'history',

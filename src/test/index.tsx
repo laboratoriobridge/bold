@@ -1,13 +1,9 @@
-import axios from 'axios'
-import MockAdapter from 'axios-mock-adapter'
 import { createMemoryHistory, MemoryHistory } from 'history'
 import * as React from 'react'
 import { Form } from 'react-final-form'
 import { Router } from 'react-router'
 
 import { createTheme, Theme, ThemeProvider } from '../styles'
-
-export const axiosMock = new MockAdapter(axios)
 
 /**
  * Wraps the component with emotion's <ThemeProvider>.
