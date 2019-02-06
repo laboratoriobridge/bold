@@ -36,6 +36,7 @@ module.exports = {
         'history',
         'moment',
         'react',
+        'react-dom',
         'react-final-form',
         'react-router',
         'react-router-dom',
