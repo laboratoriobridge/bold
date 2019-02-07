@@ -6,7 +6,7 @@ module.exports = {
         'js',
         'jsx',
     ],
-    setupTestFrameworkScriptFile: '<rootDir>/src/test/setupTests.ts',
+    setupFilesAfterEnv: ['<rootDir>/src/test/setupTests.ts'],
     transform: {
         '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',
         '.(ts|tsx)': 'ts-jest',

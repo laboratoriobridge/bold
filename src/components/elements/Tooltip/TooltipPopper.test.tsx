@@ -1,17 +1,18 @@
-import { render } from 'enzyme'
 import * as React from 'react'
+import { render } from 'react-testing-library'
 
 import { withTheme } from '../../../test'
 
 import { TooltipPopper } from './TooltipPopper'
 
 it('should render the small version when text length is <= 60', () => {
-    expect(render(withTheme(
+    const { container } = render(withTheme(
         <TooltipPopper text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ' />
-    ))).toMatchSnapshot()
+    ))
+    expect(container).toMatchSnapshot()
 })
 it('should render the big version when text length is > 60', () => {
-    expect(render(withTheme(
+    const { container } = render(withTheme(
         <TooltipPopper
             text={
                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
@@ -19,10 +20,15 @@ it('should render the big version when text length is > 60', () => {
                 + 'Donec mollis eu velit nec ullamcorper.'
             }
         />
-    ))).toMatchSnapshot()
+    ))
+    expect(container).toMatchSnapshot()
 })
 it('should accept style prop', () => {
-    expect(render(withTheme(
+    const { container } = render(withTheme(
         <TooltipPopper text='Lorem ipsum dolor sit amet, consectetur adipiscing elit. In' style={{ color: 'red' }} />
-    ))).toMatchSnapshot()
+    ))
+    expect(container).toMatchSnapshot()
+})
+it('should accept empty text', () => {
+    render(withTheme(<TooltipPopper text={null} />))
 })

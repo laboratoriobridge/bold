@@ -84,7 +84,11 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
         }
         const renderProps = {
             ...props,
-            input: { ...props.input, onChange },
+            input: {
+                'aria-label': this.props.label,
+                ...props.input,
+                onChange,
+            },
             hasError: !!getFieldError(props),
         }
 

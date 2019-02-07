@@ -367,7 +367,7 @@ exports[`should render correctly when opened 1`] = `
   overflow-x: hidden;
   position: absolute;
   width: 100%;
-  z-index: 1050;
+  z-index: 1300;
 }
 
 .emotion-5 {

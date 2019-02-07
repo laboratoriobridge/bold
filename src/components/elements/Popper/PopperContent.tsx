@@ -21,7 +21,7 @@ export class PopperContent extends React.Component<PopperContentProps> {
         const styles: Styles = {
             content: {
                 transition: 'opacity .2s',
-                zIndex: theme.zIndex.overlays,
+                zIndex: theme.zIndex.popper,
                 padding: `${offset}rem`,
             },
             visible: {

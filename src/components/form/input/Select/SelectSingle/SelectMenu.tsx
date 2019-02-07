@@ -27,7 +27,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
             overflowX: 'hidden',
             position: 'absolute',
             width: '100%',
-            zIndex: theme.zIndex.overlays,
+            zIndex: theme.zIndex.dropdown,
         }
 
         return (

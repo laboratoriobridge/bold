@@ -156,6 +156,7 @@ exports[`should not include field props on rendered HTML 1`] = `
     class="emotion-3"
   >
     <input
+      aria-label="Test"
       class="emotion-2"
       id="test"
       name="test"

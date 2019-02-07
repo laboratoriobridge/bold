@@ -13,10 +13,12 @@ exports[`should accept style prop 1`] = `
   color: red;
 }
 
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+<div>
+  <div
+    class="emotion-0"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
+  </div>
 </div>
 `;
 
@@ -33,10 +35,12 @@ exports[`should render the big version when text length is > 60 1`] = `
   max-width: 277px;
 }
 
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non urna sit amet eros finibus auctor ut vitae magna. Donec mollis eu velit nec ullamcorper.
+<div>
+  <div
+    class="emotion-0"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non urna sit amet eros finibus auctor ut vitae magna. Donec mollis eu velit nec ullamcorper.
+  </div>
 </div>
 `;
 
@@ -52,9 +56,11 @@ exports[`should render the small version when text length is <= 60 1`] = `
   padding: 0.5rem;
 }
 
-<div
-  class="emotion-0"
->
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+<div>
+  <div
+    class="emotion-0"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In 
+  </div>
 </div>
 `;
