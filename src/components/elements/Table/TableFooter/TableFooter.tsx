@@ -119,7 +119,7 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
                             {options.map((option, idx) => (
                                 <DropdownItem
                                     key={idx}
-                                    onClick={this.handleClick(downshift, option)}
+                                    onSelected={this.handleClick(downshift, option)}
                                 >
                                     {option}
                                 </DropdownItem>

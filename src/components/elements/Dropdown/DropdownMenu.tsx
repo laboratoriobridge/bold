@@ -43,7 +43,7 @@ export interface DropdownItemProps extends WithStylesProps {
     disabled?: boolean
     type?: 'normal' | 'danger'
     highlighted?: boolean
-    onClick?(): any
+    onSelected?(): any
 }
 
 @withStyles
@@ -51,11 +51,11 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
     static defaultProps: DropdownItemProps = {
         disabled: false,
         type: 'normal',
-        onClick: () => null,
+        onSelected: () => null,
     }
 
     render() {
-        const { css, theme, onClick, type, disabled, hint, highlighted } = this.props
+        const { css, theme, onSelected, type, disabled, hint, highlighted } = this.props
         const styles: Styles = {
             item: {
                 margin: 0,
@@ -112,7 +112,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
         )
 
         const link = (
-            <a onClick={disabled ? null : onClick} className={classes}>
+            <a onClick={disabled ? null : onSelected} className={classes}>
                 {this.props.children}
             </a>
         )

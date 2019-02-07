@@ -48,7 +48,7 @@ export class DropdownButton extends React.PureComponent<DropdownButtonProps> {
     }
 
     handleChange = (item: DropdownItemConfig) => {
-        item.onClick()
+        item.onSelected && item.onSelected()
     }
 }
 
@@ -67,15 +67,15 @@ export class DropdownButtonItem extends React.PureComponent<DropdownButtonItemPr
 
     render() {
         const { content, closeMenu, autoClose, ...other } = this.props
-        return <DropdownItem {...other} onClick={this.handleClick}>{content}</DropdownItem>
+        return <DropdownItem {...other} onSelected={this.handleClick}>{content}</DropdownItem>
     }
 
     handleClick = () => {
-        const { onClick, autoClose, closeMenu } = this.props
+        const { onSelected, autoClose, closeMenu } = this.props
         if (autoClose) {
             closeMenu()
         }
-        onClick && onClick()
+        onSelected && onSelected()
     }
 
 }
