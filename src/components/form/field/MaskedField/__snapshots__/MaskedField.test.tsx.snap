@@ -72,6 +72,7 @@ exports[`render correctly 1`] = `
     class="emotion-2"
   >
     <input
+      aria-label="Mask test"
       class="emotion-1"
       name="test"
       placeholder="Test"

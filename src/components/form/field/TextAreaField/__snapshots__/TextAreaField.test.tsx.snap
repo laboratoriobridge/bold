@@ -81,6 +81,7 @@ exports[`should render correctly 1`] = `
   </label>
   <div>
     <textarea
+      aria-label="Label"
       class="emotion-2"
       maxlength="100"
       name="textarea"

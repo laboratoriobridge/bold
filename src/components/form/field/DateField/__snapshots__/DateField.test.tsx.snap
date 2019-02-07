@@ -335,6 +335,7 @@ exports[`should be rendered correctly 1`] = `
           class="emotion-5"
         >
           <input
+            aria-label="Date test"
             autocomplete="off"
             class="emotion-1"
             name="test"

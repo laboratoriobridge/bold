@@ -29,6 +29,7 @@ exports[`render should render correctly 1`] = `
     </span>
   </label>
   <input
+    aria-label="Field #1"
     name="field1"
     value=""
   />
