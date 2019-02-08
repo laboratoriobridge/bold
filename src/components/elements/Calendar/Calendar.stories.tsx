@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { Calendar } from './Calendar'
+import { RangePickerCalendar } from './RangePickerCalendar'
 import { createWeekArray, isSameDay } from './util'
 
 const isCurrentWeek = (day: Date) => {
@@ -46,4 +47,7 @@ storiesOf('Components/Calendar', module)
                 oddDays: () => ({ color: 'red', fontWeight: 'bold' }),
             }}
         />
+    ))
+    .add('range picker', () => (
+        <RangePickerCalendar />
     ))
