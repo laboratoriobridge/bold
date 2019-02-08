@@ -11,7 +11,6 @@ import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalSize } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer } from './ModalContainer'
-import { ModalControlled, ModalController } from './ModalControlled'
 import { ModalFooter } from './ModalFooter'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
@@ -20,13 +19,10 @@ const sizes: { [key in ModalSize]: ModalSize } = {
     'auto': 'auto',
 }
 
-let controller1: ModalController = null
-let controller2: ModalController = null
-
-const createFooter = (ctrl: ModalController = null) => (
+const createFooter = () => (
     <HFlow justifyContent='flex-end'>
-        <Button label='Cancel' onClick={ctrl && ctrl.close || action('cancel clicked')} />
-        <Button label='Save' type='primary' onClick={ctrl && ctrl.close || action('save clicked')} />
+        <Button label='Cancel' onClick={action('cancel clicked')} />
+        <Button label='Save' type='primary' onClick={action('save clicked')} />
     </HFlow>
 )
 
@@ -70,28 +66,6 @@ storiesOf('Components/Modal', module)
             />
             <ModalMountTarget />
         </>
-    ))
-    .add('controlled/trigger', () => (
-        // tslint:disable jsx-no-lambda
-        <HFlow>
-            <Button label='Modal with actions' onClick={() => controller1.open()} />
-            <Button label='Simple Modal' onClick={() => controller2.open()} />
-
-            <ModalControlled
-                control={(ctrl) => controller1 = ctrl}
-                size={select('size', sizes, 'large')}
-                renderFooter={createFooter}
-            >
-                Lorem ipsum.
-            </ModalControlled>
-
-            <ModalControlled
-                control={(ctrl) => controller2 = ctrl}
-                size={select('size', sizes, 'large')}
-            >
-                Lorem ipsum.
-            </ModalControlled>
-        </HFlow>
     ))
     .add('parts', () => (
         <ModalContainer onClose={action('onClose')}>
