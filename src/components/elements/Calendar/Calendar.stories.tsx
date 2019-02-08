@@ -2,9 +2,13 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
+import { HFlow } from '../../layout'
+
 import { Calendar } from './Calendar'
-import { RangePickerCalendar } from './RangePickerCalendar'
+import { RangeCalendar } from './RangeCalendar'
 import { createWeekArray, isSameDay } from './util'
+
+const now = new Date()
 
 const isCurrentWeek = (day: Date) => {
     // Disables entire date week
@@ -48,6 +52,26 @@ storiesOf('Components/Calendar', module)
             }}
         />
     ))
-    .add('range picker', () => (
-        <RangePickerCalendar />
-    ))
+    .add('range calendar', () => {
+        const final = new Date()
+        final.setDate(now.getDate() + 10)
+        return (
+            <HFlow>
+                <RangeCalendar
+                    initialDate={now}
+                    finalDate={final}
+                    onDayHover={action('dayHover')}
+                />
+                <RangeCalendar
+                    initialDate={now}
+                    finalDate={undefined}
+                    onDayHover={action('dayHover')}
+                />
+                <RangeCalendar
+                    initialDate={undefined}
+                    finalDate={undefined}
+                    onDayHover={action('dayHover')}
+                />
+            </HFlow>
+        )
+    })
