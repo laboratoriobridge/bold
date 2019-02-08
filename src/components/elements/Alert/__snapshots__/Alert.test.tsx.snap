@@ -54,6 +54,7 @@ exports[`Alert should allow styles override 1`] = `
 
 <div
   class="emotion-3"
+  role="alert"
 >
   <div
     class="emotion-2"
@@ -282,6 +283,7 @@ exports[`Alert should render correctly 1`] = `
 <div>
   <div
     class="emotion-6"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -313,6 +315,7 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
           type="button"
         >
@@ -336,6 +339,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-13"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -367,6 +371,7 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
           type="button"
         >
@@ -390,6 +395,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-20"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -421,6 +427,7 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
           type="button"
         >
@@ -444,6 +451,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-27"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -475,6 +483,7 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
           type="button"
         >
@@ -621,6 +630,7 @@ exports[`Alert should render correctly when inline 1`] = `
 <div>
   <div
     class="emotion-3"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -652,6 +662,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-7"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -683,6 +694,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-11"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -714,6 +726,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-15"
+    role="alert"
   >
     <div
       class="emotion-2"
