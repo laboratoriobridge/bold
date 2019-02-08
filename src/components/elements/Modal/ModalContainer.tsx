@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { Button } from '../Button'
+import { Tooltip } from '../Tooltip'
 
 export interface ModalContainerProps extends WithStylesProps {
     style?: Interpolation
@@ -29,11 +30,23 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
             },
             closeButton: {
                 float: 'right',
+                marginTop: '0.5rem',
+                marginRight: '0.5rem',
             },
         }
         return (
             <div className={css(styles.wrapper, style)}>
-                <Button size='small' skin='ghost' style={styles.closeButton} icon='timesDefault' onClick={onClose} />
+                <Tooltip text='Fechar'>
+                    <Button
+                        aria-label='Fechar'
+                        size='small'
+                        skin='ghost'
+                        style={styles.closeButton}
+                        icon='timesDefault'
+                        onClick={onClose}
+                    />
+                </Tooltip>
+
                 {this.props.children}
             </div>
         )

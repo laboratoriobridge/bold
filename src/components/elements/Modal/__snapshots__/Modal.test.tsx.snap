@@ -47,6 +47,8 @@ exports[`Modal accept style prop 1`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -129,6 +131,7 @@ exports[`Modal accept style prop 1`] = `
       class="emotion-3"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
@@ -207,6 +210,8 @@ exports[`Modal render different sizes 1`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -288,6 +293,7 @@ exports[`Modal render different sizes 1`] = `
       class="emotion-3"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
@@ -378,6 +384,8 @@ exports[`Modal render different sizes 2`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -447,6 +455,7 @@ exports[`Modal render different sizes 2`] = `
       class="emotion-3"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
@@ -525,6 +534,8 @@ exports[`Modal render different sizes 3`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -606,6 +617,7 @@ exports[`Modal render different sizes 3`] = `
       class="emotion-3"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
@@ -704,6 +716,8 @@ exports[`Modal should render closed 1`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -829,6 +843,7 @@ exports[`Modal should render closed 1`] = `
       class="emotion-5"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
@@ -933,6 +948,8 @@ exports[`Modal should render open 1`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -1066,6 +1083,7 @@ exports[`Modal should render open 1`] = `
       class="emotion-5"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
         type="button"
       >
