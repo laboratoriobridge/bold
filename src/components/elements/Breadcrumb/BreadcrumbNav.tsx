@@ -51,7 +51,7 @@ class BreadcrumbNavCmp extends React.Component<BreadcrumbNavProps, BreadcrumbNav
                 display: 'inline-flex',
                 alignItems: 'center',
 
-                '&:last-child a': {
+                '&:last-of-type a': {
                     pointerEvents: 'none',
                     color: theme.pallete.primary.main,
                 },

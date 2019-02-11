@@ -49,11 +49,11 @@ exports[`should render complete state 1`] = `
   display: inline-block;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
-.emotion-1:last-child {
+.emotion-1:last-of-type {
   margin-right: 0;
 }
 
@@ -259,11 +259,11 @@ exports[`should render initial state 1`] = `
   display: inline-block;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
-.emotion-1:last-child {
+.emotion-1:last-of-type {
   margin-right: 0;
 }
 
@@ -379,11 +379,11 @@ exports[`should render uploading state 1`] = `
   display: inline-block;
 }
 
-.emotion-1:first-child {
+.emotion-1:first-of-type {
   margin-left: 0;
 }
 
-.emotion-1:last-child {
+.emotion-1:last-of-type {
   margin-right: 0;
 }
 

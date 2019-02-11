@@ -16,7 +16,7 @@ exports[`should render correctly 1`] = `
   justify-content: center;
 }
 
-.emotion-1 > *:first-child {
+.emotion-1 > *:first-of-type {
   margin-right: 0.5rem;
 }
 
@@ -83,7 +83,7 @@ exports[`should render correctly 2`] = `
   justify-content: center;
 }
 
-.emotion-1 > *:first-child {
+.emotion-1 > *:first-of-type {
   margin-right: 0.5rem;
 }
 

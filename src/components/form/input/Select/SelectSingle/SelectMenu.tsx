@@ -54,7 +54,7 @@ export class SelectMenuItem extends React.Component<SelectMenuItemProps> {
             transition: '.1s ease',
             background: highlighted && theme.pallete.surface.background,
 
-            '&:last-child': {
+            '&:last-of-type': {
                 borderBottom: 'none',
             },
 

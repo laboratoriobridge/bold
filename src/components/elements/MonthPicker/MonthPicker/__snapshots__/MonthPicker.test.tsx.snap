@@ -26,11 +26,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-9:first-child {
+.emotion-9:first-of-type {
   margin-top: 0;
 }
 
-.emotion-9:last-child {
+.emotion-9:last-of-type {
   margin-bottom: 0;
 }
 
@@ -62,11 +62,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-2:first-of-type {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-2:last-of-type {
   margin-right: 0;
 }
 
@@ -159,11 +159,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-11:first-child {
+.emotion-11:first-of-type {
   margin-left: 0;
 }
 
-.emotion-11:last-child {
+.emotion-11:last-of-type {
   margin-right: 0;
 }
 

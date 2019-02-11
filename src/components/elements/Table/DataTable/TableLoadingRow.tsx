@@ -27,7 +27,7 @@ export class TableLoadingRow extends React.PureComponent<TableLoadingRowProps> {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                '& > *:first-child': {
+                '& > *:first-of-type': {
                     marginRight: '0.5rem',
                 },
             },

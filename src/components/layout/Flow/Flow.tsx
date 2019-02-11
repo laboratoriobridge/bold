@@ -55,11 +55,11 @@ export class Flow extends React.PureComponent<FlowProps> {
 
         const styles: Styles = {
             child: {
-                ':first-child': {
+                ':first-of-type': {
                     marginTop: direction === 'vertical' && 0,
                     marginLeft: direction === 'horizontal' && 0,
                 },
-                ':last-child': {
+                ':last-of-type': {
                     marginBottom: direction === 'vertical' && 0,
                     marginRight: direction === 'horizontal' && 0,
                 },

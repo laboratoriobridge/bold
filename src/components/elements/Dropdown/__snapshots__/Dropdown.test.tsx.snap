@@ -43,12 +43,12 @@ exports[`should accept Popper props 1`] = `
   display: block;
 }
 
-.emotion-2:first-child a {
+.emotion-2:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.emotion-2:last-child a {
+.emotion-2:last-of-type a {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -153,12 +153,12 @@ exports[`should render correctly 1`] = `
   display: block;
 }
 
-.emotion-2:first-child a {
+.emotion-2:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.emotion-2:last-child a {
+.emotion-2:last-of-type a {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }

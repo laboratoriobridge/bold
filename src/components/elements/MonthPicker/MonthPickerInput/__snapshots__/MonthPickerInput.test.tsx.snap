@@ -185,11 +185,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-15:first-child {
+.emotion-15:first-of-type {
   margin-top: 0;
 }
 
-.emotion-15:last-child {
+.emotion-15:last-of-type {
   margin-bottom: 0;
 }
 
@@ -221,11 +221,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-8:first-child {
+.emotion-8:first-of-type {
   margin-left: 0;
 }
 
-.emotion-8:last-child {
+.emotion-8:last-of-type {
   margin-right: 0;
 }
 
@@ -313,11 +313,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-17:first-child {
+.emotion-17:first-of-type {
   margin-left: 0;
 }
 
-.emotion-17:last-child {
+.emotion-17:last-of-type {
   margin-right: 0;
 }
 

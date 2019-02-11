@@ -193,11 +193,11 @@ exports[`DatePickerInput should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-8:first-child {
+.emotion-8:first-of-type {
   margin-left: 0;
 }
 
-.emotion-8:last-child {
+.emotion-8:last-of-type {
   margin-right: 0;
 }
 
@@ -1025,11 +1025,11 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
   display: inline-block;
 }
 
-.emotion-8:first-child {
+.emotion-8:first-of-type {
   margin-left: 0;
 }
 
-.emotion-8:last-child {
+.emotion-8:last-of-type {
   margin-right: 0;
 }
 

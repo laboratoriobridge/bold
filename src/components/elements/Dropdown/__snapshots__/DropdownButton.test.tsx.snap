@@ -22,12 +22,12 @@ exports[`DropdownButton should render correctly 1`] = `
   display: block;
 }
 
-.emotion-4:first-child a {
+.emotion-4:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.emotion-4:last-child a {
+.emotion-4:last-of-type a {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -213,12 +213,12 @@ exports[`DropdownButtonItem should render correctly 1`] = `
   display: block;
 }
 
-.emotion-1:first-child a {
+.emotion-1:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.emotion-1:last-child a {
+.emotion-1:last-of-type a {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }

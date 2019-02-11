@@ -60,11 +60,11 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
                 'div': {
                     display: 'block', // override inline-block defined by tooltip wrapper
                 },
-                '&:first-child a': {
+                '&:first-of-type a': {
                     borderTopLeftRadius: theme.radius.popper,
                     borderTopRightRadius: theme.radius.popper,
                 },
-                '&:last-child a': {
+                '&:last-of-type a': {
                     borderBottomLeftRadius: theme.radius.popper,
                     borderBottomRightRadius: theme.radius.popper,
                 },

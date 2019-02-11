@@ -136,11 +136,11 @@ exports[`should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-4:first-child {
+.emotion-4:first-of-type {
   margin-left: 0;
 }
 
-.emotion-4:last-child {
+.emotion-4:last-of-type {
   margin-right: 0;
 }
 

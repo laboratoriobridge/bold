@@ -16,11 +16,11 @@ exports[`deve aceitar Flow props 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -71,11 +71,11 @@ exports[`deve renderizar corretamente 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
