@@ -20,7 +20,7 @@ export class WizardFooter extends React.Component<WizardFooterProps> {
                 padding: '1rem 0',
                 margin: '2rem 0',
                 textAlign: 'right',
-                '& > *:not(:last-child)': {
+                '& > *:not(:last-of-type)': {
                     marginRight: '1rem',
                 },
             },

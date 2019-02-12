@@ -42,17 +42,7 @@ export class BaseButton extends React.Component<BaseButtonProps> {
         return render({
             ...rest,
             onClick: this.onClick,
-            onKeyPress: this.handleOnKeyPress,
         })
-    }
-
-    private handleOnKeyPress = (event) => {
-        event.preventDefault()
-        if (!event) { event = window.event } // cross-browser shenanigans
-        if (event.charCode === 32 || event.charCode === 13 && this.props.onClick) { // this is the spacebar
-            this.onClick(event)
-        }
-        return true // treat all other keys normally;
     }
 
     private onClick = (event: React.MouseEvent<any>) => {

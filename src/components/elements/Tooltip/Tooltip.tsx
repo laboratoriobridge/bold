@@ -75,6 +75,9 @@ export const Tooltip = (props: TooltipProps) => {
                                 <Popper
                                     modifiers={{
                                         offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+                                        preventOverflow: {
+                                            boundariesElement: 'window',
+                                        },
                                     }}
                                     {...rest}
                                 >

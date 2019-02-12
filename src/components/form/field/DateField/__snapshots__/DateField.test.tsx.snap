@@ -199,11 +199,11 @@ exports[`should be rendered correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-9:first-child {
+.emotion-9:first-of-type {
   margin-left: 0;
 }
 
-.emotion-9:last-child {
+.emotion-9:last-of-type {
   margin-right: 0;
 }
 

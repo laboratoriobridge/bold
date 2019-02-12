@@ -10,7 +10,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -34,7 +34,7 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -59,7 +59,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-1:last-child {
+.emotion-1:last-of-type {
   border-bottom: none;
 }
 
@@ -128,7 +128,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -153,7 +153,7 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   color: red;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -178,7 +178,7 @@ exports[`SelectMenuItem should render correctly when highlighted 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -202,7 +202,7 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 

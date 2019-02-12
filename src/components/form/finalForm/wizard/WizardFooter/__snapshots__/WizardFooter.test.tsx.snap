@@ -8,7 +8,7 @@ exports[`rendering should render correctly 1`] = `
   text-align: right;
 }
 
-.emotion-2 > *:not(:last-child) {
+.emotion-2 > *:not(:last-of-type) {
   margin-right: 1rem;
 }
 
