@@ -132,10 +132,6 @@ exports[`DropdownButton should open the dropdown on click 1`] = `
   margin: 0;
 }
 
-.emotion-1 div {
-  display: block;
-}
-
 .emotion-1:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;

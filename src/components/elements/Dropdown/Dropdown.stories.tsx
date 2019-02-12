@@ -18,7 +18,12 @@ storiesOf('Components/Dropdown', module)
             items={[
                 { content: 'Item #1', onSelected: action('item 1 clicked') },
                 { content: 'Item #2', onSelected: action('item 2 clicked'), type: 'danger' },
-                { content: 'Item #3', onSelected: action('item 3 clicked'), disabled: true, hint: 'This is disabled' },
+                {
+                    content: 'Item #3',
+                    onSelected: action('item 3 clicked'),
+                    disabled: true,
+                    tooltip: 'This is disabled',
+                },
             ]}
         />
     ))
@@ -74,8 +79,8 @@ storiesOf('Components/Dropdown', module)
     .add('menu', () => (
         <DropdownMenu highlightedIndex={2}>
             <DropdownItem onSelected={action('clicked item 1')}>Item 1</DropdownItem>
-            <DropdownItem onSelected={action('clicked item 2')} disabled hint='Disabled'>Item 2</DropdownItem>
-            <DropdownItem onSelected={action('clicked item 3')} type='danger' hint='Some danger option' highlighted>
+            <DropdownItem onSelected={action('clicked item 2')} disabled tooltip='Disabled'>Item 2</DropdownItem>
+            <DropdownItem onSelected={action('clicked item 3')} type='danger' tooltip='Some danger option' highlighted>
                 Item 3
             </DropdownItem>
         </DropdownMenu>

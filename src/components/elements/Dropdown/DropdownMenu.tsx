@@ -39,7 +39,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
 }
 
 export interface DropdownItemProps extends WithStylesProps {
-    hint?: string
+    tooltip?: string
     disabled?: boolean
     type?: 'normal' | 'danger'
     highlighted?: boolean
@@ -55,13 +55,10 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
     }
 
     render() {
-        const { css, theme, onSelected, type, disabled, hint, highlighted } = this.props
+        const { css, theme, onSelected, type, disabled, tooltip, highlighted } = this.props
         const styles: Styles = {
             item: {
                 margin: 0,
-                'div': {
-                    display: 'block', // override inline-block defined by tooltip wrapper
-                },
                 '&:first-of-type a': {
                     borderTopLeftRadius: theme.radius.popper,
                     borderTopRightRadius: theme.radius.popper,
@@ -119,7 +116,7 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
 
         return (
             <li className={css(styles.item)}>
-                {hint ? <Tooltip text={hint}>{link}</Tooltip> : link}
+                <Tooltip text={tooltip}>{link}</Tooltip>
             </li>
         )
     }
