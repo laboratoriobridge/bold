@@ -3,10 +3,9 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { pluralize } from '../../../../util/string'
-import { Dropdown } from '../../Dropdown/Dropdown'
-import { DropdownItem } from '../../Dropdown/DropdownMenu'
+import { Dropdown, DropdownRenderProps, DropdownTargetRenderProps } from '../../Dropdown/Dropdown'
+import { DropdownItem, DropdownMenu } from '../../Dropdown/DropdownMenu'
 import { Paginator } from '../../Paginator/Paginator'
-import { PopperController } from '../../Popper'
 import { Number } from '../../textual/Number/Number'
 
 export interface TableFooterProps extends WithStylesProps {
@@ -115,17 +114,24 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
         return (
             <span className={css(styles.container)}>
                 <Dropdown renderTarget={this.renderDropdownTarget}>
-                    {ctrl =>
-                        options.map((option, idx) => (
-                            <DropdownItem key={idx} onClick={this.handleClick(ctrl, option)}>{option}</DropdownItem>
-                        ))
-                    }
+                    {(downshift) => (
+                        <DropdownMenu highlightedIndex={downshift.highlightedIndex}>
+                            {options.map((option, idx) => (
+                                <DropdownItem
+                                    key={idx}
+                                    onSelected={this.handleClick(downshift, option)}
+                                >
+                                    {option}
+                                </DropdownItem>
+                            ))}
+                        </DropdownMenu>
+                    )}
                 </Dropdown>
             </span>
         )
     }
 
-    renderDropdownTarget = (controller: PopperController) => {
+    renderDropdownTarget = ({ ref, getToggleButtonProps }: DropdownTargetRenderProps) => {
         const { size, css } = this.props
         const styles: Styles = {
             button: {
@@ -139,14 +145,14 @@ class SizeDropdown extends React.Component<SizeDropdownProps> {
         }
 
         return (
-            <a className={css(styles.button)} onClick={controller.toggle}>
+            <a className={css(styles.button)} ref={ref} {...getToggleButtonProps()}>
                 {size} <span className={css(styles.icon)}>▾</span>
             </a>
         )
     }
 
-    handleClick = (ctrl: PopperController, size: number) => (e) => {
-        ctrl.hide()
+    handleClick = (dropdown: DropdownRenderProps, size: number) => () => {
+        dropdown.closeMenu()
         this.props.onChange(size)
     }
 

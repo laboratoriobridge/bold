@@ -16,9 +16,9 @@ storiesOf('Components/Dropdown', module)
             size='small'
             skin='ghost'
             items={[
-                { content: 'Item #1', onClick: action('item 1 clicked') },
-                { content: 'Item #2', onClick: action('item 2 clicked'), type: 'danger' },
-                { content: 'Item #3', onClick: action('item 3 clicked'), disabled: true, hint: 'This is disabled' },
+                { content: 'Item #1', onSelected: action('item 1 clicked') },
+                { content: 'Item #2', onSelected: action('item 2 clicked'), type: 'danger' },
+                { content: 'Item #3', onSelected: action('item 3 clicked'), disabled: true, hint: 'This is disabled' },
             ]}
         />
     ))
@@ -26,38 +26,56 @@ storiesOf('Components/Dropdown', module)
         // tslint:disable jsx-no-lambda
         <HFlow hSpacing={0.5} alignItems='center'>
             <Dropdown
-                renderTarget={(ctrl) => (
-                    <Button label='Menu' size='small' onClick={ctrl.show} />
+                renderTarget={({ ref, getRootProps, getToggleButtonProps }) => (
+                    <Button label='Menu' size='small' innerRef={ref} {...getRootProps()} {...getToggleButtonProps()} />
                 )}
             >
-                {ctrl => (
-                    <>
-                        <DropdownItem onClick={action('clicked item 1')}>Item 1</DropdownItem>
-                        <DropdownItem onClick={action('clicked item 2')}>Item 2</DropdownItem>
-                        <DropdownItem onClick={action('clicked item 3')}>Item 3</DropdownItem>
-                    </>
+                {({ highlightedIndex, getMenuProps, getItemProps }) => (
+                    <DropdownMenu highlightedIndex={highlightedIndex} {...getMenuProps()}>
+                        <DropdownItem
+                            onSelected={action('clicked item 1')}
+                            highlighted={highlightedIndex === 0}
+                            {...getItemProps({ item: 0 })}
+                        >
+                            Item 1
+                        </DropdownItem>
+                        <DropdownItem
+                            onSelected={action('clicked item 2')}
+                            highlighted={highlightedIndex === 1}
+                            {...getItemProps({ item: 1 })}
+                        >
+                            Item 2
+                        </DropdownItem>
+                        <DropdownItem
+                            onSelected={action('clicked item 3')}
+                            highlighted={highlightedIndex === 2}
+                            {...getItemProps({ item: 2 })}
+                        >
+                            Item 3
+                        </DropdownItem>
+                    </DropdownMenu>
                 )}
             </Dropdown>
             <Dropdown
-                renderTarget={(ctrl) => (
-                    <Button icon='dots' skin='ghost' size='small' onClick={ctrl.show} />
+                renderTarget={({ ref, getToggleButtonProps }) => (
+                    <Button icon='dots' skin='ghost' size='small' innerRef={ref} {...getToggleButtonProps()} />
                 )}
             >
-                {ctrl => (
-                    <>
-                        <DropdownItem onClick={action('clicked item 1')}>Item 1</DropdownItem>
-                        <DropdownItem onClick={action('clicked item 2')}>Item 2</DropdownItem>
-                        <DropdownItem onClick={action('clicked item 3')}>Item 3</DropdownItem>
-                    </>
+                {({ highlightedIndex }) => (
+                    <DropdownMenu highlightedIndex={highlightedIndex}>
+                        <DropdownItem onSelected={action('clicked item 1')}>Item 1</DropdownItem>
+                        <DropdownItem onSelected={action('clicked item 2')}>Item 2</DropdownItem>
+                        <DropdownItem onSelected={action('clicked item 3')}>Item 3</DropdownItem>
+                    </DropdownMenu>
                 )}
             </Dropdown>
         </HFlow>
     ))
     .add('menu', () => (
-        <DropdownMenu>
-            <DropdownItem onClick={action('clicked item 1')}>Item 1</DropdownItem>
-            <DropdownItem onClick={action('clicked item 2')} disabled hint='Disabled just because'>Item 2</DropdownItem>
-            <DropdownItem onClick={action('clicked item 3')} type='danger' hint='Some danger option'>
+        <DropdownMenu highlightedIndex={2}>
+            <DropdownItem onSelected={action('clicked item 1')}>Item 1</DropdownItem>
+            <DropdownItem onSelected={action('clicked item 2')} disabled hint='Disabled'>Item 2</DropdownItem>
+            <DropdownItem onSelected={action('clicked item 3')} type='danger' hint='Some danger option' highlighted>
                 Item 3
             </DropdownItem>
         </DropdownMenu>

@@ -4,7 +4,7 @@ import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { Tooltip } from '../Tooltip/Tooltip'
 
 export interface DropdownMenuProps extends WithStylesProps {
-
+    highlightedIndex?: number
 }
 
 @withStyles
@@ -29,6 +29,7 @@ export class DropdownMenu extends React.Component<DropdownMenuProps> {
                 textAlign: 'left',
             },
         }
+
         return (
             <ul className={css(styles.list)}>
                 {this.props.children}
@@ -41,7 +42,8 @@ export interface DropdownItemProps extends WithStylesProps {
     hint?: string
     disabled?: boolean
     type?: 'normal' | 'danger'
-    onClick?(e): any
+    highlighted?: boolean
+    onSelected?(): any
 }
 
 @withStyles
@@ -49,11 +51,11 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
     static defaultProps: DropdownItemProps = {
         disabled: false,
         type: 'normal',
-        onClick: () => null,
+        onSelected: () => null,
     }
 
     render() {
-        const { css, theme, onClick, type, disabled, hint } = this.props
+        const { css, theme, onSelected, type, disabled, hint, highlighted } = this.props
         const styles: Styles = {
             item: {
                 margin: 0,
@@ -93,14 +95,24 @@ export class DropdownItem extends React.Component<DropdownItemProps> {
                     background: theme.pallete.status.danger.main,
                 },
             },
+            highlighted: {
+                normal: {
+                    background: theme.pallete.surface.background,
+                },
+                danger: {
+                    color: theme.pallete.surface.main,
+                    background: theme.pallete.status.danger.main,
+                },
+            },
         }
         const classes = css(styles.link,
             type === 'danger' && styles.danger,
-            disabled && styles.disabled
+            disabled && styles.disabled,
+            highlighted && styles.highlighted[type]
         )
 
         const link = (
-            <a onClick={disabled ? null : onClick} className={classes}>
+            <a onClick={disabled ? null : onSelected} className={classes}>
                 {this.props.children}
             </a>
         )

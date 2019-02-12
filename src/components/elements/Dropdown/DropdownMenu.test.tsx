@@ -15,17 +15,18 @@ it('should render correctly', () => {
     ))).toMatchSnapshot()
 })
 
-it('should call onClick when clicked', () => {
+it('should call onSelected when clicked', () => {
     const clickNormal = jest.fn()
     const clickDisabled = jest.fn()
     const wrapper = mount(withTheme(
         <DropdownMenu>
-            <DropdownItem onClick={clickNormal}>Normal</DropdownItem>
-            <DropdownItem onClick={clickDisabled} disabled>Disabled</DropdownItem>
+            <DropdownItem onSelected={clickNormal}>Normal</DropdownItem>
+            <DropdownItem onSelected={clickDisabled} disabled>Disabled</DropdownItem>
         </DropdownMenu>
     ))
     wrapper.find('a').first().simulate('click')
     expect(clickNormal).toHaveBeenCalled()
+
     wrapper.find('a').last().simulate('click')
     expect(clickDisabled).not.toHaveBeenCalled()
 })

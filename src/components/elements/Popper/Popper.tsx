@@ -14,6 +14,8 @@ export interface PopperProps extends Omit<PopperContentProps, 'show'>, WithStyle
     renderTarget(controller: PopperController): React.ReactNode
     children(controller: PopperController): React.ReactNode
     control?(controller: PopperController): void
+    onShow?(controller: PopperController): void
+    onHide?(controller: PopperController): void
 }
 
 export interface PopperController {
@@ -118,11 +120,15 @@ export class Popper extends React.PureComponent<PopperProps, PopperState> {
     }
 
     show = () => {
-        this.setState({ show: true })
+        this.setState({ show: true }, () => {
+            this.props.onShow && this.props.onShow(this.controller)
+        })
     }
 
     hide = () => {
-        this.setState({ show: false })
+        this.setState({ show: false }, () => {
+            this.props.onHide && this.props.onHide(this.controller)
+        })
     }
 
     isShown = () => {
