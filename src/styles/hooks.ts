@@ -1,4 +1,4 @@
-import { css as emotionCss, Interpolation } from 'emotion'
+import { css as emotionCss } from 'emotion'
 import { useContext } from 'react'
 
 import { Theme } from './theme/createTheme'
@@ -13,8 +13,13 @@ export const useCss = () => {
     return { theme, css: emotionCss }
 }
 
-export type StyleFactory<Classes extends string> = (theme: Theme) => { [key in Classes]: Interpolation }
-export type ClassNames<Classes extends string> = { [key in Classes]: string }
+export type StyleFactory<Classes extends string> = (theme: Theme) => {
+    readonly [key in Classes]: React.CSSProperties
+}
+
+export type ClassNames<Classes extends string> = {
+    readonly [key in Classes]: string
+}
 
 const emptyStylesFactory: StyleFactory<any> = () => ({})
 
@@ -35,4 +40,8 @@ export const useStyles = <Classes extends string>(factory: StyleFactory<Classes>
         css,
         theme,
     }
+}
+
+export const makeStyles = <Classes extends string>(factory: StyleFactory<Classes>) => {
+    return factory
 }

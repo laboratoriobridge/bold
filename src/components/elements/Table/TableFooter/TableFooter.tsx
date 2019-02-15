@@ -3,10 +3,12 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { pluralize } from '../../../../util/string'
-import { Dropdown, DropdownRenderProps, DropdownTargetRenderProps } from '../../Dropdown/Dropdown'
-import { DropdownItem, DropdownMenu } from '../../Dropdown/DropdownMenu'
+import { HFlow } from '../../../layout'
 import { Paginator } from '../../Paginator/Paginator'
+import { Text } from '../../textual'
 import { Number } from '../../textual/Number/Number'
+
+import { TableSizeDropdown } from './TableSizeDropdown'
 
 export interface TableFooterProps extends WithStylesProps {
     page: number
@@ -62,14 +64,14 @@ export class TableFooter extends React.Component<TableFooterProps> {
                 </span>
                 {this.showPagination() &&
                     <div className={css(styles.pagination)}>
-                        <span>
-                            Mostrar:
-                            <SizeDropdown
+                        <HFlow alignItems='center' hSpacing={0.5}>
+                            <Text>Mostrar:</Text>
+                            <TableSizeDropdown
                                 options={this.props.sizeOptions}
                                 size={this.props.pageSize}
                                 onChange={this.props.onSizeChange}
                             />
-                        </span>
+                        </HFlow>
                         <Paginator
                             page={this.props.page}
                             total={this.props.totalPages}
@@ -84,79 +86,5 @@ export class TableFooter extends React.Component<TableFooterProps> {
     showPagination() {
         return this.props.totalElements > this.props.pageSize ||
             this.props.totalElements > Math.min(...this.props.sizeOptions)
-    }
-}
-
-interface SizeDropdownProps extends WithStylesProps {
-    size: number
-    options: number[]
-    onChange(size: number): any
-}
-
-@withStyles
-class SizeDropdown extends React.Component<SizeDropdownProps> {
-
-    render() {
-        const { options, css } = this.props
-        const styles: Styles = {
-            container: {
-                position: 'relative',
-                marginLeft: '0.5rem',
-            },
-            button: {
-                fontWeight: 'bold',
-            },
-            icon: {
-                marginLeft: '0.25rem',
-            },
-        }
-
-        return (
-            <span className={css(styles.container)}>
-                <Dropdown renderTarget={this.renderDropdownTarget}>
-                    {(downshift) => (
-                        <DropdownMenu highlightedIndex={downshift.highlightedIndex}>
-                            {options.map((option, idx) => (
-                                <DropdownItem
-                                    key={idx}
-                                    onSelected={this.handleClick(downshift, option)}
-                                >
-                                    {option}
-                                </DropdownItem>
-                            ))}
-                        </DropdownMenu>
-                    )}
-                </Dropdown>
-            </span>
-        )
-    }
-
-    renderDropdownTarget = ({ ref, getToggleButtonProps }: DropdownTargetRenderProps) => {
-        const { size, css } = this.props
-        const styles: Styles = {
-            button: {
-                fontWeight: 'bold',
-                textDecoration: 'none',
-                color: 'inherit',
-            },
-            icon: {
-                marginLeft: '0.25rem',
-            },
-        }
-
-        return (
-            <a className={css(styles.button)} ref={ref} {...getToggleButtonProps()}>
-                {size} <span className={css(styles.icon)}>▾</span>
-            </a>
-        )
-    }
-
-    handleClick = (dropdown: DropdownRenderProps, size: number) => () => {
-        dropdown.closeMenu()
-        this.props.onChange(size)
-    }
-
-    hide = () => {
-        this.setState({ show: false })
     }
 }
