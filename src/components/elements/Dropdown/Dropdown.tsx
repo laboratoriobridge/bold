@@ -1,4 +1,3 @@
-import Downshift, { ControllerStateAndHelpers, DownshiftProps } from 'downshift'
 import * as React from 'react'
 import { Manager, Popper, Reference, ReferenceChildrenProps } from 'react-popper'
 
@@ -6,52 +5,59 @@ import { useTheme } from '../../../styles'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
 
-export interface DropdownProps extends DownshiftProps<any> {
+export interface DropdownProps {
     renderTarget(renderProps: DropdownTargetRenderProps): React.ReactNode
     children(renderProps: DropdownRenderProps): React.ReactNode
 }
 
-export type DropdownRenderProps = ControllerStateAndHelpers<any>
-export type DropdownTargetRenderProps = ControllerStateAndHelpers<any> & ReferenceChildrenProps
+export type DropdownTargetRenderProps = DropdownRenderProps & ReferenceChildrenProps
+
+export interface DropdownRenderProps {
+    isOpen: boolean
+    open(): void
+    close(): void
+    toggle(): void
+}
 
 export const Dropdown = (props: DropdownProps) => {
-    const { children, renderTarget, ...rest } = props
-
-    const itemToString = () => null
+    const { children, renderTarget } = props
     const theme = useTheme()
 
-    return (
-        <Downshift itemToString={itemToString} suppressRefError {...rest}>
-            {(downshift) => {
-                return (
-                    <Manager>
-                        <Reference>
-                            {(refProps) => renderTarget({ ...downshift, ...refProps })}
-                        </Reference>
-                        <FadeTransition in={downshift.isOpen}>
-                            {({ className }) => (
-                                downshift.isOpen && (
-                                    <Portal>
-                                        <Popper placement='bottom'>
-                                            {({ ref, style, placement }) => (
-                                                <div
-                                                    ref={ref}
-                                                    className={className}
-                                                    style={{ ...style, zIndex: theme.zIndex.dropdown }}
-                                                    data-placement={placement}
-                                                >
-                                                    {children(downshift)}
-                                                </div>
-                                            )}
-                                        </Popper>
-                                    </Portal>
-                                )
-                            )}
-                        </FadeTransition>
-                    </Manager>
-                )
-            }}
-        </Downshift>
-    )
+    const [isOpen, setOpen] = React.useState<boolean>(false)
 
+    const renderProps: DropdownRenderProps = {
+        isOpen,
+        open: () => setOpen(true),
+        close: () => setOpen(false),
+        toggle: () => setOpen(!isOpen),
+    }
+
+    return (
+        <Manager>
+            <Reference>
+                {(refProps) =>
+                    renderTarget({ ...refProps, ...renderProps })
+                }
+            </Reference>
+            <FadeTransition in={isOpen}>
+                {({ className }) => (
+                    isOpen && (
+                        <Portal>
+                            <Popper>
+                                {(popper) => (
+                                    <div
+                                        ref={popper.ref}
+                                        className={className}
+                                        style={{ ...popper.style, zIndex: theme.zIndex.dropdown }}
+                                    >
+                                        {children(renderProps)}
+                                    </div>
+                                )}
+                            </Popper>
+                        </Portal>
+                    )
+                )}
+            </FadeTransition>
+        </Manager>
+    )
 }

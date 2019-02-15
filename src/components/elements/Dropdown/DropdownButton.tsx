@@ -1,81 +1,152 @@
 import * as React from 'react'
+import { Manager, Popper, Reference } from 'react-popper'
 
+import { useTheme } from '../../../styles'
+import { composeRefs } from '../../../util/react'
+import { randomStr } from '../../../util/string'
 import { Omit } from '../../../util/types'
 import { Button, ButtonProps } from '../Button'
+import { Portal } from '../Portal'
+import { Tooltip } from '../Tooltip'
+import { FadeTransition } from '../Transition/FadeTransition'
 
-import { Dropdown, DropdownTargetRenderProps } from './Dropdown'
-import { DropdownItem, DropdownItemProps, DropdownMenu } from './DropdownMenu'
+import { DropdownItem, DropdownItemProps } from './DropdownItem'
+import { DropdownMenu } from './DropdownMenu'
 
-export type DropdownItemConfig = Omit<DropdownButtonItemProps, 'closeMenu'>
+export type DropdownItemConfig = Omit<DropdownButtonItemProps, 'onAfterClick'>
 
 export interface DropdownButtonProps extends ButtonProps {
     items: DropdownItemConfig[]
 }
 
-export class DropdownButton extends React.PureComponent<DropdownButtonProps> {
+export const DropdownButton = (props: DropdownButtonProps) => {
+    const { items, ...rest } = props
+    const theme = useTheme()
 
-    render() {
-        const { items } = this.props
-        return (
-            <Dropdown renderTarget={this.renderButton} onChange={this.handleChange}>
-                {({ closeMenu, highlightedIndex, getMenuProps, getItemProps }) => (
-                    <DropdownMenu highlightedIndex={highlightedIndex} {...getMenuProps()}>
-                        {items.map((item, idx) => (
-                            <DropdownButtonItem
-                                key={idx}
-                                closeMenu={closeMenu}
-                                {...getItemProps({ item })}
-                                highlighted={highlightedIndex === idx}
-                                {...item}
-                            />
-                        ))}
-                    </DropdownMenu>
+    const meuIdRef = React.useRef<string>(null)
+    React.useEffect(() => {
+        meuIdRef.current = `menu-${randomStr()}`
+    }, [])
+
+    const buttonRef = React.useRef<HTMLButtonElement>(null)
+    const menuRef = React.useRef<HTMLUListElement>(null)
+
+    const [isOpen, setOpen] = React.useState<boolean>(false)
+
+    const handleBlur = () => {
+        window.setTimeout(() => {
+            const currentFocus = menuRef.current.ownerDocument.activeElement
+            if (!menuRef.current.contains(currentFocus)) {
+                setOpen(false)
+            }
+        })
+    }
+
+    const handleKeyDown = (event: React.KeyboardEvent) => {
+        event.preventDefault()
+        if (event.key === 'Escape' || event.key === 'Tab') {
+            setOpen(false)
+        }
+    }
+
+    const handleButtonClick = () => setOpen(true)
+
+    const handleAfterClick = () => setOpen(false)
+
+    React.useEffect(() => {
+        // Skip on first render
+        if (!buttonRef.current) { return }
+
+        if (isOpen) {
+            // When opened, focus the first menu item
+            const firstItem = menuRef.current.firstElementChild as HTMLLIElement
+            firstItem.focus()
+        } else {
+            // When closed, focus the button
+            buttonRef.current.focus()
+        }
+    }, [isOpen])
+
+    return (
+        <Manager>
+            <Reference>
+                {(refProps) =>
+                    <Button
+                        innerRef={composeRefs(refProps.ref, buttonRef)}
+                        onClick={handleButtonClick}
+                        aria-haspopup='true'
+                        aria-expanded={isOpen ? true : undefined}
+                        aria-controls={isOpen ? meuIdRef.current : undefined}
+                        {...rest}
+                    />
+                }
+            </Reference>
+            <FadeTransition in={isOpen}>
+                {({ className }) => (
+                    isOpen && (
+                        <Portal>
+                            <Popper>
+                                {(popper) => (
+                                    <div
+                                        ref={popper.ref}
+                                        className={className}
+                                        style={{ ...popper.style, zIndex: theme.zIndex.dropdown }}
+                                    >
+                                        <DropdownMenu
+                                            id={meuIdRef.current}
+                                            innerRef={menuRef}
+                                            onBlur={handleBlur}
+                                            onKeyDown={handleKeyDown}
+                                        >
+                                            {items.map((item, idx) => {
+                                                return (
+                                                    <DropdownButtonItem
+                                                        key={idx}
+                                                        onAfterClick={handleAfterClick}
+                                                        {...item}
+                                                    />
+                                                )
+                                            })}
+                                        </DropdownMenu>
+                                    </div>
+                                )}
+                            </Popper>
+                        </Portal>
+                    )
                 )}
-            </Dropdown>
-        )
-    }
-
-    renderButton = ({ ref, getRootProps, getToggleButtonProps }: DropdownTargetRenderProps) => {
-        const { items, ...other } = this.props
-        return (
-            <Button
-                innerRef={ref}
-                {...getRootProps()}
-                {...getToggleButtonProps()}
-                {...other}
-            />
-        )
-    }
-
-    handleChange = (item: DropdownItemConfig) => {
-        item.onSelected && item.onSelected()
-    }
+            </FadeTransition>
+        </Manager>
+    )
 }
 
 export interface DropdownButtonItemProps extends DropdownItemProps {
     content: React.ReactNode
+    tooltip?: string
     autoClose?: boolean
-    closeMenu?(): void
+    onAfterClick?(): void
 }
 
-export class DropdownButtonItem extends React.PureComponent<DropdownButtonItemProps> {
+export const DropdownButtonItem = (props: DropdownButtonItemProps) => {
+    const { content, onAfterClick, autoClose, onClick, tooltip, ...other } = props
 
-    static defaultProps: Partial<DropdownButtonItemProps> = {
-        content: '',
-        autoClose: true,
-    }
-
-    render() {
-        const { content, closeMenu, autoClose, ...other } = this.props
-        return <DropdownItem {...other} onSelected={this.handleClick}>{content}</DropdownItem>
-    }
-
-    handleClick = () => {
-        const { onSelected, autoClose, closeMenu } = this.props
+    const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
         if (autoClose) {
-            closeMenu()
+            onAfterClick()
         }
-        onSelected && onSelected()
+
+        onClick && onClick(e)
     }
 
+    return (
+        <Tooltip text={tooltip}>
+            <DropdownItem {...other} onClick={handleClick}>
+                {content}
+            </DropdownItem>
+        </Tooltip>
+    )
 }
+
+DropdownButtonItem.defaultProps = {
+    content: '',
+    autoClose: true,
+} as Partial<DropdownButtonItemProps>

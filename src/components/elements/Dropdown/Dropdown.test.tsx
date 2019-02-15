@@ -5,22 +5,21 @@ import { withTheme } from '../../../test'
 import { Button } from '../Button'
 
 import { Dropdown } from './Dropdown'
-import { DropdownItem, DropdownMenu } from './DropdownMenu'
+import { DropdownItem } from './DropdownItem'
+import { DropdownMenu } from './DropdownMenu'
 
 // tslint:disable jsx-no-lambda
 
 const createDropdown = () => (
     <Dropdown
-        renderTarget={({ ref, getRootProps, getToggleButtonProps }) =>
+        renderTarget={({ ref }) =>
             <Button
                 label='Menu'
                 innerRef={ref}
-                {...getRootProps()}
-                {...getToggleButtonProps()}
             />}
     >
-        {({ highlightedIndex }) => (
-            <DropdownMenu highlightedIndex={highlightedIndex}>
+        {() => (
+            <DropdownMenu>
                 <DropdownItem>Item #1</DropdownItem>
                 <DropdownItem>Item #2</DropdownItem>
             </DropdownMenu>

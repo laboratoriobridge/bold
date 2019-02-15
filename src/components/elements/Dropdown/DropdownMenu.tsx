@@ -1,123 +1,91 @@
 import * as React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
-import { Tooltip } from '../Tooltip/Tooltip'
+import { Theme, useStyles } from '../../../styles'
+import { composeRefs, getNextSibling, getPreviousSibling } from '../../../util/react'
 
-export interface DropdownMenuProps extends WithStylesProps {
-    highlightedIndex?: number
+export interface DropdownMenuProps extends React.HTMLAttributes<HTMLUListElement> {
+    innerRef?: React.RefObject<HTMLUListElement>
+    children: React.ReactNode
 }
 
-@withStyles
-export class DropdownMenu extends React.Component<DropdownMenuProps> {
-    render() {
-        const { css, theme } = this.props
-        const styles: Styles = {
-            list: {
-                fontWeight: 'bold',
-                color: theme.pallete.text.main,
-                whiteSpace: 'nowrap',
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-                boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-                border: '1px solid ' + theme.pallete.divider,
-                borderRadius: theme.radius.popper,
-                display: 'inline-block',
-                width: 'auto',
-                minWidth: '150px',
-                background: theme.pallete.surface.main,
-                textAlign: 'left',
-            },
+export const DropdownMenu = (props: DropdownMenuProps) => {
+    const { innerRef, onKeyDown, children, ...rest } = props
+    const { classes } = useStyles(styles)
+
+    const listRef = React.useRef<HTMLUListElement>(null)
+
+    const [currentTabIndex, setCurrentTabIndex] = React.useState<number>(0)
+
+    const focusElement = (element: Element) => (element as any).focus()
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLUListElement>) => {
+        if (event.key === 'ArrowUp' || event.key === 'ArrowDown') {
+            event.preventDefault()
+
+            const currentFocus = listRef.current.ownerDocument.activeElement
+
+            if (event.key === 'ArrowDown') {
+                const targetFocus = getNextSibling(currentFocus, (sib) => sib.getAttribute('role') === 'menuitem')
+                if (targetFocus) {
+                    focusElement(targetFocus)
+                }
+            }
+
+            if (event.key === 'ArrowUp') {
+                const targetFocus = getPreviousSibling(currentFocus, (sib) => sib.getAttribute('role') === 'menuitem')
+                if (targetFocus) {
+                    focusElement(targetFocus)
+                }
+            }
         }
 
-        return (
-            <ul className={css(styles.list)}>
-                {this.props.children}
-            </ul>
-        )
-    }
-}
-
-export interface DropdownItemProps extends WithStylesProps {
-    tooltip?: string
-    disabled?: boolean
-    type?: 'normal' | 'danger'
-    highlighted?: boolean
-    onSelected?(): any
-}
-
-@withStyles
-export class DropdownItem extends React.Component<DropdownItemProps> {
-    static defaultProps: DropdownItemProps = {
-        disabled: false,
-        type: 'normal',
-        onSelected: () => null,
+        onKeyDown && onKeyDown(event)
     }
 
-    render() {
-        const { css, theme, onSelected, type, disabled, tooltip, highlighted } = this.props
-        const styles: Styles = {
-            item: {
-                margin: 0,
-                '&:first-of-type a': {
-                    borderTopLeftRadius: theme.radius.popper,
-                    borderTopRightRadius: theme.radius.popper,
-                },
-                '&:last-of-type a': {
-                    borderBottomLeftRadius: theme.radius.popper,
-                    borderBottomRightRadius: theme.radius.popper,
-                },
-            },
-            link: {
-                display: 'block',
-                padding: '0.5rem 1rem',
-                fontSize: theme.typography.sizes.button,
-                color: theme.pallete.text.main,
-                textDecoration: 'none',
-                '&:hover': {
-                    background: theme.pallete.surface.background,
-                },
-            },
-            disabled: {
-                color: theme.pallete.gray.c70,
-                '&:hover': {
-                    background: 'transparent',
-                    cursor: 'not-allowed',
-                },
-            },
-            danger: {
-                color: theme.pallete.status.danger.main,
-                '&:hover': {
-                    color: theme.pallete.surface.main,
-                    background: theme.pallete.status.danger.main,
-                },
-            },
-            highlighted: {
-                normal: {
-                    background: theme.pallete.surface.background,
-                },
-                danger: {
-                    color: theme.pallete.surface.main,
-                    background: theme.pallete.status.danger.main,
-                },
-            },
+    const handleItemFocus = (event: React.FocusEvent<HTMLLIElement>) => {
+        const list = listRef.current
+        for (let i = 0; i < list.children.length; i += 1) {
+            if (list.children[i] === event.currentTarget) {
+                setCurrentTabIndex(i)
+                break
+            }
         }
-        const classes = css(styles.link,
-            type === 'danger' && styles.danger,
-            disabled && styles.disabled,
-            highlighted && styles.highlighted[type]
-        )
-
-        const link = (
-            <a onClick={disabled ? null : onSelected} className={classes}>
-                {this.props.children}
-            </a>
-        )
-
-        return (
-            <li className={css(styles.item)}>
-                <Tooltip text={tooltip}>{link}</Tooltip>
-            </li>
-        )
     }
+
+    return (
+        <ul
+            ref={composeRefs(listRef, innerRef)}
+            className={classes.root}
+            role='menu'
+            onKeyDown={handleKeyDown}
+            {...rest}
+        >
+            {React.Children.map(children, (child, index) => {
+                if (!React.isValidElement(child)) {
+                    return child
+                }
+
+                return React.cloneElement(child as any, {
+                    tabIndex: index === currentTabIndex ? 0 : -1,
+                    onFocus: handleItemFocus,
+                })
+            })}
+        </ul>
+    )
 }
+
+export const styles = (theme: Theme) => ({
+    root: {
+        listStyle: 'none',
+        margin: 0,
+        padding: 0,
+        whiteSpace: 'nowrap',
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+        border: `1px solid ${theme.pallete.divider}`,
+        borderRadius: theme.radius.popper,
+        display: 'inline-block',
+        width: 'auto',
+        minWidth: '150px',
+        background: theme.pallete.surface.main,
+    } as React.CSSProperties,
+})

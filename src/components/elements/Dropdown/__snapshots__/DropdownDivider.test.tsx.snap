@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+}
+
+<div>
+  <li
+    class="emotion-0"
+    role="separator"
+  />
+</div>
+`;
