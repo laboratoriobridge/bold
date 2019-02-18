@@ -9,7 +9,7 @@ import { ButtonLink } from './ButtonLink'
 it('should render correctly', () => {
     const wrapper = render(withTheme(
         <MemoryRouter initialEntries={['/']} initialIndex={0} >
-            <ButtonLink to='/' label='Link to home' />
+            <ButtonLink to='/'>Link to home</ButtonLink>
         </MemoryRouter >
     ))
     expect(wrapper).toMatchSnapshot()
@@ -18,7 +18,7 @@ it('should render correctly', () => {
 it('should have tabIndex -1 and aria-disabled when disabled', () => {
     const wrapper = mount(withTheme(
         <MemoryRouter initialEntries={['/']} initialIndex={0} >
-            <ButtonLink to='/' label='Link to home' disabled />
+            <ButtonLink to='/' disabled>Link to home</ButtonLink>
         </MemoryRouter>
     ))
     expect(wrapper.find('a').first().prop('aria-disabled')).toEqual(true)

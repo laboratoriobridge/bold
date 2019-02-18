@@ -65,9 +65,7 @@ exports[`should render correctly 1`] = `
   href="/"
 >
   <span>
-    <span>
-      Link to home
-    </span>
+    Link to home
   </span>
 </a>
 `;

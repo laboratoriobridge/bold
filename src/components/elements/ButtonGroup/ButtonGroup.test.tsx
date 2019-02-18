@@ -21,7 +21,7 @@ it('should should accept stlye prop', () => {
 it('should mount children', () => {
     const wrapper = mount(withTheme(
         <ButtonGroup>
-            <Button label='First' />
+            <Button>First</Button>
         </ButtonGroup>
     ))
     expect(wrapper.find(Button).length).toEqual(1)

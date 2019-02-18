@@ -11,7 +11,7 @@ it('should render correctly', () => {
     const wrapper = mount(withTheme(
         <Form onSubmit={jest.fn()}>
             {(renderProps) => (
-                <SubmitButton label='Submit Button' handleSubmit={renderProps.handleSubmit} />
+                <SubmitButton handleSubmit={renderProps.handleSubmit}>Submit Button</SubmitButton>
             )}
         </Form>
     ))
@@ -23,7 +23,7 @@ it('should be loading when form is submitting', () => {
     const wrapper = mount(withTheme(
         <Form onSubmit={submitHandler}>
             {(renderProps) => (
-                <SubmitButton label='Submit Button' handleSubmit={renderProps.handleSubmit} />
+                <SubmitButton handleSubmit={renderProps.handleSubmit}>Submit Button</SubmitButton>
             )}
         </Form>
     ))

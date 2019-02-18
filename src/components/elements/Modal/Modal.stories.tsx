@@ -21,8 +21,8 @@ const sizes: { [key in ModalSize]: ModalSize } = {
 
 const createFooter = () => (
     <HFlow justifyContent='flex-end'>
-        <Button label='Cancel' onClick={action('cancel clicked')} />
-        <Button label='Save' type='primary' onClick={action('save clicked')} />
+        <Button onClick={action('cancel clicked')}>Cancel</Button>
+        <Button kind='primary' onClick={action('save clicked')}>Save</Button>
     </HFlow>
 )
 
@@ -54,16 +54,17 @@ storiesOf('Components/Modal', module)
     .add('auto', () => (
         <>
             <Button
-                label='Auto modal'
                 onClick={modal({
                     size: 'small',
                     render: () => 'Confirm?',
                     actions: [
                         { label: 'Cancel', onClick: action('Cancel') },
-                        { label: 'Ok', type: 'primary', onClick: action('Ok') },
+                        { label: 'Ok', kind: 'primary', onClick: action('Ok') },
                     ],
                 })}
-            />
+            >
+                Auto modal
+            </Button>
             <ModalMountTarget />
         </>
     ))
@@ -74,8 +75,8 @@ storiesOf('Components/Modal', module)
             </ModalBody>
             <ModalFooter>
                 <HFlow justifyContent='flex-end'>
-                    <Button label='Secondary' />
-                    <Button label='Primary' type='primary' />
+                    <Button>Secondary</Button>
+                    <Button kind='primary'>Primary</Button>
                 </HFlow>
             </ModalFooter>
         </ModalContainer>

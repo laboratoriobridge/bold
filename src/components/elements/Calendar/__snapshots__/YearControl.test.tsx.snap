@@ -5,20 +5,28 @@ exports[`should render correctly 1`] = `
   alignItems="center"
   hSpacing={0.5}
 >
-  <Button
-    icon="angleLeft"
+  <Component
+    kind="normal"
     onClick={[Function]}
     size="small"
     skin="ghost"
     tabIndex={-1}
-  />
+  >
+    <Icon
+      icon="angleLeft"
+    />
+  </Component>
   2018
-  <Button
-    icon="angleRight"
+  <Component
+    kind="normal"
     onClick={[Function]}
     size="small"
     skin="ghost"
     tabIndex={-1}
-  />
+  >
+    <Icon
+      icon="angleRight"
+    />
+  </Component>
 </HFlow>
 `;

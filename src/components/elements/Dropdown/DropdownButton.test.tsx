@@ -3,6 +3,7 @@ import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../test'
 import * as stringUtils from '../../../util/string'
+import { Icon } from '../Icon'
 
 import { DropdownButton, DropdownButtonProps } from './DropdownButton'
 
@@ -10,7 +11,6 @@ import { DropdownButton, DropdownButtonProps } from './DropdownButton'
 
 const createDropdownButton = (props: Partial<DropdownButtonProps> = {}) => withTheme(
     <DropdownButton
-        icon='dots'
         size='small'
         skin='ghost'
         items={[
@@ -18,7 +18,9 @@ const createDropdownButton = (props: Partial<DropdownButtonProps> = {}) => withT
             { content: <span>Item #2</span> },
         ]}
         {...props}
-    />
+    >
+        <Icon icon='dots' />
+    </DropdownButton>
 )
 
 it('should render correctly when closed', () => {

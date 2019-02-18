@@ -6,7 +6,14 @@ exports[`Flow should accept alignItems prop 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -75,7 +82,14 @@ exports[`Flow should accept direction prop 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -130,7 +144,14 @@ exports[`Flow should accept hSpacing prop 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -178,7 +199,14 @@ exports[`Flow should accept justifyContent prop 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -237,7 +265,14 @@ exports[`Flow should accept the style prop 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -293,7 +328,14 @@ exports[`Flow should accept vSpacing prop 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 1.25rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {
@@ -348,7 +390,14 @@ exports[`Flow should wrap each child on an element with horizontal spacing 1`] =
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0:first-of-type {

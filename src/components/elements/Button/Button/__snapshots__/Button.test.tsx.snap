@@ -81,17 +81,14 @@ exports[`Button should accept the loading prop 1`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Botão
-    </span>
+    Button
   </span>
 </button>
 `;
 
-exports[`Button should render correctly with icon only 1`] = `
+exports[`Button should render correctly with icon 1`] = `
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -156,7 +153,6 @@ exports[`Button should render correctly with icon only 1`] = `
 
 <button
   class="emotion-1"
-  type="button"
 >
   <span>
     <svg
@@ -235,12 +231,9 @@ exports[`Button should render correctly with label 1`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -305,12 +298,9 @@ exports[`Button should render the default skin 1`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -382,12 +372,9 @@ exports[`Button should render the default skin 2`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -463,12 +450,9 @@ exports[`Button should render the default skin 3`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -533,12 +517,9 @@ exports[`Button should render the ghost skin 1`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -604,12 +585,9 @@ exports[`Button should render the ghost skin 2`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -679,12 +657,9 @@ exports[`Button should render the ghost skin 3`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -749,12 +724,9 @@ exports[`Button should render the outline skin 1`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -825,12 +797,9 @@ exports[`Button should render the outline skin 2`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
@@ -905,12 +874,9 @@ exports[`Button should render the outline skin 3`] = `
 
 <button
   class="emotion-0"
-  type="button"
 >
   <span>
-    <span>
-      Button
-    </span>
+    Button
   </span>
 </button>
 `;
