@@ -1,38 +1,37 @@
-import { mount, render } from 'enzyme'
 import * as React from 'react'
+import { fireEvent, render } from 'react-testing-library'
 
-import { withTheme } from '../../../../test'
 import { Icon } from '../../Icon'
 
 import { Button } from './Button'
 
 describe('Button', () => {
     it('should render correctly with label', () => {
-        const wrapper = render(withTheme(<Button>Button</Button>))
-        expect(wrapper).toMatchSnapshot()
+        const { container } = render(<Button>Button</Button>)
+        expect(container).toMatchSnapshot()
     })
 
     it('should render correctly with icon', () => {
-        const wrapper = render(withTheme(<Button><Icon icon='adjust' /></Button>))
-        expect(wrapper).toMatchSnapshot()
+        const { container } = render(<Button><Icon icon='adjust' /></Button>)
+        expect(container).toMatchSnapshot()
     })
 
     it('should render the default skin', () => {
-        expect(render(withTheme(<Button skin='default' kind='normal'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='default' kind='primary'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='default' kind='danger'>Button</Button>))).toMatchSnapshot()
+        expect(render(<Button skin='default' kind='normal'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='default' kind='primary'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='default' kind='danger'>Button</Button>).container).toMatchSnapshot()
     })
 
     it('should render the ghost skin', () => {
-        expect(render(withTheme(<Button skin='ghost' kind='normal'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='ghost' kind='primary'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='ghost' kind='danger'>Button</Button>))).toMatchSnapshot()
+        expect(render(<Button skin='ghost' kind='normal'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='ghost' kind='primary'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='ghost' kind='danger'>Button</Button>).container).toMatchSnapshot()
     })
 
     it('should render the outline skin', () => {
-        expect(render(withTheme(<Button skin='outline' kind='normal'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='outline' kind='primary'>Button</Button>))).toMatchSnapshot()
-        expect(render(withTheme(<Button skin='outline' kind='danger'>Button</Button>))).toMatchSnapshot()
+        expect(render(<Button skin='outline' kind='normal'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='outline' kind='primary'>Button</Button>).container).toMatchSnapshot()
+        expect(render(<Button skin='outline' kind='danger'>Button</Button>).container).toMatchSnapshot()
     })
 
     it('should have a "loading" animation when onClick return is a Promise', () => {
@@ -42,24 +41,26 @@ describe('Button', () => {
             })
         }
 
-        const wrapper = mount(withTheme(<Button onClick={delayedFunction}>Button</Button>))
-        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
+        const { container } = render(<Button onClick={delayedFunction}>Button</Button>)
+        const button = container.querySelector('button')
+        expect(button.getAttribute('data-loading')).toBeFalsy()
 
-        wrapper.simulate('click')
-        expect(wrapper.find('button').prop('data-loading')).toEqual(true)
+        fireEvent.click(button)
+        expect(button.getAttribute('data-loading')).toEqual('true')
     })
 
     it('should NOT have animation when onClick return is not a Promise', () => {
         const func = () => undefined
-        const wrapper = mount(withTheme(<Button onClick={func}>Button</Button>))
-        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
+        const { container } = render(<Button onClick={func}>Button</Button>)
+        const button = container.querySelector('button')
+        expect(button.getAttribute('data-loading')).toBeFalsy()
 
-        wrapper.simulate('click')
-        expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
+        fireEvent.click(button)
+        expect(button.getAttribute('data-loading')).toBeFalsy()
     })
 
     it('should accept the loading prop', () => {
-        const wrapper = render(withTheme(<Button loading={true}>Button</Button>))
-        expect(wrapper).toMatchSnapshot()
+        const { container } = render(<Button loading={true}>Button</Button>)
+        expect(container).toMatchSnapshot()
     })
 })

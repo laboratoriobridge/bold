@@ -1,17 +1,6 @@
-import { css as emotionCss } from 'emotion'
-import { useContext } from 'react'
+import { Theme } from '../theme/createTheme'
 
-import { Theme } from './theme/createTheme'
-import { ThemeContext } from './theme/ThemeContext'
-
-export const useTheme = (): Theme => {
-    return useContext(ThemeContext)
-}
-
-export const useCss = () => {
-    const theme = useTheme()
-    return { theme, css: emotionCss }
-}
+import { useCss } from './useCss'
 
 export type StyleFactory<Classes extends string> = (theme: Theme) => {
     readonly [key in Classes]: React.CSSProperties
@@ -40,8 +29,4 @@ export const useStyles = <Classes extends string>(factory: StyleFactory<Classes>
         css,
         theme,
     }
-}
-
-export const makeStyles = <Classes extends string>(factory: StyleFactory<Classes>) => {
-    return factory
 }

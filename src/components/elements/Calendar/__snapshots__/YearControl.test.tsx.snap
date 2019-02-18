@@ -12,8 +12,9 @@ exports[`should render correctly 1`] = `
     skin="ghost"
     tabIndex={-1}
   >
-    <Icon
+    <Component
       icon="angleLeft"
+      size={1.5}
     />
   </Component>
   2018
@@ -24,8 +25,9 @@ exports[`should render correctly 1`] = `
     skin="ghost"
     tabIndex={-1}
   >
-    <Icon
+    <Component
       icon="angleRight"
+      size={1.5}
     />
   </Component>
 </HFlow>
