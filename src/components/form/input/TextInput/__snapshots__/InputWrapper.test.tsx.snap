@@ -169,8 +169,6 @@ exports[`should render correctly with button 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-3:not(:disabled):active {

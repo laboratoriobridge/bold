@@ -116,8 +116,6 @@ exports[`renders correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-5:not(:disabled):active {
@@ -192,8 +190,6 @@ exports[`renders correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-9:not(:disabled):active {
@@ -302,8 +298,6 @@ exports[`renders correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-13:not(:disabled):active {

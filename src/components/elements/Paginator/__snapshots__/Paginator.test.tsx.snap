@@ -49,8 +49,6 @@ exports[`deve renderizar corretamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-1:not(:disabled):active {
@@ -164,8 +162,6 @@ exports[`deve renderizar corretamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-5:not(:disabled):active {
@@ -348,8 +344,6 @@ exports[`deve renderizar corretamente 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-5:not(:disabled):active {
@@ -404,8 +398,6 @@ exports[`deve renderizar corretamente 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-1:not(:disabled):active {
@@ -589,8 +581,6 @@ exports[`deve renderizar corretamente 3`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-5:not(:disabled):active {
@@ -645,8 +635,6 @@ exports[`deve renderizar corretamente 3`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-1:not(:disabled):active {

@@ -117,8 +117,6 @@ exports[`icon should render correctly with icon 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-2:not(:disabled):active {

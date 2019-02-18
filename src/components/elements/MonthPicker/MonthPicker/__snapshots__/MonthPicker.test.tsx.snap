@@ -110,8 +110,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-1:not(:disabled):active {
@@ -208,8 +206,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-10:not(:disabled):active {
@@ -264,8 +260,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-12:not(:disabled):active {

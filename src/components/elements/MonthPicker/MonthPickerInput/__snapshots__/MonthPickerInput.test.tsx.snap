@@ -121,8 +121,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-2:not(:disabled):active {
@@ -265,8 +263,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-7:not(:disabled):active {
@@ -356,8 +352,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
 .emotion-16:not(:disabled):active {

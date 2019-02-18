@@ -39,7 +39,6 @@ export const createBaseStyles = (theme: Theme): Styles => ({
         '& > span': {
             alignItems: 'center',
             display: 'inline-flex',
-            transition: 'color .2s',
         },
     },
     disabled: {
