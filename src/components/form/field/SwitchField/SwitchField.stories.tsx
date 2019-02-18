@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { withForm } from '../../../../stories-addons/withForm'
 

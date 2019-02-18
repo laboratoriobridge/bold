@@ -16,12 +16,7 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
-<body>
-  <div>
-    <div
-      id="portal-root"
-    >
-      .emotion-0 {
+.emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
   background: #2D343B;
@@ -39,7 +34,12 @@ exports[`should render correctly 2`] = `
   opacity: 1;
 }
 
-<div
+<body>
+  <div>
+    <div
+      id="portal-root"
+    >
+      <div
         class="emotion-1"
         id="tooltip-abc"
         role="tooltip"

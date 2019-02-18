@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 import { Manager, Popper, PopperProps, Reference } from 'react-popper'
 
 import { useTheme } from '../../../styles'

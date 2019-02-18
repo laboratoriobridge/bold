@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
 import { HFlow } from '../../layout/Flow/HFlow'

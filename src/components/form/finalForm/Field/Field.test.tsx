@@ -1,6 +1,6 @@
-import { mount } from 'enzyme'
-import * as setFieldData from 'final-form-set-field-data'
-import * as React from 'react'
+import { mount, render } from 'enzyme'
+import setFieldData from 'final-form-set-field-data'
+import React from 'react'
 import { Form } from 'react-final-form'
 
 import metaPath from '../../../../metaPath/metaPath'
@@ -17,20 +17,20 @@ interface FormType {
 const input = jest.fn((props: RenderProps) => <input {...props.input} />)
 
 const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
-    return mount(withTheme(
+    return withTheme(
         <Form onSubmit={jest.fn()}>
             {p => <Field name='field1' render={input} {...fieldProps} />}
         </Form>
-    ))
+    )
 }
 
 describe('render', () => {
     it('should render correctly', () => {
-        expect(createFormAndField({ label: 'Field #1', required: true }).render()).toMatchSnapshot()
+        expect(render(createFormAndField({ label: 'Field #1', required: true }))).toMatchSnapshot()
     })
 
     it('should NOT render wrapper if hasWrapper is false', () => {
-        const wrapper = createFormAndField({ hasWrapper: false })
+        const wrapper = mount(createFormAndField({ hasWrapper: false }))
         expect(wrapper.find(FieldWrapper).length).toEqual(0)
     })
 })
@@ -39,7 +39,7 @@ describe('convert', () => {
     it('should throw an exception if convert is defined but necessary mutator is not set on context', () => {
         jest.spyOn(console, 'error').mockImplementation(() => null)
         expect(() => {
-            createFormAndField({ convert: jest.fn() })
+            mount(createFormAndField({ convert: jest.fn() }))
         }).toThrowErrorMatchingSnapshot()
     })
     it('should set convert function on field data', () => {

@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { SortDirection } from '../SortableLabel/SortableLabel'
 import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow } from '../Table'

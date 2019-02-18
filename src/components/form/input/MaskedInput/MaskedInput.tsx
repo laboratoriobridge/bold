@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-text-mask'
 
 import { Omit } from '../../../../util/types'
@@ -6,7 +6,7 @@ import { TextInput, TextInputProps } from '../TextInput/TextInput'
 
 export type MaskType = ReactMaskedInputProps['mask']
 
-export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'css' | 'style'>, TextInputProps {
+export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'style'>, TextInputProps {
 }
 
 export class MaskedInput extends React.PureComponent<MaskedInputProps> {

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { FormError, FormErrorProps } from '../FormError'
 import { FormLabel, FormLabelProps } from '../FormLabel'

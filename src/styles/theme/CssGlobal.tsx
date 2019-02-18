@@ -1,5 +1,5 @@
 import { injectGlobal, Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 export interface CssGlobalProps {
     styles: Interpolation

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Transition, { TransitionProps, TransitionStatus } from 'react-transition-group/Transition'
 
 import { ClassNames, useStyles } from '../../../styles'

@@ -1,5 +1,5 @@
 import { createMemoryHistory } from 'history'
-import * as React from 'react'
+import React from 'react'
 import { Field, Form, FormProps } from 'react-final-form'
 import { Router } from 'react-router'
 import { fireEvent, render } from 'react-testing-library'

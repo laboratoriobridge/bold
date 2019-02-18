@@ -3,7 +3,7 @@ module.exports = function({ template }, opts, { imports, componentName, props, j
     return typeScriptTpl.ast`
 ${'/* tslint:disable */\n'}
 
-import * as React from 'react'
+import React from 'react'
 
 const ${componentName} = (props: React.SVGProps<SVGSVGElement>) => ${jsx}
 export default ${componentName};

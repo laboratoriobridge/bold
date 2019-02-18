@@ -1,5 +1,5 @@
 import { css } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { HFlow, VFlow } from '../../../layout'

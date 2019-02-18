@@ -89,8 +89,7 @@ exports[`should render correctly when closed 1`] = `
 `;
 
 exports[`should render correctly when opened 1`] = `
-<body>
-  .emotion-1 {
+.emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -146,7 +145,53 @@ exports[`should render correctly when opened 1`] = `
   font-size: 1.5rem;
 }
 
-<div>
+.emotion-4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  margin: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.emotion-2:first-of-type a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-2:last-of-type a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  background: #F2F2F7;
+}
+
+.emotion-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 1;
+}
+
+<body>
+  <div>
     <button
       aria-controls="menu-abc"
       aria-expanded="true"
@@ -175,63 +220,18 @@ exports[`should render correctly when opened 1`] = `
       </span>
     </button>
   </div>
-  .emotion-2 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-}
-
-.emotion-0 {
-  margin: 0;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-weight: bolder;
-  outline: none;
-  font-size: 0.875rem;
-}
-
-.emotion-0:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-0:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-0:hover,
-.emotion-0:focus {
-  background: #F2F2F7;
-}
-
-.emotion-3 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 1;
-}
-
-<div
-    class="emotion-3"
+  <div
+    class="emotion-5"
     style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1300;"
   >
     <ul
-      class="emotion-2"
+      class="emotion-4"
       id="menu-abc"
       role="menu"
     >
       <li
         aria-disabled="false"
-        class="emotion-0"
+        class="emotion-2"
         role="menuitem"
         tabindex="0"
       >
@@ -241,7 +241,7 @@ exports[`should render correctly when opened 1`] = `
       </li>
       <li
         aria-disabled="false"
-        class="emotion-0"
+        class="emotion-2"
         role="menuitem"
         tabindex="-1"
       >

@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { OuterShadows } from '../../../styles/theme/createShadows'

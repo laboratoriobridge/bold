@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { Calendar, CalendarProps } from '../../../elements/Calendar'

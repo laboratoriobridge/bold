@@ -1,8 +1,7 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
-import { Omit } from '../../../util/types'
 import { Button } from '../Button'
 import { Icons } from '../Icon'
 import { Icon } from '../Icon/Icon'
@@ -52,7 +51,7 @@ export const createTypesStyles = (theme: Theme): {
     }
 }
 
-export interface AlertProps extends WithStylesProps, Omit<React.HTMLAttributes<HTMLDivElement>, 'css'> {
+export interface AlertProps extends WithStylesProps, React.HTMLAttributes<HTMLDivElement> {
     type: AlertType
     onCloseClick?: any
     inline?: boolean

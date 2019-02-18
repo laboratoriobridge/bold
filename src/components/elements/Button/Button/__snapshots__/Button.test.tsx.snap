@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should accept the loading prop 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -58,8 +72,8 @@ exports[`Button should accept the loading prop 1`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 500ms infinite linear;
-  animation: animation-1scjtrl 500ms infinite linear;
+  -webkit-animation: animation-0 500ms infinite linear;
+  animation: animation-0 500ms infinite linear;
   border: 3px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;

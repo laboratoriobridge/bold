@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { conformToMask } from 'text-mask-core'
 
 import { masks } from '../../../../util/masks'

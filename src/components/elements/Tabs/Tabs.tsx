@@ -1,5 +1,5 @@
 import { cx } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { BaseFieldProps } from '../../finalForm/Field'
 import { TextInputProps } from '../../input/TextInput/TextInput'

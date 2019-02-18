@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { InputWrapper, InputWrapperProps } from './InputWrapper'
 import { TextInputBase, TextInputBaseProps } from './TextInputBase'

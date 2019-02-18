@@ -1,5 +1,5 @@
-import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
 
@@ -7,22 +7,26 @@ import { SortableLabel, toggleDirection } from './SortableLabel'
 
 describe('SortableLabel', () => {
     it('should render correctly', () => {
-        expect(render(withTheme(<SortableLabel direction='' onChange={jest.fn()} />))).toMatchSnapshot()
-        expect(render(withTheme(<SortableLabel direction='ASC' onChange={jest.fn()} />))).toMatchSnapshot()
-        expect(render(withTheme(<SortableLabel direction='DESC' onChange={jest.fn()} />))).toMatchSnapshot()
+        expect(render(withTheme(<SortableLabel direction='' onChange={jest.fn()} />)).container).toMatchSnapshot()
+        expect(render(withTheme(<SortableLabel direction='ASC' onChange={jest.fn()} />)).container).toMatchSnapshot()
+        expect(render(withTheme(<SortableLabel direction='DESC' onChange={jest.fn()} />)).container).toMatchSnapshot()
     })
     it('should call onChange when clicked', () => {
         const change = jest.fn()
-        mount(withTheme(<SortableLabel direction='' onChange={change} />)).simulate('click')
-        expect(change).toHaveBeenLastCalledWith('ASC', undefined)
+        const { container, rerender } = render(withTheme(<SortableLabel direction='' onChange={change} />))
+        fireEvent.click(container.querySelector('span'))
+        expect(change).toHaveBeenLastCalledWith('ASC', false)
 
-        mount(withTheme(<SortableLabel direction='ASC' onChange={change} />)).simulate('click')
-        expect(change).toHaveBeenLastCalledWith('DESC', undefined)
+        rerender(withTheme(<SortableLabel direction='ASC' onChange={change} />))
+        fireEvent.click(container.querySelector('span'))
+        expect(change).toHaveBeenLastCalledWith('DESC', false)
 
-        mount(withTheme(<SortableLabel direction='DESC' onChange={change} />)).simulate('click')
-        expect(change).toHaveBeenLastCalledWith('ASC', undefined)
+        rerender(withTheme(<SortableLabel direction='DESC' onChange={change} />))
+        fireEvent.click(container.querySelector('span'))
+        expect(change).toHaveBeenLastCalledWith('ASC', false)
 
-        mount(withTheme(<SortableLabel direction='DESC' onChange={change} />)).simulate('click', { shiftKey: true })
+        rerender(withTheme(<SortableLabel direction='DESC' onChange={change} />))
+        fireEvent.click(container.querySelector('span'), { shiftKey: true })
         expect(change).toHaveBeenLastCalledWith('ASC', true)
     })
 })

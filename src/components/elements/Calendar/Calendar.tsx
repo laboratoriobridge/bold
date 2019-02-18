@@ -1,5 +1,5 @@
 import { css, Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, Theme } from '../../../styles'
 import { Omit } from '../../../util/types'
