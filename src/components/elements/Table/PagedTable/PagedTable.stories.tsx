@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import * as React from 'react'
 
 import { Button } from '../../Button'
+import { Icon } from '../../Icon'
 
 import { PagedTable } from './PagedTable'
 
@@ -40,7 +41,11 @@ storiesOf('Components/Table', module)
                 {
                     name: 'buttons',
                     style: { textAlign: 'right' },
-                    render: (row: Row) => <Button size='small' skin='ghost' icon='penOutline' />,
+                    render: (row: Row) => (
+                        <Button size='small' skin='ghost'>
+                            <Icon icon='penOutline' />
+                        </Button>
+                    ),
                 },
             ]}
         />

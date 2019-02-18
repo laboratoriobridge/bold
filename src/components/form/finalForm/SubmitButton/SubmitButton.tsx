@@ -19,7 +19,7 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
                     <Button
                         loading={submitting}
                         onClick={handleSubmit}
-                        type='primary'
+                        kind='primary'
                         render={this.renderButton}
                         {...rest}
                     />

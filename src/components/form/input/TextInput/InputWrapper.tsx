@@ -109,12 +109,14 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                             <Button
                                 size='small'
                                 skin='ghost'
-                                icon={icon}
                                 tabIndex={-1}
                                 onClick={onIconClick}
                                 style={styles.icon}
                                 disabled={iconDisabled}
-                            /> :
+                            >
+                                <Icon icon={icon} />
+                            </Button>
+                            :
                             <Icon
                                 icon={icon}
                                 style={styles.icon}

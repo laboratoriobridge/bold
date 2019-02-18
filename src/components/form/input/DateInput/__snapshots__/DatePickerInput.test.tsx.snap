@@ -190,7 +190,14 @@ exports[`DatePickerInput should render correctly 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-8:first-of-type {
@@ -332,7 +339,6 @@ exports[`DatePickerInput should render correctly 1`] = `
           <button
             class="emotion-2"
             tabindex="-1"
-            type="button"
           >
             <span>
               <svg
@@ -385,7 +391,6 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -414,7 +419,6 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -446,7 +450,6 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -475,7 +478,6 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -1022,7 +1024,14 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-8:first-of-type {
@@ -1231,7 +1240,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
             class="emotion-2"
             disabled=""
             tabindex="-1"
-            type="button"
           >
             <span>
               <svg
@@ -1284,7 +1292,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -1313,7 +1320,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -1345,7 +1351,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg
@@ -1374,7 +1379,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
-                    type="button"
                   >
                     <span>
                       <svg

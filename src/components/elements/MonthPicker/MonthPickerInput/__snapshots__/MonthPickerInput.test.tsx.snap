@@ -182,7 +182,14 @@ exports[`MonthPickerInput should render correctly 1`] = `
   margin-right: 0rem;
   margin-bottom: 0.25rem;
   margin-left: 0rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-15:first-of-type {
@@ -218,7 +225,14 @@ exports[`MonthPickerInput should render correctly 1`] = `
   margin-right: 0.5rem;
   margin-bottom: 0rem;
   margin-left: 0.5rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-8:first-of-type {
@@ -310,7 +324,14 @@ exports[`MonthPickerInput should render correctly 1`] = `
   margin-right: 0.1875rem;
   margin-bottom: 0.5rem;
   margin-left: 0.1875rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-17:first-of-type {
@@ -407,7 +428,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
           <button
             class="emotion-2"
             tabindex="-1"
-            type="button"
           >
             <span>
               <svg
@@ -454,7 +474,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 <button
                   class="emotion-7"
                   title="Ano anterior"
-                  type="button"
                 >
                   <span>
                     <svg
@@ -487,7 +506,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 <button
                   class="emotion-7"
                   title="Ano posterior"
-                  type="button"
                 >
                   <span>
                     <svg
@@ -518,12 +536,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Jan
-                    </span>
+                    Jan
                   </span>
                 </button>
               </div>
@@ -532,12 +547,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Fev
-                    </span>
+                    Fev
                   </span>
                 </button>
               </div>
@@ -546,12 +558,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Mar
-                    </span>
+                    Mar
                   </span>
                 </button>
               </div>
@@ -560,12 +569,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Abr
-                    </span>
+                    Abr
                   </span>
                 </button>
               </div>
@@ -574,12 +580,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Mai
-                    </span>
+                    Mai
                   </span>
                 </button>
               </div>
@@ -588,12 +591,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Jun
-                    </span>
+                    Jun
                   </span>
                 </button>
               </div>
@@ -602,12 +602,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Jul
-                    </span>
+                    Jul
                   </span>
                 </button>
               </div>
@@ -616,12 +613,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Ago
-                    </span>
+                    Ago
                   </span>
                 </button>
               </div>
@@ -630,12 +624,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Set
-                    </span>
+                    Set
                   </span>
                 </button>
               </div>
@@ -644,12 +635,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Out
-                    </span>
+                    Out
                   </span>
                 </button>
               </div>
@@ -658,12 +646,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Nov
-                    </span>
+                    Nov
                   </span>
                 </button>
               </div>
@@ -672,12 +657,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
-                  type="button"
                 >
                   <span>
-                    <span>
-                      Dez
-                    </span>
+                    Dez
                   </span>
                 </button>
               </div>

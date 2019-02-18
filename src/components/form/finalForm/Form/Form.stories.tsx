@@ -46,7 +46,7 @@ storiesOf('Form', module)
                         <RadioField name='radio' label='Option2' value='2' />
                     </Flow>
                     <CheckboxField name='check' label='Check' />
-                    <SubmitButton label='Submit' handleSubmit={props.handleSubmit} />
+                    <SubmitButton handleSubmit={props.handleSubmit}>Submit</SubmitButton>
                 </Flow>
             </form>
         )

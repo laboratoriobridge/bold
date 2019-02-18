@@ -70,9 +70,7 @@ exports[`should render correctly 1`] = `
   type="submit"
 >
   <span>
-    <span>
-      Submit Button
-    </span>
+    Submit Button
   </span>
 </button>
 `;

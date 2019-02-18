@@ -25,7 +25,8 @@ export class Spacing extends React.PureComponent<SpacingProps> {
             marginRight: this.props.right + 'rem',
             marginBottom: this.props.bottom + 'rem',
             marginLeft: this.props.left + 'rem',
-            display: !this.props.block && 'inline-block',
+            display: !this.props.block && 'inline-flex',
+            alignItems: 'center',
         }
 
         return (

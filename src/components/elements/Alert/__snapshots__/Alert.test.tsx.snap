@@ -317,7 +317,6 @@ exports[`Alert should render correctly 1`] = `
         <button
           aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -373,7 +372,6 @@ exports[`Alert should render correctly 1`] = `
         <button
           aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -429,7 +427,6 @@ exports[`Alert should render correctly 1`] = `
         <button
           aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -485,7 +482,6 @@ exports[`Alert should render correctly 1`] = `
         <button
           aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg

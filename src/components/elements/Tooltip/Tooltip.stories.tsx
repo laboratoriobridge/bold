@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 
 import { Tooltip } from './Tooltip'
 
@@ -10,7 +11,7 @@ storiesOf('Components/Tooltip', module)
     .add('default', () => (
         <HFlow hSpacing={0.5} alignItems='center'>
             <Tooltip text='Lorem ipsum'>
-                <Button label='Action' size='small' />
+                <Button size='small'>Action</Button>
             </Tooltip>
             <Tooltip
                 text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -18,7 +19,9 @@ storiesOf('Components/Tooltip', module)
                 Donec mollis eu velit nec ullamcorper.'
                 placement='bottom-start'
             >
-                <Button icon='trashOutline' skin='ghost' size='small' />
+                <Button skin='ghost' size='small'>
+                    <Icon icon='trashOutline' />
+                </Button>
             </Tooltip>
         </HFlow>
     ))

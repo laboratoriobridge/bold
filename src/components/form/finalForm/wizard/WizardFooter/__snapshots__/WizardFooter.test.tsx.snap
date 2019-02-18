@@ -138,22 +138,16 @@ exports[`rendering should render correctly 1`] = `
 >
   <button
     class="emotion-0"
-    type="button"
   >
     <span>
-      <span>
-        Voltar
-      </span>
+      Voltar
     </span>
   </button>
   <button
     class="emotion-1"
-    type="button"
   >
     <span>
-      <span>
-        Avançar
-      </span>
+      Avançar
     </span>
   </button>
 </div>

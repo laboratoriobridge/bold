@@ -68,7 +68,6 @@ exports[`should render correctly when closed 1`] = `
     <button
       aria-haspopup="true"
       class="emotion-1"
-      type="button"
     >
       <span>
         <svg
@@ -165,7 +164,6 @@ exports[`should render correctly when opened 1`] = `
       aria-expanded="true"
       aria-haspopup="true"
       class="emotion-1"
-      type="button"
     >
       <span>
         <svg

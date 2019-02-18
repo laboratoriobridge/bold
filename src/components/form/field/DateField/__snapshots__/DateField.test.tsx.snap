@@ -196,7 +196,14 @@ exports[`should be rendered correctly 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-9:first-of-type {
@@ -348,7 +355,6 @@ exports[`should be rendered correctly 1`] = `
             <button
               class="emotion-3"
               tabindex="-1"
-              type="button"
             >
               <span>
                 <svg
@@ -401,7 +407,6 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
-                      type="button"
                     >
                       <span>
                         <svg
@@ -430,7 +435,6 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
-                      type="button"
                     >
                       <span>
                         <svg
@@ -462,7 +466,6 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
-                      type="button"
                     >
                       <span>
                         <svg
@@ -491,7 +494,6 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
-                      type="button"
                     >
                       <span>
                         <svg

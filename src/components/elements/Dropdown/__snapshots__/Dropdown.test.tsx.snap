@@ -62,12 +62,9 @@ exports[`should open menu on click 1`] = `
 <div>
     <button
       class="emotion-0"
-      type="button"
     >
       <span>
-        <span>
-          Menu
-        </span>
+        Menu
       </span>
     </button>
   </div>
@@ -136,12 +133,9 @@ exports[`should render correctly 1`] = `
   <div>
     <button
       class="emotion-0"
-      type="button"
     >
       <span>
-        <span>
-          Menu
-        </span>
+        Menu
       </span>
     </button>
   </div>

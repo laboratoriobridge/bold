@@ -29,13 +29,13 @@ export class WizardFooter extends React.Component<WizardFooterProps> {
         return (
             <div className={css(styles.container)}>
                 {!isFirstStep &&
-                    <Button label='Voltar' onClick={onPrevious} />
+                    <Button onClick={onPrevious}>Voltar</Button>
                 }
                 {!isLastStep &&
-                    <Button type='primary' label='Avançar' onClick={onSubmit} />
+                    <Button kind='primary' onClick={onSubmit}>Avançar</Button>
                 }
                 {isLastStep &&
-                    <Button type='primary' label='Salvar' onClick={onSubmit} />
+                    <Button kind='primary' onClick={onSubmit}>Salvar</Button>
                 }
             </div>
         )

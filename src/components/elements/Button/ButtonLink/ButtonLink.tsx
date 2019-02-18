@@ -30,7 +30,9 @@ export class ButtonLink extends React.PureComponent<ButtonLinkProps> {
     renderLink = (buttonProps: any) => {
         const { to, replace } = this.props
         const {
-            disabled, // a tag does not support the 'disabled' prop
+            disabled, // `<a>` tag does not support the 'disabled' prop
+            css,
+            theme,
             ...other
         } = buttonProps
 

@@ -121,10 +121,11 @@ export class Alert extends React.PureComponent<AlertProps> {
                                 aria-label='Fechar alerta'
                                 size='small'
                                 skin='ghost'
-                                icon='timesDefault'
                                 style={defaultStyles.closeButton}
                                 onClick={onCloseClick}
-                            />
+                            >
+                                <Icon icon='timesDefault' />
+                            </Button>
                         </Tooltip>
                     </span>}
                 </div>

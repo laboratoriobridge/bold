@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
 export interface ModalContainerProps extends WithStylesProps {
@@ -42,9 +43,10 @@ export class ModalContainer extends React.PureComponent<ModalContainerProps> {
                         size='small'
                         skin='ghost'
                         style={styles.closeButton}
-                        icon='timesDefault'
                         onClick={onClose}
-                    />
+                    >
+                        <Icon icon='timesDefault' />
+                    </Button>
                 </Tooltip>
 
                 {this.props.children}

@@ -12,7 +12,7 @@ import { ModalFooter } from './ModalFooter'
 describe('Modal', () => {
 
     const createFooter = () => (
-        <Button label='Action' />
+        <Button>Action</Button>
     )
 
     it('should render closed', () => {

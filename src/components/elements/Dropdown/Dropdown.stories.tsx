@@ -12,7 +12,6 @@ import { DropdownMenu } from './DropdownMenu'
 storiesOf('Components/Dropdown', module)
     .add('button', () => (
         <DropdownButton
-            label='Options'
             size='small'
             items={[
                 { content: 'Item #1', onClick: action('item 1 clicked') },
@@ -24,7 +23,9 @@ storiesOf('Components/Dropdown', module)
                     tooltip: 'This is disabled',
                 },
             ]}
-        />
+        >
+            Options
+        </DropdownButton>
     ))
     .add('menu', () => (
         <DropdownMenu>

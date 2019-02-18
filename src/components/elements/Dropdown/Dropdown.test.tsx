@@ -12,11 +12,9 @@ import { DropdownMenu } from './DropdownMenu'
 
 const createDropdown = () => (
     <Dropdown
-        renderTarget={({ ref }) =>
-            <Button
-                label='Menu'
-                innerRef={ref}
-            />}
+        renderTarget={({ ref }) => (
+            <Button innerRef={ref}>Menu</Button>
+        )}
     >
         {() => (
             <DropdownMenu>

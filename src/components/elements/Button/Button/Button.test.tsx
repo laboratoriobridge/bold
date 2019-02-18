@@ -2,36 +2,37 @@ import { mount, render } from 'enzyme'
 import * as React from 'react'
 
 import { withTheme } from '../../../../test'
+import { Icon } from '../../Icon'
 
 import { Button } from './Button'
 
 describe('Button', () => {
     it('should render correctly with label', () => {
-        const wrapper = render(withTheme(<Button label='Button' />))
+        const wrapper = render(withTheme(<Button>Button</Button>))
         expect(wrapper).toMatchSnapshot()
     })
 
-    it('should render correctly with icon only', () => {
-        const wrapper = render(withTheme(<Button icon='adjust' />))
+    it('should render correctly with icon', () => {
+        const wrapper = render(withTheme(<Button><Icon icon='adjust' /></Button>))
         expect(wrapper).toMatchSnapshot()
     })
 
     it('should render the default skin', () => {
-        expect(render(withTheme(<Button label='Button' skin='default' type='normal' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='default' type='primary' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='default' type='danger' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='default' kind='normal'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='default' kind='primary'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='default' kind='danger'>Button</Button>))).toMatchSnapshot()
     })
 
     it('should render the ghost skin', () => {
-        expect(render(withTheme(<Button label='Button' skin='ghost' type='normal' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='ghost' type='primary' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='ghost' type='danger' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='ghost' kind='normal'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='ghost' kind='primary'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='ghost' kind='danger'>Button</Button>))).toMatchSnapshot()
     })
 
     it('should render the outline skin', () => {
-        expect(render(withTheme(<Button label='Button' skin='outline' type='normal' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='outline' type='primary' />))).toMatchSnapshot()
-        expect(render(withTheme(<Button label='Button' skin='outline' type='danger' />))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='outline' kind='normal'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='outline' kind='primary'>Button</Button>))).toMatchSnapshot()
+        expect(render(withTheme(<Button skin='outline' kind='danger'>Button</Button>))).toMatchSnapshot()
     })
 
     it('should have a "loading" animation when onClick return is a Promise', () => {
@@ -41,7 +42,7 @@ describe('Button', () => {
             })
         }
 
-        const wrapper = mount(withTheme(<Button label='Botão' onClick={delayedFunction} />))
+        const wrapper = mount(withTheme(<Button onClick={delayedFunction}>Button</Button>))
         expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
 
         wrapper.simulate('click')
@@ -50,7 +51,7 @@ describe('Button', () => {
 
     it('should NOT have animation when onClick return is not a Promise', () => {
         const func = () => undefined
-        const wrapper = mount(withTheme(<Button label='Botão' onClick={func} />))
+        const wrapper = mount(withTheme(<Button onClick={func}>Button</Button>))
         expect(wrapper.find('button').prop('data-loading')).toBeUndefined()
 
         wrapper.simulate('click')
@@ -58,7 +59,7 @@ describe('Button', () => {
     })
 
     it('should accept the loading prop', () => {
-        const wrapper = render(withTheme(<Button label='Botão' loading={true} />))
+        const wrapper = render(withTheme(<Button loading={true}>Button</Button>))
         expect(wrapper).toMatchSnapshot()
     })
 })
