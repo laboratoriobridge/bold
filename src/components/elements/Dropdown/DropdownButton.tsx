@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Manager, Popper, Reference } from 'react-popper'
+import { Manager, Popper, PopperProps, Reference } from 'react-popper'
 
 import { useTheme } from '../../../styles'
 import { composeRefs } from '../../../util/react'
@@ -17,10 +17,11 @@ export type DropdownItemConfig = Omit<DropdownButtonItemProps, 'onAfterClick'>
 
 export interface DropdownButtonProps extends ButtonProps {
     items: DropdownItemConfig[]
+    popperProps?: Omit<PopperProps, 'children'>
 }
 
 export const DropdownButton = (props: DropdownButtonProps) => {
-    const { items, ...rest } = props
+    const { items, popperProps, ...rest } = props
     const theme = useTheme()
 
     const meuIdRef = React.useRef<string>(null)
@@ -89,7 +90,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
                 {({ className }) => (
                     isOpen && (
                         <Portal>
-                            <Popper>
+                            <Popper {...popperProps}>
                                 {(popper) => (
                                     <div
                                         ref={popper.ref}

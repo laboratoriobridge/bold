@@ -28,6 +28,10 @@ it('should render correctly when closed', () => {
     expect(document.body).toMatchSnapshot()
 })
 
+it('should accept popper props', () => {
+    render(createDropdownButton({ popperProps: { placement: 'left-end' } }))
+})
+
 it('should open the dropdown on click', async () => {
     const { container } = render(createDropdownButton())
     const button = container.querySelector('button')
