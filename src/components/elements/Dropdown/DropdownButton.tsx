@@ -53,9 +53,13 @@ export const DropdownButton = (props: DropdownButtonProps) => {
 
     const handleAfterClick = () => setOpen(false)
 
+    const isFirstRun = React.useRef(true)
     React.useEffect(() => {
         // Skip on first render
-        if (!buttonRef.current) { return }
+        if (isFirstRun.current) {
+            isFirstRun.current = false
+            return
+        }
 
         if (isOpen) {
             // When opened, focus the first menu item
