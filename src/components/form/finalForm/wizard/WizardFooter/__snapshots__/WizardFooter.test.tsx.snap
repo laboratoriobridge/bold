@@ -52,10 +52,6 @@ exports[`rendering should render correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-0 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
 .emotion-0:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
@@ -110,10 +106,6 @@ exports[`rendering should render correctly 1`] = `
   display: inline-flex;
   -webkit-transition: color .2s;
   transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {

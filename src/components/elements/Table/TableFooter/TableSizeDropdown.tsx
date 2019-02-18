@@ -1,7 +1,6 @@
 import { Interpolation } from 'emotion'
 import * as React from 'react'
 
-import { HFlow } from '../../../layout'
 import { DropdownButton, DropdownItemConfig } from '../../Dropdown'
 import { Icon } from '../../Icon'
 import { Text } from '../../textual'
@@ -30,10 +29,8 @@ export const TableSizeDropdown = (props: TableSizeDropdownProps) => {
             skin='ghost'
             style={style}
         >
-            <HFlow alignItems='center' hSpacing={0.25}>
-                <Text>{size}</Text>
-                <Icon icon='angleDown' />
-            </HFlow>
+            <Text>{size}</Text>
+            <Icon icon='angleDown' style={{ marginLeft: '0.125rem' }} />
         </DropdownButton>
     )
 

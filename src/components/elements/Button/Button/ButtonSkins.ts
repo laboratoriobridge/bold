@@ -40,9 +40,6 @@ export const createBaseStyles = (theme: Theme): Styles => ({
             alignItems: 'center',
             display: 'inline-flex',
             transition: 'color .2s',
-            '& > :not(:last-child)': {
-                marginRight: '0.5rem',
-            },
         },
     },
     disabled: {

@@ -46,14 +46,7 @@ exports[`should render complete state 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 .emotion-1:first-of-type {
@@ -263,14 +256,7 @@ exports[`should render initial state 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 .emotion-1:first-of-type {
@@ -390,14 +376,7 @@ exports[`should render uploading state 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 .emotion-1:first-of-type {

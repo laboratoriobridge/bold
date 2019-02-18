@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-19 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-18 {
+.emotion-15 {
   border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,14 +64,7 @@ exports[`renders correctly 1`] = `
   margin-right: 0.25rem;
   margin-bottom: 0rem;
   margin-left: 0.25rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  display: inline-block;
 }
 
 .emotion-2:first-of-type {
@@ -86,7 +79,7 @@ exports[`renders correctly 1`] = `
   display: none;
 }
 
-.emotion-8 {
+.emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -114,7 +107,7 @@ exports[`renders correctly 1`] = `
   padding: 0 0.25rem;
 }
 
-.emotion-8 > span {
+.emotion-5 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -127,56 +120,31 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-8 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-8:not(:disabled):active {
+.emotion-5:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-8:focus {
+.emotion-5:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-8:not(:disabled):hover {
+.emotion-5:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-4 {
-  margin-top: 0rem;
-  margin-right: 0.125rem;
-  margin-bottom: 0rem;
-  margin-left: 0.125rem;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-4:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-4:empty {
-  display: none;
-}
-
-.emotion-5 {
+.emotion-8 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-17 {
+.emotion-4 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.125rem;
+}
+
+.emotion-14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -188,7 +156,7 @@ exports[`renders correctly 1`] = `
   margin: 0;
 }
 
-.emotion-12 {
+.emotion-9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -215,7 +183,7 @@ exports[`renders correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-12 > span {
+.emotion-9 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -228,28 +196,24 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-12 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-12:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-14 {
+.emotion-11 {
   position: relative;
 }
 
-.emotion-13 {
+.emotion-10 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -266,42 +230,42 @@ exports[`renders correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-13::-webkit-input-placeholder {
+.emotion-10::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-13::-moz-placeholder {
+.emotion-10::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-13:-ms-input-placeholder {
+.emotion-10:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-13::placeholder {
+.emotion-10::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-13:disabled {
+.emotion-10:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-13:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-13:not(:disabled):focus {
+.emotion-10:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-13:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-16 {
+.emotion-13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -329,7 +293,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-16 > span {
+.emotion-13 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -342,25 +306,21 @@ exports[`renders correctly 1`] = `
   transition: color .2s;
 }
 
-.emotion-16 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-16:not(:disabled):active {
+.emotion-13:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-13:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
 <div
-  class="emotion-19"
+  class="emotion-16"
 >
   <span
     class="emotion-0"
@@ -372,7 +332,7 @@ exports[`renders correctly 1`] = `
     </span>
   </span>
   <div
-    class="emotion-18"
+    class="emotion-15"
   >
     <div
       class="emotion-7"
@@ -391,53 +351,41 @@ exports[`renders correctly 1`] = `
       >
         <button
           aria-haspopup="true"
-          class="emotion-8"
+          class="emotion-5"
         >
           <span>
-            <div
-              class="emotion-7"
+            <span
+              class="emotion-1"
             >
-              <div
-                class="emotion-4"
-              >
-                <span
-                  class="emotion-1"
-                >
-                  10
-                </span>
-              </div>
-              <div
-                class="emotion-4"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-5"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-                  />
-                </svg>
-              </div>
-            </div>
+              10
+            </span>
+            <svg
+              aria-hidden="true"
+              class="emotion-4"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+              />
+            </svg>
           </span>
         </button>
       </div>
     </div>
     <div
-      class="emotion-17"
+      class="emotion-14"
     >
       <button
-        class="emotion-12"
+        class="emotion-9"
         title="Página anterior"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-5"
+            class="emotion-8"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
@@ -450,10 +398,10 @@ exports[`renders correctly 1`] = `
         </span>
       </button>
       <div
-        class="emotion-14"
+        class="emotion-11"
       >
         <input
-          class="emotion-13"
+          class="emotion-10"
           type="text"
           value="2"
         />
@@ -462,13 +410,13 @@ exports[`renders correctly 1`] = `
         de 10
       </span>
       <button
-        class="emotion-16"
+        class="emotion-13"
         title="Próxima página"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-5"
+            class="emotion-8"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
