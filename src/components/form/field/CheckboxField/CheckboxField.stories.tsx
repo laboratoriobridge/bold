@@ -1,12 +1,12 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { withForm } from '../../../../stories-addons'
 
 import { CheckboxField } from './CheckboxField'
-import * as Doc from './CheckboxField.md'
+import Doc from './CheckboxField.md'
 
 storiesOf('Form/CheckboxField', module)
     // @ts-ignore

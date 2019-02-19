@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FormSpy } from 'react-final-form'
 
 import { Button, ButtonProps } from '../../../elements/Button'

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Field, FieldRenderProps } from 'react-final-form'
 
 import { FormError } from '../FormError'

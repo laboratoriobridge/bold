@@ -1,8 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should open menu on click 1`] = `
-<body>
-  .emotion-0 {
+.emotion-0 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -53,7 +52,8 @@ exports[`should open menu on click 1`] = `
   background-color: #ebebeb;
 }
 
-<div>
+<body>
+  <div>
     <button
       class="emotion-0"
     >

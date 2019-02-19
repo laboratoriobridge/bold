@@ -1,5 +1,5 @@
 /* tslint:disable */
-import * as React from "react";
+import React from "react";
 
 const SvgColor = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width="1em" height="1em" viewBox="0 0 20 20" {...props}>

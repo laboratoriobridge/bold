@@ -1,6 +1,6 @@
 import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { VFlow } from '../../../layout/Flow/VFlow'
 import { colors } from '../Text/Text.stories'

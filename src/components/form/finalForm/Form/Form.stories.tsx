@@ -1,6 +1,6 @@
 import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
 import { withRouter } from '../../../../stories-addons'

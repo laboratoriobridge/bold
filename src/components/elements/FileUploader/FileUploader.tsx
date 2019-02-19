@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Dropzone, * as DropzoneAll from 'react-dropzone'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'

@@ -1,7 +1,7 @@
 import { FormApi, FormState, getIn, setIn } from 'final-form'
 import createFocusOnErrorDecorator from 'final-form-focus'
-import * as setFieldData from 'final-form-set-field-data'
-import * as React from 'react'
+import setFieldData from 'final-form-set-field-data'
+import React from 'react'
 import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 
 import { isEmpty, isPromise } from '../../../../util'

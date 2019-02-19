@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
 import { Checkbox, CheckboxProps } from '../../input/Checkbox/Checkbox'

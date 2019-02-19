@@ -1,5 +1,5 @@
 import { createMemoryHistory, MemoryHistory } from 'history'
-import * as React from 'react'
+import React from 'react'
 import { Form } from 'react-final-form'
 import { Router } from 'react-router'
 

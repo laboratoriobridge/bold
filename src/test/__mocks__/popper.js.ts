@@ -1,4 +1,4 @@
-import * as PopperJs from 'popper.js'
+import PopperJs from 'popper.js'
 
 export default class Popper {
     static placements = (PopperJs as any).placements

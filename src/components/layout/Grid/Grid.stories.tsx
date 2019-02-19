@@ -1,6 +1,6 @@
 import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { AlignItems, AlignSelf, Cell, Direction, Grid, JustifyContent } from '../'
 

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { HFlow } from '../../../layout/Flow/HFlow'
 import { Button, ButtonProps } from '../../Button'

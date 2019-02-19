@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../test'
@@ -26,6 +26,10 @@ const createDropdownButton = (props: Partial<DropdownButtonProps> = {}) => withT
 it('should render correctly when closed', () => {
     render(createDropdownButton())
     expect(document.body).toMatchSnapshot()
+})
+
+it('should accept popper props', () => {
+    render(createDropdownButton({ popperProps: { placement: 'left-end' } }))
 })
 
 it('should open the dropdown on click', async () => {

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Field as FinalFormField, FieldProps as FinalFieldProps, FieldRenderProps as FinalRenderProps, ReactContext as ReactFinalFormContext, withReactFinalForm } from 'react-final-form'
 
 import { Meta } from '../../../../metaPath/metaPath'

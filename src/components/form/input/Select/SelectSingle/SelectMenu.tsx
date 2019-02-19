@@ -1,12 +1,12 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../../styles'
 import { Omit } from '../../../../../util'
 import { Spinner } from '../../../../elements'
 
 export interface SelectMenuProps extends WithStylesProps,
-    Omit<React.HTMLAttributes<HTMLUListElement>, 'css' | 'style'> {
+    Omit<React.HTMLAttributes<HTMLUListElement>, 'style'> {
     style?: Interpolation
 }
 
@@ -37,7 +37,7 @@ export class SelectMenu extends React.Component<SelectMenuProps> {
 }
 
 export interface SelectMenuItemProps extends WithStylesProps,
-    Omit<React.LiHTMLAttributes<HTMLLIElement>, 'css' | 'style'> {
+    Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
     style?: Interpolation
     selected?: boolean
     highlighted?: boolean

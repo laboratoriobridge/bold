@@ -1,5 +1,5 @@
 import { Renderable, RenderFunction } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { createTheme, Theme, ThemeProvider } from '../styles/'
 import { merge } from '../util'

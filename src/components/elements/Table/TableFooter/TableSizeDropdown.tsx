@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { DropdownButton, DropdownItemConfig } from '../../Dropdown'
 import { Icon } from '../../Icon'

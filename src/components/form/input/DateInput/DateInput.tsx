@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { masks } from '../../../../util/masks'

@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { getUserLocale } from '../../../util/locale'

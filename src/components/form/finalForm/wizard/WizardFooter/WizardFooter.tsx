@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { Button } from '../../../../../components/elements/Button'
 import { Styles, withStyles, WithStylesProps } from '../../../../../styles'

@@ -1,8 +1,8 @@
-import * as React from 'react'
+import React from 'react'
 
 import { Omit } from '../../../../util/types'
 
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'css' | 'style'> {
+export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'style'> {
   inputRef?: React.RefObject<HTMLInputElement>
 }
 

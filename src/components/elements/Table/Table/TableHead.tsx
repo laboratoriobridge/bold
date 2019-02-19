@@ -1,12 +1,12 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 
 import { createTableStyles } from './styles'
 
-export interface TableHeadProps extends WithStylesProps, Omit<React.HTMLAttributes<any>, 'css' | 'style'> {
+export interface TableHeadProps extends WithStylesProps, Omit<React.HTMLAttributes<any>, 'style'> {
     style?: Interpolation
 }
 

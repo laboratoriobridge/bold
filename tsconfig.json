@@ -21,7 +21,9 @@
     "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
-    "jsx": "react"
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",

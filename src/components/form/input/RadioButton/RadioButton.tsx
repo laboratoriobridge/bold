@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { focusBoxShadow, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, InputProps } from '../Input/Input'

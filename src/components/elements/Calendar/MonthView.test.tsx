@@ -1,5 +1,5 @@
 import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 
 import { withTheme } from '../../../test'
 
@@ -51,9 +51,9 @@ it('render week name', () => {
 
 it('should use createDayStyles function to create styles for days', () => {
     const createDayStyles = jest.fn(() => ({ color: 'red' }))
-    const wrapper = mount(withTheme(
+    const wrapper = render(withTheme(
         <MonthView visibleDate={new Date('2018-10-26')} createDayStyles={createDayStyles} />
     ))
     expect(createDayStyles).toHaveBeenCalledTimes(35) // Called once for each day rendered on calendar
-    expect(wrapper.render()).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
 })

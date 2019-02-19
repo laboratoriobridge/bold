@@ -35,7 +35,7 @@
     }
   },
   "peerDependencies": {
-    "emotion": "^9.2.12",
+    "emotion": "^10.0.7",
     "final-form": "^4.11.0",
     "moment": "^2.23.0",
     "react": "^16.7.0",
@@ -46,7 +46,6 @@
   },
   "dependencies": {
     "downshift": "3.2.2",
-    "emotion-theming": "9.2.9",
     "final-form-focus": "1.1.0",
     "final-form-set-field-data": "1.0.1",
     "hoist-non-react-statics": "3.3.0",
@@ -96,7 +95,7 @@
     "babel-cli": "6.26.0",
     "babel-loader": "8.0.5",
     "copyfiles": "2.1.0",
-    "emotion": "9.2.12",
+    "emotion": "10.0.7",
     "enzyme": "3.8.0",
     "enzyme-adapter-react-16": "1.9.1",
     "enzyme-to-json": "3.3.5",
@@ -106,7 +105,7 @@
     "intl": "1.2.5",
     "jest": "24.1.0",
     "jest-cli": "24.1.0",
-    "jest-emotion": "9.2.11",
+    "jest-emotion": "10.0.7",
     "lodash": "4.17.11",
     "moment": "2.24.0",
     "prop-types": "15.6.2",

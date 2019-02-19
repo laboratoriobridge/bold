@@ -1,5 +1,5 @@
-import { mount } from 'enzyme'
-import * as React from 'react'
+import { mount, render } from 'enzyme'
+import React from 'react'
 import { Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'
@@ -8,14 +8,14 @@ import { Button } from '../../../elements/Button'
 import { SubmitButton } from './SubmitButton'
 
 it('should render correctly', () => {
-    const wrapper = mount(withTheme(
+    const wrapper = render(withTheme(
         <Form onSubmit={jest.fn()}>
             {(renderProps) => (
                 <SubmitButton handleSubmit={renderProps.handleSubmit}>Submit Button</SubmitButton>
             )}
         </Form>
     ))
-    expect(wrapper.render()).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot()
 })
 
 it('should be loading when form is submitting', () => {

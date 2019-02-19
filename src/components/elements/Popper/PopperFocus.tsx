@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { Manager, PopperProps, Reference } from 'react-popper'
 
 import { withStyles, WithStylesProps } from '../../../styles'

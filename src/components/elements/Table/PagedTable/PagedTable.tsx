@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { DataTable, DataTableProps } from '../DataTable/DataTable'
 import { TableFooter } from '../TableFooter/TableFooter'
