@@ -1,4 +1,3 @@
-import normalizeCss from 'normalize.css'
 import React from 'react'
 
 import { createTheme, Theme } from './createTheme'
@@ -20,7 +19,6 @@ export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
         return (
             <ThemeContext.Provider value={this.props.theme}>
                 <>
-                    <CssGlobal styles={normalizeCss} />
                     <CssGlobal styles={this.props.theme.global} />
 
                     {this.props.children}

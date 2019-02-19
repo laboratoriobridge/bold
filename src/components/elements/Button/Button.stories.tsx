@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { MemoryRouter } from 'react-router'
 
-import { HFlow } from '../../layout'
 import { Icon } from '../Icon'
 import { Text } from '../textual'
 
@@ -56,10 +55,8 @@ storiesOf('Components/Button', module)
                 block={boolean('block', false)}
                 onClick={action('link-clicked')}
             >
-                <HFlow hSpacing={0.5}>
-                    <Icon icon='arrowLeft' />
-                    <Text>Go back</Text>
-                </HFlow>
+                <Icon icon='arrowLeft' style={{ marginRight: '0.5rem' }} />
+                <Text>Go back</Text>
             </ButtonLink>
         </MemoryRouter>
     ))
