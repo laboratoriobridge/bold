@@ -26,9 +26,9 @@ export function withStyles<P extends WithStylesProps, T extends React.ComponentT
                 <ThemeContext.Consumer>
                     {(theme) => (
                         <Cmp
+                            {...this.props}
                             css={css}
                             theme={theme}
-                            {...this.props}
                         />
                     )}
                 </ThemeContext.Consumer>
@@ -36,5 +36,5 @@ export function withStyles<P extends WithStylesProps, T extends React.ComponentT
         }
     }
 
-    return WithStyles as any as T
+    return WithStyles as T
 }
