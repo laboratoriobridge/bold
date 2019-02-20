@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
+import { fireEvent, render, wait } from 'react-testing-library'
 
 import { withTheme } from '../../../test'
 import * as stringUtils from '../../../util/string'
@@ -48,28 +48,32 @@ it('should render correctly when opened', () => {
     expect(document.body).toMatchSnapshot()
 })
 
-it('should focus the first menu item when opened', () => {
+it('should focus the first menu item when opened', async () => {
     const { container } = render(createDropdownButton())
     const button = container.querySelector('button')
     fireEvent.click(button)
+    await wait()
+
     const li = document.body.querySelectorAll('li')
     expect(document.activeElement).toEqual(li[0])
 })
 
-it('should close the menu and focus the button when Escape is pressed', () => {
+it('should close the menu and focus the button when Escape is pressed', async () => {
     const { container } = render(createDropdownButton())
     const button = container.querySelector('button')
     fireEvent.click(button)
+    await wait()
 
     fireEvent.keyDown(document.querySelector('ul'), { key: 'Escape' })
     expect(document.querySelector('ul')).toBeFalsy()
     expect(document.activeElement).toEqual(button)
 })
 
-it('should close the menu and focus the button when Tab is pressed', () => {
+it('should close the menu and focus the button when Tab is pressed', async () => {
     const { container } = render(createDropdownButton())
     const button = container.querySelector('button')
     fireEvent.click(button)
+    await wait()
 
     fireEvent.keyDown(document.querySelector('ul'), { key: 'Tab' })
     expect(document.querySelector('ul')).toBeFalsy()

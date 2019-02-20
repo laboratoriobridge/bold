@@ -64,8 +64,14 @@ export const DropdownButton = (props: DropdownButtonProps) => {
 
         if (isOpen) {
             // When opened, focus the first menu item
-            const firstItem = menuRef.current.firstElementChild as HTMLLIElement
-            firstItem.focus()
+            window.setTimeout(() => {
+                // Execute delayed so the popper position has finished its calculation
+                // and focus does not change scrollbar position
+                if (menuRef.current) {
+                    const firstItem = menuRef.current.firstElementChild as HTMLLIElement
+                    firstItem.focus()
+                }
+            })
         } else {
             // When closed, focus the button
             buttonRef.current.focus()
@@ -90,7 +96,14 @@ export const DropdownButton = (props: DropdownButtonProps) => {
                 {({ className }) => (
                     isOpen && (
                         <Portal>
-                            <Popper {...popperProps}>
+                            <Popper
+                                modifiers={{
+                                    preventOverflow: {
+                                        boundariesElement: 'window',
+                                    },
+                                }}
+                                {...popperProps}
+                            >
                                 {(popper) => (
                                     <div
                                         ref={popper.ref}
