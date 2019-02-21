@@ -1,5 +1,5 @@
 import { PositionProperty } from 'csstype'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles'
 

@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../test'
@@ -33,11 +33,13 @@ it('should render correctly', () => {
 })
 
 it('should not render tooltip if text if null or empty', () => {
-    const { getByText } = render(createComponent({ text: '' }))
+    const { container, getByText } = render(createComponent({ text: '' }))
     expect(document.getElementById('portal-root').innerHTML).toEqual('')
 
     fireEvent.focus(getByText('Testing'))
     expect(document.getElementById('portal-root').innerHTML).toEqual('')
+
+    expect(container.querySelector('span').getAttribute('aria-describedby')).toBeFalsy()
 })
 
 it('should show tooltip when mouse enters component', () => {

@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-0 > button:not(:first-child),
-.emotion-0 > a:not(:first-child) {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+.emotion-0 > button:not(:first-of-type),
+.emotion-0 > a:not(:first-of-type) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.emotion-0 > button:not(:last-child),
-.emotion-0 > a:not(:last-child) {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+.emotion-0 > button:not(:last-of-type),
+.emotion-0 > a:not(:last-of-type) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .emotion-0 > button:focus,
@@ -29,16 +29,16 @@ exports[`should should accept stlye prop 1`] = `
   color: red;
 }
 
-.emotion-0 > button:not(:first-child),
-.emotion-0 > a:not(:first-child) {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+.emotion-0 > button:not(:first-of-type),
+.emotion-0 > a:not(:first-of-type) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
-.emotion-0 > button:not(:last-child),
-.emotion-0 > a:not(:last-child) {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+.emotion-0 > button:not(:last-of-type),
+.emotion-0 > a:not(:last-of-type) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .emotion-0 > button:focus,

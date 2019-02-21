@@ -1,9 +1,10 @@
 import { css } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { HFlow, VFlow } from '../../../layout'
 import { Button } from '../../Button'
+import { Icon } from '../../Icon'
 import { Text } from '../../textual'
 
 export interface MonthPickerProps extends WithStylesProps {
@@ -85,28 +86,31 @@ export class MonthPicker extends React.Component<MonthPickerProps, MonthPickerSt
                             title='Ano anterior'
                             size='small'
                             skin='ghost'
-                            icon='angleLeft'
                             onClick={this.onLeftClick}
-                        />
+                        >
+                            <Icon icon='angleLeft' />
+                        </Button>
                         <Text weight='bold' size={0.875}>{this.state.visibleYear}</Text>
                         <Button
                             title='Ano posterior'
                             size='small'
                             skin='ghost'
-                            icon='angleRight'
                             onClick={this.onRightClick}
-                        />
+                        >
+                            <Icon icon='angleRight' />
+                        </Button>
                     </HFlow>
                     <HFlow style={styles.content} hSpacing={0.375} vSpacing={1}>
                         {monthDescriptions.map((month, index) => (
                             <Button
                                 key={index}
                                 onClick={this.onMonthClick(index)}
-                                label={month}
                                 skin='ghost'
                                 style={css(styles.button, index === this.props.month
                                     && this.props.year === this.state.visibleYear && styles.active)}
-                            />
+                            >
+                                {month}
+                            </Button>
                         ))}
                     </HFlow>
                 </VFlow>

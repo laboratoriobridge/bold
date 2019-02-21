@@ -200,12 +200,6 @@ exports[`render with icon 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-2 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-2:not(:disabled):active {
@@ -248,7 +242,6 @@ exports[`render with icon 1`] = `
       <button
         class="emotion-2"
         tabindex="-1"
-        type="button"
       >
         <span>
           <svg

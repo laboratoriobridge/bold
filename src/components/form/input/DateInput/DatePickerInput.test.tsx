@@ -1,5 +1,5 @@
 import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 
 import { withTheme } from '../../../../test'
 import { Calendar } from '../../../elements/Calendar'

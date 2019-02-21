@@ -1,20 +1,14 @@
-import { css as emotionCss, Interpolation } from 'emotion'
-import { useContext } from 'react'
+import { Theme } from '../theme/createTheme'
 
-import { Theme } from './theme/createTheme'
-import { ThemeContext } from './theme/ThemeContext'
+import { useCss } from './useCss'
 
-export const useTheme = (): Theme => {
-    return useContext(ThemeContext)
+export type StyleFactory<Classes extends string> = (theme: Theme) => {
+    readonly [key in Classes]: React.CSSProperties
 }
 
-export const useCss = () => {
-    const theme = useTheme()
-    return { theme, css: emotionCss }
+export type ClassNames<Classes extends string> = {
+    readonly [key in Classes]: string
 }
-
-export type StyleFactory<Classes extends string> = (theme: Theme) => { [key in Classes]: Interpolation }
-export type ClassNames<Classes extends string> = { [key in Classes]: string }
 
 const emptyStylesFactory: StyleFactory<any> = () => ({})
 

@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { focusBoxShadow, Theme, withStyles, WithStylesProps } from '../../../../styles'
 import { Input, InputProps } from '../Input/Input'

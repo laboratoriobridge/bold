@@ -39,12 +39,6 @@ exports[`should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-0 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-0:not(:disabled):active {
@@ -65,9 +59,7 @@ exports[`should render correctly 1`] = `
   href="/"
 >
   <span>
-    <span>
-      Link to home
-    </span>
+    Link to home
   </span>
 </a>
 `;

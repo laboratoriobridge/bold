@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'

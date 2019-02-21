@@ -1,5 +1,5 @@
 import { ControllerStateAndHelpers } from 'downshift'
-import * as React from 'react'
+import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../../styles'
 

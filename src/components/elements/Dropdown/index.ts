@@ -1,3 +1,5 @@
 export { Dropdown, DropdownProps } from './Dropdown'
-export { DropdownMenu, DropdownMenuProps, DropdownItem, DropdownItemProps } from './DropdownMenu'
 export { DropdownButton, DropdownButtonProps, DropdownItemConfig } from './DropdownButton'
+export { DropdownDivider, DropdownDividerProps } from './DropdownDivider'
+export { DropdownItem, DropdownItemProps } from './DropdownItem'
+export { DropdownMenu, DropdownMenuProps } from './DropdownMenu'

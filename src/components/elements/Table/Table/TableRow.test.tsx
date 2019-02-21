@@ -1,5 +1,5 @@
-import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withTheme } from '../../../../test'
 
@@ -7,34 +7,37 @@ import { Table, TableBody, TableCell, TableRow } from './index'
 
 describe('TableRow', () => {
     it('should have the pointer class if onClick is specified', () => {
-        expect(render(withTheme(
-            <Table>
-                <TableBody>
-                    <TableRow><TableCell>Test</TableCell></TableRow>
-                </TableBody>
-            </Table>
-        ))).toMatchSnapshot()
-
         const clickHandler = jest.fn()
-        const wrapper = mount(withTheme(
+        const { container } = render(withTheme(
             <Table>
                 <TableBody>
                     <TableRow onClick={clickHandler}><TableCell>Test</TableCell></TableRow>
                 </TableBody>
             </Table>
         ))
-        expect(wrapper.render()).toMatchSnapshot()
+        expect(container).toMatchSnapshot()
 
-        wrapper.find('tr').simulate('click')
+        fireEvent.click(container.querySelector('tr'))
         expect(clickHandler).toHaveBeenCalled()
     })
+    it('should NOT have the pointer class if onClick is not specified', () => {
+        const { container } = render(withTheme(
+            <Table>
+                <TableBody>
+                    <TableRow><TableCell>Test</TableCell></TableRow>
+                </TableBody>
+            </Table>
+        ))
+        expect(container).toMatchSnapshot()
+    })
     it('should accept the style prop', () => {
-        expect(render(withTheme(
+        const { container } = render(withTheme(
             <Table>
                 <TableBody>
                     <TableRow style={{ color: 'red' }}><TableCell>Test</TableCell></TableRow>
                 </TableBody>
             </Table>
-        ))).toMatchSnapshot()
+        ))
+        expect(container).toMatchSnapshot()
     })
 })

@@ -1,41 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DropdownButton should render correctly 1`] = `
-.emotion-3 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-3:hover {
-  background: #F2F2F7;
-}
-
-.emotion-4 {
-  margin: 0;
-}
-
-.emotion-4 div {
-  display: block;
-}
-
-.emotion-4:first-child a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-4:last-child a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-2 {
-  display: inline-block;
-}
-
+exports[`should render correctly when closed 1`] = `
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -72,12 +37,6 @@ exports[`DropdownButton should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -98,41 +57,11 @@ exports[`DropdownButton should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-8 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-7 {
-  font-weight: bold;
-  color: #2D343B;
-  white-space: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-  text-align: left;
-}
-
-<div
-  class="emotion-2"
->
-  <div
-    class="emotion-2"
-  >
+<body>
+  <div>
     <button
+      aria-haspopup="true"
       class="emotion-1"
-      type="button"
     >
       <span>
         <svg
@@ -150,86 +79,177 @@ exports[`DropdownButton should render correctly 1`] = `
             />
           </defs>
           <use
-            href="#dots_svg__a"
+            xlink:href="#dots_svg__a"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
+</body>
+`;
+
+exports[`should render correctly when opened 1`] = `
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #FFFFFF;
+}
+
+.emotion-2 {
+  margin: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.emotion-2:first-of-type a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-2:last-of-type a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-2:hover,
+.emotion-2:focus {
+  background: #F2F2F7;
+}
+
+.emotion-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 1;
+}
+
+<body>
+  <div>
+    <button
+      aria-controls="menu-abc"
+      aria-expanded="true"
+      aria-haspopup="true"
+      class="emotion-1"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <defs>
+            <path
+              d="M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z"
+              id="dots_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#dots_svg__a"
           />
         </svg>
       </span>
     </button>
   </div>
   <div
-    class="emotion-8"
-    data-visible="false"
-    style="position:absolute;top:0;left:0;opacity:0;pointer-events:none"
+    class="emotion-5"
+    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1300;"
   >
     <ul
-      class="emotion-7"
+      class="emotion-4"
+      id="menu-abc"
+      role="menu"
     >
       <li
-        class="emotion-4"
+        aria-disabled="false"
+        class="emotion-2"
+        role="menuitem"
+        tabindex="0"
       >
-        <a
-          class="emotion-3"
-        >
-          <span>
-            Item #1
-          </span>
-        </a>
+        <span>
+          Item #1
+        </span>
       </li>
       <li
-        class="emotion-4"
+        aria-disabled="false"
+        class="emotion-2"
+        role="menuitem"
+        tabindex="-1"
       >
-        <a
-          class="emotion-3"
-        >
-          <span>
-            Item #2
-          </span>
-        </a>
+        <span>
+          Item #2
+        </span>
       </li>
     </ul>
   </div>
-</div>
-`;
-
-exports[`DropdownButtonItem should render correctly 1`] = `
-.emotion-0 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-
-.emotion-0:hover {
-  background: #F2F2F7;
-}
-
-.emotion-1 {
-  margin: 0;
-}
-
-.emotion-1 div {
-  display: block;
-}
-
-.emotion-1:first-child a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-1:last-child a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-<li
-  class="emotion-1"
->
-  <a
-    class="emotion-0"
-  >
-    Item
-  </a>
-</li>
+</body>
 `;

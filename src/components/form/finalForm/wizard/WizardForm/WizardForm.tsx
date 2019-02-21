@@ -1,5 +1,5 @@
 import { FormApi } from 'final-form'
-import * as React from 'react'
+import React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
 import { Omit } from '../../../../../util/types'

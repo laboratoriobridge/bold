@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../styles'
 import { Omit } from '../../../../util/types'
@@ -7,7 +7,7 @@ import { SortableLabel, SortDirection } from '../SortableLabel/SortableLabel'
 
 import { createTableStyles } from './styles'
 
-export interface TableHeaderProps extends WithStylesProps, Omit<React.ThHTMLAttributes<any>, 'css' | 'style'> {
+export interface TableHeaderProps extends WithStylesProps, Omit<React.ThHTMLAttributes<any>, 'style'> {
     sortable?: boolean
     sortDirection?: SortDirection
     style?: Interpolation

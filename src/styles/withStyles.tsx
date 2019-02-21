@@ -1,8 +1,8 @@
 import { css, Interpolation } from 'emotion'
-import { withTheme } from 'emotion-theming'
-import * as React from 'react'
+import React from 'react'
 
 import { Theme } from './theme/createTheme'
+import { ThemeContext } from './theme/ThemeContext'
 
 export interface WithStylesProps {
     theme?: Theme
@@ -16,23 +16,25 @@ export interface Styles {
 export function withStyles<P extends WithStylesProps, T extends React.ComponentType<P>>(
     WrappedComponent: T
 ): T {
-
     const Cmp = WrappedComponent as React.ComponentType<P>
 
     class WithStyles extends React.Component<P> {
+        static displayName = `${WrappedComponent.displayName || WrappedComponent.name}`
 
         render() {
             return (
-                <Cmp
-                    {...this.props}
-                    css={css}
-                />
+                <ThemeContext.Consumer>
+                    {(theme) => (
+                        <Cmp
+                            {...this.props}
+                            css={css}
+                            theme={theme}
+                        />
+                    )}
+                </ThemeContext.Consumer>
             )
         }
     }
 
-    const withThemeComponent = withTheme<P, Theme>(WithStyles)
-    withThemeComponent.displayName = `${WrappedComponent.displayName || WrappedComponent.name}`
-
-    return withThemeComponent as any as T
+    return WithStyles as T
 }

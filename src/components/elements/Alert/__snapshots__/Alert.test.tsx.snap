@@ -54,6 +54,7 @@ exports[`Alert should allow styles override 1`] = `
 
 <div
   class="emotion-3"
+  role="alert"
 >
   <div
     class="emotion-2"
@@ -142,6 +143,11 @@ exports[`Alert should render correctly 1`] = `
   align-items: center;
 }
 
+.emotion-2 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -184,12 +190,6 @@ exports[`Alert should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-3 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-3:not(:disabled):active {
@@ -203,11 +203,6 @@ exports[`Alert should render correctly 1`] = `
 
 .emotion-3:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-2 {
-  fill: currentColor;
-  font-size: 1.5rem;
 }
 
 .emotion-13 {
@@ -282,6 +277,7 @@ exports[`Alert should render correctly 1`] = `
 <div>
   <div
     class="emotion-6"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -313,8 +309,8 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -336,6 +332,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-13"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -350,7 +347,7 @@ exports[`Alert should render correctly 1`] = `
       >
         <defs>
           <path
-            d="M2 12c0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10S2 6.477 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
+            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
             id="check-circle-outline_svg__a"
           />
         </defs>
@@ -367,8 +364,8 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -390,6 +387,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-20"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -421,8 +419,8 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -444,6 +442,7 @@ exports[`Alert should render correctly 1`] = `
   </div>
   <div
     class="emotion-27"
+    role="alert"
   >
     <div
       class="emotion-5"
@@ -475,8 +474,8 @@ exports[`Alert should render correctly 1`] = `
         class="emotion-4"
       >
         <button
+          aria-label="Fechar alerta"
           class="emotion-3"
-          type="button"
         >
           <span>
             <svg
@@ -621,6 +620,7 @@ exports[`Alert should render correctly when inline 1`] = `
 <div>
   <div
     class="emotion-3"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -652,6 +652,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-7"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -666,7 +667,7 @@ exports[`Alert should render correctly when inline 1`] = `
       >
         <defs>
           <path
-            d="M2 12c0 5.522 4.477 10 10 10s10-4.478 10-10c0-5.523-4.477-10-10-10S2 6.477 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
+            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
             id="check-circle-outline_svg__a"
           />
         </defs>
@@ -683,6 +684,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-11"
+    role="alert"
   >
     <div
       class="emotion-2"
@@ -714,6 +716,7 @@ exports[`Alert should render correctly when inline 1`] = `
   </div>
   <div
     class="emotion-15"
+    role="alert"
   >
     <div
       class="emotion-2"

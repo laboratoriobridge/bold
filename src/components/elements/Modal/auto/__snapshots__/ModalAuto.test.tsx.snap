@@ -67,6 +67,8 @@ exports[`should render correctly 1`] = `
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -78,12 +80,6 @@ exports[`should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -134,11 +130,11 @@ exports[`should render correctly 1`] = `
   display: inline-block;
 }
 
-.emotion-4:first-child {
+.emotion-4:first-of-type {
   margin-left: 0;
 }
 
-.emotion-4:last-child {
+.emotion-4:last-of-type {
   margin-right: 0;
 }
 
@@ -183,12 +179,6 @@ exports[`should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-3 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-3:not(:disabled):active {
@@ -224,8 +214,8 @@ exports[`should render correctly 1`] = `
       class="emotion-7"
     >
       <button
+        aria-label="Fechar"
         class="emotion-1"
-        type="button"
       >
         <span>
           <svg
@@ -260,12 +250,9 @@ exports[`should render correctly 1`] = `
           >
             <button
               class="emotion-3"
-              type="button"
             >
               <span>
-                <span>
-                  Confirm
-                </span>
+                Confirm
               </span>
             </button>
           </div>

@@ -1,7 +1,7 @@
 // From downshift examples
 
 import Downshift, { DownshiftState, StateChangeOptions } from 'downshift'
-import * as React from 'react'
+import React from 'react'
 
 import { isEqual as deepIsEqual, Omit, some } from '../../../../../util'
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from '../SelectSingle/SelectDownshift'

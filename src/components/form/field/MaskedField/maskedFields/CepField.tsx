@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { masks, onlyNumbers } from '../../../../../util/masks'
 import { MaskedField, MaskedFieldProps } from '../MaskedField'

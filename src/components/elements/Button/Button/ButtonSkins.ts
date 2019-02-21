@@ -4,9 +4,9 @@ import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
 import { createStyles as createOutline } from './skins/outline'
 
-export type Skins = 'default' | 'ghost' | 'outline'
-export type Type = 'normal' | 'primary' | 'danger'
-export type Size = 'large' | 'medium' | 'small'
+export type ButtonSkin = 'default' | 'ghost' | 'outline'
+export type ButtonKind = 'normal' | 'primary' | 'danger'
+export type ButtonSize = 'large' | 'medium' | 'small'
 
 export interface Skin {
     button: any
@@ -14,16 +14,16 @@ export interface Skin {
     danger: any
 }
 
-export const skinMap: { [key in Skins]: (theme: Theme) => Skin } = {
+export const skinMap: { [key in ButtonSkin]: (theme: Theme) => Skin } = {
     'default': createDefault,
     'ghost': createGhost,
     'outline': createOutline,
 }
 
 export interface SkinProps {
-    skin?: Skins
-    size?: Size
-    type?: Type
+    skin?: ButtonSkin
+    size?: ButtonSize
+    kind?: ButtonKind
 }
 
 export const createBaseStyles = (theme: Theme): Styles => ({
@@ -39,10 +39,6 @@ export const createBaseStyles = (theme: Theme): Styles => ({
         '& > span': {
             alignItems: 'center',
             display: 'inline-flex',
-            transition: 'color .2s',
-            '& > :not(:last-child)': {
-                marginRight: '0.5rem',
-            },
         },
     },
     disabled: {
@@ -53,7 +49,7 @@ export const createBaseStyles = (theme: Theme): Styles => ({
     },
     loading: {
         pointerEvents: 'none',
-        'span': {
+        span: {
             color: 'transparent',
         },
         ':after': {

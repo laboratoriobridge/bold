@@ -1,8 +1,9 @@
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 
 import { ButtonGroup } from './ButtonGroup'
 
@@ -10,13 +11,13 @@ storiesOf('Components/ButtonGroup', module)
     .add('default', () => (
         <HFlow>
             <ButtonGroup>
-                <Button label='First' size='small' type='primary' />
-                <Button label='Second' size='small' />
-                <Button label='Third' size='small' disabled />
+                <Button size='small' kind='primary'>First</Button>
+                <Button size='small'>Second</Button>
+                <Button size='small' disabled>Third</Button>
             </ButtonGroup>
             <ButtonGroup>
-                <Button icon='trashOutline' size='small' />
-                <Button icon='zoomOutline' size='small' />
+                <Button size='small'><Icon icon='trashOutline' /></Button>
+                <Button size='small'><Icon icon='zoomOutline' /></Button>
             </ButtonGroup>
         </HFlow>
     ))

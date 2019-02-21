@@ -1,5 +1,5 @@
 import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 
 import { withTheme } from '../../../test'
 import { Button } from '../Button'
@@ -21,7 +21,7 @@ it('should should accept stlye prop', () => {
 it('should mount children', () => {
     const wrapper = mount(withTheme(
         <ButtonGroup>
-            <Button label='First' />
+            <Button>First</Button>
         </ButtonGroup>
     ))
     expect(wrapper.find(Button).length).toEqual(1)

@@ -1,5 +1,5 @@
 import moment = require('moment')
-import * as React from 'react'
+import React from 'react'
 import { Omit } from 'react-dropzone'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 

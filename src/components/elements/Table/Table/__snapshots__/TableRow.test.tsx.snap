@@ -1,5 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`TableRow should NOT have the pointer class if onClick is not specified 1`] = `
+.emotion-3 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #DCDCE0;
+}
+
+.emotion-0 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #DCDCE0;
+}
+
+<div>
+  <table
+    class="emotion-3"
+  >
+    <tbody
+      class="emotion-1"
+    >
+      <tr
+        class="emotion-1"
+      >
+        <td
+          class="emotion-0"
+        >
+          Test
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
 exports[`TableRow should accept the style prop 1`] = `
 .emotion-3 {
   width: 100%;
@@ -18,23 +53,25 @@ exports[`TableRow should accept the style prop 1`] = `
   color: red;
 }
 
-<table
-  class="emotion-3"
->
-  <tbody
-    class="emotion-2"
+<div>
+  <table
+    class="emotion-3"
   >
-    <tr
-      class="emotion-1"
+    <tbody
+      class="emotion-2"
     >
-      <td
-        class="emotion-0"
+      <tr
+        class="emotion-1"
       >
-        Test
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td
+          class="emotion-0"
+        >
+          Test
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`TableRow should have the pointer class if onClick is specified 1`] = `
@@ -44,65 +81,34 @@ exports[`TableRow should have the pointer class if onClick is specified 1`] = `
   border: 1px solid #DCDCE0;
 }
 
-.emotion-0 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #DCDCE0;
-}
-
-<table
-  class="emotion-3"
->
-  <tbody
-    class="emotion-1"
-  >
-    <tr
-      class="emotion-1"
-    >
-      <td
-        class="emotion-0"
-      >
-        Test
-      </td>
-    </tr>
-  </tbody>
-</table>
-`;
-
-exports[`TableRow should have the pointer class if onClick is specified 2`] = `
-.emotion-3 {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #DCDCE0;
-}
-
-.emotion-0 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #DCDCE0;
-}
-
 .emotion-1 {
   cursor: pointer;
 }
 
-<table
-  class="emotion-3"
->
-  <tbody
-    class="emotion-2"
+.emotion-0 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #DCDCE0;
+}
+
+<div>
+  <table
+    class="emotion-3"
   >
-    <tr
-      class="emotion-1"
+    <tbody
+      class="emotion-2"
     >
-      <td
-        class="emotion-0"
+      <tr
+        class="emotion-1"
       >
-        Test
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td
+          class="emotion-0"
+        >
+          Test
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

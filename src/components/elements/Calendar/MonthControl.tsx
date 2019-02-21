@@ -1,9 +1,10 @@
-import * as React from 'react'
+import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
 import { capitalize } from '../../../util/string'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 
 export interface MonthControlProps {
     visibleDate: Date
@@ -25,9 +26,13 @@ export class MonthControl extends React.PureComponent<MonthControlProps> {
         const { visibleDate, renderMonth } = this.props
         return (
             <HFlow alignItems='center' hSpacing={0.5}>
-                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1} />
+                <Button size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1}>
+                    <Icon icon='angleLeft' />
+                </Button>
                 {renderMonth(visibleDate)}
-                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1} />
+                <Button size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1}>
+                    <Icon icon='angleRight' />
+                </Button>
             </HFlow>
         )
     }

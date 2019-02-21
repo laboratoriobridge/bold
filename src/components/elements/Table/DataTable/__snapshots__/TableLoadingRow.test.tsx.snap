@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,7 +30,7 @@ exports[`should render correctly 1`] = `
   justify-content: center;
 }
 
-.emotion-1 > *:first-child {
+.emotion-1 > *:first-of-type {
   margin-right: 0.5rem;
 }
 
@@ -37,8 +51,8 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 450ms infinite linear;
-  animation: animation-1scjtrl 450ms infinite linear;
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;
@@ -68,6 +82,20 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -83,7 +111,7 @@ exports[`should render correctly 2`] = `
   justify-content: center;
 }
 
-.emotion-1 > *:first-child {
+.emotion-1 > *:first-of-type {
   margin-right: 0.5rem;
 }
 
@@ -104,8 +132,8 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 450ms infinite linear;
-  animation: animation-1scjtrl 450ms infinite linear;
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;

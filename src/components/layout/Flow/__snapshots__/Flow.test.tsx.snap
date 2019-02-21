@@ -9,11 +9,11 @@ exports[`Flow should accept alignItems prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -78,11 +78,11 @@ exports[`Flow should accept direction prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-top: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-bottom: 0;
 }
 
@@ -133,11 +133,11 @@ exports[`Flow should accept hSpacing prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -181,11 +181,11 @@ exports[`Flow should accept justifyContent prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -240,11 +240,11 @@ exports[`Flow should accept the style prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -296,11 +296,11 @@ exports[`Flow should accept vSpacing prop 1`] = `
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 
@@ -351,11 +351,11 @@ exports[`Flow should wrap each child on an element with horizontal spacing 1`] =
   display: inline-block;
 }
 
-.emotion-0:first-child {
+.emotion-0:first-of-type {
   margin-left: 0;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   margin-right: 0;
 }
 

@@ -1,11 +1,11 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
-import { Omit } from '../../../util/types'
 import { Button } from '../Button'
 import { Icons } from '../Icon'
 import { Icon } from '../Icon/Icon'
+import { Tooltip } from '../Tooltip'
 
 export type AlertType = 'info' | 'success' | 'warning' | 'danger'
 
@@ -51,7 +51,7 @@ export const createTypesStyles = (theme: Theme): {
     }
 }
 
-export interface AlertProps extends WithStylesProps, Omit<React.HTMLAttributes<HTMLDivElement>, 'css'> {
+export interface AlertProps extends WithStylesProps, React.HTMLAttributes<HTMLDivElement> {
     type: AlertType
     onCloseClick?: any
     inline?: boolean
@@ -104,6 +104,7 @@ export class Alert extends React.PureComponent<AlertProps> {
         return (
             <div
                 className={css(defaultStyles.wrapper, typeStyle.style, styles && styles.wrapper)}
+                role='alert'
                 {...rest}
             >
                 <div className={css(defaultStyles.container, styles && styles.container)}>
@@ -114,13 +115,17 @@ export class Alert extends React.PureComponent<AlertProps> {
                     </div>
 
                     {onCloseClick && <span className={css(defaultStyles.closeButtonWrapper)}>
-                        <Button
-                            size='small'
-                            skin='ghost'
-                            icon='timesDefault'
-                            style={defaultStyles.closeButton}
-                            onClick={onCloseClick}
-                        />
+                        <Tooltip text='Fechar'>
+                            <Button
+                                aria-label='Fechar alerta'
+                                size='small'
+                                skin='ghost'
+                                style={defaultStyles.closeButton}
+                                onClick={onCloseClick}
+                            >
+                                <Icon icon='timesDefault' />
+                            </Button>
+                        </Tooltip>
                     </span>}
                 </div>
             </div>

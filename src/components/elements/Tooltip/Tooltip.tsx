@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 import { Manager, Popper, PopperProps, Reference } from 'react-popper'
 
 import { useTheme } from '../../../styles'
@@ -52,6 +52,10 @@ export const Tooltip = (props: TooltipProps) => {
         child.props.onBlur && child.props.onBlur(e)
     }
 
+    if (!text) {
+        return child
+    }
+
     return (
         <Manager>
             <Reference>
@@ -67,38 +71,39 @@ export const Tooltip = (props: TooltipProps) => {
                     </RootRef>
                 )}
             </Reference>
-            {text &&
-                <FadeTransition in={visible}>
-                    {({ className }) => (
-                        visible && (
-                            <Portal target={target}>
-                                <Popper
-                                    modifiers={{
-                                        offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
-                                    }}
-                                    {...rest}
-                                >
-                                    {({ ref, style, placement }) => (
-                                        <div
-                                            id={tooltipIdRef.current}
-                                            ref={ref}
-                                            className={className}
-                                            role='tooltip'
-                                            style={{
-                                                ...style,
-                                                zIndex: theme.zIndex.tooltip,
-                                            }}
-                                            data-placement={placement}
-                                        >
-                                            <TooltipPopper text={text} style={externalStyle} />
-                                        </div>
-                                    )}
-                                </Popper>
-                            </Portal>
-                        )
-                    )}
-                </FadeTransition>
-            }
+            <FadeTransition in={visible}>
+                {({ className }) => (
+                    visible && (
+                        <Portal target={target}>
+                            <Popper
+                                modifiers={{
+                                    offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+                                    preventOverflow: {
+                                        boundariesElement: 'window',
+                                    },
+                                }}
+                                {...rest}
+                            >
+                                {({ ref, style, placement }) => (
+                                    <div
+                                        id={tooltipIdRef.current}
+                                        ref={ref}
+                                        className={className}
+                                        role='tooltip'
+                                        style={{
+                                            ...style,
+                                            zIndex: theme.zIndex.tooltip,
+                                        }}
+                                        data-placement={placement}
+                                    >
+                                        <TooltipPopper text={text} style={externalStyle} />
+                                    </div>
+                                )}
+                            </Popper>
+                        </Portal>
+                    )
+                )}
+            </FadeTransition>
         </Manager>
     )
 }

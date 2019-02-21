@@ -26,11 +26,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-9:first-child {
+.emotion-9:first-of-type {
   margin-top: 0;
 }
 
-.emotion-9:last-child {
+.emotion-9:last-of-type {
   margin-bottom: 0;
 }
 
@@ -62,11 +62,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-2:first-of-type {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-2:last-of-type {
   margin-right: 0;
 }
 
@@ -110,12 +110,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -159,11 +153,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: inline-block;
 }
 
-.emotion-11:first-child {
+.emotion-11:first-of-type {
   margin-left: 0;
 }
 
-.emotion-11:last-child {
+.emotion-11:last-of-type {
   margin-right: 0;
 }
 
@@ -212,12 +206,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-10 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-10:not(:disabled):active {
@@ -272,12 +260,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-12 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-12:not(:disabled):active {
@@ -310,7 +292,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
             <button
               class="emotion-1"
               title="Ano anterior"
-              type="button"
             >
               <span>
                 <svg
@@ -343,7 +324,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
             <button
               class="emotion-1"
               title="Ano posterior"
-              type="button"
             >
               <span>
                 <svg
@@ -374,12 +354,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-10"
-              type="button"
             >
               <span>
-                <span>
-                  Jan
-                </span>
+                Jan
               </span>
             </button>
           </div>
@@ -388,12 +365,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Fev
-                </span>
+                Fev
               </span>
             </button>
           </div>
@@ -402,12 +376,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Mar
-                </span>
+                Mar
               </span>
             </button>
           </div>
@@ -416,12 +387,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Abr
-                </span>
+                Abr
               </span>
             </button>
           </div>
@@ -430,12 +398,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Mai
-                </span>
+                Mai
               </span>
             </button>
           </div>
@@ -444,12 +409,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Jun
-                </span>
+                Jun
               </span>
             </button>
           </div>
@@ -458,12 +420,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Jul
-                </span>
+                Jul
               </span>
             </button>
           </div>
@@ -472,12 +431,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Ago
-                </span>
+                Ago
               </span>
             </button>
           </div>
@@ -486,12 +442,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Set
-                </span>
+                Set
               </span>
             </button>
           </div>
@@ -500,12 +453,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Out
-                </span>
+                Out
               </span>
             </button>
           </div>
@@ -514,12 +464,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Nov
-                </span>
+                Nov
               </span>
             </button>
           </div>
@@ -528,12 +475,9 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-12"
-              type="button"
             >
               <span>
-                <span>
-                  Dez
-                </span>
+                Dez
               </span>
             </button>
           </div>

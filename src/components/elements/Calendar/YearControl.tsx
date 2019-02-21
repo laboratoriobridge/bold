@@ -1,8 +1,9 @@
-import * as React from 'react'
+import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { Icon } from '../Icon'
 
 export interface YearControlProps {
     visibleDate: Date
@@ -24,9 +25,13 @@ export class YearControl extends React.PureComponent<YearControlProps> {
         const { visibleDate, renderYear } = this.props
         return (
             <HFlow alignItems='center' hSpacing={0.5}>
-                <Button icon='angleLeft' size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1} />
+                <Button size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1}>
+                    <Icon icon='angleLeft' />
+                </Button>
                 {renderYear(visibleDate)}
-                <Button icon='angleRight' size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1} />
+                <Button size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1}>
+                    <Icon icon='angleRight' />
+                </Button>
             </HFlow>
         )
     }

@@ -49,12 +49,6 @@ exports[`deve renderizar corretamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -168,12 +162,6 @@ exports[`deve renderizar corretamente 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-5 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-5:not(:disabled):active {
@@ -195,7 +183,6 @@ exports[`deve renderizar corretamente 1`] = `
   <button
     class="emotion-1"
     title="Página anterior"
-    type="button"
   >
     <span>
       <svg
@@ -227,7 +214,6 @@ exports[`deve renderizar corretamente 1`] = `
   <button
     class="emotion-5"
     title="Próxima página"
-    type="button"
   >
     <span>
       <svg
@@ -358,12 +344,6 @@ exports[`deve renderizar corretamente 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-5 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-5:not(:disabled):active {
@@ -418,12 +398,6 @@ exports[`deve renderizar corretamente 2`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -446,7 +420,6 @@ exports[`deve renderizar corretamente 2`] = `
     class="emotion-1"
     disabled=""
     title="Página anterior"
-    type="button"
   >
     <span>
       <svg
@@ -478,7 +451,6 @@ exports[`deve renderizar corretamente 2`] = `
   <button
     class="emotion-5"
     title="Próxima página"
-    type="button"
   >
     <span>
       <svg
@@ -609,12 +581,6 @@ exports[`deve renderizar corretamente 3`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-5 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-5:not(:disabled):active {
@@ -669,12 +635,6 @@ exports[`deve renderizar corretamente 3`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -697,7 +657,6 @@ exports[`deve renderizar corretamente 3`] = `
     class="emotion-1"
     disabled=""
     title="Página anterior"
-    type="button"
   >
     <span>
       <svg
@@ -729,7 +688,6 @@ exports[`deve renderizar corretamente 3`] = `
   <button
     class="emotion-5"
     title="Próxima página"
-    type="button"
   >
     <span>
       <svg

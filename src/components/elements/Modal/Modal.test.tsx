@@ -1,5 +1,5 @@
 import { mount, render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 
 import { withTheme } from '../../../test'
 import { Button } from '../Button'
@@ -12,7 +12,7 @@ import { ModalFooter } from './ModalFooter'
 describe('Modal', () => {
 
     const createFooter = () => (
-        <Button label='Action' />
+        <Button>Action</Button>
     )
 
     it('should render closed', () => {

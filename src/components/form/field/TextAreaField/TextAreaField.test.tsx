@@ -1,5 +1,5 @@
 import { render } from 'enzyme'
-import * as React from 'react'
+import React from 'react'
 import { Form } from 'react-final-form'
 
 import { withTheme } from '../../../../test'

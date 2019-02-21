@@ -10,7 +10,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -34,7 +34,7 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -50,6 +50,20 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
 `;
 
 exports[`SelectLoadingItem should render correctly 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-1 {
   border-bottom: 1px solid #DCDCE0;
   cursor: pointer;
@@ -59,7 +73,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-1:last-child {
+.emotion-1:last-of-type {
   border-bottom: none;
 }
 
@@ -76,8 +90,8 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 450ms infinite linear;
-  animation: animation-1scjtrl 450ms infinite linear;
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;
@@ -128,7 +142,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -153,7 +167,7 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   color: red;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -178,7 +192,7 @@ exports[`SelectMenuItem should render correctly when highlighted 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 
@@ -202,7 +216,7 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
   transition: .1s ease;
 }
 
-.emotion-0:last-child {
+.emotion-0:last-of-type {
   border-bottom: none;
 }
 

@@ -1,6 +1,4 @@
-import { ThemeProvider as EmotionThemeProvider } from 'emotion-theming'
-import normalizeCss from 'normalize.css'
-import * as React from 'react'
+import React from 'react'
 
 import { createTheme, Theme } from './createTheme'
 import { CssGlobal } from './CssGlobal'
@@ -20,14 +18,11 @@ export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
     render() {
         return (
             <ThemeContext.Provider value={this.props.theme}>
-                <EmotionThemeProvider theme={this.props.theme}>
-                    <>
-                        <CssGlobal styles={normalizeCss} />
-                        <CssGlobal styles={this.props.theme.global} />
+                <>
+                    <CssGlobal styles={this.props.theme.global} />
 
-                        {this.props.children}
-                    </>
-                </EmotionThemeProvider>
+                    {this.props.children}
+                </>
             </ThemeContext.Provider>
         )
     }

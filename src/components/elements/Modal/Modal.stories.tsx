@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 
 import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
@@ -11,7 +11,6 @@ import { ModalMountTarget } from './auto/ModalMountTarget'
 import { Modal, ModalSize } from './Modal'
 import { ModalBody } from './ModalBody'
 import { ModalContainer } from './ModalContainer'
-import { ModalControlled, ModalController } from './ModalControlled'
 import { ModalFooter } from './ModalFooter'
 
 const sizes: { [key in ModalSize]: ModalSize } = {
@@ -20,13 +19,10 @@ const sizes: { [key in ModalSize]: ModalSize } = {
     'auto': 'auto',
 }
 
-let controller1: ModalController = null
-let controller2: ModalController = null
-
-const createFooter = (ctrl: ModalController = null) => (
+const createFooter = () => (
     <HFlow justifyContent='flex-end'>
-        <Button label='Cancel' onClick={ctrl && ctrl.close || action('cancel clicked')} />
-        <Button label='Save' type='primary' onClick={ctrl && ctrl.close || action('save clicked')} />
+        <Button onClick={action('cancel clicked')}>Cancel</Button>
+        <Button kind='primary' onClick={action('save clicked')}>Save</Button>
     </HFlow>
 )
 
@@ -58,40 +54,19 @@ storiesOf('Components/Modal', module)
     .add('auto', () => (
         <>
             <Button
-                label='Auto modal'
                 onClick={modal({
                     size: 'small',
                     render: () => 'Confirm?',
                     actions: [
                         { label: 'Cancel', onClick: action('Cancel') },
-                        { label: 'Ok', type: 'primary', onClick: action('Ok') },
+                        { label: 'Ok', kind: 'primary', onClick: action('Ok') },
                     ],
                 })}
-            />
+            >
+                Auto modal
+            </Button>
             <ModalMountTarget />
         </>
-    ))
-    .add('controlled/trigger', () => (
-        // tslint:disable jsx-no-lambda
-        <HFlow>
-            <Button label='Modal with actions' onClick={() => controller1.open()} />
-            <Button label='Simple Modal' onClick={() => controller2.open()} />
-
-            <ModalControlled
-                control={(ctrl) => controller1 = ctrl}
-                size={select('size', sizes, 'large')}
-                renderFooter={createFooter}
-            >
-                Lorem ipsum.
-            </ModalControlled>
-
-            <ModalControlled
-                control={(ctrl) => controller2 = ctrl}
-                size={select('size', sizes, 'large')}
-            >
-                Lorem ipsum.
-            </ModalControlled>
-        </HFlow>
     ))
     .add('parts', () => (
         <ModalContainer onClose={action('onClose')}>
@@ -100,8 +75,8 @@ storiesOf('Components/Modal', module)
             </ModalBody>
             <ModalFooter>
                 <HFlow justifyContent='flex-end'>
-                    <Button label='Secondary' />
-                    <Button label='Primary' type='primary' />
+                    <Button>Secondary</Button>
+                    <Button kind='primary'>Primary</Button>
                 </HFlow>
             </ModalFooter>
         </ModalContainer>

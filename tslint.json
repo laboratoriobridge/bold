@@ -1,159 +1,124 @@
 {
-    "extends": [
-        "tslint:recommended",
-        "tslint-react"
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "arrow-parens": false,
+    "ban-types": false,
+    "indent": [true, "spaces", 4],
+    "interface-name": false,
+    "jsx-boolean-value": false,
+    "jsx-no-multiline-js": false,
+    "max-classes-per-file": [true, 7],
+    "max-line-length": [
+      true,
+      {
+        "limit": 120,
+        "ignore-pattern": "^import |^export {(.*?)}"
+      }
     ],
-    "rules": {
-        "arrow-parens": false,
-        "ban-types": false,
-        "indent": [
-            true,
-            "spaces",
-            4
-        ],
-        "interface-name": false,
-        "jsx-boolean-value": false,
-        "jsx-no-multiline-js": false,
-        "max-classes-per-file": [
-            true,
-            7
-        ],
-        "max-line-length": [
-            true,
-            {
-                "limit": 120,
-                "ignore-pattern": "^import |^export {(.*?)}"
-            }
-        ],
-        "member-access": false,
-        "member-ordering": [
-            true,
-            {
-                "order": [
-                    "public-static-field",
-                    "protected-static-field",
-                    "private-static-field",
-                    "public-instance-field",
-                    "protected-instance-field",
-                    "private-instance-field",
-                    "public-constructor",
-                    "protected-constructor",
-                    "private-constructor",
-                    "public-static-method",
-                    "protected-static-method",
-                    "private-static-method",
-                    "public-instance-method",
-                    "protected-instance-method",
-                    "private-instance-method"
-                ]
-            }
-        ],
-        "no-console": {
-            "severity": "warning"
-        },
-        "no-empty-interface": false,
-        "no-string-literal": {
-            "severity": "warning"
-        },
-        "no-unused-expression": [
-            true,
-            "allow-fast-null-checks",
-            "allow-new"
-        ],
-        "object-literal-key-quotes": false,
-        "object-literal-sort-keys": false,
-        "ordered-imports": [
-            true,
-            {
-                "import-sources-order": "case-insensitive",
-                "module-source-path": "full",
-                "named-imports-order": "case-insensitive",
-                "grouped-imports": true
-            }
-        ],
-        "quotemark": [
-            true,
-            "single",
-            "avoid-escape"
-        ],
-        "semicolon": [
-            true,
-            "never"
-        ],
-        "trailing-comma": [
-            true,
-            {
-                "esSpecCompliant": true,
-                "multiline": {
-                    "objects": "always",
-                    "arrays": "always",
-                    "functions": "never",
-                    "typeLiterals": "never"
-                },
-                "singleline": "never"
-            }
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
+      }
+    ],
+    "no-console": {
+      "severity": "warning"
     },
-    "jsRules": {
-        "arrow-parens": false,
-        "ban-types": false,
-        "jsx-no-multiline-js": false,
-        "max-classes-per-file": [
-            true,
-            7
-        ],
-        "member-ordering": [
-            true,
-            {
-                "order": [
-                    "public-static-field",
-                    "protected-static-field",
-                    "private-static-field",
-                    "public-instance-field",
-                    "protected-instance-field",
-                    "private-instance-field",
-                    "public-constructor",
-                    "protected-constructor",
-                    "private-constructor",
-                    "public-static-method",
-                    "protected-static-method",
-                    "private-static-method",
-                    "public-instance-method",
-                    "protected-instance-method",
-                    "private-instance-method"
-                ]
-            }
-        ],
-        "no-console": {
-            "severity": "warning"
+    "no-empty-interface": false,
+    "no-string-literal": {
+      "severity": "warning"
+    },
+    "no-unused-expression": [true, "allow-fast-null-checks", "allow-new"],
+    "object-literal-key-quotes": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "module-source-path": "full",
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": true
+      }
+    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "semicolon": [true, "never"],
+    "trailing-comma": [
+      true,
+      {
+        "esSpecCompliant": true,
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "never"
         },
-        "no-string-literal": {
-            "severity": "warning"
-        },
-        "no-unused-expression": [
-            true,
-            "allow-fast-null-checks",
-            "allow-new"
-        ],
-        "object-literal-key-quotes": false,
-        "object-literal-sort-keys": false,
-        "ordered-imports": [
-            true,
-            {
-                "import-sources-order": "case-insensitive",
-                "module-source-path": "full",
-                "named-imports-order": "case-insensitive",
-                "grouped-imports": true
-            }
-        ],
-        "quotemark": [
-            true,
-            "single",
-            "avoid-escape"
-        ],
-        "semicolon": [
-            true,
-            "never"
+        "singleline": "never"
+      }
+    ]
+  },
+  "jsRules": {
+    "arrow-parens": false,
+    "ban-types": false,
+    "jsx-no-multiline-js": false,
+    "max-classes-per-file": [true, 7],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
         ]
-    }
+      }
+    ],
+    "no-console": {
+      "severity": "warning"
+    },
+    "no-string-literal": {
+      "severity": "warning"
+    },
+    "no-unused-expression": [true, "allow-fast-null-checks", "allow-new"],
+    "object-literal-key-quotes": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "module-source-path": "full",
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": true
+      }
+    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "semicolon": [true, "never"]
+  }
 }

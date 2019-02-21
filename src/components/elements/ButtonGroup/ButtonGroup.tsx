@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../styles/withStyles'
 
@@ -13,11 +13,11 @@ export class ButtonGroup extends React.PureComponent<ButtonGroupProps> {
         const { children, css, style } = this.props
         const styles: Styles = {
             root: {
-                '& > button:not(:first-child), & > a:not(:first-child)': {
+                '& > button:not(:first-of-type), & > a:not(:first-of-type)': {
                     borderTopLeftRadius: '0',
                     borderBottomLeftRadius: '0',
                 },
-                '& > button:not(:last-child), & > a:not(:last-child)': {
+                '& > button:not(:last-of-type), & > a:not(:last-of-type)': {
                     borderTopRightRadius: '0',
                     borderBottomRightRadius: '0',
                 },

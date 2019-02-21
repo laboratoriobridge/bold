@@ -202,7 +202,7 @@ exports[`should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-8:last-child {
+.emotion-8:last-of-type {
   border-bottom: none;
 }
 
@@ -225,11 +225,11 @@ exports[`should render correctly when opened 1`] = `
   display: inline-block;
 }
 
-.emotion-5:first-child {
+.emotion-5:first-of-type {
   margin-left: 0;
 }
 
-.emotion-5:last-child {
+.emotion-5:last-of-type {
   margin-right: 0;
 }
 

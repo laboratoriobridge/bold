@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Button, ButtonProps } from '../../../elements/Button'
@@ -109,12 +109,14 @@ export class InputWrapper extends React.PureComponent<InputWrapperProps> {
                             <Button
                                 size='small'
                                 skin='ghost'
-                                icon={icon}
                                 tabIndex={-1}
                                 onClick={onIconClick}
                                 style={styles.icon}
                                 disabled={iconDisabled}
-                            /> :
+                            >
+                                <Icon icon={icon} />
+                            </Button>
+                            :
                             <Icon
                                 icon={icon}
                                 style={styles.icon}

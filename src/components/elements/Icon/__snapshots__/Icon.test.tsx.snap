@@ -6,24 +6,26 @@ exports[`should accept fill prop 1`] = `
   font-size: 1.5rem;
 }
 
-<svg
-  aria-hidden="true"
-  class="emotion-0"
-  height="1em"
-  role="img"
-  viewBox="0 0 24 24"
-  width="1em"
->
-  <defs>
-    <path
-      d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
-      id="bell-outline_svg__a"
+<div>
+  <svg
+    aria-hidden="true"
+    class="emotion-0"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <defs>
+      <path
+        d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
+        id="bell-outline_svg__a"
+      />
+    </defs>
+    <use
+      xlink:href="#bell-outline_svg__a"
     />
-  </defs>
-  <use
-    href="#bell-outline_svg__a"
-  />
-</svg>
+  </svg>
+</div>
 `;
 
 exports[`should accept size prop 1`] = `
@@ -32,24 +34,26 @@ exports[`should accept size prop 1`] = `
   font-size: 3rem;
 }
 
-<svg
-  aria-hidden="true"
-  class="emotion-0"
-  height="1em"
-  role="img"
-  viewBox="0 0 24 24"
-  width="1em"
->
-  <defs>
-    <path
-      d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
-      id="bell-outline_svg__a"
+<div>
+  <svg
+    aria-hidden="true"
+    class="emotion-0"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <defs>
+      <path
+        d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
+        id="bell-outline_svg__a"
+      />
+    </defs>
+    <use
+      xlink:href="#bell-outline_svg__a"
     />
-  </defs>
-  <use
-    href="#bell-outline_svg__a"
-  />
-</svg>
+  </svg>
+</div>
 `;
 
 exports[`should accept stroke prop 1`] = `
@@ -59,24 +63,26 @@ exports[`should accept stroke prop 1`] = `
   font-size: 1.5rem;
 }
 
-<svg
-  aria-hidden="true"
-  class="emotion-0"
-  height="1em"
-  role="img"
-  viewBox="0 0 24 24"
-  width="1em"
->
-  <defs>
-    <path
-      d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
-      id="bell-outline_svg__a"
+<div>
+  <svg
+    aria-hidden="true"
+    class="emotion-0"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <defs>
+      <path
+        d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
+        id="bell-outline_svg__a"
+      />
+    </defs>
+    <use
+      xlink:href="#bell-outline_svg__a"
     />
-  </defs>
-  <use
-    href="#bell-outline_svg__a"
-  />
-</svg>
+  </svg>
+</div>
 `;
 
 exports[`should accept style prop 1`] = `
@@ -86,24 +92,26 @@ exports[`should accept style prop 1`] = `
   stroke-width: 5;
 }
 
-<svg
-  aria-hidden="true"
-  class="emotion-0"
-  height="1em"
-  role="img"
-  viewBox="0 0 24 24"
-  width="1em"
->
-  <defs>
-    <path
-      d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
-      id="bell-outline_svg__a"
+<div>
+  <svg
+    aria-hidden="true"
+    class="emotion-0"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <defs>
+      <path
+        d="M18 16h1c.667 0 1 .333 1 1s-.333 1-1 1H5c-.667 0-1-.333-1-1s.333-1 1-1h1v-5.961a6.032 6.032 0 0 1 4-5.677V4a2 2 0 0 1 4 0v.34c2.328.81 4 3.016 4 5.621V16zm-2 0v-6a4 4 0 0 0-8 0v6h8zm-6 4a2 2 0 0 0 4 0h-4z"
+        id="bell-outline_svg__a"
+      />
+    </defs>
+    <use
+      xlink:href="#bell-outline_svg__a"
     />
-  </defs>
-  <use
-    href="#bell-outline_svg__a"
-  />
-</svg>
+  </svg>
+</div>
 `;
 
 exports[`should render correctly 1`] = `
@@ -112,16 +120,18 @@ exports[`should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-<svg
-  aria-hidden="true"
-  class="emotion-0"
-  height="1em"
-  role="img"
-  viewBox="0 0 24 24"
-  width="1em"
->
-  <path
-    d="M17.005 2.755c.948-.94 1.89-.94 2.828-.001 1.407 1.409-.002-.004 1.408 1.408.94.941.94 1.883-.003 2.825l-2.83 2.83-4.232-4.233 2.829-2.83zm1.411 1.41L17.001 5.58l1.411 1.411 1.415-1.414-1.411-1.411zm-5.487 2.646l4.233 4.233L7.088 21.117l-3.841.784a1.163 1.163 0 0 1-.89-.195c-.266-.186-.37-.516-.312-.993l.81-3.828L12.93 6.81zm0 2.84l-7.95 7.952-.71 2.12 2.12-.709 7.952-7.951-1.411-1.411z"
-  />
-</svg>
+<div>
+  <svg
+    aria-hidden="true"
+    class="emotion-0"
+    height="1em"
+    role="img"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M17.005 2.755c.948-.94 1.89-.94 2.828-.001 1.407 1.409-.002-.004 1.408 1.408.94.941.94 1.883-.003 2.825l-2.83 2.83-4.232-4.233 2.829-2.83zm1.411 1.41L17.001 5.58l1.411 1.411 1.415-1.414-1.411-1.411zm-5.487 2.646l4.233 4.233L7.088 21.117l-3.841.784a1.163 1.163 0 0 1-.89-.195c-.266-.186-.37-.516-.312-.993l.81-3.828L12.93 6.81zm0 2.84l-7.95 7.952-.71 2.12 2.12-.709 7.952-7.951-1.411-1.411z"
+    />
+  </svg>
+</div>
 `;

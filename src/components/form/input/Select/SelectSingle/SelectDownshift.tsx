@@ -1,6 +1,6 @@
 import Downshift, { ControllerStateAndHelpers, DownshiftProps, StateChangeOptions } from 'downshift'
-import * as matchSorterAll from 'match-sorter'
-import * as React from 'react'
+import matchSorterAll from 'match-sorter'
+import React from 'react'
 
 // TODO: remove this dirty hack when storybook starts supporing allowSyntheticDefaultImports or a workaround is found
 const matchSorter = (matchSorterAll as any).default || matchSorterAll

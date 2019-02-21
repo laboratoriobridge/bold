@@ -1,43 +1,65 @@
-import * as React from 'react'
+import React from 'react'
+import { Manager, Popper, PopperProps, Reference, ReferenceChildrenProps } from 'react-popper'
 
-import { Popper, PopperController, PopperProps } from '../Popper'
+import { useTheme } from '../../../styles'
+import { Omit } from '../../../util'
+import { Portal } from '../Portal'
+import { FadeTransition } from '../Transition/FadeTransition'
 
-import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
-
-export interface DropdownProps extends DropdownMenuProps {
-    renderTarget: PopperProps['renderTarget']
-    children: PopperProps['children']
-    closeOnOutsideClick?: PopperProps['closeOnOutsideClick']
-    placement?: PopperProps['placement']
-    offset?: PopperProps['offset']
+export interface DropdownProps {
+    popperProps?: Omit<PopperProps, 'children'>
+    renderTarget(renderProps: DropdownTargetRenderProps): React.ReactNode
+    children(renderProps: DropdownRenderProps): React.ReactNode
 }
 
-export class Dropdown extends React.PureComponent<DropdownProps> {
+export type DropdownTargetRenderProps = DropdownRenderProps & ReferenceChildrenProps
 
-    static defaultProps: DropdownProps = {
-        offset: 0.25,
-        closeOnOutsideClick: true,
-        placement: 'bottom',
-        renderTarget: () => null,
-        children: () => null,
+export interface DropdownRenderProps {
+    isOpen: boolean
+    open(): void
+    close(): void
+    toggle(): void
+}
+
+export const Dropdown = (props: DropdownProps) => {
+    const { children, renderTarget, popperProps } = props
+    const theme = useTheme()
+
+    const [isOpen, setOpen] = React.useState<boolean>(false)
+
+    const renderProps: DropdownRenderProps = {
+        isOpen,
+        open: () => setOpen(true),
+        close: () => setOpen(false),
+        toggle: () => setOpen(!isOpen),
     }
 
-    render() {
-        const { renderTarget, children, closeOnOutsideClick, placement, offset, ...rest } = this.props
-
-        return (
-            <Popper
-                renderTarget={renderTarget}
-                placement={placement}
-                offset={offset}
-                closeOnOutsideClick={closeOnOutsideClick}
-            >
-                {(ctrl: PopperController) => (
-                    <DropdownMenu {...rest}>
-                        {children(ctrl)}
-                    </DropdownMenu>
+    return (
+        <Manager>
+            <Reference>
+                {(refProps) =>
+                    renderTarget({ ...refProps, ...renderProps })
+                }
+            </Reference>
+            <FadeTransition in={isOpen}>
+                {({ className }) => (
+                    isOpen && (
+                        <Portal>
+                            <Popper {...popperProps}>
+                                {(popper) => (
+                                    <div
+                                        ref={popper.ref}
+                                        className={className}
+                                        style={{ ...popper.style, zIndex: theme.zIndex.dropdown }}
+                                    >
+                                        {children(renderProps)}
+                                    </div>
+                                )}
+                            </Popper>
+                        </Portal>
+                    )
                 )}
-            </Popper>
-        )
-    }
+            </FadeTransition>
+        </Manager>
+    )
 }

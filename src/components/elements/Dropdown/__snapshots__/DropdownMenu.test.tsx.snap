@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-6 {
-  font-weight: bold;
-  color: #2D343B;
-  white-space: nowrap;
+.emotion-4 {
   list-style: none;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
   border: 1px solid #DCDCE0;
   border-radius: 2px;
@@ -15,107 +13,130 @@ exports[`should render correctly 1`] = `
   width: auto;
   min-width: 150px;
   background: #FFFFFF;
-  text-align: left;
 }
 
 .emotion-0 {
-  display: block;
+  margin: 0;
+  cursor: pointer;
   padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
   font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
 }
 
-.emotion-0:hover {
+.emotion-0:first-of-type a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-0:last-of-type a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
   background: #F2F2F7;
 }
 
 .emotion-1 {
   margin: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
+  font-size: 0.875rem;
+  color: #B9B9BD;
 }
 
-.emotion-1 div {
-  display: block;
-}
-
-.emotion-1:first-child a {
+.emotion-1:first-of-type a {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
 }
 
-.emotion-1:last-child a {
+.emotion-1:last-of-type a {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
 }
 
-.emotion-2 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: #B9B9BD;
-}
-
-.emotion-2:hover {
+.emotion-1:hover,
+.emotion-1:focus {
   background: #F2F2F7;
 }
 
-.emotion-2:hover {
-  background: transparent;
+.emotion-1:hover {
   cursor: not-allowed;
 }
 
-.emotion-4 {
-  display: block;
+.emotion-2 {
+  border-bottom: 1px solid #DCDCE0;
+}
+
+.emotion-3 {
+  margin: 0;
+  cursor: pointer;
   padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
   font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
   color: #D83A2E;
 }
 
-.emotion-4:hover {
+.emotion-3:first-of-type a {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.emotion-3:last-of-type a {
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
   background: #F2F2F7;
 }
 
-.emotion-4:hover {
+.emotion-3:hover,
+.emotion-3:focus {
   color: #FFFFFF;
   background: #D83A2E;
 }
 
-<ul
-  class="emotion-6"
->
-  <li
-    class="emotion-1"
+<div>
+  <ul
+    class="emotion-4"
+    role="menu"
   >
-    <a
+    <li
+      aria-disabled="false"
       class="emotion-0"
+      role="menuitem"
+      tabindex="0"
     >
       Normal
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-  >
-    <a
-      class="emotion-2"
+    </li>
+    <li
+      aria-disabled="true"
+      class="emotion-1"
+      role="menuitem"
+      tabindex="-1"
     >
       Disabled
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-  >
-    <a
-      class="emotion-4"
+    </li>
+    <li
+      class="emotion-2"
+      role="separator"
+      tabindex="-1"
+    />
+    <li
+      aria-disabled="false"
+      class="emotion-3"
+      role="menuitem"
+      tabindex="-1"
     >
       Danger
-    </a>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
 `;

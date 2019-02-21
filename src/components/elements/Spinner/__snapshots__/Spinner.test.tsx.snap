@@ -1,6 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept style prop 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-0 {
   pointer-events: none;
   font-size: 1rem;
@@ -9,8 +23,8 @@ exports[`should accept style prop 1`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 450ms infinite linear;
-  animation: animation-1scjtrl 450ms infinite linear;
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;
@@ -26,6 +40,20 @@ exports[`should accept style prop 1`] = `
 `;
 
 exports[`should render correctly 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
 .emotion-0 {
   pointer-events: none;
   font-size: 1rem;
@@ -33,8 +61,8 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:after {
-  -webkit-animation: animation-1scjtrl 450ms infinite linear;
-  animation: animation-1scjtrl 450ms infinite linear;
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
   border-radius: 50%;
   border-right-color: transparent;

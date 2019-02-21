@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { Styles, withStyles, WithStylesProps } from '../../../../styles'
 import { Spinner } from '../../../elements/Spinner/Spinner'
@@ -27,7 +27,7 @@ export class TableLoadingRow extends React.PureComponent<TableLoadingRowProps> {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                '& > *:first-child': {
+                '& > *:first-of-type': {
                     marginRight: '0.5rem',
                 },
             },

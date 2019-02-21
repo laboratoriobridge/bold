@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FormSpy } from 'react-final-form'
 
 import { Button, ButtonProps } from '../../../elements/Button'
@@ -19,7 +19,7 @@ export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
                     <Button
                         loading={submitting}
                         onClick={handleSubmit}
-                        type='primary'
+                        kind='primary'
                         render={this.renderButton}
                         {...rest}
                     />

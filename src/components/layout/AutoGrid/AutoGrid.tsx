@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 
 import { Cell, CellSize } from '../Cell/Cell'
 import { Grid, GridProps } from '../Grid/Grid'

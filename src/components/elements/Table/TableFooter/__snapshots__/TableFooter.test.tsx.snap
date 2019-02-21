@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-24 {
+.emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-23 {
+.emotion-15 {
   border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,84 +48,101 @@ exports[`renders correctly 1`] = `
   padding: 4px 1rem;
 }
 
-.emotion-15 {
-  position: relative;
-  margin-left: 0.5rem;
-}
-
-.emotion-3 {
-  display: inline-block;
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-2 {
-  font-weight: bold;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  color: inherit;
-}
-
-.emotion-1 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
   margin-left: 0.25rem;
-}
-
-.emotion-13 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0.25rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-12 {
-  font-weight: bold;
-  color: #2D343B;
-  white-space: nowrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
   display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-  text-align: left;
 }
 
-.emotion-4 {
-  display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #2D343B;
-  -webkit-text-decoration: none;
-  text-decoration: none;
+.emotion-2:first-of-type {
+  margin-left: 0;
 }
 
-.emotion-4:hover {
-  background: #F2F2F7;
+.emotion-2:last-of-type {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
 }
 
 .emotion-5 {
-  margin: 0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: 0 0.25rem;
 }
 
-.emotion-5 div {
-  display: block;
+.emotion-5 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
-.emotion-5:first-child a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+.emotion-5:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-5:last-child a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+.emotion-5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-22 {
+.emotion-5:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-8 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.125rem;
+}
+
+.emotion-14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -137,7 +154,7 @@ exports[`renders correctly 1`] = `
   margin: 0;
 }
 
-.emotion-17 {
+.emotion-9 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -164,7 +181,7 @@ exports[`renders correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-17 > span {
+.emotion-9 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -173,37 +190,26 @@ exports[`renders correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
-.emotion-17 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-17:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-17:focus {
+.emotion-9:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-17:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
-.emotion-16 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-19 {
+.emotion-11 {
   position: relative;
 }
 
-.emotion-18 {
+.emotion-10 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
   border-radius: 2px;
@@ -220,42 +226,42 @@ exports[`renders correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
-.emotion-18::-webkit-input-placeholder {
+.emotion-10::-webkit-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18::-moz-placeholder {
+.emotion-10::-moz-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18:-ms-input-placeholder {
+.emotion-10:-ms-input-placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18::placeholder {
+.emotion-10::placeholder {
   color: #B9B9BD;
 }
 
-.emotion-18:disabled {
+.emotion-10:disabled {
   border-color: #DCDCE0;
   background-color: #F2F2F7;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   border-color: #818489;
 }
 
-.emotion-18:not(:disabled):focus {
+.emotion-10:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   border-color: #0A67D1;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-21 {
+.emotion-13 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -283,7 +289,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-21 > span {
+.emotion-13 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -292,29 +298,23 @@ exports[`renders correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
 }
 
-.emotion-21 > span > :not(:last-child) {
-  margin-right: 0.5rem;
-}
-
-.emotion-21:not(:disabled):active {
+.emotion-13:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-21:focus {
+.emotion-13:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-21:not(:disabled):hover {
+.emotion-13:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
 <div
-  class="emotion-24"
+  class="emotion-16"
 >
   <span
     class="emotion-0"
@@ -326,91 +326,60 @@ exports[`renders correctly 1`] = `
     </span>
   </span>
   <div
-    class="emotion-23"
+    class="emotion-15"
   >
-    <span>
-      Mostrar:
-      <span
-        class="emotion-15"
-      >
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-3"
-          >
-            <a
-              class="emotion-2"
-            >
-              10 
-              <span
-                class="emotion-1"
-              >
-                ▾
-              </span>
-            </a>
-          </div>
-          <div
-            class="emotion-13"
-            data-visible="false"
-            style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-          >
-            <ul
-              class="emotion-12"
-            >
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  10
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  30
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  50
-                </a>
-              </li>
-              <li
-                class="emotion-5"
-              >
-                <a
-                  class="emotion-4"
-                >
-                  100
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </span>
-    </span>
     <div
-      class="emotion-22"
+      class="emotion-7"
+    >
+      <div
+        class="emotion-2"
+      >
+        <span
+          class="emotion-1"
+        >
+          Mostrar:
+        </span>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          aria-haspopup="true"
+          class="emotion-5"
+        >
+          <span>
+            <span
+              class="emotion-1"
+            >
+              10
+            </span>
+            <svg
+              aria-hidden="true"
+              class="emotion-4"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <div
+      class="emotion-14"
     >
       <button
-        class="emotion-17"
+        class="emotion-9"
         title="Página anterior"
-        type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-16"
+            class="emotion-8"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
@@ -423,10 +392,10 @@ exports[`renders correctly 1`] = `
         </span>
       </button>
       <div
-        class="emotion-19"
+        class="emotion-11"
       >
         <input
-          class="emotion-18"
+          class="emotion-10"
           type="text"
           value="2"
         />
@@ -435,14 +404,13 @@ exports[`renders correctly 1`] = `
         de 10
       </span>
       <button
-        class="emotion-21"
+        class="emotion-13"
         title="Próxima página"
-        type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-16"
+            class="emotion-8"
             height="1em"
             role="img"
             viewBox="0 0 24 24"

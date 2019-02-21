@@ -1,5 +1,5 @@
 import { Renderable, RenderFunction } from '@storybook/react'
-import * as React from 'react'
+import React from 'react'
 import { FormProps } from 'react-final-form'
 import { BrowserRouter } from 'react-router-dom'
 

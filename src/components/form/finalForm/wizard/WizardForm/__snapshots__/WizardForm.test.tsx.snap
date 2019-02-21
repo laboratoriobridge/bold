@@ -8,7 +8,7 @@ exports[`rendering should render correctly 1`] = `
   text-align: right;
 }
 
-.emotion-1 > *:not(:last-child) {
+.emotion-1 > *:not(:last-of-type) {
   margin-right: 1rem;
 }
 
@@ -51,12 +51,6 @@ exports[`rendering should render correctly 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-0 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-0:not(:disabled):active {
@@ -85,12 +79,9 @@ exports[`rendering should render correctly 1`] = `
   >
     <button
       class="emotion-0"
-      type="button"
     >
       <span>
-        <span>
-          Avançar
-        </span>
+        Avançar
       </span>
     </button>
   </div>
