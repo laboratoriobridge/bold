@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept the "style" prop 1`] = `
+.emotion-0 {
+  background-color: #F2F2F7;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: red;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    Footer
+  </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  background-color: #F2F2F7;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    Footer
+  </div>
+</div>
+`;

@@ -1,27 +1,27 @@
+import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface ModalFooterProps extends WithStylesProps {
+export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  style?: Interpolation
 }
 
-@withStyles
-export class ModalFooter extends React.PureComponent<ModalFooterProps> {
+export const ModalFooter = (props: ModalFooterProps) => {
+  const { style, children, ...rest } = props
+  const { classes, css } = useStyles(theme => ({
+    footer: {
+      backgroundColor: theme.pallete.surface.background,
+      padding: '1rem',
+      borderBottomLeftRadius: theme.radius.modal,
+      borderBottomRightRadius: theme.radius.modal,
+    },
+  }))
 
-    render() {
-        const { css, theme } = this.props
-        const styles = {
-            footer: {
-                backgroundColor: theme.pallete.surface.background,
-                padding: '1rem',
-                borderBottomLeftRadius: theme.radius.modal,
-                borderBottomRightRadius: theme.radius.modal,
-            },
-        }
-        return (
-            <div className={css(styles.footer)}>
-                {this.props.children}
-            </div>
-        )
-    }
+  return (
+    <div className={css(classes.footer, style)} {...rest}>
+      {children}
+    </div>
+  )
 }

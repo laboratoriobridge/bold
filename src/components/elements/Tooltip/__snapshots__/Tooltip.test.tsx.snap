@@ -31,7 +31,7 @@ exports[`should render correctly 2`] = `
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
-  opacity: 1;
+  opacity: 0;
 }
 
 <body>

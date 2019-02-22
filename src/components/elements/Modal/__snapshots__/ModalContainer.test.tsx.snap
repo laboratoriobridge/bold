@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly when closed 1`] = `
+exports[`should accept the "style" prop 1`] = `
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -26,6 +26,9 @@ exports[`should render correctly when closed 1`] = `
   color: #2D343B;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .emotion-1 > span {
@@ -55,147 +58,26 @@ exports[`should render correctly when closed 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-<body>
-  <div>
-    <button
-      aria-haspopup="true"
-      class="emotion-1"
-    >
-      <span>
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <defs>
-            <path
-              d="M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z"
-              id="dots_svg__a"
-            />
-          </defs>
-          <use
-            xlink:href="#dots_svg__a"
-          />
-        </svg>
-      </span>
-    </button>
-  </div>
-</body>
-`;
-
-exports[`should render correctly when opened 1`] = `
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
 }
 
 .emotion-2 {
-  margin: 0;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  font-weight: bolder;
-  outline: none;
-  font-size: 0.875rem;
+  border: 1px solid #DCDCE0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+  color: red;
 }
 
-.emotion-2:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-2:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-}
-
-.emotion-2:hover,
-.emotion-2:focus {
-  background: #F2F2F7;
-}
-
-.emotion-5 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 0;
-}
-
-<body>
-  <div>
+<div>
+  <div
+    aria-modal="true"
+    class="emotion-2"
+    role="dialog"
+  >
     <button
-      aria-controls="menu-abc"
-      aria-expanded="true"
-      aria-haspopup="true"
+      aria-label="Fechar"
       class="emotion-1"
     >
       <span>
@@ -207,49 +89,112 @@ exports[`should render correctly when opened 1`] = `
           viewBox="0 0 24 24"
           width="1em"
         >
-          <defs>
-            <path
-              d="M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z"
-              id="dots_svg__a"
-            />
-          </defs>
-          <use
-            xlink:href="#dots_svg__a"
+          <path
+            d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
           />
         </svg>
       </span>
     </button>
+    Container
   </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-2 {
+  border: 1px solid #DCDCE0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<div>
   <div
-    class="emotion-5"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1300;"
+    aria-modal="true"
+    class="emotion-2"
+    role="dialog"
   >
-    <ul
-      class="emotion-4"
-      id="menu-abc"
-      role="menu"
+    <button
+      aria-label="Fechar"
+      class="emotion-1"
     >
-      <li
-        aria-disabled="false"
-        class="emotion-2"
-        role="menuitem"
-        tabindex="0"
-      >
-        <span>
-          Item #1
-        </span>
-      </li>
-      <li
-        aria-disabled="false"
-        class="emotion-2"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          Item #2
-        </span>
-      </li>
-    </ul>
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+          />
+        </svg>
+      </span>
+    </button>
+    Container
   </div>
-</body>
+</div>
 `;

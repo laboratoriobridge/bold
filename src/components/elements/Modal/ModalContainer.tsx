@@ -1,56 +1,50 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
-export interface ModalContainerProps extends WithStylesProps {
-    style?: Interpolation
-    onClose?(): any
+export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  style?: Interpolation
+  onClose?(): any
 }
 
-@withStyles
-export class ModalContainer extends React.PureComponent<ModalContainerProps> {
+export const ModalContainer = (props: ModalContainerProps) => {
+  const { style, onClose, children, ...rest } = props
+  const { classes, css } = useStyles(styles)
 
-    static defaultProps: ModalContainerProps = {
-        onClose: () => null,
-    }
+  return (
+    <div role='dialog' aria-modal='true' className={css(classes.wrapper, style)} {...rest}>
+      <Tooltip text='Fechar'>
+        <Button aria-label='Fechar' size='small' skin='ghost' style={classes.closeButton} onClick={onClose}>
+          <Icon icon='timesDefault' />
+        </Button>
+      </Tooltip>
 
-    render() {
-        const { css, theme, style, onClose } = this.props
-        const styles: Styles = {
-            wrapper: {
-                border: `1px solid ${theme.pallete.divider}`,
-                boxShadow: theme.shadows.outer['160'],
-                borderRadius: theme.radius.modal,
-                backgroundColor: theme.pallete.surface.main,
-                minWidth: 520,
-                pointerEvents: 'auto',
-            },
-            closeButton: {
-                float: 'right',
-                marginTop: '0.5rem',
-                marginRight: '0.5rem',
-            },
-        }
-        return (
-            <div className={css(styles.wrapper, style)}>
-                <Tooltip text='Fechar'>
-                    <Button
-                        aria-label='Fechar'
-                        size='small'
-                        skin='ghost'
-                        style={styles.closeButton}
-                        onClick={onClose}
-                    >
-                        <Icon icon='timesDefault' />
-                    </Button>
-                </Tooltip>
-
-                {this.props.children}
-            </div>
-        )
-    }
+      {children}
+    </div>
+  )
 }
+
+ModalContainer.defaultProps = {
+  onClose: () => null,
+} as Partial<ModalContainerProps>
+
+export const styles = (theme: Theme) => ({
+  wrapper: {
+    border: `1px solid ${theme.pallete.divider}`,
+    boxShadow: theme.shadows.outer['160'],
+    borderRadius: theme.radius.modal,
+    backgroundColor: theme.pallete.surface.main,
+    minWidth: 520,
+    pointerEvents: 'auto',
+  } as React.CSSProperties,
+  closeButton: {
+    float: 'right',
+    marginTop: '0.5rem',
+    marginRight: '0.5rem',
+  } as React.CSSProperties,
+})

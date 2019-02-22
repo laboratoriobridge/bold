@@ -1,29 +1,28 @@
+import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface ModalBackdropProps extends WithStylesProps {
-    onClick(): any
+export interface ModalBackdropProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  style?: Interpolation
 }
 
-@withStyles
-export class ModalBackdrop extends React.PureComponent<ModalBackdropProps> {
+export const ModalBackdrop = (props: ModalBackdropProps) => {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(styles)
 
-    render() {
-        const { css, theme, onClick } = this.props
-        const styles: Styles = {
-            backdrop: {
-                position: 'fixed',
-                zIndex: theme.zIndex.modalBackdrop,
-                top: 0,
-                left: 0,
-                bottom: 0,
-                right: 0,
-                background: 'rgba(230, 230, 230, 0.7)',
-            },
-        }
-        return (
-            <div className={css(styles.backdrop)} onClick={onClick} />
-        )
-    }
+  return <div className={css(classes.backdrop, style)} {...rest} />
 }
+
+export const styles = (theme: Theme) => ({
+  backdrop: {
+    position: 'fixed',
+    zIndex: theme.zIndex.modalBackdrop,
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+    background: 'rgba(230, 230, 230, 0.7)',
+  } as React.CSSProperties,
+})

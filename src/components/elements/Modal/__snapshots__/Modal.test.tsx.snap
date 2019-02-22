@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal accept style prop 1`] = `
-.emotion-4 {
+exports[`Modal should render correctly when closed 1`] = `
+<body>
+  <div />
+</body>
+`;
+
+exports[`Modal should render correctly when opened 1`] = `
+.emotion-3 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -19,320 +25,20 @@ exports[`Modal accept style prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-5 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(230,230,230,0.7);
 }
 
 .emotion-6 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: visible;
-  opacity: 1;
-}
-
-.emotion-3 {
-  border: 1px solid #DCDCE0;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  max-height: 80vh;
-  overflow: auto;
-  width: 850px;
-  color: red;
-}
-
-<div
-  class="emotion-6"
->
-  <div
-    class="emotion-4"
-  >
-    <div
-      class="emotion-3"
-    >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
-      <div
-        class="emotion-2"
-      >
-        Testing.
-      </div>
-    </div>
-  </div>
-  <div
-    class="emotion-5"
-  />
-</div>
-`;
-
-exports[`Modal render different sizes 1`] = `
-.emotion-4 {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  pointer-events: none;
-  z-index: 1100;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-2 {
-  padding: 2.5rem;
+  overflow: hidden;
 }
 
 .emotion-5 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(230,230,230,0.7);
-}
-
-.emotion-6 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: visible;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
   opacity: 1;
 }
 
-.emotion-3 {
-  border: 1px solid #DCDCE0;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  max-height: 80vh;
-  overflow: auto;
-  width: 520px;
-}
-
-<div
-  class="emotion-6"
->
-  <div
-    class="emotion-4"
-  >
-    <div
-      class="emotion-3"
-    >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
-      <div
-        class="emotion-2"
-      >
-        Testing.
-      </div>
-    </div>
-  </div>
-  <div
-    class="emotion-5"
-  />
-</div>
-`;
-
-exports[`Modal render different sizes 2`] = `
-.emotion-4 {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  pointer-events: none;
-  z-index: 1100;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.emotion-3 {
+.emotion-2 {
   border: 1px solid #DCDCE0;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -403,11 +109,7 @@ exports[`Modal render different sizes 2`] = `
   font-size: 1.5rem;
 }
 
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -417,57 +119,52 @@ exports[`Modal render different sizes 2`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-6 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: visible;
-  opacity: 1;
-}
-
-<div
+<body
   class="emotion-6"
 >
+  <div />
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
       class="emotion-3"
     >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
       <div
+        aria-modal="true"
         class="emotion-2"
+        role="dialog"
       >
+        <button
+          aria-label="Fechar"
+          class="emotion-1"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
+          </span>
+        </button>
         Testing.
       </div>
     </div>
+    <div
+      class="emotion-4"
+    />
   </div>
-  <div
-    class="emotion-5"
-  />
-</div>
+</body>
 `;
 
-exports[`Modal render different sizes 3`] = `
-.emotion-4 {
+exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = `
+.emotion-3 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -485,6 +182,17 @@ exports[`Modal render different sizes 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 1;
 }
 
 .emotion-1 {
@@ -546,11 +254,7 @@ exports[`Modal render different sizes 3`] = `
   font-size: 1.5rem;
 }
 
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-5 {
+.emotion-4 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -560,15 +264,7 @@ exports[`Modal render different sizes 3`] = `
   background: rgba(230,230,230,0.7);
 }
 
-.emotion-6 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: visible;
-  opacity: 1;
-}
-
-.emotion-3 {
+.emotion-2 {
   border: 1px solid #DCDCE0;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -580,273 +276,52 @@ exports[`Modal render different sizes 3`] = `
   max-width: 80%;
 }
 
-<div
+<body
   class="emotion-6"
 >
+  <div />
   <div
-    class="emotion-4"
+    class="emotion-5"
   >
     <div
       class="emotion-3"
     >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
       <div
+        aria-modal="true"
         class="emotion-2"
-      >
-        Testing.
-      </div>
-    </div>
-  </div>
-  <div
-    class="emotion-5"
-  />
-</div>
-`;
-
-exports[`Modal should render closed 1`] = `
-.emotion-8 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-6 {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  width: 100%;
-  pointer-events: none;
-  z-index: 1100;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.emotion-5 {
-  border: 1px solid #DCDCE0;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  max-height: 80vh;
-  overflow: auto;
-  width: 850px;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-4 {
-  background-color: #F2F2F7;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #818489;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-3 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-3:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-3:not(:disabled):hover {
-  background-color: #ebebeb;
-}
-
-.emotion-7 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(230,230,230,0.7);
-}
-
-<div
-  class="emotion-8"
->
-  <div
-    class="emotion-6"
-  >
-    <div
-      class="emotion-5"
-    >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
-      <div
-        class="emotion-2"
-      >
-        Testing.
-      </div>
-      <div
-        class="emotion-4"
+        role="dialog"
       >
         <button
-          class="emotion-3"
+          aria-label="Fechar"
+          class="emotion-1"
         >
           <span>
-            Action
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
           </span>
         </button>
+        Testing.
       </div>
     </div>
+    <div
+      class="emotion-4"
+    />
   </div>
-  <div
-    class="emotion-7"
-  />
-</div>
+</body>
 `;
 
-exports[`Modal should render open 1`] = `
-.emotion-6 {
+exports[`Modal sizes should accept the "large" size and render accordingly 1`] = `
+.emotion-3 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -866,205 +341,295 @@ exports[`Modal should render open 1`] = `
   justify-content: center;
 }
 
+.emotion-6 {
+  overflow: hidden;
+}
+
 .emotion-5 {
-  border: 1px solid #DCDCE0;
-  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
-  border-radius: 4px;
-  background-color: #FFFFFF;
-  min-width: 520px;
-  pointer-events: auto;
-  max-height: 80vh;
-  overflow: auto;
-  width: 850px;
-}
-
-.emotion-1 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-4 {
-  background-color: #F2F2F7;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #818489;
-  border-radius: 4px;
-  color: #2D343B;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-}
-
-.emotion-3 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-3:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-3:not(:disabled):hover {
-  background-color: #ebebeb;
-}
-
-.emotion-7 {
-  position: fixed;
-  z-index: 1050;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(230,230,230,0.7);
-}
-
-.emotion-8 {
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  display: inline;
-  visibility: visible;
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
   opacity: 1;
 }
 
-<div
-  class="emotion-8"
+.emotion-2 {
+  border: 1px solid #DCDCE0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+  max-height: 80vh;
+  overflow: auto;
+  width: 850px;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+<body
+  class="emotion-6"
 >
+  <div />
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
     <div
-      class="emotion-5"
+      class="emotion-3"
     >
-      <button
-        aria-label="Fechar"
-        class="emotion-1"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-      </button>
       <div
+        aria-modal="true"
         class="emotion-2"
-      >
-        Testing.
-      </div>
-      <div
-        class="emotion-4"
+        role="dialog"
       >
         <button
-          class="emotion-3"
+          aria-label="Fechar"
+          class="emotion-1"
         >
           <span>
-            Action
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
           </span>
         </button>
+        Testing.
       </div>
     </div>
+    <div
+      class="emotion-4"
+    />
   </div>
+</body>
+`;
+
+exports[`Modal sizes should accept the "small" size and render accordingly 1`] = `
+.emotion-3 {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  width: 100%;
+  pointer-events: none;
+  z-index: 1100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-6 {
+  overflow: hidden;
+}
+
+.emotion-5 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  opacity: 1;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  float: right;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+.emotion-2 {
+  border: 1px solid #DCDCE0;
+  box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  min-width: 520px;
+  pointer-events: auto;
+  max-height: 80vh;
+  overflow: auto;
+  width: 520px;
+}
+
+<body
+  class="emotion-6"
+>
+  <div />
   <div
-    class="emotion-7"
-  />
-</div>
+    class="emotion-5"
+  >
+    <div
+      class="emotion-3"
+    >
+      <div
+        aria-modal="true"
+        class="emotion-2"
+        role="dialog"
+      >
+        <button
+          aria-label="Fechar"
+          class="emotion-1"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
+          </span>
+        </button>
+        Testing.
+      </div>
+    </div>
+    <div
+      class="emotion-4"
+    />
+  </div>
+</body>
 `;
