@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept "style" prop 1`] = `
+.emotion-0 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+  color: red;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="backdrop"
+  />
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(230,230,230,0.7);
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="backdrop"
+  />
+</div>
+`;

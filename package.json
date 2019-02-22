@@ -1,6 +1,6 @@
 {
   "name": "bridge-react",
-  "version": "1.0.0-alpha.111",
+  "version": "1.0.0-alpha.112",
   "main": "lib/main.js",
   "types": "lib/index.d.ts",
   "files": [
@@ -48,6 +48,7 @@
     "downshift": "3.2.2",
     "final-form-focus": "1.1.0",
     "final-form-set-field-data": "1.0.1",
+    "focus-trap-react": "6.0.0",
     "hoist-non-react-statics": "3.3.0",
     "match-sorter": "2.3.0",
     "react-dropzone": "7.0.1",
@@ -117,7 +118,7 @@
     "react-router-dom": "4.3.1",
     "react-testing-library": "5.4.4",
     "sonar-scanner": "3.1.0",
-    "ts-jest": "23.10.5",
+    "ts-jest": "24.0.0",
     "tslint": "5.12.1",
     "tslint-config-prettier": "1.18.0",
     "tslint-react": "3.6.0",

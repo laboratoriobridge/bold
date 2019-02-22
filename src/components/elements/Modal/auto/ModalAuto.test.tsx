@@ -1,77 +1,56 @@
-import { mount, render } from 'enzyme'
 import React from 'react'
+import { fireEvent, render } from 'react-testing-library'
 
-import { withTheme } from '../../../../test'
-import { ModalFooter } from '../ModalFooter'
+import * as stringUtils from '../../../../util/string'
 
 import { ModalAuto } from './ModalAuto'
+;(stringUtils as any).randomStr = jest.fn(() => 'abc')
 
 // tslint:disable jsx-no-lambda
 
 jest.useFakeTimers()
 
 it('should render correctly', () => {
-    expect(render(withTheme(
-        <ModalAuto
-            dispose={jest.fn()}
-            render={() => <span>Body</span>}
-            size='small'
-            actions={[
-                { label: 'Confirm', onClick: jest.fn() },
-            ]}
-        />
-    ))).toMatchSnapshot()
+  const component = (
+    <ModalAuto
+      dispose={jest.fn()}
+      render={() => <span>Body</span>}
+      size='small'
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
+    />
+  )
+  const { rerender } = render(component)
+  rerender(component)
+  expect(document.body).toMatchSnapshot()
 })
 
-it('should mount opened', () => {
-    const wrapper = mount(withTheme(
-        <ModalAuto dispose={jest.fn()} render={() => <span>Body</span>} />
-    ))
-    const instance = wrapper.find(ModalAuto).instance() as ModalAuto
-    expect(instance.state.open).toEqual(false)
-})
-
-it('should call dispose when closed', () => {
-    const dispose = jest.fn()
-    const wrapper = mount(withTheme(
-        <ModalAuto dispose={dispose} render={() => <span>Body</span>} />
-    ))
-    const instance = wrapper.find(ModalAuto).instance() as ModalAuto
-    instance.close()
-    jest.runAllTimers()
-    expect(dispose).toHaveBeenCalledTimes(1)
-})
-
-it('should pass render props', () => {
-    const renderModal = jest.fn()
-    const wrapper = mount(withTheme(
-        <ModalAuto dispose={jest.fn()} render={renderModal} />
-    ))
-    const instance = wrapper.find(ModalAuto).instance() as ModalAuto
-    expect(renderModal).toHaveBeenCalledWith({
-        close: instance.close,
-    })
+it('should open when mounted', () => {
+  const component = <ModalAuto dispose={jest.fn()} render={() => <span>Body</span>} />
+  const { rerender } = render(component)
+  rerender(component)
+  expect(document.body.querySelector('[role="dialog"]')).toBeTruthy()
 })
 
 it('should close modal when a button is clicked', () => {
-    const confirmHandler = jest.fn()
-    const wrapper = mount(withTheme(
-        <ModalAuto
-            dispose={jest.fn()}
-            render={() => <span>Body</span>}
-            actions={[
-                { label: 'Cancel' },
-                { label: 'Confirm', type: 'primary', onClick: confirmHandler },
-            ]}
-        />
-    ))
-    const instance = wrapper.find(ModalAuto).instance() as ModalAuto
-    const closeSpy = jest.spyOn(instance, 'close')
+  const confirmHandler = jest.fn()
+  const component = (
+    <ModalAuto
+      dispose={jest.fn()}
+      render={() => <span>Body</span>}
+      actions={[{ label: 'Cancel' }, { label: 'Confirm', type: 'primary', onClick: confirmHandler }]}
+    />
+  )
 
-    wrapper.find(ModalFooter).find('button').last().simulate('click')
-    expect(confirmHandler).toHaveBeenCalled()
-    expect(closeSpy).toHaveBeenCalledTimes(1)
+  const { getByText, rerender } = render(component)
+  rerender(component)
 
-    wrapper.find(ModalFooter).find('button').first().simulate('click')
-    expect(closeSpy).toHaveBeenCalledTimes(2)
+  fireEvent.click(getByText('Confirm'))
+  expect(confirmHandler).toHaveBeenCalled()
+  expect(document.body.querySelector('[role="dialog"]')).toBeFalsy()
+})
+
+it('should pass render props', () => {
+  const renderModal = jest.fn()
+  render(<ModalAuto dispose={jest.fn()} render={renderModal} />)
+  expect(renderModal.mock.calls[0][0].close).toEqual(expect.any(Function))
 })
