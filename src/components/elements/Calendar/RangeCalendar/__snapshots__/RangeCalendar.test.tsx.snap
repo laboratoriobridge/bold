@@ -26,11 +26,11 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
   display: inline-block;
 }
 
-.emotion-2:first-child {
+.emotion-2:first-of-type {
   margin-left: 0;
 }
 
-.emotion-2:last-child {
+.emotion-2:last-of-type {
   margin-right: 0;
 }
 
@@ -85,12 +85,6 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: color .2s;
-  transition: color .2s;
-}
-
-.emotion-1 > span > :not(:last-child) {
-  margin-right: 0.5rem;
 }
 
 .emotion-1:not(:disabled):active {
@@ -148,7 +142,7 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
   background: #F2F2F7;
 }
 
-.emotion-31 {
+.emotion-45 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -156,7 +150,7 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
   font-weight: bold;
 }
 
-.emotion-31:hover {
+.emotion-45:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -180,7 +174,6 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             <button
               class="emotion-1"
               tabindex="-1"
-              type="button"
             >
               <span>
                 <svg
@@ -209,7 +202,6 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             <button
               class="emotion-1"
               tabindex="-1"
-              type="button"
             >
               <span>
                 <svg
@@ -241,7 +233,6 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             <button
               class="emotion-1"
               tabindex="-1"
-              type="button"
             >
               <span>
                 <svg
@@ -270,7 +261,6 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             <button
               class="emotion-1"
               tabindex="-1"
-              type="button"
             >
               <span>
                 <svg
@@ -293,6 +283,7 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
     </div>
     <table
       class="emotion-54"
+      role="listbox"
     >
       <thead>
         <tr>
@@ -325,8 +316,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-01-27"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               27
             </span>
@@ -335,8 +327,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-01-28"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               28
             </span>
@@ -345,8 +338,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-01-29"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               29
             </span>
@@ -355,8 +349,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-01-30"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               30
             </span>
@@ -365,8 +360,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-01-31"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               31
             </span>
@@ -375,8 +371,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-01"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               01
             </span>
@@ -385,8 +382,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-02"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               02
             </span>
@@ -397,8 +395,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-03"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               03
             </span>
@@ -407,8 +406,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-04"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               04
             </span>
@@ -417,8 +417,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-05"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               05
             </span>
@@ -427,8 +428,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-06"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               06
             </span>
@@ -437,8 +439,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-07"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               07
             </span>
@@ -447,8 +450,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-08"
           >
             <span
-              class="emotion-31"
-              role="button"
+              aria-selected="false"
+              class="emotion-24"
+              role="option"
             >
               08
             </span>
@@ -457,8 +461,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-09"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               09
             </span>
@@ -469,8 +474,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-10"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               10
             </span>
@@ -479,8 +485,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-11"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               11
             </span>
@@ -489,8 +496,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-12"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               12
             </span>
@@ -499,8 +507,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-13"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               13
             </span>
@@ -509,8 +518,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-14"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               14
             </span>
@@ -519,8 +529,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-15"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               15
             </span>
@@ -529,8 +540,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-16"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               16
             </span>
@@ -541,8 +553,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-17"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               17
             </span>
@@ -551,8 +564,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-18"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               18
             </span>
@@ -561,8 +575,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-19"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               19
             </span>
@@ -571,8 +586,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-20"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               20
             </span>
@@ -581,8 +597,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-21"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               21
             </span>
@@ -591,8 +608,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-22"
           >
             <span
-              class="emotion-24"
-              role="button"
+              aria-selected="false"
+              class="emotion-45"
+              role="option"
             >
               22
             </span>
@@ -601,8 +619,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-23"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               23
             </span>
@@ -613,8 +632,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-24"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               24
             </span>
@@ -623,8 +643,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-25"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               25
             </span>
@@ -633,8 +654,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-26"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               26
             </span>
@@ -643,8 +665,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-27"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               27
             </span>
@@ -653,8 +676,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-02-28"
           >
             <span
+              aria-selected="false"
               class="emotion-24"
-              role="button"
+              role="option"
             >
               28
             </span>
@@ -663,8 +687,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-03-01"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               01
             </span>
@@ -673,8 +698,9 @@ exports[`[Calendar][RangePicker] Should initialize with null values 1`] = `
             data-date="2019-03-02"
           >
             <span
+              aria-selected="false"
               class="emotion-19"
-              role="button"
+              role="option"
             >
               02
             </span>
