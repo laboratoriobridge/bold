@@ -1,85 +1,64 @@
-import React from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
 import { HFlow } from '../../../layout/Flow/HFlow'
 import { Button, ButtonProps } from '../../Button'
 import { Modal, ModalProps } from '../Modal'
+import { ModalBody } from '../ModalBody'
+import { ModalFooter } from '../ModalFooter'
 
 export interface ModalAutoProps {
-    actions?: ButtonProps[]
-    size?: ModalProps['size']
-    render(renderProps: ModalAutoRenderProps): React.ReactNode
-    dispose(): void
+  actions?: ButtonProps[]
+  size?: ModalProps['size']
+  render(renderProps: ModalAutoRenderProps): React.ReactNode
+  dispose(): void
 }
 
 export interface ModalAutoState {
-    open: boolean
+  open: boolean
 }
 
 export interface ModalAutoRenderProps {
-    close(): void
+  close(): void
 }
 
-export class ModalAuto extends React.PureComponent<ModalAutoProps, ModalAutoState> {
+export const ModalAuto = memo((props: ModalAutoProps) => {
+  const { actions, size, render, dispose } = props
 
-    state = {
-        open: false,
-    }
+  const [isOpen, setIsOpen] = useState(false)
 
-    componentDidMount() {
-        // Timeout to preserve opening transition
-        window.setTimeout(() => {
-            this.setState({ open: true })
-        }, 1)
-    }
+  useEffect(() => {
+    setIsOpen(true)
+  }, [])
 
-    dispose = () => {
-        // Disposing with timeout to preserve closing transition
-        window.setTimeout(this.props.dispose, 500)
-    }
+  const close = () => {
+    setIsOpen(false)
 
-    render() {
-        const { render, actions, size } = this.props
-        return (
-            <Modal
-                open={this.state.open}
-                size={size}
-                renderFooter={actions && this.renderFooter}
-                onClose={this.close}
-                onBackdropClick={this.close}
-            >
-                {render({
-                    close: this.close,
-                })}
-            </Modal>
-        )
-    }
+    // Dispose with timeout to preserve closing transition
+    window.setTimeout(dispose, 500)
+  }
 
-    renderFooter = () => {
-        const { actions } = this.props
-        return (
-            <HFlow justifyContent='flex-end'>
-                {actions.map((action, idx) =>
-                    <Button
-                        key={idx}
-                        style={{ minWidth: 144 }}
-                        {...action}
-                        onClick={this.handleAction(action)}
-                    />
-                )}
-            </HFlow>
-        )
-    }
+  const handleAction = (action: ButtonProps) => e => {
+    action.onClick && action.onClick(e)
+    close()
+  }
 
-    close = () => {
-        this.setState({ open: false })
-        this.dispose()
-    }
-
-    handleAction = (action: ButtonProps) => (e) => {
-        if (action.onClick) {
-            action.onClick(e)
-        }
-
-        this.close()
-    }
-}
+  return (
+    <Modal open={isOpen} size={size} onClose={close}>
+      <ModalBody>{render({ close })}</ModalBody>
+      {actions && (
+        <ModalFooter>
+          <HFlow justifyContent='flex-end'>
+            {actions.map((action, idx) => {
+              const { label, ...rest } = action
+              return (
+                <Button key={idx} style={{ minWidth: 144 }} {...rest} onClick={handleAction(action)}>
+                  {label}
+                </Button>
+              )
+            })}
+          </HFlow>
+        </ModalFooter>
+      )}
+    </Modal>
+  )
+})
