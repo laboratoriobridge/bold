@@ -6,8 +6,10 @@ import { Modal, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 
+export type ButtonAction = ButtonProps & { label?: React.ReactNode }
+
 export interface ModalAutoProps {
-  actions?: ButtonProps[]
+  actions?: ButtonAction[]
   size?: ModalProps['size']
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
