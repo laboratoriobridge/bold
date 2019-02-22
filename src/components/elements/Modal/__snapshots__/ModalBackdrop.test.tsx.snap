@@ -15,6 +15,7 @@ exports[`should accept "style" prop 1`] = `
 <div>
   <div
     class="emotion-0"
+    data-testid="backdrop"
   />
 </div>
 `;
@@ -33,6 +34,7 @@ exports[`should render correctly 1`] = `
 <div>
   <div
     class="emotion-0"
+    data-testid="backdrop"
   />
 </div>
 `;

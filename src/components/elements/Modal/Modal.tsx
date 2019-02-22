@@ -1,3 +1,4 @@
+import FocusTrap from 'focus-trap-react'
 import React, { useEffect } from 'react'
 
 import { Theme, useStyles } from '../../../styles'
@@ -13,10 +14,16 @@ export interface ModalProps extends ModalContainerProps {
   open: boolean
   size?: ModalSize
   children?: React.ReactNode
+
+  /**
+   * Specify whether the `onClose` prop should called when backdrop is clicked.
+   * @default true
+   */
+  closeOnBackdropClick?: boolean
 }
 
 export const Modal = (props: ModalProps) => {
-  const { open, size, children, ...rest } = props
+  const { open, size, closeOnBackdropClick, children, ...rest } = props
   const { classes, css } = useStyles(styles)
   const { classes: sizeClasses } = useStyles(sizeStyles)
 
@@ -51,15 +58,17 @@ export const Modal = (props: ModalProps) => {
         <>
           {open && (
             <Portal>
-              <div className={className}>
-                <div className={classes.modal}>
-                  <ModalContainer style={css(classes.container, sizeClasses[size])} {...rest}>
-                    {children}
-                  </ModalContainer>
-                </div>
+              <FocusTrap>
+                <div className={className}>
+                  <div className={classes.modal}>
+                    <ModalContainer style={css(classes.container, sizeClasses[size])} {...rest}>
+                      {children}
+                    </ModalContainer>
+                  </div>
 
-                <ModalBackdrop onClick={rest.onClose} />
-              </div>
+                  <ModalBackdrop onClick={closeOnBackdropClick ? rest.onClose : undefined} />
+                </div>
+              </FocusTrap>
             </Portal>
           )}
         </>
@@ -70,6 +79,7 @@ export const Modal = (props: ModalProps) => {
 
 Modal.defaultProps = {
   size: 'large',
+  closeOnBackdropClick: true,
 } as Partial<ModalProps>
 
 export const styles = (theme: Theme) => ({

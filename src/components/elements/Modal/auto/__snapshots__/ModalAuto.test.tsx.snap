@@ -271,6 +271,7 @@ exports[`should render correctly 1`] = `
     </div>
     <div
       class="emotion-9"
+      data-testid="backdrop"
     />
   </div>
 </body>

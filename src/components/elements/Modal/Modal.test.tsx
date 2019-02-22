@@ -1,5 +1,5 @@
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
+import { fireEvent, render, wait } from 'react-testing-library'
 
 import * as stringUtils from '../../../util/string'
 
@@ -62,6 +62,25 @@ describe('Modal', () => {
   })
 })
 
+it('should call "onClose" when backdrop is clicked and closeOnBackdropClick prop is true', () => {
+  const handleClose = jest.fn()
+  const createComponent = (props: Partial<ModalProps> = {}) => (
+    <Modal open={true} onClose={handleClose} {...props}>
+      Modal
+    </Modal>
+  )
+
+  const { rerender, getByTestId } = render(createComponent())
+  const backdrop = getByTestId('backdrop')
+  expect(handleClose).not.toHaveBeenCalled()
+  fireEvent.click(backdrop)
+  expect(handleClose).toHaveBeenCalledTimes(1)
+
+  rerender(createComponent({ closeOnBackdropClick: false }))
+  fireEvent.click(backdrop)
+  expect(handleClose).toHaveBeenCalledTimes(1)
+})
+
 it('should call "onClose" when key "Escape" is pressed and modal is open', () => {
   const handleClose = jest.fn()
   const createComponent = (props: Partial<ModalProps> = {}) => (
@@ -78,4 +97,26 @@ it('should call "onClose" when key "Escape" is pressed and modal is open', () =>
   rerender(createComponent({ open: false }))
   fireEvent.keyDown(document.body, { key: 'Escape' })
   expect(handleClose).toHaveBeenCalledTimes(1)
+})
+
+it('should have a focus on first element when opened', async () => {
+  const createComponent = (props: Partial<ModalProps> = {}) => (
+    <>
+      <button>Open</button>
+      <Modal open={false} {...props}>
+        Modal
+        <button>First button</button>
+      </Modal>
+    </>
+  )
+
+  const { rerender, getByText } = render(createComponent())
+  const button = getByText('Open')
+  button.focus()
+  expect(document.activeElement).toEqual(button)
+
+  rerender(createComponent({ open: true }))
+  const dialog = document.body.querySelector('[role="dialog"]')
+  await wait()
+  expect(document.activeElement).toEqual(dialog.firstElementChild)
 })

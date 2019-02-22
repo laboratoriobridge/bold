@@ -158,6 +158,7 @@ exports[`Modal should render correctly when opened 1`] = `
     </div>
     <div
       class="emotion-4"
+      data-testid="backdrop"
     />
   </div>
 </body>
@@ -315,6 +316,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
     </div>
     <div
       class="emotion-4"
+      data-testid="backdrop"
     />
   </div>
 </body>
@@ -472,6 +474,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
     </div>
     <div
       class="emotion-4"
+      data-testid="backdrop"
     />
   </div>
 </body>
@@ -629,6 +632,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
     </div>
     <div
       class="emotion-4"
+      data-testid="backdrop"
     />
   </div>
 </body>

@@ -24,3 +24,11 @@ it('should call "onClose" when close button is pressed', () => {
   fireEvent.click(button)
   expect(handleClose).toHaveBeenCalled()
 })
+
+it('should have close icon only if "hasCloseIcon" is true', () => {
+  const { container: containerWithoutClose } = render(<ModalContainer hasCloseIcon={false}>Container</ModalContainer>)
+  expect(containerWithoutClose.querySelector('button')).toBeFalsy()
+
+  const { container: containerWithClose } = render(<ModalContainer>Container</ModalContainer>)
+  expect(containerWithClose.querySelector('button')).toBeTruthy()
+})

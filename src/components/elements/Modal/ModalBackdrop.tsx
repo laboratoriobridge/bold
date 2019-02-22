@@ -12,7 +12,7 @@ export const ModalBackdrop = (props: ModalBackdropProps) => {
   const { style, ...rest } = props
   const { classes, css } = useStyles(styles)
 
-  return <div className={css(classes.backdrop, style)} {...rest} />
+  return <div className={css(classes.backdrop, style)} data-testid='backdrop' {...rest} />
 }
 
 export const styles = (theme: Theme) => ({
