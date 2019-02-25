@@ -22,8 +22,39 @@ const createComponent = (props: Partial<ControlledRangeCalendarProps> = {}) =>
 
 describe('[Calendar][RangePicker]', () => {
   it('With empty initialValues, should leave an empty interval', () => {
-    const { container } = render(createComponent())
-    expect(container).toMatchSnapshot()
+    const { getAllByRole } = render(createComponent())
+
+    getAllByRole('option').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
+  })
+
+  it('Should select only the initialDate if the finalDate is null/undefined in initialValues', () => {
+    const { getByText } = render(
+      createComponent({
+        initialValues: {
+          initialDate: new Date('2019-02-11'),
+          finalDate: null,
+        },
+      })
+    )
+
+    expect(getByText('10').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('11').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('12').getAttribute('aria-selected')).toBe('false')
+  })
+
+  it('Should select nothing if only the finalDate is setted in initialValues', () => {
+    const { getByText } = render(
+      createComponent({
+        initialValues: {
+          initialDate: null,
+          finalDate: new Date('2019-02-11'),
+        },
+      })
+    )
+
+    expect(getByText('10').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('11').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('12').getAttribute('aria-selected')).toBe('false')
   })
 
   it('With initialValues should select the interval', () => {

@@ -17,9 +17,10 @@ const createComponent = (props: Partial<RangeCalendarProps> = {}) =>
 describe('[Calendar][RangePicker]', () => {
   const theme = createTheme()
 
-  it('Should initialize with null values', () => {
-    const { container } = render(createComponent())
-    expect(container).toMatchSnapshot()
+  it('Should initialize with null values if initialValues is null', () => {
+    const { getAllByRole } = render(createComponent())
+
+    getAllByRole('option').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
   })
 
   it('When finalDate is earlier than initialDate, both should be undefined', () => {
