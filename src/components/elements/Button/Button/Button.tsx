@@ -14,10 +14,11 @@ export interface ButtonProps extends SkinProps, Omit<ButtonBaseProps, 'style'> {
 }
 
 export const Button = (props: ButtonProps) => {
-  const { loading, block, style, skin, size, kind, children, ...rest } = props
+  const { loading, block, style, skin, size, kind, onClick, children, ...rest } = props
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const onLoadingChange = (value: boolean) => setIsLoading(value)
+  const isReallyLoading = isLoading || loading
 
   const { theme, css } = useStyles()
   const skinStyles = skinMap[skin](theme)
@@ -32,17 +33,24 @@ export const Button = (props: ButtonProps) => {
     size === 'large' && sizeStyles.large,
     size === 'medium' && sizeStyles.medium,
     size === 'small' && sizeStyles.small,
-    (isLoading || loading) && baseStyles.loading,
+    isReallyLoading && baseStyles.loading,
     props.disabled && baseStyles.disabled,
     block && baseStyles.block,
     style
   )
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    if (!isReallyLoading) {
+      return onClick && onClick(e)
+    }
+  }
 
   return (
     <ButtonBase
       className={classes}
       onLoadingChange={onLoadingChange}
       data-loading={isLoading ? true : undefined}
+      onClick={handleClick}
       {...rest}
     >
       <span>{children}</span>

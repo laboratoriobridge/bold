@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 export type TransitionState = 'unmounted' | 'entering' | 'entered' | 'exiting' | 'exited'
 
-export const useTransition = (enter: boolean, timeout = 0) => {
+export const useTransition = (enter: boolean, timeout = 1) => {
   const [state, setState] = useState<TransitionState>('unmounted')
 
   useEffect(() => {

@@ -1146,7 +1146,6 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
-  pointer-events: none;
   border-radius: inherit;
 }
 
