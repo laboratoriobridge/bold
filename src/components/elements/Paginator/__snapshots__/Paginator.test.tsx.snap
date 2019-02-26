@@ -183,6 +183,7 @@ exports[`deve renderizar corretamente 1`] = `
   <button
     class="emotion-1"
     title="Página anterior"
+    type="button"
   >
     <span>
       <svg
@@ -214,6 +215,7 @@ exports[`deve renderizar corretamente 1`] = `
   <button
     class="emotion-5"
     title="Próxima página"
+    type="button"
   >
     <span>
       <svg
@@ -419,6 +421,7 @@ exports[`deve renderizar corretamente 2`] = `
     class="emotion-1"
     disabled=""
     title="Página anterior"
+    type="button"
   >
     <span>
       <svg
@@ -450,6 +453,7 @@ exports[`deve renderizar corretamente 2`] = `
   <button
     class="emotion-5"
     title="Próxima página"
+    type="button"
   >
     <span>
       <svg
@@ -655,6 +659,7 @@ exports[`deve renderizar corretamente 3`] = `
     class="emotion-1"
     disabled=""
     title="Página anterior"
+    type="button"
   >
     <span>
       <svg
@@ -686,6 +691,7 @@ exports[`deve renderizar corretamente 3`] = `
   <button
     class="emotion-5"
     title="Próxima página"
+    type="button"
   >
     <span>
       <svg

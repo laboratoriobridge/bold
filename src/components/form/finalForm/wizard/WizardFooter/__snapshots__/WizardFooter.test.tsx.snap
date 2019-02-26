@@ -126,6 +126,7 @@ exports[`rendering should render correctly 1`] = `
 >
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Voltar
@@ -133,6 +134,7 @@ exports[`rendering should render correctly 1`] = `
   </button>
   <button
     class="emotion-1"
+    type="button"
   >
     <span>
       Avançar

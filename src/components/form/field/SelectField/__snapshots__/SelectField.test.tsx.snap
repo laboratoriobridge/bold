@@ -221,6 +221,7 @@ exports[`should render correctly 1`] = `
           <button
             class="emotion-4"
             tabindex="-1"
+            type="button"
           >
             <span>
               <svg

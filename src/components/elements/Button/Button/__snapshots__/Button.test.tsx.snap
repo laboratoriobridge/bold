@@ -89,6 +89,7 @@ exports[`should accept the loading prop 1`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -157,6 +158,7 @@ exports[`should render correctly with icon 1`] = `
 <div>
   <button
     class="emotion-1"
+    type="button"
   >
     <span>
       <svg
@@ -231,6 +233,7 @@ exports[`should render correctly with label 1`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -294,6 +297,7 @@ exports[`should render the default skin 1`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -364,6 +368,7 @@ exports[`should render the default skin 2`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -438,6 +443,7 @@ exports[`should render the default skin 3`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -501,6 +507,7 @@ exports[`should render the ghost skin 1`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -565,6 +572,7 @@ exports[`should render the ghost skin 2`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -633,6 +641,7 @@ exports[`should render the ghost skin 3`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -696,6 +705,7 @@ exports[`should render the outline skin 1`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -765,6 +775,7 @@ exports[`should render the outline skin 2`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button
@@ -838,6 +849,7 @@ exports[`should render the outline skin 3`] = `
 <div>
   <button
     class="emotion-0"
+    type="button"
   >
     <span>
       Button

@@ -57,6 +57,7 @@ exports[`should render correctly 1`] = `
 <a
   class="emotion-0"
   href="/"
+  type="button"
 >
   <span>
     Link to home

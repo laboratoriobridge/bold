@@ -11,6 +11,7 @@ exports[`should render correctly 1`] = `
     size="small"
     skin="ghost"
     tabIndex={-1}
+    type="button"
   >
     <Component
       icon="angleLeft"
@@ -24,6 +25,7 @@ exports[`should render correctly 1`] = `
     size="small"
     skin="ghost"
     tabIndex={-1}
+    type="button"
   >
     <Component
       icon="angleRight"

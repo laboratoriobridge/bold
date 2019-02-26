@@ -225,6 +225,7 @@ exports[`should render correctly 1`] = `
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg
@@ -259,6 +260,7 @@ exports[`should render correctly 1`] = `
             >
               <button
                 class="emotion-3"
+                type="button"
               >
                 <span>
                   Confirm

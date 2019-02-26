@@ -346,6 +346,7 @@ exports[`renders correctly 1`] = `
         <button
           aria-haspopup="true"
           class="emotion-5"
+          type="button"
         >
           <span>
             <span
@@ -375,6 +376,7 @@ exports[`renders correctly 1`] = `
       <button
         class="emotion-9"
         title="Página anterior"
+        type="button"
       >
         <span>
           <svg
@@ -406,6 +408,7 @@ exports[`renders correctly 1`] = `
       <button
         class="emotion-13"
         title="Próxima página"
+        type="button"
       >
         <span>
           <svg

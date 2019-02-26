@@ -242,6 +242,7 @@ exports[`render with icon 1`] = `
       <button
         class="emotion-2"
         tabindex="-1"
+        type="button"
       >
         <span>
           <svg

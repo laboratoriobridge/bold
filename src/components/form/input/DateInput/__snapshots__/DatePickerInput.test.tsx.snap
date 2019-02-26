@@ -320,6 +320,7 @@ exports[`DatePickerInput should render correctly 1`] = `
           <button
             class="emotion-2"
             tabindex="-1"
+            type="button"
           >
             <span>
               <svg
@@ -372,6 +373,7 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -400,6 +402,7 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -431,6 +434,7 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -459,6 +463,7 @@ exports[`DatePickerInput should render correctly 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -1201,6 +1206,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
             class="emotion-2"
             disabled=""
             tabindex="-1"
+            type="button"
           >
             <span>
               <svg
@@ -1253,6 +1259,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -1281,6 +1288,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -1312,6 +1320,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg
@@ -1340,6 +1349,7 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
                   <button
                     class="emotion-7"
                     tabindex="-1"
+                    type="button"
                   >
                     <span>
                       <svg

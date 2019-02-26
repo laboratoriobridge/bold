@@ -336,6 +336,7 @@ exports[`should be rendered correctly 1`] = `
             <button
               class="emotion-3"
               tabindex="-1"
+              type="button"
             >
               <span>
                 <svg
@@ -388,6 +389,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -416,6 +418,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -447,6 +450,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -475,6 +479,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      type="button"
                     >
                       <span>
                         <svg
