@@ -10,6 +10,11 @@ it('should render correctly with label', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should have the "button" type to avoid default submit behaviour inside forms', () => {
+  const { container } = render(<Button>Button</Button>)
+  expect(container.querySelector('button').getAttribute('type')).toEqual('button')
+})
+
 it('should render correctly with icon', () => {
   const { container } = render(
     <Button>
