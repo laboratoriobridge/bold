@@ -15,7 +15,10 @@ export const createStyles = (theme: Theme) => ({
     background: theme.pallete.surface.main,
     flex: 1,
     padding: '2rem 3rem',
-  },
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: 'calc(100vh - 77px)', // discount header size
+  } as React.CSSProperties,
   content: {
     maxWidth: 688,
     fontSize: '1rem',

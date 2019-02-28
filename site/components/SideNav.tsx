@@ -1,4 +1,5 @@
 import { Icon, Theme, useStyles } from 'bridge-react/lib'
+import Link from 'next/link'
 
 export const SideNav = () => {
   const { classes } = useStyles(createStyles)
@@ -6,14 +7,18 @@ export const SideNav = () => {
     <nav className={classes.nav}>
       <ul className={classes.ul}>
         <li className={classes.li}>
-          <a>
-            <Icon icon='chatFilled' /> About
-          </a>
+          <Link href='/about'>
+            <a>
+              <Icon icon='chatFilled' /> About
+            </a>
+          </Link>
         </li>
         <li className={classes.li}>
-          <a>
-            <Icon icon='rocket' /> Getting Started
-          </a>
+          <Link href='/getting-started'>
+            <a>
+              <Icon icon='rocket' /> Getting Started
+            </a>
+          </Link>
         </li>
         <li className={classes.li}>
           <a>
@@ -26,9 +31,11 @@ export const SideNav = () => {
           </a>
         </li>
         <li className={classes.li}>
-          <a>
-            <Icon icon='archiveFilled' /> Resources
-          </a>
+          <Link href='/resources'>
+            <a>
+              <Icon icon='archiveFilled' /> Resources
+            </a>
+          </Link>
         </li>
       </ul>
     </nav>

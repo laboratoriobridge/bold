@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'bridge-react/lib'
-import { css } from 'emotion'
+import { css, Interpolation } from 'emotion'
 import App from 'next/app'
 import { Helmet } from 'react-helmet'
 
@@ -35,5 +35,5 @@ export default class extends App {
 const createStyles = () => ({
   content: {
     display: 'flex',
-  },
+  } as Interpolation,
 })

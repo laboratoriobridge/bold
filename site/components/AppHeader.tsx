@@ -1,13 +1,11 @@
 import { TextInput, Theme, useStyles } from 'bridge-react/lib'
 
-import logo from '../images/bold_.svg'
-
 export const AppHeader = () => {
   const { classes } = useStyles(createStyles)
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <img src={logo} className={classes.image} alt='Bold design system logo' />
+        <img src='/static/image/bold_.svg' className={classes.image} alt='Bold design system logo' />
       </div>
 
       <div className={classes.search}>
