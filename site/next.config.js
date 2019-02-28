@@ -17,7 +17,7 @@ module.exports = withPlugins({
   },
   exportPathMap: () => {
     return {
-      '/': { page: '/' },
+      '/': { page: '/about' },
     }
   },
 })
