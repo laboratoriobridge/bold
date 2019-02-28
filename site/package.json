@@ -16,6 +16,7 @@
     "@zeit/next-typescript": "1.1.1",
     "bridge-react": "link:../",
     "next": "8.0.3",
+    "next-images": "1.0.4",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-helmet": "5.2.0"
