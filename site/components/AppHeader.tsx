@@ -1,5 +1,9 @@
 import { TextInput, Theme, useStyles } from 'bridge-react/lib'
 
+import { SIDE_NAV_WIDTH } from './SideNav'
+
+export const APP_HEADER_HEIGHT = 77
+
 export const AppHeader = () => {
   const { classes } = useStyles(createStyles)
   return (
@@ -28,15 +32,16 @@ const createStyles = (theme: Theme) => ({
     boxShadow: theme.shadows.outer[60],
     display: 'flex',
     alignItems: 'center',
-    zIndex: 2,
-    position: 'relative',
+    zIndex: 20,
+    position: 'fixed',
+    width: '100%',
   } as React.CSSProperties,
   image: {
     height: '2.5rem',
   } as React.CSSProperties,
   logo: {
     borderRight: `1px solid ${theme.pallete.divider}`,
-    width: 236,
+    width: `calc(${SIDE_NAV_WIDTH}px - 2rem)`,
     textAlign: 'center',
     padding: '0 1rem',
   } as React.CSSProperties,

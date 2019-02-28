@@ -1,5 +1,8 @@
 import { Theme, useStyles } from 'bridge-react/lib'
 
+import { APP_HEADER_HEIGHT } from './AppHeader'
+import { SIDE_NAV_WIDTH } from './SideNav'
+
 export const PageContent = (props: any) => {
   const { children } = props
   const { classes } = useStyles(createStyles)
@@ -14,10 +17,11 @@ export const createStyles = (theme: Theme) => ({
   main: {
     background: theme.pallete.surface.main,
     flex: 1,
-    padding: '2rem 3rem',
+    padding: `calc(2rem + ${APP_HEADER_HEIGHT}px) 3rem 2rem 3rem`,
+    marginLeft: SIDE_NAV_WIDTH,
     display: 'flex',
     flexDirection: 'column',
-    minHeight: 'calc(100vh - 77px)', // discount header size
+    minHeight: `100vh`, // discount header size
   } as React.CSSProperties,
   content: {
     maxWidth: 688,

@@ -1,6 +1,7 @@
 import { Icon, Icons, Omit, Text, Theme, useStyles } from 'bridge-react/lib'
 
 import ActiveLink from './ActiveLink'
+import { APP_HEADER_HEIGHT } from './AppHeader'
 
 interface PageLink {
   href?: string
@@ -28,6 +29,8 @@ const pages: PageLink[] = [
   { href: '/components', title: 'Components', icon: 'bricksFilled' },
   { href: '/resources', title: 'Resources', icon: 'archiveFilled' },
 ]
+
+export const SIDE_NAV_WIDTH = 288
 
 export const SideNav = () => {
   const { classes } = useStyles(createStyles)
@@ -66,14 +69,16 @@ export const SideNav = () => {
 const createStyles = (theme: Theme) => ({
   nav: {
     background: theme.pallete.surface.main,
-    width: 267,
+    width: SIDE_NAV_WIDTH,
     boxShadow: theme.shadows.outer[40],
     display: 'flex',
     flexDirection: 'column',
     padding: '2rem 0',
-    position: 'relative',
-    zIndex: 1,
-
+    marginTop: APP_HEADER_HEIGHT,
+    position: 'fixed',
+    zIndex: 10,
+    overflow: 'auto',
+    height: `calc(100vh - ${APP_HEADER_HEIGHT}px)`,
     svg: {
       fill: 'currentColor',
     },
