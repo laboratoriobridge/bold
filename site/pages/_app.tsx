@@ -16,6 +16,7 @@ export default class extends App {
     return (
       <ThemeProvider>
         <Helmet>
+          <link href='/static/image/favicon.png' rel='icon' />
           <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i' rel='stylesheet' />
           <title>Bold Design System</title>
         </Helmet>
