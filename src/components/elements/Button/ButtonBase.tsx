@@ -23,7 +23,7 @@ export const ButtonBase = (props: ButtonBaseProps) => {
   }
 
   const stopLoading = () => {
-    window.setTimeout(() => {
+    setTimeout(() => {
       onLoadingChange && onLoadingChange(false)
     })
   }

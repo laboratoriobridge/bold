@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 
 export interface PortalProps {
-    target?: Element
-    children: React.ReactNode
+  container?: Element
+  children: React.ReactNode
 }
 
-export const Portal = ({ children, target }: PortalProps) => {
-    return createPortal(children, target)
-}
+export const Portal = (props: PortalProps) => {
+  const { children, container } = props
 
-Portal.defaultProps = {
-    target: document.body,
-} as Partial<PortalProps>
+  const mountNode = useRef<Element>(document && document.body)
+  useEffect(() => {
+    mountNode.current = container || document.body
+    return () => {
+      mountNode.current = null
+    }
+  }, [container])
+
+  return mountNode.current ? createPortal(children, mountNode.current) : null
+}

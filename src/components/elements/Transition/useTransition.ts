@@ -8,10 +8,10 @@ export const useTransition = (enter: boolean, timeout = 1) => {
   useEffect(() => {
     if (enter) {
       setState('entering')
-      window.setTimeout(() => setState('entered'), timeout)
+      setTimeout(() => setState('entered'), timeout)
     } else {
       setState('exiting')
-      window.setTimeout(() => setState('exited'), timeout)
+      setTimeout(() => setState('exited'), timeout)
     }
 
     return () => {
