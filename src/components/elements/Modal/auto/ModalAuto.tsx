@@ -36,7 +36,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setIsOpen(false)
 
     // Dispose with timeout to preserve closing transition
-    window.setTimeout(dispose, 500)
+    setTimeout(dispose, 500)
   }
 
   const handleAction = (action: ButtonProps) => e => {
