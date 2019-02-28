@@ -6,33 +6,16 @@ import { APP_HEADER_HEIGHT } from './AppHeader'
 interface PageLink {
   href?: string
   title: React.ReactNode
-  icon: Icons
+  icon: Icons | string
   children?: Array<Omit<PageLink, 'icon' | 'children'>>
 }
 
-const pages: PageLink[] = [
-  { href: '/about', title: 'About', icon: 'chatFilled' },
-  { href: '/getting-started', title: 'Getting Started', icon: 'rocket' },
-  {
-    title: 'Design Guidelines',
-    icon: 'penTool',
-    href: '/design-guidelines',
-    children: [
-      { href: '/design-guidelines/accessibility', title: 'Accessibility' },
-      { href: '/design-guidelines/color', title: 'Color' },
-      { href: '/design-guidelines/grid', title: 'Grid' },
-      { href: '/design-guidelines/iconography', title: 'Iconography' },
-      { href: '/design-guidelines/illustrations', title: 'Illustrations' },
-      { href: '/design-guidelines/typography', title: 'Typography' },
-    ],
-  },
-  { href: '/components', title: 'Components', icon: 'bricksFilled' },
-  { href: '/resources', title: 'Resources', icon: 'archiveFilled' },
-]
+export interface SideNavProps {
+  pages: PageLink[]
+}
 
-export const SIDE_NAV_WIDTH = 288
-
-export const SideNav = () => {
+export const SideNav = (props: SideNavProps) => {
+  const { pages } = props
   const { classes } = useStyles(createStyles)
 
   return (
@@ -42,7 +25,7 @@ export const SideNav = () => {
           <li key={link.href}>
             <ActiveLink href={link.href} activeClassName='active'>
               <a className={classes.link}>
-                <Icon icon={link.icon} className={classes.icon} />
+                <Icon icon={link.icon as Icons} className={classes.icon} />
                 <Text style={classes.title}>{link.title}</Text>
                 {link.children && <Icon icon='angleDown' className={classes.iconDropdown} />}
               </a>
@@ -65,6 +48,8 @@ export const SideNav = () => {
     </nav>
   )
 }
+
+export const SIDE_NAV_WIDTH = 288
 
 const createStyles = (theme: Theme) => ({
   nav: {

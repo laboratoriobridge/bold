@@ -2,8 +2,6 @@ import { TextInput, Theme, useStyles } from 'bridge-react/lib'
 
 import { SIDE_NAV_WIDTH } from './SideNav'
 
-export const APP_HEADER_HEIGHT = 77
-
 export const AppHeader = () => {
   const { classes } = useStyles(createStyles)
   return (
@@ -24,6 +22,8 @@ export const AppHeader = () => {
     </header>
   )
 }
+
+export const APP_HEADER_HEIGHT = 77
 
 const createStyles = (theme: Theme) => ({
   header: {

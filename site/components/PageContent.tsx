@@ -21,7 +21,7 @@ export const createStyles = (theme: Theme) => ({
     marginLeft: SIDE_NAV_WIDTH,
     display: 'flex',
     flexDirection: 'column',
-    minHeight: `100vh`, // discount header size
+    minHeight: `100vh`,
   } as React.CSSProperties,
   content: {
     maxWidth: 688,

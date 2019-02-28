@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet'
 import { AppHeader } from '../components/AppHeader'
 import { PageContent } from '../components/PageContent'
 import { SideNav } from '../components/SideNav'
+import pages from '../pages'
 
 export default class extends App {
   render() {
@@ -22,7 +23,7 @@ export default class extends App {
         <AppHeader />
 
         <div className={css(styles.content)}>
-          <SideNav />
+          <SideNav pages={pages} />
           <PageContent>
             <Component {...pageProps} />
           </PageContent>
