@@ -24,7 +24,7 @@ export const createStyles = (theme: Theme) => ({
     minHeight: `100vh`,
   } as React.CSSProperties,
   content: {
-    maxWidth: 688,
+    maxWidth: 800,
     fontSize: '1rem',
 
     p: {
@@ -37,7 +37,7 @@ export const createStyles = (theme: Theme) => ({
     },
 
     img: {
-      maxWidth: 810,
+      maxWidth: 960,
     },
   },
 })

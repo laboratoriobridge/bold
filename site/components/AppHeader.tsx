@@ -55,7 +55,7 @@ const createStyles = (theme: Theme) => ({
       background: theme.pallete.surface.main,
     },
     '&::-webkit-search-decoration': {
-      '-webkit-appearance': 'none',
-    },
+      WebkitAppearance: 'none',
+    } as React.CSSProperties,
   } as React.CSSProperties,
 })
