@@ -3,17 +3,8 @@
     "moduleResolution": "node",
     "module": "commonjs",
     "target": "es5",
-    "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
-      "dom"
-    ],
-    "types": [
-      "webpack-env",
-      "jest"
-    ],
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "types": ["webpack-env", "jest"],
     "outDir": "lib",
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
@@ -34,7 +25,8 @@
     "target",
     "lib",
     "build",
-    "coverage"
+    "coverage",
+    "site"
   ],
   "awesomeTypescriptLoaderOptions": {
     "useBabel": true

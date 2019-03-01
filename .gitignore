@@ -7,3 +7,7 @@ yarn-error.log
 lib
 storybook-static
 .cache
+
+# Next files
+site/.next
+site/out
