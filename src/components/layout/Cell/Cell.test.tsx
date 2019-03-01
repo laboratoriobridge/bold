@@ -1,14 +1,33 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../test'
+import { render } from 'react-testing-library'
 
 import { Cell } from './Cell'
 
-describe('Cell', () => {
-    it('deve renderizar corretamente', () => {
-        expect(render(withTheme(<Cell>Content</Cell>))).toMatchSnapshot()
-        expect(render(withTheme(<Cell size={6}>Content</Cell>))).toMatchSnapshot()
-        expect(render(withTheme(<Cell alignSelf='center'>Content</Cell>))).toMatchSnapshot()
-    })
+it('should render correctly', () => {
+  const { container } = render(<Cell>Content</Cell>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept flex item props', () => {
+  const { container } = render(
+    <Cell size={6} alignSelf='center' flexGrow={1} flexShrink={1} flexBasis='50%'>
+      Content
+    </Cell>
+  )
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept "style" prop', () => {
+  const { container } = render(<Cell style={{ color: 'red' }}>Content</Cell>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should pass props down to div', () => {
+  const { container } = render(
+    <Cell id='div' aria-label='test'>
+      Content
+    </Cell>
+  )
+  expect(container.querySelector('div').getAttribute('id')).toEqual('div')
+  expect(container.querySelector('div').getAttribute('aria-label')).toEqual('test')
 })

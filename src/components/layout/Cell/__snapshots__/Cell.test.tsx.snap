@@ -1,12 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cell deve renderizar corretamente 1`] = `
+exports[`should accept "style" prop 1`] = `
 .emotion-0 {
   margin: 0.5rem 1rem;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+  color: red;
 }
 
 @media (max-width:1280px) {
@@ -15,52 +12,32 @@ exports[`Cell deve renderizar corretamente 1`] = `
   }
 }
 
-<div
-  class="emotion-0"
->
-  Content
+<div>
+  <div
+    class="emotion-0"
+  >
+    Content
+  </div>
 </div>
 `;
 
-exports[`Cell deve renderizar corretamente 2`] = `
+exports[`should accept flex item props 1`] = `
 .emotion-0 {
   margin: 0.5rem 1rem;
-  -webkit-flex-basis: calc((100% / 12 * 6) - 2rem);
-  -ms-flex-preferred-size: calc((100% / 12 * 6) - 2rem);
-  flex-basis: calc((100% / 12 * 6) - 2rem);
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin: 0.25rem 0.5rem;
-  }
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    -webkit-flex-basis: calc((100% / 12 * 6) - 1rem);
-    -ms-flex-preferred-size: calc((100% / 12 * 6) - 1rem);
-    flex-basis: calc((100% / 12 * 6) - 1rem);
-  }
-}
-
-<div
-  class="emotion-0"
->
-  Content
-</div>
-`;
-
-exports[`Cell deve renderizar corretamente 3`] = `
-.emotion-0 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
-  margin: 0.5rem 1rem;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  width: calc((100% / 12 * 6) - 2rem);
 }
 
 @media (max-width:1280px) {
@@ -69,9 +46,37 @@ exports[`Cell deve renderizar corretamente 3`] = `
   }
 }
 
-<div
-  class="emotion-0"
->
-  Content
+@media (max-width:1280px) {
+  .emotion-0 {
+    width: calc((100% / 12 * 6) - 1rem);
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  margin: 0.5rem 1rem;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    margin: 0.25rem 0.5rem;
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    Content
+  </div>
 </div>
 `;

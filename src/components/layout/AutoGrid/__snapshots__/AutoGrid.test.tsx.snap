@@ -1,6 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AutoGrid deve aceitar as GridProps 1`] = `
+.emotion-0 {
+  margin: 0.5rem 1rem;
+}
+
+@media (max-width:1280px) {
+  .emotion-0 {
+    margin: 0.25rem 0.5rem;
+  }
+}
+
 .emotion-1 {
   -webkit-align-items: flex-end;
   -webkit-box-align: flex-end;
@@ -29,20 +39,6 @@ exports[`AutoGrid deve aceitar as GridProps 1`] = `
   .emotion-1 {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
-  }
-}
-
-.emotion-0 {
-  margin: 0.5rem 1rem;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin: 0.25rem 0.5rem;
   }
 }
 
@@ -82,9 +78,7 @@ exports[`AutoGrid deve renderizar corretamente 1`] = `
 
 .emotion-0 {
   margin: 0.5rem 1rem;
-  -webkit-flex-basis: calc((100% / 12 * 4) - 2rem);
-  -ms-flex-preferred-size: calc((100% / 12 * 4) - 2rem);
-  flex-basis: calc((100% / 12 * 4) - 2rem);
+  width: calc((100% / 12 * 4) - 2rem);
 }
 
 @media (max-width:1280px) {
@@ -95,17 +89,13 @@ exports[`AutoGrid deve renderizar corretamente 1`] = `
 
 @media (max-width:1280px) {
   .emotion-0 {
-    -webkit-flex-basis: calc((100% / 12 * 4) - 1rem);
-    -ms-flex-preferred-size: calc((100% / 12 * 4) - 1rem);
-    flex-basis: calc((100% / 12 * 4) - 1rem);
+    width: calc((100% / 12 * 4) - 1rem);
   }
 }
 
 .emotion-3 {
   margin: 0.5rem 1rem;
-  -webkit-flex-basis: calc((100% / 12 * 12) - 2rem);
-  -ms-flex-preferred-size: calc((100% / 12 * 12) - 2rem);
-  flex-basis: calc((100% / 12 * 12) - 2rem);
+  width: calc((100% / 12 * 12) - 2rem);
 }
 
 @media (max-width:1280px) {
@@ -116,9 +106,7 @@ exports[`AutoGrid deve renderizar corretamente 1`] = `
 
 @media (max-width:1280px) {
   .emotion-3 {
-    -webkit-flex-basis: calc((100% / 12 * 12) - 1rem);
-    -ms-flex-preferred-size: calc((100% / 12 * 12) - 1rem);
-    flex-basis: calc((100% / 12 * 12) - 1rem);
+    width: calc((100% / 12 * 12) - 1rem);
   }
 }
 
