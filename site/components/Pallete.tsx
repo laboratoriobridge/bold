@@ -1,5 +1,5 @@
 import { Theme, useStyles } from 'bridge-react/lib'
-import { ColorScale } from 'bridge-react/lib/styles/colors'
+import { ColorScale, gray } from 'bridge-react/lib/styles/colors'
 
 export interface PalletePros {
   title: string
@@ -8,7 +8,7 @@ export interface PalletePros {
 
 export const Pallete = (props: PalletePros) => {
   const { title, pallete } = props
-  const { classes, css, theme } = useStyles(createStyles)
+  const { classes, css } = useStyles(createStyles)
 
   const keys: number[] = Object.keys(pallete)
     .map(k => parseInt(k.substr(1), 10))
@@ -16,10 +16,10 @@ export const Pallete = (props: PalletePros) => {
 
   return (
     <div className={classes.box}>
-      <div className={css(classes.item, classes.title)} style={{ background: pallete.c50, color: '#ffffff' }}>
+      <div className={css(classes.item, classes.title)} style={{ background: pallete.c50, color: gray.c100 }}>
         {title}
       </div>
-      <div className={classes.item} style={{ background: pallete.c50, color: '#ffffff' }}>
+      <div className={classes.item} style={{ background: pallete.c50, color: gray.c100 }}>
         <span className={classes.shade}>50</span>
         <span className={classes.hex}>{pallete.c50}</span>
       </div>
@@ -29,7 +29,7 @@ export const Pallete = (props: PalletePros) => {
           className={classes.item}
           style={{
             background: (pallete as any)['c' + key],
-            color: key <= 60 ? '#ffffff' : theme.pallete.text.main,
+            color: key <= 60 ? gray.c100 : gray.c20,
           }}
         >
           <span className={classes.shade}>{key}</span>

@@ -3,7 +3,7 @@ import * as colors from '../../lib/styles/colors'
 
 import { Pallete } from './Pallete'
 
-export const Palletes = () => {
+export const PalleteList = () => {
   // Put gray first
   const colorNames = Object.keys(colors).sort((a, b) => (a === 'gray' ? -1 : a > b ? 1 : -1))
 
@@ -11,8 +11,8 @@ export const Palletes = () => {
     <>
       <Grid justifyContent='flex-start' wrap>
         {colorNames.map((color: string) => (
-          <Cell style={{ flex: 0 }}>
-            <Pallete key={color} title={capitalize(color)} pallete={(colors as any)[color]} />
+          <Cell key={color} style={{ flex: 0 }}>
+            <Pallete title={capitalize(color)} pallete={(colors as any)[color]} />
           </Cell>
         ))}
       </Grid>

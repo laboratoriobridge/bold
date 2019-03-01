@@ -22,6 +22,9 @@ export const createStyles = (theme: Theme) => ({
     display: 'flex',
     flexDirection: 'column',
     minHeight: `100vh`,
+
+    // Hacks for change global css when theme is changed
+    color: theme.pallete.text.main,
   } as React.CSSProperties,
   content: {
     maxWidth: 800,

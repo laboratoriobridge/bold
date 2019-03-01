@@ -1,9 +1,17 @@
-import { TextInput, Theme, useStyles } from 'bridge-react/lib'
+import { Button, Icon, TextInput, Theme, Tooltip, useStyles } from 'bridge-react/lib'
 
 import { SIDE_NAV_WIDTH } from './SideNav'
+import { lightTheme } from './useThemeSwitch'
 
-export const AppHeader = () => {
+export interface AppHeaderProps {
+  currentTheme: Theme
+  onThemeSwitch(): void
+}
+
+export const AppHeader = (props: AppHeaderProps) => {
+  const { currentTheme, onThemeSwitch } = props
   const { classes } = useStyles(createStyles)
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -18,6 +26,14 @@ export const AppHeader = () => {
           iconPosition='left'
           placeholder='Search in bold design system...'
         />
+      </div>
+
+      <div>
+        <Tooltip text={currentTheme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
+          <Button skin='ghost' size='small' onClick={onThemeSwitch}>
+            <Icon icon='lightbulbFilled' />
+          </Button>
+        </Tooltip>
       </div>
     </header>
   )
