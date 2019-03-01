@@ -8643,6 +8643,13 @@ react-fuzzy@^0.5.2:
     fuse.js "^3.0.1"
     prop-types "^15.5.9"
 
+react-hooks-testing-library@0.3.4:
+  version "0.3.4"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-hooks-testing-library/-/react-hooks-testing-library-0.3.4.tgz#b7408f966c6b3fbdc7e975ff655786069e8b972e"
+  integrity sha512-A4dhnedN7DtWWiRyOG/C3Sg9aN+rScKN6DWsFIUCA2Z5m23lC5xQ4X5NKSTt3wlXcmfvXUMQoEVLwKckI4jd7Q==
+  dependencies:
+    react-testing-library "^6.0.0"
+
 react-inspector@^2.3.0:
   version "2.3.1"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-inspector/-/react-inspector-2.3.1.tgz#f0eb7f520669b545b441af9d38ec6d706e5f649c"
@@ -8737,7 +8744,7 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.8.3"
     scheduler "^0.13.3"
 
-react-testing-library@6.0.0:
+react-testing-library@6.0.0, react-testing-library@^6.0.0:
   version "6.0.0"
   resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-testing-library/-/react-testing-library-6.0.0.tgz#81edfcfae8a795525f48685be9bf561df45bb35d"
   integrity sha512-h0h+YLe4KWptK6HxOMnoNN4ngu3W8isrwDmHjPC5gxc+nOZOCurOvbKVYCvvuAw91jdO7VZSm/5KR7TxKnz0qA==
