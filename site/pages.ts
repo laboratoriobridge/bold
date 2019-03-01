@@ -26,6 +26,11 @@ export default [
     title: 'Components',
     icon: 'bricksFilled',
     href: '/components',
+    children: [
+      { href: '/components/button', title: 'Button' },
+      { href: '/components/tag', title: 'Tag' },
+      { href: '/components/text-input', title: 'TextInput' },
+    ],
   },
   {
     title: 'Resources',
