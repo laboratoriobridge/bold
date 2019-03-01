@@ -23,7 +23,7 @@ export const styles = (theme: Theme) => ({
     borderRadius: theme.radius.popper,
     maxWidth: theme.breakpoints.size.small,
     background: theme.pallete.gray.c20,
-    color: '#fff',
+    color: theme.pallete.gray.c100,
     fontWeight: 'bold',
     lineHeight: 1.5,
   } as React.CSSProperties,
