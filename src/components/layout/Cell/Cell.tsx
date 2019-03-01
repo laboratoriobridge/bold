@@ -1,54 +1,48 @@
 import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
 export type AlignSelf = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
 export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
-export interface CellProps extends WithStylesProps {
-    size?: CellSize
-    alignSelf?: AlignSelf
-    style?: Interpolation
+export interface CellProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  size?: CellSize
+  style?: Interpolation
+  alignSelf?: AlignSelf
+  flexGrow?: CSSProperties['flexGrow']
+  flexShrink?: CSSProperties['flexShrink']
+  flexBasis?: CSSProperties['flexBasis']
 }
 
-@withStyles
-export class Cell extends React.PureComponent<CellProps> {
-    render() {
-        const { size, theme, style } = this.props
-        const styles = {
-            cell: {
-                alignSelf: this.props.alignSelf,
-                margin: '0.5rem 1rem',
+export const Cell = (props: CellProps) => {
+  const { size, style, alignSelf, flexGrow, flexShrink, flexBasis, ...rest } = props
+  const { classes, css } = useStyles(createStyles, props)
 
-                [theme.breakpoints.down('small')]: {
-                    margin: '0.25rem 0.5rem',
-                },
-            },
+  const className = css(classes.cell, size && classes.fixedSize, style)
 
-            autoSize: {
-                flexGrow: 1,
-            },
-
-            fixedSize: {
-                flexBasis: `calc((100% / 12 * ${size}) - 2rem)`,
-                [theme.breakpoints.down('small')]: {
-                    flexBasis: `calc((100% / 12 * ${size}) - 1rem)`,
-                },
-            },
-
-        }
-
-        const classes = this.props.css(
-            styles.cell,
-            this.props.size ? styles.fixedSize : styles.autoSize,
-            style
-        )
-
-        return (
-            <div className={classes}>
-                {this.props.children}
-            </div>
-        )
-    }
+  return <div className={className} {...rest} />
 }
+
+export const createStyles = (theme: Theme, props: CellProps) => ({
+  cell: {
+    margin: '0.5rem 1rem',
+    alignSelf: props.alignSelf,
+    flexBasis: props.flexBasis,
+    flexGrow: props.flexGrow,
+    flexShrink: props.flexShrink,
+
+    [theme.breakpoints.down('small')]: {
+      margin: '0.25rem 0.5rem',
+    },
+  } as React.CSSProperties,
+
+  fixedSize: {
+    width: `calc((100% / 12 * ${props.size}) - 2rem)`,
+
+    [theme.breakpoints.down('small')]: {
+      width: `calc((100% / 12 * ${props.size}) - 1rem)`,
+    },
+  },
+})

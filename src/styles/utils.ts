@@ -1,7 +1,35 @@
-/**
- * https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
- */
-/* tslint:disable */
+import { ColorScale } from './colors'
+
+export const hexToRGB = (hex, alpha) => {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+
+  if (alpha) {
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`
+  } else {
+    return `rgba(${r}, ${g}, ${b})`
+  }
+}
+
+export const invertColorScale = (scale: ColorScale): ColorScale => {
+  return {
+    c10: scale.c100,
+    c20: scale.c90,
+    c30: scale.c80,
+    c40: scale.c70,
+    c50: scale.c60,
+    c60: scale.c50,
+    c70: scale.c40,
+    c80: scale.c30,
+    c90: scale.c20,
+    c100: scale.c10,
+  }
+}
+
+// https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+// tslint:disable
+// prettier-ignore
 export function shade(p, from, to = undefined) {
     if (typeof (p) != "number" || p < -1 || p > 1 || typeof (from) != "string" || (from[0] != 'r' && from[0] != '#') || (typeof (to) != "string" && typeof (to) != "undefined")) return null; //ErrorCheck
     if (!this.sbcRip) this.sbcRip = (d) => {
@@ -22,16 +50,4 @@ export function shade(p, from, to = undefined) {
     if (h) return "rgb(" + r((t[0] - f[0]) * p + f[0]) + "," + r((t[1] - f[1]) * p + f[1]) + "," + r((t[2] - f[2]) * p + f[2]) + (f[3] < 0 && t[3] < 0 ? ")" : "," + (f[3] > -1 && t[3] > -1 ? r(((t[3] - f[3]) * p + f[3]) * 10000) / 10000 : t[3] < 0 ? f[3] : t[3]) + ")");
     else return "#" + (0x100000000 + (f[3] > -1 && t[3] > -1 ? r(((t[3] - f[3]) * p + f[3]) * 255) : t[3] > -1 ? r(t[3] * 255) : f[3] > -1 ? r(f[3] * 255) : 255) * 0x1000000 + r((t[0] - f[0]) * p + f[0]) * 0x10000 + r((t[1] - f[1]) * p + f[1]) * 0x100 + r((t[2] - f[2]) * p + f[2])).toString(16).slice(f[3] > -1 || t[3] > -1 ? 1 : 3);
 }
-/* tslint:enable */
-
-export function hexToRGB(hex, alpha) {
-    const r = parseInt(hex.slice(1, 3), 16)
-    const g = parseInt(hex.slice(3, 5), 16)
-    const b = parseInt(hex.slice(5, 7), 16)
-
-    if (alpha) {
-        return `rgba(${r}, ${g}, ${b}, ${alpha})`
-    } else {
-        return `rgba(${r}, ${g}, ${b})`
-    }
-}
+// tslint:enable

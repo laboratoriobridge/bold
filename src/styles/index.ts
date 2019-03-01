@@ -8,5 +8,4 @@ export * from './utils'
 export { Styles, withStyles, WithStylesProps } from './withStyles'
 
 import * as palletes from './colors'
-
 export const colors = palletes
