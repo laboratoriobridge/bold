@@ -55,6 +55,7 @@ const createStyles = (theme: Theme) => ({
   nav: {
     background: theme.pallete.surface.main,
     width: SIDE_NAV_WIDTH,
+    borderRight: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer[40],
     display: 'flex',
     flexDirection: 'column',

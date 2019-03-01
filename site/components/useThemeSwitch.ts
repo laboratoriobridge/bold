@@ -1,7 +1,5 @@
-import { createTheme, Theme } from 'bridge-react/lib'
+import { colors, createTheme, invertColorScale, Theme } from 'bridge-react/lib'
 import { useEffect, useState } from 'react'
-
-import { colors, invertColorScale } from '../../lib/styles'
 
 export const lightTheme = createTheme({
   pallete: {

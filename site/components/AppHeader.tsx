@@ -1,5 +1,6 @@
 import { Button, Icon, TextInput, Theme, Tooltip, useStyles } from 'bridge-react/lib'
 
+import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'
 import { lightTheme } from './useThemeSwitch'
 
@@ -15,7 +16,7 @@ export const AppHeader = (props: AppHeaderProps) => {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <img src='/static/image/bold_.svg' className={classes.image} alt='Bold design system logo' />
+        <BoldLogo height='2.5rem' aria-label='Bold Logo' />
       </div>
 
       <div className={classes.search}>
@@ -52,14 +53,10 @@ const createStyles = (theme: Theme) => ({
     position: 'fixed',
     width: '100%',
   } as React.CSSProperties,
-  image: {
-    height: '2.5rem',
-  } as React.CSSProperties,
   logo: {
     borderRight: `1px solid ${theme.pallete.divider}`,
     width: `calc(${SIDE_NAV_WIDTH}px - 2rem)`,
-    textAlign: 'center',
-    padding: '0 1rem',
+    padding: '0 1rem 0 2.75rem',
   } as React.CSSProperties,
   search: {
     flex: 1,
