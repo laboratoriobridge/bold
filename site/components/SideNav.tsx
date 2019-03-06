@@ -1,4 +1,4 @@
-import { Icon, Icons, Omit, Text, Theme, useStyles } from 'bridge-react/lib'
+import { Icon, Icons, Omit, Text, Theme, useStyles } from '../../lib'
 
 import ActiveLink from './ActiveLink'
 import { APP_HEADER_HEIGHT } from './AppHeader'

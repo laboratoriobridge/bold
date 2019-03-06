@@ -1,4 +1,4 @@
-import { Button, Icon, TextInput, Theme, Tooltip, useStyles } from 'bridge-react/lib'
+import { Button, Icon, TextInput, Theme, Tooltip, useStyles } from '../../lib'
 
 import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'

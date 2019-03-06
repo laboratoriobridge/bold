@@ -1,4 +1,4 @@
-import { useTheme } from 'bridge-react/lib'
+import { useTheme } from '../../lib'
 
 export const BoldLogo = (props: React.SVGAttributes<SVGSVGElement>) => {
   const theme = useTheme()
