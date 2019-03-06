@@ -1,5 +1,5 @@
-import { Cell, Grid } from 'bridge-react/lib'
-import * as colors from 'bridge-react/lib/styles/colors'
+import { Cell, Grid } from '../../lib'
+import * as colors from '../../lib/styles/colors'
 
 import { Pallete } from './Pallete'
 

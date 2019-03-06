@@ -1,7 +1,7 @@
-import { ThemeProvider, useStyles } from 'bridge-react/lib'
 import App from 'next/app'
 import { Helmet } from 'react-helmet'
 
+import { ThemeProvider, useStyles } from '../../lib'
 import { AppHeader } from '../components/AppHeader'
 import { PageContent } from '../components/PageContent'
 import { SideNav } from '../components/SideNav'

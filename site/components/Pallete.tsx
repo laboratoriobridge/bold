@@ -1,5 +1,5 @@
-import { Theme, useStyles } from 'bridge-react/lib'
-import { ColorScale, gray } from 'bridge-react/lib/styles/colors'
+import { Theme, useStyles } from '../../lib'
+import { ColorScale, gray } from '../../lib/styles/colors'
 
 export interface PalletePros {
   title: string

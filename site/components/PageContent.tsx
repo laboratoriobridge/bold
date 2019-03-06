@@ -1,4 +1,4 @@
-import { Theme, useStyles } from 'bridge-react/lib'
+import { Theme, useStyles } from '../../lib'
 
 import { APP_HEADER_HEIGHT } from './AppHeader'
 import { SIDE_NAV_WIDTH } from './SideNav'
