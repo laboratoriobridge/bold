@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next build && next export"
+    "dev": "./node_modules/.bin/next",
+    "build": "./node_modules/.bin/next build",
+    "start": "./node_modules/.bin/next start",
+    "export": "./node_modules/.bin/next build && next export"
   },
   "devDependencies": {
     "@babel/core": "7.3.4",
