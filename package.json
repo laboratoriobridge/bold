@@ -15,6 +15,7 @@
     "registry": "https://repositorio.bridge.ufsc.br/repository/npm-private/"
   },
   "scripts": {
+    "postinstall": "yarn install --cwd site/",
     "start": "npm run clean && webpack --progress --watch",
     "clean": "rm -rf lib",
     "build": "npm run clean && tsc && webpack --mode=production",
@@ -27,7 +28,8 @@
     "icons:clean": "rm -rf ./src/components/elements/Icon/generated",
     "icons:svgr": "svgr --ext tsx --icon --template ./tools/IconTemplate.js --svgo-config svgo.config.json -d ./src/components/elements/Icon/generated ./icons",
     "icons:index": "babel-node ./tools/generateIconsIndex.js",
-    "sonar": "sonar-scanner"
+    "sonar": "sonar-scanner",
+    "site:export": "npm run export --prefix site/"
   },
   "husky": {
     "hooks": {
