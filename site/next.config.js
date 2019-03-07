@@ -15,8 +15,9 @@ module.exports = withPlugins({
   webpack: (config, options) => {
     return config
   },
-  exportPathMap: () => {
+  exportPathMap: defaultPathMap => {
     return {
+      ...defaultPathMap,
       '/': { page: '/about' },
     }
   },
