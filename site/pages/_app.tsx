@@ -20,6 +20,7 @@ const BoldApp = (props: any) => {
       <Helmet>
         <link href='/static/image/favicon.png' rel='icon' />
         <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i' rel='stylesheet' />
+        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css' />
         <title>Bold Design System</title>
       </Helmet>
 

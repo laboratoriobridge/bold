@@ -6,6 +6,9 @@ const compose = (...functions) => args => functions.reduceRight((arg, fn) => fn(
 const withPlugins = compose(
   withMDX({
     extension: /\.(md|mdx)/,
+    options: {
+      mdPlugins: [require('remark-highlight.js')],
+    },
   }),
   withTypescript
 )

@@ -1,1 +1,41 @@
 # Getting Started
+
+## Instalation
+
+Bold is open source and available as an npm package.
+
+To install and save it in your `package.json`, run in your interpreter:
+
+```sh
+# with npm
+npm install bold-ui --save
+
+# with yarn
+yarn add bold-ui --save
+```
+
+### Font family: IBM Plex Sans
+
+Bold was designed to use [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) as default font family, using the _regular_ and _bold_ styles from it.
+
+You can install it in your app in numerous ways. For example:
+
+```html
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i" rel="stylesheet" />
+```
+
+## Usage
+
+Here's a quick demonstration of the library usage:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Button } from 'bold-ui'
+
+const App = () => {
+  return <Button kind='primary'>Hello World</Button>
+}
+
+ReactDOM.render(<App />, document.querySelector('#root'))
+```

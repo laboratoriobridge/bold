@@ -13,6 +13,8 @@ export const PageContent = (props: any) => {
   )
 }
 
+const BIG_WIDTH = 960
+
 export const createStyles = (theme: Theme) => ({
   main: {
     background: theme.pallete.surface.main,
@@ -40,7 +42,30 @@ export const createStyles = (theme: Theme) => ({
     },
 
     img: {
-      maxWidth: 960,
+      maxWidth: BIG_WIDTH,
+    },
+
+    code: {
+      '&::selection': {
+        background: theme.pallete.primary.main,
+      },
+
+      '&:not(.hljs)': {
+        padding: '0.125rem 0.25rem',
+        borderRadius: 3,
+        background: theme.pallete.surface.background,
+      },
+    },
+
+    pre: {
+      width: BIG_WIDTH,
+      marginBottom: '2rem',
+
+      code: {
+        fontSize: theme.typography.sizes.text,
+        borderRadius: 4,
+        padding: '0.5rem 1rem',
+      },
     },
   },
 })

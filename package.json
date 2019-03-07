@@ -128,6 +128,7 @@
     "react-hooks-testing-library": "0.3.6",
     "react-router-dom": "4.3.1",
     "react-testing-library": "6.0.0",
+    "remark-highlight.js": "5.1.0",
     "sonar-scanner": "3.1.0",
     "ts-jest": "24.0.0",
     "tslint": "5.13.1",
