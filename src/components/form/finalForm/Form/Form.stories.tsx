@@ -14,9 +14,9 @@ import { SubmitButton } from '../SubmitButton'
 
 import { Form } from './Form'
 
-storiesOf('Form', module)
+storiesOf('Form|Form', module)
   .addDecorator(withRouter())
-  .add('Form example', () => {
+  .add('default', () => {
     const validate = form => {
       const errors: any = {}
 

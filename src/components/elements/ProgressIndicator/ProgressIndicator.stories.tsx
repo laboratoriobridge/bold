@@ -6,18 +6,8 @@ import { TextColor } from '../../../styles'
 
 import { ProgressIndicator } from './ProgressIndicator'
 
-const colors: { [key in TextColor] } = {
-    'normal': 'normal',
-    'secondary': 'secondary',
-    'disabled': 'disabled',
-    'primary': 'primary',
-    'danger': 'danger',
-    'info': 'info',
-    'alert': 'alert',
-    'success': 'success',
-}
+const colors: TextColor[] = ['normal', 'secondary', 'disabled', 'primary', 'danger', 'info', 'alert', 'success']
 
-storiesOf('Components/ProgressIndicator', module)
-    .add('default', () => (
-        <ProgressIndicator color={select('color', colors, 'primary')} value={number('percentage', 60)} />
-    ))
+storiesOf('Components|ProgressIndicator', module).add('default', () => (
+  <ProgressIndicator color={select('color', colors, 'primary')} value={number('percentage', 60)} />
+))

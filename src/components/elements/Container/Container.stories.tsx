@@ -3,4 +3,6 @@ import React from 'react'
 
 import { Container } from './Container'
 
-storiesOf('Grid', module).add('Container', () => <Container style={{ background: '#f2f2f2' }}>Content</Container>)
+storiesOf('Components|Container', module).add('Container', () => (
+  <Container style={{ background: '#f2f2f2' }}>Content</Container>
+))

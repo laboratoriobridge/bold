@@ -7,7 +7,7 @@ import { Cell } from '../Cell/Cell'
 
 import { AutoGrid } from './AutoGrid'
 
-storiesOf('Grid', module).add('AutoGrid', () => (
+storiesOf('Components|AutoGrid', module).add('AutoGrid', () => (
   <AutoGrid cellSize={number('cellSize', 4) as any}>
     <InfoLabel title='Title #1'>Content #1</InfoLabel>
     <InfoLabel title='Title #2'>Content #2</InfoLabel>
