@@ -31,7 +31,7 @@
     "sonar": "sonar-scanner",
     "site:dev": "next site/",
     "site:build": "next build site/",
-    "site:export": "next build site/ && next export site/",
+    "site:export": "next build site/ && next export site/ && cp site/CNAME site/out/CNAME",
     "site:deploy": "npm run site:export && gh-pages -d site/out"
   },
   "husky": {
