@@ -1,3 +1,4 @@
+import { withRouter, WithRouterProps } from 'next/router'
 import { useState } from 'react'
 
 import { Icon, Icons, Text, Theme, useStyles } from '../../../lib'
@@ -7,10 +8,12 @@ import { PageLink } from './SideNav'
 
 export type SideNavItemProps = PageLink
 
-export const SideNavItem = (props: SideNavItemProps) => {
-  const { href, icon, title, children } = props
+export const SideNavItem = withRouter((props: SideNavItemProps & WithRouterProps) => {
+  const { href, icon, title, children, router } = props
   const { classes } = useStyles(createStyles)
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(() => {
+    return href && router && router.pathname.startsWith(href)
+  })
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (children) {
@@ -42,7 +45,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
       )}
     </li>
   )
-}
+})
 
 const createStyles = (theme: Theme) => ({
   link: {
