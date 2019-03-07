@@ -76596,12 +76596,26 @@ var BoldApp = function BoldApp(props) {
       lineNumber: 20
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
+  }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("meta", {
+    name: "viewport",
+    content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, "Bold Design System"), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
     href: "/static/image/favicon.png",
     rel: "icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
@@ -76609,7 +76623,7 @@ var BoldApp = function BoldApp(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 25
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("link", {
@@ -76617,19 +76631,13 @@ var BoldApp = function BoldApp(props) {
     href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("title", {
+  })), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Content, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: this
-  }, "Bold Design System")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Content, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 29
     },
     __self: this
   })));
@@ -76652,7 +76660,7 @@ var Content = function Content(props) {
     theme: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_AppHeader__WEBPACK_IMPORTED_MODULE_11__["AppHeader"], {
@@ -76660,33 +76668,33 @@ var Content = function Content(props) {
     onThemeSwitch: switchTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 41
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
     className: classes.content,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 43
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_13__["SideNav"], {
     pages: _pages__WEBPACK_IMPORTED_MODULE_15__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 44
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_components_PageContent__WEBPACK_IMPORTED_MODULE_12__["PageContent"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 45
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 46
     },
     __self: this
   })))));
