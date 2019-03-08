@@ -6,6 +6,9 @@ Our goal is to build inclusive digital products to enhance the experience of all
 
 The DS components were built following the specifications of WCAG, conforming to AA level. DS enables accessible development by providing semantically correct components, each with an appropriate ARIA markup, so that they can be correctly identified by assistive technologies. However, it is important to keep in mind that DS is only the foundation for the development of affordable applications. We recommend that you review and test your applications to ensure they conform to [WCAG standards at the AA level](https://www.w3.org/TR/WCAG20/#conformance).
 
+> "Essential for some, useful for all."
+
+
 ## Best practices
 
 ### Color
@@ -16,10 +19,20 @@ The DS components were built following the specifications of WCAG, conforming to
 
 [COMPONENTE AQUI]![Do/Don't: Use icons to indicate error states](/static/image/accessibility-color.png)
 
-| Do            | Don't         |
-| ------------- |-------------  |
-| Use icons to indicate error states | Use only color to convey information |
-| component here  | component here |
+<table id="t01">
+  <tr>
+    <th>Do</th>
+    <th>Don't</th> 
+  </tr>
+  <tr>
+    <td>Use icons to indicate error states</td>
+    <td>Use only color to convey information</td> 
+  </tr>
+  <tr>
+    <td>Component</td>
+    <td>Component</td>
+  </tr>
+</table>
 
 
 ## Contrast
