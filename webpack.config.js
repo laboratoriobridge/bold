@@ -1,8 +1,13 @@
+// @ts-check
+
 const path = require('path')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-module.exports = {
+/**
+ * @type {import('webpack').Configuration}
+ */
+const config = {
   entry: './src/index.ts',
   mode: 'development',
   output: {
@@ -58,3 +63,5 @@ module.exports = {
     ],
   },
 }
+
+module.exports = config
