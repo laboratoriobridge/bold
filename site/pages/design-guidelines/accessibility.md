@@ -19,7 +19,7 @@ The DS components were built following the specifications of WCAG, conforming to
 
 [COMPONENTE AQUI]![Do/Don't: Use icons to indicate error states](/static/image/accessibility-color.png)
 
-<table id="t01">
+<table>
   <tr>
     <th>Do</th>
     <th>Don't</th> 
@@ -42,6 +42,30 @@ In general text and images must meet an optimal 4.5: 1 minimum contrast (for fon
 - Large texts (18.6px or 14pt) should maintain the contrast of at least 3: 1.
 - Decorative text / image and disabled states don’t have contrast requirements.
 - Logos: logo or text that makes up a mark need not be within the ratio of contrast.
+
+<table>
+  <tr>
+    <th>Do</th>
+    <th>Don't</th> 
+  </tr>
+  <tr>
+    <td>AA passed 9.22:1</td>
+    <td>AA failed 1.75:1</td> 
+  </tr>
+  <tr>
+    <td>Tag Component</td>
+    <td>Tag Component</td>
+  </tr>
+    <tr>
+    <td>AA passed 5.42:1</td>
+    <td>AA failed 1.86:1</td> 
+  </tr>
+  <tr>
+    <td>Button Component</td>
+    <td>Button Component</td>
+  </tr>
+</table>
+
 
 [COMPONENTE AQUI]
 ![Do/Don't: Contrast test on tags and buttons](/static/image/accessibility-contrast.png)
