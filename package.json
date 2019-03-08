@@ -31,8 +31,8 @@
     "sonar": "sonar-scanner",
     "site:dev": "next site/",
     "site:build": "next build site/",
-    "site:export": "next build site/ && next export site/ && cp site/CNAME site/out/CNAME && touch site/out/.nojekyll",
-    "site:deploy": "npm run site:export && gh-pages -d site/out"
+    "site:export": "next build site/ && next export site/ && touch site/out/.nojekyll && cp site/CNAME site/out/CNAME",
+    "site:deploy": "npm run site:export && gh-pages -d site/out -t"
   },
   "husky": {
     "hooks": {
