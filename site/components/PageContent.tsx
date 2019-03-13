@@ -55,6 +55,24 @@ export const createStyles = (theme: Theme) => ({
       marginBottom: '2rem',
     },
 
+    blockquote: {
+      position: 'relative',
+      color: theme.pallete.primary.main,
+      fontStyle: 'italic',
+      fontSize: '1.25rem',
+      marginLeft: '7rem',
+
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        left: '-6rem',
+        top: '0.75rem',
+        width: 78,
+        height: 2,
+        borderTop: `2px solid ${theme.pallete.divider}`,
+      },
+    } as React.CSSProperties,
+
     'td, th': {
       borderBottom: `1px solid ${theme.pallete.divider}`,
       textAlign: 'left',
