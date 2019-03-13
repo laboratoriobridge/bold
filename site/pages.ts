@@ -29,6 +29,7 @@ export default [
     children: [
       { href: '/components/accordion', title: 'Accordion' },
       { href: '/components/alert', title: 'Alert' },
+      { href: '/components/button', title: 'Breadcrumb' },
       { href: '/components/button', title: 'Button' },
       { href: '/components/cards', title: 'Cards' },
       { href: '/components/checkbox', title: 'Checkbox' },
