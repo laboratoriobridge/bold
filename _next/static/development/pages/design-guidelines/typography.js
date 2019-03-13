@@ -1,4 +1,4 @@
-((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/design-guidelines/accessibility.js"],{
+((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/design-guidelines/typography.js"],{
 
 /***/ "../node_modules/@babel/runtime-corejs2/core-js/object/create.js":
 /*!***********************************************************************!*\
@@ -2402,21 +2402,21 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ }),
 
-/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx!./":
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx ***!
-  \******************************************************************************************************************************************************************************************************************************************/
+/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx!./":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/design-guidelines/accessibility", function() {
-      var page = __webpack_require__(/*! ./pages/design-guidelines/accessibility.mdx */ "./pages/design-guidelines/accessibility.mdx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/design-guidelines/typography", function() {
+      var page = __webpack_require__(/*! ./pages/design-guidelines/typography.mdx */ "./pages/design-guidelines/typography.mdx")
       if(true) {
-        module.hot.accept(/*! ./pages/design-guidelines/accessibility.mdx */ "./pages/design-guidelines/accessibility.mdx", function() {
-          if(!next.router.components["/design-guidelines/accessibility"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/design-guidelines/accessibility.mdx */ "./pages/design-guidelines/accessibility.mdx")
-          next.router.update("/design-guidelines/accessibility", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/design-guidelines/typography.mdx */ "./pages/design-guidelines/typography.mdx", function() {
+          if(!next.router.components["/design-guidelines/typography"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/design-guidelines/typography.mdx */ "./pages/design-guidelines/typography.mdx")
+          next.router.update("/design-guidelines/typography", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -2436,10 +2436,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_5ee718904e5061cf97d8
 
 /***/ }),
 
-/***/ "./pages/design-guidelines/accessibility.mdx":
-/*!***************************************************!*\
-  !*** ./pages/design-guidelines/accessibility.mdx ***!
-  \***************************************************/
+/***/ "./pages/design-guidelines/typography.mdx":
+/*!************************************************!*\
+  !*** ./pages/design-guidelines/typography.mdx ***!
+  \************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2462,7 +2462,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/design-guidelines/accessibility.mdx";
+var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/design-guidelines/typography.mdx";
 
 
 var layoutProps = {};
@@ -2505,7 +2505,7 @@ function (_React$Component) {
           lineNumber: 20
         },
         __self: this
-      }, "Accessibility"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "Typography"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "p",
         components: components,
         __source: {
@@ -2513,7 +2513,7 @@ function (_React$Component) {
           lineNumber: 21
         },
         __self: this
-      }, "Our goal is to build inclusive digital products to enhance the experience of all users. Accessibility means making people independent and ensuring they can complete their tasks in a similar effort and time as someone that does not have a disability."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "Typography is used to define hierarchy between content groups and guide the user through the interface. The DS typography is organized into 5 levels of headings, body, buttons and links, and has color and weights (regular and bold) variables."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "h2",
         components: components,
         __source: {
@@ -2521,7 +2521,7 @@ function (_React$Component) {
           lineNumber: 22
         },
         __self: this
-      }, "Accessible components"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "Family font"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "p",
         components: components,
         __source: {
@@ -2529,300 +2529,19 @@ function (_React$Component) {
           lineNumber: 23
         },
         __self: this
-      }, "The DS components were built following the specifications of WCAG, conforming to AA level. DS enables accessible development by providing semantically correct components, each with an appropriate ARIA markup, so that they can be correctly identified by assistive technologies. However, it is important to keep in mind that DS is only the foundation for the development of affordable applications. We recommend that you review and test your applications to ensure they conform to ", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "The typographic family is ", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "a",
         components: components,
         parentName: "p",
         props: {
-          "href": "https://www.w3.org/TR/WCAG20/#conformance"
+          "href": "https://www.ibm.com/plex/"
         },
         __source: {
           fileName: _jsxFileName,
           lineNumber: 23
         },
         __self: this
-      }, "WCAG standards at the AA level"), "."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "blockquote",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 24
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        parentName: "blockquote",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 25
-        },
-        __self: this
-      }, "\"Essential for some, useful for all.\"")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "h2",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 27
-        },
-        __self: this
-      }, "Best practices"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "h3",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 28
-        },
-        __self: this
-      }, "Color"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "ul",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 29
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 30
-        },
-        __self: this
-      }, "Color should not be used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 31
-        },
-        __self: this
-      }, "Limit the use of reds and greens, because it is easily confused by the most common type of color blindness."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "Plugin ", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "a",
-        components: components,
-        parentName: "li",
-        props: {
-          "href": "https://www.getstark.co/"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 32
-        },
-        __self: this
-      }, "Stark"), " for Sketch, make possible to see how the mockups are seen by different types of color blindness.")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 34
-        },
-        __self: this
-      }, "[COMPONENTE AQUI]", "\n", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "img",
-        components: components,
-        parentName: "p",
-        props: {
-          "src": "/static/image/accessibility-color.png",
-          "alt": "Do/Don't: Use icons to indicate error states"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 35
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "h2",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 36
-        },
-        __self: this
-      }, "Contrast"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 37
-        },
-        __self: this
-      }, "In general text and images must meet an optimal 4.5: 1 minimum contrast (for fonts equal to or less than 14pt), except for:"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "ul",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 38
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 39
-        },
-        __self: this
-      }, "Large texts (18.6px or 14pt) should maintain the contrast of at least 3: 1."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, "Decorative text / image and disabled states don\u2019t have contrast requirements."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "li",
-        components: components,
-        parentName: "ul",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, "Logos: logo or text that makes up a mark need not be within the ratio of contrast.")), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 43
-        },
-        __self: this
-      }, "[COMPONENTE AQUI]", "\n", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "img",
-        components: components,
-        parentName: "p",
-        props: {
-          "src": "/static/image/accessibility-contrast.png",
-          "alt": "Do/Don't: Contrast test on tags and buttons"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "h2",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
-      }, "Focus"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "The component focused by the keyboard must be clearly marked, and the selection area must be clickable. By default, links and form elements already display the highlighted border when they receive focus from the keyboard. This border can be modified via CSS to enhance highlighting, but should ", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "strong",
-        components: components,
-        parentName: "p",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 46
-        },
-        __self: this
-      }, "not"), " be removed."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 47
-        },
-        __self: this
-      }, "We use and recommend that the minimum edge thickness should be 2 px."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 48
-        },
-        __self: this
-      }, "[COMPONENTE AQUI]", "\n", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "img",
-        components: components,
-        parentName: "p",
-        props: {
-          "src": "/static/image/accessibility-focus.png",
-          "alt": "Focus on button and checkbox"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 49
-        },
-        __self: this
-      })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "h2",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
-      }, "Assistive technologies"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 51
-        },
-        __self: this
-      }, "When people start to develop with accessibility in mind, it\u2019s a common error add focus to every element on the page, including text and titles. This difficult the navigation of users who can see and can hinder who depends on a screen reader, because these technologies already provide focus to these elements."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, "Titles, text blocks, and disabled fields should ", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "strong",
-        components: components,
-        parentName: "p",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 52
-        },
-        __self: this
-      }, "not"), " receive focus."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "p",
-        components: components,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 53
-        },
-        __self: this
-      }, "[COMPONENTE AQUI]", "\n", react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
-        name: "img",
-        components: components,
-        parentName: "p",
-        props: {
-          "src": "/static/image/accessibility-assistivetech.png",
-          "alt": "Disabled field and button"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        },
-        __self: this
-      })));
+      }, "IBM Plex Sans"), " for its versatility and readability, as well as being an open-sourced typeface."));
     }
   }]);
 
@@ -2834,14 +2553,14 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 1:
-/*!*********************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx ***!
-  \*********************************************************************************************************************************************************************************************/
+/***/ 6:
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx!./");
 
 
 /***/ }),
@@ -2857,5 +2576,5 @@ module.exports = dll_5ee718904e5061cf97d8;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]));;
-//# sourceMappingURL=accessibility.js.map
+},[[6,"static/runtime/webpack.js"]]]));;
+//# sourceMappingURL=typography.js.map
