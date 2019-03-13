@@ -32,7 +32,7 @@
     "site:dev": "next site/",
     "site:build": "next build site/",
     "site:export": "next build site/ && next export site/ && touch site/out/.nojekyll && cp site/CNAME site/out/CNAME",
-    "site:deploy": "npm run site:export && gh-pages -d site/out -t"
+    "site:deploy": "npm run site:export && build-storybook -o site/out/storybook && gh-pages -d site/out -t"
   },
   "husky": {
     "hooks": {
