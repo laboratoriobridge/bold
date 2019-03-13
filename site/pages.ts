@@ -1,13 +1,13 @@
 export default [
+ {
+    title: 'Getting Started',
+    icon: 'rocket',
+    href: '/getting-started',
+  },
   {
     title: 'About',
     icon: 'chatFilled',
     href: '/about',
-  },
-  {
-    title: 'Getting Started',
-    icon: 'rocket',
-    href: '/getting-started',
   },
   {
     title: 'Design Guidelines',
