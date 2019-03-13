@@ -41,8 +41,27 @@ export const createStyles = (theme: Theme) => ({
       marginBottom: '2rem',
     },
 
+    ul: {
+      margin: '0 0 2rem 0',
+    },
+
     img: {
       maxWidth: BIG_WIDTH,
+    },
+
+    table: {
+      borderCollapse: 'collapse',
+      width: '100%',
+      marginBottom: '2rem',
+    },
+
+    'td, th': {
+      borderBottom: `1px solid ${theme.pallete.divider}`,
+      textAlign: 'left',
+      padding: '1rem 0',
+      '&:not(:last-child)': {
+        paddingRight: '2rem',
+      },
     },
 
     code: {
