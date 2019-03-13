@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="477px" height="148px" viewBox="0 0 477 148" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>accessibility-color</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14.6666667,8 C14.6666667,11.682 11.682,14.6666667 8,14.6666667 C4.318,14.6666667 1.33333333,11.682 1.33333333,8 C1.33333333,4.31866667 4.318,1.33333333 8,1.33333333 C11.682,1.33333333 14.6666667,4.31866667 14.6666667,8 Z M9,5 C9,4.448 8.55266667,4 8,4 C7.44733333,4 7,4.448 7,5 C7,5.552 7.44733333,6 8,6 C8.55266667,6 9,5.552 9,5 Z M7.33333333,11.4166667 C7.33168441,11.8055556 7.55349443,12 7.99876338,12 C8.44403224,12 8.66666667,11.8055556 8.66666667,11.4166667 L8.66666667,7.91666667 C8.66666667,7.52777778 8.44360487,7.33333333 7.99748127,7.33333333 C7.55135757,7.33333333 7.32997493,7.52777778 7.33333333,7.91666667 L7.33333333,11.4166667 Z" id="path-1"></path>
+    </defs>
+    <g id="Conteúdo-site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Accessibility" transform="translate(-346.000000, -1168.000000)">
+            <g id="Color" transform="translate(336.000000, 938.000000)">
+                <g id="accessibility-color" transform="translate(11.000000, 225.000000)">
+                    <g>
+                        <text id="Use-icons-to-indicat" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="0" y="57">Use icons to indicate error states</tspan>
+                        </text>
+                        <text id="Use-only-color-to-co" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="265" y="57">Use only color to convey information</tspan>
+                        </text>
+                        <text id="Do" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="0" y="13">Do</tspan>
+                        </text>
+                        <text id="Don’t" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="265" y="13">Don’t</tspan>
+                        </text>
+                        <path d="M5.68434189e-14,28 L451,28" id="Line-5" stroke="#DCDCE0" stroke-linecap="square"></path>
+                        <g id="*-/-Field-and-Input-/-Required" transform="translate(304.000000, 72.000000)" fill="#DB3A2E" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5">
+                            <text id="*">
+                                <tspan x="0" y="13">*</tspan>
+                            </text>
+                        </g>
+                        <g id="*-/-Surface-/-Interactive-/-Error" transform="translate(266.000000, 96.000000)">
+                            <rect id="Fill" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="208" height="32" rx="2"></rect>
+                            <rect id="Border" stroke="#DB3A2E" stroke-width="1" x="0.5" y="0.5" width="207" height="31" rx="2"></rect>
+                        </g>
+                        <g id="Icon-/-Alert-/-Times-default" transform="translate(442.000000, 100.000000)" fill="#53595E">
+                            <path d="M5.3137085,11.3137085 L11.3137085,11.3137085 L11.3137085,5.3137085 C11.3022136,4.64704183 11.6355469,4.3137085 12.3137085,4.3137085 C12.9918701,4.3137085 13.3252034,4.64704183 13.3137085,5.3137085 L13.3137085,11.3137085 L19.3137085,11.3137085 C19.9803752,11.3137085 20.3137085,11.6470418 20.3137085,12.3137085 C20.3137085,12.9803752 19.9803752,13.3137085 19.3137085,13.3137085 L13.3137085,13.3137085 L13.3137085,19.3137085 C13.3290685,19.9803752 12.9957352,20.3137085 12.3137085,20.3137085 C11.6316818,20.3137085 11.2983485,19.9803752 11.3137085,19.3137085 L11.3137085,13.3137085 L5.3137085,13.3137085 C4.64704183,13.3146279 4.3137085,12.9812946 4.3137085,12.3137085 C4.3137085,11.6461224 4.64704183,11.3127891 5.3137085,11.3137085 Z" id="🎨-Color" transform="translate(12.313708, 12.313708) rotate(-315.000000) translate(-12.313708, -12.313708) "></path>
+                        </g>
+                        <text id="✏️-Input" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="274" y="115">Input text</tspan>
+                        </text>
+                        <text id="✏️-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                            <tspan x="266" y="85">Label</tspan>
+                        </text>
+                        <g id="Field-/-Text-/-Error" transform="translate(0.000000, 72.000000)">
+                            <g id="*-/-Field-and-Input-/-Required" transform="translate(38.000000, 0.000000)" fill="#DB3A2E" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5">
+                                <text id="*">
+                                    <tspan x="0" y="13">*</tspan>
+                                </text>
+                            </g>
+                            <g id="*-/-Field-and-Input-/-Error" transform="translate(0.000000, 64.000000)">
+                                <g id="Icon-/-Alert-/-Info-/-Info-Circle-Filled" transform="translate(63.000000, 2.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <use id="🎨-Color" fill="#DB3A2E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                </g>
+                                <text id="✏️-Label" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#DB3A2E">
+                                    <tspan x="0" y="13">Error text.</tspan>
+                                </text>
+                            </g>
+                            <g id="*-/-Surface-/-Interactive-/-Error" transform="translate(0.000000, 24.000000)">
+                                <rect id="Fill" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="208" height="32" rx="2"></rect>
+                                <rect id="Border" stroke="#DB3A2E" stroke-width="1" x="0.5" y="0.5" width="207" height="31" rx="2"></rect>
+                            </g>
+                            <g id="Icon-/-Alert-/-Times-default" transform="translate(176.000000, 28.000000)" fill="#53595E" fill-rule="evenodd">
+                                <path d="M5.3137085,11.3137085 L11.3137085,11.3137085 L11.3137085,5.3137085 C11.3022136,4.64704183 11.6355469,4.3137085 12.3137085,4.3137085 C12.9918701,4.3137085 13.3252034,4.64704183 13.3137085,5.3137085 L13.3137085,11.3137085 L19.3137085,11.3137085 C19.9803752,11.3137085 20.3137085,11.6470418 20.3137085,12.3137085 C20.3137085,12.9803752 19.9803752,13.3137085 19.3137085,13.3137085 L13.3137085,13.3137085 L13.3137085,19.3137085 C13.3290685,19.9803752 12.9957352,20.3137085 12.3137085,20.3137085 C11.6316818,20.3137085 11.2983485,19.9803752 11.3137085,19.3137085 L11.3137085,13.3137085 L5.3137085,13.3137085 C4.64704183,13.3146279 4.3137085,12.9812946 4.3137085,12.3137085 C4.3137085,11.6461224 4.64704183,11.3127891 5.3137085,11.3137085 Z" id="🎨-Color" transform="translate(12.313708, 12.313708) rotate(-315.000000) translate(-12.313708, -12.313708) "></path>
+                            </g>
+                            <text id="✏️-Input" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                                <tspan x="8" y="43">Input text</tspan>
+                            </text>
+                            <text id="✏️-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                                <tspan x="0" y="13">Label</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Field-/-Text-/-Error" transform="translate(266.000000, 72.000000)"></g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
