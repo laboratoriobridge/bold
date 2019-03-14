@@ -11,40 +11,37 @@ export interface YearControlProps {
   renderYear?(date: Date): React.ReactNode
 }
 
-export class YearControl extends React.PureComponent<YearControlProps> {
-  static defaultProps: Partial<YearControlProps> = {
-    renderYear: date => {
-      const formatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
-      return formatter.format(date)
-    },
-  }
+export const YearControl = (props: YearControlProps) => {
+  const { visibleDate, onChange, renderYear } = props
 
-  render() {
-    const { visibleDate, renderYear } = this.props
-    return (
-      <HFlow alignItems='center' hSpacing={0.5}>
-        <Button size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1}>
-          <Icon icon='angleLeft' />
-        </Button>
-        {renderYear(visibleDate)}
-        <Button size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1}>
-          <Icon icon='angleRight' />
-        </Button>
-      </HFlow>
-    )
-  }
-
-  handleNext = () => {
-    const { visibleDate } = this.props
+  const handleNext = () => {
     const next = new Date(visibleDate)
     next.setFullYear(visibleDate.getFullYear() + 1)
-    return this.props.onChange(next)
+    return onChange(next)
   }
 
-  handlePrev = () => {
-    const { visibleDate } = this.props
+  const handlePrev = () => {
     const prev = new Date(visibleDate)
     prev.setFullYear(prev.getFullYear() - 1)
-    return this.props.onChange(prev)
+    return onChange(prev)
   }
+
+  return (
+    <HFlow alignItems='center' hSpacing={0.5}>
+      <Button title='Previous year' size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
+        <Icon icon='angleLeft' />
+      </Button>
+      {renderYear(visibleDate)}
+      <Button title='Next year' size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
+        <Icon icon='angleRight' />
+      </Button>
+    </HFlow>
+  )
 }
+
+YearControl.defaultProps = {
+  renderYear: date => {
+    const formatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
+    return formatter.format(date)
+  },
+} as Partial<YearControlProps>

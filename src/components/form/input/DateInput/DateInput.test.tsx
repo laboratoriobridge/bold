@@ -1,51 +1,59 @@
-import { mount, shallow } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test'
+import { fireEvent, render } from 'react-testing-library'
 
 import { DateInput } from './DateInput'
 
 it('should render correctly', () => {
-    expect(shallow(<DateInput />)).toMatchSnapshot()
-    expect(shallow(<DateInput value={new Date('2018-10-30')} />)).toMatchSnapshot()
+  const { container } = render(<DateInput />)
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept and format date as value', () => {
+  const { container } = render(<DateInput value={new Date('2018-10-30')} />)
+  const input = container.querySelector('input')
+  expect(input.value).toEqual('30/10/2018')
 })
 
 it('should call onChange only when a valid date is typed', () => {
-    const change = jest.fn()
-    const wrapper = shallow(<DateInput onChange={change} />)
-    expect(change).not.toHaveBeenCalled()
+  const change = jest.fn()
+  const { container } = render(<DateInput onChange={change} />)
+  const input = container.querySelector('input')
 
-    wrapper.simulate('change', { target: { value: 'aaa' } })
-    expect(change).not.toHaveBeenCalled()
+  expect(change).not.toHaveBeenCalled()
 
-    wrapper.simulate('change', { target: { value: '01/01/201' } })
-    expect(change).not.toHaveBeenCalled()
+  fireEvent.change(input, { target: { value: '01/01/201' } })
+  expect(change).not.toHaveBeenCalled()
 
-    wrapper.simulate('change', { target: { value: '01/01/2018' } })
-    expect(change).toHaveBeenCalledWith(new Date('2018-01-01'))
+  fireEvent.change(input, { target: { value: '01/01/2018' } })
+  expect(change).toHaveBeenLastCalledWith(new Date('2018-01-01'))
 })
 
 it('should call onChange with null when input is cleared', () => {
-    const change = jest.fn()
-    const wrapper = shallow(<DateInput onChange={change} value={new Date('2018-10-30')} />)
+  const change = jest.fn()
+  const { container } = render(<DateInput onChange={change} value={new Date('2018-10-30')} />)
+  const input = container.querySelector('input')
 
-    wrapper.simulate('change', { target: { value: '' } })
-    expect(change).toHaveBeenCalledWith(null)
+  fireEvent.change(input, { target: { value: '' } })
+  expect(change).toHaveBeenLastCalledWith(null)
 })
 
-it('should call onInputChange prop when input value is changed', () => {
-    const inputChange = jest.fn()
-    const wrapper = shallow(<DateInput onInputChange={inputChange} />)
-    expect(inputChange).not.toHaveBeenCalled()
-    wrapper.simulate('change', { target: { value: '1' } })
-    expect(inputChange).toHaveBeenCalledWith(expect.objectContaining({ target: { value: '1' } }))
+it('should call onInputChange prop with original event when input value is changed', () => {
+  const inputChange = jest.fn()
+  const { container } = render(<DateInput onInputChange={inputChange} />)
+  const input = container.querySelector('input')
+
+  expect(inputChange).not.toHaveBeenCalled()
+  fireEvent.change(input, { target: { value: '1' } })
+  expect(inputChange).toHaveBeenCalled()
 })
 
 describe('clear', () => {
-    it('should clear the input value', () => {
-        const change = jest.fn()
-        const wrapper = mount(withTheme(<DateInput value={new Date()} onChange={change} />))
-        wrapper.find('span').simulate('click')
-        expect(change).toHaveBeenCalledWith(null)
-    })
+  it('should clear the input value', () => {
+    const change = jest.fn()
+    const { container } = render(<DateInput value={new Date()} onChange={change} />)
+    const clear = container.querySelector('span')
+
+    fireEvent.click(clear)
+    expect(change).toHaveBeenLastCalledWith(null)
+  })
 })
