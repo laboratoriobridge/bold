@@ -1,14 +1,14 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../test'
+import { render } from 'react-testing-library'
 
 import { Spinner } from './Spinner'
 
 it('should render correctly', () => {
-    expect(render(withTheme(<Spinner />))).toMatchSnapshot()
+  const { container } = render(<Spinner />)
+  expect(container).toMatchSnapshot()
 })
 
 it('should accept style prop', () => {
-    expect(render(withTheme(<Spinner style={{ color: 'red' }} />))).toMatchSnapshot()
+  const { container } = render(<Spinner style={{ color: 'red' }} />)
+  expect(container).toMatchSnapshot()
 })

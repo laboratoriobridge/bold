@@ -18,11 +18,13 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Nenhum item encontrado
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Nenhum item encontrado
+  </li>
+</div>
 `;
 
 exports[`SelectHelperMenuItem should render correctly 1`] = `
@@ -42,11 +44,13 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Loading
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Loading
+  </li>
+</div>
 `;
 
 exports[`SelectLoadingItem should render correctly 1`] = `
@@ -101,36 +105,16 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   width: 1rem;
 }
 
-<li
-  class="emotion-1"
->
-  Carregando...
-  <span
-    class="emotion-0"
-  />
-</li>
-`;
-
-exports[`SelectMenu should render correctly 1`] = `
-.emotion-0 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #DCDCE0;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: absolute;
-  width: 100%;
-  z-index: 1300;
-}
-
-<ul
-  class="emotion-0"
-/>
+<div>
+  <li
+    class="emotion-1"
+  >
+    Carregando...
+    <span
+      class="emotion-0"
+    />
+  </li>
+</div>
 `;
 
 exports[`SelectMenuItem should render correctly 1`] = `
@@ -150,11 +134,13 @@ exports[`SelectMenuItem should render correctly 1`] = `
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Item
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Item
+  </li>
+</div>
 `;
 
 exports[`SelectMenuItem should render correctly when custom style defined 1`] = `
@@ -175,11 +161,13 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Item
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Item
+  </li>
+</div>
 `;
 
 exports[`SelectMenuItem should render correctly when highlighted 1`] = `
@@ -200,11 +188,13 @@ exports[`SelectMenuItem should render correctly when highlighted 1`] = `
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Item
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Item
+  </li>
+</div>
 `;
 
 exports[`SelectMenuItem should render correctly when selected 1`] = `
@@ -224,9 +214,11 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
   background: #F2F2F7;
 }
 
-<li
-  class="emotion-0"
->
-  Item
-</li>
+<div>
+  <li
+    class="emotion-0"
+  >
+    Item
+  </li>
+</div>
 `;
