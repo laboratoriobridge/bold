@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve aceitar Flow props 1`] = `
+exports[`should accept Flow props 1`] = `
 .emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -31,34 +31,36 @@ exports[`deve aceitar Flow props 1`] = `
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <span>
-      1
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      2
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      3
-    </span>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        3
+      </span>
+    </div>
   </div>
 </div>
 `;
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -89,29 +91,31 @@ exports[`deve renderizar corretamente 1`] = `
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <span>
-      1
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      2
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      3
-    </span>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        3
+      </span>
+    </div>
   </div>
 </div>
 `;

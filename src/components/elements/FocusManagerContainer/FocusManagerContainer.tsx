@@ -17,7 +17,7 @@ export class FocusManagerContainer extends React.Component<FocusManagerContainer
     isManagingFocus: false,
   }
 
-  private timeoutId: number
+  private timeoutId: any
 
   render() {
     return (

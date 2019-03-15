@@ -52,10 +52,12 @@ exports[`should accept style prop 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+    />
+  </div>
 </div>
 `;
 
@@ -114,17 +116,22 @@ exports[`should render character counter 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    maxlength="200"
-    name="input"
-  >
-    Testing counter
-  </textarea>
-  <div
-    class="emotion-1"
-  >
-    15/200 caracteres
+  <div>
+    <textarea
+      class="emotion-0"
+      maxlength="200"
+      name="input"
+    >
+      Testing counter
+    </textarea>
+    <div
+      class="emotion-1"
+    >
+      15
+      /
+      200
+       caracteres
+    </div>
   </div>
 </div>
 `;
@@ -184,15 +191,22 @@ exports[`should render character counter 2`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    maxlength="200"
-    name="input"
-  />
-  <div
-    class="emotion-1"
-  >
-    0/200 caracteres
+  <div>
+    <textarea
+      class="emotion-0"
+      maxlength="200"
+      name="input"
+    >
+      Testing counter
+    </textarea>
+    <div
+      class="emotion-1"
+    >
+      0
+      /
+      200
+       caracteres
+    </div>
   </div>
 </div>
 `;
@@ -248,17 +262,19 @@ exports[`should render correctly 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-    placeholder="Test"
-  >
-    Value
-  </textarea>
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+      placeholder="Test"
+    >
+      Value
+    </textarea>
+  </div>
 </div>
 `;
 
-exports[`should render disabled 1`] = `
+exports[`should render correctly when disabled 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -309,11 +325,13 @@ exports[`should render disabled 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    disabled=""
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      disabled=""
+      name="input"
+    />
+  </div>
 </div>
 `;
 
@@ -374,9 +392,11 @@ exports[`should render with error status 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+    />
+  </div>
 </div>
 `;

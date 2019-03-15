@@ -1,6 +1,6 @@
 import Downshift, { ControllerStateAndHelpers, DownshiftProps, StateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
   /**
@@ -41,69 +41,54 @@ export function defaultSelectFilter<T>(
 /**
  * Downshift extension with item and filter management.
  */
-export class SelectDownshift<T> extends React.Component<SelectDownshiftProps<T>, State<T>> {
-  static defaultProps: Partial<SelectDownshiftProps<any>> = {
-    onFilterChange: (filter: string, downshift: SelectDownshiftRenderProps<any>) => {
-      const { setVisibleItems, items, itemToString } = downshift
-      setVisibleItems(defaultSelectFilter(items, filter, itemToString))
-    },
-  }
+export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
+  const { items, onFilterChange, children, ...rest } = props
 
-  constructor(props: SelectDownshiftProps<T>) {
-    super(props)
-    this.state = {
-      visibleItems: props.items,
-    }
-  }
+  const [visibleItems, setVisibleItems] = useState<T[]>(items)
+  useEffect(() => {
+    setVisibleItems(props.items)
+  }, [props.items])
 
-  componentWillReceiveProps(nextProps: SelectDownshiftProps<T>) {
-    this.setState({ visibleItems: nextProps.items })
-  }
-
-  handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
+  const handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
     if (options.isOpen) {
-      this.props.onFilterChange(null, this.getStateAndHelpers(downshift))
+      onFilterChange(null, getStateAndHelpers(downshift))
     }
 
     if (options.type === Downshift.stateChangeTypes.changeInput) {
-      this.props.onFilterChange(options.inputValue, this.getStateAndHelpers(downshift))
+      onFilterChange(options.inputValue, getStateAndHelpers(downshift))
     }
 
     if (
       options.type === Downshift.stateChangeTypes.clickItem ||
       options.type === Downshift.stateChangeTypes.keyDownEnter
     ) {
-      this.props.onFilterChange(null, this.getStateAndHelpers(downshift))
+      onFilterChange(null, getStateAndHelpers(downshift))
     }
 
-    this.props.onStateChange && this.props.onStateChange(options, this.getStateAndHelpers(downshift))
+    props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift))
   }
 
-  handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
-    this.props.onChange && this.props.onChange(item, this.getStateAndHelpers(downshift))
+  const handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
+    props.onChange && props.onChange(item, getStateAndHelpers(downshift))
   }
 
-  getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => {
-    const { items } = this.props
-    const { visibleItems } = this.state
-    const { setVisibleItems } = this
-    return {
-      ...downshift,
-      items,
-      visibleItems,
-      setVisibleItems,
-    }
-  }
+  const getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => ({
+    ...downshift,
+    items,
+    visibleItems,
+    setVisibleItems,
+  })
 
-  setVisibleItems = (visibleItems: T[]) => this.setState({ visibleItems })
-
-  render() {
-    const { items, onFilterChange, children, ...rest } = this.props
-
-    return (
-      <Downshift {...rest} onStateChange={this.handleStateChange} onChange={this.handleChange}>
-        {downshift => children(this.getStateAndHelpers(downshift))}
-      </Downshift>
-    )
-  }
+  return (
+    <Downshift {...rest} onStateChange={handleStateChange} onChange={handleChange}>
+      {downshift => children(getStateAndHelpers(downshift))}
+    </Downshift>
+  )
 }
+
+SelectDownshift.defaultProps = {
+  onFilterChange: (filter: string, downshift: SelectDownshiftRenderProps<any>) => {
+    const { setVisibleItems, items, itemToString } = downshift
+    setVisibleItems(defaultSelectFilter(items, filter, itemToString))
+  },
+} as Partial<SelectDownshiftProps<any>>
