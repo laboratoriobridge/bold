@@ -49,12 +49,5 @@ pipeline {
                 step([$class: 'CompareCoverageAction', scmVars: [GIT_URL: env.GIT_URL]])
             }
         }
-        stage("Update Documentation") {
-            when { branch "master" }
-            steps {
-                sh "yarn build-storybook"
-                sh "rsync -Cravzp storybook-static/ jenkins-bridge@paginas.bridge.ufsc.br:/var/www/vhosts/react.bridge.ufsc.br/httpdocs"
-            }
-        }
     }
 }

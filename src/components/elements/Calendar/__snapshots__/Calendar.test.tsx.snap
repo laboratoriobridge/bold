@@ -1,39 +1,693 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Calendar should render correctly 1`] = `
-.emotion-0 {
+.emotion-55 {
   width: 288px;
 }
 
-<div
-  className="emotion-0"
->
-  <HFlow
-    hSpacing={0.5}
-    justifyContent="space-around"
-    style={
-      Object {
-        "fontWeight": "bold",
-        "marginBottom": "0.5rem",
-      }
-    }
+.emotion-18 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.emotion-2 {
+  margin-top: 0rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0rem;
+  margin-left: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-2:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-2:last-of-type {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-54 {
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+.emotion-54 th {
+  width: 2rem;
+  padding: 0.25rem 0;
+}
+
+.emotion-20 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-20:hover {
+  cursor: pointer;
+  background: #F2F2F7;
+}
+
+.emotion-19 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  color: #B9B9BD;
+}
+
+.emotion-19:hover {
+  cursor: pointer;
+  background: #F2F2F7;
+}
+
+.emotion-46 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0A67D1;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-46:hover {
+  cursor: pointer;
+  background: #F2F2F7;
+}
+
+.emotion-46:hover {
+  background: #0A67D1;
+  color: #FFFFFF;
+}
+
+<div>
+  <div
+    class="emotion-55"
   >
-    <MonthControl
-      onChange={[Function]}
-      renderMonth={[Function]}
-      visibleDate={2018-10-26T00:00:00.000Z}
-    />
-    <YearControl
-      onChange={[Function]}
-      renderYear={[Function]}
-      visibleDate={2018-10-26T00:00:00.000Z}
-    />
-  </HFlow>
-  <MonthView
-    createDayStyles={[Function]}
-    onDayClick={[Function]}
-    visibleDate={2018-10-26T00:00:00.000Z}
-  />
+    <div
+      class="emotion-18"
+    >
+      <div
+        class="emotion-2"
+      >
+        <div
+          class="emotion-7"
+        >
+          <div
+            class="emotion-2"
+          >
+            <button
+              class="emotion-1"
+              tabindex="-1"
+              title="Previous month"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-0"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-2"
+          >
+            Oct
+          </div>
+          <div
+            class="emotion-2"
+          >
+            <button
+              class="emotion-1"
+              tabindex="-1"
+              title="Next month"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-0"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <div
+          class="emotion-7"
+        >
+          <div
+            class="emotion-2"
+          >
+            <button
+              class="emotion-1"
+              tabindex="-1"
+              title="Previous year"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-0"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-2"
+          >
+            2018
+          </div>
+          <div
+            class="emotion-2"
+          >
+            <button
+              class="emotion-1"
+              tabindex="-1"
+              title="Next year"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-0"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table
+      class="emotion-54"
+    >
+      <thead>
+        <tr>
+          <th>
+            S
+          </th>
+          <th>
+            M
+          </th>
+          <th>
+            T
+          </th>
+          <th>
+            W
+          </th>
+          <th>
+            T
+          </th>
+          <th>
+            F
+          </th>
+          <th>
+            S
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            data-date="2018-09-30"
+          >
+            <span
+              class="emotion-19"
+              role="button"
+            >
+              30
+            </span>
+          </td>
+          <td
+            data-date="2018-10-01"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              01
+            </span>
+          </td>
+          <td
+            data-date="2018-10-02"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              02
+            </span>
+          </td>
+          <td
+            data-date="2018-10-03"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              03
+            </span>
+          </td>
+          <td
+            data-date="2018-10-04"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              04
+            </span>
+          </td>
+          <td
+            data-date="2018-10-05"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              05
+            </span>
+          </td>
+          <td
+            data-date="2018-10-06"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              06
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2018-10-07"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              07
+            </span>
+          </td>
+          <td
+            data-date="2018-10-08"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              08
+            </span>
+          </td>
+          <td
+            data-date="2018-10-09"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              09
+            </span>
+          </td>
+          <td
+            data-date="2018-10-10"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              10
+            </span>
+          </td>
+          <td
+            data-date="2018-10-11"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              11
+            </span>
+          </td>
+          <td
+            data-date="2018-10-12"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              12
+            </span>
+          </td>
+          <td
+            data-date="2018-10-13"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              13
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2018-10-14"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              14
+            </span>
+          </td>
+          <td
+            data-date="2018-10-15"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              15
+            </span>
+          </td>
+          <td
+            data-date="2018-10-16"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              16
+            </span>
+          </td>
+          <td
+            data-date="2018-10-17"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              17
+            </span>
+          </td>
+          <td
+            data-date="2018-10-18"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              18
+            </span>
+          </td>
+          <td
+            data-date="2018-10-19"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              19
+            </span>
+          </td>
+          <td
+            data-date="2018-10-20"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              20
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2018-10-21"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              21
+            </span>
+          </td>
+          <td
+            data-date="2018-10-22"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              22
+            </span>
+          </td>
+          <td
+            data-date="2018-10-23"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              23
+            </span>
+          </td>
+          <td
+            data-date="2018-10-24"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              24
+            </span>
+          </td>
+          <td
+            data-date="2018-10-25"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              25
+            </span>
+          </td>
+          <td
+            data-date="2018-10-26"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              26
+            </span>
+          </td>
+          <td
+            data-date="2018-10-27"
+          >
+            <span
+              class="emotion-46"
+              role="button"
+            >
+              27
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2018-10-28"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              28
+            </span>
+          </td>
+          <td
+            data-date="2018-10-29"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              29
+            </span>
+          </td>
+          <td
+            data-date="2018-10-30"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              30
+            </span>
+          </td>
+          <td
+            data-date="2018-10-31"
+          >
+            <span
+              class="emotion-20"
+              role="button"
+            >
+              31
+            </span>
+          </td>
+          <td
+            data-date="2018-11-01"
+          >
+            <span
+              class="emotion-19"
+              role="button"
+            >
+              01
+            </span>
+          </td>
+          <td
+            data-date="2018-11-02"
+          >
+            <span
+              class="emotion-19"
+              role="button"
+            >
+              02
+            </span>
+          </td>
+          <td
+            data-date="2018-11-03"
+          >
+            <span
+              class="emotion-19"
+              role="button"
+            >
+              03
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 `;
 

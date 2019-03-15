@@ -72,24 +72,26 @@ exports[`should render correctly 1`] = `
   cursor: not-allowed;
 }
 
-<label
-  class="emotion-3"
->
-  <input
-    class="emotion-0"
-    type="checkbox"
-  />
-  <div
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-3"
   >
-    <span
-      class="emotion-1"
+    <input
+      class="emotion-0"
+      type="checkbox"
     />
-  </div>
-</label>
+    <div
+      class="emotion-2"
+    >
+      <span
+        class="emotion-1"
+      />
+    </div>
+  </label>
+</div>
 `;
 
-exports[`should render correctly 2`] = `
+exports[`should render correctly when disabled 1`] = `
 .emotion-2 {
   outline: 0;
   background: #F2F2F7;
@@ -165,31 +167,33 @@ exports[`should render correctly 2`] = `
   cursor: not-allowed;
 }
 
-<label
-  class="emotion-4"
->
-  <input
-    class="emotion-0"
-    label="Active"
-    type="checkbox"
-    value="true"
-  />
-  <div
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-4"
   >
-    <span
-      class="emotion-1"
+    <input
+      class="emotion-0"
+      disabled=""
+      type="checkbox"
+      value="true"
     />
-  </div>
-  <span
-    class="emotion-3"
-  >
-    Active
-  </span>
-</label>
+    <div
+      class="emotion-2"
+    >
+      <span
+        class="emotion-1"
+      />
+    </div>
+    <span
+      class="emotion-3"
+    >
+      Disabled
+    </span>
+  </label>
+</div>
 `;
 
-exports[`should render correctly 3`] = `
+exports[`should render correctly with label 1`] = `
 .emotion-2 {
   outline: 0;
   background: #F2F2F7;
@@ -265,27 +269,27 @@ exports[`should render correctly 3`] = `
   cursor: not-allowed;
 }
 
-<label
-  class="emotion-4"
->
-  <input
-    class="emotion-0"
-    disabled=""
-    label="Disabled"
-    type="checkbox"
-    value="true"
-  />
-  <div
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-4"
   >
-    <span
-      class="emotion-1"
+    <input
+      class="emotion-0"
+      type="checkbox"
+      value="true"
     />
-  </div>
-  <span
-    class="emotion-3"
-  >
-    Disabled
-  </span>
-</label>
+    <div
+      class="emotion-2"
+    >
+      <span
+        class="emotion-1"
+      />
+    </div>
+    <span
+      class="emotion-3"
+    >
+      Active
+    </span>
+  </label>
+</div>
 `;

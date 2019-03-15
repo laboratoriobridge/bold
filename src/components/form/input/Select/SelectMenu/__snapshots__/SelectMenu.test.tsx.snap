@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly 1`] = `
+.emotion-2 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+}
+
+.emotion-0 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-0:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+<div>
+  <ul
+    class="emotion-2"
+  >
+    <li
+      class="emotion-0"
+    >
+      Item 1
+    </li>
+    <li
+      class="emotion-0"
+    >
+      Item 2
+    </li>
+  </ul>
+</div>
+`;
