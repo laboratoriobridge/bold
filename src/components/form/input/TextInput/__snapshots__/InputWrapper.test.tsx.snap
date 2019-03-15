@@ -42,33 +42,57 @@ exports[`should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-<div
-  class="emotion-2"
->
-  <input />
-  <span
-    class="emotion-1"
-    role="button"
-    tabindex="-1"
-    title="Limpar"
+<div>
+  <div
+    class="emotion-2"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
+    <input />
+    <span
+      class="emotion-1"
+      role="button"
+      tabindex="-1"
+      title="Limpar"
     >
-      <path
-        d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-      />
-    </svg>
-  </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+        />
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
 exports[`should render correctly with button 1`] = `
+.emotion-4 {
+  position: absolute;
+  background-color: #F2F2F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -108,28 +132,6 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-1:hover {
   color: #D83A2E;
-}
-
-.emotion-4 {
-  position: absolute;
-  background-color: #F2F2F7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
 }
 
 .emotion-3 {
@@ -188,53 +190,55 @@ exports[`should render correctly with button 1`] = `
   box-shadow: none;
 }
 
-<div
-  class="emotion-5"
->
-  <input />
-  <span
-    class="emotion-1"
-    role="button"
-    tabindex="-1"
-    title="Limpar"
+<div>
+  <div
+    class="emotion-5"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
-    >
-      <path
-        d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-      />
-    </svg>
-  </span>
-  <span
-    class="emotion-4"
-  >
-    <button
-      class="emotion-3"
+    <input />
+    <span
+      class="emotion-1"
+      role="button"
       tabindex="-1"
-      type="button"
+      title="Limpar"
     >
-      <span>
-        <svg
-          aria-hidden="true"
-          class="emotion-0"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-          />
-        </svg>
-      </span>
-    </button>
-  </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+        />
+      </svg>
+    </span>
+    <span
+      class="emotion-4"
+    >
+      <button
+        class="emotion-3"
+        tabindex="-1"
+        type="button"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+            />
+          </svg>
+        </span>
+      </button>
+    </span>
+  </div>
 </div>
 `;
 
@@ -313,45 +317,47 @@ exports[`should render correctly with left position 1`] = `
   box-shadow: none;
 }
 
-<div
-  class="emotion-4"
->
-  <input />
-  <span
-    class="emotion-1"
-    role="button"
-    tabindex="-1"
-    title="Limpar"
+<div>
+  <div
+    class="emotion-4"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
+    <input />
+    <span
+      class="emotion-1"
+      role="button"
+      tabindex="-1"
+      title="Limpar"
     >
-      <path
-        d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-      />
-    </svg>
-  </span>
-  <span
-    class="emotion-3"
-  >
-    <svg
-      aria-hidden="true"
-      class="emotion-2"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+        />
+      </svg>
+    </span>
+    <span
+      class="emotion-3"
     >
-      <path
-        d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-      />
-    </svg>
-  </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-2"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+        />
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
@@ -396,26 +402,28 @@ exports[`should render correctly without clear icon 1`] = `
   padding-right: 3rem;
 }
 
-<div
-  class="emotion-2"
->
-  <input />
-  <span
-    class="emotion-1"
+<div>
+  <div
+    class="emotion-2"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
+    <input />
+    <span
+      class="emotion-1"
     >
-      <path
-        d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-      />
-    </svg>
-  </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+        />
+      </svg>
+    </span>
+  </div>
 </div>
 `;
 
@@ -460,25 +468,27 @@ exports[`should render correctly without clear icon AND left position 1`] = `
   padding-left: 3rem;
 }
 
-<div
-  class="emotion-2"
->
-  <input />
-  <span
-    class="emotion-1"
+<div>
+  <div
+    class="emotion-2"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
+    <input />
+    <span
+      class="emotion-1"
     >
-      <path
-        d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-      />
-    </svg>
-  </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+        />
+      </svg>
+    </span>
+  </div>
 </div>
 `;

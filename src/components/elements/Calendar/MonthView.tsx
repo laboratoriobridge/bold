@@ -1,12 +1,12 @@
 import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 import { getUserLocale } from '../../../util/locale'
 
 import { createMonthMatrix } from './util'
 
-export interface MonthViewProps extends WithStylesProps {
+export interface MonthViewProps {
   visibleDate?: Date
   onDayClick?(day: Date): void
   onDayHover?(day: Date): void
@@ -15,63 +15,61 @@ export interface MonthViewProps extends WithStylesProps {
   createDayStyles?(day: Date, props: MonthViewProps): Interpolation
 }
 
-@withStyles
-export class MonthView extends React.PureComponent<MonthViewProps> {
-  static defaultProps: Partial<MonthViewProps> = {
-    visibleDate: new Date(),
-    onDayClick: () => null,
-    onDayHover: () => null,
-    renderDay: day => {
-      const dayFormatter = new Intl.DateTimeFormat(getUserLocale(), { day: '2-digit' })
-      return dayFormatter.format(day)
-    },
-    renderWeekName: firstWeekDay => {
-      const weekFormatter = new Intl.DateTimeFormat(getUserLocale(), { weekday: 'narrow' })
-      return weekFormatter.format(firstWeekDay)
-    },
-    createDayStyles: () => null,
-  }
+export const MonthView = (props: MonthViewProps) => {
+  const { visibleDate, renderDay, renderWeekName, createDayStyles, onDayClick, onDayHover } = props
+  const month = createMonthMatrix(visibleDate)
+  const { classes, css } = useStyles(createStyles)
 
-  render() {
-    const { visibleDate, renderDay, renderWeekName, css, theme, createDayStyles } = this.props
-    const month = createMonthMatrix(visibleDate)
-    const styles = createStyles(theme)
-    return (
-      <table className={css(styles.table)}>
-        <thead>
-          <tr>
-            {month[0].map((day, d) => (
-              <th key={d}>{renderWeekName(day)}</th>
+  const handleDayClick = (day: Date) => () => onDayClick(day)
+  const handleDayHover = (day: Date) => () => onDayHover(day)
+
+  return (
+    <table className={classes.table}>
+      <thead>
+        <tr>
+          {month[0].map((day, d) => (
+            <th key={d}>{renderWeekName(day)}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {month.map((week, w) => (
+          <tr key={w}>
+            {week.map((day, d) => (
+              <td key={d} data-date={day.toISOString().slice(0, 10)}>
+                <span
+                  className={css(classes.day, createDayStyles(day, props))}
+                  onClick={handleDayClick(day)}
+                  onMouseOver={handleDayHover(day)}
+                  role='button'
+                >
+                  {renderDay(day)}
+                </span>
+              </td>
             ))}
           </tr>
-        </thead>
-        <tbody>
-          {month.map((week, w) => (
-            <tr key={w}>
-              {week.map((day, d) => (
-                <td key={d} data-date={day.toISOString().slice(0, 10)}>
-                  <span
-                    className={css(styles.day, createDayStyles(day, this.props))}
-                    onClick={this.handleDayClick(day)}
-                    onMouseOver={this.handleDayHover(day)}
-                    role='button'
-                  >
-                    {renderDay(day)}
-                  </span>
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    )
-  }
-
-  handleDayClick = (day: Date) => () => this.props.onDayClick(day)
-  handleDayHover = (day: Date) => () => this.props.onDayHover(day)
+        ))}
+      </tbody>
+    </table>
+  )
 }
 
-export const createStyles = (theme: Theme): Styles => ({
+MonthView.defaultProps = {
+  visibleDate: new Date(),
+  onDayClick: () => null,
+  onDayHover: () => null,
+  renderDay: day => {
+    const dayFormatter = new Intl.DateTimeFormat(getUserLocale(), { day: '2-digit' })
+    return dayFormatter.format(day)
+  },
+  renderWeekName: firstWeekDay => {
+    const weekFormatter = new Intl.DateTimeFormat(getUserLocale(), { weekday: 'narrow' })
+    return weekFormatter.format(firstWeekDay)
+  },
+  createDayStyles: () => null,
+} as Partial<MonthViewProps>
+
+export const createStyles = (theme: Theme) => ({
   table: {
     borderCollapse: 'collapse',
     textAlign: 'center',
@@ -82,7 +80,7 @@ export const createStyles = (theme: Theme): Styles => ({
       width: '2rem',
       padding: '0.25rem 0',
     },
-  },
+  } as CSSProperties,
   day: {
     width: '2rem',
     padding: '0.25rem 0',
@@ -93,9 +91,9 @@ export const createStyles = (theme: Theme): Styles => ({
       cursor: 'pointer',
       background: theme.pallete.surface.background,
     },
-  },
+  } as CSSProperties,
   active: {
     background: theme.pallete.primary.main,
     color: theme.pallete.surface.main,
-  },
+  } as CSSProperties,
 })

@@ -1,36 +1,20 @@
 import React from 'react'
 import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-text-mask'
 
+import { composeRefs } from '../../../../util/react'
 import { Omit } from '../../../../util/types'
 import { TextInput, TextInputProps } from '../TextInput/TextInput'
 
 export type MaskType = ReactMaskedInputProps['mask']
 
-export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'style'>, TextInputProps {
-}
+export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'style'>, TextInputProps {}
 
-export class MaskedInput extends React.PureComponent<MaskedInputProps> {
-    static defaultProps: Partial<MaskedInputProps> = {
-    }
+export const MaskedInput = (props: MaskedInputProps) => {
+  const { inputRef, style, ...rest } = props
 
-    render() {
-        const { css, style, inputRef, ...rest } = this.props
-        return (
-            <ReactTextMask render={this.renderInput} {...rest} />
-        )
-    }
+  const renderInput = (ref: (inputElement: HTMLElement) => void, p: any) => {
+    return <TextInput style={style} inputRef={composeRefs(inputRef, ref)} {...p} />
+  }
 
-    attachRef = (ref: (inputElement: HTMLElement) => void) => (el: HTMLInputElement) => {
-        ref(el)
-
-        if (this.props.inputRef) {
-            (this.props.inputRef as any).current = el
-        }
-    }
-
-    renderInput = (ref: (inputElement: HTMLElement) => void, props: any) => {
-        return (
-            <TextInput style={this.props.style} inputRef={this.attachRef(ref)} {...props} />
-        )
-    }
+  return <ReactTextMask render={renderInput} {...rest} />
 }

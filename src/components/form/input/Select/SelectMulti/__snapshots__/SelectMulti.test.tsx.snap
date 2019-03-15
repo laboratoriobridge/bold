@@ -237,6 +237,18 @@ exports[`should render correctly when opened 1`] = `
   display: none;
 }
 
+.emotion-4 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .emotion-3 {
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
@@ -248,18 +260,6 @@ exports[`should render correctly when opened 1`] = `
   transition: all .2s ease;
   vertical-align: middle;
   width: 16px;
-}
-
-.emotion-4 {
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .emotion-2 {
