@@ -1,6 +1,6 @@
 # Cards
 
-A card is a UI design pattern that groups related information in a flexible-size container. A card is container for a few short, related pieces of information. Cards doesn't have a style pattern for texts and included information.
+A card is a UI design pattern that groups related information in a flexible-size container. A card is a container for a few short, related pieces of information. Cards don't have a style pattern for texts and included information.
 
 ## Best practices
 
