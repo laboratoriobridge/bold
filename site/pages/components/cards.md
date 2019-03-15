@@ -11,7 +11,7 @@ A card is a UI design pattern that groups related information in a flexible-size
 
 <table>
   <tr>
-    <th width={160}>Read only</th>
+    <th width={160}>Read-only</th>
     <td>Use to communicate something to the user. A read-only card can contain buttons like CTA (Call to action) or links.</td>
   </tr>
   <tr>
@@ -20,10 +20,10 @@ A card is a UI design pattern that groups related information in a flexible-size
   </tr>
   <tr>
     <th>Toggle</th>
-    <td>Toggle cards have the same behavior as <a href="/components/checkbox">Checkbox</a>. Use toggle card when the selection need more information than a checkbox.</td>
+    <td>Toggle cards have the same behavior as <a href="/components/checkbox">Checkbox</a>. Use toggle card when the selection needs more information than a checkbox.</td>
   </tr>
   <tr>
     <th>Expandable</th>
-    <td>Expandable cards are useful to show or hide a large amount of information, and have the same behavior as <a href="/components/accordion">Accordion</a>. CTA buttons can only be used if it have its own click area.</td>
+    <td>Expandable cards are useful to show or hide a large amount of information and have the same behavior as <a href="/components/accordion">Accordion</a>. CTA buttons can only be used if it has its own click area.</td>
   </tr>
 </table>
