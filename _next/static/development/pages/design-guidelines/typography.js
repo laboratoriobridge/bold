@@ -2541,7 +2541,186 @@ function (_React$Component) {
           lineNumber: 23
         },
         __self: this
-      }, "IBM Plex Sans"), " for its versatility and readability, as well as being an open-sourced typeface."));
+      }, "IBM Plex Sans"), " for its versatility and readability, as well as being an open-sourced typeface."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+        name: "h2",
+        components: components,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24
+        },
+        __self: this
+      }, "Type scales"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("table", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 27
+        },
+        __self: this
+      }, "0.8125 rem"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, "13 px"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h5", {
+        style: {
+          margin: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }, "H5 - Don't design for designers, design for people"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 34
+        },
+        __self: this
+      }, "0.875 rem"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 35
+        },
+        __self: this
+      }, "14 px"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 36
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h4", {
+        style: {
+          margin: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 37
+        },
+        __self: this
+      }, "H4 - Don't design for designers, design for people"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 40
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 41
+        },
+        __self: this
+      }, "1 rem"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 42
+        },
+        __self: this
+      }, "16 px"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 43
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h3", {
+        style: {
+          margin: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 44
+        },
+        __self: this
+      }, "H3 - Don't design for designers, design for people"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 47
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 48
+        },
+        __self: this
+      }, "1.25 rem"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 49
+        },
+        __self: this
+      }, "20 px"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 50
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h2", {
+        style: {
+          margin: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 51
+        },
+        __self: this
+      }, "H2 - Don't design for designers, design for people"))), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("tr", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 54
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 55
+        },
+        __self: this
+      }, "1.75 rem"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 56
+        },
+        __self: this
+      }, "24 px"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("td", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 57
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("h1", {
+        style: {
+          margin: 0
+        },
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 58
+        },
+        __self: this
+      }, "H1 - Don't design for designers, design for people")))));
     }
   }]);
 
@@ -2553,7 +2732,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 6:
+/***/ 3:
 /*!***************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdesign-guidelines%2Ftypography&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Ftypography.mdx ***!
   \***************************************************************************************************************************************************************************************/
@@ -2576,5 +2755,5 @@ module.exports = dll_5ee718904e5061cf97d8;
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]));;
+},[[3,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=typography.js.map
