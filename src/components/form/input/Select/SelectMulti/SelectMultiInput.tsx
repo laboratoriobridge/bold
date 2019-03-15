@@ -1,92 +1,79 @@
-import React from 'react'
+import React, { CSSProperties, useRef } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../../../styles'
+import { Theme, useStyles } from '../../../../../styles'
+import { Omit } from '../../../../../util'
 import { Input, InputProps } from '../../Input/Input'
-import { createStyles, InputStatus } from '../../TextInput/TextInputBase'
+import { createStyleParts, InputStatus } from '../../TextInput/TextInputBase'
 
 import { SelectMultiItem } from './SelectMultiItem'
 
-export interface SelectMultiInputProps<T> extends InputProps, WithStylesProps {
-    items: T[]
-    status?: InputStatus
-    clearable?: boolean
-    renderItem(item: T): React.ReactNode
-    onRemoveItem(item: T): void
+export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
+  items: T[]
+  status?: InputStatus
+  clearable?: boolean
+  renderItem(item: T): React.ReactNode
+  onRemoveItem(item: T): void
 }
 
-@withStyles
-export class SelectMultiInput<T> extends React.Component<SelectMultiInputProps<T>> {
-    private inputRef = React.createRef<HTMLInputElement>()
+export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
+  const { items, renderItem, onRemoveItem, status, disabled, clearable, ...rest } = props
 
-    render() {
-        const { css, theme, items, renderItem, onRemoveItem, status, disabled, clearable, ...rest } = this.props
-        const textInputStyles = createStyles(theme)
-        const parts = textInputStyles.parts
-        const styles: Styles = {
-            wrapper: {
-                ...parts.base,
-                cursor: 'text',
+  const inputRef = useRef<HTMLInputElement>()
 
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
+  const handleRemove = (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
+    props.onRemoveItem(item)
+    e.stopPropagation() // Do not propagate so menu is not opened when item is removed
+  }
 
-                padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
-                '&:hover': !disabled && parts.hover,
-                '&:active': !disabled && parts.active,
-                '&:focus-within': !disabled && parts.focus,
-            },
-            disabled: parts.disabled,
-            error: {
-                ...textInputStyles.error,
-                '&:focus-within': textInputStyles.error[':not(:disabled):focus'],
-            },
-            item: {
-                marginRight: '0.25rem',
-            },
-            input: {
-                padding: 0,
-                flex: 1,
-                border: 0,
-                outline: 0,
-                '::placeholder': parts.placeholder,
-                ':disabled': parts.disabled,
-            },
-        }
+  const handleWrapperClick = () => inputRef.current.focus()
 
-        const wrapperClasses = css(
-            styles.wrapper,
-            status === 'error' && styles.error,
-            this.props.disabled && styles.disabled
-        )
+  const { classes, css } = useStyles(createStyles, props)
+  const wrapperClasses = css(classes.wrapper, status === 'error' && classes.error, props.disabled && classes.disabled)
 
-        return (
-            <div className={wrapperClasses} onClick={this.handleWrapperClick}>
-                {items && items.map((item, key) => (
-                    <SelectMultiItem
-                        key={key}
-                        onRemove={this.handleRemove(item)}
-                        style={styles.item}
-                        disabled={disabled}
-                    >
-                        {renderItem(item)}
-                    </SelectMultiItem>
-                ))}
-                <Input
-                    type='text'
-                    inputRef={this.inputRef}
-                    className={css(styles.input)}
-                    disabled={disabled}
-                    {...rest}
-                />
-            </div>
-        )
-    }
+  return (
+    <div className={wrapperClasses} onClick={handleWrapperClick}>
+      {items &&
+        items.map((item, key) => (
+          <SelectMultiItem key={key} onRemove={handleRemove(item)} style={classes.item} disabled={disabled}>
+            {renderItem(item)}
+          </SelectMultiItem>
+        ))}
+      <Input type='text' inputRef={inputRef} className={classes.input} disabled={disabled} {...rest} />
+    </div>
+  )
+}
 
-    handleRemove = (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
-        this.props.onRemoveItem(item)
-        e.stopPropagation() // Do not propagate so menu is not opened when item is removed
-    }
+export const createStyles = (theme: Theme, { items, disabled }: SelectMultiInputProps<any>) => {
+  const parts = createStyleParts(theme)
+  return {
+    wrapper: {
+      ...parts.base,
+      cursor: 'text',
 
-    handleWrapperClick = () => this.inputRef.current.focus()
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+
+      padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
+      '&:hover': !disabled && parts.hover,
+      '&:active': !disabled && parts.active,
+      '&:focus-within': !disabled && parts.focus,
+    } as CSSProperties,
+    disabled: parts.disabled,
+    error: {
+      ...parts.error,
+      '&:focus-within': parts.error[':not(:disabled):focus'],
+    } as CSSProperties,
+    item: {
+      marginRight: '0.25rem',
+    } as CSSProperties,
+    input: {
+      padding: 0,
+      flex: 1,
+      border: 0,
+      outline: 0,
+      '::placeholder': parts.placeholder,
+      ':disabled': parts.disabled,
+    } as CSSProperties,
+  }
 }

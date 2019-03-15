@@ -32,28 +32,30 @@ exports[`Flow should accept alignItems prop 1`] = `
   align-items: center;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <div>
-      1
+    <div
+      class="emotion-0"
+    >
+      <div>
+        1
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      2
+    <div
+      class="emotion-0"
+    >
+      <div>
+        2
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      3
+    <div
+      class="emotion-0"
+    >
+      <div>
+        3
+      </div>
     </div>
   </div>
 </div>
@@ -90,28 +92,30 @@ exports[`Flow should accept direction prop 1`] = `
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <div>
-      1
+    <div
+      class="emotion-0"
+    >
+      <div>
+        1
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      2
+    <div
+      class="emotion-0"
+    >
+      <div>
+        2
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      3
+    <div
+      class="emotion-0"
+    >
+      <div>
+        3
+      </div>
     </div>
   </div>
 </div>
@@ -145,29 +149,31 @@ exports[`Flow should accept hSpacing prop 1`] = `
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <span>
-      1
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      2
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      3
-    </span>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        3
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -204,28 +210,30 @@ exports[`Flow should accept justifyContent prop 1`] = `
   justify-content: flex-end;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <div>
-      1
+    <div
+      class="emotion-0"
+    >
+      <div>
+        1
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      2
+    <div
+      class="emotion-0"
+    >
+      <div>
+        2
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      3
+    <div
+      class="emotion-0"
+    >
+      <div>
+        3
+      </div>
     </div>
   </div>
 </div>
@@ -257,24 +265,26 @@ exports[`Flow should accept the style prop 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 10rem;
+  color: red;
 }
 
-<div
-  class="emotion-2"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-2"
   >
-    <div>
-      1
+    <div
+      class="emotion-0"
+    >
+      <div>
+        1
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <div>
-      2
+    <div
+      class="emotion-0"
+    >
+      <div>
+        2
+      </div>
     </div>
   </div>
 </div>
@@ -308,29 +318,31 @@ exports[`Flow should accept vSpacing prop 1`] = `
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <span>
-      1
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      2
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      3
-    </span>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        3
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -363,29 +375,31 @@ exports[`Flow should wrap each child on an element with horizontal spacing 1`] =
   display: none;
 }
 
-<div
-  class="emotion-3"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-3"
   >
-    <span>
-      1
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      2
-    </span>
-  </div>
-  <div
-    class="emotion-0"
-  >
-    <span>
-      3
-    </span>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        1
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        2
+      </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      <span>
+        3
+      </span>
+    </div>
   </div>
 </div>
 `;

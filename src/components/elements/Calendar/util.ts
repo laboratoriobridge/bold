@@ -5,9 +5,9 @@
  * @returns A new date which is the first day of the target month.
  */
 export const getFirstDayOfMonth = (target: Date): Date => {
-    const firstDayOfMonth = new Date(target)
-    firstDayOfMonth.setDate(1)
-    return firstDayOfMonth
+  const firstDayOfMonth = new Date(target)
+  firstDayOfMonth.setDate(1)
+  return firstDayOfMonth
 }
 
 /**
@@ -16,7 +16,7 @@ export const getFirstDayOfMonth = (target: Date): Date => {
  * @returns A new date which is the last day of the target month.
  */
 export const getLastDayOfMonth = (target: Date): Date => {
-    return new Date(target.getFullYear(), target.getMonth() + 1, 0)
+  return new Date(target.getFullYear(), target.getMonth() + 1, 0)
 }
 
 /**
@@ -26,15 +26,15 @@ export const getLastDayOfMonth = (target: Date): Date => {
  * @returns An array starting by sunday and finished by saturday which includes the target date
  */
 export const createWeekArray = (target: Date): Date[] => {
-    const week: Date[] = []
+  const week: Date[] = []
 
-    for (let i = 0; i < 7; i++) {
-        const d = new Date(target)
-        d.setDate(target.getDate() - target.getDay() + i)
-        week.push(d)
-    }
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(target)
+    d.setDate(target.getDate() - target.getDay() + i)
+    week.push(d)
+  }
 
-    return week
+  return week
 }
 
 /**
@@ -44,25 +44,24 @@ export const createWeekArray = (target: Date): Date[] => {
  * @returns A new array of array of dates containing all month dates.
  */
 export const createMonthMatrix = (target: Date): Date[][] => {
-    const firstDayOfMonth = getFirstDayOfMonth(target)
-    const lastDayOfMonth = getLastDayOfMonth(target)
-    const weeks = []
+  const firstDayOfMonth = getFirstDayOfMonth(target)
+  const lastDayOfMonth = getLastDayOfMonth(target)
+  const weeks = []
 
-    let curr = firstDayOfMonth
+  let curr = firstDayOfMonth
 
-    while (true) {
-        const week = createWeekArray(curr)
-        if (week[0] > lastDayOfMonth && !isSameDay(week[0], lastDayOfMonth)) {
-            break
-        } else {
-            weeks.push(week)
-            curr = new Date(curr)
-            curr.setDate(curr.getDate() + 7)
-        }
-
+  while (true) {
+    const week = createWeekArray(curr)
+    if (week[0] > lastDayOfMonth && !isSameDay(week[0], lastDayOfMonth)) {
+      break
+    } else {
+      weeks.push(week)
+      curr = new Date(curr)
+      curr.setDate(curr.getDate() + 7)
     }
+  }
 
-    return weeks
+  return weeks
 }
 
 /**
@@ -73,7 +72,5 @@ export const createMonthMatrix = (target: Date): Date[][] => {
  * @returns Whether the dates are the same day, month and year
  */
 export const isSameDay = (d1: Date, d2: Date): boolean => {
-    return d1.getDate() === d2.getDate() &&
-        d1.getMonth() === d2.getMonth() &&
-        d1.getFullYear() === d2.getFullYear()
+  return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()
 }

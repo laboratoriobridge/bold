@@ -12,40 +12,37 @@ export interface MonthControlProps {
   renderMonth?(date: Date): React.ReactNode
 }
 
-export class MonthControl extends React.PureComponent<MonthControlProps> {
-  static defaultProps: Partial<MonthControlProps> = {
-    renderMonth: date => {
-      const formatter = new Intl.DateTimeFormat(getUserLocale(), { month: 'short' })
-      return capitalize(formatter.format(date))
-    },
-  }
+export const MonthControl = (props: MonthControlProps) => {
+  const { visibleDate, onChange, renderMonth } = props
 
-  render() {
-    const { visibleDate, renderMonth } = this.props
-    return (
-      <HFlow alignItems='center' hSpacing={0.5}>
-        <Button size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1}>
-          <Icon icon='angleLeft' />
-        </Button>
-        {renderMonth(visibleDate)}
-        <Button size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1}>
-          <Icon icon='angleRight' />
-        </Button>
-      </HFlow>
-    )
-  }
-
-  handleNext = () => {
-    const { visibleDate } = this.props
+  const handleNext = () => {
     const next = new Date(visibleDate)
     next.setMonth(visibleDate.getMonth() + 1)
-    return this.props.onChange(next)
+    return onChange(next)
   }
 
-  handlePrev = () => {
-    const { visibleDate } = this.props
+  const handlePrev = () => {
     const prev = new Date(visibleDate)
     prev.setMonth(prev.getMonth() - 1)
-    return this.props.onChange(prev)
+    return onChange(prev)
   }
+
+  return (
+    <HFlow alignItems='center' hSpacing={0.5}>
+      <Button title='Previous month' size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
+        <Icon icon='angleLeft' />
+      </Button>
+      {renderMonth(visibleDate)}
+      <Button title='Next month' size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
+        <Icon icon='angleRight' />
+      </Button>
+    </HFlow>
+  )
 }
+
+MonthControl.defaultProps = {
+  renderMonth: date => {
+    const formatter = new Intl.DateTimeFormat(getUserLocale(), { month: 'short' })
+    return capitalize(formatter.format(date))
+  },
+} as Partial<MonthControlProps>

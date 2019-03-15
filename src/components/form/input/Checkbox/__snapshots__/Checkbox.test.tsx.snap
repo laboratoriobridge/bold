@@ -1,6 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Checkbox should render correctly 1`] = `
+.emotion-3 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .emotion-1 {
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
@@ -17,18 +29,6 @@ exports[`Checkbox should render correctly 1`] = `
 .emotion-2 {
   color: #41484F;
   margin-left: 0.5rem;
-}
-
-.emotion-3 {
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .emotion-0 {
@@ -93,22 +93,24 @@ exports[`Checkbox should render correctly 1`] = `
   color: #B9B9BD;
 }
 
-<label
-  class="emotion-3"
->
-  <input
-    class="emotion-0"
-    type="checkbox"
-  />
-  <span
-    class="emotion-1"
-  />
-  <span
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-3"
   >
-    check
-  </span>
-</label>
+    <input
+      class="emotion-0"
+      type="checkbox"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      check
+    </span>
+  </label>
+</div>
 `;
 
 exports[`Checkbox should render correctly when disabled 1`] = `
@@ -205,26 +207,40 @@ exports[`Checkbox should render correctly when disabled 1`] = `
   cursor: not-allowed;
 }
 
-<label
-  class="emotion-3"
->
-  <input
-    class="emotion-0"
-    disabled=""
-    type="checkbox"
-  />
-  <span
-    class="emotion-1"
-  />
-  <span
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-3"
   >
-    check
-  </span>
-</label>
+    <input
+      class="emotion-0"
+      disabled=""
+      type="checkbox"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      check
+    </span>
+  </label>
+</div>
 `;
 
 exports[`Checkbox should render correctly when indeterminate 1`] = `
+.emotion-3 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .emotion-1 {
   background-color: #FFFFFF;
   border: 1px solid #B9B9BD;
@@ -241,18 +257,6 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
 .emotion-2 {
   color: #41484F;
   margin-left: 0.5rem;
-}
-
-.emotion-3 {
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .emotion-0 {
@@ -317,20 +321,22 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
   color: #B9B9BD;
 }
 
-<label
-  class="emotion-3"
->
-  <input
-    class="emotion-0"
-    type="checkbox"
-  />
-  <span
-    class="emotion-1"
-  />
-  <span
-    class="emotion-2"
+<div>
+  <label
+    class="emotion-3"
   >
-    check
-  </span>
-</label>
+    <input
+      class="emotion-0"
+      type="checkbox"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      check
+    </span>
+  </label>
+</div>
 `;

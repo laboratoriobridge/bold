@@ -279,6 +279,18 @@ exports[`should be rendered correctly 1`] = `
   padding: 0.25rem 0;
 }
 
+.emotion-27 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-27:hover {
+  cursor: pointer;
+  background: #F2F2F7;
+}
+
 .emotion-26 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -288,18 +300,6 @@ exports[`should be rendered correctly 1`] = `
 }
 
 .emotion-26:hover {
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
-.emotion-27 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.emotion-27:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -389,6 +389,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Previous month"
                       type="button"
                     >
                       <span>
@@ -418,6 +419,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Next month"
                       type="button"
                     >
                       <span>
@@ -450,6 +452,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Previous year"
                       type="button"
                     >
                       <span>
@@ -479,6 +482,7 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Next year"
                       type="button"
                     >
                       <span>

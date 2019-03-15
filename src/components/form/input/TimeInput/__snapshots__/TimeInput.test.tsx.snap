@@ -1,20 +1,70 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render should render correcly 1`] = `
-<MaskedInput
-  mask={
-    Array [
-      /\\\\d/,
-      /\\\\d/,
-      ":",
-      /\\\\d/,
-      /\\\\d/,
-    ]
-  }
-  name="time"
-  onBlur={[Function]}
-  onChange={[Function]}
-  pipe={[Function]}
-  placeholder="hh:mm"
-/>
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-0:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      name="time"
+      placeholder="hh:mm"
+      type="text"
+      value=""
+    />
+  </div>
+</div>
 `;
