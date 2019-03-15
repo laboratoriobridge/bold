@@ -1,3 +1,4 @@
+import { Interpolation } from 'emotion'
 import React from 'react'
 
 import { withStyles, WithStylesProps } from '../../../../../styles'
@@ -8,97 +9,96 @@ import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } fro
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'
 
 export interface DefaultItemType {
-    value: any
-    label: string
+  value: any
+  label: string
 }
 
-export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputProps, 'value' | 'onChange'>,
+export interface SelectSingleProps<T = DefaultItemType>
+  extends Omit<TextInputProps, 'value' | 'onChange'>,
     WithStylesProps {
-    value?: T
+  value?: T
 
-    items: SelectDownshiftProps<T>['items']
-    itemToString: SelectDownshiftProps<T>['itemToString']
-    onChange?: SelectDownshiftProps<T>['onChange']
-    isOpen?: SelectDownshiftProps<T>['isOpen']
-    onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
+  items: SelectDownshiftProps<T>['items']
+  itemToString: SelectDownshiftProps<T>['itemToString']
+  onChange?: SelectDownshiftProps<T>['onChange']
+  isOpen?: SelectDownshiftProps<T>['isOpen']
+  style?: Interpolation
+  onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
 
-    loading?: SelectDownshiftMenuProps<T>['loading']
-    renderItem?: SelectDownshiftMenuProps<T>['renderItem']
-    components?: SelectDownshiftMenuProps<T>['components']
+  loading?: SelectDownshiftMenuProps<T>['loading']
+  renderItem?: SelectDownshiftMenuProps<T>['renderItem']
+  components?: SelectDownshiftMenuProps<T>['components']
 }
 
 @withStyles
 export class SelectSingle<T> extends React.Component<SelectSingleProps<T>> {
+  render() {
+    const {
+      css,
+      theme,
+      value,
+      items,
+      itemToString,
+      onChange,
+      isOpen,
+      onFilterChange,
+      loading,
+      renderItem,
+      components,
+      style,
+      ...rest
+    } = this.props
 
-    render() {
-        const {
-            css,
-            theme,
-            value,
-            items,
-            itemToString,
-            onChange,
-            isOpen,
-            onFilterChange,
-            loading,
-            renderItem,
-            components,
-            ...rest
-        } = this.props
+    return (
+      <SelectDownshift<T>
+        selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
+        items={items}
+        itemToString={itemToString}
+        onChange={onChange}
+        isOpen={isOpen}
+        onFilterChange={onFilterChange}
+      >
+        {downshift => {
+          const { isOpen: downshiftOpen, getInputProps, visibleItems, inputValue } = downshift
 
-        return (
-            <SelectDownshift<T>
-                selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
-                items={items}
-                itemToString={itemToString}
-                onChange={onChange}
-                isOpen={isOpen}
-                onFilterChange={onFilterChange}
-            >
-                {(downshift) => {
-                    const {
-                        isOpen: downshiftOpen,
-                        getInputProps,
-                        visibleItems,
-                        inputValue,
-                    } = downshift
+          return (
+            <div className={css(style)}>
+              <div>
+                <TextInput
+                  icon={downshiftOpen ? 'angleUp' : 'angleDown'}
+                  {...rest}
+                  onBlur={this.handleInputBlur(downshift)}
+                  onFocus={this.handleInputFocus(downshift)}
+                  onClick={this.handleInputClick(downshift)}
+                  onClear={this.handleClear(downshift)}
+                  onIconClick={this.handleInputIconClick(downshift)}
+                  {...getInputProps()}
+                  value={inputValue ? inputValue : ''}
+                />
+              </div>
+              <SelectDownshiftMenu
+                downshift={downshift}
+                items={visibleItems}
+                loading={loading}
+                renderItem={renderItem}
+                components={components}
+              />
+            </div>
+          )
+        }}
+      </SelectDownshift>
+    )
+  }
 
-                    return (
-                        <div>
-                            <TextInput
-                                icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-                                {...rest}
-                                onBlur={this.handleInputBlur(downshift)}
-                                onFocus={this.handleInputFocus(downshift)}
-                                onClick={this.handleInputClick(downshift)}
-                                onClear={this.handleClear(downshift)}
-                                onIconClick={this.handleInputIconClick(downshift)}
-                                {...getInputProps()}
-                                value={inputValue ? inputValue : ''}
-                            />
-                            <SelectDownshiftMenu
-                                downshift={downshift}
-                                items={visibleItems}
-                                loading={loading}
-                                renderItem={renderItem}
-                                components={components}
-                            />
-                        </div>
-                    )
-                }}
-            </SelectDownshift>
-        )
-    }
+  handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {
+    downshift.clearSelection()
+  }
 
-    handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {
-        downshift.clearSelection()
-    }
-
-    handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
-    handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
-    handleInputClick = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
-    handleInputBlur = ({ closeMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
-        closeMenu()
-        this.props.onBlur && this.props.onBlur(e)
-    }
+  handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
+  handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
+  handleInputClick = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
+  handleInputBlur = ({ closeMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
+    closeMenu()
+    this.props.onBlur && this.props.onBlur(e)
+  }
 }
