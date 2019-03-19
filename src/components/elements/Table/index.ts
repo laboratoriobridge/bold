@@ -1,6 +1,6 @@
 export * from './Table'
 
-export { SortableLabel, SortableLabelProps } from './SortableLabel/SortableLabel'
+export * from './SortableLabel/SortableLabel'
 export { TableFooter, TableFooterProps } from './TableFooter/TableFooter'
 
 export { DataTable, DataTableProps, DataTableDefault, DataTableRenderProps } from './DataTable/DataTable'

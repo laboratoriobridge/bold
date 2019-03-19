@@ -15,21 +15,23 @@ exports[`TableCell should accept the style prop 1`] = `
   color: red;
 }
 
-<table
-  class="emotion-3"
->
-  <tbody
-    class="emotion-1"
+<div>
+  <table
+    class="emotion-3"
   >
-    <tr
+    <tbody
       class="emotion-1"
     >
-      <td
-        class="emotion-0"
+      <tr
+        class="emotion-1"
       >
-        Test
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td
+          class="emotion-0"
+        >
+          Test
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
