@@ -3,7 +3,6 @@ import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles } from '../../../styles'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
-import { Spacing } from '../Spacing/Spacing'
 
 export interface FlowProps {
   direction?: 'horizontal' | 'vertical'
@@ -16,23 +15,11 @@ export interface FlowProps {
 }
 
 export const Flow = (props: FlowProps) => {
-  const { direction, vSpacing, hSpacing, style } = props
+  const { direction, style } = props
   const { classes, css } = useStyles(createStyles, props)
 
   const renderChild = (child: any) => {
-    return (
-      child && (
-        <Spacing
-          style={classes.child}
-          top={vSpacing / 2}
-          bottom={vSpacing / 2}
-          left={hSpacing / 2}
-          right={hSpacing / 2}
-        >
-          {child}
-        </Spacing>
-      )
-    )
+    return child && <div className={classes.child}>{child}</div>
   }
 
   const className = css(classes.flow, direction === 'horizontal' ? classes.flowHorizontal : classes.flowVertical, style)
@@ -46,7 +33,10 @@ Flow.defaultProps = {
   hSpacing: 1,
 } as Partial<FlowProps>
 
-export const createStyles = (theme: Theme, { alignItems, justifyContent, direction }: FlowProps) => ({
+export const createStyles = (
+  theme: Theme,
+  { alignItems, justifyContent, direction, vSpacing, hSpacing }: FlowProps
+) => ({
   flow: {
     display: 'flex',
     alignItems,
@@ -57,6 +47,12 @@ export const createStyles = (theme: Theme, { alignItems, justifyContent, directi
     flexDirection: 'column',
   } as CSSProperties,
   child: {
+    marginBottom: `${vSpacing / 2}rem`,
+    marginTop: `${vSpacing / 2}rem`,
+    marginLeft: `${hSpacing / 2}rem`,
+    marginRight: `${hSpacing / 2}rem`,
+    display: 'inline-block',
+
     ':first-of-type': {
       marginTop: direction === 'vertical' && 0,
       marginLeft: direction === 'horizontal' && 0,

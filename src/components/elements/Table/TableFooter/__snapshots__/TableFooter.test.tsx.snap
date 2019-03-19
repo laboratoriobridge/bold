@@ -60,10 +60,10 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-2 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 

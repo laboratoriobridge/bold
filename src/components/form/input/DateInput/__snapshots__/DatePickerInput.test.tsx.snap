@@ -166,24 +166,11 @@ exports[`DatePickerInput should render correctly 1`] = `
   width: 288px;
 }
 
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
 .emotion-8 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 
@@ -197,6 +184,19 @@ exports[`DatePickerInput should render correctly 1`] = `
 
 .emotion-8:empty {
   display: none;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .emotion-13 {
@@ -999,24 +999,11 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
   width: 288px;
 }
 
-.emotion-24 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
 .emotion-8 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 
@@ -1030,6 +1017,19 @@ exports[`DatePickerInput should render correctly when disabled 1`] = `
 
 .emotion-8:empty {
   display: none;
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .emotion-13 {

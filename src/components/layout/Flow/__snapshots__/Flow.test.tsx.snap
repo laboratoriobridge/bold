@@ -2,10 +2,10 @@
 
 exports[`Flow should accept alignItems prop 1`] = `
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -62,21 +62,11 @@ exports[`Flow should accept alignItems prop 1`] = `
 `;
 
 exports[`Flow should accept direction prop 1`] = `
-.emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -90,6 +80,16 @@ exports[`Flow should accept direction prop 1`] = `
 
 .emotion-0:empty {
   display: none;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 <div>
@@ -130,10 +130,10 @@ exports[`Flow should accept hSpacing prop 1`] = `
 }
 
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 
@@ -180,10 +180,10 @@ exports[`Flow should accept hSpacing prop 1`] = `
 
 exports[`Flow should accept justifyContent prop 1`] = `
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -241,10 +241,10 @@ exports[`Flow should accept justifyContent prop 1`] = `
 
 exports[`Flow should accept the style prop 1`] = `
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -299,10 +299,10 @@ exports[`Flow should accept vSpacing prop 1`] = `
 }
 
 .emotion-0 {
-  margin-top: 1.25rem;
-  margin-right: 0.5rem;
   margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -356,10 +356,10 @@ exports[`Flow should wrap each child on an element with horizontal spacing 1`] =
 }
 
 .emotion-0 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
