@@ -1,24 +1,23 @@
 import React, { CSSProperties, useEffect, useState } from 'react'
 
 import { Theme, useStyles } from '../../../styles'
-import { WithStylesProps } from '../../../styles/withStyles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 
-export interface PaginatorProps extends WithStylesProps {
+export interface PaginatorProps {
   /**
-   * Página atual, 0-indexada.
+   * Current page. 0-indexed.
    */
   page: number
 
   /**
-   * Número total de páginas.
+   * Total number of pages.
    */
   total: number
 
   /**
-   * Chamado quando a página for alterada.
+   * Called when the current page is changed.
    */
   onChange?(page: number): void
 }
