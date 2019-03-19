@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Omit } from '../../../../../util'
-import { HFlow } from '../../../../layout'
+import { HFlow } from '../../../../elements/Flow'
 import { Checkbox } from '../../Checkbox/Checkbox'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../SelectSingle/SelectDownshiftMenu'
 import { DefaultItemType } from '../SelectSingle/SelectSingle'

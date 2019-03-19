@@ -3,7 +3,7 @@ import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles, WithStylesProps } from '../../../../styles'
 import { pluralize } from '../../../../util/string'
-import { HFlow } from '../../../layout'
+import { HFlow } from '../../Flow'
 import { Paginator } from '../../Paginator/Paginator'
 import { Text } from '../../textual'
 import { Number } from '../../textual/Number/Number'

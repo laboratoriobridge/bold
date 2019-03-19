@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 import { Icon } from '../Icon'
 
 import { Tooltip } from './Tooltip'

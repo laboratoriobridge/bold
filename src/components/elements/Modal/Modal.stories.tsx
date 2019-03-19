@@ -3,8 +3,8 @@ import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
