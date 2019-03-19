@@ -7,31 +7,33 @@ exports[`TableHead should accept the style prop 1`] = `
   border: 1px solid #DCDCE0;
 }
 
-.emotion-2 {
-  color: red;
-}
-
 .emotion-0 {
   text-align: left;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #DCDCE0;
 }
 
-<table
-  class="emotion-3"
->
-  <thead
-    class="emotion-2"
+.emotion-2 {
+  color: red;
+}
+
+<div>
+  <table
+    class="emotion-3"
   >
-    <tr
-      class="emotion-1"
+    <thead
+      class="emotion-2"
     >
-      <th
-        class="emotion-0"
+      <tr
+        class="emotion-1"
       >
-        Test
-      </th>
-    </tr>
-  </thead>
-</table>
+        <th
+          class="emotion-0"
+        >
+          Test
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
 `;
