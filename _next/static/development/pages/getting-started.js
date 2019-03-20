@@ -3052,7 +3052,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!*********************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fgetting-started&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fgetting-started.mdx ***!
   \*********************************************************************************************************************************************************/
@@ -3075,5 +3075,5 @@ module.exports = dll_5ee718904e5061cf97d8;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]));;
+},[[1,"static/runtime/webpack.js"]]]));;
 //# sourceMappingURL=getting-started.js.map
