@@ -3,10 +3,7 @@ import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 import { addDecorator, configure, addParameters } from '@storybook/react'
 import { create } from '@storybook/theming'
-import addons, { mockChannel } from '@storybook/addons'
-import { withTheme } from '../src/stories-addons'
-
-addons.setChannel(mockChannel())
+import { withStorybookTheme } from '../src/stories-addons'
 
 addParameters({
   options: {
@@ -40,8 +37,8 @@ addParameters({
 
 addDecorator(withInfo)
 // addDecorator(withA11y)
-addDecorator(withTheme())
-addDecorator(withKnobs())
+addDecorator(withKnobs)
+addDecorator(withStorybookTheme)
 
 const req = require.context('../src', true, /.stories.tsx?$/)
 

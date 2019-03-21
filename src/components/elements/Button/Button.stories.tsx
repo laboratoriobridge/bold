@@ -16,7 +16,6 @@ const skinOptions: ButtonSkin[] = ['default', 'ghost', 'outline']
 const sizeOptions: ButtonSize[] = ['small', 'medium', 'large']
 
 storiesOf('Components|Button', module)
-  // @ts-ignore
   .add('default', () => (
     <Button
       skin={select('skin', skinOptions, 'default')}
