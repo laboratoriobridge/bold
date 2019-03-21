@@ -1,40 +1,38 @@
 import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util/types'
 
-export interface FormLabelProps extends WithStylesProps,
-    Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'style'> {
-    label: React.ReactNode
-    required?: boolean
-    style?: Interpolation
+export interface FormLabelProps extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'style'> {
+  label: React.ReactNode
+  required?: boolean
+  style?: Interpolation
 }
 
-@withStyles
-export class FormLabel extends React.PureComponent<FormLabelProps> {
+export const FormLabel = (props: FormLabelProps) => {
+  const { label, required, style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-    render() {
-        const { css, label, required, theme, style, ...rest } = this.props
-        const styles: Styles = {
-            label: {
-                fontWeight: 'bold',
-            },
-            marker: {
-                color: theme.pallete.status.danger.main,
-                marginLeft: '0.25rem',
-            },
-        }
+  return (
+    <label className={css(classes.label, style)} {...rest}>
+      {label}
 
-        return (
-            <label className={css(styles.label, style)} {...rest}>
-                {label}
-
-                {required &&
-                    <span title='Campo obrigatório' className={css(styles.marker)}>&#42;</span>
-                }
-            </label>
-        )
-    }
-
+      {required && (
+        <span title='Campo obrigatório' className={classes.marker}>
+          &#42;
+        </span>
+      )}
+    </label>
+  )
 }
+
+export const createStyles = (theme: Theme) => ({
+  label: {
+    fontWeight: 'bold',
+  } as CSSProperties,
+  marker: {
+    color: theme.pallete.status.danger.main,
+    marginLeft: '0.25rem',
+  } as CSSProperties,
+})

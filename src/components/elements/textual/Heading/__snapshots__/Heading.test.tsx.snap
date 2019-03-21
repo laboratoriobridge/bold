@@ -5,11 +5,13 @@ exports[`should accept color prop 1`] = `
   color: #0A67D1;
 }
 
-<h1
-  class="emotion-0"
->
-  Heading Primary color
-</h1>
+<div>
+  <h1
+    class="emotion-0"
+  >
+    Heading Primary color
+  </h1>
+</div>
 `;
 
 exports[`should accept style prop 1`] = `
@@ -17,57 +19,71 @@ exports[`should accept style prop 1`] = `
   font-style: italic;
 }
 
-<h1
-  class="emotion-0"
->
-  Heading Primary color
-</h1>
+<div>
+  <h1
+    class="emotion-0"
+  >
+    Heading Primary color
+  </h1>
+</div>
 `;
 
 exports[`should render correctly 1`] = `
-<h1
-  class="emotion-0"
->
-  Heading 1
-</h1>
+<div>
+  <h1
+    class="emotion-0"
+  >
+    Heading 1
+  </h1>
+</div>
 `;
 
 exports[`should render correctly 2`] = `
-<h2
-  class="emotion-0"
->
-  Heading 2
-</h2>
+<div>
+  <h2
+    class="emotion-0"
+  >
+    Heading 2
+  </h2>
+</div>
 `;
 
 exports[`should render correctly 3`] = `
-<h3
-  class="emotion-0"
->
-  Heading 3
-</h3>
+<div>
+  <h3
+    class="emotion-0"
+  >
+    Heading 3
+  </h3>
+</div>
 `;
 
 exports[`should render correctly 4`] = `
-<h4
-  class="emotion-0"
->
-  Heading 4
-</h4>
+<div>
+  <h4
+    class="emotion-0"
+  >
+    Heading 4
+  </h4>
+</div>
 `;
 
 exports[`should render correctly 5`] = `
-<h5
-  class="emotion-0"
->
-  Heading 5
-</h5>
+<div>
+  <h5
+    class="emotion-0"
+  >
+    Heading 5
+  </h5>
+</div>
 `;
 
 exports[`should render correctly 6`] = `
-<h6
-  class="emotion-0"
->
-  Heading 6
-</h6>
+<div>
+  <h6
+    class="emotion-0"
+  >
+    Heading 6
+  </h6>
+</div>
 `;

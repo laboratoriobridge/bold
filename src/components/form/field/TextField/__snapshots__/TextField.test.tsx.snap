@@ -126,15 +126,15 @@ exports[`should not include field props on rendered HTML 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-0 {
+  color: #D83A2E;
+  margin-left: 0.25rem;
+}
+
 .emotion-1 {
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
-}
-
-.emotion-0 {
-  color: #D83A2E;
-  margin-left: 0.25rem;
 }
 
 <div

@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+.emotion-0 {
+  color: #D83A2E;
+  margin-left: 0.25rem;
+}
+
 .emotion-1 {
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
-}
-
-.emotion-0 {
-  color: #D83A2E;
-  margin-left: 0.25rem;
 }
 
 .emotion-2 {
