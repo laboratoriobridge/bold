@@ -23,7 +23,7 @@ const justifyContentOptions: JustifyContent[] = [
 
 const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'baseline', 'stretch']
 
-storiesOf('Layout', module)
+storiesOf('Components|Flow', module)
   .add('Flow', () => (
     <>
       <Flow

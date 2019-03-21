@@ -19,7 +19,7 @@ const sizes: { [key in ModalSize]: ModalSize } = {
   auto: 'auto',
 }
 
-storiesOf('Components/Modal', module)
+storiesOf('Components|Modal', module)
   .add('default', () => (
     // tslint:disable jsx-no-lambda
     <Modal open={boolean('open', true)} size={select('size', sizes, 'large')} onClose={action('close')}>

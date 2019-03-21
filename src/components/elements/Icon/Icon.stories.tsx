@@ -13,7 +13,7 @@ const colors: IconColor[] = ['none', 'normal', 'secondary', 'disabled', 'primary
 
 const options: Icons[] = Object.keys(IconMap) as Icons[]
 
-storiesOf('Components/Icon', module)
+storiesOf('Components|Icon', module)
   .add('default', () => <Icon icon={select('icon', options, 'adjust') as Icons} />)
   .add('all icons', () => (
     <Grid wrap>

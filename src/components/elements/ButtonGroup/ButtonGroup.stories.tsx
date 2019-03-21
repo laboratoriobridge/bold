@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 
 import { ButtonGroup } from './ButtonGroup'
 
-storiesOf('Components/ButtonGroup', module).add('default', () => (
+storiesOf('Components|ButtonGroup', module).add('default', () => (
   <HFlow>
     <ButtonGroup>
       <Button size='small' kind='primary'>

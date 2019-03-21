@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 
 import { Popover } from './Popover'
 
-storiesOf('Components/Popover', module).add('default', () => (
+storiesOf('Components|Popover', module).add('default', () => (
   <HFlow hSpacing={0.5} alignItems='center'>
     <Popover
       title='Title'

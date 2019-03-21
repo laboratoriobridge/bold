@@ -5,7 +5,7 @@ import React from 'react'
 
 import { TableFooter } from './TableFooter'
 
-storiesOf('Components/Table', module).add('TableFooter', () => (
+storiesOf('Components|Table', module).add('TableFooter', () => (
   <TableFooter
     page={number('page', 0)}
     pageSize={number('pageSize', 10)}

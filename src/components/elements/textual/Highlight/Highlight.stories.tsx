@@ -4,7 +4,6 @@ import React from 'react'
 
 import { Highlight } from './Highlight'
 
-storiesOf('Textual', module)
-    .add('Highlight', () => (
-        <Highlight words={array('search', ['car'])} text={text('text', 'The blue car, the blue scarf')} />
-    ))
+storiesOf('Components|Textual', module).add('Highlight', () => (
+  <Highlight words={array('search', ['car'])} text={text('text', 'The blue car, the blue scarf')} />
+))

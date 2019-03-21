@@ -20,7 +20,7 @@ const rows: Row[] = [
   { id: 3, name: 'ALICE BARBOSA', age: 27 },
 ]
 
-storiesOf('Components/Table', module).add('DataTable', () => (
+storiesOf('Components|Table', module).add('DataTable', () => (
   // tslint:disable jsx-no-lambda
   <DataTable
     rows={boolean('empty', false) ? [] : rows}
