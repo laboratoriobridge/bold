@@ -40,6 +40,10 @@ export const createStyleParts = (theme: Theme) => ({
     width: '100%',
     transitionProperty: 'box-shadow',
     transitionDuration: '.2s',
+
+    '&:required': {
+      boxShadow: 'none',
+    },
   } as CSSProperties,
   placeholder: {
     color: theme.pallete.text.disabled,

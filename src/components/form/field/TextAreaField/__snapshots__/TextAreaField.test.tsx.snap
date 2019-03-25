@@ -26,6 +26,10 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-2:required {
+  box-shadow: none;
+}
+
 .emotion-2::-webkit-input-placeholder {
   color: #B9B9BD;
 }

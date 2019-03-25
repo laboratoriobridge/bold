@@ -19,6 +19,10 @@ exports[`should be rendered correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -89,6 +93,10 @@ exports[`should not include field props on rendered HTML 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-2:required {
+  box-shadow: none;
 }
 
 .emotion-2::-webkit-input-placeholder {

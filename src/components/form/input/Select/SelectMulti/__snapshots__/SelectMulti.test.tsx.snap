@@ -27,6 +27,10 @@ exports[`should render correctly when closed 1`] = `
   align-items: center;
 }
 
+.emotion-1:required {
+  box-shadow: none;
+}
+
 .emotion-1:hover {
   border-color: #818489;
 }
@@ -128,6 +132,10 @@ exports[`should render correctly when opened 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.emotion-1:required {
+  box-shadow: none;
 }
 
 .emotion-1:hover {

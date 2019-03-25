@@ -73,6 +73,10 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -277,6 +281,10 @@ exports[`should render correctly when multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.emotion-4:required {
+  box-shadow: none;
 }
 
 .emotion-4:hover {
