@@ -1,29 +1,29 @@
 import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface ContainerProps extends WithStylesProps {
+export interface ContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: Interpolation
 }
 
-@withStyles
-export class Container extends React.PureComponent<ContainerProps> {
-  static defaultProps: Partial<Container> = {}
+export function Container(props: ContainerProps) {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-  render() {
-    const { theme, style } = this.props
-    const styles = {
-      container: {
-        width: '960px',
-        margin: '0 auto',
-
-        [theme.breakpoints.down('small')]: {
-          width: '768px',
-        },
-      },
-    }
-
-    return <div className={this.props.css(styles.container, style)}>{this.props.children}</div>
-  }
+  return <div className={css(classes.container, style)} {...rest} />
 }
+
+Container.defaultProps = {} as Partial<ContainerProps>
+
+export const createStyles = (theme: Theme) => ({
+  container: {
+    width: '960px',
+    margin: '0 auto',
+
+    [theme.breakpoints.down('small')]: {
+      width: '768px',
+    },
+  } as CSSProperties,
+})
