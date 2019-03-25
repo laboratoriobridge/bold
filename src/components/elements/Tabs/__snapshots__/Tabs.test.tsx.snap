@@ -88,61 +88,63 @@ exports[`renders correctly 1`] = `
   box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.14),inset 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
-<ul
-  class="emotion-8"
-  role="tablist"
->
-  <li
-    class="emotion-1"
-    role="presentation"
+<div>
+  <ul
+    class="emotion-8"
+    role="tablist"
   >
-    <a
-      aria-current="page"
-      class="emotion-0 active"
-      href="/"
-      role="tab"
+    <li
+      class="emotion-1"
+      role="presentation"
     >
-      Home
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-    role="presentation"
-  >
-    <a
-      class="emotion-0"
-      href="/test"
-      role="tab"
+      <a
+        aria-current="page"
+        class="emotion-0 active"
+        href="/"
+        role="tab"
+      >
+        Home
+      </a>
+    </li>
+    <li
+      class="emotion-1"
+      role="presentation"
     >
-      Test
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-    role="presentation"
-  >
-    <a
-      aria-current="page"
-      class="emotion-0 active"
-      href="/active"
-      role="tab"
+      <a
+        class="emotion-0"
+        href="/test"
+        role="tab"
+      >
+        Test
+      </a>
+    </li>
+    <li
+      class="emotion-1"
+      role="presentation"
     >
-      Active
-    </a>
-  </li>
-  <li
-    class="emotion-1"
-    role="presentation"
-  >
-    <a
-      aria-disabled="true"
-      class="emotion-6 disabled"
-      href="/active"
-      role="tab"
-      tabindex="-1"
+      <a
+        aria-current="page"
+        class="emotion-0 active"
+        href="/active"
+        role="tab"
+      >
+        Active
+      </a>
+    </li>
+    <li
+      class="emotion-1"
+      role="presentation"
     >
-      Disabled
-    </a>
-  </li>
-</ul>
+      <a
+        aria-disabled="true"
+        class="emotion-6 disabled"
+        href="/disabled"
+        role="tab"
+        tabindex="-1"
+      >
+        Disabled
+      </a>
+    </li>
+  </ul>
+</div>
 `;

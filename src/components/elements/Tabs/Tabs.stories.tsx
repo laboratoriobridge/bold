@@ -7,14 +7,6 @@ import { TabLink, Tabs } from './Tabs'
 
 storiesOf('Components|Tabs', module)
   // @ts-ignore
-  .addParameters({
-    info: {
-      text: `
-                Active é obtido através da prop <code>active</code> ou caso ocorra um match entre a URL
-                atual e o link (Quarto item).
-            `,
-    },
-  })
   .addDecorator(withRouter(['/test-4'], 1))
   .add('default', () => (
     <Tabs>
