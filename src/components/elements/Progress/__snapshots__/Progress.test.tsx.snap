@@ -1,41 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept color prop 1`] = `
-.emotion-0 {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  height: 4px;
-  width: 100%;
-}
-
-.emotion-0::-webkit-progress-bar {
-  background-color: #F2F2F7;
-  border-radius: 4px;
-}
-
-.emotion-0::-webkit-progress-value {
-  background-color: #D83A2E;
-  border-radius: 4px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.emotion-0::-moz-progress-bar {
-  background-color: #D83A2E;
-  border-radius: 4px;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-<progress
-  class="emotion-0"
-  max="100"
-  value="40"
-/>
-`;
-
 exports[`should accept style prop 1`] = `
 .emotion-0 {
   -webkit-appearance: none;
@@ -66,11 +30,51 @@ exports[`should accept style prop 1`] = `
   transition: all .3s;
 }
 
-<progress
-  class="emotion-0"
-  max="100"
-  value="40"
-/>
+<div>
+  <progress
+    class="emotion-0"
+    max="100"
+    value="40"
+  />
+</div>
+`;
+
+exports[`should accept type prop 1`] = `
+.emotion-0 {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  height: 4px;
+  width: 100%;
+}
+
+.emotion-0::-webkit-progress-bar {
+  background-color: #F2F2F7;
+  border-radius: 4px;
+}
+
+.emotion-0::-webkit-progress-value {
+  background-color: #D83A2E;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.emotion-0::-moz-progress-bar {
+  background-color: #D83A2E;
+  border-radius: 4px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+<div>
+  <progress
+    class="emotion-0"
+    max="100"
+    value="40"
+  />
+</div>
 `;
 
 exports[`should render correctly 1`] = `
@@ -102,9 +106,11 @@ exports[`should render correctly 1`] = `
   transition: all .3s;
 }
 
-<progress
-  class="emotion-0"
-  max="100"
-  value="40"
-/>
+<div>
+  <progress
+    class="emotion-0"
+    max="100"
+    value="40"
+  />
+</div>
 `;

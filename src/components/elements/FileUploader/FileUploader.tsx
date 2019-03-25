@@ -5,7 +5,7 @@ import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
 import { format } from '../../../util/byte'
 import { HFlow } from '../Flow'
 import { Icon } from '../Icon/Icon'
-import { ProgressIndicator } from '../ProgressIndicator/ProgressIndicator'
+import { Progress } from '../Progress/Progress'
 import { Text } from '../textual/Text/Text'
 
 export interface FileUploaderProps extends WithStylesProps {
@@ -120,7 +120,7 @@ export class FileDetails extends React.Component<FileDetailsProps> {
         <FileExtension extension={this.returnExtension()} theme={this.props.theme} />
         <div className={css(styles.info)}>
           <FileInfo file={this.props.file} theme={this.props.theme} />
-          {this.props.file.uploading && <ProgressIndicator value={this.props.file.progress} />}
+          {this.props.file.uploading && <Progress value={this.props.file.progress} />}
         </div>
       </div>
     )
