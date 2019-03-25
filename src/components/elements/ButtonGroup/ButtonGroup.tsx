@@ -1,36 +1,32 @@
 import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles/withStyles'
+import { useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface ButtonGroupProps extends WithStylesProps {
-    style?: Interpolation
+export interface ButtonGroupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  style?: Interpolation
 }
 
-@withStyles
-export class ButtonGroup extends React.PureComponent<ButtonGroupProps> {
-    render() {
-        const { children, css, style } = this.props
-        const styles: Styles = {
-            root: {
-                '& > button:not(:first-of-type), & > a:not(:first-of-type)': {
-                    borderTopLeftRadius: '0',
-                    borderBottomLeftRadius: '0',
-                },
-                '& > button:not(:last-of-type), & > a:not(:last-of-type)': {
-                    borderTopRightRadius: '0',
-                    borderBottomRightRadius: '0',
-                },
-                '& > button:focus, & > a:focus': {
-                    zIndex: 1, // prevent box-shadow overlapping
-                },
-            },
-        }
+export function ButtonGroup(props: ButtonGroupProps) {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-        return (
-            <div className={css(styles.root, style)} role='group'>
-                {children}
-            </div>
-        )
-    }
+  return <div className={css(classes.root, style)} role='group' {...rest} />
 }
+
+export const createStyles = () => ({
+  root: {
+    '& > button:not(:first-of-type), & > a:not(:first-of-type)': {
+      borderTopLeftRadius: '0',
+      borderBottomLeftRadius: '0',
+    },
+    '& > button:not(:last-of-type), & > a:not(:last-of-type)': {
+      borderTopRightRadius: '0',
+      borderBottomRightRadius: '0',
+    },
+    '& > button:focus, & > a:focus': {
+      zIndex: 1, // prevent box-shadow overlapping
+    },
+  } as CSSProperties,
+})

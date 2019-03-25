@@ -1,30 +1,92 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-0 > button:not(:first-of-type),
-.emotion-0 > a:not(:first-of-type) {
+.emotion-1 > button:not(:first-of-type),
+.emotion-1 > a:not(:first-of-type) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.emotion-0 > button:not(:last-of-type),
-.emotion-0 > a:not(:last-of-type) {
+.emotion-1 > button:not(:last-of-type),
+.emotion-1 > a:not(:last-of-type) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.emotion-0 > button:focus,
-.emotion-0 > a:focus {
+.emotion-1 > button:focus,
+.emotion-1 > a:focus {
   z-index: 1;
 }
 
-<div
-  class="emotion-0"
-  role="group"
-/>
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #818489;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+}
+
+.emotion-0 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-0:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-0:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-0:not(:disabled):hover {
+  background-color: #ebebeb;
+}
+
+<div>
+  <div
+    class="emotion-1"
+    role="group"
+  >
+    <button
+      class="emotion-0"
+      type="button"
+    >
+      <span>
+        First
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
-exports[`should should accept stlye prop 1`] = `
+exports[`should should accept style prop 1`] = `
 .emotion-0 {
   color: red;
 }
@@ -46,8 +108,10 @@ exports[`should should accept stlye prop 1`] = `
   z-index: 1;
 }
 
-<div
-  class="emotion-0"
-  role="group"
-/>
+<div>
+  <div
+    class="emotion-0"
+    role="group"
+  />
+</div>
 `;

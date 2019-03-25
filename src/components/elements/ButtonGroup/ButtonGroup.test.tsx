@@ -1,28 +1,25 @@
-import { mount, render } from 'enzyme'
 import React from 'react'
+import { render } from 'react-testing-library'
 
-import { withTheme } from '../../../test'
 import { Button } from '../Button'
 
 import { ButtonGroup } from './ButtonGroup'
 
 it('should render correctly', () => {
-    expect(render(withTheme(
-        <ButtonGroup />
-    ))).toMatchSnapshot()
+  const { container } = render(
+    <ButtonGroup>
+      <Button>First</Button>
+    </ButtonGroup>
+  )
+  expect(container).toMatchSnapshot()
 })
 
-it('should should accept stlye prop', () => {
-    expect(render(withTheme(
-        <ButtonGroup style={{ color: 'red' }} />
-    ))).toMatchSnapshot()
+it('should should accept style prop', () => {
+  const { container } = render(<ButtonGroup style={{ color: 'red' }} />)
+  expect(container).toMatchSnapshot()
 })
 
-it('should mount children', () => {
-    const wrapper = mount(withTheme(
-        <ButtonGroup>
-            <Button>First</Button>
-        </ButtonGroup>
-    ))
-    expect(wrapper.find(Button).length).toEqual(1)
+it('should should accept HTML div element props', () => {
+  const { container } = render(<ButtonGroup id='test' />)
+  expect(container.querySelector('div').getAttribute('id')).toEqual('test')
 })
