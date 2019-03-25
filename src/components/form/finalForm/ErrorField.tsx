@@ -23,7 +23,7 @@ export class ErrorField extends React.Component<ErrorFieldProps> {
     const ignore = this.props.ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string')
 
     if (hasError && !ignore) {
-      return <FormError error={error || submitError} />
+      return <FormError>{error || submitError}</FormError>
     }
 
     return null

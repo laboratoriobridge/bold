@@ -1,33 +1,27 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface FormErrorProps extends WithStylesProps {
-    error: string
-    style?: Interpolation
+export interface FormErrorProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  style?: Interpolation
 }
 
-@withStyles
-export class FormError extends React.Component<FormErrorProps, any> {
+export function FormError(props: FormErrorProps) {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-    render() {
-        const { css, theme, style } = this.props
-        const styles: Styles = {
-            wrapper: {
-                display: 'flex',
-                alignItems: 'center',
-                color: theme.pallete.status.danger.main,
-            },
-            icon: {
-                marginLeft: '0.25rem',
-            },
-        }
-        return (
-            <div className={css(styles.wrapper, style)}>
-                {this.props.error}
-            </div>
-        )
-    }
-
+  return <div className={css(classes.wrapper, style)} {...rest} />
 }
+
+export const createStyles = (theme: Theme) => ({
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    color: theme.pallete.status.danger.main,
+  },
+  icon: {
+    marginLeft: '0.25rem',
+  },
+})
