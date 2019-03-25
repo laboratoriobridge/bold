@@ -1,54 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="810px" height="42px" viewBox="0 0 810 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="810px" height="138px" viewBox="0 0 810 138" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Breadcrumb / Default</title>
+    <title>Group 3</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <path d="M12,20 L12,4 C16.41125,4 20,7.58846965 20,12.000625 C20,16.4115303 16.41125,20 12,20 M12,2 C6.48625,2 2,6.485 2,12 C2,17.51375 6.48625,22 12,22 C17.51375,22 22,17.51375 22,12 C22,6.485 17.51375,2 12,2" id="path-1"></path>
+        <rect id="path-1" x="0" y="0" width="800" height="32"></rect>
+        <filter x="-1.0%" y="-21.9%" width="102.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M12,20 L12,4 C16.41125,4 20,7.58846965 20,12.000625 C20,16.4115303 16.41125,20 12,20 M12,2 C6.48625,2 2,6.485 2,12 C2,17.51375 6.48625,22 12,22 C17.51375,22 22,17.51375 22,12 C22,6.485 17.51375,2 12,2" id="path-3"></path>
+        <rect id="path-5" x="0" y="0" width="800" height="32"></rect>
+        <filter x="-1.0%" y="-21.9%" width="102.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.04 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+            </feMerge>
+        </filter>
+        <path d="M12,20 L12,4 C16.41125,4 20,7.58846965 20,12.000625 C20,16.4115303 16.41125,20 12,20 M12,2 C6.48625,2 2,6.485 2,12 C2,17.51375 6.48625,22 12,22 C17.51375,22 22,17.51375 22,12 C22,6.485 17.51375,2 12,2" id="path-7"></path>
     </defs>
-    <g id="Instalação/Atualização" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-241.000000, -147.000000)">
-            <g id="Breadcrumb-/-Default" transform="translate(241.000000, 147.000000)">
-                <image id="Shadow" x="0" y="0" width="810" height="42" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyoAAAAqCAYAAABcIa9aAAAABGdBTUEAALGN5fIAKQAABKVJREFUeAHt201PGzEYhVEorPr//2p3hTR3mhveAhJKbLWLnpGCPR920Nk9Gnh8eDse36ZmBAgQIECAAAECBAgQ+CcCp3xr46Rjf5OvzvuckQABAgQIECBAgAABArcKHDEyFn04T5DMKOl8Xu+1sY8pAQIECBAgQIAAAQIElgQaJxnn/Nj0eWzdOOn47XyvkdJxPG5KgAABAgQIECBAgACBuwRmmLyed/gQKzNU8g0JkgTK/DRSOuY5BwECBAgQIECAAAECBO4ReB8p6YzESoPl2LOhkpv9JFKeLp++VREpB5cfBAgQIECAAAECBAhsEOgblMTJy2W/XGt3nBoquZeLfZPSUMn9xkqecRAgQIAAAQIECBAgQGBVIFGSSPl52ajh0vFhhkqembHy/Xw+Q6V1c9nLQIAAAQIECBAgQIAAgZsFGiMNlR/nHfJyJOfXY4ZKQ6Sx0rcqPb8uMiFAgAABAgQIECBAgMCCQKIknZFomX/B1Sa5vlHphTl23oU9X/h9LCVAgAABAgQIECBA4D8XaJzkf1PSGO2MOZ4SIe+PPpDrnXd8/6xzAgQIECBAgAABAgQI3CLQtuiYtXN+7PVZqNzyJZ4lQIAAAQIECBAgQIDAdgGhsp3UhgQIECBAgAABAgQIrAoIlVVB6wkQIECAAAECBAgQ2C4gVLaT2pAAAQIECBAgQIAAgVUBobIqaD0BAgQIECBAgAABAtsFhMp2UhsSIECAAAECBAgQILAqIFRWBa0nQIAAAQIECBAgQGC7gFDZTmpDAgQIECBAgAABAgRWBYTKqqD1BAgQIECAAAECBAhsFxAq20ltSIAAAQIECBAgQIDAqoBQWRW0ngABAgQIECBAgACB7QJCZTupDQkQIECAAAECBAgQWBUQKquC1hMgQIAAAQIECBAgsF1AqGwntSEBAgQIECBAgAABAqsCQmVV0HoCBAgQIECAAAECBLYLCJXtpDYkQIAAAQIECBAgQGBVQKisClpPgAABAgQIECBAgMB2AaGyndSGBAgQIECAAAECBAisCgiVVUHrCRAgQIAAAQIECBDYLiBUtpPakAABAgQIECBAgACBVQGhsipoPQECBAgQIECAAAEC2wU+C5XT+JbOO45bpgQIECBAgAABAgQIELhZoG3RMRvM+bHh82Xb3phj56/nZxI0Pb8sMRAgQIAAAQIECBAgQOAugTRGjjRGO+OPsaHShzrmoSxupLyc54+56SBAgAABAgQIECBAgMCCQIOkvZHzXuv4MEMl35UbXdA4yTWREh0HAQIECBAgQIAAAQI7BNodaY72xzVS8gUzVPpwouTn5dNIESrRchAgQIAAAQIECBAgsEMgnZFPQiXt8SFWEiCNkIz5X5T5eXp3/3zqIECAAAECBAgQIECAwN0CCZQcDZVGSsfj/nyj0ofzQG7mk3mOxszvMz8JECBAgAABAgQIECBwv8ARI+flbY72x3XH+UYlFxsk83qvXReZECBAgAABAgQIECBAYFFgxsqcH9s2Qjr2u74673NGAgQIECBAgAABAgQI3CrQMOm6D+czSOa8C4wECBAgQIAAAQIECBD4mwJHtPwCmuZ6SIcxK44AAAAASUVORK5CYII="></image>
-                <rect id="Fill" fill="#FFFFFF" x="4" y="5" width="800" height="32"></rect>
-                <rect id="Line" fill="#DCDCE0" x="4" y="36" width="800" height="1"></rect>
-                <g id="Acessibility-icons" transform="translate(628.000000, 9.000000)">
-                    <g id="↳-Contrast-Icon" transform="translate(80.000000, 0.000000)">
-                        <g id="Icon-/-Accessibility-/-Contrast">
-                            <mask id="mask-2" fill="white">
-                                <use xlink:href="#path-1"></use>
-                            </mask>
-                            <use id="🎨-Color" fill="#53595E" fill-rule="evenodd" xlink:href="#path-1"></use>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Images---Light" transform="translate(-75.000000, -1092.000000)">
+            <g id="Group-3" transform="translate(80.000000, 1096.000000)">
+                <g id="Breadcrumb-/-Default">
+                    <g id="Shadow" fill="black" fill-opacity="1">
+                        <use filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    </g>
+                    <rect id="Fill" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="800" height="32"></rect>
+                    <rect id="Line" fill="#DCDCE0" fill-rule="evenodd" x="0" y="31" width="800" height="1"></rect>
+                    <g id="Breadcrumb-/-*-Elements" transform="translate(616.000000, 0.000000)">
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" transform="translate(80.000000, 0.000000)">
+                            <g id="Icon-/-Accessibility-/-Contrast" transform="translate(8.000000, 4.000000)">
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <use id="🎨-Color" fill="#53595E" fill-rule="evenodd" xlink:href="#path-3"></use>
+                            </g>
+                        </g>
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" transform="translate(40.000000, 0.000000)" fill="#53595E" fill-rule="evenodd">
+                            <g id="Icon-/-Accessibility-/-Increase-font" transform="translate(8.000000, 4.000000)">
+                                <path d="M17,11 L17,9 C17,8.33333333 17.3333333,8 18,8 C18.6666667,8 19,8.33333333 19,9 L19,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L19,13 L19,15 C18.9977077,15.6666667 18.6638013,16 17.9982808,16 C17.3327603,16 17,15.6666667 17,15 L17,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 L17,11 Z M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z" id="🎨-Color"></path>
+                            </g>
+                        </g>
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" fill="#53595E" fill-rule="evenodd">
+                            <g id="Icon-/-Accessibility-/-Decrease-font" transform="translate(8.000000, 4.000000)">
+                                <path d="M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z M15,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 Z" id="🎨-Color"></path>
+                            </g>
                         </g>
                     </g>
-                    <g id="↳-Increase-Font-Icon" transform="translate(40.000000, 0.000000)" fill="#53595E">
-                        <g id="Icon-/-Accessibility-/-Increase-font">
-                            <path d="M17,11 L17,9 C17,8.33333333 17.3333333,8 18,8 C18.6666667,8 19,8.33333333 19,9 L19,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L19,13 L19,15 C18.9977077,15.6666667 18.6638013,16 17.9982808,16 C17.3327603,16 17,15.6666667 17,15 L17,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 L17,11 Z M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z" id="🎨-Color"></path>
+                    <g id="Icon-/-Arrows-/-Angle-right" transform="translate(232.000000, 8.000000)" fill="#53595E" fill-rule="evenodd">
+                        <path d="M4.80473785,10.1380712 C4.54438833,10.3984207 4.12227834,10.3984207 3.86192881,10.1380712 C3.60157928,9.87772166 3.60157928,9.45561167 3.86192881,9.19526215 L7.19526215,5.86192881 C7.45561167,5.60157928 7.87772166,5.60157928 8.13807119,5.86192881 L11.4723239,9.19618154 C11.7326734,9.45653107 11.7326734,9.87864105 11.4723239,10.1389906 C11.2119744,10.3993401 10.7898644,10.3993401 10.5295149,10.1389906 L7.66666667,7.27614237 L4.80473785,10.1380712 Z" id="🎨-Color" transform="translate(7.667126, 8.000460) rotate(-270.000000) translate(-7.667126, -8.000460) "></path>
+                    </g>
+                    <g id="Icon-/-Arrows-/-Angle-right" transform="translate(136.000000, 8.000000)" fill="#53595E" fill-rule="evenodd">
+                        <path d="M4.80473785,10.1380712 C4.54438833,10.3984207 4.12227834,10.3984207 3.86192881,10.1380712 C3.60157928,9.87772166 3.60157928,9.45561167 3.86192881,9.19526215 L7.19526215,5.86192881 C7.45561167,5.60157928 7.87772166,5.60157928 8.13807119,5.86192881 L11.4723239,9.19618154 C11.7326734,9.45653107 11.7326734,9.87864105 11.4723239,10.1389906 C11.2119744,10.3993401 10.7898644,10.3993401 10.5295149,10.1389906 L7.66666667,7.27614237 L4.80473785,10.1380712 Z" id="🎨-Color" transform="translate(7.667126, 8.000460) rotate(-270.000000) translate(-7.667126, -8.000460) "></path>
+                    </g>
+                    <text id="✏️-6.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-5.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-4.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-3.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#0A67D1">
+                        <tspan x="256" y="19">Headline 5</tspan>
+                    </text>
+                    <text id="✏️-2.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="160" y="19">Headline 5</tspan>
+                    </text>
+                    <text id="✏️-1.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="64" y="19">Headline 5</tspan>
+                    </text>
+                </g>
+                <g id="Breadcrumb-/-Acessibility" transform="translate(0.000000, 76.000000)">
+                    <g id="Shadow" fill="black" fill-opacity="1">
+                        <use filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    </g>
+                    <rect id="Fill" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="800" height="32"></rect>
+                    <g id="Breadcrumb-/-*-Elements" transform="translate(616.000000, 0.000000)">
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" transform="translate(80.000000, 0.000000)">
+                            <g id="Icon-/-Accessibility-/-Contrast" transform="translate(8.000000, 4.000000)">
+                                <mask id="mask-8" fill="white">
+                                    <use xlink:href="#path-7"></use>
+                                </mask>
+                                <use id="🎨-Color" fill="#53595E" fill-rule="evenodd" xlink:href="#path-7"></use>
+                            </g>
+                        </g>
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" transform="translate(40.000000, 0.000000)" fill="#53595E" fill-rule="evenodd">
+                            <g id="Icon-/-Accessibility-/-Increase-font" transform="translate(8.000000, 4.000000)">
+                                <path d="M17,11 L17,9 C17,8.33333333 17.3333333,8 18,8 C18.6666667,8 19,8.33333333 19,9 L19,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L19,13 L19,15 C18.9977077,15.6666667 18.6638013,16 17.9982808,16 C17.3327603,16 17,15.6666667 17,15 L17,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 L17,11 Z M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z" id="🎨-Color"></path>
+                            </g>
+                        </g>
+                        <g id="Button-/-Ghost-/-Small-/-Icon-/-Default" fill="#0A67D1" fill-rule="evenodd">
+                            <g id="Icon-/-Accessibility-/-Decrease-font" transform="translate(8.000000, 4.000000)">
+                                <path d="M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z M15,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 Z" id="🎨-Color"></path>
+                            </g>
                         </g>
                     </g>
-                    <g id="↳-Decrease-Font-Icon" fill="#53595E">
-                        <g id="Icon-/-Accessibility-/-Decrease-font">
-                            <path d="M9.11159992,15 L4.91348703,15 C4.59256992,16.3491559 4.32124172,17.5088568 4.17891387,18.1161243 C4.11125491,18.4048034 3.74898225,19.1655376 2.79086108,18.9675405 C2.15211364,18.8355424 1.90028462,18.4135771 2.03537402,17.7016448 L4.9246286,7.16445705 C5.25867185,5.72148568 5.95492299,5 7.013382,5 C8.07184101,5 8.76769134,5.72148568 9.10093298,7.16445705 L11.9800216,17.7049591 C12.0784371,18.4480981 11.8132491,18.8689586 11.1844574,18.9675405 C10.24127,19.1154133 9.92796874,18.4049189 9.85928733,18.1161243 C9.71484907,17.5087837 9.4381359,16.3491035 9.11159992,15 Z M8.624294,13 C7.8971454,10.037661 7.12439339,6.99978915 7.013382,6.99978915 C6.87670473,6.99978915 6.10951806,10.0376771 5.39297418,13 L8.624294,13 Z M15,11 L21,11 C21.6666667,11.0022923 22,11.3361987 22,12.0017192 C22,12.6672397 21.6666667,13 21,13 L15,13 C14.3333333,13 14,12.6666667 14,12 C14,11.3333333 14.3333333,11 15,11 Z" id="🎨-Color"></path>
-                        </g>
+                    <g id="Button-/-Ghost-/-Small-/-Text-/-Default" transform="translate(434.000000, 0.000000)" fill="#53595E" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="14" font-weight="bold" line-spacing="20">
+                        <text id="✏️-Label">
+                            <tspan x="8.061" y="20">Restore default settings</tspan>
+                        </text>
                     </g>
+                    <g id="Icon-/-Arrows-/-Angle-right" transform="translate(232.000000, 8.000000)" fill="#53595E" fill-rule="evenodd">
+                        <path d="M4.80473785,10.1380712 C4.54438833,10.3984207 4.12227834,10.3984207 3.86192881,10.1380712 C3.60157928,9.87772166 3.60157928,9.45561167 3.86192881,9.19526215 L7.19526215,5.86192881 C7.45561167,5.60157928 7.87772166,5.60157928 8.13807119,5.86192881 L11.4723239,9.19618154 C11.7326734,9.45653107 11.7326734,9.87864105 11.4723239,10.1389906 C11.2119744,10.3993401 10.7898644,10.3993401 10.5295149,10.1389906 L7.66666667,7.27614237 L4.80473785,10.1380712 Z" id="🎨-Color" transform="translate(7.667126, 8.000460) rotate(-270.000000) translate(-7.667126, -8.000460) "></path>
+                    </g>
+                    <g id="Icon-/-Arrows-/-Angle-right" transform="translate(136.000000, 8.000000)" fill="#53595E" fill-rule="evenodd">
+                        <path d="M4.80473785,10.1380712 C4.54438833,10.3984207 4.12227834,10.3984207 3.86192881,10.1380712 C3.60157928,9.87772166 3.60157928,9.45561167 3.86192881,9.19526215 L7.19526215,5.86192881 C7.45561167,5.60157928 7.87772166,5.60157928 8.13807119,5.86192881 L11.4723239,9.19618154 C11.7326734,9.45653107 11.7326734,9.87864105 11.4723239,10.1389906 C11.2119744,10.3993401 10.7898644,10.3993401 10.5295149,10.1389906 L7.66666667,7.27614237 L4.80473785,10.1380712 Z" id="🎨-Color" transform="translate(7.667126, 8.000460) rotate(-270.000000) translate(-7.667126, -8.000460) "></path>
+                    </g>
+                    <text id="✏️-6.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-5.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-4.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
+                    <text id="✏️-3.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#0A67D1">
+                        <tspan x="256" y="19">Headline 5</tspan>
+                    </text>
+                    <text id="✏️-2.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="160" y="19">Headline 5</tspan>
+                    </text>
+                    <text id="✏️-1.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="64" y="19">Headline 5</tspan>
+                    </text>
                 </g>
-                <g id="2-.-Icon" transform="translate(241.000000, 17.000000)" fill="#53595E">
-                    <path d="M-0.195262146,6.13807119 C-0.455611674,6.39842072 -0.87772166,6.39842072 -1.13807119,6.13807119 C-1.39842072,5.87772166 -1.39842072,5.45561167 -1.13807119,5.19526215 L2.19526215,1.86192881 C2.45561167,1.60157928 2.87772166,1.60157928 3.13807119,1.86192881 L6.47232391,5.19618154 C6.73267344,5.45653107 6.73267344,5.87864105 6.47232391,6.13899058 C6.21197438,6.39934011 5.7898644,6.39934011 5.52951487,6.13899058 L2.66666667,3.27614237 L-0.195262146,6.13807119 Z" id="🎨-Color" transform="translate(2.667126, 4.000460) rotate(-270.000000) translate(-2.667126, -4.000460) "></path>
-                </g>
-                <g id="1.-Icon" transform="translate(145.000000, 17.000000)" fill="#53595E">
-                    <path d="M-0.195262146,6.13807119 C-0.455611674,6.39842072 -0.87772166,6.39842072 -1.13807119,6.13807119 C-1.39842072,5.87772166 -1.39842072,5.45561167 -1.13807119,5.19526215 L2.19526215,1.86192881 C2.45561167,1.60157928 2.87772166,1.60157928 3.13807119,1.86192881 L6.47232391,5.19618154 C6.73267344,5.45653107 6.73267344,5.87864105 6.47232391,6.13899058 C6.21197438,6.39934011 5.7898644,6.39934011 5.52951487,6.13899058 L2.66666667,3.27614237 L-0.195262146,6.13807119 Z" id="🎨-Color" transform="translate(2.667126, 4.000460) rotate(-270.000000) translate(-2.667126, -4.000460) "></path>
-                </g>
-                <text id="✏️-6.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
-                <text id="✏️-5.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
-                <text id="✏️-4.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5"></text>
-                <text id="✏️-3.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#0A67D1">
-                    <tspan x="260" y="24">Headline 5</tspan>
+                <text id="Default-state" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                    <tspan x="363.0535" y="53">Default state</tspan>
                 </text>
-                <text id="✏️-2.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
-                    <tspan x="164" y="24">Headline 5</tspan>
-                </text>
-                <text id="✏️-1.-Label" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
-                    <tspan x="68" y="24">Headline 5</tspan>
+                <text id="Accessibility-option" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                    <tspan x="325.035" y="129">Accessibility option active</tspan>
                 </text>
             </g>
         </g>

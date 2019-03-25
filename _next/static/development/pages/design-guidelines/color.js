@@ -62461,7 +62461,7 @@ function (_React$Component) {
           lineNumber: 30
         },
         __self: this
-      }, "The scales are divided into 10 levels: the colors from 10 to 40 have contrasting warranty of > 4.5:1 in white backgrounds, while the ones from 70 to 100 have the same warranty in dark backgrounds. In this way our components respect the adequate contrast proportions for textual and interactive elements and non interactive elements, in accordance with any palette."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "The scales are divided into 10 levels: the colors from 10 to 40 have a contrasting warranty of > 4.5:1 in white backgrounds, while the ones from 70 to 100 have the same warranty in dark backgrounds. In this way, our components respect the adequate contrast proportions for textual and interactive elements and non-interactive elements, in accordance with any palette."), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "p",
         components: components,
         __source: {
@@ -62498,7 +62498,7 @@ function (_React$Component) {
           lineNumber: 33
         },
         __self: this
-      }, "All the palettes were built to work in an inverted way. In order to apply the dark mode just invert the colors from the center of the scale, what is 50 becomes 60, what is 40 becomes 70, and so on. For a practical example, just click the lamp on our header!"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
+      }, "All the palettes were built to work in an inverted way. In order to apply the dark mode just invert the colors from the center of the scale, what is 50 becomes 60, what is 40 becomes 70, and so it goes. For a practical example, just click the lamp on our header!"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_mdx_js_tag__WEBPACK_IMPORTED_MODULE_7__["MDXTag"], {
         name: "p",
         components: components,
         __source: {

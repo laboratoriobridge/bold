@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="720px" height="153px" viewBox="0 0 720 153" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group 4 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Images---Dark" transform="translate(-1352.000000, -148.000000)">
+            <g id="Group-4-Copy-2" transform="translate(1352.000000, 148.000000)">
+                <path d="M648.5,80.5 L648.5,151.5 L716,151.5 C717.932997,151.5 719.5,149.932997 719.5,148 L719.5,84 C719.5,82.0670034 717.932997,80.5 716,80.5 L648.5,80.5 Z" id="Rectangle-Copy-219" stroke="#2D343B"></path>
+                <g id="Group-3" transform="translate(360.000000, 36.000000) scale(-1, 1) translate(-360.000000, -36.000000) ">
+                    <path d="M648.5,0.5 L648.5,71.5 L716,71.5 C717.932997,71.5 719.5,69.9329966 719.5,68 L719.5,4 C719.5,2.06700338 717.932997,0.5 716,0.5 L648.5,0.5 Z" id="Rectangle-Copy-229" stroke="#2D343B"></path>
+                    <polygon id="Rectangle-Copy-230" fill="#2D343B" points="576 0 648 0 648 72 576 72"></polygon>
+                    <polygon id="Rectangle-Copy-231" fill="#41484F" points="504 0 576 0 576 72 504 72"></polygon>
+                    <polygon id="Rectangle-Copy-232" fill="#53595E" points="432 0 504 0 504 72 432 72"></polygon>
+                    <polygon id="Rectangle-Copy-233" fill="#676C70" points="360 0 432 0 432 72 360 72"></polygon>
+                    <polygon id="Rectangle-Copy-234" fill="#818489" points="288 0 360 0 360 72 288 72"></polygon>
+                    <polygon id="Rectangle-Copy-235" fill="#B9B9BD" points="216 0 288 0 288 72 216 72"></polygon>
+                    <polygon id="Rectangle-Copy-236" fill="#DCDCE0" points="144 0 216 0 216 72 144 72"></polygon>
+                    <polygon id="Rectangle-Copy-237" fill="#F2F2F7" points="72 0 144 0 144 72 72 72"></polygon>
+                    <path d="M4,0 L72,0 L72,72 L4,72 C1.790861,72 2.705415e-16,70.209139 0,68 L0,4 C-2.705415e-16,1.790861 1.790861,4.05812251e-16 4,0 Z" id="Rectangle-Copy-238" fill="#FFFFFF"></path>
+                </g>
+                <polygon id="Rectangle-Copy-220" fill="#2D343B" points="576 80 648 80 648 152 576 152"></polygon>
+                <polygon id="Rectangle-Copy-221" fill="#41484F" points="504 80 576 80 576 152 504 152"></polygon>
+                <polygon id="Rectangle-Copy-222" fill="#53595E" points="432 80 504 80 504 152 432 152"></polygon>
+                <polygon id="Rectangle-Copy-223" fill="#676C70" points="360 80 432 80 432 152 360 152"></polygon>
+                <polygon id="Rectangle-Copy-224" fill="#818489" points="288 80 360 80 360 152 288 152"></polygon>
+                <polygon id="Rectangle-Copy-225" fill="#B9B9BD" points="216 80 288 80 288 152 216 152"></polygon>
+                <polygon id="Rectangle-Copy-226" fill="#DCDCE0" points="144 80 216 80 216 152 144 152"></polygon>
+                <polygon id="Rectangle-Copy-227" fill="#F2F2F7" points="72 80 144 80 144 152 72 152"></polygon>
+                <path d="M4,80.2302158 L72,80.2302158 L72,152.230216 L4,152.230216 C1.790861,152.230216 2.705415e-16,150.439355 0,148.230216 L0,84.2302158 C-2.705415e-16,82.0210768 1.790861,80.2302158 4,80.2302158 Z" id="Rectangle-Copy-228" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
