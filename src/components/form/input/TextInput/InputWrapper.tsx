@@ -97,7 +97,7 @@ const createStyles = (theme: Theme, { icon, iconPosition, clearVisible }: InputW
     } as CSSProperties,
     iconWrapper: {
       position: 'absolute',
-      backgroundColor: theme.pallete.surface.background,
+      backgroundColor: theme.pallete.gray.c90,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
