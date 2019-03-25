@@ -1,34 +1,34 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../../styles'
+import { Theme, useStyles } from '../../../../styles'
 import { TableCell, TableRow } from '../Table'
 
-export interface TablePlaceholderRowProps extends WithStylesProps {
-    colSpan: number
-    message?: string
+export interface TablePlaceholderRowProps {
+  colSpan: number
+  message?: string
 }
 
-@withStyles
-export class TablePlaceholderRow extends React.PureComponent<TablePlaceholderRowProps> {
-    static defaultProps: Partial<TablePlaceholderRowProps> = {
-        message: 'Nenhum registro encontrado',
-    }
+export const TablePlaceholderRow = (props: TablePlaceholderRowProps) => {
+  const { colSpan, message } = props
+  const { classes } = useStyles(createStyles)
 
-    render() {
-        const { theme, colSpan, message } = this.props
-        const styles: Styles = {
-            cell: {
-                color: theme.pallete.text.secondary,
-                fontStyle: 'italic',
-                textAlign: 'center',
-            },
-        }
-        return (
-            <TableRow>
-                <TableCell colSpan={colSpan} style={styles.cell}>
-                    {message}
-                </TableCell>
-            </TableRow>
-        )
-    }
+  return (
+    <TableRow>
+      <TableCell colSpan={colSpan} style={classes.cell}>
+        {message}
+      </TableCell>
+    </TableRow>
+  )
 }
+
+TablePlaceholderRow.defaultProps = {
+  message: 'Nenhum registro encontrado',
+} as Partial<TablePlaceholderRowProps>
+
+export const createStyles = (theme: Theme) => ({
+  cell: {
+    color: theme.pallete.text.secondary,
+    fontStyle: 'italic',
+    textAlign: 'center',
+  } as CSSProperties,
+})
