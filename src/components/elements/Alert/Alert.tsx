@@ -19,7 +19,7 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   }
 }
 
-export const Alert = (props: AlertProps) => {
+export function Alert(props: AlertProps) {
   const { styles, type, children, onCloseClick, inline, ...rest } = props
   const { classes, css, theme } = useStyles(createStyles, props)
   const typeStyle = createTypesStyles(theme)[type]

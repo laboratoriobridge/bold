@@ -28,7 +28,7 @@ export interface CalendarProps extends Omit<MonthViewProps, 'visibleDate'> {
   modifierStyles?: Partial<DayModifierStyleMap>
 }
 
-export const Calendar = (props: CalendarProps) => {
+export function Calendar(props: CalendarProps) {
   const { initialVisibleDate, modifiers, modifierStyles, ...rest } = props
   const { classes, theme } = useStyles(createStyles)
 
@@ -38,7 +38,7 @@ export const Calendar = (props: CalendarProps) => {
   const allModifierStyles = () => ({ ...defaultModifierStyles, ...modifierStyles })
 
   const handleDayClick = (day: Date) => {
-    if (!allModifiers().disabled(day, this.props)) {
+    if (!allModifiers().disabled(day, props)) {
       setVisibleDate(day)
       return props.onDayClick && props.onDayClick(day)
     }

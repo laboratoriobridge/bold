@@ -7,7 +7,7 @@ export interface SwitchProps extends InputProps {
   label?: string
 }
 
-export const Switch = (props: SwitchProps) => {
+export function Switch(props: SwitchProps) {
   const { label, ...rest } = props
   const { classes } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)

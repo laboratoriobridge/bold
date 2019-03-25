@@ -10,7 +10,7 @@ export interface TableRowProps extends Omit<React.HTMLAttributes<any>, 'style'> 
   style?: Interpolation
 }
 
-export const TableRow = (props: TableRowProps) => {
+export function TableRow(props: TableRowProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

@@ -8,7 +8,7 @@ export interface ModalBodyProps extends Omit<React.HTMLAttributes<HTMLDivElement
   style?: Interpolation
 }
 
-export const ModalBody = (props: ModalBodyProps) => {
+export function ModalBody(props: ModalBodyProps) {
   const { children, style, ...rest } = props
   const { classes, css } = useStyles(() => ({
     body: {

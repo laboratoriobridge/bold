@@ -11,7 +11,7 @@ export interface YearControlProps {
   renderYear?(date: Date): React.ReactNode
 }
 
-export const YearControl = (props: YearControlProps) => {
+export function YearControl(props: YearControlProps) {
   const { visibleDate, onChange, renderYear } = props
 
   const handleNext = () => {

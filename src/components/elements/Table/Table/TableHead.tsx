@@ -10,7 +10,7 @@ export interface TableHeadProps extends Omit<React.HTMLAttributes<any>, 'style'>
   style?: Interpolation
 }
 
-export const TableHead = (props: TableHeadProps) => {
+export function TableHead(props: TableHeadProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

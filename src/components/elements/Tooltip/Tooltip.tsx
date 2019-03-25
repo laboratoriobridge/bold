@@ -23,7 +23,7 @@ export interface TooltipState {
   visible: boolean
 }
 
-export const Tooltip = (props: TooltipProps) => {
+export function Tooltip(props: TooltipProps) {
   const { text, children, offset, style: externalStyle, container, ...rest } = props
   const child = React.Children.only(children)
 

@@ -14,7 +14,7 @@ export interface FlowProps {
   children?: React.ReactNode
 }
 
-export const Flow = (props: FlowProps) => {
+export function Flow(props: FlowProps) {
   const { direction, style } = props
   const { classes, css } = useStyles(createStyles, props)
 

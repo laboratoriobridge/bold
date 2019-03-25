@@ -9,7 +9,7 @@ export interface TableLoadingRowProps {
   message?: string
 }
 
-export const TableLoadingRow = (props: TableLoadingRowProps) => {
+export function TableLoadingRow(props: TableLoadingRowProps) {
   const { colSpan, message } = props
   const { classes } = useStyles(createStyles)
 

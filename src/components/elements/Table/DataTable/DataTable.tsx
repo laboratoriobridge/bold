@@ -91,7 +91,7 @@ DataTable.defaultProps = {
   hovered: true,
 } as Partial<DataTableProps<any>>
 
-export const DataTableDefault = (props: DataTableRenderProps) => {
+export function DataTableDefault(props: DataTableRenderProps) {
   const { columns, rows, loading, onSortChange, sort, getHeaderProps, getColumn, render, onRowClick, ...rest } = props
 
   return (

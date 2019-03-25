@@ -11,7 +11,7 @@ export interface HeadingProps extends Omit<React.HTMLAttributes<HTMLHeadingEleme
   style?: Interpolation
 }
 
-export const Heading = (props: HeadingProps) => {
+export function Heading(props: HeadingProps) {
   const { level, children, style, color, ...rest } = props
   const { theme, css } = useCss()
   const styles = {

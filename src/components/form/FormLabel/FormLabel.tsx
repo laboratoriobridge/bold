@@ -10,7 +10,7 @@ export interface FormLabelProps extends Omit<React.LabelHTMLAttributes<HTMLLabel
   style?: Interpolation
 }
 
-export const FormLabel = (props: FormLabelProps) => {
+export function FormLabel(props: FormLabelProps) {
   const { label, required, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 

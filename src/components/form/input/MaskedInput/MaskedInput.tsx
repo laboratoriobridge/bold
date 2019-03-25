@@ -9,7 +9,7 @@ export type MaskType = ReactMaskedInputProps['mask']
 
 export interface MaskedInputProps extends Omit<ReactMaskedInputProps, 'style'>, TextInputProps {}
 
-export const MaskedInput = (props: MaskedInputProps) => {
+export function MaskedInput(props: MaskedInputProps) {
   const { inputRef, style, ...rest } = props
 
   const renderInput = (ref: (inputElement: HTMLElement) => void, p: any) => {

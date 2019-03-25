@@ -13,7 +13,7 @@ export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperPr
   onClear?: InputWrapperProps['onClear']
 }
 
-export const TextInput = (props: TextInputProps) => {
+export function TextInput(props: TextInputProps) {
   const { icon, iconPosition, iconDisabled, onIconClick, clearable, onClear, ...rest } = props
 
   const isClearVisible = (): boolean => !props.disabled && (!!props.value || !!props.defaultValue)

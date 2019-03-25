@@ -8,7 +8,7 @@ export interface ModalBackdropProps extends Omit<React.HTMLAttributes<HTMLDivEle
   style?: Interpolation
 }
 
-export const ModalBackdrop = (props: ModalBackdropProps) => {
+export function ModalBackdrop(props: ModalBackdropProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(styles)
 

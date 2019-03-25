@@ -21,7 +21,7 @@ export interface TableFooterProps extends WithStylesProps {
   onSizeChange(size: number): void
 }
 
-export const TableFooter = (props: TableFooterProps) => {
+export function TableFooter(props: TableFooterProps) {
   const { style, page, totalPages, totalElements, pageSize, sizeOptions, onSizeChange, onPageChange } = props
   const { classes, css } = useStyles(createStyles)
 

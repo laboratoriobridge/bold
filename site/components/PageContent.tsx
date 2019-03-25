@@ -3,7 +3,7 @@ import { Theme, useStyles } from '../../lib'
 import { APP_HEADER_HEIGHT } from './AppHeader'
 import { SIDE_NAV_WIDTH } from './SideNav'
 
-export const PageContent = (props: any) => {
+export function PageContent(props: any) {
   const { children } = props
   const { classes } = useStyles(createStyles)
   return (

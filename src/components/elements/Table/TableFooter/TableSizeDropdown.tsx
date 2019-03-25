@@ -11,7 +11,7 @@ export interface TableSizeDropdownProps {
   onChange(size: number): any
 }
 
-export const TableSizeDropdown = (props: TableSizeDropdownProps) => {
+export function TableSizeDropdown(props: TableSizeDropdownProps) {
   const { options, size, onChange } = props
 
   const items: DropdownItemConfig[] = options.map(op => ({

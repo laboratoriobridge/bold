@@ -16,7 +16,7 @@ export interface TextInputBaseProps extends Omit<InputProps, 'style'> {
  * Primitive of input of text (and derivative) types.
  * Provides only the stylization of the <input /> component.
  */
-export const TextInputBase = (props: TextInputBaseProps) => {
+export function TextInputBase(props: TextInputBaseProps) {
   const { status, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 

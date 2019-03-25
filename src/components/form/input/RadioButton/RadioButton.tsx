@@ -7,7 +7,7 @@ export interface RadioButtonProps extends InputProps {
   label: React.ReactNode
 }
 
-export const RadioButton = (props: RadioButtonProps) => {
+export function RadioButton(props: RadioButtonProps) {
   const { label, ...rest } = props
   const { classes } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)

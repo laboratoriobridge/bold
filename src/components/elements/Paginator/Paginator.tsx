@@ -22,7 +22,7 @@ export interface PaginatorProps {
   onChange?(page: number): void
 }
 
-export const Paginator = (props: PaginatorProps) => {
+export function Paginator(props: PaginatorProps) {
   const { page, total, onChange } = props
 
   const [inputValue, setInputValue] = useState<number>(0)

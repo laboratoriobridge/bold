@@ -11,7 +11,7 @@ export interface ThemeProviderProps {
 
 export const ThemeContext = React.createContext<Theme>(null)
 
-export const ThemeProvider = (props: ThemeProviderProps) => {
+export function ThemeProvider(props: ThemeProviderProps) {
   const { theme, children } = props
 
   return (

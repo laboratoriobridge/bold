@@ -8,7 +8,7 @@ export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivEleme
   style?: Interpolation
 }
 
-export const ModalFooter = (props: ModalFooterProps) => {
+export function ModalFooter(props: ModalFooterProps) {
   const { style, children, ...rest } = props
   const { classes, css } = useStyles(theme => ({
     footer: {

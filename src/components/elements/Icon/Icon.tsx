@@ -10,39 +10,32 @@ import { IconMap, Icons } from './generated/Icons'
 export type IconColor = TextColor | 'none'
 
 export interface IconProps extends Omit<React.SVGAttributes<SVGElement>, 'style'> {
-    icon: Icons
-    fill?: IconColor
-    stroke?: IconColor
-    size?: number
-    style?: Interpolation
+  icon: Icons
+  fill?: IconColor
+  stroke?: IconColor
+  size?: number
+  style?: Interpolation
 }
 
 export const getIconColor = (theme: Theme, color: IconColor) => {
-    return !color || color === 'none' ? color : getTextColor(theme, color)
+  return !color || color === 'none' ? color : getTextColor(theme, color)
 }
 
-export const Icon = (props: IconProps) => {
-    const { style, icon, fill, stroke, size, ...rest } = props
-    const SelectedIcon = IconMap[icon]
+export function Icon(props: IconProps) {
+  const { style, icon, fill, stroke, size, ...rest } = props
+  const SelectedIcon = IconMap[icon]
 
-    const { classes, css } = useStyles(theme => ({
-        icon: {
-            fill: fill ? getIconColor(theme, fill) : 'currentColor',
-            stroke: stroke && getIconColor(theme, stroke),
-            fontSize: size && size + 'rem',
-        },
-    }))
+  const { classes, css } = useStyles(theme => ({
+    icon: {
+      fill: fill ? getIconColor(theme, fill) : 'currentColor',
+      stroke: stroke && getIconColor(theme, stroke),
+      fontSize: size && size + 'rem',
+    },
+  }))
 
-    return (
-        <SelectedIcon
-            role='img'
-            aria-hidden='true'
-            className={css(classes.icon, style)}
-            {...rest}
-        />
-    )
+  return <SelectedIcon role='img' aria-hidden='true' className={css(classes.icon, style)} {...rest} />
 }
 
 Icon.defaultProps = {
-    size: 1.5,
+  size: 1.5,
 } as Partial<IconProps>

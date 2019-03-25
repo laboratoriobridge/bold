@@ -15,7 +15,7 @@ export interface InputWrapperProps {
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
 }
 
-export const InputWrapper = (props: InputWrapperProps) => {
+export function InputWrapper(props: InputWrapperProps) {
   const { children, icon, iconPosition, iconDisabled, onIconClick, clearVisible, onClear } = props
   const { classes, css } = useStyles(createStyles, props)
 

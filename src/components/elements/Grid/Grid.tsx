@@ -16,7 +16,7 @@ export interface GridProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   style?: Interpolation
 }
 
-export const Grid = (props: GridProps) => {
+export function Grid(props: GridProps) {
   const { style, wrap, alignItems, justifyContent, direction, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 

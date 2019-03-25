@@ -16,7 +16,7 @@ export interface CellProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   flexBasis?: CSSProperties['flexBasis']
 }
 
-export const Cell = (props: CellProps) => {
+export function Cell(props: CellProps) {
   const { size, style, alignSelf, flexGrow, flexShrink, flexBasis, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 

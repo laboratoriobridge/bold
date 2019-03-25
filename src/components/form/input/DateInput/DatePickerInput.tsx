@@ -25,7 +25,7 @@ export interface DatePickerInputProps extends DateInputProps {
   calendarProps?: CalendarProps
 }
 
-export const DatePickerInput = (props: DatePickerInputProps) => {
+export function DatePickerInput(props: DatePickerInputProps) {
   const inputRef = useRef<HTMLInputElement>()
   const controller = useRef<PopperController>()
 

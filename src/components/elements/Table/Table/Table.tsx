@@ -11,7 +11,7 @@ export interface TableProps extends Omit<React.TableHTMLAttributes<any>, 'style'
   style?: Interpolation
 }
 
-export const Table = (props: TableProps) => {
+export function Table(props: TableProps) {
   const { hovered, style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

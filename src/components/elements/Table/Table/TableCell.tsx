@@ -10,7 +10,7 @@ export interface TableCellProps extends Omit<React.TdHTMLAttributes<any>, 'style
   style?: Interpolation
 }
 
-export const TableCell = (props: TableCellProps) => {
+export function TableCell(props: TableCellProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

@@ -10,7 +10,7 @@ export interface SortableLabelProps {
   onChange(sortDirection: SortDirection, shiftKey?: boolean): any
 }
 
-export const SortableLabel = (props: SortableLabelProps) => {
+export function SortableLabel(props: SortableLabelProps) {
   const { direction, onChange, children } = props
   const { classes } = useStyles(createStyles, props)
 

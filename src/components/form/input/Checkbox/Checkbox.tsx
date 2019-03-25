@@ -11,7 +11,7 @@ export interface CheckboxProps extends Omit<InputProps, 'style'> {
   indeterminate?: boolean
 }
 
-export const Checkbox = (props: CheckboxProps) => {
+export function Checkbox(props: CheckboxProps) {
   const { label, indeterminate, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)

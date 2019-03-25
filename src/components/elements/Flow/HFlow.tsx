@@ -4,6 +4,6 @@ import { Flow, FlowProps } from './Flow'
 
 export interface HFlowProps extends FlowProps {}
 
-export const HFlow = (props: HFlowProps) => {
+export function HFlow(props: HFlowProps) {
   return <Flow direction='horizontal' vSpacing={0} hSpacing={1} {...props} />
 }

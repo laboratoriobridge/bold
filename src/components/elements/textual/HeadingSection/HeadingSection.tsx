@@ -12,7 +12,7 @@ export interface HeadingSectionProps {
   children?: React.ReactNode
 }
 
-export const HeadingSection = (props: HeadingSectionProps) => {
+export function HeadingSection(props: HeadingSectionProps) {
   const { style, title, children, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 

@@ -10,7 +10,7 @@ export interface TableBodyProps extends Omit<React.HTMLAttributes<any>, 'style'>
   style?: Interpolation
 }
 
-export const TableBody = (props: TableBodyProps) => {
+export function TableBody(props: TableBodyProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

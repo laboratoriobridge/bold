@@ -9,7 +9,7 @@ export interface SelectMenuProps extends Omit<React.HTMLAttributes<HTMLUListElem
   style?: Interpolation
 }
 
-export const SelectMenu = (props: SelectMenuProps) => {
+export function SelectMenu(props: SelectMenuProps) {
   const { style, menuRef, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 

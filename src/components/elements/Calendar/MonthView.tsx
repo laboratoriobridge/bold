@@ -15,7 +15,7 @@ export interface MonthViewProps {
   createDayStyles?(day: Date, props: MonthViewProps): Interpolation
 }
 
-export const MonthView = (props: MonthViewProps) => {
+export function MonthView(props: MonthViewProps) {
   const { visibleDate, renderDay, renderWeekName, createDayStyles, onDayClick, onDayHover } = props
   const month = createMonthMatrix(visibleDate)
   const { classes, css } = useStyles(createStyles)

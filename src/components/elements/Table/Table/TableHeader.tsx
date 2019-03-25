@@ -14,7 +14,7 @@ export interface TableHeaderProps extends Omit<React.ThHTMLAttributes<any>, 'sty
   onSortChange?(direction: SortDirection, shiftKey?: boolean): any
 }
 
-export const TableHeader = (props: TableHeaderProps) => {
+export function TableHeader(props: TableHeaderProps) {
   const { sortable, sortDirection, onSortChange, style, ...rest } = props
   const { classes, css } = useStyles(createTableStyles)
 

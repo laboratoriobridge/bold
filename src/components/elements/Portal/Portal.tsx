@@ -6,7 +6,7 @@ export interface PortalProps {
   children: React.ReactNode
 }
 
-export const Portal = (props: PortalProps) => {
+export function Portal(props: PortalProps) {
   const { children, container } = props
 
   const mountNode = useRef<Element>(document && document.body)

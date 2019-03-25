@@ -12,7 +12,7 @@ export interface MonthControlProps {
   renderMonth?(date: Date): React.ReactNode
 }
 
-export const MonthControl = (props: MonthControlProps) => {
+export function MonthControl(props: MonthControlProps) {
   const { visibleDate, onChange, renderMonth } = props
 
   const handleNext = () => {

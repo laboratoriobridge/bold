@@ -15,7 +15,7 @@ export interface ButtonBaseRenderProps extends React.ButtonHTMLAttributes<HTMLBu
   innerRef?: React.Ref<HTMLButtonElement>
 }
 
-export const ButtonBase = (props: ButtonBaseProps) => {
+export function ButtonBase(props: ButtonBaseProps) {
   const { onClick, render, onLoadingChange, ...rest } = props
 
   const startLoading = () => {
@@ -36,7 +36,7 @@ export const ButtonBase = (props: ButtonBaseProps) => {
         promise
           .then(() => stopLoading())
           .catch(error => {
-            this.stopLoading()
+            stopLoading()
             throw new Error(error)
           })
       }

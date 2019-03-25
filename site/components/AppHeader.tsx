@@ -9,7 +9,7 @@ export interface AppHeaderProps {
   onThemeSwitch(): void
 }
 
-export const AppHeader = (props: AppHeaderProps) => {
+export function AppHeader(props: AppHeaderProps) {
   const { currentTheme, onThemeSwitch } = props
   const { classes } = useStyles(createStyles)
 

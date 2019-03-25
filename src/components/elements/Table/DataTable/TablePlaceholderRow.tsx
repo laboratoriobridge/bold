@@ -8,7 +8,7 @@ export interface TablePlaceholderRowProps {
   message?: string
 }
 
-export const TablePlaceholderRow = (props: TablePlaceholderRowProps) => {
+export function TablePlaceholderRow(props: TablePlaceholderRowProps) {
   const { colSpan, message } = props
   const { classes } = useStyles(createStyles)
 

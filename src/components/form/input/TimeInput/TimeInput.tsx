@@ -15,7 +15,7 @@ export interface TimeInputProps extends Omit<MaskedInputProps, 'onChange'> {
   onChange?(value: string): any
 }
 
-export const TimeInput = (props: TimeInputProps) => {
+export function TimeInput(props: TimeInputProps) {
   const { onChange, onInputChange, ...rest } = props
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
