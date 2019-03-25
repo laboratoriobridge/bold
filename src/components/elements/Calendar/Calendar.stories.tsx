@@ -14,7 +14,7 @@ const isToday = (day: Date) => isSameDay(new Date(), day)
 
 const isOddDay = (day: Date) => day.getDate() % 2 === 1
 
-storiesOf('Components/Calendar', module)
+storiesOf('Components|Calendar', module)
   .add('default', () => (
     <Calendar
       onDayClick={action('day-click')}

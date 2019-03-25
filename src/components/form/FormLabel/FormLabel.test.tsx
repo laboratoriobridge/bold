@@ -1,15 +1,13 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../test'
+import { render } from 'react-testing-library'
 
 import { FormLabel } from './'
 
 it('should render correctly', () => {
-    expect(render(withTheme(<FormLabel label='Label' />))).toMatchSnapshot()
-    expect(render(withTheme(<FormLabel label='Label' htmlFor='test' required />))).toMatchSnapshot()
+  expect(render(<FormLabel label='Label' />).container).toMatchSnapshot()
+  expect(render(<FormLabel label='Label' htmlFor='test' required />).container).toMatchSnapshot()
 })
 
 it('should accept the style prop', () => {
-    expect(render(withTheme(<FormLabel label='Label' style={{ color: 'blue' }} />))).toMatchSnapshot()
+  expect(render(<FormLabel label='Label' style={{ color: 'blue' }} />).container).toMatchSnapshot()
 })

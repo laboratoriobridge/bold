@@ -5,7 +5,7 @@ import { HFlow } from '../Flow'
 
 import { Tag } from './Tag'
 
-storiesOf('Components/Tag', module).add('default', () => (
+storiesOf('Components|Tag', module).add('default', () => (
   <HFlow>
     <Tag>Normal</Tag>
     <Tag type='alert'>Alert</Tag>

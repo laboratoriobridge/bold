@@ -6,11 +6,6 @@ import { withForm } from '../../../../stories-addons'
 
 import { MonthField } from './MonthField'
 
-storiesOf('Form/MonthField', module)
-    .addDecorator(withForm())
-    .add('default', () => (
-        <MonthField
-            onChange={action('changed')}
-            name='month'
-        />
-    ))
+storiesOf('Form|MonthField', module)
+  .addDecorator(withForm())
+  .add('default', () => <MonthField onChange={action('changed')} name='month' />)

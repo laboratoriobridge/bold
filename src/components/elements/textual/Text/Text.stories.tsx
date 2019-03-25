@@ -11,15 +11,14 @@ const tags: TextTag[] = ['span', 'p']
 const fontStyles: FontStyle[] = ['normal', 'italic']
 export const colors: TextColor[] = ['normal', 'secondary', 'disabled', 'primary', 'danger', 'info', 'alert', 'success']
 
-storiesOf('Textual', module)
-    .add('Text', () => (
-        <Text
-            size={number('size', 1)}
-            color={select('color', colors, 'normal')}
-            weight={select('weight', weights, 'normal')}
-            tag={select('tag', tags, 'span')}
-            fontStyle={select('fontStyle', fontStyles, 'normal')}
-        >
-            {text('text', 'text here')}
-        </Text>
-    ))
+storiesOf('Components|Textual', module).add('Text', () => (
+  <Text
+    size={number('size', 1)}
+    color={select('color', colors, 'normal')}
+    weight={select('weight', weights, 'normal')}
+    tag={select('tag', tags, 'span')}
+    fontStyle={select('fontStyle', fontStyles, 'normal')}
+  >
+    {text('text', 'text here')}
+  </Text>
+))

@@ -5,7 +5,7 @@ import React from 'react'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
-storiesOf('Components/Table', module).add('Table', () => (
+storiesOf('Components|Table', module).add('Table', () => (
   <Table hovered={boolean('hovered', false)}>
     <TableHead>
       <TableRow>

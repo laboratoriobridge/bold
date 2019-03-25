@@ -4,13 +4,7 @@ import React from 'react'
 
 import { Cep, Cpf, Telefone } from './maskedLabels'
 
-storiesOf('Textual', module)
-    .add('Telefone', () => (
-        <Telefone value={text('value', '47997773734')} />
-    ))
-    .add('Cep', () => (
-        <Cep value={text('value', '88040420')} />
-    ))
-    .add('Cpf', () => (
-        <Cpf value={text('value', '18247075620')} />
-    ))
+storiesOf('Components|Textual', module)
+  .add('Telefone', () => <Telefone value={text('value', '47997773734')} />)
+  .add('Cep', () => <Cep value={text('value', '88040420')} />)
+  .add('Cpf', () => <Cpf value={text('value', '18247075620')} />)

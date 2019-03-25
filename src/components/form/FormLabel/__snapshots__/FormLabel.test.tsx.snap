@@ -6,11 +6,13 @@ exports[`should accept the style prop 1`] = `
   color: blue;
 }
 
-<label
-  class="emotion-0"
->
-  Label
-</label>
+<div>
+  <label
+    class="emotion-0"
+  >
+    Label
+  </label>
+</div>
 `;
 
 exports[`should render correctly 1`] = `
@@ -18,11 +20,13 @@ exports[`should render correctly 1`] = `
   font-weight: bold;
 }
 
-<label
-  class="emotion-0"
->
-  Label
-</label>
+<div>
+  <label
+    class="emotion-0"
+  >
+    Label
+  </label>
+</div>
 `;
 
 exports[`should render correctly 2`] = `
@@ -35,16 +39,18 @@ exports[`should render correctly 2`] = `
   margin-left: 0.25rem;
 }
 
-<label
-  class="emotion-1"
-  for="test"
->
-  Label
-  <span
-    class="emotion-0"
-    title="Campo obrigatório"
+<div>
+  <label
+    class="emotion-1"
+    for="test"
   >
-    *
-  </span>
-</label>
+    Label
+    <span
+      class="emotion-0"
+      title="Campo obrigatório"
+    >
+      *
+    </span>
+  </label>
+</div>
 `;

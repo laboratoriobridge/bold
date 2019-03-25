@@ -6,15 +6,17 @@ exports[`should accept color prop 1`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h1
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 1
-  </h1>
-  Content section 1
+    <h1
+      class="emotion-0"
+    >
+      Heading section title 1
+    </h1>
+    Content section 1
+  </div>
 </div>
 `;
 
@@ -27,15 +29,17 @@ exports[`should accept style prop 1`] = `
   color: red;
 }
 
-<div
-  class="emotion-1"
->
-  <h1
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 1
-  </h1>
-  Content section 1
+    <h1
+      class="emotion-0"
+    >
+      Heading section title 1
+    </h1>
+    Content section 1
+  </div>
 </div>
 `;
 
@@ -44,15 +48,17 @@ exports[`should render correctly 1`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h1
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 1
-  </h1>
-  Content section 1
+    <h1
+      class="emotion-0"
+    >
+      Heading section title 1
+    </h1>
+    Content section 1
+  </div>
 </div>
 `;
 
@@ -61,15 +67,17 @@ exports[`should render correctly 2`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h2
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 2
-  </h2>
-  Content section 2
+    <h2
+      class="emotion-0"
+    >
+      Heading section title 2
+    </h2>
+    Content section 2
+  </div>
 </div>
 `;
 
@@ -78,15 +86,17 @@ exports[`should render correctly 3`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h3
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 3
-  </h3>
-  Content section 3
+    <h3
+      class="emotion-0"
+    >
+      Heading section title 3
+    </h3>
+    Content section 3
+  </div>
 </div>
 `;
 
@@ -95,15 +105,17 @@ exports[`should render correctly 4`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h4
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 4
-  </h4>
-  Content section 4
+    <h4
+      class="emotion-0"
+    >
+      Heading section title 4
+    </h4>
+    Content section 4
+  </div>
 </div>
 `;
 
@@ -112,15 +124,17 @@ exports[`should render correctly 5`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h5
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 5
-  </h5>
-  Content section 5
+    <h5
+      class="emotion-0"
+    >
+      Heading section title 5
+    </h5>
+    Content section 5
+  </div>
 </div>
 `;
 
@@ -129,14 +143,16 @@ exports[`should render correctly 6`] = `
   margin-bottom: 1rem;
 }
 
-<div
-  class="emotion-1"
->
-  <h6
-    class="emotion-0"
+<div>
+  <div
+    class="emotion-1"
   >
-    Heading section title 6
-  </h6>
-  Content section 6
+    <h6
+      class="emotion-0"
+    >
+      Heading section title 6
+    </h6>
+    Content section 6
+  </div>
 </div>
 `;

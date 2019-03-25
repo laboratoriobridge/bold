@@ -7,7 +7,7 @@ import { colors } from '../Text/Text.stories'
 
 import { Heading } from './Heading'
 
-storiesOf('Textual', module).add('Heading', () => (
+storiesOf('Components|Textual', module).add('Heading', () => (
   <VFlow>
     <Heading level={1} color={select('color', colors, 'normal')}>
       Heading level 1

@@ -278,6 +278,10 @@ exports[`renders correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
+.emotion-10:required {
+  box-shadow: none;
+}
+
 .emotion-10::-webkit-input-placeholder {
   color: #B9B9BD;
 }

@@ -142,6 +142,10 @@ exports[`should render correctly 1`] = `
   margin: 0 0.5rem 0 0.25rem;
 }
 
+.emotion-2:required {
+  box-shadow: none;
+}
+
 .emotion-2::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -327,6 +331,10 @@ exports[`should render correctly 2`] = `
   width: 47px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-2:required {
+  box-shadow: none;
 }
 
 .emotion-2::-webkit-input-placeholder {
@@ -568,6 +576,10 @@ exports[`should render correctly 3`] = `
   width: 47px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-2:required {
+  box-shadow: none;
 }
 
 .emotion-2::-webkit-input-placeholder {

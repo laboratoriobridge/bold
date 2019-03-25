@@ -7,7 +7,7 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { TextAreaField } from './TextAreaField'
 
-storiesOf('Form/TextAreaField', module)
+storiesOf('Form|TextAreaField', module)
   .addDecorator(withForm())
   .add('default', () => (
     <TextAreaField

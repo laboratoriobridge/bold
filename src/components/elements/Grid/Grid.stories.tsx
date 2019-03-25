@@ -22,7 +22,7 @@ const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'ba
 const alignSelfOptions: AlignSelf[] = ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']
 const directionOptions: Direction[] = ['row', 'row-reverse', 'column', 'column-reverse']
 
-storiesOf('Grid', module)
+storiesOf('Components|Grid', module)
   .add('Grid/Cell', () => (
     <Grid>
       <Cell size={6} style={styles.bg}>
