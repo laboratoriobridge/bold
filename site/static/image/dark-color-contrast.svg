@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="304px" height="525px" viewBox="0 0 304 525" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
-    <title>Group 3 Copy</title>
+    <title>Group 3 Copy 2</title>
     <desc>Created with Sketch.</desc>
     <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Images---Light" transform="translate(-80.000000, -153.000000)">
-            <g id="Group-3-Copy" transform="translate(80.000000, 148.000000)">
+        <g id="Images---Dark" transform="translate(-82.000000, -153.000000)">
+            <g id="Group-3-Copy-2" transform="translate(82.000000, 148.000000)">
                 <g id="Color---Blue-Copy" transform="translate(0.000000, 50.000000)">
                     <path d="M0.5,47.5 L47.5,47.5 L47.5,0.5 L4,0.5 C2.06700338,0.5 0.5,2.06700338 0.5,4 L0.5,47.5 Z" id="Color" stroke="#EBF4FA" fill="#FFFFFF"></path>
                     <rect id="Color-Copy-2" stroke="#EBF4FA" fill="#FFFFFF" x="56.5" y="0.5" width="124" height="47"></rect>
@@ -98,13 +98,13 @@
                         <tspan x="16" y="459">10</tspan>
                     </text>
                 </g>
-                <g id="*-/-Divider" transform="translate(0.000000, 34.000000)" fill="#DCDCE0">
+                <g id="*-/-Divider" transform="translate(0.000000, 34.000000)" fill="#41484F">
                     <rect id="Rectangle" x="0" y="0" width="304" height="1"></rect>
                 </g>
-                <text id="Color" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                <text id="Color" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#FFFFFF">
                     <tspan x="7" y="13">Color</tspan>
                 </text>
-                <text id="Contrast-ratio" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#2D343B">
+                <text id="Contrast-ratio" font-family="IBMPlexSans-Bold, IBM Plex Sans" font-size="13" font-weight="bold" line-spacing="19.5" fill="#FFFFFF">
                     <tspan x="70" y="13">Contrast ratio</tspan>
                 </text>
             </g>
