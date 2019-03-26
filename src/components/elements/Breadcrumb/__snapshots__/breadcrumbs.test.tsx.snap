@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
+exports[`BreadcrumbNav should render correctly 1`] = `
 .emotion-5 {
   list-style: none;
   padding: 0;
@@ -45,44 +45,46 @@ exports[`BreadcrumbNav deve renderizar corretamente 1`] = `
   font-size: 1rem;
 }
 
-<nav
-  aria-label="Breadcrumbs"
->
-  <ol
-    class="emotion-5"
+<div>
+  <nav
+    aria-label="Breadcrumbs"
   >
-    <li
-      class="emotion-2"
+    <ol
+      class="emotion-5"
     >
-      <a
-        class="emotion-0"
-        href="/"
+      <li
+        class="emotion-2"
       >
-        Entry #1
-      </a>
-      <svg
-        aria-hidden="true"
-        class="emotion-1"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
+        <a
+          class="emotion-0"
+          href="/"
+        >
+          Entry #1
+        </a>
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+          />
+        </svg>
+      </li>
+      <li
+        class="emotion-2"
       >
-        <path
-          d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-        />
-      </svg>
-    </li>
-    <li
-      class="emotion-2"
-    >
-      <a
-        class="emotion-0"
-        href="/second"
-      >
-        Entry #2
-      </a>
-    </li>
-  </ol>
-</nav>
+        <a
+          class="emotion-0"
+          href="/second"
+        >
+          Entry #2
+        </a>
+      </li>
+    </ol>
+  </nav>
+</div>
 `;
