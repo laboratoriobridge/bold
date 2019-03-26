@@ -2,48 +2,34 @@ import { Interpolation } from 'emotion'
 import React from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 
-import { withStyles } from '../../../../styles'
 import { Button, ButtonProps } from '../Button/Button'
+import { ButtonBaseRenderProps } from '../ButtonBase'
 
-export interface ButtonLinkProps extends ButtonProps, Pick<LinkProps, 'to' | 'replace'> {
-}
+export interface ButtonLinkProps extends ButtonProps, Pick<LinkProps, 'to' | 'replace'> {}
 
-@withStyles
-export class ButtonLink extends React.PureComponent<ButtonLinkProps> {
+export function ButtonLink(props: ButtonLinkProps) {
+  const { to, replace, style, ...rest } = props
 
-    render() {
-        const { to, replace, style, ...other } = this.props
+  const linkStyle: Interpolation = {
+    textDecoration: 'none',
+  }
 
-        const linkStyle: Interpolation = {
-            textDecoration: 'none',
-        }
+  const renderLink = (buttonProps: ButtonBaseRenderProps) => {
+    const {
+      disabled, // `<a>` tag does not support the 'disabled' prop
+      ...other
+    } = buttonProps
 
-        return (
-            <Button
-                {...other}
-                style={{ ...linkStyle, ...style as any }}
-                render={this.renderLink}
-            />
-        )
-    }
+    return (
+      <Link
+        {...other as any}
+        to={to}
+        replace={replace}
+        aria-disabled={disabled === true ? true : undefined}
+        tabIndex={disabled ? -1 : buttonProps.tabIndex}
+      />
+    )
+  }
 
-    renderLink = (buttonProps: any) => {
-        const { to, replace } = this.props
-        const {
-            disabled, // `<a>` tag does not support the 'disabled' prop
-            css,
-            theme,
-            ...other
-        } = buttonProps
-
-        return (
-            <Link
-                {...other}
-                to={to}
-                replace={replace}
-                aria-disabled={disabled === true ? true : undefined}
-                tabIndex={disabled ? -1 : buttonProps.tabIndex}
-            />
-        )
-    }
+  return <Button {...rest} style={{ ...linkStyle, ...(style as any) }} render={renderLink} />
 }
