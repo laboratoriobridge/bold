@@ -1,14 +1,14 @@
 import React from 'react'
-import Dropzone, * as DropzoneAll from 'react-dropzone'
+import Dropzone from 'react-dropzone'
 
-import { Styles, Theme, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles, WithStylesProps } from '../../../styles'
 import { format } from '../../../util/byte'
 import { HFlow } from '../Flow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
 import { Text } from '../textual/Text/Text'
 
-export interface FileUploaderProps extends WithStylesProps {
+export interface FileUploaderProps {
   accept?: string
   file?: FileProps
   maxSize?: number
@@ -23,111 +23,51 @@ export interface FileProps {
   uploading?: boolean
 }
 
-const DropzoneCmp: any = Dropzone || DropzoneAll
+export function FileUploader(props: FileUploaderProps) {
+  const { accept, maxSize, onUpload, file, text } = props
+  const { classes } = useStyles(createStyles)
 
-@withStyles
-export class FileUploader extends React.Component<FileUploaderProps> {
-  uploadImage = file => {
-    if (file && file.length > 0) {
-      const selectedFile = file[0]
-
-      this.props.onUpload && this.props.onUpload(selectedFile)
+  const uploadImage = (accepted: File[]) => {
+    if (accepted && accepted.length > 0) {
+      const selectedFile = accepted[0]
+      onUpload && onUpload(selectedFile)
     }
   }
 
-  render() {
-    const { accept, css, maxSize, theme } = this.props
-
-    const styles: Styles = {
-      dropzone: {
-        cursor: 'pointer',
-        padding: '0.25rem',
-        '& .accept-dashed-border': {
-          alignItems: 'center',
-          display: 'flex',
-          flexDirection: 'column',
-          border: '1px solid transparent',
-          borderStyle: 'dashed',
-          paddingBottom: '0.5rem',
-          paddingTop: '0.5rem',
-        },
-      },
-      dropzoneAccept: {
-        backgroundColor: theme.pallete.surface.background,
-        '& .accept-dashed-border': {
-          borderColor: theme.pallete.divider + '!important',
-        },
-      },
-      file: {
-        borderTop: '1px solid ' + theme.pallete.divider,
-        padding: '1rem',
-      },
-      wrapper: {
-        backgroundColor: theme.pallete.surface.main,
-        borderRadius: theme.radius.paper,
-        border: '1px solid ' + theme.pallete.divider,
-      },
-    }
-
-    return (
-      <div className={css(styles.wrapper)}>
-        <DropzoneCmp
-          maxSize={maxSize}
-          accept={accept}
-          className={css(styles.dropzone)}
-          acceptClassName={css(styles.dropzoneAccept)}
-          onDrop={this.uploadImage}
-          multiple={false}
-        >
-          <div className='accept-dashed-border'>
-            <HFlow alignItems='center' hSpacing={0.5}>
-              <Icon fill='secondary' icon='upload' />
-              <Text color='secondary' size={0.875} weight='bold'>
-                {this.props.text}
-              </Text>
-            </HFlow>
-          </div>
-        </DropzoneCmp>
-        {this.props.file && <FileDetails file={this.props.file} theme={theme} />}
-      </div>
-    )
-  }
-}
-
-interface FileDetailsProps extends WithStylesProps {
-  file: FileProps
-  theme: Theme
-}
-
-@withStyles
-export class FileDetails extends React.Component<FileDetailsProps> {
-  render() {
-    const { css } = this.props
-    const styles: Styles = {
-      info: {
-        flexGrow: 1,
-        marginLeft: '1rem',
-      },
-      wrapper: {
-        alignItems: 'center',
-        borderTop: '1px solid ' + this.props.theme.pallete.divider,
-        display: 'flex',
-        padding: '1rem',
-      },
-    }
-    return (
-      <div className={css(styles.wrapper)}>
-        <FileExtension extension={this.returnExtension()} theme={this.props.theme} />
-        <div className={css(styles.info)}>
-          <FileInfo file={this.props.file} theme={this.props.theme} />
-          {this.props.file.uploading && <Progress value={this.props.file.progress} />}
+  return (
+    <div className={classes.wrapper}>
+      <Dropzone
+        maxSize={maxSize}
+        accept={accept}
+        className={classes.dropzone}
+        acceptClassName={classes.dropzoneAccept}
+        onDrop={uploadImage}
+        multiple={false}
+      >
+        <div className='accept-dashed-border'>
+          <HFlow alignItems='center' hSpacing={0.5}>
+            <Icon fill='secondary' icon='upload' />
+            <Text color='secondary' size={0.875} weight='bold'>
+              {text}
+            </Text>
+          </HFlow>
         </div>
-      </div>
-    )
-  }
+      </Dropzone>
+      {file && <FileDetails file={file} />}
+    </div>
+  )
+}
 
-  private returnExtension = () => {
-    const { type } = this.props.file.selectedFile
+export interface FileDetailsProps extends WithStylesProps {
+  file: FileProps
+}
+
+export function FileDetails(props: FileDetailsProps) {
+  const { file } = props
+  const { classes } = useStyles(createStyles)
+
+  const returnExtension = () => {
+    const { type } = file.selectedFile
     const typeSplit = type.split('/')
     if (typeSplit.length > 1) {
       return typeSplit[1]
@@ -137,55 +77,101 @@ export class FileDetails extends React.Component<FileDetailsProps> {
       return typeSplit[0]
     }
   }
-}
 
-interface FileInfoProps extends WithStylesProps {
-  file: FileProps
-  theme: Theme
-}
-
-@withStyles
-class FileInfo extends React.PureComponent<FileInfoProps> {
-  render() {
-    const { css } = this.props
-    const styles = {
-      wrapper: {
-        alignItems: 'center',
-        display: 'flex',
-      },
-    }
-
-    return (
-      <div className={css(styles.wrapper)}>
-        {!this.props.file.error && !this.props.file.uploading && (
-          <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
-        )}
-        <Text weight='bold' style={{ marginRight: 10 }}>
-          {this.props.file.selectedFile.name}
-        </Text>
-        <Text>{format(this.props.file.selectedFile.size, 0)}</Text>
+  return (
+    <div className={classes.fileDetailsContainer}>
+      <FileExtension extension={returnExtension()} />
+      <div className={classes.fileDetails}>
+        <FileInfo file={file} />
+        {file.uploading && <Progress value={file.progress} />}
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-interface FileExtensionProps {
-  extension: string
-  theme: Theme
+export interface FileInfoProps {
+  file: FileProps
 }
 
-export class FileExtension extends React.PureComponent<FileExtensionProps> {
-  render() {
-    const styles = {
-      backgroundColor: this.props.theme.pallete.surface.background,
-      border: '1px solid ' + this.props.theme.pallete.divider,
-      padding: '1rem',
-    }
+export function FileInfo(props: FileInfoProps) {
+  const { file } = props
+  const { classes } = useStyles(createStyles)
 
-    return (
-      <Text color='secondary' style={styles} weight='bold'>
-        {this.props.extension}
+  return (
+    <div className={classes.fileInfo}>
+      {!file.error && !file.uploading && (
+        <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
+      )}
+      <Text weight='bold' style={{ marginRight: 10 }}>
+        {file.selectedFile.name}
       </Text>
-    )
-  }
+      <Text>{format(file.selectedFile.size, 0)}</Text>
+    </div>
+  )
 }
+
+export interface FileExtensionProps {
+  extension: string
+}
+
+export function FileExtension(props: FileExtensionProps) {
+  const { extension } = props
+  const { classes } = useStyles((theme: Theme) => ({
+    root: {
+      backgroundColor: theme.pallete.surface.background,
+      border: `1px solid ${theme.pallete.divider}`,
+      padding: '1rem',
+    },
+  }))
+
+  return (
+    <Text color='secondary' style={classes.root} weight='bold'>
+      {extension}
+    </Text>
+  )
+}
+
+export const createStyles = (theme: Theme) => ({
+  dropzone: {
+    cursor: 'pointer',
+    padding: '0.25rem',
+    '& .accept-dashed-border': {
+      alignItems: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      border: '1px solid transparent',
+      borderStyle: 'dashed',
+      paddingBottom: '0.5rem',
+      paddingTop: '0.5rem',
+    },
+  },
+  dropzoneAccept: {
+    backgroundColor: theme.pallete.surface.background,
+    '& .accept-dashed-border': {
+      borderColor: theme.pallete.divider + '!important',
+    },
+  },
+  file: {
+    borderTop: '1px solid ' + theme.pallete.divider,
+    padding: '1rem',
+  },
+  wrapper: {
+    backgroundColor: theme.pallete.surface.main,
+    borderRadius: theme.radius.paper,
+    border: '1px solid ' + theme.pallete.divider,
+  },
+  fileDetailsContainer: {
+    alignItems: 'center',
+    borderTop: `1px solid ${theme.pallete.divider}`,
+    display: 'flex',
+    padding: '1rem',
+  },
+  fileDetails: {
+    flexGrow: 1,
+    marginLeft: '1rem',
+  },
+  fileInfo: {
+    alignItems: 'center',
+    display: 'flex',
+  },
+})
