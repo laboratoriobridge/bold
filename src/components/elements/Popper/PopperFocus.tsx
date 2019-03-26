@@ -1,76 +1,58 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Manager, PopperProps, Reference } from 'react-popper'
 
-import { withStyles, WithStylesProps } from '../../../styles'
+import { useStyles } from '../../../styles'
 
 import { PopperContent, PopperContentProps } from './PopperContent'
 
-export interface PopperFocusProps extends WithStylesProps {
-    placement?: PopperProps['placement']
-    offset?: PopperContentProps['offset']
-    renderPopper?(): React.ReactNode
-}
-
-export interface PopperFocusState {
-    show: boolean
+export interface PopperFocusProps {
+  placement?: PopperProps['placement']
+  offset?: PopperContentProps['offset']
+  children?: React.ReactNode
+  renderPopper?(): React.ReactNode
 }
 
 /**
  * Creates a popper element when the children is hovered or focused.
  */
-@withStyles
-export class PopperFocus extends React.PureComponent<PopperFocusProps, PopperFocusState> {
+export function PopperFocus(props: PopperFocusProps) {
+  const { placement, offset, renderPopper, children } = props
+  const [isShown, setShown] = useState(false)
+  const { classes } = useStyles(() => ({
+    wrapper: {
+      display: 'inline-block',
+    },
+  }))
 
-    static defaultProps: Partial<PopperFocusProps> = {
-        placement: 'right',
-    }
+  const show = () => setShown(true)
+  const hide = () => setShown(false)
 
-    constructor(props: PopperFocusProps) {
-        super(props)
-        this.state = {
-            show: false,
-        }
-    }
-
-    render() {
-        const { css, placement, offset } = this.props
-        const styles = {
-            wrapper: {
-                display: 'inline-block',
-            },
-        }
-
-        return (
-            <Manager>
-                <Reference>
-                    {refProps => (
-                        <div
-                            className={css(styles.wrapper)}
-                            onMouseEnter={this.show}
-                            onMouseLeave={this.hide}
-                            onFocus={this.show}
-                            onBlur={this.hide}
-                            data-show={this.state.show}
-                            ref={refProps.ref}
-                        >
-                            {React.Children.only(this.props.children)}
-                        </div>
-                    )}
-                </Reference>
-                {this.props.renderPopper &&
-                    <PopperContent show={this.state.show} placement={placement} offset={offset}>
-                        {this.props.renderPopper()}
-                    </PopperContent>
-                }
-            </Manager>
-        )
-    }
-
-    show = () => {
-        this.setState({ show: true })
-    }
-
-    hide = () => {
-        this.setState({ show: false })
-    }
+  return (
+    <Manager>
+      <Reference>
+        {refProps => (
+          <div
+            className={classes.wrapper}
+            onMouseEnter={show}
+            onMouseLeave={hide}
+            onFocus={show}
+            onBlur={hide}
+            data-show={isShown}
+            ref={refProps.ref}
+          >
+            {React.Children.only(children)}
+          </div>
+        )}
+      </Reference>
+      {renderPopper && (
+        <PopperContent show={isShown} placement={placement} offset={offset}>
+          {renderPopper()}
+        </PopperContent>
+      )}
+    </Manager>
+  )
 }
+
+PopperFocus.defaultProps = {
+  placement: 'right',
+} as Partial<PopperFocusProps>
