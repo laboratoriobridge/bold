@@ -99,7 +99,9 @@ export function DataTableDefault(props: DataTableRenderProps) {
       <TableHead>
         <TableRow>
           {columns.map(col => (
-            <TableHeader {...getHeaderProps(col)}>{col.header}</TableHeader>
+            <TableHeader key={col.name} {...getHeaderProps(col)}>
+              {col.header}
+            </TableHeader>
           ))}
         </TableRow>
       </TableHead>
