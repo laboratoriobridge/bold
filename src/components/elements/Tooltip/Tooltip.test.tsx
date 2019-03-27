@@ -1,7 +1,6 @@
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { withTheme } from '../../../test'
 import * as stringUtils from '../../../util/string'
 
 import { Tooltip, TooltipProps } from './Tooltip'
@@ -12,7 +11,7 @@ stringUtilsMock.randomStr = jest.fn(() => 'abc')
 beforeEach(() => render(<div id='portal-root' />))
 
 const createComponent = (props: Partial<TooltipProps> = {}) => {
-  return withTheme(
+  return (
     <Tooltip
       text='Tooltip text'
       offset={2}
@@ -77,13 +76,11 @@ it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', ()
   const mouseEnter = jest.fn()
   const mouseLeave = jest.fn()
   const { getByText } = render(
-    withTheme(
-      <Tooltip text='Tooltip text' offset={2} placement='bottom-start'>
-        <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-          Testing
-        </button>
-      </Tooltip>
-    )
+    <Tooltip text='Tooltip text' offset={2} placement='bottom-start'>
+      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+        Testing
+      </button>
+    </Tooltip>
   )
 
   const target = getByText('Testing')

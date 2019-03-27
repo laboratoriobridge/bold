@@ -2,7 +2,6 @@ import React from 'react'
 import { Field as FinalFormField } from 'react-final-form'
 import { fireEvent, render, wait } from 'react-testing-library'
 
-import { withTheme } from '../../../../test'
 import { Field, RenderProps } from '../Field'
 
 import { Form, FormProps } from './Form'
@@ -10,7 +9,7 @@ import { Form, FormProps } from './Form'
 // tslint:disable jsx-no-lambda
 
 const createComponent = (props: Partial<FormProps> = {}) => {
-  return withTheme(
+  return (
     <Form
       onSubmit={jest.fn()}
       render={({ handleSubmit }) => (

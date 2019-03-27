@@ -1,7 +1,6 @@
 import React from 'react'
 import { fireEvent, render, wait } from 'react-testing-library'
 
-import { withTheme } from '../../../test'
 import { DefaultItemType } from '../../form'
 
 import { SelectInline } from './SelectInline'
@@ -15,8 +14,9 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-const createSelectInline = () =>
-  withTheme(<SelectInline<DefaultItemType> initialValue={items[0]} items={items} itemToString={itemToString} />)
+const createSelectInline = () => (
+  <SelectInline<DefaultItemType> initialValue={items[0]} items={items} itemToString={itemToString} />
+)
 
 describe('SelectInline', () => {
   it('should render correctly when closed', () => {

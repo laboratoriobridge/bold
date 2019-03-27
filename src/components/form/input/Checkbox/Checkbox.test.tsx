@@ -1,8 +1,6 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { withTheme } from '../../../../test/'
-
 import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
@@ -11,7 +9,7 @@ describe('Checkbox', () => {
     expect(container).toMatchSnapshot()
   })
   it('should render correctly when disabled', () => {
-    const { container } = render(withTheme(<Checkbox label='check' disabled />))
+    const { container } = render(<Checkbox label='check' disabled />)
     expect(container).toMatchSnapshot()
   })
   it('should render correctly when indeterminate', () => {
