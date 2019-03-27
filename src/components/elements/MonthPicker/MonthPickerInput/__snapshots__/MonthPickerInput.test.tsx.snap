@@ -2,7 +2,7 @@
 
 exports[`MonthPickerInput should render correctly 1`] = `
 .emotion-5 {
-  display: block;
+  display: inline-block;
 }
 
 .emotion-4 {

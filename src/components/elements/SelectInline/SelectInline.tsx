@@ -2,59 +2,103 @@ import { Interpolation } from 'emotion'
 import * as React from 'react'
 
 import { useTheme } from '../../../styles'
-import { DefaultItemType, Select } from '../../form'
-import { Button } from '../Button'
-import { DropdownItemConfig } from '../Dropdown'
+import { Omit } from '../../../util'
+import { composeRefs } from '../../../util/react'
+import { Select, SelectSingleProps } from '../../form'
+import { Button, ButtonProps } from '../Button'
+import { Icon } from '../Icon'
 import { Popper, PopperController } from '../Popper'
 import { Text } from '../textual'
 
-export type SelectInlineQueryType = (input: string, setItems: (items: DropdownItemConfig[]) => void) => void
-
-export interface SelectInlineProps {
-  initialValue?: DropdownItemConfig[]
+export interface SelectInlineProps<T> extends Omit<SelectSingleProps<T>, 'value'> {
+  initialValue: T
+  buttonProps?: ButtonProps
+  onChange?(item: T): void
 }
 
-export function SelectInline(props: SelectInlineProps) {
+export function SelectInline<T>(props: SelectInlineProps<T>) {
+  const { initialValue: value, onChange, itemToString, buttonProps, ...rest } = props
   const theme = useTheme()
 
-  const items: DefaultItemType[] = [
-    { label: 'Value #001', value: 1 },
-    { label: 'Value #002', value: 2 },
-    { label: 'Value #003', value: 3 },
-    { label: 'Value #004', value: 4 },
-  ]
+  const [currentValue, setCurrentValue] = React.useState(itemToString(value))
 
-  const itemToString = (item: DefaultItemType) => item && item.label
+  const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
+  const selectInputRef: React.MutableRefObject<any> = React.useRef<HTMLInputElement>()
 
   const renderTarget = (ctrl: PopperController) => {
+    const { innerRef, ...buttonRest } = buttonProps || ({} as any)
     return (
-      <Button onClick={ctrl.toggle} skin='ghost' kind='primary' size='small'>
-        <Text>Municipio</Text>
+      <Button
+        onClick={ctrl.toggle}
+        skin='ghost'
+        kind='normal'
+        size='small'
+        innerRef={composeRefs(targetButtonRef, innerRef)}
+        {...buttonRest}
+      >
+        <Text>{currentValue}</Text>
+        <Icon style={{ marginLeft: '0.5rem' }} icon={ctrl.isShown() ? 'angleUp' : 'angleDown'} />
       </Button>
     )
   }
 
   const styles: Interpolation = {
-    border: `1px solid ${theme.pallete.divider}`,
-    backgroundColor: theme.pallete.surface.main,
-    boxShadow: theme.shadows.outer['40'],
-    'div > div': {
-      padding: '0.5rem',
-      borderBottom: `1px solid ${theme.pallete.divider}`,
+    box: {
+      border: `1px solid ${theme.pallete.divider}`,
+      backgroundColor: theme.pallete.surface.main,
+      '& > div:first-child': {
+        padding: '0.5rem',
+      },
+      'ul > li:first-child': {
+        borderTop: `1px solid ${theme.pallete.divider}`,
+      },
+      'div > ul': {
+        position: 'static',
+        boxShadow: 'none',
+        border: 'none',
+        borderRadius: 0,
+      },
     },
-    'div > ul': {
-      position: 'static',
-      boxShadow: 'none',
-      border: 'none',
-      borderRadius: 0,
+    popper: {
+      '[data-visible]': {
+        boxShadow: theme.shadows.outer['40'],
+      },
     },
   }
 
+  const handleVisibilityEvents = (ref: React.MutableRefObject<any>) => (ctrl: PopperController) => {
+    setTimeout(() => {
+      if (ref.current) {
+        ref.current.focus()
+      }
+    })
+  }
+
   return (
-    <Popper renderTarget={renderTarget} placement='bottom-end'>
-      {(ctrl: PopperController) => (
-        <Select<DefaultItemType> items={items} itemToString={itemToString} style={styles} isOpen />
-      )}
+    <Popper
+      renderTarget={renderTarget}
+      placement='bottom-end'
+      style={styles.popper}
+      onHide={handleVisibilityEvents(targetButtonRef)}
+      onShow={handleVisibilityEvents(selectInputRef)}
+    >
+      {(ctrl: PopperController) => {
+        const handleOnChange = (newValue: T) => {
+          onChange && onChange(newValue)
+          setCurrentValue(itemToString(newValue))
+          ctrl.hide()
+        }
+        return (
+          <Select<T>
+            {...rest}
+            itemToString={itemToString}
+            onChange={handleOnChange}
+            style={styles.box}
+            inputRef={selectInputRef}
+            isOpen
+          />
+        )
+      }}
     </Popper>
   )
 }

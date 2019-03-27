@@ -71,7 +71,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
           <div className={css(style)}>
             <div>
               <TextInput
-                icon={downshiftOpen ? 'angleUp' : 'angleDown'}
+                icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
                 {...rest}
                 onBlur={handleInputBlur(downshift)}
                 onFocus={handleInputFocus(downshift)}
