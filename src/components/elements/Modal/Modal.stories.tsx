@@ -3,8 +3,8 @@ import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'
@@ -19,7 +19,7 @@ const sizes: { [key in ModalSize]: ModalSize } = {
   auto: 'auto',
 }
 
-storiesOf('Components/Modal', module)
+storiesOf('Components|Modal', module)
   .add('default', () => (
     // tslint:disable jsx-no-lambda
     <Modal open={boolean('open', true)} size={select('size', sizes, 'large')} onClose={action('close')}>

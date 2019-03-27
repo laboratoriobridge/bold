@@ -2,8 +2,8 @@ import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
 import { capitalize } from '../../../util/string'
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 import { Icon } from '../Icon'
 
 export interface MonthControlProps {
@@ -12,7 +12,7 @@ export interface MonthControlProps {
   renderMonth?(date: Date): React.ReactNode
 }
 
-export const MonthControl = (props: MonthControlProps) => {
+export function MonthControl(props: MonthControlProps) {
   const { visibleDate, onChange, renderMonth } = props
 
   const handleNext = () => {

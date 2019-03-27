@@ -14,7 +14,7 @@ export interface SideNavProps {
   pages: PageLink[]
 }
 
-export const SideNav = (props: SideNavProps) => {
+export function SideNav(props: SideNavProps) {
   const { pages } = props
   const { classes } = useStyles(createStyles)
 

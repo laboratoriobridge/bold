@@ -13,7 +13,7 @@ export interface FadeTransitionRenderProps {
   className?: string
 }
 
-export const FadeTransition = (props: FadeTransitionProps) => {
+export function FadeTransition(props: FadeTransitionProps) {
   const { children, ...rest } = props
   const { classes, css } = useStyles(() => ({
     default: {

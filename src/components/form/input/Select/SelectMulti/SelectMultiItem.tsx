@@ -11,7 +11,7 @@ export interface SelectMultiItemProps {
   onRemove(e: React.MouseEvent<HTMLSpanElement>): void
 }
 
-export const SelectMultiItem = (props: SelectMultiItemProps) => {
+export function SelectMultiItem(props: SelectMultiItemProps) {
   const { style, children, onRemove, disabled, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 

@@ -8,7 +8,7 @@ export interface TooltipPopperProps {
   style?: Interpolation
 }
 
-export const TooltipPopper = (props: TooltipPopperProps) => {
+export function TooltipPopper(props: TooltipPopperProps) {
   const { style, text } = props
   const { classes, css } = useStyles(styles)
   const { classes: sizeClasses } = useStyles(sizeStyles)

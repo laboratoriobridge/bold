@@ -13,7 +13,7 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   onClose?(): any
 }
 
-export const ModalContainer = (props: ModalContainerProps) => {
+export function ModalContainer(props: ModalContainerProps) {
   const { style, onClose, hasCloseIcon, children, ...rest } = props
   const { classes, css } = useStyles(styles)
 

@@ -1,15 +1,26 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test'
+import { render } from 'react-testing-library'
 
 import { TablePlaceholderRow } from './TablePlaceholderRow'
 
 it('should render correctly', () => {
-    expect(render(withTheme(
-        <TablePlaceholderRow colSpan={3} />
-    ))).toMatchSnapshot()
-    expect(render(withTheme(
-        <TablePlaceholderRow colSpan={2} message='No results' />
-    ))).toMatchSnapshot()
+  expect(
+    render(
+      <table>
+        <tbody>
+          <TablePlaceholderRow colSpan={3} />
+        </tbody>
+      </table>
+    ).container
+  ).toMatchSnapshot()
+
+  expect(
+    render(
+      <table>
+        <tbody>
+          <TablePlaceholderRow colSpan={2} message='No results' />
+        </tbody>
+      </table>
+    ).container
+  ).toMatchSnapshot()
 })

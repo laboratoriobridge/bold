@@ -1,13 +1,13 @@
 export default [
   {
-    title: 'About',
-    icon: 'chatFilled',
-    href: '/about',
-  },
-  {
     title: 'Getting Started',
     icon: 'rocket',
     href: '/getting-started',
+  },
+  {
+    title: 'About',
+    icon: 'chatFilled',
+    href: '/about',
   },
   {
     title: 'Design Guidelines',
@@ -29,6 +29,7 @@ export default [
     children: [
       { href: '/components/accordion', title: 'Accordion' },
       { href: '/components/alert', title: 'Alert' },
+      { href: '/components/breadcrumb', title: 'Breadcrumb' },
       { href: '/components/button', title: 'Button' },
       { href: '/components/cards', title: 'Cards' },
       { href: '/components/checkbox', title: 'Checkbox' },

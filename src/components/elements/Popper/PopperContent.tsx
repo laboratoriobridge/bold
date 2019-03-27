@@ -10,7 +10,7 @@ export interface PopperContentProps extends Omit<PopperProps, 'children'> {
   children?: React.ReactNode
 }
 
-export const PopperContent = (props: PopperContentProps) => {
+export function PopperContent(props: PopperContentProps) {
   const { show, offset, children, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 

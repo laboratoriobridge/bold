@@ -20,7 +20,7 @@ export interface DropdownButtonProps extends ButtonProps {
   popperProps?: Omit<PopperProps, 'children'>
 }
 
-export const DropdownButton = (props: DropdownButtonProps) => {
+export function DropdownButton(props: DropdownButtonProps) {
   const { items, popperProps, ...rest } = props
   const theme = useTheme()
 
@@ -138,7 +138,7 @@ export interface DropdownButtonItemProps extends DropdownItemProps {
   onAfterClick?(): void
 }
 
-export const DropdownButtonItem = (props: DropdownButtonItemProps) => {
+export function DropdownButtonItem(props: DropdownButtonItemProps) {
   const { content, onAfterClick, autoClose, onClick, tooltip, ...other } = props
 
   const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {

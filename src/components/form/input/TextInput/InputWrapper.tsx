@@ -15,7 +15,7 @@ export interface InputWrapperProps {
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
 }
 
-export const InputWrapper = (props: InputWrapperProps) => {
+export function InputWrapper(props: InputWrapperProps) {
   const { children, icon, iconPosition, iconDisabled, onIconClick, clearVisible, onClear } = props
   const { classes, css } = useStyles(createStyles, props)
 
@@ -97,7 +97,7 @@ const createStyles = (theme: Theme, { icon, iconPosition, clearVisible }: InputW
     } as CSSProperties,
     iconWrapper: {
       position: 'absolute',
-      backgroundColor: theme.pallete.surface.background,
+      backgroundColor: theme.pallete.gray.c90,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

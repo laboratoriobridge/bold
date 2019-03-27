@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve aceitar a prop placeholder 1`] = `
+exports[`should accept placeholder 1`] = `
 .emotion-2 {
   line-height: 1.5;
 }
@@ -10,26 +10,28 @@ exports[`deve aceitar a prop placeholder 1`] = `
 }
 
 .emotion-1:empty::before {
-  content: "Nenhum valor informado";
+  content: "No value";
   color: #53595E;
   font-style: italic;
 }
 
-<div
-  class="emotion-2"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-2"
   >
-    Test
+    <div
+      class="emotion-0"
+    >
+      Test
+    </div>
+    <div
+      class="emotion-1"
+    />
   </div>
-  <div
-    class="emotion-1"
-  />
 </div>
 `;
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-2 {
   line-height: 1.5;
 }
@@ -44,61 +46,32 @@ exports[`deve renderizar corretamente 1`] = `
   font-style: italic;
 }
 
-<div
-  class="emotion-2"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-2"
   >
-    Test
-  </div>
-  <div
-    class="emotion-1"
-  >
-    Content
+    <div
+      class="emotion-0"
+    >
+      Test
+    </div>
+    <div
+      class="emotion-1"
+    >
+      Content
+    </div>
   </div>
 </div>
 `;
 
-exports[`deve renderizar corretamente 2`] = `
+exports[`should render correctly 2`] = `
 .emotion-2 {
   line-height: 1.5;
-}
-
-.emotion-1:empty::before {
-  content: "-";
-  color: #53595E;
-  font-style: italic;
 }
 
 .emotion-0 {
   font-weight: bold;
   color: red;
-}
-
-<div
-  class="emotion-2"
->
-  <div
-    class="emotion-0"
-  >
-    Test
-  </div>
-  <div
-    class="emotion-1"
-  >
-    Content
-  </div>
-</div>
-`;
-
-exports[`deve renderizar corretamente 3`] = `
-.emotion-2 {
-  line-height: 1.5;
-}
-
-.emotion-0 {
-  font-weight: bold;
 }
 
 .emotion-1 {
@@ -111,18 +84,20 @@ exports[`deve renderizar corretamente 3`] = `
   font-style: italic;
 }
 
-<div
-  class="emotion-2"
->
+<div>
   <div
-    class="emotion-0"
+    class="emotion-2"
   >
-    Test
-  </div>
-  <div
-    class="emotion-1"
-  >
-    Content
+    <div
+      class="emotion-0"
+    >
+      Test
+    </div>
+    <div
+      class="emotion-1"
+    >
+      Content
+    </div>
   </div>
 </div>
 `;

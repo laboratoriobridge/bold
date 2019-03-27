@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept style prop 1`] = `
+.emotion-0 {
+  border: 1px solid #DCDCE0;
+  border-radius: 4px;
+  color: red;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   border: 1px solid #DCDCE0;
@@ -7,11 +21,14 @@ exports[`should render correctly 1`] = `
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
-<div
-  class="emotion-0"
->
-  <span>
-    Testing with title
-  </span>
+<div>
+  <div
+    class="emotion-0"
+    elevation="20"
+  >
+    <span>
+      Testing with title
+    </span>
+  </div>
 </div>
 `;

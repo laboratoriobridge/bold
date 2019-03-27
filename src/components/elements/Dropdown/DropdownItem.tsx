@@ -9,7 +9,7 @@ export interface DropdownItemProps extends React.HtmlHTMLAttributes<HTMLLIElemen
   innerRef?: React.RefObject<HTMLLIElement>
 }
 
-export const DropdownItem = (props: DropdownItemProps) => {
+export function DropdownItem(props: DropdownItemProps) {
   const { type, disabled, children, onClick, innerRef, ...rest } = props
   const { classes, css } = useStyles(styles)
 
@@ -18,9 +18,6 @@ export const DropdownItem = (props: DropdownItemProps) => {
   const handleKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {
     if (event.key === 'Enter') {
       ref.current.click()
-    }
-    if (props.onKeyDown) {
-      props.onKeyDown(event)
     }
   }
 

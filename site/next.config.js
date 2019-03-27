@@ -21,7 +21,7 @@ module.exports = withPlugins({
   exportPathMap: defaultPathMap => {
     return {
       ...defaultPathMap,
-      '/': { page: '/about' },
+      '/': { page: '/getting-started' },
     }
   },
 })

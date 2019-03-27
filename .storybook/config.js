@@ -1,44 +1,49 @@
-import { checkA11y } from '@storybook/addon-a11y'
+// import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { withOptions } from '@storybook/addon-options'
-import { addDecorator, configure } from '@storybook/react'
+import { addDecorator, configure, addParameters } from '@storybook/react'
+import { create } from '@storybook/theming'
+import { withStorybookTheme } from '../src/stories-addons'
 
-import { withTheme } from '../src/stories-addons'
-
-addDecorator(withOptions({
-  name: 'Bridge React',
-  url: 'https://github.com/laboratoriobridge/bridge-react',
-  addonPanelInRight: true,
-  sortStoriesByKind: false,
-  selectedAddonPanel: 'storybooks/storybook-addon-knobs',
-}))
-addDecorator(withInfo({
-  inline: true,
-  styles: {
-    infoBody: {
-      border: 'none',
-      boxShadow: 'none',
-      marginTop: 0,
-      marginBottom: 0,
-      padding: '20px 40px',
-    },
-    infoPage: {
-      padding: '0 5px 0 5px',
-    },
-    infoStory: {
-      padding: '0 45px 0 45px',
+addParameters({
+  options: {
+    theme: create({
+      base: 'light',
+      brandTitle: 'bridge-react',
+      brandUrl: 'https://github.com/laboratoriobridge/bridge-react',
+      // brandImage: 'http://url.of/some.svg',
+    }),
+    panelPosition: 'right',
+  },
+  info: {
+    inline: true,
+    styles: {
+      infoBody: {
+        border: 'none',
+        boxShadow: 'none',
+        marginTop: 0,
+        marginBottom: 0,
+        padding: '20px 40px',
+      },
+      infoPage: {
+        padding: '0 5px 0 5px',
+      },
+      infoStory: {
+        padding: '0 45px 0 45px',
+      },
     },
   },
-}))
-addDecorator(checkA11y)
-addDecorator(withTheme())
-addDecorator(withKnobs())
+})
+
+addDecorator(withInfo)
+// addDecorator(withA11y)
+addDecorator(withKnobs)
+addDecorator(withStorybookTheme)
 
 const req = require.context('../src', true, /.stories.tsx?$/)
 
 function loadStories() {
-  req.keys().forEach((filename) => req(filename))
+  req.keys().forEach(filename => req(filename))
 }
 
 configure(loadStories, module)

@@ -1,25 +1,31 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test'
+import { render } from 'react-testing-library'
 
 import { Heading } from './Heading'
 
 it('should render correctly', () => {
-    expect(render(withTheme(<Heading level={1}>Heading 1</Heading>))).toMatchSnapshot()
-    expect(render(withTheme(<Heading level={2}>Heading 2</Heading>))).toMatchSnapshot()
-    expect(render(withTheme(<Heading level={3}>Heading 3</Heading>))).toMatchSnapshot()
-    expect(render(withTheme(<Heading level={4}>Heading 4</Heading>))).toMatchSnapshot()
-    expect(render(withTheme(<Heading level={5}>Heading 5</Heading>))).toMatchSnapshot()
-    expect(render(withTheme(<Heading level={6}>Heading 6</Heading>))).toMatchSnapshot()
+  expect(render(<Heading level={1}>Heading 1</Heading>).container).toMatchSnapshot()
+  expect(render(<Heading level={2}>Heading 2</Heading>).container).toMatchSnapshot()
+  expect(render(<Heading level={3}>Heading 3</Heading>).container).toMatchSnapshot()
+  expect(render(<Heading level={4}>Heading 4</Heading>).container).toMatchSnapshot()
+  expect(render(<Heading level={5}>Heading 5</Heading>).container).toMatchSnapshot()
+  expect(render(<Heading level={6}>Heading 6</Heading>).container).toMatchSnapshot()
 })
 
 it('should accept color prop', () => {
-    expect(render(withTheme(<Heading level={1} color='primary'>Heading Primary color</Heading>))).toMatchSnapshot()
+  const { container } = render(
+    <Heading level={1} color='primary'>
+      Heading Primary color
+    </Heading>
+  )
+  expect(container).toMatchSnapshot()
 })
 
 it('should accept style prop', () => {
-    expect(render(withTheme(
-        <Heading level={1} style={{ fontStyle: 'italic' }}>Heading Primary color</Heading>
-    ))).toMatchSnapshot()
+  const { container } = render(
+    <Heading level={1} style={{ fontStyle: 'italic' }}>
+      Heading Primary color
+    </Heading>
+  )
+  expect(container).toMatchSnapshot()
 })

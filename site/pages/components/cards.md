@@ -1,0 +1,29 @@
+# Cards
+
+A card is a UI design pattern that groups related information in a flexible-size container. A card is a container for a few short, related pieces of information. Cards don't have a style pattern for texts and included information.
+
+## Best practices
+
+- Card layouts are less scannable than lists. A standard vertical list view is more scannable than cards because the positioning of the individual elements is fixed in size and more predictable for the eye. Thus, cards are not appropriate when users search for a specific item from a list or look for a particular piece of content. Instead, use [Tabs](/components/tabs) for better organization.
+- Cards are an excellent choice for dashboard applications that display a variety of content types at the same time on the same page. In such situations, the card metaphor can help create more obvious differences between items, and each card can accommodate different elements.
+
+## Card types
+
+<table>
+  <tr>
+    <th width={160}>Read-only</th>
+    <td>Use to communicate something to the user. A read-only card can contain buttons like CTA (Call to action) or links.</td>
+  </tr>
+  <tr>
+    <th>Clickable</th>
+    <td>Clickable cards can be used as links, to redirect the user to other pages. Don't use CTA (Call to action) buttons.</td>
+  </tr>
+  <tr>
+    <th>Toggle</th>
+    <td>Toggle cards have the same behavior as <a href="/components/checkbox">Checkbox</a>. Use toggle card when the selection needs more information than a checkbox.</td>
+  </tr>
+  <tr>
+    <th>Expandable</th>
+    <td>Expandable cards are useful to show or hide a large amount of information and have the same behavior as <a href="/components/accordion">Accordion</a>. CTA buttons can only be used if it has its own click area.</td>
+  </tr>
+</table>

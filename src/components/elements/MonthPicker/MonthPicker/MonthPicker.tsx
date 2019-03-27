@@ -1,21 +1,17 @@
 import { css } from 'emotion'
-import React from 'react'
+import React, { CSSProperties, useEffect, useState } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../../styles'
-import { HFlow, VFlow } from '../../../layout'
+import { Theme, useStyles } from '../../../../styles'
 import { Button } from '../../Button'
+import { HFlow, VFlow } from '../../Flow'
 import { Icon } from '../../Icon'
 import { Text } from '../../textual'
 
-export interface MonthPickerProps extends WithStylesProps {
-    month: number
-    year: number
-    monthDescriptions?: string[]
-    onChange(referenceMonth: ReferenceMonth): any
-}
-
-export interface MonthPickerState {
-    visibleYear: number
+export interface MonthPickerProps {
+  month: number
+  year: number
+  monthDescriptions?: string[]
+  onChange(referenceMonth: ReferenceMonth): any
 }
 
 /**
@@ -24,110 +20,83 @@ export interface MonthPickerState {
  * Months are zero indexed, so January is month 0.
  */
 export interface ReferenceMonth {
-    month: number
-    year: number
+  month: number
+  year: number
 }
 
-@withStyles
-export class MonthPicker extends React.Component<MonthPickerProps, MonthPickerState> {
+export function MonthPicker(props: MonthPickerProps) {
+  const { monthDescriptions, year, onChange } = props
+  const { classes } = useStyles(createStyles)
 
-    static defaultProps: Partial<MonthPickerProps> = {
-        monthDescriptions: [
-            'Jan', 'Fev', 'Mar', 'Abr',
-            'Mai', 'Jun', 'Jul', 'Ago',
-            'Set', 'Out', 'Nov', 'Dez',
-        ],
-    }
+  const [visibleYear, setVisibleYear] = useState(year || new Date().getFullYear())
+  useEffect(() => {
+    setVisibleYear(year || new Date().getFullYear())
+  }, [year])
 
-    constructor(props: MonthPickerProps) {
-        super(props)
-        this.state = {
-            visibleYear: props.year || new Date().getFullYear(),
-        }
-    }
+  const onLeftClick = () => setVisibleYear(currYear => currYear - 1)
+  const onRightClick = () => setVisibleYear(currYear => currYear + 1)
 
-    componentWillReceiveProps(nextProps: MonthPickerProps) {
-        this.setState({ visibleYear: nextProps.year || new Date().getFullYear() })
-    }
+  const onMonthClick = (month: number) => () => {
+    onChange({ month, year: visibleYear })
+  }
 
-    render() {
-        const { theme, monthDescriptions } = this.props
-        const styles: Styles = {
-            container: {
-                backgroundColor: '#fff',
-                width: '21.25rem',
-                height: '13.5rem',
-                padding: '1rem',
-                border: `1px solid ${theme.pallete.divider}`,
-                boxShadow: theme.shadows.outer['20'],
-                borderRadius: theme.radius.popper,
-            },
-            header: {
-                padding: '0rem 1.5rem 0rem 1rem',
-            },
-            content: {
-                flexWrap: 'wrap',
-            },
-            button: {
-                padding: 'calc(0.25rem - 1px) 1.375rem',
-                transitionProperty: 'background',
-            },
-            active: {
-                background: theme.pallete.primary.main + ' !important',
-                color: theme.pallete.surface.main,
-            },
-        }
-
-        return (
-            <div>
-                <VFlow style={styles.container} vSpacing={0.5}>
-                    <HFlow style={styles.header} alignItems='center' justifyContent='space-between'>
-                        <Button
-                            title='Ano anterior'
-                            size='small'
-                            skin='ghost'
-                            onClick={this.onLeftClick}
-                        >
-                            <Icon icon='angleLeft' />
-                        </Button>
-                        <Text weight='bold' size={0.875}>{this.state.visibleYear}</Text>
-                        <Button
-                            title='Ano posterior'
-                            size='small'
-                            skin='ghost'
-                            onClick={this.onRightClick}
-                        >
-                            <Icon icon='angleRight' />
-                        </Button>
-                    </HFlow>
-                    <HFlow style={styles.content} hSpacing={0.375} vSpacing={1}>
-                        {monthDescriptions.map((month, index) => (
-                            <Button
-                                key={index}
-                                onClick={this.onMonthClick(index)}
-                                skin='ghost'
-                                style={css(styles.button, index === this.props.month
-                                    && this.props.year === this.state.visibleYear && styles.active)}
-                            >
-                                {month}
-                            </Button>
-                        ))}
-                    </HFlow>
-                </VFlow>
-            </div >
-        )
-    }
-
-    private onLeftClick = () => {
-        this.setState({ visibleYear: this.state.visibleYear - 1 })
-    }
-
-    private onRightClick = () => {
-        this.setState({ visibleYear: this.state.visibleYear + 1 })
-    }
-
-    private onMonthClick = (month: number) => () => {
-        const year = this.state.visibleYear
-        this.props.onChange({ month, year })
-    }
+  return (
+    <div>
+      <VFlow style={classes.container} vSpacing={0.5}>
+        <HFlow style={classes.header} alignItems='center' justifyContent='space-between'>
+          <Button title='Ano anterior' size='small' skin='ghost' onClick={onLeftClick}>
+            <Icon icon='angleLeft' />
+          </Button>
+          <Text weight='bold' size={0.875}>
+            {visibleYear}
+          </Text>
+          <Button title='Ano posterior' size='small' skin='ghost' onClick={onRightClick}>
+            <Icon icon='angleRight' />
+          </Button>
+        </HFlow>
+        <HFlow style={classes.content} hSpacing={0.375} vSpacing={1}>
+          {monthDescriptions.map((month, index) => (
+            <Button
+              key={index}
+              onClick={onMonthClick(index)}
+              skin='ghost'
+              style={css(classes.button, index === props.month && props.year === visibleYear && classes.active)}
+            >
+              {month}
+            </Button>
+          ))}
+        </HFlow>
+      </VFlow>
+    </div>
+  )
 }
+
+MonthPicker.defaultProps = {
+  monthDescriptions: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+} as Partial<MonthPickerProps>
+
+export const createStyles = (theme: Theme) => ({
+  container: {
+    backgroundColor: '#fff',
+    width: '21.25rem',
+    height: '13.5rem',
+    padding: '1rem',
+    border: `1px solid ${theme.pallete.divider}`,
+    boxShadow: theme.shadows.outer['20'],
+    borderRadius: theme.radius.popper,
+  } as CSSProperties,
+  header: {
+    padding: '0rem 1.5rem 0rem 1rem',
+  } as CSSProperties,
+  content: {
+    flexWrap: 'wrap',
+  } as CSSProperties,
+  button: {
+    padding: 'calc(0.25rem - 1px) 1.375rem',
+    transitionProperty: 'background',
+  } as CSSProperties,
+  active: {
+    background: theme.pallete.primary.main + ' !important',
+    color: theme.pallete.surface.main,
+  } as CSSProperties,
+})

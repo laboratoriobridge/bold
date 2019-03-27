@@ -14,10 +14,12 @@ exports[`should accept the style prop 1`] = `
   color: blue;
 }
 
-<div
-  class="emotion-0"
->
-  Error
+<div>
+  <div
+    class="emotion-0"
+  >
+    Error
+  </div>
 </div>
 `;
 
@@ -34,9 +36,11 @@ exports[`should render correctly 1`] = `
   color: #D83A2E;
 }
 
-<div
-  class="emotion-0"
->
-  Error
+<div>
+  <div
+    class="emotion-0"
+  >
+    Error
+  </div>
 </div>
 `;

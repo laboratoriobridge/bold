@@ -9,7 +9,7 @@ export interface SpinnerProps {
   style?: Interpolation
 }
 
-export const Spinner = (props: SpinnerProps) => {
+export function Spinner(props: SpinnerProps) {
   const { style } = props
   const { classes, css } = useStyles(createStyles, props)
 

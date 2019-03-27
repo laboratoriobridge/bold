@@ -1,13 +1,13 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 import { Icon } from '../Icon'
 
 import { Tooltip } from './Tooltip'
 
-storiesOf('Components/Tooltip', module).add('default', () => (
+storiesOf('Components|Tooltip', module).add('default', () => (
   <HFlow hSpacing={0.5} alignItems='center'>
     <Tooltip text='Lorem ipsum'>
       <Button kind='primary' size='small'>

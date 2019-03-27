@@ -10,7 +10,7 @@ export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTex
   style?: Interpolation
 }
 
-export const TextArea = (props: TextAreaProps) => {
+export function TextArea(props: TextAreaProps) {
   const { status, style, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 

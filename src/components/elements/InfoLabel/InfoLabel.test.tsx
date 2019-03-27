@@ -1,26 +1,20 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../test'
+import { render } from 'react-testing-library'
 
 import { InfoLabel } from './InfoLabel'
 
-it('deve renderizar corretamente', () => {
-    expect(render(withTheme(
-        <InfoLabel title='Test'>Content</InfoLabel>
-    ))).toMatchSnapshot()
+it('should render correctly', () => {
+  expect(render(<InfoLabel title='Test'>Content</InfoLabel>).container).toMatchSnapshot()
 
-    expect(render(withTheme(
-        <InfoLabel title='Test' titleStyles={{ color: 'red' }}>Content</InfoLabel>
-    ))).toMatchSnapshot()
-
-    expect(render(withTheme(
-        <InfoLabel title='Test' childStyles={{ color: 'blue' }}>Content</InfoLabel>
-    ))).toMatchSnapshot()
+  expect(
+    render(
+      <InfoLabel title='Test' titleStyles={{ color: 'red' }} childStyles={{ color: 'blue' }}>
+        Content
+      </InfoLabel>
+    ).container
+  ).toMatchSnapshot()
 })
 
-it('deve aceitar a prop placeholder', () => {
-    expect(render(withTheme(
-        <InfoLabel title='Test' placeholder='Nenhum valor informado' />
-    ))).toMatchSnapshot()
+it('should accept placeholder', () => {
+  expect(render(<InfoLabel title='Test' placeholder='No value' />).container).toMatchSnapshot()
 })

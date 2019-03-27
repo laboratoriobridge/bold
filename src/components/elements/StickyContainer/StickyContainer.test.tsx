@@ -1,24 +1,14 @@
-import { mount, render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../test'
+import { render } from 'react-testing-library'
 
 import { StickyContainer } from './StickyContainer'
 
-describe('StickyContainer', () => {
-    it('should render correctly', () => {
-        const wrapper = render(withTheme(
-            <StickyContainer />
-        ))
-        expect(wrapper).toMatchSnapshot()
-    })
+it('should render correctly', () => {
+  const { container } = render(<StickyContainer>Content</StickyContainer>)
+  expect(container).toMatchSnapshot()
+})
 
-    it('should have a button', () => {
-        const wrapper = mount(withTheme(
-            <StickyContainer>
-                <button type='button'>Test</button>
-            </StickyContainer>
-        ))
-        expect(wrapper.find('button').length).toEqual(1)
-    })
+it('should accept the style prop', () => {
+  const { container } = render(<StickyContainer style={{ color: 'red' }}>Content</StickyContainer>)
+  expect(container).toMatchSnapshot()
 })

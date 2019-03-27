@@ -5,7 +5,7 @@ import { Calendar, CalendarProps } from '../../../elements'
 
 export interface CalendarPopupProps extends CalendarProps {}
 
-export const CalendarPopup = (props: CalendarPopupProps) => {
+export function CalendarPopup(props: CalendarPopupProps) {
   const { classes } = useStyles(createStyles)
 
   return (

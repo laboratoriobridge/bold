@@ -17,7 +17,7 @@ const formatter = new Intl.DateTimeFormat('pt-br', {
   year: 'numeric',
 })
 
-export const DateInput = (props: DateInputProps) => {
+export function DateInput(props: DateInputProps) {
   const { value, onInputChange, ...rest } = props
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -13,7 +13,7 @@ export interface ButtonProps extends SkinProps, Omit<ButtonBaseProps, 'style'> {
   style?: Interpolation
 }
 
-export const Button = (props: ButtonProps) => {
+export function Button(props: ButtonProps) {
   const { loading, block, style, skin, size, kind, onClick, children, ...rest } = props
 
   const [isLoading, setIsLoading] = React.useState<boolean>(false)

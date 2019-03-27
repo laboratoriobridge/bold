@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`rendering should render correctly 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-2 {
   border-top: 1px solid #DCDCE0;
   padding: 1rem 0;
@@ -121,24 +121,26 @@ exports[`rendering should render correctly 1`] = `
   background-color: #095fc0;
 }
 
-<div
-  class="emotion-2"
->
-  <button
-    class="emotion-0"
-    type="button"
+<div>
+  <div
+    class="emotion-2"
   >
-    <span>
-      Voltar
-    </span>
-  </button>
-  <button
-    class="emotion-1"
-    type="button"
-  >
-    <span>
-      Avançar
-    </span>
-  </button>
+    <button
+      class="emotion-0"
+      type="button"
+    >
+      <span>
+        Voltar
+      </span>
+    </button>
+    <button
+      class="emotion-1"
+      type="button"
+    >
+      <span>
+        Avançar
+      </span>
+    </button>
+  </div>
 </div>
 `;

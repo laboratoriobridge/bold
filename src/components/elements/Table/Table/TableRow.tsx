@@ -1,22 +1,18 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { withStyles, WithStylesProps } from '../../../../styles'
+import { useStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 
 import { createTableStyles } from './styles'
 
-export interface TableRowProps extends WithStylesProps, Omit<React.HTMLAttributes<any>, 'style'> {
-    style?: Interpolation
+export interface TableRowProps extends Omit<React.HTMLAttributes<any>, 'style'> {
+  style?: Interpolation
 }
 
-@withStyles
-export class TableRow extends React.PureComponent<TableRowProps> {
-    render() {
-        const { theme, css, style, ...rest } = this.props
-        const styles = createTableStyles(theme)
-        return (
-            <tr className={css(styles.row, this.props.onClick && styles.pointer, style)} {...rest} />
-        )
-    }
+export function TableRow(props: TableRowProps) {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createTableStyles)
+
+  return <tr className={css(classes.row, props.onClick && classes.pointer, style)} {...rest} />
 }

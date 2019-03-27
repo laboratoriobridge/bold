@@ -7,13 +7,13 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { SwitchField } from './SwitchField'
 
-storiesOf('Form/SwitchField', module)
-    .addDecorator(withForm())
-    .add('default', () => (
-        <SwitchField
-            name='switch'
-            label={text('label', '')}
-            disabled={boolean('disabled', false)}
-            onChange={action('changed')}
-        />
-    ))
+storiesOf('Form|SwitchField', module)
+  .addDecorator(withForm())
+  .add('default', () => (
+    <SwitchField
+      name='switch'
+      label={text('label', '')}
+      disabled={boolean('disabled', false)}
+      onChange={action('changed')}
+    />
+  ))

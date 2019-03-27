@@ -27,6 +27,10 @@ exports[`should render correctly when closed 1`] = `
   align-items: center;
 }
 
+.emotion-1:required {
+  box-shadow: none;
+}
+
 .emotion-1:hover {
   border-color: #818489;
 }
@@ -130,6 +134,10 @@ exports[`should render correctly when opened 1`] = `
   align-items: center;
 }
 
+.emotion-1:required {
+  box-shadow: none;
+}
+
 .emotion-1:hover {
   border-color: #818489;
 }
@@ -218,10 +226,10 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-5 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 

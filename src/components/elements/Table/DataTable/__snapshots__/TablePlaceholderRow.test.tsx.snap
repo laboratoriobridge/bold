@@ -11,16 +11,22 @@ exports[`should render correctly 1`] = `
   text-align: center;
 }
 
-<tr
-  class="emotion-1"
->
-  <td
-    class="emotion-0"
-    colspan="3"
-  >
-    Nenhum registro encontrado
-  </td>
-</tr>
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="emotion-1"
+      >
+        <td
+          class="emotion-0"
+          colspan="3"
+        >
+          Nenhum registro encontrado
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`should render correctly 2`] = `
@@ -34,14 +40,20 @@ exports[`should render correctly 2`] = `
   text-align: center;
 }
 
-<tr
-  class="emotion-1"
->
-  <td
-    class="emotion-0"
-    colspan="2"
-  >
-    No results
-  </td>
-</tr>
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="emotion-1"
+      >
+        <td
+          class="emotion-0"
+          colspan="2"
+        >
+          No results
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

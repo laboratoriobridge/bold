@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 import { Icon } from '../Icon'
 
 export interface YearControlProps {
@@ -11,7 +11,7 @@ export interface YearControlProps {
   renderYear?(date: Date): React.ReactNode
 }
 
-export const YearControl = (props: YearControlProps) => {
+export function YearControl(props: YearControlProps) {
   const { visibleDate, onChange, renderYear } = props
 
   const handleNext = () => {

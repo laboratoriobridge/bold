@@ -6,7 +6,7 @@ export interface PalletePros {
   pallete: ColorScale
 }
 
-export const Pallete = (props: PalletePros) => {
+export function Pallete(props: PalletePros) {
   const { title, pallete } = props
   const { classes, css } = useStyles(createStyles)
 

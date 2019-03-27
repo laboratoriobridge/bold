@@ -11,20 +11,20 @@ export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIE
   highlighted?: boolean
 }
 
-export const SelectMenuItem = (props: SelectMenuItemProps) => {
+export function SelectMenuItem(props: SelectMenuItemProps) {
   const { style, selected, highlighted, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 
   return <li className={css(classes.item, style)} {...rest} />
 }
 
-export const SelectHelperMenuItem = (props: SelectMenuItemProps) => {
+export function SelectHelperMenuItem(props: SelectMenuItemProps) {
   const theme = useTheme()
 
   return <SelectMenuItem style={{ background: theme.pallete.surface.background }} {...props} />
 }
 
-export const SelectLoadingItem = (props: SelectMenuItemProps) => {
+export function SelectLoadingItem(props: SelectMenuItemProps) {
   const theme = useTheme()
   return (
     <SelectHelperMenuItem {...props}>
@@ -34,7 +34,7 @@ export const SelectLoadingItem = (props: SelectMenuItemProps) => {
   )
 }
 
-export const SelectEmptyItem = (props: SelectMenuItemProps) => {
+export function SelectEmptyItem(props: SelectMenuItemProps) {
   return <SelectHelperMenuItem {...props}>Nenhum item encontrado</SelectHelperMenuItem>
 }
 

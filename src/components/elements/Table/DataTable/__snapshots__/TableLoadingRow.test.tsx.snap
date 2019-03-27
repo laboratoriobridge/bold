@@ -62,23 +62,29 @@ exports[`should render correctly 1`] = `
   width: 1rem;
 }
 
-<tr
-  class="emotion-3"
->
-  <td
-    class="emotion-2"
-    colspan="3"
-  >
-    <div
-      class="emotion-1"
-    >
-      <span
-        class="emotion-0"
-      />
-      Carregando resultados
-    </div>
-  </td>
-</tr>
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="emotion-3"
+      >
+        <td
+          class="emotion-2"
+          colspan="3"
+        >
+          <div
+            class="emotion-1"
+          >
+            <span
+              class="emotion-0"
+            />
+            Carregando resultados
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;
 
 exports[`should render correctly 2`] = `
@@ -143,21 +149,27 @@ exports[`should render correctly 2`] = `
   width: 1rem;
 }
 
-<tr
-  class="emotion-3"
->
-  <td
-    class="emotion-2"
-    colspan="2"
-  >
-    <div
-      class="emotion-1"
-    >
-      <span
-        class="emotion-0"
-      />
-      Loading...
-    </div>
-  </td>
-</tr>
+<div>
+  <table>
+    <tbody>
+      <tr
+        class="emotion-3"
+      >
+        <td
+          class="emotion-2"
+          colspan="2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <span
+              class="emotion-0"
+            />
+            Loading...
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

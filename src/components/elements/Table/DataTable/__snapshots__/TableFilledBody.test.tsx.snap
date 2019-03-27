@@ -8,52 +8,54 @@ exports[`should render correctly 1`] = `
   border-bottom: 1px solid #DCDCE0;
 }
 
-<table>
-  <tbody
-    class="emotion-2"
-  >
-    <tr
+<div>
+  <table>
+    <tbody
       class="emotion-2"
     >
-      <td
-        class="emotion-0"
+      <tr
+        class="emotion-2"
       >
-        1
-      </td>
-      <td
-        class="emotion-0"
+        <td
+          class="emotion-0"
+        >
+          1
+        </td>
+        <td
+          class="emotion-0"
+        >
+          MARIA MACHADO DE JESUS
+        </td>
+      </tr>
+      <tr
+        class="emotion-2"
       >
-        MARIA MACHADO DE JESUS
-      </td>
-    </tr>
-    <tr
-      class="emotion-2"
-    >
-      <td
-        class="emotion-0"
+        <td
+          class="emotion-0"
+        >
+          2
+        </td>
+        <td
+          class="emotion-0"
+        >
+          JOSÉ DA SILVA MOREIRA
+        </td>
+      </tr>
+      <tr
+        class="emotion-2"
       >
-        2
-      </td>
-      <td
-        class="emotion-0"
-      >
-        JOSÉ DA SILVA MOREIRA
-      </td>
-    </tr>
-    <tr
-      class="emotion-2"
-    >
-      <td
-        class="emotion-0"
-      >
-        3
-      </td>
-      <td
-        class="emotion-0"
-      >
-        ALICE BARBOSA
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td
+          class="emotion-0"
+        >
+          3
+        </td>
+        <td
+          class="emotion-0"
+        >
+          ALICE BARBOSA
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 `;

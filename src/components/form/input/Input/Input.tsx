@@ -4,7 +4,7 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   inputRef?: React.RefObject<HTMLInputElement>
 }
 
-export const Input = (props: InputProps) => {
+export function Input(props: InputProps) {
   const { inputRef, ...rest } = props
 
   return <input ref={inputRef} {...rest} />
