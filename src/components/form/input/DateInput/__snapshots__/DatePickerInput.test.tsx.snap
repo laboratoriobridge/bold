@@ -2,7 +2,7 @@
 
 exports[`DatePickerInput should render correctly 1`] = `
 .emotion-5 {
-  display: block;
+  display: inline-block;
 }
 
 .emotion-4 {
@@ -895,7 +895,7 @@ exports[`DatePickerInput should render correctly 1`] = `
 
 exports[`DatePickerInput should render correctly when disabled 1`] = `
 .emotion-5 {
-  display: block;
+  display: inline-block;
 }
 
 .emotion-4 {

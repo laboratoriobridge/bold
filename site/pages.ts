@@ -1,5 +1,5 @@
 export default [
- {
+  {
     title: 'Getting Started',
     icon: 'rocket',
     href: '/getting-started',

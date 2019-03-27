@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useStyles } from '../../../../../styles'
 import { Omit } from '../../../../../util'
 import { TextInput, TextInputProps } from '../../TextInput/TextInput'
 
@@ -36,6 +37,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     loading,
     renderItem,
     components,
+    style,
     ...rest
   } = props
 
@@ -51,6 +53,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     props.onBlur && props.onBlur(e)
   }
 
+  const { css } = useStyles()
+
   return (
     <SelectDownshift<T>
       selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
@@ -64,18 +68,20 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         const { isOpen: downshiftOpen, getInputProps, visibleItems, inputValue } = downshift
 
         return (
-          <div>
-            <TextInput
-              icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-              {...rest}
-              onBlur={handleInputBlur(downshift)}
-              onFocus={handleInputFocus(downshift)}
-              onClick={handleInputClick(downshift)}
-              onClear={handleClear(downshift)}
-              onIconClick={handleInputIconClick(downshift)}
-              {...getInputProps()}
-              value={inputValue ? inputValue : ''}
-            />
+          <div className={css(style)}>
+            <div>
+              <TextInput
+                icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
+                {...rest}
+                onBlur={handleInputBlur(downshift)}
+                onFocus={handleInputFocus(downshift)}
+                onClick={handleInputClick(downshift)}
+                onClear={handleClear(downshift)}
+                onIconClick={handleInputIconClick(downshift)}
+                {...getInputProps()}
+                value={inputValue ? inputValue : ''}
+              />
+            </div>
             <SelectDownshiftMenu
               downshift={downshift}
               items={visibleItems}

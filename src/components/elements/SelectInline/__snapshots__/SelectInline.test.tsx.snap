@@ -1,0 +1,829 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInline should render correctly when closed 1`] = `
+.emotion-3 {
+  display: inline-block;
+}
+
+.emotion-17 {
+  display: inline-block;
+}
+
+.emotion-17 [data-visible] {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-5 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-16 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1200;
+  padding: 0rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-15 {
+  border: 1px solid #DCDCE0;
+  background-color: #FFFFFF;
+}
+
+.emotion-15 > div:first-child {
+  padding: 0.5rem;
+}
+
+.emotion-15 ul > li:first-child {
+  border-top: 1px solid #DCDCE0;
+}
+
+.emotion-15 div > ul {
+  position: static;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-8 input {
+  padding-right: 3rem;
+}
+
+.emotion-7 {
+  position: absolute;
+  background-color: #F2F2F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-4 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-4:required {
+  box-shadow: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-4:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-4:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-4:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-6:focus {
+  box-shadow: none;
+}
+
+.emotion-14 {
+  position: relative;
+}
+
+.emotion-13 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+}
+
+.emotion-9 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-9:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-9:hover {
+  background: #F2F2F7;
+}
+
+<div>
+  <div
+    class="emotion-17"
+  >
+    <div
+      class="emotion-3"
+    >
+      <button
+        class="emotion-2"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-0"
+          >
+            Value #001
+          </span>
+          <svg
+            aria-hidden="true"
+            class="emotion-1"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="emotion-16"
+      data-visible="false"
+      style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+    >
+      <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-0-label"
+        aria-owns="downshift-0-menu"
+        class="emotion-15"
+        role="combobox"
+      >
+        <div>
+          <div
+            class="emotion-8"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-0-menu"
+              aria-labelledby="downshift-0-label"
+              autocomplete="off"
+              class="emotion-4"
+              id="downshift-0-input"
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-7"
+            >
+              <button
+                class="emotion-6"
+                tabindex="-1"
+                type="button"
+              >
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-5"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+        <div
+          class="emotion-14"
+        >
+          <ul
+            aria-labelledby="downshift-0-label"
+            class="emotion-13"
+            id="downshift-0-menu"
+            role="listbox"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-0-item-0"
+              role="option"
+            >
+              Value #001
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-0-item-1"
+              role="option"
+            >
+              Value #002
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-0-item-2"
+              role="option"
+            >
+              Value #003
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-0-item-3"
+              role="option"
+            >
+              Value #004
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectInline should render correctly when opened 1`] = `
+.emotion-3 {
+  display: inline-block;
+}
+
+.emotion-17 {
+  display: inline-block;
+}
+
+.emotion-17 [data-visible] {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-5 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-15 {
+  border: 1px solid #DCDCE0;
+  background-color: #FFFFFF;
+}
+
+.emotion-15 > div:first-child {
+  padding: 0.5rem;
+}
+
+.emotion-15 ul > li:first-child {
+  border-top: 1px solid #DCDCE0;
+}
+
+.emotion-15 div > ul {
+  position: static;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-8 input {
+  padding-right: 3rem;
+}
+
+.emotion-7 {
+  position: absolute;
+  background-color: #F2F2F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-4 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-4:required {
+  box-shadow: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-4:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-4:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-4:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-4:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-6:focus {
+  box-shadow: none;
+}
+
+.emotion-14 {
+  position: relative;
+}
+
+.emotion-13 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+}
+
+.emotion-9 {
+  border-bottom: 1px solid #DCDCE0;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-9:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-9:hover {
+  background: #F2F2F7;
+}
+
+.emotion-16 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1200;
+  padding: 0rem;
+  visibility: visible;
+  opacity: 1;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-17"
+    >
+      <div
+        class="emotion-3"
+      >
+        <button
+          class="emotion-2"
+          type="button"
+        >
+          <span>
+            <span
+              class="emotion-0"
+            >
+              Value #001
+            </span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-16"
+        data-visible="true"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+      >
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-2-label"
+          aria-owns="downshift-2-menu"
+          class="emotion-15"
+          role="combobox"
+        >
+          <div>
+            <div
+              class="emotion-8"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="downshift-2-menu"
+                aria-labelledby="downshift-2-label"
+                autocomplete="off"
+                class="emotion-4"
+                id="downshift-2-input"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-7"
+              >
+                <button
+                  class="emotion-6"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-5"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
+          </div>
+          <div
+            class="emotion-14"
+          >
+            <ul
+              aria-labelledby="downshift-2-label"
+              class="emotion-13"
+              id="downshift-2-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-2-item-0"
+                role="option"
+              >
+                Value #001
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-2-item-1"
+                role="option"
+              >
+                Value #002
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-2-item-2"
+                role="option"
+              >
+                Value #003
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-2-item-3"
+                role="option"
+              >
+                Value #004
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -13,7 +13,7 @@ export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps
 }
 
 export function Select<T = DefaultItemType>(props: SelectProps<T>) {
-  const { multiple, onChange, value, itemIsEqual, ...rest } = props
+  const { multiple, onChange, value, itemIsEqual, style, ...rest } = props
   let checkedValue = value
 
   if (multiple && value && !Array.isArray(value)) {
@@ -38,6 +38,6 @@ export function Select<T = DefaultItemType>(props: SelectProps<T>) {
   if (multiple) {
     return <SelectMulti<T> {...rest} value={checkedValue as T[]} onChange={onChange} itemIsEqual={itemIsEqual} />
   } else {
-    return <SelectSingle<T> {...rest} value={checkedValue as T} onChange={onChange} />
+    return <SelectSingle<T> {...rest} value={checkedValue as T} onChange={onChange} style={style} />
   }
 }
