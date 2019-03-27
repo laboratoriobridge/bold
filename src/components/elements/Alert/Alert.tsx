@@ -94,7 +94,7 @@ export const createTypesStyles = (
 } => {
   return {
     info: {
-      icon: 'infoCircleOutline',
+      icon: 'infoCircleFilled',
       style: {
         background: theme.pallete.status.info.background,
         color: theme.pallete.status.info.main,
@@ -102,7 +102,7 @@ export const createTypesStyles = (
       },
     },
     success: {
-      icon: 'checkCircleOutline',
+      icon: 'checkCircleFilled',
       style: {
         background: theme.pallete.status.success.background,
         color: theme.pallete.status.success.main,
@@ -110,7 +110,7 @@ export const createTypesStyles = (
       },
     },
     warning: {
-      icon: 'exclamationTriangleOutline',
+      icon: 'exclamationTriangleFilled',
       style: {
         background: theme.pallete.status.alert.background,
         color: theme.pallete.status.alert.main,
