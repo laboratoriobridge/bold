@@ -1,19 +1,16 @@
-import React from 'react'
-import Dropzone from 'react-dropzone'
+import React, { CSSProperties } from 'react'
+import { DropzoneOptions, useDropzone } from 'react-dropzone'
 
-import { Theme, useStyles, WithStylesProps } from '../../../styles'
+import { focusBoxShadow, Theme, useStyles, WithStylesProps } from '../../../styles'
 import { format } from '../../../util/byte'
 import { HFlow } from '../Flow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
 import { Text } from '../textual/Text/Text'
 
-export interface FileUploaderProps {
-  accept?: string
+export interface FileUploaderProps extends DropzoneOptions {
   file?: FileProps
-  maxSize?: number
   text?: string
-  onUpload?(selectedFile: any): void
 }
 
 export interface FileProps {
@@ -24,35 +21,25 @@ export interface FileProps {
 }
 
 export function FileUploader(props: FileUploaderProps) {
-  const { accept, maxSize, onUpload, file, text } = props
-  const { classes } = useStyles(createStyles)
+  const { file, text, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-  const uploadImage = (accepted: File[]) => {
-    if (accepted && accepted.length > 0) {
-      const selectedFile = accepted[0]
-      onUpload && onUpload(selectedFile)
-    }
-  }
+  const { getRootProps, getInputProps, isDragActive, isDragAccept } = useDropzone(rest)
 
   return (
-    <div className={classes.wrapper}>
-      <Dropzone
-        maxSize={maxSize}
-        accept={accept}
-        className={classes.dropzone}
-        acceptClassName={classes.dropzoneAccept}
-        onDrop={uploadImage}
-        multiple={false}
-      >
-        <div className='accept-dashed-border'>
-          <HFlow alignItems='center' hSpacing={0.5}>
-            <Icon fill='secondary' icon='upload' />
-            <Text color='secondary' size={0.875} weight='bold'>
-              {text}
-            </Text>
-          </HFlow>
-        </div>
-      </Dropzone>
+    <div className={classes.dropzone} {...getRootProps()}>
+      <input {...getInputProps()} />
+
+      <div className={css(classes.wrapper, isDragActive && classes.dragActive)}>
+        {isDragAccept}
+        <HFlow alignItems='center' hSpacing={0.5}>
+          <Icon fill='secondary' icon='upload' />
+          <Text color='secondary' size={0.875} weight='bold'>
+            {text}
+          </Text>
+        </HFlow>
+      </div>
+
       {file && <FileDetails file={file} />}
     </div>
   )
@@ -133,32 +120,31 @@ export function FileExtension(props: FileExtensionProps) {
 
 export const createStyles = (theme: Theme) => ({
   dropzone: {
+    backgroundColor: theme.pallete.surface.main,
+    borderRadius: theme.radius.paper,
+    border: '1px solid ' + theme.pallete.divider,
     cursor: 'pointer',
     padding: '0.25rem',
-    '& .accept-dashed-border': {
-      alignItems: 'center',
-      display: 'flex',
-      flexDirection: 'column',
-      border: '1px solid transparent',
-      borderStyle: 'dashed',
-      paddingBottom: '0.5rem',
-      paddingTop: '0.5rem',
+    transition: 'box-shadow .2s ease',
+
+    '&:focus': {
+      outline: 'none',
+      boxShadow: focusBoxShadow(theme),
     },
-  },
-  dropzoneAccept: {
-    backgroundColor: theme.pallete.surface.background,
-    '& .accept-dashed-border': {
-      borderColor: theme.pallete.divider + '!important',
-    },
+  } as CSSProperties,
+  wrapper: {
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'column',
+    border: `1px dashed transparent`,
+    padding: '0.25rem',
+  } as CSSProperties,
+  dragActive: {
+    borderColor: theme.pallete.divider,
   },
   file: {
     borderTop: '1px solid ' + theme.pallete.divider,
     padding: '1rem',
-  },
-  wrapper: {
-    backgroundColor: theme.pallete.surface.main,
-    borderRadius: theme.radius.paper,
-    border: '1px solid ' + theme.pallete.divider,
   },
   fileDetailsContainer: {
     alignItems: 'center',

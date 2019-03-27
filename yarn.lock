@@ -2097,13 +2097,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dropzone@4.2.2":
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/@types/react-dropzone/-/react-dropzone-4.2.2.tgz#af0a2595169700c8ab1114e9096285499beaff40"
-  integrity sha512-okO6HY+w7V0uHoy6JpLY6BwY/s/oObtXZmUQdX0ycjPeLhK8Af/xf79CFkLA1fM6oVp16n1d962ejdkEXk375Q==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-helmet@5.0.8":
   version "5.0.8"
   resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.8.tgz#f080eea6652e44f60b4574463d238f268d81d9af"
@@ -5718,6 +5711,13 @@ file-loader@3.0.1, file-loader@^3.0.1:
   dependencies:
     loader-utils "^1.0.2"
     schema-utils "^1.0.0"
+
+file-selector@^0.1.11:
+  version "0.1.11"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/file-selector/-/file-selector-0.1.11.tgz#4648d1303fc594afe8638d0f35caed38697d32cf"
+  integrity sha512-NopCegJ7QuoqVzUdSLcZb0M9IFO69CSFZzuZhZBasfQxepNwa1ehL6L9UKe3EyBof3EUeraccfJocLCRAvtxdg==
+  dependencies:
+    tslib "^1.9.0"
 
 file-system-cache@^1.0.5:
   version "1.0.5"
@@ -10171,13 +10171,14 @@ react-draggable@^3.1.1:
     classnames "^2.2.5"
     prop-types "^15.6.0"
 
-react-dropzone@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-7.0.1.tgz#bc76bc1686fb47ed0c8301f968fffa6aecdff47b"
-  integrity sha512-J4rbzhFZPVW7k7K9CVb0OcwSOJGLWa0y+0rvtB4rBLVkvq0agH/o3kPJ0DCkd6ZVzL2K1NFqIOvtQkwQKpmJBA==
+react-dropzone@10.0.6:
+  version "10.0.6"
+  resolved "https://repositorio.bridge.ufsc.br/repository/npm-group/react-dropzone/-/react-dropzone-10.0.6.tgz#3fdc5bbac38cf0663cc787568243865fb5d01107"
+  integrity sha512-pWC6i1UVlMIpkw/VHnDYrFXv+5udoSEbO8AgqMjRWC2RwzDOpzZP7kKgijVwEJKRboZ486lU8kCi1WULB0Tc6w==
   dependencies:
     attr-accept "^1.1.3"
-    prop-types "^15.6.2"
+    file-selector "^0.1.11"
+    prop-types "^15.7.2"
 
 react-element-to-jsx-string@^14.0.2:
   version "14.0.2"
