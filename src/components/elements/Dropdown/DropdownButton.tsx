@@ -44,8 +44,8 @@ export function DropdownButton(props: DropdownButtonProps) {
   }
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    event.preventDefault()
     if (event.key === 'Escape' || event.key === 'Tab') {
+      event.preventDefault()
       setOpen(false)
     }
   }
