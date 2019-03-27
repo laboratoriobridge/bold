@@ -8,7 +8,6 @@
     "outDir": "lib",
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
-    "experimentalDecorators": true,
     "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
