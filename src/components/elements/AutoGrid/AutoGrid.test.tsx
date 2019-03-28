@@ -1,7 +1,7 @@
 import { render } from 'enzyme'
 import React from 'react'
 
-import { Cell } from '../Cell/Cell'
+import { Cell } from '../Grid/Cell'
 
 import { AutoGrid } from './AutoGrid'
 

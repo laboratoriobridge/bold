@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { InfoLabel } from '../../elements/InfoLabel/InfoLabel'
-import { Cell } from '../Cell/Cell'
+import { Cell } from '../Grid'
 
 import { AutoGrid } from './AutoGrid'
 

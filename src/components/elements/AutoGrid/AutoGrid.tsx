@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Cell, CellSize } from '../Cell/Cell'
+import { Cell, CellSize } from '../Grid'
 import { Grid, GridProps } from '../Grid/Grid'
 
 export interface AutoGridProps extends GridProps {
