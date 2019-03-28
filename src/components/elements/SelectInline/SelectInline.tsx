@@ -4,11 +4,11 @@ import * as React from 'react'
 import { useTheme } from '../../../styles'
 import { Omit } from '../../../util'
 import { composeRefs } from '../../../util/react'
-import { Select, SelectSingleProps } from '../../form'
+import { Select, SelectSingleProps } from '../../form/input/Select'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
 import { Popper, PopperController } from '../Popper'
-import { Text } from '../textual'
+import { Text } from '../textual/Text/Text'
 
 export interface SelectInlineProps<T> extends Omit<SelectSingleProps<T>, 'value'> {
   initialValue: T
