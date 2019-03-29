@@ -14,31 +14,52 @@ export interface GridProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   justifyContent?: JustifyContent
   direction?: Direction
   style?: Interpolation
+
+  /**
+   * Spacing between grid items on the grid main axis.
+   * The grid main axis is horizontal if flex-direction is row/row-reverse or vertical otherwise.
+   */
+  gap?: number
+
+  /**
+   * Spacing between grid items on the grid cross axis.
+   * The grid cross axis is vertical if flex-direction is row/row-reverse or horizontal othersize.
+   */
+  gapCrossAxis?: number
 }
 
+export const GridContext = React.createContext<GridProps>(null)
+
 export function Grid(props: GridProps) {
-  const { style, wrap, alignItems, justifyContent, direction, ...rest } = props
+  const { style, wrap, alignItems, justifyContent, direction, gap, gapCrossAxis, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 
   const className = css(classes.grid, wrap && classes.wrap, style)
 
-  return <div className={className} {...rest} />
+  return (
+    <GridContext.Provider value={props}>
+      <div className={className} {...rest} />
+    </GridContext.Provider>
+  )
 }
 
-export const createStyles = (theme: Theme, props: GridProps) => ({
-  grid: {
-    alignItems: props.alignItems,
-    display: 'flex',
-    flexDirection: props.direction,
-    justifyContent: props.justifyContent,
-    marginLeft: '-1rem',
-    marginRight: '-1rem',
-    height: '100%',
+Grid.defaultProps = {
+  gap: 2,
+  gapCrossAxis: 1,
+} as Partial<GridProps>
 
-    [theme.breakpoints.down('small')]: {
-      marginLeft: '-0.5rem',
-      marginRight: '-0.5rem',
-    },
+export const createStyles = (
+  theme: Theme,
+  { gap, gapCrossAxis, direction, alignItems, justifyContent }: GridProps
+) => ({
+  grid: {
+    display: 'flex',
+    margin: ['column', 'column-reverse'].includes(direction)
+      ? `${-gap / 2}rem ${-gapCrossAxis / 2}rem `
+      : `${-gapCrossAxis / 2}rem ${-gap / 2}rem `,
+    flexDirection: direction,
+    alignItems,
+    justifyContent,
   } as React.CSSProperties,
   wrap: {
     flexWrap: 'wrap',

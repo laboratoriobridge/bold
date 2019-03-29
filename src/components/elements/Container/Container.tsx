@@ -22,7 +22,7 @@ export const createStyles = (theme: Theme) => ({
     width: '960px',
     margin: '0 auto',
 
-    [theme.breakpoints.down('small')]: {
+    [theme.breakpoints.down('md')]: {
       width: '768px',
     },
   } as CSSProperties,

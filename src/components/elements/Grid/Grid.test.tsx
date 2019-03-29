@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { Grid } from './Grid'
+import { Cell } from './Cell'
+import { Grid, GridProps } from './Grid'
 
 it('should render correctly', () => {
   expect(render(<Grid>Content</Grid>).container).toMatchSnapshot()
@@ -18,6 +19,27 @@ it('should accept flex container props', () => {
 
 it('should accept "style" prop', () => {
   const { container } = render(<Grid style={{ color: 'red' }}>Content</Grid>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept "gap" and "gapCrossAxis" props', () => {
+  const createGrid = (props: Partial<GridProps> = {}) => (
+    <Grid gap={10} gapCrossAxis={5} {...props}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
+    </Grid>
+  )
+
+  const { container, rerender } = render(createGrid())
+  expect(container).toMatchSnapshot()
+
+  rerender(createGrid({ direction: 'row-reverse' }))
+  expect(container).toMatchSnapshot()
+
+  rerender(createGrid({ direction: 'column' }))
+  expect(container).toMatchSnapshot()
+
+  rerender(createGrid({ direction: 'column-reverse' }))
   expect(container).toMatchSnapshot()
 })
 

@@ -6,12 +6,6 @@ exports[`should accept "style" prop 1`] = `
   color: red;
 }
 
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin: 0.25rem 0.5rem;
-  }
-}
-
 <div>
   <div
     class="emotion-0"
@@ -40,18 +34,6 @@ exports[`should accept flex item props 1`] = `
   width: calc((100% / 12 * 6) - 2rem);
 }
 
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin: 0.25rem 0.5rem;
-  }
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    width: calc((100% / 12 * 6) - 1rem);
-  }
-}
-
 <div>
   <div
     class="emotion-0"
@@ -64,12 +46,6 @@ exports[`should accept flex item props 1`] = `
 exports[`should render correctly 1`] = `
 .emotion-0 {
   margin: 0.5rem 1rem;
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin: 0.25rem 0.5rem;
-  }
 }
 
 <div>
