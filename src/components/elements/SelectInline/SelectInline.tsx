@@ -50,7 +50,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
       '& > div:first-child': {
         padding: '0.5rem',
       },
-      'ul > li:first-child': {
+      'ul > li:first-of-type': {
         borderTop: `1px solid ${theme.pallete.divider}`,
       },
       'div > ul': {
