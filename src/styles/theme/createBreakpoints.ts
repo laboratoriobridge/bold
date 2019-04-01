@@ -1,11 +1,11 @@
 export type Breakpoint = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export const breakpoints: { [key in Breakpoint]: number } = {
-  xs: 600,
-  sm: 960,
-  md: 1280,
-  lg: 1920,
-  xl: Number.MAX_SAFE_INTEGER,
+  xs: 0,
+  sm: 600,
+  md: 960,
+  lg: 1280,
+  xl: 1920,
 }
 
 export interface Breakpoints {

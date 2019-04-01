@@ -10,27 +10,69 @@ export type AlignSelf = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baselin
 export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export interface CellProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  size?: CellSize
   style?: Interpolation
   alignSelf?: AlignSelf
   flexGrow?: CSSProperties['flexGrow']
   flexShrink?: CSSProperties['flexShrink']
   flexBasis?: CSSProperties['flexBasis']
+
+  /**
+   * Width of the cell, defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  size?: CellSize
+
+  /**
+   * Width to be used on extra-small (xs) or larger devices, based on breakpoints defined on theme.
+   * The size is defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  xs?: CellSize
+
+  /**
+   * Width to be used on small (sm) or larger devices, based on breakpoints defined on theme.
+   * The size is defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  sm?: CellSize
+
+  /**
+   * Width to be used on medium (md) or larger devices, based on breakpoints defined on theme.
+   * The size is defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  md?: CellSize
+
+  /**
+   * Width to be used on large (lg) or larger devices, based on breakpoints defined on theme.
+   * The size is defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  lg?: CellSize
+
+  /**
+   * Width to be used on extra-large (xl) or larger devices, based on breakpoints defined on theme.
+   * The size is defined using a 12-column based grid (12 is 100%, 6 is 50%, 4 is 25%, etc.).
+   */
+  xl?: CellSize
 }
 
 export function Cell(props: CellProps) {
-  const { size, style, alignSelf, flexGrow, flexShrink, flexBasis, ...rest } = props
+  const { size, style, alignSelf, flexGrow, flexShrink, flexBasis, xs, sm, md, lg, xl, ...rest } = props
   const gridProps = useContext(GridContext) || Grid.defaultProps
   const { classes, css } = useStyles(createStyles, props, gridProps)
 
-  const className = css(classes.cell, size && classes.fixedSize, style)
+  const className = css(
+    classes.cell,
+    (xs || size) && classes.xs,
+    sm && classes.sm,
+    md && classes.md,
+    lg && classes.lg,
+    xl && classes.xl,
+    style
+  )
 
   return <div className={className} {...rest} />
 }
 
 export const createStyles = (
   theme: Theme,
-  { alignSelf, flexBasis, flexGrow, flexShrink, size }: CellProps,
+  { alignSelf, flexBasis, flexGrow, flexShrink, size, xs, sm, md, lg, xl }: CellProps,
   { gap, gapCrossAxis, direction }: GridProps
 ) => ({
   cell: {
@@ -43,7 +85,27 @@ export const createStyles = (
     flexShrink,
   } as React.CSSProperties,
 
-  fixedSize: {
-    width: `calc((100% / 12 * ${size}) - ${gap}rem)`,
+  xs: {
+    width: `calc((100% / 12 * ${xs || size}) - ${gap}rem)`,
+  },
+  sm: {
+    [theme.breakpoints.up('sm')]: {
+      width: `calc((100% / 12 * ${sm}) - ${gap}rem)`,
+    },
+  },
+  md: {
+    [theme.breakpoints.up('md')]: {
+      width: `calc((100% / 12 * ${md}) - ${gap}rem)`,
+    },
+  },
+  lg: {
+    [theme.breakpoints.up('lg')]: {
+      width: `calc((100% / 12 * ${lg}) - ${gap}rem)`,
+    },
+  },
+  xl: {
+    [theme.breakpoints.up('xl')]: {
+      width: `calc((100% / 12 * ${xl}) - ${gap}rem)`,
+    },
   },
 })

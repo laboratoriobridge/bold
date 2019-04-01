@@ -43,6 +43,56 @@ exports[`should accept flex item props 1`] = `
 </div>
 `;
 
+exports[`should accept responsive sizes 1`] = `
+.emotion-0 {
+  margin: 0.5rem 1rem;
+  width: calc((100% / 12 * 12) - 2rem);
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    width: calc((100% / 12 * 6) - 2rem);
+  }
+}
+
+@media (min-width:960px) {
+  .emotion-0 {
+    width: calc((100% / 12 * 4) - 2rem);
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    width: calc((100% / 12 * 3) - 2rem);
+  }
+}
+
+@media (min-width:1920px) {
+  .emotion-0 {
+    width: calc((100% / 12 * 2) - 2rem);
+  }
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
+exports[`should accept size 1`] = `
+.emotion-0 {
+  margin: 0.5rem 1rem;
+  width: calc((100% / 12 * 6) - 2rem);
+}
+
+<div>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   margin: 0.5rem 1rem;

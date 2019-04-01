@@ -3,7 +3,10 @@ import { storiesOf } from '@storybook/react'
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { AlignItems, AlignSelf, Cell, Direction, Grid, JustifyContent } from '../'
+import { AlignItems, AlignSelf, Cell as CellPure, Direction, Grid, JustifyContent } from '../'
+import { useWindowSize } from '../../../hooks/useWindowSize'
+import { useTheme } from '../../../styles'
+import { Breakpoint } from '../../../styles/theme/createBreakpoints'
 
 const styles = {
   box: {
@@ -24,33 +27,66 @@ const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'ba
 const alignSelfOptions: AlignSelf[] = ['auto', 'flex-start', 'flex-end', 'center', 'baseline', 'stretch']
 const directionOptions: Direction[] = ['row', 'row-reverse', 'column', 'column-reverse']
 
+function CurrentBreakpoint() {
+  const theme = useTheme()
+  const { innerWidth } = useWindowSize()
+
+  const sizes: Breakpoint[] = ['xl', 'lg', 'md', 'sm', 'xs']
+  const current = sizes.find(key => innerWidth > theme.breakpoints.size[key])
+
+  return (
+    <>
+      width: {innerWidth}px | breakpoint: <strong>{current}</strong>
+    </>
+  )
+}
+
+function Cell(props: any) {
+  return <CellPure style={styles.box} {...props} />
+}
+
 storiesOf('Components|Grid', module)
   .add('default', () => (
-    <Grid>
-      <Cell size={6} style={styles.box}>
-        size=6
-      </Cell>
-      <Cell size={3} style={styles.box}>
-        size=3
-      </Cell>
-      <Cell size={2} style={styles.box}>
-        size=2
-      </Cell>
-      <Cell size={1} style={styles.box}>
-        size=1
-      </Cell>
-    </Grid>
+    <>
+      <CurrentBreakpoint />
+      <Grid wrap>
+        <Cell xs={12}>xs=12</Cell>
+        <Cell xs={12} sm={6}>
+          xs=12 sm=6
+        </Cell>
+        <Cell xs={12} sm={6}>
+          xs=12 sm=6
+        </Cell>
+        <Cell xs={12} sm={6} md={4}>
+          xs=12 sm=6 md=4
+        </Cell>
+        <Cell xs={12} sm={6} md={4}>
+          xs=12 sm=6 md=4
+        </Cell>
+        <Cell xs={12} sm={6} md={4}>
+          xs=12 sm=6 md=4
+        </Cell>
+        <Cell xs={12} sm={6} md={4} lg={3}>
+          xs=12 sm=6 md=4 lg=3
+        </Cell>
+        <Cell xs={12} sm={6} md={4} lg={3}>
+          xs=12 sm=6 md=4 lg=3
+        </Cell>
+        <Cell xs={12} sm={6} md={4} lg={3}>
+          xs=12 sm=6 md=4 lg=3
+        </Cell>
+        <Cell xs={12} sm={6} md={4} lg={3}>
+          xs=12 sm=6 md=4 lg=3
+        </Cell>
+      </Grid>
+    </>
   ))
   .add('flex-grow', () => (
     <Grid>
-      <Cell flexGrow={1} style={styles.box}>
-        1
-      </Cell>
-      <Cell style={styles.box}>2</Cell>
-      <Cell flexGrow={2} style={styles.box}>
-        3
-      </Cell>
-      <Cell style={styles.box}>4</Cell>
+      <Cell flexGrow={1}>1</Cell>
+      <Cell>2</Cell>
+      <Cell flexGrow={2}>3</Cell>
+      <Cell>4</Cell>
     </Grid>
   ))
   .add('playground', () => (
@@ -63,15 +99,9 @@ storiesOf('Components|Grid', module)
         gapCrossAxis={number('gapCrossAxis', 1)}
         wrap
       >
-        <Cell size={6} style={styles.box}>
-          size=6
-        </Cell>
-        <Cell size={6} style={styles.box}>
-          size=6
-        </Cell>
-        <Cell size={6} style={styles.box}>
-          size=6
-        </Cell>
+        <Cell xs={6}>xs=6</Cell>
+        <Cell xs={6}>xs=6</Cell>
+        <Cell xs={6}>xs=6</Cell>
       </Grid>
       <hr />
       <div style={{ height: 300 }}>
@@ -81,36 +111,24 @@ storiesOf('Components|Grid', module)
           direction={select('direction', directionOptions, 'row')}
           style={{ height: '100%' }}
         >
-          <Cell size={1} style={styles.box}>
-            1
-          </Cell>
-          <Cell size={1} style={styles.box}>
+          <Cell xs={1}>1</Cell>
+          <Cell xs={1}>
             <div style={{ height: 60 }}>2</div>
           </Cell>
-          <Cell size={1} style={styles.box}>
-            3
-          </Cell>
+          <Cell xs={1}>3</Cell>
         </Grid>
       </div>
     </>
   ))
   .add('cell', () => (
     <Grid alignItems='flex-start'>
-      <Cell size={1} style={styles.box}>
-        1
-      </Cell>
-      <Cell size={1} style={styles.box}>
+      <Cell xs={1}>1</Cell>
+      <Cell xs={1}>
         <div style={{ height: 60 }}>2</div>
       </Cell>
-      <Cell
-        size={number('size', 2) as any}
-        alignSelf={select('alignSelf', alignSelfOptions, 'auto')}
-        style={styles.box}
-      >
+      <Cell xs={number('xs', 2) as any} alignSelf={select('alignSelf', alignSelfOptions, 'auto')}>
         <strong>3</strong>
       </Cell>
-      <Cell size={1} style={styles.box}>
-        4
-      </Cell>
+      <Cell xs={1}>4</Cell>
     </Grid>
   ))
