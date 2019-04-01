@@ -22,7 +22,6 @@ export const createGlobalStyles = ({ pallete, typography }: Theme): Interpolatio
   },
   body: {
     margin: 0,
-    backgroundColor: pallete.surface.background,
     color: pallete.text.main,
     fontFamily: typography.fontFamily,
     fontSize: typography.sizes.text,
