@@ -9650,7 +9650,7 @@ module.exports = hoistNonReactStatics;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.4
+/** @license React v16.8.5
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -10865,12 +10865,12 @@ if (false) {} else {
 
 /***/ "../node_modules/next/node_modules/webpack/buildin/global.js":
 /*!*************************************************************************************************************************!*\
-  !*** delegated ../node_modules/next/node_modules/webpack/buildin/global.js from dll-reference dll_5ee718904e5061cf97d8 ***!
+  !*** delegated ../node_modules/next/node_modules/webpack/buildin/global.js from dll-reference dll_b18a10029ecd77e956f2 ***!
   \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5ee718904e5061cf97d8 */ "dll-reference dll_5ee718904e5061cf97d8"))("../node_modules/next/node_modules/webpack/buildin/global.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b18a10029ecd77e956f2 */ "dll-reference dll_b18a10029ecd77e956f2"))("../node_modules/next/node_modules/webpack/buildin/global.js");
 
 /***/ }),
 
@@ -11452,12 +11452,12 @@ module.exports = __webpack_require__(/*! ./dist/client/router */ "../node_module
 
 /***/ "../node_modules/object-assign/index.js":
 /*!****************************************************************************************************!*\
-  !*** delegated ../node_modules/object-assign/index.js from dll-reference dll_5ee718904e5061cf97d8 ***!
+  !*** delegated ../node_modules/object-assign/index.js from dll-reference dll_b18a10029ecd77e956f2 ***!
   \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5ee718904e5061cf97d8 */ "dll-reference dll_5ee718904e5061cf97d8"))("../node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b18a10029ecd77e956f2 */ "dll-reference dll_b18a10029ecd77e956f2"))("../node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -11672,12 +11672,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "../nod
 
 /***/ "../node_modules/react-dom/index.js":
 /*!************************************************************************************************!*\
-  !*** delegated ../node_modules/react-dom/index.js from dll-reference dll_5ee718904e5061cf97d8 ***!
+  !*** delegated ../node_modules/react-dom/index.js from dll-reference dll_b18a10029ecd77e956f2 ***!
   \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5ee718904e5061cf97d8 */ "dll-reference dll_5ee718904e5061cf97d8"))("../node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b18a10029ecd77e956f2 */ "dll-reference dll_b18a10029ecd77e956f2"))("../node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -17428,7 +17428,7 @@ module.exports = "!function(e){function t(n){if(u[n])return u[n].exports;var r=u
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.8.4
+/** @license React v16.8.5
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -17678,12 +17678,12 @@ if (false) {} else {
 
 /***/ "../node_modules/react/index.js":
 /*!********************************************************************************************!*\
-  !*** delegated ../node_modules/react/index.js from dll-reference dll_5ee718904e5061cf97d8 ***!
+  !*** delegated ../node_modules/react/index.js from dll-reference dll_b18a10029ecd77e956f2 ***!
   \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_5ee718904e5061cf97d8 */ "dll-reference dll_5ee718904e5061cf97d8"))("../node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b18a10029ecd77e956f2 */ "dll-reference dll_b18a10029ecd77e956f2"))("../node_modules/react/index.js");
 
 /***/ }),
 
@@ -19354,14 +19354,14 @@ module.exports = __webpack_require__(/*! /home/bonetti/workspace/bold/node_modul
 
 /***/ }),
 
-/***/ "dll-reference dll_5ee718904e5061cf97d8":
+/***/ "dll-reference dll_b18a10029ecd77e956f2":
 /*!*******************************************!*\
-  !*** external "dll_5ee718904e5061cf97d8" ***!
+  !*** external "dll_b18a10029ecd77e956f2" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_5ee718904e5061cf97d8;
+module.exports = dll_b18a10029ecd77e956f2;
 
 /***/ })
 
