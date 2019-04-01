@@ -53,7 +53,7 @@ export function Alert(props: AlertProps) {
 
 export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
   wrapper: {
-    padding: inline ? '0 0.5rem' : '0 1rem',
+    padding: inline ? '0.375rem 0.5rem' : '0 1rem',
     minHeight: inline ? '2rem' : '2.5rem',
     borderRadius: '2px',
     borderStyle: 'solid',
@@ -61,6 +61,7 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
     display: inline ? 'inline-flex' : 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    lineHeight: '1.25rem',
   } as CSSProperties,
   container: {
     display: 'flex',
