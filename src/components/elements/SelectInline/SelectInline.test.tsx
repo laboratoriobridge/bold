@@ -15,7 +15,7 @@ const items: DefaultItemType[] = [
 const itemToString = (item: DefaultItemType) => item && item.label
 
 const createSelectInline = () => (
-  <SelectInline<DefaultItemType> initialValue={items[0]} items={items} itemToString={itemToString} />
+  <SelectInline<DefaultItemType> value={items[0]} items={items} itemToString={itemToString} />
 )
 
 describe('SelectInline', () => {

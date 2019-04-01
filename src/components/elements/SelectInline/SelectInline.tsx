@@ -10,18 +10,15 @@ import { Icon } from '../Icon'
 import { Popper, PopperController, PopperProps } from '../Popper'
 import { Text } from '../textual/Text/Text'
 
-export interface SelectInlineProps<T> extends Omit<SelectSingleProps<T>, 'value'> {
-  initialValue: T
+export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   buttonProps?: ButtonProps
   popperProps?: Omit<PopperProps, 'renderTarget' | 'children'>
   onChange?(item: T): void
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { initialValue: value, onChange, itemToString, buttonProps, popperProps, ...rest } = props
+  const { value, onChange, itemToString, buttonProps, popperProps, placeholder, ...rest } = props
   const theme = useTheme()
-
-  const [currentValue, setCurrentValue] = React.useState(itemToString(value))
 
   const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
   const selectInputRef: React.MutableRefObject<any> = React.useRef<HTMLInputElement>()
@@ -37,7 +34,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
         innerRef={composeRefs(targetButtonRef, innerRef)}
         {...buttonRest}
       >
-        <Text>{currentValue}</Text>
+        <Text>{itemToString(value) || placeholder}</Text>
         <Icon style={{ marginLeft: '0.5rem' }} icon={ctrl.isShown() ? 'angleUp' : 'angleDown'} />
       </Button>
     )
@@ -87,7 +84,6 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
       {(ctrl: PopperController) => {
         const handleOnChange = (newValue: T) => {
           onChange && onChange(newValue)
-          setCurrentValue(itemToString(newValue))
           ctrl.hide()
         }
         return (
