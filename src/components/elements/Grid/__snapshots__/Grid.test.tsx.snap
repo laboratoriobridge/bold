@@ -1,22 +1,146 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept "gap" and "gapCrossAxis" props 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -2.5rem -5rem;
+}
+
+.emotion-0 {
+  margin: 2.5rem 5rem;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    >
+      1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should accept "gap" and "gapCrossAxis" props 2`] = `
+.emotion-0 {
+  margin: 2.5rem 5rem;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -2.5rem -5rem;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    >
+      1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should accept "gap" and "gapCrossAxis" props 3`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -5rem -2.5rem;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 {
+  margin: 5rem 2.5rem;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    >
+      1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should accept "gap" and "gapCrossAxis" props 4`] = `
+.emotion-0 {
+  margin: 5rem 2.5rem;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -5rem -2.5rem;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    >
+      1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should accept "style" prop 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  height: 100%;
+  margin: -0.5rem -1rem;
   color: red;
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-  }
 }
 
 <div>
@@ -30,34 +154,25 @@ exports[`should accept "style" prop 1`] = `
 
 exports[`should accept flex container props 1`] = `
 .emotion-0 {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin: -1rem -0.5rem;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
   justify-content: space-around;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  height: 100%;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-  }
 }
 
 <div>
@@ -75,16 +190,7 @@ exports[`should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: -1rem;
-  margin-right: -1rem;
-  height: 100%;
-}
-
-@media (max-width:1280px) {
-  .emotion-0 {
-    margin-left: -0.5rem;
-    margin-right: -0.5rem;
-  }
+  margin: -0.5rem -1rem;
 }
 
 <div>

@@ -16,18 +16,18 @@ export function StickyContainer(props: StickyContainerProps) {
   const [position, setPosition] = useState<PositionProperty>('absolute')
   const { classes, css } = useStyles(createStyles, props, position)
 
-  const listener = () => {
-    if (window.scrollY > top) {
-      setPosition('fixed')
-    } else {
-      setPosition('absolute')
-    }
-  }
-
   useEffect(() => {
-    addEventListener('scoll', listener)
+    const listener = () => {
+      if (window.scrollY > top) {
+        setPosition('fixed')
+      } else {
+        setPosition('absolute')
+      }
+    }
+
+    addEventListener('scroll', listener)
     return () => removeEventListener('scoll', listener)
-  }, [])
+  }, [top])
 
   return <div className={css(classes.container, style)} {...rest} />
 }
