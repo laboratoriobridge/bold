@@ -2,8 +2,7 @@ import { select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Cell } from '../Cell'
-import { Grid } from '../Grid'
+import { Cell, Grid } from '../Grid'
 import { Text } from '../textual'
 
 import { IconMap, Icons } from './generated/Icons'
