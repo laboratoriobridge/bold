@@ -41,8 +41,13 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     ...rest
   } = props
 
-  const handleClear = (downshift: SelectDownshiftRenderProps<T>) => () => {
+  const handleClear = (downshift: SelectDownshiftRenderProps<T>) => (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     downshift.clearSelection()
+    if (props.onClear) {
+      props.onClear(e)
+    }
   }
 
   const handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
