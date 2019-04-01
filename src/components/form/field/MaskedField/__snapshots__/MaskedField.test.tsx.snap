@@ -5,6 +5,7 @@ exports[`render correctly 1`] = `
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
+  line-height: 20px;
 }
 
 .emotion-2 {

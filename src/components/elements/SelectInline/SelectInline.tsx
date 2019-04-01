@@ -47,7 +47,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
     box: {
       border: `1px solid ${theme.pallete.divider}`,
       backgroundColor: theme.pallete.surface.main,
-      '& > div:first-child': {
+      '& > div:first-of-type': {
         padding: '0.5rem',
       },
       'ul > li:first-of-type': {

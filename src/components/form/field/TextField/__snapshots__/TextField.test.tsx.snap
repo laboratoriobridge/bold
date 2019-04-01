@@ -143,6 +143,7 @@ exports[`should not include field props on rendered HTML 1`] = `
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
+  line-height: 20px;
 }
 
 <div
