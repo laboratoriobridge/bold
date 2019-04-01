@@ -75,4 +75,13 @@ describe('clear button', () => {
     fireEvent.click(clearButton)
     expect(onChange).toHaveBeenLastCalledWith(null, expect.anything())
   })
+  it('should call prop onClear if exists', () => {
+    const onClear = jest.fn()
+    const { getByTitle } = render(createSelect({ onClear, value: items[0] }))
+    const clearButton = getByTitle('Limpar')
+
+    expect(onClear).not.toHaveBeenCalled()
+    fireEvent.click(clearButton)
+    expect(onClear).toHaveBeenCalled()
+  })
 })
