@@ -7,17 +7,18 @@ import { composeRefs } from '../../../util/react'
 import { Select, SelectSingleProps } from '../../form/input/Select'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
-import { Popper, PopperController } from '../Popper'
+import { Popper, PopperController, PopperProps } from '../Popper'
 import { Text } from '../textual/Text/Text'
 
 export interface SelectInlineProps<T> extends Omit<SelectSingleProps<T>, 'value'> {
   initialValue: T
   buttonProps?: ButtonProps
+  popperProps?: Omit<PopperProps, 'renderTarget' | 'children'>
   onChange?(item: T): void
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { initialValue: value, onChange, itemToString, buttonProps, ...rest } = props
+  const { initialValue: value, onChange, itemToString, buttonProps, popperProps, ...rest } = props
   const theme = useTheme()
 
   const [currentValue, setCurrentValue] = React.useState(itemToString(value))
@@ -81,6 +82,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
       style={styles.popper}
       onHide={handleVisibilityEvents(targetButtonRef)}
       onShow={handleVisibilityEvents(selectInputRef)}
+      {...popperProps}
     >
       {(ctrl: PopperController) => {
         const handleOnChange = (newValue: T) => {
