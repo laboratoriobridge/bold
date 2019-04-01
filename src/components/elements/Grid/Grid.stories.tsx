@@ -4,9 +4,8 @@ import { Interpolation } from 'emotion'
 import React from 'react'
 
 import { AlignItems, AlignSelf, Cell as CellPure, Direction, Grid, JustifyContent } from '../'
+import { useBreakpoint } from '../../../hooks/useBreakpoint'
 import { useWindowSize } from '../../../hooks/useWindowSize'
-import { useTheme } from '../../../styles'
-import { Breakpoint } from '../../../styles/theme/createBreakpoints'
 
 const styles = {
   box: {
@@ -28,15 +27,12 @@ const alignSelfOptions: AlignSelf[] = ['auto', 'flex-start', 'flex-end', 'center
 const directionOptions: Direction[] = ['row', 'row-reverse', 'column', 'column-reverse']
 
 function CurrentBreakpoint() {
-  const theme = useTheme()
   const { innerWidth } = useWindowSize()
-
-  const sizes: Breakpoint[] = ['xl', 'lg', 'md', 'sm', 'xs']
-  const current = sizes.find(key => innerWidth > theme.breakpoints.size[key])
+  const breakpoint = useBreakpoint()
 
   return (
     <>
-      width: {innerWidth}px | breakpoint: <strong>{current}</strong>
+      width: {innerWidth}px | breakpoint: <strong>{breakpoint}</strong>
     </>
   )
 }
