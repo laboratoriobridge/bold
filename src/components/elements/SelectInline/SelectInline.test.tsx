@@ -3,7 +3,7 @@ import { fireEvent, render, wait } from 'react-testing-library'
 
 import { DefaultItemType } from '../../form'
 
-import { SelectInline } from './SelectInline'
+import { SelectInline, SelectInlineProps } from './SelectInline'
 
 const items: DefaultItemType[] = [
   { label: 'Value #001', value: 1 },
@@ -14,13 +14,21 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-const createSelectInline = () => (
-  <SelectInline<DefaultItemType> value={items[0]} items={items} itemToString={itemToString} />
+const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>) => (
+  <SelectInline<DefaultItemType> value={items[0]} items={items} itemToString={itemToString} {...props} />
 )
 
 describe('SelectInline', () => {
   it('should render correctly when closed', () => {
     const { container } = render(createSelectInline())
+    expect(container).toMatchSnapshot()
+  })
+  it('should render correctly with placeholder', () => {
+    const props: Partial<SelectInlineProps<DefaultItemType>> = {
+      value: null,
+      placeholder: 'Placeholder',
+    }
+    const { container } = render(createSelectInline(props))
     expect(container).toMatchSnapshot()
   })
   it('should make the popper content visible on click', async () => {
