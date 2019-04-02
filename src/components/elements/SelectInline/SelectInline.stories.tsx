@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
@@ -15,5 +16,10 @@ const items: DefaultItemType[] = [
 const itemToString = (item: DefaultItemType) => item && item.label
 
 storiesOf('Components/SelectInline', module).add('default', () => (
-  <SelectInline<DefaultItemType> initialValue={items[0]} items={items} itemToString={itemToString} />
+  <SelectInline<DefaultItemType>
+    value={items[0]}
+    items={items}
+    itemToString={itemToString}
+    onChange={action('changed')}
+  />
 ))
