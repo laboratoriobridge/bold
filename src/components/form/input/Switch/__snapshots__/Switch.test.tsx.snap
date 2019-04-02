@@ -79,6 +79,7 @@ exports[`should render correctly 1`] = `
     <input
       class="emotion-0"
       type="checkbox"
+      value=""
     />
     <div
       class="emotion-2"

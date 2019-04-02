@@ -19,7 +19,7 @@ global.Intl = require('intl')
 afterEach(cleanup)
 
 jest.mock('../styles/hooks/useTheme', () => {
-    return {
-        useTheme: () => createTheme(),
-    }
+  return {
+    useTheme: () => createTheme(),
+  }
 })

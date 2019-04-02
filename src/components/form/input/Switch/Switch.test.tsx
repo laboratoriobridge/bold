@@ -16,4 +16,5 @@ it('should render correctly with label', () => {
 it('should render correctly when disabled', () => {
   const { container } = render(<Switch label='Disabled' value='true' disabled />)
   expect(container).toMatchSnapshot()
+  expect(container.querySelector('input').getAttribute('disabled')).not.toBeNull()
 })

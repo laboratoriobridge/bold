@@ -1,20 +1,40 @@
 import React, { CSSProperties } from 'react'
 
 import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../../../styles'
+import { Omit } from '../../../../util'
 import { Input, InputProps } from '../Input/Input'
 
-export interface SwitchProps extends InputProps {
+export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange'> {
   label?: string
+
+  // Inner input props
+  name?: InputProps['name']
+  disabled?: InputProps['disabled']
+  onChange?: InputProps['onChange']
+  value?: InputProps['value']
+  defaultValue?: InputProps['defaultValue']
+  checked?: InputProps['checked']
+  defaultChecked?: InputProps['defaultChecked']
 }
 
 export function Switch(props: SwitchProps) {
-  const { label, ...rest } = props
+  const { label, name, disabled, onChange, value, defaultValue, checked, defaultChecked, ...rest } = props
   const { classes } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)
 
   return (
-    <label className={inputClasses.wrapper}>
-      <Input {...rest} type='checkbox' className={inputClasses.input} />
+    <label className={inputClasses.wrapper} {...rest}>
+      <Input
+        type='checkbox'
+        className={inputClasses.input}
+        name={name}
+        value={value}
+        defaultValue={defaultValue}
+        checked={checked}
+        defaultChecked={defaultChecked}
+        disabled={disabled}
+        onChange={onChange}
+      />
 
       <div className={classes.switch}>
         <span className={classes.knob} />
