@@ -917,7 +917,7 @@ exports[`SelectInline should render correctly with placeholder 1`] = `
   background-color: #FFFFFF;
 }
 
-.emotion-15 > div:first-child {
+.emotion-15 > div:first-of-type {
   padding: 0.5rem;
 }
 
