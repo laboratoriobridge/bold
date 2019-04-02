@@ -76,6 +76,7 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'switch' | '
     display: 'inline-flex',
     alignItems: 'center',
     cursor: 'pointer',
+    textAlign: 'left',
     [`&:hover .${classes.switch}`]: {
       cursor: 'pointer',
       borderColor: theme.pallete.gray.c40,
