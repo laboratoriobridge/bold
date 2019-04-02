@@ -2,7 +2,9 @@
 
 exports[`should render correctly 1`] = `
 <div>
-  Test
+  <div>
+    Test
+  </div>
 </div>
 `;
 
@@ -16,6 +18,7 @@ exports[`should render correctly 2`] = `
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
+  line-height: 20px;
 }
 
 .emotion-2 {
@@ -29,27 +32,30 @@ exports[`should render correctly 2`] = `
   align-items: center;
   color: #D83A2E;
   margin-top: 0.25rem;
+  line-height: 20px;
 }
 
-<div
-  data-name="test"
->
-  <label
-    class="emotion-1"
-  >
-    Label
-    <span
-      class="emotion-0"
-      title="Campo obrigatório"
-    >
-      *
-    </span>
-  </label>
-  Teste
+<div>
   <div
-    class="emotion-2"
+    data-name="test"
   >
-    Error
+    <label
+      class="emotion-1"
+    >
+      Label
+      <span
+        class="emotion-0"
+        title="Campo obrigatório"
+      >
+        *
+      </span>
+    </label>
+    Test
+    <div
+      class="emotion-2"
+    >
+      Error
+    </div>
   </div>
 </div>
 `;

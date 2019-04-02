@@ -1,16 +1,16 @@
-import { render } from 'enzyme'
 import React from 'react'
+import { render } from 'react-testing-library'
 
-import { FieldWrapper } from './'
+import { FieldWrapper } from './FieldWrapper'
 
 it('should render correctly', () => {
-  expect(render(<FieldWrapper>Test</FieldWrapper>)).toMatchSnapshot()
+  const { container, rerender } = render(<FieldWrapper>Test</FieldWrapper>)
+  expect(container).toMatchSnapshot()
 
-  expect(
-    render(
-      <FieldWrapper name='test' label='Label' error='Error' required>
-        Teste
-      </FieldWrapper>
-    )
-  ).toMatchSnapshot()
+  rerender(
+    <FieldWrapper name='test' label='Label' error='Error' required>
+      Test
+    </FieldWrapper>
+  )
+  expect(container).toMatchSnapshot()
 })
