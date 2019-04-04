@@ -35,7 +35,9 @@ storiesOf('Components|Tag', module)
   ))
   .add('removable', () => (
     <HFlow>
-      <Tag removable>Normal</Tag>
+      <Tag removable onRemove={action('onRemove')}>
+        Normal
+      </Tag>
       <Tag type='alert' removable onRemove={action('onRemove')}>
         Alert
       </Tag>
