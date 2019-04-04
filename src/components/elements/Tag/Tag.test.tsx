@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from 'react-testing-library'
+import { fireEvent, render } from 'react-testing-library'
 
 import { Tag } from './Tag'
 
@@ -18,4 +18,26 @@ it('should accept the style prop', () => {
 it('should accept HTML span element properties', () => {
   const { container } = render(<Tag id='test'>Normal</Tag>)
   expect(container.querySelector('span').getAttribute('id')).toEqual('test')
+})
+
+it('should accept "icon" prop', () => {
+  const { container } = render(<Tag icon='userFilled'>With icon</Tag>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept "removable" prop and render remove icon', () => {
+  const { container } = render(<Tag removable>Removable</Tag>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should call onRemove when remove icon is clicked', () => {
+  const remove = jest.fn()
+  const { container } = render(
+    <Tag removable onRemove={remove}>
+      Removable
+    </Tag>
+  )
+  expect(remove).not.toHaveBeenCalled()
+  fireEvent.click(container.querySelector('svg'))
+  expect(remove).toHaveBeenCalled()
 })

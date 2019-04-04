@@ -3,32 +3,58 @@ import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
+import { Icon, Icons } from '../Icon'
 
 export type TagType = 'normal' | 'danger' | 'info' | 'success' | 'alert'
 
 export interface TagProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
   type?: TagType
   style?: Interpolation
+  icon?: Icons
+  removable?: boolean
+  onRemove?(): void
 }
 
 export function Tag(props: TagProps) {
-  const { type, style, ...rest } = props
+  const { type, style, children, icon, removable, onRemove, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
-  return <span className={css(classes.tag, classes[type], style)} {...rest} />
+  return (
+    <span className={css(classes.tag, classes[type], style)} {...rest}>
+      {icon && <Icon icon={icon} style={classes.icon} />}
+      {children}
+      {removable && <Icon icon='timesDefault' style={classes.removeIcon} onClick={onRemove} />}
+    </span>
+  )
 }
 
 Tag.defaultProps = {
   type: 'normal',
+  onRemove: () => null,
 } as Partial<TagProps>
 
 const createStyles = (theme: Theme) => ({
   tag: {
-    padding: '0.25rem',
+    display: 'inline-flex',
+    alignItems: 'center',
+    padding: '0.25rem 0.5rem',
     fontWeight: 'bold',
-    borderRadius: 4,
+    borderRadius: theme.radius.tag,
     whiteSpace: 'nowrap',
+    lineHeight: '1rem',
   } as CSSProperties,
+  icon: {
+    fontSize: '1rem',
+    marginRight: '0.25rem',
+  } as CSSProperties,
+  removeIcon: {
+    fontSize: '1rem',
+    marginLeft: '0.125rem',
+    '&:hover': {
+      cursor: 'pointer',
+      color: theme.pallete.status.danger.main,
+    },
+  },
   normal: {
     background: theme.pallete.gray.c80,
   } as CSSProperties,
