@@ -4,7 +4,9 @@ import { fireEvent, render } from 'react-testing-library'
 
 import { createTheme } from '../../../../styles'
 
-import { RangeCalendar, RangeCalendarProps } from './RangeCalendar'
+import { RangeCalendar, RangeCalendarProps, dayHoverStyle } from './RangeCalendar'
+import { defaultModifierStyles } from '../Calendar'
+import { Interpolation } from 'emotion'
 
 expect.extend(matchers)
 
@@ -12,13 +14,41 @@ const createComponent = (props: Partial<RangeCalendarProps> = {}) => (
   <RangeCalendar initialVisibleDate={new Date('2019-02-09')} initialDate={null} finalDate={null} {...props} />
 )
 
+/**
+ * iterates over the object executing an callback containing the desired tests
+ * @param obj
+ * @param testFn
+ */
+const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue: any) => void) => {
+  for (const field in obj as any) {
+    if (obj.hasOwnProperty(field)) {
+      if (obj[field] === Object(obj[field])) {
+        iterateObjectFields(obj[field], testFn)
+      } else {
+        testFn(field, obj[field])
+      }
+    }
+  }
+}
+
 describe('[Calendar][RangePicker]', () => {
   const theme = createTheme()
+  const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 
   it('Should initialize with null values if initialValues is null', () => {
     const { getAllByRole } = render(createComponent())
 
     getAllByRole('button').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
+  })
+
+  it('With nothing defined, hovered days should have the correct css', () => {
+    const { getByText } = render(createComponent())
+    const expectedStyle = dayHoverStyle(theme)
+
+    fireEvent.mouseOver(getByText('14'))
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
   })
 
   it('When finalDate is earlier than initialDate, both should be undefined', () => {
@@ -28,6 +58,17 @@ describe('[Calendar][RangePicker]', () => {
 
     expect(getByText('14').getAttribute('aria-selected')).toBe('false')
     expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+  })
+
+  it('With only the initialDate selected, just one day should have the "selectedStyle"', () => {
+    const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15') }))
+    const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
+
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('15')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
   })
 
   it('With finalDate after than initialDate, the selected days must have been selected', () => {
@@ -42,58 +83,110 @@ describe('[Calendar][RangePicker]', () => {
     expect(getByText('14').getAttribute('aria-selected')).toBe('false')
   })
 
-  it('Days should have been selected', () => {
-    const { getByText } = render(createComponent())
+  it('With finalDate after than initialDate, the selected days should have the "selectedStyle"', () => {
+    const { getByText } = render(
+      createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
+    )
+    const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
 
-    fireEvent.mouseOver(getByText('14'))
-    expect(getByText('14')).toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('11')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('12')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('13')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
   })
 
-  it('Hover style must be applied on the interval between initialDate and mouse', () => {
+  it('With only initalDate defined, hover style must be applied on the interval between initialDate and mouse', () => {
     const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15') }))
+    const expectedStyle = dayHoverStyle(theme)
 
     fireEvent.mouseOver(getByText('17'))
-    expect(getByText('14')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('15')).toHaveStyleRule('background', theme.pallete.primary.main)
-    expect(getByText('16')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('17')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('18')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      // Day 15 (the day selected in the interval) skipped to preserve the purpose of this test
+      expect(getByText('16')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('17')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('18')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
 
     fireEvent.mouseOver(getByText('13'))
-    expect(getByText('16')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('15')).toHaveStyleRule('background', theme.pallete.primary.main)
-    expect(getByText('14')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('13')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('12')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('12')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('13')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      // Day 15 (the day selected in the interval) skipped to preserve the purpose of this test
+      expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
   })
 
   it('Hover style must be applied when initialDate and finalDate are correctly defined', () => {
     const { getByText } = render(
       createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
     )
+    const expectedStyle = dayHoverStyle(theme)
 
     fireEvent.mouseOver(getByText('15'))
-    expect(getByText('10')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('13')).toHaveStyleRule('background', theme.pallete.primary.main)
-    expect(getByText('14')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('15')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('16')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      // Day 11 to 13 (the day selected in the interval) skipped to preserve the purpose of this test
+      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('15')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
 
     fireEvent.mouseOver(getByText('09'))
-    expect(getByText('14')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('11')).toHaveStyleRule('background', theme.pallete.primary.main)
-    expect(getByText('10')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('09')).toHaveStyleRule('background', theme.pallete.gray.c90)
-    expect(getByText('08')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+      expect(getByText('08')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('09')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('10')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      // Day 11 to 13 (the day selected in the interval) skipped to preserve the purpose of this test
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    })
   })
 
   it('Remove hover style when mouseLeave', () => {
     const { getByText } = render(createComponent({ initialDate: new Date('2019-02-13') }))
+    const expectedStyle = dayHoverStyle(theme)
 
     fireEvent.mouseOver(getByText('14'))
-    expect(getByText('14')).toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
 
     fireEvent.mouseLeave(getByText('14'))
-    expect(getByText('14')).not.toHaveStyleRule('background', theme.pallete.gray.c90)
+    iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
+  })
+
+  it('The comparisons for which days belong to the selected range should be correct', () => {
+    const { getByText, rerender } = render(
+      createComponent({
+        initialVisibleDate: new Date('2019-01-15'),
+        initialDate: new Date('2019-02-15'),
+      })
+    )
+    // Showing the previous month, so nothing should be selected
+    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+
+    rerender(
+      createComponent({
+        initialVisibleDate: new Date('2018-02-15'),
+        initialDate: new Date('2019-02-15'),
+      })
+    )
+    // Showing the previous year, so nothing should be selected
+    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+
+    rerender(
+      createComponent({
+        initialVisibleDate: new Date('2018-01-15'),
+        initialDate: new Date('2019-02-15'),
+      })
+    )
+    // Showing the wrong year and month, so nothing should be selected
+    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
   })
 })

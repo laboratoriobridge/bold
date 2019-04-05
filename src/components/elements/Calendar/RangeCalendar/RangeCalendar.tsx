@@ -26,7 +26,7 @@ export const RangeCalendar = ({ initialDate, finalDate, ...rest }: RangeCalendar
       return false
     }
     if (!finalDate) {
-      return day.getTime() === initialDate.getTime()
+      return isSameDay(day, initialDate)
     }
     if (initialDate <= day && day <= finalDate) {
       return true
@@ -39,7 +39,6 @@ export const RangeCalendar = ({ initialDate, finalDate, ...rest }: RangeCalendar
     ((hoverFinalDate <= day && day < initialDate) || (initialDate < day && day <= hoverFinalDate))
 
   const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => setHoverFinalDate(undefined)
-
   return (
     <Calendar
       {...rest}
@@ -53,9 +52,10 @@ export const RangeCalendar = ({ initialDate, finalDate, ...rest }: RangeCalendar
       }}
       modifierStyles={{
         ...rest.modifierStyles,
-        inTheHoverRange: (theme: Theme) => ({ background: theme.pallete.surface.background }),
+        inTheHoverRange: dayHoverStyle,
         inTheRange: defaultModifierStyles.selected,
       }}
     />
   )
 }
+export const dayHoverStyle = (theme: Theme) => ({ background: theme.pallete.surface.background })
