@@ -1,29 +1,30 @@
 import React from 'react'
 
+import { DefaultGlobalCss } from '../global/GlobalCss'
+
 import { createTheme, Theme } from './createTheme'
-import { CssGlobal } from './CssGlobal'
 
 export interface ThemeProviderProps {
-    theme?: Theme
+  theme?: Theme
+  children?: React.ReactNode
 }
 
 export const ThemeContext = React.createContext<Theme>(null)
 
-export class ThemeProvider extends React.PureComponent<ThemeProviderProps> {
+export function ThemeProvider(props: ThemeProviderProps) {
+  const { theme, children } = props
 
-    static defaultProps: Partial<ThemeProviderProps> = {
-        theme: createTheme(),
-    }
+  return (
+    <ThemeContext.Provider value={theme}>
+      <>
+        <DefaultGlobalCss />
 
-    render() {
-        return (
-            <ThemeContext.Provider value={this.props.theme}>
-                <>
-                    <CssGlobal styles={this.props.theme.global} />
-
-                    {this.props.children}
-                </>
-            </ThemeContext.Provider>
-        )
-    }
+        {children}
+      </>
+    </ThemeContext.Provider>
+  )
 }
+
+ThemeProvider.defaultProps = {
+  theme: createTheme(),
+} as Partial<ThemeProviderProps>

@@ -14,21 +14,23 @@ exports[`TableHeader should accept the style prop 1`] = `
   color: red;
 }
 
-<table
-  class="emotion-3"
->
-  <thead
-    class="emotion-1"
+<div>
+  <table
+    class="emotion-3"
   >
-    <tr
+    <thead
       class="emotion-1"
     >
-      <th
-        class="emotion-0"
+      <tr
+        class="emotion-1"
       >
-        Test
-      </th>
-    </tr>
-  </thead>
-</table>
+        <th
+          class="emotion-0"
+        >
+          Test
+        </th>
+      </tr>
+    </thead>
+  </table>
+</div>
 `;

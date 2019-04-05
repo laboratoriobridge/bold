@@ -1,57 +1,43 @@
 import { PositionProperty } from 'csstype'
-import React from 'react'
+import { Interpolation } from 'emotion'
+import React, { CSSProperties, useEffect, useState } from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface StickyContainerProps extends WithStylesProps {
-    top?: number
-    left?: number
+export interface StickyContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  top?: number
+  left?: number
+  style?: Interpolation
 }
 
-export interface StickContainerState {
-    position: PositionProperty
+export function StickyContainer(props: StickyContainerProps) {
+  const { top, left, style, ...rest } = props
+  const [position, setPosition] = useState<PositionProperty>('absolute')
+  const { classes, css } = useStyles(createStyles, props, position)
+
+  useEffect(() => {
+    const listener = () => {
+      if (window.scrollY > top) {
+        setPosition('fixed')
+      } else {
+        setPosition('absolute')
+      }
+    }
+
+    addEventListener('scroll', listener)
+    return () => removeEventListener('scoll', listener)
+  }, [top])
+
+  return <div className={css(classes.container, style)} {...rest} />
 }
 
-@withStyles
-export class StickyContainer extends React.PureComponent<StickyContainerProps, StickContainerState> {
-
-    constructor(props: StickyContainerProps) {
-        super(props)
-        this.state = {
-            position: 'absolute',
-        }
-    }
-
-    render() {
-        const { css, top, left } = this.props
-        const root: Styles = {
-            container: {
-                top: this.state.position === 'fixed' ? 0 : top,
-                position: this.state.position,
-                width: '100%',
-                zIndex: 2,
-                left,
-            },
-        }
-
-        return (
-            <div className={css(root.container)}>{this.props.children}</div>
-        )
-    }
-
-    public listener = () => {
-        if (window.scrollY > this.props.top) {
-            this.setState({ position: 'fixed' })
-        } else {
-            this.setState({ position: 'absolute' })
-        }
-    }
-
-    componentDidMount() {
-        window.addEventListener('scroll', this.listener)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.listener)
-    }
-}
+export const createStyles = (theme: Theme, { left, top }: StickyContainerProps, position: PositionProperty) => ({
+  container: {
+    position,
+    top: position === 'fixed' ? 0 : top,
+    left,
+    width: '100%',
+    zIndex: 2,
+  } as CSSProperties,
+})

@@ -2,29 +2,26 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render, wait } from 'react-testing-library'
 
-import { withTheme } from '../../../../test'
-
 import { ControlledRangeCalendar, ControlledRangeCalendarProps } from './ControlledRangeCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<ControlledRangeCalendarProps> = {}) =>
-  withTheme(
-    <ControlledRangeCalendar
-      initialVisibleDate={new Date('2019-02-09')}
-      initialValues={{
-        initialDate: undefined,
-        finalDate: undefined,
-      }}
-      {...props}
-    />
-  )
+const createComponent = (props: Partial<ControlledRangeCalendarProps> = {}) => (
+  <ControlledRangeCalendar
+    initialVisibleDate={new Date('2019-02-09')}
+    initialValues={{
+      initialDate: undefined,
+      finalDate: undefined,
+    }}
+    {...props}
+  />
+)
 
 describe('[Calendar][RangePicker]', () => {
   it('With empty initialValues, should leave an empty interval', () => {
     const { getAllByRole } = render(createComponent())
 
-    getAllByRole('option').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
+    getAllByRole('button').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
   })
 
   it('Should select only the initialDate if the finalDate is null/undefined in initialValues', () => {

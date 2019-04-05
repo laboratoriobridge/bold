@@ -31,6 +31,7 @@ exports[`Alert should allow styles override 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #EBF4FA;
   color: #0A67D1;
   border-color: #0A67D1;
@@ -52,64 +53,43 @@ exports[`Alert should allow styles override 1`] = `
   color: blue;
 }
 
-<div
-  class="emotion-3"
-  role="alert"
->
+<div>
   <div
-    class="emotion-2"
+    class="emotion-3"
+    role="alert"
   >
-    <svg
-      aria-hidden="true"
-      class="emotion-0"
-      height="1em"
-      role="img"
-      viewBox="0 0 24 24"
-      width="1em"
-    >
-      <defs>
-        <path
-          d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10zm-2 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-6.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
-          id="info-circle-outline_svg__a"
-        />
-      </defs>
-      <use
-        href="#info-circle-outline_svg__a"
-      />
-    </svg>
     <div
-      class="emotion-1"
+      class="emotion-2"
     >
-      Information.
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <defs>
+          <path
+            d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12C2 6.478 6.477 2 12 2s10 4.478 10 10zm-8.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
+            id="info-circle-filled_svg__a"
+          />
+        </defs>
+        <use
+          xlink:href="#info-circle-filled_svg__a"
+        />
+      </svg>
+      <div
+        class="emotion-1"
+      >
+        Information.
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`Alert should render correctly 1`] = `
-.emotion-6 {
-  padding: 0 1rem;
-  min-height: 2.5rem;
-  border-radius: 2px;
-  border-style: solid;
-  border-width: 1px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  background: #EBF4FA;
-  color: #0A67D1;
-  border-color: #0A67D1;
-}
-
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -141,6 +121,30 @@ exports[`Alert should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.emotion-6 {
+  padding: 0 1rem;
+  min-height: 2.5rem;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.25rem;
+  background: #EBF4FA;
+  color: #0A67D1;
+  border-color: #0A67D1;
 }
 
 .emotion-2 {
@@ -223,6 +227,7 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #E3FAD2;
   color: #097D05;
   border-color: #097D05;
@@ -246,6 +251,7 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #FAF0E8;
   color: #BF4600;
   border-color: #BF4600;
@@ -269,230 +275,237 @@ exports[`Alert should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #FCF0F0;
   color: #D83A2E;
   border-color: #D83A2E;
 }
 
 <div>
-  <div
-    class="emotion-6"
-    role="alert"
-  >
+  <div>
     <div
-      class="emotion-5"
+      class="emotion-6"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10zm-2 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-6.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
-            id="info-circle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#info-circle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-5"
       >
-        Information.
-      </div>
-      <span
-        class="emotion-4"
-      >
-        <button
-          aria-label="Fechar alerta"
-          class="emotion-3"
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-2"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <defs>
+            <path
+              d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12C2 6.478 6.477 2 12 2s10 4.478 10 10zm-8.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
+              id="info-circle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#info-circle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Information.
+        </div>
+        <span
+          class="emotion-4"
+        >
+          <button
+            aria-label="Fechar alerta"
+            class="emotion-3"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-2"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-13"
-    role="alert"
-  >
     <div
-      class="emotion-5"
+      class="emotion-13"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
-            id="check-circle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#check-circle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-5"
       >
-        Success message.
-      </div>
-      <span
-        class="emotion-4"
-      >
-        <button
-          aria-label="Fechar alerta"
-          class="emotion-3"
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-2"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <defs>
+            <path
+              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm13.294-3.707l-5.293 5.293-2.294-2.294a1 1 0 1 0-1.414 1.414l3.001 3.001a1 1 0 0 0 1.414 0l6-6a1 1 0 1 0-1.414-1.414z"
+              id="check-circle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#check-circle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Success message.
+        </div>
+        <span
+          class="emotion-4"
+        >
+          <button
+            aria-label="Fechar alerta"
+            class="emotion-3"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-2"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-20"
-    role="alert"
-  >
     <div
-      class="emotion-5"
+      class="emotion-20"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M12.922 2.622c-.426-.83-1.418-.83-1.844 0l-8.91 17.354c-.454.88.067 2.024.921 2.024h17.822c.854 0 1.375-1.144.922-2.024l-8.91-17.354zm-.915 2.88L19.5 20H4.502l7.505-14.498zM10.5 17.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zM11 14c0 .666.334 1 1 1 .667 0 1-.334 1-1v-4c0-.667-.333-1-1-1-.666 0-1 .333-1 1v4z"
-            id="exclamation-triangle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#exclamation-triangle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-5"
       >
-        Alert message.
-      </div>
-      <span
-        class="emotion-4"
-      >
-        <button
-          aria-label="Fechar alerta"
-          class="emotion-3"
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-2"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <defs>
+            <path
+              d="M12.922 2.622l8.911 17.354c.453.88-.068 2.024-.922 2.024H3.09c-.854 0-1.375-1.144-.922-2.024l8.911-17.354c.426-.83 1.418-.83 1.844 0zM12 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1-5.875c0 .583.334.875 1 .875.667 0 1-.292 1-.875v-5.25C13 8.29 12.667 8 12 8c-.666 0-1 .291-1 .875v5.25z"
+              id="exclamation-triangle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#exclamation-triangle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Alert message.
+        </div>
+        <span
+          class="emotion-4"
+        >
+          <button
+            aria-label="Fechar alerta"
+            class="emotion-3"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-2"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
-  </div>
-  <div
-    class="emotion-27"
-    role="alert"
-  >
     <div
-      class="emotion-5"
+      class="emotion-27"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M20 12a7.948 7.948 0 0 1-1.688 4.897L7.103 5.688A7.954 7.954 0 0 1 12 4c4.411 0 8 3.589 8 8M4 12c0-1.846.634-3.542 1.688-4.897l11.209 11.209A7.954 7.954 0 0 1 12 20c-4.411 0-8-3.589-8-8m-2 0c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12"
-            id="ban-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#ban-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-5"
       >
-        Error message.
-      </div>
-      <span
-        class="emotion-4"
-      >
-        <button
-          aria-label="Fechar alerta"
-          class="emotion-3"
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-2"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <defs>
+            <path
+              d="M20 12a7.948 7.948 0 0 1-1.688 4.897L7.103 5.688A7.954 7.954 0 0 1 12 4c4.411 0 8 3.589 8 8M4 12c0-1.846.634-3.542 1.688-4.897l11.209 11.209A7.954 7.954 0 0 1 12 20c-4.411 0-8-3.589-8-8m-2 0c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12"
+              id="ban-outline_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#ban-outline_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Error message.
+        </div>
+        <span
+          class="emotion-4"
+        >
+          <button
+            aria-label="Fechar alerta"
+            class="emotion-3"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-2"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -520,7 +533,7 @@ exports[`Alert should render correctly when inline 1`] = `
 }
 
 .emotion-3 {
-  padding: 0 0.5rem;
+  padding: 0.375rem 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -537,6 +550,7 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #EBF4FA;
   color: #0A67D1;
   border-color: #0A67D1;
@@ -549,7 +563,7 @@ exports[`Alert should render correctly when inline 1`] = `
 }
 
 .emotion-7 {
-  padding: 0 0.5rem;
+  padding: 0.375rem 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -566,13 +580,14 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #E3FAD2;
   color: #097D05;
   border-color: #097D05;
 }
 
 .emotion-11 {
-  padding: 0 0.5rem;
+  padding: 0.375rem 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -589,13 +604,14 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #FAF0E8;
   color: #BF4600;
   border-color: #BF4600;
 }
 
 .emotion-15 {
-  padding: 0 0.5rem;
+  padding: 0.375rem 0.5rem;
   min-height: 2rem;
   border-radius: 2px;
   border-style: solid;
@@ -612,137 +628,140 @@ exports[`Alert should render correctly when inline 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  line-height: 1.25rem;
   background: #FCF0F0;
   color: #D83A2E;
   border-color: #D83A2E;
 }
 
 <div>
-  <div
-    class="emotion-3"
-    role="alert"
-  >
+  <div>
     <div
-      class="emotion-2"
+      class="emotion-3"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M22 12c0-5.522-4.477-10-10-10S2 6.478 2 12c0 5.523 4.477 10 10 10s10-4.477 10-10zm-2 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-6.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
-            id="info-circle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#info-circle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-2"
       >
-        Information.
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <defs>
+            <path
+              d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12C2 6.478 6.477 2 12 2s10 4.478 10 10zm-8.5-4.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM11 17.125c-.002.583.33.875.998.875.668 0 1.002-.292 1.002-.875v-5.25c0-.583-.335-.875-1.004-.875s-1.001.292-.996.875v5.25z"
+              id="info-circle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#info-circle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Information.
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-7"
-    role="alert"
-  >
     <div
-      class="emotion-2"
+      class="emotion-7"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm2 0a8 8 0 1 0 16 0 8 8 0 0 0-16 0zm11.294-3.707a1 1 0 0 1 1.414 1.414l-6 6a1 1 0 0 1-1.414 0l-3.001-3.001a1 1 0 0 1 1.414-1.414l2.294 2.294 5.293-5.293z"
-            id="check-circle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#check-circle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-2"
       >
-        Success message.
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <defs>
+            <path
+              d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.522-4.477 10-10 10S2 17.522 2 12zm13.294-3.707l-5.293 5.293-2.294-2.294a1 1 0 1 0-1.414 1.414l3.001 3.001a1 1 0 0 0 1.414 0l6-6a1 1 0 1 0-1.414-1.414z"
+              id="check-circle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#check-circle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Success message.
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-11"
-    role="alert"
-  >
     <div
-      class="emotion-2"
+      class="emotion-11"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M12.922 2.622c-.426-.83-1.418-.83-1.844 0l-8.91 17.354c-.454.88.067 2.024.921 2.024h17.822c.854 0 1.375-1.144.922-2.024l-8.91-17.354zm-.915 2.88L19.5 20H4.502l7.505-14.498zM10.5 17.5a1.5 1.5 0 1 0 3 0 1.5 1.5 0 0 0-3 0zM11 14c0 .666.334 1 1 1 .667 0 1-.334 1-1v-4c0-.667-.333-1-1-1-.666 0-1 .333-1 1v4z"
-            id="exclamation-triangle-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#exclamation-triangle-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-2"
       >
-        Alert message.
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <defs>
+            <path
+              d="M12.922 2.622l8.911 17.354c.453.88-.068 2.024-.922 2.024H3.09c-.854 0-1.375-1.144-.922-2.024l8.911-17.354c.426-.83 1.418-.83 1.844 0zM12 20a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-1-5.875c0 .583.334.875 1 .875.667 0 1-.292 1-.875v-5.25C13 8.29 12.667 8 12 8c-.666 0-1 .291-1 .875v5.25z"
+              id="exclamation-triangle-filled_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#exclamation-triangle-filled_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Alert message.
+        </div>
       </div>
     </div>
-  </div>
-  <div
-    class="emotion-15"
-    role="alert"
-  >
     <div
-      class="emotion-2"
+      class="emotion-15"
+      role="alert"
     >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <defs>
-          <path
-            d="M20 12a7.948 7.948 0 0 1-1.688 4.897L7.103 5.688A7.954 7.954 0 0 1 12 4c4.411 0 8 3.589 8 8M4 12c0-1.846.634-3.542 1.688-4.897l11.209 11.209A7.954 7.954 0 0 1 12 20c-4.411 0-8-3.589-8-8m-2 0c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12"
-            id="ban-outline_svg__a"
-          />
-        </defs>
-        <use
-          href="#ban-outline_svg__a"
-        />
-      </svg>
       <div
-        class="emotion-1"
+        class="emotion-2"
       >
-        Error message.
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <defs>
+            <path
+              d="M20 12a7.948 7.948 0 0 1-1.688 4.897L7.103 5.688A7.954 7.954 0 0 1 12 4c4.411 0 8 3.589 8 8M4 12c0-1.846.634-3.542 1.688-4.897l11.209 11.209A7.954 7.954 0 0 1 12 20c-4.411 0-8-3.589-8-8m-2 0c0 5.514 4.486 10 10 10s10-4.486 10-10S17.514 2 12 2 2 6.486 2 12"
+              id="ban-outline_svg__a"
+            />
+          </defs>
+          <use
+            xlink:href="#ban-outline_svg__a"
+          />
+        </svg>
+        <div
+          class="emotion-1"
+        >
+          Error message.
+        </div>
       </div>
     </div>
   </div>

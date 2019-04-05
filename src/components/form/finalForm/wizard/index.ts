@@ -1,2 +1,9 @@
-export * from './WizardForm/WizardForm'
-export * from './WizardFooter/WizardFooter'
+export {
+  WizardForm,
+  WizardFormProps,
+  WizardFormState,
+  WizardRenderProps,
+  WizardStep,
+  WizardStepProps,
+} from './WizardForm/WizardForm'
+export { WizardFooter, WizardFooterProps } from './WizardFooter/WizardFooter'

@@ -3,49 +3,39 @@ import React from 'react'
 import { InputWrapper, InputWrapperProps } from './InputWrapper'
 import { TextInputBase, TextInputBaseProps } from './TextInputBase'
 
-export interface TextInputProps extends TextInputBaseProps,
-    Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick'> {
-    /**
-     * Whether the input should show the clear icon button.
-     */
-    clearable?: boolean
-    onClear?: InputWrapperProps['onClear']
+export type PublicInputWrapperProps = Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick'>
+
+export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperProps {
+  /**
+   * Whether the input should show the clear icon button.
+   */
+  clearable?: boolean
+  onClear?: InputWrapperProps['onClear']
 }
 
-export class TextInput extends React.Component<TextInputProps> {
+export function TextInput(props: TextInputProps) {
+  const { icon, iconPosition, iconDisabled, onIconClick, clearable, onClear, ...rest } = props
 
-    static defaultProps: Partial<TextInputProps> = {
-        clearable: true,
-    }
+  const isClearVisible = (): boolean => !props.disabled && (!!props.value || !!props.defaultValue)
 
-    render() {
-        const {
-            icon, iconPosition, iconDisabled, onIconClick, clearable, onClear,
-            ...rest
-        } = this.props
+  const isIconDisabled = (): boolean => (props.iconDisabled !== undefined ? props.iconDisabled : props.disabled)
 
-        return (
-            <InputWrapper
-                icon={icon}
-                iconPosition={iconPosition}
-                iconDisabled={this.isIconDisabled()}
-                onIconClick={onIconClick}
-                clearVisible={clearable && this.isClearVisible()}
-                onClear={onClear ? onClear : this.handleClear}
-            >
-                <TextInputBase {...rest} />
-            </InputWrapper>
-        )
-    }
+  const handleClear = () => props.onChange && props.onChange(null)
 
-    isClearVisible = (): boolean =>
-        !this.props.disabled && (!!this.props.value || !!this.props.defaultValue)
-
-    isIconDisabled = (): boolean =>
-        this.props.iconDisabled !== undefined ? this.props.iconDisabled : this.props.disabled
-
-    handleClear = () => {
-        this.props.onChange && this.props.onChange(null)
-    }
-
+  return (
+    <InputWrapper
+      icon={icon}
+      iconPosition={iconPosition}
+      iconDisabled={isIconDisabled()}
+      onIconClick={onIconClick}
+      clearVisible={clearable && isClearVisible()}
+      onClear={onClear ? onClear : handleClear}
+    >
+      <TextInputBase {...rest} />
+    </InputWrapper>
+  )
 }
+
+TextInput.defaultProps = {
+  clearable: true,
+} as Partial<TextInputProps>

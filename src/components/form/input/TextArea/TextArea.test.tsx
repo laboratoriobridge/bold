@@ -1,40 +1,32 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test/'
+import { render } from 'react-testing-library'
 
 import { TextArea } from './TextArea'
 
 it('should render correctly', () => {
-    expect(render(withTheme(
-        <TextArea name='input' placeholder='Test' defaultValue='Value' />
-    ))).toMatchSnapshot()
+  const { container } = render(<TextArea name='input' placeholder='Test' defaultValue='Value' />)
+  expect(container).toMatchSnapshot()
 })
 
-it('should render disabled', () => {
-    expect(render(withTheme(
-        <TextArea name='input' disabled />
-    ))).toMatchSnapshot()
+it('should render correctly when disabled', () => {
+  const { container } = render(<TextArea name='input' disabled />)
+  expect(container).toMatchSnapshot()
 })
 
 it('should render with error status', () => {
-    expect(render(withTheme(
-        <TextArea name='input' status='error' />
-    ))).toMatchSnapshot()
+  const { container } = render(<TextArea name='input' status='error' />)
+  expect(container).toMatchSnapshot()
 })
 
 it('should accept style prop', () => {
-    expect(render(withTheme(
-        <TextArea name='input' style={{ color: 'green' }} />
-    ))).toMatchSnapshot()
+  const { container } = render(<TextArea name='input' style={{ color: 'green' }} />)
+  expect(container).toMatchSnapshot()
 })
 
 it('should render character counter', () => {
-    expect(render(withTheme(
-        <TextArea name='input' defaultValue='Testing counter' maxLength={200} />
-    ))).toMatchSnapshot()
+  const { container, rerender } = render(<TextArea name='input' defaultValue='Testing counter' maxLength={200} />)
+  expect(container).toMatchSnapshot()
 
-    expect(render(withTheme(
-        <TextArea name='input' maxLength={200} />
-    ))).toMatchSnapshot()
+  rerender(<TextArea name='input' maxLength={200} />)
+  expect(container).toMatchSnapshot()
 })

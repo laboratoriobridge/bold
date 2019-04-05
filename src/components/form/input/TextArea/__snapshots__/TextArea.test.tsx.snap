@@ -16,6 +16,10 @@ exports[`should accept style prop 1`] = `
   color: green;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -52,10 +56,12 @@ exports[`should accept style prop 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+    />
+  </div>
 </div>
 `;
 
@@ -72,6 +78,10 @@ exports[`should render character counter 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -114,17 +124,22 @@ exports[`should render character counter 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    maxlength="200"
-    name="input"
-  >
-    Testing counter
-  </textarea>
-  <div
-    class="emotion-1"
-  >
-    15/200 caracteres
+  <div>
+    <textarea
+      class="emotion-0"
+      maxlength="200"
+      name="input"
+    >
+      Testing counter
+    </textarea>
+    <div
+      class="emotion-1"
+    >
+      15
+      /
+      200
+       caracteres
+    </div>
   </div>
 </div>
 `;
@@ -144,6 +159,10 @@ exports[`should render character counter 2`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -184,15 +203,22 @@ exports[`should render character counter 2`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    maxlength="200"
-    name="input"
-  />
-  <div
-    class="emotion-1"
-  >
-    0/200 caracteres
+  <div>
+    <textarea
+      class="emotion-0"
+      maxlength="200"
+      name="input"
+    >
+      Testing counter
+    </textarea>
+    <div
+      class="emotion-1"
+    >
+      0
+      /
+      200
+       caracteres
+    </div>
   </div>
 </div>
 `;
@@ -212,6 +238,10 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -248,17 +278,19 @@ exports[`should render correctly 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-    placeholder="Test"
-  >
-    Value
-  </textarea>
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+      placeholder="Test"
+    >
+      Value
+    </textarea>
+  </div>
 </div>
 `;
 
-exports[`should render disabled 1`] = `
+exports[`should render correctly when disabled 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -273,6 +305,10 @@ exports[`should render disabled 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -309,11 +345,13 @@ exports[`should render disabled 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    disabled=""
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      disabled=""
+      name="input"
+    />
+  </div>
 </div>
 `;
 
@@ -331,6 +369,10 @@ exports[`should render with error status 1`] = `
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
   border: solid 1px #D83A2E;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -374,9 +416,11 @@ exports[`should render with error status 1`] = `
 }
 
 <div>
-  <textarea
-    class="emotion-0"
-    name="input"
-  />
+  <div>
+    <textarea
+      class="emotion-0"
+      name="input"
+    />
+  </div>
 </div>
 `;

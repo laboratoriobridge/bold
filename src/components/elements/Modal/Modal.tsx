@@ -22,7 +22,7 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 }
 
-export const Modal = (props: ModalProps) => {
+export function Modal(props: ModalProps) {
   const { open, size, closeOnBackdropClick, children, ...rest } = props
   const { classes, css } = useStyles(styles)
   const { classes: sizeClasses } = useStyles(sizeStyles)

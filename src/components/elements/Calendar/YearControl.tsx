@@ -1,52 +1,47 @@
 import React from 'react'
 
 import { getUserLocale } from '../../../util/locale'
-import { HFlow } from '../../layout/Flow/HFlow'
 import { Button } from '../Button'
+import { HFlow } from '../Flow'
 import { Icon } from '../Icon'
 
 export interface YearControlProps {
-    visibleDate: Date
-    onChange(newDate: Date): void
-    renderYear?(date: Date): React.ReactNode
+  visibleDate: Date
+  onChange(newDate: Date): void
+  renderYear?(date: Date): React.ReactNode
 }
 
-const formatter = new Intl.DateTimeFormat(getUserLocale(), {
-    year: 'numeric',
-})
+export function YearControl(props: YearControlProps) {
+  const { visibleDate, onChange, renderYear } = props
 
-export class YearControl extends React.PureComponent<YearControlProps> {
+  const handleNext = () => {
+    const next = new Date(visibleDate)
+    next.setFullYear(visibleDate.getFullYear() + 1)
+    return onChange(next)
+  }
 
-    static defaultProps: Partial<YearControlProps> = {
-        renderYear: (date) => formatter.format(date),
-    }
+  const handlePrev = () => {
+    const prev = new Date(visibleDate)
+    prev.setFullYear(prev.getFullYear() - 1)
+    return onChange(prev)
+  }
 
-    render() {
-        const { visibleDate, renderYear } = this.props
-        return (
-            <HFlow alignItems='center' hSpacing={0.5}>
-                <Button size='small' skin='ghost' onClick={this.handlePrev} tabIndex={-1}>
-                    <Icon icon='angleLeft' />
-                </Button>
-                {renderYear(visibleDate)}
-                <Button size='small' skin='ghost' onClick={this.handleNext} tabIndex={-1}>
-                    <Icon icon='angleRight' />
-                </Button>
-            </HFlow>
-        )
-    }
-
-    handleNext = () => {
-        const { visibleDate } = this.props
-        const next = new Date(visibleDate)
-        next.setFullYear(visibleDate.getFullYear() + 1)
-        return this.props.onChange(next)
-    }
-
-    handlePrev = () => {
-        const { visibleDate } = this.props
-        const prev = new Date(visibleDate)
-        prev.setFullYear(prev.getFullYear() - 1)
-        return this.props.onChange(prev)
-    }
+  return (
+    <HFlow alignItems='center' hSpacing={0.5}>
+      <Button title='Previous year' size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
+        <Icon icon='angleLeft' />
+      </Button>
+      {renderYear(visibleDate)}
+      <Button title='Next year' size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
+        <Icon icon='angleRight' />
+      </Button>
+    </HFlow>
+  )
 }
+
+YearControl.defaultProps = {
+  renderYear: date => {
+    const formatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
+    return formatter.format(date)
+  },
+} as Partial<YearControlProps>

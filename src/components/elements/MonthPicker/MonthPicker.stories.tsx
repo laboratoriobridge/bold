@@ -5,11 +5,10 @@ import React from 'react'
 
 import { MonthPicker } from './MonthPicker/MonthPicker'
 
-storiesOf('Components/MonthPicker', module)
-    .add('MonthPicker', () => (
-        <MonthPicker
-            month={number('month', new Date().getMonth())}
-            year={number('year', new Date().getFullYear())}
-            onChange={action('changed')}
-        />
-    ))
+storiesOf('Components|MonthPicker', module).add('MonthPicker', () => (
+  <MonthPicker
+    month={number('month', new Date().getMonth())}
+    year={number('year', new Date().getFullYear())}
+    onChange={action('changed')}
+  />
+))

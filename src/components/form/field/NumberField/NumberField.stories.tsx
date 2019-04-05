@@ -6,13 +6,8 @@ import { withForm } from '../../../../stories-addons/withForm'
 
 import { NumberField } from './NumberField'
 
-storiesOf('Form/NumberField', module)
-    .addDecorator(withForm())
-    .add('default', () => (
-        <NumberField
-            name='number'
-            label='Number'
-            placeholder='Type a number...'
-            onChange={action('changed')}
-        />
-    ))
+storiesOf('Form|NumberField', module)
+  .addDecorator(withForm())
+  .add('default', () => (
+    <NumberField name='number' label='Number' placeholder='Type a number...' onChange={action('changed')} />
+  ))

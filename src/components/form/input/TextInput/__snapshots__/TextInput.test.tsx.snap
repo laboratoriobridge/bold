@@ -15,6 +15,10 @@ exports[`icon should render correctly with icon 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -155,6 +159,7 @@ exports[`icon should render correctly with icon 1`] = `
       <button
         class="emotion-2"
         tabindex="-1"
+        type="button"
       >
         <span>
           <svg
@@ -193,6 +198,10 @@ exports[`should render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {

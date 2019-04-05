@@ -1,20 +1,20 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test/'
+import { render } from 'react-testing-library'
 
 import { Switch } from './Switch'
 
 it('should render correctly', () => {
-    expect(render(withTheme(
-        <Switch />
-    ))).toMatchSnapshot()
+  const { container } = render(<Switch />)
+  expect(container).toMatchSnapshot()
+})
 
-    expect(render(withTheme(
-        <Switch label='Active' value='true' />
-    ))).toMatchSnapshot()
+it('should render correctly with label', () => {
+  const { container } = render(<Switch label='Active' value='true' />)
+  expect(container).toMatchSnapshot()
+})
 
-    expect(render(withTheme(
-        <Switch label='Disabled' value='true' disabled />
-    ))).toMatchSnapshot()
+it('should render correctly when disabled', () => {
+  const { container } = render(<Switch label='Disabled' value='true' disabled />)
+  expect(container).toMatchSnapshot()
+  expect(container.querySelector('input').getAttribute('disabled')).not.toBeNull()
 })

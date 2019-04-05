@@ -4,11 +4,6 @@ import React from 'react'
 
 import { Plural } from './Plural'
 
-storiesOf('Textual', module)
-    .add('Plural', () => (
-        <Plural
-            word={text('word', 'cidadão')}
-            count={number('count', 2)}
-            inclusive={boolean('inclusive', false)}
-        />
-    ))
+storiesOf('Components|Textual', module).add('Plural', () => (
+  <Plural word={text('word', 'cidadão')} count={number('count', 2)} inclusive={boolean('inclusive', false)} />
+))

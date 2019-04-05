@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
+<head>
+  <style
+    data-emotion="css"
+  >
+    
+    @-webkit-keyframes animation-1scjtrl{from{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(359deg);-ms-transform:rotate(359deg);transform:rotate(359deg);}}
+  </style>
+  <style
+    data-emotion="css"
+  >
+    
+    @keyframes animation-1scjtrl{from{-webkit-transform:rotate(0deg);-ms-transform:rotate(0deg);transform:rotate(0deg);}to{-webkit-transform:rotate(359deg);-ms-transform:rotate(359deg);transform:rotate(359deg);}}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    html{font-size:16px;box-sizing:border-box;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    *,*:before,*:after{box-sizing:inherit;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    body{margin:0;color:#2D343B;font-family:"IBM Plex Sans",sans-serif;font-size:0.8125rem;line-height:1.5;overflow-y:scroll;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    button,input,optgroup,select,textarea{font-family:"IBM Plex Sans",sans-serif;font-size:0.8125rem;line-height:inherit;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    hr{background-color:#DCDCE0;border:none;height:1px;margin:1rem 0;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h1{margin:0;font-size:1.5rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h2{margin:0;font-size:1.25rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h3{margin:0;font-size:1rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h4{margin:0;font-size:0.875rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h5{margin:0;font-size:0.8125rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    h6{margin:0;font-size:0.75rem;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    p{margin:0;line-height:1.5;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    a{cursor:pointer;color:#0A67D1;-webkit-text-decoration:underline;text-decoration:underline;font-weight:bold;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    a:hover{-webkit-text-decoration:none;text-decoration:none;}
+  </style>
+  <style
+    data-emotion="css-global"
+  >
+    
+    mark{background:#FFED94;}
+  </style>
+</head>
+`;
+
+exports[`GlobalCss should inject global CSS styles 1`] = `
+<head>
+  <style
+    data-emotion="css-global"
+  >
+    
+    body{color:red;}
+  </style>
+</head>
+`;

@@ -1,44 +1,28 @@
-import React from 'react'
-import { RouteComponentProps } from 'react-router'
-import { withRouter } from 'react-router-dom'
+import { useContext, useEffect } from 'react'
 
-import { Omit } from '../../../util/types'
+import { useRouter } from '../../../hooks/useRouter'
+import { randomStr } from '../../../util/string'
 
-import { BreadcrumbConsumer } from './BreadcrumbContext'
-import { BreadcrumbEntry, BreadcrumbStore } from './BreadcrumbStore'
+import { BreadcrumbContext } from './BreadcrumbContext'
+import { BreadcrumbEntry } from './BreadcrumbStore'
 
-export interface BreadcrumbProps extends Pick<BreadcrumbEntry, 'title' | 'to'>, RouteComponentProps {
-    store: BreadcrumbStore
+export interface BreadcrumbProps extends Pick<BreadcrumbEntry, 'title' | 'to'> {}
+
+export function Breadcrumb(props: BreadcrumbProps) {
+  const { title, to } = props
+  const { match } = useRouter()
+  const store = useContext(BreadcrumbContext)
+
+  const entry = {
+    key: randomStr(),
+    title,
+    to: to || match.url,
+  }
+
+  useEffect(() => {
+    store.push(entry)
+    return () => store.pop(entry)
+  })
+
+  return null
 }
-
-class BreadcrumbCmp extends React.Component<BreadcrumbProps> {
-
-    private entry: BreadcrumbEntry
-
-    constructor(props: BreadcrumbProps) {
-        super(props)
-        this.entry = {
-            key: Math.random().toString(36).substring(2),
-            title: props.title,
-            to: props.to || props.match.url,
-        }
-    }
-
-    componentDidMount() {
-        this.props.store.push(this.entry)
-    }
-
-    componentWillUnmount() {
-        this.props.store.pop(this.entry)
-    }
-
-    render() {
-        return null
-    }
-}
-
-export const Breadcrumb = withRouter((props: Omit<BreadcrumbProps, 'store'>) => (
-    <BreadcrumbConsumer>
-        {value => <BreadcrumbCmp store={value} {...props} />}
-    </BreadcrumbConsumer>
-))

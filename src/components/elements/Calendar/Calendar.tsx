@@ -1,9 +1,9 @@
-import { css, Interpolation } from 'emotion'
-import React from 'react'
+import { Interpolation } from 'emotion'
+import React, { CSSProperties, MouseEvent, useState } from 'react'
 
-import { Styles, Theme } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util/types'
-import { HFlow } from '../../layout/Flow/HFlow'
+import { HFlow } from '../Flow'
 
 import { MonthControl } from './MonthControl'
 import { MonthView, MonthViewProps } from './MonthView'
@@ -27,66 +27,64 @@ export interface CalendarProps extends Omit<MonthViewProps, 'visibleDate'> {
    */
   modifierStyles?: Partial<DayModifierStyleMap>
 
-  onMouseLeave?(): void
-}
-
-export interface CalendarState {
   /**
-   * Current visible calendar date.
+   *
    */
-  visibleDate: Date
+  onMouseLeave?(e: MouseEvent<HTMLDivElement>): void
+
+  /**
+   *
+   */
+  isDaySelected?(day: Date): boolean
 }
 
-export class Calendar extends React.PureComponent<CalendarProps, CalendarState> {
-  static defaultProps: Partial<CalendarProps> = {
-    initialVisibleDate: new Date(),
-  }
+export function Calendar(props: CalendarProps) {
+  const { initialVisibleDate, modifiers, modifierStyles, isDaySelected, ...rest } = props
+  const { classes, theme } = useStyles(createStyles)
 
-  state: CalendarState = {
-    visibleDate: this.props.initialVisibleDate,
-  }
+  const [visibleDate, setVisibleDate] = useState(initialVisibleDate)
 
-  render() {
-    const { initialVisibleDate, modifiers, modifierStyles, ...rest } = this.props
-    const styles: Styles = {
-      root: {
-        width: 288,
-      },
-      controls: {
-        marginBottom: '0.5rem',
-        fontWeight: 'bold',
-      },
-    }
-    return (
-      <div className={css(styles.root)} onMouseLeave={this.props.onMouseLeave}>
-        <HFlow hSpacing={0.5} justifyContent='space-around' style={styles.controls}>
-          <MonthControl visibleDate={this.state.visibleDate} onChange={this.changeVisibleDate} />
-          <YearControl visibleDate={this.state.visibleDate} onChange={this.changeVisibleDate} />
-        </HFlow>
+  const allModifiers = () => ({ ...defaultModifiers, ...modifiers })
+  const allModifierStyles = () => ({ ...defaultModifierStyles, ...modifierStyles })
 
-        <MonthView
-          createDayStyles={createDayStyles(this.modifiers(), this.modifierStyles())}
-          {...rest}
-          visibleDate={this.state.visibleDate}
-          onDayClick={this.handleDayClick}
-        />
-      </div>
-    )
-  }
-
-  modifiers = () => ({ ...defaultModifiers, ...this.props.modifiers })
-
-  modifierStyles = () => ({ ...defaultModifierStyles, ...this.props.modifierStyles })
-
-  changeVisibleDate = visibleDate => this.setState({ visibleDate })
-
-  handleDayClick = (day: Date) => {
-    if (!this.modifiers().disabled(day, this.props)) {
-      this.changeVisibleDate(day)
-      return this.props.onDayClick(day)
+  const handleDayClick = (day: Date) => {
+    if (!allModifiers().disabled(day, props)) {
+      setVisibleDate(day)
+      return props.onDayClick && props.onDayClick(day)
     }
   }
+
+  return (
+    <div className={classes.root} onMouseLeave={props.onMouseLeave}>
+      <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
+        <MonthControl visibleDate={visibleDate} onChange={setVisibleDate} />
+        <YearControl visibleDate={visibleDate} onChange={setVisibleDate} />
+      </HFlow>
+
+      <MonthView
+        createDayStyles={createDayStyles(allModifiers(), allModifierStyles(), theme)}
+        {...rest}
+        visibleDate={visibleDate}
+        onDayClick={handleDayClick}
+        isDaySelected={isDaySelected}
+      />
+    </div>
+  )
 }
+
+Calendar.defaultProps = {
+  initialVisibleDate: new Date(),
+} as Partial<CalendarProps>
+
+export const createStyles = () => ({
+  root: {
+    width: 288,
+  } as CSSProperties,
+  controls: {
+    marginBottom: '0.5rem',
+    fontWeight: 'bold',
+  } as CSSProperties,
+})
 
 export type ModifierFn = (day: Date, props: MonthViewProps) => boolean
 
@@ -132,7 +130,7 @@ export const defaultModifierStyles: DayModifierStyleMap = {
   }),
 }
 
-export const createDayStyles = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap) => (
+export const createDayStyles = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap, theme: Theme) => (
   day: Date,
   props: MonthViewProps
 ): Interpolation => {
@@ -143,7 +141,7 @@ export const createDayStyles = (modifiers: DayModifierPredicateMap, styles: DayM
 
     return {
       ...s,
-      ...(modifiers[modifier](day, props) ? (styles[modifier](props.theme) as any) : {}),
+      ...(modifiers[modifier](day, props) ? (styles[modifier](theme) as any) : {}),
     }
   }, {})
 }

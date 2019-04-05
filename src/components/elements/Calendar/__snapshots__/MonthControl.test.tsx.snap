@@ -1,34 +1,152 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-<HFlow
-  alignItems="center"
-  hSpacing={0.5}
->
-  <Component
-    kind="normal"
-    onClick={[Function]}
-    size="small"
-    skin="ghost"
-    tabIndex={-1}
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+  display: inline-block;
+}
+
+.emotion-2:first-of-type {
+  margin-left: 0;
+}
+
+.emotion-2:last-of-type {
+  margin-right: 0;
+}
+
+.emotion-2:empty {
+  display: none;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #2D343B;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0A67D1;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<div>
+  <div
+    class="emotion-7"
   >
-    <Component
-      icon="angleLeft"
-      size={1.5}
-    />
-  </Component>
-  Oct
-  <Component
-    kind="normal"
-    onClick={[Function]}
-    size="small"
-    skin="ghost"
-    tabIndex={-1}
-  >
-    <Component
-      icon="angleRight"
-      size={1.5}
-    />
-  </Component>
-</HFlow>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-1"
+        tabindex="-1"
+        title="Previous month"
+        type="button"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      Oct
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <button
+        class="emotion-1"
+        tabindex="-1"
+        title="Next month"
+        type="button"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
 `;

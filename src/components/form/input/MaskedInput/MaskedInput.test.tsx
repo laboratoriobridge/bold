@@ -1,16 +1,21 @@
-import { render } from 'enzyme'
 import React from 'react'
-
-import { withTheme } from '../../../../test'
+import { fireEvent, render } from 'react-testing-library'
 
 import { MaskedInput } from './MaskedInput'
 
 it('should render correctly', () => {
-    const wrapper = render(withTheme(<MaskedInput mask={['(', /\d/, ')']} />))
-    expect(wrapper).toMatchSnapshot()
+  const { container } = render(<MaskedInput mask={['(', /\d/, ')']} />)
+  expect(container).toMatchSnapshot()
 })
 
 it('should accept the style prop', () => {
-    const wrapper = render(withTheme(<MaskedInput mask={['(', /\d/, ')']} style={{ color: 'red' }} />))
-    expect(wrapper).toMatchSnapshot()
+  const { container } = render(<MaskedInput mask={['(', /\d/, ')']} style={{ color: 'red' }} />)
+  expect(container).toMatchSnapshot()
+})
+
+it('should mask input value', () => {
+  const { container } = render(<MaskedInput mask={['(', /\d/, /[a-z]/, ')']} />)
+  const input = container.querySelector('input')
+  fireEvent.change(input, { target: { value: 'aaaaa333333bbbbb' } })
+  expect(input.value).toEqual('(3b)')
 })

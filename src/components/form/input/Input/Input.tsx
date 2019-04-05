@@ -1,23 +1,13 @@
 import React from 'react'
 
-import { Omit } from '../../../../util/types'
-
-export interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'style'> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   inputRef?: React.RefObject<HTMLInputElement>
 }
 
-export class Input extends React.Component<InputProps, any> {
+export function Input(props: InputProps) {
+  const { inputRef, ...rest } = props
 
-  static defaultProps: Partial<InputProps> = {
-    inputRef: React.createRef<HTMLInputElement>(),
-  }
-
-  render() {
-    const { inputRef, ...rest } = this.props
-
-    return (
-      <input ref={inputRef} {...rest} />
-    )
-  }
-
+  return <input ref={inputRef} {...rest} />
 }
+
+Input.defaultProps = {} as Partial<InputProps>

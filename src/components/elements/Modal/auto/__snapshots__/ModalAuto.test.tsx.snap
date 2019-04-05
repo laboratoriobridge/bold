@@ -119,10 +119,10 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-4 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
@@ -225,6 +225,7 @@ exports[`should render correctly 1`] = `
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg
@@ -259,6 +260,7 @@ exports[`should render correctly 1`] = `
             >
               <button
                 class="emotion-3"
+                type="button"
               >
                 <span>
                   Confirm

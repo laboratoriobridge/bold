@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 
-import { HFlow } from '../../../layout/Flow/HFlow'
 import { Button, ButtonProps } from '../../Button'
+import { HFlow } from '../../Flow'
 import { Modal, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
@@ -36,7 +36,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setIsOpen(false)
 
     // Dispose with timeout to preserve closing transition
-    window.setTimeout(dispose, 500)
+    setTimeout(dispose, 500)
   }
 
   const handleAction = (action: ButtonProps) => e => {

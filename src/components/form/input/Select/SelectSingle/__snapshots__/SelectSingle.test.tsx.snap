@@ -45,6 +45,10 @@ exports[`should render correctly when closed 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -150,44 +154,48 @@ exports[`should render correctly when closed 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="downshift-0-label"
+    class="emotion-6"
     role="combobox"
   >
-    <div
-      class="emotion-4"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-labelledby="downshift-0-label"
-        autocomplete="off"
-        class="emotion-0"
-        id="downshift-0-input"
-        placeholder="Select a value..."
-        type="text"
-        value=""
-      />
-      <span
-        class="emotion-3"
+    <div>
+      <div
+        class="emotion-4"
       >
-        <button
-          class="emotion-2"
-          tabindex="-1"
+        <input
+          aria-autocomplete="list"
+          aria-labelledby="downshift-0-label"
+          autocomplete="off"
+          class="emotion-0"
+          id="downshift-0-input"
+          placeholder="Select a value..."
+          type="text"
+          value=""
+        />
+        <span
+          class="emotion-3"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <button
+            class="emotion-2"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
     <div
       class="emotion-5"
@@ -239,6 +247,10 @@ exports[`should render correctly when opened 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -379,45 +391,49 @@ exports[`should render correctly when opened 1`] = `
     aria-haspopup="listbox"
     aria-labelledby="downshift-1-label"
     aria-owns="downshift-1-menu"
+    class="emotion-12"
     role="combobox"
   >
-    <div
-      class="emotion-4"
-    >
-      <input
-        aria-autocomplete="list"
-        aria-controls="downshift-1-menu"
-        aria-labelledby="downshift-1-label"
-        autocomplete="off"
-        class="emotion-0"
-        id="downshift-1-input"
-        placeholder="Select a value..."
-        type="text"
-        value=""
-      />
-      <span
-        class="emotion-3"
+    <div>
+      <div
+        class="emotion-4"
       >
-        <button
-          class="emotion-2"
-          tabindex="-1"
+        <input
+          aria-autocomplete="list"
+          aria-controls="downshift-1-menu"
+          aria-labelledby="downshift-1-label"
+          autocomplete="off"
+          class="emotion-0"
+          id="downshift-1-input"
+          placeholder="Select a value..."
+          type="text"
+          value=""
+        />
+        <span
+          class="emotion-3"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <button
+            class="emotion-2"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M12.89 11.478l1.936 1.936c.943-.943 1.886-.943 2.828 0l3.829 3.829c.943.942.943 1.885 0 2.828l-1.414 1.414c-.943.943-1.886.943-2.829 0l-3.828-3.828c-.943-.943-.942-1.887.002-2.831-.001.001-.647-.644-1.937-1.936a6 6 0 1 1 1.412-1.412zm1.99 4.744l3.83 3.829 1.414-1.415-3.829-3.828-1.414 1.414zM8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
     <div
       class="emotion-11"

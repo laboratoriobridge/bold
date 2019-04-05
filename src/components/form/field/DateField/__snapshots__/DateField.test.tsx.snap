@@ -5,10 +5,11 @@ exports[`should be rendered correctly 1`] = `
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
+  line-height: 20px;
 }
 
 .emotion-6 {
-  display: block;
+  display: inline-block;
 }
 
 .emotion-5 {
@@ -53,6 +54,10 @@ exports[`should be rendered correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-1:required {
+  box-shadow: none;
 }
 
 .emotion-1::-webkit-input-placeholder {
@@ -172,24 +177,11 @@ exports[`should be rendered correctly 1`] = `
   width: 288px;
 }
 
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-around;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
-  justify-content: space-around;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-}
-
 .emotion-9 {
-  margin-top: 0rem;
-  margin-right: 0.25rem;
   margin-bottom: 0rem;
+  margin-top: 0rem;
   margin-left: 0.25rem;
+  margin-right: 0.25rem;
   display: inline-block;
 }
 
@@ -203,6 +195,19 @@ exports[`should be rendered correctly 1`] = `
 
 .emotion-9:empty {
   display: none;
+}
+
+.emotion-25 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .emotion-14 {
@@ -279,6 +284,18 @@ exports[`should be rendered correctly 1`] = `
   padding: 0.25rem 0;
 }
 
+.emotion-27 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-27:hover {
+  cursor: pointer;
+  background: #F2F2F7;
+}
+
 .emotion-26 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -288,18 +305,6 @@ exports[`should be rendered correctly 1`] = `
 }
 
 .emotion-26:hover {
-  cursor: pointer;
-  background: #F2F2F7;
-}
-
-.emotion-27 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.emotion-27:hover {
   cursor: pointer;
   background: #F2F2F7;
 }
@@ -336,6 +341,7 @@ exports[`should be rendered correctly 1`] = `
             <button
               class="emotion-3"
               tabindex="-1"
+              type="button"
             >
               <span>
                 <svg
@@ -388,6 +394,8 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Previous month"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -416,6 +424,8 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Next month"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -447,6 +457,8 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Previous year"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -475,6 +487,8 @@ exports[`should be rendered correctly 1`] = `
                     <button
                       class="emotion-8"
                       tabindex="-1"
+                      title="Next year"
+                      type="button"
                     >
                       <span>
                         <svg
@@ -497,7 +511,6 @@ exports[`should be rendered correctly 1`] = `
             </div>
             <table
               class="emotion-61"
-              role="listbox"
             >
               <thead>
                 <tr>
@@ -530,9 +543,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-09-30"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-26"
-                      role="option"
+                      role="button"
                     >
                       30
                     </span>
@@ -541,9 +553,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-01"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       01
                     </span>
@@ -552,9 +563,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-02"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       02
                     </span>
@@ -563,9 +573,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-03"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       03
                     </span>
@@ -574,9 +583,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-04"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       04
                     </span>
@@ -585,9 +593,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-05"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       05
                     </span>
@@ -596,9 +603,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-06"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       06
                     </span>
@@ -609,9 +615,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-07"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       07
                     </span>
@@ -620,9 +625,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-08"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       08
                     </span>
@@ -631,9 +635,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-09"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       09
                     </span>
@@ -642,9 +645,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-10"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       10
                     </span>
@@ -653,9 +655,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-11"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       11
                     </span>
@@ -664,9 +665,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-12"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       12
                     </span>
@@ -675,9 +675,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-13"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       13
                     </span>
@@ -688,9 +687,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-14"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       14
                     </span>
@@ -699,9 +697,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-15"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       15
                     </span>
@@ -710,9 +707,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-16"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       16
                     </span>
@@ -721,9 +717,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-17"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       17
                     </span>
@@ -732,9 +727,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-18"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       18
                     </span>
@@ -743,9 +737,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-19"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       19
                     </span>
@@ -754,9 +747,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-20"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       20
                     </span>
@@ -767,9 +759,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-21"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       21
                     </span>
@@ -778,9 +769,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-22"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       22
                     </span>
@@ -789,9 +779,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-23"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       23
                     </span>
@@ -800,9 +789,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-24"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       24
                     </span>
@@ -811,9 +799,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-25"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       25
                     </span>
@@ -822,9 +809,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-26"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       26
                     </span>
@@ -833,9 +819,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-27"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       27
                     </span>
@@ -846,9 +831,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-28"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       28
                     </span>
@@ -857,9 +841,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-29"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       29
                     </span>
@@ -868,9 +851,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-30"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       30
                     </span>
@@ -879,9 +861,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-10-31"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-27"
-                      role="option"
+                      role="button"
                     >
                       31
                     </span>
@@ -890,9 +871,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-11-01"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-26"
-                      role="option"
+                      role="button"
                     >
                       01
                     </span>
@@ -901,9 +881,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-11-02"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-26"
-                      role="option"
+                      role="button"
                     >
                       02
                     </span>
@@ -912,9 +891,8 @@ exports[`should be rendered correctly 1`] = `
                     data-date="2018-11-03"
                   >
                     <span
-                      aria-selected="false"
                       class="emotion-26"
-                      role="option"
+                      role="button"
                     >
                       03
                     </span>

@@ -61,7 +61,7 @@ exports[`should render correctly 1`] = `
 
 <button
   class="emotion-0"
-  type="submit"
+  type="button"
 >
   <span>
     Submit Button

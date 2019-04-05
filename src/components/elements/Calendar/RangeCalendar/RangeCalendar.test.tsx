@@ -3,16 +3,14 @@ import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
 import { createTheme } from '../../../../styles'
-import { withTheme } from '../../../../test'
 
 import { RangeCalendar, RangeCalendarProps } from './RangeCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<RangeCalendarProps> = {}) =>
-  withTheme(
-    <RangeCalendar initialVisibleDate={new Date('2019-02-09')} initialDate={null} finalDate={null} {...props} />
-  )
+const createComponent = (props: Partial<RangeCalendarProps> = {}) => (
+  <RangeCalendar initialVisibleDate={new Date('2019-02-09')} initialDate={null} finalDate={null} {...props} />
+)
 
 describe('[Calendar][RangePicker]', () => {
   const theme = createTheme()
@@ -20,7 +18,7 @@ describe('[Calendar][RangePicker]', () => {
   it('Should initialize with null values if initialValues is null', () => {
     const { getAllByRole } = render(createComponent())
 
-    getAllByRole('option').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
+    getAllByRole('button').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
   })
 
   it('When finalDate is earlier than initialDate, both should be undefined', () => {

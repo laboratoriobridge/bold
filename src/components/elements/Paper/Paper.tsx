@@ -1,43 +1,26 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Styles, withStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 import { OuterShadows } from '../../../styles/theme/createShadows'
+import { Omit } from '../../../util'
 
-export interface PaperProps extends WithStylesProps {
-    elevation?: keyof OuterShadows
-    style?: Interpolation
+export interface PaperProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  elevation?: keyof OuterShadows
+  style?: Interpolation
 }
 
-@withStyles
-export class Paper extends React.Component<PaperProps> {
+export function Paper(props: PaperProps) {
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createStyles, props)
 
-    render() {
-        const { css, elevation, style, theme } = this.props
-
-        const styles: Styles = {
-            paper: {
-                border: '1px solid ' + theme.pallete.gray.c80,
-                borderRadius: theme.radius.paper,
-            },
-        }
-        return (
-            <div
-                className={css(
-                    styles.paper,
-                    elevation && this.createShadowStyle(elevation),
-                    style
-                )}
-            >
-                {this.props.children}
-            </div>
-        )
-    }
-
-    private createShadowStyle(elevation: keyof OuterShadows) {
-        return {
-            boxShadow: this.props.theme.shadows.outer[elevation],
-        }
-    }
-
+  return <div className={css(classes.paper, style)} {...rest} />
 }
+
+export const createStyles = (theme: Theme, { elevation }: PaperProps) => ({
+  paper: {
+    border: '1px solid ' + theme.pallete.gray.c80,
+    borderRadius: theme.radius.paper,
+    boxShadow: theme.shadows.outer[elevation],
+  },
+})

@@ -4,7 +4,4 @@ import React from 'react'
 
 import { Currency } from './Currency'
 
-storiesOf('Textual', module)
-    .add('Currency', () => (
-        <Currency value={number('value', 12.34)} />
-    ))
+storiesOf('Components|Textual', module).add('Currency', () => <Currency value={number('value', 12.34)} />)

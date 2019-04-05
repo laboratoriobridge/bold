@@ -137,6 +137,7 @@ exports[`Modal should render correctly when opened 1`] = `
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg
@@ -295,6 +296,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg
@@ -453,6 +455,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg
@@ -611,6 +614,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
         <button
           aria-label="Fechar"
           class="emotion-1"
+          type="button"
         >
           <span>
             <svg

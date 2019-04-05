@@ -7,64 +7,63 @@ import { masks } from '../../../../util/masks'
 import { MaskedInput, MaskedInputProps } from '../MaskedInput/MaskedInput'
 
 export interface TimeInputProps extends Omit<MaskedInputProps, 'onChange'> {
-    /**
-     * Original input change event handler
-     */
-    onInputChange?: MaskedInputProps['onChange']
+  /**
+   * Original input change event handler
+   */
+  onInputChange?: MaskedInputProps['onChange']
 
-    onChange?(value: string): any
+  onChange?(value: string): any
 }
 
-export class TimeInput extends React.PureComponent<TimeInputProps> {
-    render() {
-        const { onChange, ...rest } = this.props
-        return (
-            <MaskedInput
-                mask={masks.time}
-                placeholder='hh:mm'
-                pipe={createAutoCorrectedDatePipe('HH:MM')}
-                {...rest}
-                onChange={this.handleChange}
-                onBlur={this.handleBlur}
-            />
-        )
+export function TimeInput(props: TimeInputProps) {
+  const { onChange, onInputChange, ...rest } = props
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e) {
+      return onChange(null)
+    }
+    if (onChange) {
+      const value = e.target.value
+      onChange(value)
+    }
+    if (onInputChange) {
+      return onInputChange(e)
+    }
+  }
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (onChange) {
+      const value = e.target.value
+      if (value) {
+        const paddedValue = padTime(value)
+        onChange(paddedValue)
+      }
     }
 
-    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (!e) {
-            return this.props.onChange(null)
-        }
-        if (this.props.onChange) {
-            const value = e.target.value
-            this.props.onChange(value)
-        }
-        if (this.props.onInputChange) {
-            return this.props.onInputChange(e)
-        }
+    if (props.onBlur) {
+      // Call original blur handler (if existent)
+      return props.onBlur(e)
     }
+  }
 
-    handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-        if (this.props.onChange) {
-            const value = e.target.value
-            if (value) {
-                const paddedValue = padTime(value)
-                this.props.onChange(paddedValue)
-            }
-        }
-
-        if (this.props.onBlur) {
-            // Call original blur handler (if existent)
-            return this.props.onBlur(e)
-        }
-    }
+  return (
+    <MaskedInput
+      mask={masks.time}
+      placeholder='hh:mm'
+      pipe={createAutoCorrectedDatePipe('HH:MM')}
+      {...rest}
+      onChange={handleChange}
+      onBlur={handleBlur}
+    />
+  )
 }
 
 export const padTime = (value: string): string => {
-    const numbersOnly = value.replace(/[^\d]/g, '')
-    if (numbersOnly.length < 4) {
-        const paddedValue = numbersOnly.padEnd(4, '0')
-        const conformedValue = conformToMask(paddedValue, masks.time, {})
-        return conformedValue.conformedValue
-    }
-    return value
+  const numbersOnly = value.replace(/[^\d]/g, '')
+  if (numbersOnly.length < 4) {
+    const paddedValue = numbersOnly.padEnd(4, '0')
+    const conformedValue = conformToMask(paddedValue, masks.time, {})
+    return conformedValue.conformedValue
+  }
+  return value
 }

@@ -8,7 +8,7 @@ export interface TooltipPopperProps {
   style?: Interpolation
 }
 
-export const TooltipPopper = (props: TooltipPopperProps) => {
+export function TooltipPopper(props: TooltipPopperProps) {
   const { style, text } = props
   const { classes, css } = useStyles(styles)
   const { classes: sizeClasses } = useStyles(sizeStyles)
@@ -21,9 +21,9 @@ export const TooltipPopper = (props: TooltipPopperProps) => {
 export const styles = (theme: Theme) => ({
   base: {
     borderRadius: theme.radius.popper,
-    maxWidth: theme.breakpoints.size.small,
+    maxWidth: theme.breakpoints.size.lg,
     background: theme.pallete.gray.c20,
-    color: '#fff',
+    color: theme.pallete.gray.c100,
     fontWeight: 'bold',
     lineHeight: 1.5,
   } as React.CSSProperties,

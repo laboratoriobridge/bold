@@ -1,40 +1,41 @@
-import { mount, render } from 'enzyme'
 import React from 'react'
+import { render } from 'react-testing-library'
 
-import { withForm, withTheme } from '../../../../../test'
+import { withForm } from '../../../../../test'
 
-import { WizardFooter } from './WizardFooter'
+import { WizardFooter, WizardFooterProps } from './WizardFooter'
 
-describe('rendering', () => {
-    it('should render correctly', () => {
-        expect(render(withForm(withTheme(
-            <WizardFooter isFirstStep={false} isLastStep={false} onSubmit={jest.fn()} onPrevious={jest.fn()} />
-        )))).toMatchSnapshot()
-    })
+const createComponent = (props: Partial<WizardFooterProps> = {}) =>
+  withForm(
+    <WizardFooter isFirstStep={false} isLastStep={false} onSubmit={jest.fn()} onPrevious={jest.fn()} {...props} />
+  )
 
-    it('should have only "next" and "previous" buttons on intermediate steps', () => {
-        const wrapper = mount(withForm(withTheme(
-            <WizardFooter isFirstStep={false} isLastStep={false} onSubmit={jest.fn()} onPrevious={jest.fn()} />
-        )))
+it('should render correctly', () => {
+  const { container } = render(createComponent())
+  expect(container).toMatchSnapshot()
+})
 
-        expect(wrapper.find('button')).toHaveLength(2)
-        expect(wrapper.find('button').map(e => e.text())).toEqual(['Voltar', 'Avançar'])
-    })
+it('should have only "next" and "previous" buttons on intermediate steps', () => {
+  const { container } = render(createComponent())
+  const buttons = container.querySelectorAll('button')
 
-    it('should have only "next" button on first step', () => {
-        const wrapper = mount(withForm(withTheme(
-            <WizardFooter isFirstStep={true} isLastStep={false} onSubmit={jest.fn()} onPrevious={jest.fn()} />
-        )))
+  expect(buttons.length).toEqual(2)
+  expect(buttons[0].textContent).toEqual('Voltar')
+  expect(buttons[1].textContent).toEqual('Avançar')
+})
 
-        expect(wrapper.find('button')).toHaveLength(1)
-        expect(wrapper.find('button').text()).toEqual('Avançar')
-    })
-    it('should have "save" and "previous" button on last step', () => {
-        const wrapper = mount(withForm(withTheme(
-            <WizardFooter isFirstStep={false} isLastStep={true} onSubmit={jest.fn()} onPrevious={jest.fn()} />
-        )))
+it('should have only "next" button on first step', () => {
+  const { container } = render(createComponent({ isFirstStep: true }))
+  const buttons = container.querySelectorAll('button')
 
-        expect(wrapper.find('button')).toHaveLength(2)
-        expect(wrapper.find('button').map(e => e.text())).toEqual(['Voltar', 'Salvar'])
-    })
+  expect(buttons.length).toEqual(1)
+  expect(buttons[0].textContent).toEqual('Avançar')
+})
+it('should have "save" and "previous" button on last step', () => {
+  const { container } = render(createComponent({ isLastStep: true }))
+  const buttons = container.querySelectorAll('button')
+
+  expect(buttons.length).toEqual(2)
+  expect(buttons[0].textContent).toEqual('Voltar')
+  expect(buttons[1].textContent).toEqual('Salvar')
 })

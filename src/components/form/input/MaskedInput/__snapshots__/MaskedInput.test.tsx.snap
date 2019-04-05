@@ -20,6 +20,10 @@ exports[`should accept the style prop 1`] = `
   color: red;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -55,13 +59,16 @@ exports[`should accept the style prop 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  class="emotion-1"
->
-  <input
-    class="emotion-0"
-    type="text"
-  />
+<div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      type="text"
+      value=""
+    />
+  </div>
 </div>
 `;
 
@@ -84,6 +91,10 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -119,12 +130,15 @@ exports[`should render correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  class="emotion-1"
->
-  <input
-    class="emotion-0"
-    type="text"
-  />
+<div>
+  <div
+    class="emotion-1"
+  >
+    <input
+      class="emotion-0"
+      type="text"
+      value=""
+    />
+  </div>
 </div>
 `;

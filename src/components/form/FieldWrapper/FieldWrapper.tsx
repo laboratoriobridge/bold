@@ -1,41 +1,36 @@
 import React from 'react'
 
-import { FormError, FormErrorProps } from '../FormError'
+import { FormError } from '../FormError'
 import { FormLabel, FormLabelProps } from '../FormLabel'
 
 export interface FieldWrapperProps {
-    id?: string
-    name?: string
-    label?: FormLabelProps['label']
-    required?: FormLabelProps['required']
-    error?: FormErrorProps['error']
+  id?: string
+  name?: string
+  label?: FormLabelProps['label']
+  required?: FormLabelProps['required']
+  error?: React.ReactNode
+  children?: React.ReactNode
 }
 
-export class FieldWrapper extends React.PureComponent<FieldWrapperProps> {
+export function FieldWrapper(props: FieldWrapperProps) {
+  const { children, id, name, error, label, required } = props
+  const styles = {
+    label: {
+      display: 'block',
+      marginBottom: '0.25rem',
+      lineHeight: '20px',
+    },
+    error: {
+      marginTop: '0.25rem',
+      lineHeight: '20px',
+    },
+  }
 
-    render() {
-        const { children, id, name, error, label, required } = this.props
-        const styles = {
-            label: {
-                display: 'block',
-                marginBottom: '0.25rem',
-            },
-            error: {
-                marginTop: '0.25rem',
-            },
-        }
-
-        return (
-            <div data-name={name}>
-                {label &&
-                    <FormLabel required={required} style={styles.label} htmlFor={id} label={label} />
-                }
-                {children}
-                {error &&
-                    <FormError style={styles.error} error={error} />
-                }
-            </div>
-        )
-    }
-
+  return (
+    <div data-name={name}>
+      {label && <FormLabel required={required} style={styles.label} htmlFor={id} label={label} />}
+      {children}
+      {error && <FormError style={styles.error}>{error}</FormError>}
+    </div>
+  )
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`deve renderizar corretamente 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -73,58 +73,6 @@ exports[`deve renderizar corretamente 1`] = `
   position: relative;
 }
 
-.emotion-2 {
-  background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
-  border-radius: 2px;
-  color: #2D343B;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  width: 47px;
-  text-align: center;
-  margin: 0 0.5rem 0 0.25rem;
-}
-
-.emotion-2::-webkit-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::-moz-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:-ms-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
-}
-
-.emotion-2:not(:disabled):hover {
-  border-color: #818489;
-}
-
-.emotion-2:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-2:not(:disabled):active {
-  border-color: #0A67D1;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -177,63 +125,124 @@ exports[`deve renderizar corretamente 1`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
-<div
-  class="emotion-6"
->
-  <button
-    class="emotion-1"
-    title="Página anterior"
-  >
-    <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-        />
-      </svg>
-    </span>
-  </button>
+.emotion-2 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  width: 47px;
+  text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-2:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div>
   <div
-    class="emotion-3"
+    class="emotion-6"
   >
-    <input
-      class="emotion-2"
-      type="text"
-      value="6"
-    />
-  </div>
-  <span>
-    de 10
-  </span>
-  <button
-    class="emotion-5"
-    title="Próxima página"
-  >
+    <button
+      class="emotion-1"
+      title="Página anterior"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="emotion-3"
+    >
+      <input
+        class="emotion-2"
+        type="text"
+        value="6"
+      />
+    </div>
     <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-        />
-      </svg>
+      de 
+      10
     </span>
-  </button>
+    <button
+      class="emotion-5"
+      title="Próxima página"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
-exports[`deve renderizar corretamente 2`] = `
+exports[`should render correctly 2`] = `
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -255,58 +264,6 @@ exports[`deve renderizar corretamente 2`] = `
   position: relative;
 }
 
-.emotion-2 {
-  background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
-  border-radius: 2px;
-  color: #2D343B;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  width: 47px;
-  text-align: center;
-  margin: 0 0.5rem 0 0.25rem;
-}
-
-.emotion-2::-webkit-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::-moz-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:-ms-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
-}
-
-.emotion-2:not(:disabled):hover {
-  border-color: #818489;
-}
-
-.emotion-2:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-2:not(:disabled):active {
-  border-color: #0A67D1;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -357,6 +314,62 @@ exports[`deve renderizar corretamente 2`] = `
 
 .emotion-5:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-2 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  width: 47px;
+  text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-2:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 .emotion-1 {
@@ -386,7 +399,6 @@ exports[`deve renderizar corretamente 2`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
-  pointer-events: none;
 }
 
 .emotion-1 > span {
@@ -413,64 +425,69 @@ exports[`deve renderizar corretamente 2`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
-<div
-  class="emotion-6"
->
-  <button
-    class="emotion-1"
-    disabled=""
-    title="Página anterior"
-  >
-    <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-        />
-      </svg>
-    </span>
-  </button>
+<div>
   <div
-    class="emotion-3"
+    class="emotion-6"
   >
-    <input
-      class="emotion-2"
-      type="text"
-      value="1"
-    />
-  </div>
-  <span>
-    de 10
-  </span>
-  <button
-    class="emotion-5"
-    title="Próxima página"
-  >
+    <button
+      class="emotion-1"
+      disabled=""
+      title="Página anterior"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="emotion-3"
+    >
+      <input
+        class="emotion-2"
+        type="text"
+        value="1"
+      />
+    </div>
     <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-        />
-      </svg>
+      de 
+      10
     </span>
-  </button>
+    <button
+      class="emotion-5"
+      title="Próxima página"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </div>
 `;
 
-exports[`deve renderizar corretamente 3`] = `
+exports[`should render correctly 3`] = `
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -490,58 +507,6 @@ exports[`deve renderizar corretamente 3`] = `
 
 .emotion-3 {
   position: relative;
-}
-
-.emotion-2 {
-  background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
-  border-radius: 2px;
-  color: #2D343B;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  width: 47px;
-  text-align: center;
-  margin: 0 0.5rem 0 0.25rem;
-}
-
-.emotion-2::-webkit-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::-moz-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:-ms-input-placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2::placeholder {
-  color: #B9B9BD;
-}
-
-.emotion-2:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
-}
-
-.emotion-2:not(:disabled):hover {
-  border-color: #818489;
-}
-
-.emotion-2:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
-}
-
-.emotion-2:not(:disabled):active {
-  border-color: #0A67D1;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 .emotion-5 {
@@ -596,6 +561,62 @@ exports[`deve renderizar corretamente 3`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
+.emotion-2 {
+  background-color: #FFFFFF;
+  border: solid 1px #B9B9BD;
+  border-radius: 2px;
+  color: #2D343B;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  width: 47px;
+  text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2::placeholder {
+  color: #B9B9BD;
+}
+
+.emotion-2:disabled {
+  border-color: #DCDCE0;
+  background-color: #F2F2F7;
+}
+
+.emotion-2:not(:disabled):hover {
+  border-color: #818489;
+}
+
+.emotion-2:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+.emotion-2:not(:disabled):active {
+  border-color: #0A67D1;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
 .emotion-1 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -623,7 +644,6 @@ exports[`deve renderizar corretamente 3`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
-  pointer-events: none;
 }
 
 .emotion-1 > span {
@@ -650,59 +670,64 @@ exports[`deve renderizar corretamente 3`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
-<div
-  class="emotion-6"
->
-  <button
-    class="emotion-1"
-    disabled=""
-    title="Página anterior"
-  >
-    <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-        />
-      </svg>
-    </span>
-  </button>
+<div>
   <div
-    class="emotion-3"
+    class="emotion-6"
   >
-    <input
-      class="emotion-2"
-      type="text"
-      value="1"
-    />
-  </div>
-  <span>
-    de 9
-  </span>
-  <button
-    class="emotion-5"
-    title="Próxima página"
-  >
+    <button
+      class="emotion-1"
+      disabled=""
+      title="Página anterior"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="emotion-3"
+    >
+      <input
+        class="emotion-2"
+        type="text"
+        value="1"
+      />
+    </div>
     <span>
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-        />
-      </svg>
+      de 
+      9
     </span>
-  </button>
+    <button
+      class="emotion-5"
+      title="Próxima página"
+      type="button"
+    >
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+          />
+        </svg>
+      </span>
+    </button>
+  </div>
 </div>
 `;

@@ -20,7 +20,7 @@ exports[`should render correctly 2`] = `
   border-radius: 2px;
   max-width: 1280px;
   background: #2D343B;
-  color: #fff;
+  color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;
   text-align: center;

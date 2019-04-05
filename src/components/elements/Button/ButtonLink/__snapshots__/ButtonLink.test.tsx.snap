@@ -54,12 +54,15 @@ exports[`should render correctly 1`] = `
   background-color: #ebebeb;
 }
 
-<a
-  class="emotion-0"
-  href="/"
->
-  <span>
-    Link to home
-  </span>
-</a>
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+    type="button"
+  >
+    <span>
+      Link to home
+    </span>
+  </a>
+</div>
 `;

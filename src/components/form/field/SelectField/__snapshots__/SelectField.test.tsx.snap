@@ -73,6 +73,10 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-0:required {
+  box-shadow: none;
+}
+
 .emotion-0::-webkit-input-placeholder {
   color: #B9B9BD;
 }
@@ -181,63 +185,67 @@ exports[`should render correctly 1`] = `
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-labelledby="downshift-0-label"
+      class="emotion-8"
       role="combobox"
     >
-      <div
-        class="emotion-6"
-      >
-        <input
-          aria-autocomplete="list"
-          aria-labelledby="downshift-0-label"
-          autocomplete="off"
-          class="emotion-0"
-          id="downshift-0-input"
-          name="select1"
-          type="text"
-          value="Item #1"
-        />
-        <span
-          class="emotion-2"
-          role="button"
-          tabindex="-1"
-          title="Limpar"
+      <div>
+        <div
+          class="emotion-6"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
-            />
-          </svg>
-        </span>
-        <span
-          class="emotion-5"
-        >
-          <button
-            class="emotion-4"
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-0-label"
+            autocomplete="off"
+            class="emotion-0"
+            id="downshift-0-input"
+            name="select1"
+            type="text"
+            value="Item #1"
+          />
+          <span
+            class="emotion-2"
+            role="button"
             tabindex="-1"
+            title="Limpar"
           >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-1"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-                />
-              </svg>
-            </span>
-          </button>
-        </span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-5"
+          >
+            <button
+              class="emotion-4"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
       </div>
       <div
         class="emotion-7"
@@ -276,6 +284,10 @@ exports[`should render correctly when multiple 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.emotion-4:required {
+  box-shadow: none;
 }
 
 .emotion-4:hover {
@@ -322,21 +334,6 @@ exports[`should render correctly when multiple 1`] = `
   background-color: #F2F2F7;
 }
 
-.emotion-2 {
-  border: 1px solid #DCDCE0;
-  border-radius: 4px;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  font-weight: bold;
-  margin-right: 0.25rem;
-}
-
 .emotion-0 {
   padding: calc(0.125rem - 1px) 0.25rem;
 }
@@ -362,6 +359,21 @@ exports[`should render correctly when multiple 1`] = `
 
 .emotion-1 svg {
   fill: currentColor;
+}
+
+.emotion-2 {
+  border: 1px solid #DCDCE0;
+  border-radius: 4px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: bold;
+  margin-right: 0.25rem;
 }
 
 <div>

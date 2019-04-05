@@ -2,7 +2,7 @@
 
 exports[`MonthPickerInput should render correctly 1`] = `
 .emotion-5 {
-  display: block;
+  display: inline-block;
 }
 
 .emotion-4 {
@@ -47,6 +47,10 @@ exports[`MonthPickerInput should render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -154,6 +158,26 @@ exports[`MonthPickerInput should render correctly 1`] = `
   opacity: 0;
 }
 
+.emotion-15 {
+  margin-bottom: 0.25rem;
+  margin-top: 0.25rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
+  display: inline-block;
+}
+
+.emotion-15:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-15:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-15:empty {
+  display: none;
+}
+
 .emotion-42 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -171,23 +195,23 @@ exports[`MonthPickerInput should render correctly 1`] = `
   border-radius: 2px;
 }
 
-.emotion-15 {
-  margin-top: 0.25rem;
-  margin-right: 0rem;
-  margin-bottom: 0.25rem;
-  margin-left: 0rem;
+.emotion-8 {
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   display: inline-block;
 }
 
-.emotion-15:first-of-type {
-  margin-top: 0;
+.emotion-8:first-of-type {
+  margin-left: 0;
 }
 
-.emotion-15:last-of-type {
-  margin-bottom: 0;
+.emotion-8:last-of-type {
+  margin-right: 0;
 }
 
-.emotion-15:empty {
+.emotion-8:empty {
   display: none;
 }
 
@@ -205,26 +229,6 @@ exports[`MonthPickerInput should render correctly 1`] = `
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0rem 1.5rem 0rem 1rem;
-}
-
-.emotion-8 {
-  margin-top: 0rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0rem;
-  margin-left: 0.5rem;
-  display: inline-block;
-}
-
-.emotion-8:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-8:empty {
-  display: none;
 }
 
 .emotion-7 {
@@ -283,21 +287,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-40 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
 .emotion-17 {
-  margin-top: 0.5rem;
-  margin-right: 0.1875rem;
   margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   margin-left: 0.1875rem;
+  margin-right: 0.1875rem;
   display: inline-block;
 }
 
@@ -311,6 +305,16 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-17:empty {
   display: none;
+}
+
+.emotion-40 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .emotion-16 {
@@ -389,6 +393,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
           <button
             class="emotion-2"
             tabindex="-1"
+            type="button"
           >
             <span>
               <svg
@@ -435,6 +440,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 <button
                   class="emotion-7"
                   title="Ano anterior"
+                  type="button"
                 >
                   <span>
                     <svg
@@ -467,6 +473,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
                 <button
                   class="emotion-7"
                   title="Ano posterior"
+                  type="button"
                 >
                   <span>
                     <svg
@@ -497,6 +504,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Jan
@@ -508,6 +516,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Fev
@@ -519,6 +528,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Mar
@@ -530,6 +540,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Abr
@@ -541,6 +552,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Mai
@@ -552,6 +564,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Jun
@@ -563,6 +576,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Jul
@@ -574,6 +588,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Ago
@@ -585,6 +600,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Set
@@ -596,6 +612,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Out
@@ -607,6 +624,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Nov
@@ -618,6 +636,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
               >
                 <button
                   class="emotion-16"
+                  type="button"
                 >
                   <span>
                     Dez

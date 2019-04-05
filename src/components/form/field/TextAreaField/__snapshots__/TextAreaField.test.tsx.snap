@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+.emotion-0 {
+  color: #D83A2E;
+  margin-left: 0.25rem;
+}
+
 .emotion-1 {
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
-}
-
-.emotion-0 {
-  color: #D83A2E;
-  margin-left: 0.25rem;
+  line-height: 20px;
 }
 
 .emotion-2 {
@@ -24,6 +25,10 @@ exports[`should render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-2:required {
+  box-shadow: none;
 }
 
 .emotion-2::-webkit-input-placeholder {

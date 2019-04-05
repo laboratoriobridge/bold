@@ -5,6 +5,7 @@ exports[`render correctly 1`] = `
   font-weight: bold;
   display: block;
   margin-bottom: 0.25rem;
+  line-height: 20px;
 }
 
 .emotion-2 {
@@ -23,6 +24,10 @@ exports[`render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-1:required {
+  box-shadow: none;
 }
 
 .emotion-1::-webkit-input-placeholder {
@@ -84,6 +89,28 @@ exports[`render correctly 1`] = `
 `;
 
 exports[`render with icon 1`] = `
+.emotion-3 {
+  position: absolute;
+  background-color: #F2F2F7;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #B9B9BD;
@@ -96,6 +123,10 @@ exports[`render with icon 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0:required {
+  box-shadow: none;
 }
 
 .emotion-0::-webkit-input-placeholder {
@@ -139,28 +170,6 @@ exports[`render with icon 1`] = `
 
 .emotion-4 input {
   padding-right: 3rem;
-}
-
-.emotion-3 {
-  position: absolute;
-  background-color: #F2F2F7;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
 }
 
 .emotion-2 {
@@ -242,6 +251,7 @@ exports[`render with icon 1`] = `
       <button
         class="emotion-2"
         tabindex="-1"
+        type="button"
       >
         <span>
           <svg

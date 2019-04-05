@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 
 import { Theme } from '../../../../styles'
 import { Calendar, CalendarProps, defaultModifierStyles } from '../Calendar'
@@ -38,7 +38,7 @@ export const RangeCalendar = ({ initialDate, finalDate, ...rest }: RangeCalendar
     (!initialDate && hoverFinalDate && isSameDay(day, hoverFinalDate)) ||
     ((hoverFinalDate <= day && day < initialDate) || (initialDate < day && day <= hoverFinalDate))
 
-  const onMouseLeave = () => setHoverFinalDate(undefined)
+  const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => setHoverFinalDate(undefined)
 
   return (
     <Calendar
