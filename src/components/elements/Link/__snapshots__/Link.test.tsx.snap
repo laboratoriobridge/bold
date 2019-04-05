@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept "component" prop 1`] = `
+.emotion-0 {
+  cursor: pointer;
+  color: #0A67D1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: bold;
+  outline: none;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+  >
+    Router link
+  </a>
+</div>
+`;
+
+exports[`should accept the "style" prop 1`] = `
+.emotion-0 {
+  cursor: pointer;
+  color: #0A67D1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: bold;
+  outline: none;
+  color: red;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+  >
+    Red link
+  </a>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  cursor: pointer;
+  color: #0A67D1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: bold;
+  outline: none;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+    target="_blank"
+  >
+    Link to somewhere
+  </a>
+</div>
+`;
