@@ -2,7 +2,7 @@ import { Global as EmotionGlobal, Interpolation } from '@emotion/core/'
 import React from 'react'
 
 import { useTheme } from '../../hooks'
-import { focusBoxShadow, Theme } from '../../theme/createTheme'
+import { Theme } from '../../theme/createTheme'
 
 export const GlobalCss = EmotionGlobal
 
@@ -58,11 +58,6 @@ export const createGlobalStyles = (theme: Theme): Interpolation => ({
     outline: 'none',
     '&:hover': {
       textDecoration: 'none',
-    },
-    '&:focus': {
-      textDecoration: 'none',
-      borderRadius: theme.radius.input,
-      boxShadow: focusBoxShadow(theme),
     },
   },
   mark: {
