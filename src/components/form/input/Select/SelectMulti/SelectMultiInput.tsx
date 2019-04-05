@@ -68,6 +68,7 @@ export const createStyles = (theme: Theme, { items, disabled }: SelectMultiInput
       marginRight: '0.25rem',
     } as CSSProperties,
     input: {
+      background: theme.pallete.surface.main,
       padding: 0,
       flex: 1,
       border: 0,

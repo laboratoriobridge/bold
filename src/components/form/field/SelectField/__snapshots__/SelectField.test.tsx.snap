@@ -305,6 +305,7 @@ exports[`should render correctly when multiple 1`] = `
 }
 
 .emotion-3 {
+  background: #FFFFFF;
   padding: 0;
   -webkit-flex: 1;
   -ms-flex: 1;
