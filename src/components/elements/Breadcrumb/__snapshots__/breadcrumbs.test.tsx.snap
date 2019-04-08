@@ -24,13 +24,31 @@ exports[`BreadcrumbNav should render correctly 1`] = `
 }
 
 .emotion-0 {
+  cursor: pointer;
+  color: #0A67D1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  font-weight: bold;
+  outline: none;
+  -webkit-transition: box-shadow .2s ease;
+  transition: box-shadow .2s ease;
   color: #2D343B;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-weight: bold;
-  -webkit-transition: all .2s;
-  transition: all .2s;
   display: inline-block;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
 }
 
 .emotion-0:hover {
@@ -80,6 +98,7 @@ exports[`BreadcrumbNav should render correctly 1`] = `
         <a
           class="emotion-0"
           href="/second"
+          tabindex="-1"
         >
           Entry #2
         </a>
