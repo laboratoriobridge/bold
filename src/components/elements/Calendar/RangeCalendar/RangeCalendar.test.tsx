@@ -1,12 +1,12 @@
+import { Interpolation } from 'emotion'
 import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
 import { createTheme } from '../../../../styles'
-
-import { RangeCalendar, RangeCalendarProps, dayHoverStyle } from './RangeCalendar'
 import { defaultModifierStyles } from '../Calendar'
-import { Interpolation } from 'emotion'
+
+import { dayHoverStyle, RangeCalendar, RangeCalendarProps } from './RangeCalendar'
 
 expect.extend(matchers)
 
