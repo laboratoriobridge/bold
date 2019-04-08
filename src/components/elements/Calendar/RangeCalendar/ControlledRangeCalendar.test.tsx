@@ -59,7 +59,7 @@ describe('[Calendar][RangePicker]', () => {
       createComponent({
         initialValues: {
           initialDate: new Date('2019-02-11'),
-          finalDate: new Date('2019-02-12'),
+          finalDate: new Date('2019-02-13'),
         },
       })
     )
@@ -67,30 +67,18 @@ describe('[Calendar][RangePicker]', () => {
     expect(getByText('10').getAttribute('aria-selected')).toBe('false')
     expect(getByText('11').getAttribute('aria-selected')).toBe('true')
     expect(getByText('12').getAttribute('aria-selected')).toBe('true')
-    expect(getByText('13').getAttribute('aria-selected')).toBe('false')
-  })
-
-  it('With only initialDate, just one day should be selected', () => {
-    const { getByText } = render(
-      createComponent({
-        initialValues: {
-          initialDate: new Date('2019-02-11'),
-          finalDate: null,
-        },
-      })
-    )
-
-    expect(getByText('10').getAttribute('aria-selected')).toBe('false')
-    expect(getByText('11').getAttribute('aria-selected')).toBe('true')
-    expect(getByText('12').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('13').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
   })
 
   it('Clicks on the same day, should not have effect', () => {
     const { getByText } = render(createComponent())
     expect(getByText('10').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('11').getAttribute('aria-selected')).toBe('false')
 
     fireEvent.click(getByText('10'))
     expect(getByText('10').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('11').getAttribute('aria-selected')).toBe('false')
 
     fireEvent.click(getByText('10'))
     expect(getByText('10').getAttribute('aria-selected')).toBe('true')
