@@ -21,5 +21,6 @@ storiesOf('Components/SelectInline', module).add('default', () => (
     items={items}
     itemToString={itemToString}
     onChange={action('changed')}
+    placeholder='Search for a value'
   />
 ))
