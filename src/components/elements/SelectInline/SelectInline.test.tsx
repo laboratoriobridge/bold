@@ -19,6 +19,7 @@ const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>)
     value={items[0]}
     items={items}
     itemToString={itemToString}
+    defaultButtonText='SelectInline'
     placeholder='Search for a value'
     {...props}
   />

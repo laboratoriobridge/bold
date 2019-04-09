@@ -1124,7 +1124,9 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
         <span>
           <span
             class="emotion-0"
-          />
+          >
+            SelectInline
+          </span>
           <svg
             aria-hidden="true"
             class="emotion-1"
