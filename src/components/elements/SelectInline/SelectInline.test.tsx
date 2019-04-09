@@ -15,7 +15,14 @@ const items: DefaultItemType[] = [
 const itemToString = (item: DefaultItemType) => item && item.label
 
 const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>) => (
-  <SelectInline<DefaultItemType> value={items[0]} items={items} itemToString={itemToString} {...props} />
+  <SelectInline<DefaultItemType>
+    value={items[0]}
+    items={items}
+    itemToString={itemToString}
+    defaultButtonText='SelectInline'
+    placeholder='Search for a value'
+    {...props}
+  />
 )
 
 describe('SelectInline', () => {
@@ -23,10 +30,10 @@ describe('SelectInline', () => {
     const { container } = render(createSelectInline())
     expect(container).toMatchSnapshot()
   })
-  it('should render correctly with placeholder', () => {
+  it('should render correctly with button placeholder', () => {
     const props: Partial<SelectInlineProps<DefaultItemType>> = {
       value: null,
-      placeholder: 'Placeholder',
+      buttonProps: { placeholder: 'Placeholder' },
     }
     const { container } = render(createSelectInline(props))
     expect(container).toMatchSnapshot()
