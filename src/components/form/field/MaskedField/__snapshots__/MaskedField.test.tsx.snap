@@ -26,6 +26,22 @@ exports[`render correctly 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .emotion-1:required {
   box-shadow: none;
 }
@@ -123,6 +139,22 @@ exports[`render with icon 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 .emotion-0:required {

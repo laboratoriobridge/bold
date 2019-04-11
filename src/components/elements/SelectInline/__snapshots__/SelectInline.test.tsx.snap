@@ -148,6 +148,22 @@ exports[`SelectInline should render correctly when closed 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-4[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .emotion-4:required {
   box-shadow: none;
 }
@@ -335,6 +351,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
               autocomplete="off"
               class="emotion-4"
               id="downshift-0-input"
+              placeholder="Search for a value"
               type="text"
               value=""
             />
@@ -552,6 +569,22 @@ exports[`SelectInline should render correctly when opened 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-4[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .emotion-4:required {
   box-shadow: none;
 }
@@ -749,6 +782,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
                 autocomplete="off"
                 class="emotion-4"
                 id="downshift-3-input"
+                placeholder="Search for a value"
                 type="text"
                 value=""
               />
@@ -828,7 +862,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
 </body>
 `;
 
-exports[`SelectInline should render correctly with placeholder 1`] = `
+exports[`SelectInline should render correctly with button placeholder 1`] = `
 .emotion-3 {
   display: inline-block;
 }
@@ -976,6 +1010,22 @@ exports[`SelectInline should render correctly with placeholder 1`] = `
   transition-duration: .2s;
 }
 
+.emotion-4[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
 .emotion-4:required {
   box-shadow: none;
 }
@@ -1116,13 +1166,14 @@ exports[`SelectInline should render correctly with placeholder 1`] = `
     >
       <button
         class="emotion-2"
+        placeholder="Placeholder"
         type="button"
       >
         <span>
           <span
             class="emotion-0"
           >
-            Placeholder
+            SelectInline
           </span>
           <svg
             aria-hidden="true"
@@ -1163,6 +1214,7 @@ exports[`SelectInline should render correctly with placeholder 1`] = `
               autocomplete="off"
               class="emotion-4"
               id="downshift-1-input"
+              placeholder="Search for a value"
               type="text"
               value=""
             />

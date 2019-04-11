@@ -13,11 +13,12 @@ import { Text } from '../textual/Text/Text'
 export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   buttonProps?: ButtonProps
   popperProps?: Omit<PopperProps, 'renderTarget' | 'children'>
+  defaultButtonText: string
   onChange?(item: T): void
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { value, onChange, itemToString, buttonProps, popperProps, placeholder, ...rest } = props
+  const { value, onChange, itemToString, buttonProps, popperProps, defaultButtonText, ...rest } = props
   const theme = useTheme()
 
   const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
@@ -34,7 +35,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
         innerRef={composeRefs(targetButtonRef, innerRef)}
         {...buttonRest}
       >
-        <Text>{itemToString(value) || placeholder}</Text>
+        <Text>{itemToString(value) || defaultButtonText}</Text>
         <Icon style={{ marginLeft: '0.5rem' }} icon={ctrl.isShown() ? 'angleUp' : 'angleDown'} />
       </Button>
     )
