@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { focusBoxShadow, Theme, useStyles } from '../../../styles'
 import { composeRefs } from '../../../util/react'
 
 export interface DropdownItemProps extends React.HtmlHTMLAttributes<HTMLLIElement> {
@@ -30,7 +30,7 @@ export function DropdownItem(props: DropdownItemProps) {
       onClick={!disabled ? onClick : undefined}
       onKeyDown={handleKeyDown}
       role='menuitem'
-      aria-disabled={disabled}
+      aria-disabled={disabled ? true : undefined}
       {...rest}
     >
       {children}
@@ -51,6 +51,7 @@ const styles = (theme: Theme) => ({
     fontWeight: 'bolder',
     outline: 'none',
     fontSize: theme.typography.sizes.button,
+    transition: 'all .2s ease',
     '&:first-of-type a': {
       borderTopLeftRadius: theme.radius.popper,
       borderTopRightRadius: theme.radius.popper,
@@ -59,8 +60,12 @@ const styles = (theme: Theme) => ({
       borderBottomLeftRadius: theme.radius.popper,
       borderBottomRightRadius: theme.radius.popper,
     },
-    '&:hover, &:focus': {
+    '&:hover': {
       background: theme.pallete.surface.background,
+    },
+    '&:focus': {
+      boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
+      borderRadius: 4,
     },
   } as React.CSSProperties,
   disabled: {
@@ -71,9 +76,13 @@ const styles = (theme: Theme) => ({
   },
   danger: {
     color: theme.pallete.status.danger.main,
-    '&:hover, &:focus': {
+    '&:hover': {
       color: theme.pallete.surface.main,
       background: theme.pallete.status.danger.main,
+    },
+    '&:focus': {
+      boxShadow: focusBoxShadow(theme, 'danger', 'inset'),
+      borderRadius: 4,
     },
   },
 })

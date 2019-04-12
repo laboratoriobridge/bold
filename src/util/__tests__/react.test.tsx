@@ -1,66 +1,33 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import { render } from 'react-testing-library'
 
-import { getNextSibling, getPreviousSibling } from '../react'
+import { composeHandlers, composeRefs } from '../react'
 
-describe('getNextSibling', () => {
-    it('should return the first sibling of the element that matches the predicate', () => {
-        const { container } = render(
-            <ul>
-                <li id='item-1'>Item 1</li>
-                <li id='item-2'>Item 2</li>
-                <li id='item-3'>Item 3</li>
-            </ul>
-        )
+describe('composeRefs', () => {
+  it('should compose multiple refs for the same element', () => {
+    const ref1 = createRef<HTMLParagraphElement>()
+    const ref2 = createRef<HTMLParagraphElement>()
+    const ref3 = jest.fn()
 
-        const item1 = container.querySelectorAll('li')[0]
-        const item2 = container.querySelectorAll('li')[1]
-        const item3 = container.querySelectorAll('li')[2]
+    render(<p ref={composeRefs(ref1, ref2, ref3)}>Test</p>)
+    expect(ref1.current.nodeName).toEqual('P')
+    expect(ref2.current.nodeName).toEqual('P')
+    expect(ref3).toHaveBeenCalledWith(ref1.current)
 
-        expect(getNextSibling(item1, (sib) => sib.getAttribute('id') === 'item-2')).toEqual(item2)
-        expect(getNextSibling(item1, (sib) => sib.getAttribute('id') === 'item-3')).toEqual(item3)
-    })
-    it('should return null if none elements matches the predicate', () => {
-        const { container } = render(
-            <ul>
-                <li id='item-1'>Item 1</li>
-                <li id='item-2'>Item 2</li>
-                <li id='item-3'>Item 3</li>
-            </ul>
-        )
-        const item1 = container.querySelectorAll('li')[0]
-
-        expect(getNextSibling(item1, (sib) => sib.getAttribute('id') === 'item-12312')).toEqual(null)
-    })
+    expect(ref1).toEqual(ref2)
+    expect(ref1).not.toBe(ref2)
+  })
 })
 
-describe('getPreviousSibling', () => {
-    it('should return the first sibling of the element that matches the predicate', () => {
-        const { container } = render(
-            <ul>
-                <li id='item-1'>Item 1</li>
-                <li id='item-2'>Item 2</li>
-                <li id='item-3'>Item 3</li>
-            </ul>
-        )
-
-        const item1 = container.querySelectorAll('li')[0]
-        const item2 = container.querySelectorAll('li')[1]
-        const item3 = container.querySelectorAll('li')[2]
-
-        expect(getPreviousSibling(item3, (sib) => sib.getAttribute('id') === 'item-2')).toEqual(item2)
-        expect(getPreviousSibling(item3, (sib) => sib.getAttribute('id') === 'item-1')).toEqual(item1)
-    })
-    it('should return null if none elements matches the predicate', () => {
-        const { container } = render(
-            <ul>
-                <li id='item-1'>Item 1</li>
-                <li id='item-2'>Item 2</li>
-                <li id='item-3'>Item 3</li>
-            </ul>
-        )
-        const item3 = container.querySelectorAll('li')[2]
-
-        expect(getPreviousSibling(item3, (sib) => sib.getAttribute('id') === 'item-12312')).toEqual(null)
-    })
+describe('composeHadlers', () => {
+  it('should return a new function that calls every parameter in order', () => {
+    const fn1 = jest.fn(() => -100)
+    const fn2 = jest.fn(() => 99)
+    const composed = composeHandlers(fn1, fn2, fn2)
+    composed(1, 2, 3)
+    expect(fn1).toHaveBeenCalledWith(1, 2, 3)
+    expect(fn1).toHaveBeenCalledTimes(1)
+    expect(fn2).toHaveBeenCalledWith(1, 2, 3)
+    expect(fn2).toHaveBeenCalledTimes(2)
+  })
 })
