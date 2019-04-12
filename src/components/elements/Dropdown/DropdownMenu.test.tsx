@@ -27,9 +27,7 @@ it('should provide a ref to the inner ul html element', () => {
   expect(ref.current.tagName).toEqual('UL')
 })
 
-it('should have a roving tabIndex', async () => {
-  // https://www.w3.org/TR/wai-aria-practices-1.1/#kbd_roving_tabindex
-
+it('should have a roving tabIndex', () => {
   const { container } = render(
     <DropdownMenu>
       <DropdownItem>Item 1</DropdownItem>
@@ -52,9 +50,12 @@ it('should have a roving tabIndex', async () => {
   expect(document.activeElement).toEqual(li[1])
   expect(li[0].tabIndex).toEqual(-1)
   expect(li[1].tabIndex).toEqual(0)
+  expect(li[2].tabIndex).toEqual(-1)
 
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
   expect(document.activeElement).toEqual(li[3])
+  expect(li[0].tabIndex).toEqual(-1)
+  expect(li[1].tabIndex).toEqual(-1)
   expect(li[2].tabIndex).toEqual(-1)
   expect(li[3].tabIndex).toEqual(0)
   expect(li[4].tabIndex).toEqual(-1)

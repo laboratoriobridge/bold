@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
+import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
 import { Theme, useStyles, WithStylesProps } from '../../../styles'
 
 export interface TabsProps extends React.HTMLAttributes<HTMLUListElement> {}
@@ -9,7 +10,11 @@ export function Tabs(props: TabsProps) {
   const { ...rest } = props
   const { classes } = useStyles(createStyles)
 
-  return <ul className={classes.ul} role='tablist' {...rest} />
+  const rootRef = useRovingTabIndex({
+    getItems: root => Array.from(root.querySelectorAll('a[role="tab"]')),
+  })
+
+  return <ul ref={rootRef} className={classes.ul} role='tablist' {...rest} />
 }
 
 export interface TabLinkProps extends WithStylesProps, Pick<NavLinkProps, 'to' | 'replace' | 'exact'> {
@@ -26,6 +31,13 @@ export function TabLink(props: TabLinkProps) {
     return props.active || match
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (disabled) {
+      // Do not navitate if link is disabled
+      e.preventDefault()
+    }
+  }
+
   return (
     <li className={classes.li} role='presentation'>
       <NavLink
@@ -34,6 +46,7 @@ export function TabLink(props: TabLinkProps) {
         role='tab'
         aria-disabled={disabled === true ? disabled : undefined}
         tabIndex={disabled ? -1 : undefined}
+        onClick={handleClick}
         {...rest}
       >
         {children}
@@ -80,7 +93,7 @@ const createStyles = (theme: Theme) => ({
       background: theme.pallete.gray.c90,
     },
 
-    '&:not(.disabled):focus': {
+    '&:focus': {
       borderColor: theme.pallete.primary.main,
       borderBottomLeftRadius: 4,
       borderBottomRightRadius: 4,
