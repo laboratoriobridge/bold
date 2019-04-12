@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 
 import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
-import { Theme, useStyles, WithStylesProps } from '../../../styles'
+import { Theme, useStyles } from '../../../styles'
 
 export interface TabsProps extends React.HTMLAttributes<HTMLUListElement> {}
 
@@ -17,7 +17,7 @@ export function Tabs(props: TabsProps) {
   return <ul ref={rootRef} className={classes.ul} role='tablist' {...rest} />
 }
 
-export interface TabLinkProps extends WithStylesProps, Pick<NavLinkProps, 'to' | 'replace' | 'exact'> {
+export interface TabLinkProps extends Pick<NavLinkProps, 'to' | 'replace' | 'exact'> {
   active?: boolean
   disabled?: boolean
   children?: React.ReactNode
