@@ -139,7 +139,7 @@ exports[`should accept "style" prop 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -0.5rem -1rem;
+  margin: -0.5rem -0.5rem;
   color: red;
 }
 
@@ -158,7 +158,7 @@ exports[`should accept flex container props 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -1rem -0.5rem;
+  margin: -0.5rem -0.5rem;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
@@ -190,7 +190,7 @@ exports[`should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -0.5rem -1rem;
+  margin: -0.5rem -0.5rem;
 }
 
 <div>
