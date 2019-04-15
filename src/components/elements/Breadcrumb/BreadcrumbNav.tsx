@@ -1,6 +1,7 @@
 import React, { CSSProperties, useContext, useEffect, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
+import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
 import { Theme, useStyles } from '../../../styles'
 import { Icon } from '../Icon/Icon'
 import { Link } from '../Link'
@@ -14,6 +15,10 @@ export function BreadcrumbNav(props: BreadcrumbNavProps) {
   const store = useContext(BreadcrumbContext)
   const [entries, setEntries] = useState<BreadcrumbEntry[]>(store.getEntries())
 
+  const rootRef = useRovingTabIndex({
+    getItems: root => Array.from(root.querySelectorAll('a')),
+  })
+
   useEffect(() => {
     return store.subscribe(setEntries)
   }, [store])
@@ -21,16 +26,11 @@ export function BreadcrumbNav(props: BreadcrumbNavProps) {
   const { classes } = useStyles(createStyles)
 
   return (
-    <nav aria-label='Breadcrumbs'>
+    <nav ref={rootRef} aria-label='Breadcrumbs'>
       <ol className={classes.list}>
         {entries.map(({ title, to }, idx) => (
           <li key={idx} className={classes.item}>
-            <Link
-              component={RouterLink}
-              style={classes.link}
-              to={to}
-              tabIndex={idx === entries.length - 1 ? -1 : undefined}
-            >
+            <Link component={RouterLink} style={classes.link} to={to}>
               {title}
             </Link>
             {idx !== entries.length - 1 && <Icon style={classes.separator} size={1} icon='angleRight' />}

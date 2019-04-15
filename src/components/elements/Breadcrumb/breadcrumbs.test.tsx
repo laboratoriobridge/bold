@@ -1,7 +1,7 @@
 // tslint:disable:no-string-literal
 
 import React from 'react'
-import { render, wait } from 'react-testing-library'
+import { fireEvent, render, wait } from 'react-testing-library'
 
 import { withRouter } from '../../../test'
 
@@ -80,6 +80,31 @@ describe('BreadcrumbNav', () => {
       )
     )
     expect(container).toMatchSnapshot()
+  })
+  it('should have a roving tab index', () => {
+    const store = new BreadcrumbStore()
+    store.push(entry1)
+    store.push(entry2)
+
+    const { container } = render(
+      withRouter(
+        <BreadcrumbProvider value={store}>
+          <BreadcrumbNav />
+        </BreadcrumbProvider>
+      )
+    )
+
+    const nav = container.querySelector('nav')
+    const a = container.querySelectorAll('a')
+
+    a[0].focus()
+    expect(a[0].getAttribute('tabindex')).toEqual('0')
+    expect(a[1].getAttribute('tabindex')).toEqual('-1')
+
+    fireEvent.keyDown(nav, { key: 'ArrowDown' })
+    expect(document.activeElement).toEqual(a[1])
+    expect(a[0].getAttribute('tabindex')).toEqual('-1')
+    expect(a[1].getAttribute('tabindex')).toEqual('0')
   })
 })
 
