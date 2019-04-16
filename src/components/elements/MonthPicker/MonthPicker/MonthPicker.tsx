@@ -77,7 +77,7 @@ MonthPicker.defaultProps = {
 
 export const createStyles = (theme: Theme) => ({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: theme.pallete.surface.main,
     width: '21.25rem',
     height: '13.5rem',
     padding: '1rem',
