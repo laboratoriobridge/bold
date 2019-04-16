@@ -13,8 +13,6 @@ export function PageContent(props: any) {
   )
 }
 
-const BIG_WIDTH = 960
-
 export const createStyles = (theme: Theme) => ({
   main: {
     background: theme.pallete.surface.main,
@@ -29,8 +27,16 @@ export const createStyles = (theme: Theme) => ({
     color: theme.pallete.text.main,
   } as React.CSSProperties,
   content: {
-    maxWidth: 800,
+    maxWidth: 960,
     fontSize: '1rem',
+
+    img: {
+      maxWidth: 960,
+    },
+
+    'p, ul, table': {
+      maxWidth: 800,
+    },
 
     p: {
       marginBottom: '2rem',
@@ -43,10 +49,6 @@ export const createStyles = (theme: Theme) => ({
 
     ul: {
       margin: '0 0 2rem 0',
-    },
-
-    img: {
-      maxWidth: BIG_WIDTH,
     },
 
     table: {
@@ -95,7 +97,6 @@ export const createStyles = (theme: Theme) => ({
     },
 
     pre: {
-      width: BIG_WIDTH,
       marginBottom: '2rem',
 
       code: {
