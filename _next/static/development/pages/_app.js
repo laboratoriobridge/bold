@@ -71219,7 +71219,6 @@ function PageContent(props) {
     __self: this
   }, children));
 }
-var BIG_WIDTH = 960;
 var createStyles = function createStyles(theme) {
   return {
     main: {
@@ -71234,8 +71233,14 @@ var createStyles = function createStyles(theme) {
       color: theme.pallete.text.main
     },
     content: {
-      maxWidth: 800,
+      maxWidth: 960,
       fontSize: '1rem',
+      img: {
+        maxWidth: 960
+      },
+      'p, ul, table': {
+        maxWidth: 800
+      },
       p: {
         marginBottom: '2rem',
         lineHeight: 1.5
@@ -71245,9 +71250,6 @@ var createStyles = function createStyles(theme) {
       },
       ul: {
         margin: '0 0 2rem 0'
-      },
-      img: {
-        maxWidth: BIG_WIDTH
       },
       table: {
         borderCollapse: 'collapse',
@@ -71289,7 +71291,6 @@ var createStyles = function createStyles(theme) {
         }
       },
       pre: {
-        width: BIG_WIDTH,
         marginBottom: '2rem',
         code: {
           fontSize: theme.typography.sizes.text,
