@@ -1,7 +1,7 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { hexToRGB, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface ModalBackdropProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
@@ -23,6 +23,6 @@ export const styles = (theme: Theme) => ({
     left: 0,
     bottom: 0,
     right: 0,
-    background: 'rgba(230, 230, 230, 0.7)',
+    background: hexToRGB(theme.pallete.gray.c10, 0.7),
   } as React.CSSProperties,
 })

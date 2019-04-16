@@ -197,7 +197,7 @@ exports[`should render correctly 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(230,230,230,0.7);
+  background: rgba(23,27,31,0.7);
 }
 
 .emotion-10 {
