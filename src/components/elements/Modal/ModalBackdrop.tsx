@@ -23,6 +23,6 @@ export const styles = (theme: Theme) => ({
     left: 0,
     bottom: 0,
     right: 0,
-    background: hexToRGB(theme.pallete.gray.c10, 0.7),
+    background: hexToRGB(theme.pallete.gray.c80, 0.7),
   } as React.CSSProperties,
 })
