@@ -121,6 +121,7 @@
     "prettier": "1.16.4",
     "pretty-quick": "1.10.0",
     "prop-types": "15.7.2",
+    "raw-loader": "2.0.0",
     "react": "16.8.5",
     "react-docgen-typescript-loader": "3.0.1",
     "react-dom": "16.8.5",
