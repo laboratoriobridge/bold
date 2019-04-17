@@ -12,7 +12,7 @@ const demos = reqDemos.keys().reduce(
       ...map,
       [file]: {
         Component: reqDemos(file).default,
-        source: reqSource(file),
+        source: reqSource(file).default,
       },
     }
   },
