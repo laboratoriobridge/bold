@@ -19,19 +19,25 @@ export function SideNav(props: SideNavProps) {
   const { classes } = useStyles(createStyles)
 
   return (
-    <nav className={classes.nav}>
-      <ul className={classes.ul}>
-        {pages.map(link => (
-          <SideNavItem key={link.href} {...link} />
-        ))}
-      </ul>
-    </nav>
+    <div className={classes.wrapper}>
+      <nav className={classes.nav}>
+        <ul className={classes.ul}>
+          {pages.map(link => (
+            <SideNavItem key={link.href} {...link} />
+          ))}
+        </ul>
+      </nav>
+    </div>
   )
 }
 
 export const SIDE_NAV_WIDTH = 288
 
 const createStyles = (theme: Theme) => ({
+  wrapper: {
+    width: SIDE_NAV_WIDTH,
+    flexShrink: 0,
+  } as React.CSSProperties,
   nav: {
     background: theme.pallete.surface.main,
     width: SIDE_NAV_WIDTH,
