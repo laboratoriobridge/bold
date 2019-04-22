@@ -1,4 +1,6 @@
-import { Button, Icon, TextInput, Theme, Tooltip, useStyles } from '../../lib'
+import NextLink from 'next/link'
+
+import { Button, Icon, Link, TextInput, Theme, Tooltip, useStyles } from '../../lib'
 
 import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'
@@ -16,7 +18,11 @@ export function AppHeader(props: AppHeaderProps) {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <BoldLogo height='2.5rem' aria-label='Bold Logo' />
+        <NextLink href='/'>
+          <Link href='/' style={{ display: 'inline-block' }}>
+            <BoldLogo height='2.5rem' aria-label='Bold Logo' />
+          </Link>
+        </NextLink>
       </div>
 
       <div className={classes.search}>

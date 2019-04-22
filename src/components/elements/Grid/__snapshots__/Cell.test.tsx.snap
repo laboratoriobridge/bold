@@ -2,7 +2,10 @@
 
 exports[`should accept "style" prop 1`] = `
 .emotion-0 {
-  margin: 0.5rem 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   color: red;
 }
 
@@ -17,7 +20,6 @@ exports[`should accept "style" prop 1`] = `
 
 exports[`should accept flex item props 1`] = `
 .emotion-0 {
-  margin: 0.5rem 0.5rem;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
@@ -31,7 +33,11 @@ exports[`should accept flex item props 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
-  width: calc((100% / 12 * 6) - 1rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: calc(100% / 12 * 6);
 }
 
 <div>
@@ -45,31 +51,34 @@ exports[`should accept flex item props 1`] = `
 
 exports[`should accept responsive sizes 1`] = `
 .emotion-0 {
-  margin: 0.5rem 0.5rem;
-  width: calc((100% / 12 * 12) - 1rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: calc(100% / 12 * 12);
 }
 
 @media (min-width:600px) {
   .emotion-0 {
-    width: calc((100% / 12 * 6) - 1rem);
+    width: calc(100% / 12 * 6);
   }
 }
 
 @media (min-width:960px) {
   .emotion-0 {
-    width: calc((100% / 12 * 4) - 1rem);
+    width: calc(100% / 12 * 4);
   }
 }
 
 @media (min-width:1280px) {
   .emotion-0 {
-    width: calc((100% / 12 * 3) - 1rem);
+    width: calc(100% / 12 * 3);
   }
 }
 
 @media (min-width:1920px) {
   .emotion-0 {
-    width: calc((100% / 12 * 2) - 1rem);
+    width: calc(100% / 12 * 2);
   }
 }
 
@@ -82,8 +91,11 @@ exports[`should accept responsive sizes 1`] = `
 
 exports[`should accept size 1`] = `
 .emotion-0 {
-  margin: 0.5rem 0.5rem;
-  width: calc((100% / 12 * 6) - 1rem);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: calc(100% / 12 * 6);
 }
 
 <div>
@@ -95,7 +107,10 @@ exports[`should accept size 1`] = `
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
-  margin: 0.5rem 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 <div>
