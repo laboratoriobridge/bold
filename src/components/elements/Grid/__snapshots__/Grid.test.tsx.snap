@@ -190,6 +190,95 @@ exports[`should accept flex container props 1`] = `
 </div>
 `;
 
+exports[`should accept responsive gaps 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width:960px) {
+  .emotion-0 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width:1920px) {
+  .emotion-0 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width:600px) {
+  .emotion-0 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (min-width:960px) {
+  .emotion-0 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (min-width:1280px) {
+  .emotion-0 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@media (min-width:1920px) {
+  .emotion-0 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-0"
+    >
+      1
+    </div>
+    <div
+      class="emotion-0"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   display: -webkit-box;

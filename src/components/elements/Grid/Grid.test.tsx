@@ -22,6 +22,16 @@ it('should accept "style" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should pass props down to div', () => {
+  const { container } = render(
+    <Grid id='div' aria-label='test'>
+      Content
+    </Grid>
+  )
+  expect(container.querySelector('div').getAttribute('id')).toEqual('div')
+  expect(container.querySelector('div').getAttribute('aria-label')).toEqual('test')
+})
+
 it('should accept "gap" and "gapVertical" props', () => {
   const createGrid = (props: Partial<GridProps> = {}) => (
     <Grid gap={10} gapVertical={5} {...props}>
@@ -43,12 +53,12 @@ it('should accept "gap" and "gapVertical" props', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should pass props down to div', () => {
+it('should accept responsive gaps', () => {
   const { container } = render(
-    <Grid id='div' aria-label='test'>
-      Content
+    <Grid gap={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} gapVertical={{ xs: 6, sm: 7, md: 8, lg: 9, xl: 10 }}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
     </Grid>
   )
-  expect(container.querySelector('div').getAttribute('id')).toEqual('div')
-  expect(container.querySelector('div').getAttribute('aria-label')).toEqual('test')
+  expect(container).toMatchSnapshot()
 })

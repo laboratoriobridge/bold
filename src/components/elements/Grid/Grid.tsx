@@ -46,10 +46,7 @@ export function Grid(props: GridProps) {
 }
 
 Grid.defaultProps = {
-  gap: {
-    xs: 1,
-    lg: 2,
-  },
+  gap: 2,
   gapVertical: 1,
 } as Partial<GridProps>
 

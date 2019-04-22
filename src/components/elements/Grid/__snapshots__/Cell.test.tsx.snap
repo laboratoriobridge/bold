@@ -2,18 +2,11 @@
 
 exports[`should accept "style" prop 1`] = `
 .emotion-0 {
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   color: red;
-}
-
-@media (min-width:1280px) {
-  .emotion-0 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 <div>
@@ -40,18 +33,11 @@ exports[`should accept flex item props 1`] = `
   -webkit-flex-shrink: 1;
   -ms-flex-negative: 1;
   flex-shrink: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   width: calc(100% / 12 * 6);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-@media (min-width:1280px) {
-  .emotion-0 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 <div>
@@ -65,11 +51,11 @@ exports[`should accept flex item props 1`] = `
 
 exports[`should accept responsive sizes 1`] = `
 .emotion-0 {
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   width: calc(100% / 12 * 12);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 
 @media (min-width:600px) {
@@ -96,13 +82,6 @@ exports[`should accept responsive sizes 1`] = `
   }
 }
 
-@media (min-width:1280px) {
-  .emotion-0 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-}
-
 <div>
   <div
     class="emotion-0"
@@ -112,18 +91,11 @@ exports[`should accept responsive sizes 1`] = `
 
 exports[`should accept size 1`] = `
 .emotion-0 {
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   width: calc(100% / 12 * 6);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-@media (min-width:1280px) {
-  .emotion-0 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 <div>
@@ -135,17 +107,10 @@ exports[`should accept size 1`] = `
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-@media (min-width:1280px) {
-  .emotion-0 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
 }
 
 <div>
