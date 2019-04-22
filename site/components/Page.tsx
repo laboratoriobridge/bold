@@ -86,5 +86,5 @@ export const createStyles = (theme: Theme) => ({
         padding: '0.5rem 1rem',
       },
     },
-  },
+  } as React.CSSProperties,
 })
