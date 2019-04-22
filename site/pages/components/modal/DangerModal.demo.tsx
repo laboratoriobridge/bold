@@ -1,12 +1,20 @@
-import { HFlow, Modal, ModalBody, ModalFooter, Button, Icon, Text, Heading } from '../../../../lib'
+import { useState } from 'react'
+
+import { Button, Heading, HFlow, Icon, Modal, ModalBody, ModalFooter, Text } from '../../../../lib'
 
 function ModalDemo() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleButtonClick = () => setIsOpen(true)
+  const handleModalClose = () => setIsOpen(false)
+
   return (
-    <HFlow>
-      <Button kind='danger' onClick={console.log}>
+    <>
+      <Button kind='danger' onClick={handleButtonClick}>
         Open modal
       </Button>
-      <Modal size='small' onClose={console.log} open={true}>
+
+      <Modal size='small' onClose={handleModalClose} open={isOpen}>
         <ModalBody>
           <HFlow>
             <Icon icon='exclamationTriangleOutline' style={{ marginRight: '0.5rem' }} size={3} fill='danger' />
@@ -21,14 +29,14 @@ function ModalDemo() {
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
             <Button onClick={console.log}>Cancel</Button>
-            <Button kind='danger'>
+            <Button kind='danger' onClick={console.log}>
               <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
               <Text>Launch</Text>
             </Button>
           </HFlow>
         </ModalFooter>
       </Modal>
-    </HFlow>
+    </>
   )
 }
 

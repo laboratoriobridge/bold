@@ -1,16 +1,14 @@
-import { ButtonGroup, Button, HFlow } from '../../../../lib'
+import { Button, ButtonGroup } from '../../../../lib'
 
 function ContentSwitchDemo() {
   return (
-    <HFlow>
-      <ButtonGroup>
-        <Button size='small' kind='primary'>
-          First content
-        </Button>
-        <Button size='small'>Second content</Button>
-        <Button size='small'>Third content</Button>
-      </ButtonGroup>
-    </HFlow>
+    <ButtonGroup>
+      <Button size='small' kind='primary'>
+        First content
+      </Button>
+      <Button size='small'>Second content</Button>
+      <Button size='small'>Third content</Button>
+    </ButtonGroup>
   )
 }
 
