@@ -76,6 +76,7 @@ exports[`should render correctly 1`] = `
   >
     <button
       class="emotion-0"
+      tabindex="0"
       type="button"
     >
       <span>
