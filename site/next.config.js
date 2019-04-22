@@ -7,7 +7,7 @@ const withPlugins = compose(
   withMDX({
     extension: /\.(md|mdx)/,
     options: {
-      mdPlugins: [require('remark-highlight.js')],
+      remarkPlugins: [require('remark-highlight.js')],
     },
   }),
   withTypescript
@@ -17,11 +17,5 @@ module.exports = withPlugins({
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
   webpack: (config, options) => {
     return config
-  },
-  exportPathMap: defaultPathMap => {
-    return {
-      ...defaultPathMap,
-      '/': { page: '/getting-started' },
-    }
   },
 })

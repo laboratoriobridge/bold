@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-testing-library'
 
 import { Cell } from './Cell'
-import { augmentGapMap, createGridContext, Grid, GridProps } from './Grid'
+import { Grid } from './Grid'
 
 it('should render correctly', () => {
   expect(render(<Grid>Content</Grid>).container).toMatchSnapshot()
@@ -22,27 +22,6 @@ it('should accept "style" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should accept "gap" and "gapCrossAxis" props', () => {
-  const createGrid = (props: Partial<GridProps> = {}) => (
-    <Grid gap={10} gapCrossAxis={5} {...props}>
-      <Cell>1</Cell>
-      <Cell>2</Cell>
-    </Grid>
-  )
-
-  const { container, rerender } = render(createGrid())
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'row-reverse' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column-reverse' }))
-  expect(container).toMatchSnapshot()
-})
-
 it('should pass props down to div', () => {
   const { container } = render(
     <Grid id='div' aria-label='test'>
@@ -53,27 +32,22 @@ it('should pass props down to div', () => {
   expect(container.querySelector('div').getAttribute('aria-label')).toEqual('test')
 })
 
-describe('augmentGapMap', () => {
-  it('should populate all breakpoints from map', () => {
-    expect(augmentGapMap({ xs: 2 })).toEqual({ xs: 2, sm: 2, md: 2, lg: 2, xl: 2 })
-    expect(augmentGapMap({ xs: 2, lg: 4 })).toEqual({ xs: 2, sm: 2, md: 2, lg: 4, xl: 4 })
-    expect(augmentGapMap({ md: 3 })).toEqual({ xs: undefined, sm: undefined, md: 3, lg: 3, xl: 3 })
-  })
+it('should accept "gap" and "gapVertical" props', () => {
+  const { container } = render(
+    <Grid gap={10} gapVertical={5}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
+    </Grid>
+  )
+  expect(container).toMatchSnapshot()
 })
 
-describe('createGridContext', () => {
-  it('should create grid context value given grid props and current breakpoint', () => {
-    expect(createGridContext({ direction: 'row', gap: 2, gapCrossAxis: 3 }, 'lg')).toEqual({
-      direction: 'row',
-      gap: 2,
-      gapCrossAxis: 3,
-    })
-
-    const props: GridProps = { direction: 'row', gap: { xs: 1, lg: 3 }, gapCrossAxis: { xs: 1, sm: 2, xl: 4 } }
-    expect(createGridContext(props, 'xs')).toEqual({ direction: 'row', gap: 1, gapCrossAxis: 1 })
-    expect(createGridContext(props, 'sm')).toEqual({ direction: 'row', gap: 1, gapCrossAxis: 2 })
-    expect(createGridContext(props, 'md')).toEqual({ direction: 'row', gap: 1, gapCrossAxis: 2 })
-    expect(createGridContext(props, 'lg')).toEqual({ direction: 'row', gap: 3, gapCrossAxis: 2 })
-    expect(createGridContext(props, 'xl')).toEqual({ direction: 'row', gap: 3, gapCrossAxis: 4 })
-  })
+it('should accept responsive gaps', () => {
+  const { container } = render(
+    <Grid gap={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} gapVertical={{ xs: 6, sm: 7, md: 8, lg: 9, xl: 10 }}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
+    </Grid>
+  )
+  expect(container).toMatchSnapshot()
 })

@@ -1,6 +1,5 @@
 import { number, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import { Interpolation } from 'emotion'
 import React from 'react'
 
 import { AlignItems, AlignSelf, Cell as CellPure, Direction, Grid, JustifyContent } from '../'
@@ -11,7 +10,8 @@ const styles = {
   box: {
     backgroundColor: '#eee',
     textAlign: 'center',
-  } as Interpolation,
+    height: '100%',
+  } as React.CSSProperties,
 }
 
 const justifyContentOptions: JustifyContent[] = [
@@ -38,7 +38,11 @@ function CurrentBreakpoint() {
 }
 
 function Cell(props: any) {
-  return <CellPure style={styles.box} {...props} />
+  return (
+    <CellPure {...props}>
+      <div style={styles.box}>{props.children}</div>
+    </CellPure>
+  )
 }
 
 storiesOf('Components|Grid', module)
@@ -92,7 +96,7 @@ storiesOf('Components|Grid', module)
         justifyContent={select('justifyContent', justifyContentOptions, 'center')}
         direction={select('direction', directionOptions, 'row')}
         gap={number('gap', 2)}
-        gapCrossAxis={number('gapCrossAxis', 1)}
+        gapVertical={number('gapCrossAxis', 1)}
         wrap
       >
         <Cell xs={6}>xs=6</Cell>
