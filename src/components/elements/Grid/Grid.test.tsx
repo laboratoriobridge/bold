@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-testing-library'
 
 import { Cell } from './Cell'
-import { Grid, GridProps } from './Grid'
+import { Grid } from './Grid'
 
 it('should render correctly', () => {
   expect(render(<Grid>Content</Grid>).container).toMatchSnapshot()
@@ -33,23 +33,12 @@ it('should pass props down to div', () => {
 })
 
 it('should accept "gap" and "gapVertical" props', () => {
-  const createGrid = (props: Partial<GridProps> = {}) => (
-    <Grid gap={10} gapVertical={5} {...props}>
+  const { container } = render(
+    <Grid gap={10} gapVertical={5}>
       <Cell>1</Cell>
       <Cell>2</Cell>
     </Grid>
   )
-
-  const { container, rerender } = render(createGrid())
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'row-reverse' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column-reverse' }))
   expect(container).toMatchSnapshot()
 })
 
