@@ -9,7 +9,7 @@ export interface PortalProps {
 export function Portal(props: PortalProps) {
   const { children, container } = props
 
-  const mountNode = useRef<Element>(document && document.body)
+  const mountNode = useRef<Element>(typeof document !== 'undefined' ? document.body : null)
   useEffect(() => {
     mountNode.current = container || document.body
     return () => {
