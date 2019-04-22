@@ -1,5 +1,6 @@
-import { Tabs, TabLink, HFlow } from '../../../../lib'
 import { MemoryRouter } from 'react-router'
+
+import { TabLink, Tabs } from '../../../../lib'
 
 function TabEx() {
   return (

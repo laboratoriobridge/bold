@@ -1,4 +1,4 @@
-import { HFlow, TextField, Form, Grid, Cell } from '../../../../lib'
+import { Cell, Form, Grid, HFlow, TextField } from '../../../../lib'
 
 function TextInput() {
   const renderForm = () => {
@@ -13,10 +13,10 @@ function TextInput() {
           />
         </Cell>
         <Cell size={3}>
-          <TextField name='disabled' label='Email' disabled />{' '}
+          <TextField name='disabled' label='Email' disabled />
         </Cell>
         <Cell size={3}>
-          <TextField name='password' label='Password' type='password' required />{' '}
+          <TextField name='password' label='Password' type='password' required />
         </Cell>
       </Grid>
     )

@@ -1,8 +1,8 @@
 import { SelectField } from '../../../../lib'
 
-function MultiSelectSearch() {
-  const items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']
+const items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']
 
+function MultiSelectSearch() {
   const itemToString = (item: any) => item
 
   return (

@@ -1,4 +1,4 @@
-import { Tag, Icon, HFlow } from '../../../../lib'
+import { HFlow, Tag } from '../../../../lib'
 
 function TagIcon() {
   return (

@@ -1,4 +1,4 @@
-import { Tooltip, Button, Icon, HFlow } from '../../../../lib'
+import { Button, HFlow, Icon, Tooltip } from '../../../../lib'
 
 function TooltipDefault() {
   return (

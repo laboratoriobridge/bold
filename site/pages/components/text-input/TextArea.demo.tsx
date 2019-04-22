@@ -1,4 +1,4 @@
-import { TextAreaField, Form, Grid, Cell } from '../../../../lib'
+import { Cell, Form, Grid, TextAreaField } from '../../../../lib'
 
 function TextArea() {
   const renderForm = () => {
