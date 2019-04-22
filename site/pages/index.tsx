@@ -14,17 +14,17 @@ export default () => {
 
       <div className={classes.cards}>
         <Grid wrap style={classes.cardsGrid}>
-          <Cell xs={12} sm={6} md={4} lg={3} flexBasis={208}>
+          <Cell xs={3} flexBasis={240}>
             <Card title='Getting started' icon='rocket'>
               Check our onboarding guide for designers and devs.
             </Card>
           </Cell>
-          <Cell xs={12} sm={6} md={4} lg={3} flexBasis={208}>
+          <Cell xs={3} flexBasis={240}>
             <Card title='Components' icon='bricksFilled'>
               Discovery our component’s library, usage and code.
             </Card>
           </Cell>
-          <Cell xs={12} sm={6} md={4} lg={3} flexBasis={208}>
+          <Cell xs={3} flexBasis={240}>
             <Card title='Storybook' icon='starFilled'>
               Check our onboarding guide for designers and devs.
             </Card>
