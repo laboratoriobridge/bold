@@ -1,16 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept "gap" and "gapCrossAxis" props 1`] = `
+exports[`should accept "gap" and "gapVertical" props 1`] = `
 .emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -2.5rem -5rem;
 }
 
 .emotion-0 {
-  margin: 2.5rem 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 <div>
@@ -31,9 +33,12 @@ exports[`should accept "gap" and "gapCrossAxis" props 1`] = `
 </div>
 `;
 
-exports[`should accept "gap" and "gapCrossAxis" props 2`] = `
+exports[`should accept "gap" and "gapVertical" props 2`] = `
 .emotion-0 {
-  margin: 2.5rem 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .emotion-2 {
@@ -41,7 +46,6 @@ exports[`should accept "gap" and "gapCrossAxis" props 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -2.5rem -5rem;
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -65,20 +69,22 @@ exports[`should accept "gap" and "gapCrossAxis" props 2`] = `
 </div>
 `;
 
-exports[`should accept "gap" and "gapCrossAxis" props 3`] = `
+exports[`should accept "gap" and "gapVertical" props 3`] = `
+.emotion-0 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -5rem -2.5rem;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-}
-
-.emotion-0 {
-  margin: 5rem 2.5rem;
 }
 
 <div>
@@ -99,9 +105,12 @@ exports[`should accept "gap" and "gapCrossAxis" props 3`] = `
 </div>
 `;
 
-exports[`should accept "gap" and "gapCrossAxis" props 4`] = `
+exports[`should accept "gap" and "gapVertical" props 4`] = `
 .emotion-0 {
-  margin: 5rem 2.5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .emotion-2 {
@@ -109,7 +118,6 @@ exports[`should accept "gap" and "gapCrossAxis" props 4`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -5rem -2.5rem;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
@@ -139,7 +147,6 @@ exports[`should accept "style" prop 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -0.5rem -0.5rem;
   color: red;
 }
 
@@ -158,7 +165,6 @@ exports[`should accept flex container props 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -0.5rem -0.5rem;
   -webkit-flex-direction: column-reverse;
   -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
@@ -190,7 +196,6 @@ exports[`should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin: -0.5rem -0.5rem;
 }
 
 <div>
