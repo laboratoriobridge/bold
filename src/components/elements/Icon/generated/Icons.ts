@@ -15,6 +15,8 @@ import { default as ArrowDown } from './ArrowDown'
 import { default as ArrowLeft } from './ArrowLeft'
 import { default as ArrowRight } from './ArrowRight'
 import { default as ArrowUp } from './ArrowUp'
+import { default as BalanceFilled } from './BalanceFilled'
+import { default as BalanceOutline } from './BalanceOutline'
 import { default as BandaidFilled } from './BandaidFilled'
 import { default as BandaidOutline } from './BandaidOutline'
 import { default as BanFilled } from './BanFilled'
@@ -25,6 +27,8 @@ import { default as BatteryMedium } from './BatteryMedium'
 import { default as Beach } from './Beach'
 import { default as BellFilled } from './BellFilled'
 import { default as BellOutline } from './BellOutline'
+import { default as BloodPressureFilled } from './BloodPressureFilled'
+import { default as BloodPressureOutline } from './BloodPressureOutline'
 import { default as Bold } from './Bold'
 import { default as BookmarkFilled } from './BookmarkFilled'
 import { default as BookmarkOutline } from './BookmarkOutline'
@@ -48,7 +52,6 @@ import { default as ClockOutline } from './ClockOutline'
 import { default as CloudFilled } from './CloudFilled'
 import { default as CloudOutline } from './CloudOutline'
 import { default as Code } from './Code'
-import { default as Color } from './Color'
 import { default as Contrast } from './Contrast'
 import { default as ContrastActive } from './ContrastActive'
 import { default as CopyFilled } from './CopyFilled'
@@ -85,11 +88,14 @@ import { default as GearOutline } from './GearOutline'
 import { default as HamburguerMenu } from './HamburguerMenu'
 import { default as HeartFilled } from './HeartFilled'
 import { default as HeartOutline } from './HeartOutline'
+import { default as HeartRateFilled } from './HeartRateFilled'
+import { default as HeartRateOutline } from './HeartRateOutline'
 import { default as Hospital } from './Hospital'
 import { default as HouseFilled } from './HouseFilled'
 import { default as HouseOutline } from './HouseOutline'
 import { default as ImageFilled } from './ImageFilled'
 import { default as ImageOutline } from './ImageOutline'
+import { default as ImcFilled } from './ImcFilled'
 import { default as IncreaseFont } from './IncreaseFont'
 import { default as InfoCircleFilled } from './InfoCircleFilled'
 import { default as InfoCircleOutline } from './InfoCircleOutline'
@@ -117,6 +123,7 @@ import { default as Module } from './Module'
 import { default as MultipleUsers } from './MultipleUsers'
 import { default as NeedleFilled } from './NeedleFilled'
 import { default as NeedleOutline } from './NeedleOutline'
+import { default as O2Filled } from './O2Filled'
 import { default as OpenDoor } from './OpenDoor'
 import { default as Outline } from './Outline'
 import { default as Pause } from './Pause'
@@ -141,6 +148,8 @@ import { default as QuoteLeft } from './QuoteLeft'
 import { default as QuoteRight } from './QuoteRight'
 import { default as Redo } from './Redo'
 import { default as Rocket } from './Rocket'
+import { default as RulerFilled } from './RulerFilled'
+import { default as RulerOutline } from './RulerOutline'
 import { default as ShieldFilled } from './ShieldFilled'
 import { default as ShieldOutline } from './ShieldOutline'
 import { default as SignOut } from './SignOut'
@@ -153,6 +162,8 @@ import { default as StopFilled } from './StopFilled'
 import { default as StopOutline } from './StopOutline'
 import { default as Strikethrough } from './Strikethrough'
 import { default as Sync } from './Sync'
+import { default as ThermometerFilled } from './ThermometerFilled'
+import { default as ThermometerOutline } from './ThermometerOutline'
 import { default as TimerFilled } from './TimerFilled'
 import { default as TimerOutlined } from './TimerOutlined'
 import { default as TimesDefault } from './TimesDefault'
@@ -199,6 +210,8 @@ export type Icons =
   | 'arrowLeft'
   | 'arrowRight'
   | 'arrowUp'
+  | 'balanceFilled'
+  | 'balanceOutline'
   | 'bandaidFilled'
   | 'bandaidOutline'
   | 'banFilled'
@@ -209,6 +222,8 @@ export type Icons =
   | 'beach'
   | 'bellFilled'
   | 'bellOutline'
+  | 'bloodPressureFilled'
+  | 'bloodPressureOutline'
   | 'bold'
   | 'bookmarkFilled'
   | 'bookmarkOutline'
@@ -232,7 +247,6 @@ export type Icons =
   | 'cloudFilled'
   | 'cloudOutline'
   | 'code'
-  | 'color'
   | 'contrast'
   | 'contrastActive'
   | 'copyFilled'
@@ -269,11 +283,14 @@ export type Icons =
   | 'hamburguerMenu'
   | 'heartFilled'
   | 'heartOutline'
+  | 'heartRateFilled'
+  | 'heartRateOutline'
   | 'hospital'
   | 'houseFilled'
   | 'houseOutline'
   | 'imageFilled'
   | 'imageOutline'
+  | 'imcFilled'
   | 'increaseFont'
   | 'infoCircleFilled'
   | 'infoCircleOutline'
@@ -301,6 +318,7 @@ export type Icons =
   | 'multipleUsers'
   | 'needleFilled'
   | 'needleOutline'
+  | 'o2Filled'
   | 'openDoor'
   | 'outline'
   | 'pause'
@@ -325,6 +343,8 @@ export type Icons =
   | 'quoteRight'
   | 'redo'
   | 'rocket'
+  | 'rulerFilled'
+  | 'rulerOutline'
   | 'shieldFilled'
   | 'shieldOutline'
   | 'signOut'
@@ -337,6 +357,8 @@ export type Icons =
   | 'stopOutline'
   | 'strikethrough'
   | 'sync'
+  | 'thermometerFilled'
+  | 'thermometerOutline'
   | 'timerFilled'
   | 'timerOutlined'
   | 'timesDefault'
@@ -383,6 +405,8 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
   arrowUp: ArrowUp,
+  balanceFilled: BalanceFilled,
+  balanceOutline: BalanceOutline,
   bandaidFilled: BandaidFilled,
   bandaidOutline: BandaidOutline,
   banFilled: BanFilled,
@@ -393,6 +417,8 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   beach: Beach,
   bellFilled: BellFilled,
   bellOutline: BellOutline,
+  bloodPressureFilled: BloodPressureFilled,
+  bloodPressureOutline: BloodPressureOutline,
   bold: Bold,
   bookmarkFilled: BookmarkFilled,
   bookmarkOutline: BookmarkOutline,
@@ -416,7 +442,6 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   cloudFilled: CloudFilled,
   cloudOutline: CloudOutline,
   code: Code,
-  color: Color,
   contrast: Contrast,
   contrastActive: ContrastActive,
   copyFilled: CopyFilled,
@@ -453,11 +478,14 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   hamburguerMenu: HamburguerMenu,
   heartFilled: HeartFilled,
   heartOutline: HeartOutline,
+  heartRateFilled: HeartRateFilled,
+  heartRateOutline: HeartRateOutline,
   hospital: Hospital,
   houseFilled: HouseFilled,
   houseOutline: HouseOutline,
   imageFilled: ImageFilled,
   imageOutline: ImageOutline,
+  imcFilled: ImcFilled,
   increaseFont: IncreaseFont,
   infoCircleFilled: InfoCircleFilled,
   infoCircleOutline: InfoCircleOutline,
@@ -485,6 +513,7 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   multipleUsers: MultipleUsers,
   needleFilled: NeedleFilled,
   needleOutline: NeedleOutline,
+  o2Filled: O2Filled,
   openDoor: OpenDoor,
   outline: Outline,
   pause: Pause,
@@ -509,6 +538,8 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   quoteRight: QuoteRight,
   redo: Redo,
   rocket: Rocket,
+  rulerFilled: RulerFilled,
+  rulerOutline: RulerOutline,
   shieldFilled: ShieldFilled,
   shieldOutline: ShieldOutline,
   signOut: SignOut,
@@ -521,6 +552,8 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   stopOutline: StopOutline,
   strikethrough: Strikethrough,
   sync: Sync,
+  thermometerFilled: ThermometerFilled,
+  thermometerOutline: ThermometerOutline,
   timerFilled: TimerFilled,
   timerOutlined: TimerOutlined,
   timesDefault: TimesDefault,
