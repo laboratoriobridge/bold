@@ -2,7 +2,6 @@ import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles, WithStylesProps } from '../../../../styles'
-import { pluralize } from '../../../../util/string'
 import { HFlow } from '../../Flow'
 import { Paginator } from '../../Paginator/Paginator'
 import { Text } from '../../textual'
@@ -32,7 +31,7 @@ export function TableFooter(props: TableFooterProps) {
   return (
     <div className={css(classes.footer, style)}>
       <span className={classes.results}>
-        <Number value={totalElements} sufix={' ' + pluralize('resultado', totalElements)} abbrev />
+        <Number value={totalElements} sufix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')} abbrev />
       </span>
       {showPagination() && (
         <div className={classes.pagination}>
