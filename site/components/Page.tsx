@@ -46,6 +46,7 @@ export const createStyles = (theme: Theme) => ({
     },
 
     '& > table': {
+      fontSize: '1rem',
       maxWidth: 800,
       borderCollapse: 'collapse',
       width: '100%',
