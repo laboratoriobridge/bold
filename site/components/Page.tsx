@@ -7,52 +7,61 @@ export function Page(props: any) {
   const { classes } = useStyles(createStyles)
 
   return (
-    <main className={classes.main}>
-      <PageContainer>{children}</PageContainer>
-    </main>
+    <div className={classes.wrapper}>
+      <PageContainer>
+        <main className={classes.main}>{children}</main>
+      </PageContainer>
+    </div>
   )
 }
 
 export const createStyles = (theme: Theme) => ({
-  main: {
+  wrapper: {
     background: theme.pallete.surface.main,
     flex: 1,
     padding: `2rem 3rem`,
-    display: 'flex',
-    flexDirection: 'column',
-
+  },
+  main: {
     // Global overrides (for markdown elements):
-    fontSize: '1rem',
     img: {
       maxWidth: 960,
+      marginBottom: '2rem',
     },
-    'p, ul, table': {
+
+    '& > p': {
+      fontSize: '1rem',
       maxWidth: 800,
-    },
-    p: {
-      marginBottom: '2rem',
       lineHeight: 1.5,
-    },
-    'h1, h2, h3, h4, h5, h6': {
       marginBottom: '2rem',
     },
-    ul: {
+
+    '& > h1, & > h2, & > h3, & > h4, & > h5, & > h6': {
+      marginBottom: '2rem',
+    },
+
+    '& > ul': {
+      fontSize: '1rem',
+      maxWidth: 800,
       margin: '0 0 2rem 0',
     },
-    table: {
+
+    '& > table': {
+      maxWidth: 800,
       borderCollapse: 'collapse',
       width: '100%',
       marginBottom: '2rem',
-    },
-    'td, th': {
-      borderBottom: `1px solid ${theme.pallete.divider}`,
-      textAlign: 'left',
-      padding: '1rem 0',
-      '&:not(:last-child)': {
-        paddingRight: '2rem',
+
+      'td, th': {
+        borderBottom: `1px solid ${theme.pallete.divider}`,
+        textAlign: 'left',
+        padding: '1rem 0',
+        '&:not(:last-child)': {
+          paddingRight: '2rem',
+        },
       },
     },
-    blockquote: {
+
+    '& > blockquote': {
       position: 'relative',
       color: theme.pallete.primary.main,
       fontStyle: 'italic',
@@ -67,7 +76,8 @@ export const createStyles = (theme: Theme) => ({
         height: 2,
         borderTop: `2px solid ${theme.pallete.divider}`,
       },
-    } as React.CSSProperties,
+    },
+
     code: {
       '&::selection': {
         background: theme.pallete.primary.main,
@@ -78,6 +88,7 @@ export const createStyles = (theme: Theme) => ({
         background: theme.pallete.surface.background,
       },
     },
+
     pre: {
       marginBottom: '2rem',
       code: {

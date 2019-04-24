@@ -2,7 +2,7 @@ import App from 'next/app'
 import { withRouter, WithRouterProps } from 'next/router'
 import { Helmet } from 'react-helmet'
 
-import { ThemeProvider, useStyles } from '../../lib'
+import { Theme, ThemeProvider, useStyles } from '../../lib'
 import { AppFooter } from '../components/AppFooter'
 import { APP_HEADER_HEIGHT, AppHeader } from '../components/AppHeader'
 import { Page } from '../components/Page'
