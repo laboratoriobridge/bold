@@ -1,30 +1,66 @@
+import { useState } from 'react'
+
 import { Button, Icon, PagedTable } from '../../../../lib'
 
-const rows = [
-  { id: 1, name: 'MARIA MACHADO DE JESUS', age: 42 },
-  { id: 2, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
-  { id: 3, name: 'ALICE BARBOSA', age: 27 },
-  { id: 4, name: 'MARIA MACHADO DE JESUS', age: 42 },
-  { id: 5, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
-  { id: 6, name: 'ALICE BARBOSA', age: 27 },
-  { id: 7, name: 'MARIA MACHADO DE JESUS', age: 42 },
-  { id: 8, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
-  { id: 9, name: 'ALICE BARBOSA', age: 27 },
-  { id: 10, name: 'ALICE BARBOSA', age: 27 },
-]
+interface RowType {
+  id: number
+  name: string
+  age: number
+}
+
+// Fake data to populate table
+let id = 1
+const allRows: RowType[] = Array(30)
+  .fill(true)
+  .reduce(
+    curr => [
+      ...curr,
+      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },
+      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
+      { id: id++, name: 'ALICE BARBOSA', age: 27 },
+    ],
+    [] as RowType[]
+  )
 
 function Table() {
+  const [params, setParams] = useState({
+    page: 0,
+    size: 10,
+    totalElements: allRows.length,
+    totalPages: allRows.length / 10,
+    sort: ['id'],
+  })
+
+  const handleSortChange = (sort: string[]) => setParams(state => ({ ...state, sort }))
+  const handlePageChange = (page: number) => setParams(state => ({ ...state, page }))
+  const handleSizeChange = (size: number) =>
+    setParams(state => ({ ...state, size, totalPages: Math.max(1, state.totalElements / size) }))
+
+  const rows = allRows
+    // Naive sorting for example purposes:
+    .sort((a, b) => {
+      if (params.sort[0] === 'id') {
+        return a.id - b.id
+      }
+      if (params.sort[0] === '-id') {
+        return b.id - a.id
+      }
+      return 0
+    })
+    // Naive pagination for example purposes:
+    .slice(params.page * params.size, params.page * params.size + params.size)
+
   return (
-    <PagedTable
+    <PagedTable<RowType>
       rows={rows}
-      page={0}
-      size={10}
-      totalElements={100}
-      totalPages={10}
-      sort={['-id', 'name']}
-      onSortChange={console.log}
-      onPageChange={console.log}
-      onSizeChange={console.log}
+      page={params.page}
+      size={params.size}
+      totalElements={params.totalElements}
+      totalPages={params.totalPages}
+      sort={params.sort}
+      onSortChange={handleSortChange}
+      onPageChange={handlePageChange}
+      onSizeChange={handleSizeChange}
       loading={false}
       columns={[
         {
@@ -36,13 +72,11 @@ function Table() {
         {
           name: 'name',
           header: 'Name',
-          sortable: true,
           render: item => item.name,
         },
         {
           name: 'age',
           header: 'Age',
-          sortable: true,
           render: item => item.age,
         },
         {
