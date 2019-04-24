@@ -2,7 +2,7 @@
 
 exports[`MonthField should render correctly 1`] = `
 .emotion-5 {
-  display: inline-block;
+  display: block;
 }
 
 .emotion-4 {

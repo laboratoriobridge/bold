@@ -9,7 +9,7 @@ exports[`should be rendered correctly 1`] = `
 }
 
 .emotion-6 {
-  display: inline-block;
+  display: block;
 }
 
 .emotion-5 {
