@@ -116,7 +116,7 @@ exports[`Modal should render correctly when opened 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(230,230,230,0.7);
+  background: rgba(220,220,224,0.7);
 }
 
 <body
@@ -263,7 +263,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(230,230,230,0.7);
+  background: rgba(220,220,224,0.7);
 }
 
 .emotion-2 {
@@ -434,7 +434,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(230,230,230,0.7);
+  background: rgba(220,220,224,0.7);
 }
 
 <body
@@ -581,7 +581,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(230,230,230,0.7);
+  background: rgba(220,220,224,0.7);
 }
 
 .emotion-2 {

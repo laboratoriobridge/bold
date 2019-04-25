@@ -30,6 +30,7 @@ export const createStyles = (theme: Theme) => ({
     textDecoration: 'underline',
     fontWeight: 'bold',
     outline: 'none',
+    transition: 'box-shadow .2s ease',
     '&:hover': {
       textDecoration: 'none',
     },

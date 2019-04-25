@@ -29,7 +29,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #FFFFFF;
   width: 21.25rem;
   height: 13.5rem;
   padding: 1rem;

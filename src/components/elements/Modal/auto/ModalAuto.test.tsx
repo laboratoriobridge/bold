@@ -37,7 +37,7 @@ it('should close modal when a button is clicked', () => {
     <ModalAuto
       dispose={jest.fn()}
       render={() => <span>Body</span>}
-      actions={[{ label: 'Cancel' }, { label: 'Confirm', type: 'primary', onClick: confirmHandler }]}
+      actions={[{ label: 'Cancel' }, { label: 'Confirm', kind: 'primary', onClick: confirmHandler }]}
     />
   )
 

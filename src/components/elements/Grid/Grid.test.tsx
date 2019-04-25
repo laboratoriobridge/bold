@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-testing-library'
 
 import { Cell } from './Cell'
-import { Grid, GridProps } from './Grid'
+import { Grid } from './Grid'
 
 it('should render correctly', () => {
   expect(render(<Grid>Content</Grid>).container).toMatchSnapshot()
@@ -22,27 +22,6 @@ it('should accept "style" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should accept "gap" and "gapCrossAxis" props', () => {
-  const createGrid = (props: Partial<GridProps> = {}) => (
-    <Grid gap={10} gapCrossAxis={5} {...props}>
-      <Cell>1</Cell>
-      <Cell>2</Cell>
-    </Grid>
-  )
-
-  const { container, rerender } = render(createGrid())
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'row-reverse' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column' }))
-  expect(container).toMatchSnapshot()
-
-  rerender(createGrid({ direction: 'column-reverse' }))
-  expect(container).toMatchSnapshot()
-})
-
 it('should pass props down to div', () => {
   const { container } = render(
     <Grid id='div' aria-label='test'>
@@ -51,4 +30,24 @@ it('should pass props down to div', () => {
   )
   expect(container.querySelector('div').getAttribute('id')).toEqual('div')
   expect(container.querySelector('div').getAttribute('aria-label')).toEqual('test')
+})
+
+it('should accept "gap" and "gapVertical" props', () => {
+  const { container } = render(
+    <Grid gap={10} gapVertical={5}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
+    </Grid>
+  )
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept responsive gaps', () => {
+  const { container } = render(
+    <Grid gap={{ xs: 1, sm: 2, md: 3, lg: 4, xl: 5 }} gapVertical={{ xs: 6, sm: 7, md: 8, lg: 9, xl: 10 }}>
+      <Cell>1</Cell>
+      <Cell>2</Cell>
+    </Grid>
+  )
+  expect(container).toMatchSnapshot()
 })

@@ -22,6 +22,8 @@ exports[`should render correctly 1`] = `
   font-weight: bolder;
   outline: none;
   font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .emotion-0:first-of-type a {
@@ -34,9 +36,13 @@ exports[`should render correctly 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-0:hover,
-.emotion-0:focus {
+.emotion-0:hover {
   background: #F2F2F7;
+}
+
+.emotion-0:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
 }
 
 .emotion-1 {
@@ -46,6 +52,8 @@ exports[`should render correctly 1`] = `
   font-weight: bolder;
   outline: none;
   font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   color: #B9B9BD;
 }
 
@@ -59,9 +67,13 @@ exports[`should render correctly 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-1:hover,
-.emotion-1:focus {
+.emotion-1:hover {
   background: #F2F2F7;
+}
+
+.emotion-1:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
 }
 
 .emotion-1:hover {
@@ -79,6 +91,8 @@ exports[`should render correctly 1`] = `
   font-weight: bolder;
   outline: none;
   font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
   color: #D83A2E;
 }
 
@@ -92,15 +106,23 @@ exports[`should render correctly 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-3:hover,
-.emotion-3:focus {
+.emotion-3:hover {
   background: #F2F2F7;
 }
 
-.emotion-3:hover,
 .emotion-3:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
+}
+
+.emotion-3:hover {
   color: #FFFFFF;
   background: #D83A2E;
+}
+
+.emotion-3:focus {
+  box-shadow: inset 0 0 0 2px #D83A2E;
+  border-radius: 4px;
 }
 
 <div>
@@ -109,7 +131,6 @@ exports[`should render correctly 1`] = `
     role="menu"
   >
     <li
-      aria-disabled="false"
       class="emotion-0"
       role="menuitem"
       tabindex="0"
@@ -127,10 +148,8 @@ exports[`should render correctly 1`] = `
     <li
       class="emotion-2"
       role="separator"
-      tabindex="-1"
     />
     <li
-      aria-disabled="false"
       class="emotion-3"
       role="menuitem"
       tabindex="-1"

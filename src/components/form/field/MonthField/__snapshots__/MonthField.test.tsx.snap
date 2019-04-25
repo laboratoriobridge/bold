@@ -2,7 +2,7 @@
 
 exports[`MonthField should render correctly 1`] = `
 .emotion-5 {
-  display: inline-block;
+  display: block;
 }
 
 .emotion-4 {
@@ -47,6 +47,22 @@ exports[`MonthField should render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
 }
 
 .emotion-0:required {
@@ -186,7 +202,7 @@ exports[`MonthField should render correctly 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #FFFFFF;
   width: 21.25rem;
   height: 13.5rem;
   padding: 1rem;

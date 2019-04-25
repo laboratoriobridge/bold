@@ -167,6 +167,8 @@ exports[`should render correctly when opened 1`] = `
   font-weight: bolder;
   outline: none;
   font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
 }
 
 .emotion-2:first-of-type a {
@@ -179,9 +181,13 @@ exports[`should render correctly when opened 1`] = `
   border-bottom-right-radius: 2px;
 }
 
-.emotion-2:hover,
-.emotion-2:focus {
+.emotion-2:hover {
   background: #F2F2F7;
+}
+
+.emotion-2:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
 }
 
 .emotion-5 {
@@ -232,7 +238,6 @@ exports[`should render correctly when opened 1`] = `
       role="menu"
     >
       <li
-        aria-disabled="false"
         class="emotion-2"
         role="menuitem"
         tabindex="0"
@@ -242,7 +247,6 @@ exports[`should render correctly when opened 1`] = `
         </span>
       </li>
       <li
-        aria-disabled="false"
         class="emotion-2"
         role="menuitem"
         tabindex="-1"

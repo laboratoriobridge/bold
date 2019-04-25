@@ -1,28 +1,41 @@
-// from https://github.com/rehooks/window-size/blob/master/index.js
-
 import { useEffect, useState } from 'react'
 
-function getSize() {
+export interface WindowSize {
+  innerHeight: number
+  innerWidth: number
+  outerHeight: number
+  outerWidth: number
+}
+
+function getSize(w: Window): WindowSize {
   return {
-    innerHeight: window.innerHeight,
-    innerWidth: window.innerWidth,
-    outerHeight: window.outerHeight,
-    outerWidth: window.outerWidth,
+    innerHeight: w.innerHeight,
+    innerWidth: w.innerWidth,
+    outerHeight: w.outerHeight,
+    outerWidth: w.outerWidth,
   }
 }
 
-export function useWindowSize() {
-  const [windowSize, setWindowSize] = useState(getSize())
-
-  function handleResize() {
-    setWindowSize(getSize())
-  }
+/**
+ * Hook that returns current window dimensions.
+ *
+ * Note: it might return null on first render,
+ * when `window` object is not defined (for server side rendering, for example).
+ */
+export function useWindowSize(): WindowSize | null {
+  const [windowSize, setWindowSize] = useState<WindowSize>(() =>
+    typeof window !== 'undefined' ? getSize(window) : null
+  )
 
   useEffect(() => {
-    addEventListener('resize', handleResize)
-    return () => {
-      removeEventListener('resize', handleResize)
+    setWindowSize(getSize(window))
+
+    function handleResize() {
+      setWindowSize(getSize(window))
     }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
   return windowSize

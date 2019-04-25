@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 
 import { useRouter } from '../../../hooks/useRouter'
 import { randomStr } from '../../../util/string'
@@ -13,16 +13,16 @@ export function Breadcrumb(props: BreadcrumbProps) {
   const { match } = useRouter()
   const store = useContext(BreadcrumbContext)
 
-  const entry = {
+  const entry = useRef({
     key: randomStr(),
     title,
     to: to || match.url,
-  }
+  })
 
   useEffect(() => {
-    store.push(entry)
-    return () => store.pop(entry)
-  })
+    store.push(entry.current)
+    return () => store.pop(entry.current)
+  }, [])
 
   return null
 }

@@ -1,25 +1,22 @@
 import React from 'react'
 
-import { BreadcrumbSimpleStore, BreadcrumbStore } from './BreadcrumbStore'
+import { BreadcrumbStore } from './BreadcrumbStore'
 
-const defaultStore = new BreadcrumbSimpleStore()
+const defaultStore = new BreadcrumbStore()
 
 export const BreadcrumbContext = React.createContext<BreadcrumbStore>(defaultStore)
 
 export const BreadcrumbConsumer = BreadcrumbContext.Consumer
 
 export interface BreadcrumbProviderProps {
-    value?: BreadcrumbSimpleStore
+  value?: BreadcrumbStore
+  children?: React.ReactNode
 }
 
-export class BreadcrumbProvider extends React.PureComponent<BreadcrumbProviderProps> {
-    static defaultProps: BreadcrumbProviderProps = {
-        value: defaultStore,
-    }
-
-    render() {
-        return (
-            <BreadcrumbContext.Provider value={this.props.value} {...this.props} />
-        )
-    }
+export function BreadcrumbProvider({ value, children }: BreadcrumbProviderProps) {
+  return <BreadcrumbContext.Provider value={value}>{children}</BreadcrumbContext.Provider>
 }
+
+BreadcrumbProvider.defaultProps = {
+  value: defaultStore,
+} as Partial<BreadcrumbProviderProps>

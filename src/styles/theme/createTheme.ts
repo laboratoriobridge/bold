@@ -51,13 +51,15 @@ export const getTextColor = (theme: Theme, color: TextColor): Color => {
   return textColorMap[color](theme.pallete)
 }
 
-type FocusBoxShadow = 'single' | 'double'
+type FocusBoxShadow = 'single' | 'double' | 'inset'
 
 export const focusBoxShadow = (theme: Theme, color: TextColor = 'primary', type: FocusBoxShadow = 'double') => {
   const c = getTextColor(theme, color)
 
   if (type === 'single') {
     return `0 0 0 2px ${c}`
+  } else if (type === 'inset') {
+    return `inset 0 0 0 2px ${c}`
   } else {
     return `0 0 0 2px ${theme.pallete.surface.background}, 0 0 0 4px ${c}`
   }

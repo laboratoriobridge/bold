@@ -31,6 +31,8 @@ export interface PopperState {
 }
 
 export function Popper(props: PopperProps) {
+  const { renderTarget, children, style, block, ...rest } = props
+
   const [visible, setVisible] = React.useState(props.initialVisible || false)
 
   const wrapperRef = React.useRef<HTMLDivElement>()
@@ -106,7 +108,6 @@ export function Popper(props: PopperProps) {
     }
   }, [visible])
 
-  const { renderTarget, children, style, block, ...rest } = props
   return (
     <div ref={wrapperRef} className={css(classes.wrapper, style)}>
       <Manager>

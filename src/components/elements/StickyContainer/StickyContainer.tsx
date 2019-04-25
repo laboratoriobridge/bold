@@ -1,7 +1,8 @@
 import { PositionProperty } from 'csstype'
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, useEffect, useState } from 'react'
+import React, { CSSProperties } from 'react'
 
+import { useScrollPosition } from '../../../hooks/useScrollPosition'
 import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
@@ -13,21 +14,9 @@ export interface StickyContainerProps extends Omit<React.HTMLAttributes<HTMLDivE
 
 export function StickyContainer(props: StickyContainerProps) {
   const { top, left, style, ...rest } = props
-  const [position, setPosition] = useState<PositionProperty>('absolute')
+  const scroll = useScrollPosition()
+  const position = scroll.scrollY > top ? 'fixed' : 'absolute'
   const { classes, css } = useStyles(createStyles, props, position)
-
-  useEffect(() => {
-    const listener = () => {
-      if (window.scrollY > top) {
-        setPosition('fixed')
-      } else {
-        setPosition('absolute')
-      }
-    }
-
-    addEventListener('scroll', listener)
-    return () => removeEventListener('scoll', listener)
-  }, [top])
 
   return <div className={css(classes.container, style)} {...rest} />
 }

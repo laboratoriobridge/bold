@@ -1,6 +1,7 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
+import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
@@ -12,7 +13,11 @@ export function ButtonGroup(props: ButtonGroupProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
-  return <div className={css(classes.root, style)} role='group' {...rest} />
+  const rootRef = useRovingTabIndex({
+    getItems: root => Array.from(root.querySelectorAll('button')),
+  })
+
+  return <div ref={rootRef} className={css(classes.root, style)} role='group' {...rest} />
 }
 
 export const createStyles = () => ({

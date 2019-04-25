@@ -17,10 +17,12 @@ storiesOf('Components|Icon', module)
   .add('all icons', () => (
     <Grid wrap>
       {Object.keys(IconMap).map((key: any) => (
-        <Cell key={key} flexBasis='100px' style={{ background: '#f2f2f2', padding: '1rem', textAlign: 'center' }}>
-          <Icon icon={key} fill={select('fill', colors, 'normal')} stroke={select('stroke', colors, 'none')} />
-          <br />
-          <Text style={{ wordBreak: 'break-word' }}>{key}</Text>
+        <Cell key={key} flexBasis='120px'>
+          <div style={{ background: '#f2f2f2', padding: '1rem', textAlign: 'center' }}>
+            <Icon icon={key} fill={select('fill', colors, 'normal')} stroke={select('stroke', colors, 'none')} />
+            <br />
+            <Text style={{ wordBreak: 'break-word' }}>{key}</Text>
+          </div>
         </Cell>
       ))}
     </Grid>

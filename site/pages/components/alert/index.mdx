@@ -1,0 +1,52 @@
+import { Demo } from '../../../components/Demo'
+
+# Alert
+
+The alerts appear on the top of the screen and they display critical information about loss of data, functionality, error, etc.
+
+## Best practices
+
+- Should appear one at a time and a maximum of two lines should be used to display the messages.
+- Use notifications to present information that needs to be viewed immediately and that requires user attention.
+- Present clear, concise messages and give follow up actions to allow the user to become more informed or resolve the issue.
+- Avoid displaying messages with technical error codes that do not help the user solve the problem.
+- Present specific messages to each situation instead of using standard messages.
+- Take blame when it's appropriate. Say "we're having trouble connecting" rather than "you're having connection issues".
+
+## Alert types
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Information</th>
+      <td>
+        Blue color. The default notification is usually used to give information that doesn't require too much attention
+        or action. They are typically not in response to a user action. (E.g.: Logged in as João da Silva. Logout).
+      </td>
+    </tr>
+    <tr>
+      <th>Danger</th>
+      <td>
+        Red color. Shows to the user that some process or task cannot be completed. Error messages should be clear and
+        objective, avoiding presenting technical error codes. Whenever possible should present a solution or link
+        indicating the next step. (E.g.: "The last item could not be added. Please refresh the page.").
+      </td>
+    </tr>
+    <tr>
+      <th>Warning</th>
+      <td>
+        Orange color. They are usually in anticipation of a significant change. Clearly communicate what will happen if
+        the user proceed with the action and provide an alternative where possible. (E.g.: "Your license is about to
+        expire. Please renew your license by August 5, 2019.").
+      </td>
+    </tr>
+    <tr>
+      <th>Success</th>
+      <td>Green color. Provides a positive response to user actions. (E.g.: "Professional added successfully.").</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+<Demo src='pages/components/alert/AlertDefault' />

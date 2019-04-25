@@ -15,6 +15,8 @@ import { default as ArrowDown } from './ArrowDown'
 import { default as ArrowLeft } from './ArrowLeft'
 import { default as ArrowRight } from './ArrowRight'
 import { default as ArrowUp } from './ArrowUp'
+import { default as BalanceFilled } from './BalanceFilled'
+import { default as BalanceOutline } from './BalanceOutline'
 import { default as BandaidFilled } from './BandaidFilled'
 import { default as BandaidOutline } from './BandaidOutline'
 import { default as BanFilled } from './BanFilled'
@@ -25,6 +27,8 @@ import { default as BatteryMedium } from './BatteryMedium'
 import { default as Beach } from './Beach'
 import { default as BellFilled } from './BellFilled'
 import { default as BellOutline } from './BellOutline'
+import { default as BloodPressureFilled } from './BloodPressureFilled'
+import { default as BloodPressureOutline } from './BloodPressureOutline'
 import { default as Bold } from './Bold'
 import { default as BookmarkFilled } from './BookmarkFilled'
 import { default as BookmarkOutline } from './BookmarkOutline'
@@ -47,8 +51,9 @@ import { default as ClockFilled } from './ClockFilled'
 import { default as ClockOutline } from './ClockOutline'
 import { default as CloudFilled } from './CloudFilled'
 import { default as CloudOutline } from './CloudOutline'
-import { default as Color } from './Color'
+import { default as Code } from './Code'
 import { default as Contrast } from './Contrast'
+import { default as ContrastActive } from './ContrastActive'
 import { default as CopyFilled } from './CopyFilled'
 import { default as CopyOutline } from './CopyOutline'
 import { default as CreditCardFilled } from './CreditCardFilled'
@@ -83,11 +88,14 @@ import { default as GearOutline } from './GearOutline'
 import { default as HamburguerMenu } from './HamburguerMenu'
 import { default as HeartFilled } from './HeartFilled'
 import { default as HeartOutline } from './HeartOutline'
+import { default as HeartRateFilled } from './HeartRateFilled'
+import { default as HeartRateOutline } from './HeartRateOutline'
 import { default as Hospital } from './Hospital'
 import { default as HouseFilled } from './HouseFilled'
 import { default as HouseOutline } from './HouseOutline'
 import { default as ImageFilled } from './ImageFilled'
 import { default as ImageOutline } from './ImageOutline'
+import { default as ImcFilled } from './ImcFilled'
 import { default as IncreaseFont } from './IncreaseFont'
 import { default as InfoCircleFilled } from './InfoCircleFilled'
 import { default as InfoCircleOutline } from './InfoCircleOutline'
@@ -97,6 +105,7 @@ import { default as KeyFilled } from './KeyFilled'
 import { default as KeyOutline } from './KeyOutline'
 import { default as LightbulbFilled } from './LightbulbFilled'
 import { default as LightbulbOutline } from './LightbulbOutline'
+import { default as Link } from './Link'
 import { default as List } from './List'
 import { default as LockCloseFilled } from './LockCloseFilled'
 import { default as LockCloseOutline } from './LockCloseOutline'
@@ -114,6 +123,7 @@ import { default as Module } from './Module'
 import { default as MultipleUsers } from './MultipleUsers'
 import { default as NeedleFilled } from './NeedleFilled'
 import { default as NeedleOutline } from './NeedleOutline'
+import { default as O2Filled } from './O2Filled'
 import { default as OpenDoor } from './OpenDoor'
 import { default as Outline } from './Outline'
 import { default as Pause } from './Pause'
@@ -138,7 +148,10 @@ import { default as QuoteLeft } from './QuoteLeft'
 import { default as QuoteRight } from './QuoteRight'
 import { default as Redo } from './Redo'
 import { default as Rocket } from './Rocket'
+import { default as RulerFilled } from './RulerFilled'
+import { default as RulerOutline } from './RulerOutline'
 import { default as ShieldFilled } from './ShieldFilled'
+import { default as ShieldOutline } from './ShieldOutline'
 import { default as SignOut } from './SignOut'
 import { default as Sort } from './Sort'
 import { default as StarFilled } from './StarFilled'
@@ -149,6 +162,8 @@ import { default as StopFilled } from './StopFilled'
 import { default as StopOutline } from './StopOutline'
 import { default as Strikethrough } from './Strikethrough'
 import { default as Sync } from './Sync'
+import { default as ThermometerFilled } from './ThermometerFilled'
+import { default as ThermometerOutline } from './ThermometerOutline'
 import { default as TimerFilled } from './TimerFilled'
 import { default as TimerOutlined } from './TimerOutlined'
 import { default as TimesDefault } from './TimesDefault'
@@ -158,9 +173,12 @@ import { default as TrashFilled } from './TrashFilled'
 import { default as TrashOutline } from './TrashOutline'
 import { default as Underline } from './Underline'
 import { default as Upload } from './Upload'
+import { default as UserBan } from './UserBan'
 import { default as UserCard } from './UserCard'
+import { default as UserCheck } from './UserCheck'
 import { default as UserFilled } from './UserFilled'
 import { default as UserOutline } from './UserOutline'
+import { default as UserTimes } from './UserTimes'
 import { default as VideoFilled } from './VideoFilled'
 import { default as VideoOutline } from './VideoOutline'
 import { default as VolumeFilled } from './VolumeFilled'
@@ -168,7 +186,6 @@ import { default as VolumeMuteFilled } from './VolumeMuteFilled'
 import { default as VolumeMuteOutline } from './VolumeMuteOutline'
 import { default as VolumeOutline } from './VolumeOutline'
 import { default as Wifi } from './Wifi'
-import { default as ZoomFilled } from './ZoomFilled'
 import { default as ZoomMinusFilled } from './ZoomMinusFilled'
 import { default as ZoomMinusOutline } from './ZoomMinusOutline'
 import { default as ZoomOutline } from './ZoomOutline'
@@ -176,360 +193,392 @@ import { default as ZoomPlusFilled } from './ZoomPlusFilled'
 import { default as ZoomPlusOutline } from './ZoomPlusOutline'
 
 export type Icons =
-    | 'adjust'
-    | 'alignCenter'
-    | 'alignJustify'
-    | 'alignLeft'
-    | 'alignRight'
-    | 'angleDoubleLeft'
-    | 'angleDoubleRight'
-    | 'angleDown'
-    | 'angleLeft'
-    | 'angleRight'
-    | 'angleUp'
-    | 'archiveFilled'
-    | 'archiveOutline'
-    | 'arrowDown'
-    | 'arrowLeft'
-    | 'arrowRight'
-    | 'arrowUp'
-    | 'bandaidFilled'
-    | 'bandaidOutline'
-    | 'banFilled'
-    | 'banOutline'
-    | 'batteryFull'
-    | 'batteryLow'
-    | 'batteryMedium'
-    | 'beach'
-    | 'bellFilled'
-    | 'bellOutline'
-    | 'bold'
-    | 'bookmarkFilled'
-    | 'bookmarkOutline'
-    | 'boxFilled'
-    | 'boxOutline'
-    | 'bricksFilled'
-    | 'bricksOutline'
-    | 'calendarFilled'
-    | 'calendarOutline'
-    | 'cameraFilled'
-    | 'cameraOutline'
-    | 'chatFilled'
-    | 'chatOutline'
-    | 'checkCircleFilled'
-    | 'checkCircleOutline'
-    | 'checkDefault'
-    | 'clearFormat'
-    | 'clip'
-    | 'clockFilled'
-    | 'clockOutline'
-    | 'cloudFilled'
-    | 'cloudOutline'
-    | 'color'
-    | 'contrast'
-    | 'copyFilled'
-    | 'copyOutline'
-    | 'creditCardFilled'
-    | 'creditCardOutline'
-    | 'dataFilled'
-    | 'dataOutline'
-    | 'decreaseFont'
-    | 'desktopFilled'
-    | 'desktopOutline'
-    | 'dots'
-    | 'download'
-    | 'emailFilled'
-    | 'emailOutline'
-    | 'exclamationDefault'
-    | 'exclamationTriangleFilled'
-    | 'exclamationTriangleOutline'
-    | 'expand'
-    | 'eyeFilled'
-    | 'eyeHiddenFilled'
-    | 'eyeHiddenOutline'
-    | 'eyeOutline'
-    | 'fileEmptyFilled'
-    | 'fileEmptyOutline'
-    | 'fileWithItensFilled'
-    | 'fileWithItensOutline'
-    | 'filterFilled'
-    | 'filterOutline'
-    | 'folderFilled'
-    | 'folderOutline'
-    | 'gearFilled'
-    | 'gearOutline'
-    | 'hamburguerMenu'
-    | 'heartFilled'
-    | 'heartOutline'
-    | 'hospital'
-    | 'houseFilled'
-    | 'houseOutline'
-    | 'imageFilled'
-    | 'imageOutline'
-    | 'increaseFont'
-    | 'infoCircleFilled'
-    | 'infoCircleOutline'
-    | 'infoDefault'
-    | 'italic'
-    | 'keyFilled'
-    | 'keyOutline'
-    | 'lightbulbFilled'
-    | 'lightbulbOutline'
-    | 'list'
-    | 'lockCloseFilled'
-    | 'lockCloseOutline'
-    | 'lockOpenFilled'
-    | 'lockOpenFilledCopy'
-    | 'mapFilled'
-    | 'mapMarkerFilled'
-    | 'mapMarkerOutlined'
-    | 'mapOutline'
-    | 'microphoneFilled'
-    | 'microphoneOutline'
-    | 'minimize'
-    | 'minus'
-    | 'module'
-    | 'multipleUsers'
-    | 'needleFilled'
-    | 'needleOutline'
-    | 'openDoor'
-    | 'outline'
-    | 'pause'
-    | 'penFilled'
-    | 'penOutline'
-    | 'penTool'
-    | 'phoneFilled'
-    | 'phoneOutline'
-    | 'pillFilled'
-    | 'pillOutline'
-    | 'playFilled'
-    | 'playOutline'
-    | 'plus'
-    | 'pollFilled'
-    | 'pollOutline'
-    | 'presentationFilled'
-    | 'presentationOutline'
-    | 'printerFilled'
-    | 'printerOutline'
-    | 'questionMarkFilled'
-    | 'quoteLeft'
-    | 'quoteRight'
-    | 'redo'
-    | 'rocket'
-    | 'shieldFilled'
-    | 'signOut'
-    | 'sort'
-    | 'starFilled'
-    | 'starOutline'
-    | 'stethoscopeFilled'
-    | 'stethoscopeOutline'
-    | 'stopFilled'
-    | 'stopOutline'
-    | 'strikethrough'
-    | 'sync'
-    | 'timerFilled'
-    | 'timerOutlined'
-    | 'timesDefault'
-    | 'timesFilled'
-    | 'timesOutline'
-    | 'trashFilled'
-    | 'trashOutline'
-    | 'underline'
-    | 'upload'
-    | 'userCard'
-    | 'userFilled'
-    | 'userOutline'
-    | 'videoFilled'
-    | 'videoOutline'
-    | 'volumeFilled'
-    | 'volumeMuteFilled'
-    | 'volumeMuteOutline'
-    | 'volumeOutline'
-    | 'wifi'
-    | 'zoomFilled'
-    | 'zoomMinusFilled'
-    | 'zoomMinusOutline'
-    | 'zoomOutline'
-    | 'zoomPlusFilled'
-    | 'zoomPlusOutline'
+  | 'adjust'
+  | 'alignCenter'
+  | 'alignJustify'
+  | 'alignLeft'
+  | 'alignRight'
+  | 'angleDoubleLeft'
+  | 'angleDoubleRight'
+  | 'angleDown'
+  | 'angleLeft'
+  | 'angleRight'
+  | 'angleUp'
+  | 'archiveFilled'
+  | 'archiveOutline'
+  | 'arrowDown'
+  | 'arrowLeft'
+  | 'arrowRight'
+  | 'arrowUp'
+  | 'balanceFilled'
+  | 'balanceOutline'
+  | 'bandaidFilled'
+  | 'bandaidOutline'
+  | 'banFilled'
+  | 'banOutline'
+  | 'batteryFull'
+  | 'batteryLow'
+  | 'batteryMedium'
+  | 'beach'
+  | 'bellFilled'
+  | 'bellOutline'
+  | 'bloodPressureFilled'
+  | 'bloodPressureOutline'
+  | 'bold'
+  | 'bookmarkFilled'
+  | 'bookmarkOutline'
+  | 'boxFilled'
+  | 'boxOutline'
+  | 'bricksFilled'
+  | 'bricksOutline'
+  | 'calendarFilled'
+  | 'calendarOutline'
+  | 'cameraFilled'
+  | 'cameraOutline'
+  | 'chatFilled'
+  | 'chatOutline'
+  | 'checkCircleFilled'
+  | 'checkCircleOutline'
+  | 'checkDefault'
+  | 'clearFormat'
+  | 'clip'
+  | 'clockFilled'
+  | 'clockOutline'
+  | 'cloudFilled'
+  | 'cloudOutline'
+  | 'code'
+  | 'contrast'
+  | 'contrastActive'
+  | 'copyFilled'
+  | 'copyOutline'
+  | 'creditCardFilled'
+  | 'creditCardOutline'
+  | 'dataFilled'
+  | 'dataOutline'
+  | 'decreaseFont'
+  | 'desktopFilled'
+  | 'desktopOutline'
+  | 'dots'
+  | 'download'
+  | 'emailFilled'
+  | 'emailOutline'
+  | 'exclamationDefault'
+  | 'exclamationTriangleFilled'
+  | 'exclamationTriangleOutline'
+  | 'expand'
+  | 'eyeFilled'
+  | 'eyeHiddenFilled'
+  | 'eyeHiddenOutline'
+  | 'eyeOutline'
+  | 'fileEmptyFilled'
+  | 'fileEmptyOutline'
+  | 'fileWithItensFilled'
+  | 'fileWithItensOutline'
+  | 'filterFilled'
+  | 'filterOutline'
+  | 'folderFilled'
+  | 'folderOutline'
+  | 'gearFilled'
+  | 'gearOutline'
+  | 'hamburguerMenu'
+  | 'heartFilled'
+  | 'heartOutline'
+  | 'heartRateFilled'
+  | 'heartRateOutline'
+  | 'hospital'
+  | 'houseFilled'
+  | 'houseOutline'
+  | 'imageFilled'
+  | 'imageOutline'
+  | 'imcFilled'
+  | 'increaseFont'
+  | 'infoCircleFilled'
+  | 'infoCircleOutline'
+  | 'infoDefault'
+  | 'italic'
+  | 'keyFilled'
+  | 'keyOutline'
+  | 'lightbulbFilled'
+  | 'lightbulbOutline'
+  | 'link'
+  | 'list'
+  | 'lockCloseFilled'
+  | 'lockCloseOutline'
+  | 'lockOpenFilled'
+  | 'lockOpenFilledCopy'
+  | 'mapFilled'
+  | 'mapMarkerFilled'
+  | 'mapMarkerOutlined'
+  | 'mapOutline'
+  | 'microphoneFilled'
+  | 'microphoneOutline'
+  | 'minimize'
+  | 'minus'
+  | 'module'
+  | 'multipleUsers'
+  | 'needleFilled'
+  | 'needleOutline'
+  | 'o2Filled'
+  | 'openDoor'
+  | 'outline'
+  | 'pause'
+  | 'penFilled'
+  | 'penOutline'
+  | 'penTool'
+  | 'phoneFilled'
+  | 'phoneOutline'
+  | 'pillFilled'
+  | 'pillOutline'
+  | 'playFilled'
+  | 'playOutline'
+  | 'plus'
+  | 'pollFilled'
+  | 'pollOutline'
+  | 'presentationFilled'
+  | 'presentationOutline'
+  | 'printerFilled'
+  | 'printerOutline'
+  | 'questionMarkFilled'
+  | 'quoteLeft'
+  | 'quoteRight'
+  | 'redo'
+  | 'rocket'
+  | 'rulerFilled'
+  | 'rulerOutline'
+  | 'shieldFilled'
+  | 'shieldOutline'
+  | 'signOut'
+  | 'sort'
+  | 'starFilled'
+  | 'starOutline'
+  | 'stethoscopeFilled'
+  | 'stethoscopeOutline'
+  | 'stopFilled'
+  | 'stopOutline'
+  | 'strikethrough'
+  | 'sync'
+  | 'thermometerFilled'
+  | 'thermometerOutline'
+  | 'timerFilled'
+  | 'timerOutlined'
+  | 'timesDefault'
+  | 'timesFilled'
+  | 'timesOutline'
+  | 'trashFilled'
+  | 'trashOutline'
+  | 'underline'
+  | 'upload'
+  | 'userBan'
+  | 'userCard'
+  | 'userCheck'
+  | 'userFilled'
+  | 'userOutline'
+  | 'userTimes'
+  | 'videoFilled'
+  | 'videoOutline'
+  | 'volumeFilled'
+  | 'volumeMuteFilled'
+  | 'volumeMuteOutline'
+  | 'volumeOutline'
+  | 'wifi'
+  | 'zoomMinusFilled'
+  | 'zoomMinusOutline'
+  | 'zoomOutline'
+  | 'zoomPlusFilled'
+  | 'zoomPlusOutline'
 
-export const IconMap: {
-    [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>
-} = {
-    'adjust': Adjust,
-    'alignCenter': AlignCenter,
-    'alignJustify': AlignJustify,
-    'alignLeft': AlignLeft,
-    'alignRight': AlignRight,
-    'angleDoubleLeft': AngleDoubleLeft,
-    'angleDoubleRight': AngleDoubleRight,
-    'angleDown': AngleDown,
-    'angleLeft': AngleLeft,
-    'angleRight': AngleRight,
-    'angleUp': AngleUp,
-    'archiveFilled': ArchiveFilled,
-    'archiveOutline': ArchiveOutline,
-    'arrowDown': ArrowDown,
-    'arrowLeft': ArrowLeft,
-    'arrowRight': ArrowRight,
-    'arrowUp': ArrowUp,
-    'bandaidFilled': BandaidFilled,
-    'bandaidOutline': BandaidOutline,
-    'banFilled': BanFilled,
-    'banOutline': BanOutline,
-    'batteryFull': BatteryFull,
-    'batteryLow': BatteryLow,
-    'batteryMedium': BatteryMedium,
-    'beach': Beach,
-    'bellFilled': BellFilled,
-    'bellOutline': BellOutline,
-    'bold': Bold,
-    'bookmarkFilled': BookmarkFilled,
-    'bookmarkOutline': BookmarkOutline,
-    'boxFilled': BoxFilled,
-    'boxOutline': BoxOutline,
-    'bricksFilled': BricksFilled,
-    'bricksOutline': BricksOutline,
-    'calendarFilled': CalendarFilled,
-    'calendarOutline': CalendarOutline,
-    'cameraFilled': CameraFilled,
-    'cameraOutline': CameraOutline,
-    'chatFilled': ChatFilled,
-    'chatOutline': ChatOutline,
-    'checkCircleFilled': CheckCircleFilled,
-    'checkCircleOutline': CheckCircleOutline,
-    'checkDefault': CheckDefault,
-    'clearFormat': ClearFormat,
-    'clip': Clip,
-    'clockFilled': ClockFilled,
-    'clockOutline': ClockOutline,
-    'cloudFilled': CloudFilled,
-    'cloudOutline': CloudOutline,
-    'color': Color,
-    'contrast': Contrast,
-    'copyFilled': CopyFilled,
-    'copyOutline': CopyOutline,
-    'creditCardFilled': CreditCardFilled,
-    'creditCardOutline': CreditCardOutline,
-    'dataFilled': DataFilled,
-    'dataOutline': DataOutline,
-    'decreaseFont': DecreaseFont,
-    'desktopFilled': DesktopFilled,
-    'desktopOutline': DesktopOutline,
-    'dots': Dots,
-    'download': Download,
-    'emailFilled': EmailFilled,
-    'emailOutline': EmailOutline,
-    'exclamationDefault': ExclamationDefault,
-    'exclamationTriangleFilled': ExclamationTriangleFilled,
-    'exclamationTriangleOutline': ExclamationTriangleOutline,
-    'expand': Expand,
-    'eyeFilled': EyeFilled,
-    'eyeHiddenFilled': EyeHiddenFilled,
-    'eyeHiddenOutline': EyeHiddenOutline,
-    'eyeOutline': EyeOutline,
-    'fileEmptyFilled': FileEmptyFilled,
-    'fileEmptyOutline': FileEmptyOutline,
-    'fileWithItensFilled': FileWithItensFilled,
-    'fileWithItensOutline': FileWithItensOutline,
-    'filterFilled': FilterFilled,
-    'filterOutline': FilterOutline,
-    'folderFilled': FolderFilled,
-    'folderOutline': FolderOutline,
-    'gearFilled': GearFilled,
-    'gearOutline': GearOutline,
-    'hamburguerMenu': HamburguerMenu,
-    'heartFilled': HeartFilled,
-    'heartOutline': HeartOutline,
-    'hospital': Hospital,
-    'houseFilled': HouseFilled,
-    'houseOutline': HouseOutline,
-    'imageFilled': ImageFilled,
-    'imageOutline': ImageOutline,
-    'increaseFont': IncreaseFont,
-    'infoCircleFilled': InfoCircleFilled,
-    'infoCircleOutline': InfoCircleOutline,
-    'infoDefault': InfoDefault,
-    'italic': Italic,
-    'keyFilled': KeyFilled,
-    'keyOutline': KeyOutline,
-    'lightbulbFilled': LightbulbFilled,
-    'lightbulbOutline': LightbulbOutline,
-    'list': List,
-    'lockCloseFilled': LockCloseFilled,
-    'lockCloseOutline': LockCloseOutline,
-    'lockOpenFilled': LockOpenFilled,
-    'lockOpenFilledCopy': LockOpenFilledCopy,
-    'mapFilled': MapFilled,
-    'mapMarkerFilled': MapMarkerFilled,
-    'mapMarkerOutlined': MapMarkerOutlined,
-    'mapOutline': MapOutline,
-    'microphoneFilled': MicrophoneFilled,
-    'microphoneOutline': MicrophoneOutline,
-    'minimize': Minimize,
-    'minus': Minus,
-    'module': Module,
-    'multipleUsers': MultipleUsers,
-    'needleFilled': NeedleFilled,
-    'needleOutline': NeedleOutline,
-    'openDoor': OpenDoor,
-    'outline': Outline,
-    'pause': Pause,
-    'penFilled': PenFilled,
-    'penOutline': PenOutline,
-    'penTool': PenTool,
-    'phoneFilled': PhoneFilled,
-    'phoneOutline': PhoneOutline,
-    'pillFilled': PillFilled,
-    'pillOutline': PillOutline,
-    'playFilled': PlayFilled,
-    'playOutline': PlayOutline,
-    'plus': Plus,
-    'pollFilled': PollFilled,
-    'pollOutline': PollOutline,
-    'presentationFilled': PresentationFilled,
-    'presentationOutline': PresentationOutline,
-    'printerFilled': PrinterFilled,
-    'printerOutline': PrinterOutline,
-    'questionMarkFilled': QuestionMarkFilled,
-    'quoteLeft': QuoteLeft,
-    'quoteRight': QuoteRight,
-    'redo': Redo,
-    'rocket': Rocket,
-    'shieldFilled': ShieldFilled,
-    'signOut': SignOut,
-    'sort': Sort,
-    'starFilled': StarFilled,
-    'starOutline': StarOutline,
-    'stethoscopeFilled': StethoscopeFilled,
-    'stethoscopeOutline': StethoscopeOutline,
-    'stopFilled': StopFilled,
-    'stopOutline': StopOutline,
-    'strikethrough': Strikethrough,
-    'sync': Sync,
-    'timerFilled': TimerFilled,
-    'timerOutlined': TimerOutlined,
-    'timesDefault': TimesDefault,
-    'timesFilled': TimesFilled,
-    'timesOutline': TimesOutline,
-    'trashFilled': TrashFilled,
-    'trashOutline': TrashOutline,
-    'underline': Underline,
-    'upload': Upload,
-    'userCard': UserCard,
-    'userFilled': UserFilled,
-    'userOutline': UserOutline,
-    'videoFilled': VideoFilled,
-    'videoOutline': VideoOutline,
-    'volumeFilled': VolumeFilled,
-    'volumeMuteFilled': VolumeMuteFilled,
-    'volumeMuteOutline': VolumeMuteOutline,
-    'volumeOutline': VolumeOutline,
-    'wifi': Wifi,
-    'zoomFilled': ZoomFilled,
-    'zoomMinusFilled': ZoomMinusFilled,
-    'zoomMinusOutline': ZoomMinusOutline,
-    'zoomOutline': ZoomOutline,
-    'zoomPlusFilled': ZoomPlusFilled,
-    'zoomPlusOutline': ZoomPlusOutline,
+export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>> } = {
+  adjust: Adjust,
+  alignCenter: AlignCenter,
+  alignJustify: AlignJustify,
+  alignLeft: AlignLeft,
+  alignRight: AlignRight,
+  angleDoubleLeft: AngleDoubleLeft,
+  angleDoubleRight: AngleDoubleRight,
+  angleDown: AngleDown,
+  angleLeft: AngleLeft,
+  angleRight: AngleRight,
+  angleUp: AngleUp,
+  archiveFilled: ArchiveFilled,
+  archiveOutline: ArchiveOutline,
+  arrowDown: ArrowDown,
+  arrowLeft: ArrowLeft,
+  arrowRight: ArrowRight,
+  arrowUp: ArrowUp,
+  balanceFilled: BalanceFilled,
+  balanceOutline: BalanceOutline,
+  bandaidFilled: BandaidFilled,
+  bandaidOutline: BandaidOutline,
+  banFilled: BanFilled,
+  banOutline: BanOutline,
+  batteryFull: BatteryFull,
+  batteryLow: BatteryLow,
+  batteryMedium: BatteryMedium,
+  beach: Beach,
+  bellFilled: BellFilled,
+  bellOutline: BellOutline,
+  bloodPressureFilled: BloodPressureFilled,
+  bloodPressureOutline: BloodPressureOutline,
+  bold: Bold,
+  bookmarkFilled: BookmarkFilled,
+  bookmarkOutline: BookmarkOutline,
+  boxFilled: BoxFilled,
+  boxOutline: BoxOutline,
+  bricksFilled: BricksFilled,
+  bricksOutline: BricksOutline,
+  calendarFilled: CalendarFilled,
+  calendarOutline: CalendarOutline,
+  cameraFilled: CameraFilled,
+  cameraOutline: CameraOutline,
+  chatFilled: ChatFilled,
+  chatOutline: ChatOutline,
+  checkCircleFilled: CheckCircleFilled,
+  checkCircleOutline: CheckCircleOutline,
+  checkDefault: CheckDefault,
+  clearFormat: ClearFormat,
+  clip: Clip,
+  clockFilled: ClockFilled,
+  clockOutline: ClockOutline,
+  cloudFilled: CloudFilled,
+  cloudOutline: CloudOutline,
+  code: Code,
+  contrast: Contrast,
+  contrastActive: ContrastActive,
+  copyFilled: CopyFilled,
+  copyOutline: CopyOutline,
+  creditCardFilled: CreditCardFilled,
+  creditCardOutline: CreditCardOutline,
+  dataFilled: DataFilled,
+  dataOutline: DataOutline,
+  decreaseFont: DecreaseFont,
+  desktopFilled: DesktopFilled,
+  desktopOutline: DesktopOutline,
+  dots: Dots,
+  download: Download,
+  emailFilled: EmailFilled,
+  emailOutline: EmailOutline,
+  exclamationDefault: ExclamationDefault,
+  exclamationTriangleFilled: ExclamationTriangleFilled,
+  exclamationTriangleOutline: ExclamationTriangleOutline,
+  expand: Expand,
+  eyeFilled: EyeFilled,
+  eyeHiddenFilled: EyeHiddenFilled,
+  eyeHiddenOutline: EyeHiddenOutline,
+  eyeOutline: EyeOutline,
+  fileEmptyFilled: FileEmptyFilled,
+  fileEmptyOutline: FileEmptyOutline,
+  fileWithItensFilled: FileWithItensFilled,
+  fileWithItensOutline: FileWithItensOutline,
+  filterFilled: FilterFilled,
+  filterOutline: FilterOutline,
+  folderFilled: FolderFilled,
+  folderOutline: FolderOutline,
+  gearFilled: GearFilled,
+  gearOutline: GearOutline,
+  hamburguerMenu: HamburguerMenu,
+  heartFilled: HeartFilled,
+  heartOutline: HeartOutline,
+  heartRateFilled: HeartRateFilled,
+  heartRateOutline: HeartRateOutline,
+  hospital: Hospital,
+  houseFilled: HouseFilled,
+  houseOutline: HouseOutline,
+  imageFilled: ImageFilled,
+  imageOutline: ImageOutline,
+  imcFilled: ImcFilled,
+  increaseFont: IncreaseFont,
+  infoCircleFilled: InfoCircleFilled,
+  infoCircleOutline: InfoCircleOutline,
+  infoDefault: InfoDefault,
+  italic: Italic,
+  keyFilled: KeyFilled,
+  keyOutline: KeyOutline,
+  lightbulbFilled: LightbulbFilled,
+  lightbulbOutline: LightbulbOutline,
+  link: Link,
+  list: List,
+  lockCloseFilled: LockCloseFilled,
+  lockCloseOutline: LockCloseOutline,
+  lockOpenFilled: LockOpenFilled,
+  lockOpenFilledCopy: LockOpenFilledCopy,
+  mapFilled: MapFilled,
+  mapMarkerFilled: MapMarkerFilled,
+  mapMarkerOutlined: MapMarkerOutlined,
+  mapOutline: MapOutline,
+  microphoneFilled: MicrophoneFilled,
+  microphoneOutline: MicrophoneOutline,
+  minimize: Minimize,
+  minus: Minus,
+  module: Module,
+  multipleUsers: MultipleUsers,
+  needleFilled: NeedleFilled,
+  needleOutline: NeedleOutline,
+  o2Filled: O2Filled,
+  openDoor: OpenDoor,
+  outline: Outline,
+  pause: Pause,
+  penFilled: PenFilled,
+  penOutline: PenOutline,
+  penTool: PenTool,
+  phoneFilled: PhoneFilled,
+  phoneOutline: PhoneOutline,
+  pillFilled: PillFilled,
+  pillOutline: PillOutline,
+  playFilled: PlayFilled,
+  playOutline: PlayOutline,
+  plus: Plus,
+  pollFilled: PollFilled,
+  pollOutline: PollOutline,
+  presentationFilled: PresentationFilled,
+  presentationOutline: PresentationOutline,
+  printerFilled: PrinterFilled,
+  printerOutline: PrinterOutline,
+  questionMarkFilled: QuestionMarkFilled,
+  quoteLeft: QuoteLeft,
+  quoteRight: QuoteRight,
+  redo: Redo,
+  rocket: Rocket,
+  rulerFilled: RulerFilled,
+  rulerOutline: RulerOutline,
+  shieldFilled: ShieldFilled,
+  shieldOutline: ShieldOutline,
+  signOut: SignOut,
+  sort: Sort,
+  starFilled: StarFilled,
+  starOutline: StarOutline,
+  stethoscopeFilled: StethoscopeFilled,
+  stethoscopeOutline: StethoscopeOutline,
+  stopFilled: StopFilled,
+  stopOutline: StopOutline,
+  strikethrough: Strikethrough,
+  sync: Sync,
+  thermometerFilled: ThermometerFilled,
+  thermometerOutline: ThermometerOutline,
+  timerFilled: TimerFilled,
+  timerOutlined: TimerOutlined,
+  timesDefault: TimesDefault,
+  timesFilled: TimesFilled,
+  timesOutline: TimesOutline,
+  trashFilled: TrashFilled,
+  trashOutline: TrashOutline,
+  underline: Underline,
+  upload: Upload,
+  userBan: UserBan,
+  userCard: UserCard,
+  userCheck: UserCheck,
+  userFilled: UserFilled,
+  userOutline: UserOutline,
+  userTimes: UserTimes,
+  videoFilled: VideoFilled,
+  videoOutline: VideoOutline,
+  volumeFilled: VolumeFilled,
+  volumeMuteFilled: VolumeMuteFilled,
+  volumeMuteOutline: VolumeMuteOutline,
+  volumeOutline: VolumeOutline,
+  wifi: Wifi,
+  zoomMinusFilled: ZoomMinusFilled,
+  zoomMinusOutline: ZoomMinusOutline,
+  zoomOutline: ZoomOutline,
+  zoomPlusFilled: ZoomPlusFilled,
+  zoomPlusOutline: ZoomPlusOutline,
 }

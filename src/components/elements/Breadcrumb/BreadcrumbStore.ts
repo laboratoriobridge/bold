@@ -1,47 +1,27 @@
 import { LinkProps } from 'react-router-dom'
 
+import { Observable } from '../../../util'
+
 export interface BreadcrumbEntry {
-    key: string
-    title: string
-    to?: LinkProps['to']
+  key: string
+  title: string
+  to?: LinkProps['to']
 }
 
-export type BreadcrumbListener = (entries: BreadcrumbEntry[]) => void
-export type BreadcrumbUnsubscribeFunction = () => void
+export class BreadcrumbStore extends Observable<BreadcrumbEntry[]> {
+  private entries: BreadcrumbEntry[] = []
 
-export interface BreadcrumbStore {
-    push(entry: BreadcrumbEntry)
-    pop(entry: BreadcrumbEntry)
-    getEntries(): BreadcrumbEntry[]
-    addChangeListener(BreadcrumbListener): BreadcrumbUnsubscribeFunction
-}
+  public push(entry: BreadcrumbEntry) {
+    this.entries = [...this.entries, entry]
+    setTimeout(() => this.notify(this.entries))
+  }
 
-export class BreadcrumbSimpleStore implements BreadcrumbStore {
-    private entries: BreadcrumbEntry[] = []
-    private listeners: BreadcrumbListener[] = []
+  public pop(entry: BreadcrumbEntry) {
+    this.entries = this.entries.filter(e => e.key !== entry.key)
+    setTimeout(() => this.notify(this.entries))
+  }
 
-    public push(entry: BreadcrumbEntry) {
-        this.entries.push(entry)
-        this.emitChange()
-    }
-
-    public pop(entry: BreadcrumbEntry) {
-        this.entries = this.entries.filter(e => e.key !== entry.key)
-        this.emitChange()
-    }
-
-    public addChangeListener(listener: BreadcrumbListener) {
-        this.listeners.push(listener)
-        return () => {
-            this.listeners.splice(this.listeners.indexOf(listener), 1)
-        }
-    }
-
-    public getEntries(): BreadcrumbEntry[] {
-        return this.entries
-    }
-
-    private emitChange() {
-        this.listeners.forEach(listener => listener(this.entries))
-    }
+  public getEntries(): BreadcrumbEntry[] {
+    return this.entries
+  }
 }
