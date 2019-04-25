@@ -10,7 +10,6 @@ export { ModalMountTarget } from './ModalMountTarget'
 
 export interface ModalConfig extends Omit<ModalAutoProps, 'dispose'> {
   store?: ModalStore
-  onClose?(): any
 }
 
 export const modal = (config: ModalConfig) => {
@@ -18,7 +17,7 @@ export const modal = (config: ModalConfig) => {
     const store = config.store || defaultStore
 
     store.append((props: ModalStoreAppendProps) => (
-      <ModalAuto {...config} dispose={props.dispose} onClose={config.onClose} />
+      <ModalAuto {...config} dispose={props.dispose} />
     ))
   }
 }
