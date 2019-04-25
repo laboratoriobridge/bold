@@ -13,6 +13,7 @@ export interface ModalAutoProps {
   size?: ModalProps['size']
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
+  onClose?(): any
 }
 
 export interface ModalAutoState {
@@ -24,7 +25,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, size, render, dispose } = props
+  const { actions, size, render, dispose, onClose } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -33,6 +34,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
   }, [])
 
   const close = () => {
+    onClose && onClose()
     setIsOpen(false)
 
     // Dispose with timeout to preserve closing transition
