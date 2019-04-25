@@ -1,42 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { ObservableUnsubscribeFn } from '../../../../util/Observable'
-
-import store, { ModalStore, ModalStoreItem, ModalStoreState } from './ModalStore'
+import defaultStore, { ModalStore, ModalStoreItem, ModalStoreState } from './ModalStore'
 
 export interface ModalMountTargetProps {
-    store?: ModalStore
+  store?: ModalStore
 }
 
-export class ModalMountTarget extends React.Component<ModalMountTargetProps, ModalStoreState> {
+export function ModalMountTarget(props: ModalMountTargetProps) {
+  const { store } = props
 
-    static defaultProps = {
-        store,
-    }
+  const [items, setItems] = useState<ModalStoreState['items']>([])
 
-    state = {
-        items: [],
-    }
+  useEffect(() => store.subscribe(s => setItems(s.items)), [])
 
-    private unsubscribe: ObservableUnsubscribeFn
-
-    componentDidMount() {
-        this.unsubscribe = this.props.store.subscribe((state: ModalStoreState) => {
-            this.setState(state)
-        })
-    }
-
-    componentWillUnmount() {
-        this.unsubscribe()
-    }
-
-    render() {
-        return (
-            <div>
-                {this.state.items.map((item: ModalStoreItem) =>
-                    <React.Fragment key={item.key}>{item.component}</React.Fragment>
-                )}
-            </div>
-        )
-    }
+  return (
+    <div>
+      {items.map((item: ModalStoreItem) => (
+        <React.Fragment key={item.key}>{item.component}</React.Fragment>
+      ))}
+    </div>
+  )
 }
+
+ModalMountTarget.defaultProps = {
+  store: defaultStore,
+} as Partial<ModalMountTargetProps>

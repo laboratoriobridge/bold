@@ -13,6 +13,6 @@ storiesOf('Components|Textual', module).add('Number', () => (
     title={text('title', '')}
     abbrev={boolean('abbrev', false)}
     prefix={text('prefix', '')}
-    sufix={text('sufix', '')}
+    suffix={text('sufix', '')}
   />
 ))

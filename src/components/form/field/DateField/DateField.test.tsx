@@ -1,12 +1,12 @@
-import { render } from 'enzyme'
 import React from 'react'
+import { render } from 'react-testing-library'
 
 import { withForm } from '../../../../test'
 
 import { DateField, format, parse } from './DateField'
 
 it('should be rendered correctly', () => {
-  const wrapper = render(
+  const { container } = render(
     withForm(
       <DateField
         label='Date test'
@@ -16,7 +16,7 @@ it('should be rendered correctly', () => {
       />
     )
   )
-  expect(wrapper).toMatchSnapshot()
+  expect(container).toMatchSnapshot()
 })
 
 it('should parse date to ISO string (date only)', () => {

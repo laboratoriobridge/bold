@@ -59,12 +59,14 @@ exports[`should render correctly 1`] = `
   background-color: #095fc0;
 }
 
-<button
-  class="emotion-0"
-  type="button"
->
-  <span>
-    Submit Button
-  </span>
-</button>
+<div>
+  <button
+    class="emotion-0"
+    type="button"
+  >
+    <span>
+      Submit Button
+    </span>
+  </button>
+</div>
 `;

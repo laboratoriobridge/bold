@@ -81,25 +81,27 @@ exports[`render correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  data-name="test"
->
-  <label
-    class="emotion-0"
-  >
-    Mask test
-  </label>
+<div>
   <div
-    class="emotion-2"
+    data-name="test"
   >
-    <input
-      aria-label="Mask test"
-      class="emotion-1"
-      name="test"
-      placeholder="Test"
-      type="text"
-      value=""
-    />
+    <label
+      class="emotion-0"
+    >
+      Mask test
+    </label>
+    <div
+      class="emotion-2"
+    >
+      <input
+        aria-label="Mask test"
+        class="emotion-1"
+        name="test"
+        placeholder="Test"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;
@@ -265,42 +267,44 @@ exports[`render with icon 1`] = `
   font-size: 1.5rem;
 }
 
-<div
-  data-name="test"
->
+<div>
   <div
-    class="emotion-4"
+    data-name="test"
   >
-    <input
-      class="emotion-0"
-      name="test"
-      type="text"
-      value=""
-    />
-    <span
-      class="emotion-3"
+    <div
+      class="emotion-4"
     >
-      <button
-        class="emotion-2"
-        tabindex="-1"
-        type="button"
+      <input
+        class="emotion-0"
+        name="test"
+        type="text"
+        value=""
+      />
+      <span
+        class="emotion-3"
       >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
-            />
-          </svg>
-        </span>
-      </button>
-    </span>
+        <button
+          class="emotion-2"
+          tabindex="-1"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
   </div>
 </div>
 `;

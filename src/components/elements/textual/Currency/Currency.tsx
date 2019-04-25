@@ -1,16 +1,9 @@
 import React from 'react'
 
-import { Number } from '../Number/Number'
+import { Number, NumberProps } from '../Number/Number'
 
-export class CurrencyLabelProps {
-    value?: number
-}
+export interface CurrencyLabelProps extends NumberProps {}
 
-export class Currency extends React.Component<CurrencyLabelProps> {
-
-    render() {
-        return (
-            <Number prefix='R$ ' value={this.props.value} minDecimalPlaces={2} maxDecimalPlaces={2} />
-        )
-    }
+export function Currency(props: CurrencyLabelProps) {
+  return <Number prefix='R$ ' minDecimalPlaces={2} maxDecimalPlaces={2} {...props} />
 }

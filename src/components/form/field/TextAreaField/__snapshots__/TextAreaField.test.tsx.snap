@@ -86,34 +86,39 @@ exports[`should render correctly 1`] = `
   text-align: right;
 }
 
-<div
-  data-name="textarea"
->
-  <label
-    class="emotion-1"
+<div>
+  <div
+    data-name="textarea"
   >
-    Label
-    <span
-      class="emotion-0"
-      title="Campo obrigatório"
+    <label
+      class="emotion-1"
     >
-      *
-    </span>
-  </label>
-  <div>
-    <textarea
-      aria-label="Label"
-      class="emotion-2"
-      maxlength="100"
-      name="textarea"
-      required=""
-    >
-      Value
-    </textarea>
-    <div
-      class="emotion-3"
-    >
-      5/100 caracteres
+      Label
+      <span
+        class="emotion-0"
+        title="Campo obrigatório"
+      >
+        *
+      </span>
+    </label>
+    <div>
+      <textarea
+        aria-label="Label"
+        class="emotion-2"
+        maxlength="100"
+        name="textarea"
+        required=""
+      >
+        Value
+      </textarea>
+      <div
+        class="emotion-3"
+      >
+        5
+        /
+        100
+         caracteres
+      </div>
     </div>
   </div>
 </div>

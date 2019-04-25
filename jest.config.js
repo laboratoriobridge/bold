@@ -14,5 +14,4 @@ module.exports = {
   },
   coverageDirectory: './coverage/',
   collectCoverage: true,
-  snapshotSerializers: ['<rootDir>/node_modules/enzyme-to-json/serializer'],
 }

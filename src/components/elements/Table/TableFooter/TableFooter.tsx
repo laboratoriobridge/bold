@@ -31,7 +31,7 @@ export function TableFooter(props: TableFooterProps) {
   return (
     <div className={css(classes.footer, style)}>
       <span className={classes.results}>
-        <Number value={totalElements} sufix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')} abbrev />
+        <Number value={totalElements} suffix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')} abbrev />
       </span>
       {showPagination() && (
         <div className={classes.pagination}>
