@@ -1,6 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
+import { ExternalStyles } from '../../../../styles'
 import { SortDirection } from '../SortableLabel/SortableLabel'
 import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow } from '../Table'
 
@@ -10,7 +10,7 @@ export interface TableColumnConfig<T = any> {
   name: string
   header?: React.ReactNode
   sortable?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
   render(row: T): React.ReactNode
 }
 

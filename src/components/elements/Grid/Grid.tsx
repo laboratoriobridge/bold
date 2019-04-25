@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Breakpoint, Theme, useStyles } from '../../../styles'
+import { Breakpoint, ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export type AlignItems = 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch'
@@ -16,7 +15,7 @@ export interface GridProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 's
   alignItems?: AlignItems
   justifyContent?: JustifyContent
   direction?: Direction
-  style?: Interpolation
+  style?: ExternalStyles
 
   /**
    * Spacing (in `rem`) between grid items on the horizontal axis.

@@ -1,12 +1,11 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
 import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
-import { useStyles } from '../../../styles'
+import { ExternalStyles, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface ButtonGroupProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function ButtonGroup(props: ButtonGroupProps) {

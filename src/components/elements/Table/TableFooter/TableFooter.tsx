@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles, WithStylesProps } from '../../../../styles'
+import { ExternalStyles, Theme, useStyles, WithStylesProps } from '../../../../styles'
 import { HFlow } from '../../Flow'
 import { Paginator } from '../../Paginator/Paginator'
 import { Text } from '../../textual'
@@ -14,7 +13,7 @@ export interface TableFooterProps extends WithStylesProps {
   totalPages: number
   totalElements: number
   pageSize: number
-  style?: Interpolation
+  style?: ExternalStyles
   sizeOptions?: number[]
   onPageChange(page: number): void
   onSizeChange(size: number): void

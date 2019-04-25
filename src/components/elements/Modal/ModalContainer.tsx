@@ -1,14 +1,13 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
   hasCloseIcon?: boolean
   onClose?(): any
 }

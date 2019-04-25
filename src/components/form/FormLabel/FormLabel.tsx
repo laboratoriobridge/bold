@@ -1,13 +1,12 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util/types'
 
 export interface FormLabelProps extends Omit<React.LabelHTMLAttributes<HTMLLabelElement>, 'style'> {
   label: React.ReactNode
   required?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function FormLabel(props: FormLabelProps) {

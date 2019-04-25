@@ -1,11 +1,10 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../../../styles'
 import Times from '../../../../elements/Icon/generated/TimesDefault'
 
 export interface SelectMultiItemProps {
-  style?: Interpolation
+  style?: ExternalStyles
   disabled?: boolean
   children?: React.ReactNode
   onRemove(e: React.MouseEvent<HTMLSpanElement>): void

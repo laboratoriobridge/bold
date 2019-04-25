@@ -1,14 +1,13 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { TextColor, useCss } from '../../../../styles'
+import { ExternalStyles, TextColor, useCss } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 import { Omit } from '../../../../util/types'
 
 export interface HeadingProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'style'> {
   level: 1 | 2 | 3 | 4 | 5 | 6
   color?: TextColor
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Heading(props: HeadingProps) {

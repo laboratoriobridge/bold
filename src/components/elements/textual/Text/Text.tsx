@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { TextColor, useStyles } from '../../../../styles'
+import { ExternalStyles, TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
 
 export type Weight = 'normal' | 'bold'
@@ -14,7 +13,7 @@ export interface TextProps {
   weight?: Weight
   tag?: TextTag
   fontStyle?: FontStyle
-  style?: Interpolation
+  style?: ExternalStyles
   children: React.ReactNode
 }
 

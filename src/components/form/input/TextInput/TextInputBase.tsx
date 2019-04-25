@@ -1,14 +1,13 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { focusBoxShadow, Theme, useStyles } from '../../../../styles'
+import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util'
 import { Input, InputProps } from '../Input/Input'
 
 export type InputStatus = 'error'
 
 export interface TextInputBaseProps extends Omit<InputProps, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
   status?: InputStatus
 }
 

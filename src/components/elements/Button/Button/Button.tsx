@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util'
 import { ButtonBase, ButtonBaseProps } from '../ButtonBase'
 
@@ -10,7 +9,7 @@ import { createBaseStyles, createSizeStyles, skinMap, SkinProps } from './Button
 export interface ButtonProps extends SkinProps, Omit<ButtonBaseProps, 'style'> {
   loading?: boolean
   block?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Button(props: ButtonProps) {
