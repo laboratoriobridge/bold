@@ -1,6 +1,6 @@
 {
   "name": "bridge-react",
-  "version": "1.0.0-alpha.127",
+  "version": "1.0.0-alpha.129",
   "main": "lib/main.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
