@@ -4,17 +4,16 @@ import * as numberUtil from '../../../../util/number'
 
 export interface NumberProps {
   value: number
-  minDecimalPlaces?: number
-  maxDecimalPlaces?: number
   placeholder?: string
   title?: string
   abbrev?: boolean
   prefix?: string
   suffix?: string
+  formatOptions?: Intl.NumberFormatOptions
 }
 
 export function Number(props: NumberProps) {
-  const { value, minDecimalPlaces, maxDecimalPlaces, placeholder, title, abbrev, prefix, suffix, ...rest } = props
+  const { value, placeholder, title, abbrev, prefix, suffix, formatOptions } = props
 
   const renderTitle = () => {
     return title || (abbrev && numberUtil.format(value))
@@ -25,18 +24,12 @@ export function Number(props: NumberProps) {
       return placeholder
     }
 
-    const num = abbrev
-      ? numberUtil.abbrev(value, minDecimalPlaces, maxDecimalPlaces)
-      : numberUtil.format(value, minDecimalPlaces, maxDecimalPlaces)
+    const num = abbrev ? numberUtil.abbrev(value, formatOptions) : numberUtil.format(value, formatOptions)
 
     return prefix + num + suffix
   }
 
-  return (
-    <span {...rest} title={renderTitle()}>
-      {renderNumber()}
-    </span>
-  )
+  return <span title={renderTitle()}>{renderNumber()}</span>
 }
 
 Number.defaultProps = {
