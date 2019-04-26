@@ -14,8 +14,11 @@ export default class extends App {
 const BoldApp = (props: any) => {
   useEffect(() => {
     ReactGA.initialize('UA-139158849-1')
-    ReactGA.pageview(window.location.pathname + window.location.search)
   }, [])
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search)
+  }, [props.router.route])
 
   return (
     <>
