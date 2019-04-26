@@ -60287,7 +60287,7 @@ var createCardStyles = function createCardStyles(theme) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Findex.tsx ***!
   \********************************************************************************************************************************/
@@ -60310,5 +60310,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map

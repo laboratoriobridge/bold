@@ -73749,7 +73749,7 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/_app.tsx";
 
 
 
-react_ga__WEBPACK_IMPORTED_MODULE_8__["default"].initialize('UA-100147448-4'); // ReactGA.pageview(window.location.pathname + window.location.search)
+
 
 var _default =
 /*#__PURE__*/
@@ -73768,7 +73768,7 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(BoldApp, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, this.props, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12
+          lineNumber: 10
         },
         __self: this
       }));
@@ -73781,10 +73781,14 @@ function (_App) {
 
 
 var BoldApp = function BoldApp(props) {
+  Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
+    react_ga__WEBPACK_IMPORTED_MODULE_8__["default"].initialize('UA-100147448-4');
+    react_ga__WEBPACK_IMPORTED_MODULE_8__["default"].pageview(window.location.pathname + window.location.search);
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react_helmet__WEBPACK_IMPORTED_MODULE_9__["Helmet"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 22
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -73792,13 +73796,13 @@ var BoldApp = function BoldApp(props) {
     content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 23
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 24
     },
     __self: this
   }, "Bold Design System"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73806,7 +73810,7 @@ var BoldApp = function BoldApp(props) {
     rel: "icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 26
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73814,7 +73818,7 @@ var BoldApp = function BoldApp(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 27
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73822,13 +73826,13 @@ var BoldApp = function BoldApp(props) {
     href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 28
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Site__WEBPACK_IMPORTED_MODULE_10__["Site"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 31
     },
     __self: this
   })));

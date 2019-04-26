@@ -1728,7 +1728,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!*************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fabout.mdx ***!
   \*************************************************************************************************************************************/
@@ -1751,5 +1751,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=about.js.map
