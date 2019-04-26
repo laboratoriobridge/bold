@@ -23,7 +23,7 @@ export const createStyles = (theme: Theme) => ({
   },
   main: {
     // Global overrides (for markdown elements):
-    img: {
+    '& > p > img': {
       maxWidth: 960,
       marginBottom: '2rem',
     },
