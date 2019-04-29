@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Alert should allow styles override 1`] = `
+exports[`should allow styles override 1`] = `
 .emotion-1 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -89,7 +89,7 @@ exports[`Alert should allow styles override 1`] = `
 </div>
 `;
 
-exports[`Alert should render correctly 1`] = `
+exports[`should render correctly 1`] = `
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -317,7 +317,7 @@ exports[`Alert should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-label="Fechar alerta"
+            aria-label="Close"
             class="emotion-3"
             type="button"
           >
@@ -373,7 +373,7 @@ exports[`Alert should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-label="Fechar alerta"
+            aria-label="Close"
             class="emotion-3"
             type="button"
           >
@@ -429,7 +429,7 @@ exports[`Alert should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-label="Fechar alerta"
+            aria-label="Close"
             class="emotion-3"
             type="button"
           >
@@ -485,7 +485,7 @@ exports[`Alert should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-label="Fechar alerta"
+            aria-label="Close"
             class="emotion-3"
             type="button"
           >
@@ -511,7 +511,7 @@ exports[`Alert should render correctly 1`] = `
 </div>
 `;
 
-exports[`Alert should render correctly when inline 1`] = `
+exports[`should render correctly when inline 1`] = `
 .emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;

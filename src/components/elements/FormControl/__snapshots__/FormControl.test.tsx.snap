@@ -45,7 +45,7 @@ exports[`should render correctly 2`] = `
       Label
       <span
         class="emotion-0"
-        title="Campo obrigatório"
+        title="Required field"
       >
         *
       </span>

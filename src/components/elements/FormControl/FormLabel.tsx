@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 
+import { useLocale } from '../../../locale'
 import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util/types'
 
@@ -12,13 +13,14 @@ export interface FormLabelProps extends Omit<React.LabelHTMLAttributes<HTMLLabel
 export function FormLabel(props: FormLabelProps) {
   const { label, required, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
+  const locale = useLocale()
 
   return (
     <label className={css(classes.label, style)} {...rest}>
       {label}
 
       {required && (
-        <span title='Campo obrigatório' className={classes.marker}>
+        <span title={locale.formControl.required} className={classes.marker}>
           &#42;
         </span>
       )}

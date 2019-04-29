@@ -1,9 +1,11 @@
 import React, { CSSProperties, useEffect, useState } from 'react'
 
+import { useLocale } from '../../../locale'
 import { Theme, useStyles } from '../../../styles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
+import { Text } from '../textual'
 
 export interface PaginatorProps {
   /**
@@ -24,6 +26,7 @@ export interface PaginatorProps {
 
 export function Paginator(props: PaginatorProps) {
   const { page, total, onChange } = props
+  const locale = useLocale()
 
   const [inputValue, setInputValue] = useState<number>(0)
   useEffect(() => {
@@ -68,7 +71,7 @@ export function Paginator(props: PaginatorProps) {
         size='small'
         skin='ghost'
         disabled={isFirstPage()}
-        title='Página anterior'
+        title={locale.paginator.previousPage}
         onClick={!isFirstPage() ? previous : undefined}
       >
         <Icon icon='angleLeft' />
@@ -81,16 +84,19 @@ export function Paginator(props: PaginatorProps) {
         onBlur={handleInputBlur}
         onKeyDown={handleInputKeyPress}
         clearable={false}
+        title={locale.paginator.currentPage}
       />
 
-      <span>de {total}</span>
+      <Text>
+        {locale.paginator.of} {total}
+      </Text>
 
       <Button
         style={classes.rightButton}
         size='small'
         skin='ghost'
         disabled={isLastPage()}
-        title='Próxima página'
+        title={locale.paginator.nextPage}
         onClick={!isLastPage() ? next : undefined}
       >
         <Icon icon='angleRight' />

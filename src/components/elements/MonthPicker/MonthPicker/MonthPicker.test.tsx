@@ -12,16 +12,16 @@ describe('MonthPicker', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('should change de visible year on "Ano anterior" button click', () => {
+  it('should change de visible year on "Previous year" button click', () => {
     const { getByTitle, getAllByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} />)
-    fireEvent.click(getByTitle('Ano anterior'))
+    fireEvent.click(getByTitle('Previous year'))
     const expectedYear = now.getFullYear() - 1
     expect(getAllByText(expectedYear.toString())).toHaveLength(1)
   })
 
-  it('should change de visible year on "Ano posterior" button click', () => {
+  it('should change de visible year on "Next year" button click', () => {
     const { getByTitle, getAllByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} />)
-    fireEvent.click(getByTitle('Ano posterior'))
+    fireEvent.click(getByTitle('Next year'))
     const expectedYear = now.getFullYear() + 1
     expect(getAllByText(expectedYear.toString())).toHaveLength(1)
   })
@@ -38,7 +38,7 @@ describe('MonthPicker', () => {
     const { getByText, getByTitle } = render(
       <MonthPicker month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />
     )
-    fireEvent.click(getByTitle('Ano anterior'))
+    fireEvent.click(getByTitle('Previous year'))
     fireEvent.click(getByText('Jan'))
     const expectedYear = now.getFullYear() - 1
     expect(onChange).toHaveBeenCalledWith({ month: 0, year: expectedYear })

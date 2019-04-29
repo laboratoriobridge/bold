@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
+import { LocaleContext } from '../../../locale'
+import ptBr from '../../../locale/locales/pt-BR'
 import * as stringUtils from '../../../util/string'
 
 import { ModalContainer } from './ModalContainer'
@@ -31,4 +33,13 @@ it('should have close icon only if "hasCloseIcon" is true', () => {
 
   const { container: containerWithClose } = render(<ModalContainer>Container</ModalContainer>)
   expect(containerWithClose.querySelector('button')).toBeTruthy()
+})
+
+it('should allow message customization via locale context', () => {
+  const { container } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <ModalContainer>Container</ModalContainer>
+    </LocaleContext.Provider>
+  )
+  expect(container.querySelector('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
 })

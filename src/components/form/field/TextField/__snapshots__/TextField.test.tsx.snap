@@ -191,7 +191,7 @@ exports[`should not include field props on rendered HTML 1`] = `
       Test
       <span
         class="emotion-0"
-        title="Campo obrigatório"
+        title="Required field"
       >
         *
       </span>

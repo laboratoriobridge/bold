@@ -291,7 +291,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-1"
-              title="Ano anterior"
+              title="Previous year"
               type="button"
             >
               <span>
@@ -324,7 +324,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
           >
             <button
               class="emotion-1"
-              title="Ano posterior"
+              title="Next year"
               type="button"
             >
               <span>

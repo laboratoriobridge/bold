@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useLocale } from '../../../locale'
 import { getUserLocale } from '../../../util/locale'
 import { capitalize } from '../../../util/string'
 import { Button } from '../Button'
@@ -14,6 +15,7 @@ export interface MonthControlProps {
 
 export function MonthControl(props: MonthControlProps) {
   const { visibleDate, onChange, renderMonth } = props
+  const locale = useLocale()
 
   const handleNext = () => {
     const next = new Date(visibleDate)
@@ -29,11 +31,11 @@ export function MonthControl(props: MonthControlProps) {
 
   return (
     <HFlow alignItems='center' hSpacing={0.5}>
-      <Button title='Previous month' size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
+      <Button title={locale.calendar.previousMonth} size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
         <Icon icon='angleLeft' />
       </Button>
       {renderMonth(visibleDate)}
-      <Button title='Next month' size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
+      <Button title={locale.calendar.nextMonth} size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
         <Icon icon='angleRight' />
       </Button>
     </HFlow>

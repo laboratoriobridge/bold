@@ -25,7 +25,7 @@ exports[`render should render correctly 1`] = `
       Field #1
       <span
         class="emotion-0"
-        title="Campo obrigatório"
+        title="Required field"
       >
         *
       </span>

@@ -459,7 +459,7 @@ exports[`MonthField should render correctly 1`] = `
                 >
                   <button
                     class="emotion-7"
-                    title="Ano anterior"
+                    title="Previous year"
                     type="button"
                   >
                     <span>
@@ -492,7 +492,7 @@ exports[`MonthField should render correctly 1`] = `
                 >
                   <button
                     class="emotion-7"
-                    title="Ano posterior"
+                    title="Next year"
                     type="button"
                   >
                     <span>
