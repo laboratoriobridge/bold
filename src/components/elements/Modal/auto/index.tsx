@@ -16,8 +16,6 @@ export const modal = (config: ModalConfig) => {
   return () => {
     const store = config.store || defaultStore
 
-    store.append((props: ModalStoreAppendProps) => (
-      <ModalAuto {...config} dispose={props.dispose} />
-    ))
+    store.append((props: ModalStoreAppendProps) => <ModalAuto {...config} dispose={props.dispose} />)
   }
 }

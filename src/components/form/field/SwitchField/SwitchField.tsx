@@ -4,28 +4,15 @@ import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../fin
 import { Switch, SwitchProps } from '../../input/Switch/Switch'
 
 export interface SwitchFieldProps extends BaseFieldProps<SwitchProps> {
-    name: string
+  name: string
 }
 
 export class SwitchField extends React.Component<SwitchFieldProps> {
+  render() {
+    return <Field {...this.props} type='checkbox' hasWrapper={false} render={this.renderSwitch} />
+  }
 
-    render() {
-        return (
-            <Field
-                {...this.props}
-                type='checkbox'
-                hasWrapper={false}
-                render={this.renderSwitch}
-            />
-        )
-    }
-
-    private renderSwitch = (props: RenderProps) => (
-        <Switch
-            {...extractInputProps(this.props)}
-            {...props.input}
-            label={this.props.label}
-        />
-    )
-
+  private renderSwitch = (props: RenderProps) => (
+    <Switch {...extractInputProps(this.props)} {...props.input} label={this.props.label} />
+  )
 }
