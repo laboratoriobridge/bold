@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { FormError } from '../FormError'
-import { FormLabel, FormLabelProps } from '../FormLabel'
+import { FormError } from './FormError'
+import { FormLabel, FormLabelProps } from './FormLabel'
 
-export interface FieldWrapperProps {
+export interface FormControlProps {
   id?: string
   name?: string
   label?: FormLabelProps['label']
@@ -12,7 +12,7 @@ export interface FieldWrapperProps {
   children?: React.ReactNode
 }
 
-export function FieldWrapper(props: FieldWrapperProps) {
+export function FormControl(props: FormControlProps) {
   const { children, id, name, error, label, required } = props
   const styles = {
     label: {

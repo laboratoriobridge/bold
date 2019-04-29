@@ -1,16 +1,16 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { FieldWrapper } from './FieldWrapper'
+import { FormControl } from './FormControl'
 
 it('should render correctly', () => {
-  const { container, rerender } = render(<FieldWrapper>Test</FieldWrapper>)
+  const { container, rerender } = render(<FormControl>Test</FormControl>)
   expect(container).toMatchSnapshot()
 
   rerender(
-    <FieldWrapper name='test' label='Label' error='Error' required>
+    <FormControl name='test' label='Label' error='Error' required>
       Test
-    </FieldWrapper>
+    </FormControl>
   )
   expect(container).toMatchSnapshot()
 })
