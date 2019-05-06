@@ -1,5 +1,5 @@
 {
-  "name": "bridge-react",
+  "name": "bold",
   "version": "1.0.0-alpha.129",
   "main": "lib/main.js",
   "types": "lib/index.d.ts",
@@ -10,7 +10,7 @@
     "tslint.json"
   ],
   "repository": {
-    "url": "https://github.com/laboratoriobridge/bridge-react"
+    "url": "https://github.com/laboratoriobridge/bold"
   },
   "publishConfig": {
     "registry": "https://repositorio.bridge.ufsc.br/repository/npm-private/"

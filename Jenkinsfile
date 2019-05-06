@@ -41,7 +41,7 @@ pipeline {
                     -Dsonar.host.url=${SONARQUBE_HOST} \
                     -Dsonar.login=${SONARQUBE_TOKEN} \
                     -Dsonar.analysis.mode=preview \
-                    -Dsonar.github.repository=laboratoriobridge/bridge-react \
+                    -Dsonar.github.repository=laboratoriobridge/bold \
                     -Dsonar.github.pullRequest=${env.CHANGE_ID} \
                     -Dsonar.github.oauth=${GITHUB_SECRET}"
 

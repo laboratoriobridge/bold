@@ -9,8 +9,8 @@ addParameters({
   options: {
     theme: create({
       base: 'light',
-      brandTitle: 'bridge-react',
-      brandUrl: 'https://github.com/laboratoriobridge/bridge-react',
+      brandTitle: 'Bold',
+      brandUrl: 'https://github.com/laboratoriobridge/bold',
       // brandImage: 'http://url.of/some.svg',
     }),
     panelPosition: 'right',

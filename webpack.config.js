@@ -13,7 +13,7 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'bridge-react',
+    library: 'bold',
     libraryTarget: 'umd',
   },
   resolve: {
