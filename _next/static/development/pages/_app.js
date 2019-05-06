@@ -34,6 +34,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/elements/Icon/Icon.js");
@@ -42,13 +43,14 @@ function Alert(props) {
     var styles = props.styles, type = props.type, children = props.children, onCloseClick = props.onCloseClick, inline = props.inline, rest = __rest(props, ["styles", "type", "children", "onCloseClick", "inline"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css, theme = _a.theme;
     var typeStyle = exports.createTypesStyles(theme)[type];
+    var locale = locale_1.useLocale();
     return (react_1.default.createElement("div", __assign({ className: css(classes.wrapper, typeStyle.style, styles && styles.wrapper), role: 'alert' }, rest),
         react_1.default.createElement("div", { className: css(classes.container, styles && styles.container) },
             react_1.default.createElement(Icon_1.Icon, { icon: typeStyle.icon, style: classes.icon, size: inline ? 1 : undefined }),
             react_1.default.createElement("div", { className: classes.content }, children),
             onCloseClick && (react_1.default.createElement("span", { className: classes.closeButtonWrapper },
-                react_1.default.createElement(Tooltip_1.Tooltip, { text: 'Fechar' },
-                    react_1.default.createElement(Button_1.Button, { "aria-label": 'Fechar alerta', size: 'small', skin: 'ghost', style: classes.closeButton, onClick: onCloseClick },
+                react_1.default.createElement(Tooltip_1.Tooltip, { text: locale.alert.close },
+                    react_1.default.createElement(Button_1.Button, { "aria-label": locale.alert.close, size: 'small', skin: 'ghost', style: classes.closeButton, onClick: onCloseClick },
                         react_1.default.createElement(Icon_1.Icon, { icon: 'timesDefault' }))))))));
 }
 exports.Alert = Alert;
@@ -1056,13 +1058,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
+var locale_2 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
 var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
 var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
 function MonthControl(props) {
     var visibleDate = props.visibleDate, onChange = props.onChange, renderMonth = props.renderMonth;
+    var locale = locale_1.useLocale();
     var handleNext = function () {
         var next = new Date(visibleDate);
         next.setMonth(visibleDate.getMonth() + 1);
@@ -1074,16 +1078,16 @@ function MonthControl(props) {
         return onChange(prev);
     };
     return (react_1.default.createElement(Flow_1.HFlow, { alignItems: 'center', hSpacing: 0.5 },
-        react_1.default.createElement(Button_1.Button, { title: 'Previous month', size: 'small', skin: 'ghost', onClick: handlePrev, tabIndex: -1 },
+        react_1.default.createElement(Button_1.Button, { title: locale.calendar.previousMonth, size: 'small', skin: 'ghost', onClick: handlePrev, tabIndex: -1 },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
         renderMonth(visibleDate),
-        react_1.default.createElement(Button_1.Button, { title: 'Next month', size: 'small', skin: 'ghost', onClick: handleNext, tabIndex: -1 },
+        react_1.default.createElement(Button_1.Button, { title: locale.calendar.nextMonth, size: 'small', skin: 'ghost', onClick: handleNext, tabIndex: -1 },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleRight' }))));
 }
 exports.MonthControl = MonthControl;
 MonthControl.defaultProps = {
     renderMonth: function (date) {
-        var formatter = new Intl.DateTimeFormat(locale_1.getUserLocale(), { month: 'short' });
+        var formatter = new Intl.DateTimeFormat(locale_2.getUserLocale(), { month: 'short' });
         return string_1.capitalize(formatter.format(date));
     },
 };
@@ -1179,12 +1183,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
+var locale_2 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
 var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
 function YearControl(props) {
     var visibleDate = props.visibleDate, onChange = props.onChange, renderYear = props.renderYear;
+    var locale = locale_1.useLocale();
     var handleNext = function () {
         var next = new Date(visibleDate);
         next.setFullYear(visibleDate.getFullYear() + 1);
@@ -1196,16 +1202,16 @@ function YearControl(props) {
         return onChange(prev);
     };
     return (react_1.default.createElement(Flow_1.HFlow, { alignItems: 'center', hSpacing: 0.5 },
-        react_1.default.createElement(Button_1.Button, { title: 'Previous year', size: 'small', skin: 'ghost', onClick: handlePrev, tabIndex: -1 },
+        react_1.default.createElement(Button_1.Button, { title: locale.calendar.previousYear, size: 'small', skin: 'ghost', onClick: handlePrev, tabIndex: -1 },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
         renderYear(visibleDate),
-        react_1.default.createElement(Button_1.Button, { title: 'Next year', size: 'small', skin: 'ghost', onClick: handleNext, tabIndex: -1 },
+        react_1.default.createElement(Button_1.Button, { title: locale.calendar.nextYear, size: 'small', skin: 'ghost', onClick: handleNext, tabIndex: -1 },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleRight' }))));
 }
 exports.YearControl = YearControl;
 YearControl.defaultProps = {
     renderYear: function (date) {
-        var formatter = new Intl.DateTimeFormat(locale_1.getUserLocale(), { year: 'numeric' });
+        var formatter = new Intl.DateTimeFormat(locale_2.getUserLocale(), { year: 'numeric' });
         return formatter.format(date);
     },
 };
@@ -2125,6 +2131,178 @@ exports.FocusManagerContainer = FocusManagerContainer;
 Object.defineProperty(exports, "__esModule", { value: true });
 var FocusManagerContainer_1 = __webpack_require__(/*! ./FocusManagerContainer */ "../lib/components/elements/FocusManagerContainer/FocusManagerContainer.js");
 exports.FocusManagerContainer = FocusManagerContainer_1.FocusManagerContainer;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/elements/FormControl/FormControl.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/elements/FormControl/FormControl.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/elements/FormControl/FormError.js");
+var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/elements/FormControl/FormLabel.js");
+function FormControl(props) {
+    var children = props.children, id = props.id, name = props.name, error = props.error, label = props.label, required = props.required;
+    var styles = {
+        label: {
+            display: 'block',
+            marginBottom: '0.25rem',
+            lineHeight: '20px',
+        },
+        error: {
+            marginTop: '0.25rem',
+            lineHeight: '20px',
+        },
+    };
+    return (react_1.default.createElement("div", { "data-name": name },
+        label && react_1.default.createElement(FormLabel_1.FormLabel, { required: required, style: styles.label, htmlFor: id, label: label }),
+        children,
+        error && react_1.default.createElement(FormError_1.FormError, { style: styles.error }, error)));
+}
+exports.FormControl = FormControl;
+//# sourceMappingURL=FormControl.js.map
+
+/***/ }),
+
+/***/ "../lib/components/elements/FormControl/FormError.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/elements/FormControl/FormError.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+function FormError(props) {
+    var style = props.style, rest = __rest(props, ["style"]);
+    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
+    return react_1.default.createElement("div", __assign({ className: css(classes.wrapper, style) }, rest));
+}
+exports.FormError = FormError;
+exports.createStyles = function (theme) { return ({
+    wrapper: {
+        display: 'flex',
+        alignItems: 'center',
+        color: theme.pallete.status.danger.main,
+    },
+    icon: {
+        marginLeft: '0.25rem',
+    },
+}); };
+//# sourceMappingURL=FormError.js.map
+
+/***/ }),
+
+/***/ "../lib/components/elements/FormControl/FormLabel.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/elements/FormControl/FormLabel.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+function FormLabel(props) {
+    var label = props.label, required = props.required, style = props.style, rest = __rest(props, ["label", "required", "style"]);
+    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
+    var locale = locale_1.useLocale();
+    return (react_1.default.createElement("label", __assign({ className: css(classes.label, style) }, rest),
+        label,
+        required && (react_1.default.createElement("span", { title: locale.formControl.required, className: classes.marker }, "*"))));
+}
+exports.FormLabel = FormLabel;
+exports.createStyles = function (theme) { return ({
+    label: {
+        fontWeight: 'bold',
+    },
+    marker: {
+        color: theme.pallete.status.danger.main,
+        marginLeft: '0.25rem',
+    },
+}); };
+//# sourceMappingURL=FormLabel.js.map
+
+/***/ }),
+
+/***/ "../lib/components/elements/FormControl/index.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/elements/FormControl/index.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var FormControl_1 = __webpack_require__(/*! ./FormControl */ "../lib/components/elements/FormControl/FormControl.js");
+exports.FormControl = FormControl_1.FormControl;
+var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/elements/FormControl/FormLabel.js");
+exports.FormLabel = FormLabel_1.FormLabel;
+var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/elements/FormControl/FormError.js");
+exports.FormError = FormError_1.FormError;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -9841,6 +10019,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
@@ -9848,9 +10027,10 @@ var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/element
 function ModalContainer(props) {
     var style = props.style, onClose = props.onClose, hasCloseIcon = props.hasCloseIcon, children = props.children, rest = __rest(props, ["style", "onClose", "hasCloseIcon", "children"]);
     var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
+    var locale = locale_1.useLocale();
     return (react_1.default.createElement("div", __assign({ role: 'dialog', "aria-modal": 'true', className: css(classes.wrapper, style) }, rest),
-        hasCloseIcon && (react_1.default.createElement(Tooltip_1.Tooltip, { text: 'Fechar' },
-            react_1.default.createElement(Button_1.Button, { "aria-label": 'Fechar', size: 'small', skin: 'ghost', style: classes.closeButton, onClick: onClose },
+        hasCloseIcon && (react_1.default.createElement(Tooltip_1.Tooltip, { text: locale.modal.close },
+            react_1.default.createElement(Button_1.Button, { "aria-label": locale.modal.close, size: 'small', skin: 'ghost', style: classes.closeButton, onClick: onClose },
                 react_1.default.createElement(Icon_1.Icon, { icon: 'timesDefault' })))),
         children));
 }
@@ -9974,12 +10154,13 @@ var Modal_1 = __webpack_require__(/*! ../Modal */ "../lib/components/elements/Mo
 var ModalBody_1 = __webpack_require__(/*! ../ModalBody */ "../lib/components/elements/Modal/ModalBody.js");
 var ModalFooter_1 = __webpack_require__(/*! ../ModalFooter */ "../lib/components/elements/Modal/ModalFooter.js");
 exports.ModalAuto = react_1.memo(function (props) {
-    var actions = props.actions, size = props.size, render = props.render, dispose = props.dispose;
+    var actions = props.actions, size = props.size, render = props.render, dispose = props.dispose, onClose = props.onClose;
     var _a = react_1.useState(false), isOpen = _a[0], setIsOpen = _a[1];
     react_1.useEffect(function () {
         setIsOpen(true);
     }, []);
     var close = function () {
+        onClose && onClose();
         setIsOpen(false);
         // Dispose with timeout to preserve closing transition
         setTimeout(dispose, 500);
@@ -10009,54 +10190,29 @@ exports.ModalAuto = react_1.memo(function (props) {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var ModalStore_1 = __importDefault(__webpack_require__(/*! ./ModalStore */ "../lib/components/elements/Modal/auto/ModalStore.js"));
-var ModalMountTarget = /** @class */ (function (_super) {
-    __extends(ModalMountTarget, _super);
-    function ModalMountTarget() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.state = {
-            items: [],
-        };
-        return _this;
-    }
-    ModalMountTarget.prototype.componentDidMount = function () {
-        var _this = this;
-        this.unsubscribe = this.props.store.subscribe(function (state) {
-            _this.setState(state);
-        });
-    };
-    ModalMountTarget.prototype.componentWillUnmount = function () {
-        this.unsubscribe();
-    };
-    ModalMountTarget.prototype.render = function () {
-        return (react_1.default.createElement("div", null, this.state.items.map(function (item) {
-            return react_1.default.createElement(react_1.default.Fragment, { key: item.key }, item.component);
-        })));
-    };
-    ModalMountTarget.defaultProps = {
-        store: ModalStore_1.default,
-    };
-    return ModalMountTarget;
-}(react_1.default.Component));
+function ModalMountTarget(props) {
+    var store = props.store;
+    var _a = react_1.useState([]), items = _a[0], setItems = _a[1];
+    react_1.useEffect(function () { return store.subscribe(function (s) { return setItems(s.items); }); }, []);
+    return (react_1.default.createElement("div", null, items.map(function (item) { return (react_1.default.createElement(react_1.default.Fragment, { key: item.key }, item.component)); })));
+}
 exports.ModalMountTarget = ModalMountTarget;
+ModalMountTarget.defaultProps = {
+    store: ModalStore_1.default,
+};
 //# sourceMappingURL=ModalMountTarget.js.map
 
 /***/ }),
@@ -10171,7 +10327,7 @@ exports.ModalMountTarget = ModalMountTarget_1.ModalMountTarget;
 exports.modal = function (config) {
     return function () {
         var store = config.store || ModalStore_1.default;
-        store.append(function (props) { return (react_1.default.createElement(ModalAuto_1.ModalAuto, __assign({}, config, { dispose: props.dispose }))); });
+        store.append(function (props) { return react_1.default.createElement(ModalAuto_1.ModalAuto, __assign({}, config, { dispose: props.dispose })); });
     };
 };
 //# sourceMappingURL=index.js.map
@@ -10225,6 +10381,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = __webpack_require__(/*! emotion */ "../node_modules/emotion/dist/emotion.esm.js");
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 var Button_1 = __webpack_require__(/*! ../../Button */ "../lib/components/elements/Button/index.js");
 var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/elements/Flow/index.js");
@@ -10233,6 +10390,7 @@ var textual_1 = __webpack_require__(/*! ../../textual */ "../lib/components/elem
 function MonthPicker(props) {
     var monthDescriptions = props.monthDescriptions, year = props.year, onChange = props.onChange;
     var classes = styles_1.useStyles(exports.createStyles).classes;
+    var locale = locale_1.useLocale();
     var _a = react_1.useState(year || new Date().getFullYear()), visibleYear = _a[0], setVisibleYear = _a[1];
     react_1.useEffect(function () {
         setVisibleYear(year || new Date().getFullYear());
@@ -10245,10 +10403,10 @@ function MonthPicker(props) {
     return (react_1.default.createElement("div", null,
         react_1.default.createElement(Flow_1.VFlow, { style: classes.container, vSpacing: 0.5 },
             react_1.default.createElement(Flow_1.HFlow, { style: classes.header, alignItems: 'center', justifyContent: 'space-between' },
-                react_1.default.createElement(Button_1.Button, { title: 'Ano anterior', size: 'small', skin: 'ghost', onClick: onLeftClick },
+                react_1.default.createElement(Button_1.Button, { title: locale.calendar.previousYear, size: 'small', skin: 'ghost', onClick: onLeftClick },
                     react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
                 react_1.default.createElement(textual_1.Text, { weight: 'bold', size: 0.875 }, visibleYear),
-                react_1.default.createElement(Button_1.Button, { title: 'Ano posterior', size: 'small', skin: 'ghost', onClick: onRightClick },
+                react_1.default.createElement(Button_1.Button, { title: locale.calendar.nextYear, size: 'small', skin: 'ghost', onClick: onRightClick },
                     react_1.default.createElement(Icon_1.Icon, { icon: 'angleRight' }))),
             react_1.default.createElement(Flow_1.HFlow, { style: classes.content, hSpacing: 0.375, vSpacing: 1 }, monthDescriptions.map(function (month, index) { return (react_1.default.createElement(Button_1.Button, { key: index, onClick: onMonthClick(index), skin: 'ghost', style: emotion_1.css(classes.button, index === props.month && props.year === visibleYear && classes.active) }, month)); })))));
 }
@@ -10414,12 +10572,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var TextInput_1 = __webpack_require__(/*! ../../form/input/TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var textual_1 = __webpack_require__(/*! ../textual */ "../lib/components/elements/textual/index.js");
 function Paginator(props) {
     var page = props.page, total = props.total, onChange = props.onChange;
+    var locale = locale_1.useLocale();
     var _a = react_1.useState(0), inputValue = _a[0], setInputValue = _a[1];
     react_1.useEffect(function () {
         setInputValue(page + 1);
@@ -10451,13 +10612,14 @@ function Paginator(props) {
     var previous = function () { return go(currentPage() - 1); };
     var next = function () { return go(currentPage() + 1); };
     return (react_1.default.createElement("div", { className: classes.paginator },
-        react_1.default.createElement(Button_1.Button, { style: classes.leftButton, size: 'small', skin: 'ghost', disabled: isFirstPage(), title: 'P\u00E1gina anterior', onClick: !isFirstPage() ? previous : undefined },
+        react_1.default.createElement(Button_1.Button, { style: classes.leftButton, size: 'small', skin: 'ghost', disabled: isFirstPage(), title: locale.paginator.previousPage, onClick: !isFirstPage() ? previous : undefined },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
-        react_1.default.createElement(TextInput_1.TextInput, { style: classes.input, value: inputValue, onChange: handleInputChange, onBlur: handleInputBlur, onKeyDown: handleInputKeyPress, clearable: false }),
-        react_1.default.createElement("span", null,
-            "de ",
+        react_1.default.createElement(TextInput_1.TextInput, { style: classes.input, value: inputValue, onChange: handleInputChange, onBlur: handleInputBlur, onKeyDown: handleInputKeyPress, clearable: false, title: locale.paginator.currentPage }),
+        react_1.default.createElement(textual_1.Text, null,
+            locale.paginator.of,
+            " ",
             total),
-        react_1.default.createElement(Button_1.Button, { style: classes.rightButton, size: 'small', skin: 'ghost', disabled: isLastPage(), title: 'Pr\u00F3xima p\u00E1gina', onClick: !isLastPage() ? next : undefined },
+        react_1.default.createElement(Button_1.Button, { style: classes.rightButton, size: 'small', skin: 'ghost', disabled: isLastPage(), title: locale.paginator.nextPage, onClick: !isLastPage() ? next : undefined },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleRight' }))));
 }
 exports.Paginator = Paginator;
@@ -11536,10 +11698,8 @@ var TableFilledBody = /** @class */ (function (_super) {
         var _this = this;
         var _a = this.props, columns = _a.columns, rows = _a.rows, loading = _a.loading, onRowClick = _a.onRowClick;
         return (react_1.default.createElement(Table_1.TableBody, null,
-            loading &&
-                react_1.default.createElement(TableLoadingRow_1.TableLoadingRow, { colSpan: columns.length }),
-            !loading && this.isEmpty() &&
-                react_1.default.createElement(TablePlaceholderRow_1.TablePlaceholderRow, { colSpan: columns.length }),
+            loading && react_1.default.createElement(TableLoadingRow_1.TableLoadingRow, { colSpan: columns.length }),
+            !loading && this.isEmpty() && react_1.default.createElement(TablePlaceholderRow_1.TablePlaceholderRow, { colSpan: columns.length }),
             rows.map(function (row, idx) { return (react_1.default.createElement(Table_1.TableRow, { key: idx, onClick: onRowClick && _this.handleClick(row) }, columns.map(function (col, colIdx) { return (react_1.default.createElement(Table_1.TableCell, { key: colIdx, style: col.style }, col.render(row))); }))); })));
     };
     return TableFilledBody;
@@ -12171,7 +12331,7 @@ function TableFooter(props) {
     };
     return (react_1.default.createElement("div", { className: css(classes.footer, style) },
         react_1.default.createElement("span", { className: classes.results },
-            react_1.default.createElement(Number_1.Number, { value: totalElements, sufix: ' ' + (totalElements === 1 ? 'resultado' : 'resultados'), abbrev: true })),
+            react_1.default.createElement(Number_1.Number, { value: totalElements, suffix: ' ' + (totalElements === 1 ? 'resultado' : 'resultados'), abbrev: true })),
         showPagination() && (react_1.default.createElement("div", { className: classes.pagination },
             react_1.default.createElement(Flow_1.HFlow, { alignItems: 'center', hSpacing: 0.5 },
                 react_1.default.createElement(textual_1.Text, null, "Mostrar:"),
@@ -12772,6 +12932,7 @@ __export(__webpack_require__(/*! ./Calendar */ "../lib/components/elements/Calen
 __export(__webpack_require__(/*! ./Dropdown */ "../lib/components/elements/Dropdown/index.js"));
 __export(__webpack_require__(/*! ./FileUploader */ "../lib/components/elements/FileUploader/index.js"));
 __export(__webpack_require__(/*! ./Flow */ "../lib/components/elements/Flow/index.js"));
+__export(__webpack_require__(/*! ./FormControl */ "../lib/components/elements/FormControl/index.js"));
 __export(__webpack_require__(/*! ./Grid */ "../lib/components/elements/Grid/index.js"));
 __export(__webpack_require__(/*! ./Icon */ "../lib/components/elements/Icon/index.js"));
 __export(__webpack_require__(/*! ./InfoLabel */ "../lib/components/elements/InfoLabel/index.js"));
@@ -12806,42 +12967,40 @@ __export(__webpack_require__(/*! ./Tooltip */ "../lib/components/elements/Toolti
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
     };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var Number_1 = __webpack_require__(/*! ../Number/Number */ "../lib/components/elements/textual/Number/Number.js");
-var CurrencyLabelProps = /** @class */ (function () {
-    function CurrencyLabelProps() {
-    }
-    return CurrencyLabelProps;
-}());
-exports.CurrencyLabelProps = CurrencyLabelProps;
-var Currency = /** @class */ (function (_super) {
-    __extends(Currency, _super);
-    function Currency() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Currency.prototype.render = function () {
-        return (react_1.default.createElement(Number_1.Number, { prefix: 'R$ ', value: this.props.value, minDecimalPlaces: 2, maxDecimalPlaces: 2 }));
-    };
-    return Currency;
-}(react_1.default.Component));
+function Currency(props) {
+    var currency = props.currency, rest = __rest(props, ["currency"]);
+    return react_1.default.createElement(Number_1.Number, __assign({ formatOptions: { style: 'currency', currency: currency } }, rest));
+}
 exports.Currency = Currency;
+Currency.defaultProps = {
+    currency: 'USD',
+};
 //# sourceMappingURL=Currency.js.map
 
 /***/ }),
@@ -12855,42 +13014,24 @@ exports.Currency = Currency;
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var moment_1 = __importDefault(__webpack_require__(/*! moment */ "../node_modules/moment/moment.js"));
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var DateTime = /** @class */ (function (_super) {
-    __extends(DateTime, _super);
-    function DateTime() {
-        return _super !== null && _super.apply(this, arguments) || this;
+function DateTime(props) {
+    var value = props.value, format = props.format;
+    var mom = moment_1.default(value);
+    if (!mom.isValid()) {
+        return null;
     }
-    DateTime.prototype.render = function () {
-        var _a = this.props, value = _a.value, format = _a.format;
-        var mom = moment_1.default(value);
-        if (!mom.isValid()) {
-            return null;
-        }
-        return (react_1.default.createElement("time", null, mom.format(format)));
-    };
-    DateTime.defaultProps = { format: 'LLL' };
-    return DateTime;
-}(react_1.default.PureComponent));
+    return react_1.default.createElement("time", null, mom.format(format));
+}
 exports.DateTime = DateTime;
+DateTime.defaultProps = {
+    format: 'LLL',
+};
 //# sourceMappingURL=DateTime.js.map
 
 /***/ }),
@@ -13041,44 +13182,27 @@ exports.HeadingSection = HeadingSection_1.HeadingSection;
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Highlight = /** @class */ (function (_super) {
-    __extends(Highlight, _super);
-    function Highlight() {
-        return _super !== null && _super.apply(this, arguments) || this;
+function Highlight(props) {
+    var text = props.text, words = props.words;
+    var validWords = words
+        .filter(function (w) { return !!w; })
+        .map(function (w) { return w.trim(); })
+        .filter(function (w) { return !!w; });
+    if (validWords.length <= 0) {
+        return react_1.default.createElement("span", null, text);
     }
-    Highlight.prototype.render = function () {
-        var _a = this.props, text = _a.text, words = _a.words;
-        var validWords = words.filter(function (w) { return !!w; }).map(function (w) { return w.trim(); }).filter(function (w) { return !!w; });
-        if (validWords.length <= 0) {
-            return react_1.default.createElement("span", null, text);
-        }
-        var regex = new RegExp(validWords.join('|'), 'gi');
-        return (react_1.default.createElement("span", { dangerouslySetInnerHTML: {
-                __html: text.replace(regex, function (match) {
-                    return "<mark>" + match + "</mark>";
-                }),
-            } }));
-    };
-    return Highlight;
-}(react_1.default.PureComponent));
+    var regex = new RegExp(validWords.join('|'), 'gi');
+    return (react_1.default.createElement("span", { dangerouslySetInnerHTML: {
+            __html: text.replace(regex, function (match) {
+                return "<mark>" + match + "</mark>";
+            }),
+        } }));
+}
 exports.Highlight = Highlight;
 //# sourceMappingURL=Highlight.js.map
 
@@ -13093,39 +13217,6 @@ exports.Highlight = Highlight;
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -13139,98 +13230,27 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var numberUtil = __importStar(__webpack_require__(/*! ../../../../util/number */ "../lib/util/number.js"));
-var Number = /** @class */ (function (_super) {
-    __extends(Number, _super);
-    function Number() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Number.prototype.render = function () {
-        var _a = this.props, value = _a.value, minDecimalPlaces = _a.minDecimalPlaces, maxDecimalPlaces = _a.maxDecimalPlaces, placeholder = _a.placeholder, title = _a.title, abbrev = _a.abbrev, prefix = _a.prefix, sufix = _a.sufix, rest = __rest(_a, ["value", "minDecimalPlaces", "maxDecimalPlaces", "placeholder", "title", "abbrev", "prefix", "sufix"]);
-        return (react_1.default.createElement("span", __assign({}, rest, { title: this.renderTitle() }), this.renderNumber()));
+function Number(props) {
+    var value = props.value, placeholder = props.placeholder, title = props.title, abbrev = props.abbrev, prefix = props.prefix, suffix = props.suffix, formatOptions = props.formatOptions;
+    var renderTitle = function () {
+        return title || (abbrev && numberUtil.format(value));
     };
-    Number.prototype.renderTitle = function () {
-        return this.props.title ||
-            (this.props.abbrev && numberUtil.format(this.props.value));
-    };
-    Number.prototype.renderNumber = function () {
-        if (typeof this.props.value !== 'number' || isNaN(this.props.value)) {
-            return this.props.placeholder;
+    var renderNumber = function () {
+        if (typeof value !== 'number' || isNaN(value)) {
+            return placeholder;
         }
-        var num = this.props.abbrev ?
-            numberUtil.abbrev(this.props.value, this.props.minDecimalPlaces, this.props.maxDecimalPlaces) :
-            numberUtil.format(this.props.value, this.props.minDecimalPlaces, this.props.maxDecimalPlaces);
-        return this.props.prefix + num + this.props.sufix;
+        var num = abbrev ? numberUtil.abbrev(value, formatOptions) : numberUtil.format(value, formatOptions);
+        return prefix + num + suffix;
     };
-    Number.defaultProps = {
-        placeholder: '',
-        prefix: '',
-        sufix: '',
-    };
-    return Number;
-}(react_1.default.Component));
+    return react_1.default.createElement("span", { title: renderTitle() }, renderNumber());
+}
 exports.Number = Number;
+Number.defaultProps = {
+    placeholder: '',
+    prefix: '',
+    suffix: '',
+};
 //# sourceMappingURL=Number.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Percentage/Percentage.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/textual/Percentage/Percentage.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Number_1 = __webpack_require__(/*! ../Number/Number */ "../lib/components/elements/textual/Number/Number.js");
-var PercentageProps = /** @class */ (function () {
-    function PercentageProps() {
-    }
-    return PercentageProps;
-}());
-exports.PercentageProps = PercentageProps;
-var Percentage = /** @class */ (function (_super) {
-    __extends(Percentage, _super);
-    function Percentage() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Percentage.prototype.render = function () {
-        var value = isFinite(this.props.value) && !isNaN(this.props.value) ? this.props.value : 0;
-        return (react_1.default.createElement(Number_1.Number, __assign({}, this.props, { sufix: '%', value: value * 100 })));
-    };
-    return Percentage;
-}(react_1.default.Component));
-exports.Percentage = Percentage;
-//# sourceMappingURL=Percentage.js.map
 
 /***/ }),
 
@@ -13288,7 +13308,6 @@ __export(__webpack_require__(/*! ./Heading */ "../lib/components/elements/textua
 __export(__webpack_require__(/*! ./HeadingSection */ "../lib/components/elements/textual/HeadingSection/index.js"));
 __export(__webpack_require__(/*! ./Highlight/Highlight */ "../lib/components/elements/textual/Highlight/Highlight.js"));
 __export(__webpack_require__(/*! ./Number/Number */ "../lib/components/elements/textual/Number/Number.js"));
-__export(__webpack_require__(/*! ./Percentage/Percentage */ "../lib/components/elements/textual/Percentage/Percentage.js"));
 __export(__webpack_require__(/*! ./Text/Text */ "../lib/components/elements/textual/Text/Text.js"));
 __export(__webpack_require__(/*! ./maskedLabels/maskedLabels */ "../lib/components/elements/textual/maskedLabels/maskedLabels.js"));
 //# sourceMappingURL=index.js.map
@@ -13351,204 +13370,6 @@ exports.Cep = createMaskedLabel('Cep', masks_1.masks.cep);
 
 /***/ }),
 
-/***/ "../lib/components/form/FieldWrapper/FieldWrapper.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/FieldWrapper/FieldWrapper.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var FormError_1 = __webpack_require__(/*! ../FormError */ "../lib/components/form/FormError/index.js");
-var FormLabel_1 = __webpack_require__(/*! ../FormLabel */ "../lib/components/form/FormLabel/index.js");
-function FieldWrapper(props) {
-    var children = props.children, id = props.id, name = props.name, error = props.error, label = props.label, required = props.required;
-    var styles = {
-        label: {
-            display: 'block',
-            marginBottom: '0.25rem',
-            lineHeight: '20px',
-        },
-        error: {
-            marginTop: '0.25rem',
-            lineHeight: '20px',
-        },
-    };
-    return (react_1.default.createElement("div", { "data-name": name },
-        label && react_1.default.createElement(FormLabel_1.FormLabel, { required: required, style: styles.label, htmlFor: id, label: label }),
-        children,
-        error && react_1.default.createElement(FormError_1.FormError, { style: styles.error }, error)));
-}
-exports.FieldWrapper = FieldWrapper;
-//# sourceMappingURL=FieldWrapper.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/FieldWrapper/index.js":
-/*!****************************************************!*\
-  !*** ../lib/components/form/FieldWrapper/index.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var FieldWrapper_1 = __webpack_require__(/*! ./FieldWrapper */ "../lib/components/form/FieldWrapper/FieldWrapper.js");
-exports.FieldWrapper = FieldWrapper_1.FieldWrapper;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/FormError/FormError.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/form/FormError/FormError.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-function FormError(props) {
-    var style = props.style, rest = __rest(props, ["style"]);
-    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
-    return react_1.default.createElement("div", __assign({ className: css(classes.wrapper, style) }, rest));
-}
-exports.FormError = FormError;
-exports.createStyles = function (theme) { return ({
-    wrapper: {
-        display: 'flex',
-        alignItems: 'center',
-        color: theme.pallete.status.danger.main,
-    },
-    icon: {
-        marginLeft: '0.25rem',
-    },
-}); };
-//# sourceMappingURL=FormError.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/FormError/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/form/FormError/index.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/form/FormError/FormError.js");
-exports.FormError = FormError_1.FormError;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/FormLabel/FormLabel.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/form/FormLabel/FormLabel.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-function FormLabel(props) {
-    var label = props.label, required = props.required, style = props.style, rest = __rest(props, ["label", "required", "style"]);
-    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
-    return (react_1.default.createElement("label", __assign({ className: css(classes.label, style) }, rest),
-        label,
-        required && (react_1.default.createElement("span", { title: 'Campo obrigat\u00F3rio', className: classes.marker }, "*"))));
-}
-exports.FormLabel = FormLabel;
-exports.createStyles = function (theme) { return ({
-    label: {
-        fontWeight: 'bold',
-    },
-    marker: {
-        color: theme.pallete.status.danger.main,
-        marginLeft: '0.25rem',
-    },
-}); };
-//# sourceMappingURL=FormLabel.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/FormLabel/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/form/FormLabel/index.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/form/FormLabel/FormLabel.js");
-exports.FormLabel = FormLabel_1.FormLabel;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
 /***/ "../lib/components/form/field/CheckboxField/CheckboxField.js":
 /*!*******************************************************************!*\
   !*** ../lib/components/form/field/CheckboxField/CheckboxField.js ***!
@@ -13597,7 +13418,7 @@ var CheckboxField = /** @class */ (function (_super) {
         return _this;
     }
     CheckboxField.prototype.render = function () {
-        return (react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderCheck })));
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderCheck }));
     };
     return CheckboxField;
 }(react_1.default.Component));
@@ -13692,7 +13513,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
 var Input_1 = __webpack_require__(/*! ../../input/Input/Input */ "../lib/components/form/input/Input/Input.js");
-exports.HiddenField = Field_1.withField(function (props) { return (react_1.default.createElement(Input_1.Input, __assign({ type: 'hidden' }, props))); });
+exports.HiddenField = Field_1.withField(function (props) { return react_1.default.createElement(Input_1.Input, __assign({ type: 'hidden' }, props)); });
 //# sourceMappingURL=HiddenField.js.map
 
 /***/ }),
@@ -13796,7 +13617,7 @@ var CepField = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CepField.prototype.render = function () {
-        return (react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cep, placeholder: '_____-___', parse: masks_1.onlyNumbers }, this.props)));
+        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cep, placeholder: '_____-___', parse: masks_1.onlyNumbers }, this.props));
     };
     CepField.defaultProps = {};
     return CepField;
@@ -13852,7 +13673,7 @@ var CnsField = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CnsField.prototype.render = function () {
-        return (react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cns, parse: masks_1.onlyNumbers }, this.props)));
+        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cns, parse: masks_1.onlyNumbers }, this.props));
     };
     CnsField.defaultProps = {};
     return CnsField;
@@ -13908,7 +13729,7 @@ var CpfField = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CpfField.prototype.render = function () {
-        return (react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cpf, placeholder: '___.___.___-__', parse: masks_1.onlyNumbers }, this.props)));
+        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cpf, placeholder: '___.___.___-__', parse: masks_1.onlyNumbers }, this.props));
     };
     CpfField.defaultProps = {};
     return CpfField;
@@ -13964,7 +13785,7 @@ var TelefoneField = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TelefoneField.prototype.render = function () {
-        return (react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.telefone, placeholder: '(__) _____-____', parse: masks_1.onlyNumbers }, this.props)));
+        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.telefone, placeholder: '(__) _____-____', parse: masks_1.onlyNumbers }, this.props));
     };
     TelefoneField.defaultProps = {};
     return TelefoneField;
@@ -14098,7 +13919,7 @@ var NumberField = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NumberField.prototype.render = function () {
-        return (react_1.default.createElement(TextField_1.TextField, __assign({ parse: exports.parse }, this.props)));
+        return react_1.default.createElement(TextField_1.TextField, __assign({ parse: exports.parse }, this.props));
     };
     return NumberField;
 }(react_1.default.Component));
@@ -14171,7 +13992,7 @@ var RadioField = /** @class */ (function (_super) {
         return _this;
     }
     RadioField.prototype.render = function () {
-        return (react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'radio', hasWrapper: false, render: this.renderRadio })));
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'radio', hasWrapper: false, render: this.renderRadio }));
     };
     return RadioField;
 }(react_1.default.Component));
@@ -14320,7 +14141,7 @@ var SwitchField = /** @class */ (function (_super) {
         return _this;
     }
     SwitchField.prototype.render = function () {
-        return (react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderSwitch })));
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderSwitch }));
     };
     return SwitchField;
 }(react_1.default.Component));
@@ -14439,7 +14260,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FormError_1 = __webpack_require__(/*! ../FormError */ "../lib/components/form/FormError/index.js");
+var FormControl_1 = __webpack_require__(/*! ../../elements/FormControl */ "../lib/components/elements/FormControl/index.js");
 var ErrorField = /** @class */ (function (_super) {
     __extends(ErrorField, _super);
     function ErrorField() {
@@ -14449,7 +14270,7 @@ var ErrorField = /** @class */ (function (_super) {
             var hasError = (!!error && touched) || (!!submitError && !dirtySinceLastSubmit);
             var ignore = _this.props.ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string');
             if (hasError && !ignore) {
-                return react_1.default.createElement(FormError_1.FormError, null, error || submitError);
+                return react_1.default.createElement(FormControl_1.FormError, null, error || submitError);
             }
             return null;
         };
@@ -14513,7 +14334,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FieldWrapper_1 = __webpack_require__(/*! ../../FieldWrapper */ "../lib/components/form/FieldWrapper/index.js");
+var FormControl_1 = __webpack_require__(/*! ../../../elements/FormControl */ "../lib/components/elements/FormControl/index.js");
 var util_1 = __webpack_require__(/*! ./util */ "../lib/components/form/finalForm/Field/util.js");
 var FieldCmp = /** @class */ (function (_super) {
     __extends(FieldCmp, _super);
@@ -14535,7 +14356,7 @@ var FieldCmp = /** @class */ (function (_super) {
             };
             var renderProps = __assign({}, props, { input: __assign({ 'aria-label': _this.props.label }, props.input, { onChange: onChange }), hasError: !!util_1.getFieldError(props) });
             if (_this.props.hasWrapper) {
-                return (react_1.default.createElement(FieldWrapper_1.FieldWrapper, { id: _this.props.id, name: _this.getFieldName(), error: util_1.getFieldError(props), label: _this.props.label, required: _this.props.required }, _this.props.render(renderProps)));
+                return (react_1.default.createElement(FormControl_1.FormControl, { id: _this.props.id, name: _this.getFieldName(), error: util_1.getFieldError(props), label: _this.props.label, required: _this.props.required }, _this.props.render(renderProps)));
             }
             return _this.props.render(renderProps);
         };
@@ -14692,12 +14513,12 @@ function withField(InputComponent, fieldProps) {
                 var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.renderInput = function (props) {
                     var Inpt = InputComponent;
-                    return (react_1.default.createElement(Inpt, __assign({ status: props.hasError ? 'error' : undefined }, index_1.extractInputProps(_this.props), props.input)));
+                    return react_1.default.createElement(Inpt, __assign({ status: props.hasError ? 'error' : undefined }, index_1.extractInputProps(_this.props), props.input));
                 };
                 return _this;
             }
             class_1.prototype.render = function () {
-                return (react_1.default.createElement(Field_1.Field, __assign({}, this.props, { render: this.renderInput }, fieldProps)));
+                return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { render: this.renderInput }, fieldProps));
             };
             return class_1;
         }(react_1.default.Component)),
@@ -14885,7 +14706,7 @@ var FormPrompt = /** @class */ (function (_super) {
     }
     FormPrompt.prototype.render = function () {
         var _this = this;
-        return (react_1.default.createElement(react_final_form_1.FormSpy, { subscription: { pristine: true, submitSucceeded: true } }, function (spyProps) { return (react_1.default.createElement(react_router_1.Prompt, { when: !spyProps.pristine && !spyProps.submitSucceeded, message: _this.props.message })); }));
+        return (react_1.default.createElement(react_final_form_1.FormSpy, { subscription: { pristine: true, submitSucceeded: true } }, function (spyProps) { return react_1.default.createElement(react_router_1.Prompt, { when: !spyProps.pristine && !spyProps.submitSucceeded, message: _this.props.message }); }));
     };
     FormPrompt.defaultProps = {
         message: 'Deseja sair e perder as informações não salvas?',
@@ -15144,9 +14965,7 @@ var WizardForm = /** @class */ (function (_super) {
             var renderProps = _this.getWizardRenderProps(props);
             return (react_1.default.createElement("form", { onSubmit: props.handleSubmit },
                 activeStep.props.render(renderProps),
-                _this.props.renderFooter ?
-                    _this.props.renderFooter(renderProps) :
-                    react_1.default.createElement(WizardFooter_1.WizardFooter, { isFirstStep: renderProps.wizard.isFirstStep, isLastStep: renderProps.wizard.isLastStep, onSubmit: renderProps.handleSubmit, onPrevious: renderProps.wizard.prevStep })));
+                _this.props.renderFooter ? (_this.props.renderFooter(renderProps)) : (react_1.default.createElement(WizardFooter_1.WizardFooter, { isFirstStep: renderProps.wizard.isFirstStep, isLastStep: renderProps.wizard.isLastStep, onSubmit: renderProps.handleSubmit, onPrevious: renderProps.wizard.prevStep }))));
         };
         _this.isLastStep = function () {
             return _this.state.step === _this.getTotalSteps() - 1;
@@ -15228,9 +15047,6 @@ __export(__webpack_require__(/*! ./finalForm/Field */ "../lib/components/form/fi
 __export(__webpack_require__(/*! ./finalForm/Form */ "../lib/components/form/finalForm/Form/index.js"));
 __export(__webpack_require__(/*! ./finalForm/SubmitButton */ "../lib/components/form/finalForm/SubmitButton/index.js"));
 __export(__webpack_require__(/*! ./finalForm/wizard */ "../lib/components/form/finalForm/wizard/index.js"));
-__export(__webpack_require__(/*! ./FormError */ "../lib/components/form/FormError/index.js"));
-__export(__webpack_require__(/*! ./FieldWrapper */ "../lib/components/form/FieldWrapper/index.js"));
-__export(__webpack_require__(/*! ./FormLabel */ "../lib/components/form/FormLabel/index.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -16375,6 +16191,10 @@ exports.createStyles = function (theme, _a) {
             marginRight: '0.25rem',
         },
         input: {
+            fontFamily: theme.typography.fontFamily,
+            fontSize: theme.typography.sizes.text,
+            color: theme.pallete.text.main,
+            lineHeight: '1rem',
             background: theme.pallete.surface.main,
             padding: 0,
             flex: 1,
@@ -17172,6 +16992,8 @@ exports.createStyleParts = function (theme) { return ({
         border: 'solid 1px ' + theme.pallete.gray.c70,
         borderRadius: theme.radius.input,
         color: theme.pallete.text.main,
+        fontFamily: theme.typography.fontFamily,
+        fontSize: theme.typography.sizes.text,
         lineHeight: '1rem',
         padding: 'calc(0.5rem - 1px) 0.5rem',
         width: '100%',
@@ -17519,10 +17341,90 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./components */ "../lib/components/index.js"));
+__export(__webpack_require__(/*! ./locale */ "../lib/locale/index.js"));
 __export(__webpack_require__(/*! ./metaPath */ "../lib/metaPath/index.js"));
 __export(__webpack_require__(/*! ./styles */ "../lib/styles/index.js"));
 __export(__webpack_require__(/*! ./util */ "../lib/util/index.js"));
 //# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/locale/LocaleContext.js":
+/*!**************************************!*\
+  !*** ../lib/locale/LocaleContext.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+var en_US_1 = __importDefault(__webpack_require__(/*! ./locales/en-US */ "../lib/locale/locales/en-US.js"));
+exports.LocaleContext = react_1.createContext(en_US_1.default);
+function useLocale() {
+    return react_1.useContext(exports.LocaleContext);
+}
+exports.useLocale = useLocale;
+//# sourceMappingURL=LocaleContext.js.map
+
+/***/ }),
+
+/***/ "../lib/locale/index.js":
+/*!******************************!*\
+  !*** ../lib/locale/index.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var LocaleContext_1 = __webpack_require__(/*! ./LocaleContext */ "../lib/locale/LocaleContext.js");
+exports.LocaleContext = LocaleContext_1.LocaleContext;
+exports.useLocale = LocaleContext_1.useLocale;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/locale/locales/en-US.js":
+/*!**************************************!*\
+  !*** ../lib/locale/locales/en-US.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var locale = {
+    alert: {
+        close: 'Close',
+    },
+    calendar: {
+        nextMonth: 'Next month',
+        previousMonth: 'Previous month',
+        nextYear: 'Next year',
+        previousYear: 'Previous year',
+    },
+    formControl: {
+        required: 'Required field',
+    },
+    modal: {
+        close: 'Close',
+    },
+    paginator: {
+        of: 'of',
+        previousPage: 'Previous page',
+        nextPage: 'Next page',
+        currentPage: 'Current page',
+    },
+};
+exports.default = locale;
+//# sourceMappingURL=en-US.js.map
 
 /***/ }),
 
@@ -17869,12 +17771,6 @@ exports.createGlobalStyles = function (theme) { return ({
         lineHeight: theme.typography.lineHeight,
         overflowY: 'scroll',
     },
-    'button, input, optgroup, select, textarea': {
-        /* Input elements do not inherit body's font styles */
-        fontFamily: theme.typography.fontFamily,
-        fontSize: theme.typography.sizes.text,
-        lineHeight: 'inherit',
-    },
     hr: {
         backgroundColor: theme.pallete.divider,
         border: 'none',
@@ -18047,12 +17943,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var palletes = __importStar(__webpack_require__(/*! ./colors */ "../lib/styles/colors/index.js"));
+var GlobalCss_1 = __webpack_require__(/*! ./global/GlobalCss */ "../lib/styles/global/GlobalCss/index.js");
+exports.DefaultGlobalCss = GlobalCss_1.DefaultGlobalCss;
+exports.GlobalCss = GlobalCss_1.GlobalCss;
 __export(__webpack_require__(/*! ./hooks */ "../lib/styles/hooks/index.js"));
 __export(__webpack_require__(/*! ./theme */ "../lib/styles/theme/index.js"));
 __export(__webpack_require__(/*! ./utils */ "../lib/styles/utils.js"));
-var GlobalCss_1 = __webpack_require__(/*! ./global/GlobalCss */ "../lib/styles/global/GlobalCss/index.js");
-exports.GlobalCss = GlobalCss_1.GlobalCss;
-exports.DefaultGlobalCss = GlobalCss_1.DefaultGlobalCss;
 var withStyles_1 = __webpack_require__(/*! ./withStyles */ "../lib/styles/withStyles.js");
 exports.withStyles = withStyles_1.withStyles;
 exports.colors = palletes;
@@ -18722,55 +18618,55 @@ exports.masks = {
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var locale_1 = __webpack_require__(/*! ./locale */ "../lib/util/locale.js");
 /**
- * Formata um valor numérico para sua representação utilizando o número de casas decimais informadas.
+ * Formats a numeric value to its number format representation and current locale, using Intl.NumberFormat.
  *
- * @param value Valor a ser formatado
- * @param minimumFractionDigits Número mínimo de casas decimais.
- * @param maximumFractionDigits Número máximo de casas decimais.
- * @return O valor numérico formatado utilizando o separador decimal do locale especificado.
+ * @param value Value to be formatted
+ * @param options Number format options
+ * @return The formatted value.
  */
-function format(value, minimumFractionDigits, maximumFractionDigits) {
-    if (minimumFractionDigits === void 0) { minimumFractionDigits = 0; }
-    if (maximumFractionDigits === void 0) { maximumFractionDigits = 2; }
-    if (minimumFractionDigits > maximumFractionDigits) {
-        maximumFractionDigits = minimumFractionDigits;
-    }
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'decimal',
-        minimumFractionDigits: minimumFractionDigits,
-        maximumFractionDigits: maximumFractionDigits,
-    }).format(value);
+function format(value, options) {
+    return new Intl.NumberFormat(locale_1.getUserLocale(), __assign({ style: 'decimal' }, options)).format(value);
 }
 exports.format = format;
 /**
- * Abrevia um número para sua representação compacta. Ex.: 1.000.000 é abreviado para '1m'.
+ * Abrreviates a number to its compact representation.
+ * Example: 1000000 is abbreviated to '1m'
  *
- * @param value Valor a ser abreviado.
- * @param minimumFractionDigits Número mínimo de casas decimais utilizado no valor abreviado.
- * @param maximumFractionDigits Número máximo de casas decimais utilizado no valor abreviado.
- * @return O valor abreviado.
+ * @param value Value to be abbreviated.
+ * @param options?: Intl.NumberFormatOptions
+ * @return The abbreviated value.
  */
-function abbrev(value, minimumFractionDigits, maximumFractionDigits) {
-    if (minimumFractionDigits === void 0) { minimumFractionDigits = 0; }
-    if (maximumFractionDigits === void 0) { maximumFractionDigits = 1; }
+function abbrev(value, options) {
     if (!value) {
         return value;
     }
     if (value >= 1e12) {
-        return format(value / 1e12, minimumFractionDigits, maximumFractionDigits) + 't';
+        return format(value / 1e12, __assign({ minimumFractionDigits: 0, maximumFractionDigits: 1 }, options)) + 't';
     }
     if (value >= 1e9) {
-        return format(value / 1e9, minimumFractionDigits, maximumFractionDigits) + 'b';
+        return format(value / 1e9, __assign({ minimumFractionDigits: 0, maximumFractionDigits: 1 }, options)) + 'b';
     }
     if (value >= 1e6) {
-        return format(value / 1e6, minimumFractionDigits, maximumFractionDigits) + 'm';
+        return format(value / 1e6, __assign({ minimumFractionDigits: 0, maximumFractionDigits: 1 }, options)) + 'm';
     }
     if (value >= 1e3) {
-        return format(value / 1e3, minimumFractionDigits, maximumFractionDigits) + 'k';
+        return format(value / 1e3, __assign({ minimumFractionDigits: 0, maximumFractionDigits: 1 }, options)) + 'k';
     }
-    return format(value, minimumFractionDigits, maximumFractionDigits);
+    return format(value, __assign({ minimumFractionDigits: 0, maximumFractionDigits: 1 }, options));
 }
 exports.abbrev = abbrev;
 //# sourceMappingURL=number.js.map
@@ -26176,162 +26072,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _react2.default.createContext || _implementation2.default;
 module.exports = exports['default'];
-
-/***/ }),
-
-/***/ "../node_modules/deep-equal/index.js":
-/*!*******************************************!*\
-  !*** ../node_modules/deep-equal/index.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var pSlice = Array.prototype.slice;
-var objectKeys = __webpack_require__(/*! ./lib/keys.js */ "../node_modules/deep-equal/lib/keys.js");
-var isArguments = __webpack_require__(/*! ./lib/is_arguments.js */ "../node_modules/deep-equal/lib/is_arguments.js");
-
-var deepEqual = module.exports = function (actual, expected, opts) {
-  if (!opts) opts = {};
-  // 7.1. All identical values are equivalent, as determined by ===.
-  if (actual === expected) {
-    return true;
-
-  } else if (actual instanceof Date && expected instanceof Date) {
-    return actual.getTime() === expected.getTime();
-
-  // 7.3. Other pairs that do not both pass typeof value == 'object',
-  // equivalence is determined by ==.
-  } else if (!actual || !expected || typeof actual != 'object' && typeof expected != 'object') {
-    return opts.strict ? actual === expected : actual == expected;
-
-  // 7.4. For all other Object pairs, including Array objects, equivalence is
-  // determined by having the same number of owned properties (as verified
-  // with Object.prototype.hasOwnProperty.call), the same set of keys
-  // (although not necessarily the same order), equivalent values for every
-  // corresponding key, and an identical 'prototype' property. Note: this
-  // accounts for both named and indexed properties on Arrays.
-  } else {
-    return objEquiv(actual, expected, opts);
-  }
-}
-
-function isUndefinedOrNull(value) {
-  return value === null || value === undefined;
-}
-
-function isBuffer (x) {
-  if (!x || typeof x !== 'object' || typeof x.length !== 'number') return false;
-  if (typeof x.copy !== 'function' || typeof x.slice !== 'function') {
-    return false;
-  }
-  if (x.length > 0 && typeof x[0] !== 'number') return false;
-  return true;
-}
-
-function objEquiv(a, b, opts) {
-  var i, key;
-  if (isUndefinedOrNull(a) || isUndefinedOrNull(b))
-    return false;
-  // an identical 'prototype' property.
-  if (a.prototype !== b.prototype) return false;
-  //~~~I've managed to break Object.keys through screwy arguments passing.
-  //   Converting to array solves the problem.
-  if (isArguments(a)) {
-    if (!isArguments(b)) {
-      return false;
-    }
-    a = pSlice.call(a);
-    b = pSlice.call(b);
-    return deepEqual(a, b, opts);
-  }
-  if (isBuffer(a)) {
-    if (!isBuffer(b)) {
-      return false;
-    }
-    if (a.length !== b.length) return false;
-    for (i = 0; i < a.length; i++) {
-      if (a[i] !== b[i]) return false;
-    }
-    return true;
-  }
-  try {
-    var ka = objectKeys(a),
-        kb = objectKeys(b);
-  } catch (e) {//happens when one is a string literal and the other isn't
-    return false;
-  }
-  // having the same number of owned properties (keys incorporates
-  // hasOwnProperty)
-  if (ka.length != kb.length)
-    return false;
-  //the same set of keys (although not necessarily the same order),
-  ka.sort();
-  kb.sort();
-  //~~~cheap key test
-  for (i = ka.length - 1; i >= 0; i--) {
-    if (ka[i] != kb[i])
-      return false;
-  }
-  //equivalent values for every corresponding key, and
-  //~~~possibly expensive deep test
-  for (i = ka.length - 1; i >= 0; i--) {
-    key = ka[i];
-    if (!deepEqual(a[key], b[key], opts)) return false;
-  }
-  return typeof a === typeof b;
-}
-
-
-/***/ }),
-
-/***/ "../node_modules/deep-equal/lib/is_arguments.js":
-/*!******************************************************!*\
-  !*** ../node_modules/deep-equal/lib/is_arguments.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var supportsArgumentsClass = (function(){
-  return Object.prototype.toString.call(arguments)
-})() == '[object Arguments]';
-
-exports = module.exports = supportsArgumentsClass ? supported : unsupported;
-
-exports.supported = supported;
-function supported(object) {
-  return Object.prototype.toString.call(object) == '[object Arguments]';
-};
-
-exports.unsupported = unsupported;
-function unsupported(object){
-  return object &&
-    typeof object == 'object' &&
-    typeof object.length == 'number' &&
-    Object.prototype.hasOwnProperty.call(object, 'callee') &&
-    !Object.prototype.propertyIsEnumerable.call(object, 'callee') ||
-    false;
-};
-
-
-/***/ }),
-
-/***/ "../node_modules/deep-equal/lib/keys.js":
-/*!**********************************************!*\
-  !*** ../node_modules/deep-equal/lib/keys.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-exports = module.exports = typeof Object.keys === 'function'
-  ? Object.keys : shim;
-
-exports.shim = shim;
-function shim (obj) {
-  var keys = [];
-  for (var key in obj) keys.push(key);
-  return keys;
-}
-
 
 /***/ }),
 
@@ -64011,6 +63751,112 @@ function composeEventHandlers() {
 
 /***/ }),
 
+/***/ "../node_modules/react-fast-compare/index.js":
+/*!***************************************************!*\
+  !*** ../node_modules/react-fast-compare/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isArray = Array.isArray;
+var keyList = Object.keys;
+var hasProp = Object.prototype.hasOwnProperty;
+var hasElementType = typeof Element !== 'undefined';
+
+function equal(a, b) {
+  // fast-deep-equal index.js 2.0.1
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    var arrA = isArray(a)
+      , arrB = isArray(b)
+      , i
+      , length
+      , key;
+
+    if (arrA && arrB) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+    if (arrA != arrB) return false;
+
+    var dateA = a instanceof Date
+      , dateB = b instanceof Date;
+    if (dateA != dateB) return false;
+    if (dateA && dateB) return a.getTime() == b.getTime();
+
+    var regexpA = a instanceof RegExp
+      , regexpB = b instanceof RegExp;
+    if (regexpA != regexpB) return false;
+    if (regexpA && regexpB) return a.toString() == b.toString();
+
+    var keys = keyList(a);
+    length = keys.length;
+
+    if (length !== keyList(b).length)
+      return false;
+
+    for (i = length; i-- !== 0;)
+      if (!hasProp.call(b, keys[i])) return false;
+    // end fast-deep-equal
+
+    // start react-fast-compare
+    // custom handling for DOM elements
+    if (hasElementType && a instanceof Element && b instanceof Element)
+      return a === b;
+
+    // custom handling for React
+    for (i = length; i-- !== 0;) {
+      key = keys[i];
+      if (key === '_owner' && a.$$typeof) {
+        // React-specific: avoid traversing React elements' _owner.
+        //  _owner contains circular references
+        // and is not needed when comparing the actual elements (and not their owners)
+        // .$$typeof and ._store on just reasonable markers of a react element
+        continue;
+      } else {
+        // all other properties should be traversed as usual
+        if (!equal(a[key], b[key])) return false;
+      }
+    }
+    // end react-fast-compare
+
+    // fast-deep-equal index.js 2.0.1
+    return true;
+  }
+
+  return a !== a && b !== b;
+}
+// end fast-deep-equal
+
+module.exports = function exportedEqual(a, b) {
+  try {
+    return equal(a, b);
+  } catch (error) {
+    if ((error.message && error.message.match(/stack|recursion/i)) || (error.number === -2146828260)) {
+      // warn on circular references, don't crash
+      // browsers give this different errors name and messages:
+      // chrome/safari: "RangeError", "Maximum call stack size exceeded"
+      // firefox: "InternalError", too much recursion"
+      // edge: "Error", "Out of stack space"
+      console.warn('Warning: react-fast-compare does not handle circular references.', error.name, error.message);
+      return false;
+    }
+    // some other error. we should definitely know about these
+    throw error;
+  }
+};
+
+
+/***/ }),
+
 /***/ "../node_modules/react-final-form/dist/react-final-form.es.js":
 /*!********************************************************************!*\
   !*** ../node_modules/react-final-form/dist/react-final-form.es.js ***!
@@ -65908,9 +65754,9 @@ var _reactSideEffect = __webpack_require__(/*! react-side-effect */ "../node_mod
 
 var _reactSideEffect2 = _interopRequireDefault(_reactSideEffect);
 
-var _deepEqual = __webpack_require__(/*! deep-equal */ "../node_modules/deep-equal/index.js");
+var _reactFastCompare = __webpack_require__(/*! react-fast-compare */ "../node_modules/react-fast-compare/index.js");
 
-var _deepEqual2 = _interopRequireDefault(_deepEqual);
+var _reactFastCompare2 = _interopRequireDefault(_reactFastCompare);
 
 var _HelmetUtils = __webpack_require__(/*! ./HelmetUtils.js */ "../node_modules/react-helmet/lib/HelmetUtils.js");
 
@@ -65939,7 +65785,7 @@ var Helmet = function Helmet(Component) {
         }
 
         HelmetWrapper.prototype.shouldComponentUpdate = function shouldComponentUpdate(nextProps) {
-            return !(0, _deepEqual2.default)(this.props, nextProps);
+            return !(0, _reactFastCompare2.default)(this.props, nextProps);
         };
 
         HelmetWrapper.prototype.mapNestedChildrenToProps = function mapNestedChildrenToProps(child, nestedChildren) {
@@ -66105,22 +65951,22 @@ var Helmet = function Helmet(Component) {
             // Don’t use it for anything other than testing.
 
             /**
-            * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
-            * @param {Object} bodyAttributes: {"className": "root"}
-            * @param {String} defaultTitle: "Default Title"
-            * @param {Boolean} defer: true
-            * @param {Boolean} encodeSpecialCharacters: true
-            * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
-            * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
-            * @param {Array} meta: [{"name": "description", "content": "Test description"}]
-            * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
-            * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
-            * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
-            * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
-            * @param {String} title: "Title"
-            * @param {Object} titleAttributes: {"itemprop": "name"}
-            * @param {String} titleTemplate: "MySite.com - %s"
-            */
+             * @param {Object} base: {"target": "_blank", "href": "http://mysite.com/"}
+             * @param {Object} bodyAttributes: {"className": "root"}
+             * @param {String} defaultTitle: "Default Title"
+             * @param {Boolean} defer: true
+             * @param {Boolean} encodeSpecialCharacters: true
+             * @param {Object} htmlAttributes: {"lang": "en", "amp": undefined}
+             * @param {Array} link: [{"rel": "canonical", "href": "http://mysite.com/example"}]
+             * @param {Array} meta: [{"name": "description", "content": "Test description"}]
+             * @param {Array} noscript: [{"innerHTML": "<img src='http://mysite.com/js/test.js'"}]
+             * @param {Function} onChangeClientState: "(newState) => console.log(newState)"
+             * @param {Array} script: [{"type": "text/javascript", "src": "http://mysite.com/js/test.js"}]
+             * @param {Array} style: [{"type": "text/css", "cssText": "div { display: block; color: blue; }"}]
+             * @param {String} title: "Title"
+             * @param {Object} titleAttributes: {"itemprop": "name"}
+             * @param {String} titleTemplate: "MySite.com - %s"
+             */
             set: function set(canUseDOM) {
                 Component.canUseDOM = canUseDOM;
             }
@@ -67821,7 +67667,7 @@ module.exports = warning;
 /*!****************************************************************!*\
   !*** ../node_modules/react-router-dom/esm/react-router-dom.js ***!
   \****************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
