@@ -40,7 +40,7 @@ export default [
       { href: '/components/form', title: 'Form' },
       { href: '/components/link', title: 'Link' },
       { href: '/components/modal', title: 'Modal' },
-      { href: '/components/multi-select-search', title: 'Multi-select Search' },
+      { href: '/components/multi-select', title: 'Multi Select' },
       { href: '/components/radio-button', title: 'Radio Button' },
       { href: '/components/search', title: 'Search' },
       { href: '/components/select', title: 'Select' },
