@@ -20,7 +20,7 @@ export function AppHeader(props: AppHeaderProps) {
       <div className={classes.logo}>
         <NextLink href='/'>
           <Link href='/' style={{ display: 'inline-block' }}>
-            <BoldLogo height='2.5rem' aria-label='Bold Logo' />
+            <BoldLogo aria-label='Bold Logo' style={{ height: '2.5rem' }} />
           </Link>
         </NextLink>
       </div>
