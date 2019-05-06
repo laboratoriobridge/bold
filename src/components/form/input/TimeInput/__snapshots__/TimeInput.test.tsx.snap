@@ -10,6 +10,8 @@ exports[`render should render correcly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;

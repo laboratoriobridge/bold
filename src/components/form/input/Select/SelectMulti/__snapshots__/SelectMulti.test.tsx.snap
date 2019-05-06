@@ -6,6 +6,8 @@ exports[`should render correctly when closed 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -62,6 +64,10 @@ exports[`should render correctly when closed 1`] = `
 }
 
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #2D343B;
+  line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
   -webkit-flex: 1;
@@ -130,6 +136,8 @@ exports[`should render correctly when opened 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -186,6 +194,10 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #2D343B;
+  line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
   -webkit-flex: 1;

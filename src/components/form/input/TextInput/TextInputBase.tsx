@@ -34,6 +34,8 @@ export const createStyleParts = (theme: Theme) => ({
     border: 'solid 1px ' + theme.pallete.gray.c70,
     borderRadius: theme.radius.input,
     color: theme.pallete.text.main,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.sizes.text,
     lineHeight: '1rem',
     padding: 'calc(0.5rem - 1px) 0.5rem',
     width: '100%',

@@ -36,12 +36,6 @@ exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
     data-emotion="css-global"
   >
     
-    button,input,optgroup,select,textarea{font-family:"IBM Plex Sans",sans-serif;font-size:0.8125rem;line-height:inherit;}
-  </style>
-  <style
-    data-emotion="css-global"
-  >
-    
     hr{background-color:#DCDCE0;border:none;height:1px;margin:1rem 0;}
   </style>
   <style

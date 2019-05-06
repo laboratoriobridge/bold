@@ -28,12 +28,6 @@ export const createGlobalStyles = (theme: Theme): Interpolation => ({
     lineHeight: theme.typography.lineHeight,
     overflowY: 'scroll',
   },
-  'button, input, optgroup, select, textarea': {
-    /* Input elements do not inherit body's font styles */
-    fontFamily: theme.typography.fontFamily,
-    fontSize: theme.typography.sizes.text,
-    lineHeight: 'inherit',
-  },
   hr: {
     backgroundColor: theme.pallete.divider,
     border: 'none',
