@@ -20,6 +20,9 @@ const locale = {
     nextPage: 'Next page',
     currentPage: 'Current page',
   },
+  select: {
+    removeItem: 'Remove',
+  },
 }
 
 export default locale

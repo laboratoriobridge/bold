@@ -440,7 +440,7 @@ exports[`should render correctly when multiple 1`] = `
           </span>
           <span
             class="emotion-1"
-            title="Remover"
+            title="Remove"
           >
             <svg
               height="1em"

@@ -22,6 +22,9 @@ const locale: LocaleConfiguration = {
     nextPage: 'Próxima página',
     currentPage: 'Página atual',
   },
+  select: {
+    removeItem: 'Remover',
+  },
 }
 
 export default locale

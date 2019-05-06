@@ -52,7 +52,7 @@ exports[`should render correctly 1`] = `
     />
     <span
       class="emotion-1"
-      title="Remover"
+      title="Remove"
     >
       <svg
         height="1em"
