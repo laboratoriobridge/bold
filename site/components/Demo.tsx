@@ -17,7 +17,7 @@ export function Demo(props: DemoProps) {
     throw new Error(`Demo ${src} not found. You must specify the demo import location on file "demos.ts"`)
   }
 
-  const Source = hljs.highlight('jsx', source).value
+  const Source = hljs.highlight('jsx', source.replace(/from '(\.\.\/)+lib'/g, `from 'bold-ui'`)).value
 
   return (
     <div className={classes.wrapper}>

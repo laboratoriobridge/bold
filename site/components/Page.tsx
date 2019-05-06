@@ -80,9 +80,6 @@ export const createStyles = (theme: Theme) => ({
     },
 
     code: {
-      '&::selection': {
-        background: theme.pallete.primary.main,
-      },
       '&:not(.hljs)': {
         padding: '0.125rem 0.25rem',
         borderRadius: 3,
