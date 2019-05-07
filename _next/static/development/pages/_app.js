@@ -71945,12 +71945,14 @@ function AppHeader(props) {
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.search,
+    id: "search-wrapper",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 28
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["TextInput"], {
+    id: "search-input",
     style: classes.searchInput,
     type: "search",
     icon: "zoomOutline",
@@ -71964,14 +71966,14 @@ function AppHeader(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
     text: currentTheme === _useThemeSwitch__WEBPACK_IMPORTED_MODULE_5__["lightTheme"] ? 'Switch to dark mode' : 'Switch to light mode',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -71980,14 +71982,14 @@ function AppHeader(props) {
     onClick: onThemeSwitch,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Icon"], {
     icon: "lightbulbFilled",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 42
     },
     __self: this
   })))));
@@ -72011,10 +72013,6 @@ var createStyles = function createStyles(theme) {
       width: "calc(".concat(_SideNav__WEBPACK_IMPORTED_MODULE_4__["SIDE_NAV_WIDTH"], "px - 2rem)"),
       padding: '0 1rem 0 2.75rem'
     },
-    search: {
-      flex: 1,
-      padding: '0 1rem'
-    },
     searchInput: {
       border: 'none',
       '~ span': {
@@ -72022,6 +72020,62 @@ var createStyles = function createStyles(theme) {
       },
       '&::-webkit-search-decoration': {
         WebkitAppearance: 'none'
+      }
+    },
+    search: {
+      flex: 1,
+      padding: '0 1rem',
+      position: 'relative',
+      '.algolia-autocomplete': {
+        left: '1rem !important',
+        top: '0.5rem'
+      },
+
+      /* Main dropdown wrapper */
+      '.algolia-autocomplete .ds-dropdown-menu': {
+        fontSize: '1em',
+        fontWeight: 'normal'
+      },
+
+      /* Link element */
+      '.algolia-autocomplete .algolia-docsearch-suggestion': {
+        fontWeight: 'normal',
+        textDecoration: 'none'
+      },
+
+      /* Main category (eg. Getting Started) */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--category-header': {
+        fontWeight: 'bold',
+        color: theme.pallete.text.main
+      },
+
+      /* Category (eg. Downloads) */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column': {},
+      '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column-text': {
+        color: theme.pallete.text.secondary,
+        fontSize: theme.typography.sizes.text
+      },
+
+      /* Content */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--content': {},
+
+      /* Title (eg. Bootstrap CDN) */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--title': {
+        color: theme.pallete.text.main,
+        fontSize: theme.typography.sizes.text
+      },
+
+      /* Description description (eg. Bootstrap currently works...) */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--text': {
+        color: theme.pallete.text.main,
+        fontSize: theme.typography.sizes.text
+      },
+
+      /* Highlighted text */
+      '.algolia-autocomplete .algolia-docsearch-suggestion--highlight': {
+        color: 'inherit !important',
+        background: "".concat(theme.pallete.highlight, " !important"),
+        boxShadow: 'none !important'
       }
     }
   };
@@ -73002,10 +73056,23 @@ var BoldApp = function BoldApp(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].pageview(window.location.pathname + window.location.search);
   }, [props.router.route]);
+  Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
+    var docsearch = window.docsearch;
+    docsearch({
+      apiKey: '4bd4039d7ff74e34ef26aff9f4a45f34',
+      indexName: 'bold_',
+      inputSelector: '#search-input',
+      autocompleteOptions: {
+        debug: false,
+        hint: false,
+        appendTo: '#search-wrapper'
+      }
+    });
+  }, []);
   return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -73013,13 +73080,13 @@ var BoldApp = function BoldApp(props) {
     content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 40
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 41
     },
     __self: this
   }, "Bold Design System"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73027,7 +73094,7 @@ var BoldApp = function BoldApp(props) {
     rel: "icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 43
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73035,7 +73102,7 @@ var BoldApp = function BoldApp(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 44
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -73043,16 +73110,32 @@ var BoldApp = function BoldApp(props) {
     href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 45
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
+    rel: "stylesheet",
+    href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Site__WEBPACK_IMPORTED_MODULE_10__["Site"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 49
     },
     __self: this
-  })));
+  })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
+    type: "text/javascript",
+    src: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }));
 };
 
 /***/ }),
