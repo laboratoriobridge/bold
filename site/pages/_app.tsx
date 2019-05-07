@@ -20,6 +20,20 @@ const BoldApp = (props: any) => {
     ReactGA.pageview(window.location.pathname + window.location.search)
   }, [props.router.route])
 
+  useEffect(() => {
+    const docsearch = (window as any).docsearch
+    docsearch({
+      apiKey: '4bd4039d7ff74e34ef26aff9f4a45f34',
+      indexName: 'bold_',
+      inputSelector: '#search-input',
+      autocompleteOptions: {
+        debug: false,
+        hint: false,
+        appendTo: '#search-wrapper',
+      },
+    })
+  }, [])
+
   return (
     <>
       <Head>
@@ -29,9 +43,12 @@ const BoldApp = (props: any) => {
         <link href='/static/image/favicon.png' rel='icon' />
         <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i' rel='stylesheet' />
         <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css' />
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css' />
       </Head>
 
       <Site {...props} />
+
+      <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js' />
     </>
   )
 }
