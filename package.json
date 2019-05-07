@@ -128,6 +128,7 @@
     "react-test-renderer": "16.8.6",
     "react-testing-library": "6.1.2",
     "remark-highlight.js": "5.1.0",
+    "remark-slug": "5.1.1",
     "sonar-scanner": "3.1.0",
     "ts-jest": "24.0.2",
     "tslint": "5.16.0",
