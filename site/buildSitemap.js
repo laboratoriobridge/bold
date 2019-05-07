@@ -16,7 +16,8 @@ xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 
 diskPages.forEach(page => {
   let stats = fs.statSync(page)
-  let modDate = new Date(stats.mtime)
+  // let modDate = new Date(stats.mtime)
+  let modDate = new Date()
   let lastMod = `${modDate.getFullYear()}-${('0' + (modDate.getMonth() + 1)).slice(-2)}-${(
     '0' + modDate.getDate()
   ).slice(-2)}`
