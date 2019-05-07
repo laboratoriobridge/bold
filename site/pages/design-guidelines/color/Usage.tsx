@@ -4,7 +4,6 @@ function Usage() {
   return (
     <VFlow>
       <div>
-        <Heading level={1}>Usage</Heading>
         <p>
           Our color palettes were built with a focus on accessibility and ease of use. Through them, it is possible to
           build accessible components and even dark UI by inverting the color levels.

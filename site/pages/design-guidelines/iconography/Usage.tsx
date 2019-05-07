@@ -4,7 +4,6 @@ function Usage() {
   return (
     <VFlow>
       <div>
-        <Heading level={1}>Usage</Heading>
         <p>
           Icons represent objects, actions and states, and are used to communicate a message. Each icon is designed to
           be simple, friendly and reduced to its minimal form, expressing essential characteristics.
