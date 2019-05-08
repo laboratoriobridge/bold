@@ -67219,7 +67219,7 @@ module.exports = warning;
 /*!****************************************************************!*\
   !*** ../node_modules/react-router-dom/esm/react-router-dom.js ***!
   \****************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72388,6 +72388,7 @@ function SideNav(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+    id: "main-nav",
     className: classes.nav,
     __source: {
       fileName: _jsxFileName,
@@ -72639,7 +72640,7 @@ var createStyles = function createStyles(theme) {
 /*!*************************************!*\
   !*** ./components/SideNav/index.ts ***!
   \*************************************/
-/*! exports provided: SideNav, SIDE_NAV_WIDTH, SideNavItem */
+/*! exports provided: SideNavItem, SideNav, SIDE_NAV_WIDTH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
