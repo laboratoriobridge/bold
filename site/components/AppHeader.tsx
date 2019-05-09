@@ -1,10 +1,9 @@
 import NextLink from 'next/link'
 
-import { Button, Icon, Link, TextInput, Theme, Tooltip, useStyles } from '../../lib'
+import { Button, Icon, lightTheme, Link, TextInput, Theme, Tooltip, useStyles } from '../../lib'
 
 import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'
-import { lightTheme } from './useThemeSwitch'
 
 export interface AppHeaderProps {
   currentTheme: Theme
