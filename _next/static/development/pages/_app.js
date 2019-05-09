@@ -13300,7 +13300,7 @@ function Text(props) {
             fontStyle: fontStyle,
         },
     }); }), classes = _a.classes, css = _a.css;
-    return react_1.default.createElement(tag, __assign({}, rest, { className: css(classes[tag], classes.root, style) }), props.children);
+    return react_1.default.createElement(tag, __assign({ className: css(classes[tag], classes.root, style) }, rest), props.children);
 }
 exports.Text = Text;
 Text.defaultProps = {
@@ -17553,32 +17553,6 @@ exports.blue = {
 
 /***/ }),
 
-/***/ "../lib/styles/colors/gold.js":
-/*!************************************!*\
-  !*** ../lib/styles/colors/gold.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.gold = {
-    c10: '#211805',
-    c20: '#4A310B',
-    c30: '#6E4201',
-    c40: '#8F5704',
-    c50: '#9C6800',
-    c60: '#B08400',
-    c70: '#E0BD31',
-    c80: '#F5DE82',
-    c90: '#FAF3D7',
-    c100: '#FFFFFF',
-};
-//# sourceMappingURL=gold.js.map
-
-/***/ }),
-
 /***/ "../lib/styles/colors/gray.js":
 /*!************************************!*\
   !*** ../lib/styles/colors/gray.js ***!
@@ -17645,13 +17619,13 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./blue */ "../lib/styles/colors/blue.js"));
-__export(__webpack_require__(/*! ./gold */ "../lib/styles/colors/gold.js"));
 __export(__webpack_require__(/*! ./gray */ "../lib/styles/colors/gray.js"));
 __export(__webpack_require__(/*! ./green */ "../lib/styles/colors/green.js"));
-__export(__webpack_require__(/*! ./turquoise */ "../lib/styles/colors/turquoise.js"));
 __export(__webpack_require__(/*! ./orange */ "../lib/styles/colors/orange.js"));
-__export(__webpack_require__(/*! ./red */ "../lib/styles/colors/red.js"));
 __export(__webpack_require__(/*! ./purple */ "../lib/styles/colors/purple.js"));
+__export(__webpack_require__(/*! ./red */ "../lib/styles/colors/red.js"));
+__export(__webpack_require__(/*! ./turquoise */ "../lib/styles/colors/turquoise.js"));
+__export(__webpack_require__(/*! ./yellow */ "../lib/styles/colors/yellow.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -17757,6 +17731,32 @@ exports.turquoise = {
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=turquoise.js.map
+
+/***/ }),
+
+/***/ "../lib/styles/colors/yellow.js":
+/*!**************************************!*\
+  !*** ../lib/styles/colors/yellow.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.yellow = {
+    c10: '#211805',
+    c20: '#4A310B',
+    c30: '#6E4201',
+    c40: '#8F5704',
+    c50: '#9C6800',
+    c60: '#B08400',
+    c70: '#E0BD31',
+    c80: '#F5DE82',
+    c90: '#FAF3D7',
+    c100: '#FFFFFF',
+};
+//# sourceMappingURL=yellow.js.map
 
 /***/ }),
 
@@ -18072,13 +18072,14 @@ exports.defaultConfig = {
     dangerScale: colors_1.red,
     alertScale: colors_1.orange,
     infoScale: colors_1.blue,
+    highlightScale: colors_1.yellow,
 };
 exports.createPallete = function (userConfig) {
     var config = util_1.merge({}, exports.defaultConfig, userConfig);
     return {
         gray: config.grayScale,
         divider: config.grayScale.c80,
-        highlight: '#FFED94',
+        highlight: config.highlightScale.c80,
         primary: __assign({}, config.primaryScale, { main: config.primaryScale.c40 }),
         text: {
             main: config.grayScale.c20,
@@ -18114,14 +18115,14 @@ exports.createPallete = function (userConfig) {
     };
 };
 exports.textColorMap = {
-    'normal': function (pallete) { return pallete.text.main; },
-    'primary': function (pallete) { return pallete.primary.main; },
-    'danger': function (pallete) { return pallete.status.danger.main; },
-    'success': function (pallete) { return pallete.status.success.main; },
-    'info': function (pallete) { return pallete.status.info.main; },
-    'alert': function (pallete) { return pallete.status.alert.main; },
-    'secondary': function (pallete) { return pallete.text.secondary; },
-    'disabled': function (pallete) { return pallete.text.disabled; },
+    normal: function (pallete) { return pallete.text.main; },
+    primary: function (pallete) { return pallete.primary.main; },
+    danger: function (pallete) { return pallete.status.danger.main; },
+    success: function (pallete) { return pallete.status.success.main; },
+    info: function (pallete) { return pallete.status.info.main; },
+    alert: function (pallete) { return pallete.status.alert.main; },
+    secondary: function (pallete) { return pallete.text.secondary; },
+    disabled: function (pallete) { return pallete.text.disabled; },
 };
 //# sourceMappingURL=createPallete.js.map
 
@@ -18326,6 +18327,7 @@ exports.darkTheme = createTheme_1.createTheme({
         dangerScale: utils_1.invertColorScale(createPallete_1.defaultConfig.dangerScale),
         infoScale: utils_1.invertColorScale(createPallete_1.defaultConfig.infoScale),
         successScale: utils_1.invertColorScale(createPallete_1.defaultConfig.successScale),
+        highlightScale: utils_1.invertColorScale(createPallete_1.defaultConfig.highlightScale),
     },
 });
 //# sourceMappingURL=themes.js.map
@@ -71913,9 +71915,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _BoldLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoldLogo */ "./components/BoldLogo.tsx");
 /* harmony import */ var _SideNav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SideNav */ "./components/SideNav/index.ts");
-/* harmony import */ var _useThemeSwitch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./useThemeSwitch */ "./components/useThemeSwitch.ts");
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/AppHeader.tsx";
-
 
 
 
@@ -71932,21 +71932,21 @@ function AppHeader(props) {
     className: classes.header,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.logo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 19
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Link"], {
@@ -71956,7 +71956,7 @@ function AppHeader(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BoldLogo__WEBPACK_IMPORTED_MODULE_3__["BoldLogo"], {
@@ -71966,7 +71966,7 @@ function AppHeader(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 22
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -71974,7 +71974,7 @@ function AppHeader(props) {
     id: "search-wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 27
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["TextInput"], {
@@ -71986,20 +71986,20 @@ function AppHeader(props) {
     placeholder: "Search in bold design system...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 28
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 38
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
-    text: currentTheme === _useThemeSwitch__WEBPACK_IMPORTED_MODULE_5__["lightTheme"] ? 'Switch to dark mode' : 'Switch to light mode',
+    text: currentTheme === _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"] ? 'Switch to dark mode' : 'Switch to light mode',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -72008,14 +72008,14 @@ function AppHeader(props) {
     onClick: onThemeSwitch,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Icon"], {
     icon: "lightbulbFilled",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: this
   })))));
@@ -72052,6 +72052,13 @@ var createStyles = function createStyles(theme) {
       flex: 1,
       padding: '0 1rem',
       position: 'relative',
+      '.algolia-autocomplete [class^="ds-dataset"]': {
+        background: theme.pallete.surface.main,
+        borderColor: theme.pallete.divider,
+        '&::before': {
+          background: theme.pallete.surface.main
+        }
+      },
       '.algolia-autocomplete': {
         left: '1rem !important',
         top: '0.5rem'
@@ -72060,13 +72067,17 @@ var createStyles = function createStyles(theme) {
       /* Main dropdown wrapper */
       '.algolia-autocomplete .ds-dropdown-menu': {
         fontSize: '1em',
-        fontWeight: 'normal'
+        fontWeight: 'normal',
+        '&::before': {
+          background: theme.pallete.surface.main
+        }
       },
 
       /* Link element */
       '.algolia-autocomplete .algolia-docsearch-suggestion': {
         fontWeight: 'normal',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        background: 'transparent'
       },
 
       /* Main category (eg. Getting Started) */
@@ -72681,7 +72692,7 @@ var createStyles = function createStyles(theme) {
 /*!*************************************!*\
   !*** ./components/SideNav/index.ts ***!
   \*************************************/
-/*! exports provided: SideNavItem, SideNav, SIDE_NAV_WIDTH */
+/*! exports provided: SideNav, SIDE_NAV_WIDTH, SideNavItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72830,13 +72841,11 @@ var createStyles = function createStyles() {
 /*!**************************************!*\
   !*** ./components/useThemeSwitch.ts ***!
   \**************************************/
-/*! exports provided: lightTheme, darkTheme, useThemeSwitch */
+/*! exports provided: useThemeSwitch */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "lightTheme", function() { return lightTheme; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "darkTheme", function() { return darkTheme; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useThemeSwitch", function() { return useThemeSwitch; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
@@ -72846,48 +72855,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var lightTheme = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["createTheme"])({
-  pallete: {
-    grayScale: _lib__WEBPACK_IMPORTED_MODULE_2__["colors"].gray,
-    primaryScale: _lib__WEBPACK_IMPORTED_MODULE_2__["colors"].blue
-  }
-});
-var darkTheme = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["createTheme"])({
-  pallete: {
-    grayScale: Object(_lib__WEBPACK_IMPORTED_MODULE_2__["invertColorScale"])(_lib__WEBPACK_IMPORTED_MODULE_2__["colors"].gray),
-    primaryScale: Object(_lib__WEBPACK_IMPORTED_MODULE_2__["invertColorScale"])(_lib__WEBPACK_IMPORTED_MODULE_2__["colors"].blue)
-  }
-});
 var useThemeSwitch = function useThemeSwitch() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(lightTheme),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(_lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       currentTheme = _useState2[0],
       setCurrentTheme = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (localStorage) {
-      var loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? darkTheme : lightTheme;
+      var loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? _lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"] : _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"];
       setCurrentTheme(loadedTheme);
     }
   }, []);
 
   var toggleTheme = function toggleTheme() {
-    if (currentTheme === lightTheme) {
-      setCurrentTheme(darkTheme);
+    if (currentTheme === _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]) {
+      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"]);
 
       if (localStorage) {
         localStorage.setItem('currentTheme', 'dark');
       }
 
-      return darkTheme;
+      return _lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"];
     } else {
-      setCurrentTheme(lightTheme);
+      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]);
 
       if (localStorage) {
         localStorage.setItem('currentTheme', 'light');
       }
 
-      return lightTheme;
+      return _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"];
     }
   };
 
