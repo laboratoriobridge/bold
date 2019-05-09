@@ -13263,6 +13263,26 @@ Number.defaultProps = {
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
+            t[p[i]] = s[p[i]];
+    return t;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -13271,20 +13291,21 @@ var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 var createTheme_1 = __webpack_require__(/*! ../../../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
 function Text(props) {
-    var _a = props.tag, tag = _a === void 0 ? 'span' : _a, color = props.color, size = props.size, weight = props.weight, fontStyle = props.fontStyle, style = props.style;
-    var _b = styles_1.useStyles(function (theme) { return ({
+    var tag = props.tag, color = props.color, size = props.size, weight = props.weight, fontStyle = props.fontStyle, style = props.style, rest = __rest(props, ["tag", "color", "size", "weight", "fontStyle", "style"]);
+    var _a = styles_1.useStyles(function (theme) { return ({
         root: {
             color: color && createTheme_1.getTextColor(theme, color),
             fontSize: size && size + 'rem',
             fontWeight: weight,
             fontStyle: fontStyle,
         },
-    }); }), classes = _b.classes, css = _b.css;
-    return react_1.default.createElement(tag, {
-        className: css(classes[tag], classes.root, style),
-    }, props.children);
+    }); }), classes = _a.classes, css = _a.css;
+    return react_1.default.createElement(tag, __assign({}, rest, { className: css(classes[tag], classes.root, style) }), props.children);
 }
 exports.Text = Text;
+Text.defaultProps = {
+    tag: 'span',
+};
 //# sourceMappingURL=Text.js.map
 
 /***/ }),
@@ -16243,14 +16264,16 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
 var TimesDefault_1 = __importDefault(__webpack_require__(/*! ../../../../elements/Icon/generated/TimesDefault */ "../lib/components/elements/Icon/generated/TimesDefault.js"));
 function SelectMultiItem(props) {
     var style = props.style, children = props.children, onRemove = props.onRemove, disabled = props.disabled, rest = __rest(props, ["style", "children", "onRemove", "disabled"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
+    var locale = locale_1.useLocale();
     return (react_1.default.createElement("span", __assign({ className: css(classes.root, style) }, rest),
         react_1.default.createElement("span", { className: classes.text }, children),
-        !disabled && (react_1.default.createElement("span", { className: classes.button, onClick: onRemove, title: 'Remover' },
+        !disabled && (react_1.default.createElement("span", { className: classes.button, onClick: onRemove, title: locale.select.removeItem },
             react_1.default.createElement(TimesDefault_1.default, null)))));
 }
 exports.SelectMultiItem = SelectMultiItem;
@@ -17421,6 +17444,9 @@ var locale = {
         previousPage: 'Previous page',
         nextPage: 'Next page',
         currentPage: 'Current page',
+    },
+    select: {
+        removeItem: 'Remove',
     },
 };
 exports.default = locale;
@@ -72193,8 +72219,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
+
 
 
 
@@ -72204,27 +72232,41 @@ function Page(props) {
   var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_1__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
+  var route = props.router.route;
+  var parent = _pages__WEBPACK_IMPORTED_MODULE_2__["default"].find(function (page) {
+    return page.children && page.children.map(function (c) {
+      return c.href;
+    }).includes(route);
+  });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.wrapper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 14
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_2__["PageContainer"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_3__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 15
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     className: classes.main,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 16
     },
     __self: this
-  }, children)));
+  }, parent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    id: "page-parent-title",
+    weight: "bold",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: this
+  }, parent.title), children)));
 }
 var createStyles = function createStyles(theme) {
   return {
@@ -72388,7 +72430,6 @@ function SideNav(props) {
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
-    id: "main-nav",
     className: classes.nav,
     __source: {
       fileName: _jsxFileName,
@@ -72747,13 +72788,13 @@ function Site(props) {
       lineNumber: 24
     },
     __self: this
-  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_6__["Page"], {
+  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_6__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 26
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 27
