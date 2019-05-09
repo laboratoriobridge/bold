@@ -2,12 +2,13 @@ import React from 'react'
 
 import { ExternalStyles, TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
+import { Omit } from '../../../../util'
 
 export type Weight = 'normal' | 'bold'
 export type TextTag = 'span' | 'p'
 export type FontStyle = 'normal' | 'italic'
 
-export interface TextProps {
+export interface TextProps extends Omit<React.HTMLAttributes<HTMLElement>, 'style'> {
   color?: TextColor
   size?: number
   weight?: Weight
@@ -18,7 +19,7 @@ export interface TextProps {
 }
 
 export function Text(props: TextProps) {
-  const { tag = 'span', color, size, weight, fontStyle, style } = props
+  const { tag, color, size, weight, fontStyle, style, ...rest } = props
   const { classes, css } = useStyles(theme => ({
     root: {
       color: color && getTextColor(theme, color),
@@ -31,8 +32,13 @@ export function Text(props: TextProps) {
   return React.createElement(
     tag,
     {
+      ...rest,
       className: css(classes[tag], classes.root, style),
     },
     props.children
   )
 }
+
+Text.defaultProps = {
+  tag: 'span',
+} as Partial<TextProps>

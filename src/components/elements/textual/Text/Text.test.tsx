@@ -21,3 +21,8 @@ it('should accept style prop', () => {
     ).container
   ).toMatchSnapshot()
 })
+
+it('should accept HTMLElement props', () => {
+  const { container } = render(<Text id='test-1'>Text</Text>)
+  expect(container.querySelector('span').getAttribute('id')).toEqual('test-1')
+})
