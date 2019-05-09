@@ -79,6 +79,14 @@ const createStyles = (theme: Theme) => ({
     padding: '0 1rem',
     position: 'relative',
 
+    '.algolia-autocomplete [class^="ds-dataset"]': {
+      background: theme.pallete.surface.main,
+      borderColor: theme.pallete.divider,
+      '&::before': {
+        background: theme.pallete.surface.main,
+      },
+    },
+
     '.algolia-autocomplete': {
       left: '1rem !important',
       top: '0.5rem',
@@ -88,12 +96,16 @@ const createStyles = (theme: Theme) => ({
     '.algolia-autocomplete .ds-dropdown-menu': {
       fontSize: '1em',
       fontWeight: 'normal',
+      '&::before': {
+        background: theme.pallete.surface.main,
+      },
     },
 
     /* Link element */
     '.algolia-autocomplete .algolia-docsearch-suggestion': {
       fontWeight: 'normal',
       textDecoration: 'none',
+      background: 'transparent',
     },
 
     /* Main category (eg. Getting Started) */
