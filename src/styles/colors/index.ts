@@ -1,13 +1,13 @@
 import { Color } from 'csstype'
 
 export * from './blue'
-export * from './gold'
 export * from './gray'
 export * from './green'
-export * from './turquoise'
 export * from './orange'
-export * from './red'
 export * from './purple'
+export * from './red'
+export * from './turquoise'
+export * from './yellow'
 
 export interface ColorScale {
   c10: Color

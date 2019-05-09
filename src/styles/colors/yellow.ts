@@ -1,6 +1,6 @@
 import { ColorScale } from '.'
 
-export const gold: ColorScale = {
+export const yellow: ColorScale = {
   c10: '#211805',
   c20: '#4A310B',
   c30: '#6E4201',

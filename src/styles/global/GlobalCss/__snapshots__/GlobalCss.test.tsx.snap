@@ -96,7 +96,7 @@ exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
     data-emotion="css-global"
   >
     
-    mark{background:#FFED94;}
+    mark{background:#F5DE82;}
   </style>
 </head>
 `;
