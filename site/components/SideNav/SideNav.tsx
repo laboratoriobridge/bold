@@ -20,7 +20,7 @@ export function SideNav(props: SideNavProps) {
 
   return (
     <div className={classes.wrapper}>
-      <nav id='main-nav' className={classes.nav}>
+      <nav className={classes.nav}>
         <ul className={classes.ul}>
           {pages.map(link => (
             <SideNavItem key={link.href} {...link} />

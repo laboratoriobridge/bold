@@ -23,7 +23,7 @@ export function Site(props: any) {
           {route === '/' ? (
             <Component {...pageProps} />
           ) : (
-            <Page>
+            <Page {...props}>
               <Component {...pageProps} />
             </Page>
           )}

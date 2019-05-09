@@ -1,4 +1,5 @@
-import { Theme, useStyles } from '../../lib'
+import { Text, Theme, useStyles } from '../../lib'
+import pages from '../pages'
 
 import { PageContainer } from './PageContainer'
 
@@ -6,10 +7,20 @@ export function Page(props: any) {
   const { children } = props
   const { classes } = useStyles(createStyles)
 
+  const { route } = props.router
+  const parent = pages.find(page => page.children && page.children.map(c => c.href).includes(route))
+
   return (
     <div className={classes.wrapper}>
       <PageContainer>
-        <main className={classes.main}>{children}</main>
+        <main className={classes.main}>
+          {parent && (
+            <Text id='page-parent-title' weight='bold'>
+              {parent.title}
+            </Text>
+          )}
+          {children}
+        </main>
       </PageContainer>
     </div>
   )
