@@ -32,8 +32,8 @@ export function Text(props: TextProps) {
   return React.createElement(
     tag,
     {
-      ...rest,
       className: css(classes[tag], classes.root, style),
+      ...rest,
     },
     props.children
   )
