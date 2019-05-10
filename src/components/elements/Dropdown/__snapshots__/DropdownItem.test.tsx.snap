@@ -1,5 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept "component" prop to render with different container elements 1`] = `
+.emotion-0 {
+  margin: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
+  font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  display: block;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+.emotion-0:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
+}
+
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+    role="menuitem"
+  >
+    Item
+  </a>
+</div>
+`;
+
+exports[`should accept "component" prop to render with different container elements 2`] = `
+.emotion-0 {
+  margin: 0;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-weight: bolder;
+  outline: none;
+  font-size: 0.875rem;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  display: block;
+}
+
+.emotion-0:hover {
+  background: #F2F2F7;
+}
+
+.emotion-0:focus {
+  box-shadow: inset 0 0 0 2px #0A67D1;
+  border-radius: 4px;
+}
+
+<div>
+  <a
+    class="emotion-0"
+    href="/"
+    role="menuitem"
+  >
+    Item
+  </a>
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   margin: 0;
@@ -10,16 +76,7 @@ exports[`should render correctly 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
-}
-
-.emotion-0:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-0:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  display: block;
 }
 
 .emotion-0:hover {

@@ -3,7 +3,9 @@ import { DropdownButton } from '../../../../lib'
 function DropMenuDemo() {
   return (
     <DropdownButton
-      size='medium'
+      size='small'
+      skin='outline'
+      kind='primary'
       items={[
         { content: 'Edit', onClick: console.log },
         { content: 'Donwload', onClick: console.log },

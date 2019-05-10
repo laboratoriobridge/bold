@@ -158,6 +158,12 @@ exports[`should render correctly when opened 1`] = `
   width: auto;
   min-width: 150px;
   background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1300;
 }
 
 .emotion-2 {
@@ -169,16 +175,7 @@ exports[`should render correctly when opened 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
-}
-
-.emotion-2:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-2:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  display: block;
 }
 
 .emotion-2:hover {
@@ -190,17 +187,10 @@ exports[`should render correctly when opened 1`] = `
   border-radius: 4px;
 }
 
-.emotion-5 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 0;
-}
-
 <body>
   <div>
     <button
-      aria-controls="menu-abc"
+      aria-controls="dropdown-abc"
       aria-expanded="true"
       aria-haspopup="true"
       class="emotion-1"
@@ -228,34 +218,29 @@ exports[`should render correctly when opened 1`] = `
       </span>
     </button>
   </div>
-  <div
-    class="emotion-5"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1300;"
+  <ul
+    class="emotion-4"
+    id="dropdown-abc"
+    role="menu"
   >
-    <ul
-      class="emotion-4"
-      id="menu-abc"
-      role="menu"
+    <li
+      class="emotion-2"
+      role="menuitem"
+      tabindex="0"
     >
-      <li
-        class="emotion-2"
-        role="menuitem"
-        tabindex="0"
-      >
-        <span>
-          Item #1
-        </span>
-      </li>
-      <li
-        class="emotion-2"
-        role="menuitem"
-        tabindex="-1"
-      >
-        <span>
-          Item #2
-        </span>
-      </li>
-    </ul>
-  </div>
+      <span>
+        Item #1
+      </span>
+    </li>
+    <li
+      class="emotion-2"
+      role="menuitem"
+      tabindex="-1"
+    >
+      <span>
+        Item #2
+      </span>
+    </li>
+  </ul>
 </body>
 `;

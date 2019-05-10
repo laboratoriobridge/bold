@@ -1,5 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept "style" props 1`] = `
+.emotion-0 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+  border: 1px solid #DCDCE0;
+  border-radius: 2px;
+  display: inline-block;
+  width: auto;
+  min-width: 150px;
+  background: #FFFFFF;
+  color: red;
+}
+
+<div>
+  <ul
+    class="emotion-0"
+    role="menu"
+  />
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-4 {
   list-style: none;
@@ -24,16 +48,7 @@ exports[`should render correctly 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
-}
-
-.emotion-0:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-0:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+  display: block;
 }
 
 .emotion-0:hover {
@@ -54,17 +69,8 @@ exports[`should render correctly 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  display: block;
   color: #B9B9BD;
-}
-
-.emotion-1:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-1:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
 }
 
 .emotion-1:hover {
@@ -93,17 +99,8 @@ exports[`should render correctly 1`] = `
   font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
+  display: block;
   color: #D83A2E;
-}
-
-.emotion-3:first-of-type a {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
-
-.emotion-3:last-of-type a {
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
 }
 
 .emotion-3:hover {

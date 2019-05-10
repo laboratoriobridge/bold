@@ -35,7 +35,7 @@ export default [
       { href: '/components/checkbox', title: 'Checkbox' },
       { href: '/components/content-switch', title: 'Content Switch' },
       { href: '/components/date-picker', title: 'Date Picker' },
-      { href: '/components/drop-menu', title: 'Drop Menu' },
+      { href: '/components/dropdown', title: 'Dropdown' },
       { href: '/components/file-uploader', title: 'File Uploader' },
       { href: '/components/form', title: 'Form' },
       { href: '/components/link', title: 'Link' },
