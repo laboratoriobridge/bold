@@ -79,6 +79,11 @@ exports[`renders correctly 1`] = `
   display: none;
 }
 
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

@@ -24,11 +24,14 @@ exports[`BreadcrumbNav should render correctly 1`] = `
 }
 
 .emotion-0 {
-  cursor: pointer;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #0A67D1;
+  font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: bold;
+  cursor: pointer;
   outline: none;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;

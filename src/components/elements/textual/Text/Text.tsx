@@ -22,6 +22,7 @@ export function Text(props: TextProps) {
   const { tag, color, size, weight, fontStyle, style, ...rest } = props
   const { classes, css } = useStyles(theme => ({
     root: {
+      ...theme.typography.variant('main'),
       color: color && getTextColor(theme, color),
       fontSize: size && size + 'rem',
       fontWeight: weight,

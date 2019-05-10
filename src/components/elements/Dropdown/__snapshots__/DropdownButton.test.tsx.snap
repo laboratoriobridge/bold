@@ -167,12 +167,17 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #2D343B;
   margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  font-weight: bolder;
+  font-weight: bold;
   outline: none;
-  font-size: 0.875rem;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   display: block;

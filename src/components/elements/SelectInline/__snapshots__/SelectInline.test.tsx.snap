@@ -64,6 +64,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-5 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -494,6 +499,11 @@ exports[`SelectInline should render correctly when opened 1`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-5 {
@@ -928,6 +938,11 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
 
 .emotion-2:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-5 {

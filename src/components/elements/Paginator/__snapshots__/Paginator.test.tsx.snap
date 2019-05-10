@@ -73,6 +73,11 @@ exports[`should render correctly 1`] = `
   position: relative;
 }
 
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -284,6 +289,11 @@ exports[`should render correctly 2`] = `
 
 .emotion-3 {
   position: relative;
+}
+
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-6 {
@@ -551,6 +561,11 @@ exports[`should render correctly 3`] = `
 
 .emotion-3 {
   position: relative;
+}
+
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-6 {

@@ -101,12 +101,16 @@ exports[`should render correct without extension 1`] = `
 }
 
 .emotion-2 {
-  color: #53595E;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
+  line-height: 1.5;
+  color: #53595E;
   font-weight: bold;
 }
 
 .emotion-6 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   color: #53595E;
   font-weight: bold;
   background-color: #F2F2F7;
@@ -115,8 +119,15 @@ exports[`should render correct without extension 1`] = `
 }
 
 .emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   font-weight: bold;
   margin-right: 10px;
+}
+
+.emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-7 {
@@ -278,8 +289,10 @@ exports[`should render correctly at initial state 1`] = `
 }
 
 .emotion-2 {
-  color: #53595E;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
+  line-height: 1.5;
+  color: #53595E;
   font-weight: bold;
 }
 
@@ -431,12 +444,16 @@ exports[`should render correctly at uploading state 1`] = `
 }
 
 .emotion-2 {
-  color: #53595E;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
+  line-height: 1.5;
+  color: #53595E;
   font-weight: bold;
 }
 
 .emotion-6 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   color: #53595E;
   font-weight: bold;
   background-color: #F2F2F7;
@@ -445,8 +462,15 @@ exports[`should render correctly at uploading state 1`] = `
 }
 
 .emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   font-weight: bold;
   margin-right: 10px;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-10 {
@@ -657,12 +681,16 @@ exports[`should render correctly complete state 1`] = `
 }
 
 .emotion-2 {
-  color: #53595E;
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
+  line-height: 1.5;
+  color: #53595E;
   font-weight: bold;
 }
 
 .emotion-6 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   color: #53595E;
   font-weight: bold;
   background-color: #F2F2F7;
@@ -671,8 +699,15 @@ exports[`should render correctly complete state 1`] = `
 }
 
 .emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
   font-weight: bold;
   margin-right: 10px;
+}
+
+.emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-7 {

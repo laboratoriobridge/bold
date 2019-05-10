@@ -301,7 +301,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
 }
 
 .emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
+  line-height: 1.5;
   font-weight: bold;
 }
 

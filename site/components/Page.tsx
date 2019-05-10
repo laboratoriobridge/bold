@@ -1,4 +1,5 @@
 import { Text, Theme, useStyles } from '../../lib'
+import { createStyles as createLinkStyles } from '../../lib/components/elements/Link/Link'
 import pages from '../pages'
 
 import { PageContainer } from './PageContainer'
@@ -37,6 +38,10 @@ export const createStyles = (theme: Theme) => ({
     '& > p > img': {
       maxWidth: 960,
       marginBottom: '2rem',
+    },
+
+    '& > p a, & > ul a': {
+      ...createLinkStyles(theme).link,
     },
 
     '& > p': {

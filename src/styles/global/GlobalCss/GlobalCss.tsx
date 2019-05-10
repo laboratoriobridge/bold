@@ -44,16 +44,6 @@ export const createGlobalStyles = (theme: Theme): Interpolation => ({
     margin: '0',
     lineHeight: 1.5,
   },
-  a: {
-    cursor: 'pointer',
-    color: theme.pallete.primary.main,
-    textDecoration: 'underline',
-    fontWeight: 'bold',
-    outline: 'none',
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
   mark: {
     background: theme.pallete.highlight,
   },

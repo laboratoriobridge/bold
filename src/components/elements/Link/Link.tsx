@@ -24,10 +24,8 @@ Link.defaultProps = {
 
 export const createStyles = (theme: Theme) => ({
   link: {
+    ...theme.typography.variant('link'),
     cursor: 'pointer',
-    color: theme.pallete.primary.main,
-    textDecoration: 'underline',
-    fontWeight: 'bold',
     outline: 'none',
     transition: 'box-shadow .2s ease',
     '&:hover': {

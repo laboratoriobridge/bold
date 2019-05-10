@@ -44,10 +44,12 @@ DropdownItem.defaultProps = {
 
 const styles = (theme: Theme) => ({
   item: {
+    ...theme.typography.variant('main'),
     margin: 0,
+    textDecoration: 'none',
     cursor: 'pointer',
     padding: '0.5rem 1rem',
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
     outline: 'none',
     fontSize: theme.typography.sizes.button,
     transition: 'all .2s ease',

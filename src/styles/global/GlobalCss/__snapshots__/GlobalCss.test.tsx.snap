@@ -84,18 +84,6 @@ exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
     data-emotion="css-global"
   >
     
-    a{cursor:pointer;color:#0A67D1;-webkit-text-decoration:underline;text-decoration:underline;font-weight:bold;outline:none;}
-  </style>
-  <style
-    data-emotion="css-global"
-  >
-    
-    a:hover{-webkit-text-decoration:none;text-decoration:none;}
-  </style>
-  <style
-    data-emotion="css-global"
-  >
-    
     mark{background:#F5DE82;}
   </style>
 </head>
