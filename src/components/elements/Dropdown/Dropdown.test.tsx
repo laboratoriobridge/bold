@@ -96,21 +96,6 @@ it('should focus the first menu item when dropdown is opened', async () => {
   })
 })
 
-it('should focus the anchor element when dropdown is closed', async () => {
-  const { rerender, getByText } = render(createDropdown({ open: false }))
-  const anchor = getByText('Anchor')
-
-  rerender(createDropdown({ open: true }))
-  await wait(() => {
-    expect(document.activeElement).toEqual(document.body.querySelectorAll('li')[0])
-  })
-
-  rerender(createDropdown({ open: false }))
-  await wait(() => {
-    expect(document.activeElement).toEqual(anchor)
-  })
-})
-
 it('should call "onClose" if menu is clicked and "autoclose" is true', () => {
   const close = jest.fn()
   const { rerender } = render(createDropdown({ open: true, onClose: close }))

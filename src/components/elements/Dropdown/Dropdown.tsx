@@ -101,18 +101,17 @@ export function Dropdown(props: DropdownProps) {
           firstItem.focus()
         }
       })
-    } else {
-      // When closed, focus the anchor element
-      anchorRef.current.focus()
     }
   }, [open])
 
   const handleBlur = () => {
     setTimeout(() => {
       // Call onClose if target focus is outside menu
-      const currentFocus = menuRef.current.ownerDocument.activeElement
-      if (!menuRef.current.contains(currentFocus)) {
-        onClose()
+      if (menuRef.current) {
+        const currentFocus = menuRef.current.ownerDocument.activeElement
+        if (!menuRef.current.contains(currentFocus)) {
+          onClose()
+        }
       }
     })
   }

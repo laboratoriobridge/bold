@@ -21,7 +21,10 @@ export function DropdownButton(props: DropdownButtonProps) {
   const [isOpen, setOpen] = React.useState<boolean>(false)
 
   const handleButtonClick = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  const handleClose = () => {
+    setOpen(false)
+    buttonRef.current.focus()
+  }
 
   return (
     <>

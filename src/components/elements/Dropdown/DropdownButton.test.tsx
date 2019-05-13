@@ -1,9 +1,7 @@
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
-
+import { fireEvent, render, wait } from 'react-testing-library'
 import * as stringUtils from '../../../util/string'
 import { Icon } from '../Icon'
-
 import { DropdownButton, DropdownButtonProps } from './DropdownButton'
 ;(stringUtils as any).randomStr = jest.fn(() => 'abc')
 
@@ -41,4 +39,21 @@ it('should render correctly when opened', () => {
   const button = container.querySelector('button')
   fireEvent.click(button)
   expect(document.body).toMatchSnapshot()
+})
+
+it('should focus the anchor element when dropdown is closed', async () => {
+  const { container } = render(createDropdownButton())
+  const button = container.querySelector('button')
+
+  fireEvent.click(button)
+
+  const firstLi = document.body.querySelectorAll('li')[0]
+  await wait(() => {
+    expect(document.activeElement).toEqual(firstLi)
+  })
+
+  fireEvent.click(firstLi)
+  await wait(() => {
+    expect(document.activeElement).toEqual(button)
+  })
 })
