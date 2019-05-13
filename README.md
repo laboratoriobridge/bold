@@ -1,5 +1,7 @@
 # bold
 
+[![Build Status](https://travis-ci.org/laboratoriobridge/bold.svg?branch=master)](https://travis-ci.org/laboratoriobridge/bold)
+
 https://bold.bridge.ufsc.br/
 
 React implementation of the **Bold Design System**.
