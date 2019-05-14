@@ -1,4 +1,4 @@
-# bold
+# Bold
 
 [![Build Status](https://travis-ci.org/laboratoriobridge/bold.svg?branch=master)](https://travis-ci.org/laboratoriobridge/bold)
 [![codecov](https://codecov.io/gh/laboratoriobridge/bold/branch/master/graph/badge.svg)](https://codecov.io/gh/laboratoriobridge/bold)
@@ -6,6 +6,12 @@
 https://bold.bridge.ufsc.br/
 
 React implementation of the **Bold Design System**.
+
+## WARNING: Beta phase
+
+This project is currently in beta phase and its API may change without following semver.
+
+The first stable release (probably `1.0.0`) will follow [semver](https://semver.org/).
 
 ## Getting started
 
