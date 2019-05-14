@@ -3,11 +3,11 @@ import React, { CSSProperties } from 'react'
 import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../../../styles'
 import { Input, InputProps } from '../Input/Input'
 
-export interface RadioButtonProps extends InputProps {
+export interface RadioProps extends InputProps {
   label: React.ReactNode
 }
 
-export function RadioButton(props: RadioButtonProps) {
+export function Radio(props: RadioProps) {
   const { label, ...rest } = props
   const { classes } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)

@@ -1,9 +1,9 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { RadioButton } from './RadioButton'
+import { Radio } from './Radio'
 
 it('should render correctly', () => {
-  const { container } = render(<RadioButton label='First' />)
+  const { container } = render(<Radio label='First' />)
   expect(container).toMatchSnapshot()
 })
