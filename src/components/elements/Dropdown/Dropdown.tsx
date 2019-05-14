@@ -44,7 +44,7 @@ export interface DropdownProps extends DropdownMenuProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { children, anchorRef, popperProps, open, onClose, autoclose, ...rest } = props
+  const { children, anchorRef, popperProps, open, onClose, autoclose, style, ...rest } = props
   const { classes } = useStyles(createStyles)
 
   const menuRef = useRef<HTMLUListElement>()
@@ -128,7 +128,7 @@ export function Dropdown(props: DropdownProps) {
         <DropdownMenu
           id={dropdownIdRef.current}
           innerRef={menuRef}
-          style={[popperStyle, classes.dropdown]}
+          style={[popperStyle, classes.dropdown, style]}
           data-placement={placement}
           onClick={handleMenuClick}
           onBlur={handleBlur}
