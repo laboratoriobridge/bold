@@ -21,6 +21,7 @@
     "start": "npm run clean && webpack --progress --watch",
     "clean": "rm -rf lib",
     "build": "npm run clean && tsc && webpack --mode=production",
+    "prepublish": "npm run build",
     "test": "npm run lint && TZ=UTC jest",
     "test:watch": "TZ=UTC jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
