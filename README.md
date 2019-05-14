@@ -9,9 +9,7 @@ React implementation of the **Bold Design System**.
 
 ## WARNING: Beta phase
 
-This project is currently in beta phase and its API may change without following semver.
-
-The first stable release (probably `1.0.0`) will follow [semver](https://semver.org/).
+This project is currently in beta phase (`1.0.0-beta.*` versions) and its API may change without following semver.
 
 ## Getting started
 
