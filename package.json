@@ -4,6 +4,11 @@
   "main": "lib/main.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
+  "keywords": [
+    "react",
+    "bold-ui",
+    "bold design system"
+  ],
   "files": [
     "lib",
     "icons",
