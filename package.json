@@ -1,6 +1,6 @@
 {
   "name": "bold-ui",
-  "version": "1.0.0-alpha.135",
+  "version": "1.0.0-alpha.136",
   "main": "lib/main.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
