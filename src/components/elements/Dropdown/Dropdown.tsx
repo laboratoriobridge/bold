@@ -6,9 +6,9 @@ import { Theme, useStyles } from '../../../styles'
 import { randomStr } from '../../../util/string'
 import { Portal } from '../Portal'
 
-import { DropdownMenu } from './DropdownMenu'
+import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
 
-export interface DropdownProps {
+export interface DropdownProps extends DropdownMenuProps {
   /**
    * The anchor element that should receive the dropdown menu.
    */
@@ -44,7 +44,7 @@ export interface DropdownProps {
 }
 
 export function Dropdown(props: DropdownProps) {
-  const { children, anchorRef, popperProps, open, onClose, autoclose } = props
+  const { children, anchorRef, popperProps, open, onClose, autoclose, ...rest } = props
   const { classes } = useStyles(createStyles)
 
   const menuRef = useRef<HTMLUListElement>()
@@ -132,6 +132,7 @@ export function Dropdown(props: DropdownProps) {
           data-placement={placement}
           onClick={handleMenuClick}
           onBlur={handleBlur}
+          {...rest}
         >
           {children}
         </DropdownMenu>
@@ -142,7 +143,8 @@ export function Dropdown(props: DropdownProps) {
 
 Dropdown.defaultProps = {
   autoclose: true,
-}
+  onClose: () => null,
+} as Partial<DropdownProps>
 
 export const createStyles = (theme: Theme) => ({
   dropdown: {
