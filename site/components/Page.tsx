@@ -42,6 +42,7 @@ export const createStyles = (theme: Theme) => ({
 
     '& > p a, & > ul a': {
       ...createLinkStyles(theme).link,
+      fontSize: '1rem',
     },
 
     '& > p': {
