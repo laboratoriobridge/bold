@@ -39,6 +39,11 @@ it('should accept popper props', () => {
   expect(document.body).toMatchSnapshot()
 })
 
+it('should extend DropdownMenu props', () => {
+  render(createDropdown({ open: true, id: 'test', style: { color: 'red' } }))
+  expect(document.body).toMatchSnapshot()
+})
+
 it('should control aria attributes on anchor element', () => {
   const { getByText, rerender } = render(createDropdown({ open: false }))
   const anchor = getByText('Anchor')
