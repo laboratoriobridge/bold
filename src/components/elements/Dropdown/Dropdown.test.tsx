@@ -40,7 +40,7 @@ it('should accept popper props', () => {
 })
 
 it('should extend DropdownMenu props', () => {
-  render(createDropdown({ open: true, id: 'test', style: { color: 'red' } }))
+  render(createDropdown({ open: true, 'aria-label': 'test', style: { color: 'red' } }))
   expect(document.body).toMatchSnapshot()
 })
 
