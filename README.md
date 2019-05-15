@@ -1,11 +1,11 @@
 # Bold
 
+React implementation of the **Bold Design System**.
+
 [![Build Status](https://travis-ci.org/laboratoriobridge/bold.svg?branch=master)](https://travis-ci.org/laboratoriobridge/bold)
 [![codecov](https://codecov.io/gh/laboratoriobridge/bold/branch/master/graph/badge.svg)](https://codecov.io/gh/laboratoriobridge/bold)
 
 https://bold.bridge.ufsc.br/
-
-React implementation of the **Bold Design System**.
 
 ## WARNING: Beta phase
 
