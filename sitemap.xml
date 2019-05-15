@@ -2,349 +2,349 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
 		<loc>http://bold.bridge.ufsc.br/about</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/accordion</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/alert</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/alert/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/breadcrumb</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/breadcrumb/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/button</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/button/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/cards</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/checkbox</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/checkbox/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/content-switch</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/content-switch/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/date-picker</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/date-picker/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://bold.bridge.ufsc.br/components/drop-menu</loc>
-		<lastmod>2019-05-09</lastmod>
+		<loc>http://bold.bridge.ufsc.br/components/dropdown</loc>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>http://bold.bridge.ufsc.br/components/drop-menu/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<loc>http://bold.bridge.ufsc.br/components/dropdown/</loc>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/file-uploader</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/file-uploader/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/form</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/form/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/link</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/link/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/modal</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/modal/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/multi-select</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/multi-select/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/radio-button</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/radio-button/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/search</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/search/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/select</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/select/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/switch</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/switch/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/table</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/table/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tabs</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tabs/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tag</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tag/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/text-input</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/text-input/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/toast</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tooltip</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/tooltip/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/components/wizard</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/accessibility</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/color</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/grid</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/iconography</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/illustrations</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/design-guidelines/typography</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/getting-started</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>http://bold.bridge.ufsc.br/resources</loc>
-		<lastmod>2019-05-09</lastmod>
+		<lastmod>2019-05-15</lastmod>
 		<changefreq>always</changefreq>
 		<priority>0.5</priority>
 	</url>

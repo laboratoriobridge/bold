@@ -1343,34 +1343,96 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var usePopper_1 = __importDefault(__webpack_require__(/*! ../../../hooks/usePopper */ "../lib/hooks/usePopper.js"));
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
 var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/elements/Portal/index.js");
-var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/elements/Transition/FadeTransition.js");
+var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/elements/Dropdown/DropdownMenu.js");
 function Dropdown(props) {
-    var children = props.children, renderTarget = props.renderTarget, popperProps = props.popperProps;
-    var theme = styles_1.useTheme();
-    var _a = react_1.default.useState(false), isOpen = _a[0], setOpen = _a[1];
-    var renderProps = {
-        isOpen: isOpen,
-        open: function () { return setOpen(true); },
-        close: function () { return setOpen(false); },
-        toggle: function () { return setOpen(!isOpen); },
+    var children = props.children, anchorRef = props.anchorRef, popperProps = props.popperProps, open = props.open, onClose = props.onClose, autoclose = props.autoclose;
+    var classes = styles_1.useStyles(exports.createStyles).classes;
+    var menuRef = react_1.useRef();
+    var _a = usePopper_1.default(__assign({ anchorRef: anchorRef, popperRef: menuRef }, popperProps), [open]), popperStyle = _a.style, placement = _a.placement;
+    var dropdownIdRef = react_1.default.useRef("dropdown-" + string_1.randomStr());
+    // Attaches aria attributes to anchor element
+    react_1.useEffect(function () {
+        anchorRef.current.setAttribute('aria-haspopup', 'true');
+        if (open) {
+            anchorRef.current.setAttribute('aria-expanded', 'true');
+            anchorRef.current.setAttribute('aria-controls', dropdownIdRef.current);
+        }
+        else {
+            anchorRef.current.removeAttribute('aria-expanded');
+            anchorRef.current.removeAttribute('aria-controls');
+        }
+    }, [open]);
+    // Attaches Escape key event
+    react_1.useEffect(function () {
+        var handleKeyDown = function (e) {
+            if (open && e.key === 'Escape') {
+                onClose();
+            }
+        };
+        addEventListener('keydown', handleKeyDown);
+        return function () { return removeEventListener('keydown', handleKeyDown); };
+    }, [open]);
+    // When opened, focus the first menu item
+    var isFirstRender = react_1.useRef(true);
+    react_1.useEffect(function () {
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            return;
+        }
+        if (open) {
+            setTimeout(function () {
+                // Delay focus to preserve window scroll position
+                if (menuRef.current) {
+                    var firstItem = menuRef.current.firstElementChild;
+                    firstItem.focus();
+                }
+            });
+        }
+    }, [open]);
+    var handleBlur = function () {
+        setTimeout(function () {
+            // Call onClose if target focus is outside menu
+            if (menuRef.current) {
+                var currentFocus = menuRef.current.ownerDocument.activeElement;
+                if (!menuRef.current.contains(currentFocus)) {
+                    onClose();
+                }
+            }
+        });
     };
-    return (react_1.default.createElement(react_popper_1.Manager, null,
-        react_1.default.createElement(react_popper_1.Reference, null, function (refProps) { return renderTarget(__assign({}, refProps, renderProps)); }),
-        react_1.default.createElement(FadeTransition_1.FadeTransition, { in: isOpen }, function (_a) {
-            var className = _a.className;
-            return isOpen && (react_1.default.createElement(Portal_1.Portal, null,
-                react_1.default.createElement(react_popper_1.Popper, __assign({}, popperProps), function (popper) { return (react_1.default.createElement("div", { ref: popper.ref, className: className, style: __assign({}, popper.style, { zIndex: theme.zIndex.dropdown }) }, children(renderProps))); })));
-        })));
+    var handleMenuClick = function () {
+        if (autoclose) {
+            onClose();
+        }
+    };
+    return (open && (react_1.default.createElement(Portal_1.Portal, null,
+        react_1.default.createElement(DropdownMenu_1.DropdownMenu, { id: dropdownIdRef.current, innerRef: menuRef, style: [popperStyle, classes.dropdown], "data-placement": placement, onClick: handleMenuClick, onBlur: handleBlur }, children))));
 }
 exports.Dropdown = Dropdown;
+Dropdown.defaultProps = {
+    autoclose: true,
+};
+exports.createStyles = function (theme) { return ({
+    dropdown: {
+        zIndex: theme.zIndex.dropdown,
+    },
+}); };
 //# sourceMappingURL=Dropdown.js.map
 
 /***/ }),
@@ -1409,96 +1471,34 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var react_2 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
-var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/elements/Portal/index.js");
 var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/elements/Tooltip/index.js");
-var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/elements/Transition/FadeTransition.js");
+var Dropdown_1 = __webpack_require__(/*! ./Dropdown */ "../lib/components/elements/Dropdown/Dropdown.js");
 var DropdownItem_1 = __webpack_require__(/*! ./DropdownItem */ "../lib/components/elements/Dropdown/DropdownItem.js");
-var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/elements/Dropdown/DropdownMenu.js");
 function DropdownButton(props) {
     var items = props.items, popperProps = props.popperProps, rest = __rest(props, ["items", "popperProps"]);
-    var theme = styles_1.useTheme();
-    var meuIdRef = react_1.default.useRef(null);
-    react_1.default.useEffect(function () {
-        meuIdRef.current = "menu-" + string_1.randomStr();
-    }, []);
     var buttonRef = react_1.default.useRef(null);
-    var menuRef = react_1.default.useRef(null);
     var _a = react_1.default.useState(false), isOpen = _a[0], setOpen = _a[1];
-    var handleBlur = function () {
-        setTimeout(function () {
-            var currentFocus = menuRef.current.ownerDocument.activeElement;
-            if (!menuRef.current.contains(currentFocus)) {
-                setOpen(false);
-            }
-        });
-    };
-    var handleKeyDown = function (event) {
-        if (event.key === 'Escape' || event.key === 'Tab') {
-            event.preventDefault();
-            setOpen(false);
-        }
-    };
     var handleButtonClick = function () { return setOpen(true); };
-    var handleAfterClick = function () { return setOpen(false); };
-    var isFirstRun = react_1.default.useRef(true);
-    react_1.default.useEffect(function () {
-        // Skip on first render
-        if (isFirstRun.current) {
-            isFirstRun.current = false;
-            return;
-        }
-        if (isOpen) {
-            // When opened, focus the first menu item
-            setTimeout(function () {
-                // Execute delayed so the popper position has finished its calculation
-                // and focus does not change scrollbar position
-                if (menuRef.current) {
-                    var firstItem = menuRef.current.firstElementChild;
-                    firstItem.focus();
-                }
-            });
-        }
-        else {
-            // When closed, focus the button
-            buttonRef.current.focus();
-        }
-    }, [isOpen]);
-    return (react_1.default.createElement(react_popper_1.Manager, null,
-        react_1.default.createElement(react_popper_1.Reference, null, function (refProps) { return (react_1.default.createElement(Button_1.Button, __assign({ innerRef: react_2.composeRefs(refProps.ref, buttonRef), onClick: handleButtonClick, "aria-haspopup": 'true', "aria-expanded": isOpen ? true : undefined, "aria-controls": isOpen ? meuIdRef.current : undefined }, rest))); }),
-        react_1.default.createElement(FadeTransition_1.FadeTransition, { in: isOpen }, function (_a) {
-            var className = _a.className;
-            return isOpen && (react_1.default.createElement(Portal_1.Portal, null,
-                react_1.default.createElement(react_popper_1.Popper, __assign({ modifiers: {
-                        preventOverflow: {
-                            boundariesElement: 'window',
-                        },
-                    } }, popperProps), function (popper) { return (react_1.default.createElement("div", { ref: popper.ref, className: className, style: __assign({}, popper.style, { zIndex: theme.zIndex.dropdown }) },
-                    react_1.default.createElement(DropdownMenu_1.DropdownMenu, { id: meuIdRef.current, innerRef: menuRef, onBlur: handleBlur, onKeyDown: handleKeyDown }, items.map(function (item, idx) {
-                        return react_1.default.createElement(DropdownButtonItem, __assign({ key: idx, onAfterClick: handleAfterClick }, item));
-                    })))); })));
-        })));
+    var handleClose = function () {
+        setOpen(false);
+        buttonRef.current.focus();
+    };
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(Button_1.Button, __assign({ innerRef: buttonRef, onClick: handleButtonClick }, rest)),
+        react_1.default.createElement(Dropdown_1.Dropdown, { anchorRef: buttonRef, open: isOpen, onClose: handleClose }, items.map(function (item, idx) {
+            return react_1.default.createElement(DropdownButtonItem, __assign({ key: idx }, item));
+        }))));
 }
 exports.DropdownButton = DropdownButton;
 function DropdownButtonItem(props) {
-    var content = props.content, onAfterClick = props.onAfterClick, autoClose = props.autoClose, onClick = props.onClick, tooltip = props.tooltip, other = __rest(props, ["content", "onAfterClick", "autoClose", "onClick", "tooltip"]);
-    var handleClick = function (e) {
-        if (autoClose) {
-            onAfterClick();
-        }
-        onClick && onClick(e);
-    };
+    var content = props.content, tooltip = props.tooltip, rest = __rest(props, ["content", "tooltip"]);
     return (react_1.default.createElement(Tooltip_1.Tooltip, { text: tooltip },
-        react_1.default.createElement(DropdownItem_1.DropdownItem, __assign({}, other, { onClick: handleClick }), content)));
+        react_1.default.createElement(DropdownItem_1.DropdownItem, __assign({}, rest), content)));
 }
 exports.DropdownButtonItem = DropdownButtonItem;
 DropdownButtonItem.defaultProps = {
     content: '',
-    autoClose: true,
 };
 //# sourceMappingURL=DropdownButton.js.map
 
@@ -1580,49 +1580,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var react_2 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
 function DropdownItem(props) {
-    var type = props.type, disabled = props.disabled, children = props.children, onClick = props.onClick, innerRef = props.innerRef, rest = __rest(props, ["type", "disabled", "children", "onClick", "innerRef"]);
+    var type = props.type, disabled = props.disabled, children = props.children, onClick = props.onClick, Component = props.component, rest = __rest(props, ["type", "disabled", "children", "onClick", "component"]);
     var _a = styles_1.useStyles(styles), classes = _a.classes, css = _a.css;
-    var ref = react_1.default.useRef(null);
     var handleKeyDown = function (event) {
-        if (event.key === 'Enter') {
-            ref.current.click();
+        if (event.key === 'Enter' || event.key === ' ') {
+            var elem = event.target;
+            elem.click();
         }
     };
     var classNames = css(classes.item, type === 'danger' && classes.danger, disabled && classes.disabled);
-    return (react_1.default.createElement("li", __assign({ ref: react_2.composeRefs(innerRef, ref), className: classNames, onClick: !disabled ? onClick : undefined, onKeyDown: handleKeyDown, role: 'menuitem', "aria-disabled": disabled ? true : undefined }, rest), children));
+    return (react_1.default.createElement(Component, __assign({ className: classNames, onClick: !disabled ? onClick : undefined, onKeyDown: handleKeyDown, role: 'menuitem', "aria-disabled": disabled ? true : undefined }, rest), children));
 }
 exports.DropdownItem = DropdownItem;
 DropdownItem.defaultProps = {
-    disabled: false,
+    component: 'li',
     type: 'normal',
+    disabled: false,
 };
 var styles = function (theme) { return ({
-    item: {
-        margin: 0,
-        cursor: 'pointer',
-        padding: '0.5rem 1rem',
-        fontWeight: 'bolder',
-        outline: 'none',
-        fontSize: theme.typography.sizes.button,
-        transition: 'all .2s ease',
-        '&:first-of-type a': {
-            borderTopLeftRadius: theme.radius.popper,
-            borderTopRightRadius: theme.radius.popper,
-        },
-        '&:last-of-type a': {
-            borderBottomLeftRadius: theme.radius.popper,
-            borderBottomRightRadius: theme.radius.popper,
-        },
-        '&:hover': {
+    item: __assign({}, theme.typography.variant('main'), { margin: 0, textDecoration: 'none', cursor: 'pointer', padding: '0.5rem 1rem', fontWeight: 'bold', outline: 'none', fontSize: theme.typography.sizes.button, transition: 'all .2s ease', display: 'block', '&:hover': {
             background: theme.pallete.surface.background,
-        },
-        '&:focus': {
+        }, '&:focus': {
             boxShadow: styles_1.focusBoxShadow(theme, 'primary', 'inset'),
             borderRadius: 4,
-        },
-    },
+        } }),
     disabled: {
         color: theme.pallete.text.disabled,
         '&:hover': {
@@ -1683,12 +1665,12 @@ var useRovingTabIndex_1 = __webpack_require__(/*! ../../../hooks/useRovingTabInd
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var react_2 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
 function DropdownMenu(props) {
-    var innerRef = props.innerRef, rest = __rest(props, ["innerRef"]);
-    var classes = styles_1.useStyles(exports.styles).classes;
+    var innerRef = props.innerRef, style = props.style, rest = __rest(props, ["innerRef", "style"]);
+    var _a = styles_1.useStyles(exports.styles), css = _a.css, classes = _a.classes;
     var rootRef = useRovingTabIndex_1.useRovingTabIndex({
         getItems: function (root) { return Array.from(root.querySelectorAll('[role="menuitem"]')); },
     });
-    return react_1.default.createElement("ul", __assign({ ref: react_2.composeRefs(innerRef, rootRef), className: classes.root, role: 'menu' }, rest));
+    return react_1.default.createElement("ul", __assign({ ref: react_2.composeRefs(innerRef, rootRef), className: css(classes.root, style), role: 'menu' }, rest));
 }
 exports.DropdownMenu = DropdownMenu;
 exports.styles = function (theme) { return ({
@@ -9723,22 +9705,13 @@ Link.defaultProps = {
     component: 'a',
 };
 exports.createStyles = function (theme) { return ({
-    link: {
-        cursor: 'pointer',
-        color: theme.pallete.primary.main,
-        textDecoration: 'underline',
-        fontWeight: 'bold',
-        outline: 'none',
-        transition: 'box-shadow .2s ease',
-        '&:hover': {
+    link: __assign({}, theme.typography.variant('link'), { cursor: 'pointer', outline: 'none', transition: 'box-shadow .2s ease', '&:hover': {
             textDecoration: 'none',
-        },
-        '&:focus': {
+        }, '&:focus': {
             textDecoration: 'none',
             borderRadius: theme.radius.input,
             boxShadow: styles_1.focusBoxShadow(theme),
-        },
-    },
+        } }),
 }); };
 //# sourceMappingURL=Link.js.map
 
@@ -13293,12 +13266,7 @@ var createTheme_1 = __webpack_require__(/*! ../../../../styles/theme/createTheme
 function Text(props) {
     var tag = props.tag, color = props.color, size = props.size, weight = props.weight, fontStyle = props.fontStyle, style = props.style, rest = __rest(props, ["tag", "color", "size", "weight", "fontStyle", "style"]);
     var _a = styles_1.useStyles(function (theme) { return ({
-        root: {
-            color: color && createTheme_1.getTextColor(theme, color),
-            fontSize: size && size + 'rem',
-            fontWeight: weight,
-            fontStyle: fontStyle,
-        },
+        root: __assign({}, theme.typography.variant('main'), { color: color && createTheme_1.getTextColor(theme, color), fontSize: size && size + 'rem', fontWeight: weight, fontStyle: fontStyle }),
     }); }), classes = _a.classes, css = _a.css;
     return react_1.default.createElement(tag, __assign({ className: css(classes[tag], classes.root, style) }, rest), props.children);
 }
@@ -14004,12 +13972,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var RadioButton_1 = __webpack_require__(/*! ../../input/RadioButton/RadioButton */ "../lib/components/form/input/RadioButton/RadioButton.js");
+var Radio_1 = __webpack_require__(/*! ../../input/Radio/Radio */ "../lib/components/form/input/Radio/Radio.js");
 var RadioField = /** @class */ (function (_super) {
     __extends(RadioField, _super);
     function RadioField() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderRadio = function (props) { return (react_1.default.createElement(RadioButton_1.RadioButton, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
+        _this.renderRadio = function (props) { return (react_1.default.createElement(Radio_1.Radio, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
         return _this;
     }
     RadioField.prototype.render = function () {
@@ -15058,7 +15026,7 @@ __export(__webpack_require__(/*! ./input/DateInput */ "../lib/components/form/in
 __export(__webpack_require__(/*! ./input/Input */ "../lib/components/form/input/Input/index.js"));
 __export(__webpack_require__(/*! ./input/MaskedInput */ "../lib/components/form/input/MaskedInput/index.js"));
 __export(__webpack_require__(/*! ./input/Select */ "../lib/components/form/input/Select/index.js"));
-__export(__webpack_require__(/*! ./input/RadioButton */ "../lib/components/form/input/RadioButton/index.js"));
+__export(__webpack_require__(/*! ./input/Radio */ "../lib/components/form/input/Radio/index.js"));
 __export(__webpack_require__(/*! ./input/Switch */ "../lib/components/form/input/Switch/index.js"));
 __export(__webpack_require__(/*! ./input/TextArea */ "../lib/components/form/input/TextArea/index.js"));
 __export(__webpack_require__(/*! ./input/TextInput */ "../lib/components/form/input/TextInput/index.js"));
@@ -15584,10 +15552,10 @@ exports.MaskedInput = MaskedInput_1.MaskedInput;
 
 /***/ }),
 
-/***/ "../lib/components/form/input/RadioButton/RadioButton.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/input/RadioButton/RadioButton.js ***!
-  \***************************************************************/
+/***/ "../lib/components/form/input/Radio/Radio.js":
+/*!***************************************************!*\
+  !*** ../lib/components/form/input/Radio/Radio.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15620,7 +15588,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/form/input/Input/Input.js");
-function RadioButton(props) {
+function Radio(props) {
     var label = props.label, rest = __rest(props, ["label"]);
     var classes = styles_1.useStyles(exports.createStyles).classes;
     var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
@@ -15629,7 +15597,7 @@ function RadioButton(props) {
         react_1.default.createElement("span", { className: classes.radio }),
         react_1.default.createElement("span", { className: classes.label }, label)));
 }
-exports.RadioButton = RadioButton;
+exports.Radio = Radio;
 exports.createStyles = function (theme) { return ({
     wrapper: {
         cursor: 'pointer',
@@ -15696,22 +15664,22 @@ exports.createInputStyles = function (theme, classes) {
             _a),
     });
 };
-//# sourceMappingURL=RadioButton.js.map
+//# sourceMappingURL=Radio.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/input/RadioButton/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/input/RadioButton/index.js ***!
-  \*********************************************************/
+/***/ "../lib/components/form/input/Radio/index.js":
+/*!***************************************************!*\
+  !*** ../lib/components/form/input/Radio/index.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var RadioButton_1 = __webpack_require__(/*! ./RadioButton */ "../lib/components/form/input/RadioButton/RadioButton.js");
-exports.RadioButton = RadioButton_1.RadioButton;
+var Radio_1 = __webpack_require__(/*! ./Radio */ "../lib/components/form/input/Radio/Radio.js");
+exports.Radio = Radio_1.Radio;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -17202,6 +17170,106 @@ __export(__webpack_require__(/*! ./form */ "../lib/components/form/index.js"));
 
 /***/ }),
 
+/***/ "../lib/hooks/usePopper.js":
+/*!*********************************!*\
+  !*** ../lib/hooks/usePopper.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var popper_js_1 = __importDefault(__webpack_require__(/*! popper.js */ "../node_modules/popper.js/dist/esm/popper.js"));
+var react_1 = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+var defaultOpts = {
+    placement: 'bottom',
+    eventsEnabled: true,
+    positionFixed: false,
+};
+var initialStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    opacity: 0,
+    pointerEvents: 'none',
+};
+var initialArrowStyle = {};
+var noop = function () { return null; };
+function usePopper(inputOpts, inputs) {
+    if (inputs === void 0) { inputs = []; }
+    var opts = __assign({}, defaultOpts, inputOpts);
+    var anchorRef = opts.anchorRef, popperRef = opts.popperRef, arrowRef = opts.arrowRef;
+    var _a = react_1.useState(function () { return ({
+        data: undefined,
+        placement: undefined,
+    }); }), state = _a[0], setState = _a[1];
+    var popperInstance = react_1.useRef();
+    var callbackFn = react_1.useCallback(function (data) {
+        var placement = data.placement;
+        setState({ data: data, placement: placement });
+        return data;
+    }, []);
+    react_1.useEffect(function () {
+        // A placement difference in state means popper determined a new placement
+        // apart from the opts value. By the time the popper element is rendered with
+        // the new position Popper has already measured it, if the place change triggers
+        // a size change it will result in a misaligned popper. So we schedule an update to be sure.
+        if (popperInstance.current) {
+            popperInstance.current.scheduleUpdate();
+        }
+    }, [state.placement]);
+    react_1.useEffect(function () {
+        if (anchorRef.current && popperRef.current) {
+            popperInstance.current = new popper_js_1.default(anchorRef.current, popperRef.current, {
+                placement: opts.placement,
+                eventsEnabled: opts.eventsEnabled,
+                positionFixed: opts.positionFixed,
+                modifiers: __assign({}, opts.modifiers, { arrow: __assign({}, (opts.modifiers && opts.modifiers.arrow), { enabled: !!(arrowRef && arrowRef.current), element: arrowRef && arrowRef.current }), applyStyle: { enabled: false }, updateStateModifier: {
+                        enabled: true,
+                        order: 900,
+                        fn: callbackFn,
+                    } }),
+            });
+        }
+        return function () {
+            if (popperInstance.current) {
+                popperInstance.current.destroy();
+                popperInstance.current = null;
+            }
+        };
+    }, inputs);
+    var style = !popperRef.current || !state.data
+        ? initialStyle
+        : __assign({ position: state.data.offsets.popper.position }, state.data.styles);
+    var arrowStyle = !arrowRef || arrowRef.current || !state.data ? initialArrowStyle : state.data.arrowStyles;
+    return {
+        style: style,
+        placement: state.placement,
+        outOfBoundaries: state.data && state.data.hide,
+        scheduleUpdate: popperInstance.current ? popperInstance.current.scheduleUpdate : noop,
+        arrowStyle: arrowStyle,
+    };
+}
+exports.default = usePopper;
+//# sourceMappingURL=usePopper.js.map
+
+/***/ }),
+
 /***/ "../lib/hooks/useRouter.js":
 /*!*********************************!*\
   !*** ../lib/hooks/useRouter.js ***!
@@ -17813,16 +17881,6 @@ exports.createGlobalStyles = function (theme) { return ({
         margin: '0',
         lineHeight: 1.5,
     },
-    a: {
-        cursor: 'pointer',
-        color: theme.pallete.primary.main,
-        textDecoration: 'underline',
-        fontWeight: 'bold',
-        outline: 'none',
-        '&:hover': {
-            textDecoration: 'none',
-        },
-    },
     mark: {
         background: theme.pallete.highlight,
     },
@@ -18179,7 +18237,7 @@ var zIndex_1 = __webpack_require__(/*! ./zIndex */ "../lib/styles/theme/zIndex.j
 exports.createTheme = function (config) {
     if (config === void 0) { config = {}; }
     var pallete = createPallete_1.createPallete(config.pallete);
-    var typography = createTypography_1.createTypography(config.typography);
+    var typography = createTypography_1.createTypography(pallete, config.typography);
     return {
         pallete: pallete,
         typography: typography,
@@ -18229,6 +18287,17 @@ exports.focusBoxShadow = function (theme, color, type) {
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var util_1 = __webpack_require__(/*! ../../util */ "../lib/util/index.js");
 exports.defaultTypographyConfig = {
@@ -18240,8 +18309,27 @@ exports.defaultTypographyConfig = {
         button: '0.875rem',
     },
 };
-exports.createTypography = function (customConfig) {
-    return util_1.merge({}, exports.defaultTypographyConfig, customConfig);
+exports.createTypography = function (pallete, customConfig) {
+    var config = util_1.merge({}, exports.defaultTypographyConfig, customConfig);
+    var base = {
+        fontFamily: config.fontFamily,
+        fontSize: config.sizes.text,
+        lineHeight: config.lineHeight,
+        color: pallete.text.main,
+    };
+    var variantMap = {
+        main: __assign({}, base),
+        secondary: __assign({}, base, { color: pallete.text.secondary }),
+        disabled: __assign({}, base, { color: pallete.text.disabled }),
+        h1: __assign({}, base, { fontWeight: 'bold', fontSize: '1.5rem' }),
+        h2: __assign({}, base, { fontWeight: 'bold', fontSize: '1.25rem' }),
+        h3: __assign({}, base, { fontWeight: 'bold', fontSize: '1rem' }),
+        h4: __assign({}, base, { fontWeight: 'bold', fontSize: '0.875rem' }),
+        h5: __assign({}, base, { fontWeight: 'bold', fontSize: '0.8125rem' }),
+        h6: __assign({}, base, { fontWeight: 'bold', fontSize: '0.75rem' }),
+        link: __assign({}, base, { color: pallete.primary.main, fontWeight: 'bold', textDecoration: 'underline' }),
+    };
+    return __assign({}, config, { variant: function (variant) { return variantMap[variant]; } });
 };
 //# sourceMappingURL=createTypography.js.map
 
@@ -26430,43 +26518,28 @@ __webpack_require__.r(__webpack_exports__);
 
 // istanbul ignore next
 var statusDiv = typeof document === 'undefined' ? null : document.getElementById('a11y-status-message');
-var statuses = [];
+var cleanupTimerID;
 /**
  * @param {String} status the status message
  */
 
 function setStatus(status) {
-  var isSameAsLast = statuses[statuses.length - 1] === status;
+  var div = getStatusDiv();
 
-  if (isSameAsLast) {
-    statuses = [].concat(statuses, [status]);
-  } else {
-    statuses = [status];
+  if (!status) {
+    return;
   }
 
-  var div = getStatusDiv(); // Remove previous children
-
-  while (div.lastChild) {
-    div.removeChild(div.firstChild);
+  if (cleanupTimerID) {
+    clearTimeout(cleanupTimerID);
+    cleanupTimerID = null;
   }
 
-  statuses.filter(Boolean).forEach(function (statusItem, index) {
-    div.appendChild(getStatusChildDiv(statusItem, index));
-  });
-}
-/**
- * @param {String} status the status message
- * @param {Number} index the index
- * @return {HTMLElement} the child node
- */
-
-
-function getStatusChildDiv(status, index) {
-  var display = index === statuses.length - 1 ? 'block' : 'none';
-  var childDiv = document.createElement('div');
-  childDiv.style.display = display;
-  childDiv.textContent = status;
-  return childDiv;
+  div.textContent = status;
+  cleanupTimerID = setTimeout(function () {
+    div.textContent = '';
+    cleanupTimerID = null;
+  }, 500);
 }
 /**
  * Get the status node or create it if it does not already exist
@@ -27128,7 +27201,9 @@ function (_Component) {
       Escape: function Escape(event) {
         event.preventDefault();
         this.reset({
-          type: keyDownEscape
+          type: keyDownEscape,
+          selectedItem: null,
+          inputValue: ''
         });
       }
     };
@@ -72226,13 +72301,18 @@ var BoldLogo = function BoldLogo(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page", function() { return Page; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return createStyles; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages */ "./pages.ts");
-/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "../node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/components/elements/Link/Link */ "../lib/components/elements/Link/Link.js");
+/* harmony import */ var _lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
+
 
 
 
@@ -72240,41 +72320,41 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
 function Page(props) {
   var children = props.children;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_1__["useStyles"])(createStyles),
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
   var route = props.router.route;
-  var parent = _pages__WEBPACK_IMPORTED_MODULE_2__["default"].find(function (page) {
+  var parent = _pages__WEBPACK_IMPORTED_MODULE_4__["default"].find(function (page) {
     return page.children && page.children.map(function (c) {
       return c.href;
     }).includes(route);
   });
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.wrapper,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_3__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
-    className: classes.main,
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_5__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
-  }, parent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
+    className: classes.main,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
+    },
+    __self: this
+  }, parent && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Text"], {
     id: "page-parent-title",
     weight: "bold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, parent.title), children)));
@@ -72292,6 +72372,9 @@ var createStyles = function createStyles(theme) {
         maxWidth: 960,
         marginBottom: '2rem'
       },
+      '& > p a, & > ul a': Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, Object(_lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__["createStyles"])(theme).link, {
+        fontSize: '1rem'
+      }),
       '& > p': {
         fontSize: '1rem',
         maxWidth: 800,
@@ -72962,8 +73045,8 @@ __webpack_require__.r(__webpack_exports__);
     href: '/components/date-picker',
     title: 'Date Picker'
   }, {
-    href: '/components/drop-menu',
-    title: 'Drop Menu'
+    href: '/components/dropdown',
+    title: 'Dropdown'
   }, {
     href: '/components/file-uploader',
     title: 'File Uploader'
