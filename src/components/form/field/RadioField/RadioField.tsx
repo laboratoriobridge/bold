@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { BaseFieldProps, extractInputProps, Field, RenderProps } from '../../finalForm/Field'
-import { Radio, RadioProps } from '../../input/Radio/Radio'
+import { Radio, RadioProps } from '../../input/Radio'
 
 export interface RadioFieldProps extends BaseFieldProps<RadioProps> {}
 
