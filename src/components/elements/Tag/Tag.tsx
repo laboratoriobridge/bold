@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 import { Icon, Icons } from '../Icon'
 
@@ -9,7 +8,7 @@ export type TagType = 'normal' | 'danger' | 'info' | 'success' | 'alert'
 
 export interface TagProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
   type?: TagType
-  style?: Interpolation
+  style?: ExternalStyles
   icon?: Icons
   removable?: boolean
   onRemove?(): void

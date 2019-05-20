@@ -68,6 +68,10 @@ export const createStyles = (theme: Theme, { items, disabled }: SelectMultiInput
       marginRight: '0.25rem',
     } as CSSProperties,
     input: {
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.sizes.text,
+      color: theme.pallete.text.main,
+      lineHeight: '1rem',
       background: theme.pallete.surface.main,
       padding: 0,
       flex: 1,

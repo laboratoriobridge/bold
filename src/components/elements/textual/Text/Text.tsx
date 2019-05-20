@@ -1,27 +1,28 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { TextColor, useStyles } from '../../../../styles'
+import { ExternalStyles, TextColor, useStyles } from '../../../../styles'
 import { getTextColor } from '../../../../styles/theme/createTheme'
+import { Omit } from '../../../../util'
 
 export type Weight = 'normal' | 'bold'
 export type TextTag = 'span' | 'p'
 export type FontStyle = 'normal' | 'italic'
 
-export interface TextProps {
+export interface TextProps extends Omit<React.HTMLAttributes<HTMLElement>, 'style'> {
   color?: TextColor
   size?: number
   weight?: Weight
   tag?: TextTag
   fontStyle?: FontStyle
-  style?: Interpolation
+  style?: ExternalStyles
   children: React.ReactNode
 }
 
 export function Text(props: TextProps) {
-  const { tag = 'span', color, size, weight, fontStyle, style } = props
+  const { tag, color, size, weight, fontStyle, style, ...rest } = props
   const { classes, css } = useStyles(theme => ({
     root: {
+      ...theme.typography.variant('main'),
       color: color && getTextColor(theme, color),
       fontSize: size && size + 'rem',
       fontWeight: weight,
@@ -33,7 +34,12 @@ export function Text(props: TextProps) {
     tag,
     {
       className: css(classes[tag], classes.root, style),
+      ...rest,
     },
     props.children
   )
 }
+
+Text.defaultProps = {
+  tag: 'span',
+} as Partial<TextProps>

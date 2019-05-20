@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Button, Heading, HFlow, Icon, Modal, ModalBody, ModalFooter, Text } from '../../../../lib'
 
-function ModalDemo() {
+function DangerDemo() {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleButtonClick = () => setIsOpen(true)
@@ -10,28 +10,32 @@ function ModalDemo() {
 
   return (
     <>
-      <Button kind='danger' onClick={handleButtonClick}>
+      <Button kind='primary' onClick={handleButtonClick}>
         Open modal
       </Button>
 
       <Modal size='small' onClose={handleModalClose} open={isOpen}>
         <ModalBody>
-          <HFlow>
+          <HFlow alignItems='center'>
             <Icon icon='exclamationTriangleOutline' style={{ marginRight: '0.5rem' }} size={3} fill='danger' />
-            <Heading level={3}>Danger action</Heading>
+            <div>
+              <Heading level={1}>Danger action</Heading>
+              <Heading level={5}>Subtitle</Heading>
+            </div>
           </HFlow>
+          <br />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
-            facilisis odio, vel hendrerit erat neque eu nisl. Donec urna felis, pharetra nec urna a, efficitur lobortis
-            urna. Mauris varius purus vehicula lorem mollis, a cursus enim malesuada. Integer at congue enim.
+            Used to validate actions that have a critical effect on the system and that can't be undone, such as
+            "deleting all items". Use labels that reflect the action that will occur. Avoid using labels like "OK" and
+            "Cancel".
           </p>
         </ModalBody>
         <ModalFooter>
           <HFlow justifyContent='flex-end'>
-            <Button onClick={console.log}>Cancel</Button>
-            <Button kind='danger' onClick={console.log}>
+            <Button onClick={handleModalClose}>Discard</Button>
+            <Button kind='danger' onClick={handleModalClose}>
               <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-              <Text>Launch</Text>
+              <Text>Delete all</Text>
             </Button>
           </HFlow>
         </ModalFooter>
@@ -40,4 +44,4 @@ function ModalDemo() {
   )
 }
 
-export default ModalDemo
+export default DangerDemo

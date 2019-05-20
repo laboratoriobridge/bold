@@ -1,15 +1,14 @@
 import { PositionProperty } from 'csstype'
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
 import { useScrollPosition } from '../../../hooks/useScrollPosition'
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface StickyContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   top?: number
   left?: number
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function StickyContainer(props: StickyContainerProps) {

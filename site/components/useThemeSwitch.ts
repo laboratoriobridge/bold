@@ -1,20 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { colors, createTheme, invertColorScale, Theme } from '../../lib'
-
-export const lightTheme = createTheme({
-  pallete: {
-    grayScale: colors.gray,
-    primaryScale: colors.blue,
-  },
-})
-
-export const darkTheme = createTheme({
-  pallete: {
-    grayScale: invertColorScale(colors.gray),
-    primaryScale: invertColorScale(colors.blue),
-  },
-})
+import { darkTheme, lightTheme, Theme } from '../../lib'
 
 export const useThemeSwitch = (): [Theme, () => Theme] => {
   const [currentTheme, setCurrentTheme] = useState<Theme>(lightTheme)

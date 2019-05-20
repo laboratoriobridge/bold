@@ -1,13 +1,12 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties, useEffect, useRef } from 'react'
 
-import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../../../styles'
+import { ClassNames, ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util'
 import { Input, InputProps } from '../Input/Input'
 
 export interface CheckboxProps extends Omit<InputProps, 'style'> {
   label?: React.ReactNode
-  style?: Interpolation
+  style?: ExternalStyles
   indeterminate?: boolean
 }
 

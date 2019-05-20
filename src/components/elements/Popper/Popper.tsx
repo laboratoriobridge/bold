@@ -1,15 +1,14 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 import { Manager, Reference } from 'react-popper'
 
-import { useStyles } from '../../../styles'
+import { ExternalStyles, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 import { PopperContent, PopperContentProps } from './PopperContent'
 
 export interface PopperProps extends Omit<PopperContentProps, 'show'> {
   closeOnOutsideClick?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
   block?: boolean
   initialVisible?: boolean
   renderTarget(controller: PopperController): React.ReactNode

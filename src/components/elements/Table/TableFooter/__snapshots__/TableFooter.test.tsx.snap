@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-.emotion-16 {
+.emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,7 +28,7 @@ exports[`renders correctly 1`] = `
   padding-left: 1rem;
 }
 
-.emotion-15 {
+.emotion-16 {
   border-left: 1px solid #DCDCE0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -77,6 +77,11 @@ exports[`renders correctly 1`] = `
 
 .emotion-2:empty {
   display: none;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
 }
 
 .emotion-5 {
@@ -142,7 +147,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.125rem;
 }
 
-.emotion-14 {
+.emotion-15 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -209,7 +214,7 @@ exports[`renders correctly 1`] = `
   position: relative;
 }
 
-.emotion-13 {
+.emotion-14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -237,7 +242,7 @@ exports[`renders correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-13 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -248,16 +253,16 @@ exports[`renders correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-13:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-13:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-13:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
@@ -266,6 +271,8 @@ exports[`renders correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -335,7 +342,7 @@ exports[`renders correctly 1`] = `
 
 <div>
   <div
-    class="emotion-16"
+    class="emotion-17"
   >
     <span
       class="emotion-0"
@@ -347,7 +354,7 @@ exports[`renders correctly 1`] = `
       </span>
     </span>
     <div
-      class="emotion-15"
+      class="emotion-16"
     >
       <div
         class="emotion-7"
@@ -392,11 +399,11 @@ exports[`renders correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-14"
+        class="emotion-15"
       >
         <button
           class="emotion-9"
-          title="Página anterior"
+          title="Previous page"
           type="button"
         >
           <span>
@@ -419,17 +426,21 @@ exports[`renders correctly 1`] = `
         >
           <input
             class="emotion-10"
+            title="Current page"
             type="text"
             value="2"
           />
         </div>
-        <span>
-          de 
+        <span
+          class="emotion-1"
+        >
+          of
+           
           10
         </span>
         <button
-          class="emotion-13"
-          title="Próxima página"
+          class="emotion-14"
+          title="Next page"
           type="button"
         >
           <span>

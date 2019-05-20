@@ -1,28 +1,27 @@
-import { mount, render } from 'enzyme'
 import React from 'react'
+import { fireEvent, render } from 'react-testing-library'
 
 import { withForm } from '../../../../test/index'
 
 import { NumberField, parse } from './NumberField'
 
-describe('NumberField', () => {
-    describe('parse', () => {
-        it('só deve aceitar números', () => {
-            expect(parse('abcdefgh999!@.a')).toEqual('999')
-        })
-    })
+describe('parse', () => {
+  it('should accept numbers only', () => {
+    expect(parse('abcdefgh999!@.a')).toEqual('999')
+  })
+})
 
-    describe('Field', () => {
-        it('render', () => {
-            const wrapper = render(withForm(<NumberField name='number' />))
-            expect(wrapper).toMatchSnapshot()
-        })
+describe('Field', () => {
+  it('should render correctly', () => {
+    const { container } = render(withForm(<NumberField name='number' />))
+    expect(container).toMatchSnapshot()
+  })
 
-        it('deve aceitar somente números', () => {
-            const wrapper = mount(withForm(<NumberField name='number' />))
+  it('should accept only numbers', () => {
+    const { container } = render(withForm(<NumberField name='number' />))
+    const input = container.querySelector('input')
 
-            wrapper.find(NumberField).find('input').simulate('change', { target: { value: '\'\"@#$*/+./ªºabc123a!' } })
-            expect(wrapper.find(NumberField).find('input').prop('value')).toEqual('123')
-        })
-    })
+    fireEvent.change(input, { target: { value: '\'"@#$*/+./ªºabc123a!' } })
+    expect(input.getAttribute('value')).toEqual('123')
+  })
 })

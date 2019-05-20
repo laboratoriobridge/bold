@@ -2,11 +2,16 @@
 
 exports[`render should render all components from state 1`] = `
 <div>
-  <span>
-    1
-  </span>
-  <span>
-    2
-  </span>
+  <div />
+</div>
+`;
+
+exports[`render should render all components from state 2`] = `
+<div>
+  <div>
+    <div>
+      First
+    </div>
+  </div>
 </div>
 `;

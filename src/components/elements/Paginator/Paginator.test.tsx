@@ -2,6 +2,8 @@ import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
 import { Paginator } from './Paginator'
+import ptBr from '../../../locale/locales/pt-BR'
+import { LocaleContext } from '../../../locale'
 
 it('should render correctly', () => {
   expect(render(<Paginator page={5} total={10} />).container).toMatchSnapshot()
@@ -47,4 +49,16 @@ it('should call onChange when Enter is pressed', () => {
 
   expect(handleChange).toHaveBeenLastCalledWith(7)
   expect(handleChange).toHaveBeenCalledTimes(1)
+})
+
+it('should allow message customization via locale context', () => {
+  const { container, queryByText } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <Paginator page={5} total={10} />
+    </LocaleContext.Provider>
+  )
+  expect(container.querySelectorAll('button')[0].getAttribute('title')).toEqual(ptBr.paginator.previousPage)
+  expect(container.querySelector('input').getAttribute('title')).toEqual(ptBr.paginator.currentPage)
+  expect(queryByText(`${ptBr.paginator.of} 10`)).toBeTruthy()
+  expect(container.querySelectorAll('button')[1].getAttribute('title')).toEqual(ptBr.paginator.nextPage)
 })

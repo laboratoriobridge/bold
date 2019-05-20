@@ -13,7 +13,7 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'bridge-react',
+    library: 'bold',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -50,9 +50,8 @@ const config = {
       new UglifyJsPlugin({
         sourceMap: true,
         uglifyOptions: {
-          // Keep function original names to preserve React component display names
+          warnings: false,
           compress: {
-            warnings: false,
             keep_fnames: true,
           },
           mangle: {

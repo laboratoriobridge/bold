@@ -30,7 +30,7 @@ export const IconLibrary = () => {
             <div className={classes.iconBox}>
               <Icon icon={key} />
             </div>
-            <Text style={{ wordBreak: 'break-word' }}>{key}</Text>
+            <Text style={{ wordWrap: 'break-word' }}>{key}</Text>
           </Cell>
         ))}
       </Grid>
@@ -54,7 +54,7 @@ const createStyles = (theme: Theme) => ({
     border: `1px solid ${theme.pallete.divider}`,
   } as React.CSSProperties,
   cell: {
-    flexBasis: 100,
+    width: 100,
     textAlign: 'center',
     fontSize: theme.typography.sizes.text,
   } as React.CSSProperties,

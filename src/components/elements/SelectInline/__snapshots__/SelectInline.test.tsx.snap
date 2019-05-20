@@ -64,6 +64,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-5 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -139,6 +144,8 @@ exports[`SelectInline should render correctly when closed 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -494,6 +501,11 @@ exports[`SelectInline should render correctly when opened 1`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-5 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -560,6 +572,8 @@ exports[`SelectInline should render correctly when opened 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -926,6 +940,11 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   background-color: rgba(45,52,59,0.1);
 }
 
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
 .emotion-5 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -1001,6 +1020,8 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;

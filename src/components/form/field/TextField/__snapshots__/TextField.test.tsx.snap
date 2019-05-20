@@ -10,6 +10,8 @@ exports[`should be rendered correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -74,20 +76,22 @@ exports[`should be rendered correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  data-name="test"
->
+<div>
   <div
-    class="emotion-1"
+    data-name="test"
   >
-    <input
-      class="emotion-0"
-      maxlength="2"
-      name="test"
-      placeholder="Test"
-      type="text"
-      value=""
-    />
+    <div
+      class="emotion-1"
+    >
+      <input
+        class="emotion-0"
+        maxlength="2"
+        name="test"
+        placeholder="Test"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;
@@ -102,6 +106,8 @@ exports[`should not include field props on rendered HTML 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -178,32 +184,35 @@ exports[`should not include field props on rendered HTML 1`] = `
   line-height: 20px;
 }
 
-<div
-  data-name="test"
->
-  <label
-    class="emotion-1"
-    for="test"
-  >
-    Test
-    <span
-      class="emotion-0"
-      title="Campo obrigatório"
-    >
-      *
-    </span>
-  </label>
+<div>
   <div
-    class="emotion-3"
+    data-name="test"
   >
-    <input
-      aria-label="Test"
-      class="emotion-2"
-      id="test"
-      name="test"
-      required=""
-      type="text"
-    />
+    <label
+      class="emotion-1"
+      for="test"
+    >
+      Test
+      <span
+        class="emotion-0"
+        title="Required field"
+      >
+        *
+      </span>
+    </label>
+    <div
+      class="emotion-3"
+    >
+      <input
+        aria-label="Test"
+        class="emotion-2"
+        id="test"
+        name="test"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

@@ -9,7 +9,7 @@ import {
 
 import { Meta } from '../../../../metaPath/metaPath'
 import { Omit } from '../../../../util'
-import { FieldWrapper, FieldWrapperProps } from '../../FieldWrapper'
+import { FormControl, FormControlProps } from '../../../elements/FormControl'
 
 import { getFieldError } from './util'
 
@@ -28,7 +28,7 @@ type PickedFinalFieldProps =
   | 'value'
 
 export interface FieldProps<T = any>
-  extends Omit<FieldWrapperProps, 'name'>,
+  extends Omit<FormControlProps, 'name'>,
     Pick<FinalFieldProps<HTMLElement>, PickedFinalFieldProps> {
   name: string | Meta<T>
   hasWrapper?: boolean
@@ -93,7 +93,7 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
 
     if (this.props.hasWrapper) {
       return (
-        <FieldWrapper
+        <FormControl
           id={this.props.id}
           name={this.getFieldName()}
           error={getFieldError(props)}
@@ -101,7 +101,7 @@ export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFina
           required={this.props.required}
         >
           {this.props.render(renderProps)}
-        </FieldWrapper>
+        </FormControl>
       )
     }
 

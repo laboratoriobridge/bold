@@ -1,9 +1,7 @@
 import React from 'react'
 import { fireEvent, render, wait } from 'react-testing-library'
-
 import * as stringUtils from '../../../util/string'
 import { Icon } from '../Icon'
-
 import { DropdownButton, DropdownButtonProps } from './DropdownButton'
 ;(stringUtils as any).randomStr = jest.fn(() => 'abc')
 
@@ -43,34 +41,19 @@ it('should render correctly when opened', () => {
   expect(document.body).toMatchSnapshot()
 })
 
-it('should focus the first menu item when opened', async () => {
+it('should focus the anchor element when dropdown is closed', async () => {
   const { container } = render(createDropdownButton())
   const button = container.querySelector('button')
+
   fireEvent.click(button)
-  await wait()
 
-  const li = document.body.querySelectorAll('li')
-  expect(document.activeElement).toEqual(li[0])
-})
+  const firstLi = document.body.querySelectorAll('li')[0]
+  await wait(() => {
+    expect(document.activeElement).toEqual(firstLi)
+  })
 
-it('should close the menu and focus the button when Escape is pressed', async () => {
-  const { container } = render(createDropdownButton())
-  const button = container.querySelector('button')
-  fireEvent.click(button)
-  await wait()
-
-  fireEvent.keyDown(document.querySelector('ul'), { key: 'Escape' })
-  expect(document.querySelector('ul')).toBeFalsy()
-  expect(document.activeElement).toEqual(button)
-})
-
-it('should close the menu and focus the button when Tab is pressed', async () => {
-  const { container } = render(createDropdownButton())
-  const button = container.querySelector('button')
-  fireEvent.click(button)
-  await wait()
-
-  fireEvent.keyDown(document.querySelector('ul'), { key: 'Tab' })
-  expect(document.querySelector('ul')).toBeFalsy()
-  expect(document.activeElement).toEqual(button)
+  fireEvent.click(firstLi)
+  await wait(() => {
+    expect(document.activeElement).toEqual(button)
+  })
 })

@@ -1,20 +1,15 @@
-import { Form, TextField } from '../../../../lib'
+import { TextInput } from '../../../../lib'
 
 function SearchEx() {
-  const renderForm = () => {
-    return (
-      <TextField
-        name='iconized'
-        label='Name'
-        id='iconized'
-        placeholder='Ex: Hercílio Luz'
-        icon='zoomOutline'
-        required
-      />
-    )
-  }
-
-  return <Form render={renderForm} />
+  return (
+    <TextInput
+      name='iconized'
+      id='iconized'
+      placeholder='Search for anything. Ex: Hercílio Luz'
+      icon='zoomOutline'
+      required
+    />
+  )
 }
 
 export default SearchEx

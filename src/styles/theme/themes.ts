@@ -13,5 +13,6 @@ export const darkTheme = createTheme({
     dangerScale: invertColorScale(defaultConfig.dangerScale),
     infoScale: invertColorScale(defaultConfig.infoScale),
     successScale: invertColorScale(defaultConfig.successScale),
+    highlightScale: invertColorScale(defaultConfig.highlightScale),
   },
 })

@@ -1,13 +1,12 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { OuterShadows } from '../../../styles/theme/createShadows'
 import { Omit } from '../../../util'
 
 export interface PaperProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   elevation?: keyof OuterShadows
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Paper(props: PaperProps) {

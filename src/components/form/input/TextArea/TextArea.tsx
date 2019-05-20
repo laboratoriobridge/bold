@@ -1,13 +1,12 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 import { createStyles as createTextInputBaseStyles, InputStatus } from '../TextInput/TextInputBase'
 
 export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'style'> {
   status?: InputStatus
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function TextArea(props: TextAreaProps) {

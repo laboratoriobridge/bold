@@ -1,12 +1,11 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { focusBoxShadow, Theme, useStyles } from '../../../styles'
+import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'style'> {
   component?: React.ElementType
-  style?: Interpolation
+  style?: ExternalStyles
   [key: string]: any
 }
 
@@ -25,10 +24,8 @@ Link.defaultProps = {
 
 export const createStyles = (theme: Theme) => ({
   link: {
+    ...theme.typography.variant('link'),
     cursor: 'pointer',
-    color: theme.pallete.primary.main,
-    textDecoration: 'underline',
-    fontWeight: 'bold',
     outline: 'none',
     transition: 'box-shadow .2s ease',
     '&:hover': {

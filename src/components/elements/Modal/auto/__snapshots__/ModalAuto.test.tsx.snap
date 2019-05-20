@@ -223,7 +223,7 @@ exports[`should render correctly 1`] = `
         role="dialog"
       >
         <button
-          aria-label="Fechar"
+          aria-label="Close"
           class="emotion-1"
           type="button"
         >

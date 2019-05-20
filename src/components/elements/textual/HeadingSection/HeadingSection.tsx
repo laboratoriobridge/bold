@@ -1,14 +1,13 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Heading, HeadingProps } from '../Heading/Heading'
 
 export interface HeadingSectionProps {
   title: React.ReactNode
   level: HeadingProps['level']
   color?: HeadingProps['color']
-  style?: Interpolation
+  style?: ExternalStyles
   children?: React.ReactNode
 }
 

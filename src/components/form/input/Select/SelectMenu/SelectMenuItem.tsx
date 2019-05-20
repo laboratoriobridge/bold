@@ -1,12 +1,11 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Theme, useStyles, useTheme } from '../../../../../styles'
+import { ExternalStyles, Theme, useStyles, useTheme } from '../../../../../styles'
 import { Omit } from '../../../../../util'
 import { Spinner } from '../../../../elements'
 
 export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
   selected?: boolean
   highlighted?: boolean
 }

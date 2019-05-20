@@ -1,11 +1,10 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { hexToRGB, Theme, useStyles } from '../../../styles'
+import { ExternalStyles, hexToRGB, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface ModalBackdropProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function ModalBackdrop(props: ModalBackdropProps) {

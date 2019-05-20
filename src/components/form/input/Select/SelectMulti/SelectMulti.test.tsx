@@ -79,7 +79,7 @@ describe('remove item', () => {
   it('should call onChange with the new value', () => {
     const onChange = jest.fn()
     const { container } = render(createSelect({ onChange, isOpen: true, value: [items[0], items[1]] }))
-    fireEvent.click(container.querySelectorAll('span[title="Remover"]')[0])
+    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
     expect(onChange).toHaveBeenLastCalledWith([items[1]], expect.anything())
   })
   it('should not focus nor toggle the menu opened state', () => {
@@ -88,7 +88,7 @@ describe('remove item', () => {
     const input = container.querySelector('input')
 
     expect(menu).toBeFalsy()
-    fireEvent.click(container.querySelectorAll('span[title="Remover"]')[0])
+    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
     expect(menu).toBeFalsy()
 
     expect(document.activeElement).not.toEqual(input)

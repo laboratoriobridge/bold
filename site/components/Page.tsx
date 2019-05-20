@@ -1,4 +1,6 @@
-import { Theme, useStyles } from '../../lib'
+import { Text, Theme, useStyles } from '../../lib'
+import { createStyles as createLinkStyles } from '../../lib/components/elements/Link/Link'
+import pages from '../pages'
 
 import { PageContainer } from './PageContainer'
 
@@ -6,10 +8,20 @@ export function Page(props: any) {
   const { children } = props
   const { classes } = useStyles(createStyles)
 
+  const { route } = props.router
+  const parent = pages.find(page => page.children && page.children.map(c => c.href).includes(route))
+
   return (
     <div className={classes.wrapper}>
       <PageContainer>
-        <main className={classes.main}>{children}</main>
+        <main className={classes.main}>
+          {parent && (
+            <Text id='page-parent-title' weight='bold'>
+              {parent.title}
+            </Text>
+          )}
+          {children}
+        </main>
       </PageContainer>
     </div>
   )
@@ -23,9 +35,14 @@ export const createStyles = (theme: Theme) => ({
   },
   main: {
     // Global overrides (for markdown elements):
-    img: {
+    '& > p > img': {
       maxWidth: 960,
       marginBottom: '2rem',
+    },
+
+    '& > p a, & > ul a': {
+      ...createLinkStyles(theme).link,
+      fontSize: '1rem',
     },
 
     '& > p': {
@@ -80,9 +97,6 @@ export const createStyles = (theme: Theme) => ({
     },
 
     code: {
-      '&::selection': {
-        background: theme.pallete.primary.main,
-      },
       '&:not(.hljs)': {
         padding: '0.125rem 0.25rem',
         borderRadius: 3,

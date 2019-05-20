@@ -1,8 +1,7 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 import { Manager, Popper, PopperProps, Reference } from 'react-popper'
 
-import { useTheme } from '../../../styles'
+import { ExternalStyles, useTheme } from '../../../styles'
 import { Omit } from '../../../util'
 import { randomStr } from '../../../util/string'
 import { Portal } from '../Portal'
@@ -13,7 +12,7 @@ import { TooltipPopper } from './TooltipPopper'
 
 export interface TooltipProps extends Omit<PopperProps, 'children'> {
   text: string
-  style?: Interpolation
+  style?: ExternalStyles
   offset?: number
   container?: Element
   children: React.ReactElement<any>

@@ -1,12 +1,11 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 
 export interface SpinnerProps {
   size?: number
   borderWidth?: number
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Spinner(props: SpinnerProps) {

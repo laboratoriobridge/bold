@@ -1,13 +1,12 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 
 import { createTableStyles } from './styles'
 
 export interface TableCellProps extends Omit<React.TdHTMLAttributes<any>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function TableCell(props: TableCellProps) {

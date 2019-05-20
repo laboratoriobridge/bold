@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-6 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -73,7 +73,12 @@ exports[`should render correctly 1`] = `
   position: relative;
 }
 
-.emotion-5 {
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
+.emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -101,7 +106,7 @@ exports[`should render correctly 1`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-5 > span {
+.emotion-6 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -112,16 +117,16 @@ exports[`should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-5:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-5:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-5:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
@@ -130,6 +135,8 @@ exports[`should render correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -199,11 +206,11 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-7"
   >
     <button
       class="emotion-1"
-      title="Página anterior"
+      title="Previous page"
       type="button"
     >
       <span>
@@ -226,17 +233,21 @@ exports[`should render correctly 1`] = `
     >
       <input
         class="emotion-2"
+        title="Current page"
         type="text"
         value="6"
       />
     </div>
-    <span>
-      de 
+    <span
+      class="emotion-4"
+    >
+      of
+       
       10
     </span>
     <button
-      class="emotion-5"
-      title="Próxima página"
+      class="emotion-6"
+      title="Next page"
       type="button"
     >
       <span>
@@ -259,7 +270,7 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
-.emotion-6 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -280,7 +291,12 @@ exports[`should render correctly 2`] = `
   position: relative;
 }
 
-.emotion-5 {
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
+.emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -308,7 +324,7 @@ exports[`should render correctly 2`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-5 > span {
+.emotion-6 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -319,16 +335,16 @@ exports[`should render correctly 2`] = `
   display: inline-flex;
 }
 
-.emotion-5:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-5:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-5:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
@@ -337,6 +353,8 @@ exports[`should render correctly 2`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -459,12 +477,12 @@ exports[`should render correctly 2`] = `
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-7"
   >
     <button
       class="emotion-1"
       disabled=""
-      title="Página anterior"
+      title="Previous page"
       type="button"
     >
       <span>
@@ -487,17 +505,21 @@ exports[`should render correctly 2`] = `
     >
       <input
         class="emotion-2"
+        title="Current page"
         type="text"
         value="1"
       />
     </div>
-    <span>
-      de 
+    <span
+      class="emotion-4"
+    >
+      of
+       
       10
     </span>
     <button
-      class="emotion-5"
-      title="Próxima página"
+      class="emotion-6"
+      title="Next page"
       type="button"
     >
       <span>
@@ -520,7 +542,7 @@ exports[`should render correctly 2`] = `
 `;
 
 exports[`should render correctly 3`] = `
-.emotion-6 {
+.emotion-7 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -541,7 +563,12 @@ exports[`should render correctly 3`] = `
   position: relative;
 }
 
-.emotion-5 {
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  line-height: 1.5;
+}
+
+.emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -569,7 +596,7 @@ exports[`should render correctly 3`] = `
   margin-left: 0.25rem;
 }
 
-.emotion-5 > span {
+.emotion-6 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -580,16 +607,16 @@ exports[`should render correctly 3`] = `
   display: inline-flex;
 }
 
-.emotion-5:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-5:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0A67D1;
 }
 
-.emotion-5:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   background-color: rgba(45,52,59,0.1);
 }
 
@@ -598,6 +625,8 @@ exports[`should render correctly 3`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -720,12 +749,12 @@ exports[`should render correctly 3`] = `
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-7"
   >
     <button
       class="emotion-1"
       disabled=""
-      title="Página anterior"
+      title="Previous page"
       type="button"
     >
       <span>
@@ -748,17 +777,21 @@ exports[`should render correctly 3`] = `
     >
       <input
         class="emotion-2"
+        title="Current page"
         type="text"
         value="1"
       />
     </div>
-    <span>
-      de 
+    <span
+      class="emotion-4"
+    >
+      of
+       
       9
     </span>
     <button
-      class="emotion-5"
-      title="Próxima página"
+      class="emotion-6"
+      title="Next page"
       type="button"
     >
       <span>

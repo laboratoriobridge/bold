@@ -2,60 +2,38 @@ import React from 'react'
 
 import * as numberUtil from '../../../../util/number'
 
-export interface NumberLabelProps {
-    value: number
-    minDecimalPlaces?: number
-    maxDecimalPlaces?: number
-    placeholder?: string
-    title?: string
-    abbrev?: boolean
-    prefix?: string
-    sufix?: string
+export interface NumberProps {
+  value: number
+  placeholder?: string
+  title?: string
+  abbrev?: boolean
+  prefix?: string
+  suffix?: string
+  formatOptions?: Intl.NumberFormatOptions
 }
 
-export class Number extends React.Component<NumberLabelProps> {
+export function Number(props: NumberProps) {
+  const { value, placeholder, title, abbrev, prefix, suffix, formatOptions } = props
 
-    static defaultProps = {
-        placeholder: '',
-        prefix: '',
-        sufix: '',
+  const renderTitle = () => {
+    return title || (abbrev && numberUtil.format(value))
+  }
+
+  const renderNumber = () => {
+    if (typeof value !== 'number' || isNaN(value)) {
+      return placeholder
     }
 
-    render() {
-        const {
-            value,
-            minDecimalPlaces,
-            maxDecimalPlaces,
-            placeholder,
-            title,
-            abbrev,
-            prefix,
-            sufix,
-            ...rest
-        } = this.props
+    const num = abbrev ? numberUtil.abbrev(value, formatOptions) : numberUtil.format(value, formatOptions)
 
-        return (
-            <span {...rest} title={this.renderTitle()}>
-                {this.renderNumber()}
-            </span>
-        )
-    }
+    return prefix + num + suffix
+  }
 
-    renderTitle() {
-        return this.props.title ||
-            (this.props.abbrev && numberUtil.format(this.props.value))
-    }
-
-    renderNumber() {
-        if (typeof this.props.value !== 'number' || isNaN(this.props.value)) {
-            return this.props.placeholder
-        }
-
-        const num = this.props.abbrev ?
-            numberUtil.abbrev(this.props.value, this.props.minDecimalPlaces, this.props.maxDecimalPlaces) :
-            numberUtil.format(this.props.value, this.props.minDecimalPlaces, this.props.maxDecimalPlaces)
-
-        return this.props.prefix + num + this.props.sufix
-    }
-
+  return <span title={renderTitle()}>{renderNumber()}</span>
 }
+
+Number.defaultProps = {
+  placeholder: '',
+  prefix: '',
+  suffix: '',
+} as Partial<NumberProps>

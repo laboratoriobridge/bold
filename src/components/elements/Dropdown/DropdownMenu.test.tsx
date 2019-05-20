@@ -81,3 +81,8 @@ it('should have a roving tabIndex', () => {
   expect(li[0].tabIndex).toEqual(0)
   expect(li[1].tabIndex).toEqual(-1)
 })
+
+it('should accept "style" props', () => {
+  const { container } = render(<DropdownMenu style={{ color: 'red' }} />)
+  expect(container).toMatchSnapshot()
+})

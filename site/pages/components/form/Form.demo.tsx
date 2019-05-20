@@ -1,6 +1,6 @@
 import { FormRenderProps } from 'react-final-form'
 
-import { Button, Cell, CheckboxField, FieldWrapper, Form, Grid, HFlow, RadioField, TextField } from '../../../../lib'
+import { Button, Cell, CheckboxField, Form, FormControl, Grid, HFlow, RadioField, TextField } from '../../../../lib'
 
 function FormDemo() {
   const renderForm = (formProps: FormRenderProps) => {
@@ -17,20 +17,20 @@ function FormDemo() {
             <TextField name='email' label='E-email' type='email' icon='emailFilled' />
           </Cell>
           <Cell xs={6}>
-            <FieldWrapper label='Favorite color'>
+            <FormControl label='Favorite color'>
               <HFlow>
                 <RadioField name='color' value='red' label='Red' />
                 <RadioField name='color' value='green' label='Green' />
                 <RadioField name='color' value='blue' label='Blue' />
               </HFlow>
-            </FieldWrapper>
+            </FormControl>
           </Cell>
           <Cell xs={12}>
             <CheckboxField name='agreed' label='I agree to the terms of use' />
           </Cell>
           <Cell xs={12}>
             <HFlow justifyContent='flex-end'>
-              <Button type='reset' skin='ghost' onClick={formProps.reset}>
+              <Button type='reset' skin='outline' onClick={formProps.reset}>
                 Reset
               </Button>
               <Button type='submit' kind='primary' onClick={formProps.handleSubmit}>
