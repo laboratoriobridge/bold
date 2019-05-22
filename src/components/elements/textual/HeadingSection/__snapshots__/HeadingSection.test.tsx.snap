@@ -43,6 +43,25 @@ exports[`should accept style prop 1`] = `
 </div>
 `;
 
+exports[`should accept vSpace prop 1`] = `
+.emotion-0 {
+  margin-bottom: 10px;
+}
+
+<div>
+  <div
+    class="emotion-1"
+  >
+    <h1
+      class="emotion-0"
+    >
+      Some title
+    </h1>
+    Content section 1
+  </div>
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-0 {
   margin-bottom: 1rem;
