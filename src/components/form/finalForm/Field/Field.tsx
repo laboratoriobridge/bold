@@ -1,10 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   Field as FinalFormField,
   FieldProps as FinalFieldProps,
   FieldRenderProps as FinalRenderProps,
-  ReactContext as ReactFinalFormContext,
-  withReactFinalForm,
+  useForm,
 } from 'react-final-form'
 
 import { Meta } from '../../../../metaPath/metaPath'
@@ -44,75 +43,66 @@ export interface FieldProps<T = any>
   convert?(value: any): any
 }
 
-export class FieldCmp<T = any> extends React.Component<FieldProps<T> & ReactFinalFormContext> {
-  static defaultProps: Partial<FieldProps<any>> = {
-    hasWrapper: true,
-  }
+export function Field<T = any>(props: FieldProps<T>) {
+  const form = useForm()
 
-  componentDidMount() {
-    if (this.props.convert) {
-      const setFieldData = this.props.reactFinalForm.mutators.setFieldData
+  useEffect(() => {
+    if (props.convert) {
+      const setFieldData = form.mutators.setFieldData
       if (setFieldData) {
-        setFieldData(this.getFieldName(), {
-          convert: this.props.convert,
+        setFieldData(getFieldName(), {
+          convert: props.convert,
         })
       } else {
         throw new Error('Form must have a setFieldData mutator so Field can define a convert function')
       }
     }
-  }
+  }, [])
 
-  render() {
-    const { onChange, name, ...rest } = this.props
-    return <FinalFormField {...rest} name={this.getFieldName()} custom={{ onChange }} render={this.renderComponent} />
-  }
-
-  private getFieldName = (): string => {
-    if (typeof this.props.name === 'string') {
-      return this.props.name
+  const getFieldName = (): string => {
+    if (typeof props.name === 'string') {
+      return props.name
     } else {
-      return (this.props.name as Meta<T>).absolutePath()
+      return (props.name as Meta<T>).absolutePath()
     }
   }
 
-  private renderComponent = (props: FinalRenderProps<HTMLElement> & { custom: any }) => {
-    const onChange = value => {
+  const renderComponent = (fieldProps: FinalRenderProps<HTMLElement> & { custom: any }) => {
+    const customOnChange = value => {
       // External onChange prop is killed by final-form, so we merge the external and the internal one
-      props.input.onChange(value)
-      props.custom.onChange && props.custom.onChange(value)
+      fieldProps.input.onChange(value)
+      fieldProps.custom.onChange && fieldProps.custom.onChange(value)
     }
     const renderProps = {
-      ...props,
+      ...fieldProps,
       input: {
-        'aria-label': this.props.label,
-        ...props.input,
-        onChange,
+        'aria-label': props.label,
+        ...fieldProps.input,
+        onChange: customOnChange,
       },
-      hasError: !!getFieldError(props),
+      hasError: !!getFieldError(fieldProps),
     }
 
-    if (this.props.hasWrapper) {
+    if (props.hasWrapper) {
       return (
         <FormControl
-          id={this.props.id}
-          name={this.getFieldName()}
-          error={getFieldError(props)}
-          label={this.props.label}
-          required={this.props.required}
+          id={props.id}
+          name={getFieldName()}
+          error={getFieldError(fieldProps)}
+          label={props.label}
+          required={props.required}
         >
-          {this.props.render(renderProps)}
+          {props.render(renderProps)}
         </FormControl>
       )
     }
-
-    return this.props.render(renderProps)
+    return props.render(renderProps)
   }
+
+  const { onChange, name, ...rest } = props
+  return <FinalFormField {...rest} name={getFieldName()} custom={{ onChange }} render={renderComponent} />
 }
 
-const FieldWrapped = withReactFinalForm(FieldCmp) as React.ComponentType<FieldProps>
-
-export class Field<T> extends React.Component<FieldProps<T>> {
-  render() {
-    return <FieldWrapped {...this.props} />
-  }
-}
+Field.defaultProps = {
+  hasWrapper: true,
+} as Partial<FieldProps<any>>

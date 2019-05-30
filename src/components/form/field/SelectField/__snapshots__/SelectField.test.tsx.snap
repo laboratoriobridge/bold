@@ -460,7 +460,6 @@ exports[`should render correctly when multiple 1`] = `
           class="emotion-3"
           id="downshift-1-input"
           name="select1"
-          type="text"
           value=""
         />
       </div>
