@@ -1,30 +1,15 @@
 import React from 'react'
 
-import { ExternalStyles, TextColor, useCss } from '../../../../styles'
-import { getTextColor } from '../../../../styles/theme/createTheme'
-import { Omit } from '../../../../util/types'
+import { Text, TextProps } from '../Text/Text'
 
-export interface HeadingProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'style'> {
+export interface HeadingProps extends TextProps {
   level: 1 | 2 | 3 | 4 | 5 | 6
-  color?: TextColor
-  style?: ExternalStyles
 }
 
 export function Heading(props: HeadingProps) {
-  const { level, children, style, color, ...rest } = props
-  const { theme, css } = useCss()
-  const styles = {
-    color: color && getTextColor(theme, color),
-  }
+  const { level, ...rest } = props
 
-  return React.createElement(
-    `h${level}`,
-    {
-      ...rest,
-      className: css(styles, style),
-    },
-    children
-  )
+  const heading = `h${level}` as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+
+  return <Text component={heading} variant={heading} {...rest} />
 }
-
-Heading.defaultProps = {} as Partial<HeadingProps>
