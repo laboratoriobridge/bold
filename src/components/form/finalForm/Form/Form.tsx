@@ -5,12 +5,10 @@ import React from 'react'
 import { Form as FinalForm, FormProps as FinalFormProps, FormRenderProps } from 'react-final-form'
 
 import { isEmpty, isPromise } from '../../../../util'
-import { FormPrompt } from '../FormPrompt'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
 export interface FormProps extends FinalFormProps {
-  hasLeaveModal?: boolean
   focusOnError?: boolean
   transformResult?(result: ResultType): ResultType
   onSubmitSucceeded?(formState: FormState): void
@@ -21,7 +19,6 @@ const focusOnErrorDecorator = createFocusOnErrorDecorator()
 
 export class Form extends React.Component<FormProps> {
   static defaultProps: Partial<FormProps> = {
-    hasLeaveModal: false,
     focusOnError: true,
     decorators: [],
     transformResult: result => result,
@@ -48,7 +45,6 @@ export class Form extends React.Component<FormProps> {
 
   private renderForm = (props: FormRenderProps) => (
     <>
-      {this.props.hasLeaveModal && <FormPrompt />}
       {this.props.render({
         ...props,
         handleSubmit: this.handleSubmit(props),

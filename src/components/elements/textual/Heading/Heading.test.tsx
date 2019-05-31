@@ -12,10 +12,10 @@ it('should render correctly', () => {
   expect(render(<Heading level={6}>Heading 6</Heading>).container).toMatchSnapshot()
 })
 
-it('should accept color prop', () => {
+it('should accept all text props', () => {
   const { container } = render(
-    <Heading level={1} color='primary'>
-      Heading Primary color
+    <Heading level={1} color='primary' fontWeight='bolder' fontSize={4} textDecoration='underline' fontStyle='italic'>
+      Heading with all text props
     </Heading>
   )
   expect(container).toMatchSnapshot()
@@ -23,7 +23,7 @@ it('should accept color prop', () => {
 
 it('should accept style prop', () => {
   const { container } = render(
-    <Heading level={1} style={{ fontStyle: 'italic' }}>
+    <Heading level={1} style={{ color: 'red' }}>
       Heading Primary color
     </Heading>
   )

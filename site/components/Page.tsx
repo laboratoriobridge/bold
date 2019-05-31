@@ -16,7 +16,7 @@ export function Page(props: any) {
       <PageContainer>
         <main className={classes.main}>
           {parent && (
-            <Text id='page-parent-title' weight='bold'>
+            <Text id='page-parent-title' fontWeight='bold'>
               {parent.title}
             </Text>
           )}

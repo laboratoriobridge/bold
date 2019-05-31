@@ -1,8 +1,5 @@
-import React from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+import React, { ButtonHTMLAttributes } from 'react'
 import { render } from 'react-testing-library'
-
-import { withRouter } from '../../../test'
 
 import { Link } from './Link'
 
@@ -25,14 +22,23 @@ it('should accept the "style" prop', () => {
 })
 
 it('should accept "component" prop', () => {
-  render(<Link component='button'>Button link</Link>)
+  const { container } = render(<Link component='button'>Button link</Link>)
+  expect(container).toMatchSnapshot()
+})
 
+it('should accept all Text props', () => {
   const { container } = render(
-    withRouter(
-      <Link component={RouterLink} to='/'>
-        Router link
-      </Link>
-    )
+    <Link color='inherit' fontSize={2} fontWeight='bolder' fontStyle='italic' textDecoration='none'>
+      All text props
+    </Link>
   )
   expect(container).toMatchSnapshot()
+})
+
+it('should accept type argument and infer props', () => {
+  render(
+    <Link<ButtonHTMLAttributes<HTMLButtonElement>> component='button' autoFocus>
+      Link as button tag
+    </Link>
+  )
 })

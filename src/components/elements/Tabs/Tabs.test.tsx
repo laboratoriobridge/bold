@@ -1,83 +1,67 @@
-import { createMemoryHistory } from 'history'
-import React from 'react'
+import React, { AnchorHTMLAttributes } from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { withRouter } from '../../../test'
-
-import { TabLink, Tabs } from './Tabs'
+import { TabItem, TabItemProps } from './TabItem'
+import { Tabs } from './Tabs'
 
 it('renders correctly', () => {
   expect(
     render(
-      withRouter(
-        <Tabs>
-          <TabLink to='/'>Home</TabLink>
-          <TabLink to='/test'>Test</TabLink>
-          <TabLink to='/active' active>
-            Active
-          </TabLink>
-          <TabLink to='/disabled' disabled>
-            Disabled
-          </TabLink>
-        </Tabs>
-      )
+      <Tabs>
+        <TabItem>Home</TabItem>
+        <TabItem>Test</TabItem>
+        <TabItem active>Active</TabItem>
+        <TabItem disabled>Disabled</TabItem>
+      </Tabs>
     ).container
   ).toMatchSnapshot()
 })
 
-it('should not navigate when tab link is disabled', () => {
-  const history = createMemoryHistory()
-  const { container } = render(
-    withRouter(
-      <Tabs>
-        <TabLink to='/test'>Test</TabLink>
-        <TabLink to='/disabled' disabled>
-          Disabled
-        </TabLink>
-      </Tabs>,
-      history
-    )
+it('shuld accept "component" prop', () => {
+  const TabLink = (props: AnchorHTMLAttributes<HTMLAnchorElement> & TabItemProps) => (
+    <TabItem component='a' {...props} />
   )
-  expect(history.location.pathname).toEqual('/')
 
-  fireEvent.click(container.querySelectorAll('a')[0])
-  expect(history.location.pathname).toEqual('/test')
-
-  fireEvent.click(container.querySelectorAll('a')[1])
-  expect(history.location.pathname).toEqual('/test')
+  const { container } = render(
+    <Tabs>
+      <TabLink href='/'>Home</TabLink>
+      <TabLink href='/'>Test</TabLink>
+      <TabLink href='/' active>
+        Active
+      </TabLink>
+      <TabLink href='/' disabled>
+        Disabled
+      </TabLink>
+    </Tabs>
+  )
+  expect(container).toMatchSnapshot()
 })
 
 it('should have a roving tabindex', () => {
   const { container } = render(
-    withRouter(
-      <Tabs>
-        <TabLink to='/'>Home</TabLink>
-        <TabLink to='/test'>Test</TabLink>
-        <TabLink to='/active' active>
-          Active
-        </TabLink>
-        <TabLink to='/disabled' disabled>
-          Disabled
-        </TabLink>
-      </Tabs>
-    )
+    <Tabs>
+      <TabItem>Home</TabItem>
+      <TabItem>Test</TabItem>
+      <TabItem active>Active</TabItem>
+      <TabItem disabled>Disabled</TabItem>
+    </Tabs>
   )
   const ul = container.querySelector('ul')
-  const links = container.querySelectorAll('a')
-  expect(links[0].getAttribute('tabindex')).toEqual('0')
-  expect(links[1].getAttribute('tabindex')).toEqual('-1')
+  const items = container.querySelectorAll<any>('[role="tab"]')
+  expect(items[0].getAttribute('tabindex')).toEqual('0')
+  expect(items[1].getAttribute('tabindex')).toEqual('-1')
 
-  links[2].focus()
-  expect(links[0].getAttribute('tabindex')).toEqual('-1')
-  expect(links[1].getAttribute('tabindex')).toEqual('-1')
-  expect(links[2].getAttribute('tabindex')).toEqual('0')
-  expect(links[3].getAttribute('tabindex')).toEqual('-1')
+  items[2].focus()
+  expect(items[0].getAttribute('tabindex')).toEqual('-1')
+  expect(items[1].getAttribute('tabindex')).toEqual('-1')
+  expect(items[2].getAttribute('tabindex')).toEqual('0')
+  expect(items[3].getAttribute('tabindex')).toEqual('-1')
 
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
-  expect(links[2].getAttribute('tabindex')).toEqual('-1')
-  expect(links[3].getAttribute('tabindex')).toEqual('0')
+  expect(items[2].getAttribute('tabindex')).toEqual('-1')
+  expect(items[3].getAttribute('tabindex')).toEqual('0')
 
   fireEvent.keyDown(ul, { key: 'ArrowUp' })
-  expect(links[2].getAttribute('tabindex')).toEqual('0')
-  expect(links[3].getAttribute('tabindex')).toEqual('-1')
+  expect(items[2].getAttribute('tabindex')).toEqual('0')
+  expect(items[3].getAttribute('tabindex')).toEqual('-1')
 })

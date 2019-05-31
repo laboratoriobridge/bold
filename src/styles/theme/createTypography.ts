@@ -1,4 +1,5 @@
 import { FontSizeProperty } from 'csstype'
+import { CSSProperties } from 'react'
 
 import { merge } from '../../util'
 
@@ -16,7 +17,7 @@ export interface Typography {
     text: FontSize
     button: FontSize
   }
-  variant(variant: TypographyVariant)
+  variant(variant: TypographyVariant): CSSProperties
 }
 
 export type TypographyConfig = typeof defaultTypographyConfig
