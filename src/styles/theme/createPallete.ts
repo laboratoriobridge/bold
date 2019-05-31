@@ -89,9 +89,19 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
   }
 }
 
-export type TextColor = 'normal' | 'secondary' | 'disabled' | 'primary' | 'danger' | 'success' | 'info' | 'alert'
+export type TextColor =
+  | 'inherit'
+  | 'normal'
+  | 'secondary'
+  | 'disabled'
+  | 'primary'
+  | 'danger'
+  | 'success'
+  | 'info'
+  | 'alert'
 
 export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } = {
+  inherit: pallete => 'inherit',
   normal: pallete => pallete.text.main,
   primary: pallete => pallete.primary.main,
   danger: pallete => pallete.status.danger.main,

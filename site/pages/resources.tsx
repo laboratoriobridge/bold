@@ -20,10 +20,10 @@ function Resources() {
         <Cell>
           <VFlow vSpacing={0.5}>
             <div>
-              <Text tag='p' weight='bold' size={1}>
+              <Text tag='p' fontWeight='bold' fontSize={1}>
                 Bold Design Kit
               </Text>
-              <Text tag='p' size={1}>
+              <Text tag='p' fontSize={1}>
                 Sketch symbols, visual styles and patterns.
               </Text>
             </div>

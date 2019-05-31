@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { withForm, withRouter } from '../../../../test/index'
+import { withForm } from '../../../../test/index'
 import { Form } from '../../finalForm/Form/Form'
 
 import { MaskedField } from './MaskedField'
@@ -25,9 +25,7 @@ it('TimeField should parse hh:mm:ss to hh:mm', () => {
   const timeField = () => {
     return <TimeField name='test' label='Test Label' />
   }
-  const { container } = render(
-    withRouter(<Form render={timeField} onSubmit={null} initialValues={{ test: '05:30:55' }} />)
-  )
+  const { container } = render(<Form render={timeField} onSubmit={null} initialValues={{ test: '05:30:55' }} />)
 
   expect(container.querySelector('input').getAttribute('value')).toEqual('05:30')
 })

@@ -3,7 +3,7 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { withForm, withRouter } from '../../../../stories-addons'
+import { withForm } from '../../../../stories-addons'
 import {
   DefaultItemType,
   defaultSelectFilter,
@@ -62,7 +62,6 @@ const SelectAsyncManager = (props: SelectAsyncManagerProps) => {
 
 // tslint:disable jsx-no-lambda
 storiesOf('Form|SelectField', module)
-  .addDecorator(withRouter())
   .addDecorator(withForm())
   .add('default', () => (
     <SelectField<DefaultItemType>

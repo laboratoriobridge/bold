@@ -81,7 +81,9 @@ exports[`renders correctly 1`] = `
 
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1.5;
+  color: #2D343B;
 }
 
 .emotion-5 {

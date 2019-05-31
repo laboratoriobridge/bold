@@ -75,7 +75,9 @@ exports[`should render correctly 1`] = `
 
 .emotion-4 {
   font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1.5;
+  color: #2D343B;
 }
 
 .emotion-6 {
@@ -293,7 +295,9 @@ exports[`should render correctly 2`] = `
 
 .emotion-4 {
   font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1.5;
+  color: #2D343B;
 }
 
 .emotion-6 {
@@ -565,7 +569,9 @@ exports[`should render correctly 3`] = `
 
 .emotion-4 {
   font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1.5;
+  color: #2D343B;
 }
 
 .emotion-6 {

@@ -49,7 +49,7 @@ export function MonthPicker(props: MonthPickerProps) {
           <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onLeftClick}>
             <Icon icon='angleLeft' />
           </Button>
-          <Text weight='bold' size={0.875}>
+          <Text fontWeight='bold' fontSize={0.875}>
             {visibleYear}
           </Text>
           <Button title={locale.calendar.nextYear} size='small' skin='ghost' onClick={onRightClick}>
