@@ -1,17 +1,19 @@
 import React, { CSSProperties, HTMLAttributes } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface TabItemProps extends HTMLAttributes<HTMLElement> {
+export interface TabItemProps extends Omit<HTMLAttributes<HTMLElement>, 'style'> {
   component?: React.ElementType
   active?: boolean
   disabled?: boolean
   children?: React.ReactNode
+  style?: ExternalStyles
   [key: string]: any
 }
 
 export function TabItem(props: TabItemProps) {
-  const { active, disabled, component, children, ...rest } = props
+  const { active, disabled, component, children, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   const className =
@@ -20,7 +22,7 @@ export function TabItem(props: TabItemProps) {
   const Cmp = component
 
   return (
-    <li className={classes.li}>
+    <li className={css(classes.li, style)}>
       <Cmp role='tab' className={className} {...rest}>
         {children}
       </Cmp>
