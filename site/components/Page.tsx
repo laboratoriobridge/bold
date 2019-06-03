@@ -43,6 +43,7 @@ export const createStyles = (theme: Theme) => ({
     },
 
     '& > p a, & > ul a': {
+      ...theme.typography.variant('link'),
       ...createLinkStyles(theme).link,
       fontSize: '1rem',
     },
