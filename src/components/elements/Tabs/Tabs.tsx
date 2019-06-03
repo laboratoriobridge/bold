@@ -1,19 +1,22 @@
 import React, { CSSProperties } from 'react'
 
 import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 
-export interface TabsProps extends React.HTMLAttributes<HTMLUListElement> {}
+export interface TabsProps extends Omit<React.HTMLAttributes<HTMLUListElement>, 'style'> {
+  style?: ExternalStyles
+}
 
 export function Tabs(props: TabsProps) {
-  const { ...rest } = props
-  const { classes } = useStyles(createStyles)
+  const { style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
   const rootRef = useRovingTabIndex({
     getItems: root => Array.from(root.querySelectorAll('[role="tab"]')),
   })
 
-  return <ul ref={rootRef} className={classes.ul} role='tablist' {...rest} />
+  return <ul ref={rootRef} className={css(classes.ul, style)} role='tablist' {...rest} />
 }
 
 const createStyles = (theme: Theme) => ({

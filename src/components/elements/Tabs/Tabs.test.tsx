@@ -1,7 +1,7 @@
-import React, { AnchorHTMLAttributes } from 'react'
+import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { TabItem, TabItemProps } from './TabItem'
+import { TabItem } from './TabItem'
 import { Tabs } from './Tabs'
 
 it('renders correctly', () => {
@@ -17,24 +17,8 @@ it('renders correctly', () => {
   ).toMatchSnapshot()
 })
 
-it('shuld accept "component" prop', () => {
-  const TabLink = (props: AnchorHTMLAttributes<HTMLAnchorElement> & TabItemProps) => (
-    <TabItem component='a' {...props} />
-  )
-
-  const { container } = render(
-    <Tabs>
-      <TabLink href='/'>Home</TabLink>
-      <TabLink href='/'>Test</TabLink>
-      <TabLink href='/' active>
-        Active
-      </TabLink>
-      <TabLink href='/' disabled>
-        Disabled
-      </TabLink>
-    </Tabs>
-  )
-  expect(container).toMatchSnapshot()
+it('should accept "style" prop', () => {
+  expect(render(<Tabs style={{ color: 'red' }}>Children</Tabs>).container).toMatchSnapshot()
 })
 
 it('should have a roving tabindex', () => {

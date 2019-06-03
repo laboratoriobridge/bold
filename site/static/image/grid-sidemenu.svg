@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="766px" height="29px" viewBox="0 0 766 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>sidemenu grid</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Grid" transform="translate(-336.000000, -562.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1280" height="1055"></rect>
+            <g id="Sidemenu" transform="translate(336.000000, 442.000000)">
+                <g id="grid-sidemenu" transform="translate(0.000000, 120.000000)">
+                    <rect id="Rectangle-Copy-23" fill="#75C6FF" x="213" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-24" fill="#75C6FF" x="473" y="0" width="32" height="29"></rect>
+                    <rect id="Rectangle-Copy-25" fill="#75C6FF" x="160" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-26" fill="#75C6FF" x="421" y="0" width="32" height="29"></rect>
+                    <rect id="Rectangle-Copy-27" fill="#75C6FF" x="317" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-28" fill="#75C6FF" x="578" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-29" fill="#75C6FF" x="682" y="0" width="32" height="29"></rect>
+                    <rect id="Rectangle-Copy-30" fill="#75C6FF" x="264" y="0" width="32" height="29"></rect>
+                    <rect id="Rectangle-Copy-31" fill="#75C6FF" x="526" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-32" fill="#75C6FF" x="369" y="0" width="31" height="29"></rect>
+                    <rect id="Rectangle-Copy-33" fill="#75C6FF" x="631" y="0" width="31" height="29"></rect>
+                    <text id="1-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="173.6" y="17">1</tspan>
+                    </text>
+                    <text id="5-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="381.6" y="17">5</tspan>
+                    </text>
+                    <text id="9-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="590.6" y="17">9</tspan>
+                    </text>
+                    <text id="3-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="276.1" y="17">3</tspan>
+                    </text>
+                    <text id="7-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="485.6" y="17">7</tspan>
+                    </text>
+                    <text id="11-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="690.2" y="17">11</tspan>
+                    </text>
+                    <text id="2-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="224.6" y="17">2</tspan>
+                    </text>
+                    <text id="6-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="432.6" y="17">6</tspan>
+                    </text>
+                    <text id="10-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="638.7" y="17">10</tspan>
+                    </text>
+                    <text id="4-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="328.6" y="17">4</tspan>
+                    </text>
+                    <text id="8-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="537.6" y="17">8</tspan>
+                    </text>
+                    <g id="Group-2">
+                        <rect id="Rectangle" fill="#B9B9BD" x="0" y="0" width="139" height="29"></rect>
+                        <text id="Side-menu" font-family="IBMPlexSans, IBM Plex Sans" font-size="14" font-weight="normal" line-spacing="21" fill="#2D343B">
+                            <tspan x="37.222" y="18">Side menu</tspan>
+                        </text>
+                    </g>
+                    <rect id="Rectangle-Copy-35" fill="#B8E2FF" x="191" y="0" width="22" height="29"></rect>
+                    <rect id="Rectangle-Copy-35" fill="#B8E2FF" x="139" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-36" fill="#B8E2FF" x="348" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-37" fill="#B8E2FF" x="505" y="0" width="22" height="29"></rect>
+                    <rect id="Rectangle-Copy-38" fill="#B8E2FF" x="296" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-39" fill="#B8E2FF" x="452" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-40" fill="#B8E2FF" x="609" y="0" width="22" height="29"></rect>
+                    <rect id="Rectangle-Copy-42" fill="#B8E2FF" x="243" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-43" fill="#B8E2FF" x="400" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-44" fill="#B8E2FF" x="557" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-45" fill="#B8E2FF" x="661" y="0" width="21" height="29"></rect>
+                    <rect id="Rectangle-Copy-34" fill="#75C6FF" x="735" y="0" width="31" height="29"></rect>
+                    <text id="12-copy" font-family="IBMPlexSans, IBM Plex Sans" font-size="13" font-weight="normal" line-spacing="19.5" fill="#2D343B">
+                        <tspan x="742.7" y="17">12</tspan>
+                    </text>
+                    <rect id="Rectangle-Copy-41" fill="#B8E2FF" x="714" y="0" width="21" height="29"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
