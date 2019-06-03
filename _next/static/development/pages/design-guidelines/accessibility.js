@@ -1937,7 +1937,7 @@ MDXContent.isMDXComponent = true;
 
 /***/ }),
 
-/***/ 4:
+/***/ 1:
 /*!*********************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fdesign-guidelines%2Faccessibility&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fdesign-guidelines%2Faccessibility.mdx ***!
   \*********************************************************************************************************************************************************************************************/
@@ -1960,5 +1960,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[4,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=accessibility.js.map

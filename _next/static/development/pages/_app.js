@@ -69513,12 +69513,13 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************!*\
   !*** ./components/Site.tsx ***!
   \*****************************/
-/*! exports provided: Site */
+/*! exports provided: Site, SiteContainer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Site", function() { return Site; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SiteContainer", function() { return SiteContainer; });
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
@@ -69543,24 +69544,16 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Site.tsx";
 
 
 function Site(props) {
-  var _ref = props,
-      Component = _ref.Component,
-      pageProps = _ref.pageProps;
-
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
-      classes = _useStyles.classes;
-
   var _useThemeSwitch = Object(_components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_8__["useThemeSwitch"])(),
       _useThemeSwitch2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useThemeSwitch, 2),
       currentTheme = _useThemeSwitch2[0],
       switchTheme = _useThemeSwitch2[1];
 
-  var route = props.router.route;
   return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
     theme: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppHeader__WEBPACK_IMPORTED_MODULE_5__["AppHeader"], {
@@ -69568,55 +69561,72 @@ function Site(props) {
     onThemeSwitch: switchTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 14
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(SiteContainer, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  })));
+}
+function SiteContainer(props) {
+  var _ref = props,
+      Component = _ref.Component,
+      pageProps = _ref.pageProps;
+
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles.classes;
+
+  var route = props.router.route;
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: classes.container,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 27
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_7__["SideNav"], {
     pages: _pages__WEBPACK_IMPORTED_MODULE_9__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 28
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: classes.content,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 30
     },
     __self: this
   }, route === '/' ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 32
     },
     __self: this
   })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_6__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 34
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 35
     },
     __self: this
   }))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppFooter__WEBPACK_IMPORTED_MODULE_4__["AppFooter"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 39
     },
     __self: this
-  }))));
+  })));
 }
 
 var createStyles = function createStyles() {
