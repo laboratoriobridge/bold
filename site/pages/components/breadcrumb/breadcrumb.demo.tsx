@@ -1,18 +1,21 @@
-import { MemoryRouter } from 'react-router'
-
-import { Breadcrumb, BreadcrumbNav, BreadcrumbProvider } from '../../../../lib'
+import { Breadcrumbs, Link } from '../../../../lib'
 
 function BreadcrumbDemo() {
   return (
-    <MemoryRouter>
-      <BreadcrumbProvider>
-        <Breadcrumb title='First level' />
-        <Breadcrumb title='Second level' to='/second/' />
-        <Breadcrumb title='Third level' to='/second/third/' />
-        <Breadcrumb title='Fourth level' to='/second/third/fourth/' />
-        <BreadcrumbNav />
-      </BreadcrumbProvider>
-    </MemoryRouter>
+    <Breadcrumbs>
+      <Link color='inherit' textDecoration='none' href='/'>
+        First level
+      </Link>
+      <Link color='inherit' textDecoration='none' href='/second/'>
+        Second level
+      </Link>
+      <Link color='inherit' textDecoration='none' href='/second/third/'>
+        Third level
+      </Link>
+      <Link color='inherit' textDecoration='none' href='/second/third/fourth/'>
+        Fourth level
+      </Link>
+    </Breadcrumbs>
   )
 }
 

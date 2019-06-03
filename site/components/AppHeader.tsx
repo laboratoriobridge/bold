@@ -1,10 +1,9 @@
 import NextLink from 'next/link'
 
-import { Button, Icon, Link, TextInput, Theme, Tooltip, useStyles } from '../../lib'
+import { Button, Icon, lightTheme, Link, TextInput, Theme, Tooltip, useStyles } from '../../lib'
 
 import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'
-import { lightTheme } from './useThemeSwitch'
 
 export interface AppHeaderProps {
   currentTheme: Theme
@@ -20,13 +19,14 @@ export function AppHeader(props: AppHeaderProps) {
       <div className={classes.logo}>
         <NextLink href='/'>
           <Link href='/' style={{ display: 'inline-block' }}>
-            <BoldLogo height='2.5rem' aria-label='Bold Logo' />
+            <BoldLogo aria-label='Bold Logo' style={{ height: '2.5rem' }} />
           </Link>
         </NextLink>
       </div>
 
-      <div className={classes.search}>
+      <div className={classes.search} id='search-wrapper'>
         <TextInput
+          id='search-input'
           style={classes.searchInput}
           type='search'
           icon='zoomOutline'
@@ -64,10 +64,6 @@ const createStyles = (theme: Theme) => ({
     width: `calc(${SIDE_NAV_WIDTH}px - 2rem)`,
     padding: '0 1rem 0 2.75rem',
   } as React.CSSProperties,
-  search: {
-    flex: 1,
-    padding: '0 1rem',
-  } as React.CSSProperties,
   searchInput: {
     border: 'none',
     '~ span': {
@@ -76,5 +72,75 @@ const createStyles = (theme: Theme) => ({
     '&::-webkit-search-decoration': {
       WebkitAppearance: 'none',
     } as React.CSSProperties,
+  } as React.CSSProperties,
+  search: {
+    flex: 1,
+    padding: '0 1rem',
+    position: 'relative',
+
+    '.algolia-autocomplete [class^="ds-dataset"]': {
+      background: theme.pallete.surface.main,
+      borderColor: theme.pallete.divider,
+      '&::before': {
+        background: theme.pallete.surface.main,
+      },
+    },
+
+    '.algolia-autocomplete': {
+      left: '1rem !important',
+      top: '0.5rem',
+    },
+
+    /* Main dropdown wrapper */
+    '.algolia-autocomplete .ds-dropdown-menu': {
+      fontSize: '1em',
+      fontWeight: 'normal',
+      '&::before': {
+        background: theme.pallete.surface.main,
+      },
+    },
+
+    /* Link element */
+    '.algolia-autocomplete .algolia-docsearch-suggestion': {
+      fontWeight: 'normal',
+      textDecoration: 'none',
+      background: 'transparent',
+    },
+
+    /* Main category (eg. Getting Started) */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--category-header': {
+      fontWeight: 'bold',
+      color: theme.pallete.text.main,
+    },
+
+    /* Category (eg. Downloads) */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column': {},
+
+    '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column-text': {
+      color: theme.pallete.text.secondary,
+      fontSize: theme.typography.sizes.text,
+    },
+
+    /* Content */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--content': {},
+
+    /* Title (eg. Bootstrap CDN) */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--title': {
+      color: theme.pallete.text.main,
+      fontSize: theme.typography.sizes.text,
+    },
+
+    /* Description description (eg. Bootstrap currently works...) */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--text': {
+      color: theme.pallete.text.main,
+      fontSize: theme.typography.sizes.text,
+    },
+
+    /* Highlighted text */
+    '.algolia-autocomplete .algolia-docsearch-suggestion--highlight': {
+      color: 'inherit !important',
+      background: `${theme.pallete.highlight} !important`,
+      boxShadow: 'none !important',
+    },
   } as React.CSSProperties,
 })

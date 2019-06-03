@@ -2,11 +2,56 @@
 
 exports[`should accept "component" prop 1`] = `
 .emotion-0 {
-  cursor: pointer;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #0A67D1;
+  font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: box-shadow .2s ease;
+  transition: box-shadow .2s ease;
+}
+
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  border-radius: 2px;
+  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+}
+
+<div>
+  <button
+    class="emotion-0"
+  >
+    Button link
+  </button>
+</div>
+`;
+
+exports[`should accept all Text props 1`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #0A67D1;
   font-weight: bold;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+  color: inherit;
+  font-size: 2rem;
+  font-weight: bolder;
+  font-style: italic;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
   outline: none;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -27,20 +72,22 @@ exports[`should accept "component" prop 1`] = `
 <div>
   <a
     class="emotion-0"
-    href="/"
   >
-    Router link
+    All text props
   </a>
 </div>
 `;
 
 exports[`should accept the "style" prop 1`] = `
 .emotion-0 {
-  cursor: pointer;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #0A67D1;
+  font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: bold;
+  cursor: pointer;
   outline: none;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -71,11 +118,14 @@ exports[`should accept the "style" prop 1`] = `
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
-  cursor: pointer;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: #0A67D1;
+  font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: bold;
+  cursor: pointer;
   outline: none;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;

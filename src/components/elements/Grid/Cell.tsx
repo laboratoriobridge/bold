@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties, useContext } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 import { Grid, GridContext, GridProps, GridResponsiveGap } from './Grid'
@@ -10,7 +9,7 @@ export type AlignSelf = 'auto' | 'flex-start' | 'flex-end' | 'center' | 'baselin
 export type CellSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export interface CellProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
   alignSelf?: AlignSelf
   flexGrow?: CSSProperties['flexGrow']
   flexShrink?: CSSProperties['flexShrink']

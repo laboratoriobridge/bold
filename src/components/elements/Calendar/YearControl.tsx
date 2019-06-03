@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useLocale } from '../../../locale'
 import { getUserLocale } from '../../../util/locale'
 import { Button } from '../Button'
 import { HFlow } from '../Flow'
@@ -13,6 +14,7 @@ export interface YearControlProps {
 
 export function YearControl(props: YearControlProps) {
   const { visibleDate, onChange, renderYear } = props
+  const locale = useLocale()
 
   const handleNext = () => {
     const next = new Date(visibleDate)
@@ -28,11 +30,11 @@ export function YearControl(props: YearControlProps) {
 
   return (
     <HFlow alignItems='center' hSpacing={0.5}>
-      <Button title='Previous year' size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
+      <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={handlePrev} tabIndex={-1}>
         <Icon icon='angleLeft' />
       </Button>
       {renderYear(visibleDate)}
-      <Button title='Next year' size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
+      <Button title={locale.calendar.nextYear} size='small' skin='ghost' onClick={handleNext} tabIndex={-1}>
         <Icon icon='angleRight' />
       </Button>
     </HFlow>

@@ -1,11 +1,10 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../styles'
+import { ExternalStyles, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 export interface ModalFooterProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function ModalFooter(props: ModalFooterProps) {

@@ -1,51 +1,47 @@
-/**
- * Formata um valor numérico para sua representação utilizando o número de casas decimais informadas.
- *
- * @param value Valor a ser formatado
- * @param minimumFractionDigits Número mínimo de casas decimais.
- * @param maximumFractionDigits Número máximo de casas decimais.
- * @return O valor numérico formatado utilizando o separador decimal do locale especificado.
- */
-export function format(value: number, minimumFractionDigits: number = 0, maximumFractionDigits: number = 2) {
-    if (minimumFractionDigits > maximumFractionDigits) {
-        maximumFractionDigits = minimumFractionDigits
-    }
+import { getUserLocale } from './locale'
 
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'decimal',
-        minimumFractionDigits,
-        maximumFractionDigits,
-    }).format(value)
+/**
+ * Formats a numeric value to its number format representation and current locale, using Intl.NumberFormat.
+ *
+ * @param value Value to be formatted
+ * @param options Number format options
+ * @return The formatted value.
+ */
+export function format(value: number, options?: Intl.NumberFormatOptions) {
+  return new Intl.NumberFormat(getUserLocale(), {
+    style: 'decimal',
+    ...options,
+  }).format(value)
 }
 
 /**
- * Abrevia um número para sua representação compacta. Ex.: 1.000.000 é abreviado para '1m'.
+ * Abrreviates a number to its compact representation.
+ * Example: 1000000 is abbreviated to '1m'
  *
- * @param value Valor a ser abreviado.
- * @param minimumFractionDigits Número mínimo de casas decimais utilizado no valor abreviado.
- * @param maximumFractionDigits Número máximo de casas decimais utilizado no valor abreviado.
- * @return O valor abreviado.
+ * @param value Value to be abbreviated.
+ * @param options?: Intl.NumberFormatOptions
+ * @return The abbreviated value.
  */
-export function abbrev(value: number, minimumFractionDigits: number = 0, maximumFractionDigits: number = 1) {
-    if (!value) {
-        return value
-    }
+export function abbrev(value: number, options?: Intl.NumberFormatOptions) {
+  if (!value) {
+    return value
+  }
 
-    if (value >= 1e12) {
-        return format(value / 1e12, minimumFractionDigits, maximumFractionDigits) + 't'
-    }
+  if (value >= 1e12) {
+    return format(value / 1e12, { minimumFractionDigits: 0, maximumFractionDigits: 1, ...options }) + 't'
+  }
 
-    if (value >= 1e9) {
-        return format(value / 1e9, minimumFractionDigits, maximumFractionDigits) + 'b'
-    }
+  if (value >= 1e9) {
+    return format(value / 1e9, { minimumFractionDigits: 0, maximumFractionDigits: 1, ...options }) + 'b'
+  }
 
-    if (value >= 1e6) {
-        return format(value / 1e6, minimumFractionDigits, maximumFractionDigits) + 'm'
-    }
+  if (value >= 1e6) {
+    return format(value / 1e6, { minimumFractionDigits: 0, maximumFractionDigits: 1, ...options }) + 'm'
+  }
 
-    if (value >= 1e3) {
-        return format(value / 1e3, minimumFractionDigits, maximumFractionDigits) + 'k'
-    }
+  if (value >= 1e3) {
+    return format(value / 1e3, { minimumFractionDigits: 0, maximumFractionDigits: 1, ...options }) + 'k'
+  }
 
-    return format(value, minimumFractionDigits, maximumFractionDigits)
+  return format(value, { minimumFractionDigits: 0, maximumFractionDigits: 1, ...options })
 }

@@ -6,7 +6,7 @@ import { IconMap } from '../../lib/components/elements/Icon/generated/Icons'
 
 export const IconLibrary = () => {
   const { classes } = useStyles(createStyles)
-  const [filter, setFilter] = useState()
+  const [filter, setFilter] = useState('')
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e && e.target && e.target.value) {
@@ -26,11 +26,11 @@ export const IconLibrary = () => {
 
       <Grid wrap>
         {icons.map((key: any) => (
-          <Cell style={classes.cell}>
+          <Cell key={key} style={classes.cell}>
             <div className={classes.iconBox}>
               <Icon icon={key} />
             </div>
-            <Text style={{ wordBreak: 'break-word' }}>{key}</Text>
+            <Text style={{ wordWrap: 'break-word' }}>{key}</Text>
           </Cell>
         ))}
       </Grid>
@@ -54,7 +54,7 @@ const createStyles = (theme: Theme) => ({
     border: `1px solid ${theme.pallete.divider}`,
   } as React.CSSProperties,
   cell: {
-    flexBasis: 100,
+    width: 100,
     textAlign: 'center',
     fontSize: theme.typography.sizes.text,
   } as React.CSSProperties,

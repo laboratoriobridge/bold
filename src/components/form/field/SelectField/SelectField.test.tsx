@@ -2,7 +2,6 @@ import React from 'react'
 import { render } from 'react-testing-library'
 
 import metaPath from '../../../../metaPath/metaPath'
-import { withRouter } from '../../../../test'
 import { Form, FormProps } from '../../finalForm/Form'
 import { DefaultItemType } from '../../input/Select'
 
@@ -12,7 +11,7 @@ const items: DefaultItemType[] = [{ value: 1, label: 'Item #1' }, { value: 2, la
 
 const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: Partial<FormProps>) => {
   // tslint:disable jsx-no-lambda
-  return withRouter(
+  return (
     <Form
       onSubmit={jest.fn()}
       initialValues={{ select1: items[0] }}

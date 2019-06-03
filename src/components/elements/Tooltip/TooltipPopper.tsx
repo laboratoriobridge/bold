@@ -1,11 +1,10 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 
 export interface TooltipPopperProps {
   text: string
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function TooltipPopper(props: TooltipPopperProps) {

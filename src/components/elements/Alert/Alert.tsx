@@ -1,6 +1,7 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
+import { useLocale } from '../../../locale'
 import { Theme, useStyles } from '../../../styles'
 import { Button } from '../Button'
 import { Icons } from '../Icon'
@@ -23,6 +24,7 @@ export function Alert(props: AlertProps) {
   const { styles, type, children, onCloseClick, inline, ...rest } = props
   const { classes, css, theme } = useStyles(createStyles, props)
   const typeStyle = createTypesStyles(theme)[type]
+  const locale = useLocale()
 
   return (
     <div className={css(classes.wrapper, typeStyle.style, styles && styles.wrapper)} role='alert' {...rest}>
@@ -33,9 +35,9 @@ export function Alert(props: AlertProps) {
 
         {onCloseClick && (
           <span className={classes.closeButtonWrapper}>
-            <Tooltip text='Fechar'>
+            <Tooltip text={locale.alert.close}>
               <Button
-                aria-label='Fechar alerta'
+                aria-label={locale.alert.close}
                 size='small'
                 skin='ghost'
                 style={classes.closeButton}

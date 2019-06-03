@@ -1,22 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept color prop 1`] = `
+exports[`should accept all text props 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
   color: #0A67D1;
+  font-size: 4rem;
+  font-weight: bolder;
+  font-style: italic;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 <div>
   <h1
     class="emotion-0"
   >
-    Heading Primary color
+    Heading with all text props
   </h1>
 </div>
 `;
 
 exports[`should accept style prop 1`] = `
 .emotion-0 {
-  font-style: italic;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+  color: red;
 }
 
 <div>
@@ -29,6 +44,14 @@ exports[`should accept style prop 1`] = `
 `;
 
 exports[`should render correctly 1`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h1
     class="emotion-0"
@@ -39,6 +62,14 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly 2`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h2
     class="emotion-0"
@@ -49,6 +80,14 @@ exports[`should render correctly 2`] = `
 `;
 
 exports[`should render correctly 3`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h3
     class="emotion-0"
@@ -59,6 +98,14 @@ exports[`should render correctly 3`] = `
 `;
 
 exports[`should render correctly 4`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h4
     class="emotion-0"
@@ -69,6 +116,14 @@ exports[`should render correctly 4`] = `
 `;
 
 exports[`should render correctly 5`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h5
     class="emotion-0"
@@ -79,6 +134,14 @@ exports[`should render correctly 5`] = `
 `;
 
 exports[`should render correctly 6`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #2D343B;
+  font-weight: bold;
+}
+
 <div>
   <h6
     class="emotion-0"

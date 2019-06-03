@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NumberField Field render 1`] = `
+exports[`Field should render correctly 1`] = `
 .emotion-1 {
   position: relative;
 }
@@ -10,6 +10,8 @@ exports[`NumberField Field render 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -74,18 +76,20 @@ exports[`NumberField Field render 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-<div
-  data-name="number"
->
+<div>
   <div
-    class="emotion-1"
+    data-name="number"
   >
-    <input
-      class="emotion-0"
-      name="number"
-      type="text"
-      value=""
-    />
+    <div
+      class="emotion-1"
+    >
+      <input
+        class="emotion-0"
+        name="number"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

@@ -7,12 +7,13 @@ import { Number } from './Number'
 storiesOf('Components|Textual', module).add('Number', () => (
   <Number
     value={number('value', 1234.56789)}
-    minDecimalPlaces={number('minDecimalPlaces', 2)}
-    maxDecimalPlaces={number('maxDecimalPlaces', 5)}
+    formatOptions={{
+      minimumFractionDigits: number('formatOptions.minimumFractionDigits', 2),
+      maximumFractionDigits: number('formatOptions.maximumFractionDigits', 5),
+    }}
     placeholder={text('placeholder', '')}
-    title={text('title', '')}
     abbrev={boolean('abbrev', false)}
     prefix={text('prefix', '')}
-    sufix={text('sufix', '')}
+    suffix={text('sufix', '')}
   />
 ))

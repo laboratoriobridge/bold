@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
 
 export interface FlowProps {
@@ -10,7 +9,7 @@ export interface FlowProps {
   hSpacing?: number
   alignItems?: AlignItems
   justifyContent?: JustifyContent
-  style?: Interpolation
+  style?: ExternalStyles
   children?: React.ReactNode
 }
 

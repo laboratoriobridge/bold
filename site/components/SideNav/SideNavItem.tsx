@@ -27,7 +27,7 @@ export const SideNavItem = withRouter((props: SideNavItemProps & WithRouterProps
       <ActiveLink href={href} activeClassName='active'>
         <a className={classes.link} onClick={handleLinkClick}>
           <Icon icon={icon as Icons} className={classes.icon} />
-          <Text style={classes.title}>{title}</Text>
+          <span className={classes.title}>{title}</span>
           {children && <Icon icon={isCollapsed ? 'angleUp' : 'angleDown'} className={classes.iconDropdown} />}
         </a>
       </ActiveLink>
@@ -56,6 +56,7 @@ const createStyles = (theme: Theme) => ({
     textDecoration: 'none',
     padding: '1rem 0 1rem 2rem',
     transition: 'background 0.2s ease',
+    fontWeight: 'bold',
     '&:hover': {
       background: theme.pallete.primary.c90,
     },

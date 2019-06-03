@@ -1,34 +1,20 @@
-import { Interpolation } from 'emotion'
-import React, { CSSProperties } from 'react'
+import React, { AnchorHTMLAttributes, CSSProperties } from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
+import { BaseTextProps, Text } from '../textual'
 
-export interface LinkProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'style'> {
-  component?: React.ElementType
-  style?: Interpolation
-  [key: string]: any
+export type LinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'style'> & BaseTextProps
+
+export function Link<P = LinkProps>(props: P & BaseTextProps) {
+  const { classes } = useStyles(createStyles, props)
+
+  return <Text<LinkProps> variant='link' component='a' {...props} style={[classes.link, props.style]} />
 }
-
-export function Link(props: LinkProps) {
-  const { style, component, ...rest } = props
-  const { classes, css } = useStyles(createStyles)
-
-  const Cmp = component
-
-  return <Cmp className={css(classes.link, style)} {...rest} />
-}
-
-Link.defaultProps = {
-  component: 'a',
-} as Partial<LinkProps>
 
 export const createStyles = (theme: Theme) => ({
   link: {
     cursor: 'pointer',
-    color: theme.pallete.primary.main,
-    textDecoration: 'underline',
-    fontWeight: 'bold',
     outline: 'none',
     transition: 'box-shadow .2s ease',
     '&:hover': {

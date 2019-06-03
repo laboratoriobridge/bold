@@ -1,14 +1,13 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 
 import { createTableStyles } from './styles'
 
 export interface TableProps extends Omit<React.TableHTMLAttributes<any>, 'style'> {
   hovered?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Table(props: TableProps) {

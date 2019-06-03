@@ -2,7 +2,7 @@
 
 exports[`MonthField should render correctly 1`] = `
 .emotion-5 {
-  display: inline-block;
+  display: block;
 }
 
 .emotion-4 {
@@ -40,6 +40,8 @@ exports[`MonthField should render correctly 1`] = `
   border: solid 1px #B9B9BD;
   border-radius: 2px;
   color: #2D343B;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
   line-height: 1rem;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
@@ -299,6 +301,10 @@ exports[`MonthField should render correctly 1`] = `
 }
 
 .emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #2D343B;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -459,7 +465,7 @@ exports[`MonthField should render correctly 1`] = `
                 >
                   <button
                     class="emotion-7"
-                    title="Ano anterior"
+                    title="Previous year"
                     type="button"
                   >
                     <span>
@@ -492,7 +498,7 @@ exports[`MonthField should render correctly 1`] = `
                 >
                   <button
                     class="emotion-7"
-                    title="Ano posterior"
+                    title="Next year"
                     type="button"
                   >
                     <span>

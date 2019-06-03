@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { TextColor, useStyles } from '../../../styles'
+import { ExternalStyles, TextColor, useStyles } from '../../../styles'
 import { getTextColor, Theme } from '../../../styles/theme/createTheme'
 import { Omit } from '../../../util/types'
 
@@ -14,7 +13,7 @@ export interface IconProps extends Omit<React.SVGAttributes<SVGElement>, 'style'
   fill?: IconColor
   stroke?: IconColor
   size?: number
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export const getIconColor = (theme: Theme, color: IconColor) => {

@@ -1,6 +1,8 @@
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
+import { Link } from '../Link'
+
 import { DropdownItem } from './DropdownItem'
 
 it('should render correctly', () => {
@@ -8,10 +10,20 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should provide an innerRef to the underlying li element', () => {
-  const ref = React.createRef<HTMLLIElement>()
-  render(<DropdownItem innerRef={ref}>Item</DropdownItem>)
-  expect(ref.current.tagName).toEqual('LI')
+it('should accept "component" prop to render with different container elements', () => {
+  const { container: container1 } = render(
+    <DropdownItem component='a' href='/'>
+      Item
+    </DropdownItem>
+  )
+  expect(container1).toMatchSnapshot()
+
+  const { container: container2 } = render(
+    <DropdownItem component={Link} href='/'>
+      Item
+    </DropdownItem>
+  )
+  expect(container2).toMatchSnapshot()
 })
 
 describe('onClick', () => {
@@ -33,11 +45,19 @@ describe('onClick', () => {
     expect(handleClick).not.toHaveBeenCalled()
   })
 
-  it('should call onClick when focused and enter is pressed', () => {
+  it('should call onClick when focused and Enter is pressed', () => {
     const handleClick = jest.fn()
     const { container } = render(<DropdownItem onClick={handleClick}>Item</DropdownItem>)
     fireEvent.focus(container.querySelector('li'))
     fireEvent.keyDown(container.querySelector('li'), { key: 'Enter' })
+    expect(handleClick).toHaveBeenCalled()
+  })
+
+  it('should call onClick when focused and Spacebar is pressed', () => {
+    const handleClick = jest.fn()
+    const { container } = render(<DropdownItem onClick={handleClick}>Item</DropdownItem>)
+    fireEvent.focus(container.querySelector('li'))
+    fireEvent.keyDown(container.querySelector('li'), { key: ' ' })
     expect(handleClick).toHaveBeenCalled()
   })
 })

@@ -6,13 +6,8 @@ import React from 'react'
 import { withForm } from '../../../../stories-addons'
 
 import { CheckboxField } from './CheckboxField'
-import Doc from './CheckboxField.md'
 
 storiesOf('Form|CheckboxField', module)
-  // @ts-ignore
-  .addParameters({
-    info: { text: Doc },
-  })
   .addDecorator(withForm())
   .add('default', () => (
     <CheckboxField

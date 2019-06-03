@@ -4,32 +4,22 @@ import { FormSpy } from 'react-final-form'
 import { Button, ButtonProps } from '../../../elements/Button'
 
 export interface SubmitButtonProps extends ButtonProps {
-    handleSubmit: (event?: React.SyntheticEvent<HTMLFormElement>) => void
+  handleSubmit: (event?: React.SyntheticEvent<HTMLFormElement>) => void
 }
 
 export class SubmitButton extends React.PureComponent<SubmitButtonProps> {
+  render() {
+    const { handleSubmit, ...rest } = this.props
+    return (
+      <FormSpy subscription={{ submitting: true }}>
+        {({ submitting }) => (
+          <Button loading={submitting} onClick={handleSubmit} kind='primary' render={this.renderButton} {...rest} />
+        )}
+      </FormSpy>
+    )
+  }
 
-    render() {
-        const { handleSubmit, ...rest } = this.props
-        return (
-            <FormSpy
-                subscription={{ submitting: true }}
-            >
-                {({ submitting }) => (
-                    <Button
-                        loading={submitting}
-                        onClick={handleSubmit}
-                        kind='primary'
-                        render={this.renderButton}
-                        {...rest}
-                    />
-                )}
-            </FormSpy>
-        )
-    }
-
-    private renderButton = (props: any) => {
-        return <button type='submit' {...props} />
-    }
-
+  private renderButton = (props: any) => {
+    return <button type='submit' {...props} />
+  }
 }

@@ -135,7 +135,7 @@ exports[`Modal should render correctly when opened 1`] = `
         role="dialog"
       >
         <button
-          aria-label="Fechar"
+          aria-label="Close"
           class="emotion-1"
           type="button"
         >
@@ -294,7 +294,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
         role="dialog"
       >
         <button
-          aria-label="Fechar"
+          aria-label="Close"
           class="emotion-1"
           type="button"
         >
@@ -453,7 +453,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
         role="dialog"
       >
         <button
-          aria-label="Fechar"
+          aria-label="Close"
           class="emotion-1"
           type="button"
         >
@@ -612,7 +612,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
         role="dialog"
       >
         <button
-          aria-label="Fechar"
+          aria-label="Close"
           class="emotion-1"
           type="button"
         >

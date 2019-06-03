@@ -1,20 +1,20 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Heading, HeadingProps } from '../Heading/Heading'
 
 export interface HeadingSectionProps {
   title: React.ReactNode
   level: HeadingProps['level']
+  vSpace?: number
   color?: HeadingProps['color']
-  style?: Interpolation
+  style?: ExternalStyles
   children?: React.ReactNode
 }
 
 export function HeadingSection(props: HeadingSectionProps) {
-  const { style, title, children, ...rest } = props
-  const { classes, css } = useStyles(createStyles)
+  const { style, title, children, vSpace, ...rest } = props
+  const { classes, css } = useStyles(createStyles(vSpace))
 
   return (
     <div className={css(classes.section, style)}>
@@ -29,9 +29,9 @@ export function HeadingSection(props: HeadingSectionProps) {
 
 HeadingSection.defaultProps = {} as Partial<HeadingSectionProps>
 
-export const createStyles = () => ({
+export const createStyles = (vSpacing: number) => () => ({
   section: {},
   title: {
-    marginBottom: '1rem',
+    marginBottom: vSpacing ? vSpacing : '1rem',
   },
 })

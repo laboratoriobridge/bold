@@ -1,6 +1,9 @@
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
+import { LocaleContext } from '../../../locale'
+import ptBr from '../../../locale/locales/pt-BR'
+
 import { MonthControl } from './MonthControl'
 
 it('should render correctly', () => {
@@ -26,4 +29,14 @@ it('should call onChange function with previous month when clicked on prev butto
   expect(change).not.toHaveBeenCalled()
   fireEvent.click(prevButton)
   expect(change).toHaveBeenCalledWith(new Date('2018-09-26'))
+})
+
+it('should allow message customization via locale context', () => {
+  const { container } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <MonthControl />
+    </LocaleContext.Provider>
+  )
+  expect(container.querySelectorAll('button')[0].getAttribute('title')).toEqual(ptBr.calendar.previousMonth)
+  expect(container.querySelectorAll('button')[1].getAttribute('title')).toEqual(ptBr.calendar.nextMonth)
 })

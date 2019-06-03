@@ -25,7 +25,7 @@ export type ThemeConfig = Partial<{
 
 export const createTheme = (config: ThemeConfig = {}): Theme => {
   const pallete = createPallete(config.pallete)
-  const typography = createTypography(config.typography)
+  const typography = createTypography(pallete, config.typography)
 
   return {
     pallete,

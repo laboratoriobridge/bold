@@ -6,14 +6,9 @@ import React from 'react'
 import { withForm } from '../../../../stories-addons'
 
 import { MaskedField } from './MaskedField'
-import Doc from './MaskedField.md'
 import { CnsField, CpfField, TelefoneField, TimeField } from './maskedFields'
 
 storiesOf('Form|MaskedField', module)
-  // @ts-ignore
-  .addParameters({
-    info: { text: Doc },
-  })
   .addDecorator(withForm())
   .add('default', () => (
     <MaskedField

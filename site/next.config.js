@@ -7,7 +7,7 @@ const withPlugins = compose(
   withMDX({
     extension: /\.(md|mdx)/,
     options: {
-      remarkPlugins: [require('remark-highlight.js')],
+      remarkPlugins: [require('remark-highlight.js'), require('remark-slug')],
     },
   }),
   withTypescript

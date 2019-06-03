@@ -1,11 +1,11 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../../../styles'
+import { useLocale } from '../../../../../locale'
+import { ExternalStyles, Theme, useStyles } from '../../../../../styles'
 import Times from '../../../../elements/Icon/generated/TimesDefault'
 
 export interface SelectMultiItemProps {
-  style?: Interpolation
+  style?: ExternalStyles
   disabled?: boolean
   children?: React.ReactNode
   onRemove(e: React.MouseEvent<HTMLSpanElement>): void
@@ -14,12 +14,13 @@ export interface SelectMultiItemProps {
 export function SelectMultiItem(props: SelectMultiItemProps) {
   const { style, children, onRemove, disabled, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
+  const locale = useLocale()
 
   return (
     <span className={css(classes.root, style)} {...rest}>
       <span className={classes.text}>{children}</span>
       {!disabled && (
-        <span className={classes.button} onClick={onRemove} title='Remover'>
+        <span className={classes.button} onClick={onRemove} title={locale.select.removeItem}>
           <Times />
         </span>
       )}

@@ -1,12 +1,11 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { Theme, useStyles } from '../../../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../../../styles'
 import { Omit } from '../../../../../util'
 
 export interface SelectMenuProps extends Omit<React.HTMLAttributes<HTMLUListElement>, 'style'> {
   menuRef?: React.Ref<HTMLUListElement>
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function SelectMenu(props: SelectMenuProps) {

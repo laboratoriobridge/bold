@@ -1,12 +1,11 @@
-import { mount, render } from 'enzyme'
 import setFieldData from 'final-form-set-field-data'
 import React from 'react'
 import { Form } from 'react-final-form'
+import { render } from 'react-testing-library'
 
 import metaPath from '../../../../metaPath/metaPath'
-import { FieldWrapper } from '../../FieldWrapper'
 
-import { Field, FieldCmp, FieldProps, RenderProps } from './Field'
+import { Field, FieldProps, RenderProps } from './Field'
 
 interface FormType {
   id: number
@@ -21,12 +20,13 @@ const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
 
 describe('render', () => {
   it('should render correctly', () => {
-    expect(render(createFormAndField({ label: 'Field #1', required: true }))).toMatchSnapshot()
+    const { container } = render(createFormAndField({ label: 'Field #1', required: true }))
+    expect(container).toMatchSnapshot()
   })
 
   it('should NOT render wrapper if hasWrapper is false', () => {
-    const wrapper = mount(createFormAndField({ hasWrapper: false }))
-    expect(wrapper.find(FieldWrapper).length).toEqual(0)
+    const { container } = render(createFormAndField({ hasWrapper: false }))
+    expect(container.querySelectorAll('div').length).toEqual(0)
   })
 })
 
@@ -34,37 +34,22 @@ describe('convert', () => {
   it('should throw an exception if convert is defined but necessary mutator is not set on context', () => {
     jest.spyOn(console, 'error').mockImplementation(() => null)
     expect(() => {
-      mount(createFormAndField({ convert: jest.fn() }))
+      render(createFormAndField({ convert: jest.fn() }))
     }).toThrowErrorMatchingSnapshot()
-  })
-  it('should set convert function on field data', () => {
-    const convert = jest.fn()
-    const wrapper = mount(
-      <Form onSubmit={jest.fn()} mutators={{ setFieldData: setFieldData.default || setFieldData }}>
-        {p => <Field name='field1' render={input} convert={convert} />}
-      </Form>
-    )
-    const fieldState = wrapper
-      .find(FieldCmp)
-      .props()
-      .reactFinalForm.getFieldState('field1')
-    expect(fieldState.data).toEqual({ convert })
   })
 })
 
 describe('meta', () => {
-  it('should work normally with metaPath', () => {
+  it('should accept metaPath as name prop', () => {
     const path = metaPath<FormType>()
     const convert = jest.fn()
-    const wrapper = mount(
+
+    const { container } = render(
       <Form onSubmit={jest.fn()} mutators={{ setFieldData: setFieldData.default || setFieldData }}>
         {p => <Field<number> name={path.id} render={input} convert={convert} />}
       </Form>
     )
-    const fieldState = wrapper
-      .find(FieldCmp)
-      .props()
-      .reactFinalForm.getFieldState(path.id.absolutePath())
-    expect(fieldState.data).toEqual({ convert })
+
+    expect(container.querySelector('input').getAttribute('name')).toEqual('id')
   })
 })

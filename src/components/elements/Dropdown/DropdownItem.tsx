@@ -1,31 +1,29 @@
 import React from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../../styles'
-import { composeRefs } from '../../../util/react'
 
-export interface DropdownItemProps extends React.HtmlHTMLAttributes<HTMLLIElement> {
+export interface DropdownItemProps extends React.HTMLAttributes<HTMLElement> {
   type?: 'normal' | 'danger'
   disabled?: boolean
-  innerRef?: React.RefObject<HTMLLIElement>
+  component?: React.ElementType<any>
+  [prop: string]: any
 }
 
 export function DropdownItem(props: DropdownItemProps) {
-  const { type, disabled, children, onClick, innerRef, ...rest } = props
+  const { type, disabled, children, onClick, component: Component, ...rest } = props
   const { classes, css } = useStyles(styles)
 
-  const ref = React.useRef<HTMLLIElement>(null)
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLLIElement>) => {
-    if (event.key === 'Enter') {
-      ref.current.click()
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      const elem = event.target as any
+      elem.click()
     }
   }
 
   const classNames = css(classes.item, type === 'danger' && classes.danger, disabled && classes.disabled)
 
   return (
-    <li
-      ref={composeRefs(innerRef, ref)}
+    <Component
       className={classNames}
       onClick={!disabled ? onClick : undefined}
       onKeyDown={handleKeyDown}
@@ -34,32 +32,28 @@ export function DropdownItem(props: DropdownItemProps) {
       {...rest}
     >
       {children}
-    </li>
+    </Component>
   )
 }
 
 DropdownItem.defaultProps = {
-  disabled: false,
+  component: 'li',
   type: 'normal',
+  disabled: false,
 } as Partial<DropdownItemProps>
 
 const styles = (theme: Theme) => ({
   item: {
+    ...theme.typography.variant('main'),
     margin: 0,
+    textDecoration: 'none',
     cursor: 'pointer',
     padding: '0.5rem 1rem',
-    fontWeight: 'bolder',
+    fontWeight: 'bold',
     outline: 'none',
     fontSize: theme.typography.sizes.button,
     transition: 'all .2s ease',
-    '&:first-of-type a': {
-      borderTopLeftRadius: theme.radius.popper,
-      borderTopRightRadius: theme.radius.popper,
-    },
-    '&:last-of-type a': {
-      borderBottomLeftRadius: theme.radius.popper,
-      borderBottomRightRadius: theme.radius.popper,
-    },
+    display: 'block',
     '&:hover': {
       background: theme.pallete.surface.background,
     },

@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { TextColor, useStyles } from '../../../styles'
+import { ExternalStyles, TextColor, useStyles } from '../../../styles'
 import { getTextColor, Theme } from '../../../styles/theme/createTheme'
 import { Omit } from '../../../util'
 
@@ -9,7 +8,7 @@ export type ProgressType = TextColor
 
 export interface ProgressProps extends Omit<React.ProgressHTMLAttributes<HTMLProgressElement>, 'style'> {
   type?: ProgressType
-  style?: Interpolation
+  style?: ExternalStyles
 }
 
 export function Progress(props: ProgressProps) {

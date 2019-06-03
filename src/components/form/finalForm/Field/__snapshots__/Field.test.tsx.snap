@@ -15,24 +15,26 @@ exports[`render should render correctly 1`] = `
   line-height: 20px;
 }
 
-<div
-  data-name="field1"
->
-  <label
-    class="emotion-1"
+<div>
+  <div
+    data-name="field1"
   >
-    Field #1
-    <span
-      class="emotion-0"
-      title="Campo obrigatório"
+    <label
+      class="emotion-1"
     >
-      *
-    </span>
-  </label>
-  <input
-    aria-label="Field #1"
-    name="field1"
-    value=""
-  />
+      Field #1
+      <span
+        class="emotion-0"
+        title="Required field"
+      >
+        *
+      </span>
+    </label>
+    <input
+      aria-label="Field #1"
+      name="field1"
+      value=""
+    />
+  </div>
 </div>
 `;

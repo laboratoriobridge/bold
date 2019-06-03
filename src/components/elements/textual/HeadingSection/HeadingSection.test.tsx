@@ -67,3 +67,13 @@ it('should accept style prop', () => {
     ).container
   ).toMatchSnapshot()
 })
+
+it('should accept vSpace prop', () => {
+  expect(
+    render(
+      <HeadingSection title={'Some title'} level={1} vSpace={10}>
+        Content section 1
+      </HeadingSection>
+    ).container
+  ).toMatchSnapshot()
+})

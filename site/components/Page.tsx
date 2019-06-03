@@ -1,4 +1,6 @@
-import { Theme, useStyles } from '../../lib'
+import { Text, Theme, useStyles } from '../../lib'
+import { createStyles as createLinkStyles } from '../../lib/components/elements/Link/Link'
+import pages from '../pages'
 
 import { PageContainer } from './PageContainer'
 
@@ -6,53 +8,78 @@ export function Page(props: any) {
   const { children } = props
   const { classes } = useStyles(createStyles)
 
+  const { route } = props.router
+  const parent = pages.find(page => page.children && page.children.map(c => c.href).includes(route))
+
   return (
-    <main className={classes.main}>
-      <PageContainer>{children}</PageContainer>
-    </main>
+    <div className={classes.wrapper}>
+      <PageContainer>
+        <main className={classes.main}>
+          {parent && (
+            <Text id='page-parent-title' fontWeight='bold'>
+              {parent.title}
+            </Text>
+          )}
+          {children}
+        </main>
+      </PageContainer>
+    </div>
   )
 }
 
 export const createStyles = (theme: Theme) => ({
-  main: {
+  wrapper: {
     background: theme.pallete.surface.main,
     flex: 1,
     padding: `2rem 3rem`,
-    display: 'flex',
-    flexDirection: 'column',
-
+  },
+  main: {
     // Global overrides (for markdown elements):
-    fontSize: '1rem',
-    img: {
+    '& > p > img': {
       maxWidth: 960,
+      marginBottom: '2rem',
     },
-    'p, ul, table': {
+
+    '& > p a, & > ul a': {
+      ...createLinkStyles(theme).link,
+      fontSize: '1rem',
+    },
+
+    '& > p': {
+      fontSize: '1rem',
       maxWidth: 800,
-    },
-    p: {
-      marginBottom: '2rem',
       lineHeight: 1.5,
-    },
-    'h1, h2, h3, h4, h5, h6': {
       marginBottom: '2rem',
     },
-    ul: {
+
+    '& > h1, & > h2, & > h3, & > h4, & > h5, & > h6': {
+      marginBottom: '2rem',
+    },
+
+    '& > ul': {
+      fontSize: '1rem',
+      maxWidth: 800,
       margin: '0 0 2rem 0',
     },
-    table: {
+
+    '& > table': {
+      fontSize: '1rem',
+      maxWidth: 800,
       borderCollapse: 'collapse',
       width: '100%',
       marginBottom: '2rem',
-    },
-    'td, th': {
-      borderBottom: `1px solid ${theme.pallete.divider}`,
-      textAlign: 'left',
-      padding: '1rem 0',
-      '&:not(:last-child)': {
-        paddingRight: '2rem',
+
+      'td, th': {
+        borderBottom: `1px solid ${theme.pallete.divider}`,
+        textAlign: 'left',
+        padding: '1rem 0',
+        '&:not(:last-child)': {
+          paddingRight: '2rem',
+        },
       },
     },
-    blockquote: {
+
+    '& > blockquote': {
       position: 'relative',
       color: theme.pallete.primary.main,
       fontStyle: 'italic',
@@ -67,17 +94,16 @@ export const createStyles = (theme: Theme) => ({
         height: 2,
         borderTop: `2px solid ${theme.pallete.divider}`,
       },
-    } as React.CSSProperties,
+    },
+
     code: {
-      '&::selection': {
-        background: theme.pallete.primary.main,
-      },
       '&:not(.hljs)': {
         padding: '0.125rem 0.25rem',
         borderRadius: 3,
         background: theme.pallete.surface.background,
       },
     },
+
     pre: {
       marginBottom: '2rem',
       code: {
@@ -86,5 +112,5 @@ export const createStyles = (theme: Theme) => ({
         padding: '0.5rem 1rem',
       },
     },
-  },
+  } as React.CSSProperties,
 })

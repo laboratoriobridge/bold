@@ -1,6 +1,7 @@
 import { css } from 'emotion'
 import React, { CSSProperties, useEffect, useState } from 'react'
 
+import { useLocale } from '../../../../locale'
 import { Theme, useStyles } from '../../../../styles'
 import { Button } from '../../Button'
 import { HFlow, VFlow } from '../../Flow'
@@ -27,6 +28,7 @@ export interface ReferenceMonth {
 export function MonthPicker(props: MonthPickerProps) {
   const { monthDescriptions, year, onChange } = props
   const { classes } = useStyles(createStyles)
+  const locale = useLocale()
 
   const [visibleYear, setVisibleYear] = useState(year || new Date().getFullYear())
   useEffect(() => {
@@ -44,13 +46,13 @@ export function MonthPicker(props: MonthPickerProps) {
     <div>
       <VFlow style={classes.container} vSpacing={0.5}>
         <HFlow style={classes.header} alignItems='center' justifyContent='space-between'>
-          <Button title='Ano anterior' size='small' skin='ghost' onClick={onLeftClick}>
+          <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onLeftClick}>
             <Icon icon='angleLeft' />
           </Button>
-          <Text weight='bold' size={0.875}>
+          <Text fontWeight='bold' fontSize={0.875}>
             {visibleYear}
           </Text>
-          <Button title='Ano posterior' size='small' skin='ghost' onClick={onRightClick}>
+          <Button title={locale.calendar.nextYear} size='small' skin='ghost' onClick={onRightClick}>
             <Icon icon='angleRight' />
           </Button>
         </HFlow>

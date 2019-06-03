@@ -1,15 +1,14 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 import { Manager, Reference } from 'react-popper'
 
-import { useStyles } from '../../../styles'
+import { ExternalStyles, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 
 import { PopperContent, PopperContentProps } from './PopperContent'
 
 export interface PopperProps extends Omit<PopperContentProps, 'show'> {
   closeOnOutsideClick?: boolean
-  style?: Interpolation
+  style?: ExternalStyles
   block?: boolean
   initialVisible?: boolean
   renderTarget(controller: PopperController): React.ReactNode
@@ -31,6 +30,8 @@ export interface PopperState {
 }
 
 export function Popper(props: PopperProps) {
+  const { renderTarget, children, style, block, ...rest } = props
+
   const [visible, setVisible] = React.useState(props.initialVisible || false)
 
   const wrapperRef = React.useRef<HTMLDivElement>()
@@ -106,7 +107,6 @@ export function Popper(props: PopperProps) {
     }
   }, [visible])
 
-  const { renderTarget, children, style, block, ...rest } = props
   return (
     <div ref={wrapperRef} className={css(classes.wrapper, style)}>
       <Manager>

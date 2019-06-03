@@ -34,7 +34,7 @@ export function FileUploader(props: FileUploaderProps) {
         {isDragAccept}
         <HFlow alignItems='center' hSpacing={0.5}>
           <Icon fill='secondary' icon='upload' />
-          <Text color='secondary' size={0.875} weight='bold'>
+          <Text color='secondary' fontSize={0.875} fontWeight='bold'>
             {text}
           </Text>
         </HFlow>
@@ -89,7 +89,7 @@ export function FileInfo(props: FileInfoProps) {
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
-      <Text weight='bold' style={{ marginRight: 10 }}>
+      <Text fontWeight='bold' style={{ marginRight: 10 }}>
         {file.selectedFile.name}
       </Text>
       <Text>{format(file.selectedFile.size, 0)}</Text>
@@ -112,7 +112,7 @@ export function FileExtension(props: FileExtensionProps) {
   }))
 
   return (
-    <Text color='secondary' style={classes.root} weight='bold'>
+    <Text color='secondary' style={classes.root} fontWeight='bold'>
       {extension}
     </Text>
   )

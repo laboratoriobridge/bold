@@ -1,7 +1,6 @@
-import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { useStyles } from '../../../../styles'
+import { ExternalStyles, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util/types'
 import { SortableLabel, SortDirection } from '../SortableLabel/SortableLabel'
 
@@ -10,7 +9,7 @@ import { createTableStyles } from './styles'
 export interface TableHeaderProps extends Omit<React.ThHTMLAttributes<any>, 'style'> {
   sortable?: boolean
   sortDirection?: SortDirection
-  style?: Interpolation
+  style?: ExternalStyles
   onSortChange?(direction: SortDirection, shiftKey?: boolean): any
 }
 

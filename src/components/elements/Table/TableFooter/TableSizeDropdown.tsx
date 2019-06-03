@@ -1,7 +1,7 @@
 import { Interpolation } from 'emotion'
 import React from 'react'
 
-import { DropdownButton, DropdownItemConfig } from '../../Dropdown'
+import { DropdownButton, DropdownButtonItemProps } from '../../Dropdown'
 import { Icon } from '../../Icon'
 import { Text } from '../../textual'
 
@@ -14,7 +14,7 @@ export interface TableSizeDropdownProps {
 export function TableSizeDropdown(props: TableSizeDropdownProps) {
   const { options, size, onChange } = props
 
-  const items: DropdownItemConfig[] = options.map(op => ({
+  const items: DropdownButtonItemProps[] = options.map(op => ({
     content: op,
     onClick: () => onChange(op),
   }))

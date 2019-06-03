@@ -13,7 +13,7 @@ const config = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'bridge-react',
+    library: 'bold',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -33,26 +33,14 @@ const config = {
     ],
   },
   plugins: [new CheckerPlugin()],
-  externals: [
-    'emotion',
-    'final-form',
-    'history',
-    'moment',
-    'react',
-    'react-dom',
-    'react-final-form',
-    'react-router',
-    'react-router-dom',
-    'tslint-react',
-  ],
+  externals: ['emotion', 'final-form', 'history', 'moment', 'react', 'react-dom', 'react-final-form', 'tslint-react'],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
         sourceMap: true,
         uglifyOptions: {
-          // Keep function original names to preserve React component display names
+          warnings: false,
           compress: {
-            warnings: false,
             keep_fnames: true,
           },
           mangle: {

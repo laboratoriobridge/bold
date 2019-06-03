@@ -1,22 +1,24 @@
 import React from 'react'
 
 import { useRovingTabIndex } from '../../../hooks/useRovingTabIndex'
-import { Theme, useStyles } from '../../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../../styles'
+import { Omit } from '../../../util'
 import { composeRefs } from '../../../util/react'
 
-export interface DropdownMenuProps extends React.HTMLAttributes<HTMLUListElement> {
+export interface DropdownMenuProps extends Omit<React.HTMLAttributes<HTMLUListElement>, 'style'> {
   innerRef?: React.RefObject<HTMLUListElement>
+  style?: ExternalStyles
 }
 
 export function DropdownMenu(props: DropdownMenuProps) {
-  const { innerRef, ...rest } = props
-  const { classes } = useStyles(styles)
+  const { innerRef, style, ...rest } = props
+  const { css, classes } = useStyles(styles)
 
   const rootRef = useRovingTabIndex({
     getItems: root => Array.from(root.querySelectorAll('[role="menuitem"]')),
   })
 
-  return <ul ref={composeRefs(innerRef, rootRef)} className={classes.root} role='menu' {...rest} />
+  return <ul ref={composeRefs(innerRef, rootRef)} className={css(classes.root, style)} role='menu' {...rest} />
 }
 
 export const styles = (theme: Theme) => ({
