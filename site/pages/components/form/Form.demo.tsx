@@ -14,7 +14,7 @@ function FormDemo() {
             <TextField label='Last name' name='lastName' required />
           </Cell>
           <Cell xs={6}>
-            <TextField name='email' label='E-email' type='email' icon='emailFilled' />
+            <TextField name='email' label='E-mail' type='email' icon='emailFilled' />
           </Cell>
           <Cell xs={6}>
             <FormControl label='Favorite color'>
