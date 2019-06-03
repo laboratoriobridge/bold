@@ -17,7 +17,7 @@ it('renders correctly', () => {
   ).toMatchSnapshot()
 })
 
-it('shuld accept "component" prop', () => {
+it('should accept "component" prop', () => {
   const TabLink = (props: AnchorHTMLAttributes<HTMLAnchorElement> & TabItemProps) => (
     <TabItem component='a' {...props} />
   )
@@ -35,6 +35,10 @@ it('shuld accept "component" prop', () => {
     </Tabs>
   )
   expect(container).toMatchSnapshot()
+})
+
+it('should accept "style" prop', () => {
+  expect(render(<Tabs style={{ color: 'red' }}>Children</Tabs>).container).toMatchSnapshot()
 })
 
 it('should have a roving tabindex', () => {

@@ -167,7 +167,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`shuld accept "component" prop 1`] = `
+exports[`should accept "component" prop 1`] = `
 .emotion-8 {
   list-style: none;
   padding: 0;
@@ -334,6 +334,25 @@ exports[`shuld accept "component" prop 1`] = `
         Disabled
       </a>
     </li>
+  </ul>
+</div>
+`;
+
+exports[`should accept "style" prop 1`] = `
+.emotion-0 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+  color: red;
+}
+
+<div>
+  <ul
+    class="emotion-0"
+    role="tablist"
+  >
+    Children
   </ul>
 </div>
 `;
