@@ -1,4 +1,4 @@
-import { Text, Theme, useStyles } from '../../lib'
+import { darkTheme, Text, Theme, useStyles } from '../../lib'
 import { createStyles as createLinkStyles } from '../../lib/components/elements/Link/Link'
 import pages from '../pages'
 
