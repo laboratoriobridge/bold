@@ -9,7 +9,9 @@ export function Page(props: any) {
   const { classes } = useStyles(createStyles)
 
   const { route } = props.router
-  const parent = pages.find(page => page.children && page.children.map(c => c.href).includes(route))
+  const parent = pages.find(page =>
+    page.children ? !!page.children.map(c => c.href).find(c => route.indexOf(c) >= 0) : false
+  )
 
   return (
     <div className={classes.wrapper}>

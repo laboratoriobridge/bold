@@ -1,7 +1,15 @@
-import TabColors from './TabColors'
+import { PalleteList } from '../../../components/PalleteList'
+import { TabLinks } from '../../../components/TabLinks'
 
-# Color
+# Colors
+
+<TabLinks
+  items={[
+    { title: 'Palletes', href: '/design-guidelines/color' },
+    { title: 'Usage', href: '/design-guidelines/color/usage' },
+  ]}
+/>
 
 In Bold, colors are used to express states of interactive components, status, and emphasize visual and textual content. All palettes were built according to accessibility standards, fulfilling the minimum contrast of interactive elements and text with the background. The palettes were also designed thematically, and it maintains the optimum contrast of all components, as well as works in reverse, in dark mode.
 
-<TabColors />
+<PalleteList />
