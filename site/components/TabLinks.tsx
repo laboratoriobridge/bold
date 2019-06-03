@@ -19,21 +19,24 @@ export const TabLinks = withRouter((props: TabLinksProps) => {
   const isActive = (item: TabLinksProps['items'][0]) => router.pathname === item.href
 
   return (
-    <Tabs style={classes.tabs}>
-      {items.map(item => (
-        <NextLink key={item.href} href={item.href}>
-          <TabItem component='a' href={item.href} style={classes.item} active={isActive(item)}>
-            {item.title}
-          </TabItem>
-        </NextLink>
-      ))}
-    </Tabs>
+    <div className={classes.tabs}>
+      <Tabs>
+        {items.map(item => (
+          <NextLink key={item.href} href={item.href}>
+            <TabItem component='a' href={item.href} style={classes.item} active={isActive(item)}>
+              {item.title}
+            </TabItem>
+          </NextLink>
+        ))}
+      </Tabs>
+    </div>
   )
 })
 
 const createStyles = (theme: Theme) => ({
   tabs: {
     marginTop: '-0.75rem !important',
+    marginBottom: '2rem',
     borderBottom: `1px solid ${theme.pallete.divider}`,
   } as CSSProperties,
   item: {
