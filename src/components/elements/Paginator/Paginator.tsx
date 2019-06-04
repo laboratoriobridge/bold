@@ -5,7 +5,7 @@ import { Theme, useStyles } from '../../../styles'
 import { TextInput } from '../../form/input/TextInput/TextInput'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
-import { Text } from '../textual'
+import { Text } from '../Text'
 
 export interface PaginatorProps {
   /**

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import * as numberUtil from '../../../../util/number'
+import * as numberUtil from '../../../util/number'
 
 export interface NumberProps {
   value: number

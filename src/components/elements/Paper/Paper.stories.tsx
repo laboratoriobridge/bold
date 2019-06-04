@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Heading } from '../textual/Heading/Heading'
-import { Text } from '../textual/Text/Text'
+import { Heading } from '../Heading'
+import { Text } from '../Text'
 
 import { Paper } from './Paper'
 

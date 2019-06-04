@@ -2,9 +2,9 @@ import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles, WithStylesProps } from '../../../../styles'
 import { HFlow } from '../../Flow'
+import { Number } from '../../Number'
 import { Paginator } from '../../Paginator/Paginator'
-import { Text } from '../../textual'
-import { Number } from '../../textual/Number/Number'
+import { Text } from '../../Text'
 
 import { TableSizeDropdown } from './TableSizeDropdown'
 

@@ -6,7 +6,7 @@ import { Theme, useStyles } from '../../../../styles'
 import { Button } from '../../Button'
 import { HFlow, VFlow } from '../../Flow'
 import { Icon } from '../../Icon'
-import { Text } from '../../textual'
+import { Text } from '../../Text'
 
 export interface MonthPickerProps {
   month: number

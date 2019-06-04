@@ -6,7 +6,7 @@ import { format } from '../../../util/byte'
 import { HFlow } from '../Flow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
-import { Text } from '../textual/Text/Text'
+import { Text } from '../Text'
 
 export interface FileUploaderProps extends DropzoneOptions {
   file?: FileProps

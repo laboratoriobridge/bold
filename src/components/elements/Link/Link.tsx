@@ -2,7 +2,7 @@ import React, { AnchorHTMLAttributes, CSSProperties } from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
-import { BaseTextProps, Text } from '../textual'
+import { BaseTextProps, Text } from '../Text'
 
 export type LinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'style'> & BaseTextProps
 

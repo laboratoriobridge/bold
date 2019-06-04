@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Text, TextProps } from '../Text/Text'
+import { Text, TextProps } from '../Text'
 
 export interface HeadingProps extends TextProps {
   level: 1 | 2 | 3 | 4 | 5 | 6

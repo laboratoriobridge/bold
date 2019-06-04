@@ -2,7 +2,7 @@ import { number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { TextColor } from '../../../../styles'
+import { TextColor } from '../../../styles'
 
 import { Text, TextProps } from './Text'
 

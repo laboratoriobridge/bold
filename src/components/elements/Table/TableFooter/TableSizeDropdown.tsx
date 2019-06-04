@@ -3,7 +3,7 @@ import React from 'react'
 
 import { DropdownButton, DropdownButtonItemProps } from '../../Dropdown'
 import { Icon } from '../../Icon'
-import { Text } from '../../textual'
+import { Text } from '../../Text'
 
 export interface TableSizeDropdownProps {
   size: number

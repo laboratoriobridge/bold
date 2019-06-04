@@ -8,7 +8,7 @@ import { Select, SelectSingleProps } from '../../form/input/Select'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
 import { Popper, PopperController, PopperProps } from '../Popper'
-import { Text } from '../textual/Text/Text'
+import { Text } from '../Text'
 
 export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   buttonProps?: ButtonProps

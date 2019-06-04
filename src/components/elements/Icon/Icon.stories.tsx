@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Cell, Grid } from '../Grid'
-import { Text } from '../textual'
+import { Text } from '../Text'
 
 import { IconMap, Icons } from './generated/Icons'
 import { Icon, IconColor } from './Icon'

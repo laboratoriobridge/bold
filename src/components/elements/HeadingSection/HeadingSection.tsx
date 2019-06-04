@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { ExternalStyles, useStyles } from '../../../../styles'
-import { Heading, HeadingProps } from '../Heading/Heading'
+import { ExternalStyles, useStyles } from '../../../styles'
+import { Heading, HeadingProps } from '../Heading'
 
 export interface HeadingSectionProps {
   title: React.ReactNode
