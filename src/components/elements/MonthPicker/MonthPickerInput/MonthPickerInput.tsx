@@ -1,4 +1,3 @@
-import moment = require('moment')
 import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
@@ -27,12 +26,12 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps>
 
   private renderInput = (ctrl: PopperController) => {
     const { onChange, value, ...rest } = this.props
-    const formatedValue = value && moment(new Date(value.year, value.month)).format('MM/YYYY')
+
     return (
       <MonthInput
         onFocus={ctrl.show}
         onChange={this.onInputChange}
-        value={formatedValue}
+        value={format(value)}
         onIconClick={ctrl.toggle}
         icon='calendarOutline'
         {...rest}
@@ -46,10 +45,11 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps>
   }
 
   private onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e && e.target) {
-      const convertedValue = moment(e.target.value, 'MM/YYYY', true)
-      if (convertedValue.isValid()) {
-        this.props.onChange({ month: convertedValue.month(), year: convertedValue.year() })
+    if (e && e.target && e.target.value) {
+      const value = e.target.value
+
+      if (isValidInput(value)) {
+        this.props.onChange({ month: +value.substr(0, 2) - 1, year: +value.substr(3) })
       }
     } else {
       this.props.onChange(null)
@@ -68,4 +68,20 @@ const MonthInput = (props: MonthInputProps) => {
       {...props}
     />
   )
+}
+
+const format = (value: ReferenceMonth) => {
+  if (!value || !value.year || !value.month) {
+    return null
+  }
+
+  if (value.month < 10) {
+    return `0${value.month + 1}/${value.year}`
+  } else {
+    return `${value.month + 1}/${value.year}`
+  }
+}
+
+const isValidInput = (value: string) => {
+  return /\d\d\/\d\d\d\d/.test(value)
 }
