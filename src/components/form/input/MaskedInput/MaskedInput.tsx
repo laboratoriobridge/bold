@@ -3,7 +3,7 @@ import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-
 
 import { composeRefs } from '../../../../util/react'
 import { Omit } from '../../../../util/types'
-import { TextInput, TextInputProps } from '../TextInput/TextInput'
+import { TextInput, TextInputProps } from '../TextInput'
 
 export type MaskType = ReactMaskedInputProps['mask']
 

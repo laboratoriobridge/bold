@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { withForm } from '../../../../stories-addons/withForm'
-import { Flow } from '../../../elements'
+import { Flow } from '../../../Flow'
 
 import { RadioField } from './RadioField'
 

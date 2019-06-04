@@ -1,7 +1,7 @@
 import React from 'react'
 import { act, render } from 'react-testing-library'
 
-import { DefaultItemType } from '../SelectSingle/SelectSingle'
+import { DefaultItemType } from '../SelectSingle'
 
 import { MultiDownshift, MultiDownshiftProps } from './MultiDownshift'
 

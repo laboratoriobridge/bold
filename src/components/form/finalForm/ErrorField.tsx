@@ -1,7 +1,7 @@
 import React from 'react'
 import { Field, FieldRenderProps } from 'react-final-form'
 
-import { FormError } from '../../elements/FormControl'
+import { FormError } from '../../FormControl'
 
 export interface ErrorFieldProps {
   name: string

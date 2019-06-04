@@ -1,9 +1,9 @@
 import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles } from '../../../../styles'
-import { Button, ButtonProps } from '../../../elements/Button'
-import { Icons } from '../../../elements/Icon/generated/Icons'
-import { Icon } from '../../../elements/Icon/Icon'
+import { Button, ButtonProps } from '../../../Button'
+import { Icons } from '../../../Icon/generated/Icons'
+import { Icon } from '../../../Icon/Icon'
 
 export interface InputWrapperProps {
   icon?: Icons

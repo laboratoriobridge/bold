@@ -8,7 +8,7 @@ import {
 
 import { Meta } from '../../../../metaPath/metaPath'
 import { Omit } from '../../../../util'
-import { FormControl, FormControlProps } from '../../../elements/FormControl'
+import { FormControl, FormControlProps } from '../../../FormControl'
 
 import { getFieldError } from './util'
 

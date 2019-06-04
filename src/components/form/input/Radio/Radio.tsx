@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 
 import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../../../styles'
-import { Input, InputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input'
 
 export interface RadioProps extends InputProps {
   label: React.ReactNode

@@ -1,4 +1,4 @@
-import { MonthPickerInput, MonthPickerInputProps } from '../../../elements/MonthPicker'
+import { MonthPickerInput, MonthPickerInputProps } from '../../../MonthPicker'
 import { BaseFieldProps, withField } from '../../finalForm/Field'
 
 export type MonthFieldProps = BaseFieldProps<MonthPickerInputProps>

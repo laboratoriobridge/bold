@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react'
 
 import { useLocale } from '../../../../../locale'
 import { ExternalStyles, Theme, useStyles } from '../../../../../styles'
-import Times from '../../../../elements/Icon/generated/TimesDefault'
+import Times from '../../../../Icon/generated/TimesDefault'
 
 export interface SelectMultiItemProps {
   style?: ExternalStyles

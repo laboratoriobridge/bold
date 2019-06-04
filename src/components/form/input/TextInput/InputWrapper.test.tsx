@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-testing-library'
 
-import { Input } from '../Input/Input'
+import { Input } from '../Input'
 
 import { InputWrapper } from './InputWrapper'
 

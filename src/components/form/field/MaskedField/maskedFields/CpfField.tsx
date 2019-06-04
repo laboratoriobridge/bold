@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { masks, onlyNumbers } from '../../../../../util/masks'
-import { MaskedField, MaskedFieldProps } from '../MaskedField'
+import { MaskedField, MaskedFieldProps } from '../../MaskedField'
 
 export interface CpfFieldProps extends MaskedFieldProps {}
 
