@@ -1,5 +1,4 @@
 export * from './Currency/Currency'
-export * from './DateTime/DateTime'
 export * from './Heading'
 export * from './HeadingSection'
 export * from './Highlight/Highlight'
