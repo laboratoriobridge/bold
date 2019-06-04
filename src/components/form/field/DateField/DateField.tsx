@@ -1,14 +1,25 @@
-import moment = require('moment')
-
 import { BaseFieldProps, withField } from '../../finalForm/Field'
 import { DatePickerInput, DatePickerInputProps } from '../../input/DateInput'
 
 export const parse = (value: Date): string => {
-  return value ? moment(value).format('YYYY-MM-DD') : null
+  if (!value) {
+    return null
+  }
+
+  const year = ('000' + value.getFullYear()).slice(-4)
+  const month = ('0' + (value.getMonth() + 1)).slice(-2)
+  const day = ('0' + value.getDate()).slice(-2)
+
+  return `${year}-${month}-${day}`
 }
 
 export const format = (value: string): Date => {
-  return value ? moment(value, 'YYYY-MM-DD', true).toDate() : null
+  if (!value) {
+    return null
+  }
+
+  const parsed = Date.parse(value)
+  return parsed ? new Date(parsed) : null
 }
 
 export type DateFieldProps = BaseFieldProps<DatePickerInputProps>
