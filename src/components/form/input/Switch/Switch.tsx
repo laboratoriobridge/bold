@@ -2,7 +2,7 @@ import React, { CSSProperties } from 'react'
 
 import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util'
-import { Input, InputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input'
 
 export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange'> {
   label?: string

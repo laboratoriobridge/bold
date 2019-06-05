@@ -1,10 +1,10 @@
 import React from 'react'
 
 import { Omit } from '../../../../../util'
-import { HFlow } from '../../../../elements/Flow'
+import { HFlow } from '../../../../Flow'
 import { Checkbox } from '../../Checkbox/Checkbox'
+import { DefaultItemType } from '../SelectSingle'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../SelectSingle/SelectDownshiftMenu'
-import { DefaultItemType } from '../SelectSingle/SelectSingle'
 
 import { MultiDownshift, MultiDownshiftProps, MultiSelectRenderProps } from './MultiDownshift'
 import { SelectMultiInput, SelectMultiInputProps } from './SelectMultiInput'

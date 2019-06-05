@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 
-import { CalendarProps } from '../../../elements/Calendar'
-import { isSameDay } from '../../../elements/Calendar/util'
-import { FocusManagerContainer } from '../../../elements/FocusManagerContainer'
-import { Popper, PopperController } from '../../../elements/Popper'
+import { CalendarProps } from '../../../Calendar'
+import { isSameDay } from '../../../Calendar/util'
+import { FocusManagerContainer } from '../../../FocusManagerContainer'
+import { Popper, PopperController } from '../../../Popper'
 
 import { CalendarPopup } from './CalendarPopup'
 import { DateInput, DateInputProps } from './DateInput'

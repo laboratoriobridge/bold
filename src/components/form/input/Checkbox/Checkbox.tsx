@@ -2,7 +2,7 @@ import React, { CSSProperties, useEffect, useRef } from 'react'
 
 import { ClassNames, ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../../../styles'
 import { Omit } from '../../../../util'
-import { Input, InputProps } from '../Input/Input'
+import { Input, InputProps } from '../Input'
 
 export interface CheckboxProps extends Omit<InputProps, 'style'> {
   label?: React.ReactNode

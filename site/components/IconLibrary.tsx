@@ -2,7 +2,7 @@ import matchSorter from 'match-sorter'
 import { useState } from 'react'
 
 import { Cell, Grid, Icon, Text, TextInput, Theme, useStyles, VFlow } from '../../lib'
-import { IconMap } from '../../lib/components/elements/Icon/generated/Icons'
+import { IconMap } from '../../lib/components/Icon/generated/Icons'
 
 export const IconLibrary = () => {
   const { classes } = useStyles(createStyles)

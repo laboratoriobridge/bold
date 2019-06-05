@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { FormRenderProps } from 'react-final-form'
 
-import { Flow, VFlow } from '../../../elements'
+import { Flow, VFlow } from '../../../Flow'
 import { CheckboxField } from '../../field/CheckboxField/CheckboxField'
 import { CpfField } from '../../field/MaskedField/maskedFields'
 import { RadioField } from '../../field/RadioField/RadioField'

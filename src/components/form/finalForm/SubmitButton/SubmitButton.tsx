@@ -1,7 +1,7 @@
 import React from 'react'
 import { FormSpy } from 'react-final-form'
 
-import { Button, ButtonProps } from '../../../elements/Button'
+import { Button, ButtonProps } from '../../../Button'
 
 export interface SubmitButtonProps extends ButtonProps {
   handleSubmit: (event?: React.SyntheticEvent<HTMLFormElement>) => void

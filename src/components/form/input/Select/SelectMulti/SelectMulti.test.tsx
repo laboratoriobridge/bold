@@ -1,7 +1,7 @@
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { DefaultItemType } from '../SelectSingle/SelectSingle'
+import { DefaultItemType } from '../SelectSingle'
 
 import { SelectMulti, SelectMultiProps } from './SelectMulti'
 

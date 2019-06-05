@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { withForm } from '../../../../stories-addons'
-import { MonthPickerInput } from '../../../elements'
+import { MonthPickerInput } from '../../../MonthPicker'
 
 import { MonthField } from './MonthField'
 

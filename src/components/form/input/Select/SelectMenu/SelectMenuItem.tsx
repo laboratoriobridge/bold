@@ -2,7 +2,7 @@ import React from 'react'
 
 import { ExternalStyles, Theme, useStyles, useTheme } from '../../../../../styles'
 import { Omit } from '../../../../../util'
-import { Spinner } from '../../../../elements'
+import { Spinner } from '../../../../Spinner'
 
 export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
   style?: ExternalStyles

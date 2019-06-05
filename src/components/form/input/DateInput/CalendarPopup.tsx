@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Theme, useStyles } from '../../../../styles'
-import { Calendar, CalendarProps } from '../../../elements'
+import { Calendar, CalendarProps } from '../../../Calendar'
 
 export interface CalendarPopupProps extends CalendarProps {}
 
