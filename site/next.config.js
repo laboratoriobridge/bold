@@ -1,5 +1,5 @@
 const withTypescript = require('@zeit/next-typescript')
-const withMDX = require('@zeit/next-mdx')
+const withMDX = require('@next/mdx')
 
 const compose = (...functions) => args => functions.reduceRight((arg, fn) => fn(arg), args)
 
