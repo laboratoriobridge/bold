@@ -1,9 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/_app.js"],{
 
-/***/ "../lib/components/elements/Alert/Alert.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Alert/Alert.js ***!
-  \*************************************************/
+/***/ "../lib/components/Alert/Alert.js":
+/*!****************************************!*\
+  !*** ../lib/components/Alert/Alert.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36,11 +36,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/elements/Icon/Icon.js");
-var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/elements/Tooltip/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/Icon/Icon.js");
+var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/Tooltip/index.js");
 function Alert(props) {
     var styles = props.styles, type = props.type, children = props.children, onCloseClick = props.onCloseClick, inline = props.inline, rest = __rest(props, ["styles", "type", "children", "onCloseClick", "inline"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css, theme = _a.theme;
@@ -132,26 +132,26 @@ exports.createTypesStyles = function (theme) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Alert/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Alert/index.js ***!
-  \*************************************************/
+/***/ "../lib/components/Alert/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Alert/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Alert_1 = __webpack_require__(/*! ./Alert */ "../lib/components/elements/Alert/Alert.js");
+var Alert_1 = __webpack_require__(/*! ./Alert */ "../lib/components/Alert/Alert.js");
 exports.Alert = Alert_1.Alert;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/AriaControlNav/AriaControlNav.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/AriaControlNav/AriaControlNav.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/AriaControlNav/AriaControlNav.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/AriaControlNav/AriaControlNav.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -162,9 +162,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var HFlow_1 = __webpack_require__(/*! ../Flow/HFlow */ "../lib/components/elements/Flow/HFlow.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var HFlow_1 = __webpack_require__(/*! ../Flow/HFlow */ "../lib/components/Flow/HFlow.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 function AriaControlNav(props) {
     var handleDecreaseFont = function () { return null; };
     var handleIncreaseFont = function () { return null; };
@@ -182,26 +182,26 @@ exports.AriaControlNav = AriaControlNav;
 
 /***/ }),
 
-/***/ "../lib/components/elements/AriaControlNav/index.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/AriaControlNav/index.js ***!
-  \**********************************************************/
+/***/ "../lib/components/AriaControlNav/index.js":
+/*!*************************************************!*\
+  !*** ../lib/components/AriaControlNav/index.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var AriaControlNav_1 = __webpack_require__(/*! ./AriaControlNav */ "../lib/components/elements/AriaControlNav/AriaControlNav.js");
+var AriaControlNav_1 = __webpack_require__(/*! ./AriaControlNav */ "../lib/components/AriaControlNav/AriaControlNav.js");
 exports.AriaControlNav = AriaControlNav_1.AriaControlNav;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Breadcrumb/Breadcrumbs.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Breadcrumb/Breadcrumbs.js ***!
-  \************************************************************/
+/***/ "../lib/components/Breadcrumb/Breadcrumbs.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Breadcrumb/Breadcrumbs.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -216,9 +216,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var useRovingTabIndex_1 = __webpack_require__(/*! ../../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var useRovingTabIndex_1 = __webpack_require__(/*! ../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 function Breadcrumbs(props) {
     var children = props.children;
     var rootRef = useRovingTabIndex_1.useRovingTabIndex({
@@ -265,26 +265,26 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Breadcrumb/index.js":
-/*!******************************************************!*\
-  !*** ../lib/components/elements/Breadcrumb/index.js ***!
-  \******************************************************/
+/***/ "../lib/components/Breadcrumb/index.js":
+/*!*********************************************!*\
+  !*** ../lib/components/Breadcrumb/index.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Breadcrumbs_1 = __webpack_require__(/*! ./Breadcrumbs */ "../lib/components/elements/Breadcrumb/Breadcrumbs.js");
+var Breadcrumbs_1 = __webpack_require__(/*! ./Breadcrumbs */ "../lib/components/Breadcrumb/Breadcrumbs.js");
 exports.Breadcrumbs = Breadcrumbs_1.Breadcrumbs;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/Button/Button.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Button/Button/Button.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Button/Button/Button.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Button/Button/Button.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -317,9 +317,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var ButtonBase_1 = __webpack_require__(/*! ../ButtonBase */ "../lib/components/elements/Button/ButtonBase.js");
-var ButtonSkins_1 = __webpack_require__(/*! ./ButtonSkins */ "../lib/components/elements/Button/Button/ButtonSkins.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var ButtonBase_1 = __webpack_require__(/*! ../ButtonBase */ "../lib/components/Button/ButtonBase.js");
+var ButtonSkins_1 = __webpack_require__(/*! ./ButtonSkins */ "../lib/components/Button/Button/ButtonSkins.js");
 function Button(props) {
     var loading = props.loading, block = props.block, style = props.style, skin = props.skin, size = props.size, kind = props.kind, onClick = props.onClick, children = props.children, rest = __rest(props, ["loading", "block", "style", "skin", "size", "kind", "onClick", "children"]);
     var _a = react_1.default.useState(false), isLoading = _a[0], setIsLoading = _a[1];
@@ -349,19 +349,19 @@ Button.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/Button/ButtonSkins.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Button/Button/ButtonSkins.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Button/Button/ButtonSkins.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Button/Button/ButtonSkins.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var default_1 = __webpack_require__(/*! ./skins/default */ "../lib/components/elements/Button/Button/skins/default.js");
-var ghost_1 = __webpack_require__(/*! ./skins/ghost */ "../lib/components/elements/Button/Button/skins/ghost.js");
-var outline_1 = __webpack_require__(/*! ./skins/outline */ "../lib/components/elements/Button/Button/skins/outline.js");
+var default_1 = __webpack_require__(/*! ./skins/default */ "../lib/components/Button/Button/skins/default.js");
+var ghost_1 = __webpack_require__(/*! ./skins/ghost */ "../lib/components/Button/Button/skins/ghost.js");
+var outline_1 = __webpack_require__(/*! ./skins/outline */ "../lib/components/Button/Button/skins/outline.js");
 exports.skinMap = {
     default: default_1.createStyles,
     ghost: ghost_1.createStyles,
@@ -427,17 +427,17 @@ exports.createSizeStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/Button/skins/default.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Button/Button/skins/default.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Button/Button/skins/default.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Button/Button/skins/default.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 exports.createStyles = function (theme) { return ({
     button: {
         backgroundColor: theme.pallete.surface.main,
@@ -479,17 +479,17 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/Button/skins/ghost.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Button/Button/skins/ghost.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Button/Button/skins/ghost.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Button/Button/skins/ghost.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 exports.createStyles = function (theme) { return ({
     button: {
         backgroundColor: 'transparent',
@@ -521,17 +521,17 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/Button/skins/outline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Button/Button/skins/outline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Button/Button/skins/outline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Button/Button/skins/outline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
 exports.createStyles = function (theme) { return ({
     button: {
         backgroundColor: 'transparent',
@@ -571,10 +571,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/ButtonBase.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Button/ButtonBase.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Button/ButtonBase.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Button/ButtonBase.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -607,7 +607,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var util_1 = __webpack_require__(/*! ../../../util */ "../lib/util/index.js");
+var util_1 = __webpack_require__(/*! ../../util */ "../lib/util/index.js");
 function ButtonBase(props) {
     var onClick = props.onClick, render = props.render, onLoadingChange = props.onLoadingChange, rest = __rest(props, ["onClick", "render", "onLoadingChange"]);
     var startLoading = function () {
@@ -645,28 +645,28 @@ ButtonBase.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Button/index.js":
-/*!**************************************************!*\
-  !*** ../lib/components/elements/Button/index.js ***!
-  \**************************************************/
+/***/ "../lib/components/Button/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Button/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ButtonBase_1 = __webpack_require__(/*! ./ButtonBase */ "../lib/components/elements/Button/ButtonBase.js");
+var ButtonBase_1 = __webpack_require__(/*! ./ButtonBase */ "../lib/components/Button/ButtonBase.js");
 exports.ButtonBase = ButtonBase_1.ButtonBase;
-var Button_1 = __webpack_require__(/*! ./Button/Button */ "../lib/components/elements/Button/Button/Button.js");
+var Button_1 = __webpack_require__(/*! ./Button/Button */ "../lib/components/Button/Button/Button.js");
 exports.Button = Button_1.Button;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/ButtonGroup/ButtonGroup.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/ButtonGroup/ButtonGroup.js ***!
-  \*************************************************************/
+/***/ "../lib/components/ButtonGroup/ButtonGroup.js":
+/*!****************************************************!*\
+  !*** ../lib/components/ButtonGroup/ButtonGroup.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -699,8 +699,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var useRovingTabIndex_1 = __webpack_require__(/*! ../../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var useRovingTabIndex_1 = __webpack_require__(/*! ../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function ButtonGroup(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -729,26 +729,26 @@ exports.createStyles = function () { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/ButtonGroup/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/ButtonGroup/index.js ***!
-  \*******************************************************/
+/***/ "../lib/components/ButtonGroup/index.js":
+/*!**********************************************!*\
+  !*** ../lib/components/ButtonGroup/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var ButtonGroup_1 = __webpack_require__(/*! ./ButtonGroup */ "../lib/components/elements/ButtonGroup/ButtonGroup.js");
+var ButtonGroup_1 = __webpack_require__(/*! ./ButtonGroup */ "../lib/components/ButtonGroup/ButtonGroup.js");
 exports.ButtonGroup = ButtonGroup_1.ButtonGroup;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/Calendar.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Calendar/Calendar.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Calendar/Calendar.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Calendar/Calendar.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -785,12 +785,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
-var MonthControl_1 = __webpack_require__(/*! ./MonthControl */ "../lib/components/elements/Calendar/MonthControl.js");
-var MonthView_1 = __webpack_require__(/*! ./MonthView */ "../lib/components/elements/Calendar/MonthView.js");
-var util_1 = __webpack_require__(/*! ./util */ "../lib/components/elements/Calendar/util.js");
-var YearControl_1 = __webpack_require__(/*! ./YearControl */ "../lib/components/elements/Calendar/YearControl.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/Flow/index.js");
+var MonthControl_1 = __webpack_require__(/*! ./MonthControl */ "../lib/components/Calendar/MonthControl.js");
+var MonthView_1 = __webpack_require__(/*! ./MonthView */ "../lib/components/Calendar/MonthView.js");
+var util_1 = __webpack_require__(/*! ./util */ "../lib/components/Calendar/util.js");
+var YearControl_1 = __webpack_require__(/*! ./YearControl */ "../lib/components/Calendar/YearControl.js");
 function Calendar(props) {
     var initialVisibleDate = props.initialVisibleDate, modifiers = props.modifiers, modifierStyles = props.modifierStyles, rest = __rest(props, ["initialVisibleDate", "modifiers", "modifierStyles"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, theme = _a.theme;
@@ -867,10 +867,10 @@ exports.createDayStyles = function (modifiers, styles, theme) { return function 
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/MonthControl.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Calendar/MonthControl.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Calendar/MonthControl.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Calendar/MonthControl.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -881,12 +881,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var locale_2 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
-var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var locale_2 = __webpack_require__(/*! ../../util/locale */ "../lib/util/locale.js");
+var string_1 = __webpack_require__(/*! ../../util/string */ "../lib/util/string.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/Flow/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 function MonthControl(props) {
     var visibleDate = props.visibleDate, onChange = props.onChange, renderMonth = props.renderMonth;
     var locale = locale_1.useLocale();
@@ -918,10 +918,10 @@ MonthControl.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/MonthView.js":
-/*!********************************************************!*\
-  !*** ../lib/components/elements/Calendar/MonthView.js ***!
-  \********************************************************/
+/***/ "../lib/components/Calendar/MonthView.js":
+/*!***********************************************!*\
+  !*** ../lib/components/Calendar/MonthView.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -932,9 +932,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var locale_1 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
-var util_1 = __webpack_require__(/*! ./util */ "../lib/components/elements/Calendar/util.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var locale_1 = __webpack_require__(/*! ../../util/locale */ "../lib/util/locale.js");
+var util_1 = __webpack_require__(/*! ./util */ "../lib/components/Calendar/util.js");
 function MonthView(props) {
     var visibleDate = props.visibleDate, renderDay = props.renderDay, renderWeekName = props.renderWeekName, createDayStyles = props.createDayStyles, onDayClick = props.onDayClick, onDayHover = props.onDayHover;
     var month = util_1.createMonthMatrix(visibleDate);
@@ -992,10 +992,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/YearControl.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Calendar/YearControl.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Calendar/YearControl.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Calendar/YearControl.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1006,11 +1006,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var locale_2 = __webpack_require__(/*! ../../../util/locale */ "../lib/util/locale.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var locale_2 = __webpack_require__(/*! ../../util/locale */ "../lib/util/locale.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/Flow/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 function YearControl(props) {
     var visibleDate = props.visibleDate, onChange = props.onChange, renderYear = props.renderYear;
     var locale = locale_1.useLocale();
@@ -1042,32 +1042,32 @@ YearControl.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/index.js":
-/*!****************************************************!*\
-  !*** ../lib/components/elements/Calendar/index.js ***!
-  \****************************************************/
+/***/ "../lib/components/Calendar/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/Calendar/index.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Calendar_1 = __webpack_require__(/*! ./Calendar */ "../lib/components/elements/Calendar/Calendar.js");
+var Calendar_1 = __webpack_require__(/*! ./Calendar */ "../lib/components/Calendar/Calendar.js");
 exports.Calendar = Calendar_1.Calendar;
-var MonthView_1 = __webpack_require__(/*! ./MonthView */ "../lib/components/elements/Calendar/MonthView.js");
+var MonthView_1 = __webpack_require__(/*! ./MonthView */ "../lib/components/Calendar/MonthView.js");
 exports.MonthView = MonthView_1.MonthView;
-var MonthControl_1 = __webpack_require__(/*! ./MonthControl */ "../lib/components/elements/Calendar/MonthControl.js");
+var MonthControl_1 = __webpack_require__(/*! ./MonthControl */ "../lib/components/Calendar/MonthControl.js");
 exports.MonthControl = MonthControl_1.MonthControl;
-var YearControl_1 = __webpack_require__(/*! ./YearControl */ "../lib/components/elements/Calendar/YearControl.js");
+var YearControl_1 = __webpack_require__(/*! ./YearControl */ "../lib/components/Calendar/YearControl.js");
 exports.YearControl = YearControl_1.YearControl;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Calendar/util.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Calendar/util.js ***!
-  \***************************************************/
+/***/ "../lib/components/Calendar/util.js":
+/*!******************************************!*\
+  !*** ../lib/components/Calendar/util.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1146,10 +1146,75 @@ exports.isSameDay = function (d1, d2) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/Dropdown.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Dropdown/Dropdown.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Currency/Currency.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Currency/Currency.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var Number_1 = __webpack_require__(/*! ../Number/Number */ "../lib/components/Number/Number.js");
+function Currency(props) {
+    var currency = props.currency, rest = __rest(props, ["currency"]);
+    return react_1.default.createElement(Number_1.Number, __assign({ formatOptions: { style: 'currency', currency: currency } }, rest));
+}
+exports.Currency = Currency;
+Currency.defaultProps = {
+    currency: 'USD',
+};
+//# sourceMappingURL=Currency.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Currency/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/Currency/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Currency_1 = __webpack_require__(/*! ./Currency */ "../lib/components/Currency/Currency.js");
+exports.Currency = Currency_1.Currency;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Dropdown/Dropdown.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Dropdown/Dropdown.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1189,11 +1254,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var usePopper_1 = __importDefault(__webpack_require__(/*! ../../../hooks/usePopper */ "../lib/hooks/usePopper.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
-var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/elements/Portal/index.js");
-var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/elements/Dropdown/DropdownMenu.js");
+var usePopper_1 = __importDefault(__webpack_require__(/*! ../../hooks/usePopper */ "../lib/hooks/usePopper.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var string_1 = __webpack_require__(/*! ../../util/string */ "../lib/util/string.js");
+var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/Portal/index.js");
+var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/Dropdown/DropdownMenu.js");
 function Dropdown(props) {
     var children = props.children, anchorRef = props.anchorRef, popperProps = props.popperProps, open = props.open, onClose = props.onClose, autoclose = props.autoclose, style = props.style, rest = __rest(props, ["children", "anchorRef", "popperProps", "open", "onClose", "autoclose", "style"]);
     var classes = styles_1.useStyles(exports.createStyles).classes;
@@ -1272,10 +1337,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/DropdownButton.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Dropdown/DropdownButton.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Dropdown/DropdownButton.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Dropdown/DropdownButton.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1308,10 +1373,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/elements/Tooltip/index.js");
-var Dropdown_1 = __webpack_require__(/*! ./Dropdown */ "../lib/components/elements/Dropdown/Dropdown.js");
-var DropdownItem_1 = __webpack_require__(/*! ./DropdownItem */ "../lib/components/elements/Dropdown/DropdownItem.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/Tooltip/index.js");
+var Dropdown_1 = __webpack_require__(/*! ./Dropdown */ "../lib/components/Dropdown/Dropdown.js");
+var DropdownItem_1 = __webpack_require__(/*! ./DropdownItem */ "../lib/components/Dropdown/DropdownItem.js");
 function DropdownButton(props) {
     var items = props.items, popperProps = props.popperProps, rest = __rest(props, ["items", "popperProps"]);
     var buttonRef = react_1.default.useRef(null);
@@ -1341,10 +1406,10 @@ DropdownButtonItem.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/DropdownDivider.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Dropdown/DropdownDivider.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Dropdown/DropdownDivider.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Dropdown/DropdownDivider.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1366,7 +1431,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function DropdownDivider(props) {
     var classes = styles_1.useStyles(styles).classes;
     return react_1.default.createElement("li", __assign({ className: classes.divider, role: 'separator' }, props));
@@ -1382,10 +1447,10 @@ var styles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/DropdownItem.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Dropdown/DropdownItem.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Dropdown/DropdownItem.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Dropdown/DropdownItem.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1418,7 +1483,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function DropdownItem(props) {
     var type = props.type, disabled = props.disabled, children = props.children, onClick = props.onClick, Component = props.component, rest = __rest(props, ["type", "disabled", "children", "onClick", "component"]);
     var _a = styles_1.useStyles(styles), classes = _a.classes, css = _a.css;
@@ -1466,10 +1531,10 @@ var styles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/DropdownMenu.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Dropdown/DropdownMenu.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Dropdown/DropdownMenu.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Dropdown/DropdownMenu.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1502,9 +1567,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var useRovingTabIndex_1 = __webpack_require__(/*! ../../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var react_2 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
+var useRovingTabIndex_1 = __webpack_require__(/*! ../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var react_2 = __webpack_require__(/*! ../../util/react */ "../lib/util/react.js");
 function DropdownMenu(props) {
     var innerRef = props.innerRef, style = props.style, rest = __rest(props, ["innerRef", "style"]);
     var _a = styles_1.useStyles(exports.styles), css = _a.css, classes = _a.classes;
@@ -1533,34 +1598,34 @@ exports.styles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Dropdown/index.js":
-/*!****************************************************!*\
-  !*** ../lib/components/elements/Dropdown/index.js ***!
-  \****************************************************/
+/***/ "../lib/components/Dropdown/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/Dropdown/index.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Dropdown_1 = __webpack_require__(/*! ./Dropdown */ "../lib/components/elements/Dropdown/Dropdown.js");
+var Dropdown_1 = __webpack_require__(/*! ./Dropdown */ "../lib/components/Dropdown/Dropdown.js");
 exports.Dropdown = Dropdown_1.Dropdown;
-var DropdownButton_1 = __webpack_require__(/*! ./DropdownButton */ "../lib/components/elements/Dropdown/DropdownButton.js");
+var DropdownButton_1 = __webpack_require__(/*! ./DropdownButton */ "../lib/components/Dropdown/DropdownButton.js");
 exports.DropdownButton = DropdownButton_1.DropdownButton;
-var DropdownDivider_1 = __webpack_require__(/*! ./DropdownDivider */ "../lib/components/elements/Dropdown/DropdownDivider.js");
+var DropdownDivider_1 = __webpack_require__(/*! ./DropdownDivider */ "../lib/components/Dropdown/DropdownDivider.js");
 exports.DropdownDivider = DropdownDivider_1.DropdownDivider;
-var DropdownItem_1 = __webpack_require__(/*! ./DropdownItem */ "../lib/components/elements/Dropdown/DropdownItem.js");
+var DropdownItem_1 = __webpack_require__(/*! ./DropdownItem */ "../lib/components/Dropdown/DropdownItem.js");
 exports.DropdownItem = DropdownItem_1.DropdownItem;
-var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/elements/Dropdown/DropdownMenu.js");
+var DropdownMenu_1 = __webpack_require__(/*! ./DropdownMenu */ "../lib/components/Dropdown/DropdownMenu.js");
 exports.DropdownMenu = DropdownMenu_1.DropdownMenu;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/FileUploader/FileUploader.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/FileUploader/FileUploader.js ***!
-  \***************************************************************/
+/***/ "../lib/components/FileUploader/FileUploader.js":
+/*!******************************************************!*\
+  !*** ../lib/components/FileUploader/FileUploader.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1594,12 +1659,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_dropzone_1 = __webpack_require__(/*! react-dropzone */ "../node_modules/react-dropzone/dist/es/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var byte_1 = __webpack_require__(/*! ../../../util/byte */ "../lib/util/byte.js");
-var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/elements/Flow/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/elements/Icon/Icon.js");
-var Progress_1 = __webpack_require__(/*! ../Progress/Progress */ "../lib/components/elements/Progress/Progress.js");
-var Text_1 = __webpack_require__(/*! ../textual/Text/Text */ "../lib/components/elements/textual/Text/Text.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var byte_1 = __webpack_require__(/*! ../../util/byte */ "../lib/util/byte.js");
+var Flow_1 = __webpack_require__(/*! ../Flow */ "../lib/components/Flow/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/Icon/Icon.js");
+var Progress_1 = __webpack_require__(/*! ../Progress/Progress */ "../lib/components/Progress/Progress.js");
+var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
 function FileUploader(props) {
     var file = props.file, text = props.text, rest = __rest(props, ["file", "text"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -1704,26 +1769,26 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/FileUploader/index.js":
-/*!********************************************************!*\
-  !*** ../lib/components/elements/FileUploader/index.js ***!
-  \********************************************************/
+/***/ "../lib/components/FileUploader/index.js":
+/*!***********************************************!*\
+  !*** ../lib/components/FileUploader/index.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var FileUploader_1 = __webpack_require__(/*! ./FileUploader */ "../lib/components/elements/FileUploader/FileUploader.js");
+var FileUploader_1 = __webpack_require__(/*! ./FileUploader */ "../lib/components/FileUploader/FileUploader.js");
 exports.FileUploader = FileUploader_1.FileUploader;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Flow/Flow.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Flow/Flow.js ***!
-  \***********************************************/
+/***/ "../lib/components/Flow/Flow.js":
+/*!**************************************!*\
+  !*** ../lib/components/Flow/Flow.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1734,7 +1799,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function Flow(props) {
     var direction = props.direction, style = props.style;
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -1786,10 +1851,10 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Flow/HFlow.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Flow/HFlow.js ***!
-  \************************************************/
+/***/ "../lib/components/Flow/HFlow.js":
+/*!***************************************!*\
+  !*** ../lib/components/Flow/HFlow.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1811,7 +1876,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/elements/Flow/Flow.js");
+var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/Flow/Flow.js");
 function HFlow(props) {
     return react_1.default.createElement(Flow_1.Flow, __assign({ direction: 'horizontal', vSpacing: 0, hSpacing: 1 }, props));
 }
@@ -1820,10 +1885,10 @@ exports.HFlow = HFlow;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Flow/VFlow.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Flow/VFlow.js ***!
-  \************************************************/
+/***/ "../lib/components/Flow/VFlow.js":
+/*!***************************************!*\
+  !*** ../lib/components/Flow/VFlow.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1845,7 +1910,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/elements/Flow/Flow.js");
+var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/Flow/Flow.js");
 function VFlow(props) {
     return react_1.default.createElement(Flow_1.Flow, __assign({ direction: 'vertical', vSpacing: 1, hSpacing: 0 }, props));
 }
@@ -1854,30 +1919,30 @@ exports.VFlow = VFlow;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Flow/index.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Flow/index.js ***!
-  \************************************************/
+/***/ "../lib/components/Flow/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Flow/index.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/elements/Flow/Flow.js");
+var Flow_1 = __webpack_require__(/*! ./Flow */ "../lib/components/Flow/Flow.js");
 exports.Flow = Flow_1.Flow;
-var HFlow_1 = __webpack_require__(/*! ./HFlow */ "../lib/components/elements/Flow/HFlow.js");
+var HFlow_1 = __webpack_require__(/*! ./HFlow */ "../lib/components/Flow/HFlow.js");
 exports.HFlow = HFlow_1.HFlow;
-var VFlow_1 = __webpack_require__(/*! ./VFlow */ "../lib/components/elements/Flow/VFlow.js");
+var VFlow_1 = __webpack_require__(/*! ./VFlow */ "../lib/components/Flow/VFlow.js");
 exports.VFlow = VFlow_1.VFlow;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/FocusManagerContainer/FocusManagerContainer.js":
-/*!*********************************************************************************!*\
-  !*** ../lib/components/elements/FocusManagerContainer/FocusManagerContainer.js ***!
-  \*********************************************************************************/
+/***/ "../lib/components/FocusManagerContainer/FocusManagerContainer.js":
+/*!************************************************************************!*\
+  !*** ../lib/components/FocusManagerContainer/FocusManagerContainer.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1944,26 +2009,26 @@ exports.FocusManagerContainer = FocusManagerContainer;
 
 /***/ }),
 
-/***/ "../lib/components/elements/FocusManagerContainer/index.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/FocusManagerContainer/index.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/FocusManagerContainer/index.js":
+/*!********************************************************!*\
+  !*** ../lib/components/FocusManagerContainer/index.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var FocusManagerContainer_1 = __webpack_require__(/*! ./FocusManagerContainer */ "../lib/components/elements/FocusManagerContainer/FocusManagerContainer.js");
+var FocusManagerContainer_1 = __webpack_require__(/*! ./FocusManagerContainer */ "../lib/components/FocusManagerContainer/FocusManagerContainer.js");
 exports.FocusManagerContainer = FocusManagerContainer_1.FocusManagerContainer;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/FormControl/FormControl.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/FormControl/FormControl.js ***!
-  \*************************************************************/
+/***/ "../lib/components/FormControl/FormControl.js":
+/*!****************************************************!*\
+  !*** ../lib/components/FormControl/FormControl.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1974,8 +2039,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/elements/FormControl/FormError.js");
-var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/elements/FormControl/FormLabel.js");
+var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/FormControl/FormError.js");
+var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/FormControl/FormLabel.js");
 function FormControl(props) {
     var children = props.children, id = props.id, name = props.name, error = props.error, label = props.label, required = props.required;
     var styles = {
@@ -1999,10 +2064,10 @@ exports.FormControl = FormControl;
 
 /***/ }),
 
-/***/ "../lib/components/elements/FormControl/FormError.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/FormControl/FormError.js ***!
-  \***********************************************************/
+/***/ "../lib/components/FormControl/FormError.js":
+/*!**************************************************!*\
+  !*** ../lib/components/FormControl/FormError.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2035,7 +2100,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function FormError(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -2056,10 +2121,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/FormControl/FormLabel.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/FormControl/FormLabel.js ***!
-  \***********************************************************/
+/***/ "../lib/components/FormControl/FormLabel.js":
+/*!**************************************************!*\
+  !*** ../lib/components/FormControl/FormLabel.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2092,8 +2157,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function FormLabel(props) {
     var label = props.label, required = props.required, style = props.style, rest = __rest(props, ["label", "required", "style"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -2116,30 +2181,30 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/FormControl/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/FormControl/index.js ***!
-  \*******************************************************/
+/***/ "../lib/components/FormControl/index.js":
+/*!**********************************************!*\
+  !*** ../lib/components/FormControl/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var FormControl_1 = __webpack_require__(/*! ./FormControl */ "../lib/components/elements/FormControl/FormControl.js");
+var FormControl_1 = __webpack_require__(/*! ./FormControl */ "../lib/components/FormControl/FormControl.js");
 exports.FormControl = FormControl_1.FormControl;
-var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/elements/FormControl/FormLabel.js");
+var FormLabel_1 = __webpack_require__(/*! ./FormLabel */ "../lib/components/FormControl/FormLabel.js");
 exports.FormLabel = FormLabel_1.FormLabel;
-var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/elements/FormControl/FormError.js");
+var FormError_1 = __webpack_require__(/*! ./FormError */ "../lib/components/FormControl/FormError.js");
 exports.FormError = FormError_1.FormError;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Grid/Cell.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Grid/Cell.js ***!
-  \***********************************************/
+/***/ "../lib/components/Grid/Cell.js":
+/*!**************************************!*\
+  !*** ../lib/components/Grid/Cell.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2176,8 +2241,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Grid_1 = __webpack_require__(/*! ./Grid */ "../lib/components/elements/Grid/Grid.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Grid_1 = __webpack_require__(/*! ./Grid */ "../lib/components/Grid/Grid.js");
 function Cell(props) {
     var size = props.size, style = props.style, alignSelf = props.alignSelf, flexGrow = props.flexGrow, flexShrink = props.flexShrink, flexBasis = props.flexBasis, xs = props.xs, sm = props.sm, md = props.md, lg = props.lg, xl = props.xl, rest = __rest(props, ["size", "style", "alignSelf", "flexGrow", "flexShrink", "flexBasis", "xs", "sm", "md", "lg", "xl"]);
     var gridProps = react_1.useContext(Grid_1.GridContext) || Grid_1.Grid.defaultProps;
@@ -2319,10 +2384,10 @@ exports.createGapVerticalStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Grid/Grid.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Grid/Grid.js ***!
-  \***********************************************/
+/***/ "../lib/components/Grid/Grid.js":
+/*!**************************************!*\
+  !*** ../lib/components/Grid/Grid.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2355,7 +2420,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 exports.GridContext = react_1.default.createContext(null);
 function Grid(props) {
     var style = props.style, wrap = props.wrap, alignItems = props.alignItems, justifyContent = props.justifyContent, direction = props.direction, gap = props.gap, gapVertical = props.gapVertical, rest = __rest(props, ["style", "wrap", "alignItems", "justifyContent", "direction", "gap", "gapVertical"]);
@@ -2473,28 +2538,28 @@ exports.createGapVerticalStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Grid/index.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Grid/index.js ***!
-  \************************************************/
+/***/ "../lib/components/Grid/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Grid/index.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Grid_1 = __webpack_require__(/*! ./Grid */ "../lib/components/elements/Grid/Grid.js");
+var Grid_1 = __webpack_require__(/*! ./Grid */ "../lib/components/Grid/Grid.js");
 exports.Grid = Grid_1.Grid;
-var Cell_1 = __webpack_require__(/*! ./Cell */ "../lib/components/elements/Grid/Cell.js");
+var Cell_1 = __webpack_require__(/*! ./Cell */ "../lib/components/Grid/Cell.js");
 exports.Cell = Cell_1.Cell;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/Icon.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Icon/Icon.js ***!
-  \***********************************************/
+/***/ "../lib/components/Heading/Heading.js":
+/*!********************************************!*\
+  !*** ../lib/components/Heading/Heading.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2527,9 +2592,196 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var createTheme_1 = __webpack_require__(/*! ../../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
-var Icons_1 = __webpack_require__(/*! ./generated/Icons */ "../lib/components/elements/Icon/generated/Icons.js");
+var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
+function Heading(props) {
+    var level = props.level, rest = __rest(props, ["level"]);
+    var heading = "h" + level;
+    return react_1.default.createElement(Text_1.Text, __assign({ component: heading, variant: heading }, rest));
+}
+exports.Heading = Heading;
+//# sourceMappingURL=Heading.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Heading/index.js":
+/*!******************************************!*\
+  !*** ../lib/components/Heading/index.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Heading_1 = __webpack_require__(/*! ./Heading */ "../lib/components/Heading/Heading.js");
+exports.Heading = Heading_1.Heading;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/HeadingSection/HeadingSection.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/HeadingSection/HeadingSection.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Heading_1 = __webpack_require__(/*! ../Heading */ "../lib/components/Heading/index.js");
+function HeadingSection(props) {
+    var style = props.style, title = props.title, children = props.children, vSpace = props.vSpace, rest = __rest(props, ["style", "title", "children", "vSpace"]);
+    var _a = styles_1.useStyles(exports.createStyles(vSpace)), classes = _a.classes, css = _a.css;
+    return (react_1.default.createElement("div", { className: css(classes.section, style) },
+        react_1.default.createElement(Heading_1.Heading, __assign({ style: classes.title }, rest), title),
+        children));
+}
+exports.HeadingSection = HeadingSection;
+HeadingSection.defaultProps = {};
+exports.createStyles = function (vSpacing) { return function () { return ({
+    section: {},
+    title: {
+        marginBottom: vSpacing ? vSpacing : '1rem',
+    },
+}); }; };
+//# sourceMappingURL=HeadingSection.js.map
+
+/***/ }),
+
+/***/ "../lib/components/HeadingSection/index.js":
+/*!*************************************************!*\
+  !*** ../lib/components/HeadingSection/index.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var HeadingSection_1 = __webpack_require__(/*! ./HeadingSection */ "../lib/components/HeadingSection/HeadingSection.js");
+exports.HeadingSection = HeadingSection_1.HeadingSection;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Highlight/Highlight.js":
+/*!************************************************!*\
+  !*** ../lib/components/Highlight/Highlight.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+function Highlight(props) {
+    var text = props.text, words = props.words;
+    var validWords = words
+        .filter(function (w) { return !!w; })
+        .map(function (w) { return w.trim(); })
+        .filter(function (w) { return !!w; });
+    if (validWords.length <= 0) {
+        return react_1.default.createElement("span", null, text);
+    }
+    var regex = new RegExp(validWords.join('|'), 'gi');
+    return (react_1.default.createElement("span", { dangerouslySetInnerHTML: {
+            __html: text.replace(regex, function (match) {
+                return "<mark>" + match + "</mark>";
+            }),
+        } }));
+}
+exports.Highlight = Highlight;
+//# sourceMappingURL=Highlight.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Highlight/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/Highlight/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Highlight_1 = __webpack_require__(/*! ./Highlight */ "../lib/components/Highlight/Highlight.js");
+exports.Highlight = Highlight_1.Highlight;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Icon/Icon.js":
+/*!**************************************!*\
+  !*** ../lib/components/Icon/Icon.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var createTheme_1 = __webpack_require__(/*! ../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
+var Icons_1 = __webpack_require__(/*! ./generated/Icons */ "../lib/components/Icon/generated/Icons.js");
 exports.getIconColor = function (theme, color) {
     return !color || color === 'none' ? color : createTheme_1.getTextColor(theme, color);
 };
@@ -2553,10 +2805,10 @@ Icon.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Adjust.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Adjust.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Adjust.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Adjust.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2586,10 +2838,10 @@ exports.default = SvgAdjust;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AlignCenter.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AlignCenter.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/AlignCenter.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/AlignCenter.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2621,10 +2873,10 @@ exports.default = SvgAlignCenter;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AlignJustify.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AlignJustify.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/AlignJustify.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/AlignJustify.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2656,10 +2908,10 @@ exports.default = SvgAlignJustify;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AlignLeft.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AlignLeft.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/AlignLeft.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/AlignLeft.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2691,10 +2943,10 @@ exports.default = SvgAlignLeft;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AlignRight.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AlignRight.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/AlignRight.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/AlignRight.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2726,10 +2978,10 @@ exports.default = SvgAlignRight;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleDoubleLeft.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleDoubleLeft.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/AngleDoubleLeft.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleDoubleLeft.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2759,10 +3011,10 @@ exports.default = SvgAngleDoubleLeft;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleDoubleRight.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleDoubleRight.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/AngleDoubleRight.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleDoubleRight.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2792,10 +3044,10 @@ exports.default = SvgAngleDoubleRight;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleDown.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleDown.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/AngleDown.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleDown.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2825,10 +3077,10 @@ exports.default = SvgAngleDown;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleLeft.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleLeft.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/AngleLeft.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleLeft.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2858,10 +3110,10 @@ exports.default = SvgAngleLeft;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleRight.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleRight.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/AngleRight.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleRight.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2891,10 +3143,10 @@ exports.default = SvgAngleRight;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/AngleUp.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/AngleUp.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/AngleUp.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/AngleUp.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2924,10 +3176,10 @@ exports.default = SvgAngleUp;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArchiveFilled.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArchiveFilled.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/ArchiveFilled.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/ArchiveFilled.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2957,10 +3209,10 @@ exports.default = SvgArchiveFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArchiveOutline.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArchiveOutline.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/ArchiveOutline.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/ArchiveOutline.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2990,10 +3242,10 @@ exports.default = SvgArchiveOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArrowDown.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArrowDown.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/ArrowDown.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/ArrowDown.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3023,10 +3275,10 @@ exports.default = SvgArrowDown;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArrowLeft.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArrowLeft.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/ArrowLeft.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/ArrowLeft.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3056,10 +3308,10 @@ exports.default = SvgArrowLeft;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArrowRight.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArrowRight.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/ArrowRight.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/ArrowRight.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3089,10 +3341,10 @@ exports.default = SvgArrowRight;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ArrowUp.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ArrowUp.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/ArrowUp.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/ArrowUp.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3122,10 +3374,10 @@ exports.default = SvgArrowUp;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BalanceFilled.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BalanceFilled.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/BalanceFilled.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/BalanceFilled.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3155,10 +3407,10 @@ exports.default = SvgBalanceFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BalanceOutline.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BalanceOutline.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/BalanceOutline.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/BalanceOutline.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3188,10 +3440,10 @@ exports.default = SvgBalanceOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BanFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BanFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/BanFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/BanFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3223,10 +3475,10 @@ exports.default = SvgBanFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BanOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BanOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/BanOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/BanOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3258,10 +3510,10 @@ exports.default = SvgBanOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BandaidFilled.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BandaidFilled.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/BandaidFilled.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/BandaidFilled.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3291,10 +3543,10 @@ exports.default = SvgBandaidFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BandaidOutline.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BandaidOutline.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/BandaidOutline.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/BandaidOutline.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3324,10 +3576,10 @@ exports.default = SvgBandaidOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BatteryFull.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BatteryFull.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/BatteryFull.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/BatteryFull.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3357,10 +3609,10 @@ exports.default = SvgBatteryFull;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BatteryLow.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BatteryLow.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/BatteryLow.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/BatteryLow.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3390,10 +3642,10 @@ exports.default = SvgBatteryLow;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BatteryMedium.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BatteryMedium.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/BatteryMedium.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/BatteryMedium.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3423,10 +3675,10 @@ exports.default = SvgBatteryMedium;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Beach.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Beach.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Icon/generated/Beach.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Icon/generated/Beach.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3456,10 +3708,10 @@ exports.default = SvgBeach;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BellFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BellFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/BellFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/BellFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3491,10 +3743,10 @@ exports.default = SvgBellFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BellOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BellOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/BellOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/BellOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3526,10 +3778,10 @@ exports.default = SvgBellOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BloodPressureFilled.js":
-/*!************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BloodPressureFilled.js ***!
-  \************************************************************************/
+/***/ "../lib/components/Icon/generated/BloodPressureFilled.js":
+/*!***************************************************************!*\
+  !*** ../lib/components/Icon/generated/BloodPressureFilled.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3559,10 +3811,10 @@ exports.default = SvgBloodPressureFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BloodPressureOutline.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BloodPressureOutline.js ***!
-  \*************************************************************************/
+/***/ "../lib/components/Icon/generated/BloodPressureOutline.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Icon/generated/BloodPressureOutline.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3592,10 +3844,10 @@ exports.default = SvgBloodPressureOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Bold.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Bold.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Bold.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Bold.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3625,10 +3877,10 @@ exports.default = SvgBold;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BookmarkFilled.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BookmarkFilled.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/BookmarkFilled.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/BookmarkFilled.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3658,10 +3910,10 @@ exports.default = SvgBookmarkFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BookmarkOutline.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BookmarkOutline.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/BookmarkOutline.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/BookmarkOutline.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3691,10 +3943,10 @@ exports.default = SvgBookmarkOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BoxFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BoxFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/BoxFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/BoxFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3724,10 +3976,10 @@ exports.default = SvgBoxFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BoxOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BoxOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/BoxOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/BoxOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3757,10 +4009,10 @@ exports.default = SvgBoxOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BricksFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BricksFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/BricksFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/BricksFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3790,10 +4042,10 @@ exports.default = SvgBricksFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/BricksOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/BricksOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/BricksOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/BricksOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3823,10 +4075,10 @@ exports.default = SvgBricksOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CalendarFilled.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CalendarFilled.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/CalendarFilled.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/CalendarFilled.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3858,10 +4110,10 @@ exports.default = SvgCalendarFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CalendarOutline.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CalendarOutline.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/CalendarOutline.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/CalendarOutline.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3893,10 +4145,10 @@ exports.default = SvgCalendarOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CameraFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CameraFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/CameraFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/CameraFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3926,10 +4178,10 @@ exports.default = SvgCameraFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CameraOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CameraOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/CameraOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/CameraOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3959,10 +4211,10 @@ exports.default = SvgCameraOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ChatFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ChatFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/ChatFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/ChatFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3992,10 +4244,10 @@ exports.default = SvgChatFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ChatOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ChatOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/ChatOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/ChatOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4025,10 +4277,10 @@ exports.default = SvgChatOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CheckCircleFilled.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CheckCircleFilled.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/CheckCircleFilled.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/CheckCircleFilled.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4060,10 +4312,10 @@ exports.default = SvgCheckCircleFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CheckCircleOutline.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CheckCircleOutline.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/CheckCircleOutline.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/CheckCircleOutline.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4095,10 +4347,10 @@ exports.default = SvgCheckCircleOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CheckDefault.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CheckDefault.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/CheckDefault.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/CheckDefault.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4128,10 +4380,10 @@ exports.default = SvgCheckDefault;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ClearFormat.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ClearFormat.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/ClearFormat.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/ClearFormat.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4161,10 +4413,10 @@ exports.default = SvgClearFormat;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Clip.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Clip.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Clip.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Clip.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4194,10 +4446,10 @@ exports.default = SvgClip;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ClockFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ClockFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/ClockFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/ClockFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4229,10 +4481,10 @@ exports.default = SvgClockFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ClockOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ClockOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/ClockOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/ClockOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4264,10 +4516,10 @@ exports.default = SvgClockOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CloudFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CloudFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/CloudFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/CloudFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4297,10 +4549,10 @@ exports.default = SvgCloudFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CloudOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CloudOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/CloudOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/CloudOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4330,10 +4582,10 @@ exports.default = SvgCloudOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Code.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Code.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Code.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Code.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4363,10 +4615,10 @@ exports.default = SvgCode;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Contrast.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Contrast.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/Contrast.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/Contrast.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4398,10 +4650,10 @@ exports.default = SvgContrast;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ContrastActive.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ContrastActive.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/ContrastActive.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/ContrastActive.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4433,10 +4685,10 @@ exports.default = SvgContrastActive;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CopyFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CopyFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/CopyFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/CopyFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4468,10 +4720,10 @@ exports.default = SvgCopyFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CopyOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CopyOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/CopyOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/CopyOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4503,10 +4755,10 @@ exports.default = SvgCopyOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CreditCardFilled.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CreditCardFilled.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/CreditCardFilled.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/CreditCardFilled.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4536,10 +4788,10 @@ exports.default = SvgCreditCardFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/CreditCardOutline.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/CreditCardOutline.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/CreditCardOutline.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/CreditCardOutline.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4569,10 +4821,10 @@ exports.default = SvgCreditCardOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/DataFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/DataFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/DataFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/DataFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4602,10 +4854,10 @@ exports.default = SvgDataFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/DataOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/DataOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/DataOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/DataOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4635,10 +4887,10 @@ exports.default = SvgDataOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/DecreaseFont.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/DecreaseFont.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/DecreaseFont.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/DecreaseFont.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4668,10 +4920,10 @@ exports.default = SvgDecreaseFont;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/DesktopFilled.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/DesktopFilled.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/DesktopFilled.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/DesktopFilled.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4701,10 +4953,10 @@ exports.default = SvgDesktopFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/DesktopOutline.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/DesktopOutline.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/DesktopOutline.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/DesktopOutline.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4734,10 +4986,10 @@ exports.default = SvgDesktopOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Dots.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Dots.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Dots.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Dots.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4769,10 +5021,10 @@ exports.default = SvgDots;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Download.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Download.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/Download.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/Download.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4802,10 +5054,10 @@ exports.default = SvgDownload;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EmailFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EmailFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/EmailFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/EmailFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4835,10 +5087,10 @@ exports.default = SvgEmailFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EmailOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EmailOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/EmailOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/EmailOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4868,10 +5120,10 @@ exports.default = SvgEmailOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ExclamationDefault.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ExclamationDefault.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/ExclamationDefault.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/ExclamationDefault.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4903,10 +5155,10 @@ exports.default = SvgExclamationDefault;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ExclamationTriangleFilled.js":
-/*!******************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ExclamationTriangleFilled.js ***!
-  \******************************************************************************/
+/***/ "../lib/components/Icon/generated/ExclamationTriangleFilled.js":
+/*!*********************************************************************!*\
+  !*** ../lib/components/Icon/generated/ExclamationTriangleFilled.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4938,10 +5190,10 @@ exports.default = SvgExclamationTriangleFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ExclamationTriangleOutline.js":
-/*!*******************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ExclamationTriangleOutline.js ***!
-  \*******************************************************************************/
+/***/ "../lib/components/Icon/generated/ExclamationTriangleOutline.js":
+/*!**********************************************************************!*\
+  !*** ../lib/components/Icon/generated/ExclamationTriangleOutline.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4973,10 +5225,10 @@ exports.default = SvgExclamationTriangleOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Expand.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Expand.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Expand.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Expand.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5006,10 +5258,10 @@ exports.default = SvgExpand;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EyeFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EyeFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/EyeFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/EyeFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5041,10 +5293,10 @@ exports.default = SvgEyeFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EyeHiddenFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EyeHiddenFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/EyeHiddenFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/EyeHiddenFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5076,10 +5328,10 @@ exports.default = SvgEyeHiddenFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EyeHiddenOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EyeHiddenOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/EyeHiddenOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/EyeHiddenOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5111,10 +5363,10 @@ exports.default = SvgEyeHiddenOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/EyeOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/EyeOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/EyeOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/EyeOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5146,10 +5398,10 @@ exports.default = SvgEyeOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FileEmptyFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FileEmptyFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/FileEmptyFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/FileEmptyFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5181,10 +5433,10 @@ exports.default = SvgFileEmptyFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FileEmptyOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FileEmptyOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/FileEmptyOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/FileEmptyOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5216,10 +5468,10 @@ exports.default = SvgFileEmptyOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FileWithItensFilled.js":
-/*!************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FileWithItensFilled.js ***!
-  \************************************************************************/
+/***/ "../lib/components/Icon/generated/FileWithItensFilled.js":
+/*!***************************************************************!*\
+  !*** ../lib/components/Icon/generated/FileWithItensFilled.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5251,10 +5503,10 @@ exports.default = SvgFileWithItensFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FileWithItensOutline.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FileWithItensOutline.js ***!
-  \*************************************************************************/
+/***/ "../lib/components/Icon/generated/FileWithItensOutline.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Icon/generated/FileWithItensOutline.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5286,10 +5538,10 @@ exports.default = SvgFileWithItensOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FilterFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FilterFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/FilterFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/FilterFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5319,10 +5571,10 @@ exports.default = SvgFilterFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FilterOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FilterOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/FilterOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/FilterOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5354,10 +5606,10 @@ exports.default = SvgFilterOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FolderFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FolderFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/FolderFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/FolderFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5387,10 +5639,10 @@ exports.default = SvgFolderFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/FolderOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/FolderOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/FolderOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/FolderOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5422,10 +5674,10 @@ exports.default = SvgFolderOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/GearFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/GearFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/GearFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/GearFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5455,10 +5707,10 @@ exports.default = SvgGearFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/GearOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/GearOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/GearOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/GearOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5488,10 +5740,10 @@ exports.default = SvgGearOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HamburguerMenu.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HamburguerMenu.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/HamburguerMenu.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/HamburguerMenu.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5523,10 +5775,10 @@ exports.default = SvgHamburguerMenu;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HeartFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HeartFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/HeartFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/HeartFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5556,10 +5808,10 @@ exports.default = SvgHeartFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HeartOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HeartOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/HeartOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/HeartOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5589,10 +5841,10 @@ exports.default = SvgHeartOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HeartRateFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HeartRateFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/HeartRateFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/HeartRateFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5622,10 +5874,10 @@ exports.default = SvgHeartRateFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HeartRateOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HeartRateOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/HeartRateOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/HeartRateOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5655,10 +5907,10 @@ exports.default = SvgHeartRateOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Hospital.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Hospital.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/Hospital.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/Hospital.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5690,10 +5942,10 @@ exports.default = SvgHospital;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HouseFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HouseFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/HouseFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/HouseFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5723,10 +5975,10 @@ exports.default = SvgHouseFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/HouseOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/HouseOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/HouseOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/HouseOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5756,10 +6008,10 @@ exports.default = SvgHouseOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Icons.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Icons.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Icon/generated/Icons.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Icon/generated/Icons.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5769,199 +6021,199 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Adjust_1 = __importDefault(__webpack_require__(/*! ./Adjust */ "../lib/components/elements/Icon/generated/Adjust.js"));
-var AlignCenter_1 = __importDefault(__webpack_require__(/*! ./AlignCenter */ "../lib/components/elements/Icon/generated/AlignCenter.js"));
-var AlignJustify_1 = __importDefault(__webpack_require__(/*! ./AlignJustify */ "../lib/components/elements/Icon/generated/AlignJustify.js"));
-var AlignLeft_1 = __importDefault(__webpack_require__(/*! ./AlignLeft */ "../lib/components/elements/Icon/generated/AlignLeft.js"));
-var AlignRight_1 = __importDefault(__webpack_require__(/*! ./AlignRight */ "../lib/components/elements/Icon/generated/AlignRight.js"));
-var AngleDoubleLeft_1 = __importDefault(__webpack_require__(/*! ./AngleDoubleLeft */ "../lib/components/elements/Icon/generated/AngleDoubleLeft.js"));
-var AngleDoubleRight_1 = __importDefault(__webpack_require__(/*! ./AngleDoubleRight */ "../lib/components/elements/Icon/generated/AngleDoubleRight.js"));
-var AngleDown_1 = __importDefault(__webpack_require__(/*! ./AngleDown */ "../lib/components/elements/Icon/generated/AngleDown.js"));
-var AngleLeft_1 = __importDefault(__webpack_require__(/*! ./AngleLeft */ "../lib/components/elements/Icon/generated/AngleLeft.js"));
-var AngleRight_1 = __importDefault(__webpack_require__(/*! ./AngleRight */ "../lib/components/elements/Icon/generated/AngleRight.js"));
-var AngleUp_1 = __importDefault(__webpack_require__(/*! ./AngleUp */ "../lib/components/elements/Icon/generated/AngleUp.js"));
-var ArchiveFilled_1 = __importDefault(__webpack_require__(/*! ./ArchiveFilled */ "../lib/components/elements/Icon/generated/ArchiveFilled.js"));
-var ArchiveOutline_1 = __importDefault(__webpack_require__(/*! ./ArchiveOutline */ "../lib/components/elements/Icon/generated/ArchiveOutline.js"));
-var ArrowDown_1 = __importDefault(__webpack_require__(/*! ./ArrowDown */ "../lib/components/elements/Icon/generated/ArrowDown.js"));
-var ArrowLeft_1 = __importDefault(__webpack_require__(/*! ./ArrowLeft */ "../lib/components/elements/Icon/generated/ArrowLeft.js"));
-var ArrowRight_1 = __importDefault(__webpack_require__(/*! ./ArrowRight */ "../lib/components/elements/Icon/generated/ArrowRight.js"));
-var ArrowUp_1 = __importDefault(__webpack_require__(/*! ./ArrowUp */ "../lib/components/elements/Icon/generated/ArrowUp.js"));
-var BalanceFilled_1 = __importDefault(__webpack_require__(/*! ./BalanceFilled */ "../lib/components/elements/Icon/generated/BalanceFilled.js"));
-var BalanceOutline_1 = __importDefault(__webpack_require__(/*! ./BalanceOutline */ "../lib/components/elements/Icon/generated/BalanceOutline.js"));
-var BandaidFilled_1 = __importDefault(__webpack_require__(/*! ./BandaidFilled */ "../lib/components/elements/Icon/generated/BandaidFilled.js"));
-var BandaidOutline_1 = __importDefault(__webpack_require__(/*! ./BandaidOutline */ "../lib/components/elements/Icon/generated/BandaidOutline.js"));
-var BanFilled_1 = __importDefault(__webpack_require__(/*! ./BanFilled */ "../lib/components/elements/Icon/generated/BanFilled.js"));
-var BanOutline_1 = __importDefault(__webpack_require__(/*! ./BanOutline */ "../lib/components/elements/Icon/generated/BanOutline.js"));
-var BatteryFull_1 = __importDefault(__webpack_require__(/*! ./BatteryFull */ "../lib/components/elements/Icon/generated/BatteryFull.js"));
-var BatteryLow_1 = __importDefault(__webpack_require__(/*! ./BatteryLow */ "../lib/components/elements/Icon/generated/BatteryLow.js"));
-var BatteryMedium_1 = __importDefault(__webpack_require__(/*! ./BatteryMedium */ "../lib/components/elements/Icon/generated/BatteryMedium.js"));
-var Beach_1 = __importDefault(__webpack_require__(/*! ./Beach */ "../lib/components/elements/Icon/generated/Beach.js"));
-var BellFilled_1 = __importDefault(__webpack_require__(/*! ./BellFilled */ "../lib/components/elements/Icon/generated/BellFilled.js"));
-var BellOutline_1 = __importDefault(__webpack_require__(/*! ./BellOutline */ "../lib/components/elements/Icon/generated/BellOutline.js"));
-var BloodPressureFilled_1 = __importDefault(__webpack_require__(/*! ./BloodPressureFilled */ "../lib/components/elements/Icon/generated/BloodPressureFilled.js"));
-var BloodPressureOutline_1 = __importDefault(__webpack_require__(/*! ./BloodPressureOutline */ "../lib/components/elements/Icon/generated/BloodPressureOutline.js"));
-var Bold_1 = __importDefault(__webpack_require__(/*! ./Bold */ "../lib/components/elements/Icon/generated/Bold.js"));
-var BookmarkFilled_1 = __importDefault(__webpack_require__(/*! ./BookmarkFilled */ "../lib/components/elements/Icon/generated/BookmarkFilled.js"));
-var BookmarkOutline_1 = __importDefault(__webpack_require__(/*! ./BookmarkOutline */ "../lib/components/elements/Icon/generated/BookmarkOutline.js"));
-var BoxFilled_1 = __importDefault(__webpack_require__(/*! ./BoxFilled */ "../lib/components/elements/Icon/generated/BoxFilled.js"));
-var BoxOutline_1 = __importDefault(__webpack_require__(/*! ./BoxOutline */ "../lib/components/elements/Icon/generated/BoxOutline.js"));
-var BricksFilled_1 = __importDefault(__webpack_require__(/*! ./BricksFilled */ "../lib/components/elements/Icon/generated/BricksFilled.js"));
-var BricksOutline_1 = __importDefault(__webpack_require__(/*! ./BricksOutline */ "../lib/components/elements/Icon/generated/BricksOutline.js"));
-var CalendarFilled_1 = __importDefault(__webpack_require__(/*! ./CalendarFilled */ "../lib/components/elements/Icon/generated/CalendarFilled.js"));
-var CalendarOutline_1 = __importDefault(__webpack_require__(/*! ./CalendarOutline */ "../lib/components/elements/Icon/generated/CalendarOutline.js"));
-var CameraFilled_1 = __importDefault(__webpack_require__(/*! ./CameraFilled */ "../lib/components/elements/Icon/generated/CameraFilled.js"));
-var CameraOutline_1 = __importDefault(__webpack_require__(/*! ./CameraOutline */ "../lib/components/elements/Icon/generated/CameraOutline.js"));
-var ChatFilled_1 = __importDefault(__webpack_require__(/*! ./ChatFilled */ "../lib/components/elements/Icon/generated/ChatFilled.js"));
-var ChatOutline_1 = __importDefault(__webpack_require__(/*! ./ChatOutline */ "../lib/components/elements/Icon/generated/ChatOutline.js"));
-var CheckCircleFilled_1 = __importDefault(__webpack_require__(/*! ./CheckCircleFilled */ "../lib/components/elements/Icon/generated/CheckCircleFilled.js"));
-var CheckCircleOutline_1 = __importDefault(__webpack_require__(/*! ./CheckCircleOutline */ "../lib/components/elements/Icon/generated/CheckCircleOutline.js"));
-var CheckDefault_1 = __importDefault(__webpack_require__(/*! ./CheckDefault */ "../lib/components/elements/Icon/generated/CheckDefault.js"));
-var ClearFormat_1 = __importDefault(__webpack_require__(/*! ./ClearFormat */ "../lib/components/elements/Icon/generated/ClearFormat.js"));
-var Clip_1 = __importDefault(__webpack_require__(/*! ./Clip */ "../lib/components/elements/Icon/generated/Clip.js"));
-var ClockFilled_1 = __importDefault(__webpack_require__(/*! ./ClockFilled */ "../lib/components/elements/Icon/generated/ClockFilled.js"));
-var ClockOutline_1 = __importDefault(__webpack_require__(/*! ./ClockOutline */ "../lib/components/elements/Icon/generated/ClockOutline.js"));
-var CloudFilled_1 = __importDefault(__webpack_require__(/*! ./CloudFilled */ "../lib/components/elements/Icon/generated/CloudFilled.js"));
-var CloudOutline_1 = __importDefault(__webpack_require__(/*! ./CloudOutline */ "../lib/components/elements/Icon/generated/CloudOutline.js"));
-var Code_1 = __importDefault(__webpack_require__(/*! ./Code */ "../lib/components/elements/Icon/generated/Code.js"));
-var Contrast_1 = __importDefault(__webpack_require__(/*! ./Contrast */ "../lib/components/elements/Icon/generated/Contrast.js"));
-var ContrastActive_1 = __importDefault(__webpack_require__(/*! ./ContrastActive */ "../lib/components/elements/Icon/generated/ContrastActive.js"));
-var CopyFilled_1 = __importDefault(__webpack_require__(/*! ./CopyFilled */ "../lib/components/elements/Icon/generated/CopyFilled.js"));
-var CopyOutline_1 = __importDefault(__webpack_require__(/*! ./CopyOutline */ "../lib/components/elements/Icon/generated/CopyOutline.js"));
-var CreditCardFilled_1 = __importDefault(__webpack_require__(/*! ./CreditCardFilled */ "../lib/components/elements/Icon/generated/CreditCardFilled.js"));
-var CreditCardOutline_1 = __importDefault(__webpack_require__(/*! ./CreditCardOutline */ "../lib/components/elements/Icon/generated/CreditCardOutline.js"));
-var DataFilled_1 = __importDefault(__webpack_require__(/*! ./DataFilled */ "../lib/components/elements/Icon/generated/DataFilled.js"));
-var DataOutline_1 = __importDefault(__webpack_require__(/*! ./DataOutline */ "../lib/components/elements/Icon/generated/DataOutline.js"));
-var DecreaseFont_1 = __importDefault(__webpack_require__(/*! ./DecreaseFont */ "../lib/components/elements/Icon/generated/DecreaseFont.js"));
-var DesktopFilled_1 = __importDefault(__webpack_require__(/*! ./DesktopFilled */ "../lib/components/elements/Icon/generated/DesktopFilled.js"));
-var DesktopOutline_1 = __importDefault(__webpack_require__(/*! ./DesktopOutline */ "../lib/components/elements/Icon/generated/DesktopOutline.js"));
-var Dots_1 = __importDefault(__webpack_require__(/*! ./Dots */ "../lib/components/elements/Icon/generated/Dots.js"));
-var Download_1 = __importDefault(__webpack_require__(/*! ./Download */ "../lib/components/elements/Icon/generated/Download.js"));
-var EmailFilled_1 = __importDefault(__webpack_require__(/*! ./EmailFilled */ "../lib/components/elements/Icon/generated/EmailFilled.js"));
-var EmailOutline_1 = __importDefault(__webpack_require__(/*! ./EmailOutline */ "../lib/components/elements/Icon/generated/EmailOutline.js"));
-var ExclamationDefault_1 = __importDefault(__webpack_require__(/*! ./ExclamationDefault */ "../lib/components/elements/Icon/generated/ExclamationDefault.js"));
-var ExclamationTriangleFilled_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleFilled */ "../lib/components/elements/Icon/generated/ExclamationTriangleFilled.js"));
-var ExclamationTriangleOutline_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleOutline */ "../lib/components/elements/Icon/generated/ExclamationTriangleOutline.js"));
-var Expand_1 = __importDefault(__webpack_require__(/*! ./Expand */ "../lib/components/elements/Icon/generated/Expand.js"));
-var EyeFilled_1 = __importDefault(__webpack_require__(/*! ./EyeFilled */ "../lib/components/elements/Icon/generated/EyeFilled.js"));
-var EyeHiddenFilled_1 = __importDefault(__webpack_require__(/*! ./EyeHiddenFilled */ "../lib/components/elements/Icon/generated/EyeHiddenFilled.js"));
-var EyeHiddenOutline_1 = __importDefault(__webpack_require__(/*! ./EyeHiddenOutline */ "../lib/components/elements/Icon/generated/EyeHiddenOutline.js"));
-var EyeOutline_1 = __importDefault(__webpack_require__(/*! ./EyeOutline */ "../lib/components/elements/Icon/generated/EyeOutline.js"));
-var FileEmptyFilled_1 = __importDefault(__webpack_require__(/*! ./FileEmptyFilled */ "../lib/components/elements/Icon/generated/FileEmptyFilled.js"));
-var FileEmptyOutline_1 = __importDefault(__webpack_require__(/*! ./FileEmptyOutline */ "../lib/components/elements/Icon/generated/FileEmptyOutline.js"));
-var FileWithItensFilled_1 = __importDefault(__webpack_require__(/*! ./FileWithItensFilled */ "../lib/components/elements/Icon/generated/FileWithItensFilled.js"));
-var FileWithItensOutline_1 = __importDefault(__webpack_require__(/*! ./FileWithItensOutline */ "../lib/components/elements/Icon/generated/FileWithItensOutline.js"));
-var FilterFilled_1 = __importDefault(__webpack_require__(/*! ./FilterFilled */ "../lib/components/elements/Icon/generated/FilterFilled.js"));
-var FilterOutline_1 = __importDefault(__webpack_require__(/*! ./FilterOutline */ "../lib/components/elements/Icon/generated/FilterOutline.js"));
-var FolderFilled_1 = __importDefault(__webpack_require__(/*! ./FolderFilled */ "../lib/components/elements/Icon/generated/FolderFilled.js"));
-var FolderOutline_1 = __importDefault(__webpack_require__(/*! ./FolderOutline */ "../lib/components/elements/Icon/generated/FolderOutline.js"));
-var GearFilled_1 = __importDefault(__webpack_require__(/*! ./GearFilled */ "../lib/components/elements/Icon/generated/GearFilled.js"));
-var GearOutline_1 = __importDefault(__webpack_require__(/*! ./GearOutline */ "../lib/components/elements/Icon/generated/GearOutline.js"));
-var HamburguerMenu_1 = __importDefault(__webpack_require__(/*! ./HamburguerMenu */ "../lib/components/elements/Icon/generated/HamburguerMenu.js"));
-var HeartFilled_1 = __importDefault(__webpack_require__(/*! ./HeartFilled */ "../lib/components/elements/Icon/generated/HeartFilled.js"));
-var HeartOutline_1 = __importDefault(__webpack_require__(/*! ./HeartOutline */ "../lib/components/elements/Icon/generated/HeartOutline.js"));
-var HeartRateFilled_1 = __importDefault(__webpack_require__(/*! ./HeartRateFilled */ "../lib/components/elements/Icon/generated/HeartRateFilled.js"));
-var HeartRateOutline_1 = __importDefault(__webpack_require__(/*! ./HeartRateOutline */ "../lib/components/elements/Icon/generated/HeartRateOutline.js"));
-var Hospital_1 = __importDefault(__webpack_require__(/*! ./Hospital */ "../lib/components/elements/Icon/generated/Hospital.js"));
-var HouseFilled_1 = __importDefault(__webpack_require__(/*! ./HouseFilled */ "../lib/components/elements/Icon/generated/HouseFilled.js"));
-var HouseOutline_1 = __importDefault(__webpack_require__(/*! ./HouseOutline */ "../lib/components/elements/Icon/generated/HouseOutline.js"));
-var ImageFilled_1 = __importDefault(__webpack_require__(/*! ./ImageFilled */ "../lib/components/elements/Icon/generated/ImageFilled.js"));
-var ImageOutline_1 = __importDefault(__webpack_require__(/*! ./ImageOutline */ "../lib/components/elements/Icon/generated/ImageOutline.js"));
-var ImcFilled_1 = __importDefault(__webpack_require__(/*! ./ImcFilled */ "../lib/components/elements/Icon/generated/ImcFilled.js"));
-var IncreaseFont_1 = __importDefault(__webpack_require__(/*! ./IncreaseFont */ "../lib/components/elements/Icon/generated/IncreaseFont.js"));
-var InfoCircleFilled_1 = __importDefault(__webpack_require__(/*! ./InfoCircleFilled */ "../lib/components/elements/Icon/generated/InfoCircleFilled.js"));
-var InfoCircleOutline_1 = __importDefault(__webpack_require__(/*! ./InfoCircleOutline */ "../lib/components/elements/Icon/generated/InfoCircleOutline.js"));
-var InfoDefault_1 = __importDefault(__webpack_require__(/*! ./InfoDefault */ "../lib/components/elements/Icon/generated/InfoDefault.js"));
-var Italic_1 = __importDefault(__webpack_require__(/*! ./Italic */ "../lib/components/elements/Icon/generated/Italic.js"));
-var KeyFilled_1 = __importDefault(__webpack_require__(/*! ./KeyFilled */ "../lib/components/elements/Icon/generated/KeyFilled.js"));
-var KeyOutline_1 = __importDefault(__webpack_require__(/*! ./KeyOutline */ "../lib/components/elements/Icon/generated/KeyOutline.js"));
-var LightbulbFilled_1 = __importDefault(__webpack_require__(/*! ./LightbulbFilled */ "../lib/components/elements/Icon/generated/LightbulbFilled.js"));
-var LightbulbOutline_1 = __importDefault(__webpack_require__(/*! ./LightbulbOutline */ "../lib/components/elements/Icon/generated/LightbulbOutline.js"));
-var Link_1 = __importDefault(__webpack_require__(/*! ./Link */ "../lib/components/elements/Icon/generated/Link.js"));
-var List_1 = __importDefault(__webpack_require__(/*! ./List */ "../lib/components/elements/Icon/generated/List.js"));
-var LockCloseFilled_1 = __importDefault(__webpack_require__(/*! ./LockCloseFilled */ "../lib/components/elements/Icon/generated/LockCloseFilled.js"));
-var LockCloseOutline_1 = __importDefault(__webpack_require__(/*! ./LockCloseOutline */ "../lib/components/elements/Icon/generated/LockCloseOutline.js"));
-var LockOpenFilled_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilled */ "../lib/components/elements/Icon/generated/LockOpenFilled.js"));
-var LockOpenFilledCopy_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilledCopy */ "../lib/components/elements/Icon/generated/LockOpenFilledCopy.js"));
-var MapFilled_1 = __importDefault(__webpack_require__(/*! ./MapFilled */ "../lib/components/elements/Icon/generated/MapFilled.js"));
-var MapMarkerFilled_1 = __importDefault(__webpack_require__(/*! ./MapMarkerFilled */ "../lib/components/elements/Icon/generated/MapMarkerFilled.js"));
-var MapMarkerOutlined_1 = __importDefault(__webpack_require__(/*! ./MapMarkerOutlined */ "../lib/components/elements/Icon/generated/MapMarkerOutlined.js"));
-var MapOutline_1 = __importDefault(__webpack_require__(/*! ./MapOutline */ "../lib/components/elements/Icon/generated/MapOutline.js"));
-var MicrophoneFilled_1 = __importDefault(__webpack_require__(/*! ./MicrophoneFilled */ "../lib/components/elements/Icon/generated/MicrophoneFilled.js"));
-var MicrophoneOutline_1 = __importDefault(__webpack_require__(/*! ./MicrophoneOutline */ "../lib/components/elements/Icon/generated/MicrophoneOutline.js"));
-var Minimize_1 = __importDefault(__webpack_require__(/*! ./Minimize */ "../lib/components/elements/Icon/generated/Minimize.js"));
-var Minus_1 = __importDefault(__webpack_require__(/*! ./Minus */ "../lib/components/elements/Icon/generated/Minus.js"));
-var Module_1 = __importDefault(__webpack_require__(/*! ./Module */ "../lib/components/elements/Icon/generated/Module.js"));
-var MultipleUsers_1 = __importDefault(__webpack_require__(/*! ./MultipleUsers */ "../lib/components/elements/Icon/generated/MultipleUsers.js"));
-var NeedleFilled_1 = __importDefault(__webpack_require__(/*! ./NeedleFilled */ "../lib/components/elements/Icon/generated/NeedleFilled.js"));
-var NeedleOutline_1 = __importDefault(__webpack_require__(/*! ./NeedleOutline */ "../lib/components/elements/Icon/generated/NeedleOutline.js"));
-var O2Filled_1 = __importDefault(__webpack_require__(/*! ./O2Filled */ "../lib/components/elements/Icon/generated/O2Filled.js"));
-var OpenDoor_1 = __importDefault(__webpack_require__(/*! ./OpenDoor */ "../lib/components/elements/Icon/generated/OpenDoor.js"));
-var Outline_1 = __importDefault(__webpack_require__(/*! ./Outline */ "../lib/components/elements/Icon/generated/Outline.js"));
-var Pause_1 = __importDefault(__webpack_require__(/*! ./Pause */ "../lib/components/elements/Icon/generated/Pause.js"));
-var PenFilled_1 = __importDefault(__webpack_require__(/*! ./PenFilled */ "../lib/components/elements/Icon/generated/PenFilled.js"));
-var PenOutline_1 = __importDefault(__webpack_require__(/*! ./PenOutline */ "../lib/components/elements/Icon/generated/PenOutline.js"));
-var PenTool_1 = __importDefault(__webpack_require__(/*! ./PenTool */ "../lib/components/elements/Icon/generated/PenTool.js"));
-var PhoneFilled_1 = __importDefault(__webpack_require__(/*! ./PhoneFilled */ "../lib/components/elements/Icon/generated/PhoneFilled.js"));
-var PhoneOutline_1 = __importDefault(__webpack_require__(/*! ./PhoneOutline */ "../lib/components/elements/Icon/generated/PhoneOutline.js"));
-var PillFilled_1 = __importDefault(__webpack_require__(/*! ./PillFilled */ "../lib/components/elements/Icon/generated/PillFilled.js"));
-var PillOutline_1 = __importDefault(__webpack_require__(/*! ./PillOutline */ "../lib/components/elements/Icon/generated/PillOutline.js"));
-var PlayFilled_1 = __importDefault(__webpack_require__(/*! ./PlayFilled */ "../lib/components/elements/Icon/generated/PlayFilled.js"));
-var PlayOutline_1 = __importDefault(__webpack_require__(/*! ./PlayOutline */ "../lib/components/elements/Icon/generated/PlayOutline.js"));
-var Plus_1 = __importDefault(__webpack_require__(/*! ./Plus */ "../lib/components/elements/Icon/generated/Plus.js"));
-var PollFilled_1 = __importDefault(__webpack_require__(/*! ./PollFilled */ "../lib/components/elements/Icon/generated/PollFilled.js"));
-var PollOutline_1 = __importDefault(__webpack_require__(/*! ./PollOutline */ "../lib/components/elements/Icon/generated/PollOutline.js"));
-var PresentationFilled_1 = __importDefault(__webpack_require__(/*! ./PresentationFilled */ "../lib/components/elements/Icon/generated/PresentationFilled.js"));
-var PresentationOutline_1 = __importDefault(__webpack_require__(/*! ./PresentationOutline */ "../lib/components/elements/Icon/generated/PresentationOutline.js"));
-var PrinterFilled_1 = __importDefault(__webpack_require__(/*! ./PrinterFilled */ "../lib/components/elements/Icon/generated/PrinterFilled.js"));
-var PrinterOutline_1 = __importDefault(__webpack_require__(/*! ./PrinterOutline */ "../lib/components/elements/Icon/generated/PrinterOutline.js"));
-var QuestionMarkFilled_1 = __importDefault(__webpack_require__(/*! ./QuestionMarkFilled */ "../lib/components/elements/Icon/generated/QuestionMarkFilled.js"));
-var QuoteLeft_1 = __importDefault(__webpack_require__(/*! ./QuoteLeft */ "../lib/components/elements/Icon/generated/QuoteLeft.js"));
-var QuoteRight_1 = __importDefault(__webpack_require__(/*! ./QuoteRight */ "../lib/components/elements/Icon/generated/QuoteRight.js"));
-var Redo_1 = __importDefault(__webpack_require__(/*! ./Redo */ "../lib/components/elements/Icon/generated/Redo.js"));
-var Rocket_1 = __importDefault(__webpack_require__(/*! ./Rocket */ "../lib/components/elements/Icon/generated/Rocket.js"));
-var RulerFilled_1 = __importDefault(__webpack_require__(/*! ./RulerFilled */ "../lib/components/elements/Icon/generated/RulerFilled.js"));
-var RulerOutline_1 = __importDefault(__webpack_require__(/*! ./RulerOutline */ "../lib/components/elements/Icon/generated/RulerOutline.js"));
-var ShieldFilled_1 = __importDefault(__webpack_require__(/*! ./ShieldFilled */ "../lib/components/elements/Icon/generated/ShieldFilled.js"));
-var ShieldOutline_1 = __importDefault(__webpack_require__(/*! ./ShieldOutline */ "../lib/components/elements/Icon/generated/ShieldOutline.js"));
-var SignOut_1 = __importDefault(__webpack_require__(/*! ./SignOut */ "../lib/components/elements/Icon/generated/SignOut.js"));
-var Sort_1 = __importDefault(__webpack_require__(/*! ./Sort */ "../lib/components/elements/Icon/generated/Sort.js"));
-var StarFilled_1 = __importDefault(__webpack_require__(/*! ./StarFilled */ "../lib/components/elements/Icon/generated/StarFilled.js"));
-var StarOutline_1 = __importDefault(__webpack_require__(/*! ./StarOutline */ "../lib/components/elements/Icon/generated/StarOutline.js"));
-var StethoscopeFilled_1 = __importDefault(__webpack_require__(/*! ./StethoscopeFilled */ "../lib/components/elements/Icon/generated/StethoscopeFilled.js"));
-var StethoscopeOutline_1 = __importDefault(__webpack_require__(/*! ./StethoscopeOutline */ "../lib/components/elements/Icon/generated/StethoscopeOutline.js"));
-var StopFilled_1 = __importDefault(__webpack_require__(/*! ./StopFilled */ "../lib/components/elements/Icon/generated/StopFilled.js"));
-var StopOutline_1 = __importDefault(__webpack_require__(/*! ./StopOutline */ "../lib/components/elements/Icon/generated/StopOutline.js"));
-var Strikethrough_1 = __importDefault(__webpack_require__(/*! ./Strikethrough */ "../lib/components/elements/Icon/generated/Strikethrough.js"));
-var Sync_1 = __importDefault(__webpack_require__(/*! ./Sync */ "../lib/components/elements/Icon/generated/Sync.js"));
-var ThermometerFilled_1 = __importDefault(__webpack_require__(/*! ./ThermometerFilled */ "../lib/components/elements/Icon/generated/ThermometerFilled.js"));
-var ThermometerOutline_1 = __importDefault(__webpack_require__(/*! ./ThermometerOutline */ "../lib/components/elements/Icon/generated/ThermometerOutline.js"));
-var TimerFilled_1 = __importDefault(__webpack_require__(/*! ./TimerFilled */ "../lib/components/elements/Icon/generated/TimerFilled.js"));
-var TimerOutlined_1 = __importDefault(__webpack_require__(/*! ./TimerOutlined */ "../lib/components/elements/Icon/generated/TimerOutlined.js"));
-var TimesDefault_1 = __importDefault(__webpack_require__(/*! ./TimesDefault */ "../lib/components/elements/Icon/generated/TimesDefault.js"));
-var TimesFilled_1 = __importDefault(__webpack_require__(/*! ./TimesFilled */ "../lib/components/elements/Icon/generated/TimesFilled.js"));
-var TimesOutline_1 = __importDefault(__webpack_require__(/*! ./TimesOutline */ "../lib/components/elements/Icon/generated/TimesOutline.js"));
-var TrashFilled_1 = __importDefault(__webpack_require__(/*! ./TrashFilled */ "../lib/components/elements/Icon/generated/TrashFilled.js"));
-var TrashOutline_1 = __importDefault(__webpack_require__(/*! ./TrashOutline */ "../lib/components/elements/Icon/generated/TrashOutline.js"));
-var Underline_1 = __importDefault(__webpack_require__(/*! ./Underline */ "../lib/components/elements/Icon/generated/Underline.js"));
-var Upload_1 = __importDefault(__webpack_require__(/*! ./Upload */ "../lib/components/elements/Icon/generated/Upload.js"));
-var UserBan_1 = __importDefault(__webpack_require__(/*! ./UserBan */ "../lib/components/elements/Icon/generated/UserBan.js"));
-var UserCard_1 = __importDefault(__webpack_require__(/*! ./UserCard */ "../lib/components/elements/Icon/generated/UserCard.js"));
-var UserCheck_1 = __importDefault(__webpack_require__(/*! ./UserCheck */ "../lib/components/elements/Icon/generated/UserCheck.js"));
-var UserFilled_1 = __importDefault(__webpack_require__(/*! ./UserFilled */ "../lib/components/elements/Icon/generated/UserFilled.js"));
-var UserOutline_1 = __importDefault(__webpack_require__(/*! ./UserOutline */ "../lib/components/elements/Icon/generated/UserOutline.js"));
-var UserTimes_1 = __importDefault(__webpack_require__(/*! ./UserTimes */ "../lib/components/elements/Icon/generated/UserTimes.js"));
-var VideoFilled_1 = __importDefault(__webpack_require__(/*! ./VideoFilled */ "../lib/components/elements/Icon/generated/VideoFilled.js"));
-var VideoOutline_1 = __importDefault(__webpack_require__(/*! ./VideoOutline */ "../lib/components/elements/Icon/generated/VideoOutline.js"));
-var VolumeFilled_1 = __importDefault(__webpack_require__(/*! ./VolumeFilled */ "../lib/components/elements/Icon/generated/VolumeFilled.js"));
-var VolumeMuteFilled_1 = __importDefault(__webpack_require__(/*! ./VolumeMuteFilled */ "../lib/components/elements/Icon/generated/VolumeMuteFilled.js"));
-var VolumeMuteOutline_1 = __importDefault(__webpack_require__(/*! ./VolumeMuteOutline */ "../lib/components/elements/Icon/generated/VolumeMuteOutline.js"));
-var VolumeOutline_1 = __importDefault(__webpack_require__(/*! ./VolumeOutline */ "../lib/components/elements/Icon/generated/VolumeOutline.js"));
-var Wifi_1 = __importDefault(__webpack_require__(/*! ./Wifi */ "../lib/components/elements/Icon/generated/Wifi.js"));
-var ZoomMinusFilled_1 = __importDefault(__webpack_require__(/*! ./ZoomMinusFilled */ "../lib/components/elements/Icon/generated/ZoomMinusFilled.js"));
-var ZoomMinusOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomMinusOutline */ "../lib/components/elements/Icon/generated/ZoomMinusOutline.js"));
-var ZoomOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomOutline */ "../lib/components/elements/Icon/generated/ZoomOutline.js"));
-var ZoomPlusFilled_1 = __importDefault(__webpack_require__(/*! ./ZoomPlusFilled */ "../lib/components/elements/Icon/generated/ZoomPlusFilled.js"));
-var ZoomPlusOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomPlusOutline */ "../lib/components/elements/Icon/generated/ZoomPlusOutline.js"));
+var Adjust_1 = __importDefault(__webpack_require__(/*! ./Adjust */ "../lib/components/Icon/generated/Adjust.js"));
+var AlignCenter_1 = __importDefault(__webpack_require__(/*! ./AlignCenter */ "../lib/components/Icon/generated/AlignCenter.js"));
+var AlignJustify_1 = __importDefault(__webpack_require__(/*! ./AlignJustify */ "../lib/components/Icon/generated/AlignJustify.js"));
+var AlignLeft_1 = __importDefault(__webpack_require__(/*! ./AlignLeft */ "../lib/components/Icon/generated/AlignLeft.js"));
+var AlignRight_1 = __importDefault(__webpack_require__(/*! ./AlignRight */ "../lib/components/Icon/generated/AlignRight.js"));
+var AngleDoubleLeft_1 = __importDefault(__webpack_require__(/*! ./AngleDoubleLeft */ "../lib/components/Icon/generated/AngleDoubleLeft.js"));
+var AngleDoubleRight_1 = __importDefault(__webpack_require__(/*! ./AngleDoubleRight */ "../lib/components/Icon/generated/AngleDoubleRight.js"));
+var AngleDown_1 = __importDefault(__webpack_require__(/*! ./AngleDown */ "../lib/components/Icon/generated/AngleDown.js"));
+var AngleLeft_1 = __importDefault(__webpack_require__(/*! ./AngleLeft */ "../lib/components/Icon/generated/AngleLeft.js"));
+var AngleRight_1 = __importDefault(__webpack_require__(/*! ./AngleRight */ "../lib/components/Icon/generated/AngleRight.js"));
+var AngleUp_1 = __importDefault(__webpack_require__(/*! ./AngleUp */ "../lib/components/Icon/generated/AngleUp.js"));
+var ArchiveFilled_1 = __importDefault(__webpack_require__(/*! ./ArchiveFilled */ "../lib/components/Icon/generated/ArchiveFilled.js"));
+var ArchiveOutline_1 = __importDefault(__webpack_require__(/*! ./ArchiveOutline */ "../lib/components/Icon/generated/ArchiveOutline.js"));
+var ArrowDown_1 = __importDefault(__webpack_require__(/*! ./ArrowDown */ "../lib/components/Icon/generated/ArrowDown.js"));
+var ArrowLeft_1 = __importDefault(__webpack_require__(/*! ./ArrowLeft */ "../lib/components/Icon/generated/ArrowLeft.js"));
+var ArrowRight_1 = __importDefault(__webpack_require__(/*! ./ArrowRight */ "../lib/components/Icon/generated/ArrowRight.js"));
+var ArrowUp_1 = __importDefault(__webpack_require__(/*! ./ArrowUp */ "../lib/components/Icon/generated/ArrowUp.js"));
+var BalanceFilled_1 = __importDefault(__webpack_require__(/*! ./BalanceFilled */ "../lib/components/Icon/generated/BalanceFilled.js"));
+var BalanceOutline_1 = __importDefault(__webpack_require__(/*! ./BalanceOutline */ "../lib/components/Icon/generated/BalanceOutline.js"));
+var BandaidFilled_1 = __importDefault(__webpack_require__(/*! ./BandaidFilled */ "../lib/components/Icon/generated/BandaidFilled.js"));
+var BandaidOutline_1 = __importDefault(__webpack_require__(/*! ./BandaidOutline */ "../lib/components/Icon/generated/BandaidOutline.js"));
+var BanFilled_1 = __importDefault(__webpack_require__(/*! ./BanFilled */ "../lib/components/Icon/generated/BanFilled.js"));
+var BanOutline_1 = __importDefault(__webpack_require__(/*! ./BanOutline */ "../lib/components/Icon/generated/BanOutline.js"));
+var BatteryFull_1 = __importDefault(__webpack_require__(/*! ./BatteryFull */ "../lib/components/Icon/generated/BatteryFull.js"));
+var BatteryLow_1 = __importDefault(__webpack_require__(/*! ./BatteryLow */ "../lib/components/Icon/generated/BatteryLow.js"));
+var BatteryMedium_1 = __importDefault(__webpack_require__(/*! ./BatteryMedium */ "../lib/components/Icon/generated/BatteryMedium.js"));
+var Beach_1 = __importDefault(__webpack_require__(/*! ./Beach */ "../lib/components/Icon/generated/Beach.js"));
+var BellFilled_1 = __importDefault(__webpack_require__(/*! ./BellFilled */ "../lib/components/Icon/generated/BellFilled.js"));
+var BellOutline_1 = __importDefault(__webpack_require__(/*! ./BellOutline */ "../lib/components/Icon/generated/BellOutline.js"));
+var BloodPressureFilled_1 = __importDefault(__webpack_require__(/*! ./BloodPressureFilled */ "../lib/components/Icon/generated/BloodPressureFilled.js"));
+var BloodPressureOutline_1 = __importDefault(__webpack_require__(/*! ./BloodPressureOutline */ "../lib/components/Icon/generated/BloodPressureOutline.js"));
+var Bold_1 = __importDefault(__webpack_require__(/*! ./Bold */ "../lib/components/Icon/generated/Bold.js"));
+var BookmarkFilled_1 = __importDefault(__webpack_require__(/*! ./BookmarkFilled */ "../lib/components/Icon/generated/BookmarkFilled.js"));
+var BookmarkOutline_1 = __importDefault(__webpack_require__(/*! ./BookmarkOutline */ "../lib/components/Icon/generated/BookmarkOutline.js"));
+var BoxFilled_1 = __importDefault(__webpack_require__(/*! ./BoxFilled */ "../lib/components/Icon/generated/BoxFilled.js"));
+var BoxOutline_1 = __importDefault(__webpack_require__(/*! ./BoxOutline */ "../lib/components/Icon/generated/BoxOutline.js"));
+var BricksFilled_1 = __importDefault(__webpack_require__(/*! ./BricksFilled */ "../lib/components/Icon/generated/BricksFilled.js"));
+var BricksOutline_1 = __importDefault(__webpack_require__(/*! ./BricksOutline */ "../lib/components/Icon/generated/BricksOutline.js"));
+var CalendarFilled_1 = __importDefault(__webpack_require__(/*! ./CalendarFilled */ "../lib/components/Icon/generated/CalendarFilled.js"));
+var CalendarOutline_1 = __importDefault(__webpack_require__(/*! ./CalendarOutline */ "../lib/components/Icon/generated/CalendarOutline.js"));
+var CameraFilled_1 = __importDefault(__webpack_require__(/*! ./CameraFilled */ "../lib/components/Icon/generated/CameraFilled.js"));
+var CameraOutline_1 = __importDefault(__webpack_require__(/*! ./CameraOutline */ "../lib/components/Icon/generated/CameraOutline.js"));
+var ChatFilled_1 = __importDefault(__webpack_require__(/*! ./ChatFilled */ "../lib/components/Icon/generated/ChatFilled.js"));
+var ChatOutline_1 = __importDefault(__webpack_require__(/*! ./ChatOutline */ "../lib/components/Icon/generated/ChatOutline.js"));
+var CheckCircleFilled_1 = __importDefault(__webpack_require__(/*! ./CheckCircleFilled */ "../lib/components/Icon/generated/CheckCircleFilled.js"));
+var CheckCircleOutline_1 = __importDefault(__webpack_require__(/*! ./CheckCircleOutline */ "../lib/components/Icon/generated/CheckCircleOutline.js"));
+var CheckDefault_1 = __importDefault(__webpack_require__(/*! ./CheckDefault */ "../lib/components/Icon/generated/CheckDefault.js"));
+var ClearFormat_1 = __importDefault(__webpack_require__(/*! ./ClearFormat */ "../lib/components/Icon/generated/ClearFormat.js"));
+var Clip_1 = __importDefault(__webpack_require__(/*! ./Clip */ "../lib/components/Icon/generated/Clip.js"));
+var ClockFilled_1 = __importDefault(__webpack_require__(/*! ./ClockFilled */ "../lib/components/Icon/generated/ClockFilled.js"));
+var ClockOutline_1 = __importDefault(__webpack_require__(/*! ./ClockOutline */ "../lib/components/Icon/generated/ClockOutline.js"));
+var CloudFilled_1 = __importDefault(__webpack_require__(/*! ./CloudFilled */ "../lib/components/Icon/generated/CloudFilled.js"));
+var CloudOutline_1 = __importDefault(__webpack_require__(/*! ./CloudOutline */ "../lib/components/Icon/generated/CloudOutline.js"));
+var Code_1 = __importDefault(__webpack_require__(/*! ./Code */ "../lib/components/Icon/generated/Code.js"));
+var Contrast_1 = __importDefault(__webpack_require__(/*! ./Contrast */ "../lib/components/Icon/generated/Contrast.js"));
+var ContrastActive_1 = __importDefault(__webpack_require__(/*! ./ContrastActive */ "../lib/components/Icon/generated/ContrastActive.js"));
+var CopyFilled_1 = __importDefault(__webpack_require__(/*! ./CopyFilled */ "../lib/components/Icon/generated/CopyFilled.js"));
+var CopyOutline_1 = __importDefault(__webpack_require__(/*! ./CopyOutline */ "../lib/components/Icon/generated/CopyOutline.js"));
+var CreditCardFilled_1 = __importDefault(__webpack_require__(/*! ./CreditCardFilled */ "../lib/components/Icon/generated/CreditCardFilled.js"));
+var CreditCardOutline_1 = __importDefault(__webpack_require__(/*! ./CreditCardOutline */ "../lib/components/Icon/generated/CreditCardOutline.js"));
+var DataFilled_1 = __importDefault(__webpack_require__(/*! ./DataFilled */ "../lib/components/Icon/generated/DataFilled.js"));
+var DataOutline_1 = __importDefault(__webpack_require__(/*! ./DataOutline */ "../lib/components/Icon/generated/DataOutline.js"));
+var DecreaseFont_1 = __importDefault(__webpack_require__(/*! ./DecreaseFont */ "../lib/components/Icon/generated/DecreaseFont.js"));
+var DesktopFilled_1 = __importDefault(__webpack_require__(/*! ./DesktopFilled */ "../lib/components/Icon/generated/DesktopFilled.js"));
+var DesktopOutline_1 = __importDefault(__webpack_require__(/*! ./DesktopOutline */ "../lib/components/Icon/generated/DesktopOutline.js"));
+var Dots_1 = __importDefault(__webpack_require__(/*! ./Dots */ "../lib/components/Icon/generated/Dots.js"));
+var Download_1 = __importDefault(__webpack_require__(/*! ./Download */ "../lib/components/Icon/generated/Download.js"));
+var EmailFilled_1 = __importDefault(__webpack_require__(/*! ./EmailFilled */ "../lib/components/Icon/generated/EmailFilled.js"));
+var EmailOutline_1 = __importDefault(__webpack_require__(/*! ./EmailOutline */ "../lib/components/Icon/generated/EmailOutline.js"));
+var ExclamationDefault_1 = __importDefault(__webpack_require__(/*! ./ExclamationDefault */ "../lib/components/Icon/generated/ExclamationDefault.js"));
+var ExclamationTriangleFilled_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleFilled */ "../lib/components/Icon/generated/ExclamationTriangleFilled.js"));
+var ExclamationTriangleOutline_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleOutline */ "../lib/components/Icon/generated/ExclamationTriangleOutline.js"));
+var Expand_1 = __importDefault(__webpack_require__(/*! ./Expand */ "../lib/components/Icon/generated/Expand.js"));
+var EyeFilled_1 = __importDefault(__webpack_require__(/*! ./EyeFilled */ "../lib/components/Icon/generated/EyeFilled.js"));
+var EyeHiddenFilled_1 = __importDefault(__webpack_require__(/*! ./EyeHiddenFilled */ "../lib/components/Icon/generated/EyeHiddenFilled.js"));
+var EyeHiddenOutline_1 = __importDefault(__webpack_require__(/*! ./EyeHiddenOutline */ "../lib/components/Icon/generated/EyeHiddenOutline.js"));
+var EyeOutline_1 = __importDefault(__webpack_require__(/*! ./EyeOutline */ "../lib/components/Icon/generated/EyeOutline.js"));
+var FileEmptyFilled_1 = __importDefault(__webpack_require__(/*! ./FileEmptyFilled */ "../lib/components/Icon/generated/FileEmptyFilled.js"));
+var FileEmptyOutline_1 = __importDefault(__webpack_require__(/*! ./FileEmptyOutline */ "../lib/components/Icon/generated/FileEmptyOutline.js"));
+var FileWithItensFilled_1 = __importDefault(__webpack_require__(/*! ./FileWithItensFilled */ "../lib/components/Icon/generated/FileWithItensFilled.js"));
+var FileWithItensOutline_1 = __importDefault(__webpack_require__(/*! ./FileWithItensOutline */ "../lib/components/Icon/generated/FileWithItensOutline.js"));
+var FilterFilled_1 = __importDefault(__webpack_require__(/*! ./FilterFilled */ "../lib/components/Icon/generated/FilterFilled.js"));
+var FilterOutline_1 = __importDefault(__webpack_require__(/*! ./FilterOutline */ "../lib/components/Icon/generated/FilterOutline.js"));
+var FolderFilled_1 = __importDefault(__webpack_require__(/*! ./FolderFilled */ "../lib/components/Icon/generated/FolderFilled.js"));
+var FolderOutline_1 = __importDefault(__webpack_require__(/*! ./FolderOutline */ "../lib/components/Icon/generated/FolderOutline.js"));
+var GearFilled_1 = __importDefault(__webpack_require__(/*! ./GearFilled */ "../lib/components/Icon/generated/GearFilled.js"));
+var GearOutline_1 = __importDefault(__webpack_require__(/*! ./GearOutline */ "../lib/components/Icon/generated/GearOutline.js"));
+var HamburguerMenu_1 = __importDefault(__webpack_require__(/*! ./HamburguerMenu */ "../lib/components/Icon/generated/HamburguerMenu.js"));
+var HeartFilled_1 = __importDefault(__webpack_require__(/*! ./HeartFilled */ "../lib/components/Icon/generated/HeartFilled.js"));
+var HeartOutline_1 = __importDefault(__webpack_require__(/*! ./HeartOutline */ "../lib/components/Icon/generated/HeartOutline.js"));
+var HeartRateFilled_1 = __importDefault(__webpack_require__(/*! ./HeartRateFilled */ "../lib/components/Icon/generated/HeartRateFilled.js"));
+var HeartRateOutline_1 = __importDefault(__webpack_require__(/*! ./HeartRateOutline */ "../lib/components/Icon/generated/HeartRateOutline.js"));
+var Hospital_1 = __importDefault(__webpack_require__(/*! ./Hospital */ "../lib/components/Icon/generated/Hospital.js"));
+var HouseFilled_1 = __importDefault(__webpack_require__(/*! ./HouseFilled */ "../lib/components/Icon/generated/HouseFilled.js"));
+var HouseOutline_1 = __importDefault(__webpack_require__(/*! ./HouseOutline */ "../lib/components/Icon/generated/HouseOutline.js"));
+var ImageFilled_1 = __importDefault(__webpack_require__(/*! ./ImageFilled */ "../lib/components/Icon/generated/ImageFilled.js"));
+var ImageOutline_1 = __importDefault(__webpack_require__(/*! ./ImageOutline */ "../lib/components/Icon/generated/ImageOutline.js"));
+var ImcFilled_1 = __importDefault(__webpack_require__(/*! ./ImcFilled */ "../lib/components/Icon/generated/ImcFilled.js"));
+var IncreaseFont_1 = __importDefault(__webpack_require__(/*! ./IncreaseFont */ "../lib/components/Icon/generated/IncreaseFont.js"));
+var InfoCircleFilled_1 = __importDefault(__webpack_require__(/*! ./InfoCircleFilled */ "../lib/components/Icon/generated/InfoCircleFilled.js"));
+var InfoCircleOutline_1 = __importDefault(__webpack_require__(/*! ./InfoCircleOutline */ "../lib/components/Icon/generated/InfoCircleOutline.js"));
+var InfoDefault_1 = __importDefault(__webpack_require__(/*! ./InfoDefault */ "../lib/components/Icon/generated/InfoDefault.js"));
+var Italic_1 = __importDefault(__webpack_require__(/*! ./Italic */ "../lib/components/Icon/generated/Italic.js"));
+var KeyFilled_1 = __importDefault(__webpack_require__(/*! ./KeyFilled */ "../lib/components/Icon/generated/KeyFilled.js"));
+var KeyOutline_1 = __importDefault(__webpack_require__(/*! ./KeyOutline */ "../lib/components/Icon/generated/KeyOutline.js"));
+var LightbulbFilled_1 = __importDefault(__webpack_require__(/*! ./LightbulbFilled */ "../lib/components/Icon/generated/LightbulbFilled.js"));
+var LightbulbOutline_1 = __importDefault(__webpack_require__(/*! ./LightbulbOutline */ "../lib/components/Icon/generated/LightbulbOutline.js"));
+var Link_1 = __importDefault(__webpack_require__(/*! ./Link */ "../lib/components/Icon/generated/Link.js"));
+var List_1 = __importDefault(__webpack_require__(/*! ./List */ "../lib/components/Icon/generated/List.js"));
+var LockCloseFilled_1 = __importDefault(__webpack_require__(/*! ./LockCloseFilled */ "../lib/components/Icon/generated/LockCloseFilled.js"));
+var LockCloseOutline_1 = __importDefault(__webpack_require__(/*! ./LockCloseOutline */ "../lib/components/Icon/generated/LockCloseOutline.js"));
+var LockOpenFilled_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilled */ "../lib/components/Icon/generated/LockOpenFilled.js"));
+var LockOpenFilledCopy_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilledCopy */ "../lib/components/Icon/generated/LockOpenFilledCopy.js"));
+var MapFilled_1 = __importDefault(__webpack_require__(/*! ./MapFilled */ "../lib/components/Icon/generated/MapFilled.js"));
+var MapMarkerFilled_1 = __importDefault(__webpack_require__(/*! ./MapMarkerFilled */ "../lib/components/Icon/generated/MapMarkerFilled.js"));
+var MapMarkerOutlined_1 = __importDefault(__webpack_require__(/*! ./MapMarkerOutlined */ "../lib/components/Icon/generated/MapMarkerOutlined.js"));
+var MapOutline_1 = __importDefault(__webpack_require__(/*! ./MapOutline */ "../lib/components/Icon/generated/MapOutline.js"));
+var MicrophoneFilled_1 = __importDefault(__webpack_require__(/*! ./MicrophoneFilled */ "../lib/components/Icon/generated/MicrophoneFilled.js"));
+var MicrophoneOutline_1 = __importDefault(__webpack_require__(/*! ./MicrophoneOutline */ "../lib/components/Icon/generated/MicrophoneOutline.js"));
+var Minimize_1 = __importDefault(__webpack_require__(/*! ./Minimize */ "../lib/components/Icon/generated/Minimize.js"));
+var Minus_1 = __importDefault(__webpack_require__(/*! ./Minus */ "../lib/components/Icon/generated/Minus.js"));
+var Module_1 = __importDefault(__webpack_require__(/*! ./Module */ "../lib/components/Icon/generated/Module.js"));
+var MultipleUsers_1 = __importDefault(__webpack_require__(/*! ./MultipleUsers */ "../lib/components/Icon/generated/MultipleUsers.js"));
+var NeedleFilled_1 = __importDefault(__webpack_require__(/*! ./NeedleFilled */ "../lib/components/Icon/generated/NeedleFilled.js"));
+var NeedleOutline_1 = __importDefault(__webpack_require__(/*! ./NeedleOutline */ "../lib/components/Icon/generated/NeedleOutline.js"));
+var O2Filled_1 = __importDefault(__webpack_require__(/*! ./O2Filled */ "../lib/components/Icon/generated/O2Filled.js"));
+var OpenDoor_1 = __importDefault(__webpack_require__(/*! ./OpenDoor */ "../lib/components/Icon/generated/OpenDoor.js"));
+var Outline_1 = __importDefault(__webpack_require__(/*! ./Outline */ "../lib/components/Icon/generated/Outline.js"));
+var Pause_1 = __importDefault(__webpack_require__(/*! ./Pause */ "../lib/components/Icon/generated/Pause.js"));
+var PenFilled_1 = __importDefault(__webpack_require__(/*! ./PenFilled */ "../lib/components/Icon/generated/PenFilled.js"));
+var PenOutline_1 = __importDefault(__webpack_require__(/*! ./PenOutline */ "../lib/components/Icon/generated/PenOutline.js"));
+var PenTool_1 = __importDefault(__webpack_require__(/*! ./PenTool */ "../lib/components/Icon/generated/PenTool.js"));
+var PhoneFilled_1 = __importDefault(__webpack_require__(/*! ./PhoneFilled */ "../lib/components/Icon/generated/PhoneFilled.js"));
+var PhoneOutline_1 = __importDefault(__webpack_require__(/*! ./PhoneOutline */ "../lib/components/Icon/generated/PhoneOutline.js"));
+var PillFilled_1 = __importDefault(__webpack_require__(/*! ./PillFilled */ "../lib/components/Icon/generated/PillFilled.js"));
+var PillOutline_1 = __importDefault(__webpack_require__(/*! ./PillOutline */ "../lib/components/Icon/generated/PillOutline.js"));
+var PlayFilled_1 = __importDefault(__webpack_require__(/*! ./PlayFilled */ "../lib/components/Icon/generated/PlayFilled.js"));
+var PlayOutline_1 = __importDefault(__webpack_require__(/*! ./PlayOutline */ "../lib/components/Icon/generated/PlayOutline.js"));
+var Plus_1 = __importDefault(__webpack_require__(/*! ./Plus */ "../lib/components/Icon/generated/Plus.js"));
+var PollFilled_1 = __importDefault(__webpack_require__(/*! ./PollFilled */ "../lib/components/Icon/generated/PollFilled.js"));
+var PollOutline_1 = __importDefault(__webpack_require__(/*! ./PollOutline */ "../lib/components/Icon/generated/PollOutline.js"));
+var PresentationFilled_1 = __importDefault(__webpack_require__(/*! ./PresentationFilled */ "../lib/components/Icon/generated/PresentationFilled.js"));
+var PresentationOutline_1 = __importDefault(__webpack_require__(/*! ./PresentationOutline */ "../lib/components/Icon/generated/PresentationOutline.js"));
+var PrinterFilled_1 = __importDefault(__webpack_require__(/*! ./PrinterFilled */ "../lib/components/Icon/generated/PrinterFilled.js"));
+var PrinterOutline_1 = __importDefault(__webpack_require__(/*! ./PrinterOutline */ "../lib/components/Icon/generated/PrinterOutline.js"));
+var QuestionMarkFilled_1 = __importDefault(__webpack_require__(/*! ./QuestionMarkFilled */ "../lib/components/Icon/generated/QuestionMarkFilled.js"));
+var QuoteLeft_1 = __importDefault(__webpack_require__(/*! ./QuoteLeft */ "../lib/components/Icon/generated/QuoteLeft.js"));
+var QuoteRight_1 = __importDefault(__webpack_require__(/*! ./QuoteRight */ "../lib/components/Icon/generated/QuoteRight.js"));
+var Redo_1 = __importDefault(__webpack_require__(/*! ./Redo */ "../lib/components/Icon/generated/Redo.js"));
+var Rocket_1 = __importDefault(__webpack_require__(/*! ./Rocket */ "../lib/components/Icon/generated/Rocket.js"));
+var RulerFilled_1 = __importDefault(__webpack_require__(/*! ./RulerFilled */ "../lib/components/Icon/generated/RulerFilled.js"));
+var RulerOutline_1 = __importDefault(__webpack_require__(/*! ./RulerOutline */ "../lib/components/Icon/generated/RulerOutline.js"));
+var ShieldFilled_1 = __importDefault(__webpack_require__(/*! ./ShieldFilled */ "../lib/components/Icon/generated/ShieldFilled.js"));
+var ShieldOutline_1 = __importDefault(__webpack_require__(/*! ./ShieldOutline */ "../lib/components/Icon/generated/ShieldOutline.js"));
+var SignOut_1 = __importDefault(__webpack_require__(/*! ./SignOut */ "../lib/components/Icon/generated/SignOut.js"));
+var Sort_1 = __importDefault(__webpack_require__(/*! ./Sort */ "../lib/components/Icon/generated/Sort.js"));
+var StarFilled_1 = __importDefault(__webpack_require__(/*! ./StarFilled */ "../lib/components/Icon/generated/StarFilled.js"));
+var StarOutline_1 = __importDefault(__webpack_require__(/*! ./StarOutline */ "../lib/components/Icon/generated/StarOutline.js"));
+var StethoscopeFilled_1 = __importDefault(__webpack_require__(/*! ./StethoscopeFilled */ "../lib/components/Icon/generated/StethoscopeFilled.js"));
+var StethoscopeOutline_1 = __importDefault(__webpack_require__(/*! ./StethoscopeOutline */ "../lib/components/Icon/generated/StethoscopeOutline.js"));
+var StopFilled_1 = __importDefault(__webpack_require__(/*! ./StopFilled */ "../lib/components/Icon/generated/StopFilled.js"));
+var StopOutline_1 = __importDefault(__webpack_require__(/*! ./StopOutline */ "../lib/components/Icon/generated/StopOutline.js"));
+var Strikethrough_1 = __importDefault(__webpack_require__(/*! ./Strikethrough */ "../lib/components/Icon/generated/Strikethrough.js"));
+var Sync_1 = __importDefault(__webpack_require__(/*! ./Sync */ "../lib/components/Icon/generated/Sync.js"));
+var ThermometerFilled_1 = __importDefault(__webpack_require__(/*! ./ThermometerFilled */ "../lib/components/Icon/generated/ThermometerFilled.js"));
+var ThermometerOutline_1 = __importDefault(__webpack_require__(/*! ./ThermometerOutline */ "../lib/components/Icon/generated/ThermometerOutline.js"));
+var TimerFilled_1 = __importDefault(__webpack_require__(/*! ./TimerFilled */ "../lib/components/Icon/generated/TimerFilled.js"));
+var TimerOutlined_1 = __importDefault(__webpack_require__(/*! ./TimerOutlined */ "../lib/components/Icon/generated/TimerOutlined.js"));
+var TimesDefault_1 = __importDefault(__webpack_require__(/*! ./TimesDefault */ "../lib/components/Icon/generated/TimesDefault.js"));
+var TimesFilled_1 = __importDefault(__webpack_require__(/*! ./TimesFilled */ "../lib/components/Icon/generated/TimesFilled.js"));
+var TimesOutline_1 = __importDefault(__webpack_require__(/*! ./TimesOutline */ "../lib/components/Icon/generated/TimesOutline.js"));
+var TrashFilled_1 = __importDefault(__webpack_require__(/*! ./TrashFilled */ "../lib/components/Icon/generated/TrashFilled.js"));
+var TrashOutline_1 = __importDefault(__webpack_require__(/*! ./TrashOutline */ "../lib/components/Icon/generated/TrashOutline.js"));
+var Underline_1 = __importDefault(__webpack_require__(/*! ./Underline */ "../lib/components/Icon/generated/Underline.js"));
+var Upload_1 = __importDefault(__webpack_require__(/*! ./Upload */ "../lib/components/Icon/generated/Upload.js"));
+var UserBan_1 = __importDefault(__webpack_require__(/*! ./UserBan */ "../lib/components/Icon/generated/UserBan.js"));
+var UserCard_1 = __importDefault(__webpack_require__(/*! ./UserCard */ "../lib/components/Icon/generated/UserCard.js"));
+var UserCheck_1 = __importDefault(__webpack_require__(/*! ./UserCheck */ "../lib/components/Icon/generated/UserCheck.js"));
+var UserFilled_1 = __importDefault(__webpack_require__(/*! ./UserFilled */ "../lib/components/Icon/generated/UserFilled.js"));
+var UserOutline_1 = __importDefault(__webpack_require__(/*! ./UserOutline */ "../lib/components/Icon/generated/UserOutline.js"));
+var UserTimes_1 = __importDefault(__webpack_require__(/*! ./UserTimes */ "../lib/components/Icon/generated/UserTimes.js"));
+var VideoFilled_1 = __importDefault(__webpack_require__(/*! ./VideoFilled */ "../lib/components/Icon/generated/VideoFilled.js"));
+var VideoOutline_1 = __importDefault(__webpack_require__(/*! ./VideoOutline */ "../lib/components/Icon/generated/VideoOutline.js"));
+var VolumeFilled_1 = __importDefault(__webpack_require__(/*! ./VolumeFilled */ "../lib/components/Icon/generated/VolumeFilled.js"));
+var VolumeMuteFilled_1 = __importDefault(__webpack_require__(/*! ./VolumeMuteFilled */ "../lib/components/Icon/generated/VolumeMuteFilled.js"));
+var VolumeMuteOutline_1 = __importDefault(__webpack_require__(/*! ./VolumeMuteOutline */ "../lib/components/Icon/generated/VolumeMuteOutline.js"));
+var VolumeOutline_1 = __importDefault(__webpack_require__(/*! ./VolumeOutline */ "../lib/components/Icon/generated/VolumeOutline.js"));
+var Wifi_1 = __importDefault(__webpack_require__(/*! ./Wifi */ "../lib/components/Icon/generated/Wifi.js"));
+var ZoomMinusFilled_1 = __importDefault(__webpack_require__(/*! ./ZoomMinusFilled */ "../lib/components/Icon/generated/ZoomMinusFilled.js"));
+var ZoomMinusOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomMinusOutline */ "../lib/components/Icon/generated/ZoomMinusOutline.js"));
+var ZoomOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomOutline */ "../lib/components/Icon/generated/ZoomOutline.js"));
+var ZoomPlusFilled_1 = __importDefault(__webpack_require__(/*! ./ZoomPlusFilled */ "../lib/components/Icon/generated/ZoomPlusFilled.js"));
+var ZoomPlusOutline_1 = __importDefault(__webpack_require__(/*! ./ZoomPlusOutline */ "../lib/components/Icon/generated/ZoomPlusOutline.js"));
 exports.IconMap = {
     adjust: Adjust_1.default,
     alignCenter: AlignCenter_1.default,
@@ -6161,10 +6413,10 @@ exports.IconMap = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ImageFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ImageFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/ImageFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/ImageFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6194,10 +6446,10 @@ exports.default = SvgImageFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ImageOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ImageOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/ImageOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/ImageOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6227,10 +6479,10 @@ exports.default = SvgImageOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ImcFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ImcFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/ImcFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/ImcFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6260,10 +6512,10 @@ exports.default = SvgImcFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/IncreaseFont.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/IncreaseFont.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/IncreaseFont.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/IncreaseFont.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6293,10 +6545,10 @@ exports.default = SvgIncreaseFont;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/InfoCircleFilled.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/InfoCircleFilled.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/InfoCircleFilled.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/InfoCircleFilled.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6328,10 +6580,10 @@ exports.default = SvgInfoCircleFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/InfoCircleOutline.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/InfoCircleOutline.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/InfoCircleOutline.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/InfoCircleOutline.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6363,10 +6615,10 @@ exports.default = SvgInfoCircleOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/InfoDefault.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/InfoDefault.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/InfoDefault.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/InfoDefault.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6398,10 +6650,10 @@ exports.default = SvgInfoDefault;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Italic.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Italic.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Italic.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Italic.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6431,10 +6683,10 @@ exports.default = SvgItalic;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/KeyFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/KeyFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/KeyFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/KeyFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6464,10 +6716,10 @@ exports.default = SvgKeyFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/KeyOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/KeyOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/KeyOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/KeyOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6497,10 +6749,10 @@ exports.default = SvgKeyOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LightbulbFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LightbulbFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/LightbulbFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/LightbulbFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6530,10 +6782,10 @@ exports.default = SvgLightbulbFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LightbulbOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LightbulbOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/LightbulbOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/LightbulbOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6563,10 +6815,10 @@ exports.default = SvgLightbulbOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Link.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Link.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Link.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Link.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6596,10 +6848,10 @@ exports.default = SvgLink;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/List.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/List.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/List.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/List.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6629,10 +6881,10 @@ exports.default = SvgList;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LockCloseFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LockCloseFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/LockCloseFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/LockCloseFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6662,10 +6914,10 @@ exports.default = SvgLockCloseFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LockCloseOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LockCloseOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/LockCloseOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/LockCloseOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6695,10 +6947,10 @@ exports.default = SvgLockCloseOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LockOpenFilled.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LockOpenFilled.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/LockOpenFilled.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/LockOpenFilled.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6728,10 +6980,10 @@ exports.default = SvgLockOpenFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/LockOpenFilledCopy.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/LockOpenFilledCopy.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/LockOpenFilledCopy.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/LockOpenFilledCopy.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6761,10 +7013,10 @@ exports.default = SvgLockOpenFilledCopy;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MapFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MapFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/MapFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/MapFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6796,10 +7048,10 @@ exports.default = SvgMapFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MapMarkerFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MapMarkerFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/MapMarkerFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/MapMarkerFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6829,10 +7081,10 @@ exports.default = SvgMapMarkerFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MapMarkerOutlined.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MapMarkerOutlined.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/MapMarkerOutlined.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/MapMarkerOutlined.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6862,10 +7114,10 @@ exports.default = SvgMapMarkerOutlined;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MapOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MapOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/MapOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/MapOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6897,10 +7149,10 @@ exports.default = SvgMapOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MicrophoneFilled.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MicrophoneFilled.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/MicrophoneFilled.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/MicrophoneFilled.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6930,10 +7182,10 @@ exports.default = SvgMicrophoneFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MicrophoneOutline.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MicrophoneOutline.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/MicrophoneOutline.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/MicrophoneOutline.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6963,10 +7215,10 @@ exports.default = SvgMicrophoneOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Minimize.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Minimize.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/Minimize.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/Minimize.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6996,10 +7248,10 @@ exports.default = SvgMinimize;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Minus.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Minus.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Icon/generated/Minus.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Icon/generated/Minus.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7031,10 +7283,10 @@ exports.default = SvgMinus;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Module.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Module.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Module.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Module.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7064,10 +7316,10 @@ exports.default = SvgModule;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/MultipleUsers.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/MultipleUsers.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/MultipleUsers.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/MultipleUsers.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7099,10 +7351,10 @@ exports.default = SvgMultipleUsers;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/NeedleFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/NeedleFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/NeedleFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/NeedleFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7132,10 +7384,10 @@ exports.default = SvgNeedleFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/NeedleOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/NeedleOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/NeedleOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/NeedleOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7165,10 +7417,10 @@ exports.default = SvgNeedleOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/O2Filled.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/O2Filled.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/O2Filled.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/O2Filled.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7198,10 +7450,10 @@ exports.default = SvgO2Filled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/OpenDoor.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/OpenDoor.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/OpenDoor.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/OpenDoor.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7231,10 +7483,10 @@ exports.default = SvgOpenDoor;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Outline.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Outline.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/Outline.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/Outline.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7266,10 +7518,10 @@ exports.default = SvgOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Pause.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Pause.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Icon/generated/Pause.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Icon/generated/Pause.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7301,10 +7553,10 @@ exports.default = SvgPause;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PenFilled.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PenFilled.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/PenFilled.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/PenFilled.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7334,10 +7586,10 @@ exports.default = SvgPenFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PenOutline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PenOutline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/PenOutline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/PenOutline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7367,10 +7619,10 @@ exports.default = SvgPenOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PenTool.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PenTool.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/PenTool.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/PenTool.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7400,10 +7652,10 @@ exports.default = SvgPenTool;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PhoneFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PhoneFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/PhoneFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/PhoneFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7433,10 +7685,10 @@ exports.default = SvgPhoneFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PhoneOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PhoneOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/PhoneOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/PhoneOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7468,10 +7720,10 @@ exports.default = SvgPhoneOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PillFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PillFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/PillFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/PillFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7503,10 +7755,10 @@ exports.default = SvgPillFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PillOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PillOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/PillOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/PillOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7538,10 +7790,10 @@ exports.default = SvgPillOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PlayFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PlayFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/PlayFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/PlayFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7571,10 +7823,10 @@ exports.default = SvgPlayFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PlayOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PlayOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/PlayOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/PlayOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7604,10 +7856,10 @@ exports.default = SvgPlayOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Plus.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Plus.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Plus.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Plus.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7637,10 +7889,10 @@ exports.default = SvgPlus;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PollFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PollFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/PollFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/PollFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7670,10 +7922,10 @@ exports.default = SvgPollFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PollOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PollOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/PollOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/PollOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7703,10 +7955,10 @@ exports.default = SvgPollOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PresentationFilled.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PresentationFilled.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/PresentationFilled.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/PresentationFilled.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7736,10 +7988,10 @@ exports.default = SvgPresentationFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PresentationOutline.js":
-/*!************************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PresentationOutline.js ***!
-  \************************************************************************/
+/***/ "../lib/components/Icon/generated/PresentationOutline.js":
+/*!***************************************************************!*\
+  !*** ../lib/components/Icon/generated/PresentationOutline.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7769,10 +8021,10 @@ exports.default = SvgPresentationOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PrinterFilled.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PrinterFilled.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/PrinterFilled.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/PrinterFilled.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7804,10 +8056,10 @@ exports.default = SvgPrinterFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/PrinterOutline.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/PrinterOutline.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/PrinterOutline.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/PrinterOutline.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7839,10 +8091,10 @@ exports.default = SvgPrinterOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/QuestionMarkFilled.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/QuestionMarkFilled.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/QuestionMarkFilled.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/QuestionMarkFilled.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7874,10 +8126,10 @@ exports.default = SvgQuestionMarkFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/QuoteLeft.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/QuoteLeft.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/QuoteLeft.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/QuoteLeft.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7907,10 +8159,10 @@ exports.default = SvgQuoteLeft;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/QuoteRight.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/QuoteRight.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/QuoteRight.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/QuoteRight.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7940,10 +8192,10 @@ exports.default = SvgQuoteRight;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Redo.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Redo.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Redo.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Redo.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7973,10 +8225,10 @@ exports.default = SvgRedo;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Rocket.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Rocket.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Rocket.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Rocket.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8006,10 +8258,10 @@ exports.default = SvgRocket;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/RulerFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/RulerFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/RulerFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/RulerFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8039,10 +8291,10 @@ exports.default = SvgRulerFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/RulerOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/RulerOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/RulerOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/RulerOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8072,10 +8324,10 @@ exports.default = SvgRulerOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ShieldFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ShieldFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/ShieldFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/ShieldFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8105,10 +8357,10 @@ exports.default = SvgShieldFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ShieldOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ShieldOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/ShieldOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/ShieldOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8138,10 +8390,10 @@ exports.default = SvgShieldOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/SignOut.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/SignOut.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/SignOut.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/SignOut.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8171,10 +8423,10 @@ exports.default = SvgSignOut;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Sort.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Sort.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Sort.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Sort.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8204,10 +8456,10 @@ exports.default = SvgSort;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StarFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StarFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/StarFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/StarFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8237,10 +8489,10 @@ exports.default = SvgStarFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StarOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StarOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/StarOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/StarOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8270,10 +8522,10 @@ exports.default = SvgStarOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StethoscopeFilled.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StethoscopeFilled.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/StethoscopeFilled.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/StethoscopeFilled.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8303,10 +8555,10 @@ exports.default = SvgStethoscopeFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StethoscopeOutline.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StethoscopeOutline.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/StethoscopeOutline.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/StethoscopeOutline.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8336,10 +8588,10 @@ exports.default = SvgStethoscopeOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StopFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StopFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/StopFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/StopFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8371,10 +8623,10 @@ exports.default = SvgStopFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/StopOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/StopOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/StopOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/StopOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8404,10 +8656,10 @@ exports.default = SvgStopOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Strikethrough.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Strikethrough.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/Strikethrough.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/Strikethrough.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8437,10 +8689,10 @@ exports.default = SvgStrikethrough;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Sync.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Sync.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Sync.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Sync.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8470,10 +8722,10 @@ exports.default = SvgSync;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ThermometerFilled.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ThermometerFilled.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/ThermometerFilled.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/ThermometerFilled.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8503,10 +8755,10 @@ exports.default = SvgThermometerFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ThermometerOutline.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ThermometerOutline.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Icon/generated/ThermometerOutline.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Icon/generated/ThermometerOutline.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8536,10 +8788,10 @@ exports.default = SvgThermometerOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TimerFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TimerFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/TimerFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/TimerFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8569,10 +8821,10 @@ exports.default = SvgTimerFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TimerOutlined.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TimerOutlined.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/TimerOutlined.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/TimerOutlined.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8602,10 +8854,10 @@ exports.default = SvgTimerOutlined;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TimesDefault.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TimesDefault.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/TimesDefault.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/TimesDefault.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8635,10 +8887,10 @@ exports.default = SvgTimesDefault;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TimesFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TimesFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/TimesFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/TimesFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8670,10 +8922,10 @@ exports.default = SvgTimesFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TimesOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TimesOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/TimesOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/TimesOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8705,10 +8957,10 @@ exports.default = SvgTimesOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TrashFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TrashFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/TrashFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/TrashFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8738,10 +8990,10 @@ exports.default = SvgTrashFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/TrashOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/TrashOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/TrashOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/TrashOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8771,10 +9023,10 @@ exports.default = SvgTrashOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Underline.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Underline.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/Underline.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/Underline.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8804,10 +9056,10 @@ exports.default = SvgUnderline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Upload.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Upload.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Icon/generated/Upload.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Icon/generated/Upload.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8837,10 +9089,10 @@ exports.default = SvgUpload;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserBan.js":
-/*!************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserBan.js ***!
-  \************************************************************/
+/***/ "../lib/components/Icon/generated/UserBan.js":
+/*!***************************************************!*\
+  !*** ../lib/components/Icon/generated/UserBan.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8870,10 +9122,10 @@ exports.default = SvgUserBan;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserCard.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserCard.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/UserCard.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/UserCard.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8903,10 +9155,10 @@ exports.default = SvgUserCard;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserCheck.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserCheck.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/UserCheck.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/UserCheck.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8936,10 +9188,10 @@ exports.default = SvgUserCheck;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserFilled.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserFilled.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Icon/generated/UserFilled.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Icon/generated/UserFilled.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8971,10 +9223,10 @@ exports.default = SvgUserFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/UserOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/UserOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9004,10 +9256,10 @@ exports.default = SvgUserOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/UserTimes.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/UserTimes.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/UserTimes.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Icon/generated/UserTimes.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9037,10 +9289,10 @@ exports.default = SvgUserTimes;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VideoFilled.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VideoFilled.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/VideoFilled.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/VideoFilled.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9070,10 +9322,10 @@ exports.default = SvgVideoFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VideoOutline.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VideoOutline.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/VideoOutline.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/VideoOutline.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9103,10 +9355,10 @@ exports.default = SvgVideoOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VolumeFilled.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VolumeFilled.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Icon/generated/VolumeFilled.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Icon/generated/VolumeFilled.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9136,10 +9388,10 @@ exports.default = SvgVolumeFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VolumeMuteFilled.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VolumeMuteFilled.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/VolumeMuteFilled.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/VolumeMuteFilled.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9169,10 +9421,10 @@ exports.default = SvgVolumeMuteFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VolumeMuteOutline.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VolumeMuteOutline.js ***!
-  \**********************************************************************/
+/***/ "../lib/components/Icon/generated/VolumeMuteOutline.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Icon/generated/VolumeMuteOutline.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9202,10 +9454,10 @@ exports.default = SvgVolumeMuteOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/VolumeOutline.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/VolumeOutline.js ***!
-  \******************************************************************/
+/***/ "../lib/components/Icon/generated/VolumeOutline.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Icon/generated/VolumeOutline.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9235,10 +9487,10 @@ exports.default = SvgVolumeOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/Wifi.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/Wifi.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Icon/generated/Wifi.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Wifi.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9270,10 +9522,10 @@ exports.default = SvgWifi;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ZoomMinusFilled.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ZoomMinusFilled.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/ZoomMinusFilled.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/ZoomMinusFilled.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9303,10 +9555,10 @@ exports.default = SvgZoomMinusFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ZoomMinusOutline.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ZoomMinusOutline.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Icon/generated/ZoomMinusOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/ZoomMinusOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9336,10 +9588,10 @@ exports.default = SvgZoomMinusOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ZoomOutline.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ZoomOutline.js ***!
-  \****************************************************************/
+/***/ "../lib/components/Icon/generated/ZoomOutline.js":
+/*!*******************************************************!*\
+  !*** ../lib/components/Icon/generated/ZoomOutline.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9369,10 +9621,10 @@ exports.default = SvgZoomOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ZoomPlusFilled.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ZoomPlusFilled.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Icon/generated/ZoomPlusFilled.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Icon/generated/ZoomPlusFilled.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9402,10 +9654,10 @@ exports.default = SvgZoomPlusFilled;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/generated/ZoomPlusOutline.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/elements/Icon/generated/ZoomPlusOutline.js ***!
-  \********************************************************************/
+/***/ "../lib/components/Icon/generated/ZoomPlusOutline.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/ZoomPlusOutline.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9435,26 +9687,26 @@ exports.default = SvgZoomPlusOutline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Icon/index.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Icon/index.js ***!
-  \************************************************/
+/***/ "../lib/components/Icon/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Icon/index.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Icon_1 = __webpack_require__(/*! ./Icon */ "../lib/components/elements/Icon/Icon.js");
+var Icon_1 = __webpack_require__(/*! ./Icon */ "../lib/components/Icon/Icon.js");
 exports.Icon = Icon_1.Icon;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/InfoLabel/InfoLabel.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/InfoLabel/InfoLabel.js ***!
-  \*********************************************************/
+/***/ "../lib/components/InfoLabel/InfoLabel.js":
+/*!************************************************!*\
+  !*** ../lib/components/InfoLabel/InfoLabel.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9465,7 +9717,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function InfoLabel(props) {
     var title = props.title, children = props.children, titleStyles = props.titleStyles, childStyles = props.childStyles;
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -9496,26 +9748,26 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/InfoLabel/index.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/InfoLabel/index.js ***!
-  \*****************************************************/
+/***/ "../lib/components/InfoLabel/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/InfoLabel/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var InfoLabel_1 = __webpack_require__(/*! ./InfoLabel */ "../lib/components/elements/InfoLabel/InfoLabel.js");
+var InfoLabel_1 = __webpack_require__(/*! ./InfoLabel */ "../lib/components/InfoLabel/InfoLabel.js");
 exports.InfoLabel = InfoLabel_1.InfoLabel;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Link/Link.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Link/Link.js ***!
-  \***********************************************/
+/***/ "../lib/components/Link/Link.js":
+/*!**************************************!*\
+  !*** ../lib/components/Link/Link.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9537,11 +9789,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var textual_1 = __webpack_require__(/*! ../textual */ "../lib/components/elements/textual/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
 function Link(props) {
     var classes = styles_1.useStyles(exports.createStyles, props).classes;
-    return react_1.default.createElement(textual_1.Text, __assign({ variant: 'link', component: 'a' }, props, { style: [classes.link, props.style] }));
+    return react_1.default.createElement(Text_1.Text, __assign({ variant: 'link', component: 'a' }, props, { style: [classes.link, props.style] }));
 }
 exports.Link = Link;
 exports.createStyles = function (theme) { return ({
@@ -9563,26 +9815,26 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Link/index.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Link/index.js ***!
-  \************************************************/
+/***/ "../lib/components/Link/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Link/index.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Link_1 = __webpack_require__(/*! ./Link */ "../lib/components/elements/Link/Link.js");
+var Link_1 = __webpack_require__(/*! ./Link */ "../lib/components/Link/Link.js");
 exports.Link = Link_1.Link;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/Modal.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Modal/Modal.js ***!
-  \*************************************************/
+/***/ "../lib/components/Modal/Modal.js":
+/*!****************************************!*\
+  !*** ../lib/components/Modal/Modal.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9623,11 +9875,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var focus_trap_react_1 = __importDefault(__webpack_require__(/*! focus-trap-react */ "../node_modules/focus-trap-react/dist/focus-trap-react.js"));
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/elements/Portal/index.js");
-var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/elements/Transition/FadeTransition.js");
-var ModalBackdrop_1 = __webpack_require__(/*! ./ModalBackdrop */ "../lib/components/elements/Modal/ModalBackdrop.js");
-var ModalContainer_1 = __webpack_require__(/*! ./ModalContainer */ "../lib/components/elements/Modal/ModalContainer.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/Portal/index.js");
+var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/Transition/FadeTransition.js");
+var ModalBackdrop_1 = __webpack_require__(/*! ./ModalBackdrop */ "../lib/components/Modal/ModalBackdrop.js");
+var ModalContainer_1 = __webpack_require__(/*! ./ModalContainer */ "../lib/components/Modal/ModalContainer.js");
 function Modal(props) {
     var open = props.open, size = props.size, closeOnBackdropClick = props.closeOnBackdropClick, children = props.children, rest = __rest(props, ["open", "size", "closeOnBackdropClick", "children"]);
     var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
@@ -9701,10 +9953,10 @@ exports.sizeStyles = function () { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/ModalBackdrop.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Modal/ModalBackdrop.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Modal/ModalBackdrop.js":
+/*!************************************************!*\
+  !*** ../lib/components/Modal/ModalBackdrop.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9737,7 +9989,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function ModalBackdrop(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
@@ -9759,10 +10011,10 @@ exports.styles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/ModalBody.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/Modal/ModalBody.js ***!
-  \*****************************************************/
+/***/ "../lib/components/Modal/ModalBody.js":
+/*!********************************************!*\
+  !*** ../lib/components/Modal/ModalBody.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9795,7 +10047,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function ModalBody(props) {
     var children = props.children, style = props.style, rest = __rest(props, ["children", "style"]);
     var _a = styles_1.useStyles(function () { return ({
@@ -9810,10 +10062,10 @@ exports.ModalBody = ModalBody;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/ModalContainer.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Modal/ModalContainer.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Modal/ModalContainer.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Modal/ModalContainer.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9846,11 +10098,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
-var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/elements/Tooltip/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
+var Tooltip_1 = __webpack_require__(/*! ../Tooltip */ "../lib/components/Tooltip/index.js");
 function ModalContainer(props) {
     var style = props.style, onClose = props.onClose, hasCloseIcon = props.hasCloseIcon, children = props.children, rest = __rest(props, ["style", "onClose", "hasCloseIcon", "children"]);
     var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
@@ -9885,10 +10137,10 @@ exports.styles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/ModalFooter.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Modal/ModalFooter.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Modal/ModalFooter.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Modal/ModalFooter.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9921,7 +10173,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function ModalFooter(props) {
     var style = props.style, children = props.children, rest = __rest(props, ["style", "children"]);
     var _a = styles_1.useStyles(function (theme) { return ({
@@ -9939,10 +10191,10 @@ exports.ModalFooter = ModalFooter;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/auto/ModalAuto.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Modal/auto/ModalAuto.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Modal/auto/ModalAuto.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Modal/auto/ModalAuto.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9979,11 +10231,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Button_1 = __webpack_require__(/*! ../../Button */ "../lib/components/elements/Button/index.js");
-var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/elements/Flow/index.js");
-var Modal_1 = __webpack_require__(/*! ../Modal */ "../lib/components/elements/Modal/Modal.js");
-var ModalBody_1 = __webpack_require__(/*! ../ModalBody */ "../lib/components/elements/Modal/ModalBody.js");
-var ModalFooter_1 = __webpack_require__(/*! ../ModalFooter */ "../lib/components/elements/Modal/ModalFooter.js");
+var Button_1 = __webpack_require__(/*! ../../Button */ "../lib/components/Button/index.js");
+var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/Flow/index.js");
+var Modal_1 = __webpack_require__(/*! ../Modal */ "../lib/components/Modal/Modal.js");
+var ModalBody_1 = __webpack_require__(/*! ../ModalBody */ "../lib/components/Modal/ModalBody.js");
+var ModalFooter_1 = __webpack_require__(/*! ../ModalFooter */ "../lib/components/Modal/ModalFooter.js");
 exports.ModalAuto = react_1.memo(function (props) {
     var actions = props.actions, size = props.size, render = props.render, dispose = props.dispose, onClose = props.onClose;
     var _a = react_1.useState(false), isOpen = _a[0], setIsOpen = _a[1];
@@ -10012,10 +10264,10 @@ exports.ModalAuto = react_1.memo(function (props) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/auto/ModalMountTarget.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Modal/auto/ModalMountTarget.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Modal/auto/ModalMountTarget.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Modal/auto/ModalMountTarget.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10033,7 +10285,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var ModalStore_1 = __importDefault(__webpack_require__(/*! ./ModalStore */ "../lib/components/elements/Modal/auto/ModalStore.js"));
+var ModalStore_1 = __importDefault(__webpack_require__(/*! ./ModalStore */ "../lib/components/Modal/auto/ModalStore.js"));
 function ModalMountTarget(props) {
     var store = props.store;
     var _a = react_1.useState([]), items = _a[0], setItems = _a[1];
@@ -10048,10 +10300,10 @@ ModalMountTarget.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/auto/ModalStore.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Modal/auto/ModalStore.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Modal/auto/ModalStore.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Modal/auto/ModalStore.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10082,7 +10334,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Observable_1 = __webpack_require__(/*! ../../../../util/Observable */ "../lib/util/Observable.js");
+var Observable_1 = __webpack_require__(/*! ../../../util/Observable */ "../lib/util/Observable.js");
 var ModalStore = /** @class */ (function (_super) {
     __extends(ModalStore, _super);
     function ModalStore() {
@@ -10101,7 +10353,9 @@ var ModalStore = /** @class */ (function (_super) {
         _super.prototype.notify.call(this, value);
     };
     ModalStore.prototype.append = function (render) {
-        var key = Math.random().toString(36).substring(2);
+        var key = Math.random()
+            .toString(36)
+            .substring(2);
         var component = render({
             dispose: this.dispose(key),
         });
@@ -10124,10 +10378,10 @@ exports.default = new ModalStore();
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/auto/index.js":
-/*!******************************************************!*\
-  !*** ../lib/components/elements/Modal/auto/index.js ***!
-  \******************************************************/
+/***/ "../lib/components/Modal/auto/index.js":
+/*!*********************************************!*\
+  !*** ../lib/components/Modal/auto/index.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10149,11 +10403,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var ModalAuto_1 = __webpack_require__(/*! ./ModalAuto */ "../lib/components/elements/Modal/auto/ModalAuto.js");
-var ModalStore_1 = __importDefault(__webpack_require__(/*! ./ModalStore */ "../lib/components/elements/Modal/auto/ModalStore.js"));
-var ModalStore_2 = __webpack_require__(/*! ./ModalStore */ "../lib/components/elements/Modal/auto/ModalStore.js");
+var ModalAuto_1 = __webpack_require__(/*! ./ModalAuto */ "../lib/components/Modal/auto/ModalAuto.js");
+var ModalStore_1 = __importDefault(__webpack_require__(/*! ./ModalStore */ "../lib/components/Modal/auto/ModalStore.js"));
+var ModalStore_2 = __webpack_require__(/*! ./ModalStore */ "../lib/components/Modal/auto/ModalStore.js");
 exports.ModalStore = ModalStore_2.ModalStore;
-var ModalMountTarget_1 = __webpack_require__(/*! ./ModalMountTarget */ "../lib/components/elements/Modal/auto/ModalMountTarget.js");
+var ModalMountTarget_1 = __webpack_require__(/*! ./ModalMountTarget */ "../lib/components/Modal/auto/ModalMountTarget.js");
 exports.ModalMountTarget = ModalMountTarget_1.ModalMountTarget;
 exports.modal = function (config) {
     return function () {
@@ -10165,10 +10419,10 @@ exports.modal = function (config) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Modal/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Modal/index.js ***!
-  \*************************************************/
+/***/ "../lib/components/Modal/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Modal/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10178,25 +10432,25 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./auto */ "../lib/components/elements/Modal/auto/index.js"));
-var Modal_1 = __webpack_require__(/*! ./Modal */ "../lib/components/elements/Modal/Modal.js");
+__export(__webpack_require__(/*! ./auto */ "../lib/components/Modal/auto/index.js"));
+var Modal_1 = __webpack_require__(/*! ./Modal */ "../lib/components/Modal/Modal.js");
 exports.Modal = Modal_1.Modal;
-var ModalBackdrop_1 = __webpack_require__(/*! ./ModalBackdrop */ "../lib/components/elements/Modal/ModalBackdrop.js");
+var ModalBackdrop_1 = __webpack_require__(/*! ./ModalBackdrop */ "../lib/components/Modal/ModalBackdrop.js");
 exports.ModalBackdrop = ModalBackdrop_1.ModalBackdrop;
-var ModalBody_1 = __webpack_require__(/*! ./ModalBody */ "../lib/components/elements/Modal/ModalBody.js");
+var ModalBody_1 = __webpack_require__(/*! ./ModalBody */ "../lib/components/Modal/ModalBody.js");
 exports.ModalBody = ModalBody_1.ModalBody;
-var ModalContainer_1 = __webpack_require__(/*! ./ModalContainer */ "../lib/components/elements/Modal/ModalContainer.js");
+var ModalContainer_1 = __webpack_require__(/*! ./ModalContainer */ "../lib/components/Modal/ModalContainer.js");
 exports.ModalContainer = ModalContainer_1.ModalContainer;
-var ModalFooter_1 = __webpack_require__(/*! ./ModalFooter */ "../lib/components/elements/Modal/ModalFooter.js");
+var ModalFooter_1 = __webpack_require__(/*! ./ModalFooter */ "../lib/components/Modal/ModalFooter.js");
 exports.ModalFooter = ModalFooter_1.ModalFooter;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/MonthPicker/MonthPicker/MonthPicker.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/elements/MonthPicker/MonthPicker/MonthPicker.js ***!
-  \*************************************************************************/
+/***/ "../lib/components/MonthPicker/MonthPicker/MonthPicker.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/MonthPicker/MonthPicker/MonthPicker.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10212,12 +10466,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var emotion_1 = __webpack_require__(/*! emotion */ "../node_modules/emotion/dist/emotion.esm.js");
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Button_1 = __webpack_require__(/*! ../../Button */ "../lib/components/elements/Button/index.js");
-var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/elements/Flow/index.js");
-var Icon_1 = __webpack_require__(/*! ../../Icon */ "../lib/components/elements/Icon/index.js");
-var textual_1 = __webpack_require__(/*! ../../textual */ "../lib/components/elements/textual/index.js");
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Button_1 = __webpack_require__(/*! ../../Button */ "../lib/components/Button/index.js");
+var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/Flow/index.js");
+var Icon_1 = __webpack_require__(/*! ../../Icon */ "../lib/components/Icon/index.js");
+var Text_1 = __webpack_require__(/*! ../../Text */ "../lib/components/Text/index.js");
 function MonthPicker(props) {
     var monthDescriptions = props.monthDescriptions, year = props.year, onChange = props.onChange;
     var classes = styles_1.useStyles(exports.createStyles).classes;
@@ -10236,7 +10490,7 @@ function MonthPicker(props) {
             react_1.default.createElement(Flow_1.HFlow, { style: classes.header, alignItems: 'center', justifyContent: 'space-between' },
                 react_1.default.createElement(Button_1.Button, { title: locale.calendar.previousYear, size: 'small', skin: 'ghost', onClick: onLeftClick },
                     react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
-                react_1.default.createElement(textual_1.Text, { fontWeight: 'bold', fontSize: 0.875 }, visibleYear),
+                react_1.default.createElement(Text_1.Text, { fontWeight: 'bold', fontSize: 0.875 }, visibleYear),
                 react_1.default.createElement(Button_1.Button, { title: locale.calendar.nextYear, size: 'small', skin: 'ghost', onClick: onRightClick },
                     react_1.default.createElement(Icon_1.Icon, { icon: 'angleRight' }))),
             react_1.default.createElement(Flow_1.HFlow, { style: classes.content, hSpacing: 0.375, vSpacing: 1 }, monthDescriptions.map(function (month, index) { return (react_1.default.createElement(Button_1.Button, { key: index, onClick: onMonthClick(index), skin: 'ghost', style: emotion_1.css(classes.button, index === props.month && props.year === visibleYear && classes.active) }, month)); })))));
@@ -10274,10 +10528,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/MonthPicker/MonthPickerInput/MonthPickerInput.js":
-/*!***********************************************************************************!*\
-  !*** ../lib/components/elements/MonthPicker/MonthPickerInput/MonthPickerInput.js ***!
-  \***********************************************************************************/
+/***/ "../lib/components/MonthPicker/MonthPickerInput/MonthPickerInput.js":
+/*!**************************************************************************!*\
+  !*** ../lib/components/MonthPicker/MonthPickerInput/MonthPickerInput.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10324,9 +10578,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
-var MaskedInput_1 = __webpack_require__(/*! ../../../form/input/MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
-var Popper_1 = __webpack_require__(/*! ../../Popper */ "../lib/components/elements/Popper/index.js");
-var MonthPicker_1 = __webpack_require__(/*! ../MonthPicker/MonthPicker */ "../lib/components/elements/MonthPicker/MonthPicker/MonthPicker.js");
+var MaskedInput_1 = __webpack_require__(/*! ../../form/input/MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
+var Popper_1 = __webpack_require__(/*! ../../Popper */ "../lib/components/Popper/index.js");
+var MonthPicker_1 = __webpack_require__(/*! ../MonthPicker/MonthPicker */ "../lib/components/MonthPicker/MonthPicker/MonthPicker.js");
 var MonthPickerInput = /** @class */ (function (_super) {
     __extends(MonthPickerInput, _super);
     function MonthPickerInput() {
@@ -10381,28 +10635,90 @@ var isValidInput = function (value) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/MonthPicker/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/MonthPicker/index.js ***!
-  \*******************************************************/
+/***/ "../lib/components/MonthPicker/index.js":
+/*!**********************************************!*\
+  !*** ../lib/components/MonthPicker/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var MonthPicker_1 = __webpack_require__(/*! ./MonthPicker/MonthPicker */ "../lib/components/elements/MonthPicker/MonthPicker/MonthPicker.js");
+var MonthPicker_1 = __webpack_require__(/*! ./MonthPicker/MonthPicker */ "../lib/components/MonthPicker/MonthPicker/MonthPicker.js");
 exports.MonthPicker = MonthPicker_1.MonthPicker;
-var MonthPickerInput_1 = __webpack_require__(/*! ./MonthPickerInput/MonthPickerInput */ "../lib/components/elements/MonthPicker/MonthPickerInput/MonthPickerInput.js");
+var MonthPickerInput_1 = __webpack_require__(/*! ./MonthPickerInput/MonthPickerInput */ "../lib/components/MonthPicker/MonthPickerInput/MonthPickerInput.js");
 exports.MonthPickerInput = MonthPickerInput_1.MonthPickerInput;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Paginator/Paginator.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/elements/Paginator/Paginator.js ***!
-  \*********************************************************/
+/***/ "../lib/components/Number/Number.js":
+/*!******************************************!*\
+  !*** ../lib/components/Number/Number.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var numberUtil = __importStar(__webpack_require__(/*! ../../util/number */ "../lib/util/number.js"));
+function Number(props) {
+    var value = props.value, placeholder = props.placeholder, title = props.title, abbrev = props.abbrev, prefix = props.prefix, suffix = props.suffix, formatOptions = props.formatOptions;
+    var renderTitle = function () {
+        return title || (abbrev && numberUtil.format(value));
+    };
+    var renderNumber = function () {
+        if (typeof value !== 'number' || isNaN(value)) {
+            return placeholder;
+        }
+        var num = abbrev ? numberUtil.abbrev(value, formatOptions) : numberUtil.format(value, formatOptions);
+        return prefix + num + suffix;
+    };
+    return react_1.default.createElement("span", { title: renderTitle() }, renderNumber());
+}
+exports.Number = Number;
+Number.defaultProps = {
+    placeholder: '',
+    prefix: '',
+    suffix: '',
+};
+//# sourceMappingURL=Number.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Number/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Number/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Number_1 = __webpack_require__(/*! ./Number */ "../lib/components/Number/Number.js");
+exports.Number = Number_1.Number;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Paginator/Paginator.js":
+/*!************************************************!*\
+  !*** ../lib/components/Paginator/Paginator.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10417,12 +10733,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var TextInput_1 = __webpack_require__(/*! ../../form/input/TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
-var textual_1 = __webpack_require__(/*! ../textual */ "../lib/components/elements/textual/index.js");
+var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var TextInput_1 = __webpack_require__(/*! ../form/input/TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
+var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
 function Paginator(props) {
     var page = props.page, total = props.total, onChange = props.onChange;
     var locale = locale_1.useLocale();
@@ -10460,7 +10776,7 @@ function Paginator(props) {
         react_1.default.createElement(Button_1.Button, { style: classes.leftButton, size: 'small', skin: 'ghost', disabled: isFirstPage(), title: locale.paginator.previousPage, onClick: !isFirstPage() ? previous : undefined },
             react_1.default.createElement(Icon_1.Icon, { icon: 'angleLeft' })),
         react_1.default.createElement(TextInput_1.TextInput, { style: classes.input, value: inputValue, onChange: handleInputChange, onBlur: handleInputBlur, onKeyDown: handleInputKeyPress, clearable: false, title: locale.paginator.currentPage }),
-        react_1.default.createElement(textual_1.Text, null,
+        react_1.default.createElement(Text_1.Text, null,
             locale.paginator.of,
             " ",
             total),
@@ -10498,26 +10814,26 @@ exports.createStyles = function (theme, inputValue) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Paginator/index.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/Paginator/index.js ***!
-  \*****************************************************/
+/***/ "../lib/components/Paginator/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/Paginator/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Paginator_1 = __webpack_require__(/*! ./Paginator */ "../lib/components/elements/Paginator/Paginator.js");
+var Paginator_1 = __webpack_require__(/*! ./Paginator */ "../lib/components/Paginator/Paginator.js");
 exports.Paginator = Paginator_1.Paginator;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Paper/Paper.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Paper/Paper.js ***!
-  \*************************************************/
+/***/ "../lib/components/Paper/Paper.js":
+/*!****************************************!*\
+  !*** ../lib/components/Paper/Paper.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10550,7 +10866,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function Paper(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -10571,26 +10887,26 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Paper/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Paper/index.js ***!
-  \*************************************************/
+/***/ "../lib/components/Paper/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Paper/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Paper_1 = __webpack_require__(/*! ./Paper */ "../lib/components/elements/Paper/Paper.js");
+var Paper_1 = __webpack_require__(/*! ./Paper */ "../lib/components/Paper/Paper.js");
 exports.Paper = Paper_1.Paper;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popover/Popover.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/Popover/Popover.js ***!
-  \*****************************************************/
+/***/ "../lib/components/Popover/Popover.js":
+/*!********************************************!*\
+  !*** ../lib/components/Popover/Popover.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10601,8 +10917,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var PopperFocus_1 = __webpack_require__(/*! ../Popper/PopperFocus */ "../lib/components/elements/Popper/PopperFocus.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var PopperFocus_1 = __webpack_require__(/*! ../Popper/PopperFocus */ "../lib/components/Popper/PopperFocus.js");
 function Popover(props) {
     var text = props.text, title = props.title, placement = props.placement, children = props.children;
     var renderPopper = function () {
@@ -10642,27 +10958,27 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popover/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Popover/index.js ***!
-  \***************************************************/
+/***/ "../lib/components/Popover/index.js":
+/*!******************************************!*\
+  !*** ../lib/components/Popover/index.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Popover_1 = __webpack_require__(/*! ./Popover */ "../lib/components/elements/Popover/Popover.js");
+var Popover_1 = __webpack_require__(/*! ./Popover */ "../lib/components/Popover/Popover.js");
 exports.Popover = Popover_1.Popover;
 exports.PopoverBase = Popover_1.PopoverBase;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popper/Popper.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Popper/Popper.js ***!
-  \***************************************************/
+/***/ "../lib/components/Popper/Popper.js":
+/*!******************************************!*\
+  !*** ../lib/components/Popper/Popper.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10696,8 +11012,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var PopperContent_1 = __webpack_require__(/*! ./PopperContent */ "../lib/components/elements/Popper/PopperContent.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var PopperContent_1 = __webpack_require__(/*! ./PopperContent */ "../lib/components/Popper/PopperContent.js");
 function Popper(props) {
     var renderTarget = props.renderTarget, children = props.children, style = props.style, block = props.block, rest = __rest(props, ["renderTarget", "children", "style", "block"]);
     var _a = react_1.default.useState(props.initialVisible || false), visible = _a[0], setVisible = _a[1];
@@ -10785,10 +11101,10 @@ Popper.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popper/PopperContent.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Popper/PopperContent.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Popper/PopperContent.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Popper/PopperContent.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10822,7 +11138,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function PopperContent(props) {
     var show = props.show, offset = props.offset, children = props.children, rest = __rest(props, ["show", "offset", "children"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -10855,10 +11171,10 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popper/PopperFocus.js":
-/*!********************************************************!*\
-  !*** ../lib/components/elements/Popper/PopperFocus.js ***!
-  \********************************************************/
+/***/ "../lib/components/Popper/PopperFocus.js":
+/*!***********************************************!*\
+  !*** ../lib/components/Popper/PopperFocus.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10874,8 +11190,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var PopperContent_1 = __webpack_require__(/*! ./PopperContent */ "../lib/components/elements/Popper/PopperContent.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var PopperContent_1 = __webpack_require__(/*! ./PopperContent */ "../lib/components/Popper/PopperContent.js");
 /**
  * Creates a popper element when the children is hovered or focused.
  */
@@ -10901,28 +11217,28 @@ PopperFocus.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Popper/index.js":
-/*!**************************************************!*\
-  !*** ../lib/components/elements/Popper/index.js ***!
-  \**************************************************/
+/***/ "../lib/components/Popper/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Popper/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Popper_1 = __webpack_require__(/*! ./Popper */ "../lib/components/elements/Popper/Popper.js");
+var Popper_1 = __webpack_require__(/*! ./Popper */ "../lib/components/Popper/Popper.js");
 exports.Popper = Popper_1.Popper;
-var PopperFocus_1 = __webpack_require__(/*! ./PopperFocus */ "../lib/components/elements/Popper/PopperFocus.js");
+var PopperFocus_1 = __webpack_require__(/*! ./PopperFocus */ "../lib/components/Popper/PopperFocus.js");
 exports.PopperFocus = PopperFocus_1.PopperFocus;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Portal/Portal.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Portal/Portal.js ***!
-  \***************************************************/
+/***/ "../lib/components/Portal/Portal.js":
+/*!******************************************!*\
+  !*** ../lib/components/Portal/Portal.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10947,26 +11263,26 @@ exports.Portal = Portal;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Portal/index.js":
-/*!**************************************************!*\
-  !*** ../lib/components/elements/Portal/index.js ***!
-  \**************************************************/
+/***/ "../lib/components/Portal/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Portal/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Portal_1 = __webpack_require__(/*! ./Portal */ "../lib/components/elements/Portal/Portal.js");
+var Portal_1 = __webpack_require__(/*! ./Portal */ "../lib/components/Portal/Portal.js");
 exports.Portal = Portal_1.Portal;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Progress/Progress.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Progress/Progress.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Progress/Progress.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Progress/Progress.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10999,8 +11315,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var createTheme_1 = __webpack_require__(/*! ../../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var createTheme_1 = __webpack_require__(/*! ../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
 function Progress(props) {
     var style = props.style, type = props.type, rest = __rest(props, ["style", "type"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -11040,26 +11356,26 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Progress/index.js":
-/*!****************************************************!*\
-  !*** ../lib/components/elements/Progress/index.js ***!
-  \****************************************************/
+/***/ "../lib/components/Progress/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/Progress/index.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Progress_1 = __webpack_require__(/*! ./Progress */ "../lib/components/elements/Progress/Progress.js");
+var Progress_1 = __webpack_require__(/*! ./Progress */ "../lib/components/Progress/Progress.js");
 exports.Progress = Progress_1.Progress;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/RootRef/RootRef.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/RootRef/RootRef.js ***!
-  \*****************************************************/
+/***/ "../lib/components/RootRef/RootRef.js":
+/*!********************************************!*\
+  !*** ../lib/components/RootRef/RootRef.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11084,7 +11400,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_dom_1 = __webpack_require__(/*! react-dom */ "../node_modules/react-dom/index.js");
-var react_2 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
+var react_2 = __webpack_require__(/*! ../../util/react */ "../lib/util/react.js");
 /**
  * Helper component to allow attaching a ref to a
  * wrapped element to access the underlying DOM element.
@@ -11124,26 +11440,26 @@ exports.RootRef = RootRef;
 
 /***/ }),
 
-/***/ "../lib/components/elements/RootRef/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/RootRef/index.js ***!
-  \***************************************************/
+/***/ "../lib/components/RootRef/index.js":
+/*!******************************************!*\
+  !*** ../lib/components/RootRef/index.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var RootRef_1 = __webpack_require__(/*! ./RootRef */ "../lib/components/elements/RootRef/RootRef.js");
+var RootRef_1 = __webpack_require__(/*! ./RootRef */ "../lib/components/RootRef/RootRef.js");
 exports.RootRef = RootRef_1.RootRef;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/SelectInline/SelectInline.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/SelectInline/SelectInline.js ***!
-  \***************************************************************/
+/***/ "../lib/components/SelectInline/SelectInline.js":
+/*!******************************************************!*\
+  !*** ../lib/components/SelectInline/SelectInline.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11180,13 +11496,13 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var react_1 = __webpack_require__(/*! ../../../util/react */ "../lib/util/react.js");
-var Select_1 = __webpack_require__(/*! ../../form/input/Select */ "../lib/components/form/input/Select/index.js");
-var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/elements/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
-var Popper_1 = __webpack_require__(/*! ../Popper */ "../lib/components/elements/Popper/index.js");
-var Text_1 = __webpack_require__(/*! ../textual/Text/Text */ "../lib/components/elements/textual/Text/Text.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var react_1 = __webpack_require__(/*! ../../util/react */ "../lib/util/react.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Select_1 = __webpack_require__(/*! ../form/input/Select */ "../lib/components/form/input/Select/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
+var Popper_1 = __webpack_require__(/*! ../Popper */ "../lib/components/Popper/index.js");
+var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
 function SelectInline(props) {
     var value = props.value, onChange = props.onChange, itemToString = props.itemToString, buttonProps = props.buttonProps, popperProps = props.popperProps, defaultButtonText = props.defaultButtonText, rest = __rest(props, ["value", "onChange", "itemToString", "buttonProps", "popperProps", "defaultButtonText"]);
     var theme = styles_1.useTheme();
@@ -11241,26 +11557,26 @@ exports.SelectInline = SelectInline;
 
 /***/ }),
 
-/***/ "../lib/components/elements/SelectInline/index.js":
-/*!********************************************************!*\
-  !*** ../lib/components/elements/SelectInline/index.js ***!
-  \********************************************************/
+/***/ "../lib/components/SelectInline/index.js":
+/*!***********************************************!*\
+  !*** ../lib/components/SelectInline/index.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var SelectInline_1 = __webpack_require__(/*! ./SelectInline */ "../lib/components/elements/SelectInline/SelectInline.js");
+var SelectInline_1 = __webpack_require__(/*! ./SelectInline */ "../lib/components/SelectInline/SelectInline.js");
 exports.SelectInline = SelectInline_1.SelectInline;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Spinner/Spinner.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/Spinner/Spinner.js ***!
-  \*****************************************************/
+/***/ "../lib/components/Spinner/Spinner.js":
+/*!********************************************!*\
+  !*** ../lib/components/Spinner/Spinner.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11271,7 +11587,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function Spinner(props) {
     var style = props.style;
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -11306,26 +11622,26 @@ exports.createStyles = function (theme, _a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Spinner/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Spinner/index.js ***!
-  \***************************************************/
+/***/ "../lib/components/Spinner/index.js":
+/*!******************************************!*\
+  !*** ../lib/components/Spinner/index.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Spinner_1 = __webpack_require__(/*! ./Spinner */ "../lib/components/elements/Spinner/Spinner.js");
+var Spinner_1 = __webpack_require__(/*! ./Spinner */ "../lib/components/Spinner/Spinner.js");
 exports.Spinner = Spinner_1.Spinner;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/StickyContainer/StickyContainer.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/StickyContainer/StickyContainer.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/StickyContainer/StickyContainer.js":
+/*!************************************************************!*\
+  !*** ../lib/components/StickyContainer/StickyContainer.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11358,8 +11674,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var useScrollPosition_1 = __webpack_require__(/*! ../../../hooks/useScrollPosition */ "../lib/hooks/useScrollPosition.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var useScrollPosition_1 = __webpack_require__(/*! ../../hooks/useScrollPosition */ "../lib/hooks/useScrollPosition.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function StickyContainer(props) {
     var top = props.top, left = props.left, style = props.style, rest = __rest(props, ["top", "left", "style"]);
     var scroll = useScrollPosition_1.useScrollPosition();
@@ -11384,26 +11700,26 @@ exports.createStyles = function (theme, _a, position) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/StickyContainer/index.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/StickyContainer/index.js ***!
-  \***********************************************************/
+/***/ "../lib/components/StickyContainer/index.js":
+/*!**************************************************!*\
+  !*** ../lib/components/StickyContainer/index.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var StickyContainer_1 = __webpack_require__(/*! ./StickyContainer */ "../lib/components/elements/StickyContainer/StickyContainer.js");
+var StickyContainer_1 = __webpack_require__(/*! ./StickyContainer */ "../lib/components/StickyContainer/StickyContainer.js");
 exports.StickyContainer = StickyContainer_1.StickyContainer;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/DataTable/DataTable.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Table/DataTable/DataTable.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Table/DataTable/DataTable.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Table/DataTable/DataTable.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11436,8 +11752,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/elements/Table/Table/index.js");
-var TableFilledBody_1 = __webpack_require__(/*! ./TableFilledBody */ "../lib/components/elements/Table/DataTable/TableFilledBody.js");
+var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
+var TableFilledBody_1 = __webpack_require__(/*! ./TableFilledBody */ "../lib/components/Table/DataTable/TableFilledBody.js");
 function DataTable(props) {
     var getColumn = function (columnName) {
         return props.columns.find(function (col) { return col.name === columnName; });
@@ -11513,10 +11829,10 @@ var changeSort = function (sort, name, dir) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/DataTable/TableFilledBody.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Table/DataTable/TableFilledBody.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Table/DataTable/TableFilledBody.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Table/DataTable/TableFilledBody.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11540,9 +11856,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/elements/Table/Table/index.js");
-var TableLoadingRow_1 = __webpack_require__(/*! ./TableLoadingRow */ "../lib/components/elements/Table/DataTable/TableLoadingRow.js");
-var TablePlaceholderRow_1 = __webpack_require__(/*! ./TablePlaceholderRow */ "../lib/components/elements/Table/DataTable/TablePlaceholderRow.js");
+var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
+var TableLoadingRow_1 = __webpack_require__(/*! ./TableLoadingRow */ "../lib/components/Table/DataTable/TableLoadingRow.js");
+var TablePlaceholderRow_1 = __webpack_require__(/*! ./TablePlaceholderRow */ "../lib/components/Table/DataTable/TablePlaceholderRow.js");
 var TableFilledBody = /** @class */ (function (_super) {
     __extends(TableFilledBody, _super);
     function TableFilledBody() {
@@ -11568,10 +11884,10 @@ exports.TableFilledBody = TableFilledBody;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/DataTable/TableLoadingRow.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Table/DataTable/TableLoadingRow.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Table/DataTable/TableLoadingRow.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Table/DataTable/TableLoadingRow.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11582,9 +11898,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Spinner_1 = __webpack_require__(/*! ../../../elements/Spinner/Spinner */ "../lib/components/elements/Spinner/Spinner.js");
-var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/elements/Table/Table/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Spinner_1 = __webpack_require__(/*! ../../Spinner */ "../lib/components/Spinner/index.js");
+var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
 function TableLoadingRow(props) {
     var colSpan = props.colSpan, message = props.message;
     var classes = styles_1.useStyles(createStyles).classes;
@@ -11617,10 +11933,10 @@ var createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/DataTable/TablePlaceholderRow.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/elements/Table/DataTable/TablePlaceholderRow.js ***!
-  \*************************************************************************/
+/***/ "../lib/components/Table/DataTable/TablePlaceholderRow.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Table/DataTable/TablePlaceholderRow.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11631,8 +11947,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/elements/Table/Table/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
 function TablePlaceholderRow(props) {
     var colSpan = props.colSpan, message = props.message;
     var classes = styles_1.useStyles(exports.createStyles).classes;
@@ -11654,10 +11970,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/PagedTable/PagedTable.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/Table/PagedTable/PagedTable.js ***!
-  \*****************************************************************/
+/***/ "../lib/components/Table/PagedTable/PagedTable.js":
+/*!********************************************************!*\
+  !*** ../lib/components/Table/PagedTable/PagedTable.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11690,9 +12006,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var DataTable_1 = __webpack_require__(/*! ../DataTable/DataTable */ "../lib/components/elements/Table/DataTable/DataTable.js");
-var TableFooter_1 = __webpack_require__(/*! ../TableFooter/TableFooter */ "../lib/components/elements/Table/TableFooter/TableFooter.js");
-var TableContainer_1 = __webpack_require__(/*! ./TableContainer */ "../lib/components/elements/Table/PagedTable/TableContainer.js");
+var DataTable_1 = __webpack_require__(/*! ../DataTable/DataTable */ "../lib/components/Table/DataTable/DataTable.js");
+var TableFooter_1 = __webpack_require__(/*! ../TableFooter/TableFooter */ "../lib/components/Table/TableFooter/TableFooter.js");
+var TableContainer_1 = __webpack_require__(/*! ./TableContainer */ "../lib/components/Table/PagedTable/TableContainer.js");
 function PagedTable(props) {
     var onPageChange = props.onPageChange, onSizeChange = props.onSizeChange, page = props.page, size = props.size, totalPages = props.totalPages, totalElements = props.totalElements, rest = __rest(props, ["onPageChange", "onSizeChange", "page", "size", "totalPages", "totalElements"]);
     return (react_1.default.createElement(TableContainer_1.TableContainer, null,
@@ -11704,10 +12020,10 @@ exports.PagedTable = PagedTable;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/PagedTable/TableContainer.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/elements/Table/PagedTable/TableContainer.js ***!
-  \*********************************************************************/
+/***/ "../lib/components/Table/PagedTable/TableContainer.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Table/PagedTable/TableContainer.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11726,10 +12042,10 @@ exports.TableContainer = function (_a) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/SortableLabel/SortableLabel.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/Table/SortableLabel/SortableLabel.js ***!
-  \***********************************************************************/
+/***/ "../lib/components/Table/SortableLabel/SortableLabel.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Table/SortableLabel/SortableLabel.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11762,7 +12078,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 function SortableLabel(props) {
     var direction = props.direction, onChange = props.onChange, children = props.children;
     var classes = styles_1.useStyles(exports.createStyles, props).classes;
@@ -11811,10 +12127,10 @@ var Sort = function (props) {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/Table.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Table/Table/Table.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Table/Table/Table.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Table/Table/Table.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11847,8 +12163,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function Table(props) {
     var hovered = props.hovered, style = props.style, rest = __rest(props, ["hovered", "style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -11859,10 +12175,10 @@ exports.Table = Table;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/TableBody.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Table/Table/TableBody.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Table/Table/TableBody.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Table/Table/TableBody.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11895,8 +12211,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function TableBody(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -11907,10 +12223,10 @@ exports.TableBody = TableBody;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/TableCell.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Table/Table/TableCell.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Table/Table/TableCell.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Table/Table/TableCell.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11943,8 +12259,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function TableCell(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -11955,10 +12271,10 @@ exports.TableCell = TableCell;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/TableHead.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Table/Table/TableHead.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Table/Table/TableHead.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Table/Table/TableHead.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11991,8 +12307,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function TableHead(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -12003,10 +12319,10 @@ exports.TableHead = TableHead;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/TableHeader.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/Table/Table/TableHeader.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Table/Table/TableHeader.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Table/Table/TableHeader.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12039,9 +12355,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var SortableLabel_1 = __webpack_require__(/*! ../SortableLabel/SortableLabel */ "../lib/components/elements/Table/SortableLabel/SortableLabel.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var SortableLabel_1 = __webpack_require__(/*! ../SortableLabel/SortableLabel */ "../lib/components/Table/SortableLabel/SortableLabel.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function TableHeader(props) {
     var sortable = props.sortable, sortDirection = props.sortDirection, onSortChange = props.onSortChange, style = props.style, rest = __rest(props, ["sortable", "sortDirection", "onSortChange", "style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -12061,10 +12377,10 @@ TableHeader.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/TableRow.js":
-/*!**********************************************************!*\
-  !*** ../lib/components/elements/Table/Table/TableRow.js ***!
-  \**********************************************************/
+/***/ "../lib/components/Table/Table/TableRow.js":
+/*!*************************************************!*\
+  !*** ../lib/components/Table/Table/TableRow.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12097,8 +12413,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/elements/Table/Table/styles.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_2 = __webpack_require__(/*! ./styles */ "../lib/components/Table/Table/styles.js");
 function TableRow(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(styles_2.createTableStyles), classes = _a.classes, css = _a.css;
@@ -12109,36 +12425,36 @@ exports.TableRow = TableRow;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/Table/Table/index.js ***!
-  \*******************************************************/
+/***/ "../lib/components/Table/Table/index.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Table/Table/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Table_1 = __webpack_require__(/*! ./Table */ "../lib/components/elements/Table/Table/Table.js");
+var Table_1 = __webpack_require__(/*! ./Table */ "../lib/components/Table/Table/Table.js");
 exports.Table = Table_1.Table;
-var TableHead_1 = __webpack_require__(/*! ./TableHead */ "../lib/components/elements/Table/Table/TableHead.js");
+var TableHead_1 = __webpack_require__(/*! ./TableHead */ "../lib/components/Table/Table/TableHead.js");
 exports.TableHead = TableHead_1.TableHead;
-var TableHeader_1 = __webpack_require__(/*! ./TableHeader */ "../lib/components/elements/Table/Table/TableHeader.js");
+var TableHeader_1 = __webpack_require__(/*! ./TableHeader */ "../lib/components/Table/Table/TableHeader.js");
 exports.TableHeader = TableHeader_1.TableHeader;
-var TableBody_1 = __webpack_require__(/*! ./TableBody */ "../lib/components/elements/Table/Table/TableBody.js");
+var TableBody_1 = __webpack_require__(/*! ./TableBody */ "../lib/components/Table/Table/TableBody.js");
 exports.TableBody = TableBody_1.TableBody;
-var TableRow_1 = __webpack_require__(/*! ./TableRow */ "../lib/components/elements/Table/Table/TableRow.js");
+var TableRow_1 = __webpack_require__(/*! ./TableRow */ "../lib/components/Table/Table/TableRow.js");
 exports.TableRow = TableRow_1.TableRow;
-var TableCell_1 = __webpack_require__(/*! ./TableCell */ "../lib/components/elements/Table/Table/TableCell.js");
+var TableCell_1 = __webpack_require__(/*! ./TableCell */ "../lib/components/Table/Table/TableCell.js");
 exports.TableCell = TableCell_1.TableCell;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/Table/styles.js":
-/*!********************************************************!*\
-  !*** ../lib/components/elements/Table/Table/styles.js ***!
-  \********************************************************/
+/***/ "../lib/components/Table/Table/styles.js":
+/*!***********************************************!*\
+  !*** ../lib/components/Table/Table/styles.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12178,10 +12494,10 @@ exports.createTableStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/TableFooter/TableFooter.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/elements/Table/TableFooter/TableFooter.js ***!
-  \*******************************************************************/
+/***/ "../lib/components/Table/TableFooter/TableFooter.js":
+/*!**********************************************************!*\
+  !*** ../lib/components/Table/TableFooter/TableFooter.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12192,12 +12508,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/elements/Flow/index.js");
-var Paginator_1 = __webpack_require__(/*! ../../Paginator/Paginator */ "../lib/components/elements/Paginator/Paginator.js");
-var textual_1 = __webpack_require__(/*! ../../textual */ "../lib/components/elements/textual/index.js");
-var Number_1 = __webpack_require__(/*! ../../textual/Number/Number */ "../lib/components/elements/textual/Number/Number.js");
-var TableSizeDropdown_1 = __webpack_require__(/*! ./TableSizeDropdown */ "../lib/components/elements/Table/TableFooter/TableSizeDropdown.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/Flow/index.js");
+var Number_1 = __webpack_require__(/*! ../../Number */ "../lib/components/Number/index.js");
+var Paginator_1 = __webpack_require__(/*! ../../Paginator/Paginator */ "../lib/components/Paginator/Paginator.js");
+var Text_1 = __webpack_require__(/*! ../../Text */ "../lib/components/Text/index.js");
+var TableSizeDropdown_1 = __webpack_require__(/*! ./TableSizeDropdown */ "../lib/components/Table/TableFooter/TableSizeDropdown.js");
 function TableFooter(props) {
     var style = props.style, page = props.page, totalPages = props.totalPages, totalElements = props.totalElements, pageSize = props.pageSize, sizeOptions = props.sizeOptions, onSizeChange = props.onSizeChange, onPageChange = props.onPageChange;
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -12209,7 +12525,7 @@ function TableFooter(props) {
             react_1.default.createElement(Number_1.Number, { value: totalElements, suffix: ' ' + (totalElements === 1 ? 'resultado' : 'resultados'), abbrev: true })),
         showPagination() && (react_1.default.createElement("div", { className: classes.pagination },
             react_1.default.createElement(Flow_1.HFlow, { alignItems: 'center', hSpacing: 0.5 },
-                react_1.default.createElement(textual_1.Text, null, "Mostrar:"),
+                react_1.default.createElement(Text_1.Text, null, "Mostrar:"),
                 react_1.default.createElement(TableSizeDropdown_1.TableSizeDropdown, { options: sizeOptions, size: pageSize, onChange: onSizeChange })),
             react_1.default.createElement(Paginator_1.Paginator, { page: page, total: totalPages, onChange: onPageChange })))));
 }
@@ -12244,10 +12560,10 @@ exports.createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/TableFooter/TableSizeDropdown.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/elements/Table/TableFooter/TableSizeDropdown.js ***!
-  \*************************************************************************/
+/***/ "../lib/components/Table/TableFooter/TableSizeDropdown.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Table/TableFooter/TableSizeDropdown.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12258,9 +12574,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Dropdown_1 = __webpack_require__(/*! ../../Dropdown */ "../lib/components/elements/Dropdown/index.js");
-var Icon_1 = __webpack_require__(/*! ../../Icon */ "../lib/components/elements/Icon/index.js");
-var textual_1 = __webpack_require__(/*! ../../textual */ "../lib/components/elements/textual/index.js");
+var Dropdown_1 = __webpack_require__(/*! ../../Dropdown */ "../lib/components/Dropdown/index.js");
+var Icon_1 = __webpack_require__(/*! ../../Icon */ "../lib/components/Icon/index.js");
+var Text_1 = __webpack_require__(/*! ../../Text */ "../lib/components/Text/index.js");
 function TableSizeDropdown(props) {
     var options = props.options, size = props.size, onChange = props.onChange;
     var items = options.map(function (op) { return ({
@@ -12271,7 +12587,7 @@ function TableSizeDropdown(props) {
         padding: '0 0.25rem',
     };
     return (react_1.default.createElement(Dropdown_1.DropdownButton, { items: items, size: 'small', skin: 'ghost', style: style },
-        react_1.default.createElement(textual_1.Text, null, size),
+        react_1.default.createElement(Text_1.Text, null, size),
         react_1.default.createElement(Icon_1.Icon, { icon: 'angleDown', style: { marginLeft: '0.125rem' } })));
 }
 exports.TableSizeDropdown = TableSizeDropdown;
@@ -12279,10 +12595,10 @@ exports.TableSizeDropdown = TableSizeDropdown;
 
 /***/ }),
 
-/***/ "../lib/components/elements/Table/index.js":
-/*!*************************************************!*\
-  !*** ../lib/components/elements/Table/index.js ***!
-  \*************************************************/
+/***/ "../lib/components/Table/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Table/index.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12292,29 +12608,29 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Table */ "../lib/components/elements/Table/Table/index.js"));
-__export(__webpack_require__(/*! ./SortableLabel/SortableLabel */ "../lib/components/elements/Table/SortableLabel/SortableLabel.js"));
-var TableFooter_1 = __webpack_require__(/*! ./TableFooter/TableFooter */ "../lib/components/elements/Table/TableFooter/TableFooter.js");
+__export(__webpack_require__(/*! ./Table */ "../lib/components/Table/Table/index.js"));
+__export(__webpack_require__(/*! ./SortableLabel/SortableLabel */ "../lib/components/Table/SortableLabel/SortableLabel.js"));
+var TableFooter_1 = __webpack_require__(/*! ./TableFooter/TableFooter */ "../lib/components/Table/TableFooter/TableFooter.js");
 exports.TableFooter = TableFooter_1.TableFooter;
-var DataTable_1 = __webpack_require__(/*! ./DataTable/DataTable */ "../lib/components/elements/Table/DataTable/DataTable.js");
+var DataTable_1 = __webpack_require__(/*! ./DataTable/DataTable */ "../lib/components/Table/DataTable/DataTable.js");
 exports.DataTable = DataTable_1.DataTable;
 exports.DataTableDefault = DataTable_1.DataTableDefault;
-var TableFilledBody_1 = __webpack_require__(/*! ./DataTable/TableFilledBody */ "../lib/components/elements/Table/DataTable/TableFilledBody.js");
+var TableFilledBody_1 = __webpack_require__(/*! ./DataTable/TableFilledBody */ "../lib/components/Table/DataTable/TableFilledBody.js");
 exports.TableFilledBody = TableFilledBody_1.TableFilledBody;
-var TableLoadingRow_1 = __webpack_require__(/*! ./DataTable/TableLoadingRow */ "../lib/components/elements/Table/DataTable/TableLoadingRow.js");
+var TableLoadingRow_1 = __webpack_require__(/*! ./DataTable/TableLoadingRow */ "../lib/components/Table/DataTable/TableLoadingRow.js");
 exports.TableLoadingRow = TableLoadingRow_1.TableLoadingRow;
-var TablePlaceholderRow_1 = __webpack_require__(/*! ./DataTable/TablePlaceholderRow */ "../lib/components/elements/Table/DataTable/TablePlaceholderRow.js");
+var TablePlaceholderRow_1 = __webpack_require__(/*! ./DataTable/TablePlaceholderRow */ "../lib/components/Table/DataTable/TablePlaceholderRow.js");
 exports.TablePlaceholderRow = TablePlaceholderRow_1.TablePlaceholderRow;
-var PagedTable_1 = __webpack_require__(/*! ./PagedTable/PagedTable */ "../lib/components/elements/Table/PagedTable/PagedTable.js");
+var PagedTable_1 = __webpack_require__(/*! ./PagedTable/PagedTable */ "../lib/components/Table/PagedTable/PagedTable.js");
 exports.PagedTable = PagedTable_1.PagedTable;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tabs/TabItem.js":
-/*!**************************************************!*\
-  !*** ../lib/components/elements/Tabs/TabItem.js ***!
-  \**************************************************/
+/***/ "../lib/components/Tabs/TabItem.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Tabs/TabItem.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12347,7 +12663,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function TabItem(props) {
     var active = props.active, disabled = props.disabled, component = props.component, children = props.children, style = props.style, rest = __rest(props, ["active", "disabled", "component", "children", "style"]);
     var _a = styles_1.useStyles(createStyles), classes = _a.classes, css = _a.css;
@@ -12406,10 +12722,10 @@ var createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tabs/Tabs.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Tabs/Tabs.js ***!
-  \***********************************************/
+/***/ "../lib/components/Tabs/Tabs.js":
+/*!**************************************!*\
+  !*** ../lib/components/Tabs/Tabs.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12442,8 +12758,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var useRovingTabIndex_1 = __webpack_require__(/*! ../../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var useRovingTabIndex_1 = __webpack_require__(/*! ../../hooks/useRovingTabIndex */ "../lib/hooks/useRovingTabIndex.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function Tabs(props) {
     var style = props.style, rest = __rest(props, ["style"]);
     var _a = styles_1.useStyles(createStyles), classes = _a.classes, css = _a.css;
@@ -12465,28 +12781,28 @@ var createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tabs/index.js":
-/*!************************************************!*\
-  !*** ../lib/components/elements/Tabs/index.js ***!
-  \************************************************/
+/***/ "../lib/components/Tabs/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Tabs/index.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tabs_1 = __webpack_require__(/*! ./Tabs */ "../lib/components/elements/Tabs/Tabs.js");
+var Tabs_1 = __webpack_require__(/*! ./Tabs */ "../lib/components/Tabs/Tabs.js");
 exports.Tabs = Tabs_1.Tabs;
-var TabItem_1 = __webpack_require__(/*! ./TabItem */ "../lib/components/elements/Tabs/TabItem.js");
+var TabItem_1 = __webpack_require__(/*! ./TabItem */ "../lib/components/Tabs/TabItem.js");
 exports.TabItem = TabItem_1.TabItem;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tag/Tag.js":
-/*!*********************************************!*\
-  !*** ../lib/components/elements/Tag/Tag.js ***!
-  \*********************************************/
+/***/ "../lib/components/Tag/Tag.js":
+/*!************************************!*\
+  !*** ../lib/components/Tag/Tag.js ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12519,8 +12835,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/elements/Icon/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 function Tag(props) {
     var type = props.type, style = props.style, children = props.children, icon = props.icon, removable = props.removable, onRemove = props.onRemove, rest = __rest(props, ["type", "style", "children", "icon", "removable", "onRemove"]);
     var _a = styles_1.useStyles(createStyles), classes = _a.classes, css = _a.css;
@@ -12581,26 +12897,117 @@ var createStyles = function (theme) { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tag/index.js":
-/*!***********************************************!*\
-  !*** ../lib/components/elements/Tag/index.js ***!
-  \***********************************************/
+/***/ "../lib/components/Tag/index.js":
+/*!**************************************!*\
+  !*** ../lib/components/Tag/index.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tag_1 = __webpack_require__(/*! ./Tag */ "../lib/components/elements/Tag/Tag.js");
+var Tag_1 = __webpack_require__(/*! ./Tag */ "../lib/components/Tag/Tag.js");
 exports.Tag = Tag_1.Tag;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tooltip/Tooltip.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/elements/Tooltip/Tooltip.js ***!
-  \*****************************************************/
+/***/ "../lib/components/Text/Text.js":
+/*!**************************************!*\
+  !*** ../lib/components/Text/Text.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var createTheme_1 = __webpack_require__(/*! ../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
+function Text(props) {
+    var component = props.component, variant = props.variant, color = props.color, fontSize = props.fontSize, fontWeight = props.fontWeight, fontStyle = props.fontStyle, textDecoration = props.textDecoration, style = props.style, rest = __rest(props, ["component", "variant", "color", "fontSize", "fontWeight", "fontStyle", "textDecoration", "style"]);
+    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
+    var Cmp = component;
+    var className = css(classes.root, color && classes.color, fontSize && classes.fontSize, fontWeight && classes.fontWeight, fontStyle && classes.fontStyle, textDecoration && classes.textDecoration, style);
+    return react_1.default.createElement(Cmp, __assign({ className: className }, rest));
+}
+exports.Text = Text;
+Text.defaultProps = {
+    component: 'span',
+    variant: 'main',
+};
+var createStyles = function (theme, _a) {
+    var variant = _a.variant, color = _a.color, fontWeight = _a.fontWeight, fontStyle = _a.fontStyle, textDecoration = _a.textDecoration, fontSize = _a.fontSize;
+    return ({
+        root: __assign({}, theme.typography.variant(variant)),
+        color: {
+            color: color && createTheme_1.getTextColor(theme, color),
+        },
+        fontSize: {
+            fontSize: fontSize && fontSize + "rem",
+        },
+        fontWeight: {
+            fontWeight: fontWeight,
+        },
+        fontStyle: {
+            fontStyle: fontStyle,
+        },
+        textDecoration: {
+            textDecoration: textDecoration,
+        },
+    });
+};
+//# sourceMappingURL=Text.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Text/index.js":
+/*!***************************************!*\
+  !*** ../lib/components/Text/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Text_1 = __webpack_require__(/*! ./Text */ "../lib/components/Text/Text.js");
+exports.Text = Text_1.Text;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Tooltip/Tooltip.js":
+/*!********************************************!*\
+  !*** ../lib/components/Tooltip/Tooltip.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12634,12 +13041,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
-var string_1 = __webpack_require__(/*! ../../../util/string */ "../lib/util/string.js");
-var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/elements/Portal/index.js");
-var RootRef_1 = __webpack_require__(/*! ../RootRef */ "../lib/components/elements/RootRef/index.js");
-var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/elements/Transition/FadeTransition.js");
-var TooltipPopper_1 = __webpack_require__(/*! ./TooltipPopper */ "../lib/components/elements/Tooltip/TooltipPopper.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var string_1 = __webpack_require__(/*! ../../util/string */ "../lib/util/string.js");
+var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/Portal/index.js");
+var RootRef_1 = __webpack_require__(/*! ../RootRef */ "../lib/components/RootRef/index.js");
+var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "../lib/components/Transition/FadeTransition.js");
+var TooltipPopper_1 = __webpack_require__(/*! ./TooltipPopper */ "../lib/components/Tooltip/TooltipPopper.js");
 function Tooltip(props) {
     var text = props.text, children = props.children, offset = props.offset, externalStyle = props.style, container = props.container, rest = __rest(props, ["text", "children", "offset", "style", "container"]);
     var child = react_1.default.Children.only(children);
@@ -12703,10 +13110,10 @@ Tooltip.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tooltip/TooltipPopper.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/Tooltip/TooltipPopper.js ***!
-  \***********************************************************/
+/***/ "../lib/components/Tooltip/TooltipPopper.js":
+/*!**************************************************!*\
+  !*** ../lib/components/Tooltip/TooltipPopper.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12717,7 +13124,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function TooltipPopper(props) {
     var style = props.style, text = props.text;
     var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
@@ -12751,26 +13158,26 @@ exports.sizeStyles = function () { return ({
 
 /***/ }),
 
-/***/ "../lib/components/elements/Tooltip/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/Tooltip/index.js ***!
-  \***************************************************/
+/***/ "../lib/components/Tooltip/index.js":
+/*!******************************************!*\
+  !*** ../lib/components/Tooltip/index.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Tooltip_1 = __webpack_require__(/*! ./Tooltip */ "../lib/components/elements/Tooltip/Tooltip.js");
+var Tooltip_1 = __webpack_require__(/*! ./Tooltip */ "../lib/components/Tooltip/Tooltip.js");
 exports.Tooltip = Tooltip_1.Tooltip;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/elements/Transition/FadeTransition.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/Transition/FadeTransition.js ***!
-  \***************************************************************/
+/***/ "../lib/components/Transition/FadeTransition.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Transition/FadeTransition.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12804,7 +13211,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var Transition_1 = __importDefault(__webpack_require__(/*! react-transition-group/Transition */ "../node_modules/react-transition-group/esm/Transition.js"));
-var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 function FadeTransition(props) {
     var children = props.children, rest = __rest(props, ["children"]);
     var _a = styles_1.useStyles(function () { return ({
@@ -12828,475 +13235,6 @@ FadeTransition.defaultProps = {
     timeout: 200,
 };
 //# sourceMappingURL=FadeTransition.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/index.js":
-/*!*******************************************!*\
-  !*** ../lib/components/elements/index.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Alert */ "../lib/components/elements/Alert/index.js"));
-__export(__webpack_require__(/*! ./AriaControlNav */ "../lib/components/elements/AriaControlNav/index.js"));
-__export(__webpack_require__(/*! ./Breadcrumb */ "../lib/components/elements/Breadcrumb/index.js"));
-__export(__webpack_require__(/*! ./Button */ "../lib/components/elements/Button/index.js"));
-__export(__webpack_require__(/*! ./ButtonGroup */ "../lib/components/elements/ButtonGroup/index.js"));
-__export(__webpack_require__(/*! ./Calendar */ "../lib/components/elements/Calendar/index.js"));
-__export(__webpack_require__(/*! ./Dropdown */ "../lib/components/elements/Dropdown/index.js"));
-__export(__webpack_require__(/*! ./FileUploader */ "../lib/components/elements/FileUploader/index.js"));
-__export(__webpack_require__(/*! ./Flow */ "../lib/components/elements/Flow/index.js"));
-__export(__webpack_require__(/*! ./FormControl */ "../lib/components/elements/FormControl/index.js"));
-__export(__webpack_require__(/*! ./Grid */ "../lib/components/elements/Grid/index.js"));
-__export(__webpack_require__(/*! ./Icon */ "../lib/components/elements/Icon/index.js"));
-__export(__webpack_require__(/*! ./InfoLabel */ "../lib/components/elements/InfoLabel/index.js"));
-__export(__webpack_require__(/*! ./Link */ "../lib/components/elements/Link/index.js"));
-__export(__webpack_require__(/*! ./Modal */ "../lib/components/elements/Modal/index.js"));
-__export(__webpack_require__(/*! ./MonthPicker */ "../lib/components/elements/MonthPicker/index.js"));
-__export(__webpack_require__(/*! ./Paginator */ "../lib/components/elements/Paginator/index.js"));
-__export(__webpack_require__(/*! ./Paper */ "../lib/components/elements/Paper/index.js"));
-__export(__webpack_require__(/*! ./Popover */ "../lib/components/elements/Popover/index.js"));
-__export(__webpack_require__(/*! ./Popper */ "../lib/components/elements/Popper/index.js"));
-__export(__webpack_require__(/*! ./Portal */ "../lib/components/elements/Portal/index.js"));
-__export(__webpack_require__(/*! ./Progress */ "../lib/components/elements/Progress/index.js"));
-__export(__webpack_require__(/*! ./RootRef */ "../lib/components/elements/RootRef/index.js"));
-__export(__webpack_require__(/*! ./SelectInline */ "../lib/components/elements/SelectInline/index.js"));
-__export(__webpack_require__(/*! ./Spinner */ "../lib/components/elements/Spinner/index.js"));
-__export(__webpack_require__(/*! ./StickyContainer */ "../lib/components/elements/StickyContainer/index.js"));
-__export(__webpack_require__(/*! ./Table */ "../lib/components/elements/Table/index.js"));
-__export(__webpack_require__(/*! ./Tabs */ "../lib/components/elements/Tabs/index.js"));
-__export(__webpack_require__(/*! ./Tag */ "../lib/components/elements/Tag/index.js"));
-__export(__webpack_require__(/*! ./textual */ "../lib/components/elements/textual/index.js"));
-__export(__webpack_require__(/*! ./Tooltip */ "../lib/components/elements/Tooltip/index.js"));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Currency/Currency.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/elements/textual/Currency/Currency.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Number_1 = __webpack_require__(/*! ../Number/Number */ "../lib/components/elements/textual/Number/Number.js");
-function Currency(props) {
-    var currency = props.currency, rest = __rest(props, ["currency"]);
-    return react_1.default.createElement(Number_1.Number, __assign({ formatOptions: { style: 'currency', currency: currency } }, rest));
-}
-exports.Currency = Currency;
-Currency.defaultProps = {
-    currency: 'USD',
-};
-//# sourceMappingURL=Currency.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Heading/Heading.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/elements/textual/Heading/Heading.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Text_1 = __webpack_require__(/*! ../Text/Text */ "../lib/components/elements/textual/Text/Text.js");
-function Heading(props) {
-    var level = props.level, rest = __rest(props, ["level"]);
-    var heading = "h" + level;
-    return react_1.default.createElement(Text_1.Text, __assign({ component: heading, variant: heading }, rest));
-}
-exports.Heading = Heading;
-//# sourceMappingURL=Heading.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Heading/index.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/textual/Heading/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Heading_1 = __webpack_require__(/*! ./Heading */ "../lib/components/elements/textual/Heading/Heading.js");
-exports.Heading = Heading_1.Heading;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/HeadingSection/HeadingSection.js":
-/*!***************************************************************************!*\
-  !*** ../lib/components/elements/textual/HeadingSection/HeadingSection.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Heading_1 = __webpack_require__(/*! ../Heading/Heading */ "../lib/components/elements/textual/Heading/Heading.js");
-function HeadingSection(props) {
-    var style = props.style, title = props.title, children = props.children, vSpace = props.vSpace, rest = __rest(props, ["style", "title", "children", "vSpace"]);
-    var _a = styles_1.useStyles(exports.createStyles(vSpace)), classes = _a.classes, css = _a.css;
-    return (react_1.default.createElement("div", { className: css(classes.section, style) },
-        react_1.default.createElement(Heading_1.Heading, __assign({ style: classes.title }, rest), title),
-        children));
-}
-exports.HeadingSection = HeadingSection;
-HeadingSection.defaultProps = {};
-exports.createStyles = function (vSpacing) { return function () { return ({
-    section: {},
-    title: {
-        marginBottom: vSpacing ? vSpacing : '1rem',
-    },
-}); }; };
-//# sourceMappingURL=HeadingSection.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/HeadingSection/index.js":
-/*!******************************************************************!*\
-  !*** ../lib/components/elements/textual/HeadingSection/index.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var HeadingSection_1 = __webpack_require__(/*! ./HeadingSection */ "../lib/components/elements/textual/HeadingSection/HeadingSection.js");
-exports.HeadingSection = HeadingSection_1.HeadingSection;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Highlight/Highlight.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/elements/textual/Highlight/Highlight.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-function Highlight(props) {
-    var text = props.text, words = props.words;
-    var validWords = words
-        .filter(function (w) { return !!w; })
-        .map(function (w) { return w.trim(); })
-        .filter(function (w) { return !!w; });
-    if (validWords.length <= 0) {
-        return react_1.default.createElement("span", null, text);
-    }
-    var regex = new RegExp(validWords.join('|'), 'gi');
-    return (react_1.default.createElement("span", { dangerouslySetInnerHTML: {
-            __html: text.replace(regex, function (match) {
-                return "<mark>" + match + "</mark>";
-            }),
-        } }));
-}
-exports.Highlight = Highlight;
-//# sourceMappingURL=Highlight.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Number/Number.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/elements/textual/Number/Number.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var numberUtil = __importStar(__webpack_require__(/*! ../../../../util/number */ "../lib/util/number.js"));
-function Number(props) {
-    var value = props.value, placeholder = props.placeholder, title = props.title, abbrev = props.abbrev, prefix = props.prefix, suffix = props.suffix, formatOptions = props.formatOptions;
-    var renderTitle = function () {
-        return title || (abbrev && numberUtil.format(value));
-    };
-    var renderNumber = function () {
-        if (typeof value !== 'number' || isNaN(value)) {
-            return placeholder;
-        }
-        var num = abbrev ? numberUtil.abbrev(value, formatOptions) : numberUtil.format(value, formatOptions);
-        return prefix + num + suffix;
-    };
-    return react_1.default.createElement("span", { title: renderTitle() }, renderNumber());
-}
-exports.Number = Number;
-Number.defaultProps = {
-    placeholder: '',
-    prefix: '',
-    suffix: '',
-};
-//# sourceMappingURL=Number.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/Text/Text.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/elements/textual/Text/Text.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var createTheme_1 = __webpack_require__(/*! ../../../../styles/theme/createTheme */ "../lib/styles/theme/createTheme.js");
-function Text(props) {
-    var component = props.component, variant = props.variant, color = props.color, fontSize = props.fontSize, fontWeight = props.fontWeight, fontStyle = props.fontStyle, textDecoration = props.textDecoration, style = props.style, rest = __rest(props, ["component", "variant", "color", "fontSize", "fontWeight", "fontStyle", "textDecoration", "style"]);
-    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
-    var Cmp = component;
-    var className = css(classes.root, color && classes.color, fontSize && classes.fontSize, fontWeight && classes.fontWeight, fontStyle && classes.fontStyle, textDecoration && classes.textDecoration, style);
-    return react_1.default.createElement(Cmp, __assign({ className: className }, rest));
-}
-exports.Text = Text;
-Text.defaultProps = {
-    component: 'span',
-    variant: 'main',
-};
-var createStyles = function (theme, _a) {
-    var variant = _a.variant, color = _a.color, fontWeight = _a.fontWeight, fontStyle = _a.fontStyle, textDecoration = _a.textDecoration, fontSize = _a.fontSize;
-    return ({
-        root: __assign({}, theme.typography.variant(variant)),
-        color: {
-            color: color && createTheme_1.getTextColor(theme, color),
-        },
-        fontSize: {
-            fontSize: fontSize && fontSize + "rem",
-        },
-        fontWeight: {
-            fontWeight: fontWeight,
-        },
-        fontStyle: {
-            fontStyle: fontStyle,
-        },
-        textDecoration: {
-            textDecoration: textDecoration,
-        },
-    });
-};
-//# sourceMappingURL=Text.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/elements/textual/index.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Currency/Currency */ "../lib/components/elements/textual/Currency/Currency.js"));
-__export(__webpack_require__(/*! ./Heading */ "../lib/components/elements/textual/Heading/index.js"));
-__export(__webpack_require__(/*! ./HeadingSection */ "../lib/components/elements/textual/HeadingSection/index.js"));
-__export(__webpack_require__(/*! ./Highlight/Highlight */ "../lib/components/elements/textual/Highlight/Highlight.js"));
-__export(__webpack_require__(/*! ./Number/Number */ "../lib/components/elements/textual/Number/Number.js"));
-__export(__webpack_require__(/*! ./Text/Text */ "../lib/components/elements/textual/Text/Text.js"));
-__export(__webpack_require__(/*! ./maskedLabels/maskedLabels */ "../lib/components/elements/textual/maskedLabels/maskedLabels.js"));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/elements/textual/maskedLabels/maskedLabels.js":
-/*!***********************************************************************!*\
-  !*** ../lib/components/elements/textual/maskedLabels/maskedLabels.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var text_mask_core_1 = __webpack_require__(/*! text-mask-core */ "../node_modules/text-mask-core/dist/textMaskCore.js");
-var masks_1 = __webpack_require__(/*! ../../../../util/masks */ "../lib/util/masks.js");
-function createMaskedLabel(displayName, mask) {
-    var _a;
-    return _a = /** @class */ (function (_super) {
-            __extends(class_1, _super);
-            function class_1() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            class_1.prototype.render = function () {
-                var value = this.props.value;
-                if (!value || value.trim() === '') {
-                    return null;
-                }
-                var maskedResult = text_mask_core_1.conformToMask(value, mask, { guide: false });
-                return maskedResult.conformedValue;
-            };
-            return class_1;
-        }(react_1.default.PureComponent)),
-        _a.displayName = displayName,
-        _a;
-}
-exports.Telefone = createMaskedLabel('Telefone', masks_1.masks.telefone);
-exports.Cpf = createMaskedLabel('Cpf', masks_1.masks.cpf);
-exports.Cep = createMaskedLabel('Cep', masks_1.masks.cep);
-//# sourceMappingURL=maskedLabels.js.map
 
 /***/ }),
 
@@ -13536,7 +13474,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../MaskedField */ "../lib/components/form/field/MaskedField/MaskedField.js");
+var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
 var CepField = /** @class */ (function (_super) {
     __extends(CepField, _super);
     function CepField() {
@@ -13592,7 +13530,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../MaskedField */ "../lib/components/form/field/MaskedField/MaskedField.js");
+var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
 var CnsField = /** @class */ (function (_super) {
     __extends(CnsField, _super);
     function CnsField() {
@@ -13648,7 +13586,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../MaskedField */ "../lib/components/form/field/MaskedField/MaskedField.js");
+var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
 var CpfField = /** @class */ (function (_super) {
     __extends(CpfField, _super);
     function CpfField() {
@@ -13704,7 +13642,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../MaskedField */ "../lib/components/form/field/MaskedField/MaskedField.js");
+var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
 var TelefoneField = /** @class */ (function (_super) {
     __extends(TelefoneField, _super);
     function TelefoneField() {
@@ -13776,7 +13714,7 @@ __export(__webpack_require__(/*! ./TimeField */ "../lib/components/form/field/Ma
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var MonthPicker_1 = __webpack_require__(/*! ../../../elements/MonthPicker */ "../lib/components/elements/MonthPicker/index.js");
+var MonthPicker_1 = __webpack_require__(/*! ../../../MonthPicker */ "../lib/components/MonthPicker/index.js");
 var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
 exports.MonthField = Field_1.withField(MonthPicker_1.MonthPickerInput);
 //# sourceMappingURL=MonthField.js.map
@@ -14186,7 +14124,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FormControl_1 = __webpack_require__(/*! ../../elements/FormControl */ "../lib/components/elements/FormControl/index.js");
+var FormControl_1 = __webpack_require__(/*! ../../FormControl */ "../lib/components/FormControl/index.js");
 var ErrorField = /** @class */ (function (_super) {
     __extends(ErrorField, _super);
     function ErrorField() {
@@ -14253,7 +14191,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FormControl_1 = __webpack_require__(/*! ../../../elements/FormControl */ "../lib/components/elements/FormControl/index.js");
+var FormControl_1 = __webpack_require__(/*! ../../../FormControl */ "../lib/components/FormControl/index.js");
 var util_1 = __webpack_require__(/*! ./util */ "../lib/components/form/finalForm/Field/util.js");
 function Field(props) {
     var form = react_final_form_1.useForm();
@@ -14618,7 +14556,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var Button_1 = __webpack_require__(/*! ../../../elements/Button */ "../lib/components/elements/Button/index.js");
+var Button_1 = __webpack_require__(/*! ../../../Button */ "../lib/components/Button/index.js");
 var SubmitButton = /** @class */ (function (_super) {
     __extends(SubmitButton, _super);
     function SubmitButton() {
@@ -14744,7 +14682,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/form/input/Input/Input.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
 function Checkbox(props) {
     var label = props.label, indeterminate = props.indeterminate, style = props.style, rest = __rest(props, ["label", "indeterminate", "style"]);
     var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
@@ -14885,11 +14823,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var elements_1 = __webpack_require__(/*! ../../../elements */ "../lib/components/elements/index.js");
+var Calendar_1 = __webpack_require__(/*! ../../../Calendar */ "../lib/components/Calendar/index.js");
 function CalendarPopup(props) {
     var classes = styles_1.useStyles(exports.createStyles).classes;
     return (react_1.default.createElement("div", { className: classes.root, tabIndex: -1 },
-        react_1.default.createElement(elements_1.Calendar, __assign({}, props))));
+        react_1.default.createElement(Calendar_1.Calendar, __assign({}, props))));
 }
 exports.CalendarPopup = CalendarPopup;
 exports.createStyles = function (theme) { return ({
@@ -15014,9 +14952,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var util_1 = __webpack_require__(/*! ../../../elements/Calendar/util */ "../lib/components/elements/Calendar/util.js");
-var FocusManagerContainer_1 = __webpack_require__(/*! ../../../elements/FocusManagerContainer */ "../lib/components/elements/FocusManagerContainer/index.js");
-var Popper_1 = __webpack_require__(/*! ../../../elements/Popper */ "../lib/components/elements/Popper/index.js");
+var util_1 = __webpack_require__(/*! ../../../Calendar/util */ "../lib/components/Calendar/util.js");
+var FocusManagerContainer_1 = __webpack_require__(/*! ../../../FocusManagerContainer */ "../lib/components/FocusManagerContainer/index.js");
+var Popper_1 = __webpack_require__(/*! ../../../Popper */ "../lib/components/Popper/index.js");
 var CalendarPopup_1 = __webpack_require__(/*! ./CalendarPopup */ "../lib/components/form/input/DateInput/CalendarPopup.js");
 var DateInput_1 = __webpack_require__(/*! ./DateInput */ "../lib/components/form/input/DateInput/DateInput.js");
 function DatePickerInput(props) {
@@ -15196,7 +15134,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_text_mask_1 = __importDefault(__webpack_require__(/*! react-text-mask */ "../node_modules/react-text-mask/dist/reactTextMask.js"));
 var react_2 = __webpack_require__(/*! ../../../../util/react */ "../lib/util/react.js");
-var TextInput_1 = __webpack_require__(/*! ../TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
+var TextInput_1 = __webpack_require__(/*! ../TextInput */ "../lib/components/form/input/TextInput/index.js");
 function MaskedInput(props) {
     var inputRef = props.inputRef, style = props.style, rest = __rest(props, ["inputRef", "style"]);
     var renderInput = function (ref, p) {
@@ -15262,7 +15200,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/form/input/Input/Input.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
 function Radio(props) {
     var label = props.label, rest = __rest(props, ["label"]);
     var classes = styles_1.useStyles(exports.createStyles).classes;
@@ -15528,7 +15466,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var elements_1 = __webpack_require__(/*! ../../../../elements */ "../lib/components/elements/index.js");
+var Spinner_1 = __webpack_require__(/*! ../../../../Spinner */ "../lib/components/Spinner/index.js");
 function SelectMenuItem(props) {
     var style = props.style, selected = props.selected, highlighted = props.highlighted, rest = __rest(props, ["style", "selected", "highlighted"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -15544,7 +15482,7 @@ function SelectLoadingItem(props) {
     var theme = styles_1.useTheme();
     return (react_1.default.createElement(SelectHelperMenuItem, __assign({}, props),
         "Carregando...",
-        react_1.default.createElement(elements_1.Spinner, { style: { color: theme.pallete.primary.main, float: 'right' } })));
+        react_1.default.createElement(Spinner_1.Spinner, { style: { color: theme.pallete.primary.main, float: 'right' } })));
 }
 exports.SelectLoadingItem = SelectLoadingItem;
 function SelectEmptyItem(props) {
@@ -15751,7 +15689,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Flow_1 = __webpack_require__(/*! ../../../../elements/Flow */ "../lib/components/elements/Flow/index.js");
+var Flow_1 = __webpack_require__(/*! ../../../../Flow */ "../lib/components/Flow/index.js");
 var Checkbox_1 = __webpack_require__(/*! ../../Checkbox/Checkbox */ "../lib/components/form/input/Checkbox/Checkbox.js");
 var SelectDownshiftMenu_1 = __webpack_require__(/*! ../SelectSingle/SelectDownshiftMenu */ "../lib/components/form/input/Select/SelectSingle/SelectDownshiftMenu.js");
 var MultiDownshift_1 = __webpack_require__(/*! ./MultiDownshift */ "../lib/components/form/input/Select/SelectMulti/MultiDownshift.js");
@@ -15923,7 +15861,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var locale_1 = __webpack_require__(/*! ../../../../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var TimesDefault_1 = __importDefault(__webpack_require__(/*! ../../../../elements/Icon/generated/TimesDefault */ "../lib/components/elements/Icon/generated/TimesDefault.js"));
+var TimesDefault_1 = __importDefault(__webpack_require__(/*! ../../../../Icon/generated/TimesDefault */ "../lib/components/Icon/generated/TimesDefault.js"));
 function SelectMultiItem(props) {
     var style = props.style, children = props.children, onRemove = props.onRemove, disabled = props.disabled, rest = __rest(props, ["style", "children", "onRemove", "disabled"]);
     var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
@@ -16297,7 +16235,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/form/input/Input/Input.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
 function Switch(props) {
     var label = props.label, name = props.name, disabled = props.disabled, onChange = props.onChange, value = props.value, defaultValue = props.defaultValue, checked = props.checked, defaultChecked = props.defaultChecked, rest = __rest(props, ["label", "name", "disabled", "onChange", "value", "defaultValue", "checked", "defaultChecked"]);
     var classes = styles_1.useStyles(exports.createStyles).classes;
@@ -16493,8 +16431,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Button_1 = __webpack_require__(/*! ../../../elements/Button */ "../lib/components/elements/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../../../elements/Icon/Icon */ "../lib/components/elements/Icon/Icon.js");
+var Button_1 = __webpack_require__(/*! ../../../Button */ "../lib/components/Button/index.js");
+var Icon_1 = __webpack_require__(/*! ../../../Icon/Icon */ "../lib/components/Icon/Icon.js");
 function InputWrapper(props) {
     var children = props.children, icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearVisible = props.clearVisible, onClear = props.onClear;
     var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
@@ -16867,7 +16805,42 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./elements */ "../lib/components/elements/index.js"));
+__export(__webpack_require__(/*! ./Alert */ "../lib/components/Alert/index.js"));
+__export(__webpack_require__(/*! ./AriaControlNav */ "../lib/components/AriaControlNav/index.js"));
+__export(__webpack_require__(/*! ./Breadcrumb */ "../lib/components/Breadcrumb/index.js"));
+__export(__webpack_require__(/*! ./Button */ "../lib/components/Button/index.js"));
+__export(__webpack_require__(/*! ./ButtonGroup */ "../lib/components/ButtonGroup/index.js"));
+__export(__webpack_require__(/*! ./Calendar */ "../lib/components/Calendar/index.js"));
+__export(__webpack_require__(/*! ./Currency */ "../lib/components/Currency/index.js"));
+__export(__webpack_require__(/*! ./Dropdown */ "../lib/components/Dropdown/index.js"));
+__export(__webpack_require__(/*! ./FileUploader */ "../lib/components/FileUploader/index.js"));
+__export(__webpack_require__(/*! ./Flow */ "../lib/components/Flow/index.js"));
+__export(__webpack_require__(/*! ./FormControl */ "../lib/components/FormControl/index.js"));
+__export(__webpack_require__(/*! ./Grid */ "../lib/components/Grid/index.js"));
+__export(__webpack_require__(/*! ./Heading */ "../lib/components/Heading/index.js"));
+__export(__webpack_require__(/*! ./HeadingSection */ "../lib/components/HeadingSection/index.js"));
+__export(__webpack_require__(/*! ./Highlight */ "../lib/components/Highlight/index.js"));
+__export(__webpack_require__(/*! ./Icon */ "../lib/components/Icon/index.js"));
+__export(__webpack_require__(/*! ./InfoLabel */ "../lib/components/InfoLabel/index.js"));
+__export(__webpack_require__(/*! ./Link */ "../lib/components/Link/index.js"));
+__export(__webpack_require__(/*! ./Modal */ "../lib/components/Modal/index.js"));
+__export(__webpack_require__(/*! ./MonthPicker */ "../lib/components/MonthPicker/index.js"));
+__export(__webpack_require__(/*! ./Number */ "../lib/components/Number/index.js"));
+__export(__webpack_require__(/*! ./Paginator */ "../lib/components/Paginator/index.js"));
+__export(__webpack_require__(/*! ./Paper */ "../lib/components/Paper/index.js"));
+__export(__webpack_require__(/*! ./Popover */ "../lib/components/Popover/index.js"));
+__export(__webpack_require__(/*! ./Popper */ "../lib/components/Popper/index.js"));
+__export(__webpack_require__(/*! ./Portal */ "../lib/components/Portal/index.js"));
+__export(__webpack_require__(/*! ./Progress */ "../lib/components/Progress/index.js"));
+__export(__webpack_require__(/*! ./RootRef */ "../lib/components/RootRef/index.js"));
+__export(__webpack_require__(/*! ./SelectInline */ "../lib/components/SelectInline/index.js"));
+__export(__webpack_require__(/*! ./Spinner */ "../lib/components/Spinner/index.js"));
+__export(__webpack_require__(/*! ./StickyContainer */ "../lib/components/StickyContainer/index.js"));
+__export(__webpack_require__(/*! ./Table */ "../lib/components/Table/index.js"));
+__export(__webpack_require__(/*! ./Tabs */ "../lib/components/Tabs/index.js"));
+__export(__webpack_require__(/*! ./Tag */ "../lib/components/Tag/index.js"));
+__export(__webpack_require__(/*! ./Text */ "../lib/components/Text/index.js"));
+__export(__webpack_require__(/*! ./Tooltip */ "../lib/components/Tooltip/index.js"));
 __export(__webpack_require__(/*! ./form */ "../lib/components/form/index.js"));
 //# sourceMappingURL=index.js.map
 
@@ -21801,6 +21774,27 @@ var weakMemoize = function weakMemoize(func) {
 
 /***/ }),
 
+/***/ "../node_modules/@mdx-js/react/dist/index.es.js":
+/*!******************************************************!*\
+  !*** ../node_modules/@mdx-js/react/dist/index.es.js ***!
+  \******************************************************/
+/*! exports provided: MDXContext, MDXProvider, useMDXComponents, withMDXComponents, mdx */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MDXContext", function() { return n; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MDXProvider", function() { return a; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useMDXComponents", function() { return t; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withMDXComponents", function() { return r; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mdx", function() { return p; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var n=react__WEBPACK_IMPORTED_MODULE_0___default.a.createContext({}),r=function(n){return function(r){var a=t(r.components);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(n,Object.assign({},r,{components:a}))}},t=function(r){var t=react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(n),a=t;return r&&(a="function"==typeof r?r(t):Object.assign({},t,r)),a},a=function(r){var a=t(r.components);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(n.Provider,{value:a},r.children)},o="mdxType",c={inlineCode:"code",wrapper:function(n){return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment,{},n.children)}},i=function(n){var r=n.components,a=n.mdxType,o=n.originalType,i=n.parentName,p=function(e,n){var r={};for(var t in e)Object.prototype.hasOwnProperty.call(e,t)&&-1===n.indexOf(t)&&(r[t]=e[t]);return r}(n,["components","mdxType","originalType","parentName"]),l=t(r);return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(l[i+"."+a]||l[a]||c[a]||o,p)};function p(n,r){var t=arguments,a=r&&r.mdxType;if("string"==typeof n||a){var c=t.length,p=new Array(c);p[0]=i;var l={};for(var m in r)hasOwnProperty.call(r,m)&&(l[m]=r[m]);l.originalType=n,l[o]="string"==typeof n?n:a,p[1]=l;for(var u=2;u<c;u++)p[u]=t[u];return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement.apply(null,p)}return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement.apply(null,t)}i.displayName="MDXCreateElement";
+
+
+/***/ }),
+
 /***/ "../node_modules/attr-accept/dist/index.js":
 /*!*************************************************!*\
   !*** ../node_modules/attr-accept/dist/index.js ***!
@@ -25874,6 +25868,240 @@ var classnames = function classnames(args) {
 
 /* harmony default export */ __webpack_exports__["default"] = (createEmotion);
 
+
+/***/ }),
+
+/***/ "../node_modules/create-react-context/lib/implementation.js":
+/*!******************************************************************!*\
+  !*** ../node_modules/create-react-context/lib/implementation.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _gud = __webpack_require__(/*! gud */ "../node_modules/gud/index.js");
+
+var _gud2 = _interopRequireDefault(_gud);
+
+var _warning = __webpack_require__(/*! fbjs/lib/warning */ "../node_modules/fbjs/lib/warning.js");
+
+var _warning2 = _interopRequireDefault(_warning);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MAX_SIGNED_31_BIT_INT = 1073741823;
+
+// Inlined Object.is polyfill.
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+function objectIs(x, y) {
+  if (x === y) {
+    return x !== 0 || 1 / x === 1 / y;
+  } else {
+    return x !== x && y !== y;
+  }
+}
+
+function createEventEmitter(value) {
+  var handlers = [];
+  return {
+    on: function on(handler) {
+      handlers.push(handler);
+    },
+    off: function off(handler) {
+      handlers = handlers.filter(function (h) {
+        return h !== handler;
+      });
+    },
+    get: function get() {
+      return value;
+    },
+    set: function set(newValue, changedBits) {
+      value = newValue;
+      handlers.forEach(function (handler) {
+        return handler(value, changedBits);
+      });
+    }
+  };
+}
+
+function onlyChild(children) {
+  return Array.isArray(children) ? children[0] : children;
+}
+
+function createReactContext(defaultValue, calculateChangedBits) {
+  var _Provider$childContex, _Consumer$contextType;
+
+  var contextProp = '__create-react-context-' + (0, _gud2.default)() + '__';
+
+  var Provider = function (_Component) {
+    _inherits(Provider, _Component);
+
+    function Provider() {
+      var _temp, _this, _ret;
+
+      _classCallCheck(this, Provider);
+
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.emitter = createEventEmitter(_this.props.value), _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    Provider.prototype.getChildContext = function getChildContext() {
+      var _ref;
+
+      return _ref = {}, _ref[contextProp] = this.emitter, _ref;
+    };
+
+    Provider.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+      if (this.props.value !== nextProps.value) {
+        var oldValue = this.props.value;
+        var newValue = nextProps.value;
+        var changedBits = void 0;
+
+        if (objectIs(oldValue, newValue)) {
+          changedBits = 0; // No change
+        } else {
+          changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
+          if (true) {
+            (0, _warning2.default)((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: %s', changedBits);
+          }
+
+          changedBits |= 0;
+
+          if (changedBits !== 0) {
+            this.emitter.set(nextProps.value, changedBits);
+          }
+        }
+      }
+    };
+
+    Provider.prototype.render = function render() {
+      return this.props.children;
+    };
+
+    return Provider;
+  }(_react.Component);
+
+  Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes2.default.object.isRequired, _Provider$childContex);
+
+  var Consumer = function (_Component2) {
+    _inherits(Consumer, _Component2);
+
+    function Consumer() {
+      var _temp2, _this2, _ret2;
+
+      _classCallCheck(this, Consumer);
+
+      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
+        args[_key2] = arguments[_key2];
+      }
+
+      return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, _Component2.call.apply(_Component2, [this].concat(args))), _this2), _this2.state = {
+        value: _this2.getValue()
+      }, _this2.onUpdate = function (newValue, changedBits) {
+        var observedBits = _this2.observedBits | 0;
+        if ((observedBits & changedBits) !== 0) {
+          _this2.setState({ value: _this2.getValue() });
+        }
+      }, _temp2), _possibleConstructorReturn(_this2, _ret2);
+    }
+
+    Consumer.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+      var observedBits = nextProps.observedBits;
+
+      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
+      : observedBits;
+    };
+
+    Consumer.prototype.componentDidMount = function componentDidMount() {
+      if (this.context[contextProp]) {
+        this.context[contextProp].on(this.onUpdate);
+      }
+      var observedBits = this.props.observedBits;
+
+      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
+      : observedBits;
+    };
+
+    Consumer.prototype.componentWillUnmount = function componentWillUnmount() {
+      if (this.context[contextProp]) {
+        this.context[contextProp].off(this.onUpdate);
+      }
+    };
+
+    Consumer.prototype.getValue = function getValue() {
+      if (this.context[contextProp]) {
+        return this.context[contextProp].get();
+      } else {
+        return defaultValue;
+      }
+    };
+
+    Consumer.prototype.render = function render() {
+      return onlyChild(this.props.children)(this.state.value);
+    };
+
+    return Consumer;
+  }(_react.Component);
+
+  Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = _propTypes2.default.object, _Consumer$contextType);
+
+
+  return {
+    Provider: Provider,
+    Consumer: Consumer
+  };
+}
+
+exports.default = createReactContext;
+module.exports = exports['default'];
+
+/***/ }),
+
+/***/ "../node_modules/create-react-context/lib/index.js":
+/*!*********************************************************!*\
+  !*** ../node_modules/create-react-context/lib/index.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+
+var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _implementation = __webpack_require__(/*! ./implementation */ "../node_modules/create-react-context/lib/implementation.js");
+
+var _implementation2 = _interopRequireDefault(_implementation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = _react2.default.createContext || _implementation2.default;
+module.exports = exports['default'];
 
 /***/ }),
 
@@ -47366,7 +47594,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var create_react_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! create-react-context */ "../node_modules/react-popper/node_modules/create-react-context/lib/index.js");
+/* harmony import */ var create_react_context__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! create-react-context */ "../node_modules/create-react-context/lib/index.js");
 /* harmony import */ var create_react_context__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(create_react_context__WEBPACK_IMPORTED_MODULE_5__);
 
 
@@ -47790,240 +48018,6 @@ var safeInvoke = function safeInvoke(fn) {
     return fn.apply(void 0, args);
   }
 };
-
-/***/ }),
-
-/***/ "../node_modules/react-popper/node_modules/create-react-context/lib/implementation.js":
-/*!********************************************************************************************!*\
-  !*** ../node_modules/react-popper/node_modules/create-react-context/lib/implementation.js ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _gud = __webpack_require__(/*! gud */ "../node_modules/gud/index.js");
-
-var _gud2 = _interopRequireDefault(_gud);
-
-var _warning = __webpack_require__(/*! fbjs/lib/warning */ "../node_modules/fbjs/lib/warning.js");
-
-var _warning2 = _interopRequireDefault(_warning);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var MAX_SIGNED_31_BIT_INT = 1073741823;
-
-// Inlined Object.is polyfill.
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
-function objectIs(x, y) {
-  if (x === y) {
-    return x !== 0 || 1 / x === 1 / y;
-  } else {
-    return x !== x && y !== y;
-  }
-}
-
-function createEventEmitter(value) {
-  var handlers = [];
-  return {
-    on: function on(handler) {
-      handlers.push(handler);
-    },
-    off: function off(handler) {
-      handlers = handlers.filter(function (h) {
-        return h !== handler;
-      });
-    },
-    get: function get() {
-      return value;
-    },
-    set: function set(newValue, changedBits) {
-      value = newValue;
-      handlers.forEach(function (handler) {
-        return handler(value, changedBits);
-      });
-    }
-  };
-}
-
-function onlyChild(children) {
-  return Array.isArray(children) ? children[0] : children;
-}
-
-function createReactContext(defaultValue, calculateChangedBits) {
-  var _Provider$childContex, _Consumer$contextType;
-
-  var contextProp = '__create-react-context-' + (0, _gud2.default)() + '__';
-
-  var Provider = function (_Component) {
-    _inherits(Provider, _Component);
-
-    function Provider() {
-      var _temp, _this, _ret;
-
-      _classCallCheck(this, Provider);
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.emitter = createEventEmitter(_this.props.value), _temp), _possibleConstructorReturn(_this, _ret);
-    }
-
-    Provider.prototype.getChildContext = function getChildContext() {
-      var _ref;
-
-      return _ref = {}, _ref[contextProp] = this.emitter, _ref;
-    };
-
-    Provider.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-      if (this.props.value !== nextProps.value) {
-        var oldValue = this.props.value;
-        var newValue = nextProps.value;
-        var changedBits = void 0;
-
-        if (objectIs(oldValue, newValue)) {
-          changedBits = 0; // No change
-        } else {
-          changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-          if (true) {
-            (0, _warning2.default)((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: %s', changedBits);
-          }
-
-          changedBits |= 0;
-
-          if (changedBits !== 0) {
-            this.emitter.set(nextProps.value, changedBits);
-          }
-        }
-      }
-    };
-
-    Provider.prototype.render = function render() {
-      return this.props.children;
-    };
-
-    return Provider;
-  }(_react.Component);
-
-  Provider.childContextTypes = (_Provider$childContex = {}, _Provider$childContex[contextProp] = _propTypes2.default.object.isRequired, _Provider$childContex);
-
-  var Consumer = function (_Component2) {
-    _inherits(Consumer, _Component2);
-
-    function Consumer() {
-      var _temp2, _this2, _ret2;
-
-      _classCallCheck(this, Consumer);
-
-      for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        args[_key2] = arguments[_key2];
-      }
-
-      return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, _Component2.call.apply(_Component2, [this].concat(args))), _this2), _this2.state = {
-        value: _this2.getValue()
-      }, _this2.onUpdate = function (newValue, changedBits) {
-        var observedBits = _this2.observedBits | 0;
-        if ((observedBits & changedBits) !== 0) {
-          _this2.setState({ value: _this2.getValue() });
-        }
-      }, _temp2), _possibleConstructorReturn(_this2, _ret2);
-    }
-
-    Consumer.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
-      var observedBits = nextProps.observedBits;
-
-      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
-      : observedBits;
-    };
-
-    Consumer.prototype.componentDidMount = function componentDidMount() {
-      if (this.context[contextProp]) {
-        this.context[contextProp].on(this.onUpdate);
-      }
-      var observedBits = this.props.observedBits;
-
-      this.observedBits = observedBits === undefined || observedBits === null ? MAX_SIGNED_31_BIT_INT // Subscribe to all changes by default
-      : observedBits;
-    };
-
-    Consumer.prototype.componentWillUnmount = function componentWillUnmount() {
-      if (this.context[contextProp]) {
-        this.context[contextProp].off(this.onUpdate);
-      }
-    };
-
-    Consumer.prototype.getValue = function getValue() {
-      if (this.context[contextProp]) {
-        return this.context[contextProp].get();
-      } else {
-        return defaultValue;
-      }
-    };
-
-    Consumer.prototype.render = function render() {
-      return onlyChild(this.props.children)(this.state.value);
-    };
-
-    return Consumer;
-  }(_react.Component);
-
-  Consumer.contextTypes = (_Consumer$contextType = {}, _Consumer$contextType[contextProp] = _propTypes2.default.object, _Consumer$contextType);
-
-
-  return {
-    Provider: Provider,
-    Consumer: Consumer
-  };
-}
-
-exports.default = createReactContext;
-module.exports = exports['default'];
-
-/***/ }),
-
-/***/ "../node_modules/react-popper/node_modules/create-react-context/lib/index.js":
-/*!***********************************************************************************!*\
-  !*** ../node_modules/react-popper/node_modules/create-react-context/lib/index.js ***!
-  \***********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-exports.__esModule = true;
-
-var _react = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _implementation = __webpack_require__(/*! ./implementation */ "../node_modules/react-popper/node_modules/create-react-context/lib/implementation.js");
-
-var _implementation2 = _interopRequireDefault(_implementation);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _react2.default.createContext || _implementation2.default;
-module.exports = exports['default'];
 
 /***/ }),
 
@@ -49798,17 +49792,6 @@ module.exports = tabbable;
 
 /***/ }),
 
-/***/ "../node_modules/text-mask-core/dist/textMaskCore.js":
-/*!***********************************************************!*\
-  !*** ../node_modules/text-mask-core/dist/textMaskCore.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-!function(e,r){ true?module.exports=r():undefined}(this,function(){return function(e){function r(n){if(t[n])return t[n].exports;var o=t[n]={exports:{},id:n,loaded:!1};return e[n].call(o.exports,o,o.exports,r),o.loaded=!0,o.exports}var t={};return r.m=e,r.c=t,r.p="",r(0)}([function(e,r,t){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}Object.defineProperty(r,"__esModule",{value:!0});var o=t(3);Object.defineProperty(r,"conformToMask",{enumerable:!0,get:function(){return n(o).default}});var i=t(2);Object.defineProperty(r,"adjustCaretPosition",{enumerable:!0,get:function(){return n(i).default}});var a=t(5);Object.defineProperty(r,"createTextMaskInputElement",{enumerable:!0,get:function(){return n(a).default}})},function(e,r){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.placeholderChar="_",r.strFunction="function"},function(e,r){"use strict";function t(e){var r=e.previousConformedValue,t=void 0===r?o:r,i=e.previousPlaceholder,a=void 0===i?o:i,u=e.currentCaretPosition,l=void 0===u?0:u,s=e.conformedValue,f=e.rawValue,d=e.placeholderChar,c=e.placeholder,p=e.indexesOfPipedChars,v=void 0===p?n:p,h=e.caretTrapIndexes,m=void 0===h?n:h;if(0===l||!f.length)return 0;var y=f.length,g=t.length,b=c.length,C=s.length,P=y-g,k=P>0,x=0===g,O=P>1&&!k&&!x;if(O)return l;var T=k&&(t===s||s===c),w=0,M=void 0,S=void 0;if(T)w=l-P;else{var j=s.toLowerCase(),_=f.toLowerCase(),V=_.substr(0,l).split(o),A=V.filter(function(e){return j.indexOf(e)!==-1});S=A[A.length-1];var N=a.substr(0,A.length).split(o).filter(function(e){return e!==d}).length,E=c.substr(0,A.length).split(o).filter(function(e){return e!==d}).length,F=E!==N,R=void 0!==a[A.length-1]&&void 0!==c[A.length-2]&&a[A.length-1]!==d&&a[A.length-1]!==c[A.length-1]&&a[A.length-1]===c[A.length-2];!k&&(F||R)&&N>0&&c.indexOf(S)>-1&&void 0!==f[l]&&(M=!0,S=f[l]);for(var I=v.map(function(e){return j[e]}),J=I.filter(function(e){return e===S}).length,W=A.filter(function(e){return e===S}).length,q=c.substr(0,c.indexOf(d)).split(o).filter(function(e,r){return e===S&&f[r]!==e}).length,L=q+W+J+(M?1:0),z=0,B=0;B<C;B++){var D=j[B];if(w=B+1,D===S&&z++,z>=L)break}}if(k){for(var G=w,H=w;H<=b;H++)if(c[H]===d&&(G=H),c[H]===d||m.indexOf(H)!==-1||H===b)return G}else if(M){for(var K=w-1;K>=0;K--)if(s[K]===S||m.indexOf(K)!==-1||0===K)return K}else for(var Q=w;Q>=0;Q--)if(c[Q-1]===d||m.indexOf(Q)!==-1||0===Q)return Q}Object.defineProperty(r,"__esModule",{value:!0}),r.default=t;var n=[],o=""},function(e,r,t){"use strict";function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:l,r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:u,t=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{};if(!(0,i.isArray)(r)){if(("undefined"==typeof r?"undefined":o(r))!==a.strFunction)throw new Error("Text-mask:conformToMask; The mask property must be an array.");r=r(e,t),r=(0,i.processCaretTraps)(r).maskWithoutCaretTraps}var n=t.guide,s=void 0===n||n,f=t.previousConformedValue,d=void 0===f?l:f,c=t.placeholderChar,p=void 0===c?a.placeholderChar:c,v=t.placeholder,h=void 0===v?(0,i.convertMaskToPlaceholder)(r,p):v,m=t.currentCaretPosition,y=t.keepCharPositions,g=s===!1&&void 0!==d,b=e.length,C=d.length,P=h.length,k=r.length,x=b-C,O=x>0,T=m+(O?-x:0),w=T+Math.abs(x);if(y===!0&&!O){for(var M=l,S=T;S<w;S++)h[S]===p&&(M+=p);e=e.slice(0,T)+M+e.slice(T,b)}for(var j=e.split(l).map(function(e,r){return{char:e,isNew:r>=T&&r<w}}),_=b-1;_>=0;_--){var V=j[_].char;if(V!==p){var A=_>=T&&C===k;V===h[A?_-x:_]&&j.splice(_,1)}}var N=l,E=!1;e:for(var F=0;F<P;F++){var R=h[F];if(R===p){if(j.length>0)for(;j.length>0;){var I=j.shift(),J=I.char,W=I.isNew;if(J===p&&g!==!0){N+=p;continue e}if(r[F].test(J)){if(y===!0&&W!==!1&&d!==l&&s!==!1&&O){for(var q=j.length,L=null,z=0;z<q;z++){var B=j[z];if(B.char!==p&&B.isNew===!1)break;if(B.char===p){L=z;break}}null!==L?(N+=J,j.splice(L,1)):F--}else N+=J;continue e}E=!0}g===!1&&(N+=h.substr(F,P));break}N+=R}if(g&&O===!1){for(var D=null,G=0;G<N.length;G++)h[G]===p&&(D=G);N=null!==D?N.substr(0,D+1):l}return{conformedValue:N,meta:{someCharsRejected:E}}}Object.defineProperty(r,"__esModule",{value:!0});var o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};r.default=n;var i=t(4),a=t(1),u=[],l=""},function(e,r,t){"use strict";function n(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:f,r=arguments.length>1&&void 0!==arguments[1]?arguments[1]:s.placeholderChar;if(!o(e))throw new Error("Text-mask:convertMaskToPlaceholder; The mask property must be an array.");if(e.indexOf(r)!==-1)throw new Error("Placeholder character must not be used as part of the mask. Please specify a character that is not present in your mask as your placeholder character.\n\n"+("The placeholder character that was received is: "+JSON.stringify(r)+"\n\n")+("The mask that was received is: "+JSON.stringify(e)));return e.map(function(e){return e instanceof RegExp?r:e}).join("")}function o(e){return Array.isArray&&Array.isArray(e)||e instanceof Array}function i(e){return"string"==typeof e||e instanceof String}function a(e){return"number"==typeof e&&void 0===e.length&&!isNaN(e)}function u(e){return"undefined"==typeof e||null===e}function l(e){for(var r=[],t=void 0;t=e.indexOf(d),t!==-1;)r.push(t),e.splice(t,1);return{maskWithoutCaretTraps:e,indexes:r}}Object.defineProperty(r,"__esModule",{value:!0}),r.convertMaskToPlaceholder=n,r.isArray=o,r.isString=i,r.isNumber=a,r.isNil=u,r.processCaretTraps=l;var s=t(1),f=[],d="[]"},function(e,r,t){"use strict";function n(e){return e&&e.__esModule?e:{default:e}}function o(e){var r={previousConformedValue:void 0,previousPlaceholder:void 0};return{state:r,update:function(t){var n=arguments.length>1&&void 0!==arguments[1]?arguments[1]:e,o=n.inputElement,s=n.mask,d=n.guide,m=n.pipe,g=n.placeholderChar,b=void 0===g?v.placeholderChar:g,C=n.keepCharPositions,P=void 0!==C&&C,k=n.showMask,x=void 0!==k&&k;if("undefined"==typeof t&&(t=o.value),t!==r.previousConformedValue){("undefined"==typeof s?"undefined":l(s))===y&&void 0!==s.pipe&&void 0!==s.mask&&(m=s.pipe,s=s.mask);var O=void 0,T=void 0;if(s instanceof Array&&(O=(0,p.convertMaskToPlaceholder)(s,b)),s!==!1){var w=a(t),M=o.selectionEnd,S=r.previousConformedValue,j=r.previousPlaceholder,_=void 0;if(("undefined"==typeof s?"undefined":l(s))===v.strFunction){if(T=s(w,{currentCaretPosition:M,previousConformedValue:S,placeholderChar:b}),T===!1)return;var V=(0,p.processCaretTraps)(T),A=V.maskWithoutCaretTraps,N=V.indexes;T=A,_=N,O=(0,p.convertMaskToPlaceholder)(T,b)}else T=s;var E={previousConformedValue:S,guide:d,placeholderChar:b,pipe:m,placeholder:O,currentCaretPosition:M,keepCharPositions:P},F=(0,c.default)(w,T,E),R=F.conformedValue,I=("undefined"==typeof m?"undefined":l(m))===v.strFunction,J={};I&&(J=m(R,u({rawValue:w},E)),J===!1?J={value:S,rejected:!0}:(0,p.isString)(J)&&(J={value:J}));var W=I?J.value:R,q=(0,f.default)({previousConformedValue:S,previousPlaceholder:j,conformedValue:W,placeholder:O,rawValue:w,currentCaretPosition:M,placeholderChar:b,indexesOfPipedChars:J.indexesOfPipedChars,caretTrapIndexes:_}),L=W===O&&0===q,z=x?O:h,B=L?z:W;r.previousConformedValue=B,r.previousPlaceholder=O,o.value!==B&&(o.value=B,i(o,q))}}}}}function i(e,r){document.activeElement===e&&(g?b(function(){return e.setSelectionRange(r,r,m)},0):e.setSelectionRange(r,r,m))}function a(e){if((0,p.isString)(e))return e;if((0,p.isNumber)(e))return String(e);if(void 0===e||null===e)return h;throw new Error("The 'value' provided to Text Mask needs to be a string or a number. The value received was:\n\n "+JSON.stringify(e))}Object.defineProperty(r,"__esModule",{value:!0});var u=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e},l="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};r.default=o;var s=t(2),f=n(s),d=t(3),c=n(d),p=t(4),v=t(1),h="",m="none",y="object",g="undefined"!=typeof navigator&&/Android/i.test(navigator.userAgent),b="undefined"!=typeof requestAnimationFrame?requestAnimationFrame:setTimeout}])});
-
-/***/ }),
-
 /***/ "../node_modules/tslib/tslib.es6.js":
 /*!******************************************!*\
   !*** ../node_modules/tslib/tslib.es6.js ***!
@@ -50898,8 +50881,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+/* harmony import */ var _mdx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mdx */ "./components/mdx/index.tsx");
+/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/AppFooter.tsx";
+
 
 
 
@@ -50911,32 +50896,32 @@ function AppFooter() {
     className: classes.footer,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_2__["PageContainer"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_3__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 11
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 12
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Cell"], {
     xs: 6,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
+      lineNumber: 13
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["HFlow"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 14
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -50947,14 +50932,14 @@ function AppFooter() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 15
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/logo-ufsc.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 16
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -50965,28 +50950,28 @@ function AppFooter() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/logo-bridge.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Cell"], {
     xs: 6,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["HFlow"], {
     justifyContent: "flex-end",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -50997,14 +50982,14 @@ function AppFooter() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-linkedin.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 30
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -51015,14 +51000,14 @@ function AppFooter() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 32
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-facebook.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 37
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -51033,26 +51018,26 @@ function AppFooter() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 39
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-github.svg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 45
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 46
     },
     __self: this
   }, "Laborat\xF3rio Bridge. 2019.")));
@@ -51398,18 +51383,13 @@ var BoldLogo = function BoldLogo(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page", function() { return Page; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return createStyles; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectSpread */ "../node_modules/@babel/runtime-corejs2/helpers/esm/objectSpread.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib/components/elements/Link/Link */ "../lib/components/elements/Link/Link.js");
-/* harmony import */ var _lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages */ "./pages.ts");
-/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
-
 
 
 
@@ -51417,43 +51397,42 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
 function Page(props) {
   var children = props.children;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_1__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
   var route = props.router.route;
-  var parent = _pages__WEBPACK_IMPORTED_MODULE_4__["default"].find(function (page) {
+  var parent = _pages__WEBPACK_IMPORTED_MODULE_2__["default"].find(function (page) {
     return page.children ? !!page.children.map(function (c) {
       return c.href;
     }).find(function (c) {
       return route.indexOf(c) >= 0;
     }) : false;
   });
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: classes.wrapper,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_3__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_5__["PageContainer"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
-    className: classes.main,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: this
-  }, parent && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Text"], {
+  }, parent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
     id: "page-parent-title",
     fontWeight: "bold",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 20
     },
     __self: this
   }, parent.title), children)));
@@ -51464,76 +51443,6 @@ var createStyles = function createStyles(theme) {
       background: theme.pallete.surface.main,
       flex: 1,
       padding: "2rem 3rem"
-    },
-    main: {
-      // Global overrides (for markdown elements):
-      '& > p > img': {
-        maxWidth: 960,
-        marginBottom: '2rem'
-      },
-      '& > p a, & > ul a': Object(_babel_runtime_corejs2_helpers_esm_objectSpread__WEBPACK_IMPORTED_MODULE_0__["default"])({}, theme.typography.variant('link'), Object(_lib_components_elements_Link_Link__WEBPACK_IMPORTED_MODULE_3__["createStyles"])(theme).link, {
-        fontSize: '1rem'
-      }),
-      '& > p': {
-        fontSize: '1rem',
-        maxWidth: 800,
-        lineHeight: 1.5,
-        marginBottom: '2rem'
-      },
-      '& > h1, & > h2, & > h3, & > h4, & > h5, & > h6': {
-        marginBottom: '2rem'
-      },
-      '& > ul': {
-        fontSize: '1rem',
-        maxWidth: 800,
-        margin: '0 0 2rem 0'
-      },
-      '& > table': {
-        fontSize: '1rem',
-        maxWidth: 800,
-        borderCollapse: 'collapse',
-        width: '100%',
-        marginBottom: '2rem',
-        'td, th': {
-          borderBottom: "1px solid ".concat(theme.pallete.divider),
-          textAlign: 'left',
-          padding: '1rem 0',
-          '&:not(:last-child)': {
-            paddingRight: '2rem'
-          }
-        }
-      },
-      '& > blockquote': {
-        position: 'relative',
-        color: theme.pallete.primary.main,
-        fontStyle: 'italic',
-        fontSize: '1.25rem',
-        marginLeft: '7rem',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          left: '-6rem',
-          top: '0.75rem',
-          width: 78,
-          height: 2,
-          borderTop: "2px solid ".concat(theme.pallete.divider)
-        }
-      },
-      code: {
-        '&:not(.hljs)': {
-          padding: '0.125rem 0.25rem',
-          borderRadius: 3,
-          background: theme.pallete.surface.background
-        }
-      },
-      pre: {
-        marginBottom: '2rem',
-        code: {
-          fontSize: theme.typography.sizes.text,
-          borderRadius: 4,
-          padding: '0.5rem 1rem'
-        }
-      }
     }
   };
 };
@@ -51874,7 +51783,7 @@ var createStyles = function createStyles(theme) {
 /*!*************************************!*\
   !*** ./components/SideNav/index.ts ***!
   \*************************************/
-/*! exports provided: SideNav, SIDE_NAV_WIDTH, SideNavItem */
+/*! exports provided: SideNavItem, SideNav, SIDE_NAV_WIDTH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51907,14 +51816,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_AppFooter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AppFooter */ "./components/AppFooter.tsx");
-/* harmony import */ var _components_AppHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/AppHeader */ "./components/AppHeader.tsx");
-/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Page */ "./components/Page.tsx");
-/* harmony import */ var _components_SideNav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/SideNav */ "./components/SideNav/index.ts");
-/* harmony import */ var _components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/useThemeSwitch */ "./components/useThemeSwitch.ts");
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/index.es.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _components_AppFooter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/AppFooter */ "./components/AppFooter.tsx");
+/* harmony import */ var _components_AppHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppHeader */ "./components/AppHeader.tsx");
+/* harmony import */ var _components_mdx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/mdx */ "./components/mdx/index.tsx");
+/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Page */ "./components/Page.tsx");
+/* harmony import */ var _components_SideNav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/SideNav */ "./components/SideNav/index.ts");
+/* harmony import */ var _components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/useThemeSwitch */ "./components/useThemeSwitch.ts");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages */ "./pages.ts");
 
 
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Site.tsx";
@@ -51926,41 +51837,68 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Site.tsx";
 
 
 
+
+
+var mdxComponents = {
+  p: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Paragraph"],
+  a: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Link"],
+  img: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Image"],
+  h1: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](1),
+  h2: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](2),
+  h3: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](3),
+  h4: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](4),
+  h5: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](5),
+  h6: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](6),
+  ul: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["UnorderedList"],
+  ol: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["OrderedList"],
+  blockquote: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Blockquote"],
+  table: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Table"],
+  pre: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Pre"],
+  code: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Code"],
+  inlineCode: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Code"]
+};
 function Site(props) {
-  var _useThemeSwitch = Object(_components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_8__["useThemeSwitch"])(),
+  var _useThemeSwitch = Object(_components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_10__["useThemeSwitch"])(),
       _useThemeSwitch2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useThemeSwitch, 2),
       currentTheme = _useThemeSwitch2[0],
       switchTheme = _useThemeSwitch2[1];
 
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_4__["ThemeProvider"], {
     theme: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 35
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppHeader__WEBPACK_IMPORTED_MODULE_5__["AppHeader"], {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["MDXProvider"], {
+    components: mdxComponents,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppHeader__WEBPACK_IMPORTED_MODULE_6__["AppHeader"], {
     currentTheme: currentTheme,
     onThemeSwitch: switchTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 37
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(SiteContainer, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 38
     },
     __self: this
-  })));
+  }))));
 }
 function SiteContainer(props) {
   var _ref = props,
       Component = _ref.Component,
       pageProps = _ref.pageProps;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_4__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
   var route = props.router.route;
@@ -51968,45 +51906,45 @@ function SiteContainer(props) {
     className: classes.container,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 50
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_7__["SideNav"], {
-    pages: _pages__WEBPACK_IMPORTED_MODULE_9__["default"],
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_9__["SideNav"], {
+    pages: _pages__WEBPACK_IMPORTED_MODULE_11__["default"],
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 51
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
     className: classes.content,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 53
     },
     __self: this
   }, route === '/' ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 55
     },
     __self: this
-  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_6__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_8__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 57
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 58
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppFooter__WEBPACK_IMPORTED_MODULE_4__["AppFooter"], {
+  }))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppFooter__WEBPACK_IMPORTED_MODULE_5__["AppFooter"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 62
     },
     __self: this
   })));
@@ -52019,10 +51957,282 @@ var createStyles = function createStyles() {
       minHeight: '100vh'
     },
     content: {
-      paddingTop: "calc(".concat(_components_AppHeader__WEBPACK_IMPORTED_MODULE_5__["APP_HEADER_HEIGHT"], "px)"),
+      paddingTop: "calc(".concat(_components_AppHeader__WEBPACK_IMPORTED_MODULE_6__["APP_HEADER_HEIGHT"], "px)"),
       flex: 1,
       display: 'flex',
       flexDirection: 'column'
+    }
+  };
+};
+
+/***/ }),
+
+/***/ "./components/mdx/index.tsx":
+/*!**********************************!*\
+  !*** ./components/mdx/index.tsx ***!
+  \**********************************/
+/*! exports provided: Paragraph, createHeading, Link, Image, UnorderedList, OrderedList, Blockquote, Table, Pre, Code */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Paragraph", function() { return Paragraph; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createHeading", function() { return createHeading; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return Link; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Image", function() { return Image; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnorderedList", function() { return UnorderedList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderedList", function() { return OrderedList; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Blockquote", function() { return Blockquote; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Table", function() { return Table; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Pre", function() { return Pre; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Code", function() { return Code; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_3__);
+
+
+var _jsxFileName = "/home/bonetti/workspace/bold/site/components/mdx/index.tsx";
+
+
+
+function Paragraph(props) {
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Text"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    component: "p",
+    style: classes.paragraph
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }));
+}
+function createHeading(level) {
+  return function (props) {
+    var _useStyles2 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+        classes = _useStyles2.classes;
+
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Heading"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+      level: level,
+      style: classes.heading
+    }, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }));
+  };
+}
+function Link(props) {
+  var _useStyles3 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles3.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Link"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    style: classes.link
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: this
+  }));
+}
+function Image(props) {
+  var _useStyles4 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      theme = _useStyles4.theme,
+      classes = _useStyles4.classes;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(props.src),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      currentSource = _useState2[0],
+      setCurrentSource = _useState2[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    var _$exec = /(.*)\/(.*\..*)$/.exec(props.src),
+        _$exec2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_$exec, 3),
+        path = _$exec2[1],
+        filename = _$exec2[2];
+
+    var darkSource = "".concat(path, "/dark-").concat(filename);
+    setCurrentSource(theme === _lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"] ? darkSource : props.src);
+  }, [theme, props]);
+
+  var handleError = function handleError() {
+    setCurrentSource(props.src);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+    src: currentSource,
+    onError: handleError,
+    className: classes.image,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }));
+}
+function UnorderedList(props) {
+  var _useStyles5 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles5.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.list
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41
+    },
+    __self: this
+  }));
+}
+function OrderedList(props) {
+  var _useStyles6 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles6.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ol", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.list
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46
+    },
+    __self: this
+  }));
+}
+function Blockquote(props) {
+  var _useStyles7 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles7.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("blockquote", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.blockquote
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }));
+}
+function Table(props) {
+  var _useStyles8 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles8.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("table", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.table
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }));
+}
+function Pre(props) {
+  var _useStyles9 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles9.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("pre", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.pre
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }));
+}
+function Code(props) {
+  var _useStyles10 = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles10.classes;
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("code", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    className: classes.code
+  }, props, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 66
+    },
+    __self: this
+  }));
+}
+
+var createStyles = function createStyles(theme) {
+  return {
+    paragraph: {
+      fontSize: '1rem',
+      maxWidth: 800,
+      marginBottom: '2rem'
+    },
+    link: {
+      fontSize: '1rem'
+    },
+    heading: {
+      marginBottom: '2rem'
+    },
+    list: {
+      fontSize: '1rem',
+      maxWidth: 800,
+      margin: '0 0 2rem 0'
+    },
+    image: {
+      maxWidth: 960,
+      marginBottom: '2rem'
+    },
+    blockquote: {
+      position: 'relative',
+      p: {
+        color: theme.pallete.primary.main,
+        fontStyle: 'italic',
+        fontSize: '1.25rem'
+      },
+      marginLeft: '7rem',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        left: '-6rem',
+        top: '0.75rem',
+        width: 78,
+        height: 2,
+        borderTop: "2px solid ".concat(theme.pallete.divider)
+      }
+    },
+    table: {
+      fontSize: '1rem',
+      maxWidth: 800,
+      borderCollapse: 'collapse',
+      width: '100%',
+      marginBottom: '2rem',
+      'td, th': {
+        borderBottom: "1px solid ".concat(theme.pallete.divider),
+        textAlign: 'left',
+        padding: '1rem 0',
+        '&:not(:last-child)': {
+          paddingRight: '2rem'
+        }
+      }
+    },
+    code: {
+      '&:not(.hljs)': {
+        padding: '0.125rem 0.25rem',
+        borderRadius: 3,
+        background: theme.pallete.surface.background
+      }
+    },
+    pre: {
+      marginBottom: '2rem',
+      code: {
+        fontSize: theme.typography.sizes.text,
+        borderRadius: 4,
+        padding: '0.5rem 1rem'
+      }
     }
   };
 };
