@@ -1,19 +1,27 @@
-import { darkTheme, Theme, ThemeProvider, useStyles } from '../../lib'
+import { MDXProvider } from '@mdx-js/react'
+
+import { ThemeProvider, useStyles } from '../../lib'
 import { AppFooter } from '../components/AppFooter'
 import { APP_HEADER_HEIGHT, AppHeader } from '../components/AppHeader'
+import * as MDXComponents from '../components/mdx'
 import { Page } from '../components/Page'
 import { SideNav } from '../components/SideNav'
 import { useThemeSwitch } from '../components/useThemeSwitch'
 import pages from '../pages'
+
+const mdxComponents = {
+  a: MDXComponents.Link,
+}
 
 export function Site(props: any) {
   const [currentTheme, switchTheme] = useThemeSwitch()
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <AppHeader currentTheme={currentTheme} onThemeSwitch={switchTheme} />
-
-      <SiteContainer {...props} />
+      <MDXProvider components={mdxComponents}>
+        <AppHeader currentTheme={currentTheme} onThemeSwitch={switchTheme} />
+        <SiteContainer {...props} />
+      </MDXProvider>
     </ThemeProvider>
   )
 }

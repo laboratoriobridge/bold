@@ -69,6 +69,7 @@
     "@babel/core": "7.4.5",
     "@mdx-js/loader": "1.0.20",
     "@mdx-js/mdx": "1.0.20",
+    "@mdx-js/react": "1.0.20",
     "@next/mdx": "8.1.0",
     "@storybook/addon-a11y": "5.0.11",
     "@storybook/addon-actions": "5.0.11",

@@ -42,12 +42,6 @@ export const createStyles = (theme: Theme) => ({
       marginBottom: '2rem',
     },
 
-    '& > p a, & > ul a': {
-      ...theme.typography.variant('link'),
-      ...createLinkStyles(theme).link,
-      fontSize: '1rem',
-    },
-
     '& > p': {
       fontSize: '1rem',
       maxWidth: 800,
