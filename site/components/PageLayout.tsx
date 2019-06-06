@@ -16,7 +16,7 @@ export function PageLayout(props: PageLayoutProps) {
   const { switchTheme, children } = props
   const { classes } = useStyles(createStyles)
 
-  const [navOpen, setNavOpen] = useState(true)
+  const [navOpen, setNavOpen] = useState(false)
 
   return (
     <>

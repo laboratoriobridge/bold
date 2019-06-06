@@ -2,7 +2,6 @@ import React, { useRef } from 'react'
 
 import { Icons, Omit, Theme, useStyles } from '../../../lib'
 import { useClickOutside } from '../../../lib/hooks/useClickOutside'
-import { TransitionState, useTransition } from '../../../lib/hooks/useTransition'
 import { APP_HEADER_HEIGHT } from '../AppHeader'
 
 import { SideNavItem } from './SideNavItem'

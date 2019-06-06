@@ -33,5 +33,9 @@ export const createStyles = (theme: Theme) => ({
     background: theme.pallete.surface.main,
     flex: 1,
     padding: `2rem 3rem`,
+
+    [theme.breakpoints.down('md')]: {
+      padding: `2rem 2rem`,
+    },
   },
 })
