@@ -62506,7 +62506,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Button, HFlow, Icon, Text } from '../../../../lib'\n\nfunction ButtonDanger() {\n  return (\n    <HFlow alignItems='flex-end'>\n      <Button kind='danger' size='large'>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text>Delete</Text>\n      </Button>\n      <Button kind='danger' size='large' disabled>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text>Delete</Text>\n      </Button>\n      <Button kind='danger' skin='outline' size='small'>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text>Delete</Text>\n      </Button>\n      <Button kind='danger' skin='outline' size='small' disabled>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text>Delete</Text>\n      </Button>\n    </HFlow>\n  )\n}\n\nexport default ButtonDanger\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Button, HFlow, Icon, Text } from '../../../../lib'\n\nfunction ButtonDanger() {\n  return (\n    <HFlow alignItems='flex-end'>\n      <Button kind='danger' size='large'>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text color='inherit'>Delete</Text>\n      </Button>\n      <Button kind='danger' size='large' disabled>\n        Delete\n      </Button>\n      <Button kind='danger' skin='outline' size='small'>\n        Delete\n      </Button>\n      <Button kind='danger' skin='outline' size='small' disabled>\n        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />\n        <Text color='inherit'>Delete</Text>\n      </Button>\n    </HFlow>\n  )\n}\n\nexport default ButtonDanger\n");
 
 /***/ }),
 
@@ -62519,7 +62519,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { Button, HFlow, Icon, Text } from '../../../../lib'\n\nfunction ButtonIcons() {\n  return (\n    <HFlow alignItems='flex-end'>\n      <Button kind='primary'>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text>Launch</Text>\n      </Button>\n      <Button>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text>Launch</Text>\n      </Button>\n      <Button skin='ghost' kind='primary'>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text>Launch</Text>\n      </Button>\n    </HFlow>\n  )\n}\n\nexport default ButtonIcons\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { Button, HFlow, Icon, Text } from '../../../../lib'\n\nfunction ButtonIcons() {\n  return (\n    <HFlow alignItems='flex-end'>\n      <Button kind='primary'>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text color='inherit'>Launch</Text>\n      </Button>\n      <Button>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text color='inherit'>Launch</Text>\n      </Button>\n      <Button skin='ghost' kind='primary'>\n        <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />\n        <Text color='inherit'>Launch</Text>\n      </Button>\n    </HFlow>\n  )\n}\n\nexport default ButtonIcons\n");
 
 /***/ }),
 
@@ -66853,6 +66853,7 @@ function ButtonDanger() {
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "inherit",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -66867,55 +66868,23 @@ function ButtonDanger() {
       lineNumber: 10
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-    icon: "trashOutline",
-    style: {
-      marginRight: '0.5rem'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     kind: "danger",
     skin: "outline",
     size: "small",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 13
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-    icon: "trashOutline",
-    style: {
-      marginRight: '0.5rem'
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 16
-    },
-    __self: this
-  }, "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  }, "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     kind: "danger",
     skin: "outline",
     size: "small",
     disabled: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 16
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
@@ -66925,13 +66894,14 @@ function ButtonDanger() {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 17
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "inherit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 18
     },
     __self: this
   }, "Delete")));
@@ -66984,6 +66954,7 @@ function ButtonIcons() {
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "inherit",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -67006,6 +66977,7 @@ function ButtonIcons() {
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "inherit",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
@@ -67030,6 +67002,7 @@ function ButtonIcons() {
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    color: "inherit",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
