@@ -62584,7 +62584,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { DropdownButton } from '../../../../lib'\n\nfunction DropMenuDemo() {\n  return (\n    <DropdownButton\n      size='small'\n      skin='outline'\n      kind='primary'\n      items={[\n        { content: 'Edit', onClick: console.log },\n        { content: 'Donwload', onClick: console.log },\n        {\n          content: 'Print',\n          onClick: console.log,\n          disabled: true,\n        },\n        { content: 'Delete', onClick: console.log, type: 'danger' },\n      ]}\n    >\n      Options\n    </DropdownButton>\n  )\n}\n\nexport default DropMenuDemo\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { DropdownButton } from '../../../../lib'\n\nfunction DropMenuDemo() {\n  return (\n    <DropdownButton\n      size='small'\n      skin='outline'\n      kind='primary'\n      items={[\n        { content: 'Edit', onClick: console.log },\n        { content: 'Download', onClick: console.log },\n        {\n          content: 'Print',\n          onClick: console.log,\n          disabled: true,\n        },\n        { content: 'Delete', onClick: console.log, type: 'danger' },\n      ]}\n    >\n      Options\n    </DropdownButton>\n  )\n}\n\nexport default DropMenuDemo\n");
 
 /***/ }),
 
@@ -66636,7 +66636,6 @@ var createStyles = function createStyles(theme) {
       marginBottom: '2rem',
       pre: {
         margin: 0,
-        overflowX: 'auto',
         code: {
           borderTopLeftRadius: 0,
           borderTopRightRadius: 0
@@ -66645,7 +66644,7 @@ var createStyles = function createStyles(theme) {
     },
     component: {
       padding: '1.5rem',
-      overflowX: 'auto'
+      overflow: 'auto'
     }
   };
 };
@@ -67646,7 +67645,7 @@ function DropMenuDemo() {
       content: 'Edit',
       onClick: console.log
     }, {
-      content: 'Donwload',
+      content: 'Download',
       onClick: console.log
     }, {
       content: 'Print',
@@ -69388,7 +69387,7 @@ function TooltipDefault() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 2:
 /*!*************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcomponents%2Fbutton&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbutton%2Findex.mdx ***!
   \*************************************************************************************************************************************************************************/
@@ -69411,5 +69410,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=button.js.map

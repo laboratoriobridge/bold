@@ -51678,7 +51678,8 @@ var createStyles = function createStyles() {
       paddingTop: "calc(".concat(_AppHeader__WEBPACK_IMPORTED_MODULE_6__["APP_HEADER_HEIGHT"], "px)"),
       flex: 1,
       display: 'flex',
-      flexDirection: 'column'
+      flexDirection: 'column',
+      maxWidth: '100%'
     }
   };
 };
@@ -52383,19 +52384,16 @@ var createStyles = function createStyles(theme) {
         }
       }
     },
+    pre: {
+      marginBottom: '2rem',
+      overflow: 'auto',
+      background: theme.pallete.surface.background
+    },
     code: {
       '&:not(.hljs)': {
         padding: '0.125rem 0.25rem',
         borderRadius: 3,
         background: theme.pallete.surface.background
-      }
-    },
-    pre: {
-      marginBottom: '2rem',
-      code: {
-        fontSize: theme.typography.sizes.text,
-        borderRadius: 4,
-        padding: '0.5rem 1rem'
       }
     }
   };
