@@ -50978,6 +50978,7 @@ function AppFooter() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/logo-ufsc.svg",
+    alt: "Universidade Federal de Santa Catarina",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
@@ -50996,6 +50997,7 @@ function AppFooter() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/logo-bridge.svg",
+    alt: "Laborat\xF3rio Bridge",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19
@@ -51028,6 +51030,7 @@ function AppFooter() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-linkedin.svg",
+    alt: "Siga o Laborat\xF3rio no Linkedin",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 30
@@ -51046,6 +51049,7 @@ function AppFooter() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-facebook.svg",
+    alt: "P\xE1gina do Laborat\xF3rio no Facebook",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 37
@@ -51064,21 +51068,41 @@ function AppFooter() {
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
     src: "/static/image/icn-github.svg",
+    alt: "Reposit\xF3rio Github",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40
     },
     __self: this
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    href: "https://www.instagram.com/laboratoriobridge/",
+    target: "_blank",
+    style: {
+      display: 'inline-block'
+    },
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_mdx__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    src: "/static/image/icn-instagram.svg",
+    alt: "Siga o Laborat\xF3rio no Instagram",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 47
+    },
+    __self: this
   }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 52
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 53
     },
     __self: this
   }, "Laborat\xF3rio Bridge. 2019.")));
@@ -51449,12 +51473,14 @@ var BoldLogo = function BoldLogo(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Page", function() { return Page; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createStyles", function() { return createStyles; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages */ "./pages.ts");
-/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _PageContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PageContainer */ "./components/PageContainer.tsx");
+
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
 
 
@@ -51463,37 +51489,37 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Page.tsx";
 function Page(props) {
   var children = props.children;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_1__["useStyles"])(createStyles),
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
   var route = props.router.route;
-  var parent = _pages__WEBPACK_IMPORTED_MODULE_2__["default"].find(function (page) {
+  var parent = _pages__WEBPACK_IMPORTED_MODULE_3__["default"].find(function (page) {
     return page.children ? !!page.children.map(function (c) {
       return c.href;
     }).find(function (c) {
       return route.indexOf(c) >= 0;
     }) : false;
   });
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.wrapper,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_3__["PageContainer"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_PageContainer__WEBPACK_IMPORTED_MODULE_4__["PageContainer"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("main", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("main", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18
     },
     __self: this
-  }, parent && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+  }, parent && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Text"], {
     id: "page-parent-title",
     fontWeight: "bold",
     __source: {
@@ -51505,11 +51531,13 @@ function Page(props) {
 }
 var createStyles = function createStyles(theme) {
   return {
-    wrapper: {
+    wrapper: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       background: theme.pallete.surface.main,
       flex: 1,
       padding: "2rem 3rem"
-    }
+    }, theme.breakpoints.down('md'), {
+      padding: "2rem 2rem"
+    })
   };
 };
 
@@ -51594,7 +51622,7 @@ function PageLayout(props) {
   var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       navOpen = _useState2[0],
       setNavOpen = _useState2[1];
@@ -51707,21 +51735,21 @@ function SideNav(props) {
     className: classes.wrapper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 32
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("nav", {
     className: classes.nav,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34
+      lineNumber: 33
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
     className: classes.ul,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 34
     },
     __self: this
   }, pages.map(function (link) {
@@ -51731,7 +51759,7 @@ function SideNav(props) {
     }, link, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 36
       },
       __self: this
     }));
