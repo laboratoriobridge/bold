@@ -16846,6 +16846,47 @@ __export(__webpack_require__(/*! ./form */ "../lib/components/form/index.js"));
 
 /***/ }),
 
+/***/ "../lib/hooks/useClickOutside.js":
+/*!***************************************!*\
+  !*** ../lib/hooks/useClickOutside.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// From https://github.com/sandiiarov/use-events/blob/master/src/useClickOutside/index.tsx
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+exports.useClickOutside = function (ref, onClickOutside) {
+    var _a = react_1.useState(false), isActive = _a[0], setActive = _a[1];
+    var mousedown = function (e) {
+        var current = ref.current;
+        if (current !== null && !current.contains(e.target)) {
+            setActive(true);
+            onClickOutside(e);
+        }
+    };
+    var mouseup = function (e) {
+        var current = ref.current;
+        if (current !== null && !current.contains(e.target)) {
+            setActive(false);
+        }
+    };
+    react_1.useEffect(function () {
+        document.addEventListener('mousedown', mousedown);
+        document.addEventListener('mouseup', mouseup);
+        return function () {
+            document.removeEventListener('mousedown', mousedown);
+            document.removeEventListener('mouseup', mouseup);
+        };
+    }, []);
+    return [isActive];
+};
+//# sourceMappingURL=useClickOutside.js.map
+
+/***/ }),
+
 /***/ "../lib/hooks/usePopper.js":
 /*!*********************************!*\
   !*** ../lib/hooks/usePopper.js ***!
@@ -51064,14 +51105,16 @@ var createStyles = function createStyles(theme) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppHeader", function() { return AppHeader; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "APP_HEADER_HEIGHT", function() { return APP_HEADER_HEIGHT; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _BoldLogo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoldLogo */ "./components/BoldLogo.tsx");
-/* harmony import */ var _SideNav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SideNav */ "./components/SideNav/index.ts");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _BoldLogo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BoldLogo */ "./components/BoldLogo.tsx");
+/* harmony import */ var _SideNav__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SideNav */ "./components/SideNav/index.ts");
+
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/AppHeader.tsx";
 
 
@@ -51079,62 +51122,101 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/AppHeader.tsx";
 
 
 function AppHeader(props) {
-  var currentTheme = props.currentTheme,
-      onThemeSwitch = props.onThemeSwitch;
+  var navOpen = props.navOpen,
+      onNavChange = props.onNavChange,
+      switchTheme = props.switchTheme;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
-      classes = _useStyles.classes;
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+      classes = _useStyles.classes,
+      theme = _useStyles.theme;
 
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", {
+  var changeNavState = function changeNavState(open) {
+    return function () {
+      return onNavChange(open);
+    };
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("header", {
     className: classes.header,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 21
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: classes.menuIcon,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Button"], {
+    skin: "ghost",
+    size: "small",
+    onClick: changeNavState(!navOpen),
+    "aria-label": navOpen ? 'Close menu' : 'Open menu',
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }, !navOpen ? react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+    icon: "hamburguerMenu",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }) : react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+    icon: "timesDefault",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.logo,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 34
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Link"], {
     href: "/",
     style: {
       display: 'inline-block'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 35
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_BoldLogo__WEBPACK_IMPORTED_MODULE_3__["BoldLogo"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_BoldLogo__WEBPACK_IMPORTED_MODULE_4__["BoldLogo"], {
     "aria-label": "Bold Logo",
     style: {
       height: '2.5rem'
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 36
     },
     __self: this
-  })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.search,
     id: "search-wrapper",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 41
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["TextInput"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["TextInput"], {
     id: "search-input",
     style: classes.searchInput,
     type: "search",
@@ -51143,36 +51225,36 @@ function AppHeader(props) {
     placeholder: "Search in bold design system...",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 42
     },
     __self: this
-  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 52
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
-    text: currentTheme === _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"] ? 'Switch to dark mode' : 'Switch to light mode',
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
+    text: theme === _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"] ? 'Switch to dark mode' : 'Switch to light mode',
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 53
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     skin: "ghost",
     size: "small",
-    onClick: onThemeSwitch,
+    onClick: switchTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 54
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_2__["Icon"], {
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
     icon: "lightbulbFilled",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 55
     },
     __self: this
   })))));
@@ -51180,6 +51262,8 @@ function AppHeader(props) {
 var APP_HEADER_HEIGHT = 77;
 
 var createStyles = function createStyles(theme) {
+  var _search;
+
   return {
     header: {
       background: theme.pallete.surface.main,
@@ -51187,15 +51271,26 @@ var createStyles = function createStyles(theme) {
       boxShadow: theme.shadows.outer[60],
       display: 'flex',
       alignItems: 'center',
+      justifyContent: 'space-between',
       zIndex: 20,
       position: 'fixed',
       width: '100%'
     },
-    logo: {
+    menuIcon: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      display: 'none'
+    }, theme.breakpoints.down('md'), {
+      display: 'block'
+    }),
+    logo: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       borderRight: "1px solid ".concat(theme.pallete.divider),
-      width: "calc(".concat(_SideNav__WEBPACK_IMPORTED_MODULE_4__["SIDE_NAV_WIDTH"], "px - 2rem)"),
+      width: "calc(".concat(_SideNav__WEBPACK_IMPORTED_MODULE_5__["SIDE_NAV_WIDTH"], "px - 2rem)"),
       padding: '0 1rem 0 2.75rem'
-    },
+    }, theme.breakpoints.down('md'), {
+      borderRight: 'none',
+      width: 'auto',
+      paddingRight: 0,
+      paddingLeft: 0
+    }),
     searchInput: {
       border: 'none',
       '~ span': {
@@ -51205,73 +51300,44 @@ var createStyles = function createStyles(theme) {
         WebkitAppearance: 'none'
       }
     },
-    search: {
-      flex: 1,
-      padding: '0 1rem',
-      position: 'relative',
-      '.algolia-autocomplete [class^="ds-dataset"]': {
-        background: theme.pallete.surface.main,
-        borderColor: theme.pallete.divider,
-        '&::before': {
-          background: theme.pallete.surface.main
-        }
-      },
-      '.algolia-autocomplete': {
-        left: '1rem !important',
-        top: '0.5rem'
-      },
-
-      /* Main dropdown wrapper */
-      '.algolia-autocomplete .ds-dropdown-menu': {
-        fontSize: '1em',
-        fontWeight: 'normal',
-        '&::before': {
-          background: theme.pallete.surface.main
-        }
-      },
-
-      /* Link element */
-      '.algolia-autocomplete .algolia-docsearch-suggestion': {
-        fontWeight: 'normal',
-        textDecoration: 'none',
-        background: 'transparent'
-      },
-
-      /* Main category (eg. Getting Started) */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--category-header': {
-        fontWeight: 'bold',
-        color: theme.pallete.text.main
-      },
-
-      /* Category (eg. Downloads) */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column': {},
-      '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column-text': {
-        color: theme.pallete.text.secondary,
-        fontSize: theme.typography.sizes.text
-      },
-
-      /* Content */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--content': {},
-
-      /* Title (eg. Bootstrap CDN) */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--title': {
-        color: theme.pallete.text.main,
-        fontSize: theme.typography.sizes.text
-      },
-
-      /* Description description (eg. Bootstrap currently works...) */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--text': {
-        color: theme.pallete.text.main,
-        fontSize: theme.typography.sizes.text
-      },
-
-      /* Highlighted text */
-      '.algolia-autocomplete .algolia-docsearch-suggestion--highlight': {
-        color: 'inherit !important',
-        background: "".concat(theme.pallete.highlight, " !important"),
-        boxShadow: 'none !important'
+    search: (_search = {}, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, theme.breakpoints.down('md'), {
+      display: 'none'
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, "flex", 1), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, "padding", '0 1rem'), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, "position", 'relative'), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete [class^="ds-dataset"]', {
+      background: theme.pallete.surface.main,
+      borderColor: theme.pallete.divider,
+      '&::before': {
+        background: theme.pallete.surface.main
       }
-    }
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete', {
+      left: '1rem !important',
+      top: '0.5rem'
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .ds-dropdown-menu', {
+      fontSize: '1em',
+      fontWeight: 'normal',
+      '&::before': {
+        background: theme.pallete.surface.main
+      }
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion', {
+      fontWeight: 'normal',
+      textDecoration: 'none',
+      background: 'transparent'
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--category-header', {
+      fontWeight: 'bold',
+      color: theme.pallete.text.main
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column', {}), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column-text', {
+      color: theme.pallete.text.secondary,
+      fontSize: theme.typography.sizes.text
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--content', {}), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--title', {
+      color: theme.pallete.text.main,
+      fontSize: theme.typography.sizes.text
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--text', {
+      color: theme.pallete.text.main,
+      fontSize: theme.typography.sizes.text
+    }), Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_search, '.algolia-autocomplete .algolia-docsearch-suggestion--highlight', {
+      color: 'inherit !important',
+      background: "".concat(theme.pallete.highlight, " !important"),
+      boxShadow: 'none !important'
+    }), _search)
   };
 };
 
@@ -51494,6 +51560,103 @@ var createStyles = function createStyles() {
 
 /***/ }),
 
+/***/ "./components/PageLayout.tsx":
+/*!***********************************!*\
+  !*** ./components/PageLayout.tsx ***!
+  \***********************************/
+/*! exports provided: PageLayout */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageLayout", function() { return PageLayout; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_AppFooter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AppFooter */ "./components/AppFooter.tsx");
+/* harmony import */ var _components_SideNav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/SideNav */ "./components/SideNav/index.ts");
+/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _AppHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AppHeader */ "./components/AppHeader.tsx");
+
+var _jsxFileName = "/home/bonetti/workspace/bold/site/components/PageLayout.tsx";
+
+
+
+
+
+
+function PageLayout(props) {
+  var switchTheme = props.switchTheme,
+      children = props.children;
+
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
+      classes = _useStyles.classes;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(true),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      navOpen = _useState2[0],
+      setNavOpen = _useState2[1];
+
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_AppHeader__WEBPACK_IMPORTED_MODULE_6__["AppHeader"], {
+    navOpen: navOpen,
+    onNavChange: setNavOpen,
+    switchTheme: switchTheme,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: classes.container,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_4__["SideNav"], {
+    pages: _pages__WEBPACK_IMPORTED_MODULE_5__["default"],
+    open: navOpen,
+    onChangeOpen: setNavOpen,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: classes.content,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, children, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_components_AppFooter__WEBPACK_IMPORTED_MODULE_3__["AppFooter"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }))));
+}
+
+var createStyles = function createStyles() {
+  return {
+    container: {
+      display: 'flex',
+      minHeight: '100vh'
+    },
+    content: {
+      paddingTop: "calc(".concat(_AppHeader__WEBPACK_IMPORTED_MODULE_6__["APP_HEADER_HEIGHT"], "px)"),
+      flex: 1,
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  };
+};
+
+/***/ }),
+
 /***/ "./components/SideNav/SideNav.tsx":
 /*!****************************************!*\
   !*** ./components/SideNav/SideNav.tsx ***!
@@ -51505,53 +51668,70 @@ var createStyles = function createStyles() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SideNav", function() { return SideNav; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIDE_NAV_WIDTH", function() { return SIDE_NAV_WIDTH; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../lib */ "../lib/index.js");
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _AppHeader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../AppHeader */ "./components/AppHeader.tsx");
-/* harmony import */ var _SideNavItem__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SideNavItem */ "./components/SideNav/SideNavItem.tsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/defineProperty */ "../node_modules/@babel/runtime-corejs2/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../lib */ "../lib/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _lib_hooks_useClickOutside__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../lib/hooks/useClickOutside */ "../lib/hooks/useClickOutside.js");
+/* harmony import */ var _lib_hooks_useClickOutside__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_lib_hooks_useClickOutside__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _AppHeader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../AppHeader */ "./components/AppHeader.tsx");
+/* harmony import */ var _SideNavItem__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SideNavItem */ "./components/SideNav/SideNavItem.tsx");
+
 
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/SideNav/SideNav.tsx";
 
 
 
 
-function SideNav(props) {
-  var pages = props.pages;
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
+function SideNav(props) {
+  var pages = props.pages,
+      onChangeOpen = props.onChangeOpen;
+
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles, props),
       classes = _useStyles.classes;
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+  var wrapperRef = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(null);
+  Object(_lib_hooks_useClickOutside__WEBPACK_IMPORTED_MODULE_4__["useClickOutside"])(wrapperRef, function () {
+    return onChangeOpen(false);
+  });
+
+  var handleNavigate = function handleNavigate() {
+    return onChangeOpen(false);
+  };
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    ref: wrapperRef,
     className: classes.wrapper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("nav", {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("nav", {
     className: classes.nav,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 34
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("ul", {
     className: classes.ul,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 35
     },
     __self: this
   }, pages.map(function (link) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_SideNavItem__WEBPACK_IMPORTED_MODULE_4__["SideNavItem"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      key: link.href
+    return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_SideNavItem__WEBPACK_IMPORTED_MODULE_6__["SideNavItem"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+      key: link.href,
+      onNavigate: handleNavigate
     }, link, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26
+        lineNumber: 37
       },
       __self: this
     }));
@@ -51559,12 +51739,18 @@ function SideNav(props) {
 }
 var SIDE_NAV_WIDTH = 288;
 
-var createStyles = function createStyles(theme) {
+var createStyles = function createStyles(theme, _ref) {
+  var open = _ref.open;
   return {
-    wrapper: {
+    wrapper: Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       width: SIDE_NAV_WIDTH,
-      flexShrink: 0
-    },
+      flexShrink: 0,
+      transition: 'all .2s ease'
+    }, theme.breakpoints.down('md'), {
+      position: 'fixed',
+      zIndex: 10,
+      left: open ? 0 : -SIDE_NAV_WIDTH
+    }),
     nav: {
       background: theme.pallete.surface.main,
       width: SIDE_NAV_WIDTH,
@@ -51573,11 +51759,11 @@ var createStyles = function createStyles(theme) {
       display: 'flex',
       flexDirection: 'column',
       padding: '2rem 0',
-      marginTop: _AppHeader__WEBPACK_IMPORTED_MODULE_3__["APP_HEADER_HEIGHT"],
+      marginTop: _AppHeader__WEBPACK_IMPORTED_MODULE_5__["APP_HEADER_HEIGHT"],
       position: 'fixed',
       zIndex: 10,
       overflow: 'auto',
-      height: "calc(100vh - ".concat(_AppHeader__WEBPACK_IMPORTED_MODULE_3__["APP_HEADER_HEIGHT"], "px)"),
+      height: "calc(100vh - ".concat(_AppHeader__WEBPACK_IMPORTED_MODULE_5__["APP_HEADER_HEIGHT"], "px)"),
       svg: {
         fill: 'currentColor'
       }
@@ -51622,7 +51808,8 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
       icon = props.icon,
       title = props.title,
       children = props.children,
-      router = props.router;
+      router = props.router,
+      onNavigate = props.onNavigate;
 
   var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
       classes = _useStyles.classes;
@@ -51640,13 +51827,15 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
       setIsCollapsed(function (collapsed) {
         return !collapsed;
       });
+    } else {
+      onNavigate();
     }
   };
 
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 30
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -51654,7 +51843,7 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
     activeClassName: "active",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 31
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
@@ -51662,7 +51851,7 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
     onClick: handleLinkClick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 32
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
@@ -51670,14 +51859,14 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
     className: classes.icon,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 33
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
     className: classes.title,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 34
     },
     __self: this
   }, title), children && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
@@ -51685,14 +51874,14 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
     className: classes.iconDropdown,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 35
     },
     __self: this
   }))), children && isCollapsed && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
     className: classes.sublist,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 40
     },
     __self: this
   }, children.map(function (sub) {
@@ -51700,7 +51889,7 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
       key: sub.href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38
+        lineNumber: 42
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -51708,14 +51897,15 @@ var SideNavItem = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])
       activeClassName: "active",
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39
+        lineNumber: 43
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
       className: classes.sublink,
+      onClick: onNavigate,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40
+        lineNumber: 44
       },
       __self: this
     }, sub.title)));
@@ -51783,7 +51973,7 @@ var createStyles = function createStyles(theme) {
 /*!*************************************!*\
   !*** ./components/SideNav/index.ts ***!
   \*************************************/
-/*! exports provided: SideNavItem, SideNav, SIDE_NAV_WIDTH */
+/*! exports provided: SideNav, SIDE_NAV_WIDTH, SideNavItem */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51819,13 +52009,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/index.es.js");
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
 /* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_lib__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_AppFooter__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/AppFooter */ "./components/AppFooter.tsx");
-/* harmony import */ var _components_AppHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/AppHeader */ "./components/AppHeader.tsx");
-/* harmony import */ var _components_mdx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/mdx */ "./components/mdx/index.tsx");
-/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/Page */ "./components/Page.tsx");
-/* harmony import */ var _components_SideNav__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/SideNav */ "./components/SideNav/index.ts");
-/* harmony import */ var _components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/useThemeSwitch */ "./components/useThemeSwitch.ts");
-/* harmony import */ var _pages__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../pages */ "./pages.ts");
+/* harmony import */ var _components_mdx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/mdx */ "./components/mdx/index.tsx");
+/* harmony import */ var _components_Page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Page */ "./components/Page.tsx");
+/* harmony import */ var _components_PageLayout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/PageLayout */ "./components/PageLayout.tsx");
+/* harmony import */ var _components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/useThemeSwitch */ "./components/useThemeSwitch.ts");
 
 
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Site.tsx";
@@ -51836,29 +52023,26 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/components/Site.tsx";
 
 
 
-
-
-
 var mdxComponents = {
-  p: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Paragraph"],
-  a: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Link"],
-  img: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Image"],
-  h1: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](1),
-  h2: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](2),
-  h3: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](3),
-  h4: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](4),
-  h5: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](5),
-  h6: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["createHeading"](6),
-  ul: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["UnorderedList"],
-  ol: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["OrderedList"],
-  blockquote: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Blockquote"],
-  table: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Table"],
-  pre: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Pre"],
-  code: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Code"],
-  inlineCode: _components_mdx__WEBPACK_IMPORTED_MODULE_7__["Code"]
+  p: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Paragraph"],
+  a: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Link"],
+  img: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Image"],
+  h1: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](1),
+  h2: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](2),
+  h3: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](3),
+  h4: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](4),
+  h5: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](5),
+  h6: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["createHeading"](6),
+  ul: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["UnorderedList"],
+  ol: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["OrderedList"],
+  blockquote: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Blockquote"],
+  table: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Table"],
+  pre: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Pre"],
+  code: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Code"],
+  inlineCode: _components_mdx__WEBPACK_IMPORTED_MODULE_5__["Code"]
 };
 function Site(props) {
-  var _useThemeSwitch = Object(_components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_10__["useThemeSwitch"])(),
+  var _useThemeSwitch = Object(_components_useThemeSwitch__WEBPACK_IMPORTED_MODULE_8__["useThemeSwitch"])(),
       _useThemeSwitch2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useThemeSwitch, 2),
       currentTheme = _useThemeSwitch2[0],
       switchTheme = _useThemeSwitch2[1];
@@ -51867,28 +52051,22 @@ function Site(props) {
     theme: currentTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35
+      lineNumber: 32
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["MDXProvider"], {
     components: mdxComponents,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36
+      lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppHeader__WEBPACK_IMPORTED_MODULE_6__["AppHeader"], {
-    currentTheme: currentTheme,
-    onThemeSwitch: switchTheme,
+  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(SiteContainer, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    switchTheme: switchTheme
+  }, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(SiteContainer, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 34
     },
     __self: this
   }))));
@@ -51897,73 +52075,34 @@ function SiteContainer(props) {
   var _ref = props,
       Component = _ref.Component,
       pageProps = _ref.pageProps;
-
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_4__["useStyles"])(createStyles),
-      classes = _useStyles.classes;
-
   var route = props.router.route;
-  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: classes.container,
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_PageLayout__WEBPACK_IMPORTED_MODULE_7__["PageLayout"], {
+    switchTheme: props.switchTheme,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_SideNav__WEBPACK_IMPORTED_MODULE_9__["SideNav"], {
-    pages: _pages__WEBPACK_IMPORTED_MODULE_11__["default"],
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 51
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
-    className: classes.content,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 45
     },
     __self: this
   }, route === '/' ? react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55
+      lineNumber: 47
     },
     __self: this
-  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_8__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
+  })) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Page__WEBPACK_IMPORTED_MODULE_6__["Page"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57
+      lineNumber: 49
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageProps, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 50
     },
     __self: this
-  }))), react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_AppFooter__WEBPACK_IMPORTED_MODULE_5__["AppFooter"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: this
-  })));
+  }))));
 }
-
-var createStyles = function createStyles() {
-  return {
-    container: {
-      display: 'flex',
-      minHeight: '100vh'
-    },
-    content: {
-      paddingTop: "calc(".concat(_components_AppHeader__WEBPACK_IMPORTED_MODULE_6__["APP_HEADER_HEIGHT"], "px)"),
-      flex: 1,
-      display: 'flex',
-      flexDirection: 'column'
-    }
-  };
-};
 
 /***/ }),
 
@@ -52168,7 +52307,6 @@ var createStyles = function createStyles(theme) {
   return {
     paragraph: {
       fontSize: '1rem',
-      maxWidth: 800,
       marginBottom: '2rem'
     },
     link: {
@@ -52179,11 +52317,10 @@ var createStyles = function createStyles(theme) {
     },
     list: {
       fontSize: '1rem',
-      maxWidth: 800,
       margin: '0 0 2rem 0'
     },
     image: {
-      maxWidth: 960,
+      maxWidth: '100%',
       marginBottom: '2rem'
     },
     blockquote: {
@@ -52206,7 +52343,6 @@ var createStyles = function createStyles(theme) {
     },
     table: {
       fontSize: '1rem',
-      maxWidth: 800,
       borderCollapse: 'collapse',
       width: '100%',
       marginBottom: '2rem',
