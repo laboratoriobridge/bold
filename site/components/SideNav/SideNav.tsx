@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 
 import { Icons, Omit, Theme, useStyles } from '../../../lib'
 import { useClickOutside } from '../../../lib/hooks/useClickOutside'
+import { TransitionState, useTransition } from '../../../lib/hooks/useTransition'
 import { APP_HEADER_HEIGHT } from '../AppHeader'
 
 import { SideNavItem } from './SideNavItem'
@@ -21,6 +22,7 @@ export interface SideNavProps {
 
 export function SideNav(props: SideNavProps) {
   const { pages, onChangeOpen } = props
+
   const { classes } = useStyles(createStyles, props)
 
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -46,12 +48,12 @@ const createStyles = (theme: Theme, { open }: SideNavProps) => ({
   wrapper: {
     width: SIDE_NAV_WIDTH,
     flexShrink: 0,
+    transition: 'all .2s ease',
 
     [theme.breakpoints.down('md')]: {
-      display: !open && 'none',
       position: 'fixed',
       zIndex: 10,
-      transition: 'all .2 ease',
+      left: open ? 0 : -SIDE_NAV_WIDTH,
     },
   } as React.CSSProperties,
   nav: {
