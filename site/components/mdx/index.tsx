@@ -69,7 +69,6 @@ export function Code(props: any) {
 const createStyles = (theme: Theme) => ({
   paragraph: {
     fontSize: '1rem',
-    maxWidth: 800,
     marginBottom: '2rem',
   } as CSSProperties,
   link: {
@@ -80,11 +79,10 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   list: {
     fontSize: '1rem',
-    maxWidth: 800,
     margin: '0 0 2rem 0',
   } as CSSProperties,
   image: {
-    maxWidth: 960,
+    maxWidth: '100%',
     marginBottom: '2rem',
   } as CSSProperties,
   blockquote: {
@@ -107,7 +105,6 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   table: {
     fontSize: '1rem',
-    maxWidth: 800,
     borderCollapse: 'collapse',
     width: '100%',
     marginBottom: '2rem',

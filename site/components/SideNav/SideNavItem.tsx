@@ -6,10 +6,12 @@ import ActiveLink from '../ActiveLink'
 
 import { PageLink } from './SideNav'
 
-export type SideNavItemProps = PageLink
+export interface SideNavItemProps extends PageLink {
+  onNavigate(): void
+}
 
 export const SideNavItem = withRouter((props: SideNavItemProps & WithRouterProps) => {
-  const { href, icon, title, children, router } = props
+  const { href, icon, title, children, router, onNavigate } = props
   const { classes } = useStyles(createStyles)
   const [isCollapsed, setIsCollapsed] = useState(() => {
     return href && router && router.pathname.startsWith(href)
@@ -19,6 +21,8 @@ export const SideNavItem = withRouter((props: SideNavItemProps & WithRouterProps
     if (children) {
       e.preventDefault()
       setIsCollapsed(collapsed => !collapsed)
+    } else {
+      onNavigate()
     }
   }
 
@@ -37,7 +41,9 @@ export const SideNavItem = withRouter((props: SideNavItemProps & WithRouterProps
           {children.map(sub => (
             <li key={sub.href}>
               <ActiveLink href={sub.href} activeClassName='active'>
-                <a className={classes.sublink}>{sub.title}</a>
+                <a className={classes.sublink} onClick={onNavigate}>
+                  {sub.title}
+                </a>
               </ActiveLink>
             </li>
           ))}
