@@ -5,19 +5,17 @@ function ButtonDanger() {
     <HFlow alignItems='flex-end'>
       <Button kind='danger' size='large'>
         <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-        <Text>Delete</Text>
+        <Text color='inherit'>Delete</Text>
       </Button>
       <Button kind='danger' size='large' disabled>
-        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-        <Text>Delete</Text>
+        Delete
       </Button>
       <Button kind='danger' skin='outline' size='small'>
-        <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-        <Text>Delete</Text>
+        Delete
       </Button>
       <Button kind='danger' skin='outline' size='small' disabled>
         <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-        <Text>Delete</Text>
+        <Text color='inherit'>Delete</Text>
       </Button>
     </HFlow>
   )

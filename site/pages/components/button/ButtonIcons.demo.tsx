@@ -5,15 +5,15 @@ function ButtonIcons() {
     <HFlow alignItems='flex-end'>
       <Button kind='primary'>
         <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
-        <Text>Launch</Text>
+        <Text color='inherit'>Launch</Text>
       </Button>
       <Button>
         <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
-        <Text>Launch</Text>
+        <Text color='inherit'>Launch</Text>
       </Button>
       <Button skin='ghost' kind='primary'>
         <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
-        <Text>Launch</Text>
+        <Text color='inherit'>Launch</Text>
       </Button>
     </HFlow>
   )
