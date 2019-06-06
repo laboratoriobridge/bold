@@ -1,5 +1,5 @@
 import hljs from 'highlight.js'
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 import { Theme, useStyles } from '../../lib'
 import demos from '../demos'
@@ -39,13 +39,15 @@ const createStyles = (theme: Theme) => ({
 
     pre: {
       margin: 0,
+      overflowX: 'auto',
       code: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
       },
     },
-  },
+  } as CSSProperties,
   component: {
     padding: '1.5rem',
-  },
+    overflowX: 'auto',
+  } as CSSProperties,
 })

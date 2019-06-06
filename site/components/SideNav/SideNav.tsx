@@ -1,4 +1,7 @@
+import React, { useRef } from 'react'
+
 import { Icons, Omit, Theme, useStyles } from '../../../lib'
+import { useClickOutside } from '../../../lib/hooks/useClickOutside'
 import { APP_HEADER_HEIGHT } from '../AppHeader'
 
 import { SideNavItem } from './SideNavItem'
@@ -12,18 +15,24 @@ export interface PageLink {
 
 export interface SideNavProps {
   pages: PageLink[]
+  open: boolean
+  onChangeOpen(open: boolean): void
 }
 
 export function SideNav(props: SideNavProps) {
-  const { pages } = props
-  const { classes } = useStyles(createStyles)
+  const { pages, onChangeOpen } = props
+  const { classes } = useStyles(createStyles, props)
+
+  const wrapperRef = useRef<HTMLDivElement>(null)
+  useClickOutside(wrapperRef, () => onChangeOpen(false))
+  const handleNavigate = () => onChangeOpen(false)
 
   return (
-    <div className={classes.wrapper}>
+    <div ref={wrapperRef} className={classes.wrapper}>
       <nav className={classes.nav}>
         <ul className={classes.ul}>
           {pages.map(link => (
-            <SideNavItem key={link.href} {...link} />
+            <SideNavItem key={link.href} onNavigate={handleNavigate} {...link} />
           ))}
         </ul>
       </nav>
@@ -33,10 +42,17 @@ export function SideNav(props: SideNavProps) {
 
 export const SIDE_NAV_WIDTH = 288
 
-const createStyles = (theme: Theme) => ({
+const createStyles = (theme: Theme, { open }: SideNavProps) => ({
   wrapper: {
     width: SIDE_NAV_WIDTH,
     flexShrink: 0,
+
+    [theme.breakpoints.down('md')]: {
+      display: !open && 'none',
+      position: 'fixed',
+      zIndex: 10,
+      transition: 'all .2 ease',
+    },
   } as React.CSSProperties,
   nav: {
     background: theme.pallete.surface.main,
