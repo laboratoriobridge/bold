@@ -118,19 +118,16 @@ const createStyles = (theme: Theme) => ({
       },
     },
   } as CSSProperties,
+  pre: {
+    marginBottom: '2rem',
+    overflow: 'auto',
+    background: theme.pallete.surface.background,
+  } as CSSProperties,
   code: {
     '&:not(.hljs)': {
       padding: '0.125rem 0.25rem',
       borderRadius: 3,
       background: theme.pallete.surface.background,
-    },
-  } as CSSProperties,
-  pre: {
-    marginBottom: '2rem',
-    code: {
-      fontSize: theme.typography.sizes.text,
-      borderRadius: 4,
-      padding: '0.5rem 1rem',
     },
   } as CSSProperties,
 })

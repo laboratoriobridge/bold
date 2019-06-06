@@ -39,7 +39,6 @@ const createStyles = (theme: Theme) => ({
 
     pre: {
       margin: 0,
-      overflowX: 'auto',
       code: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
@@ -48,6 +47,6 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   component: {
     padding: '1.5rem',
-    overflowX: 'auto',
+    overflow: 'auto',
   } as CSSProperties,
 })

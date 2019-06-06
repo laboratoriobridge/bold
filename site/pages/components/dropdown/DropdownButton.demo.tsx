@@ -8,7 +8,7 @@ function DropMenuDemo() {
       kind='primary'
       items={[
         { content: 'Edit', onClick: console.log },
-        { content: 'Donwload', onClick: console.log },
+        { content: 'Download', onClick: console.log },
         {
           content: 'Print',
           onClick: console.log,

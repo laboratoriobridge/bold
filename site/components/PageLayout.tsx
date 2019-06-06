@@ -45,5 +45,6 @@ const createStyles = () => ({
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
+    maxWidth: '100%',
   } as React.CSSProperties,
 })
