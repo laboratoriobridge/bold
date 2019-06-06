@@ -5,17 +5,31 @@ import { Button, Icon, lightTheme, Link, TextInput, Theme, Tooltip, useStyles } 
 import { BoldLogo } from './BoldLogo'
 import { SIDE_NAV_WIDTH } from './SideNav'
 
-export interface AppHeaderProps {
-  currentTheme: Theme
-  onThemeSwitch(): void
+interface AppHeaderProps {
+  navOpen: boolean
+  switchTheme(): void
+  onNavChange(open: boolean): void
 }
 
 export function AppHeader(props: AppHeaderProps) {
-  const { currentTheme, onThemeSwitch } = props
-  const { classes } = useStyles(createStyles)
+  const { navOpen, onNavChange, switchTheme } = props
+  const { classes, theme } = useStyles(createStyles)
+
+  const changeNavState = (open: boolean) => () => onNavChange(open)
 
   return (
     <header className={classes.header}>
+      <div className={classes.menuIcon}>
+        <Button
+          skin='ghost'
+          size='small'
+          onClick={changeNavState(!navOpen)}
+          aria-label={navOpen ? 'Close menu' : 'Open menu'}
+        >
+          {!navOpen ? <Icon icon='hamburguerMenu' /> : <Icon icon='timesDefault' />}
+        </Button>
+      </div>
+
       <div className={classes.logo}>
         <NextLink href='/'>
           <Link href='/' style={{ display: 'inline-block' }}>
@@ -36,8 +50,8 @@ export function AppHeader(props: AppHeaderProps) {
       </div>
 
       <div>
-        <Tooltip text={currentTheme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
-          <Button skin='ghost' size='small' onClick={onThemeSwitch}>
+        <Tooltip text={theme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
+          <Button skin='ghost' size='small' onClick={switchTheme}>
             <Icon icon='lightbulbFilled' />
           </Button>
         </Tooltip>
@@ -55,14 +69,29 @@ const createStyles = (theme: Theme) => ({
     boxShadow: theme.shadows.outer[60],
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'space-between',
     zIndex: 20,
     position: 'fixed',
     width: '100%',
   } as React.CSSProperties,
+  menuIcon: {
+    display: 'none',
+
+    [theme.breakpoints.down('md')]: {
+      display: 'block',
+    },
+  },
   logo: {
     borderRight: `1px solid ${theme.pallete.divider}`,
     width: `calc(${SIDE_NAV_WIDTH}px - 2rem)`,
     padding: '0 1rem 0 2.75rem',
+
+    [theme.breakpoints.down('md')]: {
+      borderRight: 'none',
+      width: 'auto',
+      paddingRight: 0,
+      paddingLeft: 0,
+    },
   } as React.CSSProperties,
   searchInput: {
     border: 'none',
@@ -74,6 +103,10 @@ const createStyles = (theme: Theme) => ({
     } as React.CSSProperties,
   } as React.CSSProperties,
   search: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+
     flex: 1,
     padding: '0 1rem',
     position: 'relative',

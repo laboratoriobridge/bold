@@ -1,4 +1,4 @@
-import { useStyles } from '../../styles'
+import { useStyles } from '../styles'
 
 import { useTransition } from './useTransition'
 
