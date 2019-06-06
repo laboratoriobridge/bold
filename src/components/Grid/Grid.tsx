@@ -67,6 +67,7 @@ export function Grid(props: GridProps) {
 Grid.defaultProps = {
   gap: 2,
   gapVertical: 1,
+  wrap: true,
 } as Partial<GridProps>
 
 export const createStyles = (theme: Theme, { direction, alignItems, justifyContent, gap, gapVertical }: GridProps) => ({
