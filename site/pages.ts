@@ -41,6 +41,7 @@ export default [
       { href: '/components/link', title: 'Link' },
       { href: '/components/modal', title: 'Modal' },
       { href: '/components/multi-select', title: 'Multi Select' },
+      { href: '/components/paginator', title: 'Paginator' },
       { href: '/components/radio-button', title: 'Radio Button' },
       { href: '/components/search', title: 'Search' },
       { href: '/components/select', title: 'Select' },
