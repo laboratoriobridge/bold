@@ -1,6 +1,7 @@
-import { CSSProperties, useEffect, useState } from 'react'
+import { CSSProperties } from 'react'
 
-import { darkTheme, Heading, Link as BoldLink, Text, Theme, useStyles } from '../../../lib'
+import { Heading, Link as BoldLink, Text, Theme, useStyles } from '../../../lib'
+import { Image as BoldImage } from '../Image'
 
 export function Paragraph(props: any) {
   const { classes } = useStyles(createStyles)
@@ -20,20 +21,8 @@ export function Link(props: any) {
 }
 
 export function Image(props: any) {
-  const { theme, classes } = useStyles(createStyles)
-
-  const [currentSource, setCurrentSource] = useState(props.src)
-  useEffect(() => {
-    const [, path, filename] = /(.*)\/(.*\..*)$/.exec(props.src)
-    const darkSource = `${path}/dark-${filename}`
-    setCurrentSource(theme === darkTheme ? darkSource : props.src)
-  }, [theme, props])
-
-  const handleError = () => {
-    setCurrentSource(props.src)
-  }
-
-  return <img {...props} src={currentSource} onError={handleError} className={classes.image} />
+  const { classes } = useStyles(createStyles)
+  return <BoldImage className={classes.image} {...props} />
 }
 
 export function UnorderedList(props: any) {
