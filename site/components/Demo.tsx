@@ -47,6 +47,5 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   component: {
     padding: '1.5rem',
-    overflow: 'auto',
   } as CSSProperties,
 })
