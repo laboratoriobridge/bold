@@ -23908,7 +23908,7 @@ function notifySubscriber(subscriber, subscription, state, lastState, filter, fo
 function notify(_ref2, state, lastState, filter) {
   var entries = _ref2.entries;
   Object.keys(entries).forEach(function (key) {
-    var entry = entries[Number(key)];
+    var entry = entries[Number(key)]; // istanbul ignore next
 
     if (entry) {
       var subscription = entry.subscription,
@@ -24108,10 +24108,13 @@ var createForm = function createForm(config) {
 
     var fields = state.fields,
         formState = state.formState;
-    var fieldKeys = Object.keys(fields);
+
+    var safeFields = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, fields);
+
+    var fieldKeys = Object.keys(safeFields);
 
     if (!validate && !fieldKeys.some(function (key) {
-      return getValidators(fields[key]).length;
+      return getValidators(safeFields[key]).length;
     })) {
       if (callback) {
         callback();
@@ -24124,7 +24127,7 @@ var createForm = function createForm(config) {
     var limitedFieldLevelValidation = false;
 
     if (fieldChanged) {
-      var changedField = fields[fieldChanged];
+      var changedField = safeFields[fieldChanged];
 
       if (changedField) {
         var validateFields = changedField.validateFields;
@@ -24141,7 +24144,7 @@ var createForm = function createForm(config) {
     var promises = [].concat(runRecordLevelValidation(function (errors) {
       recordLevelErrors = errors || {};
     }), fieldKeys.reduce(function (result, name) {
-      return result.concat(runFieldLevelValidation(fields[name], function (error) {
+      return result.concat(runFieldLevelValidation(safeFields[name], function (error) {
         fieldLevelErrors[name] = error;
       }));
     }, []));
@@ -24156,7 +24159,7 @@ var createForm = function createForm(config) {
             // field-level errors take precedent over record-level errors
             var recordLevelError = getIn(recordLevelErrors, name);
             var errorFromParent = getIn(merged, name);
-            var hasFieldLevelValidation = getValidators(fields[name]).length;
+            var hasFieldLevelValidation = getValidators(safeFields[name]).length;
             var fieldLevelError = fieldLevelErrors[name];
             fn(name, hasFieldLevelValidation && fieldLevelError || validate && recordLevelError || (!recordLevelError && !limitedFieldLevelValidation ? errorFromParent : undefined));
           }
@@ -24216,8 +24219,11 @@ var createForm = function createForm(config) {
     var fields = state.fields,
         fieldSubscribers = state.fieldSubscribers,
         formState = state.formState;
-    Object.keys(fields).forEach(function (name) {
-      var field = fields[name];
+
+    var safeFields = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, fields);
+
+    Object.keys(safeFields).forEach(function (name) {
+      var field = safeFields[name];
       var fieldState = publishFieldState(formState, field);
       var lastFieldState = field.lastFieldState;
 
@@ -24230,7 +24236,7 @@ var createForm = function createForm(config) {
         // )
         // console.debug(
         //   'notifying',
-        //   name,
+        //   field.name,
         //   '\nField State\n',
         //   diffKeys.reduce(
         //     (result, key) => ({ ...result, [key]: fieldState[key] }),
@@ -24246,7 +24252,11 @@ var createForm = function createForm(config) {
         //   )
         // )
         field.lastFieldState = fieldState;
-        notify(fieldSubscribers[name], fieldState, lastFieldState, filterFieldState);
+        var fieldSubscriber = fieldSubscribers[name];
+
+        if (fieldSubscriber) {
+          notify(fieldSubscriber, fieldState, lastFieldState, filterFieldState);
+        }
       }
     });
   };
@@ -24265,11 +24275,14 @@ var createForm = function createForm(config) {
     var fields = state.fields,
         formState = state.formState,
         lastFormState = state.lastFormState;
-    var fieldKeys = Object.keys(fields); // calculate dirty/pristine
+
+    var safeFields = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, fields);
+
+    var safeFieldKeys = Object.keys(safeFields); // calculate dirty/pristine
 
     var foundDirty = false;
-    var dirtyFields = fieldKeys.reduce(function (result, key) {
-      var dirty = !fields[key].isEqual(getIn(formState.values, key), getIn(formState.initialValues || {}, key));
+    var dirtyFields = safeFieldKeys.reduce(function (result, key) {
+      var dirty = !safeFields[key].isEqual(getIn(formState.values, key), getIn(formState.initialValues || {}, key));
 
       if (dirty) {
         foundDirty = true;
@@ -24279,28 +24292,28 @@ var createForm = function createForm(config) {
       return result;
     }, {});
     formState.pristine = !foundDirty;
-    formState.dirtySinceLastSubmit = !!(formState.lastSubmittedValues && !fieldKeys.every(function (key) {
+    formState.dirtySinceLastSubmit = !!(formState.lastSubmittedValues && !safeFieldKeys.every(function (key) {
       // istanbul ignore next
       var nonNullLastSubmittedValues = formState.lastSubmittedValues || {}; // || {} is for flow, but causes branch coverage complaint
 
-      return fields[key].isEqual(getIn(formState.values, key), getIn(nonNullLastSubmittedValues, key));
+      return safeFields[key].isEqual(getIn(formState.values, key), getIn(nonNullLastSubmittedValues, key));
     }));
     formState.valid = !formState.error && !formState.submitError && !hasAnyError(formState.errors) && !(formState.submitErrors && hasAnyError(formState.submitErrors));
     var nextFormState = convertToExternalFormState(formState);
 
-    var _fieldKeys$reduce = fieldKeys.reduce(function (result, key) {
-      result.modified[key] = fields[key].modified;
-      result.touched[key] = fields[key].touched;
-      result.visited[key] = fields[key].visited;
+    var _safeFieldKeys$reduce = safeFieldKeys.reduce(function (result, key) {
+      result.modified[key] = safeFields[key].modified;
+      result.touched[key] = safeFields[key].touched;
+      result.visited[key] = safeFields[key].visited;
       return result;
     }, {
       modified: {},
       touched: {},
       visited: {}
     }),
-        modified = _fieldKeys$reduce.modified,
-        touched = _fieldKeys$reduce.touched,
-        visited = _fieldKeys$reduce.visited;
+        modified = _safeFieldKeys$reduce.modified,
+        touched = _safeFieldKeys$reduce.touched,
+        visited = _safeFieldKeys$reduce.visited;
 
     nextFormState.dirtyFields = lastFormState && shallowEqual(lastFormState.dirtyFields, dirtyFields) ? lastFormState.dirtyFields : dirtyFields;
     nextFormState.modified = lastFormState && shallowEqual(lastFormState.modified, modified) ? lastFormState.modified : modified;
@@ -24444,20 +24457,23 @@ var createForm = function createForm(config) {
     initialize: function initialize(data) {
       var fields = state.fields,
           formState = state.formState;
+
+      var safeFields = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, fields);
+
       var values = typeof data === 'function' ? data(formState.values) : data;
 
       if (!keepDirtyOnReinitialize) {
         formState.values = values;
       }
 
-      Object.keys(fields).forEach(function (key) {
-        var field = fields[key];
+      Object.keys(safeFields).forEach(function (key) {
+        var field = safeFields[key];
         field.modified = false;
         field.touched = false;
         field.visited = false;
 
         if (keepDirtyOnReinitialize) {
-          var pristine = fields[key].isEqual(getIn(formState.values, key), getIn(formState.initialValues || {}, key));
+          var pristine = field.isEqual(getIn(formState.values, key), getIn(formState.initialValues || {}, key));
 
           if (pristine) {
             // only update pristine values
@@ -31782,13 +31798,14 @@ function matchSorter(items, value) {
 
   var matchedItems = items.reduce(function (matches, item, index) {
     var _getHighestRanking = getHighestRanking(item, keys, value, options),
+        rankedItem = _getHighestRanking.rankedItem,
         rank = _getHighestRanking.rank,
         keyIndex = _getHighestRanking.keyIndex,
         _getHighestRanking$ke = _getHighestRanking.keyThreshold,
         keyThreshold = _getHighestRanking$ke === undefined ? threshold : _getHighestRanking$ke;
 
     if (rank >= keyThreshold) {
-      matches.push({ item: item, rank: rank, index: index, keyIndex: keyIndex });
+      matches.push({ rankedItem: rankedItem, item: item, rank: rank, index: index, keyIndex: keyIndex });
     }
     return matches;
   }, []);
@@ -31809,6 +31826,8 @@ function matchSorter(items, value) {
 function getHighestRanking(item, keys, value, options) {
   if (!keys) {
     return {
+      // ends up being duplicate of 'item' in matches but consistent
+      rankedItem: item,
       rank: getMatchRanking(item, value, options),
       keyIndex: -1,
       keyThreshold: options.threshold
@@ -31837,7 +31856,7 @@ function getHighestRanking(item, keys, value, options) {
       keyIndex = i;
       keyThreshold = threshold;
     }
-    return { rank: rank, keyIndex: keyIndex, keyThreshold: keyThreshold };
+    return { rankedItem: itemValue, rank: rank, keyIndex: keyIndex, keyThreshold: keyThreshold };
   }, { rank: rankings.NO_MATCH, keyIndex: -1, keyThreshold: options.threshold });
 }
 
@@ -32032,24 +32051,30 @@ function isCaseAcronym(testString, stringToRank, caseRank) {
  * Returns a score based on how spread apart the
  * characters from the stringToRank are within the testString.
  * A number close to rankings.MATCHES represents a loose match. A number close
- * to rankings.MATCHES + 1 represents a loose match.
+ * to rankings.MATCHES + 1 represents a tighter match.
  * @param {String} testString - the string to test against
  * @param {String} stringToRank - the string to rank
  * @returns {Number} the number between rankings.MATCHES and
  * rankings.MATCHES + 1 for how well stringToRank matches testString
  */
 function getClosenessRanking(testString, stringToRank) {
+  var matchingInOrderCharCount = 0;
   var charNumber = 0;
   function findMatchingCharacter(matchChar, string, index) {
     for (var j = index; j < string.length; j++) {
       var stringChar = string[j];
       if (stringChar === matchChar) {
+        matchingInOrderCharCount += 1;
         return j + 1;
       }
     }
     return -1;
   }
-
+  function getRanking(spread) {
+    var inOrderPercentage = matchingInOrderCharCount / stringToRank.length;
+    var ranking = rankings.MATCHES + inOrderPercentage * (1 / spread);
+    return ranking;
+  }
   var firstIndex = findMatchingCharacter(stringToRank[0], testString, 0);
   if (firstIndex < 0) {
     return rankings.NO_MATCH;
@@ -32065,11 +32090,7 @@ function getClosenessRanking(testString, stringToRank) {
   }
 
   var spread = charNumber - firstIndex;
-  return function (spread) {
-    var matching = spread - stringToRank.length + 1;
-    var ranking = rankings.MATCHES + 1 / matching;
-    return ranking;
-  }(spread);
+  return getRanking(spread);
 }
 
 /**
@@ -32082,16 +32103,16 @@ function getClosenessRanking(testString, stringToRank) {
 function sortRankedItems(a, b) {
   var aFirst = -1;
   var bFirst = 1;
-  var aRank = a.rank,
-      aIndex = a.index,
+  var aRankedItem = a.rankedItem,
+      aRank = a.rank,
       aKeyIndex = a.keyIndex;
-  var bRank = b.rank,
-      bIndex = b.index,
+  var bRankedItem = b.rankedItem,
+      bRank = b.rank,
       bKeyIndex = b.keyIndex;
 
   if (aRank === bRank) {
     if (aKeyIndex === bKeyIndex) {
-      return aIndex < bIndex ? aFirst : bFirst;
+      return aRankedItem.localeCompare(bRankedItem);
     } else {
       return aKeyIndex < bKeyIndex ? aFirst : bFirst;
     }
@@ -37752,7 +37773,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! warning */ "../node_modules/react-popper/node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! warning */ "../node_modules/warning/warning.js");
 /* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _Manager__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Manager */ "../node_modules/react-popper/lib/esm/Manager.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./utils */ "../node_modules/react-popper/lib/esm/utils.js");
@@ -37870,80 +37891,6 @@ var safeInvoke = function safeInvoke(fn) {
     return fn.apply(void 0, args);
   }
 };
-
-/***/ }),
-
-/***/ "../node_modules/react-popper/node_modules/warning/warning.js":
-/*!********************************************************************!*\
-  !*** ../node_modules/react-popper/node_modules/warning/warning.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
-
-var __DEV__ = "development" !== 'production';
-
-var warning = function() {};
-
-if (__DEV__) {
-  var printWarning = function printWarning(format, args) {
-    var len = arguments.length;
-    args = new Array(len > 1 ? len - 1 : 0);
-    for (var key = 1; key < len; key++) {
-      args[key - 1] = arguments[key];
-    }
-    var argIndex = 0;
-    var message = 'Warning: ' +
-      format.replace(/%s/g, function() {
-        return args[argIndex++];
-      });
-    if (typeof console !== 'undefined') {
-      console.error(message);
-    }
-    try {
-      // --- Welcome to debugging React ---
-      // This error was thrown as a convenience so that you can use this stack
-      // to find the callsite that caused this warning to fire.
-      throw new Error(message);
-    } catch (x) {}
-  }
-
-  warning = function(condition, format, args) {
-    var len = arguments.length;
-    args = new Array(len > 2 ? len - 2 : 0);
-    for (var key = 2; key < len; key++) {
-      args[key - 2] = arguments[key];
-    }
-    if (format === undefined) {
-      throw new Error(
-          '`warning(condition, format, ...args)` requires a warning ' +
-          'message argument'
-      );
-    }
-    if (!condition) {
-      printWarning.apply(null, [format].concat(args));
-    }
-  };
-}
-
-module.exports = warning;
-
 
 /***/ }),
 
@@ -39078,6 +39025,80 @@ function __importStar(mod) {
 function __importDefault(mod) {
     return (mod && mod.__esModule) ? mod : { default: mod };
 }
+
+
+/***/ }),
+
+/***/ "../node_modules/warning/warning.js":
+/*!******************************************!*\
+  !*** ../node_modules/warning/warning.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+
+/**
+ * Similar to invariant but only logs a warning if the condition is not met.
+ * This can be used to log issues in development environments in critical
+ * paths. Removing the logging code for production environments will keep the
+ * same logic and follow the same code paths.
+ */
+
+var __DEV__ = "development" !== 'production';
+
+var warning = function() {};
+
+if (__DEV__) {
+  var printWarning = function printWarning(format, args) {
+    var len = arguments.length;
+    args = new Array(len > 1 ? len - 1 : 0);
+    for (var key = 1; key < len; key++) {
+      args[key - 1] = arguments[key];
+    }
+    var argIndex = 0;
+    var message = 'Warning: ' +
+      format.replace(/%s/g, function() {
+        return args[argIndex++];
+      });
+    if (typeof console !== 'undefined') {
+      console.error(message);
+    }
+    try {
+      // --- Welcome to debugging React ---
+      // This error was thrown as a convenience so that you can use this stack
+      // to find the callsite that caused this warning to fire.
+      throw new Error(message);
+    } catch (x) {}
+  }
+
+  warning = function(condition, format, args) {
+    var len = arguments.length;
+    args = new Array(len > 2 ? len - 2 : 0);
+    for (var key = 2; key < len; key++) {
+      args[key - 2] = arguments[key];
+    }
+    if (format === undefined) {
+      throw new Error(
+          '`warning(condition, format, ...args)` requires a warning ' +
+          'message argument'
+      );
+    }
+    if (!condition) {
+      printWarning.apply(null, [format].concat(args));
+    }
+  };
+}
+
+module.exports = warning;
 
 
 /***/ }),
