@@ -2447,6 +2447,7 @@ exports.Grid = Grid;
 Grid.defaultProps = {
     gap: 2,
     gapVertical: 1,
+    wrap: true,
 };
 exports.createStyles = function (theme, _a) {
     var direction = _a.direction, alignItems = _a.alignItems, justifyContent = _a.justifyContent, gap = _a.gap, gapVertical = _a.gapVertical;
