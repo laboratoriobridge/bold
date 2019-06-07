@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React, { AnchorHTMLAttributes } from 'react'
-import { render } from 'react-testing-library'
 
 import { Text } from './Text'
 

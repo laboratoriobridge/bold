@@ -1,6 +1,6 @@
+import { render } from '@testing-library/react'
 import 'jest-emotion'
 import React from 'react'
-import { render } from 'react-testing-library'
 
 import { TextInputBase } from './TextInputBase'
 

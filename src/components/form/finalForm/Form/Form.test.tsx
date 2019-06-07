@@ -1,6 +1,6 @@
+import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
 import { Field as FinalFormField } from 'react-final-form'
-import { fireEvent, render, wait } from 'react-testing-library'
 
 import { Field, RenderProps } from '../Field'
 

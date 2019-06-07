@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { render } from 'react-testing-library'
 
 import { Cell } from './Cell'
 import { Grid } from './Grid'

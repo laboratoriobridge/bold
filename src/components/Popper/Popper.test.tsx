@@ -1,5 +1,5 @@
+import { fireEvent, getByText, render } from '@testing-library/react'
 import React from 'react'
-import { fireEvent, getByText, render } from 'react-testing-library'
 
 import { Popper, PopperController, PopperProps } from './Popper'
 

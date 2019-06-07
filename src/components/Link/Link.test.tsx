@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React, { ButtonHTMLAttributes } from 'react'
-import { render } from 'react-testing-library'
 
 import { Link } from './Link'
 

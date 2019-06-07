@@ -1,6 +1,6 @@
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { Form } from 'react-final-form'
-import { fireEvent, render } from 'react-testing-library'
 
 import { SubmitButton } from './SubmitButton'
 

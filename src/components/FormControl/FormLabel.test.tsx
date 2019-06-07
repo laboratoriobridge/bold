@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { render } from 'react-testing-library'
 
 import { LocaleContext } from '../../locale'
 import ptBr from '../../locale/locales/pt-BR'
