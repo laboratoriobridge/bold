@@ -1,5 +1,5 @@
+import { fireEvent, render, wait } from '@testing-library/react'
 import React, { createRef } from 'react'
-import { fireEvent, render, wait } from 'react-testing-library'
 
 import * as stringUtils from '../../util/string'
 

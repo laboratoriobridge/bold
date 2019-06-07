@@ -9,8 +9,8 @@ export function AppFooter() {
   return (
     <footer className={classes.footer}>
       <PageContainer>
-        <Grid>
-          <Cell xs={6}>
+        <Grid justifyContent='space-between'>
+          <Cell xs={12} sm={6}>
             <HFlow>
               <Link href='https://ufsc.br/' target='_blank' style={{ display: 'inline-block' }}>
                 <Image src='/static/image/logo-ufsc.svg' alt='Universidade Federal de Santa Catarina' />
@@ -20,8 +20,8 @@ export function AppFooter() {
               </Link>
             </HFlow>
           </Cell>
-          <Cell xs={6}>
-            <HFlow justifyContent='flex-end'>
+          <Cell>
+            <HFlow>
               <Link
                 href='https://www.linkedin.com/company/laborat%C3%B3rio-bridge/'
                 target='_blank'

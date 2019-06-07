@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { render } from 'react-testing-library'
 
 import * as DatePickerInputModule from './DatePickerInput'
 import { DatePickerInput, disableByRange } from './DatePickerInput'

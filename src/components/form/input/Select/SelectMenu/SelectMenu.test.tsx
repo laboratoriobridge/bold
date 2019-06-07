@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react'
 import React, { createRef } from 'react'
-import { render } from 'react-testing-library'
 
 import { SelectMenu } from './SelectMenu'
 import { SelectMenuItem } from './SelectMenuItem'

@@ -1,7 +1,7 @@
+import { render } from '@testing-library/react'
 import setFieldData from 'final-form-set-field-data'
 import React from 'react'
 import { Form } from 'react-final-form'
-import { render } from 'react-testing-library'
 
 import metaPath from '../../../../metaPath/metaPath'
 

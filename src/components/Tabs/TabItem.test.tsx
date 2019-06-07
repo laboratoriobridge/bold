@@ -1,6 +1,6 @@
+import { render } from '@testing-library/react'
 import React from 'react'
 import { AnchorHTMLAttributes } from 'react'
-import { render } from 'react-testing-library'
 
 import { TabItem, TabItemProps } from './TabItem'
 import { Tabs } from './Tabs'

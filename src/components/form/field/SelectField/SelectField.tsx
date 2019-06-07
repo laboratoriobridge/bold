@@ -16,7 +16,7 @@ export class SelectField<T = DefaultItemType> extends React.Component<SelectFiel
     return (
       <Select<T>
         {...extractInputProps<SelectProps<T>>(this.props)}
-        {...props.input as any}
+        {...(props.input as any)}
         status={props.hasError ? 'error' : undefined}
       />
     )

@@ -1,7 +1,9 @@
+import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
-import { fireEvent, render, wait } from 'react-testing-library'
+
 import * as stringUtils from '../../util/string'
 import { Icon } from '../Icon'
+
 import { DropdownButton, DropdownButtonProps } from './DropdownButton'
 ;(stringUtils as any).randomStr = jest.fn(() => 'abc')
 

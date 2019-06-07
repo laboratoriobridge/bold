@@ -1,9 +1,9 @@
+import { render } from '@testing-library/react'
 import React from 'react'
-import { render } from 'react-testing-library'
 
 import { TableFilledBody, TableFilledBodyProps } from './TableFilledBody'
-import { TablePlaceholderRow } from './TablePlaceholderRow'
 import { TableLoadingRow } from './TableLoadingRow'
+import { TablePlaceholderRow } from './TablePlaceholderRow'
 
 interface Row {
   id: number

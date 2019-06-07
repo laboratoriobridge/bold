@@ -1,5 +1,5 @@
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-import { fireEvent, render } from 'react-testing-library'
 
 import { LocaleContext } from '../../locale'
 import ptBr from '../../locale/locales/pt-BR'
