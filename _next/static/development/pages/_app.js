@@ -52610,6 +52610,9 @@ __webpack_require__.r(__webpack_exports__);
     href: '/components/multi-select',
     title: 'Multi Select'
   }, {
+    href: '/components/paginator',
+    title: 'Paginator'
+  }, {
     href: '/components/radio-button',
     title: 'Radio Button'
   }, {
