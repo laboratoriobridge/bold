@@ -66617,39 +66617,39 @@ function Demo(props) {
   var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_2__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
-  var _demos$ = _demos__WEBPACK_IMPORTED_MODULE_3__["default"]["./".concat(src, ".demo.tsx")],
-      Component = _demos$.Component,
-      source = _demos$.source;
+  var demo = _demos__WEBPACK_IMPORTED_MODULE_3__["default"]["./".concat(src, ".demo.tsx")];
 
-  if (!Component) {
-    throw new Error("Demo ".concat(src, " not found. You must specify the demo import location on file \"demos.ts\""));
+  if (!demo) {
+    throw new Error("Demo file ".concat(src, ".demo.tsx not found."));
   }
 
+  var Component = demo.Component,
+      source = demo.source;
   var Source = highlight_js__WEBPACK_IMPORTED_MODULE_0___default.a.highlight('jsx', source.replace(/from '(\.\.\/)+lib'/g, "from 'bold-ui'")).value;
   return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.wrapper,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 25
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: classes.component,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 26
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 27
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("pre", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 29
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("code", {
@@ -66659,7 +66659,7 @@ function Demo(props) {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 30
     },
     __self: this
   })));
@@ -69151,7 +69151,7 @@ function TooltipDefault() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!*******************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx ***!
   \*******************************************************************************************************************************************************************************/
@@ -69174,5 +69174,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=paginator.js.map
