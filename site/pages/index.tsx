@@ -21,12 +21,12 @@ export default () => {
           </Cell>
           <Cell xs={3} flexBasis={240}>
             <Card title='Components' icon='bricksFilled'>
-              Discovery our component’s library, usage and code.
+              Discover our component’s library, usage and code.
             </Card>
           </Cell>
           <Cell xs={3} flexBasis={240}>
             <Card title='Storybook' icon='starFilled'>
-              Check our onboarding guide for designers and devs.
+              A development environment for UI components.
             </Card>
           </Cell>
         </Grid>
