@@ -11,11 +11,13 @@ export interface DemoProps {
 export function Demo(props: DemoProps) {
   const { src } = props
   const { classes } = useStyles(createStyles)
-  const { Component, source } = demos[`./${src}.demo.tsx`]
+  const demo = demos[`./${src}.demo.tsx`]
 
-  if (!Component) {
-    throw new Error(`Demo ${src} not found. You must specify the demo import location on file "demos.ts"`)
+  if (!demo) {
+    throw new Error(`Demo file ${src}.demo.tsx not found.`)
   }
+
+  const { Component, source } = demo
 
   const Source = hljs.highlight('jsx', source.replace(/from '(\.\.\/)+lib'/g, `from 'bold-ui'`)).value
 
