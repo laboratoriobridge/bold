@@ -232,7 +232,7 @@ exports[`should render correctly with button 1`] = `
             width="1em"
           >
             <path
-              d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+              d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
             />
           </svg>
         </span>
@@ -353,7 +353,7 @@ exports[`should render correctly with left position 1`] = `
         width="1em"
       >
         <path
-          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
         />
       </svg>
     </span>
@@ -419,7 +419,7 @@ exports[`should render correctly without clear icon 1`] = `
         width="1em"
       >
         <path
-          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
         />
       </svg>
     </span>
@@ -485,7 +485,7 @@ exports[`should render correctly without clear icon AND left position 1`] = `
         width="1em"
       >
         <path
-          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
         />
       </svg>
     </span>

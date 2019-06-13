@@ -43,6 +43,7 @@ exports[`should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #0069D0;
+  pointer-events: none;
 }
 
 .emotion-9:hover {

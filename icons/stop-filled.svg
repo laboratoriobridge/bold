@@ -2,5 +2,5 @@
     <defs>
         <path id="a" d="M6 20h12c1.333 0 2-.667 2-2V6c0-1.333-.667-2-2-2H6c-1.333-.009-2 .658-2 2v12c0 1.333.667 2 2 2z"/>
     </defs>
-    <use fill="#53595E" fill-rule="evenodd" xlink:href="#a"/>
+    <use fill="#686A75" fill-rule="evenodd" xlink:href="#a"/>
 </svg>

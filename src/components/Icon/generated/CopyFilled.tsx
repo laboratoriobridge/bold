@@ -6,7 +6,7 @@ const SvgCopyFilled = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='copy-filled_svg__a'
-        d='M16 6h-6c-1.336 0-2.002.667-2 2v10H4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h10c1.333 0 2 .667 2 2v2zm6 2v12c0 1.333-.667 2-2 2H10V8h12z'
+        d='M19 6h-9c-1.336 0-2.002.667-2 2v10H4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h10c1.333 0 2 .667 2 2v2h3zm3 2v12c0 1.333-.667 2-2 2H10V8h12z'
       />
     </defs>
     <use xlinkHref='#copy-filled_svg__a' />
