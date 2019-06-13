@@ -1,3 +1,5 @@
+import NextLink from 'next/link'
+
 import { Cell, Grid, Icon, Icons, Theme, useStyles } from '../../lib'
 
 export default () => {
@@ -15,17 +17,17 @@ export default () => {
       <div className={classes.cards}>
         <Grid wrap style={classes.cardsGrid}>
           <Cell xs={3} flexBasis={240}>
-            <Card title='Getting started' icon='rocket'>
+            <Card title='Getting started' icon='rocket' href='/getting-started'>
               Check our onboarding guide for designers and devs.
             </Card>
           </Cell>
           <Cell xs={3} flexBasis={240}>
-            <Card title='Components' icon='bricksFilled'>
+            <Card title='Components' icon='bricksFilled' href='/components/accordion'>
               Discover our component’s library, usage and code.
             </Card>
           </Cell>
           <Cell xs={3} flexBasis={240}>
-            <Card title='Storybook' icon='starFilled'>
+            <Card title='Storybook' icon='starFilled' href='/storybook'>
               A development environment for UI components.
             </Card>
           </Cell>
@@ -66,20 +68,23 @@ const createStyles = (theme: Theme) => ({
 interface CardProps {
   title: string
   icon: Icons
+  href: string
   children: React.ReactNode
 }
 
 function Card(props: CardProps) {
-  const { title, children, icon } = props
+  const { title, children, icon, href } = props
   const { classes } = useStyles(createCardStyles)
 
   return (
-    <div className={classes.card}>
-      <Icon icon={icon} style={classes.icon} size={2.5} />
-      <h3 className={classes.title}>{title}</h3>
-      <hr className={classes.divider} />
-      {children}
-    </div>
+    <NextLink href={href}>
+      <a className={classes.card} href={href}>
+        <Icon icon={icon} style={classes.icon} size={2.5} />
+        <h3 className={classes.title}>{title}</h3>
+        <hr className={classes.divider} />
+        {children}
+      </a>
+    </NextLink>
   )
 }
 
@@ -91,6 +96,9 @@ const createCardStyles = (theme: Theme) => ({
     boxShadow: theme.shadows.outer[80],
     background: theme.pallete.surface.main,
     borderRadius: 2,
+    display: 'block',
+    textDecoration: 'none',
+    color: theme.pallete.text.main,
   } as React.CSSProperties,
   title: {
     margin: 0,
