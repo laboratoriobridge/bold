@@ -17523,6 +17523,7 @@ __export(__webpack_require__(/*! ./purple */ "../lib/styles/colors/purple.js"));
 __export(__webpack_require__(/*! ./red */ "../lib/styles/colors/red.js"));
 __export(__webpack_require__(/*! ./turquoise */ "../lib/styles/colors/turquoise.js"));
 __export(__webpack_require__(/*! ./yellow */ "../lib/styles/colors/yellow.js"));
+__export(__webpack_require__(/*! ./pink */ "../lib/styles/colors/pink.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -17550,6 +17551,32 @@ exports.orange = {
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=orange.js.map
+
+/***/ }),
+
+/***/ "../lib/styles/colors/pink.js":
+/*!************************************!*\
+  !*** ../lib/styles/colors/pink.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.pink = {
+    c10: '#4E0627',
+    c20: '#74103E',
+    c30: '#9D1756',
+    c40: '#C8206F',
+    c50: '#E62881',
+    c60: '#F65495',
+    c70: '#F888AE',
+    c80: '#FBC7D5',
+    c90: '#FEECF1',
+    c100: '#FFFFFF',
+};
+//# sourceMappingURL=pink.js.map
 
 /***/ }),
 
