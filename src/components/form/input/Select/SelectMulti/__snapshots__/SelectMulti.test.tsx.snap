@@ -3,9 +3,9 @@
 exports[`should render correctly when closed 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
+  border: solid 1px #AAAAB9;
   border-radius: 2px;
-  color: #2D343B;
+  color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -50,23 +50,23 @@ exports[`should render correctly when closed 1`] = `
 }
 
 .emotion-1:hover {
-  border-color: #818489;
+  border-color: #8F8FA2;
 }
 
 .emotion-1:active {
-  border-color: #0A67D1;
+  border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 .emotion-1:focus-within {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #2D343B;
+  color: #3A3A47;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -78,24 +78,24 @@ exports[`should render correctly when closed 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
 }
 
 .emotion-2 {
@@ -133,9 +133,9 @@ exports[`should render correctly when closed 1`] = `
 exports[`should render correctly when opened 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
+  border: solid 1px #AAAAB9;
   border-radius: 2px;
-  color: #2D343B;
+  color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -180,23 +180,23 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-1:hover {
-  border-color: #818489;
+  border-color: #8F8FA2;
 }
 
 .emotion-1:active {
-  border-color: #0A67D1;
+  border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
 .emotion-1:focus-within {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #2D343B;
+  color: #3A3A47;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -208,24 +208,24 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
 }
 
 .emotion-38 {
@@ -236,7 +236,7 @@ exports[`should render correctly when opened 1`] = `
   list-style: none;
   margin: 0;
   padding: 0;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   border-radius: 2px;
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
@@ -249,7 +249,7 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-8 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
@@ -261,7 +261,7 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-8:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-7 {
@@ -305,7 +305,7 @@ exports[`should render correctly when opened 1`] = `
 
 .emotion-3 {
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #AAAAB9;
   border-radius: 2px;
   display: inline-block;
   height: 16px;
@@ -322,12 +322,12 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-2:hover + .emotion-3 {
-  border-color: #53595E;
+  border-color: #696979;
 }
 
 .emotion-2:checked + .emotion-3 {
-  background-color: #0A67D1;
-  border-color: #0A67D1;
+  background-color: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-2:checked + .emotion-3:after {
@@ -349,12 +349,12 @@ exports[`should render correctly when opened 1`] = `
 
 .emotion-2:indeterminate + .emotion-3 {
   background-color: #FFFFFF;
-  border-color: #0A67D1;
+  border-color: #0069D0;
 }
 
 .emotion-2:indeterminate + .emotion-3:after {
   content: "";
-  border-bottom: 2px solid #0A67D1;
+  border-bottom: 2px solid #0069D0;
   position: absolute;
   top: -1px;
   left: 3px;
@@ -366,16 +366,16 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-2:focus + .emotion-3 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-2:disabled + .emotion-3 {
-  background-color: #F2F2F7;
-  border-color: #F2F2F7;
+  background-color: #F0F0F5;
+  border-color: #F0F0F5;
 }
 
-.emotion-2:disabled + .emotion-3 + .css-23ramq {
-  color: #B9B9BD;
+.emotion-2:disabled + .emotion-3 + .css-tue92x {
+  color: #AAAAB9;
 }
 
 <div>

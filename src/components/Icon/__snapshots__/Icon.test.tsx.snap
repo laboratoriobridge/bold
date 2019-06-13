@@ -2,7 +2,7 @@
 
 exports[`should accept fill prop 1`] = `
 .emotion-0 {
-  fill: #D83A2E;
+  fill: #D01E29;
   font-size: 1.5rem;
 }
 
@@ -59,7 +59,7 @@ exports[`should accept size prop 1`] = `
 exports[`should accept stroke prop 1`] = `
 .emotion-0 {
   fill: currentColor;
-  stroke: #BF4600;
+  stroke: #AD5000;
   font-size: 1.5rem;
 }
 

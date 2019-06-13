@@ -33,7 +33,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   width: 21.25rem;
   height: 13.5rem;
   padding: 1rem;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
 }
@@ -96,7 +96,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -118,11 +118,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 
 .emotion-1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-0 {
@@ -134,7 +134,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -191,13 +191,13 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1.375rem;
   -webkit-transition-property: background;
   transition-property: background;
-  background: #0A67D1 !important;
+  background: #0069D0 !important;
   color: #FFFFFF;
 }
 
@@ -218,11 +218,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 
 .emotion-10:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-10:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-12 {
@@ -247,7 +247,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1.375rem;
@@ -272,11 +272,11 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 
 .emotion-12:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-12:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 <div>

@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   height: 40px;
 }
 
@@ -29,7 +29,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-16 {
-  border-left: 1px solid #DCDCE0;
+  border-left: 1px solid #D3D4DD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,7 +83,7 @@ exports[`renders correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #2D343B;
+  color: #3A3A47;
 }
 
 .emotion-5 {
@@ -108,7 +108,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   padding: 0 0.25rem;
@@ -131,11 +131,11 @@ exports[`renders correctly 1`] = `
 
 .emotion-5:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-5:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-8 {
@@ -183,7 +183,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -205,11 +205,11 @@ exports[`renders correctly 1`] = `
 
 .emotion-9:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-9:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-11 {
@@ -238,7 +238,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   margin-left: 0.25rem;
@@ -261,18 +261,18 @@ exports[`renders correctly 1`] = `
 
 .emotion-14:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-14:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-10 {
   background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
+  border: solid 1px #AAAAB9;
   border-radius: 2px;
-  color: #2D343B;
+  color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -308,37 +308,37 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-10::-webkit-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-10::-moz-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-10:-ms-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-10::placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-10:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
 }
 
 .emotion-10:not(:disabled):hover {
-  border-color: #818489;
+  border-color: #8F8FA2;
 }
 
 .emotion-10:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-10:not(:disabled):active {
-  border-color: #0A67D1;
+  border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -476,7 +476,7 @@ exports[`renders without pagination 1`] = `
   -webkit-box-align: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   height: 40px;
 }
 

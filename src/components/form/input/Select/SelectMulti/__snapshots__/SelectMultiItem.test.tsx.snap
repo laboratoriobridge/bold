@@ -6,7 +6,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-1 {
-  background: #F2F2F7;
+  background: #F0F0F5;
   cursor: pointer;
   font-size: 1.25rem;
   display: -webkit-inline-box;
@@ -21,7 +21,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-1:hover {
-  color: #D83A2E;
+  color: #D01E29;
 }
 
 .emotion-1 svg {
@@ -29,7 +29,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-2 {
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   border-radius: 4px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;

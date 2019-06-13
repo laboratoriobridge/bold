@@ -3,13 +3,13 @@
 exports[`should render correctly 1`] = `
 .emotion-2 {
   outline: 0;
-  background: #F2F2F7;
+  background: #F0F0F5;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #AAAAB9;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -40,7 +40,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-3:hover .emotion-2 {
   cursor: pointer;
-  border-color: #53595E;
+  border-color: #696979;
 }
 
 .emotion-0 {
@@ -50,12 +50,12 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #0A67D1;
-  border-color: #0A67D1;
+  background: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #0A67D1;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -65,7 +65,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -96,13 +96,13 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly when disabled 1`] = `
 .emotion-2 {
   outline: 0;
-  background: #F2F2F7;
+  background: #F0F0F5;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #AAAAB9;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -137,7 +137,7 @@ exports[`should render correctly when disabled 1`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #53595E;
+  border-color: #696979;
 }
 
 .emotion-0 {
@@ -147,12 +147,12 @@ exports[`should render correctly when disabled 1`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #0A67D1;
-  border-color: #0A67D1;
+  background: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #0A67D1;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -162,7 +162,7 @@ exports[`should render correctly when disabled 1`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0:disabled + .emotion-2 {
@@ -199,13 +199,13 @@ exports[`should render correctly when disabled 1`] = `
 exports[`should render correctly with label 1`] = `
 .emotion-2 {
   outline: 0;
-  background: #F2F2F7;
+  background: #F0F0F5;
   border-radius: 0.75rem;
   padding: calc(0.25rem - 1px) 0.25rem;
   display: inline-block;
   width: 3rem;
   line-height: 0;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #AAAAB9;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -240,7 +240,7 @@ exports[`should render correctly with label 1`] = `
 
 .emotion-4:hover .emotion-2 {
   cursor: pointer;
-  border-color: #53595E;
+  border-color: #696979;
 }
 
 .emotion-0 {
@@ -250,12 +250,12 @@ exports[`should render correctly with label 1`] = `
 }
 
 .emotion-0:checked + .emotion-2 {
-  background: #0A67D1;
-  border-color: #0A67D1;
+  background: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2:hover {
-  border-color: #0A67D1;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-2 > .emotion-1 {
@@ -265,7 +265,7 @@ exports[`should render correctly with label 1`] = `
 }
 
 .emotion-0:focus + .emotion-2 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0:disabled + .emotion-2 {

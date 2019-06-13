@@ -19,7 +19,7 @@ exports[`should render correctly 2`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
-  background: #2D343B;
+  background: #3A3A47;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;

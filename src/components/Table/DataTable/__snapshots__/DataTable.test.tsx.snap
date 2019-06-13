@@ -4,24 +4,24 @@ exports[`should render correctly 1`] = `
 .emotion-4 {
   text-align: left;
   padding: 0.5rem 1rem;
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-17 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-30 {
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
 }
 
 .emotion-30 tr:hover td {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-3 {
@@ -39,18 +39,18 @@ exports[`should render correctly 1`] = `
 .emotion-2 {
   margin-left: 0.25rem;
   font-size: 1rem;
-  fill: #B9B9BD;
+  fill: #AAAAB9;
 }
 
 .emotion-0 {
-  fill: #0A67D1;
+  fill: #0069D0;
 }
 
 .emotion-19 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   text-align: right;
 }
 

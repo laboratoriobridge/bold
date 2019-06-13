@@ -32,9 +32,9 @@ exports[`should allow styles override 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #EBF4FA;
-  color: #0A67D1;
-  border-color: #0A67D1;
+  background: #ECF0FF;
+  color: #0069D0;
+  border-color: #0069D0;
   color: red;
 }
 
@@ -142,9 +142,9 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #EBF4FA;
-  color: #0A67D1;
-  border-color: #0A67D1;
+  background: #ECF0FF;
+  color: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-2 {
@@ -180,7 +180,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -202,11 +202,11 @@ exports[`should render correctly 1`] = `
 
 .emotion-3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-3:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-13 {
@@ -228,9 +228,9 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #E3FAD2;
-  color: #097D05;
-  border-color: #097D05;
+  background: #E1F6DF;
+  color: #217B00;
+  border-color: #217B00;
 }
 
 .emotion-20 {
@@ -252,9 +252,9 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #FAF0E8;
-  color: #BF4600;
-  border-color: #BF4600;
+  background: #FFECE8;
+  color: #AD5000;
+  border-color: #AD5000;
 }
 
 .emotion-27 {
@@ -276,9 +276,9 @@ exports[`should render correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #FCF0F0;
-  color: #D83A2E;
-  border-color: #D83A2E;
+  background: #FEECED;
+  color: #D01E29;
+  border-color: #D01E29;
 }
 
 <div>
@@ -551,9 +551,9 @@ exports[`should render correctly when inline 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #EBF4FA;
-  color: #0A67D1;
-  border-color: #0A67D1;
+  background: #ECF0FF;
+  color: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-0 {
@@ -581,9 +581,9 @@ exports[`should render correctly when inline 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #E3FAD2;
-  color: #097D05;
-  border-color: #097D05;
+  background: #E1F6DF;
+  color: #217B00;
+  border-color: #217B00;
 }
 
 .emotion-11 {
@@ -605,9 +605,9 @@ exports[`should render correctly when inline 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #FAF0E8;
-  color: #BF4600;
-  border-color: #BF4600;
+  background: #FFECE8;
+  color: #AD5000;
+  border-color: #AD5000;
 }
 
 .emotion-15 {
@@ -629,9 +629,9 @@ exports[`should render correctly when inline 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   line-height: 1.25rem;
-  background: #FCF0F0;
-  color: #D83A2E;
-  border-color: #D83A2E;
+  background: #FEECED;
+  color: #D01E29;
+  border-color: #D01E29;
 }
 
 <div>

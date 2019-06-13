@@ -16,7 +16,7 @@ exports[`SortableLabel should render correctly 1`] = `
 .emotion-2 {
   margin-left: 0.25rem;
   font-size: 1rem;
-  fill: #B9B9BD;
+  fill: #AAAAB9;
 }
 
 <div>
@@ -58,11 +58,11 @@ exports[`SortableLabel should render correctly 2`] = `
 .emotion-2 {
   margin-left: 0.25rem;
   font-size: 1rem;
-  fill: #B9B9BD;
+  fill: #AAAAB9;
 }
 
 .emotion-0 {
-  fill: #0A67D1;
+  fill: #0069D0;
 }
 
 <div>
@@ -104,11 +104,11 @@ exports[`SortableLabel should render correctly 3`] = `
 .emotion-2 {
   margin-left: 0.25rem;
   font-size: 1rem;
-  fill: #B9B9BD;
+  fill: #AAAAB9;
 }
 
 .emotion-1 {
-  fill: #0A67D1;
+  fill: #0069D0;
 }
 
 <div>
