@@ -67,6 +67,7 @@ import { default as Dots } from './Dots'
 import { default as Download } from './Download'
 import { default as EmailFilled } from './EmailFilled'
 import { default as EmailOutline } from './EmailOutline'
+import { default as Exchange } from './Exchange'
 import { default as ExclamationDefault } from './ExclamationDefault'
 import { default as ExclamationTriangleFilled } from './ExclamationTriangleFilled'
 import { default as ExclamationTriangleOutline } from './ExclamationTriangleOutline'
@@ -110,11 +111,13 @@ import { default as List } from './List'
 import { default as LockCloseFilled } from './LockCloseFilled'
 import { default as LockCloseOutline } from './LockCloseOutline'
 import { default as LockOpenFilled } from './LockOpenFilled'
-import { default as LockOpenFilledCopy } from './LockOpenFilledCopy'
+import { default as LockOpenOutline } from './LockOpenOutline'
 import { default as MapFilled } from './MapFilled'
 import { default as MapMarkerFilled } from './MapMarkerFilled'
-import { default as MapMarkerOutlined } from './MapMarkerOutlined'
+import { default as MapMarkerOutline } from './MapMarkerOutline'
 import { default as MapOutline } from './MapOutline'
+import { default as MedicineBottleFilled } from './MedicineBottleFilled'
+import { default as MedicineBottleOutline } from './MedicineBottleOutline'
 import { default as MicrophoneFilled } from './MicrophoneFilled'
 import { default as MicrophoneOutline } from './MicrophoneOutline'
 import { default as Minimize } from './Minimize'
@@ -125,7 +128,6 @@ import { default as NeedleFilled } from './NeedleFilled'
 import { default as NeedleOutline } from './NeedleOutline'
 import { default as O2Filled } from './O2Filled'
 import { default as OpenDoor } from './OpenDoor'
-import { default as Outline } from './Outline'
 import { default as Pause } from './Pause'
 import { default as PenFilled } from './PenFilled'
 import { default as PenOutline } from './PenOutline'
@@ -144,6 +146,7 @@ import { default as PresentationOutline } from './PresentationOutline'
 import { default as PrinterFilled } from './PrinterFilled'
 import { default as PrinterOutline } from './PrinterOutline'
 import { default as QuestionMarkFilled } from './QuestionMarkFilled'
+import { default as QuestionMarkOutline } from './QuestionMarkOutline'
 import { default as QuoteLeft } from './QuoteLeft'
 import { default as QuoteRight } from './QuoteRight'
 import { default as Redo } from './Redo'
@@ -172,6 +175,7 @@ import { default as TimesOutline } from './TimesOutline'
 import { default as TrashFilled } from './TrashFilled'
 import { default as TrashOutline } from './TrashOutline'
 import { default as Underline } from './Underline'
+import { default as Undo } from './Undo'
 import { default as Upload } from './Upload'
 import { default as UserBan } from './UserBan'
 import { default as UserCard } from './UserCard'
@@ -262,6 +266,7 @@ export type Icons =
   | 'download'
   | 'emailFilled'
   | 'emailOutline'
+  | 'exchange'
   | 'exclamationDefault'
   | 'exclamationTriangleFilled'
   | 'exclamationTriangleOutline'
@@ -305,11 +310,13 @@ export type Icons =
   | 'lockCloseFilled'
   | 'lockCloseOutline'
   | 'lockOpenFilled'
-  | 'lockOpenFilledCopy'
+  | 'lockOpenOutline'
   | 'mapFilled'
   | 'mapMarkerFilled'
-  | 'mapMarkerOutlined'
+  | 'mapMarkerOutline'
   | 'mapOutline'
+  | 'medicineBottleFilled'
+  | 'medicineBottleOutline'
   | 'microphoneFilled'
   | 'microphoneOutline'
   | 'minimize'
@@ -320,7 +327,6 @@ export type Icons =
   | 'needleOutline'
   | 'o2Filled'
   | 'openDoor'
-  | 'outline'
   | 'pause'
   | 'penFilled'
   | 'penOutline'
@@ -339,6 +345,7 @@ export type Icons =
   | 'printerFilled'
   | 'printerOutline'
   | 'questionMarkFilled'
+  | 'questionMarkOutline'
   | 'quoteLeft'
   | 'quoteRight'
   | 'redo'
@@ -367,6 +374,7 @@ export type Icons =
   | 'trashFilled'
   | 'trashOutline'
   | 'underline'
+  | 'undo'
   | 'upload'
   | 'userBan'
   | 'userCard'
@@ -387,7 +395,9 @@ export type Icons =
   | 'zoomPlusFilled'
   | 'zoomPlusOutline'
 
-export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>> } = {
+export const IconMap: {
+  [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>
+} = {
   adjust: Adjust,
   alignCenter: AlignCenter,
   alignJustify: AlignJustify,
@@ -457,6 +467,7 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   download: Download,
   emailFilled: EmailFilled,
   emailOutline: EmailOutline,
+  exchange: Exchange,
   exclamationDefault: ExclamationDefault,
   exclamationTriangleFilled: ExclamationTriangleFilled,
   exclamationTriangleOutline: ExclamationTriangleOutline,
@@ -500,11 +511,13 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   lockCloseFilled: LockCloseFilled,
   lockCloseOutline: LockCloseOutline,
   lockOpenFilled: LockOpenFilled,
-  lockOpenFilledCopy: LockOpenFilledCopy,
+  lockOpenOutline: LockOpenOutline,
   mapFilled: MapFilled,
   mapMarkerFilled: MapMarkerFilled,
-  mapMarkerOutlined: MapMarkerOutlined,
+  mapMarkerOutline: MapMarkerOutline,
   mapOutline: MapOutline,
+  medicineBottleFilled: MedicineBottleFilled,
+  medicineBottleOutline: MedicineBottleOutline,
   microphoneFilled: MicrophoneFilled,
   microphoneOutline: MicrophoneOutline,
   minimize: Minimize,
@@ -515,7 +528,6 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   needleOutline: NeedleOutline,
   o2Filled: O2Filled,
   openDoor: OpenDoor,
-  outline: Outline,
   pause: Pause,
   penFilled: PenFilled,
   penOutline: PenOutline,
@@ -534,6 +546,7 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   printerFilled: PrinterFilled,
   printerOutline: PrinterOutline,
   questionMarkFilled: QuestionMarkFilled,
+  questionMarkOutline: QuestionMarkOutline,
   quoteLeft: QuoteLeft,
   quoteRight: QuoteRight,
   redo: Redo,
@@ -562,6 +575,7 @@ export const IconMap: { [key in Icons]: React.ComponentType<React.SVGProps<SVGSV
   trashFilled: TrashFilled,
   trashOutline: TrashOutline,
   underline: Underline,
+  undo: Undo,
   upload: Upload,
   userBan: UserBan,
   userCard: UserCard,
