@@ -1,14 +1,14 @@
 import { ColorScale } from '.'
 
 export const purple: ColorScale = {
-  c10: '#2E113D',
-  c20: '#66198C',
-  c30: '#8529B3',
-  c40: '#A73AD6',
-  c50: '#B84BD9',
-  c60: '#CA66E3',
-  c70: '#EEA4FC',
-  c80: '#F7D1FF',
-  c90: '#FAF0FC',
+  c10: '#42005B',
+  c20: '#630087',
+  c30: '#8600B6',
+  c40: '#AB00E7',
+  c50: '#C02BFF',
+  c60: '#C762FF',
+  c70: '#D28FFF',
+  c80: '#E7C8FF',
+  c90: '#F7EDFF',
   c100: '#FFFFFF',
 }

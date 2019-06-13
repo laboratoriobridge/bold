@@ -1,14 +1,14 @@
 import { ColorScale } from '.'
 
 export const turquoise: ColorScale = {
-  c10: '#091F1C',
-  c20: '#084037',
-  c30: '#07594D',
-  c40: '#057572',
-  c50: '#0C8777',
-  c60: '#12A695',
-  c70: '#45D9D1',
-  c80: '#9DEDE5',
-  c90: '#D2FAF6',
+  c10: '#002B26',
+  c20: '#00443D',
+  c30: '#005E55',
+  c40: '#02786D',
+  c50: '#1E8B7F',
+  c60: '#36A094',
+  c70: '#50BBAF',
+  c80: '#9BE1D8',
+  c90: '#DBF6F2',
   c100: '#FFFFFF',
 }

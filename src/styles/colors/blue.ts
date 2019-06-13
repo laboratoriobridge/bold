@@ -1,14 +1,14 @@
 import { ColorScale } from '.'
 
 export const blue: ColorScale = {
-  c10: '#0E1C30',
-  c20: '#0E366E',
-  c30: '#074FB3',
-  c40: '#0A67D1',
-  c50: '#1079E3',
-  c60: '#3491ED',
-  c70: '#75C6FF',
-  c80: '#B8E2FF',
-  c90: '#EBF4FA',
+  c10: '#002451',
+  c20: '#003A79',
+  c30: '#0051A2',
+  c40: '#0069D0',
+  c50: '#007AF0',
+  c60: '#498FFF',
+  c70: '#84AAFF',
+  c80: '#C5D4FF',
+  c90: '#ECF0FF',
   c100: '#FFFFFF',
 }
