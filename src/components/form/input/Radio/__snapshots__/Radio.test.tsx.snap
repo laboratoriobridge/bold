@@ -15,7 +15,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-1 {
   background-color: #FFFFFF;
-  border: 1px solid #B9B9BD;
+  border: 1px solid #AAAAB9;
   border-radius: 100px;
   display: inline-block;
   height: 16px;
@@ -43,7 +43,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-2 {
-  color: #41484F;
+  color: #515162;
   margin-left: 0.5rem;
 }
 
@@ -53,12 +53,12 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:hover + .emotion-1 {
-  border-color: #53595E;
+  border-color: #696979;
 }
 
 .emotion-0:checked + .emotion-1 {
-  background-color: #0A67D1;
-  border-color: #0A67D1;
+  background-color: #0069D0;
+  border-color: #0069D0;
 }
 
 .emotion-0:checked + .emotion-1:after {
@@ -66,16 +66,16 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:focus + .emotion-1 {
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0:disabled + .emotion-1 {
-  background-color: #F2F2F7;
-  border-color: #F2F2F7;
+  background-color: #F0F0F5;
+  border-color: #F0F0F5;
 }
 
 .emotion-0:disabled + .emotion-1 + .emotion-2 {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 <div>

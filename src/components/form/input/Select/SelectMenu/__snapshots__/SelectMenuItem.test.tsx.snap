@@ -2,12 +2,12 @@
 
 exports[`SelectEmptyItem should render correctly 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-0:last-of-type {
@@ -15,7 +15,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -29,7 +29,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
 
 exports[`SelectHelperMenuItem should render correctly 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
@@ -41,7 +41,7 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -69,12 +69,12 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 }
 
 .emotion-1 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-1:last-of-type {
@@ -82,14 +82,14 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 }
 
 .emotion-1:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-0 {
   pointer-events: none;
   font-size: 1rem;
   line-height: 1;
-  color: #0A67D1;
+  color: #0069D0;
   float: right;
 }
 
@@ -119,7 +119,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 
 exports[`SelectMenuItem should render correctly 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
@@ -131,7 +131,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -145,7 +145,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
 
 exports[`SelectMenuItem should render correctly when custom style defined 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
@@ -158,7 +158,7 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -172,12 +172,12 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
 
 exports[`SelectMenuItem should render correctly when highlighted 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-0:last-of-type {
@@ -185,7 +185,7 @@ exports[`SelectMenuItem should render correctly when highlighted 1`] = `
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -199,7 +199,7 @@ exports[`SelectMenuItem should render correctly when highlighted 1`] = `
 
 exports[`SelectMenuItem should render correctly when selected 1`] = `
 .emotion-0 {
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
   -webkit-transition: .1s ease;
@@ -211,7 +211,7 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
 }
 
 .emotion-0:hover {
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>

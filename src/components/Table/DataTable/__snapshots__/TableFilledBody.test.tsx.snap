@@ -5,7 +5,7 @@ exports[`should render correctly 1`] = `
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
-  border-bottom: 1px solid #DCDCE0;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 <div>

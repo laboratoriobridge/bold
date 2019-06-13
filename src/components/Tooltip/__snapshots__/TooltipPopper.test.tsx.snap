@@ -4,7 +4,7 @@ exports[`should accept style prop 1`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
-  background: #2D343B;
+  background: #3A3A47;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;
@@ -26,7 +26,7 @@ exports[`should render the big version when text length is > 60 1`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
-  background: #2D343B;
+  background: #3A3A47;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;
@@ -48,7 +48,7 @@ exports[`should render the small version when text length is <= 60 1`] = `
 .emotion-0 {
   border-radius: 2px;
   max-width: 1280px;
-  background: #2D343B;
+  background: #3A3A47;
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;

@@ -10,7 +10,7 @@ exports[`should accept the style prop 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #D83A2E;
+  color: #D01E29;
   color: blue;
 }
 
@@ -33,7 +33,7 @@ exports[`should render correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #D83A2E;
+  color: #D01E29;
 }
 
 <div>

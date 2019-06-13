@@ -54,7 +54,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -76,11 +76,11 @@ exports[`should render correctly 1`] = `
 
 .emotion-1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-0 {

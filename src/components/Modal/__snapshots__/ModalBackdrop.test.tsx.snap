@@ -8,7 +8,7 @@ exports[`should accept "style" prop 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(220,220,224,0.7);
+  background: rgba(211,212,221,0.7);
   color: red;
 }
 
@@ -28,7 +28,7 @@ exports[`should render correctly 1`] = `
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(220,220,224,0.7);
+  background: rgba(211,212,221,0.7);
 }
 
 <div>

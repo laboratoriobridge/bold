@@ -29,12 +29,12 @@ exports[`should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   outline: 0;
-  color: #53595E;
+  color: #696979;
   padding: 1px 6px;
 }
 
 .emotion-1:hover {
-  color: #D83A2E;
+  color: #D01E29;
 }
 
 .emotion-0 {
@@ -73,7 +73,7 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly with button 1`] = `
 .emotion-4 {
   position: absolute;
-  background-color: #F2F2F7;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -126,12 +126,12 @@ exports[`should render correctly with button 1`] = `
   -ms-flex-align: center;
   align-items: center;
   outline: 0;
-  color: #53595E;
+  color: #696979;
   padding: 1px 6px;
 }
 
 .emotion-1:hover {
-  color: #D83A2E;
+  color: #D01E29;
 }
 
 .emotion-3 {
@@ -156,7 +156,7 @@ exports[`should render correctly with button 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -179,11 +179,11 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-3:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-3:focus {
@@ -263,12 +263,12 @@ exports[`should render correctly with left position 1`] = `
   -ms-flex-align: center;
   align-items: center;
   outline: 0;
-  color: #53595E;
+  color: #696979;
   padding: 1px 6px;
 }
 
 .emotion-1:hover {
-  color: #D83A2E;
+  color: #D01E29;
 }
 
 .emotion-0 {
@@ -287,7 +287,7 @@ exports[`should render correctly with left position 1`] = `
 
 .emotion-3 {
   position: absolute;
-  background-color: #F2F2F7;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -364,7 +364,7 @@ exports[`should render correctly with left position 1`] = `
 exports[`should render correctly without clear icon 1`] = `
 .emotion-1 {
   position: absolute;
-  background-color: #F2F2F7;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -430,7 +430,7 @@ exports[`should render correctly without clear icon 1`] = `
 exports[`should render correctly without clear icon AND left position 1`] = `
 .emotion-1 {
   position: absolute;
-  background-color: #F2F2F7;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

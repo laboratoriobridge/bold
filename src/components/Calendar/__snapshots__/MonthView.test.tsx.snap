@@ -22,7 +22,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-0:hover {
   cursor: pointer;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>
@@ -443,7 +443,7 @@ exports[`should use createDayStyles function to create styles for days 1`] = `
 
 .emotion-0:hover {
   cursor: pointer;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 <div>

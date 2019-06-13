@@ -5,7 +5,7 @@ exports[`should accept "component" prop 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #0A67D1;
+  color: #0069D0;
   font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -24,7 +24,7 @@ exports[`should accept "component" prop 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-radius: 2px;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 <div>
@@ -41,7 +41,7 @@ exports[`should accept all Text props 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #0A67D1;
+  color: #0069D0;
   font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -66,7 +66,7 @@ exports[`should accept all Text props 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-radius: 2px;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 <div>
@@ -83,7 +83,7 @@ exports[`should accept the "style" prop 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #0A67D1;
+  color: #0069D0;
   font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -103,7 +103,7 @@ exports[`should accept the "style" prop 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-radius: 2px;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 <div>
@@ -121,7 +121,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #0A67D1;
+  color: #0069D0;
   font-weight: bold;
   -webkit-text-decoration: underline;
   text-decoration: underline;
@@ -140,7 +140,7 @@ exports[`should render correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   border-radius: 2px;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 <div>

@@ -11,7 +11,7 @@ exports[`should accept placeholder 1`] = `
 
 .emotion-1:empty::before {
   content: "No value";
-  color: #53595E;
+  color: #696979;
   font-style: italic;
 }
 
@@ -42,7 +42,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-1:empty::before {
   content: "-";
-  color: #53595E;
+  color: #696979;
   font-style: italic;
 }
 
@@ -80,7 +80,7 @@ exports[`should render correctly 2`] = `
 
 .emotion-1:empty::before {
   content: "-";
-  color: #53595E;
+  color: #696979;
   font-style: italic;
 }
 

@@ -71,7 +71,7 @@ exports[`Calendar should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -93,11 +93,11 @@ exports[`Calendar should render correctly 1`] = `
 
 .emotion-1:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-0 {
@@ -126,7 +126,7 @@ exports[`Calendar should render correctly 1`] = `
 
 .emotion-20:hover {
   cursor: pointer;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-19 {
@@ -134,12 +134,12 @@ exports[`Calendar should render correctly 1`] = `
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-19:hover {
   cursor: pointer;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-46 {
@@ -147,18 +147,18 @@ exports[`Calendar should render correctly 1`] = `
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
-  background: #0A67D1;
+  background: #0069D0;
   color: #FFFFFF;
   font-weight: bold;
 }
 
 .emotion-46:hover {
   cursor: pointer;
-  background: #F2F2F7;
+  background: #F0F0F5;
 }
 
 .emotion-46:hover {
-  background: #0A67D1;
+  background: #0069D0;
   color: #FFFFFF;
 }
 
@@ -694,10 +694,10 @@ exports[`Calendar should render correctly 1`] = `
 exports[`createDayStyles should return merged styles from all modifiers that apply 1`] = `
 Object {
   ":hover": Object {
-    "background": "#0A67D1",
+    "background": "#0069D0",
     "color": "#FFFFFF",
   },
-  "background": "#0A67D1",
+  "background": "#0069D0",
   "color": "#FFFFFF",
   "fontWeight": "bold",
 }
@@ -705,7 +705,7 @@ Object {
 
 exports[`modifierStyles should have "adjacentMonth" styles 1`] = `
 Object {
-  "color": "#B9B9BD",
+  "color": "#AAAAB9",
 }
 `;
 
@@ -715,17 +715,17 @@ Object {
     "background": "initial",
     "cursor": "not-allowed",
   },
-  "color": "#B9B9BD",
+  "color": "#AAAAB9",
 }
 `;
 
 exports[`modifierStyles should have "selected" styles 1`] = `
 Object {
   ":hover": Object {
-    "background": "#0A67D1",
+    "background": "#0069D0",
     "color": "#FFFFFF",
   },
-  "background": "#0A67D1",
+  "background": "#0069D0",
   "color": "#FFFFFF",
   "fontWeight": "bold",
 }

@@ -4,7 +4,7 @@ exports[`convert should throw an exception if convert is defined but necessary m
 
 exports[`render should render correctly 1`] = `
 .emotion-0 {
-  color: #D83A2E;
+  color: #D01E29;
   margin-left: 0.25rem;
 }
 

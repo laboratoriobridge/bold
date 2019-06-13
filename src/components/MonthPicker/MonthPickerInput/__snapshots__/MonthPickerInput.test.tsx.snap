@@ -15,7 +15,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-3 {
   position: absolute;
-  background-color: #F2F2F7;
+  background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -37,9 +37,9 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #B9B9BD;
+  border: solid 1px #AAAAB9;
   border-radius: 2px;
-  color: #2D343B;
+  color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -72,37 +72,37 @@ exports[`MonthPickerInput should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0::placeholder {
-  color: #B9B9BD;
+  color: #AAAAB9;
 }
 
 .emotion-0:disabled {
-  border-color: #DCDCE0;
-  background-color: #F2F2F7;
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #818489;
+  border-color: #8F8FA2;
 }
 
 .emotion-0:not(:disabled):focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F2F2F7,0 0 0 4px #0A67D1;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
 .emotion-0:not(:disabled):active {
-  border-color: #0A67D1;
+  border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
@@ -128,7 +128,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -151,11 +151,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-2:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-2:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-2:focus {
@@ -208,7 +208,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   width: 21.25rem;
   height: 13.5rem;
   padding: 1rem;
-  border: 1px solid #DCDCE0;
+  border: 1px solid #D3D4DD;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
 }
@@ -271,7 +271,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -293,18 +293,18 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-7:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-7:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 .emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -361,7 +361,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #2D343B;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1.375rem;
@@ -386,11 +386,11 @@ exports[`MonthPickerInput should render correctly 1`] = `
 
 .emotion-16:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #0A67D1;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-16:not(:disabled):hover {
-  background-color: rgba(45,52,59,0.1);
+  background-color: rgba(58,58,71,0.1);
 }
 
 <div>
