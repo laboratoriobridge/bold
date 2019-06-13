@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Cell, Grid, Icon, Text, VFlow, Link } from '../../lib'
+import { Button, Cell, Grid, Icon, Link, Text, VFlow } from '../../lib'
 
 function Resources() {
   const renderButtonSketch = (props: any) => <a {...props} href='/static/Bold-1.0.sketch' />
@@ -57,9 +57,8 @@ function Resources() {
               </Text>
             </div>
 
-            <Link href='https://www.figma.com/file/TE9FUDtlgVQ4FWlAPtTagxQU/Bold-Design-System'>
-              {' '}
-              Access Figma file{' '}
+            <Link href='https://www.figma.com/file/TE9FUDtlgVQ4FWlAPtTagxQU/Bold-Design-System' fontSize={1}>
+              Access Figma file
             </Link>
           </VFlow>
         </Cell>
