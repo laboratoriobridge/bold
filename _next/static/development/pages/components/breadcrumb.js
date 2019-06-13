@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/components/paginator.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/components/breadcrumb.js"],{
 
 /***/ "../lib/components/Alert/Alert.js":
 /*!****************************************!*\
@@ -259,6 +259,7 @@ exports.createStyles = function (theme) { return ({
     },
     lastItem: {
         color: theme.pallete.primary.main,
+        pointerEvents: 'none',
     },
 }); };
 //# sourceMappingURL=Breadcrumbs.js.map
@@ -2937,7 +2938,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgAlignLeft = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'align-left_svg__a', d: 'M5 7c-.666 0-1-.333-1-1s.333-1 1-1h13.995c.669 0 1.003.333 1.005 1 .002.667-.332 1-1 1H5zm8 4c-.666 0-.999-.333-1-1-.001-.667.331-1 .997-1H19c.667 0 1 .332 1 1 0 .668-.333 1-1 1h-6zm-8 4c-.666 0-1-.332-1-1 0-.668.332-1 .998-1H19c.667 0 1 .333 1 1s-.333 1-1 1H5zm8 4c-.668 0-1.001-.333-1-1 .001-.667.336-1 1.003-1H19c.667.006 1 .341 1 1.005 0 .663-.333.995-1 .995h-6z' })),
+        react_1.default.createElement("path", { id: 'align-left_svg__a', d: 'M5 7c-.666 0-1-.333-1-1s.333-1 1-1h13.995c.669 0 1.003.333 1.005 1 .002.667-.332 1-1 1H5zm0 4c-.666 0-.999-.333-1-1-.001-.667.331-1 .997-1H11c.667 0 1 .332 1 1 0 .668-.333 1-1 1H5zm0 4c-.666 0-1-.332-1-1 0-.668.332-1 .998-1H19c.667 0 1 .333 1 1s-.333 1-1 1H5zm0 4c-.668 0-1.001-.333-1-1 .001-.667.336-1 1.003-1H11c.667.006 1 .341 1 1.005 0 .663-.333.995-1 .995H5z' })),
     react_1.default.createElement("use", { xlinkHref: '#align-left_svg__a' }))); };
 exports.default = SvgAlignLeft;
 //# sourceMappingURL=AlignLeft.js.map
@@ -2972,7 +2973,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgAlignRight = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'align-right_svg__a', d: 'M5 7c-.666 0-1-.333-1-1s.333-1 1-1h13.995c.669 0 1.003.333 1.005 1 .002.667-.332 1-1 1H5zm0 4c-.666 0-.999-.333-1-1-.001-.667.331-1 .997-1H11c.667 0 1 .332 1 1 0 .668-.333 1-1 1H5zm0 4c-.666 0-1-.332-1-1 0-.668.332-1 .998-1H19c.667 0 1 .333 1 1s-.333 1-1 1H5zm0 4c-.668 0-1.001-.333-1-1 .001-.667.336-1 1.003-1H11c.667.006 1 .341 1 1.005 0 .663-.333.995-1 .995H5z' })),
+        react_1.default.createElement("path", { id: 'align-right_svg__a', d: 'M5 7c-.666 0-1-.333-1-1s.333-1 1-1h13.995c.669 0 1.003.333 1.005 1 .002.667-.332 1-1 1H5zm8 4c-.666 0-.999-.333-1-1-.001-.667.331-1 .997-1H19c.667 0 1 .332 1 1 0 .668-.333 1-1 1h-6zm-8 4c-.666 0-1-.332-1-1 0-.668.332-1 .998-1H19c.667 0 1 .333 1 1s-.333 1-1 1H5zm8 4c-.668 0-1.001-.333-1-1 .001-.667.336-1 1.003-1H19c.667.006 1 .341 1 1.005 0 .663-.333.995-1 .995h-6z' })),
     react_1.default.createElement("use", { xlinkHref: '#align-right_svg__a' }))); };
 exports.default = SvgAlignRight;
 //# sourceMappingURL=AlignRight.js.map
@@ -4714,7 +4715,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgCopyFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'copy-filled_svg__a', d: 'M16 6h-6c-1.336 0-2.002.667-2 2v10H4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h10c1.333 0 2 .667 2 2v2zm6 2v12c0 1.333-.667 2-2 2H10V8h12z' })),
+        react_1.default.createElement("path", { id: 'copy-filled_svg__a', d: 'M19 6h-9c-1.336 0-2.002.667-2 2v10H4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h10c1.333 0 2 .667 2 2v2h3zm3 2v12c0 1.333-.667 2-2 2H10V8h12z' })),
     react_1.default.createElement("use", { xlinkHref: '#copy-filled_svg__a' }))); };
 exports.default = SvgCopyFilled;
 //# sourceMappingURL=CopyFilled.js.map
@@ -4948,7 +4949,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgDesktopFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M9 18.007H4.014C2.671 18.007 2 17.342 2 16.01v-1.995h20v-1.997H2V4.033c0-1.322.667-1.987 2-1.996 1.25-.01 6.596-.077 16.04-.002 1.307.01 1.96.676 1.96 1.998V16.01c0 1.33-.667 1.996-2 1.996h-5l1 1.997h1c.667 0 1 .332 1 .998 0 .665-.333.998-1 .998H7c-.667 0-1-.333-1-.998 0-.666.333-.998 1-.998h1l1-1.997z' }))); };
+    react_1.default.createElement("path", { d: 'M15 18.007l1 1.997h1c.667 0 1 .332 1 .998 0 .665-.333.998-1 .998H7c-.667 0-1-.333-1-.998 0-.666.333-.998 1-.998h1l1-1.997H4.014C2.671 18.007 2 17.342 2 16.01v-1.995h20v1.996c0 1.33-.667 1.996-2 1.996h-5zm7-5.989H2V4.033c0-1.322.667-1.987 2-1.996 1.25-.01 6.596-.077 16.04-.002 1.307.01 1.96.676 1.96 1.998v7.985z' }))); };
 exports.default = SvgDesktopFilled;
 //# sourceMappingURL=DesktopFilled.js.map
 
@@ -5118,6 +5119,39 @@ var SvgEmailOutline = function (props) { return (react_1.default.createElement("
     react_1.default.createElement("path", { d: 'M2 6c0-1.333.667-2 2-2h16c1.333 0 2 .667 2 2v12c0 1.333-.667 2-2 2H4c-1.333 0-2-.667-2-2V6zm2 0v12h16V6H4zm0 0h1.414L12 12.588 18.58 6H20v1.43l-6.585 6.576c-.472.388-.943.582-1.415.581-.472 0-.943-.194-1.413-.583L4 7.41V6z' }))); };
 exports.default = SvgEmailOutline;
 //# sourceMappingURL=EmailOutline.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Icon/generated/Exchange.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Icon/generated/Exchange.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SvgExchange = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("path", { d: 'M18.536 18H3.002c-.67 0-1.004-.333-1.002-1 .002-.667.335-1 1-1h15.467l-1.137-1.137a1 1 0 0 1 1.414-1.414l2.879 2.879a1 1 0 0 1 0 1.414l-2.88 2.88a1 1 0 0 1-1.414-1.414L18.536 18zM5.606 6H21c.667-.004 1 .33 1 1.002 0 .671-.333 1.004-1 .998H5.537l1.207 1.208a1 1 0 1 1-1.414 1.414l-2.88-2.88a1 1 0 0 1 0-1.414l2.879-2.879a1 1 0 0 1 1.414 1.414L5.606 6z' }))); };
+exports.default = SvgExchange;
+//# sourceMappingURL=Exchange.js.map
 
 /***/ }),
 
@@ -5322,7 +5356,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgEyeHiddenFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'eye-hidden-filled_svg__a', d: 'M11.78 8a3.994 3.994 0 0 0-3.779 3.775L8 11.773l-3.382 3.35a23.876 23.876 0 0 1-1.967-1.68S2 12.926 2 11.996s.654-1.452.654-1.452C5.855 7.511 8.99 6 11.995 5.995a9.248 9.248 0 0 1 1.632.144l-1.852 1.856.005.006zm4.21 4.204l.01.01 3.368-3.37a23.55 23.55 0 0 1 1.997 1.699s.63.522.63 1.452c0 .93-.608 1.43-.608 1.43-3.21 3.047-6.387 4.565-9.392 4.57a9.2 9.2 0 0 1-1.619-.143l1.824-1.857-.005-.005a3.994 3.994 0 0 0 3.795-3.786zm4.24-9.85c.471-.472.942-.472 1.414 0 .471.471.471.942 0 1.414L3.774 21.636c-.472.472-.944.472-1.415 0-.471-.471-.471-.943 0-1.414l17.87-17.868z' })),
+        react_1.default.createElement("path", { id: 'eye-hidden-filled_svg__a', d: 'M11.78 8a3.994 3.994 0 0 0-3.779 3.775L8 11.773l-3.382 3.35a23.876 23.876 0 0 1-1.967-1.68S2 12.926 2 11.996s.654-1.452.654-1.452C5.855 7.511 8.99 6 11.995 5.995a9.25 9.25 0 0 1 1.632.144l-1.852 1.856.005.006zm4.21 4.204l.01.01 3.368-3.37a23.55 23.55 0 0 1 1.997 1.699s.63.522.63 1.452c0 .93-.608 1.43-.608 1.43-3.21 3.047-6.387 4.565-9.392 4.57a9.202 9.202 0 0 1-1.619-.143l1.824-1.857-.005-.005a3.994 3.994 0 0 0 3.795-3.786zm4.24-9.85c.471-.472.942-.472 1.414 0 .471.471.471.942 0 1.414L3.774 21.636c-.472.472-.944.472-1.415 0-.471-.471-.471-.943 0-1.414l17.87-17.868z' })),
     react_1.default.createElement("use", { xlinkHref: '#eye-hidden-filled_svg__a' }))); };
 exports.default = SvgEyeHiddenFilled;
 //# sourceMappingURL=EyeHiddenFilled.js.map
@@ -5356,9 +5390,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgEyeHiddenOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'eye-hidden-outline_svg__a', d: 'M11.774 8a4 4 0 0 0-3.768 3.775l-.01-.01L6.2 13.538a6.026 6.026 0 0 1 .142-3.546A18.105 18.105 0 0 0 4 11.995a18.609 18.609 0 0 0 2.075 1.807l-.08-.028-1.366 1.358a23.856 23.856 0 0 1-1.978-1.689S2 12.925 2 11.995c0-.93.654-1.452.654-1.452 3.184-3.016 6.302-4.527 9.293-4.548a6.125 6.125 0 0 1 .058 0 9.25 9.25 0 0 1 1.618.143l-.062.062h.002l-.977.976-.817.819.009.002h-.007l.003.004zm4.22 4.214l.001.001 1.801-1.776c.133.496.204 1.017.204 1.556 0 .699-.12 1.37-.34 1.993a18.204 18.204 0 0 0 2.335-1.993 18.659 18.659 0 0 0-2.036-1.779l.036.013 1.376-1.384c.662.5 1.327 1.066 1.994 1.698 0 0 .63.522.63 1.452 0 .93-.608 1.43-.608 1.43-3.178 3.016-6.324 4.534-9.303 4.569h-.054a3.162 3.162 0 0 1-.035 0 9.334 9.334 0 0 1-1.623-.137l.067-.068h-.004l.374-.373 1.405-1.421-.007-.003h.025l-.003-.004a4 4 0 0 0 3.765-3.774zm4.23-9.86c.472-.472.944-.472 1.415 0 .472.471.472.942 0 1.414L3.77 21.636c-.472.472-.943.472-1.415 0-.471-.471-.471-.943 0-1.414l17.87-17.868z' })),
-    react_1.default.createElement("use", { xlinkHref: '#eye-hidden-outline_svg__a' }))); };
+    react_1.default.createElement("path", { d: 'M2 11.995c0-.93.654-1.452.654-1.452C5.855 7.51 8.99 6 11.995 5.995a9.22 9.22 0 0 1 1.628.143l-1.854 1.857c-1.02.088-1.886.482-2.595 1.183-.708.7-1.1 1.562-1.172 2.587l-1.756 1.758c-.303-1.264-.303-2.398 0-3.403C5.759 10.323 4.012 11.988 4 12c.264.3.929.891 1.995 1.774L4.63 15.132a23.856 23.856 0 0 1-1.978-1.689S2 12.925 2 11.995zm10.214 4c1.218-.132 2.13-.566 2.738-1.301.699-.846 1.048-1.672 1.048-2.479l1.696-1.672c.381.968.381 2.119 0 3.453 0 0 2.012-1.588 2.3-2.001a59.005 59.005 0 0 0-2-1.766l1.375-1.384c.662.5 1.327 1.066 1.994 1.698 0 0 .63.522.63 1.452 0 .93-.608 1.43-.608 1.43-3.21 3.046-6.387 4.564-9.392 4.57a9.338 9.338 0 0 1-1.623-.138l1.842-1.862zm8.01-13.641c.472-.472.944-.472 1.415 0 .472.471.472.942 0 1.414L3.77 21.636c-.472.472-.943.472-1.415 0-.471-.471-.471-.943 0-1.414l17.87-17.868z' }))); };
 exports.default = SvgEyeHiddenOutline;
 //# sourceMappingURL=EyeHiddenOutline.js.map
 
@@ -5391,9 +5423,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgEyeOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'eye-outline_svg__a', d: 'M11.947 6a6.125 6.125 0 0 1 .058 0c3.003-.002 6.163 1.52 9.36 4.548 0 0 .63.522.63 1.452 0 .93-.608 1.43-.608 1.43-3.178 3.017-6.324 4.535-9.303 4.57h-.054a3.162 3.162 0 0 1-.035 0c-3.004.005-6.142-1.517-9.344-4.551 0 0-.651-.519-.651-1.449s.654-1.452.654-1.452C5.838 7.532 8.956 6.021 11.947 6zM6.342 9.998A18.105 18.105 0 0 0 4 12c.78.781 1.561 1.448 2.342 2A5.99 5.99 0 0 1 6 12c0-.702.12-1.376.342-2.002zm11.318.006c.22.625.34 1.296.34 1.996 0 .699-.12 1.37-.34 1.994A18.204 18.204 0 0 0 19.996 12a18.152 18.152 0 0 0-2.335-1.996zM12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-.005-2a2 2 0 1 1 .002-4.001A2 2 0 0 1 11.995 14z' })),
-    react_1.default.createElement("use", { xlinkHref: '#eye-outline_svg__a' }))); };
+    react_1.default.createElement("path", { d: 'M2 12c0-.93.654-1.452.654-1.452C5.855 7.516 8.99 6.005 11.995 6c3.006-.005 6.17 1.516 9.37 4.548 0 0 .63.522.63 1.452 0 .93-.608 1.43-.608 1.43-3.21 3.047-6.387 4.565-9.392 4.57-3.004.005-6.142-1.517-9.344-4.551 0 0-.651-.519-.651-1.449zm16 0c0 1.01-.344 2.025-.344 2 .517-.366 1.297-1.033 2.34-2-1.032-.95-1.803-1.606-2.313-1.97 0-.033.317.96.317 1.97zM4 12c1.031.971 1.809 1.642 2.332 2.012 0 0-.332-.911-.332-2.001 0-1.09.332-1.989.332-1.989C5.82 10.387 5.042 11.047 4 12zm8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-.005-2a2 2 0 1 1 .002-4.001A2 2 0 0 1 11.995 14z' }))); };
 exports.default = SvgEyeOutline;
 //# sourceMappingURL=EyeOutline.js.map
 
@@ -6091,6 +6121,7 @@ var Dots_1 = __importDefault(__webpack_require__(/*! ./Dots */ "../lib/component
 var Download_1 = __importDefault(__webpack_require__(/*! ./Download */ "../lib/components/Icon/generated/Download.js"));
 var EmailFilled_1 = __importDefault(__webpack_require__(/*! ./EmailFilled */ "../lib/components/Icon/generated/EmailFilled.js"));
 var EmailOutline_1 = __importDefault(__webpack_require__(/*! ./EmailOutline */ "../lib/components/Icon/generated/EmailOutline.js"));
+var Exchange_1 = __importDefault(__webpack_require__(/*! ./Exchange */ "../lib/components/Icon/generated/Exchange.js"));
 var ExclamationDefault_1 = __importDefault(__webpack_require__(/*! ./ExclamationDefault */ "../lib/components/Icon/generated/ExclamationDefault.js"));
 var ExclamationTriangleFilled_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleFilled */ "../lib/components/Icon/generated/ExclamationTriangleFilled.js"));
 var ExclamationTriangleOutline_1 = __importDefault(__webpack_require__(/*! ./ExclamationTriangleOutline */ "../lib/components/Icon/generated/ExclamationTriangleOutline.js"));
@@ -6134,11 +6165,13 @@ var List_1 = __importDefault(__webpack_require__(/*! ./List */ "../lib/component
 var LockCloseFilled_1 = __importDefault(__webpack_require__(/*! ./LockCloseFilled */ "../lib/components/Icon/generated/LockCloseFilled.js"));
 var LockCloseOutline_1 = __importDefault(__webpack_require__(/*! ./LockCloseOutline */ "../lib/components/Icon/generated/LockCloseOutline.js"));
 var LockOpenFilled_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilled */ "../lib/components/Icon/generated/LockOpenFilled.js"));
-var LockOpenFilledCopy_1 = __importDefault(__webpack_require__(/*! ./LockOpenFilledCopy */ "../lib/components/Icon/generated/LockOpenFilledCopy.js"));
+var LockOpenOutline_1 = __importDefault(__webpack_require__(/*! ./LockOpenOutline */ "../lib/components/Icon/generated/LockOpenOutline.js"));
 var MapFilled_1 = __importDefault(__webpack_require__(/*! ./MapFilled */ "../lib/components/Icon/generated/MapFilled.js"));
 var MapMarkerFilled_1 = __importDefault(__webpack_require__(/*! ./MapMarkerFilled */ "../lib/components/Icon/generated/MapMarkerFilled.js"));
-var MapMarkerOutlined_1 = __importDefault(__webpack_require__(/*! ./MapMarkerOutlined */ "../lib/components/Icon/generated/MapMarkerOutlined.js"));
+var MapMarkerOutline_1 = __importDefault(__webpack_require__(/*! ./MapMarkerOutline */ "../lib/components/Icon/generated/MapMarkerOutline.js"));
 var MapOutline_1 = __importDefault(__webpack_require__(/*! ./MapOutline */ "../lib/components/Icon/generated/MapOutline.js"));
+var MedicineBottleFilled_1 = __importDefault(__webpack_require__(/*! ./MedicineBottleFilled */ "../lib/components/Icon/generated/MedicineBottleFilled.js"));
+var MedicineBottleOutline_1 = __importDefault(__webpack_require__(/*! ./MedicineBottleOutline */ "../lib/components/Icon/generated/MedicineBottleOutline.js"));
 var MicrophoneFilled_1 = __importDefault(__webpack_require__(/*! ./MicrophoneFilled */ "../lib/components/Icon/generated/MicrophoneFilled.js"));
 var MicrophoneOutline_1 = __importDefault(__webpack_require__(/*! ./MicrophoneOutline */ "../lib/components/Icon/generated/MicrophoneOutline.js"));
 var Minimize_1 = __importDefault(__webpack_require__(/*! ./Minimize */ "../lib/components/Icon/generated/Minimize.js"));
@@ -6149,7 +6182,6 @@ var NeedleFilled_1 = __importDefault(__webpack_require__(/*! ./NeedleFilled */ "
 var NeedleOutline_1 = __importDefault(__webpack_require__(/*! ./NeedleOutline */ "../lib/components/Icon/generated/NeedleOutline.js"));
 var O2Filled_1 = __importDefault(__webpack_require__(/*! ./O2Filled */ "../lib/components/Icon/generated/O2Filled.js"));
 var OpenDoor_1 = __importDefault(__webpack_require__(/*! ./OpenDoor */ "../lib/components/Icon/generated/OpenDoor.js"));
-var Outline_1 = __importDefault(__webpack_require__(/*! ./Outline */ "../lib/components/Icon/generated/Outline.js"));
 var Pause_1 = __importDefault(__webpack_require__(/*! ./Pause */ "../lib/components/Icon/generated/Pause.js"));
 var PenFilled_1 = __importDefault(__webpack_require__(/*! ./PenFilled */ "../lib/components/Icon/generated/PenFilled.js"));
 var PenOutline_1 = __importDefault(__webpack_require__(/*! ./PenOutline */ "../lib/components/Icon/generated/PenOutline.js"));
@@ -6168,6 +6200,7 @@ var PresentationOutline_1 = __importDefault(__webpack_require__(/*! ./Presentati
 var PrinterFilled_1 = __importDefault(__webpack_require__(/*! ./PrinterFilled */ "../lib/components/Icon/generated/PrinterFilled.js"));
 var PrinterOutline_1 = __importDefault(__webpack_require__(/*! ./PrinterOutline */ "../lib/components/Icon/generated/PrinterOutline.js"));
 var QuestionMarkFilled_1 = __importDefault(__webpack_require__(/*! ./QuestionMarkFilled */ "../lib/components/Icon/generated/QuestionMarkFilled.js"));
+var QuestionMarkOutline_1 = __importDefault(__webpack_require__(/*! ./QuestionMarkOutline */ "../lib/components/Icon/generated/QuestionMarkOutline.js"));
 var QuoteLeft_1 = __importDefault(__webpack_require__(/*! ./QuoteLeft */ "../lib/components/Icon/generated/QuoteLeft.js"));
 var QuoteRight_1 = __importDefault(__webpack_require__(/*! ./QuoteRight */ "../lib/components/Icon/generated/QuoteRight.js"));
 var Redo_1 = __importDefault(__webpack_require__(/*! ./Redo */ "../lib/components/Icon/generated/Redo.js"));
@@ -6196,6 +6229,7 @@ var TimesOutline_1 = __importDefault(__webpack_require__(/*! ./TimesOutline */ "
 var TrashFilled_1 = __importDefault(__webpack_require__(/*! ./TrashFilled */ "../lib/components/Icon/generated/TrashFilled.js"));
 var TrashOutline_1 = __importDefault(__webpack_require__(/*! ./TrashOutline */ "../lib/components/Icon/generated/TrashOutline.js"));
 var Underline_1 = __importDefault(__webpack_require__(/*! ./Underline */ "../lib/components/Icon/generated/Underline.js"));
+var Undo_1 = __importDefault(__webpack_require__(/*! ./Undo */ "../lib/components/Icon/generated/Undo.js"));
 var Upload_1 = __importDefault(__webpack_require__(/*! ./Upload */ "../lib/components/Icon/generated/Upload.js"));
 var UserBan_1 = __importDefault(__webpack_require__(/*! ./UserBan */ "../lib/components/Icon/generated/UserBan.js"));
 var UserCard_1 = __importDefault(__webpack_require__(/*! ./UserCard */ "../lib/components/Icon/generated/UserCard.js"));
@@ -6285,6 +6319,7 @@ exports.IconMap = {
     download: Download_1.default,
     emailFilled: EmailFilled_1.default,
     emailOutline: EmailOutline_1.default,
+    exchange: Exchange_1.default,
     exclamationDefault: ExclamationDefault_1.default,
     exclamationTriangleFilled: ExclamationTriangleFilled_1.default,
     exclamationTriangleOutline: ExclamationTriangleOutline_1.default,
@@ -6328,11 +6363,13 @@ exports.IconMap = {
     lockCloseFilled: LockCloseFilled_1.default,
     lockCloseOutline: LockCloseOutline_1.default,
     lockOpenFilled: LockOpenFilled_1.default,
-    lockOpenFilledCopy: LockOpenFilledCopy_1.default,
+    lockOpenOutline: LockOpenOutline_1.default,
     mapFilled: MapFilled_1.default,
     mapMarkerFilled: MapMarkerFilled_1.default,
-    mapMarkerOutlined: MapMarkerOutlined_1.default,
+    mapMarkerOutline: MapMarkerOutline_1.default,
     mapOutline: MapOutline_1.default,
+    medicineBottleFilled: MedicineBottleFilled_1.default,
+    medicineBottleOutline: MedicineBottleOutline_1.default,
     microphoneFilled: MicrophoneFilled_1.default,
     microphoneOutline: MicrophoneOutline_1.default,
     minimize: Minimize_1.default,
@@ -6343,7 +6380,6 @@ exports.IconMap = {
     needleOutline: NeedleOutline_1.default,
     o2Filled: O2Filled_1.default,
     openDoor: OpenDoor_1.default,
-    outline: Outline_1.default,
     pause: Pause_1.default,
     penFilled: PenFilled_1.default,
     penOutline: PenOutline_1.default,
@@ -6362,6 +6398,7 @@ exports.IconMap = {
     printerFilled: PrinterFilled_1.default,
     printerOutline: PrinterOutline_1.default,
     questionMarkFilled: QuestionMarkFilled_1.default,
+    questionMarkOutline: QuestionMarkOutline_1.default,
     quoteLeft: QuoteLeft_1.default,
     quoteRight: QuoteRight_1.default,
     redo: Redo_1.default,
@@ -6390,6 +6427,7 @@ exports.IconMap = {
     trashFilled: TrashFilled_1.default,
     trashOutline: TrashOutline_1.default,
     underline: Underline_1.default,
+    undo: Undo_1.default,
     upload: Upload_1.default,
     userBan: UserBan_1.default,
     userCard: UserCard_1.default,
@@ -6441,7 +6479,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgImageFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M2.193 20.917l-.013.001L4 19.326l3.143-3.035 2.642 1.962c.495.336 1.016.457 1.564.363a1.84 1.84 0 0 0 1.28-.841l2.82-4.135L20 17.274l1.986 1.594.014-.001v1.13C22 21.332 21.333 22 20 22H4c-.979 0-1.598-.36-1.859-1.078l.052-.005zM22 16.544L20 15l-3.297-2.637c-.549-.36-1.087-.501-1.613-.424-.527.077-.96.369-1.3.876L11 17l-2.612-1.96c-.508-.298-.975-.43-1.4-.395-.425.035-.83.228-1.215.582L4 17l-2 1.77v.615V4c0-1.333.667-2 2-2h16c1.333 0 2 .667 2 2v12.544zM9 10.919a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' }))); };
+    react_1.default.createElement("path", { d: 'M2.193 20.917l-.013.001L4 19.326l3.143-3.035 2.642 1.962c.495.336 1.016.457 1.564.363a1.84 1.84 0 0 0 1.28-.841l2.82-4.135L20 17.274l1.986 1.594.014-.001v1.13C22 21.332 21.333 22 20 22H4c-.979 0-1.598-.36-1.859-1.078l.052-.005zM22 16.544L20 15l-3.297-2.637c-.549-.36-1.087-.501-1.613-.424-.527.077-.96.369-1.3.876L11 17l-2.612-1.96c-.508-.298-.975-.43-1.4-.395-.425.035-.83.228-1.215.582L4 17l-2 1.77V20 4c0-1.333.667-2 2-2h16c1.333 0 2 .667 2 2v12.544zM9 10.919a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' }))); };
 exports.default = SvgImageFilled;
 //# sourceMappingURL=ImageFilled.js.map
 
@@ -6975,16 +7013,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgLockOpenFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M17.89 9.002l.035-2.681c-.04.614-.374.92-1 .92-.925-.003-1.073-.928-1.152-1.205C15.408 4.757 14.46 4.002 12 4.002c-4.003 0-4 2-4 5h9.89c1.407 0 2.11.667 2.11 2v9c0 1.333-.667 2-2 2H6.002c-1.335 0-2.002-.667-2.002-2V11.03c0-1.351.667-2.027 2-2.027l.002-2C6 3.667 8 2 12 2c3.348 0 5.295 1.123 5.84 3.368.045.184.074.432.087.745v.028zm-6.89 8c0 .667.333 1 1 1s1-.333 1-1v-3c0-.667-.333-1-1-1s-1 .333-1 1v3z' }))); };
+    react_1.default.createElement("path", { d: 'M17.925 6.32l.002-.179c.05 1.599.076 2.552.076 2.861H8c0-3-.003-5 4-5 2.46 0 3.408.755 3.773 2.034.08.277.227 1.202 1.152 1.204.626.001.96-.305 1-.92l-.035 2.682c1.407 0 2.11.667 2.11 2v9c0 1.333-.667 2-2 2H6.002c-1.335 0-2.002-.667-2.002-2V11.03c0-1.351.667-2.027 2-2.027l.002-2C6 3.667 8 2 12 2c3.348 0 5.295 1.123 5.84 3.368.041.168.069.39.084.668zM11 17.003c0 .667.333 1 1 1s1-.333 1-1v-3c0-.667-.333-1-1-1s-1 .333-1 1v3z' }))); };
 exports.default = SvgLockOpenFilled;
 //# sourceMappingURL=LockOpenFilled.js.map
 
 /***/ }),
 
-/***/ "../lib/components/Icon/generated/LockOpenFilledCopy.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/Icon/generated/LockOpenFilledCopy.js ***!
-  \**************************************************************/
+/***/ "../lib/components/Icon/generated/LockOpenOutline.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Icon/generated/LockOpenOutline.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7007,10 +7045,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var SvgLockOpenFilledCopy = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M17.89 9.002l.035-2.681c-.04.614-.374.92-1 .92-.925-.003-1.073-.928-1.152-1.205C15.408 4.757 14.46 4.002 12 4.002c-4.003 0-4 2-4 5h9.89c1.407 0 2.11.667 2.11 2v9c0 1.333-.667 2-2 2H6.002c-1.335 0-2.002-.667-2.002-2V11.03c0-1.351.667-2.027 2-2.027l.002-2C6 3.667 8 2 12 2c3.348 0 5.295 1.123 5.84 3.368.045.184.074.432.087.745v.028zM6 20.002h12v-9.018H6v9.018zm5-3v-3c0-.667.333-1 1-1s1 .333 1 1v3c0 .667-.333 1-1 1s-1-.333-1-1z' }))); };
-exports.default = SvgLockOpenFilledCopy;
-//# sourceMappingURL=LockOpenFilledCopy.js.map
+var SvgLockOpenOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("path", { d: 'M17.925 6.32l.002-.179c.05 1.599.076 2.552.076 2.861H8c0-3-.003-5 4-5 2.46 0 3.408.755 3.773 2.034.08.277.227 1.202 1.152 1.204.626.001.96-.305 1-.92l-.035 2.682c1.407 0 2.11.667 2.11 2v9c0 1.333-.667 2-2 2H6.002c-1.335 0-2.002-.667-2.002-2V11.03c0-1.351.667-2.027 2-2.027l.002-2C6 3.667 8 2 12 2c3.348 0 5.295 1.123 5.84 3.368.041.168.069.39.084.668zM6 20.003h12v-9.018H6v9.018zm5-3v-3c0-.667.333-1 1-1s1 .333 1 1v3c0 .667-.333 1-1 1s-1-.333-1-1z' }))); };
+exports.default = SvgLockOpenOutline;
+//# sourceMappingURL=LockOpenOutline.js.map
 
 /***/ }),
 
@@ -7042,7 +7080,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgMapFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'map-filled_svg__a', d: 'M15 5.365v14.608a5.658 5.658 0 0 1-.684-.113L9 18.606V4.009c.28.026.614.089 1 .188l4.95 1.182.05-.014zm2-.574l2.469-.709a2.09 2.09 0 0 1 1.792.302c.47.34.739.851.739 1.4v11.338c0 .783-.548 1.467-1.364 1.702L17 19.736V4.791zM7 19.19l-2.469.721a2.145 2.145 0 0 1-.584.082c-.433 0-.86-.132-1.208-.385-.47-.34-.739-.85-.739-1.4V7.082c0-.785.548-1.469 1.365-1.703L7 4.328V19.19z' })),
+        react_1.default.createElement("path", { id: 'map-filled_svg__a', d: 'M15 5.365v14.608a5.659 5.659 0 0 1-.684-.113L9 18.606V4.008c.28.027.614.09 1 .19l4.95 1.181.05-.014zm2-.574l2.469-.709a2.09 2.09 0 0 1 1.792.302c.47.34.739.851.739 1.4v11.338c0 .783-.548 1.467-1.364 1.702L17 19.736V4.791zM7 19.19l-2.469.721a2.145 2.145 0 0 1-.584.082c-.433 0-.86-.132-1.208-.385-.47-.34-.739-.85-.739-1.4V7.082c0-.785.548-1.469 1.365-1.703L7 4.328V19.19z' })),
     react_1.default.createElement("use", { xlinkHref: '#map-filled_svg__a' }))); };
 exports.default = SvgMapFilled;
 //# sourceMappingURL=MapFilled.js.map
@@ -7082,10 +7120,10 @@ exports.default = SvgMapMarkerFilled;
 
 /***/ }),
 
-/***/ "../lib/components/Icon/generated/MapMarkerOutlined.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/Icon/generated/MapMarkerOutlined.js ***!
-  \*************************************************************/
+/***/ "../lib/components/Icon/generated/MapMarkerOutline.js":
+/*!************************************************************!*\
+  !*** ../lib/components/Icon/generated/MapMarkerOutline.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7108,10 +7146,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var SvgMapMarkerOutlined = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+var SvgMapMarkerOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("path", { d: 'M12 22c-5.333-5.054-8-9.054-8-12a8 8 0 1 1 16 0c0 2.946-2.667 6.946-8 12zm0-2.667c4-4.013 6-7.124 6-9.333a6 6 0 1 0-12 0c0 2.21 2 5.32 6 9.333zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z' }))); };
-exports.default = SvgMapMarkerOutlined;
-//# sourceMappingURL=MapMarkerOutlined.js.map
+exports.default = SvgMapMarkerOutline;
+//# sourceMappingURL=MapMarkerOutline.js.map
 
 /***/ }),
 
@@ -7143,10 +7181,76 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgMapOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
     react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'map-outline_svg__a', d: 'M8.704 4c.332-.001.764.067 1.296.203l4.95 1.183 4.519-1.298a2.09 2.09 0 0 1 1.792.302c.47.34.739.851.739 1.4v11.338c0 .783-.548 1.467-1.364 1.702l-4.32 1.084a4.454 4.454 0 0 1-.898.086c-.332.001-.7-.043-1.102-.134L9 18.612l-4.469 1.307a2.145 2.145 0 0 1-.584.081c-.433 0-.86-.132-1.208-.385-.47-.34-.739-.85-.739-1.4V7.088c0-.785.548-1.469 1.365-1.702l4.086-1.183c.503-.134.92-.202 1.253-.203zM4 7.125v10.79l4-1.099V6L4 7.125zm12 0v10.79l4-1.099V6l-4 1.125zm-2 0L10 6v10.816l4 1.1V7.124z' })),
+        react_1.default.createElement("path", { id: 'map-outline_svg__a', d: 'M8.704 4c.332-.001.764.067 1.296.203l4.95 1.183 4.519-1.298a2.09 2.09 0 0 1 1.792.302c.47.34.739.851.739 1.4v11.338c0 .783-.548 1.467-1.364 1.702l-4.32 1.084a4.456 4.456 0 0 1-.898.086c-.332.001-.7-.043-1.102-.134L9 18.612l-4.469 1.307a2.145 2.145 0 0 1-.584.081c-.433 0-.86-.132-1.208-.385-.47-.34-.739-.85-.739-1.4V7.088c0-.785.548-1.469 1.365-1.702l4.086-1.183c.503-.134.92-.202 1.253-.203zM4 7.125v10.79l4-1.099V6L4 7.125zm12 0v10.79l4-1.099V6l-4 1.125zm-2 0L10 6v10.816l4 1.1V7.124z' })),
     react_1.default.createElement("use", { xlinkHref: '#map-outline_svg__a' }))); };
 exports.default = SvgMapOutline;
 //# sourceMappingURL=MapOutline.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Icon/generated/MedicineBottleFilled.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Icon/generated/MedicineBottleFilled.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SvgMedicineBottleFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("path", { d: 'M3 7.994h18v11.99c0 1.306-.667 1.972-2 1.997-1.333.025-6 .025-14 0-1.333 0-2-.666-2-1.998V7.994zM4.038 2H20c1.333 0 2 .666 2 1.998V6H2V3.998C2 2.666 2.68 2 4.038 2zM11 12v1.996L8.996 14C8.332 14 8 14.333 8 15s.332 1 .996 1H11v2c0 .667.333 1 1 1s1-.333 1-1v-2h2.002c.665 0 .998-.333.998-1s-.333-1.001-.998-1.004L13 14v-2c0-.667-.333-1-1-1s-1 .333-1 1z' }))); };
+exports.default = SvgMedicineBottleFilled;
+//# sourceMappingURL=MedicineBottleFilled.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Icon/generated/MedicineBottleOutline.js":
+/*!*****************************************************************!*\
+  !*** ../lib/components/Icon/generated/MedicineBottleOutline.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SvgMedicineBottleOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("path", { d: 'M4.038 2H20c1.333 0 2 .666 2 1.998v2.997c0 .666-.33 1-.993 1L21 20c0 1.333-.668 2-2.005 2H5c-1.334 0-2-.667-2-2V7.994c-.667 0-1-.333-1-.999V3.998C2 2.666 2.68 2 4.038 2zM4 3.998v1.998h16V3.998H4zm1 3.996v11.99h14V7.993H5zM11 11c0-.667.334-1 1-1 .667 0 1 .333 1 1v2l2.002-.004C15.667 13 16 13.333 16 14s-.333 1-.998 1H13v2c0 .667-.333 1-1 1-.666 0-1-.333-1-1v-2H8.997C8.332 15 8 14.667 8 14s.332-1 .997-1L11 12.996V11z' }))); };
+exports.default = SvgMedicineBottleOutline;
+//# sourceMappingURL=MedicineBottleOutline.js.map
 
 /***/ }),
 
@@ -7481,41 +7585,6 @@ var SvgOpenDoor = function (props) { return (react_1.default.createElement("svg"
     react_1.default.createElement("path", { d: 'M5.999 2H17.99c1.333 0 2 .667 2.004 2v15.996c-.003 1.33-.671 1.998-2.004 2.004-1.998.009-9.982.009-11.996 0-1.342-.006-2.007-.674-1.995-2.004V4C4 2.667 4.666 2 6 2zm7.731 13.754c-.172.311-.455.577-.848.797L6 20.005h12v-16h-3.972l-.043 10.766a1.97 1.97 0 0 1-.255.983zM10.995 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2z' }))); };
 exports.default = SvgOpenDoor;
 //# sourceMappingURL=OpenDoor.js.map
-
-/***/ }),
-
-/***/ "../lib/components/Icon/generated/Outline.js":
-/*!***************************************************!*\
-  !*** ../lib/components/Icon/generated/Outline.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-/* tslint:disable */
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var SvgOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("defs", null,
-        react_1.default.createElement("path", { id: 'outline_svg__a', d: 'M12 2c5.523 0 10 4.478 10 10s-4.477 10-10 10S2 17.522 2 12 6.477 2 12 2zm0 18c4.411 0 8-3.589 8-8s-3.589-8-8-8-8 3.589-8 8 3.589 8 8 8zM9.121 7.51A3.5 3.5 0 0 1 15.5 9.5c0 1.577-1.376 2.6-2.088 3.136-.571.43-.419 1.381-1.454 1.364-.784-.013-.923-.802-.93-1-.035-1.088 1.034-1.721 1.26-1.867.883-.57 1.212-1.193 1.212-1.633a1.5 1.5 0 1 0-2.744-.838c-.161.24-.519.68-1.26.29-.74-.39-.58-1.147-.375-1.443zM12 15.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z' })),
-    react_1.default.createElement("use", { xlinkHref: '#outline_svg__a' }))); };
-exports.default = SvgOutline;
-//# sourceMappingURL=Outline.js.map
 
 /***/ }),
 
@@ -8124,6 +8193,41 @@ var SvgQuestionMarkFilled = function (props) { return (react_1.default.createEle
     react_1.default.createElement("use", { xlinkHref: '#question-mark-filled_svg__a' }))); };
 exports.default = SvgQuestionMarkFilled;
 //# sourceMappingURL=QuestionMarkFilled.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Icon/generated/QuestionMarkOutline.js":
+/*!***************************************************************!*\
+  !*** ../lib/components/Icon/generated/QuestionMarkOutline.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SvgQuestionMarkOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("defs", null,
+        react_1.default.createElement("path", { id: 'question-mark-outline_svg__a', d: 'M12 2c5.523 0 10 4.478 10 10s-4.477 10-10 10S2 17.522 2 12 6.477 2 12 2zm0 18c4.411 0 8-3.589 8-8s-3.589-8-8-8-8 3.589-8 8 3.589 8 8 8zM9.121 7.51A3.5 3.5 0 0 1 15.5 9.5c0 1.577-1.376 2.6-2.088 3.136-.571.43-.419 1.381-1.454 1.364-.784-.013-.923-.802-.93-1-.035-1.088 1.034-1.721 1.26-1.867.883-.57 1.212-1.193 1.212-1.633a1.5 1.5 0 1 0-2.744-.838c-.161.24-.519.68-1.26.29-.74-.39-.58-1.147-.375-1.443zM12 15.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z' })),
+    react_1.default.createElement("use", { xlinkHref: '#question-mark-outline_svg__a' }))); };
+exports.default = SvgQuestionMarkOutline;
+//# sourceMappingURL=QuestionMarkOutline.js.map
 
 /***/ }),
 
@@ -9057,6 +9161,39 @@ exports.default = SvgUnderline;
 
 /***/ }),
 
+/***/ "../lib/components/Icon/generated/Undo.js":
+/*!************************************************!*\
+  !*** ../lib/components/Icon/generated/Undo.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+/* tslint:disable */
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SvgUndo = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
+    react_1.default.createElement("path", { d: 'M7.535 8.071c.804-.906 2.308-2.073 4.538-2.075 3.13-.003 5.994 2.484 6 6.004.006 3.52-2.919 6-6 6 0 0-1 0-1 1s1 1 1 1A8 8 0 1 0 6 6.792V5a1 1 0 0 0-2 0v4.071a1 1 0 0 0 1 1h4.073a1 1 0 0 0 0-2H7.535z' }))); };
+exports.default = SvgUndo;
+//# sourceMappingURL=Undo.js.map
+
+/***/ }),
+
 /***/ "../lib/components/Icon/generated/Upload.js":
 /*!**************************************************!*\
   !*** ../lib/components/Icon/generated/Upload.js ***!
@@ -9117,7 +9254,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgUserBan = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M15 6.814C15 5.515 13.782 4 12 4S9.004 5.462 9.004 7c0 1.553 1.23 2.994 2.998 2.994l.24.006-1.7 1.784a5 5 0 1 1 6.102-6.641L15 6.813zM2 19.785C2 15.047 5.331 14 7.776 14.002 7.776 14 2 19.785 2 19.785zM20.002 20c0-2.667-1.333-4-4-4h-1.745a610.281 610.281 0 0 1 2.029-1.997C20.096 14.001 22 16 22 20c0 1.333-.667 2-2 2H8.283l2.001-2h9.718zM18.207 6.367c.463-.48.935-.48 1.414 0 .48.48.48.951 0 1.415l-13.9 13.9c-.46.481-.931.481-1.414 0-.482-.483-.482-.954 0-1.415l13.9-13.9z' }))); };
+    react_1.default.createElement("path", { d: 'M15 6.814C15 5.515 13.782 4 12 4S9.004 5.462 9.004 7c0 1.553 1.23 2.994 2.998 2.994l.24.006-1.7 1.784a5 5 0 1 1 6.102-6.641L15 6.813zM2 19.785C2 15.047 5.331 14 7.776 14.002 7.776 14 2 19.785 2 19.785zM20.002 20c0-2.667-1.333-4-4-4h-1.745a611.359 611.359 0 0 1 2.029-1.997C20.096 14.001 22 16 22 20c0 1.333-.667 2-2 2H8.283l2.001-2h9.718zM18.207 6.367c.463-.48.935-.48 1.414 0 .48.48.48.951 0 1.415l-13.9 13.9c-.46.481-.931.481-1.414 0-.482-.483-.482-.954 0-1.415l13.9-13.9z' }))); };
 exports.default = SvgUserBan;
 //# sourceMappingURL=UserBan.js.map
 
@@ -9150,7 +9287,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgUserCard = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M2.5 2.5c.34-.336.849-.503 1.528-.5H20c.665-.005 1.165.161 1.5.5.335.34.502.847.5 1.523V20c0 .667-.166 1.167-.5 1.5-.333.334-.833.5-1.5.5H4.01c-.672 0-1.176-.167-1.51-.5-.334-.332-.5-.832-.5-1.5V4.01c-.006-.67.16-1.173.5-1.51zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-3 2c-1.566 0-2.864 1.299-3 3-.008.098 0 1.993 2 2 2 .007 6 0 8 0s2.009-1.898 2-2c-.14-1.695-1.437-3-3-3H9z' }))); };
+    react_1.default.createElement("path", { d: 'M2.5 2.5c.34-.336.849-.503 1.528-.5H20c.665-.006 1.165.161 1.5.5.335.34.502.847.5 1.523V20c0 .667-.166 1.167-.5 1.5-.333.334-.833.5-1.5.5H4.01c-.672 0-1.176-.167-1.51-.5-.334-.332-.5-.832-.5-1.5V4.01c-.006-.67.16-1.173.5-1.51zM12 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-3 2c-1.566 0-2.864 1.299-3 3-.008.098 0 1.993 2 2 2 .007 6 0 8 0s2.009-1.898 2-2c-.14-1.695-1.437-3-3-3H9z' }))); };
 exports.default = SvgUserCard;
 //# sourceMappingURL=UserCard.js.map
 
@@ -9317,7 +9454,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgVideoFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M4.015 4.005c2.015-.007 8.977-.007 10.981 0 1.336.005 2.004.671 2.004 2v3.008l3.403-1.203c.506-.176.898-.176 1.175 0 .278.176.419.476.422.901v6.676c.017.354-.124.62-.422.797-.298.177-.645.207-1.04.09L17 15.004v3.001c0 1.333-.667 2-2 2H4.014c-1.343 0-2.014-.666-2.014-2V6.018c0-1.337.672-2.008 2.015-2.013zm1.985 11c-.667-.007-1 .325-1 .995 0 .67.333 1.005 1 1.005h4c.667 0 1-.335 1-1.005 0-.67-.333-1.002-1-.995H6z' }))); };
+    react_1.default.createElement("path", { d: 'M4.015 4.005c2.015-.007 8.977-.007 10.981 0 1.336.005 2.004.671 2.004 2v3.008l3.403-1.203c.506-.176.898-.176 1.175 0 .278.176.419.476.422.901v6.676c.017.354-.124.62-.422.797-.298.177-.645.207-1.04.09L17 15.004v3.001c0 1.334-.667 2-2 2H4.014c-1.343 0-2.014-.666-2.014-2V6.018c0-1.337.672-2.008 2.015-2.013zm1.985 11c-.667-.007-1 .325-1 .995 0 .67.333 1.005 1 1.005h4c.667 0 1-.335 1-1.005 0-.67-.333-1.002-1-.995H6z' }))); };
 exports.default = SvgVideoFilled;
 //# sourceMappingURL=VideoFilled.js.map
 
@@ -9350,7 +9487,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgVideoOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M4.015 4.005c2.015-.007 8.977-.007 10.981 0 1.336.005 2.004.671 2.004 2v3.008l3.403-1.203c.506-.176.898-.176 1.175 0 .278.176.419.476.422.901v6.676c.017.354-.124.62-.422.797-.298.177-.645.207-1.04.09L17 15.004v3.001c0 1.333-.667 2-2 2H4.014c-1.343 0-2.014-.666-2.014-2V6.018c0-1.337.672-2.008 2.015-2.013zm-.015 2v12h11v-12H4zM20 10l-3.002 1.005v2.003L20 14v-4zM6 15.01h4c.667-.007 1 .325 1 .995 0 .67-.333 1.005-1 1.005H6c-.667 0-1-.335-1-1.005 0-.67.333-1.002 1-.995z' }))); };
+    react_1.default.createElement("path", { d: 'M4.015 4.005c2.015-.007 8.977-.007 10.981 0 1.336.005 2.004.671 2.004 2v3.008l3.403-1.203c.506-.176.898-.176 1.175 0 .278.176.419.476.422.901v6.676c.017.354-.124.62-.422.797-.298.177-.645.207-1.04.09L17 15.004v3.001c0 1.334-.667 2-2 2H4.014c-1.343 0-2.014-.666-2.014-2V6.018c0-1.337.672-2.008 2.015-2.013zm-.015 2v12h11v-12H4zM20 10l-3.002 1.005v2.003L20 14v-4zM6 15.01h4c.667-.007 1 .325 1 .995 0 .67-.333 1.005-1 1.005H6c-.667 0-1-.335-1-1.005 0-.67.333-1.002 1-.995z' }))); };
 exports.default = SvgVideoOutline;
 //# sourceMappingURL=VideoOutline.js.map
 
@@ -9550,7 +9687,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgZoomMinusFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM7 8c-.667-.003-1 .33-1 .998C6 9.666 6.333 10 7 10h4c.667.001 1-.332 1-1 0-.668-.333-1.001-1-1H7z' }))); };
+    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM7 8c-.667-.003-1 .33-1 .998C6 9.666 6.333 10 7 10h4c.667.001 1-.332 1-1 0-.668-.333-1.001-1-1H7z' }))); };
 exports.default = SvgZoomMinusFilled;
 //# sourceMappingURL=ZoomMinusFilled.js.map
 
@@ -9583,7 +9720,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgZoomMinusOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10zM7 8h4c.667-.001 1 .332 1 1 0 .668-.333 1.001-1 1H7c-.667 0-1-.334-1-1.002 0-.668.333-1 1-.998z' }))); };
+    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10zM7 8h4c.667-.001 1 .332 1 1 0 .668-.333 1.001-1 1H7c-.667 0-1-.334-1-1.002 0-.668.333-1 1-.998z' }))); };
 exports.default = SvgZoomMinusOutline;
 //# sourceMappingURL=ZoomMinusOutline.js.map
 
@@ -9616,7 +9753,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgZoomOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z' }))); };
+    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z' }))); };
 exports.default = SvgZoomOutline;
 //# sourceMappingURL=ZoomOutline.js.map
 
@@ -9649,7 +9786,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgZoomPlusFilled = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM10 7c.003-.667-.33-1-.998-1C8.334 6 8 6.333 8 7v1H7c-.667-.005-1 .327-1 .993 0 .667.333 1 1 1l.994.024L8 11c-.001.667.332 1 1 1 .668 0 1.001-.333 1-1v-1l1-.007c.667 0 1-.33 1-.993 0-.662-.333-.995-1-1h-1V7z' }))); };
+    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM10 7c.003-.667-.33-1-.998-1C8.334 6 8 6.333 8 7v1H7c-.667-.005-1 .327-1 .993 0 .667.333 1 1 1l.994.024L8 11c-.001.667.332 1 1 1 .668 0 1.001-.333 1-1v-1l1-.007c.667 0 1-.33 1-.993 0-.662-.333-.995-1-1h-1V7z' }))); };
 exports.default = SvgZoomPlusFilled;
 //# sourceMappingURL=ZoomPlusFilled.js.map
 
@@ -9682,7 +9819,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /* tslint:disable */
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var SvgZoomPlusOutline = function (props) { return (react_1.default.createElement("svg", __assign({ width: '1em', height: '1em', viewBox: '0 0 24 24' }, props),
-    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.414 1.414h-.001l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10zm1-7v1h1c.667.005 1 .338 1 1 0 .662-.333.993-1 .993L10 10v1c.001.667-.332 1-1 1-.668 0-1.001-.333-1-1l-.006-.983L7 9.993c-.667 0-1-.333-1-1 0-.666.333-.998 1-.993h1V7c0-.667.334-1 1.002-1 .668 0 1 .333.998 1z' }))); };
+    react_1.default.createElement("path", { d: 'M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10zm1-7v1h1c.667.005 1 .338 1 1 0 .662-.333.993-1 .993L10 10v1c.001.667-.332 1-1 1-.668 0-1.001-.333-1-1l-.006-.983L7 9.993c-.667 0-1-.333-1-1 0-.666.333-.998 1-.993h1V7c0-.667.334-1 1.002-1 .668 0 1 .333.998 1z' }))); };
 exports.default = SvgZoomPlusOutline;
 //# sourceMappingURL=ZoomPlusOutline.js.map
 
@@ -59146,21 +59283,21 @@ function getKeyAttributes(key) {
 
 /***/ }),
 
-/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx!./":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx ***!
-  \****************************************************************************************************************************************************************************************************************************/
+/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx!./":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx ***!
+  \******************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/components/paginator", function() {
-      var page = __webpack_require__(/*! ./pages/components/paginator/index.mdx */ "./pages/components/paginator/index.mdx")
+    (window.__NEXT_P=window.__NEXT_P||[]).push(["/components/breadcrumb", function() {
+      var page = __webpack_require__(/*! ./pages/components/breadcrumb/index.mdx */ "./pages/components/breadcrumb/index.mdx")
       if(true) {
-        module.hot.accept(/*! ./pages/components/paginator/index.mdx */ "./pages/components/paginator/index.mdx", function() {
-          if(!next.router.components["/components/paginator"]) return
-          var updatedPage = __webpack_require__(/*! ./pages/components/paginator/index.mdx */ "./pages/components/paginator/index.mdx")
-          next.router.update("/components/paginator", updatedPage.default || updatedPage)
+        module.hot.accept(/*! ./pages/components/breadcrumb/index.mdx */ "./pages/components/breadcrumb/index.mdx", function() {
+          if(!next.router.components["/components/breadcrumb"]) return
+          var updatedPage = __webpack_require__(/*! ./pages/components/breadcrumb/index.mdx */ "./pages/components/breadcrumb/index.mdx")
+          next.router.update("/components/breadcrumb", updatedPage.default || updatedPage)
         })
       }
       return { page: page.default || page }
@@ -66845,6 +66982,137 @@ function BreadcrumbDemo() {
 
 /***/ }),
 
+/***/ "./pages/components/breadcrumb/index.mdx":
+/*!***********************************************!*\
+  !*** ./pages/components/breadcrumb/index.mdx ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "../node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/index.es.js");
+/* harmony import */ var _components_Demo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Demo */ "./components/Demo.tsx");
+
+
+var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/components/breadcrumb/index.mdx";
+
+/* @jsx mdx */
+
+
+/* @jsx mdx */
+
+
+
+var makeShortcode = function makeShortcode(name) {
+  return function MDXDefaultShortcode(props) {
+    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
+    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 9
+      },
+      __self: this
+    }));
+  };
+};
+
+var layoutProps = {};
+var MDXLayout = "wrapper";
+function MDXContent(_ref) {
+  var components = _ref.components,
+      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["components"]);
+
+  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, layoutProps, props, {
+    components: components,
+    mdxType: "MDXLayout",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: this
+  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    "id": "breadcrumb"
+  }, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 22
+    },
+    __self: this
+  }), "Breadcrumb"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: this
+  }, "Breadcrumbs enable users to quickly see their location within a path of navigation and move up to a parent level if desired."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h2", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    "id": "best-practices"
+  }, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: this
+  }), "Best practices"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }, Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
+    parentName: "ul",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30
+    },
+    __self: this
+  }, "Place Breadcrumbs near the top of the page."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
+    parentName: "ul",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: this
+  }, "Show hierarchy, not history."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
+    parentName: "ul",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 32
+    },
+    __self: this
+  }, "Keep Breadcrumb titles short but descriptive."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
+    parentName: "ul",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33
+    },
+    __self: this
+  }, "Do not use a Breadcrumb if you are taking users through a multi-step process (use a Progress Indicator for this.)"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("li", {
+    parentName: "ul",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34
+    },
+    __self: this
+  }, "Use Breadcrumbs only if there are two or more navigation levels (ex.: Home > Settings).")), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_components_Demo__WEBPACK_IMPORTED_MODULE_4__["Demo"], {
+    src: "pages/components/breadcrumb/breadcrumb",
+    mdxType: "Demo",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 36
+    },
+    __self: this
+  }));
+}
+MDXContent.isMDXComponent = true;
+
+/***/ }),
+
 /***/ "./pages/components/button/ButtonDanger.demo.tsx":
 /*!*******************************************************!*\
   !*** ./pages/components/button/ButtonDanger.demo.tsx ***!
@@ -68212,96 +68480,6 @@ function PaginatorEx() {
 
 /***/ }),
 
-/***/ "./pages/components/paginator/index.mdx":
-/*!**********************************************!*\
-  !*** ./pages/components/paginator/index.mdx ***!
-  \**********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MDXContent; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "../node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _mdx_js_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mdx-js/react */ "../node_modules/@mdx-js/react/dist/index.es.js");
-/* harmony import */ var _components_Demo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Demo */ "./components/Demo.tsx");
-
-
-var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/components/paginator/index.mdx";
-
-/* @jsx mdx */
-
-
-/* @jsx mdx */
-
-
-
-var makeShortcode = function makeShortcode(name) {
-  return function MDXDefaultShortcode(props) {
-    console.warn("Component " + name + " was not imported, exported, or provided by MDXProvider as global scope");
-    return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("div", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, props, {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    }));
-  };
-};
-
-var layoutProps = {};
-var MDXLayout = "wrapper";
-function MDXContent(_ref) {
-  var components = _ref.components,
-      props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["components"]);
-
-  return Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(MDXLayout, Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, layoutProps, props, {
-    components: components,
-    mdxType: "MDXLayout",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: this
-  }), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h1", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    "id": "paginator"
-  }, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 22
-    },
-    __self: this
-  }), "Paginator"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: this
-  }, "Used to navigate between multiples pages whenever there are too many results to show at once or when something will take a long time to load/render all items. Is normally used in a table or to display search results."), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])("h3", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
-    "id": "example"
-  }, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 26
-    },
-    __self: this
-  }), "Example"), Object(_mdx_js_react__WEBPACK_IMPORTED_MODULE_3__["mdx"])(_components_Demo__WEBPACK_IMPORTED_MODULE_4__["Demo"], {
-    src: "pages/components/paginator/Paginator",
-    mdxType: "Demo",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: this
-  }));
-}
-MDXContent.isMDXComponent = true;
-
-/***/ }),
-
 /***/ "./pages/components/radio-button/RadioExample.demo.tsx":
 /*!*************************************************************!*\
   !*** ./pages/components/radio-button/RadioExample.demo.tsx ***!
@@ -69152,13 +69330,13 @@ function TooltipDefault() {
 /***/ }),
 
 /***/ 1:
-/*!*******************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx ***!
-  \*******************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx ***!
+  \*********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fpaginator&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fpaginator%2Findex.mdx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx!./");
 
 
 /***/ }),
@@ -69175,4 +69353,4 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 /***/ })
 
 },[[1,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=paginator.js.map
+//# sourceMappingURL=breadcrumb.js.map
