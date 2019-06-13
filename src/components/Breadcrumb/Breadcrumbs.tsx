@@ -64,5 +64,6 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   lastItem: {
     color: theme.pallete.primary.main,
+    pointerEvents: 'none',
   } as CSSProperties,
 })
