@@ -16,12 +16,12 @@ export function Pallete(props: PalletePros) {
 
   return (
     <div className={classes.box}>
-      <div className={css(classes.item, classes.title)} style={{ background: pallete.c50, color: gray.c100 }}>
+      <div className={css(classes.item, classes.title)} style={{ background: pallete.c40, color: gray.c100 }}>
         {title}
       </div>
-      <div className={classes.item} style={{ background: pallete.c50, color: gray.c100 }}>
-        <span className={classes.shade}>50</span>
-        <span className={classes.hex}>{pallete.c50}</span>
+      <div className={classes.item} style={{ background: pallete.c40, color: gray.c100 }}>
+        <span className={classes.shade}>40</span>
+        <span className={classes.hex}>{pallete.c40}</span>
       </div>
       {keys.map(key => (
         <div
