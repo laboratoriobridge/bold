@@ -8,6 +8,7 @@ export * from './purple'
 export * from './red'
 export * from './turquoise'
 export * from './yellow'
+export * from './pink'
 
 export interface ColorScale {
   c10: Color
