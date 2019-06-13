@@ -17394,15 +17394,15 @@ exports.default = metaPath;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.blue = {
-    c10: '#0E1C30',
-    c20: '#0E366E',
-    c30: '#074FB3',
-    c40: '#0A67D1',
-    c50: '#1079E3',
-    c60: '#3491ED',
-    c70: '#75C6FF',
-    c80: '#B8E2FF',
-    c90: '#EBF4FA',
+    c10: '#002451',
+    c20: '#003A79',
+    c30: '#0051A2',
+    c40: '#0069D0',
+    c50: '#007AF0',
+    c60: '#498FFF',
+    c70: '#84AAFF',
+    c80: '#C5D4FF',
+    c90: '#ECF0FF',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=blue.js.map
@@ -17420,15 +17420,15 @@ exports.blue = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.gray = {
-    c10: '#171B1F',
-    c20: '#2D343B',
-    c30: '#41484F',
-    c40: '#53595E',
-    c50: '#676C70',
-    c60: '#818489',
-    c70: '#B9B9BD',
-    c80: '#DCDCE0',
-    c90: '#F2F2F7',
+    c10: '#24252E',
+    c20: '#3A3A47',
+    c30: '#515162',
+    c40: '#696979',
+    c50: '#7A7B8E',
+    c60: '#8F8FA2',
+    c70: '#AAAAB9',
+    c80: '#D3D4DD',
+    c90: '#F0F0F5',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=gray.js.map
@@ -17446,15 +17446,15 @@ exports.gray = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.green = {
-    c10: '#0C1F10',
-    c20: '#09421C',
-    c30: '#085E17',
-    c40: '#097D05',
-    c50: '#0D8F20',
-    c60: '#28AB16',
-    c70: '#7ED945',
-    c80: '#B1F081',
-    c90: '#E3FAD2',
+    c10: '#052D00',
+    c20: '#0E4700',
+    c30: '#166000',
+    c40: '#217B00',
+    c50: '#2E8E16',
+    c60: '#40A42B',
+    c70: '#54C241',
+    c80: '#9DE695',
+    c90: '#E1F6DF',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=green.js.map
@@ -17497,15 +17497,15 @@ __export(__webpack_require__(/*! ./yellow */ "../lib/styles/colors/yellow.js"));
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.orange = {
-    c10: '#2E1606',
-    c20: '#592A0A',
-    c30: '#8C3901',
-    c40: '#BF4600',
-    c50: '#CF5A00',
-    c60: '#E67220',
-    c70: '#FFAE70',
-    c80: '#FAD6BB',
-    c90: '#FAF0E8',
+    c10: '#421A00',
+    c20: '#642B00',
+    c30: '#873D00',
+    c40: '#AD5000',
+    c50: '#C85D00',
+    c60: '#E76F00',
+    c70: '#FF8C54',
+    c80: '#FFC8B8',
+    c90: '#FFECE8',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=orange.js.map
@@ -17523,15 +17523,15 @@ exports.orange = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.purple = {
-    c10: '#2E113D',
-    c20: '#66198C',
-    c30: '#8529B3',
-    c40: '#A73AD6',
-    c50: '#B84BD9',
-    c60: '#CA66E3',
-    c70: '#EEA4FC',
-    c80: '#F7D1FF',
-    c90: '#FAF0FC',
+    c10: '#42005B',
+    c20: '#630087',
+    c30: '#8600B6',
+    c40: '#AB00E7',
+    c50: '#C02BFF',
+    c60: '#C762FF',
+    c70: '#D28FFF',
+    c80: '#E7C8FF',
+    c90: '#F7EDFF',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=purple.js.map
@@ -17549,15 +17549,15 @@ exports.purple = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.red = {
-    c10: '#3D110E',
-    c20: '#75211B',
-    c30: '#AD2E24',
-    c40: '#D83A2E',
-    c50: '#E64949',
-    c60: '#ED6868',
-    c70: '#FCA7A7',
-    c80: '#FCD2D2',
-    c90: '#FCF0F0',
+    c10: '#510609',
+    c20: '#790C14',
+    c30: '#A4151E',
+    c40: '#D01E29',
+    c50: '#F02532',
+    c60: '#F75B60',
+    c70: '#FF888B',
+    c80: '#FAC8C9',
+    c90: '#FEECED',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=red.js.map
@@ -17575,15 +17575,15 @@ exports.red = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.turquoise = {
-    c10: '#091F1C',
-    c20: '#084037',
-    c30: '#07594D',
-    c40: '#057572',
-    c50: '#0C8777',
-    c60: '#12A695',
-    c70: '#45D9D1',
-    c80: '#9DEDE5',
-    c90: '#D2FAF6',
+    c10: '#002B26',
+    c20: '#00443D',
+    c30: '#005E55',
+    c40: '#02786D',
+    c50: '#1E8B7F',
+    c60: '#36A094',
+    c70: '#50BBAF',
+    c80: '#9BE1D8',
+    c90: '#DBF6F2',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=turquoise.js.map
@@ -17601,15 +17601,15 @@ exports.turquoise = {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.yellow = {
-    c10: '#211805',
-    c20: '#4A310B',
-    c30: '#6E4201',
-    c40: '#8F5704',
-    c50: '#9C6800',
-    c60: '#B08400',
-    c70: '#E0BD31',
-    c80: '#F5DE82',
-    c90: '#FAF3D7',
+    c10: '#312400',
+    c20: '#4C3900',
+    c30: '#684F00',
+    c40: '#866600',
+    c50: '#9B7700',
+    c60: '#B58B00',
+    c70: '#D5A400',
+    c80: '#FCCE74',
+    c90: '#FFEED6',
     c100: '#FFFFFF',
 };
 //# sourceMappingURL=yellow.js.map
@@ -69329,7 +69329,7 @@ function TooltipDefault() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 0:
 /*!*********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcomponents%2Fbreadcrumb&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fbreadcrumb%2Findex.mdx ***!
   \*********************************************************************************************************************************************************************************/
@@ -69352,5 +69352,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=breadcrumb.js.map
