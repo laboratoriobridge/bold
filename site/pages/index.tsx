@@ -54,7 +54,7 @@ const createStyles = (theme: Theme) => ({
     fontSize: 24,
   } as React.CSSProperties,
   cards: {
-    background: '#0099ff',
+    background: theme.pallete.primary.c50,
     padding: 80,
     flex: 1,
   },
