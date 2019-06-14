@@ -48856,7 +48856,7 @@ var createStyles = function createStyles(theme) {
       fontSize: 24
     },
     cards: {
-      background: '#0099ff',
+      background: theme.pallete.primary.c50,
       padding: 80,
       flex: 1
     },
@@ -48946,7 +48946,7 @@ var createCardStyles = function createCardStyles(theme) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 0:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Findex.tsx ***!
   \********************************************************************************************************************************/
@@ -48969,5 +48969,5 @@ module.exports = dll_9b549f1a9ec25a08a85a;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
