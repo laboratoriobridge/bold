@@ -3,9 +3,9 @@ import React, { CSSProperties, useEffect, useState } from 'react'
 import { useLocale } from '../../locale'
 import { Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
-import { TextInput } from '../form/input/TextInput/TextInput'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
+import { TextInput } from '../TextInput'
 
 export interface PaginatorProps {
   /**
