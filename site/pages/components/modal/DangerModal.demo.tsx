@@ -35,7 +35,7 @@ function DangerDemo() {
             <Button onClick={handleModalClose}>Discard</Button>
             <Button kind='danger' onClick={handleModalClose}>
               <Icon icon='trashOutline' style={{ marginRight: '0.5rem' }} />
-              <Text>Delete all</Text>
+              <Text color='inherit'>Delete all</Text>
             </Button>
           </HFlow>
         </ModalFooter>

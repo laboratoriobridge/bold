@@ -16,7 +16,7 @@ function ConfirmationDemo() {
       <Modal size='small' onClose={handleModalClose} open={isOpen}>
         <ModalBody>
           <HFlow alignItems='center'>
-            <Icon icon='outline' style={{ marginRight: '0.5rem' }} size={3} fill='info' />
+            <Icon icon='infoCircleOutline' style={{ marginRight: '0.5rem' }} size={3} fill='info' />
             <Heading level={1}>Confirmation Modal</Heading>
           </HFlow>
           <br />

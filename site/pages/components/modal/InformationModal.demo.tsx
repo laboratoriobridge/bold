@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Button, Heading, HFlow, Icon, Modal, ModalBody, VFlow } from '../../../../lib'
+import { Button, Heading, HFlow, Icon, Modal, ModalBody } from '../../../../lib'
 
 function InformationDemo() {
   const [isOpen, setIsOpen] = useState(false)
