@@ -60,7 +60,7 @@ export function AppHeader(props: AppHeaderProps) {
   )
 }
 
-export const APP_HEADER_HEIGHT = 77
+export const APP_HEADER_HEIGHT = 76
 
 const createStyles = (theme: Theme) => ({
   header: {

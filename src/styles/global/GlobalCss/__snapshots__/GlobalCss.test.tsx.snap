@@ -30,7 +30,7 @@ exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
     data-emotion="css-global"
   >
     
-    body{margin:0;color:#3A3A47;font-family:"IBM Plex Sans",sans-serif;font-size:0.8125rem;line-height:1.5;overflow-y:scroll;}
+    body{margin:0;color:#3A3A47;font-family:"IBM Plex Sans",sans-serif;font-size:0.8125rem;overflow-y:scroll;}
   </style>
   <style
     data-emotion="css-global"
@@ -79,12 +79,6 @@ exports[`DefaultGlobalCss should inject default CSS styles from theme 1`] = `
   >
     
     p{margin:0;line-height:1.5;}
-  </style>
-  <style
-    data-emotion="css-global"
-  >
-    
-    mark{background:#FCCE74;}
   </style>
 </head>
 `;

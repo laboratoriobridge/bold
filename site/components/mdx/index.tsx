@@ -111,6 +111,7 @@ const createStyles = (theme: Theme) => ({
     marginBottom: '2rem',
     overflow: 'auto',
     background: theme.pallete.surface.background,
+    lineHeight: 1.5,
   } as CSSProperties,
   code: {
     '&:not(.hljs)': {

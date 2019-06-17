@@ -1,4 +1,4 @@
-import { Global as EmotionGlobal, Interpolation } from '@emotion/core/'
+import { Global as EmotionGlobal, Interpolation } from '@emotion/core'
 import React from 'react'
 
 import { useTheme } from '../../hooks'
@@ -25,7 +25,6 @@ export const createGlobalStyles = (theme: Theme): Interpolation => ({
     color: theme.pallete.text.main,
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sizes.text,
-    lineHeight: theme.typography.lineHeight,
     overflowY: 'scroll',
   },
   hr: {
@@ -43,8 +42,5 @@ export const createGlobalStyles = (theme: Theme): Interpolation => ({
   p: {
     margin: '0',
     lineHeight: 1.5,
-  },
-  mark: {
-    background: theme.pallete.highlight,
   },
 })

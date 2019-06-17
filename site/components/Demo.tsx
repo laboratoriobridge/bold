@@ -41,6 +41,7 @@ const createStyles = (theme: Theme) => ({
 
     pre: {
       margin: 0,
+      lineHeight: 1.5,
       code: {
         borderTopLeftRadius: 0,
         borderTopRightRadius: 0,
