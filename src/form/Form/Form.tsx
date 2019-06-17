@@ -8,17 +8,17 @@ import { isEmpty, isPromise } from '../../util'
 
 export type ResultType = object | Promise<object | undefined> | undefined | void
 
-export interface FormProps extends FinalFormProps {
+export interface FormProps<FormValues> extends FinalFormProps<FormValues> {
   focusOnError?: boolean
   transformResult?(result: ResultType): ResultType
-  onSubmitSucceeded?(formState: FormState): void
-  onSubmitFailed?(formState: FormState): void
+  onSubmitSucceeded?(formState: FormState<FormValues>): void
+  onSubmitFailed?(formState: FormState<FormValues>): void
 }
 
 const focusOnErrorDecorator = createFocusOnErrorDecorator()
 
-export class Form extends React.Component<FormProps> {
-  static defaultProps: Partial<FormProps> = {
+export class Form<FormValues extends object = any> extends React.Component<FormProps<FormValues>> {
+  static defaultProps: Partial<FormProps<any>> = {
     focusOnError: true,
     decorators: [],
     transformResult: result => result,
@@ -33,7 +33,7 @@ export class Form extends React.Component<FormProps> {
     const mutators = { ...this.props.mutators, setFieldData: setFieldData.default || setFieldData }
 
     return (
-      <FinalForm
+      <FinalForm<FormValues>
         {...this.props}
         onSubmit={this.onSubmit}
         render={this.renderForm}
@@ -43,7 +43,7 @@ export class Form extends React.Component<FormProps> {
     )
   }
 
-  private renderForm = (props: FormRenderProps) => (
+  private renderForm = (props: FormRenderProps<FormValues>) => (
     <>
       {this.props.render({
         ...props,
@@ -52,7 +52,7 @@ export class Form extends React.Component<FormProps> {
     </>
   )
 
-  private handleSubmit = (formProps: FormRenderProps) => event => {
+  private handleSubmit = (formProps: FormRenderProps<FormValues>) => event => {
     const { onSubmitFailed } = this.props
     if (onSubmitFailed && !isEmpty(formProps.errors)) {
       setTimeout(() => onSubmitFailed(formProps.form.getState()))
@@ -60,7 +60,7 @@ export class Form extends React.Component<FormProps> {
     return formProps.handleSubmit(event)
   }
 
-  private getConvertedValues = (values: Object, form: FormApi) => {
+  private getConvertedValues = (values: FormValues, form: FormApi<FormValues>) => {
     let newValues = values
 
     for (const field of form.getRegisteredFields()) {
@@ -68,14 +68,14 @@ export class Form extends React.Component<FormProps> {
       const convert = fieldState.data ? fieldState.data.convert : null
       if (convert) {
         const fieldValue = getIn(values, field)
-        newValues = setIn(newValues, field, convert(fieldValue))
+        newValues = setIn(newValues, field, convert(fieldValue)) as FormValues
       }
     }
 
     return newValues
   }
 
-  private onSubmit = (values: Object, form: FormApi) => {
+  private onSubmit = (values: FormValues, form: FormApi<FormValues>) => {
     const { onSubmit, transformResult } = this.props
 
     const newValues = this.getConvertedValues(values, form)
@@ -94,7 +94,7 @@ export class Form extends React.Component<FormProps> {
     return ret
   }
 
-  private emitSubmitEvents = (submitResult: ResultType, form: FormApi) => {
+  private emitSubmitEvents = (submitResult: ResultType, form: FormApi<FormValues>) => {
     const { onSubmitFailed, onSubmitSucceeded } = this.props
 
     if (!submitResult && onSubmitSucceeded) {

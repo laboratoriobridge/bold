@@ -3,7 +3,7 @@ import setFieldData from 'final-form-set-field-data'
 import React from 'react'
 import { Form } from 'react-final-form'
 
-import metaPath from '../../../../metaPath/metaPath'
+import metaPath from '../../metaPath/metaPath'
 
 import { Field, FieldProps, RenderProps } from './Field'
 

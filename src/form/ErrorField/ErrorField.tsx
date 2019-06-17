@@ -8,19 +8,17 @@ export interface ErrorFieldProps {
   ignoreObjectError?: boolean
 }
 
-export class ErrorField extends React.Component<ErrorFieldProps> {
-  render() {
-    return <Field name={this.props.name} render={this.renderField} />
-  }
+export function ErrorField(props: ErrorFieldProps) {
+  const { name, ignoreObjectError } = props
 
-  renderField = (renderProps: FieldRenderProps<HTMLElement>) => {
+  const renderField = (renderProps: FieldRenderProps<any, HTMLElement>) => {
     const {
       meta: { touched, error, dirtySinceLastSubmit, submitError },
     } = renderProps
 
     const hasError = (!!error && touched) || (!!submitError && !dirtySinceLastSubmit)
 
-    const ignore = this.props.ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string')
+    const ignore = ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string')
 
     if (hasError && !ignore) {
       return <FormError>{error || submitError}</FormError>
@@ -28,4 +26,6 @@ export class ErrorField extends React.Component<ErrorFieldProps> {
 
     return null
   }
+
+  return <Field name={name} render={renderField} />
 }

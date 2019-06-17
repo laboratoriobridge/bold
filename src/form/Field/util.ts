@@ -9,7 +9,7 @@ import { FieldProps } from './Field'
  *
  * @param fieldProps The react-final-form field render props.
  */
-export const getFieldError = (fieldProps: FieldRenderProps<HTMLElement>): any => {
+export const getFieldError = (fieldProps: FieldRenderProps<any, HTMLElement>): any => {
   const { meta } = fieldProps
   return (meta.touched && meta.error) || (!meta.dirtySinceLastSubmit && meta.submitError)
 }

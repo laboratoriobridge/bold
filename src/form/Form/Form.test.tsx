@@ -8,7 +8,7 @@ import { Form, FormProps } from './Form'
 
 // tslint:disable jsx-no-lambda
 
-const createComponent = (props: Partial<FormProps> = {}) => {
+const createComponent = (props: Partial<FormProps<any>> = {}) => {
   return (
     <Form
       onSubmit={jest.fn()}

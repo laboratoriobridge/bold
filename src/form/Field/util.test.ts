@@ -4,7 +4,7 @@ import { BaseFieldProps, extractInputProps, getFieldError } from './util'
 
 describe('getFieldError', () => {
   it('should return the current field active error', () => {
-    const baseFieldProps: FieldRenderProps<any> = {
+    const baseFieldProps: FieldRenderProps<any, HTMLElement> = {
       input: { name: '', checked: false, onBlur: jest.fn(), onChange: jest.fn(), onFocus: jest.fn(), value: '' },
       meta: {},
     }

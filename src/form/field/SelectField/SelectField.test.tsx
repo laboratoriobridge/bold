@@ -9,7 +9,7 @@ import { SelectField, SelectFieldProps } from './SelectField'
 
 const items: DefaultItemType[] = [{ value: 1, label: 'Item #1' }, { value: 2, label: 'Item #2' }]
 
-const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: Partial<FormProps>) => {
+const createFormAndField = (fieldProps?: Partial<SelectFieldProps>, formProps?: Partial<FormProps<any>>) => {
   // tslint:disable jsx-no-lambda
   return (
     <Form

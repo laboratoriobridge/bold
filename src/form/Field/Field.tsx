@@ -12,7 +12,8 @@ import { Omit } from '../../util'
 
 import { getFieldError } from './util'
 
-export interface RenderProps<E extends HTMLElement = HTMLElement> extends FinalRenderProps<E> {
+export interface RenderProps<FieldValue = any, Element extends HTMLElement = HTMLElement>
+  extends FinalRenderProps<FieldValue, Element> {
   hasError?: boolean
 }
 
@@ -26,14 +27,14 @@ type PickedFinalFieldProps =
   | 'validate'
   | 'value'
 
-export interface FieldProps<T = any>
+export interface FieldProps<FieldValue = any, Element extends HTMLElement = HTMLElement>
   extends Omit<FormControlProps, 'name'>,
-    Pick<FinalFieldProps<HTMLElement>, PickedFinalFieldProps> {
-  name: string | Meta<T>
+    Pick<FinalFieldProps<FieldValue, Element>, PickedFinalFieldProps> {
+  name: string | Meta<FieldValue>
   hasWrapper?: boolean
   onChange?: any
   type?: string
-  render(props: RenderProps): React.ReactNode
+  render(props: RenderProps<FieldValue, Element>): React.ReactNode
 
   /**
    * Converts the field value to another before sending it to submit handler.
@@ -43,7 +44,9 @@ export interface FieldProps<T = any>
   convert?(value: any): any
 }
 
-export function Field<T = any>(props: FieldProps<T>) {
+export function Field<FieldValue = any, Element extends HTMLElement = HTMLElement>(
+  props: FieldProps<FieldValue, Element>
+) {
   const form = useForm()
 
   useEffect(() => {
@@ -63,11 +66,11 @@ export function Field<T = any>(props: FieldProps<T>) {
     if (typeof props.name === 'string') {
       return props.name
     } else {
-      return (props.name as Meta<T>).absolutePath()
+      return (props.name as Meta<FieldValue>).absolutePath()
     }
   }
 
-  const renderComponent = (fieldProps: FinalRenderProps<HTMLElement> & { custom: any }) => {
+  const renderComponent = (fieldProps: FinalRenderProps<FieldValue, Element> & { custom: any }) => {
     const customOnChange = value => {
       // External onChange prop is killed by final-form, so we merge the external and the internal one
       fieldProps.input.onChange(value)
