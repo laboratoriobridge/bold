@@ -1147,6 +1147,162 @@ exports.isSameDay = function (d1, d2) {
 
 /***/ }),
 
+/***/ "../lib/components/Checkbox/Checkbox.js":
+/*!**********************************************!*\
+  !*** ../lib/components/Checkbox/Checkbox.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/Input/index.js");
+function Checkbox(props) {
+    var label = props.label, indeterminate = props.indeterminate, style = props.style, rest = __rest(props, ["label", "indeterminate", "style"]);
+    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
+    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
+    var inputRef = react_1.useRef();
+    react_1.useEffect(function () {
+        inputRef.current.indeterminate = indeterminate;
+    }, [indeterminate]);
+    return (react_1.default.createElement("label", { className: css(classes.wrapper, props.disabled && classes.disabled, style) },
+        react_1.default.createElement(Input_1.Input, __assign({}, rest, { inputRef: inputRef, type: 'checkbox', className: inputClasses.input })),
+        react_1.default.createElement("span", { className: classes.check }),
+        label && react_1.default.createElement("span", { className: classes.label }, label)));
+}
+exports.Checkbox = Checkbox;
+exports.createStyles = function (theme) { return ({
+    wrapper: {
+        cursor: 'pointer',
+        display: 'inline-flex',
+        alignItems: 'center',
+    },
+    check: {
+        backgroundColor: theme.pallete.surface.main,
+        border: '1px solid ' + theme.pallete.gray.c70,
+        borderRadius: theme.radius.input,
+        display: 'inline-block',
+        height: 16,
+        position: 'relative',
+        transition: 'all .2s ease',
+        verticalAlign: 'middle',
+        width: 16,
+    },
+    label: {
+        color: theme.pallete.gray.c30,
+        marginLeft: '0.5rem',
+    },
+    disabled: {
+        cursor: 'not-allowed',
+    },
+}); };
+exports.createInputStyles = function (theme, classes) {
+    var _a;
+    return ({
+        input: (_a = {
+                opacity: 0,
+                marginRight: -13
+            },
+            _a["&:hover + ." + classes.check] = {
+                borderColor: theme.pallete.gray.c40,
+            },
+            _a["&:checked + ." + classes.check] = {
+                backgroundColor: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
+                ':after': {
+                    content: '""',
+                    borderRight: '2px solid ' + theme.pallete.surface.main,
+                    borderBottom: '2px solid ' + theme.pallete.surface.main,
+                    position: 'absolute',
+                    width: 6,
+                    height: 10,
+                    top: 1,
+                    left: 4,
+                    opacity: 1,
+                    transform: 'rotate(45deg) scale(1)',
+                    transition: 'opacity .2s ease',
+                },
+            },
+            _a["&:indeterminate + ." + classes.check] = {
+                backgroundColor: theme.pallete.surface.main,
+                borderColor: theme.pallete.primary.main,
+                ':after': {
+                    content: '""',
+                    borderBottom: '2px solid ' + theme.pallete.primary.main,
+                    position: 'absolute',
+                    top: -1,
+                    left: 3,
+                    width: 8,
+                    height: 10,
+                    opacity: 1,
+                    transition: 'opacity .2s ease',
+                },
+            },
+            _a["&:focus + ." + classes.check] = {
+                boxShadow: styles_1.focusBoxShadow(theme),
+            },
+            _a["&:disabled + ." + classes.check] = {
+                backgroundColor: theme.pallete.surface.background,
+                borderColor: theme.pallete.gray.c90,
+            },
+            _a["&:disabled + ." + classes.check + " + ." + classes.label] = {
+                color: theme.pallete.gray.c70,
+            },
+            _a),
+    });
+};
+//# sourceMappingURL=Checkbox.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Checkbox/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/Checkbox/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Checkbox_1 = __webpack_require__(/*! ./Checkbox */ "../lib/components/Checkbox/Checkbox.js");
+exports.Checkbox = Checkbox_1.Checkbox;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../lib/components/Currency/Currency.js":
 /*!**********************************************!*\
   !*** ../lib/components/Currency/Currency.js ***!
@@ -1208,6 +1364,242 @@ Currency.defaultProps = {
 Object.defineProperty(exports, "__esModule", { value: true });
 var Currency_1 = __webpack_require__(/*! ./Currency */ "../lib/components/Currency/Currency.js");
 exports.Currency = Currency_1.Currency;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/DateInput/CalendarPopup.js":
+/*!****************************************************!*\
+  !*** ../lib/components/DateInput/CalendarPopup.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Calendar_1 = __webpack_require__(/*! ../Calendar */ "../lib/components/Calendar/index.js");
+function CalendarPopup(props) {
+    var classes = styles_1.useStyles(exports.createStyles).classes;
+    return (react_1.default.createElement("div", { className: classes.root, tabIndex: -1 },
+        react_1.default.createElement(Calendar_1.Calendar, __assign({}, props))));
+}
+exports.CalendarPopup = CalendarPopup;
+exports.createStyles = function (theme) { return ({
+    root: {
+        background: theme.pallete.surface.main,
+        boxShadow: theme.shadows.outer[40],
+        borderRadius: theme.radius.popper,
+        padding: '0.5rem .25rem .25rem .25rem',
+        outline: 'none',
+    },
+}); };
+//# sourceMappingURL=CalendarPopup.js.map
+
+/***/ }),
+
+/***/ "../lib/components/DateInput/DateInput.js":
+/*!************************************************!*\
+  !*** ../lib/components/DateInput/DateInput.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
+var MaskedInput_1 = __webpack_require__(/*! ../MaskedInput/MaskedInput */ "../lib/components/MaskedInput/MaskedInput.js");
+var formatter = new Intl.DateTimeFormat('pt-br', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+});
+function DateInput(props) {
+    var value = props.value, onInputChange = props.onInputChange, rest = __rest(props, ["value", "onInputChange"]);
+    var handleChange = function (e) {
+        if (!e || !e.target || !e.target.value) {
+            props.onChange(null);
+            return;
+        }
+        var targetValue = e.target.value;
+        var match = targetValue.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+        if (match) {
+            var date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10));
+            props.onChange(date);
+        }
+        if (onInputChange) {
+            return onInputChange(e);
+        }
+    };
+    return (react_1.default.createElement(MaskedInput_1.MaskedInput, __assign({ value: value ? formatter.format(value) : undefined, mask: [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/], placeholder: 'dd/mm/yyyy', pipe: createAutoCorrectedDatePipe_1.default('dd/mm/yyyy'), autoComplete: 'off' }, rest, { onChange: handleChange })));
+}
+exports.DateInput = DateInput;
+DateInput.defaultProps = {};
+//# sourceMappingURL=DateInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/DateInput/DatePickerInput.js":
+/*!******************************************************!*\
+  !*** ../lib/components/DateInput/DatePickerInput.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var util_1 = __webpack_require__(/*! ../Calendar/util */ "../lib/components/Calendar/util.js");
+var FocusManagerContainer_1 = __webpack_require__(/*! ../FocusManagerContainer */ "../lib/components/FocusManagerContainer/index.js");
+var Popper_1 = __webpack_require__(/*! ../Popper */ "../lib/components/Popper/index.js");
+var CalendarPopup_1 = __webpack_require__(/*! ./CalendarPopup */ "../lib/components/DateInput/CalendarPopup.js");
+var DateInput_1 = __webpack_require__(/*! ./DateInput */ "../lib/components/DateInput/DateInput.js");
+function DatePickerInput(props) {
+    var inputRef = react_1.useRef();
+    var controller = react_1.useRef();
+    var setController = function (ctrl) {
+        controller.current = ctrl;
+    };
+    var handleDayClick = function (ctrl) { return function (day) {
+        inputRef.current.focus();
+        ctrl.hide();
+        return props.onChange(day);
+    }; };
+    var handleInputClick = function (ctrl) { return function (e) {
+        ctrl.show();
+        return props.onClick(e);
+    }; };
+    var handleInputFocus = function (ctrl) { return function (e) {
+        ctrl.show();
+        return props.onFocus(e);
+    }; };
+    var handleFocusIn = function () {
+        if (controller.current) {
+            controller.current.show();
+        }
+    };
+    var handleFocusOut = function () {
+        if (controller.current) {
+            controller.current.hide();
+        }
+    };
+    var renderTarget = function (ctrl) {
+        var calendarProps = props.calendarProps, minDate = props.minDate, maxDate = props.maxDate, rest = __rest(props, ["calendarProps", "minDate", "maxDate"]);
+        return (react_1.default.createElement(DateInput_1.DateInput, __assign({ icon: 'calendarOutline', onIconClick: ctrl.show }, rest, { inputRef: inputRef, onClick: handleInputClick(ctrl), onFocus: handleInputFocus(ctrl) })));
+    };
+    var value = props.value;
+    return (react_1.default.createElement(FocusManagerContainer_1.FocusManagerContainer, { onFocusIn: handleFocusIn, onFocusOut: handleFocusOut },
+        react_1.default.createElement(Popper_1.Popper, { control: setController, renderTarget: renderTarget, placement: 'bottom-start', block: true }, function (ctrl) { return (react_1.default.createElement(CalendarPopup_1.CalendarPopup, __assign({ key: value && value.getTime(), initialVisibleDate: value || new Date(), onDayClick: handleDayClick(ctrl), modifiers: {
+                selected: function (day) { return value && util_1.isSameDay(day, value); },
+                disabled: exports.disableByRange(props.minDate, props.maxDate),
+            } }, props.calendarProps))); })));
+}
+exports.DatePickerInput = DatePickerInput;
+DatePickerInput.defaultProps = {
+    onChange: function () { return null; },
+    onFocus: function () { return null; },
+    onClick: function () { return null; },
+};
+exports.disableByRange = function (minDate, maxDate) {
+    var realMinDate = new Date(minDate);
+    realMinDate.setHours(0, 0, 0, 0);
+    var realMaxDate = new Date(maxDate);
+    realMaxDate.setHours(23, 59, 59, 999);
+    return function (day) {
+        return (minDate && day < realMinDate) || (maxDate && day > realMaxDate);
+    };
+};
+//# sourceMappingURL=DatePickerInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/DateInput/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/DateInput/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var DateInput_1 = __webpack_require__(/*! ./DateInput */ "../lib/components/DateInput/DateInput.js");
+exports.DateInput = DateInput_1.DateInput;
+var DatePickerInput_1 = __webpack_require__(/*! ./DatePickerInput */ "../lib/components/DateInput/DatePickerInput.js");
+exports.DatePickerInput = DatePickerInput_1.DatePickerInput;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -9902,6 +10294,68 @@ exports.InfoLabel = InfoLabel_1.InfoLabel;
 
 /***/ }),
 
+/***/ "../lib/components/Input/Input.js":
+/*!****************************************!*\
+  !*** ../lib/components/Input/Input.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+function Input(props) {
+    var inputRef = props.inputRef, rest = __rest(props, ["inputRef"]);
+    return react_1.default.createElement("input", __assign({ ref: inputRef }, rest));
+}
+exports.Input = Input;
+Input.defaultProps = {};
+//# sourceMappingURL=Input.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Input/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Input/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Input_1 = __webpack_require__(/*! ./Input */ "../lib/components/Input/Input.js");
+exports.Input = Input_1.Input;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../lib/components/Link/Link.js":
 /*!**************************************!*\
   !*** ../lib/components/Link/Link.js ***!
@@ -9965,6 +10419,73 @@ exports.createStyles = function (theme) { return ({
 Object.defineProperty(exports, "__esModule", { value: true });
 var Link_1 = __webpack_require__(/*! ./Link */ "../lib/components/Link/Link.js");
 exports.Link = Link_1.Link;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/MaskedInput/MaskedInput.js":
+/*!****************************************************!*\
+  !*** ../lib/components/MaskedInput/MaskedInput.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var react_text_mask_1 = __importDefault(__webpack_require__(/*! react-text-mask */ "../node_modules/react-text-mask/dist/reactTextMask.js"));
+var react_2 = __webpack_require__(/*! ../../util/react */ "../lib/util/react.js");
+var TextInput_1 = __webpack_require__(/*! ../TextInput */ "../lib/components/TextInput/index.js");
+function MaskedInput(props) {
+    var inputRef = props.inputRef, style = props.style, rest = __rest(props, ["inputRef", "style"]);
+    var renderInput = function (ref, p) {
+        return react_1.default.createElement(TextInput_1.TextInput, __assign({ style: style, inputRef: react_2.composeRefs(inputRef, ref) }, p));
+    };
+    return react_1.default.createElement(react_text_mask_1.default, __assign({ render: renderInput }, rest));
+}
+exports.MaskedInput = MaskedInput;
+//# sourceMappingURL=MaskedInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/MaskedInput/index.js":
+/*!**********************************************!*\
+  !*** ../lib/components/MaskedInput/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MaskedInput_1 = __webpack_require__(/*! ./MaskedInput */ "../lib/components/MaskedInput/MaskedInput.js");
+exports.MaskedInput = MaskedInput_1.MaskedInput;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -10716,7 +11237,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
-var MaskedInput_1 = __webpack_require__(/*! ../../form/input/MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
+var MaskedInput_1 = __webpack_require__(/*! ../../MaskedInput */ "../lib/components/MaskedInput/index.js");
 var Popper_1 = __webpack_require__(/*! ../../Popper */ "../lib/components/Popper/index.js");
 var MonthPicker_1 = __webpack_require__(/*! ../MonthPicker/MonthPicker */ "../lib/components/MonthPicker/MonthPicker/MonthPicker.js");
 var MonthPickerInput = /** @class */ (function (_super) {
@@ -10874,9 +11395,9 @@ var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/rea
 var locale_1 = __webpack_require__(/*! ../../locale */ "../lib/locale/index.js");
 var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
-var TextInput_1 = __webpack_require__(/*! ../form/input/TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
+var TextInput_1 = __webpack_require__(/*! ../TextInput */ "../lib/components/TextInput/index.js");
 function Paginator(props) {
     var page = props.page, total = props.total, onChange = props.onChange;
     var locale = locale_1.useLocale();
@@ -11510,6 +12031,140 @@ exports.Progress = Progress_1.Progress;
 
 /***/ }),
 
+/***/ "../lib/components/Radio/Radio.js":
+/*!****************************************!*\
+  !*** ../lib/components/Radio/Radio.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/Input/index.js");
+function Radio(props) {
+    var label = props.label, rest = __rest(props, ["label"]);
+    var classes = styles_1.useStyles(exports.createStyles).classes;
+    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
+    return (react_1.default.createElement("label", { className: classes.wrapper },
+        react_1.default.createElement(Input_1.Input, __assign({}, rest, { type: 'radio', className: inputClasses.input })),
+        react_1.default.createElement("span", { className: classes.radio }),
+        react_1.default.createElement("span", { className: classes.label }, label)));
+}
+exports.Radio = Radio;
+exports.createStyles = function (theme) { return ({
+    wrapper: {
+        cursor: 'pointer',
+        display: 'inline-flex',
+        alignItems: 'center',
+    },
+    radio: {
+        backgroundColor: theme.pallete.surface.main,
+        border: '1px solid ' + theme.pallete.gray.c70,
+        borderRadius: 100,
+        display: 'inline-block',
+        height: 16,
+        position: 'relative',
+        transition: 'all .2s ease',
+        verticalAlign: 'middle',
+        width: 16,
+        ':after': {
+            backgroundColor: theme.pallete.surface.main,
+            border: '3px solid ' + theme.pallete.surface.main,
+            borderRadius: 100,
+            content: '""',
+            display: 'block',
+            height: 2,
+            marginLeft: 4,
+            marginTop: 4,
+            opacity: 0,
+            textAlign: 'center',
+            transition: 'all .2s ease',
+            width: 2,
+        },
+    },
+    label: {
+        color: theme.pallete.gray.c30,
+        marginLeft: '0.5rem',
+    },
+}); };
+exports.createInputStyles = function (theme, classes) {
+    var _a;
+    return ({
+        input: (_a = {
+                opacity: 0,
+                marginRight: -13
+            },
+            _a["&:hover + ." + classes.radio] = {
+                borderColor: theme.pallete.gray.c40,
+            },
+            _a["&:checked + ." + classes.radio] = {
+                backgroundColor: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
+                ':after': {
+                    opacity: 1,
+                },
+            },
+            _a["&:focus + ." + classes.radio] = {
+                boxShadow: styles_1.focusBoxShadow(theme),
+            },
+            _a["&:disabled + ." + classes.radio] = {
+                backgroundColor: theme.pallete.surface.background,
+                borderColor: theme.pallete.gray.c90,
+            },
+            _a["&:disabled + ." + classes.radio + " + ." + classes.label] = {
+                color: theme.pallete.gray.c70,
+            },
+            _a),
+    });
+};
+//# sourceMappingURL=Radio.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Radio/index.js":
+/*!****************************************!*\
+  !*** ../lib/components/Radio/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Radio_1 = __webpack_require__(/*! ./Radio */ "../lib/components/Radio/Radio.js");
+exports.Radio = Radio_1.Radio;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../lib/components/RootRef/RootRef.js":
 /*!********************************************!*\
   !*** ../lib/components/RootRef/RootRef.js ***!
@@ -11594,6 +12249,907 @@ exports.RootRef = RootRef_1.RootRef;
 
 /***/ }),
 
+/***/ "../lib/components/Select/Select.js":
+/*!******************************************!*\
+  !*** ../lib/components/Select/Select.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var SelectMulti_1 = __webpack_require__(/*! ./SelectMulti/SelectMulti */ "../lib/components/Select/SelectMulti/SelectMulti.js");
+var SelectSingle_1 = __webpack_require__(/*! ./SelectSingle/SelectSingle */ "../lib/components/Select/SelectSingle/SelectSingle.js");
+function Select(props) {
+    var multiple = props.multiple, onChange = props.onChange, value = props.value, itemIsEqual = props.itemIsEqual, style = props.style, rest = __rest(props, ["multiple", "onChange", "value", "itemIsEqual", "style"]);
+    var checkedValue = value;
+    if (multiple && value && !Array.isArray(value)) {
+        if (true) {
+            // tslint:disable-next-line no-console
+            console.warn("Trying to set an object as value for <Select multiple /> but it should be an array");
+        }
+        checkedValue = value ? [value] : [];
+    }
+    if (!multiple && value && Array.isArray(value)) {
+        if (true) {
+            // tslint:disable-next-line no-console
+            console.warn("Trying to set an array as value for <Select /> but it should be an object." +
+                " Set the 'multiple' prop if it can have multiple values");
+        }
+        checkedValue = value[0];
+    }
+    if (multiple) {
+        return react_1.default.createElement(SelectMulti_1.SelectMulti, __assign({}, rest, { value: checkedValue, onChange: onChange, itemIsEqual: itemIsEqual }));
+    }
+    else {
+        return react_1.default.createElement(SelectSingle_1.SelectSingle, __assign({}, rest, { value: checkedValue, onChange: onChange, style: style }));
+    }
+}
+exports.Select = Select;
+//# sourceMappingURL=Select.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMenu/SelectMenu.js":
+/*!*********************************************************!*\
+  !*** ../lib/components/Select/SelectMenu/SelectMenu.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+function SelectMenu(props) {
+    var style = props.style, menuRef = props.menuRef, rest = __rest(props, ["style", "menuRef"]);
+    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
+    return react_1.default.createElement("ul", __assign({ className: css(classes.list, style), ref: menuRef }, rest));
+}
+exports.SelectMenu = SelectMenu;
+exports.createStyles = function (theme) { return ({
+    list: {
+        listStyle: 'none',
+        margin: 0,
+        padding: 0,
+        border: "1px solid " + theme.pallete.divider,
+        borderRadius: theme.radius.popper,
+        backgroundColor: theme.pallete.surface.main,
+        boxShadow: theme.shadows.outer['40'],
+        maxHeight: '20rem',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+        position: 'absolute',
+        width: '100%',
+        zIndex: theme.zIndex.dropdown,
+    },
+}); };
+//# sourceMappingURL=SelectMenu.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMenu/SelectMenuItem.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Select/SelectMenu/SelectMenuItem.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Spinner_1 = __webpack_require__(/*! ../../Spinner */ "../lib/components/Spinner/index.js");
+function SelectMenuItem(props) {
+    var style = props.style, selected = props.selected, highlighted = props.highlighted, rest = __rest(props, ["style", "selected", "highlighted"]);
+    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
+    return react_1.default.createElement("li", __assign({ className: css(classes.item, style) }, rest));
+}
+exports.SelectMenuItem = SelectMenuItem;
+function SelectHelperMenuItem(props) {
+    var theme = styles_1.useTheme();
+    return react_1.default.createElement(SelectMenuItem, __assign({ style: { background: theme.pallete.surface.background } }, props));
+}
+exports.SelectHelperMenuItem = SelectHelperMenuItem;
+function SelectLoadingItem(props) {
+    var theme = styles_1.useTheme();
+    return (react_1.default.createElement(SelectHelperMenuItem, __assign({}, props),
+        "Carregando...",
+        react_1.default.createElement(Spinner_1.Spinner, { style: { color: theme.pallete.primary.main, float: 'right' } })));
+}
+exports.SelectLoadingItem = SelectLoadingItem;
+function SelectEmptyItem(props) {
+    return react_1.default.createElement(SelectHelperMenuItem, __assign({}, props), "Nenhum item encontrado");
+}
+exports.SelectEmptyItem = SelectEmptyItem;
+exports.createStyles = function (theme, _a) {
+    var highlighted = _a.highlighted;
+    return ({
+        item: {
+            borderBottom: "1px solid " + theme.pallete.divider,
+            cursor: 'pointer',
+            padding: '0.325rem 0.5rem',
+            transition: '.1s ease',
+            background: highlighted && theme.pallete.surface.background,
+            '&:last-of-type': {
+                borderBottom: 'none',
+            },
+            '&:hover': {
+                background: theme.pallete.surface.background,
+            },
+        },
+    });
+};
+//# sourceMappingURL=SelectMenuItem.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMenu/index.js":
+/*!****************************************************!*\
+  !*** ../lib/components/Select/SelectMenu/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SelectMenu_1 = __webpack_require__(/*! ./SelectMenu */ "../lib/components/Select/SelectMenu/SelectMenu.js");
+exports.SelectMenu = SelectMenu_1.SelectMenu;
+var SelectMenuItem_1 = __webpack_require__(/*! ./SelectMenuItem */ "../lib/components/Select/SelectMenu/SelectMenuItem.js");
+exports.SelectMenuItem = SelectMenuItem_1.SelectMenuItem;
+exports.SelectEmptyItem = SelectMenuItem_1.SelectEmptyItem;
+exports.SelectHelperMenuItem = SelectMenuItem_1.SelectHelperMenuItem;
+exports.SelectLoadingItem = SelectMenuItem_1.SelectLoadingItem;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMulti/MultiDownshift.js":
+/*!**************************************************************!*\
+  !*** ../lib/components/Select/SelectMulti/MultiDownshift.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// From downshift examples
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var downshift_1 = __importDefault(__webpack_require__(/*! downshift */ "../node_modules/downshift/dist/downshift.esm.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var util_1 = __webpack_require__(/*! ../../../util */ "../lib/util/index.js");
+var SelectDownshift_1 = __webpack_require__(/*! ../SelectSingle/SelectDownshift */ "../lib/components/Select/SelectSingle/SelectDownshift.js");
+function MultiDownshift(props) {
+    var downshiftRef = react_1.useRef();
+    var _a = react_1.useState(props.selectedItems), selectedItems = _a[0], setSelectedItems = _a[1];
+    var _b = react_1.useState(false), changed = _b[0], setChanged = _b[1];
+    react_1.useEffect(function () {
+        setSelectedItems(props.selectedItems);
+    }, [props.selectedItems]);
+    react_1.useEffect(function () {
+        if (downshiftRef.current && changed) {
+            props.onChange && props.onChange(selectedItems, getStateAndHelpers(downshiftRef.current));
+            props.onSelect && props.onSelect(selectedItems, getStateAndHelpers(downshiftRef.current));
+            setChanged(false);
+        }
+    }, [selectedItems]);
+    var isSelected = function (item) { return util_1.some(selectedItems, function (i) { return props.itemIsEqual(i, item); }); };
+    var handleChange = function (selectedItem) {
+        if (isSelected(selectedItem)) {
+            removeItem(selectedItem);
+        }
+        else {
+            addItem(selectedItem);
+        }
+    };
+    var removeItem = function (selectedItem) {
+        setChanged(true);
+        setSelectedItems(function (currentItems) { return currentItems.filter(function (item) { return !props.itemIsEqual(selectedItem, item); }); });
+    };
+    var addItem = function (item) {
+        setChanged(true);
+        if (!isSelected(item)) {
+            setSelectedItems(function (currentItems) { return currentItems.concat([item]); });
+        }
+    };
+    var getStateAndHelpers = function (downshift) {
+        downshiftRef.current = downshift;
+        return __assign({}, downshift, { selectedItems: selectedItems,
+            isSelected: isSelected,
+            addItem: addItem,
+            removeItem: removeItem });
+    };
+    var children = props.children, onSelect = props.onSelect, rest = __rest(props
+    // TODO: compose together props (rather than overwriting them) like downshift does
+    , ["children", "onSelect"]);
+    // TODO: compose together props (rather than overwriting them) like downshift does
+    return (react_1.default.createElement(SelectDownshift_1.SelectDownshift, __assign({}, rest, { stateReducer: stateReducer, onChange: handleChange, selectedItem: null }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
+}
+exports.MultiDownshift = MultiDownshift;
+MultiDownshift.defaultProps = {
+    selectedItems: [],
+    itemIsEqual: function (a, b) {
+        if (true) {
+            // tslint:disable no-console
+            console.warn('MultiDownshift: using default itemIsEqual implementation for object comparision.' +
+                ' You should probably provide your own `itemIsEqual` implementation.');
+        }
+        return util_1.isEqual(a, b);
+    },
+};
+var stateReducer = function (state, changes) {
+    var inputValue = changes.inputValue, rest = __rest(changes, ["inputValue"]);
+    switch (changes.type) {
+        case downshift_1.default.stateChangeTypes.changeInput:
+            return __assign({}, rest, { inputValue: inputValue });
+        case downshift_1.default.stateChangeTypes.keyDownEnter:
+        case downshift_1.default.stateChangeTypes.clickItem:
+            return __assign({}, rest, { highlightedIndex: state.highlightedIndex, isOpen: true });
+        default:
+            return rest;
+    }
+};
+//# sourceMappingURL=MultiDownshift.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMulti/SelectMulti.js":
+/*!***********************************************************!*\
+  !*** ../lib/components/Select/SelectMulti/SelectMulti.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var Checkbox_1 = __webpack_require__(/*! ../../Checkbox/Checkbox */ "../lib/components/Checkbox/Checkbox.js");
+var Flow_1 = __webpack_require__(/*! ../../Flow */ "../lib/components/Flow/index.js");
+var SelectDownshiftMenu_1 = __webpack_require__(/*! ../SelectSingle/SelectDownshiftMenu */ "../lib/components/Select/SelectSingle/SelectDownshiftMenu.js");
+var MultiDownshift_1 = __webpack_require__(/*! ./MultiDownshift */ "../lib/components/Select/SelectMulti/MultiDownshift.js");
+var SelectMultiInput_1 = __webpack_require__(/*! ./SelectMultiInput */ "../lib/components/Select/SelectMulti/SelectMultiInput.js");
+function SelectMulti(props) {
+    var _this = this;
+    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, itemIsEqual = props.itemIsEqual, onFilterChange = props.onFilterChange, loading = props.loading, externalRenderItem = props.renderItem, components = props.components, placeholder = props.placeholder, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "itemIsEqual", "onFilterChange", "loading", "renderItem", "components", "placeholder"]);
+    var handleItemRemove = function (removeItem) { return function (item) { return removeItem(item); }; };
+    var renderItem = function (_a) {
+        var isSelected = _a.isSelected;
+        return function (item) { return (react_1.default.createElement(Flow_1.HFlow, { hSpacing: 0.5 },
+            react_1.default.createElement(Checkbox_1.Checkbox, { checked: isSelected(item), tabIndex: -1, readOnly: true }),
+            externalRenderItem ? externalRenderItem(item) : itemToString(item))); };
+    };
+    //   const handleInputIconClick = ({ toggleMenu }: MultiSelectRenderProps<T>) => () => toggleMenu()
+    var handleInputFocus = function (_a) {
+        var openMenu = _a.openMenu;
+        return function () { return openMenu(); };
+    };
+    var handleInputClick = function (_a) {
+        var openMenu = _a.openMenu;
+        return function () { return openMenu(); };
+    };
+    var handleInputBlur = function (_a) {
+        var closeMenu = _a.closeMenu;
+        return function (e) {
+            closeMenu();
+            _this.props.onBlur && _this.props.onBlur(e);
+        };
+    };
+    return (react_1.default.createElement(MultiDownshift_1.MultiDownshift, { selectedItems: value || [], items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, itemIsEqual: itemIsEqual, onFilterChange: onFilterChange }, function (downshift) {
+        var 
+        // isOpen,
+        getInputProps = downshift.getInputProps, selectedItems = downshift.selectedItems, removeItem = downshift.removeItem, inputValue = downshift.inputValue, visibleItems = downshift.visibleItems;
+        return (react_1.default.createElement("div", null,
+            react_1.default.createElement(SelectMultiInput_1.SelectMultiInput, __assign({ items: selectedItems }, rest, { placeholder: !selectedItems || selectedItems.length === 0 ? placeholder : undefined, onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onRemoveItem: handleItemRemove(removeItem), renderItem: itemToString }, getInputProps(), { value: inputValue ? inputValue : '' })),
+            react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem(downshift) })));
+    }));
+}
+exports.SelectMulti = SelectMulti;
+//# sourceMappingURL=SelectMulti.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMulti/SelectMultiInput.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Select/SelectMulti/SelectMultiInput.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var Input_1 = __webpack_require__(/*! ../../Input/Input */ "../lib/components/Input/Input.js");
+var TextInputBase_1 = __webpack_require__(/*! ../../TextInput/TextInputBase */ "../lib/components/TextInput/TextInputBase.js");
+var SelectMultiItem_1 = __webpack_require__(/*! ./SelectMultiItem */ "../lib/components/Select/SelectMulti/SelectMultiItem.js");
+function SelectMultiInput(props) {
+    var items = props.items, renderItem = props.renderItem, onRemoveItem = props.onRemoveItem, status = props.status, disabled = props.disabled, clearable = props.clearable, rest = __rest(props, ["items", "renderItem", "onRemoveItem", "status", "disabled", "clearable"]);
+    var inputRef = react_1.useRef();
+    var handleRemove = function (item) { return function (e) {
+        props.onRemoveItem(item);
+        e.stopPropagation(); // Do not propagate so menu is not opened when item is removed
+    }; };
+    var handleWrapperClick = function () { return inputRef.current.focus(); };
+    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
+    var wrapperClasses = css(classes.wrapper, status === 'error' && classes.error, props.disabled && classes.disabled);
+    return (react_1.default.createElement("div", { className: wrapperClasses, onClick: handleWrapperClick },
+        items &&
+            items.map(function (item, key) { return (react_1.default.createElement(SelectMultiItem_1.SelectMultiItem, { key: key, onRemove: handleRemove(item), style: classes.item, disabled: disabled }, renderItem(item))); }),
+        react_1.default.createElement(Input_1.Input, __assign({ type: 'text', inputRef: inputRef, className: classes.input, disabled: disabled }, rest))));
+}
+exports.SelectMultiInput = SelectMultiInput;
+exports.createStyles = function (theme, _a) {
+    var items = _a.items, disabled = _a.disabled;
+    var parts = TextInputBase_1.createStyleParts(theme);
+    return {
+        wrapper: __assign({}, parts.base, { cursor: 'text', display: 'flex', flexWrap: 'wrap', alignItems: 'center', padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem', '&:hover': !disabled && parts.hover, '&:active': !disabled && parts.active, '&:focus-within': !disabled && parts.focus }),
+        disabled: parts.disabled,
+        error: __assign({}, parts.error, { '&:focus-within': parts.error[':not(:disabled):focus'] }),
+        item: {
+            marginRight: '0.25rem',
+        },
+        input: {
+            fontFamily: theme.typography.fontFamily,
+            fontSize: theme.typography.sizes.text,
+            color: theme.pallete.text.main,
+            lineHeight: '1rem',
+            background: theme.pallete.surface.main,
+            padding: 0,
+            flex: 1,
+            border: 0,
+            outline: 0,
+            '::placeholder': parts.placeholder,
+            ':disabled': parts.disabled,
+        },
+    };
+};
+//# sourceMappingURL=SelectMultiInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMulti/SelectMultiItem.js":
+/*!***************************************************************!*\
+  !*** ../lib/components/Select/SelectMulti/SelectMultiItem.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var locale_1 = __webpack_require__(/*! ../../../locale */ "../lib/locale/index.js");
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var TimesDefault_1 = __importDefault(__webpack_require__(/*! ../../Icon/generated/TimesDefault */ "../lib/components/Icon/generated/TimesDefault.js"));
+function SelectMultiItem(props) {
+    var style = props.style, children = props.children, onRemove = props.onRemove, disabled = props.disabled, rest = __rest(props, ["style", "children", "onRemove", "disabled"]);
+    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
+    var locale = locale_1.useLocale();
+    return (react_1.default.createElement("span", __assign({ className: css(classes.root, style) }, rest),
+        react_1.default.createElement("span", { className: classes.text }, children),
+        !disabled && (react_1.default.createElement("span", { className: classes.button, onClick: onRemove, title: locale.select.removeItem },
+            react_1.default.createElement(TimesDefault_1.default, null)))));
+}
+exports.SelectMultiItem = SelectMultiItem;
+exports.createStyles = function (theme, _a) {
+    var disabled = _a.disabled;
+    return ({
+        root: {
+            border: "1px solid " + theme.pallete.divider,
+            borderRadius: theme.radius.button,
+            display: 'inline-flex',
+            alignItems: 'center',
+            fontWeight: 'bold',
+        },
+        text: {
+            padding: disabled ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.125rem - 1px) 0.25rem',
+        },
+        button: {
+            background: theme.pallete.surface.background,
+            cursor: 'pointer',
+            fontSize: '1.25rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            padding: 'calc(0.125rem - 1px) 0',
+            '&:hover': {
+                color: theme.pallete.status.danger.main,
+            },
+            svg: {
+                fill: 'currentColor',
+            },
+        },
+    });
+};
+//# sourceMappingURL=SelectMultiItem.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectMulti/index.js":
+/*!*****************************************************!*\
+  !*** ../lib/components/Select/SelectMulti/index.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SelectMultiInput_1 = __webpack_require__(/*! ./SelectMultiInput */ "../lib/components/Select/SelectMulti/SelectMultiInput.js");
+exports.SelectMultiInput = SelectMultiInput_1.SelectMultiInput;
+var SelectMultiItem_1 = __webpack_require__(/*! ./SelectMultiItem */ "../lib/components/Select/SelectMulti/SelectMultiItem.js");
+exports.SelectMultiItem = SelectMultiItem_1.SelectMultiItem;
+var MultiDownshift_1 = __webpack_require__(/*! ./MultiDownshift */ "../lib/components/Select/SelectMulti/MultiDownshift.js");
+exports.MultiDownshift = MultiDownshift_1.MultiDownshift;
+var SelectMulti_1 = __webpack_require__(/*! ./SelectMulti */ "../lib/components/Select/SelectMulti/SelectMulti.js");
+exports.SelectMulti = SelectMulti_1.SelectMulti;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectSingle/SelectDownshift.js":
+/*!****************************************************************!*\
+  !*** ../lib/components/Select/SelectSingle/SelectDownshift.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var downshift_1 = __importDefault(__webpack_require__(/*! downshift */ "../node_modules/downshift/dist/downshift.esm.js"));
+var match_sorter_1 = __importDefault(__webpack_require__(/*! match-sorter */ "../node_modules/match-sorter/dist/match-sorter.esm.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+/**
+ * Default filter prop used by the Select component.
+ */
+function defaultSelectFilter(items, filter, itemToString) {
+    return match_sorter_1.default(items, filter, { keys: [itemToString] });
+}
+exports.defaultSelectFilter = defaultSelectFilter;
+/**
+ * Downshift extension with item and filter management.
+ */
+function SelectDownshift(props) {
+    var items = props.items, onFilterChange = props.onFilterChange, children = props.children, rest = __rest(props, ["items", "onFilterChange", "children"]);
+    var _a = react_1.useState(items), visibleItems = _a[0], setVisibleItems = _a[1];
+    react_1.useEffect(function () {
+        setVisibleItems(props.items);
+    }, [props.items]);
+    var handleStateChange = function (options, downshift) {
+        if (options.isOpen) {
+            onFilterChange(null, getStateAndHelpers(downshift));
+        }
+        if (options.type === downshift_1.default.stateChangeTypes.changeInput) {
+            onFilterChange(options.inputValue, getStateAndHelpers(downshift));
+        }
+        if (options.type === downshift_1.default.stateChangeTypes.clickItem ||
+            options.type === downshift_1.default.stateChangeTypes.keyDownEnter) {
+            onFilterChange(null, getStateAndHelpers(downshift));
+        }
+        props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift));
+    };
+    var handleChange = function (item, downshift) {
+        props.onChange && props.onChange(item, getStateAndHelpers(downshift));
+    };
+    var getStateAndHelpers = function (downshift) { return (__assign({}, downshift, { items: items,
+        visibleItems: visibleItems,
+        setVisibleItems: setVisibleItems })); };
+    return (react_1.default.createElement(downshift_1.default, __assign({}, rest, { onStateChange: handleStateChange, onChange: handleChange }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
+}
+exports.SelectDownshift = SelectDownshift;
+SelectDownshift.defaultProps = {
+    onFilterChange: function (filter, downshift) {
+        var setVisibleItems = downshift.setVisibleItems, items = downshift.items, itemToString = downshift.itemToString;
+        setVisibleItems(defaultSelectFilter(items, filter, itemToString));
+    },
+};
+//# sourceMappingURL=SelectDownshift.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectSingle/SelectDownshiftMenu.js":
+/*!********************************************************************!*\
+  !*** ../lib/components/Select/SelectSingle/SelectDownshiftMenu.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var SelectMenu_1 = __webpack_require__(/*! ../SelectMenu */ "../lib/components/Select/SelectMenu/index.js");
+function SelectDownshiftMenu(props) {
+    var items = props.items, isLoading = props.loading, components = props.components, _a = props.downshift, isOpen = _a.isOpen, getMenuProps = _a.getMenuProps;
+    var classes = styles_1.useStyles(exports.createStyles).classes;
+    var _b = __assign({}, exports.defaultComponents, components), LoadingItem = _b.LoadingItem, EmptyItem = _b.EmptyItem, Item = _b.Item;
+    return (react_1.default.createElement("div", { className: classes.wrapper }, isOpen && (react_1.default.createElement(SelectMenu_1.SelectMenu, __assign({}, getMenuProps({ refKey: 'menuRef' })),
+        isLoading && react_1.default.createElement(LoadingItem, __assign({}, props)),
+        !isLoading && (!items || items.length === 0) && react_1.default.createElement(EmptyItem, __assign({}, props)),
+        items && items.map(function (item, index) { return react_1.default.createElement(Item, __assign({ key: index, index: index, item: item }, props)); })))));
+}
+exports.SelectDownshiftMenu = SelectDownshiftMenu;
+exports.defaultComponents = {
+    LoadingItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectLoadingItem, null); },
+    EmptyItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectEmptyItem, null); },
+    Item: function (props) {
+        var renderItem = props.renderItem, item = props.item, index = props.index, _a = props.downshift, itemToString = _a.itemToString, selectedItem = _a.selectedItem, highlightedIndex = _a.highlightedIndex, getItemProps = _a.getItemProps;
+        return (react_1.default.createElement(SelectMenu_1.SelectMenuItem, __assign({ selected: selectedItem === item, highlighted: highlightedIndex === index }, getItemProps({ item: item })), renderItem ? renderItem(item) : itemToString(item)));
+    },
+};
+SelectDownshiftMenu.defaultProps = {
+    components: exports.defaultComponents,
+};
+exports.createStyles = function () { return ({
+    wrapper: {
+        position: 'relative',
+    },
+}); };
+//# sourceMappingURL=SelectDownshiftMenu.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectSingle/SelectSingle.js":
+/*!*************************************************************!*\
+  !*** ../lib/components/Select/SelectSingle/SelectSingle.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
+var TextInput_1 = __webpack_require__(/*! ../../TextInput/TextInput */ "../lib/components/TextInput/TextInput.js");
+var SelectDownshift_1 = __webpack_require__(/*! ./SelectDownshift */ "../lib/components/Select/SelectSingle/SelectDownshift.js");
+var SelectDownshiftMenu_1 = __webpack_require__(/*! ./SelectDownshiftMenu */ "../lib/components/Select/SelectSingle/SelectDownshiftMenu.js");
+function SelectSingle(props) {
+    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, onFilterChange = props.onFilterChange, loading = props.loading, renderItem = props.renderItem, components = props.components, style = props.style, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "onFilterChange", "loading", "renderItem", "components", "style"]);
+    var handleClear = function (downshift) { return function (e) {
+        downshift.clearSelection();
+        if (props.onClear) {
+            props.onClear(e);
+        }
+    }; };
+    var handleInputIconClick = function (_a) {
+        var toggleMenu = _a.toggleMenu;
+        return function () { return toggleMenu(); };
+    };
+    var handleInputFocus = function (_a) {
+        var openMenu = _a.openMenu;
+        return function () { return openMenu(); };
+    };
+    var handleInputClick = function (_a) {
+        var openMenu = _a.openMenu;
+        return function () { return openMenu(); };
+    };
+    var handleInputBlur = function (_a) {
+        var closeMenu = _a.closeMenu;
+        return function (e) {
+            closeMenu();
+            props.onBlur && props.onBlur(e);
+        };
+    };
+    var css = styles_1.useStyles().css;
+    return (react_1.default.createElement(SelectDownshift_1.SelectDownshift, { selectedItem: value || null, items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, onFilterChange: onFilterChange }, function (downshift) {
+        var downshiftOpen = downshift.isOpen, getInputProps = downshift.getInputProps, visibleItems = downshift.visibleItems, inputValue = downshift.inputValue;
+        return (react_1.default.createElement("div", { className: css(style) },
+            react_1.default.createElement("div", null,
+                react_1.default.createElement(TextInput_1.TextInput, __assign({ icon: isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown' }, rest, { onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onClear: handleClear(downshift), onIconClick: handleInputIconClick(downshift) }, getInputProps(), { value: inputValue ? inputValue : '' }))),
+            react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem, components: components })));
+    }));
+}
+exports.SelectSingle = SelectSingle;
+//# sourceMappingURL=SelectSingle.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/SelectSingle/index.js":
+/*!******************************************************!*\
+  !*** ../lib/components/Select/SelectSingle/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SelectDownshift_1 = __webpack_require__(/*! ./SelectDownshift */ "../lib/components/Select/SelectSingle/SelectDownshift.js");
+exports.SelectDownshift = SelectDownshift_1.SelectDownshift;
+exports.defaultSelectFilter = SelectDownshift_1.defaultSelectFilter;
+var SelectSingle_1 = __webpack_require__(/*! ./SelectSingle */ "../lib/components/Select/SelectSingle/SelectSingle.js");
+exports.SelectSingle = SelectSingle_1.SelectSingle;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Select/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Select/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(/*! ./SelectMenu */ "../lib/components/Select/SelectMenu/index.js"));
+__export(__webpack_require__(/*! ./SelectSingle */ "../lib/components/Select/SelectSingle/index.js"));
+__export(__webpack_require__(/*! ./SelectMulti */ "../lib/components/Select/SelectMulti/index.js"));
+__export(__webpack_require__(/*! ./Select */ "../lib/components/Select/Select.js"));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../lib/components/SelectInline/SelectInline.js":
 /*!******************************************************!*\
   !*** ../lib/components/SelectInline/SelectInline.js ***!
@@ -11637,9 +13193,9 @@ var React = __importStar(__webpack_require__(/*! react */ "../node_modules/react
 var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 var react_1 = __webpack_require__(/*! ../../util/react */ "../lib/util/react.js");
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
-var Select_1 = __webpack_require__(/*! ../form/input/Select */ "../lib/components/form/input/Select/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon */ "../lib/components/Icon/index.js");
 var Popper_1 = __webpack_require__(/*! ../Popper */ "../lib/components/Popper/index.js");
+var Select_1 = __webpack_require__(/*! ../Select/Select */ "../lib/components/Select/Select.js");
 var Text_1 = __webpack_require__(/*! ../Text */ "../lib/components/Text/index.js");
 function SelectInline(props) {
     var value = props.value, onChange = props.onChange, itemToString = props.itemToString, buttonProps = props.buttonProps, popperProps = props.popperProps, defaultButtonText = props.defaultButtonText, rest = __rest(props, ["value", "onChange", "itemToString", "buttonProps", "popperProps", "defaultButtonText"]);
@@ -11850,6 +13406,139 @@ exports.createStyles = function (theme, _a, position) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var StickyContainer_1 = __webpack_require__(/*! ./StickyContainer */ "../lib/components/StickyContainer/StickyContainer.js");
 exports.StickyContainer = StickyContainer_1.StickyContainer;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Switch/Switch.js":
+/*!******************************************!*\
+  !*** ../lib/components/Switch/Switch.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/Input/index.js");
+function Switch(props) {
+    var label = props.label, name = props.name, disabled = props.disabled, onChange = props.onChange, value = props.value, defaultValue = props.defaultValue, checked = props.checked, defaultChecked = props.defaultChecked, rest = __rest(props, ["label", "name", "disabled", "onChange", "value", "defaultValue", "checked", "defaultChecked"]);
+    var classes = styles_1.useStyles(exports.createStyles).classes;
+    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
+    return (react_1.default.createElement("label", __assign({ className: inputClasses.wrapper }, rest),
+        react_1.default.createElement(Input_1.Input, { type: 'checkbox', className: inputClasses.input, name: name, value: value, defaultValue: defaultValue, checked: checked, defaultChecked: defaultChecked, disabled: disabled, onChange: onChange }),
+        react_1.default.createElement("div", { className: classes.switch },
+            react_1.default.createElement("span", { className: classes.knob })),
+        label && react_1.default.createElement("span", { className: classes.text }, label)));
+}
+exports.Switch = Switch;
+exports.createStyles = function (theme) { return ({
+    switch: {
+        outline: 0,
+        background: theme.pallete.surface.background,
+        borderRadius: '0.75rem',
+        padding: 'calc(0.25rem - 1px) 0.25rem',
+        display: 'inline-block',
+        width: '3rem',
+        lineHeight: 0,
+        border: "1px solid " + theme.pallete.gray.c70,
+        transition: 'all .2s',
+    },
+    knob: {
+        background: theme.pallete.surface.main,
+        borderRadius: '50%',
+        display: 'inline-block',
+        width: '1rem',
+        height: '1rem',
+        transition: 'all .2s',
+        boxShadow: theme.shadows.outer['20'],
+    },
+    text: {
+        marginLeft: '0.5rem',
+    },
+}); };
+exports.createInputStyles = function (theme, classes) {
+    var _a, _b;
+    return ({
+        wrapper: (_a = {
+                display: 'inline-flex',
+                alignItems: 'center',
+                cursor: 'pointer',
+                textAlign: 'left'
+            },
+            _a["&:hover ." + classes.switch] = {
+                cursor: 'pointer',
+                borderColor: theme.pallete.gray.c40,
+            },
+            _a),
+        input: (_b = {
+                opacity: 0,
+                position: 'absolute',
+                zIndex: -1
+            },
+            _b["&:checked + ." + classes.switch] = {
+                background: theme.pallete.primary.main,
+                borderColor: theme.pallete.primary.main,
+                '&:hover': {
+                    borderColor: theme.pallete.primary.main,
+                },
+            },
+            _b["&:checked + ." + classes.switch + " > ." + classes.knob] = {
+                transform: 'translateX(calc(1.5rem - 1px))',
+            },
+            _b["&:focus + ." + classes.switch] = {
+                boxShadow: styles_1.focusBoxShadow(theme),
+            },
+            _b["&:disabled + ." + classes.switch] = {
+                opacity: 0.4,
+                cursor: 'not-allowed',
+            },
+            _b),
+    });
+};
+//# sourceMappingURL=Switch.js.map
+
+/***/ }),
+
+/***/ "../lib/components/Switch/index.js":
+/*!*****************************************!*\
+  !*** ../lib/components/Switch/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Switch_1 = __webpack_require__(/*! ./Switch */ "../lib/components/Switch/Switch.js");
+exports.Switch = Switch_1.Switch;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -13142,6 +14831,467 @@ exports.Text = Text_1.Text;
 
 /***/ }),
 
+/***/ "../lib/components/TextArea/TextArea.js":
+/*!**********************************************!*\
+  !*** ../lib/components/TextArea/TextArea.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var TextInputBase_1 = __webpack_require__(/*! ../TextInput/TextInputBase */ "../lib/components/TextInput/TextInputBase.js");
+function TextArea(props) {
+    var status = props.status, style = props.style, rest = __rest(props, ["status", "style"]);
+    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
+    var valueLength = function () {
+        return props.value && typeof props.value === 'string' && props.value.length;
+    };
+    var defaultValueLength = function () {
+        return props.defaultValue && typeof props.defaultValue === 'string' && props.defaultValue.length;
+    };
+    var currentLength = valueLength() || defaultValueLength() || 0;
+    var className = css(classes.input, status === 'error' && classes.error, style);
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement("textarea", __assign({ className: className }, rest)),
+        props.maxLength && (react_1.default.createElement("div", { className: classes.counter },
+            currentLength,
+            "/",
+            props.maxLength,
+            " caracteres"))));
+}
+exports.TextArea = TextArea;
+var createStyles = function (theme, _a) {
+    var status = _a.status;
+    return (__assign({}, TextInputBase_1.createStyles(theme), { counter: {
+            textAlign: 'right',
+            color: status === 'error' && theme.pallete.status.danger.main,
+        } }));
+};
+//# sourceMappingURL=TextArea.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TextArea/index.js":
+/*!*******************************************!*\
+  !*** ../lib/components/TextArea/index.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextArea_1 = __webpack_require__(/*! ./TextArea */ "../lib/components/TextArea/TextArea.js");
+exports.TextArea = TextArea_1.TextArea;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TextInput/InputWrapper.js":
+/*!***************************************************!*\
+  !*** ../lib/components/TextInput/InputWrapper.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
+var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/Icon/Icon.js");
+function InputWrapper(props) {
+    var children = props.children, icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearVisible = props.clearVisible, onClear = props.onClear;
+    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
+    var iconBoxClasses = css(classes.iconWrapper, iconPosition === 'left' && classes.iconLeft, iconPosition === 'right' && classes.iconRight);
+    return (react_1.default.createElement("div", { className: classes.wrapper },
+        children,
+        clearVisible && (react_1.default.createElement("span", { role: 'button', title: 'Limpar', tabIndex: -1, onClick: onClear, className: classes.clearButton },
+            react_1.default.createElement(Icon_1.Icon, { size: 1.5, icon: 'timesDefault' }))),
+        icon && (react_1.default.createElement("span", { className: iconBoxClasses }, onIconClick ? (react_1.default.createElement(Button_1.Button, { size: 'small', skin: 'ghost', tabIndex: -1, onClick: onIconClick, style: classes.icon, disabled: iconDisabled },
+            react_1.default.createElement(Icon_1.Icon, { icon: icon }))) : (react_1.default.createElement(Icon_1.Icon, { icon: icon, style: classes.icon }))))));
+}
+exports.InputWrapper = InputWrapper;
+InputWrapper.defaultProps = {
+    iconPosition: 'right',
+    iconDisabled: false,
+    clearVisible: false,
+    onClear: function () { return null; },
+};
+var createStyles = function (theme, _a) {
+    var icon = _a.icon, iconPosition = _a.iconPosition, clearVisible = _a.clearVisible;
+    var paddingRight = iconPosition === 'right'
+        ? (clearVisible && icon && '4.5rem') || (clearVisible && '2rem') || (icon && '3rem')
+        : clearVisible && '2rem';
+    return {
+        wrapper: {
+            position: 'relative',
+            input: {
+                paddingLeft: iconPosition === 'left' && '3rem',
+                paddingRight: paddingRight,
+            },
+        },
+        clearButton: {
+            position: 'absolute',
+            right: icon && iconPosition === 'right' ? '2.5rem' : 1,
+            background: 'transparent',
+            border: 'none',
+            cursor: 'pointer',
+            height: '100%',
+            display: 'inline-flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            outline: 0,
+            color: theme.pallete.text.secondary,
+            padding: '1px 6px',
+            '&:hover': {
+                color: theme.pallete.status.danger.main,
+            },
+        },
+        iconWrapper: {
+            position: 'absolute',
+            backgroundColor: theme.pallete.gray.c90,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '0.25rem',
+            width: '2.5rem',
+            top: 1,
+            bottom: 1,
+        },
+        iconLeft: {
+            left: 1,
+        },
+        iconRight: {
+            right: 1,
+        },
+        icon: {
+            borderRadius: 'inherit',
+            '&:focus': {
+                boxShadow: 'none',
+            },
+        },
+    };
+};
+//# sourceMappingURL=InputWrapper.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TextInput/TextInput.js":
+/*!************************************************!*\
+  !*** ../lib/components/TextInput/TextInput.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var InputWrapper_1 = __webpack_require__(/*! ./InputWrapper */ "../lib/components/TextInput/InputWrapper.js");
+var TextInputBase_1 = __webpack_require__(/*! ./TextInputBase */ "../lib/components/TextInput/TextInputBase.js");
+function TextInput(props) {
+    var icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearable = props.clearable, onClear = props.onClear, rest = __rest(props, ["icon", "iconPosition", "iconDisabled", "onIconClick", "clearable", "onClear"]);
+    var isClearVisible = function () { return !props.disabled && (!!props.value || !!props.defaultValue); };
+    var isIconDisabled = function () { return (props.iconDisabled !== undefined ? props.iconDisabled : props.disabled); };
+    var handleClear = function () { return props.onChange && props.onChange(null); };
+    return (react_1.default.createElement(InputWrapper_1.InputWrapper, { icon: icon, iconPosition: iconPosition, iconDisabled: isIconDisabled(), onIconClick: onIconClick, clearVisible: clearable && isClearVisible(), onClear: onClear ? onClear : handleClear },
+        react_1.default.createElement(TextInputBase_1.TextInputBase, __assign({}, rest))));
+}
+exports.TextInput = TextInput;
+TextInput.defaultProps = {
+    clearable: true,
+};
+//# sourceMappingURL=TextInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TextInput/TextInputBase.js":
+/*!****************************************************!*\
+  !*** ../lib/components/TextInput/TextInputBase.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
+var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/Input/Input.js");
+/**
+ * Primitive of input of text (and derivative) types.
+ * Provides only the stylization of the <input /> component.
+ */
+function TextInputBase(props) {
+    var status = props.status, style = props.style, rest = __rest(props, ["status", "style"]);
+    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
+    var className = css(classes.input, status === 'error' && classes.error, style);
+    return react_1.default.createElement(Input_1.Input, __assign({}, rest, { className: className }));
+}
+exports.TextInputBase = TextInputBase;
+TextInputBase.defaultProps = {
+    type: 'text',
+};
+exports.createStyleParts = function (theme) { return ({
+    base: {
+        backgroundColor: theme.pallete.surface.main,
+        border: 'solid 1px ' + theme.pallete.gray.c70,
+        borderRadius: theme.radius.input,
+        color: theme.pallete.text.main,
+        fontFamily: theme.typography.fontFamily,
+        fontSize: theme.typography.sizes.text,
+        lineHeight: '1rem',
+        padding: 'calc(0.5rem - 1px) 0.5rem',
+        width: '100%',
+        transitionProperty: 'box-shadow',
+        transitionDuration: '.2s',
+        // Remove input type="search" decorations
+        '&[type="search"]::-webkit-search-decoration': { display: 'none' },
+        '&[type="search"]::-webkit-search-cancel-button': { display: 'none' },
+        '&[type="search"]::-webkit-search-results-button': { display: 'none' },
+        '&[type="search"]::-webkit-search-results-decoration': { display: 'none' },
+        '&:required': {
+            boxShadow: 'none',
+        },
+    },
+    placeholder: {
+        color: theme.pallete.text.disabled,
+    },
+    disabled: {
+        borderColor: theme.pallete.gray.c80,
+        backgroundColor: theme.pallete.surface.background,
+    },
+    hover: {
+        borderColor: theme.pallete.gray.c60,
+    },
+    active: {
+        borderColor: theme.pallete.primary.main,
+        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
+    },
+    focus: {
+        outline: 'none',
+        boxShadow: styles_1.focusBoxShadow(theme),
+    },
+    error: {
+        border: 'solid 1px ' + theme.pallete.status.danger.main,
+        ':not(:disabled):focus': {
+            border: 'solid 1px ' + theme.pallete.gray.c80,
+            boxShadow: styles_1.focusBoxShadow(theme, 'danger'),
+        },
+    },
+}); };
+exports.createStyles = function (theme) {
+    var parts = exports.createStyleParts(theme);
+    return {
+        input: __assign({}, parts.base, { '::placeholder': parts.placeholder, ':disabled': parts.disabled, ':not(:disabled):hover': parts.hover, ':not(:disabled):focus': parts.focus, ':not(:disabled):active': parts.active }),
+        error: parts.error,
+    };
+};
+//# sourceMappingURL=TextInputBase.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TextInput/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/TextInput/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextInputBase_1 = __webpack_require__(/*! ./TextInputBase */ "../lib/components/TextInput/TextInputBase.js");
+exports.TextInputBase = TextInputBase_1.TextInputBase;
+var TextInput_1 = __webpack_require__(/*! ./TextInput */ "../lib/components/TextInput/TextInput.js");
+exports.TextInput = TextInput_1.TextInput;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TimeInput/TimeInput.js":
+/*!************************************************!*\
+  !*** ../lib/components/TimeInput/TimeInput.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var react_text_mask_1 = __webpack_require__(/*! react-text-mask */ "../node_modules/react-text-mask/dist/reactTextMask.js");
+var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
+var MaskedInput_1 = __webpack_require__(/*! ../MaskedInput/MaskedInput */ "../lib/components/MaskedInput/MaskedInput.js");
+var mask = [/\d/, /\d/, ':', /\d/, /\d/];
+function TimeInput(props) {
+    var onChange = props.onChange, onInputChange = props.onInputChange, rest = __rest(props, ["onChange", "onInputChange"]);
+    var handleChange = function (e) {
+        if (!e) {
+            return onChange(null);
+        }
+        if (onChange) {
+            var value = e.target.value;
+            onChange(value);
+        }
+        if (onInputChange) {
+            return onInputChange(e);
+        }
+    };
+    var handleBlur = function (e) {
+        if (onChange) {
+            var value = e.target.value;
+            if (value) {
+                var paddedValue = exports.padTime(value);
+                onChange(paddedValue);
+            }
+        }
+        if (props.onBlur) {
+            // Call original blur handler (if existent)
+            return props.onBlur(e);
+        }
+    };
+    return (react_1.default.createElement(MaskedInput_1.MaskedInput, __assign({ mask: mask, placeholder: 'hh:mm', pipe: createAutoCorrectedDatePipe_1.default('HH:MM') }, rest, { onChange: handleChange, onBlur: handleBlur })));
+}
+exports.TimeInput = TimeInput;
+exports.padTime = function (value) {
+    var numbersOnly = value.replace(/[^\d]/g, '');
+    if (numbersOnly.length < 4) {
+        var paddedValue = numbersOnly.padEnd(4, '0');
+        var conformedValue = react_text_mask_1.conformToMask(paddedValue, mask, {});
+        return conformedValue.conformedValue;
+    }
+    return value;
+};
+//# sourceMappingURL=TimeInput.js.map
+
+/***/ }),
+
+/***/ "../lib/components/TimeInput/index.js":
+/*!********************************************!*\
+  !*** ../lib/components/TimeInput/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TimeInput_1 = __webpack_require__(/*! ./TimeInput */ "../lib/components/TimeInput/TimeInput.js");
+exports.TimeInput = TimeInput_1.TimeInput;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ "../lib/components/Tooltip/Tooltip.js":
 /*!********************************************!*\
   !*** ../lib/components/Tooltip/Tooltip.js ***!
@@ -13376,187 +15526,10 @@ FadeTransition.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/form/field/CheckboxField/CheckboxField.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/form/field/CheckboxField/CheckboxField.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var Checkbox_1 = __webpack_require__(/*! ../../input/Checkbox/Checkbox */ "../lib/components/form/input/Checkbox/Checkbox.js");
-var CheckboxField = /** @class */ (function (_super) {
-    __extends(CheckboxField, _super);
-    function CheckboxField() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderCheck = function (props) { return (react_1.default.createElement(Checkbox_1.Checkbox, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
-        return _this;
-    }
-    CheckboxField.prototype.render = function () {
-        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderCheck }));
-    };
-    return CheckboxField;
-}(react_1.default.Component));
-exports.CheckboxField = CheckboxField;
-//# sourceMappingURL=CheckboxField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/CheckboxField/index.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/field/CheckboxField/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var CheckboxField_1 = __webpack_require__(/*! ./CheckboxField */ "../lib/components/form/field/CheckboxField/CheckboxField.js");
-exports.CheckboxField = CheckboxField_1.CheckboxField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/DateField/DateField.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/field/DateField/DateField.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var DateInput_1 = __webpack_require__(/*! ../../input/DateInput */ "../lib/components/form/input/DateInput/index.js");
-exports.parse = function (value) {
-    if (!value) {
-        return null;
-    }
-    var year = ('000' + value.getFullYear()).slice(-4);
-    var month = ('0' + (value.getMonth() + 1)).slice(-2);
-    var day = ('0' + value.getDate()).slice(-2);
-    return year + "-" + month + "-" + day;
-};
-exports.format = function (value) {
-    if (!value) {
-        return null;
-    }
-    var parsed = Date.parse(value);
-    return parsed ? new Date(parsed) : null;
-};
-exports.DateField = Field_1.withField(DateInput_1.DatePickerInput, {
-    parse: exports.parse,
-    format: exports.format,
-});
-//# sourceMappingURL=DateField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/DateField/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/field/DateField/index.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var DateField_1 = __webpack_require__(/*! ./DateField */ "../lib/components/form/field/DateField/DateField.js");
-exports.DateField = DateField_1.DateField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/HiddenField/HiddenField.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/field/HiddenField/HiddenField.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var Input_1 = __webpack_require__(/*! ../../input/Input/Input */ "../lib/components/form/input/Input/Input.js");
-exports.HiddenField = Field_1.withField(Input_1.Input, {
-    type: 'hidden',
-});
-//# sourceMappingURL=HiddenField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/HiddenField/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/field/HiddenField/index.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var HiddenField_1 = __webpack_require__(/*! ./HiddenField */ "../lib/components/form/field/HiddenField/HiddenField.js");
-exports.HiddenField = HiddenField_1.HiddenField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/MaskedField.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/MaskedField.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var MaskedInput_1 = __webpack_require__(/*! ../../input/MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
-exports.MaskedField = Field_1.withField(MaskedInput_1.MaskedInput);
-//# sourceMappingURL=MaskedField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/index.js ***!
-  \*********************************************************/
+/***/ "../lib/components/index.js":
+/*!**********************************!*\
+  !*** ../lib/components/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13566,732 +15539,110 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-var MaskedField_1 = __webpack_require__(/*! ./MaskedField */ "../lib/components/form/field/MaskedField/MaskedField.js");
-exports.MaskedField = MaskedField_1.MaskedField;
-__export(__webpack_require__(/*! ./maskedFields */ "../lib/components/form/field/MaskedField/maskedFields/index.js"));
+__export(__webpack_require__(/*! ./Alert */ "../lib/components/Alert/index.js"));
+__export(__webpack_require__(/*! ./AriaControlNav */ "../lib/components/AriaControlNav/index.js"));
+__export(__webpack_require__(/*! ./Breadcrumb */ "../lib/components/Breadcrumb/index.js"));
+__export(__webpack_require__(/*! ./Button */ "../lib/components/Button/index.js"));
+__export(__webpack_require__(/*! ./ButtonGroup */ "../lib/components/ButtonGroup/index.js"));
+__export(__webpack_require__(/*! ./Calendar */ "../lib/components/Calendar/index.js"));
+__export(__webpack_require__(/*! ./Checkbox */ "../lib/components/Checkbox/index.js"));
+__export(__webpack_require__(/*! ./Currency */ "../lib/components/Currency/index.js"));
+__export(__webpack_require__(/*! ./DateInput */ "../lib/components/DateInput/index.js"));
+__export(__webpack_require__(/*! ./Dropdown */ "../lib/components/Dropdown/index.js"));
+__export(__webpack_require__(/*! ./FileUploader */ "../lib/components/FileUploader/index.js"));
+__export(__webpack_require__(/*! ./Flow */ "../lib/components/Flow/index.js"));
+__export(__webpack_require__(/*! ./FormControl */ "../lib/components/FormControl/index.js"));
+__export(__webpack_require__(/*! ./Grid */ "../lib/components/Grid/index.js"));
+__export(__webpack_require__(/*! ./Heading */ "../lib/components/Heading/index.js"));
+__export(__webpack_require__(/*! ./HeadingSection */ "../lib/components/HeadingSection/index.js"));
+__export(__webpack_require__(/*! ./Highlight */ "../lib/components/Highlight/index.js"));
+__export(__webpack_require__(/*! ./Icon */ "../lib/components/Icon/index.js"));
+__export(__webpack_require__(/*! ./InfoLabel */ "../lib/components/InfoLabel/index.js"));
+__export(__webpack_require__(/*! ./Input */ "../lib/components/Input/index.js"));
+__export(__webpack_require__(/*! ./Link */ "../lib/components/Link/index.js"));
+__export(__webpack_require__(/*! ./MaskedInput */ "../lib/components/MaskedInput/index.js"));
+__export(__webpack_require__(/*! ./Modal */ "../lib/components/Modal/index.js"));
+__export(__webpack_require__(/*! ./MonthPicker */ "../lib/components/MonthPicker/index.js"));
+__export(__webpack_require__(/*! ./Number */ "../lib/components/Number/index.js"));
+__export(__webpack_require__(/*! ./Paginator */ "../lib/components/Paginator/index.js"));
+__export(__webpack_require__(/*! ./Paper */ "../lib/components/Paper/index.js"));
+__export(__webpack_require__(/*! ./Popover */ "../lib/components/Popover/index.js"));
+__export(__webpack_require__(/*! ./Popper */ "../lib/components/Popper/index.js"));
+__export(__webpack_require__(/*! ./Portal */ "../lib/components/Portal/index.js"));
+__export(__webpack_require__(/*! ./Progress */ "../lib/components/Progress/index.js"));
+__export(__webpack_require__(/*! ./Radio */ "../lib/components/Radio/index.js"));
+__export(__webpack_require__(/*! ./RootRef */ "../lib/components/RootRef/index.js"));
+__export(__webpack_require__(/*! ./Select */ "../lib/components/Select/index.js"));
+__export(__webpack_require__(/*! ./SelectInline */ "../lib/components/SelectInline/index.js"));
+__export(__webpack_require__(/*! ./Spinner */ "../lib/components/Spinner/index.js"));
+__export(__webpack_require__(/*! ./StickyContainer */ "../lib/components/StickyContainer/index.js"));
+__export(__webpack_require__(/*! ./Switch */ "../lib/components/Switch/index.js"));
+__export(__webpack_require__(/*! ./Table */ "../lib/components/Table/index.js"));
+__export(__webpack_require__(/*! ./Tabs */ "../lib/components/Tabs/index.js"));
+__export(__webpack_require__(/*! ./Tag */ "../lib/components/Tag/index.js"));
+__export(__webpack_require__(/*! ./Text */ "../lib/components/Text/index.js"));
+__export(__webpack_require__(/*! ./TextArea */ "../lib/components/TextArea/index.js"));
+__export(__webpack_require__(/*! ./TextInput */ "../lib/components/TextInput/index.js"));
+__export(__webpack_require__(/*! ./TimeInput */ "../lib/components/TimeInput/index.js"));
+__export(__webpack_require__(/*! ./Tooltip */ "../lib/components/Tooltip/index.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/field/MaskedField/maskedFields/CepField.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/CepField.js ***!
-  \*************************************************************************/
+/***/ "../lib/form/ErrorField/ErrorField.js":
+/*!********************************************!*\
+  !*** ../lib/form/ErrorField/ErrorField.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
-var CepField = /** @class */ (function (_super) {
-    __extends(CepField, _super);
-    function CepField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CepField.prototype.render = function () {
-        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cep, placeholder: '_____-___', parse: masks_1.onlyNumbers }, this.props));
-    };
-    CepField.defaultProps = {};
-    return CepField;
-}(react_1.default.Component));
-exports.CepField = CepField;
-//# sourceMappingURL=CepField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/maskedFields/CnsField.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/CnsField.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
-var CnsField = /** @class */ (function (_super) {
-    __extends(CnsField, _super);
-    function CnsField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CnsField.prototype.render = function () {
-        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cns, parse: masks_1.onlyNumbers }, this.props));
-    };
-    CnsField.defaultProps = {};
-    return CnsField;
-}(react_1.default.Component));
-exports.CnsField = CnsField;
-//# sourceMappingURL=CnsField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/maskedFields/CpfField.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/CpfField.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
-var CpfField = /** @class */ (function (_super) {
-    __extends(CpfField, _super);
-    function CpfField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    CpfField.prototype.render = function () {
-        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.cpf, placeholder: '___.___.___-__', parse: masks_1.onlyNumbers }, this.props));
-    };
-    CpfField.defaultProps = {};
-    return CpfField;
-}(react_1.default.Component));
-exports.CpfField = CpfField;
-//# sourceMappingURL=CpfField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/maskedFields/TelefoneField.js":
-/*!******************************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/TelefoneField.js ***!
-  \******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var masks_1 = __webpack_require__(/*! ../../../../../util/masks */ "../lib/util/masks.js");
-var MaskedField_1 = __webpack_require__(/*! ../../MaskedField */ "../lib/components/form/field/MaskedField/index.js");
-var TelefoneField = /** @class */ (function (_super) {
-    __extends(TelefoneField, _super);
-    function TelefoneField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    TelefoneField.prototype.render = function () {
-        return react_1.default.createElement(MaskedField_1.MaskedField, __assign({ mask: masks_1.masks.telefone, placeholder: '(__) _____-____', parse: masks_1.onlyNumbers }, this.props));
-    };
-    TelefoneField.defaultProps = {};
-    return TelefoneField;
-}(react_1.default.Component));
-exports.TelefoneField = TelefoneField;
-//# sourceMappingURL=TelefoneField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/maskedFields/TimeField.js":
-/*!**************************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/TimeField.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var TimeInput_1 = __webpack_require__(/*! ../../../input/TimeInput */ "../lib/components/form/input/TimeInput/index.js");
-exports.format = function (value) {
-    // Omit seconds in case the initial field value is in format 'HH:mm:ss'
-    return value ? value.slice(0, 5) : null;
-};
-exports.TimeField = Field_1.withField(TimeInput_1.TimeInput, {
-    format: exports.format,
-});
-//# sourceMappingURL=TimeField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MaskedField/maskedFields/index.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/form/field/MaskedField/maskedFields/index.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./CepField */ "../lib/components/form/field/MaskedField/maskedFields/CepField.js"));
-__export(__webpack_require__(/*! ./CnsField */ "../lib/components/form/field/MaskedField/maskedFields/CnsField.js"));
-__export(__webpack_require__(/*! ./CpfField */ "../lib/components/form/field/MaskedField/maskedFields/CpfField.js"));
-__export(__webpack_require__(/*! ./TelefoneField */ "../lib/components/form/field/MaskedField/maskedFields/TelefoneField.js"));
-__export(__webpack_require__(/*! ./TimeField */ "../lib/components/form/field/MaskedField/maskedFields/TimeField.js"));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MonthField/MonthField.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/form/field/MonthField/MonthField.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var MonthPicker_1 = __webpack_require__(/*! ../../../MonthPicker */ "../lib/components/MonthPicker/index.js");
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-exports.MonthField = Field_1.withField(MonthPicker_1.MonthPickerInput);
-//# sourceMappingURL=MonthField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/MonthField/index.js":
-/*!********************************************************!*\
-  !*** ../lib/components/form/field/MonthField/index.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var MonthField_1 = __webpack_require__(/*! ./MonthField */ "../lib/components/form/field/MonthField/MonthField.js");
-exports.MonthField = MonthField_1.MonthField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/NumberField/NumberField.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/field/NumberField/NumberField.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var TextField_1 = __webpack_require__(/*! ../TextField/TextField */ "../lib/components/form/field/TextField/TextField.js");
-exports.parse = function (value) { return value.replace(/[^\d]/g, ''); };
-var NumberField = /** @class */ (function (_super) {
-    __extends(NumberField, _super);
-    function NumberField() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NumberField.prototype.render = function () {
-        return react_1.default.createElement(TextField_1.TextField, __assign({ parse: exports.parse }, this.props));
-    };
-    return NumberField;
-}(react_1.default.Component));
-exports.NumberField = NumberField;
-//# sourceMappingURL=NumberField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/NumberField/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/field/NumberField/index.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var NumberField_1 = __webpack_require__(/*! ./NumberField */ "../lib/components/form/field/NumberField/NumberField.js");
-exports.NumberField = NumberField_1.NumberField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/RadioField/RadioField.js":
-/*!*************************************************************!*\
-  !*** ../lib/components/form/field/RadioField/RadioField.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var Radio_1 = __webpack_require__(/*! ../../input/Radio */ "../lib/components/form/input/Radio/index.js");
-var RadioField = /** @class */ (function (_super) {
-    __extends(RadioField, _super);
-    function RadioField() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderRadio = function (props) { return (react_1.default.createElement(Radio_1.Radio, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
-        return _this;
-    }
-    RadioField.prototype.render = function () {
-        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'radio', hasWrapper: false, render: this.renderRadio }));
-    };
-    return RadioField;
-}(react_1.default.Component));
-exports.RadioField = RadioField;
-//# sourceMappingURL=RadioField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/RadioField/index.js":
-/*!********************************************************!*\
-  !*** ../lib/components/form/field/RadioField/index.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var RadioField_1 = __webpack_require__(/*! ./RadioField */ "../lib/components/form/field/RadioField/RadioField.js");
-exports.RadioField = RadioField_1.RadioField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/SelectField/SelectField.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/field/SelectField/SelectField.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var Select_1 = __webpack_require__(/*! ../../input/Select */ "../lib/components/form/input/Select/index.js");
-var SelectField = /** @class */ (function (_super) {
-    __extends(SelectField, _super);
-    function SelectField() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderSelect = function (props) {
-            return (react_1.default.createElement(Select_1.Select, __assign({}, Field_1.extractInputProps(_this.props), props.input, { status: props.hasError ? 'error' : undefined })));
-        };
-        return _this;
-    }
-    SelectField.prototype.render = function () {
-        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { render: this.renderSelect }));
-    };
-    SelectField.defaultProps = {};
-    return SelectField;
-}(react_1.default.Component));
-exports.SelectField = SelectField;
-//# sourceMappingURL=SelectField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/SelectField/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/field/SelectField/index.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var SelectField_1 = __webpack_require__(/*! ./SelectField */ "../lib/components/form/field/SelectField/SelectField.js");
-exports.SelectField = SelectField_1.SelectField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/SwitchField/SwitchField.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/field/SwitchField/SwitchField.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var Switch_1 = __webpack_require__(/*! ../../input/Switch/Switch */ "../lib/components/form/input/Switch/Switch.js");
-var SwitchField = /** @class */ (function (_super) {
-    __extends(SwitchField, _super);
-    function SwitchField() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderSwitch = function (props) { return (react_1.default.createElement(Switch_1.Switch, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
-        return _this;
-    }
-    SwitchField.prototype.render = function () {
-        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderSwitch }));
-    };
-    return SwitchField;
-}(react_1.default.Component));
-exports.SwitchField = SwitchField;
-//# sourceMappingURL=SwitchField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/SwitchField/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/field/SwitchField/index.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var SwitchField_1 = __webpack_require__(/*! ./SwitchField */ "../lib/components/form/field/SwitchField/SwitchField.js");
-exports.SwitchField = SwitchField_1.SwitchField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/TextAreaField/TextAreaField.js":
-/*!*******************************************************************!*\
-  !*** ../lib/components/form/field/TextAreaField/TextAreaField.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var TextArea_1 = __webpack_require__(/*! ../../input/TextArea/TextArea */ "../lib/components/form/input/TextArea/TextArea.js");
-exports.TextAreaField = Field_1.withField(TextArea_1.TextArea);
-//# sourceMappingURL=TextAreaField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/TextAreaField/index.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/field/TextAreaField/index.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TextAreaField_1 = __webpack_require__(/*! ./TextAreaField */ "../lib/components/form/field/TextAreaField/TextAreaField.js");
-exports.TextAreaField = TextAreaField_1.TextAreaField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/TextField/TextField.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/field/TextField/TextField.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Field_1 = __webpack_require__(/*! ../../finalForm/Field */ "../lib/components/form/finalForm/Field/index.js");
-var TextInput_1 = __webpack_require__(/*! ../../input/TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
-exports.TextField = Field_1.withField(TextInput_1.TextInput);
-//# sourceMappingURL=TextField.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/field/TextField/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/field/TextField/index.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TextField_1 = __webpack_require__(/*! ./TextField */ "../lib/components/form/field/TextField/TextField.js");
-exports.TextField = TextField_1.TextField;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/finalForm/ErrorField.js":
-/*!******************************************************!*\
-  !*** ../lib/components/form/finalForm/ErrorField.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FormControl_1 = __webpack_require__(/*! ../../FormControl */ "../lib/components/FormControl/index.js");
-var ErrorField = /** @class */ (function (_super) {
-    __extends(ErrorField, _super);
-    function ErrorField() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.renderField = function (renderProps) {
-            var _a = renderProps.meta, touched = _a.touched, error = _a.error, dirtySinceLastSubmit = _a.dirtySinceLastSubmit, submitError = _a.submitError;
-            var hasError = (!!error && touched) || (!!submitError && !dirtySinceLastSubmit);
-            var ignore = _this.props.ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string');
-            if (hasError && !ignore) {
-                return react_1.default.createElement(FormControl_1.FormError, null, error || submitError);
-            }
-            return null;
-        };
-        return _this;
-    }
-    ErrorField.prototype.render = function () {
-        return react_1.default.createElement(react_final_form_1.Field, { name: this.props.name, render: this.renderField });
+var FormControl_1 = __webpack_require__(/*! ../../components/FormControl */ "../lib/components/FormControl/index.js");
+function ErrorField(props) {
+    var name = props.name, ignoreObjectError = props.ignoreObjectError;
+    var renderField = function (renderProps) {
+        var _a = renderProps.meta, touched = _a.touched, error = _a.error, dirtySinceLastSubmit = _a.dirtySinceLastSubmit, submitError = _a.submitError;
+        var hasError = (!!error && touched) || (!!submitError && !dirtySinceLastSubmit);
+        var ignore = ignoreObjectError && !(typeof error === 'string') && !(typeof submitError === 'string');
+        if (hasError && !ignore) {
+            return react_1.default.createElement(FormControl_1.FormError, null, error || submitError);
+        }
+        return null;
     };
-    return ErrorField;
-}(react_1.default.Component));
+    return react_1.default.createElement(react_final_form_1.Field, { name: name, render: renderField });
+}
 exports.ErrorField = ErrorField;
 //# sourceMappingURL=ErrorField.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Field/Field.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/finalForm/Field/Field.js ***!
-  \*******************************************************/
+/***/ "../lib/form/ErrorField/index.js":
+/*!***************************************!*\
+  !*** ../lib/form/ErrorField/index.js ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var ErrorField_1 = __webpack_require__(/*! ./ErrorField */ "../lib/form/ErrorField/ErrorField.js");
+exports.ErrorField = ErrorField_1.ErrorField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/Field/Field.js":
+/*!**********************************!*\
+  !*** ../lib/form/Field/Field.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14329,8 +15680,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var FormControl_1 = __webpack_require__(/*! ../../../FormControl */ "../lib/components/FormControl/index.js");
-var util_1 = __webpack_require__(/*! ./util */ "../lib/components/form/finalForm/Field/util.js");
+var FormControl_1 = __webpack_require__(/*! ../../components/FormControl */ "../lib/components/FormControl/index.js");
+var util_1 = __webpack_require__(/*! ./util */ "../lib/form/Field/util.js");
 function Field(props) {
     var form = react_final_form_1.useForm();
     react_1.useEffect(function () {
@@ -14377,10 +15728,10 @@ Field.defaultProps = {
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Field/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/finalForm/Field/index.js ***!
-  \*******************************************************/
+/***/ "../lib/form/Field/index.js":
+/*!**********************************!*\
+  !*** ../lib/form/Field/index.js ***!
+  \**********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14390,18 +15741,18 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Field */ "../lib/components/form/finalForm/Field/Field.js"));
-__export(__webpack_require__(/*! ./util */ "../lib/components/form/finalForm/Field/util.js"));
-var withField_1 = __webpack_require__(/*! ./withField */ "../lib/components/form/finalForm/Field/withField.js");
+__export(__webpack_require__(/*! ./Field */ "../lib/form/Field/Field.js"));
+__export(__webpack_require__(/*! ./util */ "../lib/form/Field/util.js"));
+var withField_1 = __webpack_require__(/*! ./withField */ "../lib/form/Field/withField.js");
 exports.withField = withField_1.withField;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Field/util.js":
-/*!******************************************************!*\
-  !*** ../lib/components/form/finalForm/Field/util.js ***!
-  \******************************************************/
+/***/ "../lib/form/Field/util.js":
+/*!*********************************!*\
+  !*** ../lib/form/Field/util.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14441,10 +15792,10 @@ exports.extractInputProps = extractInputProps;
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Field/withField.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/finalForm/Field/withField.js ***!
-  \***********************************************************/
+/***/ "../lib/form/Field/withField.js":
+/*!**************************************!*\
+  !*** ../lib/form/Field/withField.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14480,8 +15831,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var hoistNonReactStatics = __webpack_require__(/*! hoist-non-react-statics */ "../node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Field_1 = __webpack_require__(/*! ./Field */ "../lib/components/form/finalForm/Field/Field.js");
-var index_1 = __webpack_require__(/*! ./index */ "../lib/components/form/finalForm/Field/index.js");
+var Field_1 = __webpack_require__(/*! ./Field */ "../lib/form/Field/Field.js");
+var index_1 = __webpack_require__(/*! ./index */ "../lib/form/Field/index.js");
 function withField(InputComponent, fieldProps) {
     if (fieldProps === void 0) { fieldProps = {}; }
     var _a;
@@ -14510,10 +15861,10 @@ exports.withField = withField;
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Form/Form.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/form/finalForm/Form/Form.js ***!
-  \*****************************************************/
+/***/ "../lib/form/Form/Form.js":
+/*!********************************!*\
+  !*** ../lib/form/Form/Form.js ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14552,7 +15903,7 @@ var final_form_focus_1 = __importDefault(__webpack_require__(/*! final-form-focu
 var final_form_set_field_data_1 = __importDefault(__webpack_require__(/*! final-form-set-field-data */ "../node_modules/final-form-set-field-data/dist/final-form-set-field-data.es.js"));
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var util_1 = __webpack_require__(/*! ../../../../util */ "../lib/util/index.js");
+var util_1 = __webpack_require__(/*! ../../util */ "../lib/util/index.js");
 var focusOnErrorDecorator = final_form_focus_1.default();
 var Form = /** @class */ (function (_super) {
     __extends(Form, _super);
@@ -14626,28 +15977,26 @@ exports.Form = Form;
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/Form/index.js":
-/*!******************************************************!*\
-  !*** ../lib/components/form/finalForm/Form/index.js ***!
-  \******************************************************/
+/***/ "../lib/form/Form/index.js":
+/*!*********************************!*\
+  !*** ../lib/form/Form/index.js ***!
+  \*********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Form */ "../lib/components/form/finalForm/Form/Form.js"));
+var Form_1 = __webpack_require__(/*! ./Form */ "../lib/form/Form/Form.js");
+exports.Form = Form_1.Form;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/SubmitButton/SubmitButton.js":
-/*!*********************************************************************!*\
-  !*** ../lib/components/form/finalForm/SubmitButton/SubmitButton.js ***!
-  \*********************************************************************/
+/***/ "../lib/form/SubmitButton/SubmitButton.js":
+/*!************************************************!*\
+  !*** ../lib/form/SubmitButton/SubmitButton.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14694,7 +16043,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var react_final_form_1 = __webpack_require__(/*! react-final-form */ "../node_modules/react-final-form/dist/react-final-form.es.js");
-var Button_1 = __webpack_require__(/*! ../../../Button */ "../lib/components/Button/index.js");
+var Button_1 = __webpack_require__(/*! ../../components/Button */ "../lib/components/Button/index.js");
 var SubmitButton = /** @class */ (function (_super) {
     __extends(SubmitButton, _super);
     function SubmitButton() {
@@ -14719,10 +16068,10 @@ exports.SubmitButton = SubmitButton;
 
 /***/ }),
 
-/***/ "../lib/components/form/finalForm/SubmitButton/index.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/form/finalForm/SubmitButton/index.js ***!
-  \**************************************************************/
+/***/ "../lib/form/SubmitButton/index.js":
+/*!*****************************************!*\
+  !*** ../lib/form/SubmitButton/index.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14732,213 +16081,15 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./SubmitButton */ "../lib/components/form/finalForm/SubmitButton/SubmitButton.js"));
+__export(__webpack_require__(/*! ./SubmitButton */ "../lib/form/SubmitButton/SubmitButton.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/index.js":
-/*!***************************************!*\
-  !*** ../lib/components/form/index.js ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./field/CheckboxField */ "../lib/components/form/field/CheckboxField/index.js"));
-__export(__webpack_require__(/*! ./field/DateField */ "../lib/components/form/field/DateField/index.js"));
-__export(__webpack_require__(/*! ./field/HiddenField */ "../lib/components/form/field/HiddenField/index.js"));
-__export(__webpack_require__(/*! ./field/MaskedField */ "../lib/components/form/field/MaskedField/index.js"));
-__export(__webpack_require__(/*! ./field/NumberField */ "../lib/components/form/field/NumberField/index.js"));
-__export(__webpack_require__(/*! ./field/RadioField */ "../lib/components/form/field/RadioField/index.js"));
-__export(__webpack_require__(/*! ./field/SelectField */ "../lib/components/form/field/SelectField/index.js"));
-__export(__webpack_require__(/*! ./field/SwitchField */ "../lib/components/form/field/SwitchField/index.js"));
-__export(__webpack_require__(/*! ./field/TextField */ "../lib/components/form/field/TextField/index.js"));
-__export(__webpack_require__(/*! ./field/TextAreaField */ "../lib/components/form/field/TextAreaField/index.js"));
-__export(__webpack_require__(/*! ./field/MonthField */ "../lib/components/form/field/MonthField/index.js"));
-__export(__webpack_require__(/*! ./input/Checkbox */ "../lib/components/form/input/Checkbox/index.js"));
-__export(__webpack_require__(/*! ./input/DateInput */ "../lib/components/form/input/DateInput/index.js"));
-__export(__webpack_require__(/*! ./input/Input */ "../lib/components/form/input/Input/index.js"));
-__export(__webpack_require__(/*! ./input/MaskedInput */ "../lib/components/form/input/MaskedInput/index.js"));
-__export(__webpack_require__(/*! ./input/Radio */ "../lib/components/form/input/Radio/index.js"));
-__export(__webpack_require__(/*! ./input/Select */ "../lib/components/form/input/Select/index.js"));
-__export(__webpack_require__(/*! ./input/Switch */ "../lib/components/form/input/Switch/index.js"));
-__export(__webpack_require__(/*! ./input/TextArea */ "../lib/components/form/input/TextArea/index.js"));
-__export(__webpack_require__(/*! ./input/TextInput */ "../lib/components/form/input/TextInput/index.js"));
-__export(__webpack_require__(/*! ./input/TimeInput */ "../lib/components/form/input/TimeInput/index.js"));
-__export(__webpack_require__(/*! ./finalForm/ErrorField */ "../lib/components/form/finalForm/ErrorField.js"));
-__export(__webpack_require__(/*! ./finalForm/Field */ "../lib/components/form/finalForm/Field/index.js"));
-__export(__webpack_require__(/*! ./finalForm/Form */ "../lib/components/form/finalForm/Form/index.js"));
-__export(__webpack_require__(/*! ./finalForm/SubmitButton */ "../lib/components/form/finalForm/SubmitButton/index.js"));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Checkbox/Checkbox.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/input/Checkbox/Checkbox.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
-function Checkbox(props) {
-    var label = props.label, indeterminate = props.indeterminate, style = props.style, rest = __rest(props, ["label", "indeterminate", "style"]);
-    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
-    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
-    var inputRef = react_1.useRef();
-    react_1.useEffect(function () {
-        inputRef.current.indeterminate = indeterminate;
-    }, [indeterminate]);
-    return (react_1.default.createElement("label", { className: css(classes.wrapper, props.disabled && classes.disabled, style) },
-        react_1.default.createElement(Input_1.Input, __assign({}, rest, { inputRef: inputRef, type: 'checkbox', className: inputClasses.input })),
-        react_1.default.createElement("span", { className: classes.check }),
-        label && react_1.default.createElement("span", { className: classes.label }, label)));
-}
-exports.Checkbox = Checkbox;
-exports.createStyles = function (theme) { return ({
-    wrapper: {
-        cursor: 'pointer',
-        display: 'inline-flex',
-        alignItems: 'center',
-    },
-    check: {
-        backgroundColor: theme.pallete.surface.main,
-        border: '1px solid ' + theme.pallete.gray.c70,
-        borderRadius: theme.radius.input,
-        display: 'inline-block',
-        height: 16,
-        position: 'relative',
-        transition: 'all .2s ease',
-        verticalAlign: 'middle',
-        width: 16,
-    },
-    label: {
-        color: theme.pallete.gray.c30,
-        marginLeft: '0.5rem',
-    },
-    disabled: {
-        cursor: 'not-allowed',
-    },
-}); };
-exports.createInputStyles = function (theme, classes) {
-    var _a;
-    return ({
-        input: (_a = {
-                opacity: 0,
-                marginRight: -13
-            },
-            _a["&:hover + ." + classes.check] = {
-                borderColor: theme.pallete.gray.c40,
-            },
-            _a["&:checked + ." + classes.check] = {
-                backgroundColor: theme.pallete.primary.main,
-                borderColor: theme.pallete.primary.main,
-                ':after': {
-                    content: '""',
-                    borderRight: '2px solid ' + theme.pallete.surface.main,
-                    borderBottom: '2px solid ' + theme.pallete.surface.main,
-                    position: 'absolute',
-                    width: 6,
-                    height: 10,
-                    top: 1,
-                    left: 4,
-                    opacity: 1,
-                    transform: 'rotate(45deg) scale(1)',
-                    transition: 'opacity .2s ease',
-                },
-            },
-            _a["&:indeterminate + ." + classes.check] = {
-                backgroundColor: theme.pallete.surface.main,
-                borderColor: theme.pallete.primary.main,
-                ':after': {
-                    content: '""',
-                    borderBottom: '2px solid ' + theme.pallete.primary.main,
-                    position: 'absolute',
-                    top: -1,
-                    left: 3,
-                    width: 8,
-                    height: 10,
-                    opacity: 1,
-                    transition: 'opacity .2s ease',
-                },
-            },
-            _a["&:focus + ." + classes.check] = {
-                boxShadow: styles_1.focusBoxShadow(theme),
-            },
-            _a["&:disabled + ." + classes.check] = {
-                backgroundColor: theme.pallete.surface.background,
-                borderColor: theme.pallete.gray.c90,
-            },
-            _a["&:disabled + ." + classes.check + " + ." + classes.label] = {
-                color: theme.pallete.gray.c70,
-            },
-            _a),
-    });
-};
-//# sourceMappingURL=Checkbox.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Checkbox/index.js":
-/*!******************************************************!*\
-  !*** ../lib/components/form/input/Checkbox/index.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Checkbox_1 = __webpack_require__(/*! ./Checkbox */ "../lib/components/form/input/Checkbox/Checkbox.js");
-exports.Checkbox = Checkbox_1.Checkbox;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/DateInput/CalendarPopup.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/input/DateInput/CalendarPopup.js ***!
-  \***************************************************************/
+/***/ "../lib/form/field/CheckboxField/CheckboxField.js":
+/*!********************************************************!*\
+  !*** ../lib/form/field/CheckboxField/CheckboxField.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14960,1365 +16111,549 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Calendar_1 = __webpack_require__(/*! ../../../Calendar */ "../lib/components/Calendar/index.js");
-function CalendarPopup(props) {
-    var classes = styles_1.useStyles(exports.createStyles).classes;
-    return (react_1.default.createElement("div", { className: classes.root, tabIndex: -1 },
-        react_1.default.createElement(Calendar_1.Calendar, __assign({}, props))));
+var Checkbox_1 = __webpack_require__(/*! ../../../components/Checkbox */ "../lib/components/Checkbox/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+function CheckboxField(props) {
+    var renderCheck = function (fieldProps) { return (react_1.default.createElement(Checkbox_1.Checkbox, __assign({}, Field_1.extractInputProps(props), fieldProps.input, { label: props.label }))); };
+    return react_1.default.createElement(Field_1.Field, __assign({}, props, { type: 'checkbox', hasWrapper: false, render: renderCheck }));
 }
-exports.CalendarPopup = CalendarPopup;
-exports.createStyles = function (theme) { return ({
-    root: {
-        background: theme.pallete.surface.main,
-        boxShadow: theme.shadows.outer[40],
-        borderRadius: theme.radius.popper,
-        padding: '0.5rem .25rem .25rem .25rem',
-        outline: 'none',
-    },
-}); };
-//# sourceMappingURL=CalendarPopup.js.map
+exports.CheckboxField = CheckboxField;
+//# sourceMappingURL=CheckboxField.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/input/DateInput/DateInput.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/input/DateInput/DateInput.js ***!
-  \***********************************************************/
+/***/ "../lib/form/field/CheckboxField/index.js":
+/*!************************************************!*\
+  !*** ../lib/form/field/CheckboxField/index.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
-var masks_1 = __webpack_require__(/*! ../../../../util/masks */ "../lib/util/masks.js");
-var MaskedInput_1 = __webpack_require__(/*! ../../input/MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
-var formatter = new Intl.DateTimeFormat('pt-br', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
+var CheckboxField_1 = __webpack_require__(/*! ./CheckboxField */ "../lib/form/field/CheckboxField/CheckboxField.js");
+exports.CheckboxField = CheckboxField_1.CheckboxField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/DateField/DateField.js":
+/*!************************************************!*\
+  !*** ../lib/form/field/DateField/DateField.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var DateInput_1 = __webpack_require__(/*! ../../../components/DateInput */ "../lib/components/DateInput/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.parse = function (value) {
+    if (!value) {
+        return null;
+    }
+    var year = ('000' + value.getFullYear()).slice(-4);
+    var month = ('0' + (value.getMonth() + 1)).slice(-2);
+    var day = ('0' + value.getDate()).slice(-2);
+    return year + "-" + month + "-" + day;
+};
+exports.format = function (value) {
+    if (!value) {
+        return null;
+    }
+    var parsed = Date.parse(value);
+    return parsed ? new Date(parsed) : null;
+};
+exports.DateField = Field_1.withField(DateInput_1.DatePickerInput, {
+    parse: exports.parse,
+    format: exports.format,
 });
-function DateInput(props) {
-    var value = props.value, onInputChange = props.onInputChange, rest = __rest(props, ["value", "onInputChange"]);
-    var handleChange = function (e) {
-        if (!e || !e.target || !e.target.value) {
-            props.onChange(null);
-            return;
-        }
-        var targetValue = e.target.value;
-        var match = targetValue.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
-        if (match) {
-            var date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10));
-            props.onChange(date);
-        }
-        if (onInputChange) {
-            return onInputChange(e);
-        }
-    };
-    return (react_1.default.createElement(MaskedInput_1.MaskedInput, __assign({ value: value ? formatter.format(value) : undefined, mask: masks_1.masks.date, placeholder: 'dd/mm/yyyy', pipe: createAutoCorrectedDatePipe_1.default('dd/mm/yyyy'), autoComplete: 'off' }, rest, { onChange: handleChange })));
-}
-exports.DateInput = DateInput;
-DateInput.defaultProps = {};
-//# sourceMappingURL=DateInput.js.map
+//# sourceMappingURL=DateField.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/input/DateInput/DatePickerInput.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/form/input/DateInput/DatePickerInput.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var util_1 = __webpack_require__(/*! ../../../Calendar/util */ "../lib/components/Calendar/util.js");
-var FocusManagerContainer_1 = __webpack_require__(/*! ../../../FocusManagerContainer */ "../lib/components/FocusManagerContainer/index.js");
-var Popper_1 = __webpack_require__(/*! ../../../Popper */ "../lib/components/Popper/index.js");
-var CalendarPopup_1 = __webpack_require__(/*! ./CalendarPopup */ "../lib/components/form/input/DateInput/CalendarPopup.js");
-var DateInput_1 = __webpack_require__(/*! ./DateInput */ "../lib/components/form/input/DateInput/DateInput.js");
-function DatePickerInput(props) {
-    var inputRef = react_1.useRef();
-    var controller = react_1.useRef();
-    var setController = function (ctrl) {
-        controller.current = ctrl;
-    };
-    var handleDayClick = function (ctrl) { return function (day) {
-        inputRef.current.focus();
-        ctrl.hide();
-        return props.onChange(day);
-    }; };
-    var handleInputClick = function (ctrl) { return function (e) {
-        ctrl.show();
-        return props.onClick(e);
-    }; };
-    var handleInputFocus = function (ctrl) { return function (e) {
-        ctrl.show();
-        return props.onFocus(e);
-    }; };
-    var handleFocusIn = function () {
-        if (controller.current) {
-            controller.current.show();
-        }
-    };
-    var handleFocusOut = function () {
-        if (controller.current) {
-            controller.current.hide();
-        }
-    };
-    var renderTarget = function (ctrl) {
-        var calendarProps = props.calendarProps, minDate = props.minDate, maxDate = props.maxDate, rest = __rest(props, ["calendarProps", "minDate", "maxDate"]);
-        return (react_1.default.createElement(DateInput_1.DateInput, __assign({ icon: 'calendarOutline', onIconClick: ctrl.show }, rest, { inputRef: inputRef, onClick: handleInputClick(ctrl), onFocus: handleInputFocus(ctrl) })));
-    };
-    var value = props.value;
-    return (react_1.default.createElement(FocusManagerContainer_1.FocusManagerContainer, { onFocusIn: handleFocusIn, onFocusOut: handleFocusOut },
-        react_1.default.createElement(Popper_1.Popper, { control: setController, renderTarget: renderTarget, placement: 'bottom-start', block: true }, function (ctrl) { return (react_1.default.createElement(CalendarPopup_1.CalendarPopup, __assign({ key: value && value.getTime(), initialVisibleDate: value || new Date(), onDayClick: handleDayClick(ctrl), modifiers: {
-                selected: function (day) { return value && util_1.isSameDay(day, value); },
-                disabled: exports.disableByRange(props.minDate, props.maxDate),
-            } }, props.calendarProps))); })));
-}
-exports.DatePickerInput = DatePickerInput;
-DatePickerInput.defaultProps = {
-    onChange: function () { return null; },
-    onFocus: function () { return null; },
-    onClick: function () { return null; },
-};
-exports.disableByRange = function (minDate, maxDate) {
-    var realMinDate = new Date(minDate);
-    realMinDate.setHours(0, 0, 0, 0);
-    var realMaxDate = new Date(maxDate);
-    realMaxDate.setHours(23, 59, 59, 999);
-    return function (day) {
-        return (minDate && day < realMinDate) || (maxDate && day > realMaxDate);
-    };
-};
-//# sourceMappingURL=DatePickerInput.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/DateInput/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/input/DateInput/index.js ***!
-  \*******************************************************/
+/***/ "../lib/form/field/DateField/index.js":
+/*!********************************************!*\
+  !*** ../lib/form/field/DateField/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var DateInput_1 = __webpack_require__(/*! ./DateInput */ "../lib/components/form/input/DateInput/DateInput.js");
-exports.DateInput = DateInput_1.DateInput;
-var DatePickerInput_1 = __webpack_require__(/*! ./DatePickerInput */ "../lib/components/form/input/DateInput/DatePickerInput.js");
-exports.DatePickerInput = DatePickerInput_1.DatePickerInput;
+var DateField_1 = __webpack_require__(/*! ./DateField */ "../lib/form/field/DateField/DateField.js");
+exports.DateField = DateField_1.DateField;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../lib/components/form/input/Input/Input.js":
-/*!***************************************************!*\
-  !*** ../lib/components/form/input/Input/Input.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-function Input(props) {
-    var inputRef = props.inputRef, rest = __rest(props, ["inputRef"]);
-    return react_1.default.createElement("input", __assign({ ref: inputRef }, rest));
-}
-exports.Input = Input;
-Input.defaultProps = {};
-//# sourceMappingURL=Input.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Input/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/form/input/Input/index.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Input_1 = __webpack_require__(/*! ./Input */ "../lib/components/form/input/Input/Input.js");
-exports.Input = Input_1.Input;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/MaskedInput/MaskedInput.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/input/MaskedInput/MaskedInput.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var react_text_mask_1 = __importDefault(__webpack_require__(/*! react-text-mask */ "../node_modules/react-text-mask/dist/reactTextMask.js"));
-var react_2 = __webpack_require__(/*! ../../../../util/react */ "../lib/util/react.js");
-var TextInput_1 = __webpack_require__(/*! ../TextInput */ "../lib/components/form/input/TextInput/index.js");
-function MaskedInput(props) {
-    var inputRef = props.inputRef, style = props.style, rest = __rest(props, ["inputRef", "style"]);
-    var renderInput = function (ref, p) {
-        return react_1.default.createElement(TextInput_1.TextInput, __assign({ style: style, inputRef: react_2.composeRefs(inputRef, ref) }, p));
-    };
-    return react_1.default.createElement(react_text_mask_1.default, __assign({ render: renderInput }, rest));
-}
-exports.MaskedInput = MaskedInput;
-//# sourceMappingURL=MaskedInput.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/MaskedInput/index.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/input/MaskedInput/index.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var MaskedInput_1 = __webpack_require__(/*! ./MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
-exports.MaskedInput = MaskedInput_1.MaskedInput;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Radio/Radio.js":
-/*!***************************************************!*\
-  !*** ../lib/components/form/input/Radio/Radio.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
-function Radio(props) {
-    var label = props.label, rest = __rest(props, ["label"]);
-    var classes = styles_1.useStyles(exports.createStyles).classes;
-    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
-    return (react_1.default.createElement("label", { className: classes.wrapper },
-        react_1.default.createElement(Input_1.Input, __assign({}, rest, { type: 'radio', className: inputClasses.input })),
-        react_1.default.createElement("span", { className: classes.radio }),
-        react_1.default.createElement("span", { className: classes.label }, label)));
-}
-exports.Radio = Radio;
-exports.createStyles = function (theme) { return ({
-    wrapper: {
-        cursor: 'pointer',
-        display: 'inline-flex',
-        alignItems: 'center',
-    },
-    radio: {
-        backgroundColor: theme.pallete.surface.main,
-        border: '1px solid ' + theme.pallete.gray.c70,
-        borderRadius: 100,
-        display: 'inline-block',
-        height: 16,
-        position: 'relative',
-        transition: 'all .2s ease',
-        verticalAlign: 'middle',
-        width: 16,
-        ':after': {
-            backgroundColor: theme.pallete.surface.main,
-            border: '3px solid ' + theme.pallete.surface.main,
-            borderRadius: 100,
-            content: '""',
-            display: 'block',
-            height: 2,
-            marginLeft: 4,
-            marginTop: 4,
-            opacity: 0,
-            textAlign: 'center',
-            transition: 'all .2s ease',
-            width: 2,
-        },
-    },
-    label: {
-        color: theme.pallete.gray.c30,
-        marginLeft: '0.5rem',
-    },
-}); };
-exports.createInputStyles = function (theme, classes) {
-    var _a;
-    return ({
-        input: (_a = {
-                opacity: 0,
-                marginRight: -13
-            },
-            _a["&:hover + ." + classes.radio] = {
-                borderColor: theme.pallete.gray.c40,
-            },
-            _a["&:checked + ." + classes.radio] = {
-                backgroundColor: theme.pallete.primary.main,
-                borderColor: theme.pallete.primary.main,
-                ':after': {
-                    opacity: 1,
-                },
-            },
-            _a["&:focus + ." + classes.radio] = {
-                boxShadow: styles_1.focusBoxShadow(theme),
-            },
-            _a["&:disabled + ." + classes.radio] = {
-                backgroundColor: theme.pallete.surface.background,
-                borderColor: theme.pallete.gray.c90,
-            },
-            _a["&:disabled + ." + classes.radio + " + ." + classes.label] = {
-                color: theme.pallete.gray.c70,
-            },
-            _a),
-    });
-};
-//# sourceMappingURL=Radio.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Radio/index.js":
-/*!***************************************************!*\
-  !*** ../lib/components/form/input/Radio/index.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Radio_1 = __webpack_require__(/*! ./Radio */ "../lib/components/form/input/Radio/Radio.js");
-exports.Radio = Radio_1.Radio;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/Select.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/form/input/Select/Select.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var SelectMulti_1 = __webpack_require__(/*! ./SelectMulti/SelectMulti */ "../lib/components/form/input/Select/SelectMulti/SelectMulti.js");
-var SelectSingle_1 = __webpack_require__(/*! ./SelectSingle/SelectSingle */ "../lib/components/form/input/Select/SelectSingle/SelectSingle.js");
-function Select(props) {
-    var multiple = props.multiple, onChange = props.onChange, value = props.value, itemIsEqual = props.itemIsEqual, style = props.style, rest = __rest(props, ["multiple", "onChange", "value", "itemIsEqual", "style"]);
-    var checkedValue = value;
-    if (multiple && value && !Array.isArray(value)) {
-        if (true) {
-            // tslint:disable-next-line no-console
-            console.warn("Trying to set an object as value for <Select multiple /> but it should be an array");
-        }
-        checkedValue = value ? [value] : [];
-    }
-    if (!multiple && value && Array.isArray(value)) {
-        if (true) {
-            // tslint:disable-next-line no-console
-            console.warn("Trying to set an array as value for <Select /> but it should be an object." +
-                " Set the 'multiple' prop if it can have multiple values");
-        }
-        checkedValue = value[0];
-    }
-    if (multiple) {
-        return react_1.default.createElement(SelectMulti_1.SelectMulti, __assign({}, rest, { value: checkedValue, onChange: onChange, itemIsEqual: itemIsEqual }));
-    }
-    else {
-        return react_1.default.createElement(SelectSingle_1.SelectSingle, __assign({}, rest, { value: checkedValue, onChange: onChange, style: style }));
-    }
-}
-exports.Select = Select;
-//# sourceMappingURL=Select.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMenu/SelectMenu.js":
-/*!********************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMenu/SelectMenu.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-function SelectMenu(props) {
-    var style = props.style, menuRef = props.menuRef, rest = __rest(props, ["style", "menuRef"]);
-    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
-    return react_1.default.createElement("ul", __assign({ className: css(classes.list, style), ref: menuRef }, rest));
-}
-exports.SelectMenu = SelectMenu;
-exports.createStyles = function (theme) { return ({
-    list: {
-        listStyle: 'none',
-        margin: 0,
-        padding: 0,
-        border: "1px solid " + theme.pallete.divider,
-        borderRadius: theme.radius.popper,
-        backgroundColor: theme.pallete.surface.main,
-        boxShadow: theme.shadows.outer['40'],
-        maxHeight: '20rem',
-        overflowY: 'auto',
-        overflowX: 'hidden',
-        position: 'absolute',
-        width: '100%',
-        zIndex: theme.zIndex.dropdown,
-    },
-}); };
-//# sourceMappingURL=SelectMenu.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMenu/SelectMenuItem.js":
-/*!************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMenu/SelectMenuItem.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var Spinner_1 = __webpack_require__(/*! ../../../../Spinner */ "../lib/components/Spinner/index.js");
-function SelectMenuItem(props) {
-    var style = props.style, selected = props.selected, highlighted = props.highlighted, rest = __rest(props, ["style", "selected", "highlighted"]);
-    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
-    return react_1.default.createElement("li", __assign({ className: css(classes.item, style) }, rest));
-}
-exports.SelectMenuItem = SelectMenuItem;
-function SelectHelperMenuItem(props) {
-    var theme = styles_1.useTheme();
-    return react_1.default.createElement(SelectMenuItem, __assign({ style: { background: theme.pallete.surface.background } }, props));
-}
-exports.SelectHelperMenuItem = SelectHelperMenuItem;
-function SelectLoadingItem(props) {
-    var theme = styles_1.useTheme();
-    return (react_1.default.createElement(SelectHelperMenuItem, __assign({}, props),
-        "Carregando...",
-        react_1.default.createElement(Spinner_1.Spinner, { style: { color: theme.pallete.primary.main, float: 'right' } })));
-}
-exports.SelectLoadingItem = SelectLoadingItem;
-function SelectEmptyItem(props) {
-    return react_1.default.createElement(SelectHelperMenuItem, __assign({}, props), "Nenhum item encontrado");
-}
-exports.SelectEmptyItem = SelectEmptyItem;
-exports.createStyles = function (theme, _a) {
-    var highlighted = _a.highlighted;
-    return ({
-        item: {
-            borderBottom: "1px solid " + theme.pallete.divider,
-            cursor: 'pointer',
-            padding: '0.325rem 0.5rem',
-            transition: '.1s ease',
-            background: highlighted && theme.pallete.surface.background,
-            '&:last-of-type': {
-                borderBottom: 'none',
-            },
-            '&:hover': {
-                background: theme.pallete.surface.background,
-            },
-        },
-    });
-};
-//# sourceMappingURL=SelectMenuItem.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMenu/index.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMenu/index.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var SelectMenu_1 = __webpack_require__(/*! ./SelectMenu */ "../lib/components/form/input/Select/SelectMenu/SelectMenu.js");
-exports.SelectMenu = SelectMenu_1.SelectMenu;
-var SelectMenuItem_1 = __webpack_require__(/*! ./SelectMenuItem */ "../lib/components/form/input/Select/SelectMenu/SelectMenuItem.js");
-exports.SelectMenuItem = SelectMenuItem_1.SelectMenuItem;
-exports.SelectEmptyItem = SelectMenuItem_1.SelectEmptyItem;
-exports.SelectHelperMenuItem = SelectMenuItem_1.SelectHelperMenuItem;
-exports.SelectLoadingItem = SelectMenuItem_1.SelectLoadingItem;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMulti/MultiDownshift.js":
-/*!*************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMulti/MultiDownshift.js ***!
-  \*************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// From downshift examples
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var downshift_1 = __importDefault(__webpack_require__(/*! downshift */ "../node_modules/downshift/dist/downshift.esm.js"));
-var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var util_1 = __webpack_require__(/*! ../../../../../util */ "../lib/util/index.js");
-var SelectDownshift_1 = __webpack_require__(/*! ../SelectSingle/SelectDownshift */ "../lib/components/form/input/Select/SelectSingle/SelectDownshift.js");
-function MultiDownshift(props) {
-    var downshiftRef = react_1.useRef();
-    var _a = react_1.useState(props.selectedItems), selectedItems = _a[0], setSelectedItems = _a[1];
-    var _b = react_1.useState(false), changed = _b[0], setChanged = _b[1];
-    react_1.useEffect(function () {
-        setSelectedItems(props.selectedItems);
-    }, [props.selectedItems]);
-    react_1.useEffect(function () {
-        if (downshiftRef.current && changed) {
-            props.onChange && props.onChange(selectedItems, getStateAndHelpers(downshiftRef.current));
-            props.onSelect && props.onSelect(selectedItems, getStateAndHelpers(downshiftRef.current));
-            setChanged(false);
-        }
-    }, [selectedItems]);
-    var isSelected = function (item) { return util_1.some(selectedItems, function (i) { return props.itemIsEqual(i, item); }); };
-    var handleChange = function (selectedItem) {
-        if (isSelected(selectedItem)) {
-            removeItem(selectedItem);
-        }
-        else {
-            addItem(selectedItem);
-        }
-    };
-    var removeItem = function (selectedItem) {
-        setChanged(true);
-        setSelectedItems(function (currentItems) { return currentItems.filter(function (item) { return !props.itemIsEqual(selectedItem, item); }); });
-    };
-    var addItem = function (item) {
-        setChanged(true);
-        if (!isSelected(item)) {
-            setSelectedItems(function (currentItems) { return currentItems.concat([item]); });
-        }
-    };
-    var getStateAndHelpers = function (downshift) {
-        downshiftRef.current = downshift;
-        return __assign({}, downshift, { selectedItems: selectedItems,
-            isSelected: isSelected,
-            addItem: addItem,
-            removeItem: removeItem });
-    };
-    var children = props.children, onSelect = props.onSelect, rest = __rest(props
-    // TODO: compose together props (rather than overwriting them) like downshift does
-    , ["children", "onSelect"]);
-    // TODO: compose together props (rather than overwriting them) like downshift does
-    return (react_1.default.createElement(SelectDownshift_1.SelectDownshift, __assign({}, rest, { stateReducer: stateReducer, onChange: handleChange, selectedItem: null }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
-}
-exports.MultiDownshift = MultiDownshift;
-MultiDownshift.defaultProps = {
-    selectedItems: [],
-    itemIsEqual: function (a, b) {
-        if (true) {
-            // tslint:disable no-console
-            console.warn('MultiDownshift: using default itemIsEqual implementation for object comparision.' +
-                ' You should probably provide your own `itemIsEqual` implementation.');
-        }
-        return util_1.isEqual(a, b);
-    },
-};
-var stateReducer = function (state, changes) {
-    var inputValue = changes.inputValue, rest = __rest(changes, ["inputValue"]);
-    switch (changes.type) {
-        case downshift_1.default.stateChangeTypes.changeInput:
-            return __assign({}, rest, { inputValue: inputValue });
-        case downshift_1.default.stateChangeTypes.keyDownEnter:
-        case downshift_1.default.stateChangeTypes.clickItem:
-            return __assign({}, rest, { highlightedIndex: state.highlightedIndex, isOpen: true });
-        default:
-            return rest;
-    }
-};
-//# sourceMappingURL=MultiDownshift.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMulti/SelectMulti.js":
-/*!**********************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMulti/SelectMulti.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var Flow_1 = __webpack_require__(/*! ../../../../Flow */ "../lib/components/Flow/index.js");
-var Checkbox_1 = __webpack_require__(/*! ../../Checkbox/Checkbox */ "../lib/components/form/input/Checkbox/Checkbox.js");
-var SelectDownshiftMenu_1 = __webpack_require__(/*! ../SelectSingle/SelectDownshiftMenu */ "../lib/components/form/input/Select/SelectSingle/SelectDownshiftMenu.js");
-var MultiDownshift_1 = __webpack_require__(/*! ./MultiDownshift */ "../lib/components/form/input/Select/SelectMulti/MultiDownshift.js");
-var SelectMultiInput_1 = __webpack_require__(/*! ./SelectMultiInput */ "../lib/components/form/input/Select/SelectMulti/SelectMultiInput.js");
-function SelectMulti(props) {
-    var _this = this;
-    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, itemIsEqual = props.itemIsEqual, onFilterChange = props.onFilterChange, loading = props.loading, externalRenderItem = props.renderItem, components = props.components, placeholder = props.placeholder, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "itemIsEqual", "onFilterChange", "loading", "renderItem", "components", "placeholder"]);
-    var handleItemRemove = function (removeItem) { return function (item) { return removeItem(item); }; };
-    var renderItem = function (_a) {
-        var isSelected = _a.isSelected;
-        return function (item) { return (react_1.default.createElement(Flow_1.HFlow, { hSpacing: 0.5 },
-            react_1.default.createElement(Checkbox_1.Checkbox, { checked: isSelected(item), tabIndex: -1, readOnly: true }),
-            externalRenderItem ? externalRenderItem(item) : itemToString(item))); };
-    };
-    //   const handleInputIconClick = ({ toggleMenu }: MultiSelectRenderProps<T>) => () => toggleMenu()
-    var handleInputFocus = function (_a) {
-        var openMenu = _a.openMenu;
-        return function () { return openMenu(); };
-    };
-    var handleInputClick = function (_a) {
-        var openMenu = _a.openMenu;
-        return function () { return openMenu(); };
-    };
-    var handleInputBlur = function (_a) {
-        var closeMenu = _a.closeMenu;
-        return function (e) {
-            closeMenu();
-            _this.props.onBlur && _this.props.onBlur(e);
-        };
-    };
-    return (react_1.default.createElement(MultiDownshift_1.MultiDownshift, { selectedItems: value || [], items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, itemIsEqual: itemIsEqual, onFilterChange: onFilterChange }, function (downshift) {
-        var 
-        // isOpen,
-        getInputProps = downshift.getInputProps, selectedItems = downshift.selectedItems, removeItem = downshift.removeItem, inputValue = downshift.inputValue, visibleItems = downshift.visibleItems;
-        return (react_1.default.createElement("div", null,
-            react_1.default.createElement(SelectMultiInput_1.SelectMultiInput, __assign({ items: selectedItems }, rest, { placeholder: !selectedItems || selectedItems.length === 0 ? placeholder : undefined, onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onRemoveItem: handleItemRemove(removeItem), renderItem: itemToString }, getInputProps(), { value: inputValue ? inputValue : '' })),
-            react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem(downshift) })));
-    }));
-}
-exports.SelectMulti = SelectMulti;
-//# sourceMappingURL=SelectMulti.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMulti/SelectMultiInput.js":
-/*!***************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMulti/SelectMultiInput.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../../Input/Input */ "../lib/components/form/input/Input/Input.js");
-var TextInputBase_1 = __webpack_require__(/*! ../../TextInput/TextInputBase */ "../lib/components/form/input/TextInput/TextInputBase.js");
-var SelectMultiItem_1 = __webpack_require__(/*! ./SelectMultiItem */ "../lib/components/form/input/Select/SelectMulti/SelectMultiItem.js");
-function SelectMultiInput(props) {
-    var items = props.items, renderItem = props.renderItem, onRemoveItem = props.onRemoveItem, status = props.status, disabled = props.disabled, clearable = props.clearable, rest = __rest(props, ["items", "renderItem", "onRemoveItem", "status", "disabled", "clearable"]);
-    var inputRef = react_1.useRef();
-    var handleRemove = function (item) { return function (e) {
-        props.onRemoveItem(item);
-        e.stopPropagation(); // Do not propagate so menu is not opened when item is removed
-    }; };
-    var handleWrapperClick = function () { return inputRef.current.focus(); };
-    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
-    var wrapperClasses = css(classes.wrapper, status === 'error' && classes.error, props.disabled && classes.disabled);
-    return (react_1.default.createElement("div", { className: wrapperClasses, onClick: handleWrapperClick },
-        items &&
-            items.map(function (item, key) { return (react_1.default.createElement(SelectMultiItem_1.SelectMultiItem, { key: key, onRemove: handleRemove(item), style: classes.item, disabled: disabled }, renderItem(item))); }),
-        react_1.default.createElement(Input_1.Input, __assign({ type: 'text', inputRef: inputRef, className: classes.input, disabled: disabled }, rest))));
-}
-exports.SelectMultiInput = SelectMultiInput;
-exports.createStyles = function (theme, _a) {
-    var items = _a.items, disabled = _a.disabled;
-    var parts = TextInputBase_1.createStyleParts(theme);
-    return {
-        wrapper: __assign({}, parts.base, { cursor: 'text', display: 'flex', flexWrap: 'wrap', alignItems: 'center', padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem', '&:hover': !disabled && parts.hover, '&:active': !disabled && parts.active, '&:focus-within': !disabled && parts.focus }),
-        disabled: parts.disabled,
-        error: __assign({}, parts.error, { '&:focus-within': parts.error[':not(:disabled):focus'] }),
-        item: {
-            marginRight: '0.25rem',
-        },
-        input: {
-            fontFamily: theme.typography.fontFamily,
-            fontSize: theme.typography.sizes.text,
-            color: theme.pallete.text.main,
-            lineHeight: '1rem',
-            background: theme.pallete.surface.main,
-            padding: 0,
-            flex: 1,
-            border: 0,
-            outline: 0,
-            '::placeholder': parts.placeholder,
-            ':disabled': parts.disabled,
-        },
-    };
-};
-//# sourceMappingURL=SelectMultiInput.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMulti/SelectMultiItem.js":
-/*!**************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMulti/SelectMultiItem.js ***!
-  \**************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var locale_1 = __webpack_require__(/*! ../../../../../locale */ "../lib/locale/index.js");
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var TimesDefault_1 = __importDefault(__webpack_require__(/*! ../../../../Icon/generated/TimesDefault */ "../lib/components/Icon/generated/TimesDefault.js"));
-function SelectMultiItem(props) {
-    var style = props.style, children = props.children, onRemove = props.onRemove, disabled = props.disabled, rest = __rest(props, ["style", "children", "onRemove", "disabled"]);
-    var _a = styles_1.useStyles(exports.createStyles, props), classes = _a.classes, css = _a.css;
-    var locale = locale_1.useLocale();
-    return (react_1.default.createElement("span", __assign({ className: css(classes.root, style) }, rest),
-        react_1.default.createElement("span", { className: classes.text }, children),
-        !disabled && (react_1.default.createElement("span", { className: classes.button, onClick: onRemove, title: locale.select.removeItem },
-            react_1.default.createElement(TimesDefault_1.default, null)))));
-}
-exports.SelectMultiItem = SelectMultiItem;
-exports.createStyles = function (theme, _a) {
-    var disabled = _a.disabled;
-    return ({
-        root: {
-            border: "1px solid " + theme.pallete.divider,
-            borderRadius: theme.radius.button,
-            display: 'inline-flex',
-            alignItems: 'center',
-            fontWeight: 'bold',
-        },
-        text: {
-            padding: disabled ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.125rem - 1px) 0.25rem',
-        },
-        button: {
-            background: theme.pallete.surface.background,
-            cursor: 'pointer',
-            fontSize: '1.25rem',
-            display: 'inline-flex',
-            alignItems: 'center',
-            padding: 'calc(0.125rem - 1px) 0',
-            '&:hover': {
-                color: theme.pallete.status.danger.main,
-            },
-            svg: {
-                fill: 'currentColor',
-            },
-        },
-    });
-};
-//# sourceMappingURL=SelectMultiItem.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectMulti/index.js":
-/*!****************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectMulti/index.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var SelectMultiInput_1 = __webpack_require__(/*! ./SelectMultiInput */ "../lib/components/form/input/Select/SelectMulti/SelectMultiInput.js");
-exports.SelectMultiInput = SelectMultiInput_1.SelectMultiInput;
-var SelectMultiItem_1 = __webpack_require__(/*! ./SelectMultiItem */ "../lib/components/form/input/Select/SelectMulti/SelectMultiItem.js");
-exports.SelectMultiItem = SelectMultiItem_1.SelectMultiItem;
-var MultiDownshift_1 = __webpack_require__(/*! ./MultiDownshift */ "../lib/components/form/input/Select/SelectMulti/MultiDownshift.js");
-exports.MultiDownshift = MultiDownshift_1.MultiDownshift;
-var SelectMulti_1 = __webpack_require__(/*! ./SelectMulti */ "../lib/components/form/input/Select/SelectMulti/SelectMulti.js");
-exports.SelectMulti = SelectMulti_1.SelectMulti;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectSingle/SelectDownshift.js":
-/*!***************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectSingle/SelectDownshift.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var downshift_1 = __importDefault(__webpack_require__(/*! downshift */ "../node_modules/downshift/dist/downshift.esm.js"));
-var match_sorter_1 = __importDefault(__webpack_require__(/*! match-sorter */ "../node_modules/match-sorter/dist/match-sorter.esm.js"));
-var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-/**
- * Default filter prop used by the Select component.
- */
-function defaultSelectFilter(items, filter, itemToString) {
-    return match_sorter_1.default(items, filter, { keys: [itemToString] });
-}
-exports.defaultSelectFilter = defaultSelectFilter;
-/**
- * Downshift extension with item and filter management.
- */
-function SelectDownshift(props) {
-    var items = props.items, onFilterChange = props.onFilterChange, children = props.children, rest = __rest(props, ["items", "onFilterChange", "children"]);
-    var _a = react_1.useState(items), visibleItems = _a[0], setVisibleItems = _a[1];
-    react_1.useEffect(function () {
-        setVisibleItems(props.items);
-    }, [props.items]);
-    var handleStateChange = function (options, downshift) {
-        if (options.isOpen) {
-            onFilterChange(null, getStateAndHelpers(downshift));
-        }
-        if (options.type === downshift_1.default.stateChangeTypes.changeInput) {
-            onFilterChange(options.inputValue, getStateAndHelpers(downshift));
-        }
-        if (options.type === downshift_1.default.stateChangeTypes.clickItem ||
-            options.type === downshift_1.default.stateChangeTypes.keyDownEnter) {
-            onFilterChange(null, getStateAndHelpers(downshift));
-        }
-        props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift));
-    };
-    var handleChange = function (item, downshift) {
-        props.onChange && props.onChange(item, getStateAndHelpers(downshift));
-    };
-    var getStateAndHelpers = function (downshift) { return (__assign({}, downshift, { items: items,
-        visibleItems: visibleItems,
-        setVisibleItems: setVisibleItems })); };
-    return (react_1.default.createElement(downshift_1.default, __assign({}, rest, { onStateChange: handleStateChange, onChange: handleChange }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
-}
-exports.SelectDownshift = SelectDownshift;
-SelectDownshift.defaultProps = {
-    onFilterChange: function (filter, downshift) {
-        var setVisibleItems = downshift.setVisibleItems, items = downshift.items, itemToString = downshift.itemToString;
-        setVisibleItems(defaultSelectFilter(items, filter, itemToString));
-    },
-};
-//# sourceMappingURL=SelectDownshift.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectSingle/SelectDownshiftMenu.js":
-/*!*******************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectSingle/SelectDownshiftMenu.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var SelectMenu_1 = __webpack_require__(/*! ../SelectMenu */ "../lib/components/form/input/Select/SelectMenu/index.js");
-function SelectDownshiftMenu(props) {
-    var items = props.items, isLoading = props.loading, components = props.components, _a = props.downshift, isOpen = _a.isOpen, getMenuProps = _a.getMenuProps;
-    var classes = styles_1.useStyles(exports.createStyles).classes;
-    var _b = __assign({}, exports.defaultComponents, components), LoadingItem = _b.LoadingItem, EmptyItem = _b.EmptyItem, Item = _b.Item;
-    return (react_1.default.createElement("div", { className: classes.wrapper }, isOpen && (react_1.default.createElement(SelectMenu_1.SelectMenu, __assign({}, getMenuProps({ refKey: 'menuRef' })),
-        isLoading && react_1.default.createElement(LoadingItem, __assign({}, props)),
-        !isLoading && (!items || items.length === 0) && react_1.default.createElement(EmptyItem, __assign({}, props)),
-        items && items.map(function (item, index) { return react_1.default.createElement(Item, __assign({ key: index, index: index, item: item }, props)); })))));
-}
-exports.SelectDownshiftMenu = SelectDownshiftMenu;
-exports.defaultComponents = {
-    LoadingItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectLoadingItem, null); },
-    EmptyItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectEmptyItem, null); },
-    Item: function (props) {
-        var renderItem = props.renderItem, item = props.item, index = props.index, _a = props.downshift, itemToString = _a.itemToString, selectedItem = _a.selectedItem, highlightedIndex = _a.highlightedIndex, getItemProps = _a.getItemProps;
-        return (react_1.default.createElement(SelectMenu_1.SelectMenuItem, __assign({ selected: selectedItem === item, highlighted: highlightedIndex === index }, getItemProps({ item: item })), renderItem ? renderItem(item) : itemToString(item)));
-    },
-};
-SelectDownshiftMenu.defaultProps = {
-    components: exports.defaultComponents,
-};
-exports.createStyles = function () { return ({
-    wrapper: {
-        position: 'relative',
-    },
-}); };
-//# sourceMappingURL=SelectDownshiftMenu.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectSingle/SelectSingle.js":
-/*!************************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectSingle/SelectSingle.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../../styles */ "../lib/styles/index.js");
-var TextInput_1 = __webpack_require__(/*! ../../TextInput/TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
-var SelectDownshift_1 = __webpack_require__(/*! ./SelectDownshift */ "../lib/components/form/input/Select/SelectSingle/SelectDownshift.js");
-var SelectDownshiftMenu_1 = __webpack_require__(/*! ./SelectDownshiftMenu */ "../lib/components/form/input/Select/SelectSingle/SelectDownshiftMenu.js");
-function SelectSingle(props) {
-    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, onFilterChange = props.onFilterChange, loading = props.loading, renderItem = props.renderItem, components = props.components, style = props.style, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "onFilterChange", "loading", "renderItem", "components", "style"]);
-    var handleClear = function (downshift) { return function (e) {
-        downshift.clearSelection();
-        if (props.onClear) {
-            props.onClear(e);
-        }
-    }; };
-    var handleInputIconClick = function (_a) {
-        var toggleMenu = _a.toggleMenu;
-        return function () { return toggleMenu(); };
-    };
-    var handleInputFocus = function (_a) {
-        var openMenu = _a.openMenu;
-        return function () { return openMenu(); };
-    };
-    var handleInputClick = function (_a) {
-        var openMenu = _a.openMenu;
-        return function () { return openMenu(); };
-    };
-    var handleInputBlur = function (_a) {
-        var closeMenu = _a.closeMenu;
-        return function (e) {
-            closeMenu();
-            props.onBlur && props.onBlur(e);
-        };
-    };
-    var css = styles_1.useStyles().css;
-    return (react_1.default.createElement(SelectDownshift_1.SelectDownshift, { selectedItem: value || null, items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, onFilterChange: onFilterChange }, function (downshift) {
-        var downshiftOpen = downshift.isOpen, getInputProps = downshift.getInputProps, visibleItems = downshift.visibleItems, inputValue = downshift.inputValue;
-        return (react_1.default.createElement("div", { className: css(style) },
-            react_1.default.createElement("div", null,
-                react_1.default.createElement(TextInput_1.TextInput, __assign({ icon: isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown' }, rest, { onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onClear: handleClear(downshift), onIconClick: handleInputIconClick(downshift) }, getInputProps(), { value: inputValue ? inputValue : '' }))),
-            react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem, components: components })));
-    }));
-}
-exports.SelectSingle = SelectSingle;
-//# sourceMappingURL=SelectSingle.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/SelectSingle/index.js":
-/*!*****************************************************************!*\
-  !*** ../lib/components/form/input/Select/SelectSingle/index.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var SelectDownshift_1 = __webpack_require__(/*! ./SelectDownshift */ "../lib/components/form/input/Select/SelectSingle/SelectDownshift.js");
-exports.SelectDownshift = SelectDownshift_1.SelectDownshift;
-exports.defaultSelectFilter = SelectDownshift_1.defaultSelectFilter;
-var SelectSingle_1 = __webpack_require__(/*! ./SelectSingle */ "../lib/components/form/input/Select/SelectSingle/SelectSingle.js");
-exports.SelectSingle = SelectSingle_1.SelectSingle;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Select/index.js":
+/***/ "../lib/form/field/HiddenField/HiddenField.js":
 /*!****************************************************!*\
-  !*** ../lib/components/form/input/Select/index.js ***!
+  !*** ../lib/form/field/HiddenField/HiddenField.js ***!
   \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var Input_1 = __webpack_require__(/*! ../../../components/Input */ "../lib/components/Input/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.HiddenField = Field_1.withField(Input_1.Input, {
+    type: 'hidden',
+});
+//# sourceMappingURL=HiddenField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/HiddenField/index.js":
+/*!**********************************************!*\
+  !*** ../lib/form/field/HiddenField/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var HiddenField_1 = __webpack_require__(/*! ./HiddenField */ "../lib/form/field/HiddenField/HiddenField.js");
+exports.HiddenField = HiddenField_1.HiddenField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/MaskedField/MaskedField.js":
+/*!****************************************************!*\
+  !*** ../lib/form/field/MaskedField/MaskedField.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MaskedInput_1 = __webpack_require__(/*! ../../../components/MaskedInput */ "../lib/components/MaskedInput/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.MaskedField = Field_1.withField(MaskedInput_1.MaskedInput);
+//# sourceMappingURL=MaskedField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/MaskedField/index.js":
+/*!**********************************************!*\
+  !*** ../lib/form/field/MaskedField/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MaskedField_1 = __webpack_require__(/*! ./MaskedField */ "../lib/form/field/MaskedField/MaskedField.js");
+exports.MaskedField = MaskedField_1.MaskedField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/MonthField/MonthField.js":
+/*!**************************************************!*\
+  !*** ../lib/form/field/MonthField/MonthField.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MonthPicker_1 = __webpack_require__(/*! ../../../components/MonthPicker */ "../lib/components/MonthPicker/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.MonthField = Field_1.withField(MonthPicker_1.MonthPickerInput);
+//# sourceMappingURL=MonthField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/MonthField/index.js":
+/*!*********************************************!*\
+  !*** ../lib/form/field/MonthField/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var MonthField_1 = __webpack_require__(/*! ./MonthField */ "../lib/form/field/MonthField/MonthField.js");
+exports.MonthField = MonthField_1.MonthField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/NumberField/NumberField.js":
+/*!****************************************************!*\
+  !*** ../lib/form/field/NumberField/NumberField.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var TextField_1 = __webpack_require__(/*! ../TextField/TextField */ "../lib/form/field/TextField/TextField.js");
+exports.parse = function (value) { return value.replace(/[^\d]/g, ''); };
+var NumberField = /** @class */ (function (_super) {
+    __extends(NumberField, _super);
+    function NumberField() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NumberField.prototype.render = function () {
+        return react_1.default.createElement(TextField_1.TextField, __assign({ parse: exports.parse }, this.props));
+    };
+    return NumberField;
+}(react_1.default.Component));
+exports.NumberField = NumberField;
+//# sourceMappingURL=NumberField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/NumberField/index.js":
+/*!**********************************************!*\
+  !*** ../lib/form/field/NumberField/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var NumberField_1 = __webpack_require__(/*! ./NumberField */ "../lib/form/field/NumberField/NumberField.js");
+exports.NumberField = NumberField_1.NumberField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/RadioField/RadioField.js":
+/*!**************************************************!*\
+  !*** ../lib/form/field/RadioField/RadioField.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var Radio_1 = __webpack_require__(/*! ../../../components/Radio */ "../lib/components/Radio/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+var RadioField = /** @class */ (function (_super) {
+    __extends(RadioField, _super);
+    function RadioField() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.renderRadio = function (props) { return (react_1.default.createElement(Radio_1.Radio, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
+        return _this;
+    }
+    RadioField.prototype.render = function () {
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'radio', hasWrapper: false, render: this.renderRadio }));
+    };
+    return RadioField;
+}(react_1.default.Component));
+exports.RadioField = RadioField;
+//# sourceMappingURL=RadioField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/RadioField/index.js":
+/*!*********************************************!*\
+  !*** ../lib/form/field/RadioField/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var RadioField_1 = __webpack_require__(/*! ./RadioField */ "../lib/form/field/RadioField/RadioField.js");
+exports.RadioField = RadioField_1.RadioField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/SelectField/SelectField.js":
+/*!****************************************************!*\
+  !*** ../lib/form/field/SelectField/SelectField.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var Select_1 = __webpack_require__(/*! ../../../components/Select */ "../lib/components/Select/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+var SelectField = /** @class */ (function (_super) {
+    __extends(SelectField, _super);
+    function SelectField() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.renderSelect = function (props) {
+            return (react_1.default.createElement(Select_1.Select, __assign({}, Field_1.extractInputProps(_this.props), props.input, { status: props.hasError ? 'error' : undefined })));
+        };
+        return _this;
+    }
+    SelectField.prototype.render = function () {
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { render: this.renderSelect }));
+    };
+    SelectField.defaultProps = {};
+    return SelectField;
+}(react_1.default.Component));
+exports.SelectField = SelectField;
+//# sourceMappingURL=SelectField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/SelectField/index.js":
+/*!**********************************************!*\
+  !*** ../lib/form/field/SelectField/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SelectField_1 = __webpack_require__(/*! ./SelectField */ "../lib/form/field/SelectField/SelectField.js");
+exports.SelectField = SelectField_1.SelectField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/SwitchField/SwitchField.js":
+/*!****************************************************!*\
+  !*** ../lib/form/field/SwitchField/SwitchField.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var Switch_1 = __webpack_require__(/*! ../../../components/Switch */ "../lib/components/Switch/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+var SwitchField = /** @class */ (function (_super) {
+    __extends(SwitchField, _super);
+    function SwitchField() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.renderSwitch = function (props) { return (react_1.default.createElement(Switch_1.Switch, __assign({}, Field_1.extractInputProps(_this.props), props.input, { label: _this.props.label }))); };
+        return _this;
+    }
+    SwitchField.prototype.render = function () {
+        return react_1.default.createElement(Field_1.Field, __assign({}, this.props, { type: 'checkbox', hasWrapper: false, render: this.renderSwitch }));
+    };
+    return SwitchField;
+}(react_1.default.Component));
+exports.SwitchField = SwitchField;
+//# sourceMappingURL=SwitchField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/SwitchField/index.js":
+/*!**********************************************!*\
+  !*** ../lib/form/field/SwitchField/index.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var SwitchField_1 = __webpack_require__(/*! ./SwitchField */ "../lib/form/field/SwitchField/SwitchField.js");
+exports.SwitchField = SwitchField_1.SwitchField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/TextAreaField/TextAreaField.js":
+/*!********************************************************!*\
+  !*** ../lib/form/field/TextAreaField/TextAreaField.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextArea_1 = __webpack_require__(/*! ../../../components/TextArea */ "../lib/components/TextArea/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.TextAreaField = Field_1.withField(TextArea_1.TextArea);
+//# sourceMappingURL=TextAreaField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/TextAreaField/index.js":
+/*!************************************************!*\
+  !*** ../lib/form/field/TextAreaField/index.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextAreaField_1 = __webpack_require__(/*! ./TextAreaField */ "../lib/form/field/TextAreaField/TextAreaField.js");
+exports.TextAreaField = TextAreaField_1.TextAreaField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/TextField/TextField.js":
+/*!************************************************!*\
+  !*** ../lib/form/field/TextField/TextField.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextInput_1 = __webpack_require__(/*! ../../../components/TextInput */ "../lib/components/TextInput/index.js");
+var Field_1 = __webpack_require__(/*! ../../Field */ "../lib/form/Field/index.js");
+exports.TextField = Field_1.withField(TextInput_1.TextInput);
+//# sourceMappingURL=TextField.js.map
+
+/***/ }),
+
+/***/ "../lib/form/field/TextField/index.js":
+/*!********************************************!*\
+  !*** ../lib/form/field/TextField/index.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var TextField_1 = __webpack_require__(/*! ./TextField */ "../lib/form/field/TextField/TextField.js");
+exports.TextField = TextField_1.TextField;
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../lib/form/index.js":
+/*!****************************!*\
+  !*** ../lib/form/index.js ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16328,658 +16663,21 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./SelectMenu */ "../lib/components/form/input/Select/SelectMenu/index.js"));
-__export(__webpack_require__(/*! ./SelectSingle */ "../lib/components/form/input/Select/SelectSingle/index.js"));
-__export(__webpack_require__(/*! ./SelectMulti */ "../lib/components/form/input/Select/SelectMulti/index.js"));
-__export(__webpack_require__(/*! ./Select */ "../lib/components/form/input/Select/Select.js"));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Switch/Switch.js":
-/*!*****************************************************!*\
-  !*** ../lib/components/form/input/Switch/Switch.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input */ "../lib/components/form/input/Input/index.js");
-function Switch(props) {
-    var label = props.label, name = props.name, disabled = props.disabled, onChange = props.onChange, value = props.value, defaultValue = props.defaultValue, checked = props.checked, defaultChecked = props.defaultChecked, rest = __rest(props, ["label", "name", "disabled", "onChange", "value", "defaultValue", "checked", "defaultChecked"]);
-    var classes = styles_1.useStyles(exports.createStyles).classes;
-    var inputClasses = styles_1.useStyles(exports.createInputStyles, classes).classes;
-    return (react_1.default.createElement("label", __assign({ className: inputClasses.wrapper }, rest),
-        react_1.default.createElement(Input_1.Input, { type: 'checkbox', className: inputClasses.input, name: name, value: value, defaultValue: defaultValue, checked: checked, defaultChecked: defaultChecked, disabled: disabled, onChange: onChange }),
-        react_1.default.createElement("div", { className: classes.switch },
-            react_1.default.createElement("span", { className: classes.knob })),
-        label && react_1.default.createElement("span", { className: classes.text }, label)));
-}
-exports.Switch = Switch;
-exports.createStyles = function (theme) { return ({
-    switch: {
-        outline: 0,
-        background: theme.pallete.surface.background,
-        borderRadius: '0.75rem',
-        padding: 'calc(0.25rem - 1px) 0.25rem',
-        display: 'inline-block',
-        width: '3rem',
-        lineHeight: 0,
-        border: "1px solid " + theme.pallete.gray.c70,
-        transition: 'all .2s',
-    },
-    knob: {
-        background: theme.pallete.surface.main,
-        borderRadius: '50%',
-        display: 'inline-block',
-        width: '1rem',
-        height: '1rem',
-        transition: 'all .2s',
-        boxShadow: theme.shadows.outer['20'],
-    },
-    text: {
-        marginLeft: '0.5rem',
-    },
-}); };
-exports.createInputStyles = function (theme, classes) {
-    var _a, _b;
-    return ({
-        wrapper: (_a = {
-                display: 'inline-flex',
-                alignItems: 'center',
-                cursor: 'pointer',
-                textAlign: 'left'
-            },
-            _a["&:hover ." + classes.switch] = {
-                cursor: 'pointer',
-                borderColor: theme.pallete.gray.c40,
-            },
-            _a),
-        input: (_b = {
-                opacity: 0,
-                position: 'absolute',
-                zIndex: -1
-            },
-            _b["&:checked + ." + classes.switch] = {
-                background: theme.pallete.primary.main,
-                borderColor: theme.pallete.primary.main,
-                '&:hover': {
-                    borderColor: theme.pallete.primary.main,
-                },
-            },
-            _b["&:checked + ." + classes.switch + " > ." + classes.knob] = {
-                transform: 'translateX(calc(1.5rem - 1px))',
-            },
-            _b["&:focus + ." + classes.switch] = {
-                boxShadow: styles_1.focusBoxShadow(theme),
-            },
-            _b["&:disabled + ." + classes.switch] = {
-                opacity: 0.4,
-                cursor: 'not-allowed',
-            },
-            _b),
-    });
-};
-//# sourceMappingURL=Switch.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/Switch/index.js":
-/*!****************************************************!*\
-  !*** ../lib/components/form/input/Switch/index.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var Switch_1 = __webpack_require__(/*! ./Switch */ "../lib/components/form/input/Switch/Switch.js");
-exports.Switch = Switch_1.Switch;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextArea/TextArea.js":
-/*!*********************************************************!*\
-  !*** ../lib/components/form/input/TextArea/TextArea.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var TextInputBase_1 = __webpack_require__(/*! ../TextInput/TextInputBase */ "../lib/components/form/input/TextInput/TextInputBase.js");
-function TextArea(props) {
-    var status = props.status, style = props.style, rest = __rest(props, ["status", "style"]);
-    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
-    var valueLength = function () {
-        return props.value && typeof props.value === 'string' && props.value.length;
-    };
-    var defaultValueLength = function () {
-        return props.defaultValue && typeof props.defaultValue === 'string' && props.defaultValue.length;
-    };
-    var currentLength = valueLength() || defaultValueLength() || 0;
-    var className = css(classes.input, status === 'error' && classes.error, style);
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement("textarea", __assign({ className: className }, rest)),
-        props.maxLength && (react_1.default.createElement("div", { className: classes.counter },
-            currentLength,
-            "/",
-            props.maxLength,
-            " caracteres"))));
-}
-exports.TextArea = TextArea;
-var createStyles = function (theme, _a) {
-    var status = _a.status;
-    return (__assign({}, TextInputBase_1.createStyles(theme), { counter: {
-            textAlign: 'right',
-            color: status === 'error' && theme.pallete.status.danger.main,
-        } }));
-};
-//# sourceMappingURL=TextArea.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextArea/index.js":
-/*!******************************************************!*\
-  !*** ../lib/components/form/input/TextArea/index.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TextArea_1 = __webpack_require__(/*! ./TextArea */ "../lib/components/form/input/TextArea/TextArea.js");
-exports.TextArea = TextArea_1.TextArea;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextInput/InputWrapper.js":
-/*!**************************************************************!*\
-  !*** ../lib/components/form/input/TextInput/InputWrapper.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Button_1 = __webpack_require__(/*! ../../../Button */ "../lib/components/Button/index.js");
-var Icon_1 = __webpack_require__(/*! ../../../Icon/Icon */ "../lib/components/Icon/Icon.js");
-function InputWrapper(props) {
-    var children = props.children, icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearVisible = props.clearVisible, onClear = props.onClear;
-    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
-    var iconBoxClasses = css(classes.iconWrapper, iconPosition === 'left' && classes.iconLeft, iconPosition === 'right' && classes.iconRight);
-    return (react_1.default.createElement("div", { className: classes.wrapper },
-        children,
-        clearVisible && (react_1.default.createElement("span", { role: 'button', title: 'Limpar', tabIndex: -1, onClick: onClear, className: classes.clearButton },
-            react_1.default.createElement(Icon_1.Icon, { size: 1.5, icon: 'timesDefault' }))),
-        icon && (react_1.default.createElement("span", { className: iconBoxClasses }, onIconClick ? (react_1.default.createElement(Button_1.Button, { size: 'small', skin: 'ghost', tabIndex: -1, onClick: onIconClick, style: classes.icon, disabled: iconDisabled },
-            react_1.default.createElement(Icon_1.Icon, { icon: icon }))) : (react_1.default.createElement(Icon_1.Icon, { icon: icon, style: classes.icon }))))));
-}
-exports.InputWrapper = InputWrapper;
-InputWrapper.defaultProps = {
-    iconPosition: 'right',
-    iconDisabled: false,
-    clearVisible: false,
-    onClear: function () { return null; },
-};
-var createStyles = function (theme, _a) {
-    var icon = _a.icon, iconPosition = _a.iconPosition, clearVisible = _a.clearVisible;
-    var paddingRight = iconPosition === 'right'
-        ? (clearVisible && icon && '4.5rem') || (clearVisible && '2rem') || (icon && '3rem')
-        : clearVisible && '2rem';
-    return {
-        wrapper: {
-            position: 'relative',
-            input: {
-                paddingLeft: iconPosition === 'left' && '3rem',
-                paddingRight: paddingRight,
-            },
-        },
-        clearButton: {
-            position: 'absolute',
-            right: icon && iconPosition === 'right' ? '2.5rem' : 1,
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            height: '100%',
-            display: 'inline-flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            outline: 0,
-            color: theme.pallete.text.secondary,
-            padding: '1px 6px',
-            '&:hover': {
-                color: theme.pallete.status.danger.main,
-            },
-        },
-        iconWrapper: {
-            position: 'absolute',
-            backgroundColor: theme.pallete.gray.c90,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '0.25rem',
-            width: '2.5rem',
-            top: 1,
-            bottom: 1,
-        },
-        iconLeft: {
-            left: 1,
-        },
-        iconRight: {
-            right: 1,
-        },
-        icon: {
-            borderRadius: 'inherit',
-            '&:focus': {
-                boxShadow: 'none',
-            },
-        },
-    };
-};
-//# sourceMappingURL=InputWrapper.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextInput/TextInput.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/input/TextInput/TextInput.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var InputWrapper_1 = __webpack_require__(/*! ./InputWrapper */ "../lib/components/form/input/TextInput/InputWrapper.js");
-var TextInputBase_1 = __webpack_require__(/*! ./TextInputBase */ "../lib/components/form/input/TextInput/TextInputBase.js");
-function TextInput(props) {
-    var icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearable = props.clearable, onClear = props.onClear, rest = __rest(props, ["icon", "iconPosition", "iconDisabled", "onIconClick", "clearable", "onClear"]);
-    var isClearVisible = function () { return !props.disabled && (!!props.value || !!props.defaultValue); };
-    var isIconDisabled = function () { return (props.iconDisabled !== undefined ? props.iconDisabled : props.disabled); };
-    var handleClear = function () { return props.onChange && props.onChange(null); };
-    return (react_1.default.createElement(InputWrapper_1.InputWrapper, { icon: icon, iconPosition: iconPosition, iconDisabled: isIconDisabled(), onIconClick: onIconClick, clearVisible: clearable && isClearVisible(), onClear: onClear ? onClear : handleClear },
-        react_1.default.createElement(TextInputBase_1.TextInputBase, __assign({}, rest))));
-}
-exports.TextInput = TextInput;
-TextInput.defaultProps = {
-    clearable: true,
-};
-//# sourceMappingURL=TextInput.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextInput/TextInputBase.js":
-/*!***************************************************************!*\
-  !*** ../lib/components/form/input/TextInput/TextInputBase.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/index.js");
-var Input_1 = __webpack_require__(/*! ../Input/Input */ "../lib/components/form/input/Input/Input.js");
-/**
- * Primitive of input of text (and derivative) types.
- * Provides only the stylization of the <input /> component.
- */
-function TextInputBase(props) {
-    var status = props.status, style = props.style, rest = __rest(props, ["status", "style"]);
-    var _a = styles_1.useStyles(exports.createStyles), classes = _a.classes, css = _a.css;
-    var className = css(classes.input, status === 'error' && classes.error, style);
-    return react_1.default.createElement(Input_1.Input, __assign({}, rest, { className: className }));
-}
-exports.TextInputBase = TextInputBase;
-TextInputBase.defaultProps = {
-    type: 'text',
-};
-exports.createStyleParts = function (theme) { return ({
-    base: {
-        backgroundColor: theme.pallete.surface.main,
-        border: 'solid 1px ' + theme.pallete.gray.c70,
-        borderRadius: theme.radius.input,
-        color: theme.pallete.text.main,
-        fontFamily: theme.typography.fontFamily,
-        fontSize: theme.typography.sizes.text,
-        lineHeight: '1rem',
-        padding: 'calc(0.5rem - 1px) 0.5rem',
-        width: '100%',
-        transitionProperty: 'box-shadow',
-        transitionDuration: '.2s',
-        // Remove input type="search" decorations
-        '&[type="search"]::-webkit-search-decoration': { display: 'none' },
-        '&[type="search"]::-webkit-search-cancel-button': { display: 'none' },
-        '&[type="search"]::-webkit-search-results-button': { display: 'none' },
-        '&[type="search"]::-webkit-search-results-decoration': { display: 'none' },
-        '&:required': {
-            boxShadow: 'none',
-        },
-    },
-    placeholder: {
-        color: theme.pallete.text.disabled,
-    },
-    disabled: {
-        borderColor: theme.pallete.gray.c80,
-        backgroundColor: theme.pallete.surface.background,
-    },
-    hover: {
-        borderColor: theme.pallete.gray.c60,
-    },
-    active: {
-        borderColor: theme.pallete.primary.main,
-        boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-    },
-    focus: {
-        outline: 'none',
-        boxShadow: styles_1.focusBoxShadow(theme),
-    },
-    error: {
-        border: 'solid 1px ' + theme.pallete.status.danger.main,
-        ':not(:disabled):focus': {
-            border: 'solid 1px ' + theme.pallete.gray.c80,
-            boxShadow: styles_1.focusBoxShadow(theme, 'danger'),
-        },
-    },
-}); };
-exports.createStyles = function (theme) {
-    var parts = exports.createStyleParts(theme);
-    return {
-        input: __assign({}, parts.base, { '::placeholder': parts.placeholder, ':disabled': parts.disabled, ':not(:disabled):hover': parts.hover, ':not(:disabled):focus': parts.focus, ':not(:disabled):active': parts.active }),
-        error: parts.error,
-    };
-};
-//# sourceMappingURL=TextInputBase.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TextInput/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/input/TextInput/index.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TextInputBase_1 = __webpack_require__(/*! ./TextInputBase */ "../lib/components/form/input/TextInput/TextInputBase.js");
-exports.TextInputBase = TextInputBase_1.TextInputBase;
-var TextInput_1 = __webpack_require__(/*! ./TextInput */ "../lib/components/form/input/TextInput/TextInput.js");
-exports.TextInput = TextInput_1.TextInput;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TimeInput/TimeInput.js":
-/*!***********************************************************!*\
-  !*** ../lib/components/form/input/TimeInput/TimeInput.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var react_text_mask_1 = __webpack_require__(/*! react-text-mask */ "../node_modules/react-text-mask/dist/reactTextMask.js");
-var createAutoCorrectedDatePipe_1 = __importDefault(__webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js"));
-var masks_1 = __webpack_require__(/*! ../../../../util/masks */ "../lib/util/masks.js");
-var MaskedInput_1 = __webpack_require__(/*! ../MaskedInput/MaskedInput */ "../lib/components/form/input/MaskedInput/MaskedInput.js");
-function TimeInput(props) {
-    var onChange = props.onChange, onInputChange = props.onInputChange, rest = __rest(props, ["onChange", "onInputChange"]);
-    var handleChange = function (e) {
-        if (!e) {
-            return onChange(null);
-        }
-        if (onChange) {
-            var value = e.target.value;
-            onChange(value);
-        }
-        if (onInputChange) {
-            return onInputChange(e);
-        }
-    };
-    var handleBlur = function (e) {
-        if (onChange) {
-            var value = e.target.value;
-            if (value) {
-                var paddedValue = exports.padTime(value);
-                onChange(paddedValue);
-            }
-        }
-        if (props.onBlur) {
-            // Call original blur handler (if existent)
-            return props.onBlur(e);
-        }
-    };
-    return (react_1.default.createElement(MaskedInput_1.MaskedInput, __assign({ mask: masks_1.masks.time, placeholder: 'hh:mm', pipe: createAutoCorrectedDatePipe_1.default('HH:MM') }, rest, { onChange: handleChange, onBlur: handleBlur })));
-}
-exports.TimeInput = TimeInput;
-exports.padTime = function (value) {
-    var numbersOnly = value.replace(/[^\d]/g, '');
-    if (numbersOnly.length < 4) {
-        var paddedValue = numbersOnly.padEnd(4, '0');
-        var conformedValue = react_text_mask_1.conformToMask(paddedValue, masks_1.masks.time, {});
-        return conformedValue.conformedValue;
-    }
-    return value;
-};
-//# sourceMappingURL=TimeInput.js.map
-
-/***/ }),
-
-/***/ "../lib/components/form/input/TimeInput/index.js":
-/*!*******************************************************!*\
-  !*** ../lib/components/form/input/TimeInput/index.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var TimeInput_1 = __webpack_require__(/*! ./TimeInput */ "../lib/components/form/input/TimeInput/TimeInput.js");
-exports.TimeInput = TimeInput_1.TimeInput;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-
-/***/ "../lib/components/index.js":
-/*!**********************************!*\
-  !*** ../lib/components/index.js ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(/*! ./Alert */ "../lib/components/Alert/index.js"));
-__export(__webpack_require__(/*! ./AriaControlNav */ "../lib/components/AriaControlNav/index.js"));
-__export(__webpack_require__(/*! ./Breadcrumb */ "../lib/components/Breadcrumb/index.js"));
-__export(__webpack_require__(/*! ./Button */ "../lib/components/Button/index.js"));
-__export(__webpack_require__(/*! ./ButtonGroup */ "../lib/components/ButtonGroup/index.js"));
-__export(__webpack_require__(/*! ./Calendar */ "../lib/components/Calendar/index.js"));
-__export(__webpack_require__(/*! ./Currency */ "../lib/components/Currency/index.js"));
-__export(__webpack_require__(/*! ./Dropdown */ "../lib/components/Dropdown/index.js"));
-__export(__webpack_require__(/*! ./FileUploader */ "../lib/components/FileUploader/index.js"));
-__export(__webpack_require__(/*! ./Flow */ "../lib/components/Flow/index.js"));
-__export(__webpack_require__(/*! ./FormControl */ "../lib/components/FormControl/index.js"));
-__export(__webpack_require__(/*! ./Grid */ "../lib/components/Grid/index.js"));
-__export(__webpack_require__(/*! ./Heading */ "../lib/components/Heading/index.js"));
-__export(__webpack_require__(/*! ./HeadingSection */ "../lib/components/HeadingSection/index.js"));
-__export(__webpack_require__(/*! ./Highlight */ "../lib/components/Highlight/index.js"));
-__export(__webpack_require__(/*! ./Icon */ "../lib/components/Icon/index.js"));
-__export(__webpack_require__(/*! ./InfoLabel */ "../lib/components/InfoLabel/index.js"));
-__export(__webpack_require__(/*! ./Link */ "../lib/components/Link/index.js"));
-__export(__webpack_require__(/*! ./Modal */ "../lib/components/Modal/index.js"));
-__export(__webpack_require__(/*! ./MonthPicker */ "../lib/components/MonthPicker/index.js"));
-__export(__webpack_require__(/*! ./Number */ "../lib/components/Number/index.js"));
-__export(__webpack_require__(/*! ./Paginator */ "../lib/components/Paginator/index.js"));
-__export(__webpack_require__(/*! ./Paper */ "../lib/components/Paper/index.js"));
-__export(__webpack_require__(/*! ./Popover */ "../lib/components/Popover/index.js"));
-__export(__webpack_require__(/*! ./Popper */ "../lib/components/Popper/index.js"));
-__export(__webpack_require__(/*! ./Portal */ "../lib/components/Portal/index.js"));
-__export(__webpack_require__(/*! ./Progress */ "../lib/components/Progress/index.js"));
-__export(__webpack_require__(/*! ./RootRef */ "../lib/components/RootRef/index.js"));
-__export(__webpack_require__(/*! ./SelectInline */ "../lib/components/SelectInline/index.js"));
-__export(__webpack_require__(/*! ./Spinner */ "../lib/components/Spinner/index.js"));
-__export(__webpack_require__(/*! ./StickyContainer */ "../lib/components/StickyContainer/index.js"));
-__export(__webpack_require__(/*! ./Table */ "../lib/components/Table/index.js"));
-__export(__webpack_require__(/*! ./Tabs */ "../lib/components/Tabs/index.js"));
-__export(__webpack_require__(/*! ./Tag */ "../lib/components/Tag/index.js"));
-__export(__webpack_require__(/*! ./Text */ "../lib/components/Text/index.js"));
-__export(__webpack_require__(/*! ./Tooltip */ "../lib/components/Tooltip/index.js"));
-__export(__webpack_require__(/*! ./form */ "../lib/components/form/index.js"));
+__export(__webpack_require__(/*! ./ErrorField */ "../lib/form/ErrorField/index.js"));
+__export(__webpack_require__(/*! ./Field */ "../lib/form/Field/index.js"));
+__export(__webpack_require__(/*! ./Form */ "../lib/form/Form/index.js"));
+__export(__webpack_require__(/*! ./SubmitButton */ "../lib/form/SubmitButton/index.js"));
+__export(__webpack_require__(/*! ./field/CheckboxField */ "../lib/form/field/CheckboxField/index.js"));
+__export(__webpack_require__(/*! ./field/DateField */ "../lib/form/field/DateField/index.js"));
+__export(__webpack_require__(/*! ./field/HiddenField */ "../lib/form/field/HiddenField/index.js"));
+__export(__webpack_require__(/*! ./field/MaskedField */ "../lib/form/field/MaskedField/index.js"));
+__export(__webpack_require__(/*! ./field/NumberField */ "../lib/form/field/NumberField/index.js"));
+__export(__webpack_require__(/*! ./field/RadioField */ "../lib/form/field/RadioField/index.js"));
+__export(__webpack_require__(/*! ./field/SelectField */ "../lib/form/field/SelectField/index.js"));
+__export(__webpack_require__(/*! ./field/SwitchField */ "../lib/form/field/SwitchField/index.js"));
+__export(__webpack_require__(/*! ./field/TextField */ "../lib/form/field/TextField/index.js"));
+__export(__webpack_require__(/*! ./field/TextAreaField */ "../lib/form/field/TextAreaField/index.js"));
+__export(__webpack_require__(/*! ./field/MonthField */ "../lib/form/field/MonthField/index.js"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
@@ -17261,6 +16959,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(__webpack_require__(/*! ./components */ "../lib/components/index.js"));
+__export(__webpack_require__(/*! ./form */ "../lib/form/index.js"));
 __export(__webpack_require__(/*! ./locale */ "../lib/locale/index.js"));
 __export(__webpack_require__(/*! ./metaPath */ "../lib/metaPath/index.js"));
 __export(__webpack_require__(/*! ./styles */ "../lib/styles/index.js"));
@@ -17697,7 +17396,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(/*! @emotion/core/ */ "../node_modules/@emotion/core/dist/core.browser.esm.js");
+var core_1 = __webpack_require__(/*! @emotion/core */ "../node_modules/@emotion/core/dist/core.browser.esm.js");
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var hooks_1 = __webpack_require__(/*! ../../hooks */ "../lib/styles/hooks/index.js");
 exports.GlobalCss = core_1.Global;
@@ -17718,7 +17417,6 @@ exports.createGlobalStyles = function (theme) { return ({
         color: theme.pallete.text.main,
         fontFamily: theme.typography.fontFamily,
         fontSize: theme.typography.sizes.text,
-        lineHeight: theme.typography.lineHeight,
         overflowY: 'scroll',
     },
     hr: {
@@ -17736,9 +17434,6 @@ exports.createGlobalStyles = function (theme) { return ({
     p: {
         margin: '0',
         lineHeight: 1.5,
-    },
-    mark: {
-        background: theme.pallete.highlight,
     },
 }); };
 //# sourceMappingURL=GlobalCss.js.map
@@ -18552,34 +18247,6 @@ exports.getUserLocale = function () {
     return exports.DEFAULT_LOCALE;
 };
 //# sourceMappingURL=locale.js.map
-
-/***/ }),
-
-/***/ "../lib/util/masks.js":
-/*!****************************!*\
-  !*** ../lib/util/masks.js ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.onlyNumbers = function (value) { return value && value.replace(/[^\d]/g, ''); };
-exports.masks = {
-    telefone: function (rawValue) {
-        if (!rawValue || rawValue.length < 11) {
-            return ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-        }
-        return ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
-    },
-    cpf: [/\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '.', /\d/, /\d/, /\d/, '-', /\d/, /\d/],
-    cep: [/\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/],
-    time: [/\d/, /\d/, ':', /\d/, /\d/],
-    date: [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
-    cns: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/],
-};
-//# sourceMappingURL=masks.js.map
 
 /***/ }),
 
@@ -28779,7 +28446,7 @@ var ARRAY_ERROR = 'FINAL_FORM/array-error';
  * Converts internal field state to published field state
  */
 
-var publishFieldState = function publishFieldState(formState, field) {
+function publishFieldState(formState, field) {
   var errors = formState.errors,
       initialValues = formState.initialValues,
       lastSubmittedValues = formState.lastSubmittedValues,
@@ -28833,7 +28500,7 @@ var publishFieldState = function publishFieldState(formState, field) {
     value: value,
     visited: visited
   };
-};
+}
 
 //      
 var fieldSubscriptionItems = ['active', 'data', 'dirty', 'dirtySinceLastSubmit', 'error', 'initial', 'invalid', 'length', 'modified', 'pristine', 'submitError', 'submitFailed', 'submitSucceeded', 'submitting', 'touched', 'valid', 'value', 'visited'];
@@ -28909,11 +28576,11 @@ var shallowEqualKeys$1 = ['touched', 'visited'];
  * Filters items in a FormState based on a FormSubscription
  */
 
-var filterFormState = function filterFormState(state, previousState, subscription, force) {
+function filterFormState(state, previousState, subscription, force) {
   var result = {};
   var different = subscriptionFilter(result, state, previousState, subscription, formSubscriptionItems, shallowEqualKeys$1) || !previousState;
   return different || force ? result : undefined;
-};
+}
 
 //      
 
@@ -28941,7 +28608,7 @@ var isPromise = (function (obj) {
 });
 
 var configOptions = ['debug', 'initialValues', 'keepDirtyOnReinitialize', 'mutators', 'onSubmit', 'validate', 'validateOnBlur'];
-var version = '4.13.0';
+var version = '4.15.0';
 
 var tripleEquals = function tripleEquals(a, b) {
   return a === b;
@@ -28959,7 +28626,7 @@ var hasAnyError = function hasAnyError(errors) {
   });
 };
 
-var convertToExternalFormState = function convertToExternalFormState(_ref) {
+function convertToExternalFormState(_ref) {
   var active = _ref.active,
       dirtySinceLastSubmit = _ref.dirtySinceLastSubmit,
       error = _ref.error,
@@ -28994,7 +28661,7 @@ var convertToExternalFormState = function convertToExternalFormState(_ref) {
     validating: validating > 0,
     values: values
   };
-};
+}
 
 function notifySubscriber(subscriber, subscription, state, lastState, filter, force) {
   if (force === void 0) {
@@ -29021,7 +28688,7 @@ function notify(_ref2, state, lastState, filter) {
   });
 }
 
-var createForm = function createForm(config) {
+function createForm(config) {
   if (!config) {
     throw new Error('No config specified');
   }
@@ -29905,7 +29572,7 @@ var createForm = function createForm(config) {
     }
   };
   return api;
-};
+}
 
 //
 
@@ -37367,7 +37034,7 @@ function sortRankedItems(a, b) {
 
   if (aRank === bRank) {
     if (aKeyIndex === bKeyIndex) {
-      return aRankedItem.localeCompare(bRankedItem);
+      return String(aRankedItem).localeCompare(bRankedItem);
     } else {
       return aKeyIndex < bKeyIndex ? aFirst : bFirst;
     }
@@ -45853,7 +45520,7 @@ function composeEventHandlers() {
 /*!********************************************************************!*\
   !*** ../node_modules/react-final-form/dist/react-final-form.es.js ***!
   \********************************************************************/
-/*! exports provided: Field, Form, FormSpy, ReactFinalFormContext, context, useField, useForm, useFormState, version */
+/*! exports provided: Field, Form, FormSpy, useField, useForm, useFormState, version, withTypes */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45861,12 +45528,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Field", function() { return Field; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Form", function() { return ReactFinalForm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormSpy", function() { return FormSpy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReactFinalFormContext", function() { return ReactFinalFormContext; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "context", function() { return ReactFinalFormContext; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useField", function() { return useField; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useForm", function() { return useForm; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useFormState", function() { return useFormState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "version", function() { return version; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "withTypes", function() { return withTypes; });
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "../node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
@@ -45904,343 +45570,6 @@ function renderComponent(props, name) {
 
   return children(rest);
 }
-
-var isReactNative = typeof window !== 'undefined' && window.navigator && window.navigator.product && window.navigator.product === 'ReactNative';
-
-var getSelectedValues = function getSelectedValues(options) {
-  var result = [];
-
-  if (options) {
-    for (var index = 0; index < options.length; index++) {
-      var option = options[index];
-
-      if (option.selected) {
-        result.push(option.value);
-      }
-    }
-  }
-
-  return result;
-};
-
-var getValue = function getValue(event, currentValue, valueProp, isReactNative) {
-  if (!isReactNative && event.nativeEvent && event.nativeEvent.text !== undefined) {
-    return event.nativeEvent.text;
-  }
-
-  if (isReactNative && event.nativeEvent) {
-    return event.nativeEvent.text;
-  }
-
-  var detypedEvent = event;
-  var _detypedEvent$target = detypedEvent.target,
-      type = _detypedEvent$target.type,
-      value = _detypedEvent$target.value,
-      checked = _detypedEvent$target.checked;
-
-  switch (type) {
-    case 'checkbox':
-      if (valueProp !== undefined) {
-        // we are maintaining an array, not just a boolean
-        if (checked) {
-          // add value to current array value
-          return Array.isArray(currentValue) ? currentValue.concat(valueProp) : [valueProp];
-        } else {
-          // remove value from current array value
-          if (!Array.isArray(currentValue)) {
-            return currentValue;
-          }
-
-          var index = currentValue.indexOf(valueProp);
-
-          if (index < 0) {
-            return currentValue;
-          } else {
-            return currentValue.slice(0, index).concat(currentValue.slice(index + 1));
-          }
-        }
-      } else {
-        // it's just a boolean
-        return !!checked;
-      }
-
-    case 'select-multiple':
-      return getSelectedValues(event.target.options);
-
-    default:
-      return value;
-  }
-};
-
-var ReactFinalFormContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])();
-
-var useForm = function useForm(componentName) {
-  var form = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(ReactFinalFormContext);
-
-  if (!form) {
-    throw new Error((componentName || 'useForm') + " must be used inside of a <Form> component");
-  }
-
-  return form;
-};
-
-var all = final_form__WEBPACK_IMPORTED_MODULE_3__["fieldSubscriptionItems"].reduce(function (result, key) {
-  result[key] = true;
-  return result;
-}, {});
-
-var defaultFormat = function defaultFormat(value, name) {
-  return value === undefined ? '' : value;
-};
-
-var defaultParse = function defaultParse(value, name) {
-  return value === '' ? undefined : value;
-};
-
-var useField = function useField(name, _temp) {
-  var _ref = _temp === void 0 ? {} : _temp,
-      afterSubmit = _ref.afterSubmit,
-      allowNull = _ref.allowNull,
-      beforeSubmit = _ref.beforeSubmit,
-      component = _ref.component,
-      defaultValue = _ref.defaultValue,
-      _ref$format = _ref.format,
-      format = _ref$format === void 0 ? defaultFormat : _ref$format,
-      formatOnBlur = _ref.formatOnBlur,
-      initialValue = _ref.initialValue,
-      isEqual = _ref.isEqual,
-      multiple = _ref.multiple,
-      _ref$parse = _ref.parse,
-      parse = _ref$parse === void 0 ? defaultParse : _ref$parse,
-      _ref$subscription = _ref.subscription,
-      subscription = _ref$subscription === void 0 ? all : _ref$subscription,
-      type = _ref.type,
-      validate = _ref.validate,
-      validateFields = _ref.validateFields,
-      _value = _ref.value;
-
-  var form = useForm('useField'); // keep ref to most recent copy of validate function
-
-  var validateRef = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(validate);
-  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    validateRef.current = validate;
-  });
-  var beforeSubmitRef = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])();
-
-  var register = function register(callback) {
-    return form.registerField(name, callback, subscription, {
-      afterSubmit: afterSubmit,
-      beforeSubmit: function beforeSubmit() {
-        return beforeSubmitRef.current && beforeSubmitRef.current();
-      },
-      defaultValue: defaultValue,
-      getValidator: function getValidator() {
-        return validateRef.current;
-      },
-      initialValue: initialValue,
-      isEqual: isEqual,
-      validateFields: validateFields
-    });
-  };
-
-  var firstRender = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(true); // synchronously register and unregister to query field state for our subscription on first render
-
-  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(function () {
-    var initialState = {};
-    register(function (state) {
-      initialState = state;
-    })();
-    return initialState;
-  }),
-      state = _React$useState[0],
-      setState = _React$useState[1];
-
-  beforeSubmitRef.current = function () {
-    if (formatOnBlur) {
-      var formatted = format(state.value, state.name);
-
-      if (formatted !== state.value) {
-        state.change(formatted);
-      }
-    }
-
-    return beforeSubmit && beforeSubmit();
-  };
-
-  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
-    return register(function (state) {
-      if (firstRender.current) {
-        firstRender.current = false;
-      } else {
-        setState(state);
-      }
-    });
-  }, // eslint-disable-next-line react-hooks/exhaustive-deps
-  [name, defaultValue, // If we want to allow inline fat-arrow field-level validation functions, we
-  // cannot reregister field every time validate function !==.
-  // validate,
-  initialValue, isEqual // The validateFields array is often passed as validateFields={[]}, creating
-  // a !== new array every time. If it needs to be changed, a rerender/reregister
-  // can be forced by changing the key prop
-  // validateFields
-  ]);
-  var handlers = {
-    onBlur: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
-      state.blur();
-
-      if (formatOnBlur) {
-        state.change(format(state.value, state.name));
-      }
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [state.name, state.value, format, formatOnBlur]),
-    onChange: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
-      // istanbul ignore next
-      if ( true && event && event.target) {
-        var targetType = event.target.type;
-        var unknown = ~['checkbox', 'radio', 'select-multiple'].indexOf(targetType) && !type;
-
-        var _value2 = targetType === 'select-multiple' ? state.value : _value;
-
-        if (unknown) {
-          console.error("You must pass `type=\"" + (targetType === 'select-multiple' ? 'select' : targetType) + "\"` prop to your Field(" + name + ") component.\n" + ("Without it we don't know how to unpack your `value` prop - " + (Array.isArray(_value2) ? "[" + _value2 + "]" : "\"" + _value2 + "\"") + "."));
-        }
-      }
-
-      var value = event && event.target ? getValue(event, state.value, _value, isReactNative) : event;
-      state.change(parse(value, name));
-    }, // eslint-disable-next-line react-hooks/exhaustive-deps
-    [_value, name, parse, state.change, state.value, type]),
-    onFocus: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
-      state.focus(); // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
-  };
-
-  var blur = state.blur,
-      change = state.change,
-      focus = state.focus,
-      value = state.value,
-      ignoreName = state.name,
-      otherState = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(state, ["blur", "change", "focus", "value", "name"]);
-
-  var meta = {
-    // this is to appease the Flow gods
-    active: otherState.active,
-    data: otherState.data,
-    dirty: otherState.dirty,
-    dirtySinceLastSubmit: otherState.dirtySinceLastSubmit,
-    error: otherState.error,
-    initial: otherState.initial,
-    invalid: otherState.invalid,
-    length: otherState.length,
-    modified: otherState.modified,
-    pristine: otherState.pristine,
-    submitError: otherState.submitError,
-    submitFailed: otherState.submitFailed,
-    submitSucceeded: otherState.submitSucceeded,
-    submitting: otherState.submitting,
-    touched: otherState.touched,
-    valid: otherState.valid,
-    visited: otherState.visited
-  };
-
-  if (formatOnBlur) {
-    if (component === 'input') {
-      value = defaultFormat(value, name);
-    }
-  } else {
-    value = format(value, name);
-  }
-
-  if (value === null && !allowNull) {
-    value = '';
-  }
-
-  var input = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    name: name,
-    value: value,
-    type: type
-  }, handlers);
-
-  if (type === 'checkbox') {
-    if (_value === undefined) {
-      input.checked = !!value;
-    } else {
-      input.checked = !!(Array.isArray(value) && ~value.indexOf(_value));
-      input.value = _value;
-    }
-  } else if (type === 'radio') {
-    input.checked = value === _value;
-    input.value = _value;
-  } else if (component === 'select' && multiple) {
-    input.value = input.value || [];
-    input.multiple = true;
-  }
-
-  var renderProps = {
-    input: input,
-    meta: meta // assign to force Flow check
-
-  };
-  return renderProps;
-};
-
-var Field = function Field(_ref) {
-  var afterSubmit = _ref.afterSubmit,
-      allowNull = _ref.allowNull,
-      beforeSubmit = _ref.beforeSubmit,
-      children = _ref.children,
-      component = _ref.component,
-      defaultValue = _ref.defaultValue,
-      format = _ref.format,
-      formatOnBlur = _ref.formatOnBlur,
-      initialValue = _ref.initialValue,
-      isEqual = _ref.isEqual,
-      multiple = _ref.multiple,
-      name = _ref.name,
-      parse = _ref.parse,
-      subscription = _ref.subscription,
-      type = _ref.type,
-      validate = _ref.validate,
-      validateFields = _ref.validateFields,
-      value = _ref.value,
-      rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["afterSubmit", "allowNull", "beforeSubmit", "children", "component", "defaultValue", "format", "formatOnBlur", "initialValue", "isEqual", "multiple", "name", "parse", "subscription", "type", "validate", "validateFields", "value"]);
-
-  var field = useField(name, {
-    afterSubmit: afterSubmit,
-    allowNull: allowNull,
-    beforeSubmit: beforeSubmit,
-    children: children,
-    component: component,
-    defaultValue: defaultValue,
-    format: format,
-    formatOnBlur: formatOnBlur,
-    initialValue: initialValue,
-    isEqual: isEqual,
-    multiple: multiple,
-    parse: parse,
-    subscription: subscription,
-    type: type,
-    validate: validate,
-    validateFields: validateFields,
-    value: value
-  });
-
-  if (typeof children === 'function') {
-    return children(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field, rest));
-  }
-
-  if (typeof component === 'string') {
-    // ignore meta, combine input with any other props
-    return Object(react__WEBPACK_IMPORTED_MODULE_2__["createElement"])(component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field.input, {
-      children: children
-    }, rest));
-  }
-
-  return renderComponent(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field, {
-    children: children,
-    component: component
-  }, rest), "Field(" + name + ")");
-};
 
 function useWhenValueChanges(value, callback, isEqual) {
   if (isEqual === void 0) {
@@ -46314,30 +45643,41 @@ var isSyntheticEvent = function isSyntheticEvent(candidate) {
   return !!(candidate && typeof candidate.stopPropagation === 'function');
 };
 
-var version = '6.0.1';
+var ReactFinalFormContext = Object(react__WEBPACK_IMPORTED_MODULE_2__["createContext"])();
+
+function useLatest(value) {
+  var ref = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef(value);
+  react__WEBPACK_IMPORTED_MODULE_2___default.a.useEffect(function () {
+    ref.current = value;
+  });
+  return ref;
+}
+
+var version = '6.2.0';
 var versions = {
   'final-form': final_form__WEBPACK_IMPORTED_MODULE_3__["version"],
   'react-final-form': version
 };
-var all$1 = final_form__WEBPACK_IMPORTED_MODULE_3__["formSubscriptionItems"].reduce(function (result, key) {
+var all = final_form__WEBPACK_IMPORTED_MODULE_3__["formSubscriptionItems"].reduce(function (result, key) {
   result[key] = true;
   return result;
 }, {});
 
-var ReactFinalForm = function ReactFinalForm(_ref) {
+function ReactFinalForm(_ref) {
   var debug = _ref.debug,
       decorators = _ref.decorators,
       destroyOnUnregister = _ref.destroyOnUnregister,
+      alternateFormApi = _ref.form,
       initialValues = _ref.initialValues,
       initialValuesEqual = _ref.initialValuesEqual,
       keepDirtyOnReinitialize = _ref.keepDirtyOnReinitialize,
       mutators = _ref.mutators,
       onSubmit = _ref.onSubmit,
       _ref$subscription = _ref.subscription,
-      subscription = _ref$subscription === void 0 ? all$1 : _ref$subscription,
+      subscription = _ref$subscription === void 0 ? all : _ref$subscription,
       validate = _ref.validate,
       validateOnBlur = _ref.validateOnBlur,
-      rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["debug", "decorators", "destroyOnUnregister", "initialValues", "initialValuesEqual", "keepDirtyOnReinitialize", "mutators", "onSubmit", "subscription", "validate", "validateOnBlur"]);
+      rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["debug", "decorators", "destroyOnUnregister", "form", "initialValues", "initialValuesEqual", "keepDirtyOnReinitialize", "mutators", "onSubmit", "subscription", "validate", "validateOnBlur"]);
 
   var config = {
     debug: debug,
@@ -46350,7 +45690,7 @@ var ReactFinalForm = function ReactFinalForm(_ref) {
     validateOnBlur: validateOnBlur
   };
   var form = useConstant(function () {
-    var f = Object(final_form__WEBPACK_IMPORTED_MODULE_3__["createForm"])(config);
+    var f = alternateFormApi || Object(final_form__WEBPACK_IMPORTED_MODULE_3__["createForm"])(config);
     f.pauseValidation();
     return f;
   }); // synchronously register and unregister to query form state for our subscription on first render
@@ -46367,8 +45707,7 @@ var ReactFinalForm = function ReactFinalForm(_ref) {
   // on the shallowEqual() line below.
 
 
-  var stateRef = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(state);
-  stateRef.current = state;
+  var stateRef = useLatest(state);
   Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
     // We have rendered, so all fields are no registered, so we can unpause validation
     form.isValidationPaused() && form.resumeValidation();
@@ -46461,13 +45800,23 @@ var ReactFinalForm = function ReactFinalForm(_ref) {
   }, renderComponent(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, rest, renderProps, {
     __versions: versions
   }), 'ReactFinalForm'));
-};
+}
 
-var useFormState = function useFormState(_temp) {
+function useForm(componentName) {
+  var form = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(ReactFinalFormContext);
+
+  if (!form) {
+    throw new Error((componentName || 'useForm') + " must be used inside of a <Form> component");
+  }
+
+  return form;
+}
+
+function useFormState(_temp) {
   var _ref = _temp === void 0 ? {} : _temp,
       onChange = _ref.onChange,
       _ref$subscription = _ref.subscription,
-      subscription = _ref$subscription === void 0 ? all$1 : _ref$subscription;
+      subscription = _ref$subscription === void 0 ? all : _ref$subscription;
 
   var form = useForm('useFormState');
   var firstRender = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(true); // synchronously register and unregister to query field state for our subscription on first render
@@ -46502,19 +45851,14 @@ var useFormState = function useFormState(_temp) {
   }, // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
   return state;
-};
+}
 
-var FormSpy = function FormSpy(_ref) {
+function FormSpy(_ref) {
   var onChange = _ref.onChange,
       subscription = _ref.subscription,
       rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["onChange", "subscription"]);
 
-  var reactFinalForm = Object(react__WEBPACK_IMPORTED_MODULE_2__["useContext"])(ReactFinalFormContext);
-
-  if (!reactFinalForm) {
-    throw new Error('FormSpy must be used inside of a ReactFinalForm component');
-  }
-
+  var reactFinalForm = useForm('FormSpy');
   var state = useFormState({
     onChange: onChange,
     subscription: subscription
@@ -46537,7 +45881,333 @@ var FormSpy = function FormSpy(_ref) {
     })
   };
   return renderComponent(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, rest, state, renderProps), 'FormSpy');
+}
+
+var isReactNative = typeof window !== 'undefined' && window.navigator && window.navigator.product && window.navigator.product === 'ReactNative';
+
+var getSelectedValues = function getSelectedValues(options) {
+  var result = [];
+
+  if (options) {
+    for (var index = 0; index < options.length; index++) {
+      var option = options[index];
+
+      if (option.selected) {
+        result.push(option.value);
+      }
+    }
+  }
+
+  return result;
 };
+
+var getValue = function getValue(event, currentValue, valueProp, isReactNative) {
+  if (!isReactNative && event.nativeEvent && event.nativeEvent.text !== undefined) {
+    return event.nativeEvent.text;
+  }
+
+  if (isReactNative && event.nativeEvent) {
+    return event.nativeEvent.text;
+  }
+
+  var detypedEvent = event;
+  var _detypedEvent$target = detypedEvent.target,
+      type = _detypedEvent$target.type,
+      value = _detypedEvent$target.value,
+      checked = _detypedEvent$target.checked;
+
+  switch (type) {
+    case 'checkbox':
+      if (valueProp !== undefined) {
+        // we are maintaining an array, not just a boolean
+        if (checked) {
+          // add value to current array value
+          return Array.isArray(currentValue) ? currentValue.concat(valueProp) : [valueProp];
+        } else {
+          // remove value from current array value
+          if (!Array.isArray(currentValue)) {
+            return currentValue;
+          }
+
+          var index = currentValue.indexOf(valueProp);
+
+          if (index < 0) {
+            return currentValue;
+          } else {
+            return currentValue.slice(0, index).concat(currentValue.slice(index + 1));
+          }
+        }
+      } else {
+        // it's just a boolean
+        return !!checked;
+      }
+
+    case 'select-multiple':
+      return getSelectedValues(event.target.options);
+
+    default:
+      return value;
+  }
+};
+
+var all$1 = final_form__WEBPACK_IMPORTED_MODULE_3__["fieldSubscriptionItems"].reduce(function (result, key) {
+  result[key] = true;
+  return result;
+}, {});
+
+var defaultFormat = function defaultFormat(value, name) {
+  return value === undefined ? '' : value;
+};
+
+var defaultParse = function defaultParse(value, name) {
+  return value === '' ? undefined : value;
+};
+
+function useField(name, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      afterSubmit = _ref.afterSubmit,
+      allowNull = _ref.allowNull,
+      beforeSubmit = _ref.beforeSubmit,
+      component = _ref.component,
+      defaultValue = _ref.defaultValue,
+      _ref$format = _ref.format,
+      format = _ref$format === void 0 ? defaultFormat : _ref$format,
+      formatOnBlur = _ref.formatOnBlur,
+      initialValue = _ref.initialValue,
+      isEqual = _ref.isEqual,
+      multiple = _ref.multiple,
+      _ref$parse = _ref.parse,
+      parse = _ref$parse === void 0 ? defaultParse : _ref$parse,
+      _ref$subscription = _ref.subscription,
+      subscription = _ref$subscription === void 0 ? all$1 : _ref$subscription,
+      type = _ref.type,
+      validate = _ref.validate,
+      validateFields = _ref.validateFields,
+      _value = _ref.value;
+
+  var form = useForm('useField');
+  var validateRef = useLatest(validate);
+  var beforeSubmitRef = useLatest(function () {
+    if (formatOnBlur) {
+      var formatted = format(state.value, state.name);
+
+      if (formatted !== state.value) {
+        state.change(formatted);
+      }
+    }
+
+    return beforeSubmit && beforeSubmit();
+  });
+
+  var register = function register(callback) {
+    return form.registerField(name, callback, subscription, {
+      afterSubmit: afterSubmit,
+      beforeSubmit: function beforeSubmit() {
+        return beforeSubmitRef.current();
+      },
+      defaultValue: defaultValue,
+      getValidator: function getValidator() {
+        return validateRef.current;
+      },
+      initialValue: initialValue,
+      isEqual: isEqual,
+      validateFields: validateFields
+    });
+  };
+
+  var firstRender = Object(react__WEBPACK_IMPORTED_MODULE_2__["useRef"])(true); // synchronously register and unregister to query field state for our subscription on first render
+
+  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(function () {
+    var initialState = {};
+    register(function (state) {
+      initialState = state;
+    })();
+    return initialState;
+  }),
+      state = _React$useState[0],
+      setState = _React$useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    return register(function (state) {
+      if (firstRender.current) {
+        firstRender.current = false;
+      } else {
+        setState(state);
+      }
+    });
+  }, // eslint-disable-next-line react-hooks/exhaustive-deps
+  [name, defaultValue, // If we want to allow inline fat-arrow field-level validation functions, we
+  // cannot reregister field every time validate function !==.
+  // validate,
+  initialValue, isEqual // The validateFields array is often passed as validateFields={[]}, creating
+  // a !== new array every time. If it needs to be changed, a rerender/reregister
+  // can be forced by changing the key prop
+  // validateFields
+  ]);
+  var handlers = {
+    onBlur: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
+      state.blur();
+
+      if (formatOnBlur) {
+        state.change(format(state.value, state.name));
+      }
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [state.name, state.value, format, formatOnBlur]),
+    onChange: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
+      // istanbul ignore next
+      if ( true && event && event.target) {
+        var targetType = event.target.type;
+        var unknown = ~['checkbox', 'radio', 'select-multiple'].indexOf(targetType) && !type;
+
+        var _value2 = targetType === 'select-multiple' ? state.value : _value;
+
+        if (unknown) {
+          console.error("You must pass `type=\"" + (targetType === 'select-multiple' ? 'select' : targetType) + "\"` prop to your Field(" + name + ") component.\n" + ("Without it we don't know how to unpack your `value` prop - " + (Array.isArray(_value2) ? "[" + _value2 + "]" : "\"" + _value2 + "\"") + "."));
+        }
+      }
+
+      var value = event && event.target ? getValue(event, state.value, _value, isReactNative) : event;
+      state.change(parse(value, name));
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [_value, name, parse, state.change, state.value, type]),
+    onFocus: Object(react__WEBPACK_IMPORTED_MODULE_2__["useCallback"])(function (event) {
+      state.focus(); // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+  };
+
+  var blur = state.blur,
+      change = state.change,
+      focus = state.focus,
+      value = state.value,
+      ignoreName = state.name,
+      otherState = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(state, ["blur", "change", "focus", "value", "name"]);
+
+  var meta = {
+    // this is to appease the Flow gods
+    active: otherState.active,
+    data: otherState.data,
+    dirty: otherState.dirty,
+    dirtySinceLastSubmit: otherState.dirtySinceLastSubmit,
+    error: otherState.error,
+    initial: otherState.initial,
+    invalid: otherState.invalid,
+    length: otherState.length,
+    modified: otherState.modified,
+    pristine: otherState.pristine,
+    submitError: otherState.submitError,
+    submitFailed: otherState.submitFailed,
+    submitSucceeded: otherState.submitSucceeded,
+    submitting: otherState.submitting,
+    touched: otherState.touched,
+    valid: otherState.valid,
+    visited: otherState.visited
+  };
+
+  if (formatOnBlur) {
+    if (component === 'input') {
+      value = defaultFormat(value);
+    }
+  } else {
+    value = format(value, name);
+  }
+
+  if (value === null && !allowNull) {
+    value = '';
+  }
+
+  var input = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    name: name,
+    value: value,
+    type: type
+  }, handlers);
+
+  if (type === 'checkbox') {
+    if (_value === undefined) {
+      input.checked = !!value;
+    } else {
+      input.checked = !!(Array.isArray(value) && ~value.indexOf(_value));
+      input.value = _value;
+    }
+  } else if (type === 'radio') {
+    input.checked = value === _value;
+    input.value = _value;
+  } else if (component === 'select' && multiple) {
+    input.value = input.value || [];
+    input.multiple = true;
+  }
+
+  var renderProps = {
+    input: input,
+    meta: meta // assign to force Flow check
+
+  };
+  return renderProps;
+}
+
+var Field = function Field(_ref) {
+  var afterSubmit = _ref.afterSubmit,
+      allowNull = _ref.allowNull,
+      beforeSubmit = _ref.beforeSubmit,
+      children = _ref.children,
+      component = _ref.component,
+      defaultValue = _ref.defaultValue,
+      format = _ref.format,
+      formatOnBlur = _ref.formatOnBlur,
+      initialValue = _ref.initialValue,
+      isEqual = _ref.isEqual,
+      multiple = _ref.multiple,
+      name = _ref.name,
+      parse = _ref.parse,
+      subscription = _ref.subscription,
+      type = _ref.type,
+      validate = _ref.validate,
+      validateFields = _ref.validateFields,
+      value = _ref.value,
+      rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["afterSubmit", "allowNull", "beforeSubmit", "children", "component", "defaultValue", "format", "formatOnBlur", "initialValue", "isEqual", "multiple", "name", "parse", "subscription", "type", "validate", "validateFields", "value"]);
+
+  var field = useField(name, {
+    afterSubmit: afterSubmit,
+    allowNull: allowNull,
+    beforeSubmit: beforeSubmit,
+    children: children,
+    component: component,
+    defaultValue: defaultValue,
+    format: format,
+    formatOnBlur: formatOnBlur,
+    initialValue: initialValue,
+    isEqual: isEqual,
+    multiple: multiple,
+    parse: parse,
+    subscription: subscription,
+    type: type,
+    validate: validate,
+    validateFields: validateFields,
+    value: value
+  });
+
+  if (typeof children === 'function') {
+    return children(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field, rest));
+  }
+
+  if (typeof component === 'string') {
+    // ignore meta, combine input with any other props
+    return Object(react__WEBPACK_IMPORTED_MODULE_2__["createElement"])(component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field.input, {
+      children: children
+    }, rest));
+  }
+
+  return renderComponent(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, field, {
+    children: children,
+    component: component
+  }, rest), "Field(" + name + ")");
+};
+
+function withTypes() {
+  return {
+    Form: ReactFinalForm,
+    FormSpy: FormSpy
+  };
+}
 
 
 
@@ -51483,7 +51153,7 @@ function AppHeader(props) {
     __self: this
   })))));
 }
-var APP_HEADER_HEIGHT = 77;
+var APP_HEADER_HEIGHT = 76;
 
 var createStyles = function createStyles(theme) {
   var _search;
@@ -52631,7 +52301,8 @@ var createStyles = function createStyles(theme) {
     pre: {
       marginBottom: '2rem',
       overflow: 'auto',
-      background: theme.pallete.surface.background
+      background: theme.pallete.surface.background,
+      lineHeight: 1.5
     },
     code: {
       '&:not(.hljs)': {
