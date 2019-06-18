@@ -1,1 +1,1 @@
-export { TextAreaField } from './TextAreaField'
+export { TextAreaField, TextAreaFieldProps } from './TextAreaField'

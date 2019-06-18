@@ -1,1 +1,1 @@
-export * from './TimeField'
+export { TimeField, TimeFieldProps } from './TimeField'

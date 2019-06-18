@@ -1,1 +1,1 @@
-export { HiddenField } from './HiddenField'
+export { HiddenField, HiddenFieldProps } from './HiddenField'
