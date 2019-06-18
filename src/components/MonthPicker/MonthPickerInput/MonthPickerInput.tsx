@@ -2,7 +2,7 @@ import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { Omit } from '../../../util'
-import { MaskedInput, MaskedInputProps } from '../../form/input/MaskedInput/MaskedInput'
+import { MaskedInput, MaskedInputProps } from '../../MaskedInput'
 import { Popper, PopperController } from '../../Popper'
 import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
 

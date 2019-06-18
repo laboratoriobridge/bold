@@ -1,7 +1,7 @@
 import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
 
-import { DefaultItemType } from '../form'
+import { DefaultItemType } from '../Select/SelectSingle'
 
 import { SelectInline, SelectInlineProps } from './SelectInline'
 

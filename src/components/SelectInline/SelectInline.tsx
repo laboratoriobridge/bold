@@ -5,9 +5,10 @@ import { useTheme } from '../../styles'
 import { Omit } from '../../util'
 import { composeRefs } from '../../util/react'
 import { Button, ButtonProps } from '../Button'
-import { Select, SelectSingleProps } from '../form/input/Select'
 import { Icon } from '../Icon'
 import { Popper, PopperController, PopperProps } from '../Popper'
+import { Select } from '../Select/Select'
+import { SelectSingleProps } from '../Select/SelectSingle'
 import { Text } from '../Text'
 
 export interface SelectInlineProps<T> extends SelectSingleProps<T> {

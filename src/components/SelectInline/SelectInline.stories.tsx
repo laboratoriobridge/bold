@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { DefaultItemType } from '../form'
+import { DefaultItemType } from '../Select/SelectSingle'
 
 import { SelectInline } from './SelectInline'
 

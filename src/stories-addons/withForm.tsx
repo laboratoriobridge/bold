@@ -2,7 +2,7 @@ import { Renderable, RenderFunction } from '@storybook/react'
 import React from 'react'
 import { FormProps } from 'react-final-form'
 
-import { Form } from '../components/form/finalForm/Form'
+import { Form } from '../form/Form'
 
 // tslint:disable jsx-no-lambda
 
