@@ -18,8 +18,13 @@ export const format = (value: string): Date => {
     return null
   }
 
-  const parsed = Date.parse(value)
-  return parsed ? new Date(parsed) : null
+  const dateParts = value.split('-')
+  try {
+    const date = new Date(parseInt(dateParts[0], 10), parseInt(dateParts[1], 10) - 1, parseInt(dateParts[2], 10))
+    return date && date.getTime() ? date : null
+  } catch (err) {
+    return null
+  }
 }
 
 export type DateFieldProps = BaseFieldProps<DatePickerInputProps>

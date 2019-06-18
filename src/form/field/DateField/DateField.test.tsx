@@ -34,5 +34,7 @@ describe('format', () => {
     expect(format('foo')).toEqual(null)
     expect(format('2004-1-1')).toEqual(new Date('2004-01-01'))
     expect(format('2004-04-20')).toEqual(new Date('2004-04-20'))
+    expect(format('2010-01-01T00:00:00')).toEqual(new Date('2010-01-01'))
+    expect(format('2010-01-01T23:59:59')).toEqual(new Date('2010-01-01'))
   })
 })
