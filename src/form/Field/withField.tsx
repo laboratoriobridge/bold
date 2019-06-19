@@ -3,7 +3,7 @@ import React from 'react'
 
 import { InputStatus } from '../../components/TextInput'
 
-import { Field, FieldProps, RenderProps } from './Field'
+import { Field, FieldProps, FieldRenderProps } from './Field'
 import { BaseFieldProps, extractInputProps } from './index'
 
 export interface BaseInputProps {
@@ -22,7 +22,7 @@ export function withField<T, P extends BaseInputProps>(
       return <Field<T> {...this.props} render={this.renderInput} {...fieldProps} />
     }
 
-    renderInput = (props: RenderProps) => {
+    renderInput = (props: FieldRenderProps) => {
       const Inpt = InputComponent as any
       return <Inpt status={props.hasError ? 'error' : undefined} {...extractInputProps(this.props)} {...props.input} />
     }

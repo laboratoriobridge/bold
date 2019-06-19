@@ -12,7 +12,7 @@ import { Omit } from '../../util'
 
 import { getFieldError } from './util'
 
-export interface RenderProps<FieldValue = any, Element extends HTMLElement = HTMLElement>
+export interface FieldRenderProps<FieldValue = any, Element extends HTMLElement = HTMLElement>
   extends FinalRenderProps<FieldValue, Element> {
   hasError?: boolean
 }
@@ -34,7 +34,7 @@ export interface FieldProps<FieldValue = any, Element extends HTMLElement = HTML
   hasWrapper?: boolean
   onChange?: any
   type?: string
-  render(props: RenderProps<FieldValue, Element>): React.ReactNode
+  render(props: FieldRenderProps<FieldValue, Element>): React.ReactNode
 
   /**
    * Converts the field value to another before sending it to submit handler.
