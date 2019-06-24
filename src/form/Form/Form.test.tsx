@@ -2,7 +2,7 @@ import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
 import { Field as FinalFormField } from 'react-final-form'
 
-import { Field, RenderProps } from '../Field'
+import { Field, FieldRenderProps } from '../Field'
 
 import { Form, FormProps } from './Form'
 
@@ -30,7 +30,7 @@ it('should render the return of the render prop', () => {
 })
 
 it('should call each field convert value and pass values to onSubmit', () => {
-  const input = jest.fn((p: RenderProps) => <input {...p.input} />)
+  const input = jest.fn((p: FieldRenderProps) => <input {...p.input} />)
   const onSubmit = jest.fn()
   const { container } = render(
     createComponent({

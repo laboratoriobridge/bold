@@ -5,14 +5,14 @@ import { Form } from 'react-final-form'
 
 import metaPath from '../../metaPath/metaPath'
 
-import { Field, FieldProps, RenderProps } from './Field'
+import { Field, FieldProps, FieldRenderProps } from './Field'
 
 interface FormType {
   id: number
   name: string
 }
 
-const input = jest.fn((props: RenderProps) => <input {...props.input} />)
+const input = jest.fn((props: FieldRenderProps) => <input {...props.input} />)
 
 const createFormAndField = (fieldProps?: Partial<FieldProps>) => {
   return <Form onSubmit={jest.fn()}>{p => <Field name='field1' render={input} {...fieldProps} />}</Form>
