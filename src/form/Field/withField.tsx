@@ -1,4 +1,4 @@
-import hoistNonReactStatics = require('hoist-non-react-statics')
+import hoistNonReactStatics from 'hoist-non-react-statics'
 import React from 'react'
 
 import { InputStatus } from '../../components/TextInput'
