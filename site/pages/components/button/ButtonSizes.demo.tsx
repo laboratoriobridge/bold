@@ -1,18 +1,23 @@
-import { Button, HFlow } from '../../../../lib'
+import { Button, HFlow, VFlow } from '../../../../lib'
 
 function ButtonSizes() {
   return (
-    <HFlow alignItems='flex-end'>
-      <Button kind='primary' size='large'>
-        Large
+    <VFlow>
+      <HFlow alignItems='flex-end'>
+        <Button kind='primary' size='large'>
+          Large
+        </Button>
+        <Button kind='primary' size='medium'>
+          Medium
+        </Button>
+        <Button kind='primary' size='small'>
+          Small
+        </Button>
+      </HFlow>
+      <Button kind='primary' block>
+        Block button
       </Button>
-      <Button kind='primary' size='medium'>
-        Medium
-      </Button>
-      <Button kind='primary' size='small'>
-        Small
-      </Button>
-    </HFlow>
+    </VFlow>
   )
 }
 
