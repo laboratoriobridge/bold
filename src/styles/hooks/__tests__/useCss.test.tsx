@@ -1,6 +1,6 @@
+import { renderHook } from '@testing-library/react-hooks'
 import { css as emotionCss } from 'emotion'
 import React from 'react'
-import { renderHook } from 'react-hooks-testing-library'
 
 import { createTheme } from '../../theme/createTheme'
 import { ThemeContext } from '../../theme/ThemeContext'

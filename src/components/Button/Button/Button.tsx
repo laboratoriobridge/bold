@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { MouseEvent, useState } from 'react'
 
+import { useIsMounted } from '../../../hooks/useIsMounted'
 import { ExternalStyles, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 import { ButtonBase, ButtonBaseProps } from '../ButtonBase'
@@ -15,8 +16,14 @@ export interface ButtonProps extends SkinProps, Omit<ButtonBaseProps, 'style'> {
 export function Button(props: ButtonProps) {
   const { loading, block, style, skin, size, kind, onClick, children, ...rest } = props
 
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
-  const onLoadingChange = (value: boolean) => setIsLoading(value)
+  const isMounted = useIsMounted()
+
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const onLoadingChange = (value: boolean) => {
+    if (isMounted.current) {
+      setIsLoading(value)
+    }
+  }
   const isReallyLoading = isLoading || loading
 
   const { theme, css } = useStyles()
@@ -38,7 +45,7 @@ export function Button(props: ButtonProps) {
     style
   )
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
     if (!isReallyLoading) {
       return onClick && onClick(e)
     }

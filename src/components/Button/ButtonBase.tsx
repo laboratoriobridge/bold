@@ -23,9 +23,7 @@ export function ButtonBase(props: ButtonBaseProps) {
   }
 
   const stopLoading = () => {
-    setTimeout(() => {
-      onLoadingChange && onLoadingChange(false)
-    })
+    onLoadingChange && onLoadingChange(false)
   }
 
   const handleClick = (event: React.MouseEvent<any>) => {
@@ -33,12 +31,7 @@ export function ButtonBase(props: ButtonBaseProps) {
       const promise = onClick(event)
       if (isPromise(promise)) {
         startLoading()
-        promise
-          .then(() => stopLoading())
-          .catch(error => {
-            stopLoading()
-            throw new Error(error)
-          })
+        promise.finally(() => stopLoading())
       }
     }
   }

@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
+import waait from 'waait'
 
 import { Icon } from '../../Icon'
 
@@ -109,6 +110,22 @@ it('should have a "loading" animation when onClick return is a Promise', () => {
 
   fireEvent.click(button)
   expect(button.getAttribute('data-loading')).toEqual('true')
+})
+
+it('shoud not emit a "setState while unmounted" react warning when component is unmounted while loading', async () => {
+  const delayedFunction = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(resolve, 10)
+    })
+  }
+
+  const { container, unmount } = render(<Button onClick={delayedFunction}>Button</Button>)
+  const button = container.querySelector('button')
+
+  fireEvent.click(button)
+  unmount()
+
+  await waait(20)
 })
 
 it('should NOT have animation when onClick return is not a Promise', () => {
