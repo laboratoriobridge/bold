@@ -63,7 +63,7 @@ exports[`should accept the loading prop 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 .emotion-0 span {
@@ -147,7 +147,7 @@ exports[`should render correctly with icon 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 .emotion-0 {
@@ -227,7 +227,7 @@ exports[`should render correctly with label 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 <div>
@@ -291,7 +291,7 @@ exports[`should render the default skin 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 <div>
@@ -358,11 +358,11 @@ exports[`should render the default skin 2`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #0061bf;
+  background-color: #0051A2;
 }
 
 <div>
@@ -429,11 +429,11 @@ exports[`should render the default skin 3`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #bf1c26;
+  background-color: #A4151E;
 }
 
 .emotion-0:focus {

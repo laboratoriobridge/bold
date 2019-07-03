@@ -1,4 +1,4 @@
-import { focusBoxShadow, shade, Theme } from '../../../../styles'
+import { focusBoxShadow, Theme } from '../../../../styles'
 import { Skin } from '../ButtonSkins'
 
 export const createStyles = (theme: Theme): Skin => ({
@@ -15,7 +15,7 @@ export const createStyles = (theme: Theme): Skin => ({
       boxShadow: focusBoxShadow(theme),
     },
     ':not(:disabled):hover': {
-      backgroundColor: shade(-0.08, theme.pallete.surface.main),
+      backgroundColor: theme.pallete.gray.c90,
     },
   },
   primary: {
@@ -23,7 +23,7 @@ export const createStyles = (theme: Theme): Skin => ({
     color: theme.pallete.surface.main,
     border: `1px solid ${theme.pallete.primary.main}`,
     ':not(:disabled):hover': {
-      backgroundColor: shade(-0.08, theme.pallete.primary.main),
+      backgroundColor: theme.pallete.primary.c30,
     },
   },
   danger: {
@@ -31,7 +31,7 @@ export const createStyles = (theme: Theme): Skin => ({
     color: theme.pallete.status.danger.onColor,
     border: `1px solid ${theme.pallete.status.danger.main}`,
     ':not(:disabled):hover': {
-      backgroundColor: shade(-0.08, theme.pallete.status.danger.main),
+      backgroundColor: theme.pallete.status.danger.c30,
     },
     ':focus': {
       boxShadow: focusBoxShadow(theme, 'danger'),
