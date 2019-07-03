@@ -52,11 +52,11 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #ebebeb;
+  background-color: #F0F0F5;
 }
 
 .emotion-0:not(:disabled):hover {
-  background-color: #0061bf;
+  background-color: #0051A2;
 }
 
 <div>

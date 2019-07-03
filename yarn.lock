@@ -1943,6 +1943,15 @@
     pretty-format "^24.8.0"
     wait-for-expect "^1.2.0"
 
+"@testing-library/react-hooks@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react-hooks/-/react-hooks-1.1.0.tgz#14b6b5c7c3d0e2cb3e55e9cbb248b44321641c64"
+  integrity sha512-piE/ceQoNf134FFVXBABDbttBJ8eLPD4eg7zIciVJv92RyvoIsBHCvvG8Vd4IG5pyuWYrkLsZTO8ucZBwa4twA==
+  dependencies:
+    "@babel/runtime" "^7.4.2"
+    "@types/react" "^16.8.22"
+    "@types/react-test-renderer" "^16.8.2"
+
 "@testing-library/react@8.0.1":
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-8.0.1.tgz#91c254adf855b13de50020613cb5d3915f9f7875"
@@ -2123,6 +2132,13 @@
     "@types/react" "*"
     "@types/webpack" "*"
 
+"@types/react-test-renderer@^16.8.2":
+  version "16.8.2"
+  resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.8.2.tgz#ad544b5571ebfc5f182c320376f1431a2b725c5e"
+  integrity sha512-cm42QR9S9V3aOxLh7Fh7PUqQ8oSfSdnSni30T7TiTmlKvE6aUlo+LhQAzjnZBPriD9vYmgG8MXI8UDK4Nfb7gg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-text-mask@5.4.6":
   version "5.4.6"
   resolved "https://registry.yarnpkg.com/@types/react-text-mask/-/react-text-mask-5.4.6.tgz#3a81e9de472beb939038e78cb16d737ae94ba14a"
@@ -2141,6 +2157,14 @@
   version "16.8.20"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.20.tgz#4f633ecbd0a4d56d0ccc50fff6f9321bbcd7d583"
   integrity sha512-ZLmI+ubSJpfUIlQuULDDrdyuFQORBuGOvNnMue8HeA0GVrAJbWtZQhcBvnBPNRBI/GrfSfrKPFhthzC2SLEtLQ==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
+"@types/react@^16.8.22":
+  version "16.8.22"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.8.22.tgz#7f18bf5ea0c1cad73c46b6b1c804a3ce0eec6d54"
+  integrity sha512-C3O1yVqk4sUXqWyx0wlys76eQfhrQhiDhDlHBrjER76lR2S2Agiid/KpOU9oCqj1dISStscz7xXz1Cg8+sCQeA==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -10000,13 +10024,6 @@ react-helmet-async@^1.0.2:
     prop-types "15.7.2"
     react-fast-compare "2.0.4"
     shallowequal "1.1.0"
-
-react-hooks-testing-library@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/react-hooks-testing-library/-/react-hooks-testing-library-0.5.1.tgz#bb5e725fe8d35f3d682212039824dd2f6c7ff4c3"
-  integrity sha512-wSwnVPceof2AOpdvZpiC3EX4gZiVVvY78foz0/44yYGXjC2AeaWvNAjyRH1UjlPqCfHTaEANvXCq+m9YCbWBfQ==
-  dependencies:
-    "@babel/runtime" "^7.4.2"
 
 react-hotkeys@2.0.0-pre4:
   version "2.0.0-pre4"

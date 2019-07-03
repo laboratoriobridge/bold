@@ -3,7 +3,7 @@ import { Color } from 'csstype'
 import { merge } from '../../util'
 import { blue, ColorScale, gray, green, orange, red, yellow } from '../colors'
 
-export interface StatusColorMap {
+export interface StatusColorMap extends ColorScale {
   main: Color
   background: Color
   onColor: Color
@@ -66,21 +66,25 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
     },
     status: {
       danger: {
+        ...config.dangerScale,
         main: config.dangerScale.c40,
         background: config.dangerScale.c90,
         onColor: config.dangerScale.c100,
       },
       success: {
+        ...config.successScale,
         main: config.successScale.c40,
         background: config.successScale.c90,
         onColor: config.successScale.c100,
       },
       info: {
+        ...config.infoScale,
         main: config.infoScale.c40,
         background: config.infoScale.c90,
         onColor: config.infoScale.c100,
       },
       alert: {
+        ...config.alertScale,
         main: config.alertScale.c40,
         background: config.alertScale.c90,
         onColor: config.alertScale.c100,
