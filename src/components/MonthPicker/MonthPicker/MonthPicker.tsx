@@ -3,16 +3,16 @@ import React, { CSSProperties, useEffect, useState } from 'react'
 
 import { useLocale } from '../../../locale'
 import { Theme, useStyles } from '../../../styles'
+import { getUserLocale } from '../../../util/locale'
+import { capitalize } from '../../../util/string'
 import { Button } from '../../Button'
-import { HFlow, VFlow } from '../../Flow'
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 
 export interface MonthPickerProps {
-  month: number
-  year: number
-  monthDescriptions?: string[]
-  onChange(referenceMonth: ReferenceMonth): any
+  month?: number
+  year?: number
+  onChange?(referenceMonth: ReferenceMonth): any
 }
 
 /**
@@ -26,7 +26,7 @@ export interface ReferenceMonth {
 }
 
 export function MonthPicker(props: MonthPickerProps) {
-  const { monthDescriptions, year, onChange } = props
+  const { year, onChange } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
@@ -42,46 +42,64 @@ export function MonthPicker(props: MonthPickerProps) {
     onChange({ month, year: visibleYear })
   }
 
+  const baseYearDate = new Date(visibleYear, 1, 1, 0, 0, 0, 0)
+  const yearFormmater = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
+
+  const monthNames = getMonthNames(getUserLocale())
+
   return (
-    <div>
-      <VFlow style={classes.container} vSpacing={0.5}>
-        <HFlow style={classes.header} alignItems='center' justifyContent='space-between'>
+    <div className={classes.container}>
+      <div className={classes.months}>
+        <div className={classes.item}>
           <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onLeftClick}>
             <Icon icon='angleLeft' />
           </Button>
+        </div>
+        <div className={classes.item}>
           <Text fontWeight='bold' fontSize={0.875}>
-            {visibleYear}
+            {yearFormmater.format(baseYearDate)}
           </Text>
+        </div>
+        <div className={classes.item}>
           <Button title={locale.calendar.nextYear} size='small' skin='ghost' onClick={onRightClick}>
             <Icon icon='angleRight' />
           </Button>
-        </HFlow>
-        <HFlow style={classes.content} hSpacing={0.375} vSpacing={1}>
-          {monthDescriptions.map((month, index) => (
+        </div>
+
+        {monthNames.map((month, index) => (
+          <div key={index} className={classes.item}>
             <Button
-              key={index}
+              title={month.long}
               onClick={onMonthClick(index)}
               skin='ghost'
               style={css(classes.button, index === props.month && props.year === visibleYear && classes.active)}
             >
-              {month}
+              {month.short}
             </Button>
-          ))}
-        </HFlow>
-      </VFlow>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
 
-MonthPicker.defaultProps = {
-  monthDescriptions: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-} as Partial<MonthPickerProps>
+export function getMonthNames(locale: string) {
+  const year = new Date().getFullYear()
+
+  const shortFormatter = new Intl.DateTimeFormat(locale, { month: 'short' })
+  const longFormatter = new Intl.DateTimeFormat(locale, { month: 'long' })
+
+  const baseDates = Array.from(Array(12)).map((_, i) => new Date(year, i, 1, 0, 0, 0))
+  return baseDates.map(date => ({
+    short: capitalize(shortFormatter.format(date)),
+    long: capitalize(longFormatter.format(date)),
+  }))
+}
 
 export const createStyles = (theme: Theme) => ({
   container: {
     backgroundColor: theme.pallete.surface.main,
-    width: '21.25rem',
-    height: '13.5rem',
+    display: 'inline-block',
     padding: '1rem',
     border: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer['20'],
@@ -90,12 +108,20 @@ export const createStyles = (theme: Theme) => ({
   header: {
     padding: '0rem 1.5rem 0rem 1rem',
   } as CSSProperties,
-  content: {
-    flexWrap: 'wrap',
+  months: {
+    margin: '-0.25rem -0.25rem',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    alignItems: 'center',
+  } as CSSProperties,
+  item: {
+    textAlign: 'center',
+    margin: '0.25rem 0.25rem',
   } as CSSProperties,
   button: {
-    padding: 'calc(0.25rem - 1px) 1.375rem',
+    padding: 'calc(0.25rem - 1px) 1rem',
     transitionProperty: 'background',
+    minWidth: '70px',
   } as CSSProperties,
   active: {
     background: theme.pallete.primary.main + ' !important',

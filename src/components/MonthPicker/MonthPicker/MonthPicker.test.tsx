@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import { MonthPicker } from './MonthPicker'
+import { getMonthNames, MonthPicker } from './MonthPicker'
 
 const now = new Date()
 
@@ -58,5 +58,39 @@ describe('MonthPicker', () => {
 
     rerender(<MonthPicker month={now.getMonth()} year={newYear} />)
     expect(getAllByText(newYear.toString())).toHaveLength(1)
+  })
+})
+
+describe('getMonthNames', () => {
+  it('should return an array of month names in short format', () => {
+    expect(getMonthNames('pt-BR')).toEqual([
+      { short: 'Jan', long: 'Janeiro' },
+      { short: 'Fev', long: 'Fevereiro' },
+      { short: 'Mar', long: 'Março' },
+      { short: 'Abr', long: 'Abril' },
+      { short: 'Mai', long: 'Maio' },
+      { short: 'Jun', long: 'Junho' },
+      { short: 'Jul', long: 'Julho' },
+      { short: 'Ago', long: 'Agosto' },
+      { short: 'Set', long: 'Setembro' },
+      { short: 'Out', long: 'Outubro' },
+      { short: 'Nov', long: 'Novembro' },
+      { short: 'Dez', long: 'Dezembro' },
+    ])
+
+    expect(getMonthNames('en')).toEqual([
+      { short: 'Jan', long: 'January' },
+      { short: 'Feb', long: 'February' },
+      { short: 'Mar', long: 'March' },
+      { short: 'Apr', long: 'April' },
+      { short: 'May', long: 'May' },
+      { short: 'Jun', long: 'June' },
+      { short: 'Jul', long: 'July' },
+      { short: 'Aug', long: 'August' },
+      { short: 'Sep', long: 'September' },
+      { short: 'Oct', long: 'October' },
+      { short: 'Nov', long: 'November' },
+      { short: 'Dec', long: 'December' },
+    ])
   })
 })
