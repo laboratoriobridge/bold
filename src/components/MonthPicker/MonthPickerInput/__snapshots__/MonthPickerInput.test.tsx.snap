@@ -167,7 +167,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-43 {
+.emotion-40 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -176,77 +176,28 @@ exports[`MonthPickerInput should render correctly 1`] = `
   opacity: 0;
 }
 
-.emotion-15 {
-  margin-bottom: 0.25rem;
-  margin-top: 0.25rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
-  display: inline-block;
-}
-
-.emotion-15:first-of-type {
-  margin-top: 0;
-}
-
-.emotion-15:last-of-type {
-  margin-bottom: 0;
-}
-
-.emotion-15:empty {
-  display: none;
-}
-
-.emotion-42 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+.emotion-39 {
   background-color: #FFFFFF;
-  width: 21.25rem;
-  height: 13.5rem;
+  display: inline-block;
   padding: 1rem;
   border: 1px solid #D3D4DD;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
 }
 
-.emotion-8 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-}
-
-.emotion-8:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-8:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-8:empty {
-  display: none;
-}
-
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-38 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: 0rem 1.5rem 0rem 1rem;
+}
+
+.emotion-8 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
 }
 
 .emotion-7 {
@@ -309,37 +260,7 @@ exports[`MonthPickerInput should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-17 {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  margin-left: 0.1875rem;
-  margin-right: 0.1875rem;
-  display: inline-block;
-}
-
-.emotion-17:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-17:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-17:empty {
-  display: none;
-}
-
-.emotion-40 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-
-.emotion-16 {
+.emotion-14 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -364,12 +285,13 @@ exports[`MonthPickerInput should render correctly 1`] = `
   color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
-  padding: calc(0.25rem - 1px) 1.375rem;
+  padding: calc(0.25rem - 1px) 1rem;
   -webkit-transition-property: background;
   transition-property: background;
+  min-width: 70px;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -380,16 +302,16 @@ exports[`MonthPickerInput should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
@@ -442,230 +364,228 @@ exports[`MonthPickerInput should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-43"
+      class="emotion-40"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
-      <div>
+      <div
+        class="emotion-39"
+      >
         <div
-          class="emotion-42"
+          class="emotion-38"
         >
           <div
-            class="emotion-15"
+            class="emotion-8"
           >
-            <div
-              class="emotion-14"
+            <button
+              class="emotion-7"
+              title="Previous year"
+              type="button"
             >
-              <div
-                class="emotion-8"
-              >
-                <button
-                  class="emotion-7"
-                  title="Previous year"
-                  type="button"
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
                 >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-8"
-              >
-                <span
-                  class="emotion-9"
-                >
-                  2019
-                </span>
-              </div>
-              <div
-                class="emotion-8"
-              >
-                <button
-                  class="emotion-7"
-                  title="Next year"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
+                  <path
+                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
           </div>
           <div
-            class="emotion-15"
+            class="emotion-8"
           >
-            <div
-              class="emotion-40"
+            <span
+              class="emotion-9"
             >
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
+              2019
+            </span>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-7"
+              title="Next year"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
                 >
-                  <span>
-                    Jan
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Fev
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Mar
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Abr
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Mai
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Jun
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Jul
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Ago
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Set
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Out
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Nov
-                  </span>
-                </button>
-              </div>
-              <div
-                class="emotion-17"
-              >
-                <button
-                  class="emotion-16"
-                  type="button"
-                >
-                  <span>
-                    Dez
-                  </span>
-                </button>
-              </div>
-            </div>
+                  <path
+                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="January"
+              type="button"
+            >
+              <span>
+                Jan
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="February"
+              type="button"
+            >
+              <span>
+                Feb
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="March"
+              type="button"
+            >
+              <span>
+                Mar
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="April"
+              type="button"
+            >
+              <span>
+                Apr
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="May"
+              type="button"
+            >
+              <span>
+                May
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="June"
+              type="button"
+            >
+              <span>
+                Jun
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="July"
+              type="button"
+            >
+              <span>
+                Jul
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="August"
+              type="button"
+            >
+              <span>
+                Aug
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="September"
+              type="button"
+            >
+              <span>
+                Sep
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="October"
+              type="button"
+            >
+              <span>
+                Oct
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="November"
+              type="button"
+            >
+              <span>
+                Nov
+              </span>
+            </button>
+          </div>
+          <div
+            class="emotion-8"
+          >
+            <button
+              class="emotion-14"
+              title="December"
+              type="button"
+            >
+              <span>
+                Dec
+              </span>
+            </button>
           </div>
         </div>
       </div>
