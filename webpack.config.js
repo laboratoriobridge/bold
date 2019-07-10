@@ -33,7 +33,7 @@ const config = {
     ],
   },
   plugins: [new CheckerPlugin()],
-  externals: ['react', 'react-dom', 'emotion'],
+  externals: ['react', 'react-dom'],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({

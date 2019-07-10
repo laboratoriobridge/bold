@@ -44,13 +44,13 @@
     }
   },
   "peerDependencies": {
-    "emotion": "^10.0.9",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "@emotion/core": "10.0.10",
+    "@emotion/core": "10.0.14",
     "downshift": "3.2.10",
+    "emotion": "10.0.14",
     "focus-trap-react": "6.0.0",
     "hoist-non-react-statics": "3.3.0",
     "match-sorter": "3.1.1",
@@ -99,7 +99,6 @@
     "babel-cli": "6.26.0",
     "babel-loader": "8.0.6",
     "copyfiles": "2.1.0",
-    "emotion": "10.0.9",
     "file-loader": "4.0.0",
     "gh-pages": "2.0.1",
     "highlight.js": "9.15.8",
