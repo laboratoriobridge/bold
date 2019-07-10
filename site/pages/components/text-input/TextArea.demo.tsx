@@ -1,20 +1,20 @@
-import { Cell, Form, Grid, TextAreaField } from '../../../../lib'
+import { Cell, FormControl, Grid, TextArea } from '../../../../lib'
 
-function TextArea() {
-  const renderForm = () => {
-    return (
-      <Grid>
-        <Cell size={6}>
-          <TextAreaField name='empty' label='Name' placeholder='Ex: Hercílio Luz' required />
-        </Cell>
-        <Cell size={6}>
-          <TextAreaField name='disabled' label='Email' disabled />
-        </Cell>
-      </Grid>
-    )
-  }
-
-  return <Form render={renderForm} />
+function TextAreaDemo() {
+  return (
+    <Grid>
+      <Cell size={6}>
+        <FormControl label='Post body' required>
+          <TextArea name='empty' placeholder='Enter the body of your post' required />
+        </FormControl>
+      </Cell>
+      <Cell size={6}>
+        <FormControl label='Comment'>
+          <TextArea name='disabled' disabled />
+        </FormControl>
+      </Cell>
+    </Grid>
+  )
 }
 
-export default TextArea
+export default TextAreaDemo

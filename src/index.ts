@@ -1,5 +1,4 @@
 export * from './components'
-export * from './form'
 export * from './locale'
 export * from './metaPath'
 export * from './styles'
