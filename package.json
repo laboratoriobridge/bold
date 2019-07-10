@@ -45,16 +45,12 @@
   },
   "peerDependencies": {
     "emotion": "^10.0.9",
-    "final-form": "^4.13.1",
     "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "react-final-form": "^6.0.1"
+    "react-dom": ">=16.8.0"
   },
   "dependencies": {
     "@emotion/core": "10.0.10",
     "downshift": "3.2.10",
-    "final-form-focus": "1.1.2",
-    "final-form-set-field-data": "1.0.2",
     "focus-trap-react": "6.0.0",
     "hoist-non-react-statics": "3.3.0",
     "match-sorter": "3.1.1",
@@ -105,7 +101,6 @@
     "copyfiles": "2.1.0",
     "emotion": "10.0.9",
     "file-loader": "4.0.0",
-    "final-form": "4.15.0",
     "gh-pages": "2.0.1",
     "highlight.js": "9.15.8",
     "husky": "2.4.1",
@@ -122,7 +117,6 @@
     "react": "16.8.6",
     "react-docgen-typescript-loader": "3.1.0",
     "react-dom": "16.8.6",
-    "react-final-form": "6.2.1",
     "react-ga": "2.5.7",
     "react-test-renderer": "16.8.6",
     "remark-highlight.js": "5.1.1",

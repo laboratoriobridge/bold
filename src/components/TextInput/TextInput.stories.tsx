@@ -3,17 +3,13 @@ import { boolean, select } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { withForm } from '../../../stories-addons'
+import { TextInput } from './TextInput'
 
-import { TextField } from './TextField'
-
-storiesOf('Form|TextField', module)
-  .addDecorator(withForm())
+storiesOf('Components|TextInput', module)
   .add('default', () => (
-    <TextField
+    <TextInput
       id='nome'
       name='nome'
-      label='Nome'
       placeholder='Nome'
       disabled={boolean('disabled', false)}
       onChange={action('changed')}
@@ -21,23 +17,23 @@ storiesOf('Form|TextField', module)
     />
   ))
   .add('password', () => (
-    <TextField
+    <TextInput
       id='password'
       name='password'
-      label='Password'
       placeholder='Type your password...'
       type='password'
-      required
+      disabled={boolean('disabled', false)}
+      onChange={action('changed')}
     />
   ))
   .add('with icon', () => (
-    <TextField
+    <TextInput
       id='iconized'
       name='iconized'
-      label='Input with icon'
       icon='zoomOutline'
       iconPosition={select('iconPosition', ['left', 'right'], 'right')}
       onIconClick={action('icon-clicked')}
       disabled={boolean('disabled', false)}
+      onChange={action('changed')}
     />
   ))

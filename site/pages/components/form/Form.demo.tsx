@@ -1,63 +1,95 @@
-import { FormRenderProps } from 'react-final-form'
+import { useState } from 'react'
 
-import { Button, Cell, CheckboxField, Form, FormControl, Grid, HFlow, RadioField, TextField } from '../../../../lib'
+import { Button, Cell, Checkbox, FormControl, Grid, HFlow, Radio, TextInput } from '../../../../lib'
 
 function FormDemo() {
-  const renderForm = (formProps: FormRenderProps) => {
-    return (
-      <form onSubmit={formProps.handleSubmit}>
+  const [formState, setFormState] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    color: '',
+    agreed: false,
+  })
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    alert(JSON.stringify(formState, null, 2))
+  }
+
+  const handleChange = (name: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+    const el = e.target
+
+    setFormState(state => ({
+      ...state,
+      [name]: el.type === 'checkbox' ? el.checked : el.value,
+    }))
+  }
+
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
         <Grid wrap>
           <Cell xs={6}>
-            <TextField label='First name' name='firstName' required />
+            <FormControl label='First name'>
+              <TextInput
+                name='firstName'
+                placeholder='Enter your first name'
+                value={formState.firstName}
+                onChange={handleChange('firstName')}
+                required
+              />
+            </FormControl>
           </Cell>
           <Cell xs={6}>
-            <TextField label='Last name' name='lastName' required />
+            <FormControl label='Last name'>
+              <TextInput
+                name='lastName'
+                placeholder='Enter your last name'
+                value={formState.lastName}
+                onChange={handleChange('lastName')}
+                required
+              />
+            </FormControl>
           </Cell>
           <Cell xs={6}>
-            <TextField name='email' label='E-mail' type='email' />
+            <FormControl label='E-mail'>
+              <TextInput
+                name='email'
+                type='email'
+                placeholder='Enter your e-mail'
+                value={formState.email}
+                onChange={handleChange('email')}
+              />
+            </FormControl>
           </Cell>
           <Cell xs={6}>
             <FormControl label='Favorite color'>
               <HFlow>
-                <RadioField name='color' value='red' label='Red' />
-                <RadioField name='color' value='green' label='Green' />
-                <RadioField name='color' value='blue' label='Blue' />
+                <Radio name='color' value='red' label='Red' onChange={handleChange('color')} />
+                <Radio name='color' value='green' label='Green' onChange={handleChange('color')} />
+                <Radio name='color' value='blue' label='Blue' onChange={handleChange('color')} />
               </HFlow>
             </FormControl>
           </Cell>
           <Cell xs={12}>
-            <CheckboxField name='agreed' label='I agree to the terms of use' />
+            <Checkbox name='agreed' label='I agree to the terms of use' onChange={handleChange('agreed')} />
           </Cell>
           <Cell xs={12}>
             <HFlow justifyContent='flex-end'>
-              <Button type='reset' skin='outline' onClick={formProps.reset}>
+              <Button type='reset' skin='outline'>
                 Reset
               </Button>
-              <Button type='submit' kind='primary' onClick={formProps.handleSubmit}>
+              <Button type='submit' kind='primary'>
                 Submit
               </Button>
             </HFlow>
           </Cell>
         </Grid>
       </form>
-    )
-  }
 
-  return <Form render={renderForm} onSubmit={console.log} validate={validate} />
-}
-
-const validate = (values: any) => {
-  const errors: any = {}
-
-  if (!values.firstName) {
-    errors.firstName = 'First name is required'
-  }
-
-  if (!values.lastName) {
-    errors.lastName = 'Last name is required'
-  }
-
-  return errors
+      <pre>{JSON.stringify(formState, null, 2)}</pre>
+    </>
+  )
 }
 
 export default FormDemo

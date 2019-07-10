@@ -1,20 +1,9 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
+import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import {
-  DefaultItemType,
-  defaultSelectFilter,
-  Select,
-  SelectMenu,
-  SelectMenuItem,
-  SelectMulti,
-  SelectSingle,
-} from '../../../components/Select'
-import { withForm } from '../../../stories-addons'
-
-import { SelectField } from './SelectField'
+import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from './'
 
 const fruits: DefaultItemType[] = [
   { value: 1, label: 'Apple' },
@@ -61,16 +50,14 @@ const SelectAsyncManager = (props: SelectAsyncManagerProps) => {
 }
 
 // tslint:disable jsx-no-lambda
-storiesOf('Form|SelectField', module)
-  .addDecorator(withForm())
+storiesOf('Components|Select', module)
   .add('default', () => (
-    <SelectField<DefaultItemType>
+    <Select<DefaultItemType>
       name='fruit'
       items={fruits}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
-      label={text('label', 'Favorite fruit')}
       multiple={boolean('multiple', false)}
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
@@ -80,7 +67,7 @@ storiesOf('Form|SelectField', module)
     />
   ))
   .add('custom menu item', () => (
-    <SelectField<DefaultItemType>
+    <Select<DefaultItemType>
       renderItem={item => (
         <>
           <p>
@@ -94,7 +81,6 @@ storiesOf('Form|SelectField', module)
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
-      label={text('label', 'Favorite fruit')}
       multiple={boolean('multiple', false)}
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
@@ -106,13 +92,12 @@ storiesOf('Form|SelectField', module)
   .add('async items', () => (
     <SelectAsyncManager>
       {({ items, loading, loadItems }) => (
-        <SelectField<DefaultItemType>
+        <Select<DefaultItemType>
           name='repository'
           items={items}
           itemToString={item => item && item.label}
           itemIsEqual={(a, b) => a.value === b.value}
           placeholder='Select a value...'
-          label={text('label', 'Favorite fruit')}
           multiple={boolean('multiple', false)}
           clearable={boolean('clearable', true)}
           disabled={boolean('disabled', false)}
@@ -124,46 +109,6 @@ storiesOf('Form|SelectField', module)
       )}
     </SelectAsyncManager>
   ))
-  .add('input', () => (
-    <Select<DefaultItemType>
-      items={fruits}
-      itemToString={item => item && item.label}
-      itemIsEqual={(a, b) => a.value === b.value}
-      placeholder='Select a value...'
-      multiple={boolean('multiple', false)}
-      clearable={boolean('clearable', true)}
-      disabled={boolean('disabled', false)}
-      loading={boolean('loading', false)}
-      onChange={action('changed')}
-      onBlur={action('blur')}
-    />
-  ))
-  .add('input (single value)', () => (
-    <SelectSingle<DefaultItemType>
-      items={fruits}
-      itemToString={item => item && item.label}
-      placeholder='Select a value...'
-      clearable={boolean('clearable', true)}
-      disabled={boolean('disabled', false)}
-      loading={boolean('loading', false)}
-      onChange={action('changed')}
-      onBlur={action('blur')}
-    />
-  ))
-  .add('input (multiple value)', () => (
-    <SelectMulti<DefaultItemType>
-      items={fruits}
-      itemToString={item => item && item.label}
-      itemIsEqual={(a, b) => a.value === b.value}
-      placeholder='Select a value...'
-      clearable={boolean('clearable', true)}
-      disabled={boolean('disabled', false)}
-      loading={boolean('loading', false)}
-      onChange={action('changed')}
-      onBlur={action('blur')}
-    />
-  ))
-
   .add('select menu', () => (
     <SelectMenu style={{ position: 'static' }}>
       <SelectMenuItem>Item 1</SelectMenuItem>
