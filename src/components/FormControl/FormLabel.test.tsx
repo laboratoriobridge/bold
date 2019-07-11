@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { LocaleContext } from '../../locale'
-import ptBr from '../../locale/locales/pt-BR'
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
 
 import { FormLabel } from './'
 

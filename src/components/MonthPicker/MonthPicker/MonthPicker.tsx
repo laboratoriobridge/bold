@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 import React, { CSSProperties, useEffect, useState } from 'react'
 
-import { useLocale } from '../../../locale'
+import { useLocale } from '../../../i18n'
 import { Theme, useStyles } from '../../../styles'
 import { getUserLocale } from '../../../util/locale'
 import { capitalize } from '../../../util/string'

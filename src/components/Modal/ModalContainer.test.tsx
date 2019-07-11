@@ -1,8 +1,8 @@
 import { fireEvent, render } from '@testing-library/react'
 import * as React from 'react'
 
-import { LocaleContext } from '../../locale'
-import ptBr from '../../locale/locales/pt-BR'
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
 import * as stringUtils from '../../util/string'
 
 import { ModalContainer } from './ModalContainer'
