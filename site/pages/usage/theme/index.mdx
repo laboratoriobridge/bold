@@ -1,0 +1,25 @@
+import { Demo } from '../../../components/Demo'
+
+# Theme
+
+Bold exports two theme objects: `lightTheme` and `darkTheme`, using the former as default.
+
+You can switch this site documentation theme between light/dark by using the light bulb icon on the top right corner of the page.
+
+## Customizing the theme
+
+The theme can be changed using the `ThemeProvider` component:
+
+<Demo src='pages/usage/theme/Customize' />
+
+## Accessing the current theme variable
+
+Use the `useTheme` or `useStyles` hooks to access the theme variable:
+
+<Demo src='pages/usage/theme/AccessTheme' />
+
+## Custom themes
+
+Create a custom theme using the `createTheme` function.
+
+<Demo src='pages/usage/theme/CustomTheme' />

@@ -1,7 +1,7 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
 
-import { useLocale } from '../../locale'
+import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
 import { Icons } from '../Icon'

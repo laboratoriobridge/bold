@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react'
 
-import { useLocale } from '../../../locale'
+import { useLocale } from '../../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import Times from '../../Icon/generated/TimesDefault'
 

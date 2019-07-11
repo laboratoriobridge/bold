@@ -61,7 +61,7 @@ const createStyles = (theme: Theme) => ({
     marginBottom: '2rem',
   } as CSSProperties,
   link: {
-    fontSize: '1rem',
+    fontSize: '1em',
   } as CSSProperties,
   heading: {
     marginBottom: '2rem',
@@ -69,6 +69,7 @@ const createStyles = (theme: Theme) => ({
   list: {
     fontSize: '1rem',
     margin: '0 0 2rem 0',
+    lineHeight: 1.5,
   } as CSSProperties,
   image: {
     maxWidth: '100%',

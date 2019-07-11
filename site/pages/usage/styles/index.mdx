@@ -1,0 +1,21 @@
+import { Demo } from '../../../components/Demo'
+
+# Styles
+
+Bold uses CSS-in-JS to style its components, so all the CSS is bundled together with the JS file and attached to the DOM at execution time. We use [emotion](https://emotion.sh), a CSS-in-JS library, to acomplish that.
+
+## Styling with `useStyles` hook
+
+The `useStyles` function is a [React hook](https://reactjs.org/docs/hooks-intro.html) that can be used to generate CSS stylesheets and inject to custom components. It returns an object containing:
+
+- `classes`: A map containing the generated classes, to be used as `className` of your components
+- `css`: The emotion's `css` function which is used to generate the classes
+- `theme`: The current bold theme
+
+<Demo src='pages/usage/styles/UseStyles' />
+
+### Using `css` function
+
+You can also use the `css` function to create stylesheets:
+
+<Demo src='pages/usage/styles/Css' />

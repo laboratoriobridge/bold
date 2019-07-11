@@ -1,0 +1,15 @@
+import { Demo } from '../../../components/Demo'
+
+# Internationalization (i18n)
+
+The components use the user browser language to determine the locale.
+
+You can customize the strings used by the components using the `LocaleContent.Provider` component and access them using the `useLocale` hook.
+
+The `useLocale` hook returns a map of strings used internally by some bold components, like Calendar, Paginator etc.
+
+<Demo src='pages/usage/i18n/LocaleProvider' />
+
+## Available locales
+
+Check the available locales on the `src/i18n/locales` folder. Feel free to open a pull request if your locale is not there yet.

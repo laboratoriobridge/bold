@@ -1,5 +1,4 @@
 export * from './components'
-export * from './locale'
-export * from './metaPath'
+export * from './i18n'
 export * from './styles'
 export * from './util'

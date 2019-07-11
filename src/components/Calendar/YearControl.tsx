@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useLocale } from '../../locale'
+import { useLocale } from '../../i18n'
 import { getUserLocale } from '../../util/locale'
 import { Button } from '../Button'
 import { HFlow } from '../Flow'
