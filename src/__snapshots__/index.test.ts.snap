@@ -103,7 +103,6 @@ Array [
   "Tooltip",
   "LocaleContext",
   "useLocale",
-  "metaPath",
   "DefaultGlobalCss",
   "GlobalCss",
   "useTheme",
