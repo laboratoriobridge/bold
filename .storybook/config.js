@@ -1,4 +1,4 @@
-// import { withA11y } from '@storybook/addon-a11y'
+import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 import { addDecorator, configure, addParameters } from '@storybook/react'
@@ -11,7 +11,6 @@ addParameters({
       base: 'light',
       brandTitle: 'Bold',
       brandUrl: 'https://github.com/laboratoriobridge/bold',
-      // brandImage: 'http://url.of/some.svg',
     }),
     panelPosition: 'right',
   },
@@ -36,7 +35,7 @@ addParameters({
 })
 
 addDecorator(withInfo)
-// addDecorator(withA11y)
+addDecorator(withA11y)
 addDecorator(withKnobs)
 addDecorator(withStorybookTheme)
 
