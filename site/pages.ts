@@ -23,6 +23,12 @@ export default [
     ],
   },
   {
+    title: 'Usage',
+    icon: 'code',
+    href: '/usage',
+    children: [{ href: '/usage/styles', title: 'Styles' }, { href: '/usage/theme', title: 'Theme' }],
+  },
+  {
     title: 'Components',
     icon: 'bricksFilled',
     href: '/components',
