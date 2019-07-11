@@ -26,7 +26,11 @@ export default [
     title: 'Usage',
     icon: 'code',
     href: '/usage',
-    children: [{ href: '/usage/styles', title: 'Styles' }, { href: '/usage/theme', title: 'Theme' }],
+    children: [
+      { href: '/usage/styles', title: 'Styles' },
+      { href: '/usage/theme', title: 'Theme' },
+      { href: '/usage/i18n', title: 'Internationalization' },
+    ],
   },
   {
     title: 'Components',
