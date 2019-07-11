@@ -61,7 +61,7 @@ const createStyles = (theme: Theme) => ({
     marginBottom: '2rem',
   } as CSSProperties,
   link: {
-    fontSize: '1rem',
+    fontSize: '1em',
   } as CSSProperties,
   heading: {
     marginBottom: '2rem',
