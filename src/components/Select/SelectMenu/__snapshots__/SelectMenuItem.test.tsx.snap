@@ -2,9 +2,13 @@
 
 exports[`SelectEmptyItem should render correctly 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
   background: #F0F0F5;
@@ -16,22 +20,32 @@ exports[`SelectEmptyItem should render correctly 1`] = `
 
 .emotion-0:hover {
   background: #F0F0F5;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
   <li
     class="emotion-0"
   >
-    Nenhum item encontrado
+    No results were found
   </li>
 </div>
 `;
 
 exports[`SelectHelperMenuItem should render correctly 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
 }
@@ -42,6 +56,12 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
 
 .emotion-0:hover {
   background: #F0F0F5;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
@@ -69,9 +89,13 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 }
 
 .emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
   background: #F0F0F5;
@@ -83,6 +107,12 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 
 .emotion-1:hover {
   background: #F0F0F5;
+}
+
+.emotion-1:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 .emotion-0 {
@@ -109,7 +139,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   <li
     class="emotion-1"
   >
-    Carregando...
+    Loading...
     <span
       class="emotion-0"
     />
@@ -119,9 +149,13 @@ exports[`SelectLoadingItem should render correctly 1`] = `
 
 exports[`SelectMenuItem should render correctly 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
 }
@@ -132,6 +166,12 @@ exports[`SelectMenuItem should render correctly 1`] = `
 
 .emotion-0:hover {
   background: #F0F0F5;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
@@ -145,9 +185,13 @@ exports[`SelectMenuItem should render correctly 1`] = `
 
 exports[`SelectMenuItem should render correctly when custom style defined 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
   color: red;
@@ -161,57 +205,10 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   background: #F0F0F5;
 }
 
-<div>
-  <li
-    class="emotion-0"
-  >
-    Item
-  </li>
-</div>
-`;
-
-exports[`SelectMenuItem should render correctly when highlighted 1`] = `
-.emotion-0 {
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.325rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-  background: #F0F0F5;
-}
-
-.emotion-0:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-0:hover {
-  background: #F0F0F5;
-}
-
-<div>
-  <li
-    class="emotion-0"
-  >
-    Item
-  </li>
-</div>
-`;
-
-exports[`SelectMenuItem should render correctly when selected 1`] = `
-.emotion-0 {
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.325rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-0:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-0:hover {
-  background: #F0F0F5;
+.emotion-0:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>

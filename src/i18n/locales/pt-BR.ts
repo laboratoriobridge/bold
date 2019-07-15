@@ -23,6 +23,8 @@ const locale: LocaleConfiguration = {
     currentPage: 'Página atual',
   },
   select: {
+    emptyItem: 'Nenhum item encontrado',
+    loadingItem: 'Carregando...',
     removeItem: 'Remover',
   },
 }

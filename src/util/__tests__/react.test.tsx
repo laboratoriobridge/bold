@@ -30,4 +30,10 @@ describe('composeHadlers', () => {
     expect(fn2).toHaveBeenCalledWith(1, 2, 3)
     expect(fn2).toHaveBeenCalledTimes(2)
   })
+  it('should ignore null parameters', () => {
+    const fn1 = jest.fn(() => null)
+    const composed = composeHandlers(fn1, null, fn1, null)
+    composed()
+    expect(fn1).toHaveBeenCalledTimes(2)
+  })
 })

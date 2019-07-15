@@ -1,20 +1,40 @@
 import React from 'react'
 
-import { ExternalStyles, Theme, useStyles, useTheme } from '../../../styles'
+import { useLocale } from '../../../i18n'
+import { ExternalStyles, focusBoxShadow, Theme, useStyles, useTheme } from '../../../styles'
 import { Omit } from '../../../util'
+import { composeHandlers } from '../../../util/react'
 import { Spinner } from '../../Spinner'
 
 export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
   style?: ExternalStyles
   selected?: boolean
-  highlighted?: boolean
+  onSelect?(e: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>): void
 }
 
 export function SelectMenuItem(props: SelectMenuItemProps) {
-  const { style, selected, highlighted, ...rest } = props
+  const { style, selected, onSelect, onKeyDown, onClick, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 
-  return <li className={css(classes.item, style)} {...rest} />
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      onSelect && onSelect(e)
+    }
+  }
+
+  const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+    onSelect && onSelect(e)
+  }
+
+  return (
+    <li
+      className={css(classes.item, style)}
+      onClick={composeHandlers(handleClick, onClick)}
+      onKeyDown={composeHandlers(handleKeyDown, onKeyDown)}
+      aria-selected={selected === true ? 'true' : undefined}
+      {...rest}
+    />
+  )
 }
 
 export function SelectHelperMenuItem(props: SelectMenuItemProps) {
@@ -25,25 +45,29 @@ export function SelectHelperMenuItem(props: SelectMenuItemProps) {
 
 export function SelectLoadingItem(props: SelectMenuItemProps) {
   const theme = useTheme()
+  const locale = useLocale()
+
   return (
     <SelectHelperMenuItem {...props}>
-      Carregando...
+      {locale.select.loadingItem}
       <Spinner style={{ color: theme.pallete.primary.main, float: 'right' }} />
     </SelectHelperMenuItem>
   )
 }
 
 export function SelectEmptyItem(props: SelectMenuItemProps) {
-  return <SelectHelperMenuItem {...props}>Nenhum item encontrado</SelectHelperMenuItem>
+  const locale = useLocale()
+
+  return <SelectHelperMenuItem {...props}>{locale.select.emptyItem}</SelectHelperMenuItem>
 }
 
-export const createStyles = (theme: Theme, { highlighted }: SelectMenuItemProps) => ({
+export const createStyles = (theme: Theme) => ({
   item: {
+    ...theme.typography.variant('main'),
     borderBottom: `1px solid ${theme.pallete.divider}`,
     cursor: 'pointer',
-    padding: '0.325rem 0.5rem',
+    padding: '0.5rem 0.5rem',
     transition: '.1s ease',
-    background: highlighted && theme.pallete.surface.background,
 
     '&:last-of-type': {
       borderBottom: 'none',
@@ -51,6 +75,12 @@ export const createStyles = (theme: Theme, { highlighted }: SelectMenuItemProps)
 
     '&:hover': {
       background: theme.pallete.surface.background,
+    },
+
+    '&:focus': {
+      outline: 0,
+      borderRadius: 3,
+      boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
     },
   },
 })
