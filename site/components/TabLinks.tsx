@@ -1,20 +1,20 @@
 import NextLink from 'next/link'
-import { RouterProps, withRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import { CSSProperties } from 'react'
 
 import { TabItem, Tabs, Theme, useStyles } from '../../lib'
 
 export interface TabLinksProps {
-  router: RouterProps
   items: Array<{
     title: string
     href: string
   }>
 }
 
-export const TabLinks = withRouter((props: TabLinksProps) => {
-  const { items, router } = props
+export const TabLinks = (props: TabLinksProps) => {
+  const { items } = props
   const { classes } = useStyles(createStyles)
+  const router = useRouter()
 
   const isActive = (item: TabLinksProps['items'][0]) => router.pathname === item.href
 
@@ -31,7 +31,7 @@ export const TabLinks = withRouter((props: TabLinksProps) => {
       </Tabs>
     </div>
   )
-})
+}
 
 const createStyles = (theme: Theme) => ({
   tabs: {

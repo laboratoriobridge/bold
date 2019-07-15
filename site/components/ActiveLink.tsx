@@ -1,13 +1,16 @@
-import Link, { LinkProps } from 'next/link'
-import { withRouter, WithRouterProps } from 'next/router'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
-interface ActiveLinkProps extends LinkProps {
+interface ActiveLinkProps /*extends LinkProps*/ {
   activeClassName?: string
+  children?: any
+  href: string
 }
 
-const ActiveLink = (props: ActiveLinkProps & WithRouterProps) => {
-  const { router, activeClassName, children, ...rest } = props
+const ActiveLink = (props: ActiveLinkProps) => {
+  const router = useRouter()
+  const { activeClassName, children, ...rest } = props
   const child = React.Children.only(children)
 
   let className = child.props.className || null
@@ -18,4 +21,4 @@ const ActiveLink = (props: ActiveLinkProps & WithRouterProps) => {
   return <Link {...rest}>{React.cloneElement(child, { ...child.props, className })}</Link>
 }
 
-export default withRouter(ActiveLink)
+export default ActiveLink
