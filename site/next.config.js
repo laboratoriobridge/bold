@@ -1,4 +1,3 @@
-const withTypescript = require('@zeit/next-typescript')
 const withMDX = require('@next/mdx')
 
 const compose = (...functions) => args => functions.reduceRight((arg, fn) => fn(arg), args)
@@ -9,8 +8,7 @@ const withPlugins = compose(
     options: {
       remarkPlugins: [require('remark-highlight.js'), require('remark-slug')],
     },
-  }),
-  withTypescript
+  })
 )
 
 module.exports = withPlugins({
