@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 
+import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button, ButtonProps } from '../Button'
 import { Icons } from '../Icon/generated/Icons'
@@ -18,6 +19,7 @@ export interface InputWrapperProps {
 export function InputWrapper(props: InputWrapperProps) {
   const { children, icon, iconPosition, iconDisabled, onIconClick, clearVisible, onClear } = props
   const { classes, css } = useStyles(createStyles, props)
+  const locale = useLocale()
 
   const iconBoxClasses = css(
     classes.iconWrapper,
@@ -30,7 +32,7 @@ export function InputWrapper(props: InputWrapperProps) {
       {children}
 
       {clearVisible && (
-        <span role='button' title='Limpar' tabIndex={-1} onClick={onClear} className={classes.clearButton}>
+        <span role='button' title={locale.input.clear} tabIndex={-1} onClick={onClear} className={classes.clearButton}>
           <Icon size={1.5} icon='timesDefault' />
         </span>
       )}

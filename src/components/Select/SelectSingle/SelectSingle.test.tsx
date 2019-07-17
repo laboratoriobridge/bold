@@ -58,7 +58,7 @@ describe('clear button', () => {
   it('should clear the input value', () => {
     const { container, getByTitle } = render(createSelect({ value: items[0] }))
     const input = container.querySelector('input')
-    const clearButton = getByTitle('Limpar')
+    const clearButton = getByTitle('Clear')
 
     expect(input.value).toEqual(items[0].label)
 
@@ -69,7 +69,7 @@ describe('clear button', () => {
   it('should call onChange with null value', () => {
     const onChange = jest.fn()
     const { getByTitle } = render(createSelect({ onChange, value: items[0] }))
-    const clearButton = getByTitle('Limpar')
+    const clearButton = getByTitle('Clear')
 
     expect(onChange).not.toHaveBeenCalled()
     fireEvent.click(clearButton)
@@ -78,7 +78,7 @@ describe('clear button', () => {
   it('should call prop onClear if exists', () => {
     const onClear = jest.fn()
     const { getByTitle } = render(createSelect({ onClear, value: items[0] }))
-    const clearButton = getByTitle('Limpar')
+    const clearButton = getByTitle('Clear')
 
     expect(onClear).not.toHaveBeenCalled()
     fireEvent.click(clearButton)

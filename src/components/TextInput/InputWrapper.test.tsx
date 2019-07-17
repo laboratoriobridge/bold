@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
 import { Input } from '../Input'
 
 import { InputWrapper } from './InputWrapper'
@@ -48,4 +50,15 @@ it('should render correctly without clear icon AND left position', () => {
     </InputWrapper>
   )
   expect(container).toMatchSnapshot()
+})
+
+it('should be localizable', () => {
+  const { getByTitle } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <InputWrapper clearVisible={true}>
+        <Input />
+      </InputWrapper>
+    </LocaleContext.Provider>
+  )
+  expect(getByTitle(ptBr.input.clear)).toBeTruthy()
 })

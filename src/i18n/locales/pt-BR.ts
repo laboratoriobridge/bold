@@ -13,6 +13,9 @@ const locale: LocaleConfiguration = {
   formControl: {
     required: 'Campo obrigatório',
   },
+  input: {
+    clear: 'Limpar',
+  },
   modal: {
     close: 'Fechar',
   },

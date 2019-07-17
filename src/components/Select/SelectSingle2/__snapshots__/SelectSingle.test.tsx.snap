@@ -1,0 +1,950 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select menu should have loading status when \`loading\` prop is true 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-right: 3rem;
+}
+
+.emotion-3 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-2:focus {
+  box-shadow: none;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-7:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-7:hover {
+  background: #F0F0F5;
+}
+
+.emotion-7:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-19 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+}
+
+.emotion-6 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+}
+
+.emotion-6:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-6:hover {
+  background: #F0F0F5;
+}
+
+.emotion-6:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-5 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0069D0;
+  float: right;
+}
+
+.emotion-5:after {
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+<div>
+  <div>
+    <div
+      class="emotion-4"
+    >
+      <input
+        class="emotion-0"
+        type="text"
+        value=""
+      />
+      <span
+        class="emotion-3"
+      >
+        <button
+          class="emotion-2"
+          tabindex="-1"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+    <ul
+      aria-busy="true"
+      class="emotion-19"
+      role="listbox"
+    >
+      <li
+        class="emotion-6"
+      >
+        Loading...
+        <span
+          class="emotion-5"
+        />
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Apple
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Avocado
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Banana
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Blueberry
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Coconut
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Grape
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Lemon
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Mango
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Melon
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Orange
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Peach
+      </li>
+      <li
+        class="emotion-7"
+        role="option"
+        tabindex="-1"
+      >
+        Pear
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`should render correctly when closed 1`] = `
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-right: 3rem;
+}
+
+.emotion-3 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-2:focus {
+  box-shadow: none;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<div>
+  <div>
+    <div
+      class="emotion-4"
+    >
+      <input
+        class="emotion-0"
+        type="text"
+        value=""
+      />
+      <span
+        class="emotion-3"
+      >
+        <button
+          class="emotion-2"
+          tabindex="-1"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render correctly when opened 1`] = `
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-right: 3rem;
+}
+
+.emotion-3 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-2:focus {
+  box-shadow: none;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-17 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.emotion-5 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-5:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-5:hover {
+  background: #F0F0F5;
+}
+
+.emotion-5:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+<div>
+  <div>
+    <div
+      class="emotion-4"
+    >
+      <input
+        class="emotion-0"
+        type="text"
+        value=""
+      />
+      <span
+        class="emotion-3"
+      >
+        <button
+          class="emotion-2"
+          tabindex="-1"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
+    <ul
+      class="emotion-17"
+      role="listbox"
+    >
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Apple
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Avocado
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Banana
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Blueberry
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Coconut
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Grape
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Lemon
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Mango
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Melon
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Orange
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Peach
+      </li>
+      <li
+        class="emotion-5"
+        role="option"
+        tabindex="-1"
+      >
+        Pear
+      </li>
+    </ul>
+  </div>
+</div>
+`;

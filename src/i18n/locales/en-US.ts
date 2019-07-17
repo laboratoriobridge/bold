@@ -11,6 +11,9 @@ const locale = {
   formControl: {
     required: 'Required field',
   },
+  input: {
+    clear: 'Clear',
+  },
   modal: {
     close: 'Close',
   },

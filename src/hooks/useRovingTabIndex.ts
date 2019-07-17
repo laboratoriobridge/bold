@@ -69,7 +69,7 @@ export function useRovingTabIndex(options: RovingTabIndexOptions) {
         item.setAttribute('tabindex', '-1')
       }
     })
-  }, [initialIndex])
+  }, [initialIndex, getItems])
 
   // Manage child items focus event:
   useEffect(() => {
@@ -84,7 +84,7 @@ export function useRovingTabIndex(options: RovingTabIndexOptions) {
 
     items.forEach(item => item.addEventListener('focus', handleChildFocus))
     return () => items.forEach(item => item.removeEventListener('focus', handleChildFocus))
-  }, [options])
+  }, [getItems])
 
   // Manage keydown event on root ref:
   useEffect(() => {
@@ -124,7 +124,7 @@ export function useRovingTabIndex(options: RovingTabIndexOptions) {
 
     rootRef.current.addEventListener('keydown', handleKeyDown)
     return () => rootRef.current.removeEventListener('keydown', handleKeyDown)
-  }, [options])
+  }, [getItems, nextKeys, prevKeys, firstKeys, lastKeys])
 
   return rootRef
 }

@@ -45,9 +45,9 @@ describe('icon', () => {
 describe('clear icon', () => {
   it('should not render clear icon when clearable prop is false', () => {
     const { queryByTitle, rerender } = render(<TextInput defaultValue='Test' clearable={true} />)
-    expect(queryByTitle('Limpar')).toBeTruthy()
+    expect(queryByTitle('Clear')).toBeTruthy()
 
     rerender(<TextInput defaultValue='Test' clearable={false} />)
-    expect(queryByTitle('Limpar')).toBeFalsy()
+    expect(queryByTitle('Clear')).toBeFalsy()
   })
 })
