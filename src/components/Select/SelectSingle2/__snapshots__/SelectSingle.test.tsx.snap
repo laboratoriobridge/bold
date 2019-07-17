@@ -275,44 +275,55 @@ exports[`Select menu should have loading status when \`loading\` prop is true 1`
 <div>
   <div>
     <div
-      class="emotion-4"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="listbox-abc"
+      role="combobox"
     >
-      <input
-        class="emotion-0"
-        type="text"
-        value=""
-      />
-      <span
-        class="emotion-3"
+      <div
+        class="emotion-4"
       >
-        <button
-          class="emotion-2"
-          tabindex="-1"
-          type="button"
+        <input
+          aria-autocomplete="list"
+          aria-controls="listbox-abc"
+          class="emotion-0"
+          type="text"
+          value=""
+        />
+        <span
+          class="emotion-3"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <button
+            class="emotion-2"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
     <ul
       aria-busy="true"
       class="emotion-19"
+      id="listbox-abc"
       role="listbox"
     >
       <li
+        aria-selected="false"
         class="emotion-6"
       >
         Loading...
@@ -321,86 +332,98 @@ exports[`Select menu should have loading status when \`loading\` prop is true 1`
         />
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-0"
         role="option"
-        tabindex="-1"
       >
         Apple
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-1"
         role="option"
-        tabindex="-1"
       >
         Avocado
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-2"
         role="option"
-        tabindex="-1"
       >
         Banana
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-3"
         role="option"
-        tabindex="-1"
       >
         Blueberry
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-4"
         role="option"
-        tabindex="-1"
       >
         Coconut
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-5"
         role="option"
-        tabindex="-1"
       >
         Grape
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-6"
         role="option"
-        tabindex="-1"
       >
         Lemon
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-7"
         role="option"
-        tabindex="-1"
       >
         Mango
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-8"
         role="option"
-        tabindex="-1"
       >
         Melon
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-9"
         role="option"
-        tabindex="-1"
       >
         Orange
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-10"
         role="option"
-        tabindex="-1"
       >
         Peach
       </li>
       <li
+        aria-selected="false"
         class="emotion-7"
+        id="listbox-abc-item-11"
         role="option"
-        tabindex="-1"
       >
         Pear
       </li>
@@ -575,37 +598,44 @@ exports[`should render correctly when closed 1`] = `
 <div>
   <div>
     <div
-      class="emotion-4"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      role="combobox"
     >
-      <input
-        class="emotion-0"
-        type="text"
-        value=""
-      />
-      <span
-        class="emotion-3"
+      <div
+        class="emotion-4"
       >
-        <button
-          class="emotion-2"
-          tabindex="-1"
-          type="button"
+        <input
+          aria-autocomplete="list"
+          class="emotion-0"
+          type="text"
+          value=""
+        />
+        <span
+          class="emotion-3"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <button
+            class="emotion-2"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
   </div>
 </div>
@@ -824,123 +854,145 @@ exports[`should render correctly when opened 1`] = `
 <div>
   <div>
     <div
-      class="emotion-4"
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="listbox-abc"
+      role="combobox"
     >
-      <input
-        class="emotion-0"
-        type="text"
-        value=""
-      />
-      <span
-        class="emotion-3"
+      <div
+        class="emotion-4"
       >
-        <button
-          class="emotion-2"
-          tabindex="-1"
-          type="button"
+        <input
+          aria-autocomplete="list"
+          aria-controls="listbox-abc"
+          class="emotion-0"
+          type="text"
+          value=""
+        />
+        <span
+          class="emotion-3"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </span>
+          <button
+            class="emotion-2"
+            tabindex="-1"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+        </span>
+      </div>
     </div>
     <ul
       class="emotion-17"
+      id="listbox-abc"
       role="listbox"
     >
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-0"
         role="option"
-        tabindex="-1"
       >
         Apple
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-1"
         role="option"
-        tabindex="-1"
       >
         Avocado
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-2"
         role="option"
-        tabindex="-1"
       >
         Banana
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-3"
         role="option"
-        tabindex="-1"
       >
         Blueberry
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-4"
         role="option"
-        tabindex="-1"
       >
         Coconut
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-5"
         role="option"
-        tabindex="-1"
       >
         Grape
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-6"
         role="option"
-        tabindex="-1"
       >
         Lemon
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-7"
         role="option"
-        tabindex="-1"
       >
         Mango
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-8"
         role="option"
-        tabindex="-1"
       >
         Melon
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-9"
         role="option"
-        tabindex="-1"
       >
         Orange
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-10"
         role="option"
-        tabindex="-1"
       >
         Peach
       </li>
       <li
+        aria-selected="false"
         class="emotion-5"
+        id="listbox-abc-item-11"
         role="option"
-        tabindex="-1"
       >
         Pear
       </li>

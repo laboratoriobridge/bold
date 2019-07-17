@@ -12,9 +12,14 @@ describe('SelectMenuItem', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('should have "aria-selected=true" attribute when selected', () => {
+  it('should have aria-selected equals to `true` when `selected` props is true', () => {
     const { container } = render(<SelectMenuItem selected>Item</SelectMenuItem>)
     expect(container.querySelector('li').getAttribute('aria-selected')).toEqual('true')
+  })
+
+  it('should have a focus indicator when `selected` prop is true', () => {
+    const { container } = render(<SelectMenuItem selected>Item</SelectMenuItem>)
+    expect(container).toMatchSnapshot()
   })
 
   it('should render correctly when custom style defined', () => {

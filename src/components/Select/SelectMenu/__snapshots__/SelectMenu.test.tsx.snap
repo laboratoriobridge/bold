@@ -48,11 +48,13 @@ exports[`should render correctly 1`] = `
     class="emotion-2"
   >
     <li
+      aria-selected="false"
       class="emotion-0"
     >
       Item 1
     </li>
     <li
+      aria-selected="false"
       class="emotion-0"
     >
       Item 2

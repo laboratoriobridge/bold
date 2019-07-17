@@ -28,10 +28,10 @@ export function SelectMenuItem(props: SelectMenuItemProps) {
 
   return (
     <li
-      className={css(classes.item, style)}
+      className={css(classes.item, selected && classes.selected, style)}
       onClick={composeHandlers(handleClick, onClick)}
       onKeyDown={composeHandlers(handleKeyDown, onKeyDown)}
-      aria-selected={selected === true ? 'true' : undefined}
+      aria-selected={selected ? 'true' : 'false'}
       {...rest}
     />
   )
@@ -61,7 +61,7 @@ export function SelectEmptyItem(props: SelectMenuItemProps) {
   return <SelectHelperMenuItem {...props}>{locale.select.emptyItem}</SelectHelperMenuItem>
 }
 
-export const createStyles = (theme: Theme) => ({
+export const createStyles = (theme: Theme, { selected }: SelectMenuItemProps) => ({
   item: {
     ...theme.typography.variant('main'),
     borderBottom: `1px solid ${theme.pallete.divider}`,
@@ -82,5 +82,10 @@ export const createStyles = (theme: Theme) => ({
       borderRadius: 3,
       boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
     },
+  },
+  selected: {
+    outline: 0,
+    borderRadius: 3,
+    boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
   },
 })

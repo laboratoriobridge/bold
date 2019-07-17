@@ -85,6 +85,7 @@ storiesOf('Components|Select', module)
       loading={boolean('loading', false)}
       onChange={action('change')}
       onBlur={action('blur')}
+      onFocus={action('focus')}
       onFilterChange={action('filter-change')}
     />
   ))
