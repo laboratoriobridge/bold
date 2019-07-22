@@ -97,10 +97,12 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
   const listboxIdRef = useRef<string>(`listbox-${randomStr()}`)
   const blurTimeoutRef = useRef<number>()
 
-  const [filter, setFilter] = useState('')
-  const [inputText, setInputText] = useState(value ? itemToString(value) : '')
-  const [open, setOpen] = useState(false)
-  const [activeDescendant, setActiveDescendant] = useState(-1)
+  const [state, setState] = useState({
+    open: false,
+    filter: '',
+    inputText: value ? itemToString(value) : '',
+    activeDescendant: -1,
+  })
 
   const { style: popperStyle, placement } = usePopper(
     {
@@ -108,58 +110,70 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
       popperRef: menuRef,
       ...popperProps,
     },
-    [open]
+    [state.open]
   )
 
-  const handleInputIconClick = () => setOpen(state => !state)
+  const handleInputIconClick = () => setState(curr => ({ ...curr, open: !curr.open }))
 
   const handleInputFocus = () => {
     clearTimeout(blurTimeoutRef.current)
-    setOpen(true)
+    setState(curr => ({ ...curr, open: true }))
   }
 
-  const handleInputClick = () => setOpen(true)
+  const handleInputClick = () => setState(curr => ({ ...curr, open: true }))
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setActiveDescendant(-1)
+    setState(curr => ({ ...curr, activeDescendant: -1 }))
 
     if (e && e.target) {
       const textValue = e.target.value
-      setInputText(textValue || '')
-      setFilter(textValue || '')
-      setOpen(true)
+      setState(curr => ({
+        ...curr,
+        inputText: textValue || '',
+        filter: textValue || '',
+        open: true,
+      }))
     } else {
-      setInputText('')
-      setFilter('')
+      setState(curr => ({
+        ...curr,
+        inputText: '',
+        filter: '',
+      }))
       onChange(null, null)
     }
   }
 
   const handleInputBlur = () => {
     blurTimeoutRef.current = setTimeout(() => {
-      setOpen(false)
-      setInputText(value ? itemToString(value) : '')
-      setFilter('')
-    }, 0)
+      setState(curr => ({
+        ...curr,
+        inputText: value ? itemToString(value) : '',
+        filter: '',
+        open: false,
+      }))
+    })
   }
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Escape') {
       inputRef.current.focus()
-      setInputText('')
-      setFilter('')
-      setOpen(false)
+      setState(curr => ({
+        ...curr,
+        inputText: '',
+        filter: '',
+        open: false,
+      }))
     } else if (e.key === 'ArrowDown') {
       e.preventDefault()
-      setOpen(true)
+      setState(curr => ({ ...curr, open: true }))
       setTimeout(() => navigateActiveDescendant(1))
     } else if (e.key === 'ArrowUp') {
       e.preventDefault()
-      setOpen(true)
+      setState(curr => ({ ...curr, open: true }))
       setTimeout(() => navigateActiveDescendant(-1))
     } else if (e.key === 'Enter') {
       const target = containerRef.current.querySelector(
-        `#${listboxIdRef.current}-item-${activeDescendant}`
+        `#${listboxIdRef.current}-item-${state.activeDescendant}`
       ) as HTMLElement
       target.click()
     }
@@ -168,10 +182,13 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
   const handleItemSelect = (item: Item, index: number) => () => {
     inputRef.current.focus()
     onChange(item, index)
-    setInputText(itemToString(item))
-    setFilter('')
-    setActiveDescendant(index)
-    setOpen(false)
+    setState(curr => ({
+      ...curr,
+      open: false,
+      inputText: itemToString(item),
+      filter: '',
+      activeDescendant: index,
+    }))
   }
 
   const navigateActiveDescendant = (increment: number) => {
@@ -181,7 +198,7 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
       return
     }
 
-    let target = activeDescendant + increment
+    let target = state.activeDescendant + increment
     if (target > total - 1) {
       target = 0
     }
@@ -189,24 +206,24 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
       target = total - 1
     }
 
-    setActiveDescendant(target)
+    setState(curr => ({ ...curr, activeDescendant: target }))
   }
 
   useEffectOnChange(() => {
-    onFilterChange && onFilterChange(filter)
-  }, [filter])
+    onFilterChange && onFilterChange(state.filter)
+  }, [state.filter])
 
   useEffectOnChange(() => {
-    if (activeDescendant >= 0 && open) {
+    if (state.activeDescendant >= 0 && state.open) {
       const target = containerRef.current.querySelector(
-        `#${listboxIdRef.current}-item-${activeDescendant}`
+        `#${listboxIdRef.current}-item-${state.activeDescendant}`
       ) as HTMLElement
       target.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
     }
-  }, [activeDescendant])
+  }, [state.activeDescendant])
 
-  const isOpen = open || openProp
-  const visibleItems = filterItems(filter, props)
+  const isOpen = state.open || openProp
+  const visibleItems = filterItems(state.filter, props)
 
   return (
     <div ref={composeRefs(containerRef)}>
@@ -218,11 +235,13 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
       >
         <TextInput
           inputRef={inputRef}
-          value={inputText}
-          icon={open ? 'angleUp' : 'angleDown'}
+          value={state.inputText}
+          icon={state.open ? 'angleUp' : 'angleDown'}
           aria-autocomplete='list'
           aria-controls={isOpen ? listboxIdRef.current : undefined}
-          aria-activedescendant={activeDescendant >= 0 ? `${listboxIdRef.current}-item-${activeDescendant}` : undefined}
+          aria-activedescendant={
+            state.activeDescendant >= 0 ? `${listboxIdRef.current}-item-${state.activeDescendant}` : undefined
+          }
           onChange={composeHandlers(handleInputChange, onChange)}
           onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
           onFocus={composeHandlers(handleInputFocus, onFocus)}
@@ -252,7 +271,7 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
               id={`${listboxIdRef.current}-item-${idx}`}
               role='option'
               onSelect={handleItemSelect(item, idx)}
-              selected={idx === activeDescendant}
+              selected={idx === state.activeDescendant}
             >
               {itemToString(item)}
             </SelectMenuItem>
