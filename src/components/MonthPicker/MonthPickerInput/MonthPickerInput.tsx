@@ -70,7 +70,7 @@ const MonthInput = (props: MonthInputProps) => {
   )
 }
 
-const format = (value: ReferenceMonth) => {
+export const format = (value: ReferenceMonth) => {
   if (!value || !value.year || value.month == null) {
     return null
   }
@@ -82,6 +82,6 @@ const format = (value: ReferenceMonth) => {
   }
 }
 
-const isValidInput = (value: string) => {
+export const isValidInput = (value: string) => {
   return /\d\d\/\d\d\d\d/.test(value)
 }
