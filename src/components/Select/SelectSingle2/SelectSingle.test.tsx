@@ -46,7 +46,19 @@ it('should render correctly when opened', () => {
   expect(container).toMatchSnapshot()
 })
 
-it.todo('should filter items using `filterItems` prop')
+it('should filter items using `filterItems` prop', () => {
+  const filterItems = jest.fn((filter, { items }) => items.filter((item, index) => index % 2))
+  const { container } = render(<FruitSelect filterItems={filterItems} open />)
+  expect(container.querySelectorAll('li').length).toEqual(fruits.length / 2)
+  expect(container.querySelectorAll('li')[0].textContent).toEqual(fruits[1].label)
+  expect(container.querySelectorAll('li')[1].textContent).toEqual(fruits[3].label)
+  expect(filterItems).toHaveBeenCalledWith('', expect.anything())
+  expect(filterItems).toHaveBeenCalledTimes(1)
+
+  fireEvent.change(container.querySelector('input'), { target: { value: 'ap' } })
+  expect(filterItems).toHaveBeenCalledWith('ap', expect.anything())
+  expect(filterItems).toHaveBeenCalledTimes(2)
+})
 
 describe('menu should be opened', () => {
   it('when select is focused', () => {
