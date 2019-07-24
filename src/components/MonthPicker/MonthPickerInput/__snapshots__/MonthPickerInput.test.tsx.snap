@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MonthPickerInput should render correctly 1`] = `
+exports[`MonthPickerInput Component presentation should render correctly 1`] = `
 .emotion-5 {
   display: block;
 }
