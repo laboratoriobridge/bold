@@ -57,7 +57,11 @@ function Resources() {
               </Text>
             </div>
 
-            <Link href='https://www.figma.com/file/TE9FUDtlgVQ4FWlAPtTagxQU/Bold-Design-System' fontSize={1}>
+            <Link
+              href='https://www.figma.com/file/TE9FUDtlgVQ4FWlAPtTagxQU/Bold-Design-System'
+              fontSize={1}
+              target='_blank'
+            >
               Access Figma file
             </Link>
           </VFlow>

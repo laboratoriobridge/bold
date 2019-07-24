@@ -70,4 +70,10 @@ export default [
     icon: 'archiveFilled',
     href: '/resources',
   },
+  {
+    title: 'Storybook',
+    icon: 'list',
+    target: '_blank',
+    href: 'https://bold.bridge.ufsc.br/storybook',
+  },
 ]

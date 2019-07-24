@@ -11,7 +11,7 @@ export interface SideNavItemProps extends PageLink {
 }
 
 export const SideNavItem = (props: SideNavItemProps) => {
-  const { href, icon, title, children, onNavigate } = props
+  const { href, icon, title, children, onNavigate, ...rest } = props
   const { classes } = useStyles(createStyles)
   const router = useRouter()
   const [isCollapsed, setIsCollapsed] = useState(() => {
@@ -30,7 +30,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
   return (
     <li>
       <ActiveLink href={href} activeClassName='active'>
-        <a className={classes.link} onClick={handleLinkClick}>
+        <a className={classes.link} onClick={handleLinkClick} {...rest}>
           <Icon icon={icon as Icons} className={classes.icon} />
           <span className={classes.title}>{title}</span>
           {children && <Icon icon={isCollapsed ? 'angleUp' : 'angleDown'} className={classes.iconDropdown} />}

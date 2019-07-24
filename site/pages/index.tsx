@@ -1,115 +1,131 @@
 import NextLink from 'next/link'
 
-import { Cell, Grid, Icon, Icons, Theme, useStyles } from '../../lib'
+import { Cell, Grid, Icon, Theme, useStyles, Button, TextProps, Text, HFlow, VFlow, Link } from '../../lib'
+import { keyframes } from '@emotion/core'
 
 export default () => {
   const { classes } = useStyles(createStyles)
+  const renderButtonGettingStarted = (props: any) => <a {...props} href='/getting-started' />
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.headgroup}>
+      <div className={classes.container}>
         <h1 className={classes.title}>
-          <strong>Bold</strong> design system
+          <AnimatedTitle>bold</AnimatedTitle> <span style={{ display: 'inline-block' }}>design system</span>
         </h1>
-        <h2 className={classes.subtitle}>Consistent, accessible, bold.</h2>
-      </div>
 
-      <div className={classes.cards}>
-        <Grid wrap style={classes.cardsGrid}>
-          <Cell xs={3} flexBasis={240}>
-            <Card title='Getting started' icon='rocket' href='/getting-started'>
-              Check our onboarding guide for designers and devs.
-            </Card>
-          </Cell>
-          <Cell xs={3} flexBasis={240}>
-            <Card title='Components' icon='bricksFilled' href='/components/accordion'>
-              Discover our component’s library, usage and code.
-            </Card>
-          </Cell>
-          <Cell xs={3} flexBasis={240}>
-            <Card title='Storybook' icon='starFilled' href='/storybook'>
-              A development environment for UI components.
-            </Card>
-          </Cell>
-        </Grid>
+        <hr className={classes.divider}></hr>
+
+        <VFlow vSpacing={3}>
+          <VFlow>
+            <h2 className={classes.subtitle}>Welcome to bold, bridge’s open source design system</h2>
+
+            <Button
+              render={renderButtonGettingStarted}
+              kind='primary'
+              skin='outline'
+              size='medium'
+              style={{ textDecoration: 'none' }}
+            >
+              <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
+              Getting started
+            </Button>
+          </VFlow>
+
+          <Grid wrap>
+            <Cell xs={12} md={4}>
+              <HFlow alignItems='center' hSpacing={0.5}>
+                <Icon icon='arrowRight' fill='primary' />
+                <h3 className={classes.infoTitle}>Accessible</h3>
+              </HFlow>
+              <Text component='p' style={classes.info}>
+                Bold components were built following the specifications of WCAG AA level, so you can build inclusive
+                digital products to enhance user experience.
+              </Text>
+            </Cell>
+            <Cell xs={12} md={4}>
+              <HFlow alignItems='center' hSpacing={0.5}>
+                <Icon icon='arrowRight' fill='primary' />
+                <h3 className={classes.infoTitle}>Open source</h3>
+              </HFlow>
+              <Text component='p' style={classes.info}>
+                Bold is an open source project, so feel free to contribute, open issues if you find any bugs or
+                implement new features. Find more information on GitHub.
+              </Text>
+            </Cell>
+            <Cell xs={12} md={4}>
+              <HFlow alignItems='center' hSpacing={0.5}>
+                <Icon icon='arrowRight' fill='primary' />
+                <h3 className={classes.infoTitle}>Customizable</h3>
+              </HFlow>
+              <Text component='p' style={classes.info}>
+                By default, Bold exports light and dark themes, but you can create a custom theme and use any primary
+                palette that fits your project.
+              </Text>
+            </Cell>
+          </Grid>
+        </VFlow>
       </div>
     </div>
   )
 }
 
-const createStyles = (theme: Theme) => ({
+function AnimatedTitle(props: TextProps) {
+  const shine = keyframes({
+    to: {
+      backgroundPosition: '200% center',
+    },
+  })
+  const { classes } = useStyles(createStyles, shine)
+
+  return <Text style={classes.animatedTitle} {...props} />
+}
+
+const createStyles = (theme: Theme, shine = '') => ({
   wrapper: {
+    background: theme.pallete.surface.main,
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    background: theme.pallete.surface.main,
   } as React.CSSProperties,
-  headgroup: {
-    padding: 80,
-    marginBottom: 130,
+  container: {
+    padding: '48px 80px',
+    maxWidth: 1056,
+    [theme.breakpoints.down('sm')]: {
+      padding: 40,
+    },
   } as React.CSSProperties,
   title: {
     fontWeight: 'normal',
-    fontSize: 36,
+    fontSize: 56,
+    lineHeight: '108px',
   } as React.CSSProperties,
   subtitle: {
     fontSize: 24,
   } as React.CSSProperties,
-  cards: {
-    background: theme.pallete.primary.c50,
-    padding: 80,
-    flex: 1,
-  },
-  cardsGrid: {
-    marginTop: -227,
-  },
-})
-
-interface CardProps {
-  title: string
-  icon: Icons
-  href: string
-  children: React.ReactNode
-}
-
-function Card(props: CardProps) {
-  const { title, children, icon, href } = props
-  const { classes } = useStyles(createCardStyles)
-
-  return (
-    <NextLink href={href}>
-      <a className={classes.card} href={href}>
-        <Icon icon={icon} style={classes.icon} size={2.5} />
-        <h3 className={classes.title}>{title}</h3>
-        <hr className={classes.divider} />
-        {children}
-      </a>
-    </NextLink>
-  )
-}
-
-const createCardStyles = (theme: Theme) => ({
-  card: {
-    border: `1px solid ${theme.pallete.divider}`,
-    padding: '2rem 1rem',
-    textAlign: 'center',
-    boxShadow: theme.shadows.outer[80],
-    background: theme.pallete.surface.main,
-    borderRadius: 2,
-    display: 'block',
-    textDecoration: 'none',
-    color: theme.pallete.text.main,
-  } as React.CSSProperties,
-  title: {
-    margin: 0,
-    fontSize: 20,
-    marginTop: '1rem',
-  } as React.CSSProperties,
-  icon: {
-    fill: theme.pallete.primary.main,
+  animatedTitle: {
+    fontSize: 132,
+    lineHeight: 1,
+    fontWeight: 'bold',
+    background: 'linear-gradient(80deg, #007AF0 20%, #00B5FF 40%, #00D2F4 60%, #007AF0 80%)',
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
+    WebkitTextFillColor: 'transparent',
+    WebkitBackgroundClip: 'text',
+    backgroundSize: '200% auto',
+    animation: `${shine} 2s linear infinite`,
   } as React.CSSProperties,
   divider: {
-    width: 80,
-    margin: '1rem auto',
+    width: 100,
+    marginBottom: '4rem',
+    marginTop: '2rem',
+  },
+  info: {
+    marginLeft: 32,
+    marginTop: 8,
+    fontSize: '1rem',
+  },
+  infoTitle: {
+    fontSize: '1.5rem',
   },
 })
