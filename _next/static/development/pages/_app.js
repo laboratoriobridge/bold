@@ -48443,13 +48443,17 @@ var createStyles = function createStyles(theme, _ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SideNavItem", function() { return SideNavItem; });
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "../node_modules/next/dist/client/router.js");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../lib */ "../lib/index.js");
-/* harmony import */ var _ActiveLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ActiveLink */ "./components/ActiveLink.tsx");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/extends */ "../node_modules/@babel/runtime-corejs2/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/objectWithoutProperties */ "../node_modules/@babel/runtime-corejs2/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/router */ "../node_modules/next/dist/client/router.js");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../lib */ "../lib/index.js");
+/* harmony import */ var _ActiveLink__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../ActiveLink */ "./components/ActiveLink.tsx");
+
+
 
 var _jsxFileName = "/home/bonetti/workspace/bold/site/components/SideNav/SideNavItem.tsx";
 
@@ -48462,17 +48466,18 @@ var SideNavItem = function SideNavItem(props) {
       icon = props.icon,
       title = props.title,
       children = props.children,
-      onNavigate = props.onNavigate;
+      onNavigate = props.onNavigate,
+      rest = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_2__["default"])(props, ["href", "icon", "title", "children", "onNavigate"]);
 
-  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_3__["useStyles"])(createStyles),
+  var _useStyles = Object(_lib__WEBPACK_IMPORTED_MODULE_5__["useStyles"])(createStyles),
       classes = _useStyles.classes;
 
-  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_2__["useRouter"])();
+  var router = Object(next_router__WEBPACK_IMPORTED_MODULE_4__["useRouter"])();
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(function () {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(function () {
     return href && router && router.pathname.startsWith(href);
   }),
-      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
+      _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_1__["default"])(_useState, 2),
       isCollapsed = _useState2[0],
       setIsCollapsed = _useState2[1];
 
@@ -48487,13 +48492,13 @@ var SideNavItem = function SideNavItem(props) {
     }
   };
 
-  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 31
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_6__["default"], {
     href: href,
     activeClassName: "active",
     __source: {
@@ -48501,15 +48506,16 @@ var SideNavItem = function SideNavItem(props) {
       lineNumber: 32
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     className: classes.link,
-    onClick: handleLinkClick,
+    onClick: handleLinkClick
+  }, rest, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 33
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_5__["Icon"], {
     icon: icon,
     className: classes.icon,
     __source: {
@@ -48517,14 +48523,14 @@ var SideNavItem = function SideNavItem(props) {
       lineNumber: 34
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
+  }), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("span", {
     className: classes.title,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 35
     },
     __self: this
-  }, title), children && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
+  }, title), children && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_lib__WEBPACK_IMPORTED_MODULE_5__["Icon"], {
     icon: isCollapsed ? 'angleUp' : 'angleDown',
     className: classes.iconDropdown,
     __source: {
@@ -48532,7 +48538,7 @@ var SideNavItem = function SideNavItem(props) {
       lineNumber: 36
     },
     __self: this
-  }))), children && isCollapsed && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+  }))), children && isCollapsed && react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("ul", {
     className: classes.sublist,
     __source: {
       fileName: _jsxFileName,
@@ -48540,14 +48546,14 @@ var SideNavItem = function SideNavItem(props) {
     },
     __self: this
   }, children.map(function (sub) {
-    return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+    return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("li", {
       key: sub.href,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 43
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_ActiveLink__WEBPACK_IMPORTED_MODULE_6__["default"], {
       href: sub.href,
       activeClassName: "active",
       __source: {
@@ -48555,7 +48561,7 @@ var SideNavItem = function SideNavItem(props) {
         lineNumber: 44
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("a", {
       className: classes.sublink,
       onClick: onNavigate,
       __source: {
@@ -49201,6 +49207,11 @@ __webpack_require__.r(__webpack_exports__);
   title: 'Resources',
   icon: 'archiveFilled',
   href: '/resources'
+}, {
+  title: 'Storybook',
+  icon: 'list',
+  target: '_blank',
+  href: 'https://bold.bridge.ufsc.br/storybook'
 }]);
 
 /***/ }),
