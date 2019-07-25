@@ -99,6 +99,10 @@ const createStyles = (theme: Theme, shine = '') => ({
     fontWeight: 'normal',
     fontSize: 56,
     lineHeight: '108px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 40,
+      lineHeight: '72px',
+    },
   } as React.CSSProperties,
   subtitle: {
     fontSize: 24,
