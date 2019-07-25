@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ReactGA from 'react-ga'
 
 import { darkTheme, lightTheme, Theme } from '../../lib'
 
@@ -7,12 +8,17 @@ export const useThemeSwitch = (): [Theme, () => Theme] => {
 
   useEffect(() => {
     if (localStorage) {
-      const loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? darkTheme : lightTheme
+      const loadedTheme = loadTheme()
       setCurrentTheme(loadedTheme)
     }
   }, [])
 
   const toggleTheme = () => {
+    ReactGA.event({
+      category: 'Theme',
+      action: `Switched to ${currentTheme === lightTheme ? 'dark' : 'light'} theme`,
+    })
+
     if (currentTheme === lightTheme) {
       setCurrentTheme(darkTheme)
 
@@ -33,4 +39,15 @@ export const useThemeSwitch = (): [Theme, () => Theme] => {
   }
 
   return [currentTheme, toggleTheme]
+}
+
+const loadTheme = () => {
+  let loadedTheme = localStorage.getItem('currentTheme')
+
+  if (!loadedTheme) {
+    loadedTheme = Math.random() < 0.3 ? 'dark' : 'light'
+  }
+
+  localStorage.setItem('currentTheme', loadedTheme)
+  return loadedTheme === 'dark' ? darkTheme : lightTheme
 }

@@ -38,6 +38,8 @@ const BoldApp = (props: any) => {
     <>
       <Head>
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no' />
+        <meta name='google-site-verification' content='9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk' />
+
         <title>Bold Design System</title>
 
         <link href='/static/image/favicon.png' rel='icon' />
