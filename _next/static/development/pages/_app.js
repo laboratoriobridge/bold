@@ -49038,7 +49038,7 @@ var useThemeSwitch = function useThemeSwitch() {
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (localStorage) {
-      var loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? _lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"] : _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"];
+      var loadedTheme = loadTheme();
       setCurrentTheme(loadedTheme);
     }
   }, []);
@@ -49069,6 +49069,17 @@ var useThemeSwitch = function useThemeSwitch() {
   };
 
   return [currentTheme, toggleTheme];
+};
+
+var loadTheme = function loadTheme() {
+  var loadedTheme = localStorage.getItem('currentTheme');
+
+  if (!loadedTheme) {
+    loadedTheme = Math.random() < 0.3 ? 'dark' : 'light';
+  }
+
+  localStorage.setItem('currentTheme', loadedTheme);
+  return loadedTheme === 'dark' ? _lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"] : _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"];
 };
 
 /***/ }),
@@ -49293,7 +49304,6 @@ function (_App) {
 var BoldApp = function BoldApp(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].initialize('UA-139158849-1');
-    react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].ga('require', 'GTM-KGDJDG2');
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].pageview(window.location.pathname + window.location.search);
@@ -49314,7 +49324,7 @@ var BoldApp = function BoldApp(props) {
   return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 39
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -49322,7 +49332,7 @@ var BoldApp = function BoldApp(props) {
     content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 40
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -49330,13 +49340,13 @@ var BoldApp = function BoldApp(props) {
     content: "9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 41
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 43
     },
     __self: this
   }, "Bold Design System"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49344,7 +49354,7 @@ var BoldApp = function BoldApp(props) {
     rel: "icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 45
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49352,7 +49362,7 @@ var BoldApp = function BoldApp(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 46
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49360,7 +49370,7 @@ var BoldApp = function BoldApp(props) {
     href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 47
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49368,13 +49378,13 @@ var BoldApp = function BoldApp(props) {
     href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 48
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Site__WEBPACK_IMPORTED_MODULE_10__["Site"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 51
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
@@ -49382,7 +49392,7 @@ var BoldApp = function BoldApp(props) {
     src: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 53
     },
     __self: this
   }));
