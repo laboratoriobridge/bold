@@ -8,21 +8,7 @@ interface RowType {
   age: number
 }
 
-// Fake data to populate table
-let id = 1
-const allRows: RowType[] = Array(30)
-  .fill(true)
-  .reduce(
-    curr => [
-      ...curr,
-      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },
-      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
-      { id: id++, name: 'ALICE BARBOSA', age: 27 },
-    ],
-    [] as RowType[]
-  )
-
-function Table() {
+function PagedTableExample() {
   const [params, setParams] = useState({
     page: 0,
     size: 10,
@@ -93,4 +79,18 @@ function Table() {
   )
 }
 
-export default Table
+export default PagedTableExample
+
+// Fake data to populate table
+let id = 1
+const allRows: RowType[] = Array(30)
+  .fill(true)
+  .reduce(
+    curr => [
+      ...curr,
+      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },
+      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
+      { id: id++, name: 'ALICE BARBOSA', age: 27 },
+    ],
+    [] as RowType[]
+  )

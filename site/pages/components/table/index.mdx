@@ -6,9 +6,17 @@ The component presents data distributed in lines and columns, displaying them in
 
 ## Best practices
 
-- Columns were ordinating is possible, should present the sort icon in the right side of the label.
-  <!-- - The [Pagination](/components/pagination) component must be presented only when is page navigation (more than 10 items). -->
+- Columns where ordinating is possible, should present the sort icon in the right side of the label.
+- The [Paginator](/components/paginator) component must be presented only for large data sets.
 
-## Example
+## Data table
 
-<Demo src='pages/components/table/TableDefault' />
+A table that automatically generates rows based on `columns` prop and gives support to sorting and loading state.
+
+<Demo src='pages/components/table/DataTable' />
+
+###Paged table
+
+A DataTable that includes a pagination component on the footer.
+
+<Demo src='pages/components/table/PagedTable' />
