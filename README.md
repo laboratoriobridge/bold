@@ -27,7 +27,7 @@ yarn add bold-ui --save
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i" rel="stylesheet" />
 ```
 
-Visit https://bold.bridge.ufsc.br/getting-started/ for more information.
+Visit https://bold.bridge.ufsc.br/getting-started for more information.
 
 ## Usage
 
