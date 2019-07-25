@@ -49024,40 +49024,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/slicedToArray */ "../node_modules/@babel/runtime-corejs2/helpers/esm/slicedToArray.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+/* harmony import */ var react_ga__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-ga */ "../node_modules/react-ga/dist/esm/index.js");
+/* harmony import */ var _lib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../lib */ "../lib/index.js");
+
 
 
 
 var useThemeSwitch = function useThemeSwitch() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(_lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(_lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"]),
       _useState2 = Object(_babel_runtime_corejs2_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_0__["default"])(_useState, 2),
       currentTheme = _useState2[0],
       setCurrentTheme = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     if (localStorage) {
-      var loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? _lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"] : _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"];
+      var loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? _lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"] : _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"];
       setCurrentTheme(loadedTheme);
     }
   }, []);
 
   var toggleTheme = function toggleTheme() {
-    if (currentTheme === _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]) {
-      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"]);
+    react_ga__WEBPACK_IMPORTED_MODULE_2__["default"].event({
+      category: 'Theme',
+      action: "Switched to ".concat(currentTheme === _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"] ? 'dark' : 'light', " theme")
+    });
+
+    if (currentTheme === _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"]) {
+      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"]);
 
       if (localStorage) {
         localStorage.setItem('currentTheme', 'dark');
       }
 
-      return _lib__WEBPACK_IMPORTED_MODULE_2__["darkTheme"];
+      return _lib__WEBPACK_IMPORTED_MODULE_3__["darkTheme"];
     } else {
-      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"]);
+      setCurrentTheme(_lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"]);
 
       if (localStorage) {
         localStorage.setItem('currentTheme', 'light');
       }
 
-      return _lib__WEBPACK_IMPORTED_MODULE_2__["lightTheme"];
+      return _lib__WEBPACK_IMPORTED_MODULE_3__["lightTheme"];
     }
   };
 
@@ -49286,6 +49293,7 @@ function (_App) {
 var BoldApp = function BoldApp(props) {
   Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].initialize('UA-139158849-1');
+    react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].ga('require', 'GTM-KGDJDG2');
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_6__["useEffect"])(function () {
     react_ga__WEBPACK_IMPORTED_MODULE_9__["default"].pageview(window.location.pathname + window.location.search);
@@ -49306,7 +49314,7 @@ var BoldApp = function BoldApp(props) {
   return react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 40
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
@@ -49314,13 +49322,21 @@ var BoldApp = function BoldApp(props) {
     content: "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40
+      lineNumber: 41
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("meta", {
+    name: "google-site-verification",
+    content: "9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 44
     },
     __self: this
   }, "Bold Design System"), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49328,7 +49344,7 @@ var BoldApp = function BoldApp(props) {
     rel: "icon",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 46
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49336,7 +49352,7 @@ var BoldApp = function BoldApp(props) {
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 47
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49344,7 +49360,7 @@ var BoldApp = function BoldApp(props) {
     href: "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 48
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("link", {
@@ -49352,13 +49368,13 @@ var BoldApp = function BoldApp(props) {
     href: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 49
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement(_components_Site__WEBPACK_IMPORTED_MODULE_10__["Site"], Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 52
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement("script", {
@@ -49366,7 +49382,7 @@ var BoldApp = function BoldApp(props) {
     src: "https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
+      lineNumber: 54
     },
     __self: this
   }));
