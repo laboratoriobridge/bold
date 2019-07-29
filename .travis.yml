@@ -5,9 +5,21 @@ node_js:
 cache: yarn
 before_install:
   - yarn global add codecov
-script:
-  - yarn build
-  - yarn test
-  - yarn test:percy
+
+jobs:
+  include:
+    - stage: Build
+      script:
+        - yarn build
+
+    - stage: Integration and Unit tests
+      script:
+        - yarn test
+
+    - stage: Visual regression tests
+      if: type = pull_request
+      script:
+        - yarn test:percy
+
 after_success:
   - codecov
