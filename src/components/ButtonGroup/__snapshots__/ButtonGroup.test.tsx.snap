@@ -38,7 +38,7 @@ exports[`should render correctly 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #7A7B8E;
   border-radius: 4px;
   color: #3A3A47;
   font-size: 0.875rem;
