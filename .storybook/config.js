@@ -4,6 +4,7 @@ import { withKnobs } from '@storybook/addon-knobs'
 import { addDecorator, configure, addParameters } from '@storybook/react'
 import { create } from '@storybook/theming'
 import { withStorybookTheme } from '../src/stories-addons'
+import 'storybook-chromatic'
 
 addParameters({
   options: {
