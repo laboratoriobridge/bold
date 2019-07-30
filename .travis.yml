@@ -8,5 +8,6 @@ before_install:
 script:
   - yarn build
   - yarn test
+  - yarn test:vr
 after_success:
   - codecov
