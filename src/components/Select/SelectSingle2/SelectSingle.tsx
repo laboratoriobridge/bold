@@ -3,12 +3,12 @@ import React from 'react'
 import { Omit } from '../../../util'
 import { composeHandlers } from '../../../util/react'
 import { TextInput, TextInputProps } from '../../TextInput'
+import { SingleSelectHookProps, useSingleSelect } from '../hooks/useSingleSelect'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
-import { SelectStateHookProps, useSelectState } from './useSelectState'
 
 export interface SelectSingleProps<Item = string>
   extends Omit<TextInputProps, 'value' | 'onChange'>,
-    SelectStateHookProps<Item> {
+    SingleSelectHookProps<Item> {
   /**
    * Whether the select is opened or not by default.
    * Use this prop to manually control select opened state.
@@ -61,7 +61,7 @@ export function SelectSingle<Item>(props: SelectSingleProps<Item>) {
     getInputProps,
     getMenuProps,
     getItemProps,
-  } = useSelectState({
+  } = useSingleSelect({
     onStateChange: () => null,
     items: props.items || [],
     ...props,

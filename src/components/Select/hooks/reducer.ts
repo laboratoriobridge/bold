@@ -1,12 +1,12 @@
 import { SelectStateHookProps } from './useSelectState'
 
-export interface SelectState<Item> {
-  value: Item | null
+export interface SelectState<Item, Data extends object> {
   isOpen: boolean
   inputText: string
   filter: string
   visibleItems: Item[]
   activeDescendant: number
+  data: Data
 }
 
 export type SelectActionType =
@@ -21,26 +21,18 @@ export type SelectActionType =
   | 'keydownArrowUp'
   | 'itemClick'
 
-export interface SelectAction<Item> {
+export interface SelectAction<Item, Data extends object> {
   type: SelectActionType
-  props?: SelectStateHookProps<Item>
+  props?: SelectStateHookProps<Item, Data>
   payload?: any
 }
 
-export function createSelectReducer<Item>() {
-  return (state: SelectState<Item>, action: SelectAction<Item>): SelectState<Item> => {
-    const newState = reduce(state, action)
-
-    const { onStateChange } = (action.props || {}) as SelectStateHookProps<Item>
-    onStateChange && onStateChange(newState, action)
-
-    return newState
-  }
-}
-
-function reduce<Item>(state: SelectState<Item>, action: SelectAction<Item>): SelectState<Item> {
-  const props = action.props || ({} as SelectStateHookProps<any>)
-  const { items, itemToString, filterItems } = props
+export default function reducer<Item, Data extends object>(
+  state: SelectState<Item, Data>,
+  action: SelectAction<Item, Data>
+): SelectState<Item, Data> {
+  const props = action.props || ({} as SelectStateHookProps<Item, Data>)
+  const { items, filterItems } = props
 
   switch (action.type) {
     /**
@@ -67,7 +59,6 @@ function reduce<Item>(state: SelectState<Item>, action: SelectAction<Item>): Sel
       return {
         ...state,
         isOpen: false,
-        inputText: state.value ? itemToString(state.value) : '',
         filter: '',
         visibleItems: items,
       }
@@ -81,8 +72,7 @@ function reduce<Item>(state: SelectState<Item>, action: SelectAction<Item>): Sel
     case 'keydownEscape':
       return { ...state, isOpen: false, inputText: '', filter: '', visibleItems: items }
     case 'keydownEnter':
-      const value = state.visibleItems[state.activeDescendant]
-      return { ...state, isOpen: false, value, inputText: itemToString(value), filter: '', visibleItems: items }
+      return { ...state, isOpen: false, filter: '', visibleItems: items }
     case 'keydownArrowDown':
       return {
         ...state,
@@ -101,12 +91,15 @@ function reduce<Item>(state: SelectState<Item>, action: SelectAction<Item>): Sel
      */
 
     case 'itemClick':
-      const item = action.payload as Item
-      return { ...state, isOpen: false, value: item, inputText: itemToString(item), filter: '', visibleItems: items }
+      return { ...state, isOpen: false, filter: '', visibleItems: items }
   }
 }
 
-const calculateActiveDescendant = ({ activeDescendant }: SelectState<any>, increment: number, total: number) => {
+export const calculateActiveDescendant = (
+  { activeDescendant }: SelectState<any, any>,
+  increment: number,
+  total: number
+) => {
   if (total === 0) {
     return -1
   }

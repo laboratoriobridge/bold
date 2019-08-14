@@ -1,18 +1,13 @@
 import { PopperOptions } from 'popper.js'
-import { AriaAttributes, useReducer, useRef } from 'react'
+import { AriaAttributes, useReducer, useRef, Reducer, useCallback } from 'react'
 
 import { useEffectOnChange } from '../../../hooks/useEffectOnChange'
 import usePopper from '../../../hooks/usePopper'
 import { randomStr } from '../../../util/string'
 
-import { createSelectReducer, SelectAction, SelectState } from './selectReducer'
+import selectReducer, { SelectAction, SelectState } from './reducer'
 
-export interface SelectStateHookProps<Item> {
-  /**
-   * The current selected item.
-   */
-  value?: Item
-
+export interface SelectStateHookProps<Item, Data extends object> {
   /**
    * Select options.
    */
@@ -42,7 +37,7 @@ export interface SelectStateHookProps<Item> {
    *
    * @returns The filtered items that should be visible on the select menu.
    */
-  filterItems?(filter: string, props: SelectStateHookProps<Item>): Item[]
+  filterItems?(filter: string, props: SelectStateHookProps<Item, Data>): Item[]
 
   /**
    * Called whenever the select state is changed.
@@ -50,19 +45,30 @@ export interface SelectStateHookProps<Item> {
    * @param newState The new state.
    * @param action The dispatched action.
    */
-  onStateChange?(newState: SelectState<Item>, action: SelectAction<Item>): void
+  onStateChange?(newState: SelectState<Item, Data>, action: SelectAction<Item, Data>): void
+
+  reducer?(state: SelectState<Item, Data>, action: SelectAction<Item, Data>): SelectState<Item, Data>
 }
 
-export function useSelectState<Item>(props: SelectStateHookProps<Item>) {
-  const { items, value, itemToString, popperProps, loading } = props
+export function useSelectState<Item, Data extends object>(props: SelectStateHookProps<Item, Data>) {
+  const { items, popperProps, loading, onStateChange, reducer } = props
 
-  const [state, dispatch] = useReducer(createSelectReducer<Item>(), {
-    value,
+  const hookReducer: Reducer<SelectState<Item, Data>, SelectAction<Item, Data>> = useCallback(
+    (state, action) => {
+      const newState = reducer ? reducer(state, action) : selectReducer(state, action)
+      onStateChange && onStateChange(newState, action)
+      return newState
+    },
+    [onStateChange, reducer]
+  )
+
+  const [state, dispatch] = useReducer(hookReducer, {
     isOpen: false,
     filter: '',
     visibleItems: items,
-    inputText: value ? itemToString(value) : '',
+    inputText: '',
     activeDescendant: -1,
+    data: null,
   })
 
   const listboxIdRef = useRef(`listbox-${randomStr()}`)
