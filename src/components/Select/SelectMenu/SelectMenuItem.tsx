@@ -3,34 +3,20 @@ import React from 'react'
 import { useLocale } from '../../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles, useTheme } from '../../../styles'
 import { Omit } from '../../../util'
-import { composeHandlers } from '../../../util/react'
 import { Spinner } from '../../Spinner'
 
 export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
   style?: ExternalStyles
   selected?: boolean
-  onSelect?(e: React.MouseEvent<HTMLLIElement> | React.KeyboardEvent<HTMLLIElement>): void
 }
 
 export function SelectMenuItem(props: SelectMenuItemProps) {
-  const { style, selected, onSelect, onKeyDown, onClick, ...rest } = props
+  const { style, selected, onKeyDown, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      onSelect && onSelect(e)
-    }
-  }
-
-  const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
-    onSelect && onSelect(e)
-  }
 
   return (
     <li
       className={css(classes.item, selected && classes.selected, style)}
-      onClick={composeHandlers(handleClick, onClick)}
-      onKeyDown={composeHandlers(handleKeyDown, onKeyDown)}
       aria-selected={selected ? 'true' : 'false'}
       {...rest}
     />
