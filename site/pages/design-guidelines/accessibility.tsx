@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Cell, Grid, Icon, Link, Text, VFlow, Theme, useStyles, HFlow } from '../../../lib'
+import { Cell, Icon, Link, Text, VFlow, Theme, useStyles, HFlow } from '../../../lib'
 import { color } from '@storybook/addon-knobs'
 
 function Accessibility() {
@@ -44,12 +44,12 @@ function Accessibility() {
           </Text>
 
           <div className={classes.card}>
-            <HFlow alignItems='center' hSpacing={0.5}>
+            <HFlow alignItems='center' hSpacing={0.25}>
               <Cell>
-                <Icon icon='infoCircleOutline' fill='primary' size={3}></Icon>
+                <Icon icon='heartOutline' fill='primary' size={3}></Icon>
               </Cell>
               <Cell>
-                <Text component='p' fontSize={1}>
+                <Text component='p' fontSize={1.15} color='primary'>
                   Our goal is to build inclusive digital products to enhance the experience of all users. Accessibility
                   means making people independent and ensuring they can complete their tasks in a similar effort and
                   time as someone that does not have a disability.
@@ -152,9 +152,9 @@ const createStyles = (theme: Theme) => ({
   card: {
     color: theme.pallete.gray.c10,
     backgroundColor: theme.pallete.primary.c90,
-    boxShadow: theme.shadows.outer[20],
+    //boxShadow: theme.shadows.outer[20],
     borderRadius: 4,
-    maxWidth: '800px',
+    maxWidth: '850px',
     margin: '1rem 0',
     padding: '0.75rem',
     border: `1px solid ${theme.pallete.primary.c40}`,
@@ -175,7 +175,7 @@ const createStyles = (theme: Theme) => ({
       top: '0.75rem',
       width: 78,
       height: 2,
-      borderTop: `2px solid ${theme.pallete.divider}`,
+      borderTop: `3px solid ${theme.pallete.primary.c80}`,
     },
   } as React.CSSProperties,
 })
