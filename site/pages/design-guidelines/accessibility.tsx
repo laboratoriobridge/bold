@@ -49,7 +49,7 @@ function Accessibility() {
                 <Icon icon='infoCircleOutline' fill='primary' size={3}></Icon>
               </Cell>
               <Cell>
-                <Text component='p' fontSize={1.15}>
+                <Text component='p' fontSize={1}>
                   Our goal is to build inclusive digital products to enhance the experience of all users. Accessibility
                   means making people independent and ensuring they can complete their tasks in a similar effort and
                   time as someone that does not have a disability.
@@ -151,13 +151,13 @@ export default Accessibility
 const createStyles = (theme: Theme) => ({
   card: {
     color: theme.pallete.gray.c10,
-    backgroundColor: theme.pallete.gray.c100,
+    backgroundColor: theme.pallete.primary.c90,
     boxShadow: theme.shadows.outer[20],
     borderRadius: 4,
-    maxWidth: '850px',
+    maxWidth: '800px',
     margin: '1rem 0',
-    padding: '1rem',
-    border: `1px solid ${theme.pallete.primary.c90}`,
+    padding: '0.75rem',
+    border: `1px solid ${theme.pallete.primary.c40}`,
   } as React.CSSProperties,
 
   blockquote: {
