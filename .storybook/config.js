@@ -5,6 +5,14 @@ import { addDecorator, configure, addParameters } from '@storybook/react'
 import { create } from '@storybook/theming'
 import { withStorybookTheme } from '../src/stories-addons'
 import 'storybook-chromatic'
+import timemachine from 'timemachine'
+
+if (process.env.CHROMATIC_APP_CODE) {
+  // Mock current date/time API on chromatic, so stories always use the same timestamp
+  timemachine.config({
+    dateString: 'September 1, 2020 12:00:00',
+  })
+}
 
 addParameters({
   options: {
