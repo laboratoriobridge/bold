@@ -33,3 +33,24 @@ export function setRef<T>(ref: Ref<T>, value: any) {
 export function composeHandlers(...handlers: Array<(...params: any) => void>) {
   return (...args: any[]) => handlers.forEach(handler => handler(...args))
 }
+
+/**
+ * Invokes the native `value` property setter of an element.
+ * From https://github.com/facebook/react/issues/10135#issuecomment-401496776
+ *
+ * @param element The element to invoke the setter on.
+ * @param value The value to be set.
+ */
+export function setNativeValue(element: HTMLElement, value: any) {
+  const prototype = Object.getPrototypeOf(element)
+  const { set: prototypeValueSetter = null } = Object.getOwnPropertyDescriptor(prototype, 'value') || {}
+  const { set: valueSetter = null } = Object.getOwnPropertyDescriptor(element, 'value') || {}
+
+  if (prototypeValueSetter && valueSetter !== prototypeValueSetter) {
+    prototypeValueSetter.call(element, value)
+  } else if (valueSetter) {
+    valueSetter.call(element, value)
+  } else {
+    throw new Error('The given element does not have a value setter')
+  }
+}
