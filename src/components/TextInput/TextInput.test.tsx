@@ -1,6 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
+
 import { TextInput } from './TextInput'
 
 it('should render correctly', () => {
@@ -43,11 +46,28 @@ describe('icon', () => {
 })
 
 describe('clear icon', () => {
+  it('should call "onChange" when clear icon is clicked', () => {
+    const change = jest.fn(event => event.persist())
+    const { queryByTitle } = render(<TextInput defaultValue='Test' onChange={change} />)
+
+    fireEvent.click(queryByTitle('Clear'))
+
+    expect(change).toHaveBeenCalledTimes(1)
+    expect(change.mock.calls[0][0].target.value).toEqual('')
+  })
   it('should not render clear icon when clearable prop is false', () => {
     const { queryByTitle, rerender } = render(<TextInput defaultValue='Test' clearable={true} />)
-    expect(queryByTitle('Limpar')).toBeTruthy()
+    expect(queryByTitle('Clear')).toBeTruthy()
 
     rerender(<TextInput defaultValue='Test' clearable={false} />)
-    expect(queryByTitle('Limpar')).toBeFalsy()
+    expect(queryByTitle('Clear')).toBeFalsy()
+  })
+  it('should allow title customization via locale context', () => {
+    const { queryByTitle } = render(
+      <LocaleContext.Provider value={ptBr}>
+        <TextInput defaultValue='Test' />
+      </LocaleContext.Provider>
+    )
+    expect(queryByTitle(ptBr.input.clear)).toBeTruthy()
   })
 })
