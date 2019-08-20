@@ -75,6 +75,8 @@ const styles = (theme: Theme) => ({
     color: theme.pallete.text.disabled,
     '&:hover': {
       cursor: 'not-allowed',
+      background: 'transparent',
+      color: theme.pallete.text.disabled,
     },
   },
   danger: {

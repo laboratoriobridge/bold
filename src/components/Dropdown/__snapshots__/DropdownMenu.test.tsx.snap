@@ -94,6 +94,8 @@ exports[`should render correctly 1`] = `
 
 .emotion-1:hover {
   cursor: not-allowed;
+  background: transparent;
+  color: #AAAAB9;
 }
 
 .emotion-2 {

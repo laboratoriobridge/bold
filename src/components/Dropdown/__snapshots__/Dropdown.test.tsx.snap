@@ -76,6 +76,8 @@ exports[`should accept popper props 1`] = `
 
 .emotion-2:hover {
   cursor: not-allowed;
+  background: transparent;
+  color: #AAAAB9;
 }
 
 <body>
@@ -175,6 +177,8 @@ exports[`should extend DropdownMenu props 1`] = `
 
 .emotion-2:hover {
   cursor: not-allowed;
+  background: transparent;
+  color: #AAAAB9;
 }
 
 .emotion-3 {
@@ -328,6 +332,8 @@ exports[`should render correctly when open 1`] = `
 
 .emotion-2:hover {
   cursor: not-allowed;
+  background: transparent;
+  color: #AAAAB9;
 }
 
 <body>

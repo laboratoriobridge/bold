@@ -50,7 +50,7 @@ storiesOf('Components|Dropdown', module)
       </DropdownItem>
       <DropdownItem onClick={action('clicked item 3')}>Option</DropdownItem>
       <DropdownDivider />
-      <DropdownItem onClick={action('clicked item 4')} type='danger'>
+      <DropdownItem onClick={action('clicked item 4')} type='danger' disabled>
         Danger Option
       </DropdownItem>
       <DropdownItem onClick={action('clicked item 4')} type='danger'>
