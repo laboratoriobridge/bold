@@ -1,1 +1,0 @@
-{"version":3,"file":"main.b7898b8e762b292e268f.bundle.js","sources":["webpack:///./src/components/Icon/index.ts"],"sourcesContent":["export { Icon, IconProps } from './Icon'\nexport { Icons } from './generated/Icons'\n"],"mappings":"AAAA","sourceRoot":""}

@@ -11115,12 +11115,14 @@ var createStyles = function (theme) { return ({
 /*!**************************************************************************!*\
   !*** ../lib/components/MonthPicker/MonthPickerInput/MonthPickerInput.js ***!
   \**************************************************************************/
-/*! exports provided: MonthPickerInput */
+/*! exports provided: MonthPickerInput, format, isValidInput */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MonthPickerInput", function() { return MonthPickerInput; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "format", function() { return format; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isValidInput", function() { return isValidInput; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var text_mask_addons_dist_createAutoCorrectedDatePipe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! text-mask-addons/dist/createAutoCorrectedDatePipe */ "../node_modules/text-mask-addons/dist/createAutoCorrectedDatePipe.js");
@@ -11205,10 +11207,10 @@ var MonthInput = function (props) {
     return (react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MaskedInput__WEBPACK_IMPORTED_MODULE_2__["MaskedInput"], __assign({ mask: [/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/], pipe: text_mask_addons_dist_createAutoCorrectedDatePipe__WEBPACK_IMPORTED_MODULE_1___default()('mm/yyyy'), placeholder: 'mm/yyyy' }, props)));
 };
 var format = function (value) {
-    if (!value || !value.year || !value.month) {
+    if (!value || !value.year || value.month == null) {
         return null;
     }
-    if (value.month < 10) {
+    if (value.month < 9) {
         return "0" + (value.month + 1) + "/" + value.year;
     }
     else {
@@ -48976,7 +48978,7 @@ var createStyles = function createStyles(theme) {
         top: '0.75rem',
         width: 78,
         height: 2,
-        borderTop: "2px solid ".concat(theme.pallete.divider)
+        borderTop: "2px solid ".concat(theme.pallete.primary.c80)
       }
     },
     table: {
