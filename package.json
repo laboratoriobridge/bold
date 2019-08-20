@@ -121,6 +121,7 @@
     "remark-slug": "5.1.2",
     "sonar-scanner": "3.1.0",
     "storybook-chromatic": "2.0.0",
+    "timemachine": "0.3.0",
     "ts-jest": "24.0.2",
     "tslint": "5.18.0",
     "tslint-config-prettier": "1.18.0",

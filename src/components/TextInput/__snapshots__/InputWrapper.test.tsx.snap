@@ -51,7 +51,7 @@ exports[`should render correctly 1`] = `
       class="emotion-1"
       role="button"
       tabindex="-1"
-      title="Limpar"
+      title="Clear"
     >
       <svg
         aria-hidden="true"
@@ -199,7 +199,7 @@ exports[`should render correctly with button 1`] = `
       class="emotion-1"
       role="button"
       tabindex="-1"
-      title="Limpar"
+      title="Clear"
     >
       <svg
         aria-hidden="true"
@@ -326,7 +326,7 @@ exports[`should render correctly with left position 1`] = `
       class="emotion-1"
       role="button"
       tabindex="-1"
-      title="Limpar"
+      title="Clear"
     >
       <svg
         aria-hidden="true"

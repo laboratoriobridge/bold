@@ -57,7 +57,7 @@ describe('clear', () => {
     const { container } = render(<TimeInput defaultValue='11:00' name='time' onChange={change} />)
     const span = container.querySelector('span')
     fireEvent.click(span)
-    expect(change).toHaveBeenCalledWith(null)
+    expect(change).toHaveBeenCalledWith('')
   })
 })
 
