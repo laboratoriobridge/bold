@@ -20,12 +20,20 @@ export function DropdownItem(props: DropdownItemProps) {
     }
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (disabled) {
+      e.stopPropagation() // avoid closing dropdown menu when disabled item is clicked
+    } else {
+      onClick && onClick(e)
+    }
+  }
+
   const classNames = css(classes.item, type === 'danger' && classes.danger, disabled && classes.disabled)
 
   return (
     <Component
       className={classNames}
-      onClick={!disabled ? onClick : undefined}
+      onClick={handleClick}
       onKeyDown={handleKeyDown}
       role='menuitem'
       aria-disabled={disabled ? true : undefined}
@@ -48,7 +56,8 @@ const styles = (theme: Theme) => ({
     margin: 0,
     textDecoration: 'none',
     cursor: 'pointer',
-    padding: '0.5rem 1rem',
+    padding: 'calc(0.5rem - 2px) 1rem',
+    lineHeight: '1.25rem',
     fontWeight: 'bold',
     outline: 'none',
     fontSize: theme.typography.sizes.button,
@@ -66,6 +75,8 @@ const styles = (theme: Theme) => ({
     color: theme.pallete.text.disabled,
     '&:hover': {
       cursor: 'not-allowed',
+      background: 'transparent',
+      color: theme.pallete.text.disabled,
     },
   },
   danger: {

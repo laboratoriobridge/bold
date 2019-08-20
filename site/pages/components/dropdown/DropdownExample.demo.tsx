@@ -1,21 +1,24 @@
 import { useRef, useState } from 'react'
 
-import { Dropdown, DropdownDivider, DropdownItem, Tooltip } from '../../../../lib'
+import { Button, Dropdown, DropdownDivider, DropdownItem, Tooltip } from '../../../../lib'
 
-function DropMenuDemo() {
-  const anchor = useRef<HTMLButtonElement>()
+export default function DropdownExample() {
+  const buttonRef = useRef<HTMLButtonElement>()
 
   const [open, setOpen] = useState(false)
   const handleClick = () => setOpen(true)
-  const handleClose = () => setOpen(false)
+  const handleClose = () => {
+    setOpen(false)
+    buttonRef.current.focus()
+  }
 
   return (
     <>
-      <button ref={anchor} onClick={handleClick}>
-        Custom achor element
-      </button>
+      <Button innerRef={buttonRef} onClick={handleClick} size='small' kind='primary' skin='outline'>
+        Options
+      </Button>
 
-      <Dropdown anchorRef={anchor} open={open} onClose={handleClose} popperProps={{ placement: 'right-start' }}>
+      <Dropdown anchorRef={buttonRef} open={open} onClose={handleClose} popperProps={{ placement: 'right-start' }}>
         <DropdownItem onClick={console.log}>Item #1</DropdownItem>
         <Tooltip text='Disabled item'>
           <DropdownItem onClick={console.log} disabled>
@@ -33,5 +36,3 @@ function DropMenuDemo() {
     </>
   )
 }
-
-export default DropMenuDemo

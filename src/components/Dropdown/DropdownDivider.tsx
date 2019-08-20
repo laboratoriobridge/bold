@@ -15,5 +15,6 @@ DropdownDivider.defaultProps = {} as Partial<DropdownDividerProps>
 const styles = (theme: Theme) => ({
   divider: {
     borderBottom: `1px solid ${theme.pallete.divider}`,
+    marginBottom: '0.5rem',
   },
 })
