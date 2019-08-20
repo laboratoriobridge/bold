@@ -26,10 +26,12 @@ storiesOf('Components|Dropdown', module)
           autoclose={boolean('autoclose', true)}
         >
           <DropdownItem onClick={action('onClick Item #1')}>Item 1</DropdownItem>
-          <DropdownItem onClick={action('onClick Item #2')}>Item 2</DropdownItem>
+          <DropdownItem onClick={action('onClick Item #2')} component='a' href=''>
+            Item 2 - Link
+          </DropdownItem>
           <Tooltip text='This is disabled'>
-            <DropdownItem onClick={action('onClick Item #3')} component='a' href='/' disabled>
-              Item 3 - Link
+            <DropdownItem onClick={action('onClick Item #3')} disabled>
+              Item 3
             </DropdownItem>
           </Tooltip>
           <DropdownDivider />

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept popper props 1`] = `
-.emotion-2 {
+.emotion-3 {
   list-style: none;
   margin: 0;
   padding: calc(0.5rem - 1px) 0;
@@ -47,6 +47,37 @@ exports[`should accept popper props 1`] = `
   border-radius: 4px;
 }
 
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #3A3A47;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: calc(0.5rem - 2px) 1rem;
+  font-weight: bold;
+  outline: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  display: block;
+  color: #AAAAB9;
+}
+
+.emotion-2:hover {
+  background: #F0F0F5;
+}
+
+.emotion-2:focus {
+  box-shadow: inset 0 0 0 2px #0069D0;
+  border-radius: 4px;
+}
+
+.emotion-2:hover {
+  cursor: not-allowed;
+}
+
 <body>
   <div>
     <button
@@ -58,7 +89,7 @@ exports[`should accept popper props 1`] = `
     </button>
   </div>
   <ul
-    class="emotion-2"
+    class="emotion-3"
     id="dropdown-abc"
     role="menu"
   >
@@ -75,6 +106,14 @@ exports[`should accept popper props 1`] = `
       tabindex="-1"
     >
       Item #2
+    </li>
+    <li
+      aria-disabled="true"
+      class="emotion-2"
+      role="menuitem"
+      tabindex="-1"
+    >
+      Item #3
     </li>
   </ul>
 </body>
@@ -108,6 +147,37 @@ exports[`should extend DropdownMenu props 1`] = `
 }
 
 .emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #3A3A47;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: calc(0.5rem - 2px) 1rem;
+  font-weight: bold;
+  outline: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  display: block;
+  color: #AAAAB9;
+}
+
+.emotion-2:hover {
+  background: #F0F0F5;
+}
+
+.emotion-2:focus {
+  box-shadow: inset 0 0 0 2px #0069D0;
+  border-radius: 4px;
+}
+
+.emotion-2:hover {
+  cursor: not-allowed;
+}
+
+.emotion-3 {
   list-style: none;
   margin: 0;
   padding: calc(0.5rem - 1px) 0;
@@ -140,7 +210,7 @@ exports[`should extend DropdownMenu props 1`] = `
   </div>
   <ul
     aria-label="test"
-    class="emotion-2"
+    class="emotion-3"
     id="dropdown-abc"
     role="menu"
   >
@@ -157,6 +227,14 @@ exports[`should extend DropdownMenu props 1`] = `
       tabindex="-1"
     >
       Item #2
+    </li>
+    <li
+      aria-disabled="true"
+      class="emotion-2"
+      role="menuitem"
+      tabindex="-1"
+    >
+      Item #3
     </li>
   </ul>
 </body>
@@ -175,7 +253,7 @@ exports[`should render correctly when closed 1`] = `
 `;
 
 exports[`should render correctly when open 1`] = `
-.emotion-2 {
+.emotion-3 {
   list-style: none;
   margin: 0;
   padding: calc(0.5rem - 1px) 0;
@@ -221,6 +299,37 @@ exports[`should render correctly when open 1`] = `
   border-radius: 4px;
 }
 
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #3A3A47;
+  margin: 0;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  padding: calc(0.5rem - 2px) 1rem;
+  font-weight: bold;
+  outline: none;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  display: block;
+  color: #AAAAB9;
+}
+
+.emotion-2:hover {
+  background: #F0F0F5;
+}
+
+.emotion-2:focus {
+  box-shadow: inset 0 0 0 2px #0069D0;
+  border-radius: 4px;
+}
+
+.emotion-2:hover {
+  cursor: not-allowed;
+}
+
 <body>
   <div>
     <button
@@ -232,7 +341,7 @@ exports[`should render correctly when open 1`] = `
     </button>
   </div>
   <ul
-    class="emotion-2"
+    class="emotion-3"
     id="dropdown-abc"
     role="menu"
   >
@@ -249,6 +358,14 @@ exports[`should render correctly when open 1`] = `
       tabindex="-1"
     >
       Item #2
+    </li>
+    <li
+      aria-disabled="true"
+      class="emotion-2"
+      role="menuitem"
+      tabindex="-1"
+    >
+      Item #3
     </li>
   </ul>
 </body>

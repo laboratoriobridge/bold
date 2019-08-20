@@ -20,12 +20,20 @@ export function DropdownItem(props: DropdownItemProps) {
     }
   }
 
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    if (disabled) {
+      e.stopPropagation() // avoid closing dropdown menu when disabled item is clicked
+    } else {
+      onClick && onClick(e)
+    }
+  }
+
   const classNames = css(classes.item, type === 'danger' && classes.danger, disabled && classes.disabled)
 
   return (
     <Component
       className={classNames}
-      onClick={!disabled ? onClick : undefined}
+      onClick={handleClick}
       onKeyDown={handleKeyDown}
       role='menuitem'
       aria-disabled={disabled ? true : undefined}

@@ -19,6 +19,7 @@ const createDropdown = (props: Partial<DropdownProps> = {}) => {
       <Dropdown anchorRef={anchorRef} open={false} {...props}>
         <DropdownItem>Item #1</DropdownItem>
         <DropdownItem>Item #2</DropdownItem>
+        <DropdownItem disabled>Item #3</DropdownItem>
       </Dropdown>
     </>
   )
@@ -112,4 +113,12 @@ it('should call "onClose" if menu is clicked and "autoclose" is true', () => {
   rerender(createDropdown({ open: true, onClose: close, autoclose: false }))
   fireEvent.click(document.body.querySelectorAll('li')[0])
   expect(close).toHaveBeenCalledTimes(1)
+})
+
+it('should NOT call "onClose" if item clicked is disabled', () => {
+  const close = jest.fn()
+  render(createDropdown({ open: true, onClose: close }))
+
+  fireEvent.click(document.body.querySelectorAll('li')[2])
+  expect(close).toHaveBeenCalledTimes(0)
 })
