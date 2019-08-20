@@ -25,7 +25,7 @@ export const styles = (theme: Theme) => ({
   root: {
     listStyle: 'none',
     margin: 0,
-    padding: 0,
+    padding: 'calc(0.5rem - 1px) 0',
     whiteSpace: 'nowrap',
     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
     border: `1px solid ${theme.pallete.divider}`,

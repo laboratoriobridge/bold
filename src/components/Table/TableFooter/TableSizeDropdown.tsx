@@ -1,7 +1,7 @@
-import { Interpolation } from 'emotion'
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
-import { DropdownButton, DropdownButtonItemProps } from '../../Dropdown'
+import { Button } from '../../Button'
+import { Dropdown, DropdownItem } from '../../Dropdown'
 import { Icon } from '../../Icon'
 import { Text } from '../../Text'
 
@@ -14,19 +14,34 @@ export interface TableSizeDropdownProps {
 export function TableSizeDropdown(props: TableSizeDropdownProps) {
   const { options, size, onChange } = props
 
-  const items: DropdownButtonItemProps[] = options.map(op => ({
-    content: op,
-    onClick: () => onChange(op),
-  }))
+  const buttonRef = useRef<HTMLButtonElement>()
+  const [open, setOpen] = useState(false)
 
-  const style: Interpolation = {
-    padding: '0 0.25rem',
+  const handleChange = option => () => {
+    onChange(option)
+  }
+
+  const handleClick = () => setOpen(state => !state)
+
+  const handleClose = () => {
+    setOpen(false)
+    buttonRef.current.focus()
   }
 
   return (
-    <DropdownButton items={items} size='small' skin='ghost' style={style}>
-      <Text>{size}</Text>
-      <Icon icon='angleDown' style={{ marginLeft: '0.125rem' }} />
-    </DropdownButton>
+    <>
+      <Button innerRef={buttonRef} onClick={handleClick} size='small' skin='ghost' style={{ padding: '0 0.25rem' }}>
+        <Text>{size}</Text>
+        <Icon icon='angleDown' style={{ marginLeft: '0.125rem' }} />
+      </Button>
+
+      <Dropdown anchorRef={buttonRef} open={open} onClose={handleClose}>
+        {options.map(op => (
+          <DropdownItem key={op} onClick={handleChange(op)}>
+            {op}
+          </DropdownItem>
+        ))}
+      </Dropdown>
+    </>
   )
 }

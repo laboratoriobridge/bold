@@ -4,13 +4,13 @@ exports[`should accept "component" prop to render with different container eleme
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.25rem;
   color: #3A3A47;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: calc(0.5rem - 2px) 1rem;
   font-weight: bold;
   outline: none;
   -webkit-transition: all .2s ease;
@@ -42,13 +42,13 @@ exports[`should accept "component" prop to render with different container eleme
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.25rem;
   color: #3A3A47;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: calc(0.5rem - 2px) 1rem;
   font-weight: bold;
   outline: none;
   -webkit-transition: all .2s ease;
@@ -80,13 +80,13 @@ exports[`should render correctly 1`] = `
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: 1.25rem;
   color: #3A3A47;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
   cursor: pointer;
-  padding: 0.5rem 1rem;
+  padding: calc(0.5rem - 2px) 1rem;
   font-weight: bold;
   outline: none;
   -webkit-transition: all .2s ease;

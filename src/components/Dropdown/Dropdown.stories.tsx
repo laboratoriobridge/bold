@@ -3,66 +3,57 @@ import { boolean } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React, { createRef } from 'react'
 
+import { Button } from '../Button'
 import { Tooltip } from '../Tooltip'
 
 import { Dropdown } from './Dropdown'
-import { DropdownButton } from './DropdownButton'
 import { DropdownDivider } from './DropdownDivider'
 import { DropdownItem } from './DropdownItem'
 import { DropdownMenu } from './DropdownMenu'
 
 storiesOf('Components|Dropdown', module)
-  .add('button', () => (
-    <DropdownButton
-      size='small'
-      items={[
-        { content: 'Item #1', onClick: action('item 1 clicked') },
-        { content: 'Item #2', onClick: action('item 2 clicked'), type: 'danger' },
-        {
-          content: 'Item #3',
-          onClick: action('item 3 clicked'),
-          disabled: true,
-          tooltip: 'This is disabled',
-        },
-      ]}
-    >
-      Options
-    </DropdownButton>
-  ))
-  .add('custom anchor', () => {
+  .add('default', () => {
     const anchorRef = createRef<HTMLButtonElement>()
 
     return (
       <>
-        <span ref={anchorRef}>Anchor element</span>
+        <Button innerRef={anchorRef}>Options</Button>
+
         <Dropdown
           anchorRef={anchorRef}
           open={boolean('open', true)}
           onClose={action('onClose')}
           autoclose={boolean('autoclose', true)}
         >
-          <DropdownItem>Item 1</DropdownItem>
-          <DropdownItem>Item 2</DropdownItem>
-          <DropdownItem component='a' href='/'>
-            Link item
-          </DropdownItem>
+          <DropdownItem onClick={action('onClick Item #1')}>Item 1</DropdownItem>
+          <DropdownItem onClick={action('onClick Item #2')}>Item 2</DropdownItem>
+          <Tooltip text='This is disabled'>
+            <DropdownItem onClick={action('onClick Item #3')} component='a' href='/' disabled>
+              Item 3 - Link
+            </DropdownItem>
+          </Tooltip>
           <DropdownDivider />
-          <DropdownItem>Item #3</DropdownItem>
+          <DropdownItem onClick={action('onClick Item #4')} type='danger'>
+            Item #4
+          </DropdownItem>
         </Dropdown>
       </>
     )
   })
   .add('menu', () => (
     <DropdownMenu>
-      <DropdownItem onClick={action('clicked item 1')}>Item 1</DropdownItem>
+      <DropdownItem onClick={action('clicked item 1')}>Option</DropdownItem>
       <DropdownItem onClick={action('clicked item 2')} disabled>
-        Item 2
+        Option
       </DropdownItem>
-      <DropdownItem onClick={action('clicked item 3')}>Item 3</DropdownItem>
+      <DropdownItem onClick={action('clicked item 3')}>Option</DropdownItem>
       <DropdownDivider />
       <DropdownItem onClick={action('clicked item 4')} type='danger'>
+        Danger Option
+      </DropdownItem>
+      <DropdownItem onClick={action('clicked item 4')} type='danger'>
         <Tooltip text='Some danger option'>
-          <div>Item 4</div>
+          <div>Danger Option</div>
         </Tooltip>
       </DropdownItem>
     </DropdownMenu>

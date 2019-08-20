@@ -3,6 +3,7 @@
 exports[`should render correctly 1`] = `
 .emotion-0 {
   border-bottom: 1px solid #D3D4DD;
+  margin-bottom: 0.5rem;
 }
 
 <div>

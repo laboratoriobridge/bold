@@ -17,7 +17,6 @@ Array [
   "DateInput",
   "DatePickerInput",
   "Dropdown",
-  "DropdownButton",
   "DropdownDivider",
   "DropdownItem",
   "DropdownMenu",
