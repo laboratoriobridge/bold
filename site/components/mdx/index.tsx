@@ -90,7 +90,7 @@ const createStyles = (theme: Theme) => ({
       top: '0.75rem',
       width: 78,
       height: 2,
-      borderTop: `2px solid ${theme.pallete.divider}`,
+      borderTop: `2px solid ${theme.pallete.primary.c80}`,
     },
   } as CSSProperties,
   table: {
