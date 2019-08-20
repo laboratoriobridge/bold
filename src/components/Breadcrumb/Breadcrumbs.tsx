@@ -47,15 +47,12 @@ export const createStyles = (theme: Theme) => ({
     listStyle: 'none',
     padding: 0,
     margin: 0,
-    color: theme.pallete.text.main,
     textDecoration: 'none',
   } as CSSProperties,
   item: {
     display: 'inline-flex',
     alignItems: 'center',
-    '&:hover': {
-      color: theme.pallete.primary.main,
-    },
+    color: theme.pallete.primary.main,
   } as CSSProperties,
   separator: {
     color: theme.pallete.text.disabled,
@@ -63,7 +60,7 @@ export const createStyles = (theme: Theme) => ({
     fontSize: '1rem',
   } as CSSProperties,
   lastItem: {
-    color: theme.pallete.primary.main,
+    color: theme.pallete.text.main,
     pointerEvents: 'none',
   } as CSSProperties,
 })
