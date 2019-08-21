@@ -1,7 +1,7 @@
 {
   "name": "bold-ui",
   "version": "1.0.0-beta.9",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
   "keywords": [
@@ -17,6 +17,7 @@
   "repository": {
     "url": "https://github.com/laboratoriobridge/bold"
   },
+  "sideEffects": false,
   "scripts": {
     "start": "npm run clean && webpack --progress --watch",
     "clean": "rm -rf lib",

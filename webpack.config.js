@@ -11,7 +11,7 @@ const config = {
   entry: './src/index.ts',
   mode: 'development',
   output: {
-    filename: 'main.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'lib'),
     library: 'bold',
     libraryTarget: 'umd',
