@@ -33,6 +33,7 @@
     "icons:clean": "rm -rf ./src/components/Icon/generated",
     "icons:svgr": "svgr --ext tsx --icon --template ./tools/IconTemplate.js --svgo-config svgo.config.json -d ./src/components/Icon/generated ./icons",
     "icons:index": "babel-node ./tools/generateIconsIndex.js",
+    "now-build": "npm run build && npm run site:export",
     "sonar": "sonar-scanner",
     "site:dev": "next site/",
     "site:build": "next build site/",
