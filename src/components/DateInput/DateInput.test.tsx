@@ -1,6 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
+
 import { DateInput } from './DateInput'
 
 it('should render correctly', () => {
@@ -45,6 +48,15 @@ it('should call onInputChange prop with original event when input value is chang
   expect(inputChange).not.toHaveBeenCalled()
   fireEvent.change(input, { target: { value: '1' } })
   expect(inputChange).toHaveBeenCalled()
+})
+
+it('should allow placeholder customization via locale context', () => {
+  const { container } = render(
+    <LocaleContext.Provider value={ptBr}>
+      <DateInput />
+    </LocaleContext.Provider>
+  )
+  expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
 })
 
 describe('clear', () => {

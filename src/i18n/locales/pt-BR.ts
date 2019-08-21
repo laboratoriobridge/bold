@@ -10,6 +10,9 @@ const locale: LocaleConfiguration = {
     nextYear: 'Próximo ano',
     previousYear: 'Ano anterior',
   },
+  dateInput: {
+    placeholder: 'dd/mm/aaaa',
+  },
   formControl: {
     required: 'Campo obrigatório',
   },

@@ -8,6 +8,9 @@ const locale = {
     nextYear: 'Next year',
     previousYear: 'Previous year',
   },
+  dateInput: {
+    placeholder: 'mm/dd/yyyy',
+  },
   formControl: {
     required: 'Required field',
   },
