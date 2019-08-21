@@ -1,17 +1,15 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { addDecorator, configure, addParameters } from '@storybook/react'
+import { addDecorator, addParameters, configure } from '@storybook/react'
 import { create } from '@storybook/theming'
-import { withStorybookTheme } from '../src/stories-addons'
 import 'storybook-chromatic'
-import timemachine from 'timemachine'
+import { withStorybookTheme } from '../src/stories-addons'
+import mockdate from 'mockdate'
 
-if (process.env.CHROMATIC_APP_CODE) {
-  // Mock current date/time API on chromatic, so stories always use the same timestamp
-  timemachine.config({
-    dateString: 'September 1, 2020 12:00:00',
-  })
+if (process.env.STORYBOOK_CHROMATIC) {
+  // Mock date API on chromatic
+  mockdate.set('2020-09-01 12:00:00')
 }
 
 addParameters({
