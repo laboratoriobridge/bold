@@ -1,6 +1,7 @@
 import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
+import { useLocale } from '../../i18n'
 import { Omit } from '../../util/types'
 import { MaskedInput, MaskedInputProps } from '../MaskedInput/MaskedInput'
 
@@ -18,6 +19,7 @@ const formatter = new Intl.DateTimeFormat('pt-br', {
 
 export function DateInput(props: DateInputProps) {
   const { value, onInputChange, ...rest } = props
+  const locale = useLocale()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e || !e.target || !e.target.value) {
@@ -41,7 +43,7 @@ export function DateInput(props: DateInputProps) {
     <MaskedInput
       value={value ? formatter.format(value) : undefined}
       mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-      placeholder='dd/mm/yyyy'
+      placeholder={locale.dateInput.placeholder}
       pipe={createAutoCorrectedDatePipe('dd/mm/yyyy')}
       autoComplete='off'
       {...rest}
