@@ -17,6 +17,7 @@
   "repository": {
     "url": "https://github.com/laboratoriobridge/bold"
   },
+  "sideEffects": false,
   "scripts": {
     "start": "npm run clean && webpack --progress --watch",
     "clean": "rm -rf lib",
