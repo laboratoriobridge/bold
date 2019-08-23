@@ -1,36 +1,41 @@
 import React from 'react'
 
+import { useStyles } from '../../styles'
+
 import { FormError } from './FormError'
 import { FormLabel, FormLabelProps } from './FormLabel'
 
 export interface FormControlProps {
-  id?: string
-  name?: string
+  htmlFor?: string
   label?: FormLabelProps['label']
+  labelId?: FormLabelProps['id']
   required?: FormLabelProps['required']
   error?: React.ReactNode
   children?: React.ReactNode
 }
 
 export function FormControl(props: FormControlProps) {
-  const { children, id, name, error, label, required } = props
-  const styles = {
-    label: {
-      display: 'block',
-      marginBottom: '0.25rem',
-      lineHeight: '20px',
-    },
-    error: {
-      marginTop: '0.25rem',
-      lineHeight: '20px',
-    },
-  }
+  const { children, htmlFor, error, label, labelId, required } = props
+  const { classes } = useStyles(createStyles)
 
   return (
-    <div data-name={name}>
-      {label && <FormLabel required={required} style={styles.label} htmlFor={id} label={label} />}
+    <div className={classes.formControl}>
+      {label && <FormLabel id={labelId} required={required} style={classes.label} htmlFor={htmlFor} label={label} />}
       {children}
-      {error && <FormError style={styles.error}>{error}</FormError>}
+      {error && <FormError style={classes.error}>{error}</FormError>}
     </div>
   )
 }
+
+const createStyles = () => ({
+  formControl: {},
+  label: {
+    display: 'block',
+    marginBottom: '0.25rem',
+    lineHeight: '20px',
+  },
+  error: {
+    marginTop: '0.25rem',
+    lineHeight: '20px',
+  },
+})

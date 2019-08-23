@@ -8,11 +8,11 @@ import { FormControl } from './FormControl'
 
 storiesOf('Components|FormControl', module).add('default', () => (
   <FormControl
-    name={text('name', 'Name')}
     label={text('label', 'Label')}
-    required={boolean('required', true)}
+    htmlFor={text('id', 'input-id')}
     error={text('error', '')}
+    required={boolean('required', true)}
   >
-    <TextInput />
+    <TextInput id={text('id', 'input-id')} />
   </FormControl>
 ))
