@@ -3,20 +3,20 @@ import React, { CSSProperties, useRef } from 'react'
 import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 import { Input, InputProps } from '../../Input/Input'
-import { createStyleParts, InputStatus } from '../../TextInput/TextInputBase'
+import { createStyleParts } from '../../TextField/TextInputBase'
 
 import { SelectMultiItem } from './SelectMultiItem'
 
 export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
   items: T[]
-  status?: InputStatus
+  invalid?: boolean
   clearable?: boolean
   renderItem(item: T): React.ReactNode
   onRemoveItem(item: T): void
 }
 
 export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
-  const { items, renderItem, onRemoveItem, status, disabled, clearable, ...rest } = props
+  const { items, renderItem, onRemoveItem, invalid, disabled, clearable, ...rest } = props
 
   const inputRef = useRef<HTMLInputElement>()
 
@@ -28,7 +28,7 @@ export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
   const handleWrapperClick = () => inputRef.current.focus()
 
   const { classes, css } = useStyles(createStyles, props)
-  const wrapperClasses = css(classes.wrapper, status === 'error' && classes.error, props.disabled && classes.disabled)
+  const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
 
   return (
     <div className={wrapperClasses} onClick={handleWrapperClick}>
@@ -60,9 +60,9 @@ export const createStyles = (theme: Theme, { items, disabled }: SelectMultiInput
       '&:focus-within': !disabled && parts.focus,
     } as CSSProperties,
     disabled: parts.disabled,
-    error: {
-      ...parts.error,
-      '&:focus-within': parts.error[':not(:disabled):focus'],
+    invalid: {
+      ...parts.invalid,
+      '&:focus-within': parts.invalid[':not(:disabled):focus'],
     } as CSSProperties,
     item: {
       marginRight: '0.25rem',

@@ -2,15 +2,15 @@ import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
-import { createStyles as createTextInputBaseStyles, InputStatus } from '../TextInput/TextInputBase'
+import { createStyles as createTextInputBaseStyles } from '../TextField/TextInputBase'
 
 export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'style'> {
-  status?: InputStatus
   style?: ExternalStyles
+  invalid?: boolean
 }
 
 export function TextArea(props: TextAreaProps) {
-  const { status, style, ...rest } = props
+  const { invalid, style, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 
   const valueLength = () => {
@@ -23,11 +23,11 @@ export function TextArea(props: TextAreaProps) {
 
   const currentLength = valueLength() || defaultValueLength() || 0
 
-  const className = css(classes.input, status === 'error' && classes.error, style)
+  const className = css(classes.input, invalid && classes.invalid, style)
 
   return (
     <div>
-      <textarea className={className} {...rest} />
+      <textarea className={className} aria-invalid={invalid ? 'true' : undefined} {...rest} />
       {props.maxLength && (
         <div className={classes.counter}>
           {currentLength}/{props.maxLength} caracteres
@@ -37,10 +37,10 @@ export function TextArea(props: TextAreaProps) {
   )
 }
 
-const createStyles = (theme: Theme, { status }: TextAreaProps) => ({
+const createStyles = (theme: Theme, { invalid }: TextAreaProps) => ({
   ...createTextInputBaseStyles(theme),
   counter: {
     textAlign: 'right',
-    color: status === 'error' && theme.pallete.status.danger.main,
+    color: invalid && theme.pallete.status.danger.main,
   } as CSSProperties,
 })

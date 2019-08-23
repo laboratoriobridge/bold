@@ -98,6 +98,7 @@ Array [
   "TextArea",
   "TextInputBase",
   "TextInput",
+  "TextField",
   "TimeInput",
   "Tooltip",
   "LocaleContext",

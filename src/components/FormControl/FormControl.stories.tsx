@@ -2,7 +2,7 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { TextInput } from '../TextInput'
+import { TextInput } from '../TextField'
 
 import { FormControl } from './FormControl'
 

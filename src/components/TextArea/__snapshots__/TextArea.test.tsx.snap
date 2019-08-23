@@ -526,6 +526,7 @@ exports[`should render with error status 1`] = `
 <div>
   <div>
     <textarea
+      aria-invalid="true"
       class="emotion-0"
       name="input"
     />

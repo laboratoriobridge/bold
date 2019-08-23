@@ -14,7 +14,7 @@ it('should render correctly when disabled', () => {
 })
 
 it('should render with error status', () => {
-  const { container } = render(<TextArea name='input' status='error' />)
+  const { container } = render(<TextArea name='input' invalid />)
   expect(container).toMatchSnapshot()
 })
 

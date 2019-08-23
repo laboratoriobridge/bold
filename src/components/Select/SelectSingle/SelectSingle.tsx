@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
-import { TextInput, TextInputProps } from '../../TextInput/TextInput'
+import { TextInput, TextInputProps } from '../../TextField'
 
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'

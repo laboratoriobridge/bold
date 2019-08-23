@@ -59,7 +59,7 @@ export default [
       { href: '/components/table', title: 'Table' },
       { href: '/components/tabs', title: 'Tabs' },
       { href: '/components/tag', title: 'Tag' },
-      { href: '/components/text-input', title: 'Text Input' },
+      { href: '/components/text-field', title: 'Text Field' },
       { href: '/components/toast', title: 'Toast' },
       { href: '/components/tooltip', title: 'Tooltip' },
       { href: '/components/wizard', title: 'Wizard' },
