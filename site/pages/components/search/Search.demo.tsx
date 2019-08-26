@@ -1,8 +1,8 @@
-import { TextInput } from '../../../../lib'
+import { TextField } from '../../../../lib'
 
 function SearchEx() {
   return (
-    <TextInput
+    <TextField
       name='iconized'
       id='iconized'
       placeholder='Search for anything. Ex: Hercílio Luz'
