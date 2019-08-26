@@ -163,7 +163,7 @@ exports[`should render correctly when closed 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   position: relative;
 }
 
@@ -172,51 +172,55 @@ exports[`should render correctly when closed 1`] = `
     aria-expanded="false"
     aria-haspopup="listbox"
     aria-labelledby="downshift-0-label"
-    class="emotion-6"
+    class="emotion-5"
     role="combobox"
   >
     <div>
       <div
-        class="emotion-4"
+        class="emotion-5"
       >
-        <input
-          aria-autocomplete="list"
-          aria-labelledby="downshift-0-label"
-          autocomplete="off"
-          class="emotion-0"
-          id="downshift-0-input"
-          placeholder="Select a value..."
-          type="text"
-          value=""
-        />
-        <span
-          class="emotion-3"
+        <div
+          class="emotion-4"
         >
-          <button
-            class="emotion-2"
-            tabindex="-1"
-            type="button"
+          <input
+            aria-autocomplete="list"
+            aria-labelledby="downshift-0-label"
+            autocomplete="off"
+            class="emotion-0"
+            id="downshift-0-input"
+            placeholder="Select a value..."
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-3"
           >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-1"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
-                />
-              </svg>
-            </span>
-          </button>
-        </span>
+            <button
+              class="emotion-2"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M16.294 8.294a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5.001-5a1 1 0 0 1 1.414-1.415l4.294 4.294 4.293-4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="emotion-5"
+      class="emotion-6"
     />
   </div>
 </div>
@@ -385,11 +389,11 @@ exports[`should render correctly when opened 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-11 {
+.emotion-12 {
   position: relative;
 }
 
-.emotion-10 {
+.emotion-11 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -405,7 +409,7 @@ exports[`should render correctly when opened 1`] = `
   z-index: 1300;
 }
 
-.emotion-5 {
+.emotion-6 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -413,11 +417,11 @@ exports[`should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-5:last-of-type {
+.emotion-6:last-of-type {
   border-bottom: none;
 }
 
-.emotion-5:hover {
+.emotion-6:hover {
   background: #F0F0F5;
 }
 
@@ -427,62 +431,66 @@ exports[`should render correctly when opened 1`] = `
     aria-haspopup="listbox"
     aria-labelledby="downshift-1-label"
     aria-owns="downshift-1-menu"
-    class="emotion-12"
+    class="emotion-5"
     role="combobox"
   >
     <div>
       <div
-        class="emotion-4"
+        class="emotion-5"
       >
-        <input
-          aria-autocomplete="list"
-          aria-controls="downshift-1-menu"
-          aria-labelledby="downshift-1-label"
-          autocomplete="off"
-          class="emotion-0"
-          id="downshift-1-input"
-          placeholder="Select a value..."
-          type="text"
-          value=""
-        />
-        <span
-          class="emotion-3"
+        <div
+          class="emotion-4"
         >
-          <button
-            class="emotion-2"
-            tabindex="-1"
-            type="button"
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-1-menu"
+            aria-labelledby="downshift-1-label"
+            autocomplete="off"
+            class="emotion-0"
+            id="downshift-1-input"
+            placeholder="Select a value..."
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-3"
           >
-            <span>
-              <svg
-                aria-hidden="true"
-                class="emotion-1"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
-                />
-              </svg>
-            </span>
-          </button>
-        </span>
+            <button
+              class="emotion-2"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
       </div>
     </div>
     <div
-      class="emotion-11"
+      class="emotion-12"
     >
       <ul
         aria-labelledby="downshift-1-label"
-        class="emotion-10"
+        class="emotion-11"
         id="downshift-1-menu"
         role="listbox"
       >
         <li
           aria-selected="false"
-          class="emotion-5"
+          class="emotion-6"
           id="downshift-1-item-0"
           role="option"
         >
@@ -490,7 +498,7 @@ exports[`should render correctly when opened 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="emotion-5"
+          class="emotion-6"
           id="downshift-1-item-1"
           role="option"
         >
@@ -498,7 +506,7 @@ exports[`should render correctly when opened 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="emotion-5"
+          class="emotion-6"
           id="downshift-1-item-2"
           role="option"
         >
@@ -506,7 +514,7 @@ exports[`should render correctly when opened 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="emotion-5"
+          class="emotion-6"
           id="downshift-1-item-3"
           role="option"
         >
@@ -514,7 +522,7 @@ exports[`should render correctly when opened 1`] = `
         </li>
         <li
           aria-selected="false"
-          class="emotion-5"
+          class="emotion-6"
           id="downshift-1-item-4"
           role="option"
         >

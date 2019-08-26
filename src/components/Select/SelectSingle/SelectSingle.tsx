@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
-import { TextInput, TextInputProps } from '../../TextField'
+import { TextField, TextFieldProps } from '../../TextField'
 
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'
@@ -12,7 +12,7 @@ export interface DefaultItemType {
   label: string
 }
 
-export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputProps, 'value' | 'onChange'> {
+export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextFieldProps, 'value' | 'onChange'> {
   value?: T
 
   items: SelectDownshiftProps<T>['items']
@@ -75,7 +75,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         return (
           <div className={css(style)}>
             <div>
-              <TextInput
+              <TextField
                 icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
                 {...rest}
                 onBlur={handleInputBlur(downshift)}

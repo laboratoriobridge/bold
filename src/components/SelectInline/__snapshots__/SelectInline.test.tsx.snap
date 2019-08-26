@@ -5,11 +5,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   display: inline-block;
 }
 
-.emotion-17 {
+.emotion-18 {
   display: inline-block;
 }
 
-.emotion-17 [data-visible] {
+.emotion-18 [data-visible] {
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
 }
 
@@ -82,7 +82,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-16 {
+.emotion-17 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -91,20 +91,20 @@ exports[`SelectInline should render correctly when closed 1`] = `
   opacity: 0;
 }
 
-.emotion-15 {
+.emotion-16 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-15 > div:first-of-type {
+.emotion-16 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-15 ul > li:first-of-type {
+.emotion-16 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-15 div > ul {
+.emotion-16 div > ul {
   position: static;
   box-shadow: none;
   border: none;
@@ -268,11 +268,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   box-shadow: none;
 }
 
-.emotion-14 {
+.emotion-15 {
   position: relative;
 }
 
-.emotion-13 {
+.emotion-14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -288,7 +288,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   z-index: 1300;
 }
 
-.emotion-9 {
+.emotion-10 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -296,17 +296,17 @@ exports[`SelectInline should render correctly when closed 1`] = `
   transition: .1s ease;
 }
 
-.emotion-9:last-of-type {
+.emotion-10:last-of-type {
   border-bottom: none;
 }
 
-.emotion-9:hover {
+.emotion-10:hover {
   background: #F0F0F5;
 }
 
 <div>
   <div
-    class="emotion-17"
+    class="emotion-18"
   >
     <div
       class="emotion-3"
@@ -337,7 +337,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
       </button>
     </div>
     <div
-      class="emotion-16"
+      class="emotion-17"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
@@ -346,460 +346,23 @@ exports[`SelectInline should render correctly when closed 1`] = `
         aria-haspopup="listbox"
         aria-labelledby="downshift-0-label"
         aria-owns="downshift-0-menu"
-        class="emotion-15"
+        class="emotion-16"
         role="combobox"
       >
         <div>
           <div
-            class="emotion-8"
+            class="emotion-9"
           >
-            <input
-              aria-autocomplete="list"
-              aria-controls="downshift-0-menu"
-              aria-labelledby="downshift-0-label"
-              autocomplete="off"
-              class="emotion-4"
-              id="downshift-0-input"
-              placeholder="Search for a value"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-7"
-            >
-              <button
-                class="emotion-6"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-5"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
-        </div>
-        <div
-          class="emotion-14"
-        >
-          <ul
-            aria-labelledby="downshift-0-label"
-            class="emotion-13"
-            id="downshift-0-menu"
-            role="listbox"
-          >
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-0"
-              role="option"
-            >
-              Value #001
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-1"
-              role="option"
-            >
-              Value #002
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-2"
-              role="option"
-            >
-              Value #003
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-3"
-              role="option"
-            >
-              Value #004
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`SelectInline should render correctly when opened 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-17 {
-  display: inline-block;
-}
-
-.emotion-17 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
-.emotion-2 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-2 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-2:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-2:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-}
-
-.emotion-5 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.emotion-15 {
-  border: 1px solid #D3D4DD;
-  background-color: #FFFFFF;
-}
-
-.emotion-15 > div:first-of-type {
-  padding: 0.5rem;
-}
-
-.emotion-15 ul > li:first-of-type {
-  border-top: 1px solid #D3D4DD;
-}
-
-.emotion-15 div > ul {
-  position: static;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
-
-.emotion-8 {
-  position: relative;
-}
-
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
-.emotion-7 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-4 {
-  background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
-  border-radius: 2px;
-  color: #3A3A47;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-}
-
-.emotion-4[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-4:required {
-  box-shadow: none;
-}
-
-.emotion-4::-webkit-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::-moz-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:-ms-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-4:not(:disabled):hover {
-  border-color: #8F8FA2;
-}
-
-.emotion-4:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-4:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-6 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-6:focus {
-  box-shadow: none;
-}
-
-.emotion-14 {
-  position: relative;
-}
-
-.emotion-13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: absolute;
-  width: 100%;
-  z-index: 1300;
-}
-
-.emotion-9 {
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.325rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-9:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-9:hover {
-  background: #F0F0F5;
-}
-
-.emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: visible;
-  opacity: 1;
-}
-
-<body>
-  <div>
-    <div
-      class="emotion-17"
-    >
-      <div
-        class="emotion-3"
-      >
-        <button
-          class="emotion-2"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-0"
-            >
-              Value #001
-            </span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-16"
-        data-visible="true"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-      >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-3-label"
-          aria-owns="downshift-3-menu"
-          class="emotion-15"
-          role="combobox"
-        >
-          <div>
             <div
               class="emotion-8"
             >
               <input
                 aria-autocomplete="list"
-                aria-controls="downshift-3-menu"
-                aria-labelledby="downshift-3-label"
+                aria-controls="downshift-0-menu"
+                aria-labelledby="downshift-0-label"
                 autocomplete="off"
                 class="emotion-4"
-                id="downshift-3-input"
+                id="downshift-0-input"
                 placeholder="Search for a value"
                 type="text"
                 value=""
@@ -830,66 +393,66 @@ exports[`SelectInline should render correctly when opened 1`] = `
               </span>
             </div>
           </div>
-          <div
+        </div>
+        <div
+          class="emotion-15"
+        >
+          <ul
+            aria-labelledby="downshift-0-label"
             class="emotion-14"
+            id="downshift-0-menu"
+            role="listbox"
           >
-            <ul
-              aria-labelledby="downshift-3-label"
-              class="emotion-13"
-              id="downshift-3-menu"
-              role="listbox"
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-0-item-0"
+              role="option"
             >
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-3-item-0"
-                role="option"
-              >
-                Value #001
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-3-item-1"
-                role="option"
-              >
-                Value #002
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-3-item-2"
-                role="option"
-              >
-                Value #003
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-3-item-3"
-                role="option"
-              >
-                Value #004
-              </li>
-            </ul>
-          </div>
+              Value #001
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-0-item-1"
+              role="option"
+            >
+              Value #002
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-0-item-2"
+              role="option"
+            >
+              Value #003
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-0-item-3"
+              role="option"
+            >
+              Value #004
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</body>
+</div>
 `;
 
-exports[`SelectInline should render correctly with button placeholder 1`] = `
+exports[`SelectInline should render correctly when opened 1`] = `
 .emotion-3 {
   display: inline-block;
 }
 
-.emotion-17 {
+.emotion-18 {
   display: inline-block;
 }
 
-.emotion-17 [data-visible] {
+.emotion-18 [data-visible] {
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
 }
 
@@ -963,28 +526,19 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
 }
 
 .emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-15 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-15 > div:first-of-type {
+.emotion-16 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-15 ul > li:first-of-type {
+.emotion-16 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-15 div > ul {
+.emotion-16 div > ul {
   position: static;
   box-shadow: none;
   border: none;
@@ -1148,11 +702,11 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   box-shadow: none;
 }
 
-.emotion-14 {
+.emotion-15 {
   position: relative;
 }
 
-.emotion-13 {
+.emotion-14 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1168,7 +722,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   z-index: 1300;
 }
 
-.emotion-9 {
+.emotion-10 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -1176,17 +730,471 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   transition: .1s ease;
 }
 
-.emotion-9:last-of-type {
+.emotion-10:last-of-type {
   border-bottom: none;
 }
 
-.emotion-9:hover {
+.emotion-10:hover {
+  background: #F0F0F5;
+}
+
+.emotion-17 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1200;
+  padding: 0rem;
+  visibility: visible;
+  opacity: 1;
+}
+
+<body>
+  <div>
+    <div
+      class="emotion-18"
+    >
+      <div
+        class="emotion-3"
+      >
+        <button
+          class="emotion-2"
+          type="button"
+        >
+          <span>
+            <span
+              class="emotion-0"
+            >
+              Value #001
+            </span>
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M7.707 14.707a1 1 0 1 1-1.414-1.414l5-5a1 1 0 0 1 1.414 0l5.001 5.001a1 1 0 0 1-1.414 1.414L12 10.414l-4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-17"
+        data-visible="true"
+        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+      >
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-3-label"
+          aria-owns="downshift-3-menu"
+          class="emotion-16"
+          role="combobox"
+        >
+          <div>
+            <div
+              class="emotion-9"
+            >
+              <div
+                class="emotion-8"
+              >
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="downshift-3-menu"
+                  aria-labelledby="downshift-3-label"
+                  autocomplete="off"
+                  class="emotion-4"
+                  id="downshift-3-input"
+                  placeholder="Search for a value"
+                  type="text"
+                  value=""
+                />
+                <span
+                  class="emotion-7"
+                >
+                  <button
+                    class="emotion-6"
+                    tabindex="-1"
+                    type="button"
+                  >
+                    <span>
+                      <svg
+                        aria-hidden="true"
+                        class="emotion-5"
+                        height="1em"
+                        role="img"
+                        viewBox="0 0 24 24"
+                        width="1em"
+                      >
+                        <path
+                          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="emotion-15"
+          >
+            <ul
+              aria-labelledby="downshift-3-label"
+              class="emotion-14"
+              id="downshift-3-menu"
+              role="listbox"
+            >
+              <li
+                aria-selected="false"
+                class="emotion-10"
+                id="downshift-3-item-0"
+                role="option"
+              >
+                Value #001
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-10"
+                id="downshift-3-item-1"
+                role="option"
+              >
+                Value #002
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-10"
+                id="downshift-3-item-2"
+                role="option"
+              >
+                Value #003
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-10"
+                id="downshift-3-item-3"
+                role="option"
+              >
+                Value #004
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`SelectInline should render correctly with button placeholder 1`] = `
+.emotion-3 {
+  display: inline-block;
+}
+
+.emotion-18 {
+  display: inline-block;
+}
+
+.emotion-18 [data-visible] {
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+}
+
+.emotion-2 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
+}
+
+.emotion-5 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-17 {
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+  z-index: 1200;
+  padding: 0rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.emotion-16 {
+  border: 1px solid #D3D4DD;
+  background-color: #FFFFFF;
+}
+
+.emotion-16 > div:first-of-type {
+  padding: 0.5rem;
+}
+
+.emotion-16 ul > li:first-of-type {
+  border-top: 1px solid #D3D4DD;
+}
+
+.emotion-16 div > ul {
+  position: static;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-8 input {
+  padding-right: 3rem;
+}
+
+.emotion-7 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-4 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-4[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-4[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-4:required {
+  box-shadow: none;
+}
+
+.emotion-4::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-4::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-4:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-4::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-4:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-4:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-4:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-4:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5rem;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-6 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-6:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-6:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-6:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-6:focus {
+  box-shadow: none;
+}
+
+.emotion-15 {
+  position: relative;
+}
+
+.emotion-14 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  width: 100%;
+  z-index: 1300;
+}
+
+.emotion-10 {
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.325rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-10:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-10:hover {
   background: #F0F0F5;
 }
 
 <div>
   <div
-    class="emotion-17"
+    class="emotion-18"
   >
     <div
       class="emotion-3"
@@ -1218,7 +1226,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
       </button>
     </div>
     <div
-      class="emotion-16"
+      class="emotion-17"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
@@ -1227,62 +1235,66 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
         aria-haspopup="listbox"
         aria-labelledby="downshift-1-label"
         aria-owns="downshift-1-menu"
-        class="emotion-15"
+        class="emotion-16"
         role="combobox"
       >
         <div>
           <div
-            class="emotion-8"
+            class="emotion-9"
           >
-            <input
-              aria-autocomplete="list"
-              aria-controls="downshift-1-menu"
-              aria-labelledby="downshift-1-label"
-              autocomplete="off"
-              class="emotion-4"
-              id="downshift-1-input"
-              placeholder="Search for a value"
-              type="text"
-              value=""
-            />
-            <span
-              class="emotion-7"
+            <div
+              class="emotion-8"
             >
-              <button
-                class="emotion-6"
-                tabindex="-1"
-                type="button"
+              <input
+                aria-autocomplete="list"
+                aria-controls="downshift-1-menu"
+                aria-labelledby="downshift-1-label"
+                autocomplete="off"
+                class="emotion-4"
+                id="downshift-1-input"
+                placeholder="Search for a value"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-7"
               >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-5"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
+                <button
+                  class="emotion-6"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-5"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
           </div>
         </div>
         <div
-          class="emotion-14"
+          class="emotion-15"
         >
           <ul
             aria-labelledby="downshift-1-label"
-            class="emotion-13"
+            class="emotion-14"
             id="downshift-1-menu"
             role="listbox"
           >
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-10"
               id="downshift-1-item-0"
               role="option"
             >
@@ -1290,7 +1302,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-10"
               id="downshift-1-item-1"
               role="option"
             >
@@ -1298,7 +1310,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-10"
               id="downshift-1-item-2"
               role="option"
             >
@@ -1306,7 +1318,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-10"
               id="downshift-1-item-3"
               role="option"
             >
