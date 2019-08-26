@@ -1,17 +1,16 @@
-import { Cell, FormControl, Grid, TextArea } from '../../../../lib'
+import { Cell, Grid, TextArea } from '../../../../lib'
 
 function TextAreaDemo() {
   return (
     <Grid>
-      <Cell size={6}>
-        <FormControl label='Post body' required>
-          <TextArea name='empty' placeholder='Enter the body of your post' required />
-        </FormControl>
+      <Cell xs={12} md={12}>
+        <TextArea label='Post body' name='empty' placeholder='Enter the body of your post' required />
       </Cell>
-      <Cell size={6}>
-        <FormControl label='Comment'>
-          <TextArea name='disabled' disabled />
-        </FormControl>
+      <Cell xs={12} md={6}>
+        <TextArea label='Comment' name='disabled' disabled />
+      </Cell>
+      <Cell xs={12} md={6}>
+        <TextArea label='Comment' name='comment' errorText='Invalid comment' />
       </Cell>
     </Grid>
   )

@@ -18,10 +18,12 @@ describe('error', () => {
     const { queryByText } = render(<TextField errorText='Some error' />)
     expect(queryByText('Some error')).toBeTruthy()
   })
+
   it('input should have an "aria-invalid=true" attribute when errorText is provided', () => {
     const { container } = render(<TextField errorText='Some error' />)
     expect(container.querySelector('input').getAttribute('aria-invalid')).toEqual('true')
   })
+
   it('input should have an "aria-errormessage" attribute when errorText is provided', () => {
     const { container } = render(<TextField errorText='Some error' />)
     expect(container.querySelector('input').getAttribute('aria-errormessage')).toEqual('error-abc')
