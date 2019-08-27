@@ -91,20 +91,20 @@ exports[`SelectInline should render correctly when closed 1`] = `
   opacity: 0;
 }
 
-.emotion-16 {
+.emotion-15 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-16 > div:first-of-type {
+.emotion-15 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-16 ul > li:first-of-type {
+.emotion-15 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-16 div > ul {
+.emotion-15 div > ul {
   position: static;
   box-shadow: none;
   border: none;
@@ -268,11 +268,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-14 {
   position: relative;
 }
 
-.emotion-14 {
+.emotion-13 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -288,7 +288,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   z-index: 1300;
 }
 
-.emotion-10 {
+.emotion-9 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -296,11 +296,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   transition: .1s ease;
 }
 
-.emotion-10:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
@@ -342,24 +342,23 @@ exports[`SelectInline should render correctly when closed 1`] = `
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
       <div
-        aria-expanded="true"
-        aria-haspopup="listbox"
-        aria-labelledby="downshift-0-label"
-        aria-owns="downshift-0-menu"
         class="emotion-16"
-        role="combobox"
       >
-        <div>
-          <div
-            class="emotion-9"
-          >
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-0-label"
+          aria-owns="downshift-0-menu"
+          class="emotion-15"
+          role="combobox"
+        >
+          <div>
             <div
               class="emotion-8"
             >
               <input
                 aria-autocomplete="list"
                 aria-controls="downshift-0-menu"
-                aria-labelledby="downshift-0-label"
                 autocomplete="off"
                 class="emotion-4"
                 id="downshift-0-input"
@@ -393,49 +392,49 @@ exports[`SelectInline should render correctly when closed 1`] = `
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="emotion-15"
-        >
-          <ul
-            aria-labelledby="downshift-0-label"
+          <div
             class="emotion-14"
-            id="downshift-0-menu"
-            role="listbox"
           >
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-0-item-0"
-              role="option"
+            <ul
+              aria-labelledby="downshift-0-label"
+              class="emotion-13"
+              id="downshift-0-menu"
+              role="listbox"
             >
-              Value #001
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-0-item-1"
-              role="option"
-            >
-              Value #002
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-0-item-2"
-              role="option"
-            >
-              Value #003
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-0-item-3"
-              role="option"
-            >
-              Value #004
-            </li>
-          </ul>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-0-item-0"
+                role="option"
+              >
+                Value #001
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-0-item-1"
+                role="option"
+              >
+                Value #002
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-0-item-2"
+                role="option"
+              >
+                Value #003
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-0-item-3"
+                role="option"
+              >
+                Value #004
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -525,20 +524,20 @@ exports[`SelectInline should render correctly when opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-16 {
+.emotion-15 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-16 > div:first-of-type {
+.emotion-15 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-16 ul > li:first-of-type {
+.emotion-15 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-16 div > ul {
+.emotion-15 div > ul {
   position: static;
   box-shadow: none;
   border: none;
@@ -702,11 +701,11 @@ exports[`SelectInline should render correctly when opened 1`] = `
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-14 {
   position: relative;
 }
 
-.emotion-14 {
+.emotion-13 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -722,7 +721,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   z-index: 1300;
 }
 
-.emotion-10 {
+.emotion-9 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -730,11 +729,11 @@ exports[`SelectInline should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-10:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
@@ -786,24 +785,23 @@ exports[`SelectInline should render correctly when opened 1`] = `
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-3-label"
-          aria-owns="downshift-3-menu"
           class="emotion-16"
-          role="combobox"
         >
-          <div>
-            <div
-              class="emotion-9"
-            >
+          <div
+            aria-expanded="true"
+            aria-haspopup="listbox"
+            aria-labelledby="downshift-3-label"
+            aria-owns="downshift-3-menu"
+            class="emotion-15"
+            role="combobox"
+          >
+            <div>
               <div
                 class="emotion-8"
               >
                 <input
                   aria-autocomplete="list"
                   aria-controls="downshift-3-menu"
-                  aria-labelledby="downshift-3-label"
                   autocomplete="off"
                   class="emotion-4"
                   id="downshift-3-input"
@@ -837,49 +835,49 @@ exports[`SelectInline should render correctly when opened 1`] = `
                 </span>
               </div>
             </div>
-          </div>
-          <div
-            class="emotion-15"
-          >
-            <ul
-              aria-labelledby="downshift-3-label"
+            <div
               class="emotion-14"
-              id="downshift-3-menu"
-              role="listbox"
             >
-              <li
-                aria-selected="false"
-                class="emotion-10"
-                id="downshift-3-item-0"
-                role="option"
+              <ul
+                aria-labelledby="downshift-3-label"
+                class="emotion-13"
+                id="downshift-3-menu"
+                role="listbox"
               >
-                Value #001
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-10"
-                id="downshift-3-item-1"
-                role="option"
-              >
-                Value #002
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-10"
-                id="downshift-3-item-2"
-                role="option"
-              >
-                Value #003
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-10"
-                id="downshift-3-item-3"
-                role="option"
-              >
-                Value #004
-              </li>
-            </ul>
+                <li
+                  aria-selected="false"
+                  class="emotion-9"
+                  id="downshift-3-item-0"
+                  role="option"
+                >
+                  Value #001
+                </li>
+                <li
+                  aria-selected="false"
+                  class="emotion-9"
+                  id="downshift-3-item-1"
+                  role="option"
+                >
+                  Value #002
+                </li>
+                <li
+                  aria-selected="false"
+                  class="emotion-9"
+                  id="downshift-3-item-2"
+                  role="option"
+                >
+                  Value #003
+                </li>
+                <li
+                  aria-selected="false"
+                  class="emotion-9"
+                  id="downshift-3-item-3"
+                  role="option"
+                >
+                  Value #004
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -979,20 +977,20 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   opacity: 0;
 }
 
-.emotion-16 {
+.emotion-15 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-16 > div:first-of-type {
+.emotion-15 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-16 ul > li:first-of-type {
+.emotion-15 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-16 div > ul {
+.emotion-15 div > ul {
   position: static;
   box-shadow: none;
   border: none;
@@ -1156,11 +1154,11 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-14 {
   position: relative;
 }
 
-.emotion-14 {
+.emotion-13 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1176,7 +1174,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   z-index: 1300;
 }
 
-.emotion-10 {
+.emotion-9 {
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.325rem 0.5rem;
@@ -1184,11 +1182,11 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   transition: .1s ease;
 }
 
-.emotion-10:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
@@ -1231,24 +1229,23 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
       <div
-        aria-expanded="true"
-        aria-haspopup="listbox"
-        aria-labelledby="downshift-1-label"
-        aria-owns="downshift-1-menu"
         class="emotion-16"
-        role="combobox"
       >
-        <div>
-          <div
-            class="emotion-9"
-          >
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-labelledby="downshift-1-label"
+          aria-owns="downshift-1-menu"
+          class="emotion-15"
+          role="combobox"
+        >
+          <div>
             <div
               class="emotion-8"
             >
               <input
                 aria-autocomplete="list"
                 aria-controls="downshift-1-menu"
-                aria-labelledby="downshift-1-label"
                 autocomplete="off"
                 class="emotion-4"
                 id="downshift-1-input"
@@ -1282,49 +1279,49 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
               </span>
             </div>
           </div>
-        </div>
-        <div
-          class="emotion-15"
-        >
-          <ul
-            aria-labelledby="downshift-1-label"
+          <div
             class="emotion-14"
-            id="downshift-1-menu"
-            role="listbox"
           >
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-1-item-0"
-              role="option"
+            <ul
+              aria-labelledby="downshift-1-label"
+              class="emotion-13"
+              id="downshift-1-menu"
+              role="listbox"
             >
-              Value #001
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-1-item-1"
-              role="option"
-            >
-              Value #002
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-1-item-2"
-              role="option"
-            >
-              Value #003
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-10"
-              id="downshift-1-item-3"
-              role="option"
-            >
-              Value #004
-            </li>
-          </ul>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-1-item-0"
+                role="option"
+              >
+                Value #001
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-1-item-1"
+                role="option"
+              >
+                Value #002
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-1-item-2"
+                role="option"
+              >
+                Value #003
+              </li>
+              <li
+                aria-selected="false"
+                class="emotion-9"
+                id="downshift-1-item-3"
+                role="option"
+              >
+                Value #004
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

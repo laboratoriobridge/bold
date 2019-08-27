@@ -1,8 +1,10 @@
 import React from 'react'
 
+import { useFormControl } from '../../../hooks/useFormControl'
 import { Omit } from '../../../util'
 import { Checkbox } from '../../Checkbox/Checkbox'
 import { HFlow } from '../../Flow'
+import { FormControl } from '../../FormControl'
 import { DefaultItemType } from '../SelectSingle'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from '../SelectSingle/SelectDownshiftMenu'
 
@@ -12,6 +14,9 @@ import { SelectMultiInput, SelectMultiInputProps } from './SelectMultiInput'
 export interface SelectMultiProps<T = DefaultItemType>
   extends Omit<SelectMultiInputProps<T>, 'renderItem' | 'value' | 'onChange' | 'onRemoveItem'> {
   value?: T[]
+
+  label?: string
+  errorText?: string
 
   // TODO!
   clearable?: boolean
@@ -27,6 +32,7 @@ export interface SelectMultiProps<T = DefaultItemType>
   renderItem?: SelectDownshiftMenuProps<T>['renderItem']
   components?: SelectDownshiftMenuProps<T>['components']
 }
+
 export function SelectMulti<T>(props: SelectMultiProps<T>) {
   const {
     value,
@@ -40,6 +46,8 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
     renderItem: externalRenderItem,
     components,
     placeholder,
+    label,
+    errorText,
     ...rest
   } = props
 
@@ -60,51 +68,61 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
     this.props.onBlur && this.props.onBlur(e)
   }
 
-  return (
-    <MultiDownshift<T>
-      selectedItems={value || []}
-      items={items}
-      itemToString={itemToString}
-      onChange={onChange}
-      isOpen={isOpen}
-      itemIsEqual={itemIsEqual}
-      onFilterChange={onFilterChange}
-    >
-      {downshift => {
-        const {
-          // isOpen,
-          getInputProps,
-          selectedItems,
-          removeItem,
-          inputValue,
-          visibleItems,
-        } = downshift
+  const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
+  const formControlProps = getFormControlProps()
+  const inputProps = getFormControlInputProps()
+  const invalid = inputProps['aria-invalid']
 
-        return (
-          <div>
-            <SelectMultiInput<T>
-              items={selectedItems}
-              {...rest}
-              placeholder={!selectedItems || selectedItems.length === 0 ? placeholder : undefined}
-              onBlur={handleInputBlur(downshift)}
-              onFocus={handleInputFocus(downshift)}
-              onClick={handleInputClick(downshift)}
-              onRemoveItem={handleItemRemove(removeItem)}
-              renderItem={itemToString}
-              // icon={isOpen ? 'triangleUp' : 'triangleDown'}
-              // onIconClick={this.handleInputIconClick(downshift)}
-              {...getInputProps()}
-              value={inputValue ? inputValue : ''}
-            />
-            <SelectDownshiftMenu
-              downshift={downshift}
-              items={visibleItems}
-              loading={loading}
-              renderItem={renderItem(downshift)}
-            />
-          </div>
-        )
-      }}
-    </MultiDownshift>
+  return (
+    <FormControl {...formControlProps}>
+      <MultiDownshift<T>
+        selectedItems={value || []}
+        items={items}
+        itemToString={itemToString}
+        onChange={onChange}
+        isOpen={isOpen}
+        itemIsEqual={itemIsEqual}
+        onFilterChange={onFilterChange}
+        labelId={formControlProps.labelId}
+      >
+        {downshift => {
+          const {
+            // isOpen,
+            getInputProps,
+            selectedItems,
+            removeItem,
+            inputValue,
+            visibleItems,
+          } = downshift
+
+          return (
+            <div>
+              <SelectMultiInput<T>
+                items={selectedItems}
+                {...rest}
+                placeholder={!selectedItems || selectedItems.length === 0 ? placeholder : undefined}
+                onBlur={handleInputBlur(downshift)}
+                onFocus={handleInputFocus(downshift)}
+                onClick={handleInputClick(downshift)}
+                onRemoveItem={handleItemRemove(removeItem)}
+                renderItem={itemToString}
+                // icon={isOpen ? 'triangleUp' : 'triangleDown'}
+                // onIconClick={this.handleInputIconClick(downshift)}
+                {...getInputProps()}
+                {...inputProps}
+                value={inputValue ? inputValue : ''}
+                invalid={invalid}
+              />
+              <SelectDownshiftMenu
+                downshift={downshift}
+                items={visibleItems}
+                loading={loading}
+                renderItem={renderItem(downshift)}
+              />
+            </div>
+          )
+        }}
+      </MultiDownshift>
+    </FormControl>
   )
 }
