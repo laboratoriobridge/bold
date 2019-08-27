@@ -3,11 +3,11 @@ import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrect
 
 import { useLocale } from '../../i18n'
 import { Omit } from '../../util/types'
-import { MaskedInput, MaskedInputProps } from '../MaskedInput/MaskedInput'
+import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
 
-export interface DateInputProps extends Omit<MaskedInputProps, 'onChange' | 'value'> {
+export interface DateInputProps extends Omit<MaskedTextFieldProps, 'onChange' | 'value'> {
   value?: Date
-  onInputChange?: MaskedInputProps['onChange']
+  onInputChange?: MaskedTextFieldProps['onChange']
   onChange?(date: Date | null): void
 }
 
@@ -40,7 +40,7 @@ export function DateInput(props: DateInputProps) {
   }
 
   return (
-    <MaskedInput
+    <MaskedTextField
       value={value ? formatter.format(value) : undefined}
       mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
       placeholder={locale.dateInput.placeholder}

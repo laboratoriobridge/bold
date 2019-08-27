@@ -1,8 +1,10 @@
 import React from 'react'
 
+import { useFormControl } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
-import { TextInput, TextInputProps } from '../../TextInput/TextInput'
+import { FormControl } from '../../FormControl'
+import { TextInput, TextInputProps } from '../../TextField'
 
 import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'
@@ -14,6 +16,9 @@ export interface DefaultItemType {
 
 export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputProps, 'value' | 'onChange'> {
   value?: T
+
+  label?: string
+  errorText?: string
 
   items: SelectDownshiftProps<T>['items']
   itemToString: SelectDownshiftProps<T>['itemToString']
@@ -38,6 +43,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     renderItem,
     components,
     style,
+    label,
+    errorText,
     ...rest
   } = props
 
@@ -60,43 +67,53 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
 
   const { css } = useStyles()
 
-  return (
-    <SelectDownshift<T>
-      selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
-      items={items}
-      itemToString={itemToString}
-      onChange={onChange}
-      isOpen={isOpen}
-      onFilterChange={onFilterChange}
-    >
-      {downshift => {
-        const { isOpen: downshiftOpen, getInputProps, visibleItems, inputValue } = downshift
+  const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
+  const formControlProps = getFormControlProps()
+  const inputProps = getFormControlInputProps()
+  const invalid = inputProps['aria-invalid']
 
-        return (
-          <div className={css(style)}>
-            <div>
-              <TextInput
-                icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
-                {...rest}
-                onBlur={handleInputBlur(downshift)}
-                onFocus={handleInputFocus(downshift)}
-                onClick={handleInputClick(downshift)}
-                onClear={handleClear(downshift)}
-                onIconClick={handleInputIconClick(downshift)}
-                {...getInputProps()}
-                value={inputValue ? inputValue : ''}
+  return (
+    <FormControl {...formControlProps}>
+      <SelectDownshift<T>
+        selectedItem={value || null} // Use null here to force downshift to "uncontrolled" mode
+        items={items}
+        itemToString={itemToString}
+        onChange={onChange}
+        isOpen={isOpen}
+        onFilterChange={onFilterChange}
+        labelId={formControlProps.labelId}
+      >
+        {downshift => {
+          const { isOpen: downshiftOpen, getInputProps, visibleItems, inputValue } = downshift
+
+          return (
+            <div className={css(style)}>
+              <div>
+                <TextInput
+                  icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
+                  {...rest}
+                  onBlur={handleInputBlur(downshift)}
+                  onFocus={handleInputFocus(downshift)}
+                  onClick={handleInputClick(downshift)}
+                  onClear={handleClear(downshift)}
+                  onIconClick={handleInputIconClick(downshift)}
+                  {...getInputProps()}
+                  {...inputProps}
+                  value={inputValue ? inputValue : ''}
+                  invalid={invalid}
+                />
+              </div>
+              <SelectDownshiftMenu
+                downshift={downshift}
+                items={visibleItems}
+                loading={loading}
+                renderItem={renderItem}
+                components={components}
               />
             </div>
-            <SelectDownshiftMenu
-              downshift={downshift}
-              items={visibleItems}
-              loading={loading}
-              renderItem={renderItem}
-              components={components}
-            />
-          </div>
-        )
-      }}
-    </SelectDownshift>
+          )
+        }}
+      </SelectDownshift>
+    </FormControl>
   )
 }

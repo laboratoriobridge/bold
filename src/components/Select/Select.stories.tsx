@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { boolean } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
@@ -53,8 +53,10 @@ const SelectAsyncManager = (props: SelectAsyncManagerProps) => {
 storiesOf('Components|Select', module)
   .add('default', () => (
     <Select<DefaultItemType>
+      label='Fruit'
       name='fruit'
       items={fruits}
+      errorText={text('errorText', '')}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
@@ -76,8 +78,10 @@ storiesOf('Components|Select', module)
           <p>yummy</p>
         </>
       )}
+      label='Fruit'
       name='fruit'
       items={fruits}
+      errorText={text('errorText', '')}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
@@ -93,8 +97,10 @@ storiesOf('Components|Select', module)
     <SelectAsyncManager>
       {({ items, loading, loadItems }) => (
         <Select<DefaultItemType>
+          label='Repository'
           name='repository'
           items={items}
+          errorText={text('errorText', '')}
           itemToString={item => item && item.label}
           itemIsEqual={(a, b) => a.value === b.value}
           placeholder='Select a value...'

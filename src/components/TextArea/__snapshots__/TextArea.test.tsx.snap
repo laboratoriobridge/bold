@@ -74,7 +74,9 @@ exports[`should accept style prop 1`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-1"
+  >
     <textarea
       class="emotion-0"
       name="input"
@@ -160,7 +162,9 @@ exports[`should render character counter 1`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-2"
+  >
     <textarea
       class="emotion-0"
       maxlength="200"
@@ -257,7 +261,9 @@ exports[`should render character counter 2`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-2"
+  >
     <textarea
       class="emotion-0"
       maxlength="200"
@@ -278,7 +284,7 @@ exports[`should render character counter 2`] = `
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-0 {
+.emotion-1 {
   background-color: #FFFFFF;
   border: solid 1px #AAAAB9;
   border-radius: 2px;
@@ -294,65 +300,81 @@ exports[`should render correctly 1`] = `
   transition-duration: .2s;
 }
 
-.emotion-0[type="search"]::-webkit-search-decoration {
+.emotion-1[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-.emotion-0[type="search"]::-webkit-search-cancel-button {
+.emotion-1[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 
-.emotion-0[type="search"]::-webkit-search-results-button {
+.emotion-1[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
-.emotion-0[type="search"]::-webkit-search-results-decoration {
+.emotion-1[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.emotion-0:required {
+.emotion-1:required {
   box-shadow: none;
 }
 
-.emotion-0::-webkit-input-placeholder {
+.emotion-1::-webkit-input-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-0::-moz-placeholder {
+.emotion-1::-moz-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-0:-ms-input-placeholder {
+.emotion-1:-ms-input-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-0::placeholder {
+.emotion-1::placeholder {
   color: #AAAAB9;
 }
 
-.emotion-0:disabled {
+.emotion-1:disabled {
   border-color: #D3D4DD;
   background-color: #F0F0F5;
 }
 
-.emotion-0:not(:disabled):hover {
+.emotion-1:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-0:not(:disabled):focus {
+.emotion-1:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-0:not(:disabled):active {
+.emotion-1:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
 <div>
-  <div>
-    <textarea
+  <div
+    class="emotion-2"
+  >
+    <label
       class="emotion-0"
+      id="label-abc"
+    >
+      Label
+    </label>
+    <textarea
+      aria-labelledby="label-abc"
+      class="emotion-1"
       name="input"
       placeholder="Test"
     >
@@ -435,7 +457,9 @@ exports[`should render correctly when disabled 1`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-1"
+  >
     <textarea
       class="emotion-0"
       disabled=""
@@ -445,7 +469,7 @@ exports[`should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`should render with error status 1`] = `
+exports[`should render correctly with error 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #AAAAB9;
@@ -523,11 +547,230 @@ exports[`should render with error status 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
 
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #D01E29;
+  margin-top: 0.25rem;
+  line-height: 20px;
+}
+
 <div>
-  <div>
+  <div
+    class="emotion-2"
+  >
     <textarea
+      aria-errormessage="error-abc"
+      aria-invalid="true"
       class="emotion-0"
       name="input"
+    />
+    <div
+      class="emotion-1"
+      id="error-abc"
+      role="alert"
+    >
+      Some error
+    </div>
+  </div>
+</div>
+`;
+
+exports[`textarea label label should have a htmlFor prop equals to the used id 1`] = `
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <label
+      class="emotion-0"
+      for="foo"
+    >
+      Foo
+    </label>
+    <textarea
+      class="emotion-1"
+      id="foo"
+    />
+  </div>
+</div>
+`;
+
+exports[`textarea label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <label
+      class="emotion-0"
+      id="label-abc"
+    >
+      test
+    </label>
+    <textarea
+      aria-labelledby="label-abc"
+      class="emotion-1"
     />
   </div>
 </div>

@@ -8,7 +8,7 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 
   rerender(
-    <FormControl name='test' label='Label' error='Error' required>
+    <FormControl label='Label' error='Error' htmlFor='test' required>
       Test
     </FormControl>
   )

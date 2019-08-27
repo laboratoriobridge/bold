@@ -1,11 +1,22 @@
 import { useState } from 'react'
 
-import { Button, Cell, Checkbox, FormControl, Grid, HFlow, Radio, TextInput } from '../../../../lib'
+import {
+  Button,
+  Cell,
+  Checkbox,
+  FormControl,
+  Grid,
+  HFlow,
+  MaskedTextField,
+  Radio,
+  TextField,
+  TextInput,
+} from '../../../../lib'
 
 function FormDemo() {
   const [formState, setFormState] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
+    phone: '',
     email: '',
     color: '',
     agreed: false,
@@ -30,37 +41,35 @@ function FormDemo() {
       <form onSubmit={handleSubmit}>
         <Grid wrap>
           <Cell xs={6}>
-            <FormControl label='First name'>
-              <TextInput
-                name='firstName'
-                placeholder='Enter your first name'
-                value={formState.firstName}
-                onChange={handleChange('firstName')}
-                required
-              />
-            </FormControl>
+            <TextField
+              name='name'
+              label='Name'
+              placeholder='Enter your full name'
+              value={formState.name}
+              onChange={handleChange('name')}
+              required
+            />
           </Cell>
           <Cell xs={6}>
-            <FormControl label='Last name'>
-              <TextInput
-                name='lastName'
-                placeholder='Enter your last name'
-                value={formState.lastName}
-                onChange={handleChange('lastName')}
-                required
-              />
-            </FormControl>
+            <MaskedTextField
+              name='phone'
+              label='Phone number'
+              mask={['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+              placeholder='(__) ____-____'
+              value={formState.phone}
+              onChange={handleChange('phone')}
+              required
+            />
           </Cell>
           <Cell xs={6}>
-            <FormControl label='E-mail'>
-              <TextInput
-                name='email'
-                type='email'
-                placeholder='Enter your e-mail'
-                value={formState.email}
-                onChange={handleChange('email')}
-              />
-            </FormControl>
+            <TextField
+              name='email'
+              label='E-mail'
+              type='email'
+              placeholder='Enter your e-mail'
+              value={formState.email}
+              onChange={handleChange('email')}
+            />
           </Cell>
           <Cell xs={6}>
             <FormControl label='Favorite color'>

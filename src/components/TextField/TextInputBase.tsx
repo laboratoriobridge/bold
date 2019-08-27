@@ -4,11 +4,13 @@ import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { Input, InputProps } from '../Input/Input'
 
-export type InputStatus = 'error'
-
 export interface TextInputBaseProps extends Omit<InputProps, 'style'> {
+  /**
+   * Indicates whether the input is on an invalid state
+   */
+  invalid?: boolean
+
   style?: ExternalStyles
-  status?: InputStatus
 }
 
 /**
@@ -16,12 +18,12 @@ export interface TextInputBaseProps extends Omit<InputProps, 'style'> {
  * Provides only the stylization of the <input /> component.
  */
 export function TextInputBase(props: TextInputBaseProps) {
-  const { status, style, ...rest } = props
+  const { invalid, style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
-  const className = css(classes.input, status === 'error' && classes.error, style)
+  const className = css(classes.input, invalid && classes.invalid, style)
 
-  return <Input {...rest} className={className} />
+  return <Input className={className} aria-invalid={invalid ? 'true' : undefined} {...rest} />
 }
 
 TextInputBase.defaultProps = {
@@ -70,7 +72,7 @@ export const createStyleParts = (theme: Theme) => ({
     outline: 'none',
     boxShadow: focusBoxShadow(theme),
   } as CSSProperties,
-  error: {
+  invalid: {
     border: 'solid 1px ' + theme.pallete.status.danger.main,
     ':not(:disabled):focus': {
       border: 'solid 1px ' + theme.pallete.gray.c80,
@@ -91,6 +93,6 @@ export const createStyles = (theme: Theme) => {
       ':not(:disabled):focus': parts.focus,
       ':not(:disabled):active': parts.active,
     },
-    error: parts.error,
+    invalid: parts.invalid,
   }
 }

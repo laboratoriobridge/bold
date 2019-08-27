@@ -2,7 +2,9 @@
 
 exports[`should render correctly 1`] = `
 <div>
-  <div>
+  <div
+    class="emotion-0"
+  >
     Test
   </div>
 </div>
@@ -37,10 +39,11 @@ exports[`should render correctly 2`] = `
 
 <div>
   <div
-    data-name="test"
+    class="emotion-3"
   >
     <label
       class="emotion-1"
+      for="test"
     >
       Label
       <span
@@ -53,6 +56,7 @@ exports[`should render correctly 2`] = `
     Test
     <div
       class="emotion-2"
+      role="alert"
     >
       Error
     </div>
