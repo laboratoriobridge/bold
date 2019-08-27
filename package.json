@@ -19,7 +19,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "start": "npm run clean && webpack --progress --watch",
+    "start": "npm run clean && tsc --watch",
     "clean": "rm -rf lib",
     "build": "npm run clean && tsc && webpack --mode=production",
     "prepublishOnly": "npm run build",

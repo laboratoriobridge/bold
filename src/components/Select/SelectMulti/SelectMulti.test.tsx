@@ -101,17 +101,17 @@ describe('remove item', () => {
 
 describe('error', () => {
   it('should render the error text', () => {
-    const { queryByText } = render(<SelectTest errorText='Some error' />)
+    const { queryByText } = render(<SelectTest error='Some error' />)
     expect(queryByText('Some error')).toBeTruthy()
   })
 
-  it('input should have an "aria-invalid=true" attribute when errorText is provided', () => {
-    const { container } = render(<SelectTest errorText='Some error' />)
+  it('input should have an "aria-invalid=true" attribute when "error" is provided', () => {
+    const { container } = render(<SelectTest error='Some error' />)
     expect(container.querySelector('input').getAttribute('aria-invalid')).toEqual('true')
   })
 
-  it('input should have an "aria-errormessage" attribute when errorText is provided', () => {
-    const { container } = render(<SelectTest errorText='Some error' />)
+  it('input should have an "aria-errormessage" attribute when "error" is provided', () => {
+    const { container } = render(<SelectTest error='Some error' />)
     expect(container.querySelector('input').getAttribute('aria-errormessage')).toEqual('error-abc')
     expect(container.querySelector('#error-abc').textContent).toEqual('Some error')
   })

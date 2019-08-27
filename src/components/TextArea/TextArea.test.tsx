@@ -19,7 +19,7 @@ it('should render correctly when disabled', () => {
 })
 
 it('should render correctly with error', () => {
-  const { container } = render(<TextArea name='input' errorText='Some error' />)
+  const { container } = render(<TextArea name='input' error='Some error' />)
   expect(container).toMatchSnapshot()
 })
 
@@ -38,17 +38,17 @@ it('should render character counter', () => {
 
 describe('error', () => {
   it('should render the error text', () => {
-    const { queryByText } = render(<TextArea errorText='Some error' />)
+    const { queryByText } = render(<TextArea error='Some error' />)
     expect(queryByText('Some error')).toBeTruthy()
   })
 
-  it('input should have an "aria-invalid=true" attribute when errorText is provided', () => {
-    const { container } = render(<TextArea errorText='Some error' />)
+  it('input should have an "aria-invalid=true" attribute when "error" is provided', () => {
+    const { container } = render(<TextArea error='Some error' />)
     expect(container.querySelector('textarea').getAttribute('aria-invalid')).toEqual('true')
   })
 
-  it('input should have an "aria-errormessage" attribute when errorText is provided', () => {
-    const { container } = render(<TextArea errorText='Some error' />)
+  it('input should have an "aria-errormessage" attribute when "error" is provided', () => {
+    const { container } = render(<TextArea error='Some error' />)
     expect(container.querySelector('textarea').getAttribute('aria-errormessage')).toEqual('error-abc')
     expect(container.querySelector('#error-abc').textContent).toEqual('Some error')
   })

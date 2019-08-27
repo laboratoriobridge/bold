@@ -1,19 +1,19 @@
 import React, { CSSProperties } from 'react'
 
-import { useFormControl } from '../../hooks/useFormControl'
+import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
 import { FormControl } from '../FormControl'
 import { createStyles as createTextInputBaseStyles } from '../TextField/TextInputBase'
 
-export interface TextAreaProps extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'style'> {
+export interface TextAreaProps
+  extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'style'>,
+    UseFormControlProps {
   style?: ExternalStyles
-  label?: string
-  errorText?: string
 }
 
 export function TextArea(props: TextAreaProps) {
-  const { style, label, errorText, ...rest } = props
+  const { style, label, error, ...rest } = props
 
   const valueLength = props.value && typeof props.value === 'string' && props.value.length
   const defaultValueLength = props.defaultValue && typeof props.defaultValue === 'string' && props.defaultValue.length

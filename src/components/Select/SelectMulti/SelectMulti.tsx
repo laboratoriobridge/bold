@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useFormControl } from '../../../hooks/useFormControl'
+import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { Omit } from '../../../util'
 import { Checkbox } from '../../Checkbox/Checkbox'
 import { HFlow } from '../../Flow'
@@ -12,11 +12,9 @@ import { MultiDownshift, MultiDownshiftProps, MultiSelectRenderProps } from './M
 import { SelectMultiInput, SelectMultiInputProps } from './SelectMultiInput'
 
 export interface SelectMultiProps<T = DefaultItemType>
-  extends Omit<SelectMultiInputProps<T>, 'renderItem' | 'value' | 'onChange' | 'onRemoveItem'> {
+  extends Omit<SelectMultiInputProps<T>, 'renderItem' | 'value' | 'onChange' | 'onRemoveItem'>,
+    UseFormControlProps {
   value?: T[]
-
-  label?: string
-  errorText?: string
 
   // TODO!
   clearable?: boolean
@@ -47,7 +45,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
     components,
     placeholder,
     label,
-    errorText,
+    error,
     ...rest
   } = props
 

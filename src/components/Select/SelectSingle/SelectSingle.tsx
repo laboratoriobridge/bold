@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useFormControl } from '../../../hooks/useFormControl'
+import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
 import { FormControl } from '../../FormControl'
@@ -14,11 +14,10 @@ export interface DefaultItemType {
   label: string
 }
 
-export interface SelectSingleProps<T = DefaultItemType> extends Omit<TextInputProps, 'value' | 'onChange'> {
+export interface SelectSingleProps<T = DefaultItemType>
+  extends Omit<TextInputProps, 'value' | 'onChange'>,
+    UseFormControlProps {
   value?: T
-
-  label?: string
-  errorText?: string
 
   items: SelectDownshiftProps<T>['items']
   itemToString: SelectDownshiftProps<T>['itemToString']
@@ -44,7 +43,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     components,
     style,
     label,
-    errorText,
+    error,
     ...rest
   } = props
 

@@ -14,7 +14,7 @@ it('should render correctly', () => {
 })
 
 it('should render correctly with error', () => {
-  const { container } = render(<MaskedTextField label='Masked' errorText='Some error' mask={['(', /\d/, ')']} />)
+  const { container } = render(<MaskedTextField label='Masked' error='Some error' mask={['(', /\d/, ')']} />)
   expect(container).toMatchSnapshot()
 })
 

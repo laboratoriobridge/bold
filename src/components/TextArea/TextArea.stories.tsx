@@ -9,7 +9,7 @@ storiesOf('Components|TextArea', module).add('default', () => (
   <TextArea
     name='nome'
     label={text('label', 'Text area')}
-    errorText={text('errorText', '')}
+    error={text('error', '')}
     disabled={boolean('disabled', false)}
     placeholder='Nome'
     maxLength={number('maxLength', '' as any)}

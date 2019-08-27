@@ -17,7 +17,7 @@ function TextFieldDemo() {
         <TextField label='Password' name='password' type='password' required />
       </Cell>
       <Cell xs={12} md={4}>
-        <TextField label='Favourite show' name='password' defaultValue='Game of Thrones' errorText='Incorrect answer' />
+        <TextField label='Favourite show' name='password' defaultValue='Game of Thrones' error='Incorrect answer' />
       </Cell>
     </Grid>
   )

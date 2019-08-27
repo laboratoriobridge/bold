@@ -10,7 +10,7 @@ function TextAreaDemo() {
         <TextArea label='Comment' name='disabled' disabled />
       </Cell>
       <Cell xs={12} md={6}>
-        <TextArea label='Comment' name='comment' errorText='Invalid comment' />
+        <TextArea label='Comment' name='comment' error='Invalid comment' />
       </Cell>
     </Grid>
   )

@@ -56,7 +56,7 @@ storiesOf('Components|Select', module)
       label='Fruit'
       name='fruit'
       items={fruits}
-      errorText={text('errorText', '')}
+      error={text('error', '')}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
@@ -81,7 +81,7 @@ storiesOf('Components|Select', module)
       label='Fruit'
       name='fruit'
       items={fruits}
-      errorText={text('errorText', '')}
+      error={text('error', '')}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
@@ -100,7 +100,7 @@ storiesOf('Components|Select', module)
           label='Repository'
           name='repository'
           items={items}
-          errorText={text('errorText', '')}
+          error={text('error', '')}
           itemToString={item => item && item.label}
           itemIsEqual={(a, b) => a.value === b.value}
           placeholder='Select a value...'

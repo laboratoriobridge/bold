@@ -12,7 +12,7 @@ storiesOf('Components|TextField', module)
       placeholder='Nome'
       disabled={boolean('disabled', false)}
       onChange={action('changed')}
-      errorText={text('errorText', '')}
+      error={text('error', '')}
       required={boolean('required', true)}
     />
   ))
