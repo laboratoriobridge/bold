@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DatePickerInput should render correctly 1`] = `
+exports[`DateField should render correctly 1`] = `
 .emotion-6 {
   display: block;
 }
@@ -915,7 +915,7 @@ exports[`DatePickerInput should render correctly 1`] = `
 </div>
 `;
 
-exports[`DatePickerInput should render correctly when disabled 1`] = `
+exports[`DateField should render correctly when disabled 1`] = `
 .emotion-6 {
   display: block;
 }

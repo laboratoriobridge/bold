@@ -8,7 +8,7 @@ import { Popper, PopperController } from '../Popper'
 import { CalendarPopup } from './CalendarPopup'
 import { DateInput, DateInputProps } from './DateInput'
 
-export interface DatePickerInputProps extends DateInputProps {
+export interface DateFieldProps extends DateInputProps {
   /**
    * Minimum date that can be selected in the calendar
    */
@@ -25,7 +25,7 @@ export interface DatePickerInputProps extends DateInputProps {
   calendarProps?: CalendarProps
 }
 
-export function DatePickerInput(props: DatePickerInputProps) {
+export function DateField(props: DateFieldProps) {
   const inputRef = useRef<HTMLInputElement>()
   const controller = useRef<PopperController>()
 
@@ -97,11 +97,11 @@ export function DatePickerInput(props: DatePickerInputProps) {
   )
 }
 
-DatePickerInput.defaultProps = {
+DateField.defaultProps = {
   onChange: () => null,
   onFocus: () => null,
   onClick: () => null,
-} as Partial<DatePickerInputProps>
+} as Partial<DateFieldProps>
 
 export const disableByRange = (minDate?: Date, maxDate?: Date) => {
   const realMinDate = new Date(minDate)
