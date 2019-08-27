@@ -99,7 +99,7 @@ Array [
   "TextInputBase",
   "TextInput",
   "TextField",
-  "TimeInput",
+  "TimeField",
   "Tooltip",
   "LocaleContext",
   "useLocale",
