@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-import { DatePickerInput } from '../../../../lib'
+import { DateField } from '../../../../lib'
 
 function DatePickerExample() {
   const [value, setValue] = useState<Date>()
 
   const handleChange = (selectedDate: Date) => setValue(selectedDate)
 
-  return <DatePickerInput value={value} onChange={handleChange} />
+  return <DateField label='Birthday date' name='birthday' value={value} onChange={handleChange} />
 }
 
 export default DatePickerExample
