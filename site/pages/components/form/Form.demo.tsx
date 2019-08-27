@@ -1,11 +1,22 @@
 import { useState } from 'react'
 
-import { Button, Cell, Checkbox, FormControl, Grid, HFlow, Radio, TextField, TextInput } from '../../../../lib'
+import {
+  Button,
+  Cell,
+  Checkbox,
+  FormControl,
+  Grid,
+  HFlow,
+  MaskedTextField,
+  Radio,
+  TextField,
+  TextInput,
+} from '../../../../lib'
 
 function FormDemo() {
   const [formState, setFormState] = useState({
-    firstName: '',
-    lastName: '',
+    name: '',
+    phone: '',
     email: '',
     color: '',
     agreed: false,
@@ -31,21 +42,22 @@ function FormDemo() {
         <Grid wrap>
           <Cell xs={6}>
             <TextField
-              name='firstName'
-              label='First name'
-              placeholder='Enter your first name'
-              value={formState.firstName}
-              onChange={handleChange('firstName')}
+              name='name'
+              label='Name'
+              placeholder='Enter your full name'
+              value={formState.name}
+              onChange={handleChange('name')}
               required
             />
           </Cell>
           <Cell xs={6}>
-            <TextField
-              name='lastName'
-              label='Last name'
-              placeholder='Enter your last name'
-              value={formState.lastName}
-              onChange={handleChange('lastName')}
+            <MaskedTextField
+              name='phone'
+              label='Phone number'
+              mask={['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+              placeholder='(__) ____-____'
+              value={formState.phone}
+              onChange={handleChange('phone')}
               required
             />
           </Cell>

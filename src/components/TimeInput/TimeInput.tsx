@@ -3,15 +3,15 @@ import { conformToMask } from 'react-text-mask'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { Omit } from '../../util'
-import { MaskedInput, MaskedInputProps } from '../MaskedInput/MaskedInput'
+import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
 
 const mask = [/\d/, /\d/, ':', /\d/, /\d/]
 
-export interface TimeInputProps extends Omit<MaskedInputProps, 'onChange'> {
+export interface TimeInputProps extends Omit<MaskedTextFieldProps, 'onChange'> {
   /**
    * Original input change event handler
    */
-  onInputChange?: MaskedInputProps['onChange']
+  onInputChange?: MaskedTextFieldProps['onChange']
 
   onChange?(value: string): any
 }
@@ -48,7 +48,7 @@ export function TimeInput(props: TimeInputProps) {
   }
 
   return (
-    <MaskedInput
+    <MaskedTextField
       mask={mask}
       placeholder='hh:mm'
       pipe={createAutoCorrectedDatePipe('HH:MM')}

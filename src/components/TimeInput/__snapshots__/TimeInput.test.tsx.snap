@@ -78,15 +78,19 @@ exports[`render should render correcly 1`] = `
 
 <div>
   <div
-    class="emotion-1"
+    class="emotion-2"
   >
-    <input
-      class="emotion-0"
-      name="time"
-      placeholder="hh:mm"
-      type="text"
-      value=""
-    />
+    <div
+      class="emotion-1"
+    >
+      <input
+        class="emotion-0"
+        name="time"
+        placeholder="hh:mm"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

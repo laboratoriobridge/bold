@@ -78,15 +78,19 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-1"
+    class="emotion-2"
   >
-    <input
-      autocomplete="off"
-      class="emotion-0"
-      placeholder="mm/dd/yyyy"
-      type="text"
-      value=""
-    />
+    <div
+      class="emotion-1"
+    >
+      <input
+        autocomplete="off"
+        class="emotion-0"
+        placeholder="mm/dd/yyyy"
+        type="text"
+        value=""
+      />
+    </div>
   </div>
 </div>
 `;

@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept the style prop 1`] = `
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  color: red;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-1"
+    >
+      <input
+        class="emotion-0"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+<div>
+  <div
+    class="emotion-3"
+  >
+    <label
+      class="emotion-0"
+      id="label-abc"
+    >
+      Masked
+    </label>
+    <div
+      class="emotion-2"
+    >
+      <input
+        aria-labelledby="label-abc"
+        class="emotion-1"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render correctly with error 1`] = `
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #AAAAB9;
+  border-radius: 2px;
+  color: #3A3A47;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  border: solid 1px #D01E29;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-1:not(:disabled):focus {
+  border: solid 1px #D3D4DD;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #D01E29;
+  margin-top: 0.25rem;
+  line-height: 20px;
+}
+
+<div>
+  <div
+    class="emotion-4"
+  >
+    <label
+      class="emotion-0"
+      id="label-abc"
+    >
+      Masked
+    </label>
+    <div
+      class="emotion-2"
+    >
+      <input
+        aria-errormessage="error-abc"
+        aria-invalid="true"
+        aria-labelledby="label-abc"
+        class="emotion-1"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="emotion-3"
+      id="error-abc"
+      role="alert"
+    >
+      Some error
+    </div>
+  </div>
+</div>
+`;

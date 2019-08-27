@@ -36,7 +36,7 @@ Array [
   "InfoLabel",
   "Input",
   "Link",
-  "MaskedInput",
+  "MaskedTextField",
   "ModalStore",
   "ModalMountTarget",
   "modal",

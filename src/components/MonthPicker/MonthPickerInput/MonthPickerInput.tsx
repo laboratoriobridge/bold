@@ -2,11 +2,11 @@ import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { Omit } from '../../../util'
-import { MaskedInput, MaskedInputProps } from '../../MaskedInput'
+import { MaskedTextField, MaskedTextFieldProps } from '../../MaskedTextField'
 import { Popper, PopperController } from '../../Popper'
 import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
 
-export interface MonthPickerInputProps extends Omit<MaskedInputProps, 'value' | 'onChange'> {
+export interface MonthPickerInputProps extends Omit<MaskedTextFieldProps, 'value' | 'onChange'> {
   value?: ReferenceMonth
   onChange?(referenceMonth: ReferenceMonth): void
 }
@@ -57,11 +57,11 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps>
   }
 }
 
-export type MonthInputProps = Omit<MaskedInputProps, 'mask'>
+export type MonthInputProps = Omit<MaskedTextFieldProps, 'mask'>
 
 const MonthInput = (props: MonthInputProps) => {
   return (
-    <MaskedInput
+    <MaskedTextField
       mask={[/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
       pipe={createAutoCorrectedDatePipe('mm/yyyy')}
       placeholder='mm/yyyy'
