@@ -1,13 +1,13 @@
 import { css } from 'emotion'
 import React, { CSSProperties, useEffect, useState } from 'react'
 
-import { useLocale } from '../../../i18n'
-import { Theme, useStyles } from '../../../styles'
-import { getUserLocale } from '../../../util/locale'
-import { capitalize } from '../../../util/string'
-import { Button } from '../../Button'
-import { Icon } from '../../Icon'
-import { Text } from '../../Text'
+import { useLocale } from '../../i18n'
+import { Theme, useStyles } from '../../styles'
+import { getUserLocale } from '../../util/locale'
+import { capitalize } from '../../util/string'
+import { Button } from '../Button'
+import { Icon } from '../Icon'
+import { Text } from '../Text'
 
 export interface MonthPickerProps {
   month?: number

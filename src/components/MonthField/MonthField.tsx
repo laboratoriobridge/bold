@@ -1,17 +1,17 @@
 import React from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
-import { Omit } from '../../../util'
-import { MaskedTextField, MaskedTextFieldProps } from '../../MaskedTextField'
-import { Popper, PopperController } from '../../Popper'
-import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
+import { Omit } from '../../util'
+import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
+import { MonthPicker, ReferenceMonth } from '../MonthPicker'
+import { Popper, PopperController } from '../Popper'
 
-export interface MonthPickerInputProps extends Omit<MaskedTextFieldProps, 'value' | 'onChange'> {
+export interface MonthFieldProps extends Omit<MaskedTextFieldProps, 'value' | 'onChange'> {
   value?: ReferenceMonth
   onChange?(referenceMonth: ReferenceMonth): void
 }
 
-export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps> {
+export class MonthField extends React.PureComponent<MonthFieldProps> {
   render() {
     const { value } = this.props
 
@@ -59,7 +59,7 @@ export class MonthPickerInput extends React.PureComponent<MonthPickerInputProps>
 
 export type MonthInputProps = Omit<MaskedTextFieldProps, 'mask'>
 
-const MonthInput = (props: MonthInputProps) => {
+export const MonthInput = (props: MonthInputProps) => {
   return (
     <MaskedTextField
       mask={[/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}

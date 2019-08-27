@@ -1,2 +1,1 @@
-export { ReferenceMonth, MonthPicker, MonthPickerProps } from './MonthPicker/MonthPicker'
-export { MonthPickerInput, MonthPickerInputProps } from './MonthPickerInput/MonthPickerInput'
+export { MonthPicker, MonthPickerProps, ReferenceMonth } from './MonthPicker'
