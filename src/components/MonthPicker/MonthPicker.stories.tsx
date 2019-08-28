@@ -1,10 +1,9 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, number } from '@storybook/addon-knobs'
+import { number } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { MonthPicker } from './MonthPicker/MonthPicker'
-import { MonthPickerInput } from './MonthPickerInput/MonthPickerInput'
+import { MonthPicker } from './MonthPicker'
 
 storiesOf('Components|MonthPicker', module).add('default', () => (
   <MonthPicker
@@ -12,8 +11,4 @@ storiesOf('Components|MonthPicker', module).add('default', () => (
     year={number('year', new Date().getFullYear())}
     onChange={action('changed')}
   />
-))
-
-storiesOf('Components|MonthPickerInput', module).add('default', () => (
-  <MonthPickerInput onChange={action('changed')} disabled={boolean('disabled', false)} />
 ))

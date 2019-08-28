@@ -7,7 +7,7 @@ import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
 
 const mask = [/\d/, /\d/, ':', /\d/, /\d/]
 
-export interface TimeInputProps extends Omit<MaskedTextFieldProps, 'onChange'> {
+export interface TimeFieldProps extends Omit<MaskedTextFieldProps, 'onChange'> {
   /**
    * Original input change event handler
    */
@@ -16,7 +16,7 @@ export interface TimeInputProps extends Omit<MaskedTextFieldProps, 'onChange'> {
   onChange?(value: string): any
 }
 
-export function TimeInput(props: TimeInputProps) {
+export function TimeField(props: TimeFieldProps) {
   const { onChange, onInputChange, ...rest } = props
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

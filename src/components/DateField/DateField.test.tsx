@@ -1,26 +1,26 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import * as DatePickerInputModule from './DatePickerInput'
-import { DatePickerInput, disableByRange } from './DatePickerInput'
+import * as DateFieldModule from './DateField'
+import { DateField, disableByRange } from './DateField'
 
-describe('DatePickerInput', () => {
+describe('DateField', () => {
   it('should render correctly', () => {
     const { container } = render(
-      <DatePickerInput onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} />
+      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} />
     )
     expect(container).toMatchSnapshot()
   })
   it('should render correctly when disabled', () => {
     const { container } = render(
-      <DatePickerInput onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} disabled />
+      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} disabled />
     )
     expect(container).toMatchSnapshot()
   })
   it('should set the disabled modifier when using minDate and maxDate props', () => {
-    const spy = jest.spyOn(DatePickerInputModule, 'disableByRange')
+    const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
-      <DatePickerInput
+      <DateField
         calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
         minDate={new Date('2018-10-01')}
         maxDate={new Date('2018-10-15')}

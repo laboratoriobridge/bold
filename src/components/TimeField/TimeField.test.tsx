@@ -1,11 +1,11 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import { padTime, TimeInput } from './TimeInput'
+import { padTime, TimeField } from './TimeField'
 
 describe('render', () => {
   it('should render correcly', () => {
-    const { container } = render(<TimeInput name='time' />)
+    const { container } = render(<TimeField name='time' />)
     expect(container).toMatchSnapshot()
   })
 })
@@ -13,7 +13,7 @@ describe('render', () => {
 describe('onChange', () => {
   it('should be called with input value when input is changed', () => {
     const change = jest.fn()
-    const { container } = render(<TimeInput name='time' onChange={change} />)
+    const { container } = render(<TimeField name='time' onChange={change} />)
     const input = container.querySelector('input')
 
     expect(change).not.toHaveBeenCalled()
@@ -22,7 +22,7 @@ describe('onChange', () => {
   })
   it('should be called with original input event when input is changed', () => {
     const inputChange = jest.fn()
-    const { container } = render(<TimeInput name='time' onInputChange={inputChange} />)
+    const { container } = render(<TimeField name='time' onInputChange={inputChange} />)
     const input = container.querySelector('input')
 
     expect(inputChange).not.toHaveBeenCalled()
@@ -34,7 +34,7 @@ describe('onChange', () => {
 describe('onBlur', () => {
   it('should call the onChange prop with padded time', () => {
     const change = jest.fn()
-    const { container } = render(<TimeInput name='time' onChange={change} />)
+    const { container } = render(<TimeField name='time' onChange={change} />)
     const input = container.querySelector('input')
 
     fireEvent.blur(input, { target: { value: '1' } })
@@ -42,7 +42,7 @@ describe('onBlur', () => {
   })
   it('should call the original onBlur prop', () => {
     const blur = jest.fn()
-    const { container } = render(<TimeInput name='time' onBlur={blur} />)
+    const { container } = render(<TimeField name='time' onBlur={blur} />)
     const input = container.querySelector('input')
 
     expect(blur).not.toHaveBeenCalled()
@@ -54,7 +54,7 @@ describe('onBlur', () => {
 describe('clear', () => {
   it('should clear the input value', () => {
     const change = jest.fn()
-    const { container } = render(<TimeInput defaultValue='11:00' name='time' onChange={change} />)
+    const { container } = render(<TimeField defaultValue='11:00' name='time' onChange={change} />)
     const span = container.querySelector('span')
     fireEvent.click(span)
     expect(change).toHaveBeenCalledWith('')
