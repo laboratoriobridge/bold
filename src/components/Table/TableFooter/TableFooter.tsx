@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles, WithStylesProps } from '../../../styles'
-import { HFlow } from '../../Flow'
+import { HFlow } from '../../HFlow'
 import { Number } from '../../Number'
 import { Paginator } from '../../Paginator/Paginator'
 import { Text } from '../../Text'

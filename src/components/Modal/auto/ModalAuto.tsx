@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 
 import { Button, ButtonProps } from '../../Button'
-import { HFlow } from '../../Flow'
+import { HFlow } from '../../HFlow'
 import { Modal, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'

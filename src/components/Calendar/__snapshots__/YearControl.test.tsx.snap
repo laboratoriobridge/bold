@@ -1,35 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-4 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-}
-
-.emotion-2 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  display: inline-block;
-}
-
-.emotion-2:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-2:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-2:empty {
-  display: none;
 }
 
 .emotion-1 {
@@ -90,63 +70,51 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-7"
+    class="emotion-4"
   >
-    <div
-      class="emotion-2"
+    <button
+      class="emotion-1"
+      tabindex="-1"
+      title="Previous year"
+      type="button"
     >
-      <button
-        class="emotion-1"
-        tabindex="-1"
-        title="Previous year"
-        type="button"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
-    <div
-      class="emotion-2"
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
+    2018
+    <button
+      class="emotion-1"
+      tabindex="-1"
+      title="Next year"
+      type="button"
     >
-      2018
-    </div>
-    <div
-      class="emotion-2"
-    >
-      <button
-        class="emotion-1"
-        tabindex="-1"
-        title="Next year"
-        type="button"
-      >
-        <span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
+      <span>
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+          />
+        </svg>
+      </span>
+    </button>
   </div>
 </div>
 `;

@@ -167,7 +167,7 @@ exports[`DateField should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-64 {
+.emotion-56 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -176,7 +176,7 @@ exports[`DateField should render correctly 1`] = `
   opacity: 0;
 }
 
-.emotion-63 {
+.emotion-55 {
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
@@ -184,35 +184,15 @@ exports[`DateField should render correctly 1`] = `
   outline: none;
 }
 
-.emotion-62 {
+.emotion-54 {
   width: 288px;
 }
 
-.emotion-9 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  display: inline-block;
-}
-
-.emotion-9:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-9:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-9:empty {
-  display: none;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-17 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
@@ -221,11 +201,11 @@ exports[`DateField should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-11 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -283,31 +263,31 @@ exports[`DateField should render correctly 1`] = `
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-61 {
+.emotion-53 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-61 th {
+.emotion-53 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-27 {
+.emotion-19 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-27:hover {
+.emotion-19:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-26 {
+.emotion-18 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -315,7 +295,7 @@ exports[`DateField should render correctly 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-26:hover {
+.emotion-18:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -375,149 +355,117 @@ exports[`DateField should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-64"
+        class="emotion-56"
         data-visible="false"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-63"
+          class="emotion-55"
           tabindex="-1"
         >
           <div
-            class="emotion-62"
+            class="emotion-54"
           >
             <div
-              class="emotion-25"
+              class="emotion-17"
             >
               <div
-                class="emotion-9"
+                class="emotion-11"
               >
-                <div
-                  class="emotion-14"
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Previous month"
+                  type="button"
                 >
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Previous month"
-                      type="button"
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    Oct
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Next month"
-                      type="button"
+                      <path
+                        d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                Oct
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Next month"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="emotion-9"
+                class="emotion-11"
               >
-                <div
-                  class="emotion-14"
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Previous year"
+                  type="button"
                 >
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Previous year"
-                      type="button"
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    2018
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Next year"
-                      type="button"
+                      <path
+                        d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                2018
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Next year"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <table
-              class="emotion-61"
+              class="emotion-53"
             >
               <thead>
                 <tr>
@@ -550,7 +498,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-09-30"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       30
@@ -560,7 +508,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-01"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       01
@@ -570,7 +518,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-02"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       02
@@ -580,7 +528,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-03"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       03
@@ -590,7 +538,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-04"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       04
@@ -600,7 +548,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-05"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       05
@@ -610,7 +558,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-06"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       06
@@ -622,7 +570,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-07"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       07
@@ -632,7 +580,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-08"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       08
@@ -642,7 +590,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-09"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       09
@@ -652,7 +600,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-10"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       10
@@ -662,7 +610,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-11"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       11
@@ -672,7 +620,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-12"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       12
@@ -682,7 +630,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-13"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       13
@@ -694,7 +642,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-14"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       14
@@ -704,7 +652,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-15"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       15
@@ -714,7 +662,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-16"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       16
@@ -724,7 +672,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-17"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       17
@@ -734,7 +682,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-18"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       18
@@ -744,7 +692,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-19"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       19
@@ -754,7 +702,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-20"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       20
@@ -766,7 +714,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-21"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       21
@@ -776,7 +724,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-22"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       22
@@ -786,7 +734,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-23"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       23
@@ -796,7 +744,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-24"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       24
@@ -806,7 +754,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-25"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       25
@@ -816,7 +764,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-26"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       26
@@ -826,7 +774,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-27"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       27
@@ -838,7 +786,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-28"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       28
@@ -848,7 +796,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-29"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       29
@@ -858,7 +806,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-30"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       30
@@ -868,7 +816,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-10-31"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       31
@@ -878,7 +826,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-11-01"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       01
@@ -888,7 +836,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-11-02"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       02
@@ -898,7 +846,7 @@ exports[`DateField should render correctly 1`] = `
                     data-date="2018-11-03"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       03
@@ -1026,7 +974,7 @@ exports[`DateField should render correctly when disabled 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-64 {
+.emotion-56 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -1035,7 +983,7 @@ exports[`DateField should render correctly when disabled 1`] = `
   opacity: 0;
 }
 
-.emotion-63 {
+.emotion-55 {
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
@@ -1043,35 +991,15 @@ exports[`DateField should render correctly when disabled 1`] = `
   outline: none;
 }
 
-.emotion-62 {
+.emotion-54 {
   width: 288px;
 }
 
-.emotion-9 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  display: inline-block;
-}
-
-.emotion-9:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-9:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-9:empty {
-  display: none;
-}
-
-.emotion-25 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-17 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
@@ -1080,11 +1008,11 @@ exports[`DateField should render correctly when disabled 1`] = `
   font-weight: bold;
 }
 
-.emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-11 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1142,31 +1070,31 @@ exports[`DateField should render correctly when disabled 1`] = `
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-61 {
+.emotion-53 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-61 th {
+.emotion-53 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-27 {
+.emotion-19 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-27:hover {
+.emotion-19:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-26 {
+.emotion-18 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1174,7 +1102,7 @@ exports[`DateField should render correctly when disabled 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-26:hover {
+.emotion-18:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1294,149 +1222,117 @@ exports[`DateField should render correctly when disabled 1`] = `
         </div>
       </div>
       <div
-        class="emotion-64"
+        class="emotion-56"
         data-visible="false"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-63"
+          class="emotion-55"
           tabindex="-1"
         >
           <div
-            class="emotion-62"
+            class="emotion-54"
           >
             <div
-              class="emotion-25"
+              class="emotion-17"
             >
               <div
-                class="emotion-9"
+                class="emotion-11"
               >
-                <div
-                  class="emotion-14"
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Previous month"
+                  type="button"
                 >
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Previous month"
-                      type="button"
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    Oct
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Next month"
-                      type="button"
+                      <path
+                        d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                Oct
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Next month"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
               <div
-                class="emotion-9"
+                class="emotion-11"
               >
-                <div
-                  class="emotion-14"
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Previous year"
+                  type="button"
                 >
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Previous year"
-                      type="button"
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    2018
-                  </div>
-                  <div
-                    class="emotion-9"
-                  >
-                    <button
-                      class="emotion-8"
-                      tabindex="-1"
-                      title="Next year"
-                      type="button"
+                      <path
+                        d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                2018
+                <button
+                  class="emotion-8"
+                  tabindex="-1"
+                  title="Next year"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-1"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
                     >
-                      <span>
-                        <svg
-                          aria-hidden="true"
-                          class="emotion-1"
-                          height="1em"
-                          role="img"
-                          viewBox="0 0 24 24"
-                          width="1em"
-                        >
-                          <path
-                            d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                          />
-                        </svg>
-                      </span>
-                    </button>
-                  </div>
-                </div>
+                      <path
+                        d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
             <table
-              class="emotion-61"
+              class="emotion-53"
             >
               <thead>
                 <tr>
@@ -1469,7 +1365,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-09-30"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       30
@@ -1479,7 +1375,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-01"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       01
@@ -1489,7 +1385,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-02"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       02
@@ -1499,7 +1395,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-03"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       03
@@ -1509,7 +1405,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-04"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       04
@@ -1519,7 +1415,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-05"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       05
@@ -1529,7 +1425,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-06"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       06
@@ -1541,7 +1437,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-07"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       07
@@ -1551,7 +1447,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-08"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       08
@@ -1561,7 +1457,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-09"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       09
@@ -1571,7 +1467,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-10"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       10
@@ -1581,7 +1477,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-11"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       11
@@ -1591,7 +1487,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-12"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       12
@@ -1601,7 +1497,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-13"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       13
@@ -1613,7 +1509,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-14"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       14
@@ -1623,7 +1519,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-15"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       15
@@ -1633,7 +1529,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-16"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       16
@@ -1643,7 +1539,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-17"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       17
@@ -1653,7 +1549,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-18"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       18
@@ -1663,7 +1559,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-19"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       19
@@ -1673,7 +1569,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-20"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       20
@@ -1685,7 +1581,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-21"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       21
@@ -1695,7 +1591,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-22"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       22
@@ -1705,7 +1601,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-23"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       23
@@ -1715,7 +1611,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-24"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       24
@@ -1725,7 +1621,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-25"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       25
@@ -1735,7 +1631,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-26"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       26
@@ -1745,7 +1641,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-27"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       27
@@ -1757,7 +1653,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-28"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       28
@@ -1767,7 +1663,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-29"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       29
@@ -1777,7 +1673,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-30"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       30
@@ -1787,7 +1683,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-10-31"
                   >
                     <span
-                      class="emotion-27"
+                      class="emotion-19"
                       role="button"
                     >
                       31
@@ -1797,7 +1693,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-11-01"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       01
@@ -1807,7 +1703,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-11-02"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       02
@@ -1817,7 +1713,7 @@ exports[`DateField should render correctly when disabled 1`] = `
                     data-date="2018-11-03"
                   >
                     <span
-                      class="emotion-26"
+                      class="emotion-18"
                       role="button"
                     >
                       03

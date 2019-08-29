@@ -3,7 +3,7 @@ import { DropzoneOptions, useDropzone } from 'react-dropzone'
 
 import { focusBoxShadow, Theme, useStyles, WithStylesProps } from '../../styles'
 import { format } from '../../util/byte'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon/Icon'
 import { Progress } from '../Progress/Progress'
 import { Text } from '../Text'

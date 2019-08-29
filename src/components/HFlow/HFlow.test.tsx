@@ -9,14 +9,15 @@ it('should render correctly', () => {
       <span>1</span>
       <span>2</span>
       <span>3</span>
+      456
     </HFlow>
   )
   expect(container).toMatchSnapshot()
 })
 
-it('should accept Flow props', () => {
+it('should accept some grid props', () => {
   const { container } = render(
-    <HFlow vSpacing={2} hSpacing={1}>
+    <HFlow hSpacing={2} alignItems='center' justifyContent='space-between'>
       <span>1</span>
       <span>2</span>
       <span>3</span>

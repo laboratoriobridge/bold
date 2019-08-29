@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocale } from '../../i18n'
 import { getUserLocale } from '../../util/locale'
 import { Button } from '../Button'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon'
 
 export interface YearControlProps {
