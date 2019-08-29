@@ -5,6 +5,7 @@ import React from 'react'
 import { Button } from '../Button'
 import { AlignItems, JustifyContent } from '../Grid/Grid'
 import { Icon } from '../Icon'
+import { Text } from '../Text'
 
 import { HFlow } from './HFlow'
 
@@ -27,7 +28,10 @@ storiesOf('Components|HFlow', module).add('default', () => (
   >
     <Button kind='primary'>Button 1</Button>
     <Button>Button 2</Button>
-    <Button>Button 3</Button>
     <Icon icon='infoCircleFilled' />
+    <Text>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque incidunt esse consectetur suscipit facilis animi,
+      libero enim cum, repellat veniam mollitia totam ex quae impedit numquam consequatur illum! Ea, consequatur?
+    </Text>
   </HFlow>
 ))

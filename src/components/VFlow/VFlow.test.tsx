@@ -15,17 +15,6 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('should accept some grid props', () => {
-  const { container } = render(
-    <VFlow vSpacing={2} alignItems='center' justifyContent='space-around'>
-      <span>1</span>
-      <span>2</span>
-      <span>3</span>
-    </VFlow>
-  )
-  expect(container).toMatchSnapshot()
-})
-
 it('should accept "style" prop', () => {
   const { container } = render(
     <VFlow style={{ color: 'red' }}>

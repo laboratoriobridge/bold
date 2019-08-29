@@ -2,32 +2,47 @@ import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { AlignItems, JustifyContent } from '../Grid'
 
 export interface VFlowProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   vSpacing?: number
-  alignItems?: AlignItems
-  justifyContent?: JustifyContent
   style?: ExternalStyles
 }
 
 export function VFlow(props: VFlowProps) {
-  const { vSpacing, alignItems, justifyContent, style, ...rest } = props
+  const { vSpacing, style, children, ...rest } = props
   const { classes, css } = useStyles(createStyles, props)
 
-  return <div className={css(classes.container, style)} {...rest} />
+  return (
+    <div className={css(classes.container, style)} {...rest}>
+      {React.Children.map(children, child => (
+        <div className={classes.childWrapper}>{child}</div>
+      ))}
+    </div>
+  )
 }
 
 VFlow.defaultProps = {
   vSpacing: 1,
 } as VFlowProps
 
-const createStyles = (theme: Theme, { vSpacing, alignItems, justifyContent }: VFlowProps) => ({
+const createStyles = (theme: Theme, { vSpacing }: VFlowProps) => ({
   container: {
-    display: 'grid',
-    gridAutoFlow: 'row',
-    gridGap: vSpacing ? `${vSpacing}rem` : undefined,
-    alignItems,
-    justifyContent,
+    display: 'flex',
+    flexDirection: 'column',
+  } as CSSProperties,
+  childWrapper: {
+    display: 'inline-block',
+    marginBottom: `${vSpacing / 2}rem`,
+    marginTop: `${vSpacing / 2}rem`,
+
+    ':first-of-type': {
+      marginTop: 0,
+    },
+    ':last-of-type': {
+      marginBottom: 0,
+    },
+    ':empty': {
+      display: 'none',
+    },
   } as CSSProperties,
 })
