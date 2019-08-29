@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-8 {
+.emotion-7 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -21,11 +21,11 @@ exports[`should render correctly 1`] = `
   justify-content: center;
 }
 
-.emotion-11 {
+.emotion-10 {
   overflow: hidden;
 }
 
-.emotion-7 {
+.emotion-6 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -100,42 +100,22 @@ exports[`should render correctly 1`] = `
   padding: 2.5rem;
 }
 
-.emotion-6 {
+.emotion-5 {
   background-color: #F0F0F5;
   padding: 1rem;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-4 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
   -ms-flex-pack: end;
   justify-content: flex-end;
-}
-
-.emotion-4 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-}
-
-.emotion-4:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-4:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-4:empty {
-  display: none;
 }
 
 .emotion-3 {
@@ -190,7 +170,7 @@ exports[`should render correctly 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-9 {
+.emotion-8 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -200,7 +180,7 @@ exports[`should render correctly 1`] = `
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-10 {
+.emotion-9 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -208,18 +188,18 @@ exports[`should render correctly 1`] = `
 }
 
 <body
-  class="emotion-11"
+  class="emotion-10"
 >
   <div />
   <div
-    class="emotion-10"
+    class="emotion-9"
   >
     <div
-      class="emotion-8"
+      class="emotion-7"
     >
       <div
         aria-modal="true"
-        class="emotion-7"
+        class="emotion-6"
         role="dialog"
       >
         <button
@@ -250,29 +230,25 @@ exports[`should render correctly 1`] = `
           </span>
         </div>
         <div
-          class="emotion-6"
+          class="emotion-5"
         >
           <div
-            class="emotion-5"
+            class="emotion-4"
           >
-            <div
-              class="emotion-4"
+            <button
+              class="emotion-3"
+              type="button"
             >
-              <button
-                class="emotion-3"
-                type="button"
-              >
-                <span>
-                  Confirm
-                </span>
-              </button>
-            </div>
+              <span>
+                Confirm
+              </span>
+            </button>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-9"
+      class="emotion-8"
       data-testid="backdrop"
     />
   </div>

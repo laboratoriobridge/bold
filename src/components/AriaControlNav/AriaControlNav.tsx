@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Button } from '../Button'
-import { HFlow } from '../Flow/HFlow'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon'
 
 export interface AriaControlNavProps {}

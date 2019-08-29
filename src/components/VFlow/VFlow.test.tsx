@@ -9,14 +9,15 @@ it('should render correctly', () => {
       <span>1</span>
       <span>2</span>
       <span>3</span>
+      456
     </VFlow>
   )
   expect(container).toMatchSnapshot()
 })
 
-it('should accept Flow props', () => {
+it('should accept "style" prop', () => {
   const { container } = render(
-    <VFlow vSpacing={2} hSpacing={1}>
+    <VFlow style={{ color: 'red' }}>
       <span>1</span>
       <span>2</span>
       <span>3</span>

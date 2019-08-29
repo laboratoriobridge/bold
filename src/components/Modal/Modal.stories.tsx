@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../Button'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 
 import { modal } from './auto'
 import { ModalMountTarget } from './auto/ModalMountTarget'

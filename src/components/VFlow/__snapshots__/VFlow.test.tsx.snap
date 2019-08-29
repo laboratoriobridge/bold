@@ -1,31 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept Flow props 1`] = `
+exports[`should accept "style" prop 1`] = `
+.emotion-0 {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-0:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-0:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-0:empty {
+  display: none;
+}
+
 .emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.emotion-0 {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  display: inline-block;
-}
-
-.emotion-0:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-0:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-0:empty {
-  display: none;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  color: red;
 }
 
 <div>
@@ -58,27 +60,28 @@ exports[`should accept Flow props 1`] = `
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .emotion-0 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
   display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .emotion-0:first-of-type {
-  margin-left: 0;
+  margin-top: 0;
 }
 
 .emotion-0:last-of-type {
-  margin-right: 0;
+  margin-bottom: 0;
 }
 
 .emotion-0:empty {
@@ -87,7 +90,7 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-4"
   >
     <div
       class="emotion-0"
@@ -109,6 +112,11 @@ exports[`should render correctly 1`] = `
       <span>
         3
       </span>
+    </div>
+    <div
+      class="emotion-0"
+    >
+      456
     </div>
   </div>
 </div>

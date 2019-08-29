@@ -4,7 +4,7 @@ import { useLocale } from '../../i18n'
 import { getUserLocale } from '../../util/locale'
 import { capitalize } from '../../util/string'
 import { Button } from '../Button'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon'
 
 export interface MonthControlProps {

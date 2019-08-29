@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 
 import { Tag } from './Tag'
 

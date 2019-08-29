@@ -1,35 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Calendar should render correctly 1`] = `
-.emotion-55 {
+.emotion-47 {
   width: 288px;
 }
 
-.emotion-2 {
-  margin-bottom: 0rem;
-  margin-top: 0rem;
-  margin-left: 0.25rem;
-  margin-right: 0.25rem;
-  display: inline-block;
-}
-
-.emotion-2:first-of-type {
-  margin-left: 0;
-}
-
-.emotion-2:last-of-type {
-  margin-right: 0;
-}
-
-.emotion-2:empty {
-  display: none;
-}
-
-.emotion-18 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-10 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-box-pack: space-around;
   -webkit-justify-content: space-around;
   -ms-flex-pack: space-around;
@@ -38,11 +18,11 @@ exports[`Calendar should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+.emotion-4 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -105,31 +85,31 @@ exports[`Calendar should render correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-54 {
+.emotion-46 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-54 th {
+.emotion-46 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-20 {
+.emotion-12 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-20:hover {
+.emotion-12:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-19 {
+.emotion-11 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -137,12 +117,12 @@ exports[`Calendar should render correctly 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-19:hover {
+.emotion-11:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-46 {
+.emotion-38 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -152,152 +132,120 @@ exports[`Calendar should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-46:hover {
+.emotion-38:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-46:hover {
+.emotion-38:hover {
   background: #0069D0;
   color: #FFFFFF;
 }
 
 <div>
   <div
-    class="emotion-55"
+    class="emotion-47"
   >
     <div
-      class="emotion-18"
+      class="emotion-10"
     >
       <div
-        class="emotion-2"
+        class="emotion-4"
       >
-        <div
-          class="emotion-7"
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Previous month"
+          type="button"
         >
-          <div
-            class="emotion-2"
-          >
-            <button
-              class="emotion-1"
-              tabindex="-1"
-              title="Previous month"
-              type="button"
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-0"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-          <div
-            class="emotion-2"
-          >
-            Oct
-          </div>
-          <div
-            class="emotion-2"
-          >
-            <button
-              class="emotion-1"
-              tabindex="-1"
-              title="Next month"
-              type="button"
+              <path
+                d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+        Oct
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Next month"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-0"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
+              <path
+                d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
       <div
-        class="emotion-2"
+        class="emotion-4"
       >
-        <div
-          class="emotion-7"
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Previous year"
+          type="button"
         >
-          <div
-            class="emotion-2"
-          >
-            <button
-              class="emotion-1"
-              tabindex="-1"
-              title="Previous year"
-              type="button"
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-0"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-          <div
-            class="emotion-2"
-          >
-            2018
-          </div>
-          <div
-            class="emotion-2"
-          >
-            <button
-              class="emotion-1"
-              tabindex="-1"
-              title="Next year"
-              type="button"
+              <path
+                d="M14.707 16.294a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5.001-5.001a1 1 0 0 1 1.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+        2018
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Next year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-0"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
+              <path
+                d="M8.294 7.707a1 1 0 1 1 1.414-1.414l5 5a1 1 0 0 1 0 1.414l-5 5.001a1 1 0 0 1-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
     <table
-      class="emotion-54"
+      class="emotion-46"
     >
       <thead>
         <tr>
@@ -330,7 +278,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-09-30"
           >
             <span
-              class="emotion-19"
+              class="emotion-11"
               role="button"
             >
               30
@@ -340,7 +288,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-01"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               01
@@ -350,7 +298,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-02"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               02
@@ -360,7 +308,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-03"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               03
@@ -370,7 +318,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-04"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               04
@@ -380,7 +328,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-05"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               05
@@ -390,7 +338,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-06"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               06
@@ -402,7 +350,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-07"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               07
@@ -412,7 +360,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-08"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               08
@@ -422,7 +370,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-09"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               09
@@ -432,7 +380,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-10"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               10
@@ -442,7 +390,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-11"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               11
@@ -452,7 +400,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-12"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               12
@@ -462,7 +410,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-13"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               13
@@ -474,7 +422,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-14"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               14
@@ -484,7 +432,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-15"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               15
@@ -494,7 +442,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-16"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               16
@@ -504,7 +452,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-17"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               17
@@ -514,7 +462,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-18"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               18
@@ -524,7 +472,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-19"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               19
@@ -534,7 +482,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-20"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               20
@@ -546,7 +494,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-21"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               21
@@ -556,7 +504,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-22"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               22
@@ -566,7 +514,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-23"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               23
@@ -576,7 +524,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-24"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               24
@@ -586,7 +534,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-25"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               25
@@ -596,7 +544,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-26"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               26
@@ -606,7 +554,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-27"
           >
             <span
-              class="emotion-46"
+              class="emotion-38"
               role="button"
             >
               27
@@ -618,7 +566,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-28"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               28
@@ -628,7 +576,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-29"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               29
@@ -638,7 +586,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-30"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               30
@@ -648,7 +596,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-10-31"
           >
             <span
-              class="emotion-20"
+              class="emotion-12"
               role="button"
             >
               31
@@ -658,7 +606,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-11-01"
           >
             <span
-              class="emotion-19"
+              class="emotion-11"
               role="button"
             >
               01
@@ -668,7 +616,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-11-02"
           >
             <span
-              class="emotion-19"
+              class="emotion-11"
               role="button"
             >
               02
@@ -678,7 +626,7 @@ exports[`Calendar should render correctly 1`] = `
             data-date="2018-11-03"
           >
             <span
-              class="emotion-19"
+              class="emotion-11"
               role="button"
             >
               03

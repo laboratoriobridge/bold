@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../Button'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon'
 
 import { Popover } from './Popover'

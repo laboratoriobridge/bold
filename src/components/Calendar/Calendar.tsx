@@ -3,7 +3,7 @@ import React, { CSSProperties, useState } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
-import { HFlow } from '../Flow'
+import { HFlow } from '../HFlow'
 
 import { MonthControl } from './MonthControl'
 import { MonthView, MonthViewProps } from './MonthView'
