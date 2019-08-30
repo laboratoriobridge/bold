@@ -1,20 +1,26 @@
 import React from 'react'
 
-import { ExternalStyles, Theme, useStyles, useTheme } from '../../../styles'
+import { useLocale } from '../../../i18n'
+import { ExternalStyles, focusBoxShadow, Theme, useStyles, useTheme } from '../../../styles'
 import { Omit } from '../../../util'
 import { Spinner } from '../../Spinner'
 
 export interface SelectMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
   style?: ExternalStyles
   selected?: boolean
-  highlighted?: boolean
 }
 
 export function SelectMenuItem(props: SelectMenuItemProps) {
-  const { style, selected, highlighted, ...rest } = props
-  const { classes, css } = useStyles(createStyles, props)
+  const { style, selected, onKeyDown, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
-  return <li className={css(classes.item, style)} {...rest} />
+  return (
+    <li
+      className={css(classes.item, selected && classes.selected, style)}
+      aria-selected={selected ? 'true' : 'false'}
+      {...rest}
+    />
+  )
 }
 
 export function SelectHelperMenuItem(props: SelectMenuItemProps) {
@@ -25,25 +31,29 @@ export function SelectHelperMenuItem(props: SelectMenuItemProps) {
 
 export function SelectLoadingItem(props: SelectMenuItemProps) {
   const theme = useTheme()
+  const locale = useLocale()
+
   return (
     <SelectHelperMenuItem {...props}>
-      Carregando...
+      {locale.select.loadingItem}
       <Spinner style={{ color: theme.pallete.primary.main, float: 'right' }} />
     </SelectHelperMenuItem>
   )
 }
 
 export function SelectEmptyItem(props: SelectMenuItemProps) {
-  return <SelectHelperMenuItem {...props}>Nenhum item encontrado</SelectHelperMenuItem>
+  const locale = useLocale()
+
+  return <SelectHelperMenuItem {...props}>{locale.select.emptyItem}</SelectHelperMenuItem>
 }
 
-export const createStyles = (theme: Theme, { highlighted }: SelectMenuItemProps) => ({
+export const createStyles = (theme: Theme) => ({
   item: {
+    ...theme.typography.variant('main'),
     borderBottom: `1px solid ${theme.pallete.divider}`,
     cursor: 'pointer',
-    padding: '0.325rem 0.5rem',
+    padding: '0.5rem 0.5rem',
     transition: '.1s ease',
-    background: highlighted && theme.pallete.surface.background,
 
     '&:last-of-type': {
       borderBottom: 'none',
@@ -52,5 +62,17 @@ export const createStyles = (theme: Theme, { highlighted }: SelectMenuItemProps)
     '&:hover': {
       background: theme.pallete.surface.background,
     },
+
+    '&:focus': {
+      outline: 0,
+      borderRadius: 3,
+      boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
+    },
+  },
+  selected: {
+    outline: 0,
+    background: theme.pallete.surface.background,
+    // borderRadius: 3,
+    // boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
   },
 })

@@ -29,6 +29,8 @@ const locale: LocaleConfiguration = {
     currentPage: 'Página atual',
   },
   select: {
+    emptyItem: 'Nenhum resultado encontrado',
+    loadingItem: 'Carregando...',
     removeItem: 'Remover',
   },
 }
