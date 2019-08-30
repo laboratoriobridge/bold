@@ -3,6 +3,7 @@ import React, { CSSProperties, useRef, useState } from 'react'
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
 import { DateField } from '../DateField'
+import { HFlow } from '../HFlow'
 import { Icon } from '../Icon'
 
 export interface Period {
@@ -31,6 +32,9 @@ export function DateInterval(props: DateIntervalProps) {
     const period = { startDate: data, finalDate: date.finalDate } as Period
     onChange(period)
     setDate(period)
+    if (data !== null) {
+      scondDateFieldRef.current.focus()
+    }
   }
 
   const onChangeFinal = (data: Date) => {
@@ -51,12 +55,12 @@ export function DateInterval(props: DateIntervalProps) {
     setDate(period)
   }
 
-  const onIconClick = () => {
+  const handleIconClick = () => {
     firstDateFieldRef.current.focus()
   }
 
   return (
-    <div className={classes.div}>
+    <HFlow style={classes.div}>
       <div className={classes.dateFieldWrapper}>
         <DateField
           clearable
@@ -78,17 +82,19 @@ export function DateInterval(props: DateIntervalProps) {
           value={date.finalDate}
         />
       </div>
-      <Button
-        size='small'
-        skin='ghost'
-        tabIndex={-1}
-        onClick={onIconClick}
-        style={classes.calendarWrapper}
-        disabled={iconDisabled}
-      >
-        <Icon icon={icon} onClick={onIconClick} />
-      </Button>
-    </div>
+      {icon && (
+        <Button
+          size='small'
+          skin='ghost'
+          tabIndex={-1}
+          onClick={handleIconClick}
+          style={classes.calendarWrapper}
+          disabled={iconDisabled}
+        >
+          <Icon icon={icon} />
+        </Button>
+      )}
+    </HFlow>
   )
 }
 
@@ -100,31 +106,34 @@ const createStyles = (theme: Theme, disabled: boolean) => ({
     borderRadius: 'inherit',
   } as CSSProperties,
   calendarWrapper: {
-    alignItems: 'center',
-    display: 'flex',
     backgroundColor: theme.pallete.gray.c90,
     width: '2.5rem',
+    '&:focus': {
+      boxShadow: 'none',
+    },
   } as CSSProperties,
   dateField: {
     border: 'none',
     marginTop: '0.05rem',
     '&:focus': {
       outline: 'none',
-      'box-shadow': 'none',
+      boxShadow: 'none',
     },
   } as CSSProperties,
   dateFieldWrapper: {
     flex: 1,
   } as CSSProperties,
   div: {
-    display: 'inline-flex',
+    display: 'flex',
     border: '1px solid ' + theme.pallete.gray.c70,
     borderRadius: '0.2rem',
     backgroundColor: disabled ? theme.pallete.surface.background : theme.pallete.surface.main,
     cursor: 'pointer',
+    margin: '0.2rem',
     transition: 'box-shadow .2s ease',
     '&:focus-within': {
       boxShadow: focusBoxShadow(theme),
+      outline: 'none',
     },
   } as CSSProperties,
 })

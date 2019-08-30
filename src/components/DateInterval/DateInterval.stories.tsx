@@ -5,12 +5,12 @@ import React from 'react'
 
 import { DateInterval, Period } from './DateInterval'
 
-const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
-const period: Period = { startDate: todayMinus10, finalDate: new Date() }
+// const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
+// const period: Period = { startDate: todayMinus10, finalDate: new Date() }
 
 storiesOf('Components|DateInterval', module).add('default', () => (
   <DateInterval
-    initialValue={period}
+    initialValue={{} as Period}
     onChange={action('changed')}
     iconDisabled={boolean('disabled', false)}
     icon={'calendarOutline'}

@@ -27,7 +27,7 @@ export interface DateFieldProps extends DateInputProps {
 }
 
 export function DateField(props: DateFieldProps) {
-  const inputRef = useRef<HTMLInputElement>()
+  const inputRef = props.inputRef ? props.inputRef : useRef<HTMLInputElement>()
   const controller = useRef<PopperController>()
 
   const setController = (ctrl: PopperController) => {
