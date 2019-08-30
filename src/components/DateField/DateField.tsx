@@ -19,6 +19,7 @@ export interface DateFieldProps extends DateInputProps {
    */
   maxDate?: Date
 
+  iconDisabled?: boolean
   /**
    * Props delegated to the Calendar
    */
@@ -62,10 +63,10 @@ export function DateField(props: DateFieldProps) {
   }
 
   const renderTarget = (ctrl: PopperController) => {
-    const { calendarProps, minDate, maxDate, ...rest } = props
+    const { calendarProps, minDate, maxDate, icon, iconDisabled, ...rest } = props
     return (
       <DateInput
-        icon='calendarOutline'
+        icon={iconDisabled ? 'calendarOutline' : icon}
         onIconClick={ctrl.show}
         {...rest}
         inputRef={inputRef}
