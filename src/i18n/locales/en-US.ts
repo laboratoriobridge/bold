@@ -27,6 +27,8 @@ const locale = {
     currentPage: 'Current page',
   },
   select: {
+    emptyItem: 'No results were found',
+    loadingItem: 'Loading...',
     removeItem: 'Remove',
   },
 }

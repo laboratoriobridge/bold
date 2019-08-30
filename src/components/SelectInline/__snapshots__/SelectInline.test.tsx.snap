@@ -289,9 +289,13 @@ exports[`SelectInline should render correctly when closed 1`] = `
 }
 
 .emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
 }
@@ -302,6 +306,12 @@ exports[`SelectInline should render correctly when closed 1`] = `
 
 .emotion-9:hover {
   background: #F0F0F5;
+}
+
+.emotion-9:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
@@ -722,9 +732,13 @@ exports[`SelectInline should render correctly when opened 1`] = `
 }
 
 .emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
 }
@@ -735,6 +749,12 @@ exports[`SelectInline should render correctly when opened 1`] = `
 
 .emotion-9:hover {
   background: #F0F0F5;
+}
+
+.emotion-9:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 .emotion-17 {
@@ -1175,9 +1195,13 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
 }
 
 .emotion-9 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
-  padding: 0.325rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
 }
@@ -1188,6 +1212,12 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
 
 .emotion-9:hover {
   background: #F0F0F5;
+}
+
+.emotion-9:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
