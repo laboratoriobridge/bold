@@ -1,3 +1,5 @@
+import { Interpolation } from 'emotion'
+
 import { Theme } from '../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
@@ -40,11 +42,11 @@ export const createBaseStyles = (theme: Theme) => ({
       alignItems: 'center',
       display: 'inline-flex',
     },
-  },
+  } as Interpolation,
   disabled: {
     cursor: 'not-allowed',
     opacity: 0.5,
-  },
+  } as Interpolation,
   loading: {
     span: {
       color: 'transparent',
@@ -63,10 +65,10 @@ export const createBaseStyles = (theme: Theme) => ({
       left: 'calc(50% - (1.5em / 2))',
       top: 'calc(50% - (1.5em / 2))',
     },
-  },
+  } as Interpolation,
   block: {
     width: '100%',
-  },
+  } as Interpolation,
 })
 
 export const createSizeStyles = (theme: Theme) => ({
