@@ -47,12 +47,18 @@ export function DateInterval(props: DateIntervalProps) {
     const period = { startDate: null, finalDate: date.finalDate } as Period
     onChange(period)
     setDate(period)
+    if (period.startDate === null) {
+      firstDateFieldRef.current.focus()
+    }
   }
 
   const onClearFinal = () => {
     const period = { startDate: date.startDate, finalDate: null } as Period
     onChange(period)
     setDate(period)
+    if (period.finalDate === null) {
+      scondDateFieldRef.current.focus()
+    }
   }
 
   const handleIconClick = () => {
@@ -116,8 +122,7 @@ const createStyles = (theme: Theme, disabled: boolean) => ({
     border: 'none',
     marginTop: '0.05rem',
     '&:focus': {
-      outline: 'none',
-      boxShadow: 'none',
+      boxShadow: 'none !important',
     },
   } as CSSProperties,
   dateFieldWrapper: {
@@ -129,7 +134,7 @@ const createStyles = (theme: Theme, disabled: boolean) => ({
     borderRadius: '0.2rem',
     backgroundColor: disabled ? theme.pallete.surface.background : theme.pallete.surface.main,
     cursor: 'pointer',
-    margin: '0.2rem',
+    margin: '0.4rem',
     transition: 'box-shadow .2s ease',
     '&:focus-within': {
       boxShadow: focusBoxShadow(theme),
