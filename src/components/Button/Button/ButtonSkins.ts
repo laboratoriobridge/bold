@@ -1,4 +1,6 @@
-import { Styles, Theme } from '../../../styles'
+import { Interpolation } from 'emotion'
+
+import { Theme } from '../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
@@ -26,7 +28,7 @@ export interface SkinProps {
   kind?: ButtonKind
 }
 
-export const createBaseStyles = (theme: Theme): Styles => ({
+export const createBaseStyles = (theme: Theme) => ({
   button: {
     display: 'inline-flex',
     justifyContent: 'center',
@@ -40,11 +42,11 @@ export const createBaseStyles = (theme: Theme): Styles => ({
       alignItems: 'center',
       display: 'inline-flex',
     },
-  },
+  } as Interpolation,
   disabled: {
     cursor: 'not-allowed',
     opacity: 0.5,
-  },
+  } as Interpolation,
   loading: {
     span: {
       color: 'transparent',
@@ -63,13 +65,13 @@ export const createBaseStyles = (theme: Theme): Styles => ({
       left: 'calc(50% - (1.5em / 2))',
       top: 'calc(50% - (1.5em / 2))',
     },
-  },
+  } as Interpolation,
   block: {
     width: '100%',
-  },
+  } as Interpolation,
 })
 
-export const createSizeStyles = (theme: Theme): Styles => ({
+export const createSizeStyles = (theme: Theme) => ({
   large: {
     padding: 'calc(1.25rem - 1px) 3.25rem',
     fontSize: theme.typography.sizes.button,

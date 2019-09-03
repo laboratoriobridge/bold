@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 import { DropzoneOptions, useDropzone } from 'react-dropzone'
 
-import { focusBoxShadow, Theme, useStyles, WithStylesProps } from '../../styles'
+import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { format } from '../../util/byte'
 import { HFlow } from '../HFlow'
 import { Icon } from '../Icon/Icon'
@@ -45,7 +45,7 @@ export function FileUploader(props: FileUploaderProps) {
   )
 }
 
-export interface FileDetailsProps extends WithStylesProps {
+export interface FileDetailsProps {
   file: FileProps
 }
 
