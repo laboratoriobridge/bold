@@ -14,11 +14,6 @@ describe('SelectMenuItem', () => {
     expect(container).toMatchSnapshot()
   })
 
-  it('should render correctly when highlighted', () => {
-    const { container } = render(<SelectMenuItem highlighted>Item</SelectMenuItem>)
-    expect(container).toMatchSnapshot()
-  })
-
   it('should render correctly when custom style defined', () => {
     const { container } = render(<SelectMenuItem style={{ color: 'red' }}>Item</SelectMenuItem>)
     expect(container).toMatchSnapshot()
