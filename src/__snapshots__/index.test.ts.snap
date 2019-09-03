@@ -122,7 +122,6 @@ Array [
   "focusBoxShadow",
   "hexToRGB",
   "invertColorScale",
-  "withStyles",
   "colors",
   "Observable",
   "__types",

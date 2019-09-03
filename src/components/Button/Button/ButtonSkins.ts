@@ -1,4 +1,4 @@
-import { Styles, Theme } from '../../../styles'
+import { Theme } from '../../../styles'
 
 import { createStyles as createDefault } from './skins/default'
 import { createStyles as createGhost } from './skins/ghost'
@@ -26,7 +26,7 @@ export interface SkinProps {
   kind?: ButtonKind
 }
 
-export const createBaseStyles = (theme: Theme): Styles => ({
+export const createBaseStyles = (theme: Theme) => ({
   button: {
     display: 'inline-flex',
     justifyContent: 'center',
@@ -69,7 +69,7 @@ export const createBaseStyles = (theme: Theme): Styles => ({
   },
 })
 
-export const createSizeStyles = (theme: Theme): Styles => ({
+export const createSizeStyles = (theme: Theme) => ({
   large: {
     padding: 'calc(1.25rem - 1px) 3.25rem',
     fontSize: theme.typography.sizes.button,
