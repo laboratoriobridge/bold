@@ -19,7 +19,13 @@ export interface DateFieldProps extends DateInputProps {
    */
   maxDate?: Date
 
-  iconDisabled?: boolean
+  /**
+   * Prop to show 'calendar Outline' as default date field icon.
+   * When this prop don't receive any value and icon is undefined,
+   * the date field will not shown with a icon.
+   */
+  hasDefaultIcon?: boolean
+
   /**
    * Props delegated to the Calendar
    */
@@ -63,10 +69,10 @@ export function DateField(props: DateFieldProps) {
   }
 
   const renderTarget = (ctrl: PopperController) => {
-    const { calendarProps, minDate, maxDate, icon, iconDisabled, ...rest } = props
+    const { calendarProps, minDate, maxDate, icon, hasDefaultIcon, ...rest } = props
     return (
       <DateInput
-        icon={iconDisabled ? 'calendarOutline' : icon}
+        icon={hasDefaultIcon ? 'calendarOutline' : icon}
         onIconClick={ctrl.show}
         {...rest}
         inputRef={inputRef}
