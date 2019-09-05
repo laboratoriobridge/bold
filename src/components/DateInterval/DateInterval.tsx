@@ -4,24 +4,14 @@ import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
 import { DateField } from '../DateField'
 import { HFlow } from '../HFlow'
-import { Icon } from '../Icon'
+import { Icon, Icons } from '../Icon'
 
 export interface Period {
   startDate: Date
   finalDate: Date
 }
 
-export interface LimitDateProps {
-  /**
-   * Props to limit max and min values for startDate and FinalDate
-   */
-  maxStartDate?: Date
-  maxFinalDate?: Date
-  minStartDate?: Date
-  minFinalDate?: Date
-}
-
-export interface DateIntervalProps extends LimitDateProps {
+export interface DateIntervalProps {
   /**
    * Prop used to set an initial period in date interval
    */
@@ -37,7 +27,7 @@ export interface DateIntervalProps extends LimitDateProps {
    * Prop to set an icon in date field button.
    * When this prop is not declared, date field will be shown without a icon.
    */
-  icon?: Icon
+  icon?: Icons
 
   /**
    * Prop to disable the date field button
@@ -56,17 +46,7 @@ export function DateInterval(props: DateIntervalProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const scondDateFieldRef = useRef<HTMLInputElement>()
 
-  const {
-    initialValue,
-    disabled,
-    onChange,
-    icon,
-    iconDisabled,
-    maxStartDate,
-    maxFinalDate,
-    minFinalDate,
-    minStartDate,
-  } = props
+  const { initialValue, disabled, onChange, icon, iconDisabled } = props
 
   const { classes } = useStyles(createStyles, disabled)
 
@@ -113,11 +93,8 @@ export function DateInterval(props: DateIntervalProps) {
     <HFlow style={classes.div}>
       <div className={classes.dateFieldWrapper}>
         <DateField
-          aria-label='StartDateInput'
           clearable
           inputRef={firstDateFieldRef}
-          maxDate={maxStartDate}
-          minDate={minStartDate}
           onChange={onChangeStart}
           onClear={onClearStart}
           style={classes.dateField}
@@ -127,11 +104,8 @@ export function DateInterval(props: DateIntervalProps) {
       <Icon icon='arrowRight' style={classes.arrowIcon} />
       <div className={classes.dateFieldWrapper}>
         <DateField
-          aria-label='FinalDateInput'
           clearable
           inputRef={scondDateFieldRef}
-          maxDate={maxFinalDate}
-          minDate={minFinalDate}
           onChange={onChangeFinal}
           onClear={onClearFinal}
           style={classes.dateField}
@@ -140,7 +114,6 @@ export function DateInterval(props: DateIntervalProps) {
       </div>
       {icon && (
         <Button
-          aria-label='CalendarButton'
           size='small'
           skin='ghost'
           tabIndex={-1}
