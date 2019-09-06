@@ -5,6 +5,7 @@ import { Button, Cell, Grid, Icon, Link, Text, VFlow } from '../../lib'
 
 function Resources() {
   const renderButtonSketch = (props: any) => <a {...props} href='/static/Bold-1.0.sketch' />
+  const renderButtonSketchData = (props: any) => <a {...props} href='/static/Sketch-Data-Suplies(PT-BR).zip' />
 
   const handleClickSketch = () => {
     ReactGA.event({
@@ -17,6 +18,12 @@ function Resources() {
     ReactGA.event({
       category: 'Download',
       action: `Figma`,
+    })
+  }
+  const handleClickSketchData = () => {
+    ReactGA.event({
+      category: 'Download',
+      action: `SketchData`,
     })
   }
 
@@ -81,6 +88,31 @@ function Resources() {
             >
               Access Figma file
             </Link>
+          </VFlow>
+        </Cell>
+      </Grid>
+      <Grid>
+        <Cell>
+          <VFlow vSpacing={0.5}>
+            <Text component='p' fontWeight='bold' fontSize={1}>
+              Sketch's Data Suplies
+            </Text>
+            <Text component='p' fontSize={1}>
+              With Sketch’s Data feature you can quickly add real text data to your designs and update them, in an
+              instant. We’re sharing the text files we use on our prototypes (in PT-BR). They include dates, addresses,
+              female names, male names, social security number (CPF), emails, gender, phone numbers, among others.
+            </Text>
+            <Button
+              kind='primary'
+              skin='outline'
+              size='small'
+              style={{ textDecoration: 'none' }}
+              render={renderButtonSketchData}
+              onClick={handleClickSketchData}
+            >
+              <Icon icon='download' style={{ marginRight: '0.5rem' }} />
+              Download Sketch's Data Suplies
+            </Button>
           </VFlow>
         </Cell>
       </Grid>
