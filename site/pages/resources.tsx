@@ -1,9 +1,24 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 
 import { Button, Cell, Grid, Icon, Link, Text, VFlow } from '../../lib'
 
 function Resources() {
   const renderButtonSketch = (props: any) => <a {...props} href='/static/Bold-1.0.sketch' />
+
+  const handleClickSketch = () => {
+    ReactGA.event({
+      category: 'Download',
+      action: `Sketch`,
+    })
+  }
+
+  const handleClickFigma = () => {
+    ReactGA.event({
+      category: 'Download',
+      action: `Figma`,
+    })
+  }
 
   return (
     <VFlow>
@@ -34,6 +49,7 @@ function Resources() {
               size='small'
               style={{ textDecoration: 'none' }}
               render={renderButtonSketch}
+              onClick={handleClickSketch}
             >
               <Icon icon='download' style={{ marginRight: '0.5rem' }} />
               Download Sketch file
@@ -61,6 +77,7 @@ function Resources() {
               href='https://www.figma.com/file/TE9FUDtlgVQ4FWlAPtTagxQU/Bold-Design-System'
               fontSize={1}
               target='_blank'
+              onClick={handleClickFigma}
             >
               Access Figma file
             </Link>
