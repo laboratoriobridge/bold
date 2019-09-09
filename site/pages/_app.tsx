@@ -35,7 +35,7 @@ const BoldApp = (props: any) => {
   }, [])
 
   return (
-    <>
+    <html lang='en'>
       <Head>
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no' />
         <meta name='google-site-verification' content='9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk' />
@@ -51,6 +51,6 @@ const BoldApp = (props: any) => {
       <Site {...props} />
 
       <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js' />
-    </>
+    </html>
   )
 }
