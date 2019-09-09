@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from './'
+import { SelectAsync } from './SelectAsync'
 
 const fruits: DefaultItemType[] = [
   { value: 1, label: 'Apple' },
@@ -21,31 +22,9 @@ const fruits: DefaultItemType[] = [
 ]
 
 const loadFruits = (query: string): Promise<DefaultItemType[]> => {
+  action('items loaded')()
   return new Promise(resolve => {
     setTimeout(() => resolve(defaultSelectFilter([...fruits], query, item => item.label)), 1000)
-  })
-}
-
-interface SelectAsyncManagerProps {
-  children(renderProps: { items: any[]; loading: boolean; loadItems(query: string): void })
-}
-
-const SelectAsyncManager = (props: SelectAsyncManagerProps) => {
-  const [loading, setLoading] = React.useState(false)
-  const [items, setItems] = React.useState([])
-  const loadItems = (query: string) => {
-    setLoading(true)
-    loadFruits(query)
-      .then(data => {
-        setItems(data)
-        setLoading(false)
-      })
-      .catch(err => setLoading(false))
-  }
-  return props.children({
-    items,
-    loading,
-    loadItems,
   })
 }
 
@@ -64,6 +43,22 @@ storiesOf('Components|Select', module)
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
       loading={boolean('loading', false)}
+      onChange={action('changed')}
+      onBlur={action('blur')}
+    />
+  ))
+  .add('async', () => (
+    <SelectAsync<DefaultItemType>
+      label='Repository'
+      name='repository'
+      loadItems={loadFruits}
+      error={text('error', '')}
+      itemToString={item => item && item.label}
+      itemIsEqual={(a, b) => a.value === b.value}
+      placeholder='Select a value...'
+      multiple={boolean('multiple', false)}
+      clearable={boolean('clearable', true)}
+      disabled={boolean('disabled', false)}
       onChange={action('changed')}
       onBlur={action('blur')}
     />
@@ -92,28 +87,6 @@ storiesOf('Components|Select', module)
       onChange={action('changed')}
       onBlur={action('blur')}
     />
-  ))
-  .add('async items', () => (
-    <SelectAsyncManager>
-      {({ items, loading, loadItems }) => (
-        <Select<DefaultItemType>
-          label='Repository'
-          name='repository'
-          items={items}
-          error={text('error', '')}
-          itemToString={item => item && item.label}
-          itemIsEqual={(a, b) => a.value === b.value}
-          placeholder='Select a value...'
-          multiple={boolean('multiple', false)}
-          clearable={boolean('clearable', true)}
-          disabled={boolean('disabled', false)}
-          loading={loading}
-          onChange={action('changed')}
-          onBlur={action('blur')}
-          onFilterChange={loadItems}
-        />
-      )}
-    </SelectAsyncManager>
   ))
   .add('select menu', () => (
     <SelectMenu style={{ position: 'static' }}>
