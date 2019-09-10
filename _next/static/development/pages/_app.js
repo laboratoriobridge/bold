@@ -47805,6 +47805,7 @@ function AppHeader(props) {
     skin: "ghost",
     size: "small",
     onClick: switchTheme,
+    "aria-label": 'Switch theme',
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54
