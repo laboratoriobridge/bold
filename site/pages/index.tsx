@@ -1,7 +1,6 @@
-import NextLink from 'next/link'
-
-import { Cell, Grid, Icon, Theme, useStyles, Button, TextProps, Text, HFlow, VFlow, Link } from '../../lib'
 import { keyframes } from '@emotion/core'
+
+import { Button, Cell, Grid, HFlow, Icon, Text, TextProps, Theme, useStyles, VFlow } from '../../lib'
 
 export default () => {
   const { classes } = useStyles(createStyles)
@@ -14,7 +13,7 @@ export default () => {
           <AnimatedTitle>bold</AnimatedTitle> <span style={{ display: 'inline-block' }}>design system</span>
         </h1>
 
-        <hr className={classes.divider}></hr>
+        <hr className={classes.divider} />
 
         <VFlow vSpacing={3}>
           <VFlow>
