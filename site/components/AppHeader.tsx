@@ -51,7 +51,7 @@ export function AppHeader(props: AppHeaderProps) {
 
       <div>
         <Tooltip text={theme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
-          <Button skin='ghost' size='small' onClick={switchTheme}>
+          <Button skin='ghost' size='small' onClick={switchTheme} aria-label={'Switch theme'}>
             <Icon icon='lightbulbFilled' />
           </Button>
         </Tooltip>
