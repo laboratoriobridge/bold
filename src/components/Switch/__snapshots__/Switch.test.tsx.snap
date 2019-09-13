@@ -22,6 +22,7 @@ exports[`should render correctly 1`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
+  border: 1px solid #8F8FA2;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
@@ -73,6 +74,11 @@ exports[`should render correctly 1`] = `
   cursor: not-allowed;
 }
 
+.emotion-0:disabled + .emotion-2 + .css-1f2k2gl {
+  color: #AAAAB9;
+  cursor: not-allowed;
+}
+
 <div>
   <label
     class="emotion-3"
@@ -115,6 +121,7 @@ exports[`should render correctly when disabled 1`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
+  border: 1px solid #8F8FA2;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
@@ -170,6 +177,11 @@ exports[`should render correctly when disabled 1`] = `
   cursor: not-allowed;
 }
 
+.emotion-0:disabled + .emotion-2 + .emotion-3 {
+  color: #AAAAB9;
+  cursor: not-allowed;
+}
+
 <div>
   <label
     class="emotion-4"
@@ -218,6 +230,7 @@ exports[`should render correctly with label 1`] = `
   height: 1rem;
   -webkit-transition: all .2s;
   transition: all .2s;
+  border: 1px solid #8F8FA2;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
 }
 
@@ -270,6 +283,11 @@ exports[`should render correctly with label 1`] = `
 
 .emotion-0:disabled + .emotion-2 {
   opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-0:disabled + .emotion-2 + .emotion-3 {
+  color: #AAAAB9;
   cursor: not-allowed;
 }
 

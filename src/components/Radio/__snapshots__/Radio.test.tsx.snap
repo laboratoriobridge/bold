@@ -70,12 +70,13 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:disabled + .emotion-1 {
-  background-color: #F0F0F5;
-  border-color: #F0F0F5;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .emotion-0:disabled + .emotion-1 + .emotion-2 {
   color: #AAAAB9;
+  cursor: not-allowed;
 }
 
 <div>
