@@ -12,7 +12,7 @@ storiesOf('Components|DateInterval', module).add('default', () => (
   <DateInterval
     initialValue={period}
     onChange={action('changed')}
-    iconDisabled={boolean('disabled', false)}
+    disabled={boolean('disabled', false)}
     icon={'calendarOutline'}
   />
 ))

@@ -2,8 +2,7 @@ import React, { CSSProperties, useRef, useState } from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
-import { DateField } from '../DateField'
-import { HFlow } from '../HFlow'
+import { DateInput } from '../DateField'
 import { Icon, Icons } from '../Icon'
 
 export interface Period {
@@ -30,11 +29,6 @@ export interface DateIntervalProps {
   icon?: Icons
 
   /**
-   * Prop to disable the date field button
-   */
-  iconDisabled?: boolean
-
-  /**
    * Function used to manipulate values of Period
    *
    * @param period
@@ -46,7 +40,7 @@ export function DateInterval(props: DateIntervalProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const scondDateFieldRef = useRef<HTMLInputElement>()
 
-  const { initialValue, disabled, onChange, icon, iconDisabled } = props
+  const { initialValue, disabled, onChange, icon } = props
 
   const { classes } = useStyles(createStyles, disabled)
 
@@ -90,10 +84,11 @@ export function DateInterval(props: DateIntervalProps) {
   }
 
   return (
-    <HFlow style={classes.div}>
+    <div className={classes.div}>
       <div className={classes.dateFieldWrapper}>
-        <DateField
+        <DateInput
           clearable
+          disabled={disabled}
           inputRef={firstDateFieldRef}
           onChange={onChangeStart}
           onClear={onClearStart}
@@ -103,8 +98,9 @@ export function DateInterval(props: DateIntervalProps) {
       </div>
       <Icon icon='arrowRight' style={classes.arrowIcon} />
       <div className={classes.dateFieldWrapper}>
-        <DateField
+        <DateInput
           clearable
+          disabled={disabled}
           inputRef={scondDateFieldRef}
           onChange={onChangeFinal}
           onClear={onClearFinal}
@@ -119,18 +115,19 @@ export function DateInterval(props: DateIntervalProps) {
           tabIndex={-1}
           onClick={handleIconClick}
           style={classes.calendarWrapper}
-          disabled={iconDisabled}
+          disabled={disabled}
         >
           <Icon icon={icon} />
         </Button>
       )}
-    </HFlow>
+    </div>
   )
 }
 
 const createStyles = (theme: Theme, disabled: boolean) => ({
   arrowIcon: {
-    marginTop: '0.3rem',
+    cursor: 'default',
+    marginTop: '0.25rem',
   },
   calendarIcon: {
     borderRadius: 'inherit',
@@ -157,7 +154,7 @@ const createStyles = (theme: Theme, disabled: boolean) => ({
     border: '1px solid ' + theme.pallete.gray.c70,
     borderRadius: '0.2rem',
     backgroundColor: disabled ? theme.pallete.surface.background : theme.pallete.surface.main,
-    cursor: 'pointer',
+    cursor: 'default',
     margin: '0.4rem',
     transition: 'box-shadow .2s ease',
     '&:focus-within': {
