@@ -10,7 +10,7 @@ export interface Period {
   finalDate: Date
 }
 
-export interface DateIntervalProps {
+export interface PeriodInputProps {
   /**
    * Prop used to set an initial period in date interval
    */
@@ -36,7 +36,7 @@ export interface DateIntervalProps {
   onChange?(period: Period): void
 }
 
-export function DateInterval(props: DateIntervalProps) {
+export function PeriodInput(props: PeriodInputProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const scondDateFieldRef = useRef<HTMLInputElement>()
 
