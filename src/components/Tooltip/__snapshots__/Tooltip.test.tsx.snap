@@ -23,6 +23,7 @@ exports[`should render correctly 2`] = `
   color: #FFFFFF;
   font-weight: bold;
   line-height: 1.5;
+  font-size: 0.875rem;
   text-align: center;
   padding: 0.5rem;
 }

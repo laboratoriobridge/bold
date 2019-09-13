@@ -30,10 +30,12 @@ export const styles = (theme: Theme) => ({
 
 export const sizeStyles = () => ({
   small: {
+    fontSize: '0.875rem',
     textAlign: 'center',
     padding: '0.5rem',
   } as React.CSSProperties,
   big: {
+    fontSize: '0.875rem',
     textAlign: 'left',
     padding: '1rem',
     maxWidth: 277,
