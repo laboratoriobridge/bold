@@ -23,9 +23,8 @@ export interface ModalProps extends ModalContainerProps {
 }
 
 export function Modal(props: ModalProps) {
-  const { open, size, closeOnBackdropClick, children, ...rest } = props
-  const { classes, css } = useStyles(styles)
-  const { classes: sizeClasses } = useStyles(sizeStyles)
+  const { open, size, closeOnBackdropClick, children, style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -61,7 +60,7 @@ export function Modal(props: ModalProps) {
               <FocusTrap>
                 <div className={className}>
                   <div className={classes.modal}>
-                    <ModalContainer style={css(classes.container, sizeClasses[size])} {...rest}>
+                    <ModalContainer style={css(classes.container, classes[size], style)} {...rest}>
                       {children}
                     </ModalContainer>
                   </div>
@@ -82,7 +81,7 @@ Modal.defaultProps = {
   closeOnBackdropClick: true,
 } as Partial<ModalProps>
 
-export const styles = (theme: Theme) => ({
+const createStyles = (theme: Theme) => ({
   modal: {
     position: 'fixed',
     left: '50%',
@@ -93,6 +92,7 @@ export const styles = (theme: Theme) => ({
     zIndex: theme.zIndex.modalContainer,
     display: 'flex',
     justifyContent: 'center',
+    padding: '2rem',
   } as React.CSSProperties,
   container: {
     maxHeight: '80vh',
@@ -101,10 +101,7 @@ export const styles = (theme: Theme) => ({
   bodyWhenOpened: {
     overflow: 'hidden',
   },
-})
-
-export const sizeStyles = () => ({
-  large: { width: 850 },
+  large: { width: 900 },
   small: { width: 520 },
-  auto: { maxWidth: '80%' },
+  auto: { maxWidth: '100%' },
 })
