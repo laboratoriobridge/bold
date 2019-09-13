@@ -99,11 +99,12 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'check' | 'l
       boxShadow: focusBoxShadow(theme),
     },
     [`&:disabled + .${classes.check}`]: {
-      backgroundColor: theme.pallete.surface.background,
-      borderColor: theme.pallete.gray.c90,
+      opacity: 0.4,
+      cursor: 'not-allowed',
     },
     [`&:disabled + .${classes.check} + .${classes.label}`]: {
       color: theme.pallete.gray.c70,
+      cursor: 'not-allowed',
     },
   },
 })
