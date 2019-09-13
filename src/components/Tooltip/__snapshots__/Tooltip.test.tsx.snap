@@ -21,9 +21,9 @@ exports[`should render correctly 2`] = `
   max-width: 1280px;
   background: #3A3A47;
   color: #FFFFFF;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.5;
-  font-size: 0.875rem;
   text-align: center;
   padding: 0.5rem;
 }
