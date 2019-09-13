@@ -1,11 +1,13 @@
 export * from './Observable'
 export * from './types'
 
+import _debounce from 'lodash/debounce'
 import _isEmpty from 'lodash/isEmpty'
 import _isEqual from 'lodash/isEqual'
 import _merge from 'lodash/merge'
 import _some from 'lodash/some'
 
+export const debounce = _debounce
 export const isEmpty = _isEmpty
 export const isEqual = _isEqual
 export const merge = _merge

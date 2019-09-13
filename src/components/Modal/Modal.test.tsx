@@ -23,6 +23,15 @@ describe('Modal', () => {
     expect(document.body).toBeTruthy()
   })
 
+  it('should accept "style" prop and pass down to ModalContainer', () => {
+    render(
+      <Modal open={true} style={{ color: 'red' }}>
+        Testing.
+      </Modal>
+    )
+    expect(document.body).toMatchSnapshot()
+  })
+
   it('should override ModalContainer props and pass down props to it', () => {
     render(
       <Modal open={true} role='alertdialog'>
