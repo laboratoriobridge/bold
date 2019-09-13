@@ -76,11 +76,12 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'radio' | 'l
       boxShadow: focusBoxShadow(theme),
     },
     [`&:disabled + .${classes.radio}`]: {
-      backgroundColor: theme.pallete.surface.background,
-      borderColor: theme.pallete.gray.c90,
+      opacity: 0.4,
+      cursor: 'not-allowed',
     },
     [`&:disabled + .${classes.radio} + .${classes.label}`]: {
       color: theme.pallete.gray.c70,
+      cursor: 'not-allowed',
     },
   },
 })
