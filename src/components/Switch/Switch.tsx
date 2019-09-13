@@ -64,6 +64,7 @@ export const createStyles = (theme: Theme) => ({
     width: '1rem',
     height: '1rem',
     transition: 'all .2s',
+    border: `1px solid ${theme.pallete.gray.c60}`,
     boxShadow: theme.shadows.outer['20'],
   } as CSSProperties,
   text: {
@@ -71,7 +72,7 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
 })
 
-export const createInputStyles = (theme: Theme, classes: ClassNames<'switch' | 'knob'>) => ({
+export const createInputStyles = (theme: Theme, classes: ClassNames<'switch' | 'knob' | 'text'>) => ({
   wrapper: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -101,6 +102,10 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'switch' | '
     },
     [`&:disabled + .${classes.switch}`]: {
       opacity: 0.4,
+      cursor: 'not-allowed',
+    },
+    [`&:disabled + .${classes.switch} + .${classes.text}`]: {
+      color: theme.pallete.gray.c70,
       cursor: 'not-allowed',
     },
   } as CSSProperties,
