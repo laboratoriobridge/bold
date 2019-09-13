@@ -23,6 +23,7 @@ export const styles = (theme: Theme) => ({
     maxWidth: theme.breakpoints.size.lg,
     background: theme.pallete.gray.c20,
     color: theme.pallete.gray.c100,
+    fontSize: '0.875rem',
     fontWeight: 'bold',
     lineHeight: 1.5,
   } as React.CSSProperties,
@@ -30,12 +31,10 @@ export const styles = (theme: Theme) => ({
 
 export const sizeStyles = () => ({
   small: {
-    fontSize: '0.875rem',
     textAlign: 'center',
     padding: '0.5rem',
   } as React.CSSProperties,
   big: {
-    fontSize: '0.875rem',
     textAlign: 'left',
     padding: '1rem',
     maxWidth: 277,
