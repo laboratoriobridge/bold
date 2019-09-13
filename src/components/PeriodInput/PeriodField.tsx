@@ -3,16 +3,17 @@ import React, { useRef } from 'react'
 import { CalendarProps } from '../Calendar'
 import { CalendarPopup } from '../DateField/CalendarPopup'
 import { FocusManagerContainer } from '../FocusManagerContainer'
+import { Icons } from '../Icon'
 import { Popper, PopperController } from '../Popper'
 
 import { PeriodInput, PeriodInputProps } from './PeriodInput'
 
 export interface PeriodFieldProps extends PeriodInputProps {
-  value?: any
+  icon?: Icons
   calendarProps?: CalendarProps
 }
 
-export default function PeriodField(props: PeriodFieldProps) {
+export function PeriodField(props: PeriodFieldProps) {
   const controller = useRef<PopperController>()
 
   const setController = (ctrl: PopperController) => {
@@ -32,8 +33,8 @@ export default function PeriodField(props: PeriodFieldProps) {
   }
 
   const renderTarget = (ctrl: PopperController) => {
-    const { ...rest } = props
-    return <PeriodInput {...rest} />
+    const { icon, ...rest } = props
+    return <PeriodInput icon={icon} {...rest} />
   }
 
   return (
