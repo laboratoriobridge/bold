@@ -85,12 +85,13 @@ exports[`Checkbox should render correctly 1`] = `
 }
 
 .emotion-0:disabled + .emotion-1 {
-  background-color: #F0F0F5;
-  border-color: #F0F0F5;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .emotion-0:disabled + .emotion-1 + .emotion-2 {
   color: #AAAAB9;
+  cursor: not-allowed;
 }
 
 <div>
@@ -186,12 +187,13 @@ exports[`Checkbox should render correctly when disabled 1`] = `
 }
 
 .emotion-0:disabled + .emotion-1 {
-  background-color: #F0F0F5;
-  border-color: #F0F0F5;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .emotion-0:disabled + .emotion-1 + .emotion-2 {
   color: #AAAAB9;
+  cursor: not-allowed;
 }
 
 .emotion-3 {
@@ -313,12 +315,13 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
 }
 
 .emotion-0:disabled + .emotion-1 {
-  background-color: #F0F0F5;
-  border-color: #F0F0F5;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .emotion-0:disabled + .emotion-1 + .emotion-2 {
   color: #AAAAB9;
+  cursor: not-allowed;
 }
 
 <div>
