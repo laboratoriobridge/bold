@@ -55,7 +55,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -234,7 +234,7 @@ exports[`Modal should render correctly when opened 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -382,7 +382,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -554,7 +554,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -702,7 +702,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;

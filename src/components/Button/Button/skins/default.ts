@@ -6,7 +6,7 @@ export const createStyles = (theme: Theme): Skin => ({
     backgroundColor: theme.pallete.surface.main,
     border: '1px solid ' + theme.pallete.gray.c60,
     borderRadius: theme.radius.button,
-    color: theme.pallete.text.main,
+    color: theme.pallete.gray.c40,
     ':not(:disabled):active': {
       boxShadow: 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
     },

@@ -156,7 +156,7 @@ exports[`should render correctly with button 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #696979;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
