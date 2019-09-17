@@ -656,12 +656,13 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-2:disabled + .emotion-3 {
-  background-color: #F0F0F5;
-  border-color: #F0F0F5;
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .emotion-2:disabled + .emotion-3 + .css-tue92x {
   color: #AAAAB9;
+  cursor: not-allowed;
 }
 
 <div>
