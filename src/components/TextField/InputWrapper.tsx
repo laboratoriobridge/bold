@@ -17,8 +17,9 @@ export interface InputWrapperProps {
 }
 
 export function InputWrapper(props: InputWrapperProps) {
-  const { children, icon, iconPosition, iconDisabled, onIconClick, clearVisible, onClear } = props
-  const { classes, css } = useStyles(createStyles, props)
+  const { children, icon, iconDisabled, onIconClick, clearVisible, onClear } = props
+  const iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left')
+  const { classes, css } = useStyles(createStyles, { icon, iconPosition, clearVisible, onIconClick })
   const locale = useLocale()
 
   const iconBoxClasses = css(
@@ -60,29 +61,36 @@ export function InputWrapper(props: InputWrapperProps) {
 }
 
 InputWrapper.defaultProps = {
-  iconPosition: 'right',
   iconDisabled: false,
   clearVisible: false,
   onClear: () => null,
 } as Partial<InputWrapperProps>
 
-const createStyles = (theme: Theme, { icon, iconPosition, clearVisible }: InputWrapperProps) => {
+const createStyles = (theme: Theme, { icon, iconPosition, clearVisible, onIconClick }: InputWrapperProps) => {
+  const paddingLeft =
+    (icon && iconPosition === 'left' && onIconClick && '3rem') ||
+    (icon && iconPosition === 'left' && '2.5rem') ||
+    undefined
+
   const paddingRight =
-    iconPosition === 'right'
-      ? (clearVisible && icon && '4.5rem') || (clearVisible && '2rem') || (icon && '3rem')
-      : clearVisible && '2rem'
+    (icon && iconPosition === 'right' && clearVisible && onIconClick && '4.5rem') ||
+    (icon && iconPosition === 'right' && clearVisible && '4rem') ||
+    (icon && iconPosition === 'right' && onIconClick && '3rem') ||
+    (icon && iconPosition === 'right' && '2.5rem') ||
+    (clearVisible && '2rem') ||
+    undefined
 
   return {
     wrapper: {
       position: 'relative',
       input: {
-        paddingLeft: iconPosition === 'left' && '3rem',
+        paddingLeft,
         paddingRight,
       },
     } as CSSProperties,
     clearButton: {
       position: 'absolute',
-      right: icon && iconPosition === 'right' ? '2.5rem' : 1,
+      right: icon && iconPosition === 'right' ? (onIconClick && '2.5rem') || '2rem' : 1,
       background: 'transparent',
       border: 'none',
       cursor: 'pointer',
@@ -99,7 +107,7 @@ const createStyles = (theme: Theme, { icon, iconPosition, clearVisible }: InputW
     } as CSSProperties,
     iconWrapper: {
       position: 'absolute',
-      backgroundColor: theme.pallete.gray.c90,
+      backgroundColor: onIconClick ? theme.pallete.gray.c90 : 'transparent',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',

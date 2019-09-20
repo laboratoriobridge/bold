@@ -71,28 +71,6 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly with button 1`] = `
-.emotion-4 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -132,6 +110,28 @@ exports[`should render correctly with button 1`] = `
 
 .emotion-1:hover {
   color: #D01E29;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
 }
 
 .emotion-3 {
@@ -271,23 +271,9 @@ exports[`should render correctly with left position 1`] = `
   color: #D01E29;
 }
 
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  position: relative;
-}
-
-.emotion-4 input {
-  padding-left: 3rem;
-  padding-right: 2rem;
-}
-
 .emotion-3 {
   position: absolute;
-  background-color: #F0F0F5;
+  background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -305,6 +291,20 @@ exports[`should render correctly with left position 1`] = `
   top: 1px;
   bottom: 1px;
   left: 1px;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
+  position: relative;
+}
+
+.emotion-4 input {
+  padding-left: 2.5rem;
+  padding-right: 2rem;
 }
 
 .emotion-2 {
@@ -364,73 +364,7 @@ exports[`should render correctly with left position 1`] = `
 exports[`should render correctly without clear icon 1`] = `
 .emotion-1 {
   position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  border-radius: inherit;
-}
-
-.emotion-0:focus {
-  box-shadow: none;
-}
-
-.emotion-2 {
-  position: relative;
-}
-
-.emotion-2 input {
-  padding-right: 3rem;
-}
-
-<div>
-  <div
-    class="emotion-2"
-  >
-    <input />
-    <span
-      class="emotion-1"
-    >
-      <svg
-        aria-hidden="true"
-        class="emotion-0"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
-        />
-      </svg>
-    </span>
-  </div>
-</div>
-`;
-
-exports[`should render correctly without clear icon AND left position 1`] = `
-.emotion-1 {
-  position: absolute;
-  background-color: #F0F0F5;
+  background-color: transparent;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -465,7 +399,73 @@ exports[`should render correctly without clear icon AND left position 1`] = `
 }
 
 .emotion-2 input {
-  padding-left: 3rem;
+  padding-left: 2.5rem;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <input />
+    <span
+      class="emotion-1"
+    >
+      <svg
+        aria-hidden="true"
+        class="emotion-0"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M14.605 13.194l7 6.998a1 1 0 0 1-1.415 1.414l-6.997-7a7 7 0 1 1 1.412-1.412zM9 14A5 5 0 1 0 9 4a5 5 0 0 0 0 10z"
+        />
+      </svg>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`should render correctly without clear icon AND left position 1`] = `
+.emotion-1 {
+  position: absolute;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  border-radius: inherit;
+}
+
+.emotion-0:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  position: relative;
+}
+
+.emotion-2 input {
+  padding-left: 2.5rem;
 }
 
 <div>
