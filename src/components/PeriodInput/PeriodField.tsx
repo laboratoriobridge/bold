@@ -23,8 +23,6 @@ export function PeriodField(props: PeriodFieldProps) {
     controller.current = ctrl
   }
 
-  const handleOnDayClick = (ctrl: PopperController) => () => {}
-
   const handleFocusIn = () => {
     if (controller.current) {
       controller.current.show()
@@ -53,11 +51,7 @@ export function PeriodField(props: PeriodFieldProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <Popper control={setController} renderTarget={renderTarget} placement='auto' block>
         {(ctrl: PopperController) => (
-          <ControlledRangeCalendarPopup
-            {...props.calendarProps}
-            onDayClick={handleOnDayClick(ctrl)}
-            onChange={handleCalendarPeriodChanged}
-          />
+          <ControlledRangeCalendarPopup {...props.calendarProps} onChange={handleCalendarPeriodChanged} />
         )}
       </Popper>
     </FocusManagerContainer>
