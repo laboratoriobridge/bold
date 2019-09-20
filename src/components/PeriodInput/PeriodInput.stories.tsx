@@ -13,10 +13,5 @@ storiesOf('Components|PeriodField', module)
   .add('PeriodField', () => <PeriodField icon='calendarOutline' />)
 
   .add('PeriodInput', () => (
-    <PeriodInput
-      initialValue={period}
-      onChange={action('changed')}
-      disabled={boolean('disabled', false)}
-      icon={'calendarOutline'}
-    />
+    <PeriodInput value={period} onChange={action('changed')} disabled={boolean('disabled', false)} />
   ))

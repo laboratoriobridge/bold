@@ -3,7 +3,7 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { createTheme } from '../../../../styles'
+import { createTheme } from '../../../styles'
 import { defaultModifierStyles } from '../Calendar'
 
 import { dayHoverStyle, RangeCalendar, RangeCalendarProps } from './RangeCalendar'

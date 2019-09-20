@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { MouseEvent, useState } from 'react'
 
-import { Theme } from '../../../../styles'
+import { Theme } from '../../../styles'
 import { Calendar, CalendarProps, defaultModifierStyles } from '../Calendar'
 import { isSameDay } from '../util'
 

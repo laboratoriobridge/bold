@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Heading } from '../..'
-import { HFlow, VFlow } from '../../Flow'
+import { Heading, HFlow, VFlow } from '../..'
 
 import { RangeCalendar } from './RangeCalendar'
 

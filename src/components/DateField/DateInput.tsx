@@ -41,7 +41,7 @@ export function DateInput(props: DateInputProps) {
 
   return (
     <MaskedTextField
-      value={value ? formatter.format(value) : undefined}
+      value={value ? formatter.format(value) : null}
       mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
       placeholder={locale.dateInput.placeholder}
       pipe={createAutoCorrectedDatePipe('dd/mm/yyyy')}

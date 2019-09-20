@@ -1,21 +1,22 @@
-import React, { CSSProperties, useRef, useState } from 'react'
+import React, { CSSProperties, useEffect, useRef, useState } from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
 import { DateInput } from '../DateField'
 import { Icon, Icons } from '../Icon'
+import { MaskedTextFieldProps } from '../MaskedTextField'
 
 export interface Period {
   startDate: Date
   finalDate: Date
 }
 
-export interface PeriodInputProps {
+export interface PeriodInputProps extends Omit<MaskedTextFieldProps, 'onChange' | 'value'> {
   /**
    * Prop used to set an initial period in date interval
    */
 
-  initialValue?: Period
+  value?: Period
 
   /**
    * Prop to disable the date field
@@ -29,6 +30,13 @@ export interface PeriodInputProps {
   icon?: Icons
 
   /**
+   * Function to manage the icon action
+   *
+   */
+
+  onIconClick?(): void
+
+  /**
    * Function used to manipulate values of Period
    *
    * @param period
@@ -40,46 +48,51 @@ export function PeriodInput(props: PeriodInputProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const scondDateFieldRef = useRef<HTMLInputElement>()
 
-  const { initialValue, disabled, onChange, icon } = props
+  const { value, disabled, onChange, icon, onIconClick } = props
 
   const { classes } = useStyles(createStyles, disabled)
 
-  const [date, setDate] = useState(initialValue ? initialValue : ({} as Period))
+  const [period, setPeriod] = useState(value ? value : ({} as Period))
+
+  useEffect(() => {
+    onChange && onChange(value)
+    setPeriod(value)
+  }, [value])
 
   const onChangeStart = (data: Date) => {
-    const period = { startDate: data, finalDate: date.finalDate } as Period
-    onChange(period)
-    setDate(period)
+    const aux = { startDate: data, finalDate: period.finalDate } as Period
+    onChange(aux)
+    setPeriod(aux)
     if (data !== null) {
       scondDateFieldRef.current.focus()
     }
   }
 
   const onChangeFinal = (data: Date) => {
-    const period = { startDate: date.startDate, finalDate: data } as Period
-    onChange(period)
-    setDate(period)
+    const aux = { startDate: period.startDate, finalDate: data } as Period
+    onChange(aux)
+    setPeriod(aux)
   }
 
   const onClearStart = () => {
-    const period = { startDate: null, finalDate: date.finalDate } as Period
-    onChange(period)
-    setDate(period)
-    if (period.startDate === null) {
+    const aux = { startDate: null, finalDate: period.finalDate } as Period
+    onChange(aux)
+    setPeriod(aux)
+    if (aux.startDate === null) {
       firstDateFieldRef.current.focus()
     }
   }
 
   const onClearFinal = () => {
-    const period = { startDate: date.startDate, finalDate: null } as Period
-    onChange(period)
-    setDate(period)
-    if (period.finalDate === null) {
+    const aux = { startDate: period.startDate, finalDate: null } as Period
+    onChange(aux)
+    setPeriod(aux)
+    if (aux.finalDate === null) {
       scondDateFieldRef.current.focus()
     }
   }
 
-  const handleIconClick = () => {
+  const defaultHandleOnClick = () => {
     firstDateFieldRef.current.focus()
   }
 
@@ -93,7 +106,7 @@ export function PeriodInput(props: PeriodInputProps) {
           onChange={onChangeStart}
           onClear={onClearStart}
           style={classes.dateField}
-          value={date.startDate}
+          value={period.startDate}
         />
       </div>
       <Icon icon='arrowRight' style={classes.arrowIcon} />
@@ -105,7 +118,7 @@ export function PeriodInput(props: PeriodInputProps) {
           onChange={onChangeFinal}
           onClear={onClearFinal}
           style={classes.dateField}
-          value={date.finalDate}
+          value={period.finalDate}
         />
       </div>
       {icon && (
@@ -113,7 +126,7 @@ export function PeriodInput(props: PeriodInputProps) {
           size='small'
           skin='ghost'
           tabIndex={-1}
-          onClick={handleIconClick}
+          onClick={onIconClick ? onIconClick : defaultHandleOnClick}
           style={classes.calendarWrapper}
           disabled={disabled}
         >
