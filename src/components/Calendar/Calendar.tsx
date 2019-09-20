@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, useState } from 'react'
+import React, { CSSProperties, MouseEvent, useState } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
@@ -26,10 +26,20 @@ export interface CalendarProps extends Omit<MonthViewProps, 'visibleDate'> {
    * Map of modifier styles to be applied to a date if the respective modifier predicate applies.
    */
   modifierStyles?: Partial<DayModifierStyleMap>
+
+  /**
+   *
+   */
+  onMouseLeave?(e: MouseEvent<HTMLDivElement>): void
+
+  /**
+   *
+   */
+  isDaySelected?(day: Date): boolean
 }
 
 export function Calendar(props: CalendarProps) {
-  const { initialVisibleDate, modifiers, modifierStyles, ...rest } = props
+  const { initialVisibleDate, modifiers, modifierStyles, isDaySelected, ...rest } = props
   const { classes, theme } = useStyles(createStyles)
 
   const [visibleDate, setVisibleDate] = useState(initialVisibleDate)
@@ -45,7 +55,7 @@ export function Calendar(props: CalendarProps) {
   }
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} onMouseLeave={props.onMouseLeave}>
       <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
         <MonthControl visibleDate={visibleDate} onChange={setVisibleDate} />
         <YearControl visibleDate={visibleDate} onChange={setVisibleDate} />
@@ -56,6 +66,7 @@ export function Calendar(props: CalendarProps) {
         {...rest}
         visibleDate={visibleDate}
         onDayClick={handleDayClick}
+        isDaySelected={isDaySelected}
       />
     </div>
   )
