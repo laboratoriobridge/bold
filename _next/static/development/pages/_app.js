@@ -10410,9 +10410,8 @@ var FadeTransition_1 = __webpack_require__(/*! ../Transition/FadeTransition */ "
 var ModalBackdrop_1 = __webpack_require__(/*! ./ModalBackdrop */ "../lib/components/Modal/ModalBackdrop.js");
 var ModalContainer_1 = __webpack_require__(/*! ./ModalContainer */ "../lib/components/Modal/ModalContainer.js");
 function Modal(props) {
-    var open = props.open, size = props.size, closeOnBackdropClick = props.closeOnBackdropClick, children = props.children, rest = __rest(props, ["open", "size", "closeOnBackdropClick", "children"]);
-    var _a = styles_1.useStyles(exports.styles), classes = _a.classes, css = _a.css;
-    var sizeClasses = styles_1.useStyles(exports.sizeStyles).classes;
+    var open = props.open, size = props.size, closeOnBackdropClick = props.closeOnBackdropClick, children = props.children, style = props.style, rest = __rest(props, ["open", "size", "closeOnBackdropClick", "children", "style"]);
+    var _a = styles_1.useStyles(createStyles), classes = _a.classes, css = _a.css;
     // Kill body scroll when opened
     react_1.useEffect(function () {
         if (open) {
@@ -10444,7 +10443,7 @@ function Modal(props) {
             react_1.default.createElement(focus_trap_react_1.default, null,
                 react_1.default.createElement("div", { className: className },
                     react_1.default.createElement("div", { className: classes.modal },
-                        react_1.default.createElement(ModalContainer_1.ModalContainer, __assign({ style: css(classes.container, sizeClasses[size]) }, rest), children)),
+                        react_1.default.createElement(ModalContainer_1.ModalContainer, __assign({ style: css(classes.container, classes[size], style) }, rest), children)),
                     react_1.default.createElement(ModalBackdrop_1.ModalBackdrop, { onClick: closeOnBackdropClick ? rest.onClose : undefined })))))));
     }));
 }
@@ -10453,7 +10452,7 @@ Modal.defaultProps = {
     size: 'large',
     closeOnBackdropClick: true,
 };
-exports.styles = function (theme) { return ({
+var createStyles = function (theme) { return ({
     modal: {
         position: 'fixed',
         left: '50%',
@@ -10464,6 +10463,7 @@ exports.styles = function (theme) { return ({
         zIndex: theme.zIndex.modalContainer,
         display: 'flex',
         justifyContent: 'center',
+        padding: '2rem',
     },
     container: {
         maxHeight: '80vh',
@@ -10472,11 +10472,9 @@ exports.styles = function (theme) { return ({
     bodyWhenOpened: {
         overflow: 'hidden',
     },
-}); };
-exports.sizeStyles = function () { return ({
-    large: { width: 850 },
+    large: { width: 900 },
     small: { width: 520 },
-    auto: { maxWidth: '80%' },
+    auto: { maxWidth: '100%' },
 }); };
 //# sourceMappingURL=Modal.js.map
 
@@ -14976,8 +14974,9 @@ var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js")
 var Button_1 = __webpack_require__(/*! ../Button */ "../lib/components/Button/index.js");
 var Icon_1 = __webpack_require__(/*! ../Icon/Icon */ "../lib/components/Icon/Icon.js");
 function InputWrapper(props) {
-    var children = props.children, icon = props.icon, iconPosition = props.iconPosition, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearVisible = props.clearVisible, onClear = props.onClear;
-    var _a = styles_1.useStyles(createStyles, props), classes = _a.classes, css = _a.css;
+    var children = props.children, icon = props.icon, iconDisabled = props.iconDisabled, onIconClick = props.onIconClick, clearVisible = props.clearVisible, onClear = props.onClear;
+    var iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left');
+    var _a = styles_1.useStyles(createStyles, { icon: icon, iconPosition: iconPosition, clearVisible: clearVisible, onIconClick: onIconClick }), classes = _a.classes, css = _a.css;
     var locale = i18n_1.useLocale();
     var iconBoxClasses = css(classes.iconWrapper, iconPosition === 'left' && classes.iconLeft, iconPosition === 'right' && classes.iconRight);
     return (react_1.default.createElement("div", { className: classes.wrapper },
@@ -14989,27 +14988,32 @@ function InputWrapper(props) {
 }
 exports.InputWrapper = InputWrapper;
 InputWrapper.defaultProps = {
-    iconPosition: 'right',
     iconDisabled: false,
     clearVisible: false,
     onClear: function () { return null; },
 };
 var createStyles = function (theme, _a) {
-    var icon = _a.icon, iconPosition = _a.iconPosition, clearVisible = _a.clearVisible;
-    var paddingRight = iconPosition === 'right'
-        ? (clearVisible && icon && '4.5rem') || (clearVisible && '2rem') || (icon && '3rem')
-        : clearVisible && '2rem';
+    var icon = _a.icon, iconPosition = _a.iconPosition, clearVisible = _a.clearVisible, onIconClick = _a.onIconClick;
+    var paddingLeft = (icon && iconPosition === 'left' && onIconClick && '3rem') ||
+        (icon && iconPosition === 'left' && '2.5rem') ||
+        undefined;
+    var paddingRight = (icon && iconPosition === 'right' && clearVisible && onIconClick && '4.5rem') ||
+        (icon && iconPosition === 'right' && clearVisible && '4rem') ||
+        (icon && iconPosition === 'right' && onIconClick && '3rem') ||
+        (icon && iconPosition === 'right' && '2.5rem') ||
+        (clearVisible && '2rem') ||
+        undefined;
     return {
         wrapper: {
             position: 'relative',
             input: {
-                paddingLeft: iconPosition === 'left' && '3rem',
+                paddingLeft: paddingLeft,
                 paddingRight: paddingRight,
             },
         },
         clearButton: {
             position: 'absolute',
-            right: icon && iconPosition === 'right' ? '2.5rem' : 1,
+            right: icon && iconPosition === 'right' ? (onIconClick && '2.5rem') || '2rem' : 1,
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
@@ -15026,7 +15030,7 @@ var createStyles = function (theme, _a) {
         },
         iconWrapper: {
             position: 'absolute',
-            backgroundColor: theme.pallete.gray.c90,
+            backgroundColor: onIconClick ? theme.pallete.gray.c90 : 'transparent',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -49706,14 +49710,7 @@ var BoldApp = function BoldApp(props) {
       }
     });
   }, []);
-  return __jsx("html", {
-    lang: "en",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38
-    },
-    __self: this
-  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_6___default.a.Fragment, null, __jsx(next_head__WEBPACK_IMPORTED_MODULE_8___default.a, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 39
