@@ -1,6 +1,7 @@
-import React from 'react'
-import { Manager, Popper, PopperProps, Reference } from 'react-popper'
+import React, { useRef, useState } from 'react'
+import { PopperProps } from 'react-popper'
 
+import usePopper from '../../hooks/usePopper'
 import { ExternalStyles, useTheme } from '../../styles'
 import { Omit } from '../../util'
 import { randomStr } from '../../util/string'
@@ -27,13 +28,27 @@ export function Tooltip(props: TooltipProps) {
   const child = React.Children.only(children)
 
   const theme = useTheme()
+  const [visible, setVisible] = useState<boolean>(false)
 
-  const tooltipIdRef = React.useRef<string>(null)
-  React.useEffect(() => {
-    tooltipIdRef.current = `tooltip-${randomStr()}`
-  }, [])
+  const tooltipIdRef = useRef<string>(`tooltip-${randomStr()}`)
+  const anchorRef = useRef()
+  const tooltipRef = useRef()
 
-  const [visible, setVisible] = React.useState<boolean>(false)
+  const { style: popperStyle, placement } = usePopper(
+    {
+      anchorRef,
+      popperRef: tooltipRef,
+      modifiers: {
+        offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+        preventOverflow: {
+          boundariesElement: 'window',
+        },
+      },
+      ...rest,
+    },
+    [visible]
+  )
+
   const handleMouseEnter = e => {
     setVisible(true)
     child.props.onMouseEnter && child.props.onMouseEnter(e)
@@ -56,54 +71,35 @@ export function Tooltip(props: TooltipProps) {
   }
 
   return (
-    <Manager>
-      <Reference>
-        {({ ref }) => (
-          <RootRef rootRef={ref}>
-            {React.cloneElement(child, {
-              'aria-describedby': visible ? tooltipIdRef.current : undefined,
-              onMouseEnter: handleMouseEnter,
-              onMouseLeave: handleMouseLeave,
-              onFocus: handleFocus,
-              onBlur: handleBlur,
-            })}
-          </RootRef>
-        )}
-      </Reference>
+    <>
+      <RootRef rootRef={anchorRef}>
+        {React.cloneElement(child, {
+          'aria-describedby': tooltipIdRef.current,
+          onMouseEnter: handleMouseEnter,
+          onMouseLeave: handleMouseLeave,
+          onFocus: handleFocus,
+          onBlur: handleBlur,
+        })}
+      </RootRef>
+
       <FadeTransition in={visible}>
-        {({ className }) =>
-          visible && (
-            <Portal container={container}>
-              <Popper
-                modifiers={{
-                  offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
-                  preventOverflow: {
-                    boundariesElement: 'window',
-                  },
-                }}
-                {...rest}
-              >
-                {({ ref, style, placement }) => (
-                  <div
-                    id={tooltipIdRef.current}
-                    ref={ref}
-                    className={className}
-                    role='tooltip'
-                    style={{
-                      ...style,
-                      zIndex: theme.zIndex.tooltip,
-                    }}
-                    data-placement={placement}
-                  >
-                    <TooltipPopper text={text} style={externalStyle} />
-                  </div>
-                )}
-              </Popper>
-            </Portal>
-          )
-        }
+        {({ className }) => (
+          <Portal container={container}>
+            <div
+              id={tooltipIdRef.current}
+              ref={tooltipRef}
+              className={className}
+              role='tooltip'
+              aria-hidden={!visible ? 'true' : 'false'}
+              style={{ ...popperStyle, zIndex: theme.zIndex.tooltip }}
+              data-placement={placement}
+            >
+              <TooltipPopper text={text} style={externalStyle} />
+            </div>
+          </Portal>
+        )}
       </FadeTransition>
-    </Manager>
+    </>
   )
 }
 

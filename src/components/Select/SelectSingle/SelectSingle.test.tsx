@@ -1,12 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import * as stringUtils from '../../../util/string'
-
 import { DefaultItemType, SelectSingle, SelectSingleProps } from './SelectSingle'
 
-const stringUtilsModule = stringUtils as any
-stringUtilsModule.randomStr = jest.fn(() => 'abc')
+jest.mock('../../../util/string')
 
 const items: DefaultItemType[] = [
   { value: 1, label: 'Apple' },
