@@ -3,7 +3,7 @@
 exports[`icon should render correctly with icon 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -59,7 +59,7 @@ exports[`icon should render correctly with icon 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -206,7 +206,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -262,7 +262,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {

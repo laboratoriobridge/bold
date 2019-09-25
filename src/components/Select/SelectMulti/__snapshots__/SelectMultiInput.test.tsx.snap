@@ -3,7 +3,7 @@
 exports[`should render correctly 1`] = `
 .emotion-13 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -50,7 +50,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-13:hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-13:active {
