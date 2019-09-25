@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { PopperProps } from 'react-popper'
 
 import usePopper from '../../hooks/usePopper'
@@ -31,7 +31,7 @@ export function Tooltip(props: TooltipProps) {
   const [visible, setVisible] = useState<boolean>(false)
 
   const tooltipIdRef = useRef<string>(`tooltip-${randomStr()}`)
-  const anchorRef = useRef()
+  const anchorRef = useRef<HTMLElement>()
   const tooltipRef = useRef()
 
   const { style: popperStyle, placement } = usePopper(
@@ -49,13 +49,27 @@ export function Tooltip(props: TooltipProps) {
     [visible]
   )
 
-  const handleMouseEnter = e => {
+  useEffect(() => {
+    if (!anchorRef.current) {
+      return
+    }
+
+    const handleWindowMouseOver = (e: MouseEvent) => {
+      // This is implemented using mouseover since mouseleave does not trigger
+      // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
+      const target = e.target as Node
+      if (!anchorRef.current.contains(target)) {
+        setVisible(false)
+      }
+    }
+
+    window.addEventListener('mouseover', handleWindowMouseOver)
+    return () => window.removeEventListener('mouseover', handleWindowMouseOver)
+  }, [anchorRef.current])
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
     setVisible(true)
     child.props.onMouseEnter && child.props.onMouseEnter(e)
-  }
-  const handleMouseLeave = e => {
-    setVisible(false)
-    child.props.onMouseLeave && child.props.onMouseLeave(e)
   }
   const handleFocus = e => {
     setVisible(true)
@@ -76,7 +90,6 @@ export function Tooltip(props: TooltipProps) {
         {React.cloneElement(child, {
           'aria-describedby': tooltipIdRef.current,
           onMouseEnter: handleMouseEnter,
-          onMouseLeave: handleMouseLeave,
           onFocus: handleFocus,
           onBlur: handleBlur,
         })}

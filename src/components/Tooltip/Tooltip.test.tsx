@@ -56,7 +56,7 @@ it('should show tooltip when focus component', () => {
 it('should hide tooltip when mouse leaves component', () => {
   const { getByText } = render(createComponent())
   fireEvent.mouseEnter(getByText('Testing'))
-  fireEvent.mouseLeave(getByText('Testing'))
+  fireEvent.mouseOver(document)
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
 
@@ -71,10 +71,9 @@ it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', ()
   const focus = jest.fn()
   const blur = jest.fn()
   const mouseEnter = jest.fn()
-  const mouseLeave = jest.fn()
   const { getByText } = render(
     <Tooltip text='Tooltip text' offset={2} placement='bottom-start'>
-      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter}>
         Testing
       </button>
     </Tooltip>
@@ -94,8 +93,4 @@ it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', ()
   fireEvent.mouseEnter(target)
   expect(mouseEnter).toHaveBeenCalledTimes(1)
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
-
-  fireEvent.mouseLeave(target)
-  expect(mouseLeave).toHaveBeenCalledTimes(1)
-  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
