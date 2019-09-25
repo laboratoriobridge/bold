@@ -1,10 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import * as stringUtils from '../../../util/string'
-
 import { ModalAuto } from './ModalAuto'
-;(stringUtils as any).randomStr = jest.fn(() => 'abc')
+
+jest.mock('../../../util/string')
 
 // tslint:disable jsx-no-lambda
 
