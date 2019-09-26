@@ -9,6 +9,7 @@ export interface RangeCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
 }
+
 export const RangeCalendar = ({ initialDate, finalDate, ...rest }: RangeCalendarProps) => {
   if (initialDate && finalDate && finalDate < initialDate) {
     if (process.env.NODE_ENV !== 'production') {

@@ -75,21 +75,17 @@ export function PeriodInput(props: PeriodInputProps) {
   }
 
   const onClearStart = () => {
-    const aux = { startDate: null, finalDate: period.finalDate } as Period
+    const aux = { startDate: period.finalDate, finalDate: undefined } as Period
     onChange(aux)
     setPeriod(aux)
-    if (aux.startDate === null) {
-      firstDateFieldRef.current.focus()
-    }
+    firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: period.startDate, finalDate: null } as Period
+    const aux = { startDate: period.startDate, finalDate: undefined } as Period
     onChange(aux)
     setPeriod(aux)
-    if (aux.finalDate === null) {
-      scondDateFieldRef.current.focus()
-    }
+    scondDateFieldRef.current.focus()
   }
 
   const defaultHandleOnClick = () => {

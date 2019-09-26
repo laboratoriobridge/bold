@@ -23,6 +23,16 @@ export function PeriodField(props: PeriodFieldProps) {
     controller.current = ctrl
   }
 
+  const handleOnClick = (ctrl: PopperController) => (e: React.MouseEvent<HTMLInputElement>) => {
+    ctrl.show()
+    return props.onClick(e)
+  }
+
+  const handleInputFocus = (ctrl: PopperController) => (e: React.FocusEvent<HTMLInputElement>) => {
+    ctrl.show()
+    return props.onFocus(e)
+  }
+
   const handleFocusIn = () => {
     if (controller.current) {
       controller.current.show()
@@ -35,23 +45,41 @@ export function PeriodField(props: PeriodFieldProps) {
     }
   }
 
-  const handleCalendarPeriodChanged = (startDate, finalDate) => {
+  const handlePeriodChanged = (period: Period) => {
+    setPeriod(period)
+  }
+
+  const handleCalendarPeriodChanged = (startDate: Date, finalDate: Date) => {
     setPeriod({
       startDate,
       finalDate,
-    })
+    } as Period)
   }
 
   const renderTarget = (ctrl: PopperController) => {
     const { icon, ...rest } = props
-    return <PeriodInput {...rest} inputRef={inputRef} icon={icon} value={period} />
+    return (
+      <PeriodInput
+        {...rest}
+        inputRef={inputRef}
+        icon={icon}
+        value={period}
+        onChange={handlePeriodChanged}
+        onClick={handleOnClick(ctrl)}
+        onFocus={handleInputFocus(ctrl)}
+      />
+    )
   }
 
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <Popper control={setController} renderTarget={renderTarget} placement='auto' block>
         {(ctrl: PopperController) => (
-          <ControlledRangeCalendarPopup {...props.calendarProps} onChange={handleCalendarPeriodChanged} />
+          <ControlledRangeCalendarPopup
+            values={{ initialDate: period.startDate, finalDate: period.finalDate }}
+            onChange={handleCalendarPeriodChanged}
+            {...props.calendarProps}
+          />
         )}
       </Popper>
     </FocusManagerContainer>

@@ -6,15 +6,15 @@ import { CalendarProps } from '../Calendar'
 import { RangeCalendar } from './RangeCalendar'
 
 export interface ControlledRangeCalendarProps extends CalendarProps {
-  initialValues?: {
+  values?: {
     initialDate: Date
     finalDate: Date
   }
   onChange?(initialDate: Date, finalDate: Date): void
 }
-export const ControlledRangeCalendar = ({ onChange, initialValues, ...rest }: ControlledRangeCalendarProps) => {
-  const [initialDate, setInitialDate] = useState<Date>(initialValues ? initialValues.initialDate : undefined)
-  const [finalDate, setFinalDate] = useState<Date>(initialValues ? initialValues.finalDate : undefined)
+export const ControlledRangeCalendar = ({ onChange, values, ...rest }: ControlledRangeCalendarProps) => {
+  const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
+  const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
   const cmpMounted = useRef(false)
 
   // Call to onChange prop only after component has been mounted
@@ -25,6 +25,13 @@ export const ControlledRangeCalendar = ({ onChange, initialValues, ...rest }: Co
     }
     cmpMounted.current = true
   }, [initialDate, finalDate])
+
+  useEffect(() => {
+    if (values) {
+      setInitialDate(values.initialDate)
+      setFinalDate(values.finalDate)
+    }
+  }, [values])
 
   const setFinalVerified = (start: Date, end: Date) => {
     if (!rest.modifiers || !rest.modifiers.disabled) {
