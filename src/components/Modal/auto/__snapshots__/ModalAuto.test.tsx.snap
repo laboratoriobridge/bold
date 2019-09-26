@@ -26,12 +26,6 @@ exports[`should render correctly 1`] = `
   overflow: hidden;
 }
 
-.emotion-1 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-}
-
 .emotion-8 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
@@ -101,6 +95,19 @@ exports[`should render correctly 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
 }
 
 .emotion-0 {
@@ -215,7 +222,6 @@ exports[`should render correctly 1`] = `
     class="emotion-1"
     id="tooltip-abc"
     role="tooltip"
-    style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none; z-index: 1400;"
   >
     <div
       class="emotion-0"

@@ -18,7 +18,7 @@ storiesOf('Components|Tooltip', module).add('default', () => (
       text='Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             In non urna sit amet eros finibus auctor ut vitae magna.
             Donec mollis eu velit nec ullamcorper.'
-      placement='bottom-start'
+      placement='right'
     >
       <Button skin='ghost' size='small'>
         <Icon icon='trashOutline' />
