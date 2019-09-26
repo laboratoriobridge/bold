@@ -66,7 +66,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -157,9 +157,9 @@ exports[`should render correctly 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   min-width: 144px;

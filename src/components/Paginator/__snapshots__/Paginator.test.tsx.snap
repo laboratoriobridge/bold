@@ -35,7 +35,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -102,7 +102,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   margin-left: 0.25rem;
@@ -134,7 +134,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-2 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -193,7 +193,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:not(:disabled):focus {
@@ -322,7 +322,7 @@ exports[`should render correctly 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   margin-left: 0.25rem;
@@ -354,7 +354,7 @@ exports[`should render correctly 2`] = `
 
 .emotion-2 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -413,7 +413,7 @@ exports[`should render correctly 2`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:not(:disabled):focus {
@@ -448,7 +448,7 @@ exports[`should render correctly 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
@@ -596,7 +596,7 @@ exports[`should render correctly 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   margin-left: 0.25rem;
@@ -628,7 +628,7 @@ exports[`should render correctly 3`] = `
 
 .emotion-2 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -687,7 +687,7 @@ exports[`should render correctly 3`] = `
 }
 
 .emotion-2:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:not(:disabled):focus {
@@ -722,7 +722,7 @@ exports[`should render correctly 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;

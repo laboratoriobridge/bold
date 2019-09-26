@@ -3,7 +3,7 @@
 exports[`should accept style prop 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -60,7 +60,7 @@ exports[`should accept style prop 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -88,7 +88,7 @@ exports[`should accept style prop 1`] = `
 exports[`should render character counter 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -144,7 +144,7 @@ exports[`should render character counter 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -187,7 +187,7 @@ exports[`should render character counter 1`] = `
 exports[`should render character counter 2`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -243,7 +243,7 @@ exports[`should render character counter 2`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -286,7 +286,7 @@ exports[`should render character counter 2`] = `
 exports[`should render correctly 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -342,7 +342,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-1:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-1:not(:disabled):focus {
@@ -387,7 +387,7 @@ exports[`should render correctly 1`] = `
 exports[`should render correctly when disabled 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -443,7 +443,7 @@ exports[`should render correctly when disabled 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -472,7 +472,7 @@ exports[`should render correctly when disabled 1`] = `
 exports[`should render correctly with error 1`] = `
 .emotion-0 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -529,7 +529,7 @@ exports[`should render correctly with error 1`] = `
 }
 
 .emotion-0:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:not(:disabled):focus {
@@ -585,7 +585,7 @@ exports[`should render correctly with error 1`] = `
 exports[`textarea label label should have a htmlFor prop equals to the used id 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -641,7 +641,7 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
 }
 
 .emotion-1:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-1:not(:disabled):focus {
@@ -682,7 +682,7 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
 exports[`textarea label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -738,7 +738,7 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
 }
 
 .emotion-1:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-1:not(:disabled):focus {

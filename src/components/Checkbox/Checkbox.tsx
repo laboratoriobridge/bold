@@ -38,7 +38,7 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   check: {
     backgroundColor: theme.pallete.surface.main,
-    border: '1px solid ' + theme.pallete.gray.c70,
+    border: '1px solid ' + theme.pallete.gray.c60,
     borderRadius: theme.radius.input,
     display: 'inline-block',
     height: 16,
@@ -48,7 +48,6 @@ export const createStyles = (theme: Theme) => ({
     width: 16,
   } as CSSProperties,
   label: {
-    color: theme.pallete.gray.c30,
     marginLeft: '0.5rem',
   } as CSSProperties,
   disabled: {
@@ -61,7 +60,7 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'check' | 'l
     opacity: 0,
     marginRight: -13,
     [`&:hover + .${classes.check}`]: {
-      borderColor: theme.pallete.gray.c40,
+      borderColor: theme.pallete.gray.c50,
     },
     [`&:checked + .${classes.check}`]: {
       backgroundColor: theme.pallete.primary.main,
