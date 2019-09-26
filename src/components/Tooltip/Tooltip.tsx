@@ -50,7 +50,7 @@ export function Tooltip(props: TooltipProps) {
   )
 
   useEffect(() => {
-    if (!anchorRef.current) {
+    if (!anchorRef.current || !visible) {
       return
     }
 
@@ -65,7 +65,7 @@ export function Tooltip(props: TooltipProps) {
 
     window.addEventListener('mouseover', handleWindowMouseOver)
     return () => window.removeEventListener('mouseover', handleWindowMouseOver)
-  }, [anchorRef.current])
+  }, [anchorRef.current, visible])
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
     setVisible(true)
