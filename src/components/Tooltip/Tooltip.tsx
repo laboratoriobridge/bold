@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { PopperProps } from 'react-popper'
 
 import usePopper from '../../hooks/usePopper'
-import { ExternalStyles, useTheme } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
@@ -27,7 +27,7 @@ export function Tooltip(props: TooltipProps) {
   const { text, children, offset, style: externalStyle, container, ...rest } = props
   const child = React.Children.only(children)
 
-  const theme = useTheme()
+  const { theme, css, classes } = useStyles(createStyles)
   const [visible, setVisible] = useState<boolean>(false)
 
   const tooltipIdRef = useRef<string>(`tooltip-${randomStr()}`)
@@ -101,10 +101,9 @@ export function Tooltip(props: TooltipProps) {
             <div
               id={tooltipIdRef.current}
               ref={tooltipRef}
-              className={className}
+              className={css(className, popperStyle, classes.popper, visible && classes.shown)}
               role='tooltip'
               aria-hidden={!visible ? 'true' : 'false'}
-              style={{ ...popperStyle, zIndex: theme.zIndex.tooltip }}
               data-placement={placement}
             >
               <TooltipPopper text={text} style={externalStyle} />
@@ -120,3 +119,13 @@ Tooltip.defaultProps = {
   placement: 'top',
   offset: 0.25,
 } as Partial<TooltipProps>
+
+const createStyles = (theme: Theme) => ({
+  popper: {
+    zIndex: theme.zIndex.tooltip,
+    display: 'none',
+  },
+  shown: {
+    display: 'block',
+  },
+})
