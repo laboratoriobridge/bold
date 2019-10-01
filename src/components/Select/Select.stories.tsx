@@ -42,6 +42,27 @@ storiesOf('Components|Select', module)
       multiple={boolean('multiple', false)}
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
+      openOnFocus={boolean('openOnFocus', true)}
+      loading={boolean('loading', false)}
+      onChange={action('changed')}
+      onBlur={action('blur')}
+    />
+  ))
+  .add('suggestion', () => (
+    <Select<DefaultItemType>
+      label='Fruit'
+      name='fruit'
+      items={fruits}
+      error={text('error', '')}
+      icon={null}
+      createNewItem={str => ({ value: str, label: str })}
+      itemToString={item => item && item.label}
+      itemIsEqual={(a, b) => a.value === b.value}
+      placeholder='Select a value...'
+      multiple={boolean('multiple', false)}
+      clearable={boolean('clearable', true)}
+      disabled={boolean('disabled', false)}
+      openOnFocus={boolean('openOnFocus', false)}
       loading={boolean('loading', false)}
       onChange={action('changed')}
       onBlur={action('blur')}
@@ -59,6 +80,7 @@ storiesOf('Components|Select', module)
       multiple={boolean('multiple', false)}
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
+      openOnFocus={boolean('openOnFocus', true)}
       onChange={action('changed')}
       onBlur={action('blur')}
     />
@@ -83,6 +105,7 @@ storiesOf('Components|Select', module)
       multiple={boolean('multiple', false)}
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
+      openOnFocus={boolean('openOnFocus', true)}
       loading={boolean('loading', false)}
       onChange={action('changed')}
       onBlur={action('blur')}

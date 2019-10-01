@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`SelectCreateItem should render correctly 1`] = `
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #3A3A47;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.emotion-0:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-0:hover {
+  background: #F0F0F5;
+}
+
+.emotion-0:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+<div>
+  <li
+    aria-selected="false"
+    class="emotion-0"
+  >
+    Select an item or type a new value
+  </li>
+</div>
+`;
+
 exports[`SelectEmptyItem should render correctly 1`] = `
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
@@ -12,6 +52,8 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   -webkit-transition: .1s ease;
   transition: .1s ease;
   background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .emotion-0:last-of-type {
@@ -101,6 +143,8 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   -webkit-transition: .1s ease;
   transition: .1s ease;
   background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .emotion-1:last-of-type {

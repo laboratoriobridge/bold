@@ -27,6 +27,7 @@ const locale = {
     currentPage: 'Current page',
   },
   select: {
+    createItem: 'Select an item or type a new value',
     emptyItem: 'No results were found',
     loadingItem: 'Loading...',
     removeItem: 'Remove',

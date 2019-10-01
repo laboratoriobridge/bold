@@ -26,7 +26,12 @@ export function SelectMenuItem(props: SelectMenuItemProps) {
 export function SelectHelperMenuItem(props: SelectMenuItemProps) {
   const theme = useTheme()
 
-  return <SelectMenuItem style={{ background: theme.pallete.surface.background }} {...props} />
+  return (
+    <SelectMenuItem
+      style={{ background: theme.pallete.surface.background, paddingTop: '0.25rem', paddingBottom: '0.25rem' }}
+      {...props}
+    />
+  )
 }
 
 export function SelectLoadingItem(props: SelectMenuItemProps) {
@@ -45,6 +50,12 @@ export function SelectEmptyItem(props: SelectMenuItemProps) {
   const locale = useLocale()
 
   return <SelectHelperMenuItem {...props}>{locale.select.emptyItem}</SelectHelperMenuItem>
+}
+
+export function SelectCreateItem(props: SelectMenuItemProps) {
+  const locale = useLocale()
+
+  return <SelectHelperMenuItem {...props}>{locale.select.createItem}</SelectHelperMenuItem>
 }
 
 export const createStyles = (theme: Theme) => ({
