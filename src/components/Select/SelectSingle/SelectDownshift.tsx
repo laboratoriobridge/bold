@@ -16,6 +16,13 @@ export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
    * @param downshift The downshift controller and helpers.
    */
   onFilterChange?(filter: string, downshift: SelectDownshiftRenderProps<T>): void
+
+  /**
+   * If informed, select will allow insertion of items not present on the select.
+   * @param inputValue The string type in the text box
+   * @return The value that should be created and hold by the select
+   */
+  createNewItem?(inputValue: string): T
 }
 
 export interface SelectDownshiftRenderProps<T> extends ControllerStateAndHelpers<T>, State<T> {
@@ -42,7 +49,7 @@ export function defaultSelectFilter<T>(
  * Downshift extension with item and filter management.
  */
 export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
-  const { items, onFilterChange, children, ...rest } = props
+  const { items, onFilterChange, children, createNewItem, ...rest } = props
 
   const [visibleItems, setVisibleItems] = useState<T[]>(items)
   useEffect(() => {
@@ -50,6 +57,10 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
   }, [props.items])
 
   const handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
+    if (createNewItem && options.hasOwnProperty('inputValue')) {
+      rest.onChange && rest.onChange(createNewItem(options.inputValue), getStateAndHelpers(downshift))
+    }
+
     if (options.isOpen) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }

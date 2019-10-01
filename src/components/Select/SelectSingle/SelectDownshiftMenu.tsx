@@ -3,12 +3,13 @@ import React, { CSSProperties } from 'react'
 
 import { useStyles } from '../../../styles'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
+import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
 
 export interface SelectDownshiftMenuProps<T> {
   items: T[]
   loading: boolean
   downshift: ControllerStateAndHelpers<T>
-
+  createNewItem?: boolean
   components?: Partial<SelectMenuComponents<T>>
 
   /**
@@ -20,6 +21,7 @@ export interface SelectDownshiftMenuProps<T> {
 }
 
 export interface SelectMenuComponents<T> {
+  CreateItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   LoadingItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   EmptyItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   Item: React.ComponentType<SelectDownshiftMenuProps<T> & { item: T; index: number }>
@@ -30,11 +32,12 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
     items,
     loading: isLoading,
     components,
+    createNewItem,
     downshift: { isOpen, getMenuProps },
   } = props
 
   const { classes } = useStyles(createStyles)
-  const { LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
+  const { CreateItem, LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
 
   return (
     <div className={classes.wrapper}>
@@ -42,7 +45,9 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
         <SelectMenu {...getMenuProps({ refKey: 'menuRef' })}>
           {isLoading && <LoadingItem {...props} />}
 
-          {!isLoading && (!items || items.length === 0) && <EmptyItem {...props} />}
+          {!isLoading && createNewItem && <CreateItem {...props} />}
+
+          {!isLoading && !createNewItem && (!items || items.length === 0) && <EmptyItem {...props} />}
 
           {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
         </SelectMenu>
@@ -52,6 +57,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
 }
 
 export const defaultComponents: SelectMenuComponents<any> = {
+  CreateItem: (props: SelectDownshiftMenuProps<any>) => <SelectCreateItem />,
   LoadingItem: (props: SelectDownshiftMenuProps<any>) => <SelectLoadingItem />,
   EmptyItem: (props: SelectDownshiftMenuProps<any>) => <SelectEmptyItem />,
   Item: (props: SelectDownshiftMenuProps<any> & { item: any; index: number }) => {

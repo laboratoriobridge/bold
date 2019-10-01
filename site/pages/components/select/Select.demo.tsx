@@ -6,9 +6,7 @@ function SelectDemo() {
   const itemToString = (item: any) => item
 
   return (
-    <FormControl label='Favorite pasta' required>
-      <Select<string> items={items} itemToString={itemToString} name='favorite pasta' required />
-    </FormControl>
+    <Select<string> label='Favorite pasta' items={items} itemToString={itemToString} name='favorite pasta' required />
   )
 }
 

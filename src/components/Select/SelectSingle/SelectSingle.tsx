@@ -24,6 +24,7 @@ export interface SelectSingleProps<T = DefaultItemType>
   onChange?: SelectDownshiftProps<T>['onChange']
   isOpen?: SelectDownshiftProps<T>['isOpen']
   onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
+  createNewItem?: SelectDownshiftProps<T>['createNewItem']
 
   loading?: SelectDownshiftMenuProps<T>['loading']
   renderItem?: SelectDownshiftMenuProps<T>['renderItem']
@@ -38,6 +39,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     onChange,
     isOpen,
     onFilterChange,
+    createNewItem,
     loading,
     renderItem,
     components,
@@ -80,6 +82,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         onChange={onChange}
         isOpen={isOpen}
         onFilterChange={onFilterChange}
+        createNewItem={createNewItem}
         labelId={formControlProps.labelId}
       >
         {downshift => {
@@ -89,7 +92,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
             <div className={css(style)}>
               <div>
                 <TextInput
-                  icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
+                  icon={downshiftOpen ? 'angleUp' : 'angleDown'}
                   {...rest}
                   onBlur={handleInputBlur(downshift)}
                   onFocus={handleInputFocus(downshift)}
@@ -108,6 +111,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
                 loading={loading}
                 renderItem={renderItem}
                 components={components}
+                createNewItem={!!createNewItem}
               />
             </div>
           )
