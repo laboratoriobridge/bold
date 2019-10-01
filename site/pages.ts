@@ -37,6 +37,7 @@ export default [
     icon: 'bricksFilled',
     href: '/components',
     children: [
+      { href: '/components/overview', title: 'Overview' },
       { href: '/components/accordion', title: 'Accordion' },
       { href: '/components/alert', title: 'Alert' },
       { href: '/components/breadcrumb', title: 'Breadcrumb' },
