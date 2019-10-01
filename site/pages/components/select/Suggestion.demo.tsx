@@ -4,7 +4,7 @@ import { Select, Text, VFlow } from '../../../../lib'
 
 const items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']
 
-function TypeaheadDemo() {
+function SuggestionDemo() {
   const [value, setValue] = useState()
 
   const itemToString = (item: any) => item
@@ -28,4 +28,4 @@ function TypeaheadDemo() {
   )
 }
 
-export default TypeaheadDemo
+export default SuggestionDemo

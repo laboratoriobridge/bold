@@ -45,9 +45,9 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
         <SelectMenu {...getMenuProps({ refKey: 'menuRef' })}>
           {isLoading && <LoadingItem {...props} />}
 
-          {!isLoading && createNewItem && <CreateItem {...props} />}
+          {!isLoading && createNewItem && (items || []).length > 0 && <CreateItem {...props} />}
 
-          {!isLoading && !createNewItem && (!items || items.length === 0) && <EmptyItem {...props} />}
+          {!isLoading && !createNewItem && (items || []).length === 0 && <EmptyItem {...props} />}
 
           {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
         </SelectMenu>

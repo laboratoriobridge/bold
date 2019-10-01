@@ -14,8 +14,10 @@ Select is a type of input that is used in forms, where a user is submitting data
 
 <Demo src='pages/components/select/Select' />
 
-## Typeahead
+## Suggestion
 
-Allow select value to be whatever the user types.
+Allow select value to be whatever the user types, by providing a `createNewItem` prop.
 
-<Demo src='pages/components/select/Typeahead' />
+You can use the prop `openOnFocus` to control whether the suggestion menu should appear when input receives focus - default is false for suggestion selects (when createNewItem) and true for normal selects.
+
+<Demo src='pages/components/select/Suggestion' />

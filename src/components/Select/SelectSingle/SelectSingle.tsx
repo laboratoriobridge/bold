@@ -23,6 +23,7 @@ export interface SelectSingleProps<T = DefaultItemType>
   itemToString: SelectDownshiftProps<T>['itemToString']
   onChange?: SelectDownshiftProps<T>['onChange']
   isOpen?: SelectDownshiftProps<T>['isOpen']
+  openOnFocus?: SelectDownshiftProps<T>['openOnFocus']
   onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
   createNewItem?: SelectDownshiftProps<T>['createNewItem']
 
@@ -38,6 +39,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     itemToString,
     onChange,
     isOpen,
+    openOnFocus,
     onFilterChange,
     createNewItem,
     loading,
@@ -81,6 +83,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         itemToString={itemToString}
         onChange={onChange}
         isOpen={isOpen}
+        openOnFocus={openOnFocus}
         onFilterChange={onFilterChange}
         createNewItem={createNewItem}
         labelId={formControlProps.labelId}

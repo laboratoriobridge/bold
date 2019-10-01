@@ -1,12 +1,17 @@
-import Downshift, { ControllerStateAndHelpers, DownshiftProps, StateChangeOptions } from 'downshift'
+import Downshift, { ControllerStateAndHelpers, DownshiftProps, DownshiftState, StateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
   /**
    * Items to be populated on the select component.
    */
   items: T[]
+
+  /**
+   * Whether the select menu should be opened when the select is focused.
+   */
+  openOnFocus?: boolean
 
   children?(props: SelectDownshiftRenderProps<T>): React.ReactNode
 
@@ -49,7 +54,9 @@ export function defaultSelectFilter<T>(
  * Downshift extension with item and filter management.
  */
 export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
-  const { items, onFilterChange, children, createNewItem, ...rest } = props
+  const { items, onFilterChange, children, createNewItem, openOnFocus, ...rest } = props
+
+  const stateReducer = useMemo(() => createReducer(props), [openOnFocus, props.stateReducer])
 
   const [visibleItems, setVisibleItems] = useState<T[]>(items)
   useEffect(() => {
@@ -91,7 +98,7 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
   })
 
   return (
-    <Downshift {...rest} onStateChange={handleStateChange} onChange={handleChange}>
+    <Downshift {...rest} stateReducer={stateReducer} onStateChange={handleStateChange} onChange={handleChange}>
       {downshift => children(getStateAndHelpers(downshift))}
     </Downshift>
   )
@@ -103,3 +110,15 @@ SelectDownshift.defaultProps = {
     setVisibleItems(defaultSelectFilter(items, filter, itemToString))
   },
 } as Partial<SelectDownshiftProps<any>>
+
+function createReducer(props: SelectDownshiftProps<any>) {
+  const { openOnFocus = props.createNewItem ? false : undefined, stateReducer } = props
+
+  return (state: DownshiftState<any>, changes: StateChangeOptions<any>) => {
+    if (openOnFocus === false && changes.type === undefined && !state.isOpen && changes.isOpen) {
+      return { ...changes, isOpen: false }
+    }
+
+    return stateReducer ? stateReducer(state, changes) : changes
+  }
+}
