@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Tag, TagProps, useTheme } from '../../../../lib'
+import { Tag, TagProps, useTheme } from '../../lib'
 
 export function TagDone(props: TagProps) {
   const theme = useTheme()
