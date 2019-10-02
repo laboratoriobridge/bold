@@ -1,10 +1,10 @@
 import React, { CSSProperties, useEffect, useRef, useState } from 'react'
 
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
-import { Button } from '../Button'
 import { DateInput } from '../DateField'
 import { Icon, Icons } from '../Icon'
 import { MaskedTextFieldProps } from '../MaskedTextField'
+import { InputWrapper } from '../TextField/InputWrapper'
 
 export interface Period {
   startDate: Date
@@ -76,7 +76,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   }
 
   const onClearStart = () => {
-    const aux = { startDate: period.finalDate, finalDate: undefined } as Period
+    const aux = { startDate: undefined, finalDate: undefined } as Period
     onChange(aux)
     setPeriod(aux)
     firstDateFieldRef.current.focus()
@@ -93,55 +93,52 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     firstDateFieldRef.current.focus()
   }
 
+  const componentIcon = icon ? icon : 'calendarOutline'
+  const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
+
   return (
-    <div className={className}>
-      <div className={classes.dateFieldWrapper}>
-        <DateInput
-          clearable
-          disabled={disabled}
-          inputRef={firstDateFieldRef}
-          onChange={onChangeStart}
-          onClear={onClearStart}
-          style={classes.dateField}
-          value={period.startDate}
-        />
+    <InputWrapper icon={componentIcon} onIconClick={handleIconClick} iconDisabled={disabled}>
+      <div className={className}>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable
+            disabled={disabled}
+            inputRef={firstDateFieldRef}
+            onChange={onChangeStart}
+            onClear={onClearStart}
+            style={classes.dateField}
+            value={period.startDate}
+          />
+        </div>
+        <span className={classes.spanWrapper}>
+          <Icon icon='arrowRight' style={classes.arrowIcon} />
+        </span>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable
+            disabled={disabled}
+            inputRef={scondDateFieldRef}
+            onChange={onChangeFinal}
+            onClear={onClearFinal}
+            style={classes.dateField}
+            value={period.finalDate}
+          />
+        </div>
       </div>
-      <Icon icon='arrowRight' style={classes.arrowIcon} />
-      <div className={classes.dateFieldWrapper}>
-        <DateInput
-          clearable
-          disabled={disabled}
-          inputRef={scondDateFieldRef}
-          onChange={onChangeFinal}
-          onClear={onClearFinal}
-          style={classes.dateField}
-          value={period.finalDate}
-        />
-      </div>
-      {icon && (
-        <Button
-          size='small'
-          skin='ghost'
-          tabIndex={-1}
-          onClick={onIconClick ? onIconClick : defaultHandleOnClick}
-          style={classes.calendarWrapper}
-          disabled={disabled}
-        >
-          <Icon icon={icon} />
-        </Button>
-      )}
-    </div>
+    </InputWrapper>
   )
 }
 
 const createStyleParts = (theme: Theme) => ({
   base: {
     backgroundColor: theme.pallete.surface.main,
-    border: '1px solid ' + theme.pallete.gray.c70,
+    border: '1px solid' + theme.pallete.gray.c70,
     borderRadius: theme.radius.input,
     cursor: 'default',
     display: 'flex',
-    margin: '0.6rem 0rem 0.6rem 0rem',
+    position: 'relative',
+    paddingRight: '2.5rem',
+    paddingLeft: '0.1rem',
     transition: 'box-shadow .2s ease',
     '&:required': {
       boxShadow: 'none',
@@ -150,10 +147,6 @@ const createStyleParts = (theme: Theme) => ({
   active: {
     borderColor: theme.pallete.primary.main,
     boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.09)',
-  } as CSSProperties,
-  disabled: {
-    backgroundColor: theme.pallete.surface.background,
-    borderColor: theme.pallete.gray.c80,
   } as CSSProperties,
   focus: {
     boxShadow: focusBoxShadow(theme),
@@ -173,32 +166,29 @@ const createStyleParts = (theme: Theme) => ({
   } as CSSProperties,
 })
 
-const createStyles = (theme: Theme) => {
+const createStyles = (theme: Theme, disabled: boolean) => {
   const parts = createStyleParts(theme)
 
   return {
     div: {
       ...parts.base,
-      ':disabled': parts.disabled,
       ':not(:disabled):hover': parts.hover,
       ':not(:disabled):active': parts.active,
       ':focus-within': {
         ':not(:disabled)': parts.focus,
       },
+      background: disabled && theme.pallete.surface.background,
     },
     invalid: parts.invalid,
     arrowIcon: {
+      background: 'transparent',
+      color: disabled && theme.pallete.text.disabled,
       cursor: 'default',
     } as CSSProperties,
-    calendarWrapper: {
-      height: 'fit-content',
-      borderRadius: theme.radius.input,
-      backgroundColor: theme.pallete.gray.c90,
-      padding: 'calc(0.195rem - 1px) calc(0.25rem - 1px)',
-      width: '2.5rem',
-      '&:focus': {
-        boxShadow: 'none',
-      },
+    spanWrapper: {
+      background: 'transparent',
+      display: 'flex',
+      alignItems: 'center',
     } as CSSProperties,
     dateField: {
       border: 'none',
@@ -206,7 +196,7 @@ const createStyles = (theme: Theme) => {
         boxShadow: 'none !important',
       },
     } as CSSProperties,
-    dateFieldWrapper: {
+    fieldWrapper: {
       flex: 1,
     } as CSSProperties,
   }

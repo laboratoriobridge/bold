@@ -12,11 +12,8 @@ import { Period } from './PeriodInputBase'
 
 export interface PeriodFieldProps extends PeriodInputProps {
   minDate?: Date
-
   maxDate?: Date
-
   icon?: Icons
-
   calendarProps?: ControlledRangeCalendarProps
 }
 
