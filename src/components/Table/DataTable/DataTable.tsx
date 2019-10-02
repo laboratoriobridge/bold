@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ExternalStyles } from '../../../styles'
+import { ExternalStyles, useCss } from '../../../styles'
 import { SortDirection } from '../SortableLabel/SortableLabel'
 import { Table, TableHead, TableHeader, TableHeaderProps, TableProps, TableRow } from '../Table'
 
@@ -11,6 +11,7 @@ export interface TableColumnConfig<T = any> {
   header?: React.ReactNode
   sortable?: boolean
   style?: ExternalStyles
+  align?: 'left' | 'center' | 'right'
   render(row: T): React.ReactNode
 }
 
@@ -30,6 +31,8 @@ export interface DataTableRenderProps extends DataTableProps {
 }
 
 export function DataTable<T = any>(props: DataTableProps<T>) {
+  const { css } = useCss()
+
   const getColumn = (columnName: string): TableColumnConfig => {
     return props.columns.find(col => col.name === columnName)
   }
@@ -41,12 +44,15 @@ export function DataTable<T = any>(props: DataTableProps<T>) {
       throw new Error(`Column '${column}' not found.`)
     }
 
+    const { name, sortable, style } = col
+
     return {
-      key: col.name,
-      'data-name': col.name,
-      sortable: col.sortable,
+      key: name,
+      'data-name': name,
+      sortable,
       sortDirection: getSortDirection(col),
       onSortChange: handleSortChange(col),
+      style: css(defaultColumnStyles(col), style),
     }
   }
 
@@ -122,3 +128,7 @@ const changeSort = (sort: string[], name: string, dir: SortDirection): string[] 
   })
   return swap ? newArray : [...newArray, newSort]
 }
+
+export const defaultColumnStyles = (col: TableColumnConfig) => ({
+  textAlign: col.align,
+})

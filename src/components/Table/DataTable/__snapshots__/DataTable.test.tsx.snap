@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-4 {
-  text-align: left;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
-.emotion-17 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
 .emotion-30 {
   width: 100%;
   border-collapse: collapse;
@@ -22,6 +9,12 @@ exports[`should render correctly 1`] = `
 
 .emotion-30 tr:hover td {
   background: #F0F0F5;
+}
+
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-3 {
@@ -46,12 +39,28 @@ exports[`should render correctly 1`] = `
   fill: #0069D0;
 }
 
+.emotion-14 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+  text-align: right;
+  color: red;
+}
+
+.emotion-17 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
 .emotion-19 {
   text-align: left;
   padding: 0 1rem;
   height: 2.5rem;
   border-bottom: 1px solid #D3D4DD;
   text-align: right;
+  color: red;
 }
 
 <div>
@@ -115,7 +124,7 @@ exports[`should render correctly 1`] = `
           </span>
         </th>
         <th
-          class="emotion-4"
+          class="emotion-14"
           data-name="age"
         >
           <span
