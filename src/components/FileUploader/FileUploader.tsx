@@ -21,23 +21,30 @@ export interface FileProps {
 }
 
 export function FileUploader(props: FileUploaderProps) {
-  const { file, text, ...rest } = props
+  const { file, text, disabled, ...rest } = props
   const { classes, css } = useStyles(createStyles)
-
   const { getRootProps, getInputProps, isDragActive, isDragAccept } = useDropzone(rest)
 
   return (
-    <div className={classes.dropzone} {...getRootProps()}>
+    <div
+      className={css(
+        classes.componentWrapper,
+        isDragActive && classes.dragBackground,
+        disabled && classes.pointerEventsNone
+      )}
+      {...getRootProps()}
+    >
       <input {...getInputProps()} />
-
-      <div className={css(classes.wrapper, isDragActive && classes.dragActive)}>
-        {isDragAccept}
-        <HFlow alignItems='center' hSpacing={0.5}>
-          <Icon fill='secondary' icon='upload' />
-          <Text color='secondary' fontSize={0.875} fontWeight='bold'>
-            {text}
-          </Text>
-        </HFlow>
+      <div className={css(classes.buttonWrapper, disabled && classes.disabled)}>
+        <div className={css(classes.dropzone, isDragActive && classes.dragActive)}>
+          {isDragAccept}
+          <HFlow justifyContent='center' alignItems='center' hSpacing={0.5}>
+            <Icon fill={disabled ? 'disabled' : 'secondary'} icon='upload' />
+            <Text color={disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
+              {text}
+            </Text>
+          </HFlow>
+        </div>
       </div>
 
       {file && <FileDetails file={file} />}
@@ -51,7 +58,7 @@ export interface FileDetailsProps {
 
 export function FileDetails(props: FileDetailsProps) {
   const { file } = props
-  const { classes } = useStyles(createStyles)
+  const { css, classes } = useStyles(createStyles)
 
   const returnExtension = () => {
     const { type } = file.selectedFile
@@ -66,7 +73,7 @@ export function FileDetails(props: FileDetailsProps) {
   }
 
   return (
-    <div className={classes.fileDetailsContainer}>
+    <div className={css(classes.file, classes.fileDetailsContainer)}>
       <FileExtension extension={returnExtension()} />
       <div className={classes.fileDetails}>
         <FileInfo file={file} />
@@ -85,7 +92,7 @@ export function FileInfo(props: FileInfoProps) {
   const { classes } = useStyles(createStyles)
 
   return (
-    <div className={classes.fileInfo}>
+    <div className={classes.fileDetailsContainer}>
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
@@ -119,12 +126,8 @@ export function FileExtension(props: FileExtensionProps) {
 }
 
 export const createStyles = (theme: Theme) => ({
-  dropzone: {
+  componentWrapper: {
     backgroundColor: theme.pallete.surface.main,
-    borderRadius: theme.radius.paper,
-    border: '1px solid ' + theme.pallete.divider,
-    cursor: 'pointer',
-    padding: '0.25rem',
     transition: 'box-shadow .2s ease',
 
     '&:focus': {
@@ -132,32 +135,42 @@ export const createStyles = (theme: Theme) => ({
       boxShadow: focusBoxShadow(theme),
     },
   } as CSSProperties,
-  wrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-    border: `1px dashed transparent`,
-    padding: '0.25rem',
+  buttonWrapper: {
+    border: `1px solid` + theme.pallete.gray.c40,
+    borderRadius: theme.radius.popper,
+    cursor: 'pointer',
+    padding: '0.25em',
+  } as CSSProperties,
+  dropzone: {
+    borderRadius: theme.radius.popper,
+    padding: '0.52em',
+  } as CSSProperties,
+  dragBackground: {
+    backgroundColor: theme.pallete.surface.background,
   } as CSSProperties,
   dragActive: {
-    borderColor: theme.pallete.divider,
-  },
+    border: `1px dashed` + theme.pallete.gray.c40,
+  } as CSSProperties,
+  pointerEventsNone: {
+    pointerEvents: 'none',
+  } as CSSProperties,
+  disabled: {
+    border: `1px solid` + theme.pallete.gray.c80,
+  } as CSSProperties,
+
   file: {
-    borderTop: '1px solid ' + theme.pallete.divider,
+    borderRadius: theme.radius.popper,
+    borderBottom: '1px solid ' + theme.pallete.gray.c80,
+    borderLeft: '1px solid ' + theme.pallete.gray.c80,
+    borderRight: '1px solid ' + theme.pallete.gray.c80,
     padding: '1rem',
   },
   fileDetailsContainer: {
     alignItems: 'center',
-    borderTop: `1px solid ${theme.pallete.divider}`,
     display: 'flex',
-    padding: '1rem',
   },
   fileDetails: {
     flexGrow: 1,
     marginLeft: '1rem',
-  },
-  fileInfo: {
-    alignItems: 'center',
-    display: 'flex',
   },
 })
