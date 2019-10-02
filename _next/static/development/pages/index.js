@@ -449,7 +449,7 @@ var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/inde
 exports.createStyles = function (theme) { return ({
     button: {
         backgroundColor: theme.pallete.surface.main,
-        border: '1px solid ' + theme.pallete.gray.c60,
+        border: '1px solid ' + theme.pallete.gray.c40,
         borderRadius: theme.radius.button,
         color: theme.pallete.text.main,
         ':not(:disabled):active': {
@@ -543,7 +543,7 @@ var styles_1 = __webpack_require__(/*! ../../../../styles */ "../lib/styles/inde
 exports.createStyles = function (theme) { return ({
     button: {
         backgroundColor: 'transparent',
-        border: '1px solid ' + theme.pallete.gray.c60,
+        border: '1px solid ' + theme.pallete.gray.c40,
         borderRadius: theme.radius.button,
         color: theme.pallete.text.main,
         ':not(:disabled):active': {
@@ -1211,7 +1211,7 @@ exports.createStyles = function (theme) { return ({
     },
     check: {
         backgroundColor: theme.pallete.surface.main,
-        border: '1px solid ' + theme.pallete.gray.c70,
+        border: '1px solid ' + theme.pallete.gray.c60,
         borderRadius: theme.radius.input,
         display: 'inline-block',
         height: 16,
@@ -1221,7 +1221,6 @@ exports.createStyles = function (theme) { return ({
         width: 16,
     },
     label: {
-        color: theme.pallete.gray.c30,
         marginLeft: '0.5rem',
     },
     disabled: {
@@ -1236,7 +1235,7 @@ exports.createInputStyles = function (theme, classes) {
                 marginRight: -13
             },
             _a["&:hover + ." + classes.check] = {
-                borderColor: theme.pallete.gray.c40,
+                borderColor: theme.pallete.gray.c50,
             },
             _a["&:checked + ." + classes.check] = {
                 backgroundColor: theme.pallete.primary.main,
@@ -1274,11 +1273,12 @@ exports.createInputStyles = function (theme, classes) {
                 boxShadow: styles_1.focusBoxShadow(theme),
             },
             _a["&:disabled + ." + classes.check] = {
-                backgroundColor: theme.pallete.surface.background,
-                borderColor: theme.pallete.gray.c90,
+                opacity: 0.4,
+                cursor: 'not-allowed',
             },
             _a["&:disabled + ." + classes.check + " + ." + classes.label] = {
                 color: theme.pallete.gray.c70,
+                cursor: 'not-allowed',
             },
             _a),
     });
@@ -11998,7 +11998,7 @@ exports.createStyles = function (theme) { return ({
     },
     radio: {
         backgroundColor: theme.pallete.surface.main,
-        border: '1px solid ' + theme.pallete.gray.c70,
+        border: '1px solid ' + theme.pallete.gray.c60,
         borderRadius: 100,
         display: 'inline-block',
         height: 16,
@@ -12022,7 +12022,6 @@ exports.createStyles = function (theme) { return ({
         },
     },
     label: {
-        color: theme.pallete.gray.c30,
         marginLeft: '0.5rem',
     },
 }); };
@@ -12034,7 +12033,7 @@ exports.createInputStyles = function (theme, classes) {
                 marginRight: -13
             },
             _a["&:hover + ." + classes.radio] = {
-                borderColor: theme.pallete.gray.c40,
+                borderColor: theme.pallete.gray.c50,
             },
             _a["&:checked + ." + classes.radio] = {
                 backgroundColor: theme.pallete.primary.main,
@@ -12047,11 +12046,12 @@ exports.createInputStyles = function (theme, classes) {
                 boxShadow: styles_1.focusBoxShadow(theme),
             },
             _a["&:disabled + ." + classes.radio] = {
-                backgroundColor: theme.pallete.surface.background,
-                borderColor: theme.pallete.gray.c90,
+                opacity: 0.4,
+                cursor: 'not-allowed',
             },
             _a["&:disabled + ." + classes.radio + " + ." + classes.label] = {
                 color: theme.pallete.gray.c70,
+                cursor: 'not-allowed',
             },
             _a),
     });
@@ -12387,7 +12387,7 @@ function SelectMenuItem(props) {
 exports.SelectMenuItem = SelectMenuItem;
 function SelectHelperMenuItem(props) {
     var theme = styles_1.useTheme();
-    return react_1.default.createElement(SelectMenuItem, __assign({ style: { background: theme.pallete.surface.background } }, props));
+    return (react_1.default.createElement(SelectMenuItem, __assign({ style: { background: theme.pallete.surface.background, paddingTop: '0.25rem', paddingBottom: '0.25rem' } }, props)));
 }
 exports.SelectHelperMenuItem = SelectHelperMenuItem;
 function SelectLoadingItem(props) {
@@ -12403,6 +12403,11 @@ function SelectEmptyItem(props) {
     return react_1.default.createElement(SelectHelperMenuItem, __assign({}, props), locale.select.emptyItem);
 }
 exports.SelectEmptyItem = SelectEmptyItem;
+function SelectCreateItem(props) {
+    var locale = i18n_1.useLocale();
+    return react_1.default.createElement(SelectHelperMenuItem, __assign({}, props), locale.select.createItem);
+}
+exports.SelectCreateItem = SelectCreateItem;
 exports.createStyles = function (theme) { return ({
     item: __assign(__assign({}, theme.typography.variant('main')), { borderBottom: "1px solid " + theme.pallete.divider, cursor: 'pointer', padding: '0.5rem 0.5rem', transition: '.1s ease', '&:last-of-type': {
             borderBottom: 'none',
@@ -12908,12 +12913,16 @@ exports.defaultSelectFilter = defaultSelectFilter;
  * Downshift extension with item and filter management.
  */
 function SelectDownshift(props) {
-    var items = props.items, onFilterChange = props.onFilterChange, children = props.children, rest = __rest(props, ["items", "onFilterChange", "children"]);
+    var items = props.items, onFilterChange = props.onFilterChange, children = props.children, createNewItem = props.createNewItem, openOnFocus = props.openOnFocus, rest = __rest(props, ["items", "onFilterChange", "children", "createNewItem", "openOnFocus"]);
+    var stateReducer = react_1.useMemo(function () { return createReducer(props); }, [openOnFocus, props.stateReducer]);
     var _a = react_1.useState(items), visibleItems = _a[0], setVisibleItems = _a[1];
     react_1.useEffect(function () {
         setVisibleItems(props.items);
     }, [props.items]);
     var handleStateChange = function (options, downshift) {
+        if (createNewItem && options.hasOwnProperty('inputValue')) {
+            rest.onChange && rest.onChange(createNewItem(options.inputValue), getStateAndHelpers(downshift));
+        }
         if (options.isOpen) {
             onFilterChange(null, getStateAndHelpers(downshift));
         }
@@ -12932,7 +12941,7 @@ function SelectDownshift(props) {
     var getStateAndHelpers = function (downshift) { return (__assign(__assign({}, downshift), { items: items,
         visibleItems: visibleItems,
         setVisibleItems: setVisibleItems })); };
-    return (react_1.default.createElement(downshift_1.default, __assign({}, rest, { onStateChange: handleStateChange, onChange: handleChange }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
+    return (react_1.default.createElement(downshift_1.default, __assign({}, rest, { stateReducer: stateReducer, onStateChange: handleStateChange, onChange: handleChange }), function (downshift) { return children(getStateAndHelpers(downshift)); }));
 }
 exports.SelectDownshift = SelectDownshift;
 SelectDownshift.defaultProps = {
@@ -12941,6 +12950,15 @@ SelectDownshift.defaultProps = {
         setVisibleItems(defaultSelectFilter(items, filter, itemToString));
     },
 };
+function createReducer(props) {
+    var _a = props.openOnFocus, openOnFocus = _a === void 0 ? props.createNewItem ? false : undefined : _a, stateReducer = props.stateReducer;
+    return function (state, changes) {
+        if (openOnFocus === false && changes.type === undefined && !state.isOpen && changes.isOpen) {
+            return __assign(__assign({}, changes), { isOpen: false });
+        }
+        return stateReducer ? stateReducer(state, changes) : changes;
+    };
+}
 //# sourceMappingURL=SelectDownshift.js.map
 
 /***/ }),
@@ -12972,17 +12990,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var SelectMenu_1 = __webpack_require__(/*! ../SelectMenu */ "../lib/components/Select/SelectMenu/index.js");
+var SelectMenuItem_1 = __webpack_require__(/*! ../SelectMenu/SelectMenuItem */ "../lib/components/Select/SelectMenu/SelectMenuItem.js");
 function SelectDownshiftMenu(props) {
-    var items = props.items, isLoading = props.loading, components = props.components, _a = props.downshift, isOpen = _a.isOpen, getMenuProps = _a.getMenuProps;
+    var items = props.items, isLoading = props.loading, components = props.components, createNewItem = props.createNewItem, _a = props.downshift, isOpen = _a.isOpen, getMenuProps = _a.getMenuProps;
     var classes = styles_1.useStyles(exports.createStyles).classes;
-    var _b = __assign(__assign({}, exports.defaultComponents), components), LoadingItem = _b.LoadingItem, EmptyItem = _b.EmptyItem, Item = _b.Item;
+    var _b = __assign(__assign({}, exports.defaultComponents), components), CreateItem = _b.CreateItem, LoadingItem = _b.LoadingItem, EmptyItem = _b.EmptyItem, Item = _b.Item;
     return (react_1.default.createElement("div", { className: classes.wrapper }, isOpen && (react_1.default.createElement(SelectMenu_1.SelectMenu, __assign({}, getMenuProps({ refKey: 'menuRef' })),
         isLoading && react_1.default.createElement(LoadingItem, __assign({}, props)),
-        !isLoading && (!items || items.length === 0) && react_1.default.createElement(EmptyItem, __assign({}, props)),
+        !isLoading && createNewItem && (items || []).length > 0 && react_1.default.createElement(CreateItem, __assign({}, props)),
+        !isLoading && !createNewItem && (items || []).length === 0 && react_1.default.createElement(EmptyItem, __assign({}, props)),
         items && items.map(function (item, index) { return react_1.default.createElement(Item, __assign({ key: index, index: index, item: item }, props)); })))));
 }
 exports.SelectDownshiftMenu = SelectDownshiftMenu;
 exports.defaultComponents = {
+    CreateItem: function (props) { return react_1.default.createElement(SelectMenuItem_1.SelectCreateItem, null); },
     LoadingItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectLoadingItem, null); },
     EmptyItem: function (props) { return react_1.default.createElement(SelectMenu_1.SelectEmptyItem, null); },
     Item: function (props) {
@@ -13045,7 +13066,7 @@ var TextField_1 = __webpack_require__(/*! ../../TextField */ "../lib/components/
 var SelectDownshift_1 = __webpack_require__(/*! ./SelectDownshift */ "../lib/components/Select/SelectSingle/SelectDownshift.js");
 var SelectDownshiftMenu_1 = __webpack_require__(/*! ./SelectDownshiftMenu */ "../lib/components/Select/SelectSingle/SelectDownshiftMenu.js");
 function SelectSingle(props) {
-    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, onFilterChange = props.onFilterChange, loading = props.loading, renderItem = props.renderItem, components = props.components, style = props.style, label = props.label, error = props.error, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "onFilterChange", "loading", "renderItem", "components", "style", "label", "error"]);
+    var value = props.value, items = props.items, itemToString = props.itemToString, onChange = props.onChange, isOpen = props.isOpen, openOnFocus = props.openOnFocus, onFilterChange = props.onFilterChange, createNewItem = props.createNewItem, loading = props.loading, renderItem = props.renderItem, components = props.components, style = props.style, label = props.label, error = props.error, rest = __rest(props, ["value", "items", "itemToString", "onChange", "isOpen", "openOnFocus", "onFilterChange", "createNewItem", "loading", "renderItem", "components", "style", "label", "error"]);
     var handleClear = function (downshift) { return function (e) {
         downshift.clearSelection();
         if (props.onClear) {
@@ -13077,12 +13098,12 @@ function SelectSingle(props) {
     var inputProps = getFormControlInputProps();
     var invalid = inputProps['aria-invalid'];
     return (react_1.default.createElement(FormControl_1.FormControl, __assign({}, formControlProps),
-        react_1.default.createElement(SelectDownshift_1.SelectDownshift, { selectedItem: value || null, items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, onFilterChange: onFilterChange, labelId: formControlProps.labelId }, function (downshift) {
+        react_1.default.createElement(SelectDownshift_1.SelectDownshift, { selectedItem: value || null, items: items, itemToString: itemToString, onChange: onChange, isOpen: isOpen, openOnFocus: openOnFocus, onFilterChange: onFilterChange, createNewItem: createNewItem, labelId: formControlProps.labelId }, function (downshift) {
             var downshiftOpen = downshift.isOpen, getInputProps = downshift.getInputProps, visibleItems = downshift.visibleItems, inputValue = downshift.inputValue;
             return (react_1.default.createElement("div", { className: css(style) },
                 react_1.default.createElement("div", null,
-                    react_1.default.createElement(TextField_1.TextInput, __assign({ icon: isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown' }, rest, { onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onClear: handleClear(downshift), onIconClick: handleInputIconClick(downshift) }, getInputProps(), inputProps, { value: inputValue ? inputValue : '', invalid: invalid }))),
-                react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem, components: components })));
+                    react_1.default.createElement(TextField_1.TextInput, __assign({ icon: downshiftOpen ? 'angleUp' : 'angleDown' }, rest, { onBlur: handleInputBlur(downshift), onFocus: handleInputFocus(downshift), onClick: handleInputClick(downshift), onClear: handleClear(downshift), onIconClick: handleInputIconClick(downshift) }, getInputProps(), inputProps, { value: inputValue ? inputValue : '', invalid: invalid }))),
+                react_1.default.createElement(SelectDownshiftMenu_1.SelectDownshiftMenu, { downshift: downshift, items: visibleItems, loading: loading, renderItem: renderItem, components: components, createNewItem: !!createNewItem })));
         })));
 }
 exports.SelectSingle = SelectSingle;
@@ -13499,6 +13520,7 @@ exports.createStyles = function (theme) { return ({
         width: '1rem',
         height: '1rem',
         transition: 'all .2s',
+        border: "1px solid " + theme.pallete.gray.c60,
         boxShadow: theme.shadows.outer['20'],
     },
     text: {
@@ -13539,6 +13561,10 @@ exports.createInputStyles = function (theme, classes) {
             },
             _b["&:disabled + ." + classes.switch] = {
                 opacity: 0.4,
+                cursor: 'not-allowed',
+            },
+            _b["&:disabled + ." + classes.switch + " + ." + classes.text] = {
+                color: theme.pallete.gray.c70,
                 cursor: 'not-allowed',
             },
             _b),
@@ -15227,7 +15253,7 @@ TextInputBase.defaultProps = {
 exports.createStyleParts = function (theme) { return ({
     base: {
         backgroundColor: theme.pallete.surface.main,
-        border: 'solid 1px ' + theme.pallete.gray.c70,
+        border: 'solid 1px ' + theme.pallete.gray.c60,
         borderRadius: theme.radius.input,
         color: theme.pallete.text.main,
         fontFamily: theme.typography.fontFamily,
@@ -15254,7 +15280,7 @@ exports.createStyleParts = function (theme) { return ({
         backgroundColor: theme.pallete.surface.background,
     },
     hover: {
-        borderColor: theme.pallete.gray.c60,
+        borderColor: theme.pallete.gray.c50,
     },
     active: {
         borderColor: theme.pallete.primary.main,
@@ -15433,12 +15459,19 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
-var react_popper_1 = __webpack_require__(/*! react-popper */ "../node_modules/react-popper/lib/esm/index.js");
+var react_1 = __importStar(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var usePopper_1 = __importDefault(__webpack_require__(/*! ../../hooks/usePopper */ "../lib/hooks/usePopper.js"));
 var styles_1 = __webpack_require__(/*! ../../styles */ "../lib/styles/index.js");
 var string_1 = __webpack_require__(/*! ../../util/string */ "../lib/util/string.js");
 var Portal_1 = __webpack_require__(/*! ../Portal */ "../lib/components/Portal/index.js");
@@ -15448,19 +15481,35 @@ var TooltipPopper_1 = __webpack_require__(/*! ./TooltipPopper */ "../lib/compone
 function Tooltip(props) {
     var text = props.text, children = props.children, offset = props.offset, externalStyle = props.style, container = props.container, rest = __rest(props, ["text", "children", "offset", "style", "container"]);
     var child = react_1.default.Children.only(children);
-    var theme = styles_1.useTheme();
-    var tooltipIdRef = react_1.default.useRef(null);
-    react_1.default.useEffect(function () {
-        tooltipIdRef.current = "tooltip-" + string_1.randomStr();
-    }, []);
-    var _a = react_1.default.useState(false), visible = _a[0], setVisible = _a[1];
+    var _a = styles_1.useStyles(createStyles), theme = _a.theme, css = _a.css, classes = _a.classes;
+    var _b = react_1.useState(false), visible = _b[0], setVisible = _b[1];
+    var tooltipIdRef = react_1.useRef("tooltip-" + string_1.randomStr());
+    var anchorRef = react_1.useRef();
+    var tooltipRef = react_1.useRef();
+    var _c = usePopper_1.default(__assign({ anchorRef: anchorRef, popperRef: tooltipRef, modifiers: {
+            offset: { offset: "0, " + theme.typography.sizes.html * offset },
+            preventOverflow: {
+                boundariesElement: 'window',
+            },
+        } }, rest), [visible]), popperStyle = _c.style, placement = _c.placement;
+    react_1.useEffect(function () {
+        if (!anchorRef.current || !visible) {
+            return;
+        }
+        var handleWindowMouseOver = function (e) {
+            // This is implemented using mouseover since mouseleave does not trigger
+            // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
+            var target = e.target;
+            if (!anchorRef.current.contains(target)) {
+                setVisible(false);
+            }
+        };
+        window.addEventListener('mouseover', handleWindowMouseOver);
+        return function () { return window.removeEventListener('mouseover', handleWindowMouseOver); };
+    }, [anchorRef.current, visible]);
     var handleMouseEnter = function (e) {
         setVisible(true);
         child.props.onMouseEnter && child.props.onMouseEnter(e);
-    };
-    var handleMouseLeave = function (e) {
-        setVisible(false);
-        child.props.onMouseLeave && child.props.onMouseLeave(e);
     };
     var handleFocus = function (e) {
         setVisible(true);
@@ -15473,30 +15522,18 @@ function Tooltip(props) {
     if (!text) {
         return child;
     }
-    return (react_1.default.createElement(react_popper_1.Manager, null,
-        react_1.default.createElement(react_popper_1.Reference, null, function (_a) {
-            var ref = _a.ref;
-            return (react_1.default.createElement(RootRef_1.RootRef, { rootRef: ref }, react_1.default.cloneElement(child, {
-                'aria-describedby': visible ? tooltipIdRef.current : undefined,
-                onMouseEnter: handleMouseEnter,
-                onMouseLeave: handleMouseLeave,
-                onFocus: handleFocus,
-                onBlur: handleBlur,
-            })));
-        }),
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(RootRef_1.RootRef, { rootRef: anchorRef }, react_1.default.cloneElement(child, {
+            'aria-describedby': tooltipIdRef.current,
+            onMouseEnter: handleMouseEnter,
+            onFocus: handleFocus,
+            onBlur: handleBlur,
+        })),
         react_1.default.createElement(FadeTransition_1.FadeTransition, { in: visible }, function (_a) {
             var className = _a.className;
-            return visible && (react_1.default.createElement(Portal_1.Portal, { container: container },
-                react_1.default.createElement(react_popper_1.Popper, __assign({ modifiers: {
-                        offset: { offset: "0, " + theme.typography.sizes.html * offset },
-                        preventOverflow: {
-                            boundariesElement: 'window',
-                        },
-                    } }, rest), function (_a) {
-                    var ref = _a.ref, style = _a.style, placement = _a.placement;
-                    return (react_1.default.createElement("div", { id: tooltipIdRef.current, ref: ref, className: className, role: 'tooltip', style: __assign(__assign({}, style), { zIndex: theme.zIndex.tooltip }), "data-placement": placement },
-                        react_1.default.createElement(TooltipPopper_1.TooltipPopper, { text: text, style: externalStyle })));
-                })));
+            return (react_1.default.createElement(Portal_1.Portal, { container: container },
+                react_1.default.createElement("div", { id: tooltipIdRef.current, ref: tooltipRef, className: css(className, popperStyle, classes.popper, visible && classes.shown), role: 'tooltip', "aria-hidden": !visible ? 'true' : 'false', "data-placement": placement },
+                    react_1.default.createElement(TooltipPopper_1.TooltipPopper, { text: text, style: externalStyle }))));
         })));
 }
 exports.Tooltip = Tooltip;
@@ -15504,6 +15541,15 @@ Tooltip.defaultProps = {
     placement: 'top',
     offset: 0.25,
 };
+var createStyles = function (theme) { return ({
+    popper: {
+        zIndex: theme.zIndex.tooltip,
+        display: 'none',
+    },
+    shown: {
+        display: 'block',
+    },
+}); };
 //# sourceMappingURL=Tooltip.js.map
 
 /***/ }),
@@ -15537,6 +15583,7 @@ exports.styles = function (theme) { return ({
         maxWidth: theme.breakpoints.size.lg,
         background: theme.pallete.gray.c20,
         color: theme.pallete.gray.c100,
+        fontSize: '0.875rem',
         fontWeight: 'bold',
         lineHeight: 1.5,
     },
@@ -16167,6 +16214,7 @@ var locale = {
         currentPage: 'Current page',
     },
     select: {
+        createItem: 'Select an item or type a new value',
         emptyItem: 'No results were found',
         loadingItem: 'Loading...',
         removeItem: 'Remove',
@@ -18493,7 +18541,7 @@ module.exports = _objectWithoutPropertiesLoose;
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_sheet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/sheet */ "../node_modules/@emotion/sheet/dist/sheet.browser.esm.js");
 /* harmony import */ var _emotion_stylis__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/stylis */ "../node_modules/@emotion/cache/node_modules/@emotion/stylis/dist/stylis.browser.esm.js");
-/* harmony import */ var _emotion_weak_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/weak-memoize */ "../node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js");
+/* harmony import */ var _emotion_weak_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/weak-memoize */ "../node_modules/@emotion/cache/node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js");
 
 
 
@@ -19336,6 +19384,35 @@ function stylis_min (W) {
 
 /***/ }),
 
+/***/ "../node_modules/@emotion/cache/node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js":
+/*!**********************************************************************************************************!*\
+  !*** ../node_modules/@emotion/cache/node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var weakMemoize = function weakMemoize(func) {
+  // $FlowFixMe flow doesn't include all non-primitive types as allowed for weakmaps
+  var cache = new WeakMap();
+  return function (arg) {
+    if (cache.has(arg)) {
+      // $FlowFixMe
+      return cache.get(arg);
+    }
+
+    var ret = func(arg);
+    cache.set(arg, ret);
+    return ret;
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (weakMemoize);
+
+
+/***/ }),
+
 /***/ "../node_modules/@emotion/core/dist/core.browser.esm.js":
 /*!**************************************************************!*\
   !*** ../node_modules/@emotion/core/dist/core.browser.esm.js ***!
@@ -19766,6 +19843,78 @@ function css() {
 
 /***/ }),
 
+/***/ "../node_modules/@emotion/hash/dist/hash.browser.esm.js":
+/*!**************************************************************!*\
+  !*** ../node_modules/@emotion/hash/dist/hash.browser.esm.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* eslint-disable */
+// murmurhash2 via https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js
+function murmurhash2_32_gc(str) {
+  var l = str.length,
+      h = l ^ l,
+      i = 0,
+      k;
+
+  while (l >= 4) {
+    k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
+    k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+    k ^= k >>> 24;
+    k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+    h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16) ^ k;
+    l -= 4;
+    ++i;
+  }
+
+  switch (l) {
+    case 3:
+      h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
+
+    case 2:
+      h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
+
+    case 1:
+      h ^= str.charCodeAt(i) & 0xff;
+      h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+  }
+
+  h ^= h >>> 13;
+  h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
+  h ^= h >>> 15;
+  return (h >>> 0).toString(36);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (murmurhash2_32_gc);
+
+
+/***/ }),
+
+/***/ "../node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
+/*!********************************************************************!*\
+  !*** ../node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function memoize(fn) {
+  var cache = {};
+  return function (arg) {
+    if (cache[arg] === undefined) cache[arg] = fn(arg);
+    return cache[arg];
+  };
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (memoize);
+
+
+/***/ }),
+
 /***/ "../node_modules/@emotion/serialize/dist/serialize.browser.esm.js":
 /*!************************************************************************!*\
   !*** ../node_modules/@emotion/serialize/dist/serialize.browser.esm.js ***!
@@ -19776,9 +19925,9 @@ function css() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "serializeStyles", function() { return serializeStyles; });
-/* harmony import */ var _emotion_hash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/hash */ "../node_modules/@emotion/serialize/node_modules/@emotion/hash/dist/hash.browser.esm.js");
-/* harmony import */ var _emotion_unitless__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/unitless */ "../node_modules/@emotion/serialize/node_modules/@emotion/unitless/dist/unitless.browser.esm.js");
-/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/memoize */ "../node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
+/* harmony import */ var _emotion_hash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/hash */ "../node_modules/@emotion/hash/dist/hash.browser.esm.js");
+/* harmony import */ var _emotion_unitless__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @emotion/unitless */ "../node_modules/@emotion/unitless/dist/unitless.browser.esm.js");
+/* harmony import */ var _emotion_memoize__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @emotion/memoize */ "../node_modules/@emotion/memoize/dist/memoize.browser.esm.js");
 
 
 
@@ -20079,141 +20228,6 @@ var serializeStyles = function serializeStyles(args, registered, mergedProps) {
 
 /***/ }),
 
-/***/ "../node_modules/@emotion/serialize/node_modules/@emotion/hash/dist/hash.browser.esm.js":
-/*!**********************************************************************************************!*\
-  !*** ../node_modules/@emotion/serialize/node_modules/@emotion/hash/dist/hash.browser.esm.js ***!
-  \**********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* eslint-disable */
-// murmurhash2 via https://github.com/garycourt/murmurhash-js/blob/master/murmurhash2_gc.js
-function murmurhash2_32_gc(str) {
-  var l = str.length,
-      h = l ^ l,
-      i = 0,
-      k;
-
-  while (l >= 4) {
-    k = str.charCodeAt(i) & 0xff | (str.charCodeAt(++i) & 0xff) << 8 | (str.charCodeAt(++i) & 0xff) << 16 | (str.charCodeAt(++i) & 0xff) << 24;
-    k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
-    k ^= k >>> 24;
-    k = (k & 0xffff) * 0x5bd1e995 + (((k >>> 16) * 0x5bd1e995 & 0xffff) << 16);
-    h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16) ^ k;
-    l -= 4;
-    ++i;
-  }
-
-  switch (l) {
-    case 3:
-      h ^= (str.charCodeAt(i + 2) & 0xff) << 16;
-
-    case 2:
-      h ^= (str.charCodeAt(i + 1) & 0xff) << 8;
-
-    case 1:
-      h ^= str.charCodeAt(i) & 0xff;
-      h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
-  }
-
-  h ^= h >>> 13;
-  h = (h & 0xffff) * 0x5bd1e995 + (((h >>> 16) * 0x5bd1e995 & 0xffff) << 16);
-  h ^= h >>> 15;
-  return (h >>> 0).toString(36);
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (murmurhash2_32_gc);
-
-
-/***/ }),
-
-/***/ "../node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js":
-/*!****************************************************************************************************!*\
-  !*** ../node_modules/@emotion/serialize/node_modules/@emotion/memoize/dist/memoize.browser.esm.js ***!
-  \****************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function memoize(fn) {
-  var cache = {};
-  return function (arg) {
-    if (cache[arg] === undefined) cache[arg] = fn(arg);
-    return cache[arg];
-  };
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (memoize);
-
-
-/***/ }),
-
-/***/ "../node_modules/@emotion/serialize/node_modules/@emotion/unitless/dist/unitless.browser.esm.js":
-/*!******************************************************************************************************!*\
-  !*** ../node_modules/@emotion/serialize/node_modules/@emotion/unitless/dist/unitless.browser.esm.js ***!
-  \******************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var unitlessKeys = {
-  animationIterationCount: 1,
-  borderImageOutset: 1,
-  borderImageSlice: 1,
-  borderImageWidth: 1,
-  boxFlex: 1,
-  boxFlexGroup: 1,
-  boxOrdinalGroup: 1,
-  columnCount: 1,
-  columns: 1,
-  flex: 1,
-  flexGrow: 1,
-  flexPositive: 1,
-  flexShrink: 1,
-  flexNegative: 1,
-  flexOrder: 1,
-  gridRow: 1,
-  gridRowEnd: 1,
-  gridRowSpan: 1,
-  gridRowStart: 1,
-  gridColumn: 1,
-  gridColumnEnd: 1,
-  gridColumnSpan: 1,
-  gridColumnStart: 1,
-  msGridRow: 1,
-  msGridRowSpan: 1,
-  msGridColumn: 1,
-  msGridColumnSpan: 1,
-  fontWeight: 1,
-  lineHeight: 1,
-  opacity: 1,
-  order: 1,
-  orphans: 1,
-  tabSize: 1,
-  widows: 1,
-  zIndex: 1,
-  zoom: 1,
-  WebkitLineClamp: 1,
-  // SVG-related properties
-  fillOpacity: 1,
-  floodOpacity: 1,
-  stopOpacity: 1,
-  strokeDasharray: 1,
-  strokeDashoffset: 1,
-  strokeMiterlimit: 1,
-  strokeOpacity: 1,
-  strokeWidth: 1
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (unitlessKeys);
-
-
-/***/ }),
-
 /***/ "../node_modules/@emotion/sheet/dist/sheet.browser.esm.js":
 /*!****************************************************************!*\
   !*** ../node_modules/@emotion/sheet/dist/sheet.browser.esm.js ***!
@@ -20363,6 +20377,69 @@ function () {
 
 /***/ }),
 
+/***/ "../node_modules/@emotion/unitless/dist/unitless.browser.esm.js":
+/*!**********************************************************************!*\
+  !*** ../node_modules/@emotion/unitless/dist/unitless.browser.esm.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var unitlessKeys = {
+  animationIterationCount: 1,
+  borderImageOutset: 1,
+  borderImageSlice: 1,
+  borderImageWidth: 1,
+  boxFlex: 1,
+  boxFlexGroup: 1,
+  boxOrdinalGroup: 1,
+  columnCount: 1,
+  columns: 1,
+  flex: 1,
+  flexGrow: 1,
+  flexPositive: 1,
+  flexShrink: 1,
+  flexNegative: 1,
+  flexOrder: 1,
+  gridRow: 1,
+  gridRowEnd: 1,
+  gridRowSpan: 1,
+  gridRowStart: 1,
+  gridColumn: 1,
+  gridColumnEnd: 1,
+  gridColumnSpan: 1,
+  gridColumnStart: 1,
+  msGridRow: 1,
+  msGridRowSpan: 1,
+  msGridColumn: 1,
+  msGridColumnSpan: 1,
+  fontWeight: 1,
+  lineHeight: 1,
+  opacity: 1,
+  order: 1,
+  orphans: 1,
+  tabSize: 1,
+  widows: 1,
+  zIndex: 1,
+  zoom: 1,
+  WebkitLineClamp: 1,
+  // SVG-related properties
+  fillOpacity: 1,
+  floodOpacity: 1,
+  stopOpacity: 1,
+  strokeDasharray: 1,
+  strokeDashoffset: 1,
+  strokeMiterlimit: 1,
+  strokeOpacity: 1,
+  strokeWidth: 1
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (unitlessKeys);
+
+
+/***/ }),
+
 /***/ "../node_modules/@emotion/utils/dist/utils.browser.esm.js":
 /*!****************************************************************!*\
   !*** ../node_modules/@emotion/utils/dist/utils.browser.esm.js ***!
@@ -20418,32 +20495,40 @@ var insertStyles = function insertStyles(cache, serialized, isStringTag) {
 
 /***/ }),
 
-/***/ "../node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js":
-/*!******************************************************************************!*\
-  !*** ../node_modules/@emotion/weak-memoize/dist/weak-memoize.browser.esm.js ***!
-  \******************************************************************************/
-/*! exports provided: default */
+/***/ "../node_modules/@reach/auto-id/es/index.js":
+/*!**************************************************!*\
+  !*** ../node_modules/@reach/auto-id/es/index.js ***!
+  \**************************************************/
+/*! exports provided: useId */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var weakMemoize = function weakMemoize(func) {
-  // $FlowFixMe flow doesn't include all non-primitive types as allowed for weakmaps
-  var cache = new WeakMap();
-  return function (arg) {
-    if (cache.has(arg)) {
-      // $FlowFixMe
-      return cache.get(arg);
-    }
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useId", function() { return useId; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-    var ret = func(arg);
-    cache.set(arg, ret);
-    return ret;
-  };
+
+// Could use UUID but if we hit 9,007,199,254,740,991 unique components over
+// the lifetime of the app before it gets reloaded, I mean ... come on.
+// I don't even know what xillion that is.
+// /me googles
+// Oh duh, quadrillion. Nine quadrillion components. I think we're okay.
+var id = 0;
+var genId = function genId() {
+  return ++id;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (weakMemoize);
+var useId = function useId() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      id = _useState[0],
+      setId = _useState[1];
 
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    return setId(genId());
+  }, []);
+  return id;
+};
 
 /***/ }),
 
@@ -21043,12 +21128,13 @@ module.exports = exports['default'];
 /*!*******************************************************!*\
   !*** ../node_modules/downshift/dist/downshift.esm.js ***!
   \*******************************************************/
-/*! exports provided: default, resetIdCounter */
+/*! exports provided: default, resetIdCounter, useSelect */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "resetIdCounter", function() { return resetIdCounter; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useSelect", function() { return useSelect; });
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "../node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "../node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
@@ -21060,6 +21146,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-is */ "../node_modules/react-is/index.js");
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_is__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var compute_scroll_into_view__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! compute-scroll-into-view */ "../node_modules/compute-scroll-into-view/es/index.js");
+/* harmony import */ var keyboard_key__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! keyboard-key */ "../node_modules/keyboard-key/src/keyboardKey.js");
+/* harmony import */ var keyboard_key__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(keyboard_key__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _reach_auto_id__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @reach/auto-id */ "../node_modules/@reach/auto-id/es/index.js");
+
+
 
 
 
@@ -22617,6 +22708,897 @@ function validateControlledUnchanged(prevProps, nextProps) {
   });
 }
 
+function getElementIds(generateDefaultId, _temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      id = _ref.id,
+      labelId = _ref.labelId,
+      menuId = _ref.menuId,
+      getItemId = _ref.getItemId,
+      toggleButtonId = _ref.toggleButtonId;
+
+  var uniqueId = id === undefined ? "downshift-" + generateDefaultId() : id;
+  return {
+    labelId: labelId || uniqueId + "-label",
+    menuId: menuId || uniqueId + "-menu",
+    getItemId: getItemId || function (index) {
+      return uniqueId + "-item-" + index;
+    },
+    toggleButtonId: toggleButtonId || uniqueId + "-toggle-button"
+  };
+}
+
+function getNextWrappingIndex$1(moveAmount, baseIndex, itemsLength, circular) {
+  if (baseIndex === -1) {
+    return moveAmount > 0 ? 0 : itemsLength - 1;
+  }
+
+  var nextIndex = baseIndex + moveAmount;
+
+  if (nextIndex < 0) {
+    return circular ? itemsLength - 1 : 0;
+  }
+
+  if (nextIndex >= itemsLength) {
+    return circular ? 0 : itemsLength - 1;
+  }
+
+  return nextIndex;
+}
+
+function getItemIndexByCharacterKey(keysSoFar, highlightedIndex, items, itemToStringParam) {
+  var newHighlightedIndex = -1;
+  var itemStrings = items.map(function (item) {
+    return itemToStringParam(item).toLowerCase();
+  });
+  var startPosition = highlightedIndex + 1;
+  newHighlightedIndex = itemStrings.slice(startPosition).findIndex(function (itemString) {
+    return itemString.startsWith(keysSoFar);
+  });
+
+  if (newHighlightedIndex > -1) {
+    return newHighlightedIndex + startPosition;
+  } else {
+    return itemStrings.slice(0, startPosition).findIndex(function (itemString) {
+      return itemString.startsWith(keysSoFar);
+    });
+  }
+}
+
+function getState(state, props) {
+  return Object.keys(state).reduce(function (prevState, key) {
+    // eslint-disable-next-line no-param-reassign
+    prevState[key] = props[key] === undefined ? state[key] : props[key];
+    return prevState;
+  }, {});
+}
+
+function getItemIndex(index, item, items) {
+  if (index !== undefined) {
+    return index;
+  }
+
+  if (items.length === 0) {
+    return -1;
+  }
+
+  return items.indexOf(item);
+}
+
+function itemToString(item) {
+  return item ? String(item) : '';
+}
+
+function getPropTypesValidator(caller, propTypes) {
+  // istanbul ignore next
+  return function (options) {
+    if (options === void 0) {
+      options = {};
+    }
+
+    Object.entries(propTypes).forEach(function (_ref2) {
+      var key = _ref2[0];
+      prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.checkPropTypes(propTypes, options, key, caller.name);
+    });
+  };
+}
+
+function isAcceptedCharacterKey(key) {
+  return /^\S{1}$/.test(key);
+}
+
+var defaultStateValues = {
+  highlightedIndex: -1,
+  isOpen: false,
+  selectedItem: null
+};
+
+function getA11yStatusMessage$1(_ref) {
+  var isOpen = _ref.isOpen,
+      items = _ref.items;
+
+  if (!items) {
+    return '';
+  }
+
+  var resultCount = items.length;
+
+  if (isOpen) {
+    if (resultCount === 0) {
+      return 'No results are available';
+    }
+
+    return resultCount + " result" + (resultCount === 1 ? ' is' : 's are') + " available, use up and down arrow keys to navigate. Press Enter key to select.";
+  }
+
+  return '';
+}
+
+function getA11ySelectionMessage(_ref2) {
+  var selectedItem = _ref2.selectedItem,
+      itemToString = _ref2.itemToString;
+  return itemToString(selectedItem) + " has been selected.";
+}
+
+function getHighlightedIndexOnOpen(props, state, offset) {
+  var items = props.items,
+      initialHighlightedIndex = props.initialHighlightedIndex,
+      defaultHighlightedIndex = props.defaultHighlightedIndex;
+  var selectedItem = state.selectedItem,
+      highlightedIndex = state.highlightedIndex; // initialHighlightedIndex will give value to highlightedIndex on initial state only.
+
+  if (initialHighlightedIndex !== undefined && highlightedIndex > -1) {
+    return initialHighlightedIndex;
+  }
+
+  if (defaultHighlightedIndex !== undefined) {
+    return defaultHighlightedIndex;
+  }
+
+  if (selectedItem) {
+    if (offset === 0) {
+      return items.indexOf(selectedItem);
+    }
+
+    return getNextWrappingIndex$1(offset, items.indexOf(selectedItem), items.length, false);
+  }
+
+  if (offset === 0) {
+    return -1;
+  }
+
+  return offset < 0 ? items.length - 1 : 0;
+}
+
+function capitalizeString(string) {
+  return "" + string.slice(0, 1).toUpperCase() + string.slice(1);
+}
+
+function getDefaultValue(props, propKey) {
+  var defaultPropKey = "default" + capitalizeString(propKey);
+
+  if (props[defaultPropKey] !== undefined) {
+    return props[defaultPropKey];
+  }
+
+  return defaultStateValues[propKey];
+}
+
+function getInitialValue(props, propKey) {
+  if (props[propKey] !== undefined) {
+    return props[propKey];
+  }
+
+  var initialPropKey = "initial" + capitalizeString(propKey);
+
+  if (props[initialPropKey] !== undefined) {
+    return props[initialPropKey];
+  }
+
+  return getDefaultValue(props, propKey);
+}
+
+function getInitialState(props) {
+  return {
+    highlightedIndex: getInitialValue(props, 'highlightedIndex'),
+    isOpen: getInitialValue(props, 'isOpen'),
+    selectedItem: getInitialValue(props, 'selectedItem'),
+    keysSoFar: ''
+  };
+}
+
+function invokeOnChangeHandler(propKey, props, state, changes) {
+  var handler = "on" + capitalizeString(propKey) + "Change";
+
+  if (props[handler] && changes[propKey] !== undefined && changes[propKey] !== state[propKey]) {
+    props[handler](changes);
+  }
+}
+
+function callOnChangeProps(props, state, changes) {
+  ['isOpen', 'highlightedIndex', 'selectedItem'].forEach(function (propKey) {
+    invokeOnChangeHandler(propKey, props, state, changes);
+  });
+
+  if (props.onStateChange && changes !== undefined) {
+    props.onStateChange(changes);
+  }
+}
+
+var propTypes = {
+  items: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.array.isRequired,
+  itemToString: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  getA11yStatusMessage: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  getA11ySelectionMessage: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  circularNavigation: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  highlightedIndex: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  defaultHighlightedIndex: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  initialHighlightedIndex: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.number,
+  isOpen: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  defaultIsOpen: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  initialIsOpen: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.bool,
+  selectedItem: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.any,
+  initialSelectedItem: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.any,
+  defaultSelectedItem: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.any,
+  id: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  labelId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  menuId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  getItemId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  toggleButtonId: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.string,
+  stateReducer: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  onSelectedItemChange: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  onHighlightedIndexChange: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  onStateChange: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  onIsOpenChange: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+  environment: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+    addEventListener: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+    removeEventListener: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+    document: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.shape({
+      getElementById: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.func,
+      activeElement: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.any,
+      body: prop_types__WEBPACK_IMPORTED_MODULE_4___default.a.any
+    })
+  })
+};
+
+var MenuKeyDownArrowDown =  true ? '__menu_keydown_arrow_down__' : undefined;
+var MenuKeyDownArrowUp =  true ? '__menu_keydown_arrow_up__' : undefined;
+var MenuKeyDownEscape =  true ? '__menu_keydown_escape__' : undefined;
+var MenuKeyDownHome =  true ? '__menu_keydown_home__' : undefined;
+var MenuKeyDownEnd =  true ? '__menu_keydown_end__' : undefined;
+var MenuKeyDownEnter =  true ? '__menu_keydown_enter__' : undefined;
+var MenuKeyDownCharacter =  true ? '__menu_keydown_character__' : undefined;
+var MenuBlur =  true ? '__menu_blur__' : undefined;
+var ItemMouseMove =  true ? '__item_mouse_move__' : undefined;
+var ItemClick =  true ? '__item_click__' : undefined;
+var ToggleButtonKeyDownCharacter =  true ? '__togglebutton_keydown_character__' : undefined;
+var ToggleButtonKeyDownArrowDown =  true ? '__togglebutton_keydown_arrow_down__' : undefined;
+var ToggleButtonKeyDownArrowUp =  true ? '__togglebutton_keydown_arrow_up__' : undefined;
+var ToggleButtonClick =  true ? '__togglebutton_click__' : undefined;
+var FunctionToggleMenu =  true ? '__function_toggle_menu__' : undefined;
+var FunctionOpenMenu =  true ? '__function_open_menu__' : undefined;
+var FunctionCloseMenu =  true ? '__function_close_menu__' : undefined;
+var FunctionSetHighlightedIndex =  true ? '__function_set_highlighted_index__' : undefined;
+var FunctionSelectItem =  true ? '__function_select_item__' : undefined;
+var FunctionClearKeysSoFar =  true ? '__function_clear_keys_so_far__' : undefined;
+var FunctionReset =  true ? '__function_reset__' : undefined;
+
+var stateChangeTypes$1 = /*#__PURE__*/Object.freeze({
+  MenuKeyDownArrowDown: MenuKeyDownArrowDown,
+  MenuKeyDownArrowUp: MenuKeyDownArrowUp,
+  MenuKeyDownEscape: MenuKeyDownEscape,
+  MenuKeyDownHome: MenuKeyDownHome,
+  MenuKeyDownEnd: MenuKeyDownEnd,
+  MenuKeyDownEnter: MenuKeyDownEnter,
+  MenuKeyDownCharacter: MenuKeyDownCharacter,
+  MenuBlur: MenuBlur,
+  ItemMouseMove: ItemMouseMove,
+  ItemClick: ItemClick,
+  ToggleButtonKeyDownCharacter: ToggleButtonKeyDownCharacter,
+  ToggleButtonKeyDownArrowDown: ToggleButtonKeyDownArrowDown,
+  ToggleButtonKeyDownArrowUp: ToggleButtonKeyDownArrowUp,
+  ToggleButtonClick: ToggleButtonClick,
+  FunctionToggleMenu: FunctionToggleMenu,
+  FunctionOpenMenu: FunctionOpenMenu,
+  FunctionCloseMenu: FunctionCloseMenu,
+  FunctionSetHighlightedIndex: FunctionSetHighlightedIndex,
+  FunctionSelectItem: FunctionSelectItem,
+  FunctionClearKeysSoFar: FunctionClearKeysSoFar,
+  FunctionReset: FunctionReset
+});
+
+/* eslint-disable complexity */
+
+function downshiftSelectReducer(state, action) {
+  var type = action.type,
+      props = action.props,
+      shiftKey = action.shiftKey;
+  var changes;
+
+  switch (type) {
+    case ItemMouseMove:
+      changes = {
+        highlightedIndex: action.index
+      };
+      break;
+
+    case ItemClick:
+      changes = {
+        isOpen: getDefaultValue(props, 'isOpen'),
+        highlightedIndex: getDefaultValue(props, 'highlightedIndex'),
+        selectedItem: props.items[action.index]
+      };
+      break;
+
+    case MenuBlur:
+      changes = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        isOpen: false,
+        highlightedIndex: -1
+      }, state.highlightedIndex >= 0 && {
+        selectedItem: props.items[state.highlightedIndex]
+      });
+      break;
+
+    case MenuKeyDownArrowDown:
+      changes = {
+        highlightedIndex: getNextWrappingIndex$1(shiftKey ? 5 : 1, state.highlightedIndex, props.items.length, props.circularNavigation)
+      };
+      break;
+
+    case MenuKeyDownArrowUp:
+      changes = {
+        highlightedIndex: getNextWrappingIndex$1(shiftKey ? -5 : -1, state.highlightedIndex, props.items.length, props.circularNavigation)
+      };
+      break;
+
+    case MenuKeyDownHome:
+      changes = {
+        highlightedIndex: 0
+      };
+      break;
+
+    case MenuKeyDownEnd:
+      changes = {
+        highlightedIndex: props.items.length - 1
+      };
+      break;
+
+    case MenuKeyDownEscape:
+      changes = {
+        isOpen: false,
+        highlightedIndex: -1
+      };
+      break;
+
+    case MenuKeyDownEnter:
+      changes = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        isOpen: getDefaultValue(props, 'isOpen'),
+        highlightedIndex: getDefaultValue(props, 'highlightedIndex')
+      }, state.highlightedIndex >= 0 && {
+        selectedItem: props.items[state.highlightedIndex]
+      });
+      break;
+
+    case MenuKeyDownCharacter:
+      {
+        var lowercasedKey = action.key;
+        var keysSoFar = "" + state.keysSoFar + lowercasedKey;
+        var highlightedIndex = getItemIndexByCharacterKey(keysSoFar, state.highlightedIndex, props.items, props.itemToString);
+        changes = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          keysSoFar: keysSoFar
+        }, highlightedIndex >= 0 && {
+          highlightedIndex: highlightedIndex
+        });
+      }
+      break;
+
+    case ToggleButtonKeyDownCharacter:
+      {
+        var _lowercasedKey = action.key;
+
+        var _keysSoFar = "" + state.keysSoFar + _lowercasedKey;
+
+        var itemIndex = getItemIndexByCharacterKey(_keysSoFar, state.selectedItem ? props.items.indexOf(state.selectedItem) : -1, props.items, props.itemToString);
+        changes = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          keysSoFar: _keysSoFar
+        }, itemIndex >= 0 && {
+          selectedItem: props.items[itemIndex]
+        });
+      }
+      break;
+
+    case ToggleButtonKeyDownArrowDown:
+      {
+        changes = {
+          isOpen: true,
+          highlightedIndex: getHighlightedIndexOnOpen(props, state, 1)
+        };
+        break;
+      }
+
+    case ToggleButtonKeyDownArrowUp:
+      changes = {
+        isOpen: true,
+        highlightedIndex: getHighlightedIndexOnOpen(props, state, -1)
+      };
+      break;
+
+    case ToggleButtonClick:
+    case FunctionToggleMenu:
+      changes = {
+        isOpen: !state.isOpen,
+        highlightedIndex: state.isOpen ? -1 : getHighlightedIndexOnOpen(props, state, 0)
+      };
+      break;
+
+    case FunctionOpenMenu:
+      changes = {
+        isOpen: true,
+        highlightedIndex: getHighlightedIndexOnOpen(props, state, 0)
+      };
+      break;
+
+    case FunctionCloseMenu:
+      changes = {
+        isOpen: false
+      };
+      break;
+
+    case FunctionSetHighlightedIndex:
+      changes = {
+        highlightedIndex: action.highlightedIndex
+      };
+      break;
+
+    case FunctionSelectItem:
+      changes = {
+        selectedItem: action.selectedItem
+      };
+      break;
+
+    case FunctionClearKeysSoFar:
+      changes = {
+        keysSoFar: ''
+      };
+      break;
+
+    case FunctionReset:
+      changes = {
+        highlightedIndex: getDefaultValue(props, 'highlightedIndex'),
+        isOpen: getDefaultValue(props, 'isOpen'),
+        selectedItem: getDefaultValue(props, 'selectedItem')
+      };
+      break;
+
+    default:
+      throw new Error('Reducer called without proper action type.');
+  }
+
+  return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, state, {}, changes);
+}
+/* eslint-enable complexity */
+
+var validatePropTypes = getPropTypesValidator(useSelect, propTypes);
+var defaultProps = {
+  itemToString: itemToString,
+  stateReducer: function stateReducer(s, a) {
+    return a.changes;
+  },
+  getA11yStatusMessage: getA11yStatusMessage$1,
+  getA11ySelectionMessage: getA11ySelectionMessage,
+  scrollIntoView: scrollIntoView,
+  environment: typeof window === 'undefined'
+  /* istanbul ignore next (ssr) */
+  ? {} : window
+};
+var clearTimeout$1;
+useSelect.stateChangeTypes = stateChangeTypes$1;
+
+function useSelect(userProps) {
+  if (userProps === void 0) {
+    userProps = {};
+  }
+
+  validatePropTypes(userProps); // Props defaults and destructuring.
+
+  var props = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, defaultProps, {}, userProps);
+
+  var items = props.items,
+      itemToString = props.itemToString,
+      getA11yStatusMessage = props.getA11yStatusMessage,
+      getA11ySelectionMessage = props.getA11ySelectionMessage,
+      initialIsOpen = props.initialIsOpen,
+      defaultIsOpen = props.defaultIsOpen,
+      stateReducer = props.stateReducer,
+      scrollIntoView = props.scrollIntoView,
+      environment = props.environment; // Initial state depending on controlled props.
+
+  var initialState = getInitialState(props); // Reducer init.
+
+  var _useReducer = Object(react__WEBPACK_IMPORTED_MODULE_5__["useReducer"])(function (state, action) {
+    var changes = downshiftSelectReducer(state, action); // state after original reducer.
+
+    var reducedState = stateReducer(state, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({}, action, {
+      changes: changes
+    })); // state after user reducer.
+
+    callOnChangeProps(props, state, reducedState); // call onChange with state resulted.
+
+    return getState(reducedState, props); // state is merged with controlled props.
+  }, initialState),
+      _useReducer$ = _useReducer[0],
+      isOpen = _useReducer$.isOpen,
+      highlightedIndex = _useReducer$.highlightedIndex,
+      selectedItem = _useReducer$.selectedItem,
+      keysSoFar = _useReducer$.keysSoFar,
+      dispatch = _useReducer[1]; // IDs generation.
+
+
+  var _getElementIds = getElementIds(_reach_auto_id__WEBPACK_IMPORTED_MODULE_9__["useId"], props),
+      labelId = _getElementIds.labelId,
+      getItemId = _getElementIds.getItemId,
+      menuId = _getElementIds.menuId,
+      toggleButtonId = _getElementIds.toggleButtonId;
+  /* Refs */
+
+
+  var toggleButtonRef = Object(react__WEBPACK_IMPORTED_MODULE_5__["useRef"])(null);
+  var menuRef = Object(react__WEBPACK_IMPORTED_MODULE_5__["useRef"])(null);
+  var itemRefs = Object(react__WEBPACK_IMPORTED_MODULE_5__["useRef"])();
+  itemRefs.current = [];
+  var isInitialMount = Object(react__WEBPACK_IMPORTED_MODULE_5__["useRef"])(true);
+  var shouldScroll = Object(react__WEBPACK_IMPORTED_MODULE_5__["useRef"])(true);
+  /* Effects */
+
+  /* Sets a11y status message on changes in isOpen. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    if (isInitialMount.current) {
+      return;
+    }
+
+    setStatus(getA11yStatusMessage({
+      isOpen: isOpen,
+      items: items,
+      selectedItem: selectedItem,
+      itemToString: itemToString
+    })); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]);
+  /* Sets a11y status message on changes in selectedItem. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    if (isInitialMount.current) {
+      return;
+    }
+
+    setStatus(getA11ySelectionMessage({
+      isOpen: isOpen,
+      items: items,
+      selectedItem: selectedItem,
+      itemToString: itemToString
+    })); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedItem]);
+  /* Sets cleanup for the keysSoFar after 500ms. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    // init the clean function here as we need access to dispatch.
+    if (isInitialMount.current) {
+      clearTimeout$1 = debounce(function () {
+        dispatch({
+          type: FunctionClearKeysSoFar,
+          props: props
+        });
+      }, 500);
+    }
+
+    if (!keysSoFar) {
+      return;
+    }
+
+    clearTimeout$1(); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [keysSoFar]);
+  /* Controls the focus on the menu or the toggle button. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    // Don't focus menu on first render.
+    if (isInitialMount.current) {
+      // Unless it was initialised as open.
+      if (initialIsOpen || defaultIsOpen || isOpen) {
+        menuRef.current.focus();
+      }
+
+      return;
+    } // Focus menu on open.
+    // istanbul ignore next
+
+
+    if (isOpen) {
+      menuRef.current.focus(); // Focus toggleButton on close.
+    } else if (environment.document.activeElement === menuRef.current) {
+      toggleButtonRef.current.focus();
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, [isOpen]);
+  /* Scroll on highlighted item if change comes from keyboard. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    if (highlightedIndex < 0 || !isOpen || !itemRefs.current.length) {
+      return;
+    }
+
+    if (shouldScroll.current === false) {
+      shouldScroll.current = true;
+    } else {
+      scrollIntoView(itemRefs.current[highlightedIndex], menuRef.current);
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  }, [highlightedIndex]);
+  /* Make initial ref false. */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_5__["useEffect"])(function () {
+    isInitialMount.current = false;
+  }, []);
+  /* Event handler functions */
+
+  var menuKeyDownHandlers = {
+    ArrowDown: function ArrowDown(event) {
+      event.preventDefault();
+      dispatch({
+        type: MenuKeyDownArrowDown,
+        props: props,
+        shiftKey: event.shiftKey
+      });
+    },
+    ArrowUp: function ArrowUp(event) {
+      event.preventDefault();
+      dispatch({
+        type: MenuKeyDownArrowUp,
+        props: props,
+        shiftKey: event.shiftKey
+      });
+    },
+    Home: function Home(event) {
+      event.preventDefault();
+      dispatch({
+        type: MenuKeyDownHome,
+        props: props
+      });
+    },
+    End: function End(event) {
+      event.preventDefault();
+      dispatch({
+        type: MenuKeyDownEnd,
+        props: props
+      });
+    },
+    Escape: function Escape() {
+      dispatch({
+        type: MenuKeyDownEscape,
+        props: props
+      });
+    },
+    Enter: function Enter() {
+      dispatch({
+        type: MenuKeyDownEnter,
+        props: props
+      });
+    },
+    Tab: function Tab(event) {
+      // The exception that calls MenuBlur.
+      // istanbul ignore next
+      if (event.shiftKey) {
+        dispatch({
+          type: MenuBlur,
+          props: props
+        });
+      }
+    }
+  };
+  var toggleButtonKeyDownHandlers = {
+    ArrowDown: function ArrowDown(event) {
+      event.preventDefault();
+      dispatch({
+        type: ToggleButtonKeyDownArrowDown,
+        props: props
+      });
+    },
+    ArrowUp: function ArrowUp(event) {
+      event.preventDefault();
+      dispatch({
+        type: ToggleButtonKeyDownArrowUp,
+        props: props
+      });
+    }
+  }; // Event handlers.
+
+  var menuHandleKeyDown = function (event) {
+    var key = keyboard_key__WEBPACK_IMPORTED_MODULE_8___default.a.getKey(event);
+
+    if (key && menuKeyDownHandlers[key]) {
+      menuKeyDownHandlers[key](event);
+    } else if (isAcceptedCharacterKey(key)) {
+      dispatch({
+        type: MenuKeyDownCharacter,
+        key: key,
+        props: props
+      });
+    }
+  }; // Focus going back to the toggleButton is something we control (Escape, Enter, Click).
+  // We are toggleing special actions for these cases in reducer, not MenuBlur.
+  // Since Shift-Tab also lands focus on toggleButton, we will handle it as exception and call MenuBlur.
+
+
+  var menuHandleBlur = function (event) {
+    if (event.relatedTarget !== toggleButtonRef.current) {
+      dispatch({
+        type: MenuBlur,
+        props: props
+      });
+    }
+  };
+
+  var toggleButtonHandleClick = function () {
+    dispatch({
+      type: ToggleButtonClick,
+      props: props
+    });
+  };
+
+  var toggleButtonHandleKeyDown = function (event) {
+    var key = keyboard_key__WEBPACK_IMPORTED_MODULE_8___default.a.getKey(event);
+
+    if (key && toggleButtonKeyDownHandlers[key]) {
+      toggleButtonKeyDownHandlers[key](event);
+    } else if (isAcceptedCharacterKey(key)) {
+      dispatch({
+        type: ToggleButtonKeyDownCharacter,
+        key: key,
+        props: props
+      });
+    }
+  };
+
+  var itemHandleMouseMove = function (index) {
+    if (index === highlightedIndex) {
+      return;
+    }
+
+    shouldScroll.current = false;
+    dispatch({
+      type: ItemMouseMove,
+      props: props,
+      index: index
+    });
+  };
+
+  var itemHandleClick = function (index) {
+    dispatch({
+      type: ItemClick,
+      props: props,
+      index: index
+    });
+  }; // returns
+
+
+  return {
+    // prop getters.
+    getToggleButtonProps: function getToggleButtonProps(_temp2) {
+      var _extends3;
+
+      var _ref2 = _temp2 === void 0 ? {} : _temp2,
+          onClick = _ref2.onClick,
+          onKeyDown = _ref2.onKeyDown,
+          _ref2$refKey = _ref2.refKey,
+          refKey = _ref2$refKey === void 0 ? 'ref' : _ref2$refKey,
+          ref = _ref2.ref,
+          rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref2, ["onClick", "onKeyDown", "refKey", "ref"]);
+
+      return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])((_extends3 = {}, _extends3[refKey] = callAll(ref, function (toggleButtonNode) {
+        toggleButtonRef.current = toggleButtonNode;
+      }), _extends3.id = toggleButtonId, _extends3['aria-haspopup'] = 'listbox', _extends3['aria-expanded'] = isOpen, _extends3['aria-labelledby'] = labelId + " " + toggleButtonId, _extends3.onClick = callAllEventHandlers(onClick, toggleButtonHandleClick), _extends3.onKeyDown = callAllEventHandlers(onKeyDown, toggleButtonHandleKeyDown), _extends3), rest);
+    },
+    getLabelProps: function getLabelProps(labelProps) {
+      return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])({
+        id: labelId
+      }, labelProps);
+    },
+    getMenuProps: function getMenuProps(_temp) {
+      var _extends2;
+
+      var _ref = _temp === void 0 ? {} : _temp,
+          onKeyDown = _ref.onKeyDown,
+          onBlur = _ref.onBlur,
+          _ref$refKey = _ref.refKey,
+          refKey = _ref$refKey === void 0 ? 'ref' : _ref$refKey,
+          ref = _ref.ref,
+          rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref, ["onKeyDown", "onBlur", "refKey", "ref"]);
+
+      return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])((_extends2 = {}, _extends2[refKey] = callAll(ref, function (menuNode) {
+        menuRef.current = menuNode;
+      }), _extends2.id = menuId, _extends2.role = 'listbox', _extends2['aria-labelledby'] = labelId, _extends2.tabIndex = -1, _extends2), highlightedIndex > -1 && {
+        'aria-activedescendant': getItemId(highlightedIndex)
+      }, {
+        onKeyDown: callAllEventHandlers(onKeyDown, menuHandleKeyDown),
+        onBlur: callAllEventHandlers(onBlur, menuHandleBlur)
+      }, rest);
+    },
+    getItemProps: function getItemProps(_temp3) {
+      var _extends4;
+
+      var _ref3 = _temp3 === void 0 ? {} : _temp3,
+          item = _ref3.item,
+          index = _ref3.index,
+          _ref3$refKey = _ref3.refKey,
+          refKey = _ref3$refKey === void 0 ? 'ref' : _ref3$refKey,
+          ref = _ref3.ref,
+          onMouseMove = _ref3.onMouseMove,
+          onClick = _ref3.onClick,
+          rest = Object(_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_0__["default"])(_ref3, ["item", "index", "refKey", "ref", "onMouseMove", "onClick"]);
+
+      var itemIndex = getItemIndex(index, item, items);
+
+      if (itemIndex < 0) {
+        throw new Error('Pass either item or item index in getItemProps!');
+      }
+
+      return Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__["default"])((_extends4 = {}, _extends4[refKey] = callAll(ref, function (itemNode) {
+        if (itemNode) {
+          itemRefs.current.push(itemNode);
+        }
+      }), _extends4.role = 'option', _extends4), itemIndex === highlightedIndex && {
+        'aria-selected': true
+      }, {
+        id: getItemId(itemIndex),
+        onMouseMove: callAllEventHandlers(onMouseMove, function () {
+          return itemHandleMouseMove(itemIndex);
+        }),
+        onClick: callAllEventHandlers(onClick, function () {
+          return itemHandleClick(itemIndex);
+        })
+      }, rest);
+    },
+    // actions.
+    toggleMenu: function toggleMenu() {
+      dispatch({
+        type: FunctionToggleMenu,
+        props: props
+      });
+    },
+    openMenu: function openMenu() {
+      dispatch({
+        type: FunctionOpenMenu,
+        props: props
+      });
+    },
+    closeMenu: function closeMenu() {
+      dispatch({
+        type: FunctionCloseMenu
+      });
+    },
+    setHighlightedIndex: function setHighlightedIndex(newHighlightedIndex) {
+      dispatch({
+        type: FunctionSetHighlightedIndex,
+        highlightedIndex: newHighlightedIndex
+      });
+    },
+    selectItem: function selectItem(newSelectedItem) {
+      dispatch({
+        type: FunctionSelectItem,
+        selectedItem: newSelectedItem
+      });
+    },
+    reset: function reset() {
+      dispatch({
+        type: FunctionReset,
+        props: props
+      });
+    },
+    // state.
+    highlightedIndex: highlightedIndex,
+    isOpen: isOpen,
+    selectedItem: selectedItem
+  };
+}
+
 /* harmony default export */ __webpack_exports__["default"] = (Downshift);
 
 
@@ -23397,6 +24379,373 @@ module.exports = function() {
 };
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../next/node_modules/webpack/buildin/global.js */ "../node_modules/next/node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "../node_modules/keyboard-key/src/keyboardKey.js":
+/*!*******************************************************!*\
+  !*** ../node_modules/keyboard-key/src/keyboardKey.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isObject = function isObject(val) {
+  return val !== null && !Array.isArray(val) && typeof val === 'object'
+}
+
+var codes = {
+  // ----------------------------------------
+  // By Code
+  // ----------------------------------------
+  3: 'Cancel',
+  6: 'Help',
+  8: 'Backspace',
+  9: 'Tab',
+  12: 'Clear',
+  13: 'Enter',
+  16: 'Shift',
+  17: 'Control',
+  18: 'Alt',
+  19: 'Pause',
+  20: 'CapsLock',
+  27: 'Escape',
+  28: 'Convert',
+  29: 'NonConvert',
+  30: 'Accept',
+  31: 'ModeChange',
+  32: ' ',
+  33: 'PageUp',
+  34: 'PageDown',
+  35: 'End',
+  36: 'Home',
+  37: 'ArrowLeft',
+  38: 'ArrowUp',
+  39: 'ArrowRight',
+  40: 'ArrowDown',
+  41: 'Select',
+  42: 'Print',
+  43: 'Execute',
+  44: 'PrintScreen',
+  45: 'Insert',
+  46: 'Delete',
+  48: ['0', ')'],
+  49: ['1', '!'],
+  50: ['2', '@'],
+  51: ['3', '#'],
+  52: ['4', '$'],
+  53: ['5', '%'],
+  54: ['6', '^'],
+  55: ['7', '&'],
+  56: ['8', '*'],
+  57: ['9', '('],
+  91: 'OS',
+  93: 'ContextMenu',
+  144: 'NumLock',
+  145: 'ScrollLock',
+  181: 'VolumeMute',
+  182: 'VolumeDown',
+  183: 'VolumeUp',
+  186: [';', ':'],
+  187: ['=', '+'],
+  188: [',', '<'],
+  189: ['-', '_'],
+  190: ['.', '>'],
+  191: ['/', '?'],
+  192: ['`', '~'],
+  219: ['[', '{'],
+  220: ['\\', '|'],
+  221: [']', '}'],
+  222: ["'", '"'],
+  224: 'Meta',
+  225: 'AltGraph',
+  246: 'Attn',
+  247: 'CrSel',
+  248: 'ExSel',
+  249: 'EraseEof',
+  250: 'Play',
+  251: 'ZoomOut',
+}
+
+// Function Keys (F1-24)
+for (var i = 0; i < 24; i += 1) {
+  codes[112 + i] = 'F' + (i + 1)
+}
+
+// Alphabet (a-Z)
+for (var j = 0; j < 26; j += 1) {
+  var n = j + 65
+  codes[n] = [String.fromCharCode(n + 32), String.fromCharCode(n)]
+}
+
+var keyboardKey = {
+  codes: codes,
+
+  /**
+   * Get the `keyCode` or `which` value from a keyboard event or `key` name.
+   * @param {string|object} eventOrKey A keyboard event-like object or `key` name.
+   * @param {string} [eventOrKey.key] If object, it must have one of these keys.
+   * @param {string} [eventOrKey.keyCode] If object, it must have one of these keys.
+   * @param {string} [eventOrKey.which] If object, it must have one of these keys.
+   * @returns {*}
+   */
+  getCode: function getCode(eventOrKey) {
+    if (isObject(eventOrKey)) {
+      return eventOrKey.keyCode || eventOrKey.which || this[eventOrKey.key]
+    }
+    return this[eventOrKey]
+  },
+
+  /**
+   * Get the key name from a keyboard event, `keyCode`, or `which` value.
+   * @param {number|object} eventOrCode A keyboard event-like object or key code.
+   * @param {number} [eventOrCode.key] If object with a `key` name, it will be returned.
+   * @param {number} [eventOrCode.keyCode] If object, it must have one of these keys.
+   * @param {number} [eventOrCode.which] If object, it must have one of these keys.
+   * @param {number} [eventOrCode.shiftKey] If object, it must have one of these keys.
+   * @returns {*}
+   */
+  getKey: function getKey(eventOrCode) {
+    var isEvent = isObject(eventOrCode)
+
+    // handle events with a `key` already defined
+    if (isEvent && eventOrCode.key) {
+      return eventOrCode.key
+    }
+
+    var name = codes[isEvent ? eventOrCode.keyCode || eventOrCode.which : eventOrCode]
+
+    if (Array.isArray(name)) {
+      if (isEvent) {
+        name = name[eventOrCode.shiftKey ? 1 : 0]
+      } else {
+        name = name[0]
+      }
+    }
+
+    return name
+  },
+
+  // ----------------------------------------
+  // By Name
+  // ----------------------------------------
+  // declare these manually for static analysis
+  Cancel: 3,
+  Help: 6,
+  Backspace: 8,
+  Tab: 9,
+  Clear: 12,
+  Enter: 13,
+  Shift: 16,
+  Control: 17,
+  Alt: 18,
+  Pause: 19,
+  CapsLock: 20,
+  Escape: 27,
+  Convert: 28,
+  NonConvert: 29,
+  Accept: 30,
+  ModeChange: 31,
+  ' ': 32,
+  PageUp: 33,
+  PageDown: 34,
+  End: 35,
+  Home: 36,
+  ArrowLeft: 37,
+  ArrowUp: 38,
+  ArrowRight: 39,
+  ArrowDown: 40,
+  Select: 41,
+  Print: 42,
+  Execute: 43,
+  PrintScreen: 44,
+  Insert: 45,
+  Delete: 46,
+  0: 48,
+  ')': 48,
+  1: 49,
+  '!': 49,
+  2: 50,
+  '@': 50,
+  3: 51,
+  '#': 51,
+  4: 52,
+  $: 52,
+  5: 53,
+  '%': 53,
+  6: 54,
+  '^': 54,
+  7: 55,
+  '&': 55,
+  8: 56,
+  '*': 56,
+  9: 57,
+  '(': 57,
+  a: 65,
+  A: 65,
+  b: 66,
+  B: 66,
+  c: 67,
+  C: 67,
+  d: 68,
+  D: 68,
+  e: 69,
+  E: 69,
+  f: 70,
+  F: 70,
+  g: 71,
+  G: 71,
+  h: 72,
+  H: 72,
+  i: 73,
+  I: 73,
+  j: 74,
+  J: 74,
+  k: 75,
+  K: 75,
+  l: 76,
+  L: 76,
+  m: 77,
+  M: 77,
+  n: 78,
+  N: 78,
+  o: 79,
+  O: 79,
+  p: 80,
+  P: 80,
+  q: 81,
+  Q: 81,
+  r: 82,
+  R: 82,
+  s: 83,
+  S: 83,
+  t: 84,
+  T: 84,
+  u: 85,
+  U: 85,
+  v: 86,
+  V: 86,
+  w: 87,
+  W: 87,
+  x: 88,
+  X: 88,
+  y: 89,
+  Y: 89,
+  z: 90,
+  Z: 90,
+  OS: 91,
+  ContextMenu: 93,
+  F1: 112,
+  F2: 113,
+  F3: 114,
+  F4: 115,
+  F5: 116,
+  F6: 117,
+  F7: 118,
+  F8: 119,
+  F9: 120,
+  F10: 121,
+  F11: 122,
+  F12: 123,
+  F13: 124,
+  F14: 125,
+  F15: 126,
+  F16: 127,
+  F17: 128,
+  F18: 129,
+  F19: 130,
+  F20: 131,
+  F21: 132,
+  F22: 133,
+  F23: 134,
+  F24: 135,
+  NumLock: 144,
+  ScrollLock: 145,
+  VolumeMute: 181,
+  VolumeDown: 182,
+  VolumeUp: 183,
+  ';': 186,
+  ':': 186,
+  '=': 187,
+  '+': 187,
+  ',': 188,
+  '<': 188,
+  '-': 189,
+  _: 189,
+  '.': 190,
+  '>': 190,
+  '/': 191,
+  '?': 191,
+  '`': 192,
+  '~': 192,
+  '[': 219,
+  '{': 219,
+  '\\': 220,
+  '|': 220,
+  ']': 221,
+  '}': 221,
+  "'": 222,
+  '"': 222,
+  Meta: 224,
+  AltGraph: 225,
+  Attn: 246,
+  CrSel: 247,
+  ExSel: 248,
+  EraseEof: 249,
+  Play: 250,
+  ZoomOut: 251,
+}
+
+// ----------------------------------------
+// By Alias
+// ----------------------------------------
+// provide dot-notation accessible keys for all key names
+keyboardKey.Spacebar = keyboardKey[' ']
+keyboardKey.Digit0 = keyboardKey['0']
+keyboardKey.Digit1 = keyboardKey['1']
+keyboardKey.Digit2 = keyboardKey['2']
+keyboardKey.Digit3 = keyboardKey['3']
+keyboardKey.Digit4 = keyboardKey['4']
+keyboardKey.Digit5 = keyboardKey['5']
+keyboardKey.Digit6 = keyboardKey['6']
+keyboardKey.Digit7 = keyboardKey['7']
+keyboardKey.Digit8 = keyboardKey['8']
+keyboardKey.Digit9 = keyboardKey['9']
+keyboardKey.Tilde = keyboardKey['~']
+keyboardKey.GraveAccent = keyboardKey['`']
+keyboardKey.ExclamationPoint = keyboardKey['!']
+keyboardKey.AtSign = keyboardKey['@']
+keyboardKey.PoundSign = keyboardKey['#']
+keyboardKey.PercentSign = keyboardKey['%']
+keyboardKey.Caret = keyboardKey['^']
+keyboardKey.Ampersand = keyboardKey['&']
+keyboardKey.PlusSign = keyboardKey['+']
+keyboardKey.MinusSign = keyboardKey['-']
+keyboardKey.EqualsSign = keyboardKey['=']
+keyboardKey.DivisionSign = keyboardKey['/']
+keyboardKey.MultiplicationSign = keyboardKey['*']
+keyboardKey.Comma = keyboardKey[',']
+keyboardKey.Decimal = keyboardKey['.']
+keyboardKey.Colon = keyboardKey[':']
+keyboardKey.Semicolon = keyboardKey[';']
+keyboardKey.Pipe = keyboardKey['|']
+keyboardKey.BackSlash = keyboardKey['\\']
+keyboardKey.QuestionMark = keyboardKey['?']
+keyboardKey.SingleQuote = keyboardKey["'"]
+keyboardKey.DoubleQuote = keyboardKey['"']
+keyboardKey.LeftCurlyBrace = keyboardKey['{']
+keyboardKey.RightCurlyBrace = keyboardKey['}']
+keyboardKey.LeftParenthesis = keyboardKey['(']
+keyboardKey.RightParenthesis = keyboardKey[')']
+keyboardKey.LeftAngleBracket = keyboardKey['<']
+keyboardKey.RightAngleBracket = keyboardKey['>']
+keyboardKey.LeftSquareBracket = keyboardKey['[']
+keyboardKey.RightSquareBracket = keyboardKey[']']
+
+module.exports = keyboardKey
+
 
 /***/ }),
 
@@ -30147,15 +31496,15 @@ function getKeyAttributes(key) {
 
 
     (window.__NEXT_P=window.__NEXT_P||[]).push(["/", function() {
-      var page = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
+      var mod = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
       if(true) {
         module.hot.accept(/*! ./pages/index.tsx */ "./pages/index.tsx", function() {
           if(!next.router.components["/"]) return
           var updatedPage = __webpack_require__(/*! ./pages/index.tsx */ "./pages/index.tsx")
-          next.router.update("/", updatedPage.default || updatedPage)
+          next.router.update("/", updatedPage)
         })
       }
-      return { page: page.default || page }
+      return mod
     }]);
   
 
@@ -34036,11 +35385,7 @@ function useDropzone() {
       openFileDialog();
     }
   }, [inputRef, noClick]);
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
-      _useState2 = _slicedToArray(_useState, 2),
-      dragTargets = _useState2[0],
-      setDragTargets = _useState2[1];
+  var dragTargetsRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])([]);
 
   var onDocumentDrop = function onDocumentDrop(event) {
     if (rootRef.current && rootRef.current.contains(event.target)) {
@@ -34049,7 +35394,7 @@ function useDropzone() {
     }
 
     event.preventDefault();
-    setDragTargets([]);
+    dragTargetsRef.current = [];
   };
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
@@ -34071,8 +35416,8 @@ function useDropzone() {
     event.persist();
     stopPropagation(event); // Count the dropzone and any children that are entered.
 
-    if (dragTargets.indexOf(event.target) === -1) {
-      setDragTargets([].concat(_toConsumableArray(dragTargets), [event.target]));
+    if (dragTargetsRef.current.indexOf(event.target) === -1) {
+      dragTargetsRef.current = [].concat(_toConsumableArray(dragTargetsRef.current), [event.target]);
     }
 
     if (Object(_utils_index__WEBPACK_IMPORTED_MODULE_3__["isEvtWithFiles"])(event)) {
@@ -34092,7 +35437,7 @@ function useDropzone() {
         }
       });
     }
-  }, [dragTargets, getFilesFromEvent, onDragEnter, noDragEventsBubbling]);
+  }, [getFilesFromEvent, onDragEnter, noDragEventsBubbling]);
   var onDragOverCb = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (event) {
     event.preventDefault();
     event.persist();
@@ -34117,11 +35462,10 @@ function useDropzone() {
     event.persist();
     stopPropagation(event); // Only deactivate once the dropzone and all children have been left
 
-    var targets = _toConsumableArray(dragTargets.filter(function (target) {
+    var targets = dragTargetsRef.current.filter(function (target) {
       return target !== event.target && rootRef.current && rootRef.current.contains(target);
-    }));
-
-    setDragTargets(targets);
+    });
+    dragTargetsRef.current = targets;
 
     if (targets.length > 0) {
       return;
@@ -34136,13 +35480,13 @@ function useDropzone() {
     if (Object(_utils_index__WEBPACK_IMPORTED_MODULE_3__["isEvtWithFiles"])(event) && onDragLeave) {
       onDragLeave(event);
     }
-  }, [rootRef, dragTargets, onDragLeave, noDragEventsBubbling]);
+  }, [rootRef, onDragLeave, noDragEventsBubbling]);
   var onDropCb = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (event) {
     event.preventDefault(); // Persist here because we need the event later after getFilesFromEvent() is done
 
     event.persist();
     stopPropagation(event);
-    setDragTargets([]);
+    dragTargetsRef.current = [];
     dispatch({
       type: 'reset'
     });
@@ -37169,7 +38513,7 @@ var createStyles = function createStyles(theme) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 0:
 /*!********************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Findex.tsx ***!
   \********************************************************************************************************************************/
@@ -37192,5 +38536,5 @@ module.exports = dll_ea6db66f8757af76a899;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[0,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
