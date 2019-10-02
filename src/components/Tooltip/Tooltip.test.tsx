@@ -1,12 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
-import * as stringUtils from '../../util/string'
-
 import { Tooltip, TooltipProps } from './Tooltip'
 
-const stringUtilsMock = stringUtils as any
-stringUtilsMock.randomStr = jest.fn(() => 'abc')
+jest.mock('../../util/string')
 
 beforeEach(() => render(<div id='portal-root' />))
 
@@ -44,61 +41,56 @@ it('should not render tooltip if text if null or empty', () => {
 
 it('should show tooltip when mouse enters component', () => {
   const { getByText } = render(createComponent())
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
   fireEvent.mouseEnter(getByText('Testing'))
-  expect(document.body.querySelector('[role="tooltip"]')).toBeTruthy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })
 
 it('should show tooltip when focus component', () => {
   const { getByText } = render(createComponent())
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
   fireEvent.focus(getByText('Testing'))
-  expect(document.body.querySelector('[role="tooltip"]')).toBeTruthy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })
 
 it('should hide tooltip when mouse leaves component', () => {
   const { getByText } = render(createComponent())
   fireEvent.mouseEnter(getByText('Testing'))
-  fireEvent.mouseLeave(getByText('Testing'))
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  fireEvent.mouseOver(document)
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
 
 it('should hide tooltip when blur component', () => {
   const { getByText } = render(createComponent())
   fireEvent.focus(getByText('Testing'))
   fireEvent.blur(getByText('Testing'))
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
 
 it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', () => {
   const focus = jest.fn()
   const blur = jest.fn()
   const mouseEnter = jest.fn()
-  const mouseLeave = jest.fn()
   const { getByText } = render(
     <Tooltip text='Tooltip text' offset={2} placement='bottom-start'>
-      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter}>
         Testing
       </button>
     </Tooltip>
   )
 
   const target = getByText('Testing')
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 
   fireEvent.focus(target)
   expect(focus).toHaveBeenCalledTimes(1)
-  expect(document.body.querySelector('[role="tooltip"]')).toBeTruthy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 
   fireEvent.blur(target)
   expect(blur).toHaveBeenCalledTimes(1)
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 
   fireEvent.mouseEnter(target)
   expect(mouseEnter).toHaveBeenCalledTimes(1)
-  expect(document.body.querySelector('[role="tooltip"]')).toBeTruthy()
-
-  fireEvent.mouseLeave(target)
-  expect(mouseLeave).toHaveBeenCalledTimes(1)
-  expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
+  expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })

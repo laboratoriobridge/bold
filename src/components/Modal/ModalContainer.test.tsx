@@ -3,10 +3,10 @@ import * as React from 'react'
 
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
-import * as stringUtils from '../../util/string'
 
 import { ModalContainer } from './ModalContainer'
-;(stringUtils as any).randomStr = jest.fn(() => 'abc')
+
+jest.mock('../../util/string')
 
 it('should render correctly', () => {
   const { container } = render(<ModalContainer>Container</ModalContainer>)

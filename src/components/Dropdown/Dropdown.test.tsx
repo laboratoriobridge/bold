@@ -1,13 +1,10 @@
 import { fireEvent, render, wait } from '@testing-library/react'
 import React, { createRef } from 'react'
 
-import * as stringUtils from '../../util/string'
-
 import { Dropdown, DropdownProps } from './Dropdown'
 import { DropdownItem } from './DropdownItem'
 
-const stringUtilsModule = stringUtils as any
-stringUtilsModule.randomStr = jest.fn(() => 'abc')
+jest.mock('../../util/string')
 
 // tslint:disable jsx-no-lambda
 

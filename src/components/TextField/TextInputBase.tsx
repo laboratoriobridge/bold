@@ -33,7 +33,7 @@ TextInputBase.defaultProps = {
 export const createStyleParts = (theme: Theme) => ({
   base: {
     backgroundColor: theme.pallete.surface.main,
-    border: 'solid 1px ' + theme.pallete.gray.c70,
+    border: 'solid 1px ' + theme.pallete.gray.c60,
     borderRadius: theme.radius.input,
     color: theme.pallete.text.main,
     fontFamily: theme.typography.fontFamily,
@@ -62,7 +62,7 @@ export const createStyleParts = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.background,
   } as CSSProperties,
   hover: {
-    borderColor: theme.pallete.gray.c60,
+    borderColor: theme.pallete.gray.c50,
   } as CSSProperties,
   active: {
     borderColor: theme.pallete.primary.main,

@@ -6,6 +6,8 @@ import ptBr from '../../i18n/locales/pt-BR'
 
 import { Alert } from './Alert'
 
+jest.mock('../../util/string')
+
 const click = jest.fn()
 const enter = jest.fn()
 const leave = jest.fn()

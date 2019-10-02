@@ -4,7 +4,7 @@ import { Skin } from '../ButtonSkins'
 export const createStyles = (theme: Theme): Skin => ({
   button: {
     backgroundColor: 'transparent',
-    border: '1px solid ' + theme.pallete.gray.c60,
+    border: '1px solid ' + theme.pallete.gray.c40,
     borderRadius: theme.radius.button,
     color: theme.pallete.text.main,
     ':not(:disabled):active': {

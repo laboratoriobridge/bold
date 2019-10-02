@@ -1,7 +1,9 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, select, text } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
+
+import { VFlow } from '../VFlow'
 
 import { TextField } from './TextField'
 
@@ -28,14 +30,24 @@ storiesOf('Components|TextField', module)
     />
   ))
   .add('with icon', () => (
-    <TextField
-      id='iconized'
-      name='iconized'
-      icon='zoomOutline'
-      label='Input with icon'
-      iconPosition={select('iconPosition', ['left', 'right'], 'right')}
-      onIconClick={action('icon-clicked')}
-      disabled={boolean('disabled', false)}
-      onChange={action('changed')}
-    />
+    <VFlow>
+      <TextField
+        id='clickable'
+        name='clickable'
+        icon='zoomOutline'
+        label='Clickable icon'
+        onIconClick={action('icon-clicked')}
+        disabled={boolean('disabled', false)}
+        onChange={action('changed')}
+      />
+      <TextField
+        id='decorative'
+        name='decorative'
+        icon='zoomOutline'
+        iconPosition='left'
+        label='Decorative icon'
+        disabled={boolean('disabled', false)}
+        onChange={action('changed')}
+      />
+    </VFlow>
   ))
