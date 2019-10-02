@@ -51,10 +51,8 @@ export function Paginator(props: PaginatorProps) {
 
   const applyInputValue = () => {
     const inputNumber = parseInt(inputValue, 10)
-    if (!isNaN(inputNumber) && inputNumber !== currentPage()) {
-      if (inputNumber >= 1 && inputNumber <= total) {
-        onChange && onChange(inputNumber - 1)
-      }
+    if (!isNaN(inputNumber) && inputNumber !== currentPage() && inputNumber >= 1 && inputNumber <= total) {
+      onChange && onChange(inputNumber - 1)
     } else {
       setInputValue(`${page + 1}`)
     }
