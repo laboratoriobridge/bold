@@ -34,6 +34,13 @@ const locale: LocaleConfiguration = {
     loadingItem: 'Carregando...',
     removeItem: 'Remover',
   },
+  tableFooter: {
+    results: {
+      zero: 'resultados',
+      one: 'resultado',
+      other: 'resultados',
+    },
+  },
 }
 
 export default locale
