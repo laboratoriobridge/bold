@@ -21,19 +21,26 @@ export interface FileProps {
 }
 
 export function FileUploader(props: FileUploaderProps) {
-  const { file, text, ...rest } = props
+  const { file, text, disabled, ...rest } = props
   const { classes, css } = useStyles(createStyles)
   const { getRootProps, getInputProps, isDragActive, isDragAccept } = useDropzone(rest)
 
   return (
-    <div className={css(classes.componentWrapper, isDragActive && classes.dragBackground)} {...getRootProps()}>
+    <div
+      className={css(
+        classes.componentWrapper,
+        isDragActive && classes.dragBackground,
+        disabled && classes.pointerEventsNone
+      )}
+      {...getRootProps()}
+    >
       <input {...getInputProps()} />
-      <div className={css(classes.buttonWrapper, props.disabled && classes.disabled)}>
+      <div className={css(classes.buttonWrapper, disabled && classes.disabled)}>
         <div className={css(classes.dropzone, isDragActive && classes.dragActive)}>
           {isDragAccept}
           <HFlow justifyContent='center' alignItems='center' hSpacing={0.5}>
-            <Icon fill={props.disabled ? 'disabled' : 'secondary'} icon='upload' />
-            <Text color={props.disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
+            <Icon fill={disabled ? 'disabled' : 'secondary'} icon='upload' />
+            <Text color={disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
               {text}
             </Text>
           </HFlow>
@@ -120,7 +127,6 @@ export function FileExtension(props: FileExtensionProps) {
 
 export const createStyles = (theme: Theme) => ({
   componentWrapper: {
-    borderRadius: theme.radius.paper,
     backgroundColor: theme.pallete.surface.main,
     transition: 'box-shadow .2s ease',
 
@@ -131,12 +137,12 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   buttonWrapper: {
     border: `1px solid` + theme.pallete.gray.c40,
-    borderRadius: theme.radius.paper,
+    borderRadius: theme.radius.popper,
     cursor: 'pointer',
     padding: '0.25em',
   } as CSSProperties,
   dropzone: {
-    borderRadius: theme.radius.paper,
+    borderRadius: theme.radius.popper,
     padding: '0.52em',
   } as CSSProperties,
   dragBackground: {
@@ -145,10 +151,13 @@ export const createStyles = (theme: Theme) => ({
   dragActive: {
     border: `1px dashed` + theme.pallete.gray.c40,
   } as CSSProperties,
+  pointerEventsNone: {
+    pointerEvents: 'none',
+  } as CSSProperties,
   disabled: {
     border: `1px solid` + theme.pallete.gray.c80,
-    cursor: 'not-allowed',
   } as CSSProperties,
+
   file: {
     borderRadius: theme.radius.popper,
     borderBottom: '1px solid ' + theme.pallete.gray.c80,
@@ -157,7 +166,6 @@ export const createStyles = (theme: Theme) => ({
     padding: '1rem',
   },
   fileDetailsContainer: {
-    backgroundColor: theme.pallete.surface.main,
     alignItems: 'center',
     display: 'flex',
   },
