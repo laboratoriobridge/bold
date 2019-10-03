@@ -187,7 +187,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-12-label"
+      aria-labelledby="downshift-0-label"
       class="emotion-7"
       role="combobox"
     >
@@ -199,7 +199,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
             aria-autocomplete="list"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-12-input"
+            id="downshift-0-input"
             placeholder="Select a value..."
             type="text"
             value=""
@@ -438,7 +438,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
             aria-labelledby="label-abc"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-13-input"
+            id="downshift-0-input"
             placeholder="Select a value..."
             type="text"
             value=""
@@ -918,8 +918,8 @@ exports[`should render correctly when opened 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-1-label"
-      aria-owns="downshift-1-menu"
+      aria-labelledby="downshift-0-label"
+      aria-owns="downshift-0-menu"
       class="emotion-12"
       role="combobox"
     >
@@ -929,10 +929,10 @@ exports[`should render correctly when opened 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-1-menu"
+            aria-controls="downshift-0-menu"
             autocomplete="off"
             class="emotion-0"
-            id="downshift-1-input"
+            id="downshift-0-input"
             placeholder="Select a value..."
             type="text"
             value=""
@@ -967,15 +967,15 @@ exports[`should render correctly when opened 1`] = `
         class="emotion-11"
       >
         <ul
-          aria-labelledby="downshift-1-label"
+          aria-labelledby="downshift-0-label"
           class="emotion-10"
-          id="downshift-1-menu"
+          id="downshift-0-menu"
           role="listbox"
         >
           <li
             aria-selected="false"
             class="emotion-5"
-            id="downshift-1-item-0"
+            id="downshift-0-item-0"
             role="option"
           >
             Apple
@@ -983,7 +983,7 @@ exports[`should render correctly when opened 1`] = `
           <li
             aria-selected="false"
             class="emotion-5"
-            id="downshift-1-item-1"
+            id="downshift-0-item-1"
             role="option"
           >
             Banana
@@ -991,7 +991,7 @@ exports[`should render correctly when opened 1`] = `
           <li
             aria-selected="false"
             class="emotion-5"
-            id="downshift-1-item-2"
+            id="downshift-0-item-2"
             role="option"
           >
             Grape
@@ -999,7 +999,7 @@ exports[`should render correctly when opened 1`] = `
           <li
             aria-selected="false"
             class="emotion-5"
-            id="downshift-1-item-3"
+            id="downshift-0-item-3"
             role="option"
           >
             Orange
@@ -1007,7 +1007,7 @@ exports[`should render correctly when opened 1`] = `
           <li
             aria-selected="false"
             class="emotion-5"
-            id="downshift-1-item-4"
+            id="downshift-0-item-4"
             role="option"
           >
             Pear

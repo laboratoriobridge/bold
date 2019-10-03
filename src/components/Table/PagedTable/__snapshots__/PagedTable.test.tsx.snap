@@ -1,19 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-4 {
-  text-align: left;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
-.emotion-13 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
 .emotion-26 {
   width: 100%;
   border-collapse: collapse;
@@ -22,6 +9,12 @@ exports[`should render correctly 1`] = `
 
 .emotion-26 tr:hover td {
   background: #F0F0F5;
+}
+
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-3 {
@@ -44,6 +37,13 @@ exports[`should render correctly 1`] = `
 
 .emotion-1 {
   fill: #0069D0;
+}
+
+.emotion-13 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-27 {

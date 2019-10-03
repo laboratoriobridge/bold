@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
+import { resetIdCounter } from 'downshift'
 import React from 'react'
 
 import en from '../../../i18n/locales/en-US'
@@ -19,6 +20,8 @@ const items: DefaultItemType[] = [
 function SelectTest(props: Partial<SelectSingleProps>) {
   return <SelectSingle items={items} itemToString={item => item.label} placeholder='Select a value...' {...props} />
 }
+
+beforeEach(() => resetIdCounter())
 
 it('should render correctly when closed', () => {
   const { container } = render(<SelectTest />)
@@ -48,6 +51,14 @@ it('should call the onChange event when an item is clicked', () => {
   expect(onChange).not.toHaveBeenCalled()
   fireEvent.click(getByText(items[2].label))
   expect(onChange).toHaveBeenLastCalledWith(items[2], expect.anything())
+})
+
+it('should call the onChange event with target.value empty when text input is cleared', () => {
+  const onChange = jest.fn()
+  const { container } = render(<SelectTest onChange={onChange} value={items[0]} />)
+
+  fireEvent.change(container.querySelector('input'), { target: { value: '' } })
+  expect(onChange).toHaveBeenLastCalledWith(null, expect.anything())
 })
 
 it('should render current value and allow changes via prop', () => {

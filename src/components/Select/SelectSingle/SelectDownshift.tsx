@@ -63,27 +63,31 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
     setVisibleItems(props.items)
   }, [props.items])
 
-  const handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
-    if (createNewItem && options.hasOwnProperty('inputValue')) {
-      rest.onChange && rest.onChange(createNewItem(options.inputValue), getStateAndHelpers(downshift))
+  const handleStateChange = (changes: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
+    if (createNewItem && changes.hasOwnProperty('inputValue')) {
+      rest.onChange && rest.onChange(createNewItem(changes.inputValue), getStateAndHelpers(downshift))
     }
 
-    if (options.isOpen) {
+    if (changes.type === Downshift.stateChangeTypes.changeInput && changes.inputValue === '') {
+      rest.onChange && rest.onChange(null, getStateAndHelpers(downshift))
+    }
+
+    if (changes.isOpen) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }
 
-    if (options.type === Downshift.stateChangeTypes.changeInput) {
-      onFilterChange(options.inputValue, getStateAndHelpers(downshift))
+    if (changes.type === Downshift.stateChangeTypes.changeInput) {
+      onFilterChange(changes.inputValue, getStateAndHelpers(downshift))
     }
 
     if (
-      options.type === Downshift.stateChangeTypes.clickItem ||
-      options.type === Downshift.stateChangeTypes.keyDownEnter
+      changes.type === Downshift.stateChangeTypes.clickItem ||
+      changes.type === Downshift.stateChangeTypes.keyDownEnter
     ) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }
 
-    props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift))
+    props.onStateChange && props.onStateChange(changes, getStateAndHelpers(downshift))
   }
 
   const handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
