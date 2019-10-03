@@ -7,7 +7,9 @@ const items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto'
 function SuggestionDemo() {
   const [value, setValue] = useState()
 
-  const itemToString = (item: any) => item
+  const handleChange = (item: string) => setValue(item)
+
+  const itemToString = (item: string) => item
   const createNewItem = (inputValue: string) => inputValue
 
   return (
@@ -18,7 +20,7 @@ function SuggestionDemo() {
         label='Favorite pasta'
         name='favorite pasta'
         items={items}
-        onChange={setValue}
+        onChange={handleChange}
         itemToString={itemToString}
         createNewItem={createNewItem}
         icon={null}
