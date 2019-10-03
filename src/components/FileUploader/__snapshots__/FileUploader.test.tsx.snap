@@ -2,6 +2,7 @@
 
 exports[`should render correct without extension 1`] = `
 .emotion-12 {
+  border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -14,17 +15,18 @@ exports[`should render correct without extension 1`] = `
 
 .emotion-4 {
   border: 1px solid#696979;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0.25em;
 }
 
 .emotion-3 {
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.52em;
 }
 
 .emotion-9 {
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -81,11 +83,12 @@ exports[`should render correct without extension 1`] = `
 }
 
 .emotion-11 {
-  border-radius: 2px;
+  border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
   border-right: 1px solid #D3D4DD;
   padding: 1rem;
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -205,6 +208,7 @@ exports[`should render correct without extension 1`] = `
 
 exports[`should render correctly at initial state 1`] = `
 .emotion-5 {
+  border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -217,13 +221,13 @@ exports[`should render correctly at initial state 1`] = `
 
 .emotion-4 {
   border: 1px solid#696979;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0.25em;
 }
 
 .emotion-3 {
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.52em;
 }
 
@@ -302,6 +306,7 @@ exports[`should render correctly at initial state 1`] = `
 
 exports[`should render correctly at uploading state 1`] = `
 .emotion-12 {
+  border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -314,17 +319,18 @@ exports[`should render correctly at uploading state 1`] = `
 
 .emotion-4 {
   border: 1px solid#696979;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0.25em;
 }
 
 .emotion-3 {
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.52em;
 }
 
 .emotion-8 {
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -381,11 +387,12 @@ exports[`should render correctly at uploading state 1`] = `
 }
 
 .emotion-11 {
-  border-radius: 2px;
+  border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
   border-right: 1px solid #D3D4DD;
   padding: 1rem;
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -522,6 +529,7 @@ exports[`should render correctly at uploading state 1`] = `
 
 exports[`should render correctly complete state 1`] = `
 .emotion-12 {
+  border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
@@ -534,17 +542,18 @@ exports[`should render correctly complete state 1`] = `
 
 .emotion-4 {
   border: 1px solid#696979;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
   padding: 0.25em;
 }
 
 .emotion-3 {
-  border-radius: 2px;
+  border-radius: 4px;
   padding: 0.52em;
 }
 
 .emotion-9 {
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -601,11 +610,12 @@ exports[`should render correctly complete state 1`] = `
 }
 
 .emotion-11 {
-  border-radius: 2px;
+  border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
   border-right: 1px solid #D3D4DD;
   padding: 1rem;
+  background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
