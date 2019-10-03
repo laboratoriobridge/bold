@@ -211,9 +211,7 @@ exports[`should render correctly 1`] = `
       <span
         class="emotion-27"
       >
-        <span
-          title="3"
-        >
+        <span>
           3 resultados
         </span>
       </span>

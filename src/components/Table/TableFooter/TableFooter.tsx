@@ -12,6 +12,7 @@ export interface TableFooterProps {
   page: number
   totalPages: number
   totalElements: number
+  abbrev?: boolean
   pageSize: number
   style?: ExternalStyles
   sizeOptions?: number[]
@@ -20,7 +21,7 @@ export interface TableFooterProps {
 }
 
 export function TableFooter(props: TableFooterProps) {
-  const { style, page, totalPages, totalElements, pageSize, sizeOptions, onSizeChange, onPageChange } = props
+  const { style, page, totalPages, totalElements, abbrev, pageSize, sizeOptions, onSizeChange, onPageChange } = props
   const { classes, css } = useStyles(createStyles)
 
   const showPagination = () => {
@@ -30,7 +31,11 @@ export function TableFooter(props: TableFooterProps) {
   return (
     <div className={css(classes.footer, style)}>
       <span className={classes.results}>
-        <Number value={totalElements} suffix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')} abbrev />
+        <Number
+          value={totalElements}
+          suffix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')}
+          abbrev={abbrev}
+        />
       </span>
       {showPagination() && (
         <div className={classes.pagination}>

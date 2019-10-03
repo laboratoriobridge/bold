@@ -41,3 +41,13 @@ it('does not show pagination options if totalElements is less than pageSize and 
   )
   expect(container3.querySelector('input')).toBeTruthy()
 })
+
+it('change default state when abbrev equals true', () => {
+  const { container } = render(createComponent({ totalElements: 1000, abbrev: true }))
+  expect(container.querySelector('[title="1,000"]').textContent).toEqual('1k resultados')
+})
+
+it('default value of prop abbrev equals false', () => {
+  const { container } = render(createComponent({ totalElements: 1000 }))
+  expect(container.querySelector('div > span').textContent).toEqual('1,000 resultados')
+})
