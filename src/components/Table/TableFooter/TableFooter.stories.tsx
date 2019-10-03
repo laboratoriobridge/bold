@@ -10,7 +10,7 @@ storiesOf('Components|Table', module).add('TableFooter', () => (
     page={number('page', 0)}
     pageSize={number('pageSize', 10)}
     totalPages={number('totalPages', 10)}
-    totalElements={number('totalElements', 100)}
+    totalElements={number('totalElements', 1000)}
     onPageChange={action('page-changed')}
     onSizeChange={action('size-changed')}
   />
