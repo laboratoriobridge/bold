@@ -15,6 +15,7 @@ storiesOf('Components|FileUploader', module)
       onDragOver={action('onDragOver')}
       onDragEnter={action('onDragEnter')}
       onDragLeave={action('onDragLeave')}
+      disabled
     />
   ))
   .add('uploading', () => (
