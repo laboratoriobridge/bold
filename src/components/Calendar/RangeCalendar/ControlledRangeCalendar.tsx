@@ -12,7 +12,7 @@ export interface ControlledRangeCalendarProps extends CalendarProps {
   }
   onChange?(initialDate: Date, finalDate: Date): void
 }
-export const ControlledRangeCalendar = ({ onChange, values, ...rest }: ControlledRangeCalendarProps) => {
+export const ControlledRangeCalendar = ({ onChange, values, onDayClick, ...rest }: ControlledRangeCalendarProps) => {
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
   const cmpMounted = useRef(false)
@@ -49,6 +49,7 @@ export const ControlledRangeCalendar = ({ onChange, values, ...rest }: Controlle
   }
 
   const controllDayClick = (day: Date) => {
+    onDayClick(day)
     if (!initialDate) {
       setInitialDate(day)
       return

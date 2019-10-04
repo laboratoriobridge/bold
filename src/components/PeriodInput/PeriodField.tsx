@@ -19,7 +19,7 @@ export interface PeriodFieldProps extends PeriodInputProps {
 
 export function PeriodField(props: PeriodFieldProps) {
   const controller = useRef<PopperController>()
-  const inputRef = useRef<HTMLInputElement>()
+  const finalInputRef = useRef<HTMLInputElement>()
 
   const [period, setPeriod] = useState(props.value ? props.value : ({} as Period))
 
@@ -27,14 +27,8 @@ export function PeriodField(props: PeriodFieldProps) {
     controller.current = ctrl
   }
 
-  const handleOnClick = (ctrl: PopperController) => (e: React.MouseEvent<HTMLInputElement>) => {
-    ctrl.show()
-    return props.onClick(e)
-  }
-
-  const handleInputFocus = (ctrl: PopperController) => (e: React.FocusEvent<HTMLInputElement>) => {
-    ctrl.show()
-    return props.onFocus(e)
+  const handleOnDayClick = (ctrl: PopperController) => (day: Date) => {
+    finalInputRef.current.focus()
   }
 
   const handleFocusIn = () => {
@@ -63,15 +57,7 @@ export function PeriodField(props: PeriodFieldProps) {
   const renderTarget = (ctrl: PopperController) => {
     const { icon, ...rest } = props
     return (
-      <PeriodInput
-        {...rest}
-        inputRef={inputRef}
-        icon={icon}
-        value={period}
-        onChange={handlePeriodChanged}
-        onClick={handleOnClick(ctrl)}
-        onFocus={handleInputFocus(ctrl)}
-      />
+      <PeriodInput {...rest} icon={icon} value={period} onChange={handlePeriodChanged} finalInputRef={finalInputRef} />
     )
   }
 
@@ -82,6 +68,7 @@ export function PeriodField(props: PeriodFieldProps) {
           <ControlledRangeCalendarPopup
             values={{ initialDate: period.startDate, finalDate: period.finalDate }}
             onChange={handleCalendarPeriodChanged}
+            onDayClick={handleOnDayClick(ctrl)}
             modifiers={{
               disabled: disableByRange(props.minDate, props.maxDate),
             }}

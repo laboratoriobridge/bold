@@ -1,9 +1,9 @@
-import React, { CSSProperties, useEffect, useRef, useState } from 'react'
+import React, { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 
-import { focusBoxShadow, Theme, useStyles } from '../../styles'
+import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
+import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
 import { Icon, Icons } from '../Icon'
-import { MaskedTextFieldProps } from '../MaskedTextField'
 import { InputWrapper } from '../TextField/InputWrapper'
 
 export interface Period {
@@ -11,29 +11,48 @@ export interface Period {
   finalDate: Date
 }
 
-export interface PeriodInputBaseProps extends Omit<MaskedTextFieldProps, 'onChange' | 'value'> {
+export interface PeriodInputBaseProps {
   /**
-   * Prop used to set an initial period in date interval
+   * Prop used to set an initial period.
    */
 
   value?: Period
 
   /**
-   * Prop to disable the date field
+   * Prop to disable the date field.
    */
   disabled?: boolean
 
   /**
    * Prop to set an icon in date field button.
-   * When this prop is not declared, date field will be shown without a icon.
+   * When this prop is not declared, date field will be
+   * shown without a icon.
    */
   icon?: Icons
 
   /**
-   * Function to manage the icon action
-   *
+   *  Prop to reference an invalid state.
    */
 
+  invalid?: boolean
+
+  /**
+   *  Prop for receive external styles.
+   */
+
+  style?: ExternalStyles
+
+  /**
+   * initialInputRef and finalInputRef are used to assign refs
+   * to date input components
+   */
+
+  initialInputRef?: Ref<HTMLInputElement>
+  finalInputRef?: Ref<HTMLInputElement>
+
+  /**
+   * Function to manage the icon action
+   */
   onIconClick?(): void
 
   /**
@@ -46,9 +65,9 @@ export interface PeriodInputBaseProps extends Omit<MaskedTextFieldProps, 'onChan
 
 export function PeriodInputBase(props: PeriodInputBaseProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
-  const scondDateFieldRef = useRef<HTMLInputElement>()
+  const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const { value, disabled, onChange, icon, onIconClick } = props
+  const { value, disabled, onChange, icon, onIconClick, initialInputRef, finalInputRef } = props
   const { classes, css } = useStyles(createStyles, disabled)
 
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
@@ -65,7 +84,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     onChange(aux)
     setPeriod(aux)
     if (data !== null) {
-      scondDateFieldRef.current.focus()
+      secondDateFieldRef.current.focus()
     }
   }
 
@@ -86,7 +105,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     const aux = { startDate: period.startDate, finalDate: undefined } as Period
     onChange(aux)
     setPeriod(aux)
-    scondDateFieldRef.current.focus()
+    secondDateFieldRef.current.focus()
   }
 
   const defaultHandleOnClick = () => {
@@ -103,7 +122,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
           <DateInput
             clearable
             disabled={disabled}
-            inputRef={firstDateFieldRef}
+            inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
             onChange={onChangeStart}
             onClear={onClearStart}
             style={classes.dateField}
@@ -117,7 +136,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
           <DateInput
             clearable
             disabled={disabled}
-            inputRef={scondDateFieldRef}
+            inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
             onClear={onClearFinal}
             style={classes.dateField}

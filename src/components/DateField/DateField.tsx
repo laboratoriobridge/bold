@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 
+import { composeRefs } from '../../util/react'
 import { CalendarProps } from '../Calendar'
 import { isSameDay } from '../Calendar/util'
 import { FocusManagerContainer } from '../FocusManagerContainer'
@@ -33,7 +34,7 @@ export interface DateFieldProps extends DateInputProps {
 }
 
 export function DateField(props: DateFieldProps) {
-  const inputRef = props.inputRef ? props.inputRef : useRef<HTMLInputElement>()
+  const inputRef = useRef<HTMLInputElement>()
   const controller = useRef<PopperController>()
 
   const setController = (ctrl: PopperController) => {
@@ -75,7 +76,7 @@ export function DateField(props: DateFieldProps) {
         icon={hasDefaultIcon ? 'calendarOutline' : icon}
         onIconClick={ctrl.show}
         {...rest}
-        inputRef={inputRef}
+        inputRef={composeRefs(inputRef, props.inputRef) as any}
         onClick={handleInputClick(ctrl)}
         onFocus={handleInputFocus(ctrl)}
       />
