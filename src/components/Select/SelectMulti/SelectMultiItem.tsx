@@ -35,7 +35,6 @@ export const createStyles = (theme: Theme, { disabled }: SelectMultiItemProps) =
     display: 'inline-flex',
     alignItems: 'center',
     fontWeight: 'bold',
-    marginBottom: '0.25rem',
   } as CSSProperties,
   text: {
     padding: disabled ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.125rem - 1px) 0.25rem',
