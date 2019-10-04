@@ -148,7 +148,43 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   )
 }
 
-const createStyleParts = (theme: Theme) => ({
+const createStyles = (theme: Theme, disabled: boolean) => {
+  const divStyle = createBaseDivStyle(theme)
+
+  return {
+    div: {
+      ...divStyle.base,
+      ':not(:disabled):hover': divStyle.hover,
+      ':not(:disabled):active': divStyle.active,
+      ':focus-within': {
+        ':not(:disabled)': divStyle.focus,
+      },
+      background: disabled && theme.pallete.surface.background,
+    },
+    invalid: divStyle.invalid,
+    arrowIcon: {
+      background: 'transparent',
+      color: disabled && theme.pallete.text.disabled,
+      cursor: 'default',
+    } as CSSProperties,
+    spanWrapper: {
+      background: 'transparent',
+      display: 'flex',
+      alignItems: 'center',
+    } as CSSProperties,
+    dateField: {
+      border: 'none',
+      '&:focus': {
+        boxShadow: 'none !important',
+      },
+    } as CSSProperties,
+    fieldWrapper: {
+      flex: 1,
+    } as CSSProperties,
+  }
+}
+
+const createBaseDivStyle = (theme: Theme) => ({
   base: {
     backgroundColor: theme.pallete.surface.main,
     border: '1px solid' + theme.pallete.gray.c70,
@@ -184,39 +220,3 @@ const createStyleParts = (theme: Theme) => ({
     },
   } as CSSProperties,
 })
-
-const createStyles = (theme: Theme, disabled: boolean) => {
-  const parts = createStyleParts(theme)
-
-  return {
-    div: {
-      ...parts.base,
-      ':not(:disabled):hover': parts.hover,
-      ':not(:disabled):active': parts.active,
-      ':focus-within': {
-        ':not(:disabled)': parts.focus,
-      },
-      background: disabled && theme.pallete.surface.background,
-    },
-    invalid: parts.invalid,
-    arrowIcon: {
-      background: 'transparent',
-      color: disabled && theme.pallete.text.disabled,
-      cursor: 'default',
-    } as CSSProperties,
-    spanWrapper: {
-      background: 'transparent',
-      display: 'flex',
-      alignItems: 'center',
-    } as CSSProperties,
-    dateField: {
-      border: 'none',
-      '&:focus': {
-        boxShadow: 'none !important',
-      },
-    } as CSSProperties,
-    fieldWrapper: {
-      flex: 1,
-    } as CSSProperties,
-  }
-}
