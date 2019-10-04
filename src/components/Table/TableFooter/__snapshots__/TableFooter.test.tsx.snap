@@ -329,10 +329,8 @@ exports[`renders correctly 1`] = `
     <span
       class="emotion-0"
     >
-      <span
-        title="100"
-      >
-        100 resultados
+      <span>
+        100 results
       </span>
     </span>
     <div
@@ -473,10 +471,8 @@ exports[`renders without pagination 1`] = `
     <span
       class="emotion-0"
     >
-      <span
-        title="10"
-      >
-        10 resultados
+      <span>
+        10 results
       </span>
     </span>
   </div>

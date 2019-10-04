@@ -17,7 +17,7 @@ const rows: Row[] = [
 ]
 
 const sortHandler = jest.fn()
-const createTable = (props: Partial<DataTableProps> = {}) => (
+const DataTableTest = (props: Partial<DataTableProps>) => (
   // tslint:disable jsx-no-lambda
   <DataTable
     rows={rows}
@@ -30,7 +30,8 @@ const createTable = (props: Partial<DataTableProps> = {}) => (
         name: 'age',
         header: 'Age',
         sortable: true,
-        style: { textAlign: 'right' },
+        align: 'right',
+        style: { color: 'red' },
         render: (row: Row) => row.age,
       },
     ]}
@@ -39,12 +40,12 @@ const createTable = (props: Partial<DataTableProps> = {}) => (
 )
 
 it('should render correctly', () => {
-  const { container } = render(createTable())
+  const { container } = render(<DataTableTest />)
   expect(container).toMatchSnapshot()
 })
 
 it('should call onSortChange with right parameters when clicked over column title', () => {
-  const { container } = render(createTable())
+  const { container } = render(<DataTableTest />)
   fireEvent.click(container.querySelector('th[data-name="id"] span'))
   expect(sortHandler).toHaveBeenLastCalledWith(['-id'])
 
@@ -66,7 +67,7 @@ it('should render TableLoadingRow when loading prop is on', () => {
 
 it('should accept the render prop', () => {
   const renderSpy = jest.fn()
-  render(createTable({ render: renderSpy }))
+  render(<DataTableTest render={renderSpy} />)
   expect(renderSpy).toHaveBeenCalledWith(
     expect.objectContaining({
       columns: expect.anything(),
@@ -77,7 +78,7 @@ it('should accept the render prop', () => {
 describe('onRowClick prop', () => {
   it('should call the prop with the clicked row', () => {
     const clickHandler = jest.fn()
-    const { container } = render(createTable({ onRowClick: clickHandler }))
+    const { container } = render(<DataTableTest onRowClick={clickHandler} />)
     const trs = container.querySelectorAll('tbody tr')
 
     expect(clickHandler).not.toHaveBeenCalled()
@@ -92,7 +93,7 @@ describe('onRowClick prop', () => {
 
 describe('getColumn', () => {
   const renderSpy = jest.fn()
-  render(createTable({ render: renderSpy }))
+  render(<DataTableTest render={renderSpy} />)
   const getColumn = renderSpy.mock.calls[0][0].getColumn
 
   it('should return the column configuration by its name', () => {
@@ -107,7 +108,7 @@ describe('getColumn', () => {
 
 describe('getHeaderProps', () => {
   const renderSpy = jest.fn()
-  render(createTable({ render: renderSpy }))
+  render(<DataTableTest render={renderSpy} />)
   const getHeaderProps = renderSpy.mock.calls[0][0].getHeaderProps
 
   it('should return the table header props of a column configuration', () => {
@@ -115,6 +116,7 @@ describe('getHeaderProps', () => {
       name: 'id',
       render: () => null,
       sortable: true,
+      align: 'right',
     })
 
     expect(config).toMatchObject({

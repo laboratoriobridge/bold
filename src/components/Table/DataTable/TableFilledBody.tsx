@@ -1,39 +1,37 @@
 import React from 'react'
 
+import { useCss } from '../../../styles'
 import { TableBody, TableCell, TableRow } from '../Table'
 
-import { DataTableProps } from './DataTable'
+import { DataTableProps, defaultColumnStyles } from './DataTable'
 import { TableLoadingRow } from './TableLoadingRow'
 import { TablePlaceholderRow } from './TablePlaceholderRow'
 
 export interface TableFilledBodyProps extends Pick<DataTableProps, 'columns' | 'rows' | 'loading' | 'onRowClick'> {}
 
-export class TableFilledBody extends React.PureComponent<TableFilledBodyProps> {
-  render() {
-    const { columns, rows, loading, onRowClick } = this.props
+export function TableFilledBody(props: TableFilledBodyProps) {
+  const { columns, rows, loading, onRowClick } = props
+  const { css } = useCss()
 
-    return (
-      <TableBody>
-        {loading && <TableLoadingRow colSpan={columns.length} />}
+  const handleClick = row => e => onRowClick(row)
 
-        {!loading && this.isEmpty() && <TablePlaceholderRow colSpan={columns.length} />}
+  const isEmpty = () => !rows || rows.length === 0
 
-        {rows.map((row, idx) => (
-          <TableRow key={idx} onClick={onRowClick && this.handleClick(row)}>
-            {columns.map((col, colIdx) => (
-              <TableCell key={colIdx} style={col.style}>
-                {col.render(row)}
-              </TableCell>
-            ))}
-          </TableRow>
-        ))}
-      </TableBody>
-    )
-  }
+  return (
+    <TableBody>
+      {loading && <TableLoadingRow colSpan={columns.length} />}
 
-  private handleClick = row => e => {
-    this.props.onRowClick(row)
-  }
+      {!loading && isEmpty() && <TablePlaceholderRow colSpan={columns.length} />}
 
-  private isEmpty = () => !this.props.rows || this.props.rows.length === 0
+      {rows.map((row, idx) => (
+        <TableRow key={idx} onClick={onRowClick && handleClick(row)}>
+          {columns.map((col, colIdx) => (
+            <TableCell key={colIdx} style={css(defaultColumnStyles(col), col.style)}>
+              {col.render(row)}
+            </TableCell>
+          ))}
+        </TableRow>
+      ))}
+    </TableBody>
+  )
 }
