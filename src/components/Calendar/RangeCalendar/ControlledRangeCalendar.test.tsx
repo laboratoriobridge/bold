@@ -9,7 +9,7 @@ expect.extend(matchers)
 const createComponent = (props: Partial<ControlledRangeCalendarProps> = {}) => (
   <ControlledRangeCalendar
     initialVisibleDate={new Date('2019-02-09')}
-    initialValues={{
+    values={{
       initialDate: undefined,
       finalDate: undefined,
     }}
@@ -27,7 +27,7 @@ describe('[Calendar][RangePicker]', () => {
   it('Should select only the initialDate if the finalDate is null/undefined in initialValues', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: new Date('2019-02-11'),
           finalDate: null,
         },
@@ -42,7 +42,7 @@ describe('[Calendar][RangePicker]', () => {
   it('Should select nothing if only the finalDate is setted in initialValues', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: null,
           finalDate: new Date('2019-02-11'),
         },
@@ -57,7 +57,7 @@ describe('[Calendar][RangePicker]', () => {
   it('With initialValues should select the interval', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: new Date('2019-02-11'),
           finalDate: new Date('2019-02-13'),
         },
@@ -92,7 +92,7 @@ describe('[Calendar][RangePicker]', () => {
   it('Should select the finalDate correctly, with a predefined initialDate', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: new Date('2019-02-11'),
           finalDate: null,
         },
@@ -123,7 +123,7 @@ describe('[Calendar][RangePicker]', () => {
   it('Should select correctly both initialDate and finalDate, with a predefined interval', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: new Date('2019-02-11'),
           finalDate: new Date('2019-02-12'),
         },
@@ -148,7 +148,7 @@ describe('[Calendar][RangePicker]', () => {
   it('With interval properly defined, a click should define only the initialDate', () => {
     const { getByText } = render(
       createComponent({
-        initialValues: {
+        values: {
           initialDate: new Date('2019-02-11'),
           finalDate: new Date('2019-02-12'),
         },
