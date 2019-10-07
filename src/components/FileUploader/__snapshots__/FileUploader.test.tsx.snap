@@ -21,6 +21,7 @@ exports[`should render correct without extension 1`] = `
 }
 
 .emotion-3 {
+  border: 1px dashed transparent;
   border-radius: 4px;
   padding: 0.52em;
 }
@@ -227,6 +228,7 @@ exports[`should render correctly at initial state 1`] = `
 }
 
 .emotion-3 {
+  border: 1px dashed transparent;
   border-radius: 4px;
   padding: 0.52em;
 }
@@ -325,6 +327,7 @@ exports[`should render correctly at uploading state 1`] = `
 }
 
 .emotion-3 {
+  border: 1px dashed transparent;
   border-radius: 4px;
   padding: 0.52em;
 }
@@ -548,6 +551,7 @@ exports[`should render correctly complete state 1`] = `
 }
 
 .emotion-3 {
+  border: 1px dashed transparent;
   border-radius: 4px;
   padding: 0.52em;
 }
