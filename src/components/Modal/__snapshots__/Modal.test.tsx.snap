@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = `
-.emotion-3 {
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -22,18 +22,22 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-8 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-7 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -42,7 +46,6 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -55,7 +58,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -63,7 +66,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   margin-right: 0.5rem;
 }
 
-.emotion-1 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -74,25 +77,50 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   display: inline-flex;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-1:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-0 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -102,7 +130,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-2 {
+.emotion-4 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -116,29 +144,42 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
 }
 
 <body
-  class="emotion-6"
+  class="emotion-8"
 >
   <div />
   <div
-    class="emotion-5"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-3"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-5"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-4"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -154,7 +195,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-6"
       data-testid="backdrop"
     />
   </div>
@@ -168,7 +209,7 @@ exports[`Modal should render correctly when closed 1`] = `
 `;
 
 exports[`Modal should render correctly when opened 1`] = `
-.emotion-3 {
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -189,18 +230,18 @@ exports[`Modal should render correctly when opened 1`] = `
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-8 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-7 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-2 {
+.emotion-4 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -212,7 +253,11 @@ exports[`Modal should render correctly when opened 1`] = `
   width: 900px;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -221,7 +266,6 @@ exports[`Modal should render correctly when opened 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -234,7 +278,7 @@ exports[`Modal should render correctly when opened 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -242,7 +286,7 @@ exports[`Modal should render correctly when opened 1`] = `
   margin-right: 0.5rem;
 }
 
-.emotion-1 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -253,25 +297,50 @@ exports[`Modal should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-1:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-0 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -282,29 +351,42 @@ exports[`Modal should render correctly when opened 1`] = `
 }
 
 <body
-  class="emotion-6"
+  class="emotion-8"
 >
   <div />
   <div
-    class="emotion-5"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-3"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-5"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-4"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -320,7 +402,7 @@ exports[`Modal should render correctly when opened 1`] = `
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-6"
       data-testid="backdrop"
     />
   </div>
@@ -328,7 +410,7 @@ exports[`Modal should render correctly when opened 1`] = `
 `;
 
 exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -349,18 +431,22 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-8 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-7 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -369,7 +455,6 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -382,7 +467,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -390,7 +475,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   margin-right: 0.5rem;
 }
 
-.emotion-1 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -401,25 +486,50 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   display: inline-flex;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-1:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-0 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -429,7 +539,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-2 {
+.emotion-4 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -442,29 +552,42 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
 }
 
 <body
-  class="emotion-6"
+  class="emotion-8"
 >
   <div />
   <div
-    class="emotion-5"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-3"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-5"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-4"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -480,7 +603,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-6"
       data-testid="backdrop"
     />
   </div>
@@ -488,7 +611,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
 `;
 
 exports[`Modal sizes should accept the "large" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -509,18 +632,18 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-8 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-7 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-2 {
+.emotion-4 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -532,7 +655,11 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   width: 900px;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -541,7 +668,6 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -554,7 +680,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -562,7 +688,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   margin-right: 0.5rem;
 }
 
-.emotion-1 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -573,25 +699,50 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   display: inline-flex;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-1:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-0 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -602,29 +753,42 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 }
 
 <body
-  class="emotion-6"
+  class="emotion-8"
 >
   <div />
   <div
-    class="emotion-5"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-3"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-5"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-4"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -640,7 +804,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-6"
       data-testid="backdrop"
     />
   </div>
@@ -648,7 +812,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 `;
 
 exports[`Modal sizes should accept the "small" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-5 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -669,18 +833,22 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-8 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-7 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -689,7 +857,6 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -702,7 +869,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
@@ -710,7 +877,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   margin-right: 0.5rem;
 }
 
-.emotion-1 > span {
+.emotion-3 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -721,25 +888,50 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   display: inline-flex;
 }
 
-.emotion-1:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-1:focus {
+.emotion-3:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-1:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-0 {
+.emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-6 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -749,7 +941,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-2 {
+.emotion-4 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -762,29 +954,42 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
 }
 
 <body
-  class="emotion-6"
+  class="emotion-8"
 >
   <div />
   <div
-    class="emotion-5"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-3"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-7"
+  >
+    <div
+      class="emotion-5"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-4"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -800,7 +1005,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-6"
       data-testid="backdrop"
     />
   </div>

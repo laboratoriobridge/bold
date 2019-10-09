@@ -1,10 +1,9 @@
 import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
 
-import * as stringUtils from '../../util/string'
-
 import { Modal, ModalProps } from './Modal'
-;(stringUtils as any).randomStr = jest.fn(() => 'abc')
+
+jest.mock('../../util/string')
 
 describe('Modal', () => {
   it('should render correctly when closed', () => {

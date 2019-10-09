@@ -15,7 +15,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-1 {
   background-color: #FFFFFF;
-  border: 1px solid #AAAAB9;
+  border: 1px solid #8F8FA2;
   border-radius: 100px;
   display: inline-block;
   height: 24px;
@@ -43,7 +43,6 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-2 {
-  color: #515162;
   margin-left: 0.5rem;
 }
 
@@ -53,7 +52,7 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0:hover + .emotion-1 {
-  border-color: #696979;
+  border-color: #7A7B8E;
 }
 
 .emotion-0:checked + .emotion-1 {

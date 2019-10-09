@@ -67,12 +67,12 @@ function PagedTableExample() {
         },
         {
           name: 'actions',
+          align: 'right',
           render: item => (
             <Button size='small' skin='ghost'>
               <Icon icon='penOutline' />
             </Button>
           ),
-          style: { textAlign: 'right' },
         },
       ]}
     />

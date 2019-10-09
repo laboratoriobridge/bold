@@ -29,9 +29,17 @@ const locale: LocaleConfiguration = {
     currentPage: 'Página atual',
   },
   select: {
+    createItem: 'Selecione um item ou digite um novo valor',
     emptyItem: 'Nenhum resultado encontrado',
     loadingItem: 'Carregando...',
     removeItem: 'Remover',
+  },
+  tableFooter: {
+    results: {
+      zero: 'resultados',
+      one: 'resultado',
+      other: 'resultados',
+    },
   },
 }
 

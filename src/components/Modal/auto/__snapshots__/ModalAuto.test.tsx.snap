@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-7 {
+.emotion-9 {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -22,11 +22,11 @@ exports[`should render correctly 1`] = `
   padding: 2rem;
 }
 
-.emotion-10 {
+.emotion-12 {
   overflow: hidden;
 }
 
-.emotion-6 {
+.emotion-8 {
   border: 1px solid #D3D4DD;
   box-shadow: 0 8px 10px -5px rgba(0,0,0,0.2),0 6px 30px 5px rgba(0,0,0,0.12),0 16px 24px 2px rgba(0,0,0,0.14);
   border-radius: 4px;
@@ -38,7 +38,11 @@ exports[`should render correctly 1`] = `
   width: 520px;
 }
 
-.emotion-1 {
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -47,7 +51,6 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -60,91 +63,12 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   float: right;
   margin-top: 0.5rem;
   margin-right: 0.5rem;
-}
-
-.emotion-1 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-1:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-1:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-1:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-2 {
-  padding: 2.5rem;
-}
-
-.emotion-5 {
-  background-color: #F0F0F5;
-  padding: 1rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.emotion-4 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 1rem;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
-}
-
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
-  border-radius: 4px;
-  color: #696979;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
-  min-width: 144px;
 }
 
 .emotion-3 > span {
@@ -164,14 +88,121 @@ exports[`should render correctly 1`] = `
 
 .emotion-3:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  box-shadow: 0 0 0 2px #0069D0;
 }
 
 .emotion-3:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-2 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-1 {
+  -webkit-transition: opacity 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1400;
+  display: none;
+}
+
+.emotion-0 {
+  border-radius: 2px;
+  max-width: 1280px;
+  background: #3A3A47;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.emotion-4 {
+  padding: 2.5rem;
+}
+
+.emotion-7 {
+  background-color: #F0F0F5;
+  padding: 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.emotion-6 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+.emotion-5 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #696979;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+  min-width: 144px;
+}
+
+.emotion-5 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-5:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-5:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-5:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-8 {
+.emotion-10 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -181,7 +212,7 @@ exports[`should render correctly 1`] = `
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-9 {
+.emotion-11 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -189,29 +220,42 @@ exports[`should render correctly 1`] = `
 }
 
 <body
-  class="emotion-10"
+  class="emotion-12"
 >
   <div />
   <div
-    class="emotion-9"
+    aria-hidden="true"
+    class="emotion-1"
+    id="tooltip-abc"
+    role="tooltip"
   >
     <div
-      class="emotion-7"
+      class="emotion-0"
+    >
+      Close
+    </div>
+  </div>
+  <div
+    class="emotion-11"
+  >
+    <div
+      class="emotion-9"
     >
       <div
         aria-modal="true"
-        class="emotion-6"
+        class="emotion-8"
         role="dialog"
       >
         <button
+          aria-describedby="tooltip-abc"
           aria-label="Close"
-          class="emotion-1"
+          class="emotion-3"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-0"
+              class="emotion-2"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -224,20 +268,20 @@ exports[`should render correctly 1`] = `
           </span>
         </button>
         <div
-          class="emotion-2"
+          class="emotion-4"
         >
           <span>
             Body
           </span>
         </div>
         <div
-          class="emotion-5"
+          class="emotion-7"
         >
           <div
-            class="emotion-4"
+            class="emotion-6"
           >
             <button
-              class="emotion-3"
+              class="emotion-5"
               type="button"
             >
               <span>
@@ -249,7 +293,7 @@ exports[`should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-8"
+      class="emotion-10"
       data-testid="backdrop"
     />
   </div>

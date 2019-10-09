@@ -159,6 +159,10 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -167,7 +171,6 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -180,7 +183,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -317,6 +320,7 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
+            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
             type="button"
@@ -373,6 +377,7 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
+            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
             type="button"
@@ -429,6 +434,7 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
+            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
             type="button"
@@ -485,6 +491,7 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
+            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
             type="button"

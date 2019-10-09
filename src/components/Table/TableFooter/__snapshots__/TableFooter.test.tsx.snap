@@ -67,6 +67,10 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -75,7 +79,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -88,7 +91,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   padding: 0 0.25rem;
@@ -142,6 +145,10 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -150,7 +157,6 @@ exports[`renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -163,7 +169,7 @@ exports[`renders correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -196,61 +202,9 @@ exports[`renders correctly 1`] = `
   position: relative;
 }
 
-.emotion-12 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  line-height: 1.5rem;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #696979;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  margin-left: 0.25rem;
-}
-
-.emotion-12 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-12:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-12:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-12:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
 .emotion-8 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -309,7 +263,7 @@ exports[`renders correctly 1`] = `
 }
 
 .emotion-8:not(:disabled):hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-8:not(:disabled):focus {
@@ -322,6 +276,61 @@ exports[`renders correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  margin-left: 0.25rem;
+}
+
+.emotion-12 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-12:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-12:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-12:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
 <div>
   <div
     class="emotion-15"
@@ -329,10 +338,8 @@ exports[`renders correctly 1`] = `
     <span
       class="emotion-0"
     >
-      <span
-        title="100"
-      >
-        100 resultados
+      <span>
+        100 results
       </span>
     </span>
     <div
@@ -473,10 +480,8 @@ exports[`renders without pagination 1`] = `
     <span
       class="emotion-0"
     >
-      <span
-        title="10"
-      >
-        10 resultados
+      <span>
+        10 results
       </span>
     </span>
   </div>

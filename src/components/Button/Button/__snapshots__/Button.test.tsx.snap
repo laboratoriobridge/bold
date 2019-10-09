@@ -16,6 +16,10 @@ exports[`should accept the loading prop 1`] = `
 }
 
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -24,7 +28,6 @@ exports[`should accept the loading prop 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -35,9 +38,9 @@ exports[`should accept the loading prop 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -100,6 +103,10 @@ exports[`should accept the loading prop 1`] = `
 
 exports[`should render correctly with icon 1`] = `
 .emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -108,7 +115,6 @@ exports[`should render correctly with icon 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -119,9 +125,9 @@ exports[`should render correctly with icon 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -180,6 +186,10 @@ exports[`should render correctly with icon 1`] = `
 
 exports[`should render correctly with label 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -188,7 +198,6 @@ exports[`should render correctly with label 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -199,9 +208,9 @@ exports[`should render correctly with label 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -244,6 +253,10 @@ exports[`should render correctly with label 1`] = `
 
 exports[`should render the default skin 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -252,7 +265,6 @@ exports[`should render the default skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -263,9 +275,9 @@ exports[`should render the default skin 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -308,6 +320,10 @@ exports[`should render the default skin 1`] = `
 
 exports[`should render the default skin 2`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -316,7 +332,6 @@ exports[`should render the default skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -327,9 +342,9 @@ exports[`should render the default skin 2`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   background-color: #0069D0;
   color: #FFFFFF;
   border: 1px solid #0069D0;
@@ -379,6 +394,10 @@ exports[`should render the default skin 2`] = `
 
 exports[`should render the default skin 3`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -387,7 +406,6 @@ exports[`should render the default skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -398,9 +416,9 @@ exports[`should render the default skin 3`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   background-color: #D01E29;
   color: #FFFFFF;
   border: 1px solid #D01E29;
@@ -454,6 +472,10 @@ exports[`should render the default skin 3`] = `
 
 exports[`should render the ghost skin 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -462,7 +484,6 @@ exports[`should render the ghost skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -475,7 +496,7 @@ exports[`should render the ghost skin 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -518,6 +539,10 @@ exports[`should render the ghost skin 1`] = `
 
 exports[`should render the ghost skin 2`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -526,7 +551,6 @@ exports[`should render the ghost skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -539,7 +563,7 @@ exports[`should render the ghost skin 2`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   color: #0069D0;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -583,6 +607,10 @@ exports[`should render the ghost skin 2`] = `
 
 exports[`should render the ghost skin 3`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -591,7 +619,6 @@ exports[`should render the ghost skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -604,7 +631,7 @@ exports[`should render the ghost skin 3`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   color: #D01E29;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
@@ -652,6 +679,10 @@ exports[`should render the ghost skin 3`] = `
 
 exports[`should render the outline skin 1`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -660,7 +691,6 @@ exports[`should render the outline skin 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -671,9 +701,9 @@ exports[`should render the outline skin 1`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
 }
@@ -716,6 +746,10 @@ exports[`should render the outline skin 1`] = `
 
 exports[`should render the outline skin 2`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -724,7 +758,6 @@ exports[`should render the outline skin 2`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -735,9 +768,9 @@ exports[`should render the outline skin 2`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   border: 1px solid #0069D0;
   color: #0069D0;
   font-size: 0.875rem;
@@ -786,6 +819,10 @@ exports[`should render the outline skin 2`] = `
 
 exports[`should render the outline skin 3`] = `
 .emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -794,7 +831,6 @@ exports[`should render the outline skin 3`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -805,9 +841,9 @@ exports[`should render the outline skin 3`] = `
   font-weight: bold;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8F8FA2;
+  border: 1px solid #696979;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   border: 1px solid #D01E29;
   color: #D01E29;
   font-size: 0.875rem;

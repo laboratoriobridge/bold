@@ -26,6 +26,10 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 }
 
 .emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -34,7 +38,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -47,7 +50,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -91,6 +94,10 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 }
 
 .emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -99,7 +106,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -112,7 +118,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1rem;
@@ -148,6 +154,10 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 }
 
 .emotion-10 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -156,7 +166,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  line-height: 1.5rem;
   position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -169,7 +178,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #696979;
+  color: #3A3A47;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1rem;

@@ -1,12 +1,9 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import * as stringUtils from '../../util/string'
-
 import { TextArea } from './TextArea'
 
-const stringUtilsModule = stringUtils as any
-stringUtilsModule.randomStr = jest.fn(() => 'abc')
+jest.mock('../../util/string')
 
 it('should render correctly', () => {
   const { container } = render(<TextArea name='input' label='Label' placeholder='Test' defaultValue='Value' />)

@@ -29,7 +29,7 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   radio: {
     backgroundColor: theme.pallete.surface.main,
-    border: '1px solid ' + theme.pallete.gray.c70,
+    border: '1px solid ' + theme.pallete.gray.c60,
     borderRadius: 100,
     display: 'inline-block',
     height: 24,
@@ -53,7 +53,6 @@ export const createStyles = (theme: Theme) => ({
     },
   } as CSSProperties,
   label: {
-    color: theme.pallete.gray.c30,
     marginLeft: '0.5rem',
   } as CSSProperties,
 })
@@ -63,7 +62,7 @@ export const createInputStyles = (theme: Theme, classes: ClassNames<'radio' | 'l
     opacity: 0,
     marginRight: -13,
     [`&:hover + .${classes.radio}`]: {
-      borderColor: theme.pallete.gray.c40,
+      borderColor: theme.pallete.gray.c50,
     },
     [`&:checked + .${classes.radio}`]: {
       backgroundColor: theme.pallete.primary.main,

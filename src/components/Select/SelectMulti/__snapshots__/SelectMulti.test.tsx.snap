@@ -3,7 +3,7 @@
 exports[`input label label should have a htmlFor prop equals to the used id 1`] = `
 .emotion-2 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -50,7 +50,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 }
 
 .emotion-2:hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:active {
@@ -149,7 +149,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 exports[`input label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
 .emotion-2 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -196,7 +196,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 }
 
 .emotion-2:hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:active {
@@ -296,7 +296,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 exports[`should render correctly when closed 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -343,7 +343,7 @@ exports[`should render correctly when closed 1`] = `
 }
 
 .emotion-1:hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-1:active {
@@ -429,7 +429,7 @@ exports[`should render correctly when closed 1`] = `
 exports[`should render correctly when opened 1`] = `
 .emotion-1 {
   background-color: #FFFFFF;
-  border: solid 1px #AAAAB9;
+  border: solid 1px #8F8FA2;
   border-radius: 2px;
   color: #3A3A47;
   font-family: "IBM Plex Sans",sans-serif;
@@ -476,7 +476,7 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-1:hover {
-  border-color: #8F8FA2;
+  border-color: #7A7B8E;
 }
 
 .emotion-1:active {
@@ -595,7 +595,7 @@ exports[`should render correctly when opened 1`] = `
 
 .emotion-3 {
   background-color: #FFFFFF;
-  border: 1px solid #AAAAB9;
+  border: 1px solid #8F8FA2;
   border-radius: 2px;
   display: inline-block;
   height: 24px;
@@ -612,7 +612,7 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-2:hover + .emotion-3 {
-  border-color: #696979;
+  border-color: #7A7B8E;
 }
 
 .emotion-2:checked + .emotion-3 {
@@ -664,7 +664,7 @@ exports[`should render correctly when opened 1`] = `
   cursor: not-allowed;
 }
 
-.emotion-2:disabled + .emotion-3 + .css-tue92x {
+.emotion-2:disabled + .emotion-3 + .css-1f2k2gl {
   color: #AAAAB9;
   cursor: not-allowed;
 }

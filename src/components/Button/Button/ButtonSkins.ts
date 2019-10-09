@@ -30,6 +30,7 @@ export interface SkinProps {
 
 export const createBaseStyles = (theme: Theme) => ({
   button: {
+    ...theme.typography.variant('main'),
     display: 'inline-flex',
     justifyContent: 'center',
     lineHeight: '1.5rem',

@@ -23,21 +23,21 @@ export interface FileProps {
 export function FileUploader(props: FileUploaderProps) {
   const { file, text, ...rest } = props
   const { classes, css } = useStyles(createStyles)
-
   const { getRootProps, getInputProps, isDragActive, isDragAccept } = useDropzone(rest)
 
   return (
-    <div className={classes.dropzone} {...getRootProps()}>
+    <div className={css(classes.componentWrapper, isDragActive && classes.dragBackground)} {...getRootProps()}>
       <input {...getInputProps()} />
-
-      <div className={css(classes.wrapper, isDragActive && classes.dragActive)}>
-        {isDragAccept}
-        <HFlow alignItems='center' hSpacing={0.5}>
-          <Icon fill='secondary' icon='upload' />
-          <Text color='secondary' fontSize={0.875} fontWeight='bold'>
-            {text}
-          </Text>
-        </HFlow>
+      <div className={css(classes.buttonWrapper, props.disabled && classes.disabled)}>
+        <div className={css(classes.dropzone, isDragActive && classes.dragActive)}>
+          {isDragAccept}
+          <HFlow justifyContent='center' alignItems='center' hSpacing={0.5}>
+            <Icon fill={props.disabled ? 'disabled' : 'secondary'} icon='upload' />
+            <Text color={props.disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
+              {text}
+            </Text>
+          </HFlow>
+        </div>
       </div>
 
       {file && <FileDetails file={file} />}
@@ -51,7 +51,7 @@ export interface FileDetailsProps {
 
 export function FileDetails(props: FileDetailsProps) {
   const { file } = props
-  const { classes } = useStyles(createStyles)
+  const { css, classes } = useStyles(createStyles)
 
   const returnExtension = () => {
     const { type } = file.selectedFile
@@ -66,7 +66,7 @@ export function FileDetails(props: FileDetailsProps) {
   }
 
   return (
-    <div className={classes.fileDetailsContainer}>
+    <div className={css(classes.file, classes.fileDetailsContainer)}>
       <FileExtension extension={returnExtension()} />
       <div className={classes.fileDetails}>
         <FileInfo file={file} />
@@ -85,7 +85,7 @@ export function FileInfo(props: FileInfoProps) {
   const { classes } = useStyles(createStyles)
 
   return (
-    <div className={classes.fileInfo}>
+    <div className={classes.fileDetailsContainer}>
       {!file.error && !file.uploading && (
         <Icon icon='checkDefault' fill='primary' size={1} style={{ marginRight: 5 }} />
       )}
@@ -119,12 +119,9 @@ export function FileExtension(props: FileExtensionProps) {
 }
 
 export const createStyles = (theme: Theme) => ({
-  dropzone: {
-    backgroundColor: theme.pallete.surface.main,
+  componentWrapper: {
     borderRadius: theme.radius.paper,
-    border: '1px solid ' + theme.pallete.divider,
-    cursor: 'pointer',
-    padding: '0.25rem',
+    backgroundColor: theme.pallete.surface.main,
     transition: 'box-shadow .2s ease',
 
     '&:focus': {
@@ -132,32 +129,42 @@ export const createStyles = (theme: Theme) => ({
       boxShadow: focusBoxShadow(theme),
     },
   } as CSSProperties,
-  wrapper: {
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
+  buttonWrapper: {
+    border: `1px solid` + theme.pallete.gray.c40,
+    borderRadius: theme.radius.paper,
+    cursor: 'pointer',
+    padding: '0.25em',
+  } as CSSProperties,
+  dropzone: {
     border: `1px dashed transparent`,
-    padding: '0.25rem',
+    borderRadius: theme.radius.paper,
+    padding: '0.52em',
+  } as CSSProperties,
+  dragBackground: {
+    backgroundColor: theme.pallete.surface.background,
   } as CSSProperties,
   dragActive: {
-    borderColor: theme.pallete.divider,
-  },
+    border: `1px dashed` + theme.pallete.gray.c40,
+  } as CSSProperties,
+  disabled: {
+    border: `1px solid` + theme.pallete.gray.c80,
+    cursor: 'not-allowed',
+  } as CSSProperties,
+
   file: {
-    borderTop: '1px solid ' + theme.pallete.divider,
+    borderRadius: theme.radius.paper,
+    borderBottom: '1px solid ' + theme.pallete.gray.c80,
+    borderLeft: '1px solid ' + theme.pallete.gray.c80,
+    borderRight: '1px solid ' + theme.pallete.gray.c80,
     padding: '1rem',
   },
   fileDetailsContainer: {
+    backgroundColor: theme.pallete.surface.main,
     alignItems: 'center',
-    borderTop: `1px solid ${theme.pallete.divider}`,
     display: 'flex',
-    padding: '1rem',
   },
   fileDetails: {
     flexGrow: 1,
     marginLeft: '1rem',
-  },
-  fileInfo: {
-    alignItems: 'center',
-    display: 'flex',
   },
 })
