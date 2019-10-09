@@ -20,3 +20,11 @@ jobs:
 
       - name: loki test
         run: yarn test:loki
+
+      - name: argos upload
+        env:
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          ARGOS_BRANCH: ${{ github.head_ref || github.ref }}
+          ARGOS_COMMIT: ${{ github.sha }}
+        run: |
+          yarn argos upload .loki/difference || true

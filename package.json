@@ -93,6 +93,7 @@
     "@types/react-dom": "16.9.1",
     "@types/react-text-mask": "5.4.6",
     "@types/react-transition-group": "4.2.3",
+    "argos-cli": "0.1.2",
     "awesome-typescript-loader": "5.2.1",
     "babel-cli": "6.26.0",
     "babel-loader": "8.0.6",
