@@ -13,7 +13,7 @@ export interface BaseTextProps {
   fontSize?: number
   fontWeight?: FontWeightProperty
   fontStyle?: FontStyleProperty
-  textDecoration?: TextDecorationProperty
+  textDecoration?: TextDecorationProperty<string>
   style?: ExternalStyles
   [key: string]: any
 }
