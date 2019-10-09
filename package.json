@@ -24,7 +24,7 @@
     "build": "npm run clean && tsc && webpack --mode=production",
     "prepublishOnly": "npm run build",
     "test": "npm run lint && TZ=UTC jest",
-    "test:vr": "STORYBOOK_CHROMATIC=true chromatic test",
+    "test:loki": "STORYBOOK_LOKI=true build-storybook && loki --requireReference --reactUri file:./storybook-static",
     "test:watch": "TZ=UTC jest --watch --collectCoverage=false",
     "lint": "tslint -p tsconfig.json",
     "storybook": "start-storybook -p 6006",
@@ -108,6 +108,7 @@
     "jest-cli": "24.9.0",
     "jest-emotion": "10.0.17",
     "lodash": "4.17.15",
+    "loki": "0.18.0",
     "mockdate": "2.0.5",
     "next": "9.0.6",
     "prettier": "1.18.2",
@@ -122,7 +123,6 @@
     "remark-highlight.js": "5.1.1",
     "remark-slug": "5.1.2",
     "sonar-scanner": "3.1.0",
-    "storybook-chromatic": "2.2.2",
     "ts-jest": "24.1.0",
     "tslint": "5.20.0",
     "tslint-config-prettier": "1.18.0",
@@ -133,5 +133,16 @@
     "waait": "1.0.5",
     "webpack": "4.40.2",
     "webpack-cli": "3.3.9"
+  },
+  "loki": {
+    "configurations": {
+      "chrome.laptop": {
+        "target": "chrome.docker",
+        "width": 1366,
+        "height": 768,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      }
+    }
   }
 }
