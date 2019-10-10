@@ -18,23 +18,23 @@ exports[`should render correctly 1`] = `
   border: 1px solid #8F8FA2;
   border-radius: 100px;
   display: inline-block;
-  height: 16px;
+  height: 24px;
   position: relative;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   vertical-align: middle;
-  width: 16px;
+  width: 24px;
 }
 
 .emotion-1:after {
   background-color: #FFFFFF;
-  border: 3px solid #FFFFFF;
+  border: 5px solid #FFFFFF;
   border-radius: 100px;
   content: "";
   display: block;
   height: 2px;
-  margin-left: 4px;
-  margin-top: 4px;
+  margin-left: 6px;
+  margin-top: 6px;
   opacity: 0;
   text-align: center;
   -webkit-transition: all .2s ease;

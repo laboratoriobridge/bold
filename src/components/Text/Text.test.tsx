@@ -12,7 +12,7 @@ it('should accept text style decoration props', () => {
   expect(render(<Text fontSize={2}>Test size</Text>).container).toMatchSnapshot()
   expect(render(<Text color='primary'>Test color</Text>).container).toMatchSnapshot()
   expect(render(<Text fontStyle='italic'>Test italic</Text>).container).toMatchSnapshot()
-  expect(render(<Text textDecoration='undeline'>Test underline</Text>).container).toMatchSnapshot()
+  expect(render(<Text textDecoration='underline'>Test underline</Text>).container).toMatchSnapshot()
 })
 
 it('should accept "variant" props', () => {

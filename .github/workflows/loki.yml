@@ -1,0 +1,31 @@
+name: Loki (Visual Regression Test)
+
+on:
+  pull_request:
+    branches:
+      - '*'
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: loki test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: yarn install
+        run: yarn install
+
+      - name: loki test
+        run: yarn test:loki
+
+      - name: argos upload
+        if: failure()
+        env:
+          ARGOS_TOKEN: ${{ secrets.ARGOS_TOKEN }}
+          ARGOS_BRANCH: ${{ github.head_ref || github.ref }}
+          ARGOS_COMMIT: ${{ github.sha }}
+        run: |
+          yarn argos upload .loki/difference

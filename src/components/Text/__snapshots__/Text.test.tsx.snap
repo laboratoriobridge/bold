@@ -292,8 +292,8 @@ exports[`should accept text style decoration props 5`] = `
   font-size: 0.8125rem;
   line-height: 1.5;
   color: #3A3A47;
-  -webkit-text-decoration: undeline;
-  text-decoration: undeline;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
 }
 
 <div>

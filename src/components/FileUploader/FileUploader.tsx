@@ -136,6 +136,7 @@ export const createStyles = (theme: Theme) => ({
     padding: '0.25em',
   } as CSSProperties,
   dropzone: {
+    border: `1px dashed transparent`,
     borderRadius: theme.radius.paper,
     padding: '0.52em',
   } as CSSProperties,
