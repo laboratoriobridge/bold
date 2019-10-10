@@ -52,7 +52,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
   const handleItemRemove = (removeItem: Function) => (item: T) => removeItem(item)
 
   const renderItem = ({ isSelected }: MultiSelectRenderProps<T>) => (item: T) => (
-    <HFlow hSpacing={0.5}>
+    <HFlow hSpacing={0.5} alignItems='center'>
       <Checkbox checked={isSelected(item)} tabIndex={-1} readOnly />
       {externalRenderItem ? externalRenderItem(item) : itemToString(item)}
     </HFlow>
