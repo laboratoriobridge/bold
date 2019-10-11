@@ -2,6 +2,6 @@
 
 exports[`itemIsEqual should emit a console warning when using the default itemIsEqual prop 1`] = `
 Array [
-  "MultiDownshift: using default itemIsEqual implementation for object comparision. You should probably provide your own \`itemIsEqual\` implementation.",
+  "MultiDownshift: using a deep compare itemIsEqual implementation for object comparision. You should probably provide your own \`itemIsEqual\` implementation.",
 ]
 `;
