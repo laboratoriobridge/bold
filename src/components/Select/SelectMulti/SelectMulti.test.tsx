@@ -77,6 +77,14 @@ it('should show placeholder only if selected items is empty', () => {
   expect(input.placeholder).toEqual('')
 })
 
+it('should not call onChange when filter is typed and cleared', () => {
+  const change = jest.fn()
+  const { container } = render(<SelectTest onChange={change} />)
+  fireEvent.change(container.querySelector('input'), { target: { value: 'app' } })
+  fireEvent.change(container.querySelector('input'), { target: { value: '' } })
+  expect(change).not.toHaveBeenCalled()
+})
+
 describe('remove item', () => {
   it('should call onChange with the new value', () => {
     const onChange = jest.fn()

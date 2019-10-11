@@ -6678,7 +6678,7 @@ hmac-drbg@^1.0.0:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
 
-hoist-non-react-statics@3.3.0, hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.0:
+hoist-non-react-statics@^3.2.1, hoist-non-react-statics@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
   integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
@@ -12482,11 +12482,6 @@ text-mask-addons@3.8.0:
   version "3.8.0"
   resolved "https://registry.yarnpkg.com/text-mask-addons/-/text-mask-addons-3.8.0.tgz#17b61ef665a4f36811f2ea1f01a223b4be61ab26"
   integrity sha1-F7Ye9mWk82gR8uofAaIjtL5hqyY=
-
-text-mask-core@5.1.2:
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/text-mask-core/-/text-mask-core-5.1.2.tgz#80dd5ebe04825757e46619e691407a9f8b3c1b6f"
-  integrity sha1-gN1evgSCV1fkZhnmkUB6n4s8G28=
 
 text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
