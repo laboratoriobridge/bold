@@ -42,10 +42,12 @@ export function MultiDownshift<T>(props: MultiDownshiftProps<T>) {
   const isSelected = (item: T) => some(selectedItems, i => props.itemIsEqual(i, item))
 
   const handleChange = (selectedItem: T) => {
-    if (isSelected(selectedItem)) {
-      removeItem(selectedItem)
-    } else {
-      addItem(selectedItem)
+    if (selectedItem) {
+      if (isSelected(selectedItem)) {
+        removeItem(selectedItem)
+      } else {
+        addItem(selectedItem)
+      }
     }
   }
 
@@ -89,7 +91,7 @@ MultiDownshift.defaultProps = {
     if (process.env.NODE_ENV !== 'production') {
       // tslint:disable no-console
       console.warn(
-        'MultiDownshift: using default itemIsEqual implementation for object comparision.' +
+        'MultiDownshift: using a deep compare itemIsEqual implementation for object comparision.' +
           ' You should probably provide your own `itemIsEqual` implementation.'
       )
     }

@@ -55,14 +55,12 @@
     "downshift": "3.3.4",
     "emotion": "10.0.17",
     "focus-trap-react": "6.0.0",
-    "hoist-non-react-statics": "3.3.0",
     "match-sorter": "4.0.2",
     "react-dropzone": "10.1.10",
     "react-popper": "1.3.4",
     "react-text-mask": "5.4.3",
     "react-transition-group": "4.3.0",
-    "text-mask-addons": "3.8.0",
-    "text-mask-core": "5.1.2"
+    "text-mask-addons": "3.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.6.3",
