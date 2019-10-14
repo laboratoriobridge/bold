@@ -166,10 +166,6 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
   font-size: 1.5rem;
 }
 
-.emotion-6 {
-  position: relative;
-}
-
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -179,7 +175,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-7"
+    class="emotion-6"
   >
     <label
       class="emotion-0"
@@ -191,7 +187,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-labelledby="downshift-0-label"
-      class="emotion-7"
+      class="emotion-6"
       role="combobox"
     >
       <div>
@@ -233,9 +229,6 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
           </span>
         </div>
       </div>
-      <div
-        class="emotion-6"
-      />
     </div>
   </div>
 </div>
@@ -407,10 +400,6 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
   font-size: 1.5rem;
 }
 
-.emotion-6 {
-  position: relative;
-}
-
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -420,7 +409,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-7"
+    class="emotion-6"
   >
     <label
       class="emotion-0"
@@ -432,7 +421,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-labelledby="label-abc"
-      class="emotion-7"
+      class="emotion-6"
       role="combobox"
     >
       <div>
@@ -475,9 +464,6 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
           </span>
         </div>
       </div>
-      <div
-        class="emotion-6"
-      />
     </div>
   </div>
 </div>
@@ -649,19 +635,15 @@ exports[`should render correctly when closed 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-5 {
-  position: relative;
-}
-
 <div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
       aria-labelledby="downshift-0-label"
-      class="emotion-6"
+      class="emotion-5"
       role="combobox"
     >
       <div>
@@ -703,9 +685,6 @@ exports[`should render correctly when closed 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="emotion-5"
-      />
     </div>
   </div>
 </div>
@@ -877,10 +856,6 @@ exports[`should render correctly when opened 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-11 {
-  position: relative;
-}
-
 .emotion-10 {
   list-style: none;
   margin: 0;
@@ -892,9 +867,13 @@ exports[`should render correctly when opened 1`] = `
   max-height: 20rem;
   overflow-y: auto;
   overflow-x: hidden;
-  position: absolute;
   width: 100%;
   z-index: 1300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .emotion-5 {
@@ -925,14 +904,14 @@ exports[`should render correctly when opened 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-11"
   >
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
       aria-labelledby="downshift-0-label"
       aria-owns="downshift-0-menu"
-      class="emotion-12"
+      class="emotion-11"
       role="combobox"
     >
       <div>
@@ -975,57 +954,53 @@ exports[`should render correctly when opened 1`] = `
           </span>
         </div>
       </div>
-      <div
-        class="emotion-11"
+      <ul
+        aria-labelledby="downshift-0-label"
+        class="emotion-10"
+        id="downshift-0-menu"
+        role="listbox"
       >
-        <ul
-          aria-labelledby="downshift-0-label"
-          class="emotion-10"
-          id="downshift-0-menu"
-          role="listbox"
+        <li
+          aria-selected="false"
+          class="emotion-5"
+          id="downshift-0-item-0"
+          role="option"
         >
-          <li
-            aria-selected="false"
-            class="emotion-5"
-            id="downshift-0-item-0"
-            role="option"
-          >
-            Apple
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-5"
-            id="downshift-0-item-1"
-            role="option"
-          >
-            Banana
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-5"
-            id="downshift-0-item-2"
-            role="option"
-          >
-            Grape
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-5"
-            id="downshift-0-item-3"
-            role="option"
-          >
-            Orange
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-5"
-            id="downshift-0-item-4"
-            role="option"
-          >
-            Pear
-          </li>
-        </ul>
-      </div>
+          Apple
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-5"
+          id="downshift-0-item-1"
+          role="option"
+        >
+          Banana
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-5"
+          id="downshift-0-item-2"
+          role="option"
+        >
+          Grape
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-5"
+          id="downshift-0-item-3"
+          role="option"
+        >
+          Orange
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-5"
+          id="downshift-0-item-4"
+          role="option"
+        >
+          Pear
+        </li>
+      </ul>
     </div>
   </div>
 </div>

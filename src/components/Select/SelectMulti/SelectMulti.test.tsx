@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
+import { resetIdCounter } from 'downshift'
 import React from 'react'
 
 import { DefaultItemType } from '../SelectSingle'
@@ -27,6 +28,8 @@ function SelectTest(props: Partial<SelectMultiProps>) {
     />
   )
 }
+
+beforeEach(() => resetIdCounter())
 
 it('should render correctly when closed', () => {
   const { container } = render(<SelectTest />)

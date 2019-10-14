@@ -5,6 +5,11 @@ const defaultOpts: PopperJS.PopperOptions = {
   placement: 'bottom',
   eventsEnabled: true,
   positionFixed: false,
+  modifiers: {
+    preventOverflow: {
+      boundariesElement: 'window',
+    },
+  },
 }
 
 const initialStyle = {
