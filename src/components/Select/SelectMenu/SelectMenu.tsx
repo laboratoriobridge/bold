@@ -27,7 +27,6 @@ export const createStyles = (theme: Theme) => ({
     maxHeight: '20rem',
     overflowY: 'auto',
     overflowX: 'hidden',
-    position: 'absolute',
     width: '100%',
     zIndex: theme.zIndex.dropdown,
   } as CSSProperties,

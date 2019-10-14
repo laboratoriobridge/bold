@@ -98,10 +98,6 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
   background-color: #F0F0F5;
 }
 
-.emotion-3 {
-  position: relative;
-}
-
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -111,7 +107,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <label
       class="emotion-0"
@@ -122,7 +118,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-13-label"
+      aria-labelledby="downshift-0-label"
       role="combobox"
     >
       <div
@@ -132,15 +128,12 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
           aria-autocomplete="list"
           autocomplete="off"
           class="emotion-1"
-          id="downshift-13-input"
+          id="downshift-0-input"
           placeholder="Select a value..."
           type="text"
           value=""
         />
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
@@ -244,10 +237,6 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
   background-color: #F0F0F5;
 }
 
-.emotion-3 {
-  position: relative;
-}
-
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -257,7 +246,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <label
       class="emotion-0"
@@ -279,15 +268,12 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
           aria-labelledby="label-abc"
           autocomplete="off"
           class="emotion-1"
-          id="downshift-14-input"
+          id="downshift-0-input"
           placeholder="Select a value..."
           type="text"
           value=""
         />
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
@@ -391,13 +377,9 @@ exports[`should render correctly when closed 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-2 {
-  position: relative;
-}
-
 <div>
   <div
-    class="emotion-3"
+    class="emotion-2"
   >
     <div
       aria-expanded="false"
@@ -418,9 +400,6 @@ exports[`should render correctly when closed 1`] = `
           value=""
         />
       </div>
-      <div
-        class="emotion-2"
-      />
     </div>
   </div>
 </div>
@@ -524,10 +503,6 @@ exports[`should render correctly when opened 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-28 {
-  position: relative;
-}
-
 .emotion-27 {
   list-style: none;
   margin: 0;
@@ -539,9 +514,13 @@ exports[`should render correctly when opened 1`] = `
   max-height: 20rem;
   overflow-y: auto;
   overflow-x: hidden;
-  position: absolute;
   width: 100%;
   z-index: 1300;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .emotion-6 {
@@ -671,13 +650,13 @@ exports[`should render correctly when opened 1`] = `
 
 <div>
   <div
-    class="emotion-29"
+    class="emotion-28"
   >
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-1-label"
-      aria-owns="downshift-1-menu"
+      aria-labelledby="downshift-0-label"
+      aria-owns="downshift-0-menu"
       role="combobox"
     >
       <div
@@ -685,151 +664,147 @@ exports[`should render correctly when opened 1`] = `
       >
         <input
           aria-autocomplete="list"
-          aria-controls="downshift-1-menu"
+          aria-controls="downshift-0-menu"
           autocomplete="off"
           class="emotion-0"
-          id="downshift-1-input"
+          id="downshift-0-input"
           placeholder="Select a value..."
           type="text"
           value=""
         />
       </div>
-      <div
-        class="emotion-28"
+      <ul
+        aria-labelledby="downshift-0-label"
+        class="emotion-27"
+        id="downshift-0-menu"
+        role="listbox"
       >
-        <ul
-          aria-labelledby="downshift-1-label"
-          class="emotion-27"
-          id="downshift-1-menu"
-          role="listbox"
+        <li
+          aria-selected="false"
+          class="emotion-6"
+          id="downshift-0-item-0"
+          role="option"
         >
-          <li
-            aria-selected="false"
-            class="emotion-6"
-            id="downshift-1-item-0"
-            role="option"
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-5"
+            <label
+              class="emotion-4"
             >
-              <label
-                class="emotion-4"
-              >
-                <input
-                  class="emotion-2"
-                  readonly=""
-                  tabindex="-1"
-                  type="checkbox"
-                />
-                <span
-                  class="emotion-3"
-                />
-              </label>
-              Apple
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-6"
-            id="downshift-1-item-1"
-            role="option"
+              <input
+                class="emotion-2"
+                readonly=""
+                tabindex="-1"
+                type="checkbox"
+              />
+              <span
+                class="emotion-3"
+              />
+            </label>
+            Apple
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-6"
+          id="downshift-0-item-1"
+          role="option"
+        >
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-5"
+            <label
+              class="emotion-4"
             >
-              <label
-                class="emotion-4"
-              >
-                <input
-                  class="emotion-2"
-                  readonly=""
-                  tabindex="-1"
-                  type="checkbox"
-                />
-                <span
-                  class="emotion-3"
-                />
-              </label>
-              Banana
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-6"
-            id="downshift-1-item-2"
-            role="option"
+              <input
+                class="emotion-2"
+                readonly=""
+                tabindex="-1"
+                type="checkbox"
+              />
+              <span
+                class="emotion-3"
+              />
+            </label>
+            Banana
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-6"
+          id="downshift-0-item-2"
+          role="option"
+        >
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-5"
+            <label
+              class="emotion-4"
             >
-              <label
-                class="emotion-4"
-              >
-                <input
-                  class="emotion-2"
-                  readonly=""
-                  tabindex="-1"
-                  type="checkbox"
-                />
-                <span
-                  class="emotion-3"
-                />
-              </label>
-              Grape
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-6"
-            id="downshift-1-item-3"
-            role="option"
+              <input
+                class="emotion-2"
+                readonly=""
+                tabindex="-1"
+                type="checkbox"
+              />
+              <span
+                class="emotion-3"
+              />
+            </label>
+            Grape
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-6"
+          id="downshift-0-item-3"
+          role="option"
+        >
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-5"
+            <label
+              class="emotion-4"
             >
-              <label
-                class="emotion-4"
-              >
-                <input
-                  class="emotion-2"
-                  readonly=""
-                  tabindex="-1"
-                  type="checkbox"
-                />
-                <span
-                  class="emotion-3"
-                />
-              </label>
-              Orange
-            </div>
-          </li>
-          <li
-            aria-selected="false"
-            class="emotion-6"
-            id="downshift-1-item-4"
-            role="option"
+              <input
+                class="emotion-2"
+                readonly=""
+                tabindex="-1"
+                type="checkbox"
+              />
+              <span
+                class="emotion-3"
+              />
+            </label>
+            Orange
+          </div>
+        </li>
+        <li
+          aria-selected="false"
+          class="emotion-6"
+          id="downshift-0-item-4"
+          role="option"
+        >
+          <div
+            class="emotion-5"
           >
-            <div
-              class="emotion-5"
+            <label
+              class="emotion-4"
             >
-              <label
-                class="emotion-4"
-              >
-                <input
-                  class="emotion-2"
-                  readonly=""
-                  tabindex="-1"
-                  type="checkbox"
-                />
-                <span
-                  class="emotion-3"
-                />
-              </label>
-              Pear
-            </div>
-          </li>
-        </ul>
-      </div>
+              <input
+                class="emotion-2"
+                readonly=""
+                tabindex="-1"
+                type="checkbox"
+              />
+              <span
+                class="emotion-3"
+              />
+            </label>
+            Pear
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
