@@ -90,7 +90,7 @@ exports[`should render correctly 1`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
-  width: 47px;
+  width: 68px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
 }
@@ -241,6 +241,7 @@ exports[`should render correctly 1`] = `
     >
       <input
         class="emotion-2"
+        maxlength="4"
         title="Current page"
         type="text"
         value="6"
@@ -313,7 +314,7 @@ exports[`should render correctly 2`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
-  width: 47px;
+  width: 68px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
 }
@@ -521,6 +522,7 @@ exports[`should render correctly 2`] = `
     >
       <input
         class="emotion-2"
+        maxlength="4"
         title="Current page"
         type="text"
         value="1"
@@ -593,7 +595,7 @@ exports[`should render correctly 3`] = `
   transition-property: box-shadow;
   -webkit-transition-duration: .2s;
   transition-duration: .2s;
-  width: 47px;
+  width: 68px;
   text-align: center;
   margin: 0 0.5rem 0 0.25rem;
 }
@@ -801,6 +803,7 @@ exports[`should render correctly 3`] = `
     >
       <input
         class="emotion-2"
+        maxlength="4"
         title="Current page"
         type="text"
         value="1"
