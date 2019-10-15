@@ -139,7 +139,7 @@
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false,
-        "chromeRetries": 1
+        "chromeRetries": 3
       }
     }
   }

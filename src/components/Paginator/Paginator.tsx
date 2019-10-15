@@ -33,10 +33,10 @@ export function Paginator(props: PaginatorProps) {
     setInputValue(`${page + 1}`)
   }, [page])
 
-  const { classes } = useStyles(createStyles, inputValue)
+  const { classes } = useStyles(createStyles)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value)
+    setInputValue(e.target.value.replace(/[^\d]/g, ''))
   }
 
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -86,6 +86,7 @@ export function Paginator(props: PaginatorProps) {
         onBlur={handleInputBlur}
         onKeyDown={handleInputKeyPress}
         clearable={false}
+        maxLength={4}
         title={locale.paginator.currentPage}
       />
 
@@ -111,7 +112,7 @@ Paginator.defaultProps = {
   onChange: (page: number) => null,
 } as Partial<PaginatorProps>
 
-export const createStyles = (theme: Theme, inputValue: string) => ({
+export const createStyles = (theme: Theme) => ({
   paginator: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -125,7 +126,7 @@ export const createStyles = (theme: Theme, inputValue: string) => ({
     },
   } as CSSProperties,
   input: {
-    width: Number(40 + (inputValue && inputValue.length * 7)),
+    width: Number(40 + 4 * 7), // 40? + inputValue.length * 7
     textAlign: 'center',
     margin: '0 0.5rem 0 0.25rem',
   } as CSSProperties,
