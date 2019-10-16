@@ -35,18 +35,47 @@ export function Tooltip(props: TooltipProps) {
   const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
   const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  useEffect(() => {
+    if (!visible) {
+      return
+    }
+
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    return () => document.removeEventListener('mousemove', handleMouseMove)
+  }, [visible])
+
   useEffect(() => {
     if (rootRef.current && popperRef.current) {
-      popperInstance.current = new Popper(rootRef.current, popperRef.current, {
-        modifiers: {
-          arrow: { enabled: false },
-          offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
-          preventOverflow: {
-            boundariesElement: 'window',
-          },
+      popperInstance.current = new Popper(
+        {
+          clientHeight: 0,
+          clientWidth: 0,
+          getBoundingClientRect: () => ({
+            height: 0,
+            width: 0,
+            top: mousePosition.y,
+            bottom: mousePosition.y,
+            left: mousePosition.x,
+            right: mousePosition.x,
+          }),
         },
-        ...rest,
-      })
+        popperRef.current,
+        {
+          modifiers: {
+            arrow: { enabled: false },
+            offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+            preventOverflow: {
+              boundariesElement: 'window',
+            },
+          },
+          ...rest,
+        }
+      )
     }
 
     return () => {
@@ -65,7 +94,7 @@ export function Tooltip(props: TooltipProps) {
       // This is implemented using mouseover since mouseleave does not trigger
       // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
       const target = e.target as Node
-      if (!rootRef.current.contains(target)) {
+      if (!rootRef.current.contains(target) && !popperRef.current.contains(target)) {
         setVisible(false)
       }
     }
