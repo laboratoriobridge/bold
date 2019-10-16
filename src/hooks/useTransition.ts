@@ -1,21 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export type TransitionState = 'unmounted' | 'entering' | 'entered' | 'exiting' | 'exited'
+export type TransitionState = 'entering' | 'entered' | 'exiting' | 'exited'
 
-export const useTransition = (enter: boolean, timeout = 1) => {
-  const [state, setState] = useState<TransitionState>('unmounted')
+export const useTransition = (enter: boolean, { enterTimeout = 1, exitTimeout = 1 } = {}) => {
+  const [state, setState] = useState<TransitionState>(enter ? 'entered' : 'exited')
+  const firstRender = useRef(true)
+  const enterTimeoutRef = useRef<any>()
+  const exitTimeoutRef = useRef<any>()
 
   useEffect(() => {
+    if (firstRender.current === true) {
+      firstRender.current = false
+      return
+    }
+
     if (enter) {
       setState('entering')
-      setTimeout(() => setState('entered'), timeout)
+      enterTimeoutRef.current = setTimeout(() => setState('entered'), enterTimeout)
     } else {
       setState('exiting')
-      setTimeout(() => setState('exited'), timeout)
+      exitTimeoutRef.current = setTimeout(() => setState('exited'), exitTimeout)
     }
 
     return () => {
-      setState('unmounted')
+      enterTimeoutRef.current && clearTimeout(enterTimeoutRef.current)
+      exitTimeoutRef.current && clearTimeout(exitTimeoutRef.current)
     }
   }, [enter])
 

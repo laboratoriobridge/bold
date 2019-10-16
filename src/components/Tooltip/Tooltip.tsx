@@ -1,21 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { PopperProps } from 'react-popper'
+import Popper from 'popper.js'
+import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-import usePopper from '../../hooks/usePopper'
+import { useTransition } from '../../hooks/useTransition'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
-import { Omit } from '../../util'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
 import { RootRef } from '../RootRef'
-import { FadeTransition } from '../Transition/FadeTransition'
 
 import { TooltipPopper } from './TooltipPopper'
 
-export interface TooltipProps extends Omit<PopperProps, 'children'> {
+export interface TooltipProps extends Popper.PopperOptions {
   text: string
   style?: ExternalStyles
   offset?: number
   container?: Element
+  transitionDelay?: number
   children: React.ReactElement<any>
 }
 
@@ -24,33 +23,41 @@ export interface TooltipState {
 }
 
 export function Tooltip(props: TooltipProps) {
-  const { text, children, offset, style: externalStyle, container, ...rest } = props
+  const { text, offset, children, style: externalStyle, transitionDelay, container, ...rest } = props
   const child = React.Children.only(children)
 
-  const { theme, css, classes } = useStyles(createStyles)
+  const { css, theme, classes } = useStyles(createStyles, props)
   const [visible, setVisible] = useState<boolean>(false)
 
-  const tooltipIdRef = useRef<string>(`tooltip-${randomStr()}`)
-  const anchorRef = useRef<HTMLElement>()
-  const tooltipRef = useRef()
-
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef,
-      popperRef: tooltipRef,
-      modifiers: {
-        offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
-        preventOverflow: {
-          boundariesElement: 'window',
-        },
-      },
-      ...rest,
-    },
-    [visible]
-  )
+  const rootRef = useRef<HTMLElement>()
+  const popperRef = useRef<HTMLDivElement>()
+  const popperInstance = useRef<Popper>()
+  const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
+  const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
   useEffect(() => {
-    if (!anchorRef.current || !visible) {
+    if (rootRef.current && popperRef.current) {
+      popperInstance.current = new Popper(rootRef.current, popperRef.current, {
+        modifiers: {
+          arrow: { enabled: false },
+          offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
+          preventOverflow: {
+            boundariesElement: 'window',
+          },
+        },
+        ...rest,
+      })
+    }
+
+    return () => {
+      if (popperInstance.current) {
+        popperInstance.current.destroy()
+      }
+    }
+  }, [rootRef.current, popperRef.current])
+
+  useEffect(() => {
+    if (!rootRef.current || !visible) {
       return
     }
 
@@ -58,27 +65,29 @@ export function Tooltip(props: TooltipProps) {
       // This is implemented using mouseover since mouseleave does not trigger
       // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
       const target = e.target as Node
-      if (!anchorRef.current.contains(target)) {
+      if (!rootRef.current.contains(target)) {
         setVisible(false)
       }
     }
 
     window.addEventListener('mouseover', handleWindowMouseOver)
     return () => window.removeEventListener('mouseover', handleWindowMouseOver)
-  }, [anchorRef.current, visible])
+  }, [rootRef.current, visible])
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
+  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLElement>) => {
     setVisible(true)
     child.props.onMouseEnter && child.props.onMouseEnter(e)
-  }
-  const handleFocus = e => {
+  }, [])
+
+  const handleFocus = useCallback(e => {
     setVisible(true)
     child.props.onFocus && child.props.onFocus(e)
-  }
-  const handleBlur = e => {
+  }, [])
+
+  const handleBlur = useCallback(e => {
     setVisible(false)
     child.props.onBlur && child.props.onBlur(e)
-  }
+  }, [])
 
   if (!text) {
     return child
@@ -86,31 +95,29 @@ export function Tooltip(props: TooltipProps) {
 
   return (
     <>
-      <RootRef rootRef={anchorRef}>
+      <RootRef rootRef={rootRef}>
         {React.cloneElement(child, {
-          'aria-describedby': tooltipIdRef.current,
+          title: !visible ? child.props.title || text : child.props.title,
+          'aria-describedby': visible ? tooltipId : undefined,
           onMouseEnter: handleMouseEnter,
           onFocus: handleFocus,
           onBlur: handleBlur,
         })}
       </RootRef>
 
-      <FadeTransition in={visible}>
-        {({ className }) => (
-          <Portal container={container}>
-            <div
-              id={tooltipIdRef.current}
-              ref={tooltipRef}
-              className={css(className, popperStyle, classes.popper, visible && classes.shown)}
-              role='tooltip'
-              aria-hidden={!visible ? 'true' : 'false'}
-              data-placement={placement}
-            >
-              <TooltipPopper text={text} style={externalStyle} />
-            </div>
-          </Portal>
-        )}
-      </FadeTransition>
+      {transitionState !== 'exited' && (
+        <Portal container={container}>
+          <div
+            id={tooltipId}
+            ref={popperRef}
+            className={css(classes.popper, transitionState === 'entered' && classes.visible)}
+            role='tooltip'
+            aria-hidden={!visible ? 'true' : 'false'}
+          >
+            <TooltipPopper text={text} style={externalStyle} />
+          </div>
+        </Portal>
+      )}
     </>
   )
 }
@@ -118,14 +125,16 @@ export function Tooltip(props: TooltipProps) {
 Tooltip.defaultProps = {
   placement: 'top',
   offset: 0.25,
+  transitionDelay: 200,
 } as Partial<TooltipProps>
 
-const createStyles = (theme: Theme) => ({
+const createStyles = (theme: Theme, { transitionDelay }: TooltipProps) => ({
   popper: {
     zIndex: theme.zIndex.tooltip,
-    display: 'none',
-  },
-  shown: {
-    display: 'block',
-  },
+    transition: `opacity ${transitionDelay}ms ease`,
+    opacity: 0,
+  } as CSSProperties,
+  visible: {
+    opacity: 1,
+  } as CSSProperties,
 })
