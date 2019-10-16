@@ -17,28 +17,35 @@ const items: DefaultItemType[] = [
 afterEach(jest.clearAllMocks)
 
 // tslint:disable jsx-no-lambda
-function createSelect(props: Partial<SelectProps<DefaultItemType>> = {}) {
+function SelectTest(props: Partial<SelectProps<DefaultItemType>>) {
   return <Select<DefaultItemType> items={items} itemToString={item => item && item.label} {...props} />
 }
 
 describe('single', () => {
   it('should render without errors', () => {
-    render(createSelect({ value: items[3] }))
+    render(<SelectTest value={items[3]} />)
   })
   it('should warn when value is an array', () => {
     const spy = jest.spyOn(console, 'warn').mockImplementation(() => null)
-    render(createSelect({ value: [] }))
+    render(<SelectTest value={[]} />)
     expect(spy).toMatchSnapshot()
   })
 })
 
 describe('multiple', () => {
   it('should render without errors', () => {
-    render(createSelect({ multiple: true, value: [items[4], items[3]] }))
+    render(SelectTest({ multiple: true, value: [items[4], items[3]] }))
   })
   it('should warn when value is NOT an array', () => {
     const spy = jest.spyOn(console, 'warn').mockImplementation(() => null)
-    render(createSelect({ multiple: true, value: items[0] }))
+    render(<SelectTest value={items[0]} multiple />)
     expect(spy).toMatchSnapshot()
+  })
+  it('should throw an error when createNewItem is set together with multiple prop', () => {
+    jest.spyOn(console, 'error').mockImplementation(() => undefined)
+
+    expect(() => {
+      render(<SelectTest createNewItem={jest.fn()} multiple />)
+    }).toThrowErrorMatchingInlineSnapshot(`"Select does not support props 'createNewItem' and 'multiple' together"`)
   })
 })

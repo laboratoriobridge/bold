@@ -1,7 +1,13 @@
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { SelectEmptyItem, SelectHelperMenuItem, SelectLoadingItem, SelectMenuItem } from './SelectMenuItem'
+import {
+  SelectCreateItem,
+  SelectEmptyItem,
+  SelectHelperMenuItem,
+  SelectLoadingItem,
+  SelectMenuItem,
+} from './SelectMenuItem'
 
 describe('SelectMenuItem', () => {
   it('should render correctly', () => {
@@ -37,6 +43,13 @@ describe('SelectLoadingItem', () => {
 describe('SelectEmptyItem', () => {
   it('should render correctly', () => {
     const { container } = render(<SelectEmptyItem />)
+    expect(container).toMatchSnapshot()
+  })
+})
+
+describe('SelectCreateItem', () => {
+  it('should render correctly', () => {
+    const { container } = render(<SelectCreateItem />)
     expect(container).toMatchSnapshot()
   })
 })

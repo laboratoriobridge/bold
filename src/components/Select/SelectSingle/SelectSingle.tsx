@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
@@ -23,7 +23,9 @@ export interface SelectSingleProps<T = DefaultItemType>
   itemToString: SelectDownshiftProps<T>['itemToString']
   onChange?: SelectDownshiftProps<T>['onChange']
   isOpen?: SelectDownshiftProps<T>['isOpen']
+  openOnFocus?: SelectDownshiftProps<T>['openOnFocus']
   onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
+  createNewItem?: SelectDownshiftProps<T>['createNewItem']
 
   loading?: SelectDownshiftMenuProps<T>['loading']
   renderItem?: SelectDownshiftMenuProps<T>['renderItem']
@@ -37,7 +39,9 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     itemToString,
     onChange,
     isOpen,
+    openOnFocus,
     onFilterChange,
+    createNewItem,
     loading,
     renderItem,
     components,
@@ -46,6 +50,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     error,
     ...rest
   } = props
+
+  const inputRef = useRef<HTMLInputElement>()
 
   const handleClear = (downshift: SelectDownshiftRenderProps<T>) => (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -79,7 +85,9 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         itemToString={itemToString}
         onChange={onChange}
         isOpen={isOpen}
+        openOnFocus={openOnFocus}
         onFilterChange={onFilterChange}
+        createNewItem={createNewItem}
         labelId={formControlProps.labelId}
       >
         {downshift => {
@@ -89,7 +97,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
             <div className={css(style)}>
               <div>
                 <TextInput
-                  icon={isOpen ? 'zoomOutline' : downshiftOpen ? 'angleUp' : 'angleDown'}
+                  icon={downshiftOpen ? 'angleUp' : 'angleDown'}
+                  inputRef={inputRef}
                   {...rest}
                   onBlur={handleInputBlur(downshift)}
                   onFocus={handleInputFocus(downshift)}
@@ -103,11 +112,13 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
                 />
               </div>
               <SelectDownshiftMenu
+                anchorRef={inputRef}
                 downshift={downshift}
                 items={visibleItems}
                 loading={loading}
                 renderItem={renderItem}
                 components={components}
+                createNewItem={!!createNewItem}
               />
             </div>
           )

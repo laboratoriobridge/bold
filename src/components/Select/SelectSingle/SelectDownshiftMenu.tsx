@@ -1,15 +1,20 @@
 import { ControllerStateAndHelpers } from 'downshift'
-import React, { CSSProperties } from 'react'
+import { PopperOptions } from 'popper.js'
+import React, { useRef } from 'react'
 
-import { useStyles } from '../../../styles'
+import usePopper from '../../../hooks/usePopper'
+import { composeRefs } from '../../../util/react'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
+import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
 
 export interface SelectDownshiftMenuProps<T> {
   items: T[]
   loading: boolean
   downshift: ControllerStateAndHelpers<T>
-
+  anchorRef: React.RefObject<HTMLElement>
+  createNewItem?: boolean
   components?: Partial<SelectMenuComponents<T>>
+  popperProps?: PopperOptions
 
   /**
    * Render function used by each select item.
@@ -20,6 +25,7 @@ export interface SelectDownshiftMenuProps<T> {
 }
 
 export interface SelectMenuComponents<T> {
+  CreateItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   LoadingItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   EmptyItem: React.ComponentType<SelectDownshiftMenuProps<T>>
   Item: React.ComponentType<SelectDownshiftMenuProps<T> & { item: T; index: number }>
@@ -29,29 +35,51 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
   const {
     items,
     loading: isLoading,
+    anchorRef,
     components,
+    createNewItem,
+    popperProps,
     downshift: { isOpen, getMenuProps },
   } = props
 
-  const { classes } = useStyles(createStyles)
-  const { LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
+  const { CreateItem, LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
+
+  const menuRef = useRef<HTMLUListElement>()
+  const { style: popperStyle, placement } = usePopper(
+    {
+      anchorRef,
+      popperRef: menuRef,
+      ...popperProps,
+    },
+    [isOpen]
+  )
+
+  const { dropdownMenuRef, ...menuProps } = getMenuProps({ refKey: 'dropdownMenuRef' }, { suppressRefError: true })
 
   return (
-    <div className={classes.wrapper}>
+    <>
       {isOpen && (
-        <SelectMenu {...getMenuProps({ refKey: 'menuRef' })}>
+        <SelectMenu
+          {...menuProps}
+          menuRef={composeRefs(dropdownMenuRef, menuRef)}
+          style={{ ...popperStyle, width: anchorRef.current && anchorRef.current.clientWidth }}
+          data-placement={placement}
+        >
           {isLoading && <LoadingItem {...props} />}
 
-          {!isLoading && (!items || items.length === 0) && <EmptyItem {...props} />}
+          {!isLoading && createNewItem && (items || []).length > 0 && <CreateItem {...props} />}
+
+          {!isLoading && !createNewItem && (items || []).length === 0 && <EmptyItem {...props} />}
 
           {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
         </SelectMenu>
       )}
-    </div>
+    </>
   )
 }
 
 export const defaultComponents: SelectMenuComponents<any> = {
+  CreateItem: (props: SelectDownshiftMenuProps<any>) => <SelectCreateItem />,
   LoadingItem: (props: SelectDownshiftMenuProps<any>) => <SelectLoadingItem />,
   EmptyItem: (props: SelectDownshiftMenuProps<any>) => <SelectEmptyItem />,
   Item: (props: SelectDownshiftMenuProps<any> & { item: any; index: number }) => {
@@ -72,9 +100,3 @@ export const defaultComponents: SelectMenuComponents<any> = {
 SelectDownshiftMenu.defaultProps = {
   components: defaultComponents,
 } as Partial<SelectDownshiftMenuProps<any>>
-
-export const createStyles = () => ({
-  wrapper: {
-    position: 'relative',
-  } as CSSProperties,
-})

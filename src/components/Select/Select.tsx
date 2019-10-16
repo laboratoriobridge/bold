@@ -35,6 +35,12 @@ export function Select<T = DefaultItemType>(props: SelectProps<T>) {
     checkedValue = value[0]
   }
 
+  if (props.multiple && props.createNewItem) {
+    if (process.env.NODE_ENV !== 'production') {
+      throw new Error(`Select does not support props 'createNewItem' and 'multiple' together`)
+    }
+  }
+
   if (multiple) {
     return <SelectMulti<T> {...rest} value={checkedValue as T[]} onChange={onChange} itemIsEqual={itemIsEqual} />
   } else {

@@ -2,13 +2,13 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
 import { addDecorator, addParameters, configure } from '@storybook/react'
+import 'loki/configure-react'
 import { create } from '@storybook/theming'
-import 'storybook-chromatic'
 import { withStorybookTheme } from '../src/stories-addons'
 import mockdate from 'mockdate'
 
-if (process.env.STORYBOOK_CHROMATIC) {
-  // Mock date API on chromatic
+if (process.env.STORYBOOK_LOKI) {
+  // Mock date API on visual regression testing
   mockdate.set('2020-09-01 12:00:00')
 }
 

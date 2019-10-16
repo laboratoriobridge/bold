@@ -1,5 +1,6 @@
 import React, { CSSProperties } from 'react'
 
+import { useLocale } from '../../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../../styles'
 import { HFlow } from '../../HFlow'
 import { Number } from '../../Number'
@@ -12,6 +13,7 @@ export interface TableFooterProps {
   page: number
   totalPages: number
   totalElements: number
+  abbrev?: boolean
   pageSize: number
   style?: ExternalStyles
   sizeOptions?: number[]
@@ -20,8 +22,9 @@ export interface TableFooterProps {
 }
 
 export function TableFooter(props: TableFooterProps) {
-  const { style, page, totalPages, totalElements, pageSize, sizeOptions, onSizeChange, onPageChange } = props
+  const { style, page, totalPages, totalElements, abbrev, pageSize, sizeOptions, onSizeChange, onPageChange } = props
   const { classes, css } = useStyles(createStyles)
+  const locale = useLocale()
 
   const showPagination = () => {
     return totalElements > pageSize || totalElements > Math.min(...sizeOptions)
@@ -30,7 +33,17 @@ export function TableFooter(props: TableFooterProps) {
   return (
     <div className={css(classes.footer, style)}>
       <span className={classes.results}>
-        <Number value={totalElements} suffix={' ' + (totalElements === 1 ? 'resultado' : 'resultados')} abbrev />
+        <Number
+          value={totalElements}
+          suffix={` ${
+            totalElements === 0
+              ? locale.tableFooter.results.zero
+              : totalElements === 1
+              ? locale.tableFooter.results.one
+              : locale.tableFooter.results.other
+          }`}
+          abbrev={abbrev}
+        />
       </span>
       {showPagination() && (
         <div className={classes.pagination}>

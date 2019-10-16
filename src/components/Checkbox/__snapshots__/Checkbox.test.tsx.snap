@@ -18,12 +18,12 @@ exports[`Checkbox should render correctly 1`] = `
   border: 1px solid #8F8FA2;
   border-radius: 2px;
   display: inline-block;
-  height: 16px;
+  height: 24px;
   position: relative;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   vertical-align: middle;
-  width: 16px;
+  width: 24px;
 }
 
 .emotion-2 {
@@ -49,10 +49,10 @@ exports[`Checkbox should render correctly 1`] = `
   border-right: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
   position: absolute;
-  width: 6px;
-  height: 10px;
-  top: 1px;
-  left: 4px;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
@@ -68,12 +68,12 @@ exports[`Checkbox should render correctly 1`] = `
 
 .emotion-0:indeterminate + .emotion-1:after {
   content: "";
-  border-bottom: 2px solid #0069D0;
+  border-bottom: 3px solid #0069D0;
   position: absolute;
   top: -1px;
-  left: 3px;
-  width: 8px;
-  height: 10px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
   opacity: 1;
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease;
@@ -119,12 +119,12 @@ exports[`Checkbox should render correctly when disabled 1`] = `
   border: 1px solid #8F8FA2;
   border-radius: 2px;
   display: inline-block;
-  height: 16px;
+  height: 24px;
   position: relative;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   vertical-align: middle;
-  width: 16px;
+  width: 24px;
 }
 
 .emotion-2 {
@@ -150,10 +150,10 @@ exports[`Checkbox should render correctly when disabled 1`] = `
   border-right: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
   position: absolute;
-  width: 6px;
-  height: 10px;
-  top: 1px;
-  left: 4px;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
@@ -169,12 +169,12 @@ exports[`Checkbox should render correctly when disabled 1`] = `
 
 .emotion-0:indeterminate + .emotion-1:after {
   content: "";
-  border-bottom: 2px solid #0069D0;
+  border-bottom: 3px solid #0069D0;
   position: absolute;
   top: -1px;
-  left: 3px;
-  width: 8px;
-  height: 10px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
   opacity: 1;
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease;
@@ -246,12 +246,12 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
   border: 1px solid #8F8FA2;
   border-radius: 2px;
   display: inline-block;
-  height: 16px;
+  height: 24px;
   position: relative;
   -webkit-transition: all .2s ease;
   transition: all .2s ease;
   vertical-align: middle;
-  width: 16px;
+  width: 24px;
 }
 
 .emotion-2 {
@@ -277,10 +277,10 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
   border-right: 2px solid #FFFFFF;
   border-bottom: 2px solid #FFFFFF;
   position: absolute;
-  width: 6px;
-  height: 10px;
-  top: 1px;
-  left: 4px;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
   opacity: 1;
   -webkit-transform: rotate(45deg) scale(1);
   -ms-transform: rotate(45deg) scale(1);
@@ -296,12 +296,12 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
 
 .emotion-0:indeterminate + .emotion-1:after {
   content: "";
-  border-bottom: 2px solid #0069D0;
+  border-bottom: 3px solid #0069D0;
   position: absolute;
   top: -1px;
-  left: 3px;
-  width: 8px;
-  height: 10px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
   opacity: 1;
   -webkit-transition: opacity .2s ease;
   transition: opacity .2s ease;

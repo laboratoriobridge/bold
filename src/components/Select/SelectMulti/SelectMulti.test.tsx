@@ -1,4 +1,5 @@
 import { fireEvent, render } from '@testing-library/react'
+import { resetIdCounter } from 'downshift'
 import React from 'react'
 
 import { DefaultItemType } from '../SelectSingle'
@@ -27,6 +28,8 @@ function SelectTest(props: Partial<SelectMultiProps>) {
     />
   )
 }
+
+beforeEach(() => resetIdCounter())
 
 it('should render correctly when closed', () => {
   const { container } = render(<SelectTest />)
@@ -75,6 +78,14 @@ it('should show placeholder only if selected items is empty', () => {
 
   rerender(<SelectTest value={[items[0]]} />)
   expect(input.placeholder).toEqual('')
+})
+
+it('should not call onChange when filter is typed and cleared', () => {
+  const change = jest.fn()
+  const { container } = render(<SelectTest onChange={change} />)
+  fireEvent.change(container.querySelector('input'), { target: { value: 'app' } })
+  fireEvent.change(container.querySelector('input'), { target: { value: '' } })
+  expect(change).not.toHaveBeenCalled()
 })
 
 describe('remove item', () => {

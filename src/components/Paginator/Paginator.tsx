@@ -28,13 +28,16 @@ export function Paginator(props: PaginatorProps) {
   const { page, total, onChange } = props
   const locale = useLocale()
 
-  const [inputValue, setInputValue] = useState<number>(0)
+  const [inputValue, setInputValue] = useState<string>(`${page + 1}`)
   useEffect(() => {
-    setInputValue(page + 1)
+    setInputValue(`${page + 1}`)
   }, [page])
 
-  const { classes } = useStyles(createStyles, inputValue)
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setInputValue(parseInt(e.target.value, 10))
+  const { classes } = useStyles(createStyles)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value.replace(/[^\d]/g, ''))
+  }
 
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
@@ -47,12 +50,11 @@ export function Paginator(props: PaginatorProps) {
   }
 
   const applyInputValue = () => {
-    if (inputValue !== currentPage()) {
-      if (inputValue >= 1 && inputValue <= total) {
-        onChange && onChange(inputValue - 1)
-      } else {
-        setInputValue(page + 1)
-      }
+    const inputNumber = parseInt(inputValue, 10)
+    if (!isNaN(inputNumber) && inputNumber !== currentPage() && inputNumber >= 1 && inputNumber <= total) {
+      onChange && onChange(inputNumber - 1)
+    } else {
+      setInputValue(`${page + 1}`)
     }
   }
 
@@ -84,6 +86,7 @@ export function Paginator(props: PaginatorProps) {
         onBlur={handleInputBlur}
         onKeyDown={handleInputKeyPress}
         clearable={false}
+        maxLength={4}
         title={locale.paginator.currentPage}
       />
 
@@ -109,7 +112,7 @@ Paginator.defaultProps = {
   onChange: (page: number) => null,
 } as Partial<PaginatorProps>
 
-export const createStyles = (theme: Theme, inputValue: number) => ({
+export const createStyles = (theme: Theme) => ({
   paginator: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -123,7 +126,7 @@ export const createStyles = (theme: Theme, inputValue: number) => ({
     },
   } as CSSProperties,
   input: {
-    width: 40 + (inputValue && inputValue.toString().length * 7),
+    width: Number(40 + 4 * 7), // 40? + inputValue.length * 7
     textAlign: 'center',
     margin: '0 0.5rem 0 0.25rem',
   } as CSSProperties,

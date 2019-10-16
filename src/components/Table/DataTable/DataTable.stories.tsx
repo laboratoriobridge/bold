@@ -33,7 +33,7 @@ storiesOf('Components|Table', module).add('DataTable', () => (
       { name: 'age', header: 'Age', render: (row: Row) => row.age },
       {
         name: 'buttons',
-        style: { textAlign: 'right', whiteSpace: 'nowrap' },
+        align: 'right',
         render: (row: Row) => (
           <>
             <Button size='small' skin='ghost'>

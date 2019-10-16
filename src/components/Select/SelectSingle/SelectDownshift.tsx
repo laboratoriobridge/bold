@@ -1,12 +1,17 @@
-import Downshift, { ControllerStateAndHelpers, DownshiftProps, StateChangeOptions } from 'downshift'
+import Downshift, { ControllerStateAndHelpers, DownshiftProps, DownshiftState, StateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 
 export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
   /**
    * Items to be populated on the select component.
    */
   items: T[]
+
+  /**
+   * Whether the select menu should be opened when the select is focused.
+   */
+  openOnFocus?: boolean
 
   children?(props: SelectDownshiftRenderProps<T>): React.ReactNode
 
@@ -16,6 +21,13 @@ export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
    * @param downshift The downshift controller and helpers.
    */
   onFilterChange?(filter: string, downshift: SelectDownshiftRenderProps<T>): void
+
+  /**
+   * If informed, select will allow insertion of items not present on the select.
+   * @param inputValue The string type in the text box
+   * @return The value that should be created and hold by the select
+   */
+  createNewItem?(inputValue: string): T
 }
 
 export interface SelectDownshiftRenderProps<T> extends ControllerStateAndHelpers<T>, State<T> {
@@ -42,30 +54,40 @@ export function defaultSelectFilter<T>(
  * Downshift extension with item and filter management.
  */
 export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
-  const { items, onFilterChange, children, ...rest } = props
+  const { items, onFilterChange, children, createNewItem, openOnFocus, ...rest } = props
+
+  const stateReducer = useMemo(() => createReducer(props), [openOnFocus, props.stateReducer])
 
   const [visibleItems, setVisibleItems] = useState<T[]>(items)
   useEffect(() => {
     setVisibleItems(props.items)
   }, [props.items])
 
-  const handleStateChange = (options: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
-    if (options.isOpen) {
+  const handleStateChange = (changes: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
+    if (createNewItem && changes.hasOwnProperty('inputValue')) {
+      rest.onChange && rest.onChange(createNewItem(changes.inputValue), getStateAndHelpers(downshift))
+    }
+
+    if (changes.type === Downshift.stateChangeTypes.changeInput && changes.inputValue === '') {
+      rest.onChange && rest.onChange(null, getStateAndHelpers(downshift))
+    }
+
+    if (changes.isOpen) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }
 
-    if (options.type === Downshift.stateChangeTypes.changeInput) {
-      onFilterChange(options.inputValue, getStateAndHelpers(downshift))
+    if (changes.type === Downshift.stateChangeTypes.changeInput) {
+      onFilterChange(changes.inputValue, getStateAndHelpers(downshift))
     }
 
     if (
-      options.type === Downshift.stateChangeTypes.clickItem ||
-      options.type === Downshift.stateChangeTypes.keyDownEnter
+      changes.type === Downshift.stateChangeTypes.clickItem ||
+      changes.type === Downshift.stateChangeTypes.keyDownEnter
     ) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }
 
-    props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift))
+    props.onStateChange && props.onStateChange(changes, getStateAndHelpers(downshift))
   }
 
   const handleChange = (item: T, downshift: ControllerStateAndHelpers<T>) => {
@@ -80,7 +102,7 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
   })
 
   return (
-    <Downshift {...rest} onStateChange={handleStateChange} onChange={handleChange}>
+    <Downshift {...rest} stateReducer={stateReducer} onStateChange={handleStateChange} onChange={handleChange}>
       {downshift => children(getStateAndHelpers(downshift))}
     </Downshift>
   )
@@ -92,3 +114,15 @@ SelectDownshift.defaultProps = {
     setVisibleItems(defaultSelectFilter(items, filter, itemToString))
   },
 } as Partial<SelectDownshiftProps<any>>
+
+function createReducer(props: SelectDownshiftProps<any>) {
+  const { openOnFocus = props.createNewItem ? false : undefined, stateReducer } = props
+
+  return (state: DownshiftState<any>, changes: StateChangeOptions<any>) => {
+    if (openOnFocus === false && changes.type === undefined && !state.isOpen && changes.isOpen) {
+      return { ...changes, isOpen: false }
+    }
+
+    return stateReducer ? stateReducer(state, changes) : changes
+  }
+}

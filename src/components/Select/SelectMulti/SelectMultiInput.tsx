@@ -8,6 +8,7 @@ import { createStyleParts } from '../../TextField/TextInputBase'
 import { SelectMultiItem } from './SelectMultiItem'
 
 export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
+  wrapperRef?: React.RefObject<HTMLDivElement>
   items: T[]
   invalid?: boolean
   clearable?: boolean
@@ -16,7 +17,7 @@ export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
 }
 
 export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
-  const { items, renderItem, onRemoveItem, invalid, disabled, clearable, ...rest } = props
+  const { wrapperRef, items, renderItem, onRemoveItem, invalid, disabled, clearable, ...rest } = props
 
   const inputRef = useRef<HTMLInputElement>()
 
@@ -31,7 +32,7 @@ export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
   const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
 
   return (
-    <div className={wrapperClasses} onClick={handleWrapperClick}>
+    <div ref={wrapperRef} className={wrapperClasses} onClick={handleWrapperClick}>
       {items &&
         items.map((item, key) => (
           <SelectMultiItem key={key} onRemove={handleRemove(item)} style={classes.item} disabled={disabled}>
