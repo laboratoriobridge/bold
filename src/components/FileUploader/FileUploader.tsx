@@ -26,22 +26,23 @@ export function FileUploader(props: FileUploaderProps) {
   const { getRootProps, getInputProps, isDragActive, isDragAccept } = useDropzone(rest)
 
   return (
-    <div className={css(classes.componentWrapper, isDragActive && classes.dragBackground)} {...getRootProps()}>
-      <input {...getInputProps()} />
-      <div className={css(classes.buttonWrapper, props.disabled && classes.disabled)}>
-        <div className={css(classes.dropzone, isDragActive && classes.dragActive)}>
-          {isDragAccept}
-          <HFlow justifyContent='center' alignItems='center' hSpacing={0.5}>
-            <Icon fill={props.disabled ? 'disabled' : 'secondary'} icon='upload' />
-            <Text color={props.disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
-              {text}
-            </Text>
-          </HFlow>
+    <>
+      <div className={css(classes.componentWrapper, isDragActive && classes.dragBackground)} {...getRootProps()}>
+        <input {...getInputProps()} />
+        <div className={css(classes.buttonWrapper, props.disabled && classes.disabled)}>
+          <div className={css(classes.dropzone, isDragActive && classes.dragActive)}>
+            {isDragAccept}
+            <HFlow justifyContent='center' alignItems='center' hSpacing={0.5}>
+              <Icon fill={props.disabled ? 'disabled' : 'secondary'} icon='upload' />
+              <Text color={props.disabled ? 'disabled' : 'secondary'} fontSize={0.875} fontWeight='bold'>
+                {text}
+              </Text>
+            </HFlow>
+          </div>
         </div>
       </div>
-
       {file && <FileDetails file={file} />}
-    </div>
+    </>
   )
 }
 
@@ -126,6 +127,7 @@ export const createStyles = (theme: Theme) => ({
 
     '&:focus': {
       outline: 'none',
+      position: 'relative',
       boxShadow: focusBoxShadow(theme),
     },
   } as CSSProperties,
@@ -150,7 +152,6 @@ export const createStyles = (theme: Theme) => ({
     border: `1px solid` + theme.pallete.gray.c80,
     cursor: 'not-allowed',
   } as CSSProperties,
-
   file: {
     borderRadius: theme.radius.paper,
     borderBottom: '1px solid ' + theme.pallete.gray.c80,
