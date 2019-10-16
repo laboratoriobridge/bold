@@ -11312,12 +11312,14 @@ var TextField_1 = __webpack_require__(/*! ../TextField */ "../lib/components/Tex
 function Paginator(props) {
     var page = props.page, total = props.total, onChange = props.onChange;
     var locale = i18n_1.useLocale();
-    var _a = react_1.useState(0), inputValue = _a[0], setInputValue = _a[1];
+    var _a = react_1.useState("" + (page + 1)), inputValue = _a[0], setInputValue = _a[1];
     react_1.useEffect(function () {
-        setInputValue(page + 1);
+        setInputValue("" + (page + 1));
     }, [page]);
     var classes = styles_1.useStyles(exports.createStyles, inputValue).classes;
-    var handleInputChange = function (e) { return setInputValue(parseInt(e.target.value, 10)); };
+    var handleInputChange = function (e) {
+        setInputValue(e.target.value);
+    };
     var handleInputKeyPress = function (e) {
         if (e.key === 'Enter') {
             applyInputValue();
@@ -11327,13 +11329,12 @@ function Paginator(props) {
         applyInputValue();
     };
     var applyInputValue = function () {
-        if (inputValue !== currentPage()) {
-            if (inputValue >= 1 && inputValue <= total) {
-                onChange && onChange(inputValue - 1);
-            }
-            else {
-                setInputValue(page + 1);
-            }
+        var inputNumber = parseInt(inputValue, 10);
+        if (!isNaN(inputNumber) && inputNumber !== currentPage() && inputNumber >= 1 && inputNumber <= total) {
+            onChange && onChange(inputNumber - 1);
+        }
+        else {
+            setInputValue("" + (page + 1));
         }
     };
     var currentPage = function () { return page + 1; };
@@ -11371,7 +11372,7 @@ exports.createStyles = function (theme, inputValue) { return ({
         },
     },
     input: {
-        width: 40 + (inputValue && inputValue.toString().length * 7),
+        width: Number(40 + (inputValue && inputValue.length * 7)),
         textAlign: 'center',
         margin: '0 0.5rem 0 0.25rem',
     },
@@ -12216,6 +12217,11 @@ function Select(props) {
         }
         checkedValue = value[0];
     }
+    if (props.multiple && props.createNewItem) {
+        if (true) {
+            throw new Error("Select does not support props 'createNewItem' and 'multiple' together");
+        }
+    }
     if (multiple) {
         return react_1.default.createElement(SelectMulti_1.SelectMulti, __assign({}, rest, { value: checkedValue, onChange: onChange, itemIsEqual: itemIsEqual }));
     }
@@ -12919,21 +12925,24 @@ function SelectDownshift(props) {
     react_1.useEffect(function () {
         setVisibleItems(props.items);
     }, [props.items]);
-    var handleStateChange = function (options, downshift) {
-        if (createNewItem && options.hasOwnProperty('inputValue')) {
-            rest.onChange && rest.onChange(createNewItem(options.inputValue), getStateAndHelpers(downshift));
+    var handleStateChange = function (changes, downshift) {
+        if (createNewItem && changes.hasOwnProperty('inputValue')) {
+            rest.onChange && rest.onChange(createNewItem(changes.inputValue), getStateAndHelpers(downshift));
         }
-        if (options.isOpen) {
+        if (changes.type === downshift_1.default.stateChangeTypes.changeInput && changes.inputValue === '') {
+            rest.onChange && rest.onChange(null, getStateAndHelpers(downshift));
+        }
+        if (changes.isOpen) {
             onFilterChange(null, getStateAndHelpers(downshift));
         }
-        if (options.type === downshift_1.default.stateChangeTypes.changeInput) {
-            onFilterChange(options.inputValue, getStateAndHelpers(downshift));
+        if (changes.type === downshift_1.default.stateChangeTypes.changeInput) {
+            onFilterChange(changes.inputValue, getStateAndHelpers(downshift));
         }
-        if (options.type === downshift_1.default.stateChangeTypes.clickItem ||
-            options.type === downshift_1.default.stateChangeTypes.keyDownEnter) {
+        if (changes.type === downshift_1.default.stateChangeTypes.clickItem ||
+            changes.type === downshift_1.default.stateChangeTypes.keyDownEnter) {
             onFilterChange(null, getStateAndHelpers(downshift));
         }
-        props.onStateChange && props.onStateChange(options, getStateAndHelpers(downshift));
+        props.onStateChange && props.onStateChange(changes, getStateAndHelpers(downshift));
     };
     var handleChange = function (item, downshift) {
         props.onChange && props.onChange(item, getStateAndHelpers(downshift));
@@ -13633,9 +13642,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
 var TableFilledBody_1 = __webpack_require__(/*! ./TableFilledBody */ "../lib/components/Table/DataTable/TableFilledBody.js");
 function DataTable(props) {
+    var css = styles_1.useCss().css;
     var getColumn = function (columnName) {
         return props.columns.find(function (col) { return col.name === columnName; });
     };
@@ -13644,12 +13655,14 @@ function DataTable(props) {
         if (!col) {
             throw new Error("Column '" + column + "' not found.");
         }
+        var name = col.name, sortable = col.sortable, style = col.style;
         return {
-            key: col.name,
-            'data-name': col.name,
-            sortable: col.sortable,
+            key: name,
+            'data-name': name,
+            sortable: sortable,
             sortDirection: getSortDirection(col),
             onSortChange: handleSortChange(col),
+            style: css(exports.defaultColumnStyles(col), style),
         };
     };
     var handleSortChange = function (col) { return function (sortDirection, shiftKey) {
@@ -13706,6 +13719,9 @@ var changeSort = function (sort, name, dir) {
     });
     return swap ? newArray : __spreadArrays(newArray, [newSort]);
 };
+exports.defaultColumnStyles = function (col) { return ({
+    textAlign: col.align,
+}); };
 //# sourceMappingURL=DataTable.js.map
 
 /***/ }),
@@ -13719,47 +13735,26 @@ var changeSort = function (sort, name, dir) {
 
 "use strict";
 
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var styles_1 = __webpack_require__(/*! ../../../styles */ "../lib/styles/index.js");
 var Table_1 = __webpack_require__(/*! ../Table */ "../lib/components/Table/Table/index.js");
+var DataTable_1 = __webpack_require__(/*! ./DataTable */ "../lib/components/Table/DataTable/DataTable.js");
 var TableLoadingRow_1 = __webpack_require__(/*! ./TableLoadingRow */ "../lib/components/Table/DataTable/TableLoadingRow.js");
 var TablePlaceholderRow_1 = __webpack_require__(/*! ./TablePlaceholderRow */ "../lib/components/Table/DataTable/TablePlaceholderRow.js");
-var TableFilledBody = /** @class */ (function (_super) {
-    __extends(TableFilledBody, _super);
-    function TableFilledBody() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.handleClick = function (row) { return function (e) {
-            _this.props.onRowClick(row);
-        }; };
-        _this.isEmpty = function () { return !_this.props.rows || _this.props.rows.length === 0; };
-        return _this;
-    }
-    TableFilledBody.prototype.render = function () {
-        var _this = this;
-        var _a = this.props, columns = _a.columns, rows = _a.rows, loading = _a.loading, onRowClick = _a.onRowClick;
-        return (react_1.default.createElement(Table_1.TableBody, null,
-            loading && react_1.default.createElement(TableLoadingRow_1.TableLoadingRow, { colSpan: columns.length }),
-            !loading && this.isEmpty() && react_1.default.createElement(TablePlaceholderRow_1.TablePlaceholderRow, { colSpan: columns.length }),
-            rows.map(function (row, idx) { return (react_1.default.createElement(Table_1.TableRow, { key: idx, onClick: onRowClick && _this.handleClick(row) }, columns.map(function (col, colIdx) { return (react_1.default.createElement(Table_1.TableCell, { key: colIdx, style: col.style }, col.render(row))); }))); })));
-    };
-    return TableFilledBody;
-}(react_1.default.PureComponent));
+function TableFilledBody(props) {
+    var columns = props.columns, rows = props.rows, loading = props.loading, onRowClick = props.onRowClick;
+    var css = styles_1.useCss().css;
+    var handleClick = function (row) { return function (e) { return onRowClick(row); }; };
+    var isEmpty = function () { return !rows || rows.length === 0; };
+    return (react_1.default.createElement(Table_1.TableBody, null,
+        loading && react_1.default.createElement(TableLoadingRow_1.TableLoadingRow, { colSpan: columns.length }),
+        !loading && isEmpty() && react_1.default.createElement(TablePlaceholderRow_1.TablePlaceholderRow, { colSpan: columns.length }),
+        rows.map(function (row, idx) { return (react_1.default.createElement(Table_1.TableRow, { key: idx, onClick: onRowClick && handleClick(row) }, columns.map(function (col, colIdx) { return (react_1.default.createElement(Table_1.TableCell, { key: colIdx, style: css(DataTable_1.defaultColumnStyles(col), col.style) }, col.render(row))); }))); })));
+}
 exports.TableFilledBody = TableFilledBody;
 //# sourceMappingURL=TableFilledBody.js.map
 
@@ -62152,7 +62147,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { FormControl, Select } from '../../../../lib'\n\nconst items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']\n\nfunction SelectDemo() {\n  const itemToString = (item: any) => item\n\n  return (\n    <Select<string> label='Favorite pasta' items={items} itemToString={itemToString} name='favorite pasta' required />\n  )\n}\n\nexport default SelectDemo\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { FormControl, Select, Text, VFlow } from '../../../../lib'\n\nconst items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']\n\nfunction SelectDemo() {\n  const [value, setValue] = useState()\n\n  const handleChange = (item: string) => setValue(item)\n\n  const itemToString = (item: string) => item\n\n  return (\n    <VFlow>\n      <Text>Selected item: {value || '[none]'}</Text>\n      <Select<string>\n        label='Favorite pasta'\n        items={items}\n        value={value}\n        onChange={handleChange}\n        itemToString={itemToString}\n        name='favorite pasta'\n        required\n      />\n    </VFlow>\n  )\n}\n\nexport default SelectDemo\n");
 
 /***/ }),
 
@@ -62165,7 +62160,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Select, Text, VFlow } from '../../../../lib'\n\nconst items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']\n\nfunction SuggestionDemo() {\n  const [value, setValue] = useState()\n\n  const itemToString = (item: any) => item\n  const createNewItem = (inputValue: string) => inputValue\n\n  return (\n    <VFlow>\n      <Text>Selected item: {value || '[none]'}</Text>\n      <Select<string>\n        value={value}\n        label='Favorite pasta'\n        name='favorite pasta'\n        items={items}\n        onChange={setValue}\n        itemToString={itemToString}\n        createNewItem={createNewItem}\n        icon={null}\n        required\n      />\n    </VFlow>\n  )\n}\n\nexport default SuggestionDemo\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Select, Text, VFlow } from '../../../../lib'\n\nconst items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza']\n\nfunction SuggestionDemo() {\n  const [value, setValue] = useState()\n\n  const handleChange = (item: string) => setValue(item)\n\n  const itemToString = (item: string) => item\n  const createNewItem = (inputValue: string) => inputValue\n\n  return (\n    <VFlow>\n      <Text>Selected item: {value || '[none]'}</Text>\n      <Select<string>\n        value={value}\n        label='Favorite pasta'\n        name='favorite pasta'\n        items={items}\n        onChange={handleChange}\n        itemToString={itemToString}\n        createNewItem={createNewItem}\n        icon={null}\n        required\n      />\n    </VFlow>\n  )\n}\n\nexport default SuggestionDemo\n");
 
 /***/ }),
 
@@ -62191,7 +62186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Button, DataTable, Icon } from '../../../../lib'\n\ninterface RowType {\n  id: number\n  name: string\n  age: number\n}\n\nfunction DataTableExample() {\n  const [sort, setSort] = useState(['id'])\n\n  const rows = allRows\n    // Naive sorting for example purposes:\n    .sort((a, b) => {\n      if (sort[0] === 'id') {\n        return a.id - b.id\n      }\n      if (sort[0] === '-id') {\n        return b.id - a.id\n      }\n      return 0\n    })\n\n  return (\n    <DataTable<RowType>\n      rows={rows}\n      sort={sort}\n      onSortChange={setSort}\n      loading={false}\n      columns={[\n        {\n          name: 'id',\n          header: 'ID',\n          sortable: true,\n          render: item => item.id,\n        },\n        {\n          name: 'name',\n          header: 'Name',\n          render: item => item.name,\n        },\n        {\n          name: 'age',\n          header: 'Age',\n          render: item => item.age,\n        },\n        {\n          name: 'actions',\n          render: item => (\n            <Button size='small' skin='ghost'>\n              <Icon icon='penOutline' />\n            </Button>\n          ),\n          style: { textAlign: 'right' },\n        },\n      ]}\n    />\n  )\n}\n\nexport default DataTableExample\n\n// Fake data to populate table\nlet id = 1\nconst allRows: RowType[] = Array(3)\n  .fill(true)\n  .reduce(\n    curr => [\n      ...curr,\n      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },\n      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },\n      { id: id++, name: 'ALICE BARBOSA', age: 27 },\n    ],\n    [] as RowType[]\n  )\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Button, DataTable, Icon } from '../../../../lib'\n\ninterface RowType {\n  id: number\n  name: string\n  age: number\n}\n\nfunction DataTableExample() {\n  const [sort, setSort] = useState(['id'])\n\n  const rows = allRows\n    // Naive sorting for example purposes:\n    .sort((a, b) => {\n      if (sort[0] === 'id') {\n        return a.id - b.id\n      }\n      if (sort[0] === '-id') {\n        return b.id - a.id\n      }\n      return 0\n    })\n\n  return (\n    <DataTable<RowType>\n      rows={rows}\n      sort={sort}\n      onSortChange={setSort}\n      loading={false}\n      columns={[\n        {\n          name: 'id',\n          header: 'ID',\n          sortable: true,\n          render: item => item.id,\n        },\n        {\n          name: 'name',\n          header: 'Name',\n          render: item => item.name,\n        },\n        {\n          name: 'age',\n          header: 'Age',\n          render: item => item.age,\n        },\n        {\n          name: 'actions',\n          align: 'right',\n          render: item => (\n            <Button size='small' skin='ghost'>\n              <Icon icon='penOutline' />\n            </Button>\n          ),\n        },\n      ]}\n    />\n  )\n}\n\nexport default DataTableExample\n\n// Fake data to populate table\nlet id = 1\nconst allRows: RowType[] = Array(3)\n  .fill(true)\n  .reduce(\n    curr => [\n      ...curr,\n      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },\n      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },\n      { id: id++, name: 'ALICE BARBOSA', age: 27 },\n    ],\n    [] as RowType[]\n  )\n");
 
 /***/ }),
 
@@ -62204,7 +62199,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Button, Icon, PagedTable } from '../../../../lib'\n\ninterface RowType {\n  id: number\n  name: string\n  age: number\n}\n\nfunction PagedTableExample() {\n  const [params, setParams] = useState({\n    page: 0,\n    size: 10,\n    totalElements: allRows.length,\n    totalPages: allRows.length / 10,\n    sort: ['id'],\n  })\n\n  const handleSortChange = (sort: string[]) => setParams(state => ({ ...state, sort }))\n  const handlePageChange = (page: number) => setParams(state => ({ ...state, page }))\n  const handleSizeChange = (size: number) =>\n    setParams(state => ({ ...state, size, totalPages: Math.max(1, state.totalElements / size) }))\n\n  const rows = allRows\n    // Naive sorting for example purposes:\n    .sort((a, b) => {\n      if (params.sort[0] === 'id') {\n        return a.id - b.id\n      }\n      if (params.sort[0] === '-id') {\n        return b.id - a.id\n      }\n      return 0\n    })\n    // Naive pagination for example purposes:\n    .slice(params.page * params.size, params.page * params.size + params.size)\n\n  return (\n    <PagedTable<RowType>\n      rows={rows}\n      page={params.page}\n      size={params.size}\n      totalElements={params.totalElements}\n      totalPages={params.totalPages}\n      sort={params.sort}\n      onSortChange={handleSortChange}\n      onPageChange={handlePageChange}\n      onSizeChange={handleSizeChange}\n      loading={false}\n      columns={[\n        {\n          name: 'id',\n          header: 'ID',\n          sortable: true,\n          render: item => item.id,\n        },\n        {\n          name: 'name',\n          header: 'Name',\n          render: item => item.name,\n        },\n        {\n          name: 'age',\n          header: 'Age',\n          render: item => item.age,\n        },\n        {\n          name: 'actions',\n          render: item => (\n            <Button size='small' skin='ghost'>\n              <Icon icon='penOutline' />\n            </Button>\n          ),\n          style: { textAlign: 'right' },\n        },\n      ]}\n    />\n  )\n}\n\nexport default PagedTableExample\n\n// Fake data to populate table\nlet id = 1\nconst allRows: RowType[] = Array(30)\n  .fill(true)\n  .reduce(\n    curr => [\n      ...curr,\n      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },\n      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },\n      { id: id++, name: 'ALICE BARBOSA', age: 27 },\n    ],\n    [] as RowType[]\n  )\n");
+/* harmony default export */ __webpack_exports__["default"] = ("import { useState } from 'react'\n\nimport { Button, Icon, PagedTable } from '../../../../lib'\n\ninterface RowType {\n  id: number\n  name: string\n  age: number\n}\n\nfunction PagedTableExample() {\n  const [params, setParams] = useState({\n    page: 0,\n    size: 10,\n    totalElements: allRows.length,\n    totalPages: allRows.length / 10,\n    sort: ['id'],\n  })\n\n  const handleSortChange = (sort: string[]) => setParams(state => ({ ...state, sort }))\n  const handlePageChange = (page: number) => setParams(state => ({ ...state, page }))\n  const handleSizeChange = (size: number) =>\n    setParams(state => ({ ...state, size, totalPages: Math.max(1, state.totalElements / size) }))\n\n  const rows = allRows\n    // Naive sorting for example purposes:\n    .sort((a, b) => {\n      if (params.sort[0] === 'id') {\n        return a.id - b.id\n      }\n      if (params.sort[0] === '-id') {\n        return b.id - a.id\n      }\n      return 0\n    })\n    // Naive pagination for example purposes:\n    .slice(params.page * params.size, params.page * params.size + params.size)\n\n  return (\n    <PagedTable<RowType>\n      rows={rows}\n      page={params.page}\n      size={params.size}\n      totalElements={params.totalElements}\n      totalPages={params.totalPages}\n      sort={params.sort}\n      onSortChange={handleSortChange}\n      onPageChange={handlePageChange}\n      onSizeChange={handleSizeChange}\n      loading={false}\n      columns={[\n        {\n          name: 'id',\n          header: 'ID',\n          sortable: true,\n          render: item => item.id,\n        },\n        {\n          name: 'name',\n          header: 'Name',\n          render: item => item.name,\n        },\n        {\n          name: 'age',\n          header: 'Age',\n          render: item => item.age,\n        },\n        {\n          name: 'actions',\n          align: 'right',\n          render: item => (\n            <Button size='small' skin='ghost'>\n              <Icon icon='penOutline' />\n            </Button>\n          ),\n        },\n      ]}\n    />\n  )\n}\n\nexport default PagedTableExample\n\n// Fake data to populate table\nlet id = 1\nconst allRows: RowType[] = Array(30)\n  .fill(true)\n  .reduce(\n    curr => [\n      ...curr,\n      { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },\n      { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },\n      { id: id++, name: 'ALICE BARBOSA', age: 27 },\n    ],\n    [] as RowType[]\n  )\n");
 
 /***/ }),
 
@@ -67653,25 +67648,48 @@ var _jsxFileName = "/home/bonetti/workspace/bold/site/pages/components/select/Se
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
+
 var items = ['Carbonara', 'Gnocchi', 'Lasagna', 'Macaroni and Cheese', 'Pesto', 'Pizza'];
 
 function SelectDemo() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(),
+      value = _useState[0],
+      setValue = _useState[1];
+
+  var handleChange = function handleChange(item) {
+    return setValue(item);
+  };
+
   var itemToString = function itemToString(item) {
     return item;
   };
 
-  return __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["Select"], {
+  return __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["VFlow"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16
+    },
+    __self: this
+  }, "Selected item: ", value || '[none]'), __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["Select"], {
     label: "Favorite pasta",
     items: items,
+    value: value,
+    onChange: handleChange,
     itemToString: itemToString,
     name: "favorite pasta",
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 17
     },
     __self: this
-  });
+  }));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SelectDemo);
@@ -67703,6 +67721,10 @@ function SuggestionDemo() {
       value = _useState[0],
       setValue = _useState[1];
 
+  var handleChange = function handleChange(item) {
+    return setValue(item);
+  };
+
   var itemToString = function itemToString(item) {
     return item;
   };
@@ -67714,13 +67736,13 @@ function SuggestionDemo() {
   return __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["VFlow"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 16
     },
     __self: this
   }, __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["Text"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 17
     },
     __self: this
   }, "Selected item: ", value || '[none]'), __jsx(_lib__WEBPACK_IMPORTED_MODULE_1__["Select"], {
@@ -67728,14 +67750,14 @@ function SuggestionDemo() {
     label: "Favorite pasta",
     name: "favorite pasta",
     items: items,
-    onChange: setValue,
+    onChange: handleChange,
     itemToString: itemToString,
     createNewItem: createNewItem,
     icon: null,
     required: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 18
     },
     __self: this
   }));
@@ -68019,26 +68041,24 @@ function DataTableExample() {
       }
     }, {
       name: 'actions',
+      align: 'right',
       render: function render(item) {
         return __jsx(_lib__WEBPACK_IMPORTED_MODULE_2__["Button"], {
           size: "small",
           skin: "ghost",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 52
+            lineNumber: 53
           },
           __self: this
         }, __jsx(_lib__WEBPACK_IMPORTED_MODULE_2__["Icon"], {
           icon: "penOutline",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 53
+            lineNumber: 54
           },
           __self: this
         }));
-      },
-      style: {
-        textAlign: 'right'
       }
     }],
     __source: {
@@ -68174,26 +68194,24 @@ function PagedTableExample() {
       }
     }, {
       name: 'actions',
+      align: 'right',
       render: function render(item) {
         return __jsx(_lib__WEBPACK_IMPORTED_MODULE_3__["Button"], {
           size: "small",
           skin: "ghost",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 72
           },
           __self: this
         }, __jsx(_lib__WEBPACK_IMPORTED_MODULE_3__["Icon"], {
           icon: "penOutline",
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 72
+            lineNumber: 73
           },
           __self: this
         }));
-      },
-      style: {
-        textAlign: 'right'
       }
     }],
     __source: {
@@ -69121,7 +69139,7 @@ function CustomizeDemo() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!*************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcomponents%2Fselect&absolutePagePath=%2Fhome%2Fbonetti%2Fworkspace%2Fbold%2Fsite%2Fpages%2Fcomponents%2Fselect%2Findex.mdx ***!
   \*************************************************************************************************************************************************************************/
@@ -69144,5 +69162,5 @@ module.exports = dll_ea6db66f8757af76a899;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=select.js.map
