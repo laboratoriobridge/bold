@@ -1,4 +1,5 @@
-import React, { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
+import React from 'react'
+import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
@@ -43,11 +44,20 @@ export interface PeriodInputBaseProps {
   style?: ExternalStyles
 
   /**
+   *  Props to set placeholder to inputs
+   */
+
+  startPlaceholder?: string
+
+  finalPlaceholder?: string
+
+  /**
    * initialInputRef and finalInputRef are used to assign refs
    * to date input components
    */
 
   initialInputRef?: Ref<HTMLInputElement>
+
   finalInputRef?: Ref<HTMLInputElement>
 
   /**
@@ -64,13 +74,20 @@ export interface PeriodInputBaseProps {
 }
 
 export function PeriodInputBase(props: PeriodInputBaseProps) {
+  const {
+    value,
+    disabled,
+    onChange,
+    icon,
+    onIconClick,
+    initialInputRef,
+    finalInputRef,
+    startPlaceholder,
+    finalPlaceholder,
+  } = props
+
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
-
-  const { value, disabled, onChange, icon, onIconClick, initialInputRef, finalInputRef } = props
-  const { classes, css } = useStyles(createStyles, disabled)
-
-  const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   const [period, setPeriod] = useState(value ? value : ({} as Period))
 
@@ -78,6 +95,9 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     onChange && onChange(value)
     setPeriod(value)
   }, [value])
+
+  const { classes, css } = useStyles(createStyles, disabled)
+  const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   const onChangeStart = (data: Date) => {
     const aux = { startDate: data, finalDate: period.finalDate } as Period
@@ -113,6 +133,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   }
 
   const componentIcon = icon ? icon : 'calendarOutline'
+  const defaultPlaceholder = 'dd/mm/aaaa'
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
 
   return (
@@ -125,8 +146,9 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
             onChange={onChangeStart}
             onClear={onClearStart}
+            placeholder={startPlaceholder ? startPlaceholder : defaultPlaceholder}
             style={classes.dateField}
-            value={period.startDate}
+            value={period ? period.startDate : undefined}
           />
         </div>
         <span className={classes.spanWrapper}>
@@ -139,8 +161,9 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
             onClear={onClearFinal}
+            placeholder={finalPlaceholder ? finalPlaceholder : defaultPlaceholder}
             style={classes.dateField}
-            value={period.finalDate}
+            value={period ? period.finalDate : undefined}
           />
         </div>
       </div>
@@ -174,6 +197,9 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     } as CSSProperties,
     dateField: {
       border: 'none',
+      '::placeholder': {
+        color: theme.pallete.text.disabled,
+      },
       '&:focus': {
         boxShadow: 'none !important',
       },

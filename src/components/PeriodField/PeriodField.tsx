@@ -18,10 +18,10 @@ export interface PeriodFieldProps extends PeriodInputProps {
 }
 
 export function PeriodField(props: PeriodFieldProps) {
+  const [period, setPeriod] = useState(props.value ? props.value : ({} as Period))
+
   const controller = useRef<PopperController>()
   const finalInputRef = useRef<HTMLInputElement>()
-
-  const [period, setPeriod] = useState(props.value ? props.value : ({} as Period))
 
   const setController = (ctrl: PopperController) => {
     controller.current = ctrl

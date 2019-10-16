@@ -48,6 +48,8 @@ Array [
   "Number",
   "Paginator",
   "Paper",
+  "PeriodField",
+  "PeriodInput",
   "Popover",
   "PopoverBase",
   "Popper",

@@ -10,10 +10,11 @@ export type MaskType = ReactMaskedInputProps['mask']
 export interface MaskedTextFieldProps extends Omit<ReactMaskedInputProps, 'style'>, TextFieldProps {}
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
-  const { inputRef, style, defaultValue, ...rest } = props
+  const { inputRef, style, ...rest } = props
 
   const renderInput = (ref: (inputElement: HTMLElement) => void, p: any) => {
-    return <TextField style={style} inputRef={composeRefs(inputRef, ref)} value={defaultValue} {...p} />
+    const { ...others } = p
+    return <TextField style={style} inputRef={composeRefs(inputRef, ref)} {...others} />
   }
 
   return <ReactTextMask render={renderInput} {...rest} />

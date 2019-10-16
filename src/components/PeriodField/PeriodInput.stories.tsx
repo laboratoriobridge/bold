@@ -16,7 +16,6 @@ storiesOf('Components|PeriodField', module)
       disabled={boolean('disabled', false)}
       error={text('error', '')}
       required={boolean('required', true)}
-      value={period}
       onChange={action('changed')}
       icon='calendarOutline'
     />
@@ -24,11 +23,14 @@ storiesOf('Components|PeriodField', module)
 
   .add('min/max date', () => (
     <PeriodField
-      value={period}
-      minDate={todayMinus10}
-      maxDate={new Date()}
+      label={text('label', 'Text label')}
+      disabled={boolean('disabled', false)}
+      error={text('error', '')}
+      required={boolean('required', true)}
       onChange={action('changed')}
       icon='calendarOutline'
+      minDate={todayMinus10}
+      maxDate={new Date()}
     />
   ))
 

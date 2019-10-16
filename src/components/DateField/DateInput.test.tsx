@@ -31,13 +31,13 @@ it('should call onChange only when a valid date is typed', () => {
   expect(change).toHaveBeenLastCalledWith(new Date('2018-01-01'))
 })
 
-it('should call onChange with null when input is cleared', () => {
+it('should call onChange with undefined when input is cleared', () => {
   const change = jest.fn()
   const { container } = render(<DateInput onChange={change} value={new Date('2018-10-30')} />)
   const input = container.querySelector('input')
 
   fireEvent.change(input, { target: { value: '' } })
-  expect(change).toHaveBeenLastCalledWith(null)
+  expect(change).toHaveBeenLastCalledWith(undefined)
 })
 
 it('should call onInputChange prop with original event when input value is changed', () => {
@@ -66,6 +66,6 @@ describe('clear', () => {
     const clear = container.querySelector('span')
 
     fireEvent.click(clear)
-    expect(change).toHaveBeenLastCalledWith(null)
+    expect(change).toHaveBeenLastCalledWith(undefined)
   })
 })
