@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correct without extension 1`] = `
-.emotion-12 {
+.emotion-5 {
   border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
 
-.emotion-12:focus {
+.emotion-5:focus {
   outline: none;
+  position: relative;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
@@ -26,7 +27,7 @@ exports[`should render correct without extension 1`] = `
   padding: 0.52em;
 }
 
-.emotion-9 {
+.emotion-10 {
   background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -38,7 +39,7 @@ exports[`should render correct without extension 1`] = `
   display: flex;
 }
 
-.emotion-10 {
+.emotion-11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -66,7 +67,7 @@ exports[`should render correct without extension 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -83,7 +84,7 @@ exports[`should render correct without extension 1`] = `
   font-weight: bold;
 }
 
-.emotion-11 {
+.emotion-12 {
   border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
@@ -100,7 +101,7 @@ exports[`should render correct without extension 1`] = `
   display: flex;
 }
 
-.emotion-5 {
+.emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -112,7 +113,7 @@ exports[`should render correct without extension 1`] = `
   padding: 1rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -121,7 +122,7 @@ exports[`should render correct without extension 1`] = `
   margin-right: 10px;
 }
 
-.emotion-6 {
+.emotion-7 {
   fill: #0069D0;
   font-size: 1rem;
   margin-right: 5px;
@@ -129,7 +130,7 @@ exports[`should render correct without extension 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-5"
     tabindex="0"
   >
     <input
@@ -166,41 +167,41 @@ exports[`should render correct without extension 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <span
+      class="emotion-6"
+    />
     <div
       class="emotion-11"
     >
-      <span
-        class="emotion-5"
-      />
       <div
         class="emotion-10"
       >
-        <div
+        <svg
+          aria-hidden="true"
+          class="emotion-7"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M18.294 6.293a1 1 0 1 1 1.414 1.414l-9 9a1 1 0 0 1-1.414 0l-5.001-5.001a1 1 0 0 1 1.414-1.414l4.294 4.294 8.293-8.293z"
+          />
+        </svg>
+        <span
+          class="emotion-8"
+        >
+          teste.pdf
+        </span>
+        <span
           class="emotion-9"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-6"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M18.294 6.293a1 1 0 1 1 1.414 1.414l-9 9a1 1 0 0 1-1.414 0l-5.001-5.001a1 1 0 0 1 1.414-1.414l4.294 4.294 8.293-8.293z"
-            />
-          </svg>
-          <span
-            class="emotion-7"
-          >
-            teste.pdf
-          </span>
-          <span
-            class="emotion-8"
-          >
-            0 Bytes
-          </span>
-        </div>
+          0 Bytes
+        </span>
       </div>
     </div>
   </div>
@@ -217,6 +218,7 @@ exports[`should render correctly at initial state 1`] = `
 
 .emotion-5:focus {
   outline: none;
+  position: relative;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
@@ -307,15 +309,16 @@ exports[`should render correctly at initial state 1`] = `
 `;
 
 exports[`should render correctly at uploading state 1`] = `
-.emotion-12 {
+.emotion-5 {
   border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
 
-.emotion-12:focus {
+.emotion-5:focus {
   outline: none;
+  position: relative;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
@@ -332,7 +335,7 @@ exports[`should render correctly at uploading state 1`] = `
   padding: 0.52em;
 }
 
-.emotion-8 {
+.emotion-9 {
   background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -344,7 +347,7 @@ exports[`should render correctly at uploading state 1`] = `
   display: flex;
 }
 
-.emotion-10 {
+.emotion-11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -372,7 +375,7 @@ exports[`should render correctly at uploading state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -389,7 +392,7 @@ exports[`should render correctly at uploading state 1`] = `
   font-weight: bold;
 }
 
-.emotion-11 {
+.emotion-12 {
   border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
@@ -406,7 +409,7 @@ exports[`should render correctly at uploading state 1`] = `
   display: flex;
 }
 
-.emotion-5 {
+.emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -418,7 +421,7 @@ exports[`should render correctly at uploading state 1`] = `
   padding: 1rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -427,7 +430,7 @@ exports[`should render correctly at uploading state 1`] = `
   margin-right: 10px;
 }
 
-.emotion-9 {
+.emotion-10 {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -436,19 +439,19 @@ exports[`should render correctly at uploading state 1`] = `
   width: 100%;
 }
 
-.emotion-9::-webkit-progress-bar {
+.emotion-10::-webkit-progress-bar {
   background-color: #F0F0F5;
   border-radius: 4px;
 }
 
-.emotion-9::-webkit-progress-value {
+.emotion-10::-webkit-progress-value {
   background-color: #0069D0;
   border-radius: 4px;
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-.emotion-9::-moz-progress-bar {
+.emotion-10::-moz-progress-bar {
   background-color: #0069D0;
   border-radius: 4px;
   -webkit-transition: all .3s;
@@ -457,7 +460,7 @@ exports[`should render correctly at uploading state 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-5"
     tabindex="0"
   >
     <input
@@ -494,52 +497,53 @@ exports[`should render correctly at uploading state 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <span
+      class="emotion-6"
+    >
+      pdf
+    </span>
     <div
       class="emotion-11"
     >
-      <span
-        class="emotion-5"
-      >
-        pdf
-      </span>
       <div
-        class="emotion-10"
+        class="emotion-9"
       >
-        <div
+        <span
+          class="emotion-7"
+        >
+          teste.pdf
+        </span>
+        <span
           class="emotion-8"
         >
-          <span
-            class="emotion-6"
-          >
-            teste.pdf
-          </span>
-          <span
-            class="emotion-7"
-          >
-            0 Bytes
-          </span>
-        </div>
-        <progress
-          class="emotion-9"
-          max="100"
-          value="40"
-        />
+          0 Bytes
+        </span>
       </div>
+      <progress
+        class="emotion-10"
+        max="100"
+        value="40"
+      />
     </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly complete state 1`] = `
-.emotion-12 {
+.emotion-5 {
   border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
 
-.emotion-12:focus {
+.emotion-5:focus {
   outline: none;
+  position: relative;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
@@ -556,7 +560,7 @@ exports[`should render correctly complete state 1`] = `
   padding: 0.52em;
 }
 
-.emotion-9 {
+.emotion-10 {
   background-color: #FFFFFF;
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -568,7 +572,7 @@ exports[`should render correctly complete state 1`] = `
   display: flex;
 }
 
-.emotion-10 {
+.emotion-11 {
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -596,7 +600,7 @@ exports[`should render correctly complete state 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-8 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -613,7 +617,7 @@ exports[`should render correctly complete state 1`] = `
   font-weight: bold;
 }
 
-.emotion-11 {
+.emotion-12 {
   border-radius: 4px;
   border-bottom: 1px solid #D3D4DD;
   border-left: 1px solid #D3D4DD;
@@ -630,7 +634,7 @@ exports[`should render correctly complete state 1`] = `
   display: flex;
 }
 
-.emotion-5 {
+.emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -642,7 +646,7 @@ exports[`should render correctly complete state 1`] = `
   padding: 1rem;
 }
 
-.emotion-7 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -651,7 +655,7 @@ exports[`should render correctly complete state 1`] = `
   margin-right: 10px;
 }
 
-.emotion-6 {
+.emotion-7 {
   fill: #0069D0;
   font-size: 1rem;
   margin-right: 5px;
@@ -659,7 +663,7 @@ exports[`should render correctly complete state 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-5"
     tabindex="0"
   >
     <input
@@ -696,43 +700,43 @@ exports[`should render correctly complete state 1`] = `
         </div>
       </div>
     </div>
+  </div>
+  <div
+    class="emotion-12"
+  >
+    <span
+      class="emotion-6"
+    >
+      pdf
+    </span>
     <div
       class="emotion-11"
     >
-      <span
-        class="emotion-5"
-      >
-        pdf
-      </span>
       <div
         class="emotion-10"
       >
-        <div
+        <svg
+          aria-hidden="true"
+          class="emotion-7"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M18.294 6.293a1 1 0 1 1 1.414 1.414l-9 9a1 1 0 0 1-1.414 0l-5.001-5.001a1 1 0 0 1 1.414-1.414l4.294 4.294 8.293-8.293z"
+          />
+        </svg>
+        <span
+          class="emotion-8"
+        >
+          teste.pdf
+        </span>
+        <span
           class="emotion-9"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-6"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M18.294 6.293a1 1 0 1 1 1.414 1.414l-9 9a1 1 0 0 1-1.414 0l-5.001-5.001a1 1 0 0 1 1.414-1.414l4.294 4.294 8.293-8.293z"
-            />
-          </svg>
-          <span
-            class="emotion-7"
-          >
-            teste.pdf
-          </span>
-          <span
-            class="emotion-8"
-          >
-            0 Bytes
-          </span>
-        </div>
+          0 Bytes
+        </span>
       </div>
     </div>
   </div>
