@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { Omit } from '../../../util'
@@ -49,6 +49,8 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
     ...rest
   } = props
 
+  const inputWrapperRef = useRef<HTMLDivElement>()
+
   const handleItemRemove = (removeItem: Function) => (item: T) => removeItem(item)
 
   const renderItem = ({ isSelected }: MultiSelectRenderProps<T>) => (item: T) => (
@@ -96,6 +98,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
           return (
             <div>
               <SelectMultiInput<T>
+                wrapperRef={inputWrapperRef}
                 items={selectedItems}
                 {...rest}
                 placeholder={!selectedItems || selectedItems.length === 0 ? placeholder : undefined}
@@ -112,6 +115,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
                 invalid={invalid}
               />
               <SelectDownshiftMenu
+                anchorRef={inputWrapperRef}
                 downshift={downshift}
                 items={visibleItems}
                 loading={loading}

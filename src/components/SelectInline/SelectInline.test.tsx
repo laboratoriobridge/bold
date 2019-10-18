@@ -1,4 +1,5 @@
 import { fireEvent, render, wait } from '@testing-library/react'
+import { resetIdCounter } from 'downshift'
 import React from 'react'
 
 import { DefaultItemType } from '../Select/SelectSingle'
@@ -24,6 +25,8 @@ const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>)
     {...props}
   />
 )
+
+beforeEach(() => resetIdCounter())
 
 describe('SelectInline', () => {
   it('should render correctly when closed', () => {

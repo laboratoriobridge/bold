@@ -1,17 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+<body>
+  <div>
+    <div
+      id="portal-root"
+    />
+  </div>
+  <div>
+    <span
+      title="Tooltip text"
+    >
+      Testing
+    </span>
+  </div>
+</body>
+`;
+
+exports[`should render correctly 2`] = `
 .emotion-1 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
   z-index: 1400;
-  display: none;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  opacity: 0;
 }
 
 .emotion-0 {
@@ -40,7 +51,7 @@ exports[`should render correctly 1`] = `
     </span>
   </div>
   <div
-    aria-hidden="true"
+    aria-hidden="false"
     class="emotion-1"
     id="tooltip-abc"
     role="tooltip"
@@ -50,63 +61,6 @@ exports[`should render correctly 1`] = `
     >
       Tooltip text
     </div>
-  </div>
-</body>
-`;
-
-exports[`should render correctly 2`] = `
-.emotion-0 {
-  border-radius: 2px;
-  max-width: 1280px;
-  background: #3A3A47;
-  color: #FFFFFF;
-  font-size: 0.875rem;
-  font-weight: bold;
-  line-height: 1.5;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-.emotion-1 {
-  -webkit-transition: opacity 200ms ease-in-out;
-  transition: opacity 200ms ease-in-out;
-  opacity: 0;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1400;
-  display: none;
-  display: block;
-}
-
-<body>
-  <div>
-    <div
-      id="portal-root"
-    >
-      <div
-        aria-hidden="false"
-        class="emotion-1"
-        id="tooltip-abc"
-        role="tooltip"
-      >
-        <div
-          class="emotion-0"
-        >
-          Tooltip text
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <span
-      aria-describedby="tooltip-abc"
-    >
-      Testing
-    </span>
   </div>
 </body>
 `;

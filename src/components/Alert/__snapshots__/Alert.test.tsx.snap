@@ -320,9 +320,9 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
+            title="Close"
             type="button"
           >
             <span>
@@ -377,9 +377,9 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
+            title="Close"
             type="button"
           >
             <span>
@@ -434,9 +434,9 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
+            title="Close"
             type="button"
           >
             <span>
@@ -491,9 +491,9 @@ exports[`should render correctly 1`] = `
           class="emotion-4"
         >
           <button
-            aria-describedby="tooltip-abc"
             aria-label="Close"
             class="emotion-3"
+            title="Close"
             type="button"
           >
             <span>

@@ -1,6 +1,6 @@
 {
   "name": "bold-ui",
-  "version": "1.0.0-beta.18",
+  "version": "1.0.0-beta.19",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
@@ -139,7 +139,7 @@
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false,
-        "chromeRetries": 1
+        "chromeRetries": 3
       }
     }
   }
