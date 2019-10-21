@@ -4,8 +4,8 @@ import ReactGA from 'react-ga'
 import { Button, Cell, Grid, Icon, Link, Text, VFlow } from '../../lib'
 
 function Resources() {
-  const renderButtonSketch = (props: any) => <a {...props} href='/static/Bold-1.0.sketch' />
-  const renderButtonSketchData = (props: any) => <a {...props} href='/static/Sketch-Data-Suplies(PT-BR).zip' />
+  const renderButtonSketch = (props: any) => <a {...props} href='/Bold-1.0.sketch' />
+  const renderButtonSketchData = (props: any) => <a {...props} href='/Sketch-Data-Suplies(PT-BR).zip' />
 
   const handleClickSketch = () => {
     ReactGA.event({
@@ -37,7 +37,7 @@ function Resources() {
 
       <Grid>
         <Cell>
-          <img width={96} src='/static/image/diamond.svg' alt='Sketch icon' />
+          <img width={96} src='/image/diamond.svg' alt='Sketch icon' />
         </Cell>
         <Cell>
           <VFlow vSpacing={0.5}>
@@ -67,7 +67,7 @@ function Resources() {
 
       <Grid>
         <Cell>
-          <img width={96} src='/static/image/figma.svg' alt='Sketch icon' />
+          <img width={96} src='/image/figma.svg' alt='Sketch icon' />
         </Cell>
         <Cell>
           <VFlow vSpacing={0.5}>
