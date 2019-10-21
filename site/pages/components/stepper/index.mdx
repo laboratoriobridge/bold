@@ -1,0 +1,44 @@
+import { Demo } from '../../../components/Demo'
+
+# Stepper
+
+Stepper is a visual representation of user progress through a set of steps. They guide the user through a number of steps in order to complete a specified process, generally a wizard.
+
+## Best practices
+
+- Display the steps sequentially in order from left to right.
+- Allow the user to return to a previous step to review their data submission.
+- When possible, use some indication of the status of the step, like when it's complete/validated, or incomplete/invalidated.
+
+## Step status
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Completed</th>
+      <td>Presented when users achieve the minimum required to continue to the next step.</td>
+    </tr>
+    <tr>
+      <th>Active</th>
+      <td>Presented when the step is currently active and not validated yet.</td>
+    </tr>
+    <tr>
+      <th>Incompleted</th>
+      <td>Steps not reached yet.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+### Manually controlled state
+
+The state of the stepper is manually controlled via `Step` component props.
+
+<Demo src='pages/components/stepper/StepperDefault' />
+
+### Controling state with `useStepperState` hook
+
+Optionally, the hook `useStepperState` can be used to control the stepper state.
+
+<Demo src='pages/components/stepper/StepperHook' />
