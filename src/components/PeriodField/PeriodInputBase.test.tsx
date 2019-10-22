@@ -1,6 +1,9 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
+
 import { Period, PeriodInputBase } from './PeriodInputBase'
 
 const FIRST_INPUT = 0
@@ -45,12 +48,12 @@ describe('PeriodInput', () => {
     )
     const inputs = container.querySelectorAll('input')
 
-    it('should call onChange when second input is cleared', () => {
+    it('should call onChange with finalDate as undefined when second input is cleared', () => {
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '' } })
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
     })
 
-    it('should call onChange when first input is cleared', () => {
+    it('should call onChange with startDate as undefined when first input is cleared', () => {
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '' } })
       expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
     })
@@ -62,24 +65,19 @@ describe('PeriodInput', () => {
     const inputs = container.querySelectorAll('input')
 
     it('should call onChange only when a valid date is typed', () => {
-      expect(change).not.toHaveBeenCalled()
+      expect(change).toHaveBeenLastCalledWith(undefined)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/201' } })
-      expect(change).not.toHaveBeenCalled()
+      expect(change).toHaveBeenLastCalledWith(undefined)
 
-      fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2018' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-01-01'), finalDate: null } as Period)
-
-      expect(change).not.toHaveBeenCalled()
+      fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2019' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined })
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/01/201' } })
-      expect(change).not.toHaveBeenCalled()
+      expect(change).toHaveBeenLastCalledWith(undefined)
 
-      fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2018' } })
-      expect(change).toHaveBeenLastCalledWith({
-        startDate: new Date('2018-01-01'),
-        finalDate: new Date('2018-02-02'),
-      } as Period)
+      fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2019' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: new Date('2019-01-01') })
     })
   })
 
@@ -103,6 +101,17 @@ describe('PeriodInput', () => {
       const span = spans[FIRST_INPUT]
       fireEvent.click(span)
       expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+    })
+  })
+
+  describe('customization', () => {
+    it('should allow placeholder customization via locale context', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={ptBr}>
+          <PeriodInputBase />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
     })
   })
 })

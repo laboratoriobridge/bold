@@ -103,7 +103,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     const aux = { startDate: data, finalDate: period.finalDate } as Period
     onChange(aux)
     setPeriod(aux)
-    if (data !== null) {
+    if (data !== undefined) {
       secondDateFieldRef.current.focus()
     }
   }
