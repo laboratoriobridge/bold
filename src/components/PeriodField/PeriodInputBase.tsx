@@ -132,12 +132,10 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     firstDateFieldRef.current.focus()
   }
 
-  const componentIcon = icon ? icon : 'calendarOutline'
-  const defaultPlaceholder = 'dd/mm/aaaa'
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
 
   return (
-    <InputWrapper icon={componentIcon} onIconClick={handleIconClick} iconDisabled={disabled}>
+    <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
       <div className={className}>
         <div className={classes.fieldWrapper}>
           <DateInput
@@ -146,7 +144,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
             onChange={onChangeStart}
             onClear={onClearStart}
-            placeholder={startPlaceholder ? startPlaceholder : defaultPlaceholder}
+            placeholder={startPlaceholder}
             style={classes.dateField}
             value={period ? period.startDate : undefined}
           />
@@ -161,7 +159,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
             onClear={onClearFinal}
-            placeholder={finalPlaceholder ? finalPlaceholder : defaultPlaceholder}
+            placeholder={finalPlaceholder}
             style={classes.dateField}
             value={period ? period.finalDate : undefined}
           />
@@ -170,6 +168,12 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     </InputWrapper>
   )
 }
+
+PeriodInputBase.defaultProps = {
+  startPlaceholder: 'dd/mm/aaaa',
+  finalPlaceholder: 'dd/mm/aaaa',
+  icon: 'calendarOutline',
+} as Partial<PeriodInputBaseProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)

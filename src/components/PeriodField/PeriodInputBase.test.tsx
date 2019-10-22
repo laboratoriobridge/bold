@@ -68,16 +68,19 @@ describe('PeriodInput', () => {
       expect(change).toHaveBeenLastCalledWith(undefined)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/201' } })
-      expect(change).toHaveBeenLastCalledWith(undefined)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined })
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/01/201' } })
-      expect(change).toHaveBeenLastCalledWith(undefined)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: new Date('2019-01-01') })
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2019-01-01'),
+        finalDate: new Date('2019-01-01'),
+      } as Period)
     })
   })
 
