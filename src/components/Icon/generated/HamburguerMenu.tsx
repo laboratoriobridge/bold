@@ -6,10 +6,10 @@ const SvgHamburguerMenu = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='hamburguer-menu_svg__a'
-        d='M5 8c-.667 0-1-.333-1-1s.333-1 1-1h14c.667 0 1 .333 1 1s-.333 1-1 1H5zm0 10c-.667 0-1-.333-1-1s.333-1 1-1h14c.667 0 1 .332 1 1 0 .668-.333 1-1 1H5zm0-5c-.667 0-1-.334-1-1.002 0-.669.333-1.001 1-.998h14c.667 0 1 .333 1 1s-.333 1-1 1H5z'
+        d='M1 10h14c.667 0 1 .332 1 1 0 .62-.287.952-.862.995L15 12H1c-.667 0-1-.333-1-1 0-.619.287-.95.862-.995L1 10h14zm14-5c.667 0 1 .333 1 1s-.333 1-1 1H1c-.667 0-1-.334-1-1.002C0 5.329.333 4.997 1 5zM1 0h14c.667 0 1 .333 1 1 0 .619-.287.95-.862.995L15 2H1c-.667 0-1-.333-1-1C0 .381.287.05.862.005L1 0h14z'
       />
     </defs>
-    <use xlinkHref='#hamburguer-menu_svg__a' />
+    <use transform='translate(4 6)' xlinkHref='#hamburguer-menu_svg__a' />
   </svg>
 )
 
