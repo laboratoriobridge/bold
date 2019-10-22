@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react'
+import { act, fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import { LocaleContext } from '../../i18n'
@@ -25,10 +25,10 @@ it('should call onChange only when a valid date is typed', () => {
   expect(change).not.toHaveBeenCalled()
 
   fireEvent.change(input, { target: { value: '01/01/201' } })
-  expect(change).not.toHaveBeenCalled()
+  act(() => expect(change).not.toHaveBeenCalled())
 
   fireEvent.change(input, { target: { value: '01/01/2018' } })
-  expect(change).toHaveBeenLastCalledWith(new Date('2018-01-01'))
+  act(() => expect(change).toHaveBeenLastCalledWith(new Date('2018-01-01')))
 })
 
 it('should call onChange with undefined when input is cleared', () => {
@@ -36,7 +36,7 @@ it('should call onChange with undefined when input is cleared', () => {
   const { container } = render(<DateInput onChange={change} value={new Date('2018-10-30')} />)
   const input = container.querySelector('input')
 
-  fireEvent.change(input, { target: { value: '' } })
+  act(() => fireEvent.change(input, { target: { value: '' } }))
   expect(change).toHaveBeenLastCalledWith(undefined)
 })
 
@@ -46,7 +46,7 @@ it('should call onInputChange prop with original event when input value is chang
   const input = container.querySelector('input')
 
   expect(inputChange).not.toHaveBeenCalled()
-  fireEvent.change(input, { target: { value: '1' } })
+  act(() => fireEvent.change(input, { target: { value: '1' } }))
   expect(inputChange).toHaveBeenCalled()
 })
 
@@ -65,7 +65,7 @@ describe('clear', () => {
     const { container } = render(<DateInput value={new Date()} onChange={change} />)
     const clear = container.querySelector('span')
 
-    fireEvent.click(clear)
+    act(() => fireEvent.click(clear))
     expect(change).toHaveBeenLastCalledWith(undefined)
   })
 })
