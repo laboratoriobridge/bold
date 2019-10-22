@@ -6,10 +6,10 @@ const SvgFolderOutline = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='folder-outline_svg__a'
-        d='M4 22c-2 0-2-2-2-2V4c0-2 2-2 2-2h4.706c.294 0 .47.118.559.177L12 4h8c2 0 2 2 2 2v14s0 2-2 2H4zm0-2h16V6h-8c-.053 0-.205-.08-.414-.208C10.75 5.281 9 4 9 4H4v16z'
+        d='M6.706 0c.294 0 .47.118.559.177L10 2h8c2 0 2 2 2 2v14.027c-.009.24-.137 1.973-2 1.973H2c-1.862 0-1.99-1.734-2-1.973V2C0 .138 1.734.01 1.973 0h4.733zM7 2H2v16h16V4h-8c-.053 0-.205-.08-.414-.208C8.75 3.281 7 2 7 2z'
       />
     </defs>
-    <use xlinkHref='#folder-outline_svg__a' />
+    <use transform='translate(2 2)' xlinkHref='#folder-outline_svg__a' />
   </svg>
 )
 

@@ -6,10 +6,10 @@ const SvgContrast = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='contrast_svg__a'
-        d='M12 20V4c4.411 0 8 3.588 8 8s-3.589 8-8 8m0-18C6.486 2 2 6.485 2 12c0 5.514 4.486 10 10 10s10-4.486 10-10c0-5.515-4.486-10-10-10'
+        d='M10 18V2c4.411 0 8 3.588 8 8s-3.589 8-8 8m0-18C4.486 0 0 4.485 0 10c0 5.514 4.486 10 10 10s10-4.486 10-10c0-5.515-4.486-10-10-10'
       />
     </defs>
-    <use xlinkHref='#contrast_svg__a' />
+    <use transform='translate(2 2)' xlinkHref='#contrast_svg__a' />
   </svg>
 )
 

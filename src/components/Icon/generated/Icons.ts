@@ -34,8 +34,10 @@ import { default as BookmarkFilled } from './BookmarkFilled'
 import { default as BookmarkOutline } from './BookmarkOutline'
 import { default as BoxFilled } from './BoxFilled'
 import { default as BoxOutline } from './BoxOutline'
+import { default as Braille } from './Braille'
 import { default as BricksFilled } from './BricksFilled'
 import { default as BricksOutline } from './BricksOutline'
+import { default as Bridge } from './Bridge'
 import { default as CalendarFilled } from './CalendarFilled'
 import { default as CalendarOutline } from './CalendarOutline'
 import { default as CameraFilled } from './CameraFilled'
@@ -52,6 +54,7 @@ import { default as ClockOutline } from './ClockOutline'
 import { default as CloudFilled } from './CloudFilled'
 import { default as CloudOutline } from './CloudOutline'
 import { default as Code } from './Code'
+import { default as Color } from './Color'
 import { default as Contrast } from './Contrast'
 import { default as ContrastActive } from './ContrastActive'
 import { default as CopyFilled } from './CopyFilled'
@@ -60,11 +63,15 @@ import { default as CreditCardFilled } from './CreditCardFilled'
 import { default as CreditCardOutline } from './CreditCardOutline'
 import { default as DataFilled } from './DataFilled'
 import { default as DataOutline } from './DataOutline'
+import { default as Deaf } from './Deaf'
 import { default as DecreaseFont } from './DecreaseFont'
 import { default as DesktopFilled } from './DesktopFilled'
 import { default as DesktopOutline } from './DesktopOutline'
+import { default as DogLeashed } from './DogLeashed'
 import { default as Dots } from './Dots'
 import { default as Download } from './Download'
+import { default as DropFilled } from './DropFilled'
+import { default as DropOutline } from './DropOutline'
 import { default as EmailFilled } from './EmailFilled'
 import { default as EmailOutline } from './EmailOutline'
 import { default as Exchange } from './Exchange'
@@ -76,6 +83,8 @@ import { default as EyeFilled } from './EyeFilled'
 import { default as EyeHiddenFilled } from './EyeHiddenFilled'
 import { default as EyeHiddenOutline } from './EyeHiddenOutline'
 import { default as EyeOutline } from './EyeOutline'
+import { default as FaucetFilled } from './FaucetFilled'
+import { default as FaucetOutline } from './FaucetOutline'
 import { default as FileEmptyFilled } from './FileEmptyFilled'
 import { default as FileEmptyOutline } from './FileEmptyOutline'
 import { default as FileWithItensFilled } from './FileWithItensFilled'
@@ -126,16 +135,22 @@ import { default as Module } from './Module'
 import { default as MultipleUsers } from './MultipleUsers'
 import { default as NeedleFilled } from './NeedleFilled'
 import { default as NeedleOutline } from './NeedleOutline'
+import { default as NurseOutline } from './NurseOutline'
+import { default as NurseVisualizationOutline } from './NurseVisualizationOutline'
 import { default as O2Filled } from './O2Filled'
 import { default as OpenDoor } from './OpenDoor'
 import { default as Pause } from './Pause'
 import { default as PenFilled } from './PenFilled'
 import { default as PenOutline } from './PenOutline'
 import { default as PenTool } from './PenTool'
+import { default as PetFilled } from './PetFilled'
+import { default as PetOutline } from './PetOutline'
 import { default as PhoneFilled } from './PhoneFilled'
 import { default as PhoneOutline } from './PhoneOutline'
 import { default as PillFilled } from './PillFilled'
 import { default as PillOutline } from './PillOutline'
+import { default as PipeFilled } from './PipeFilled'
+import { default as PipeOutline } from './PipeOutline'
 import { default as PlayFilled } from './PlayFilled'
 import { default as PlayOutline } from './PlayOutline'
 import { default as Plus } from './Plus'
@@ -150,11 +165,14 @@ import { default as QuestionMarkOutline } from './QuestionMarkOutline'
 import { default as QuoteLeft } from './QuoteLeft'
 import { default as QuoteRight } from './QuoteRight'
 import { default as Redo } from './Redo'
+import { default as RoadFilled } from './RoadFilled'
+import { default as RoadOutline } from './RoadOutline'
 import { default as Rocket } from './Rocket'
 import { default as RulerFilled } from './RulerFilled'
 import { default as RulerOutline } from './RulerOutline'
 import { default as ShieldFilled } from './ShieldFilled'
 import { default as ShieldOutline } from './ShieldOutline'
+import { default as SignLanguage } from './SignLanguage'
 import { default as SignOut } from './SignOut'
 import { default as Sort } from './Sort'
 import { default as StarFilled } from './StarFilled'
@@ -176,6 +194,7 @@ import { default as TrashFilled } from './TrashFilled'
 import { default as TrashOutline } from './TrashOutline'
 import { default as Underline } from './Underline'
 import { default as Undo } from './Undo'
+import { default as UniversalAccess } from './UniversalAccess'
 import { default as Upload } from './Upload'
 import { default as UserBan } from './UserBan'
 import { default as UserCard } from './UserCard'
@@ -189,7 +208,10 @@ import { default as VolumeFilled } from './VolumeFilled'
 import { default as VolumeMuteFilled } from './VolumeMuteFilled'
 import { default as VolumeMuteOutline } from './VolumeMuteOutline'
 import { default as VolumeOutline } from './VolumeOutline'
+import { default as Walker } from './Walker'
+import { default as Wheelchair } from './Wheelchair'
 import { default as Wifi } from './Wifi'
+import { default as Xp } from './Xp'
 import { default as ZoomMinusFilled } from './ZoomMinusFilled'
 import { default as ZoomMinusOutline } from './ZoomMinusOutline'
 import { default as ZoomOutline } from './ZoomOutline'
@@ -233,8 +255,10 @@ export type Icons =
   | 'bookmarkOutline'
   | 'boxFilled'
   | 'boxOutline'
+  | 'braille'
   | 'bricksFilled'
   | 'bricksOutline'
+  | 'bridge'
   | 'calendarFilled'
   | 'calendarOutline'
   | 'cameraFilled'
@@ -251,6 +275,7 @@ export type Icons =
   | 'cloudFilled'
   | 'cloudOutline'
   | 'code'
+  | 'color'
   | 'contrast'
   | 'contrastActive'
   | 'copyFilled'
@@ -259,11 +284,15 @@ export type Icons =
   | 'creditCardOutline'
   | 'dataFilled'
   | 'dataOutline'
+  | 'deaf'
   | 'decreaseFont'
   | 'desktopFilled'
   | 'desktopOutline'
+  | 'dogLeashed'
   | 'dots'
   | 'download'
+  | 'dropFilled'
+  | 'dropOutline'
   | 'emailFilled'
   | 'emailOutline'
   | 'exchange'
@@ -275,6 +304,8 @@ export type Icons =
   | 'eyeHiddenFilled'
   | 'eyeHiddenOutline'
   | 'eyeOutline'
+  | 'faucetFilled'
+  | 'faucetOutline'
   | 'fileEmptyFilled'
   | 'fileEmptyOutline'
   | 'fileWithItensFilled'
@@ -325,16 +356,22 @@ export type Icons =
   | 'multipleUsers'
   | 'needleFilled'
   | 'needleOutline'
+  | 'nurseOutline'
+  | 'nurseVisualizationOutline'
   | 'o2Filled'
   | 'openDoor'
   | 'pause'
   | 'penFilled'
   | 'penOutline'
   | 'penTool'
+  | 'petFilled'
+  | 'petOutline'
   | 'phoneFilled'
   | 'phoneOutline'
   | 'pillFilled'
   | 'pillOutline'
+  | 'pipeFilled'
+  | 'pipeOutline'
   | 'playFilled'
   | 'playOutline'
   | 'plus'
@@ -349,11 +386,14 @@ export type Icons =
   | 'quoteLeft'
   | 'quoteRight'
   | 'redo'
+  | 'roadFilled'
+  | 'roadOutline'
   | 'rocket'
   | 'rulerFilled'
   | 'rulerOutline'
   | 'shieldFilled'
   | 'shieldOutline'
+  | 'signLanguage'
   | 'signOut'
   | 'sort'
   | 'starFilled'
@@ -375,6 +415,7 @@ export type Icons =
   | 'trashOutline'
   | 'underline'
   | 'undo'
+  | 'universalAccess'
   | 'upload'
   | 'userBan'
   | 'userCard'
@@ -388,7 +429,10 @@ export type Icons =
   | 'volumeMuteFilled'
   | 'volumeMuteOutline'
   | 'volumeOutline'
+  | 'walker'
+  | 'wheelchair'
   | 'wifi'
+  | 'xp'
   | 'zoomMinusFilled'
   | 'zoomMinusOutline'
   | 'zoomOutline'
@@ -434,8 +478,10 @@ export const IconMap: {
   bookmarkOutline: BookmarkOutline,
   boxFilled: BoxFilled,
   boxOutline: BoxOutline,
+  braille: Braille,
   bricksFilled: BricksFilled,
   bricksOutline: BricksOutline,
+  bridge: Bridge,
   calendarFilled: CalendarFilled,
   calendarOutline: CalendarOutline,
   cameraFilled: CameraFilled,
@@ -452,6 +498,7 @@ export const IconMap: {
   cloudFilled: CloudFilled,
   cloudOutline: CloudOutline,
   code: Code,
+  color: Color,
   contrast: Contrast,
   contrastActive: ContrastActive,
   copyFilled: CopyFilled,
@@ -460,11 +507,15 @@ export const IconMap: {
   creditCardOutline: CreditCardOutline,
   dataFilled: DataFilled,
   dataOutline: DataOutline,
+  deaf: Deaf,
   decreaseFont: DecreaseFont,
   desktopFilled: DesktopFilled,
   desktopOutline: DesktopOutline,
+  dogLeashed: DogLeashed,
   dots: Dots,
   download: Download,
+  dropFilled: DropFilled,
+  dropOutline: DropOutline,
   emailFilled: EmailFilled,
   emailOutline: EmailOutline,
   exchange: Exchange,
@@ -476,6 +527,8 @@ export const IconMap: {
   eyeHiddenFilled: EyeHiddenFilled,
   eyeHiddenOutline: EyeHiddenOutline,
   eyeOutline: EyeOutline,
+  faucetFilled: FaucetFilled,
+  faucetOutline: FaucetOutline,
   fileEmptyFilled: FileEmptyFilled,
   fileEmptyOutline: FileEmptyOutline,
   fileWithItensFilled: FileWithItensFilled,
@@ -526,16 +579,22 @@ export const IconMap: {
   multipleUsers: MultipleUsers,
   needleFilled: NeedleFilled,
   needleOutline: NeedleOutline,
+  nurseOutline: NurseOutline,
+  nurseVisualizationOutline: NurseVisualizationOutline,
   o2Filled: O2Filled,
   openDoor: OpenDoor,
   pause: Pause,
   penFilled: PenFilled,
   penOutline: PenOutline,
   penTool: PenTool,
+  petFilled: PetFilled,
+  petOutline: PetOutline,
   phoneFilled: PhoneFilled,
   phoneOutline: PhoneOutline,
   pillFilled: PillFilled,
   pillOutline: PillOutline,
+  pipeFilled: PipeFilled,
+  pipeOutline: PipeOutline,
   playFilled: PlayFilled,
   playOutline: PlayOutline,
   plus: Plus,
@@ -550,11 +609,14 @@ export const IconMap: {
   quoteLeft: QuoteLeft,
   quoteRight: QuoteRight,
   redo: Redo,
+  roadFilled: RoadFilled,
+  roadOutline: RoadOutline,
   rocket: Rocket,
   rulerFilled: RulerFilled,
   rulerOutline: RulerOutline,
   shieldFilled: ShieldFilled,
   shieldOutline: ShieldOutline,
+  signLanguage: SignLanguage,
   signOut: SignOut,
   sort: Sort,
   starFilled: StarFilled,
@@ -576,6 +638,7 @@ export const IconMap: {
   trashOutline: TrashOutline,
   underline: Underline,
   undo: Undo,
+  universalAccess: UniversalAccess,
   upload: Upload,
   userBan: UserBan,
   userCard: UserCard,
@@ -589,7 +652,10 @@ export const IconMap: {
   volumeMuteFilled: VolumeMuteFilled,
   volumeMuteOutline: VolumeMuteOutline,
   volumeOutline: VolumeOutline,
+  walker: Walker,
+  wheelchair: Wheelchair,
   wifi: Wifi,
+  xp: Xp,
   zoomMinusFilled: ZoomMinusFilled,
   zoomMinusOutline: ZoomMinusOutline,
   zoomOutline: ZoomOutline,
