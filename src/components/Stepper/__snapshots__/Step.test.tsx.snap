@@ -1,0 +1,447 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should accept "style" prop 1`] = `
+.emotion-0 {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #D3D4DD;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #D3D4DD;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-2 {
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-3 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+  color: red;
+}
+
+<div>
+  <span
+    class="emotion-3"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      Step red
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should allow override of components 1`] = `
+.emotion-4 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #D3D4DD;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-2 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #D3D4DD;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  fill: #FFFFFF;
+  width: 1rem;
+  height: 1rem;
+}
+
+.emotion-3 {
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-4"
+    id="root"
+  >
+    <span
+      class="emotion-0"
+      id="connector"
+    />
+    <span
+      class="emotion-2"
+      id="icon-container"
+    >
+      <span
+        class="emotion-1"
+        id="icon"
+      />
+    </span>
+    <span
+      class="emotion-3"
+      id="label"
+    >
+      Step with overrides
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is active 1`] = `
+.emotion-3 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #0069D0;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-2 {
+  font-weight: bold;
+  color: #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-3"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      Active step
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is completed 1`] = `
+.emotion-4 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.emotion-1 {
+  fill: #FFFFFF;
+  width: 1rem;
+  height: 1rem;
+}
+
+.emotion-3 {
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #0069D0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-2 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #0069D0;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  box-shadow: 0 0 0 4px #0069D0;
+}
+
+<div>
+  <span
+    class="emotion-4"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-2"
+    >
+      <svg
+        class="emotion-1"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M18.294 6.293a1 1 0 1 1 1.414 1.414l-9 9a1 1 0 0 1-1.414 0l-5.001-5.001a1 1 0 0 1 1.414-1.414l4.294 4.294 8.293-8.293z"
+        />
+      </svg>
+    </span>
+    <span
+      class="emotion-3"
+    >
+      Completed step
+    </span>
+  </span>
+</div>
+`;
+
+exports[`should render correctly when status is incompleted 1`] = `
+.emotion-3 {
+  position: relative;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+.emotion-0 {
+  position: absolute;
+  top: 0.5rem;
+  left: calc(-50% + 0.5rem);
+  right: calc(50% + 0.5rem);
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #D3D4DD;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-1 {
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #D3D4DD;
+  text-align: center;
+  margin-bottom: 0.75rem;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.emotion-2 {
+  font-weight: bold;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+<div>
+  <span
+    class="emotion-3"
+  >
+    <span
+      class="emotion-0"
+    />
+    <span
+      class="emotion-1"
+    />
+    <span
+      class="emotion-2"
+    >
+      Incompleted step
+    </span>
+  </span>
+</div>
+`;
