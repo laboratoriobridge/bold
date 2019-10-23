@@ -8,8 +8,8 @@ import { Icon, Icons } from '../Icon'
 import { InputWrapper } from '../TextField/InputWrapper'
 
 export interface Period {
-  startDate: Date
-  finalDate: Date
+  startDate?: Date
+  finalDate?: Date
 }
 
 export interface PeriodInputBaseProps {
@@ -89,11 +89,11 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const [period, setPeriod] = useState(value ? value : ({} as Period))
+  const [period, setPeriod] = useState(value)
 
   useEffect(() => {
     onChange && onChange(value)
-    setPeriod(value)
+    setPeriod(value ? value : ({ startDate: undefined, finalDate: undefined } as Period))
   }, [value])
 
   const { classes, css } = useStyles(createStyles, disabled)
@@ -101,7 +101,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
 
   const onChangeStart = (data: Date) => {
     const aux = { startDate: data, finalDate: period.finalDate } as Period
-    onChange(aux)
+    onChange && onChange(aux)
     setPeriod(aux)
     if (data !== undefined) {
       secondDateFieldRef.current.focus()
@@ -110,20 +110,20 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
 
   const onChangeFinal = (data: Date) => {
     const aux = { startDate: period.startDate, finalDate: data } as Period
-    onChange(aux)
+    onChange && onChange(aux)
     setPeriod(aux)
   }
 
   const onClearStart = () => {
     const aux = { startDate: undefined, finalDate: undefined } as Period
-    onChange(aux)
+    onChange && onChange(aux)
     setPeriod(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
     const aux = { startDate: period.startDate, finalDate: undefined } as Period
-    onChange(aux)
+    onChange && onChange(aux)
     setPeriod(aux)
     secondDateFieldRef.current.focus()
   }

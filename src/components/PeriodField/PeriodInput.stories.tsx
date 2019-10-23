@@ -43,6 +43,6 @@ storiesOf('Components|PeriodField', module)
       label={text('label', 'Text label')}
       onChange={action('changed')}
       required={boolean('required', true)}
-      value={period}
+      // value={period}
     />
   ))

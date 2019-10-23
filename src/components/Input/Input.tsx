@@ -5,9 +5,13 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
 }
 
 export function Input(props: InputProps) {
-  const { inputRef, ...rest } = props
+  const { inputRef, onChange, ...rest } = props
 
-  return <input ref={inputRef} {...rest} />
+  const a = e => {
+    onChange(e)
+  }
+
+  return <input ref={inputRef} onChange={a} {...rest} />
 }
 
 Input.defaultProps = {} as Partial<InputProps>

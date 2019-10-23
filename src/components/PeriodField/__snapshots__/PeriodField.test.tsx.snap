@@ -390,7 +390,7 @@ exports[`PeriodField render should render correctly 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-51 {
+.emotion-52 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -398,7 +398,7 @@ exports[`PeriodField render should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-51:hover {
+.emotion-52:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -912,7 +912,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-51"
+                      class="emotion-30"
                       role="button"
                     >
                       22
@@ -923,7 +923,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-52"
                       role="button"
                     >
                       23
@@ -1342,7 +1342,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-51 {
+.emotion-52 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1350,7 +1350,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   font-weight: bold;
 }
 
-.emotion-51:hover {
+.emotion-52:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1971,7 +1971,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-51"
+                      class="emotion-30"
                       role="button"
                     >
                       22
@@ -1982,7 +1982,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-52"
                       role="button"
                     >
                       23
@@ -2467,7 +2467,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-51 {
+.emotion-52 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -2475,7 +2475,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   font-weight: bold;
 }
 
-.emotion-51:hover {
+.emotion-52:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -3029,7 +3029,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-51"
+                      class="emotion-30"
                       role="button"
                     >
                       22
@@ -3040,7 +3040,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-52"
                       role="button"
                     >
                       23
