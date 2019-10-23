@@ -3,6 +3,7 @@ import React, { useRef } from 'react'
 import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
+import { composeRefs } from '../../../util/react'
 import { FormControl } from '../../FormControl'
 import { TextInput, TextInputProps } from '../../TextField'
 
@@ -48,10 +49,11 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     style,
     label,
     error,
+    inputRef,
     ...rest
   } = props
 
-  const inputRef = useRef<HTMLInputElement>()
+  const internalInputRef = useRef<HTMLInputElement>()
 
   const handleClear = (downshift: SelectDownshiftRenderProps<T>) => (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -98,7 +100,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
               <div>
                 <TextInput
                   icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-                  inputRef={inputRef}
+                  inputRef={composeRefs(internalInputRef, inputRef) as any}
                   {...rest}
                   onBlur={handleInputBlur(downshift)}
                   onFocus={handleInputFocus(downshift)}
@@ -112,7 +114,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
                 />
               </div>
               <SelectDownshiftMenu
-                anchorRef={inputRef}
+                anchorRef={internalInputRef}
                 downshift={downshift}
                 items={visibleItems}
                 loading={loading}
