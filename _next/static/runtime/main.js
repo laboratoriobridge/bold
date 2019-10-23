@@ -6358,7 +6358,7 @@ function initializeBuildWatcher() {
 function createContainer(prefix) {
   var container = document.createElement('div');
   container.id = prefix + "container";
-  container.innerHTML = "\n    <button id=\"" + prefix + "close\" title=\"Hide indicator for session\">\n      <span>\xD7</span>\n    </button>\n    <a href=\"https://nextjs.org/docs#automatic-prerender-indicator\" target=\"_blank\">\n      <div id=\"" + prefix + "icon-wrapper\">\n          <svg width=\"15\" height=\"20\" viewBox=\"0 0 60 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M36 3L30.74 41H8L36 3Z\" fill=\"black\"/>\n          <path d=\"M25 77L30.26 39H53L25 77Z\" fill=\"black\"/>\n          <path d=\"M13.5 33.5L53 39L47.5 46.5L7 41.25L13.5 33.5Z\" fill=\"black\"/>\n          </svg>\n          Prerendered Page\n      </div>\n    </a>\n  ";
+  container.innerHTML = "\n    <button id=\"" + prefix + "close\" title=\"Hide indicator for session\">\n      <span>\xD7</span>\n    </button>\n    <a href=\"https://nextjs.org/docs#automatic-static-optimization-indicator\" target=\"_blank\">\n      <div id=\"" + prefix + "icon-wrapper\">\n          <svg width=\"15\" height=\"20\" viewBox=\"0 0 60 80\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n          <path d=\"M36 3L30.74 41H8L36 3Z\" fill=\"black\"/>\n          <path d=\"M25 77L30.26 39H53L25 77Z\" fill=\"black\"/>\n          <path d=\"M13.5 33.5L53 39L47.5 46.5L7 41.25L13.5 33.5Z\" fill=\"black\"/>\n          </svg>\n          Prerendered Page\n      </div>\n    </a>\n  ";
   return container;
 }
 
@@ -6622,7 +6622,7 @@ var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-co
 
 var _promise = _interopRequireDefault(__webpack_require__(/*! @babel/runtime-corejs2/core-js/promise */ "../node_modules/@babel/runtime-corejs2/core-js/promise.js"));
 
-var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
+var _react = _interopRequireDefault(__webpack_require__(/*! react */ "../node_modules/react/index.js"));
 
 var _reactDom = _interopRequireDefault(__webpack_require__(/*! react-dom */ "../node_modules/react-dom/index.js"));
 
@@ -6663,7 +6663,7 @@ if (!window.Promise) {
 
 var data = JSON.parse(document.getElementById('__NEXT_DATA__').textContent);
 window.__NEXT_DATA__ = data;
-var version = "9.0.6";
+var version = "9.1.1";
 exports.version = version;
 var props = data.props,
     err = data.err,
@@ -6690,9 +6690,9 @@ var asPath = (0, _utils.getURL)();
 var pageLoader = new _pageLoader["default"](buildId, prefix);
 
 var register = function register(_ref) {
-  var _ref6 = _slicedToArray(_ref, 2),
-      r = _ref6[0],
-      f = _ref6[1];
+  var _ref7 = _slicedToArray(_ref, 2),
+      r = _ref7[0],
+      f = _ref7[1];
 
   return pageLoader.registerPage(r, f);
 };
@@ -6712,7 +6712,7 @@ exports.router = router;
 var ErrorComponent;
 exports.ErrorComponent = ErrorComponent;
 var Component;
-var App;
+var App, onPerfEntry;
 
 var Container =
 /*#__PURE__*/
@@ -6785,29 +6785,46 @@ function () {
   var _ref2 = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
   _regeneratorRuntime.mark(function _callee(_temp) {
-    var _ref7, passedWebpackHMR, initialErr, _require, isValidElementType, renderCtx;
+    var _ref8, passedWebpackHMR, _ref9, app, mod, initialErr, _require, isValidElementType, renderCtx;
 
     return _regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _ref7 = _temp === void 0 ? {} : _temp, passedWebpackHMR = _ref7.webpackHMR; // This makes sure this specific lines are removed in production
+            _ref8 = _temp === void 0 ? {} : _temp, passedWebpackHMR = _ref8.webpackHMR; // This makes sure this specific lines are removed in production
 
             if (true) {
               webpackHMR = passedWebpackHMR;
             }
 
             _context.next = 4;
-            return pageLoader.loadPage('/_app');
+            return pageLoader.loadPageScript('/_app');
 
           case 4:
-            App = _context.sent;
+            _ref9 = _context.sent;
+            app = _ref9.page;
+            mod = _ref9.mod;
+            App = app;
+
+            if (mod && mod.unstable_onPerformanceData) {
+              onPerfEntry = function onPerfEntry(_ref3) {
+                var name = _ref3.name,
+                    startTime = _ref3.startTime,
+                    value = _ref3.value;
+                mod.unstable_onPerformanceData({
+                  name: name,
+                  startTime: startTime,
+                  value: value
+                });
+              };
+            }
+
             initialErr = err;
-            _context.prev = 6;
-            _context.next = 9;
+            _context.prev = 10;
+            _context.next = 13;
             return pageLoader.loadPage(page);
 
-          case 9:
+          case 13:
             Component = _context.sent;
 
             if (false) {}
@@ -6815,32 +6832,32 @@ function () {
             _require = __webpack_require__(/*! react-is */ "../node_modules/next/node_modules/react-is/index.js"), isValidElementType = _require.isValidElementType;
 
             if (isValidElementType(Component)) {
-              _context.next = 14;
+              _context.next = 18;
               break;
             }
 
             throw new Error("The default export is not a React Component in page: \"" + page + "\"");
 
-          case 14:
-            _context.next = 19;
+          case 18:
+            _context.next = 23;
             break;
 
-          case 16:
-            _context.prev = 16;
-            _context.t0 = _context["catch"](6);
+          case 20:
+            _context.prev = 20;
+            _context.t0 = _context["catch"](10);
             // This catches errors like throwing in the top level of a module
             initialErr = _context.t0;
 
-          case 19:
+          case 23:
             if (!window.__NEXT_PRELOADREADY) {
-              _context.next = 22;
+              _context.next = 26;
               break;
             }
 
-            _context.next = 22;
+            _context.next = 26;
             return window.__NEXT_PRELOADREADY(dynamicIds);
 
-          case 22:
+          case 26:
             exports.router = router = (0, _router.createRouter)(page, query, asPath, {
               initialProps: props,
               pageLoader: pageLoader,
@@ -6848,10 +6865,10 @@ function () {
               Component: Component,
               wrapApp: wrapApp,
               err: initialErr,
-              subscription: function subscription(_ref3, App) {
-                var Component = _ref3.Component,
-                    props = _ref3.props,
-                    err = _ref3.err;
+              subscription: function subscription(_ref4, App) {
+                var Component = _ref4.Component,
+                    props = _ref4.props,
+                    err = _ref4.err;
                 render({
                   App: App,
                   Component: Component,
@@ -6871,12 +6888,12 @@ function () {
             render(renderCtx);
             return _context.abrupt("return", emitter);
 
-          case 26:
+          case 30:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[6, 16]]);
+    }, _callee, null, [[10, 20]]);
   }));
 
   return function (_x) {
@@ -7036,6 +7053,10 @@ function renderReactElement(reactEl, domEl) {
   } else {
     _reactDom["default"].render(reactEl, domEl, markRenderComplete);
   }
+
+  if (onPerfEntry) {
+    performance.getEntriesByType('paint').forEach(onPerfEntry);
+  }
 }
 
 function markHydrateComplete() {
@@ -7044,6 +7065,12 @@ function markHydrateComplete() {
 
   performance.measure('Next.js-before-hydration', 'navigationStart', 'beforeRender');
   performance.measure('Next.js-hydration', 'beforeRender', 'afterHydrate');
+
+  if (onPerfEntry) {
+    performance.getEntriesByName('Next.js-hydration').forEach(onPerfEntry);
+    performance.getEntriesByName('beforeRender').forEach(onPerfEntry);
+  }
+
   clearMarks();
 }
 
@@ -7059,6 +7086,12 @@ function markRenderComplete() {
 
   performance.measure('Next.js-route-change-to-render', navStartEntries[0].name, 'beforeRender');
   performance.measure('Next.js-render', 'beforeRender', 'afterRender');
+
+  if (onPerfEntry) {
+    performance.getEntriesByName('Next.js-render').forEach(onPerfEntry);
+    performance.getEntriesByName('Next.js-route-change-to-render').forEach(onPerfEntry);
+  }
+
   clearMarks();
 }
 
@@ -7067,15 +7100,13 @@ function clearMarks() {
   ['beforeRender', 'afterHydrate', 'afterRender', 'routeChange'].forEach(function (mark) {
     return performance.clearMarks(mark);
   });
-  /*
-  * TODO: uncomment the following line when we have a way to
-  * expose this to user code.
-  */
-  // performance.clearMeasures()
+  ['Next.js-before-hydration', 'Next.js-hydration', 'Next.js-route-change-to-render', 'Next.js-render'].forEach(function (measure) {
+    return performance.clearMeasures(measure);
+  });
 }
 
-function AppContainer(_ref4) {
-  var children = _ref4.children;
+function AppContainer(_ref5) {
+  var children = _ref5.children;
   return _react["default"].createElement(Container, {
     fn: function fn(error) {
       return renderError({
@@ -7085,15 +7116,13 @@ function AppContainer(_ref4) {
         return console.error('Error rendering page: ', err);
       });
     }
-  }, _react["default"].createElement(_react.Suspense, {
-    fallback: _react["default"].createElement("div", null, "Loading...")
   }, _react["default"].createElement(_routerContext.RouterContext.Provider, {
     value: (0, _router.makePublicRouterInstance)(router)
   }, _react["default"].createElement(_dataManagerContext.DataManagerContext.Provider, {
     value: dataManager
   }, _react["default"].createElement(_headManagerContext.HeadManagerContext.Provider, {
     value: headManager.updateHead
-  }, children)))));
+  }, children))));
 }
 
 var wrapApp = function wrapApp(App) {
@@ -7114,14 +7143,14 @@ function doRender(_x4) {
 function _doRender() {
   _doRender = (0, _asyncToGenerator2["default"])(
   /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee4(_ref5) {
+  _regeneratorRuntime.mark(function _callee4(_ref6) {
     var App, Component, props, err, _router2, pathname, _query, _asPath, AppTree, appCtx, appProps;
 
     return _regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
         switch (_context4.prev = _context4.next) {
           case 0:
-            App = _ref5.App, Component = _ref5.Component, props = _ref5.props, err = _ref5.err; // Usual getInitialProps fetching is handled in next/router
+            App = _ref6.App, Component = _ref6.Component, props = _ref6.props, err = _ref6.err; // Usual getInitialProps fetching is handled in next/router
             // this is for when ErrorComponent gets replaced by Component by HMR
 
             if (!(!props && Component && Component !== ErrorComponent && lastAppProps.Component === ErrorComponent)) {
@@ -7238,8 +7267,17 @@ window.next = next;
   if ( true && // disable by default in electron
   !(typeof process !== 'undefined' && 'electron' in process.versions)) {
     (0, _prerenderIndicator["default"])();
-  }
+  } // This is the fallback helper that removes Next.js' no-FOUC styles when
+  // CSS mode is enabled. This only really activates if you haven't created
+  // _any_ styles in your application yet.
 
+
+  ;
+  (window.requestAnimationFrame || setTimeout)(function () {
+    for (var x = document.querySelectorAll('[data-next-hide-fouc]'), i = x.length; i--;) {
+      x[i].parentNode.removeChild(x[i]);
+    }
+  });
   var lastScroll;
   emitter.on('before-reactdom-render', function (_ref) {
     var Component = _ref.Component,
@@ -7362,13 +7400,21 @@ function () {
   }, {
     key: "loadPage",
     value: function loadPage(route) {
+      return this.loadPageScript(route).then(function (v) {
+        return v.page;
+      });
+    }
+  }, {
+    key: "loadPageScript",
+    value: function loadPageScript(route) {
       var _this3 = this;
 
       route = this.normalizeRoute(route);
       return new _promise["default"](function (resolve, reject) {
         var fire = function fire(_ref) {
           var error = _ref.error,
-              page = _ref.page;
+              page = _ref.page,
+              mod = _ref.mod;
 
           _this3.pageRegisterEvents.off(route, fire);
 
@@ -7377,7 +7423,10 @@ function () {
           if (error) {
             reject(error);
           } else {
-            resolve(page);
+            resolve({
+              page: page,
+              mod: mod
+            });
           }
         }; // If there's a cached version of the page, let's use it.
 
@@ -7386,8 +7435,12 @@ function () {
 
         if (cachedPage) {
           var error = cachedPage.error,
-              page = cachedPage.page;
-          error ? reject(error) : resolve(page);
+              page = cachedPage.page,
+              mod = cachedPage.mod;
+          error ? reject(error) : resolve({
+            page: page,
+            mod: mod
+          });
           return;
         } // Register a listener to get the page
 
@@ -7871,7 +7924,9 @@ function withRouter(ComposedComponent) {
   WithRouteWrapper.contextTypes = {
     router: _propTypes["default"].object
   };
-  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps;
+  WithRouteWrapper.getInitialProps = ComposedComponent.getInitialProps // This is needed to allow checking for custom getInitialProps in _app
+  ;
+  WithRouteWrapper.origGetInitialProps = ComposedComponent.origGetInitialProps;
 
   if (true) {
     var name = ComposedComponent.displayName || ComposedComponent.name || 'Unknown';
@@ -8801,7 +8856,8 @@ function () {
       var _getInitialProps = _asyncToGenerator(
       /*#__PURE__*/
       _regeneratorRuntime.mark(function _callee2(Component, ctx) {
-        var cancelled, cancel, App, props, status, url, AppTree, err;
+        var cancelled, cancel, App, props, status, _url_1$parse4, pathname, AppTree, err;
+
         return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -8821,31 +8877,19 @@ function () {
                   break;
                 }
 
-                url = ctx.asPath ? ctx.asPath : url_1.format({
-                  pathname: ctx.pathname,
-                  query: ctx.query
-                });
+                _url_1$parse4 = url_1.parse(ctx.asPath || ctx.pathname), pathname = _url_1$parse4.pathname;
                 _context2.next = 8;
-                return fetch(url, {
-                  headers: {
-                    'content-type': 'application/json'
-                  }
-                }).then(function (res) {
+                return fetch("/_next/data".concat(pathname, ".json")).then(function (res) {
                   if (!res.ok) {
                     status = res.status;
                     throw new Error('failed to load prerender data');
                   }
 
                   return res.json();
-                }).then(function (pageProps) {
-                  return {
-                    pageProps: pageProps
-                  };
                 })["catch"](function (err) {
-                  return {
-                    error: err.message,
-                    status: status
-                  };
+                  console.error("Failed to load data", status, err);
+                  window.location.href = pathname;
+                  return new _Promise(function () {});
                 });
 
               case 8:
@@ -9205,7 +9249,7 @@ function _loadGetInitialProps() {
           case 15:
             if (true) {
               if (_Object$keys(props).length === 0 && !ctx.ctx) {
-                console.warn("".concat(getDisplayName(Component), " returned an empty object from `getInitialProps`. This de-optimizes and prevents automatic prerendering. https://err.sh/zeit/next.js/empty-object-getInitialProps"));
+                console.warn("".concat(getDisplayName(Component), " returned an empty object from `getInitialProps`. This de-optimizes and prevents automatic static optimization. https://err.sh/zeit/next.js/empty-object-getInitialProps"));
               }
             }
 
@@ -10097,12 +10141,12 @@ module.exports = function(module) {
 
 /***/ "../node_modules/object-assign/index.js":
 /*!****************************************************************************************************!*\
-  !*** delegated ../node_modules/object-assign/index.js from dll-reference dll_ea6db66f8757af76a899 ***!
+  !*** delegated ../node_modules/object-assign/index.js from dll-reference dll_b0eba2634470e20cd16b ***!
   \****************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899 */ "dll-reference dll_ea6db66f8757af76a899"))("../node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0eba2634470e20cd16b */ "dll-reference dll_b0eba2634470e20cd16b"))("../node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -10303,12 +10347,12 @@ process.umask = function() { return 0; };
 
 /***/ "../node_modules/prop-types/checkPropTypes.js":
 /*!**********************************************************************************************************!*\
-  !*** delegated ../node_modules/prop-types/checkPropTypes.js from dll-reference dll_ea6db66f8757af76a899 ***!
+  !*** delegated ../node_modules/prop-types/checkPropTypes.js from dll-reference dll_b0eba2634470e20cd16b ***!
   \**********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899 */ "dll-reference dll_ea6db66f8757af76a899"))("../node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0eba2634470e20cd16b */ "dll-reference dll_b0eba2634470e20cd16b"))("../node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -10943,12 +10987,12 @@ if (true) {
 
 /***/ "../node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!********************************************************************************************************************!*\
-  !*** delegated ../node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ea6db66f8757af76a899 ***!
+  !*** delegated ../node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_b0eba2634470e20cd16b ***!
   \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899 */ "dll-reference dll_ea6db66f8757af76a899"))("../node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0eba2634470e20cd16b */ "dll-reference dll_b0eba2634470e20cd16b"))("../node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -11163,12 +11207,12 @@ exports.encode = exports.stringify = __webpack_require__(/*! ./encode */ "../nod
 
 /***/ "../node_modules/react-dom/index.js":
 /*!************************************************************************************************!*\
-  !*** delegated ../node_modules/react-dom/index.js from dll-reference dll_ea6db66f8757af76a899 ***!
+  !*** delegated ../node_modules/react-dom/index.js from dll-reference dll_b0eba2634470e20cd16b ***!
   \************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899 */ "dll-reference dll_ea6db66f8757af76a899"))("../node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0eba2634470e20cd16b */ "dll-reference dll_b0eba2634470e20cd16b"))("../node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -11192,7 +11236,7 @@ module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/** @license React v16.9.0
+/** @license React v16.10.2
  * react-is.development.js
  *
  * Copyright (c) Facebook, Inc. and its affiliates.
@@ -11214,16 +11258,15 @@ Object.defineProperty(exports, '__esModule', { value: true });
 // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
 // nor polyfill, then a plain number is used for performance.
 var hasSymbol = typeof Symbol === 'function' && Symbol.for;
-
 var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
 var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
 var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
 var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
 var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
 var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
-var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
-// TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
 // (unstable) APIs that have been removed. Can we remove the symbols?
+
 var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
 var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
 var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
@@ -11233,11 +11276,11 @@ var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
 var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
 var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
 var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
 
 function isValidElementType(type) {
-  return typeof type === 'string' || typeof type === 'function' ||
-  // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
-  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE);
+  return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+  type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE);
 }
 
 /**
@@ -11253,12 +11296,11 @@ function isValidElementType(type) {
  * paths. Removing the logging code for production environments will keep the
  * same logic and follow the same code paths.
  */
-
-var lowPriorityWarning = function () {};
+var lowPriorityWarningWithoutStack = function () {};
 
 {
   var printWarning = function (format) {
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       args[_key - 1] = arguments[_key];
     }
 
@@ -11266,9 +11308,11 @@ var lowPriorityWarning = function () {};
     var message = 'Warning: ' + format.replace(/%s/g, function () {
       return args[argIndex++];
     });
+
     if (typeof console !== 'undefined') {
       console.warn(message);
     }
+
     try {
       // --- Welcome to debugging React ---
       // This error was thrown as a convenience so that you can use this stack
@@ -11277,25 +11321,27 @@ var lowPriorityWarning = function () {};
     } catch (x) {}
   };
 
-  lowPriorityWarning = function (condition, format) {
+  lowPriorityWarningWithoutStack = function (condition, format) {
     if (format === undefined) {
-      throw new Error('`lowPriorityWarning(condition, format, ...args)` requires a warning ' + 'message argument');
+      throw new Error('`lowPriorityWarningWithoutStack(condition, format, ...args)` requires a warning ' + 'message argument');
     }
+
     if (!condition) {
-      for (var _len2 = arguments.length, args = Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
+      for (var _len2 = arguments.length, args = new Array(_len2 > 2 ? _len2 - 2 : 0), _key2 = 2; _key2 < _len2; _key2++) {
         args[_key2 - 2] = arguments[_key2];
       }
 
-      printWarning.apply(undefined, [format].concat(args));
+      printWarning.apply(void 0, [format].concat(args));
     }
   };
 }
 
-var lowPriorityWarning$1 = lowPriorityWarning;
+var lowPriorityWarningWithoutStack$1 = lowPriorityWarningWithoutStack;
 
 function typeOf(object) {
   if (typeof object === 'object' && object !== null) {
     var $$typeof = object.$$typeof;
+
     switch ($$typeof) {
       case REACT_ELEMENT_TYPE:
         var type = object.type;
@@ -11308,6 +11354,7 @@ function typeOf(object) {
           case REACT_STRICT_MODE_TYPE:
           case REACT_SUSPENSE_TYPE:
             return type;
+
           default:
             var $$typeofType = type && type.$$typeof;
 
@@ -11316,10 +11363,13 @@ function typeOf(object) {
               case REACT_FORWARD_REF_TYPE:
               case REACT_PROVIDER_TYPE:
                 return $$typeofType;
+
               default:
                 return $$typeof;
             }
+
         }
+
       case REACT_LAZY_TYPE:
       case REACT_MEMO_TYPE:
       case REACT_PORTAL_TYPE:
@@ -11328,9 +11378,8 @@ function typeOf(object) {
   }
 
   return undefined;
-}
+} // AsyncMode is deprecated along with isAsyncMode
 
-// AsyncMode is deprecated along with isAsyncMode
 var AsyncMode = REACT_ASYNC_MODE_TYPE;
 var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
 var ContextConsumer = REACT_CONTEXT_TYPE;
@@ -11344,17 +11393,16 @@ var Portal = REACT_PORTAL_TYPE;
 var Profiler = REACT_PROFILER_TYPE;
 var StrictMode = REACT_STRICT_MODE_TYPE;
 var Suspense = REACT_SUSPENSE_TYPE;
+var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
 
-var hasWarnedAboutDeprecatedIsAsyncMode = false;
-
-// AsyncMode should be deprecated
 function isAsyncMode(object) {
   {
     if (!hasWarnedAboutDeprecatedIsAsyncMode) {
       hasWarnedAboutDeprecatedIsAsyncMode = true;
-      lowPriorityWarning$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+      lowPriorityWarningWithoutStack$1(false, 'The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
     }
   }
+
   return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
 }
 function isConcurrentMode(object) {
@@ -11447,12 +11495,12 @@ if (false) {} else {
 
 /***/ "../node_modules/react/index.js":
 /*!********************************************************************************************!*\
-  !*** delegated ../node_modules/react/index.js from dll-reference dll_ea6db66f8757af76a899 ***!
+  !*** delegated ../node_modules/react/index.js from dll-reference dll_b0eba2634470e20cd16b ***!
   \********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ea6db66f8757af76a899 */ "dll-reference dll_ea6db66f8757af76a899"))("../node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_b0eba2634470e20cd16b */ "dll-reference dll_b0eba2634470e20cd16b"))("../node_modules/react/index.js");
 
 /***/ }),
 
@@ -13023,14 +13071,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ "dll-reference dll_ea6db66f8757af76a899":
+/***/ "dll-reference dll_b0eba2634470e20cd16b":
 /*!*******************************************!*\
-  !*** external "dll_ea6db66f8757af76a899" ***!
+  !*** external "dll_b0eba2634470e20cd16b" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_ea6db66f8757af76a899;
+module.exports = dll_b0eba2634470e20cd16b;
 
 /***/ })
 

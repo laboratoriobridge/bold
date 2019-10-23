@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[50],{"/EgP":function(n,e,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/switch/SwitchDefault.demo",function(){return t("nIeD")}])},nIeD:function(n,e,t){"use strict";t.r(e);var c=t("mXGw"),w=t.n(c),i=t("c2a7"),o=w.a.createElement;e.default=function(){return o(i.Switch,{name:"active"})}}},[["/EgP",1,0]]]);
