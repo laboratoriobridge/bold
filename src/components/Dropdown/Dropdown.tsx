@@ -81,8 +81,8 @@ export function Dropdown(props: DropdownProps) {
       }
     }
 
-    addEventListener('keydown', handleKeyDown)
-    return () => removeEventListener('keydown', handleKeyDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
   }, [open])
 
   // When opened, focus the first menu item
