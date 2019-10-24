@@ -36,7 +36,7 @@ Quick demonstration of the library usage:
 ```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Button } from 'bold-ui'
+import { Button } from 'from '../../../lib''
 
 const App = () => {
   return <Button kind='primary'>Hello World</Button>

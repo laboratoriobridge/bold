@@ -5,8 +5,8 @@ const glob = require('glob')
 const fs = require('fs')
 
 const SITE_ROOT = process.env.SITE_ROOT || 'http://bold.bridge.ufsc.br'
-const SOURCE = process.env.SOURCE || path.join(__dirname, 'pages', '/**/*.*')
-const DESTINATION = process.env.DESTINATION || path.join(__dirname, 'out', 'sitemap.xml')
+const SOURCE = process.env.SOURCE || path.join(__dirname, 'src/pages', '/**/*.*')
+const DESTINATION = process.env.DESTINATION || path.join(__dirname, 'public', 'sitemap.xml')
 
 let diskPages = glob.sync(SOURCE)
 
@@ -25,7 +25,7 @@ diskPages
       '0' + modDate.getDate()
     ).slice(-2)}`
 
-    page = page.replace(path.join(__dirname, 'pages'), '')
+    page = page.replace(path.join(__dirname, 'src/pages'), '')
     page = page.replace(/.mdx|.tsx$/, '')
     page = `${SITE_ROOT}${page}`
 

@@ -15,9 +15,9 @@ export function useScrollPosition() {
       setPosition(getPosition())
     }
 
-    addEventListener('scroll', handleScroll)
+    document.addEventListener('scroll', handleScroll)
     return () => {
-      removeEventListener('scroll', handleScroll)
+      document.removeEventListener('scroll', handleScroll)
     }
   }, [])
 
