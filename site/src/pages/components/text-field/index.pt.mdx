@@ -1,0 +1,34 @@
+import { Demo } from '../../../components/Demo'
+
+# Text Field
+
+O componente permite ao usuário inserir e interagir com entrada de dados. Normalmente encontrado em formulários, mas também está presente em modais, buscas ou cards.
+
+## Boas práticas
+
+- Utilize placeholders para dar dicas do conteúdo que deve ser inserido no campo.
+- Campos obrigatórios devem ser sinalizados com um asterisco vermelho. Se todos os campos são obrigatórios não há a necessidade de apresentar o asterisco em todos eles, mas a obrigatoriedade deve ser indicada no topo da página.
+- A validação dos campos deve ocorrer em tempo real, facilitando o processo do usuário na hora de completar formulários.
+
+## Tipos de Text Input
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Text field</th>
+      <td>Utilizado quando o usuário precisa inserir apenas uma linha de texto.</td>
+    </tr>
+    <tr>
+      <th>Text area</th>
+      <td>Utilizado quando o usuário precisa inserir mais de uma sentença.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Text Field
+
+<Demo src='pages/components/text-field/TextField' />
+
+## Text Area
+
+<Demo src='pages/components/text-field/TextArea' />

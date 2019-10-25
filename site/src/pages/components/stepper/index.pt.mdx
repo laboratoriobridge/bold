@@ -1,0 +1,44 @@
+import { Demo } from '../../../components/Demo'
+
+# Stepper
+
+O componente é uma indicação visual do progresso do usuário através de um conjunto de passos. Serve para guiar o usuário através de um conjunto de etapas para completar um processo específico, geralmente um Wizzard.
+
+## Boas práticas
+
+- Apresente os itens sequenciais da esquerda para a direita.
+- Permita que o usuário volte em algum passo caso necessite revisar uma etapa.
+- Sempre que possível utilize alguma indicação do status dos passos do wizard, como quando está completo/validado, se está incompleto/inválido.
+
+## Step status
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Completo</th>
+      <td>Apresentado quando o usuário atingiu o requisito mínimo para prosseguir ao próximo passo.</td>
+    </tr>
+    <tr>
+      <th>Ativo</th>
+      <td>Apresentado quando as informações ainda não foram preenchidas e o passo ainda não foi validado.</td>
+    </tr>
+    <tr>
+      <th>Incompleto</th>
+      <td>Etapas ainda não atingidas.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplos
+
+### Estados controlados manualmente
+
+O estado do stepper é controlado manualmente através das propriedades do componente `Step`.
+
+<Demo src='pages/components/stepper/StepperDefault' />
+
+### Controlando o estado com o hook `useStepperState`
+
+Opcionalmente, o hook `useStepperState` pode ser usado para controlar o estado do stepper.
+
+<Demo src='pages/components/stepper/StepperHook' />
