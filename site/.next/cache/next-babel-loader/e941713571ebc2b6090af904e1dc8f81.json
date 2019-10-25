@@ -1,0 +1,34 @@
+{
+  "ast": null,
+  "code": "import _extends from \"@babel/runtime-corejs2/helpers/esm/extends\";\nimport _objectSpread from \"@babel/runtime-corejs2/helpers/esm/objectSpread\";\nimport _objectWithoutProperties from \"@babel/runtime-corejs2/helpers/esm/objectWithoutProperties\";\nvar _jsxFileName = \"/Users/carolinekrone/Documents/GitHub/bold/site/components/ActiveLink.tsx\";\nvar __jsx = React.createElement;\nimport Link from 'next/link';\nimport { useRouter } from 'next/router';\nimport React from 'react';\n\nconst ActiveLink = props => {\n  const router = useRouter();\n\n  const {\n    activeClassName,\n    children\n  } = props,\n        rest = _objectWithoutProperties(props, [\"activeClassName\", \"children\"]);\n\n  const child = React.Children.only(children);\n  let className = child.props.className || null;\n\n  if (router && router.pathname.startsWith(props.href) && props.activeClassName) {\n    className = `${className !== null ? className : ''} ${props.activeClassName}`.trim();\n  }\n\n  return __jsx(Link, _extends({}, rest, {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 21\n    },\n    __self: this\n  }), React.cloneElement(child, _objectSpread({}, child.props, {\n    className\n  })));\n};\n\nexport default ActiveLink;",
+  "map": {
+    "version": 3,
+    "sources": ["/Users/carolinekrone/Documents/GitHub/bold/site/components/ActiveLink.tsx"],
+    "names": [
+      "Link",
+      "useRouter",
+      "React",
+      "ActiveLink",
+      "props",
+      "router",
+      "activeClassName",
+      "children",
+      "rest",
+      "child",
+      "Children",
+      "only",
+      "className",
+      "pathname",
+      "startsWith",
+      "href",
+      "trim",
+      "cloneElement"
+    ],
+    "mappings": ";;;;;AAAA,OAAOA,IAAP,MAAiB,WAAjB;AACA,SAASC,SAAT,QAA0B,aAA1B;AACA,OAAOC,KAAP,MAAkB,OAAlB;;AAQA,MAAMC,UAAU,GAAIC,KAAD,IAA4B;AAC7C,QAAMC,MAAM,GAAGJ,SAAS,EAAxB;;AACA,QAAM;AAAEK,IAAAA,eAAF;AAAmBC,IAAAA;AAAnB,MAAyCH,KAA/C;AAAA,QAAsCI,IAAtC,4BAA+CJ,KAA/C;;AACA,QAAMK,KAAK,GAAGP,KAAK,CAACQ,QAAN,CAAeC,IAAf,CAAoBJ,QAApB,CAAd;AAEA,MAAIK,SAAS,GAAGH,KAAK,CAACL,KAAN,CAAYQ,SAAZ,IAAyB,IAAzC;;AACA,MAAIP,MAAM,IAAIA,MAAM,CAACQ,QAAP,CAAgBC,UAAhB,CAA2BV,KAAK,CAACW,IAAjC,CAAV,IAA8DX,KAAK,CAACE,eAAxE,EAAyF;AACvFM,IAAAA,SAAS,GAAI,GAAEA,SAAS,KAAK,IAAd,GAAqBA,SAArB,GAAiC,EAAG,IAAGR,KAAK,CAACE,eAAgB,EAAhE,CAAkEU,IAAlE,EAAZ;AACD;;AAED,SAAO,MAAC,IAAD,eAAUR,IAAV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAAiBN,KAAK,CAACe,YAAN,CAAmBR,KAAnB,oBAA+BA,KAAK,CAACL,KAArC;AAA4CQ,IAAAA;AAA5C,KAAjB,CAAP;AACD,CAXD;;AAaA,eAAeT,UAAf",
+    "sourcesContent": [
+      "import Link from 'next/link'\nimport { useRouter } from 'next/router'\nimport React from 'react'\n\ninterface ActiveLinkProps /*extends LinkProps*/ {\n  activeClassName?: string\n  children?: any\n  href: string\n}\n\nconst ActiveLink = (props: ActiveLinkProps) => {\n  const router = useRouter()\n  const { activeClassName, children, ...rest } = props\n  const child = React.Children.only(children)\n\n  let className = child.props.className || null\n  if (router && router.pathname.startsWith(props.href as string) && props.activeClassName) {\n    className = `${className !== null ? className : ''} ${props.activeClassName}`.trim()\n  }\n\n  return <Link {...rest}>{React.cloneElement(child, { ...child.props, className })}</Link>\n}\n\nexport default ActiveLink\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

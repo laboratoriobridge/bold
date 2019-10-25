@@ -1,0 +1,15 @@
+{
+  "ast": null,
+  "code": "import _extends from \"@babel/runtime-corejs2/helpers/esm/extends\";\nvar _jsxFileName = \"/Users/carolinekrone/Documents/GitHub/bold/site/components/PageContainer.tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\nimport { useStyles } from '../../lib';\nexport function PageContainer(props) {\n  const {\n    classes\n  } = useStyles(createStyles);\n  return __jsx(\"div\", _extends({\n    className: classes.container\n  }, props, {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 5\n    },\n    __self: this\n  }));\n}\nexport const createStyles = () => ({\n  container: {\n    width: '100%',\n    maxWidth: 960\n  }\n});",
+  "map": {
+    "version": 3,
+    "sources": ["/Users/carolinekrone/Documents/GitHub/bold/site/components/PageContainer.tsx"],
+    "names": ["useStyles", "PageContainer", "props", "classes", "createStyles", "container", "width", "maxWidth"],
+    "mappings": ";;;;AAAA,SAASA,SAAT,QAA0B,WAA1B;AAEA,OAAO,SAASC,aAAT,CAAuBC,KAAvB,EAAoE;AACzE,QAAM;AAAEC,IAAAA;AAAF,MAAcH,SAAS,CAACI,YAAD,CAA7B;AACA,SAAO;AAAK,IAAA,SAAS,EAAED,OAAO,CAACE;AAAxB,KAAuCH,KAAvC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAP;AACD;AAED,OAAO,MAAME,YAAY,GAAG,OAAO;AACjCC,EAAAA,SAAS,EAAE;AACTC,IAAAA,KAAK,EAAE,MADE;AAETC,IAAAA,QAAQ,EAAE;AAFD;AADsB,CAAP,CAArB",
+    "sourcesContent": [
+      "import { useStyles } from '../../lib'\n\nexport function PageContainer(props: React.HTMLAttributes<HTMLDivElement>) {\n  const { classes } = useStyles(createStyles)\n  return <div className={classes.container} {...props} />\n}\n\nexport const createStyles = () => ({\n  container: {\n    width: '100%',\n    maxWidth: 960,\n  },\n})\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

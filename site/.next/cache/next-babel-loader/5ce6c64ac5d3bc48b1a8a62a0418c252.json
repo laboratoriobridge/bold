@@ -1,0 +1,35 @@
+{
+  "ast": null,
+  "code": "import { useEffect, useState } from 'react';\nimport ReactGA from 'react-ga';\nimport { darkTheme, lightTheme } from '../../lib';\nexport var useThemeSwitch = function useThemeSwitch() {\n  var _useState = useState(lightTheme),\n      currentTheme = _useState[0],\n      setCurrentTheme = _useState[1];\n\n  useEffect(function () {\n    if (localStorage) {\n      var loadedTheme = loadTheme();\n      setCurrentTheme(loadedTheme);\n    }\n  }, []);\n\n  var toggleTheme = function toggleTheme() {\n    ReactGA.event({\n      category: 'Theme',\n      action: \"Switched to \".concat(currentTheme === lightTheme ? 'dark' : 'light', \" theme\")\n    });\n\n    if (currentTheme === lightTheme) {\n      setCurrentTheme(darkTheme);\n\n      if (localStorage) {\n        localStorage.setItem('currentTheme', 'dark');\n      }\n\n      return darkTheme;\n    } else {\n      setCurrentTheme(lightTheme);\n\n      if (localStorage) {\n        localStorage.setItem('currentTheme', 'light');\n      }\n\n      return lightTheme;\n    }\n  };\n\n  return [currentTheme, toggleTheme];\n};\n\nvar loadTheme = function loadTheme() {\n  var loadedTheme = localStorage.getItem('currentTheme');\n\n  if (!loadedTheme) {\n    loadedTheme = Math.random() < 0.3 ? 'dark' : 'light';\n  }\n\n  localStorage.setItem('currentTheme', loadedTheme);\n  return loadedTheme === 'dark' ? darkTheme : lightTheme;\n};",
+  "map": {
+    "version": 3,
+    "sources": ["/Users/carolinekrone/Documents/GitHub/bold/site/components/useThemeSwitch.ts"],
+    "names": [
+      "useEffect",
+      "useState",
+      "ReactGA",
+      "darkTheme",
+      "lightTheme",
+      "useThemeSwitch",
+      "currentTheme",
+      "setCurrentTheme",
+      "localStorage",
+      "loadedTheme",
+      "loadTheme",
+      "toggleTheme",
+      "event",
+      "category",
+      "action",
+      "setItem",
+      "getItem",
+      "Math",
+      "random"
+    ],
+    "mappings": "AAAA,SAASA,SAAT,EAAoBC,QAApB,QAAoC,OAApC;AACA,OAAOC,OAAP,MAAoB,UAApB;AAEA,SAASC,SAAT,EAAoBC,UAApB,QAA6C,WAA7C;AAEA,OAAO,IAAMC,cAAc,GAAG,SAAjBA,cAAiB,GAA4B;AAAA,kBAChBJ,QAAQ,CAAQG,UAAR,CADQ;AAAA,MACjDE,YADiD;AAAA,MACnCC,eADmC;;AAGxDP,EAAAA,SAAS,CAAC,YAAM;AACd,QAAIQ,YAAJ,EAAkB;AAChB,UAAMC,WAAW,GAAGC,SAAS,EAA7B;AACAH,MAAAA,eAAe,CAACE,WAAD,CAAf;AACD;AACF,GALQ,EAKN,EALM,CAAT;;AAOA,MAAME,WAAW,GAAG,SAAdA,WAAc,GAAM;AACxBT,IAAAA,OAAO,CAACU,KAAR,CAAc;AACZC,MAAAA,QAAQ,EAAE,OADE;AAEZC,MAAAA,MAAM,wBAAiBR,YAAY,KAAKF,UAAjB,GAA8B,MAA9B,GAAuC,OAAxD;AAFM,KAAd;;AAKA,QAAIE,YAAY,KAAKF,UAArB,EAAiC;AAC/BG,MAAAA,eAAe,CAACJ,SAAD,CAAf;;AAEA,UAAIK,YAAJ,EAAkB;AAChBA,QAAAA,YAAY,CAACO,OAAb,CAAqB,cAArB,EAAqC,MAArC;AACD;;AAED,aAAOZ,SAAP;AACD,KARD,MAQO;AACLI,MAAAA,eAAe,CAACH,UAAD,CAAf;;AAEA,UAAII,YAAJ,EAAkB;AAChBA,QAAAA,YAAY,CAACO,OAAb,CAAqB,cAArB,EAAqC,OAArC;AACD;;AAED,aAAOX,UAAP;AACD;AACF,GAvBD;;AAyBA,SAAO,CAACE,YAAD,EAAeK,WAAf,CAAP;AACD,CApCM;;AAsCP,IAAMD,SAAS,GAAG,SAAZA,SAAY,GAAM;AACtB,MAAID,WAAW,GAAGD,YAAY,CAACQ,OAAb,CAAqB,cAArB,CAAlB;;AAEA,MAAI,CAACP,WAAL,EAAkB;AAChBA,IAAAA,WAAW,GAAGQ,IAAI,CAACC,MAAL,KAAgB,GAAhB,GAAsB,MAAtB,GAA+B,OAA7C;AACD;;AAEDV,EAAAA,YAAY,CAACO,OAAb,CAAqB,cAArB,EAAqCN,WAArC;AACA,SAAOA,WAAW,KAAK,MAAhB,GAAyBN,SAAzB,GAAqCC,UAA5C;AACD,CATD",
+    "sourcesContent": [
+      "import { useEffect, useState } from 'react'\nimport ReactGA from 'react-ga'\n\nimport { darkTheme, lightTheme, Theme } from '../../lib'\n\nexport const useThemeSwitch = (): [Theme, () => Theme] => {\n  const [currentTheme, setCurrentTheme] = useState<Theme>(lightTheme)\n\n  useEffect(() => {\n    if (localStorage) {\n      const loadedTheme = loadTheme()\n      setCurrentTheme(loadedTheme)\n    }\n  }, [])\n\n  const toggleTheme = () => {\n    ReactGA.event({\n      category: 'Theme',\n      action: `Switched to ${currentTheme === lightTheme ? 'dark' : 'light'} theme`,\n    })\n\n    if (currentTheme === lightTheme) {\n      setCurrentTheme(darkTheme)\n\n      if (localStorage) {\n        localStorage.setItem('currentTheme', 'dark')\n      }\n\n      return darkTheme\n    } else {\n      setCurrentTheme(lightTheme)\n\n      if (localStorage) {\n        localStorage.setItem('currentTheme', 'light')\n      }\n\n      return lightTheme\n    }\n  }\n\n  return [currentTheme, toggleTheme]\n}\n\nconst loadTheme = () => {\n  let loadedTheme = localStorage.getItem('currentTheme')\n\n  if (!loadedTheme) {\n    loadedTheme = Math.random() < 0.3 ? 'dark' : 'light'\n  }\n\n  localStorage.setItem('currentTheme', loadedTheme)\n  return loadedTheme === 'dark' ? darkTheme : lightTheme\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

@@ -1,0 +1,40 @@
+{
+  "ast": null,
+  "code": "import _extends from \"@babel/runtime-corejs2/helpers/esm/extends\";\nvar _jsxFileName = \"/Users/carolinekrone/Documents/GitHub/bold/site/pages/_app.tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\nimport App from 'next/app';\nimport Head from 'next/head';\nimport { useEffect } from 'react';\nimport ReactGA from 'react-ga';\nimport { Site } from '../components/Site';\nexport default class extends App {\n  render() {\n    return __jsx(BoldApp, _extends({}, this.props, {\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 10\n      },\n      __self: this\n    }));\n  }\n\n}\n\nconst BoldApp = props => {\n  useEffect(() => {\n    ReactGA.initialize('UA-139158849-1');\n  }, []);\n  useEffect(() => {\n    ReactGA.pageview(window.location.pathname + window.location.search);\n  }, [props.router.route]);\n  useEffect(() => {\n    const docsearch = window.docsearch;\n    docsearch({\n      apiKey: '4bd4039d7ff74e34ef26aff9f4a45f34',\n      indexName: 'bold_',\n      inputSelector: '#search-input',\n      autocompleteOptions: {\n        debug: false,\n        hint: false,\n        appendTo: '#search-wrapper'\n      }\n    });\n  }, []);\n  return __jsx(React.Fragment, null, __jsx(Head, {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 39\n    },\n    __self: this\n  }, __jsx(\"meta\", {\n    name: \"viewport\",\n    content: \"minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 40\n    },\n    __self: this\n  }), __jsx(\"meta\", {\n    name: \"google-site-verification\",\n    content: \"9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 41\n    },\n    __self: this\n  }), __jsx(\"title\", {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 43\n    },\n    __self: this\n  }, \"Bold Design System\"), __jsx(\"link\", {\n    href: \"/static/image/favicon.png\",\n    rel: \"icon\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 45\n    },\n    __self: this\n  }), __jsx(\"link\", {\n    href: \"https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i\",\n    rel: \"stylesheet\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 46\n    },\n    __self: this\n  }), __jsx(\"link\", {\n    rel: \"stylesheet\",\n    href: \"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 47\n    },\n    __self: this\n  }), __jsx(\"link\", {\n    rel: \"stylesheet\",\n    href: \"https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 48\n    },\n    __self: this\n  })), __jsx(Site, _extends({}, props, {\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 51\n    },\n    __self: this\n  })), __jsx(\"script\", {\n    type: \"text/javascript\",\n    src: \"https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js\",\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 53\n    },\n    __self: this\n  }));\n};",
+  "map": {
+    "version": 3,
+    "sources": ["/Users/carolinekrone/Documents/GitHub/bold/site/pages/_app.tsx"],
+    "names": [
+      "App",
+      "Head",
+      "useEffect",
+      "ReactGA",
+      "Site",
+      "render",
+      "props",
+      "BoldApp",
+      "initialize",
+      "pageview",
+      "window",
+      "location",
+      "pathname",
+      "search",
+      "router",
+      "route",
+      "docsearch",
+      "apiKey",
+      "indexName",
+      "inputSelector",
+      "autocompleteOptions",
+      "debug",
+      "hint",
+      "appendTo"
+    ],
+    "mappings": ";;;;AAAA,OAAOA,GAAP,MAAgB,UAAhB;AACA,OAAOC,IAAP,MAAiB,WAAjB;AACA,SAASC,SAAT,QAA0B,OAA1B;AACA,OAAOC,OAAP,MAAoB,UAApB;AAEA,SAASC,IAAT,QAAqB,oBAArB;AAEA,eAAe,cAAcJ,GAAd,CAAkB;AAC/BK,EAAAA,MAAM,GAAG;AACP,WAAO,MAAC,OAAD,eAAa,KAAKC,KAAlB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OAAP;AACD;;AAH8B;;AAMjC,MAAMC,OAAO,GAAID,KAAD,IAAgB;AAC9BJ,EAAAA,SAAS,CAAC,MAAM;AACdC,IAAAA,OAAO,CAACK,UAAR,CAAmB,gBAAnB;AACD,GAFQ,EAEN,EAFM,CAAT;AAIAN,EAAAA,SAAS,CAAC,MAAM;AACdC,IAAAA,OAAO,CAACM,QAAR,CAAiBC,MAAM,CAACC,QAAP,CAAgBC,QAAhB,GAA2BF,MAAM,CAACC,QAAP,CAAgBE,MAA5D;AACD,GAFQ,EAEN,CAACP,KAAK,CAACQ,MAAN,CAAaC,KAAd,CAFM,CAAT;AAIAb,EAAAA,SAAS,CAAC,MAAM;AACd,UAAMc,SAAS,GAAIN,MAAD,CAAgBM,SAAlC;AACAA,IAAAA,SAAS,CAAC;AACRC,MAAAA,MAAM,EAAE,kCADA;AAERC,MAAAA,SAAS,EAAE,OAFH;AAGRC,MAAAA,aAAa,EAAE,eAHP;AAIRC,MAAAA,mBAAmB,EAAE;AACnBC,QAAAA,KAAK,EAAE,KADY;AAEnBC,QAAAA,IAAI,EAAE,KAFa;AAGnBC,QAAAA,QAAQ,EAAE;AAHS;AAJb,KAAD,CAAT;AAUD,GAZQ,EAYN,EAZM,CAAT;AAcA,SACE,4BACE,MAAC,IAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACE;AAAM,IAAA,IAAI,EAAC,UAAX;AAAsB,IAAA,OAAO,EAAC,wEAA9B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADF,EAEE;AAAM,IAAA,IAAI,EAAC,0BAAX;AAAsC,IAAA,OAAO,EAAC,6CAA9C;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAFF,EAIE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,0BAJF,EAME;AAAM,IAAA,IAAI,EAAC,2BAAX;AAAuC,IAAA,GAAG,EAAC,MAA3C;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IANF,EAOE;AAAM,IAAA,IAAI,EAAC,yEAAX;AAAqF,IAAA,GAAG,EAAC,YAAzF;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAPF,EAQE;AAAM,IAAA,GAAG,EAAC,YAAV;AAAuB,IAAA,IAAI,EAAC,4EAA5B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IARF,EASE;AAAM,IAAA,GAAG,EAAC,YAAV;AAAuB,IAAA,IAAI,EAAC,wEAA5B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IATF,CADF,EAaE,MAAC,IAAD,eAAUjB,KAAV;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAbF,EAeE;AAAQ,IAAA,IAAI,EAAC,iBAAb;AAA+B,IAAA,GAAG,EAAC,uEAAnC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IAfF,CADF;AAmBD,CA1CD",
+    "sourcesContent": [
+      "import App from 'next/app'\nimport Head from 'next/head'\nimport { useEffect } from 'react'\nimport ReactGA from 'react-ga'\n\nimport { Site } from '../components/Site'\n\nexport default class extends App {\n  render() {\n    return <BoldApp {...this.props} />\n  }\n}\n\nconst BoldApp = (props: any) => {\n  useEffect(() => {\n    ReactGA.initialize('UA-139158849-1')\n  }, [])\n\n  useEffect(() => {\n    ReactGA.pageview(window.location.pathname + window.location.search)\n  }, [props.router.route])\n\n  useEffect(() => {\n    const docsearch = (window as any).docsearch\n    docsearch({\n      apiKey: '4bd4039d7ff74e34ef26aff9f4a45f34',\n      indexName: 'bold_',\n      inputSelector: '#search-input',\n      autocompleteOptions: {\n        debug: false,\n        hint: false,\n        appendTo: '#search-wrapper',\n      },\n    })\n  }, [])\n\n  return (\n    <>\n      <Head>\n        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no' />\n        <meta name='google-site-verification' content='9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk' />\n\n        <title>Bold Design System</title>\n\n        <link href='/static/image/favicon.png' rel='icon' />\n        <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i' rel='stylesheet' />\n        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css' />\n        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css' />\n      </Head>\n\n      <Site {...props} />\n\n      <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js' />\n    </>\n  )\n}\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}

@@ -1,0 +1,15 @@
+{
+  "ast": null,
+  "code": "var _jsxFileName = \"/Users/carolinekrone/Documents/GitHub/bold/site/pages/_document.tsx\";\nimport React from \"react\";\nvar __jsx = React.createElement;\n// _document is only rendered on the server side and not on the client side\n// Event handlers like onClick can't be added to this file\nimport Document, { Head, Html, Main, NextScript } from 'next/document';\n\nclass BoldDocument extends Document {\n  render() {\n    return __jsx(Html, {\n      lang: \"en\",\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 8\n      },\n      __self: this\n    }, __jsx(Head, {\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 9\n      },\n      __self: this\n    }), __jsx(\"body\", {\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 10\n      },\n      __self: this\n    }, __jsx(Main, {\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 11\n      },\n      __self: this\n    }), __jsx(NextScript, {\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 12\n      },\n      __self: this\n    })));\n  }\n\n}\n\nexport default BoldDocument;",
+  "map": {
+    "version": 3,
+    "sources": ["/Users/carolinekrone/Documents/GitHub/bold/site/pages/_document.tsx"],
+    "names": ["Document", "Head", "Html", "Main", "NextScript", "BoldDocument", "render"],
+    "mappings": ";;;AAAA;AACA;AACA,OAAOA,QAAP,IAAmBC,IAAnB,EAAyBC,IAAzB,EAA+BC,IAA/B,EAAqCC,UAArC,QAAuD,eAAvD;;AAEA,MAAMC,YAAN,SAA2BL,QAA3B,CAAoC;AAClCM,EAAAA,MAAM,GAAG;AACP,WACE,MAAC,IAAD;AAAM,MAAA,IAAI,EAAC,IAAX;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OACE,MAAC,IAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MADF,EAEE;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OACE,MAAC,IAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MADF,EAEE,MAAC,UAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAFF,CAFF,CADF;AASD;;AAXiC;;AAcpC,eAAeD,YAAf",
+    "sourcesContent": [
+      "// _document is only rendered on the server side and not on the client side\n// Event handlers like onClick can't be added to this file\nimport Document, { Head, Html, Main, NextScript } from 'next/document'\n\nclass BoldDocument extends Document {\n  render() {\n    return (\n      <Html lang='en'>\n        <Head />\n        <body>\n          <Main />\n          <NextScript />\n        </body>\n      </Html>\n    )\n  }\n}\n\nexport default BoldDocument\n"
+    ]
+  },
+  "metadata": {},
+  "sourceType": "module"
+}
