@@ -1,0 +1,42 @@
+import { Demo } from '../../../components/Demo'
+
+# File Uploader
+
+Permite ao usuário transferir e submeter conteúdo do próprio computador. A seleção do arquivo pode ser feita clicando no componente de input e selecionando o arquivo através da janela nativa ou utilizando o drag and drop (arrastar e soltar).
+
+O componente indica ao usuário o progresso do upload e fornece feedbacks sobre o status do envio.
+
+## Boas práticas
+
+- Sempre mantenha o nome do arquivo visível.
+- Forneça informações sobre tamanho e tipo do arquivo, bem como velocidade de upload/download ou progresso.
+
+## Tipos de status
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Carregando</th>
+      <td>Inform a user of the upload progress. Provide informations like file size and upload speed estimate.</td>
+    </tr>
+    <tr>
+      <th>Erro de upload</th>
+      <td>Qualquer erro de upload deve vir acompanhado da Mensagem de erro.</td>
+    </tr>
+    <tr>
+      <th>Upload completo</th>
+      <td>
+        Quando completo, será apresentado o thumbnail do arquivo e o ícone e Mensagem de sucesso indicarão o status do
+        upload.
+      </td>
+    </tr>
+    <tr>
+      <th>Pausado</th>
+      <td>Apenas para arquivos grandes, possibilita ao usuário a pausar e continuar carregando o arquivo.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Exemplo
+
+<Demo src='pages/components/file-uploader/FileUploader' />
