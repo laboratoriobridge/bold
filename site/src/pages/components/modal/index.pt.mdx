@@ -1,0 +1,51 @@
+import { Demo } from '../../../components/Demo'
+
+# Modal
+
+O componente é utilizado para apresentar conteúdos em um nível acima do restante da interface. É utilizado quando há a necessidade de visualizar, criar ou editar um conteúdo, ou para mensagens de confirmação. Nenhuma outra informação da página que gerou o modal pode ser acessada enquanto o mesmo estiver ativo.
+
+## Boas práticas
+
+- Utilize modais com cautela, pois eles interrompem o fluxo de uso do produto.
+- O título deve refletir a ação ou botão que foi clicado pelo usuário.
+- Podem ser fechados tanto pelo ícone de fechar, como pressionando ESC ou clicando fora da área do modal, se nenhuma ação tiver sido executada no contexto do modal.
+- Mantenha o foco anterior do usuário após fechar o modal.
+
+## Tipos de Modal
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Informação</th>
+      <td>
+        Usados para exibir informações que não requerem input do usuário. Normalmente exibem somente textos que não
+        precisam ser exibidos diretamente na tela.
+      </td>
+    </tr>
+    <tr>
+      <th>Confirmação</th>
+      <td>
+        Usados para validar decisões ou para obter uma segunda confirmação do usuário. Normalmente requerem respostas do
+        usuário.
+      </td>
+    </tr>
+    <tr>
+      <th>Entrada de dados</th>
+      <td>São utilizados para receber dados e incluem áreas de input que o usuário pode interagir.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Exemplos
+
+### Informação
+
+<Demo src='pages/components/modal/InformationModal' />
+
+### Confirmação
+
+<Demo src='pages/components/modal/ConfirmationModal' />
+
+### Ação perigosa
+
+<Demo src='pages/components/modal/DangerModal' />

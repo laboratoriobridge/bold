@@ -1,0 +1,71 @@
+import { Demo } from '../../../components/Demo'
+
+# Button
+
+Botões expressam que alguma atividade vai acontecer quando clicados. São usados para executar uma ação, e alguns exemplos incluem as ações de Adicionar, Salvar e Deletar.
+
+## Boas práticas
+
+- Não use botões como elementos de navegação. Considere utilizar **Links**, porque levam o usuário a uma nova página que não está associada com a ação.
+- A label do botão indica ao usuário o que irá acontecer no clique. Use somente verbos que descrevem a ação, como **Adicionar** ou **Deletar**. Utilize o método de capitalização de sentenças (somente a primeira letra maiúscula e quaisquer nomes próprios) e limite a sentença em até 3 palavras.
+- Em conjuntos de botões, utilize labels específicas como **Salvar** e **Excluir**, ao invés de labels genéricas como **Ok**. Essa prática é útil principalmente quando o usuário está confirmação uma ação.
+
+## Tipos de botões
+
+<table>
+  <tbody>
+    <tr>
+      <th width={190}>Default</th>
+      <td>Utilizado para a ação principal da página.</td>
+    </tr>
+    <tr>
+      <th>Ghost button</th>
+      <td>Utilizado para ações que não necessitam de atenção primária na página.</td>
+    </tr>
+    <tr>
+      <th>Botões com ícone</th>
+      <td>
+        Ícones podem ser usados dentro dos botões para comunicar melhor a ação. Os ícones devem estar sempre alinhados
+        verticalmente com o texto.
+      </td>
+    </tr>
+    <tr>
+      <th>Somente ícone</th>
+      <td>Geralmente são associados à um menu dropdown ou ações rápidas.</td>
+    </tr>
+    <tr>
+      <th>Desabilitado</th>
+      <td>Utilizado quando o usuário não pode prosseguir até que uma condição seja satisfeita.</td>
+    </tr>
+    <tr>
+      <th>Perigo</th>
+      <td>Utilizado quando uma ação tem efeito destrutivo nos dados do usuário (deletar, remover, etc).</td>
+    </tr>
+    <tr>
+      <th>Conjunto de botões</th>
+      <td>
+        Utilizado quando uma ação possui mais de uma opção. Sempre utilize um botão de uma ação positiva (primário) em
+        conjunto com uma ação negativa ou neutra (secundário). Ações negativas devem ser posicionadas à esquerda. Ações
+        positivas, à direita.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## Tamanho de botões
+
+<Demo src='pages/components/button/ButtonSizes' />
+
+## Tipos/temas de botões
+
+<Demo src='pages/components/button/ButtonSkins' />
+
+## Botões com ícones
+
+<Demo src='pages/components/button/ButtonIcons' />
+
+## Indicador de carregando
+
+O indicador de carregando pode ser ativado/desativado manualmente com o suporte `loading` ou automaticamente retornando uma promessa ao suporte `onClick`.
+
+<Demo src='pages/components/button/ButtonLoading' />

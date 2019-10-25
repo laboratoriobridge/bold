@@ -1,0 +1,39 @@
+import { Demo } from '../../../components/Demo'
+
+# Formulário
+
+Formulários são usados para submeter dados. Todo campo deve vir acompanhado de uma descrição.
+
+## Boas práticas
+
+- É recomendável que a validação dos dados ocorra antes do usuário submeter o formulário, sempre que possível.
+- A validação deve ocorrer assim que o usuário tirar o foco do campo ativo.
+- Utilize placeholders para auxiliar na entrada de campos numéricos. Os placeholders ficam visíveis até que o usuário inicie a digitação.
+- Utilize máscaras que ajudem o usuário a identificar o padrão do input.
+- Inputs obrigatórios devem estar sinalizados com um asterisco vermelho após a descrição.
+
+## Exemplo
+
+O exemplo a seguir não usa nenhuma biblioteca para gerenciar o estado do formulário. Na prática, você pode (mas não precisa) usar uma biblioteca de terceiros para gerenciar o estado do formulário, como [`react-use-form-state`](https://github.com/wsmd/react-use-form- state), [`react-final-form`](https://github.com/final-form/react-final-form), [`formik`](https://github.com/jaredpalmer/formik) etc.
+
+<Demo src='pages/components/form/Form' />
+
+## Exemplo com [`react-use-form-state`](https://github.com/wsmd/react-use-form-state)
+
+<iframe
+  src='https://codesandbox.io/embed/bold-form-example-use-form-state-s0ptf?autoresize=1&fontsize=14&module=%2Fsrc%2FForm.tsx&view=preview'
+  title='bold-form-example-use-form-state'
+  allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media'
+  style={{ width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden', marginBottom: '2rem' }}
+  sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+></iframe>
+
+## Exemplo com [`react-final-form`](https://github.com/final-form/react-final-form)
+
+<iframe
+  src='https://codesandbox.io/embed/bold-form-example-final-form-8pzzd?autoresize=1&fontsize=14&module=%2Fsrc%2FFormExample.tsx&view=preview'
+  title='bold-form-example-final-form'
+  allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media'
+  style={{ width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden', marginBottom: '2rem' }}
+  sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+></iframe>

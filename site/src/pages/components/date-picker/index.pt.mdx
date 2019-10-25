@@ -1,0 +1,38 @@
+import { Demo } from '../../../components/Demo'
+
+# Date picker
+
+Componentes de data permitem que o usuário faça uma seleção específica através de um calendário. Por default, o calendário apresenta sempre o mês atual. Caso já tenha uma data inserida, o calendário apresenta o mês referente à esta data.
+
+## Boas práticas
+
+- Utilize quando a data selecionada for próxima à data atual ou com um período menor que 1 ano.
+- O campo deve permitir que o usuário também insira o valor através de input do teclado.
+- Utilize placeholder indicando o formato da entrada de dados, por exemplo: dd/mm/aaaa ou mm/dd/aa, etc.
+- O campo deve ter apenas um tipo de entrada, e não deve ser divido em campos para cada informação (dia, mês, ano).
+
+## Tipos de Date picker
+
+<table>
+  <tbody>
+    <tr>
+      <th width={160}>Default</th>
+      <td>Quando é necessário selecionar apenas uma data.</td>
+    </tr>
+    <tr>
+      <th>Simples (sem calendário)</th>
+      <td>
+        Recomendado quando o usuário conhece a data e não precisa do calendário para antecipar as datas. Normalmente
+        utilizado em datas de validade de cartão de crédito.
+      </td>
+    </tr>
+    <tr>
+      <th>Período</th>
+      <td>Utilizado para selecionar um intervalo de datas.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Default
+
+<Demo src='pages/components/date-picker/DatePickerExample' />

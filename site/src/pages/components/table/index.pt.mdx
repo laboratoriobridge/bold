@@ -1,0 +1,22 @@
+import { Demo } from '../../../components/Demo'
+
+# Table
+
+O componente apresenta dados distribuídos em linhas e colunas, apresentando-os de uma forma que permite uma fácil leitura, comparação e escaneamento das informações.
+
+## Boas práticas
+
+- Colunas onde é possível fazer a ordenação devem apresentar o ícone de ordenação ao lado direito da label.
+- O [Paginator](/components/paginator) só deve ser apresentado quando há paginação (mais de 10 itens).
+
+## Tabela de dados
+
+Uma tabela que gera automaticamente linhas com base n propriedade de `columns` e dá suporte ao estado de ordenação e estados de carregamento.
+
+<Demo src='pages/components/table/DataTable' />
+
+## Tabela paginada
+
+Uma Tabela de dados que inclui um componente de paginação no rodapé.
+
+<Demo src='pages/components/table/PagedTable' />
