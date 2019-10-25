@@ -1,7 +1,16 @@
 module.exports = {
+  siteMetadata: {
+    siteUrl: 'http://bold.bridge.ufsc.br',
+  },
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        exclude: ['/demo/**'],
+      },
+    },
     {
       resolve: 'gatsby-plugin-i18n',
       options: {
