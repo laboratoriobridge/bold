@@ -41,7 +41,7 @@
     "sonar": "sonar-scanner",
     "site:dev": "cd site && yarn gatsby develop",
     "site:build": "cd site && yarn gatsby build",
-    "site:export": "npm run site:build && touch site/public/.nojekyll && cp site/src/CNAME site/public/CNAME && node site/buildSitemap && build-storybook -o site/public/storybook",
+    "site:export": "npm run site:build && touch site/public/.nojekyll && cp site/src/CNAME site/public/CNAME && build-storybook -o site/public/storybook",
     "site:deploy": "npm run site:export && gh-pages -d site/public -t"
   },
   "husky": {
