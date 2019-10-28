@@ -39,6 +39,8 @@ exports[`SelectInline should render correctly when closed 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -241,6 +243,8 @@ exports[`SelectInline should render correctly when closed 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -493,6 +497,8 @@ exports[`SelectInline should render correctly when opened 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -686,6 +692,8 @@ exports[`SelectInline should render correctly when opened 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
@@ -950,6 +958,8 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -1152,6 +1162,8 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   border-radius: inherit;
