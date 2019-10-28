@@ -1,6 +1,7 @@
 import { darkTheme, lightTheme, Theme } from 'bold-ui'
 import { useEffect, useState } from 'react'
-import ReactGA from 'react-ga'
+
+import { ga } from './ga'
 
 export const useThemeSwitch = (): [Theme, () => Theme] => {
   const [currentTheme, setCurrentTheme] = useState<Theme>(lightTheme)
@@ -13,9 +14,9 @@ export const useThemeSwitch = (): [Theme, () => Theme] => {
   }, [])
 
   const toggleTheme = () => {
-    ReactGA.event({
-      category: 'Theme',
-      action: `Switched to ${currentTheme === lightTheme ? 'dark' : 'light'} theme`,
+    ga('send', 'event', {
+      eventCategory: 'Theme',
+      eventAction: `Switched to ${currentTheme === lightTheme ? 'dark' : 'light'} theme`,
     })
 
     if (currentTheme === lightTheme) {

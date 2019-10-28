@@ -1,22 +1,10 @@
 import { MDXProvider } from '@mdx-js/react'
-import React, { useEffect } from 'react'
-import ReactGA from 'react-ga'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import * as MDXComponents from './mdx'
 
 export function App({ children }) {
-  useEffect(() => {
-    ReactGA.initialize('UA-139158849-1')
-  }, [])
-
-  useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search)
-  }, [
-    typeof window !== 'undefined' && window.location.pathname,
-    typeof window !== 'undefined' && window.location.search,
-  ])
-
   return (
     <MDXProvider components={mdxComponents}>
       <Helmet>

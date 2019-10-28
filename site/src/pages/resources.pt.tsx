@@ -1,7 +1,7 @@
 import { Button, Cell, Grid, Icon, Link, Text, VFlow } from 'bold-ui'
 import React from 'react'
-import ReactGA from 'react-ga'
 
+import { ga } from '../components/ga'
 import { PageLayout } from '../components/PageLayout'
 
 function Resources() {
@@ -9,22 +9,22 @@ function Resources() {
   const renderButtonSketchData = (props: any) => <a {...props} href='/Sketch-Data-Suplies(PT-BR).zip' />
 
   const handleClickSketch = () => {
-    ReactGA.event({
-      category: 'Download',
-      action: `Sketch`,
+    ga('send', 'event', {
+      eventCategory: 'Download',
+      eventAction: `Sketch`,
     })
   }
 
   const handleClickFigma = () => {
-    ReactGA.event({
-      category: 'Download',
-      action: `Figma`,
+    ga('send', 'event', {
+      eventCategory: 'Download',
+      eventAction: `Figma`,
     })
   }
   const handleClickSketchData = () => {
-    ReactGA.event({
-      category: 'Download',
-      action: `SketchData`,
+    ga('send', 'event', {
+      eventCategory: 'Download',
+      eventAction: `SketchData`,
     })
   }
 
