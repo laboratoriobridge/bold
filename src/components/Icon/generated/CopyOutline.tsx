@@ -6,10 +6,10 @@ const SvgCopyOutline = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='copy-outline_svg__a'
-        d='M16 6h4c1.333 0 2 .667 2 2v12c0 1.334-.667 2-2 2H10c-1.333 0-2-.666-2-2v-2H4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h10c1.333 0 2 .667 2 2v2zm-6 14h10V8H10v12zm-2-4V8c0-1.333.667-2 2-2h4V4H4v12h4z'
+        d='M2 0h10c1.273 0 1.938.607 1.996 1.822L14 2v2h4c1.273 0 1.938.607 1.996 1.822L20 6v12c0 1.334-.667 2-2 2H8c-1.273 0-1.938-.607-1.996-1.822L6 18v-2H2C.727 16 .062 15.393.004 14.178L0 14V2C0 .727.607.062 1.822.004L2 0h10zm16 6H8v12h10V6zm-6-4H2v12h4V6c0-1.333.667-2 2-2h4V2z'
       />
     </defs>
-    <use xlinkHref='#copy-outline_svg__a' />
+    <use transform='translate(2 2)' xlinkHref='#copy-outline_svg__a' />
   </svg>
 )
 

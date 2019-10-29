@@ -1,0 +1,23 @@
+import { Demo } from '../../../components/Demo'
+
+# Select
+
+É um tipo de input muito utilizado em formulários, onde o usuário está submetendo informações e precisa escolher apenas uma opção de uma lista. Quando o usuário insere algum texto no campo de input, as sugestões são filtradas. É importante apresentar opções de escolha quando ativo.
+
+## Best practices
+
+- A ordem dos itens da lista deve ser baseada na frequência de uso e, se aplicável, em ordem crescente.
+- Caso seja necessário selecionar mais de uma opção, utilize o [Multi Select](/components/multi-select).
+- Evite o uso do select para input de dados que são conhecidos pelo usuário, como datas de nascimento
+
+## Exemplo
+
+<Demo src='pages/components/select/Select' />
+
+## Sugestão
+
+Permita que o valor digitado seja o que o usuário digitar, fornecendo uma propriedade `createNewItem`.
+
+Você pode usar a propriedade `openOnFocus` para controlar se o menu de sugestões deve aparecer quando a entrada receber o foco - o padrão é falso para as seleções de sugestões (quando createNewItem) e verdadeiro para as seleções normais.
+
+<Demo src='pages/components/select/Suggestion' />

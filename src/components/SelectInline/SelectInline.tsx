@@ -19,7 +19,7 @@ export interface SelectInlineProps<T> extends SelectSingleProps<T> {
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { value, onChange, itemToString, buttonProps, popperProps, defaultButtonText, ...rest } = props
+  const { value, onChange, itemToString, buttonProps, popperProps, defaultButtonText, inputRef, ...rest } = props
   const theme = useTheme()
 
   const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
@@ -94,7 +94,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
             itemToString={itemToString}
             onChange={handleOnChange}
             style={styles.box}
-            inputRef={selectInputRef}
+            inputRef={composeRefs(selectInputRef, inputRef) as any}
             isOpen
           />
         )

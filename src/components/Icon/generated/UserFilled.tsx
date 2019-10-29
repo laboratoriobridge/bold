@@ -6,10 +6,10 @@ const SvgUserFilled = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='user-filled_svg__a'
-        d='M12 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zM2 20c0-4 2.001-6 6.004-6H16c4 0 6 2 6 6 0 1.333-.667 2-2 2H4c-1.333 0-2-.667-2-2z'
+        d='M14 12c4 0 6 2 6 6 0 1.333-.667 2-2 2H2c-1.333 0-2-.667-2-2 0-4 2.001-6 6.004-6H14zM10 0a5 5 0 110 10 5 5 0 010-10z'
       />
     </defs>
-    <use xlinkHref='#user-filled_svg__a' />
+    <use transform='translate(2 2)' xlinkHref='#user-filled_svg__a' />
   </svg>
 )
 

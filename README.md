@@ -36,7 +36,7 @@ Quick demonstration of the library usage:
 ```jsx
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Button } from 'bold-ui'
+import { Button } from 'from '../../../lib''
 
 const App = () => {
   return <Button kind='primary'>Hello World</Button>
@@ -67,6 +67,6 @@ We use [loki](https://loki.js.org/) as a visual regression test tool. Use `yarn 
 
 ### Documentation website
 
-Our documentation website is built using [nextjs](https://nextjs.org/). Use `yarn site:dev` to run a local documentation website server.
+Our documentation website is built using [Gatsby](https://www.gatsbyjs.org/). Use `yarn site:dev` to run a local documentation website server.
 
-You might need to run `yarn build` to compile the bold components (which generates the `lib` folder) before running the nextjs server since it uses the local bundle to run.
+You might need to run `yarn build` to compile the bold components (which generates the `lib` folder) before running the gatsby server since it uses the local bundle to run.

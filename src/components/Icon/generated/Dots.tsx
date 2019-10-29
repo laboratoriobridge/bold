@@ -6,10 +6,10 @@ const SvgDots = (props: React.SVGProps<SVGSVGElement>) => (
     <defs>
       <path
         id='dots_svg__a'
-        d='M12 8a2 2 0 1 1 .001-4.001A2 2 0 0 1 12 8zm0 2a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 10zm0 6a2 2 0 1 1-.001 4.001A2 2 0 0 1 12 16z'
+        d='M2 12a2 2 0 11-.001 4.001A2 2 0 012 12zm0-6a2 2 0 11-.001 4.001A2 2 0 012 6zm0-6a2 2 0 11-.001 4.001A2 2 0 012 0z'
       />
     </defs>
-    <use xlinkHref='#dots_svg__a' />
+    <use transform='translate(10 4)' xlinkHref='#dots_svg__a' />
   </svg>
 )
 

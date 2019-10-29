@@ -1,0 +1,20 @@
+import { Demo } from '../../../components/Demo'
+
+# Search
+
+O campo de busca proporciona ao usuário encontrar uma palavra ou frase específica dentro da página sem a necessidade de usar a navegação.
+
+**Filtro**: O filtro pode ser usado como uma forma de limitar o conteúdo exibido na página. O filtro não substitui a Ordenação.
+
+## Boas práticas
+
+- Utilize labels para apresentar que resultados estão sendo exibidos. E apresente os resultados mais relevantes primeiro.
+- Para buscas com muitos resultados utilize o componente de Paginação e indique quantos resultados foram encontrados.
+- Exiba uma mensagem clara quando não forem encontrados resultados para busca e sempre que possível ofereça outras sugestões de busca.
+- Mantenha o texto original no campo de input. Facilita a ação do usuário caso queira fazer uma nova busca com algumas modificações no input.
+- Caso seja possível detectar um erro de digitação, mostre os resultados para a palavra "corrigida", isso evita a frustração de não obter resultados e não força o usuário a realizar uma nova busca.
+- Quando apropriado, destaque os termos da busca nos resultados.
+
+## Exemplo
+
+<Demo src='pages/components/search/Search' />

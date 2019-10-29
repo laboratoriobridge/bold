@@ -9,6 +9,5 @@ storybook-static
 .cache
 .idea
 
-# Next files
-site/.next
-site/out
+# Gatsby files
+site/public
