@@ -12,7 +12,7 @@
   "dependencies": {
     "@mdx-js/mdx": "1.5.1",
     "@mdx-js/react": "1.5.1",
-    "bold-ui": "file:../lib",
+    "bold-ui": "file:../src",
     "docsearch.js": "2.6.3",
     "gatsby": "2.17.2",
     "gatsby-plugin-google-analytics": "2.1.23",

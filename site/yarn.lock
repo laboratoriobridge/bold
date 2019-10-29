@@ -2025,7 +2025,7 @@ body-parser@1.19.0:
     raw-body "2.4.0"
     type-is "~1.6.17"
 
-"bold-ui@file:../lib":
+"bold-ui@file:../src":
   version "0.0.0"
 
 bonjour@^3.5.0:
