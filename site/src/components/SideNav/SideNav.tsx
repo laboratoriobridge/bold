@@ -1,5 +1,5 @@
 import { Icons, Omit, Theme, useStyles } from 'bold-ui'
-import { useClickOutside } from 'bold-ui/lib/hooks/useClickOutside'
+import { useClickOutside } from 'bold-ui/hooks/useClickOutside'
 import React, { useRef } from 'react'
 
 import { APP_HEADER_HEIGHT } from '../AppHeader'
