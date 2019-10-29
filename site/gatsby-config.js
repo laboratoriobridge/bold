@@ -18,17 +18,18 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-i18n',
+      resolve: 'gatsby-plugin-exclude',
       options: {
-        langKeyDefault: 'en',
-        useLangKeyLayout: false,
+        paths: ['**/*.demo'],
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-intl',
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        path: `${__dirname}/src/locales`,
+        languages: ['en', 'pt'],
+        defaultLanguage: `en`,
+        redirect: true,
       },
     },
     {

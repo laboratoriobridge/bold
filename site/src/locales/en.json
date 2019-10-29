@@ -1,0 +1,21 @@
+{
+  "search-placeholder": "Search in Bold design system...",
+
+  "home-getting-started": "Getting started",
+  "home-aria-title": "Accessible",
+  "home-aria-description": "Bold components were built following the specifications of WCAG AA level, so you can build inclusive digital products to enhance user experience.",
+  "home-opensource-title": "Open source",
+  "home-opensource-description": "Bold is an open source project, so feel free to contribute, open issues if you find any bugs or implement new features. Find more information on GitHub.",
+  "home-customizable-title": "Customizable",
+  "home-customizable-description": "By default, Bold exports light and dark themes, but you can create a custom theme and use any primary   palette that fits your project.",
+  "home-welcome": "Welcome to bold, bridge’s open source design system",
+
+  "resources-title": "Resources",
+  "resources-description": "Here you can download some of the design resources and tools we consider will help you to build products experiences.",
+  "resources-sketch-description": "Sketch symbols, visual styles and patterns.",
+  "resources-sketch-download": "Download Sketch file",
+  "resources-figma-description": "Figma symbols, visual styles and patterns.",
+  "resources-figma-download": "Access Figma file",
+  "resources-sketchdata-description": "With Sketch’s Data feature you can quickly add real text data to your designs and update them, in an instant. We’re sharing the text files we use on our prototypes (in PT-BR). They include dates, addresses, female names, male names, social security number (CPF), emails, gender, phone numbers, among others.",
+  "resources-sketchdata-download": "Download Sketch's Data Suplies"
+}

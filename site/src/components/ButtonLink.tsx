@@ -1,16 +1,22 @@
 import { Button, ButtonProps } from 'bold-ui'
-import GatsbyLink, { GatsbyLinkProps } from 'gatsby-link'
+import GatsbyLink from 'gatsby-link'
 import React from 'react'
 
-export interface ButtonLinkProps extends ButtonProps {
-  to?: GatsbyLinkProps<any>['to']
+import { LocaleLink, LocaleLinkProps } from './LocaleLink'
+
+export interface ButtonLinkProps extends ButtonProps, Partial<Pick<LocaleLinkProps, 'to' | 'activeClassName'>> {
   href?: string
+  localized?: boolean
 }
 
 export function ButtonLink(props: ButtonLinkProps) {
-  if (props.to) {
-    return <Button component={GatsbyLink} {...props} />
-  } else {
-    return <Button component='a' {...props} />
-  }
+  const { localized, ...rest } = props
+
+  const component = (props.to && localized && LocaleLink) || (props.to && GatsbyLink) || 'a'
+
+  return <Button component={component} {...rest} />
+}
+
+ButtonLink.defaultProps = {
+  localized: true,
 }

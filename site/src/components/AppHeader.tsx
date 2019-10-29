@@ -1,9 +1,10 @@
-import { Button, Icon, lightTheme, Link, TextInput, Theme, Tooltip, useStyles } from 'bold-ui'
-import { Link as GatsbyLink } from 'gatsby'
-import React from 'react'
-import { useEffect } from 'react'
+import { Button, Icon, lightTheme, TextInput, Theme, Tooltip, useStyles } from 'bold-ui'
+import { changeLocale, useIntl } from 'gatsby-plugin-intl'
+import React, { useEffect } from 'react'
 
 import { BoldLogo } from './BoldLogo'
+import { ButtonLink } from './ButtonLink'
+import { LocaleLink } from './LocaleLink'
 import { SIDE_NAV_WIDTH } from './SideNav'
 
 // tslint:disable-next-line: no-var-requires
@@ -17,7 +18,8 @@ interface AppHeaderProps {
 
 export function AppHeader(props: AppHeaderProps) {
   const { navOpen, onNavChange, switchTheme } = props
-  const { classes, theme } = useStyles(createStyles)
+  const { css, classes, theme } = useStyles(createStyles)
+  const intl = useIntl()
 
   const changeNavState = (open: boolean) => () => onNavChange(open)
 
@@ -36,6 +38,10 @@ export function AppHeader(props: AppHeaderProps) {
     }
   }, [])
 
+  const handleLocaleChange = (lang: string) => () => {
+    changeLocale(lang)
+  }
+
   return (
     <header className={classes.header}>
       <div className={classes.menuIcon}>
@@ -50,9 +56,9 @@ export function AppHeader(props: AppHeaderProps) {
       </div>
 
       <div className={classes.logo}>
-        <Link component={GatsbyLink} to='/' style={{ display: 'inline-block' }}>
+        <LocaleLink to='/' style={{ display: 'inline-block' }}>
           <BoldLogo aria-label='Bold Logo' style={{ height: '2.5rem' }} />
-        </Link>
+        </LocaleLink>
       </div>
 
       <div className={classes.search} id='search-wrapper'>
@@ -62,13 +68,34 @@ export function AppHeader(props: AppHeaderProps) {
           type='search'
           icon='zoomOutline'
           iconPosition='left'
-          placeholder='Search in bold design system...'
+          placeholder={intl.formatMessage({ id: 'search-placeholder' })}
         />
       </div>
 
-      <div>
+      <div className={classes.toolbar}>
+        <Tooltip text='English'>
+          <Button
+            skin='ghost'
+            size='small'
+            style={css(intl.locale === 'en' && classes.toolbarActive)}
+            onClick={handleLocaleChange('en')}
+          >
+            EN
+          </Button>
+        </Tooltip>
+        <Tooltip text='Português'>
+          <Button
+            skin='ghost'
+            size='small'
+            style={css(intl.locale === 'pt' && classes.toolbarActive)}
+            onClick={handleLocaleChange('pt')}
+          >
+            PT
+          </Button>
+        </Tooltip>
+        <div className={classes.toolbarSeparator} />
         <Tooltip text={theme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
-          <Button skin='ghost' size='small' onClick={switchTheme} aria-label={'Switch theme'}>
+          <Button skin='ghost' size='small' onClick={switchTheme}>
             <Icon icon='lightbulbFilled' />
           </Button>
         </Tooltip>
@@ -119,6 +146,22 @@ const createStyles = (theme: Theme) => ({
       WebkitAppearance: 'none',
     } as React.CSSProperties,
   } as React.CSSProperties,
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    '& > *': {
+      margin: '0 0.25rem',
+    },
+  },
+  toolbarSeparator: {
+    background: theme.pallete.divider,
+    width: '1px',
+    height: '2rem',
+  },
+  toolbarActive: {
+    border: `1px solid ${theme.pallete.divider}`,
+    background: theme.pallete.gray.c90,
+  },
   search: {
     [theme.breakpoints.down('md')]: {
       display: 'none',
