@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-17 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
 .emotion-30 {
   width: 100%;
   border-collapse: collapse;
@@ -9,12 +22,6 @@ exports[`should render correctly 1`] = `
 
 .emotion-30 tr:hover td {
   background: #F0F0F5;
-}
-
-.emotion-4 {
-  text-align: left;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-3 {
@@ -47,13 +54,6 @@ exports[`should render correctly 1`] = `
   color: red;
 }
 
-.emotion-17 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
 .emotion-19 {
   text-align: left;
   padding: 0 1rem;
@@ -68,10 +68,10 @@ exports[`should render correctly 1`] = `
     class="emotion-30"
   >
     <thead
-      class="emotion-15"
+      class="emotion-1"
     >
       <tr
-        class="emotion-15"
+        class="emotion-1"
       >
         <th
           class="emotion-4"
@@ -151,10 +151,10 @@ exports[`should render correctly 1`] = `
       </tr>
     </thead>
     <tbody
-      class="emotion-15"
+      class="emotion-1"
     >
       <tr
-        class="emotion-15"
+        class="emotion-1"
       >
         <td
           class="emotion-17"
@@ -173,7 +173,7 @@ exports[`should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="emotion-15"
+        class="emotion-1"
       >
         <td
           class="emotion-17"
@@ -192,7 +192,7 @@ exports[`should render correctly 1`] = `
         </td>
       </tr>
       <tr
-        class="emotion-15"
+        class="emotion-1"
       >
         <td
           class="emotion-17"
