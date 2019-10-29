@@ -1,0 +1,51 @@
+# Começando
+
+## Instação
+
+Bold é open source e disponível como um pacote npm.
+
+Para instalar e salvar em seu `package.json`, rode em seu terminal:
+
+```sh
+# with npm
+npm install bold-ui --save
+
+# with yarn
+yarn add bold-ui --save
+```
+
+### Font family: IBM Plex Sans
+
+Bold foi projetado para usar [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) como tipografia padrão, com suas variações _regular_ e _bold_.
+
+Você pode instalar em seu app the inúmeras formas. Por exemplo:
+
+```html
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700,700i" rel="stylesheet" />
+```
+
+## Uso
+
+Rápida demonstração do uso da biblioteca:
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Button } from 'bold-ui'
+
+const App = () => {
+  return <Button kind='primary'>Hello World</Button>
+}
+
+ReactDOM.render(<App />, document.querySelector('#root'))
+```
+
+## Demo interativo ([CodeSandbox](https://codesandbox.io))
+
+<iframe
+  src='https://codesandbox.io/embed/black-violet-3ejig?autoresize=1&fontsize=14&view=preview'
+  title='bold-hello-world'
+  allow='geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media'
+  style={{ width: '100%', height: '500px', border: 0, borderRadius: '4px', overflow: 'hidden' }}
+  sandbox='allow-modals allow-forms allow-popups allow-scripts allow-same-origin'
+></iframe>
