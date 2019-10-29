@@ -14,16 +14,6 @@ exports[`Table should accept the hovered prop 1`] = `
   border-bottom: 1px solid #D3D4DD;
 }
 
-.emotion-19 {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #D3D4DD;
-}
-
-.emotion-19 tr:hover td {
-  background: #F0F0F5;
-}
-
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -44,6 +34,16 @@ exports[`Table should accept the hovered prop 1`] = `
 
 .emotion-2 {
   fill: #0069D0;
+}
+
+.emotion-19 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-19 tr:hover td {
+  background: #F0F0F5;
 }
 
 <div>
@@ -157,13 +157,6 @@ exports[`Table should accept the style prop 1`] = `
   border-bottom: 1px solid #D3D4DD;
 }
 
-.emotion-19 {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #D3D4DD;
-  color: red;
-}
-
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -184,6 +177,13 @@ exports[`Table should accept the style prop 1`] = `
 
 .emotion-2 {
   fill: #0069D0;
+}
+
+.emotion-19 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D3D4DD;
+  color: red;
 }
 
 <div>
