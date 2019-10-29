@@ -1,5 +1,14 @@
 import React from 'react'
 
-import { lightTheme, ThemeProvider } from '../styles/'
+import { createTheme, lightTheme, ThemeProvider } from '../styles/'
 
-export const withStorybookTheme = storyFn => <ThemeProvider theme={lightTheme}>{storyFn()}</ThemeProvider>
+// If running on loki, use a local font-family to avoid delays downloading it
+const storybookTheme = !process.env.STORYBOOK_LOKI
+  ? lightTheme
+  : createTheme({
+      typography: {
+        fontFamily: 'sans-serif',
+      },
+    })
+
+export const withStorybookTheme = storyFn => <ThemeProvider theme={storybookTheme}>{storyFn()}</ThemeProvider>
