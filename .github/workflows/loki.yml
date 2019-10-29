@@ -18,6 +18,9 @@ jobs:
       - name: yarn install
         run: yarn install
 
+      - name: yarn build
+        run: yarn build
+
       - name: loki test
         run: yarn test:loki
 
