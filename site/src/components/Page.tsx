@@ -3,6 +3,7 @@ import React from 'react'
 
 import pages from '../pages'
 
+import { ErrorBoundary } from './ErrorBoundary'
 import { PageContainer } from './PageContainer'
 
 export function Page(props: any) {
@@ -19,12 +20,14 @@ export function Page(props: any) {
     <div className={classes.wrapper}>
       <PageContainer>
         <main>
-          {parent && (
-            <Text id='page-parent-title' fontWeight='bold'>
-              {parent.title}
-            </Text>
-          )}
-          {children}
+          <ErrorBoundary>
+            {parent && (
+              <Text id='page-parent-title' fontWeight='bold'>
+                {parent.title}
+              </Text>
+            )}
+            {children}
+          </ErrorBoundary>
         </main>
       </PageContainer>
     </div>
