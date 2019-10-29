@@ -1,5 +1,5 @@
 import { Theme, useStyles } from 'bold-ui'
-import { ColorScale, gray } from 'bold-ui/lib/styles/colors'
+import { ColorScale, gray } from 'bold-ui/styles/colors'
 import React from 'react'
 
 export interface PalletePros {

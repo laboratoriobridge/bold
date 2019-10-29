@@ -6,17 +6,13 @@ export type OnClickWithReturn = (event: React.SyntheticEvent<any>) => any
 
 export interface ButtonBaseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   innerRef?: React.Ref<HTMLButtonElement>
+  component?: React.ElementType
   onClick?: React.ButtonHTMLAttributes<HTMLButtonElement>['onClick'] | OnClickWithReturn
-  render?(props: ButtonBaseRenderProps): React.ReactNode
   onLoadingChange?(loading: boolean): void
 }
 
-export interface ButtonBaseRenderProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  innerRef?: React.Ref<HTMLButtonElement>
-}
-
 export function ButtonBase(props: ButtonBaseProps) {
-  const { onClick, render, onLoadingChange, ...rest } = props
+  const { component: Component, innerRef, onClick, onLoadingChange, ...rest } = props
 
   const startLoading = () => {
     onLoadingChange && onLoadingChange(true)
@@ -36,11 +32,11 @@ export function ButtonBase(props: ButtonBaseProps) {
     }
   }
 
-  return <>{render({ ...rest, onClick: handleClick })}</>
+  return (
+    <Component ref={innerRef} onClick={handleClick} type={Component === 'button' ? 'button' : undefined} {...rest} />
+  )
 }
 
 ButtonBase.defaultProps = {
-  render: ({ innerRef, ...rest }: ButtonBaseRenderProps) => {
-    return <button ref={innerRef} {...rest} />
-  },
+  component: 'button',
 } as ButtonBaseProps

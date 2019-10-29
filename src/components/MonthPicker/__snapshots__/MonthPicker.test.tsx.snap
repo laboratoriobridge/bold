@@ -51,6 +51,8 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
@@ -119,6 +121,8 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1rem;
@@ -179,6 +183,8 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   border: 1px solid transparent;
   border-radius: 4px;
   color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.75rem - 1px) 2.5rem;
   padding: calc(0.25rem - 1px) 1rem;

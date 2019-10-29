@@ -1,5 +1,5 @@
 import { Theme, useStyles } from 'bold-ui'
-import { gray } from 'bold-ui/lib/styles/colors'
+import { gray } from 'bold-ui/styles/colors'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-tsx'

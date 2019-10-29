@@ -1,5 +1,5 @@
 import { LocaleContext, Paginator } from 'bold-ui'
-import ptBr from 'bold-ui/lib/i18n/locales/pt-BR'
+import ptBr from 'bold-ui/i18n/locales/pt-BR'
 import React from 'react'
 
 function LocaleProviderDemo() {

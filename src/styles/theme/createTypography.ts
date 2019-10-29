@@ -20,7 +20,7 @@ export interface Typography {
   variant(variant: TypographyVariant): CSSProperties
 }
 
-export type TypographyConfig = typeof defaultTypographyConfig
+export type TypographyConfig = Partial<typeof defaultTypographyConfig>
 
 export const defaultTypographyConfig = {
   fontFamily: '"IBM Plex Sans", sans-serif',

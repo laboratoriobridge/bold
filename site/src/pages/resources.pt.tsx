@@ -1,13 +1,11 @@
-import { Button, Cell, Grid, Icon, Link, Text, VFlow } from 'bold-ui'
+import { Cell, Grid, Icon, Link, Text, VFlow } from 'bold-ui'
 import React from 'react'
 
+import { ButtonLink } from '../components/ButtonLink'
 import { ga } from '../components/ga'
 import { PageLayout } from '../components/PageLayout'
 
 function Resources() {
-  const renderButtonSketch = (props: any) => <a {...props} href='/Bold-1.0.sketch' />
-  const renderButtonSketchData = (props: any) => <a {...props} href='/Sketch-Data-Suplies(PT-BR).zip' />
-
   const handleClickSketch = () => {
     ga('send', 'event', {
       eventCategory: 'Download',
@@ -52,17 +50,16 @@ function Resources() {
                 </Text>
               </div>
 
-              <Button
+              <ButtonLink
+                href='/Bold-1.0.sketch'
                 kind='primary'
                 skin='outline'
                 size='small'
-                style={{ textDecoration: 'none' }}
-                render={renderButtonSketch}
                 onClick={handleClickSketch}
               >
                 <Icon icon='download' style={{ marginRight: '0.5rem' }} />
                 Baixar arquivo do Sketch
-              </Button>
+              </ButtonLink>
             </VFlow>
           </Cell>
         </Grid>
@@ -105,17 +102,16 @@ function Resources() {
                 protótipos (em PT-BR). Eles incluem datas, endereços, nomes femininos, nomes masculinos, CPF, e-mails,
                 sexo, números de telefone, entre outros.
               </Text>
-              <Button
+              <ButtonLink
+                href='/Sketch-Data-Suplies(PT-BR).zip'
                 kind='primary'
                 skin='outline'
                 size='small'
-                style={{ textDecoration: 'none' }}
-                render={renderButtonSketchData}
                 onClick={handleClickSketchData}
               >
                 <Icon icon='download' style={{ marginRight: '0.5rem' }} />
                 Baixar o Sketch Data Suplies
-              </Button>
+              </ButtonLink>
             </VFlow>
           </Cell>
         </Grid>

@@ -161,3 +161,8 @@ it('should disable click event when loading', () => {
   fireEvent.click(container.querySelector('button'))
   expect(click).toHaveBeenCalledTimes(1)
 })
+
+it('shoud allow override of the "component" prop', () => {
+  const { container } = render(<Button component='a'>A link button</Button>)
+  expect(container).toMatchSnapshot()
+})

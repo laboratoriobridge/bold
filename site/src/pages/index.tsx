@@ -1,13 +1,12 @@
 import { keyframes } from '@emotion/core'
-import { Button, Cell, Grid, HFlow, Icon, Text, TextProps, Theme, useStyles, VFlow } from 'bold-ui'
-import GatsbyLink from 'gatsby-link'
+import { Cell, Grid, HFlow, Icon, Text, TextProps, Theme, useStyles, VFlow } from 'bold-ui'
 import React from 'react'
 
+import { ButtonLink } from '../components/ButtonLink'
 import { PageLayout } from '../components/PageLayout'
 
 export default () => {
   const { classes } = useStyles(createStyles)
-  const renderButtonGettingStarted = (props: any) => <GatsbyLink {...props} to='/getting-started' />
 
   return (
     <PageLayout container={false}>
@@ -23,8 +22,8 @@ export default () => {
             <VFlow>
               <h2 className={classes.subtitle}>Welcome to bold, bridge’s open source design system</h2>
 
-              <Button
-                render={renderButtonGettingStarted}
+              <ButtonLink
+                to='/getting-started'
                 kind='primary'
                 skin='outline'
                 size='medium'
@@ -32,7 +31,7 @@ export default () => {
               >
                 <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
                 Getting started
-              </Button>
+              </ButtonLink>
             </VFlow>
 
             <Grid wrap>
