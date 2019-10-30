@@ -83,6 +83,10 @@ exports[`PeriodInput render should render correctly 1`] = `
   right: 1px;
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
@@ -246,10 +250,6 @@ exports[`PeriodInput render should render correctly 1`] = `
   box-shadow: none;
 }
 
-.emotion-1 {
-  position: relative;
-}
-
 <div>
   <div
     class="emotion-14"
@@ -396,6 +396,10 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
   right: 1px;
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
@@ -491,10 +495,6 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
 .emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-1 {
-  position: relative;
 }
 
 .emotion-10 {
@@ -750,6 +750,10 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
   right: 1px;
 }
 
+.emotion-1 {
+  position: relative;
+}
+
 .emotion-0 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
@@ -911,10 +915,6 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
 
 .emotion-12:focus {
   box-shadow: none;
-}
-
-.emotion-1 {
-  position: relative;
 }
 
 .emotion-10 {
