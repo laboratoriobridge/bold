@@ -40,34 +40,3 @@ describe('PeriodField', () => {
 //       )
 //     })
 //   })
-
-//   describe('disableByRange', () => {
-//     it('should return a predicate that disables date by range', () => {
-//       const isDisabled = disableByRange(new Date('2018-10-10'), new Date('2018-10-15'))
-//       expect(isDisabled(new Date('2018-10-13'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-10'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-09'))).toBeTruthy()
-//       expect(isDisabled(new Date('2018-10-15'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-16'))).toBeTruthy()
-//     })
-//     it('should return a predicate that disables date by minDate', () => {
-//       const isDisabled = disableByRange(new Date('2018-10-10'), null)
-//       expect(isDisabled(new Date('2200-10-13'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-10'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-09'))).toBeTruthy()
-//       expect(isDisabled(new Date('1970-10-09'))).toBeTruthy()
-//     })
-//     it('should return a predicate that disables date by maxDate', () => {
-//       const isDisabled = disableByRange(null, new Date('2018-10-15'))
-//       expect(isDisabled(new Date('2200-10-13'))).toBeTruthy()
-//       expect(isDisabled(new Date('2018-10-16'))).toBeTruthy()
-//       expect(isDisabled(new Date('2018-10-09'))).toBeFalsy()
-//       expect(isDisabled(new Date('1970-10-09'))).toBeFalsy()
-//     })
-//     it('should disconsider time when comparing maxDate and minDate', () => {
-//       const isDisabled = disableByRange(new Date('2018-10-01T20:59:00'), new Date('2018-10-01T20:59:30'))
-//       expect(isDisabled(new Date('2018-10-01T12:00:00'))).toBeFalsy()
-//       expect(isDisabled(new Date('2018-10-01T23:00:00'))).toBeFalsy()
-//     })
-//   })
-// })

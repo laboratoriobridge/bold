@@ -38,24 +38,24 @@ describe('PeriodInput', () => {
     })
   })
 
-  describe('change actions', () => {
-    const change = jest.fn()
-    const { container } = render(
-      <PeriodInputBase
-        onChange={change}
-        value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
-      />
-    )
-    const inputs = container.querySelectorAll('input')
+  // describe('change actions', () => {
+  //   const change = jest.fn()
+  //   const { container } = render(
+  //     <PeriodInputBase
+  //       onChange={change}
+  //       value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+  //     />
+  //   )
+  //   const inputs = container.querySelectorAll('input')
 
-    it('should call onChange with finalDate as undefined when second input is cleared', () => {
-      fireEvent.change(inputs[SECOND_INPUT], { target: { value: '' } })
-      expect(change).toHaveBeenLastCalledWith({
-        startDate: new Date('2019-01-01'),
-        finalDate: undefined,
-      } as Period)
-    })
-  })
+  //   it('should call onChange with finalDate as undefined when second input is cleared', () => {
+  //     fireEvent.change(inputs[SECOND_INPUT], { target: { value: '' } })
+  //     expect(change).toHaveBeenLastCalledWith({
+  //       startDate: new Date('2019-01-01'),
+  //       finalDate: undefined,
+  //     } as Period)
+  //   })
+  // })
 
   // describe('validate entry', () => {
   //   const change = jest.fn()
