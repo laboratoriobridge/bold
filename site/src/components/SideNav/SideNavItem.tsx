@@ -15,6 +15,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
   const { href, icon, title, children, onNavigate, ...rest } = props
   const { classes } = useStyles(createStyles)
   const intl = useIntl()
+
   const [isCollapsed, setIsCollapsed] = useState(() => {
     return (
       href &&
@@ -35,7 +36,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
   const LinkContent = (
     <>
       <Icon icon={icon as Icons} className={classes.icon} />
-      <span className={classes.title}>{title}</span>
+      <span className={classes.title}>{intl.formatMessage({ id: title })}</span>
       {children && <Icon icon={isCollapsed ? 'angleUp' : 'angleDown'} className={classes.iconDropdown} />}
     </>
   )
@@ -70,7 +71,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
                 onClick={onNavigate}
                 partiallyActive
               >
-                {sub.title}
+                {intl.formatMessage({ id: sub.title })}
               </LocaleLink>
             </li>
           ))}

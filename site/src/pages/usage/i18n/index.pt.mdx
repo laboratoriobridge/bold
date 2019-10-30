@@ -1,0 +1,15 @@
+import { Demo } from '../../../components/Demo'
+
+# Internacionalização (i18n)
+
+Os componentes do Bold usam por padrão a linguagem do browser para determinar o _locale_.
+
+É possível customizar as strings usadas pelos componentes usando `LocaleContext.Provider` e acessá-las através da _hook_ `useLocale`.
+
+A hook `useLocale` retorna um mapa de strings usadas internamente pelos componentes do bold, como o Calendar, Paginator etc.
+
+<Demo src='pages/usage/i18n/LocaleProvider' />
+
+## _Locales_ disponíveis
+
+Verifique os _locales_ disponíveis na pasta `src/i18n/locales`. Sinta-se livre para abrir um _pull request_ caso seu _locale_ não esteja presente.

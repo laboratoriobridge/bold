@@ -1,4 +1,5 @@
 import { Text, Theme, useStyles } from 'bold-ui'
+import { useIntl } from 'gatsby-plugin-intl'
 import React from 'react'
 
 import pages from '../pages'
@@ -9,6 +10,7 @@ import { PageContainer } from './PageContainer'
 export function Page(props: any) {
   const { children } = props
   const { classes } = useStyles(createStyles)
+  const intl = useIntl()
 
   const parent =
     typeof location !== 'undefined' &&
@@ -23,7 +25,7 @@ export function Page(props: any) {
           <ErrorBoundary>
             {parent && (
               <Text id='page-parent-title' fontWeight='bold'>
-                {parent.title}
+                {intl.formatMessage({ id: parent.title })}
               </Text>
             )}
             {children}
