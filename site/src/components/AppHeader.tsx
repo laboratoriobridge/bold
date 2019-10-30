@@ -94,7 +94,13 @@ export function AppHeader(props: AppHeaderProps) {
           </Button>
         </Tooltip>
         <div className={classes.toolbarSeparator} />
-        <Tooltip text={theme === lightTheme ? 'Switch to dark mode' : 'Switch to light mode'}>
+        <Tooltip
+          text={
+            theme === lightTheme
+              ? intl.formatMessage({ id: 'switch-to-dark' })
+              : intl.formatMessage({ id: 'switch-to-light' })
+          }
+        >
           <Button skin='ghost' size='small' onClick={switchTheme}>
             <Icon icon='lightbulbFilled' />
           </Button>
