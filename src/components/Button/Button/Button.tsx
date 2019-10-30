@@ -68,5 +68,4 @@ Button.defaultProps = {
   kind: 'normal',
   skin: 'default',
   size: 'medium',
-  type: 'button',
 } as Partial<ButtonProps>

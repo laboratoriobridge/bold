@@ -1,5 +1,5 @@
 import { Cell, Grid } from 'bold-ui'
-import * as colors from 'bold-ui/lib/styles/colors'
+import * as colors from 'bold-ui/styles/colors'
 import React from 'react'
 
 import { Pallete } from './Pallete'

@@ -1,5 +1,5 @@
 import { Heading, Link as BoldLink, Text, Theme, useStyles } from 'bold-ui'
-import { gray } from 'bold-ui/lib/styles/colors'
+import { gray } from 'bold-ui/styles/colors'
 import React from 'react'
 import { CSSProperties } from 'react'
 

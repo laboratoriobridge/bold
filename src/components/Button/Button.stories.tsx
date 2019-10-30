@@ -1,11 +1,11 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
-import React from 'react'
+import React, { AnchorHTMLAttributes } from 'react'
 
 import { Icon } from '../Icon'
 
-import { Button } from './Button/Button'
+import { Button, ButtonProps } from './Button/Button'
 import { ButtonKind, ButtonSize, ButtonSkin } from './Button/ButtonSkins'
 
 const typeOptions: ButtonKind[] = ['normal', 'primary', 'danger']
@@ -39,3 +39,25 @@ storiesOf('Components|Button', module)
       <Icon icon='adjust' />
     </Button>
   ))
+  .add('link - <a> tag', () => {
+    const ButtonLink = (props: ButtonProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
+      <Button component='a' {...props} />
+    )
+
+    return (
+      <ButtonLink
+        href='https://bold.bridge.ufsc.br'
+        component='a'
+        target='_blank'
+        skin={select('skin', skinOptions, 'ghost')}
+        size={select('size', sizeOptions, 'small')}
+        kind={select('kind', typeOptions, 'normal')}
+        loading={boolean('loading', false)}
+        disabled={boolean('disabled', false)}
+        block={boolean('block', false)}
+        onClick={action('button-clicked')}
+      >
+        This is a link
+      </ButtonLink>
+    )
+  })
