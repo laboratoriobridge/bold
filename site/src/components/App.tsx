@@ -1,15 +1,22 @@
 import { MDXProvider } from '@mdx-js/react'
+import { useIntl } from 'gatsby-plugin-intl'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import * as MDXComponents from './mdx'
 
 export function App({ children }) {
+  const intl = useIntl()
+
   return (
     <MDXProvider components={mdxComponents}>
       <Helmet>
+        <html lang={intl.locale} />
+
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no' />
         <meta name='google-site-verification' content='9wtCJ3N0XgFLGgfGyveZ0DCYfh8JJpcICsiqBsh5YHk' />
+
+        <meta name='docsearch:language' content={intl.locale} />
 
         <title>Bold Design System</title>
 

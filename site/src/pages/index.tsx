@@ -1,12 +1,14 @@
 import { keyframes } from '@emotion/core'
 import { Cell, Grid, HFlow, Icon, Text, TextProps, Theme, useStyles, VFlow } from 'bold-ui'
+import { useIntl } from 'gatsby-plugin-intl'
 import React from 'react'
 
 import { ButtonLink } from '../components/ButtonLink'
 import { PageLayout } from '../components/PageLayout'
 
-export default () => {
+export default props => {
   const { classes } = useStyles(createStyles)
+  const intl = useIntl()
 
   return (
     <PageLayout container={false}>
@@ -20,7 +22,7 @@ export default () => {
 
           <VFlow vSpacing={3}>
             <VFlow>
-              <h2 className={classes.subtitle}>Welcome to bold, bridge’s open source design system</h2>
+              <h2 className={classes.subtitle}>{intl.formatMessage({ id: 'home-welcome' })}</h2>
 
               <ButtonLink
                 to='/getting-started'
@@ -30,7 +32,7 @@ export default () => {
                 style={{ textDecoration: 'none' }}
               >
                 <Icon icon='rocket' style={{ marginRight: '0.5rem' }} />
-                Getting started
+                {intl.formatMessage({ id: 'home-getting-started' })}
               </ButtonLink>
             </VFlow>
 
@@ -38,31 +40,28 @@ export default () => {
               <Cell xs={12} md={4}>
                 <HFlow alignItems='center' hSpacing={0.5}>
                   <Icon icon='arrowRight' fill='primary' />
-                  <h3 className={classes.infoTitle}>Accessible</h3>
+                  <h3 className={classes.infoTitle}>{intl.formatMessage({ id: 'home-aria-title' })}</h3>
                 </HFlow>
                 <Text component='p' style={classes.info}>
-                  Bold components were built following the specifications of WCAG AA level, so you can build inclusive
-                  digital products to enhance user experience.
+                  {intl.formatMessage({ id: 'home-aria-description' })}
                 </Text>
               </Cell>
               <Cell xs={12} md={4}>
                 <HFlow alignItems='center' hSpacing={0.5}>
                   <Icon icon='arrowRight' fill='primary' />
-                  <h3 className={classes.infoTitle}>Open source</h3>
+                  <h3 className={classes.infoTitle}>{intl.formatMessage({ id: 'home-opensource-title' })}</h3>
                 </HFlow>
                 <Text component='p' style={classes.info}>
-                  Bold is an open source project, so feel free to contribute, open issues if you find any bugs or
-                  implement new features. Find more information on GitHub.
+                  {intl.formatMessage({ id: 'home-opensource-description' })}
                 </Text>
               </Cell>
               <Cell xs={12} md={4}>
                 <HFlow alignItems='center' hSpacing={0.5}>
                   <Icon icon='arrowRight' fill='primary' />
-                  <h3 className={classes.infoTitle}>Customizable</h3>
+                  <h3 className={classes.infoTitle}>{intl.formatMessage({ id: 'home-customizable-title' })}</h3>
                 </HFlow>
                 <Text component='p' style={classes.info}>
-                  By default, Bold exports light and dark themes, but you can create a custom theme and use any primary
-                  palette that fits your project.
+                  {intl.formatMessage({ id: 'home-customizable-description' })}
                 </Text>
               </Cell>
             </Grid>
