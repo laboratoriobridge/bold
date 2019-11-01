@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { render, wait } from '@testing-library/react'
 import React from 'react'
 
 import { LocaleContext } from '../../i18n'
@@ -28,10 +28,11 @@ describe('PeriodInput', () => {
   })
 
   describe('format', () => {
-    it('should accept and format period as value', () => {
+    it('should accept and format period as value', async () => {
       const { container } = render(
         <PeriodInputBase value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period} />
       )
+      await wait()
       const inputs = container.querySelectorAll('input')
       expect(inputs[FIRST_INPUT].value).toEqual('01/01/2019')
       expect(inputs[SECOND_INPUT].value).toEqual('02/02/2019')
