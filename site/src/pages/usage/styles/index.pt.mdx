@@ -1,0 +1,21 @@
+import { Demo } from '../../../components/Demo'
+
+# Estilos
+
+O Bold usa _CSS-in-JS_ para aplicar estilo aos seus componentes, de forma que todo CSS é incluído junto ao _bundle_ JS e inserido no DOM em tempo de execução. Nós usamos o [emotion](https://emotion.sh), uma biblioteca de CSS-in-JS para isso.
+
+## Estilizando com a hook `useStyles`
+
+A função `useStyles` é um [React hook](https://reactjs.org/docs/hooks-intro.html) que pode ser usado para gerar estilos CSS e injetá-los aos seus componentes customizados. A hook retorna um objeto contendo:
+
+- `classes`: Um mapa contendo os nomes de classes gerados, para serem usados como a prop `className` de seus componentes
+- `css`: A função `css` do emotion usada para gerar as classes
+- `theme`: O tema atual do Bold
+
+<Demo src='pages/usage/styles/UseStyles' />
+
+### Usando a função `css`
+
+Você também pode usar a função `css` para criar estilos CSS:
+
+<Demo src='pages/usage/styles/Css' />

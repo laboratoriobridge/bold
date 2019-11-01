@@ -1,7 +1,9 @@
 import { Icon, Icons, Theme, useStyles } from 'bold-ui'
-import GatsbyLink from 'gatsby-link'
+import { useIntl } from 'gatsby-plugin-intl'
 import { useState } from 'react'
 import React from 'react'
+
+import { LocaleLink } from '../LocaleLink'
 
 import { PageLink } from './SideNav'
 
@@ -12,8 +14,14 @@ export interface SideNavItemProps extends PageLink {
 export const SideNavItem = (props: SideNavItemProps) => {
   const { href, icon, title, children, onNavigate, ...rest } = props
   const { classes } = useStyles(createStyles)
+  const intl = useIntl()
+
   const [isCollapsed, setIsCollapsed] = useState(() => {
-    return href && typeof location !== 'undefined' && location.pathname.startsWith(href)
+    return (
+      href &&
+      typeof location !== 'undefined' &&
+      (location.pathname.startsWith(href) || location.pathname.startsWith(`/${intl.locale}${href}`))
+    )
   })
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -28,7 +36,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
   const LinkContent = (
     <>
       <Icon icon={icon as Icons} className={classes.icon} />
-      <span className={classes.title}>{title}</span>
+      <span className={classes.title}>{intl.formatMessage({ id: title })}</span>
       {children && <Icon icon={isCollapsed ? 'angleUp' : 'angleDown'} className={classes.iconDropdown} />}
     </>
   )
@@ -40,7 +48,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
           {LinkContent}
         </a>
       ) : (
-        <GatsbyLink
+        <LocaleLink
           to={href}
           activeClassName='active'
           className={classes.link}
@@ -49,22 +57,22 @@ export const SideNavItem = (props: SideNavItemProps) => {
           {...rest}
         >
           {LinkContent}
-        </GatsbyLink>
+        </LocaleLink>
       )}
 
       {children && isCollapsed && (
         <ul className={classes.sublist}>
           {children.map(sub => (
             <li key={sub.href}>
-              <GatsbyLink
+              <LocaleLink
                 to={sub.href}
                 activeClassName='active'
                 className={classes.sublink}
                 onClick={onNavigate}
                 partiallyActive
               >
-                {sub.title}
-              </GatsbyLink>
+                {intl.formatMessage({ id: sub.title })}
+              </LocaleLink>
             </li>
           ))}
         </ul>

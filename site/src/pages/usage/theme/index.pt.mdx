@@ -1,0 +1,25 @@
+import { Demo } from '../../../components/Demo'
+
+# Tema
+
+Bold exporta por padrão dois objetos de tema: `lightTheme` e `darkTheme`, e usa este primeiro como tema padrão.
+
+Você pode trocar o tema deste site de documentação entre light/dark usando a lâmpada no canto superior direito da tela.
+
+## Customizando o tema
+
+O tema pode ser alterado usando o componente `ThemeProvider`:
+
+<Demo src='pages/usage/theme/Customize' />
+
+## Acessando o tema atual
+
+Use as hooks `useTheme` ou `useStyles` para acessar a variável do tema atual:
+
+<Demo src='pages/usage/theme/AccessTheme' />
+
+## Temas personalizados
+
+É possível criar um tema personalizado usando a função `createTheme`:
+
+<Demo src='pages/usage/theme/CustomTheme' />

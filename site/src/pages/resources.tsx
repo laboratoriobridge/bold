@@ -1,4 +1,5 @@
 import { Cell, Grid, Icon, Link, Text, VFlow } from 'bold-ui'
+import { useIntl } from 'gatsby-plugin-intl'
 import React from 'react'
 
 import { ButtonLink } from '../components/ButtonLink'
@@ -6,6 +7,8 @@ import { ga } from '../components/ga'
 import { PageLayout } from '../components/PageLayout'
 
 function Resources() {
+  const intl = useIntl()
+
   const handleClickSketch = () => {
     ga('send', 'event', {
       eventCategory: 'Download',
@@ -29,10 +32,9 @@ function Resources() {
   return (
     <PageLayout>
       <VFlow>
-        <h1>Resources</h1>
+        <h1>{intl.formatMessage({ id: 'resources-title' })}</h1>
         <Text component='p' fontSize={1}>
-          Here you can download some of the design resources and tools we consider will help you to build products
-          experiences.
+          {intl.formatMessage({ id: 'resources-description' })}
         </Text>
 
         <Grid>
@@ -46,7 +48,7 @@ function Resources() {
                   Bold Design Kit
                 </Text>
                 <Text component='p' fontSize={1}>
-                  Sketch symbols, visual styles and patterns.
+                  {intl.formatMessage({ id: 'resources-sketch-description' })}
                 </Text>
               </div>
 
@@ -58,7 +60,7 @@ function Resources() {
                 onClick={handleClickSketch}
               >
                 <Icon icon='download' style={{ marginRight: '0.5rem' }} />
-                Download Sketch file
+                {intl.formatMessage({ id: 'resources-sketch-download' })}
               </ButtonLink>
             </VFlow>
           </Cell>
@@ -75,7 +77,7 @@ function Resources() {
                   Bold Design Kit
                 </Text>
                 <Text component='p' fontSize={1}>
-                  Figma symbols, visual styles and patterns.
+                  {intl.formatMessage({ id: 'resources-figma-description' })}
                 </Text>
               </div>
 
@@ -85,7 +87,7 @@ function Resources() {
                 target='_blank'
                 onClick={handleClickFigma}
               >
-                Access Figma file
+                {intl.formatMessage({ id: 'resources-figma-download' })}
               </Link>
             </VFlow>
           </Cell>
@@ -94,13 +96,10 @@ function Resources() {
           <Cell>
             <VFlow vSpacing={0.5}>
               <Text component='p' fontWeight='bold' fontSize={1}>
-                Sketch's Data Suplies
+                Sketch Data Suplies
               </Text>
               <Text component='p' fontSize={1}>
-                With Sketch’s Data feature you can quickly add real text data to your designs and update them, in an
-                instant. We’re sharing the text files we use on our prototypes (in PT-BR). They include dates,
-                addresses, female names, male names, social security number (CPF), emails, gender, phone numbers, among
-                others.
+                {intl.formatMessage({ id: 'resources-sketchdata-description' })}
               </Text>
               <ButtonLink
                 href='/Sketch-Data-Suplies(PT-BR).zip'
@@ -110,7 +109,7 @@ function Resources() {
                 onClick={handleClickSketchData}
               >
                 <Icon icon='download' style={{ marginRight: '0.5rem' }} />
-                Download Sketch's Data Suplies
+                {intl.formatMessage({ id: 'resources-sketchdata-download' })}
               </ButtonLink>
             </VFlow>
           </Cell>
