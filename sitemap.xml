@@ -1,267 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url>
-		<loc>http://bold.bridge.ufsc.br/_document</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/about</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/accordion</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/alert</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/breadcrumb</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/button</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/cards</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/checkbox</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/content-switch</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/date-picker</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/dropdown</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/file-uploader</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/form</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/link</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/modal</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/multi-select</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/overview</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/paginator</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/radio-button</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/search</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/select</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/stepper</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/switch</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/table</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/tabs</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/tag</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/text-field</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/toast</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/components/tooltip</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/accessibility</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/color</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/color/usage</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/grid</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/iconography</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/iconography/library</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/iconography/usage</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/illustrations</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/design-guidelines/typography</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/getting-started</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/resources</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/usage/i18n</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/usage/styles</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>http://bold.bridge.ufsc.br/usage/theme</loc>
-		<lastmod>2019-10-23</lastmod>
-		<changefreq>always</changefreq>
-		<priority>0.5</priority>
-	</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>http://bold.bridge.ufsc.br/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/resources/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/resources/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/resources/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/404/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/404/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/accordion/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/accordion/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/accordion/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/alert/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/alert/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/alert/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/breadcrumb/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/breadcrumb/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/breadcrumb/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/cards/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/cards/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/cards/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/checkbox/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/checkbox/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/content-switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/content-switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/content-switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/date-picker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/date-picker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/date-picker/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/dropdown/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/dropdown/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/dropdown/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/file-uploader/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/file-uploader/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/file-uploader/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/form/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/form/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/form/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/link/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/link/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/link/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/modal/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/modal/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/modal/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/multi-select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/multi-select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/multi-select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/overview/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/overview/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/overview/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/paginator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/paginator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/paginator/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/checkbox/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/radio-button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/search/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/select/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/stepper/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/stepper/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/stepper/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/table/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/table/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/table/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/tabs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/tabs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/tabs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/tag/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/tag/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/tag/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/text-field/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/text-field/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/text-field/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/toast/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/toast/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/toast/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/tooltip/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/tooltip/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/components/tooltip/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/accessibility/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/accessibility/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/accessibility/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/color/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/color/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/color/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/color/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/color/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/color/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/grid/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/grid/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/grid/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/iconography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/iconography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/iconography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/iconography/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/iconography/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/iconography/usage/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/illustrations/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/illustrations/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/illustrations/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/design-guidelines/typography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/design-guidelines/typography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/design-guidelines/typography/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/getting-started/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/usage/i18n/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/usage/i18n/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/usage/i18n/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/usage/styles/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/usage/styles/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/usage/styles/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/usage/theme/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/usage/theme/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/pt/usage/theme/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/components/radio-button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>http://bold.bridge.ufsc.br/en/components/radio-button/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
