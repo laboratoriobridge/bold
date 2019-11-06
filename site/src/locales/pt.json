@@ -1,7 +1,7 @@
 {
   "search-placeholder": "Pesquisar no Bold design system...",
-  "switch-to-dark": "Alterar para tema escuro",
-  "switch-to-light": "Alterar para tema claro",
+  "switch-to-dark": "Alternar para o tema escuro",
+  "switch-to-light": "Alternar para o tema claro",
 
   "home-getting-started": "Começando",
   "home-aria-title": "Acessível",
@@ -9,7 +9,7 @@
   "home-opensource-title": "Open source",
   "home-opensource-description": "O Bold é um projeto open source, portanto se sinta livre para contribuir, abrir issues se você encontrar problemas ou implementar novas funcionalidades. Encontre mais informações no GitHub.",
   "home-customizable-title": "Customizável",
-  "home-customizable-description": "Por default, o Bold exporta os temas Light e Dark, mas você pode criar um tema customizável e usar qualquer paleta que se adequar ao seu projeto.",
+  "home-customizable-description": "Por padrão, o Bold exporta os temas Light e Dark, mas você pode criar um tema customizável e usar qualquer paleta que se adequar ao seu projeto.",
   "home-welcome": "Bem vindo ao Bold, o design system open source do bridge",
 
   "resources-title": "Recursos",
@@ -63,5 +63,14 @@
   "menu-toast": "Toast",
   "menu-tooltip": "Tooltip",
   "menu-resources": "Resources",
-  "menu-storybook": "Storybook"
+  "menu-storybook": "Storybook",
+  "color-name-blue": "Azul",
+  "color-name-gray": "Cinza",
+  "color-name-green": "Verde",
+  "color-name-orange": "Laranja",
+  "color-name-purple": "Roxo",
+  "color-name-red": "Vermelho",
+  "color-name-turquoise": "Turquesa",
+  "color-name-yellow": "Amarelo",
+  "color-name-pink": "Rosa"
 }

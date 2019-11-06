@@ -2,7 +2,7 @@ import { Card } from '../../../components/Card'
 
 # Acessibilidade
 
-Acessibilidade web está ganhando mais e mais espaço no contexto de desenvolvimento de software. Dada a natureza colaborativa da web e sua importância no processo de facilitar a comunicação, nós precisamos assegurar o acesso a informação e **promover a mesma experiência a todos os usuários**, independentemente da habilidade física, cognitiva ou da plataforma e tecnologias utilizadas.
+Acessibilidade web está ganhando mais e mais espaço no contexto de desenvolvimento de software. Dada a natureza colaborativa da web e sua importância no processo de facilitar a comunicação, nós precisamos assegurar o acesso a informação e **promover a mesma experiência à todos os usuários**, independentemente da habilidade física, cognitiva ou da plataforma e tecnologias utilizadas.
 
 <blockquote cite='World Health Organization'>
   <p>
@@ -24,17 +24,17 @@ De acordo com dados do [Relatório Mundial de Deficiência 2011](https://www.who
 ## Componentes acessíveis
 
 Os componentes do Bold foram construídos seguindo as especificações da WCAG, em conformidade com o nível AA. O Bold permite o desenvolvimento acessível, fornecendo componentes semanticamente corretos, cada um com uma
-marcação ARIA apropriada para que possam ser corretamente identificados por tecnologias assistivas. No entanto, é importante ter em mente que o design system é apenas a base para o desenvolvimento de
+marcação ARIA apropriada para que possam ser corretamente identificados por tecnologias assistivas. No entanto, é importante ter em mente que o _design system_ é apenas a base para o desenvolvimento de
 aplicações acessíveis. Recomendamos que você analise e teste seus produtos para garantir que estejam em conformidade com as
-[Normas WCAG no nível AA.](Https://www.w3.org/TR/WCAG20/#conformance).
+[Normas WCAG no nível AA](Https://www.w3.org/TR/WCAG20/#conformance).
 
 ## Melhores práticas
 
 ### Cores
 
 - A cor não deve ser usada como o único meio visual de transmitir informações, indicar uma ação, solicitar uma
-  resposta ou distinguir um elemento visual.
-- Limite o uso de vermelhos e verdes, porque são facilmente confundidos no tipo mais comum de daltonismo.
+  resposta ou distinguir um elemento visual;
+- Limite o uso de vermelhos e verdes, porque são facilmente confundidos no tipo mais comum de daltonismo;
 - O plug-in [Stark](https://www.getstark.co/) do Sketch, possibilita ver como os protótipos são vistos por diferentes
   tipos de daltonismo.
 
@@ -44,19 +44,19 @@ aplicações acessíveis. Recomendamos que você analise e teste seus produtos p
 
 Em geral, o texto e as imagens devem atender a um contraste mínimo ideal de 4,5: 1 (para fontes iguais ou menores que 14 pt), exceto:
 
-- Textos grandes (18,6px ou 14pt) devem manter o contraste de pelo menos 3: 1.
-- Texto/imagens decorativas e estados desativados não têm requisitos de contraste.
-- Logotipos: o logotipo ou o texto que compõe uma marca não precisa estar dentro da razão de contraste.
+- Textos grandes (18,6px ou 14pt) devem manter o contraste de pelo menos 3: 1;
+- Texto/imagens decorativas e estados desativados não têm requisitos de contraste;
+- O logotipo ou texto que compõe uma marca não precisa estar dentro da razão de contraste.
 
 ![Faça/Não faça: Teste de contraste em tags e botões](/image/accessibility-contrast.png)
 
 ### Foco
 
 O componente focado pelo teclado deve estar claramente marcado e a área de seleção deve ser clicável. Por padrão,
-links e elementos de formulário já exibem a borda destacada quando recebem o foco do teclado. Essa borda
+_links_ e elementos de formulário já exibem a borda destacada quando recebem o foco do teclado. Essa borda
 pode ser modificada via CSS para aprimorar o realce, mas **não** deve ser removida.
 
-Usamos e recomendamos que a espessura mínima da borda seja 2 px.
+Usamos e recomendamos que a espessura mínima da borda seja de 2px.
 
 ![Foco no botão e checkbox](/image/accessibility-focus.png)
 

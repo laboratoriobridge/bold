@@ -7,7 +7,7 @@ function CustomizeDemo() {
 
   return (
     <div className={css({ overflow: 'auto', height: '300px' })}>
-      <pre>
+      <pre className={css({ color: theme.pallete.text.main })}>
         <code>{JSON.stringify(theme, null, 2)}</code>
       </pre>
     </div>
