@@ -13,8 +13,7 @@ export function MaskedTextField(props: MaskedTextFieldProps) {
   const { inputRef, style, ...rest } = props
 
   const renderInput = (ref: (inputElement: HTMLElement) => void, p: any) => {
-    const { ...others } = p
-    return <TextField style={style} inputRef={composeRefs(inputRef, ref)} {...others} />
+    return <TextField style={style} inputRef={composeRefs(inputRef, ref)} {...p} />
   }
 
   return <ReactTextMask render={renderInput} {...rest} />

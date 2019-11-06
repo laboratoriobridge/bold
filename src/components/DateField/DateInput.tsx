@@ -23,7 +23,7 @@ export function DateInput(props: DateInputProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e || !e.target || !e.target.value) {
-      props.onChange(undefined)
+      props.onChange(null)
       return
     }
 
