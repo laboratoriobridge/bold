@@ -1,13 +1,15 @@
 import { Theme, useStyles } from 'bold-ui'
+import { useIntl } from 'gatsby-plugin-intl'
 import React, { CSSProperties } from 'react'
 
 function UseStylesDemo() {
   const { classes } = useStyles(createStyles)
+  const intl = useIntl()
 
   return (
     <div className={classes.container}>
-      <p className={classes.first}>First paragraph.</p>
-      <p className={classes.second}>Second paragraph</p>
+      <p className={classes.first}>{intl.formatMessage({ id: 'first-paragraph' })}</p>
+      <p className={classes.second}>{intl.formatMessage({ id: 'second-paragraph' })}</p>
     </div>
   )
 }
