@@ -3,7 +3,6 @@ import { changeLocale, useIntl } from 'gatsby-plugin-intl'
 import React, { useEffect } from 'react'
 
 import { BoldLogo } from './BoldLogo'
-import { ButtonLink } from './ButtonLink'
 import { LocaleLink } from './LocaleLink'
 import { SIDE_NAV_WIDTH } from './SideNav'
 
@@ -29,6 +28,7 @@ export function AppHeader(props: AppHeaderProps) {
         apiKey: '4bd4039d7ff74e34ef26aff9f4a45f34',
         indexName: 'bold_',
         inputSelector: '#search-input',
+        algoliaOptions: { facetFilters: [`language:${intl.locale}`] },
         autocompleteOptions: {
           debug: false,
           hint: false,
