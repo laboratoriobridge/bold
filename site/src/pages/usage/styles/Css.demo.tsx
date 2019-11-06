@@ -16,7 +16,7 @@ function CssDemo() {
         fontWeight: 'bold',
       })}
     >
-      {intl.formatMessage({ id: 'hello' })}
+      Hello
     </span>
   )
 }
