@@ -1,10 +1,8 @@
 import { useStyles } from 'bold-ui'
-import { useIntl } from 'gatsby-plugin-intl'
 import React from 'react'
 
 function CssDemo() {
   const { css, theme } = useStyles()
-  const intl = useIntl()
 
   return (
     <span

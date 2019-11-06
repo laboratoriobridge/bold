@@ -1,10 +1,8 @@
 import { Theme, useStyles } from 'bold-ui'
-import { useIntl } from 'gatsby-plugin-intl'
 import React, { CSSProperties } from 'react'
 
 function UseStylesDemo() {
   const { classes } = useStyles(createStyles)
-  const intl = useIntl()
 
   return (
     <div className={classes.container}>
