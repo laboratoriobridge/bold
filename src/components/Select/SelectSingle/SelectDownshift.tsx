@@ -2,7 +2,9 @@ import Downshift, { ControllerStateAndHelpers, DownshiftProps, DownshiftState, S
 import matchSorter from 'match-sorter'
 import React, { useEffect, useMemo, useState } from 'react'
 
-export interface SelectDownshiftProps<T> extends DownshiftProps<T> {
+import { Omit } from '../../../util'
+
+export interface SelectDownshiftProps<T> extends Omit<DownshiftProps<T>, 'children'> {
   /**
    * Items to be populated on the select component.
    */

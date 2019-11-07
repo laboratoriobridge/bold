@@ -65,7 +65,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
   const handleInputClick = ({ openMenu }: MultiSelectRenderProps<T>) => () => openMenu()
   const handleInputBlur = ({ closeMenu }: MultiSelectRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
     closeMenu()
-    this.props.onBlur && this.props.onBlur(e)
+    props.onBlur && props.onBlur(e)
   }
 
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)

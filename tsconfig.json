@@ -6,14 +6,16 @@
     "moduleResolution": "node",
     "types": ["webpack-env", "jest"],
     "outDir": "lib",
-    "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
     "noUnusedLocals": true,
     "sourceMap": true,
     "declaration": true,
     "jsx": "react",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false
   },
   "exclude": [
     "node_modules",

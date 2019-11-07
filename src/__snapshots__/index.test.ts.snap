@@ -3,7 +3,6 @@
 exports[`should export components to global namespace 1`] = `
 Array [
   "Alert",
-  "AriaControlNav",
   "Breadcrumbs",
   "ButtonBase",
   "Button",
