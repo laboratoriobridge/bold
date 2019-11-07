@@ -40,6 +40,13 @@ module.exports = {
         },
         gatsbyRemarkPlugins: [
           {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+              removeAccents: true,
+            },
+          },
+          {
             resolve: 'gatsby-remark-prismjs',
           },
         ],
