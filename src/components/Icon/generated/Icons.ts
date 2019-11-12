@@ -54,7 +54,6 @@ import { default as ClockOutline } from './ClockOutline'
 import { default as CloudFilled } from './CloudFilled'
 import { default as CloudOutline } from './CloudOutline'
 import { default as Code } from './Code'
-import { default as Color } from './Color'
 import { default as Contrast } from './Contrast'
 import { default as ContrastActive } from './ContrastActive'
 import { default as CopyFilled } from './CopyFilled'
@@ -275,7 +274,6 @@ export type Icons =
   | 'cloudFilled'
   | 'cloudOutline'
   | 'code'
-  | 'color'
   | 'contrast'
   | 'contrastActive'
   | 'copyFilled'
@@ -498,7 +496,6 @@ export const IconMap: {
   cloudFilled: CloudFilled,
   cloudOutline: CloudOutline,
   code: Code,
-  color: Color,
   contrast: Contrast,
   contrastActive: ContrastActive,
   copyFilled: CopyFilled,
