@@ -6,7 +6,7 @@ import React from 'react'
 import { ButtonLink } from '../components/ButtonLink'
 import { PageLayout } from '../components/PageLayout'
 
-export default props => {
+export default () => {
   const { classes } = useStyles(createStyles)
   const intl = useIntl()
 
