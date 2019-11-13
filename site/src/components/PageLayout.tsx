@@ -5,7 +5,6 @@ import { AppFooter } from '../components/AppFooter'
 import { SideNav } from '../components/SideNav'
 import pages from '../pages'
 
-import { App } from './App'
 import { APP_HEADER_HEIGHT, AppHeader } from './AppHeader'
 import { Page } from './Page'
 import { useThemeSwitch } from './useThemeSwitch'
@@ -24,21 +23,19 @@ export function PageLayout(props: PageLayoutProps) {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <App>
-      <ThemeProvider theme={currentTheme}>
-        <AppHeader navOpen={navOpen} onNavChange={setNavOpen} switchTheme={switchTheme} />
+    <ThemeProvider theme={currentTheme}>
+      <AppHeader navOpen={navOpen} onNavChange={setNavOpen} switchTheme={switchTheme} />
 
-        <div className={classes.container}>
-          <SideNav pages={pages} open={navOpen} onChangeOpen={setNavOpen} />
+      <div className={classes.container}>
+        <SideNav pages={pages} open={navOpen} onChangeOpen={setNavOpen} />
 
-          <div className={classes.content} style={{ background: currentTheme.pallete.surface.main }}>
-            {container ? <Page>{children}</Page> : children}
+        <div className={classes.content} style={{ background: currentTheme.pallete.surface.main }}>
+          {container ? <Page>{children}</Page> : children}
 
-            <AppFooter />
-          </div>
+          <AppFooter />
         </div>
-      </ThemeProvider>
-    </App>
+      </div>
+    </ThemeProvider>
   )
 }
 
