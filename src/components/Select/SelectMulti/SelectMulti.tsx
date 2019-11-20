@@ -61,11 +61,14 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
   )
 
   //   const handleInputIconClick = ({ toggleMenu }: MultiSelectRenderProps<T>) => () => toggleMenu()
-  const handleInputFocus = ({ openMenu }: MultiSelectRenderProps<T>) => () => openMenu()
   const handleInputClick = ({ openMenu }: MultiSelectRenderProps<T>) => () => openMenu()
   const handleInputBlur = ({ closeMenu }: MultiSelectRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
     closeMenu()
     props.onBlur && props.onBlur(e)
+  }
+  const handleInputFocus = ({ openMenu }: MultiSelectRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
+    openMenu()
+    props.onBlur && props.onFocus(e)
   }
 
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
@@ -102,14 +105,15 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
                 items={selectedItems}
                 {...rest}
                 placeholder={!selectedItems || selectedItems.length === 0 ? placeholder : undefined}
-                onBlur={handleInputBlur(downshift)}
-                onFocus={handleInputFocus(downshift)}
                 onClick={handleInputClick(downshift)}
                 onRemoveItem={handleItemRemove(removeItem)}
                 renderItem={itemToString}
                 // icon={isOpen ? 'triangleUp' : 'triangleDown'}
                 // onIconClick={this.handleInputIconClick(downshift)}
-                {...getInputProps()}
+                {...getInputProps({
+                  onBlur: handleInputBlur(downshift),
+                  onFocus: handleInputFocus(downshift),
+                })}
                 {...inputProps}
                 value={inputValue ? inputValue : ''}
                 invalid={invalid}

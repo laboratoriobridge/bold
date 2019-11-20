@@ -65,8 +65,11 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
   }
 
   const handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
-  const handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
   const handleInputClick = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
+  const handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
+    openMenu()
+    props.onFocus && props.onFocus(e)
+  }
   const handleInputBlur = ({ closeMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
     closeMenu()
     props.onBlur && props.onBlur(e)
@@ -102,12 +105,13 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
                   icon={downshiftOpen ? 'angleUp' : 'angleDown'}
                   inputRef={composeRefs(internalInputRef, inputRef) as any}
                   {...rest}
-                  onBlur={handleInputBlur(downshift)}
-                  onFocus={handleInputFocus(downshift)}
                   onClick={handleInputClick(downshift)}
                   onClear={handleClear(downshift)}
                   onIconClick={handleInputIconClick(downshift)}
-                  {...getInputProps()}
+                  {...getInputProps({
+                    onBlur: handleInputBlur(downshift),
+                    onFocus: handleInputFocus(downshift),
+                  } as any)}
                   {...inputProps}
                   value={inputValue ? inputValue : ''}
                   invalid={invalid}
