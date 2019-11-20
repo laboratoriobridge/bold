@@ -2,7 +2,7 @@ import { Card } from '../../../components/Card'
 
 # Acessibilidade
 
-Acessibilidade web está ganhando mais e mais espaço no contexto de desenvolvimento de software. Dada a natureza colaborativa da web e sua importância no processo de facilitar a comunicação, nós precisamos assegurar o acesso a informação e **promover a mesma experiência à todos os usuários**, independentemente da habilidade física, cognitiva ou da plataforma e tecnologias utilizadas.
+A acessibilidade web está ganhando mais espaço no contexto de desenvolvimento de software. Dada a natureza colaborativa da web e sua importância no processo de facilitar a comunicação, precisamos assegurar o acesso à informação e **promover a mesma experiência à todos os usuários**, independentemente da habilidade física, cognitiva ou plataforma e tecnologias utilizadas.
 
 <blockquote cite='World Health Organization'>
   <p>
@@ -13,7 +13,7 @@ Acessibilidade web está ganhando mais e mais espaço no contexto de desenvolvim
 
 ## Ainda não está convencido?
 
-De acordo com dados do [Relatório Mundial de Deficiência 2011](https://www.who.int/disabilities/world_report/2011/report.pdf) **um bilhão de pessoas em todo o mundo vivem com algum tipo de deficiência** (representando 10% da população mundial). No Brasil, acesso a informação é um direito garantido pela Constituição Federal. Além disso, o último [Censo](https://censo2010.ibge.gov.br/resultados/resumo.html) mostrou que **45.6 milhões de pessoas** (23,9% da população total) possuem alguma deficiência.
+De acordo com dados do [Relatório Mundial de Deficiência 2011](https://www.who.int/disabilities/world_report/2011/report.pdf) **um bilhão de pessoas em todo o mundo vivem com algum tipo de deficiência** (10% da população mundial). No Brasil, o acesso a informação é um direito garantido pela Constituição Federal. Além disso, o último [Censo](https://censo2010.ibge.gov.br/resultados/resumo.html) mostrou que **45.6 milhões de pessoas** (23,9% da população total) possuem alguma deficiência.
 
 <Card icon='heartOutline'>
   Nosso objetivo é construir produtos digitais inclusivos para aprimorar a experiência de todos os usuários.
@@ -24,7 +24,7 @@ De acordo com dados do [Relatório Mundial de Deficiência 2011](https://www.who
 ## Componentes acessíveis
 
 Os componentes do Bold foram construídos seguindo as especificações da WCAG, em conformidade com o nível AA. O Bold permite o desenvolvimento acessível, fornecendo componentes semanticamente corretos, cada um com uma
-marcação ARIA apropriada para que possam ser corretamente identificados por tecnologias assistivas. No entanto, é importante ter em mente que o _design system_ é apenas a base para o desenvolvimento de
+marcação _ARIA_ apropriada, para que possam ser corretamente identificados por tecnologias assistivas. No entanto, é importante ter em mente que o _design system_ é apenas a base para o desenvolvimento de
 aplicações acessíveis. Recomendamos que você analise e teste seus produtos para garantir que estejam em conformidade com as
 [Normas WCAG no nível AA](Https://www.w3.org/TR/WCAG20/#conformance).
 
@@ -32,9 +32,9 @@ aplicações acessíveis. Recomendamos que você analise e teste seus produtos p
 
 ### Cores
 
-- A cor não deve ser usada como o único meio visual de transmitir informações, indicar uma ação, solicitar uma
-  resposta ou distinguir um elemento visual;
-- Limite o uso de vermelhos e verdes, porque são facilmente confundidos no tipo mais comum de daltonismo;
+- A cor não deve ser usada como o único meio visual de transmitir informações, indicar ação, solicitar
+  resposta ou distinguir elementos visuais;
+- Limite o uso de vermelhos e verdes, porque estes são facilmente confundidos no tipo mais comum de daltonismo;
 - O plug-in [Stark](https://www.getstark.co/) do Sketch, possibilita ver como os protótipos são vistos por diferentes
   tipos de daltonismo.
 
@@ -42,7 +42,7 @@ aplicações acessíveis. Recomendamos que você analise e teste seus produtos p
 
 ## Contraste
 
-Em geral, o texto e as imagens devem atender a um contraste mínimo ideal de 4,5: 1 (para fontes iguais ou menores que 14 pt), exceto:
+Em geral, o texto e as imagens devem atingir o contraste mínimo ideal de 4,5: 1 (para fontes iguais ou menores que 14 pt), exceto:
 
 - Textos grandes (18,6px ou 14pt) devem manter o contraste de pelo menos 3: 1;
 - Texto/imagens decorativas e estados desativados não têm requisitos de contraste;
@@ -64,7 +64,7 @@ Usamos e recomendamos que a espessura mínima da borda seja de 2px.
 
 Quando as pessoas começam desenvolver com a acessibilidade em mente, é um erro comum adicionar foco a todos os elementos da página,
 incluindo texto e títulos. Isso dificulta a navegação de usuários que podem ver e ainda dificulta a navegação para quem depende de um leitor de tela,
-porque essas tecnologias já fornecem foco para esses elementos.
+porque as tecnologias assistivas já fornecem foco para esses elementos.
 
 Títulos, blocos de texto e campos desabilitados **não** devem receber foco.
 
