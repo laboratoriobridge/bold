@@ -90,14 +90,13 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
   const [period, setPeriod] = useState(value)
+  const { classes, css } = useStyles(createStyles, disabled)
+  const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   useEffect(() => {
     onChange && onChange(value)
     setPeriod(value ? value : ({ startDate: undefined, finalDate: undefined } as Period))
   }, [value])
-
-  const { classes, css } = useStyles(createStyles, disabled)
-  const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   const onChangeStart = (data: Date) => {
     const aux = { startDate: data, finalDate: period.finalDate } as Period

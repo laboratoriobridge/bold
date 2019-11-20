@@ -37,7 +37,7 @@ it('should call onChange with undefined when input is cleared', () => {
   const input = container.querySelector('input')
 
   fireEvent.change(input, { target: { value: '' } })
-  expect(change).toHaveBeenLastCalledWith(undefined)
+  expect(change).toHaveBeenLastCalledWith(null)
 })
 
 it('should call onInputChange prop with original event when input value is changed', () => {
@@ -66,6 +66,6 @@ describe('clear', () => {
     const clear = container.querySelector('span')
 
     fireEvent.click(clear)
-    expect(change).toHaveBeenLastCalledWith(undefined)
+    expect(change).toHaveBeenLastCalledWith(null)
   })
 })
