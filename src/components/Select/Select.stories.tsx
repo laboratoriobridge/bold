@@ -46,6 +46,7 @@ storiesOf('Components|Select', module)
       loading={boolean('loading', false)}
       onChange={action('changed')}
       onBlur={action('blur')}
+      onFocus={action('focus')}
     />
   ))
   .add('suggestion', () => (
@@ -66,6 +67,7 @@ storiesOf('Components|Select', module)
       loading={boolean('loading', false)}
       onChange={action('changed')}
       onBlur={action('blur')}
+      onFocus={action('focus')}
     />
   ))
   .add('async', () => (
@@ -83,6 +85,7 @@ storiesOf('Components|Select', module)
       openOnFocus={boolean('openOnFocus', true)}
       onChange={action('changed')}
       onBlur={action('blur')}
+      onFocus={action('focus')}
     />
   ))
   .add('custom menu item', () => (
@@ -109,6 +112,7 @@ storiesOf('Components|Select', module)
       loading={boolean('loading', false)}
       onChange={action('changed')}
       onBlur={action('blur')}
+      onFocus={action('focus')}
     />
   ))
   .add('select menu', () => (

@@ -69,6 +69,17 @@ it('should render current value and allow changes via prop', () => {
   expect(input.value).toEqual('Foo')
 })
 
+it('should preserve external onBlur and onFocus event handlers', () => {
+  const blur = jest.fn()
+  const focus = jest.fn()
+  const { container } = render(<SelectTest onBlur={blur} onFocus={focus} />)
+  const input = container.querySelector('input')
+  fireEvent.focus(input)
+  fireEvent.blur(input)
+  expect(blur).toHaveBeenCalledTimes(1)
+  expect(focus).toHaveBeenCalledTimes(1)
+})
+
 describe('clear button', () => {
   it('should clear the input value', () => {
     const { container, getByTitle } = render(<SelectTest value={items[0]} />)

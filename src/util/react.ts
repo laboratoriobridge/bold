@@ -31,7 +31,7 @@ export function setRef<T>(ref: Ref<T>, value: any) {
  * @returns A new function that triggers all handlers passed as parameters, in order.
  */
 export function composeHandlers(...handlers: Array<(...params: any) => void>) {
-  return (...args: any[]) => handlers.forEach(handler => handler(...args))
+  return (...args: any[]) => handlers.forEach(handler => handler && handler(...args))
 }
 
 /**
