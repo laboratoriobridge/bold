@@ -63,5 +63,14 @@
   "menu-toast": "Toast",
   "menu-tooltip": "Tooltip",
   "menu-resources": "Resources",
-  "menu-storybook": "Storybook"
+  "menu-storybook": "Storybook",
+  "color-name-blue": "Blue",
+  "color-name-gray": "Gray",
+  "color-name-green": "Green",
+  "color-name-orange": "Orange",
+  "color-name-purple": "Purple",
+  "color-name-red": "Red",
+  "color-name-turquoise": "Turquoise",
+  "color-name-yellow": "Yellow",
+  "color-name-pink": "Pink"
 }

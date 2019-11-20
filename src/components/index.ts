@@ -1,5 +1,4 @@
 export * from './Alert'
-export * from './AriaControlNav'
 export * from './Breadcrumb'
 export * from './Button'
 export * from './ButtonGroup'

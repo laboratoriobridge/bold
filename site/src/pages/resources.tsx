@@ -6,7 +6,7 @@ import { ButtonLink } from '../components/ButtonLink'
 import { ga } from '../components/ga'
 import { PageLayout } from '../components/PageLayout'
 
-function Resources() {
+export default function Resources() {
   const intl = useIntl()
 
   const handleClickSketch = () => {
@@ -118,5 +118,3 @@ function Resources() {
     </PageLayout>
   )
 }
-
-export default Resources

@@ -5,6 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-typescript',
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-layout',
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
@@ -39,6 +40,13 @@ module.exports = {
           default: `${__dirname}/src/components/mdx/MDXPageLayout`,
         },
         gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-autolink-headers',
+            options: {
+              icon: false,
+              removeAccents: true,
+            },
+          },
           {
             resolve: 'gatsby-remark-prismjs',
           },
