@@ -7,6 +7,7 @@ import pages from '../pages'
 
 import { APP_HEADER_HEIGHT, AppHeader } from './AppHeader'
 import { Page } from './Page'
+import { SkipToContentLink } from './SkipToContentLink'
 import { useThemeSwitch } from './useThemeSwitch'
 
 export interface PageLayoutProps {
@@ -24,12 +25,13 @@ export function PageLayout(props: PageLayoutProps) {
 
   return (
     <ThemeProvider theme={currentTheme}>
+      <SkipToContentLink />
       <AppHeader navOpen={navOpen} onNavChange={setNavOpen} switchTheme={switchTheme} />
 
       <div className={classes.container}>
         <SideNav pages={pages} open={navOpen} onChangeOpen={setNavOpen} />
 
-        <div className={classes.content} style={{ background: currentTheme.pallete.surface.main }}>
+        <div className={classes.content} style={{ background: currentTheme.pallete.surface.main }} id='main'>
           {container ? <Page>{children}</Page> : children}
 
           <AppFooter />
