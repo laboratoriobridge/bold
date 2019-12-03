@@ -66,7 +66,11 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
   }, [props.items])
 
   const handleStateChange = (changes: StateChangeOptions<T>, downshift: ControllerStateAndHelpers<T>) => {
-    if (createNewItem && changes.hasOwnProperty('inputValue')) {
+    if (
+      createNewItem &&
+      changes.hasOwnProperty('inputValue') &&
+      changes.type === Downshift.stateChangeTypes.changeInput
+    ) {
       rest.onChange && rest.onChange(createNewItem(changes.inputValue), getStateAndHelpers(downshift))
     }
 
