@@ -47,21 +47,19 @@ it('should have a roving tabIndex', () => {
   expect(li[1].tabIndex).toEqual(-1)
 
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
-  expect(document.activeElement).toEqual(li[1])
-  expect(li[0].tabIndex).toEqual(-1)
-  expect(li[1].tabIndex).toEqual(0)
-  expect(li[2].tabIndex).toEqual(-1)
-
-  fireEvent.keyDown(ul, { key: 'ArrowDown' })
   expect(document.activeElement).toEqual(li[3])
   expect(li[0].tabIndex).toEqual(-1)
   expect(li[1].tabIndex).toEqual(-1)
   expect(li[2].tabIndex).toEqual(-1)
-  expect(li[3].tabIndex).toEqual(0)
-  expect(li[4].tabIndex).toEqual(-1)
 
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
-  fireEvent.keyDown(ul, { key: 'ArrowDown' })
+  expect(document.activeElement).toEqual(li[4])
+  expect(li[0].tabIndex).toEqual(-1)
+  expect(li[1].tabIndex).toEqual(-1)
+  expect(li[2].tabIndex).toEqual(-1)
+  expect(li[3].tabIndex).toEqual(-1)
+  expect(li[4].tabIndex).toEqual(0)
+
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
   expect(document.activeElement).toEqual(li[4])
   expect(li[3].tabIndex).toEqual(-1)

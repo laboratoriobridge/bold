@@ -162,7 +162,6 @@ exports[`should accept "component" prop 1`] = `
         class="emotion-6 disabled"
         href="/"
         role="tab"
-        tabindex="-1"
       >
         Disabled
       </a>

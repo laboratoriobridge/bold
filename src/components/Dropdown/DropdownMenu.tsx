@@ -15,7 +15,7 @@ export function DropdownMenu(props: DropdownMenuProps) {
   const { css, classes } = useStyles(styles)
 
   const rootRef = useRovingTabIndex({
-    getItems: root => Array.from(root.querySelectorAll('[role="menuitem"]')),
+    getItems: root => Array.from(root.querySelectorAll('[role="menuitem"]:not([aria-disabled="true"])')),
   })
 
   return <ul ref={composeRefs(innerRef, rootRef)} className={css(classes.root, style)} role='menu' {...rest} />
