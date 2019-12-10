@@ -1,4 +1,3 @@
-import { action } from '@storybook/addon-actions'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
@@ -17,11 +16,19 @@ const itemToString = (item: DefaultItemType) => item && item.label
 
 storiesOf('Components/SelectInline', module).add('default', () => (
   <SelectInline<DefaultItemType>
-    value={items[0]}
     items={items}
     itemToString={itemToString}
-    onChange={action('changed')}
     placeholder='Search for a value'
     defaultButtonText='SelectInline'
+  />
+))
+
+storiesOf('Components/SelectInline', module).add('without search', () => (
+  <SelectInline<DefaultItemType>
+    items={items}
+    itemToString={itemToString}
+    placeholder='Search for a value'
+    defaultButtonText='SelectInline'
+    search={false}
   />
 ))
