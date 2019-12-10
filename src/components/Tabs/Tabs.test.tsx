@@ -39,13 +39,11 @@ it('should have a roving tabindex', () => {
   expect(items[0].getAttribute('tabindex')).toEqual('-1')
   expect(items[1].getAttribute('tabindex')).toEqual('-1')
   expect(items[2].getAttribute('tabindex')).toEqual('0')
-  expect(items[3].getAttribute('tabindex')).toEqual('-1')
 
   fireEvent.keyDown(ul, { key: 'ArrowDown' })
-  expect(items[2].getAttribute('tabindex')).toEqual('-1')
-  expect(items[3].getAttribute('tabindex')).toEqual('0')
+  expect(items[2].getAttribute('tabindex')).toEqual('0')
 
   fireEvent.keyDown(ul, { key: 'ArrowUp' })
-  expect(items[2].getAttribute('tabindex')).toEqual('0')
-  expect(items[3].getAttribute('tabindex')).toEqual('-1')
+  expect(items[1].getAttribute('tabindex')).toEqual('0')
+  expect(items[2].getAttribute('tabindex')).toEqual('-1')
 })

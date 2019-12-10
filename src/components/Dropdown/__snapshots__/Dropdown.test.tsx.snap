@@ -113,7 +113,6 @@ exports[`should accept popper props 1`] = `
       aria-disabled="true"
       class="emotion-2"
       role="menuitem"
-      tabindex="-1"
     >
       Item #3
     </li>
@@ -236,7 +235,6 @@ exports[`should extend DropdownMenu props 1`] = `
       aria-disabled="true"
       class="emotion-2"
       role="menuitem"
-      tabindex="-1"
     >
       Item #3
     </li>
@@ -369,7 +367,6 @@ exports[`should render correctly when open 1`] = `
       aria-disabled="true"
       class="emotion-2"
       role="menuitem"
-      tabindex="-1"
     >
       Item #3
     </li>
