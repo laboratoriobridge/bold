@@ -5,6 +5,7 @@ import { useTheme } from '../../styles'
 import { Omit } from '../../util'
 import { composeRefs } from '../../util/react'
 import { Button, ButtonProps } from '../Button'
+import { DropdownItem, DropdownMenu } from '../Dropdown'
 import { Icon } from '../Icon'
 import { Popper, PopperController, PopperProps } from '../Popper'
 import { Select } from '../Select/Select'
@@ -15,12 +16,18 @@ export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   buttonProps?: ButtonProps
   popperProps?: Omit<PopperProps, 'renderTarget' | 'children'>
   defaultButtonText: string
+  search?: boolean
   onChange?(item: T): void
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { value, onChange, itemToString, buttonProps, popperProps, defaultButtonText, inputRef, ...rest } = props
+  const { onChange, buttonProps, popperProps, itemToString, defaultButtonText, inputRef, ...rest } = props
   const theme = useTheme()
+
+  let { value } = props
+  const setValue = (item: T) => {
+    value = item
+  }
 
   const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
   const selectInputRef: React.MutableRefObject<any> = React.useRef<HTMLInputElement>()
@@ -74,6 +81,46 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
     })
   }
 
+  const onClick = (item: T, ctrl: PopperController) => {
+    if (onChange) {
+      onChange(item)
+    } else {
+      setValue(item)
+    }
+    ctrl.hide()
+  }
+
+  const select = (ctrl: PopperController) => {
+    const handleOnChange = (newValue: T) => {
+      onClick(newValue, ctrl)
+    }
+    return (
+      <Select<T>
+        {...rest}
+        itemToString={props.itemToString}
+        onChange={handleOnChange}
+        style={styles.box}
+        inputRef={composeRefs(selectInputRef, inputRef) as any}
+        isOpen
+      />
+    )
+  }
+
+  const drowpdown = (ctrl: PopperController) => {
+    const handleOnClick = (newValue: T) => () => {
+      onClick(newValue, ctrl)
+    }
+    return (
+      <DropdownMenu>
+        {props.items.map((item, index) => (
+          <DropdownItem key={index} component='li' onClick={handleOnClick(item)} type='normal'>
+            {itemToString(item)}
+          </DropdownItem>
+        ))}
+      </DropdownMenu>
+    )
+  }
+
   return (
     <Popper
       renderTarget={renderTarget}
@@ -83,22 +130,7 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
       onShow={handleVisibilityEvents(selectInputRef)}
       {...popperProps}
     >
-      {(ctrl: PopperController) => {
-        const handleOnChange = (newValue: T) => {
-          onChange && onChange(newValue)
-          ctrl.hide()
-        }
-        return (
-          <Select<T>
-            {...rest}
-            itemToString={itemToString}
-            onChange={handleOnChange}
-            style={styles.box}
-            inputRef={composeRefs(selectInputRef, inputRef) as any}
-            isOpen
-          />
-        )
-      }}
+      {(props.search !== undefined && props.search === false && drowpdown) || select}
     </Popper>
   )
 }

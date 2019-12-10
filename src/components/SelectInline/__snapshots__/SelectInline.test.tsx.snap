@@ -5,11 +5,11 @@ exports[`SelectInline should render correctly when closed 1`] = `
   display: inline-block;
 }
 
-.emotion-17 {
+.emotion-19 {
   display: inline-block;
 }
 
-.emotion-17 [data-visible] {
+.emotion-19 [data-visible] {
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
 }
 
@@ -87,7 +87,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-16 {
+.emotion-18 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -96,35 +96,63 @@ exports[`SelectInline should render correctly when closed 1`] = `
   opacity: 0;
 }
 
-.emotion-14 {
+.emotion-16 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-14 > div:first-of-type {
+.emotion-16 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-14 ul > li:first-of-type {
+.emotion-16 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-14 div > ul {
+.emotion-16 div > ul {
   position: static;
   box-shadow: none;
   border: none;
   border-radius: 0;
 }
 
-.emotion-8 {
+.emotion-10 {
   position: relative;
 }
 
-.emotion-8 input {
-  padding-right: 3rem;
+.emotion-10 input {
+  padding-right: 4.5rem;
 }
 
-.emotion-7 {
+.emotion-6 {
+  position: absolute;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  color: #696979;
+  padding: 1px 6px;
+}
+
+.emotion-6:hover {
+  color: #D01E29;
+}
+
+.emotion-9 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -217,7 +245,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -250,7 +278,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   border-radius: inherit;
 }
 
-.emotion-6 > span {
+.emotion-8 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -261,24 +289,24 @@ exports[`SelectInline should render correctly when closed 1`] = `
   display: inline-flex;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-8:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-8:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-8:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-6:focus {
+.emotion-8:focus {
   box-shadow: none;
 }
 
-.emotion-13 {
+.emotion-15 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -298,7 +326,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
   pointer-events: none;
 }
 
-.emotion-9 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -310,15 +338,15 @@ exports[`SelectInline should render correctly when closed 1`] = `
   transition: .1s ease;
 }
 
-.emotion-9:last-of-type {
+.emotion-11:last-of-type {
   border-bottom: none;
 }
 
-.emotion-9:hover {
+.emotion-11:hover {
   background: #F0F0F5;
 }
 
-.emotion-9:focus {
+.emotion-11:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
@@ -326,7 +354,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
 
 <div>
   <div
-    class="emotion-17"
+    class="emotion-19"
   >
     <div
       class="emotion-3"
@@ -357,24 +385,24 @@ exports[`SelectInline should render correctly when closed 1`] = `
       </button>
     </div>
     <div
-      class="emotion-16"
+      class="emotion-18"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
       <div
-        class="emotion-15"
+        class="emotion-17"
       >
         <div
           aria-expanded="true"
           aria-haspopup="listbox"
           aria-labelledby="downshift-0-label"
           aria-owns="downshift-0-menu"
-          class="emotion-14"
+          class="emotion-16"
           role="combobox"
         >
           <div>
             <div
-              class="emotion-8"
+              class="emotion-10"
             >
               <input
                 aria-autocomplete="list"
@@ -384,13 +412,32 @@ exports[`SelectInline should render correctly when closed 1`] = `
                 id="downshift-0-input"
                 placeholder="Search for a value"
                 type="text"
-                value=""
+                value="Value #001"
               />
               <span
-                class="emotion-7"
+                class="emotion-6"
+                role="button"
+                tabindex="-1"
+                title="Clear"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="emotion-5"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="emotion-9"
               >
                 <button
-                  class="emotion-6"
+                  class="emotion-8"
                   tabindex="-1"
                   type="button"
                 >
@@ -414,13 +461,13 @@ exports[`SelectInline should render correctly when closed 1`] = `
           </div>
           <ul
             aria-labelledby="downshift-0-label"
-            class="emotion-13"
+            class="emotion-15"
             id="downshift-0-menu"
             role="listbox"
           >
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-11"
               id="downshift-0-item-0"
               role="option"
             >
@@ -428,7 +475,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-11"
               id="downshift-0-item-1"
               role="option"
             >
@@ -436,7 +483,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-11"
               id="downshift-0-item-2"
               role="option"
             >
@@ -444,7 +491,7 @@ exports[`SelectInline should render correctly when closed 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-11"
               id="downshift-0-item-3"
               role="option"
             >
@@ -463,11 +510,11 @@ exports[`SelectInline should render correctly when opened 1`] = `
   display: inline-block;
 }
 
-.emotion-17 {
+.emotion-19 {
   display: inline-block;
 }
 
-.emotion-17 [data-visible] {
+.emotion-19 [data-visible] {
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
 }
 
@@ -545,35 +592,63 @@ exports[`SelectInline should render correctly when opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-14 {
+.emotion-16 {
   border: 1px solid #D3D4DD;
   background-color: #FFFFFF;
 }
 
-.emotion-14 > div:first-of-type {
+.emotion-16 > div:first-of-type {
   padding: 0.5rem;
 }
 
-.emotion-14 ul > li:first-of-type {
+.emotion-16 ul > li:first-of-type {
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-14 div > ul {
+.emotion-16 div > ul {
   position: static;
   box-shadow: none;
   border: none;
   border-radius: 0;
 }
 
-.emotion-8 {
+.emotion-10 {
   position: relative;
 }
 
-.emotion-8 input {
-  padding-right: 3rem;
+.emotion-10 input {
+  padding-right: 4.5rem;
 }
 
-.emotion-7 {
+.emotion-6 {
+  position: absolute;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  color: #696979;
+  padding: 1px 6px;
+}
+
+.emotion-6:hover {
+  color: #D01E29;
+}
+
+.emotion-9 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -666,7 +741,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
+.emotion-8 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -699,7 +774,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   border-radius: inherit;
 }
 
-.emotion-6 > span {
+.emotion-8 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -710,24 +785,24 @@ exports[`SelectInline should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-6:not(:disabled):active {
+.emotion-8:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-6:focus {
+.emotion-8:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-6:not(:disabled):hover {
+.emotion-8:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-6:focus {
+.emotion-8:focus {
   box-shadow: none;
 }
 
-.emotion-9 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -739,21 +814,21 @@ exports[`SelectInline should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-9:last-of-type {
+.emotion-11:last-of-type {
   border-bottom: none;
 }
 
-.emotion-9:hover {
+.emotion-11:hover {
   background: #F0F0F5;
 }
 
-.emotion-9:focus {
+.emotion-11:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-16 {
+.emotion-18 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -762,7 +837,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   opacity: 1;
 }
 
-.emotion-13 {
+.emotion-15 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -786,7 +861,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
 <body>
   <div>
     <div
-      class="emotion-17"
+      class="emotion-19"
     >
       <div
         class="emotion-3"
@@ -817,24 +892,24 @@ exports[`SelectInline should render correctly when opened 1`] = `
         </button>
       </div>
       <div
-        class="emotion-16"
+        class="emotion-18"
         data-visible="true"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-15"
+          class="emotion-17"
         >
           <div
             aria-expanded="true"
             aria-haspopup="listbox"
             aria-labelledby="downshift-0-label"
             aria-owns="downshift-0-menu"
-            class="emotion-14"
+            class="emotion-16"
             role="combobox"
           >
             <div>
               <div
-                class="emotion-8"
+                class="emotion-10"
               >
                 <input
                   aria-autocomplete="list"
@@ -844,13 +919,32 @@ exports[`SelectInline should render correctly when opened 1`] = `
                   id="downshift-0-input"
                   placeholder="Search for a value"
                   type="text"
-                  value=""
+                  value="Value #001"
                 />
                 <span
-                  class="emotion-7"
+                  class="emotion-6"
+                  role="button"
+                  tabindex="-1"
+                  title="Clear"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-5"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="emotion-9"
                 >
                   <button
-                    class="emotion-6"
+                    class="emotion-8"
                     tabindex="-1"
                     type="button"
                   >
@@ -874,13 +968,13 @@ exports[`SelectInline should render correctly when opened 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-0-label"
-              class="emotion-13"
+              class="emotion-15"
               id="downshift-0-menu"
               role="listbox"
             >
               <li
                 aria-selected="false"
-                class="emotion-9"
+                class="emotion-11"
                 id="downshift-0-item-0"
                 role="option"
               >
@@ -888,7 +982,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="emotion-9"
+                class="emotion-11"
                 id="downshift-0-item-1"
                 role="option"
               >
@@ -896,7 +990,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="emotion-9"
+                class="emotion-11"
                 id="downshift-0-item-2"
                 role="option"
               >
@@ -904,7 +998,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
               </li>
               <li
                 aria-selected="false"
-                class="emotion-9"
+                class="emotion-11"
                 id="downshift-0-item-3"
                 role="option"
               >
@@ -1035,14 +1129,6 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   border-radius: 0;
 }
 
-.emotion-8 {
-  position: relative;
-}
-
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
 .emotion-7 {
   position: absolute;
   background-color: #F0F0F5;
@@ -1241,6 +1327,14 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-8 {
+  position: relative;
+}
+
+.emotion-8 input {
+  padding-right: 3rem;
 }
 
 <div>
