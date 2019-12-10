@@ -21,13 +21,8 @@ export interface SelectInlineProps<T> extends SelectSingleProps<T> {
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { onChange, buttonProps, popperProps, itemToString, defaultButtonText, inputRef, ...rest } = props
+  const { value, onChange, buttonProps, popperProps, itemToString, defaultButtonText, inputRef, ...rest } = props
   const theme = useTheme()
-
-  let { value } = props
-  const setValue = (item: T) => {
-    value = item
-  }
 
   const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
   const selectInputRef: React.MutableRefObject<any> = React.useRef<HTMLInputElement>()
@@ -81,18 +76,10 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
     })
   }
 
-  const onClick = (item: T, ctrl: PopperController) => {
-    if (onChange) {
-      onChange(item)
-    } else {
-      setValue(item)
-    }
-    ctrl.hide()
-  }
-
   const select = (ctrl: PopperController) => {
     const handleOnChange = (newValue: T) => {
-      onClick(newValue, ctrl)
+      onChange && onChange(newValue)
+      ctrl.hide()
     }
     return (
       <Select<T>
@@ -108,7 +95,8 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
 
   const drowpdown = (ctrl: PopperController) => {
     const handleOnClick = (newValue: T) => () => {
-      onClick(newValue, ctrl)
+      onChange && onChange(newValue)
+      ctrl.hide()
     }
     return (
       <DropdownMenu>

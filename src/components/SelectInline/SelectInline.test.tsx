@@ -26,6 +26,18 @@ const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>)
   />
 )
 
+const createSelectInlineWithoutSearch = (props?: Partial<SelectInlineProps<DefaultItemType>>) => (
+  <SelectInline<DefaultItemType>
+    value={items[0]}
+    items={items}
+    itemToString={itemToString}
+    defaultButtonText='SelectInline'
+    placeholder='Search for a value'
+    search={false}
+    {...props}
+  />
+)
+
 beforeEach(() => resetIdCounter())
 
 describe('SelectInline', () => {
@@ -63,5 +75,22 @@ describe('SelectInline', () => {
 
     const input = container.querySelector('input')
     expect(document.activeElement).toEqual(input)
+  })
+  it('should contain search input box', () => {
+    const { container } = render(createSelectInline())
+    const button = container.querySelector('button')
+    fireEvent.click(button)
+
+    fireEvent.click(button)
+    expect(container.querySelector('input')).not.toBeNull()
+    expect(document.body).toMatchSnapshot()
+  })
+  it('should not contain search input box', () => {
+    const { container } = render(createSelectInlineWithoutSearch())
+    const button = container.querySelector('button')
+    fireEvent.click(button)
+
+    expect(container.querySelector('input')).toBeNull()
+    expect(document.body).toMatchSnapshot()
   })
 })
