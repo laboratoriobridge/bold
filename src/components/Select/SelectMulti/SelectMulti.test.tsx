@@ -88,6 +88,17 @@ it('should not call onChange when filter is typed and cleared', () => {
   expect(change).not.toHaveBeenCalled()
 })
 
+it('should preserve external onBlur and onFocus event handlers', () => {
+  const blur = jest.fn()
+  const focus = jest.fn()
+  const { container } = render(<SelectTest onBlur={blur} onFocus={focus} />)
+  const input = container.querySelector('input')
+  fireEvent.focus(input)
+  fireEvent.blur(input)
+  expect(blur).toHaveBeenCalledTimes(1)
+  expect(focus).toHaveBeenCalledTimes(1)
+})
+
 describe('remove item', () => {
   it('should call onChange with the new value', () => {
     const onChange = jest.fn()

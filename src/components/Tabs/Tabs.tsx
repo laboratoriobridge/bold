@@ -13,7 +13,7 @@ export function Tabs(props: TabsProps) {
   const { classes, css } = useStyles(createStyles)
 
   const rootRef = useRovingTabIndex({
-    getItems: root => Array.from(root.querySelectorAll('[role="tab"]')),
+    getItems: root => Array.from(root.querySelectorAll(`[role="tab"]:not(.disabled)`)),
   })
 
   return <ul ref={rootRef} className={css(classes.ul, style)} role='tablist' {...rest} />

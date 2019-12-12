@@ -2,16 +2,16 @@ import { Demo } from '../../../components/Demo'
 
 # Alert
 
-Alertas são componentes que, usualmente, aparecem na parte superior da tela e fornecem informações críticas sobre perda de dados, funcionalidades, erros, etc.
+Alertas são componentes que usualmente aparecem na parte superior da tela, e fornecem informações críticas sobre perda de dados, funcionalidades, erros, etc.
 
 ## Boas práticas
 
-- Deve aparecer apenas uma notificação por vez e devem utilizar no máximo duas linhas para apresentar as mensagens.
+- Evite apresentar mais de uma notificação por vez e/ou utilizar mensagens muito extensas.
 - Utilize alertas para apresentar informações que precisam ser visualizadas imediatamente e que requerem a atenção do usuário.
 - Apresente mensagens claras e que indiquem soluções ou próximos passos para o usuário.
-- Evite apresentar mensagens com códigos técnicos de erro que não ajudem o usuário a resolver o problema.
-- Apresente mensagens específicas para cada situação ao invés de utilizar mensagens padrão.
-- Sempre que possível assuma a responsabilidade ao invés de culpar o usuário. Exemplo: "Estamos com problemas ao conectar" ao invés de "Você está com problemas na conexão."
+- Evite apresentar mensagens com códigos técnicos de erro que não ajudam o usuário a resolver o problema.
+- Apresente mensagens específicas para cada situação ao invés de utilizar mensagens genéricas.
+- Sempre que possível assuma a responsabilidade ao invés de culpar o usuário. Exemplo: "Estamos com problemas ao conectar." ao invés de "Você está com problemas na conexão."
 
 ## Tipos de alertas
 
@@ -21,8 +21,8 @@ Alertas são componentes que, usualmente, aparecem na parte superior da tela e f
       <th width={160}>Informação</th>
       <td>
         Cor azul. A notificação padrão é normalmente utilizada para dar informações de menor importância ou que não
-        requerem ações do usuário. Geralmente não são em resposta a alguma ação do usuário. (Ex: Você está logado com o
-        usuário João da Silva. Deslogar. )
+        requerem ações do usuário. Geralmente não são em resposta a alguma ação do usuário. (Ex: "Você está logado com o
+        usuário João da Silva. Deslogar.")
       </td>
     </tr>
     <tr>
@@ -31,7 +31,7 @@ Alertas são componentes que, usualmente, aparecem na parte superior da tela e f
         Cor vermelha. Indica ao usuário que algum processo ou tarefa não pode ser completada. Mensagens de erro devem
         ser claras e objetivas, evitando apresentar códigos de erro técnicos. Sempre que possível apresente uma solução
         ou link indicando o próximo passo. (Ex.: "Não foi possível adicionar o último item. Por favor, atualize a
-        página").
+        página.")
       </td>
     </tr>
     <tr>
@@ -39,7 +39,7 @@ Alertas são componentes que, usualmente, aparecem na parte superior da tela e f
       <td>
         Cor laranja. São usualmente antecipações de mudanças e ajudam a prevenir erros. Comunique claramente o que vai
         acontecer caso o usuário prossiga com a ação e forneça uma alternativa quando possível. (Ex.: "Sua licença está
-        prestes a expirar. Por favor, renove a licença até 05 de Agosto de 2019.").
+        prestes a expirar. Por favor, renove a licença até 05 de Agosto de 2019.")
       </td>
     </tr>
     <tr>

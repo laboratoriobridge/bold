@@ -158,7 +158,6 @@ exports[`renders correctly 1`] = `
       <span
         class="emotion-6 disabled"
         role="tab"
-        tabindex="-1"
       >
         Disabled
       </span>

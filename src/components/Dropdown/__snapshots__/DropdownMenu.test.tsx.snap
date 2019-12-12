@@ -156,7 +156,6 @@ exports[`should render correctly 1`] = `
       aria-disabled="true"
       class="emotion-1"
       role="menuitem"
-      tabindex="-1"
     >
       Disabled
     </li>

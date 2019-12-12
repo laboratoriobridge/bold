@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react'
 
-import { useRovingTabIndex } from '../../hooks/useRovingTabIndex'
 import { ExternalStyles, useStyles } from '../../styles'
 import { Omit } from '../../util'
 
@@ -12,11 +11,7 @@ export function ButtonGroup(props: ButtonGroupProps) {
   const { style, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
-  const rootRef = useRovingTabIndex({
-    getItems: root => Array.from(root.querySelectorAll('button')),
-  })
-
-  return <div ref={rootRef} className={css(classes.root, style)} role='group' {...rest} />
+  return <div className={css(classes.root, style)} role='group' {...rest} />
 }
 
 export const createStyles = () => ({

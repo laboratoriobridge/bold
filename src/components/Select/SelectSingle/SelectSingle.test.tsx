@@ -1,9 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
-
 import en from '../../../i18n/locales/en-US'
-
 import { DefaultItemType, SelectSingle, SelectSingleProps } from './SelectSingle'
 
 jest.mock('../../../util/string')
@@ -67,6 +65,17 @@ it('should render current value and allow changes via prop', () => {
   expect(input.value).toEqual('')
   rerender(<SelectTest value={{ value: 42, label: 'Foo' }} />)
   expect(input.value).toEqual('Foo')
+})
+
+it('should preserve external onBlur and onFocus event handlers', () => {
+  const blur = jest.fn()
+  const focus = jest.fn()
+  const { container } = render(<SelectTest onBlur={blur} onFocus={focus} />)
+  const input = container.querySelector('input')
+  fireEvent.focus(input)
+  fireEvent.blur(input)
+  expect(blur).toHaveBeenCalledTimes(1)
+  expect(focus).toHaveBeenCalledTimes(1)
 })
 
 describe('clear button', () => {
@@ -174,5 +183,15 @@ describe('createNewItem', () => {
     const { container } = render(<SelectTest id='foo' createNewItem={createNewItem} openOnFocus />)
     fireEvent.focus(container.querySelector('input'))
     expect(container.querySelector('ul')).toBeTruthy()
+  })
+  it('should call "createNewItem" only when change type is "changeInput"', async () => {
+    const createNewItem = jest.fn(text => ({ label: text } as any))
+    const { rerender } = render(
+      <SelectTest id='foo' createNewItem={createNewItem} value={items[0]} onChange={jest.fn()} />
+    )
+    rerender(
+      <SelectTest id='foo' createNewItem={createNewItem} value={{ ...items[0], label: 'a' }} onChange={jest.fn()} />
+    )
+    expect(createNewItem).not.toHaveBeenCalled()
   })
 })
