@@ -1,19 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component presentation should render correctly 1`] = `
-.emotion-6 {
+.emotion-8 {
   display: block;
 }
 
-.emotion-4 {
+.emotion-6 {
   position: relative;
 }
 
-.emotion-4 input {
-  padding-right: 3rem;
+.emotion-6 input {
+  padding-right: 4.5rem;
 }
 
-.emotion-3 {
+.emotion-2 {
+  position: absolute;
+  right: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  color: #696979;
+  padding: 1px 6px;
+}
+
+.emotion-2:hover {
+  color: #D01E29;
+}
+
+.emotion-5 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -106,7 +134,12 @@ exports[`Component presentation should render correctly 1`] = `
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-2 {
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-4 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -139,7 +172,7 @@ exports[`Component presentation should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-2 > span {
+.emotion-4 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -150,29 +183,24 @@ exports[`Component presentation should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-2:not(:disabled):active {
+.emotion-4:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-2:focus {
+.emotion-4:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-2:not(:disabled):hover {
+.emotion-4:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-2:focus {
+.emotion-4:focus {
   box-shadow: none;
 }
 
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-41 {
+.emotion-43 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -181,7 +209,7 @@ exports[`Component presentation should render correctly 1`] = `
   opacity: 0;
 }
 
-.emotion-40 {
+.emotion-42 {
   background-color: #FFFFFF;
   display: inline-block;
   padding: 1rem;
@@ -190,7 +218,7 @@ exports[`Component presentation should render correctly 1`] = `
   border-radius: 2px;
 }
 
-.emotion-39 {
+.emotion-41 {
   margin: -0.25rem -0.25rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -200,12 +228,12 @@ exports[`Component presentation should render correctly 1`] = `
   align-items: center;
 }
 
-.emotion-9 {
+.emotion-11 {
   text-align: center;
   margin: 0.25rem 0.25rem;
 }
 
-.emotion-8 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -237,7 +265,7 @@ exports[`Component presentation should render correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-8 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -248,20 +276,20 @@ exports[`Component presentation should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-8:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-8:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-8:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-10 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -270,7 +298,7 @@ exports[`Component presentation should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-15 {
+.emotion-17 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -306,7 +334,7 @@ exports[`Component presentation should render correctly 1`] = `
   min-width: 70px;
 }
 
-.emotion-15 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -317,43 +345,124 @@ exports[`Component presentation should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-15:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-15:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-15:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-19 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #3A3A47;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3A3A47;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.25rem - 1px) 1rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  min-width: 70px;
+  background: #0069D0 !important;
+  color: #FFFFFF;
+}
+
+.emotion-19 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-19:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-19:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-19:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-8"
   >
     <div
-      class="emotion-6"
+      class="emotion-8"
     >
       <div
-        class="emotion-5"
+        class="emotion-7"
       >
         <div
-          class="emotion-4"
+          class="emotion-6"
         >
           <input
             class="emotion-0"
             placeholder="mm/yyyy"
             type="text"
-            value=""
+            value="02/2019"
           />
           <span
-            class="emotion-3"
+            class="emotion-2"
+            role="button"
+            tabindex="-1"
+            title="Clear"
+          >
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0z"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-5"
           >
             <button
-              class="emotion-2"
+              class="emotion-4"
               tabindex="-1"
               type="button"
             >
@@ -384,21 +493,21 @@ exports[`Component presentation should render correctly 1`] = `
       </div>
     </div>
     <div
-      class="emotion-41"
+      class="emotion-43"
       data-visible="false"
       style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
     >
       <div
-        class="emotion-40"
+        class="emotion-42"
       >
         <div
-          class="emotion-39"
+          class="emotion-41"
         >
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-8"
+              class="emotion-10"
               title="Previous year"
               type="button"
             >
@@ -419,19 +528,19 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <span
-              class="emotion-10"
+              class="emotion-12"
             >
               2019
             </span>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-8"
+              class="emotion-10"
               title="Next year"
               type="button"
             >
@@ -452,10 +561,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="January"
               type="button"
             >
@@ -465,10 +574,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-19"
               title="February"
               type="button"
             >
@@ -478,10 +587,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="March"
               type="button"
             >
@@ -491,10 +600,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="April"
               type="button"
             >
@@ -504,10 +613,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="May"
               type="button"
             >
@@ -517,10 +626,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="June"
               type="button"
             >
@@ -530,10 +639,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="July"
               type="button"
             >
@@ -543,10 +652,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="August"
               type="button"
             >
@@ -556,10 +665,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="September"
               type="button"
             >
@@ -569,10 +678,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="October"
               type="button"
             >
@@ -582,10 +691,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="November"
               type="button"
             >
@@ -595,10 +704,10 @@ exports[`Component presentation should render correctly 1`] = `
             </button>
           </div>
           <div
-            class="emotion-9"
+            class="emotion-11"
           >
             <button
-              class="emotion-15"
+              class="emotion-17"
               title="December"
               type="button"
             >

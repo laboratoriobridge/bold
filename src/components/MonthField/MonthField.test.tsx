@@ -7,7 +7,7 @@ const fn = jest.fn()
 
 describe('Component presentation', () => {
   it('should render correctly', () => {
-    const { container } = render(<MonthField onChange={fn} />)
+    const { container } = render(<MonthField value={{ year: 2019, month: 1 }} onChange={fn} />)
     expect(container).toMatchSnapshot()
   })
   it('should render MonthPicker on focus', () => {
