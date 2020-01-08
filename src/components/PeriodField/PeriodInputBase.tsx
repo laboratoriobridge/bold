@@ -4,7 +4,7 @@ import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
-import { Icon, Icons } from '../Icon'
+import { Icons } from '../Icon'
 import { InputWrapper } from '../TextField/InputWrapper'
 
 export interface Period {
@@ -149,7 +149,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
           />
         </div>
         <span className={classes.spanWrapper}>
-          <Icon icon='arrowRight' style={classes.arrowIcon} />
+          <strong>até</strong>
         </span>
         <div className={classes.fieldWrapper}>
           <DateInput
@@ -188,15 +188,12 @@ const createStyles = (theme: Theme, disabled: boolean) => {
       background: disabled && theme.pallete.surface.background,
     },
     invalid: divStyle.invalid,
-    arrowIcon: {
-      background: 'transparent',
-      color: disabled && theme.pallete.text.disabled,
-      cursor: 'default',
-    } as CSSProperties,
     spanWrapper: {
+      cursor: 'default',
       background: 'transparent',
       display: 'flex',
       alignItems: 'center',
+      color: disabled && theme.pallete.text.disabled,
     } as CSSProperties,
     dateField: {
       border: 'none',
