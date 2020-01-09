@@ -125,6 +125,11 @@ const stateReducer = (
         highlightedIndex: state.highlightedIndex,
         isOpen: true,
       }
+    case Downshift.stateChangeTypes.blurInput:
+      return {
+        ...rest,
+        inputValue: '',
+      }
     default:
       return rest
   }
