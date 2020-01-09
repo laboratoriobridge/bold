@@ -79,7 +79,13 @@ export function MultiDownshift<T>(props: MultiDownshiftProps<T>) {
 
   // TODO: compose together props (rather than overwriting them) like downshift does
   return (
-    <SelectDownshift<T> {...rest} stateReducer={stateReducer} onChange={handleChange} selectedItem={null}>
+    <SelectDownshift<T>
+      {...rest}
+      stateReducer={stateReducer}
+      onChange={handleChange}
+      selectedItem={null}
+      keepFilterAfterSelect
+    >
       {downshift => children(getStateAndHelpers(downshift))}
     </SelectDownshift>
   )

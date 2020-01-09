@@ -1,9 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
-
 import { DefaultItemType } from '../SelectSingle'
-
 import { SelectMulti, SelectMultiProps } from './SelectMulti'
 
 jest.mock('../../../util/string')
@@ -97,6 +95,21 @@ it('should preserve external onBlur and onFocus event handlers', () => {
   fireEvent.blur(input)
   expect(blur).toHaveBeenCalledTimes(1)
   expect(focus).toHaveBeenCalledTimes(1)
+})
+
+describe('filtering', () => {
+  it('should keep the current filter after an item is selected', async () => {
+    const { container } = render(<SelectTest />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+
+    expect(container.querySelectorAll('li').length).toEqual(3)
+    fireEvent.click(container.querySelectorAll('li')[0])
+
+    expect(input.value).toEqual('pe')
+    expect(container.querySelectorAll('li').length).toEqual(3)
+  })
 })
 
 describe('remove item', () => {
