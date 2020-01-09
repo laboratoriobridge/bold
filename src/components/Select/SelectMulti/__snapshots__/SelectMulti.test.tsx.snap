@@ -560,18 +560,6 @@ exports[`should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-4 {
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-3 {
   background-color: #FFFFFF;
   border: 1px solid #8F8FA2;
@@ -646,6 +634,19 @@ exports[`should render correctly when opened 1`] = `
 .emotion-2:disabled + .emotion-3 + .css-1f2k2gl {
   color: #AAAAB9;
   cursor: not-allowed;
+}
+
+.emotion-4 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
 }
 
 <div>
