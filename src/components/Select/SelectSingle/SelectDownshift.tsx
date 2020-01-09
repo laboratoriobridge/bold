@@ -15,6 +15,13 @@ export interface SelectDownshiftProps<T> extends Omit<DownshiftProps<T>, 'childr
    */
   openOnFocus?: boolean
 
+  /**
+   * Whether the current input filter should be kept after an item is selected.
+   * This is necessary for multi selects, for example, when the filter should be kept after an item is selected.
+   * @default false
+   */
+  keepFilterAfterSelect?: boolean
+
   children?(props: SelectDownshiftRenderProps<T>): React.ReactNode
 
   /**
@@ -56,7 +63,7 @@ export function defaultSelectFilter<T>(
  * Downshift extension with item and filter management.
  */
 export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
-  const { items, onFilterChange, children, createNewItem, openOnFocus, ...rest } = props
+  const { items, onFilterChange, children, createNewItem, openOnFocus, keepFilterAfterSelect, ...rest } = props
 
   const stateReducer = useMemo(() => createReducer(props), [openOnFocus, props.stateReducer])
 
@@ -87,8 +94,9 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
     }
 
     if (
-      changes.type === Downshift.stateChangeTypes.clickItem ||
-      changes.type === Downshift.stateChangeTypes.keyDownEnter
+      !keepFilterAfterSelect &&
+      (changes.type === Downshift.stateChangeTypes.clickItem ||
+        changes.type === Downshift.stateChangeTypes.keyDownEnter)
     ) {
       onFilterChange(null, getStateAndHelpers(downshift))
     }
