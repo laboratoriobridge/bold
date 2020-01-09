@@ -1,7 +1,6 @@
 import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
-import wait from 'waait'
 import { DefaultItemType } from '../SelectSingle'
 import { SelectMulti, SelectMultiProps } from './SelectMulti'
 
@@ -118,7 +117,6 @@ describe('filtering', () => {
     fireEvent.change(input, { target: { value: 'pe' } })
     fireEvent.click(container.querySelectorAll('li')[0])
     fireEvent.blur(input)
-    await wait()
     expect(container.querySelectorAll('li').length).toEqual(0)
     expect(input.value).toEqual('')
   })

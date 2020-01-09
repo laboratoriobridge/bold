@@ -112,6 +112,11 @@ const stateReducer = (
 ): Partial<StateChangeOptions<any>> => {
   const { inputValue, ...rest } = changes
 
+  if (changes.type === undefined && state.isOpen && !changes.isOpen) {
+    // Clear inputValue when select is closed
+    return { ...changes, inputValue: '' }
+  }
+
   switch (changes.type) {
     case Downshift.stateChangeTypes.changeInput:
       return {
@@ -124,11 +129,6 @@ const stateReducer = (
         ...rest,
         highlightedIndex: state.highlightedIndex,
         isOpen: true,
-      }
-    case Downshift.stateChangeTypes.blurInput:
-      return {
-        ...rest,
-        inputValue: '',
       }
     default:
       return rest
