@@ -79,7 +79,13 @@ export function MultiDownshift<T>(props: MultiDownshiftProps<T>) {
 
   // TODO: compose together props (rather than overwriting them) like downshift does
   return (
-    <SelectDownshift<T> {...rest} stateReducer={stateReducer} onChange={handleChange} selectedItem={null}>
+    <SelectDownshift<T>
+      {...rest}
+      stateReducer={stateReducer}
+      onChange={handleChange}
+      selectedItem={null}
+      keepFilterAfterSelect
+    >
       {downshift => children(getStateAndHelpers(downshift))}
     </SelectDownshift>
   )
@@ -105,6 +111,11 @@ const stateReducer = (
   changes: StateChangeOptions<any>
 ): Partial<StateChangeOptions<any>> => {
   const { inputValue, ...rest } = changes
+
+  if (changes.type === undefined && state.isOpen && !changes.isOpen) {
+    // Clear inputValue when select is closed
+    return { ...changes, inputValue: '' }
+  }
 
   switch (changes.type) {
     case Downshift.stateChangeTypes.changeInput:

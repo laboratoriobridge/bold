@@ -1,9 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
-
 import { DefaultItemType } from '../SelectSingle'
-
 import { SelectMulti, SelectMultiProps } from './SelectMulti'
 
 jest.mock('../../../util/string')
@@ -21,7 +19,7 @@ function SelectTest(props: Partial<SelectMultiProps>) {
   return (
     <SelectMulti
       items={items}
-      itemToString={item => item.label}
+      itemToString={item => item && item.label}
       placeholder='Select a value...'
       itemIsEqual={(a, b) => a.value === b.value}
       {...props}
@@ -97,6 +95,31 @@ it('should preserve external onBlur and onFocus event handlers', () => {
   fireEvent.blur(input)
   expect(blur).toHaveBeenCalledTimes(1)
   expect(focus).toHaveBeenCalledTimes(1)
+})
+
+describe('filtering', () => {
+  it('should keep the current filter after an item is selected', async () => {
+    const { container } = render(<SelectTest />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+
+    expect(container.querySelectorAll('li').length).toEqual(3)
+    fireEvent.click(container.querySelectorAll('li')[0])
+
+    expect(input.value).toEqual('pe')
+    expect(container.querySelectorAll('li').length).toEqual(3)
+  })
+  it('should clear the current filter and the input value after menu is closed', async () => {
+    const { container } = render(<SelectTest />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+    fireEvent.click(container.querySelectorAll('li')[0])
+    fireEvent.blur(input)
+    expect(container.querySelectorAll('li').length).toEqual(0)
+    expect(input.value).toEqual('')
+  })
 })
 
 describe('remove item', () => {
