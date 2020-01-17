@@ -3,15 +3,15 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render } from 'react-testing-library'
 
-import { createTheme } from '../../../styles'
-import { defaultModifierStyles } from '../Calendar'
+import { createTheme } from '../../../../styles'
+import { defaultModifierStyles } from '../../Calendar'
 
-import { dayHoverStyle, RangeCalendar, RangeCalendarProps } from './RangeCalendar'
+import { dayHoverStyle, DefaultRangeCalendar, DefaultRangeCalendarProps } from './DefaultRangeCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<RangeCalendarProps> = {}) => (
-  <RangeCalendar initialVisibleDate={new Date('2019-02-09')} initialDate={null} finalDate={null} {...props} />
+const createComponent = (props: Partial<DefaultRangeCalendarProps> = {}) => (
+  <DefaultRangeCalendar initialVisibleDate={new Date('2019-02-09')} initialDate={null} finalDate={null} {...props} />
 )
 
 /**

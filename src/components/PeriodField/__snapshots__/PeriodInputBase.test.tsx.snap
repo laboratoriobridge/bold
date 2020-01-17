@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PeriodInput render should render correctly 1`] = `
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -17,25 +17,26 @@ exports[`PeriodInput render should render correctly 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-5 {
+.emotion-4 {
+  cursor: default;
   background: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -53,15 +54,15 @@ exports[`PeriodInput render should render correctly 1`] = `
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -180,18 +181,6 @@ exports[`PeriodInput render should render correctly 1`] = `
 }
 
 .emotion-11 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: default;
-}
-
-.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -224,7 +213,7 @@ exports[`PeriodInput render should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -235,29 +224,34 @@ exports[`PeriodInput render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
+}
+
+.emotion-10 {
+  fill: currentColor;
+  font-size: 1.5rem;
 }
 
 <div>
   <div
-    class="emotion-14"
+    class="emotion-13"
   >
     <div
-      class="emotion-10"
+      class="emotion-9"
     >
       <div
         class="emotion-3"
@@ -279,20 +273,11 @@ exports[`PeriodInput render should render correctly 1`] = `
         </div>
       </div>
       <span
-        class="emotion-5"
+        class="emotion-4"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-4"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-          />
-        </svg>
+        <strong>
+          até
+        </strong>
       </span>
       <div
         class="emotion-3"
@@ -315,17 +300,17 @@ exports[`PeriodInput render should render correctly 1`] = `
       </div>
     </div>
     <span
-      class="emotion-13"
+      class="emotion-12"
     >
       <button
-        class="emotion-12"
+        class="emotion-11"
         tabindex="-1"
         type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-11"
+            class="emotion-10"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
@@ -350,33 +335,21 @@ exports[`PeriodInput render should render correctly 1`] = `
 `;
 
 exports[`PeriodInput render should render correctly when disabled 1`] = `
-.emotion-5 {
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -494,12 +467,12 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -516,33 +489,39 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
 .emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  color: #AAAAB9;
   cursor: default;
+  background: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #AAAAB9;
 }
 
-.emotion-12 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -577,7 +556,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -588,29 +567,29 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
 }
 
 <div>
   <div
-    class="emotion-14"
+    class="emotion-13"
   >
     <div
-      class="emotion-10"
+      class="emotion-9"
     >
       <div
         class="emotion-3"
@@ -633,20 +612,11 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
         </div>
       </div>
       <span
-        class="emotion-5"
+        class="emotion-4"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-4"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-          />
-        </svg>
+        <strong>
+          até
+        </strong>
       </span>
       <div
         class="emotion-3"
@@ -670,10 +640,10 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
       </div>
     </div>
     <span
-      class="emotion-13"
+      class="emotion-12"
     >
       <button
-        class="emotion-12"
+        class="emotion-11"
         disabled=""
         tabindex="-1"
         type="button"
@@ -681,7 +651,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-11"
+            class="emotion-10"
             height="1em"
             role="img"
             viewBox="0 0 24 24"
@@ -706,7 +676,8 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
 `;
 
 exports[`PeriodInput render should render correctly when invalid 1`] = `
-.emotion-5 {
+.emotion-4 {
+  cursor: default;
   background: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -724,15 +695,15 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -851,18 +822,6 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
 }
 
 .emotion-11 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: default;
-}
-
-.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -895,7 +854,7 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -906,24 +865,29 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
 }
 
 .emotion-10 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -940,35 +904,35 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
   border: solid 1px #D01E29;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
 
 <div>
   <div
-    class="emotion-14"
+    class="emotion-13"
   >
     <div
-      class="emotion-10"
+      class="emotion-9"
     >
       <div
         class="emotion-3"
@@ -990,20 +954,11 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
         </div>
       </div>
       <span
-        class="emotion-5"
+        class="emotion-4"
       >
-        <svg
-          aria-hidden="true"
-          class="emotion-4"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-          />
-        </svg>
+        <strong>
+          até
+        </strong>
       </span>
       <div
         class="emotion-3"
@@ -1026,17 +981,17 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
       </div>
     </div>
     <span
-      class="emotion-13"
+      class="emotion-12"
     >
       <button
-        class="emotion-12"
+        class="emotion-11"
         tabindex="-1"
         type="button"
       >
         <span>
           <svg
             aria-hidden="true"
-            class="emotion-11"
+            class="emotion-10"
             height="1em"
             role="img"
             viewBox="0 0 24 24"

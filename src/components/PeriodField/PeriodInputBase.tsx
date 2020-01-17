@@ -65,6 +65,8 @@ export interface PeriodInputBaseProps {
    */
   onIconClick?(): void
 
+  onInputOnFocus?(isOnFocus: number): void
+
   /**
    * Function used to manipulate values of Period
    *
@@ -84,6 +86,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     finalInputRef,
     startPlaceholder,
     finalPlaceholder,
+    onInputOnFocus,
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
@@ -111,10 +114,13 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
     const aux = { startDate: period.startDate, finalDate: data } as Period
     onChange && onChange(aux)
     setPeriod(aux)
+    if (data !== undefined) {
+      secondDateFieldRef.current.blur()
+    }
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: undefined } as Period
+    const aux = { startDate: undefined, finalDate: period.finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
     firstDateFieldRef.current.focus()
@@ -129,6 +135,14 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
 
   const defaultHandleOnClick = () => {
     firstDateFieldRef.current.focus()
+  }
+
+  const onInputOnFocusInicial = () => {
+    onInputOnFocus && onInputOnFocus(1)
+  }
+
+  const onInputOnFocusFinal = () => {
+    onInputOnFocus && onInputOnFocus(2)
   }
 
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
@@ -146,6 +160,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             placeholder={startPlaceholder}
             style={classes.dateField}
             value={period ? period.startDate : undefined}
+            onFocus={onInputOnFocusInicial}
           />
         </div>
         <span className={classes.spanWrapper}>
@@ -161,6 +176,7 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
             placeholder={finalPlaceholder}
             style={classes.dateField}
             value={period ? period.finalDate : undefined}
+            onFocus={onInputOnFocusFinal}
           />
         </div>
       </div>

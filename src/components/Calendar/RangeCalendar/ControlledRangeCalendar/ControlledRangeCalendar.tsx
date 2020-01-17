@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import React from 'react'
 
-import { CalendarProps } from '../Calendar'
+import { CalendarProps } from '../../Calendar'
 
-import { RangeCalendar } from './RangeCalendar'
+import { DefaultRangeCalendar } from '../DefaultRangeCalendar/DefaultRangeCalendar'
 
 export interface ControlledRangeCalendarProps extends CalendarProps {
   values?: {
@@ -71,5 +71,7 @@ export const ControlledRangeCalendar = ({ onChange, values, onDayClick, ...rest 
     return
   }
 
-  return <RangeCalendar {...rest} initialDate={initialDate} finalDate={finalDate} onDayClick={controllDayClick} />
+  return (
+    <DefaultRangeCalendar {...rest} initialDate={initialDate} finalDate={finalDate} onDayClick={controllDayClick} />
+  )
 }

@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PeriodField render should render correctly 1`] = `
-.emotion-16 {
+.emotion-15 {
   display: block;
 }
 
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -21,25 +21,26 @@ exports[`PeriodField render should render correctly 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-5 {
+.emotion-4 {
+  cursor: default;
   background: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -57,15 +58,15 @@ exports[`PeriodField render should render correctly 1`] = `
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -184,18 +185,6 @@ exports[`PeriodField render should render correctly 1`] = `
 }
 
 .emotion-11 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: default;
-}
-
-.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -228,7 +217,7 @@ exports[`PeriodField render should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -239,24 +228,29 @@ exports[`PeriodField render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
 }
 
-.emotion-66 {
+.emotion-10 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-65 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -265,7 +259,7 @@ exports[`PeriodField render should render correctly 1`] = `
   opacity: 0;
 }
 
-.emotion-65 {
+.emotion-64 {
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
@@ -273,11 +267,11 @@ exports[`PeriodField render should render correctly 1`] = `
   outline: none;
 }
 
-.emotion-64 {
+.emotion-63 {
   width: 288px;
 }
 
-.emotion-27 {
+.emotion-26 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -290,7 +284,7 @@ exports[`PeriodField render should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-21 {
+.emotion-20 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -301,7 +295,7 @@ exports[`PeriodField render should render correctly 1`] = `
   align-items: center;
 }
 
-.emotion-18 {
+.emotion-17 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -333,7 +327,7 @@ exports[`PeriodField render should render correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-18 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -344,44 +338,44 @@ exports[`PeriodField render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-18:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-63 {
+.emotion-62 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-63 th {
+.emotion-62 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-33 {
+.emotion-30 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-33:hover {
+.emotion-30:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-28 {
+.emotion-27 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -389,12 +383,12 @@ exports[`PeriodField render should render correctly 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-28:hover {
+.emotion-27:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-52 {
+.emotion-46 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -402,7 +396,7 @@ exports[`PeriodField render should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-52:hover {
+.emotion-46:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -410,19 +404,19 @@ exports[`PeriodField render should render correctly 1`] = `
 <div>
   <div>
     <div
-      class="emotion-16"
+      class="emotion-15"
     >
       <div
-        class="emotion-16"
+        class="emotion-15"
       >
         <div
           class="emotion-2"
         >
           <div
-            class="emotion-14"
+            class="emotion-13"
           >
             <div
-              class="emotion-10"
+              class="emotion-9"
             >
               <div
                 class="emotion-3"
@@ -444,20 +438,11 @@ exports[`PeriodField render should render correctly 1`] = `
                 </div>
               </div>
               <span
-                class="emotion-5"
+                class="emotion-4"
               >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-4"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-                  />
-                </svg>
+                <strong>
+                  até
+                </strong>
               </span>
               <div
                 class="emotion-3"
@@ -480,17 +465,17 @@ exports[`PeriodField render should render correctly 1`] = `
               </div>
             </div>
             <span
-              class="emotion-13"
+              class="emotion-12"
             >
               <button
-                class="emotion-12"
+                class="emotion-11"
                 tabindex="-1"
                 type="button"
               >
                 <span>
                   <svg
                     aria-hidden="true"
-                    class="emotion-11"
+                    class="emotion-10"
                     height="1em"
                     role="img"
                     viewBox="0 0 24 24"
@@ -514,25 +499,25 @@ exports[`PeriodField render should render correctly 1`] = `
         </div>
       </div>
       <div
-        class="emotion-66"
+        class="emotion-65"
         data-visible="false"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-65"
+          class="emotion-64"
           tabindex="-1"
         >
           <div
-            class="emotion-64"
+            class="emotion-63"
           >
             <div
-              class="emotion-27"
+              class="emotion-26"
             >
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous month"
                   type="button"
@@ -540,7 +525,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -552,9 +537,9 @@ exports[`PeriodField render should render correctly 1`] = `
                     </svg>
                   </span>
                 </button>
-                Nov
+                Jan
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next month"
                   type="button"
@@ -562,7 +547,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -576,10 +561,10 @@ exports[`PeriodField render should render correctly 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous year"
                   type="button"
@@ -587,7 +572,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -599,9 +584,9 @@ exports[`PeriodField render should render correctly 1`] = `
                     </svg>
                   </span>
                 </button>
-                2019
+                2020
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next year"
                   type="button"
@@ -609,7 +594,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -624,7 +609,7 @@ exports[`PeriodField render should render correctly 1`] = `
               </div>
             </div>
             <table
-              class="emotion-63"
+              class="emotion-62"
             >
               <thead>
                 <tr>
@@ -654,396 +639,396 @@ exports[`PeriodField render should render correctly 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-10-27"
+                    data-date="2019-12-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      27
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-28"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      28
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-30"
+                    data-date="2019-12-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       30
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-31"
+                    data-date="2019-12-31"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       31
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-01"
+                    data-date="2020-01-01"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       01
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-02"
+                    data-date="2020-01-02"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       02
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-03"
+                    data-date="2020-01-03"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       03
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-04"
+                    data-date="2020-01-04"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       04
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-05"
+                    data-date="2020-01-05"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       05
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-06"
+                    data-date="2020-01-06"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       06
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-07"
+                    data-date="2020-01-07"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       07
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-08"
+                    data-date="2020-01-08"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       08
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-09"
+                    data-date="2020-01-09"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       09
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-10"
+                    data-date="2020-01-10"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       10
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-11"
+                    data-date="2020-01-11"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       11
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-12"
+                    data-date="2020-01-12"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       12
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-13"
+                    data-date="2020-01-13"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       13
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-14"
+                    data-date="2020-01-14"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       14
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-15"
+                    data-date="2020-01-15"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       15
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-16"
+                    data-date="2020-01-16"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       16
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-17"
+                    data-date="2020-01-17"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-46"
                       role="button"
                     >
                       17
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-18"
+                    data-date="2020-01-18"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       18
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-19"
+                    data-date="2020-01-19"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       19
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-20"
+                    data-date="2020-01-20"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-52"
+                      class="emotion-30"
                       role="button"
                     >
                       20
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-21"
+                    data-date="2020-01-21"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       21
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-22"
+                    data-date="2020-01-22"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       22
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-23"
+                    data-date="2020-01-23"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       23
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-24"
+                    data-date="2020-01-24"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       24
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-25"
+                    data-date="2020-01-25"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       25
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-26"
+                    data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       26
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-27"
+                    data-date="2020-01-27"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       27
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-28"
+                    data-date="2020-01-28"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       28
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-29"
+                    data-date="2020-01-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-30"
+                    data-date="2020-01-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       30
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-01-31"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-30"
+                      role="button"
+                    >
+                      31
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-01"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-27"
+                      role="button"
+                    >
+                      01
                     </span>
                   </td>
                 </tr>
@@ -1058,20 +1043,8 @@ exports[`PeriodField render should render correctly 1`] = `
 `;
 
 exports[`PeriodField render should render correctly when disabled 1`] = `
-.emotion-16 {
+.emotion-15 {
   display: block;
-}
-
-.emotion-5 {
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .emotion-3 {
@@ -1080,15 +1053,15 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -1206,12 +1179,12 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-66 {
+.emotion-65 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -1220,7 +1193,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   opacity: 0;
 }
 
-.emotion-65 {
+.emotion-64 {
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
@@ -1228,11 +1201,11 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   outline: none;
 }
 
-.emotion-64 {
+.emotion-63 {
   width: 288px;
 }
 
-.emotion-27 {
+.emotion-26 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1245,7 +1218,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   font-weight: bold;
 }
 
-.emotion-21 {
+.emotion-20 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1256,7 +1229,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   align-items: center;
 }
 
-.emotion-18 {
+.emotion-17 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1288,7 +1261,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-18 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1299,44 +1272,44 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-18:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-63 {
+.emotion-62 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-63 th {
+.emotion-62 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-33 {
+.emotion-30 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-33:hover {
+.emotion-30:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-28 {
+.emotion-27 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1344,12 +1317,12 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-28:hover {
+.emotion-27:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-52 {
+.emotion-46 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1357,12 +1330,12 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   font-weight: bold;
 }
 
-.emotion-52:hover {
+.emotion-46:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1379,33 +1352,39 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
 .emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  color: #AAAAB9;
   cursor: default;
+  background: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #AAAAB9;
 }
 
-.emotion-12 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1440,7 +1419,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1451,39 +1430,39 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
 }
 
 <div>
   <div>
     <div
-      class="emotion-16"
+      class="emotion-15"
     >
       <div
-        class="emotion-16"
+        class="emotion-15"
       >
         <div
           class="emotion-2"
         >
           <div
-            class="emotion-14"
+            class="emotion-13"
           >
             <div
-              class="emotion-10"
+              class="emotion-9"
             >
               <div
                 class="emotion-3"
@@ -1506,20 +1485,11 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                 </div>
               </div>
               <span
-                class="emotion-5"
+                class="emotion-4"
               >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-4"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-                  />
-                </svg>
+                <strong>
+                  até
+                </strong>
               </span>
               <div
                 class="emotion-3"
@@ -1543,10 +1513,10 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
               </div>
             </div>
             <span
-              class="emotion-13"
+              class="emotion-12"
             >
               <button
-                class="emotion-12"
+                class="emotion-11"
                 disabled=""
                 tabindex="-1"
                 type="button"
@@ -1554,7 +1524,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                 <span>
                   <svg
                     aria-hidden="true"
-                    class="emotion-11"
+                    class="emotion-10"
                     height="1em"
                     role="img"
                     viewBox="0 0 24 24"
@@ -1578,25 +1548,25 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
         </div>
       </div>
       <div
-        class="emotion-66"
+        class="emotion-65"
         data-visible="false"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-65"
+          class="emotion-64"
           tabindex="-1"
         >
           <div
-            class="emotion-64"
+            class="emotion-63"
           >
             <div
-              class="emotion-27"
+              class="emotion-26"
             >
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous month"
                   type="button"
@@ -1604,7 +1574,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1616,9 +1586,9 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     </svg>
                   </span>
                 </button>
-                Nov
+                Jan
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next month"
                   type="button"
@@ -1626,7 +1596,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1640,10 +1610,10 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous year"
                   type="button"
@@ -1651,7 +1621,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1663,9 +1633,9 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     </svg>
                   </span>
                 </button>
-                2019
+                2020
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next year"
                   type="button"
@@ -1673,7 +1643,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1688,7 +1658,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
               </div>
             </div>
             <table
-              class="emotion-63"
+              class="emotion-62"
             >
               <thead>
                 <tr>
@@ -1718,396 +1688,396 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-10-27"
+                    data-date="2019-12-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      27
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-28"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      28
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-30"
+                    data-date="2019-12-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       30
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-31"
+                    data-date="2019-12-31"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       31
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-01"
+                    data-date="2020-01-01"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       01
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-02"
+                    data-date="2020-01-02"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       02
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-03"
+                    data-date="2020-01-03"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       03
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-04"
+                    data-date="2020-01-04"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       04
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-05"
+                    data-date="2020-01-05"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       05
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-06"
+                    data-date="2020-01-06"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       06
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-07"
+                    data-date="2020-01-07"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       07
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-08"
+                    data-date="2020-01-08"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       08
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-09"
+                    data-date="2020-01-09"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       09
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-10"
+                    data-date="2020-01-10"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       10
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-11"
+                    data-date="2020-01-11"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       11
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-12"
+                    data-date="2020-01-12"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       12
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-13"
+                    data-date="2020-01-13"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       13
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-14"
+                    data-date="2020-01-14"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       14
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-15"
+                    data-date="2020-01-15"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       15
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-16"
+                    data-date="2020-01-16"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       16
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-17"
+                    data-date="2020-01-17"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-46"
                       role="button"
                     >
                       17
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-18"
+                    data-date="2020-01-18"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       18
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-19"
+                    data-date="2020-01-19"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       19
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-20"
+                    data-date="2020-01-20"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-52"
+                      class="emotion-30"
                       role="button"
                     >
                       20
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-21"
+                    data-date="2020-01-21"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       21
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-22"
+                    data-date="2020-01-22"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       22
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-23"
+                    data-date="2020-01-23"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       23
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-24"
+                    data-date="2020-01-24"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       24
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-25"
+                    data-date="2020-01-25"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       25
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-26"
+                    data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       26
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-27"
+                    data-date="2020-01-27"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       27
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-28"
+                    data-date="2020-01-28"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       28
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-29"
+                    data-date="2020-01-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-30"
+                    data-date="2020-01-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       30
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-01-31"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-30"
+                      role="button"
+                    >
+                      31
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-01"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-27"
+                      role="button"
+                    >
+                      01
                     </span>
                   </td>
                 </tr>
@@ -2122,11 +2092,12 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
 `;
 
 exports[`PeriodField render should render correctly when invalid 1`] = `
-.emotion-16 {
+.emotion-15 {
   display: block;
 }
 
-.emotion-5 {
+.emotion-4 {
+  cursor: default;
   background: transparent;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2144,15 +2115,15 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   flex: 1;
 }
 
-.emotion-14 {
+.emotion-13 {
   position: relative;
 }
 
-.emotion-14 input {
+.emotion-13 input {
   padding-right: 3rem;
 }
 
-.emotion-13 {
+.emotion-12 {
   position: absolute;
   background-color: #F0F0F5;
   display: -webkit-box;
@@ -2271,18 +2242,6 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
 }
 
 .emotion-11 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-4 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: default;
-}
-
-.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2315,7 +2274,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   border-radius: inherit;
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2326,24 +2285,29 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   box-shadow: none;
 }
 
-.emotion-66 {
+.emotion-10 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-65 {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
   z-index: 1200;
@@ -2352,7 +2316,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   opacity: 0;
 }
 
-.emotion-65 {
+.emotion-64 {
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
@@ -2360,11 +2324,11 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   outline: none;
 }
 
-.emotion-64 {
+.emotion-63 {
   width: 288px;
 }
 
-.emotion-27 {
+.emotion-26 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -2377,7 +2341,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   font-weight: bold;
 }
 
-.emotion-21 {
+.emotion-20 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -2388,7 +2352,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   align-items: center;
 }
 
-.emotion-18 {
+.emotion-17 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2420,7 +2384,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-18 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2431,44 +2395,44 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-18:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-63 {
+.emotion-62 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-63 th {
+.emotion-62 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-33 {
+.emotion-30 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-33:hover {
+.emotion-30:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-28 {
+.emotion-27 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -2476,12 +2440,12 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-28:hover {
+.emotion-27:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-52 {
+.emotion-46 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -2489,12 +2453,12 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   font-weight: bold;
 }
 
-.emotion-52:hover {
+.emotion-46:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-10 {
+.emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -2511,25 +2475,25 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   border: solid 1px #D01E29;
 }
 
-.emotion-10:required {
+.emotion-9:required {
   box-shadow: none;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-9:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-9:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-10:focus-within:not(:disabled) {
+.emotion-9:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
@@ -2537,19 +2501,19 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
 <div>
   <div>
     <div
-      class="emotion-16"
+      class="emotion-15"
     >
       <div
-        class="emotion-16"
+        class="emotion-15"
       >
         <div
           class="emotion-2"
         >
           <div
-            class="emotion-14"
+            class="emotion-13"
           >
             <div
-              class="emotion-10"
+              class="emotion-9"
             >
               <div
                 class="emotion-3"
@@ -2571,20 +2535,11 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                 </div>
               </div>
               <span
-                class="emotion-5"
+                class="emotion-4"
               >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-4"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    d="M19.707 12.707l-5.001 5.001a1 1 0 11-1.414-1.414L16.586 13H5c-.667 0-1-.332-1-1 0-.668.333-1 1-1h11.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414z"
-                  />
-                </svg>
+                <strong>
+                  até
+                </strong>
               </span>
               <div
                 class="emotion-3"
@@ -2607,17 +2562,17 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
               </div>
             </div>
             <span
-              class="emotion-13"
+              class="emotion-12"
             >
               <button
-                class="emotion-12"
+                class="emotion-11"
                 tabindex="-1"
                 type="button"
               >
                 <span>
                   <svg
                     aria-hidden="true"
-                    class="emotion-11"
+                    class="emotion-10"
                     height="1em"
                     role="img"
                     viewBox="0 0 24 24"
@@ -2641,25 +2596,25 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
         </div>
       </div>
       <div
-        class="emotion-66"
+        class="emotion-65"
         data-visible="false"
         style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
       >
         <div
-          class="emotion-65"
+          class="emotion-64"
           tabindex="-1"
         >
           <div
-            class="emotion-64"
+            class="emotion-63"
           >
             <div
-              class="emotion-27"
+              class="emotion-26"
             >
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous month"
                   type="button"
@@ -2667,7 +2622,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -2679,9 +2634,9 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                     </svg>
                   </span>
                 </button>
-                Nov
+                Jan
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next month"
                   type="button"
@@ -2689,7 +2644,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -2703,10 +2658,10 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                 </button>
               </div>
               <div
-                class="emotion-21"
+                class="emotion-20"
               >
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Previous year"
                   type="button"
@@ -2714,7 +2669,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -2726,9 +2681,9 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                     </svg>
                   </span>
                 </button>
-                2019
+                2020
                 <button
-                  class="emotion-18"
+                  class="emotion-17"
                   tabindex="-1"
                   title="Next year"
                   type="button"
@@ -2736,7 +2691,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-11"
+                      class="emotion-10"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -2751,7 +2706,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
               </div>
             </div>
             <table
-              class="emotion-63"
+              class="emotion-62"
             >
               <thead>
                 <tr>
@@ -2781,396 +2736,396 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-10-27"
+                    data-date="2019-12-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      27
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-28"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
-                      role="button"
-                    >
-                      28
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-10-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-30"
+                    data-date="2019-12-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       30
                     </span>
                   </td>
                   <td
-                    data-date="2019-10-31"
+                    data-date="2019-12-31"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-28"
+                      class="emotion-27"
                       role="button"
                     >
                       31
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-01"
+                    data-date="2020-01-01"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       01
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-02"
+                    data-date="2020-01-02"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       02
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-03"
+                    data-date="2020-01-03"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       03
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-04"
+                    data-date="2020-01-04"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       04
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-05"
+                    data-date="2020-01-05"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       05
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-06"
+                    data-date="2020-01-06"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       06
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-07"
+                    data-date="2020-01-07"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       07
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-08"
+                    data-date="2020-01-08"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       08
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-09"
+                    data-date="2020-01-09"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       09
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-10"
+                    data-date="2020-01-10"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       10
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-11"
+                    data-date="2020-01-11"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       11
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-12"
+                    data-date="2020-01-12"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       12
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-13"
+                    data-date="2020-01-13"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       13
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-14"
+                    data-date="2020-01-14"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       14
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-15"
+                    data-date="2020-01-15"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       15
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-16"
+                    data-date="2020-01-16"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       16
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-17"
+                    data-date="2020-01-17"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-46"
                       role="button"
                     >
                       17
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-18"
+                    data-date="2020-01-18"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       18
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-19"
+                    data-date="2020-01-19"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       19
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-20"
+                    data-date="2020-01-20"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-52"
+                      class="emotion-30"
                       role="button"
                     >
                       20
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-21"
+                    data-date="2020-01-21"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       21
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-22"
+                    data-date="2020-01-22"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       22
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-23"
+                    data-date="2020-01-23"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       23
                     </span>
                   </td>
-                </tr>
-                <tr>
                   <td
-                    data-date="2019-11-24"
+                    data-date="2020-01-24"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       24
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-25"
+                    data-date="2020-01-25"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       25
                     </span>
                   </td>
+                </tr>
+                <tr>
                   <td
-                    data-date="2019-11-26"
+                    data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       26
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-27"
+                    data-date="2020-01-27"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       27
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-28"
+                    data-date="2020-01-28"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       28
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-29"
+                    data-date="2020-01-29"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       29
                     </span>
                   </td>
                   <td
-                    data-date="2019-11-30"
+                    data-date="2020-01-30"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-33"
+                      class="emotion-30"
                       role="button"
                     >
                       30
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-01-31"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-30"
+                      role="button"
+                    >
+                      31
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-01"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-27"
+                      role="button"
+                    >
+                      01
                     </span>
                   </td>
                 </tr>
