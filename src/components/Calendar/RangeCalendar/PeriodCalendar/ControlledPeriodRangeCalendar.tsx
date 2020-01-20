@@ -7,17 +7,11 @@ export interface ControlledPeriodRangeCalendarProps extends CalendarProps {
     initialDate: Date
     finalDate: Date
   }
-  periodBehavior?: boolean
   inputOnFocus?: number
   onChange?(initialDate: Date, finalDate: Date): void
 }
-export const ControlledPeriodRangeCalendar = ({
-  inputOnFocus,
-  onChange,
-  values,
-  onDayClick,
-  ...rest
-}: ControlledPeriodRangeCalendarProps) => {
+export const ControlledPeriodRangeCalendar = (props: ControlledPeriodRangeCalendarProps) => {
+  const { inputOnFocus, onChange, values, onDayClick, ...rest } = props
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
   const cmpMounted = useRef(false)
@@ -33,24 +27,40 @@ export const ControlledPeriodRangeCalendar = ({
 
   useEffect(() => {
     if (values) {
-      setInitialDate(values.initialDate)
-      setFinalDate(values.finalDate)
+      if (values.initialDate > values.finalDate) {
+        setInitialDate(values.finalDate)
+        setFinalDate(values.initialDate)
+      } else {
+        setInitialDate(values.initialDate)
+        setFinalDate(values.finalDate)
+      }
     }
   }, [values])
 
   const controllDayClick = (day: Date) => {
-    onDayClick(day)
+    onDayClick && onDayClick(day)
     if (inputOnFocus === 1) {
-      setInitialDate(day)
+      if (day < initialDate) {
+        setInitialDate(day)
+        setFinalDate(finalDate)
+      } else if (day > finalDate) {
+        setInitialDate(day)
+        setFinalDate(undefined)
+      } else {
+        setInitialDate(day)
+      }
+      return
     }
     if (inputOnFocus === 2) {
       setFinalDate(day)
+      if (day > finalDate) {
+        setInitialDate(finalDate)
+        setFinalDate(day)
+      } else {
+        setFinalDate(day)
+      }
+      return
     }
-    if (day < initialDate) {
-      setInitialDate(day)
-      setFinalDate(finalDate)
-    }
-    return
   }
 
   return <PeriodRangeCalendar {...rest} initialDate={initialDate} finalDate={finalDate} onDayClick={controllDayClick} />

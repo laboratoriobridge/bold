@@ -111,7 +111,7 @@ describe('PeriodInput', () => {
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
     })
 
-    it('should clear both inputs when click clear in first input', async () => {
+    it('should clear only first input when click clear in first input', async () => {
       const change = jest.fn()
       const { container } = render(
         <PeriodInputBase
@@ -127,7 +127,7 @@ describe('PeriodInput', () => {
 
       await wait()
 
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-02-02') } as Period)
     })
   })
 

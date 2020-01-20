@@ -2,17 +2,21 @@ import { useEffect, useRef, useState } from 'react'
 import React from 'react'
 
 import { CalendarProps } from '../../Calendar'
+import { DefaultRangeCalendar } from './DefaultRangeCalendar'
 
-import { DefaultRangeCalendar } from '../DefaultRangeCalendar/DefaultRangeCalendar'
-
-export interface ControlledRangeCalendarProps extends CalendarProps {
+export interface DefaultControlledRangeCalendarProps extends CalendarProps {
   values?: {
     initialDate: Date
     finalDate: Date
   }
   onChange?(initialDate: Date, finalDate: Date): void
 }
-export const ControlledRangeCalendar = ({ onChange, values, onDayClick, ...rest }: ControlledRangeCalendarProps) => {
+export const DefaultControlledRangeCalendar = ({
+  onChange,
+  values,
+  onDayClick,
+  ...rest
+}: DefaultControlledRangeCalendarProps) => {
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
   const cmpMounted = useRef(false)
@@ -49,7 +53,7 @@ export const ControlledRangeCalendar = ({ onChange, values, onDayClick, ...rest 
   }
 
   const controllDayClick = (day: Date) => {
-    onDayClick(day)
+    onDayClick && onDayClick(day)
     if (!initialDate) {
       setInitialDate(day)
       return

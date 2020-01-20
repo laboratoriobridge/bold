@@ -10,16 +10,7 @@ export interface PeriodRangeCalendarProps extends CalendarProps {
 }
 
 export const PeriodRangeCalendar = ({ initialDate, finalDate, ...rest }: PeriodRangeCalendarProps) => {
-  if (initialDate && finalDate && finalDate < initialDate) {
-    if (process.env.NODE_ENV !== 'production') {
-      // tslint:disable-next-line no-console
-      console.warn(`RangeCalendar: finalDate should not be before initialDate`)
-    }
-    finalDate = undefined
-    initialDate = undefined
-  }
-
-  const isInTheRange = (day: Date): boolean => {
+  const handleIsInTheRange = (day: Date): boolean => {
     if (!initialDate) {
       if (finalDate) {
         return isSameDay(day, finalDate)
@@ -38,18 +29,18 @@ export const PeriodRangeCalendar = ({ initialDate, finalDate, ...rest }: PeriodR
 
   const isInHoverRange = (day: Date, hoverDate: Date) =>
     (!initialDate && hoverDate && isSameDay(day, hoverDate)) ||
-    (!initialDate && finalDate && hoverDate && isSameDay(day, hoverDate)) ||
-    (hoverDate <= day && day < initialDate) ||
-    (hoverDate >= day && day > finalDate) ||
-    (initialDate < day && day <= hoverDate) ||
-    (finalDate > day && day >= hoverDate)
+    (!initialDate && !finalDate && hoverDate && isSameDay(day, hoverDate)) ||
+    (initialDate && hoverDate <= day && day < initialDate) ||
+    (finalDate && hoverDate >= day && day > finalDate) ||
+    (initialDate && !finalDate && initialDate < day && day <= hoverDate) ||
+    (finalDate && !initialDate && finalDate > day && day >= hoverDate)
 
   return (
     <GenericRangeCalendar
       {...rest}
       initialDate={initialDate}
       finalDate={finalDate}
-      isInTheRange={isInTheRange}
+      isInTheRange={handleIsInTheRange}
       isInTheHoverRange={isInHoverRange}
     />
   )

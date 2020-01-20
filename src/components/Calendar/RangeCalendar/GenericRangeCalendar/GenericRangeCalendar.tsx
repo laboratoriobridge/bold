@@ -18,15 +18,6 @@ export const GenericRangeCalendar = ({
   finalDate,
   ...rest
 }: GenericRangeCalendarProps) => {
-  if (initialDate && finalDate && finalDate < initialDate) {
-    if (process.env.NODE_ENV !== 'production') {
-      // tslint:disable-next-line no-console
-      console.warn(`RangeCalendar: finalDate should not be before initialDate`)
-    }
-    finalDate = undefined
-    initialDate = undefined
-  }
-
   const [hoverDate, setHoverDate] = useState<Date>(undefined)
 
   const inRange = (day: Date): boolean => {

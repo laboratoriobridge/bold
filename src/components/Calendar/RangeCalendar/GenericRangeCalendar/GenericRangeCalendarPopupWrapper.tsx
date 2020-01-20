@@ -1,17 +1,17 @@
 import React from 'react'
+import { Theme, useStyles } from '../../../../styles'
 
-import { Theme, useStyles } from '../../../styles'
+export interface GenericRangeCalendarPopupWrapperProps {
+  children?: React.ReactNode
+}
 
-import { ControlledRangeCalendar, ControlledRangeCalendarProps } from './ControlledRangeCalendar'
-
-export interface ControlledRangeCalendarPopupProps extends ControlledRangeCalendarProps {}
-
-export function ControlledRangeCalendarPopup(props: ControlledRangeCalendarPopupProps) {
+export function GenericRangeCalendarPopupWrapper(props: GenericRangeCalendarPopupWrapperProps) {
+  const { children } = props
   const { classes } = useStyles(createStyles)
 
   return (
     <div className={classes.root} tabIndex={-1}>
-      <ControlledRangeCalendar {...props} />
+      {children}
     </div>
   )
 }
