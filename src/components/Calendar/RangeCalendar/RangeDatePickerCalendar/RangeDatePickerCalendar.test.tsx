@@ -1,7 +1,8 @@
-import { fireEvent, render } from '@testing-library/react'
+import React from 'react'
 import { Interpolation } from 'emotion'
 import { matchers } from 'jest-emotion'
-import React from 'react'
+import { fireEvent, render } from '@testing-library/react'
+
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
 import { dayHoverStyle, RangeDatePickerCalendar, RangeDatePickerCalendarProps } from './RangeDatePickerCalendar'
