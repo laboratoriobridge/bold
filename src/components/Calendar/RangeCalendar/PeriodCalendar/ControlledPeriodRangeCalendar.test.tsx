@@ -141,6 +141,8 @@ describe('[Period][RangePicker]', () => {
   })
 
   it('Should select correctly both initialDate and finalDate, with a predefined interval', () => {
+    let initial: Date
+    let final: Date
     const { rerender, getByText } = render(
       createComponent({
         values: {
@@ -148,6 +150,10 @@ describe('[Period][RangePicker]', () => {
           finalDate: new Date('2019-02-12'),
         },
         inputOnFocus: 1,
+        onChange: (i: Date, f: Date) => {
+          initial = i
+          final = f
+        },
       })
     )
 
@@ -163,8 +169,8 @@ describe('[Period][RangePicker]', () => {
     rerender(
       createComponent({
         values: {
-          initialDate: new Date('2019-02-20'),
-          finalDate: new Date('2019-02-12'),
+          initialDate: initial,
+          finalDate: final,
         },
         inputOnFocus: 2,
       })

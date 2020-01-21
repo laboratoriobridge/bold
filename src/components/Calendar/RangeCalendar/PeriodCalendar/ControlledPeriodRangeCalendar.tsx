@@ -53,12 +53,6 @@ export const ControlledPeriodRangeCalendar = (props: ControlledPeriodRangeCalend
     }
     if (inputOnFocus === 2) {
       setFinalDate(day)
-      if (day > finalDate) {
-        setInitialDate(finalDate)
-        setFinalDate(day)
-      } else {
-        setFinalDate(day)
-      }
       return
     }
   }

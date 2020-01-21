@@ -30,7 +30,7 @@ export const PeriodRangeCalendar = ({ initialDate, finalDate, ...rest }: PeriodR
   const isInHoverRange = (day: Date, hoverDate: Date) =>
     (!initialDate && hoverDate && isSameDay(day, hoverDate)) ||
     (!initialDate && !finalDate && hoverDate && isSameDay(day, hoverDate)) ||
-    (initialDate && hoverDate <= day && day < initialDate) ||
+    (initialDate && !finalDate && hoverDate <= day && day < initialDate) ||
     (finalDate && hoverDate >= day && day > finalDate) ||
     (initialDate && !finalDate && initialDate < day && day <= hoverDate) ||
     (finalDate && !initialDate && finalDate > day && day >= hoverDate)
