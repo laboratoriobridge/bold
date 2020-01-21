@@ -5,8 +5,8 @@ import { Icons } from '../Icon'
 import { Popper, PopperController } from '../Popper'
 import { RangeDatePickerInput, RangeDatePickerInputProps } from './RangeDatePickerInput'
 import { Period } from './BaseRangeDatePicker'
-import { ControlledPeriodRangeCalendarPopup } from '../Calendar/RangeCalendar/PeriodCalendar/ControlledPeriodRangeCalendarPopup'
-import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/PeriodCalendar/ControlledRangeDatePickerCalendar'
+import { ControlledPeriodRangeCalendarPopup } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledPeriodRangeCalendarPopup'
+import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendar'
 
 export interface RangeDatePickerProps extends Omit<RangeDatePickerInputProps, 'onChange'> {
   minDate?: Date

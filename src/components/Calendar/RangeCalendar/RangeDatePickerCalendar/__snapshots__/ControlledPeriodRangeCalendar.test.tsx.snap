@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Period][RangePicker] Should render correclty 1`] = `
+exports[`[Calendar][RangeDatePicker] Should render correclty 1`] = `
 .emotion-47 {
   width: 288px;
 }

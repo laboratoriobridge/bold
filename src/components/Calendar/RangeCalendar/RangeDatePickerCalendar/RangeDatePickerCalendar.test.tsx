@@ -34,7 +34,7 @@ const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue
   }
 }
 
-describe('[Period][RangePicker]', () => {
+describe('[Calendar][RangeDatePicker]', () => {
   const theme = createTheme()
   const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 
@@ -126,7 +126,7 @@ describe('[Period][RangePicker]', () => {
 
   it('Hover style must be applied when initialDate and finalDate are correctly defined', () => {
     const { getByText } = render(
-      createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
+      createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13'), inputOnFocus: 2 })
     )
     const expectedStyle = dayHoverStyle(theme)
 
@@ -134,7 +134,7 @@ describe('[Period][RangePicker]', () => {
     iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
       expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       // Day 11 to 13 (the day selected in the interval) skipped to preserve the purpose of this test
-      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       expect(getByText('15')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
     })
@@ -151,7 +151,7 @@ describe('[Period][RangePicker]', () => {
   })
 
   it('Remove hover style when mouseLeave', () => {
-    const { getByText } = render(createComponent({ initialDate: new Date('2019-02-13') }))
+    const { getByText } = render(createComponent({ initialDate: new Date('2019-02-13'), inputOnFocus: 2 }))
     const expectedStyle = dayHoverStyle(theme)
 
     fireEvent.mouseOver(getByText('14'))

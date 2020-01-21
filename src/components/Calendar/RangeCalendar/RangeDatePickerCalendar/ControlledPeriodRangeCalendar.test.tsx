@@ -20,7 +20,7 @@ const createComponent = (props: Partial<ControlledRangeDatePickerCalendarProps> 
   />
 )
 
-describe('[Period][RangePicker]', () => {
+describe('[Calendar][RangeDatePicker]', () => {
   it('Should render correclty', () => {
     const { container } = render(createComponent())
     expect(container).toMatchSnapshot()
