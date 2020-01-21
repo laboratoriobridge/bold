@@ -2,8 +2,8 @@ import * as React from 'react'
 
 import { Theme } from '../../../../styles'
 import { CalendarProps } from '../../Calendar'
-import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
 import { isSameDay } from '../../util'
+import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
 
 export interface RangeDatePickerCalendarProps extends CalendarProps {
   initialDate: Date

@@ -4,7 +4,7 @@ import React from 'react'
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 
-import { Period, BaseRangeDatePicker } from './BaseRangeDatePicker'
+import { BaseRangeDatePicker, Period } from './BaseRangeDatePicker'
 
 const FIRST_INPUT = 0
 const SECOND_INPUT = 1
