@@ -4,7 +4,7 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
-import { dayHoverStyle, RangeDatePickerCalendarProps, RangeDatePickerCalendar } from './RangeDatePickerCalendar'
+import { dayHoverStyle, RangeDatePickerCalendar, RangeDatePickerCalendarProps } from './RangeDatePickerCalendar'
 
 expect.extend(matchers)
 
@@ -102,7 +102,7 @@ describe('[Calendar][RangeDatePicker]', () => {
   })
 
   it('With only initalDate defined, hover style must be applied on the interval between initiwalDate and mouse (before or after)', () => {
-    const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15') }))
+    const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15'), inputOnFocus: 2 }))
     const expectedStyle = dayHoverStyle(theme)
 
     fireEvent.mouseOver(getByText('17'))
@@ -126,16 +126,16 @@ describe('[Calendar][RangeDatePicker]', () => {
 
   it('Hover style must be applied when initialDate and finalDate are correctly defined', () => {
     const { getByText } = render(
-      createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13'), inputOnFocus: 2 })
+      createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
     )
     const expectedStyle = dayHoverStyle(theme)
 
-    fireEvent.mouseOver(getByText('15'))
+    fireEvent.mouseOver(getByText('14'))
     iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
       expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       // Day 11 to 13 (the day selected in the interval) skipped to preserve the purpose of this test
-      expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
-      expect(getByText('15')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('15')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
     })
 
@@ -144,7 +144,7 @@ describe('[Calendar][RangeDatePicker]', () => {
     iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
       expect(getByText('08')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       expect(getByText('09')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
-      expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      expect(getByText('10')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       // Day 11 to 13 (the day selected in the interval) skipped to preserve the purpose of this test
       expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
     })
