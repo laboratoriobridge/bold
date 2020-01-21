@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { CalendarProps } from '../../Calendar'
+
 import { DefaultRangeCalendar } from './DefaultRangeCalendar'
 
 export interface DefaultControlledRangeCalendarProps extends CalendarProps {

@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react'
+
 import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Icons } from '../Icon'
 import { Popper, PopperController } from '../Popper'
-import { RangeDatePickerInput, RangeDatePickerInputProps } from './RangeDatePickerInput'
-import { Period } from './BaseRangeDatePicker'
 import { ControlledPeriodRangeCalendarPopup } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledPeriodRangeCalendarPopup'
 import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendar'
+
+import { RangeDatePickerInput, RangeDatePickerInputProps } from './RangeDatePickerInput'
+import { Period } from './BaseRangeDatePicker'
 
 export interface RangeDatePickerProps extends Omit<RangeDatePickerInputProps, 'onChange'> {
   minDate?: Date
