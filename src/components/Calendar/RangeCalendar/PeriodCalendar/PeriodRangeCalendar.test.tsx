@@ -4,12 +4,12 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
-import { dayHoverStyle, PeriodRangeCalendar, PeriodRangeCalendarProps } from './PeriodRangeCalendar'
+import { dayHoverStyle, RangeDatePickerCalendarProps, RangeDatePickerCalendar } from './RangeDatePickerCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<PeriodRangeCalendarProps> = {}) => (
-  <PeriodRangeCalendar
+const createComponent = (props: Partial<RangeDatePickerCalendarProps> = {}) => (
+  <RangeDatePickerCalendar
     initialVisibleDate={new Date('2019-02-09')}
     initialDate={undefined}
     finalDate={undefined}

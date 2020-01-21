@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { CalendarProps } from '../..'
-import { PeriodRangeCalendar } from './PeriodRangeCalendar'
+import { RangeDatePickerCalendar } from './RangeDatePickerCalendar'
 
-export interface ControlledPeriodRangeCalendarProps extends CalendarProps {
+export interface ControlledRangeDatePickerCalendarProps extends CalendarProps {
   values?: {
     initialDate: Date
     finalDate: Date
@@ -10,7 +10,8 @@ export interface ControlledPeriodRangeCalendarProps extends CalendarProps {
   inputOnFocus?: number
   onChange?(initialDate: Date, finalDate: Date): void
 }
-export const ControlledPeriodRangeCalendar = (props: ControlledPeriodRangeCalendarProps) => {
+
+export const ControlledRangeDatePickerCalendar = (props: ControlledRangeDatePickerCalendarProps) => {
   const { inputOnFocus, onChange, values, onDayClick, ...rest } = props
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
@@ -52,10 +53,25 @@ export const ControlledPeriodRangeCalendar = (props: ControlledPeriodRangeCalend
       return
     }
     if (inputOnFocus === 2) {
-      setFinalDate(day)
+      if (day > finalDate) {
+        setInitialDate(day)
+        setFinalDate(undefined)
+      } else if (finalDate && day < initialDate) {
+        setInitialDate(day)
+      } else {
+        setFinalDate(day)
+      }
       return
     }
   }
 
-  return <PeriodRangeCalendar {...rest} initialDate={initialDate} finalDate={finalDate} onDayClick={controllDayClick} />
+  return (
+    <RangeDatePickerCalendar
+      {...rest}
+      initialDate={initialDate}
+      finalDate={finalDate}
+      onDayClick={controllDayClick}
+      inputOnFocus={inputOnFocus}
+    />
+  )
 }

@@ -2,12 +2,15 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render, wait } from '@testing-library/react'
 
-import { ControlledPeriodRangeCalendar, ControlledPeriodRangeCalendarProps } from './ControlledPeriodRangeCalendar'
+import {
+  ControlledRangeDatePickerCalendar,
+  ControlledRangeDatePickerCalendarProps,
+} from './ControlledRangeDatePickerCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<ControlledPeriodRangeCalendarProps> = {}) => (
-  <ControlledPeriodRangeCalendar
+const createComponent = (props: Partial<ControlledRangeDatePickerCalendarProps> = {}) => (
+  <ControlledRangeDatePickerCalendar
     initialVisibleDate={new Date('2019-02-09')}
     values={{
       initialDate: undefined,

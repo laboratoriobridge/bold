@@ -3,22 +3,22 @@ import React from 'react'
 
 import * as DateFieldModule from '../DateField/DateField'
 
-import { PeriodField } from './PeriodField'
+import { RangeDatePicker } from './RangeDatePicker'
 
 describe('PeriodField', () => {
   describe('render', () => {
     it('should render correctly', () => {
-      const { container } = render(<PeriodField />)
+      const { container } = render(<RangeDatePicker />)
       expect(container).toMatchSnapshot()
     })
 
     it('should render correctly when disabled', () => {
-      const { container } = render(<PeriodField disabled />)
+      const { container } = render(<RangeDatePicker disabled />)
       expect(container).toMatchSnapshot()
     })
 
     it('should render correctly when invalid', () => {
-      const { container } = render(<PeriodField invalid />)
+      const { container } = render(<RangeDatePicker invalid />)
       expect(container).toMatchSnapshot()
     })
   })
@@ -28,7 +28,7 @@ describe('test min and max', () => {
   it('should set the disabled modifier when using minDate and maxDate props', async () => {
     const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
-      <PeriodField
+      <RangeDatePicker
         calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
         minDate={new Date('2018-10-01')}
         maxDate={new Date('2018-10-15')}

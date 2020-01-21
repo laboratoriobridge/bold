@@ -12,7 +12,7 @@ export interface Period {
   finalDate?: Date
 }
 
-export interface PeriodInputBaseProps {
+export interface BaseRangeDatePickerProps {
   /**
    * Prop used to set an initial period.
    */
@@ -75,7 +75,7 @@ export interface PeriodInputBaseProps {
   onChange?(period: Period): void
 }
 
-export function PeriodInputBase(props: PeriodInputBaseProps) {
+export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
   const {
     value,
     disabled,
@@ -184,11 +184,11 @@ export function PeriodInputBase(props: PeriodInputBaseProps) {
   )
 }
 
-PeriodInputBase.defaultProps = {
+BaseRangeDatePicker.defaultProps = {
   startPlaceholder: 'dd/mm/aaaa',
   finalPlaceholder: 'dd/mm/aaaa',
   icon: 'calendarOutline',
-} as Partial<PeriodInputBaseProps>
+} as Partial<BaseRangeDatePickerProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)

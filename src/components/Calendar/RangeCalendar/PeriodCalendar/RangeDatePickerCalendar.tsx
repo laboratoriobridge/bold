@@ -4,12 +4,18 @@ import { CalendarProps } from '../../Calendar'
 import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
 import { isSameDay } from '../../util'
 
-export interface PeriodRangeCalendarProps extends CalendarProps {
+export interface RangeDatePickerCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
+  inputOnFocus?: number
 }
 
-export const PeriodRangeCalendar = ({ initialDate, finalDate, ...rest }: PeriodRangeCalendarProps) => {
+export const RangeDatePickerCalendar = ({
+  initialDate,
+  finalDate,
+  inputOnFocus,
+  ...rest
+}: RangeDatePickerCalendarProps) => {
   const handleIsInTheRange = (day: Date): boolean => {
     if (!initialDate) {
       if (finalDate) {
@@ -28,12 +34,19 @@ export const PeriodRangeCalendar = ({ initialDate, finalDate, ...rest }: PeriodR
   }
 
   const isInHoverRange = (day: Date, hoverDate: Date) =>
-    (!initialDate && hoverDate && isSameDay(day, hoverDate)) ||
     (!initialDate && !finalDate && hoverDate && isSameDay(day, hoverDate)) ||
-    (initialDate && !finalDate && hoverDate <= day && day < initialDate) ||
-    (finalDate && hoverDate >= day && day > finalDate) ||
-    (initialDate && !finalDate && initialDate < day && day <= hoverDate) ||
-    (finalDate && !initialDate && finalDate > day && day >= hoverDate)
+    (!initialDate &&
+      finalDate &&
+      hoverDate &&
+      ((inputOnFocus === 1 && hoverDate && finalDate < day && hoverDate >= day) ||
+        (inputOnFocus === 1 && hoverDate && finalDate > day && hoverDate <= day) ||
+        (inputOnFocus === 2 && hoverDate && isSameDay(day, hoverDate)))) ||
+    (initialDate &&
+      !finalDate &&
+      hoverDate &&
+      inputOnFocus === 2 &&
+      ((initialDate < day && hoverDate >= day) || (initialDate > day && hoverDate <= day))) ||
+    (initialDate && finalDate && hoverDate && initialDate > day && hoverDate <= day)
 
   return (
     <GenericRangeCalendar

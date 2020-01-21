@@ -1,13 +1,16 @@
 import React from 'react'
-import { ControlledPeriodRangeCalendar, ControlledPeriodRangeCalendarProps } from './ControlledPeriodRangeCalendar'
 import { GenericRangeCalendarPopupWrapper } from '../GenericRangeCalendar/GenericRangeCalendarPopupWrapper'
+import {
+  ControlledRangeDatePickerCalendar,
+  ControlledRangeDatePickerCalendarProps,
+} from './ControlledRangeDatePickerCalendar'
 
-export interface ControlledPeriodRangeCalendarPopupProps extends ControlledPeriodRangeCalendarProps {}
+export interface ControlledPeriodRangeCalendarPopupProps extends ControlledRangeDatePickerCalendarProps {}
 
 export function ControlledPeriodRangeCalendarPopup(props: ControlledPeriodRangeCalendarPopupProps) {
   return (
     <GenericRangeCalendarPopupWrapper>
-      <ControlledPeriodRangeCalendar {...props} />
+      <ControlledRangeDatePickerCalendar {...props} />
     </GenericRangeCalendarPopupWrapper>
   )
 }

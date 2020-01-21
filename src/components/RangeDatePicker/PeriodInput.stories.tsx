@@ -3,16 +3,16 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { PeriodField } from './PeriodField'
-import { PeriodInput } from './PeriodInput'
-import { Period } from './PeriodInputBase'
+import { RangeDatePicker } from './RangeDatePicker'
+import { RangeDatePickerInput } from './RangeDatePickerInput'
+import { Period } from './BaseRangeDatePicker'
 
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
 const period: Period = { startDate: todayMinus10, finalDate: new Date() }
 
-storiesOf('Components|PeriodField', module)
+storiesOf('Components | RangeDatePicker ', module)
   .add('default', () => (
-    <PeriodField
+    <RangeDatePicker
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}
@@ -24,7 +24,7 @@ storiesOf('Components|PeriodField', module)
   ))
 
   .add('min/max date', () => (
-    <PeriodField
+    <RangeDatePicker
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}
@@ -36,8 +36,8 @@ storiesOf('Components|PeriodField', module)
     />
   ))
 
-  .add('base input', () => (
-    <PeriodInput
+  .add('base input without calendar', () => (
+    <RangeDatePickerInput
       disabled={boolean('disabled', false)}
       error={text('error', '')}
       label={text('label', 'Text label')}

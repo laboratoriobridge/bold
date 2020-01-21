@@ -3,19 +3,21 @@ import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Icons } from '../Icon'
 import { Popper, PopperController } from '../Popper'
-import { PeriodInput, PeriodInputProps } from './PeriodInput'
-import { Period } from './PeriodInputBase'
-import { ControlledPeriodRangeCalendarProps } from '../Calendar/RangeCalendar/PeriodCalendar/ControlledPeriodRangeCalendar'
+import { RangeDatePickerInput, RangeDatePickerInputProps } from './RangeDatePickerInput'
+import { Period } from './BaseRangeDatePicker'
 import { ControlledPeriodRangeCalendarPopup } from '../Calendar/RangeCalendar/PeriodCalendar/ControlledPeriodRangeCalendarPopup'
+import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/PeriodCalendar/ControlledRangeDatePickerCalendar'
 
-export interface PeriodFieldProps extends PeriodInputProps {
+export interface RangeDatePickerProps extends Omit<RangeDatePickerInputProps, 'onChange'> {
   minDate?: Date
   maxDate?: Date
   icon?: Icons
-  calendarProps?: ControlledPeriodRangeCalendarProps
+  calendarProps?: ControlledRangeDatePickerCalendarProps
+  onChange?(period: Period): void
 }
 
-export function PeriodField(props: PeriodFieldProps) {
+export function RangeDatePicker(props: RangeDatePickerProps) {
+  const { onChange, minDate, maxDate } = props
   const [period, setPeriod] = useState(props.value ? props.value : ({} as Period))
   const [periodInputFocus, setPeriodInputFocus] = useState(1)
 
@@ -23,6 +25,7 @@ export function PeriodField(props: PeriodFieldProps) {
   const finalInputRef = useRef<HTMLInputElement>()
 
   useEffect(() => {
+    onChange && onChange(period)
     setPeriod(period)
   }, [period])
 
@@ -51,10 +54,12 @@ export function PeriodField(props: PeriodFieldProps) {
   }
 
   const handlePeriodChanged = (value: Period) => {
+    onChange && onChange(period)
     setPeriod(value)
   }
 
   const handleCalendarPeriodChanged = (startDate: Date, finalDate: Date) => {
+    onChange && onChange(period)
     setPeriod({
       startDate,
       finalDate,
@@ -64,7 +69,7 @@ export function PeriodField(props: PeriodFieldProps) {
   const renderTarget = (ctrl: PopperController) => {
     const { icon, ...rest } = props
     return (
-      <PeriodInput
+      <RangeDatePickerInput
         {...rest}
         icon={icon}
         value={period}
@@ -85,7 +90,7 @@ export function PeriodField(props: PeriodFieldProps) {
             onDayClick={handleOnDayClick(ctrl)}
             inputOnFocus={periodInputFocus}
             modifiers={{
-              disabled: disableByRange(props.minDate, props.maxDate),
+              disabled: disableByRange(minDate, maxDate),
             }}
             {...props.calendarProps}
           />
