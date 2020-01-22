@@ -90,7 +90,6 @@ export function DateField(props: DateFieldProps) {
       <Popper control={setController} renderTarget={renderTarget} placement='bottom-start' block>
         {(ctrl: PopperController) => (
           <CalendarPopup
-            key={value && value.getTime()}
             initialVisibleDate={value || new Date()}
             onDayClick={handleDayClick(ctrl)}
             modifiers={{

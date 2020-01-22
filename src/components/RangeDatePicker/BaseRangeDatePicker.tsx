@@ -16,8 +16,13 @@ export interface BaseRangeDatePickerProps {
   /**
    * Prop used to set an initial period.
    */
-
   value?: Period
+
+  /**
+   *  Props to control limited periods
+   */
+  minDate?: Date
+  maxDate?: Date
 
   /**
    * Prop to disable the date field.
@@ -34,30 +39,24 @@ export interface BaseRangeDatePickerProps {
   /**
    *  Prop to reference an invalid state.
    */
-
   invalid?: boolean
 
   /**
    *  Prop for receive external styles.
    */
-
   style?: ExternalStyles
 
   /**
    *  Props to set placeholder to inputs
    */
-
   startPlaceholder?: string
-
   finalPlaceholder?: string
 
   /**
    * initialInputRef and finalInputRef are used to assign refs
    * to date input components
    */
-
   initialInputRef?: Ref<HTMLInputElement>
-
   finalInputRef?: Ref<HTMLInputElement>
 
   /**
@@ -65,6 +64,11 @@ export interface BaseRangeDatePickerProps {
    */
   onIconClick?(): void
 
+  /**
+   * Function to control what input is on focus
+   *
+   * @param isOnFocus
+   */
   onInputOnFocus?(isOnFocus: number): void
 
   /**
@@ -87,6 +91,8 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
     startPlaceholder,
     finalPlaceholder,
     onInputOnFocus,
+    minDate,
+    maxDate,
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
@@ -101,22 +107,34 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
     setPeriod(value ? value : ({ startDate: undefined, finalDate: undefined } as Period))
   }, [value])
 
-  const onChangeStart = (data: Date) => {
-    const aux = { startDate: data, finalDate: period.finalDate } as Period
+  const handleMinMaxDates = (date: Date) => {
+    if (minDate && maxDate) {
+      return date >= minDate && date <= maxDate ? date : undefined
+    }
+    if (minDate) {
+      return date >= minDate ? date : undefined
+    }
+    if (maxDate) {
+      return date <= maxDate ? date : undefined
+    }
+    return date
+  }
+
+  const onChangeStart = (date: Date) => {
+    const startDate = handleMinMaxDates(date)
+    const aux = { startDate, finalDate: period.finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
-    if (data !== undefined) {
+    if (startDate !== undefined) {
       secondDateFieldRef.current.focus()
     }
   }
 
-  const onChangeFinal = (data: Date) => {
-    const aux = { startDate: period.startDate, finalDate: data } as Period
+  const onChangeFinal = (date: Date) => {
+    const finalDate = handleMinMaxDates(date)
+    const aux = { startDate: period.startDate, finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
-    if (data !== undefined) {
-      secondDateFieldRef.current.blur()
-    }
   }
 
   const onClearStart = () => {

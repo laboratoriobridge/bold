@@ -35,12 +35,6 @@ describe('[Calendar][RangePicker]', () => {
   const theme = createTheme()
   const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
 
-  // it('Should initialize with null values if initialValues is null', () => {
-  //   const { getAllByRole } = render(createComponent())
-
-  //   getAllByRole('button').forEach(item => expect(item.getAttribute('aria-selected')).toBe('false'))
-  // })
-
   it('With nothing defined, hovered days should have the correct css', () => {
     const { getByText } = render(createComponent())
     const expectedStyle = dayHoverStyle(theme)

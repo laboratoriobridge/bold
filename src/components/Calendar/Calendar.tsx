@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, MouseEvent, useState } from 'react'
+import React, { CSSProperties, MouseEvent, useEffect, useState } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
@@ -43,6 +43,10 @@ export function Calendar(props: CalendarProps) {
   const { classes, theme } = useStyles(createStyles)
 
   const [visibleDate, setVisibleDate] = useState(initialVisibleDate)
+
+  useEffect(() => {
+    setVisibleDate(initialVisibleDate)
+  }, [initialVisibleDate])
 
   const allModifiers = () => ({ ...defaultModifiers, ...modifiers })
   const allModifierStyles = () => ({ ...defaultModifierStyles, ...modifierStyles })

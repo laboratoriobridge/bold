@@ -1,4 +1,4 @@
-import { render, wait } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import React from 'react'
 
 import * as DateFieldModule from '../DateField/DateField'
@@ -34,8 +34,6 @@ describe('test min and max', () => {
         maxDate={new Date('2018-10-15')}
       />
     )
-
-    await wait()
 
     expect(spy).toHaveBeenCalledWith(new Date('2018-10-01'), new Date('2018-10-15'))
 

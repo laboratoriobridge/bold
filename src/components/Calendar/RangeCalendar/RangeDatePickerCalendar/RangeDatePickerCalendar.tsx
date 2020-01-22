@@ -39,8 +39,10 @@ export const RangeDatePickerCalendar = ({
     (!initialDate &&
       finalDate &&
       hoverDate &&
-      ((inputOnFocus === 1 && hoverDate && finalDate < day && hoverDate >= day) ||
-        (inputOnFocus === 1 && hoverDate && finalDate > day && hoverDate <= day) ||
+      ((inputOnFocus &&
+        inputOnFocus === 1 &&
+        hoverDate &&
+        ((finalDate < day && hoverDate >= day) || (finalDate > day && hoverDate <= day))) ||
         (inputOnFocus === 2 && hoverDate && isSameDay(day, hoverDate)))) ||
     (initialDate &&
       !finalDate &&

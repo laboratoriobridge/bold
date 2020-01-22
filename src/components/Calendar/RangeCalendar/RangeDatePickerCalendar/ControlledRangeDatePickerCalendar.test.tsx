@@ -40,8 +40,9 @@ describe('[Calendar][RangeDatePicker]', () => {
       createComponent({
         values: {
           initialDate: new Date('2019-02-11'),
-          finalDate: null,
+          finalDate: undefined,
         },
+        inputOnFocus: 1,
       })
     )
 
@@ -54,7 +55,7 @@ describe('[Calendar][RangeDatePicker]', () => {
     const { getByText } = render(
       createComponent({
         values: {
-          initialDate: null,
+          initialDate: undefined,
           finalDate: new Date('2019-02-11'),
         },
       })
