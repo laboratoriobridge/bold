@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { ControlledPeriodRangeCalendarPopup } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendarPopup'
 import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendar'
+import { ControlledRangeDatePickerCalendarPopup } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendarPopup'
 import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Icons } from '../Icon'
@@ -38,8 +38,8 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
     setStartPointDate(point)
   }, [period, periodInputFocus])
 
-  const handleInputFocus = (value: number) => {
-    setPeriodInputFocus(value)
+  const handleInputFocus = (inputOnFocus: number) => {
+    setPeriodInputFocus(inputOnFocus)
   }
 
   const setController = (ctrl: PopperController) => {
@@ -62,9 +62,9 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
     }
   }
 
-  const handlePeriodChanged = (value: Period) => {
-    onChange && onChange(period)
-    setPeriod(value)
+  const handlePeriodChanged = (periodFromBaseInput: Period) => {
+    onChange && onChange(periodFromBaseInput)
+    setPeriod(periodFromBaseInput)
   }
 
   const handleCalendarPeriodChanged = (startDate: Date, finalDate: Date) => {
@@ -103,7 +103,7 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <Popper control={setController} renderTarget={renderTarget} placement='auto' block>
         {(ctrl: PopperController) => (
-          <ControlledPeriodRangeCalendarPopup
+          <ControlledRangeDatePickerCalendarPopup
             values={{ initialDate: period.startDate, finalDate: period.finalDate }}
             onChange={handleCalendarPeriodChanged}
             onDayClick={handleOnDayClick(ctrl)}

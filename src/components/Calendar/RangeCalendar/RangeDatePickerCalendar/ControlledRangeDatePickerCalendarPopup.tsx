@@ -9,7 +9,7 @@ import {
 
 export interface ControlledPeriodRangeCalendarPopupProps extends ControlledRangeDatePickerCalendarProps {}
 
-export function ControlledPeriodRangeCalendarPopup(props: ControlledPeriodRangeCalendarPopupProps) {
+export function ControlledRangeDatePickerCalendarPopup(props: ControlledPeriodRangeCalendarPopupProps) {
   return (
     <GenericRangeCalendarPopupWrapper>
       <ControlledRangeDatePickerCalendar {...props} />
