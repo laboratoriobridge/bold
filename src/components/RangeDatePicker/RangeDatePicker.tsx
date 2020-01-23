@@ -81,6 +81,10 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
         return period.startDate
       } else if (periodInputFocus === 2 && period.finalDate) {
         return period.finalDate
+      } else if (period.startDate && !period.finalDate) {
+        return period.startDate
+      } else if (!period.startDate && period.finalDate) {
+        return period.finalDate
       }
     }
     return new Date()
