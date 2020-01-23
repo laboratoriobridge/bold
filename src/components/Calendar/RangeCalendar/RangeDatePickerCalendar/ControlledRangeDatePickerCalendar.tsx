@@ -55,7 +55,7 @@ export const ControlledRangeDatePickerCalendar = (props: ControlledRangeDatePick
       return
     }
     if (inputOnFocus === 2) {
-      if (day !== null && day > finalDate) {
+      if (day && initialDate && day > finalDate) {
         setInitialDate(day)
         setFinalDate(undefined)
       } else if (finalDate && day < initialDate) {

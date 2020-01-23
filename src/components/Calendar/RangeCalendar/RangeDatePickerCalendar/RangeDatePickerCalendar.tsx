@@ -18,9 +18,13 @@ export const RangeDatePickerCalendar = ({
   ...rest
 }: RangeDatePickerCalendarProps) => {
   const handleIsInTheRange = (day: Date): boolean => {
+    initialDate?.setHours(0, 0, 0, 0)
+    finalDate?.setHours(0, 0, 0, 0)
+    day?.setHours(0, 0, 0, 0)
+
     if (!initialDate) {
       if (finalDate) {
-        return isSameDay(day, finalDate)
+        return isSameDay(day, finalDate) || (initialDate <= day && day <= finalDate)
       } else {
         return false
       }
