@@ -49,13 +49,13 @@ describe('[Calendar][RangeDatePicker]', () => {
     )
   })
 
-  it('When finalDate is earlier than initialDate, both should be undefined', () => {
+  it('When finalDate is earlier than initialDate, both should be selecter', () => {
     const { getByText } = render(
       createComponent({ initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-14') })
     )
 
-    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
-    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('14').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
   })
 
   it('With only the initialDate selected, just one day should have the "selectedStyle"', () => {

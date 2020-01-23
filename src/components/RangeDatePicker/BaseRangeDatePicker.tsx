@@ -122,7 +122,8 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
 
   const onChangeStart = (date: Date) => {
     const startDate = handleMinMaxDates(date)
-    const aux = { startDate, finalDate: period.finalDate } as Period
+    const finalDate = startDate && startDate > period.finalDate ? undefined : period.finalDate
+    const aux = { startDate, finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
     if (startDate !== undefined) {
@@ -131,8 +132,10 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
   }
 
   const onChangeFinal = (date: Date) => {
-    const finalDate = handleMinMaxDates(date)
-    const aux = { startDate: period.startDate, finalDate } as Period
+    const auxFinalDate = handleMinMaxDates(date)
+    const startDate = auxFinalDate && auxFinalDate < period.startDate ? auxFinalDate : period.startDate
+    const finalDate = auxFinalDate && auxFinalDate < period.startDate ? undefined : auxFinalDate
+    const aux = { startDate, finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
   }

@@ -24,7 +24,7 @@ export const RangeDatePickerCalendar = ({
 
     if (!initialDate) {
       if (finalDate) {
-        return isSameDay(day, finalDate) || (initialDate <= day && day <= finalDate)
+        return isSameDay(day, finalDate)
       } else {
         return false
       }
@@ -32,7 +32,7 @@ export const RangeDatePickerCalendar = ({
     if (!finalDate) {
       return isSameDay(day, initialDate)
     }
-    if (initialDate <= day && day <= finalDate) {
+    if ((initialDate <= day && day <= finalDate) || (finalDate <= day && day <= initialDate)) {
       return true
     }
     return false
