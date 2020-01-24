@@ -94,6 +94,8 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
     return (
       <RangeDatePickerInput
         {...rest}
+        minDate={minDate}
+        maxDate={maxDate}
         icon={icon}
         value={period}
         onChange={handlePeriodChanged}

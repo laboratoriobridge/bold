@@ -109,13 +109,13 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
 
   const handleMinMaxDates = (date: Date) => {
     if (minDate && maxDate) {
-      return date >= minDate && date <= maxDate ? date : undefined
+      return date && date >= minDate && date <= maxDate ? date : undefined
     }
     if (minDate) {
-      return date >= minDate ? date : undefined
+      return date && date >= minDate ? date : undefined
     }
     if (maxDate) {
-      return date <= maxDate ? date : undefined
+      return date && date <= maxDate ? date : undefined
     }
     return date
   }
