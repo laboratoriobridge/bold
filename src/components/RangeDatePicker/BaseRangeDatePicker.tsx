@@ -126,7 +126,7 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
     const aux = { startDate, finalDate } as Period
     onChange && onChange(aux)
     setPeriod(aux)
-    if (startDate !== undefined) {
+    if (startDate) {
       secondDateFieldRef.current.focus()
     }
   }
