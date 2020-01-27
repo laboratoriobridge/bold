@@ -644,7 +644,7 @@ exports[`Calendar should render correctly 1`] = `
 </div>
 `;
 
-exports[`createDayStyles should return merged styles from all modifiers that apply 1`] = `
+exports[`createDayStylesFn should return merged styles from all modifiers that apply 1`] = `
 Object {
   ":hover": Object {
     "background": "#0069D0",

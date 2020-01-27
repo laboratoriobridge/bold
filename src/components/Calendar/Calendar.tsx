@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, useState } from 'react'
+import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Omit } from '../../util/types'
@@ -34,15 +34,23 @@ export function Calendar(props: CalendarProps) {
 
   const [visibleDate, setVisibleDate] = useState(initialVisibleDate)
 
-  const allModifiers = () => ({ ...defaultModifiers, ...modifiers })
-  const allModifierStyles = () => ({ ...defaultModifierStyles, ...modifierStyles })
+  const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
+  const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
+  const createDayStyles = useMemo(() => createDayStylesFn(allModifiers, allModifierStyles, theme), [
+    allModifiers,
+    allModifierStyles,
+    theme,
+  ])
 
-  const handleDayClick = (day: Date) => {
-    if (!allModifiers().disabled(day, props)) {
-      setVisibleDate(day)
-      return props.onDayClick && props.onDayClick(day)
-    }
-  }
+  const handleDayClick = useCallback(
+    (day: Date) => {
+      if (!allModifiers.disabled(day, props)) {
+        setVisibleDate(day)
+        return props.onDayClick && props.onDayClick(day)
+      }
+    },
+    [allModifiers, props.onDayClick]
+  )
 
   return (
     <div className={classes.root}>
@@ -51,12 +59,7 @@ export function Calendar(props: CalendarProps) {
         <YearControl visibleDate={visibleDate} onChange={setVisibleDate} />
       </HFlow>
 
-      <MonthView
-        createDayStyles={createDayStyles(allModifiers(), allModifierStyles(), theme)}
-        {...rest}
-        visibleDate={visibleDate}
-        onDayClick={handleDayClick}
-      />
+      <MonthView createDayStyles={createDayStyles} {...rest} visibleDate={visibleDate} onDayClick={handleDayClick} />
     </div>
   )
 }
@@ -119,7 +122,7 @@ export const defaultModifierStyles: DayModifierStyleMap = {
   }),
 }
 
-export const createDayStyles = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap, theme: Theme) => (
+export const createDayStylesFn = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap, theme: Theme) => (
   day: Date,
   props: MonthViewProps
 ): Interpolation => {

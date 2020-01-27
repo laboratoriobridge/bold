@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { getUserLocale } from '../../util/locale'
@@ -17,11 +17,11 @@ export interface MonthViewProps {
 
 export function MonthView(props: MonthViewProps) {
   const { visibleDate, renderDay, renderWeekName, createDayStyles, onDayClick, onDayHover } = props
-  const month = createMonthMatrix(visibleDate)
   const { classes, css } = useStyles(createStyles)
 
-  const handleDayClick = (day: Date) => () => onDayClick(day)
-  const handleDayHover = (day: Date) => () => onDayHover(day)
+  const month = useMemo(() => createMonthMatrix(visibleDate), [visibleDate])
+  const handleDayClick = useCallback((day: Date) => () => onDayClick(day), [onDayClick])
+  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
 
   return (
     <table className={classes.table}>
