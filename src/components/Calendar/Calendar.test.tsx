@@ -4,7 +4,7 @@ import React from 'react'
 import { createTheme } from '../../styles'
 
 import * as CalendarModule from './Calendar'
-import { Calendar, createDayStyles, defaultModifiers, defaultModifierStyles } from './Calendar'
+import { Calendar, createDayStylesFn, defaultModifiers, defaultModifierStyles } from './Calendar'
 import { isSameDay } from './util'
 
 describe('Calendar', () => {
@@ -58,7 +58,7 @@ describe('Calendar', () => {
   })
 
   it('should accept modifiers and modifierStyles props', () => {
-    const spy = jest.spyOn(CalendarModule, 'createDayStyles')
+    const spy = jest.spyOn(CalendarModule, 'createDayStylesFn')
     const customModifiers = {
       today: () => true,
       custom: () => false,
@@ -131,10 +131,10 @@ describe('modifierStyles', () => {
   })
 })
 
-describe('createDayStyles', () => {
+describe('createDayStylesFn', () => {
   it('should return merged styles from all modifiers that apply', () => {
     const theme = createTheme()
-    const stylesCreator = createDayStyles(
+    const stylesCreator = createDayStylesFn(
       {
         today: () => true,
         disabled: () => true,
