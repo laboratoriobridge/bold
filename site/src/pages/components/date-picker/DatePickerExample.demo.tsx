@@ -1,4 +1,4 @@
-import { DateField } from 'bold-ui'
+import { DateField, Text, VFlow } from 'bold-ui'
 import React, { useState } from 'react'
 
 function DatePickerExample() {
@@ -6,7 +6,12 @@ function DatePickerExample() {
 
   const handleChange = (selectedDate: Date) => setValue(selectedDate)
 
-  return <DateField label='Birthday date' name='birthday' value={value} onChange={handleChange} />
+  return (
+    <VFlow>
+      <Text>Selected date: {value ? value.toDateString() : '[none]'}</Text>
+      <DateField label='Birthday date' name='birthday' value={value} onChange={handleChange} />
+    </VFlow>
+  )
 }
 
 export default DatePickerExample
