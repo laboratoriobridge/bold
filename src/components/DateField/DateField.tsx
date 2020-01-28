@@ -121,11 +121,11 @@ export const disableByRange = (minDate?: Date, maxDate?: Date) => {
 
 const createStyles = (theme: Theme) => ({
   root: {
+    zIndex: theme.zIndex.popper,
     background: theme.pallete.surface.main,
     boxShadow: theme.shadows.outer[40],
     borderRadius: theme.radius.popper,
     padding: '0.5rem .25rem .25rem .25rem',
     outline: 'none',
-    zIndex: 10,
   },
 })
