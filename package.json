@@ -38,8 +38,8 @@
     "icons:index": "babel-node ./tools/generateIconsIndex.js",
     "now-build": "yarn --cwd site install && yarn build && yarn site:export",
     "sonar": "sonar-scanner",
-    "site:dev": "yarn --cwd site gatsby develop",
-    "site:build": "yarn --cwd site gatsby build",
+    "site:start": "yarn --cwd site start",
+    "site:build": "yarn --cwd site build",
     "site:export": "yarn site:build && touch site/public/.nojekyll && cp site/src/CNAME site/public/CNAME && build-storybook -o site/public/storybook",
     "site:deploy": "yarn site:export && gh-pages -d site/public -t"
   },

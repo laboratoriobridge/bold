@@ -7,7 +7,9 @@
     "node": ">=10"
   },
   "scripts": {
-    "postinstall": "yarn upgrade bold-ui"
+    "postinstall": "yarn upgrade bold-ui",
+    "start": "gatsby develop",
+    "build": "gatsby build"
   },
   "dependencies": {
     "@mdx-js/mdx": "1.5.5",
