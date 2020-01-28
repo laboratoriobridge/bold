@@ -613,12 +613,12 @@ exports[`DateField should render correctly when opened 1`] = `
 }
 
 .emotion-54 {
+  z-index: 1200;
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   border-radius: 2px;
   padding: 0.5rem .25rem .25rem .25rem;
   outline: none;
-  z-index: 10;
   position: absolute;
   top: 0;
   left: 0;
