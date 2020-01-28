@@ -1,8 +1,7 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
+import React, { CSSProperties, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
-import { Omit } from '../../util/types'
 import { HFlow } from '../HFlow'
 
 import { MonthControl } from './MonthControl'
@@ -10,13 +9,7 @@ import { MonthView, MonthViewProps } from './MonthView'
 import { isSameDay } from './util'
 import { YearControl } from './YearControl'
 
-export interface CalendarProps extends Omit<MonthViewProps, 'visibleDate'> {
-  /**
-   * Initial visible date to render.
-   * Subsequent changes to this prop will NOT change the internal component state.
-   */
-  initialVisibleDate?: Date
-
+export interface CalendarProps extends MonthViewProps {
   /**
    * Map of modifier predicates to apply custom or pre-defined styles to dates.
    */
@@ -26,13 +19,18 @@ export interface CalendarProps extends Omit<MonthViewProps, 'visibleDate'> {
    * Map of modifier styles to be applied to a date if the respective modifier predicate applies.
    */
   modifierStyles?: Partial<DayModifierStyleMap>
+
+  /**
+   * Called when the current visible date changes.
+   * You might want to change the current `visibleDate` prop when this occurs.
+   * @param visibleDate The new visible date.
+   */
+  onVisibleDateChange(visibleDate: Date): void
 }
 
 export function Calendar(props: CalendarProps) {
-  const { initialVisibleDate, modifiers, modifierStyles, ...rest } = props
+  const { visibleDate, modifiers, modifierStyles, onVisibleDateChange, ...rest } = props
   const { classes, theme } = useStyles(createStyles)
-
-  const [visibleDate, setVisibleDate] = useState(initialVisibleDate)
 
   const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
   const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
@@ -45,7 +43,7 @@ export function Calendar(props: CalendarProps) {
   const handleDayClick = useCallback(
     (day: Date) => {
       if (!allModifiers.disabled(day, props)) {
-        setVisibleDate(day)
+        onVisibleDateChange(day)
         return props.onDayClick && props.onDayClick(day)
       }
     },
@@ -55,18 +53,14 @@ export function Calendar(props: CalendarProps) {
   return (
     <div className={classes.root}>
       <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
-        <MonthControl visibleDate={visibleDate} onChange={setVisibleDate} />
-        <YearControl visibleDate={visibleDate} onChange={setVisibleDate} />
+        <MonthControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
+        <YearControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
       </HFlow>
 
-      <MonthView createDayStyles={createDayStyles} {...rest} visibleDate={visibleDate} onDayClick={handleDayClick} />
+      <MonthView visibleDate={visibleDate} createDayStyles={createDayStyles} {...rest} onDayClick={handleDayClick} />
     </div>
   )
 }
-
-Calendar.defaultProps = {
-  initialVisibleDate: new Date(),
-} as Partial<CalendarProps>
 
 export const createStyles = () => ({
   root: {

@@ -1,11 +1,14 @@
-import React, { useRef } from 'react'
+import { PopperOptions } from 'popper.js'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { CalendarProps } from '../Calendar'
+import usePopper from '../../hooks/usePopper'
+import { Theme } from '../../styles'
+import { useStyles } from '../../styles/hooks/useStyles'
+import { composeHandlers } from '../../util/react'
+import { Calendar, CalendarProps } from '../Calendar'
 import { isSameDay } from '../Calendar/util'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-import { Popper, PopperController } from '../Popper'
 
-import { CalendarPopup } from './CalendarPopup'
 import { DateInput, DateInputProps } from './DateInput'
 
 export interface DateFieldProps extends DateInputProps {
@@ -22,77 +25,78 @@ export interface DateFieldProps extends DateInputProps {
   /**
    * Props delegated to the Calendar
    */
-  calendarProps?: CalendarProps
+  calendarProps?: Partial<CalendarProps>
+
+  /**
+   * Props delegated to the Popper instance
+   */
+  popperProps?: PopperOptions
 }
 
 export function DateField(props: DateFieldProps) {
+  const { calendarProps, popperProps, minDate, maxDate, value, onClick, onFocus, ...rest } = props
+
+  const { css, classes } = useStyles(createStyles)
+
   const inputRef = useRef<HTMLInputElement>()
-  const controller = useRef<PopperController>()
+  const popupRef = useRef<HTMLDivElement>()
 
-  const setController = (ctrl: PopperController) => {
-    controller.current = ctrl
-  }
+  const [open, setOpen] = useState(false)
 
-  const handleDayClick = (ctrl: PopperController) => (day: Date) => {
+  const [visibleDate, setVisibleDate] = useState(new Date())
+  useEffect(() => setVisibleDate(value ?? new Date()), [value])
+
+  const { style: popperStyle, placement } = usePopper(
+    {
+      anchorRef: inputRef,
+      popperRef: popupRef,
+      placement: 'bottom-start',
+      ...popperProps,
+    },
+    [open]
+  )
+
+  const handleDayClick = (day: Date) => {
     inputRef.current.focus()
-    ctrl.hide()
+    setOpen(false)
     return props.onChange(day)
   }
 
-  const handleInputClick = (ctrl: PopperController) => (e: React.MouseEvent<HTMLInputElement>) => {
-    ctrl.show()
-    return props.onClick(e)
-  }
+  const handleInputIconClick = () => setOpen(true)
+  const handleInputClick = () => setOpen(true)
+  const handleInputFocus = () => setOpen(true)
 
-  const handleInputFocus = (ctrl: PopperController) => (e: React.FocusEvent<HTMLInputElement>) => {
-    ctrl.show()
-    return props.onFocus(e)
-  }
+  const handleFocusIn = () => setOpen(true)
+  const handleFocusOut = () => setOpen(false)
 
-  const handleFocusIn = () => {
-    if (controller.current) {
-      controller.current.show()
-    }
-  }
-
-  const handleFocusOut = () => {
-    if (controller.current) {
-      controller.current.hide()
-    }
-  }
-
-  const renderTarget = (ctrl: PopperController) => {
-    const { calendarProps, minDate, maxDate, ...rest } = props
-    return (
-      <DateInput
-        icon='calendarOutline'
-        onIconClick={ctrl.show}
-        {...rest}
-        inputRef={inputRef}
-        onClick={handleInputClick(ctrl)}
-        onFocus={handleInputFocus(ctrl)}
-      />
-    )
-  }
-
-  const { value } = props
+  const handleVisibleDateChange = (newVisibleDate: Date) => setVisibleDate(newVisibleDate)
 
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
-      <Popper control={setController} renderTarget={renderTarget} placement='bottom-start' block>
-        {(ctrl: PopperController) => (
-          <CalendarPopup
-            key={value && value.getTime()}
-            initialVisibleDate={value || new Date()}
-            onDayClick={handleDayClick(ctrl)}
+      <DateInput
+        inputRef={inputRef}
+        value={value}
+        icon='calendarOutline'
+        onIconClick={handleInputIconClick}
+        onClick={composeHandlers(handleInputClick, onClick)}
+        onFocus={composeHandlers(handleInputFocus, onFocus)}
+        {...rest}
+      />
+
+      {open && (
+        <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
+          <Calendar
+            visibleDate={visibleDate}
+            onVisibleDateChange={handleVisibleDateChange}
+            onDayClick={handleDayClick}
             modifiers={{
               selected: day => value && isSameDay(day, value),
               disabled: disableByRange(props.minDate, props.maxDate),
             }}
-            {...props.calendarProps}
+            {...calendarProps}
           />
-        )}
-      </Popper>
+        </div>
+      )}
     </FocusManagerContainer>
   )
 }
@@ -114,3 +118,14 @@ export const disableByRange = (minDate?: Date, maxDate?: Date) => {
     return (minDate && day < realMinDate) || (maxDate && day > realMaxDate)
   }
 }
+
+const createStyles = (theme: Theme) => ({
+  root: {
+    background: theme.pallete.surface.main,
+    boxShadow: theme.shadows.outer[40],
+    borderRadius: theme.radius.popper,
+    padding: '0.5rem .25rem .25rem .25rem',
+    outline: 'none',
+    zIndex: 10,
+  },
+})
