@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import * as DateFieldModule from './DateField'
@@ -7,13 +7,20 @@ import { DateField, disableByRange } from './DateField'
 describe('DateField', () => {
   it('should render correctly', () => {
     const { container } = render(
-      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} />
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} />
     )
+    expect(container).toMatchSnapshot()
+  })
+  it('should render correctly when opened', () => {
+    const { container } = render(
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} />
+    )
+    fireEvent.focus(container.querySelector('input'))
     expect(container).toMatchSnapshot()
   })
   it('should render correctly when disabled', () => {
     const { container } = render(
-      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} disabled />
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} disabled />
     )
     expect(container).toMatchSnapshot()
   })
@@ -21,11 +28,12 @@ describe('DateField', () => {
     const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
       <DateField
-        calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
+        calendarProps={{ visibleDate: new Date('2018-10-01') }}
         minDate={new Date('2018-10-01')}
         maxDate={new Date('2018-10-15')}
       />
     )
+    fireEvent.focus(container.querySelector('input'))
     expect(spy).toHaveBeenCalledWith(new Date('2018-10-01'), new Date('2018-10-15'))
 
     // TODO: better assert for disabled dates

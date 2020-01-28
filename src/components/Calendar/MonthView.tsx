@@ -7,7 +7,12 @@ import { getUserLocale } from '../../util/locale'
 import { createMonthMatrix } from './util'
 
 export interface MonthViewProps {
-  visibleDate?: Date
+  /**
+   * The current visible date.
+   * Only the month and year of this date is used to know which month to render, so the day doesn't matter.
+   */
+  visibleDate: Date
+
   onDayClick?(day: Date): void
   onDayHover?(day: Date): void
   renderDay?(day: Date): React.ReactNode
@@ -55,7 +60,6 @@ export function MonthView(props: MonthViewProps) {
 }
 
 MonthView.defaultProps = {
-  visibleDate: new Date(),
   onDayClick: () => null,
   onDayHover: () => null,
   renderDay: day => {
