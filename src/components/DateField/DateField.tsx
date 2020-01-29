@@ -6,7 +6,7 @@ import { Theme } from '../../styles'
 import { useStyles } from '../../styles/hooks/useStyles'
 import { composeHandlers } from '../../util/react'
 import { Calendar, CalendarProps } from '../Calendar'
-import { isSameDay } from '../Calendar/util'
+import { isSameDay, isValidDate } from '../Calendar/util'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 
 import { DateInput, DateInputProps } from './DateInput'
@@ -44,7 +44,11 @@ export function DateField(props: DateFieldProps) {
   const [open, setOpen] = useState(false)
 
   const [visibleDate, setVisibleDate] = useState(new Date())
-  useEffect(() => setVisibleDate(value ?? new Date()), [value])
+  useEffect(() => {
+    if (visibleDate !== value) {
+      setVisibleDate(isValidDate(value) ? value : new Date())
+    }
+  }, [value])
 
   const { style: popperStyle, placement } = usePopper(
     {

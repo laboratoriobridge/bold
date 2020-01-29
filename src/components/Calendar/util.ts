@@ -74,3 +74,11 @@ export const createMonthMatrix = (target: Date): Date[][] => {
 export const isSameDay = (d1: Date, d2: Date): boolean => {
   return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()
 }
+
+/**
+ * Check if the parameter is a valid date.
+ */
+export const isValidDate = (possibleDate: any): boolean => {
+  // If possibleDate is not a valid date, getTime() will return NaN, and NaN is never equal to itself.
+  return possibleDate && possibleDate.getTime() === possibleDate.getTime()
+}

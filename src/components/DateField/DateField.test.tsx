@@ -24,6 +24,24 @@ describe('DateField', () => {
     )
     expect(container).toMatchSnapshot()
   })
+  ;['', null, false, undefined].map((value: any) => {
+    it(`should gracefully treat "${value}" as value`, () => {
+      const { container } = render(<DateField value={value} />)
+      fireEvent.focus(container.querySelector('input'))
+    })
+  })
+  it('should open the Calendar visibleDate as the current value', () => {
+    const { container, queryByText, rerender } = render(<DateField value={new Date('2015-10-10')} />)
+    fireEvent.focus(container.querySelector('input'))
+    expect(queryByText('Oct')).not.toBeNull()
+    expect(queryByText('2015')).not.toBeNull()
+
+    rerender(<DateField value={new Date('2020-01-01')} />)
+    expect(queryByText('Oct')).toBeNull()
+    expect(queryByText('2015')).toBeNull()
+    expect(queryByText('Jan')).not.toBeNull()
+    expect(queryByText('2020')).not.toBeNull()
+  })
   it('should set the disabled modifier when using minDate and maxDate props', () => {
     const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
