@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  inputRef?: React.RefObject<HTMLInputElement>
+  inputRef?: React.Ref<HTMLInputElement>
 }
 
 export function Input(props: InputProps) {

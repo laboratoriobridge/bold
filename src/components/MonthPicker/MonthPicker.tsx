@@ -43,7 +43,7 @@ export function MonthPicker(props: MonthPickerProps) {
   }
 
   const baseYearDate = new Date(visibleYear, 1, 1, 0, 0, 0, 0)
-  const yearFormmater = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
+  const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
 
   const monthNames = getMonthNames(getUserLocale())
 
@@ -57,7 +57,7 @@ export function MonthPicker(props: MonthPickerProps) {
         </div>
         <div className={classes.item}>
           <Text fontWeight='bold' fontSize={0.875}>
-            {yearFormmater.format(baseYearDate)}
+            {yearFormatter.format(baseYearDate)}
           </Text>
         </div>
         <div className={classes.item}>
