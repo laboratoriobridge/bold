@@ -1,687 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectInline should contain search input box 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-17 {
-  display: inline-block;
-}
-
-.emotion-17 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
-.emotion-2 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-2 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-2:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-2:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-}
-
-.emotion-5 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-14 {
-  border: 1px solid #D3D4DD;
-  background-color: #FFFFFF;
-}
-
-.emotion-14 > div:first-of-type {
-  padding: 0.5rem;
-}
-
-.emotion-14 ul > li:first-of-type {
-  border-top: 1px solid #D3D4DD;
-}
-
-.emotion-14 div > ul {
-  position: static;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
-
-.emotion-8 {
-  position: relative;
-}
-
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
-.emotion-7 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-4 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #3A3A47;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-}
-
-.emotion-4[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-4:required {
-  box-shadow: none;
-}
-
-.emotion-4::-webkit-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::-moz-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:-ms-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-4:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-4:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-4:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-6 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-6:focus {
-  box-shadow: none;
-}
-
-.emotion-9 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-9:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-9:hover {
-  background: #F0F0F5;
-}
-
-.emotion-9:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-.emotion-13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  z-index: 1300;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  width: 0;
-}
-
-<body>
-  <div>
-    <div
-      class="emotion-17"
-    >
-      <div
-        class="emotion-3"
-      >
-        <button
-          class="emotion-2"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-0"
-            >
-              Value #001
-            </span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-16"
-        data-visible="false"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-      >
-        <div
-          class="emotion-15"
-        >
-          <div
-            aria-expanded="true"
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label"
-            aria-owns="downshift-0-menu"
-            class="emotion-14"
-            role="combobox"
-          >
-            <div>
-              <div
-                class="emotion-8"
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="downshift-0-menu"
-                  autocomplete="off"
-                  class="emotion-4"
-                  id="downshift-0-input"
-                  placeholder="Search for a value"
-                  type="text"
-                  value=""
-                />
-                <span
-                  class="emotion-7"
-                >
-                  <button
-                    class="emotion-6"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    <span>
-                      <svg
-                        aria-hidden="true"
-                        class="emotion-5"
-                        height="1em"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="1em"
-                      >
-                        <path
-                          d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
-            <ul
-              aria-labelledby="downshift-0-label"
-              class="emotion-13"
-              id="downshift-0-menu"
-              role="listbox"
-            >
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-0"
-                role="option"
-              >
-                Value #001
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-1"
-                role="option"
-              >
-                Value #002
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-2"
-                role="option"
-              >
-                Value #003
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-3"
-                role="option"
-              >
-                Value #004
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`SelectInline should not contain search input box 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-10 {
-  display: inline-block;
-}
-
-.emotion-10 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
-.emotion-2 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-2 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-2:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-2:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-}
-
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.emotion-9 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: visible;
-  opacity: 1;
-}
-
-.emotion-8 {
-  list-style: none;
-  margin: 0;
-  padding: calc(0.5rem - 1px) 0;
-  white-space: nowrap;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  display: inline-block;
-  width: auto;
-  min-width: 150px;
-  background: #FFFFFF;
-}
-
-.emotion-4 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #3A3A47;
-  margin: 0;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  cursor: pointer;
-  padding: calc(0.5rem - 2px) 1rem;
-  font-weight: bold;
-  outline: none;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-  display: block;
-}
-
-.emotion-4:hover {
-  background: #F0F0F5;
-}
-
-.emotion-4:focus {
-  box-shadow: inset 0 0 0 2px #0069D0;
-  border-radius: 4px;
-}
-
-<body>
-  <div>
-    <div
-      class="emotion-10"
-    >
-      <div
-        class="emotion-3"
-      >
-        <button
-          class="emotion-2"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-0"
-            >
-              Value #001
-            </span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-9"
-        data-visible="true"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-      >
-        <ul
-          class="emotion-8"
-          role="menu"
-        >
-          <li
-            class="emotion-4"
-            role="menuitem"
-            tabindex="0"
-          >
-            Value #001
-          </li>
-          <li
-            class="emotion-4"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Value #002
-          </li>
-          <li
-            class="emotion-4"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Value #003
-          </li>
-          <li
-            class="emotion-4"
-            role="menuitem"
-            tabindex="-1"
-          >
-            Value #004
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`SelectInline should render correctly when closed 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-17 {
-  display: inline-block;
-}
-
-.emotion-17 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
 .emotion-2 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -745,401 +64,41 @@ exports[`SelectInline should render correctly when closed 1`] = `
   color: #3A3A47;
 }
 
-.emotion-5 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
 .emotion-1 {
   fill: currentColor;
   font-size: 1.5rem;
   margin-left: 0.5rem;
-}
-
-.emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-14 {
-  border: 1px solid #D3D4DD;
-  background-color: #FFFFFF;
-}
-
-.emotion-14 > div:first-of-type {
-  padding: 0.5rem;
-}
-
-.emotion-14 ul > li:first-of-type {
-  border-top: 1px solid #D3D4DD;
-}
-
-.emotion-14 div > ul {
-  position: static;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
-
-.emotion-8 {
-  position: relative;
-}
-
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
-.emotion-7 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-4 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #3A3A47;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-}
-
-.emotion-4[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-4:required {
-  box-shadow: none;
-}
-
-.emotion-4::-webkit-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::-moz-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:-ms-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-4:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-4:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-4:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-6 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-6:focus {
-  box-shadow: none;
-}
-
-.emotion-13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  z-index: 1300;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.emotion-9 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-9:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-9:hover {
-  background: #F0F0F5;
-}
-
-.emotion-9:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <div>
-  <div
-    class="emotion-17"
+  <button
+    class="emotion-2"
+    type="button"
   >
-    <div
-      class="emotion-3"
-    >
-      <button
-        class="emotion-2"
-        type="button"
+    <span>
+      <span
+        class="emotion-0"
       >
-        <span>
-          <span
-            class="emotion-0"
-          >
-            Value #001
-          </span>
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-            />
-          </svg>
-        </span>
-      </button>
-    </div>
-    <div
-      class="emotion-16"
-      data-visible="false"
-      style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-    >
-      <div
-        class="emotion-15"
+        Value #001
+      </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-1"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns="downshift-0-menu"
-          class="emotion-14"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-8"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-0-menu"
-                autocomplete="off"
-                class="emotion-4"
-                id="downshift-0-input"
-                placeholder="Search for a value"
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-7"
-              >
-                <button
-                  class="emotion-6"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-5"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
-          <ul
-            aria-labelledby="downshift-0-label"
-            class="emotion-13"
-            id="downshift-0-menu"
-            role="listbox"
-          >
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-0"
-              role="option"
-            >
-              Value #001
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-1"
-              role="option"
-            >
-              Value #002
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-2"
-              role="option"
-            >
-              Value #003
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-0-item-3"
-              role="option"
-            >
-              Value #004
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+        <path
+          d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+        />
+      </svg>
+    </span>
+  </button>
 </div>
 `;
 
 exports[`SelectInline should render correctly when opened 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-17 {
-  display: inline-block;
-}
-
-.emotion-17 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
 .emotion-2 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -1203,68 +162,51 @@ exports[`SelectInline should render correctly when opened 1`] = `
   color: #3A3A47;
 }
 
-.emotion-5 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
 .emotion-1 {
   fill: currentColor;
   font-size: 1.5rem;
   margin-left: 0.5rem;
 }
 
-.emotion-14 {
+.emotion-12 {
+  z-index: 1200;
   border: 1px solid #D3D4DD;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   background-color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.emotion-14 > div:first-of-type {
-  padding: 0.5rem;
+.emotion-12 [role="combobox"] > div > div {
+  margin: 0.5rem;
 }
 
-.emotion-14 ul > li:first-of-type {
+.emotion-12 ul > li:first-of-type {
+  margin-top: 0.5rem;
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-14 div > ul {
+.emotion-12 ul {
+  width: 100%;
   position: static;
+  top: initial;
+  left: initial;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
   box-shadow: none;
   border: none;
   border-radius: 0;
 }
 
-.emotion-8 {
+.emotion-4 {
   position: relative;
 }
 
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
-.emotion-7 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-4 {
+.emotion-3 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
@@ -1280,123 +222,62 @@ exports[`SelectInline should render correctly when opened 1`] = `
   transition-duration: .2s;
 }
 
-.emotion-4[type="search"]::-webkit-search-decoration {
+.emotion-3[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-.emotion-4[type="search"]::-webkit-search-cancel-button {
+.emotion-3[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 
-.emotion-4[type="search"]::-webkit-search-results-button {
+.emotion-3[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
-.emotion-4[type="search"]::-webkit-search-results-decoration {
+.emotion-3[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.emotion-4:required {
+.emotion-3:required {
   box-shadow: none;
 }
 
-.emotion-4::-webkit-input-placeholder {
+.emotion-3::-webkit-input-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-4::-moz-placeholder {
+.emotion-3::-moz-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-4:-ms-input-placeholder {
+.emotion-3:-ms-input-placeholder {
   color: #AAAAB9;
 }
 
-.emotion-4::placeholder {
+.emotion-3::placeholder {
   color: #AAAAB9;
 }
 
-.emotion-4:disabled {
+.emotion-3:disabled {
   border-color: #D3D4DD;
   background-color: #F0F0F5;
 }
 
-.emotion-4:not(:disabled):hover {
+.emotion-3:not(:disabled):hover {
   border-color: #7A7B8E;
 }
 
-.emotion-4:not(:disabled):focus {
+.emotion-3:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-4:not(:disabled):active {
+.emotion-3:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-6 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-6:focus {
-  box-shadow: none;
-}
-
-.emotion-9 {
+.emotion-5 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1408,30 +289,21 @@ exports[`SelectInline should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-9:last-of-type {
+.emotion-5:last-of-type {
   border-bottom: none;
 }
 
-.emotion-9:hover {
+.emotion-5:hover {
   background: #F0F0F5;
 }
 
-.emotion-9:focus {
+.emotion-5:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: visible;
-  opacity: 1;
-}
-
-.emotion-13 {
+.emotion-9 {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -1454,562 +326,69 @@ exports[`SelectInline should render correctly when opened 1`] = `
 
 <body>
   <div>
-    <div
-      class="emotion-17"
+    <button
+      class="emotion-2"
+      type="button"
     >
-      <div
-        class="emotion-3"
-      >
-        <button
-          class="emotion-2"
-          type="button"
+      <span>
+        <span
+          class="emotion-0"
         >
-          <span>
-            <span
-              class="emotion-0"
-            >
-              Value #001
-            </span>
-            <svg
-              aria-hidden="true"
-              class="emotion-1"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
-      <div
-        class="emotion-16"
-        data-visible="true"
-        style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
-      >
-        <div
-          class="emotion-15"
-        >
-          <div
-            aria-expanded="true"
-            aria-haspopup="listbox"
-            aria-labelledby="downshift-0-label"
-            aria-owns="downshift-0-menu"
-            class="emotion-14"
-            role="combobox"
-          >
-            <div>
-              <div
-                class="emotion-8"
-              >
-                <input
-                  aria-autocomplete="list"
-                  aria-controls="downshift-0-menu"
-                  autocomplete="off"
-                  class="emotion-4"
-                  id="downshift-0-input"
-                  placeholder="Search for a value"
-                  type="text"
-                  value=""
-                />
-                <span
-                  class="emotion-7"
-                >
-                  <button
-                    class="emotion-6"
-                    tabindex="-1"
-                    type="button"
-                  >
-                    <span>
-                      <svg
-                        aria-hidden="true"
-                        class="emotion-5"
-                        height="1em"
-                        role="img"
-                        viewBox="0 0 24 24"
-                        width="1em"
-                      >
-                        <path
-                          d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                        />
-                      </svg>
-                    </span>
-                  </button>
-                </span>
-              </div>
-            </div>
-            <ul
-              aria-labelledby="downshift-0-label"
-              class="emotion-13"
-              id="downshift-0-menu"
-              role="listbox"
-            >
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-0"
-                role="option"
-              >
-                Value #001
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-1"
-                role="option"
-              >
-                Value #002
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-2"
-                role="option"
-              >
-                Value #003
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-9"
-                id="downshift-0-item-3"
-                role="option"
-              >
-                Value #004
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`SelectInline should render correctly with button placeholder 1`] = `
-.emotion-3 {
-  display: inline-block;
-}
-
-.emotion-17 {
-  display: inline-block;
-}
-
-.emotion-17 [data-visible] {
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-}
-
-.emotion-2 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-}
-
-.emotion-2 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-2:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-2:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-}
-
-.emotion-5 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.emotion-16 {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  z-index: 1200;
-  padding: 0rem;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.emotion-14 {
-  border: 1px solid #D3D4DD;
-  background-color: #FFFFFF;
-}
-
-.emotion-14 > div:first-of-type {
-  padding: 0.5rem;
-}
-
-.emotion-14 ul > li:first-of-type {
-  border-top: 1px solid #D3D4DD;
-}
-
-.emotion-14 div > ul {
-  position: static;
-  box-shadow: none;
-  border: none;
-  border-radius: 0;
-}
-
-.emotion-8 {
-  position: relative;
-}
-
-.emotion-8 input {
-  padding-right: 3rem;
-}
-
-.emotion-7 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-4 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #3A3A47;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-}
-
-.emotion-4[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-4[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-4:required {
-  box-shadow: none;
-}
-
-.emotion-4::-webkit-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::-moz-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:-ms-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4::placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-4:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-4:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-4:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-4:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-6 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #3A3A47;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #3A3A47;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-6 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-6:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-6:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-6:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-6:focus {
-  box-shadow: none;
-}
-
-.emotion-13 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  z-index: 1300;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.emotion-9 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #3A3A47;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-9:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-9:hover {
-  background: #F0F0F5;
-}
-
-.emotion-9:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-<div>
-  <div
-    class="emotion-17"
-  >
-    <div
-      class="emotion-3"
-    >
-      <button
-        class="emotion-2"
-        placeholder="Placeholder"
-        type="button"
-      >
-        <span>
-          <span
-            class="emotion-0"
-          >
-            SelectInline
-          </span>
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            height="1em"
-            role="img"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-            />
-          </svg>
+          Value #001
         </span>
-      </button>
-    </div>
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
     <div
-      class="emotion-16"
-      data-visible="false"
-      style="position: absolute; top: 0px; left: 0px; opacity: 0; pointer-events: none;"
+      class="emotion-12"
     >
       <div
-        class="emotion-15"
+        class="emotion-10"
       >
         <div
           aria-expanded="true"
           aria-haspopup="listbox"
           aria-labelledby="downshift-0-label"
           aria-owns="downshift-0-menu"
-          class="emotion-14"
+          class="emotion-10"
           role="combobox"
         >
           <div>
             <div
-              class="emotion-8"
+              class="emotion-4"
             >
               <input
                 aria-autocomplete="list"
                 aria-controls="downshift-0-menu"
                 autocomplete="off"
-                class="emotion-4"
+                class="emotion-3"
                 id="downshift-0-input"
                 placeholder="Search for a value"
                 type="text"
                 value=""
               />
-              <span
-                class="emotion-7"
-              >
-                <button
-                  class="emotion-6"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-5"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
             </div>
           </div>
           <ul
             aria-labelledby="downshift-0-label"
-            class="emotion-13"
+            class="emotion-9"
             id="downshift-0-menu"
             role="listbox"
           >
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-5"
               id="downshift-0-item-0"
               role="option"
             >
@@ -2017,7 +396,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-5"
               id="downshift-0-item-1"
               role="option"
             >
@@ -2025,7 +404,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-5"
               id="downshift-0-item-2"
               role="option"
             >
@@ -2033,7 +412,7 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
+              class="emotion-5"
               id="downshift-0-item-3"
               role="option"
             >
@@ -2044,5 +423,5 @@ exports[`SelectInline should render correctly with button placeholder 1`] = `
       </div>
     </div>
   </div>
-</div>
+</body>
 `;

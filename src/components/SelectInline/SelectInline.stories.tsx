@@ -15,24 +15,12 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-storiesOf('Components/SelectInline', module)
-  .add('default', () => (
-    <SelectInline<DefaultItemType>
-      items={items}
-      itemToString={itemToString}
-      onChange={action('changed')}
-      placeholder='Search for a value'
-      defaultButtonText='SelectInline'
-    />
-  ))
-
-  .add('without search', () => (
-    <SelectInline<DefaultItemType>
-      items={items}
-      itemToString={itemToString}
-      onChange={action('changed')}
-      placeholder='Search for a value'
-      defaultButtonText='SelectInline'
-      search={false}
-    />
-  ))
+storiesOf('Components/SelectInline', module).add('default', () => (
+  <SelectInline<DefaultItemType>
+    items={items}
+    itemToString={itemToString}
+    onChange={action('changed')}
+    placeholder='Search for a value'
+    defaultButtonText='SelectInline'
+  />
+))
