@@ -1,4 +1,4 @@
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
 
@@ -15,7 +15,7 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-const createSelectInline = (props?: Partial<SelectInlineProps<DefaultItemType>>) => (
+const SelectInlineTest = (props?: Partial<SelectInlineProps<DefaultItemType>>) => (
   <SelectInline<DefaultItemType>
     value={items[0]}
     items={items}
@@ -30,38 +30,31 @@ beforeEach(() => resetIdCounter())
 
 describe('SelectInline', () => {
   it('should render correctly when closed', () => {
-    const { container } = render(createSelectInline())
+    const { container } = render(<SelectInlineTest />)
     expect(container).toMatchSnapshot()
-  })
-  it('should render correctly with button placeholder', () => {
-    const props: Partial<SelectInlineProps<DefaultItemType>> = {
-      value: null,
-      buttonProps: { placeholder: 'Placeholder' },
-    }
-    const { container } = render(createSelectInline(props))
-    expect(container).toMatchSnapshot()
-  })
-  it('should make the popper content visible on click', async () => {
-    const { container } = render(createSelectInline())
-    const button = container.querySelector('button')
-
-    expect(document.body.querySelector('[data-visible=true]')).toBeFalsy()
-    fireEvent.click(button)
-    expect(document.body.querySelector('[data-visible=true]')).toBeTruthy()
   })
   it('should render correctly when opened', () => {
-    const { container } = render(createSelectInline())
+    const { container } = render(<SelectInlineTest />)
     const button = container.querySelector('button')
     fireEvent.click(button)
     expect(document.body).toMatchSnapshot()
   })
-  it('should focus the input field when opened', async () => {
-    const { container } = render(createSelectInline())
+  it('should make the popper content visible on click', async () => {
+    const { container } = render(<SelectInlineTest />)
     const button = container.querySelector('button')
+    expect(container.querySelector('ul')).toBeFalsy()
     fireEvent.click(button)
-    await wait()
+    expect(container.querySelector('ul')).toBeTruthy()
+  })
 
-    const input = container.querySelector('input')
-    expect(document.activeElement).toEqual(input)
+  it('should focus the input field when opened', async () => {
+    const { container } = render(<SelectInlineTest />)
+    fireEvent.click(container.querySelector('button'))
+    expect(document.activeElement).toEqual(container.querySelector('input'))
+  })
+  it('should contain search input box', () => {
+    const { container } = render(<SelectInlineTest />)
+    fireEvent.click(container.querySelector('button'))
+    expect(container.querySelector('input')).not.toBeNull()
   })
 })

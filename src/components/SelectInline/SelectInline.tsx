@@ -1,104 +1,96 @@
-import { Interpolation } from 'emotion'
-import * as React from 'react'
+import { PopperOptions } from 'popper.js'
+import React, { useEffect, useRef, useState } from 'react'
 
-import { useTheme } from '../../styles'
-import { Omit } from '../../util'
-import { composeRefs } from '../../util/react'
+import usePopper from '../../hooks/usePopper'
+import { Theme, useStyles } from '../../styles'
+import { composeHandlers, composeRefs } from '../../util/react'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
-import { Popper, PopperController, PopperProps } from '../Popper'
 import { Select } from '../Select/Select'
 import { SelectSingleProps } from '../Select/SelectSingle'
 import { Text } from '../Text'
 
 export interface SelectInlineProps<T> extends SelectSingleProps<T> {
   buttonProps?: ButtonProps
-  popperProps?: Omit<PopperProps, 'renderTarget' | 'children'>
+  popperProps?: PopperOptions
   defaultButtonText: string
   onChange?(item: T): void
 }
 
 export function SelectInline<T>(props: SelectInlineProps<T>) {
-  const { value, onChange, itemToString, buttonProps, popperProps, defaultButtonText, inputRef, ...rest } = props
-  const theme = useTheme()
+  const { value, inputRef, onChange, buttonProps, popperProps, itemToString, defaultButtonText, ...rest } = props
+  const { innerRef, ...buttonRest } = buttonProps || ({} as any)
 
-  const targetButtonRef: React.MutableRefObject<any> = React.useRef<HTMLButtonElement>()
-  const selectInputRef: React.MutableRefObject<any> = React.useRef<HTMLInputElement>()
+  const { classes, css } = useStyles(createStyles)
 
-  const renderTarget = (ctrl: PopperController) => {
-    const { innerRef, ...buttonRest } = buttonProps || ({} as any)
-    return (
+  const selectInputRef = useRef<HTMLInputElement>()
+  const anchorRef = useRef<HTMLButtonElement>()
+  const popperRef = useRef<HTMLDivElement>()
+
+  const [open, setOpen] = useState(false)
+  const { style: popperStyle, placement } = usePopper({ anchorRef, popperRef, ...popperProps }, [open])
+
+  useEffect(() => {
+    if (open) {
+      selectInputRef.current.focus()
+    }
+  }, [open])
+
+  const handleButtonClick = () => setOpen(state => !state)
+  const handleChange = () => setOpen(false)
+
+  return (
+    <>
       <Button
-        onClick={ctrl.toggle}
+        innerRef={composeRefs(anchorRef, innerRef)}
+        onClick={handleButtonClick}
         skin='ghost'
         kind='normal'
         size='small'
-        innerRef={composeRefs(targetButtonRef, innerRef)}
         {...buttonRest}
       >
         <Text>{itemToString(value) || defaultButtonText}</Text>
-        <Icon style={{ marginLeft: '0.5rem' }} icon={ctrl.isShown() ? 'angleUp' : 'angleDown'} />
+        <Icon style={{ marginLeft: '0.5rem' }} icon={open ? 'angleUp' : 'angleDown'} />
       </Button>
-    )
-  }
 
-  const styles: Interpolation = {
-    box: {
-      border: `1px solid ${theme.pallete.divider}`,
-      backgroundColor: theme.pallete.surface.main,
-      '& > div:first-of-type': {
-        padding: '0.5rem',
-      },
-      'ul > li:first-of-type': {
-        borderTop: `1px solid ${theme.pallete.divider}`,
-      },
-      'div > ul': {
-        position: 'static',
-        boxShadow: 'none',
-        border: 'none',
-        borderRadius: 0,
-      },
-    },
-    popper: {
-      '[data-visible]': {
-        boxShadow: theme.shadows.outer['40'],
-      },
-    },
-  }
-
-  const handleVisibilityEvents = (ref: React.MutableRefObject<any>) => (ctrl: PopperController) => {
-    setTimeout(() => {
-      if (ref.current) {
-        ref.current.focus()
-      }
-    })
-  }
-
-  return (
-    <Popper
-      renderTarget={renderTarget}
-      placement='bottom-end'
-      style={styles.popper}
-      onHide={handleVisibilityEvents(targetButtonRef)}
-      onShow={handleVisibilityEvents(selectInputRef)}
-      {...popperProps}
-    >
-      {(ctrl: PopperController) => {
-        const handleOnChange = (newValue: T) => {
-          onChange && onChange(newValue)
-          ctrl.hide()
-        }
-        return (
+      {open && (
+        <div ref={popperRef} className={css(classes.box, popperStyle)} data-placement={placement}>
           <Select<T>
-            {...rest}
+            inputRef={composeRefs(selectInputRef, inputRef)}
             itemToString={itemToString}
-            onChange={handleOnChange}
-            style={styles.box}
-            inputRef={composeRefs(selectInputRef, inputRef) as any}
+            onChange={composeHandlers(handleChange, onChange)}
             isOpen
+            icon={null}
+            {...rest}
           />
-        )
-      }}
-    </Popper>
+        </div>
+      )}
+    </>
   )
 }
+
+const createStyles = (theme: Theme) => ({
+  box: {
+    zIndex: theme.zIndex.popper,
+    border: `1px solid ${theme.pallete.divider}`,
+    boxShadow: theme.shadows.outer['40'],
+    backgroundColor: theme.pallete.surface.main,
+    '& [role="combobox"] > div > div': {
+      margin: '0.5rem',
+    },
+    '& ul > li:first-of-type': {
+      marginTop: '0.5rem',
+      borderTop: `1px solid ${theme.pallete.divider}`,
+    },
+    '& ul': {
+      width: '100%',
+      position: 'static',
+      top: 'initial',
+      left: 'initial',
+      transform: 'none',
+      boxShadow: 'none',
+      border: 'none',
+      borderRadius: 0,
+    },
+  } as React.CSSProperties,
+})
