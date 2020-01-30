@@ -1,9 +1,8 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { addDecorator, addParameters, configure } from '@storybook/react'
+import { addDecorator, addParameters } from '@storybook/react'
 import 'loki/configure-react'
-import { create } from '@storybook/theming'
 import { withStorybookTheme } from '../src/stories-addons'
 import mockdate from 'mockdate'
 
@@ -13,14 +12,6 @@ if (process.env.STORYBOOK_LOKI) {
 }
 
 addParameters({
-  options: {
-    theme: create({
-      base: 'light',
-      brandTitle: 'Bold',
-      brandUrl: 'https://github.com/laboratoriobridge/bold',
-    }),
-    panelPosition: 'right',
-  },
   info: {
     inline: true,
     styles: {
@@ -45,11 +36,3 @@ addDecorator(withInfo)
 addDecorator(withA11y)
 addDecorator(withKnobs)
 addDecorator(withStorybookTheme)
-
-const req = require.context('../src', true, /.stories.tsx?$/)
-
-function loadStories() {
-  req.keys().forEach(filename => req(filename))
-}
-
-configure(loadStories, module)
