@@ -11,13 +11,13 @@ export interface GenericRangeCalendarProps extends CalendarProps {
   isInTheHoverRange(day: Date, hoverDate: Date): boolean
 }
 
-export const GenericRangeCalendar = ({
+export function GenericRangeCalendar({
   isInTheRange,
   isInTheHoverRange,
   initialDate,
   finalDate,
   ...rest
-}: GenericRangeCalendarProps) => {
+}: GenericRangeCalendarProps) {
   const [hoverDate, setHoverDate] = useState<Date>(undefined)
 
   const inRange = (day: Date): boolean => {

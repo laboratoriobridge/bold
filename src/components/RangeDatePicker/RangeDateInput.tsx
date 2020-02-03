@@ -3,11 +3,11 @@ import React from 'react'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { FormControl } from '../FormControl'
 
-import { BaseRangeDatePicker, BaseRangeDatePickerProps } from './BaseRangeDatePicker'
+import { BaseRangeDateInput, BaseRangeDateInputProps } from './BaseRangeDateInput'
 
-export interface RangeDatePickerInputProps extends BaseRangeDatePickerProps, UseFormControlProps {}
+export interface RangeDateInputProps extends BaseRangeDateInputProps, UseFormControlProps {}
 
-export function RangeDatePickerInput(props: RangeDatePickerInputProps) {
+export function RangeDateInput(props: RangeDateInputProps) {
   const { label, error, ...rest } = props
 
   const { getFormControlProps, getInputProps } = useFormControl(props)
@@ -15,7 +15,7 @@ export function RangeDatePickerInput(props: RangeDatePickerInputProps) {
 
   return (
     <FormControl {...getFormControlProps()}>
-      <BaseRangeDatePicker invalid={inputProps['aria-invalid']} {...inputProps} {...rest} />
+      <BaseRangeDateInput invalid={inputProps['aria-invalid']} {...inputProps} {...rest} />
     </FormControl>
   )
 }

@@ -5,12 +5,12 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
-import { dayHoverStyle, RangeDatePickerCalendar, RangeDatePickerCalendarProps } from './RangeDatePickerCalendar'
+import { dayHoverStyle, RangeDateCalendar, RangeDateCalendarProps } from './RangeDateCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<RangeDatePickerCalendarProps> = {}) => (
-  <RangeDatePickerCalendar
+const createComponent = (props: Partial<RangeDateCalendarProps> = {}) => (
+  <RangeDateCalendar
     initialVisibleDate={new Date('2019-02-09')}
     initialDate={undefined}
     finalDate={undefined}

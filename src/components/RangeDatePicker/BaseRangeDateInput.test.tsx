@@ -4,7 +4,7 @@ import React from 'react'
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 
-import { BaseRangeDatePicker, Period } from './BaseRangeDatePicker'
+import { BaseRangeDateInput, Period } from './BaseRangeDateInput'
 
 const FIRST_INPUT = 0
 const SECOND_INPUT = 1
@@ -12,17 +12,17 @@ const SECOND_INPUT = 1
 describe('PeriodInput', () => {
   describe('render', () => {
     it('should render correctly', () => {
-      const { container } = render(<BaseRangeDatePicker />)
+      const { container } = render(<BaseRangeDateInput />)
       expect(container).toMatchSnapshot()
     })
 
     it('should render correctly when disabled', () => {
-      const { container } = render(<BaseRangeDatePicker disabled />)
+      const { container } = render(<BaseRangeDateInput disabled />)
       expect(container).toMatchSnapshot()
     })
 
     it('should render correctly when invalid', () => {
-      const { container } = render(<BaseRangeDatePicker invalid />)
+      const { container } = render(<BaseRangeDateInput invalid />)
       expect(container).toMatchSnapshot()
     })
   })
@@ -30,7 +30,7 @@ describe('PeriodInput', () => {
   describe('format', () => {
     it('should accept and format period as value', async () => {
       const { container } = render(
-        <BaseRangeDatePicker
+        <BaseRangeDateInput
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
         />
       )
@@ -46,7 +46,7 @@ describe('PeriodInput', () => {
       const change = jest.fn()
 
       const { container } = render(
-        <BaseRangeDatePicker
+        <BaseRangeDateInput
           onChange={change}
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
         />
@@ -67,7 +67,7 @@ describe('PeriodInput', () => {
   describe('validate entry', () => {
     it('should call onChange only when a valid date is typed', async () => {
       const change = jest.fn()
-      const { container } = render(<BaseRangeDatePicker onChange={change} />)
+      const { container } = render(<BaseRangeDateInput onChange={change} />)
 
       await wait()
       const inputs = container.querySelectorAll('input')
@@ -97,7 +97,7 @@ describe('PeriodInput', () => {
     it('should clear only second input when click clear in second input', async () => {
       const change = jest.fn()
       const { container } = render(
-        <BaseRangeDatePicker
+        <BaseRangeDateInput
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
           onChange={change}
         />
@@ -116,7 +116,7 @@ describe('PeriodInput', () => {
     it('should clear only first input when click clear in first input', async () => {
       const change = jest.fn()
       const { container } = render(
-        <BaseRangeDatePicker
+        <BaseRangeDateInput
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
           onChange={change}
         />
@@ -137,7 +137,7 @@ describe('PeriodInput', () => {
     it('should allow placeholder customization via locale context', () => {
       const { container } = render(
         <LocaleContext.Provider value={ptBr}>
-          <BaseRangeDatePicker />
+          <BaseRangeDateInput />
         </LocaleContext.Provider>
       )
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)

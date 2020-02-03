@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { CalendarProps } from '../..'
 
-import { RangeDatePickerCalendar } from './RangeDatePickerCalendar'
+import { RangeDateCalendar } from './RangeDateCalendar'
 
-export interface ControlledRangeDatePickerCalendarProps extends CalendarProps {
+export interface ControlledRangeDateCalendarProps extends CalendarProps {
   values?: {
     initialDate: Date
     finalDate: Date
@@ -13,7 +13,7 @@ export interface ControlledRangeDatePickerCalendarProps extends CalendarProps {
   onChange?(initialDate: Date, finalDate: Date): void
 }
 
-export const ControlledRangeDatePickerCalendar = (props: ControlledRangeDatePickerCalendarProps) => {
+export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarProps) {
   const { inputOnFocus, onChange, values, onDayClick, ...rest } = props
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
@@ -65,7 +65,7 @@ export const ControlledRangeDatePickerCalendar = (props: ControlledRangeDatePick
   }
 
   return (
-    <RangeDatePickerCalendar
+    <RangeDateCalendar
       {...rest}
       initialDate={initialDate}
       finalDate={finalDate}

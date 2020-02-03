@@ -5,18 +5,13 @@ import { CalendarProps } from '../../Calendar'
 import { isSameDay } from '../../util'
 import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
 
-export interface RangeDatePickerCalendarProps extends CalendarProps {
+export interface RangeDateCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
   inputOnFocus?: number
 }
 
-export const RangeDatePickerCalendar = ({
-  initialDate,
-  finalDate,
-  inputOnFocus,
-  ...rest
-}: RangeDatePickerCalendarProps) => {
+export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...rest }: RangeDateCalendarProps) {
   const handleIsInTheRange = (day: Date): boolean => {
     initialDate?.setHours(0, 0, 0, 0)
     finalDate?.setHours(0, 0, 0, 0)

@@ -10,7 +10,7 @@ export interface DefaultRangeCalendarProps extends CalendarProps {
   finalDate: Date
 }
 
-export const DefaultRangeCalendar = ({ initialDate, finalDate, ...rest }: DefaultRangeCalendarProps) => {
+export function DefaultRangeCalendar({ initialDate, finalDate, ...rest }: DefaultRangeCalendarProps) {
   if (initialDate && finalDate && finalDate < initialDate) {
     if (process.env.NODE_ENV !== 'production') {
       // tslint:disable-next-line no-console

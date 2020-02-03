@@ -1,25 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { ControlledRangeDatePickerCalendarProps } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendar'
-import { ControlledRangeDatePickerCalendarPopup } from '../Calendar/RangeCalendar/RangeDatePickerCalendar/ControlledRangeDatePickerCalendarPopup'
+import { ControlledRangeDateCalendarProps } from '../Calendar/RangeCalendar/RangeDateCalendar/ControlledRangeDateCalendar'
+import { ControlledRangeDateCalendarPopup } from '../Calendar/RangeCalendar/RangeDateCalendar/ControlledRangeDateCalendarPopup'
 import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { Icons } from '../Icon'
 import { Popper, PopperController } from '../Popper'
 
-import { Period } from './BaseRangeDatePicker'
-import { RangeDatePickerInput, RangeDatePickerInputProps } from './RangeDatePickerInput'
+import { Period } from './BaseRangeDateInput'
+import { RangeDateInput, RangeDateInputProps } from './RangeDateInput'
 
-export interface RangeDatePickerProps extends Omit<RangeDatePickerInputProps, 'onChange | value'> {
+export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange | value'> {
   minDate?: Date
   maxDate?: Date
   icon?: Icons
-  calendarProps?: ControlledRangeDatePickerCalendarProps
+  calendarProps?: ControlledRangeDateCalendarProps
   value?: Period
   onChange?(period: Period): void
 }
 
-export function RangeDatePicker(props: RangeDatePickerProps) {
+export function RangeDateField(props: RangeDateFieldProps) {
   const { onChange, minDate, maxDate, value, icon, ...rest } = props
   const [period, setPeriod] = useState(value ? value : ({} as Period))
   const [periodInputFocus, setPeriodInputFocus] = useState(1)
@@ -92,7 +92,7 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
 
   const renderTarget = (ctrl: PopperController) => {
     return (
-      <RangeDatePickerInput
+      <RangeDateInput
         {...rest}
         minDate={minDate}
         maxDate={maxDate}
@@ -109,7 +109,7 @@ export function RangeDatePicker(props: RangeDatePickerProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <Popper control={setController} renderTarget={renderTarget} placement='auto' block>
         {(ctrl: PopperController) => (
-          <ControlledRangeDatePickerCalendarPopup
+          <ControlledRangeDateCalendarPopup
             values={{ initialDate: period.startDate, finalDate: period.finalDate }}
             onChange={handleCalendarPeriodChanged}
             onDayClick={handleOnDayClick(ctrl)}

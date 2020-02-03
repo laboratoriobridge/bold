@@ -363,14 +363,14 @@ exports[`PeriodField render should render correctly 1`] = `
   padding: 0.25rem 0;
 }
 
-.emotion-30 {
+.emotion-33 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-30:hover {
+.emotion-33:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -388,7 +388,7 @@ exports[`PeriodField render should render correctly 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-53 {
+.emotion-35 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -396,7 +396,7 @@ exports[`PeriodField render should render correctly 1`] = `
   font-weight: bold;
 }
 
-.emotion-53:hover {
+.emotion-35:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -537,7 +537,7 @@ exports[`PeriodField render should render correctly 1`] = `
                     </svg>
                   </span>
                 </button>
-                Jan
+                Feb
                 <button
                   class="emotion-17"
                   tabindex="-1"
@@ -639,327 +639,11 @@ exports[`PeriodField render should render correctly 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-12-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      29
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-30"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      30
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-31"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      31
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-01"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      01
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-02"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      02
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-03"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      03
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-04"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      04
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-05"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      05
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-06"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      06
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-07"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      07
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-08"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      08
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-09"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      09
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-10"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      10
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-11"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      11
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-12"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      12
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-13"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      13
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-14"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      14
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-15"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      15
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-16"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      16
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-17"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      17
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-18"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      18
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-19"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      19
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-20"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      20
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-21"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      21
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-22"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      22
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-23"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      23
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-24"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-53"
-                      role="button"
-                    >
-                      24
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-25"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      25
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
                     data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       26
@@ -970,7 +654,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       27
@@ -981,7 +665,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       28
@@ -992,7 +676,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       29
@@ -1003,7 +687,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       30
@@ -1014,7 +698,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       31
@@ -1025,10 +709,326 @@ exports[`PeriodField render should render correctly 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-27"
+                      class="emotion-33"
                       role="button"
                     >
                       01
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-02"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      02
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-03"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-35"
+                      role="button"
+                    >
+                      03
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-04"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      04
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-05"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      05
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-06"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      06
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-07"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      07
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-08"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      08
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-09"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      09
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-10"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      10
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-11"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      11
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-12"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      12
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-13"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      13
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-14"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      14
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-15"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      15
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-16"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      16
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-17"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      17
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-18"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      18
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-19"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      19
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-20"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      20
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-21"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      21
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-22"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      22
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-23"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      23
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-24"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      24
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-25"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      25
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-26"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      26
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-27"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      27
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-28"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      28
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-29"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      29
                     </span>
                   </td>
                 </tr>
@@ -1297,14 +1297,14 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   padding: 0.25rem 0;
 }
 
-.emotion-30 {
+.emotion-33 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-30:hover {
+.emotion-33:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1322,7 +1322,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-53 {
+.emotion-35 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1330,7 +1330,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
   font-weight: bold;
 }
 
-.emotion-53:hover {
+.emotion-35:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1586,7 +1586,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     </svg>
                   </span>
                 </button>
-                Jan
+                Feb
                 <button
                   class="emotion-17"
                   tabindex="-1"
@@ -1688,327 +1688,11 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-12-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      29
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-30"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      30
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-31"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      31
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-01"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      01
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-02"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      02
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-03"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      03
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-04"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      04
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-05"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      05
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-06"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      06
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-07"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      07
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-08"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      08
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-09"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      09
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-10"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      10
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-11"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      11
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-12"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      12
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-13"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      13
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-14"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      14
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-15"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      15
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-16"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      16
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-17"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      17
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-18"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      18
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-19"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      19
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-20"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      20
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-21"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      21
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-22"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      22
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-23"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      23
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-24"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-53"
-                      role="button"
-                    >
-                      24
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-25"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      25
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
                     data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       26
@@ -2019,7 +1703,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       27
@@ -2030,7 +1714,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       28
@@ -2041,7 +1725,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       29
@@ -2052,7 +1736,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       30
@@ -2063,7 +1747,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       31
@@ -2074,10 +1758,326 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-27"
+                      class="emotion-33"
                       role="button"
                     >
                       01
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-02"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      02
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-03"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-35"
+                      role="button"
+                    >
+                      03
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-04"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      04
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-05"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      05
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-06"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      06
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-07"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      07
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-08"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      08
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-09"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      09
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-10"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      10
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-11"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      11
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-12"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      12
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-13"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      13
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-14"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      14
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-15"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      15
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-16"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      16
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-17"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      17
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-18"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      18
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-19"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      19
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-20"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      20
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-21"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      21
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-22"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      22
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-23"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      23
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-24"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      24
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-25"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      25
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-26"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      26
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-27"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      27
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-28"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      28
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-29"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      29
                     </span>
                   </td>
                 </tr>
@@ -2420,14 +2420,14 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   padding: 0.25rem 0;
 }
 
-.emotion-30 {
+.emotion-33 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-30:hover {
+.emotion-33:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -2445,7 +2445,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-53 {
+.emotion-35 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -2453,7 +2453,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   font-weight: bold;
 }
 
-.emotion-53:hover {
+.emotion-35:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -2634,7 +2634,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                     </svg>
                   </span>
                 </button>
-                Jan
+                Feb
                 <button
                   class="emotion-17"
                   tabindex="-1"
@@ -2736,327 +2736,11 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
               <tbody>
                 <tr>
                   <td
-                    data-date="2019-12-29"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      29
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-30"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      30
-                    </span>
-                  </td>
-                  <td
-                    data-date="2019-12-31"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-27"
-                      role="button"
-                    >
-                      31
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-01"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      01
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-02"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      02
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-03"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      03
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-04"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      04
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-05"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      05
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-06"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      06
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-07"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      07
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-08"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      08
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-09"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      09
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-10"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      10
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-11"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      11
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-12"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      12
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-13"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      13
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-14"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      14
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-15"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      15
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-16"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      16
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-17"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      17
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-18"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      18
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
-                    data-date="2020-01-19"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      19
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-20"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      20
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-21"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      21
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-22"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      22
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-23"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      23
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-24"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-53"
-                      role="button"
-                    >
-                      24
-                    </span>
-                  </td>
-                  <td
-                    data-date="2020-01-25"
-                  >
-                    <span
-                      aria-selected="false"
-                      class="emotion-30"
-                      role="button"
-                    >
-                      25
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td
                     data-date="2020-01-26"
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       26
@@ -3067,7 +2751,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       27
@@ -3078,7 +2762,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       28
@@ -3089,7 +2773,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       29
@@ -3100,7 +2784,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       30
@@ -3111,7 +2795,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-30"
+                      class="emotion-27"
                       role="button"
                     >
                       31
@@ -3122,10 +2806,326 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   >
                     <span
                       aria-selected="false"
-                      class="emotion-27"
+                      class="emotion-33"
                       role="button"
                     >
                       01
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-02"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      02
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-03"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-35"
+                      role="button"
+                    >
+                      03
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-04"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      04
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-05"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      05
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-06"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      06
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-07"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      07
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-08"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      08
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-09"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      09
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-10"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      10
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-11"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      11
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-12"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      12
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-13"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      13
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-14"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      14
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-15"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      15
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-16"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      16
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-17"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      17
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-18"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      18
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-19"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      19
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-20"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      20
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-21"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      21
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-22"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      22
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td
+                    data-date="2020-02-23"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      23
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-24"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      24
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-25"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      25
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-26"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      26
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-27"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      27
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-28"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      28
+                    </span>
+                  </td>
+                  <td
+                    data-date="2020-02-29"
+                  >
+                    <span
+                      aria-selected="false"
+                      class="emotion-33"
+                      role="button"
+                    >
+                      29
                     </span>
                   </td>
                 </tr>

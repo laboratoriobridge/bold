@@ -1,6 +1,8 @@
 import React from 'react'
 import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 
+import { LocaleContext } from '../../i18n'
+import ptBr from '../../i18n/locales/pt-BR'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
@@ -12,48 +14,56 @@ export interface Period {
   finalDate?: Date
 }
 
-export interface BaseRangeDatePickerProps {
+export interface BaseRangeDateInputProps {
   /**
-   * Prop used to set an initial period.
+   * Set a period as initial value of the component.
    */
   value?: Period
 
   /**
-   *  Props to control limited periods
+   * "minDate" defines the minimum allowed date
    */
   minDate?: Date
+
+  /**
+   * "minDate" limits the minimum allowed date
+   */
   maxDate?: Date
 
   /**
-   * Prop to disable the date field.
+   * disable the range date input.
    */
   disabled?: boolean
 
   /**
-   * Prop to set an icon in date field button.
+   * Set an icon in range date input button.
    * When this prop is not declared, date field will be
    * shown without a icon.
    */
   icon?: Icons
 
   /**
-   *  Prop to reference an invalid state.
+   *  Reference an invalid state.
    */
   invalid?: boolean
 
   /**
-   *  Prop for receive external styles.
+   *  Receive external styles.
    */
   style?: ExternalStyles
 
   /**
-   *  Props to set placeholder to inputs
+   *  Set a placeholder in the first date input.
    */
   startPlaceholder?: string
+
+  /**
+   *  Set a placeholder in the second date input.
+   */
   finalPlaceholder?: string
 
   /**
-   * initialInputRef and finalInputRef are used to assign refs
+   * "initialInputRef" and "finalInputRef" are used to assign refs
    * to date input components
    */
   initialInputRef?: Ref<HTMLInputElement>
@@ -79,7 +89,7 @@ export interface BaseRangeDatePickerProps {
   onChange?(period: Period): void
 }
 
-export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
+export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
     value,
     disabled,
@@ -185,7 +195,9 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
           />
         </div>
         <span className={classes.spanWrapper}>
-          <strong>até</strong>
+          <LocaleContext.Provider value={ptBr}>
+            <strong>até</strong>
+          </LocaleContext.Provider>
         </span>
         <div className={classes.fieldWrapper}>
           <DateInput
@@ -205,11 +217,11 @@ export function BaseRangeDatePicker(props: BaseRangeDatePickerProps) {
   )
 }
 
-BaseRangeDatePicker.defaultProps = {
+BaseRangeDateInput.defaultProps = {
   startPlaceholder: 'dd/mm/aaaa',
   finalPlaceholder: 'dd/mm/aaaa',
   icon: 'calendarOutline',
-} as Partial<BaseRangeDatePickerProps>
+} as Partial<BaseRangeDateInputProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)
