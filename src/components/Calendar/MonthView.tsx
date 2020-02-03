@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { getUserLocale } from '../../util/locale'
@@ -7,7 +7,12 @@ import { getUserLocale } from '../../util/locale'
 import { createMonthMatrix } from './util'
 
 export interface MonthViewProps {
-  visibleDate?: Date
+  /**
+   * The current visible date.
+   * Only the month and year of this date is used to know which month to render, so the day doesn't matter.
+   */
+  visibleDate: Date
+
   onDayClick?(day: Date): void
   onDayHover?(day: Date): void
   renderDay?(day: Date): React.ReactNode
@@ -18,11 +23,11 @@ export interface MonthViewProps {
 
 export function MonthView(props: MonthViewProps) {
   const { visibleDate, renderDay, renderWeekName, createDayStyles, onDayClick, onDayHover } = props
-  const month = createMonthMatrix(visibleDate)
   const { classes, css } = useStyles(createStyles)
 
-  const handleDayClick = (day: Date) => () => onDayClick(day)
-  const handleDayHover = (day: Date) => () => onDayHover(day)
+  const month = useMemo(() => createMonthMatrix(visibleDate), [visibleDate])
+  const handleDayClick = useCallback((day: Date) => () => onDayClick(day), [onDayClick])
+  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
 
   return (
     <table className={classes.table}>
@@ -57,7 +62,6 @@ export function MonthView(props: MonthViewProps) {
 }
 
 MonthView.defaultProps = {
-  visibleDate: new Date(),
   onDayClick: () => null,
   onDayHover: () => null,
   renderDay: day => {

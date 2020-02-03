@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import * as DateFieldModule from './DateField'
@@ -7,25 +7,51 @@ import { DateField, disableByRange } from './DateField'
 describe('DateField', () => {
   it('should render correctly', () => {
     const { container } = render(
-      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} />
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} />
     )
+    expect(container).toMatchSnapshot()
+  })
+  it('should render correctly when opened', () => {
+    const { container } = render(
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} />
+    )
+    fireEvent.focus(container.querySelector('input'))
     expect(container).toMatchSnapshot()
   })
   it('should render correctly when disabled', () => {
     const { container } = render(
-      <DateField onChange={jest.fn()} calendarProps={{ initialVisibleDate: new Date('2018-10-01') }} disabled />
+      <DateField onChange={jest.fn()} calendarProps={{ visibleDate: new Date('2018-10-01') }} disabled />
     )
     expect(container).toMatchSnapshot()
+  })
+  ;['', null, false, undefined].map((value: any) => {
+    it(`should gracefully treat "${value}" as value`, () => {
+      const { container } = render(<DateField value={value} />)
+      fireEvent.focus(container.querySelector('input'))
+    })
+  })
+  it('should open the Calendar visibleDate as the current value', () => {
+    const { container, queryByText, rerender } = render(<DateField value={new Date('2015-10-10')} />)
+    fireEvent.focus(container.querySelector('input'))
+    expect(queryByText('Oct')).not.toBeNull()
+    expect(queryByText('2015')).not.toBeNull()
+
+    rerender(<DateField value={new Date('2020-01-01')} />)
+    expect(queryByText('Oct')).toBeNull()
+    expect(queryByText('2015')).toBeNull()
+    expect(queryByText('Jan')).not.toBeNull()
+    expect(queryByText('2020')).not.toBeNull()
   })
   it('should set the disabled modifier when using minDate and maxDate props', () => {
     const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
       <DateField
-        calendarProps={{ initialVisibleDate: new Date('2018-10-01') }}
+        calendarProps={{ visibleDate: new Date('2018-10-01') }}
         minDate={new Date('2018-10-01')}
         maxDate={new Date('2018-10-15')}
       />
     )
+    fireEvent.focus(container.querySelector('input'))
     expect(spy).toHaveBeenCalledWith(new Date('2018-10-01'), new Date('2018-10-15'))
 
     // TODO: better assert for disabled dates

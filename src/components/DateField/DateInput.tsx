@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 
 import { useLocale } from '../../i18n'
@@ -18,26 +18,29 @@ const formatter = new Intl.DateTimeFormat('pt-br', {
 })
 
 export function DateInput(props: DateInputProps) {
-  const { value, onInputChange, ...rest } = props
+  const { value, onInputChange, onChange, ...rest } = props
   const locale = useLocale()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (!e || !e.target || !e.target.value) {
-      props.onChange(null)
-      return
-    }
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (!e || !e.target || !e.target.value) {
+        onChange(null)
+        return
+      }
 
-    const targetValue = e.target.value
-    const match: RegExpMatchArray = targetValue.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
-    if (match) {
-      const date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
-      props.onChange(date)
-    }
+      const targetValue = e.target.value
+      const match: RegExpMatchArray = targetValue.match(/^(\d{2})\/(\d{2})\/(\d{4})$/)
+      if (match) {
+        const date = new Date(parseInt(match[3], 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
+        onChange(date)
+      }
 
-    if (onInputChange) {
-      return onInputChange(e)
-    }
-  }
+      if (onInputChange) {
+        return onInputChange(e)
+      }
+    },
+    [onChange, onInputChange]
+  )
 
   return (
     <MaskedTextField
@@ -46,8 +49,8 @@ export function DateInput(props: DateInputProps) {
       placeholder={locale.dateInput.placeholder}
       pipe={createAutoCorrectedDatePipe('dd/mm/yyyy')}
       autoComplete='off'
-      {...rest}
       onChange={handleChange}
+      {...rest}
     />
   )
 }

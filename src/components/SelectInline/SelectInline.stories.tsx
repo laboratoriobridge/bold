@@ -17,7 +17,6 @@ const itemToString = (item: DefaultItemType) => item && item.label
 
 storiesOf('Components/SelectInline', module).add('default', () => (
   <SelectInline<DefaultItemType>
-    value={items[0]}
     items={items}
     itemToString={itemToString}
     onChange={action('changed')}
