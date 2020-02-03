@@ -65,4 +65,5 @@ export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...res
     />
   )
 }
+
 export const dayHoverStyle = (theme: Theme) => ({ background: theme.pallete.surface.background })

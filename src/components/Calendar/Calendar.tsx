@@ -1,5 +1,5 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties, useCallback, useMemo } from 'react'
+import React, { CSSProperties, MouseEvent, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { HFlow } from '../HFlow'
@@ -39,7 +39,7 @@ export interface CalendarProps extends MonthViewProps {
 }
 
 export function Calendar(props: CalendarProps) {
-  const { visibleDate, modifiers, modifierStyles, onVisibleDateChange, isDaySelected, ...rest } = props
+  const { visibleDate, modifiers, modifierStyles, onVisibleDateChange, onMouseLeave, isDaySelected, ...rest } = props
   const { classes, theme } = useStyles(createStyles)
 
   const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
@@ -61,7 +61,7 @@ export function Calendar(props: CalendarProps) {
   )
 
   return (
-    <div className={classes.root} onMouseLeave={props.onMouseLeave}>
+    <div className={classes.root} onMouseLeave={onMouseLeave}>
       <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
         <MonthControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
         <YearControl visibleDate={visibleDate} onChange={onVisibleDateChange} />

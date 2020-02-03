@@ -34,7 +34,7 @@ export interface DateFieldProps extends DateInputProps {
 }
 
 export function DateField(props: DateFieldProps) {
-  const { calendarProps, popperProps, minDate, maxDate, value, onClick, onIconClick, ...rest } = props
+  const { calendarProps, popperProps, minDate, maxDate, value, onClick, icon, onIconClick, ...rest } = props
 
   const { css, classes } = useStyles(createStyles)
 
@@ -77,7 +77,7 @@ export function DateField(props: DateFieldProps) {
       <DateInput
         inputRef={inputRef}
         value={value}
-        icon='calendarOutline'
+        icon={icon}
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
         {...rest}
       />
@@ -101,6 +101,7 @@ export function DateField(props: DateFieldProps) {
 }
 
 DateField.defaultProps = {
+  icon: 'calendarOutline',
   onChange: () => null,
   onFocus: () => null,
   onClick: () => null,

@@ -63,6 +63,12 @@ export interface BaseRangeDateInputProps {
   finalPlaceholder?: string
 
   /**
+   * "divRef" is used to assign ref
+   * to the main div component
+   */
+  divRef?: Ref<HTMLDivElement>
+
+  /**
    * "initialInputRef" and "finalInputRef" are used to assign refs
    * to date input components
    */
@@ -103,6 +109,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     onInputOnFocus,
     minDate,
     maxDate,
+    divRef,
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
@@ -179,41 +186,43 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
 
   return (
-    <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
-      <div className={className}>
-        <div className={classes.fieldWrapper}>
-          <DateInput
-            clearable
-            disabled={disabled}
-            inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
-            onChange={onChangeStart}
-            onClear={onClearStart}
-            placeholder={startPlaceholder}
-            style={classes.dateField}
-            value={period ? period.startDate : undefined}
-            onFocus={onInputOnFocusInicial}
-          />
+    <div ref={divRef}>
+      <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
+        <div className={className}>
+          <div className={classes.fieldWrapper}>
+            <DateInput
+              clearable
+              disabled={disabled}
+              inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
+              onChange={onChangeStart}
+              onClear={onClearStart}
+              placeholder={startPlaceholder}
+              style={classes.dateField}
+              value={period ? period.startDate : undefined}
+              onFocus={onInputOnFocusInicial}
+            />
+          </div>
+          <span className={classes.spanWrapper}>
+            <LocaleContext.Provider value={ptBr}>
+              <strong>até</strong>
+            </LocaleContext.Provider>
+          </span>
+          <div className={classes.fieldWrapper}>
+            <DateInput
+              clearable
+              disabled={disabled}
+              inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
+              onChange={onChangeFinal}
+              onClear={onClearFinal}
+              placeholder={finalPlaceholder}
+              style={classes.dateField}
+              value={period ? period.finalDate : undefined}
+              onFocus={onInputOnFocusFinal}
+            />
+          </div>
         </div>
-        <span className={classes.spanWrapper}>
-          <LocaleContext.Provider value={ptBr}>
-            <strong>até</strong>
-          </LocaleContext.Provider>
-        </span>
-        <div className={classes.fieldWrapper}>
-          <DateInput
-            clearable
-            disabled={disabled}
-            inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
-            onChange={onChangeFinal}
-            onClear={onClearFinal}
-            placeholder={finalPlaceholder}
-            style={classes.dateField}
-            value={period ? period.finalDate : undefined}
-            onFocus={onInputOnFocusFinal}
-          />
-        </div>
-      </div>
-    </InputWrapper>
+      </InputWrapper>
+    </div>
   )
 }
 
