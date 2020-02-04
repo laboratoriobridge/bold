@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgDropFilled = (props: React.SVGProps<SVGSVGElement>) => (

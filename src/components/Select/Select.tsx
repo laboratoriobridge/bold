@@ -18,7 +18,6 @@ export function Select<T = DefaultItemType>(props: SelectProps<T>) {
 
   if (multiple && value && !Array.isArray(value)) {
     if (process.env.NODE_ENV !== 'production') {
-      // tslint:disable-next-line no-console
       console.warn(`Trying to set an object as value for <Select multiple /> but it should be an array`)
     }
     checkedValue = value ? [value] : []
@@ -26,7 +25,6 @@ export function Select<T = DefaultItemType>(props: SelectProps<T>) {
 
   if (!multiple && value && Array.isArray(value)) {
     if (process.env.NODE_ENV !== 'production') {
-      // tslint:disable-next-line no-console
       console.warn(
         `Trying to set an array as value for <Select /> but it should be an object.` +
           ` Set the 'multiple' prop if it can have multiple values`

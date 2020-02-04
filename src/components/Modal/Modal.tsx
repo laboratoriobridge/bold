@@ -23,7 +23,7 @@ export interface ModalProps extends ModalContainerProps {
 }
 
 export function Modal(props: ModalProps) {
-  const { open, size, closeOnBackdropClick, children, style, ...rest } = props
+  const { open, size, closeOnBackdropClick, children, style, onClose, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   // Kill body scroll when opened
@@ -34,22 +34,23 @@ export function Modal(props: ModalProps) {
       document.body.classList.remove(classes.bodyWhenOpened)
     }
     return () => document.body.classList.remove(classes.bodyWhenOpened)
-  }, [open])
+  }, [open, classes.bodyWhenOpened])
 
-  // Attach "Escape" to close modal
-  const handleKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      props.onClose()
-    }
-  }
   useEffect(() => {
+    // Attach "Escape" to close modal
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose()
+      }
+    }
+
     if (open) {
       document.addEventListener('keydown', handleKeyDown)
     } else {
       document.removeEventListener('keydown', handleKeyDown)
     }
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [open])
+  }, [open, onClose])
 
   return (
     <FadeTransition in={open}>
@@ -60,12 +61,12 @@ export function Modal(props: ModalProps) {
               <FocusTrap>
                 <div className={className}>
                   <div className={classes.modal}>
-                    <ModalContainer style={css(classes.container, classes[size], style)} {...rest}>
+                    <ModalContainer style={css(classes.container, classes[size], style)} onClose={onClose} {...rest}>
                       {children}
                     </ModalContainer>
                   </div>
 
-                  <ModalBackdrop onClick={closeOnBackdropClick ? rest.onClose : undefined} />
+                  <ModalBackdrop onClick={closeOnBackdropClick ? onClose : undefined} />
                 </div>
               </FocusTrap>
             </Portal>

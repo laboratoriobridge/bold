@@ -2,8 +2,6 @@ import React from 'react'
 
 import { ModalStore } from './ModalStore'
 
-// tslint:disable no-string-literal
-
 describe('append', () => {
   it('should include an item to the state', () => {
     const store = new ModalStore()

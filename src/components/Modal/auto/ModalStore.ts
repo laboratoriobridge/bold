@@ -22,7 +22,6 @@ export class ModalStore extends Observable<ModalStoreState> {
 
   notify(value: ModalStoreState) {
     if (process.env.NODE_ENV === 'development' && this.listeners.length === 0) {
-      // tslint:disable-next-line no-console
       console.warn(
         `No listeners to the modal store change. ` +
           `Maybe you need to include a <ModalMountTarget /> in your application.`

@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgFileEmptyOutline = (props: React.SVGProps<SVGSVGElement>) => (

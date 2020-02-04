@@ -1,2 +1,2 @@
 export { Icon, IconProps } from './Icon'
-export { Icons } from './generated/Icons'
+export { Icons } from './generated/types'

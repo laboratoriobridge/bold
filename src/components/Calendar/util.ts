@@ -80,5 +80,6 @@ export const isSameDay = (d1: Date, d2: Date): boolean => {
  */
 export const isValidDate = (possibleDate: any): boolean => {
   // If possibleDate is not a valid date, getTime() will return NaN, and NaN is never equal to itself.
+  // eslint-disable-next-line no-self-compare
   return possibleDate && possibleDate.getTime() === possibleDate.getTime()
 }

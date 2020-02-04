@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgPenOutline = (props: React.SVGProps<SVGSVGElement>) => (

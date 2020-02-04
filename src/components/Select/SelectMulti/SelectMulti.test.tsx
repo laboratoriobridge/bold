@@ -14,7 +14,6 @@ const items: DefaultItemType[] = [
   { value: 5, label: 'Pear' },
 ]
 
-// tslint:disable jsx-no-lambda
 function SelectTest(props: Partial<SelectMultiProps>) {
   return (
     <SelectMulti

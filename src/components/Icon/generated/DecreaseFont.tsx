@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgDecreaseFont = (props: React.SVGProps<SVGSVGElement>) => (

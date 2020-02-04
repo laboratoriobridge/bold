@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgLockCloseFilled = (props: React.SVGProps<SVGSVGElement>) => (
