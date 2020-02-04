@@ -62,6 +62,15 @@ describe('DateField', () => {
       container.querySelector('[data-date="2018-10-16"] span').className
     )
   })
+  it('should open calendar when clicked on input', () => {
+    const { container } = render(<DateField value={new Date('2018-10-10')} />)
+    fireEvent.focus(container.querySelector('input'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).not.toBeNull()
+    fireEvent.click(container.querySelector('[data-date="2018-10-10"] span'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).toBeNull()
+    fireEvent.click(container.querySelector('input'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).not.toBeNull()
+  })
 })
 
 describe('disableByRange', () => {

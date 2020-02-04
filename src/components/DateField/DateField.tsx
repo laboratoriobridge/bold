@@ -64,6 +64,7 @@ export function DateField(props: DateFieldProps) {
     return props.onChange(day)
   }
 
+  const handleIconClick = () => setOpen(true)
   const handleInputIconClick = () => setOpen(true)
   const handleFocusIn = () => setOpen(true)
   const handleFocusOut = () => setOpen(false)
@@ -77,6 +78,7 @@ export function DateField(props: DateFieldProps) {
         value={value}
         icon='calendarOutline'
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
+        onClick={composeHandlers(handleIconClick, onClick)}
         {...rest}
       />
 
