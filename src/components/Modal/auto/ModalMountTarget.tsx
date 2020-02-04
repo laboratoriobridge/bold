@@ -11,7 +11,10 @@ export function ModalMountTarget(props: ModalMountTargetProps) {
 
   const [items, setItems] = useState<ModalStoreState['items']>([])
 
-  useEffect(() => store.subscribe(s => setItems(s.items)), [])
+  useEffect(() => {
+    const unsubstribe = store.subscribe(s => setItems(s.items))
+    return () => unsubstribe()
+  }, [store])
 
   return (
     <div>

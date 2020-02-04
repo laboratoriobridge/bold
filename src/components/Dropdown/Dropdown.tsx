@@ -71,7 +71,7 @@ export function Dropdown(props: DropdownProps) {
       anchorRef.current.removeAttribute('aria-expanded')
       anchorRef.current.removeAttribute('aria-controls')
     }
-  }, [open])
+  }, [open, anchorRef])
 
   // Attaches Escape key event
   useEffect(() => {
@@ -83,7 +83,7 @@ export function Dropdown(props: DropdownProps) {
 
     document.addEventListener('keydown', handleKeyDown)
     return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [open])
+  }, [open, onClose])
 
   // When opened, focus the first menu item
   const isFirstRender = useRef(true)

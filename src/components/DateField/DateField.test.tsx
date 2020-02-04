@@ -24,7 +24,7 @@ describe('DateField', () => {
     )
     expect(container).toMatchSnapshot()
   })
-  ;['', null, false, undefined].map((value: any) => {
+  ;['', null, false, undefined].forEach((value: any) => {
     it(`should gracefully treat "${value}" as value`, () => {
       const { container } = render(<DateField value={value} />)
       fireEvent.focus(container.querySelector('input'))
