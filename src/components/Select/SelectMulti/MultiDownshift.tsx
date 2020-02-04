@@ -95,7 +95,6 @@ MultiDownshift.defaultProps = {
   selectedItems: [],
   itemIsEqual: (a, b) => {
     if (process.env.NODE_ENV !== 'production') {
-      // tslint:disable no-console
       console.warn(
         'MultiDownshift: using a deep compare itemIsEqual implementation for object comparision.' +
           ' You should probably provide your own `itemIsEqual` implementation.'

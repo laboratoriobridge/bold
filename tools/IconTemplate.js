@@ -1,8 +1,6 @@
 module.exports = function({ template }, opts, { imports, componentName, props, jsx, exports }) {
-    const typeScriptTpl = template.smart({ plugins: ['typescript', 'tslint'] })
-    return typeScriptTpl.ast`
-${'/* tslint:disable */\n'}
-
+  const typeScriptTpl = template.smart({ plugins: ['typescript'] })
+  return typeScriptTpl.ast`
 import React from 'react'
 
 const ${componentName} = (props: React.SVGProps<SVGSVGElement>) => ${jsx}

@@ -14,7 +14,6 @@ const items: DefaultItemType[] = [
   { value: 5, label: 'Pear' },
 ]
 
-// tslint:disable jsx-no-lambda
 function SelectTest(props: Partial<SelectSingleProps>) {
   return <SelectSingle items={items} itemToString={item => item.label} placeholder='Select a value...' {...props} />
 }

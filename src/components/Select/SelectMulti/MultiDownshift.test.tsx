@@ -18,7 +18,6 @@ let consoleWarnSpy = null
 beforeEach(() => (consoleWarnSpy = jest.spyOn(console, 'warn').mockImplementation(() => null)))
 
 const createComponent = (props: Partial<MultiDownshiftProps<DefaultItemType>> = {}) => {
-  // tslint:disable jsx-no-lambda
   return <MultiDownshift items={items} children={jest.fn()} {...props} />
 }
 
@@ -34,7 +33,10 @@ describe('selectedItems', () => {
     const { rerender } = render(createComponent({ selectedItems: [items[0], items[1]], children }))
     rerender(
       createComponent({
-        items: [{ value: 2, label: 'Banana' }, { value: 3, label: 'Grape' }],
+        items: [
+          { value: 2, label: 'Banana' },
+          { value: 3, label: 'Grape' },
+        ],
         selectedItems: [items[0]],
         children,
       })

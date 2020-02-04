@@ -4,7 +4,7 @@ import { ExternalStyles, TextColor, useStyles } from '../../styles'
 import { getTextColor, Theme } from '../../styles/theme/createTheme'
 import { Omit } from '../../util/types'
 
-import { IconMap, Icons } from './generated/Icons'
+import { IconMap, Icons } from './generated/types'
 
 export type IconColor = TextColor | 'none'
 

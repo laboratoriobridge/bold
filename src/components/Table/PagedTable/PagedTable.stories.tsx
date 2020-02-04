@@ -21,7 +21,6 @@ const rows: Row[] = [
 ]
 
 storiesOf('Components|Table', module).add('PagedTable', () => (
-  // tslint:disable jsx-no-lambda
   <PagedTable
     rows={boolean('empty', false) ? [] : rows}
     page={0}

@@ -1,5 +1,5 @@
 import { Cell, Grid, Icon, Text, TextInput, Theme, useStyles, VFlow } from 'bold-ui'
-import { IconMap } from 'bold-ui/components/Icon/generated/Icons'
+import { IconMap } from 'bold-ui/components/Icon/generated/types'
 import matchSorter from 'match-sorter'
 import React, { useState } from 'react'
 

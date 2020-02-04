@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgList = (props: React.SVGProps<SVGSVGElement>) => (
