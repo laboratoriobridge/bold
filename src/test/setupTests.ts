@@ -9,7 +9,6 @@ expect.addSnapshotSerializer(createSerializer())
 
 // Polyfill for test context
 // @ts-ignore
-// tslint:disable-next-line
 global.Intl = require('intl')
 
 afterEach(cleanup)

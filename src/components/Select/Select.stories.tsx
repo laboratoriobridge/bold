@@ -28,7 +28,6 @@ const loadFruits = (query: string): Promise<DefaultItemType[]> => {
   })
 }
 
-// tslint:disable jsx-no-lambda
 storiesOf('Components|Select', module)
   .add('default', () => (
     <Select<DefaultItemType>

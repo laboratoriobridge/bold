@@ -21,7 +21,6 @@ it('should render correctly', () => {
   const sizeHandler = jest.fn()
 
   const { container } = render(
-    // tslint:disable jsx-no-lambda
     <PagedTable
       rows={rows}
       page={0}

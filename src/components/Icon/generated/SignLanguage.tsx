@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgSignLanguage = (props: React.SVGProps<SVGSVGElement>) => (

@@ -5,8 +5,6 @@ import { ModalAuto } from './ModalAuto'
 
 jest.mock('../../../util/string')
 
-// tslint:disable jsx-no-lambda
-
 jest.useFakeTimers()
 
 it('should render correctly', () => {

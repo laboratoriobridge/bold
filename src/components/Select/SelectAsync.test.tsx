@@ -4,8 +4,6 @@ import waait from 'waait'
 
 import { SelectAsync } from './SelectAsync'
 
-// tslint:disable jsx-no-lambda
-
 describe('async loading', () => {
   it('should NOT call "loadItems" when mounted', () => {
     const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))

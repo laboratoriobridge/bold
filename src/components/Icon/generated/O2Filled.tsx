@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgO2Filled = (props: React.SVGProps<SVGSVGElement>) => (

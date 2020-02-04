@@ -6,8 +6,6 @@ import { DropdownItem } from './DropdownItem'
 
 jest.mock('../../util/string')
 
-// tslint:disable jsx-no-lambda
-
 const createDropdown = (props: Partial<DropdownProps> = {}) => {
   const anchorRef = createRef<HTMLButtonElement>()
   return (

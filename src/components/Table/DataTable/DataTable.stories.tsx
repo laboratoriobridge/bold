@@ -21,7 +21,6 @@ const rows: Row[] = [
 ]
 
 storiesOf('Components|Table', module).add('DataTable', () => (
-  // tslint:disable jsx-no-lambda
   <DataTable
     rows={boolean('empty', false) ? [] : rows}
     onSortChange={action('sort-change')}

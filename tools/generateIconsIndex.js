@@ -1,13 +1,13 @@
-const filewalker = require('./filewalker')
 const path = require('path')
 const fs = require('fs')
+const filewalker = require('./filewalker')
 
 filewalker(path.join(__dirname, '../src/components/Icon/generated'), (err, data) => {
   if (err) {
     throw err
   }
 
-  let writeStream = fs.createWriteStream(path.join(__dirname, '../src/components/Icon/generated/Icons.ts'))
+  let writeStream = fs.WriteStream(path.join(__dirname, '../src/components/Icon/generated/types.tsx'))
 
   const components = []
 
@@ -21,12 +21,15 @@ filewalker(path.join(__dirname, '../src/components/Icon/generated'), (err, data)
       }
       return 0
     })
+    .filter(file => !file.endsWith('index.tsx'))
     .map(file => {
       const fileName = file.substring(file.lastIndexOf('/') + 1, file.indexOf('.tsx'))
-      writeStream.write(`import { default as ${fileName} } from './${fileName}'\n`)
       components.push(fileName)
     })
 
+  writeStream.write(`import * as Components from './'`)
+
+  writeStream.write('\n')
   writeStream.write('\n')
 
   writeStream.write('export type Icons =\n')
@@ -41,7 +44,9 @@ filewalker(path.join(__dirname, '../src/components/Icon/generated'), (err, data)
   writeStream.write('} = {\n')
 
   components.forEach(component =>
-    writeStream.write(`    '${component.substring(0, 1).toLowerCase() + component.substring(1)}': ${component},\n`)
+    writeStream.write(
+      `    '${component.substring(0, 1).toLowerCase() + component.substring(1)}': Components.${component},\n`
+    )
   )
 
   writeStream.write('}')

@@ -4,7 +4,6 @@ import React from 'react'
 export const BoldLogo = (props: React.SVGAttributes<SVGSVGElement>) => {
   const theme = useTheme()
 
-  // tslint:disable max-line-length
   return (
     <svg viewBox='0 0 163 60' {...props}>
       <title>bold_</title>

@@ -1,4 +1,3 @@
-/* tslint:disable */
 import React from 'react'
 
 const SvgInfoCircleOutline = (props: React.SVGProps<SVGSVGElement>) => (

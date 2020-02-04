@@ -18,7 +18,6 @@ const rows: Row[] = [
 
 const sortHandler = jest.fn()
 const DataTableTest = (props: Partial<DataTableProps>) => (
-  // tslint:disable jsx-no-lambda
   <DataTable
     rows={rows}
     onSortChange={sortHandler}

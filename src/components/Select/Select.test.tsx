@@ -16,7 +16,6 @@ const items: DefaultItemType[] = [
 
 afterEach(jest.clearAllMocks)
 
-// tslint:disable jsx-no-lambda
 function SelectTest(props: Partial<SelectProps<DefaultItemType>>) {
   return <Select<DefaultItemType> items={items} itemToString={item => item && item.label} {...props} />
 }

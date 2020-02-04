@@ -4,8 +4,6 @@ import React from 'react'
 import { ModalMountTarget } from './ModalMountTarget'
 import { ModalStore } from './ModalStore'
 
-// tslint:disable no-string-literal
-
 describe('when mounted', () => {
   it('should subscribe to the modal store', () => {
     const store = new ModalStore()

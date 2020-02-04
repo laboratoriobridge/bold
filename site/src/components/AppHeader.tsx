@@ -6,7 +6,6 @@ import { BoldLogo } from './BoldLogo'
 import { LocaleLink } from './LocaleLink'
 import { SIDE_NAV_WIDTH } from './SideNav'
 
-// tslint:disable-next-line: no-var-requires
 const docsearch = typeof window !== 'undefined' ? require('docsearch.js') : null
 
 interface AppHeaderProps {
@@ -36,7 +35,7 @@ export function AppHeader(props: AppHeaderProps) {
         },
       })
     }
-  }, [])
+  }, [intl.locale])
 
   const handleLocaleChange = (lang: string) => () => {
     changeLocale(lang)
