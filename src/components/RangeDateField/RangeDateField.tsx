@@ -2,10 +2,10 @@ import { PopperOptions } from 'popper.js'
 import React, { useEffect, useRef, useState } from 'react'
 
 import usePopper from '../../hooks/usePopper'
-import { useStyles, Theme } from '../../styles'
+import { Theme, useStyles } from '../../styles'
 import {
-  ControlledRangeDateCalendarProps,
   ControlledRangeDateCalendar,
+  ControlledRangeDateCalendarProps,
 } from '../Calendar/RangeCalendar/RangeDateCalendar/ControlledRangeDateCalendar'
 import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
@@ -18,10 +18,10 @@ export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange
   minDate?: Date
   maxDate?: Date
   icon?: Icons
-  calendarProps?: ControlledRangeDateCalendarProps
+  calendarProps?: Partial<ControlledRangeDateCalendarProps>
+  popperProps?: PopperOptions
   value?: Period
   onChange?(period: Period): void
-  popperProps?: PopperOptions
 }
 
 export function RangeDateField(props: RangeDateFieldProps) {
@@ -29,7 +29,7 @@ export function RangeDateField(props: RangeDateFieldProps) {
 
   const [period, setPeriod] = useState(value ? value : ({} as Period))
   const [periodInputFocus, setPeriodInputFocus] = useState(1)
-  const [startPointDate, setStartPointDate] = useState()
+  const [visibleDate, setVisibleDate] = useState<Date>(new Date())
   const [open, setOpen] = useState(false)
 
   const { classes, css } = useStyles(createStyles)
@@ -44,13 +44,13 @@ export function RangeDateField(props: RangeDateFieldProps) {
   }, [period])
 
   useEffect(() => {
-    const point = handleInitialVisibleDate()
-    setStartPointDate(point)
-  }, [period, periodInputFocus])
+    const point: Date = handleOnStartPointDateChange()
+    setVisibleDate(point)
+  }, [periodInputFocus, period])
 
   const { style: popperStyle, placement } = usePopper(
     {
-      anchorRef: anchorRef,
+      anchorRef,
       popperRef: popupRef,
       placement: 'bottom',
       ...popperProps,
@@ -58,15 +58,12 @@ export function RangeDateField(props: RangeDateFieldProps) {
     [open]
   )
 
-  const handleInputFocus = (inputOnFocus: number) => {
-    setPeriodInputFocus(inputOnFocus)
-  }
+  const handleInputFocus = (inputOnFocus: number) => setPeriodInputFocus(inputOnFocus)
 
-  const handleOnDayClick = (day: Date) => {
-    finalInputRef.current.focus()
-  }
+  const handleOnDayClick = (dayClicked: Date) => finalInputRef.current.focus()
 
   const handleFocusIn = () => setOpen(true)
+
   const handleFocusOut = () => setOpen(false)
 
   const handlePeriodChanged = (periodFromBaseInput: Period) => {
@@ -82,20 +79,21 @@ export function RangeDateField(props: RangeDateFieldProps) {
     } as Period)
   }
 
-  const handleInitialVisibleDate = () => {
-    if (periodInputFocus) {
-      if (periodInputFocus === 1 && period.startDate) {
-        return period.startDate
-      } else if (periodInputFocus === 2 && period.finalDate) {
-        return period.finalDate
-      } else if (period.startDate && !period.finalDate) {
-        return period.startDate
-      } else if (!period.startDate && period.finalDate) {
-        return period.finalDate
-      }
+  const handleOnStartPointDateChange = (): Date => {
+    if (periodInputFocus === 1 && period?.startDate) {
+      return period.startDate
+    } else if (periodInputFocus === 2 && period?.finalDate) {
+      return period.finalDate
+    } else if (period?.startDate && !period?.finalDate) {
+      return period.startDate
+    } else if (!period?.startDate && period?.finalDate) {
+      return period.finalDate
+    } else {
+      return new Date()
     }
-    return new Date()
   }
+
+  const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
 
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
@@ -118,7 +116,8 @@ export function RangeDateField(props: RangeDateFieldProps) {
             onChange={handleCalendarPeriodChanged}
             onDayClick={handleOnDayClick}
             inputOnFocus={periodInputFocus}
-            onVisibleDateChange={() => startPointDate}
+            visibleDate={visibleDate}
+            onVisibleDateChange={handleOnVisibleDateChange}
             modifiers={{
               disabled: disableByRange(minDate, maxDate),
             }}
@@ -132,6 +131,7 @@ export function RangeDateField(props: RangeDateFieldProps) {
 
 export const createStyles = (theme: Theme) => ({
   root: {
+    zIndex: theme.zIndex.popper,
     background: theme.pallete.surface.main,
     boxShadow: theme.shadows.outer[40],
     borderRadius: theme.radius.popper,

@@ -53,7 +53,8 @@ export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...res
       hoverDate &&
       ((inputOnFocus === 1 && initialDate > day && hoverDate <= day) ||
         isSameDay(day, hoverDate) ||
-        (inputOnFocus === 2 && ((finalDate < day && hoverDate >= day) || (finalDate > day && hoverDate <= day)))))
+        (inputOnFocus === 2 &&
+          ((finalDate < day && hoverDate >= day) || (finalDate > day && isSameDay(day, hoverDate))))))
 
   return (
     <GenericRangeCalendar

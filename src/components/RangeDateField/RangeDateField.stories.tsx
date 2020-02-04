@@ -9,7 +9,7 @@ import { RangeDateField } from './RangeDateField'
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
 const period: Period = { startDate: todayMinus10, finalDate: new Date() }
 
-storiesOf('Components | RangeDatePicker ', module)
+storiesOf('Components|RangeDatePicker ', module)
   .add('default', () => (
     <RangeDateField
       label={text('label', 'Text label')}

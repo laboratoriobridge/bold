@@ -15,7 +15,7 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-storiesOf('Components/SelectInline', module).add('default', () => (
+storiesOf('Components|SelectInline', module).add('default', () => (
   <SelectInline<DefaultItemType>
     items={items}
     itemToString={itemToString}

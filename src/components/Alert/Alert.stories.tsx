@@ -9,7 +9,7 @@ import { Alert } from './Alert'
 
 const click = action('Close has been clicked')
 
-storiesOf('Components/Alert', module)
+storiesOf('Components|Alert', module)
   .add('default', () => (
     <VFlow>
       <Alert type='info' onCloseClick={boolean('onCloseClick', true) && click}>

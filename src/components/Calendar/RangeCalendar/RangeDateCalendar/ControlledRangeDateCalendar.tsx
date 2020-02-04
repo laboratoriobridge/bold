@@ -17,7 +17,6 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
   const { inputOnFocus, onChange, values, onDayClick, ...rest } = props
   const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
   const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
-  const [visibleDate, setVisibleDate] = useState<Date>(inputOnFocus === 2 ? finalDate : initialDate)
   const cmpMounted = useRef(false)
 
   // Call to onChange prop only after component has been mounted
@@ -58,15 +57,12 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
     if (inputOnFocus === 2) {
       if (finalDate && day < initialDate) {
         setInitialDate(day)
+        setFinalDate(undefined)
       } else {
         setFinalDate(day)
       }
       return
     }
-  }
-
-  const handleVisibleDateChange = (day: Date) => {
-    setVisibleDate(day)
   }
 
   return (
@@ -76,8 +72,6 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
       finalDate={finalDate}
       onDayClick={controllDayClick}
       inputOnFocus={inputOnFocus}
-      onVisibleDateChange={handleVisibleDateChange}
-      visibleDate={visibleDate}
     />
   )
 }

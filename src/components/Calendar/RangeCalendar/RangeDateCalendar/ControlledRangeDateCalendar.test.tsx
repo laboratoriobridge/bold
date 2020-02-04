@@ -8,7 +8,8 @@ expect.extend(matchers)
 
 const createComponent = (props: Partial<ControlledRangeDateCalendarProps> = {}) => (
   <ControlledRangeDateCalendar
-    initialVisibleDate={new Date('2019-02-09')}
+    visibleDate={new Date('2019-02-09')}
+    onVisibleDateChange={() => new Date('2019-02-09')}
     values={{
       initialDate: undefined,
       finalDate: undefined,
@@ -195,5 +196,82 @@ describe('[Calendar][RangeDatePicker]', () => {
     fireEvent.click(getByText('11'))
     await wait()
     expect(spy).toHaveBeenCalledTimes(2)
+  })
+
+  it('should change only start date when focus is in first input and the selected date is before start date', () => {
+    const { getByText } = render(
+      createComponent({
+        values: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        inputOnFocus: 1,
+      })
+    )
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('20').getAttribute('aria-selected')).toBe('false')
+
+    fireEvent.click(getByText('10'))
+    expect(getByText('09').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('10').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('20').getAttribute('aria-selected')).toBe('false')
+  })
+
+  it('should start a new period when focus is in first input and the selected date is after final date', () => {
+    const { getByText } = render(
+      createComponent({
+        values: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        inputOnFocus: 1,
+      })
+    )
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('20').getAttribute('aria-selected')).toBe('false')
+
+    fireEvent.click(getByText('21'))
+    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('21').getAttribute('aria-selected')).toBe('true')
+  })
+
+  it('should start a new period when focus is in second input and the selected date is before start date', () => {
+    const { getByText } = render(
+      createComponent({
+        values: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        inputOnFocus: 2,
+      })
+    )
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('20').getAttribute('aria-selected')).toBe('false')
+
+    fireEvent.click(getByText('10'))
+    expect(getByText('09').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('10').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('false')
+  })
+
+  it('should change only final date when focus is in second input and the selected date is after final date', () => {
+    const { getByText } = render(
+      createComponent({
+        values: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        inputOnFocus: 2,
+      })
+    )
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('15').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('20').getAttribute('aria-selected')).toBe('false')
+
+    fireEvent.click(getByText('23'))
+    expect(getByText('14').getAttribute('aria-selected')).toBe('false')
+    expect(getByText('19').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('21').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('23').getAttribute('aria-selected')).toBe('true')
+    expect(getByText('24').getAttribute('aria-selected')).toBe('false')
   })
 })
