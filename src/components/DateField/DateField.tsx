@@ -45,10 +45,8 @@ export function DateField(props: DateFieldProps) {
 
   const [visibleDate, setVisibleDate] = useState(new Date())
   useEffect(() => {
-    if (visibleDate !== value) {
-      setVisibleDate(isValidDate(value) ? value : new Date())
-    }
-  }, [value, visibleDate])
+    setVisibleDate(isValidDate(value) ? value : new Date())
+  }, [value])
 
   const { style: popperStyle, placement } = usePopper(
     {
