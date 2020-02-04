@@ -47,7 +47,7 @@ export function Calendar(props: CalendarProps) {
         return props.onDayClick && props.onDayClick(day)
       }
     },
-    [allModifiers, props.onDayClick]
+    [allModifiers, onVisibleDateChange, props]
   )
 
   return (

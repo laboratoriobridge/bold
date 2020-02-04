@@ -24,7 +24,7 @@ describe('DateField', () => {
     )
     expect(container).toMatchSnapshot()
   })
-  ;['', null, false, undefined].map((value: any) => {
+  ;['', null, false, undefined].forEach((value: any) => {
     it(`should gracefully treat "${value}" as value`, () => {
       const { container } = render(<DateField value={value} />)
       fireEvent.focus(container.querySelector('input'))
@@ -61,6 +61,15 @@ describe('DateField', () => {
     expect(container.querySelector('[data-date="2018-10-15"] span').className).not.toEqual(
       container.querySelector('[data-date="2018-10-16"] span').className
     )
+  })
+  it('should open calendar when clicked on input', () => {
+    const { container } = render(<DateField value={new Date('2018-10-10')} />)
+    fireEvent.focus(container.querySelector('input'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).not.toBeNull()
+    fireEvent.click(container.querySelector('[data-date="2018-10-10"] span'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).toBeNull()
+    fireEvent.click(container.querySelector('input'))
+    expect(container.querySelector('[data-date="2018-10-10"]')).not.toBeNull()
   })
 })
 

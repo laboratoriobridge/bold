@@ -45,9 +45,7 @@ export function DateField(props: DateFieldProps) {
 
   const [visibleDate, setVisibleDate] = useState(new Date())
   useEffect(() => {
-    if (visibleDate !== value) {
-      setVisibleDate(isValidDate(value) ? value : new Date())
-    }
+    setVisibleDate(isValidDate(value) ? value : new Date())
   }, [value])
 
   const { style: popperStyle, placement } = usePopper(
@@ -66,6 +64,7 @@ export function DateField(props: DateFieldProps) {
     return props.onChange(day)
   }
 
+  const handleIconClick = () => setOpen(true)
   const handleInputIconClick = () => setOpen(true)
   const handleFocusIn = () => setOpen(true)
   const handleFocusOut = () => setOpen(false)
@@ -79,6 +78,7 @@ export function DateField(props: DateFieldProps) {
         value={value}
         icon='calendarOutline'
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
+        onClick={composeHandlers(handleIconClick, onClick)}
         {...rest}
       />
 
