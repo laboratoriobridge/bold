@@ -50,6 +50,7 @@ Array [
   "Portal",
   "Progress",
   "Radio",
+  "RangeDateField",
   "RootRef",
   "SelectMenu",
   "SelectMenuItem",

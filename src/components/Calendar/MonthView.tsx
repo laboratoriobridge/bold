@@ -18,6 +18,7 @@ export interface MonthViewProps {
   renderDay?(day: Date): React.ReactNode
   renderWeekName?(firstWeekDay: Date): React.ReactNode
   createDayStyles?(day: Date, props: MonthViewProps): Interpolation
+  isDaySelected?(day: Date): boolean
 }
 
 export function MonthView(props: MonthViewProps) {
@@ -47,6 +48,7 @@ export function MonthView(props: MonthViewProps) {
                   onClick={handleDayClick(day)}
                   onMouseOver={handleDayHover(day)}
                   role='button'
+                  aria-selected={props.isDaySelected && props.isDaySelected(day)}
                 >
                   {renderDay(day)}
                 </span>
