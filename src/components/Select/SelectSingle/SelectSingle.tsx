@@ -3,11 +3,11 @@ import React, { useRef } from 'react'
 import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
 import { Omit } from '../../../util'
-import { composeRefs } from '../../../util/react'
+import { composeRefs, composeHandlers } from '../../../util/react'
 import { FormControl } from '../../FormControl'
 import { TextInput, TextInputProps } from '../../TextField'
 
-import { SelectDownshift, SelectDownshiftProps, SelectDownshiftRenderProps } from './SelectDownshift'
+import { SelectDownshift, SelectDownshiftProps } from './SelectDownshift'
 import { SelectDownshiftMenu, SelectDownshiftMenuProps } from './SelectDownshiftMenu'
 
 export interface DefaultItemType {
@@ -54,27 +54,6 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
   } = props
 
   const internalInputRef = useRef<HTMLInputElement>()
-
-  const handleClear = (downshift: SelectDownshiftRenderProps<T>) => (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    downshift.clearSelection()
-    if (props.onClear) {
-      props.onClear(e)
-    }
-  }
-
-  const handleInputIconClick = ({ toggleMenu }: SelectDownshiftRenderProps<T>) => () => toggleMenu()
-  const handleInputClick = ({ openMenu }: SelectDownshiftRenderProps<T>) => () => openMenu()
-  const handleInputFocus = ({ openMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
-    openMenu()
-    props.onFocus && props.onFocus(e)
-  }
-  const handleInputBlur = ({ closeMenu }: SelectDownshiftRenderProps<T>) => (e: React.FocusEvent<HTMLInputElement>) => {
-    closeMenu()
-    props.onBlur && props.onBlur(e)
-  }
-
   const { css } = useStyles()
 
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
@@ -96,25 +75,35 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         labelId={formControlProps.labelId}
       >
         {downshift => {
-          const { isOpen: downshiftOpen, getInputProps, visibleItems, inputValue } = downshift
+          const {
+            isOpen: downshiftOpen,
+            getInputProps,
+            visibleItems,
+            inputValue,
+            openMenu,
+            toggleMenu,
+            clearSelection,
+          } = downshift
+
+          const downshiftInputProps = getInputProps({
+            onBlur: composeHandlers(props.onBlur),
+            onFocus: composeHandlers(openMenu, props.onFocus),
+            onClick: composeHandlers(openMenu, props.onClick),
+          } as any)
 
           return (
             <div className={css(style)}>
               <div>
                 <TextInput
                   icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-                  inputRef={composeRefs(internalInputRef, inputRef) as any}
-                  {...rest}
-                  onClick={handleInputClick(downshift)}
-                  onClear={handleClear(downshift)}
-                  onIconClick={handleInputIconClick(downshift)}
-                  {...getInputProps({
-                    onBlur: handleInputBlur(downshift),
-                    onFocus: handleInputFocus(downshift),
-                  } as any)}
-                  {...inputProps}
-                  value={inputValue ? inputValue : ''}
+                  onIconClick={composeHandlers(toggleMenu, props.onIconClick)}
+                  onClear={composeHandlers(clearSelection, props.onClear)}
                   invalid={invalid}
+                  {...rest}
+                  {...downshiftInputProps}
+                  {...inputProps}
+                  inputRef={composeRefs(internalInputRef, inputRef) as any}
+                  value={inputValue ? inputValue : ''}
                 />
               </div>
               <SelectDownshiftMenu

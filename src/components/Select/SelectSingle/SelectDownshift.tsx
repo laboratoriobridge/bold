@@ -65,7 +65,7 @@ export function defaultSelectFilter<T>(
 export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
   const { items, onFilterChange, children, createNewItem, openOnFocus, keepFilterAfterSelect, ...rest } = props
 
-  const stateReducer = useMemo(() => createReducer(props), [openOnFocus, props.stateReducer])
+  const stateReducer = useMemo(() => createReducer(props), [props])
 
   const [visibleItems, setVisibleItems] = useState<T[]>(items)
   useEffect(() => {
