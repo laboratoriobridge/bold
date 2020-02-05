@@ -1,0 +1,25 @@
+---
+name: Proposing new components
+about: This template allows users to propose a new pattern
+title: ''
+labels: new component
+assignees: ''
+
+---
+
+# Propose a new pattern ✨
+
+A Bold component needs to be flexible enough so it can be used across a wide range of scenarios and shouldn't be constrained to a specific number of applications.
+ 
+### **Visual**
+Provide a screenshot or link to a prototype of your pattern proposal.
+
+### **Context**
+Where and when might this proposed pattern be used?
+
+### **State**
+Does this pattern have state? If so, what are the different states (e.g. accordion with closed/open states)?
+
+### **Progressive enhancement**
+A pattern should be designed small screen first. How does this pattern scale up?
+How will this pattern degrade on less competent browsers?
