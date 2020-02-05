@@ -12,8 +12,8 @@ export function Paragraph(props: any) {
 
 export function createHeading(level: number) {
   return (props: any) => {
-    const { classes } = useStyles(createStyles)
-    return <Heading level={level} style={classes.heading} {...props} />
+    const { classes, css } = useStyles(createStyles)
+    return <Heading level={level} {...props} style={css(props.style, classes.heading)} />
   }
 }
 
