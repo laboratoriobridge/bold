@@ -74,6 +74,8 @@ export type Icons =
   | 'download'
   | 'dropFilled'
   | 'dropOutline'
+  | 'dumbbellFilled'
+  | 'dumbbellOutline'
   | 'emailFilled'
   | 'emailOutline'
   | 'exchange'
@@ -134,7 +136,10 @@ export type Icons =
   | 'minimize'
   | 'minus'
   | 'module'
+  | 'mugFilled'
+  | 'mugOutline'
   | 'multipleUsers'
+  | 'multipleUsersOutline'
   | 'needleFilled'
   | 'needleOutline'
   | 'nurseOutline'
@@ -296,6 +301,8 @@ export const IconMap: {
   download: Components.Download,
   dropFilled: Components.DropFilled,
   dropOutline: Components.DropOutline,
+  dumbbellFilled: Components.DumbbellFilled,
+  dumbbellOutline: Components.DumbbellOutline,
   emailFilled: Components.EmailFilled,
   emailOutline: Components.EmailOutline,
   exchange: Components.Exchange,
@@ -356,7 +363,10 @@ export const IconMap: {
   minimize: Components.Minimize,
   minus: Components.Minus,
   module: Components.Module,
+  mugFilled: Components.MugFilled,
+  mugOutline: Components.MugOutline,
   multipleUsers: Components.MultipleUsers,
+  multipleUsersOutline: Components.MultipleUsersOutline,
   needleFilled: Components.NeedleFilled,
   needleOutline: Components.NeedleOutline,
   nurseOutline: Components.NurseOutline,
