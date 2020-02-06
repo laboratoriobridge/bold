@@ -2,13 +2,7 @@ import React from 'react'
 
 const SvgPillFilled = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
-    <defs>
-      <path
-        id='pill-filled_svg__a'
-        d='M12.021.02c1.438 0 5 1 5 5v14.002c0 1.999-1.468 5-5 5-3.531 0-5-3-5-5V5.02c0-4 3.562-5 5-5zm0 2c-2.106 0-3 2-3 3v7h6v-7c0-1-.893-3-3-3z'
-      />
-    </defs>
-    <use transform='rotate(-45 12.021 12.021)' xlinkHref='#pill-filled_svg__a' />
+    <path d='M3.536 3.536c1.016-1.017 4.242-2.829 7.07 0l9.9 9.9c1.414 1.413 2.498 4.574 0 7.07-2.496 2.498-5.655 1.416-7.07 0l-9.9-9.9c-2.829-2.828-1.017-6.054 0-7.07zM4.95 4.95c-1.49 1.49-.707 3.535 0 4.242l4.95 4.95L14.141 9.9l-4.95-4.95c-.707-.706-2.753-1.489-4.242 0z' />
   </svg>
 )
 
