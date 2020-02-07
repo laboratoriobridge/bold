@@ -1,8 +1,7 @@
 import React from 'react'
 import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 
-import { LocaleContext, useLocale } from '../../i18n'
-import ptBr from '../../i18n/locales/pt-BR'
+import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
