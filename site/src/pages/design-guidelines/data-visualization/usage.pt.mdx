@@ -1,0 +1,34 @@
+import { TabLinks } from '../../../components/TabLinks'
+
+# Cores
+
+<TabLinks
+  items={[
+    { title: 'Paleta', href: '/design-guidelines/color' },
+    { title: 'Utilização', href: '/design-guidelines/color/usage' },
+  ]}
+/>
+
+Nossas paletas de cores foram criadas com foco na acessibilidade e facilidade de uso. Através delas, é possível
+criar componentes acessíveis e até um modo _dark_, invertendo os níveis de cor.
+
+## Consistência
+
+É possível alterar a cor primária dos componentes mantendo a proporção de contraste, porque todas as
+escalas foram construídas com quantidades semelhantes de brilho em cada nível.
+
+![Consistência da cor nos botões: mesmo nível de brilho](/image/color-consistency.png)
+
+## Acessibilidade
+
+As escalas são divididas em 10 níveis: as cores de 10 a 40 têm uma garantia contrastante de > 4,5: 1 em
+fundos brancos, enquanto os de 70 a 100 têm a mesma garantia em fundos escuros. Dessa forma, nossos componentes respeitam as proporções de contraste adequadas para elementos textuais e interativos e elementos não interativos, de acordo com qualquer paleta.
+
+![Proporções de contraste de cores](/image/color-contrast.png)
+
+## Modo Dark
+
+Todas as paletas foram construídas para funcionar de maneira invertida. Para aplicar o modo Dark basta inverter as cores
+do centro da escala, o que é 50 se torna 60, o que é 40 se torna 70 e assim vai. Para um exemplo prático, basta clicar na lâmpada em nosso cabeçalho!
+
+![Escala de cinza invertida](/image/color-darkui.png)
