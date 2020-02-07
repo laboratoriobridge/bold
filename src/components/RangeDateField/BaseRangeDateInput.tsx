@@ -1,7 +1,7 @@
 import React from 'react'
 import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
 
-import { LocaleContext } from '../../i18n'
+import { LocaleContext, useLocale } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
@@ -63,6 +63,11 @@ export interface BaseRangeDateInputProps {
   finalPlaceholder?: string
 
   /**
+   * A word to separate initial and final date fields
+   */
+  rangeSeparator?: string
+
+  /**
    * "divRef" is used to assign ref
    * to the main div component
    */
@@ -104,12 +109,12 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     onIconClick,
     initialInputRef,
     finalInputRef,
-    startPlaceholder,
-    finalPlaceholder,
     onInputOnFocus,
     minDate,
     maxDate,
     divRef,
+    rangeSeparator,
+    ...rest
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
@@ -185,6 +190,8 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
 
+  const locale = useLocale()
+
   return (
     <div ref={divRef}>
       <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
@@ -196,16 +203,15 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
               onChange={onChangeStart}
               onClear={onClearStart}
-              placeholder={startPlaceholder}
+              placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
               value={period ? period.startDate : undefined}
               onFocus={onInputOnFocusInicial}
+              {...rest}
             />
           </div>
           <span className={classes.spanWrapper}>
-            <LocaleContext.Provider value={ptBr}>
-              <strong>até</strong>
-            </LocaleContext.Provider>
+            <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.interval}</strong>
           </span>
           <div className={classes.fieldWrapper}>
             <DateInput
@@ -214,10 +220,11 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
               onChange={onChangeFinal}
               onClear={onClearFinal}
-              placeholder={finalPlaceholder}
+              placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
               value={period ? period.finalDate : undefined}
               onFocus={onInputOnFocusFinal}
+              {...rest}
             />
           </div>
         </div>
@@ -227,8 +234,6 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 }
 
 BaseRangeDateInput.defaultProps = {
-  startPlaceholder: 'dd/mm/aaaa',
-  finalPlaceholder: 'dd/mm/aaaa',
   icon: 'calendarOutline',
 } as Partial<BaseRangeDateInputProps>
 
