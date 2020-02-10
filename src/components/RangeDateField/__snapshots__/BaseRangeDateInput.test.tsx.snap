@@ -266,6 +266,7 @@ exports[`PeriodInput render should render correctly 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
+                name="undefined.startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -292,6 +293,7 @@ exports[`PeriodInput render should render correctly 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
+                name="undefined.finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -600,6 +602,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
                 autocomplete="off"
                 class="emotion-0"
                 disabled=""
+                name="undefined.startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -627,6 +630,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
                 autocomplete="off"
                 class="emotion-0"
                 disabled=""
+                name="undefined.finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -943,6 +947,7 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
+                name="undefined.startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -969,6 +974,7 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
+                name="undefined.finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
