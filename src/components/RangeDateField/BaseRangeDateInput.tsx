@@ -20,6 +20,11 @@ export interface BaseRangeDateInputProps {
   value?: Period
 
   /**
+   * Component name
+   */
+  name?: string
+
+  /**
    * "minDate" defines the minimum allowed date
    */
   minDate?: Date
@@ -101,18 +106,19 @@ export interface BaseRangeDateInputProps {
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
-    value,
     disabled,
-    onChange,
+    divRef,
     icon,
-    onIconClick,
     initialInputRef,
     finalInputRef,
-    onInputOnFocus,
-    minDate,
     maxDate,
-    divRef,
+    minDate,
+    name,
+    onChange,
+    onIconClick,
+    onInputOnFocus,
     rangeSeparator,
+    value,
     ...rest
   } = props
 
@@ -198,6 +204,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
+              name={`${name}.startDate`}
               disabled={disabled}
               inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
               onChange={onChangeStart}
@@ -215,6 +222,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
+              name={`${name}.finalDate`}
               disabled={disabled}
               inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
               onChange={onChangeFinal}
