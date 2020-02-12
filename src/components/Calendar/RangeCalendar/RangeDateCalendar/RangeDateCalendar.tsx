@@ -8,7 +8,7 @@ import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalend
 export interface RangeDateCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
-  inputOnFocus?: number
+  inputOnFocus: number
 }
 
 export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...rest }: RangeDateCalendarProps) {

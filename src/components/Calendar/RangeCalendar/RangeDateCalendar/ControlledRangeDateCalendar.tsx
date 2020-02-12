@@ -9,31 +9,30 @@ export interface ControlledRangeDateCalendarProps extends CalendarProps {
     initialDate: Date
     finalDate: Date
   }
-  inputOnFocus?: number
+  inputOnFocus: number
   onChange?(initialDate: Date, finalDate: Date): void
 }
 
 export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarProps) {
   const { inputOnFocus, onChange, value, onDayClick, ...rest } = props
-  const { initialDate, finalDate } = value
 
   const controllDayClick = (day: Date) => {
     onDayClick && onDayClick(day)
     if (inputOnFocus === 1) {
-      if (day < initialDate) {
-        onChange && onChange(day, finalDate)
-      } else if (day > finalDate) {
-        onChange && onChange(day, undefined)
+      if (day < value?.initialDate) {
+        onChange(day, value?.finalDate)
+      } else if (day > value?.finalDate) {
+        onChange(day, undefined)
       } else {
-        onChange && onChange(day, finalDate)
+        onChange(day, value?.finalDate)
       }
       return
     }
     if (inputOnFocus === 2) {
-      if (finalDate && day < initialDate) {
-        onChange && onChange(day, undefined)
+      if (value?.finalDate && day < value?.initialDate) {
+        onChange(day, undefined)
       } else {
-        onChange && onChange(initialDate, day)
+        onChange(value?.initialDate, day)
       }
       return
     }
@@ -42,10 +41,15 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
   return (
     <RangeDateCalendar
       {...rest}
-      initialDate={initialDate}
-      finalDate={finalDate}
+      initialDate={value?.initialDate}
+      finalDate={value?.finalDate}
       onDayClick={controllDayClick}
       inputOnFocus={inputOnFocus}
     />
   )
 }
+
+ControlledRangeDateCalendar.defaultProps = {
+  onChange: () => null,
+  onDayClick: () => null,
+} as Partial<ControlledRangeDateCalendarProps>

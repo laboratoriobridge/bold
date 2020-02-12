@@ -15,6 +15,7 @@ const createComponent = (props: Partial<RangeDateCalendarProps> = {}) => (
     onVisibleDateChange={jest.fn()}
     initialDate={undefined}
     finalDate={undefined}
+    inputOnFocus={1}
     {...props}
   />
 )
