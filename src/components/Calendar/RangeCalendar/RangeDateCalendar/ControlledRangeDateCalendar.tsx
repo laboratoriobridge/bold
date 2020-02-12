@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 
 import { CalendarProps } from '../..'
 
 import { RangeDateCalendar } from './RangeDateCalendar'
 
 export interface ControlledRangeDateCalendarProps extends CalendarProps {
-  values?: {
+  value?: {
     initialDate: Date
     finalDate: Date
   }
@@ -14,52 +14,26 @@ export interface ControlledRangeDateCalendarProps extends CalendarProps {
 }
 
 export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarProps) {
-  const { inputOnFocus, onChange, values, onDayClick, ...rest } = props
-  const [initialDate, setInitialDate] = useState<Date>(values ? values.initialDate : undefined)
-  const [finalDate, setFinalDate] = useState<Date>(values ? values.finalDate : undefined)
-  const cmpMounted = useRef(false)
-
-  // Call to onChange prop only after component has been mounted
-  useEffect(() => {
-    if (cmpMounted.current && onChange) {
-      onChange(initialDate, finalDate)
-      return
-    }
-    cmpMounted.current = true
-  }, [initialDate, finalDate])
-
-  useEffect(() => {
-    if (values) {
-      if (initialDate && finalDate && initialDate > finalDate) {
-        setInitialDate(values.finalDate)
-        setFinalDate(values.initialDate)
-      } else {
-        setInitialDate(values.initialDate)
-        setFinalDate(values.finalDate)
-      }
-    }
-  }, [values])
+  const { inputOnFocus, onChange, value, onDayClick, ...rest } = props
+  const { initialDate, finalDate } = value
 
   const controllDayClick = (day: Date) => {
     onDayClick && onDayClick(day)
     if (inputOnFocus === 1) {
       if (day < initialDate) {
-        setInitialDate(day)
-        setFinalDate(finalDate)
+        onChange && onChange(day, finalDate)
       } else if (day > finalDate) {
-        setInitialDate(day)
-        setFinalDate(undefined)
+        onChange && onChange(day, undefined)
       } else {
-        setInitialDate(day)
+        onChange && onChange(day, finalDate)
       }
       return
     }
     if (inputOnFocus === 2) {
       if (finalDate && day < initialDate) {
-        setInitialDate(day)
-        setFinalDate(undefined)
+        onChange && onChange(day, undefined)
       } else {
-        setFinalDate(day)
+        onChange && onChange(initialDate, day)
       }
       return
     }

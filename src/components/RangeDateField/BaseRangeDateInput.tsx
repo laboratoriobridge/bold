@@ -1,5 +1,5 @@
 import React from 'react'
-import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
+import { CSSProperties, Ref, useRef } from 'react'
 
 import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
@@ -125,14 +125,8 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const [period, setPeriod] = useState(value)
   const { classes, css } = useStyles(createStyles, disabled)
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
-
-  useEffect(() => {
-    onChange && onChange(value)
-    setPeriod(value ? value : ({ startDate: undefined, finalDate: undefined } as Period))
-  }, [value])
 
   const handleMinMaxDates = (date: Date) => {
     if (minDate && maxDate) {
@@ -149,10 +143,11 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const onChangeStart = (date: Date) => {
     const startDate = handleMinMaxDates(date)
-    const finalDate = startDate && startDate > period.finalDate ? undefined : period.finalDate
+    const finalDate =
+      value.startDate && value.finalDate && startDate && startDate > value.finalDate ? undefined : value.finalDate
     const aux = { startDate, finalDate } as Period
+
     onChange && onChange(aux)
-    setPeriod(aux)
     if (startDate) {
       secondDateFieldRef.current.focus()
     }
@@ -160,24 +155,26 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const onChangeFinal = (date: Date) => {
     const auxFinalDate = handleMinMaxDates(date)
-    const startDate = auxFinalDate && auxFinalDate < period.startDate ? auxFinalDate : period.startDate
-    const finalDate = auxFinalDate && auxFinalDate < period.startDate ? undefined : auxFinalDate
+    const startDate =
+      value.startDate && value.finalDate && auxFinalDate && auxFinalDate < value.startDate
+        ? auxFinalDate
+        : value.startDate
+    const finalDate =
+      value.startDate && value.finalDate && auxFinalDate && auxFinalDate < value.startDate ? undefined : auxFinalDate
+
     const aux = { startDate, finalDate } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: period.finalDate } as Period
+    const aux = { startDate: undefined, finalDate: value.finalDate } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: period.startDate, finalDate: undefined } as Period
+    const aux = { startDate: value.startDate, finalDate: undefined } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
     secondDateFieldRef.current.focus()
   }
 
@@ -211,7 +208,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               onClear={onClearStart}
               placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={period ? period.startDate : undefined}
+              value={value.startDate}
               onFocus={onInputOnFocusInicial}
               {...rest}
             />
@@ -229,7 +226,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               onClear={onClearFinal}
               placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={period ? period.finalDate : undefined}
+              value={value.finalDate}
               onFocus={onInputOnFocusFinal}
               {...rest}
             />
