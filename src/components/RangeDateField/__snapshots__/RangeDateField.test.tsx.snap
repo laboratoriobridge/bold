@@ -270,7 +270,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    name="undefined.startDate"
+                    name="startDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -297,7 +297,7 @@ exports[`PeriodField render should render correctly 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    name="undefined.finalDate"
+                    name="finalDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -612,7 +612,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     autocomplete="off"
                     class="emotion-0"
                     disabled=""
-                    name="undefined.startDate"
+                    name="startDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -640,7 +640,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     autocomplete="off"
                     class="emotion-0"
                     disabled=""
-                    name="undefined.finalDate"
+                    name="finalDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -963,7 +963,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    name="undefined.startDate"
+                    name="startDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -990,7 +990,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    name="undefined.finalDate"
+                    name="finalDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -1434,9 +1434,8 @@ exports[`PeriodField render should render correctly when opened 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    calendarprops="[object Object]"
                     class="emotion-0"
-                    name="undefined.startDate"
+                    name="startDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
@@ -1462,9 +1461,8 @@ exports[`PeriodField render should render correctly when opened 1`] = `
                 >
                   <input
                     autocomplete="off"
-                    calendarprops="[object Object]"
                     class="emotion-0"
-                    name="undefined.finalDate"
+                    name="finalDate"
                     placeholder="mm/dd/yyyy"
                     type="text"
                     value=""

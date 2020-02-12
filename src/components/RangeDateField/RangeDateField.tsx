@@ -25,7 +25,7 @@ export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange
 }
 
 export function RangeDateField(props: RangeDateFieldProps) {
-  const { onChange, popperProps, minDate, maxDate, value, icon, ...rest } = props
+  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, ...rest } = props
 
   const [period, setPeriod] = useState(value ? value : ({} as Period))
   const [periodInputFocus, setPeriodInputFocus] = useState(1)
@@ -39,7 +39,6 @@ export function RangeDateField(props: RangeDateFieldProps) {
   const popupRef = useRef<HTMLDivElement>()
 
   useEffect(() => {
-    console.log(period)
     onChange && onChange(period)
   }, [onChange, period])
 
@@ -119,7 +118,7 @@ export function RangeDateField(props: RangeDateFieldProps) {
             modifiers={{
               disabled: disableByRange(minDate, maxDate),
             }}
-            {...props.calendarProps}
+            {...calendarProps}
           />
         </div>
       )}

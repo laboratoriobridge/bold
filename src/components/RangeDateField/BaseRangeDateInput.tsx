@@ -144,7 +144,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const onChangeStart = (date: Date) => {
     const startDate = handleMinMaxDates(date)
     const finalDate =
-      value.startDate && value.finalDate && startDate && startDate > value.finalDate ? undefined : value.finalDate
+      value?.startDate && value?.finalDate && startDate && startDate > value?.finalDate ? undefined : value?.finalDate
     const aux = { startDate, finalDate } as Period
 
     onChange && onChange(aux)
@@ -156,11 +156,11 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const onChangeFinal = (date: Date) => {
     const auxFinalDate = handleMinMaxDates(date)
     const startDate =
-      value.startDate && value.finalDate && auxFinalDate && auxFinalDate < value.startDate
+      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate
         ? auxFinalDate
-        : value.startDate
+        : value?.startDate
     const finalDate =
-      value.startDate && value.finalDate && auxFinalDate && auxFinalDate < value.startDate ? undefined : auxFinalDate
+      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate ? undefined : auxFinalDate
 
     const aux = { startDate, finalDate } as Period
     onChange && onChange(aux)
@@ -202,7 +202,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               onClear={onClearStart}
               placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={value.startDate}
+              value={value?.startDate}
               onFocus={onInputOnFocusInicial}
               {...rest}
             />
@@ -220,7 +220,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
               onClear={onClearFinal}
               placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={value.finalDate}
+              value={value?.finalDate}
               onFocus={onInputOnFocusFinal}
               {...rest}
             />

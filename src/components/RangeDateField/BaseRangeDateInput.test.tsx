@@ -3,13 +3,14 @@ import React from 'react'
 
 import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
+import enUs from '../../i18n/locales/en-US'
 
 import { BaseRangeDateInput, Period } from './BaseRangeDateInput'
 
 const FIRST_INPUT = 0
 const SECOND_INPUT = 1
 
-describe('PeriodInput', () => {
+describe('BaseRangeDateInput', () => {
   describe('render', () => {
     it('should render correctly', () => {
       const { container } = render(<BaseRangeDateInput />)
@@ -65,7 +66,7 @@ describe('PeriodInput', () => {
   })
 
   describe('validate entry', () => {
-    it('should call onChange only when a valid date is typed', async () => {
+    it(`should't call onChange only when a valid date is typed`, async () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} />)
 
@@ -74,7 +75,7 @@ describe('PeriodInput', () => {
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/201' } })
       await wait()
-      expect(change).toHaveBeenLastCalledWith(undefined)
+      expect(change).not.toBeCalled()
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2019' } })
       await wait()
@@ -87,7 +88,7 @@ describe('PeriodInput', () => {
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2019' } })
       await wait()
       expect(change).toHaveBeenLastCalledWith({
-        startDate: new Date('2019-01-01'),
+        startDate: undefined,
         finalDate: new Date('2019-02-02'),
       } as Period)
     })
@@ -135,12 +136,20 @@ describe('PeriodInput', () => {
 
   describe('customization', () => {
     it('should allow placeholder customization via locale context', () => {
-      const { container } = render(
+      const { rerender, container } = render(
         <LocaleContext.Provider value={ptBr}>
           <BaseRangeDateInput />
         </LocaleContext.Provider>
       )
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
+
+      rerender(
+        <LocaleContext.Provider value={enUs}>
+          w
+          <BaseRangeDateInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.dateInput.placeholder)
     })
   })
 })

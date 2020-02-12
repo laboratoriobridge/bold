@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PeriodInput render should render correctly 1`] = `
+exports[`BaseRangeDateInput render should render correctly 1`] = `
 .emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -266,7 +266,7 @@ exports[`PeriodInput render should render correctly 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
-                name="undefined.startDate"
+                name="startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -293,7 +293,7 @@ exports[`PeriodInput render should render correctly 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
-                name="undefined.finalDate"
+                name="finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -331,7 +331,7 @@ exports[`PeriodInput render should render correctly 1`] = `
 </div>
 `;
 
-exports[`PeriodInput render should render correctly when disabled 1`] = `
+exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -602,7 +602,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
                 autocomplete="off"
                 class="emotion-0"
                 disabled=""
-                name="undefined.startDate"
+                name="startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -630,7 +630,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
                 autocomplete="off"
                 class="emotion-0"
                 disabled=""
-                name="undefined.finalDate"
+                name="finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -669,7 +669,7 @@ exports[`PeriodInput render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`PeriodInput render should render correctly when invalid 1`] = `
+exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
 .emotion-4 {
   cursor: default;
   background: transparent;
@@ -947,7 +947,7 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
-                name="undefined.startDate"
+                name="startDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
@@ -974,7 +974,7 @@ exports[`PeriodInput render should render correctly when invalid 1`] = `
               <input
                 autocomplete="off"
                 class="emotion-0"
-                name="undefined.finalDate"
+                name="finalDate"
                 placeholder="mm/dd/yyyy"
                 type="text"
                 value=""
