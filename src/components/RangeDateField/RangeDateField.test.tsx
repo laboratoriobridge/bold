@@ -38,7 +38,7 @@ describe('RangeDateField', () => {
     })
 
     it('should show calendar correctly when only initialDate or finalDate are defined and is focused', () => {
-      const { rerender, container } = render(
+      const { container } = render(
         <RangeDateField value={{ startDate: new Date('2018-10-01'), finalDate: undefined }} />
       )
       const inputs = container.querySelectorAll('input')
@@ -46,8 +46,13 @@ describe('RangeDateField', () => {
       fireEvent.focus(inputs[0])
       expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
       expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
+    })
 
-      rerender(<RangeDateField value={{ startDate: undefined, finalDate: new Date('2018-11-15') }} />)
+    it('should show calendar correctly when only initialDate or finalDate are defined and is focused', () => {
+      const { container } = render(
+        <RangeDateField value={{ startDate: new Date('2018-10-01'), finalDate: undefined }} />
+      )
+      const inputs = container.querySelectorAll('input')
 
       fireEvent.focus(inputs[1])
       expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
