@@ -92,6 +92,27 @@ describe('BaseRangeDateInput', () => {
         finalDate: new Date('2019-02-02'),
       } as Period)
     })
+
+    it(`should call onChange with undefined when a invalid date is typed (before minDate and after maxDate)`, async () => {
+      const change = jest.fn()
+      const { container } = render(
+        <BaseRangeDateInput onChange={change} minDate={new Date('2019-01-10')} maxDate={new Date('2019-01-15')} />
+      )
+
+      const inputs = container.querySelectorAll('input')
+
+      fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+
+      fireEvent.change(inputs[SECOND_INPUT], { target: { value: '16/01/2019' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+
+      fireEvent.change(inputs[FIRST_INPUT], { target: { value: '13/01/2019' } })
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2019-01-13'),
+        finalDate: undefined,
+      } as Period)
+    })
   })
 
   describe('clear actions', () => {

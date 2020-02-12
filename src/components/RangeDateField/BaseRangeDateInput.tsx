@@ -145,7 +145,10 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const startDate = handleMinMaxDates(date)
     const finalDate =
       value?.startDate && value?.finalDate && startDate && startDate > value?.finalDate ? undefined : value?.finalDate
-    const aux = { startDate, finalDate } as Period
+    const aux =
+      startDate && finalDate && startDate > finalDate
+        ? ({ startDate: finalDate, finalDate: startDate } as Period)
+        : ({ startDate, finalDate } as Period)
 
     onChange && onChange(aux)
     if (startDate) {
@@ -162,7 +165,10 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const finalDate =
       value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate ? undefined : auxFinalDate
 
-    const aux = { startDate, finalDate } as Period
+    const aux =
+      startDate && finalDate && finalDate < startDate
+        ? ({ startDate: finalDate, finalDate: startDate } as Period)
+        : ({ startDate, finalDate } as Period)
     onChange && onChange(aux)
   }
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PeriodField render should render correctly 1`] = `
+exports[`RangeDateField render should render correctly 1`] = `
 .emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -337,7 +337,7 @@ exports[`PeriodField render should render correctly 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when disabled 1`] = `
+exports[`RangeDateField render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -681,7 +681,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when invalid 1`] = `
+exports[`RangeDateField render should render correctly when invalid 1`] = `
 .emotion-4 {
   cursor: default;
   background: transparent;
@@ -1030,7 +1030,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when opened 1`] = `
+exports[`RangeDateField render should render correctly when opened 1`] = `
 .emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -2034,3 +2034,153 @@ exports[`PeriodField render should render correctly when opened 1`] = `
   </div>
 </div>
 `;
+
+exports[`RangeDateField render should show calendar correctly when finalDate is focused 1`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when finalDate is focused 2`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  15
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when initialDate is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when initialDate is focused 2`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when inputs are cleaned 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+<span
+  aria-selected="false"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 2`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 3`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 4`] = `"received is not a function"`;
