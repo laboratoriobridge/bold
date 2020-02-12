@@ -178,17 +178,11 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     secondDateFieldRef.current.focus()
   }
 
-  const defaultHandleOnClick = () => {
-    firstDateFieldRef.current.focus()
-  }
+  const defaultHandleOnClick = () => firstDateFieldRef.current.focus()
 
-  const onInputOnFocusInicial = () => {
-    onInputOnFocus && onInputOnFocus(1)
-  }
+  const onInputOnFocusInicial = () => onInputOnFocus && onInputOnFocus(1)
 
-  const onInputOnFocusFinal = () => {
-    onInputOnFocus && onInputOnFocus(2)
-  }
+  const onInputOnFocusFinal = () => onInputOnFocus && onInputOnFocus(2)
 
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
 
@@ -201,7 +195,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
-              name={`${name}.startDate`}
+              name={name ? `${name}.startDate` : 'startDate'}
               disabled={disabled}
               inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
               onChange={onChangeStart}
@@ -219,7 +213,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
-              name={`${name}.finalDate`}
+              name={name ? `${name}.finalDate` : 'finalDate'}
               disabled={disabled}
               inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
               onChange={onChangeFinal}
