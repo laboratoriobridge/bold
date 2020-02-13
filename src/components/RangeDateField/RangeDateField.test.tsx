@@ -50,7 +50,7 @@ describe('RangeDateField', () => {
 
     it('should show calendar correctly when only finalDate is defined and is focused', () => {
       const { container } = render(
-        <RangeDateField value={{ startDate: new Date('2018-10-01'), finalDate: undefined }} />
+        <RangeDateField value={{ startDate: undefined, finalDate: new Date('2018-10-01') }} />
       )
       const inputs = container.querySelectorAll('input')
 
@@ -59,7 +59,7 @@ describe('RangeDateField', () => {
       expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
     })
 
-    it('should show calendar correctly when startDate is focused', () => {
+    it('should show calendar correctly when startDate and finalDate are defined and startDate is focused', () => {
       const { container } = render(
         <RangeDateField value={{ startDate: new Date('2018-10-01'), finalDate: new Date('2018-11-15') }} />
       )
@@ -70,7 +70,7 @@ describe('RangeDateField', () => {
       expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
     })
 
-    it('should show calendar correctly when finalDate is focused', () => {
+    it('should show calendar correctly when startDate and finalDate are defined and finalDate is focused', () => {
       const { container } = render(
         <RangeDateField value={{ startDate: new Date('2018-10-01'), finalDate: new Date('2018-11-15') }} />
       )
@@ -194,6 +194,44 @@ describe('RangeDateField', () => {
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-10-05'),
           finalDate: new Date('2018-11-15'),
+        } as Period)
+      })
+
+      it('should call onchange with switched dates when finalDate input has focus and the selected date is before startDate', () => {
+        const change = jest.fn()
+        const { container, getByText } = render(
+          <RangeDateField
+            onChange={change}
+            value={{ startDate: new Date('2018-10-10'), finalDate: undefined }}
+            calendarProps={{ visibleDate: new Date('2018-09-15') }}
+          />
+        )
+        const inputs = container.querySelectorAll('input')
+
+        fireEvent.focus(inputs[1])
+        fireEvent.click(getByText('10'))
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-09-10'),
+          finalDate: new Date('2018-10-10'),
+        } as Period)
+      })
+
+      it('should call onchange with switched dates when startDate input has focus and the selected date is after finalDate', () => {
+        const change = jest.fn()
+        const { container, getByText } = render(
+          <RangeDateField
+            onChange={change}
+            value={{ startDate: undefined, finalDate: new Date('2018-10-10') }}
+            calendarProps={{ visibleDate: new Date('2018-09-15') }}
+          />
+        )
+        const inputs = container.querySelectorAll('input')
+
+        fireEvent.focus(inputs[0])
+        fireEvent.click(getByText('10'))
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-09-10'),
+          finalDate: new Date('2018-10-10'),
         } as Period)
       })
     })

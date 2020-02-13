@@ -216,6 +216,24 @@ describe('BaseRangeDateInput', () => {
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.dateInput.placeholder)
     })
 
+    it('should allow ptBr i18n in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={ptBr}>
+          <BaseRangeDateInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('span').textContent).toEqual(ptBr.rangeDateField.separator)
+    })
+
+    it('should allow enUs i18n in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={enUs}>
+          <BaseRangeDateInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('span').textContent).toEqual(enUs.rangeDateField.separator)
+    })
+
     it('should be possible to set a name to inputs', () => {
       const name = 'baseRangeDate'
       const { container } = render(<BaseRangeDateInput name={name} />)
