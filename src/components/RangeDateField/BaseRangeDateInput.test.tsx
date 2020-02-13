@@ -28,8 +28,19 @@ describe('BaseRangeDateInput', () => {
     })
   })
 
+  describe('on click', () => {
+    it('should set focus on startDate input when calendar button is clicked', () => {
+      const { container } = render(<BaseRangeDateInput />)
+      const button = container.querySelector('button')
+      const inputs = container.querySelectorAll('input')
+      fireEvent.click(button)
+      expect(inputs[0]).toEqual(document.activeElement)
+      expect(inputs[1]).not.toEqual(document.activeElement)
+    })
+  })
+
   describe('format', () => {
-    it('should accept and format period as value', async () => {
+    it('should accept and format period as value', () => {
       const { container } = render(
         <BaseRangeDateInput
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
@@ -42,7 +53,7 @@ describe('BaseRangeDateInput', () => {
   })
 
   describe('change actions', () => {
-    it('should call onChange with finalDate as undefined when second input is cleared', async () => {
+    it('should call onChange with finalDate as undefined when second input is cleared', () => {
       const change = jest.fn()
       const { container } = render(
         <BaseRangeDateInput
@@ -60,7 +71,7 @@ describe('BaseRangeDateInput', () => {
   })
 
   describe('validate entry', () => {
-    it(`should't call onChange only when a valid date is typed`, async () => {
+    it(`should't call onChange only when a valid date is typed`, () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} />)
 
@@ -120,7 +131,7 @@ describe('BaseRangeDateInput', () => {
       } as Period)
     })
 
-    it(`should call onChange with undefined when a invalid date is typed after maxDate`, async () => {
+    it(`should call onChange with undefined when a invalid date is typed after maxDate`, () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} maxDate={new Date('2019-01-15')} />)
       const inputs = container.querySelectorAll('input')
@@ -168,7 +179,7 @@ describe('BaseRangeDateInput', () => {
   })
 
   describe('clear actions', () => {
-    it('should clear only second input when click clear in second input', async () => {
+    it('should clear only second input when click clear in second input', () => {
       const change = jest.fn()
       const { container } = render(
         <BaseRangeDateInput
@@ -182,7 +193,7 @@ describe('BaseRangeDateInput', () => {
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
     })
 
-    it('should clear only first input when click clear in first input', async () => {
+    it('should clear only first input when click clear in first input', () => {
       const change = jest.fn()
       const { container } = render(
         <BaseRangeDateInput
@@ -205,6 +216,7 @@ describe('BaseRangeDateInput', () => {
         </LocaleContext.Provider>
       )
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
+      expect(container).toMatchSnapshot()
     })
 
     it('should allow enUS placeholder customization via locale context', () => {
@@ -214,6 +226,7 @@ describe('BaseRangeDateInput', () => {
         </LocaleContext.Provider>
       )
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.dateInput.placeholder)
+      expect(container).toMatchSnapshot()
     })
 
     it('should allow ptBr i18n in range separator', () => {
@@ -223,6 +236,7 @@ describe('BaseRangeDateInput', () => {
         </LocaleContext.Provider>
       )
       expect(container.querySelector('span').textContent).toEqual(ptBr.rangeDateField.separator)
+      expect(container).toMatchSnapshot()
     })
 
     it('should allow enUs i18n in range separator', () => {
@@ -232,6 +246,7 @@ describe('BaseRangeDateInput', () => {
         </LocaleContext.Provider>
       )
       expect(container.querySelector('span').textContent).toEqual(enUs.rangeDateField.separator)
+      expect(container).toMatchSnapshot()
     })
 
     it('should be possible to set a name to inputs', () => {

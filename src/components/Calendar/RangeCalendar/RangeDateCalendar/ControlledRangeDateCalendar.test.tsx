@@ -18,9 +18,14 @@ const createComponent = (props: Partial<ControlledRangeDateCalendarProps> = {}) 
   />
 )
 
-describe('[Calendar][RangeDatePicker]', () => {
+describe('ControlledRangeDateCalendar', () => {
   it('Should render correclty', () => {
     const { container } = render(createComponent())
+    expect(container).toMatchSnapshot()
+  })
+
+  it('Should render correctly without receiving a value', () => {
+    const { container } = render(createComponent({ value: undefined, inputOnFocus: 1 }))
     expect(container).toMatchSnapshot()
   })
 
