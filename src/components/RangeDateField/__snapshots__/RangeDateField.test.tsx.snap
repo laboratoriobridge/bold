@@ -2067,38 +2067,6 @@ exports[`RangeDateField render should show calendar correctly when finalDate is 
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when initialDate is focused 1`] = `
-.emotion-0 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-  background: #0069D0;
-  color: #FFFFFF;
-  font-weight: bold;
-}
-
-.emotion-0:hover {
-  cursor: pointer;
-  background: #F0F0F5;
-}
-
-.emotion-0:hover {
-  background: #0069D0;
-  color: #FFFFFF;
-}
-
-<span
-  aria-selected="true"
-  class="emotion-0"
-  role="button"
->
-  01
-</span>
-`;
-
-exports[`RangeDateField render should show calendar correctly when initialDate is focused 2`] = `"received is not a function"`;
-
 exports[`RangeDateField render should show calendar correctly when inputs are cleaned 1`] = `
 .emotion-0 {
   width: 2rem;
@@ -2121,7 +2089,7 @@ exports[`RangeDateField render should show calendar correctly when inputs are cl
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 1`] = `
+exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2151,9 +2119,9 @@ exports[`RangeDateField render should show calendar correctly when only initialD
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 2`] = `"received is not a function"`;
+exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 2`] = `"received is not a function"`;
 
-exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 3`] = `
+exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2183,4 +2151,36 @@ exports[`RangeDateField render should show calendar correctly when only initialD
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only initialDate or finalDate are defined and is focused 4`] = `"received is not a function"`;
+exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 2`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when startDate is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when startDate is focused 2`] = `"received is not a function"`;

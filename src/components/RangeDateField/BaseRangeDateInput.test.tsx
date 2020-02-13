@@ -1,4 +1,4 @@
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import { LocaleContext } from '../../i18n'
@@ -35,7 +35,6 @@ describe('BaseRangeDateInput', () => {
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
         />
       )
-      await wait()
       const inputs = container.querySelectorAll('input')
       expect(inputs[FIRST_INPUT].value).toEqual('01/01/2019')
       expect(inputs[SECOND_INPUT].value).toEqual('02/02/2019')
@@ -45,19 +44,14 @@ describe('BaseRangeDateInput', () => {
   describe('change actions', () => {
     it('should call onChange with finalDate as undefined when second input is cleared', async () => {
       const change = jest.fn()
-
       const { container } = render(
         <BaseRangeDateInput
           onChange={change}
           value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
         />
       )
-
-      await wait()
       const inputs = container.querySelectorAll('input')
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '' } })
-      await wait()
-
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2019-01-01'),
         finalDate: null,
@@ -70,23 +64,18 @@ describe('BaseRangeDateInput', () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} />)
 
-      await wait()
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/201' } })
-      await wait()
       expect(change).not.toBeCalled()
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2019' } })
-      await wait()
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/01/201' } })
-      await wait()
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2019' } })
-      await wait()
       expect(change).toHaveBeenLastCalledWith({
         startDate: undefined,
         finalDate: new Date('2019-02-02'),
@@ -98,7 +87,6 @@ describe('BaseRangeDateInput', () => {
       const { container } = render(
         <BaseRangeDateInput onChange={change} minDate={new Date('2019-01-10')} maxDate={new Date('2019-01-15')} />
       )
-
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
@@ -117,7 +105,6 @@ describe('BaseRangeDateInput', () => {
     it(`should call onChange with undefined when a invalid date is typed before minDate`, () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} minDate={new Date('2019-01-10')} />)
-
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
@@ -136,7 +123,6 @@ describe('BaseRangeDateInput', () => {
     it(`should call onChange with undefined when a invalid date is typed after maxDate`, async () => {
       const change = jest.fn()
       const { container } = render(<BaseRangeDateInput onChange={change} maxDate={new Date('2019-01-15')} />)
-
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
@@ -151,6 +137,34 @@ describe('BaseRangeDateInput', () => {
         finalDate: undefined,
       } as Period)
     })
+
+    it(`should call onChange with only new startDate when finalDate value is typed and it's before startDate`, () => {
+      const change = jest.fn()
+      const { container } = render(
+        <BaseRangeDateInput
+          onChange={change}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+        />
+      )
+      const inputs = container.querySelectorAll('input')
+
+      fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/12/2018' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-12-01'), finalDate: undefined } as Period)
+    })
+
+    it(`should call onChange with only new startDate dates when startDate value is typed and it's after finalDate`, () => {
+      const change = jest.fn()
+      const { container } = render(
+        <BaseRangeDateInput
+          onChange={change}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+        />
+      )
+      const inputs = container.querySelectorAll('input')
+
+      fireEvent.change(inputs[FIRST_INPUT], { target: { value: '10/02/2019' } })
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), finalDate: undefined } as Period)
+    })
   })
 
   describe('clear actions', () => {
@@ -162,14 +176,9 @@ describe('BaseRangeDateInput', () => {
           onChange={change}
         />
       )
-      await wait()
-
       const spans = container.querySelectorAll('span')
       const span = spans[SECOND_INPUT + 1]
       fireEvent.click(span)
-
-      await wait()
-
       expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
     })
 
@@ -181,28 +190,25 @@ describe('BaseRangeDateInput', () => {
           onChange={change}
         />
       )
-      await wait()
-
       const spans = container.querySelectorAll('span')
       const span = spans[FIRST_INPUT]
       fireEvent.click(span)
-
-      await wait()
-
       expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-02-02') } as Period)
     })
   })
 
   describe('customization', () => {
-    it('should allow placeholder customization via locale context', () => {
-      const { rerender, container } = render(
+    it('should allow ptBR placeholder customization via locale context', () => {
+      const { container } = render(
         <LocaleContext.Provider value={ptBr}>
           <BaseRangeDateInput />
         </LocaleContext.Provider>
       )
       expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
+    })
 
-      rerender(
+    it('should allow enUS placeholder customization via locale context', () => {
+      const { container } = render(
         <LocaleContext.Provider value={enUs}>
           <BaseRangeDateInput />
         </LocaleContext.Provider>
