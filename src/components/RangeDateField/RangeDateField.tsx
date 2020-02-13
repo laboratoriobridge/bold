@@ -25,7 +25,7 @@ export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange
 }
 
 export function RangeDateField(props: RangeDateFieldProps) {
-  const { onChange, popperProps, minDate, maxDate, value, icon, ...rest } = props
+  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, ...rest } = props
 
   const [period, setPeriod] = useState(value ? value : ({} as Period))
   const [periodInputFocus, setPeriodInputFocus] = useState(1)
@@ -40,11 +40,23 @@ export function RangeDateField(props: RangeDateFieldProps) {
 
   useEffect(() => {
     onChange && onChange(period)
-    setPeriod(period)
-  }, [period])
+  }, [onChange, period])
 
   useEffect(() => {
-    const point: Date = handleOnStartPointDateChange()
+    const point = (): Date => {
+      if (periodInputFocus === 1 && period?.startDate) {
+        return period.startDate
+      } else if (periodInputFocus === 2 && period?.finalDate) {
+        return period.finalDate
+      } else if (period?.startDate && !period?.finalDate) {
+        return period.startDate
+      } else if (!period?.startDate && period?.finalDate) {
+        return period.finalDate
+      } else {
+        return new Date()
+      }
+    }
+
     setVisibleDate(point)
   }, [periodInputFocus, period])
 
@@ -67,30 +79,15 @@ export function RangeDateField(props: RangeDateFieldProps) {
   const handleFocusOut = () => setOpen(false)
 
   const handlePeriodChanged = (periodFromBaseInput: Period) => {
-    onChange && onChange(periodFromBaseInput)
     setPeriod(periodFromBaseInput)
   }
 
   const handleCalendarPeriodChanged = (startDate: Date, finalDate: Date) => {
-    onChange && onChange(period)
-    setPeriod({
-      startDate,
-      finalDate,
-    } as Period)
-  }
-
-  const handleOnStartPointDateChange = (): Date => {
-    if (periodInputFocus === 1 && period?.startDate) {
-      return period.startDate
-    } else if (periodInputFocus === 2 && period?.finalDate) {
-      return period.finalDate
-    } else if (period?.startDate && !period?.finalDate) {
-      return period.startDate
-    } else if (!period?.startDate && period?.finalDate) {
-      return period.finalDate
-    } else {
-      return new Date()
-    }
+    startDate && finalDate
+      ? startDate <= finalDate
+        ? setPeriod({ startDate: startDate, finalDate: finalDate } as Period)
+        : setPeriod({ startDate: finalDate, finalDate: startDate } as Period)
+      : setPeriod({ startDate: startDate, finalDate: finalDate } as Period)
   }
 
   const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
@@ -112,7 +109,7 @@ export function RangeDateField(props: RangeDateFieldProps) {
       {open && (
         <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
           <ControlledRangeDateCalendar
-            values={{ initialDate: period.startDate, finalDate: period.finalDate }}
+            value={{ initialDate: period.startDate, finalDate: period.finalDate }}
             onChange={handleCalendarPeriodChanged}
             onDayClick={handleOnDayClick}
             inputOnFocus={periodInputFocus}
@@ -121,7 +118,7 @@ export function RangeDateField(props: RangeDateFieldProps) {
             modifiers={{
               disabled: disableByRange(minDate, maxDate),
             }}
-            {...props.calendarProps}
+            {...calendarProps}
           />
         </div>
       )}
