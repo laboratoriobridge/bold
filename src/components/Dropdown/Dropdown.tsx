@@ -1,11 +1,12 @@
 import { PopperOptions } from 'popper.js'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useCallback } from 'react'
 
-import usePopper from '../../hooks/usePopper'
+import { usePopper } from '../../hooks/usePopper'
 import { Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
 
+import { useClickOutside } from '../../hooks/useClickOutside'
 import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
 
 export interface DropdownProps extends DropdownMenuProps {
@@ -38,6 +39,7 @@ export interface DropdownProps extends DropdownMenuProps {
    * It may be called if:
    * - `Escape` button is pressed
    * - Focus go outside dropdown menu
+   * - Clicked anywhere outside anchor and dropdown menu
    * - Any item is clicked and `autoclose` prop is `true`
    */
   onClose?(): void
@@ -97,16 +99,21 @@ export function Dropdown(props: DropdownProps) {
       setTimeout(() => {
         // Delay focus to preserve window scroll position
         if (menuRef.current) {
-          const firstItem = menuRef.current.firstElementChild as HTMLLIElement
-          firstItem.focus()
+          const firstItem = menuRef.current.querySelector(
+            '[role="menuitem"]:not([aria-disabled="true"])'
+          ) as HTMLElement
+
+          if (firstItem) {
+            firstItem.focus()
+          }
         }
       })
     }
   }, [open])
 
-  const handleBlur = () => {
+  // Call onClose if target focus is outside menu
+  const handleBlur = useCallback(() => {
     setTimeout(() => {
-      // Call onClose if target focus is outside menu
       if (menuRef.current) {
         const currentFocus = menuRef.current.ownerDocument.activeElement
         if (!menuRef.current.contains(currentFocus)) {
@@ -114,13 +121,20 @@ export function Dropdown(props: DropdownProps) {
         }
       }
     })
-  }
+  }, [onClose])
 
-  const handleMenuClick = () => {
+  // Call `onClose` when clicked outside dropdown and anchor
+  useClickOutside([anchorRef, menuRef], () => {
+    if (open) {
+      onClose()
+    }
+  })
+
+  const handleMenuClick = useCallback(() => {
     if (autoclose) {
       onClose()
     }
-  }
+  }, [autoclose, onClose])
 
   return (
     open && (
