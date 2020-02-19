@@ -11,7 +11,7 @@ function RangeDatePickerExample() {
       error=''
       icon='calendarOutline'
       label='Period'
-      onChange={function noRefCheck() {}}
+      onChange={console.log}
       required
       value={{
         finalDate: new Date('2020-02-07T17:46:49.253Z'),
