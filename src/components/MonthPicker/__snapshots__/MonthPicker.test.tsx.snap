@@ -29,7 +29,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -50,7 +50,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -90,7 +90,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-size: 0.875rem;
   font-weight: bold;
 }
@@ -99,7 +99,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -120,7 +120,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -161,7 +161,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -182,7 +182,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;

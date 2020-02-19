@@ -16,7 +16,7 @@ exports[`renders correctly 1`] = `
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
   line-height: 1rem;
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
   line-height: 1rem;
@@ -82,7 +82,7 @@ exports[`renders correctly 1`] = `
   display: inline-block;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   padding: 0.5rem 0.75rem;
   line-height: 1rem;

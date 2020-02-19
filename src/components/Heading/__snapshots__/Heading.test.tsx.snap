@@ -5,7 +5,7 @@ exports[`should accept all text props 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   color: #0069D0;
   font-size: 4rem;
@@ -29,7 +29,7 @@ exports[`should accept style prop 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   color: red;
 }
@@ -48,7 +48,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
@@ -66,7 +66,7 @@ exports[`should render correctly 2`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 1.25rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
@@ -84,7 +84,7 @@ exports[`should render correctly 3`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 1rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
@@ -102,7 +102,7 @@ exports[`should render correctly 4`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
@@ -120,7 +120,7 @@ exports[`should render correctly 5`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
@@ -138,7 +138,7 @@ exports[`should render correctly 6`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
 }
 
