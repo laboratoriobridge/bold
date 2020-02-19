@@ -1,34 +1,56 @@
 import { TabLinks } from '../../../components/TabLinks'
 
-# Cores
+# Visualização de dados
+
+A visualização de dados consiste em apresentar graficamente informações e dados para sintetizar informações complexas e compreender padrões e exceções apresentados nos dados. A visualização de dados não deve ser usada como decoração.
 
 <TabLinks
   items={[
-    { title: 'Paleta', href: '/design-guidelines/color' },
-    { title: 'Utilização', href: '/design-guidelines/color/usage' },
+    { title: 'Modelos', href: '/design-guidelines/data-visualization/models' },
+    { title: 'Uso', href: '/design-guidelines/data-visualization/usage' },
   ]}
 />
 
-Nossas paletas de cores foram criadas com foco na acessibilidade e facilidade de uso. Através delas, é possível
-criar componentes acessíveis e até um modo _dark_, invertendo os níveis de cor.
+## Qual gráfico usar
 
-## Consistência
+O tipo de gráfico que você usa depende principalmente de duas coisas: os dados que você deseja comunicar e o que deseja transmitir sobre esses dados. Essas diretrizes fornecem descrições de vários tipos diferentes de gráficos e seus casos de uso.
 
-É possível alterar a cor primária dos componentes mantendo a proporção de contraste, porque todas as
-escalas foram construídas com quantidades semelhantes de brilho em cada nível.
+### Comparação
 
-![Consistência da cor nos botões: mesmo nível de brilho](/image/color-consistency.png)
+Compare dados entre várias categorias distintas.
 
-## Acessibilidade
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Grouped bar chart](/image/grouped-bar.png) ![Bubble plot](/image/bubble-plot.png) ![Line chart](/image/line.png)
 
-As escalas são divididas em 10 níveis: as cores de 10 a 40 têm uma garantia contrastante de > 4,5: 1 em
-fundos brancos, enquanto os de 70 a 100 têm a mesma garantia em fundos escuros. Dessa forma, nossos componentes respeitam as proporções de contraste adequadas para elementos textuais e interativos e elementos não interativos, de acordo com qualquer paleta.
+### Mudança ao longo do tempo
 
-![Proporções de contraste de cores](/image/color-contrast.png)
+Show data over a period of time, such as trends or comparisons across multiple categories.
 
-## Modo Dark
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Area chart](/image/area.png) ![Line chart](/image/line.png)
 
-Todas as paletas foram construídas para funcionar de maneira invertida. Para aplicar o modo Dark basta inverter as cores
-do centro da escala, o que é 50 se torna 60, o que é 40 se torna 70 e assim vai. Para um exemplo prático, basta clicar na lâmpada em nosso cabeçalho!
+### Relação & Distribuição
 
-![Escala de cinza invertida](/image/color-darkui.png)
+Show the relationship between two or more variables or the frequency at which data occurs.
+
+![Bubble plot](/image/bubble-plot.png) ![Scatter plot](/image/scatter-plot.png)
+
+### Controle
+
+Used in processes to track the evolution of a variable against one or more values of reference.
+
+![Line control chart](/image/line-control.png) ![Area control chart](/image/area-control.png)
+
+### Parte para o todo
+
+Show how partial elements add up to a total.
+
+![Pie chart](/image/pie.png) ![Stacked bar chart](/image/stacked-bar.png) ![Stacked area chart](/image/stacked-area.png)
+
+## Dashboards
+
+### Dashboard operacional
+
+Use it to provide information that demands immediate user action and time-sensitive data such as data monitoring. This kind of dashboard is constantly updating.
+
+### Dashboard analítica
+
+Use analytical dashboards to help users take future actions, investigate or analyze data. It updates less frequently than the operational dashboard (eg: 1 time a day). Learn more about dashboard types at [Nielsen and Norman group website](https://www.nngroup.com/articles/dashboards-preattentive/).
