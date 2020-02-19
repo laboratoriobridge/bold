@@ -55,7 +55,7 @@ export const createStyleParts = (theme: Theme) => ({
     },
   } as CSSProperties,
   placeholder: {
-    color: theme.pallete.text.disabled,
+    color: theme.pallete.text.secondary,
   } as CSSProperties,
   disabled: {
     borderColor: theme.pallete.gray.c80,

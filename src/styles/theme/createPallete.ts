@@ -56,7 +56,7 @@ export const createPallete = (userConfig?: PalleteConfig): Pallete => {
       main: config.primaryScale.c40,
     },
     text: {
-      main: config.grayScale.c20,
+      main: config.grayScale.c10,
       secondary: config.grayScale.c40,
       disabled: config.grayScale.c70,
     },
