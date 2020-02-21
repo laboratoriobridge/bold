@@ -115,6 +115,8 @@ export function RangeDateField(props: RangeDateFieldProps) {
             inputOnFocus={periodInputFocus}
             visibleDate={visibleDate}
             onVisibleDateChange={handleOnVisibleDateChange}
+            minDate={minDate}
+            maxDate={maxDate}
             modifiers={{
               disabled: disableByRange(minDate, maxDate),
             }}

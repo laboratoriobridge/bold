@@ -8,10 +8,19 @@ import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalend
 export interface RangeDateCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
+  minDate: Date
+  maxDate: Date
   inputOnFocus: number
 }
 
-export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...rest }: RangeDateCalendarProps) {
+export function RangeDateCalendar({
+  initialDate,
+  finalDate,
+  inputOnFocus,
+  maxDate,
+  minDate,
+  ...rest
+}: RangeDateCalendarProps) {
   const handleIsInTheRange = (day: Date): boolean => {
     initialDate?.setHours(0, 0, 0, 0)
     finalDate?.setHours(0, 0, 0, 0)
@@ -34,27 +43,29 @@ export function RangeDateCalendar({ initialDate, finalDate, inputOnFocus, ...res
   }
 
   const isInHoverRange = (day: Date, hoverDate: Date) =>
-    (!initialDate && !finalDate && hoverDate && isSameDay(day, hoverDate)) ||
-    (!initialDate &&
-      finalDate &&
-      hoverDate &&
-      ((inputOnFocus &&
-        inputOnFocus === 1 &&
+    day >= minDate &&
+    day <= maxDate &&
+    ((!initialDate && !finalDate && hoverDate && isSameDay(day, hoverDate)) ||
+      (!initialDate &&
+        finalDate &&
         hoverDate &&
-        ((finalDate < day && hoverDate >= day) || (finalDate > day && hoverDate <= day))) ||
-        (inputOnFocus === 2 && hoverDate && isSameDay(day, hoverDate)))) ||
-    (initialDate &&
-      !finalDate &&
-      hoverDate &&
-      inputOnFocus === 2 &&
-      ((initialDate < day && hoverDate >= day) || (initialDate > day && hoverDate <= day))) ||
-    (initialDate &&
-      finalDate &&
-      hoverDate &&
-      ((inputOnFocus === 1 && initialDate > day && hoverDate <= day) ||
-        isSameDay(day, hoverDate) ||
-        (inputOnFocus === 2 &&
-          ((finalDate < day && hoverDate >= day) || (finalDate > day && isSameDay(day, hoverDate))))))
+        ((inputOnFocus &&
+          inputOnFocus === 1 &&
+          hoverDate &&
+          ((finalDate < day && hoverDate >= day) || (finalDate > day && hoverDate <= day))) ||
+          (inputOnFocus === 2 && hoverDate && isSameDay(day, hoverDate)))) ||
+      (initialDate &&
+        !finalDate &&
+        hoverDate &&
+        inputOnFocus === 2 &&
+        ((initialDate < day && hoverDate >= day) || (initialDate > day && hoverDate <= day))) ||
+      (initialDate &&
+        finalDate &&
+        hoverDate &&
+        ((inputOnFocus === 1 && initialDate > day && hoverDate <= day) ||
+          isSameDay(day, hoverDate) ||
+          (inputOnFocus === 2 &&
+            ((finalDate < day && hoverDate >= day) || (finalDate > day && isSameDay(day, hoverDate)))))))
 
   return (
     <GenericRangeCalendar

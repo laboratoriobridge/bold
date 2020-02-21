@@ -11,6 +11,8 @@ export interface ControlledRangeDateCalendarProps extends CalendarProps {
   }
   inputOnFocus: number
   onChange?(initialDate: Date, finalDate: Date): void
+  minDate: Date
+  maxDate: Date
 }
 
 export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarProps) {
