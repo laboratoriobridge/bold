@@ -1,0 +1,33 @@
+{
+  "projects": [],
+  "styleguides": ["5d0a6069f5ae4615db4da8f7"],
+  "github": {
+    "repository": "https://github.com/laboratoriobridge/bold"
+  },
+  "plugins": [
+    {
+      "name": "@zeplin/cli-connect-react-plugin"
+    },
+    {
+      "name": "@zeplin/cli-connect-storybook-plugin",
+      "config": {
+        "url": "https://bold.bridge.ufsc.br/storybook"
+      }
+    }
+  ],
+  "components": [
+    {
+      "path": "src/components/Alert/Alert.tsx",
+      "zeplinNames": [
+        "Alert / Inline / Danger",
+        "Alert / Inline / Success",
+        "Alert / Inline / Information",
+        "Alert / Inline / Warning"
+      ]
+    },
+    {
+      "path": "src/components/Button/Button/Button.tsx",
+      "zeplinNames": ["Button / Contained / Medium / Text"]
+    }
+  ]
+}
