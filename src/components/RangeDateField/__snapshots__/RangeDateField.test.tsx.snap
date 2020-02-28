@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PeriodField render should render correctly 1`] = `
+exports[`RangeDateField render should render correctly 1`] = `
 .emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -270,7 +270,8 @@ exports[`PeriodField render should render correctly 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="startDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -281,7 +282,7 @@ exports[`PeriodField render should render correctly 1`] = `
               class="emotion-4"
             >
               <strong>
-                até
+                until
               </strong>
             </span>
             <div
@@ -296,7 +297,8 @@ exports[`PeriodField render should render correctly 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="finalDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -335,7 +337,7 @@ exports[`PeriodField render should render correctly 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when disabled 1`] = `
+exports[`RangeDateField render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -610,7 +612,8 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     autocomplete="off"
                     class="emotion-0"
                     disabled=""
-                    placeholder="dd/mm/aaaa"
+                    name="startDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -621,7 +624,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
               class="emotion-4"
             >
               <strong>
-                até
+                until
               </strong>
             </span>
             <div
@@ -637,7 +640,8 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
                     autocomplete="off"
                     class="emotion-0"
                     disabled=""
-                    placeholder="dd/mm/aaaa"
+                    name="finalDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -677,7 +681,7 @@ exports[`PeriodField render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when invalid 1`] = `
+exports[`RangeDateField render should render correctly when invalid 1`] = `
 .emotion-4 {
   cursor: default;
   background: transparent;
@@ -729,98 +733,6 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
 
 .emotion-1 {
   position: relative;
-}
-
-.emotion-0 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #24252E;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  border: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-0[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-0:required {
-  box-shadow: none;
-}
-
-.emotion-0::-webkit-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::-moz-placeholder {
-  color: #696979;
-}
-
-.emotion-0:-ms-input-placeholder {
-  color: #696979;
-}
-
-.emotion-0::placeholder {
-  color: #696979;
-}
-
-.emotion-0:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-0:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-0:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-0:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-0::-moz-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-0::placeholder {
-  color: #AAAAB9;
-}
-
-.emotion-0:focus {
-  box-shadow: none !important;
 }
 
 .emotion-11 {
@@ -929,6 +841,104 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
 
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  border: solid 1px #D01E29;
+  border: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::placeholder {
+  color: #696979;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0:not(:disabled):focus {
+  border: solid 1px #D3D4DD;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0::placeholder {
+  color: #AAAAB9;
+}
+
+.emotion-0:focus {
+  box-shadow: none !important;
+}
+
 <div>
   <div>
     <div
@@ -953,7 +963,8 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="startDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -964,7 +975,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
               class="emotion-4"
             >
               <strong>
-                até
+                until
               </strong>
             </span>
             <div
@@ -979,7 +990,8 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="finalDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -1018,7 +1030,7 @@ exports[`PeriodField render should render correctly when invalid 1`] = `
 </div>
 `;
 
-exports[`PeriodField render should render correctly when opened 1`] = `
+exports[`RangeDateField render should render correctly when opened 1`] = `
 .emotion-9 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -1423,7 +1435,8 @@ exports[`PeriodField render should render correctly when opened 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="startDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -1434,7 +1447,7 @@ exports[`PeriodField render should render correctly when opened 1`] = `
               class="emotion-4"
             >
               <strong>
-                até
+                until
               </strong>
             </span>
             <div
@@ -1449,7 +1462,8 @@ exports[`PeriodField render should render correctly when opened 1`] = `
                   <input
                     autocomplete="off"
                     class="emotion-0"
-                    placeholder="dd/mm/aaaa"
+                    name="finalDate"
+                    placeholder="mm/dd/yyyy"
                     type="text"
                     value=""
                   />
@@ -2020,3 +2034,153 @@ exports[`PeriodField render should render correctly when opened 1`] = `
   </div>
 </div>
 `;
+
+exports[`RangeDateField render should show calendar correctly when inputs are cleaned 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+<span
+  aria-selected="false"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 2`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 2`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and finalDate is focused 1`] = `"received is not a function"`;
+
+exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and finalDate is focused 2`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  15
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and startDate is focused 1`] = `
+.emotion-0 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  background: #0069D0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.emotion-0:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-0:hover {
+  background: #0069D0;
+  color: #FFFFFF;
+}
+
+<span
+  aria-selected="true"
+  class="emotion-0"
+  role="button"
+>
+  01
+</span>
+`;
+
+exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and startDate is focused 2`] = `"received is not a function"`;

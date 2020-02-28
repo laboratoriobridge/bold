@@ -1,8 +1,7 @@
 import React from 'react'
-import { CSSProperties, Ref, useEffect, useRef, useState } from 'react'
+import { CSSProperties, Ref, useRef } from 'react'
 
-import { LocaleContext } from '../../i18n'
-import ptBr from '../../i18n/locales/pt-BR'
+import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
@@ -19,6 +18,11 @@ export interface BaseRangeDateInputProps {
    * Set a period as initial value of the component.
    */
   value?: Period
+
+  /**
+   * Component name
+   */
+  name?: string
 
   /**
    * "minDate" defines the minimum allowed date
@@ -63,6 +67,11 @@ export interface BaseRangeDateInputProps {
   finalPlaceholder?: string
 
   /**
+   * A word to separate initial and final date fields
+   */
+  rangeSeparator?: string
+
+  /**
    * "divRef" is used to assign ref
    * to the main div component
    */
@@ -97,32 +106,27 @@ export interface BaseRangeDateInputProps {
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
-    value,
     disabled,
-    onChange,
+    divRef,
     icon,
-    onIconClick,
     initialInputRef,
     finalInputRef,
-    startPlaceholder,
-    finalPlaceholder,
-    onInputOnFocus,
-    minDate,
     maxDate,
-    divRef,
+    minDate,
+    name,
+    onChange,
+    onIconClick,
+    onInputOnFocus,
+    rangeSeparator,
+    value,
+    ...rest
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const [period, setPeriod] = useState(value)
   const { classes, css } = useStyles(createStyles, disabled)
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
-
-  useEffect(() => {
-    onChange && onChange(value)
-    setPeriod(value ? value : ({ startDate: undefined, finalDate: undefined } as Period))
-  }, [value])
 
   const handleMinMaxDates = (date: Date) => {
     if (minDate && maxDate) {
@@ -139,10 +143,14 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const onChangeStart = (date: Date) => {
     const startDate = handleMinMaxDates(date)
-    const finalDate = startDate && startDate > period.finalDate ? undefined : period.finalDate
-    const aux = { startDate, finalDate } as Period
+    const finalDate =
+      value?.startDate && value?.finalDate && startDate && startDate > value?.finalDate ? undefined : value?.finalDate
+    const aux = {
+      startDate,
+      finalDate,
+    } as Period
+
     onChange && onChange(aux)
-    setPeriod(aux)
     if (startDate) {
       secondDateFieldRef.current.focus()
     }
@@ -150,40 +158,41 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const onChangeFinal = (date: Date) => {
     const auxFinalDate = handleMinMaxDates(date)
-    const startDate = auxFinalDate && auxFinalDate < period.startDate ? auxFinalDate : period.startDate
-    const finalDate = auxFinalDate && auxFinalDate < period.startDate ? undefined : auxFinalDate
-    const aux = { startDate, finalDate } as Period
+    const startDate =
+      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate
+        ? auxFinalDate
+        : value?.startDate
+    const finalDate =
+      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate ? undefined : auxFinalDate
+
+    const aux = {
+      startDate,
+      finalDate,
+    } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: period.finalDate } as Period
+    const aux = { startDate: undefined, finalDate: value.finalDate } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: period.startDate, finalDate: undefined } as Period
+    const aux = { startDate: value.startDate, finalDate: undefined } as Period
     onChange && onChange(aux)
-    setPeriod(aux)
     secondDateFieldRef.current.focus()
   }
 
-  const defaultHandleOnClick = () => {
-    firstDateFieldRef.current.focus()
-  }
+  const defaultHandleOnClick = () => firstDateFieldRef.current.focus()
 
-  const onInputOnFocusInicial = () => {
-    onInputOnFocus && onInputOnFocus(1)
-  }
+  const onInputOnFocusInicial = () => onInputOnFocus && onInputOnFocus(1)
 
-  const onInputOnFocusFinal = () => {
-    onInputOnFocus && onInputOnFocus(2)
-  }
+  const onInputOnFocusFinal = () => onInputOnFocus && onInputOnFocus(2)
 
   const handleIconClick = onIconClick ? onIconClick : defaultHandleOnClick
+
+  const locale = useLocale()
 
   return (
     <div ref={divRef}>
@@ -192,32 +201,34 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
+              name={name ? `${name}.startDate` : 'startDate'}
               disabled={disabled}
               inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
               onChange={onChangeStart}
               onClear={onClearStart}
-              placeholder={startPlaceholder}
+              placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={period ? period.startDate : undefined}
+              value={value?.startDate}
               onFocus={onInputOnFocusInicial}
+              {...rest}
             />
           </div>
           <span className={classes.spanWrapper}>
-            <LocaleContext.Provider value={ptBr}>
-              <strong>até</strong>
-            </LocaleContext.Provider>
+            <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
           </span>
           <div className={classes.fieldWrapper}>
             <DateInput
               clearable
+              name={name ? `${name}.finalDate` : 'finalDate'}
               disabled={disabled}
               inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
               onChange={onChangeFinal}
               onClear={onClearFinal}
-              placeholder={finalPlaceholder}
+              placeholder={locale.dateInput.placeholder}
               style={classes.dateField}
-              value={period ? period.finalDate : undefined}
+              value={value?.finalDate}
               onFocus={onInputOnFocusFinal}
+              {...rest}
             />
           </div>
         </div>
@@ -227,8 +238,6 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 }
 
 BaseRangeDateInput.defaultProps = {
-  startPlaceholder: 'dd/mm/aaaa',
-  finalPlaceholder: 'dd/mm/aaaa',
   icon: 'calendarOutline',
 } as Partial<BaseRangeDateInputProps>
 

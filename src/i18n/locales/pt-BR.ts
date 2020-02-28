@@ -28,6 +28,9 @@ const locale: LocaleConfiguration = {
     nextPage: 'Próxima página',
     currentPage: 'Página atual',
   },
+  rangeDateField: {
+    separator: 'até',
+  },
   select: {
     createItem: 'Selecione um item ou digite um novo valor',
     emptyItem: 'Nenhum resultado encontrado',

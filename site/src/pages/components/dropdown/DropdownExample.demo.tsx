@@ -17,7 +17,7 @@ export default function DropdownExample() {
         Options
       </Button>
 
-      <Dropdown anchorRef={buttonRef} open={open} onClose={handleClose} popperProps={{ placement: 'right-start' }}>
+      <Dropdown anchorRef={buttonRef} open={open} onClose={handleClose} popperProps={{ placement: 'bottom' }}>
         <DropdownItem onClick={console.log}>Item #1</DropdownItem>
         <Tooltip text='Disabled item'>
           <DropdownItem onClick={console.log} disabled>

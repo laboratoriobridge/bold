@@ -29,7 +29,7 @@ export interface PopperHookOptions extends PopperJS.PopperOptions {
   arrowRef?: RefObject<HTMLElement>
 }
 
-export default function usePopper(inputOpts: PopperHookOptions, inputs = []) {
+export function usePopper(inputOpts: PopperHookOptions, inputs = []) {
   const opts = { ...defaultOpts, ...inputOpts }
   const { anchorRef, popperRef, arrowRef } = opts
   const [state, setState] = useState(() => ({
@@ -84,6 +84,7 @@ export default function usePopper(inputOpts: PopperHookOptions, inputs = []) {
         popperInstance.current = null
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, inputs)
 
   const style =

@@ -15,6 +15,7 @@ const createComponent = (props: Partial<RangeDateCalendarProps> = {}) => (
     onVisibleDateChange={jest.fn()}
     initialDate={undefined}
     finalDate={undefined}
+    inputOnFocus={1}
     {...props}
   />
 )
@@ -36,7 +37,7 @@ const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue
   }
 }
 
-describe('[Calendar][RangeDatePicker]', () => {
+describe('RangeDateCalendar', () => {
   const theme = createTheme()
   const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
   describe('Selection and hover', () => {

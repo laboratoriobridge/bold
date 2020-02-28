@@ -1,6 +1,665 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[Calendar][RangeDatePicker] Should render correclty 1`] = `
+exports[`ControlledRangeDateCalendar Should render correclty 1`] = `
+.emotion-47 {
+  width: 288px;
+}
+
+.emotion-10 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.emotion-4 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-46 {
+  border-collapse: collapse;
+  text-align: center;
+  line-height: 1.5rem;
+  width: 100%;
+}
+
+.emotion-46 th {
+  width: 2rem;
+  padding: 0.25rem 0;
+}
+
+.emotion-16 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.emotion-16:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-11 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  color: #AAAAB9;
+}
+
+.emotion-11:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+<div>
+  <div
+    class="emotion-47"
+  >
+    <div
+      class="emotion-10"
+    >
+      <div
+        class="emotion-4"
+      >
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Previous month"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+        Feb
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Next month"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-4"
+      >
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Previous year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+        2019
+        <button
+          class="emotion-1"
+          tabindex="-1"
+          title="Next year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+    <table
+      class="emotion-46"
+    >
+      <thead>
+        <tr>
+          <th>
+            S
+          </th>
+          <th>
+            M
+          </th>
+          <th>
+            T
+          </th>
+          <th>
+            W
+          </th>
+          <th>
+            T
+          </th>
+          <th>
+            F
+          </th>
+          <th>
+            S
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            data-date="2019-01-27"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              27
+            </span>
+          </td>
+          <td
+            data-date="2019-01-28"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              28
+            </span>
+          </td>
+          <td
+            data-date="2019-01-29"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              29
+            </span>
+          </td>
+          <td
+            data-date="2019-01-30"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              30
+            </span>
+          </td>
+          <td
+            data-date="2019-01-31"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              31
+            </span>
+          </td>
+          <td
+            data-date="2019-02-01"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              01
+            </span>
+          </td>
+          <td
+            data-date="2019-02-02"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              02
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2019-02-03"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              03
+            </span>
+          </td>
+          <td
+            data-date="2019-02-04"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              04
+            </span>
+          </td>
+          <td
+            data-date="2019-02-05"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              05
+            </span>
+          </td>
+          <td
+            data-date="2019-02-06"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              06
+            </span>
+          </td>
+          <td
+            data-date="2019-02-07"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              07
+            </span>
+          </td>
+          <td
+            data-date="2019-02-08"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              08
+            </span>
+          </td>
+          <td
+            data-date="2019-02-09"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              09
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2019-02-10"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              10
+            </span>
+          </td>
+          <td
+            data-date="2019-02-11"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              11
+            </span>
+          </td>
+          <td
+            data-date="2019-02-12"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              12
+            </span>
+          </td>
+          <td
+            data-date="2019-02-13"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              13
+            </span>
+          </td>
+          <td
+            data-date="2019-02-14"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              14
+            </span>
+          </td>
+          <td
+            data-date="2019-02-15"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              15
+            </span>
+          </td>
+          <td
+            data-date="2019-02-16"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              16
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2019-02-17"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              17
+            </span>
+          </td>
+          <td
+            data-date="2019-02-18"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              18
+            </span>
+          </td>
+          <td
+            data-date="2019-02-19"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              19
+            </span>
+          </td>
+          <td
+            data-date="2019-02-20"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              20
+            </span>
+          </td>
+          <td
+            data-date="2019-02-21"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              21
+            </span>
+          </td>
+          <td
+            data-date="2019-02-22"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              22
+            </span>
+          </td>
+          <td
+            data-date="2019-02-23"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              23
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td
+            data-date="2019-02-24"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              24
+            </span>
+          </td>
+          <td
+            data-date="2019-02-25"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              25
+            </span>
+          </td>
+          <td
+            data-date="2019-02-26"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              26
+            </span>
+          </td>
+          <td
+            data-date="2019-02-27"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              27
+            </span>
+          </td>
+          <td
+            data-date="2019-02-28"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-16"
+              role="button"
+            >
+              28
+            </span>
+          </td>
+          <td
+            data-date="2019-03-01"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              01
+            </span>
+          </td>
+          <td
+            data-date="2019-03-02"
+          >
+            <span
+              aria-selected="false"
+              class="emotion-11"
+              role="button"
+            >
+              02
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;
+
+exports[`ControlledRangeDateCalendar Should render correctly without receiving a value 1`] = `
 .emotion-47 {
   width: 288px;
 }
