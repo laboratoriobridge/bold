@@ -5,7 +5,7 @@ exports[`should accept the "style" prop 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -26,7 +26,7 @@ exports[`should accept the "style" prop 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -121,7 +121,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -142,7 +142,7 @@ exports[`should render correctly 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;

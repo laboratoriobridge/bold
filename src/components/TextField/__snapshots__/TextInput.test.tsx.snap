@@ -5,7 +5,7 @@ exports[`icon should render correctly with icon 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -38,19 +38,19 @@ exports[`icon should render correctly with icon 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:disabled {
@@ -106,7 +106,7 @@ exports[`icon should render correctly with icon 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -127,7 +127,7 @@ exports[`icon should render correctly with icon 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -213,7 +213,7 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -246,19 +246,19 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:disabled {

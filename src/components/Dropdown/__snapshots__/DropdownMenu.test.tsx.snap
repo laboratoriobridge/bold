@@ -43,7 +43,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #3A3A47;
+  color: #24252E;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -69,7 +69,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #3A3A47;
+  color: #24252E;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;
@@ -107,7 +107,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #3A3A47;
+  color: #24252E;
   margin: 0;
   -webkit-text-decoration: none;
   text-decoration: none;

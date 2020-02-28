@@ -9,7 +9,7 @@ exports[`should accept the style prop 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -43,19 +43,19 @@ exports[`should accept the style prop 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:disabled {
@@ -110,7 +110,7 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -143,19 +143,19 @@ exports[`should render correctly 1`] = `
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:disabled {
@@ -217,7 +217,7 @@ exports[`should render correctly with error 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -251,19 +251,19 @@ exports[`should render correctly with error 1`] = `
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:disabled {
