@@ -19,6 +19,8 @@ storiesOf('Components|RangeDateField ', module)
       onChange={action('changed')}
       icon='calendarOutline'
       value={period}
+      startDateName={'start'}
+      finalDateName={'final'}
     />
   ))
 
@@ -32,5 +34,7 @@ storiesOf('Components|RangeDateField ', module)
       icon='calendarOutline'
       minDate={todayMinus10}
       maxDate={new Date()}
+      startDateName={'start'}
+      finalDateName={'final'}
     />
   ))

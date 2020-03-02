@@ -5,8 +5,8 @@ import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
-import { Icons } from '../Icon'
-import { InputWrapper } from '../TextField/InputWrapper'
+import { Icons, Icon } from '../Icon'
+import { Button } from '..'
 
 export interface Period {
   startDate?: Date
@@ -20,9 +20,10 @@ export interface BaseRangeDateInputProps {
   value?: Period
 
   /**
-   * Component name
+   * name of each input
    */
-  name?: string
+  startDateName: string
+  finalDateName: string
 
   /**
    * "minDate" defines the minimum allowed date
@@ -33,6 +34,11 @@ export interface BaseRangeDateInputProps {
    * "minDate" limits the minimum allowed date
    */
   maxDate?: Date
+
+  /**
+   * enable the "x" button to clear value in both of the inputs
+   */
+  clearable?: boolean
 
   /**
    * disable the range date input.
@@ -106,6 +112,7 @@ export interface BaseRangeDateInputProps {
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
+    clearable,
     disabled,
     divRef,
     icon,
@@ -113,19 +120,21 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     finalInputRef,
     maxDate,
     minDate,
-    name,
     onChange,
     onIconClick,
     onInputOnFocus,
     rangeSeparator,
+    startDateName,
+    finalDateName,
     value,
+    style,
     ...rest
   } = props
 
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const { classes, css } = useStyles(createStyles, disabled)
+  const { classes, css } = useStyles(createStyles, props)
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   const handleMinMaxDates = (date: Date) => {
@@ -196,52 +205,63 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   return (
     <div ref={divRef}>
-      <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
-        <div className={className}>
-          <div className={classes.fieldWrapper}>
-            <DateInput
-              clearable
-              name={name ? `${name}.startDate` : 'startDate'}
-              disabled={disabled}
-              inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
-              onChange={onChangeStart}
-              onClear={onClearStart}
-              placeholder={locale.dateInput.placeholder}
-              style={classes.dateField}
-              value={value?.startDate}
-              onFocus={onInputOnFocusInicial}
-              {...rest}
-            />
-          </div>
-          <span className={classes.spanWrapper}>
-            <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
-          </span>
-          <div className={classes.fieldWrapper}>
-            <DateInput
-              clearable
-              name={name ? `${name}.finalDate` : 'finalDate'}
-              disabled={disabled}
-              inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
-              onChange={onChangeFinal}
-              onClear={onClearFinal}
-              placeholder={locale.dateInput.placeholder}
-              style={classes.dateField}
-              value={value?.finalDate}
-              onFocus={onInputOnFocusFinal}
-              {...rest}
-            />
-          </div>
+      <div className={className}>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable={clearable}
+            name={startDateName}
+            disabled={disabled}
+            inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
+            onChange={onChangeStart}
+            onClear={onClearStart}
+            placeholder={locale.dateInput.placeholder}
+            style={classes.dateField}
+            value={value?.startDate}
+            onFocus={onInputOnFocusInicial}
+            {...rest}
+          />
         </div>
-      </InputWrapper>
+        <span className={classes.spanWrapper}>
+          <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
+        </span>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable={clearable}
+            name={finalDateName}
+            disabled={disabled}
+            inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
+            onChange={onChangeFinal}
+            onClear={onClearFinal}
+            placeholder={locale.dateInput.placeholder}
+            style={classes.dateField}
+            value={value?.finalDate}
+            onFocus={onInputOnFocusFinal}
+            {...rest}
+          />
+        </div>
+        <span className={classes.iconWrapper}>
+          <Button
+            size='small'
+            skin='ghost'
+            tabIndex={-1}
+            onClick={handleIconClick}
+            style={classes.icon}
+            disabled={disabled}
+          >
+            <Icon icon={icon} />
+          </Button>
+        </span>
+      </div>
     </div>
   )
 }
 
 BaseRangeDateInput.defaultProps = {
   icon: 'calendarOutline',
+  clearable: true,
 } as Partial<BaseRangeDateInputProps>
 
-const createStyles = (theme: Theme, disabled: boolean) => {
+const createStyles = (theme: Theme, { disabled, onIconClick }: BaseRangeDateInputProps) => {
   const divStyle = createBaseDivStyle(theme)
 
   return {
@@ -256,16 +276,17 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     },
     invalid: divStyle.invalid,
     spanWrapper: {
-      cursor: 'default',
-      background: 'transparent',
-      display: 'flex',
       alignItems: 'center',
+      background: 'transparent',
       color: disabled && theme.pallete.text.disabled,
+      cursor: 'default',
+      display: 'flex',
+      position: 'relative',
     } as CSSProperties,
     dateField: {
       border: 'none',
       '::placeholder': {
-        color: theme.pallete.text.disabled,
+        color: theme.pallete.text.secondary,
       },
       '&:focus': {
         boxShadow: 'none !important',
@@ -273,6 +294,22 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     } as CSSProperties,
     fieldWrapper: {
       flex: 1,
+    } as CSSProperties,
+    icon: {
+      padding: 'calc(0.25rem - 2px) calc(0.5rem - 1px)',
+      borderRadius: 'inherit',
+      '&:focus': {
+        boxShadow: 'none',
+      },
+    } as CSSProperties,
+    iconWrapper: {
+      backgroundColor: theme.pallete.gray.c90,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '2.5rem',
+      borderTopRightRadius: 1,
+      borderBottomRightRadius: 1,
     } as CSSProperties,
   }
 }
@@ -285,8 +322,6 @@ const createBaseDivStyle = (theme: Theme) => ({
     cursor: 'default',
     display: 'flex',
     position: 'relative',
-    paddingRight: '2.5rem',
-    paddingLeft: '0.1rem',
     transition: 'box-shadow .2s ease',
     '&:required': {
       boxShadow: 'none',

@@ -14,7 +14,7 @@ import { Icons } from '../Icon'
 import { Period } from './BaseRangeDateInput'
 import { RangeDateInput, RangeDateInputProps } from './RangeDateInput'
 
-export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange | value'> {
+export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange | value | name'> {
   minDate?: Date
   maxDate?: Date
   icon?: Icons
@@ -37,10 +37,6 @@ export function RangeDateField(props: RangeDateFieldProps) {
   const finalInputRef = useRef<HTMLInputElement>()
   const anchorRef = useRef<HTMLDivElement>()
   const popupRef = useRef<HTMLDivElement>()
-
-  useEffect(() => {
-    onChange && onChange(period)
-  }, [onChange, period])
 
   useEffect(() => {
     const point = (): Date => {
@@ -79,15 +75,19 @@ export function RangeDateField(props: RangeDateFieldProps) {
   const handleFocusOut = () => setOpen(false)
 
   const handlePeriodChanged = (periodFromBaseInput: Period) => {
+    onChange && onChange(period)
     setPeriod(periodFromBaseInput)
   }
 
   const handleCalendarPeriodChanged = (startDate: Date, finalDate: Date) => {
-    startDate && finalDate
-      ? startDate <= finalDate
-        ? setPeriod({ startDate: startDate, finalDate: finalDate } as Period)
-        : setPeriod({ startDate: finalDate, finalDate: startDate } as Period)
-      : setPeriod({ startDate: startDate, finalDate: finalDate } as Period)
+    const periodFromCalendar: Period =
+      startDate && finalDate
+        ? startDate <= finalDate
+          ? ({ startDate: startDate, finalDate: finalDate } as Period)
+          : ({ startDate: finalDate, finalDate: startDate } as Period)
+        : ({ startDate: startDate, finalDate: finalDate } as Period)
+    onChange && onChange(periodFromCalendar)
+    setPeriod(periodFromCalendar)
   }
 
   const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
