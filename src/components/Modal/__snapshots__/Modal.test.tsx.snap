@@ -37,7 +37,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -58,7 +58,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -222,7 +222,7 @@ exports[`Modal should render correctly when opened 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -243,7 +243,7 @@ exports[`Modal should render correctly when opened 1`] = `
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -376,7 +376,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -397,7 +397,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -554,7 +554,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -575,7 +575,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
@@ -708,7 +708,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
-  color: #3A3A47;
+  color: #24252E;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -729,7 +729,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  color: #3A3A47;
+  color: #24252E;
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;

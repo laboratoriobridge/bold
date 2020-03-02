@@ -20,7 +20,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.5rem 0.5rem;
