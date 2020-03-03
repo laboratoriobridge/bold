@@ -8,22 +8,21 @@ import { DateInput } from '../DateField'
 import { Icons, Icon } from '../Icon'
 import { Button } from '..'
 
-export interface Period {
+export interface RangeDate {
   startDate?: Date
   finalDate?: Date
 }
 
 export interface BaseRangeDateInputProps {
   /**
-   * Set a period as initial value of the component.
+   * Set a RangeDate as initial value of the component.
    */
-  value?: Period
+  value?: RangeDate
 
   /**
-   * name of each input
+   * Component name
    */
-  startDateName: string
-  finalDateName: string
+  name?: string
 
   /**
    * "minDate" defines the minimum allowed date
@@ -103,15 +102,16 @@ export interface BaseRangeDateInputProps {
   onInputOnFocus?(isOnFocus: number): void
 
   /**
-   * Function used to manipulate values of Period
+   * Function used to manipulate values of RangeDate
    *
    * @param period
    */
-  onChange?(period: Period): void
+  onChange?(rangeDate: RangeDate): void
 }
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
+    name,
     clearable,
     disabled,
     divRef,
@@ -124,8 +124,6 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     onIconClick,
     onInputOnFocus,
     rangeSeparator,
-    startDateName,
-    finalDateName,
     value,
     style,
     ...rest
@@ -134,7 +132,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const firstDateFieldRef = useRef<HTMLInputElement>()
   const secondDateFieldRef = useRef<HTMLInputElement>()
 
-  const { classes, css } = useStyles(createStyles, props)
+  const { classes, css } = useStyles(createStyles, disabled)
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
   const handleMinMaxDates = (date: Date) => {
@@ -157,7 +155,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const aux = {
       startDate,
       finalDate,
-    } as Period
+    } as RangeDate
 
     onChange && onChange(aux)
     if (startDate) {
@@ -177,18 +175,18 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const aux = {
       startDate,
       finalDate,
-    } as Period
+    } as RangeDate
     onChange && onChange(aux)
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: value.finalDate } as Period
+    const aux = { startDate: undefined, finalDate: value.finalDate } as RangeDate
     onChange && onChange(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: value.startDate, finalDate: undefined } as Period
+    const aux = { startDate: value.startDate, finalDate: undefined } as RangeDate
     onChange && onChange(aux)
     secondDateFieldRef.current.focus()
   }
@@ -209,7 +207,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
         <div className={classes.fieldWrapper}>
           <DateInput
             clearable={clearable}
-            name={startDateName}
+            name={name ? `${name}.startDate` : 'startDate'}
             disabled={disabled}
             inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
             onChange={onChangeStart}
@@ -227,7 +225,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
         <div className={classes.fieldWrapper}>
           <DateInput
             clearable={clearable}
-            name={finalDateName}
+            name={name ? `${name}.finalDate` : 'finalDate'}
             disabled={disabled}
             inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
@@ -261,7 +259,7 @@ BaseRangeDateInput.defaultProps = {
   clearable: true,
 } as Partial<BaseRangeDateInputProps>
 
-const createStyles = (theme: Theme, { disabled, onIconClick }: BaseRangeDateInputProps) => {
+const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)
 
   return {

@@ -5,7 +5,7 @@ import * as DateFieldModule from '../DateField/DateField'
 import { disableByRange } from '../DateField/DateField'
 
 import { RangeDateField } from './RangeDateField'
-import { Period } from './BaseRangeDateInput'
+import { RangeDate } from './BaseRangeDateInput'
 
 describe('RangeDateField', () => {
   describe('render', () => {
@@ -92,13 +92,16 @@ describe('RangeDateField', () => {
         const inputs = container.querySelectorAll('input')
 
         fireEvent.change(inputs[0], { target: { value: '01/10/2018' } })
-        expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-10-01'), finalDate: undefined } as Period)
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-10-01'),
+          finalDate: undefined,
+        } as RangeDate)
 
         fireEvent.change(inputs[1], { target: { value: '01/11/2018' } })
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-10-01'),
           finalDate: new Date('2018-11-01'),
-        } as Period)
+        } as RangeDate)
       })
     })
 
@@ -112,7 +115,10 @@ describe('RangeDateField', () => {
 
         fireEvent.focus(inputs[0])
         fireEvent.click(getByText('05'))
-        expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-10-05'), finalDate: undefined } as Period)
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-10-05'),
+          finalDate: undefined,
+        } as RangeDate)
       })
     })
 
@@ -126,7 +132,10 @@ describe('RangeDateField', () => {
 
         fireEvent.focus(inputs[1])
         fireEvent.click(getByText('05'))
-        expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2018-10-05') } as Period)
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: undefined,
+          finalDate: new Date('2018-10-05'),
+        } as RangeDate)
       })
 
       it('should call onchange with only startDate defined when startDate input has focus and the selected date is after finalDate value', () => {
@@ -142,7 +151,10 @@ describe('RangeDateField', () => {
         fireEvent.focus(inputs[0])
         fireEvent.click(getByTitle('Next month'))
         fireEvent.click(getByText('20'))
-        expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-11-20'), finalDate: undefined } as Period)
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-11-20'),
+          finalDate: undefined,
+        } as RangeDate)
       })
 
       it('should call onchange with only startDate defined when finalDate input has focus and the selected date is before startDate value', () => {
@@ -158,7 +170,10 @@ describe('RangeDateField', () => {
         fireEvent.focus(inputs[1])
         fireEvent.click(getByTitle('Previous month'))
         fireEvent.click(getByText('05'))
-        expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-10-05'), finalDate: undefined } as Period)
+        expect(change).toHaveBeenLastCalledWith({
+          startDate: new Date('2018-10-05'),
+          finalDate: undefined,
+        } as RangeDate)
       })
 
       it('should call onchange with a new finalDate when finalDate input has focus and the selected date is after his value', () => {
@@ -176,7 +191,7 @@ describe('RangeDateField', () => {
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-10-01'),
           finalDate: new Date('2018-11-20'),
-        } as Period)
+        } as RangeDate)
       })
 
       it('should call onchange with a new startDate when startDate input has focus and the selected date is before his value', () => {
@@ -194,7 +209,7 @@ describe('RangeDateField', () => {
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-10-05'),
           finalDate: new Date('2018-11-15'),
-        } as Period)
+        } as RangeDate)
       })
 
       it('should call onchange with switched dates when finalDate input has focus and the selected date is before startDate', () => {
@@ -213,7 +228,7 @@ describe('RangeDateField', () => {
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-09-10'),
           finalDate: new Date('2018-10-10'),
-        } as Period)
+        } as RangeDate)
       })
 
       it('should call onchange with switched dates when startDate input has focus and the selected date is after finalDate', () => {
@@ -232,7 +247,7 @@ describe('RangeDateField', () => {
         expect(change).toHaveBeenLastCalledWith({
           startDate: new Date('2018-09-10'),
           finalDate: new Date('2018-10-10'),
-        } as Period)
+        } as RangeDate)
       })
     })
   })

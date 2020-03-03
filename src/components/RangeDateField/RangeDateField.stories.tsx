@@ -3,15 +3,16 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Period } from './BaseRangeDateInput'
+import { RangeDate } from './BaseRangeDateInput'
 import { RangeDateField } from './RangeDateField'
 
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
-const period: Period = { startDate: todayMinus10, finalDate: new Date() }
+const period: RangeDate = { startDate: todayMinus10, finalDate: new Date() }
 
 storiesOf('Components|RangeDateField ', module)
   .add('default', () => (
     <RangeDateField
+      clearable={boolean('clearable', true)}
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}
@@ -19,13 +20,12 @@ storiesOf('Components|RangeDateField ', module)
       onChange={action('changed')}
       icon='calendarOutline'
       value={period}
-      startDateName={'start'}
-      finalDateName={'final'}
     />
   ))
 
   .add('min/max date', () => (
     <RangeDateField
+      clearable={boolean('clearable', true)}
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}
@@ -34,7 +34,5 @@ storiesOf('Components|RangeDateField ', module)
       icon='calendarOutline'
       minDate={todayMinus10}
       maxDate={new Date()}
-      startDateName={'start'}
-      finalDateName={'final'}
     />
   ))
