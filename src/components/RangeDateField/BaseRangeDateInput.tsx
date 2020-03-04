@@ -116,7 +116,7 @@ export interface BaseRangeDateInputProps {
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
-    name,
+    clearable,
     disabled,
     divRef,
     icon,
@@ -124,6 +124,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     finalInputRef,
     maxDate,
     minDate,
+    name,
     onChange,
     onIconClick,
     onInputOnFocus,
