@@ -235,7 +235,7 @@ describe('BaseRangeDateInput', () => {
           <BaseRangeDateInput />
         </LocaleContext.Provider>
       )
-      expect(container.querySelector('span').textContent).toEqual(ptBr.rangeDateField.separator)
+      expect(container.querySelector('strong').textContent).toEqual(ptBr.rangeDateField.separator)
       expect(container).toMatchSnapshot()
     })
 
@@ -245,7 +245,17 @@ describe('BaseRangeDateInput', () => {
           <BaseRangeDateInput />
         </LocaleContext.Provider>
       )
-      expect(container.querySelector('span').textContent).toEqual(enUs.rangeDateField.separator)
+      expect(container.querySelector('strong').textContent).toEqual(enUs.rangeDateField.separator)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should allow a custom string in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={enUs}>
+          <BaseRangeDateInput rangeSeparator={'separator'} />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('strong').textContent).toEqual('separator')
       expect(container).toMatchSnapshot()
     })
 
