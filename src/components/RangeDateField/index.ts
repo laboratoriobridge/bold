@@ -1,2 +1,2 @@
 export { RangeDateField, RangeDateFieldProps } from './RangeDateField'
-export { Period } from './BaseRangeDateInput'
+export { RangeDate } from './BaseRangeDateInput'

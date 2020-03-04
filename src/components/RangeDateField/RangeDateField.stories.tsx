@@ -12,6 +12,7 @@ const period: RangeDate = { startDate: todayMinus10, finalDate: new Date() }
 storiesOf('Components|RangeDateField ', module)
   .add('default', () => (
     <RangeDateField
+      clearable={boolean('clearable', true)}
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}
@@ -24,6 +25,7 @@ storiesOf('Components|RangeDateField ', module)
 
   .add('min/max date', () => (
     <RangeDateField
+      clearable={boolean('clearable', true)}
       label={text('label', 'Text label')}
       disabled={boolean('disabled', false)}
       error={text('error', '')}

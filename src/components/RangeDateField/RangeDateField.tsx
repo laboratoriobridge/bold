@@ -14,14 +14,12 @@ import { Icons } from '../Icon'
 import { RangeDate } from './BaseRangeDateInput'
 import { RangeDateInput, RangeDateInputProps } from './RangeDateInput'
 
-export interface RangeDateFieldProps extends Omit<RangeDateInputProps, 'onChange | value'> {
+export interface RangeDateFieldProps extends RangeDateInputProps {
   minDate?: Date
   maxDate?: Date
   icon?: Icons
   calendarProps?: Partial<ControlledRangeDateCalendarProps>
   popperProps?: PopperOptions
-  value?: RangeDate
-  onChange?(rangeDate: RangeDate): void
 }
 
 export function RangeDateField(props: RangeDateFieldProps) {

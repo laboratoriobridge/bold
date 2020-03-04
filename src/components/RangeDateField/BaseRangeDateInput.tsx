@@ -6,7 +6,7 @@ import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
 import { Icons, Icon } from '../Icon'
-import { Button } from '../Button'
+import { Button } from '..'
 
 export interface RangeDate {
   startDate?: Date
@@ -15,7 +15,7 @@ export interface RangeDate {
 
 export interface BaseRangeDateInputProps {
   /**
-   * Set a rangeDate as initial value of the component.
+   * Set a RangeDate as initial value of the component.
    */
   value?: RangeDate
 
@@ -33,6 +33,11 @@ export interface BaseRangeDateInputProps {
    * "minDate" limits the minimum allowed date
    */
   maxDate?: Date
+
+  /**
+   * enable the "x" button to clear value in both of the inputs
+   */
+  clearable?: boolean
 
   /**
    * disable the range date input.
@@ -111,7 +116,7 @@ export interface BaseRangeDateInputProps {
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
-    clearable,
+    name,
     disabled,
     divRef,
     icon,
@@ -119,12 +124,12 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     finalInputRef,
     maxDate,
     minDate,
-    name,
     onChange,
     onIconClick,
     onInputOnFocus,
     rangeSeparator,
     value,
+    style,
     ...rest
   } = props
 
@@ -273,11 +278,12 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     },
     invalid: divStyle.invalid,
     spanWrapper: {
-      cursor: 'default',
-      background: 'transparent',
-      display: 'flex',
       alignItems: 'center',
+      background: 'transparent',
       color: disabled && theme.pallete.text.disabled,
+      cursor: 'default',
+      display: 'flex',
+      position: 'relative',
     } as CSSProperties,
     dateField: {
       border: 'none',
@@ -318,8 +324,6 @@ const createBaseDivStyle = (theme: Theme) => ({
     cursor: 'default',
     display: 'flex',
     position: 'relative',
-    paddingRight: '2.5rem',
-    paddingLeft: '0.1rem',
     transition: 'box-shadow .2s ease',
     '&:required': {
       boxShadow: 'none',
