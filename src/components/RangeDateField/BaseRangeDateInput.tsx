@@ -5,19 +5,19 @@ import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
 import { DateInput } from '../DateField'
-import { Icons } from '../Icon'
-import { InputWrapper } from '../TextField/InputWrapper'
+import { Icons, Icon } from '../Icon'
+import { Button } from '../Button'
 
-export interface Period {
+export interface RangeDate {
   startDate?: Date
   finalDate?: Date
 }
 
 export interface BaseRangeDateInputProps {
   /**
-   * Set a period as initial value of the component.
+   * Set a rangeDate as initial value of the component.
    */
-  value?: Period
+  value?: RangeDate
 
   /**
    * Component name
@@ -38,6 +38,11 @@ export interface BaseRangeDateInputProps {
    * disable the range date input.
    */
   disabled?: boolean
+
+  /**
+   * enable the "X" in each date input for clear actions
+   */
+  clearable?: boolean
 
   /**
    * Set an icon in range date input button.
@@ -97,15 +102,16 @@ export interface BaseRangeDateInputProps {
   onInputOnFocus?(isOnFocus: number): void
 
   /**
-   * Function used to manipulate values of Period
+   * Function used to manipulate values of RangeDate
    *
-   * @param period
+   * @param rangeDate
    */
-  onChange?(period: Period): void
+  onChange?(rangeDate: RangeDate): void
 }
 
 export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const {
+    clearable,
     disabled,
     divRef,
     icon,
@@ -148,7 +154,7 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const aux = {
       startDate,
       finalDate,
-    } as Period
+    } as RangeDate
 
     onChange && onChange(aux)
     if (startDate) {
@@ -168,18 +174,18 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
     const aux = {
       startDate,
       finalDate,
-    } as Period
+    } as RangeDate
     onChange && onChange(aux)
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: value.finalDate } as Period
+    const aux = { startDate: undefined, finalDate: value.finalDate } as RangeDate
     onChange && onChange(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: value.startDate, finalDate: undefined } as Period
+    const aux = { startDate: value.startDate, finalDate: undefined } as RangeDate
     onChange && onChange(aux)
     secondDateFieldRef.current.focus()
   }
@@ -196,49 +202,60 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   return (
     <div ref={divRef}>
-      <InputWrapper icon={icon} onIconClick={handleIconClick} iconDisabled={disabled}>
-        <div className={className}>
-          <div className={classes.fieldWrapper}>
-            <DateInput
-              clearable
-              name={name ? `${name}.startDate` : 'startDate'}
-              disabled={disabled}
-              inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
-              onChange={onChangeStart}
-              onClear={onClearStart}
-              placeholder={locale.dateInput.placeholder}
-              style={classes.dateField}
-              value={value?.startDate}
-              onFocus={onInputOnFocusInicial}
-              {...rest}
-            />
-          </div>
-          <span className={classes.spanWrapper}>
-            <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
-          </span>
-          <div className={classes.fieldWrapper}>
-            <DateInput
-              clearable
-              name={name ? `${name}.finalDate` : 'finalDate'}
-              disabled={disabled}
-              inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
-              onChange={onChangeFinal}
-              onClear={onClearFinal}
-              placeholder={locale.dateInput.placeholder}
-              style={classes.dateField}
-              value={value?.finalDate}
-              onFocus={onInputOnFocusFinal}
-              {...rest}
-            />
-          </div>
+      <div className={className}>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable={clearable}
+            name={name ? `${name}.startDate` : 'startDate'}
+            disabled={disabled}
+            inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
+            onChange={onChangeStart}
+            onClear={onClearStart}
+            placeholder={locale.dateInput.placeholder}
+            style={classes.dateField}
+            value={value?.startDate}
+            onFocus={onInputOnFocusInicial}
+            {...rest}
+          />
         </div>
-      </InputWrapper>
+        <span className={classes.spanWrapper}>
+          <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
+        </span>
+        <div className={classes.fieldWrapper}>
+          <DateInput
+            clearable={clearable}
+            name={name ? `${name}.finalDate` : 'finalDate'}
+            disabled={disabled}
+            inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
+            onChange={onChangeFinal}
+            onClear={onClearFinal}
+            placeholder={locale.dateInput.placeholder}
+            style={classes.dateField}
+            value={value?.finalDate}
+            onFocus={onInputOnFocusFinal}
+            {...rest}
+          />
+        </div>
+        <span className={classes.iconWrapper}>
+          <Button
+            size='small'
+            skin='ghost'
+            tabIndex={-1}
+            onClick={handleIconClick}
+            style={classes.icon}
+            disabled={disabled}
+          >
+            <Icon icon={icon} />
+          </Button>
+        </span>
+      </div>
     </div>
   )
 }
 
 BaseRangeDateInput.defaultProps = {
   icon: 'calendarOutline',
+  clearable: true,
 } as Partial<BaseRangeDateInputProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
@@ -265,7 +282,7 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     dateField: {
       border: 'none',
       '::placeholder': {
-        color: theme.pallete.text.disabled,
+        color: theme.pallete.text.secondary,
       },
       '&:focus': {
         boxShadow: 'none !important',
@@ -273,6 +290,22 @@ const createStyles = (theme: Theme, disabled: boolean) => {
     } as CSSProperties,
     fieldWrapper: {
       flex: 1,
+    } as CSSProperties,
+    icon: {
+      padding: 'calc(0.25rem - 2px) calc(0.5rem - 1px)',
+      borderRadius: 'inherit',
+      '&:focus': {
+        boxShadow: 'none',
+      },
+    } as CSSProperties,
+    iconWrapper: {
+      backgroundColor: theme.pallete.gray.c90,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: '2.5rem',
+      borderTopRightRadius: 1,
+      borderBottomRightRadius: 1,
     } as CSSProperties,
   }
 }

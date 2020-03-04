@@ -5,7 +5,7 @@ import { LocaleContext } from '../../i18n'
 import ptBr from '../../i18n/locales/pt-BR'
 import enUs from '../../i18n/locales/en-US'
 
-import { BaseRangeDateInput, Period } from './BaseRangeDateInput'
+import { BaseRangeDateInput, RangeDate } from './BaseRangeDateInput'
 
 const FIRST_INPUT = 0
 const SECOND_INPUT = 1
@@ -43,7 +43,7 @@ describe('BaseRangeDateInput', () => {
     it('should accept and format period as value', () => {
       const { container } = render(
         <BaseRangeDateInput
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
         />
       )
       const inputs = container.querySelectorAll('input')
@@ -58,7 +58,7 @@ describe('BaseRangeDateInput', () => {
       const { container } = render(
         <BaseRangeDateInput
           onChange={change}
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
         />
       )
       const inputs = container.querySelectorAll('input')
@@ -66,7 +66,7 @@ describe('BaseRangeDateInput', () => {
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2019-01-01'),
         finalDate: null,
-      } as Period)
+      } as RangeDate)
     })
   })
 
@@ -81,16 +81,16 @@ describe('BaseRangeDateInput', () => {
       expect(change).not.toBeCalled()
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '01/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/01/201' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '02/02/2019' } })
       expect(change).toHaveBeenLastCalledWith({
         startDate: undefined,
         finalDate: new Date('2019-02-02'),
-      } as Period)
+      } as RangeDate)
     })
 
     it(`should call onChange with undefined when a invalid date is typed (before minDate and after maxDate)`, () => {
@@ -101,16 +101,16 @@ describe('BaseRangeDateInput', () => {
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '16/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '13/01/2019' } })
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2019-01-13'),
         finalDate: undefined,
-      } as Period)
+      } as RangeDate)
     })
 
     it(`should call onChange with undefined when a invalid date is typed before minDate`, () => {
@@ -119,16 +119,16 @@ describe('BaseRangeDateInput', () => {
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '16/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-01-16') } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-01-16') } as RangeDate)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '13/01/2019' } })
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2019-01-13'),
         finalDate: undefined,
-      } as Period)
+      } as RangeDate)
     })
 
     it(`should call onChange with undefined when a invalid date is typed after maxDate`, () => {
@@ -137,16 +137,16 @@ describe('BaseRangeDateInput', () => {
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '09/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-09'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-09'), finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '16/01/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: undefined } as RangeDate)
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '13/01/2019' } })
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2019-01-13'),
         finalDate: undefined,
-      } as Period)
+      } as RangeDate)
     })
 
     it(`should call onChange with only new startDate when finalDate value is typed and it's before startDate`, () => {
@@ -154,13 +154,13 @@ describe('BaseRangeDateInput', () => {
       const { container } = render(
         <BaseRangeDateInput
           onChange={change}
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
         />
       )
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[SECOND_INPUT], { target: { value: '01/12/2018' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-12-01'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2018-12-01'), finalDate: undefined } as RangeDate)
     })
 
     it(`should call onChange with only new startDate dates when startDate value is typed and it's after finalDate`, () => {
@@ -168,13 +168,13 @@ describe('BaseRangeDateInput', () => {
       const { container } = render(
         <BaseRangeDateInput
           onChange={change}
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
         />
       )
       const inputs = container.querySelectorAll('input')
 
       fireEvent.change(inputs[FIRST_INPUT], { target: { value: '10/02/2019' } })
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), finalDate: undefined } as RangeDate)
     })
   })
 
@@ -183,28 +183,28 @@ describe('BaseRangeDateInput', () => {
       const change = jest.fn()
       const { container } = render(
         <BaseRangeDateInput
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
           onChange={change}
         />
       )
       const spans = container.querySelectorAll('span')
       const span = spans[SECOND_INPUT + 1]
       fireEvent.click(span)
-      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-01-01'), finalDate: undefined } as RangeDate)
     })
 
     it('should clear only first input when click clear in first input', () => {
       const change = jest.fn()
       const { container } = render(
         <BaseRangeDateInput
-          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as Period}
+          value={{ startDate: new Date('2019-01-01'), finalDate: new Date('2019-02-02') } as RangeDate}
           onChange={change}
         />
       )
       const spans = container.querySelectorAll('span')
       const span = spans[FIRST_INPUT]
       fireEvent.click(span)
-      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-02-02') } as Period)
+      expect(change).toHaveBeenLastCalledWith({ startDate: undefined, finalDate: new Date('2019-02-02') } as RangeDate)
     })
   })
 

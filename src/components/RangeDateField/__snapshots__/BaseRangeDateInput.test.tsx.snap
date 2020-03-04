@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseRangeDateInput customization should allow enUS placeholder customization via locale context 1`] = `
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -17,20 +17,20 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -54,16 +54,7 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -77,11 +68,9 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -161,26 +150,26 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -210,10 +199,11 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -224,24 +214,24 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -249,71 +239,67 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            until
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          until
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -332,7 +318,7 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
 `;
 
 exports[`BaseRangeDateInput customization should allow enUs i18n in range separator 1`] = `
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -348,20 +334,20 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -385,16 +371,7 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -408,11 +385,9 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -492,26 +467,26 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -541,10 +516,11 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -555,24 +531,24 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -580,71 +556,67 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            until
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          until
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -663,7 +635,7 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
 `;
 
 exports[`BaseRangeDateInput customization should allow ptBR placeholder customization via locale context 1`] = `
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -679,20 +651,20 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -716,16 +688,7 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -739,11 +702,9 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -823,26 +784,26 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -872,10 +833,11 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -886,24 +848,24 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -911,71 +873,67 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="dd/mm/aaaa"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            até
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="dd/mm/aaaa"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="dd/mm/aaaa"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          até
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="dd/mm/aaaa"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -994,7 +952,7 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
 `;
 
 exports[`BaseRangeDateInput customization should allow ptBr i18n in range separator 1`] = `
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1010,20 +968,20 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -1047,16 +1005,7 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1070,11 +1019,9 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -1154,26 +1101,26 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1203,10 +1150,11 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1217,24 +1165,24 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -1242,71 +1190,67 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="dd/mm/aaaa"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            até
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="dd/mm/aaaa"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="dd/mm/aaaa"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          até
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="dd/mm/aaaa"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -1325,7 +1269,7 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
 `;
 
 exports[`BaseRangeDateInput render should render correctly 1`] = `
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1341,20 +1285,20 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -1378,16 +1322,7 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1401,11 +1336,9 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -1485,26 +1418,26 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1534,10 +1467,11 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1548,24 +1482,24 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -1573,71 +1507,67 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            until
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          until
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -1662,16 +1592,7 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1685,11 +1606,9 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -1769,31 +1688,31 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1810,20 +1729,20 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
@@ -1842,7 +1761,7 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1874,10 +1793,11 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1888,86 +1808,82 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                disabled=""
-                name="startDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            until
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                disabled=""
-                name="finalDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              disabled=""
+              name="startDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          until
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              disabled=""
+              name="finalDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           disabled=""
           tabindex="-1"
           type="button"
@@ -1975,7 +1891,7 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -2013,16 +1929,7 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2036,18 +1943,16 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
   position: relative;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2077,10 +1982,11 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2091,29 +1997,29 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -2130,25 +2036,25 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   border: solid 1px #D01E29;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
@@ -2232,19 +2138,19 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
@@ -2254,71 +2160,67 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
 <div>
   <div>
     <div
-      class="emotion-13"
+      class="emotion-12"
     >
       <div
-        class="emotion-9"
+        class="emotion-3"
       >
         <div
-          class="emotion-3"
+          class="emotion-2"
         >
           <div
-            class="emotion-2"
+            class="emotion-1"
           >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="startDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <span
-          class="emotion-4"
-        >
-          <strong>
-            until
-          </strong>
-        </span>
-        <div
-          class="emotion-3"
-        >
-          <div
-            class="emotion-2"
-          >
-            <div
-              class="emotion-1"
-            >
-              <input
-                autocomplete="off"
-                class="emotion-0"
-                name="finalDate"
-                placeholder="mm/dd/yyyy"
-                type="text"
-                value=""
-              />
-            </div>
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="startDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
           </div>
         </div>
       </div>
       <span
-        class="emotion-12"
+        class="emotion-4"
+      >
+        <strong>
+          until
+        </strong>
+      </span>
+      <div
+        class="emotion-3"
+      >
+        <div
+          class="emotion-2"
+        >
+          <div
+            class="emotion-1"
+          >
+            <input
+              autocomplete="off"
+              class="emotion-0"
+              name="finalDate"
+              placeholder="mm/dd/yyyy"
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        class="emotion-11"
       >
         <button
-          class="emotion-11"
+          class="emotion-10"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-10"
+              class="emotion-9"
               height="1em"
               role="img"
               viewBox="0 0 24 24"

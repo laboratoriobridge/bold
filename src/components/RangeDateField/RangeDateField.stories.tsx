@@ -3,11 +3,11 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
-import { Period } from './BaseRangeDateInput'
+import { RangeDate } from './BaseRangeDateInput'
 import { RangeDateField } from './RangeDateField'
 
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
-const period: Period = { startDate: todayMinus10, finalDate: new Date() }
+const period: RangeDate = { startDate: todayMinus10, finalDate: new Date() }
 
 storiesOf('Components|RangeDateField ', module)
   .add('default', () => (
