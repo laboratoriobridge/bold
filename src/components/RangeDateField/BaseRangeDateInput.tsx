@@ -45,11 +45,6 @@ export interface BaseRangeDateInputProps {
   disabled?: boolean
 
   /**
-   * enable the "X" in each date input for clear actions
-   */
-  clearable?: boolean
-
-  /**
    * Set an icon in range date input button.
    * When this prop is not declared, date field will be
    * shown without a icon.
