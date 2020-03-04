@@ -98,7 +98,26 @@ describe('RangeDateCalendar', () => {
       })
     })
 
-    it('With only initalDate defined, hover style must be applied on the interval between initialDate and mouse', () => {
+    it('With only initalDate defined and focus is in the first input, hover style must be applied only in the date pointed by mouse', () => {
+      const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15'), inputOnFocus: 1 }))
+      const expectedStyle = dayHoverStyle(theme)
+
+      fireEvent.mouseOver(getByText('17'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('17')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('18')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+
+      fireEvent.mouseOver(getByText('13'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('12')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('13')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+    })
+
+    it('With only initalDate defined and focus is in the second input, hover style must be applied on the interval between initialDate and mouse', () => {
       const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15'), inputOnFocus: 2 }))
       const expectedStyle = dayHoverStyle(theme)
 
@@ -144,7 +163,7 @@ describe('RangeDateCalendar', () => {
       })
     })
 
-    it('With only finalDate defined and focus is in the second input, hover style must be applied in the date pointed by mouse', () => {
+    it('With only finalDate defined and focus is in the second input, hover style must be applied only in the date pointed by mouse', () => {
       const { getByText } = render(createComponent({ finalDate: new Date('2019-02-15'), inputOnFocus: 2 }))
       const expectedStyle = dayHoverStyle(theme)
 
@@ -187,6 +206,46 @@ describe('RangeDateCalendar', () => {
         expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       })
     })
+
+    it(
+      'With finalDate and initialDate, focus is in the first input and hover date' +
+        'is after initialDate, hover style must be applied only in the date pointed by mouse',
+      () => {
+        const { getByText } = render(
+          createComponent({ initialDate: new Date('2019-02-13'), finalDate: new Date('2019-02-15'), inputOnFocus: 1 })
+        )
+        const expectedStyle = dayHoverStyle(theme)
+
+        fireEvent.mouseOver(getByText('17'))
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+          expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          // Day 15 is skipped to preserve the purpose of this test
+          expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          expect(getByText('17')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          expect(getByText('18')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        })
+      }
+    )
+
+    it(
+      'With finalDate and initialDate, focus is in the first input and hover date' +
+        'is before initialDate, hover style must be applied on the interval between initialDate and mouse',
+      () => {
+        const { getByText } = render(
+          createComponent({ initialDate: new Date('2019-02-13'), finalDate: new Date('2019-02-15'), inputOnFocus: 1 })
+        )
+        const expectedStyle = dayHoverStyle(theme)
+
+        fireEvent.mouseOver(getByText('08'))
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+          expect(getByText('07')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          expect(getByText('08')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          expect(getByText('12')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+          // Day 13 is skipped to preserve the purpose of this test
+          expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        })
+      }
+    )
 
     it('Remove hover style when mouseLeave', () => {
       const { getByText } = render(createComponent({ initialDate: new Date('2019-02-13'), inputOnFocus: 2 }))
