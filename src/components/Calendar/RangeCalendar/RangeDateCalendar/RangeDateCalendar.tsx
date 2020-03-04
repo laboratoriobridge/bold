@@ -55,14 +55,14 @@ export function RangeDateCalendar({
       } else if (initialDate && !finalDate) {
         if (inputOnFocus === 2) {
           return (initialDate < day && hoverDate >= day) || (initialDate > day && hoverDate <= day)
+        } else {
+          return isSameDay(day, hoverDate)
         }
       } else {
         if (inputOnFocus === 1) {
-          return initialDate > day && hoverDate <= day
+          return (initialDate > day && hoverDate <= day) || (finalDate < day && isSameDay(day, hoverDate))
         } else if (inputOnFocus === 2) {
           return (finalDate < day && hoverDate >= day) || (finalDate > day && isSameDay(day, hoverDate))
-        } else {
-          isSameDay(day, hoverDate)
         }
       }
     }
