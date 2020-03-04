@@ -121,6 +121,48 @@ describe('RangeDateCalendar', () => {
       })
     })
 
+    it('With only finalDate defined and focus is in the first input, hover style must be applied on the interval between finalDate and mouse', () => {
+      const { getByText } = render(createComponent({ finalDate: new Date('2019-02-15'), inputOnFocus: 1 }))
+      const expectedStyle = dayHoverStyle(theme)
+
+      fireEvent.mouseOver(getByText('17'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        // Day 15 (the day selected in the interval) skipped to preserve the purpose of this test
+        expect(getByText('16')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('17')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('18')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+
+      fireEvent.mouseOver(getByText('13'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('12')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('13')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        // Day 15 (the day selected in the interval) skipped to preserve the purpose of this test
+        expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+    })
+
+    it('With only finalDate defined and focus is in the second input, hover style must be applied in the date pointed by mouse', () => {
+      const { getByText } = render(createComponent({ finalDate: new Date('2019-02-15'), inputOnFocus: 2 }))
+      const expectedStyle = dayHoverStyle(theme)
+
+      fireEvent.mouseOver(getByText('17'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('16')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('17')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('18')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+
+      fireEvent.mouseOver(getByText('13'))
+      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
+        expect(getByText('12')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('13')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      })
+    })
+
     it('Hover style must be applied when initialDate and finalDate are correctly defined', () => {
       const { getByText } = render(
         createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13'), inputOnFocus: 2 })
