@@ -11,8 +11,6 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
@@ -36,16 +34,17 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -328,8 +327,6 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
@@ -353,16 +350,17 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -645,8 +643,6 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
@@ -670,16 +666,17 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -962,8 +959,6 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
@@ -987,16 +982,17 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -1279,8 +1275,6 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
@@ -1304,16 +1298,17 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -1722,8 +1717,6 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
   background: #F0F0F5;
@@ -1748,17 +1741,18 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
   color: #AAAAB9;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-10 {
@@ -1911,16 +1905,17 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
 
 exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -2029,8 +2024,6 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
   border: solid 1px #D01E29;
