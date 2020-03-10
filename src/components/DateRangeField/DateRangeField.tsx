@@ -81,7 +81,8 @@ export function DateRangeField(props: DateRangeFieldProps) {
     setDateRange(rangeDateFromBaseInput)
   }
 
-  const handleCalendarDateRangeChanged = (startDate: Date, endDate: Date) => {
+  const handleCalendarDateRangeChanged = (dateRange: DateRange) => {
+    const { startDate, endDate } = dateRange
     startDate && endDate
       ? startDate <= endDate
         ? setDateRange({ startDate: startDate, endDate: endDate } as DateRange)
@@ -108,7 +109,7 @@ export function DateRangeField(props: DateRangeFieldProps) {
       {open && (
         <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
           <ControlledDateRangeCalendar
-            value={{ initialDate: dateRange.startDate, finalDate: dateRange.endDate }}
+            value={dateRange}
             onChange={handleCalendarDateRangeChanged}
             onDayClick={handleOnDayClick}
             inputOnFocus={dateRangeInputFocus}

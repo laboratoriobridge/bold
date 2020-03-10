@@ -5,8 +5,8 @@ import { Theme } from '../../../../styles'
 import { Calendar, CalendarProps, defaultModifierStyles } from '../../Calendar'
 
 export interface GenericRangeCalendarProps extends CalendarProps {
-  initialDate: Date
-  finalDate: Date
+  startDate: Date
+  endDate: Date
   isInTheRange(day: Date): boolean
   isInTheHoverRange(day: Date, hoverDate: Date): boolean
 }
@@ -14,8 +14,8 @@ export interface GenericRangeCalendarProps extends CalendarProps {
 export function GenericRangeCalendar({
   isInTheRange,
   isInTheHoverRange,
-  initialDate,
-  finalDate,
+  startDate,
+  endDate,
   ...rest
 }: GenericRangeCalendarProps) {
   const [hoverDate, setHoverDate] = useState<Date>(undefined)

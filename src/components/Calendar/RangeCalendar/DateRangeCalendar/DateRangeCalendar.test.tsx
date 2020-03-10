@@ -5,6 +5,7 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
+import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
 import { dayHoverStyle, DateRangeCalendar, DateRangeCalendarProps } from './DateRangeCalendar'
 
 expect.extend(matchers)
@@ -13,8 +14,7 @@ const createComponent = (props: Partial<DateRangeCalendarProps> = {}) => (
   <DateRangeCalendar
     visibleDate={new Date('2019-02-09')}
     onVisibleDateChange={jest.fn()}
-    initialDate={undefined}
-    finalDate={undefined}
+    value={{ startDate: undefined, endDate: undefined } as DateRange}
     inputOnFocus={1}
     {...props}
   />
@@ -53,7 +53,7 @@ describe('DateRangeCalendar', () => {
 
     it('When finalDate is earlier than initialDate, both should be selected', () => {
       const { getByText } = render(
-        createComponent({ initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-14') })
+        createComponent({ value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-14') } as DateRange })
       )
 
       expect(getByText('14').getAttribute('aria-selected')).toBe('true')
@@ -61,7 +61,9 @@ describe('DateRangeCalendar', () => {
     })
 
     it('With only the initialDate selected, just one day should have the "selectedStyle"', () => {
-      const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15') }))
+      const { getByText } = render(
+        createComponent({ value: { startDate: new Date('2019-02-15'), endDate: undefined } as DateRange })
+      )
       const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
 
       iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
@@ -73,7 +75,7 @@ describe('DateRangeCalendar', () => {
 
     it('With finalDate and initialDate, the selected days must have been selected', () => {
       const { getByText } = render(
-        createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
+        createComponent({ value: { startDate: new Date('2019-02-11'), endDate: new Date('2019-02-13') } as DateRange })
       )
 
       expect(getByText('10').getAttribute('aria-selected')).toBe('false')
@@ -85,7 +87,7 @@ describe('DateRangeCalendar', () => {
 
     it('With finalDate and initialDate, the selected days should have the "selectedStyle"', () => {
       const { getByText } = render(
-        createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13') })
+        createComponent({ value: { startDate: new Date('2019-02-11'), endDate: new Date('2019-02-13') } as DateRange })
       )
       const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
 
@@ -99,7 +101,12 @@ describe('DateRangeCalendar', () => {
     })
 
     it('With only initalDate defined and focus is in the first input, hover style must be applied only in the date pointed by mouse', () => {
-      const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15'), inputOnFocus: 1 }))
+      const { getByText } = render(
+        createComponent({
+          value: { startDate: new Date('2019-02-15'), endDate: undefined } as DateRange,
+          inputOnFocus: 1,
+        })
+      )
       const expectedStyle = dayHoverStyle(theme)
 
       fireEvent.mouseOver(getByText('17'))
@@ -118,7 +125,12 @@ describe('DateRangeCalendar', () => {
     })
 
     it('With only initalDate defined and focus is in the second input, hover style must be applied on the interval between initialDate and mouse', () => {
-      const { getByText } = render(createComponent({ initialDate: new Date('2019-02-15'), inputOnFocus: 2 }))
+      const { getByText } = render(
+        createComponent({
+          value: { startDate: new Date('2019-02-15'), endDate: undefined } as DateRange,
+          inputOnFocus: 2,
+        })
+      )
       const expectedStyle = dayHoverStyle(theme)
 
       fireEvent.mouseOver(getByText('17'))
@@ -141,7 +153,12 @@ describe('DateRangeCalendar', () => {
     })
 
     it('With only finalDate defined and focus is in the first input, hover style must be applied on the interval between finalDate and mouse', () => {
-      const { getByText } = render(createComponent({ finalDate: new Date('2019-02-15'), inputOnFocus: 1 }))
+      const { getByText } = render(
+        createComponent({
+          value: { startDate: undefined, endDate: new Date('2019-02-15') } as DateRange,
+          inputOnFocus: 1,
+        })
+      )
       const expectedStyle = dayHoverStyle(theme)
 
       fireEvent.mouseOver(getByText('17'))
@@ -164,7 +181,12 @@ describe('DateRangeCalendar', () => {
     })
 
     it('With only finalDate defined and focus is in the second input, hover style must be applied only in the date pointed by mouse', () => {
-      const { getByText } = render(createComponent({ finalDate: new Date('2019-02-15'), inputOnFocus: 2 }))
+      const { getByText } = render(
+        createComponent({
+          value: { startDate: undefined, endDate: new Date('2019-02-15') } as DateRange,
+          inputOnFocus: 2,
+        })
+      )
       const expectedStyle = dayHoverStyle(theme)
 
       fireEvent.mouseOver(getByText('17'))
@@ -184,7 +206,10 @@ describe('DateRangeCalendar', () => {
 
     it('Hover style must be applied when initialDate and finalDate are correctly defined', () => {
       const { getByText } = render(
-        createComponent({ initialDate: new Date('2019-02-11'), finalDate: new Date('2019-02-13'), inputOnFocus: 2 })
+        createComponent({
+          value: { startDate: new Date('2019-02-11'), endDate: new Date('2019-02-13') } as DateRange,
+          inputOnFocus: 2,
+        })
       )
       const expectedStyle = dayHoverStyle(theme)
 
@@ -212,7 +237,10 @@ describe('DateRangeCalendar', () => {
         'is after initialDate, hover style must be applied only in the date pointed by mouse',
       () => {
         const { getByText } = render(
-          createComponent({ initialDate: new Date('2019-02-13'), finalDate: new Date('2019-02-15'), inputOnFocus: 1 })
+          createComponent({
+            value: { startDate: new Date('2019-02-13'), endDate: new Date('2019-02-15') } as DateRange,
+            inputOnFocus: 1,
+          })
         )
         const expectedStyle = dayHoverStyle(theme)
 
@@ -232,7 +260,10 @@ describe('DateRangeCalendar', () => {
         'is before initialDate, hover style must be applied on the interval between initialDate and mouse',
       () => {
         const { getByText } = render(
-          createComponent({ initialDate: new Date('2019-02-13'), finalDate: new Date('2019-02-15'), inputOnFocus: 1 })
+          createComponent({
+            value: { startDate: new Date('2019-02-13'), endDate: new Date('2019-02-15') } as DateRange,
+            inputOnFocus: 1,
+          })
         )
         const expectedStyle = dayHoverStyle(theme)
 
@@ -248,7 +279,12 @@ describe('DateRangeCalendar', () => {
     )
 
     it('Remove hover style when mouseLeave', () => {
-      const { getByText } = render(createComponent({ initialDate: new Date('2019-02-13'), inputOnFocus: 2 }))
+      const { getByText } = render(
+        createComponent({
+          value: { startDate: new Date('2019-02-13'), endDate: undefined } as DateRange,
+          inputOnFocus: 2,
+        })
+      )
       const expectedStyle = dayHoverStyle(theme)
 
       fireEvent.mouseOver(getByText('14'))
@@ -266,7 +302,10 @@ describe('DateRangeCalendar', () => {
       const { getByText, rerender } = render(
         createComponent({
           visibleDate: new Date('2019-01-15'),
-          initialDate: new Date('2019-02-15'),
+          value: {
+            startDate: new Date('2019-02-15'),
+            endDate: undefined,
+          },
         })
       )
       // Showing the previous month, so nothing should be selected
@@ -275,7 +314,10 @@ describe('DateRangeCalendar', () => {
       rerender(
         createComponent({
           visibleDate: new Date('2018-02-15'),
-          initialDate: new Date('2019-02-15'),
+          value: {
+            startDate: new Date('2019-02-15'),
+            endDate: undefined,
+          },
         })
       )
       // Showing the previous year, so nothing should be selected
@@ -284,7 +326,10 @@ describe('DateRangeCalendar', () => {
       rerender(
         createComponent({
           visibleDate: new Date('2018-01-15'),
-          initialDate: new Date('2019-02-15'),
+          value: {
+            startDate: new Date('2019-02-15'),
+            endDate: undefined,
+          },
         })
       )
       // Showing the wrong year and month, so nothing should be selected

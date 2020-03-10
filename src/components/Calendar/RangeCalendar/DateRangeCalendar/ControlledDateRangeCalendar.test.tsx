@@ -2,6 +2,7 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render, wait } from '@testing-library/react'
 
+import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
 import { ControlledDateRangeCalendar, ControlledDateRangeCalendarProps } from './ControlledDateRangeCalendar'
 
 expect.extend(matchers)
@@ -10,10 +11,12 @@ const createComponent = (props: Partial<ControlledDateRangeCalendarProps> = {}) 
   <ControlledDateRangeCalendar
     visibleDate={new Date('2019-02-09')}
     onVisibleDateChange={() => new Date('2019-02-09')}
-    value={{
-      initialDate: undefined,
-      finalDate: undefined,
-    }}
+    value={
+      {
+        startDate: undefined,
+        endDate: undefined,
+      } as DateRange
+    }
     {...props}
   />
 )
@@ -38,13 +41,13 @@ describe('ControlledDateRangeCalendar', () => {
     })
   })
 
-  it('Should select only the initialDate if the finalDate is not defined in initialValues', () => {
+  it('Should select only the startDate if the endDate is not defined in initialValues', () => {
     const { getByText } = render(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-11'),
-          finalDate: undefined,
-        },
+          startDate: new Date('2019-02-11'),
+          endDate: undefined,
+        } as DateRange,
         inputOnFocus: 1,
       })
     )
@@ -54,13 +57,13 @@ describe('ControlledDateRangeCalendar', () => {
     expect(getByText('12').getAttribute('aria-selected')).toBe('false')
   })
 
-  it('Should select only the finalDate if the finalDate is setted in initialValues', () => {
+  it('Should select only the endDate if the endDate is setted in initialValues', () => {
     const { getByText } = render(
       createComponent({
         value: {
-          initialDate: undefined,
-          finalDate: new Date('2019-02-11'),
-        },
+          startDate: undefined,
+          endDate: new Date('2019-02-11'),
+        } as DateRange,
       })
     )
 
@@ -73,9 +76,9 @@ describe('ControlledDateRangeCalendar', () => {
     const { getByText } = render(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-11'),
-          finalDate: new Date('2019-02-13'),
-        },
+          startDate: new Date('2019-02-11'),
+          endDate: new Date('2019-02-13'),
+        } as DateRange,
       })
     )
 
@@ -100,73 +103,82 @@ describe('ControlledDateRangeCalendar', () => {
     expect(change).toHaveBeenLastCalledWith(new Date('2019-02-11'), undefined)
   })
 
-  it('Should select the finalDate correctly, with a predefined initialDate', () => {
+  it('Should select the endDate correctly, with a predefined startDate', () => {
     const change = jest.fn()
     const { getByText } = render(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-11'),
-          finalDate: undefined,
-        },
+          startDate: new Date('2019-02-11'),
+          endDate: undefined,
+        } as DateRange,
         onChange: change,
         inputOnFocus: 2,
       })
     )
 
     fireEvent.click(getByText('12'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-11'), new Date('2019-02-12'))
+    expect(change).toHaveBeenLastCalledWith({
+      startDate: new Date('2019-02-11'),
+      endDate: new Date('2019-02-12'),
+    } as DateRange)
   })
 
-  it('Should select correctly both initialDate and finalDate, without a predefined interval', () => {
+  it('Should select correctly both startDate and endDate, without a predefined interval', () => {
     const change = jest.fn()
     const { rerender, getByText } = render(createComponent({ onChange: change, inputOnFocus: 1 }))
 
     fireEvent.click(getByText('10'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), endDate: undefined } as DateRange)
 
     rerender(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-10'),
-          finalDate: undefined,
-        },
+          startDate: new Date('2019-02-10'),
+          endDate: undefined,
+        } as DateRange,
         onChange: change,
         inputOnFocus: 2,
       })
     )
 
     fireEvent.click(getByText('11'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), new Date('2019-02-11'))
+    expect(change).toHaveBeenLastCalledWith({
+      startDate: new Date('2019-02-10'),
+      endDate: new Date('2019-02-11'),
+    } as DateRange)
   })
 
-  it('Should select correctly both initialDate and finalDate, with a predefined interval', () => {
+  it('Should select correctly both startDate and endDate, with a predefined interval', () => {
     const change = jest.fn()
     const { rerender, getByText } = render(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-11'),
-          finalDate: new Date('2019-02-12'),
-        },
+          startDate: new Date('2019-02-11'),
+          endDate: new Date('2019-02-12'),
+        } as DateRange,
         onChange: change,
         inputOnFocus: 1,
       })
     )
     fireEvent.click(getByText('20'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-20'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-20'), endDate: undefined } as DateRange)
 
     rerender(
       createComponent({
         value: {
-          initialDate: new Date('2019-02-20'),
-          finalDate: undefined,
-        },
+          startDate: new Date('2019-02-20'),
+          endDate: undefined,
+        } as DateRange,
         onChange: change,
         inputOnFocus: 2,
       })
     )
 
     fireEvent.click(getByText('21'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-20'), new Date('2019-02-21'))
+    expect(change).toHaveBeenLastCalledWith({
+      startDate: new Date('2019-02-20'),
+      endDate: new Date('2019-02-21'),
+    } as DateRange)
   })
 
   it('Component should call onChange on every update of the value', async () => {
@@ -174,11 +186,9 @@ describe('ControlledDateRangeCalendar', () => {
     const { getByText } = render(createComponent({ onChange: spy, inputOnFocus: 1 }))
 
     fireEvent.click(getByText('10'))
-    await wait()
     expect(spy).toHaveBeenCalledTimes(1)
 
     fireEvent.click(getByText('11'))
-    await wait()
     expect(spy).toHaveBeenCalledTimes(2)
   })
 
@@ -186,59 +196,65 @@ describe('ControlledDateRangeCalendar', () => {
     const change = jest.fn()
     const { getByText } = render(
       createComponent({
-        value: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-19') } as DateRange,
         onChange: change,
         inputOnFocus: 1,
       })
     )
     fireEvent.click(getByText('10'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), new Date('2019-02-19'))
+    expect(change).toHaveBeenLastCalledWith({
+      startDate: new Date('2019-02-10'),
+      endDate: new Date('2019-02-19'),
+    } as DateRange)
   })
 
   it('should start a new period when focus is in first input and the selected date is after final date', () => {
     const change = jest.fn()
     const { getByText } = render(
       createComponent({
-        value: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-19') } as DateRange,
         onChange: change,
         inputOnFocus: 1,
       })
     )
     fireEvent.click(getByText('21'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-21'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-21'), endDate: undefined } as DateRange)
   })
 
   it('should start a new period when focus is in second input and the selected date is before start date', () => {
     const change = jest.fn()
     const { getByText } = render(
       createComponent({
-        value: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-19') } as DateRange,
         onChange: change,
         inputOnFocus: 2,
       })
     )
     fireEvent.click(getByText('10'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), endDate: undefined } as DateRange)
   })
 
   it('should change only final date when focus is in second input and the selected date is after final date', () => {
     const change = jest.fn()
     const { getByText } = render(
       createComponent({
-        value: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-19') },
+        value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-19') } as DateRange,
         onChange: change,
         inputOnFocus: 2,
       })
     )
     fireEvent.click(getByText('23'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-15'), new Date('2019-02-23'))
+    expect(change).toHaveBeenLastCalledWith({
+      startDate: new Date('2019-02-15'),
+      endDate: new Date('2019-02-23'),
+    } as DateRange)
   })
 
   describe('should select correctly the received values', () => {
-    it('should select only initialDate', () => {
+    it('should select only startDate', () => {
       const { getByText } = render(
         createComponent({
-          value: { initialDate: new Date('2019-02-15'), finalDate: undefined },
+          value: { startDate: new Date('2019-02-15'), endDate: undefined } as DateRange,
           inputOnFocus: 1,
         })
       )
@@ -248,10 +264,10 @@ describe('ControlledDateRangeCalendar', () => {
       expect(getByText('16').getAttribute('aria-selected')).toBe('false')
     })
 
-    it('should select only finalDate', () => {
+    it('should select only endDate', () => {
       const { getByText } = render(
         createComponent({
-          value: { initialDate: undefined, finalDate: new Date('2019-02-18') },
+          value: { startDate: undefined, endDate: new Date('2019-02-18') } as DateRange,
           inputOnFocus: 2,
         })
       )
@@ -263,7 +279,7 @@ describe('ControlledDateRangeCalendar', () => {
     it('should select the received range', () => {
       const { getByText } = render(
         createComponent({
-          value: { initialDate: new Date('2019-02-15'), finalDate: new Date('2019-02-22') },
+          value: { startDate: new Date('2019-02-15'), endDate: new Date('2019-02-22') } as DateRange,
           inputOnFocus: 2,
         })
       )

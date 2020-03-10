@@ -4,65 +4,58 @@ import { Theme } from '../../../../styles'
 import { CalendarProps } from '../../Calendar'
 import { isSameDay } from '../../util'
 import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
+import { DateRange } from '../../../DateRangeField'
 
 export interface DateRangeCalendarProps extends CalendarProps {
-  initialDate: Date
-  finalDate: Date
+  value: DateRange
   minDate?: Date
   maxDate?: Date
   inputOnFocus: number
 }
 
-export function DateRangeCalendar({
-  initialDate,
-  finalDate,
-  inputOnFocus,
-  maxDate,
-  minDate,
-  ...rest
-}: DateRangeCalendarProps) {
+export function DateRangeCalendar({ value, inputOnFocus, maxDate, minDate, ...rest }: DateRangeCalendarProps) {
   const handleIsInTheRange = (day: Date): boolean => {
-    initialDate?.setHours(0, 0, 0, 0)
-    finalDate?.setHours(0, 0, 0, 0)
+    value?.startDate?.setHours(0, 0, 0, 0)
+    value?.endDate?.setHours(0, 0, 0, 0)
     day?.setHours(0, 0, 0, 0)
 
-    if (!initialDate) {
-      if (finalDate) {
-        return isSameDay(day, finalDate)
+    if (!value?.startDate) {
+      if (value?.endDate) {
+        return isSameDay(day, value?.endDate)
       } else {
         return false
       }
     }
-    if (!finalDate) {
-      return isSameDay(day, initialDate)
+    if (!value.endDate) {
+      return isSameDay(day, value?.startDate)
     }
-    if ((initialDate <= day && day <= finalDate) || (finalDate <= day && day <= initialDate)) {
+    if ((value?.startDate <= day && day <= value?.endDate) || (value?.endDate <= day && day <= value?.startDate)) {
       return true
     }
     return false
   }
 
   const hoverControl = (day: Date, hoverDate: Date) => {
-    if (!initialDate && !finalDate) {
+    if (!value?.startDate && !value?.endDate) {
       return isSameDay(day, hoverDate)
     } else if (inputOnFocus) {
-      if (!initialDate && finalDate) {
+      if (!value?.startDate && value?.endDate) {
         if (inputOnFocus === 1) {
-          return (finalDate < day && hoverDate >= day) || (finalDate > day && hoverDate <= day)
+          return (value?.endDate < day && hoverDate >= day) || (value?.endDate > day && hoverDate <= day)
         } else {
           return isSameDay(day, hoverDate)
         }
-      } else if (initialDate && !finalDate) {
+      } else if (value?.startDate && !value?.endDate) {
         if (inputOnFocus === 2) {
-          return (initialDate < day && hoverDate >= day) || (initialDate > day && hoverDate <= day)
+          return (value?.startDate < day && hoverDate >= day) || (value?.startDate > day && hoverDate <= day)
         } else {
           return isSameDay(day, hoverDate)
         }
       } else {
         if (inputOnFocus === 1) {
-          return (initialDate > day && hoverDate <= day) || (finalDate < day && isSameDay(day, hoverDate))
+          return (value?.startDate > day && hoverDate <= day) || (value?.endDate < day && isSameDay(day, hoverDate))
         } else if (inputOnFocus === 2) {
-          return (finalDate < day && hoverDate >= day) || (finalDate > day && isSameDay(day, hoverDate))
+          return (value?.endDate < day && hoverDate >= day) || (value?.endDate > day && isSameDay(day, hoverDate))
         }
       }
     }
@@ -74,8 +67,8 @@ export function DateRangeCalendar({
   return (
     <GenericRangeCalendar
       {...rest}
-      initialDate={initialDate}
-      finalDate={finalDate}
+      startDate={value?.startDate}
+      endDate={value?.endDate}
       isInTheRange={handleIsInTheRange}
       isInTheHoverRange={isInHoverRange}
     />
