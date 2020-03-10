@@ -1,7 +1,6 @@
+import { fireEvent, render } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import React from 'react'
-import { fireEvent, render, wait } from '@testing-library/react'
-
 import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
 import { ControlledDateRangeCalendar, ControlledDateRangeCalendarProps } from './ControlledDateRangeCalendar'
 
@@ -94,13 +93,13 @@ describe('ControlledDateRangeCalendar', () => {
     const { getByText } = render(createComponent({ onChange: change, inputOnFocus: 1 }))
 
     fireEvent.click(getByText('10'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), endDate: undefined } as DateRange)
 
     fireEvent.click(getByText('10'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-10'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-10'), endDate: undefined } as DateRange)
 
     fireEvent.click(getByText('11'))
-    expect(change).toHaveBeenLastCalledWith(new Date('2019-02-11'), undefined)
+    expect(change).toHaveBeenLastCalledWith({ startDate: new Date('2019-02-11'), endDate: undefined } as DateRange)
   })
 
   it('Should select the endDate correctly, with a predefined startDate', () => {
