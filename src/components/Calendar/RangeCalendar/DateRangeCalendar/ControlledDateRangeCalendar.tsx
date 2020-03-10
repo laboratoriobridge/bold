@@ -2,9 +2,9 @@ import React from 'react'
 
 import { CalendarProps } from '../..'
 
-import { RangeDateCalendar } from './RangeDateCalendar'
+import { DateRangeCalendar } from './DateRangeCalendar'
 
-export interface ControlledRangeDateCalendarProps extends CalendarProps {
+export interface ControlledDateRangeCalendarProps extends CalendarProps {
   value?: {
     initialDate: Date
     finalDate: Date
@@ -15,7 +15,7 @@ export interface ControlledRangeDateCalendarProps extends CalendarProps {
   maxDate: Date
 }
 
-export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarProps) {
+export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarProps) {
   const { inputOnFocus, onChange, value, onDayClick, ...rest } = props
 
   const controllDayClick = (day: Date) => {
@@ -41,7 +41,7 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
   }
 
   return (
-    <RangeDateCalendar
+    <DateRangeCalendar
       {...rest}
       initialDate={value?.initialDate}
       finalDate={value?.finalDate}
@@ -51,7 +51,7 @@ export function ControlledRangeDateCalendar(props: ControlledRangeDateCalendarPr
   )
 }
 
-ControlledRangeDateCalendar.defaultProps = {
+ControlledDateRangeCalendar.defaultProps = {
   onChange: () => null,
   onDayClick: () => null,
-} as Partial<ControlledRangeDateCalendarProps>
+} as Partial<ControlledDateRangeCalendarProps>

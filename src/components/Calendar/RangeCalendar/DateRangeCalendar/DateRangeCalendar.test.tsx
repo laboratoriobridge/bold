@@ -5,12 +5,12 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
-import { dayHoverStyle, RangeDateCalendar, RangeDateCalendarProps } from './RangeDateCalendar'
+import { dayHoverStyle, DateRangeCalendar, DateRangeCalendarProps } from './DateRangeCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<RangeDateCalendarProps> = {}) => (
-  <RangeDateCalendar
+const createComponent = (props: Partial<DateRangeCalendarProps> = {}) => (
+  <DateRangeCalendar
     visibleDate={new Date('2019-02-09')}
     onVisibleDateChange={jest.fn()}
     initialDate={undefined}
@@ -37,7 +37,7 @@ const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue
   }
 }
 
-describe('RangeDateCalendar', () => {
+describe('DateRangeCalendar', () => {
   const theme = createTheme()
   const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
   describe('Selection and hover', () => {

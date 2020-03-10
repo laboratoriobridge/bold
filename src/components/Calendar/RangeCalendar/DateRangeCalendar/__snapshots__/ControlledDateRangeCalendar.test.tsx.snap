@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ControlledRangeDateCalendar Should render correclty 1`] = `
+exports[`ControlledDateRangeCalendar Should render correclty 1`] = `
 .emotion-47 {
   width: 288px;
 }
@@ -659,7 +659,7 @@ exports[`ControlledRangeDateCalendar Should render correclty 1`] = `
 </div>
 `;
 
-exports[`ControlledRangeDateCalendar Should render correctly without receiving a value 1`] = `
+exports[`ControlledDateRangeCalendar Should render correctly without receiving a value 1`] = `
 .emotion-47 {
   width: 288px;
 }

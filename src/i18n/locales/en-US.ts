@@ -26,7 +26,7 @@ const locale = {
     nextPage: 'Next page',
     currentPage: 'Current page',
   },
-  rangeDateField: {
+  dateRangeField: {
     separator: 'until',
   },
   select: {

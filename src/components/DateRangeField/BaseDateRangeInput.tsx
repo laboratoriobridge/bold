@@ -8,16 +8,16 @@ import { DateInput } from '../DateField'
 import { Icons, Icon } from '../Icon'
 import { Button } from '..'
 
-export interface RangeDate {
+export interface DateRange {
   startDate?: Date
-  finalDate?: Date
+  endDate?: Date
 }
 
-export interface BaseRangeDateInputProps {
+export interface BaseDateRangeInputProps {
   /**
-   * Set a RangeDate as initial value of the component.
+   * Set a DateRange as initial value of the component.
    */
-  value?: RangeDate
+  value?: DateRange
 
   /**
    * Component name
@@ -102,14 +102,14 @@ export interface BaseRangeDateInputProps {
   onInputOnFocus?(isOnFocus: number): void
 
   /**
-   * Function used to manipulate values of RangeDate
+   * Function used to manipulate values of DateRange
    *
-   * @param rangeDate
+   * @param dateRange
    */
-  onChange?(rangeDate: RangeDate): void
+  onChange?(dateRange: DateRange): void
 }
 
-export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
+export function BaseDateRangeInput(props: BaseDateRangeInputProps) {
   const {
     clearable,
     disabled,
@@ -150,12 +150,12 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
 
   const onChangeStart = (date: Date) => {
     const startDate = handleMinMaxDates(date)
-    const finalDate =
-      value?.startDate && value?.finalDate && startDate && startDate > value?.finalDate ? undefined : value?.finalDate
+    const endDate =
+      value?.startDate && value?.endDate && startDate && startDate > value?.endDate ? undefined : value?.endDate
     const aux = {
       startDate,
-      finalDate,
-    } as RangeDate
+      endDate,
+    } as DateRange
 
     onChange && onChange(aux)
     if (startDate) {
@@ -166,27 +166,27 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   const onChangeFinal = (date: Date) => {
     const auxFinalDate = handleMinMaxDates(date)
     const startDate =
-      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate
+      value?.startDate && value?.endDate && auxFinalDate && auxFinalDate < value?.startDate
         ? auxFinalDate
         : value?.startDate
-    const finalDate =
-      value?.startDate && value?.finalDate && auxFinalDate && auxFinalDate < value?.startDate ? undefined : auxFinalDate
+    const endDate =
+      value?.startDate && value?.endDate && auxFinalDate && auxFinalDate < value?.startDate ? undefined : auxFinalDate
 
     const aux = {
       startDate,
-      finalDate,
-    } as RangeDate
+      endDate,
+    } as DateRange
     onChange && onChange(aux)
   }
 
   const onClearStart = () => {
-    const aux = { startDate: undefined, finalDate: value.finalDate } as RangeDate
+    const aux = { startDate: undefined, endDate: value.endDate } as DateRange
     onChange && onChange(aux)
     firstDateFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
-    const aux = { startDate: value.startDate, finalDate: undefined } as RangeDate
+    const aux = { startDate: value.startDate, endDate: undefined } as DateRange
     onChange && onChange(aux)
     secondDateFieldRef.current.focus()
   }
@@ -220,19 +220,19 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
           />
         </div>
         <span className={classes.spanWrapper}>
-          <strong>{rangeSeparator ? rangeSeparator : locale.rangeDateField.separator}</strong>
+          <strong>{rangeSeparator ? rangeSeparator : locale.dateRangeField.separator}</strong>
         </span>
         <div className={classes.fieldWrapper}>
           <DateInput
             clearable={clearable}
-            name={name ? `${name}.finalDate` : 'finalDate'}
+            name={name ? `${name}.endDate` : 'endDate'}
             disabled={disabled}
             inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
             onChange={onChangeFinal}
             onClear={onClearFinal}
             placeholder={locale.dateInput.placeholder}
             style={classes.dateField}
-            value={value?.finalDate}
+            value={value?.endDate}
             onFocus={onInputOnFocusFinal}
             {...rest}
           />
@@ -254,10 +254,10 @@ export function BaseRangeDateInput(props: BaseRangeDateInputProps) {
   )
 }
 
-BaseRangeDateInput.defaultProps = {
+BaseDateRangeInput.defaultProps = {
   icon: 'calendarOutline',
   clearable: true,
-} as Partial<BaseRangeDateInputProps>
+} as Partial<BaseDateRangeInputProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)

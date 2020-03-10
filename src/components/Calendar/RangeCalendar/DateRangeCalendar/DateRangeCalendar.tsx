@@ -5,7 +5,7 @@ import { CalendarProps } from '../../Calendar'
 import { isSameDay } from '../../util'
 import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
 
-export interface RangeDateCalendarProps extends CalendarProps {
+export interface DateRangeCalendarProps extends CalendarProps {
   initialDate: Date
   finalDate: Date
   minDate?: Date
@@ -13,14 +13,14 @@ export interface RangeDateCalendarProps extends CalendarProps {
   inputOnFocus: number
 }
 
-export function RangeDateCalendar({
+export function DateRangeCalendar({
   initialDate,
   finalDate,
   inputOnFocus,
   maxDate,
   minDate,
   ...rest
-}: RangeDateCalendarProps) {
+}: DateRangeCalendarProps) {
   const handleIsInTheRange = (day: Date): boolean => {
     initialDate?.setHours(0, 0, 0, 0)
     finalDate?.setHours(0, 0, 0, 0)

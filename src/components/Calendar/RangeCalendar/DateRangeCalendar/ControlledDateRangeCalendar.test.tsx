@@ -2,12 +2,12 @@ import { matchers } from 'jest-emotion'
 import React from 'react'
 import { fireEvent, render, wait } from '@testing-library/react'
 
-import { ControlledRangeDateCalendar, ControlledRangeDateCalendarProps } from './ControlledRangeDateCalendar'
+import { ControlledDateRangeCalendar, ControlledDateRangeCalendarProps } from './ControlledDateRangeCalendar'
 
 expect.extend(matchers)
 
-const createComponent = (props: Partial<ControlledRangeDateCalendarProps> = {}) => (
-  <ControlledRangeDateCalendar
+const createComponent = (props: Partial<ControlledDateRangeCalendarProps> = {}) => (
+  <ControlledDateRangeCalendar
     visibleDate={new Date('2019-02-09')}
     onVisibleDateChange={() => new Date('2019-02-09')}
     value={{
@@ -18,7 +18,7 @@ const createComponent = (props: Partial<ControlledRangeDateCalendarProps> = {}) 
   />
 )
 
-describe('ControlledRangeDateCalendar', () => {
+describe('ControlledDateRangeCalendar', () => {
   it('Should render correclty', () => {
     const { container } = render(createComponent())
     expect(container).toMatchSnapshot()

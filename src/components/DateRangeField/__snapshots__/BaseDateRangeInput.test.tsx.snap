@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BaseRangeDateInput customization should allow a custom string in range separator 1`] = `
+exports[`BaseDateRangeInput customization should allow a custom string in range separator 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -279,7 +279,7 @@ exports[`BaseRangeDateInput customization should allow a custom string in range 
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
@@ -316,7 +316,7 @@ exports[`BaseRangeDateInput customization should allow a custom string in range 
 </div>
 `;
 
-exports[`BaseRangeDateInput customization should allow enUS placeholder customization via locale context 1`] = `
+exports[`BaseDateRangeInput customization should allow enUS placeholder customization via locale context 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -595,7 +595,7 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
@@ -632,7 +632,7 @@ exports[`BaseRangeDateInput customization should allow enUS placeholder customiz
 </div>
 `;
 
-exports[`BaseRangeDateInput customization should allow enUs i18n in range separator 1`] = `
+exports[`BaseDateRangeInput customization should allow enUs i18n in range separator 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -911,7 +911,7 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
@@ -948,7 +948,7 @@ exports[`BaseRangeDateInput customization should allow enUs i18n in range separa
 </div>
 `;
 
-exports[`BaseRangeDateInput customization should allow ptBR placeholder customization via locale context 1`] = `
+exports[`BaseDateRangeInput customization should allow ptBR placeholder customization via locale context 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -1227,7 +1227,7 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="dd/mm/aaaa"
               type="text"
               value=""
@@ -1264,7 +1264,7 @@ exports[`BaseRangeDateInput customization should allow ptBR placeholder customiz
 </div>
 `;
 
-exports[`BaseRangeDateInput customization should allow ptBr i18n in range separator 1`] = `
+exports[`BaseDateRangeInput customization should allow ptBr i18n in range separator 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -1543,7 +1543,7 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="dd/mm/aaaa"
               type="text"
               value=""
@@ -1580,7 +1580,7 @@ exports[`BaseRangeDateInput customization should allow ptBr i18n in range separa
 </div>
 `;
 
-exports[`BaseRangeDateInput render should render correctly 1`] = `
+exports[`BaseDateRangeInput render should render correctly 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -1859,7 +1859,7 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
@@ -1896,7 +1896,7 @@ exports[`BaseRangeDateInput render should render correctly 1`] = `
 </div>
 `;
 
-exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
+exports[`BaseDateRangeInput render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -2181,7 +2181,7 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
               autocomplete="off"
               class="emotion-0"
               disabled=""
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
@@ -2219,7 +2219,7 @@ exports[`BaseRangeDateInput render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
+exports[`BaseDateRangeInput render should render correctly when invalid 1`] = `
 .emotion-4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -2510,7 +2510,7 @@ exports[`BaseRangeDateInput render should render correctly when invalid 1`] = `
             <input
               autocomplete="off"
               class="emotion-0"
-              name="finalDate"
+              name="endDate"
               placeholder="mm/dd/yyyy"
               type="text"
               value=""
