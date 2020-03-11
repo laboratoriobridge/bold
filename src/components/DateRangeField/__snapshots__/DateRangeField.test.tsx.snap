@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RangeDateField render should render correctly 1`] = `
-.emotion-9 {
+exports[`DateRangeField render should render correctly 1`] = `
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -11,41 +11,40 @@ exports[`RangeDateField render should render correctly 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -54,16 +53,7 @@ exports[`RangeDateField render should render correctly 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -77,11 +67,9 @@ exports[`RangeDateField render should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -161,26 +149,26 @@ exports[`RangeDateField render should render correctly 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -210,10 +198,11 @@ exports[`RangeDateField render should render correctly 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -224,24 +213,24 @@ exports[`RangeDateField render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -253,71 +242,67 @@ exports[`RangeDateField render should render correctly 1`] = `
     >
       <div>
         <div
-          class="emotion-13"
+          class="emotion-12"
         >
           <div
-            class="emotion-9"
+            class="emotion-3"
           >
             <div
-              class="emotion-3"
+              class="emotion-2"
             >
               <div
-                class="emotion-2"
+                class="emotion-1"
               >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="startDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <span
-              class="emotion-4"
-            >
-              <strong>
-                until
-              </strong>
-            </span>
-            <div
-              class="emotion-3"
-            >
-              <div
-                class="emotion-2"
-              >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="finalDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="startDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
           </div>
           <span
-            class="emotion-12"
+            class="emotion-4"
+          >
+            <strong>
+              until
+            </strong>
+          </span>
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="endDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-11"
           >
             <button
-              class="emotion-11"
+              class="emotion-10"
               tabindex="-1"
               type="button"
             >
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -337,23 +322,14 @@ exports[`RangeDateField render should render correctly 1`] = `
 </div>
 `;
 
-exports[`RangeDateField render should render correctly when disabled 1`] = `
+exports[`DateRangeField render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -367,11 +343,9 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -451,31 +425,31 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -485,46 +459,45 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
   background: #F0F0F5;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
   color: #AAAAB9;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -556,10 +529,11 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
   cursor: not-allowed;
   opacity: 0.5;
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -570,20 +544,20 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
@@ -594,66 +568,62 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
     >
       <div>
         <div
-          class="emotion-13"
+          class="emotion-12"
         >
           <div
-            class="emotion-9"
+            class="emotion-3"
           >
             <div
-              class="emotion-3"
+              class="emotion-2"
             >
               <div
-                class="emotion-2"
+                class="emotion-1"
               >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    disabled=""
-                    name="startDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <span
-              class="emotion-4"
-            >
-              <strong>
-                until
-              </strong>
-            </span>
-            <div
-              class="emotion-3"
-            >
-              <div
-                class="emotion-2"
-              >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    disabled=""
-                    name="finalDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  disabled=""
+                  name="startDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
           </div>
           <span
-            class="emotion-12"
+            class="emotion-4"
+          >
+            <strong>
+              until
+            </strong>
+          </span>
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  disabled=""
+                  name="endDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-11"
           >
             <button
-              class="emotion-11"
+              class="emotion-10"
               disabled=""
               tabindex="-1"
               type="button"
@@ -661,7 +631,7 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -681,18 +651,19 @@ exports[`RangeDateField render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`RangeDateField render should render correctly when invalid 1`] = `
+exports[`DateRangeField render should render correctly when invalid 1`] = `
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -701,16 +672,7 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -724,18 +686,16 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
   position: relative;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -765,10 +725,11 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -779,29 +740,29 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-9 {
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -811,32 +772,30 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
   border: solid 1px #D01E29;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
@@ -920,19 +879,19 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
@@ -946,71 +905,67 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
     >
       <div>
         <div
-          class="emotion-13"
+          class="emotion-12"
         >
           <div
-            class="emotion-9"
+            class="emotion-3"
           >
             <div
-              class="emotion-3"
+              class="emotion-2"
             >
               <div
-                class="emotion-2"
+                class="emotion-1"
               >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="startDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <span
-              class="emotion-4"
-            >
-              <strong>
-                until
-              </strong>
-            </span>
-            <div
-              class="emotion-3"
-            >
-              <div
-                class="emotion-2"
-              >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="finalDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="startDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
           </div>
           <span
-            class="emotion-12"
+            class="emotion-4"
+          >
+            <strong>
+              until
+            </strong>
+          </span>
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="endDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-11"
           >
             <button
-              class="emotion-11"
+              class="emotion-10"
               tabindex="-1"
               type="button"
             >
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1030,8 +985,8 @@ exports[`RangeDateField render should render correctly when invalid 1`] = `
 </div>
 `;
 
-exports[`RangeDateField render should render correctly when opened 1`] = `
-.emotion-9 {
+exports[`DateRangeField render should render correctly when opened 1`] = `
+.emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1041,41 +996,40 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   display: -ms-flexbox;
   display: flex;
   position: relative;
-  padding-right: 2.5rem;
-  padding-left: 0.1rem;
   -webkit-transition: box-shadow .2s ease;
   transition: box-shadow .2s ease;
 }
 
-.emotion-9:required {
+.emotion-12:required {
   box-shadow: none;
 }
 
-.emotion-9:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-9:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-9:focus-within:not(:disabled) {
+.emotion-12:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
 .emotion-4 {
-  cursor: default;
-  background: transparent;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .emotion-3 {
@@ -1084,16 +1038,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   flex: 1;
 }
 
-.emotion-13 {
-  position: relative;
-}
-
-.emotion-13 input {
-  padding-right: 3rem;
-}
-
-.emotion-12 {
-  position: absolute;
+.emotion-11 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1107,11 +1052,9 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.25rem;
   width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
 }
 
 .emotion-1 {
@@ -1191,26 +1134,26 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:focus {
   box-shadow: none !important;
 }
 
-.emotion-11 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1240,10 +1183,11 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
   border-radius: inherit;
 }
 
-.emotion-11 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1254,29 +1198,29 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-11:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-11:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-11:focus {
+.emotion-10:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-9 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-63 {
+.emotion-62 {
   z-index: 1200;
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
@@ -1290,11 +1234,11 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   pointer-events: none;
 }
 
-.emotion-62 {
+.emotion-61 {
   width: 288px;
 }
 
-.emotion-25 {
+.emotion-24 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1307,7 +1251,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   font-weight: bold;
 }
 
-.emotion-19 {
+.emotion-18 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1318,7 +1262,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-16 {
+.emotion-15 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1350,7 +1294,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-16 > span {
+.emotion-15 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1361,41 +1305,29 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-15:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-15:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-15:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-61 {
+.emotion-60 {
   border-collapse: collapse;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
 }
 
-.emotion-61 th {
+.emotion-60 th {
   width: 2rem;
   padding: 0.25rem 0;
-}
-
-.emotion-27 {
-  width: 2rem;
-  padding: 0.25rem 0;
-  display: inline-block;
-  border-radius: 50%;
-}
-
-.emotion-27:hover {
-  cursor: pointer;
-  background: #F0F0F5;
 }
 
 .emotion-26 {
@@ -1403,10 +1335,22 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
-  color: #AAAAB9;
 }
 
 .emotion-26:hover {
+  cursor: pointer;
+  background: #F0F0F5;
+}
+
+.emotion-25 {
+  width: 2rem;
+  padding: 0.25rem 0;
+  display: inline-block;
+  border-radius: 50%;
+  color: #AAAAB9;
+}
+
+.emotion-25:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1418,71 +1362,67 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
     >
       <div>
         <div
-          class="emotion-13"
+          class="emotion-12"
         >
           <div
-            class="emotion-9"
+            class="emotion-3"
           >
             <div
-              class="emotion-3"
+              class="emotion-2"
             >
               <div
-                class="emotion-2"
+                class="emotion-1"
               >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="startDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
-              </div>
-            </div>
-            <span
-              class="emotion-4"
-            >
-              <strong>
-                until
-              </strong>
-            </span>
-            <div
-              class="emotion-3"
-            >
-              <div
-                class="emotion-2"
-              >
-                <div
-                  class="emotion-1"
-                >
-                  <input
-                    autocomplete="off"
-                    class="emotion-0"
-                    name="finalDate"
-                    placeholder="mm/dd/yyyy"
-                    type="text"
-                    value=""
-                  />
-                </div>
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="startDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
               </div>
             </div>
           </div>
           <span
-            class="emotion-12"
+            class="emotion-4"
+          >
+            <strong>
+              until
+            </strong>
+          </span>
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="endDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-11"
           >
             <button
-              class="emotion-11"
+              class="emotion-10"
               tabindex="-1"
               type="button"
             >
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1499,20 +1439,20 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
       </div>
     </div>
     <div
-      class="emotion-63"
+      class="emotion-62"
       tabindex="-1"
     >
       <div
-        class="emotion-62"
+        class="emotion-61"
       >
         <div
-          class="emotion-25"
+          class="emotion-24"
         >
           <div
-            class="emotion-19"
+            class="emotion-18"
           >
             <button
-              class="emotion-16"
+              class="emotion-15"
               tabindex="-1"
               title="Previous month"
               type="button"
@@ -1520,7 +1460,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1534,7 +1474,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
             </button>
             Oct
             <button
-              class="emotion-16"
+              class="emotion-15"
               tabindex="-1"
               title="Next month"
               type="button"
@@ -1542,7 +1482,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1556,10 +1496,10 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-19"
+            class="emotion-18"
           >
             <button
-              class="emotion-16"
+              class="emotion-15"
               tabindex="-1"
               title="Previous year"
               type="button"
@@ -1567,7 +1507,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1581,7 +1521,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
             </button>
             2018
             <button
-              class="emotion-16"
+              class="emotion-15"
               tabindex="-1"
               title="Next year"
               type="button"
@@ -1589,7 +1529,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-10"
+                  class="emotion-9"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1604,7 +1544,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
           </div>
         </div>
         <table
-          class="emotion-61"
+          class="emotion-60"
         >
           <thead>
             <tr>
@@ -1638,7 +1578,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-26"
+                  class="emotion-25"
                   role="button"
                 >
                   30
@@ -1649,7 +1589,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   01
@@ -1660,7 +1600,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   02
@@ -1671,7 +1611,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   03
@@ -1682,7 +1622,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   04
@@ -1693,7 +1633,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   05
@@ -1704,7 +1644,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   06
@@ -1717,7 +1657,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   07
@@ -1728,7 +1668,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   08
@@ -1739,7 +1679,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   09
@@ -1750,7 +1690,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   10
@@ -1761,7 +1701,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   11
@@ -1772,7 +1712,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   12
@@ -1783,7 +1723,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   13
@@ -1796,7 +1736,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   14
@@ -1807,7 +1747,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   15
@@ -1818,7 +1758,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   16
@@ -1829,7 +1769,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   17
@@ -1840,7 +1780,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   18
@@ -1851,7 +1791,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   19
@@ -1862,7 +1802,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   20
@@ -1875,7 +1815,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   21
@@ -1886,7 +1826,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   22
@@ -1897,7 +1837,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   23
@@ -1908,7 +1848,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   24
@@ -1919,7 +1859,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   25
@@ -1930,7 +1870,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   26
@@ -1941,7 +1881,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   27
@@ -1954,7 +1894,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   28
@@ -1965,7 +1905,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   29
@@ -1976,7 +1916,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   30
@@ -1987,7 +1927,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-27"
+                  class="emotion-26"
                   role="button"
                 >
                   31
@@ -1998,7 +1938,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-26"
+                  class="emotion-25"
                   role="button"
                 >
                   01
@@ -2009,7 +1949,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-26"
+                  class="emotion-25"
                   role="button"
                 >
                   02
@@ -2020,7 +1960,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-26"
+                  class="emotion-25"
                   role="button"
                 >
                   03
@@ -2035,7 +1975,7 @@ exports[`RangeDateField render should render correctly when opened 1`] = `
 </div>
 `;
 
-exports[`RangeDateField render should show calendar correctly when inputs are cleaned 1`] = `
+exports[`DateRangeField render should show calendar correctly when inputs are cleaned 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2057,7 +1997,7 @@ exports[`RangeDateField render should show calendar correctly when inputs are cl
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 1`] = `
+exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2087,9 +2027,9 @@ exports[`RangeDateField render should show calendar correctly when only finalDat
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only finalDate is defined and is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 2`] = `"received is not a function"`;
 
-exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 1`] = `
+exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2119,11 +2059,11 @@ exports[`RangeDateField render should show calendar correctly when only startDat
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when only startDate is defined and is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 2`] = `"received is not a function"`;
 
-exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and finalDate is focused 1`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 1`] = `"received is not a function"`;
 
-exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and finalDate is focused 2`] = `
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 2`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2153,7 +2093,7 @@ exports[`RangeDateField render should show calendar correctly when startDate and
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and startDate is focused 1`] = `
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2183,4 +2123,4 @@ exports[`RangeDateField render should show calendar correctly when startDate and
 </span>
 `;
 
-exports[`RangeDateField render should show calendar correctly when startDate and finalDate are defined and startDate is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 2`] = `"received is not a function"`;

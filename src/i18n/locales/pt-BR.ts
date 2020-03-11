@@ -28,7 +28,7 @@ const locale: LocaleConfiguration = {
     nextPage: 'Próxima página',
     currentPage: 'Página atual',
   },
-  rangeDateField: {
+  dateRangeField: {
     separator: 'até',
   },
   select: {
