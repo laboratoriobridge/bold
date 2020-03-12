@@ -108,11 +108,17 @@ export function SelectDownshift<T>(props: SelectDownshiftProps<T>) {
     props.onChange && props.onChange(item, getStateAndHelpers(downshift))
   }
 
+  const createGetInputProps = getInputProps => (options: any) => {
+    const { autoComplete, ...rest } = getInputProps(options)
+    return rest
+  }
+
   const getStateAndHelpers = (downshift: ControllerStateAndHelpers<T>): SelectDownshiftRenderProps<T> => ({
     ...downshift,
     items,
     visibleItems,
     setVisibleItems,
+    getInputProps: createGetInputProps(downshift.getInputProps),
   })
 
   return (
