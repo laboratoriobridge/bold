@@ -114,5 +114,7 @@ The documentation uses the local built version of bold (from the `lib/` folder),
 ### Releasing a new version
 
 First you need to login via `yarn login` and make sure that you have permission to publish a new version.
+
 Then use `yarn publish`, it will ask what `version` you are publishing, change the `package.json` accordingly, tag the repo, build and publish.
+
 Finally, just `git push --tags` to send everything to GitHub.
