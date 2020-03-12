@@ -371,7 +371,6 @@ exports[`SelectInline should render correctly when opened 1`] = `
               <input
                 aria-autocomplete="list"
                 aria-controls="downshift-0-menu"
-                autocomplete="off"
                 class="emotion-3"
                 id="downshift-0-input"
                 placeholder="Search for a value"
