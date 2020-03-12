@@ -99,7 +99,7 @@ The icon components are generated from the `icons` source folder. We use `svgr` 
 
 To do so, use the `yarn icons` command.
 
-### Upading loki
+### Updating loki
 
 Loki takes a screenshot of every storybook stories and places the resulting PNG file on the `.loki` folder, that must be git commited.
 
@@ -110,3 +110,9 @@ Use `yarn test:loki` to run the loki visual regression tests. It will fail if th
 Use `yarn site:start` to start the Gatsby development server of the documentation website.
 
 The documentation uses the local built version of bold (from the `lib/` folder), so make sure to run `yarn build` every time you want the changes from the bold components take effect on the Gatsby site generation.
+
+### Releasing a new version
+
+First you need to login via `yarn login` and make sure that you have permission to publish a new version.
+Then use `yarn publish`, it will ask what `version` you are publishing, change the `package.json` accordingly, tag the repo, build and publish.
+Finally, just `git push --tags` to send everything to GitHub.
