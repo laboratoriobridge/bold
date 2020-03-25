@@ -26,7 +26,6 @@ export interface DateRangeFieldProps extends DateRangeInputProps {
 export function DateRangeField(props: DateRangeFieldProps) {
   const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, ...rest } = props
 
-  const [dateRange, setDateRange] = useState(value ? value : ({} as DateRange))
   const [dateRangeInputFocus, setDateRangeInputFocus] = useState(1)
   const [visibleDate, setVisibleDate] = useState<Date>(new Date())
   const [open, setOpen] = useState(false)
@@ -38,26 +37,22 @@ export function DateRangeField(props: DateRangeFieldProps) {
   const popupRef = useRef<HTMLDivElement>()
 
   useEffect(() => {
-    onChange && onChange(dateRange)
-  }, [onChange, dateRange])
-
-  useEffect(() => {
     const point = (): Date => {
-      if (dateRangeInputFocus === 1 && dateRange?.startDate) {
-        return dateRange.startDate
-      } else if (dateRangeInputFocus === 2 && dateRange?.endDate) {
-        return dateRange.endDate
-      } else if (dateRange?.startDate && !dateRange?.endDate) {
-        return dateRange.startDate
-      } else if (!dateRange?.startDate && dateRange?.endDate) {
-        return dateRange.endDate
+      if (dateRangeInputFocus === 1 && value?.startDate) {
+        return value.startDate
+      } else if (dateRangeInputFocus === 2 && value?.endDate) {
+        return value.endDate
+      } else if (value?.startDate && !value?.endDate) {
+        return value.startDate
+      } else if (!value?.startDate && value?.endDate) {
+        return value.endDate
       } else {
         return new Date()
       }
     }
 
     setVisibleDate(point)
-  }, [dateRange, dateRangeInputFocus])
+  }, [dateRangeInputFocus, value])
 
   const { style: popperStyle, placement } = usePopper(
     {
@@ -78,16 +73,16 @@ export function DateRangeField(props: DateRangeFieldProps) {
   const handleFocusOut = () => setOpen(false)
 
   const handleDateRangeChanged = (rangeDateFromBaseInput: DateRange) => {
-    setDateRange(rangeDateFromBaseInput)
+    onChange(rangeDateFromBaseInput)
   }
 
   const handleCalendarDateRangeChanged = (dateRange: DateRange) => {
     const { startDate, endDate } = dateRange
     startDate && endDate
       ? startDate <= endDate
-        ? setDateRange({ startDate: startDate, endDate: endDate } as DateRange)
-        : setDateRange({ startDate: endDate, endDate: startDate } as DateRange)
-      : setDateRange({ startDate: startDate, endDate: endDate } as DateRange)
+        ? onChange({ startDate: startDate, endDate: endDate } as DateRange)
+        : onChange({ startDate: endDate, endDate: startDate } as DateRange)
+      : onChange({ startDate: startDate, endDate: endDate } as DateRange)
   }
 
   const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
@@ -95,21 +90,21 @@ export function DateRangeField(props: DateRangeFieldProps) {
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <DateRangeInput
-        {...rest}
+        value={value}
+        onChange={handleDateRangeChanged}
         divRef={anchorRef}
         minDate={minDate}
         maxDate={maxDate}
         icon={icon}
-        value={dateRange}
-        onChange={handleDateRangeChanged}
         finalInputRef={finalInputRef}
         onInputOnFocus={handleInputFocus}
+        {...rest}
       />
 
       {open && (
         <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
           <ControlledDateRangeCalendar
-            value={dateRange}
+            value={value}
             onChange={handleCalendarDateRangeChanged}
             onDayClick={handleOnDayClick}
             inputOnFocus={dateRangeInputFocus}
