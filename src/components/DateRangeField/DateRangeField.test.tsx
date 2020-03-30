@@ -95,7 +95,7 @@ describe('DateRangeField', () => {
 
         fireEvent.change(inputs[1], { target: { value: '01/11/2018' } })
         expect(change).toHaveBeenLastCalledWith({
-          startDate: new Date('2018-10-01'),
+          startDate: undefined,
           endDate: new Date('2018-11-01'),
         } as DateRange)
       })
