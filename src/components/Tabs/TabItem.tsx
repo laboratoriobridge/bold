@@ -36,9 +36,10 @@ TabItem.defaultProps = {
 const createStyles = (theme: Theme) => ({
   li: {
     display: 'inline-block',
+    marginBottom: '-1px',
 
     '&:not(:first-child)': {
-      marginLeft: '0.5rem',
+      marginLeft: '0.25rem',
     },
   } as CSSProperties,
   item: {
@@ -52,8 +53,8 @@ const createStyles = (theme: Theme) => ({
     borderTopRightRadius: 4,
     outline: 0,
     border: `1px solid ${theme.pallete.gray.c60}`,
-    borderBottom: `1px solid ${theme.pallete.gray.c100}`,
-    background: 'transparent',
+    borderBottom: `1px solid ${theme.pallete.divider}`,
+    background: theme.pallete.gray.c90,
     transition: 'background .15s, border-color .15s',
 
     '&:not(.disabled):hover': {
@@ -74,6 +75,7 @@ const createStyles = (theme: Theme) => ({
   active: {
     color: theme.pallete.primary.main,
     borderTop: `3px solid ${theme.pallete.primary.main}`,
+    borderBottomColor: 'transparent',
     background: theme.pallete.gray.c100,
 
     '&:not(.disabled):hover': {

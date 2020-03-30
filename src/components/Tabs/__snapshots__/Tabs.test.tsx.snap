@@ -6,14 +6,16 @@ exports[`renders correctly 1`] = `
   padding: 0;
   margin: 0;
   font-size: 0.875rem;
+  border-bottom: 1px solid #D3D4DD;
 }
 
 .emotion-1 {
   display: inline-block;
+  margin-bottom: -1px;
 }
 
 .emotion-1:not(:first-child) {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
 }
 
 .emotion-0 {
@@ -28,8 +30,8 @@ exports[`renders correctly 1`] = `
   border-top-right-radius: 4px;
   outline: 0;
   border: 1px solid #8F8FA2;
-  border-bottom: 1px solid #FFFFFF;
-  background: transparent;
+  border-bottom: 1px solid #D3D4DD;
+  background: #F0F0F5;
   -webkit-transition: background .15s,border-color .15s;
   transition: background .15s,border-color .15s;
 }
@@ -61,12 +63,13 @@ exports[`renders correctly 1`] = `
   border-top-right-radius: 4px;
   outline: 0;
   border: 1px solid #8F8FA2;
-  border-bottom: 1px solid #FFFFFF;
-  background: transparent;
+  border-bottom: 1px solid #D3D4DD;
+  background: #F0F0F5;
   -webkit-transition: background .15s,border-color .15s;
   transition: background .15s,border-color .15s;
   color: #0069D0;
   border-top: 3px solid #0069D0;
+  border-bottom-color: transparent;
   background: #FFFFFF;
 }
 
@@ -105,8 +108,8 @@ exports[`renders correctly 1`] = `
   border-top-right-radius: 4px;
   outline: 0;
   border: 1px solid #8F8FA2;
-  border-bottom: 1px solid #FFFFFF;
-  background: transparent;
+  border-bottom: 1px solid #D3D4DD;
+  background: #F0F0F5;
   -webkit-transition: background .15s,border-color .15s;
   transition: background .15s,border-color .15s;
   color: #AAAAB9;
@@ -189,6 +192,7 @@ exports[`should accept "style" prop 1`] = `
   padding: 0;
   margin: 0;
   font-size: 0.875rem;
+  border-bottom: 1px solid #D3D4DD;
   color: red;
 }
 

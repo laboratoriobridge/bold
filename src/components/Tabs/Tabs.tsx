@@ -25,5 +25,6 @@ const createStyles = (theme: Theme) => ({
     padding: '0',
     margin: '0',
     fontSize: theme.typography.sizes.button,
+    borderBottom: `1px solid ${theme.pallete.divider}`,
   } as CSSProperties,
 })
