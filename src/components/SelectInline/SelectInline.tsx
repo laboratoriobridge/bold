@@ -1,7 +1,7 @@
 import { PopperOptions } from 'popper.js'
 import React, { useEffect, useRef, useState } from 'react'
 
-import usePopper from '../../hooks/usePopper'
+import { usePopper } from '../../hooks/usePopper'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { Button, ButtonProps } from '../Button'

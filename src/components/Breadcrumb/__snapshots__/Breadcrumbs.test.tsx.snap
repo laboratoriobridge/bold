@@ -39,7 +39,7 @@ exports[`should render correctly 1`] = `
   -ms-flex-align: center;
   align-items: center;
   color: #0069D0;
-  color: #3A3A47;
+  color: #24252E;
   pointer-events: none;
 }
 

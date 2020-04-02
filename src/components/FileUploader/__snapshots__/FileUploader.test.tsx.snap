@@ -71,14 +71,14 @@ exports[`should render correct without extension 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
 }
 
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-size: 0.875rem;
   font-weight: bold;
@@ -105,7 +105,7 @@ exports[`should render correct without extension 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-weight: bold;
   background-color: #F0F0F5;
@@ -117,7 +117,7 @@ exports[`should render correct without extension 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -259,7 +259,7 @@ exports[`should render correctly at initial state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-size: 0.875rem;
   font-weight: bold;
@@ -379,14 +379,14 @@ exports[`should render correctly at uploading state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
 }
 
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-size: 0.875rem;
   font-weight: bold;
@@ -413,7 +413,7 @@ exports[`should render correctly at uploading state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-weight: bold;
   background-color: #F0F0F5;
@@ -425,7 +425,7 @@ exports[`should render correctly at uploading state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -604,14 +604,14 @@ exports[`should render correctly complete state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
 }
 
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-size: 0.875rem;
   font-weight: bold;
@@ -638,7 +638,7 @@ exports[`should render correctly complete state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   color: #696979;
   font-weight: bold;
   background-color: #F0F0F5;
@@ -650,7 +650,7 @@ exports[`should render correctly complete state 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   font-weight: bold;
   margin-right: 10px;
 }

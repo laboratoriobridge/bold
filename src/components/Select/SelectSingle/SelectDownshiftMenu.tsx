@@ -2,7 +2,7 @@ import { ControllerStateAndHelpers } from 'downshift'
 import { PopperOptions } from 'popper.js'
 import React, { useRef } from 'react'
 
-import usePopper from '../../../hooks/usePopper'
+import { usePopper } from '../../../hooks/usePopper'
 import { composeRefs } from '../../../util/react'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
 import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'

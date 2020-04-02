@@ -5,7 +5,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -66,7 +66,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #3A3A47;
+  color: #24252E;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -78,19 +78,19 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:disabled {
@@ -126,7 +126,6 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
       >
         <input
           aria-autocomplete="list"
-          autocomplete="off"
           class="emotion-1"
           id="downshift-0-input"
           placeholder="Select a value..."
@@ -144,7 +143,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -205,7 +204,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #3A3A47;
+  color: #24252E;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -217,19 +216,19 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 }
 
 .emotion-1::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-1:disabled {
@@ -266,7 +265,6 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
         <input
           aria-autocomplete="list"
           aria-labelledby="label-abc"
-          autocomplete="off"
           class="emotion-1"
           id="downshift-0-input"
           placeholder="Select a value..."
@@ -284,7 +282,7 @@ exports[`should render correctly when closed 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -345,7 +343,7 @@ exports[`should render correctly when closed 1`] = `
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #3A3A47;
+  color: #24252E;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -357,19 +355,19 @@ exports[`should render correctly when closed 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:disabled {
@@ -392,7 +390,6 @@ exports[`should render correctly when closed 1`] = `
       >
         <input
           aria-autocomplete="list"
-          autocomplete="off"
           class="emotion-0"
           id="downshift-0-input"
           placeholder="Select a value..."
@@ -410,7 +407,7 @@ exports[`should render correctly when opened 1`] = `
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
-  color: #3A3A47;
+  color: #24252E;
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -471,7 +468,7 @@ exports[`should render correctly when opened 1`] = `
 .emotion-0 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
-  color: #3A3A47;
+  color: #24252E;
   line-height: 1rem;
   background: #FFFFFF;
   padding: 0;
@@ -483,19 +480,19 @@ exports[`should render correctly when opened 1`] = `
 }
 
 .emotion-0::-webkit-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::-moz-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:-ms-input-placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0::placeholder {
-  color: #AAAAB9;
+  color: #696979;
 }
 
 .emotion-0:disabled {
@@ -527,7 +524,7 @@ exports[`should render correctly when opened 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
-  color: #3A3A47;
+  color: #24252E;
   border-bottom: 1px solid #D3D4DD;
   cursor: pointer;
   padding: 0.5rem 0.5rem;
@@ -666,7 +663,6 @@ exports[`should render correctly when opened 1`] = `
         <input
           aria-autocomplete="list"
           aria-controls="downshift-0-menu"
-          autocomplete="off"
           class="emotion-0"
           id="downshift-0-input"
           placeholder="Select a value..."

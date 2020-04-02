@@ -26,6 +26,9 @@ const locale = {
     nextPage: 'Next page',
     currentPage: 'Current page',
   },
+  dateRangeField: {
+    separator: 'until',
+  },
   select: {
     createItem: 'Select an item or type a new value',
     emptyItem: 'No results were found',
