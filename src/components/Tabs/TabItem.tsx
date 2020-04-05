@@ -36,7 +36,6 @@ TabItem.defaultProps = {
 const createStyles = (theme: Theme) => ({
   li: {
     display: 'inline-block',
-    marginBottom: '-1px',
 
     '&:not(:first-child)': {
       marginLeft: '0.25rem',
@@ -47,13 +46,13 @@ const createStyles = (theme: Theme) => ({
     textDecoration: 'none',
     color: theme.pallete.text.main,
     fontWeight: 'bold',
-    padding: '0.375rem 0.5rem',
+    padding: 'calc(0.4375rem + 1px) 0.4375rem 0.4375rem 0.4375rem',
     lineHeight: '1rem',
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
     outline: 0,
     border: `1px solid ${theme.pallete.gray.c60}`,
-    borderBottom: `1px solid ${theme.pallete.divider}`,
+    borderBottom: `none`,
     background: theme.pallete.gray.c90,
     transition: 'background .15s, border-color .15s',
 
@@ -74,9 +73,20 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   active: {
     color: theme.pallete.primary.main,
-    borderTop: `3px solid ${theme.pallete.primary.main}`,
-    borderBottomColor: 'transparent',
     background: theme.pallete.gray.c100,
+    borderTop: `4px solid ${theme.pallete.primary.main}`,
+    paddingTop: 'calc(0.4375rem - 2px)',
+    position: 'relative',
+
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-1px',
+      left: '0',
+      right: '0',
+      height: '1px',
+      background: theme.pallete.primary.c100,
+    },
 
     '&:not(.disabled):hover': {
       background: theme.pallete.gray.c90,

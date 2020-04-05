@@ -21,6 +21,8 @@ export function Tabs(props: TabsProps) {
 
 const createStyles = (theme: Theme) => ({
   ul: {
+    display: 'flex',
+    alignItems: 'flex-end',
     listStyle: 'none',
     padding: '0',
     margin: '0',
