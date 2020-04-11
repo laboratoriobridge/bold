@@ -37,7 +37,6 @@ const createStyles = (theme: Theme) => ({
   tabs: {
     marginTop: '-0.75rem !important',
     marginBottom: '2rem',
-    borderBottom: `1px solid ${theme.pallete.divider}`,
   } as CSSProperties,
   item: {
     'a:focus': {

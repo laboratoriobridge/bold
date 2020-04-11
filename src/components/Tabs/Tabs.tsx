@@ -21,9 +21,12 @@ export function Tabs(props: TabsProps) {
 
 const createStyles = (theme: Theme) => ({
   ul: {
+    display: 'flex',
+    alignItems: 'flex-end',
     listStyle: 'none',
     padding: '0',
     margin: '0',
     fontSize: theme.typography.sizes.button,
+    borderBottom: `1px solid ${theme.pallete.divider}`,
   } as CSSProperties,
 })

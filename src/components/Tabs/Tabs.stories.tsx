@@ -1,10 +1,11 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { TabItem } from './TabItem'
 import { Tabs } from './Tabs'
 
-storiesOf('Components|Tabs', module).add('default', () => (
+export default { title: 'Components|Tabs' }
+
+export const Default = () => (
   <Tabs>
     <TabItem>First item</TabItem>
     <TabItem active>Second item</TabItem>
@@ -12,4 +13,4 @@ storiesOf('Components|Tabs', module).add('default', () => (
     <TabItem>Fourth item</TabItem>
     <TabItem disabled>Disabled item</TabItem>
   </Tabs>
-))
+)
