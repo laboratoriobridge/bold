@@ -28,7 +28,12 @@ export function SelectHelperMenuItem(props: SelectMenuItemProps) {
 
   return (
     <SelectMenuItem
-      style={{ background: theme.pallete.surface.background, paddingTop: '0.25rem', paddingBottom: '0.25rem' }}
+      style={{
+        background: theme.pallete.surface.background,
+        paddingTop: '0.25rem',
+        paddingBottom: '0.25rem',
+        cursor: 'initial',
+      }}
       {...props}
     />
   )
