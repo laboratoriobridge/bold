@@ -46,6 +46,7 @@ export const createStyles = (theme: Theme) => ({
     transition: 'all .2s ease',
     verticalAlign: 'middle',
     width: 24,
+    minWidth: 24,
   } as CSSProperties,
   label: {
     marginLeft: '0.5rem',
