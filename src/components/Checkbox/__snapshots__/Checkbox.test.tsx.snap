@@ -24,6 +24,7 @@ exports[`Checkbox should render correctly 1`] = `
   transition: all .2s ease;
   vertical-align: middle;
   width: 24px;
+  min-width: 24px;
 }
 
 .emotion-2 {
@@ -125,6 +126,7 @@ exports[`Checkbox should render correctly when disabled 1`] = `
   transition: all .2s ease;
   vertical-align: middle;
   width: 24px;
+  min-width: 24px;
 }
 
 .emotion-2 {
@@ -252,6 +254,7 @@ exports[`Checkbox should render correctly when indeterminate 1`] = `
   transition: all .2s ease;
   vertical-align: middle;
   width: 24px;
+  min-width: 24px;
 }
 
 .emotion-2 {
