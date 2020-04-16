@@ -568,6 +568,7 @@ exports[`should render correctly when opened 1`] = `
   transition: all .2s ease;
   vertical-align: middle;
   width: 24px;
+  min-width: 24px;
 }
 
 .emotion-2 {
