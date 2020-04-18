@@ -1,0 +1,56 @@
+import { TabLinks } from '../../../components/TabLinks'
+
+# Data visualization
+
+Data visualization consists of presenting information and data graphically to synthesizing complex information and understanding patterns and exceptions presented in the data. Data visualization should not be used as decoration.
+
+<TabLinks
+  items={[
+    { title: 'Models', href: '/design-guidelines/data-visualization/models' },
+    { title: 'Usage', href: '/design-guidelines/data-visualization/usage' },
+  ]}
+/>
+
+### Line chart
+
+Used to show trends over time and for comparing data series. It shows values at points connected by lines as continuous data.
+
+![Line chart](/image/line-chart.png)
+![Multiple line chart](/image/line-chart-multiple.png)
+
+#### Variation: Area chart
+
+Show the same information as the line graph, only presenting it graphically.
+
+![Area chart](/image/area-chart.png)
+
+### Bar chart
+
+Uses bars to compare discrete, categorical data or to compare trends. Display bars vertically and corresponds to your numeric value measurement.
+
+![Bar chart](/image/bar-chart.png)
+
+### Column chart
+
+In charts that are measured on nominal (qualitative) scales, display the bars in the horizontal position. This facilitates a quick view of categories, which can be identified next to or inside each bar.
+
+![Column chart](/image/column-chart.png)
+
+### Stacked chart
+
+Used to compare the contribution ratio to the total value within a scale.
+
+![Stacked column chart](/image/stacked-chart.png)
+
+### Pie chart
+
+Used to show a part-to-whole visualization. By comparing data through angles, pie charts are not usually the easiest options for analyzing quantitative data (consider using Bar Chart or Column Chart). Pay attention to the number of items, as these charts do not accommodate large numbers of categories.
+
+![Pie chart](/image/circular-chart.png)
+
+### Control chart
+
+Control charts are used in processes to track the evolution of a variable against one or more value references.
+
+![Control line chart](/image/control-line-chart.png)
+![Control area chart](/image/control-area-chart.png)

@@ -1,0 +1,56 @@
+import { TabLinks } from '../../../components/TabLinks'
+
+# Visualização de dados
+
+A visualização de dados consiste em apresentar graficamente informações e dados para sintetizar informações complexas e compreender padrões e exceções apresentados nos dados. A visualização de dados não deve ser usada como decoração.
+
+<TabLinks
+  items={[
+    { title: 'Modelos', href: '/design-guidelines/data-visualization/models' },
+    { title: 'Uso', href: '/design-guidelines/data-visualization/usage' },
+  ]}
+/>
+
+### Gráfico de linha
+
+Usados para apresentar tendências ao longo do tempo e para comparar diversas séries de dados. Os valores são mostrados em pontos conectados por linhas, como dados contínuos.
+
+![Line chart](/image/line-chart.png)
+![Multiple line chart](/image/line-chart-multiple.png)
+
+#### Variação: Gráfico de área
+
+Usados para apresentar tendências ao longo do tempo e para comparar diversas séries de dados, nos quais é importante ver a sobreposição.
+
+![Area chart](/image/area-chart.png)
+
+### Gráfico de barras
+
+Em gráficos que são mensurados em escalas nominais (qualitativas), é recomendado apresentar as barras na posição horizontal. Isso facilita uma rápida visualização das categorias, que podem ser identificadas ao lado ou no interior de cada barra.
+
+![Bar chart](/image/bar-chart.png)
+
+### Gráfico de colunas
+
+Utilizam colunas para comparar dados discretos, categóricos, ou comparar tendências ao longo do tempo (série histórica). A barra é apresentada na vertical e corresponde à sua medida de valor numérico.
+
+![Column chart](/image/column-chart.png)
+
+### Gráfico de barras ou colunas empilhadas
+
+Utilizados para comparar a proporção de contribuição ao valor total dentro de uma escala.
+
+![Stacked column chart](/image/stacked-chart.png)
+
+### Gráfico de pizza
+
+Usado para mostrar uma visualização de parte para todo. Ao comparar dados por ângulos, os gráficos de pizza não costumam ser as opções mais fáceis para analisar dados quantitativos (considere o uso de Gráfico de barras ou Gráfico de colunas). Preste atenção ao número de itens, pois esses gráficos não acomodam um grande número de categorias.
+
+![Pie chart](/image/circular-chart.png)
+
+### Gráfico de controle
+
+Gráficos de controle são usados em processos para se acompanhar a evolução de uma variável em relação a uma ou várias referências de valor.
+
+![Control line chart](/image/control-line-chart.png)
+![Control area chart](/image/control-area-chart.png)

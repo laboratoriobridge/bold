@@ -1,0 +1,56 @@
+import { TabLinks } from '../../../components/TabLinks'
+
+# Data visualization
+
+Data visualization consists of presenting information and data graphically to synthesizing complex information and understanding patterns and exceptions presented in the data. Data visualization should not be used as decoration.
+
+<TabLinks
+  items={[
+    { title: 'Models', href: '/design-guidelines/data-visualization/models' },
+    { title: 'Usage', href: '/design-guidelines/data-visualization/usage' },
+  ]}
+/>
+
+## Which chart to use
+
+The type of chart you use depends primarily on two things: the data you want to communicate, and what you want to convey about that data. These guidelines provide descriptions of various different types of charts and their use cases.
+
+### Comparison
+
+Compare data between multiple distinct categories.
+
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Grouped bar chart](/image/grouped-bar.png) ![Bubble plot](/image/bubble-plot.png) ![Line chart](/image/line.png)
+
+### Change over time
+
+Show data over a period of time, such as trends or comparisons across multiple categories.
+
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Area chart](/image/area.png) ![Line chart](/image/line.png)
+
+### Relationship & Distribution
+
+Show the relationship between two or more variables or the frequency at which data occurs.
+
+![Bubble plot](/image/bubble-plot.png) ![Scatter plot](/image/scatter-plot.png)
+
+### Control
+
+Used in processes to track the evolution of a variable against one or more values of reference.
+
+![Line control chart](/image/line-control.png) ![Area control chart](/image/area-control.png)
+
+### Part-to-whole
+
+Show how partial elements add up to a total.
+
+![Pie chart](/image/pie.png) ![Stacked bar chart](/image/stacked-bar.png) ![Stacked area chart](/image/stacked-area.png)
+
+## Dashboards
+
+### Operational dashboard
+
+Use it to provide information that demands immediate user action and time-sensitive data, such as data monitoring. This kind of dashboard is constantly updating.
+
+### Analytical dashboard
+
+Use analytical dashboards to help users take future actions, investigate or analyze data. It updates less frequently than the operational dashboard (eg: 1 time a day). Learn more about dashboard types at [Nielsen and Norman group website](https://www.nngroup.com/articles/dashboards-preattentive/).

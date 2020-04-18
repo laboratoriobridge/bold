@@ -1,0 +1,56 @@
+import { TabLinks } from '../../../components/TabLinks'
+
+# Visualização de dados
+
+A visualização de dados consiste em apresentar graficamente informações e dados para sintetizar informações complexas e compreender padrões e exceções apresentados nos dados. A visualização de dados não deve ser usada como decoração.
+
+<TabLinks
+  items={[
+    { title: 'Modelos', href: '/design-guidelines/data-visualization/models' },
+    { title: 'Uso', href: '/design-guidelines/data-visualization/usage' },
+  ]}
+/>
+
+## Qual gráfico usar
+
+O tipo de gráfico que você usa depende principalmente de duas coisas: os dados que você deseja comunicar e o que deseja transmitir sobre esses dados. Essas diretrizes fornecem descrições de vários tipos diferentes de gráficos e seus casos de uso.
+
+### Comparação
+
+Compare dados entre várias categorias distintas.
+
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Grouped bar chart](/image/grouped-bar.png) ![Bubble plot](/image/bubble-plot.png) ![Line chart](/image/line.png)
+
+### Mudança ao longo do tempo
+
+Utilize para apresentar dados durante um período de tempo, como tendências ou comparações entre diferentes categorias.
+
+![Bar chart](/image/bar.png) ![Stacked bar chart](/image/stacked-bar.png) ![Area chart](/image/area.png) ![Line chart](/image/line.png)
+
+### Relação & Distribuição
+
+Mostre o relacionamento entre duas ou mais variáveis ou a frequência com que os dados ocorrem.
+
+![Bubble plot](/image/bubble-plot.png) ![Scatter plot](/image/scatter-plot.png)
+
+### Controle
+
+Use em processos para acompanhar a evolução de uma variável em relação a uma ou várias variáveis de referência.
+
+![Line control chart](/image/line-control.png) ![Area control chart](/image/area-control.png)
+
+### Parte para o todo
+
+Mostrar como elementos parciais somam um total.
+
+![Pie chart](/image/pie.png) ![Stacked bar chart](/image/stacked-bar.png) ![Stacked area chart](/image/stacked-area.png)
+
+## Dashboards
+
+### Dashboard operacional
+
+Use para fornecer informações que demandam ação imediata do usuário e apresentar dados sensíveis ao tempo, como monitoramento de dados. Esse tipo de dashboard é atualizada constantemente.
+
+### Dashboard analítica
+
+Use a Dashboard analítica para ajudar os usuários a tomar ações futuras, investigar ou analisar dados. É atualizada com menos frequência que a Dashboard operacional (ex.: 1 vez ao dia). Saiba mais sobre os tipos de Dashboards no [website Nielsen and Norman group](https://www.nngroup.com/articles/dashboards-preattentive/).
