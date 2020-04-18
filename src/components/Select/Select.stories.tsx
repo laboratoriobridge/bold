@@ -3,6 +3,10 @@ import { boolean, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
+import { HFlow } from '../HFlow'
+import { Text } from '../Text'
+import { Button } from '../Button'
+import { SelectHelperMenuItem } from './SelectMenu'
 import { SelectAsync } from './SelectAsync'
 import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from './'
 
@@ -122,4 +126,28 @@ storiesOf('Components|Select', module)
       <SelectMenuItem>Item 4</SelectMenuItem>
       <SelectMenuItem>Item 5</SelectMenuItem>
     </SelectMenu>
+  ))
+  .add('custom components', () => (
+    <Select<DefaultItemType>
+      label='Fruit'
+      name='fruit'
+      items={fruits.slice(0, 4)}
+      itemToString={item => item && item.label}
+      components={{
+        PrependItem: props => <SelectHelperMenuItem>Prepend item</SelectHelperMenuItem>,
+        AppendItem: props => (
+          <SelectHelperMenuItem>
+            <HFlow alignItems='center' justifyContent='space-between'>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed
+                beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+              </Text>
+              <Button kind='primary' size='small'>
+                New item
+              </Button>
+            </HFlow>
+          </SelectHelperMenuItem>
+        ),
+      }}
+    />
   ))

@@ -1,5 +1,4 @@
 import React, { CSSProperties, HTMLAttributes } from 'react'
-
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 
@@ -37,40 +36,65 @@ TabItem.defaultProps = {
 const createStyles = (theme: Theme) => ({
   li: {
     display: 'inline-block',
+
+    '&:not(:first-child)': {
+      marginLeft: '0.25rem',
+    },
   } as CSSProperties,
   item: {
     display: 'inline-block',
     textDecoration: 'none',
     color: theme.pallete.text.main,
     fontWeight: 'bold',
-    padding: '0.5rem 0.75rem',
+    padding: 'calc(0.4375rem + 1px) 0.4375rem 0.4375rem 0.4375rem',
     lineHeight: '1rem',
-    borderRadius: 4,
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
     outline: 0,
-    border: '2px solid transparent',
+    border: `1px solid ${theme.pallete.gray.c60}`,
+    borderBottom: `none`,
+    background: theme.pallete.gray.c90,
     transition: 'background .15s, border-color .15s',
 
     '&:not(.disabled):hover': {
       cursor: 'pointer',
+      background: theme.pallete.gray.c80,
+    },
+
+    '&:not(.disabled):active': {
+      background: theme.pallete.gray.c80,
+      boxShadow: theme.shadows.inner['10'],
+    },
+
+    '&:focus': {
+      boxShadow: `inset 0 0 0 2px ${theme.pallete.primary.main}`,
+      borderRadius: 4,
+    },
+  } as CSSProperties,
+  active: {
+    color: theme.pallete.primary.main,
+    background: theme.pallete.gray.c100,
+    borderTop: `4px solid ${theme.pallete.primary.main}`,
+    paddingTop: 'calc(0.4375rem - 2px)',
+    position: 'relative',
+
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      bottom: '-1px',
+      left: '0',
+      right: '0',
+      height: '1px',
+      background: theme.pallete.primary.c100,
+    },
+
+    '&:not(.disabled):hover': {
       background: theme.pallete.gray.c90,
     },
 
     '&:not(.disabled):active': {
       background: theme.pallete.gray.c90,
-      boxShadow: theme.shadows.inner['10'],
     },
-
-    '&:focus': {
-      borderColor: theme.pallete.primary.main,
-      borderBottomLeftRadius: 4,
-      borderBottomRightRadius: 4,
-    },
-  } as CSSProperties,
-  active: {
-    color: theme.pallete.primary.main,
-    borderBottomColor: theme.pallete.primary.main,
-    borderBottomLeftRadius: 0,
-    borderBottomRightRadius: 0,
   } as CSSProperties,
   disabled: {
     color: theme.pallete.text.disabled,

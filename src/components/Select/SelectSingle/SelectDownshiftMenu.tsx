@@ -25,10 +25,35 @@ export interface SelectDownshiftMenuProps<T> {
 }
 
 export interface SelectMenuComponents<T> {
+  /**
+   * Item shown when `creteNewItem` prop is indicated.
+   */
   CreateItem: React.ComponentType<SelectDownshiftMenuProps<T>>
+
+  /**
+   * Item shown when `loading` prop is true.
+   */
   LoadingItem: React.ComponentType<SelectDownshiftMenuProps<T>>
+
+  /**
+   * Item shown when `items` array prop is empty.
+   */
   EmptyItem: React.ComponentType<SelectDownshiftMenuProps<T>>
+
+  /**
+   * Default item component used for each element in `items` prop.
+   */
   Item: React.ComponentType<SelectDownshiftMenuProps<T> & { item: T; index: number }>
+
+  /**
+   * A custom item to be included at the beginning of the select list.
+   */
+  PrependItem: React.ComponentType<SelectDownshiftMenuProps<T>>
+
+  /**
+   * A custom item to be included at the end of the select list.
+   */
+  AppendItem: React.ComponentType<SelectDownshiftMenuProps<T>>
 }
 
 export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
@@ -42,7 +67,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
     downshift: { isOpen, getMenuProps },
   } = props
 
-  const { CreateItem, LoadingItem, EmptyItem, Item } = { ...defaultComponents, ...components }
+  const { CreateItem, LoadingItem, EmptyItem, Item, PrependItem, AppendItem } = { ...defaultComponents, ...components }
 
   const menuRef = useRef<HTMLUListElement>()
   const { style: popperStyle, placement } = usePopper(
@@ -71,7 +96,11 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
 
           {!isLoading && !createNewItem && (items || []).length === 0 && <EmptyItem {...props} />}
 
+          {PrependItem && <PrependItem {...props} />}
+
           {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
+
+          {AppendItem && <AppendItem {...props} />}
         </SelectMenu>
       )}
     </>
@@ -79,6 +108,8 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
 }
 
 export const defaultComponents: SelectMenuComponents<any> = {
+  AppendItem: () => null,
+  PrependItem: () => null,
   CreateItem: (props: SelectDownshiftMenuProps<any>) => <SelectCreateItem />,
   LoadingItem: (props: SelectDownshiftMenuProps<any>) => <SelectLoadingItem />,
   EmptyItem: (props: SelectDownshiftMenuProps<any>) => <SelectEmptyItem />,
