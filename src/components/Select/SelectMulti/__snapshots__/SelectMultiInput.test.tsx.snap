@@ -9,6 +9,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.25rem - 1px) 0.25rem;
   width: 100%;
   -webkit-transition-property: box-shadow;

@@ -39,6 +39,7 @@ exports[`DateField should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -252,6 +253,7 @@ exports[`DateField should render correctly when disabled 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -469,6 +471,7 @@ exports[`DateField should render correctly when opened 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
