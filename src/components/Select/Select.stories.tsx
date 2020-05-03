@@ -142,7 +142,7 @@ storiesOf('Components|Select', module)
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed
                 beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
               </Text>
-              <Button kind='primary' size='small'>
+              <Button kind='primary' size='small' onClick={action('New item click')}>
                 New item
               </Button>
             </HFlow>

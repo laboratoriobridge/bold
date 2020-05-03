@@ -74,6 +74,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
     {
       anchorRef,
       popperRef: menuRef,
+      placement: 'bottom-start',
       ...popperProps,
     },
     [isOpen]
