@@ -15,7 +15,14 @@ const items: DefaultItemType[] = [
 ]
 
 function SelectTest(props: Partial<SelectSingleProps>) {
-  return <SelectSingle items={items} itemToString={item => item.label} placeholder='Select a value...' {...props} />
+  return (
+    <SelectSingle
+      items={items}
+      itemToString={(item) => item && item.label}
+      placeholder='Select a value...'
+      {...props}
+    />
+  )
 }
 
 beforeEach(() => resetIdCounter())
@@ -151,7 +158,7 @@ describe('input label', () => {
 
 describe('createNewItem', () => {
   it('should allow selectedItem to become whatever is typed on text input', () => {
-    const createNewItem = jest.fn(text => ({ value: -1, label: text }))
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
     const change = jest.fn()
     const { container } = render(<SelectTest id='foo' createNewItem={createNewItem} onChange={change} />)
 
@@ -161,30 +168,30 @@ describe('createNewItem', () => {
     expect(change).toHaveBeenCalledWith({ value: -1, label: 'my item' }, expect.anything())
   })
   it('should render CreateItemSelect message', () => {
-    const createNewItem = jest.fn(text => ({ value: -1, label: text }))
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
     const { queryByText } = render(<SelectTest id='foo' createNewItem={createNewItem} isOpen />)
     expect(queryByText(en.select.createItem)).toBeTruthy()
   })
   it('should NOT render CreateItemSelect message when suggestion list is empty', () => {
-    const createNewItem = jest.fn(text => ({ value: -1, label: text }))
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
     const { container, queryByText } = render(<SelectTest id='foo' createNewItem={createNewItem} isOpen />)
     fireEvent.change(container.querySelector('input'), { target: { value: 'empty suggestion' } })
     expect(queryByText(en.select.createItem)).toBeFalsy()
   })
   it('should NOT open select when focus by default', () => {
-    const createNewItem = jest.fn(text => ({ value: -1, label: text }))
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
     const { container } = render(<SelectTest id='foo' createNewItem={createNewItem} />)
     fireEvent.focus(container.querySelector('input'))
     expect(container.querySelector('ul')).toBeFalsy()
   })
   it('should open select when focus and openOnFocus is true', () => {
-    const createNewItem = jest.fn(text => ({ value: -1, label: text }))
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
     const { container } = render(<SelectTest id='foo' createNewItem={createNewItem} openOnFocus />)
     fireEvent.focus(container.querySelector('input'))
     expect(container.querySelector('ul')).toBeTruthy()
   })
   it('should call "createNewItem" only when change type is "changeInput"', async () => {
-    const createNewItem = jest.fn(text => ({ label: text } as any))
+    const createNewItem = jest.fn((text) => ({ label: text } as any))
     const { rerender } = render(
       <SelectTest id='foo' createNewItem={createNewItem} value={items[0]} onChange={jest.fn()} />
     )
