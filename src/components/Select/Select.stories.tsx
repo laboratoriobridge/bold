@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text } from '@storybook/addon-knobs'
+import { boolean, text, number } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 
@@ -39,6 +39,7 @@ storiesOf('Components|Select', module)
       name='fruit'
       items={fruits}
       error={text('error', '')}
+      menuMinWidth={number('menuMinWidth (px)', undefined)}
       itemToString={item => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'

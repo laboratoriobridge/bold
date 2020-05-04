@@ -24,6 +24,7 @@ export interface SelectSingleProps<T = DefaultItemType>
   itemToString: SelectDownshiftProps<T>['itemToString']
   onChange?: SelectDownshiftProps<T>['onChange']
   isOpen?: SelectDownshiftProps<T>['isOpen']
+  menuMinWidth?: SelectDownshiftProps<T>['menuMinWidth']
   openOnFocus?: SelectDownshiftProps<T>['openOnFocus']
   onFilterChange?: SelectDownshiftProps<T>['onFilterChange']
   createNewItem?: SelectDownshiftProps<T>['createNewItem']
@@ -40,6 +41,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     itemToString,
     onChange,
     isOpen,
+    menuMinWidth,
     openOnFocus,
     onFilterChange,
     createNewItem,
@@ -108,6 +110,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
               </div>
               <SelectDownshiftMenu
                 anchorRef={internalInputRef}
+                menuMinWidth={menuMinWidth}
                 downshift={downshift}
                 items={visibleItems}
                 loading={loading}

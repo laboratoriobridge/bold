@@ -42,6 +42,11 @@ it('should open the select menu when input is focused', () => {
   expect(container.querySelector('ul')).toBeTruthy()
 })
 
+it('should respect the specified menu min-width', () => {
+  const { container } = render(<SelectTest menuMinWidth={577} isOpen={true} />)
+  expect(container).toMatchSnapshot()
+})
+
 it('should call the onChange event when an item is clicked', () => {
   const onChange = jest.fn()
   const { getByText } = render(<SelectTest onChange={onChange} isOpen={true} />)
