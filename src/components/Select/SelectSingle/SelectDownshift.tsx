@@ -16,6 +16,11 @@ export interface SelectDownshiftProps<T> extends Omit<DownshiftProps<T>, 'childr
   openOnFocus?: boolean
 
   /**
+   * Minimum width of the dropdown menu
+   */
+  menuMinWidth?: number
+
+  /**
    * Whether the current input filter should be kept after an item is selected.
    * This is necessary for multi selects, for example, when the filter should be kept after an item is selected.
    * @default false

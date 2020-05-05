@@ -10,6 +10,7 @@ import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
 export interface SelectDownshiftMenuProps<T> {
   items: T[]
   loading: boolean
+  menuMinWidth?: number
   downshift: ControllerStateAndHelpers<T>
   anchorRef: React.RefObject<HTMLElement>
   createNewItem?: boolean
@@ -60,6 +61,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
   const {
     items,
     loading: isLoading,
+    menuMinWidth,
     anchorRef,
     components,
     createNewItem,
@@ -74,6 +76,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
     {
       anchorRef,
       popperRef: menuRef,
+      placement: 'bottom-start',
       ...popperProps,
     },
     [isOpen]
@@ -87,7 +90,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
         <SelectMenu
           {...menuProps}
           menuRef={composeRefs(dropdownMenuRef, menuRef)}
-          style={{ ...popperStyle, width: anchorRef.current && anchorRef.current.clientWidth }}
+          style={{ ...popperStyle, width: anchorRef.current && anchorRef.current.clientWidth, minWidth: menuMinWidth }}
           data-placement={placement}
         >
           {isLoading && <LoadingItem {...props} />}
