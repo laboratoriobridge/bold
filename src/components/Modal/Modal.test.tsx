@@ -1,4 +1,4 @@
-import { fireEvent, render, wait } from '@testing-library/react'
+import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
 
 import { Modal, ModalProps } from './Modal'
@@ -125,6 +125,7 @@ it('should have a focus on first element when opened', async () => {
 
   rerender(createComponent({ open: true }))
   const dialog = document.body.querySelector('[role="dialog"]')
-  await wait()
-  expect(document.activeElement).toEqual(dialog.firstElementChild)
+  await waitFor(() => {
+    expect(document.activeElement).toEqual(dialog.firstElementChild)
+  })
 })

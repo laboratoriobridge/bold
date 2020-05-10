@@ -43,7 +43,7 @@ describe('DateRangeField', () => {
 
       fireEvent.focus(inputs[0])
       expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
-      expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
+      expect(container.querySelector('[data-date="2018-11-15"] span')).toMatchSnapshot()
     })
 
     it('should show calendar correctly when only endDate is defined and is focused', () => {
@@ -52,7 +52,7 @@ describe('DateRangeField', () => {
 
       fireEvent.focus(inputs[1])
       expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
-      expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
+      expect(container.querySelector('[data-date="2018-11-15"] span')).toMatchSnapshot()
     })
 
     it('should show calendar correctly when startDate and endDate are defined and startDate is focused', () => {
@@ -63,7 +63,7 @@ describe('DateRangeField', () => {
 
       fireEvent.focus(inputs[0])
       expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
-      expect(container.querySelector('[data-date="2018-11-15"] span')).toThrowErrorMatchingSnapshot()
+      expect(container.querySelector('[data-date="2018-11-15"] span')).toMatchSnapshot()
     })
 
     it('should show calendar correctly when startDate and endDate are defined and endDate is focused', () => {
@@ -73,7 +73,7 @@ describe('DateRangeField', () => {
       const inputs = container.querySelectorAll('input')
 
       fireEvent.focus(inputs[1])
-      expect(container.querySelector('[data-date="2018-10-01"] span')).toThrowErrorMatchingSnapshot()
+      expect(container.querySelector('[data-date="2018-10-01"] span')).toMatchSnapshot()
       expect(container.querySelector('[data-date="2018-11-15"] span')).toMatchSnapshot()
     })
   })
