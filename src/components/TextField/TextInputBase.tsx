@@ -39,6 +39,7 @@ export const createStyleParts = (theme: Theme) => ({
     fontFamily: theme.typography.fontFamily,
     fontSize: theme.typography.sizes.text,
     lineHeight: '1rem',
+    margin: 0,
     padding: 'calc(0.5rem - 1px) 0.5rem',
     width: '100%',
     transitionProperty: 'box-shadow',

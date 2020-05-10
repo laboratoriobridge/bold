@@ -20,6 +20,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -126,6 +127,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -232,6 +234,7 @@ exports[`should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
