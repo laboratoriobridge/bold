@@ -84,6 +84,7 @@ exports[`DateRangeField render should render correctly 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -360,6 +361,7 @@ exports[`DateRangeField render should render correctly when disabled 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -808,6 +810,7 @@ exports[`DateRangeField render should render correctly when invalid 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -1069,6 +1072,7 @@ exports[`DateRangeField render should render correctly when opened 1`] = `
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1rem;
+  margin: 0;
   padding: calc(0.5rem - 1px) 0.5rem;
   width: 100%;
   -webkit-transition-property: box-shadow;
@@ -2027,7 +2031,7 @@ exports[`DateRangeField render should show calendar correctly when only endDate 
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 2`] = `null`;
 
 exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 1`] = `
 .emotion-0 {
@@ -2059,9 +2063,9 @@ exports[`DateRangeField render should show calendar correctly when only startDat
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 2`] = `null`;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 1`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 1`] = `null`;
 
 exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 2`] = `
 .emotion-0 {
@@ -2123,4 +2127,4 @@ exports[`DateRangeField render should show calendar correctly when startDate and
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 2`] = `"received is not a function"`;
+exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 2`] = `null`;

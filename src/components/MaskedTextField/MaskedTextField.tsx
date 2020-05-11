@@ -2,12 +2,13 @@ import React from 'react'
 import ReactTextMask, { MaskedInputProps as ReactMaskedInputProps } from 'react-text-mask'
 
 import { composeRefs } from '../../util/react'
-import { Omit } from '../../util/types'
 import { TextField, TextFieldProps } from '../TextField'
 
 export type MaskType = ReactMaskedInputProps['mask']
 
-export interface MaskedTextFieldProps extends Omit<ReactMaskedInputProps, 'style'>, TextFieldProps {}
+export interface MaskedTextFieldProps
+  extends Pick<ReactMaskedInputProps, 'mask' | 'guide' | 'placeholderChar' | 'keepCharPositions' | 'pipe' | 'showMask'>,
+    TextFieldProps {}
 
 export function MaskedTextField(props: MaskedTextFieldProps) {
   const { inputRef, style, ...rest } = props
