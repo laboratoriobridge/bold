@@ -1,7 +1,10 @@
 import { fireEvent, render, wait } from '@testing-library/react'
 import React from 'react'
 
+import { act } from 'react-dom/test-utils'
 import { FocusManagerContainer } from './FocusManagerContainer'
+
+jest.useFakeTimers()
 
 it('should render children', () => {
   const { container } = render(
@@ -46,6 +49,9 @@ it('should call onFocusOut prop when focus leaves the container', async () => {
   expect(focusOut).not.toHaveBeenCalled()
 
   fireEvent.blur(container.querySelector('#input2'))
+
+  act(() => jest.runAllTimers())
+
   await wait()
   expect(focusOut).toHaveBeenCalledTimes(1)
 })
