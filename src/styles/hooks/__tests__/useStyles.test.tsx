@@ -59,3 +59,19 @@ it('should return the "css" function', () => {
   const { result } = renderHook(() => useStyles())
   expect(result.current.css).toEqual(emotionCss)
 })
+
+it('should memoize the return on rerender', () => {
+  const factory = jest.fn(() => ({}))
+  const theme = createTheme()
+  const { result, rerender } = renderHook(() => useStyles(factory, 'foo', 42), {
+    wrapper: ({ children }) => <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>,
+  })
+
+  const first = result.current.classes
+  rerender()
+  const second = result.current.classes
+
+  expect(second).toBe(first)
+  expect(factory).toHaveBeenCalledTimes(1)
+  expect(factory).toHaveBeenLastCalledWith(theme, 'foo', 42)
+})

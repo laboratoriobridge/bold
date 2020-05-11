@@ -1,5 +1,5 @@
+import { useMemo } from 'react'
 import { Theme } from '../theme/createTheme'
-
 import { useCss } from './useCss'
 
 export type StyleFactory<Classes extends string> = (
@@ -16,15 +16,19 @@ export const useStyles = <Classes extends string>(
   ...args: any[]
 ) => {
   const { css, theme } = useCss()
-  const map = factory(theme, ...args)
 
-  const classes = Object.keys(map).reduce(
-    (all, className) => ({
-      ...all,
-      [className]: css(map[className]),
-    }),
-    {} as ClassNames<Classes>
-  )
+  return useMemo(() => {
+    const map = factory(theme, ...args)
 
-  return { classes, css, theme }
+    const classes = Object.keys(map).reduce(
+      (all, className) => ({
+        ...all,
+        [className]: css(map[className]),
+      }),
+      {} as ClassNames<Classes>
+    )
+
+    return { classes, css, theme }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [...args, css, factory, theme])
 }
