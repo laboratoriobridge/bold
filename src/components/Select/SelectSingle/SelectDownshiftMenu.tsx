@@ -1,8 +1,7 @@
+import { Options as PopperOptions } from '@popperjs/core'
 import { ControllerStateAndHelpers } from 'downshift'
-import { PopperOptions } from 'popper.js'
-import React, { useRef } from 'react'
-
-import { usePopper } from '../../../hooks/usePopper'
+import React, { useState } from 'react'
+import { usePopper } from 'react-popper'
 import { composeRefs } from '../../../util/react'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
 import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
@@ -71,16 +70,11 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
 
   const { CreateItem, LoadingItem, EmptyItem, Item, PrependItem, AppendItem } = { ...defaultComponents, ...components }
 
-  const menuRef = useRef<HTMLUListElement>()
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef,
-      popperRef: menuRef,
-      placement: 'bottom-start',
-      ...popperProps,
-    },
-    [isOpen]
-  )
+  const [menuRef, setMenuRef] = useState<HTMLUListElement>()
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef.current, menuRef, { ...popperProps, placement: 'bottom-start' })
 
   const { dropdownMenuRef, ...menuProps } = getMenuProps({ refKey: 'dropdownMenuRef' }, { suppressRefError: true })
 
@@ -89,7 +83,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
       {isOpen && (
         <SelectMenu
           {...menuProps}
-          menuRef={composeRefs(dropdownMenuRef, menuRef)}
+          menuRef={composeRefs(dropdownMenuRef, setMenuRef)}
           style={{ ...popperStyle, width: anchorRef.current && anchorRef.current.clientWidth, minWidth: menuMinWidth }}
           data-placement={placement}
         >

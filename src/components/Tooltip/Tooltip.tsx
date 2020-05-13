@@ -1,4 +1,4 @@
-import Popper from 'popper.js'
+import { Options as PopperOptions, Instance as PopperInstance, createPopper } from '@popperjs/core'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { useTransition } from '../../hooks/useTransition'
@@ -9,7 +9,7 @@ import { RootRef } from '../RootRef'
 
 import { TooltipPopper } from './TooltipPopper'
 
-export interface TooltipProps extends Popper.PopperOptions {
+export interface TooltipProps extends PopperOptions {
   text: string
   style?: ExternalStyles
   offset?: number
@@ -31,13 +31,13 @@ export function Tooltip(props: TooltipProps) {
 
   const rootRef = useRef<HTMLElement>()
   const popperRef = useRef<HTMLDivElement>()
-  const popperInstance = useRef<Popper>()
+  const popperInstance = useRef<PopperInstance>()
   const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
   const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
   useEffect(() => {
     if (rootRef.current && popperRef.current) {
-      popperInstance.current = new Popper(rootRef.current, popperRef.current, {
+      popperInstance.current = createPopper(rootRef.current, popperRef.current, {
         modifiers: {
           arrow: { enabled: false },
           offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
@@ -79,12 +79,12 @@ export function Tooltip(props: TooltipProps) {
     child.props.onMouseEnter && child.props.onMouseEnter(e)
   }, [])
 
-  const handleFocus = useCallback(e => {
+  const handleFocus = useCallback((e) => {
     setVisible(true)
     child.props.onFocus && child.props.onFocus(e)
   }, [])
 
-  const handleBlur = useCallback(e => {
+  const handleBlur = useCallback((e) => {
     setVisible(false)
     child.props.onBlur && child.props.onBlur(e)
   }, [])

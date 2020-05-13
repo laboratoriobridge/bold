@@ -1,7 +1,7 @@
-import { PopperOptions } from 'popper.js'
+import { Options as PopperOptions } from '@popperjs/core'
 import React, { useEffect, useRef, useCallback } from 'react'
 
-import { usePopper } from '../../hooks/usePopper'
+import { usePopper } from 'react-popper'
 import { Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
@@ -51,14 +51,10 @@ export function Dropdown(props: DropdownProps) {
 
   const menuRef = useRef<HTMLUListElement>()
 
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef,
-      popperRef: menuRef,
-      ...popperProps,
-    },
-    [open]
-  )
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef.current, menuRef.current, popperProps)
 
   const dropdownIdRef = React.useRef<string>(`dropdown-${randomStr()}`)
 
@@ -142,7 +138,7 @@ export function Dropdown(props: DropdownProps) {
         <DropdownMenu
           id={dropdownIdRef.current}
           innerRef={menuRef}
-          style={[popperStyle, classes.dropdown, style]}
+          style={[popperStyle as any, classes.dropdown, style]}
           data-placement={placement}
           onClick={handleMenuClick}
           onBlur={handleBlur}

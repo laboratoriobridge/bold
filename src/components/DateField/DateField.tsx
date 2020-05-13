@@ -1,14 +1,12 @@
-import { PopperOptions } from 'popper.js'
-import React, { useEffect, useRef, useState } from 'react'
-
-import { usePopper } from '../../hooks/usePopper'
+import { Options as PopperOptions } from '@popperjs/core'
+import React, { useEffect, useState } from 'react'
+import { usePopper } from 'react-popper'
 import { Theme } from '../../styles'
 import { useStyles } from '../../styles/hooks/useStyles'
 import { composeHandlers } from '../../util/react'
 import { Calendar, CalendarProps } from '../Calendar'
 import { isSameDay, isValidDate } from '../Calendar/util'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-
 import { DateInput, DateInputProps } from './DateInput'
 
 export interface DateFieldProps extends DateInputProps {
@@ -38,8 +36,8 @@ export function DateField(props: DateFieldProps) {
 
   const { css, classes } = useStyles(createStyles)
 
-  const inputRef = useRef<HTMLInputElement>()
-  const popupRef = useRef<HTMLDivElement>()
+  const [inputRef, setInputRef] = useState<HTMLInputElement>()
+  const [popupRef, setPopupRef] = useState<HTMLDivElement>()
 
   const [open, setOpen] = useState(false)
 
@@ -48,18 +46,13 @@ export function DateField(props: DateFieldProps) {
     setVisibleDate(isValidDate(value) ? value : new Date())
   }, [value])
 
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef: inputRef,
-      popperRef: popupRef,
-      placement: 'bottom-start',
-      ...popperProps,
-    },
-    [open]
-  )
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(inputRef, popupRef, { ...popperProps, placement: 'bottom-start' })
 
   const handleDayClick = (day: Date) => {
-    inputRef.current.focus()
+    inputRef.focus()
     setOpen(false)
     return props.onChange(day)
   }
@@ -74,7 +67,7 @@ export function DateField(props: DateFieldProps) {
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <DateInput
-        inputRef={inputRef}
+        inputRef={setInputRef}
         value={value}
         icon={icon}
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
@@ -83,13 +76,18 @@ export function DateField(props: DateFieldProps) {
       />
 
       {open && (
-        <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
+        <div
+          ref={setPopupRef}
+          className={css(classes.root, popperStyle as any)}
+          data-placement={placement}
+          tabIndex={-1}
+        >
           <Calendar
             visibleDate={visibleDate}
             onVisibleDateChange={handleVisibleDateChange}
             onDayClick={handleDayClick}
             modifiers={{
-              selected: day => value && isSameDay(day, value),
+              selected: (day) => value && isSameDay(day, value),
               disabled: disableByRange(props.minDate, props.maxDate),
             }}
             {...calendarProps}
