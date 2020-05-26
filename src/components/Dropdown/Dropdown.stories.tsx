@@ -1,9 +1,9 @@
 import { action } from '@storybook/addon-actions'
 import { boolean } from '@storybook/addon-knobs'
-import React, { createRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '../Button'
-import { Tooltip } from '../Tooltip'
 import { Icon } from '../Icon'
+import { Tooltip } from '../Tooltip'
 import { Dropdown } from './Dropdown'
 import { DropdownDivider } from './DropdownDivider'
 import { DropdownItem } from './DropdownItem'
@@ -12,12 +12,12 @@ import { DropdownMenu } from './DropdownMenu'
 export default { title: 'Components|Dropdown' }
 
 export const Default = () => {
-  const anchorRef = createRef<HTMLButtonElement>()
+  const [anchorRef, setAnchorRef] = useState<HTMLButtonElement>()
   const [open, setOpen] = useState(false)
 
   return (
     <>
-      <Button innerRef={anchorRef} size='small' onClick={() => setOpen(state => !state)}>
+      <Button innerRef={setAnchorRef} size='small' onClick={() => setOpen((state) => !state)}>
         <Icon icon='dots' />
       </Button>
 

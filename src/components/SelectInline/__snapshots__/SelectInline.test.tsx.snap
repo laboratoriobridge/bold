@@ -174,10 +174,8 @@ exports[`SelectInline should render correctly when opened 1`] = `
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   background-color: #FFFFFF;
   position: absolute;
-  top: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
+  top: 0;
 }
 
 .emotion-12 [role="combobox"] > div > div {
@@ -318,10 +316,8 @@ exports[`SelectInline should render correctly when opened 1`] = `
   width: 100%;
   z-index: 1300;
   position: absolute;
-  top: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
+  top: 0;
   width: 0;
 }
 

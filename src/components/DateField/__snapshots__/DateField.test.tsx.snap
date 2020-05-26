@@ -609,10 +609,8 @@ exports[`DateField should render correctly when opened 1`] = `
   padding: 0.5rem .25rem .25rem .25rem;
   outline: none;
   position: absolute;
-  top: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: none;
+  top: 0;
 }
 
 .emotion-53 {

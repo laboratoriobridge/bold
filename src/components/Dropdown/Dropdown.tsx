@@ -1,19 +1,17 @@
 import { Options as PopperOptions } from '@popperjs/core'
-import React, { useEffect, useRef, useCallback } from 'react'
-
+import React, { useCallback, useEffect, useState, useRef } from 'react'
 import { usePopper } from 'react-popper'
+import { useClickOutside } from '../../hooks/useClickOutside'
 import { Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
-
-import { useClickOutside } from '../../hooks/useClickOutside'
 import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
 
 export interface DropdownProps extends DropdownMenuProps {
   /**
    * The anchor element that should receive the dropdown menu.
    */
-  anchorRef: React.RefObject<HTMLElement>
+  anchorRef: HTMLElement | null
 
   /**
    * Whether the dropdown menu is open or not.
@@ -29,7 +27,7 @@ export interface DropdownProps extends DropdownMenuProps {
   /**
    * Popper instance props.
    */
-  popperProps?: PopperOptions
+  popperProps?: Partial<PopperOptions>
 
   children?: React.ReactNode
 
@@ -49,25 +47,27 @@ export function Dropdown(props: DropdownProps) {
   const { children, anchorRef, popperProps, open, onClose, autoclose, style, ...rest } = props
   const { classes } = useStyles(createStyles)
 
-  const menuRef = useRef<HTMLUListElement>()
+  const [menuRef, setMenuRef] = useState<HTMLUListElement>()
 
   const {
     styles: { popper: popperStyle },
     attributes: { placement },
-  } = usePopper(anchorRef.current, menuRef.current, popperProps)
+  } = usePopper(anchorRef, menuRef, popperProps)
 
   const dropdownIdRef = React.useRef<string>(`dropdown-${randomStr()}`)
 
   // Attaches aria attributes to anchor element
   useEffect(() => {
-    anchorRef.current.setAttribute('aria-haspopup', 'true')
+    if (anchorRef) {
+      anchorRef.setAttribute('aria-haspopup', 'true')
 
-    if (open) {
-      anchorRef.current.setAttribute('aria-expanded', 'true')
-      anchorRef.current.setAttribute('aria-controls', dropdownIdRef.current)
-    } else {
-      anchorRef.current.removeAttribute('aria-expanded')
-      anchorRef.current.removeAttribute('aria-controls')
+      if (open) {
+        anchorRef.setAttribute('aria-expanded', 'true')
+        anchorRef.setAttribute('aria-controls', dropdownIdRef.current)
+      } else {
+        anchorRef.removeAttribute('aria-expanded')
+        anchorRef.removeAttribute('aria-controls')
+      }
     }
   }, [open, anchorRef])
 
@@ -94,10 +94,8 @@ export function Dropdown(props: DropdownProps) {
     if (open) {
       setTimeout(() => {
         // Delay focus to preserve window scroll position
-        if (menuRef.current) {
-          const firstItem = menuRef.current.querySelector(
-            '[role="menuitem"]:not([aria-disabled="true"])'
-          ) as HTMLElement
+        if (menuRef) {
+          const firstItem = menuRef.querySelector('[role="menuitem"]:not([aria-disabled="true"])') as HTMLElement
 
           if (firstItem) {
             firstItem.focus()
@@ -105,19 +103,19 @@ export function Dropdown(props: DropdownProps) {
         }
       })
     }
-  }, [open])
+  }, [open, menuRef])
 
   // Call onClose if target focus is outside menu
   const handleBlur = useCallback(() => {
     setTimeout(() => {
-      if (menuRef.current) {
-        const currentFocus = menuRef.current.ownerDocument.activeElement
-        if (!menuRef.current.contains(currentFocus)) {
+      if (menuRef) {
+        const currentFocus = menuRef.ownerDocument.activeElement
+        if (!menuRef.contains(currentFocus)) {
           onClose()
         }
       }
     })
-  }, [onClose])
+  }, [onClose, menuRef])
 
   // Call `onClose` when clicked outside dropdown and anchor
   useClickOutside([anchorRef, menuRef], () => {
@@ -137,7 +135,7 @@ export function Dropdown(props: DropdownProps) {
       <Portal>
         <DropdownMenu
           id={dropdownIdRef.current}
-          innerRef={menuRef}
+          innerRef={setMenuRef}
           style={[popperStyle as any, classes.dropdown, style]}
           data-placement={placement}
           onClick={handleMenuClick}
