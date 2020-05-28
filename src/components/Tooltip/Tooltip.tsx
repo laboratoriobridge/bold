@@ -1,12 +1,11 @@
-import { Options as PopperOptions, Instance as PopperInstance, createPopper } from '@popperjs/core'
-import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-
+import { Options as PopperOptions } from '@popperjs/core'
+import React, { CSSProperties, useCallback, useEffect, useMemo, useState } from 'react'
+import { usePopper } from 'react-popper'
 import { useTransition } from '../../hooks/useTransition'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
 import { Portal } from '../Portal'
 import { RootRef } from '../RootRef'
-
 import { TooltipPopper } from './TooltipPopper'
 
 export interface TooltipProps extends PopperOptions {
@@ -29,35 +28,30 @@ export function Tooltip(props: TooltipProps) {
   const { css, theme, classes } = useStyles(createStyles, props)
   const [visible, setVisible] = useState<boolean>(false)
 
-  const rootRef = useRef<HTMLElement>()
-  const popperRef = useRef<HTMLDivElement>()
-  const popperInstance = useRef<PopperInstance>()
+  const [rootRef, setRootRef] = useState<Element>()
+  const [popperRef, setPopperRef] = useState<HTMLDivElement>()
   const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
   const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
-  useEffect(() => {
-    if (rootRef.current && popperRef.current) {
-      popperInstance.current = createPopper(rootRef.current, popperRef.current, {
-        modifiers: {
-          arrow: { enabled: false },
+  const {
+    styles: { popper: popperStyles },
+  } = usePopper(rootRef, popperRef, {
+    modifiers: [
+      {
+        name: 'default',
+        options: {
           offset: { offset: `0, ${theme.typography.sizes.html * offset}` },
           preventOverflow: {
             boundariesElement: 'window',
           },
         },
-        ...rest,
-      })
-    }
-
-    return () => {
-      if (popperInstance.current) {
-        popperInstance.current.destroy()
-      }
-    }
-  }, [rootRef.current, popperRef.current])
+      },
+    ],
+    ...rest,
+  })
 
   useEffect(() => {
-    if (!rootRef.current || !visible) {
+    if (!rootRef || !visible) {
       return
     }
 
@@ -65,14 +59,14 @@ export function Tooltip(props: TooltipProps) {
       // This is implemented using mouseover since mouseleave does not trigger
       // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
       const target = e.target as Node
-      if (!rootRef.current.contains(target)) {
+      if (!rootRef.contains(target)) {
         setVisible(false)
       }
     }
 
     window.addEventListener('mouseover', handleWindowMouseOver)
     return () => window.removeEventListener('mouseover', handleWindowMouseOver)
-  }, [rootRef.current, visible])
+  }, [rootRef, visible])
 
   const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLElement>) => {
     setVisible(true)
@@ -95,7 +89,7 @@ export function Tooltip(props: TooltipProps) {
 
   return (
     <>
-      <RootRef rootRef={rootRef}>
+      <RootRef rootRef={setRootRef}>
         {React.cloneElement(child, {
           title: !visible ? child.props.title || text : child.props.title,
           'aria-describedby': visible ? tooltipId : undefined,
@@ -109,8 +103,9 @@ export function Tooltip(props: TooltipProps) {
         <Portal container={container}>
           <div
             id={tooltipId}
-            ref={popperRef}
+            ref={setPopperRef}
             className={css(classes.popper, transitionState === 'entered' && classes.visible)}
+            style={popperStyles}
             role='tooltip'
             aria-hidden={!visible ? 'true' : 'false'}
           >

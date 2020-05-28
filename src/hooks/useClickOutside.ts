@@ -51,7 +51,7 @@ function getRefs(
 ): Array<HTMLElement> {
   if (Array.isArray(ref)) {
     return (ref as []).map((item: any) => {
-      if (isRef(ref)) return item.current
+      if (isRef(item)) return item.current
       return item
     })
   } else if (isRef(ref)) {
@@ -62,5 +62,5 @@ function getRefs(
 }
 
 function isRef(ref: any): ref is RefObject<HTMLElement> {
-  return ref.current !== undefined
+  return !!ref.current
 }
