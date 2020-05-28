@@ -15,6 +15,7 @@ const DropdownTest = (props: Partial<DropdownProps> = {}) => {
         <DropdownItem>Item #2</DropdownItem>
         <DropdownItem disabled>Item #3</DropdownItem>
       </Dropdown>
+      <input data-testid='outsideElement' />
     </>
   )
 }
@@ -100,15 +101,15 @@ it('should call "onClose" when "Escape" is pressed and dropdown is open', async 
 
 it('should call "onClose" when focus go outside menu', async () => {
   const close = jest.fn()
+  let getByTestId
   await act(async () => {
-    render(<DropdownTest open={true} onClose={close} />)
+    getByTestId = render(<DropdownTest open={true} onClose={close} />).getByTestId
   })
-
-  // expect(document.activeElement).toEqual(document.body)
 
   expect(close).not.toHaveBeenCalled()
 
-  fireEvent.blur(document.body.querySelector('ul'))
+  getByTestId('outsideElement').focus()
+
   await waitFor(() => expect(close).toHaveBeenCalledTimes(1))
 })
 
@@ -118,7 +119,6 @@ it('should call "onClose" when clicked outside menu and anchor', async () => {
     render(<DropdownTest open={true} onClose={close} />)
   })
 
-  // expect(document.activeElement).toEqual(document.body)
   expect(close).not.toHaveBeenCalled()
 
   fireEvent.mouseDown(document.querySelector('ul'))
