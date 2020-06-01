@@ -1,96 +1,124 @@
-import { fireEvent, render, wait } from '@testing-library/react'
-import React, { createRef } from 'react'
-
+import { act, fireEvent, render, RenderResult, waitFor } from '@testing-library/react'
+import React, { useState } from 'react'
 import { Dropdown, DropdownProps } from './Dropdown'
 import { DropdownItem } from './DropdownItem'
 
 jest.mock('../../util/string')
 
 const DropdownTest = (props: Partial<DropdownProps> = {}) => {
-  const anchorRef = createRef<HTMLButtonElement>()
+  const [anchorRef, setAnchorRef] = useState<HTMLButtonElement>()
   return (
     <>
-      <button ref={anchorRef}>Anchor</button>
+      <button ref={setAnchorRef}>Anchor</button>
       <Dropdown anchorRef={anchorRef} open={false} {...props}>
         <DropdownItem>Item #1</DropdownItem>
         <DropdownItem>Item #2</DropdownItem>
         <DropdownItem disabled>Item #3</DropdownItem>
       </Dropdown>
+      <input data-testid='outsideElement' />
     </>
   )
 }
 
-it('should render correctly when closed', () => {
-  render(<DropdownTest />)
+it('should render correctly when closed', async () => {
+  await act(async () => {
+    render(<DropdownTest />)
+  })
   expect(document.body).toMatchSnapshot()
 })
 
-it('should render correctly when open', () => {
-  render(<DropdownTest open={true} />)
+it('should render correctly when open', async () => {
+  await act(async () => {
+    render(<DropdownTest open={true} />)
+  })
   expect(document.body).toMatchSnapshot()
 })
 
-it('should accept popper props', () => {
-  render(<DropdownTest open={true} popperProps={{ placement: 'top-start' }} />)
+it('should accept popper props', async () => {
+  await act(async () => {
+    render(<DropdownTest open={true} popperProps={{ placement: 'top-start' }} />)
+  })
   expect(document.body).toMatchSnapshot()
 })
 
-it('should extend DropdownMenu props', () => {
-  render(<DropdownTest open={true} aria-label='test' style={{ color: 'red' }} />)
+it('should extend DropdownMenu props', async () => {
+  await act(async () => {
+    render(<DropdownTest open={true} aria-label='test' style={{ color: 'red' }} />)
+  })
   expect(document.body).toMatchSnapshot()
 })
 
-it('should control aria attributes on anchor element', () => {
-  const { getByText, rerender } = render(<DropdownTest open={false} />)
+it('should control aria attributes on anchor element', async () => {
+  let rerender: RenderResult['rerender']
+  let getByText: RenderResult['getByText']
+
+  await act(async () => {
+    const result = render(<DropdownTest open={false} />)
+    rerender = result.rerender
+    getByText = result.getByText
+  })
+
   const anchor = getByText('Anchor')
 
   expect(anchor.getAttribute('aria-haspopup')).toEqual('true')
   expect(anchor.getAttribute('aria-expanded')).toBeFalsy()
   expect(anchor.getAttribute('aria-controls')).toBeFalsy()
 
-  rerender(<DropdownTest open={true} />)
+  await act(async () => {
+    rerender(<DropdownTest open={true} />)
+  })
 
   expect(anchor.getAttribute('aria-haspopup')).toEqual('true')
   expect(anchor.getAttribute('aria-expanded')).toEqual('true')
   expect(anchor.getAttribute('aria-controls')).toEqual('dropdown-abc')
 })
 
-it('should call "onClose" when "Escape" is pressed and dropdown is open', () => {
+it('should call "onClose" when "Escape" is pressed and dropdown is open', async () => {
   const close = jest.fn()
-  const { rerender } = render(<DropdownTest open={false} onClose={close} />)
+
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    rerender = render(<DropdownTest open={false} onClose={close} />).rerender
+  })
 
   expect(close).not.toHaveBeenCalled()
 
   fireEvent.keyDown(document.body, { key: 'Escape' })
   expect(close).not.toHaveBeenCalled()
 
-  rerender(<DropdownTest open={true} onClose={close} />)
+  await act(async () => {
+    rerender(<DropdownTest open={true} onClose={close} />)
+  })
   fireEvent.keyDown(document.body, { key: 'Escape' })
   expect(close).toHaveBeenCalledTimes(1)
 
-  rerender(<DropdownTest open={false} onClose={close} />)
+  await act(async () => {
+    rerender(<DropdownTest open={false} onClose={close} />)
+  })
   fireEvent.keyDown(document.body, { key: 'Escape' })
   expect(close).toHaveBeenCalledTimes(1)
 })
 
 it('should call "onClose" when focus go outside menu', async () => {
   const close = jest.fn()
-  render(<DropdownTest open={true} onClose={close} />)
-
-  expect(document.activeElement).toEqual(document.body)
+  let getByTestId
+  await act(async () => {
+    getByTestId = render(<DropdownTest open={true} onClose={close} />).getByTestId
+  })
 
   expect(close).not.toHaveBeenCalled()
 
-  fireEvent.blur(document.body.querySelector('ul'))
-  await wait()
-  expect(close).toHaveBeenCalledTimes(1)
+  getByTestId('outsideElement').focus()
+
+  await waitFor(() => expect(close).toHaveBeenCalledTimes(1))
 })
 
 it('should call "onClose" when clicked outside menu and anchor', async () => {
   const close = jest.fn()
-  render(<DropdownTest open={true} onClose={close} />)
+  await act(async () => {
+    render(<DropdownTest open={true} onClose={close} />)
+  })
 
-  expect(document.activeElement).toEqual(document.body)
   expect(close).not.toHaveBeenCalled()
 
   fireEvent.mouseDown(document.querySelector('ul'))
@@ -103,24 +131,31 @@ it('should call "onClose" when clicked outside menu and anchor', async () => {
 
   fireEvent.mouseDown(document.body)
   fireEvent.mouseUp(document.body)
-  await wait()
-  expect(close).toHaveBeenCalledTimes(1)
+  await waitFor(() => expect(close).toHaveBeenCalledTimes(1))
 })
 
 it('should focus the first menu item when dropdown is opened', async () => {
-  const { rerender } = render(<DropdownTest open={false} />)
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    rerender = render(<DropdownTest open={false} />).rerender
+  })
 
   expect(document.activeElement).toEqual(document.body)
 
-  rerender(<DropdownTest open={true} />)
-  await wait(() => {
+  await act(async () => {
+    rerender(<DropdownTest open={true} />)
+  })
+  await waitFor(() => {
     expect(document.activeElement).toEqual(document.body.querySelectorAll('li')[0])
   })
 })
 
-it('should call "onClose" if menu is clicked and "autoclose" is true', () => {
+it('should call "onClose" if menu is clicked and "autoclose" is true', async () => {
   const close = jest.fn()
-  const { rerender } = render(<DropdownTest open={true} onClose={close} />)
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    rerender = render(<DropdownTest open={true} onClose={close} />).rerender
+  })
 
   expect(close).toHaveBeenCalledTimes(0)
   fireEvent.click(document.body.querySelectorAll('li')[0])
@@ -131,9 +166,12 @@ it('should call "onClose" if menu is clicked and "autoclose" is true', () => {
   expect(close).toHaveBeenCalledTimes(1)
 })
 
-it('should NOT call "onClose" if item clicked is disabled', () => {
+it('should NOT call "onClose" if item clicked is disabled', async () => {
   const close = jest.fn()
-  render(<DropdownTest open={true} onClose={close} />)
+
+  await act(async () => {
+    render(<DropdownTest open={true} onClose={close} />)
+  })
 
   fireEvent.click(document.body.querySelectorAll('li')[2])
   expect(close).toHaveBeenCalledTimes(0)

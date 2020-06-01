@@ -1,7 +1,6 @@
-import { PopperOptions } from 'popper.js'
-import React, { useEffect, useRef, useState } from 'react'
-
-import { usePopper } from '../../hooks/usePopper'
+import { Options as PopperOptions } from '@popperjs/core'
+import React, { useEffect, useState } from 'react'
+import { usePopper } from 'react-popper'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { Button, ButtonProps } from '../Button'
@@ -23,26 +22,29 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
 
   const { classes, css } = useStyles(createStyles)
 
-  const selectInputRef = useRef<HTMLInputElement>()
-  const anchorRef = useRef<HTMLButtonElement>()
-  const popperRef = useRef<HTMLDivElement>()
+  const [selectInputRef, setSelectInputRef] = useState<HTMLInputElement>()
+  const [anchorRef, setAnchorRef] = useState<HTMLButtonElement>()
+  const [popperRef, setPopperRef] = useState<HTMLDivElement>()
 
   const [open, setOpen] = useState(false)
-  const { style: popperStyle, placement } = usePopper({ anchorRef, popperRef, ...popperProps }, [open])
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef, popperRef, popperProps)
 
   useEffect(() => {
-    if (open) {
-      selectInputRef.current.focus()
+    if (open && selectInputRef) {
+      selectInputRef.focus()
     }
-  }, [open])
+  }, [open, selectInputRef])
 
-  const handleButtonClick = () => setOpen(state => !state)
+  const handleButtonClick = () => setOpen((state) => !state)
   const handleChange = () => setOpen(false)
 
   return (
     <>
       <Button
-        innerRef={composeRefs(anchorRef, innerRef)}
+        innerRef={composeRefs(setAnchorRef, innerRef)}
         onClick={handleButtonClick}
         skin='ghost'
         kind='normal'
@@ -54,9 +56,9 @@ export function SelectInline<T>(props: SelectInlineProps<T>) {
       </Button>
 
       {open && (
-        <div ref={popperRef} className={css(classes.box, popperStyle)} data-placement={placement}>
+        <div ref={setPopperRef} className={css(classes.box, popperStyle as any)} data-placement={placement}>
           <Select<T>
-            inputRef={composeRefs(selectInputRef, inputRef)}
+            inputRef={composeRefs(setSelectInputRef, inputRef)}
             itemToString={itemToString}
             onChange={composeHandlers(handleChange, onChange)}
             isOpen

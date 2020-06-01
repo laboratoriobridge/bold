@@ -41,7 +41,21 @@ exports[`should render correctly 2`] = `
   <div>
     <div
       id="portal-root"
-    />
+    >
+      <div
+        aria-hidden="false"
+        class="emotion-1"
+        id="tooltip-abc"
+        role="tooltip"
+        style="position: absolute; left: 0px; top: 0px;"
+      >
+        <div
+          class="emotion-0"
+        >
+          Tooltip text
+        </div>
+      </div>
+    </div>
   </div>
   <div>
     <span
@@ -49,18 +63,6 @@ exports[`should render correctly 2`] = `
     >
       Testing
     </span>
-  </div>
-  <div
-    aria-hidden="false"
-    class="emotion-1"
-    id="tooltip-abc"
-    role="tooltip"
-  >
-    <div
-      class="emotion-0"
-    >
-      Tooltip text
-    </div>
   </div>
 </body>
 `;

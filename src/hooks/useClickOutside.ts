@@ -9,7 +9,7 @@ import { useEffect, useState, RefObject } from 'react'
  * @param onClickOutside The callback function to be called.
  */
 export const useClickOutside = (
-  ref: RefObject<HTMLElement> | Array<RefObject<HTMLElement>>,
+  ref: HTMLElement | Array<HTMLElement> | RefObject<HTMLElement> | Array<RefObject<HTMLElement>>,
   onClickOutside: (e: MouseEvent) => void
 ): [boolean] => {
   const [isActive, setActive] = useState(false)
@@ -19,7 +19,7 @@ export const useClickOutside = (
       const target = e.target as HTMLElement
       const refs = getRefs(ref)
 
-      if (refs.filter(r => !!r.current).every(r => !r.current.contains(target))) {
+      if (refs.filter((r) => !!r).every((r) => !r.contains(target))) {
         setActive(true)
         onClickOutside(e)
       }
@@ -29,7 +29,7 @@ export const useClickOutside = (
       const target = e.target as HTMLElement
       const refs = getRefs(ref)
 
-      if (refs.filter(r => !!r.current).every(r => !r.current.contains(target))) {
+      if (refs.filter((r) => !!r).every((r) => !r.contains(target))) {
         setActive(false)
       }
     }
@@ -46,10 +46,21 @@ export const useClickOutside = (
   return [isActive]
 }
 
-function getRefs(ref: RefObject<HTMLElement> | Array<RefObject<HTMLElement>>): Array<RefObject<HTMLElement>> {
+function getRefs(
+  ref: HTMLElement | Array<HTMLElement> | RefObject<HTMLElement> | Array<RefObject<HTMLElement>>
+): Array<HTMLElement> {
   if (Array.isArray(ref)) {
-    return ref
+    return (ref as []).map((item: any) => {
+      if (isRef(item)) return item.current
+      return item
+    })
+  } else if (isRef(ref)) {
+    return [ref.current]
   } else {
     return [ref]
   }
+}
+
+function isRef(ref: any): ref is RefObject<HTMLElement> {
+  return !!ref.current
 }

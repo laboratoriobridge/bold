@@ -1,7 +1,7 @@
-import { PopperOptions } from 'popper.js'
+import { Options as PopperOptions } from '@popperjs/core'
 import React, { useEffect, useRef, useState } from 'react'
 
-import { usePopper } from '../../hooks/usePopper'
+import { usePopper } from 'react-popper'
 import { Theme, useStyles } from '../../styles'
 
 import { disableByRange } from '../DateField/DateField'
@@ -33,8 +33,8 @@ export function DateRangeField(props: DateRangeFieldProps) {
   const { classes, css } = useStyles(createStyles)
 
   const finalInputRef = useRef<HTMLInputElement>()
-  const anchorRef = useRef<HTMLDivElement>()
-  const popupRef = useRef<HTMLDivElement>()
+  const [anchorRef, setAnchorRef] = useState<HTMLDivElement>()
+  const [popupRef, setPopupRef] = useState<HTMLDivElement>()
 
   useEffect(() => {
     const point = (): Date => {
@@ -54,15 +54,10 @@ export function DateRangeField(props: DateRangeFieldProps) {
     setVisibleDate(point)
   }, [dateRangeInputFocus, value])
 
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef,
-      popperRef: popupRef,
-      placement: 'bottom',
-      ...popperProps,
-    },
-    [open]
-  )
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef, popupRef, { ...popperProps, placement: 'bottom' })
 
   const handleInputFocus = (inputOnFocus: number) => setDateRangeInputFocus(inputOnFocus)
 
@@ -92,7 +87,7 @@ export function DateRangeField(props: DateRangeFieldProps) {
       <DateRangeInput
         value={value}
         onChange={handleDateRangeChanged}
-        divRef={anchorRef}
+        divRef={setAnchorRef}
         minDate={minDate}
         maxDate={maxDate}
         icon={icon}
@@ -102,7 +97,12 @@ export function DateRangeField(props: DateRangeFieldProps) {
       />
 
       {open && (
-        <div ref={popupRef} className={css(classes.root, popperStyle)} data-placement={placement} tabIndex={-1}>
+        <div
+          ref={setPopupRef}
+          className={css(classes.root, popperStyle as any)}
+          data-placement={placement}
+          tabIndex={-1}
+        >
           <ControlledDateRangeCalendar
             value={value}
             onChange={handleCalendarDateRangeChanged}

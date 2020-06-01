@@ -1,8 +1,7 @@
-import { PopperOptions } from 'popper.js'
-import React, { useRef, useState } from 'react'
+import { Options as PopperOptions } from '@popperjs/core'
+import React, { useState } from 'react'
+import { usePopper } from 'react-popper'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
-
-import { usePopper } from '../../hooks/usePopper'
 import { useStyles } from '../../styles/hooks/useStyles'
 import { Theme } from '../../styles/theme/createTheme'
 import { Omit } from '../../util'
@@ -24,18 +23,13 @@ export function MonthField(props: MonthFieldProps) {
 
   const [open, setOpen] = useState(false)
 
-  const anchorRef = useRef<HTMLInputElement>()
-  const popperRef = useRef<HTMLDivElement>()
+  const [anchorRef, setAnchorRef] = useState<HTMLInputElement>()
+  const [popperRef, setPopperRef] = useState<HTMLDivElement>()
 
-  const { style: popperStyle, placement } = usePopper(
-    {
-      anchorRef,
-      popperRef,
-      placement: 'bottom-start',
-      ...popperProps,
-    },
-    [open]
-  )
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef, popperRef, { ...popperProps, placement: 'bottom-start' })
 
   const handlePickerChange = (referenceMonth: ReferenceMonth) => {
     setOpen(false)
@@ -61,7 +55,7 @@ export function MonthField(props: MonthFieldProps) {
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <MonthInput
-        inputRef={composeRefs(anchorRef, inputRef)}
+        inputRef={composeRefs(setAnchorRef, inputRef)}
         value={format(value)}
         icon='calendarOutline'
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
@@ -71,8 +65,8 @@ export function MonthField(props: MonthFieldProps) {
 
       {open && (
         <div
-          ref={popperRef}
-          className={css(classes.popup, popperStyle)}
+          ref={setPopperRef}
+          className={css(classes.popup, popperStyle as any)}
           data-placement={placement}
           data-testid='MonthField.popup'
         >

@@ -504,26 +504,6 @@ exports[`should render correctly when opened 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-27 {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-  z-index: 1300;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -649,6 +629,25 @@ exports[`should render correctly when opened 1`] = `
   -ms-flex-align: center;
   align-items: center;
   pointer-events: none;
+}
+
+.emotion-27 {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  z-index: 1300;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
 }
 
 <div>
