@@ -133,7 +133,6 @@ storiesOf('Components|Select', module)
       label='Fruit'
       name='fruit'
       items={fruits}
-      style={{ ul: { minWidth: '500px' } }}
       itemToString={(item) => item && item.label}
       components={{
         PrependItem: (props) => <SelectDownshiftComponentCustom>Prepend item</SelectDownshiftComponentCustom>,
