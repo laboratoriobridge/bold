@@ -1,7 +1,6 @@
-import { Options as PopperOptions } from '@popperjs/core'
 import { ControllerStateAndHelpers } from 'downshift'
 import React, { useState, CSSProperties } from 'react'
-import { usePopper } from 'react-popper'
+import { usePopper, PopperProps } from 'react-popper'
 import { composeRefs } from '../../../util/react'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
 import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
@@ -15,7 +14,7 @@ export interface SelectDownshiftMenuProps<T> {
   anchorRef: React.RefObject<HTMLElement>
   createNewItem?: boolean
   components?: Partial<SelectMenuComponents<T>>
-  popperProps?: PopperOptions
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   /**
    * Render function used by each select item.

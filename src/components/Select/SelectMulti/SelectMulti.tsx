@@ -29,6 +29,7 @@ export interface SelectMultiProps<T = DefaultItemType>
   loading?: SelectDownshiftMenuProps<T>['loading']
   renderItem?: SelectDownshiftMenuProps<T>['renderItem']
   components?: SelectDownshiftMenuProps<T>['components']
+  popperProps?: SelectDownshiftMenuProps<T>['popperProps']
 }
 
 export function SelectMulti<T>(props: SelectMultiProps<T>) {
@@ -43,6 +44,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
     loading,
     renderItem: externalRenderItem,
     components,
+    popperProps,
     placeholder,
     label,
     error,
@@ -88,7 +90,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
         onFilterChange={onFilterChange}
         labelId={formControlProps.labelId}
       >
-        {downshift => {
+        {(downshift) => {
           const {
             // isOpen,
             getInputProps,
@@ -119,6 +121,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
                 invalid={invalid}
               />
               <SelectDownshiftMenu
+                popperProps={popperProps}
                 anchorRef={inputWrapperRef}
                 downshift={downshift}
                 items={visibleItems}

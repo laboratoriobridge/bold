@@ -32,6 +32,7 @@ export interface SelectSingleProps<T = DefaultItemType>
   loading?: SelectDownshiftMenuProps<T>['loading']
   renderItem?: SelectDownshiftMenuProps<T>['renderItem']
   components?: SelectDownshiftMenuProps<T>['components']
+  popperProps?: SelectDownshiftMenuProps<T>['popperProps']
 }
 
 export function SelectSingle<T>(props: SelectSingleProps<T>) {
@@ -45,6 +46,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     openOnFocus,
     onFilterChange,
     createNewItem,
+    popperProps,
     loading,
     renderItem,
     components,
@@ -76,7 +78,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
         createNewItem={createNewItem}
         labelId={formControlProps.labelId}
       >
-        {downshift => {
+        {(downshift) => {
           const {
             isOpen: downshiftOpen,
             getInputProps,
@@ -109,6 +111,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
                 />
               </div>
               <SelectDownshiftMenu
+                popperProps={popperProps}
                 anchorRef={internalInputRef}
                 menuMinWidth={menuMinWidth}
                 downshift={downshift}
