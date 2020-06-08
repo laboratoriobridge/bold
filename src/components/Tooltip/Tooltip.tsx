@@ -55,7 +55,7 @@ export function Tooltip(props: TooltipProps) {
       return
     }
 
-    const handleWindowMouseOver = (e: MouseEvent) => {
+    const handleWindowPointerOver = (e: PointerEvent) => {
       // This is implemented using mouseover since mouseleave does not trigger
       // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
       const target = e.target as Node
@@ -64,13 +64,13 @@ export function Tooltip(props: TooltipProps) {
       }
     }
 
-    window.addEventListener('mouseover', handleWindowMouseOver)
-    return () => window.removeEventListener('mouseover', handleWindowMouseOver)
+    window.addEventListener('pointerover', handleWindowPointerOver)
+    return () => window.removeEventListener('pointerover', handleWindowPointerOver)
   }, [rootRef, visible])
 
-  const handleMouseEnter = useCallback((e: React.MouseEvent<HTMLElement>) => {
+  const handlePointerEnter = useCallback((e: React.PointerEvent<HTMLElement>) => {
     setVisible(true)
-    child.props.onMouseEnter && child.props.onMouseEnter(e)
+    child.props.onPointerEnter && child.props.onPointerEnter(e)
   }, [])
 
   const handleFocus = useCallback((e) => {
@@ -93,7 +93,7 @@ export function Tooltip(props: TooltipProps) {
         {React.cloneElement(child, {
           title: !visible ? child.props.title || text : child.props.title,
           'aria-describedby': visible ? tooltipId : undefined,
-          onMouseEnter: handleMouseEnter,
+          onPointerEnter: handlePointerEnter,
           onFocus: handleFocus,
           onBlur: handleBlur,
         })}
