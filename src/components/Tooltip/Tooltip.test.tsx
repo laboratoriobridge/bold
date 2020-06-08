@@ -47,10 +47,10 @@ it('should not render tooltip if text if null or empty', async () => {
   expect(container.querySelector('span').getAttribute('aria-describedby')).toBeFalsy()
 })
 
-it('should show tooltip when mouse enters component', async () => {
+it('should show tooltip when pointer enters component', async () => {
   const { getByText } = await actRender(<TooltipTest />)
   expect(document.body.querySelector('[role="tooltip"]')).toBeFalsy()
-  fireEvent.mouseEnter(getByText('Testing'))
+  fireEvent.pointerOver(getByText('Testing'))
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })
 
@@ -61,10 +61,10 @@ it('should show tooltip when focus component', async () => {
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })
 
-it('should hide tooltip when mouse leaves component', async () => {
+it('should hide tooltip when pointer leaves component', async () => {
   const { getByText } = await actRender(<TooltipTest />)
-  fireEvent.mouseEnter(getByText('Testing'))
-  fireEvent.mouseOver(document)
+  fireEvent.pointerOver(getByText('Testing'))
+  fireEvent.pointerOver(document)
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
 
@@ -75,13 +75,13 @@ it('should hide tooltip when blur component', async () => {
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 })
 
-it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', async () => {
+it('should compose onPointerEnter, onPointerLeave, onFocus and onBlur functions', async () => {
   const focus = jest.fn()
   const blur = jest.fn()
-  const mouseEnter = jest.fn()
+  const pointerEnter = jest.fn()
   const { getByText } = await actRender(
     <Tooltip text='Tooltip text' offset={2} placement='bottom-start'>
-      <button onFocus={focus} onBlur={blur} onMouseEnter={mouseEnter}>
+      <button onFocus={focus} onBlur={blur} onPointerEnter={pointerEnter}>
         Testing
       </button>
     </Tooltip>
@@ -100,8 +100,8 @@ it('should compose onMouseEnter, onMouseLeave, onFocus and onBlur functions', as
   expect(blur).toHaveBeenCalledTimes(1)
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('true')
 
-  fireEvent.mouseEnter(target)
-  expect(mouseEnter).toHaveBeenCalledTimes(1)
+  fireEvent.pointerOver(target)
+  expect(pointerEnter).toHaveBeenCalledTimes(1)
   expect(document.body.querySelector('[role="tooltip"]').getAttribute('aria-hidden')).toEqual('false')
 })
 
