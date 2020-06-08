@@ -25,7 +25,7 @@ export function Checkbox(props: CheckboxProps) {
     <label className={css(classes.wrapper, props.disabled && classes.disabled, style)}>
       <Input {...rest} inputRef={inputRef} type='checkbox' className={inputClasses.input} />
       <span className={classes.check} />
-      {label && <span className={classes.label}>{label}</span>}
+      {(label || label === 0) && <span className={classes.label}>{label}</span>}
     </label>
   )
 }
