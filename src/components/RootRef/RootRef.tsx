@@ -1,5 +1,4 @@
-import React from 'react'
-import { findDOMNode } from 'react-dom'
+import React, { useEffect, useRef } from 'react'
 
 import { setRef } from '../../util/react'
 
@@ -14,33 +13,12 @@ export interface RootRefProps<T extends Element = Element> {
  *
  * From Material's UI RootRef component
  */
-export class RootRef<T extends Element = Element> extends React.Component<RootRefProps<T>> {
-  private ref: any
+export function RootRef<T extends Element = Element>(props: RootRefProps) {
+  const ref = useRef<Element>()
 
-  componentDidMount() {
-    this.ref = findDOMNode(this)
-    setRef(this.props.rootRef, this.ref)
-  }
+  useEffect(() => {
+    setRef(props.rootRef, ref.current)
+  }, [ref.current])
 
-  componentDidUpdate(prevProps) {
-    const ref = findDOMNode(this)
-
-    if (prevProps.rootRef !== this.props.rootRef || this.ref !== ref) {
-      if (prevProps.rootRef !== this.props.rootRef) {
-        setRef(prevProps.rootRef, null)
-      }
-
-      this.ref = ref
-      setRef(this.props.rootRef, this.ref)
-    }
-  }
-
-  componentWillUnmount() {
-    this.ref = null
-    setRef(this.props.rootRef, null)
-  }
-
-  render() {
-    return this.props.children
-  }
+  return props.children
 }
