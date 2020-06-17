@@ -3,6 +3,7 @@ import React from 'react'
 
 import { Select } from '../Select'
 
+import { Button } from '../Button'
 import { SelectProps } from './Select'
 import { DefaultItemType } from './SelectSingle/SelectSingle'
 import { SelectDownshiftComponentCustom } from './SelectSingle/SelectDownshiftMenu'
@@ -156,5 +157,57 @@ describe('select custom components', () => {
     expect(dropdown.firstElementChild.getAttribute('data-testid')).toEqual('prepend-item')
     expect(dropdown.childNodes[1].nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
+  })
+
+  it('should accept actions inside PrependItem', () => {
+    const click = jest.fn()
+
+    const { container, getByTestId } = render(
+      <SelectTest
+        value={items}
+        components={{
+          PrependItem: (props) => (
+            <SelectDownshiftComponentCustom>
+              <Button kind='primary' size='small' data-testid='button' onClick={click}>
+                New item
+              </Button>
+            </SelectDownshiftComponentCustom>
+          ),
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(container).toMatchSnapshot()
+
+    fireEvent.click(getByTestId('button'))
+    expect(click).toHaveBeenCalledTimes(1)
+  })
+
+  it('should accept actions inside AppendItem', () => {
+    const click = jest.fn()
+
+    const { container, getByTestId } = render(
+      <SelectTest
+        value={items}
+        components={{
+          AppendItem: (props) => (
+            <SelectDownshiftComponentCustom>
+              <Button kind='primary' size='small' data-testid='button' onClick={click}>
+                New item
+              </Button>
+            </SelectDownshiftComponentCustom>
+          ),
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(container).toMatchSnapshot()
+
+    fireEvent.click(getByTestId('button'))
+    expect(click).toHaveBeenCalledTimes(1)
   })
 })
