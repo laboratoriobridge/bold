@@ -54,12 +54,13 @@ describe('multiple', () => {
 })
 
 describe('select custom components', () => {
-  it('should render list only', () => {
+  it('should render only the list', () => {
     const { container } = render(<SelectTest value={items} />)
 
-    fireEvent.click(container.querySelector('input'))
-    const dropdown = container.querySelector('[role="listbox"]')
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
 
+    const dropdown = container.querySelector('[role="listbox"]')
     expect(dropdown.childElementCount).toBe(1)
     expect(dropdown.firstElementChild.nodeName).toEqual('UL')
   })
@@ -76,9 +77,10 @@ describe('select custom components', () => {
       />
     )
 
-    fireEvent.click(container.querySelector('input'))
-    const dropdown = container.querySelector('[role="listbox"]')
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
 
+    const dropdown = container.querySelector('[role="listbox"]')
     expect(dropdown.childElementCount).toBe(2)
     expect(dropdown.firstElementChild.getAttribute('data-testid')).toEqual('prepend-item')
     expect(dropdown.lastElementChild.nodeName).toEqual('UL')
@@ -96,15 +98,16 @@ describe('select custom components', () => {
       />
     )
 
-    fireEvent.click(container.querySelector('input'))
-    const dropdown = container.querySelector('[role="listbox"]')
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
 
+    const dropdown = container.querySelector('[role="listbox"]')
     expect(dropdown.childElementCount).toBe(2)
     expect(dropdown.firstElementChild.nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
 
-  it('should render both AppnedItem and PrependItem components and list', () => {
+  it('should render both AppendItem and PrependItem components and list', () => {
     const { container } = render(
       <SelectTest
         value={items}
@@ -119,12 +122,25 @@ describe('select custom components', () => {
       />
     )
 
-    fireEvent.click(container.querySelector('input'))
-    const dropdown = container.querySelector('[role="listbox"]')
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
 
+    const dropdown = container.querySelector('[role="listbox"]')
     expect(dropdown.childElementCount).toBe(3)
     expect(dropdown.firstElementChild.getAttribute('data-testid')).toEqual('prepend-item')
     expect(dropdown.childNodes[1].nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
+  })
+})
+
+describe('menuMinWidth', () => {
+  it('should render the list with width equal or greater than 1000px', () => {
+    const { container } = render(<SelectTest menuMinWidth={1000} value={items} />)
+
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+
+    const styleDropdown = container.querySelector('[role="listbox"]').getAttribute('style')
+    expect(styleDropdown).toContain('min-width: 1000px')
   })
 })

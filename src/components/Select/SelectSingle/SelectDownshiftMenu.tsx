@@ -74,7 +74,7 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
   const {
     styles: { popper: popperStyle },
     attributes: { placement },
-  } = usePopper(anchorRef.current, menuRef, { ...popperProps, placement: 'bottom-start' })
+  } = usePopper(anchorRef.current, menuRef, { placement: 'bottom-start', ...popperProps })
 
   const { dropdownMenuRef, ...menuProps } = getMenuProps({ refKey: 'dropdownMenuRef' }, { suppressRefError: true })
 
