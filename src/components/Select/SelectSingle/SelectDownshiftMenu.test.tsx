@@ -21,7 +21,18 @@ function SelectTest(props: Partial<SelectProps>) {
 }
 
 describe('downshift menu', () => {
-  it('should render the list with width equal or greater than 1000px', () => {
+  it('should render the menu as a DIV with the list inside as a UL', () => {
+    const { container } = render(<SelectTest value={items} />)
+
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+
+    const dropdown = container.querySelector('[role="listbox"]')
+    expect(dropdown.nodeName).toEqual('DIV')
+    expect(dropdown.firstElementChild.nodeName).toEqual('UL')
+  })
+
+  it('should render the menu with width equal or greater than 1000px', () => {
     const { container } = render(<SelectTest menuMinWidth={1000} value={items} />)
 
     const input = container.querySelector('input')
