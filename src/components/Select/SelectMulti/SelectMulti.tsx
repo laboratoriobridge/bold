@@ -126,6 +126,7 @@ export function SelectMulti<T>(props: SelectMultiProps<T>) {
                 downshift={downshift}
                 items={visibleItems}
                 loading={loading}
+                components={components}
                 renderItem={renderItem(downshift)}
               />
             </div>

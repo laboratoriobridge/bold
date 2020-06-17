@@ -131,4 +131,30 @@ describe('select custom components', () => {
     expect(dropdown.childNodes[1].nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
+
+  it('should work with select multiple', () => {
+    const { container } = render(
+      <SelectTest
+        multiple
+        value={items}
+        components={{
+          PrependItem: (props) => (
+            <SelectDownshiftComponentCustom data-testid='prepend-item'>Prepend item</SelectDownshiftComponentCustom>
+          ),
+          AppendItem: (props) => (
+            <SelectDownshiftComponentCustom data-testid='append-item'>Append item</SelectDownshiftComponentCustom>
+          ),
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+
+    const dropdown = container.querySelector('[role="listbox"]')
+    expect(dropdown.childElementCount).toBe(3)
+    expect(dropdown.firstElementChild.getAttribute('data-testid')).toEqual('prepend-item')
+    expect(dropdown.childNodes[1].nodeName).toEqual('UL')
+    expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
+  })
 })
