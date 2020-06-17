@@ -132,15 +132,3 @@ describe('select custom components', () => {
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
 })
-
-describe('menuMinWidth', () => {
-  it('should render the list with width equal or greater than 1000px', () => {
-    const { container } = render(<SelectTest menuMinWidth={1000} value={items} />)
-
-    const input = container.querySelector('input')
-    fireEvent.focus(input)
-
-    const styleDropdown = container.querySelector('[role="listbox"]').getAttribute('style')
-    expect(styleDropdown).toContain('min-width: 1000px')
-  })
-})
