@@ -134,7 +134,7 @@ export const defaultComponents: SelectMenuComponents<any> = {
   },
 }
 
-export function SelectDownshiftComponentCustom(props: any) {
+export function SelectDownshiftComponentCustom(props: React.HTMLAttributes<HTMLDivElement>) {
   const theme = useTheme()
 
   return (
