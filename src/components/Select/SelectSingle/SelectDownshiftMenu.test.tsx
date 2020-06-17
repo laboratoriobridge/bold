@@ -1,8 +1,12 @@
 import { fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
+import { HFlow } from '../../HFlow'
+import { Button } from '../../Button'
+import { Text } from '../../Text'
 import { Select, SelectProps } from './../Select'
 import { DefaultItemType } from './SelectSingle'
+import { SelectDownshiftComponentCustom } from './SelectDownshiftMenu'
 
 jest.mock('../../../util/string')
 
@@ -20,7 +24,7 @@ function SelectTest(props: Partial<SelectProps>) {
   return <Select items={items} itemToString={(item) => item && item.label} placeholder='Select a value...' {...props} />
 }
 
-describe('downshift menu', () => {
+describe('downshift', () => {
   it('should render the menu as a DIV with the list inside as a UL', () => {
     const { container } = render(<SelectTest value={items} />)
 
@@ -40,5 +44,35 @@ describe('downshift menu', () => {
 
     const styleDropdown = container.querySelector('[role="listbox"]').getAttribute('style')
     expect(styleDropdown).toContain('min-width: 1000px')
+  })
+})
+
+describe('SelectDownshiftComponentCustom', () => {
+  it('should render correctly', () => {
+    const { container } = render(<SelectDownshiftComponentCustom>Prepend Item</SelectDownshiftComponentCustom>)
+    expect(container).toMatchSnapshot()
+  })
+
+  it('should accept actions inside children prop', () => {
+    const click = jest.fn()
+
+    const { container } = render(
+      <SelectDownshiftComponentCustom>
+        <HFlow alignItems='center' justifyContent='space-between'>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae
+            corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+          </Text>
+          <Button kind='primary' size='small' onClick={click}>
+            New item
+          </Button>
+        </HFlow>
+      </SelectDownshiftComponentCustom>
+    )
+
+    expect(container).toMatchSnapshot()
+
+    fireEvent.click(container.querySelector('button'))
+    expect(click).toHaveBeenCalledTimes(1)
   })
 })
