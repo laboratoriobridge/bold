@@ -35,7 +35,6 @@ describe('downshift', () => {
     expect(dropdown.nodeName).toEqual('DIV')
     expect(dropdown.firstElementChild.nodeName).toEqual('UL')
   })
-
   it('should render the menu with width equal or greater than 1000px', () => {
     const { container } = render(<SelectTest menuMinWidth={1000} value={items} />)
 
@@ -52,7 +51,6 @@ describe('SelectDownshiftComponentCustom', () => {
     const { container } = render(<SelectDownshiftComponentCustom>Prepend Item</SelectDownshiftComponentCustom>)
     expect(container).toMatchSnapshot()
   })
-
   it('should accept actions inside children prop', () => {
     const click = jest.fn()
 

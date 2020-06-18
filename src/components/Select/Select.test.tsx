@@ -66,7 +66,6 @@ describe('select custom components', () => {
     expect(dropdown.childElementCount).toBe(1)
     expect(dropdown.firstElementChild.nodeName).toEqual('UL')
   })
-
   it('should render PrependItem component and list only', () => {
     const { container } = render(
       <SelectTest
@@ -87,7 +86,6 @@ describe('select custom components', () => {
     expect(dropdown.firstElementChild.getAttribute('data-testid')).toEqual('prepend-item')
     expect(dropdown.lastElementChild.nodeName).toEqual('UL')
   })
-
   it('should render AppendItem component and list only', () => {
     const { container } = render(
       <SelectTest
@@ -108,7 +106,6 @@ describe('select custom components', () => {
     expect(dropdown.firstElementChild.nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
-
   it('should render both AppendItem and PrependItem components and list', () => {
     const { container } = render(
       <SelectTest
@@ -133,7 +130,6 @@ describe('select custom components', () => {
     expect(dropdown.childNodes[1].nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
-
   it('should work with select multiple', () => {
     const { container } = render(
       <SelectTest
@@ -159,7 +155,6 @@ describe('select custom components', () => {
     expect(dropdown.childNodes[1].nodeName).toEqual('UL')
     expect(dropdown.lastElementChild.getAttribute('data-testid')).toEqual('append-item')
   })
-
   it('should accept actions inside PrependItem', () => {
     const click = jest.fn()
 
@@ -185,7 +180,6 @@ describe('select custom components', () => {
     fireEvent.click(getByTestId('button'))
     expect(click).toHaveBeenCalledTimes(1)
   })
-
   it('should accept actions inside AppendItem', () => {
     const click = jest.fn()
 
@@ -221,6 +215,13 @@ describe('emptyItem', () => {
     expect(queryByText(en.select.emptyItem)).toBeTruthy()
     expect(container).toMatchSnapshot()
   })
+  it('should render when items is null', () => {
+    const { container, queryByText } = render(<SelectTest items={null} />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(queryByText(en.select.emptyItem)).toBeTruthy()
+    expect(container).toMatchSnapshot()
+  })
   it('should NOT render when items is set', () => {
     const { container, queryByText } = render(<SelectTest items={items} />)
     const input = container.querySelector('input')
@@ -229,20 +230,11 @@ describe('emptyItem', () => {
   })
   it('should NOT render when createNewItem is set', () => {
     const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
-    const { container, queryByText } = render(<SelectTest createNewItem={createNewItem} />)
-    const input = container.querySelector('input')
-    fireEvent.focus(input)
+    const { queryByText } = render(<SelectTest createNewItem={createNewItem} isOpen />)
     expect(queryByText(en.select.emptyItem)).toBeFalsy()
   })
   it('should NOT render when loading is true', () => {
     const { container, queryByText } = render(<SelectTest loading={true} />)
-    const input = container.querySelector('input')
-    fireEvent.focus(input)
-    expect(queryByText(en.select.emptyItem)).toBeFalsy()
-  })
-  it('should NOT render when items is empty and createNewItem is set and loading is true', () => {
-    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
-    const { container, queryByText } = render(<SelectTest items={[]} createNewItem={createNewItem} loading={true} />)
     const input = container.querySelector('input')
     fireEvent.focus(input)
     expect(queryByText(en.select.emptyItem)).toBeFalsy()
