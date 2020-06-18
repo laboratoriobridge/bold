@@ -227,15 +227,15 @@ describe('emptyItem', () => {
     fireEvent.focus(input)
     expect(queryByText(en.select.emptyItem)).toBeFalsy()
   })
-  it('should NOT render when createNewItem is set and items is empty', () => {
+  it('should NOT render when createNewItem is set', () => {
     const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
-    const { container, queryByText } = render(<SelectTest items={[]} createNewItem={createNewItem} />)
+    const { container, queryByText } = render(<SelectTest createNewItem={createNewItem} />)
     const input = container.querySelector('input')
     fireEvent.focus(input)
     expect(queryByText(en.select.emptyItem)).toBeFalsy()
   })
-  it('should NOT render when loading is true and items is empty', () => {
-    const { container, queryByText } = render(<SelectTest items={[]} loading={true} />)
+  it('should NOT render when loading is true', () => {
+    const { container, queryByText } = render(<SelectTest loading={true} />)
     const input = container.querySelector('input')
     fireEvent.focus(input)
     expect(queryByText(en.select.emptyItem)).toBeFalsy()
