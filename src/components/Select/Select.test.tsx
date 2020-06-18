@@ -1,5 +1,6 @@
 import { render, fireEvent } from '@testing-library/react'
 import React from 'react'
+import en from '../../i18n/locales/en-US'
 
 import { Select } from '../Select'
 
@@ -209,5 +210,27 @@ describe('select custom components', () => {
 
     fireEvent.click(getByTestId('button'))
     expect(click).toHaveBeenCalledTimes(1)
+  })
+})
+
+describe('emptyItem', () => {
+  it('should render when items is empty', () => {
+    const { container, queryByText } = render(<SelectTest items={[]} />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(queryByText(en.select.emptyItem)).toBeTruthy()
+  })
+  it('should NOT render when loading is true', () => {
+    const { container, queryByText } = render(<SelectTest items={[]} loading={true} />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(queryByText(en.select.emptyItem)).toBeFalsy()
+  })
+  it('should NOT render when createNewItem is set', () => {
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
+    const { container, queryByText } = render(<SelectTest createNewItem={createNewItem} items={[]} loading={true} />)
+    const input = container.querySelector('input')
+    fireEvent.focus(input)
+    expect(queryByText(en.select.emptyItem)).toBeFalsy()
   })
 })
