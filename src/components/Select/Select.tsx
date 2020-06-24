@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { Omit } from '../../util'
-
 import { SelectMulti, SelectMultiProps } from './SelectMulti/SelectMulti'
 import { DefaultItemType, SelectSingle, SelectSingleProps } from './SelectSingle/SelectSingle'
+import { SelectDownshiftMenuProps } from './SelectSingle/SelectDownshiftMenu'
 
 export interface SelectProps<T = DefaultItemType> extends Omit<SelectSingleProps<T>, 'value'> {
   value?: T | T[]
   multiple?: boolean
+  popperProps?: SelectDownshiftMenuProps<T>['popperProps']
   itemIsEqual?: SelectMultiProps<T>['itemIsEqual']
   onChange?(item: T | T[]): void
 }
