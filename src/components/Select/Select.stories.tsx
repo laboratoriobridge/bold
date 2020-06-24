@@ -6,8 +6,8 @@ import React from 'react'
 import { HFlow } from '../HFlow'
 import { Text } from '../Text'
 import { Button } from '../Button'
-import { SelectHelperMenuItem } from './SelectMenu'
 import { SelectAsync } from './SelectAsync'
+import { SelectDownshiftComponentCustom } from './SelectSingle/SelectDownshiftMenu'
 import { DefaultItemType, defaultSelectFilter, Select, SelectMenu, SelectMenuItem } from './'
 
 const fruits: DefaultItemType[] = [
@@ -27,8 +27,8 @@ const fruits: DefaultItemType[] = [
 
 const loadFruits = (query: string): Promise<DefaultItemType[]> => {
   action('items loaded')()
-  return new Promise(resolve => {
-    setTimeout(() => resolve(defaultSelectFilter([...fruits], query, item => item.label)), 1000)
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(defaultSelectFilter([...fruits], query, (item) => item.label)), 1000)
   })
 }
 
@@ -40,7 +40,7 @@ storiesOf('Components|Select', module)
       items={fruits}
       error={text('error', '')}
       menuMinWidth={number('menuMinWidth (px)', undefined)}
-      itemToString={item => item && item.label}
+      itemToString={(item) => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
       multiple={boolean('multiple', false)}
@@ -60,8 +60,8 @@ storiesOf('Components|Select', module)
       items={fruits}
       error={text('error', '')}
       icon={null}
-      createNewItem={str => ({ value: str, label: str })}
-      itemToString={item => item && item.label}
+      createNewItem={(str) => ({ value: str, label: str })}
+      itemToString={(item) => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
       multiple={boolean('multiple', false)}
@@ -80,7 +80,7 @@ storiesOf('Components|Select', module)
       name='repository'
       loadItems={loadFruits}
       error={text('error', '')}
-      itemToString={item => item && item.label}
+      itemToString={(item) => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
       multiple={boolean('multiple', false)}
@@ -94,7 +94,7 @@ storiesOf('Components|Select', module)
   ))
   .add('custom menu item', () => (
     <Select<DefaultItemType>
-      renderItem={item => (
+      renderItem={(item) => (
         <>
           <p>
             <strong>{item.label}</strong>
@@ -106,7 +106,7 @@ storiesOf('Components|Select', module)
       name='fruit'
       items={fruits}
       error={text('error', '')}
-      itemToString={item => item && item.label}
+      itemToString={(item) => item && item.label}
       itemIsEqual={(a, b) => a.value === b.value}
       placeholder='Select a value...'
       multiple={boolean('multiple', false)}
@@ -132,12 +132,12 @@ storiesOf('Components|Select', module)
     <Select<DefaultItemType>
       label='Fruit'
       name='fruit'
-      items={fruits.slice(0, 4)}
-      itemToString={item => item && item.label}
+      items={fruits}
+      itemToString={(item) => item && item.label}
       components={{
-        PrependItem: props => <SelectHelperMenuItem>Prepend item</SelectHelperMenuItem>,
-        AppendItem: props => (
-          <SelectHelperMenuItem>
+        PrependItem: (props) => <SelectDownshiftComponentCustom>Prepend item</SelectDownshiftComponentCustom>,
+        AppendItem: (props) => (
+          <SelectDownshiftComponentCustom>
             <HFlow alignItems='center' justifyContent='space-between'>
               <Text>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed
@@ -147,7 +147,7 @@ storiesOf('Components|Select', module)
                 New item
               </Button>
             </HFlow>
-          </SelectHelperMenuItem>
+          </SelectDownshiftComponentCustom>
         ),
       }}
     />

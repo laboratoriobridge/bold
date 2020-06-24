@@ -205,4 +205,19 @@ describe('createNewItem', () => {
     )
     expect(createNewItem).not.toHaveBeenCalled()
   })
+  it('should NOT render when loading is true', () => {
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
+    const { queryByText } = render(<SelectTest createNewItem={createNewItem} isOpen loading={true} />)
+    expect(queryByText(en.select.createItem)).toBeFalsy()
+  })
+  it('should NOT render when items is empty', () => {
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
+    const { queryByText } = render(<SelectTest createNewItem={createNewItem} isOpen items={[]} />)
+    expect(queryByText(en.select.createItem)).toBeFalsy()
+  })
+  it('should NOT render when items is NULL', () => {
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
+    const { queryByText } = render(<SelectTest createNewItem={createNewItem} isOpen items={null} />)
+    expect(queryByText(en.select.createItem)).toBeFalsy()
+  })
 })

@@ -1,10 +1,10 @@
-import { Options as PopperOptions } from '@popperjs/core'
 import { ControllerStateAndHelpers } from 'downshift'
-import React, { useState } from 'react'
-import { usePopper } from 'react-popper'
+import React, { useState, CSSProperties } from 'react'
+import { usePopper, PopperProps } from 'react-popper'
 import { composeRefs } from '../../../util/react'
 import { SelectEmptyItem, SelectLoadingItem, SelectMenu, SelectMenuItem } from '../SelectMenu'
 import { SelectCreateItem } from '../SelectMenu/SelectMenuItem'
+import { Theme, useStyles, useTheme } from '../../../styles'
 
 export interface SelectDownshiftMenuProps<T> {
   items: T[]
@@ -14,7 +14,7 @@ export interface SelectDownshiftMenuProps<T> {
   anchorRef: React.RefObject<HTMLElement>
   createNewItem?: boolean
   components?: Partial<SelectMenuComponents<T>>
-  popperProps?: PopperOptions
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   /**
    * Render function used by each select item.
@@ -70,35 +70,44 @@ export function SelectDownshiftMenu<T>(props: SelectDownshiftMenuProps<T>) {
 
   const { CreateItem, LoadingItem, EmptyItem, Item, PrependItem, AppendItem } = { ...defaultComponents, ...components }
 
-  const [menuRef, setMenuRef] = useState<HTMLUListElement>()
+  const [menuRef, setMenuRef] = useState<HTMLDivElement>()
   const {
     styles: { popper: popperStyle },
     attributes: { placement },
-  } = usePopper(anchorRef.current, menuRef, { ...popperProps, placement: 'bottom-start' })
+  } = usePopper(anchorRef.current, menuRef, { placement: 'bottom-start', ...popperProps })
 
   const { dropdownMenuRef, ...menuProps } = getMenuProps({ refKey: 'dropdownMenuRef' }, { suppressRefError: true })
+
+  const { classes, css } = useStyles(createStyles)
 
   return (
     <>
       {isOpen && (
-        <SelectMenu
+        <div
           {...menuProps}
-          menuRef={composeRefs(dropdownMenuRef, setMenuRef)}
-          style={{ ...popperStyle, width: anchorRef.current && anchorRef.current.clientWidth, minWidth: menuMinWidth }}
           data-placement={placement}
+          ref={composeRefs(dropdownMenuRef, setMenuRef)}
+          className={css(classes.menu)}
+          style={{
+            ...popperStyle,
+            width: anchorRef.current && anchorRef.current.clientWidth,
+            minWidth: menuMinWidth,
+          }}
         >
-          {isLoading && <LoadingItem {...props} />}
-
-          {!isLoading && createNewItem && (items || []).length > 0 && <CreateItem {...props} />}
-
-          {!isLoading && !createNewItem && (items || []).length === 0 && <EmptyItem {...props} />}
-
           {PrependItem && <PrependItem {...props} />}
 
-          {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
+          <SelectMenu style={classes.list}>
+            {isLoading && <LoadingItem {...props} />}
+
+            {!isLoading && createNewItem && (items || []).length > 0 && <CreateItem {...props} />}
+
+            {!isLoading && !createNewItem && (items || []).length === 0 && <EmptyItem {...props} />}
+
+            {items && items.map((item, index) => <Item key={index} index={index} item={item} {...props} />)}
+          </SelectMenu>
 
           {AppendItem && <AppendItem {...props} />}
-        </SelectMenu>
+        </div>
       )}
     </>
   )
@@ -124,6 +133,42 @@ export const defaultComponents: SelectMenuComponents<any> = {
     )
   },
 }
+
+export function SelectDownshiftComponentCustom(props: React.HTMLAttributes<HTMLDivElement>) {
+  const theme = useTheme()
+
+  return (
+    <div
+      style={{
+        background: theme.pallete.surface.background,
+        padding: '0.25rem 0.5rem',
+        cursor: 'initial',
+      }}
+      {...props}
+    />
+  )
+}
+
+export const createStyles = (theme: Theme) => ({
+  menu: {
+    display: 'flex',
+    flexDirection: 'column',
+    zIndex: theme.zIndex.dropdown,
+    border: `1px solid ${theme.pallete.divider}`,
+    borderRadius: theme.radius.popper,
+    backgroundColor: theme.pallete.surface.main,
+    boxShadow: theme.shadows.outer['40'],
+    maxHeight: '20rem',
+  } as CSSProperties,
+
+  list: {
+    zIndex: 'auto',
+    border: 0,
+    borderRadius: 0,
+    boxShadow: 'none',
+    maxHeight: 'auto',
+  } as CSSProperties,
+})
 
 SelectDownshiftMenu.defaultProps = {
   components: defaultComponents,
