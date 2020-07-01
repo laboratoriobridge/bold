@@ -1,5 +1,5 @@
 import { Options as PopperOptions } from '@popperjs/core'
-import React, { CSSProperties, useCallback, useEffect, useMemo, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useTransition } from '../../hooks/useTransition'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
@@ -28,14 +28,14 @@ export function Tooltip(props: TooltipProps) {
   const { css, theme, classes } = useStyles(createStyles, props)
   const [visible, setVisible] = useState<boolean>(false)
 
-  const [rootRef, setRootRef] = useState<Element>()
+  const rootRef = useRef<HTMLElement>()
   const [popperRef, setPopperRef] = useState<HTMLDivElement>()
   const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
   const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
   const {
     styles: { popper: popperStyles },
-  } = usePopper(rootRef, popperRef, {
+  } = usePopper(rootRef.current, popperRef, {
     modifiers: [
       {
         name: 'default',
@@ -59,7 +59,7 @@ export function Tooltip(props: TooltipProps) {
       // This is implemented using mouseover since mouseleave does not trigger
       // for disabled elements due to browser/react bugs (https://github.com/facebook/react/issues/4251)
       const target = e.target as Node
-      if (!rootRef.contains(target)) {
+      if (!rootRef.current?.contains(target)) {
         setVisible(false)
       }
     }
@@ -89,7 +89,7 @@ export function Tooltip(props: TooltipProps) {
 
   return (
     <>
-      <RootRef rootRef={setRootRef}>
+      <RootRef rootRef={rootRef}>
         {React.cloneElement(child, {
           title: !visible ? child.props.title || text : child.props.title,
           'aria-describedby': visible ? tooltipId : undefined,
