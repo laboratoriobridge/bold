@@ -153,7 +153,7 @@ exports[`should render correctly 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
   min-width: 144px;
 }
 
