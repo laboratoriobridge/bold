@@ -8,12 +8,13 @@ export interface RootRefProps {
 }
 
 export function RootRef(props: RootRefProps) {
-  const Child = props.children
   const ref = useRef<HTMLDivElement>()
 
   useEffect(() => {
     setRef(props.rootRef, ref.current)
   }, [])
 
-  return <Child ref={ref} />
+  const ChildrenComponent = React.forwardRef<any, { children: any }>(props.children)
+
+  return <ChildrenComponent ref={ref}>{props.children}</ChildrenComponent>
 }
