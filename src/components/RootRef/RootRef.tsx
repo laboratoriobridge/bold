@@ -1,20 +1,49 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
+import { findDOMNode } from 'react-dom'
 
 import { setRef } from '../../util/react'
 
-export interface RootRefProps {
-  rootRef: any
-  children: any
+export interface RootRefProps<T extends Element = Element> {
+  rootRef: React.Ref<T>
+  children: React.ReactElement<any>
 }
 
-export function RootRef(props: RootRefProps) {
-  const ref = useRef<HTMLDivElement>()
+/**
+ * Helper component to allow attaching a ref to a
+ * wrapped element to access the underlying DOM element.
+ *
+ * From Material's UI RootRef component
+ */
+export class RootRef<T extends Element = Element> extends React.Component<RootRefProps<T>> {
+  private ref: any
 
-  useEffect(() => {
-    setRef(props.rootRef, ref.current)
-  }, [])
+  componentDidMount() {
+    this.ref = findDOMNode(this)
+    if (this.ref instanceof Element)
+      setRef(this.props.rootRef, this.ref)
+  }
 
-  const ChildrenComponent = React.forwardRef<any, { children: any }>(props.children)
+  componentDidUpdate(prevProps) {
+    const ref = findDOMNode(this)
 
-  return <ChildrenComponent ref={ref}>{props.children}</ChildrenComponent>
+    if (prevProps.rootRef !== this.props.rootRef || this.ref !== ref) {
+      if (prevProps.rootRef !== this.props.rootRef) {
+        setRef(prevProps.rootRef, null)
+      }
+
+      if (ref instanceof Element) {
+        this.ref = ref
+        setRef(this.props.rootRef, this.ref)
+      }
+    }
+  }
+
+  componentWillUnmount() {
+    this.ref = null
+    setRef(this.props.rootRef, null)
+  }
+
+  render() {
+    return this.props.children
+  }
 }
