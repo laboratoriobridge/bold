@@ -19,8 +19,7 @@ export class RootRef<T extends Element = Element> extends React.Component<RootRe
 
   componentDidMount() {
     this.ref = findDOMNode(this)
-    if (this.ref instanceof Element)
-      setRef(this.props.rootRef, this.ref)
+    setRef(this.props.rootRef, this.ref)
   }
 
   componentDidUpdate(prevProps) {
@@ -31,10 +30,8 @@ export class RootRef<T extends Element = Element> extends React.Component<RootRe
         setRef(prevProps.rootRef, null)
       }
 
-      if (ref instanceof Element) {
-        this.ref = ref
-        setRef(this.props.rootRef, this.ref)
-      }
+      this.ref = ref
+      setRef(this.props.rootRef, this.ref)
     }
   }
 
