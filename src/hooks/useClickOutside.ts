@@ -62,5 +62,5 @@ function getRefs(
 }
 
 function isRef(ref: any): ref is RefObject<HTMLElement> {
-  return !!ref.current
+  return !!ref?.current
 }
