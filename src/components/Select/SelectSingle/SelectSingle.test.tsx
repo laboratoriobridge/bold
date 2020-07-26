@@ -89,6 +89,18 @@ it('should preserve external onBlur and onFocus event handlers', () => {
   expect(focus).toHaveBeenCalledTimes(1)
 })
 
+it('should open menu and focus input when input icon is clicked', () => {
+  const { container } = render(<SelectTest />)
+  const iconButton = container.querySelector('button')
+  const input = container.querySelector('input')
+  expect(document.activeElement).toEqual(document.body)
+  fireEvent.click(iconButton)
+  expect(container.querySelector('ul')).toBeTruthy()
+  expect(document.activeElement).toEqual(input)
+  fireEvent.click(iconButton)
+  expect(container.querySelector('ul')).toBeFalsy()
+})
+
 describe('clear button', () => {
   it('should clear the input value', () => {
     const { container, getByTitle } = render(<SelectTest value={items[0]} />)
