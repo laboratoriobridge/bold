@@ -74,6 +74,7 @@
     "@storybook/core": "5.3.19",
     "@storybook/react": "5.3.19",
     "@svgr/cli": "5.4.0",
+    "@testing-library/jest-dom": "5.11.1",
     "@testing-library/react": "10.3.0",
     "@testing-library/react-hooks": "3.3.0",
     "@types/jest": "26.0.0",

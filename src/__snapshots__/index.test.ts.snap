@@ -11,6 +11,7 @@ Array [
   "MonthView",
   "MonthControl",
   "YearControl",
+  "Combobox",
   "Checkbox",
   "Currency",
   "DateInput",
