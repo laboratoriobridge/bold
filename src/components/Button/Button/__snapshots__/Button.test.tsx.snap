@@ -30,7 +30,7 @@ exports[`shoud allow override of the "component" prop 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -112,7 +112,7 @@ exports[`should accept the loading prop 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -201,7 +201,7 @@ exports[`should render correctly with icon 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-1 > span {
@@ -286,7 +286,7 @@ exports[`should render correctly with label 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -355,7 +355,7 @@ exports[`should render the default skin 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -427,7 +427,7 @@ exports[`should render the default skin 2`] = `
   color: #FFFFFF;
   border: 1px solid #0069D0;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -503,7 +503,7 @@ exports[`should render the default skin 3`] = `
   color: #FFFFFF;
   border: 1px solid #D01E29;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -580,7 +580,7 @@ exports[`should render the ghost skin 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -650,7 +650,7 @@ exports[`should render the ghost skin 2`] = `
   text-decoration: none;
   color: #0069D0;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -720,7 +720,7 @@ exports[`should render the ghost skin 3`] = `
   text-decoration: none;
   color: #D01E29;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -793,7 +793,7 @@ exports[`should render the outline skin 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -864,7 +864,7 @@ exports[`should render the outline skin 2`] = `
   border: 1px solid #0069D0;
   color: #0069D0;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {
@@ -939,7 +939,7 @@ exports[`should render the outline skin 3`] = `
   border: 1px solid #D01E29;
   color: #D01E29;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
 }
 
 .emotion-0 > span {

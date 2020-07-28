@@ -582,7 +582,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
   padding: calc(0.25rem - 1px) 1rem;
   -webkit-transition-property: background;
   transition-property: background;
@@ -642,7 +642,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 2.5rem;
+  padding: calc(0.75rem - 1px) 1rem;
   padding: calc(0.25rem - 1px) 1rem;
   -webkit-transition-property: background;
   transition-property: background;

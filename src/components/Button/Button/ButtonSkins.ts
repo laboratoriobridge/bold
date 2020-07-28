@@ -74,12 +74,12 @@ export const createBaseStyles = (theme: Theme) => ({
 
 export const createSizeStyles = (theme: Theme) => ({
   large: {
-    padding: 'calc(1.25rem - 1px) 3.25rem',
+    padding: 'calc(1.25rem - 1px) 1.5rem',
     fontSize: theme.typography.sizes.button,
   },
   medium: {
     fontSize: theme.typography.sizes.button,
-    padding: 'calc(0.75rem - 1px) 2.5rem',
+    padding: 'calc(0.75rem - 1px) 1rem',
   },
   small: {
     fontSize: theme.typography.sizes.button,
