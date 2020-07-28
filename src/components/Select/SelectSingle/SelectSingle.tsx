@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useCallback } from 'react'
 
 import { useFormControl, UseFormControlProps } from '../../../hooks/useFormControl'
 import { useStyles } from '../../../styles'
@@ -65,6 +65,15 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
   const inputProps = getFormControlInputProps()
   const invalid = inputProps['aria-invalid']
 
+  const handleInputIconClick = useCallback(
+    (isOpen: boolean) => () => {
+      if (!isOpen) {
+        internalInputRef.current.focus()
+      }
+    },
+    []
+  )
+
   return (
     <FormControl {...formControlProps}>
       <SelectDownshift<T>
@@ -100,7 +109,7 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
               <div>
                 <TextInput
                   icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-                  onIconClick={composeHandlers(toggleMenu, props.onIconClick)}
+                  onIconClick={composeHandlers(toggleMenu, handleInputIconClick(downshiftOpen), props.onIconClick)}
                   onClear={composeHandlers(clearSelection, props.onClear)}
                   invalid={invalid}
                   {...rest}
