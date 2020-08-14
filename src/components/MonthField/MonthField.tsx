@@ -1,7 +1,7 @@
 import { Options as PopperOptions } from '@popperjs/core'
 import React, { useState } from 'react'
 import { usePopper } from 'react-popper'
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
+import createAutoCorrectedDatePipe from '../../util/createAutoCorrectedDatePipe'
 import { useStyles } from '../../styles/hooks/useStyles'
 import { Theme } from '../../styles/theme/createTheme'
 import { Omit } from '../../util'

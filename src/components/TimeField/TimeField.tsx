@@ -1,6 +1,6 @@
 import React from 'react'
 import { conformToMask } from 'react-text-mask'
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
+import createAutoCorrectedDatePipe from '../../util/createAutoCorrectedDatePipe'
 
 import { Omit } from '../../util'
 import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'

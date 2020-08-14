@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
+import createAutoCorrectedDatePipe from '../../util/createAutoCorrectedDatePipe'
 
 import { useLocale } from '../../i18n'
 import { Omit } from '../../util/types'
