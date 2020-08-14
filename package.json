@@ -61,8 +61,7 @@
     "react-dropzone": "11.0.1",
     "react-popper": "2.2.3",
     "react-text-mask": "5.4.3",
-    "react-transition-group": "4.4.1",
-    "text-mask-addons": "3.8.0"
+    "react-transition-group": "4.4.1"
   },
   "devDependencies": {
     "@babel/core": "7.10.3",
