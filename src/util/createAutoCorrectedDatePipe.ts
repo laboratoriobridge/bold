@@ -1,3 +1,5 @@
+// adaptation from https://github.com/text-mask/text-mask/blob/master/addons/src/createAutoCorrectedDatePipe.js
+
 const maxValueMonth = [31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 const formatOrder = ['yyyy', 'yy', 'mm', 'dd', 'HH', 'MM', 'SS']
 export default function createAutoCorrectedDatePipe(dateFormat = 'mm dd yyyy', { minYear = 1, maxYear = 9999 } = {}) {

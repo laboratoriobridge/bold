@@ -1,3 +1,5 @@
+// adaptation from https://github.com/text-mask/text-mask/blob/master/addons/test/createAutoCorrectedDatePipe.spec.js
+
 import createAutoCorrectedDatePipe from '../createAutoCorrectedDatePipe'
 
 describe('createAutoCorrectedDatePipe', () => {
