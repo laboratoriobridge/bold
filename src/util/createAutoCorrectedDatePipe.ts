@@ -4,11 +4,17 @@ const maxValueMonth = [31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 const formatOrder = ['yyyy', 'yy', 'mm', 'dd', 'HH', 'MM', 'SS']
 export default function createAutoCorrectedDatePipe(dateFormat = 'mm dd yyyy', { minYear = 1, maxYear = 9999 } = {}) {
   const dateFormatArray = dateFormat.split(/[^dmyHMS]+/).sort((a, b) => formatOrder.indexOf(a) - formatOrder.indexOf(b))
+
   return function (conformedValue) {
     const indexesOfPipedChars = []
     const maxValue = { dd: 31, mm: 12, yy: 99, yyyy: maxYear, HH: 23, MM: 59, SS: 59 }
     const minValue = { dd: 1, mm: 1, yy: 0, yyyy: minYear, HH: 0, MM: 0, SS: 0 }
     const conformedValueArr = conformedValue.split('')
+
+    // TODO:
+    // console.log(conformedValue)
+    // console.log(dateFormatArray)
+    // console.log('conformedValueArr:', conformedValueArr)
 
     // Check first digit
     dateFormatArray.forEach((format) => {
@@ -21,6 +27,36 @@ export default function createAutoCorrectedDatePipe(dateFormat = 'mm dd yyyy', {
         indexesOfPipedChars.push(position)
       }
     })
+
+    // TODO: lembrar de testar com coisa preenchida
+    // TODO: lembrar de testar outra mask (e.g. 10-10-2010)
+    // TODO:
+    // se tiver ano e se ambos valores estiverem preenchidos, então compara valor digitado com current year
+    // FIXME: verificar que foi digitado dois caracteres para fazer transformação
+    if (dateFormatArray.includes('yyyy')) {
+      const thousandPosition = dateFormat.indexOf('yyyy')
+      const thousandValue: string = conformedValueArr[thousandPosition]
+      const hundredValue: string = conformedValueArr[thousandPosition + 1]
+      const yearInTwoDigits: number = parseInt(thousandValue + hundredValue, 10)
+      if (!Number.isNaN(yearInTwoDigits)) {
+        const currentYearInTwoDigits: number = new Date().getFullYear() - 2000 // only works until 2100 :$
+        let first: string = '1' // TODO: rename
+        let second: string = '9' // TODO: rename
+        if (yearInTwoDigits <= currentYearInTwoDigits) {
+          first = '2'
+          second = '0'
+        }
+        // TODO: como melhorar essa insanidade
+        conformedValueArr[thousandPosition] = first
+        conformedValueArr[thousandPosition + 1] = second
+        conformedValueArr[thousandPosition + 2] = thousandValue
+        conformedValueArr[thousandPosition + 3] = hundredValue
+
+        for (let i = thousandPosition; i < thousandPosition + 4; i++) {
+          indexesOfPipedChars.push(i)
+        }
+      }
+    }
 
     // Check for invalid date
     let month = 0
