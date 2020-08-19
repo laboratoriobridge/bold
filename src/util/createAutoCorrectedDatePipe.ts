@@ -35,10 +35,10 @@ export default function createAutoCorrectedDatePipe(dateFormat = 'mm dd yyyy', {
     // FIXME: verificar que foi digitado dois caracteres para fazer transformação
     if (dateFormatArray.includes('yyyy')) {
       const thousandPosition = dateFormat.indexOf('yyyy')
-      const thousandValue: string = conformedValueArr[thousandPosition]
-      const hundredValue: string = conformedValueArr[thousandPosition + 1]
-      const yearInTwoDigits: number = parseInt(thousandValue + hundredValue, 10)
-      if (!Number.isNaN(yearInTwoDigits)) {
+      const thousandValue: number = parseInt(conformedValueArr[thousandPosition], 10)
+      const hundredValue: number = parseInt(conformedValueArr[thousandPosition + 1], 10)
+      if (!Number.isNaN(thousandValue) && !Number.isNaN(hundredValue)) {
+        const yearInTwoDigits = thousandValue * 10 + hundredValue
         const currentYearInTwoDigits: number = new Date().getFullYear() - 2000 // only works until 2100 :$
         let first: string = '1' // TODO: rename
         let second: string = '9' // TODO: rename
