@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
-
 import { useLocale } from '../../i18n'
 import { Omit } from '../../util/types'
 import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
@@ -42,6 +41,28 @@ export function DateInput(props: DateInputProps) {
     [onChange, onInputChange]
   )
 
+  // TODO: fazer ser opcional e colocar no primeiro if
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Tab') {
+      const targetAsInputElement = e.target as HTMLInputElement
+
+      const match: RegExpMatchArray = targetAsInputElement.value.match(/^(\d{2})\/(\d{2})\/(\d{2}__)$/)
+
+      if (match) {
+        const yearPart: string = match[3]
+        const yearPartClean: string = yearPart.substr(0, 2)
+
+        const yearInTwoDigits: number = parseInt(yearPartClean, 10)
+        const currentYearInTwoDigits: number = new Date().getFullYear() - 2000 // only works until 2100 :$
+
+        const resultYear: string =
+          yearInTwoDigits <= currentYearInTwoDigits ? `20${yearPartClean}` : `19${yearPartClean}`
+
+        targetAsInputElement.value = `${match[1]}/${match[2]}/${resultYear}`
+      }
+    }
+  }
+
   return (
     <MaskedTextField
       value={value ? formatter.format(value) : null}
@@ -50,6 +71,7 @@ export function DateInput(props: DateInputProps) {
       pipe={createAutoCorrectedDatePipe('dd/mm/yyyy')}
       autoComplete='off'
       onChange={handleChange}
+      onKeyDown={handleKeyDown}
       {...rest}
     />
   )
