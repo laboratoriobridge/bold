@@ -42,7 +42,7 @@ export function DateInput(props: DateInputProps) {
   )
 
   // TODO: fazer ser opcional e colocar no primeiro if
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Tab') {
       const targetAsInputElement = e.target as HTMLInputElement
 
@@ -61,7 +61,7 @@ export function DateInput(props: DateInputProps) {
         targetAsInputElement.value = `${match[1]}/${match[2]}/${resultYear}`
       }
     }
-  }
+  }, [])
 
   return (
     <MaskedTextField
