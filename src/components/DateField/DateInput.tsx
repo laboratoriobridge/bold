@@ -58,7 +58,8 @@ export function DateInput(props: DateInputProps) {
         const resultYear: string =
           yearInTwoDigits <= currentYearInTwoDigits ? `20${yearPartClean}` : `19${yearPartClean}`
 
-        targetAsInputElement.value = `${match[1]}/${match[2]}/${resultYear}`
+        const resultDate: Date = new Date(parseInt(resultYear, 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
+        onChange(resultDate)
       }
     }
   }, [])
