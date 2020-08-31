@@ -12,6 +12,7 @@ import { Text } from '../Text'
 export interface MonthPaginatorProps {
   month?: number
   year?: number
+  minimized?: boolean
   onChange?(referenceMonth: ReferenceMonth): any
 }
 
@@ -26,10 +27,10 @@ export interface ReferenceMonth {
 }
 
 export function MonthPaginator(props: MonthPaginatorProps) {
-  const { month, year, onChange } = props
+  const { month, year, minimized, onChange } = props
   const locale = useLocale()
 
-  const [minimizado, setMinimizado] = useState(true)
+  const [minimizado, setMinimizado] = useState(minimized || true)
   const { classes } = useStyles(createStyles, minimizado)
 
   const [visibleMonth, setVisibleMonth] = useState(month || new Date().getMonth())
@@ -77,12 +78,17 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   return (
     <div className={classes.container}>
       <div className={css(classes.wrapper, classes.header)}>
-        <div style={{ textAlign: 'center' }}>
-          <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onPrevClick}>
+        <div className={classes.item}>
+          <Button
+            title={minimizado ? locale.calendar.previousMonth : locale.calendar.previousYear}
+            size='small'
+            skin='ghost'
+            onClick={onPrevClick}
+          >
             <Icon icon='angleLeft' />
           </Button>
         </div>
-        <div style={{ textAlign: 'center' }}>
+        <div className={classes.item}>
           <Button size='small' skin='ghost' onClick={onExpand}>
             <Text fontWeight='bold' fontSize={0.875}>
               {minimizado && `${monthFormatter.format(baseYearDate)} - `}
@@ -90,8 +96,13 @@ export function MonthPaginator(props: MonthPaginatorProps) {
             </Text>
           </Button>
         </div>
-        <div style={{ textAlign: 'center' }}>
-          <Button title={locale.calendar.nextYear} size='small' skin='ghost' onClick={onNextClick}>
+        <div className={classes.item}>
+          <Button
+            title={minimizado ? locale.calendar.nextMonth : locale.calendar.nextYear}
+            size='small'
+            skin='ghost'
+            onClick={onNextClick}
+          >
             <Icon icon='angleRight' />
           </Button>
         </div>
@@ -99,7 +110,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
       {!minimizado && (
         <div className={css(classes.wrapper, classes.months)}>
           {monthNames.map((month, index) => (
-            <div key={index} className={classes.item}>
+            <div key={index} className={css(classes.item, classes.itemMonth)}>
               <Button
                 title={month.long}
                 onClick={onMonthClick(index)}
@@ -152,6 +163,8 @@ export const createStyles = (theme: Theme, minimizado) => ({
   } as CSSProperties,
   item: {
     textAlign: 'center',
+  } as CSSProperties,
+  itemMonth: {
     margin: '0.25rem 0.25rem',
   } as CSSProperties,
   button: {
