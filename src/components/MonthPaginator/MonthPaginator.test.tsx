@@ -1,73 +1,63 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
+import { getUserLocale } from '../../util/locale'
 import { getMonthNames, MonthPaginator } from './MonthPaginator'
 
 const now = new Date()
 
+function renderMonthYear(month, year) {
+  const date = new Date(year, month, 1, 0, 0, 0, 0)
+  const monthFormatter = new Intl.DateTimeFormat(getUserLocale(), { month: 'short' })
+  const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
+  return `${monthFormatter.format(date)} - ${yearFormatter.format(date)}`
+}
+
 describe('MonthPaginator', () => {
   it('should render correctly with month and year', () => {
     const visibleDate = new Date('2019-01-31')
-    const { container } = render(
-      <MonthPaginator month={visibleDate.getMonth()} year={visibleDate.getFullYear()} minimized={false} />
-    )
+    const { container } = render(<MonthPaginator month={visibleDate.getMonth()} year={visibleDate.getFullYear()} />)
     expect(container).toMatchSnapshot()
   })
 
-  it('should change de visible year on "Previous year" button click', () => {
-    const { getByTitle, getAllByText } = render(
-      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} minimized={false} />
-    )
-    fireEvent.click(getByTitle('Previous year'))
-    const expectedYear = now.getFullYear() - 1
-    expect(getAllByText(expectedYear.toString())).toHaveLength(1)
+  it('should change the visible month on "Previous month" button click', () => {
+    const { getByTitle, getAllByText } = render(<MonthPaginator month={now.getMonth()} year={now.getFullYear()} />)
+    fireEvent.click(getByTitle('Previous month'))
+    const expectedMonth = now.getMonth() - 1
+    expect(getAllByText(renderMonthYear(expectedMonth, now.getFullYear()))).toHaveLength(1)
   })
 
-  it('should change de visible year on "Next year" button click', () => {
-    const { getByTitle, getAllByText } = render(
-      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} minimized={false} />
-    )
-    fireEvent.click(getByTitle('Next year'))
-    const expectedYear = now.getFullYear() + 1
-    expect(getAllByText(expectedYear.toString())).toHaveLength(1)
+  it('should change de visible month on "Next month" button click', () => {
+    const { getByTitle, getAllByText } = render(<MonthPaginator month={now.getMonth()} year={now.getFullYear()} />)
+    fireEvent.click(getByTitle('Next month'))
+    const expectedMonth = now.getMonth() + 1
+    expect(getAllByText(renderMonthYear(expectedMonth, now.getFullYear()))).toHaveLength(1)
   })
 
   it('should call "onChange" when a month is selected', () => {
     const onChange = jest.fn()
-    const { getByText } = render(
-      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} minimized={false} onChange={onChange} />
+    const { getByText, getByTitle } = render(
+      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />
     )
+    fireEvent.click(getByTitle('Expand months'))
     fireEvent.click(getByText('Jan'))
     expect(onChange).toHaveBeenCalledWith({ month: 0, year: now.getFullYear() })
   })
 
-  it('should call "onChange" when a month is selected, with the given year', () => {
-    const onChange = jest.fn()
-    const { getByText, getByTitle } = render(
-      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} minimized={false} onChange={onChange} />
-    )
-    fireEvent.click(getByTitle('Previous year'))
-    fireEvent.click(getByText('Jan'))
-    const expectedYear = now.getFullYear() - 1
-    expect(onChange).toHaveBeenCalledWith({ month: 0, year: expectedYear })
-  })
-
   it('should fill the prop year if non is given', () => {
-    const { rerender, getAllByText } = render(
-      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} minimized={false} />
-    )
+    const { rerender, getAllByText } = render(<MonthPaginator month={now.getMonth()} year={now.getFullYear()} />)
 
-    rerender(<MonthPaginator month={now.getMonth()} minimized={false} />)
-    expect(getAllByText(new Date().getFullYear().toString())).toHaveLength(1)
+    rerender(<MonthPaginator month={now.getMonth()} />)
+    expect(getAllByText(renderMonthYear(now.getMonth(), new Date().getFullYear()))).toHaveLength(1)
   })
 
   it('should change the visible year on re-render', () => {
-    const { rerender, getAllByText } = render(<MonthPaginator month={now.getMonth()} minimized={false} />)
+    const { rerender, getAllByText } = render(<MonthPaginator month={now.getMonth()} />)
 
     const newYear = now.getFullYear() + 1
 
-    rerender(<MonthPaginator month={now.getMonth()} year={newYear} minimized={false} />)
-    expect(getAllByText(newYear.toString())).toHaveLength(1)
+    rerender(<MonthPaginator month={now.getMonth()} year={newYear} />)
+    expect(getAllByText(renderMonthYear(now.getMonth(), newYear))).toHaveLength(1)
   })
 })
 

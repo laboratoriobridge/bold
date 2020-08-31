@@ -12,7 +12,7 @@ import { Text } from '../Text'
 export interface MonthPaginatorProps {
   month?: number
   year?: number
-  minimized?: boolean
+  isOpen?: boolean
   onChange?(referenceMonth: ReferenceMonth): any
 }
 
@@ -27,11 +27,11 @@ export interface ReferenceMonth {
 }
 
 export function MonthPaginator(props: MonthPaginatorProps) {
-  const { month, year, minimized, onChange } = props
+  const { month, year, isOpen, onChange } = props
   const locale = useLocale()
 
-  const [minimizado, setMinimizado] = useState(minimized || true)
-  const { classes } = useStyles(createStyles, minimizado)
+  const [open, setOpen] = useState(isOpen || false)
+  const { classes } = useStyles(createStyles, open)
 
   const [visibleMonth, setVisibleMonth] = useState(month || new Date().getMonth())
   useEffect(() => {
@@ -43,26 +43,28 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     setVisibleYear(year || new Date().getFullYear())
   }, [year])
 
-  const onExpand = () => setMinimizado(!minimizado)
+  const onExpand = () => setOpen(!open)
 
   const onPrevClick = () => {
-    if (minimizado) {
+    if (open) setVisibleYear((currYear) => currYear - 1)
+    else {
       setVisibleMonth((currMonth) => (currMonth === 0 ? 11 : currMonth - 1))
       setVisibleYear((currYear) => (visibleMonth === 0 ? currYear - 1 : currYear))
       onMonthClick(visibleMonth)
-    } else setVisibleYear((currYear) => currYear - 1)
+    }
   }
   const onNextClick = () => {
-    if (minimizado) {
+    if (open) setVisibleYear((currYear) => currYear + 1)
+    else {
       setVisibleMonth((currMonth) => (currMonth === 11 ? 0 : currMonth + 1))
       setVisibleYear((currYear) => (visibleMonth === 11 ? currYear + 1 : currYear))
       onMonthClick(visibleMonth)
-    } else setVisibleYear((currYear) => currYear + 1)
+    }
   }
 
   const onMonthClick = (month: number) => () => {
     onChange({ month, year: visibleYear })
-    if (!minimizado) {
+    if (open) {
       setVisibleMonth(month)
       setVisibleYear(visibleYear)
       onExpand()
@@ -80,7 +82,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
       <div className={css(classes.wrapper, classes.header)}>
         <div className={classes.item}>
           <Button
-            title={minimizado ? locale.calendar.previousMonth : locale.calendar.previousYear}
+            title={open ? locale.calendar.previousYear : locale.calendar.previousMonth}
             size='small'
             skin='ghost'
             onClick={onPrevClick}
@@ -89,16 +91,16 @@ export function MonthPaginator(props: MonthPaginatorProps) {
           </Button>
         </div>
         <div className={classes.item}>
-          <Button size='small' skin='ghost' onClick={onExpand}>
+          <Button title={open ? 'Close' : 'Expand months'} size='small' skin='ghost' onClick={onExpand}>
             <Text fontWeight='bold' fontSize={0.875}>
-              {minimizado && `${monthFormatter.format(baseYearDate)} - `}
+              {!open && `${monthFormatter.format(baseYearDate)} - `}
               {yearFormatter.format(baseYearDate)}
             </Text>
           </Button>
         </div>
         <div className={classes.item}>
           <Button
-            title={minimizado ? locale.calendar.nextMonth : locale.calendar.nextYear}
+            title={open ? locale.calendar.nextYear : locale.calendar.nextMonth}
             size='small'
             skin='ghost'
             onClick={onNextClick}
@@ -107,7 +109,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
           </Button>
         </div>
       </div>
-      {!minimizado && (
+      {open && (
         <div className={css(classes.wrapper, classes.months)}>
           {monthNames.map((month, index) => (
             <div key={index} className={css(classes.item, classes.itemMonth)}>
@@ -140,11 +142,11 @@ export function getMonthNames(locale: string) {
   }))
 }
 
-export const createStyles = (theme: Theme, minimizado) => ({
+export const createStyles = (theme: Theme, open: boolean) => ({
   container: {
     backgroundColor: theme.pallete.surface.main,
     display: 'inline-block',
-    padding: minimizado ? '1rem 0.5rem' : '1rem',
+    padding: open ? '1rem' : '1rem 0.5rem',
     border: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer['20'],
     borderRadius: theme.radius.popper,
@@ -155,7 +157,7 @@ export const createStyles = (theme: Theme, minimizado) => ({
   } as CSSProperties,
   header: {
     margin: '-0.25rem -0.25rem',
-    gridTemplateColumns: minimizado ? '2.75rem repeat(auto-fill, 6.2rem) 2.75rem' : 'repeat(3, 1fr)',
+    gridTemplateColumns: open ? 'repeat(3, 1fr)' : '2.75rem repeat(auto-fill, 6.2rem) 2.75rem',
   } as CSSProperties,
   months: {
     margin: '-0.25rem -0.25rem',
