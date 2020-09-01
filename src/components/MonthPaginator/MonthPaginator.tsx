@@ -36,7 +36,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
 
   const [visibleMonth, setVisibleMonth] = useState(month || new Date().getMonth())
   useEffect(() => {
-    setVisibleYear(month || new Date().getMonth())
+    setVisibleMonth(month || new Date().getMonth())
   }, [month])
 
   const [visibleYear, setVisibleYear] = useState(year || new Date().getFullYear())
