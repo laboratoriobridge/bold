@@ -8,6 +8,7 @@ export interface DateInputProps extends Omit<MaskedTextFieldProps, 'onChange' | 
   value?: Date
   onInputChange?: MaskedTextFieldProps['onChange']
   onChange?(date: Date | null): void
+  transformTwoYearDigit?: boolean
 }
 
 const formatter = new Intl.DateTimeFormat('pt-br', {
@@ -17,7 +18,7 @@ const formatter = new Intl.DateTimeFormat('pt-br', {
 })
 
 export function DateInput(props: DateInputProps) {
-  const { value, onInputChange, onChange, ...rest } = props
+  const { value, onInputChange, onChange, transformTwoYearDigit, ...rest } = props
   const locale = useLocale()
 
   const handleChange = useCallback(
@@ -41,28 +42,34 @@ export function DateInput(props: DateInputProps) {
     [onChange, onInputChange]
   )
 
-  // TODO: fazer ser opcional e colocar no primeiro if
-  const handleKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Tab') {
-      const targetAsInputElement = e.target as HTMLInputElement
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (transformTwoYearDigit && e.key === 'Tab') {
+        const targetAsInputElement = e.target as HTMLInputElement
 
-      const match: RegExpMatchArray = targetAsInputElement.value.match(/^(\d{2})\/(\d{2})\/(\d{2}__)$/)
+        const match: RegExpMatchArray = targetAsInputElement.value.match(/^(\d{2})\/(\d{2})\/(\d{2}__)$/)
 
-      if (match) {
-        const yearPart: string = match[3]
-        const yearPartClean: string = yearPart.substr(0, 2)
+        if (match) {
+          const yearPart: string = match[3]
+          const yearPartClean: string = yearPart.substr(0, 2)
 
-        const yearInTwoDigits: number = parseInt(yearPartClean, 10)
-        const currentYearInTwoDigits: number = new Date().getFullYear() - 2000 // only works until 2100 :$
+          const yearInTwoDigits: number = parseInt(yearPartClean, 10)
+          const currentYearInTwoDigits: number = new Date().getFullYear() - 2000 // only works until 2100 :$
 
-        const resultYear: string =
-          yearInTwoDigits <= currentYearInTwoDigits ? `20${yearPartClean}` : `19${yearPartClean}`
+          const resultYear: string =
+            yearInTwoDigits <= currentYearInTwoDigits ? `20${yearPartClean}` : `19${yearPartClean}`
 
-        const resultDate: Date = new Date(parseInt(resultYear, 10), parseInt(match[2], 10) - 1, parseInt(match[1], 10))
-        onChange(resultDate)
+          const resultDate: Date = new Date(
+            parseInt(resultYear, 10),
+            parseInt(match[2], 10) - 1,
+            parseInt(match[1], 10)
+          )
+          onChange(resultDate)
+        }
       }
-    }
-  }, [])
+    },
+    [transformTwoYearDigit, onChange]
+  )
 
   return (
     <MaskedTextField
