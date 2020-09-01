@@ -4,10 +4,10 @@ import React, { CSSProperties, useEffect, useState } from 'react'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { getUserLocale } from '../../util/locale'
-import { capitalize } from '../../util/string'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
+import { getMonthNames, createStyles as importedStyles } from '../MonthPicker/MonthPicker'
 
 export interface MonthPaginatorProps {
   month?: number
@@ -31,6 +31,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   const locale = useLocale()
 
   const [open, setOpen] = useState(isOpen || false)
+  const { classes: importedClasses } = useStyles(importedStyles)
   const { classes } = useStyles(createStyles, open)
 
   const [visibleMonth, setVisibleMonth] = useState(month || new Date().getMonth())
@@ -78,7 +79,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   const monthNames = getMonthNames(getUserLocale())
 
   return (
-    <div className={classes.container}>
+    <div className={css(importedClasses.container, classes.container)}>
       <div className={css(classes.wrapper, classes.header)}>
         <div className={classes.item}>
           <Button
@@ -117,7 +118,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
                 title={month.long}
                 onClick={onMonthClick(index)}
                 skin='ghost'
-                style={css(classes.button, index === visibleMonth && classes.active)}
+                style={css(importedClasses.button, index === visibleMonth && importedClasses.active)}
               >
                 {month.short}
               </Button>
@@ -129,38 +130,19 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   )
 }
 
-export function getMonthNames(locale: string) {
-  const year = new Date().getFullYear()
-
-  const shortFormatter = new Intl.DateTimeFormat(locale, { month: 'short' })
-  const longFormatter = new Intl.DateTimeFormat(locale, { month: 'long' })
-
-  const baseDates = Array.from(Array(12)).map((_, i) => new Date(year, i, 1, 0, 0, 0))
-  return baseDates.map((date) => ({
-    short: capitalize(shortFormatter.format(date)),
-    long: capitalize(longFormatter.format(date)),
-  }))
-}
-
 export const createStyles = (theme: Theme, open: boolean) => ({
   container: {
-    backgroundColor: theme.pallete.surface.main,
-    display: 'inline-block',
     padding: open ? '1rem' : '1rem 0.5rem',
-    border: `1px solid ${theme.pallete.divider}`,
-    boxShadow: theme.shadows.outer['20'],
-    borderRadius: theme.radius.popper,
   } as CSSProperties,
   wrapper: {
+    margin: '-0.25rem -0.25rem',
     display: 'grid',
     alignItems: 'center',
   } as CSSProperties,
   header: {
-    margin: '-0.25rem -0.25rem',
     gridTemplateColumns: open ? 'repeat(3, 1fr)' : '2.75rem repeat(auto-fill, 6.2rem) 2.75rem',
   } as CSSProperties,
   months: {
-    margin: '-0.25rem -0.25rem',
     gridTemplateColumns: 'repeat(3, 1fr)',
   } as CSSProperties,
   item: {
@@ -168,14 +150,5 @@ export const createStyles = (theme: Theme, open: boolean) => ({
   } as CSSProperties,
   itemMonth: {
     margin: '0.25rem 0.25rem',
-  } as CSSProperties,
-  button: {
-    padding: 'calc(0.25rem - 1px) 1rem',
-    transitionProperty: 'background',
-    minWidth: '70px',
-  } as CSSProperties,
-  active: {
-    background: theme.pallete.primary.main + ' !important',
-    color: theme.pallete.surface.main,
   } as CSSProperties,
 })

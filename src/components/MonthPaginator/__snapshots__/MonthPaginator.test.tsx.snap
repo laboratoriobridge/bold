@@ -1,26 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MonthPaginator should render correctly with month and year 1`] = `
-.emotion-10 {
-  background-color: #FFFFFF;
-  display: inline-block;
-  padding: 1rem 0.5rem;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
-  border-radius: 2px;
-}
-
 .emotion-2 {
   text-align: center;
 }
 
+.emotion-10 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+  padding: 1rem 0.5rem;
+}
+
 .emotion-9 {
+  margin: -0.25rem -0.25rem;
   display: grid;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: -0.25rem -0.25rem;
   grid-template-columns: 2.75rem repeat(auto-fill,6.2rem) 2.75rem;
 }
 
@@ -137,7 +138,7 @@ exports[`MonthPaginator should render correctly with month and year 1`] = `
             <span
               class="emotion-3"
             >
-              Aug - 
+              Sep - 
               2019
             </span>
           </span>

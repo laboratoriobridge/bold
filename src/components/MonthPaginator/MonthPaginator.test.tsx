@@ -2,7 +2,8 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 
 import { getUserLocale } from '../../util/locale'
-import { getMonthNames, MonthPaginator } from './MonthPaginator'
+import { getMonthNames } from '../MonthPicker/MonthPicker'
+import { MonthPaginator } from './MonthPaginator'
 
 const now = new Date()
 
