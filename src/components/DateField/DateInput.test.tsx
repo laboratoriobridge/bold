@@ -60,7 +60,7 @@ it('should allow placeholder customization via locale context', () => {
 })
 
 describe('transform two year digit option', () => {
-  it('should do nothing when it is true, the values is right but user press esc', () => {
+  it('should do nothing when it is true, the value is right but user press esc', () => {
     const change = jest.fn()
     const { container } = render(<DateInput onChange={change} transformTwoYearDigit />)
     const input = container.querySelector('input')
