@@ -3,16 +3,17 @@ import React, { CSSProperties, useEffect, useState } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
-import { getUserLocale } from '../../util/locale'
+import { getUserLocale, getMonthNames, getMonthShortFormat } from '../../util/locale'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { getMonthNames, createStyles as importedStyles } from '../MonthPicker/MonthPicker'
+import { createStyles as importedStyles } from '../MonthPicker/MonthPicker'
 
 export interface MonthPaginatorProps {
   month?: number
   year?: number
   isOpen?: boolean
+  formatter?: (date: Date, month: Intl.DateTimeFormat) => string
   onChange?(referenceMonth: ReferenceMonth): any
 }
 
@@ -27,7 +28,7 @@ export interface ReferenceMonth {
 }
 
 export function MonthPaginator(props: MonthPaginatorProps) {
-  const { month, year, isOpen, onChange } = props
+  const { month, year, isOpen, formatter, onChange } = props
   const locale = useLocale()
 
   const [open, setOpen] = useState(isOpen || false)
@@ -74,9 +75,9 @@ export function MonthPaginator(props: MonthPaginatorProps) {
 
   const baseYearDate = new Date(visibleYear, visibleMonth, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
-  const monthFormatter = new Intl.DateTimeFormat(getUserLocale(), { month: 'short' })
 
-  const monthNames = getMonthNames(getUserLocale())
+  const monthFormatter = getMonthShortFormat(baseYearDate, formatter)
+  const monthNames = getMonthNames(getUserLocale(), formatter)
 
   return (
     <div className={css(importedClasses.container, classes.container)}>
@@ -94,7 +95,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
         <div className={classes.item}>
           <Button title={open ? 'Close' : 'Expand months'} size='small' skin='ghost' onClick={onExpand}>
             <Text fontWeight='bold' fontSize={0.875}>
-              {!open && `${monthFormatter.format(baseYearDate)} - `}
+              {!open && `${monthFormatter} - `}
               {yearFormatter.format(baseYearDate)}
             </Text>
           </Button>
