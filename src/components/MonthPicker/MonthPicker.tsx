@@ -3,8 +3,7 @@ import React, { CSSProperties, useEffect, useState } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
-import { getUserLocale } from '../../util/locale'
-import { capitalize } from '../../util/string'
+import { getUserLocale, getMonthNames } from '../../util/locale'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
@@ -12,6 +11,7 @@ import { Text } from '../Text'
 export interface MonthPickerProps {
   month?: number
   year?: number
+  formatter?: (date: Date, month: Intl.DateTimeFormat) => string
   onChange?(referenceMonth: ReferenceMonth): any
 }
 
@@ -26,7 +26,7 @@ export interface ReferenceMonth {
 }
 
 export function MonthPicker(props: MonthPickerProps) {
-  const { year, onChange } = props
+  const { year, formatter, onChange } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
@@ -35,8 +35,8 @@ export function MonthPicker(props: MonthPickerProps) {
     setVisibleYear(year || new Date().getFullYear())
   }, [year])
 
-  const onLeftClick = () => setVisibleYear(currYear => currYear - 1)
-  const onRightClick = () => setVisibleYear(currYear => currYear + 1)
+  const onLeftClick = () => setVisibleYear((currYear) => currYear - 1)
+  const onRightClick = () => setVisibleYear((currYear) => currYear + 1)
 
   const onMonthClick = (month: number) => () => {
     onChange({ month, year: visibleYear })
@@ -45,7 +45,7 @@ export function MonthPicker(props: MonthPickerProps) {
   const baseYearDate = new Date(visibleYear, 1, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
 
-  const monthNames = getMonthNames(getUserLocale())
+  const monthNames = getMonthNames(getUserLocale(), formatter)
 
   return (
     <div className={classes.container}>
@@ -81,19 +81,6 @@ export function MonthPicker(props: MonthPickerProps) {
       </div>
     </div>
   )
-}
-
-export function getMonthNames(locale: string) {
-  const year = new Date().getFullYear()
-
-  const shortFormatter = new Intl.DateTimeFormat(locale, { month: 'short' })
-  const longFormatter = new Intl.DateTimeFormat(locale, { month: 'long' })
-
-  const baseDates = Array.from(Array(12)).map((_, i) => new Date(year, i, 1, 0, 0, 0))
-  return baseDates.map(date => ({
-    short: capitalize(shortFormatter.format(date)),
-    long: capitalize(longFormatter.format(date)),
-  }))
 }
 
 export const createStyles = (theme: Theme) => ({
