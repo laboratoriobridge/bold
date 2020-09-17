@@ -7,7 +7,7 @@ import { getUserLocale, getMonthNames, getMonthShortFormat } from '../../util/lo
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { createStyles as importedStyles } from '../MonthPicker/MonthPicker'
+import { createStyles as importedStyles, ReferenceMonth } from '../MonthPicker/MonthPicker'
 
 export interface MonthPaginatorProps {
   month?: number
@@ -15,16 +15,6 @@ export interface MonthPaginatorProps {
   isOpen?: boolean
   formatter?: (date: Date, month: Intl.DateTimeFormat) => string
   onChange?(referenceMonth: ReferenceMonth): any
-}
-
-/**
- * Interface representing the selected month.
- *
- * Months are zero indexed, so January is month 0 and December is month 11.
- */
-export interface ReferenceMonth {
-  month: number
-  year: number
 }
 
 export function MonthPaginator(props: MonthPaginatorProps) {
