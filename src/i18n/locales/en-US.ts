@@ -20,6 +20,10 @@ const locale = {
   modal: {
     close: 'Close',
   },
+  monthPaginator: {
+    close: 'Close',
+    expand: 'Show months',
+  },
   paginator: {
     of: 'of',
     previousPage: 'Previous page',

@@ -22,6 +22,10 @@ const locale: LocaleConfiguration = {
   modal: {
     close: 'Fechar',
   },
+  monthPaginator: {
+    close: 'Fechar',
+    expand: 'Mostrar meses',
+  },
   paginator: {
     of: 'de',
     previousPage: 'Página anterior',
