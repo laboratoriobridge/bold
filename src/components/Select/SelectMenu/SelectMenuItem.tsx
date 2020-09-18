@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 import { useLocale } from '../../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles, useTheme } from '../../../styles'
@@ -70,6 +70,7 @@ export const createStyles = (theme: Theme) => ({
     cursor: 'pointer',
     padding: '0.5rem 0.5rem',
     transition: '.1s ease',
+    whiteSpace: 'normal',
 
     '&:last-of-type': {
       borderBottom: 'none',
@@ -84,7 +85,7 @@ export const createStyles = (theme: Theme) => ({
       borderRadius: 3,
       boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
     },
-  },
+  } as CSSProperties,
   selected: {
     outline: 0,
     background: theme.pallete.surface.background,

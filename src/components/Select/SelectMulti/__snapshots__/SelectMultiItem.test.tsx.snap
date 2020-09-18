@@ -2,6 +2,7 @@
 
 exports[`should render correctly 1`] = `
 .emotion-0 {
+  white-space: normal;
   padding: calc(0.125rem - 1px) 0.25rem;
 }
 

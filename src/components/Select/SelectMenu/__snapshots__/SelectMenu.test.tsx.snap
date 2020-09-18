@@ -26,6 +26,7 @@ exports[`should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-0:last-of-type {

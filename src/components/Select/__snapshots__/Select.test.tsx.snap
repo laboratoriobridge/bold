@@ -215,6 +215,7 @@ exports[`emptyItem should render when items is empty 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   background: #F0F0F5;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -523,6 +524,7 @@ exports[`emptyItem should render when items is null 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   background: #F0F0F5;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -875,6 +877,7 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-7:last-of-type {
@@ -1336,6 +1339,7 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-8:last-of-type {

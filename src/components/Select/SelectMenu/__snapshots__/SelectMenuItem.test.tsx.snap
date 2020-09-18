@@ -11,6 +11,7 @@ exports[`SelectCreateItem should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   background: #F0F0F5;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -52,6 +53,7 @@ exports[`SelectEmptyItem should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   background: #F0F0F5;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -93,6 +95,7 @@ exports[`SelectHelperMenuItem should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-0:last-of-type {
@@ -144,6 +147,7 @@ exports[`SelectLoadingItem should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   background: #F0F0F5;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -208,6 +212,7 @@ exports[`SelectMenuItem should render correctly 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-0:last-of-type {
@@ -245,6 +250,7 @@ exports[`SelectMenuItem should render correctly when custom style defined 1`] = 
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   color: red;
 }
 
@@ -283,6 +289,7 @@ exports[`SelectMenuItem should render correctly when selected 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
   outline: 0;
   background: #F0F0F5;
 }

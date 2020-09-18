@@ -322,6 +322,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
+  white-space: normal;
 }
 
 .emotion-5:last-of-type {
