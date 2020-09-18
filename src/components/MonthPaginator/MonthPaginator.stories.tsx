@@ -17,7 +17,7 @@ storiesOf('Components|MonthPaginator', module).add('default', () => (
 storiesOf('Components|MonthPaginator', module).add('ghost', () => (
   <MonthPaginator
     month={number('month', new Date().getMonth())}
-    year={number('year', new Date().getFullYear())}
+    year={number('year', new Date().getFullYear() + 1)}
     formatter={(date, month) => month.format(date).replace('.', '')}
     onChange={action('changed')}
     ghost={true}

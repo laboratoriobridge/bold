@@ -22,7 +22,7 @@ const locale = {
   },
   monthPaginator: {
     close: 'Close',
-    expand: 'Show months',
+    show: 'Show months',
   },
   paginator: {
     of: 'of',

@@ -24,7 +24,7 @@ const locale: LocaleConfiguration = {
   },
   monthPaginator: {
     close: 'Fechar',
-    expand: 'Mostrar meses',
+    show: 'Mostrar meses',
   },
   paginator: {
     of: 'de',
