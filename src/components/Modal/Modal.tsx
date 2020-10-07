@@ -1,19 +1,24 @@
 import FocusTrap from 'focus-trap-react'
 import React, { useEffect } from 'react'
-
 import { Theme, useStyles } from '../../styles'
+import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
 import { FadeTransition } from '../Transition/FadeTransition'
-
 import { ModalBackdrop } from './ModalBackdrop'
 import { ModalContainer, ModalContainerProps } from './ModalContainer'
 
 export type ModalSize = 'small' | 'large' | 'auto'
-
+export type ModalDepthLevel = 1 | 2 | 3 | 4 | 5
 export interface ModalProps extends ModalContainerProps {
   open: boolean
   size?: ModalSize
   children?: React.ReactNode
+
+  /**
+   * depthLevel allows you to customize the depth of the container and the backdrop of the modal
+   * @default 1
+   */
+  depthLevel?: ModalDepthLevel
 
   /**
    * Specify whether the `onClose` prop should called when backdrop is clicked.
@@ -23,8 +28,8 @@ export interface ModalProps extends ModalContainerProps {
 }
 
 export function Modal(props: ModalProps) {
-  const { open, size, closeOnBackdropClick, children, style, onClose, ...rest } = props
-  const { classes, css } = useStyles(createStyles)
+  const { open, size, closeOnBackdropClick, children, style, onClose, depthLevel, ...rest } = props
+  const { classes, css } = useStyles(createStyles, depthLevel)
 
   // Kill body scroll when opened
   useEffect(() => {
@@ -66,7 +71,7 @@ export function Modal(props: ModalProps) {
                     </ModalContainer>
                   </div>
 
-                  <ModalBackdrop onClick={closeOnBackdropClick ? onClose : undefined} />
+                  <ModalBackdrop depthLevel={depthLevel} onClick={closeOnBackdropClick ? onClose : undefined} />
                 </div>
               </FocusTrap>
             </Portal>
@@ -80,9 +85,10 @@ export function Modal(props: ModalProps) {
 Modal.defaultProps = {
   size: 'large',
   closeOnBackdropClick: true,
+  depthLevel: 1,
 } as Partial<ModalProps>
 
-const createStyles = (theme: Theme) => ({
+const createStyles = (theme: Theme, depthLevel: number) => ({
   modal: {
     position: 'fixed',
     left: '50%',
@@ -90,7 +96,7 @@ const createStyles = (theme: Theme) => ({
     transform: 'translate(-50%, -50%)',
     width: '100%',
     pointerEvents: 'none',
-    zIndex: theme.zIndex.modalContainer,
+    zIndex: zIndexLevel[depthLevel].modalContainer,
     display: 'flex',
     justifyContent: 'center',
     padding: '2rem',

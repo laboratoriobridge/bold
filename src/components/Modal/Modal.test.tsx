@@ -1,6 +1,5 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
-
 import { Modal, ModalProps } from './Modal'
 
 jest.mock('../../util/string')
@@ -25,6 +24,15 @@ describe('Modal', () => {
   it('should accept "style" prop and pass down to ModalContainer', () => {
     render(
       <Modal open={true} style={{ color: 'red' }}>
+        Testing.
+      </Modal>
+    )
+    expect(document.body).toMatchSnapshot()
+  })
+
+  it('should accept "depthLevel" prop and pass down to ModalContainer', () => {
+    render(
+      <Modal open={true} depthLevel={2}>
         Testing.
       </Modal>
     )

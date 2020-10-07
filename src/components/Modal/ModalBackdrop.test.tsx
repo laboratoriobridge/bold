@@ -12,3 +12,8 @@ it('should accept "style" prop', () => {
   const { container } = render(<ModalBackdrop style={{ color: 'red' }} />)
   expect(container).toMatchSnapshot()
 })
+
+it('should accept "depthLevel" prop', () => {
+  const { container } = render(<ModalBackdrop depthLevel={3} />)
+  expect(container).toMatchSnapshot()
+})
