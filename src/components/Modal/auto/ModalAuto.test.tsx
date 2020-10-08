@@ -21,6 +21,21 @@ it('should render correctly', () => {
   expect(document.body).toMatchSnapshot()
 })
 
+it('should render correctly with depth', () => {
+  const component = (
+    <ModalAuto
+      dispose={jest.fn()}
+      render={() => <span>Body</span>}
+      size='small'
+      depthLevel={3}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
+    />
+  )
+  const { rerender } = render(component)
+  rerender(component)
+  expect(document.body).toMatchSnapshot()
+})
+
 it('should open when mounted', () => {
   const component = <ModalAuto dispose={jest.fn()} render={() => <span>Body</span>} />
   const { rerender } = render(component)
