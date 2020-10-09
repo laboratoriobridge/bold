@@ -14,7 +14,7 @@ export interface ModalAutoProps {
 
   /**
    * depthLevel allows you to customize the depth of the container and the backdrop of the modal
-   * @default 1
+   * @default 1 - the lowest possible value
    */
   depthLevel?: ModalDepthLevel
   render(renderProps: ModalAutoRenderProps): React.ReactNode
