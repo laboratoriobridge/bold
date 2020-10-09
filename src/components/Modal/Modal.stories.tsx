@@ -108,7 +108,7 @@ storiesOf('Components|Modal', module)
                 ],
               })}
             >
-              Open overlapped modal
+              Open a modal that overlaps
             </Button>
           </HFlow>
         </ModalFooter>
