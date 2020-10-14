@@ -101,6 +101,7 @@ storiesOf('Components|Modal', module)
                 size: 'small',
                 render: () => 'Confirm?',
                 depthLevel: 2,
+                manageOverflow: false,
                 onClose: action('close'),
                 actions: [
                   { label: 'Cancel', onClick: action('Cancel') },

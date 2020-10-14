@@ -15,10 +15,16 @@ export interface ModalProps extends ModalContainerProps {
   children?: React.ReactNode
 
   /**
-   * depthLevel allows you to customize the depth of the container and the backdrop of the modal
+   * @description allows you to customize the depth of the container and the backdrop of the modal
    * @default 1 - the lowest possible value
    */
   depthLevel?: ModalDepthLevel
+
+  /**
+   * @description allows you to remove the document's overflow property when a modal is closed
+   * @default true
+   */
+  manageOverflow?: boolean
 
   /**
    * Specify whether the `onClose` prop should called when backdrop is clicked.
@@ -28,18 +34,20 @@ export interface ModalProps extends ModalContainerProps {
 }
 
 export function Modal(props: ModalProps) {
-  const { open, size, closeOnBackdropClick, children, style, onClose, depthLevel, ...rest } = props
+  const { open, size, closeOnBackdropClick, children, style, onClose, depthLevel, manageOverflow, ...rest } = props
   const { classes, css } = useStyles(createStyles, depthLevel)
 
   // Kill body scroll when opened
   useEffect(() => {
-    if (open) {
-      document.body.classList.add(classes.bodyWhenOpened)
-    } else {
-      document.body.classList.remove(classes.bodyWhenOpened)
+    if (manageOverflow) {
+      if (open) {
+        document.body.classList.add(classes.bodyWhenOpened)
+      } else {
+        document.body.classList.remove(classes.bodyWhenOpened)
+      }
+      return () => document.body.classList.remove(classes.bodyWhenOpened)
     }
-    return () => document.body.classList.remove(classes.bodyWhenOpened)
-  }, [open, classes.bodyWhenOpened])
+  }, [open, classes.bodyWhenOpened, manageOverflow])
 
   useEffect(() => {
     // Attach "Escape" to close modal
@@ -86,6 +94,7 @@ Modal.defaultProps = {
   size: 'large',
   closeOnBackdropClick: true,
   depthLevel: 1,
+  manageOverflow: true,
 } as Partial<ModalProps>
 
 const createStyles = (theme: Theme, depthLevel: number) => ({

@@ -39,6 +39,16 @@ describe('Modal', () => {
     expect(document.body).toMatchSnapshot()
   })
 
+  it(`should'n add "overflow: hidden" property to document when manageOverflow is false`, () => {
+    render(
+      <Modal open={true} manageOverflow={false}>
+        Testing.
+      </Modal>
+    )
+    expect(document.body.classList).not.toContainEqual('oveflow')
+    expect(document.body).toMatchSnapshot()
+  })
+
   it('should override ModalContainer props and pass down props to it', () => {
     render(
       <Modal open={true} role='alertdialog'>

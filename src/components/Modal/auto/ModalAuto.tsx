@@ -13,10 +13,16 @@ export interface ModalAutoProps {
   size?: ModalProps['size']
 
   /**
-   * depthLevel allows you to customize the depth of the container and the backdrop of the modal
+   * @description allows you to customize the depth of the container and the backdrop of the modal
    * @default 1 - the lowest possible value
    */
   depthLevel?: ModalDepthLevel
+
+  /**
+   * @description allows you to remove the document's overflow property when a modal is closed
+   * @default true
+   */
+  manageOverflow?: boolean
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
   onClose?(): any
@@ -31,7 +37,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, size, depthLevel, render, dispose, onClose } = props
+  const { actions, size, render, dispose, onClose, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -53,7 +59,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
   }
 
   return (
-    <Modal open={isOpen} size={size} onClose={close} depthLevel={depthLevel}>
+    <Modal open={isOpen} size={size} onClose={close} {...rest}>
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>

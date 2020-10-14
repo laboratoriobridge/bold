@@ -8,7 +8,7 @@ export interface ModalBackdropProps extends Omit<React.HTMLAttributes<HTMLDivEle
   style?: ExternalStyles
 
   /**
-   * depthLevel allows you to customize the depth of the container and the backdrop of the modal
+   * @description depthLevel allows you to customize the depth of the container and the backdrop of the modal
    * @default 1 - the lowest possible value
    */
   depthLevel?: number
