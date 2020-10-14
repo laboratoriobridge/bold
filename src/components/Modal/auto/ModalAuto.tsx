@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react'
 
 import { Button, ButtonProps } from '../../Button'
 import { HFlow } from '../../HFlow'
-import { Modal, ModalProps } from '../Modal'
+import { Modal, ModalDepthLevel, ModalProps } from '../Modal'
 import { ModalBody } from '../ModalBody'
 import { ModalFooter } from '../ModalFooter'
 
@@ -11,6 +11,18 @@ export type ButtonAction = ButtonProps & { label?: React.ReactNode }
 export interface ModalAutoProps {
   actions?: ButtonAction[]
   size?: ModalProps['size']
+
+  /**
+   * @description allows you to customize the depth of the container and the backdrop of the modal
+   * @default 1 - the lowest possible value
+   */
+  depthLevel?: ModalDepthLevel
+
+  /**
+   * @description allows you to remove the document's overflow property when a modal is closed
+   * @default true
+   */
+  manageOverflow?: boolean
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
   onClose?(): any
@@ -25,7 +37,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, size, render, dispose, onClose } = props
+  const { actions, size, render, dispose, onClose, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -41,13 +53,13 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
     setTimeout(dispose, 500)
   }
 
-  const handleAction = (action: ButtonProps) => e => {
+  const handleAction = (action: ButtonProps) => (e) => {
     action.onClick && action.onClick(e)
     close()
   }
 
   return (
-    <Modal open={isOpen} size={size} onClose={close}>
+    <Modal open={isOpen} size={size} onClose={close} {...rest}>
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>
