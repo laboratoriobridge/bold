@@ -1,4 +1,5 @@
 import React, { CSSProperties, useEffect, useRef } from 'react'
+import { composeRefs } from '../../util/react'
 
 import { ClassNames, ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
@@ -11,19 +12,19 @@ export interface CheckboxProps extends Omit<InputProps, 'style'> {
 }
 
 export function Checkbox(props: CheckboxProps) {
-  const { label, indeterminate, style, ...rest } = props
+  const { label, indeterminate, style, inputRef, ...rest } = props
   const { classes, css } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)
 
-  const inputRef = useRef<HTMLInputElement>()
+  const internalRef = useRef<HTMLInputElement>()
 
   useEffect(() => {
-    inputRef.current.indeterminate = indeterminate
+    internalRef.current.indeterminate = indeterminate
   }, [indeterminate])
 
   return (
     <label className={css(classes.wrapper, props.disabled && classes.disabled, style)}>
-      <Input {...rest} inputRef={inputRef} type='checkbox' className={inputClasses.input} />
+      <Input {...rest} inputRef={composeRefs(internalRef, inputRef)} type='checkbox' className={inputClasses.input} />
       <span className={classes.check} />
       {(label || label === 0) && <span className={classes.label}>{label}</span>}
     </label>
