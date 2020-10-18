@@ -8,7 +8,7 @@ import { HeadingSection, HeadingSectionProps } from './HeadingSection'
 const levelOptions: Array<HeadingSectionProps['level']> = [1, 2, 3, 4, 5, 6]
 
 export default {
-  title: 'Components|Textual',
+  title: 'Components/Textual',
 }
 
 export const _HeadingSection = () => (

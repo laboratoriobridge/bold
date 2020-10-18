@@ -5,7 +5,7 @@ import React from 'react'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
 export default {
-  title: 'Components|Table',
+  title: 'Components/Table',
 }
 
 export const _Table = () => (

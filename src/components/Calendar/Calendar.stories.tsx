@@ -15,7 +15,7 @@ const isToday = (day: Date) => isSameDay(new Date(), day)
 const isOddDay = (day: Date) => day.getDate() % 2 === 1
 
 export default {
-  title: 'Components|Calendar',
+  title: 'Components/Calendar',
 }
 
 export const Default = () => (

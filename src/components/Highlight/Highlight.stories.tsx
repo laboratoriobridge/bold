@@ -4,7 +4,7 @@ import React from 'react'
 import { Highlight } from './Highlight'
 
 export default {
-  title: 'Components|Textual',
+  title: 'Components/Textual',
 }
 
 export const _Highlight = () => (

@@ -5,7 +5,7 @@ import React from 'react'
 import { MonthPicker } from './MonthPicker'
 
 export default {
-  title: 'Components|MonthPicker',
+  title: 'Components/MonthPicker',
 }
 
 export const Default = () => (

@@ -5,7 +5,7 @@ import React from 'react'
 import { Paginator } from './Paginator'
 
 export default {
-  title: 'Components|Paginator',
+  title: 'Components/Paginator',
 }
 
 export const Default = () => (

@@ -9,7 +9,7 @@ import { Stepper } from './Stepper'
 import { useStepperState } from './useStepperState'
 
 export default {
-  title: 'Components|Stepper',
+  title: 'Components/Stepper',
 }
 
 export const Default = () => (

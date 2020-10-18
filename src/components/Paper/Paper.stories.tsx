@@ -6,7 +6,7 @@ import { Text } from '../Text'
 import { Paper } from './Paper'
 
 export default {
-  title: 'Components|Paper',
+  title: 'Components/Paper',
 }
 
 export const Default = () => (

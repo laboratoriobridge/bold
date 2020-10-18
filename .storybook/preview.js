@@ -1,7 +1,6 @@
 import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 import { withKnobs } from '@storybook/addon-knobs'
-import { addDecorator, addParameters } from '@storybook/react'
 import 'loki/configure-react'
 import { withStorybookTheme } from '../src/stories-addons'
 import mockdate from 'mockdate'
@@ -11,7 +10,7 @@ if (process.env.STORYBOOK_LOKI) {
   mockdate.set('2020-09-01 12:00:00')
 }
 
-addParameters({
+export const parameters = {
   info: {
     inline: true,
     styles: {
@@ -30,9 +29,6 @@ addParameters({
       },
     },
   },
-})
+}
 
-addDecorator(withInfo)
-addDecorator(withA11y)
-addDecorator(withKnobs)
-addDecorator(withStorybookTheme)
+export const decorators = [withInfo, withA11y, withKnobs, withStorybookTheme]

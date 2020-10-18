@@ -5,7 +5,7 @@ import React from 'react'
 import { MonthPaginator } from './MonthPaginator'
 
 export default {
-  title: 'Components|MonthPaginator',
+  title: 'Components/MonthPaginator',
 }
 
 export const Default = () => (

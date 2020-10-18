@@ -5,7 +5,7 @@ import React from 'react'
 import { Checkbox } from './Checkbox'
 
 export default {
-  title: 'Components|Checkbox',
+  title: 'Components/Checkbox',
 }
 
 export const Default = () => (

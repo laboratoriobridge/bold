@@ -4,7 +4,7 @@ import React from 'react'
 import { FileUploader } from './FileUploader'
 
 export default {
-  title: 'Components|FileUploader',
+  title: 'Components/FileUploader',
 }
 
 export const Initial = () => (

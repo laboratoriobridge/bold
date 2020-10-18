@@ -7,7 +7,7 @@ import { VFlow } from '../VFlow'
 import { TextField } from './TextField'
 
 export default {
-  title: 'Components|TextField',
+  title: 'Components/TextField',
 }
 
 export const Default = () => (

@@ -7,7 +7,7 @@ import { Icon } from './Icon'
 const options: Icons[] = Object.keys(IconMap) as Icons[]
 
 export default {
-  title: 'Components|Icon',
+  title: 'Components/Icon',
 }
 
 export const Default = () => <Icon icon={select('icon', options, 'adjust') as Icons} />

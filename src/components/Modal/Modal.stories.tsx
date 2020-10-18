@@ -17,7 +17,7 @@ const sizes: { [key in ModalSize]: ModalSize } = {
 }
 
 export default {
-  title: 'Components|Modal',
+  title: 'Components/Modal',
 }
 
 export const Default = () => (

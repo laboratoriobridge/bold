@@ -5,7 +5,7 @@ import React from 'react'
 import { MaskedTextField } from './MaskedTextField'
 
 export default {
-  title: 'Components|MaskedTextField',
+  title: 'Components/MaskedTextField',
 }
 
 export const Default = () => (

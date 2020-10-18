@@ -5,7 +5,7 @@ import React from 'react'
 import { MonthField, MonthInput } from './MonthField'
 
 export default {
-  title: 'Components|MonthField',
+  title: 'Components/MonthField',
 }
 
 export const Default = () => (

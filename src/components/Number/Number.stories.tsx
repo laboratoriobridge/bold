@@ -4,7 +4,7 @@ import React from 'react'
 import { Number } from './Number'
 
 export default {
-  title: 'Components|Textual',
+  title: 'Components/Textual',
 }
 
 export const _Number = () => (

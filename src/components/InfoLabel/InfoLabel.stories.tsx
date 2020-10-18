@@ -6,7 +6,7 @@ import { VFlow } from '../VFlow'
 import { InfoLabel } from './InfoLabel'
 
 export default {
-  title: 'Components|InfoLabel',
+  title: 'Components/InfoLabel',
 }
 
 export const Default = () => (

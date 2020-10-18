@@ -5,7 +5,7 @@ import React from 'react'
 import { TableFooter } from './TableFooter'
 
 export default {
-  title: 'Components|Table',
+  title: 'Components/Table',
 }
 
 export const _TableFooter = () => (

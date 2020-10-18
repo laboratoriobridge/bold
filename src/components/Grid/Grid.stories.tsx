@@ -45,7 +45,7 @@ function Cell(props: any) {
 }
 
 export default {
-  title: 'Components|Grid',
+  title: 'Components/Grid',
 }
 
 export const Default = () => (

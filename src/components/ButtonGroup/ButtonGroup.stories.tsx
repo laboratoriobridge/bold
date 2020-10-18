@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 import { ButtonGroup } from './ButtonGroup'
 
 export default {
-  title: 'Components|ButtonGroup',
+  title: 'Components/ButtonGroup',
 }
 
 export const Default = () => (

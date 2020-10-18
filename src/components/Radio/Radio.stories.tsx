@@ -7,7 +7,7 @@ import { HFlow } from '../HFlow'
 import { Radio } from './Radio'
 
 export default {
-  title: 'Components|Radio',
+  title: 'Components/Radio',
 }
 
 export const Default = () => (

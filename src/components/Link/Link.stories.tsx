@@ -4,7 +4,7 @@ import React from 'react'
 import { Link } from './Link'
 
 export default {
-  title: 'Components|Link',
+  title: 'Components/Link',
 }
 
 export const Default = () => (

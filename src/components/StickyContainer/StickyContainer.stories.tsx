@@ -4,7 +4,7 @@ import React from 'react'
 import { StickyContainer } from './StickyContainer'
 
 export default {
-  title: 'Components|StickyContainer',
+  title: 'Components/StickyContainer',
 }
 
 export const Default = () => (

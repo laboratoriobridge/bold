@@ -6,7 +6,7 @@ import { TextInput } from '../TextField'
 import { FormControl } from './FormControl'
 
 export default {
-  title: 'Components|FormControl',
+  title: 'Components/FormControl',
 }
 
 export const Default = () => (

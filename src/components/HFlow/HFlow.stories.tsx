@@ -20,7 +20,7 @@ const justifyContentOptions: JustifyContent[] = [
 const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'baseline', 'stretch']
 
 export default {
-  title: 'Components|HFlow',
+  title: 'Components/HFlow',
 }
 
 export const Default = () => (

@@ -8,7 +8,7 @@ import { DateInput } from './DateInput'
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
 
 export default {
-  title: 'Components|DateField',
+  title: 'Components/DateField',
 }
 
 export const Default = () => {

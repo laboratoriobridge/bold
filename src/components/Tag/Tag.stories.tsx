@@ -6,7 +6,7 @@ import { HFlow } from '../HFlow'
 import { Tag } from './Tag'
 
 export default {
-  title: 'Components|Tag',
+  title: 'Components/Tag',
 }
 
 export const Default = () => (

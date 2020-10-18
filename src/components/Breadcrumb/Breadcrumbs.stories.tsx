@@ -5,7 +5,7 @@ import { Link } from '../Link'
 import { Breadcrumbs } from './Breadcrumbs'
 
 export default {
-  title: 'Components|Breadcrumbs',
+  title: 'Components/Breadcrumbs',
 }
 
 export const Default = () => (

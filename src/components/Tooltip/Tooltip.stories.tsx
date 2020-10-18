@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 import { Tooltip } from './Tooltip'
 
 export default {
-  title: 'Components|Tooltip',
+  title: 'Components/Tooltip',
 }
 
 export const Default = () => (

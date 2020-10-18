@@ -7,7 +7,7 @@ import { Text } from '../Text'
 import { VFlow } from './VFlow'
 
 export default {
-  title: 'Components|VFlow',
+  title: 'Components/VFlow',
 }
 
 export const Default = () => (

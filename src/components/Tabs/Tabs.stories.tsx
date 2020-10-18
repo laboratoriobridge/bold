@@ -3,7 +3,7 @@ import React from 'react'
 import { TabItem } from './TabItem'
 import { Tabs } from './Tabs'
 
-export default { title: 'Components|Tabs' }
+export default { title: 'Components/Tabs' }
 
 export const Default = () => (
   <Tabs>

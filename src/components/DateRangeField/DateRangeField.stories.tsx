@@ -8,7 +8,7 @@ const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
 const period: DateRange = { startDate: todayMinus10, endDate: new Date() }
 
 export default {
-  title: 'Components|DateRangeField',
+  title: 'Components/DateRangeField',
 }
 
 export const Default = () => (

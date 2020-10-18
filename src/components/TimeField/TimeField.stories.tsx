@@ -5,7 +5,7 @@ import React from 'react'
 import { TimeField } from './TimeField'
 
 export default {
-  title: 'Components|TimeField',
+  title: 'Components/TimeField',
 }
 
 export const Default = () => (

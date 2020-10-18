@@ -35,7 +35,7 @@ const colors: TextColor[] = [
 ]
 
 export default {
-  title: 'Components|Textual',
+  title: 'Components/Textual',
 }
 
 export const _Text = () => (

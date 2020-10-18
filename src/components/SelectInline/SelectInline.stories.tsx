@@ -15,7 +15,7 @@ const items: DefaultItemType[] = [
 const itemToString = (item: DefaultItemType) => item && item.label
 
 export default {
-  title: 'Components|SelectInline',
+  title: 'Components/SelectInline',
 }
 
 export const Default = () => (

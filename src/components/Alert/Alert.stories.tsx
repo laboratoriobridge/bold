@@ -9,7 +9,7 @@ import { Alert } from './Alert'
 const click = action('Close has been clicked')
 
 export default {
-  title: 'Components|Alert',
+  title: 'Components/Alert',
 }
 
 export const Default = () => (

@@ -10,7 +10,7 @@ const skinOptions: ButtonSkin[] = ['default', 'ghost', 'outline']
 const sizeOptions: ButtonSize[] = ['small', 'medium', 'large']
 
 export default {
-  title: 'Components|Button',
+  title: 'Components/Button',
 }
 
 export const Default = () => (

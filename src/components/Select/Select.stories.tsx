@@ -32,7 +32,7 @@ const loadFruits = (query: string): Promise<DefaultItemType[]> => {
 }
 
 export default {
-  title: 'Components|Select',
+  title: 'Components/Select',
 }
 
 export const Default = () => (
