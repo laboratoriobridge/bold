@@ -1,6 +1,5 @@
 import { action } from '@storybook/addon-actions'
 import { boolean } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../../Button'
@@ -20,7 +19,11 @@ const rows: Row[] = [
   { id: 3, name: 'ALICE BARBOSA', age: 27 },
 ]
 
-storiesOf('Components|Table', module).add('PagedTable', () => (
+export default {
+  title: 'Components/Table',
+}
+
+export const _PagedTable = () => (
   <PagedTable
     rows={boolean('empty', false) ? [] : rows}
     page={0}
@@ -47,4 +50,4 @@ storiesOf('Components|Table', module).add('PagedTable', () => (
       },
     ]}
   />
-))
+)
