@@ -1,12 +1,15 @@
 import { text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { VFlow } from '../VFlow'
 
 import { InfoLabel } from './InfoLabel'
 
-storiesOf('Components|InfoLabel', module).add('default', () => (
+export default {
+  title: 'Components|InfoLabel',
+}
+
+export const Default = () => (
   <VFlow vSpacing={0.5}>
     <InfoLabel title={text('title', 'Name')} placeholder={text('placeholder', '-')}>
       João da Silva
@@ -17,4 +20,4 @@ storiesOf('Components|InfoLabel', module).add('default', () => (
     </InfoLabel>
     <InfoLabel title={text('title', 'Name')} placeholder={text('placeholder', '-')} />
   </VFlow>
-))
+)

@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -7,7 +6,11 @@ import { Icon } from '../Icon'
 
 import { Tooltip } from './Tooltip'
 
-storiesOf('Components|Tooltip', module).add('default', () => (
+export default {
+  title: 'Components|Tooltip',
+}
+
+export const Default = () => (
   <HFlow hSpacing={0.5} alignItems='center'>
     <Tooltip text='Lorem ipsum'>
       <Button kind='primary' size='small'>
@@ -30,4 +33,4 @@ storiesOf('Components|Tooltip', module).add('default', () => (
       </Button>
     </Tooltip>
   </HFlow>
-))
+)

@@ -1,12 +1,15 @@
 import { boolean, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { TextInput } from '../TextField'
 
 import { FormControl } from './FormControl'
 
-storiesOf('Components|FormControl', module).add('default', () => (
+export default {
+  title: 'Components|FormControl',
+}
+
+export const Default = () => (
   <FormControl
     label={text('label', 'Label')}
     htmlFor={text('id', 'input-id')}
@@ -15,4 +18,4 @@ storiesOf('Components|FormControl', module).add('default', () => (
   >
     <TextInput id={text('id', 'input-id')} />
   </FormControl>
-))
+)

@@ -1,13 +1,16 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { HFlow } from '../HFlow'
 
 import { Radio } from './Radio'
 
-storiesOf('Components|Radio', module).add('default', () => (
+export default {
+  title: 'Components|Radio',
+}
+
+export const Default = () => (
   <HFlow>
     <Radio
       name='radio1'
@@ -24,4 +27,4 @@ storiesOf('Components|Radio', module).add('default', () => (
       disabled={boolean('disabled', false)}
     />
   </HFlow>
-))
+)

@@ -1,11 +1,14 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, number, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { TextArea } from './TextArea'
 
-storiesOf('Components|TextArea', module).add('default', () => (
+export default {
+  title: 'Components|TextArea',
+}
+
+export const Default = () => (
   <TextArea
     name='nome'
     label={text('label', 'Text area')}
@@ -16,4 +19,4 @@ storiesOf('Components|TextArea', module).add('default', () => (
     onChange={action('changed')}
     required
   />
-))
+)

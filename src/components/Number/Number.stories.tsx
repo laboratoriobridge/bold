@@ -1,10 +1,13 @@
 import { boolean, number, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Number } from './Number'
 
-storiesOf('Components|Textual', module).add('Number', () => (
+export default {
+  title: 'Components|Textual',
+}
+
+export const _Number = () => (
   <Number
     value={number('value', 1234.56789)}
     formatOptions={{
@@ -16,4 +19,4 @@ storiesOf('Components|Textual', module).add('Number', () => (
     prefix={text('prefix', '')}
     suffix={text('sufix', '')}
   />
-))
+)

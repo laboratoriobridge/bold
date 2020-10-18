@@ -1,5 +1,4 @@
 import { number, select } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -20,7 +19,11 @@ const justifyContentOptions: JustifyContent[] = [
 
 const alignItemsOptions: AlignItems[] = ['flex-start', 'flex-end', 'center', 'baseline', 'stretch']
 
-storiesOf('Components|HFlow', module).add('default', () => (
+export default {
+  title: 'Components|HFlow',
+}
+
+export const Default = () => (
   <HFlow
     hSpacing={number('hSpacing', 1)}
     alignItems={select('alignItems', alignItemsOptions, 'center')}
@@ -34,4 +37,4 @@ storiesOf('Components|HFlow', module).add('default', () => (
       libero enim cum, repellat veniam mollitia totam ex quae impedit numquam consequatur illum! Ea, consequatur?
     </Text>
   </HFlow>
-))
+)

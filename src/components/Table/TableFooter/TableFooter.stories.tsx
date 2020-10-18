@@ -1,11 +1,14 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, number } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { TableFooter } from './TableFooter'
 
-storiesOf('Components|Table', module).add('TableFooter', () => (
+export default {
+  title: 'Components|Table',
+}
+
+export const _TableFooter = () => (
   <TableFooter
     page={number('page', 0)}
     pageSize={number('pageSize', 10)}
@@ -15,4 +18,4 @@ storiesOf('Components|Table', module).add('TableFooter', () => (
     onPageChange={action('page-changed')}
     onSizeChange={action('size-changed')}
   />
-))
+)

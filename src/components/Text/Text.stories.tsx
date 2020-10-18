@@ -1,5 +1,4 @@
 import { number, select, text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { TextColor } from '../../styles'
@@ -35,7 +34,11 @@ export const colors: TextColor[] = [
   'success',
 ]
 
-storiesOf('Components|Textual', module).add('Text', () => (
+export default {
+  title: 'Components|Textual',
+}
+
+export const _Text = () => (
   <Text
     variant={select('variant', variants, undefined)}
     component={select('component', components as any, undefined)}
@@ -47,4 +50,4 @@ storiesOf('Components|Textual', module).add('Text', () => (
   >
     {text('text', 'Lorem ipsum')}
   </Text>
-))
+)

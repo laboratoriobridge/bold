@@ -1,11 +1,14 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Link } from '../Link'
 
 import { Breadcrumbs } from './Breadcrumbs'
 
-storiesOf('Components|Breadcrumbs', module).add('default', () => (
+export default {
+  title: 'Components|Breadcrumbs',
+}
+
+export const Default = () => (
   <Breadcrumbs>
     <Link color='inherit' textDecoration='none' href='/first'>
       First level
@@ -20,4 +23,4 @@ storiesOf('Components|Breadcrumbs', module).add('default', () => (
       Fourth level
     </Link>
   </Breadcrumbs>
-))
+)

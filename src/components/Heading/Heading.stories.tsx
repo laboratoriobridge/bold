@@ -1,5 +1,4 @@
 import { select } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { colors } from '../Text/Text.stories'
@@ -7,7 +6,11 @@ import { VFlow } from '../VFlow'
 
 import { Heading } from './Heading'
 
-storiesOf('Components|Textual', module).add('Heading', () => (
+export default {
+  title: 'Components|Textual',
+}
+
+export const _Heading = () => (
   <VFlow>
     <Heading level={1} color={select('color', colors, 'normal')}>
       Heading level 1
@@ -28,4 +31,4 @@ storiesOf('Components|Textual', module).add('Heading', () => (
       Heading level 6
     </Heading>
   </VFlow>
-))
+)
