@@ -21,7 +21,7 @@ const components: Array<TextProps['component']> = ['span', 'p', 'button']
 const fontWeights: Array<TextProps['fontWeight']> = ['' as any, 'normal', 'bold']
 const fontStyles: Array<TextProps['fontStyle']> = ['' as any, 'normal', 'italic']
 const textDecorations: Array<TextProps['textDecoration']> = ['' as any, 'normal', 'underline']
-export const colors: TextColor[] = [
+const colors: TextColor[] = [
   '' as any,
   'inherit',
   'normal',
