@@ -68,7 +68,7 @@
     "@babel/core": "7.10.3",
     "@storybook/addon-a11y": "6.0.26",
     "@storybook/addon-actions": "6.0.26",
-    "@storybook/addon-info": "6.0.26",
+    "@storybook/addon-info": "6.0.0-alpha.2",
     "@storybook/addon-knobs": "6.0.26",
     "@storybook/addons": "6.0.26",
     "@storybook/core": "6.0.26",

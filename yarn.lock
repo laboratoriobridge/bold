@@ -2011,7 +2011,7 @@
     util-deprecate "^1.0.2"
     uuid "^8.0.0"
 
-"@storybook/addon-info@6.0.26":
+"@storybook/addon-info@6.0.0-alpha.2":
   version "6.0.0-alpha.2"
   resolved "https://registry.yarnpkg.com/@storybook/addon-info/-/addon-info-6.0.0-alpha.2.tgz#2ee4e45f0692996afeeaa199ded5d6f3c3176383"
   integrity sha512-isr+LdrXVnJ2GODvrgyHN1pZF1lwDbSgCkLn9o04qe5SK9mP+3yyXjLinnF4KEfpc3WmQIffz3soZcqJ2osugw==
