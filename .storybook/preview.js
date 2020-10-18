@@ -31,4 +31,6 @@ export const parameters = {
   },
 }
 
-export const decorators = [withInfo, withA11y, withKnobs, withStorybookTheme]
+const allDecorators = [withA11y, withKnobs, withStorybookTheme]
+
+export const decorators = process.env.STORYBOOK_LOKI ? allDecorators : [withInfo, ...allDecorators]
