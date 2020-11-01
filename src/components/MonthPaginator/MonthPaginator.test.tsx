@@ -21,7 +21,8 @@ describe('MonthPaginator', () => {
   })
 
   it('should render correctly with ghost', () => {
-    const { container } = render(<MonthPaginator ghost={true} />)
+    const visibleDate = new Date('2019-01-31')
+    const { container } = render(<MonthPaginator month={visibleDate.getMonth()} ghost={true} />)
     expect(container).toMatchSnapshot()
   })
 
