@@ -1,5 +1,225 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`render without sizeOptions 1`] = `
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-13 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-26 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-26 tr:hover td {
+  background: #F0F0F5;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-2 {
+  margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #AAAAB9;
+}
+
+.emotion-1 {
+  fill: #0069D0;
+}
+
+.emotion-27 {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 1px solid #D3D4DD;
+  height: 40px;
+  border-top: none;
+}
+
+<div>
+  <div>
+    <table
+      class="emotion-26"
+    >
+      <thead
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <th
+            class="emotion-4"
+            data-name="id"
+          >
+            <span
+              class="emotion-3"
+            >
+              ID
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-0"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-1"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="name"
+          >
+            <span
+              class="emotion-3"
+            >
+              Name
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-1"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-0"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="age"
+          >
+            Age
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            1
+          </td>
+          <td
+            class="emotion-13"
+          >
+            MARIA MACHADO DE JESUS
+          </td>
+          <td
+            class="emotion-13"
+          >
+            42
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            2
+          </td>
+          <td
+            class="emotion-13"
+          >
+            JOSÉ DA SILVA MOREIRA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            34
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            3
+          </td>
+          <td
+            class="emotion-13"
+          >
+            ALICE BARBOSA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            27
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="emotion-28"
+    >
+      <span
+        class="emotion-27"
+      >
+        <span>
+          3 results
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`should render correctly 1`] = `
 .emotion-4 {
   text-align: left;
@@ -215,6 +435,639 @@ exports[`should render correctly 1`] = `
           3 results
         </span>
       </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`sizeOptions first value minor than total elements 1`] = `
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-13 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-26 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-26 tr:hover td {
+  background: #F0F0F5;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-2 {
+  margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #AAAAB9;
+}
+
+.emotion-1 {
+  fill: #0069D0;
+}
+
+.emotion-27 {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.emotion-41 {
+  border-left: 1px solid #D3D4DD;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 4px 1rem;
+}
+
+.emotion-42 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 1px solid #D3D4DD;
+  height: 40px;
+  border-top: none;
+}
+
+.emotion-32 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-28 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+}
+
+.emotion-31 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: 0 0.25rem;
+}
+
+.emotion-31 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-31:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-31:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-31:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-33 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-30 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.125rem;
+}
+
+.emotion-40 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0;
+}
+
+.emotion-34 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.emotion-34 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-34:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-34:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-34:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-36 {
+  position: relative;
+}
+
+.emotion-35 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  width: 68px;
+  text-align: center;
+  margin: 0 0.5rem 0 0.25rem;
+}
+
+.emotion-35[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-35[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-35[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-35[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-35:required {
+  box-shadow: none;
+}
+
+.emotion-35::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-35::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-35:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-35::placeholder {
+  color: #696979;
+}
+
+.emotion-35:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-35:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-35:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-35:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-39 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  margin-left: 0.25rem;
+}
+
+.emotion-39 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-39:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-39:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-39:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+<div>
+  <div>
+    <table
+      class="emotion-26"
+    >
+      <thead
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <th
+            class="emotion-4"
+            data-name="id"
+          >
+            <span
+              class="emotion-3"
+            >
+              ID
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-0"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-1"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="name"
+          >
+            <span
+              class="emotion-3"
+            >
+              Name
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-1"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-0"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="age"
+          >
+            Age
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            1
+          </td>
+          <td
+            class="emotion-13"
+          >
+            MARIA MACHADO DE JESUS
+          </td>
+          <td
+            class="emotion-13"
+          >
+            42
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            2
+          </td>
+          <td
+            class="emotion-13"
+          >
+            JOSÉ DA SILVA MOREIRA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            34
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            3
+          </td>
+          <td
+            class="emotion-13"
+          >
+            ALICE BARBOSA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            27
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="emotion-42"
+    >
+      <span
+        class="emotion-27"
+      >
+        <span>
+          3 results
+        </span>
+      </span>
+      <div
+        class="emotion-41"
+      >
+        <div
+          class="emotion-32"
+        >
+          <span
+            class="emotion-28"
+          >
+            Mostrar:
+          </span>
+          <button
+            aria-haspopup="true"
+            class="emotion-31"
+            type="button"
+          >
+            <span>
+              <span
+                class="emotion-28"
+              >
+                10
+              </span>
+              <svg
+                aria-hidden="true"
+                class="emotion-30"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div
+          class="emotion-40"
+        >
+          <button
+            class="emotion-34"
+            disabled=""
+            title="Previous page"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-33"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div
+            class="emotion-36"
+          >
+            <input
+              class="emotion-35"
+              maxlength="4"
+              title="Current page"
+              type="text"
+              value="1"
+            />
+          </div>
+          <span
+            class="emotion-28"
+          >
+            of
+             
+            2
+          </span>
+          <button
+            class="emotion-39"
+            title="Next page"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-33"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
