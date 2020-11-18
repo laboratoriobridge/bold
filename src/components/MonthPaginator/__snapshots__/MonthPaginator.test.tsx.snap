@@ -181,7 +181,7 @@ exports[`MonthPaginator should render correctly with ghost 1`] = `
           <span
             class="emotion-2"
           >
-            Oct - 
+            Nov - 
             2020
           </span>
         </span>
