@@ -1,225 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`render without sizeOptions 1`] = `
-.emotion-4 {
-  text-align: left;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
-.emotion-13 {
-  text-align: left;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-bottom: 1px solid #D3D4DD;
-}
-
-.emotion-26 {
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #D3D4DD;
-}
-
-.emotion-26 tr:hover td {
-  background: #F0F0F5;
-}
-
-.emotion-3 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.emotion-2 {
-  margin-left: 0.25rem;
-  font-size: 1rem;
-  fill: #AAAAB9;
-}
-
-.emotion-1 {
-  fill: #0069D0;
-}
-
-.emotion-27 {
-  font-weight: bold;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding-right: 1rem;
-  padding-left: 1rem;
-}
-
-.emotion-28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: stretch;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  align-items: stretch;
-  border: 1px solid #D3D4DD;
-  height: 40px;
-  border-top: none;
-}
-
-<div>
-  <div>
-    <table
-      class="emotion-26"
-    >
-      <thead
-        class="emotion-0"
-      >
-        <tr
-          class="emotion-0"
-        >
-          <th
-            class="emotion-4"
-            data-name="id"
-          >
-            <span
-              class="emotion-3"
-            >
-              ID
-              <svg
-                class="emotion-2"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <polygon
-                  class="emotion-0"
-                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
-                />
-                <polygon
-                  class="emotion-1"
-                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
-                />
-              </svg>
-            </span>
-          </th>
-          <th
-            class="emotion-4"
-            data-name="name"
-          >
-            <span
-              class="emotion-3"
-            >
-              Name
-              <svg
-                class="emotion-2"
-                height="1em"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <polygon
-                  class="emotion-1"
-                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
-                />
-                <polygon
-                  class="emotion-0"
-                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
-                />
-              </svg>
-            </span>
-          </th>
-          <th
-            class="emotion-4"
-            data-name="age"
-          >
-            Age
-          </th>
-        </tr>
-      </thead>
-      <tbody
-        class="emotion-0"
-      >
-        <tr
-          class="emotion-0"
-        >
-          <td
-            class="emotion-13"
-          >
-            1
-          </td>
-          <td
-            class="emotion-13"
-          >
-            MARIA MACHADO DE JESUS
-          </td>
-          <td
-            class="emotion-13"
-          >
-            42
-          </td>
-        </tr>
-        <tr
-          class="emotion-0"
-        >
-          <td
-            class="emotion-13"
-          >
-            2
-          </td>
-          <td
-            class="emotion-13"
-          >
-            JOSÉ DA SILVA MOREIRA
-          </td>
-          <td
-            class="emotion-13"
-          >
-            34
-          </td>
-        </tr>
-        <tr
-          class="emotion-0"
-        >
-          <td
-            class="emotion-13"
-          >
-            3
-          </td>
-          <td
-            class="emotion-13"
-          >
-            ALICE BARBOSA
-          </td>
-          <td
-            class="emotion-13"
-          >
-            27
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <div
-      class="emotion-28"
-    >
-      <span
-        class="emotion-27"
-      >
-        <span>
-          3 results
-        </span>
-      </span>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`should render correctly 1`] = `
 .emotion-4 {
   text-align: left;
@@ -440,7 +220,7 @@ exports[`should render correctly 1`] = `
 </div>
 `;
 
-exports[`sizeOptions first value minor than total elements 1`] = `
+exports[`should render correctly when total elements is bigger than sizeOption 1`] = `
 .emotion-4 {
   text-align: left;
   padding: 0.5rem 1rem;
@@ -1068,6 +848,226 @@ exports[`sizeOptions first value minor than total elements 1`] = `
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render without sizeOptions 1`] = `
+.emotion-4 {
+  text-align: left;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-13 {
+  text-align: left;
+  padding: 0 1rem;
+  height: 2.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-26 {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-26 tr:hover td {
+  background: #F0F0F5;
+}
+
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.emotion-2 {
+  margin-left: 0.25rem;
+  font-size: 1rem;
+  fill: #AAAAB9;
+}
+
+.emotion-1 {
+  fill: #0069D0;
+}
+
+.emotion-27 {
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.emotion-28 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  border: 1px solid #D3D4DD;
+  height: 40px;
+  border-top: none;
+}
+
+<div>
+  <div>
+    <table
+      class="emotion-26"
+    >
+      <thead
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <th
+            class="emotion-4"
+            data-name="id"
+          >
+            <span
+              class="emotion-3"
+            >
+              ID
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-0"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-1"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="name"
+          >
+            <span
+              class="emotion-3"
+            >
+              Name
+              <svg
+                class="emotion-2"
+                height="1em"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <polygon
+                  class="emotion-1"
+                  points="12 4.94 16.95 9.89 18.36 8.47 12 2.11 5.64 8.47 7.05 9.89 12 4.94"
+                />
+                <polygon
+                  class="emotion-0"
+                  points="12 19.06 7.05 14.11 5.64 15.53 12 21.89 18.36 15.53 16.95 14.11 12 19.06"
+                />
+              </svg>
+            </span>
+          </th>
+          <th
+            class="emotion-4"
+            data-name="age"
+          >
+            Age
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="emotion-0"
+      >
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            1
+          </td>
+          <td
+            class="emotion-13"
+          >
+            MARIA MACHADO DE JESUS
+          </td>
+          <td
+            class="emotion-13"
+          >
+            42
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            2
+          </td>
+          <td
+            class="emotion-13"
+          >
+            JOSÉ DA SILVA MOREIRA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            34
+          </td>
+        </tr>
+        <tr
+          class="emotion-0"
+        >
+          <td
+            class="emotion-13"
+          >
+            3
+          </td>
+          <td
+            class="emotion-13"
+          >
+            ALICE BARBOSA
+          </td>
+          <td
+            class="emotion-13"
+          >
+            27
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      class="emotion-28"
+    >
+      <span
+        class="emotion-27"
+      >
+        <span>
+          3 results
+        </span>
+      </span>
     </div>
   </div>
 </div>

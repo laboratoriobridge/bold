@@ -42,7 +42,7 @@ it('should render correctly', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('render without sizeOptions', () => {
+it('should render without sizeOptions', () => {
   const sortHandler = jest.fn()
   const pageHandler = jest.fn()
   const sizeHandler = jest.fn()
@@ -68,7 +68,7 @@ it('render without sizeOptions', () => {
   expect(container).toMatchSnapshot()
 })
 
-it('sizeOptions first value minor than total elements', () => {
+it('should render correctly when total elements is bigger than sizeOption', () => {
   const sortHandler = jest.fn()
   const pageHandler = jest.fn()
   const sizeHandler = jest.fn()
@@ -81,7 +81,7 @@ it('sizeOptions first value minor than total elements', () => {
       totalPages={2}
       totalElements={3}
       sort={['-id', 'name']}
-      sizeOptions={[2, 4]}
+      sizeOptions={[2]}
       onSortChange={sortHandler}
       onPageChange={pageHandler}
       onSizeChange={sizeHandler}
