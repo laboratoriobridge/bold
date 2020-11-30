@@ -28,6 +28,7 @@ storiesOf('Components|Table', module).add('PagedTable', () => (
     totalElements={10}
     totalPages={1}
     sort={['-id', 'name']}
+    sizeOptions={[10, 30, 50, 100]}
     onSortChange={action('sort')}
     onPageChange={action('page-change')}
     onSizeChange={action('size-change')}

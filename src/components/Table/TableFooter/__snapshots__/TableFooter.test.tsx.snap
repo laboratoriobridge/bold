@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
+exports[`should renders correctly 1`] = `
 .emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -456,7 +456,7 @@ exports[`renders correctly 1`] = `
 </div>
 `;
 
-exports[`renders without pagination 1`] = `
+exports[`should renders correctly without pagination 1`] = `
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
