@@ -107,6 +107,9 @@ export interface BaseDateRangeInputProps {
    * @param dateRange
    */
   onChange?(dateRange: DateRange): void
+
+  onFocus?(e: React.FocusEvent<HTMLDivElement>): void
+  onBlur?(e: React.FocusEvent<HTMLDivElement>): void
 }
 
 export function BaseDateRangeInput(props: BaseDateRangeInputProps) {
