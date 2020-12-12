@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
 import { matchers } from 'jest-emotion'
 import React from 'react'
-import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
+import { DateRange } from '../../../DateRangePicker/BaseDateRangeInput'
 import { ControlledDateRangeCalendar, ControlledDateRangeCalendarProps } from './ControlledDateRangeCalendar'
 
 expect.extend(matchers)
@@ -34,7 +34,7 @@ describe('ControlledDateRangeCalendar', () => {
   it('With empty initialValues, should leave an empty interval', () => {
     const { getAllByRole } = render(createComponent())
     let index = 4
-    getAllByRole('button').forEach(item => {
+    getAllByRole('button').forEach((item) => {
       item[index] && expect(item.getAttribute('aria-selected')).toBe('false')
       index++
     })

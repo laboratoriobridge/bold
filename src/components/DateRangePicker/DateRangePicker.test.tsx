@@ -1,4 +1,4 @@
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, waitFor } from '@testing-library/react'
 import React from 'react'
 
 import * as DateFieldModule from '../DateField/DateField'
@@ -28,6 +28,20 @@ describe('DateRangePicker', () => {
     it('should render correctly when invalid', () => {
       const { container } = render(<DateRangePicker invalid />)
       expect(container).toMatchSnapshot()
+    })
+
+    it('should call onFocus and onBlur when one of the inputs has and lose focus', async () => {
+      const focus = jest.fn()
+      const blur = jest.fn()
+      const { container } = render(<DateRangePicker onFocus={focus} onBlur={blur} />)
+      const input = container.querySelectorAll('input')[0]
+      fireEvent.focus(input)
+      fireEvent.blur(input)
+
+      await waitFor(() => jest.useFakeTimers())
+
+      expect(focus).toHaveBeenCalledTimes(1)
+      expect(blur).toHaveBeenCalledTimes(1)
     })
 
     it('should show calendar correctly when inputs are cleaned', () => {
