@@ -28,6 +28,60 @@ it('should render correctly', () => {
       totalPages={1}
       totalElements={3}
       sort={['-id', 'name']}
+      sizeOptions={[10, 30, 50, 100]}
+      onSortChange={sortHandler}
+      onPageChange={pageHandler}
+      onSizeChange={sizeHandler}
+      columns={[
+        { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
+        { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
+        { name: 'age', header: 'Age', render: (row: Row) => row.age },
+      ]}
+    />
+  )
+  expect(container).toMatchSnapshot()
+})
+
+it('should render without sizeOptions', () => {
+  const sortHandler = jest.fn()
+  const pageHandler = jest.fn()
+  const sizeHandler = jest.fn()
+
+  const { container } = render(
+    <PagedTable
+      rows={rows}
+      page={0}
+      size={10}
+      totalPages={1}
+      totalElements={3}
+      sort={['-id', 'name']}
+      onSortChange={sortHandler}
+      onPageChange={pageHandler}
+      onSizeChange={sizeHandler}
+      columns={[
+        { name: 'id', header: 'ID', sortable: true, render: (row: Row) => row.id },
+        { name: 'name', header: 'Name', sortable: true, render: (row: Row) => row.name },
+        { name: 'age', header: 'Age', render: (row: Row) => row.age },
+      ]}
+    />
+  )
+  expect(container).toMatchSnapshot()
+})
+
+it('should render correctly when total elements is bigger than sizeOption', () => {
+  const sortHandler = jest.fn()
+  const pageHandler = jest.fn()
+  const sizeHandler = jest.fn()
+
+  const { container } = render(
+    <PagedTable
+      rows={rows}
+      page={0}
+      size={10}
+      totalPages={2}
+      totalElements={3}
+      sort={['-id', 'name']}
+      sizeOptions={[2]}
       onSortChange={sortHandler}
       onPageChange={pageHandler}
       onSizeChange={sizeHandler}

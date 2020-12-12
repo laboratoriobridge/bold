@@ -2,7 +2,11 @@ import React from 'react'
 
 const SvgRulerFilled = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
-    <path d='M16 4v16c0 1.333-.666 2-2 2h-4c-1.333 0-2-.667-2-2V4c0-1.333.667-2 2-2h4c1.334 0 2 .667 2 2zm0 2v13.004h-4V18h4v-2h-3v-1.004h3v-2h-4V12h4v-2h-3V9l3 .008V7h-4V6h4z' />
+    <path
+      clipRule='evenodd'
+      d='M4 20a2 2 0 002 2h3a2 2 0 002-2V4a2 2 0 00-2-2H6a2 2 0 00-2 2v16zm6-15H7v1h3V5zm0 2H8v1h2V7zm0 2H7v1h3V9zm0 2H8v1h2v-1zm0 2H7v1h3v-1zm0 2H8v1h2v-1zm0 2H7v1h3v-1zm0 2H8v1h2v-1z'
+    />
+    <path d='M19 2h-6v2h2v16h-2v2h6v-2h-2V4h2V2z' />
   </svg>
 )
 

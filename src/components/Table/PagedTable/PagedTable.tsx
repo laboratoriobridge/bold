@@ -27,6 +27,11 @@ export interface PagedTableProps<T> extends DataTableProps<T> {
   totalElements: number
 
   /**
+   * Allows customization of table size options
+   */
+  sizeOptions?: number[]
+
+  /**
    * Called when the current page is changed.
    * @param page The selected page.
    */
@@ -40,7 +45,7 @@ export interface PagedTableProps<T> extends DataTableProps<T> {
 }
 
 export function PagedTable<T>(props: PagedTableProps<T>) {
-  const { onPageChange, onSizeChange, page, size, totalPages, totalElements, ...rest } = props
+  const { onPageChange, onSizeChange, page, size, totalPages, totalElements, sizeOptions, ...rest } = props
 
   return (
     <TableContainer>
@@ -51,6 +56,7 @@ export function PagedTable<T>(props: PagedTableProps<T>) {
         pageSize={size}
         totalPages={totalPages}
         totalElements={totalElements}
+        sizeOptions={sizeOptions}
         onPageChange={onPageChange}
         onSizeChange={onSizeChange}
       />
