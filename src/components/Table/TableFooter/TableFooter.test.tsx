@@ -20,12 +20,12 @@ const TableFooterTest = (props: Partial<TableFooterProps>) => {
   )
 }
 
-it('renders correctly', () => {
+it('should renders correctly', () => {
   const { container } = render(<TableFooterTest />)
   expect(container).toMatchSnapshot()
 })
 
-it('renders without pagination', () => {
+it('should renders correctly without pagination', () => {
   const { container } = render(<TableFooterTest totalElements={10} />)
   expect(container).toMatchSnapshot()
 })

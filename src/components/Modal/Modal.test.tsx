@@ -1,6 +1,5 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
-
 import { Modal, ModalProps } from './Modal'
 
 jest.mock('../../util/string')
@@ -28,6 +27,25 @@ describe('Modal', () => {
         Testing.
       </Modal>
     )
+    expect(document.body).toMatchSnapshot()
+  })
+
+  it('should accept "depthLevel" prop and pass down to ModalContainer', () => {
+    render(
+      <Modal open={true} depthLevel={2}>
+        Testing.
+      </Modal>
+    )
+    expect(document.body).toMatchSnapshot()
+  })
+
+  it(`should'n add "overflow: hidden" property to document when manageOverflow is false`, () => {
+    render(
+      <Modal open={true} manageOverflow={false}>
+        Testing.
+      </Modal>
+    )
+    expect(document.body.classList).not.toContainEqual('oveflow')
     expect(document.body).toMatchSnapshot()
   })
 

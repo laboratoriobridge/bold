@@ -103,6 +103,7 @@ DateField.defaultProps = {
   onChange: () => null,
   onFocus: () => null,
   onClick: () => null,
+  transformTwoYearDigit: false,
 } as Partial<DateFieldProps>
 
 export const disableByRange = (minDate?: Date, maxDate?: Date) => {

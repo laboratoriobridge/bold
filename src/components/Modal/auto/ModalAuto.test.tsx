@@ -21,6 +21,35 @@ it('should render correctly', () => {
   expect(document.body).toMatchSnapshot()
 })
 
+it('should render correctly with depth', () => {
+  const component = (
+    <ModalAuto
+      dispose={jest.fn()}
+      render={() => <span>Body</span>}
+      depthLevel={3}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
+    />
+  )
+  const { rerender } = render(component)
+  rerender(component)
+  expect(document.body).toMatchSnapshot()
+})
+
+it(`should render correctly without 'overflow hidden' prop in document classList`, () => {
+  const component = (
+    <ModalAuto
+      dispose={jest.fn()}
+      render={() => <span>Body</span>}
+      manageOverflow={false}
+      actions={[{ label: 'Confirm', onClick: jest.fn() }]}
+    />
+  )
+  const { rerender } = render(component)
+  rerender(component)
+  expect(document.body.classList).not.toContainEqual('oveflow')
+  expect(document.body).toMatchSnapshot()
+})
+
 it('should open when mounted', () => {
   const component = <ModalAuto dispose={jest.fn()} render={() => <span>Body</span>} />
   const { rerender } = render(component)

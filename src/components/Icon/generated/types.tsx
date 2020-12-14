@@ -63,6 +63,8 @@ export type Icons =
   | 'copyOutline'
   | 'creditCardFilled'
   | 'creditCardOutline'
+  | 'crossFilled'
+  | 'crossOutline'
   | 'dataFilled'
   | 'dataOutline'
   | 'deaf'
@@ -72,6 +74,7 @@ export type Icons =
   | 'dogLeashed'
   | 'dots'
   | 'download'
+  | 'dragdrop'
   | 'dropFilled'
   | 'dropOutline'
   | 'dumbbellFilled'
@@ -91,6 +94,8 @@ export type Icons =
   | 'faucetOutline'
   | 'fileEmptyFilled'
   | 'fileEmptyOutline'
+  | 'fileVisualizationFilled'
+  | 'fileVisualizationOutline'
   | 'fileWithItensFilled'
   | 'fileWithItensOutline'
   | 'filterFilled'
@@ -99,6 +104,7 @@ export type Icons =
   | 'folderOutline'
   | 'gearFilled'
   | 'gearOutline'
+  | 'glucometer'
   | 'hamburguerMenu'
   | 'heartFilled'
   | 'heartOutline'
@@ -121,10 +127,12 @@ export type Icons =
   | 'lightbulbOutline'
   | 'link'
   | 'list'
+  | 'loading'
   | 'lockCloseFilled'
   | 'lockCloseOutline'
   | 'lockOpenFilled'
   | 'lockOpenOutline'
+  | 'lungs'
   | 'mapFilled'
   | 'mapMarkerFilled'
   | 'mapMarkerOutline'
@@ -142,7 +150,9 @@ export type Icons =
   | 'multipleUsersOutline'
   | 'needleFilled'
   | 'needleOutline'
+  | 'nurse'
   | 'nurseOutline'
+  | 'nurseView'
   | 'nurseVisualizationOutline'
   | 'o2Filled'
   | 'openDoor'
@@ -167,6 +177,7 @@ export type Icons =
   | 'presentationOutline'
   | 'printerFilled'
   | 'printerOutline'
+  | 'qrCode'
   | 'questionMarkFilled'
   | 'questionMarkOutline'
   | 'quoteLeft'
@@ -208,6 +219,7 @@ export type Icons =
   | 'userCheck'
   | 'userFilled'
   | 'userOutline'
+  | 'userReturn'
   | 'userTimes'
   | 'videoFilled'
   | 'videoOutline'
@@ -290,6 +302,8 @@ export const IconMap: {
   copyOutline: Components.CopyOutline,
   creditCardFilled: Components.CreditCardFilled,
   creditCardOutline: Components.CreditCardOutline,
+  crossFilled: Components.CrossFilled,
+  crossOutline: Components.CrossOutline,
   dataFilled: Components.DataFilled,
   dataOutline: Components.DataOutline,
   deaf: Components.Deaf,
@@ -299,6 +313,7 @@ export const IconMap: {
   dogLeashed: Components.DogLeashed,
   dots: Components.Dots,
   download: Components.Download,
+  dragdrop: Components.Dragdrop,
   dropFilled: Components.DropFilled,
   dropOutline: Components.DropOutline,
   dumbbellFilled: Components.DumbbellFilled,
@@ -318,6 +333,8 @@ export const IconMap: {
   faucetOutline: Components.FaucetOutline,
   fileEmptyFilled: Components.FileEmptyFilled,
   fileEmptyOutline: Components.FileEmptyOutline,
+  fileVisualizationFilled: Components.FileVisualizationFilled,
+  fileVisualizationOutline: Components.FileVisualizationOutline,
   fileWithItensFilled: Components.FileWithItensFilled,
   fileWithItensOutline: Components.FileWithItensOutline,
   filterFilled: Components.FilterFilled,
@@ -326,6 +343,7 @@ export const IconMap: {
   folderOutline: Components.FolderOutline,
   gearFilled: Components.GearFilled,
   gearOutline: Components.GearOutline,
+  glucometer: Components.Glucometer,
   hamburguerMenu: Components.HamburguerMenu,
   heartFilled: Components.HeartFilled,
   heartOutline: Components.HeartOutline,
@@ -348,10 +366,12 @@ export const IconMap: {
   lightbulbOutline: Components.LightbulbOutline,
   link: Components.Link,
   list: Components.List,
+  loading: Components.Loading,
   lockCloseFilled: Components.LockCloseFilled,
   lockCloseOutline: Components.LockCloseOutline,
   lockOpenFilled: Components.LockOpenFilled,
   lockOpenOutline: Components.LockOpenOutline,
+  lungs: Components.Lungs,
   mapFilled: Components.MapFilled,
   mapMarkerFilled: Components.MapMarkerFilled,
   mapMarkerOutline: Components.MapMarkerOutline,
@@ -369,7 +389,9 @@ export const IconMap: {
   multipleUsersOutline: Components.MultipleUsersOutline,
   needleFilled: Components.NeedleFilled,
   needleOutline: Components.NeedleOutline,
+  nurse: Components.Nurse,
   nurseOutline: Components.NurseOutline,
+  nurseView: Components.NurseView,
   nurseVisualizationOutline: Components.NurseVisualizationOutline,
   o2Filled: Components.O2Filled,
   openDoor: Components.OpenDoor,
@@ -394,6 +416,7 @@ export const IconMap: {
   presentationOutline: Components.PresentationOutline,
   printerFilled: Components.PrinterFilled,
   printerOutline: Components.PrinterOutline,
+  qrCode: Components.QrCode,
   questionMarkFilled: Components.QuestionMarkFilled,
   questionMarkOutline: Components.QuestionMarkOutline,
   quoteLeft: Components.QuoteLeft,
@@ -435,6 +458,7 @@ export const IconMap: {
   userCheck: Components.UserCheck,
   userFilled: Components.UserFilled,
   userOutline: Components.UserOutline,
+  userReturn: Components.UserReturn,
   userTimes: Components.UserTimes,
   videoFilled: Components.VideoFilled,
   videoOutline: Components.VideoOutline,
