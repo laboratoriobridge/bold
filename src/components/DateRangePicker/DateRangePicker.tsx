@@ -21,6 +21,8 @@ export interface DateRangePickerProps extends DateRangePickerInputProps {
   icon?: Icons
   calendarProps?: Partial<ControlledDateRangeCalendarProps>
   popperProps?: PopperOptions
+  onFocus?(e: React.FocusEvent<HTMLDivElement>): void
+  onBlur?(e: React.FocusEvent<HTMLDivElement>): void
 }
 
 export function DateRangePicker(props: DateRangePickerProps) {
