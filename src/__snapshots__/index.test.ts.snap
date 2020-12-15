@@ -16,7 +16,7 @@ Array [
   "Currency",
   "DateInput",
   "DateField",
-  "DateRangeField",
+  "DateRangePicker",
   "Dropdown",
   "DropdownDivider",
   "DropdownItem",

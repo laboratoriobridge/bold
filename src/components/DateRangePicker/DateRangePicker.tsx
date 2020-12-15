@@ -13,18 +13,20 @@ import {
   ControlledDateRangeCalendar,
 } from '../Calendar/RangeCalendar/DateRangeCalendar/ControlledDateRangeCalendar'
 import { DateRange } from './BaseDateRangeInput'
-import { DateRangeInput, DateRangeInputProps } from './DateRangeInput'
+import { DateRangePickerInput, DateRangePickerInputProps } from './DateRangePickerInput'
 
-export interface DateRangeFieldProps extends DateRangeInputProps {
+export interface DateRangePickerProps extends DateRangePickerInputProps {
   minDate?: Date
   maxDate?: Date
   icon?: Icons
   calendarProps?: Partial<ControlledDateRangeCalendarProps>
   popperProps?: PopperOptions
+  onFocus?(e: React.FocusEvent<HTMLDivElement>): void
+  onBlur?(e: React.FocusEvent<HTMLDivElement>): void
 }
 
-export function DateRangeField(props: DateRangeFieldProps) {
-  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, ...rest } = props
+export function DateRangePicker(props: DateRangePickerProps) {
+  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, onFocus, onBlur, ...rest } = props
 
   const [dateRangeInputFocus, setDateRangeInputFocus] = useState(1)
   const [visibleDate, setVisibleDate] = useState<Date>(new Date())
@@ -63,9 +65,15 @@ export function DateRangeField(props: DateRangeFieldProps) {
 
   const handleOnDayClick = (dayClicked: Date) => finalInputRef.current.focus()
 
-  const handleFocusIn = () => setOpen(true)
+  const handleFocusIn = (event: React.FocusEvent<HTMLDivElement>) => {
+    onFocus && onFocus(event)
+    setOpen(true)
+  }
 
-  const handleFocusOut = () => setOpen(false)
+  const handleFocusOut = (event: React.FocusEvent<HTMLDivElement>) => {
+    onBlur && onBlur(event)
+    setOpen(false)
+  }
 
   const handleDateRangeChanged = (rangeDateFromBaseInput: DateRange) => {
     onChange(rangeDateFromBaseInput)
@@ -84,7 +92,7 @@ export function DateRangeField(props: DateRangeFieldProps) {
 
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
-      <DateRangeInput
+      <DateRangePickerInput
         value={value}
         onChange={handleDateRangeChanged}
         divRef={setAnchorRef}
