@@ -4,7 +4,7 @@ import { Theme } from '../../../../styles'
 import { CalendarProps } from '../../Calendar'
 import { isSameDay } from '../../util'
 import { GenericRangeCalendar } from '../GenericRangeCalendar/GenericRangeCalendar'
-import { DateRange } from '../../../DateRangeField'
+import { DateRange } from '../../../DateRangePicker'
 
 export interface DateRangeCalendarProps extends CalendarProps {
   value: DateRange

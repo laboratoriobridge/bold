@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CalendarProps } from '../..'
 
-import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
+import { DateRange } from '../../../DateRangePicker/BaseDateRangeInput'
 import { DateRangeCalendar } from './DateRangeCalendar'
 
 export interface ControlledDateRangeCalendarProps extends CalendarProps {

@@ -1,4 +1,4 @@
-import { DateRangeField, DateRange } from 'bold-ui'
+import { DateRangePicker, DateRange } from 'bold-ui'
 import React, { useState } from 'react'
 
 function DateRangePickerExample() {
@@ -10,7 +10,7 @@ function DateRangePickerExample() {
   const handleChange = (selectedDate: DateRange) => setValue(selectedDate)
 
   return (
-    <DateRangeField error='' icon='calendarOutline' label='Period' onChange={handleChange} required value={value} />
+    <DateRangePicker error='' icon='calendarOutline' label='Period' onChange={handleChange} required value={value} />
   )
 }
 
