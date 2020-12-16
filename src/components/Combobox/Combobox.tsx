@@ -1,7 +1,9 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import React, { useState } from 'react'
-import { Button } from '../Button'
+import { useLocale } from '../../i18n'
+import { Button, ButtonProps } from '../Button'
 import { FormControl, FormControlProps } from '../FormControl'
+import { Icon, Icons } from '../Icon'
 import { TextInput, TextInputProps } from '../TextField'
 
 export interface ComboboxProps<T = string> extends TextInputProps {
@@ -14,6 +16,7 @@ export interface ComboboxProps<T = string> extends TextInputProps {
 export function Combobox<T = string>(props: ComboboxProps<T>) {
   const { items, itemToString, label, openOnFocus = true, ...rest } = props
   const [visibleItems, setVisibleItems] = useState<T[]>(items) // TODO: change when props chang
+  const locale = useLocale()
 
   const {
     isOpen,
@@ -35,14 +38,6 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     },
   })
 
-  console.log({
-    getInputProps: getInputProps(),
-    getLabelProps: getLabelProps(),
-    getComboboxProps: getComboboxProps(),
-    getToggleButtonProps: getToggleButtonProps(),
-    getMenuProps: getMenuProps(),
-  })
-
   const downshiftComboboxProps = getComboboxProps()
   const downshiftInputProps = getInputProps({
     refKey: 'inputRef',
@@ -50,13 +45,23 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   })
   const { id: labelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
-  // TODO: {...getToggleButtonProps({})} aria-label='toggle menu'
 
   return (
     <div {...downshiftComboboxProps}>
       <FormControl label={label} labelId={labelId} {...downshiftLabelProps}>
-        <TextInput {...downshiftInputProps} {...rest} />
-        <Button />
+        <TextInput
+          icon={
+            <DropdownButton
+              icon={isOpen ? 'angleUp' : 'angleDown'}
+              {...getToggleButtonProps({
+                'aria-label': isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions,
+              })}
+            />
+          }
+          iconPosition='right'
+          {...downshiftInputProps}
+          {...rest}
+        />
       </FormControl>
 
       <div {...downshiftMenuProps}>
@@ -78,7 +83,32 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   )
 }
 
-export function stateReducer<T>(
+interface DropdownButtonProps extends ButtonProps {
+  icon: Icons
+}
+
+function DropdownButton(props: DropdownButtonProps) {
+  const { onClick, icon, ...rest } = props
+  return (
+    <Button
+      size='small'
+      skin='ghost'
+      tabIndex={-1}
+      onClick={onClick}
+      style={{
+        borderRadius: 'inherit',
+        '&:focus': {
+          boxShadow: 'none',
+        },
+      }}
+      {...rest}
+    >
+      <Icon icon={icon} />
+    </Button>
+  )
+}
+
+function stateReducer<T>(
   state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
 ): UseComboboxState<T> {

@@ -41,6 +41,10 @@ const locale: LocaleConfiguration = {
     loadingItem: 'Carregando...',
     removeItem: 'Remover',
   },
+  combobox: {
+    showOptions: 'Mostrar opções',
+    hideOptions: 'Esconder opções',
+  },
   tableFooter: {
     results: {
       zero: 'resultados',

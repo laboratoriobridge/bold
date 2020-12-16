@@ -39,6 +39,10 @@ const locale = {
     loadingItem: 'Loading...',
     removeItem: 'Remove',
   },
+  combobox: {
+    showOptions: 'Show options',
+    hideOptions: 'Hide options',
+  },
   tableFooter: {
     results: {
       zero: 'results',
