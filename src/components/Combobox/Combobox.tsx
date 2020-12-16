@@ -1,5 +1,6 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import React, { useState } from 'react'
+import { Button } from '../Button'
 import { FormControl, FormControlProps } from '../FormControl'
 import { TextInput, TextInputProps } from '../TextField'
 
@@ -55,6 +56,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     <div {...downshiftComboboxProps}>
       <FormControl label={label} labelId={labelId} {...downshiftLabelProps}>
         <TextInput {...downshiftInputProps} {...rest} />
+        <Button />
       </FormControl>
 
       <div {...downshiftMenuProps}>
