@@ -49,7 +49,6 @@ it('has aria-compliant attributes', () => {
   expect(input).toHaveAttribute('aria-controls', listbox.getAttribute('id'))
   expect(input).toHaveAttribute('aria-labelledby', label.getAttribute('id'))
 
-  expect(dropdownButton).toHaveAttribute('id')
   expect(dropdownButton).toHaveAttribute('tabindex', '-1')
   expect(dropdownButton).toHaveAttribute('aria-label')
 

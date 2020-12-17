@@ -7,8 +7,9 @@ import { Icons } from '../Icon/generated/types'
 import { Icon } from '../Icon/Icon'
 
 export interface InputWrapperProps {
-  icon?: Icons | React.ReactNode
+  icon?: Icons
   iconPosition?: 'left' | 'right'
+  iconAriaLabel?: string
   iconDisabled?: boolean
   clearVisible?: boolean
   onIconClick?: ButtonProps['onClick']
@@ -17,7 +18,7 @@ export interface InputWrapperProps {
 }
 
 export function InputWrapper(props: InputWrapperProps) {
-  const { children, icon, iconDisabled, onIconClick, clearVisible, onClear } = props
+  const { children, icon, iconDisabled, iconAriaLabel, onIconClick, clearVisible, onClear } = props
   const iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left')
   const { classes, css } = useStyles(createStyles, { icon, iconPosition, clearVisible, onIconClick })
   const locale = useLocale()
@@ -33,30 +34,34 @@ export function InputWrapper(props: InputWrapperProps) {
       {children}
 
       {clearVisible && (
-        <span role='button' title={locale.input.clear} tabIndex={-1} onClick={onClear} className={classes.clearButton}>
+        <span
+          role='button'
+          title={locale.input.clear}
+          tabIndex={-1}
+          onClick={onClear}
+          className={classes.clearButton}
+          aria-label={iconAriaLabel}
+        >
           <Icon size={1.5} icon='timesDefault' />
         </span>
       )}
 
       {icon && (
         <span className={iconBoxClasses}>
-          {typeof icon === 'string' ? (
-            onIconClick ? (
-              <Button
-                size='small'
-                skin='ghost'
-                tabIndex={-1}
-                onClick={onIconClick}
-                style={classes.icon}
-                disabled={iconDisabled}
-              >
-                <Icon icon={icon as Icons} />
-              </Button>
-            ) : (
-              <Icon icon={icon as Icons} style={classes.icon} />
-            )
+          {onIconClick ? (
+            <Button
+              size='small'
+              skin='ghost'
+              tabIndex={-1}
+              onClick={onIconClick}
+              style={classes.icon}
+              disabled={iconDisabled}
+              aria-label={iconAriaLabel}
+            >
+              <Icon icon={icon} />
+            </Button>
           ) : (
-            icon
+            <Icon icon={icon} style={classes.icon} aria-label={iconAriaLabel} />
           )}
         </span>
       )}

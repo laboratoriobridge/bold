@@ -1,9 +1,7 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import React, { useState } from 'react'
 import { useLocale } from '../../i18n'
-import { Button, ButtonProps } from '../Button'
 import { FormControl, FormControlProps } from '../FormControl'
-import { Icon, Icons } from '../Icon'
 import { TextInput, TextInputProps } from '../TextField'
 
 export interface ComboboxProps<T = string> extends TextInputProps {
@@ -21,13 +19,13 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
     isOpen,
     highlightedIndex,
-    getToggleButtonProps,
     getLabelProps,
     getMenuProps,
     getInputProps,
     getComboboxProps,
     getItemProps,
     openMenu,
+    toggleMenu,
   } = useCombobox({
     items: visibleItems,
     itemToString,
@@ -50,15 +48,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     <div {...downshiftComboboxProps}>
       <FormControl label={label} labelId={labelId} {...downshiftLabelProps}>
         <TextInput
-          icon={
-            <DropdownButton
-              icon={isOpen ? 'angleUp' : 'angleDown'}
-              {...getToggleButtonProps({
-                'aria-label': isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions,
-              })}
-            />
-          }
+          icon={isOpen ? 'angleUp' : 'angleDown'}
+          iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
+          onIconClick={toggleMenu}
           {...downshiftInputProps}
           {...rest}
         />
@@ -80,31 +73,6 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
         )}
       </div>
     </div>
-  )
-}
-
-interface DropdownButtonProps extends ButtonProps {
-  icon: Icons
-}
-
-function DropdownButton(props: DropdownButtonProps) {
-  const { onClick, icon, ...rest } = props
-  return (
-    <Button
-      size='small'
-      skin='ghost'
-      tabIndex={-1}
-      onClick={onClick}
-      style={{
-        borderRadius: 'inherit',
-        '&:focus': {
-          boxShadow: 'none',
-        },
-      }}
-      {...rest}
-    >
-      <Icon icon={icon} />
-    </Button>
   )
 }
 
