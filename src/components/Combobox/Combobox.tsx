@@ -1,4 +1,5 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
+import matchSorter from 'match-sorter'
 import React, { useState } from 'react'
 import { useLocale } from '../../i18n'
 import { FormControl, FormControlProps } from '../FormControl'
@@ -7,12 +8,20 @@ import { TextInput, TextInputProps } from '../TextField'
 export interface ComboboxProps<T = string> extends TextInputProps {
   items: T[]
   label?: FormControlProps['label']
-  openOnFocus?: boolean
+  openOnFocus: boolean
   itemToString(item: T): string
+  filter?(items: T[], filter: string): T[]
 }
 
 export function Combobox<T = string>(props: ComboboxProps<T>) {
-  const { items, itemToString, label, openOnFocus = true, ...rest } = props
+  const {
+    items,
+    itemToString,
+    label,
+    openOnFocus,
+    filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    ...rest
+  } = props
   const [visibleItems, setVisibleItems] = useState<T[]>(items) // TODO: change when props chang
   const locale = useLocale()
 
@@ -31,8 +40,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     itemToString,
     stateReducer,
     onInputValueChange: ({ inputValue }) => {
-      // TODO: use correct filter function here
-      setVisibleItems(items.filter((item) => itemToString(item).toLowerCase().startsWith(inputValue.toLowerCase())))
+      setVisibleItems(filter(items, inputValue))
     },
   })
 
@@ -75,6 +83,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     </div>
   )
 }
+
+Combobox.defaultProps = {
+  openOnFocus: true,
+} as Partial<ComboboxProps>
 
 function stateReducer<T>(
   state: UseComboboxState<T>,

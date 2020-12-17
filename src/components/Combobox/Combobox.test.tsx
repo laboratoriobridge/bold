@@ -60,7 +60,7 @@ it('has aria-compliant attributes', () => {
   expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
 })
 
-it('opens menu when input is focused and `openOnFocus` prop is true', () => {
+it('opens menu when input is focused and only when `openOnFocus` prop is true', () => {
   const { baseElement, rerender } = render(<ComboboxTest />)
   const input = baseElement.querySelector('input')
 
