@@ -22,7 +22,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
   } = props
-  const [visibleItems, setVisibleItems] = useState<T[]>(items) // TODO: change when props chang
+
+  const [currentFilter, setCurrentFilter] = useState('')
+  const visibleItems = filter(items, currentFilter)
+
   const locale = useLocale()
 
   const {
@@ -40,7 +43,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     itemToString,
     stateReducer,
     onInputValueChange: ({ inputValue }) => {
-      setVisibleItems(filter(items, inputValue))
+      setCurrentFilter(inputValue)
     },
   })
 
