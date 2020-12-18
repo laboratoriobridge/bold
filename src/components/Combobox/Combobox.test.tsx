@@ -1,6 +1,5 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import { act } from 'react-dom/test-utils'
+import { act, render, fireEvent, RenderResult } from '@testing-library/react'
 import { Combobox, ComboboxProps } from './Combobox'
 
 interface Fruit {
@@ -27,10 +26,13 @@ const ComboboxTest = (props: Partial<ComboboxProps<Fruit>>) => (
   <Combobox<typeof fruits[0]> items={fruits} itemToString={(item) => item.label} {...props} />
 )
 
-it('has aria-compliant attributes', () => {
+it('has aria-compliant attributes', async () => {
   // From https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
-
-  const { baseElement } = render(<ComboboxTest label='Fruits' />)
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' />)
+    baseElement = result.baseElement
+  })
   const combobox = baseElement.querySelector('[role="combobox"]')
   const label = baseElement.querySelector('label')
   const input = baseElement.querySelector('input')
@@ -56,41 +58,65 @@ it('has aria-compliant attributes', () => {
   expect(listbox).toHaveAttribute('id')
   expect(listbox).toHaveAttribute('aria-labelledby', label.getAttribute('id'))
 
-  fireEvent.click(dropdownButton)
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
   expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
 })
 
-it('opens menu when input is focused and only when `openOnFocus` prop is true', () => {
-  const { baseElement, rerender } = render(<ComboboxTest />)
+it('opens menu when input is focused and only when `openOnFocus` prop is true', async () => {
+  let baseElement: RenderResult['baseElement']
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    const result = render(<ComboboxTest />)
+    baseElement = result.baseElement
+    rerender = result.rerender
+  })
   const input = baseElement.querySelector('input')
 
   // initial state has closed menu
   expect(baseElement.querySelector('ul')).toBeFalsy()
 
   // focus input to open menu
-  fireEvent.focus(input)
+  await act(async () => {
+    fireEvent.focus(input)
+  })
   expect(baseElement.querySelector('ul')).toBeTruthy()
 
   // blur input to close menu
-  fireEvent.blur(input)
+  await act(async () => {
+    fireEvent.blur(input)
+  })
   expect(baseElement.querySelector('ul')).toBeFalsy()
   // rerenders switching prop
-  act(() => rerender(<ComboboxTest openOnFocus={false} />))
+  await act(async () => rerender(<ComboboxTest openOnFocus={false} />))
 
   // focus input and now menu should not be open
-  fireEvent.focus(input)
+  await act(async () => {
+    fireEvent.focus(input)
+  })
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
-it('renders correcly closed', () => {
-  const { baseElement } = render(<ComboboxTest label='Fruits' />)
+it('renders correcly closed', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' />)
+    baseElement = result.baseElement
+  })
   expect(baseElement).toMatchSnapshot()
 })
 
-it('renders correcly opened', () => {
-  const { baseElement } = render(<ComboboxTest label='Fruits' />)
+it('renders correcly opened', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' />)
+    baseElement = result.baseElement
+  })
   const dropdownButton = baseElement.querySelector('button')
-  fireEvent.click(dropdownButton)
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
   expect(baseElement).toMatchSnapshot()
 })
