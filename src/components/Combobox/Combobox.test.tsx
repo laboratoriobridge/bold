@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
+import { act } from 'react-dom/test-utils'
 import { Combobox, ComboboxProps } from './Combobox'
 
 interface Fruit {
@@ -74,11 +75,22 @@ it('opens menu when input is focused and only when `openOnFocus` prop is true', 
   // blur input to close menu
   fireEvent.blur(input)
   expect(baseElement.querySelector('ul')).toBeFalsy()
-
   // rerenders switching prop
-  rerender(<ComboboxTest openOnFocus={false} />)
+  act(() => rerender(<ComboboxTest openOnFocus={false} />))
 
   // focus input and now menu should not be open
   fireEvent.focus(input)
   expect(baseElement.querySelector('ul')).toBeFalsy()
+})
+
+it('renders correcly closed', () => {
+  const { baseElement } = render(<ComboboxTest label='Fruits' />)
+  expect(baseElement).toMatchSnapshot()
+})
+
+it('renders correcly opened', () => {
+  const { baseElement } = render(<ComboboxTest label='Fruits' />)
+  const dropdownButton = baseElement.querySelector('button')
+  fireEvent.click(dropdownButton)
+  expect(baseElement).toMatchSnapshot()
 })
