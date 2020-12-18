@@ -17,14 +17,14 @@ const fruits = [
   { value: 12, label: 'Pear' },
 ]
 
-storiesOf('Components|Combobox', module).add('basic', () => (
+storiesOf('Components|Combobox', module).add('default', () => (
   <Combobox<typeof fruits[0]>
     label='Fruit'
     name='fruit'
     items={fruits}
     //   error={text('error', '')}
     //   menuMinWidth={number('menuMinWidth (px)', undefined)}
-    itemToString={(item) => item.label}
+    itemToString={(item) => item?.label}
     //   itemIsEqual={(a, b) => a.value === b.value}
     //   placeholder='Select a value...'
     //   multiple={boolean('multiple', false)}

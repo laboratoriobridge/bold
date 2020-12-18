@@ -45,12 +45,16 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     getItemProps,
     openMenu,
     toggleMenu,
+    closeMenu,
   } = useCombobox({
     items: visibleItems,
     itemToString,
     stateReducer,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
+    },
+    onSelectedItemChange: () => {
+      closeMenu()
     },
   })
 

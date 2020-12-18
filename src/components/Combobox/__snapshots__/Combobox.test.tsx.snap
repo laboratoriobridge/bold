@@ -177,15 +177,6 @@ exports[`renders correcly closed 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  >
-    12 results are available, use up and down arrow keys to navigate. Press Enter key to select.
-  </div>
   <div>
     <div
       aria-expanded="false"
@@ -488,15 +479,6 @@ exports[`renders correcly opened 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  >
-    12 results are available, use up and down arrow keys to navigate. Press Enter key to select.
-  </div>
   <div>
     <div
       aria-expanded="true"
