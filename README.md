@@ -1,13 +1,16 @@
-# Bold
 
 React implementation of the **Bold Design System**.
+
+# Welcome to bold, bridge’s open source design system. 
+
+Access bold website to see more about guidelines and components. https://bold.bridge.ufsc.br/
+
+Bold has also a file in [Figma Comunnity](https://www.figma.com/community/file/918488838987058594/Bold-Design-System).
 
 [![Build Status](https://travis-ci.org/laboratoriobridge/bold.svg?branch=master)](https://travis-ci.org/laboratoriobridge/bold)
 [![codecov](https://codecov.io/gh/laboratoriobridge/bold/branch/master/graph/badge.svg)](https://codecov.io/gh/laboratoriobridge/bold)
 
-https://bold.bridge.ufsc.br/
-
-## WARNING: Beta phase
+## Beta phase
 
 This project is currently in beta phase (`1.0.0-beta.*` versions) and its API may change without following semver.
 
