@@ -19,16 +19,39 @@ export interface MonthViewProps {
   renderWeekName?(firstWeekDay: Date): React.ReactNode
   createDayStyles?(day: Date, props: MonthViewProps): Interpolation
   isDaySelected?(day: Date): boolean
+
+  onWeekClick?(week: Date[]): void
+  onWeekHover?(week: Date[]): void
+  createWeekStyles?(week: Date[], props: MonthViewProps): Interpolation
+  isWeekSelected?(week: number): boolean
+
+  onlyWeeks?: boolean
 }
 
 export function MonthView(props: MonthViewProps) {
-  const { visibleDate, renderDay, renderWeekName, createDayStyles, onDayClick, onDayHover } = props
+  const {
+    onlyWeeks,
+    visibleDate,
+    renderDay,
+    renderWeekName,
+    onDayClick,
+    onDayHover,
+    onWeekClick,
+    onWeekHover,
+    createWeekStyles,
+    createDayStyles,
+  } = props
   const { classes, css } = useStyles(createStyles)
 
   const month = useMemo(() => createMonthMatrix(visibleDate), [visibleDate])
-  const handleDayClick = useCallback((day: Date) => () => onDayClick(day), [onDayClick])
-  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
 
+  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
+  const handleDayClick = useCallback((day: Date) => () => onDayClick(day), [onDayClick])
+
+  const handleWeekClick = useCallback((week: Date[]) => () => onWeekClick(week), [onWeekClick])
+  const handleWeekHover = useCallback((week: Date[]) => () => onWeekHover(week), [onWeekHover])
+
+  console.log()
   return (
     <table className={classes.table}>
       <thead>
@@ -40,15 +63,20 @@ export function MonthView(props: MonthViewProps) {
       </thead>
       <tbody>
         {month.map((week, w) => (
-          <tr key={w}>
+          <tr
+            key={w}
+            className={onlyWeeks ? css(classes.week, createWeekStyles(week, props)) : undefined}
+            onClick={onlyWeeks ? handleWeekClick(week) : undefined}
+            onMouseOver={onlyWeeks ? handleWeekHover(week) : undefined}
+          >
             {week.map((day, d) => (
               <td key={d} data-date={day.toISOString().slice(0, 10)}>
                 <span
-                  className={css(classes.day, createDayStyles(day, props))}
-                  onClick={handleDayClick(day)}
-                  onMouseOver={handleDayHover(day)}
+                  className={onlyWeeks ? undefined : css(classes.day, createDayStyles(day, props))}
+                  onClick={onlyWeeks ? undefined : handleDayClick(day)}
+                  onMouseOver={onlyWeeks ? undefined : handleDayHover(day)}
                   role='button'
-                  aria-selected={props.isDaySelected && props.isDaySelected(day)}
+                  aria-selected={onlyWeeks ? undefined : props.isDaySelected && props.isDaySelected(day)}
                 >
                   {renderDay(day)}
                 </span>
@@ -64,15 +92,20 @@ export function MonthView(props: MonthViewProps) {
 MonthView.defaultProps = {
   onDayClick: () => null,
   onDayHover: () => null,
-  renderDay: day => {
+
+  onWeekClick: () => null,
+  onWeekHover: () => null,
+
+  renderDay: (day) => {
     const dayFormatter = new Intl.DateTimeFormat(getUserLocale(), { day: '2-digit' })
     return dayFormatter.format(day)
   },
-  renderWeekName: firstWeekDay => {
+  renderWeekName: (firstWeekDay) => {
     const weekFormatter = new Intl.DateTimeFormat(getUserLocale(), { weekday: 'narrow' })
     return weekFormatter.format(firstWeekDay)
   },
   createDayStyles: () => null,
+  createWeekStyles: () => null,
 } as Partial<MonthViewProps>
 
 export const createStyles = (theme: Theme) => ({
@@ -96,6 +129,15 @@ export const createStyles = (theme: Theme) => ({
     ':hover': {
       cursor: 'pointer',
       background: theme.pallete.surface.background,
+    },
+  } as CSSProperties,
+  week: {
+    padding: '0.25rem 0',
+
+    ':hover': {
+      cursor: 'pointer',
+      background: theme.pallete.surface.background,
+      borderRadius: '90%',
     },
   } as CSSProperties,
   active: {

@@ -23,10 +23,23 @@ export interface DateRangePickerProps extends DateRangePickerInputProps {
   popperProps?: PopperOptions
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
   onBlur?(e: React.FocusEvent<HTMLDivElement>): void
+  onlyWeeks: boolean
 }
 
 export function DateRangePicker(props: DateRangePickerProps) {
-  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, onFocus, onBlur, ...rest } = props
+  const {
+    onChange,
+    popperProps,
+    minDate,
+    maxDate,
+    value,
+    icon,
+    calendarProps,
+    onFocus,
+    onBlur,
+    onlyWeeks,
+    ...rest
+  } = props
 
   const [dateRangeInputFocus, setDateRangeInputFocus] = useState(1)
   const [visibleDate, setVisibleDate] = useState<Date>(new Date())
@@ -81,6 +94,7 @@ export function DateRangePicker(props: DateRangePickerProps) {
 
   const handleCalendarDateRangeChanged = (dateRange: DateRange) => {
     const { startDate, endDate } = dateRange
+    console.log()
     startDate && endDate
       ? startDate <= endDate
         ? onChange({ startDate: startDate, endDate: endDate } as DateRange)
@@ -123,6 +137,7 @@ export function DateRangePicker(props: DateRangePickerProps) {
             modifiers={{
               disabled: disableByRange(minDate, maxDate),
             }}
+            onlyWeeks={onlyWeeks}
             {...calendarProps}
           />
         </div>

@@ -44,6 +44,7 @@ export const createWeekArray = (target: Date): Date[] => {
  * @returns A new array of array of dates containing all month dates.
  */
 export const createMonthMatrix = (target: Date): Date[][] => {
+  target.setHours(0, 0, 0, 0)
   const firstDayOfMonth = getFirstDayOfMonth(target)
   const lastDayOfMonth = getLastDayOfMonth(target)
   const weeks = []
@@ -73,6 +74,11 @@ export const createMonthMatrix = (target: Date): Date[][] => {
  */
 export const isSameDay = (d1: Date, d2: Date): boolean => {
   return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()
+}
+
+export const isSameWeek = (date: Date, week: Date[]): boolean => {
+  date.setHours(0, 0, 0, 0)
+  return week.some((d) => isSameDay(date, d))
 }
 
 /**

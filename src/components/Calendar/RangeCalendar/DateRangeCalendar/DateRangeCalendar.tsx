@@ -20,14 +20,18 @@ export function DateRangeCalendar({ value, inputOnFocus, maxDate, minDate, ...re
     day?.setHours(0, 0, 0, 0)
 
     if (!value?.startDate) {
+      // se nao tem uma startDate
       if (value?.endDate) {
-        return isSameDay(day, value?.endDate)
+        // se tem uma endDate
+        return isSameDay(day, value?.endDate) // verifica se o day eh igual ao endDate -> se for, retorna true
       } else {
+        // nao tem nenhuma das duas
         return false
       }
     }
     if (!value.endDate) {
-      return isSameDay(day, value?.startDate)
+      // se nao tem uma endDate
+      return isSameDay(day, value?.startDate) // verificar se o day eh igual ao startDate -> se for, retorna true
     }
     if ((value?.startDate <= day && day <= value?.endDate) || (value?.endDate <= day && day <= value?.startDate)) {
       return true
@@ -37,16 +41,22 @@ export function DateRangeCalendar({ value, inputOnFocus, maxDate, minDate, ...re
 
   const hoverControl = (day: Date, hoverDate: Date) => {
     if (!value?.startDate && !value?.endDate) {
+      // se nao tem um range, verifica se day e hoverDate sao as mesmas
       return isSameDay(day, hoverDate)
     } else if (inputOnFocus) {
+      // senao, verifica se tem uma input em foco
       if (!value?.startDate && value?.endDate) {
+        // se nao tem uma startDate mas tem uma endDate
         if (inputOnFocus === 1) {
+          // se eh a primeira input
           return (value?.endDate < day && hoverDate >= day) || (value?.endDate > day && hoverDate <= day)
         } else {
           return isSameDay(day, hoverDate)
         }
       } else if (value?.startDate && !value?.endDate) {
+        // se tem a startDate e nao tem a endDate
         if (inputOnFocus === 2) {
+          // se eh a segunda input
           return (value?.startDate < day && hoverDate >= day) || (value?.startDate > day && hoverDate <= day)
         } else {
           return isSameDay(day, hoverDate)
@@ -61,8 +71,9 @@ export function DateRangeCalendar({ value, inputOnFocus, maxDate, minDate, ...re
     }
   }
 
-  const isInHoverRange = (day: Date, hoverDate: Date) =>
-    hoverDate && (!minDate || day >= minDate) && (!maxDate || day <= maxDate) && hoverControl(day, hoverDate)
+  const isInHoverRange = (day: Date, hoverDate: Date) => {
+    return hoverDate && (!minDate || day >= minDate) && (!maxDate || day <= maxDate) && hoverControl(day, hoverDate)
+  }
 
   return (
     <GenericRangeCalendar

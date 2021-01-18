@@ -6,8 +6,11 @@ import { DateRange } from './BaseDateRangeInput'
 import { DateRangePicker } from './DateRangePicker'
 
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
-const period: DateRange = { startDate: todayMinus10, endDate: new Date() }
-
+const todayMinus20 = new Date(new Date().setDate(new Date().getDate() - 20))
+const weekStart = new Date(2020, 11, 13)
+const weekEnd = new Date(2021, 0, 9)
+const period: DateRange = { startDate: todayMinus20, endDate: todayMinus10 }
+const periodWeek: DateRange = { startDate: weekStart, endDate: weekEnd }
 storiesOf('Components|DateRangePicker ', module)
   .add('default', () => (
     <DateRangePicker
@@ -16,9 +19,32 @@ storiesOf('Components|DateRangePicker ', module)
       disabled={boolean('disabled', false)}
       error={text('error', '')}
       required={boolean('required', true)}
-      onChange={action('changed')}
+      onChange={(dateRange) =>
+        console.log(
+          `${dateRange?.startDate?.toLocaleDateString('pt-BR')}-${dateRange?.endDate?.toLocaleDateString('pt-BR')}`
+        )
+      }
       icon='calendarOutline'
       value={period}
+      onlyWeeks={false}
+    />
+  ))
+
+  .add('week picker', () => (
+    <DateRangePicker
+      clearable={boolean('clearable', true)}
+      label={text('label', 'Text label')}
+      disabled={boolean('disabled', false)}
+      error={text('error', '')}
+      required={boolean('required', true)}
+      onChange={(dateRange) =>
+        console.log(
+          `${dateRange?.startDate?.toLocaleDateString('pt-BR')}-${dateRange?.endDate?.toLocaleDateString('pt-BR')}`
+        )
+      }
+      icon='calendarOutline'
+      value={periodWeek}
+      onlyWeeks={true}
     />
   ))
 
@@ -33,5 +59,6 @@ storiesOf('Components|DateRangePicker ', module)
       icon='calendarOutline'
       minDate={todayMinus10}
       maxDate={new Date()}
+      onlyWeeks={false}
     />
   ))

@@ -14,7 +14,7 @@ export interface ControlledDateRangeCalendarProps extends CalendarProps {
 }
 
 export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarProps) {
-  const { inputOnFocus, onChange, value, onDayClick, ...rest } = props
+  const { inputOnFocus, onChange, value, onDayClick, onlyWeeks, ...rest } = props
 
   const controllDayClick = (day: Date) => {
     onDayClick && onDayClick(day)
@@ -38,7 +38,57 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
     }
   }
 
-  return <DateRangeCalendar {...rest} value={value} onDayClick={controllDayClick} inputOnFocus={inputOnFocus} />
+  const controllWeekClick = (week: Date[]) => {
+    const firstDayWeek = week[0]
+    const lastDayWeek = week[6]
+    onDayClick && onDayClick(firstDayWeek)
+    var startDate = value?.startDate
+    var endDate = value?.endDate
+    if (inputOnFocus === 1) {
+      if (firstDayWeek < value?.startDate) {
+        startDate = firstDayWeek
+      } else if (firstDayWeek > value?.endDate) {
+        startDate = firstDayWeek
+        endDate = lastDayWeek
+      } else {
+        startDate = firstDayWeek
+      }
+      onChange({ startDate: startDate, endDate: endDate } as DateRange)
+      return
+    }
+    if (inputOnFocus === 2) {
+      if (value?.endDate && firstDayWeek < value?.startDate) {
+        startDate = firstDayWeek
+        endDate = lastDayWeek
+      } else {
+        endDate = lastDayWeek
+      }
+      onChange({ startDate: startDate, endDate: endDate } as DateRange)
+      return
+    }
+  }
+
+  if (onlyWeeks && onlyWeeks === true) {
+    return (
+      <DateRangeCalendar
+        {...rest}
+        value={value}
+        onWeekClick={controllWeekClick}
+        inputOnFocus={inputOnFocus}
+        onlyWeeks={true}
+      />
+    )
+  } else {
+    return (
+      <DateRangeCalendar
+        {...rest}
+        value={value}
+        onDayClick={controllDayClick}
+        inputOnFocus={inputOnFocus}
+        onlyWeeks={false}
+      />
+    )
+  }
 }
 
 ControlledDateRangeCalendar.defaultProps = {
