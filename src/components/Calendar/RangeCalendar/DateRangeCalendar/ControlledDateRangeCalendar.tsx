@@ -41,9 +41,12 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
   const controllWeekClick = (week: Date[]) => {
     const firstDayWeek = week[0]
     const lastDayWeek = week[6]
+
     onDayClick && onDayClick(firstDayWeek)
+
     var startDate = value?.startDate
     var endDate = value?.endDate
+
     if (inputOnFocus === 1) {
       if (firstDayWeek < value?.startDate) {
         startDate = firstDayWeek

@@ -2,7 +2,7 @@ import * as React from 'react'
 import { MouseEvent, useState } from 'react'
 
 import { Theme } from '../../../../styles'
-import { Calendar, CalendarProps, defaultModifierStyles, defaultModifierWeekStyles } from '../../Calendar'
+import { Calendar, CalendarProps, createDefaultModifierStyles } from '../../Calendar'
 
 export interface GenericRangeCalendarProps extends CalendarProps {
   startDate: Date
@@ -31,11 +31,11 @@ export function GenericRangeCalendar({
   }
 
   const inWeekRange = (week: Date[]): boolean => {
-    return isInTheRange(week[0]) || isInTheRange(week[6])
+    return isInTheRange(week[0]) && isInTheRange(week[6])
   }
 
   const inHoverWeekRange = (week: Date[]): boolean => {
-    return hoverWeek && (isInTheHoverRange(week[0], hoverWeek[0]) || isInTheHoverRange(week[6], hoverWeek[6]))
+    return hoverWeek && isInTheHoverRange(week[0], hoverWeek[0]) && isInTheHoverRange(week[6], hoverWeek[6])
   }
 
   const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
@@ -52,15 +52,15 @@ export function GenericRangeCalendar({
         {...rest}
         onMouseLeave={onMouseLeave}
         onWeekHover={setHoverWeek}
-        modifiersWeek={{
-          ...rest.modifiersWeek,
+        modifiers={{
+          ...rest.modifiers,
           inHoverWeekRange: inHoverWeekRange,
           inWeekRange: inWeekRange,
         }}
-        modifierWeekStyles={{
-          ...rest.modifierWeekStyles,
+        modifierStyles={{
+          ...rest.modifierStyles,
           inHoverWeekRange: hoverStyle,
-          inWeekRange: defaultModifierWeekStyles.selected,
+          inWeekRange: createDefaultModifierStyles(onlyWeeks).selected,
         }}
         onlyWeeks={true}
       />
@@ -80,7 +80,7 @@ export function GenericRangeCalendar({
         modifierStyles={{
           ...rest.modifierStyles,
           inTheHoverRange: hoverStyle,
-          inTheRange: defaultModifierStyles.selected,
+          inTheRange: createDefaultModifierStyles(onlyWeeks).selected,
         }}
         onlyWeeks={false}
       />

@@ -135,7 +135,7 @@ export function DateRangePicker(props: DateRangePickerProps) {
             minDate={minDate}
             maxDate={maxDate}
             modifiers={{
-              disabled: disableByRange(minDate, maxDate),
+              disabled: onlyWeeks ? disableByWeekRange(minDate, maxDate) : disableByRange(minDate, maxDate),
             }}
             onlyWeeks={onlyWeeks}
             {...calendarProps}
@@ -144,6 +144,18 @@ export function DateRangePicker(props: DateRangePickerProps) {
       )}
     </FocusManagerContainer>
   )
+}
+
+export const disableByWeekRange = (minDate: Date, maxDate: Date) => {
+  const realMinDate = new Date(minDate)
+  realMinDate.setHours(0, 0, 0, 0)
+
+  const realMaxDate = new Date(maxDate)
+  realMaxDate.setHours(23, 59, 59, 999)
+
+  return (week: Date[]) => {
+    return (minDate && week[0] < realMinDate) || (maxDate && week[6] > realMaxDate)
+  }
 }
 
 export const createStyles = (theme: Theme) => ({

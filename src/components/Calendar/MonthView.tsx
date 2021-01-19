@@ -13,17 +13,16 @@ export interface MonthViewProps {
    */
   visibleDate: Date
 
+  createDateStyles?(element: any, props: MonthViewProps): Interpolation
+
   onDayClick?(day: Date): void
   onDayHover?(day: Date): void
   renderDay?(day: Date): React.ReactNode
   renderWeekName?(firstWeekDay: Date): React.ReactNode
-  createDayStyles?(day: Date, props: MonthViewProps): Interpolation
   isDaySelected?(day: Date): boolean
 
   onWeekClick?(week: Date[]): void
   onWeekHover?(week: Date[]): void
-  createWeekStyles?(week: Date[], props: MonthViewProps): Interpolation
-  isWeekSelected?(week: number): boolean
 
   onlyWeeks?: boolean
 }
@@ -38,8 +37,7 @@ export function MonthView(props: MonthViewProps) {
     onDayHover,
     onWeekClick,
     onWeekHover,
-    createWeekStyles,
-    createDayStyles,
+    createDateStyles,
   } = props
   const { classes, css } = useStyles(createStyles)
 
@@ -51,7 +49,6 @@ export function MonthView(props: MonthViewProps) {
   const handleWeekClick = useCallback((week: Date[]) => () => onWeekClick(week), [onWeekClick])
   const handleWeekHover = useCallback((week: Date[]) => () => onWeekHover(week), [onWeekHover])
 
-  console.log()
   return (
     <table className={classes.table}>
       <thead>
@@ -65,14 +62,14 @@ export function MonthView(props: MonthViewProps) {
         {month.map((week, w) => (
           <tr
             key={w}
-            className={onlyWeeks ? css(classes.week, createWeekStyles(week, props)) : undefined}
+            className={onlyWeeks ? css(classes.week, createDateStyles(week, props)) : undefined}
             onClick={onlyWeeks ? handleWeekClick(week) : undefined}
             onMouseOver={onlyWeeks ? handleWeekHover(week) : undefined}
           >
             {week.map((day, d) => (
               <td key={d} data-date={day.toISOString().slice(0, 10)}>
                 <span
-                  className={onlyWeeks ? undefined : css(classes.day, createDayStyles(day, props))}
+                  className={onlyWeeks ? undefined : css(classes.day, createDateStyles(day, props))}
                   onClick={onlyWeeks ? undefined : handleDayClick(day)}
                   onMouseOver={onlyWeeks ? undefined : handleDayHover(day)}
                   role='button'
@@ -104,20 +101,29 @@ MonthView.defaultProps = {
     const weekFormatter = new Intl.DateTimeFormat(getUserLocale(), { weekday: 'narrow' })
     return weekFormatter.format(firstWeekDay)
   },
-  createDayStyles: () => null,
-  createWeekStyles: () => null,
 } as Partial<MonthViewProps>
 
 export const createStyles = (theme: Theme) => ({
   table: {
-    borderCollapse: 'collapse',
+    borderCollapse: 'separate',
     textAlign: 'center',
     lineHeight: '1.5rem',
     width: '100%',
+    borderSpacing: '0 0.25rem',
 
     th: {
       width: '2rem',
       padding: '0.25rem 0',
+    },
+
+    'tr td:first-child': {
+      borderTopLeftRadius: '10%',
+      borderBottomLeftRadius: '10%',
+    },
+
+    'tr td:last-child': {
+      borderTopRightRadius: '10%',
+      borderBottomRightRadius: '10%',
     },
   } as CSSProperties,
   day: {
@@ -137,7 +143,6 @@ export const createStyles = (theme: Theme) => ({
     ':hover': {
       cursor: 'pointer',
       background: theme.pallete.surface.background,
-      borderRadius: '90%',
     },
   } as CSSProperties,
   active: {

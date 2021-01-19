@@ -19,32 +19,10 @@ storiesOf('Components|DateRangePicker ', module)
       disabled={boolean('disabled', false)}
       error={text('error', '')}
       required={boolean('required', true)}
-      onChange={(dateRange) =>
-        console.log(
-          `${dateRange?.startDate?.toLocaleDateString('pt-BR')}-${dateRange?.endDate?.toLocaleDateString('pt-BR')}`
-        )
-      }
+      onChange={action('changed')}
       icon='calendarOutline'
       value={period}
       onlyWeeks={false}
-    />
-  ))
-
-  .add('week picker', () => (
-    <DateRangePicker
-      clearable={boolean('clearable', true)}
-      label={text('label', 'Text label')}
-      disabled={boolean('disabled', false)}
-      error={text('error', '')}
-      required={boolean('required', true)}
-      onChange={(dateRange) =>
-        console.log(
-          `${dateRange?.startDate?.toLocaleDateString('pt-BR')}-${dateRange?.endDate?.toLocaleDateString('pt-BR')}`
-        )
-      }
-      icon='calendarOutline'
-      value={periodWeek}
-      onlyWeeks={true}
     />
   ))
 
@@ -60,5 +38,35 @@ storiesOf('Components|DateRangePicker ', module)
       minDate={todayMinus10}
       maxDate={new Date()}
       onlyWeeks={false}
+    />
+  ))
+
+  .add('week picker', () => (
+    <DateRangePicker
+      clearable={boolean('clearable', true)}
+      label={text('label', 'Text label')}
+      disabled={boolean('disabled', false)}
+      error={text('error', '')}
+      required={boolean('required', true)}
+      onChange={action('changed')}
+      icon='calendarOutline'
+      value={periodWeek}
+      onlyWeeks={true}
+    />
+  ))
+
+  .add('week picker min/max date', () => (
+    <DateRangePicker
+      clearable={boolean('clearable', true)}
+      label={text('label', 'Text label')}
+      disabled={boolean('disabled', false)}
+      error={text('error', '')}
+      required={boolean('required', true)}
+      onChange={action('changed')}
+      icon='calendarOutline'
+      value={periodWeek}
+      onlyWeeks={true}
+      minDate={new Date(2020, 10, 30)}
+      maxDate={new Date(2021, 0, 30)}
     />
   ))

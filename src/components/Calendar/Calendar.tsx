@@ -13,16 +13,12 @@ export interface CalendarProps extends MonthViewProps {
   /**
    * Map of modifier predicates to apply custom or pre-defined styles to dates.
    */
-  modifiers?: Partial<DayModifierPredicateMap>
+  modifiers?: Partial<ModifierPredicateMap>
 
   /**
    * Map of modifier styles to be applied to a date if the respective modifier predicate applies.
    */
-  modifierStyles?: Partial<DayModifierStyleMap>
-
-  modifiersWeek?: Partial<WeekModifierPredicateMap>
-
-  modifierWeekStyles?: Partial<WeekModifierStyleMap>
+  modifierStyles?: Partial<ModifierStyleMap>
 
   /**
    * Called when the current visible date changes.
@@ -52,47 +48,39 @@ export function Calendar(props: CalendarProps) {
     onMouseLeave,
     isDaySelected,
     onWeekClick,
-    modifiersWeek,
-    modifierWeekStyles,
     ...rest
   } = props
   const { classes, theme } = useStyles(createStyles)
 
-  const allDayModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
-  const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
-  const createDayStyles = useMemo(() => createDayStylesFn(allDayModifiers, allModifierStyles, theme), [
-    allDayModifiers,
+  const allModifiers = useMemo(() => ({ ...createDefaultModifiers(onlyWeeks), ...modifiers }), [modifiers, onlyWeeks])
+  const allModifierStyles = useMemo(() => ({ ...createDefaultModifierStyles(onlyWeeks), ...modifierStyles }), [
+    modifierStyles,
+    onlyWeeks,
+  ])
+  const createDateStyles = useMemo(() => createStylesFn(allModifiers, allModifierStyles, theme), [
+    allModifiers,
     allModifierStyles,
-    theme,
-  ])
-
-  const allWeekModifiers = useMemo(() => ({ ...defaultWeekModifier, ...modifiersWeek }), [modifiersWeek])
-  const allWeekModifierStyles = useMemo(() => ({ ...defaultModifierWeekStyles, ...modifierWeekStyles }), [
-    modifierWeekStyles,
-  ])
-
-  const createWeekStyles = useMemo(() => createWeekStylesFn(allWeekModifiers, allWeekModifierStyles, theme), [
-    allWeekModifiers,
-    allWeekModifierStyles,
     theme,
   ])
 
   const handleDayClick = useCallback(
     (day: Date) => {
-      if (!allDayModifiers.disabled(day, props)) {
+      if (!allModifiers.disabled(day, props)) {
         onVisibleDateChange(day)
         return props.onDayClick && props.onDayClick(day)
       }
     },
-    [allDayModifiers, onVisibleDateChange, props]
+    [allModifiers, onVisibleDateChange, props]
   )
 
   const handleWeekClick = useCallback(
     (week: Date[]) => {
-      onVisibleDateChange(week[0])
-      return props.onWeekClick && props.onWeekClick(week)
+      if (!allModifiers.disabled(week, props)) {
+        onVisibleDateChange(week[0])
+        return props.onWeekClick && props.onWeekClick(week)
+      }
     },
-    [onVisibleDateChange, props]
+    [allModifiers, onVisibleDateChange, props]
   )
 
   if (onlyWeeks && onlyWeeks === true) {
@@ -104,10 +92,10 @@ export function Calendar(props: CalendarProps) {
         </HFlow>
         <MonthView
           visibleDate={visibleDate}
-          createWeekStyles={createWeekStyles}
-          {...rest}
+          createDateStyles={createDateStyles}
           onWeekClick={handleWeekClick}
           onlyWeeks={true}
+          {...rest}
         />
       </div>
     )
@@ -120,11 +108,11 @@ export function Calendar(props: CalendarProps) {
         </HFlow>
         <MonthView
           visibleDate={visibleDate}
-          createDayStyles={createDayStyles}
-          {...rest}
+          createDateStyles={createDateStyles}
           onDayClick={handleDayClick}
           isDaySelected={isDaySelected}
           onlyWeeks={false}
+          {...rest}
         />
       </div>
     )
@@ -141,89 +129,66 @@ export const createStyles = () => ({
   } as CSSProperties,
 })
 
-export type ModifierFn = (day: Date, props: MonthViewProps) => boolean
-export type ModifierWeekFn = (week: Date[], props: MonthViewProps) => boolean
+export type ModifierFn = (element: any, props: MonthViewProps) => boolean
 
-export interface DayModifierPredicateMap {
+export interface ModifierPredicateMap {
   disabled: ModifierFn
   selected: ModifierFn
   today: ModifierFn
-  adjacentMonth: ModifierFn
+  adjacentMonth?: ModifierFn
   [key: string]: ModifierFn
 }
 
-export interface WeekModifierPredicateMap {
-  disabled: ModifierWeekFn
-  selected: ModifierWeekFn
-  todayWeek: ModifierWeekFn
-  [key: string]: ModifierWeekFn
+export type ModifierStyleMap = { [key in keyof ModifierPredicateMap]: (theme: Theme) => Interpolation }
+
+export const createDefaultModifiers = (onlyWeeks: boolean): ModifierPredicateMap => {
+  if (onlyWeeks) {
+    return {
+      today: (week: Date[]) => isSameWeek(new Date(), week),
+      disabled: () => false,
+      selected: () => false,
+    }
+  }
+  return {
+    today: (day: Date) => isSameDay(new Date(), day),
+    disabled: () => false,
+    selected: () => false,
+    adjacentMonth: (day: Date, { visibleDate }) => visibleDate.getMonth() !== day.getMonth(),
+  }
 }
 
-export type DayModifierStyleMap = { [key in keyof DayModifierPredicateMap]: (theme: Theme) => Interpolation }
-export type WeekModifierStyleMap = { [key in keyof WeekModifierPredicateMap]: (theme: Theme) => Interpolation }
-
-export const defaultModifiers: DayModifierPredicateMap = {
-  today: (day: Date) => isSameDay(new Date(), day),
-  disabled: () => false,
-  selected: () => false,
-  adjacentMonth: (day: Date, { visibleDate }) => visibleDate.getMonth() !== day.getMonth(),
-}
-
-export const defaultWeekModifier: WeekModifierPredicateMap = {
-  todayWeek: (week: Date[]) => isSameWeek(new Date(), week),
-  disabled: () => false,
-  selected: () => false,
-}
-
-export const defaultModifierWeekStyles: WeekModifierStyleMap = {
-  todayWeek: () => ({
-    fontWeight: 'bold',
-  }),
-  disabled: (theme: Theme) => ({
-    color: theme.pallete.text.disabled,
-    ':hover': {
-      background: 'initial',
-      cursor: 'not-allowed',
-    },
-  }),
-  selected: (theme: Theme) => ({
-    background: theme.pallete.primary.main,
-    color: theme.pallete.surface.main,
-    fontWeight: 'bold',
-    ':hover': {
+export const createDefaultModifierStyles = (onlyWeeks: boolean): ModifierStyleMap => {
+  let stylemap: ModifierStyleMap = {
+    today: () => ({
+      fontWeight: 'bold',
+    }),
+    disabled: (theme: Theme) => ({
+      color: theme.pallete.text.disabled,
+      ':hover': {
+        background: 'initial',
+        cursor: 'not-allowed',
+      },
+    }),
+    selected: (theme: Theme) => ({
       background: theme.pallete.primary.main,
       color: theme.pallete.surface.main,
-    },
-  }),
+      fontWeight: 'bold',
+      ':hover': {
+        background: theme.pallete.primary.main,
+        color: theme.pallete.surface.main,
+      },
+    }),
+  }
+  if (!onlyWeeks) {
+    stylemap.adjacentMonth = (theme: Theme) => ({
+      color: theme.pallete.text.disabled,
+    })
+  }
+  return stylemap
 }
 
-export const defaultModifierStyles: DayModifierStyleMap = {
-  today: () => ({
-    fontWeight: 'bold',
-  }),
-  disabled: (theme: Theme) => ({
-    color: theme.pallete.text.disabled,
-    ':hover': {
-      background: 'initial',
-      cursor: 'not-allowed',
-    },
-  }),
-  selected: (theme: Theme) => ({
-    background: theme.pallete.primary.main,
-    color: theme.pallete.surface.main,
-    fontWeight: 'bold',
-    ':hover': {
-      background: theme.pallete.primary.main,
-      color: theme.pallete.surface.main,
-    },
-  }),
-  adjacentMonth: (theme: Theme) => ({
-    color: theme.pallete.text.disabled,
-  }),
-}
-
-export const createDayStylesFn = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap, theme: Theme) => (
-  day: Date,
+export const createStylesFn = (modifiers: ModifierPredicateMap, styles: ModifierStyleMap, theme: Theme) => (
+  element: any,
   props: MonthViewProps
 ): Interpolation => {
   return Object.keys(modifiers).reduce((s, modifier) => {
@@ -232,22 +197,7 @@ export const createDayStylesFn = (modifiers: DayModifierPredicateMap, styles: Da
     }
     return {
       ...s,
-      ...(modifiers[modifier](day, props) ? (styles[modifier](theme) as any) : {}),
-    }
-  }, {})
-}
-
-export const createWeekStylesFn = (modifiers: WeekModifierPredicateMap, styles: WeekModifierStyleMap, theme: Theme) => (
-  week: Date[],
-  props: MonthViewProps
-): Interpolation => {
-  return Object.keys(modifiers).reduce((s, modifier) => {
-    if (!styles[modifier]) {
-      throw new Error(`You must provied a modifierStyle for predicate "${modifier}"`)
-    }
-    return {
-      ...s,
-      ...(modifiers[modifier](week, props) ? (styles[modifier](theme) as any) : {}),
+      ...(modifiers[modifier](element, props) ? (styles[modifier](theme) as any) : {}),
     }
   }, {})
 }
