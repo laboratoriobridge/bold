@@ -4,7 +4,7 @@ import { matchers } from 'jest-emotion'
 import { fireEvent, render } from '@testing-library/react'
 
 import { createTheme } from '../../../../styles'
-import { createDefaultModifierStyles } from '../../Calendar'
+import { defaultModifierStyles } from '../../Calendar'
 import { DateRange } from '../../../DateRangePicker/BaseDateRangeInput'
 import { dayHoverStyle, DateRangeCalendar, DateRangeCalendarProps } from './DateRangeCalendar'
 
@@ -64,7 +64,7 @@ describe('DateRangeCalendar', () => {
       const { getByText } = render(
         createComponent({ value: { startDate: new Date('2019-02-15'), endDate: undefined } as DateRange })
       )
-      const expectedStyle: Interpolation = createDefaultModifierStyles(false).selected(theme)
+      const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
 
       iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
         expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
@@ -89,7 +89,7 @@ describe('DateRangeCalendar', () => {
       const { getByText } = render(
         createComponent({ value: { startDate: new Date('2019-02-11'), endDate: new Date('2019-02-13') } as DateRange })
       )
-      const expectedStyle: Interpolation = createDefaultModifierStyles(false).selected(theme)
+      const expectedStyle: Interpolation = defaultModifierStyles.selected(theme)
 
       iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) => {
         expect(getByText('10')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)

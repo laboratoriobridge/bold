@@ -2,7 +2,7 @@ import * as React from 'react'
 import { MouseEvent, useState } from 'react'
 
 import { Theme } from '../../../../styles'
-import { Calendar, CalendarProps, createDefaultModifierStyles } from '../../Calendar'
+import { Calendar, CalendarProps, defaultModifierStyles } from '../../Calendar'
 
 export interface GenericRangeCalendarProps extends CalendarProps {
   startDate: Date
@@ -60,7 +60,7 @@ export function GenericRangeCalendar({
         modifierStyles={{
           ...rest.modifierStyles,
           inHoverWeekRange: hoverStyle,
-          inWeekRange: createDefaultModifierStyles(onlyWeeks).selected,
+          inWeekRange: defaultModifierStyles.selected,
         }}
         onlyWeeks={true}
       />
@@ -80,7 +80,7 @@ export function GenericRangeCalendar({
         modifierStyles={{
           ...rest.modifierStyles,
           inTheHoverRange: hoverStyle,
-          inTheRange: createDefaultModifierStyles(onlyWeeks).selected,
+          inTheRange: defaultModifierStyles.selected,
         }}
         onlyWeeks={false}
       />

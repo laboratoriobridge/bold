@@ -52,11 +52,11 @@ export function Calendar(props: CalendarProps) {
   } = props
   const { classes, theme } = useStyles(createStyles)
 
-  const allModifiers = useMemo(() => ({ ...createDefaultModifiers(onlyWeeks), ...modifiers }), [modifiers, onlyWeeks])
-  const allModifierStyles = useMemo(() => ({ ...createDefaultModifierStyles(onlyWeeks), ...modifierStyles }), [
-    modifierStyles,
+  const allModifiers = useMemo(() => ({ ...(onlyWeeks ? defaultWeekModifiers : defaultDayModifiers), ...modifiers }), [
+    modifiers,
     onlyWeeks,
   ])
+  const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
 
   const createDateStyles = useMemo(() => createStylesFn(allModifiers, allModifierStyles, theme), [
     allModifiers,
@@ -142,48 +142,43 @@ export interface ModifierPredicateMap {
 
 export type ModifierStyleMap = { [key in keyof ModifierPredicateMap]: (theme: Theme) => Interpolation }
 
-export const createDefaultModifiers = (onlyWeeks: boolean): ModifierPredicateMap => {
-  if (onlyWeeks) {
-    return {
-      today: (week: Date[]) => isSameWeek(new Date(), week),
-      disabled: () => false,
-      selected: () => false,
-      adjacentMonth: () => false,
-    }
-  }
-  return {
-    today: (day: Date) => isSameDay(new Date(), day),
-    disabled: () => false,
-    selected: () => false,
-    adjacentMonth: (day: Date, { visibleDate }) => visibleDate.getMonth() !== day.getMonth(),
-  }
+export const defaultDayModifiers: ModifierPredicateMap = {
+  today: (day: Date) => isSameDay(new Date(), day),
+  disabled: () => false,
+  selected: () => false,
+  adjacentMonth: (day: Date, { visibleDate }) => visibleDate.getMonth() !== day.getMonth(),
 }
 
-export const createDefaultModifierStyles = (onlyWeeks: boolean): ModifierStyleMap => {
-  return {
-    today: () => ({
-      fontWeight: 'bold',
-    }),
-    disabled: (theme: Theme) => ({
-      color: theme.pallete.text.disabled,
-      ':hover': {
-        background: 'initial',
-        cursor: 'not-allowed',
-      },
-    }),
-    selected: (theme: Theme) => ({
+export const defaultWeekModifiers: ModifierPredicateMap = {
+  today: (week: Date[]) => isSameWeek(new Date(), week),
+  disabled: () => false,
+  selected: () => false,
+  adjacentMonth: () => false,
+}
+
+export const defaultModifierStyles: ModifierStyleMap = {
+  today: () => ({
+    fontWeight: 'bold',
+  }),
+  disabled: (theme: Theme) => ({
+    color: theme.pallete.text.disabled,
+    ':hover': {
+      background: 'initial',
+      cursor: 'not-allowed',
+    },
+  }),
+  selected: (theme: Theme) => ({
+    background: theme.pallete.primary.main,
+    color: theme.pallete.surface.main,
+    fontWeight: 'bold',
+    ':hover': {
       background: theme.pallete.primary.main,
       color: theme.pallete.surface.main,
-      fontWeight: 'bold',
-      ':hover': {
-        background: theme.pallete.primary.main,
-        color: theme.pallete.surface.main,
-      },
-    }),
-    adjacentMonth: (theme: Theme) => ({
-      color: theme.pallete.text.disabled,
-    }),
-  }
+    },
+  }),
+  adjacentMonth: (theme: Theme) => ({
+    color: theme.pallete.text.disabled,
+  }),
 }
 
 export const createStylesFn = (modifiers: ModifierPredicateMap, styles: ModifierStyleMap, theme: Theme) => (
