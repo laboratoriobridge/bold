@@ -43,8 +43,8 @@ it('render week name', () => {
 })
 
 it('should use createDayStyles function to create styles for days', () => {
-  const createDayStyles = jest.fn(() => ({ color: 'red' }))
-  const { container } = render(<MonthView visibleDate={new Date('2018-10-26')} createDayStyles={createDayStyles} />)
-  expect(createDayStyles).toHaveBeenCalledTimes(35) // Called once for each day rendered on calendar
+  const createDateStyles = jest.fn(() => ({ color: 'red' }))
+  const { container } = render(<MonthView visibleDate={new Date('2018-10-26')} createDateStyles={createDateStyles} />)
+  expect(createDateStyles).toHaveBeenCalledTimes(35) // Called once for each day rendered on calendar
   expect(container).toMatchSnapshot()
 })

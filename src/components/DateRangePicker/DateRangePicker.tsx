@@ -23,7 +23,7 @@ export interface DateRangePickerProps extends DateRangePickerInputProps {
   popperProps?: PopperOptions
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
   onBlur?(e: React.FocusEvent<HTMLDivElement>): void
-  onlyWeeks: boolean
+  onlyWeeks?: boolean
 }
 
 export function DateRangePicker(props: DateRangePickerProps) {

@@ -57,6 +57,7 @@ export function Calendar(props: CalendarProps) {
     modifierStyles,
     onlyWeeks,
   ])
+
   const createDateStyles = useMemo(() => createStylesFn(allModifiers, allModifierStyles, theme), [
     allModifiers,
     allModifierStyles,
@@ -135,7 +136,7 @@ export interface ModifierPredicateMap {
   disabled: ModifierFn
   selected: ModifierFn
   today: ModifierFn
-  adjacentMonth?: ModifierFn
+  adjacentMonth: ModifierFn
   [key: string]: ModifierFn
 }
 
@@ -147,6 +148,7 @@ export const createDefaultModifiers = (onlyWeeks: boolean): ModifierPredicateMap
       today: (week: Date[]) => isSameWeek(new Date(), week),
       disabled: () => false,
       selected: () => false,
+      adjacentMonth: () => false,
     }
   }
   return {
@@ -158,7 +160,7 @@ export const createDefaultModifiers = (onlyWeeks: boolean): ModifierPredicateMap
 }
 
 export const createDefaultModifierStyles = (onlyWeeks: boolean): ModifierStyleMap => {
-  let stylemap: ModifierStyleMap = {
+  return {
     today: () => ({
       fontWeight: 'bold',
     }),
@@ -178,13 +180,10 @@ export const createDefaultModifierStyles = (onlyWeeks: boolean): ModifierStyleMa
         color: theme.pallete.surface.main,
       },
     }),
-  }
-  if (!onlyWeeks) {
-    stylemap.adjacentMonth = (theme: Theme) => ({
+    adjacentMonth: (theme: Theme) => ({
       color: theme.pallete.text.disabled,
-    })
+    }),
   }
-  return stylemap
 }
 
 export const createStylesFn = (modifiers: ModifierPredicateMap, styles: ModifierStyleMap, theme: Theme) => (

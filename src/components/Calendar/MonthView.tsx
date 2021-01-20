@@ -93,6 +93,8 @@ MonthView.defaultProps = {
   onWeekClick: () => null,
   onWeekHover: () => null,
 
+  createDateStyles: () => null,
+
   renderDay: (day) => {
     const dayFormatter = new Intl.DateTimeFormat(getUserLocale(), { day: '2-digit' })
     return dayFormatter.format(day)

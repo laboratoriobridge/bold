@@ -4,7 +4,7 @@ import React from 'react'
 import { createTheme } from '../../styles'
 
 import * as CalendarModule from './Calendar'
-import { Calendar, createDayStylesFn, defaultModifiers, defaultModifierStyles } from './Calendar'
+import { Calendar, createStylesFn, createDefaultModifierStyles, createDefaultModifiers } from './Calendar'
 import { isSameDay } from './util'
 
 describe('Calendar', () => {
@@ -70,7 +70,7 @@ describe('Calendar', () => {
   })
 
   it('should accept modifiers and modifierStyles props', () => {
-    const spy = jest.spyOn(CalendarModule, 'createDayStylesFn')
+    const spy = jest.spyOn(CalendarModule, 'createStylesFn')
     const customModifiers = {
       today: () => true,
       custom: () => false,
@@ -89,8 +89,8 @@ describe('Calendar', () => {
       />
     )
     expect(spy).toHaveBeenCalledWith(
-      { ...defaultModifiers, ...customModifiers },
-      { ...defaultModifierStyles, ...customStyles },
+      { ...createDefaultModifiers(false), ...customModifiers },
+      { ...createDefaultModifierStyles(false), ...customStyles },
       expect.anything()
     )
   })
@@ -99,31 +99,31 @@ describe('Calendar', () => {
 describe('modifiers', () => {
   describe('today', () => {
     it('should return true if date is today', () => {
-      expect(defaultModifiers.today(new Date(), {} as any)).toBeTruthy()
-      expect(defaultModifiers.today(new Date('1970-01-01'), {} as any)).toBeFalsy()
+      expect(createDefaultModifiers(false).today(new Date(), {} as any)).toBeTruthy()
+      expect(createDefaultModifiers(false).today(new Date('1970-01-01'), {} as any)).toBeFalsy()
     })
   })
   describe('adjacentMonth', () => {
     it('should return true if date is next or prev month', () => {
       expect(
-        defaultModifiers.adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-10-01') })
+        createDefaultModifiers(false).adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-10-01') })
       ).toBeFalsy()
       expect(
-        defaultModifiers.adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-09-01') })
+        createDefaultModifiers(false).adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-09-01') })
       ).toBeTruthy()
       expect(
-        defaultModifiers.adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-11-01') })
+        createDefaultModifiers(false).adjacentMonth(new Date('2018-10-01'), { visibleDate: new Date('2018-11-01') })
       ).toBeTruthy()
     })
   })
   describe('selected', () => {
     it('should return false by default', () => {
-      expect(defaultModifiers.selected(new Date(), {} as any)).toBeFalsy()
+      expect(createDefaultModifiers(false).selected(new Date(), {} as any)).toBeFalsy()
     })
   })
   describe('disabled', () => {
     it('should return false by default', () => {
-      expect(defaultModifiers.disabled(new Date(), {} as any)).toBeFalsy()
+      expect(createDefaultModifiers(false).disabled(new Date(), {} as any)).toBeFalsy()
     })
   })
 })
@@ -132,33 +132,33 @@ describe('modifierStyles', () => {
   const theme = createTheme()
 
   it('should have "today" styles', () => {
-    expect(defaultModifierStyles.today(theme)).toMatchSnapshot()
+    expect(createDefaultModifierStyles(false).today(theme)).toMatchSnapshot()
   })
 
   it('should have "disabled" styles', () => {
-    expect(defaultModifierStyles.disabled(theme)).toMatchSnapshot()
+    expect(createDefaultModifierStyles(false).disabled(theme)).toMatchSnapshot()
   })
 
   it('should have "selected" styles', () => {
-    expect(defaultModifierStyles.selected(theme)).toMatchSnapshot()
+    expect(createDefaultModifierStyles(false).selected(theme)).toMatchSnapshot()
   })
 
   it('should have "adjacentMonth" styles', () => {
-    expect(defaultModifierStyles.adjacentMonth(theme)).toMatchSnapshot()
+    expect(createDefaultModifierStyles(false).adjacentMonth(theme)).toMatchSnapshot()
   })
 })
 
 describe('createDayStylesFn', () => {
   it('should return merged styles from all modifiers that apply', () => {
     const theme = createTheme()
-    const stylesCreator = createDayStylesFn(
+    const stylesCreator = createStylesFn(
       {
         today: () => true,
         disabled: () => true,
         adjacentMonth: () => true,
         selected: () => true,
       },
-      defaultModifierStyles,
+      createDefaultModifierStyles(false),
       theme
     )
     expect(stylesCreator(new Date(), {} as any)).toMatchSnapshot()

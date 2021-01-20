@@ -1321,15 +1321,26 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
 }
 
 .emotion-60 {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
+  border-spacing: 0 0.25rem;
 }
 
 .emotion-60 th {
   width: 2rem;
   padding: 0.25rem 0;
+}
+
+.emotion-60 tr td:first-child {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.emotion-60 tr td:last-child {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .emotion-26 {
