@@ -155,7 +155,7 @@ it('clears selection when "Clear" is clicked', async () => {
     fireEvent.blur(input)
   })
 
-  // Checks if cleared
+  //Checks if cleared
   expect(input).not.toHaveValue()
 })
 
