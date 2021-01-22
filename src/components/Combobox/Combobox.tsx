@@ -5,12 +5,12 @@ import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
-import { FormControl, FormControlProps } from '../FormControl'
+import { FormControl } from '../FormControl'
+import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
 
-export interface ComboboxProps<T = string> extends TextInputProps {
+export interface ComboboxProps<T = string> extends TextInputProps, UseFormControlProps {
   items: T[]
-  label?: FormControlProps['label']
   openOnFocus: boolean
   itemToString(item: T): string
   filter?(items: T[], filter: string): T[]
@@ -20,7 +20,6 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
     items,
     itemToString,
-    label,
     openOnFocus,
     onClear,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
@@ -61,6 +60,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   })
 
   const downshiftComboboxProps = getComboboxProps()
+  const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
     onFocus: () => openOnFocus && openMenu(),
   })
@@ -74,9 +74,11 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     placement: 'bottom-start',
   })
 
+  const formControlInputProps = getFromControlInputProps()
+  const invalid = formControlInputProps['aria-invalid']
   return (
     <div {...downshiftComboboxProps}>
-      <FormControl label={label} labelId={labelId} {...downshiftLabelProps}>
+      <FormControl {...getFormControlProps()} labelId={labelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
@@ -84,6 +86,8 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
           onIconClick={toggleMenu}
           inputRef={composeRefs(inputRef, downshiftInputRef)}
           onClear={composeHandlers(reset, onClear)}
+          invalid={invalid}
+          {...formControlInputProps}
           {...downshiftInputProps}
           {...rest}
         />

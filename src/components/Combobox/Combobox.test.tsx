@@ -159,6 +159,22 @@ it('clears selection when "Clear" is clicked', async () => {
   expect(input).not.toHaveValue()
 })
 
+it('enters error state', async () => {
+  let baseElement: RenderResult['baseElement']
+  const errorMessage = 'error'
+  await act(async () => {
+    const result = render(<ComboboxTest error={errorMessage} />)
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  expect(input).toHaveAttribute('aria-invalid', 'true')
+  expect(input).toHaveAttribute('aria-errormessage')
+
+  const errorMessageContainer = baseElement.querySelector(`#${input.getAttribute('aria-errormessage')}`)
+  expect(errorMessageContainer).toHaveTextContent(errorMessage)
+})
+
 it('renders correcly closed', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {

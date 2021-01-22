@@ -23,7 +23,7 @@ storiesOf('Components|Combobox', module).add('default', () => (
     label='Fruit'
     name='fruit'
     items={fruits}
-    //   error={text('error', '')}
+    error={text('error', '')}
     //   menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
     //   itemIsEqual={(a, b) => a.value === b.value}
@@ -31,7 +31,7 @@ storiesOf('Components|Combobox', module).add('default', () => (
     //   multiple={boolean('multiple', false)}
     clearable={boolean('clearable', true)}
     disabled={boolean('disabled', false)}
-    //   openOnFocus={boolean('openOnFocus', true)}
+    openOnFocus={boolean('openOnFocus', true)}
     //   loading={boolean('loading', false)}
     //   onChange={action('changed')}
     //   onBlur={action('blur')}
