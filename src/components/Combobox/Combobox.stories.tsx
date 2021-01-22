@@ -26,7 +26,7 @@ storiesOf('Components|Combobox', module).add('default', () => (
     //   menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
     //   itemIsEqual={(a, b) => a.value === b.value}
-    //   placeholder='Select a value...'
+    placeholder='Select a value...'
     //   multiple={boolean('multiple', false)}
     //   clearable={boolean('clearable', true)}
     //   disabled={boolean('disabled', false)}

@@ -99,6 +99,29 @@ it('opens menu when input is focused and only when `openOnFocus` prop is true', 
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
+it('shows placeholder when specified', async () => {
+  let baseElement: RenderResult['baseElement']
+  const placeholder = 'test placeholder'
+  await act(async () => {
+    const result = render(<ComboboxTest placeholder={placeholder} />)
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  expect(input).toHaveAttribute('placeholder', placeholder)
+})
+
+it('does not show placeholder when not specified', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest />)
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  expect(input).not.toHaveAttribute('placeholder')
+})
+
 it('renders correcly closed', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {

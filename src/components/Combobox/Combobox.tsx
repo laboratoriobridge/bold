@@ -11,6 +11,7 @@ import { TextInput, TextInputProps } from '../TextField'
 export interface ComboboxProps<T = string> extends TextInputProps {
   items: T[]
   label?: FormControlProps['label']
+  placeholder?: string
   openOnFocus: boolean
   itemToString(item: T): string
   filter?(items: T[], filter: string): T[]
