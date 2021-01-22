@@ -4,14 +4,13 @@ import React, { CSSProperties, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
-import { composeRefs } from '../../util/react'
+import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl, FormControlProps } from '../FormControl'
 import { TextInput, TextInputProps } from '../TextField'
 
 export interface ComboboxProps<T = string> extends TextInputProps {
   items: T[]
   label?: FormControlProps['label']
-  placeholder?: string
   openOnFocus: boolean
   itemToString(item: T): string
   filter?(items: T[], filter: string): T[]
@@ -23,6 +22,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     itemToString,
     label,
     openOnFocus,
+    onClear,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
   } = props
@@ -47,6 +47,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     openMenu,
     toggleMenu,
     closeMenu,
+    reset,
   } = useCombobox({
     items: visibleItems,
     itemToString,
@@ -82,6 +83,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
           iconPosition='right'
           onIconClick={toggleMenu}
           inputRef={composeRefs(inputRef, downshiftInputRef)}
+          onClear={composeHandlers(reset, onClear)}
           {...downshiftInputProps}
           {...rest}
         />

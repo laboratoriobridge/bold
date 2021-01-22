@@ -122,6 +122,43 @@ it('does not show placeholder when not specified', async () => {
   expect(input).not.toHaveAttribute('placeholder')
 })
 
+it('clears selection when "Clear" is clicked', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest clearable={true} />)
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  const dropdownButton = baseElement.querySelector('button')
+  //Opens menu
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  const option = baseElement.querySelector('li').firstChild
+
+  //Selects item
+  await act(async () => {
+    fireEvent.click(option)
+  })
+
+  expect(input).toHaveValue(option.textContent)
+
+  const clearButton = baseElement.querySelector('[title="Clear"]')
+
+  //Clears value and focus out
+  await act(async () => {
+    fireEvent.click(clearButton)
+  })
+  await act(async () => {
+    fireEvent.blur(input)
+  })
+
+  // Checks if cleared
+  expect(input).not.toHaveValue()
+})
+
 it('renders correcly closed', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {
