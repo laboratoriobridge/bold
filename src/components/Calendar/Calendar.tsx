@@ -2,11 +2,12 @@ import { Interpolation } from 'emotion'
 import React, { CSSProperties, MouseEvent, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
+import { Week } from '../DateRangePicker/DateRangePicker'
 import { HFlow } from '../HFlow'
 
 import { MonthControl } from './MonthControl'
 import { MonthView, MonthViewProps } from './MonthView'
-import { isSameDay, isSameWeek } from './util'
+import { isSameDay, isBelongingAWeek } from './util'
 import { YearControl } from './YearControl'
 
 export interface CalendarProps extends MonthViewProps {
@@ -75,9 +76,9 @@ export function Calendar(props: CalendarProps) {
   )
 
   const handleWeekClick = useCallback(
-    (week: Date[]) => {
+    (week: Week) => {
       if (!allModifiers.disabled(week, props)) {
-        onVisibleDateChange(week[0])
+        onVisibleDateChange(week.start)
         return props.onWeekClick && props.onWeekClick(week)
       }
     },
@@ -150,7 +151,7 @@ export const defaultDayModifiers: ModifierPredicateMap = {
 }
 
 export const defaultWeekModifiers: ModifierPredicateMap = {
-  today: (week: Date[]) => isSameWeek(new Date(), week),
+  today: (week: Week) => isBelongingAWeek(new Date(), week),
   disabled: () => false,
   selected: () => false,
   adjacentMonth: () => false,

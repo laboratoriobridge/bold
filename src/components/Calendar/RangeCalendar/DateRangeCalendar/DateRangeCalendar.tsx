@@ -61,9 +61,8 @@ export function DateRangeCalendar({ value, inputOnFocus, maxDate, minDate, ...re
     }
   }
 
-  const isInHoverRange = (day: Date, hoverDate: Date) => {
-    return hoverDate && (!minDate || day >= minDate) && (!maxDate || day <= maxDate) && hoverControl(day, hoverDate)
-  }
+  const isInHoverRange = (day: Date, hoverDate: Date) =>
+    hoverDate && (!minDate || day >= minDate) && (!maxDate || day <= maxDate) && hoverControl(day, hoverDate)
 
   return (
     <GenericRangeCalendar

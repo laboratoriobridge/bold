@@ -4,8 +4,9 @@ import React from 'react'
 import { createTheme } from '../../styles'
 
 import * as CalendarModule from './Calendar'
-import { Calendar, createStylesFn, defaultModifierStyles, defaultDayModifiers } from './Calendar'
-import { isSameDay } from './util'
+
+import { Calendar, createStylesFn, defaultModifierStyles, defaultDayModifiers, defaultWeekModifiers } from './Calendar'
+import { createWeekArray, isSameDay } from './util'
 
 describe('Calendar', () => {
   it('should render correctly', () => {
@@ -69,6 +70,18 @@ describe('Calendar', () => {
     expect(click).toHaveBeenCalledWith(new Date('2018-10-01'))
   })
 
+  it('should call onWeekClick when week is clicked', () => {
+    const click = jest.fn()
+    const { container } = render(
+      <Calendar visibleDate={new Date()} onVisibleDateChange={jest.fn()} onWeekClick={click} onlyWeeks />
+    )
+    const weekButton = container.querySelector('[data-week="10/01/2021-16/01/2021"]')
+
+    expect(click).not.toHaveBeenCalled()
+    fireEvent.click(weekButton)
+    expect(click).toHaveBeenCalledWith({ start: new Date('2021-01-10'), end: new Date('2021-01-16') })
+  })
+
   it('should accept modifiers and modifierStyles props', () => {
     const spy = jest.spyOn(CalendarModule, 'createStylesFn')
     const customModifiers = {
@@ -101,6 +114,14 @@ describe('modifiers', () => {
     it('should return true if date is today', () => {
       expect(defaultDayModifiers.today(new Date(), {} as any)).toBeTruthy()
       expect(defaultDayModifiers.today(new Date('1970-01-01'), {} as any)).toBeFalsy()
+      expect(defaultDayModifiers.today(new Date(), {} as any)).toBeTruthy()
+      expect(defaultDayModifiers.today(new Date('1970-01-01'), {} as any)).toBeFalsy()
+
+      const week = createWeekArray(new Date())
+      expect(defaultWeekModifiers.today({ start: week[0], end: week[6] }, {} as any)).toBeTruthy()
+      expect(
+        defaultWeekModifiers.today({ start: new Date('2021-01-10'), end: new Date('2021-01-16') }, {} as any)
+      ).toBeFalsy()
     })
   })
   describe('adjacentMonth', () => {
@@ -119,11 +140,20 @@ describe('modifiers', () => {
   describe('selected', () => {
     it('should return false by default', () => {
       expect(defaultDayModifiers.selected(new Date(), {} as any)).toBeFalsy()
+
+      expect(defaultDayModifiers.selected(new Date(), {} as any)).toBeFalsy()
+      expect(
+        defaultWeekModifiers.selected({ start: new Date('2021-01-10'), end: new Date('2021-01-16') }, {} as any)
+      ).toBeFalsy()
     })
   })
   describe('disabled', () => {
     it('should return false by default', () => {
       expect(defaultDayModifiers.disabled(new Date(), {} as any)).toBeFalsy()
+      expect(defaultDayModifiers.disabled(new Date(), {} as any)).toBeFalsy()
+      expect(
+        defaultWeekModifiers.disabled({ start: new Date('2021-01-10'), end: new Date('2021-01-16') }, {} as any)
+      ).toBeFalsy()
     })
   })
 })

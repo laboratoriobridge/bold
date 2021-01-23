@@ -3,6 +3,7 @@ import React, { CSSProperties, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { getUserLocale } from '../../util/locale'
+import { Week } from '../DateRangePicker/DateRangePicker'
 
 import { createMonthMatrix } from './util'
 
@@ -21,8 +22,8 @@ export interface MonthViewProps {
   renderWeekName?(firstWeekDay: Date): React.ReactNode
   isDaySelected?(day: Date): boolean
 
-  onWeekClick?(week: Date[]): void
-  onWeekHover?(week: Date[]): void
+  onWeekClick?(week: Week): void
+  onWeekHover?(week: Week): void
 
   onlyWeeks?: boolean
 }
@@ -42,12 +43,11 @@ export function MonthView(props: MonthViewProps) {
   const { classes, css } = useStyles(createStyles)
 
   const month = useMemo(() => createMonthMatrix(visibleDate), [visibleDate])
-
-  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
   const handleDayClick = useCallback((day: Date) => () => onDayClick(day), [onDayClick])
+  const handleDayHover = useCallback((day: Date) => () => onDayHover(day), [onDayHover])
 
-  const handleWeekClick = useCallback((week: Date[]) => () => onWeekClick(week), [onWeekClick])
-  const handleWeekHover = useCallback((week: Date[]) => () => onWeekHover(week), [onWeekHover])
+  const handleWeekClick = useCallback((week: Week) => () => onWeekClick(week), [onWeekClick])
+  const handleWeekHover = useCallback((week: Week) => () => onWeekHover(week), [onWeekHover])
 
   return (
     <table className={classes.table}>
@@ -62,12 +62,17 @@ export function MonthView(props: MonthViewProps) {
         {month.map((week, w) => (
           <tr
             key={w}
-            className={onlyWeeks ? css(classes.week, createDateStyles(week, props)) : undefined}
-            onClick={onlyWeeks ? handleWeekClick(week) : undefined}
-            onMouseOver={onlyWeeks ? handleWeekHover(week) : undefined}
+            className={
+              onlyWeeks ? css(classes.week, createDateStyles({ start: week[0], end: week[6] }, props)) : undefined
+            }
+            onClick={onlyWeeks ? handleWeekClick({ start: week[0], end: week[6] }) : undefined}
+            onMouseOver={onlyWeeks ? handleWeekHover({ start: week[0], end: week[6] }) : undefined}
+            data-week={
+              onlyWeeks ? `${week[0].toLocaleDateString('pt-BR')}-${week[6].toLocaleDateString('pt-BR')}` : undefined
+            }
           >
             {week.map((day, d) => (
-              <td key={d} data-date={day.toISOString().slice(0, 10)}>
+              <td key={d} data-date={onlyWeeks ? undefined : day.toISOString().slice(0, 10)}>
                 <span
                   className={onlyWeeks ? undefined : css(classes.day, createDateStyles(day, props))}
                   onClick={onlyWeeks ? undefined : handleDayClick(day)}

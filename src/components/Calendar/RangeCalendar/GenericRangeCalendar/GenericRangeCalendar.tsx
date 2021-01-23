@@ -2,6 +2,7 @@ import * as React from 'react'
 import { MouseEvent, useState } from 'react'
 
 import { Theme } from '../../../../styles'
+import { Week } from '../../../DateRangePicker/DateRangePicker'
 import { Calendar, CalendarProps, defaultModifierStyles } from '../../Calendar'
 
 export interface GenericRangeCalendarProps extends CalendarProps {
@@ -20,7 +21,8 @@ export function GenericRangeCalendar({
   ...rest
 }: GenericRangeCalendarProps) {
   const [hoverDate, setHoverDate] = useState<Date>(undefined)
-  const [hoverWeek, setHoverWeek] = useState<Date[]>(undefined)
+
+  const [hoverWeek, setHoverWeek] = useState<Week>({ start: undefined, end: undefined })
 
   const inRange = (day: Date): boolean => {
     return isInTheRange(day)
@@ -30,17 +32,17 @@ export function GenericRangeCalendar({
     return isInTheHoverRange(day, hoverDate)
   }
 
-  const inWeekRange = (week: Date[]): boolean => {
-    return isInTheRange(week[0]) && isInTheRange(week[6])
+  const inWeekRange = (week: Week): boolean => {
+    return isInTheRange(week.start) && isInTheRange(week.end)
   }
 
-  const inHoverWeekRange = (week: Date[]): boolean => {
-    return hoverWeek && isInTheHoverRange(week[0], hoverWeek[0]) && isInTheHoverRange(week[6], hoverWeek[6])
+  const inHoverWeekRange = (week: Week): boolean => {
+    return hoverWeek && isInTheHoverRange(week.start, hoverWeek.start) && isInTheHoverRange(week.end, hoverWeek.end)
   }
 
   const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
     if (onlyWeeks && onlyWeeks === true) {
-      setHoverWeek(undefined)
+      setHoverWeek({ start: undefined, end: undefined })
     } else {
       setHoverDate(undefined)
     }

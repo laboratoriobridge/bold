@@ -3,6 +3,7 @@ import React from 'react'
 import { CalendarProps } from '../..'
 
 import { DateRange } from '../../../DateRangePicker/BaseDateRangeInput'
+import { Week } from '../../../DateRangePicker/DateRangePicker'
 import { DateRangeCalendar } from './DateRangeCalendar'
 
 export interface ControlledDateRangeCalendarProps extends CalendarProps {
@@ -38,9 +39,9 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
     }
   }
 
-  const controllWeekClick = (week: Date[]) => {
-    const firstDayWeek = week[0]
-    const lastDayWeek = week[6]
+  const controllWeekClick = (week: Week) => {
+    const firstDayWeek = week.start
+    const lastDayWeek = week.end
 
     onDayClick && onDayClick(firstDayWeek)
 

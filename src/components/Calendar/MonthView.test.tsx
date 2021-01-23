@@ -28,6 +28,26 @@ it('should call onDayHover with correct date when hovered on a date', () => {
   expect(hover).toHaveBeenCalledWith(new Date('2018-10-01'))
 })
 
+it('should call onWeekClick with correct week when clicked on a week', () => {
+  const click = jest.fn()
+  const { container } = render(<MonthView visibleDate={new Date('2021-01-21')} onWeekClick={click} onlyWeeks />)
+  const tr = container.querySelector('tr[data-week="10/01/2021-16/01/2021"]')
+
+  expect(click).not.toHaveBeenCalled()
+  fireEvent.click(tr)
+  expect(click).toHaveBeenCalledWith({ start: new Date('2021-01-10'), end: new Date('2021-01-16') })
+})
+
+it('should call onWeekHover with correct week when hovered on a week', () => {
+  const hover = jest.fn()
+  const { container } = render(<MonthView visibleDate={new Date('2021-01-21')} onWeekHover={hover} onlyWeeks />)
+  const tr = container.querySelector('tr[data-week="10/01/2021-16/01/2021"]')
+
+  expect(hover).not.toHaveBeenCalled()
+  fireEvent.mouseOver(tr)
+  expect(hover).toHaveBeenCalledWith({ start: new Date('2021-01-10'), end: new Date('2021-01-16') })
+})
+
 it('should use renderDay prop to render day', () => {
   const renderDay = jest.fn(() => '-')
   const { container } = render(<MonthView visibleDate={new Date('2018-10-26')} renderDay={renderDay} />)

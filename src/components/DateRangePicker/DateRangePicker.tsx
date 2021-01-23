@@ -26,6 +26,11 @@ export interface DateRangePickerProps extends DateRangePickerInputProps {
   onlyWeeks?: boolean
 }
 
+export interface Week {
+  start: Date
+  end: Date
+}
+
 export function DateRangePicker(props: DateRangePickerProps) {
   const {
     onChange,
@@ -103,7 +108,6 @@ export function DateRangePicker(props: DateRangePickerProps) {
   }
 
   const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
-
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <DateRangePickerInput
@@ -153,8 +157,8 @@ export const disableByWeekRange = (minDate: Date, maxDate: Date) => {
   const realMaxDate = new Date(maxDate)
   realMaxDate.setHours(23, 59, 59, 999)
 
-  return (week: Date[]) => {
-    return (minDate && week[0] < realMinDate) || (maxDate && week[6] > realMaxDate)
+  return (week: Week) => {
+    return (minDate && week.start < realMinDate) || (maxDate && week.end > realMaxDate)
   }
 }
 
