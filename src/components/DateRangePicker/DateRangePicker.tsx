@@ -99,7 +99,6 @@ export function DateRangePicker(props: DateRangePickerProps) {
 
   const handleCalendarDateRangeChanged = (dateRange: DateRange) => {
     const { startDate, endDate } = dateRange
-    console.log()
     startDate && endDate
       ? startDate <= endDate
         ? onChange({ startDate: startDate, endDate: endDate } as DateRange)

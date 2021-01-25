@@ -72,14 +72,14 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
     }
   }
 
-  if (onlyWeeks && onlyWeeks === true) {
+  if (onlyWeeks) {
     return (
       <DateRangeCalendar
         {...rest}
         value={value}
         onWeekClick={controllWeekClick}
         inputOnFocus={inputOnFocus}
-        onlyWeeks={true}
+        onlyWeeks={onlyWeeks}
       />
     )
   } else {
@@ -89,7 +89,7 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
         value={value}
         onDayClick={controllDayClick}
         inputOnFocus={inputOnFocus}
-        onlyWeeks={false}
+        onlyWeeks={onlyWeeks}
       />
     )
   }

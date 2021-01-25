@@ -85,7 +85,7 @@ export function Calendar(props: CalendarProps) {
     [allModifiers, onVisibleDateChange, props]
   )
 
-  if (onlyWeeks && onlyWeeks === true) {
+  if (onlyWeeks) {
     return (
       <div className={classes.root} onMouseLeave={onMouseLeave}>
         <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
@@ -96,7 +96,7 @@ export function Calendar(props: CalendarProps) {
           visibleDate={visibleDate}
           createDateStyles={createDateStyles}
           onWeekClick={handleWeekClick}
-          onlyWeeks={true}
+          onlyWeeks={onlyWeeks}
           {...rest}
         />
       </div>
@@ -113,7 +113,7 @@ export function Calendar(props: CalendarProps) {
           createDateStyles={createDateStyles}
           onDayClick={handleDayClick}
           isDaySelected={isDaySelected}
-          onlyWeeks={false}
+          onlyWeeks={onlyWeeks}
           {...rest}
         />
       </div>

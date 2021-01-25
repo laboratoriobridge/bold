@@ -48,7 +48,7 @@ export function GenericRangeCalendar({
     }
   }
 
-  if (onlyWeeks && onlyWeeks === true) {
+  if (onlyWeeks) {
     return (
       <Calendar
         {...rest}
@@ -64,7 +64,7 @@ export function GenericRangeCalendar({
           inHoverWeekRange: hoverStyle,
           inWeekRange: defaultModifierStyles.selected,
         }}
-        onlyWeeks={true}
+        onlyWeeks={onlyWeeks}
       />
     )
   } else {
@@ -84,7 +84,7 @@ export function GenericRangeCalendar({
           inTheHoverRange: hoverStyle,
           inTheRange: defaultModifierStyles.selected,
         }}
-        onlyWeeks={false}
+        onlyWeeks={onlyWeeks}
       />
     )
   }
