@@ -431,7 +431,7 @@ exports[`should render correctly 1`] = `
 </div>
 `;
 
-exports[`should use createDayStyles function to create styles for days 1`] = `
+exports[`should use createDateStyles function to create styles for days 1`] = `
 .emotion-35 {
   border-collapse: separate;
   text-align: center;

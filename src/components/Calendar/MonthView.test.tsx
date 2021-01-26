@@ -1,7 +1,10 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
-
+import { createTheme } from '../../styles'
+import { defaultModifierStyles } from './Calendar'
 import { MonthView } from './MonthView'
+import { dayHoverStyle } from './RangeCalendar/DateRangeCalendar/DateRangeCalendar'
+import { iterateObjectFields, normalizeCssClassNames } from './RangeCalendar/DateRangeCalendar/DateRangeCalendar.test'
 
 it('should render correctly', () => {
   const { container } = render(<MonthView visibleDate={new Date('2018-10-26')} />)
@@ -62,9 +65,59 @@ it('render week name', () => {
   expect(container.querySelector('thead').textContent).toEqual('-------')
 })
 
-it('should use createDayStyles function to create styles for days', () => {
+it('should use createDateStyles function to create styles for days', () => {
   const createDateStyles = jest.fn(() => ({ color: 'red' }))
   const { container } = render(<MonthView visibleDate={new Date('2018-10-26')} createDateStyles={createDateStyles} />)
   expect(createDateStyles).toHaveBeenCalledTimes(35) // Called once for each day rendered on calendar
   expect(container).toMatchSnapshot()
+})
+
+describe('default props', () => {
+  const theme = createTheme()
+  const notExpectecSelectedStyle = defaultModifierStyles.selected(theme)
+  const notExpectedHoverStyle = dayHoverStyle(theme)
+
+  it('should define onDayClick', () => {
+    const { container } = render(<MonthView visibleDate={new Date('2021-01-24')} />)
+    const span = container.querySelector('td[data-date="2021-01-23"] span')
+
+    fireEvent.click(span)
+
+    iterateObjectFields(notExpectecSelectedStyle, (fieldName: string, fieldValue: any) =>
+      expect(span).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
+  })
+
+  it('should define onDayHover', () => {
+    const { container } = render(<MonthView visibleDate={new Date('2021-01-24')} />)
+    const span = container.querySelector('td[data-date="2021-01-23"] span')
+
+    fireEvent.mouseOver(span)
+
+    iterateObjectFields(notExpectedHoverStyle, (fieldName: string, fieldValue: any) =>
+      expect(span).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
+  })
+
+  it('should define onWeekClick', () => {
+    const { container } = render(<MonthView visibleDate={new Date('2021-01-24')} onlyWeeks />)
+    const tr = container.querySelector('tr[data-week="10/01/2021-16/01/2021"]')
+
+    fireEvent.click(tr)
+
+    iterateObjectFields(notExpectecSelectedStyle, (fieldName: string, fieldValue: any) =>
+      expect(tr).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
+  })
+
+  it('should define onWeekHover', () => {
+    const { container } = render(<MonthView visibleDate={new Date('2021-01-24')} onlyWeeks />)
+    const tr = container.querySelector('tr[data-week="10/01/2021-16/01/2021"]')
+
+    fireEvent.mouseOver(tr)
+
+    iterateObjectFields(notExpectedHoverStyle, (fieldName: string, fieldValue: any) =>
+      expect(tr).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+    )
+  })
 })
