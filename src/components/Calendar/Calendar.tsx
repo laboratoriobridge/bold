@@ -85,40 +85,23 @@ export function Calendar(props: CalendarProps) {
     [allModifiers, onVisibleDateChange, props]
   )
 
-  if (onlyWeeks) {
-    return (
-      <div className={classes.root} onMouseLeave={onMouseLeave}>
-        <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
-          <MonthControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
-          <YearControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
-        </HFlow>
-        <MonthView
-          visibleDate={visibleDate}
-          createDateStyles={createDateStyles}
-          onWeekClick={handleWeekClick}
-          onlyWeeks={onlyWeeks}
-          {...rest}
-        />
-      </div>
-    )
-  } else {
-    return (
-      <div className={classes.root} onMouseLeave={onMouseLeave}>
-        <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
-          <MonthControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
-          <YearControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
-        </HFlow>
-        <MonthView
-          visibleDate={visibleDate}
-          createDateStyles={createDateStyles}
-          onDayClick={handleDayClick}
-          isDaySelected={isDaySelected}
-          onlyWeeks={onlyWeeks}
-          {...rest}
-        />
-      </div>
-    )
-  }
+  return (
+    <div className={classes.root} onMouseLeave={onMouseLeave}>
+      <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
+        <MonthControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
+        <YearControl visibleDate={visibleDate} onChange={onVisibleDateChange} />
+      </HFlow>
+      <MonthView
+        visibleDate={visibleDate}
+        createDateStyles={createDateStyles}
+        onDayClick={handleDayClick}
+        isDaySelected={isDaySelected}
+        onWeekClick={handleWeekClick}
+        onlyWeeks={onlyWeeks}
+        {...rest}
+      />
+    </div>
+  )
 }
 
 export const createStyles = () => ({

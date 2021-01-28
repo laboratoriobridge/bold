@@ -72,27 +72,16 @@ export function ControlledDateRangeCalendar(props: ControlledDateRangeCalendarPr
     }
   }
 
-  if (onlyWeeks) {
-    return (
-      <DateRangeCalendar
-        {...rest}
-        value={value}
-        onWeekClick={controllWeekClick}
-        inputOnFocus={inputOnFocus}
-        onlyWeeks={onlyWeeks}
-      />
-    )
-  } else {
-    return (
-      <DateRangeCalendar
-        {...rest}
-        value={value}
-        onDayClick={controllDayClick}
-        inputOnFocus={inputOnFocus}
-        onlyWeeks={onlyWeeks}
-      />
-    )
-  }
+  return (
+    <DateRangeCalendar
+      {...rest}
+      value={value}
+      onWeekClick={controllWeekClick}
+      onDayClick={controllDayClick}
+      inputOnFocus={inputOnFocus}
+      onlyWeeks={onlyWeeks}
+    />
+  )
 }
 
 ControlledDateRangeCalendar.defaultProps = {

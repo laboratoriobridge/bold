@@ -98,6 +98,8 @@ MonthView.defaultProps = {
   onWeekClick: () => null,
   onWeekHover: () => null,
 
+  onlyWeeks: false,
+
   createDateStyles: () => null,
 
   renderDay: (day) => {

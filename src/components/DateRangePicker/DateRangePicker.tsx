@@ -149,6 +149,14 @@ export function DateRangePicker(props: DateRangePickerProps) {
   )
 }
 
+DateRangePicker.defaultProps = {
+  onlyWeeks: false,
+  icon: 'calendarOutline',
+  onChange: () => null,
+  onFocus: () => null,
+  onBlur: () => null,
+} as Partial<DateRangePickerProps>
+
 export const disableByWeekRange = (minDate: Date, maxDate: Date) => {
   const realMinDate = new Date(minDate)
   realMinDate.setHours(0, 0, 0, 0)
