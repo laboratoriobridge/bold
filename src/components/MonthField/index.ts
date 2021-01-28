@@ -1,1 +1,1 @@
-export { MonthField, MonthInputProps, MonthFieldProps } from './MonthField'
+export { MonthField, MonthFieldProps } from './MonthField'

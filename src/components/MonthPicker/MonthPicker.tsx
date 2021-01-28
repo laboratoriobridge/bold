@@ -1,23 +1,40 @@
-import { css } from 'emotion'
-import React, { CSSProperties, useEffect, useState } from 'react'
+import { css, Interpolation } from 'emotion'
+import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { getUserLocale, getMonthNames } from '../../util/locale'
 import { Button } from '../Button'
+import { ModifierFn } from '../Calendar/Calendar'
 import { Icon } from '../Icon'
+import { isSameReferenceMonth, ReferenceMonthRange } from '../MonthRangePicker/MonthRangePicker'
 import { Text } from '../Text'
 
 export interface MonthPickerProps {
-  month?: number
-  year?: number
+  visibleMonth: ReferenceMonth
+
+  /**
+   * Map of modifier predicates to apply custom or pre-defined styles to dates.
+   */
+  modifiers?: Partial<MonthModifierPredicateMap>
+
+  /**
+   * Map of modifier styles to be applied to a date if the respective modifier predicate applies.
+   */
+  modifierStyles?: Partial<MonthModifierStyleMap>
+
+  onVisibleMonthChange(visibleMonth: ReferenceMonth): void
+  onMouseLeave?(): void
+  onMonthHover?(month: ReferenceMonth): void
+
   formatter?: (date: Date, month: Intl.DateTimeFormat) => string
-  onChange?(referenceMonth: ReferenceMonth): any
+  onChange?(range: ReferenceMonthRange): void
+  onMonthClick?(refMonth: ReferenceMonth): void
 }
 
 /**
  * Interface representing the selected month.
- *
+ *  @
  * Months are zero indexed, so January is month 0.
  */
 export interface ReferenceMonth {
@@ -26,26 +43,47 @@ export interface ReferenceMonth {
 }
 
 export function MonthPicker(props: MonthPickerProps) {
-  const { year, formatter, onChange } = props
-  const { classes } = useStyles(createStyles)
+  const {
+    visibleMonth,
+    modifierStyles,
+    modifiers,
+    formatter,
+    onMouseLeave,
+    onMonthHover,
+    onMonthClick,
+    onVisibleMonthChange,
+  } = props
+  const { classes, theme } = useStyles(createStyles)
   const locale = useLocale()
 
-  const [visibleYear, setVisibleYear] = useState(year || new Date().getFullYear())
-  useEffect(() => {
-    setVisibleYear(year || new Date().getFullYear())
-  }, [year])
+  const [visibleYear, setVisibleYear] = useState(visibleMonth ? visibleMonth.year : new Date().getFullYear())
 
   const onLeftClick = () => setVisibleYear((currYear) => currYear - 1)
   const onRightClick = () => setVisibleYear((currYear) => currYear + 1)
-
-  const onMonthClick = (month: number) => () => {
-    onChange({ month, year: visibleYear })
-  }
 
   const baseYearDate = new Date(visibleYear, 1, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
 
   const monthNames = getMonthNames(getUserLocale(), formatter)
+
+  const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
+
+  const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
+  const createMonthStyles = useMemo(() => createMonthStylesFn(allModifiers, allModifierStyles, theme), [
+    allModifiers,
+    allModifierStyles,
+    theme,
+  ])
+
+  const handleMonthHover = useCallback((month: ReferenceMonth) => () => onMonthHover(month), [onMonthHover])
+
+  const handleMonthClick = useCallback(
+    (month: ReferenceMonth) => () => {
+      onVisibleMonthChange(month)
+      return onMonthClick && onMonthClick(month)
+    },
+    [onMonthClick, onVisibleMonthChange]
+  )
 
   return (
     <div className={classes.container}>
@@ -67,12 +105,14 @@ export function MonthPicker(props: MonthPickerProps) {
         </div>
 
         {monthNames.map((month, index) => (
-          <div key={index} className={classes.item}>
+          <div key={index} onMouseLeave={onMouseLeave} className={css(classes.item)}>
             <Button
               title={month.long}
-              onClick={onMonthClick(index)}
+              onClick={handleMonthClick({ month: index, year: visibleYear })}
               skin='ghost'
-              style={css(classes.button, index === props.month && props.year === visibleYear && classes.active)}
+              onMouseOver={handleMonthHover({ month: index, year: visibleYear })}
+              style={css(classes.button, createMonthStyles({ month: index, year: visibleYear }))}
+              disabled={allModifiers.disabled({ month: index, year: visibleYear })}
             >
               {month.short}
             </Button>
@@ -81,6 +121,68 @@ export function MonthPicker(props: MonthPickerProps) {
       </div>
     </div>
   )
+}
+
+MonthPicker.defaultProps = {
+  onMonthClick: () => null,
+  onMonthHover: () => null,
+  createMonthStyles: () => null,
+} as Partial<MonthPickerProps>
+
+export interface MonthModifierPredicateMap {
+  disabled: ModifierFn
+  selected: ModifierFn
+  current: ModifierFn
+  [key: string]: ModifierFn
+}
+
+export type MonthModifierStyleMap = { [key in keyof MonthModifierPredicateMap]: (theme: Theme) => Interpolation }
+
+export const defaultModifiers: MonthModifierPredicateMap = {
+  current: (month: ReferenceMonth) =>
+    isSameReferenceMonth({ month: new Date().getMonth(), year: new Date().getFullYear() }, month),
+  disabled: () => false,
+  selected: () => false,
+}
+
+export const defaultModifierStyles: MonthModifierStyleMap = {
+  current: () => ({
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+  }),
+  disabled: (theme: Theme) => ({
+    color: theme.pallete.text.disabled,
+
+    ':hover': {
+      background: 'initial',
+      cursor: 'not-allowed',
+    },
+  }),
+  selected: (theme: Theme) => ({
+    background: theme.pallete.primary.main,
+    color: theme.pallete.surface.main,
+    fontWeight: 'bold',
+    ':hover': {
+      background: theme.pallete.primary.main + '!important',
+      color: theme.pallete.surface.main,
+    },
+  }),
+}
+
+export const createMonthStylesFn = (
+  modifiers: MonthModifierPredicateMap,
+  styles: MonthModifierStyleMap,
+  theme: Theme
+) => (month: ReferenceMonth): Interpolation => {
+  return Object.keys(modifiers).reduce((s, modifier) => {
+    if (!styles[modifier]) {
+      throw new Error(`You must provied a modifierStyle for predicate "${modifier}"`)
+    }
+    return {
+      ...s,
+      ...(modifiers[modifier](month, null) ? (styles[modifier](theme) as any) : {}),
+    }
+  }, {})
 }
 
 export const createStyles = (theme: Theme) => ({
@@ -104,6 +206,7 @@ export const createStyles = (theme: Theme) => ({
   item: {
     textAlign: 'center',
     margin: '0.25rem 0.25rem',
+    borderRadius: '0.25rem',
   } as CSSProperties,
   button: {
     padding: 'calc(0.25rem - 1px) 1rem',
@@ -111,7 +214,7 @@ export const createStyles = (theme: Theme) => ({
     minWidth: '70px',
   } as CSSProperties,
   active: {
-    background: theme.pallete.primary.main + ' !important',
+    background: theme.pallete.primary.main,
     color: theme.pallete.surface.main,
   } as CSSProperties,
 })
