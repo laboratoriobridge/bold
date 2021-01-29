@@ -5,9 +5,9 @@ import { FormControl } from '../FormControl'
 
 import { BaseDateRangeInput, BaseDateRangeInputProps } from './BaseDateRangeInput'
 
-export interface DateRangeInputProps extends BaseDateRangeInputProps, UseFormControlProps {}
+export interface DateRangePickerInputProps extends BaseDateRangeInputProps, UseFormControlProps {}
 
-export function DateRangeInput(props: DateRangeInputProps) {
+export function DateRangePickerInput(props: DateRangePickerInputProps) {
   const { label, error, ...rest } = props
 
   const { getFormControlProps, getInputProps } = useFormControl(props)

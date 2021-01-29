@@ -182,8 +182,12 @@ exports[`MonthPaginator should render correctly with ghost 1`] = `
           <span
             class="emotion-2"
           >
+<<<<<<< HEAD
             Jan - 
-            2021
+=======
+            Dec - 
+>>>>>>> 55fa6bf86db406f487c0e58cc4b3143a10226703
+            2020
           </span>
         </span>
       </button>

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DateRangeField render should render correctly 1`] = `
+exports[`DateRangePicker render should render correctly 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -323,7 +323,7 @@ exports[`DateRangeField render should render correctly 1`] = `
 </div>
 `;
 
-exports[`DateRangeField render should render correctly when disabled 1`] = `
+exports[`DateRangePicker render should render correctly when disabled 1`] = `
 .emotion-3 {
   -webkit-flex: 1;
   -ms-flex: 1;
@@ -653,7 +653,7 @@ exports[`DateRangeField render should render correctly when disabled 1`] = `
 </div>
 `;
 
-exports[`DateRangeField render should render correctly when invalid 1`] = `
+exports[`DateRangePicker render should render correctly when invalid 1`] = `
 .emotion-4 {
   -webkit-align-items: center;
   -webkit-box-align: center;
@@ -988,7 +988,7 @@ exports[`DateRangeField render should render correctly when invalid 1`] = `
 </div>
 `;
 
-exports[`DateRangeField render should render correctly when opened 1`] = `
+exports[`DateRangePicker render should render correctly when opened 1`] = `
 .emotion-12 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
@@ -1981,7 +1981,7 @@ exports[`DateRangeField render should render correctly when opened 1`] = `
 </div>
 `;
 
-exports[`DateRangeField render should show calendar correctly when inputs are cleaned 1`] = `
+exports[`DateRangePicker render should show calendar correctly when inputs are cleaned 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2003,7 +2003,7 @@ exports[`DateRangeField render should show calendar correctly when inputs are cl
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 1`] = `
+exports[`DateRangePicker render should show calendar correctly when only endDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2033,9 +2033,9 @@ exports[`DateRangeField render should show calendar correctly when only endDate 
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when only endDate is defined and is focused 2`] = `null`;
+exports[`DateRangePicker render should show calendar correctly when only endDate is defined and is focused 2`] = `null`;
 
-exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 1`] = `
+exports[`DateRangePicker render should show calendar correctly when only startDate is defined and is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2065,11 +2065,11 @@ exports[`DateRangeField render should show calendar correctly when only startDat
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when only startDate is defined and is focused 2`] = `null`;
+exports[`DateRangePicker render should show calendar correctly when only startDate is defined and is focused 2`] = `null`;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 1`] = `null`;
+exports[`DateRangePicker render should show calendar correctly when startDate and endDate are defined and endDate is focused 1`] = `null`;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and endDate is focused 2`] = `
+exports[`DateRangePicker render should show calendar correctly when startDate and endDate are defined and endDate is focused 2`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2099,7 +2099,7 @@ exports[`DateRangeField render should show calendar correctly when startDate and
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 1`] = `
+exports[`DateRangePicker render should show calendar correctly when startDate and endDate are defined and startDate is focused 1`] = `
 .emotion-0 {
   width: 2rem;
   padding: 0.25rem 0;
@@ -2129,4 +2129,4 @@ exports[`DateRangeField render should show calendar correctly when startDate and
 </span>
 `;
 
-exports[`DateRangeField render should show calendar correctly when startDate and endDate are defined and startDate is focused 2`] = `null`;
+exports[`DateRangePicker render should show calendar correctly when startDate and endDate are defined and startDate is focused 2`] = `null`;

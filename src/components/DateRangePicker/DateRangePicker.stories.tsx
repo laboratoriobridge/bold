@@ -2,17 +2,17 @@ import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 import { DateRange } from './BaseDateRangeInput'
-import { DateRangeField } from './DateRangeField'
+import { DateRangePicker } from './DateRangePicker'
 
 const todayMinus10 = new Date(new Date().setDate(new Date().getDate() - 10))
 const period: DateRange = { startDate: todayMinus10, endDate: new Date() }
 
 export default {
-  title: 'Components/DateRangeField',
+  title: 'Components/DateRangePicker',
 }
 
 export const Default = () => (
-  <DateRangeField
+  <DateRangePicker
     clearable={boolean('clearable', true)}
     label={text('label', 'Text label')}
     disabled={boolean('disabled', false)}
@@ -25,7 +25,7 @@ export const Default = () => (
 )
 
 export const MinMaxDate = () => (
-  <DateRangeField
+  <DateRangePicker
     clearable={boolean('clearable', true)}
     label={text('label', 'Text label')}
     disabled={boolean('disabled', false)}

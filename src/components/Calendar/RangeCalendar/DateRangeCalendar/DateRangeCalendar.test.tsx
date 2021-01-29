@@ -5,7 +5,7 @@ import { fireEvent, render } from '@testing-library/react'
 
 import { createTheme } from '../../../../styles'
 import { defaultModifierStyles } from '../../Calendar'
-import { DateRange } from '../../../DateRangeField/BaseDateRangeInput'
+import { DateRange } from '../../../DateRangePicker/BaseDateRangeInput'
 import { dayHoverStyle, DateRangeCalendar, DateRangeCalendarProps } from './DateRangeCalendar'
 
 expect.extend(matchers)
