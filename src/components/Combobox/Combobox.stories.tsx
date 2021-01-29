@@ -1,4 +1,4 @@
-import { boolean, text } from '@storybook/addon-knobs'
+import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { Combobox } from './Combobox'
@@ -24,7 +24,7 @@ storiesOf('Components|Combobox', module).add('default', () => (
     name='fruit'
     items={fruits}
     error={text('error', '')}
-    //   menuMinWidth={number('menuMinWidth (px)', undefined)}
+    menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
     //   itemIsEqual={(a, b) => a.value === b.value}
     placeholder={text('placeholder', 'Select a value...')}

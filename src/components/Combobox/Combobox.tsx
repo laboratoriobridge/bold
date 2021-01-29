@@ -12,6 +12,7 @@ import { TextInput, TextInputProps } from '../TextField'
 export interface ComboboxProps<T = string> extends TextInputProps, UseFormControlProps {
   items: T[]
   openOnFocus: boolean
+  menuMinWidth?: number
   itemToString(item: T): string
   filter?(items: T[], filter: string): T[]
 }
@@ -20,6 +21,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
     items,
     itemToString,
+    menuMinWidth,
     openOnFocus,
     onClear,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
@@ -97,8 +99,9 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
       <div {...downshiftMenuProps}>
         {isOpen && (
           <div
+            data-testid='menu'
             className={classes.menu}
-            style={{ ...popperStyles, width: inputRef.current && inputRef.current.clientWidth }}
+            style={{ ...popperStyles, width: inputRef.current?.clientWidth, minWidth: menuMinWidth }}
             {...popperAttributes}
             ref={setMenuRef}
           >

@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, render, fireEvent, RenderResult } from '@testing-library/react'
+import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
 import { Combobox, ComboboxProps } from './Combobox'
 
 interface Fruit {
@@ -173,6 +173,25 @@ it('enters error state', async () => {
 
   const errorMessageContainer = baseElement.querySelector(`#${input.getAttribute('aria-errormessage')}`)
   expect(errorMessageContainer).toHaveTextContent(errorMessage)
+})
+
+it('respects menu min-width', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  await act(async () => {
+    const result = render(<ComboboxTest menuMinWidth={1000} />)
+    baseElement = result.baseElement
+  })
+
+  const dropdownButton = baseElement.querySelector('button')
+  //Opens menu
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  const menu = getByTestId(baseElement, 'menu')
+
+  expect(menu).toHaveStyle('min-width: 1000px')
 })
 
 it('renders correcly closed', async () => {
