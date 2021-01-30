@@ -1,5 +1,5 @@
 import { css, Interpolation } from 'emotion'
-import React, { CSSProperties, useCallback, useMemo, useState } from 'react'
+import React, { CSSProperties, useCallback, useMemo } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -30,6 +30,8 @@ export interface MonthPickerProps {
   formatter?: (date: Date, month: Intl.DateTimeFormat) => string
   onChange?(range: ReferenceMonthRange): void
   onMonthClick?(refMonth: ReferenceMonth): void
+
+  isDisabled(month: ReferenceMonth): boolean
 }
 
 /**
@@ -52,16 +54,21 @@ export function MonthPicker(props: MonthPickerProps) {
     onMonthHover,
     onMonthClick,
     onVisibleMonthChange,
+    isDisabled,
   } = props
   const { classes, theme } = useStyles(createStyles)
   const locale = useLocale()
 
-  const [visibleYear, setVisibleYear] = useState(visibleMonth ? visibleMonth.year : new Date().getFullYear())
+  const onLeftClick = () => {
+    const year = visibleMonth.year - 1
+    return onVisibleMonthChange({ month: visibleMonth.month, year: year })
+  }
+  const onRightClick = () => {
+    const year = visibleMonth.year + 1
+    return onVisibleMonthChange({ month: visibleMonth.month, year: year })
+  }
 
-  const onLeftClick = () => setVisibleYear((currYear) => currYear - 1)
-  const onRightClick = () => setVisibleYear((currYear) => currYear + 1)
-
-  const baseYearDate = new Date(visibleYear, 1, 1, 0, 0, 0, 0)
+  const baseYearDate = new Date(visibleMonth.year, 1, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
 
   const monthNames = getMonthNames(getUserLocale(), formatter)
@@ -69,6 +76,7 @@ export function MonthPicker(props: MonthPickerProps) {
   const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
 
   const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
+
   const createMonthStyles = useMemo(() => createMonthStylesFn(allModifiers, allModifierStyles, theme), [
     allModifiers,
     allModifierStyles,
@@ -108,11 +116,11 @@ export function MonthPicker(props: MonthPickerProps) {
           <div key={index} onMouseLeave={onMouseLeave} className={css(classes.item)}>
             <Button
               title={month.long}
-              onClick={handleMonthClick({ month: index, year: visibleYear })}
+              onClick={handleMonthClick({ month: index, year: visibleMonth.year })}
               skin='ghost'
-              onMouseOver={handleMonthHover({ month: index, year: visibleYear })}
-              style={css(classes.button, createMonthStyles({ month: index, year: visibleYear }))}
-              disabled={allModifiers.disabled({ month: index, year: visibleYear })}
+              onMouseOver={handleMonthHover({ month: index, year: visibleMonth.year })}
+              style={css(classes.button, createMonthStyles({ month: index, year: visibleMonth.year }))}
+              disabled={isDisabled && isDisabled({ month: index, year: visibleMonth.year })}
             >
               {month.short}
             </Button>
@@ -130,7 +138,6 @@ MonthPicker.defaultProps = {
 } as Partial<MonthPickerProps>
 
 export interface MonthModifierPredicateMap {
-  disabled: ModifierFn
   selected: ModifierFn
   current: ModifierFn
   [key: string]: ModifierFn
@@ -141,7 +148,6 @@ export type MonthModifierStyleMap = { [key in keyof MonthModifierPredicateMap]: 
 export const defaultModifiers: MonthModifierPredicateMap = {
   current: (month: ReferenceMonth) =>
     isSameReferenceMonth({ month: new Date().getMonth(), year: new Date().getFullYear() }, month),
-  disabled: () => false,
   selected: () => false,
 }
 
@@ -149,14 +155,6 @@ export const defaultModifierStyles: MonthModifierStyleMap = {
   current: () => ({
     fontWeight: 'bold',
     textDecoration: 'underline',
-  }),
-  disabled: (theme: Theme) => ({
-    color: theme.pallete.text.disabled,
-
-    ':hover': {
-      background: 'initial',
-      cursor: 'not-allowed',
-    },
   }),
   selected: (theme: Theme) => ({
     background: theme.pallete.primary.main,

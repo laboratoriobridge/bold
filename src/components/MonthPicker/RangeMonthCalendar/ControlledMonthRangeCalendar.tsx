@@ -1,5 +1,5 @@
 import React from 'react'
-import { isBiggerOrEqualThan, isLessOrEqualThan, ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
+import { isBiggerThan, isLessThan, ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { MonthRangeCalendar } from './MonthRangeCalendar'
 
@@ -11,24 +11,25 @@ export interface ControlledMonthRangeCalendarProps extends MonthPickerProps {
 }
 
 export function ControlledMonthRangeCalendar(props: ControlledMonthRangeCalendarProps) {
-  const { inputOnFocus, onChange, value, ...rest } = props
+  const { inputOnFocus, onChange, value, onMonthClick, ...rest } = props
 
-  const controllMonthClick = (refMonth: ReferenceMonth) => {
+  const controllMonthClick = (month: ReferenceMonth) => {
+    onMonthClick && onMonthClick(month)
     if (inputOnFocus === 1) {
-      if (!isBiggerOrEqualThan(refMonth, value?.start)) {
-        onChange({ start: refMonth, end: value?.end } as ReferenceMonthRange)
-      } else if (!isLessOrEqualThan(refMonth, value?.end)) {
-        onChange({ start: refMonth, end: undefined } as ReferenceMonthRange)
+      if (isLessThan(month, value?.start)) {
+        onChange({ start: month, end: value?.end } as ReferenceMonthRange)
+      } else if (isBiggerThan(month, value?.end)) {
+        onChange({ start: month, end: undefined } as ReferenceMonthRange)
       } else {
-        onChange({ start: refMonth, end: value?.end } as ReferenceMonthRange)
+        onChange({ start: month, end: value?.end } as ReferenceMonthRange)
       }
       return
     }
     if (inputOnFocus === 2) {
-      if (value?.end && !isBiggerOrEqualThan(refMonth, value?.start)) {
-        onChange({ start: refMonth, end: undefined } as ReferenceMonthRange)
+      if (value?.end && isLessThan(month, value?.start)) {
+        onChange({ start: month, end: undefined } as ReferenceMonthRange)
       } else {
-        onChange({ start: value?.start, end: refMonth } as ReferenceMonthRange)
+        onChange({ start: value?.start, end: month } as ReferenceMonthRange)
       }
     }
   }

@@ -1,14 +1,16 @@
 import { Options as PopperOptions } from '@popperjs/core'
 import React, { useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
+import { Theme, useStyles } from '../..'
 import { DateRange } from '../DateRangePicker'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-import { ReferenceMonth } from '../MonthPicker'
+import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { ControlledMonthRangeCalendar } from '../MonthPicker/RangeMonthCalendar/ControlledMonthRangeCalendar'
 import { MonthRangePickerInput, MonthRangePickerInputProps } from './MonthRangePickerInput'
 
 export interface MonthRangePickerProps extends Omit<MonthRangePickerInputProps, 'onChange'> {
   popperProps?: PopperOptions
+  monthPickerProps?: MonthPickerProps
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
   onBlur?(e: React.FocusEvent<HTMLDivElement>): void
   onChange?(dateRange: DateRange): void
@@ -20,7 +22,7 @@ export interface ReferenceMonthRange {
 }
 
 export function MonthRangePicker(props: MonthRangePickerProps) {
-  const { minMonth, maxMonth, popperProps, onFocus, onBlur, onChange, value, icon, ...rest } = props
+  const { minMonth, maxMonth, popperProps, onFocus, onBlur, onChange, value, icon, monthPickerProps, ...rest } = props
 
   const [rangeInputFocus, setRangeInputFocus] = useState(1)
   const [visibleMonth, setVisibleMonth] = useState<ReferenceMonth>({ month: undefined, year: undefined })
@@ -29,6 +31,8 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
   const finalInputRef = useRef<HTMLInputElement>()
   const [anchorRef, setAnchorRef] = useState<HTMLDivElement>()
   const [popupRef, setPopupRef] = useState<HTMLDivElement>()
+
+  const { classes, css } = useStyles(createStyles)
 
   useEffect(() => {
     const month = (): ReferenceMonth => {
@@ -49,7 +53,10 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
     setVisibleMonth(month)
   }, [rangeInputFocus, value])
 
-  usePopper(anchorRef, popupRef, { ...popperProps, placement: 'bottom' })
+  const {
+    styles: { popper: popperStyle },
+    attributes: { placement },
+  } = usePopper(anchorRef, popupRef, { ...popperProps, placement: 'bottom' })
 
   const handleInputFocus = (inputOnFocus: number) => setRangeInputFocus(inputOnFocus)
 
@@ -75,6 +82,8 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
 
   const handleOnVisibleRefMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
 
+  const handleOnMonhClick = () => finalInputRef.current.focus()
+
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <MonthRangePickerInput
@@ -90,19 +99,23 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
       />
 
       {open && (
-        <div ref={setPopupRef} tabIndex={-1}>
+        <div
+          ref={setPopupRef}
+          className={css(classes.popup, popperStyle as any)}
+          tabIndex={-1}
+          data-placement={placement}
+        >
           <ControlledMonthRangeCalendar
             value={value}
             onChange={handleMonthRangeChanged}
+            onMonthClick={handleOnMonhClick}
             inputOnFocus={rangeInputFocus}
             visibleMonth={visibleMonth}
             onVisibleMonthChange={handleOnVisibleRefMonthChange}
             minMonth={minMonth}
             maxMonth={maxMonth}
-            modifiers={{
-              disabled: disabledByMonthRange(minMonth, maxMonth),
-            }}
-            {...rest}
+            isDisabled={disabledByMonthRange(minMonth, maxMonth)}
+            {...monthPickerProps}
           />
         </div>
       )}
@@ -110,13 +123,17 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
   )
 }
 
-export const isBiggerOrEqualThan = (month: ReferenceMonth, min: ReferenceMonth) => {
-  return isBiggerThan(month, min) || isSameReferenceMonth(month, min)
-}
+const createStyles = (theme: Theme) => ({
+  popup: {
+    zIndex: theme.zIndex.popper,
+  },
+})
 
-export const isLessOrEqualThan = (month: ReferenceMonth, max: ReferenceMonth) => {
-  return isLessThan(month, max) || isSameReferenceMonth(month, max)
-}
+export const isBiggerOrEqualThan = (month: ReferenceMonth, min: ReferenceMonth) =>
+  isBiggerThan(month, min) || isSameReferenceMonth(month, min)
+
+export const isLessOrEqualThan = (month: ReferenceMonth, max: ReferenceMonth) =>
+  isLessThan(month, max) || isSameReferenceMonth(month, max)
 
 export const isLessThan = (month: ReferenceMonth, max: ReferenceMonth) => {
   if (month.year === max.year) {

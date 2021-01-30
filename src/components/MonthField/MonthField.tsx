@@ -76,9 +76,9 @@ export function MonthField(props: MonthFieldProps) {
             visibleMonth={visibleMonth}
             onVisibleMonthChange={handleVisibleMonthChange}
             onMonthClick={handleMonthClick}
+            isDisabled={disabledByMonthRange(minMonth, maxMonth)}
             modifiers={{
               selected: (month: ReferenceMonth) => value && isSameReferenceMonth(value, month),
-              disabled: disabledByMonthRange(minMonth, maxMonth),
             }}
           />
         </div>

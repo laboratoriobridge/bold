@@ -12,13 +12,13 @@ import { GenericMonthRangeCalendar } from './GenericMonthRangeCalendar'
 
 export interface MonthRangeCalendarProps extends MonthPickerProps {
   value: ReferenceMonthRange
-  minRefMonth?: ReferenceMonth
-  maxRefMonth?: ReferenceMonth
+  minMonth?: ReferenceMonth
+  maxMonth?: ReferenceMonth
   inputOnFocus: number
 }
 
 export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
-  const { value, inputOnFocus, minRefMonth, maxRefMonth, ...rest } = props
+  const { value, inputOnFocus, minMonth, maxMonth, ...rest } = props
 
   const handleIsInTheRange = (month: ReferenceMonth): boolean => {
     if (!value?.start) {
@@ -81,8 +81,8 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
 
   const isInHoverRange = (month: ReferenceMonth, hoverMonth: ReferenceMonth) =>
     hoverMonth &&
-    (!minRefMonth || isBiggerOrEqualThan(month, minRefMonth)) &&
-    (!maxRefMonth || isLessOrEqualThan(month, maxRefMonth)) &&
+    (!minMonth || isBiggerOrEqualThan(month, minMonth)) &&
+    (!maxMonth || isLessOrEqualThan(month, maxMonth)) &&
     hoverControl(month, hoverMonth)
 
   return (

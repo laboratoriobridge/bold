@@ -47,23 +47,21 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
     ...rest
   } = props
 
-  const firstDateFieldRef = useRef<HTMLInputElement>()
-  const secondDateFieldRef = useRef<HTMLInputElement>()
+  const firstFieldRef = useRef<HTMLInputElement>()
+  const secondFieldRef = useRef<HTMLInputElement>()
 
   const { classes, css } = useStyles(createStyles, disabled)
   const className = css(classes.div, props.invalid && classes.invalid, props.style)
 
-  const handleMinmaxMonth = (refMonth: ReferenceMonth) => {
+  const handleMinmaxMonth = (month: ReferenceMonth) => {
     if (minMonth && maxMonth) {
-      return refMonth && isBiggerOrEqualThan(refMonth, minMonth) && isLessOrEqualThan(refMonth, maxMonth)
-        ? refMonth
-        : undefined
+      return month && isBiggerOrEqualThan(month, minMonth) && isLessOrEqualThan(month, maxMonth) ? month : undefined
     } else if (minMonth) {
-      return refMonth && isBiggerOrEqualThan(refMonth, minMonth) ? refMonth : undefined
+      return month && isBiggerOrEqualThan(month, minMonth) ? month : undefined
     } else if (maxMonth) {
-      return refMonth && isLessOrEqualThan(refMonth, maxMonth) ? refMonth : undefined
+      return month && isLessOrEqualThan(month, maxMonth) ? month : undefined
     } else {
-      return refMonth
+      return month
     }
   }
 
@@ -77,20 +75,20 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
 
     onChange && onChange(aux)
     if (start) {
-      secondDateFieldRef.current.focus()
+      secondFieldRef.current.focus()
     }
   }
 
   const onChangeFinal = (refMonth: ReferenceMonth) => {
-    const auxFinalDate = handleMinmaxMonth(refMonth)
+    const auxFinalMonth = handleMinmaxMonth(refMonth)
     const start =
-      value?.start && value?.end && auxFinalDate && !isBiggerOrEqualThan(auxFinalDate, value?.start)
-        ? auxFinalDate
+      value?.start && value?.end && auxFinalMonth && !isBiggerOrEqualThan(auxFinalMonth, value?.start)
+        ? auxFinalMonth
         : value?.start
     const end =
-      value?.start && value?.end && auxFinalDate && !isBiggerOrEqualThan(auxFinalDate, value?.start)
+      value?.start && value?.end && auxFinalMonth && !isBiggerOrEqualThan(auxFinalMonth, value?.start)
         ? undefined
-        : auxFinalDate
+        : auxFinalMonth
 
     const aux = {
       start,
@@ -103,16 +101,16 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
   const onClearStart = () => {
     const aux = { start: undefined, end: value.end } as ReferenceMonthRange
     onChange && onChange(aux)
-    firstDateFieldRef.current.focus()
+    firstFieldRef.current.focus()
   }
 
   const onClearFinal = () => {
     const aux = { start: value.start, end: undefined } as ReferenceMonthRange
     onChange && onChange(aux)
-    secondDateFieldRef.current.focus()
+    secondFieldRef.current.focus()
   }
 
-  const defaultHandleOnClick = () => firstDateFieldRef.current.focus()
+  const defaultHandleOnClick = () => firstFieldRef.current.focus()
 
   const onInputOnFocusInicial = () => onInputOnFocus && onInputOnFocus(1)
 
@@ -128,13 +126,13 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
         <div className={classes.fieldWrapper}>
           <MonthInput
             clearable={clearable}
-            name={name ? `${name}.startDate` : 'startDate'}
+            name={name ? `${name}.start` : 'start'}
             disabled={disabled}
-            inputRef={composeRefs(firstDateFieldRef, initialInputRef) as any}
-            onChange={() => onChangeStart}
+            inputRef={composeRefs(firstFieldRef, initialInputRef) as any}
+            onChange={onChangeStart}
             onClear={onClearStart}
             placeholder={locale.dateInput.placeholder}
-            style={classes.dateField}
+            style={classes.monthField}
             value={value.start}
             onFocus={onInputOnFocusInicial}
             {...rest}
@@ -146,13 +144,13 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
         <div className={classes.fieldWrapper}>
           <MonthInput
             clearable={clearable}
-            name={name ? `${name}.endDate` : 'endDate'}
+            name={name ? `${name}.end` : 'end'}
             disabled={disabled}
-            inputRef={composeRefs(secondDateFieldRef, finalInputRef) as any}
-            onChange={() => onChangeFinal}
+            inputRef={composeRefs(secondFieldRef, finalInputRef) as any}
+            onChange={onChangeFinal}
             onClear={onClearFinal}
             placeholder={locale.dateInput.placeholder}
-            style={classes.dateField}
+            style={classes.monthField}
             value={value.end}
             onFocus={onInputOnFocusFinal}
             {...rest}
@@ -197,7 +195,7 @@ const createStyles = (theme: Theme, disabled: boolean) => {
       display: 'flex',
       position: 'relative',
     } as CSSProperties,
-    dateField: {
+    monthField: {
       border: 'none',
       '::placeholder': {
         color: theme.pallete.text.secondary,
