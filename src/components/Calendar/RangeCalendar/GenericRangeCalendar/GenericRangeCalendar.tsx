@@ -41,7 +41,7 @@ export function GenericRangeCalendar({
   }
 
   const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
-    if (onlyWeeks && onlyWeeks === true) {
+    if (onlyWeeks) {
       setHoverWeek({ start: undefined, end: undefined })
     } else {
       setHoverDate(undefined)
