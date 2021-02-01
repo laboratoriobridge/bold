@@ -4,7 +4,8 @@ import { composeRefs } from '../../util/react'
 import { BaseDateRangeInputProps } from '../DateRangePicker/BaseDateRangeInput'
 import { MonthInput } from '../MonthField/MonthInput'
 import { ReferenceMonth } from '../MonthPicker'
-import { isBiggerOrEqualThan, isLessOrEqualThan, ReferenceMonthRange } from './MonthRangePicker'
+import { ReferenceMonthRange } from './MonthRangePicker'
+import { isGreaterOrEqualThan, isLessOrEqualThan, isLessThan } from './util'
 
 export interface BaseMonthRangeInputProps
   extends Omit<BaseDateRangeInputProps, 'value' | 'onChange' | 'maxDate' | 'minDate'> {
@@ -55,9 +56,9 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
 
   const handleMinmaxMonth = (month: ReferenceMonth) => {
     if (minMonth && maxMonth) {
-      return month && isBiggerOrEqualThan(month, minMonth) && isLessOrEqualThan(month, maxMonth) ? month : undefined
+      return month && isGreaterOrEqualThan(month, minMonth) && isLessOrEqualThan(month, maxMonth) ? month : undefined
     } else if (minMonth) {
-      return month && isBiggerOrEqualThan(month, minMonth) ? month : undefined
+      return month && isGreaterOrEqualThan(month, minMonth) ? month : undefined
     } else if (maxMonth) {
       return month && isLessOrEqualThan(month, maxMonth) ? month : undefined
     } else {
@@ -82,13 +83,11 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
   const onChangeFinal = (refMonth: ReferenceMonth) => {
     const auxFinalMonth = handleMinmaxMonth(refMonth)
     const start =
-      value?.start && value?.end && auxFinalMonth && !isBiggerOrEqualThan(auxFinalMonth, value?.start)
+      value?.start && value?.end && auxFinalMonth && isLessThan(auxFinalMonth, value?.start)
         ? auxFinalMonth
         : value?.start
     const end =
-      value?.start && value?.end && auxFinalMonth && !isBiggerOrEqualThan(auxFinalMonth, value?.start)
-        ? undefined
-        : auxFinalMonth
+      value?.start && value?.end && auxFinalMonth && isLessThan(auxFinalMonth, value?.start) ? undefined : auxFinalMonth
 
     const aux = {
       start,

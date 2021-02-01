@@ -1,12 +1,12 @@
 import React from 'react'
+import { ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
 import {
-  isBiggerOrEqualThan,
-  isBiggerThan,
+  isGreaterOrEqualThan,
+  isGreaterThan,
   isLessOrEqualThan,
   isLessThan,
   isSameReferenceMonth,
-  ReferenceMonthRange,
-} from '../../MonthRangePicker/MonthRangePicker'
+} from '../../MonthRangePicker/util'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { GenericMonthRangeCalendar } from './GenericMonthRangeCalendar'
 
@@ -48,8 +48,8 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
       if (!value?.start && value?.end) {
         if (inputOnFocus === 1) {
           return (
-            (isLessThan(value.end, month) && isBiggerOrEqualThan(hoverMonth, month)) ||
-            (isBiggerThan(value.end, month) && isLessOrEqualThan(hoverMonth, month))
+            (isLessThan(value.end, month) && isGreaterOrEqualThan(hoverMonth, month)) ||
+            (isGreaterThan(value.end, month) && isLessOrEqualThan(hoverMonth, month))
           )
         } else {
           return isSameReferenceMonth(month, hoverMonth)
@@ -57,8 +57,8 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
       } else if (value?.start && !value?.end) {
         if (inputOnFocus === 2) {
           return (
-            (isLessThan(value.start, month) && isBiggerOrEqualThan(hoverMonth, month)) ||
-            (isBiggerThan(value.start, month) && isLessOrEqualThan(hoverMonth, month))
+            (isLessThan(value.start, month) && isGreaterOrEqualThan(hoverMonth, month)) ||
+            (isGreaterThan(value.start, month) && isLessOrEqualThan(hoverMonth, month))
           )
         } else {
           return isSameReferenceMonth(month, hoverMonth)
@@ -66,13 +66,13 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
       } else {
         if (inputOnFocus === 1) {
           return (
-            (isBiggerThan(value.start, month) && isLessOrEqualThan(hoverMonth, month)) ||
+            (isGreaterThan(value.start, month) && isLessOrEqualThan(hoverMonth, month)) ||
             (isLessThan(value.end, month) && isSameReferenceMonth(hoverMonth, month))
           )
         } else {
           return (
-            (isLessThan(value.end, month) && isBiggerOrEqualThan(hoverMonth, month)) ||
-            (isBiggerThan(value.end, month) && isSameReferenceMonth(hoverMonth, month))
+            (isLessThan(value.end, month) && isGreaterOrEqualThan(hoverMonth, month)) ||
+            (isGreaterThan(value.end, month) && isSameReferenceMonth(hoverMonth, month))
           )
         }
       }
@@ -81,7 +81,7 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
 
   const isInHoverRange = (month: ReferenceMonth, hoverMonth: ReferenceMonth) =>
     hoverMonth &&
-    (!minMonth || isBiggerOrEqualThan(month, minMonth)) &&
+    (!minMonth || isGreaterOrEqualThan(month, minMonth)) &&
     (!maxMonth || isLessOrEqualThan(month, maxMonth)) &&
     hoverControl(month, hoverMonth)
 

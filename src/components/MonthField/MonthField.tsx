@@ -5,14 +5,15 @@ import { useStyles } from '../../styles/hooks/useStyles'
 import { Theme } from '../../styles/theme/createTheme'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-import { MonthPicker, ReferenceMonth } from '../MonthPicker'
-import { disabledByMonthRange, isSameReferenceMonth } from '../MonthRangePicker/MonthRangePicker'
+import { MonthPicker, MonthPickerProps, ReferenceMonth } from '../MonthPicker'
+import { disabledByMonth, isSameReferenceMonth } from '../MonthRangePicker/util'
 import { MonthInput, MonthInputProps } from './MonthInput'
 
 export interface MonthFieldProps extends MonthInputProps {
   minMonth?: ReferenceMonth
   maxMonth?: ReferenceMonth
   popperProps?: PopperOptions
+  monthPickerProps?: MonthPickerProps
 }
 
 export function MonthField(props: MonthFieldProps) {
@@ -76,7 +77,7 @@ export function MonthField(props: MonthFieldProps) {
             visibleMonth={visibleMonth}
             onVisibleMonthChange={handleVisibleMonthChange}
             onMonthClick={handleMonthClick}
-            isDisabled={disabledByMonthRange(minMonth, maxMonth)}
+            isDisabled={disabledByMonth(minMonth, maxMonth)}
             modifiers={{
               selected: (month: ReferenceMonth) => value && isSameReferenceMonth(value, month),
             }}
@@ -85,6 +86,22 @@ export function MonthField(props: MonthFieldProps) {
       )}
     </FocusManagerContainer>
   )
+}
+
+export const format = (value: ReferenceMonth) => {
+  if (!value || !value.year || value.month == null) {
+    return null
+  }
+
+  if (value.month < 9) {
+    return `0${value.month + 1}/${value.year}`
+  } else {
+    return `${value.month + 1}/${value.year}`
+  }
+}
+
+export const isValidInput = (value: string) => {
+  return /\d\d\/\d\d\d\d/.test(value)
 }
 
 const createStyles = (theme: Theme) => ({

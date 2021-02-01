@@ -1,5 +1,6 @@
 import React from 'react'
-import { isBiggerThan, isLessThan, ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
+import { ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
+import { isGreaterThan, isLessThan } from '../../MonthRangePicker/util'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { MonthRangeCalendar } from './MonthRangeCalendar'
 
@@ -18,7 +19,7 @@ export function ControlledMonthRangeCalendar(props: ControlledMonthRangeCalendar
     if (inputOnFocus === 1) {
       if (isLessThan(month, value?.start)) {
         onChange({ start: month, end: value?.end } as ReferenceMonthRange)
-      } else if (isBiggerThan(month, value?.end)) {
+      } else if (isGreaterThan(month, value?.end)) {
         onChange({ start: month, end: undefined } as ReferenceMonthRange)
       } else {
         onChange({ start: month, end: value?.end } as ReferenceMonthRange)

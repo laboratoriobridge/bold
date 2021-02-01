@@ -7,6 +7,7 @@ import { FocusManagerContainer } from '../FocusManagerContainer'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { ControlledMonthRangeCalendar } from '../MonthPicker/RangeMonthCalendar/ControlledMonthRangeCalendar'
 import { MonthRangePickerInput, MonthRangePickerInputProps } from './MonthRangePickerInput'
+import { disabledByMonth } from './util'
 
 export interface MonthRangePickerProps extends Omit<MonthRangePickerInputProps, 'onChange'> {
   popperProps?: PopperOptions
@@ -77,12 +78,13 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
 
     start && end
       ? onChange({ startDate: startDate, endDate: endDate })
-      : !end && onChange({ startDate: startDate, endDate: undefined })
+      : !end &&
+        onChange({ startDate: startDate, endDate: new Date(range?.start?.year, range?.start?.month + 1, 0, 0, 0, 0) })
   }
 
-  const handleOnVisibleRefMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
+  const handleOnVisibleMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
 
-  const handleOnMonhClick = () => finalInputRef.current.focus()
+  const handleOnMonhtClick = () => finalInputRef.current.focus()
 
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
@@ -108,13 +110,13 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
           <ControlledMonthRangeCalendar
             value={value}
             onChange={handleMonthRangeChanged}
-            onMonthClick={handleOnMonhClick}
+            onMonthClick={handleOnMonhtClick}
             inputOnFocus={rangeInputFocus}
             visibleMonth={visibleMonth}
-            onVisibleMonthChange={handleOnVisibleRefMonthChange}
+            onVisibleMonthChange={handleOnVisibleMonthChange}
             minMonth={minMonth}
             maxMonth={maxMonth}
-            isDisabled={disabledByMonthRange(minMonth, maxMonth)}
+            isDisabled={disabledByMonth(minMonth, maxMonth)}
             {...monthPickerProps}
           />
         </div>
@@ -128,34 +130,3 @@ const createStyles = (theme: Theme) => ({
     zIndex: theme.zIndex.popper,
   },
 })
-
-export const isBiggerOrEqualThan = (month: ReferenceMonth, min: ReferenceMonth) =>
-  isBiggerThan(month, min) || isSameReferenceMonth(month, min)
-
-export const isLessOrEqualThan = (month: ReferenceMonth, max: ReferenceMonth) =>
-  isLessThan(month, max) || isSameReferenceMonth(month, max)
-
-export const isLessThan = (month: ReferenceMonth, max: ReferenceMonth) => {
-  if (month.year === max.year) {
-    return month.month < max.month
-  } else {
-    return month.year < max.year
-  }
-}
-
-export const isBiggerThan = (month: ReferenceMonth, max: ReferenceMonth) => {
-  if (month.year === max.year) {
-    return month.month > max.month
-  } else {
-    return month.year > max.year
-  }
-}
-
-export const isSameReferenceMonth = (refMonth1: ReferenceMonth, refMonth2: ReferenceMonth) =>
-  refMonth1.year === refMonth2.year && refMonth1.month === refMonth2.month
-
-export const disabledByMonthRange = (minMonth: ReferenceMonth, maxMonth: ReferenceMonth) => {
-  return (month: ReferenceMonth) => {
-    return (minMonth && isLessThan(month, minMonth)) || (maxMonth && isBiggerThan(month, maxMonth))
-  }
-}

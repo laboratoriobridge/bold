@@ -7,7 +7,8 @@ import { getUserLocale, getMonthNames } from '../../util/locale'
 import { Button } from '../Button'
 import { ModifierFn } from '../Calendar/Calendar'
 import { Icon } from '../Icon'
-import { isSameReferenceMonth, ReferenceMonthRange } from '../MonthRangePicker/MonthRangePicker'
+import { ReferenceMonthRange } from '../MonthRangePicker/MonthRangePicker'
+import { isSameReferenceMonth } from '../MonthRangePicker/util'
 import { Text } from '../Text'
 
 export interface MonthPickerProps {
