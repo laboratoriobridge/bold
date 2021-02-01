@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, number, text } from '@storybook/addon-knobs'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
 import { Combobox } from './Combobox'
@@ -21,6 +21,7 @@ const fruits = [
 
 storiesOf('Components|Combobox', module).add('default', () => (
   <Combobox<typeof fruits[0]>
+    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
     label='Fruit'
     name='fruit'
     items={fruits}

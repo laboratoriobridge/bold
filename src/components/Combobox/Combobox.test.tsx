@@ -22,8 +22,10 @@ const fruits: Fruit[] = [
   { value: 12, label: 'Pear' },
 ]
 
+const itemToString = (item: Fruit) => item.label
+
 const ComboboxTest = (props: Partial<ComboboxProps<Fruit>>) => (
-  <Combobox<typeof fruits[0]> items={fruits} itemToString={(item) => item.label} {...props} />
+  <Combobox<typeof fruits[0]> items={fruits} itemToString={itemToString} {...props} />
 )
 
 it('has aria-compliant attributes', async () => {
@@ -237,6 +239,30 @@ it('should trigger onFilterChange', async () => {
   fireEvent.change(input, { target: { value: 'filter' } })
 
   expect(filter).toBe('filter')
+})
+
+it('should accept a value as parameter', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  await act(async () => {
+    const result = render(<ComboboxTest value={fruits[1]} />)
+    baseElement = result.baseElement
+  })
+
+  const input = baseElement.querySelector('input')
+
+  expect(input).toHaveValue(itemToString(fruits[1]))
+
+  //Opens menu
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  const listbox = baseElement.querySelector('[role="listbox"]')
+  const selected = listbox.querySelector('[aria-selected="true"]')
+
+  expect(selected).toHaveTextContent(itemToString(fruits[1]))
 })
 
 it('renders correcly closed', async () => {
