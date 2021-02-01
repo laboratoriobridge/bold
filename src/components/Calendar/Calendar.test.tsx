@@ -73,7 +73,7 @@ describe('Calendar', () => {
   it('should call onWeekClick when week is clicked', () => {
     const click = jest.fn()
     const { container } = render(
-      <Calendar visibleDate={new Date()} onVisibleDateChange={jest.fn()} onWeekClick={click} onlyWeeks />
+      <Calendar visibleDate={new Date('2021-01-03')} onVisibleDateChange={jest.fn()} onWeekClick={click} onlyWeeks />
     )
     const weekButton = container.querySelector('[data-week="10/01/2021-16/01/2021"]')
 
