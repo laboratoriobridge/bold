@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions'
 import { boolean, number, text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
 import React from 'react'
@@ -33,7 +34,8 @@ storiesOf('Components|Combobox', module).add('default', () => (
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
     //   loading={boolean('loading', false)}
-    //   onChange={action('changed')}
+    onChange={action('changed')}
+    onFilterChange={action('filter changed')}
     //   onBlur={action('blur')}
     //   onFocus={action('focus')}
   />

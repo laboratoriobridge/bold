@@ -194,6 +194,51 @@ it('respects menu min-width', async () => {
   expect(menu).toHaveStyle('min-width: 1000px')
 })
 
+it('should trigger onChange', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  let selection = null
+
+  await act(async () => {
+    const result = render(<ComboboxTest onChange={(nValue) => (selection = nValue)} />)
+    baseElement = result.baseElement
+  })
+
+  expect(selection).toBeNull()
+
+  //Opens menu
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  //Selects first item
+  const option = baseElement.querySelector('li').firstChild
+  await act(async () => {
+    fireEvent.click(option)
+  })
+
+  expect(selection).toBe(fruits[0])
+})
+
+it('should trigger onFilterChange', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  let filter = ''
+
+  await act(async () => {
+    const result = render(<ComboboxTest onFilterChange={(nValue) => (filter = nValue)} />)
+    baseElement = result.baseElement
+  })
+
+  expect(filter).toBe('')
+
+  const input = baseElement.querySelector('input')
+  fireEvent.change(input, { target: { value: 'filter' } })
+
+  expect(filter).toBe('filter')
+})
+
 it('renders correcly closed', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {

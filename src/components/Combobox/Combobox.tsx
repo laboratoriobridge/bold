@@ -9,21 +9,27 @@ import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
 
-export interface ComboboxProps<T = string> extends TextInputProps, UseFormControlProps {
+export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' | 'onChange'>, UseFormControlProps {
+  value?: T
   items: T[]
   openOnFocus: boolean
   menuMinWidth?: number
   itemToString(item: T): string
   filter?(items: T[], filter: string): T[]
+  onChange?: (newValue: T) => void
+  onFilterChange?: (newValue: string) => void
 }
 
 export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
+    value,
     items,
     itemToString,
     menuMinWidth,
     openOnFocus,
     onClear,
+    onChange,
+    onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
   } = props
@@ -50,14 +56,17 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     closeMenu,
     reset,
   } = useCombobox({
+    selectedItem: value,
     items: visibleItems,
     itemToString,
     stateReducer,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
+      onFilterChange?.(inputValue)
     },
-    onSelectedItemChange: () => {
+    onSelectedItemChange: ({ selectedItem }) => {
       closeMenu()
+      onChange?.(selectedItem)
     },
   })
 
