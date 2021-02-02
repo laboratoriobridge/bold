@@ -1,11 +1,14 @@
 import { action } from '@storybook/addon-actions'
 import { boolean } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './index'
 
-storiesOf('Components|Table', module).add('Table', () => (
+export default {
+  title: 'Components/Table',
+}
+
+export const _Table = () => (
   <Table hovered={boolean('hovered', false)}>
     <TableHead>
       <TableRow>
@@ -29,4 +32,4 @@ storiesOf('Components|Table', module).add('Table', () => (
       </TableRow>
     </TableBody>
   </Table>
-))
+)
