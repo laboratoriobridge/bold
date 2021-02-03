@@ -17,7 +17,9 @@ describe('Component presentation', () => {
 
 describe('Component behavior', () => {
   it('should open MonthPicker on focus', () => {
-    const { container, queryByTestId } = render(<MonthField onChange={jest.fn()} />)
+    const { container, queryByTestId } = render(
+      <MonthField onChange={jest.fn()} monthPickerProps={{ visibleMonth: { month: 6, year: 2016 } }} />
+    )
 
     expect(queryByTestId('MonthField.popup')).toBeNull()
 
@@ -26,13 +28,17 @@ describe('Component behavior', () => {
   })
   it('should call "onChange" when a valid date is typed', () => {
     const fn = jest.fn()
-    const { container } = render(<MonthField onChange={fn} />)
+    const { container } = render(
+      <MonthField onChange={fn} monthPickerProps={{ visibleMonth: { month: 6, year: 2016 } }} />
+    )
 
     fireEvent.change(container.querySelector('input'), { target: { value: '08/2016' } })
     expect(fn).toHaveBeenCalledWith({ month: 7, year: 2016 })
   })
   it('should hide MonthPicker when a month is picked', () => {
-    const { container, getByText, queryByTestId } = render(<MonthField onChange={jest.fn()} />)
+    const { container, getByText, queryByTestId } = render(
+      <MonthField onChange={jest.fn()} monthPickerProps={{ visibleMonth: { month: 6, year: 2016 } }} />
+    )
 
     fireEvent.focus(container.querySelector('input'))
 

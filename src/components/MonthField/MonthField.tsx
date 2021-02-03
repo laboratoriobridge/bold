@@ -13,7 +13,7 @@ export interface MonthFieldProps extends MonthInputProps {
   minMonth?: ReferenceMonth
   maxMonth?: ReferenceMonth
   popperProps?: PopperOptions
-  monthPickerProps?: MonthPickerProps
+  monthPickerProps?: Partial<MonthPickerProps>
 }
 
 export function MonthField(props: MonthFieldProps) {
@@ -48,7 +48,7 @@ export function MonthField(props: MonthFieldProps) {
 
   const handleMonthClick = (month: ReferenceMonth) => {
     setOpen(false)
-    return onChange(month)
+    onChange(month)
   }
 
   const handleInputIconClick = () => setOpen(true)
@@ -81,6 +81,7 @@ export function MonthField(props: MonthFieldProps) {
             modifiers={{
               selected: (month: ReferenceMonth) => value && isSameReferenceMonth(value, month),
             }}
+            {...props.monthPickerProps}
           />
         </div>
       )}

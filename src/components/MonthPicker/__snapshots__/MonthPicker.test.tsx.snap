@@ -1,30 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MonthPicker should render correctly with month and year 1`] = `
-.emotion-33 {
-  background-color: #FFFFFF;
-  display: inline-block;
-  padding: 1rem;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
-  border-radius: 2px;
-}
-
-.emotion-32 {
-  margin: -0.25rem -0.25rem;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-2 {
-  text-align: center;
-  margin: 0.25rem 0.25rem;
-}
-
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -86,6 +62,31 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-33 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-32 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
 .emotion-3 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -129,8 +130,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  background: #0069D0 !important;
-  color: #FFFFFF;
 }
 
 .emotion-8 > span {
@@ -154,66 +153,6 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
 }
 
 .emotion-8:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-10 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  padding: calc(0.25rem - 1px) 1rem;
-  -webkit-transition-property: background;
-  transition-property: background;
-  min-width: 70px;
-}
-
-.emotion-10 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-10:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-10:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
@@ -300,7 +239,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="February"
           type="button"
         >
@@ -313,7 +252,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="March"
           type="button"
         >
@@ -326,7 +265,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="April"
           type="button"
         >
@@ -339,7 +278,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="May"
           type="button"
         >
@@ -352,7 +291,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="June"
           type="button"
         >
@@ -365,7 +304,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="July"
           type="button"
         >
@@ -378,7 +317,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="August"
           type="button"
         >
@@ -391,7 +330,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="September"
           type="button"
         >
@@ -404,7 +343,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="October"
           type="button"
         >
@@ -417,7 +356,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="November"
           type="button"
         >
@@ -430,7 +369,7 @@ exports[`MonthPicker should render correctly with month and year 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="December"
           type="button"
         >

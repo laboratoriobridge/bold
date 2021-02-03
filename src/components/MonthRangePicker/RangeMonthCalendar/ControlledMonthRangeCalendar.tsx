@@ -1,7 +1,7 @@
 import React from 'react'
-import { ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
-import { isGreaterThan, isLessThan } from '../../MonthRangePicker/util'
-import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
+import { MonthPickerProps, ReferenceMonth } from '../../MonthPicker/MonthPicker'
+import { ReferenceMonthRange } from '../MonthRangePicker'
+import { isGreaterThan, isLessThan } from '../util'
 import { MonthRangeCalendar } from './MonthRangeCalendar'
 
 export interface ControlledMonthRangeCalendarProps extends MonthPickerProps {

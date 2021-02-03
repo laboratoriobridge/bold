@@ -135,7 +135,6 @@ export function MonthPicker(props: MonthPickerProps) {
 MonthPicker.defaultProps = {
   onMonthClick: () => null,
   onMonthHover: () => null,
-  createMonthStyles: () => null,
 } as Partial<MonthPickerProps>
 
 export interface MonthModifierPredicateMap {
@@ -160,7 +159,6 @@ export const defaultModifierStyles: MonthModifierStyleMap = {
   selected: (theme: Theme) => ({
     background: theme.pallete.primary.main,
     color: theme.pallete.surface.main,
-    fontWeight: 'bold',
     ':hover': {
       background: theme.pallete.primary.main + '!important',
       color: theme.pallete.surface.main,

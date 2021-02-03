@@ -1,13 +1,7 @@
 import React from 'react'
-import { ReferenceMonthRange } from '../../MonthRangePicker/MonthRangePicker'
-import {
-  isGreaterOrEqualThan,
-  isGreaterThan,
-  isLessOrEqualThan,
-  isLessThan,
-  isSameReferenceMonth,
-} from '../../MonthRangePicker/util'
-import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
+import { ReferenceMonthRange } from '../MonthRangePicker'
+import { isGreaterOrEqualThan, isGreaterThan, isLessOrEqualThan, isLessThan, isSameReferenceMonth } from '../util'
+import { MonthPickerProps, ReferenceMonth } from '../../MonthPicker/MonthPicker'
 import { GenericMonthRangeCalendar } from './GenericMonthRangeCalendar'
 
 export interface MonthRangeCalendarProps extends MonthPickerProps {

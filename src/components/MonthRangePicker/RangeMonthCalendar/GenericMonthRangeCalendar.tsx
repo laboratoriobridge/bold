@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Theme } from '../../../styles'
-import { defaultModifierStyles, MonthPicker, MonthPickerProps, ReferenceMonth } from '../MonthPicker'
+import { defaultModifierStyles } from '../../Calendar/Calendar'
+import { MonthPicker, MonthPickerProps, ReferenceMonth } from '../../MonthPicker/MonthPicker'
 
 export interface GenericMonthRangeCalendarProps extends MonthPickerProps {
   start: ReferenceMonth
