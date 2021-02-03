@@ -132,7 +132,7 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
             onClear={onClearStart}
             placeholder={locale.dateInput.placeholder}
             style={classes.monthField}
-            value={value.start}
+            value={value?.start}
             onFocus={onInputOnFocusInicial}
             {...rest}
           />
@@ -150,7 +150,7 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
             onClear={onClearFinal}
             placeholder={locale.dateInput.placeholder}
             style={classes.monthField}
-            value={value.end}
+            value={value?.end}
             onFocus={onInputOnFocusFinal}
             {...rest}
           />

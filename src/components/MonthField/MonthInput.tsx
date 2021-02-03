@@ -33,8 +33,8 @@ export function MonthInput(props: MonthInputProps) {
       const targetValue = e.target.value
       const match: RegExpMatchArray = targetValue.match(/^(\d{2})\/(\d{4})$/)
       if (match) {
-        const refMonth: ReferenceMonth = { month: parseInt(match[1], 10) - 1, year: parseInt(match[2], 10) }
-        onChange(refMonth)
+        const month: ReferenceMonth = { month: parseInt(match[1], 10) - 1, year: parseInt(match[2], 10) }
+        onChange(month)
       }
     },
     [onChange]

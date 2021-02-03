@@ -58,8 +58,8 @@ export const isSameReferenceMonth = (month1: ReferenceMonth, month2: ReferenceMo
 /**
  * Check if a reference month is between the minimum and maximum values
  *
- * @param minMonth
- * @param maxMonth
+ * @param minMonth The minimum value
+ * @param maxMonth The maximum value
  */
 export const disabledByMonth = (minMonth: ReferenceMonth, maxMonth: ReferenceMonth) => {
   return (month: ReferenceMonth) => {
