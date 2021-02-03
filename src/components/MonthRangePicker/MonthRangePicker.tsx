@@ -5,7 +5,7 @@ import { Theme, useStyles } from '../..'
 import { DateRange } from '../DateRangePicker'
 import { FocusManagerContainer } from '../FocusManagerContainer'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
-import { ControlledMonthRangeCalendar } from '../MonthPicker/RangeMonthCalendar/ControlledMonthRangeCalendar'
+import { ControlledMonthRangeCalendar } from './RangeMonthCalendar/ControlledMonthRangeCalendar'
 import { MonthRangePickerInput, MonthRangePickerInputProps } from './MonthRangePickerInput'
 import { disabledByMonth } from './util'
 

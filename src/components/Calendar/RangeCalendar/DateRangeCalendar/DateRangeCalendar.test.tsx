@@ -25,7 +25,7 @@ const createComponent = (props: Partial<DateRangeCalendarProps> = {}) => (
  * @param obj
  * @param testFn
  */
-const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue: any) => void) => {
+export const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue: any) => void) => {
   for (const field in obj as any) {
     if (obj.hasOwnProperty(field)) {
       if (obj[field] === Object(obj[field])) {
@@ -37,9 +37,10 @@ const iterateObjectFields = (obj: Object, testFn: (fieldName: string, fieldValue
   }
 }
 
+export const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
+
 describe('DateRangeCalendar', () => {
   const theme = createTheme()
-  const normalizeCssClassNames = (str: string) => str.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()
   describe('Selection and hover', () => {
     it('With nothing defined, hovered days should have the correct css', () => {
       const { getByText } = render(createComponent())

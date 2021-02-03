@@ -1,64 +1,130 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
+import { createTheme } from '../../styles'
 
 import { getMonthNames } from '../../util/locale'
-import { MonthPicker } from './MonthPicker'
+import {
+  iterateObjectFields,
+  normalizeCssClassNames,
+} from '../Calendar/RangeCalendar/DateRangeCalendar/DateRangeCalendar.test'
+import { hoverStyle } from '../MonthRangePicker/RangeMonthCalendar/GenericMonthRangeCalendar'
+import { defaultModifiers, defaultModifierStyles, MonthPicker } from './MonthPicker'
 
-const now = new Date()
+const date = new Date('2019-01-31')
+const visibleMonth = { month: date.getMonth(), year: date.getFullYear() }
+const today = new Date()
+const currentMonth = { month: today.getMonth(), year: today.getFullYear() }
 
 describe('MonthPicker', () => {
   it('should render correctly with month and year', () => {
-    const visibleDate = new Date('2019-01-31')
-    const { container } = render(<MonthPicker month={visibleDate.getMonth()} year={visibleDate.getFullYear()} />)
+    const { container } = render(<MonthPicker visibleMonth={visibleMonth} />)
     expect(container).toMatchSnapshot()
   })
 
   it('should change de visible year on "Previous year" button click', () => {
-    const { getByTitle, getAllByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} />)
-    fireEvent.click(getByTitle('Previous year'))
-    const expectedYear = now.getFullYear() - 1
-    expect(getAllByText(expectedYear.toString())).toHaveLength(1)
+    const onChange = jest.fn()
+    const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={onChange} />)
+    fireEvent.click(container.querySelector('button[title="Previous year"]'))
+    const expectedYear = date.getFullYear() - 1
+    expect(onChange).toHaveBeenCalledWith({ month: visibleMonth.month, year: expectedYear })
   })
 
   it('should change de visible year on "Next year" button click', () => {
-    const { getByTitle, getAllByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} />)
-    fireEvent.click(getByTitle('Next year'))
-    const expectedYear = now.getFullYear() + 1
-    expect(getAllByText(expectedYear.toString())).toHaveLength(1)
+    const onChange = jest.fn()
+    const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={onChange} />)
+    fireEvent.click(container.querySelector('button[title="Next year"]'))
+    const expectedYear = date.getFullYear() + 1
+    expect(onChange).toHaveBeenCalledWith({ month: visibleMonth.month, year: expectedYear })
   })
 
   it('should call "onChange" when a month is selected', () => {
     const onChange = jest.fn()
-    const { getByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />)
-    fireEvent.click(getByText('Jan'))
-    expect(onChange).toHaveBeenCalledWith({ month: 0, year: now.getFullYear() })
-  })
-
-  it('should call "onChange" when a month is selected, with the given year', () => {
-    const onChange = jest.fn()
-    const { getByText, getByTitle } = render(
-      <MonthPicker month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />
-    )
-    fireEvent.click(getByTitle('Previous year'))
-    fireEvent.click(getByText('Jan'))
-    const expectedYear = now.getFullYear() - 1
-    expect(onChange).toHaveBeenCalledWith({ month: 0, year: expectedYear })
-  })
-
-  it('should fill the prop year if non is given', () => {
-    const { rerender, getAllByText } = render(<MonthPicker month={now.getMonth()} year={now.getFullYear()} />)
-
-    rerender(<MonthPicker month={now.getMonth()} />)
-    expect(getAllByText(new Date().getFullYear().toString())).toHaveLength(1)
+    const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={onChange} />)
+    fireEvent.click(container.querySelector('button[title="February"]'))
+    expect(onChange).toHaveBeenCalledWith({ month: 1, year: date.getFullYear() })
   })
 
   it('should change the visible year on re-render', () => {
-    const { rerender, getAllByText } = render(<MonthPicker month={now.getMonth()} />)
+    const { rerender, getAllByText } = render(<MonthPicker visibleMonth={visibleMonth} />)
 
-    const newYear = now.getFullYear() + 1
+    const newYear = date.getFullYear() + 1
 
-    rerender(<MonthPicker month={now.getMonth()} year={newYear} />)
+    rerender(<MonthPicker visibleMonth={{ month: visibleMonth.month, year: newYear }} />)
     expect(getAllByText(newYear.toString())).toHaveLength(1)
+  })
+
+  it('should call onMonthClick when a month is clicked', () => {
+    const click = jest.fn()
+    const { container } = render(
+      <MonthPicker visibleMonth={visibleMonth} onMonthClick={click} onVisibleMonthChange={jest.fn()} />
+    )
+    fireEvent.click(container.querySelector('button[title="February"]'))
+    expect(click).toHaveBeenCalledWith({ month: 1, year: visibleMonth.year })
+  })
+
+  it('should call onMonthHover when a month is hovered', () => {
+    const hover = jest.fn()
+    const { container } = render(
+      <MonthPicker visibleMonth={visibleMonth} onMonthHover={hover} onVisibleMonthChange={jest.fn()} />
+    )
+    fireEvent.mouseOver(container.querySelector('button[title="February"]'))
+    expect(hover).toHaveBeenCalledWith({ month: 1, year: visibleMonth.year })
+  })
+
+  describe('default props', () => {
+    const theme = createTheme()
+    const notExpectecSelectedStyle = defaultModifierStyles.selected(theme)
+    const notExpectedHoverStyle = hoverStyle(theme)
+    const expectedCurrentStyle = defaultModifierStyles.current(theme)
+
+    it('should define onMonthClick', () => {
+      const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={jest.fn()} />)
+
+      const button = container.querySelector('button[title="March"]')
+      fireEvent.click(button)
+
+      iterateObjectFields(notExpectecSelectedStyle, (fieldName: string, fieldValue: any) =>
+        expect(button).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      )
+    })
+
+    it('should define onMonthHover', () => {
+      const { container } = render(<MonthPicker visibleMonth={visibleMonth} />)
+
+      const button = container.querySelector('button[title="March"]')
+      fireEvent.mouseOver(button)
+
+      iterateObjectFields(notExpectedHoverStyle, (fieldName: string, fieldValue: any) =>
+        expect(button).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      )
+    })
+
+    it('should apply the current style by default', () => {
+      const { container } = render(<MonthPicker visibleMonth={currentMonth} />)
+
+      const long = getMonthNames('en')[today.getMonth()].long
+
+      const button = container.querySelector(`button[title="${long}"]`)
+
+      iterateObjectFields(expectedCurrentStyle, (fieldName: string, fieldValue: any) =>
+        expect(button).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      )
+    })
+  })
+
+  describe('modifiers', () => {
+    describe('current', () => {
+      it('should return true if date is today', () => {
+        expect(defaultModifiers.current(currentMonth, {} as any)).toBeTruthy()
+        expect(defaultModifiers.current(visibleMonth, {} as any)).toBeFalsy()
+      })
+    })
+    describe('selected', () => {
+      it('should return false by default', () => {
+        expect(defaultModifiers.selected(currentMonth, {} as any)).toBeFalsy()
+        expect(defaultModifiers.selected(visibleMonth, {} as any)).toBeFalsy()
+      })
+    })
   })
 })
 
