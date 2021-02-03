@@ -1,5 +1,4 @@
 import { action } from '@storybook/addon-actions'
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { DefaultItemType } from '../Select/SelectSingle'
@@ -15,7 +14,11 @@ const items: DefaultItemType[] = [
 
 const itemToString = (item: DefaultItemType) => item && item.label
 
-storiesOf('Components|SelectInline', module).add('default', () => (
+export default {
+  title: 'Components/SelectInline',
+}
+
+export const Default = () => (
   <SelectInline<DefaultItemType>
     items={items}
     itemToString={itemToString}
@@ -23,4 +26,4 @@ storiesOf('Components|SelectInline', module).add('default', () => (
     placeholder='Search for a value'
     defaultButtonText='SelectInline'
   />
-))
+)
