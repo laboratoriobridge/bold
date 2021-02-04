@@ -1,5 +1,5 @@
 import { css } from 'emotion'
-import React, { CSSProperties, useEffect, useState } from 'react'
+import React, { CSSProperties, forwardRef, useEffect, useState } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -8,7 +8,7 @@ import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
 
-export interface MonthPickerProps {
+export interface MonthPickerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   month?: number
   year?: number
   formatter?: (date: Date, month: Intl.DateTimeFormat) => string
@@ -25,8 +25,8 @@ export interface ReferenceMonth {
   year: number
 }
 
-export function MonthPicker(props: MonthPickerProps) {
-  const { year, formatter, onChange } = props
+export const MonthPicker = forwardRef<HTMLDivElement, MonthPickerProps>((props, ref) => {
+  const { year, formatter, onChange, className, ...rest } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
@@ -48,7 +48,7 @@ export function MonthPicker(props: MonthPickerProps) {
   const monthNames = getMonthNames(getUserLocale(), formatter)
 
   return (
-    <div className={classes.container}>
+    <div className={css(classes.container, className)} ref={ref} {...rest}>
       <div className={classes.months}>
         <div className={classes.item}>
           <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onLeftClick}>
@@ -81,7 +81,7 @@ export function MonthPicker(props: MonthPickerProps) {
       </div>
     </div>
   )
-}
+})
 
 export const createStyles = (theme: Theme) => ({
   container: {
