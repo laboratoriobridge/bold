@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import { Button } from '../Button'
@@ -7,7 +6,11 @@ import { Icon } from '../Icon'
 
 import { ButtonGroup } from './ButtonGroup'
 
-storiesOf('Components|ButtonGroup', module).add('default', () => (
+export default {
+  title: 'Components/ButtonGroup',
+}
+
+export const Default = () => (
   <HFlow>
     <ButtonGroup>
       <Button size='small' kind='primary'>
@@ -27,4 +30,4 @@ storiesOf('Components|ButtonGroup', module).add('default', () => (
       </Button>
     </ButtonGroup>
   </HFlow>
-))
+)

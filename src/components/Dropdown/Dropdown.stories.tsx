@@ -9,7 +9,7 @@ import { DropdownDivider } from './DropdownDivider'
 import { DropdownItem } from './DropdownItem'
 import { DropdownMenu } from './DropdownMenu'
 
-export default { title: 'Components|Dropdown' }
+export default { title: 'Components/Dropdown' }
 
 export const Default = () => {
   const [anchorRef, setAnchorRef] = useState<HTMLButtonElement>()
