@@ -317,3 +317,16 @@ it('renders correcly opened', async () => {
   })
   expect(baseElement).toMatchSnapshot()
 })
+
+it('renders correcly opened and loading', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' loading={true} />)
+    baseElement = result.baseElement
+  })
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement).toMatchSnapshot()
+})

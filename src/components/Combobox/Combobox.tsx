@@ -8,13 +8,15 @@ import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
+import { Spinner } from '../Spinner'
 
 export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' | 'onChange'>, UseFormControlProps {
   value?: T
   items: T[]
-  openOnFocus: boolean
-  menuMinWidth?: number
   itemToString(item: T): string
+  openOnFocus: boolean
+  loading: boolean
+  menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
@@ -24,6 +26,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
     value,
     items,
+    loading,
     itemToString,
     menuMinWidth,
     openOnFocus,
@@ -114,6 +117,12 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
             ref={setMenuRef}
           >
             <ul className={classes.list}>
+              {loading && (
+                <li className={css(classes.item, classes.loadingItem)}>
+                  {locale.select.loadingItem}
+                  <Spinner style={classes.loadingSpinner} />
+                </li>
+              )}
               {visibleItems.map((item, index) => (
                 <li
                   className={css(classes.item, highlightedIndex === index && classes.selected)}
@@ -133,6 +142,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
 Combobox.defaultProps = {
   openOnFocus: true,
+  loading: false,
 } as Partial<ComboboxProps>
 
 export const createStyles = (theme: Theme) => ({
@@ -183,6 +193,18 @@ export const createStyles = (theme: Theme) => ({
       boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
     },
   },
+
+  loadingItem: {
+    background: theme.pallete.surface.background,
+    paddingTop: '0.25rem',
+    paddingBottom: '0.25rem',
+    cursor: 'initial',
+  },
+
+  loadingSpinner: {
+    color: theme.pallete.primary.main,
+    float: 'right',
+  } as CSSProperties,
 
   selected: {
     outline: 0,

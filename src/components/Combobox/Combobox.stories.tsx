@@ -19,7 +19,11 @@ const fruits = [
   { value: 12, label: 'Pear' },
 ]
 
-storiesOf('Components|Combobox', module).add('default', () => (
+export default {
+  title: 'Components/Combobox',
+}
+
+export const Default = () => (
   <Combobox<typeof fruits[0]>
     value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
     label='Fruit'
@@ -34,10 +38,10 @@ storiesOf('Components|Combobox', module).add('default', () => (
     clearable={boolean('clearable', true)}
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
-    //   loading={boolean('loading', false)}
+    loading={boolean('loading', false)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
   />
-))
+)
