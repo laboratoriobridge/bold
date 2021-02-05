@@ -26,7 +26,7 @@ export interface ReferenceMonth {
 }
 
 export const MonthPicker = forwardRef<HTMLDivElement, MonthPickerProps>((props, ref) => {
-  const { year, formatter, onChange, className, ...rest } = props
+  const { year, month, formatter, onChange, className, ...rest } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
