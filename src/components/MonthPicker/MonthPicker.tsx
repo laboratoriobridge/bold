@@ -32,7 +32,7 @@ export interface MonthPickerProps {
   onChange?(range: ReferenceMonthRange): void
   onMonthClick?(refMonth: ReferenceMonth): void
 
-  isDisabled(month: ReferenceMonth): boolean
+  isDisabled?(month: ReferenceMonth): boolean
 }
 
 /**
