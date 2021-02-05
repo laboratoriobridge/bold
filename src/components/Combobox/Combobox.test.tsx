@@ -241,6 +241,37 @@ it('should trigger onFilterChange', async () => {
   expect(filter).toBe('filter')
 })
 
+it('should trigger onFocus', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  const onFocus = jest.fn()
+
+  await act(async () => {
+    const result = render(<ComboboxTest onFocus={onFocus} />)
+    baseElement = result.baseElement
+  })
+
+  const input = baseElement.querySelector('input')
+  fireEvent.focus(input)
+  expect(onFocus).toBeCalled()
+})
+
+it('should trigger onBlur', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  const onBlur = jest.fn()
+
+  await act(async () => {
+    const result = render(<ComboboxTest onBlur={onBlur} />)
+    baseElement = result.baseElement
+  })
+
+  const input = baseElement.querySelector('input')
+  fireEvent.focus(input)
+  fireEvent.blur(input)
+  expect(onBlur).toBeCalled()
+})
+
 it('should accept a value as parameter', async () => {
   let baseElement: RenderResult['baseElement']
 

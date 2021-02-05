@@ -37,7 +37,7 @@ storiesOf('Components|Combobox', module).add('default', () => (
     //   loading={boolean('loading', false)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}
-    //   onBlur={action('blur')}
-    //   onFocus={action('focus')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
   />
 ))
