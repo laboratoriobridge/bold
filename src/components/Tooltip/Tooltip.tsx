@@ -1,6 +1,5 @@
-import { Options as PopperOptions } from '@popperjs/core'
+import { createPopper, Options as PopperOptions } from '@popperjs/core'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { usePopper } from 'react-popper'
 import { useTransition } from '../../hooks/useTransition'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
@@ -33,9 +32,7 @@ export function Tooltip(props: TooltipProps) {
   const tooltipId = useMemo(() => `tooltip-${randomStr()}`, [])
   const transitionState = useTransition(visible, { exitTimeout: transitionDelay })
 
-  const {
-    styles: { popper: popperStyles },
-  } = usePopper(rootRef.current, popperRef, {
+  createPopper(rootRef.current, popperRef, {
     modifiers: [
       {
         name: 'default',
@@ -68,20 +65,29 @@ export function Tooltip(props: TooltipProps) {
     return () => window.removeEventListener('pointerover', handleWindowPointerOver)
   }, [rootRef, visible])
 
-  const handlePointerEnter = useCallback((e: React.PointerEvent<HTMLElement>) => {
-    setVisible(true)
-    child.props.onPointerEnter && child.props.onPointerEnter(e)
-  }, [])
+  const handlePointerEnter = useCallback(
+    (e: React.PointerEvent<HTMLElement>) => {
+      setVisible(true)
+      child.props.onPointerEnter && child.props.onPointerEnter(e)
+    },
+    [child.props]
+  )
 
-  const handleFocus = useCallback((e) => {
-    setVisible(true)
-    child.props.onFocus && child.props.onFocus(e)
-  }, [])
+  const handleFocus = useCallback(
+    (e) => {
+      setVisible(true)
+      child.props.onFocus && child.props.onFocus(e)
+    },
+    [child.props]
+  )
 
-  const handleBlur = useCallback((e) => {
-    setVisible(false)
-    child.props.onBlur && child.props.onBlur(e)
-  }, [])
+  const handleBlur = useCallback(
+    (e) => {
+      setVisible(false)
+      child.props.onBlur && child.props.onBlur(e)
+    },
+    [child.props]
+  )
 
   if (!text) {
     return child
@@ -105,7 +111,6 @@ export function Tooltip(props: TooltipProps) {
             id={tooltipId}
             ref={setPopperRef}
             className={css(classes.popper, transitionState === 'entered' && classes.visible)}
-            style={popperStyles}
             role='tooltip'
             aria-hidden={!visible ? 'true' : 'false'}
           >
