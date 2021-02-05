@@ -31,9 +31,7 @@ export const Default = () => (
     error={text('error', '')}
     menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
-    //   itemIsEqual={(a, b) => a.value === b.value}
     placeholder={text('placeholder', 'Select a value...')}
-    //   multiple={boolean('multiple', false)}
     clearable={boolean('clearable', true)}
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
@@ -42,5 +40,7 @@ export const Default = () => (
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
+    //   itemIsEqual={(a, b) => a.value === b.value}
+    //   multiple={boolean('multiple', false)}
   />
 )

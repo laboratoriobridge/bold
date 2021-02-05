@@ -32,6 +32,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     openOnFocus,
     onClear,
     onChange,
+    onFocus,
     onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
@@ -75,7 +76,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const downshiftComboboxProps = getComboboxProps()
   const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
-    onFocus: () => openOnFocus && openMenu(),
+    onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
   })
   const { id: labelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
@@ -88,10 +89,11 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   })
 
   const formControlInputProps = getFromControlInputProps()
-  const invalid = formControlInputProps['aria-invalid']
+  const formControlProps = getFormControlProps()
+  const invalid = !!formControlProps.error
   return (
     <div {...downshiftComboboxProps}>
-      <FormControl {...getFormControlProps()} labelId={labelId} {...downshiftLabelProps}>
+      <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
