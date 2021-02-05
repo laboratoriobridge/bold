@@ -79,7 +79,11 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     setOpen(!open)
   }
 
+  const handleShowMonthsClick = () => setOpen(!open)
   const handleFocusOut = () => setOpen(false)
+  useEffect(() => {
+    open && popperRef?.focus()
+  }, [open, popperRef])
 
   const baseYearDate = new Date(visibleYear, visibleMonth, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
@@ -106,7 +110,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
               size='small'
               skin='ghost'
               disabled={open}
-              onClick={() => setOpen(!open)}
+              onClick={handleShowMonthsClick}
               style={showMonth}
               data-testid='MonthPaginator.ShowMonthsButton'
             >
@@ -152,7 +156,7 @@ MonthPaginator.defaultProps = {
 const createStyles = (theme: Theme, open: boolean) => ({
   container: {
     display: 'inline-block',
-    padding: open ? '1rem' : '1rem 0.5rem',
+    padding: '1rem 0.5rem',
     backgroundColor: theme.pallete.surface.main,
     border: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer['20'],
@@ -162,7 +166,7 @@ const createStyles = (theme: Theme, open: boolean) => ({
     padding: '-2rem',
   } as CSSProperties,
   showMonth: {
-    margin: open ? 'auto' : 'auto -1rem',
+    margin: 'auto -1rem',
   } as CSSProperties,
   popup: {
     zIndex: theme.zIndex.popper,
