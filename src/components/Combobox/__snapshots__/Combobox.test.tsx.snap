@@ -237,6 +237,7 @@ exports[`renders correcly closed 1`] = `
         </div>
       </div>
       <div
+        aria-busy="false"
         aria-labelledby="downshift-99-label"
         id="downshift-99-menu"
         role="listbox"
@@ -540,6 +541,7 @@ exports[`renders correcly opened 1`] = `
         </div>
       </div>
       <div
+        aria-busy="false"
         aria-labelledby="downshift-101-label"
         id="downshift-101-menu"
         role="listbox"
@@ -1017,6 +1019,7 @@ exports[`renders correcly opened and loading 1`] = `
         </div>
       </div>
       <div
+        aria-busy="true"
         aria-labelledby="downshift-109-label"
         id="downshift-109-menu"
         role="listbox"

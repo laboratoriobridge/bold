@@ -107,7 +107,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
-      <div {...downshiftMenuProps}>
+      <div aria-busy={loading} {...downshiftMenuProps}>
         {isOpen && (
           <div
             data-testid='menu'
