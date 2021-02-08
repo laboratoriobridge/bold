@@ -1321,15 +1321,26 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
 }
 
 .emotion-60 {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
+  border-spacing: 0 0.25rem;
 }
 
 .emotion-60 th {
   width: 2rem;
   padding: 0.25rem 0;
+}
+
+.emotion-60 tr td:first-child {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.emotion-60 tr td:last-child {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .emotion-26 {
@@ -1975,6 +1986,329 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
+.emotion-12 {
+  background-color: #FFFFFF;
+  border: 1px solid#AAAAB9;
+  border-radius: 2px;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-transition: box-shadow .2s ease;
+  transition: box-shadow .2s ease;
+}
+
+.emotion-12:required {
+  box-shadow: none;
+}
+
+.emotion-12:not(:disabled):hover {
+  border-color: #8F8FA2;
+}
+
+.emotion-12:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-12:focus-within:not(:disabled) {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+  outline: none;
+}
+
+.emotion-4 {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: transparent;
+  cursor: default;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.emotion-3 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.emotion-11 {
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 2.5rem;
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+}
+
+.emotion-1 {
+  position: relative;
+}
+
+.emotion-0 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  border: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-0[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-0:required {
+  box-shadow: none;
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::placeholder {
+  color: #696979;
+}
+
+.emotion-0:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-0:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-0:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-0::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-0:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-0::placeholder {
+  color: #696979;
+}
+
+.emotion-0:focus {
+  box-shadow: none !important;
+}
+
+.emotion-10 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  padding: calc(0.25rem - 2px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-10 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-10:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-10:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-10:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-10:focus {
+  box-shadow: none;
+}
+
+.emotion-9 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+<div>
+  <div>
+    <div
+      class="emotion-2"
+    >
+      <div>
+        <div
+          class="emotion-12"
+        >
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="startDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-4"
+          >
+            <strong>
+              until
+            </strong>
+          </span>
+          <div
+            class="emotion-3"
+          >
+            <div
+              class="emotion-2"
+            >
+              <div
+                class="emotion-1"
+              >
+                <input
+                  autocomplete="off"
+                  class="emotion-0"
+                  name="endDate"
+                  placeholder="mm/dd/yyyy"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+          </div>
+          <span
+            class="emotion-11"
+          >
+            <button
+              class="emotion-10"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-9"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M6 4h1V3c-.002-.667.33-1 1-1 .67 0 1.004.333 1.004 1v1H15V2.941c0-.627.333-.941 1-.941s1 .314 1 .941V4h1c1.333 0 2 .667 2 2v14c0 1.333-.667 2-2 2H6c-1.333 0-2-.667-2-2V6.004C4 4.668 4.667 4 6 4zm0 16h12V10H6v10zM6 6v2h12V6H6zm3 8c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1zm-5 4c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
       </div>
     </div>
   </div>

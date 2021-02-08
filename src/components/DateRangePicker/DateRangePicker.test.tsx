@@ -2,9 +2,10 @@ import { render, fireEvent, waitFor } from '@testing-library/react'
 import React from 'react'
 
 import * as DateFieldModule from '../DateField/DateField'
+import * as DateRangePickerModule from '../DateRangePicker/DateRangePicker'
 import { disableByRange } from '../DateField/DateField'
 
-import { DateRangePicker } from './DateRangePicker'
+import { DateRangePicker, disableByWeekRange } from './DateRangePicker'
 import { DateRange } from './BaseDateRangeInput'
 
 describe('DateRangePicker', () => {
@@ -27,6 +28,11 @@ describe('DateRangePicker', () => {
 
     it('should render correctly when invalid', () => {
       const { container } = render(<DateRangePicker invalid />)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctyly when onlyWeeks', () => {
+      const { container } = render(<DateRangePicker onlyWeeks />)
       expect(container).toMatchSnapshot()
     })
 
@@ -268,6 +274,31 @@ describe('DateRangePicker', () => {
 })
 
 describe('test min and max', () => {
+  it('should call the disableByRange when not choose onlyWeeks', () => {
+    const spy = jest.spyOn(DateFieldModule, 'disableByRange')
+    const { container } = render(
+      <DateRangePicker
+        calendarProps={{ visibleDate: new Date('2018-10-01') }}
+        minDate={new Date('2018-10-01')}
+        maxDate={new Date('2018-10-15')}
+      />
+    )
+    fireEvent.focus(container.querySelector('input'))
+    expect(spy).toHaveBeenCalledWith(new Date('2018-10-01'), new Date('2018-10-15'))
+  })
+  it('should call the disableByWeekRange when choose onlyWeeks', () => {
+    const spy = jest.spyOn(DateRangePickerModule, 'disableByWeekRange')
+    const { container } = render(
+      <DateRangePicker
+        calendarProps={{ visibleDate: new Date('2021-01-03') }}
+        minDate={new Date('2021-01-03')}
+        maxDate={new Date('2021-01-16')}
+        onlyWeeks
+      />
+    )
+    fireEvent.focus(container.querySelector('input'))
+    expect(spy).toHaveBeenCalledWith(new Date('2021-01-03'), new Date('2021-01-16'))
+  })
   it('should set the disabled modifier when using minDate and maxDate props', () => {
     const spy = jest.spyOn(DateFieldModule, 'disableByRange')
     const { container } = render(
@@ -317,5 +348,34 @@ describe('disableByRange', () => {
     const isDisabled = disableByRange(new Date('2018-10-01T20:59:00'), new Date('2018-10-01T20:59:30'))
     expect(isDisabled(new Date('2018-10-01T12:00:00'))).toBeFalsy()
     expect(isDisabled(new Date('2018-10-01T23:00:00'))).toBeFalsy()
+  })
+})
+
+describe('disabledByWeekRange', () => {
+  it('should return a predicate that disables by range', () => {
+    const isDisabled = disableByWeekRange(new Date('2020-12-27'), new Date('2021-01-16'))
+    expect(isDisabled({ start: new Date('2020-12-27'), end: new Date('2021-01-02') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2021-01-03'), end: new Date('2021-01-08') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2020-12-20'), end: new Date('2020-12-26') })).toBeTruthy()
+    expect(isDisabled({ start: new Date('2021-01-17'), end: new Date('2021-01-23') })).toBeTruthy()
+  })
+  it('should return a predicate that disables date by minDate', () => {
+    const isDisabled = disableByWeekRange(new Date('2020-12-27'), null)
+    expect(isDisabled({ start: new Date('2020-12-27'), end: new Date('2021-01-02') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2021-01-03'), end: new Date('2021-01-08') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2020-12-20'), end: new Date('2020-12-26') })).toBeTruthy()
+    expect(isDisabled({ start: new Date('2020-12-13'), end: new Date('2020-12-19') })).toBeTruthy()
+  })
+  it('should return a predicate that disables date by maxDate', () => {
+    const isDisabled = disableByWeekRange(null, new Date('2021-01-16'))
+    expect(isDisabled({ start: new Date('2020-12-27'), end: new Date('2021-01-02') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2021-01-03'), end: new Date('2021-01-08') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2021-01-17'), end: new Date('2021-01-23') })).toBeTruthy()
+    expect(isDisabled({ start: new Date('2021-02-07'), end: new Date('2021-02-13') })).toBeTruthy()
+  })
+  it('should disconsider time when comparing maxDate and minDate', () => {
+    const isDisabled = disableByWeekRange(new Date('2020-12-27T20:59:00'), new Date('2021-01-16T20:59:30'))
+    expect(isDisabled({ start: new Date('2020-12-27T12:00:00'), end: new Date('2021-01-02T12:00:00') })).toBeFalsy()
+    expect(isDisabled({ start: new Date('2021-01-10T12:00:00'), end: new Date('2021-01-16T12:00:00') })).toBeFalsy()
   })
 })

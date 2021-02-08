@@ -23,10 +23,28 @@ export interface DateRangePickerProps extends DateRangePickerInputProps {
   popperProps?: PopperOptions
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
   onBlur?(e: React.FocusEvent<HTMLDivElement>): void
+  onlyWeeks?: boolean
+}
+
+export interface Week {
+  start: Date
+  end: Date
 }
 
 export function DateRangePicker(props: DateRangePickerProps) {
-  const { onChange, popperProps, minDate, maxDate, value, icon, calendarProps, onFocus, onBlur, ...rest } = props
+  const {
+    onChange,
+    popperProps,
+    minDate,
+    maxDate,
+    value,
+    icon,
+    calendarProps,
+    onFocus,
+    onBlur,
+    onlyWeeks,
+    ...rest
+  } = props
 
   const [dateRangeInputFocus, setDateRangeInputFocus] = useState(1)
   const [visibleDate, setVisibleDate] = useState<Date>(new Date())
@@ -89,7 +107,6 @@ export function DateRangePicker(props: DateRangePickerProps) {
   }
 
   const handleOnVisibleDateChange = (vDate: Date): void => setVisibleDate(vDate)
-
   return (
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <DateRangePickerInput
@@ -121,14 +138,32 @@ export function DateRangePicker(props: DateRangePickerProps) {
             minDate={minDate}
             maxDate={maxDate}
             modifiers={{
-              disabled: disableByRange(minDate, maxDate),
+              disabled: onlyWeeks ? disableByWeekRange(minDate, maxDate) : disableByRange(minDate, maxDate),
             }}
+            onlyWeeks={onlyWeeks}
             {...calendarProps}
           />
         </div>
       )}
     </FocusManagerContainer>
   )
+}
+
+DateRangePicker.defaultProps = {
+  onlyWeeks: false,
+  icon: 'calendarOutline',
+} as Partial<DateRangePickerProps>
+
+export const disableByWeekRange = (minDate: Date, maxDate: Date) => {
+  const realMinDate = new Date(minDate)
+  realMinDate.setHours(0, 0, 0, 0)
+
+  const realMaxDate = new Date(maxDate)
+  realMaxDate.setHours(23, 59, 59, 999)
+
+  return (week: Week) => {
+    return (minDate && week.start < realMinDate) || (maxDate && week.end > realMaxDate)
+  }
 }
 
 export const createStyles = (theme: Theme) => ({

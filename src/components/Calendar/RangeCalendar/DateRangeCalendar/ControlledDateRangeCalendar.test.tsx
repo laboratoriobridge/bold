@@ -288,4 +288,97 @@ describe('ControlledDateRangeCalendar', () => {
       expect(getByText('23').getAttribute('aria-selected')).toBe('false')
     })
   })
+
+  describe('controllWeekClick', () => {
+    it('should change only start date when focus is in first input and the selected date is before start date', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          visibleDate: new Date('2021-01-24'),
+          value: { startDate: new Date('2021-01-03'), endDate: new Date('2021-01-09') } as DateRange,
+          onChange: change,
+          inputOnFocus: 1,
+          onlyWeeks: true,
+        })
+      )
+      const tr = container.querySelector('[data-week="27/12/2020-02/01/2021"]')
+      fireEvent.click(tr)
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2020-12-27'),
+        endDate: new Date('2021-01-09'),
+      } as DateRange)
+    })
+
+    it('should change only end date when focus is in second input and the selected date is after the end date', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          visibleDate: new Date('2021-01-24'),
+          value: { startDate: new Date('2021-01-03'), endDate: new Date('2021-01-09') } as DateRange,
+          onChange: change,
+          inputOnFocus: 2,
+          onlyWeeks: true,
+        })
+      )
+      fireEvent.click(container.querySelector('tr[data-week="10/01/2021-16/01/2021"]'))
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2021-01-03'),
+        endDate: new Date('2021-01-16'),
+      } as DateRange)
+    })
+
+    it('should start a new period when focus is in first input and the selected date is after final date', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          visibleDate: new Date('2021-01-24'),
+          value: { startDate: new Date('2021-01-03'), endDate: new Date('2021-01-09') } as DateRange,
+          onChange: change,
+          inputOnFocus: 1,
+          onlyWeeks: true,
+        })
+      )
+      fireEvent.click(container.querySelector('tr[data-week="10/01/2021-16/01/2021"]'))
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2021-01-10'),
+        endDate: new Date('2021-01-16'),
+      } as DateRange)
+    })
+
+    it('should start a new period when focus is in second input and the selected date is before start date', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          visibleDate: new Date('2021-01-24'),
+          value: { startDate: new Date('2021-01-03'), endDate: new Date('2021-01-09') } as DateRange,
+          onChange: change,
+          inputOnFocus: 2,
+          onlyWeeks: true,
+        })
+      )
+      fireEvent.click(container.querySelector('tr[data-week="27/12/2020-02/01/2021"]'))
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2020-12-27'),
+        endDate: new Date('2021-01-02'),
+      } as DateRange)
+    })
+
+    it('should only change the start date when focus is in first input and the selected date is after the start date and before the end date', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          visibleDate: new Date('2021-01-24'),
+          value: { startDate: new Date('2021-01-03'), endDate: new Date('2021-01-23') } as DateRange,
+          onChange: change,
+          inputOnFocus: 1,
+          onlyWeeks: true,
+        })
+      )
+      fireEvent.click(container.querySelector('tr[data-week="10/01/2021-16/01/2021"]'))
+      expect(change).toHaveBeenLastCalledWith({
+        startDate: new Date('2021-01-10'),
+        endDate: new Date('2021-01-23'),
+      } as DateRange)
+    })
+  })
 })
