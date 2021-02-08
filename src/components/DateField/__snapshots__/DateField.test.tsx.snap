@@ -698,15 +698,26 @@ exports[`DateField should render correctly when opened 1`] = `
 }
 
 .emotion-52 {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
+  border-spacing: 0 0.25rem;
 }
 
 .emotion-52 th {
   width: 2rem;
   padding: 0.25rem 0;
+}
+
+.emotion-52 tr td:first-child {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.emotion-52 tr td:last-child {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .emotion-18 {

@@ -2,15 +2,26 @@
 
 exports[`should render correctly 1`] = `
 .emotion-35 {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
+  border-spacing: 0 0.25rem;
 }
 
 .emotion-35 th {
   width: 2rem;
   padding: 0.25rem 0;
+}
+
+.emotion-35 tr td:first-child {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.emotion-35 tr td:last-child {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .emotion-0 {
@@ -420,17 +431,28 @@ exports[`should render correctly 1`] = `
 </div>
 `;
 
-exports[`should use createDayStyles function to create styles for days 1`] = `
+exports[`should use createDateStyles function to create styles for days 1`] = `
 .emotion-35 {
-  border-collapse: collapse;
+  border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
   width: 100%;
+  border-spacing: 0 0.25rem;
 }
 
 .emotion-35 th {
   width: 2rem;
   padding: 0.25rem 0;
+}
+
+.emotion-35 tr td:first-child {
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.emotion-35 tr td:last-child {
+  border-top-right-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 
 .emotion-0 {

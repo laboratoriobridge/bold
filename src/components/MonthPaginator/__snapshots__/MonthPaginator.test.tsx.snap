@@ -144,73 +144,71 @@ exports[`MonthPaginator should render correctly with ghost 1`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-7"
+  >
     <div
-      class="emotion-7"
+      class="emotion-6"
     >
-      <div
-        class="emotion-6"
+      <button
+        class="emotion-1"
+        data-testid="MonthPaginator.PrevButton"
+        title="Previous month"
+        type="button"
       >
-        <button
-          class="emotion-1"
-          data-testid="MonthPaginator.PrevButton"
-          title="Previous month"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
-              />
-            </svg>
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        class="emotion-3"
+        data-testid="MonthPaginator.ShowMonthsButton"
+        title="Show months"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-2"
+          >
+            Jan - 
+            2019
           </span>
-        </button>
-        <button
-          class="emotion-3"
-          data-testid="MonthPaginator.ShowMonthsButton"
-          title="Show months"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-2"
-            >
-              Jan - 
-              2021
-            </span>
-          </span>
-        </button>
-        <button
-          class="emotion-1"
-          data-testid="MonthPaginator.NextButton"
-          title="Next month"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
+        </span>
+      </button>
+      <button
+        class="emotion-1"
+        data-testid="MonthPaginator.NextButton"
+        title="Next month"
+        type="button"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>
@@ -365,73 +363,71 @@ exports[`MonthPaginator should render correctly with month and year 1`] = `
 }
 
 <div>
-  <div>
+  <div
+    class="emotion-7"
+  >
     <div
-      class="emotion-7"
+      class="emotion-6"
     >
-      <div
-        class="emotion-6"
+      <button
+        class="emotion-1"
+        data-testid="MonthPaginator.PrevButton"
+        title="Previous month"
+        type="button"
       >
-        <button
-          class="emotion-1"
-          data-testid="MonthPaginator.PrevButton"
-          title="Previous month"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
-              />
-            </svg>
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+            />
+          </svg>
+        </span>
+      </button>
+      <button
+        class="emotion-3"
+        data-testid="MonthPaginator.ShowMonthsButton"
+        title="Show months"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-2"
+          >
+            Jan - 
+            2019
           </span>
-        </button>
-        <button
-          class="emotion-3"
-          data-testid="MonthPaginator.ShowMonthsButton"
-          title="Show months"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-2"
-            >
-              Jan - 
-              2019
-            </span>
-          </span>
-        </button>
-        <button
-          class="emotion-1"
-          data-testid="MonthPaginator.NextButton"
-          title="Next month"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
+        </span>
+      </button>
+      <button
+        class="emotion-1"
+        data-testid="MonthPaginator.NextButton"
+        title="Next month"
+        type="button"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            class="emotion-0"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+            />
+          </svg>
+        </span>
+      </button>
     </div>
   </div>
 </div>
