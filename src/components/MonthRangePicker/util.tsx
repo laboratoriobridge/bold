@@ -25,10 +25,10 @@ export const isLessOrEqualThan = (month1: ReferenceMonth, month2: ReferenceMonth
  * @param month2 Second reference month
  */
 export const isLessThan = (month1: ReferenceMonth, month2: ReferenceMonth) => {
-  if (month1.year === month2.year) {
-    return month1.month < month2.month
+  if (month1?.year === month2?.year) {
+    return month1?.month < month2?.month
   } else {
-    return month1.year < month2.year
+    return month1?.year < month2?.year
   }
 }
 
@@ -39,10 +39,10 @@ export const isLessThan = (month1: ReferenceMonth, month2: ReferenceMonth) => {
  * @param month2 Second reference month
  */
 export const isGreaterThan = (month1: ReferenceMonth, month2: ReferenceMonth) => {
-  if (month1.year === month2.year) {
-    return month1.month > month2.month
+  if (month1?.year === month2?.year) {
+    return month1?.month > month2?.month
   } else {
-    return month1.year > month2.year
+    return month1?.year > month2?.year
   }
 }
 
@@ -53,7 +53,7 @@ export const isGreaterThan = (month1: ReferenceMonth, month2: ReferenceMonth) =>
  * @param month2 Second reference month
  */
 export const isSameReferenceMonth = (month1: ReferenceMonth, month2: ReferenceMonth) =>
-  month1.year === month2.year && month1.month === month2.month
+  month1?.year === month2?.year && month1?.month === month2?.month
 
 /**
  * Check if a reference month is between the minimum and maximum values
