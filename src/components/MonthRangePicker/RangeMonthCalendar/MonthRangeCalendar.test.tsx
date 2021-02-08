@@ -273,20 +273,28 @@ describe('MonthRangeCalendar', () => {
       const { container } = render(
         createComponent({
           value: {
-            start: { month: 0, year: 2021 },
+            start: { month: 1, year: 2021 },
             end: undefined,
           },
           inputOnFocus: 2,
         })
       )
-      const march = container.querySelector('button[title="March"]')
-      fireEvent.mouseOver(march)
+      const april = container.querySelector('button[title="April"]')
+      fireEvent.mouseOver(april)
       iterateObjectFields(expectedHoverStyle, (fieldName: string, fieldValue: any) => {
-        expect(container.querySelector('button[title="February"]')).toHaveStyleRule(
+        expect(container.querySelector('button[title="January"]')).not.toHaveStyleRule(
           normalizeCssClassNames(fieldName),
           fieldValue
         )
-        expect(march).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        expect(container.querySelector('button[title="February"]')).not.toHaveStyleRule(
+          normalizeCssClassNames(fieldName),
+          fieldValue
+        )
+        expect(container.querySelector('button[title="March"]')).toHaveStyleRule(
+          normalizeCssClassNames(fieldName),
+          fieldValue
+        )
+        expect(april).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
       })
     })
     describe('With the start and the end month defined', () => {

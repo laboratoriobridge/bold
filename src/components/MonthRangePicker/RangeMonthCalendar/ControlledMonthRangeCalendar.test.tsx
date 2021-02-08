@@ -19,7 +19,7 @@ const createComponent = (props: Partial<ControlledMonthRangeCalendarProps> = {})
 
 describe('ControlledMonthRangeCalendar', () => {
   describe('render', () => {
-    it('should render correclty', () => {
+    it('should render correctly', () => {
       const { container } = render(createComponent())
       expect(container).toMatchSnapshot()
     })

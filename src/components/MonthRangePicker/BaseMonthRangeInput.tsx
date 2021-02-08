@@ -1,11 +1,15 @@
-import React, { CSSProperties, useRef } from 'react'
-import { Button, focusBoxShadow, Icon, Theme, useLocale, useStyles } from '../..'
+import React from 'react'
+import { CSSProperties, useRef } from 'react'
+
+import { useLocale } from '../../i18n'
+import { focusBoxShadow, Theme, useStyles } from '../../styles'
 import { composeRefs } from '../../util/react'
-import { BaseDateRangeInputProps } from '../DateRangePicker/BaseDateRangeInput'
+import { Icon } from '../Icon'
+import { Button, ReferenceMonth } from '..'
 import { MonthInput } from '../MonthField/MonthInput'
-import { ReferenceMonth } from '../MonthPicker'
+import { BaseDateRangeInputProps } from '../DateRangePicker/BaseDateRangeInput'
+import { isGreaterOrEqualThan, isGreaterThan, isLessOrEqualThan, isLessThan } from './util'
 import { ReferenceMonthRange } from './MonthRangePicker'
-import { isGreaterOrEqualThan, isLessOrEqualThan, isLessThan } from './util'
 
 export interface BaseMonthRangeInputProps
   extends Omit<BaseDateRangeInputProps, 'value' | 'onChange' | 'maxDate' | 'minDate'> {
@@ -68,16 +72,14 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
 
   const onChangeStart = (refMonth: ReferenceMonth) => {
     const start = handleMinmaxMonth(refMonth)
-    const end = value?.start && value?.end && start && !isLessOrEqualThan(start, value?.end) ? undefined : value?.end
+    const end = value?.start && value?.end && start && isGreaterThan(start, value?.end) ? undefined : value?.end
     const aux = {
       start,
       end,
     } as ReferenceMonthRange
 
     onChange && onChange(aux)
-    if (start) {
-      secondFieldRef.current.focus()
-    }
+    secondFieldRef.current.focus()
   }
 
   const onChangeFinal = (refMonth: ReferenceMonth) => {
@@ -171,6 +173,11 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
     </div>
   )
 }
+
+BaseMonthRangeInput.defaultProps = {
+  icon: 'calendarOutline',
+  clearable: true,
+} as Partial<BaseMonthRangeInputProps>
 
 const createStyles = (theme: Theme, disabled: boolean) => {
   const divStyle = createBaseDivStyle(theme)

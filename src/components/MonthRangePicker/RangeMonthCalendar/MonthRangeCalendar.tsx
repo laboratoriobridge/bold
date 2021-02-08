@@ -81,8 +81,8 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
 
   return (
     <GenericMonthRangeCalendar
-      start={value?.start}
-      end={value?.end}
+      start={value.start}
+      end={value.end}
       isInTheRange={handleIsInTheRange}
       isInTheHoverRange={isInHoverRange}
       {...rest}
