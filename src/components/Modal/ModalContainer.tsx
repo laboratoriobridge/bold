@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Ref } from 'react'
 
 import { useLocale } from '../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
@@ -8,18 +8,19 @@ import { Icon } from '../Icon'
 import { Tooltip } from '../Tooltip'
 
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
+  containerRef?: Ref<HTMLDivElement>
   style?: ExternalStyles
   hasCloseIcon?: boolean
   onClose?(): any
 }
 
 export function ModalContainer(props: ModalContainerProps) {
-  const { style, onClose, hasCloseIcon, children, ...rest } = props
+  const { style, onClose, hasCloseIcon, children, containerRef, ...rest } = props
   const { classes, css } = useStyles(styles)
   const locale = useLocale()
 
   return (
-    <div role='dialog' aria-modal='true' className={css(classes.wrapper, style)} {...rest}>
+    <div role='dialog' aria-modal='true' ref={containerRef} className={css(classes.wrapper, style)} {...rest}>
       {hasCloseIcon && (
         <Tooltip text={locale.modal.close}>
           <Button
