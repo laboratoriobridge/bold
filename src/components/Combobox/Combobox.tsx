@@ -1,27 +1,39 @@
-import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
+import { useCombobox } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
 import { focusBoxShadow, Theme, useStyles } from '../../styles'
-import { composeRefs } from '../../util/react'
-import { FormControl, FormControlProps } from '../FormControl'
+import { composeHandlers, composeRefs } from '../../util/react'
+import { FormControl } from '../FormControl'
+import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
+import { Spinner } from '../Spinner'
 
-export interface ComboboxProps<T = string> extends TextInputProps {
+export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' | 'onChange'>, UseFormControlProps {
+  value?: T
   items: T[]
-  label?: FormControlProps['label']
-  openOnFocus: boolean
   itemToString(item: T): string
+  openOnFocus: boolean
+  loading: boolean
+  menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
+  onChange?: (newValue: T) => void
+  onFilterChange?: (newValue: string) => void
 }
 
 export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
+    value,
     items,
+    loading,
     itemToString,
-    label,
+    menuMinWidth,
     openOnFocus,
+    onClear,
+    onChange,
+    onFocus,
+    onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
   } = props
@@ -46,21 +58,25 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     openMenu,
     toggleMenu,
     closeMenu,
-  } = useCombobox({
+    reset,
+  } = useCombobox<T>({
+    selectedItem: value,
     items: visibleItems,
     itemToString,
-    stateReducer,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
+      onFilterChange?.(inputValue)
     },
-    onSelectedItemChange: () => {
+    onSelectedItemChange: ({ selectedItem }) => {
       closeMenu()
+      onChange?.(selectedItem)
     },
   })
 
   const downshiftComboboxProps = getComboboxProps()
+  const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
-    onFocus: () => openOnFocus && openMenu(),
+    onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
   })
   const { id: labelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
@@ -72,30 +88,43 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     placement: 'bottom-start',
   })
 
+  const formControlInputProps = getFromControlInputProps()
+  const formControlProps = getFormControlProps()
+  const invalid = !!formControlProps.error
   return (
     <div {...downshiftComboboxProps}>
-      <FormControl label={label} labelId={labelId} {...downshiftLabelProps}>
+      <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
           onIconClick={toggleMenu}
           inputRef={composeRefs(inputRef, downshiftInputRef)}
+          onClear={composeHandlers(reset, onClear)}
+          invalid={invalid}
+          {...formControlInputProps}
           {...downshiftInputProps}
           {...rest}
         />
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
-      <div {...downshiftMenuProps}>
+      <div aria-busy={loading} {...downshiftMenuProps}>
         {isOpen && (
           <div
+            data-testid='menu'
             className={classes.menu}
-            style={{ ...popperStyles, width: inputRef.current && inputRef.current.clientWidth }}
+            style={{ ...popperStyles, width: inputRef.current?.clientWidth, minWidth: menuMinWidth }}
             {...popperAttributes}
             ref={setMenuRef}
           >
             <ul className={classes.list}>
+              {loading && (
+                <li className={css(classes.item, classes.loadingItem)}>
+                  {locale.select.loadingItem}
+                  <Spinner style={classes.loadingSpinner} />
+                </li>
+              )}
               {visibleItems.map((item, index) => (
                 <li
                   className={css(classes.item, highlightedIndex === index && classes.selected)}
@@ -115,19 +144,8 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
 Combobox.defaultProps = {
   openOnFocus: true,
+  loading: false,
 } as Partial<ComboboxProps>
-
-function stateReducer<T>(
-  state: UseComboboxState<T>,
-  actionAndChanges: UseComboboxStateChangeOptions<T>
-): UseComboboxState<T> {
-  const { type, changes } = actionAndChanges
-
-  switch (type) {
-    default:
-      return changes
-  }
-}
 
 export const createStyles = (theme: Theme) => ({
   menu: {
@@ -177,6 +195,18 @@ export const createStyles = (theme: Theme) => ({
       boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
     },
   },
+
+  loadingItem: {
+    background: theme.pallete.surface.background,
+    paddingTop: '0.25rem',
+    paddingBottom: '0.25rem',
+    cursor: 'initial',
+  },
+
+  loadingSpinner: {
+    color: theme.pallete.primary.main,
+    float: 'right',
+  } as CSSProperties,
 
   selected: {
     outline: 0,

@@ -1,4 +1,5 @@
-import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
+import { boolean, number, select, text } from '@storybook/addon-knobs'
 import React from 'react'
 import { Combobox } from './Combobox'
 
@@ -17,23 +18,29 @@ const fruits = [
   { value: 12, label: 'Pear' },
 ]
 
-storiesOf('Components|Combobox', module).add('default', () => (
+export default {
+  title: 'Components/Combobox',
+}
+
+export const Default = () => (
   <Combobox<typeof fruits[0]>
+    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
     label='Fruit'
     name='fruit'
     items={fruits}
-    //   error={text('error', '')}
-    //   menuMinWidth={number('menuMinWidth (px)', undefined)}
+    error={text('error', '')}
+    menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
+    placeholder={text('placeholder', 'Select a value...')}
+    clearable={boolean('clearable', true)}
+    disabled={boolean('disabled', false)}
+    openOnFocus={boolean('openOnFocus', true)}
+    loading={boolean('loading', false)}
+    onChange={action('changed')}
+    onFilterChange={action('filter changed')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
     //   itemIsEqual={(a, b) => a.value === b.value}
-    //   placeholder='Select a value...'
     //   multiple={boolean('multiple', false)}
-    //   clearable={boolean('clearable', true)}
-    //   disabled={boolean('disabled', false)}
-    //   openOnFocus={boolean('openOnFocus', true)}
-    //   loading={boolean('loading', false)}
-    //   onChange={action('changed')}
-    //   onBlur={action('blur')}
-    //   onFocus={action('focus')}
   />
-))
+)
