@@ -147,3 +147,13 @@ it('should have a focus on first element when opened', async () => {
     expect(document.activeElement).toEqual(dialog.firstElementChild)
   })
 })
+
+it('should accept "containerRef" prop and pass down to ModalContainer', () => {
+  const ref = React.createRef<HTMLDivElement>()
+  render(
+    <Modal open={true} containerRef={ref}>
+      Testing.
+    </Modal>
+  )
+  expect(document.body.querySelector('[aria-modal="true"]').getAttribute('ref')).toBe(ref)
+})

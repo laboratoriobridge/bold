@@ -43,3 +43,9 @@ it('should allow message customization via locale context', () => {
   )
   expect(container.querySelector('button').getAttribute('aria-label')).toEqual(ptBr.modal.close)
 })
+
+it('should accept the "containerRef" prop', () => {
+  const ref = React.createRef<HTMLDivElement>()
+  render(<ModalContainer containerRef={ref}>Container</ModalContainer>)
+  expect(ref.current.tagName).toEqual('DIV')
+})
