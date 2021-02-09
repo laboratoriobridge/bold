@@ -1,5 +1,8 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
+import { LocaleContext } from '../../i18n/LocaleContext'
+import ptBr from '../../i18n/locales/pt-BR'
+import enUs from '../../i18n/locales/en-US'
 import { BaseMonthRangeInput, BaseMonthRangeInputProps } from './BaseMonthRangeInput'
 import { ReferenceMonthRange } from './MonthRangePicker'
 
@@ -181,6 +184,99 @@ describe('BaseMonthRangeInput', () => {
 
       fireEvent.change(first, { target: { value: '06/2022' } })
       expect(change).toBeCalledWith(undefinedRange)
+    })
+
+    it('should call onChange with a new start month when the end month is typed and it is before the start month', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          onChange: change,
+          value: {
+            start: { month: 1, year: 2021 },
+            end: { month: 2, year: 2021 },
+          } as ReferenceMonthRange,
+        })
+      )
+      const second = container.querySelectorAll('input')[SECOND_INPUT]
+
+      fireEvent.change(second, { target: { value: '01/2021' } })
+      expect(change).toBeCalledWith({ start: { month: 0, year: 2021 }, end: undefined })
+    })
+
+    it('should call onChange with a new start month when the start month is typed and it is after the end month', () => {
+      const change = jest.fn()
+      const { container } = render(
+        createComponent({
+          onChange: change,
+          value: {
+            start: { month: 1, year: 2021 },
+            end: { month: 2, year: 2021 },
+          } as ReferenceMonthRange,
+        })
+      )
+      const first = container.querySelectorAll('input')[FIRST_INPUT]
+
+      fireEvent.change(first, { target: { value: '04/2021' } })
+      expect(change).toBeCalledWith({ start: { month: 3, year: 2021 }, end: undefined })
+    })
+  })
+
+  describe('customization', () => {
+    it('should allow ptBR placeholder customization via locale context', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={ptBr}>
+          <BaseMonthRangeInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(ptBr.dateInput.placeholder)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should allow enUS placeholder customization via locale context', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={enUs}>
+          <BaseMonthRangeInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('input').getAttribute('placeholder')).toEqual(enUs.dateInput.placeholder)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should allow ptBr i18n in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={ptBr}>
+          <BaseMonthRangeInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('strong').textContent).toEqual(ptBr.dateRangeField.separator)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should allow enUs i18n in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={enUs}>
+          <BaseMonthRangeInput />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('strong').textContent).toEqual(enUs.dateRangeField.separator)
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should allow a custom string in range separator', () => {
+      const { container } = render(
+        <LocaleContext.Provider value={enUs}>
+          <BaseMonthRangeInput rangeSeparator={'separator'} />
+        </LocaleContext.Provider>
+      )
+      expect(container.querySelector('strong').textContent).toEqual('separator')
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should be possible to set a name to inputs', () => {
+      const name = 'baseMonthRange'
+      const { container } = render(<BaseMonthRangeInput name={name} />)
+      expect(container.querySelectorAll('input')[0].getAttribute('name')).toEqual(name + '.start')
+      expect(container.querySelectorAll('input')[1].getAttribute('name')).toEqual(name + '.end')
     })
   })
 })

@@ -14,11 +14,11 @@ import { ReferenceMonthRange } from './MonthRangePicker'
 export interface BaseMonthRangeInputProps
   extends Omit<BaseDateRangeInputProps, 'value' | 'onChange' | 'maxDate' | 'minDate'> {
   /**
-   * Defines the minimum allowed date
+   * Defines the minimum allowed reference month
    */
   minMonth?: ReferenceMonth
   /**
-   * Defines the max allowed date
+   * Defines the max allowed reference month
    */
   maxMonth?: ReferenceMonth
   /**
@@ -79,7 +79,9 @@ export function BaseMonthRangeInput(props: BaseMonthRangeInputProps) {
     } as ReferenceMonthRange
 
     onChange && onChange(aux)
-    secondFieldRef.current.focus()
+    if (start) {
+      secondFieldRef.current.focus()
+    }
   }
 
   const onChangeFinal = (refMonth: ReferenceMonth) => {
