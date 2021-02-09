@@ -3,14 +3,12 @@ import { Theme } from '../../../styles'
 import { defaultModifierStyles, MonthPicker, MonthPickerProps, ReferenceMonth } from '../../MonthPicker/MonthPicker'
 
 export interface GenericMonthRangeCalendarProps extends MonthPickerProps {
-  start: ReferenceMonth
-  end: ReferenceMonth
   isInTheRange(month: ReferenceMonth): boolean
   isInTheHoverRange(month: ReferenceMonth, hoverMonth: ReferenceMonth): boolean
 }
 
 export function GenericMonthRangeCalendar(props: GenericMonthRangeCalendarProps) {
-  const { isInTheHoverRange, isInTheRange, start, end, ...rest } = props
+  const { isInTheHoverRange, isInTheRange, ...rest } = props
 
   const [hoverMonth, setHoverMonth] = useState<ReferenceMonth>({ month: undefined, year: undefined })
 

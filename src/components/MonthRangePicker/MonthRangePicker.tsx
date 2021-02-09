@@ -79,8 +79,8 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
     start && end
       ? onChange({ startDate: startDate, endDate: endDate })
       : !end
-      ? onChange({ startDate: startDate, endDate: new Date(range?.start?.year, range?.start?.month + 1, 0, 0, 0, 0) })
-      : onChange({ startDate: new Date(range?.end?.year, range?.end?.month, 1, 0, 0, 0), endDate: endDate })
+      ? onChange({ startDate: startDate, endDate: new Date(range.start.year, range.start.month + 1, 0, 0, 0, 0) })
+      : onChange({ startDate: new Date(range.end.year, range.end.month, 1, 0, 0, 0), endDate: endDate })
   }
 
   const handleOnVisibleMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)

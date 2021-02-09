@@ -79,13 +79,5 @@ export function MonthRangeCalendar(props: MonthRangeCalendarProps) {
     (!maxMonth || isLessOrEqualThan(month, maxMonth)) &&
     hoverControl(month, hoverMonth)
 
-  return (
-    <GenericMonthRangeCalendar
-      start={value.start}
-      end={value.end}
-      isInTheRange={handleIsInTheRange}
-      isInTheHoverRange={isInHoverRange}
-      {...rest}
-    />
-  )
+  return <GenericMonthRangeCalendar isInTheRange={handleIsInTheRange} isInTheHoverRange={isInHoverRange} {...rest} />
 }
