@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
+import { findDOMNode } from 'react-dom'
 import { Modal, ModalProps } from './Modal'
 
 jest.mock('../../util/string')
@@ -155,5 +156,5 @@ it('should accept "containerRef" prop and pass down to ModalContainer', () => {
       Testing.
     </Modal>
   )
-  expect(document.body.querySelector('[aria-modal="true"]').getAttribute('ref')).toBe(ref)
+  expect(document.body.querySelector('[aria-modal="true"]')).toBe(findDOMNode(ref.current))
 })
