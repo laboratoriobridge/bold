@@ -2,6 +2,7 @@ import * as React from 'react'
 import { MouseEvent, useState } from 'react'
 
 import { Theme } from '../../../../styles'
+import { Week } from '../../../DateRangePicker/DateRangePicker'
 import { Calendar, CalendarProps, defaultModifierStyles } from '../../Calendar'
 
 export interface GenericRangeCalendarProps extends CalendarProps {
@@ -16,9 +17,12 @@ export function GenericRangeCalendar({
   isInTheHoverRange,
   startDate,
   endDate,
+  onlyWeeks,
   ...rest
 }: GenericRangeCalendarProps) {
   const [hoverDate, setHoverDate] = useState<Date>(undefined)
+
+  const [hoverWeek, setHoverWeek] = useState<Week>({ start: undefined, end: undefined })
 
   const inRange = (day: Date): boolean => {
     return isInTheRange(day)
@@ -28,24 +32,62 @@ export function GenericRangeCalendar({
     return isInTheHoverRange(day, hoverDate)
   }
 
-  const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => setHoverDate(undefined)
-  return (
-    <Calendar
-      {...rest}
-      onMouseLeave={onMouseLeave}
-      onDayHover={setHoverDate}
-      isDaySelected={isInTheRange}
-      modifiers={{
-        ...rest.modifiers,
-        inTheHoverRange: inHoverRange,
-        inTheRange: inRange,
-      }}
-      modifierStyles={{
-        ...rest.modifierStyles,
-        inTheHoverRange: dayHoverStyle,
-        inTheRange: defaultModifierStyles.selected,
-      }}
-    />
-  )
+  const inWeekRange = (week: Week): boolean => {
+    return isInTheRange(week.start) && isInTheRange(week.end)
+  }
+
+  const inHoverWeekRange = (week: Week): boolean => {
+    return hoverWeek && isInTheHoverRange(week.start, hoverWeek.start) && isInTheHoverRange(week.end, hoverWeek.end)
+  }
+
+  const onMouseLeave = (e: MouseEvent<HTMLDivElement>) => {
+    if (onlyWeeks) {
+      setHoverWeek({ start: undefined, end: undefined })
+    } else {
+      setHoverDate(undefined)
+    }
+  }
+
+  if (onlyWeeks) {
+    return (
+      <Calendar
+        {...rest}
+        onMouseLeave={onMouseLeave}
+        onWeekHover={setHoverWeek}
+        modifiers={{
+          ...rest.modifiers,
+          inHoverWeekRange: inHoverWeekRange,
+          inWeekRange: inWeekRange,
+        }}
+        modifierStyles={{
+          ...rest.modifierStyles,
+          inHoverWeekRange: hoverStyle,
+          inWeekRange: defaultModifierStyles.selected,
+        }}
+        onlyWeeks={onlyWeeks}
+      />
+    )
+  } else {
+    return (
+      <Calendar
+        {...rest}
+        onMouseLeave={onMouseLeave}
+        onDayHover={setHoverDate}
+        isDaySelected={isInTheRange}
+        modifiers={{
+          ...rest.modifiers,
+          inTheHoverRange: inHoverRange,
+          inTheRange: inRange,
+        }}
+        modifierStyles={{
+          ...rest.modifierStyles,
+          inTheHoverRange: hoverStyle,
+          inTheRange: defaultModifierStyles.selected,
+        }}
+        onlyWeeks={onlyWeeks}
+      />
+    )
+  }
 }
-export const dayHoverStyle = (theme: Theme) => ({ background: theme.pallete.surface.background })
+
+export const hoverStyle = (theme: Theme) => ({ background: theme.pallete.surface.background })

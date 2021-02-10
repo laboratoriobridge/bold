@@ -279,24 +279,50 @@ describe('DateRangeCalendar', () => {
       }
     )
 
-    it('Remove hover style when mouseLeave', () => {
-      const { getByText } = render(
-        createComponent({
-          value: { startDate: new Date('2019-02-13'), endDate: undefined } as DateRange,
-          inputOnFocus: 2,
-        })
-      )
-      const expectedStyle = dayHoverStyle(theme)
+    describe('Remove style when mouseLeave', () => {
+      it('should remove the style for day hover', () => {
+        const { getByText } = render(
+          createComponent({
+            value: { startDate: new Date('2019-02-13'), endDate: undefined } as DateRange,
+            inputOnFocus: 2,
+          })
+        )
+        const expectedStyle = dayHoverStyle(theme)
 
-      fireEvent.mouseOver(getByText('14'))
-      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
-        expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
-      )
+        fireEvent.mouseOver(getByText('14'))
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+          expect(getByText('14')).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        )
 
-      fireEvent.mouseLeave(getByText('14'))
-      iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
-        expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
-      )
+        fireEvent.mouseLeave(getByText('14'))
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+          expect(getByText('14')).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        )
+      })
+
+      it('should remove the style for week hover', () => {
+        const { container } = render(
+          createComponent({
+            visibleDate: new Date('2021-01-03'),
+            value: { startDate: new Date('2021-01-17'), endDate: undefined } as DateRange,
+            inputOnFocus: 2,
+            onlyWeeks: true,
+          })
+        )
+        const expectedStyle = dayHoverStyle(theme)
+
+        const tr = container.querySelector('tr[data-week="24/01/2021-30/01/2021"]')
+
+        fireEvent.mouseOver(tr)
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+          expect(tr).toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        )
+
+        fireEvent.mouseLeave(tr)
+        iterateObjectFields(expectedStyle, (fieldName: string, fieldValue: any) =>
+          expect(tr).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+        )
+      })
     })
 
     it('The comparisons for which days belong to the selected range should be correct', () => {
