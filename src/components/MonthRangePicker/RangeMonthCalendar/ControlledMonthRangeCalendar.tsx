@@ -12,7 +12,7 @@ export interface ControlledMonthRangeCalendarProps extends MonthPickerProps {
 }
 
 export function ControlledMonthRangeCalendar(props: ControlledMonthRangeCalendarProps) {
-  const { inputOnFocus, onChange, value, onMonthClick, ...rest } = props
+  const { inputOnFocus, value, onChange, onMonthClick, ...rest } = props
 
   const controllMonthClick = (month: ReferenceMonth) => {
     onMonthClick && onMonthClick(month)

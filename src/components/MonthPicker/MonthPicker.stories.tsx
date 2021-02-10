@@ -1,16 +1,13 @@
-// import { action } from '@storybook/addon-actions'
-import { storiesOf } from '@storybook/react'
+import { action } from '@storybook/addon-actions'
 import React from 'react'
 
-import { MonthPicker, ReferenceMonth } from './MonthPicker'
+import { MonthPicker } from './MonthPicker'
 
 const today = new Date()
 const value = { month: today.getMonth(), year: today.getFullYear() }
 
-const printChange = (month: ReferenceMonth) => {
-  console.log(`[CHANGE]: ${month.month}/${month.year}`)
+export default {
+  title: 'Components/MonthPicker',
 }
 
-storiesOf('Components|MonthPicker', module).add('default', () => (
-  <MonthPicker visibleMonth={value} onVisibleMonthChange={printChange} />
-))
+export const Default = () => <MonthPicker visibleMonth={value} onVisibleMonthChange={action('changed')} />
