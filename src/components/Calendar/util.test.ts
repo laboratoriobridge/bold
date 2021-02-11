@@ -1,4 +1,11 @@
-import { createMonthMatrix, createWeekArray, getFirstDayOfMonth, getLastDayOfMonth, isSameDay } from './util'
+import {
+  createMonthMatrix,
+  createWeekArray,
+  getFirstDayOfMonth,
+  getLastDayOfMonth,
+  isSameDay,
+  isBelongingAWeek,
+} from './util'
 
 describe('getFirstDayOfMonth', () => {
   it('should return the first day of a month', () => {
@@ -47,6 +54,23 @@ describe('isSameDay', () => {
     expect(isSameDay(new Date('2018-10-25'), new Date('2018-11-25'))).toEqual(false)
     expect(isSameDay(new Date('2018-10-25'), new Date('2017-10-25'))).toEqual(false)
     expect(isSameDay(new Date('2018-10-25T18:00:00'), new Date('2018-10-25T10:00:00'))).toEqual(true)
+  })
+})
+
+describe('isBelongingAWeek', () => {
+  it('should return true if a day belongs to a week', () => {
+    expect(
+      isBelongingAWeek(new Date('2021-01-21'), { start: new Date('2021-01-17'), end: new Date('2021-01-23') })
+    ).toBeTruthy()
+    expect(
+      isBelongingAWeek(new Date('2021-01-23'), { start: new Date('2021-01-17'), end: new Date('2021-01-23') })
+    ).toBeTruthy()
+    expect(
+      isBelongingAWeek(new Date('2021-01-21'), { start: new Date('2021-01-03'), end: new Date('2021-01-09') })
+    ).toBeFalsy()
+    expect(
+      isBelongingAWeek(new Date('2020-01-21'), { start: new Date('2021-01-17'), end: new Date('2021-01-23') })
+    ).toBeFalsy()
   })
 })
 
