@@ -1,5 +1,5 @@
 import FocusTrap from 'focus-trap-react'
-import React, { useEffect } from 'react'
+import React, { useEffect, Ref } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { zIndexLevel } from '../../styles/theme/zIndex'
 import { Portal } from '../Portal'
@@ -13,6 +13,7 @@ export interface ModalProps extends ModalContainerProps {
   open: boolean
   size?: ModalSize
   children?: React.ReactNode
+  containerRef?: Ref<HTMLDivElement>
 
   /**
    * @description allows you to customize the depth of the container and the backdrop of the modal
@@ -86,7 +87,7 @@ export function Modal(props: ModalProps) {
                 <div className={className}>
                   <div className={classes.modal}>
                     <ModalContainer
-                      containerRef={containerRef}
+                      ref={containerRef}
                       style={css(classes.container, classes[size], style)}
                       onClose={onClose}
                       {...rest}
