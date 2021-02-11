@@ -9,6 +9,7 @@ export interface ControlledMonthRangeCalendarProps extends MonthPickerProps {
   inputOnFocus: number
   minMonth: ReferenceMonth
   maxMonth: ReferenceMonth
+  onChange(range: ReferenceMonthRange): void
 }
 
 export function ControlledMonthRangeCalendar(props: ControlledMonthRangeCalendarProps) {
@@ -37,7 +38,3 @@ export function ControlledMonthRangeCalendar(props: ControlledMonthRangeCalendar
 
   return <MonthRangeCalendar {...rest} value={value} onMonthClick={controllMonthClick} inputOnFocus={inputOnFocus} />
 }
-
-ControlledMonthRangeCalendar.defaultProps = {
-  onChange: () => null,
-} as Partial<ControlledMonthRangeCalendarProps>

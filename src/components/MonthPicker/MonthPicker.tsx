@@ -7,7 +7,6 @@ import { getUserLocale, getMonthNames } from '../../util/locale'
 import { Button } from '../Button'
 import { ModifierFn } from '../Calendar/Calendar'
 import { Icon } from '../Icon'
-import { ReferenceMonthRange } from '../MonthRangePicker/MonthRangePicker'
 import { isSameReferenceMonth } from '../MonthRangePicker/util'
 import { Text } from '../Text'
 
@@ -29,7 +28,6 @@ export interface MonthPickerProps {
   onMonthHover?(month: ReferenceMonth): void
 
   formatter?: (date: Date, month: Intl.DateTimeFormat) => string
-  onChange?(range: ReferenceMonthRange): void
   onMonthClick?(refMonth: ReferenceMonth): void
 
   isDisabled?(month: ReferenceMonth): boolean

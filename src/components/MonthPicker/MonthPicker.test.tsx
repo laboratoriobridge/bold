@@ -8,7 +8,7 @@ import {
   normalizeCssClassNames,
 } from '../Calendar/RangeCalendar/DateRangeCalendar/DateRangeCalendar.test'
 import { hoverStyle } from '../MonthRangePicker/RangeMonthCalendar/GenericMonthRangeCalendar'
-import { defaultModifiers, defaultModifierStyles, MonthPicker } from './MonthPicker'
+import { createMonthStylesFn, defaultModifiers, defaultModifierStyles, MonthPicker } from './MonthPicker'
 
 const date = new Date('2019-01-31')
 const visibleMonth = { month: date.getMonth(), year: date.getFullYear() }
@@ -159,5 +159,25 @@ describe('getMonthNames', () => {
       { short: 'Nov', long: 'November' },
       { short: 'Dec', long: 'December' },
     ])
+  })
+
+  describe('createMonthStylesFn', () => {
+    it('should return merged styles from all modifiers that apply', () => {
+      const theme = createTheme()
+      const stylesCreator = createMonthStylesFn(
+        {
+          current: () => true,
+          selected: () => true,
+          birthday: () => false,
+        },
+        {
+          current: defaultModifierStyles.current,
+          selected: defaultModifierStyles.selected,
+          birthday: defaultModifierStyles.current,
+        },
+        theme
+      )
+      expect(stylesCreator({ month: 0, year: 2021 })).toMatchSnapshot()
+    })
   })
 })

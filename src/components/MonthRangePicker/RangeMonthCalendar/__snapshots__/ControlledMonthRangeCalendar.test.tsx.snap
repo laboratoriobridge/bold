@@ -1,6 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
+.emotion-33 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-32 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -60,31 +85,6 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-33 {
-  background-color: #FFFFFF;
-  display: inline-block;
-  padding: 1rem;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
-  border-radius: 2px;
-}
-
-.emotion-32 {
-  margin: -0.25rem -0.25rem;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-2 {
-  text-align: center;
-  margin: 0.25rem 0.25rem;
-  border-radius: 0.25rem;
 }
 
 .emotion-3 {
@@ -447,6 +447,31 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
 `;
 
 exports[`ControlledMonthRangeCalendar render should render correctly without receiving a value 1`] = `
+.emotion-33 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-32 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -506,31 +531,6 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-33 {
-  background-color: #FFFFFF;
-  display: inline-block;
-  padding: 1rem;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
-  border-radius: 2px;
-}
-
-.emotion-32 {
-  margin: -0.25rem -0.25rem;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-2 {
-  text-align: center;
-  margin: 0.25rem 0.25rem;
-  border-radius: 0.25rem;
 }
 
 .emotion-3 {
