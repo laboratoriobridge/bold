@@ -117,6 +117,7 @@ describe('BaseMonthRangeInput', () => {
       const { container } = render(
         createComponent({
           onChange: change,
+          value: undefined,
         })
       )
 

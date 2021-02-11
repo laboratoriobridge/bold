@@ -77,6 +77,38 @@ describe('MonthRangePicker', () => {
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
 
+    it('should show month picker correctly when only start month is defined and the second input is focused', () => {
+      const { container } = render(
+        createComponent({
+          value: {
+            start: { month: 1, year: 2021 },
+            end: undefined,
+          },
+        })
+      )
+      const inputs = container.querySelectorAll('input')
+
+      fireEvent.focus(inputs[SECOND_INPUT])
+      expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
+      expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
+    })
+
+    it('should show month picker correctly when only end month is defined and the first input is focused', () => {
+      const { container } = render(
+        createComponent({
+          value: {
+            start: undefined,
+            end: { month: 1, year: 2021 },
+          },
+        })
+      )
+      const inputs = container.querySelectorAll('input')
+
+      fireEvent.focus(inputs[FIRST_INPUT])
+      expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
+      expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
+    })
+
     it('should show month picker correctly when only end month is defined and the second input is focused', () => {
       const { container } = render(
         createComponent({

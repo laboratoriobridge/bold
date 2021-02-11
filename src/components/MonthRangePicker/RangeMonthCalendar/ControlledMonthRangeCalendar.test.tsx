@@ -1,5 +1,11 @@
 import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
+import { createTheme } from '../../../styles/theme/createTheme'
+import {
+  iterateObjectFields,
+  normalizeCssClassNames,
+} from '../../Calendar/RangeCalendar/DateRangeCalendar/DateRangeCalendar.test'
+import { defaultModifierStyles } from '../../MonthPicker/MonthPicker'
 import { ReferenceMonthRange } from '../MonthRangePicker'
 import { ControlledMonthRangeCalendar, ControlledMonthRangeCalendarProps } from './ControlledMonthRangeCalendar'
 
@@ -125,6 +131,22 @@ describe('ControlledMonthRangeCalendar', () => {
         start: { month: 1, year: 2021 },
         end: { month: 10, year: 2021 },
       } as ReferenceMonthRange)
+    })
+  })
+  describe('default prop', () => {
+    it('should define onChange', () => {
+      const theme = createTheme()
+      const notExpectedSelectedStyle = defaultModifierStyles.selected(theme)
+      const hoverBackground: String = notExpectedSelectedStyle[':hover']['background']
+      notExpectedSelectedStyle[':hover']['background'] = hoverBackground.substr(0, hoverBackground.indexOf('!'))
+
+      const { container } = render(createComponent())
+      const button = container.querySelector('button[title="January"]')
+      fireEvent.click(button)
+
+      iterateObjectFields(notExpectedSelectedStyle, (fieldName: string, fieldValue: any) =>
+        expect(button).not.toHaveStyleRule(normalizeCssClassNames(fieldName), fieldValue)
+      )
     })
   })
 })
