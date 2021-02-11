@@ -162,8 +162,8 @@ describe('getMonthNames', () => {
   })
 
   describe('createMonthStylesFn', () => {
+    const theme = createTheme()
     it('should return merged styles from all modifiers that apply', () => {
-      const theme = createTheme()
       const stylesCreator = createMonthStylesFn(
         {
           current: () => true,
@@ -178,6 +178,20 @@ describe('getMonthNames', () => {
         theme
       )
       expect(stylesCreator({ month: 0, year: 2021 })).toMatchSnapshot()
+    })
+    it('should throw a error if a style is not provided for a predicate', () => {
+      const stylesCreator = createMonthStylesFn(
+        {
+          current: () => true,
+          selected: () => true,
+          custom: () => false,
+        },
+        defaultModifierStyles,
+        theme
+      )
+      expect(() => {
+        stylesCreator({ month: 0, year: 2021 })
+      }).toThrowError('You must provied a modifierStyle for predicate "custom"')
     })
   })
 })

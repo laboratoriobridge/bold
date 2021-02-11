@@ -179,8 +179,8 @@ describe('modifierStyles', () => {
 })
 
 describe('createDayStylesFn', () => {
+  const theme = createTheme()
   it('should return merged styles from all modifiers that apply', () => {
-    const theme = createTheme()
     const stylesCreator = createStylesFn(
       {
         today: () => true,
@@ -192,5 +192,21 @@ describe('createDayStylesFn', () => {
       theme
     )
     expect(stylesCreator(new Date(), {} as any)).toMatchSnapshot()
+  })
+  it('should throw a error if a style is not provided for a predicate', () => {
+    const stylesCreator = createStylesFn(
+      {
+        today: () => true,
+        disabled: () => true,
+        adjacentMonth: () => true,
+        selected: () => true,
+        custom: () => false,
+      },
+      defaultModifierStyles,
+      theme
+    )
+    expect(() => {
+      stylesCreator(new Date(), {} as any)
+    }).toThrowError('You must provied a modifierStyle for predicate "custom"')
   })
 })
