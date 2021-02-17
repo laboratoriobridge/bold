@@ -28,3 +28,11 @@ export const MuchValues = () => (
     xAxis={{ title: 'Eixo X', values: ['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'] }}
   />
 )
+
+export const LongNames = () => (
+  <BarChart
+    title='Much values'
+    yAxis={{ title: 'Eixo Y', values: [5, 10] }}
+    xAxis={{ title: 'Eixo X', values: ['Maria Eduarda de Melo Hang', 'Eduardo da Silva Santos'] }}
+  />
+)
