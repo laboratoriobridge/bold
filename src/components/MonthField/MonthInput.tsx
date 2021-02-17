@@ -2,22 +2,11 @@ import React, { useCallback } from 'react'
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
 import { ReferenceMonth } from '../MonthPicker'
+import { format } from './util'
 
 export interface MonthInputProps extends Omit<MaskedTextFieldProps, 'value' | 'onChange'> {
   value?: ReferenceMonth
   onChange?(refMonth: ReferenceMonth | null): void
-}
-
-export const format = (value: ReferenceMonth) => {
-  if (!value || !value.year || value.month == null) {
-    return null
-  }
-
-  if (value.month < 9) {
-    return `0${value.month + 1}/${value.year}`
-  } else {
-    return `${value.month + 1}/${value.year}`
-  }
 }
 
 export function MonthInput(props: MonthInputProps) {
