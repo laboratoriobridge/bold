@@ -46,13 +46,17 @@ export function TableFooter(props: TableFooterProps) {
         />
       </span>
       {showPagination() && (
-        <div className={classes.pagination}>
-          <HFlow alignItems='center' hSpacing={0.5}>
-            <Text>Mostrar:</Text>
-            <TableSizeDropdown options={sizeOptions} size={pageSize} onChange={onSizeChange} />
-          </HFlow>
-          <Paginator page={page} total={totalPages} onChange={onPageChange} />
-        </div>
+        <>
+          {onSizeChange && (
+            <HFlow alignItems='center' hSpacing={0.5}>
+              <Text>Mostrar:</Text>
+              <TableSizeDropdown options={sizeOptions} size={pageSize} onChange={onSizeChange} />
+            </HFlow>
+          )}
+          <div className={classes.pagination}>
+            <Paginator page={page} total={totalPages} onChange={onPageChange} />
+          </div>
+        </>
       )}
     </div>
   )
@@ -70,18 +74,19 @@ export const createStyles = (theme: Theme) => ({
     height: 40,
   } as CSSProperties,
   results: {
+    borderRight: '1px solid ' + theme.pallete.divider,
     fontWeight: 'bold',
     display: 'flex',
     alignItems: 'center',
+    marginRight: '1rem',
     paddingRight: '1rem',
     paddingLeft: '1rem',
   } as CSSProperties,
   pagination: {
-    borderLeft: '1px solid ' + theme.pallete.divider,
     display: 'flex',
     alignItems: 'center',
     flex: 1,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     padding: '4px 1rem',
   } as CSSProperties,
 })
