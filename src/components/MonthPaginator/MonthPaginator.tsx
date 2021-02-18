@@ -1,17 +1,18 @@
 import { Placement } from '@popperjs/core'
-import { css } from 'emotion'
 import React, { CSSProperties, useEffect, useState } from 'react'
 import { usePopper } from 'react-popper'
 
+import { css } from 'emotion'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
-import { getUserLocale, getMonthNames, getMonthShortFormat } from '../../util/locale'
+import { getUserLocale, getMonthShortFormat } from '../../util/locale'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { HFlow } from '../HFlow'
-import { createStyles as importedStyles, ReferenceMonth } from '../MonthPicker/MonthPicker'
+import { MonthPicker, ReferenceMonth } from '../MonthPicker/MonthPicker'
 import { Text } from '../Text'
 import { Tooltip } from '../Tooltip'
+import { FocusManagerContainer } from '../FocusManagerContainer'
 
 export interface MonthPaginatorProps {
   month?: number
@@ -28,9 +29,8 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   const locale = useLocale()
 
   const [open, setOpen] = useState(isOpen)
-  const { classes: importedClasses } = useStyles(importedStyles)
   const {
-    classes: { container, ghostContainer, popup, popupItem, showMonth },
+    classes: { container, ghostContainer, showMonth, popup },
   } = useStyles(createStyles, open)
 
   const [visibleMonth, setVisibleMonth] = useState(month)
@@ -51,10 +51,10 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     attributes: { placement },
   } = usePopper(anchorRef, popperRef, { placement: popperPlacement })
 
-  const updateStates = (newMonth: number, newYear: number) => {
-    setVisibleMonth(newMonth)
-    setVisibleYear(newYear)
-    onChange && onChange({ month: newMonth, year: newYear })
+  const updateStates = (newMonth: ReferenceMonth) => {
+    setVisibleMonth(newMonth.month)
+    setVisibleYear(newMonth.year)
+    onChange && onChange(newMonth)
   }
 
   const onPrevClick = () => {
@@ -62,7 +62,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     else {
       const newMonth = visibleMonth === 0 ? 11 : visibleMonth - 1
       const newYear = visibleMonth === 0 ? visibleYear - 1 : visibleYear
-      updateStates(newMonth, newYear)
+      updateStates({ month: newMonth, year: newYear })
     }
   }
   const onNextClick = () => {
@@ -70,66 +70,79 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     else {
       const newMonth = visibleMonth === 11 ? 0 : visibleMonth + 1
       const newYear = visibleMonth === 11 ? visibleYear + 1 : visibleYear
-      updateStates(newMonth, newYear)
+      updateStates({ month: newMonth, year: newYear })
     }
   }
 
-  const onMonthClick = (month: number) => () => {
-    updateStates(month, visibleYear)
+  const onMonthClick = (month: ReferenceMonth) => {
+    updateStates(month)
     setOpen(!open)
   }
+
+  const handleShowMonthsClick = () => setOpen(!open)
+  const handleFocusOut = () => setOpen(false)
+  useEffect(() => {
+    open && popperRef?.focus()
+  }, [open, popperRef])
 
   const baseYearDate = new Date(visibleYear, visibleMonth, 1, 0, 0, 0, 0)
   const yearFormatter = new Intl.DateTimeFormat(getUserLocale(), { year: 'numeric' })
 
   const monthFormatter = getMonthShortFormat(baseYearDate, formatter)
-  const monthNames = getMonthNames(getUserLocale(), formatter)
 
   return (
-    <div className={ghost ? ghostContainer : container} ref={setAnchorRef}>
-      <HFlow alignItems='center'>
-        <Tooltip text={open ? locale.calendar.previousYear : locale.calendar.previousMonth}>
-          <Button size='small' skin='ghost' onClick={onPrevClick} data-testid='MonthPaginator.PrevButton'>
-            <Icon icon='angleLeft' />
-          </Button>
-        </Tooltip>
-        <Tooltip text={open ? locale.monthPaginator.close : locale.monthPaginator.show}>
-          <Button
-            size='small'
-            skin='ghost'
-            onClick={() => setOpen(!open)}
-            style={showMonth}
-            data-testid='MonthPaginator.ShowMonthsButton'
-          >
-            <Text fontWeight='bold' fontSize={0.875}>
-              {!open && `${monthFormatter} - `}
-              {yearFormatter.format(baseYearDate)}
-            </Text>
-          </Button>
-        </Tooltip>
-        <Tooltip text={open ? locale.calendar.nextYear : locale.calendar.nextMonth}>
-          <Button size='small' skin='ghost' onClick={onNextClick} data-testid='MonthPaginator.NextButton'>
-            <Icon icon='angleRight' />
-          </Button>
-        </Tooltip>
-      </HFlow>
+    <FocusManagerContainer onFocusOut={handleFocusOut}>
+      <div className={ghost ? ghostContainer : container} ref={setAnchorRef}>
+        <HFlow alignItems='center'>
+          <Tooltip text={locale.calendar.previousMonth}>
+            <Button
+              disabled={open}
+              size='small'
+              skin='ghost'
+              onClick={onPrevClick}
+              data-testid='MonthPaginator.PrevButton'
+            >
+              <Icon icon='angleLeft' />
+            </Button>
+          </Tooltip>
+          <Tooltip text={locale.monthPaginator.show}>
+            <Button
+              size='small'
+              skin='ghost'
+              disabled={open}
+              onClick={handleShowMonthsClick}
+              style={showMonth}
+              data-testid='MonthPaginator.ShowMonthsButton'
+            >
+              <Text fontWeight='bold' fontSize={0.875}>
+                {`${monthFormatter} - `}
+                {yearFormatter.format(baseYearDate)}
+              </Text>
+            </Button>
+          </Tooltip>
+          <Tooltip text={locale.calendar.nextMonth}>
+            <Button
+              disabled={open}
+              size='small'
+              skin='ghost'
+              onClick={onNextClick}
+              data-testid='MonthPaginator.NextButton'
+            >
+              <Icon icon='angleRight' />
+            </Button>
+          </Tooltip>
+        </HFlow>
+      </div>
       {open && (
-        <div ref={setPopperRef} className={css(popperStyle as any, popup)} data-placement={placement}>
-          {monthNames.map((month, index) => (
-            <div key={index} className={popupItem}>
-              <Button
-                title={month.long}
-                onClick={onMonthClick(index)}
-                skin='ghost'
-                style={css(importedClasses.button, index === visibleMonth && importedClasses.active)}
-              >
-                {month.short}
-              </Button>
-            </div>
-          ))}
-        </div>
+        <MonthPicker
+          onChange={onMonthClick}
+          year={visibleYear}
+          ref={setPopperRef}
+          className={css(popup, popperStyle as any)}
+          data-placement={placement}
+        />
       )}
-    </div>
+    </FocusManagerContainer>
   )
 }
 
@@ -143,7 +156,7 @@ MonthPaginator.defaultProps = {
 const createStyles = (theme: Theme, open: boolean) => ({
   container: {
     display: 'inline-block',
-    padding: open ? '1rem' : '1rem 0.5rem',
+    padding: '1rem 0.5rem',
     backgroundColor: theme.pallete.surface.main,
     border: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer['20'],
@@ -152,23 +165,10 @@ const createStyles = (theme: Theme, open: boolean) => ({
   ghostContainer: {
     padding: '-2rem',
   } as CSSProperties,
-  popup: {
-    display: 'grid',
-    alignItems: 'center',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    margin: '0.25rem',
-    zIndex: theme.zIndex.popper,
-    backgroundColor: theme.pallete.surface.main,
-    borderTop: 0,
-    border: `1px solid ${theme.pallete.divider}`,
-    boxShadow: theme.shadows.outer['20'],
-    borderRadius: theme.radius.popper,
-  } as CSSProperties,
-  popupItem: {
-    textAlign: 'center',
-    margin: '0.25rem',
-  } as CSSProperties,
   showMonth: {
-    margin: open ? 'auto' : 'auto -1rem',
+    margin: 'auto -1rem',
   } as CSSProperties,
+  popup: {
+    zIndex: theme.zIndex.popper,
+  },
 })
