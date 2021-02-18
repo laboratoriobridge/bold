@@ -30,6 +30,16 @@ it('should renders correctly without pagination', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('does not show size options if onSizeChange is an undefined prop', () => {
+  const { rerender, queryByText, getByText } = render(
+    <TableFooterTest pageSize={10} sizeOptions={[10, 30, 50, 100]} onSizeChange={undefined} />
+  )
+  expect(queryByText('Mostrar:')).toBeNull()
+
+  rerender(<TableFooterTest pageSize={10} sizeOptions={[10, 30, 50, 100]} onSizeChange={jest.fn} />)
+  expect(getByText('Mostrar:')).toBeTruthy()
+})
+
 it('does not show pagination options if totalElements is less than pageSize and minimum optionSize', () => {
   const { container } = render(<TableFooterTest totalElements={10} pageSize={10} sizeOptions={[10, 30, 50, 100]} />)
   expect(container.querySelector('input')).toBeFalsy()

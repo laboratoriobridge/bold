@@ -301,7 +301,7 @@ describe('ControlledDateRangeCalendar', () => {
           onlyWeeks: true,
         })
       )
-      const tr = container.querySelector('[data-week="27/12/2020-02/01/2021"]')
+      const tr = container.querySelector('tr[data-week="27/12/2020-02/01/2021"]')
       fireEvent.click(tr)
       expect(change).toHaveBeenLastCalledWith({
         startDate: new Date('2020-12-27'),

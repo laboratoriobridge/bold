@@ -15,6 +15,7 @@ exports[`should renders correctly 1`] = `
 }
 
 .emotion-0 {
+  border-right: 1px solid #D3D4DD;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -24,12 +25,12 @@ exports[`should renders correctly 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-right: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }
 
 .emotion-14 {
-  border-left: 1px solid #D3D4DD;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -41,10 +42,10 @@ exports[`should renders correctly 1`] = `
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   padding: 4px 1rem;
 }
 
@@ -350,43 +351,43 @@ exports[`should renders correctly 1`] = `
       </span>
     </span>
     <div
+      class="emotion-5"
+    >
+      <span
+        class="emotion-1"
+      >
+        Mostrar:
+      </span>
+      <button
+        aria-haspopup="true"
+        class="emotion-4"
+        type="button"
+      >
+        <span>
+          <span
+            class="emotion-1"
+          >
+            10
+          </span>
+          <svg
+            aria-hidden="true"
+            class="emotion-3"
+            height="1em"
+            role="img"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
       class="emotion-14"
     >
-      <div
-        class="emotion-5"
-      >
-        <span
-          class="emotion-1"
-        >
-          Mostrar:
-        </span>
-        <button
-          aria-haspopup="true"
-          class="emotion-4"
-          type="button"
-        >
-          <span>
-            <span
-              class="emotion-1"
-            >
-              10
-            </span>
-            <svg
-              aria-hidden="true"
-              class="emotion-3"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-              />
-            </svg>
-          </span>
-        </button>
-      </div>
       <div
         class="emotion-13"
       >
@@ -471,6 +472,7 @@ exports[`should renders correctly without pagination 1`] = `
 }
 
 .emotion-0 {
+  border-right: 1px solid #D3D4DD;
   font-weight: bold;
   display: -webkit-box;
   display: -webkit-flex;
@@ -480,6 +482,7 @@ exports[`should renders correctly without pagination 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-right: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }
