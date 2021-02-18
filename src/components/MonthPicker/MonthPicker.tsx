@@ -1,5 +1,5 @@
 import { css, Interpolation } from 'emotion'
-import React, { CSSProperties, useCallback, useMemo } from 'react'
+import React, { CSSProperties, forwardRef, useCallback, useMemo } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -10,7 +10,7 @@ import { Icon } from '../Icon'
 import { isSameReferenceMonth } from '../MonthRangePicker/util'
 import { Text } from '../Text'
 
-export interface MonthPickerProps {
+export interface MonthPickerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
   visibleMonth: ReferenceMonth
 
   /**
@@ -43,7 +43,7 @@ export interface ReferenceMonth {
   year: number
 }
 
-export function MonthPicker(props: MonthPickerProps) {
+export const MonthPicker = forwardRef<HTMLDivElement, MonthPickerProps>((props, ref) => {
   const {
     visibleMonth,
     modifierStyles,
@@ -54,6 +54,8 @@ export function MonthPicker(props: MonthPickerProps) {
     onMonthClick,
     onVisibleMonthChange,
     isDisabled,
+    className,
+    ...rest
   } = props
   const { classes, theme } = useStyles(createStyles)
   const locale = useLocale()
@@ -93,7 +95,7 @@ export function MonthPicker(props: MonthPickerProps) {
   )
 
   return (
-    <div className={classes.container}>
+    <div className={css(classes.container, className)} ref={ref} {...rest}>
       <div className={classes.months}>
         <div className={classes.item}>
           <Button title={locale.calendar.previousYear} size='small' skin='ghost' onClick={onLeftClick}>
@@ -128,7 +130,7 @@ export function MonthPicker(props: MonthPickerProps) {
       </div>
     </div>
   )
-}
+})
 
 MonthPicker.defaultProps = {
   onMonthClick: () => null,

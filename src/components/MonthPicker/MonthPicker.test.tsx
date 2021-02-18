@@ -17,7 +17,7 @@ const currentMonth = { month: today.getMonth(), year: today.getFullYear() }
 
 describe('MonthPicker', () => {
   it('should render correctly with month and year', () => {
-    const { container } = render(<MonthPicker visibleMonth={visibleMonth} />)
+    const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={jest.fn()} />)
     expect(container).toMatchSnapshot()
   })
 
@@ -45,11 +45,15 @@ describe('MonthPicker', () => {
   })
 
   it('should change the visible year on re-render', () => {
-    const { rerender, getAllByText } = render(<MonthPicker visibleMonth={visibleMonth} />)
+    const { rerender, getAllByText } = render(
+      <MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={jest.fn()} />
+    )
 
     const newYear = date.getFullYear() + 1
 
-    rerender(<MonthPicker visibleMonth={{ month: visibleMonth.month, year: newYear }} />)
+    rerender(
+      <MonthPicker visibleMonth={{ month: visibleMonth.month, year: newYear }} onVisibleMonthChange={jest.fn()} />
+    )
     expect(getAllByText(newYear.toString())).toHaveLength(1)
   })
 
@@ -89,7 +93,7 @@ describe('MonthPicker', () => {
     })
 
     it('should define onMonthHover', () => {
-      const { container } = render(<MonthPicker visibleMonth={visibleMonth} />)
+      const { container } = render(<MonthPicker visibleMonth={visibleMonth} onVisibleMonthChange={jest.fn()} />)
 
       const button = container.querySelector('button[title="March"]')
       fireEvent.mouseOver(button)
@@ -100,7 +104,7 @@ describe('MonthPicker', () => {
     })
 
     it('should apply the current style by default', () => {
-      const { container } = render(<MonthPicker visibleMonth={currentMonth} />)
+      const { container } = render(<MonthPicker visibleMonth={currentMonth} onVisibleMonthChange={jest.fn()} />)
 
       const long = getMonthNames('en')[today.getMonth()].long
 
