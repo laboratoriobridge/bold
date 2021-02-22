@@ -1,44 +1,35 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
+import { ReferenceMonth } from '../MonthPicker'
+import { MonthRangePicker } from './MonthRangePicker'
 
-import { MonthField } from './MonthField'
-import { MonthInput } from './MonthInput'
-
-const today = new Date()
-const value = { month: today.getMonth(), year: today.getFullYear() }
+const start: ReferenceMonth = { month: 5, year: 2020 }
+const end: ReferenceMonth = { month: 1, year: 2021 }
+const range = { start: start, end: end }
 
 export default {
-  title: 'Components/MonthField',
+  title: 'Components/MonthRangePicker',
 }
 
 export const Default = () => (
-  <MonthField
+  <MonthRangePicker
     label={text('label', 'Month Field')}
     error={text('error', '')}
     onChange={action('changed')}
     disabled={boolean('disabled', false)}
-    value={{ month: 0, year: 2019 }}
+    value={range}
   />
 )
 
 export const MinMax = () => (
-  <MonthField
+  <MonthRangePicker
     label={text('label', 'Month Field')}
     error={text('error', '')}
     onChange={action('changed')}
     disabled={boolean('disabled', false)}
-    value={value}
+    value={range}
     minMonth={{ month: 0, year: 2020 }}
     maxMonth={{ month: 3, year: 2021 }}
-  />
-)
-
-export const BaseInput = () => (
-  <MonthInput
-    label={text('label', 'Month Field')}
-    error={text('error', '')}
-    onChange={action('changed')}
-    disabled={boolean('disabled', false)}
   />
 )

@@ -487,6 +487,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
 .emotion-10 {
   text-align: center;
   margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
 }
 
 .emotion-9 {
@@ -648,7 +649,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  background: #0069D0 !important;
+  background: #0069D0;
   color: #FFFFFF;
 }
 
@@ -674,6 +675,11 @@ exports[`Component presentation should render correctly when opened 1`] = `
 
 .emotion-18:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-18:hover {
+  background: #0069D0!important;
+  color: #FFFFFF;
 }
 
 <div>
