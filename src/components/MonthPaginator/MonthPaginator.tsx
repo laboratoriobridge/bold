@@ -135,8 +135,8 @@ export function MonthPaginator(props: MonthPaginatorProps) {
       </div>
       {open && (
         <MonthPicker
-          onChange={onMonthClick}
-          year={visibleYear}
+          visibleMonth={{ month: month, year: year }}
+          onVisibleMonthChange={onMonthClick}
           ref={setPopperRef}
           className={css(popup, popperStyle as any)}
           data-placement={placement}

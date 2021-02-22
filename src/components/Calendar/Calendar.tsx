@@ -114,7 +114,7 @@ export const createStyles = () => ({
   } as CSSProperties,
 })
 
-export type ModifierFn = (element: any, props: MonthViewProps) => boolean
+export type ModifierFn = (element: any, props?: MonthViewProps) => boolean
 
 export interface ModifierPredicateMap {
   disabled: ModifierFn

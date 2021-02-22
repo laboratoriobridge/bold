@@ -1,17 +1,13 @@
 import { action } from '@storybook/addon-actions'
-import { number } from '@storybook/addon-knobs'
 import React from 'react'
 
 import { MonthPicker } from './MonthPicker'
+
+const today = new Date()
+const value = { month: today.getMonth(), year: today.getFullYear() }
 
 export default {
   title: 'Components/MonthPicker',
 }
 
-export const Default = () => (
-  <MonthPicker
-    month={number('month', new Date().getMonth())}
-    year={number('year', new Date().getFullYear())}
-    onChange={action('changed')}
-  />
-)
+export const Default = () => <MonthPicker visibleMonth={value} onVisibleMonthChange={action('changed')} />
