@@ -42,10 +42,10 @@ export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
         ))}
       <Input
         type='text'
-        {...rest}
-        inputRef={composeRefs(internalInputRef, inputRef) as any}
         className={classes.input}
         disabled={disabled}
+        {...rest}
+        inputRef={composeRefs(internalInputRef, inputRef) as any}
       />
     </div>
   )
