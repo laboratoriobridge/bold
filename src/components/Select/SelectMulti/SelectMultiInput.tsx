@@ -2,6 +2,7 @@ import React, { CSSProperties, useRef } from 'react'
 
 import { Theme, useStyles } from '../../../styles'
 import { Omit } from '../../../util'
+import { composeRefs } from '../../../util/react'
 import { Input, InputProps } from '../../Input/Input'
 import { createStyleParts } from '../../TextField/TextInputBase'
 
@@ -17,16 +18,16 @@ export interface SelectMultiInputProps<T> extends Omit<InputProps, 'style'> {
 }
 
 export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
-  const { wrapperRef, items, renderItem, onRemoveItem, invalid, disabled, clearable, ...rest } = props
+  const { wrapperRef, items, renderItem, onRemoveItem, invalid, disabled, clearable, inputRef, ...rest } = props
 
-  const inputRef = useRef<HTMLInputElement>()
+  const internalInputRef = useRef<HTMLInputElement>()
 
   const handleRemove = (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
     props.onRemoveItem(item)
     e.stopPropagation() // Do not propagate so menu is not opened when item is removed
   }
 
-  const handleWrapperClick = () => inputRef.current.focus()
+  const handleWrapperClick = () => internalInputRef.current.focus()
 
   const { classes, css } = useStyles(createStyles, props)
   const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
@@ -39,7 +40,13 @@ export function SelectMultiInput<T>(props: SelectMultiInputProps<T>) {
             {renderItem(item)}
           </SelectMultiItem>
         ))}
-      <Input type='text' inputRef={inputRef} className={classes.input} disabled={disabled} {...rest} />
+      <Input
+        type='text'
+        {...rest}
+        inputRef={composeRefs(internalInputRef, inputRef) as any}
+        className={classes.input}
+        disabled={disabled}
+      />
     </div>
   )
 }
