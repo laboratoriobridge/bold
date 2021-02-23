@@ -27,8 +27,8 @@ exports.onCreatePage = ({ page, actions }) => {
   languages.forEach((lang) => {
     // Change '/pt/resources.pt/' and '/pt/accordion/index.pt/' paths to '/pt/resources/' and '/pt/accordion/', respectively
     if (page.path.startsWith(`/${lang}/`) && page.path.endsWith(`.${lang}/`)) {
-      const path = page.path.replace(`/index.${lang}/`, '/').replace(`.${lang}/`, '/')
-      createPage({ ...page, path })
+      const pathLang = page.path.replace(`/index.${lang}/`, '/').replace(`.${lang}/`, '/')
+      createPage({ ...page, pathLang })
       deletePage(page)
     }
   })
