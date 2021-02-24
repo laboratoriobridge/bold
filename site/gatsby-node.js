@@ -1,3 +1,17 @@
+const path = require('path')
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        // due to broken linking react hooks
+        // https://github.com/facebook/react/issues/13991#issuecomment-463486871
+        react: path.resolve(path.join(__dirname, './node_modules/react')),
+      },
+    },
+  })
+}
+
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
@@ -10,11 +24,11 @@ exports.onCreatePage = ({ page, actions }) => {
     deletePage(page)
   }
 
-  languages.forEach(lang => {
+  languages.forEach((lang) => {
     // Change '/pt/resources.pt/' and '/pt/accordion/index.pt/' paths to '/pt/resources/' and '/pt/accordion/', respectively
     if (page.path.startsWith(`/${lang}/`) && page.path.endsWith(`.${lang}/`)) {
-      const path = page.path.replace(`/index.${lang}/`, '/').replace(`.${lang}/`, '/')
-      createPage({ ...page, path })
+      const pathLang = page.path.replace(`/index.${lang}/`, '/').replace(`.${lang}/`, '/')
+      createPage({ ...page, pathLang })
       deletePage(page)
     }
   })
