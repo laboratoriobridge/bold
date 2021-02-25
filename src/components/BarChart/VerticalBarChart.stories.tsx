@@ -5,11 +5,24 @@ export default {
   title: 'Components/VerticalBarChart',
 }
 
-export const NormalizedByTotal = () => (
+const colors = [
+  '#002451',
+  '#003A79',
+  '#0051A2',
+  '#0069D0',
+  '#007AF0',
+  '#498FFF',
+  '#84AAFF',
+  '#C5D4FF',
+  '#ECF0FF',
+  '#FFFFFF',
+]
+
+export const NormalizedByTotalWithoutAnimation = () => (
   <VerticalBarChart
-    title='Vertical parameterized by total'
+    title='Vertical parameterized by total without animation'
     normalizedBy='total'
-    xAxis={{ values: [[50], [20], [30]], subCategories: [{ name: 't0', color: '#0069D0' }] }}
+    xAxis={{ values: [[50], [20], [30]], subCategories: [{ name: 't0', color: colors[3] }] }}
     yAxis={{ values: ['A', 'B', 'C'] }}
     notAnimate
   />
@@ -26,8 +39,8 @@ export const ProfissionaisPorTurnoMaximo = () => (
         [30, 100],
       ],
       subCategories: [
-        { name: 'Manhã', color: '#0069D0' },
-        { name: 'Noite', color: '#84AAFF' },
+        { name: 'Manhã', color: colors[3] },
+        { name: 'Noite', color: colors[5] },
       ],
     }}
     yAxis={{ values: ['Eduardo', 'Marcos', 'Cleiton'] }}
@@ -45,8 +58,8 @@ export const ProfissionaisPorTurnoTotal = () => (
         [30, 100],
       ],
       subCategories: [
-        { name: 'Manhã', color: '#0069D0' },
-        { name: 'Noite', color: '#84AAFF' },
+        { name: 'Manhã', color: colors[3] },
+        { name: 'Noite', color: colors[5] },
       ],
     }}
     yAxis={{ values: ['Eduardo', 'Marcos', 'Cleiton'] }}
@@ -63,56 +76,50 @@ export const MultipleBars = () => (
         [20, 10, 20],
       ],
       subCategories: [
-        { name: 't0', color: '#0069D0' },
-        { name: 't1', color: '#84AAFF' },
-        { name: 't2', color: '#C5D4FF' },
+        { name: 't0', color: colors[3] },
+        { name: 't1', color: colors[5] },
+        { name: 't2', color: colors[7] },
       ],
     }}
     yAxis={{ values: ['A', 'B'] }}
   />
 )
 
-// export const BiggerThan100Max = () => (
-//   <VerticalBarChart
-//     title='BiggerThan100'
-//     normalizedBy='max'
-//     yAxis={{ title: 'Eixo Y', values: [1000, 500, 80] }}
-//     xAxis={{ title: 'Eixo X', values: ['A', 'B', 'C'] }}
-//   />
-// )
+export const FourBarsWithScaleProblem = () => (
+  <VerticalBarChart
+    title='Vertical normalized by max with scale problem'
+    normalizedBy='max'
+    xAxis={{
+      values: [
+        [50, 20, 100, 1000],
+        [20, 10, 20, 1],
+      ],
+      subCategories: [
+        { name: 't0', color: colors[3] },
+        { name: 't1', color: colors[5] },
+        { name: 't2', color: colors[7] },
+        { name: 't3', color: colors[2] },
+      ],
+    }}
+    yAxis={{ values: ['A', 'B'] }}
+  />
+)
 
-// export const BiggerThan100Total = () => (
-//   <VerticalBarChart
-//     title='BiggerThan100'
-//     normalizedBy='total'
-//     yAxis={{ title: 'Eixo Y', values: [1000, 500, 80] }}
-//     xAxis={{ title: 'Eixo X', values: ['A', 'B', 'C'] }}
-//   />
-// )
-
-// export const MuchValuesMax = () => (
-//   <VerticalBarChart
-//     title='Much values'
-//     normalizedBy='max'
-//     yAxis={{ title: 'Eixo Y', values: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90] }}
-//     xAxis={{ title: 'Eixo X', values: ['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'] }}
-//   />
-// )
-
-// export const MuchValuesTotal = () => (
-//   <VerticalBarChart
-//     title='Much values'
-//     normalizedBy='total'
-//     yAxis={{ title: 'Eixo Y', values: [5, 10, 20, 30, 40, 50, 60, 70, 80, 90] }}
-//     xAxis={{ title: 'Eixo X', values: ['X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'X7', 'X8', 'X9', 'X10'] }}
-//   />
-// )
-
-// export const LongNames = () => (
-//   <VerticalBarChart
-//     title='Long names'
-//     normalizedBy='max'
-//     yAxis={{ title: 'Eixo Y', values: [5, 10, 20] }}
-//     xAxis={{ title: 'Eixo X', values: ['Maria Fernanda da Silva Santos Melo', 'Eduardo da Silva Santos', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'] }}
-//   />
-// )
+export const LongNames = () => (
+  <VerticalBarChart
+    title='lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum'
+    normalizedBy='max'
+    xAxis={{
+      values: [
+        [50, 20, 100],
+        [20, 10, 20],
+      ],
+      subCategories: [
+        { name: 'AAAAAAAAAAAAAAAAAAAAAAAAAAAA', color: colors[3] },
+        { name: 'lorem ipsum lorem ipsum', color: colors[5] },
+        { name: 'Turno da manhã Turno da manhã', color: colors[7] },
+      ],
+    }}
+    yAxis={{ values: ['Maria Fernando de Mello da Silva Gonçalves', 'B'] }}
+  />
+)

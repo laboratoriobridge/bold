@@ -4,6 +4,7 @@ import React from 'react'
 import { CSSProperties } from 'react'
 import { Theme } from '../../styles'
 import { useStyles } from '../../styles/hooks/useStyles'
+import { Tooltip } from '../Tooltip'
 import { calculatePercentage, generateYAxisLines } from './util'
 
 export interface YAxis {
@@ -33,7 +34,7 @@ export interface BarChartProps {
 const WIDTH_BAR_UNIT = '125px'
 const HEIGHT_UNIT = '10vh'
 const WIDTH_UNIT = '10vw'
-const NUMBER_OF_LINES = 7
+const NUMBER_OF_LINES = 5
 
 export function VerticalBarChart(props: BarChartProps) {
   const { title, xAxis, yAxis, normalizedBy, notAnimate } = props
@@ -74,7 +75,9 @@ export function VerticalBarChart(props: BarChartProps) {
           <tr>
             {xAxis.subCategories.map(({ name, color }, index, array) => (
               <th key={index} className={css(createSubCategorieStyle(color, index, array.length))}>
-                <p className={classes.labelName}>{name}</p>
+                <Tooltip text={name} placement='right'>
+                  <p className={classes.labelName}>{name}</p>
+                </Tooltip>
               </th>
             ))}
           </tr>
@@ -187,9 +190,8 @@ export const createStyles = (theme: Theme) => ({
   chart: {
     display: 'block',
     position: 'relative',
-    // height: HEIGHT,
     padding: 0,
-    margin: 0,
+    marginTop: '2rem',
     backgroundColor: theme.pallete.surface.main,
 
     'tr, th, td': {
@@ -210,7 +212,6 @@ export const createStyles = (theme: Theme) => ({
 
     'thead th': {
       height: 'auto',
-      padding: '0.5rem 1rem',
       width: WIDTH_BAR_UNIT,
     },
 
@@ -231,8 +232,10 @@ export const createStyles = (theme: Theme) => ({
       fontWeight: 'normal',
       left: '50%',
       transform: 'translate(-50%, 120%)',
+
+      // Row overflow:
       wordBreak: 'break-word',
-      maxWidth: '50%',
+      maxWidth: '100%',
       maxHeight: '2.25rem',
       overflow: 'hidden',
       textOverflow: 'ellipsis',
@@ -248,8 +251,15 @@ export const createStyles = (theme: Theme) => ({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     position: 'relative',
-    top: '-1.5rem',
+    top: '-3.5rem',
     zIndex: 10,
+
+    // Caption overflow:
+    wordBreak: 'break-word',
+    maxWidth: '100%',
+    maxHeight: '2rem',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   } as CSSProperties,
 
   bar: {
@@ -266,11 +276,17 @@ export const createStyles = (theme: Theme) => ({
 
   labelName: {
     textTransform: 'uppercase',
+
+    // Label name overflow:
+    wordBreak: 'break-word',
+    maxWidth: '100%',
+    maxHeight: '20px',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   } as CSSProperties,
 
   lines: {
     position: 'relative',
-    // top: `-${HEIGHT}`,
     zIndex: 1,
   } as CSSProperties,
 
