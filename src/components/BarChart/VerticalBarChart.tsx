@@ -27,15 +27,16 @@ export interface BarChartProps {
   xAxis: XAxis
   yAxis: YAxis
   title?: string
+  notAnimate?: boolean
 }
 
 const WIDTH_BAR_UNIT = '125px'
-const HEIGHT_LINE_UNIT = '10vh'
+const HEIGHT_UNIT = '10vh'
 const WIDTH_UNIT = '10vw'
-const HEIGHT: string = '50vh'
+const NUMBER_OF_LINES = 7
 
 export function VerticalBarChart(props: BarChartProps) {
-  const { title, xAxis, yAxis, normalizedBy } = props
+  const { title, xAxis, yAxis, normalizedBy, notAnimate } = props
 
   if (xAxis.values.length !== yAxis.values.length) {
     throw Error('The x and y axis must have the same length')
@@ -55,17 +56,19 @@ export function VerticalBarChart(props: BarChartProps) {
 
   const BAR_UNIT = `calc(calc(100% / ${numOfBars}) - 1rem)`
 
+  const HEIGHT = `calc(${HEIGHT_UNIT} * ${NUMBER_OF_LINES})`
+
   const referenceValue =
     normalizedBy === 'total'
       ? xAxis.values.flat().reduce((prev, curr) => prev + curr)
       : Math.floor(Math.max(...xAxis.values.flat()) * 1.1)
 
-  const linesValues = generateYAxisLines(referenceValue, 5)
+  const linesValues = generateYAxisLines(referenceValue, NUMBER_OF_LINES)
 
   return (
     <>
       <Global styles={classes.global} />
-      <table className={css(classes.chart, createChartStyle(WIDTH))}>
+      <table className={css(classes.chart, createChartStyle(WIDTH, HEIGHT))}>
         <caption className={css(classes.caption, createCaptionStyle(WIDTH))}>{title}</caption>
         <thead>
           <tr>
@@ -89,7 +92,8 @@ export function VerticalBarChart(props: BarChartProps) {
                       idx,
                       arr.length,
                       BAR_UNIT,
-                      xAxis.subCategories[idx % xAxis.subCategories.length].color
+                      xAxis.subCategories[idx % xAxis.subCategories.length].color,
+                      notAnimate
                     )
                   )}
                 >
@@ -101,7 +105,7 @@ export function VerticalBarChart(props: BarChartProps) {
         </tbody>
       </table>
 
-      <div className={css(classes.lines, createLinesStyle(WIDTH))}>
+      <div className={css(classes.lines, createLinesStyle(WIDTH, HEIGHT))}>
         {linesValues.map((value, index) => (
           <div className={classes.line} key={index}>
             <p>{value}</p>
@@ -111,12 +115,14 @@ export function VerticalBarChart(props: BarChartProps) {
     </>
   )
 }
-const createLinesStyle = (width: string): Interpolation => ({
+const createLinesStyle = (width: string, height: string): Interpolation => ({
   width: width,
+  top: `calc(${height} * -1)`,
 })
 
-const createChartStyle = (width: string): Interpolation => ({
+const createChartStyle = (width: string, height: string): Interpolation => ({
   width: width,
+  height: height,
 })
 
 const createCaptionStyle = (width: string): Interpolation => ({
@@ -144,9 +150,18 @@ const createVerticalBarStyle = (
   index: number,
   numOfValues: number,
   widthBarUnit: string,
-  color: string
+  color: string,
+  notAnimate: boolean
 ): Interpolation => {
   const left = (100 / numOfValues) * index
+  if (notAnimate) {
+    return {
+      height: `${value}%`,
+      left: `calc(${left}% + 0.5rem)`,
+      width: `${widthBarUnit}`,
+      backgroundColor: color,
+    }
+  }
   return {
     height: `${value}%`,
     left: `calc(${left}% + 0.5rem)`,
@@ -172,7 +187,7 @@ export const createStyles = (theme: Theme) => ({
   chart: {
     display: 'block',
     position: 'relative',
-    height: HEIGHT,
+    // height: HEIGHT,
     padding: 0,
     margin: 0,
     backgroundColor: theme.pallete.surface.main,
@@ -255,14 +270,14 @@ export const createStyles = (theme: Theme) => ({
 
   lines: {
     position: 'relative',
-    top: `-${HEIGHT}`,
+    // top: `-${HEIGHT}`,
     zIndex: 1,
   } as CSSProperties,
 
   line: {
     position: 'relative',
     borderBottom: `1px dotted ${theme.pallete.gray.c80}`,
-    height: HEIGHT_LINE_UNIT,
+    height: HEIGHT_UNIT,
 
     p: {
       position: 'absolute',

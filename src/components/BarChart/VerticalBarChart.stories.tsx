@@ -11,6 +11,7 @@ export const NormalizedByTotal = () => (
     normalizedBy='total'
     xAxis={{ values: [[50], [20], [30]], subCategories: [{ name: 't0', color: '#0069D0' }] }}
     yAxis={{ values: ['A', 'B', 'C'] }}
+    notAnimate
   />
 )
 
