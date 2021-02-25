@@ -4,22 +4,34 @@ import React from 'react'
 import { CSSProperties } from 'react'
 import { Theme } from '../../styles'
 import { useStyles } from '../../styles/hooks/useStyles'
+import { calculatePercentage, generateYAxisLines } from './util'
 
-export interface Axis<T> {
-  title: string
-  values: T[]
+export interface YAxis {
+  values: string[]
+}
+
+export interface SubCategories {
+  name: string
+  color: string
+}
+
+export interface XAxis {
+  values: Array<Array<number>>
+  subCategories: SubCategories[]
 }
 
 export type NormalizeOptions = 'max' | 'total'
 
 export interface BarChartProps {
   normalizedBy: NormalizeOptions
-  xAxis: Axis<string>
-  yAxis: Axis<number>
+  xAxis: XAxis
+  yAxis: YAxis
   title?: string
 }
 
-const WIDTH: string = '80vw'
+const WIDTH_BAR_UNIT = '125px'
+const HEIGHT_LINE_UNIT = '10vh'
+const WIDTH_UNIT = '10vw'
 const HEIGHT: string = '50vh'
 
 export function VerticalBarChart(props: BarChartProps) {
@@ -29,57 +41,118 @@ export function VerticalBarChart(props: BarChartProps) {
     throw Error('The x and y axis must have the same length')
   }
 
+  if (xAxis.subCategories.length !== xAxis.values[0].length) {
+    throw Error('The sub categories and the number of bars for each x axis value must have the same length')
+  }
+
   const { classes } = useStyles(createStyles)
+
+  const numOfValues = xAxis.values.length
+
+  const numOfBars = xAxis.values[0].length
+
+  const WIDTH = `calc(calc(${numOfValues} * ${WIDTH_UNIT}) * ${numOfBars})`
+
+  const BAR_UNIT = `calc(calc(100% / ${numOfBars}) - 1rem)`
 
   const referenceValue =
     normalizedBy === 'total'
-      ? yAxis.values.reduce((prev, current) => prev + current)
-      : Math.floor(Math.max(...yAxis.values) * 1.1)
+      ? xAxis.values.flat().reduce((prev, curr) => prev + curr)
+      : Math.floor(Math.max(...xAxis.values.flat()) * 1.1)
 
-  // console.log(`Ref Value: ${referenceValue}`)
-
-  const numOfValues = xAxis.values.length
+  const linesValues = generateYAxisLines(referenceValue, 5)
 
   return (
     <>
       <Global styles={classes.global} />
-      <table className={classes.chart}>
-        <caption className={classes.caption}>{title}</caption>
-        <thead></thead>
+      <table className={css(classes.chart, createChartStyle(WIDTH))}>
+        <caption className={css(classes.caption, createCaptionStyle(WIDTH))}>{title}</caption>
+        <thead>
+          <tr>
+            {xAxis.subCategories.map(({ name, color }, index, array) => (
+              <th key={index} className={css(createSubCategorieStyle(color, index, array.length))}>
+                <p className={classes.labelName}>{name}</p>
+              </th>
+            ))}
+          </tr>
+        </thead>
         <tbody>
-          {yAxis.values.map((value, index) => (
-            <tr className={css(classes.tr, createTableRowStyle(numOfValues, index))} key={index}>
-              <th scope='row'>{xAxis.values[index]}</th>
-              <td
-                className={css(
-                  classes.td,
-                  createVerticalBarStyle(calculatePercentage(referenceValue, value), index, numOfValues)
-                )}
-              >
-                <p>{value}</p>
-              </td>
+          {xAxis.values.map((arr, index) => (
+            <tr className={css(createTableRowStyle(numOfValues, index, WIDTH))} key={index}>
+              <th scope='row'>{yAxis.values[index]}</th>
+              {arr.map((value, idx) => (
+                <td
+                  className={css(
+                    classes.bar,
+                    createVerticalBarStyle(
+                      calculatePercentage(referenceValue, value),
+                      idx,
+                      arr.length,
+                      BAR_UNIT,
+                      xAxis.subCategories[idx % xAxis.subCategories.length].color
+                    )
+                  )}
+                >
+                  <p>{value}</p>
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
       </table>
+
+      <div className={css(classes.lines, createLinesStyle(WIDTH))}>
+        {linesValues.map((value, index) => (
+          <div className={classes.line} key={index}>
+            <p>{value}</p>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
+const createLinesStyle = (width: string): Interpolation => ({
+  width: width,
+})
 
-const calculatePercentage = (referenceValue: number, value: number) => Math.floor((value / referenceValue) * 100)
+const createChartStyle = (width: string): Interpolation => ({
+  width: width,
+})
 
-const createTableRowStyle = (numOfValues: number, index: number): Interpolation => {
-  const widthUnit = Math.floor(100 / numOfValues)
+const createCaptionStyle = (width: string): Interpolation => ({
+  width: width,
+})
+
+const createSubCategorieStyle = (color: string, index: number, numOfSubCategories: number): Interpolation => {
+  const top = (100 / numOfSubCategories) * index
   return {
-    width: `${widthUnit}%`,
-    left: `calc(calc(${WIDTH} / ${numOfValues}) * ${index})`,
+    backgroundColor: color,
+    transform: `translateY(${top}px)`,
   }
 }
 
-const createVerticalBarStyle = (value: number, index: number, numOfValues: number): Interpolation => {
+const createTableRowStyle = (numOfValues: number, index: number, width: string): Interpolation => {
+  const widthUnit = 100 / numOfValues
+  return {
+    width: `${widthUnit}%`,
+    left: `calc(calc(${width} / ${numOfValues}) * ${index})`,
+  }
+}
+
+const createVerticalBarStyle = (
+  value: number,
+  index: number,
+  numOfValues: number,
+  widthBarUnit: string,
+  color: string
+): Interpolation => {
+  const left = (100 / numOfValues) * index
   return {
     height: `${value}%`,
+    left: `calc(${left}% + 0.5rem)`,
     animation: `${growing(value)} 2s`,
+    width: `${widthBarUnit}`,
+    backgroundColor: color,
   }
 }
 
@@ -99,16 +172,18 @@ export const createStyles = (theme: Theme) => ({
   chart: {
     display: 'block',
     position: 'relative',
-    width: WIDTH,
     height: HEIGHT,
-    margin: '1rem 0 0',
     padding: 0,
-    backgroundColor: theme.pallete.surface.background,
+    margin: 0,
+    backgroundColor: theme.pallete.surface.main,
 
     'tr, th, td': {
       position: 'absolute',
       bottom: 0,
       zIndex: 2,
+      margin: 0,
+      padding: 0,
+      textAlign: 'center',
     },
 
     'thead tr': {
@@ -119,14 +194,22 @@ export const createStyles = (theme: Theme) => ({
     },
 
     'thead th': {
-      width: '1vw',
       height: 'auto',
       padding: '0.5rem 1rem',
+      width: WIDTH_BAR_UNIT,
+    },
+
+    tbody: {
+      'tr:last-child': {
+        borderRight: 'none',
+      },
     },
 
     'tbody tr': {
       height: '100%',
       paddingTop: '1rem',
+      borderRight: `1px dotted ${theme.pallete.gray.c80}`,
+      position: 'absolute',
     },
 
     'tbody th': {
@@ -146,36 +229,46 @@ export const createStyles = (theme: Theme) => ({
   } as CSSProperties,
 
   caption: {
-    width: WIDTH,
     captionSide: 'top',
     textTransform: 'uppercase',
     fontWeight: 'bold',
-    letterSpacing: '0.1rem',
     position: 'relative',
     top: '-1.5rem',
     zIndex: 10,
   } as CSSProperties,
 
-  tr: {
-    position: 'absolute',
-    bottom: 0,
-    zIndex: 2,
-    padding: 0,
-  } as CSSProperties,
-
-  td: {
-    width: '50%',
+  bar: {
     borderRadius: '5px 5px 0 0',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    backgroundColor: theme.pallete.primary.main,
+    paddingRight: '2rem',
 
     p: {
       margin: '0.5rem 0 0 ',
       padding: 0,
       position: 'relative',
       top: '-2rem',
-      textAlign: 'center',
+    },
+  } as CSSProperties,
+
+  labelName: {
+    textTransform: 'uppercase',
+  } as CSSProperties,
+
+  lines: {
+    position: 'relative',
+    top: `-${HEIGHT}`,
+    zIndex: 1,
+  } as CSSProperties,
+
+  line: {
+    position: 'relative',
+    borderBottom: `1px dotted ${theme.pallete.gray.c80}`,
+    height: HEIGHT_LINE_UNIT,
+
+    p: {
+      position: 'absolute',
+      left: '-3rem',
+      top: '-0.65rem',
+      margin: '0 0 0 0.5rem',
     },
   } as CSSProperties,
 })
