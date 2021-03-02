@@ -75,6 +75,6 @@ export const disabledByMonth = (minMonth: ReferenceMonth, maxMonth: ReferenceMon
  * @param range The range to be transformed
  */
 export const transformRangeReferenceMonth = (range: ReferenceMonthRange): DateRange => ({
-  startDate: range.start ? new Date(range?.start?.year, range?.start?.month, 1, 0, 0, 0) : undefined,
-  endDate: range.end ? new Date(range?.end?.year, range?.end?.month + 1, 0, 0, 0, 0) : undefined,
+  startDate: range.start ? new Date(range.start.year, range.start.month, 1, 0, 0, 0) : undefined,
+  endDate: range.end ? new Date(range.end.year, range.end.month + 1, 0, 0, 0, 0) : undefined,
 })

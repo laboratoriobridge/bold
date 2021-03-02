@@ -164,6 +164,10 @@ describe('MonthRangePicker', () => {
         const { container } = render(
           createComponent({
             onChange: change,
+            value: {
+              start: undefined,
+              end: { month: 2, year: 2021 },
+            },
           })
         )
         const input = container.querySelectorAll('input')[FIRST_INPUT]
@@ -171,7 +175,7 @@ describe('MonthRangePicker', () => {
         fireEvent.change(input, { target: { value: '01/2021' } })
         expect(change).toBeCalledWith({
           startDate: new Date('2021-01-01'),
-          endDate: undefined,
+          endDate: new Date('2021-03-31'),
         } as DateRange)
       })
 

@@ -98,4 +98,11 @@ describe('transformRangeReferenceMonth', () => {
       endDate: new Date(2021, 2, 0, 0, 0, 0),
     })
   })
+
+  it('should return undefined for startDate and endDate if the both are undefined', () => {
+    expect(transformRangeReferenceMonth({ start: undefined, end: undefined })).toEqual({
+      startDate: undefined,
+      endDate: undefined,
+    })
+  })
 })
