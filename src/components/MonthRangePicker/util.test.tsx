@@ -5,6 +5,7 @@ import {
   isLessOrEqualThan,
   isLessThan,
   isSameReferenceMonth,
+  transformRangeReferenceMonth,
 } from './util'
 
 const month1 = { month: 1, year: 2021 }
@@ -73,5 +74,28 @@ describe('disabledByMonth', () => {
     expect(isDisabled({ month: 0, year: 2019 })).toBeTruthy()
     expect(isDisabled(month2)).toBeTruthy()
     expect(isDisabled(month1)).toBeFalsy()
+  })
+})
+
+describe('transformRangeReferenceMonth', () => {
+  it('should return only the start month if the end is not defined', () => {
+    expect(transformRangeReferenceMonth({ start: month1, end: undefined })).toEqual({
+      startDate: new Date(2021, 1, 1, 0, 0, 0, 0),
+      endDate: undefined,
+    })
+  })
+
+  it('should return only the the end month if the start is not defined', () => {
+    expect(transformRangeReferenceMonth({ start: undefined, end: month1 })).toEqual({
+      startDate: undefined,
+      endDate: new Date(2021, 2, 0, 0, 0, 0),
+    })
+  })
+
+  it('should return the first date of start month and final date of end month if both are defined', () => {
+    expect(transformRangeReferenceMonth({ start: month2, end: month1 })).toEqual({
+      startDate: new Date(2020, 1, 1, 0, 0, 0, 0),
+      endDate: new Date(2021, 2, 0, 0, 0, 0),
+    })
   })
 })

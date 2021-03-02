@@ -171,7 +171,7 @@ describe('MonthRangePicker', () => {
         fireEvent.change(input, { target: { value: '01/2021' } })
         expect(change).toBeCalledWith({
           startDate: new Date('2021-01-01'),
-          endDate: new Date('2021-01-31'),
+          endDate: undefined,
         } as DateRange)
       })
 
@@ -186,7 +186,7 @@ describe('MonthRangePicker', () => {
 
         fireEvent.change(input, { target: { value: '01/2021' } })
         expect(change).toBeCalledWith({
-          startDate: new Date('2021-01-01'),
+          startDate: undefined,
           endDate: new Date('2021-01-31'),
         } as DateRange)
       })
@@ -309,6 +309,48 @@ describe('MonthRangePicker', () => {
         expect(change).toBeCalledWith({
           startDate: new Date('2021-01-01'),
           endDate: new Date('2021-03-31'),
+        } as DateRange)
+      })
+    })
+
+    describe('clearing the inputs', () => {
+      it('should return the startDate as undefined when clear the first input', () => {
+        const change = jest.fn()
+        const { container } = render(
+          createComponent({
+            onChange: change,
+            value: {
+              start: { month: 1, year: 2021 },
+              end: { month: 2, year: 2021 },
+            },
+          })
+        )
+        const span = container.querySelectorAll('span[title="Clear"]')[0]
+
+        fireEvent.click(span)
+        expect(change).toBeCalledWith({
+          startDate: undefined,
+          endDate: new Date(2021, 3, 0, 0, 0, 0, 0),
+        } as DateRange)
+      })
+
+      it('should return the endDate as undefined when clear the second input', () => {
+        const change = jest.fn()
+        const { container } = render(
+          createComponent({
+            onChange: change,
+            value: {
+              start: { month: 1, year: 2021 },
+              end: { month: 2, year: 2021 },
+            },
+          })
+        )
+        const span = container.querySelectorAll('span[title="Clear"]')[1]
+
+        fireEvent.click(span)
+        expect(change).toBeCalledWith({
+          startDate: new Date(2021, 1, 1, 0, 0, 0, 0),
+          endDate: undefined,
         } as DateRange)
       })
     })

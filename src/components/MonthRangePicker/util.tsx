@@ -1,4 +1,6 @@
+import { DateRange } from '../DateRangePicker/BaseDateRangeInput'
 import { ReferenceMonth } from '../MonthPicker'
+import { ReferenceMonthRange } from './MonthRangePicker'
 
 /**
  * Check if the first reference month is bigger than or equal to the second reference month
@@ -66,3 +68,13 @@ export const disabledByMonth = (minMonth: ReferenceMonth, maxMonth: ReferenceMon
     return (minMonth && isLessThan(month, minMonth)) || (maxMonth && isGreaterThan(month, maxMonth))
   }
 }
+
+/**
+ * Transform a range reference month in date range
+ *
+ * @param range The range to be transformed
+ */
+export const transformRangeReferenceMonth = (range: ReferenceMonthRange): DateRange => ({
+  startDate: range.start ? new Date(range?.start?.year, range?.start?.month, 1, 0, 0, 0) : undefined,
+  endDate: range.end ? new Date(range?.end?.year, range?.end?.month + 1, 0, 0, 0, 0) : undefined,
+})

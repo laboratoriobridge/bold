@@ -156,7 +156,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-10 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -195,7 +195,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
   text-decoration: underline;
 }
 
-.emotion-10 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -206,16 +206,16 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-10:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
@@ -302,7 +302,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="February"
           type="button"
         >
@@ -315,7 +315,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-8"
+          class="emotion-12"
           title="March"
           type="button"
         >
@@ -602,7 +602,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-10 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -641,7 +641,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
   text-decoration: underline;
 }
 
-.emotion-10 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -652,16 +652,16 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
   display: inline-flex;
 }
 
-.emotion-10:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-10:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-10:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
@@ -748,7 +748,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
         class="emotion-2"
       >
         <button
-          class="emotion-10"
+          class="emotion-8"
           title="February"
           type="button"
         >
@@ -761,7 +761,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
         class="emotion-2"
       >
         <button
-          class="emotion-8"
+          class="emotion-12"
           title="March"
           type="button"
         >

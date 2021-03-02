@@ -1375,7 +1375,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-24 {
+.emotion-26 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1414,7 +1414,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
   text-decoration: underline;
 }
 
-.emotion-24 > span {
+.emotion-26 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1425,16 +1425,16 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-24:not(:disabled):active {
+.emotion-26:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-24:focus {
+.emotion-26:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-24:not(:disabled):hover {
+.emotion-26:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
@@ -1605,7 +1605,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
             class="emotion-16"
           >
             <button
-              class="emotion-24"
+              class="emotion-22"
               title="February"
               type="button"
             >
@@ -1618,7 +1618,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
             class="emotion-16"
           >
             <button
-              class="emotion-22"
+              class="emotion-26"
               title="March"
               type="button"
             >
@@ -1930,9 +1930,6 @@ exports[`MonthRangePicker render should show month picker correctly when only en
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -2084,9 +2081,6 @@ exports[`MonthRangePicker render should show month picker correctly when only en
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -2238,9 +2232,6 @@ exports[`MonthRangePicker render should show month picker correctly when only st
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -2392,9 +2383,6 @@ exports[`MonthRangePicker render should show month picker correctly when only st
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -2553,9 +2541,6 @@ exports[`MonthRangePicker render should show month picker correctly when start m
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -2714,9 +2699,6 @@ exports[`MonthRangePicker render should show month picker correctly when start m
   -webkit-transition-property: background;
   transition-property: background;
   min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
   background: #0069D0;
   color: #FFFFFF;
 }

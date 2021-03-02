@@ -7,7 +7,7 @@ import { FocusManagerContainer } from '../FocusManagerContainer'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { ControlledMonthRangeCalendar } from './RangeMonthCalendar/ControlledMonthRangeCalendar'
 import { MonthRangePickerInput, MonthRangePickerInputProps } from './MonthRangePickerInput'
-import { disabledByMonth } from './util'
+import { disabledByMonth, transformRangeReferenceMonth } from './util'
 
 export interface MonthRangePickerProps extends Omit<MonthRangePickerInputProps, 'onChange'> {
   popperProps?: PopperOptions
@@ -73,14 +73,26 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
 
   const handleMonthRangeChanged = (range: ReferenceMonthRange) => {
     const { start, end } = range
-    const startDate = new Date(range?.start?.year, range?.start?.month, 1, 0, 0, 0)
-    const endDate = new Date(range?.end?.year, range?.end?.month + 1, 0, 0, 0, 0)
+
+    const { startDate, endDate } = transformRangeReferenceMonth(range)
 
     start && end
       ? onChange({ startDate: startDate, endDate: endDate })
       : !end
       ? onChange({ startDate: startDate, endDate: new Date(range.start.year, range.start.month + 1, 0, 0, 0, 0) })
       : onChange({ startDate: new Date(range.end.year, range.end.month, 1, 0, 0, 0), endDate: endDate })
+  }
+
+  const handleInputMonthRangeChanged = (range: ReferenceMonthRange) => {
+    const { start, end } = range
+
+    const { startDate, endDate } = transformRangeReferenceMonth(range)
+
+    start && end
+      ? onChange({ startDate: startDate, endDate: endDate })
+      : !end
+      ? onChange({ startDate: startDate, endDate: undefined })
+      : onChange({ startDate: undefined, endDate: endDate })
   }
 
   const handleOnVisibleMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
@@ -91,7 +103,7 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <MonthRangePickerInput
         value={value}
-        onChange={handleMonthRangeChanged}
+        onChange={handleInputMonthRangeChanged}
         divRef={setAnchorRef}
         minMonth={minMonth}
         maxMonth={maxMonth}
