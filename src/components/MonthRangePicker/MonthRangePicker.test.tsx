@@ -11,8 +11,8 @@ const createComponent = (props: Partial<MonthRangePickerProps> = {}) => (
   />
 )
 
-const FIRST_INPUT = 0
-const SECOND_INPUT = 1
+const FIRST = 0
+const SECOND = 1
 
 describe('MonthRangePicker', () => {
   describe('render', () => {
@@ -72,7 +72,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[FIRST_INPUT])
+      fireEvent.focus(inputs[FIRST])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -88,7 +88,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[SECOND_INPUT])
+      fireEvent.focus(inputs[SECOND])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -104,7 +104,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[FIRST_INPUT])
+      fireEvent.focus(inputs[FIRST])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -120,7 +120,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[SECOND_INPUT])
+      fireEvent.focus(inputs[SECOND])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -136,7 +136,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[FIRST_INPUT])
+      fireEvent.focus(inputs[FIRST])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -152,7 +152,7 @@ describe('MonthRangePicker', () => {
       )
       const inputs = container.querySelectorAll('input')
 
-      fireEvent.focus(inputs[SECOND_INPUT])
+      fireEvent.focus(inputs[SECOND])
       expect(container.querySelector('button[title="January"]')).toMatchSnapshot()
       expect(container.querySelector('button[title="February"]')).toMatchSnapshot()
     })
@@ -170,7 +170,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const input = container.querySelectorAll('input')[FIRST_INPUT]
+        const input = container.querySelectorAll('input')[FIRST]
 
         fireEvent.change(input, { target: { value: '01/2021' } })
         expect(change).toBeCalledWith({
@@ -186,7 +186,7 @@ describe('MonthRangePicker', () => {
             onChange: change,
           })
         )
-        const input = container.querySelectorAll('input')[SECOND_INPUT]
+        const input = container.querySelectorAll('input')[SECOND]
 
         fireEvent.change(input, { target: { value: '01/2021' } })
         expect(change).toBeCalledWith({
@@ -204,7 +204,7 @@ describe('MonthRangePicker', () => {
             onChange: change,
           })
         )
-        const input = container.querySelectorAll('input')[FIRST_INPUT]
+        const input = container.querySelectorAll('input')[FIRST]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="January"]'))
@@ -222,7 +222,7 @@ describe('MonthRangePicker', () => {
             onChange: change,
           })
         )
-        const input = container.querySelectorAll('input')[SECOND_INPUT]
+        const input = container.querySelectorAll('input')[SECOND]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="January"]'))
@@ -243,7 +243,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const input = container.querySelectorAll('input')[FIRST_INPUT]
+        const input = container.querySelectorAll('input')[FIRST]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="March"]'))
@@ -264,7 +264,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const input = container.querySelectorAll('input')[SECOND_INPUT]
+        const input = container.querySelectorAll('input')[SECOND]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="January"]'))
@@ -285,7 +285,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const input = container.querySelectorAll('input')[SECOND_INPUT]
+        const input = container.querySelectorAll('input')[SECOND]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="March"]'))
@@ -306,7 +306,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const input = container.querySelectorAll('input')[FIRST_INPUT]
+        const input = container.querySelectorAll('input')[FIRST]
 
         fireEvent.focus(input)
         fireEvent.click(container.querySelector('button[title="January"]'))
@@ -329,7 +329,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const span = container.querySelectorAll('span[title="Clear"]')[0]
+        const span = container.querySelectorAll('span[title="Clear"]')[FIRST]
 
         fireEvent.click(span)
         expect(change).toBeCalledWith({
@@ -349,7 +349,7 @@ describe('MonthRangePicker', () => {
             },
           })
         )
-        const span = container.querySelectorAll('span[title="Clear"]')[1]
+        const span = container.querySelectorAll('span[title="Clear"]')[SECOND]
 
         fireEvent.click(span)
         expect(change).toBeCalledWith({
