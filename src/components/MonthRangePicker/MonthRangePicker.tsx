@@ -7,7 +7,7 @@ import { FocusManagerContainer } from '../FocusManagerContainer'
 import { MonthPickerProps, ReferenceMonth } from '../MonthPicker'
 import { ControlledMonthRangeCalendar } from './RangeMonthCalendar/ControlledMonthRangeCalendar'
 import { MonthRangePickerInput, MonthRangePickerInputProps } from './MonthRangePickerInput'
-import { disabledByMonth } from './util'
+import { disabledByMonth, transformRangeReferenceMonth } from './util'
 
 export interface MonthRangePickerProps extends Omit<MonthRangePickerInputProps, 'onChange'> {
   popperProps?: PopperOptions
@@ -73,15 +73,15 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
 
   const handleMonthRangeChanged = (range: ReferenceMonthRange) => {
     const { start, end } = range
-    const startDate = new Date(range?.start?.year, range?.start?.month, 1, 0, 0, 0)
-    const endDate = new Date(range?.end?.year, range?.end?.month + 1, 0, 0, 0, 0)
 
     start && end
-      ? onChange({ startDate: startDate, endDate: endDate })
+      ? onChange(transformRangeReferenceMonth(range))
       : !end
-      ? onChange({ startDate: startDate, endDate: new Date(range.start.year, range.start.month + 1, 0, 0, 0, 0) })
-      : onChange({ startDate: new Date(range.end.year, range.end.month, 1, 0, 0, 0), endDate: endDate })
+      ? onChange(transformRangeReferenceMonth({ start: start, end: start }))
+      : onChange(transformRangeReferenceMonth({ start: end, end: end }))
   }
+
+  const handleInputMonthRangeChanged = (range: ReferenceMonthRange) => onChange(transformRangeReferenceMonth(range))
 
   const handleOnVisibleMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
 
@@ -91,7 +91,7 @@ export function MonthRangePicker(props: MonthRangePickerProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <MonthRangePickerInput
         value={value}
-        onChange={handleMonthRangeChanged}
+        onChange={handleInputMonthRangeChanged}
         divRef={setAnchorRef}
         minMonth={minMonth}
         maxMonth={maxMonth}
