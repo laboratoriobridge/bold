@@ -2,23 +2,24 @@ import { Interpolation } from 'emotion'
 import React, { CSSProperties, MouseEvent, useCallback, useMemo } from 'react'
 
 import { Theme, useStyles } from '../../styles'
+import { Week } from '../DateRangePicker/DateRangePicker'
 import { HFlow } from '../HFlow'
 
 import { MonthControl } from './MonthControl'
 import { MonthView, MonthViewProps } from './MonthView'
-import { isSameDay } from './util'
+import { isSameDay, isBelongingAWeek } from './util'
 import { YearControl } from './YearControl'
 
 export interface CalendarProps extends MonthViewProps {
   /**
    * Map of modifier predicates to apply custom or pre-defined styles to dates.
    */
-  modifiers?: Partial<DayModifierPredicateMap>
+  modifiers?: Partial<ModifierPredicateMap>
 
   /**
    * Map of modifier styles to be applied to a date if the respective modifier predicate applies.
    */
-  modifierStyles?: Partial<DayModifierStyleMap>
+  modifierStyles?: Partial<ModifierStyleMap>
 
   /**
    * Called when the current visible date changes.
@@ -39,12 +40,26 @@ export interface CalendarProps extends MonthViewProps {
 }
 
 export function Calendar(props: CalendarProps) {
-  const { visibleDate, modifiers, modifierStyles, onVisibleDateChange, onMouseLeave, isDaySelected, ...rest } = props
+  const {
+    onlyWeeks,
+    visibleDate,
+    modifiers,
+    modifierStyles,
+    onVisibleDateChange,
+    onMouseLeave,
+    isDaySelected,
+    onWeekClick,
+    ...rest
+  } = props
   const { classes, theme } = useStyles(createStyles)
 
-  const allModifiers = useMemo(() => ({ ...defaultModifiers, ...modifiers }), [modifiers])
+  const allModifiers = useMemo(() => ({ ...(onlyWeeks ? defaultWeekModifiers : defaultDayModifiers), ...modifiers }), [
+    modifiers,
+    onlyWeeks,
+  ])
   const allModifierStyles = useMemo(() => ({ ...defaultModifierStyles, ...modifierStyles }), [modifierStyles])
-  const createDayStyles = useMemo(() => createDayStylesFn(allModifiers, allModifierStyles, theme), [
+
+  const createDateStyles = useMemo(() => createStylesFn(allModifiers, allModifierStyles, theme), [
     allModifiers,
     allModifierStyles,
     theme,
@@ -60,6 +75,16 @@ export function Calendar(props: CalendarProps) {
     [allModifiers, onVisibleDateChange, props]
   )
 
+  const handleWeekClick = useCallback(
+    (week: Week) => {
+      if (!allModifiers.disabled(week, props)) {
+        onVisibleDateChange(week.start)
+        return props.onWeekClick && props.onWeekClick(week)
+      }
+    },
+    [allModifiers, onVisibleDateChange, props]
+  )
+
   return (
     <div className={classes.root} onMouseLeave={onMouseLeave}>
       <HFlow hSpacing={0.5} justifyContent='space-around' style={classes.controls}>
@@ -68,10 +93,12 @@ export function Calendar(props: CalendarProps) {
       </HFlow>
       <MonthView
         visibleDate={visibleDate}
-        createDayStyles={createDayStyles}
-        {...rest}
+        createDateStyles={createDateStyles}
         onDayClick={handleDayClick}
         isDaySelected={isDaySelected}
+        onWeekClick={handleWeekClick}
+        onlyWeeks={onlyWeeks}
+        {...rest}
       />
     </div>
   )
@@ -87,9 +114,9 @@ export const createStyles = () => ({
   } as CSSProperties,
 })
 
-export type ModifierFn = (day: Date, props: MonthViewProps) => boolean
+export type ModifierFn = (element: any, props?: MonthViewProps) => boolean
 
-export interface DayModifierPredicateMap {
+export interface ModifierPredicateMap {
   disabled: ModifierFn
   selected: ModifierFn
   today: ModifierFn
@@ -97,16 +124,23 @@ export interface DayModifierPredicateMap {
   [key: string]: ModifierFn
 }
 
-export type DayModifierStyleMap = { [key in keyof DayModifierPredicateMap]: (theme: Theme) => Interpolation }
+export type ModifierStyleMap = { [key in keyof ModifierPredicateMap]: (theme: Theme) => Interpolation }
 
-export const defaultModifiers: DayModifierPredicateMap = {
+export const defaultDayModifiers: ModifierPredicateMap = {
   today: (day: Date) => isSameDay(new Date(), day),
   disabled: () => false,
   selected: () => false,
   adjacentMonth: (day: Date, { visibleDate }) => visibleDate.getMonth() !== day.getMonth(),
 }
 
-export const defaultModifierStyles: DayModifierStyleMap = {
+export const defaultWeekModifiers: ModifierPredicateMap = {
+  today: (week: Week) => isBelongingAWeek(new Date(), week),
+  disabled: () => false,
+  selected: () => false,
+  adjacentMonth: () => false,
+}
+
+export const defaultModifierStyles: ModifierStyleMap = {
   today: () => ({
     fontWeight: 'bold',
   }),
@@ -131,18 +165,17 @@ export const defaultModifierStyles: DayModifierStyleMap = {
   }),
 }
 
-export const createDayStylesFn = (modifiers: DayModifierPredicateMap, styles: DayModifierStyleMap, theme: Theme) => (
-  day: Date,
+export const createStylesFn = (modifiers: ModifierPredicateMap, styles: ModifierStyleMap, theme: Theme) => (
+  element: any,
   props: MonthViewProps
 ): Interpolation => {
   return Object.keys(modifiers).reduce((s, modifier) => {
     if (!styles[modifier]) {
       throw new Error(`You must provied a modifierStyle for predicate "${modifier}"`)
     }
-
     return {
       ...s,
-      ...(modifiers[modifier](day, props) ? (styles[modifier](theme) as any) : {}),
+      ...(modifiers[modifier](element, props) ? (styles[modifier](theme) as any) : {}),
     }
   }, {})
 }

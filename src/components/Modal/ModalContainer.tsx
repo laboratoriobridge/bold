@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
 import { useLocale } from '../../i18n'
 import { ExternalStyles, Theme, useStyles } from '../../styles'
@@ -13,13 +13,13 @@ export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivEl
   onClose?(): any
 }
 
-export function ModalContainer(props: ModalContainerProps) {
+export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
   const { style, onClose, hasCloseIcon, children, ...rest } = props
   const { classes, css } = useStyles(styles)
   const locale = useLocale()
 
   return (
-    <div role='dialog' aria-modal='true' className={css(classes.wrapper, style)} {...rest}>
+    <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
       {hasCloseIcon && (
         <Tooltip text={locale.modal.close}>
           <Button
@@ -37,7 +37,7 @@ export function ModalContainer(props: ModalContainerProps) {
       {children}
     </div>
   )
-}
+})
 
 ModalContainer.defaultProps = {
   hasCloseIcon: true,

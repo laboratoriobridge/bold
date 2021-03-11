@@ -22,7 +22,9 @@ describe('MonthPaginator', () => {
 
   it('should render correctly with ghost', () => {
     const visibleDate = new Date('2019-01-31')
-    const { container } = render(<MonthPaginator month={visibleDate.getMonth()} ghost={true} />)
+    const { container } = render(
+      <MonthPaginator ghost={true} month={visibleDate.getMonth()} year={visibleDate.getFullYear()} />
+    )
     expect(container).toMatchSnapshot()
   })
 
@@ -50,7 +52,33 @@ describe('MonthPaginator', () => {
     expect(onChange).toHaveBeenCalledWith({ month: 0, year: now.getFullYear() })
   })
 
-  it('should fill the prop year if non is given', () => {
+  it('should disable buttons when, and only when, the month picker is visible', () => {
+    const onChange = jest.fn()
+    const { getByTitle, getByTestId, getByText } = render(
+      <MonthPaginator month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />
+    )
+    const openButton = getByTestId('MonthPaginator.ShowMonthsButton')
+    const nextButton = getByTitle('Next month')
+    const prevButton = getByTitle('Previous month')
+
+    expect(nextButton.hasAttribute('disabled')).toBeFalsy()
+    expect(prevButton.hasAttribute('disabled')).toBeFalsy()
+    expect(openButton.hasAttribute('disabled')).toBeFalsy()
+
+    fireEvent.click(openButton)
+
+    expect(nextButton.hasAttribute('disabled')).toBeTruthy()
+    expect(prevButton.hasAttribute('disabled')).toBeTruthy()
+    expect(openButton.hasAttribute('disabled')).toBeTruthy()
+
+    fireEvent.click(getByText('Jan'))
+
+    expect(nextButton.hasAttribute('disabled')).toBeFalsy()
+    expect(prevButton.hasAttribute('disabled')).toBeFalsy()
+    expect(openButton.hasAttribute('disabled')).toBeFalsy()
+  })
+
+  it('should fill the prop year if none is given', () => {
     const { rerender, getAllByText } = render(<MonthPaginator month={now.getMonth()} year={now.getFullYear()} />)
 
     rerender(<MonthPaginator month={now.getMonth()} />)

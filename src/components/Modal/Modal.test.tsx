@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react'
 import React from 'react'
+import { findDOMNode } from 'react-dom'
 import { Modal, ModalProps } from './Modal'
 
 jest.mock('../../util/string')
@@ -146,4 +147,14 @@ it('should have a focus on first element when opened', async () => {
   await waitFor(() => {
     expect(document.activeElement).toEqual(dialog.firstElementChild)
   })
+})
+
+it('should accept "containerRef" prop and pass down to ModalContainer', () => {
+  const ref = React.createRef<HTMLDivElement>()
+  render(
+    <Modal open={true} containerRef={ref}>
+      Testing.
+    </Modal>
+  )
+  expect(document.body.querySelector('[aria-modal="true"]')).toBe(findDOMNode(ref.current))
 })

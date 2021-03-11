@@ -1,0 +1,893 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
+.emotion-33 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-32 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 1rem;
+  padding: calc(0.25rem - 1px) 1rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  min-width: 70px;
+}
+
+.emotion-8 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-8:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-8:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-8:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 1rem;
+  padding: calc(0.25rem - 1px) 1rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  min-width: 70px;
+  font-weight: bold;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-12:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-12:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-12:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+<div>
+  <div
+    class="emotion-33"
+  >
+    <div
+      class="emotion-32"
+    >
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-1"
+          title="Previous year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <span
+          class="emotion-3"
+        >
+          2021
+        </span>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-1"
+          title="Next year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="January"
+          type="button"
+        >
+          <span>
+            Jan
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="February"
+          type="button"
+        >
+          <span>
+            Feb
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-12"
+          title="March"
+          type="button"
+        >
+          <span>
+            Mar
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="April"
+          type="button"
+        >
+          <span>
+            Apr
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="May"
+          type="button"
+        >
+          <span>
+            May
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="June"
+          type="button"
+        >
+          <span>
+            Jun
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="July"
+          type="button"
+        >
+          <span>
+            Jul
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="August"
+          type="button"
+        >
+          <span>
+            Aug
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="September"
+          type="button"
+        >
+          <span>
+            Sep
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="October"
+          type="button"
+        >
+          <span>
+            Oct
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="November"
+          type="button"
+        >
+          <span>
+            Nov
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="December"
+          type="button"
+        >
+          <span>
+            Dec
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ControlledMonthRangeCalendar render should render correctly without receiving a value 1`] = `
+.emotion-33 {
+  background-color: #FFFFFF;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.2),0 3px 1px -2px rgba(0,0,0,0.12),0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 2px;
+}
+
+.emotion-32 {
+  margin: -0.25rem -0.25rem;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2 {
+  text-align: center;
+  margin: 0.25rem 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-1 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-1:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-1:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-1:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 1rem;
+  padding: calc(0.25rem - 1px) 1rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  min-width: 70px;
+}
+
+.emotion-8 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-8:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-8:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-8:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.75rem - 1px) 1rem;
+  padding: calc(0.25rem - 1px) 1rem;
+  -webkit-transition-property: background;
+  transition-property: background;
+  min-width: 70px;
+  font-weight: bold;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-12 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-12:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-12:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-12:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+<div>
+  <div
+    class="emotion-33"
+  >
+    <div
+      class="emotion-32"
+    >
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-1"
+          title="Previous year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M14.707 16.294a1 1 0 11-1.414 1.414l-5-5a1 1 0 010-1.414l5.001-5.001a1 1 0 011.414 1.414l-4.294 4.294 4.293 4.293z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <span
+          class="emotion-3"
+        >
+          2021
+        </span>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-1"
+          title="Next year"
+          type="button"
+        >
+          <span>
+            <svg
+              aria-hidden="true"
+              class="emotion-0"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M8.294 7.707a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5.001a1 1 0 01-1.415-1.414L12.587 12 8.294 7.707z"
+              />
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="January"
+          type="button"
+        >
+          <span>
+            Jan
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="February"
+          type="button"
+        >
+          <span>
+            Feb
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-12"
+          title="March"
+          type="button"
+        >
+          <span>
+            Mar
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="April"
+          type="button"
+        >
+          <span>
+            Apr
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="May"
+          type="button"
+        >
+          <span>
+            May
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="June"
+          type="button"
+        >
+          <span>
+            Jun
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="July"
+          type="button"
+        >
+          <span>
+            Jul
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="August"
+          type="button"
+        >
+          <span>
+            Aug
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="September"
+          type="button"
+        >
+          <span>
+            Sep
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="October"
+          type="button"
+        >
+          <span>
+            Oct
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="November"
+          type="button"
+        >
+          <span>
+            Nov
+          </span>
+        </button>
+      </div>
+      <div
+        class="emotion-2"
+      >
+        <button
+          class="emotion-8"
+          title="December"
+          type="button"
+        >
+          <span>
+            Dec
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

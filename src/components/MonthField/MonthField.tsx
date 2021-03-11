@@ -1,23 +1,23 @@
 import { Options as PopperOptions } from '@popperjs/core'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { usePopper } from 'react-popper'
-import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe'
 import { useStyles } from '../../styles/hooks/useStyles'
 import { Theme } from '../../styles/theme/createTheme'
-import { Omit } from '../../util'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-import { MaskedTextField, MaskedTextFieldProps } from '../MaskedTextField'
-import { MonthPicker, ReferenceMonth } from '../MonthPicker'
+import { MonthPicker, MonthPickerProps, ReferenceMonth } from '../MonthPicker'
+import { disabledByMonth, isSameReferenceMonth } from '../MonthRangePicker/util'
+import { MonthInput, MonthInputProps } from './MonthInput'
 
-export interface MonthFieldProps extends Omit<MaskedTextFieldProps, 'value' | 'onChange'> {
-  value?: ReferenceMonth
+export interface MonthFieldProps extends MonthInputProps {
+  minMonth?: ReferenceMonth
+  maxMonth?: ReferenceMonth
   popperProps?: PopperOptions
-  onChange?(referenceMonth: ReferenceMonth): void
+  monthPickerProps?: Partial<MonthPickerProps>
 }
 
 export function MonthField(props: MonthFieldProps) {
-  const { value, popperProps, inputRef, onChange, onIconClick, ...rest } = props
+  const { value, popperProps, inputRef, onChange, onIconClick, maxMonth, minMonth, ...rest } = props
 
   const { classes, css } = useStyles(createStyles)
 
@@ -26,26 +26,29 @@ export function MonthField(props: MonthFieldProps) {
   const [anchorRef, setAnchorRef] = useState<HTMLInputElement>()
   const [popperRef, setPopperRef] = useState<HTMLDivElement>()
 
+  const [visibleMonth, setVisibleMonth] = useState<ReferenceMonth>({
+    month: new Date().getMonth(),
+    year: new Date().getFullYear(),
+  })
+
+  useEffect(() => {
+    setVisibleMonth(value)
+  }, [value])
+
   const {
     styles: { popper: popperStyle },
     attributes: { placement },
   } = usePopper(anchorRef, popperRef, { ...popperProps, placement: 'bottom-start' })
 
-  const handlePickerChange = (referenceMonth: ReferenceMonth) => {
-    setOpen(false)
-    onChange(referenceMonth)
+  const handleVisibleMonthChange = (month: ReferenceMonth) => setVisibleMonth(month)
+
+  const handleInputChange = (month: ReferenceMonth) => {
+    onChange(month)
   }
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e && e.target && e.target.value) {
-      const val = e.target.value
-
-      if (isValidInput(val)) {
-        onChange({ month: +val.substr(0, 2) - 1, year: +val.substr(3) })
-      }
-    } else {
-      onChange(null)
-    }
+  const handleMonthClick = (month: ReferenceMonth) => {
+    setOpen(false)
+    onChange(month)
   }
 
   const handleInputIconClick = () => setOpen(true)
@@ -56,7 +59,7 @@ export function MonthField(props: MonthFieldProps) {
     <FocusManagerContainer onFocusIn={handleFocusIn} onFocusOut={handleFocusOut}>
       <MonthInput
         inputRef={composeRefs(setAnchorRef, inputRef)}
-        value={format(value)}
+        value={value}
         icon='calendarOutline'
         onIconClick={composeHandlers(handleInputIconClick, onIconClick)}
         onChange={handleInputChange}
@@ -70,40 +73,20 @@ export function MonthField(props: MonthFieldProps) {
           data-placement={placement}
           data-testid='MonthField.popup'
         >
-          <MonthPicker month={value && value.month} year={value && value.year} onChange={handlePickerChange} />
+          <MonthPicker
+            visibleMonth={visibleMonth}
+            onVisibleMonthChange={handleVisibleMonthChange}
+            onMonthClick={handleMonthClick}
+            isDisabled={disabledByMonth(minMonth, maxMonth)}
+            modifiers={{
+              selected: (month: ReferenceMonth) => value && isSameReferenceMonth(value, month),
+            }}
+            {...props.monthPickerProps}
+          />
         </div>
       )}
     </FocusManagerContainer>
   )
-}
-
-export type MonthInputProps = Omit<MaskedTextFieldProps, 'mask'>
-
-export function MonthInput(props: MonthInputProps) {
-  return (
-    <MaskedTextField
-      mask={[/\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-      pipe={createAutoCorrectedDatePipe('mm/yyyy')}
-      placeholder='mm/yyyy'
-      {...props}
-    />
-  )
-}
-
-export const format = (value: ReferenceMonth) => {
-  if (!value || !value.year || value.month == null) {
-    return null
-  }
-
-  if (value.month < 9) {
-    return `0${value.month + 1}/${value.year}`
-  } else {
-    return `${value.month + 1}/${value.year}`
-  }
-}
-
-export const isValidInput = (value: string) => {
-  return /\d\d\/\d\d\d\d/.test(value)
 }
 
 const createStyles = (theme: Theme) => ({
