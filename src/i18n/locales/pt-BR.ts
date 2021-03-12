@@ -44,6 +44,10 @@ const locale: LocaleConfiguration = {
   combobox: {
     showOptions: 'Mostrar opções',
     hideOptions: 'Esconder opções',
+    createItem: 'Selecione um item ou digite um novo valor',
+    emptyItem: 'Nenhum resultado encontrado',
+    loadingItem: 'Carregando...',
+    removeItem: 'Remover',
   },
   tableFooter: {
     results: {

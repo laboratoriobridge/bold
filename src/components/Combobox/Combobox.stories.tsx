@@ -1,7 +1,12 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
 import React from 'react'
+import { useTheme } from '../../styles'
+import { Button } from '../Button'
+import { HFlow } from '../HFlow'
+import { Text } from '../Text'
 import { Combobox } from './Combobox'
+import { ComboboxMenuItem } from './ComboboxMenuComponents'
 
 const fruits = [
   { value: 1, label: 'Apple' },
@@ -17,6 +22,21 @@ const fruits = [
   { value: 11, label: 'Peach' },
   { value: 12, label: 'Pear' },
 ]
+
+function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
+  const theme = useTheme()
+
+  return (
+    <div
+      style={{
+        background: theme.pallete.surface.background,
+        padding: '0.25rem 0.5rem',
+        cursor: 'initial',
+      }}
+      {...props}
+    />
+  )
+}
 
 export default {
   title: 'Components/Combobox',
@@ -42,5 +62,39 @@ export const Default = () => (
     onFocus={action('focus')}
     //   itemIsEqual={(a, b) => a.value === b.value}
     //   multiple={boolean('multiple', false)}
+  />
+)
+
+export const CustomComponents = () => (
+  <Combobox<typeof fruits[0]>
+    label='Fruit'
+    name='fruit'
+    items={fruits}
+    createNewItem={boolean('createNewItem', false)}
+    itemToString={(item) => item && item.label}
+    components={{
+      Item: (props) => (
+        <ComboboxMenuItem {...props}>
+          <Text color='success'>Custom {props.itemToString(props.item)}</Text>
+        </ComboboxMenuItem>
+      ),
+      PrependItem: (props) => <CustomComponent>Prepend item</CustomComponent>,
+      EmptyItem: (props) => <CustomComponent>Empty item</CustomComponent>,
+      CreateItem: (props) => <CustomComponent>Create item</CustomComponent>,
+      LoadingItem: (props) => <CustomComponent>Loading item...</CustomComponent>,
+      AppendItem: (props) => (
+        <CustomComponent>
+          <HFlow alignItems='center' justifyContent='space-between'>
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae
+              corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+            </Text>
+            <Button kind='primary' size='small' onClick={action('New item click')}>
+              New item
+            </Button>
+          </HFlow>
+        </CustomComponent>
+      ),
+    }}
   />
 )
