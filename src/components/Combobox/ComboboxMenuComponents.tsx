@@ -53,7 +53,7 @@ export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLL
 }
 
 export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
-  const { children, item, style, selected, itemToString, ...rest } = props
+  const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (

@@ -181,7 +181,7 @@ exports[`renders correcly closed 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-99-menu"
+      aria-owns="downshift-105-menu"
       role="combobox"
     >
       <div
@@ -189,8 +189,8 @@ exports[`renders correcly closed 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-98-input"
-          id="downshift-99-label"
+          for="downshift-104-input"
+          id="downshift-105-label"
         >
           Fruits
         </label>
@@ -199,11 +199,11 @@ exports[`renders correcly closed 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-99-menu"
-            aria-labelledby="downshift-99-label"
+            aria-controls="downshift-105-menu"
+            aria-labelledby="downshift-105-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-98-input"
+            id="downshift-104-input"
             label="Fruits"
             type="text"
             value=""
@@ -238,8 +238,8 @@ exports[`renders correcly closed 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-99-label"
-        id="downshift-99-menu"
+        aria-labelledby="downshift-105-label"
+        id="downshift-105-menu"
         role="listbox"
       />
     </div>
@@ -277,32 +277,6 @@ exports[`renders correcly opened 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-}
-
-.emotion-7 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-7:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-7:hover {
-  background: #F0F0F5;
-}
-
-.emotion-7:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 .emotion-0 {
@@ -480,12 +454,38 @@ exports[`renders correcly opened 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-7:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-7:hover {
+  background: #F0F0F5;
+}
+
+.emotion-7:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
 <body>
   <div>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-101-menu"
+      aria-owns="downshift-107-menu"
       role="combobox"
     >
       <div
@@ -493,8 +493,8 @@ exports[`renders correcly opened 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-100-input"
-          id="downshift-101-label"
+          for="downshift-106-input"
+          id="downshift-107-label"
         >
           Fruits
         </label>
@@ -503,11 +503,11 @@ exports[`renders correcly opened 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-101-menu"
-            aria-labelledby="downshift-101-label"
+            aria-controls="downshift-107-menu"
+            aria-labelledby="downshift-107-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-100-input"
+            id="downshift-106-input"
             label="Fruits"
             type="text"
             value=""
@@ -542,8 +542,8 @@ exports[`renders correcly opened 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-101-label"
-        id="downshift-101-menu"
+        aria-labelledby="downshift-107-label"
+        id="downshift-107-menu"
         role="listbox"
       >
         <div
@@ -560,7 +560,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-0"
+              id="downshift-107-item-0"
               role="option"
             >
               Apple
@@ -568,7 +568,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-1"
+              id="downshift-107-item-1"
               role="option"
             >
               Avocado
@@ -576,7 +576,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-2"
+              id="downshift-107-item-2"
               role="option"
             >
               Banana
@@ -584,7 +584,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-3"
+              id="downshift-107-item-3"
               role="option"
             >
               Blueberry
@@ -592,7 +592,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-4"
+              id="downshift-107-item-4"
               role="option"
             >
               Coconut
@@ -600,7 +600,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-5"
+              id="downshift-107-item-5"
               role="option"
             >
               Grape
@@ -608,7 +608,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-6"
+              id="downshift-107-item-6"
               role="option"
             >
               Lemon
@@ -616,7 +616,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-7"
+              id="downshift-107-item-7"
               role="option"
             >
               Mango
@@ -624,7 +624,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-8"
+              id="downshift-107-item-8"
               role="option"
             >
               Melon
@@ -632,7 +632,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-9"
+              id="downshift-107-item-9"
               role="option"
             >
               Orange
@@ -640,7 +640,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-10"
+              id="downshift-107-item-10"
               role="option"
             >
               Peach
@@ -648,7 +648,7 @@ exports[`renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-101-item-11"
+              id="downshift-107-item-11"
               role="option"
             >
               Pear
@@ -707,6 +707,181 @@ exports[`renders correcly opened and loading 1`] = `
   width: 100%;
 }
 
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-5 {
+  position: relative;
+}
+
+.emotion-5 input {
+  padding-right: 3rem;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-3 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
 .emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -731,6 +906,277 @@ exports[`renders correcly opened and loading 1`] = `
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  cursor: initial;
+}
+
+.emotion-8:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-8:hover {
+  background: #F0F0F5;
+}
+
+.emotion-8:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-7 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0069D0;
+  float: right;
+}
+
+.emotion-7:after {
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+<body>
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="downshift-115-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-6"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-114-input"
+          id="downshift-115-label"
+        >
+          Fruits
+        </label>
+        <div
+          class="emotion-5"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-115-menu"
+            aria-labelledby="downshift-115-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-114-input"
+            label="Fruits"
+            type="text"
+            value=""
+          />
+          <span
+            class="emotion-4"
+          >
+            <button
+              aria-label="Hide options"
+              class="emotion-3"
+              tabindex="-1"
+              type="button"
+            >
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-2"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+      <div
+        aria-busy="true"
+        aria-labelledby="downshift-115-label"
+        id="downshift-115-menu"
+        role="listbox"
+      >
+        <div
+          class="emotion-22"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-21"
+          >
+            <li
+              class="emotion-8"
+            >
+              Loading...
+              <span
+                class="emotion-7"
+              />
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="downshift-115-item-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`renders correcly with custom components correctly 1`] = `
+.emotion-35 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-34 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-0 {
@@ -918,10 +1364,6 @@ exports[`renders correcly opened and loading 1`] = `
   padding: 0.5rem 0.5rem;
   -webkit-transition: .1s ease;
   transition: .1s ease;
-  background: #F0F0F5;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  cursor: initial;
 }
 
 .emotion-8:last-of-type {
@@ -938,24 +1380,97 @@ exports[`renders correcly opened and loading 1`] = `
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-7 {
-  pointer-events: none;
-  font-size: 1rem;
-  line-height: 1;
-  color: #0069D0;
-  float: right;
+.emotion-31 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
 }
 
-.emotion-7:after {
-  -webkit-animation: animation-0 450ms infinite linear;
-  animation: animation-0 450ms infinite linear;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  border-right-color: transparent;
-  content: "";
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #217B00;
+}
+
+.emotion-33 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-32 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #696979;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #0069D0;
+  color: #FFFFFF;
+  border: 1px solid #0069D0;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-32 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-32:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-32:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-32:not(:disabled):hover {
+  background-color: #F0F0F5;
+}
+
+.emotion-32:not(:disabled):hover {
+  background-color: #0051A2;
 }
 
 <body>
@@ -963,7 +1478,7 @@ exports[`renders correcly opened and loading 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-109-menu"
+      aria-owns="downshift-123-menu"
       role="combobox"
     >
       <div
@@ -971,22 +1486,23 @@ exports[`renders correcly opened and loading 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-108-input"
-          id="downshift-109-label"
+          for="downshift-122-input"
+          id="downshift-123-label"
         >
-          Fruits
+          Fruit
         </label>
         <div
           class="emotion-5"
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-109-menu"
-            aria-labelledby="downshift-109-label"
+            aria-controls="downshift-123-menu"
+            aria-labelledby="downshift-123-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-108-input"
-            label="Fruits"
+            id="downshift-122-input"
+            label="Fruit"
+            name="fruit"
             type="text"
             value=""
           />
@@ -1019,13 +1535,13 @@ exports[`renders correcly opened and loading 1`] = `
         </div>
       </div>
       <div
-        aria-busy="true"
-        aria-labelledby="downshift-109-label"
-        id="downshift-109-menu"
+        aria-busy="false"
+        aria-labelledby="downshift-123-label"
+        id="downshift-123-menu"
         role="listbox"
       >
         <div
-          class="emotion-22"
+          class="emotion-35"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -1033,112 +1549,215 @@ exports[`renders correcly opened and loading 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-21"
+            class="emotion-34"
           >
-            <li
-              class="emotion-8"
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
-              Loading...
+              Prepend item
+            </div>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-0"
+              name="fruit"
+              role="option"
+            >
               <span
                 class="emotion-7"
-              />
+              >
+                Custom 
+                Apple
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-0"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-1"
+              name="fruit"
               role="option"
             >
-              Apple
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Avocado
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-1"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-2"
+              name="fruit"
               role="option"
             >
-              Avocado
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Banana
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-2"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-3"
+              name="fruit"
               role="option"
             >
-              Banana
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Blueberry
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-3"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-4"
+              name="fruit"
               role="option"
             >
-              Blueberry
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Coconut
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-4"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-5"
+              name="fruit"
               role="option"
             >
-              Coconut
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Grape
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-5"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-6"
+              name="fruit"
               role="option"
             >
-              Grape
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Lemon
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-6"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-7"
+              name="fruit"
               role="option"
             >
-              Lemon
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Mango
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-7"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-8"
+              name="fruit"
               role="option"
             >
-              Mango
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Melon
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-8"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-9"
+              name="fruit"
               role="option"
             >
-              Melon
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Orange
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-9"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-10"
+              name="fruit"
               role="option"
             >
-              Orange
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Peach
+              </span>
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-10"
+              class="emotion-8"
+              components="[object Object]"
+              id="downshift-123-item-11"
+              name="fruit"
               role="option"
             >
-              Peach
+              <span
+                class="emotion-7"
+              >
+                Custom 
+                Pear
+              </span>
             </li>
-            <li
-              aria-selected="false"
-              class="emotion-9"
-              id="downshift-109-item-11"
-              role="option"
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
-              Pear
-            </li>
+              <div
+                class="emotion-33"
+              >
+                <span
+                  class="emotion-31"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+                </span>
+                <button
+                  class="emotion-32"
+                  data-testid="action-btn"
+                  type="button"
+                >
+                  <span>
+                    New item
+                  </span>
+                </button>
+              </div>
+            </div>
           </ul>
         </div>
       </div>
