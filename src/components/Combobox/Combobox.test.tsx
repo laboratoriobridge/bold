@@ -419,3 +419,16 @@ it('should accept actions inside children prop', async () => {
 
   expect(click).toHaveBeenCalledTimes(1)
 })
+
+it('renders correcly opened with add-item', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem />)
+    baseElement = result.baseElement
+  })
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement).toMatchSnapshot()
+})

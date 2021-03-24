@@ -130,7 +130,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
             <ul className={classes.list}>
               {PrependItem && <PrependItem />}
               {loading && <LoadingItem />}
-              {!loading && createNewItem && visibleItems?.length && <CreateItem />}
+              {!loading && createNewItem && !visibleItems?.length && <CreateItem />}
               {!loading && !createNewItem && !visibleItems?.length && <EmptyItem />}
               {visibleItems.map((item, index) => (
                 <Item
