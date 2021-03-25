@@ -276,8 +276,8 @@ describe('BaseMonthRangeInput', () => {
     it('should be possible to set a name to inputs', () => {
       const name = 'baseMonthRange'
       const { container } = render(<BaseMonthRangeInput name={name} />)
-      expect(container.querySelectorAll('input')[0].getAttribute('name')).toEqual(name + '.start')
-      expect(container.querySelectorAll('input')[1].getAttribute('name')).toEqual(name + '.end')
+      expect(container.querySelectorAll('input')[FIRST_INPUT].getAttribute('name')).toEqual(name + '.start')
+      expect(container.querySelectorAll('input')[SECOND_INPUT].getAttribute('name')).toEqual(name + '.end')
     })
   })
 })
