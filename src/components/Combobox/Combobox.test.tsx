@@ -326,6 +326,55 @@ it('should trigger onBlur', async () => {
   expect(onBlur).toBeCalled()
 })
 
+it('should clear input if the value is not valid', async () => {
+  let baseElement: RenderResult['baseElement']
+
+  await act(async () => {
+    const result = render(<ComboboxTest />)
+    baseElement = result.baseElement
+  })
+
+  const input = baseElement.querySelector('input')
+  await act(async () => {
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'not a fruit' } })
+    fireEvent.blur(input)
+  })
+  expect(input).not.toHaveValue()
+})
+
+it('should clear input if the value is not valid after select item', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest clearable={true} />)
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  const dropdownButton = baseElement.querySelector('button')
+  //Opens menu
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  const option = baseElement.querySelector('li').firstChild
+
+  //Selects item
+  await act(async () => {
+    fireEvent.click(option)
+  })
+
+  expect(input).toHaveValue(option.textContent)
+
+  await act(async () => {
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'not a fruit' } })
+    fireEvent.blur(input)
+  })
+
+  expect(input).not.toHaveValue()
+})
+
 it('should accept a value as parameter', async () => {
   let baseElement: RenderResult['baseElement']
 

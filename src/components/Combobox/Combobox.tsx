@@ -1,4 +1,4 @@
-import { useCombobox } from 'downshift'
+import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
@@ -66,6 +66,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   } = useCombobox<T>({
     selectedItem: value,
     items: visibleItems,
+    stateReducer: comboboxStateReducer,
     itemToString,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
@@ -156,6 +157,29 @@ Combobox.defaultProps = {
   createNewItem: false,
   loading: false,
 } as Partial<ComboboxProps>
+
+function comboboxStateReducer<T>(
+  state: UseComboboxState<T>,
+  actionAndChanges: UseComboboxStateChangeOptions<T>
+): UseComboboxState<T> {
+  const { type, changes } = actionAndChanges
+  switch (type) {
+    case useCombobox.stateChangeTypes.InputChange:
+      return {
+        ...changes,
+        selectedItem: undefined,
+      }
+    case useCombobox.stateChangeTypes.InputBlur:
+      return {
+        ...changes,
+        ...(!changes.selectedItem && {
+          inputValue: '',
+        }),
+      }
+    default:
+      return changes
+  }
+}
 
 export const createStyles = (theme: Theme) => ({
   menu: {

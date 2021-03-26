@@ -60,8 +60,28 @@ export const Default = () => (
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
-    //   itemIsEqual={(a, b) => a.value === b.value}
-    //   multiple={boolean('multiple', false)}
+    //itemIsEqual={(a, b) => a.value === b.value}
+    //multiple={boolean('multiple', false)}
+  />
+)
+
+export const Suggestion = () => (
+  <Combobox<typeof fruits[0]>
+    //createNewItem={(str) => ({ value: str, label: str })}
+    label='Fruit'
+    name='fruit'
+    items={fruits}
+    error={text('error', '')}
+    icon={null}
+    itemToString={(item) => item && item.label}
+    placeholder='Select a value...'
+    clearable={boolean('clearable', true)}
+    disabled={boolean('disabled', false)}
+    openOnFocus={boolean('openOnFocus', false)}
+    loading={boolean('loading', false)}
+    onChange={action('changed')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
   />
 )
 
