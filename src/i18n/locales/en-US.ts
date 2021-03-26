@@ -42,6 +42,10 @@ const locale = {
   combobox: {
     showOptions: 'Show options',
     hideOptions: 'Hide options',
+    createItem: 'Select an item or type a new value',
+    emptyItem: 'No results were found',
+    loadingItem: 'Loading...',
+    removeItem: 'Remove',
   },
   tableFooter: {
     results: {

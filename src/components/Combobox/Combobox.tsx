@@ -3,23 +3,25 @@ import matchSorter from 'match-sorter'
 import React, { CSSProperties, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
-import { focusBoxShadow, Theme, useStyles } from '../../styles'
+import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
-import { Spinner } from '../Spinner'
+import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
 
 export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' | 'onChange'>, UseFormControlProps {
   value?: T
   items: T[]
   itemToString(item: T): string
+  createNewItem: boolean
   openOnFocus: boolean
   loading: boolean
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
+  components?: Partial<ComboboxComponents<T>>
 }
 
 export function Combobox<T = string>(props: ComboboxProps<T>) {
@@ -27,6 +29,8 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     value,
     items,
     loading,
+    createNewItem,
+    components = {},
     itemToString,
     menuMinWidth,
     openOnFocus,
@@ -39,7 +43,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   } = props
 
   const locale = useLocale()
-  const { classes, css } = useStyles(createStyles)
+  const { classes } = useStyles(createStyles)
 
   const [currentFilter, setCurrentFilter] = useState('')
   const visibleItems = filter(items, currentFilter)
@@ -91,6 +95,11 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const formControlInputProps = getFromControlInputProps()
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
+
+  const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem } = {
+    ...defaultComboboxComponents,
+    ...components,
+  }
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
@@ -119,21 +128,21 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
             ref={setMenuRef}
           >
             <ul className={classes.list}>
-              {loading && (
-                <li className={css(classes.item, classes.loadingItem)}>
-                  {locale.select.loadingItem}
-                  <Spinner style={classes.loadingSpinner} />
-                </li>
-              )}
+              {PrependItem && <PrependItem />}
+              {loading && <LoadingItem />}
+              {!loading && createNewItem && !visibleItems?.length && <CreateItem />}
+              {!loading && !createNewItem && !visibleItems?.length && <EmptyItem />}
               {visibleItems.map((item, index) => (
-                <li
-                  className={css(classes.item, highlightedIndex === index && classes.selected)}
+                <Item
                   key={`${item}${index}`}
+                  item={item}
+                  index={index}
+                  selected={highlightedIndex === index}
                   {...getItemProps({ item, index })}
-                >
-                  {itemToString(item)}
-                </li>
+                  {...props}
+                />
               ))}
+              {AppendItem && <AppendItem />}
             </ul>
           </div>
         )}
@@ -144,6 +153,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
 Combobox.defaultProps = {
   openOnFocus: true,
+  createNewItem: false,
   loading: false,
 } as Partial<ComboboxProps>
 
@@ -173,43 +183,4 @@ export const createStyles = (theme: Theme) => ({
     overflowX: 'hidden',
     width: '100%',
   } as CSSProperties,
-
-  item: {
-    ...theme.typography.variant('main'),
-    borderBottom: `1px solid ${theme.pallete.divider}`,
-    cursor: 'pointer',
-    padding: '0.5rem 0.5rem',
-    transition: '.1s ease',
-
-    '&:last-of-type': {
-      borderBottom: 'none',
-    },
-
-    '&:hover': {
-      background: theme.pallete.surface.background,
-    },
-
-    '&:focus': {
-      outline: 0,
-      borderRadius: 3,
-      boxShadow: focusBoxShadow(theme, 'primary', 'inset'),
-    },
-  },
-
-  loadingItem: {
-    background: theme.pallete.surface.background,
-    paddingTop: '0.25rem',
-    paddingBottom: '0.25rem',
-    cursor: 'initial',
-  },
-
-  loadingSpinner: {
-    color: theme.pallete.primary.main,
-    float: 'right',
-  } as CSSProperties,
-
-  selected: {
-    outline: 0,
-    background: theme.pallete.surface.background,
-  },
 })

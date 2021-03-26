@@ -1,5 +1,10 @@
 import React from 'react'
 import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
+import { Text } from '../Text'
+import { useTheme } from '../../styles'
+import { HFlow } from '../HFlow'
+import { Button } from '../Button'
+import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox, ComboboxProps } from './Combobox'
 
 interface Fruit {
@@ -26,6 +31,55 @@ const itemToString = (item: Fruit) => item.label
 
 const ComboboxTest = (props: Partial<ComboboxProps<Fruit>>) => (
   <Combobox<typeof fruits[0]> items={fruits} itemToString={itemToString} {...props} />
+)
+
+function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
+  const theme = useTheme()
+
+  return (
+    <div
+      style={{
+        background: theme.pallete.surface.background,
+        padding: '0.25rem 0.5rem',
+        cursor: 'initial',
+      }}
+      {...props}
+    />
+  )
+}
+
+const ComboboxWithCutomComponentsTest = (props: Partial<ComboboxProps<Fruit>> & { action?: () => void }) => (
+  <Combobox<typeof fruits[0]>
+    label='Fruit'
+    name='fruit'
+    items={fruits}
+    itemToString={itemToString}
+    components={{
+      Item: (props) => (
+        <ComboboxMenuItem {...props}>
+          <Text color='success'>Custom {props.itemToString(props.item)}</Text>
+        </ComboboxMenuItem>
+      ),
+      PrependItem: (props) => <CustomComponent>Prepend item</CustomComponent>,
+      EmptyItem: (props) => <CustomComponent>Empty item</CustomComponent>,
+      CreateItem: (props) => <CustomComponent>Create item</CustomComponent>,
+      LoadingItem: (props) => <CustomComponent>Loading item...</CustomComponent>,
+      AppendItem: (propsItem) => (
+        <CustomComponent>
+          <HFlow alignItems='center' justifyContent='space-between'>
+            <Text>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae
+              corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+            </Text>
+            <Button kind='primary' size='small' data-testid='action-btn' onClick={() => props.action?.()}>
+              New item
+            </Button>
+          </HFlow>
+        </CustomComponent>
+      ),
+    }}
+    {...props}
+  />
 )
 
 it('has aria-compliant attributes', async () => {
@@ -322,6 +376,54 @@ it('renders correcly opened and loading', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {
     const result = render(<ComboboxTest label='Fruits' loading={true} />)
+    baseElement = result.baseElement
+  })
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement).toMatchSnapshot()
+})
+
+it('renders correcly with custom components correctly', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxWithCutomComponentsTest />)
+    baseElement = result.baseElement
+  })
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement).toMatchSnapshot()
+})
+
+it('should accept actions inside children prop', async () => {
+  const click = jest.fn()
+  let baseElement: RenderResult['baseElement']
+  let findByTestId: RenderResult['findByTestId']
+  await act(async () => {
+    const result = render(<ComboboxWithCutomComponentsTest action={click} />)
+    baseElement = result.baseElement
+    findByTestId = result.findByTestId
+  })
+
+  const dropdownButton = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+
+  await act(async () => {
+    fireEvent.click(await findByTestId('action-btn'))
+  })
+
+  expect(click).toHaveBeenCalledTimes(1)
+})
+
+it('renders correcly opened with add-item', async () => {
+  let baseElement: RenderResult['baseElement']
+  await act(async () => {
+    const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem />)
     baseElement = result.baseElement
   })
   const dropdownButton = baseElement.querySelector('button')
