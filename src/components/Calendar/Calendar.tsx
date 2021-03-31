@@ -48,9 +48,9 @@ export function Calendar(props: CalendarProps) {
     onVisibleDateChange,
     onMouseLeave,
     isDaySelected,
-    onWeekClick,
     ...rest
   } = props
+
   const { classes, theme } = useStyles(createStyles)
 
   const allModifiers = useMemo(() => ({ ...(onlyWeeks ? defaultWeekModifiers : defaultDayModifiers), ...modifiers }), [
@@ -94,11 +94,11 @@ export function Calendar(props: CalendarProps) {
       <MonthView
         visibleDate={visibleDate}
         createDateStyles={createDateStyles}
+        {...rest}
         onDayClick={handleDayClick}
         isDaySelected={isDaySelected}
         onWeekClick={handleWeekClick}
         onlyWeeks={onlyWeeks}
-        {...rest}
       />
     </div>
   )
