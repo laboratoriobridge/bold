@@ -67,7 +67,7 @@ export const Default = () => (
 
 export const Suggestion = () => (
   <Combobox<typeof fruits[0]>
-    //createNewItem={(str) => ({ value: str, label: str })}
+    createNewItem={(str) => ({ value: Math.random(), label: str })}
     label='Fruit'
     name='fruit'
     items={fruits}
@@ -90,7 +90,7 @@ export const CustomComponents = () => (
     label='Fruit'
     name='fruit'
     items={fruits}
-    createNewItem={boolean('createNewItem', false)}
+    createNewItem={boolean('createNewItem', false) && (() => fruits[0])}
     itemToString={(item) => item && item.label}
     components={{
       Item: (props) => (

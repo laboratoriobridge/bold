@@ -14,7 +14,7 @@ export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' 
   value?: T
   items: T[]
   itemToString(item: T): string
-  createNewItem: boolean
+  createNewItem?(inputValue: string): T
   openOnFocus: boolean
   loading: boolean
   menuMinWidth?: number
@@ -66,7 +66,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   } = useCombobox<T>({
     selectedItem: value,
     items: visibleItems,
-    stateReducer: comboboxStateReducer,
+    stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
@@ -154,14 +154,13 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
 Combobox.defaultProps = {
   openOnFocus: true,
-  createNewItem: false,
   loading: false,
 } as Partial<ComboboxProps>
 
-function comboboxStateReducer<T>(
+const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
   state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
-): UseComboboxState<T> {
+): UseComboboxState<T> => {
   const { type, changes } = actionAndChanges
   switch (type) {
     case useCombobox.stateChangeTypes.InputChange:
@@ -172,9 +171,12 @@ function comboboxStateReducer<T>(
     case useCombobox.stateChangeTypes.InputBlur:
       return {
         ...changes,
-        ...(!changes.selectedItem && {
-          inputValue: '',
-        }),
+        ...(!changes.selectedItem &&
+          (createNewItem
+            ? { selectedItem: createNewItem(state.inputValue) }
+            : {
+                inputValue: '',
+              })),
       }
     default:
       return changes

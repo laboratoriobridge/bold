@@ -375,6 +375,50 @@ it('should clear input if the value is not valid after select item', async () =>
   expect(input).not.toHaveValue()
 })
 
+it('should add item if the input value is not in the list and "createNewItem" is defined', async () => {
+  const createNewItem = (input: string) => ({ value: 1, label: input })
+
+  let baseElement: RenderResult['baseElement']
+  let selection = null
+  await act(async () => {
+    const result = render(
+      <ComboboxTest
+        clearable={true}
+        createNewItem={createNewItem}
+        onChange={(item) => {
+          selection = item
+        }}
+      />
+    )
+    baseElement = result.baseElement
+  })
+  const input = baseElement.querySelector('input')
+
+  //Types item not in the list
+  await act(async () => {
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'not a fruit in the list' } })
+    fireEvent.blur(input)
+  })
+
+  expect(selection).toStrictEqual({ value: 1, label: 'not a fruit in the list' })
+  expect(input).toHaveValue('not a fruit in the list')
+
+  //Searches for first item
+  await act(async () => {
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: fruits[0].label } })
+  })
+
+  //Selects first item
+  const option = baseElement.querySelector('li').firstChild
+  await act(async () => {
+    fireEvent.click(option)
+  })
+
+  expect(selection).toBe(fruits[0])
+})
+
 it('should accept a value as parameter', async () => {
   let baseElement: RenderResult['baseElement']
 
@@ -472,7 +516,7 @@ it('should accept actions inside children prop', async () => {
 it('renders correcly opened with add-item', async () => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {
-    const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem />)
+    const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem={() => ({ value: 1, label: '' })} />)
     baseElement = result.baseElement
   })
   const dropdownButton = baseElement.querySelector('button')
