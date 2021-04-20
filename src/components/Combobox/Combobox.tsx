@@ -1,4 +1,4 @@
-import { useCombobox } from 'downshift'
+import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
@@ -14,7 +14,7 @@ export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' 
   value?: T
   items: T[]
   itemToString(item: T): string
-  createNewItem: boolean
+  createNewItem?(inputValue: string): T
   openOnFocus: boolean
   loading: boolean
   menuMinWidth?: number
@@ -66,6 +66,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   } = useCombobox<T>({
     selectedItem: value,
     items: visibleItems,
+    stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
     onInputValueChange: ({ inputValue }) => {
       setCurrentFilter(inputValue)
@@ -153,9 +154,34 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
 Combobox.defaultProps = {
   openOnFocus: true,
-  createNewItem: false,
   loading: false,
 } as Partial<ComboboxProps>
+
+const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
+  state: UseComboboxState<T>,
+  actionAndChanges: UseComboboxStateChangeOptions<T>
+): UseComboboxState<T> => {
+  const { type, changes } = actionAndChanges
+  switch (type) {
+    case useCombobox.stateChangeTypes.InputChange:
+      return {
+        ...changes,
+        selectedItem: undefined,
+      }
+    case useCombobox.stateChangeTypes.InputBlur:
+      return {
+        ...changes,
+        ...(!changes.selectedItem &&
+          (createNewItem
+            ? { selectedItem: createNewItem(state.inputValue) }
+            : {
+                inputValue: '',
+              })),
+      }
+    default:
+      return changes
+  }
+}
 
 export const createStyles = (theme: Theme) => ({
   menu: {
