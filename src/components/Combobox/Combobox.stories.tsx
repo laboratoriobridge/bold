@@ -1,5 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, number, select, text } from '@storybook/addon-knobs'
+import matchSorter from 'match-sorter'
 import React from 'react'
 import { useTheme } from '../../styles'
 import { Button } from '../Button'
@@ -8,7 +9,9 @@ import { Text } from '../Text'
 import { Combobox } from './Combobox'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
 
-const fruits = [
+type Fruit = { value: number; label: string }
+
+const fruits: Fruit[] = [
   { value: 1, label: 'Apple' },
   { value: 2, label: 'Avocado' },
   { value: 3, label: 'Banana' },
@@ -22,6 +25,19 @@ const fruits = [
   { value: 11, label: 'Peach' },
   { value: 12, label: 'Pear' },
 ]
+
+const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
+  action('items loaded')()
+  return new Promise((resolve) => {
+    setTimeout(
+      () =>
+        resolve(
+          matchSorter<Fruit>(fruits, query, { keys: [(item) => item.label] })
+        ),
+      1000
+    )
+  })
+}
 
 function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
   const theme = useTheme()
@@ -43,7 +59,7 @@ export default {
 }
 
 export const Default = () => (
-  <Combobox<typeof fruits[0]>
+  <Combobox<Fruit>
     value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
     label='Fruit'
     name='fruit'
@@ -66,7 +82,7 @@ export const Default = () => (
 )
 
 export const Suggestion = () => (
-  <Combobox<typeof fruits[0]>
+  <Combobox<Fruit>
     createNewItem={(str) => ({ value: Math.random(), label: str })}
     label='Fruit'
     name='fruit'
@@ -85,8 +101,26 @@ export const Suggestion = () => (
   />
 )
 
+export const Async = () => (
+  <Combobox<Fruit>
+    label='Fruit Repository'
+    name='repository'
+    items={loadFruitsAsync}
+    error={text('error', '')}
+    itemToString={(item) => item && item.label}
+    placeholder='Select a value...'
+    multiple={boolean('multiple', false)}
+    clearable={boolean('clearable', true)}
+    disabled={boolean('disabled', false)}
+    openOnFocus={boolean('openOnFocus', true)}
+    onChange={action('changed')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
+  />
+)
+
 export const CustomComponents = () => (
-  <Combobox<typeof fruits[0]>
+  <Combobox<Fruit>
     label='Fruit'
     name='fruit'
     items={fruits}
