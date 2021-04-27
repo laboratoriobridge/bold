@@ -22,7 +22,7 @@ export const WithDefinedStyles = () => (
     styles={css`
       padding: 1rem;
       margin-right: 1rem;
-      font-weight: ;
+      font-weight: bold;
     `}
   >
     <div>
