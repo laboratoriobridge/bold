@@ -16,7 +16,7 @@ export const Empty = () => (
 
 export const WithDefinedStyles = () => (
   <Box
-    label='Colunas'
+    label='WithDefinedStyles'
     icon='hamburguerMenu'
     rotation='90'
     styles={css`
