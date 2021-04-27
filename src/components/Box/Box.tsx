@@ -1,4 +1,4 @@
-import { css, SerializedStyles } from '@emotion/core'
+import { SerializedStyles } from '@emotion/core'
 import React, { CSSProperties, ReactElement } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Icon, Icons } from '../Icon'
@@ -14,7 +14,7 @@ export interface BoxProps {
 export function Box(props: BoxProps) {
   const { styles, icon, rotation, label, children } = props
 
-  const { classes } = useStyles(createStyles)
+  const { classes, css } = useStyles(createStyles)
 
   return (
     <div className={classes.wrapper}>
@@ -31,17 +31,14 @@ export function Box(props: BoxProps) {
           {label}
         </h4>
       </div>
-      <div
-        css={css`
-          min-height: 7.18rem;
-          ${styles}
-        `}
-      >
-        {children}
-      </div>
+      <div className={css(classes.children, styles)}>{children}</div>
     </div>
   )
 }
+
+Box.defaultProps = {
+  rotation: '0',
+} as Partial<BoxProps>
 
 const createStyles = (theme: Theme) => ({
   header: {
@@ -61,5 +58,9 @@ const createStyles = (theme: Theme) => ({
 
   wrapper: {
     border: `1px solid ${theme.pallete.divider}`,
+  } as CSSProperties,
+
+  children: {
+    minHeight: '7.18rem',
   } as CSSProperties,
 })
