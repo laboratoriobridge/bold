@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Box render should render correctly 1`] = `
+exports[`PivotTable - Box render should render correctly 1`] = `
 .emotion-0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,7 +64,7 @@ exports[`Box render should render correctly 1`] = `
 </div>
 `;
 
-exports[`Box render should render correctly with children and its styles 1`] = `
+exports[`PivotTable - Box render should render correctly with children and its styles 1`] = `
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -205,7 +205,7 @@ exports[`Box render should render correctly with children and its styles 1`] = `
 </div>
 `;
 
-exports[`Box render should render correctly with icon 1`] = `
+exports[`PivotTable - Box render should render correctly with icon 1`] = `
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -290,7 +290,7 @@ exports[`Box render should render correctly with icon 1`] = `
 </div>
 `;
 
-exports[`Box render should render correctly with rotated icon 1`] = `
+exports[`PivotTable - Box render should render correctly with rotated icon 1`] = `
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;

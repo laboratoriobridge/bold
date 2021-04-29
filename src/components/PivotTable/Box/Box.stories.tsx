@@ -1,15 +1,15 @@
 import { css } from '@emotion/core'
 import React from 'react'
-import { Checkbox } from '../Checkbox'
-import { HFlow } from '../HFlow'
+import { Checkbox } from '../../Checkbox'
+import { HFlow } from '../../HFlow'
 import { Box } from './Box'
 
 export default {
-  title: 'Components/Box',
+  title: 'Components/PivotTable/Box',
 }
 
 export const Empty = () => (
-  <Box label='Empty' icon='hamburguerMenu'>
+  <Box label='Empty'>
     <div />
   </Box>
 )
@@ -25,12 +25,10 @@ export const WithDefinedStyles = () => (
       font-weight: bold;
     `}
   >
-    <div>
-      <HFlow>
-        <Checkbox label='Check1'></Checkbox>
-        <Checkbox label='Check2'></Checkbox>
-        <Checkbox label='Check3'></Checkbox>
-      </HFlow>
-    </div>
+    <HFlow>
+      <Checkbox label='Check1' />
+      <Checkbox label='Check2' />
+      <Checkbox label='Check3' />
+    </HFlow>
   </Box>
 )

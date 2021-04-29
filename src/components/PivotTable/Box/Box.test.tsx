@@ -2,10 +2,10 @@ import css from '@emotion/css'
 import { render } from '@testing-library/react'
 import React from 'react'
 
-import { VFlow } from '../VFlow'
+import { VFlow } from '../../VFlow'
 import { Box } from './Box'
 
-describe('Box', () => {
+describe('PivotTable - Box', () => {
   describe('render', () => {
     it('should render correctly', () => {
       const { container } = render(

@@ -1,7 +1,7 @@
 import { SerializedStyles } from '@emotion/core'
 import React, { CSSProperties, ReactElement } from 'react'
-import { Theme, useStyles } from '../../styles'
-import { Icon, Icons } from '../Icon'
+import { Theme, useStyles } from '../../../styles'
+import { Icon, Icons } from '../../Icon'
 
 export interface BoxProps {
   styles?: SerializedStyles
