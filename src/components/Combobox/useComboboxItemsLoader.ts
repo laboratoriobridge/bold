@@ -20,10 +20,13 @@ export function useComboboxItemsLoader<T>(items: AsyncComboboxLoadFn<T>, debounc
 
   const debouncedLoad = useMemo(() => debounce(load, debounceMs), [load, debounceMs])
 
-  const loadItems = (filter: string) => {
-    setLoading(true)
-    return debouncedLoad(filter)
-  }
+  const loadItems = useCallback(
+    (filter: string) => {
+      setLoading(true)
+      return debouncedLoad(filter)
+    },
+    [debouncedLoad]
+  )
 
   return {
     items: currItems,

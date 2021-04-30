@@ -1,6 +1,6 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { CSSProperties, useMemo, useRef, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -48,7 +48,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const locale = useLocale()
   const { classes } = useStyles(createStyles)
 
-  const getItems = useMemo(() => (typeof items === 'function' ? items : (query: string) => filter(items, query)), [
+  const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
     items,
     filter,
   ])
@@ -57,6 +57,9 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     debounceMilliseconds
   )
   const isLoading = externalLoading || loadingItems
+
+  //Load items corresponding to empty filter once
+  useEffect(() => loadItems(''), [])
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
@@ -79,7 +82,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 
     stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
-    onInputValueChange: composeHandlers(loadItems, onFilterChange),
+    onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
       closeMenu()
       onChange?.(selectedItem)

@@ -30,7 +30,7 @@ const fruits: Fruit[] = [
 const itemToString = (item: Fruit) => item.label
 
 const ComboboxTest = (props: Partial<ComboboxProps<Fruit>>) => (
-  <Combobox<typeof fruits[0]> items={fruits} itemToString={itemToString} {...props} />
+  <Combobox<typeof fruits[0]> items={fruits} itemToString={itemToString} debounceMilliseconds={0} {...props} />
 )
 
 function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
