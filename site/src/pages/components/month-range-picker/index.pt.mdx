@@ -1,0 +1,20 @@
+import { Demo } from '../../../components/Demo'
+
+# Month Range Picker
+
+O Month Range Picker permite que o usuário selecione um período em meses através de um calendário. Por padrão, o calendário apresenta sempre o ano atual. Caso já tenha uma data inserida, o calendário apresenta o ano referente à esta data.
+
+## Best practices
+
+- O mês do valor da entrada começa com o zero, ou seja, Janeiro é representado pelo zero e Dezembro pelo 11.
+- Você pode estabelecer um valor mínimo e máximo que o usuário poderá escolher.
+- O campo deve permitir que o usuário também insira o valor através de input do teclado.
+- Se o usuário deve selecionar um período com maior granularidade, como semanas ou dias, utilize o [Date Picker](/components/date-picker).
+
+## Padrão
+
+<Demo src='pages/components/month-range-picker/MonthRangePickerDefault' />
+
+## Com limites
+
+<Demo src='pages/components/month-range-picker/MonthRangePickerRestricted' />

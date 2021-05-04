@@ -53,6 +53,7 @@ export default [
       { href: '/components/link', title: 'menu-link' },
       { href: '/components/modal', title: 'menu-modal' },
       { href: '/components/month-paginator', title: 'menu-month-paginator' },
+      { href: '/components/month-range-picker', title: 'menu-month-range-picker' },
       { href: '/components/multi-select', title: 'menu-multi-select' },
       { href: '/components/paginator', title: 'menu-paginator' },
       { href: '/components/radio-button', title: 'menu-radio-button' },
