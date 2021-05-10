@@ -1,0 +1,197 @@
+import { fireEvent, render } from '@testing-library/react'
+import React from 'react'
+import { Draggable, DraggableProps } from './Draggable'
+import { ItemTypes } from './types/ItemTypes'
+
+type Pet = {
+  nome: string
+  dono: string
+}
+
+type KeyMapping = {
+  keyName: string
+  formatter?: (value: string) => string
+  ordenator?: (a: string, b: string) => number
+}
+
+const petKeyMapping = new Map<keyof Pet, KeyMapping>([
+  ['nome', { keyName: 'Nome' }],
+  ['dono', { keyName: 'Dono' }],
+])
+
+const keyState: Array<keyof Pet> = ['nome', 'dono']
+const key: keyof Pet = keyState[0]
+const keys = new Map<keyof Pet, string[]>([
+  ['nome', ['Bebel', 'Foguete', 'Scooby-Doo']],
+  ['dono', ['Rufus', 'Viridiana', 'Salsicha']],
+])
+
+const createFilterComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
+  <Draggable<Pet>
+    key={key}
+    type={ItemTypes.FILTER}
+    name={key}
+    onDragEnd={() => {}}
+    onKeyNav={() => {}}
+    value={petKeyMapping.get(key).keyName}
+    origin='campos_disponíveis'
+    filterState={new Set<string>()}
+    filterValues={keys.get(key)}
+    handleFilterUpdate={() => {}}
+    {...props}
+  />
+)
+
+describe('FilterDraggable', () => {
+  describe('render', () => {
+    it('should render correctly with no values of filterState', () => {
+      const { container } = render(createFilterComponent())
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctly with all values of filterState', () => {
+      const { container } = render(createFilterComponent({ filterState: new Set<string>(keys.get(key)) }))
+      expect(container).toMatchSnapshot()
+    })
+
+    it('should render correctly with some values of filterState', () => {
+      const { container } = render(
+        createFilterComponent({ filterState: new Set<string>(['Bebel']) })
+      )
+      expect(container).toMatchSnapshot()
+    })
+  })
+
+  describe('handleKeyDown', () => {
+    it('should call the onKeyNav with direction as up when the user press the ArrowUp key', () => {
+      const keyNav = jest.fn()
+      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
+
+      fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
+      expect(keyNav).toBeCalledWith('up', 'campos_disponíveis', 'nome')
+    })
+
+    it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
+      const keyNav = jest.fn()
+      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
+
+      fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
+      expect(keyNav).toBeCalledWith('down', 'campos_disponíveis', 'nome')
+    })
+
+    it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
+      const keyNav = jest.fn()
+      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
+
+      fireEvent.keyDown(getByRole('button'), { key: 'ArrowLeft', code: 'ArrowLeft' })
+      expect(keyNav).toBeCalledWith('left', 'campos_disponíveis', 'nome')
+    })
+
+    it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
+      const keyNav = jest.fn()
+      const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
+
+      fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
+      expect(keyNav).toBeCalledWith('right', 'campos_disponíveis', 'nome')
+    })
+  })
+
+  it('should show the drop down menu when the user clicks on component', () => {
+    const { getByRole, getAllByRole, getByText } = render(createFilterComponent())
+
+    const button = getByRole('button')
+
+    fireEvent.click(button)
+
+    expect(button.getAttribute('aria-expanded')).toBeTruthy()
+
+    expect(getAllByRole('menuitem')).toHaveLength(5) // Pesquisa + Todos os itens + Bebel + Foguete + Scooby-Doo
+
+    expect(getByText('Todos os itens')).toBeDefined()
+    expect(getByText('Bebel')).toBeDefined()
+    expect(getByText('Foguete')).toBeDefined()
+    expect(getByText('Scooby-Doo')).toBeDefined()
+  })
+
+  describe('handleFilterUpdate', () => {
+    describe('handleSelectAll', () => {
+      it('should pass a empty set when the user uncheck "all itens" checkbox', () => {
+        const handleFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(
+          createFilterComponent({ handleFilterUpdate: handleFilterUpdate, filterState: new Set<string>(keys.get(key)) })
+        )
+
+        const button = getByRole('button')
+
+        fireEvent.click(button)
+
+        const allItemsCheckbox = getAllByRole('checkbox')[0]
+
+        fireEvent.click(allItemsCheckbox)
+
+        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>(new Set<string>()))
+      })
+
+      it('should pass all values in a set when the user check "all items" checkbox', () => {
+        const handleFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(createFilterComponent({ handleFilterUpdate: handleFilterUpdate }))
+
+        const button = getByRole('button')
+
+        fireEvent.click(button)
+
+        const allItemsCheckbox = getAllByRole('checkbox')[0]
+
+        fireEvent.click(allItemsCheckbox)
+
+        expect(handleFilterUpdate).toBeCalledWith(
+          'nome',
+          new Set<string>(['Bebel', 'Foguete', 'Scooby-Doo'])
+        )
+      })
+    })
+
+    describe('handleSelect', () => {
+      it('should return a set with "Bebel" when the user check its checkbox', () => {
+        const handleFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(createFilterComponent({ handleFilterUpdate: handleFilterUpdate }))
+
+        const button = getByRole('button')
+
+        fireEvent.click(button)
+
+        const checkbox = getAllByRole('checkbox')[1]
+
+        fireEvent.click(checkbox)
+
+        expect(handleFilterUpdate).toBeCalledWith(
+          'nome',
+          new Set<string>(['Bebel'])
+        )
+      })
+
+      it('should return a set without "Bebel" when the user uncheck its checkbox', () => {
+        const handleFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(
+          createFilterComponent({
+            handleFilterUpdate: handleFilterUpdate,
+            filterState: new Set<string>(['Foguete', 'Bebel']),
+          })
+        )
+
+        const button = getByRole('button')
+
+        fireEvent.click(button)
+
+        const checkbox = getAllByRole('checkbox')[1]
+
+        fireEvent.click(checkbox)
+
+        expect(handleFilterUpdate).toBeCalledWith(
+          'nome',
+          new Set<string>(['Foguete'])
+        )
+      })
+    })
+  })
+})

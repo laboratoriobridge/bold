@@ -59,16 +59,14 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
   }
 
   const handleSelect = (element: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.nativeEvent.isTrusted) {
-      filterState.has(element) ? filterState.delete(element) : filterState.add(element)
-      handleFilterUpdate(name, new Set<string>(filterState))
-      if (filterState.size === 0) {
-        setAll(0)
-      } else if (filterState.size === filterValues.length) {
-        setAll(2)
-      } else {
-        setAll(1)
-      }
+    filterState.has(element) ? filterState.delete(element) : filterState.add(element)
+    handleFilterUpdate(name, new Set<string>(filterState))
+    if (filterState.size === 0) {
+      setAll(0)
+    } else if (filterState.size === filterValues.length) {
+      setAll(2)
+    } else {
+      setAll(1)
     }
   }
 
@@ -112,14 +110,12 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
   }
 
   const handleSelectAll = () => (event: any) => {
-    if (event.nativeEvent.isTrusted) {
-      if (all === 2) {
-        setAll(0)
-        handleFilterUpdate(name, new Set<string>(new Set<string>()))
-      } else {
-        setAll(2)
-        handleFilterUpdate(name, new Set<string>(filterValues))
-      }
+    if (all === 2) {
+      setAll(0)
+      handleFilterUpdate(name, new Set<string>(new Set<string>()))
+    } else {
+      setAll(2)
+      handleFilterUpdate(name, new Set<string>(filterValues))
     }
   }
 
@@ -162,6 +158,7 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
       return null
     }
   }
+
   return (
     <div ref={drag} css={[styles.dndBox, isDragging && styles.dndBoxDragging]}>
       <React.Fragment>

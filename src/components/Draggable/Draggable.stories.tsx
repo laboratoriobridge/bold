@@ -7,12 +7,12 @@ export default {
   title: 'Components/Draggable',
 }
 
-export type Municipio = {
+type Municipio = {
   uf: string
   nome: string
 }
 
-export type KeyMapping = {
+type KeyMapping = {
   keyName: string
   formatter?: (value: string) => string
   ordenator?: (a: string, b: string) => number
@@ -52,7 +52,7 @@ export const Filter = () => (
     formatter={municipioKeyMapping.get(key).formatter}
     origin='campos_disponiveis'
     filterValues={keys.get(key)}
-    filterState={new Set<string>()}
+    filterState={new Set<string>(['Santa Catarina'])}
     handleFilterUpdate={action('handleFilterUpdate')}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}
