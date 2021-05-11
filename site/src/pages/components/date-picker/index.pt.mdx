@@ -14,6 +14,11 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
 - Utilize quando a data selecionada for próxima à data atual ou com um período menor que 1 ano.
 - Utilize placeholder indicando o formato da entrada de dados, por exemplo: dd/mm/aaaa ou mm/dd/aa, etc.
 
+### Week Range Picker
+
+- Utilize-o caso os períodos selecionados devam começar em um domingo e terminar em um sábado.
+- Caso coloque um valor na prop value do Week Range Picker, ele precisa ser uma semana, por exemplo: 02/05/2021 (Domingo) a 08/05/2021 (Sábado). Caso contrário, não vai marcar corretamente. Um exemplo de entrada inválida seria: 03/05/2021 (Segunda) a 05/05/2021 (Quarta).
+
 ### Month Range Picker
 
 - Use quando o período selecionado deve ser no mínimo um mês inteiro.
@@ -39,6 +44,10 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
       <td>Utilizado para selecionar um intervalo de datas.</td>
     </tr>
     <tr>
+      <th>Período em semanas (Week Range Picker)</th>
+      <td>Utilizado para selecionar um intervalo de semanas.</td>
+    </tr>
+    <tr>
       <th>Período em meses (Month Range Picker)</th>
       <td>Utilizado para selecionar um intervalo de meses.</td>
     </tr>
@@ -52,6 +61,10 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
 ### Date Range Picker
 
 <Demo src='pages/components/date-picker/DateRangePickerExample' />
+
+### Week Range Picker
+
+<Demo src='pages/components/date-picker/WeekRangePickerExample' />
 
 ### Month Range Picker
 

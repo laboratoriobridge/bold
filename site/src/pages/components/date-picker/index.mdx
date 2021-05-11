@@ -14,6 +14,11 @@ Date components allow the user to make a specific selection through a visual cal
 - Use when the date selected is close to the actual date or for a period of less than 1 year.
 - Use placeholders to indicate the format of the data entry, for example: dd/mm/yyyy or mm/dd/yy, etc..
 
+### Week Range Picker
+
+- Use if the selected periods must start on a Sunday and end on a Saturday.
+- If this component receives a date range in it's value prop, it must be a week, for example: 05/02/2021 (Sunday) to 05/08/2021 (Saturday). Otherwise, it will not be selected. An example of a invalid entry: 05/03/2021 (Monday) to 05/05/2021 (Wednesday).
+
 ### Month Range Picker
 
 - Use when the selected period must be at least an entire month.
@@ -39,6 +44,10 @@ Date components allow the user to make a specific selection through a visual cal
       <td>Used to select a date range.</td>
     </tr>
     <tr>
+      <th>Range Week Picker</th>
+      <td>Used to select a week range.</td>
+    </tr>
+    <tr>
       <th>Range Month Picker</th>
       <td>Used to select a month range.</td>
     </tr>
@@ -52,6 +61,10 @@ Date components allow the user to make a specific selection through a visual cal
 ### Date Range Picker
 
 <Demo src='pages/components/date-picker/DateRangePickerExample' />
+
+### Week Range Picker
+
+<Demo src='pages/components/date-picker/WeekRangePickerExample' />
 
 ### Month Range Picker
 
