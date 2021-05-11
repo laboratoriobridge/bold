@@ -1,5 +1,4 @@
-import { DateRange } from 'bold-ui'
-import { MonthRangePicker, ReferenceMonthRange } from 'bold-ui/components/MonthRangePicker/MonthRangePicker'
+import { DateRange, MonthRangePicker, ReferenceMonthRange } from 'bold-ui'
 import React, { useState } from 'react'
 
 function MonthRangePickerDefault() {
