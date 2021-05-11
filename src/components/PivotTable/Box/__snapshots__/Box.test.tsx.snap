@@ -1,0 +1,376 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PivotTable - Box render should render correctly 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-1 {
+  background-color: #F0F0F5;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-3 {
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-2 {
+  min-height: 7.18rem;
+}
+
+<div>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-1"
+    >
+      <h4
+        class="emotion-0"
+      >
+        Box
+      </h4>
+    </div>
+    <div
+      class="emotion-2"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PivotTable - Box render should render correctly with children and its styles 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  background-color: #F0F0F5;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-8 {
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.emotion-7 {
+  min-height: 7.18rem;
+  color: red;
+  padding: 1rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-3 {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-3:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-3:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
+<div>
+  <div
+    class="emotion-8"
+  >
+    <div
+      class="emotion-2"
+    >
+      <h4
+        class="emotion-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 20.994c-.322-.003-.708-.158-1.158-.465C6.652 17.375 2 14.46 2 8.995 2 5.627 4.42 3 7.5 3c1.74 0 3.41.883 4.5 2.267C13.09 3.883 14.76 3 16.5 3 19.58 3 22 5.627 22 8.995c0 5.523-4.862 8.495-8.854 11.534-.442.314-.824.47-1.146.465z"
+          />
+        </svg>
+        Box
+      </h4>
+    </div>
+    <div
+      class="emotion-7"
+    >
+      <div
+        class="emotion-6"
+      >
+        <div
+          class="emotion-3"
+        >
+          <p>
+            Child #0
+          </p>
+        </div>
+        <div
+          class="emotion-3"
+        >
+          <p>
+            Child #1
+          </p>
+        </div>
+        <div
+          class="emotion-3"
+        >
+          <p>
+            Child #2
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PivotTable - Box render should render correctly with icon 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  background-color: #F0F0F5;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-4 {
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-3 {
+  min-height: 7.18rem;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+<div>
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-2"
+    >
+      <h4
+        class="emotion-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 20.994c-.322-.003-.708-.158-1.158-.465C6.652 17.375 2 14.46 2 8.995 2 5.627 4.42 3 7.5 3c1.74 0 3.41.883 4.5 2.267C13.09 3.883 14.76 3 16.5 3 19.58 3 22 5.627 22 8.995c0 5.523-4.862 8.495-8.854 11.534-.442.314-.824.47-1.146.465z"
+          />
+        </svg>
+        WithIcon
+      </h4>
+    </div>
+    <div
+      class="emotion-3"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`PivotTable - Box render should render correctly with rotated icon 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.emotion-2 {
+  background-color: #F0F0F5;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-4 {
+  border: 1px solid #D3D4DD;
+}
+
+.emotion-3 {
+  min-height: 7.18rem;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+<div>
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-2"
+    >
+      <h4
+        class="emotion-1"
+      >
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M12 20.994c-.322-.003-.708-.158-1.158-.465C6.652 17.375 2 14.46 2 8.995 2 5.627 4.42 3 7.5 3c1.74 0 3.41.883 4.5 2.267C13.09 3.883 14.76 3 16.5 3 19.58 3 22 5.627 22 8.995c0 5.523-4.862 8.495-8.854 11.534-.442.314-.824.47-1.146.465z"
+          />
+        </svg>
+        WithRotation
+      </h4>
+    </div>
+    <div
+      class="emotion-3"
+    >
+      <div />
+    </div>
+  </div>
+</div>
+`;
