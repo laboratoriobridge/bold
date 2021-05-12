@@ -2,7 +2,7 @@ import { Demo } from '../../../components/Demo'
 
 # Date picker
 
-Componentes de data permitem que o usuário faça uma seleção específica através de um calendário. Por padrão, o calendário apresenta sempre o mês atual. Caso já tenha uma data inserida, o calendário apresenta o mês referente à esta data.
+Componentes de data permitem que o usuário faça uma seleção específica através de um calendário. Por padrão, o calendário apresenta sempre o mês ou ano atual. Caso já tenha uma data inserida, o calendário apresenta o mês ou ano referente à esta data.
 
 ## Boas práticas
 
@@ -18,6 +18,11 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
 
 - Utilize-o caso os períodos selecionados devam começar em um domingo e terminar em um sábado.
 - Caso coloque um valor na prop value do Week Range Picker, ele precisa ser uma semana, por exemplo: 02/05/2021 (Domingo) a 08/05/2021 (Sábado). Caso contrário, não vai marcar corretamente. Um exemplo de entrada inválida seria: 03/05/2021 (Segunda) a 05/05/2021 (Quarta).
+
+### Month Range Picker
+
+- Use quando o período selecionado deve ser no mínimo um mês inteiro.
+- Se o usuário deve selecionar um período com maior granularidade, como semanas ou dias, utilize os componentes acima.
 
 ## Tipos de Date picker
 
@@ -42,6 +47,10 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
       <th>Período em semanas (Week Range Picker)</th>
       <td>Utilizado para selecionar um intervalo de semanas.</td>
     </tr>
+    <tr>
+      <th>Período em meses (Month Range Picker)</th>
+      <td>Utilizado para selecionar um intervalo de meses.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -56,3 +65,7 @@ Componentes de data permitem que o usuário faça uma seleção específica atra
 ### Week Range Picker
 
 <Demo src='pages/components/date-picker/WeekRangePickerExample' />
+
+### Month Range Picker
+
+<Demo src='pages/components/date-picker/MonthRangePickerDefault' />

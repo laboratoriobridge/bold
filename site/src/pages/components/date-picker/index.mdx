@@ -2,7 +2,7 @@ import { Demo } from '../../../components/Demo'
 
 # Date picker
 
-Date components allow the user to make a specific selection through a visual calendar. By default, the calendar always displays the current month. If you already have a date entered, the calendar displays the month for that date.
+Date components allow the user to make a specific selection through a visual calendar. By default, the calendar always displays the current month or year. If you already have a date entered, the calendar displays the month or year for that date.
 
 ## Best practices
 
@@ -18,6 +18,11 @@ Date components allow the user to make a specific selection through a visual cal
 
 - Use if the selected periods must start on a Sunday and end on a Saturday.
 - If this component receives a date range in it's value prop, it must be a week, for example: 05/02/2021 (Sunday) to 05/08/2021 (Saturday). Otherwise, it will not be selected. An example of a invalid entry: 05/03/2021 (Monday) to 05/05/2021 (Wednesday).
+
+### Month Range Picker
+
+- Use when the selected period must be at least an entire month.
+- If the user should select a period with greater granularity, such as weeks or days, use the above components.
 
 ## Date picker types
 
@@ -42,6 +47,10 @@ Date components allow the user to make a specific selection through a visual cal
       <th>Range Week Picker</th>
       <td>Used to select a week range.</td>
     </tr>
+    <tr>
+      <th>Range Month Picker</th>
+      <td>Used to select a month range.</td>
+    </tr>
   </tbody>
 </table>
 
@@ -56,3 +65,7 @@ Date components allow the user to make a specific selection through a visual cal
 ### Week Range Picker
 
 <Demo src='pages/components/date-picker/WeekRangePickerExample' />
+
+### Month Range Picker
+
+<Demo src='pages/components/date-picker/MonthRangePickerDefault' />
