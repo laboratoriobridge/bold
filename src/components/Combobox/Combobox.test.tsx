@@ -1,5 +1,7 @@
 import React from 'react'
 import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
+import matchSorter from 'match-sorter'
+import waait from 'waait'
 import { Text } from '../Text'
 import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
@@ -27,10 +29,28 @@ const fruits: Fruit[] = [
   { value: 12, label: 'Pear' },
 ]
 
+const asyncDelay = 1000
+const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
+  return new Promise((resolve) => {
+    setTimeout(
+      () =>
+        resolve(
+          matchSorter<Fruit>(fruits, query, { keys: [(item) => item.label] })
+        ),
+      asyncDelay
+    )
+  })
+}
+
 const itemToString = (item: Fruit) => item.label
 
-const ComboboxTest = (props: Partial<ComboboxProps<Fruit>>) => (
-  <Combobox<typeof fruits[0]> items={fruits} itemToString={itemToString} debounceMilliseconds={0} {...props} />
+const ComboboxTest = (props: Partial<ComboboxProps<Fruit>> & { async?: boolean }) => (
+  <Combobox<typeof fruits[0]>
+    items={props.async ? loadFruitsAsync : fruits}
+    itemToString={itemToString}
+    debounceMilliseconds={0}
+    {...props}
+  />
 )
 
 function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
@@ -82,11 +102,11 @@ const ComboboxWithCutomComponentsTest = (props: Partial<ComboboxProps<Fruit>> & 
   />
 )
 
-it('has aria-compliant attributes', async () => {
+it.each([[true], [false]])('has aria-compliant attributes', async (async: boolean) => {
   // From https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
   let baseElement: RenderResult['baseElement']
   await act(async () => {
-    const result = render(<ComboboxTest label='Fruits' />)
+    const result = render(<ComboboxTest label='Fruits' async={async} />)
     baseElement = result.baseElement
   })
   const combobox = baseElement.querySelector('[role="combobox"]')
@@ -118,6 +138,7 @@ it('has aria-compliant attributes', async () => {
     fireEvent.click(dropdownButton)
   })
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
+  await act(() => waait(asyncDelay))
   expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
 })
 
@@ -524,4 +545,30 @@ it('renders correcly opened with add-item', async () => {
     fireEvent.click(dropdownButton)
   })
   expect(baseElement).toMatchSnapshot()
+})
+
+describe('async loading', () => {
+  it('should NOT call "loadItems" when mounted', async () => {
+    const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))
+    await act(async () => {
+      render(<Combobox items={loadItems} />)
+    })
+    expect(loadItems).not.toHaveBeenCalledWith()
+  })
+
+  it('should call "loadItems" on first interaction', async () => {
+    const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))
+    let container = null
+    await act(async () => {
+      const { container: cnt } = render(<Combobox items={loadItems} itemToString={(item) => item} />)
+      container = cnt
+    })
+
+    container.querySelector('input').focus()
+    await act(() => waait(300))
+    expect(loadItems).not.toHaveBeenCalledWith()
+
+    await act(() => waait(300))
+    expect(loadItems).toHaveBeenCalledWith('')
+  })
 })

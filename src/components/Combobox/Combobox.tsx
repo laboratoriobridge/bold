@@ -45,9 +45,11 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     ...rest
   } = props
 
+  const [itemsLoaded, setItemsLoaded] = useState(false)
   const locale = useLocale()
   const { classes } = useStyles(createStyles)
 
+  const isAsync = typeof items === 'function'
   const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
     items,
     filter,
@@ -56,10 +58,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     getItems,
     debounceMilliseconds
   )
-  const isLoading = externalLoading || loadingItems
+  const isLoading = externalLoading || (isAsync && loadingItems)
 
-  //Load items corresponding to empty filter once
-  useEffect(() => loadItems(''), [])
+  // Reload items when changed
+  useEffect(() => setItemsLoaded(false), [items])
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
@@ -86,6 +88,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     onSelectedItemChange: ({ selectedItem }) => {
       closeMenu()
       onChange?.(selectedItem)
+    },
+    onIsOpenChange: ({ isOpen, inputValue }) => {
+      isOpen && !itemsLoaded && loadItems(inputValue)
+      setItemsLoaded(true)
     },
   })
 
