@@ -42,7 +42,7 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
     item: { type, name: name, origin },
     end: (_item, monitor) => {
       const dropResult = monitor.getDropResult()
-      if (dropResult != null && dropResult.result === 'delete') {
+      if (dropResult != null) {
         onDragEnd()
       }
     },

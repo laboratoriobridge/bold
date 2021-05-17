@@ -194,4 +194,46 @@ describe('FilterDraggable', () => {
       })
     })
   })
+
+  describe('handleSearch', () => {
+    it('should show only Scooby-Doo checkbox when the user types "Sco" ', () => {
+      const { getByRole, getByPlaceholderText, getByTitle } = render(createFilterComponent())
+
+      const button = getByRole('button')
+
+      fireEvent.click(button)
+
+      const input = getByPlaceholderText('Pesquisa')
+
+      fireEvent.change(input, { target: { value: 'Sco' } })
+
+      expect(getByTitle('Scooby-Doo')).toBeDefined()
+    })
+
+    it('should show an empty list when the user types "Mel" ', () => {
+      const { getByRole, getByPlaceholderText, getAllByRole } = render(createFilterComponent())
+
+      const button = getByRole('button')
+
+      fireEvent.click(button)
+
+      const input = getByPlaceholderText('Pesquisa')
+
+      fireEvent.change(input, { target: { value: 'Mel' } })
+
+      expect(() => {
+        getAllByRole('checkbox')
+      }).toThrowError()
+    })
+  })
+
+  describe('Drag and drop', () => {
+    const onDragEnd = jest.fn()
+    const { container } = render(createFilterComponent({ onDragEnd: onDragEnd }))
+
+    fireEvent.dragStart(container)
+
+    // Right now, we can only test if the onDragEnd is not called, because we don't have a droppable to put the draggable in
+    expect(onDragEnd).toHaveBeenCalledTimes(0)
+  })
 })
