@@ -129,8 +129,9 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
       )
     }
 
-    const value = searchedFilterSet[showTodos ? index - 1 : index]
-    if (value || Number(value) === 0) {
+    const value: string | undefined | null = searchedFilterSet[showTodos ? index - 1 : index]
+
+    if (value && value.length > 0) {
       const bigValue = value.length > 45
 
       const key = name + value
@@ -185,7 +186,7 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
           popperProps={{ placement: 'bottom' }}
           style={styles.dropdown}
         >
-          <div css={styles.dropdownArea} onBlur={(e) => e.stopPropagation()}>
+          <div title='dropDownArea' css={styles.dropdownArea} onBlur={(e) => e.stopPropagation()}>
             <DropdownItem css={styles.noOutline}>
               <div css={styles.search}>
                 <TextField
