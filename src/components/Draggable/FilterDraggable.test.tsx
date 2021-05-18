@@ -62,6 +62,22 @@ describe('FilterDraggable', () => {
     })
   })
 
+  it('should close the dropdown menu when the user clicks on the component when it is open', () => {
+    const { getByRole, getAllByRole } = render(createFilterComponent())
+
+    const button = getByRole('button')
+
+    fireEvent.click(button) // open
+
+    expect(getAllByRole('checkbox')).toHaveLength(4) // options + all items
+
+    fireEvent.click(button) // close
+
+    expect(() => {
+      getAllByRole('checkbox')
+    }).toThrowError()
+  })
+
   describe('handleKeyDown', () => {
     it('should call the onKeyNav with direction as up when the user press the ArrowUp key', () => {
       const keyNav = jest.fn()
@@ -170,12 +186,12 @@ describe('FilterDraggable', () => {
         )
       })
 
-      it('should return a set without "Bebel" when the user uncheck its checkbox', () => {
+      it('should return an empty set when the user uncheck "Bebel" checkbox', () => {
         const handleFilterUpdate = jest.fn()
         const { getByRole, getAllByRole } = render(
           createFilterComponent({
             handleFilterUpdate: handleFilterUpdate,
-            filterState: new Set<string>(['Foguete', 'Bebel']),
+            filterState: new Set<string>(['Bebel']),
           })
         )
 
@@ -187,10 +203,27 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(handleFilterUpdate).toBeCalledWith(
-          'nome',
-          new Set<string>(['Foguete'])
+        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>())
+      })
+
+      it('should return all options when the user check the "Foguete" checkbox', () => {
+        const handleFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(
+          createFilterComponent({
+            handleFilterUpdate: handleFilterUpdate,
+            filterState: new Set<string>(['Bebel', 'Scooby-Doo']),
+          })
         )
+
+        const button = getByRole('button')
+
+        fireEvent.click(button)
+
+        const checkbox = getAllByRole('checkbox')[2]
+
+        fireEvent.click(checkbox)
+
+        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>(keys.get(key)))
       })
     })
   })
