@@ -1,11 +1,12 @@
 import { createEvent, fireEvent, render } from '@testing-library/react'
 import React from 'react'
+import { DndProvider, useDrop } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
 import { Draggable, DraggableProps } from './Draggable'
 import { ItemTypes } from './types/ItemTypes'
 
 type Pet = {
   nome: string
-  dono: string
 }
 
 type KeyMapping = {
@@ -14,17 +15,11 @@ type KeyMapping = {
   ordenator?: (a: string, b: string) => number
 }
 
-const petKeyMapping = new Map<keyof Pet, KeyMapping>([
-  ['nome', { keyName: 'Nome' }],
-  ['dono', { keyName: 'Dono' }],
-])
+const petKeyMapping = new Map<keyof Pet, KeyMapping>([['nome', { keyName: 'Nome' }]])
 
-const keyState: Array<keyof Pet> = ['nome', 'dono']
+const keyState: Array<keyof Pet> = ['nome']
 const key: keyof Pet = keyState[0]
-const keys = new Map<keyof Pet, string[]>([
-  ['nome', ['Bebel', 'Foguete', 'Scooby-Doo']],
-  ['dono', ['Rufus', 'Viridiana', 'Salsicha']],
-])
+const keys = new Map<keyof Pet, string[]>([['nome', ['Bebel', 'Foguete', 'Scooby-Doo']]])
 
 const createFilterComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
   <Draggable<Pet>
@@ -41,6 +36,25 @@ const createFilterComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
     {...props}
   />
 )
+
+function DropableDiv(props: any) {
+  const [, drag] = useDrop({
+    accept: ItemTypes.FILTER,
+    drop() {
+      return { result: 'drop' }
+    },
+    collect: (monitor) => ({
+      canDrop: !!monitor.canDrop(),
+      isOver: monitor.isOver(),
+    }),
+  })
+
+  return (
+    <div ref={drag} className='dropable'>
+      {props.children}
+    </div>
+  )
+}
 
 describe('FilterDraggable', () => {
   describe('render', () => {
@@ -325,12 +339,26 @@ describe('FilterDraggable', () => {
   })
 
   describe('Drag and drop', () => {
-    const onDragEnd = jest.fn()
-    const { container } = render(createFilterComponent({ onDragEnd: onDragEnd }))
+    it('should call onDragEnd when the drag event ends', () => {
+      const onDragEnd = jest.fn()
+      const { container } = render(
+        <DndProvider backend={HTML5Backend}>
+          <DropableDiv>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
+          <DropableDiv />
+        </DndProvider>
+      )
 
-    fireEvent.dragStart(container)
+      const dragabble = container.querySelectorAll('div[class*=dropable]')[0].firstChild
 
-    // Right now, we can only test if the onDragEnd is not called, because we don't have a droppable to put the draggable in
-    expect(onDragEnd).toHaveBeenCalledTimes(0)
+      const secondDiv = container.querySelectorAll('div[class*=dropable]')[1]
+
+      fireEvent.dragStart(dragabble)
+      fireEvent.dragEnter(secondDiv)
+      fireEvent.dragOver(secondDiv)
+      fireEvent.drop(secondDiv)
+      fireEvent.dragEnd(dragabble)
+
+      expect(onDragEnd).toHaveBeenCalled()
+    })
   })
 })

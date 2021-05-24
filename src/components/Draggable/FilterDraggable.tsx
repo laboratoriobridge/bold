@@ -8,7 +8,7 @@ import { useTheme } from '../../styles'
 import { DraggableProps } from './Draggable'
 
 export interface FilterDraggableProps<T> extends NonNullable<DraggableProps<T>> {
-  styles
+  styles: any
 }
 
 export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
@@ -41,10 +41,7 @@ export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
   const [{ isDragging }, drag] = useDrag({
     item: { type, name: name, origin },
     end: (_item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (dropResult != null) {
-        onDragEnd()
-      }
+      if (monitor.getDropResult() != null) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
