@@ -2,17 +2,11 @@ import { createEvent, fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider, useDrop } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Draggable, DraggableProps } from './Draggable'
+import { Draggable, DraggableProps, KeyMapping } from './Draggable'
 import { ItemTypes } from './types/ItemTypes'
 
 type Pet = {
   nome: string
-}
-
-type KeyMapping = {
-  keyName: string
-  formatter?: (value: string) => string
-  ordenator?: (a: string, b: string) => number
 }
 
 const petKeyMapping = new Map<keyof Pet, KeyMapping>([['nome', { keyName: 'Nome' }]])
@@ -37,9 +31,9 @@ const createFilterComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
   />
 )
 
-function DropableDiv(props: any) {
+export function DropableDiv(props: any) {
   const [, drag] = useDrop({
-    accept: ItemTypes.FILTER,
+    accept: props.type,
     drop() {
       return { result: 'drop' }
     },
@@ -343,8 +337,8 @@ describe('FilterDraggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
-          <DropableDiv />
+          <DropableDiv type={ItemTypes.FILTER}>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
+          <DropableDiv type={ItemTypes.FILTER} />
         </DndProvider>
       )
 

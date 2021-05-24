@@ -7,6 +7,12 @@ import { FilterDraggable } from './FilterDraggable'
 import { ItemTypes } from './types/ItemTypes'
 import { DefaultDraggable } from './DefaultDraggable'
 
+export type KeyMapping = {
+  keyName: string
+  formatter?: (value: string) => string
+  ordenator?: (a: string, b: string) => number
+}
+
 export interface DraggableProps<T> {
   name: keyof T
   type: ItemTypes

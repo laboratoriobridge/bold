@@ -1,6 +1,6 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { Draggable } from './Draggable'
+import { Draggable, KeyMapping } from './Draggable'
 import { ItemTypes } from './types/ItemTypes'
 
 export default {
@@ -10,12 +10,6 @@ export default {
 type Municipio = {
   uf: string
   nome: string
-}
-
-type KeyMapping = {
-  keyName: string
-  formatter?: (value: string) => string
-  ordenator?: (a: string, b: string) => number
 }
 
 const municipioKeyMapping = new Map<keyof Municipio, KeyMapping>([

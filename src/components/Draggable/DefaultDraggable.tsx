@@ -7,7 +7,7 @@ import { DraggableProps } from './Draggable'
 
 export interface DefaultDraggableProps<T>
   extends Omit<DraggableProps<T>, 'filterValues' | 'filterState' | 'handleFilterUpdate'> {
-  styles
+  styles: any
 }
 
 export function DefaultDraggable<T>(props: DefaultDraggableProps<T>) {
@@ -16,10 +16,7 @@ export function DefaultDraggable<T>(props: DefaultDraggableProps<T>) {
   const [{ isDragging }, drag] = useDrag({
     item: { type, name: name, origin },
     end: (_item, monitor) => {
-      const dropResult = monitor.getDropResult()
-      if (dropResult != null && dropResult.result === 'delete') {
-        onDragEnd()
-      }
+      if (monitor.getDropResult() != null) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
