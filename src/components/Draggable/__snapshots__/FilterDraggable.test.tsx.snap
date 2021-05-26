@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`FilterDraggable render should render correctly with all values of filterState 1`] = `
+.emotion-4 {
+  display: inline-block;
+  margin: 0.25rem 0.25rem;
+}
+
 .emotion-3 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -74,11 +79,6 @@ exports[`FilterDraggable render should render correctly with all values of filte
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-4 {
-  display: inline-block;
-  margin: 0.25rem 0.25rem;
 }
 
 <div>
@@ -130,6 +130,11 @@ exports[`FilterDraggable render should render correctly with all values of filte
 `;
 
 exports[`FilterDraggable render should render correctly with no values of filterState 1`] = `
+.emotion-4 {
+  display: inline-block;
+  margin: 0.25rem 0.25rem;
+}
+
 .emotion-3 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -203,11 +208,6 @@ exports[`FilterDraggable render should render correctly with no values of filter
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-4 {
-  display: inline-block;
-  margin: 0.25rem 0.25rem;
 }
 
 <div>
@@ -259,6 +259,11 @@ exports[`FilterDraggable render should render correctly with no values of filter
 `;
 
 exports[`FilterDraggable render should render correctly with some values of filterState 1`] = `
+.emotion-4 {
+  display: inline-block;
+  margin: 0.25rem 0.25rem;
+}
+
 .emotion-3 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -332,11 +337,6 @@ exports[`FilterDraggable render should render correctly with some values of filt
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
-}
-
-.emotion-4 {
-  display: inline-block;
-  margin: 0.25rem 0.25rem;
 }
 
 <div>

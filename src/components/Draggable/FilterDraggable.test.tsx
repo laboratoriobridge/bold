@@ -2,8 +2,9 @@ import { createEvent, fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider, useDrop } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Draggable, DraggableProps, KeyMapping } from './Draggable'
 import { ItemTypes } from './types/ItemTypes'
+import { KeyMapping } from './types/KeyMapping'
+import { FilterDraggable, FilterDraggableProps } from './FilterDraggable'
 
 type Pet = {
   nome: string
@@ -15,10 +16,9 @@ const keyState: Array<keyof Pet> = ['nome']
 const key: keyof Pet = keyState[0]
 const keys = new Map<keyof Pet, string[]>([['nome', ['Bebel', 'Foguete', 'Scooby-Doo']]])
 
-const createFilterComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
-  <Draggable<Pet>
+const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) => (
+  <FilterDraggable<Pet>
     key={key}
-    type={ItemTypes.FILTER}
     name={key}
     onDragEnd={() => {}}
     onKeyNav={() => {}}

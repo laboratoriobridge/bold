@@ -1,7 +1,8 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { Draggable, KeyMapping } from './Draggable'
-import { ItemTypes } from './types/ItemTypes'
+import { DefaultDraggable } from './DefaultDraggable'
+import { FilterDraggable } from './FilterDraggable'
+import { KeyMapping } from './types/KeyMapping'
 
 export default {
   title: 'Components/Draggable',
@@ -25,9 +26,8 @@ const keys = new Map<keyof Municipio, string[]>([
 ])
 
 export const Default = () => (
-  <Draggable<Municipio>
+  <DefaultDraggable<Municipio>
     key={key as string}
-    type={ItemTypes.DEFAULT}
     name={key}
     value={municipioKeyMapping.get(key).keyName || (key as string)}
     formatter={municipioKeyMapping.get(key).formatter}
@@ -38,9 +38,8 @@ export const Default = () => (
 )
 
 export const Filter = () => (
-  <Draggable<Municipio>
+  <FilterDraggable<Municipio>
     key={key as string}
-    type={ItemTypes.FILTER}
     name={key}
     value={municipioKeyMapping.get(key).keyName || (key as string)}
     formatter={municipioKeyMapping.get(key).formatter}

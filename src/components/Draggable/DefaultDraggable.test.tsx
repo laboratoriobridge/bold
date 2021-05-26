@@ -2,9 +2,10 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { Draggable, DraggableProps, KeyMapping } from './Draggable'
 import { ItemTypes } from './types/ItemTypes'
 import { DropableDiv } from './FilterDraggable.test'
+import { KeyMapping } from './types/KeyMapping'
+import { DefaultDraggable, DefaultDraggableProps } from './DefaultDraggable'
 
 type Pet = {
   nome: string
@@ -15,10 +16,9 @@ const petKeyMapping = new Map<keyof Pet, KeyMapping>([['nome', { keyName: 'Nome'
 const keyState: Array<keyof Pet> = ['nome']
 const key: keyof Pet = keyState[0]
 
-const createDefaultComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
-  <Draggable<Pet>
+const createDefaultComponent = (props: Partial<DefaultDraggableProps<Pet>> = {}) => (
+  <DefaultDraggable<Pet>
     key={key}
-    type={ItemTypes.DEFAULT}
     name={key}
     onDragEnd={() => {}}
     value={petKeyMapping.get(key).keyName}
