@@ -5,6 +5,7 @@ import { useStyles } from '../../styles'
 import { DefaultDraggableProps } from './DefaultDraggable'
 import { draggableCreateStyles } from './RealFilterDraggable'
 import { ItemTypes } from './types/ItemTypes'
+import { getKeyDirection } from './util'
 
 export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
   const { name, origin, value, onDragEnd, onKeyNav } = props
@@ -22,28 +23,7 @@ export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
   })
 
   const handleKeyDown = (event: any) => {
-    const key = event.nativeEvent.key
-    let direction
-
-    switch (key) {
-      case 'ArrowRight':
-        direction = 'right'
-        break
-
-      case 'ArrowLeft':
-        direction = 'left'
-        break
-
-      case 'ArrowUp':
-        direction = 'up'
-        break
-
-      case 'ArrowDown':
-        direction = 'down'
-        break
-    }
-
-    onKeyNav(direction, origin)
+    onKeyNav(getKeyDirection(event.nativeEvent.key), origin)
     onDragEnd()
   }
 

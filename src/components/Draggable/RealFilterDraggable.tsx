@@ -1,12 +1,12 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
 import { FixedSizeList } from 'react-window'
 import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField, Tooltip } from '..'
 import { Theme, useStyles, useTheme } from '../../styles'
 import { FilterDraggableProps } from './FilterDraggable'
+import { QuantityEnum } from './types/QuantityEnum'
 import { ItemTypes } from './types/ItemTypes'
+import { getKeyDirection } from './util'
 
 export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const { name, origin, value, filterValues, filterState, onDragEnd, handleFilterUpdate, formatter, onKeyNav } = props
@@ -15,8 +15,12 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const [open, setOpen] = useState(false)
 
-  const [all, setAll] = useState<0 | 1 | 2>(
-    filterState.size === 0 ? 0 : filterState.size === filterValues.length ? 2 : 1
+  const [all, setAll] = useState<QuantityEnum.EMPTY | QuantityEnum.HALF_FULL | QuantityEnum.FULL>(
+    filterState.size === 0
+      ? QuantityEnum.EMPTY
+      : filterState.size === filterValues.length
+      ? QuantityEnum.FULL
+      : QuantityEnum.HALF_FULL
   )
 
   const [buttonRef, setButtonRef] = useState<HTMLButtonElement>()
@@ -45,39 +49,17 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const handleSelect = (element: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
     filterState.has(element) ? filterState.delete(element) : filterState.add(element)
     handleFilterUpdate(name, new Set<string>(filterState))
-    if (filterState.size === 0) {
-      setAll(0)
-    } else if (filterState.size === filterValues.length) {
-      setAll(2)
-    } else {
-      setAll(1)
-    }
+    setAll(
+      filterState.size === 0
+        ? QuantityEnum.EMPTY
+        : filterState.size === filterValues.length
+        ? QuantityEnum.FULL
+        : QuantityEnum.HALF_FULL
+    )
   }
 
   const handleKeyDown = (filterKey: keyof T) => (event: any) => {
-    const key = event.nativeEvent.key
-
-    let direction
-
-    switch (key) {
-      case 'ArrowRight':
-        direction = 'right'
-        break
-
-      case 'ArrowLeft':
-        direction = 'left'
-        break
-
-      case 'ArrowUp':
-        direction = 'up'
-        break
-
-      case 'ArrowDown':
-        direction = 'down'
-        break
-    }
-
-    onKeyNav(direction, origin, filterKey)
+    onKeyNav(getKeyDirection(event.nativeEvent.key), origin, filterKey)
     onDragEnd()
   }
 
@@ -95,10 +77,10 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const handleSelectAll = () => () => {
     if (all === 2) {
-      setAll(0)
+      setAll(QuantityEnum.EMPTY)
       handleFilterUpdate(name, new Set<string>(new Set<string>()))
     } else {
-      setAll(2)
+      setAll(QuantityEnum.FULL)
       handleFilterUpdate(name, new Set<string>(filterValues))
     }
   }
@@ -108,7 +90,12 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
     if (index === 0 && showTodos) {
       return (
         <DropdownItem key='todos' className={classes.dropdownItem}>
-          <Checkbox label='Todos os itens' onChange={handleSelectAll()} checked={all === 2} indeterminate={all === 1} />
+          <Checkbox
+            label='Todos os itens'
+            onChange={handleSelectAll()}
+            checked={all === QuantityEnum.FULL}
+            indeterminate={all === QuantityEnum.HALF_FULL}
+          />
         </DropdownItem>
       )
     }
