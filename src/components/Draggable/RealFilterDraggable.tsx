@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
 import { FixedSizeList } from 'react-window'
-import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField, Tooltip } from '..'
+import { Button, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
 import { Theme, useStyles, useTheme } from '../../styles'
 import { FilterDraggableProps } from './FilterDraggable'
 import { QuantityEnum } from './types/QuantityEnum'
 import { ItemTypes } from './types/ItemTypes'
 import { getKeyDirection } from './util'
+import { DraggableRow } from './DraggableRow'
 
 export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const { name, origin, value, filterValues, filterState, onDragEnd, handleFilterUpdate, formatter, onKeyNav } = props
@@ -85,53 +86,6 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
     }
   }
 
-  const Row = ({ index, style }) => {
-    const showTodos = searchedFilterSet.length === filterValues.length
-    if (index === 0 && showTodos) {
-      return (
-        <DropdownItem key='todos' className={classes.dropdownItem}>
-          <Checkbox
-            label='Todos os itens'
-            onChange={handleSelectAll()}
-            checked={all === QuantityEnum.FULL}
-            indeterminate={all === QuantityEnum.HALF_FULL}
-          />
-        </DropdownItem>
-      )
-    }
-
-    const value: string | undefined | null = searchedFilterSet[showTodos ? index - 1 : index]
-
-    if (value && value.length > 0) {
-      const bigValue = value.length > 45
-
-      const key = name + value
-
-      const selected = filterState.has(value)
-
-      const label = formatter?.(value) ?? value
-
-      return (
-        <Tooltip text={bigValue && value}>
-          <DropdownItem key={key} className={classes.dropdownItem} style={style}>
-            <Checkbox
-              title={value}
-              label={bigValue ? `${label.substr(0, 45)}...` : label}
-              onChange={handleSelect(value)}
-              checked={selected}
-              onMouseDown={(event) => {
-                event.preventDefault()
-                event.stopPropagation()
-              }}
-            />
-          </DropdownItem>
-        </Tooltip>
-      )
-    } else {
-      return null
-    }
-  }
-
   return (
     <div ref={drag} className={css(classes.dndBox, isDragging && classes.dndBoxDragging)}>
       <React.Fragment>
@@ -184,7 +138,20 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
               itemSize={34}
               width={400}
             >
-              {Row}
+              {({ index, style }) => (
+                <DraggableRow<T>
+                  index={index}
+                  style={style}
+                  all={all}
+                  name={name}
+                  searchedFilterSet={searchedFilterSet}
+                  numberOfFilterValues={filterValues.length}
+                  filterState={filterState}
+                  handleSelectAll={handleSelectAll}
+                  handleSelect={handleSelect}
+                  formatter={formatter}
+                />
+              )}
             </FixedSizeList>
           </div>
         </Dropdown>
