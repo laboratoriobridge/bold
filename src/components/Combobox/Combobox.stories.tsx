@@ -103,6 +103,7 @@ export const Suggestion = () => (
 
 export const Async = () => (
   <Combobox<Fruit>
+    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
     label='Fruit Repository'
     name='repository'
     items={loadFruitsAsync}
