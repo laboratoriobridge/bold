@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
+import matchSorter from 'match-sorter'
 import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
 import { Theme, useStyles } from '../../styles'
 import { useLocale } from '../../i18n'
@@ -62,17 +63,10 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
     onDragEnd()
   }
 
-  const handleSearch = () => (event: any) => {
-    const searchResults = new Array<string>()
-    const searchText: string = (event.currentTarget.value as string).toLocaleLowerCase()
-    filterValues.forEach((element: string) => {
-      const stringElement = element + ''
-      const loweredElement = stringElement.toLocaleLowerCase()
-      const found = loweredElement.search(searchText) !== -1
-      found && searchResults.push(element)
-    })
-    setSearchedFilterSet(searchResults)
-  }
+  const handleSearch = () => (event: any) =>
+    setSearchedFilterSet(
+      matchSorter(filterValues, event.currentTarget.value, { threshold: matchSorter.rankings.STARTS_WITH })
+    )
 
   const handleSelectAll = () => () => {
     if (all === QuantityEnum.FULL) {

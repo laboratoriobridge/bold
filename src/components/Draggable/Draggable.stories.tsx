@@ -19,7 +19,7 @@ const keyMapping = new Map<keyof Fruit, KeyMapping>([['name', { keyName: 'Name' 
 const keyState: Array<keyof Fruit> = ['name']
 const key: keyof Fruit = keyState[0]
 const keys = new Map<keyof Fruit, string[]>([
-  ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Fruit', 'Watermelon']],
+  ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
 ])
 
 export const Default = () => (
