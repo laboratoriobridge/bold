@@ -2,18 +2,20 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { ItemTypes } from './types/ItemTypes'
+import { DraggableItemTypes } from './types/ItemTypes'
 import { DropableDiv } from './FilterDraggable.test'
 import { KeyMapping } from './types/KeyMapping'
 import { DefaultDraggable, DefaultDraggableProps } from './DefaultDraggable'
 
 type Pet = {
-  nome: string
+  name: string
 }
 
-const petKeyMapping = new Map<keyof Pet, KeyMapping>([['nome', { keyName: 'Nome' }]])
+const origin = 'keys_avaible'
 
-const keyState: Array<keyof Pet> = ['nome']
+const petKeyMapping = new Map<keyof Pet, KeyMapping>([['name', { keyName: 'Name' }]])
+
+const keyState: Array<keyof Pet> = ['name']
 const key: keyof Pet = keyState[0]
 
 const createDefaultComponent = (props: Partial<DefaultDraggableProps<Pet>> = {}) => (
@@ -23,7 +25,7 @@ const createDefaultComponent = (props: Partial<DefaultDraggableProps<Pet>> = {})
     onDragEnd={() => {}}
     value={petKeyMapping.get(key).keyName}
     onKeyNav={() => {}}
-    origin='campos_disponiveis'
+    origin={origin}
     {...props}
   />
 )
@@ -42,7 +44,7 @@ describe('DefaultDraggable', () => {
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(keyNav).toBeCalledWith('up', 'campos_disponiveis')
+      expect(keyNav).toBeCalledWith('up', origin)
     })
 
     it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
@@ -50,7 +52,7 @@ describe('DefaultDraggable', () => {
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
-      expect(keyNav).toBeCalledWith('down', 'campos_disponiveis')
+      expect(keyNav).toBeCalledWith('down', origin)
     })
 
     it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
@@ -58,7 +60,7 @@ describe('DefaultDraggable', () => {
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowLeft', code: 'ArrowLeft' })
-      expect(keyNav).toBeCalledWith('left', 'campos_disponiveis')
+      expect(keyNav).toBeCalledWith('left', origin)
     })
 
     it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
@@ -66,7 +68,7 @@ describe('DefaultDraggable', () => {
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
-      expect(keyNav).toBeCalledWith('right', 'campos_disponiveis')
+      expect(keyNav).toBeCalledWith('right', origin)
     })
   })
 
@@ -75,8 +77,10 @@ describe('DefaultDraggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv type={ItemTypes.DEFAULT}>{createDefaultComponent({ onDragEnd: onDragEnd })}</DropableDiv>
-          <DropableDiv type={ItemTypes.DEFAULT} />
+          <DropableDiv type={DraggableItemTypes.DEFAULT}>
+            {createDefaultComponent({ onDragEnd: onDragEnd })}
+          </DropableDiv>
+          <DropableDiv type={DraggableItemTypes.DEFAULT} />
         </DndProvider>
       )
 

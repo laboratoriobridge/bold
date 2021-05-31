@@ -35,7 +35,7 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const locale = useLocale()
 
   if (filterValues.length < 1) {
-    throw new Error(`The filter values must have at least one element`)
+    throw new Error(`The filterValues must have at least one element`)
   }
 
   filterState.forEach((value) => {

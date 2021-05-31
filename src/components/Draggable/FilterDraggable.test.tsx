@@ -9,14 +9,16 @@ import { KeyMapping } from './types/KeyMapping'
 import { FilterDraggable, FilterDraggableProps } from './FilterDraggable'
 
 type Pet = {
-  nome: string
+  name: string
 }
 
-const petKeyMapping = new Map<keyof Pet, KeyMapping>([['nome', { keyName: 'Nome' }]])
+const origin = 'keys_avaible'
 
-const keyState: Array<keyof Pet> = ['nome']
+const petKeyMapping = new Map<keyof Pet, KeyMapping>([['name', { keyName: 'Name' }]])
+
+const keyState: Array<keyof Pet> = ['name']
 const key: keyof Pet = keyState[0]
-const keys = new Map<keyof Pet, string[]>([['nome', ['Bebel', 'Foguete', 'Scooby-Doo']]])
+const keys = new Map<keyof Pet, string[]>([['name', ['Bebel', 'Foguete', 'Scooby-Doo']]])
 
 const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) => (
   <LocaleContext.Provider value={enUS}>
@@ -26,7 +28,7 @@ const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) =
       onDragEnd={() => {}}
       onKeyNav={() => {}}
       value={petKeyMapping.get(key).keyName}
-      origin='campos_disponiveis'
+      origin={origin}
       filterState={new Set<string>()}
       filterValues={keys.get(key)}
       onFilterUpdate={() => {}}
@@ -95,7 +97,7 @@ describe('FilterDraggable', () => {
 
     expect(button.getAttribute('aria-expanded')).toBeTruthy()
 
-    expect(getAllByRole('menuitem')).toHaveLength(5) // Pesquisa + Todos os itens + Bebel + Foguete + Scooby-Doo
+    expect(getAllByRole('menuitem')).toHaveLength(5) // Search + All items + Bebel + Foguete + Scooby-Doo
 
     expect(getByText('All items')).toBeDefined()
     expect(getByText('Bebel')).toBeDefined()
@@ -125,7 +127,7 @@ describe('FilterDraggable', () => {
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
-      expect(keyNav).toBeCalledWith('up', 'campos_disponiveis', 'nome')
+      expect(keyNav).toBeCalledWith('up', origin, 'name')
     })
 
     it('should call the onKeyNav with direction as down when the user press the ArrowDown key', () => {
@@ -133,7 +135,7 @@ describe('FilterDraggable', () => {
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowDown', code: 'ArrowDown' })
-      expect(keyNav).toBeCalledWith('down', 'campos_disponiveis', 'nome')
+      expect(keyNav).toBeCalledWith('down', origin, 'name')
     })
 
     it('should call the onKeyNav with direction as left when the user press the ArrowLeft key', () => {
@@ -141,7 +143,7 @@ describe('FilterDraggable', () => {
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowLeft', code: 'ArrowLeft' })
-      expect(keyNav).toBeCalledWith('left', 'campos_disponiveis', 'nome')
+      expect(keyNav).toBeCalledWith('left', origin, 'name')
     })
 
     it('should call the onKeyNav with direction as right when the user press the ArrowRight key', () => {
@@ -149,7 +151,7 @@ describe('FilterDraggable', () => {
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
-      expect(keyNav).toBeCalledWith('right', 'campos_disponiveis', 'nome')
+      expect(keyNav).toBeCalledWith('right', origin, 'name')
     })
   })
 
@@ -169,7 +171,7 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(allItemsCheckbox)
 
-        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>(new Set<string>()))
+        expect(onFilterUpdate).toBeCalledWith('name', new Set<string>(new Set<string>()))
       })
 
       it('should pass all values in a set when the user check "all items" checkbox', () => {
@@ -185,7 +187,7 @@ describe('FilterDraggable', () => {
         fireEvent.click(allItemsCheckbox)
 
         expect(onFilterUpdate).toBeCalledWith(
-          'nome',
+          'name',
           new Set<string>(['Bebel', 'Foguete', 'Scooby-Doo'])
         )
       })
@@ -205,7 +207,7 @@ describe('FilterDraggable', () => {
         fireEvent.click(checkbox)
 
         expect(onFilterUpdate).toBeCalledWith(
-          'nome',
+          'name',
           new Set<string>(['Bebel'])
         )
       })
@@ -227,7 +229,7 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>())
+        expect(onFilterUpdate).toBeCalledWith('name', new Set<string>())
       })
 
       it('should return all options when the user check the "Foguete" checkbox', () => {
@@ -248,7 +250,7 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>(keys.get(key)))
+        expect(onFilterUpdate).toBeCalledWith('name', new Set<string>(keys.get(key)))
       })
     })
   })
@@ -338,7 +340,7 @@ describe('FilterDraggable', () => {
 
     fireEvent.click(button)
 
-    expect(getAllByRole('checkbox')).toHaveLength(1) // only the 'Todos os itens' checkbox
+    expect(getAllByRole('checkbox')).toHaveLength(1) // only the 'All items' checkbox
   })
 
   describe('Drag and drop', () => {

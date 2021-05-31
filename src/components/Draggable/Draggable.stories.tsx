@@ -8,45 +8,42 @@ export default {
   title: 'Components/Draggable',
 }
 
-type Municipio = {
-  uf: string
-  nome: string
+const origin = 'keys_avaible'
+
+type Fruit = {
+  name: String
 }
 
-const municipioKeyMapping = new Map<keyof Municipio, KeyMapping>([
-  ['uf', { keyName: 'UF' }],
-  ['nome', { keyName: 'Nome' }],
-])
+const keyMapping = new Map<keyof Fruit, KeyMapping>([['name', { keyName: 'Name' }]])
 
-const keyState: Array<keyof Municipio> = ['uf', 'nome']
-const key: keyof Municipio = keyState[0]
-const keys = new Map<keyof Municipio, string[]>([
-  ['uf', ['Santa Catarina', 'Rio Grande do Sul']],
-  ['nome', ['São José', 'Florianópolis', 'Alegrete']],
+const keyState: Array<keyof Fruit> = ['name']
+const key: keyof Fruit = keyState[0]
+const keys = new Map<keyof Fruit, string[]>([
+  ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Fruit', 'Watermelon']],
 ])
 
 export const Default = () => (
-  <DefaultDraggable<Municipio>
+  <DefaultDraggable<Fruit>
     key={key as string}
     name={key}
-    value={municipioKeyMapping.get(key).keyName || (key as string)}
-    formatter={municipioKeyMapping.get(key).formatter}
-    origin='campos_disponiveis'
+    value={keyMapping.get(key).keyName || (key as string)}
+    formatter={keyMapping.get(key).formatter}
+    origin={origin}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}
   />
 )
 
 export const Filter = () => (
-  <FilterDraggable<Municipio>
+  <FilterDraggable<Fruit>
     key={key as string}
     name={key}
-    value={municipioKeyMapping.get(key).keyName || (key as string)}
-    formatter={municipioKeyMapping.get(key).formatter}
-    origin='campos_disponiveis'
+    value={keyMapping.get(key).keyName || (key as string)}
+    formatter={keyMapping.get(key).formatter}
+    origin={origin}
     filterValues={keys.get(key)}
-    filterState={new Set<string>(['Santa Catarina'])}
-    onFilterUpdate={action('handleFilterUpdate')}
+    filterState={new Set<string>(['Apple'])}
+    onFilterUpdate={action('onFilterUpdate')}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}
   />
