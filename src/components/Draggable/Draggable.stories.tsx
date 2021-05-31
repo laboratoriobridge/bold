@@ -46,7 +46,7 @@ export const Filter = () => (
     origin='campos_disponiveis'
     filterValues={keys.get(key)}
     filterState={new Set<string>(['Santa Catarina'])}
-    handleFilterUpdate={action('handleFilterUpdate')}
+    onFilterUpdate={action('handleFilterUpdate')}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}
   />

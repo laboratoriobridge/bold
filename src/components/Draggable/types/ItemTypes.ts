@@ -1,4 +1,4 @@
-export enum ItemTypes {
+export enum DraggableItemTypes {
   FILTER = 'filter',
   DEFAULT = 'default',
 }

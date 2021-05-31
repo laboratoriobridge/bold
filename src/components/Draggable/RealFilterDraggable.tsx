@@ -1,43 +1,47 @@
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
-import { FixedSizeList } from 'react-window'
-import { Button, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
-import { Theme, useStyles, useTheme } from '../../styles'
+import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
+import { Theme, useStyles } from '../../styles'
+import { useLocale } from '../../i18n'
 import { FilterDraggableProps } from './FilterDraggable'
 import { QuantityEnum } from './types/QuantityEnum'
-import { ItemTypes } from './types/ItemTypes'
-import { getKeyDirection } from './util'
+import { DraggableItemTypes } from './types/ItemTypes'
+import { getKeyDirection, getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
 
 export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
-  const { name, origin, value, filterValues, filterState, onDragEnd, handleFilterUpdate, formatter, onKeyNav } = props
+  const { name, origin, value, filterValues, filterState, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
 
   const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterValues)
 
   const [open, setOpen] = useState(false)
 
-  const [all, setAll] = useState<QuantityEnum.EMPTY | QuantityEnum.HALF_FULL | QuantityEnum.FULL>(
-    filterState.size === 0
-      ? QuantityEnum.EMPTY
-      : filterState.size === filterValues.length
-      ? QuantityEnum.FULL
-      : QuantityEnum.HALF_FULL
-  )
+  const [all, setAll] = useState<QuantityEnum>(getQuantityValue(filterState, filterValues))
 
   const [buttonRef, setButtonRef] = useState<HTMLButtonElement>()
-
-  const theme = useTheme()
 
   const { classes, css } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
-    item: { type: ItemTypes.FILTER, name: name, origin },
+    item: { type: DraggableItemTypes.FILTER, name: name, origin },
     end: (_item, monitor) => {
       if (monitor.getDropResult() != null) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
     }),
+  })
+
+  const locale = useLocale()
+
+  if (filterValues.length < 1) {
+    throw new Error(`The filter values must have at least one element`)
+  }
+
+  filterState.forEach((value) => {
+    if (!filterValues.includes(value)) {
+      throw new Error(`The value '${value}' of filterState doesn't exist in FilterValues[${filterValues.toString()}]`)
+    }
   })
 
   const handleClick = () => (open ? handleClose() : setOpen(true))
@@ -49,14 +53,8 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const handleSelect = (element: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
     filterState.has(element) ? filterState.delete(element) : filterState.add(element)
-    handleFilterUpdate(name, new Set<string>(filterState))
-    setAll(
-      filterState.size === 0
-        ? QuantityEnum.EMPTY
-        : filterState.size === filterValues.length
-        ? QuantityEnum.FULL
-        : QuantityEnum.HALF_FULL
-    )
+    onFilterUpdate(name, new Set<string>(filterState))
+    setAll(getQuantityValue(filterState, filterValues))
   }
 
   const handleKeyDown = (filterKey: keyof T) => (event: any) => {
@@ -77,85 +75,75 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   }
 
   const handleSelectAll = () => () => {
-    if (all === 2) {
+    if (all === QuantityEnum.FULL) {
       setAll(QuantityEnum.EMPTY)
-      handleFilterUpdate(name, new Set<string>(new Set<string>()))
+      onFilterUpdate(name, new Set<string>(new Set<string>()))
     } else {
       setAll(QuantityEnum.FULL)
-      handleFilterUpdate(name, new Set<string>(filterValues))
+      onFilterUpdate(name, new Set<string>(filterValues))
     }
   }
 
   return (
     <div ref={drag} className={css(classes.dndBox, isDragging && classes.dndBoxDragging)}>
-      <React.Fragment>
-        <Button
-          style={classes.button}
-          innerRef={setButtonRef}
-          onClick={handleClick}
-          onKeyDown={handleKeyDown(name)}
-          size='small'
-          kind='primary'
-          skin='ghost'
-        >
-          <HFlow hSpacing={0.5}>
-            <Icon icon='dragdrop' />
-            {value}
-            {open ? <Icon icon='angleUp' /> : <Icon icon='angleDown' />}
-          </HFlow>
-        </Button>
-        <Dropdown
-          anchorRef={buttonRef}
-          open={open}
-          autoclose={false}
-          onClose={handleClose}
-          popperProps={{ placement: 'bottom' }}
-          style={classes.dropdown}
-        >
-          <div title='dropDownArea' className={classes.dropdownArea} onBlur={(e) => e.stopPropagation()}>
-            <DropdownItem className={classes.noOutline}>
-              <div className={classes.search}>
-                <TextField
-                  name='iconized'
-                  id='iconized'
-                  placeholder='Pesquisa'
-                  icon='zoomOutline'
-                  onChange={handleSearch()}
-                />
-              </div>
+      <Button
+        style={classes.button}
+        innerRef={setButtonRef}
+        onClick={handleClick}
+        onKeyDown={handleKeyDown(name)}
+        size='small'
+        kind='primary'
+        skin='ghost'
+      >
+        <HFlow hSpacing={0.5}>
+          <Icon icon='dragdrop' />
+          {value}
+          {open ? <Icon icon='angleUp' /> : <Icon icon='angleDown' />}
+        </HFlow>
+      </Button>
+      <Dropdown
+        anchorRef={buttonRef}
+        open={open}
+        autoclose={false}
+        onClose={handleClose}
+        popperProps={{ placement: 'bottom' }}
+        style={classes.dropdown}
+      >
+        <div title='dropDownArea' className={classes.dropdownArea} onBlur={(e) => e.stopPropagation()}>
+          <DropdownItem className={classes.noOutline}>
+            <div className={classes.search}>
+              <TextField
+                name='iconized'
+                id='iconized'
+                placeholder={locale.draggable.search}
+                icon='zoomOutline'
+                onChange={handleSearch()}
+              />
+            </div>
+          </DropdownItem>
+
+          {searchedFilterSet.length === filterValues.length && (
+            <DropdownItem key={locale.draggable.all} className={classes.dropdownItem}>
+              <Checkbox
+                label={locale.draggable.allItems}
+                onChange={handleSelectAll()}
+                checked={all === QuantityEnum.FULL}
+                indeterminate={all === QuantityEnum.HALF_FULL}
+              />
             </DropdownItem>
-            <FixedSizeList
-              height={
-                filterValues.length + 1 > 5
-                  ? theme.typography.sizes.html * 8
-                  : theme.typography.sizes.html * 2.2 * (filterValues.length + 1)
-              }
-              itemCount={
-                searchedFilterSet.length === filterValues.length
-                  ? searchedFilterSet.length + 1
-                  : searchedFilterSet.length
-              }
-              itemSize={34}
-              width={400}
-            >
-              {({ index, style }) => (
-                <DraggableRow<T>
-                  index={index}
-                  style={style}
-                  all={all}
-                  name={name}
-                  searchedFilterSet={searchedFilterSet}
-                  numberOfFilterValues={filterValues.length}
-                  filterState={filterState}
-                  handleSelectAll={handleSelectAll}
-                  handleSelect={handleSelect}
-                  formatter={formatter}
-                />
-              )}
-            </FixedSizeList>
-          </div>
-        </Dropdown>
-      </React.Fragment>
+          )}
+
+          {searchedFilterSet.map((value) => (
+            <DraggableRow<T>
+              value={value}
+              name={name}
+              selected={filterState.has(value)}
+              handleSelect={handleSelect}
+              formatter={formatter}
+            />
+          ))}
+        </div>
+      </Dropdown>
     </div>
   )
 }

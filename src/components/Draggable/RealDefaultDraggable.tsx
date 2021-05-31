@@ -4,7 +4,7 @@ import { Button, HFlow, Icon } from '..'
 import { useStyles } from '../../styles'
 import { DefaultDraggableProps } from './DefaultDraggable'
 import { draggableCreateStyles } from './RealFilterDraggable'
-import { ItemTypes } from './types/ItemTypes'
+import { DraggableItemTypes } from './types/ItemTypes'
 import { getKeyDirection } from './util'
 
 export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
@@ -13,7 +13,7 @@ export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
   const { classes, css } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
-    item: { type: ItemTypes.DEFAULT, name: name, origin },
+    item: { type: DraggableItemTypes.DEFAULT, name: name, origin },
     end: (_item, monitor) => {
       if (monitor.getDropResult() != null) onDragEnd()
     },
@@ -29,20 +29,18 @@ export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
 
   return (
     <div ref={drag} className={css(classes.dndBox, isDragging && classes.dndBoxDragging)}>
-      <React.Fragment>
-        <Button
-          style={[classes.button, 'padding-right: 20px;']}
-          onKeyDown={handleKeyDown}
-          size='small'
-          kind='primary'
-          skin='ghost'
-        >
-          <HFlow hSpacing={0.5}>
-            <Icon icon='dragdrop' />
-            {value}
-          </HFlow>
-        </Button>
-      </React.Fragment>
+      <Button
+        style={[classes.button, 'padding-right: 1.25rem;']}
+        onKeyDown={handleKeyDown}
+        size='small'
+        kind='primary'
+        skin='ghost'
+      >
+        <HFlow hSpacing={0.5}>
+          <Icon icon='dragdrop' />
+          {value}
+        </HFlow>
+      </Button>
     </div>
   )
 }

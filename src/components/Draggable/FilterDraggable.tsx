@@ -12,7 +12,7 @@ export interface FilterDraggableProps<T> {
   filterState: Set<string>
   onDragEnd: () => void
   onKeyNav: (dir: 'left' | 'right' | 'up' | 'down', origin: string, key?: keyof T) => void
-  handleFilterUpdate: (key: keyof T, filtro: Set<string>) => void
+  onFilterUpdate: (key: keyof T, filter: Set<string>) => void
   formatter?: (value: string) => string
 }
 

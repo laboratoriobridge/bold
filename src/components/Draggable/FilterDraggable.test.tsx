@@ -2,7 +2,9 @@ import { createEvent, fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider, useDrop } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { ItemTypes } from './types/ItemTypes'
+import { LocaleContext } from '../../i18n'
+import enUS from '../../i18n/locales/en-US'
+import { DraggableItemTypes } from './types/ItemTypes'
 import { KeyMapping } from './types/KeyMapping'
 import { FilterDraggable, FilterDraggableProps } from './FilterDraggable'
 
@@ -17,18 +19,20 @@ const key: keyof Pet = keyState[0]
 const keys = new Map<keyof Pet, string[]>([['nome', ['Bebel', 'Foguete', 'Scooby-Doo']]])
 
 const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) => (
-  <FilterDraggable<Pet>
-    key={key}
-    name={key}
-    onDragEnd={() => {}}
-    onKeyNav={() => {}}
-    value={petKeyMapping.get(key).keyName}
-    origin='campos_disponiveis'
-    filterState={new Set<string>()}
-    filterValues={keys.get(key)}
-    handleFilterUpdate={() => {}}
-    {...props}
-  />
+  <LocaleContext.Provider value={enUS}>
+    <FilterDraggable<Pet>
+      key={key}
+      name={key}
+      onDragEnd={() => {}}
+      onKeyNav={() => {}}
+      value={petKeyMapping.get(key).keyName}
+      origin='campos_disponiveis'
+      filterState={new Set<string>()}
+      filterValues={keys.get(key)}
+      onFilterUpdate={() => {}}
+      {...props}
+    />
+  </LocaleContext.Provider>
 )
 
 export function DropableDiv(props: any) {
@@ -70,6 +74,18 @@ describe('FilterDraggable', () => {
     })
   })
 
+  it('should throw an error when the prop filterValues is empty', () => {
+    expect(() => {
+      render(createFilterComponent({ filterValues: [] }))
+    }).toThrowError()
+  })
+
+  it('should throw an error when the prop filterState contains an item that does not belong to the filterValues', () => {
+    expect(() => {
+      render(createFilterComponent({ filterState: new Set<string>('Mel') }))
+    }).toThrowError()
+  })
+
   it('should show the drop down menu when the user clicks on component', () => {
     const { getByRole, getAllByRole, getByText } = render(createFilterComponent())
 
@@ -81,7 +97,7 @@ describe('FilterDraggable', () => {
 
     expect(getAllByRole('menuitem')).toHaveLength(5) // Pesquisa + Todos os itens + Bebel + Foguete + Scooby-Doo
 
-    expect(getByText('Todos os itens')).toBeDefined()
+    expect(getByText('All items')).toBeDefined()
     expect(getByText('Bebel')).toBeDefined()
     expect(getByText('Foguete')).toBeDefined()
     expect(getByText('Scooby-Doo')).toBeDefined()
@@ -139,10 +155,10 @@ describe('FilterDraggable', () => {
 
   describe('handleFilterUpdate', () => {
     describe('handleSelectAll', () => {
-      it('should pass a empty set when the user uncheck "all itens" checkbox', () => {
-        const handleFilterUpdate = jest.fn()
+      it('should pass a empty set when the user uncheck "all items" checkbox', () => {
+        const onFilterUpdate = jest.fn()
         const { getByRole, getAllByRole } = render(
-          createFilterComponent({ handleFilterUpdate: handleFilterUpdate, filterState: new Set<string>(keys.get(key)) })
+          createFilterComponent({ onFilterUpdate: onFilterUpdate, filterState: new Set<string>(keys.get(key)) })
         )
 
         const button = getByRole('button')
@@ -153,12 +169,12 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(allItemsCheckbox)
 
-        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>(new Set<string>()))
+        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>(new Set<string>()))
       })
 
       it('should pass all values in a set when the user check "all items" checkbox', () => {
-        const handleFilterUpdate = jest.fn()
-        const { getByRole, getAllByRole } = render(createFilterComponent({ handleFilterUpdate: handleFilterUpdate }))
+        const onFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(createFilterComponent({ onFilterUpdate: onFilterUpdate }))
 
         const button = getByRole('button')
 
@@ -168,7 +184,7 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(allItemsCheckbox)
 
-        expect(handleFilterUpdate).toBeCalledWith(
+        expect(onFilterUpdate).toBeCalledWith(
           'nome',
           new Set<string>(['Bebel', 'Foguete', 'Scooby-Doo'])
         )
@@ -177,8 +193,8 @@ describe('FilterDraggable', () => {
 
     describe('handleSelect', () => {
       it('should return a set with "Bebel" when the user check its checkbox', () => {
-        const handleFilterUpdate = jest.fn()
-        const { getByRole, getAllByRole } = render(createFilterComponent({ handleFilterUpdate: handleFilterUpdate }))
+        const onFilterUpdate = jest.fn()
+        const { getByRole, getAllByRole } = render(createFilterComponent({ onFilterUpdate: onFilterUpdate }))
 
         const button = getByRole('button')
 
@@ -188,17 +204,17 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(handleFilterUpdate).toBeCalledWith(
+        expect(onFilterUpdate).toBeCalledWith(
           'nome',
           new Set<string>(['Bebel'])
         )
       })
 
       it('should return an empty set when the user uncheck "Bebel" checkbox', () => {
-        const handleFilterUpdate = jest.fn()
+        const onFilterUpdate = jest.fn()
         const { getByRole, getAllByRole } = render(
           createFilterComponent({
-            handleFilterUpdate: handleFilterUpdate,
+            onFilterUpdate: onFilterUpdate,
             filterState: new Set<string>(['Bebel']),
           })
         )
@@ -211,15 +227,15 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>())
+        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>())
       })
 
       it('should return all options when the user check the "Foguete" checkbox', () => {
-        const handleFilterUpdate = jest.fn()
+        const onFilterUpdate = jest.fn()
 
         const { getByRole, getAllByRole } = render(
           createFilterComponent({
-            handleFilterUpdate: handleFilterUpdate,
+            onFilterUpdate: onFilterUpdate,
             filterState: new Set<string>(['Bebel', 'Scooby-Doo']),
           })
         )
@@ -232,33 +248,26 @@ describe('FilterDraggable', () => {
 
         fireEvent.click(checkbox)
 
-        expect(handleFilterUpdate).toBeCalledWith('nome', new Set<string>(keys.get(key)))
+        expect(onFilterUpdate).toBeCalledWith('nome', new Set<string>(keys.get(key)))
       })
     })
   })
 
   describe('handleSearch', () => {
     it('should show only Scooby-Doo checkbox when the user types "Sco" ', () => {
-      const { getByRole, getByPlaceholderText, getByTitle } = render(
-        createFilterComponent({ filterValues: new Array<string>('Bebel', 'Foguete', 'Scooby-Doo', 'Cacau', 'Cristal') })
-      )
+      const { getByRole, getByPlaceholderText, getAllByRole } = render(createFilterComponent())
 
       const button = getByRole('button')
 
       fireEvent.click(button)
 
-      const input = getByPlaceholderText('Pesquisa')
+      const input = getByPlaceholderText('Search')
 
       fireEvent.change(input, { target: { value: 'Sco' } })
 
-      expect(getByTitle('Scooby-Doo')).toBeDefined()
+      expect(getByRole('checkbox').title).toEqual('Scooby-Doo')
 
-      expect(() => {
-        getByTitle('Bebel')
-        getByTitle('Foguete')
-        getByTitle('Cacau')
-        getByTitle('Cristal')
-      }).toThrowError()
+      expect(getAllByRole('checkbox')).toHaveLength(1)
     })
 
     it('should show an empty list when the user types "Mel" ', () => {
@@ -268,7 +277,7 @@ describe('FilterDraggable', () => {
 
       fireEvent.click(button)
 
-      const input = getByPlaceholderText('Pesquisa')
+      const input = getByPlaceholderText('Search')
 
       fireEvent.change(input, { target: { value: 'Mel' } })
 
@@ -337,8 +346,8 @@ describe('FilterDraggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv type={ItemTypes.FILTER}>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
-          <DropableDiv type={ItemTypes.FILTER} />
+          <DropableDiv type={DraggableItemTypes.FILTER}>{createFilterComponent({ onDragEnd: onDragEnd })}</DropableDiv>
+          <DropableDiv type={DraggableItemTypes.FILTER} />
         </DndProvider>
       )
 
