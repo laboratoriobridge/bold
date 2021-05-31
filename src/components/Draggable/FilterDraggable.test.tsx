@@ -29,8 +29,8 @@ const createFilterComponent = (props: Partial<FilterDraggableProps<Pet>> = {}) =
       onKeyNav={() => {}}
       value={petKeyMapping.get(key).keyName}
       origin={origin}
-      filterState={new Set<string>()}
-      filterValues={keys.get(key)}
+      chosenItems={new Set<string>()}
+      filterItems={keys.get(key)}
       onFilterUpdate={() => {}}
       {...props}
     />
@@ -58,33 +58,33 @@ export function DropableDiv(props: any) {
 
 describe('FilterDraggable', () => {
   describe('render', () => {
-    it('should render correctly with no values of filterState', () => {
+    it('should render correctly with no values of chosenItems', () => {
       const { container } = render(createFilterComponent())
       expect(container).toMatchSnapshot()
     })
 
-    it('should render correctly with all values of filterState', () => {
-      const { container } = render(createFilterComponent({ filterState: new Set<string>(keys.get(key)) }))
+    it('should render correctly with all values of chosenItems', () => {
+      const { container } = render(createFilterComponent({ chosenItems: new Set<string>(keys.get(key)) }))
       expect(container).toMatchSnapshot()
     })
 
-    it('should render correctly with some values of filterState', () => {
+    it('should render correctly with some values of chosenItems', () => {
       const { container } = render(
-        createFilterComponent({ filterState: new Set<string>(['Bebel']) })
+        createFilterComponent({ chosenItems: new Set<string>(['Bebel']) })
       )
       expect(container).toMatchSnapshot()
     })
   })
 
-  it('should throw an error when the prop filterValues is empty', () => {
+  it('should throw an error when the prop filterItems is empty', () => {
     expect(() => {
-      render(createFilterComponent({ filterValues: [] }))
+      render(createFilterComponent({ filterItems: [] }))
     }).toThrowError()
   })
 
-  it('should throw an error when the prop filterState contains an item that does not belong to the filterValues', () => {
+  it('should throw an error when the prop chosenItems contains an item that does not belong to the filterItems', () => {
     expect(() => {
-      render(createFilterComponent({ filterState: new Set<string>('Mel') }))
+      render(createFilterComponent({ chosenItems: new Set<string>('Mel') }))
     }).toThrowError()
   })
 
@@ -160,7 +160,7 @@ describe('FilterDraggable', () => {
       it('should pass a empty set when the user uncheck "all items" checkbox', () => {
         const onFilterUpdate = jest.fn()
         const { getByRole, getAllByRole } = render(
-          createFilterComponent({ onFilterUpdate: onFilterUpdate, filterState: new Set<string>(keys.get(key)) })
+          createFilterComponent({ onFilterUpdate: onFilterUpdate, chosenItems: new Set<string>(keys.get(key)) })
         )
 
         const button = getByRole('button')
@@ -217,7 +217,7 @@ describe('FilterDraggable', () => {
         const { getByRole, getAllByRole } = render(
           createFilterComponent({
             onFilterUpdate: onFilterUpdate,
-            filterState: new Set<string>(['Bebel']),
+            chosenItems: new Set<string>(['Bebel']),
           })
         )
 
@@ -238,7 +238,7 @@ describe('FilterDraggable', () => {
         const { getByRole, getAllByRole } = render(
           createFilterComponent({
             onFilterUpdate: onFilterUpdate,
-            filterState: new Set<string>(['Bebel', 'Scooby-Doo']),
+            chosenItems: new Set<string>(['Bebel', 'Scooby-Doo']),
           })
         )
 
@@ -333,7 +333,7 @@ describe('FilterDraggable', () => {
 
   it('should not show invalid values on drop down menu', () => {
     const { getByRole, getAllByRole } = render(
-      createFilterComponent({ filterValues: new Array<string>(undefined, '', null) })
+      createFilterComponent({ filterItems: new Array<string>(undefined, '', null) })
     )
 
     const button = getByRole('button')

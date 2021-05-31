@@ -27,7 +27,6 @@ export const Default = () => (
     key={key as string}
     name={key}
     value={keyMapping.get(key).keyName || (key as string)}
-    formatter={keyMapping.get(key).formatter}
     origin={origin}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}
@@ -41,8 +40,8 @@ export const Filter = () => (
     value={keyMapping.get(key).keyName || (key as string)}
     formatter={keyMapping.get(key).formatter}
     origin={origin}
-    filterValues={keys.get(key)}
-    filterState={new Set<string>(['Apple'])}
+    filterItems={keys.get(key)}
+    chosenItems={new Set<string>(['Apple'])}
     onFilterUpdate={action('onFilterUpdate')}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}

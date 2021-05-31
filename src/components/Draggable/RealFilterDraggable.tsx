@@ -11,13 +11,13 @@ import { getKeyDirection, getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
 
 export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
-  const { name, origin, value, filterValues, filterState, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
+  const { name, origin, value, filterItems, chosenItems, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
 
-  const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterValues)
+  const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterItems)
 
   const [open, setOpen] = useState(false)
 
-  const [all, setAll] = useState<QuantityEnum>(getQuantityValue(filterState, filterValues))
+  const [all, setAll] = useState<QuantityEnum>(getQuantityValue(chosenItems, filterItems))
 
   const [buttonRef, setButtonRef] = useState<HTMLButtonElement>()
 
@@ -35,13 +35,13 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const locale = useLocale()
 
-  if (filterValues.length < 1) {
-    throw new Error(`The filterValues must have at least one element`)
+  if (filterItems.length < 1) {
+    throw new Error(`The filterItems must have at least one element`)
   }
 
-  filterState.forEach((value) => {
-    if (!filterValues.includes(value)) {
-      throw new Error(`The value '${value}' of filterState doesn't exist in FilterValues[${filterValues.toString()}]`)
+  chosenItems.forEach((value) => {
+    if (!filterItems.includes(value)) {
+      throw new Error(`The value '${value}' of chosenItems doesn't exist in filterItems[${filterItems.toString()}]`)
     }
   })
 
@@ -49,13 +49,13 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const handleClose = () => {
     setOpen(false)
-    setSearchedFilterSet(filterValues)
+    setSearchedFilterSet(filterItems)
   }
 
   const handleSelect = (element: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    filterState.has(element) ? filterState.delete(element) : filterState.add(element)
-    onFilterUpdate(name, new Set<string>(filterState))
-    setAll(getQuantityValue(filterState, filterValues))
+    chosenItems.has(element) ? chosenItems.delete(element) : chosenItems.add(element)
+    onFilterUpdate(name, new Set<string>(chosenItems))
+    setAll(getQuantityValue(chosenItems, filterItems))
   }
 
   const handleKeyDown = (filterKey: keyof T) => (event: any) => {
@@ -65,7 +65,7 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
   const handleSearch = () => (event: any) =>
     setSearchedFilterSet(
-      matchSorter(filterValues, event.currentTarget.value, { threshold: matchSorter.rankings.STARTS_WITH })
+      matchSorter(filterItems, event.currentTarget.value, { threshold: matchSorter.rankings.STARTS_WITH })
     )
 
   const handleSelectAll = () => () => {
@@ -74,7 +74,7 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
       onFilterUpdate(name, new Set<string>(new Set<string>()))
     } else {
       setAll(QuantityEnum.FULL)
-      onFilterUpdate(name, new Set<string>(filterValues))
+      onFilterUpdate(name, new Set<string>(filterItems))
     }
   }
 
@@ -116,7 +116,7 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
             </div>
           </DropdownItem>
 
-          {searchedFilterSet.length === filterValues.length && (
+          {searchedFilterSet.length === filterItems.length && (
             <DropdownItem key={locale.draggable.all} className={classes.dropdownItem}>
               <Checkbox
                 label={locale.draggable.allItems}
@@ -131,7 +131,7 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
             <DraggableRow<T>
               value={value}
               name={name}
-              selected={filterState.has(value)}
+              selected={chosenItems.has(value)}
               handleSelect={handleSelect}
               formatter={formatter}
             />
