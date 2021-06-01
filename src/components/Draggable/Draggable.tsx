@@ -1,9 +1,9 @@
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { RealDefaultDraggable } from './RealDefaultDraggable'
+import { InternalDraggable } from './InternalDraggable'
 
-export interface DefaultDraggableProps<T> {
+export interface DraggableProps<T> {
   /**
    * The name of the draggable, as an identifier
    */
@@ -32,10 +32,10 @@ export interface DefaultDraggableProps<T> {
   onKeyNav: (dir: 'left' | 'right' | 'up' | 'down', origin: string, key?: keyof T) => void
 }
 
-export function DefaultDraggable<T>(props: DefaultDraggableProps<T>) {
+export function Draggable<T>(props: DraggableProps<T>) {
   return (
     <DndProvider backend={HTML5Backend}>
-      <RealDefaultDraggable {...props} />
+      <InternalDraggable {...props} />
     </DndProvider>
   )
 }

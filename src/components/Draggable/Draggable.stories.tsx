@@ -1,11 +1,11 @@
 import { action } from '@storybook/addon-actions'
 import React from 'react'
-import { DefaultDraggable } from './DefaultDraggable'
+import { Draggable } from './Draggable'
 import { FilterDraggable } from './FilterDraggable'
 import { KeyMapping } from './types/KeyMapping'
 
 export default {
-  title: 'Components/Draggable',
+  title: 'Components/PivotTable/Draggable',
 }
 
 const origin = 'keys_avaible'
@@ -23,7 +23,7 @@ const keys = new Map<keyof Fruit, string[]>([
 ])
 
 export const Default = () => (
-  <DefaultDraggable<Fruit>
+  <Draggable<Fruit>
     key={key as string}
     name={key}
     value={keyMapping.get(key).keyName || (key as string)}
@@ -41,7 +41,7 @@ export const Filter = () => (
     formatter={keyMapping.get(key).formatter}
     origin={origin}
     filterItems={keys.get(key)}
-    chosenItems={new Set<string>(['Apple'])}
+    selectedItems={new Set<string>(['Apple'])}
     onFilterUpdate={action('onFilterUpdate')}
     onDragEnd={action('onDragEnd')}
     onKeyNav={action('onKeyNav')}

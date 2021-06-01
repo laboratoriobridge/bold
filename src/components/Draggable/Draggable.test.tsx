@@ -5,7 +5,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { DraggableItemTypes } from './types/ItemTypes'
 import { DropableDiv } from './FilterDraggable.test'
 import { KeyMapping } from './types/KeyMapping'
-import { DefaultDraggable, DefaultDraggableProps } from './DefaultDraggable'
+import { Draggable, DraggableProps } from './Draggable'
 
 type Pet = {
   name: string
@@ -18,8 +18,8 @@ const petKeyMapping = new Map<keyof Pet, KeyMapping>([['name', { keyName: 'Name'
 const keyState: Array<keyof Pet> = ['name']
 const key: keyof Pet = keyState[0]
 
-const createDefaultComponent = (props: Partial<DefaultDraggableProps<Pet>> = {}) => (
-  <DefaultDraggable<Pet>
+const createDefaultComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
+  <Draggable<Pet>
     key={key}
     name={key}
     onDragEnd={() => {}}
@@ -30,7 +30,7 @@ const createDefaultComponent = (props: Partial<DefaultDraggableProps<Pet>> = {})
   />
 )
 
-describe('DefaultDraggable', () => {
+describe('Draggable', () => {
   describe('render', () => {
     it('should render correctly', () => {
       const { container } = render(createDefaultComponent())

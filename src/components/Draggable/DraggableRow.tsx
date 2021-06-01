@@ -1,7 +1,7 @@
 import React from 'react'
 import { Checkbox, DropdownItem } from '..'
 import { useStyles } from '../../styles'
-import { draggableCreateStyles } from './RealFilterDraggable'
+import { draggableCreateStyles } from './style'
 
 export interface DraggableRowProps<T> {
   value?: string

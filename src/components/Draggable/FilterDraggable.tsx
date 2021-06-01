@@ -1,20 +1,20 @@
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { DefaultDraggableProps } from './DefaultDraggable'
+import { DraggableProps } from './Draggable'
 
-import { RealFilterDraggable } from './RealFilterDraggable'
+import { InternalFilterDraggable } from './InternalFilterDraggable'
 
-export interface FilterDraggableProps<T> extends DefaultDraggableProps<T> {
+export interface FilterDraggableProps<T> extends DraggableProps<T> {
   /**
    * The items that should appear on the list
    */
   filterItems: Array<string>
 
   /**
-   * The items that were chosen by the user
+   * The items that were selected by the user
    */
-  chosenItems: Set<string>
+  selectedItems: Set<string>
 
   /**
    * Called when items are added or removed in the chosenItems prop
@@ -30,7 +30,7 @@ export interface FilterDraggableProps<T> extends DefaultDraggableProps<T> {
 export function FilterDraggable<T>(props: FilterDraggableProps<T>) {
   return (
     <DndProvider backend={HTML5Backend}>
-      <RealFilterDraggable {...props} />
+      <InternalFilterDraggable {...props} />
     </DndProvider>
   )
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DefaultDraggable render should render correctly 1`] = `
+exports[`Draggable render should render correctly 1`] = `
 .emotion-3 {
   display: inline-block;
   margin: 0.25rem 0.25rem;
@@ -116,7 +116,7 @@ exports[`DefaultDraggable render should render correctly 1`] = `
 </div>
 `;
 
-exports[`FilterDraggable render should render correctly with all values of chosenItems 1`] = `
+exports[`FilterDraggable render should render correctly with all values of selectedItems 1`] = `
 .emotion-4 {
   display: inline-block;
   margin: 0.25rem 0.25rem;
@@ -245,7 +245,7 @@ exports[`FilterDraggable render should render correctly with all values of chose
 </div>
 `;
 
-exports[`FilterDraggable render should render correctly with no values of chosenItems 1`] = `
+exports[`FilterDraggable render should render correctly with no values of selectedItems 1`] = `
 .emotion-4 {
   display: inline-block;
   margin: 0.25rem 0.25rem;
@@ -374,7 +374,7 @@ exports[`FilterDraggable render should render correctly with no values of chosen
 </div>
 `;
 
-exports[`FilterDraggable render should render correctly with some values of chosenItems 1`] = `
+exports[`FilterDraggable render should render correctly with some values of selectedItems 1`] = `
 .emotion-4 {
   display: inline-block;
   margin: 0.25rem 0.25rem;

@@ -2,26 +2,28 @@ import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
 import matchSorter from 'match-sorter'
 import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
-import { Theme, useStyles } from '../../styles'
+import { useStyles } from '../../styles'
 import { useLocale } from '../../i18n'
 import { FilterDraggableProps } from './FilterDraggable'
-import { QuantityEnum } from './types/QuantityEnum'
+import { ActualQuantity } from './types/ActualQuantity'
 import { DraggableItemTypes } from './types/ItemTypes'
 import { getKeyDirection, getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
+import { draggableCreateStyles } from './style'
+import { DraggableWrapper } from './DraggableWrapper'
 
-export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
-  const { name, origin, value, filterItems, chosenItems, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
+export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
+  const { name, origin, value, filterItems, selectedItems, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
 
   const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterItems)
 
   const [open, setOpen] = useState(false)
 
-  const [all, setAll] = useState<QuantityEnum>(getQuantityValue(chosenItems, filterItems))
+  const [all, setAll] = useState<ActualQuantity>(getQuantityValue(selectedItems, filterItems))
 
   const [buttonRef, setButtonRef] = useState<HTMLButtonElement>()
 
-  const { classes, css } = useStyles(draggableCreateStyles)
+  const { classes } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: DraggableItemTypes.FILTER, name: name, origin },
@@ -39,9 +41,9 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
     throw new Error(`The filterItems must have at least one element`)
   }
 
-  chosenItems.forEach((value) => {
+  selectedItems.forEach((value) => {
     if (!filterItems.includes(value)) {
-      throw new Error(`The value '${value}' of chosenItems doesn't exist in filterItems[${filterItems.toString()}]`)
+      throw new Error(`The value '${value}' of selectedItems doesn't exist in filterItems[${filterItems.toString()}]`)
     }
   })
 
@@ -53,9 +55,9 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
   }
 
   const handleSelect = (element: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    chosenItems.has(element) ? chosenItems.delete(element) : chosenItems.add(element)
-    onFilterUpdate(name, new Set<string>(chosenItems))
-    setAll(getQuantityValue(chosenItems, filterItems))
+    selectedItems.has(element) ? selectedItems.delete(element) : selectedItems.add(element)
+    onFilterUpdate(name, new Set<string>(selectedItems))
+    setAll(getQuantityValue(selectedItems, filterItems))
   }
 
   const handleKeyDown = (filterKey: keyof T) => (event: any) => {
@@ -69,17 +71,17 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
     )
 
   const handleSelectAll = () => () => {
-    if (all === QuantityEnum.FULL) {
-      setAll(QuantityEnum.EMPTY)
+    if (all === ActualQuantity.ALL) {
+      setAll(ActualQuantity.NONE)
       onFilterUpdate(name, new Set<string>(new Set<string>()))
     } else {
-      setAll(QuantityEnum.FULL)
+      setAll(ActualQuantity.ALL)
       onFilterUpdate(name, new Set<string>(filterItems))
     }
   }
 
   return (
-    <div ref={drag} className={css(classes.dndBox, isDragging && classes.dndBoxDragging)}>
+    <DraggableWrapper drag={drag} isDragging={isDragging}>
       <Button
         style={classes.button}
         innerRef={setButtonRef}
@@ -121,8 +123,8 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
               <Checkbox
                 label={locale.draggable.allItems}
                 onChange={handleSelectAll()}
-                checked={all === QuantityEnum.FULL}
-                indeterminate={all === QuantityEnum.HALF_FULL}
+                checked={all === ActualQuantity.ALL}
+                indeterminate={all === ActualQuantity.ONE_OR_MORE}
               />
             </DropdownItem>
           )}
@@ -131,57 +133,13 @@ export function RealFilterDraggable<T>(props: FilterDraggableProps<T>) {
             <DraggableRow<T>
               value={value}
               name={name}
-              selected={chosenItems.has(value)}
+              selected={selectedItems.has(value)}
               handleSelect={handleSelect}
               formatter={formatter}
             />
           ))}
         </div>
       </Dropdown>
-    </div>
+    </DraggableWrapper>
   )
 }
-
-export const draggableCreateStyles = (theme: Theme) => ({
-  button: {
-    border: `solid 1px ${theme.pallete.gray.c60}`,
-    color: theme.pallete.gray.c10,
-    borderRadius: '2px',
-    boxShadow: theme.shadows.outer[10],
-    paddingLeft: '0px',
-    fontSize: '13px',
-  },
-
-  dndBox: {
-    display: 'inline-block',
-    margin: '0.25rem 0.25rem',
-  },
-
-  dndBoxDragging: {
-    boxShadow: theme.shadows.outer[10],
-  },
-
-  dropdownItem: {
-    width: '100%',
-    cursor: 'pointer',
-    borderTop: `1px solid ${theme.pallete.gray.c80}`,
-    padding: '0.25rem',
-  },
-
-  dropdownArea: {
-    maxHeight: '12rem',
-    overflow: 'auto',
-  },
-
-  dropdown: {
-    padding: '0rem',
-  },
-
-  search: {
-    padding: '0.5rem',
-  },
-
-  noOutline: {
-    outlineColor: theme.pallete.surface.main,
-  },
-})

@@ -1,4 +1,4 @@
-import { QuantityEnum } from './types/QuantityEnum'
+import { ActualQuantity } from './types/ActualQuantity'
 
 /**
  * Checks which direction the arrow key was pressed
@@ -20,16 +20,16 @@ export function getKeyDirection(key: string) {
 }
 
 /**
- * Checks whether the first filter is full, empty or half full based on the second filter
+ * Checks whether the first filter has all, some or none elements of the second filter
  *
  * @param filterOne The first filter
  * @param filterTwo The second filter
- * @returns If it's empty, full or half full
+ * @returns If it has all (ALL), some (ONE_OR_MORE) or none elements (NONE)
  */
-export function getQuantityValue(filterOne: Set<string>, filterTwo: string[]): QuantityEnum {
+export function getQuantityValue(filterOne: Set<string>, filterTwo: string[]): ActualQuantity {
   return filterOne.size === 0
-    ? QuantityEnum.EMPTY
+    ? ActualQuantity.NONE
     : filterOne.size === filterTwo.length
-    ? QuantityEnum.FULL
-    : QuantityEnum.HALF_FULL
+    ? ActualQuantity.ALL
+    : ActualQuantity.ONE_OR_MORE
 }

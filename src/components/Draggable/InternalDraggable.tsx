@@ -2,15 +2,16 @@ import React from 'react'
 import { useDrag } from 'react-dnd'
 import { Button, HFlow, Icon } from '..'
 import { useStyles } from '../../styles'
-import { DefaultDraggableProps } from './DefaultDraggable'
-import { draggableCreateStyles } from './RealFilterDraggable'
+import { DraggableProps } from './Draggable'
+import { DraggableWrapper } from './DraggableWrapper'
+import { draggableCreateStyles } from './style'
 import { DraggableItemTypes } from './types/ItemTypes'
 import { getKeyDirection } from './util'
 
-export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
+export function InternalDraggable<T>(props: DraggableProps<T>) {
   const { name, origin, value, onDragEnd, onKeyNav } = props
 
-  const { classes, css } = useStyles(draggableCreateStyles)
+  const { classes } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
     item: { type: DraggableItemTypes.DEFAULT, name: name, origin },
@@ -28,7 +29,7 @@ export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
   }
 
   return (
-    <div ref={drag} className={css(classes.dndBox, isDragging && classes.dndBoxDragging)}>
+    <DraggableWrapper drag={drag} isDragging={isDragging}>
       <Button
         style={[classes.button, 'padding-right: 1.25rem;']}
         onKeyDown={handleKeyDown}
@@ -41,6 +42,6 @@ export function RealDefaultDraggable<T>(props: DefaultDraggableProps<T>) {
           {value}
         </HFlow>
       </Button>
-    </div>
+    </DraggableWrapper>
   )
 }
