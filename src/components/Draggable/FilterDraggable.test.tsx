@@ -154,7 +154,7 @@ describe('FilterDraggable', () => {
       expect(keyNav).toBeCalledWith('right', origin, 'name')
     })
 
-    it('should call the onKeyNav with null when the user press the a non-arrow key', () => {
+    it('should call the onKeyNav with null when the user press a non-arrow key', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createFilterComponent({ onKeyNav: keyNav }))
 

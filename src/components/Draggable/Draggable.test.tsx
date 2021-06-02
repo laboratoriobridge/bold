@@ -71,7 +71,7 @@ describe('Draggable', () => {
       expect(keyNav).toBeCalledWith('right', origin)
     })
 
-    it('should call the onKeyNav with null when the user press the a non-arrow key', () => {
+    it('should call the onKeyNav with null when the user press a non-arrow key', () => {
       const keyNav = jest.fn()
       const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
 
