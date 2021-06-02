@@ -70,6 +70,14 @@ describe('Draggable', () => {
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowRight', code: 'ArrowRight' })
       expect(keyNav).toBeCalledWith('right', origin)
     })
+
+    it('should call the onKeyNav with null when the user press the a non-arrow key', () => {
+      const keyNav = jest.fn()
+      const { getByRole } = render(createDefaultComponent({ onKeyNav: keyNav }))
+
+      fireEvent.keyDown(getByRole('button'), { key: 'Enter', code: 'Enter' })
+      expect(keyNav).toBeCalledWith(null, origin)
+    })
   })
 
   describe('Drag and drop', () => {

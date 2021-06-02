@@ -11,7 +11,7 @@ export default {
 const origin = 'keys_avaible'
 
 type Fruit = {
-  name: String
+  name: string
 }
 
 const keyMapping = new Map<keyof Fruit, KeyMapping>([['name', { keyName: 'Name' }]])
