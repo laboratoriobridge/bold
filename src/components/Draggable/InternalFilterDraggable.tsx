@@ -105,7 +105,7 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
         popperProps={{ placement: 'bottom' }}
         style={classes.dropdown}
       >
-        <div title='dropDownArea' className={classes.dropdownArea} onBlur={(e) => e.stopPropagation()}>
+        <div key='dropDownArea' className={classes.dropdownArea}>
           <DropdownItem className={classes.noOutline}>
             <div className={classes.search}>
               <TextField
@@ -119,7 +119,11 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
           </DropdownItem>
 
           {searchedFilterSet.length === filterItems.length && (
-            <DropdownItem key={locale.draggable.all} className={classes.dropdownItem}>
+            <DropdownItem
+              key={locale.draggable.all}
+              className={classes.dropdownItem}
+              aria-checked={all === ActualQuantity.ALL ? 'true' : all === ActualQuantity.NONE ? 'false' : 'mixed'}
+            >
               <Checkbox
                 label={locale.draggable.allItems}
                 onChange={handleSelectAll()}
@@ -131,6 +135,7 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
 
           {searchedFilterSet.map((value) => (
             <DraggableRow<T>
+              key={value}
               value={value}
               name={name}
               selected={selectedItems.has(value)}
