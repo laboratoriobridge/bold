@@ -105,7 +105,7 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
         popperProps={{ placement: 'bottom' }}
         style={classes.dropdown}
       >
-        <div key='dropDownArea' className={classes.dropdownArea}>
+        <div key='dropDownArea' className={classes.dropdownArea} onBlur={(e) => e.stopPropagation()}>
           <DropdownItem className={classes.noOutline}>
             <div className={classes.search}>
               <TextField

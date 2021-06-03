@@ -319,13 +319,13 @@ describe('FilterDraggable', () => {
     })
 
     it('should not propagate the blur event when the user remove the focus on drop down area', () => {
-      const { getByRole, getByTitle } = render(createFilterComponent())
+      const { getByRole } = render(createFilterComponent())
 
       const button = getByRole('button')
 
       fireEvent.click(button)
 
-      const dropDownArea = getByTitle('dropDownArea')
+      const dropDownArea = getByRole('menu').firstChild
 
       fireEvent.focus(dropDownArea)
 
