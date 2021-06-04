@@ -102,7 +102,11 @@ const ComboboxWithCutomComponentsTest = (props: Partial<ComboboxProps<Fruit>> & 
   />
 )
 
-it.each([[true], [false]])('has aria-compliant attributes', async (async: boolean) => {
+test.each`
+  async
+  ${true}
+  ${false}
+`('has aria-compliant attributes (async: $async)', async ({ async }) => {
   // From https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html
   let baseElement: RenderResult['baseElement']
   await act(async () => {
@@ -142,42 +146,43 @@ it.each([[true], [false]])('has aria-compliant attributes', async (async: boolea
   expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
 })
 
-it.each([[true], [false]])(
-  'opens menu when input is focused and only when `openOnFocus` prop is true',
-  async (async: boolean) => {
-    let baseElement: RenderResult['baseElement']
-    let rerender: RenderResult['rerender']
-    await act(async () => {
-      const result = render(<ComboboxTest async={async} />)
-      baseElement = result.baseElement
-      rerender = result.rerender
-    })
-    const input = baseElement.querySelector('input')
+test.each`
+  async
+  ${true}
+  ${false}
+`('opens menu when input is focused and only when `openOnFocus` prop is true (async: $async)', async ({ async }) => {
+  let baseElement: RenderResult['baseElement']
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    const result = render(<ComboboxTest async={async} />)
+    baseElement = result.baseElement
+    rerender = result.rerender
+  })
+  const input = baseElement.querySelector('input')
 
-    // initial state has closed menu
-    expect(baseElement.querySelector('ul')).toBeFalsy()
+  // initial state has closed menu
+  expect(baseElement.querySelector('ul')).toBeFalsy()
 
-    // focus input to open menu
-    await act(async () => {
-      fireEvent.focus(input)
-    })
-    expect(baseElement.querySelector('ul')).toBeTruthy()
+  // focus input to open menu
+  await act(async () => {
+    fireEvent.focus(input)
+  })
+  expect(baseElement.querySelector('ul')).toBeTruthy()
 
-    // blur input to close menu
-    await act(async () => {
-      fireEvent.blur(input)
-    })
-    expect(baseElement.querySelector('ul')).toBeFalsy()
-    // rerenders switching prop
-    await act(async () => rerender(<ComboboxTest openOnFocus={false} />))
+  // blur input to close menu
+  await act(async () => {
+    fireEvent.blur(input)
+  })
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+  // rerenders switching prop
+  await act(async () => rerender(<ComboboxTest openOnFocus={false} />))
 
-    // focus input and now menu should not be open
-    await act(async () => {
-      fireEvent.focus(input)
-    })
-    expect(baseElement.querySelector('ul')).toBeFalsy()
-  }
-)
+  // focus input and now menu should not be open
+  await act(async () => {
+    fireEvent.focus(input)
+  })
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+})
 
 it('shows placeholder when specified', async () => {
   let baseElement: RenderResult['baseElement']
@@ -202,7 +207,11 @@ it('does not show placeholder when not specified', async () => {
   expect(input).not.toHaveAttribute('placeholder')
 })
 
-it.each([[true], [false]])('clears selection when "Clear" is clicked', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('clears selection when "Clear" is clicked (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {
     const result = render(<ComboboxTest clearable={true} async={async} />)
@@ -278,7 +287,11 @@ it('respects menu min-width', async () => {
   expect(menu).toHaveStyle('min-width: 1000px')
 })
 
-it.each([[true], [false]])('should trigger onChange', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('should trigger onChange (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
 
   let selection = null
@@ -307,7 +320,11 @@ it.each([[true], [false]])('should trigger onChange', async (async: boolean) => 
   expect(selection).toBe(fruits[0])
 })
 
-it.each([[true], [false]])('should trigger onFilterChange', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('should trigger onFilterChange (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
 
   let filter = ''
@@ -356,7 +373,11 @@ it('should trigger onBlur', async () => {
   expect(onBlur).toBeCalled()
 })
 
-it.each([[true], [false]])('should clear input if the value is not valid', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('should clear input if the value is not valid (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
 
   await act(async () => {
@@ -373,7 +394,11 @@ it.each([[true], [false]])('should clear input if the value is not valid', async
   expect(input).not.toHaveValue()
 })
 
-it.each([[true], [false]])('should clear input if the value is not valid after select item', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('should clear input if the value is not valid after select item (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
   await act(async () => {
     const result = render(<ComboboxTest clearable={true} async={async} />)
@@ -407,9 +432,13 @@ it.each([[true], [false]])('should clear input if the value is not valid after s
   expect(input).not.toHaveValue()
 })
 
-it.each([[true], [false]])(
-  'should add item if the input value is not in the list and "createNewItem" is defined',
-  async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`(
+  'should add item if the input value is not in the list and "createNewItem" is defined (async: $async)',
+  async ({ async }) => {
     const createNewItem = (input: string) => ({ value: 1, label: input })
 
     let baseElement: RenderResult['baseElement']
@@ -457,7 +486,11 @@ it.each([[true], [false]])(
   }
 )
 
-it.each([[true], [false]])('should accept a value as parameter', async (async: boolean) => {
+it.each`
+  async
+  ${true}
+  ${false}
+`('should accept a value as parameter (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
 
   await act(async () => {
