@@ -557,6 +557,7 @@ describe('rendering', () => {
     await act(async () => {
       fireEvent.click(dropdownButton)
     })
+    await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 
@@ -570,6 +571,7 @@ describe('rendering', () => {
     await act(async () => {
       fireEvent.click(dropdownButton)
     })
+    await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 
@@ -583,6 +585,7 @@ describe('rendering', () => {
     await act(async () => {
       fireEvent.click(dropdownButton)
     })
+    await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 
@@ -596,6 +599,7 @@ describe('rendering', () => {
     await act(async () => {
       fireEvent.click(dropdownButton)
     })
+    await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 })
