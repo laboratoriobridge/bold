@@ -183,7 +183,9 @@ exports[`rendering renders correcly closed 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    No results are available.
+  </div>
   <div>
     <div
       aria-expanded="false"
@@ -495,7 +497,9 @@ exports[`rendering renders correcly opened 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    No results are available.
+  </div>
   <div>
     <div
       aria-expanded="true"
@@ -1005,7 +1009,9 @@ exports[`rendering renders correcly opened and loading 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    No results are available.
+  </div>
   <div>
     <div
       aria-expanded="true"
