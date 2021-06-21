@@ -46,6 +46,11 @@ const locale = {
       other: 'results',
     },
   },
+  draggable: {
+    search: 'Search',
+    allItems: 'All items',
+    all: 'all',
+  },
 }
 
 export default locale

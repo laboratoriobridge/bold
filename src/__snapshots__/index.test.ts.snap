@@ -45,6 +45,7 @@ Array [
   "ModalFooter",
   "MonthField",
   "MonthPaginator",
+  "MonthRangePicker",
   "MonthPicker",
   "Number",
   "Paginator",
