@@ -1,6 +1,6 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { CSSProperties, useRef, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -9,14 +9,16 @@ import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
 import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
+import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 
 export interface ComboboxProps<T = string> extends Omit<TextInputProps, 'value' | 'onChange'>, UseFormControlProps {
   value?: T
-  items: T[]
+  items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
   createNewItem?(inputValue: string): T
   openOnFocus: boolean
   loading: boolean
+  debounceMilliseconds: number
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
@@ -28,7 +30,8 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
   const {
     value,
     items,
-    loading,
+    loading: externalLoading,
+    debounceMilliseconds,
     createNewItem,
     components = {},
     itemToString,
@@ -42,11 +45,23 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     ...rest
   } = props
 
+  const [itemsLoaded, setItemsLoaded] = useState(false)
   const locale = useLocale()
   const { classes } = useStyles(createStyles)
 
-  const [currentFilter, setCurrentFilter] = useState('')
-  const visibleItems = filter(items, currentFilter)
+  const isAsync = typeof items === 'function'
+  const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
+    items,
+    filter,
+  ])
+  const { loading: loadingItems, items: loadedItems, loadItems } = useComboboxItemsLoader(
+    getItems,
+    debounceMilliseconds
+  )
+  const isLoading = externalLoading || (isAsync && loadingItems)
+
+  // Reload items when changed
+  useEffect(() => setItemsLoaded(false), [items])
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
@@ -65,16 +80,18 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
     reset,
   } = useCombobox<T>({
     selectedItem: value,
-    items: visibleItems,
+    items: loadedItems,
+
     stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
-    onInputValueChange: ({ inputValue }) => {
-      setCurrentFilter(inputValue)
-      onFilterChange?.(inputValue)
-    },
+    onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
       closeMenu()
       onChange?.(selectedItem)
+    },
+    onIsOpenChange: ({ isOpen, inputValue }) => {
+      isOpen && !itemsLoaded && loadItems(inputValue)
+      setItemsLoaded(true)
     },
   })
 
@@ -119,7 +136,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
-      <div aria-busy={loading} {...downshiftMenuProps}>
+      <div aria-busy={isLoading} {...downshiftMenuProps}>
         {isOpen && (
           <div
             data-testid='menu'
@@ -130,10 +147,10 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
           >
             <ul className={classes.list}>
               {PrependItem && <PrependItem />}
-              {loading && <LoadingItem />}
-              {!loading && createNewItem && !visibleItems?.length && <CreateItem />}
-              {!loading && !createNewItem && !visibleItems?.length && <EmptyItem />}
-              {visibleItems.map((item, index) => (
+              {isLoading && <LoadingItem />}
+              {!isLoading && createNewItem && !loadedItems?.length && <CreateItem />}
+              {!isLoading && !createNewItem && !loadedItems?.length && <EmptyItem />}
+              {loadedItems.map((item, index) => (
                 <Item
                   key={`${item}${index}`}
                   item={item}
@@ -155,6 +172,7 @@ export function Combobox<T = string>(props: ComboboxProps<T>) {
 Combobox.defaultProps = {
   openOnFocus: true,
   loading: false,
+  debounce: 350,
 } as Partial<ComboboxProps>
 
 const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
