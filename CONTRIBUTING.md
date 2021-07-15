@@ -6,7 +6,7 @@ We are happy for your interest in contributing to Bold! But before you start it 
 
 **⚠️ Attention: All issues must be written in English!**
 
-## Updating Bold website ##
+## Updating Bold website
 
 If you’re a **Bridger** then you can see [our documentation here](https://docs.google.com/document/d/1z3MCUUL9TdCFscZbWOhUUvSxNDWD16dAe5R5pwI1lGI/edit#). 
 Before updating the website with new components or making any changes, please change the doc file and inform the team on the Bold channel on slack.
@@ -58,7 +58,7 @@ If the right component does not exist:
 ## Requirements
 
 - [Git](https://git-scm.com/)
-- [Node 10+](https://nodejs.org/)
+- [Node 14+](https://nodejs.org/)
 - [Yarn](https://yarnpkg.com/)
 
 ## Used technologies and tools
