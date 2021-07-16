@@ -5,7 +5,7 @@
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "keywords": [
     "react",
