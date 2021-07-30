@@ -56,6 +56,11 @@ const locale: LocaleConfiguration = {
       other: 'resultados',
     },
   },
+  draggable: {
+    search: 'Pesquisa',
+    allItems: 'Todos os itens',
+    all: 'todos',
+  },
 }
 
 export default locale
