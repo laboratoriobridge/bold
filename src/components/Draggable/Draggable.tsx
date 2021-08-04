@@ -10,6 +10,11 @@ export interface DraggableProps<T> {
   name: keyof T
 
   /**
+   * The type of droppables it belongs to
+   */
+  type: string
+
+  /**
    * Used to know which dropable it came from
    */
   origin: string
@@ -29,7 +34,7 @@ export interface DraggableProps<T> {
    * Called when an arrow key is pressed
    * You may want when the user presses an arrow key to move the draggable from one dropable to another
    */
-  onKeyNav: (dir: 'left' | 'right' | 'up' | 'down' | null, origin: string, key?: keyof T) => void
+  onKeyNav?: (dir: 'left' | 'right' | 'up' | 'down' | null, origin: string, key?: keyof T) => void
 }
 
 export function Draggable<T>(props: DraggableProps<T>) {

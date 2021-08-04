@@ -13,7 +13,18 @@ import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
 
 export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
-  const { name, origin, value, filterItems, selectedItems, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
+  const {
+    name,
+    origin,
+    value,
+    filterItems,
+    selectedItems,
+    onDragEnd,
+    onFilterUpdate,
+    formatter,
+    onKeyNav,
+    type,
+  } = props
 
   const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterItems)
 
@@ -26,7 +37,7 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const { classes } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
-    item: { type: DraggableItemTypes.FILTER, name: name, origin },
+    item: { type: type, name: name, origin },
     end: (_item, monitor) => {
       if (monitor.getDropResult() != null) onDragEnd()
     },
