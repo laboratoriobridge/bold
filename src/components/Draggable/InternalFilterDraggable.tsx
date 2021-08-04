@@ -38,7 +38,7 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const [{ isDragging }, drag] = useDrag({
     item: { type: type, name: name, origin },
     end: (_item, monitor) => {
-      if (monitor.getDropResult() != null) onDragEnd()
+      if (monitor.getDropResult()['result']) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),

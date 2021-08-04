@@ -85,17 +85,17 @@ export function Droppable<T>(props: DroppableProps<T>) {
   const [{ isOver }, drag] = useDrop({
     accept: type,
     drop(item: DragItem<T>) {
-      console.log(item)
       if (!keyState.includes(item.name)) {
         const newKeys = [...keyState, item.name]
         handleKeyUpdate && handleKeyUpdate(newKeys)
-        return { result: name }
+        return { result: true }
       } else {
         const pos = keyState.findIndex((element) => element === item.name)
         const temp = [...keyState]
         temp.splice(pos, 1)
         const newKeys = [...temp, item.name]
         handleKeyUpdate && handleKeyUpdate(newKeys)
+        return { result: false }
       }
     },
     collect: (monitor) => ({
@@ -107,9 +107,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
   function deleteByKey(id: keyof T) {
     let tempKeys = [...keyState]
     const index = tempKeys.indexOf(id)
-    if (index > -1) {
-      tempKeys.splice(index, 1)
-    }
+    tempKeys.splice(index, 1)
     handleKeyUpdate && handleKeyUpdate(tempKeys)
   }
   const draggableButtons = keyState.map((key, value) => {
