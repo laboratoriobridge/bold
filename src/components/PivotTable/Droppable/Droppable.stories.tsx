@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { HFlow } from '../HFlow'
-import { Box } from '../PivotTable/Box/Box'
+import { HFlow } from '../../HFlow'
+import { Box } from '../Box/Box'
 import { Droppable } from './Droppable'
 
 export default {

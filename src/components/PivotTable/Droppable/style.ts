@@ -1,4 +1,4 @@
-import { Theme } from '../../styles'
+import { Theme } from '../../../styles'
 
 export const droppableCreateStyles = (theme: Theme, hasKeys: boolean) => ({
   placeholder: {

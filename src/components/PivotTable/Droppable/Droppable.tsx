@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { useDrop } from 'react-dnd'
-import { useStyles } from '../../styles'
+import { useStyles } from '../../../styles'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
