@@ -106,7 +106,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
     handleKeyUpdate && handleKeyUpdate(tempKeys)
   }
   const draggableButtons = keyState.map((key, value) => {
-    const hasFilter = props.filterState && props.filterState.get(key) && props.filterState.get(key).size > 0
+    const hasFilter = props.filterState && props.keys.get(key).length > 0
     if (hasFilter && handleFilterUpdate) {
       return (
         <InternalFilterDraggable<T>
@@ -115,7 +115,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
           name={key}
           filterItems={props.keys.get(key)}
           selectedItems={props.filterState.get(key) || new Set<string>()}
-          value={keyMapping.get(key).keyName || (key as string)}
+          value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
           onFilterUpdate={handleFilterUpdate}
           origin={name}
           onDragEnd={() => deleteByKey(key)}
@@ -128,7 +128,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
           key={key as string}
           type={type}
           name={key}
-          value={keyMapping.get(key).keyName || (key as string)}
+          value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
           origin={name}
           onDragEnd={() => deleteByKey(key)}
           onKeyNav={onKeyNav}

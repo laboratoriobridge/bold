@@ -22,17 +22,16 @@ const keys = new Map<keyof Fruit, string[]>([
   ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
   ['size', ['Medium', 'Small', 'Big']],
 ])
+const filterState = new Map<keyof Fruit, Set<string>>()
 
-const deepCopy = new Map<keyof Fruit, Set<string>>()
-
-keys.forEach((value, key) => deepCopy.set(key, new Set(value)))
+keys.forEach((value, key) => filterState.set(key, new Set(value)))
 
 const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
   <DndProvider backend={HTML5Backend}>
     <Droppable<Fruit>
       name={'droppable-1'}
       keyState={['name']}
-      filterState={new Map<keyof Fruit, Set<string>>()}
+      filterState={filterState}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
@@ -43,7 +42,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       type={'fruit-table'}
-      keyMapping={keyMapping}
+      keyMapping={new Map<keyof Fruit, KeyMapping>()}
       keys={keys}
       handleKeyUpdate={() => {}}
       {...props}
@@ -56,9 +55,9 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
     <Droppable<Fruit>
       name={'droppable-1'}
       keyState={['name']}
-      filterState={new Map<keyof Fruit, Set<string>>()}
+      filterState={filterState}
       type={'fruit-table'}
-      keyMapping={keyMapping}
+      keyMapping={new Map<keyof Fruit, KeyMapping>()}
       keys={keys}
       handleKeyUpdate={() => {}}
       handleFilterUpdate={() => {}}
