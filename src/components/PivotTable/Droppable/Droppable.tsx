@@ -19,11 +19,6 @@ export interface DroppableProps<T> {
   type: string
 
   /**
-   * If the draggables it contains have filters or not
-   */
-  hasFilter: boolean
-
-  /**
    * Map of all the keys belonging to the same type with an array of filter options
    */
   keys: Map<keyof T, Array<string>>
@@ -44,12 +39,12 @@ export interface DroppableProps<T> {
   /**
    * Map of keys to the state of their filters
    */
-  filterState: Map<keyof T, Set<string>>
+  filterState?: Map<keyof T, Set<string>>
 
   /**
    * Function that updates the filterState of a key
    */
-  handleFilterUpdate: (key: keyof T, filtro: Set<string>) => void
+  handleFilterUpdate?: (key: keyof T, filtro: Set<string>) => void
 
   /**
    * Function that updates the keyState of this component
@@ -80,7 +75,7 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, type, handleKeyUpdate, handleFilterUpdate, onKeyNav, hasFilter } = props
+  const { name, keyState, keyMapping, type, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
 
   const [{ isOver }, drag] = useDrop({
     accept: type,
@@ -111,7 +106,8 @@ export function Droppable<T>(props: DroppableProps<T>) {
     handleKeyUpdate && handleKeyUpdate(tempKeys)
   }
   const draggableButtons = keyState.map((key, value) => {
-    if (hasFilter) {
+    const hasFilter = props.filterState && props.filterState.get(key) && props.filterState.get(key).size > 0
+    if (hasFilter && handleFilterUpdate) {
       return (
         <InternalFilterDraggable<T>
           key={key as string}

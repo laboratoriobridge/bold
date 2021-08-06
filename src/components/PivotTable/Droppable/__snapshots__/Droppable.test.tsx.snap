@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Draggable render should render with filter options 1`] = `
-.emotion-6 {
+exports[`Droppable render should render with filter options 1`] = `
+.emotion-5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
   text-align: center;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -23,39 +23,12 @@ exports[`Draggable render should render with filter options 1`] = `
   justify-content: flex-start;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: inline-block;
   margin: 0.25rem 0.25rem;
 }
 
 .emotion-2 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
-}
-
-.emotion-0 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-7 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  min-height: 7.18rem;
-  min-width: 16rem;
-  margin: 0.25rem;
-  padding: 0.75rem;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.emotion-3 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -92,9 +65,10 @@ exports[`Draggable render should render with filter options 1`] = `
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 2px 1px -1px rgba(0,0,0,0.12),0 1px 1px 0 rgba(0,0,0,0.14);
   padding-left: 0px;
   font-size: 13px;
+  padding-right: 1.25rem;
 }
 
-.emotion-3 > span {
+.emotion-2 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -105,36 +79,62 @@ exports[`Draggable render should render with filter options 1`] = `
   display: inline-flex;
 }
 
-.emotion-3:not(:disabled):active {
+.emotion-2:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-3:focus {
+.emotion-2:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-3:not(:disabled):hover {
+.emotion-2:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-1 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+}
+
+.emotion-0 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 7.18rem;
+  min-width: 16rem;
+  margin: 0.25rem;
+  padding: 0.75rem;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div>
       <div
-        class="emotion-4"
+        class="emotion-3"
         draggable="true"
       >
         <button
-          aria-haspopup="true"
-          class="emotion-3"
+          class="emotion-2"
           type="button"
         >
           <span>
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
               <svg
                 aria-hidden="true"
@@ -150,19 +150,6 @@ exports[`Draggable render should render with filter options 1`] = `
                 />
               </svg>
               Name
-              <svg
-                aria-hidden="true"
-                class="emotion-0"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                />
-              </svg>
             </div>
           </span>
         </button>
@@ -170,10 +157,10 @@ exports[`Draggable render should render with filter options 1`] = `
     </div>
   </div>
   <div
-    class="emotion-7"
+    class="emotion-6"
   >
     <div
-      class="emotion-6"
+      class="emotion-5"
     >
       <i>
         Arraste os itens para inserir na tabela
@@ -183,7 +170,7 @@ exports[`Draggable render should render with filter options 1`] = `
 </div>
 `;
 
-exports[`Draggable render should render without filter options 1`] = `
+exports[`Droppable render should render without filter options 1`] = `
 .emotion-5 {
   -webkit-align-self: center;
   -ms-flex-item-align: center;

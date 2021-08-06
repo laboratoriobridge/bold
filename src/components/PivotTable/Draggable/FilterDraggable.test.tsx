@@ -371,7 +371,7 @@ describe('FilterDraggable', () => {
       fireEvent.drop(secondDiv)
       fireEvent.dragEnd(dragabble)
 
-      //expect(onDragEnd).toHaveBeenCalled()
+      expect(onDragEnd).toHaveBeenCalled()
     })
   })
 })

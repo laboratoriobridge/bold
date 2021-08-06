@@ -7,7 +7,6 @@ import { Droppable, DroppableProps } from './Droppable'
 type Fruit = {
   name: string
   size?: string
-  taste?: string
 }
 type KeyMapping = {
   keyName: string
@@ -34,24 +33,19 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       filterState={new Map<keyof Fruit, Set<string>>()}
-      hasFilter={false}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
       handleKeyUpdate={() => {}}
-      handleFilterUpdate={() => {}}
       {...props}
     />
     <Droppable<Fruit>
       name={'droppable-2'}
       keyState={[]}
-      filterState={new Map<keyof Fruit, Set<string>>()}
-      hasFilter={false}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
       handleKeyUpdate={() => {}}
-      handleFilterUpdate={() => {}}
       {...props}
     />
   </DndProvider>
@@ -63,7 +57,6 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-1'}
       keyState={['name']}
       filterState={new Map<keyof Fruit, Set<string>>()}
-      hasFilter={true}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
@@ -75,7 +68,6 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       name={'droppable-2'}
       keyState={[]}
       filterState={new Map<keyof Fruit, Set<string>>()}
-      hasFilter={true}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
@@ -86,7 +78,7 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
   </DndProvider>
 )
 
-describe('Draggable', () => {
+describe('Droppable', () => {
   describe('render', () => {
     it('should render without filter options', () => {
       const { container } = render(createDefaultComponent())
@@ -132,7 +124,7 @@ describe('Draggable', () => {
       expect(handleKeyUpdate).toHaveBeenCalled()
     })
 
-    it('should call onDragEnd when the drag event ends for droppable with filter', () => {
+    it('should call onDragEnd when the drag event ends in another dropable with filter', () => {
       const handleKeyUpdate = jest.fn()
 
       const { container } = render(createFilterComponent({ handleKeyUpdate: handleKeyUpdate }))
@@ -165,7 +157,7 @@ describe('Draggable', () => {
       fireEvent.drop(droppable2)
       fireEvent.dragEnd(dragabble)
 
-      expect(handleKeyUpdate).toHaveBeenCalled()
+      expect(handleKeyUpdate).toBeCalledWith(['name'])
     })
   })
 
@@ -178,7 +170,7 @@ describe('Draggable', () => {
 
       fireEvent.keyDown(getByRole('button'), { key: 'ArrowUp', code: 'ArrowUp' })
       expect(onKeyNav).toBeCalledWith('up', 'droppable-1')
-      expect(handleKeyUpdate).toHaveBeenCalled()
+      expect(handleKeyUpdate).toBeCalledWith([])
     })
   })
 })

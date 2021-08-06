@@ -12,7 +12,6 @@ export default {
 type Fruit = {
   name: string
   size?: string
-  taste?: string
 }
 type KeyMapping = {
   keyName: string
@@ -39,11 +38,11 @@ export const Default = () => {
   const [filterState, setFilterState] = useState<Map<keyof Fruit, Set<string>>>(
     new Map<keyof Fruit, Set<string>>(deepCopy)
   )
-  const handleFilterUpdate = (key: keyof Fruit, filtro: Set<string>) => {
-    if (filtro.size < 1) {
+  const handleFilterUpdate = (key: keyof Fruit, filter: Set<string>) => {
+    if (filter.size < 1) {
       filterState.delete(key)
     } else {
-      filterState.set(key, filtro)
+      filterState.set(key, filter)
     }
     setFilterState(new Map(filterState))
   }
@@ -55,7 +54,6 @@ export const Default = () => {
             name='table1'
             keyState={defaultKeys}
             filterState={filterState}
-            hasFilter={true}
             type={'fruit-table'}
             keyMapping={keyMapping}
             keys={keys}
@@ -67,13 +65,10 @@ export const Default = () => {
           <Droppable<Fruit>
             name='table2'
             keyState={rowKeys}
-            filterState={filterState}
-            hasFilter={false}
             type={'fruit-table'}
             keyMapping={keyMapping}
             keys={keys}
             handleKeyUpdate={setRowKeys}
-            handleFilterUpdate={handleFilterUpdate}
           />
         </Box>
       </HFlow>
