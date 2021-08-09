@@ -65,10 +65,12 @@ export const Default = () => {
           <Droppable<Fruit>
             name='table2'
             keyState={rowKeys}
+            filterState={filterState}
             type={'fruit-table'}
             keyMapping={keyMapping}
             keys={keys}
             handleKeyUpdate={setRowKeys}
+            handleFilterUpdate={handleFilterUpdate}
           />
         </Box>
       </HFlow>

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
 import { useDrop } from 'react-dnd'
+import { useLocale } from '../../..'
 import { useStyles } from '../../../styles'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
@@ -75,7 +76,13 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, type, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
+  const { name, keyState, keyMapping, type, filterState, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
+
+  if ((filterState && !handleFilterUpdate) || (!filterState && handleFilterUpdate)) {
+    throw new Error('The filterState and handleFilterUpdate props must always be defined together')
+  }
+
+  const locale = useLocale()
 
   const [{ isOver }, drag] = useDrop({
     accept: type,
@@ -106,7 +113,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
     handleKeyUpdate && handleKeyUpdate(tempKeys)
   }
   const draggableButtons = keyState.map((key, value) => {
-    const hasFilter = props.filterState && props.keys.get(key).length > 0
+    const hasFilter = filterState && props.keys.get(key).length > 0
     if (hasFilter && handleFilterUpdate) {
       return (
         <InternalFilterDraggable<T>
@@ -145,7 +152,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
         <div>{draggableButtons}</div>
       ) : (
         <div className={classes.placeholder}>
-          <i>{isOver ? 'Solte o item aqui para inserir na tabela' : 'Arraste os itens para inserir na tabela'}</i>
+          <i>{isOver ? locale.droppable.isOver : locale.droppable.isNotOver}</i>
         </div>
       )}
     </div>
