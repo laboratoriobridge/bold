@@ -15,7 +15,7 @@ export interface DroppableProps<T> {
   name: string
 
   /**
-   * The name of the type of draggable it belongs. Itens can be dragged between droppables of the same type
+   * The name of the type of draggable it belongs. Items can be dragged between droppables of the same type
    */
   type: string
 
