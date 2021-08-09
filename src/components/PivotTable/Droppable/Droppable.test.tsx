@@ -123,7 +123,7 @@ describe('Droppable', () => {
       expect(handleKeyUpdate).toHaveBeenCalled()
     })
 
-    it('should call onDragEnd when the drag event ends in another dropable with filter', () => {
+    it('should call onDragEnd when the drag event ends in another droppable with filter', () => {
       const handleKeyUpdate = jest.fn()
 
       const { container } = render(createFilterComponent({ handleKeyUpdate: handleKeyUpdate }))
