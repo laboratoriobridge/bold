@@ -176,7 +176,7 @@ exports[`Droppable render should render with filter options 1`] = `
       class="emotion-6"
     >
       <i>
-        Arraste os itens para inserir na tabela
+        Drag items to insert into table
       </i>
     </div>
   </div>
@@ -346,7 +346,7 @@ exports[`Droppable render should render without filter options 1`] = `
       class="emotion-5"
     >
       <i>
-        Arraste os itens para inserir na tabela
+        Drag items to insert into table
       </i>
     </div>
   </div>

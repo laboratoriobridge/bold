@@ -31,7 +31,6 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
     <Droppable<Fruit>
       name={'droppable-1'}
       keyState={['name']}
-      filterState={filterState}
       type={'fruit-table'}
       keyMapping={keyMapping}
       keys={keys}
@@ -88,6 +87,25 @@ describe('Droppable', () => {
       expect(container).toMatchSnapshot()
     })
   })
+
+  it('should throw an error when the filterState and handleFilterUpdate are not defined together', () => {
+    expect(() => {
+      render(
+        <DndProvider backend={HTML5Backend}>
+          <Droppable<Fruit>
+            name={'droppable'}
+            keyState={[]}
+            filterState={new Map<keyof Fruit, Set<string>>()}
+            type={'fruit-table'}
+            keyMapping={keyMapping}
+            keys={keys}
+            handleKeyUpdate={() => {}}
+          />
+        </DndProvider>
+      )
+    }).toThrowError()
+  })
+
   describe('Drag and drop', () => {
     it('should call onDragEnd when the drag event ends in the same droppable', () => {
       const handleKeyUpdate = jest.fn()
@@ -138,7 +156,7 @@ describe('Droppable', () => {
       fireEvent.drop(droppable2)
       fireEvent.dragEnd(dragabble)
 
-      expect(handleKeyUpdate).toHaveBeenCalled()
+      expect(handleKeyUpdate).toHaveBeenCalledWith(['name'])
     })
 
     it('should call onDragEnd when the drag event ends in another droppable', () => {
