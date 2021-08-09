@@ -18,10 +18,17 @@ const keyMapping = new Map<keyof Fruit, KeyMapping>([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
+
 const keys = new Map<keyof Fruit, string[]>([
   ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
   ['size', ['Medium', 'Small', 'Big']],
 ])
+
+const defaultDroppableKeys = new Map<keyof Fruit, string[]>([
+  ['name', []],
+  ['size', []],
+])
+
 const filterState = new Map<keyof Fruit, Set<string>>()
 
 keys.forEach((value, key) => filterState.set(key, new Set(value)))
@@ -33,7 +40,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       keyState={['name']}
       type={'fruit-table'}
       keyMapping={keyMapping}
-      keys={keys}
+      keys={defaultDroppableKeys}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -42,7 +49,7 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
       keyState={[]}
       type={'fruit-table'}
       keyMapping={new Map<keyof Fruit, KeyMapping>()}
-      keys={keys}
+      keys={defaultDroppableKeys}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -88,22 +95,41 @@ describe('Droppable', () => {
     })
   })
 
-  it('should throw an error when the filterState and handleFilterUpdate are not defined together', () => {
-    expect(() => {
-      render(
-        <DndProvider backend={HTML5Backend}>
-          <Droppable<Fruit>
-            name={'droppable'}
-            keyState={[]}
-            filterState={new Map<keyof Fruit, Set<string>>()}
-            type={'fruit-table'}
-            keyMapping={keyMapping}
-            keys={keys}
-            handleKeyUpdate={() => {}}
-          />
-        </DndProvider>
-      )
-    }).toThrowError()
+  describe('Checks', () => {
+    it('should throw an error when the filterState and handleFilterUpdate are not defined together', () => {
+      expect(() => {
+        render(
+          <DndProvider backend={HTML5Backend}>
+            <Droppable<Fruit>
+              name={'droppable'}
+              keyState={[]}
+              filterState={new Map<keyof Fruit, Set<string>>()}
+              type={'fruit-table'}
+              keyMapping={keyMapping}
+              keys={keys}
+              handleKeyUpdate={() => {}}
+            />
+          </DndProvider>
+        )
+      }).toThrowError()
+    })
+
+    it('shoudl throw an error when the filterState is undefined and one key has filters', () => {
+      expect(() => {
+        render(
+          <DndProvider backend={HTML5Backend}>
+            <Droppable<Fruit>
+              name={'droppable'}
+              keyState={[]}
+              type={'fruit-table'}
+              keyMapping={keyMapping}
+              keys={keys}
+              handleKeyUpdate={() => {}}
+            />
+          </DndProvider>
+        )
+      }).toThrowError()
+    })
   })
 
   describe('Drag and drop', () => {

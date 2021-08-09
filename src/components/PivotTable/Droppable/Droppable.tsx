@@ -76,7 +76,13 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, type, filterState, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
+  const { name, keyState, keyMapping, type, filterState, keys, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
+
+  const keysWithFilters = Array.from(keys.keys()).filter((key) => keys.get(key).length > 0)
+
+  if (!filterState && keysWithFilters.length > 0) {
+    throw new Error(`The keys [${keysWithFilters}] has filters but the filterState prop is undefined`)
+  }
 
   if ((filterState && !handleFilterUpdate) || (!filterState && handleFilterUpdate)) {
     throw new Error('The filterState and handleFilterUpdate props must always be defined together')
@@ -112,9 +118,9 @@ export function Droppable<T>(props: DroppableProps<T>) {
     tempKeys.splice(index, 1)
     handleKeyUpdate && handleKeyUpdate(tempKeys)
   }
-  const draggableButtons = keyState.map((key, value) => {
-    const hasFilter = filterState && props.keys.get(key).length > 0
-    if (hasFilter && handleFilterUpdate) {
+
+  const draggableButtons = keyState.map((key) => {
+    if (filterState && props.keys.get(key).length > 0) {
       return (
         <InternalFilterDraggable<T>
           key={key as string}
