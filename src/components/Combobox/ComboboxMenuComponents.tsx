@@ -2,6 +2,9 @@ import React, { CSSProperties } from 'react'
 import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Spinner } from '../Spinner'
+import Times from '../Icon/generated/TimesDefault'
+import { HFlow } from '../HFlow'
+import { Checkbox } from '../Checkbox'
 import { ComboboxProps } from './Combobox'
 
 export interface ComboboxComponents<T> {
@@ -36,6 +39,13 @@ export interface ComboboxComponents<T> {
   AppendItem: React.ComponentType<ComboboxMenuItemProps>
 }
 
+export interface ComboboxMultiselectComponents<T> extends ComboboxComponents<T> {
+  /**
+   * Component to display selected items in the input
+   */
+  SelectedItem: React.ComponentType<ComboboxMultiselectSelectedItemProps>
+}
+
 export const defaultComboboxComponents: ComboboxComponents<any> = {
   AppendItem: () => null,
   PrependItem: () => null,
@@ -43,6 +53,12 @@ export const defaultComboboxComponents: ComboboxComponents<any> = {
   LoadingItem: () => <ComboboxLoadingItem />,
   EmptyItem: () => <ComboboxEmptyItem />,
   Item: (props: ComboboxItemProps<any>) => <ComboboxMenuItem {...props} />,
+}
+
+export const defaultComboboxMultiselectComponents: ComboboxMultiselectComponents<any> = {
+  ...defaultComboboxComponents,
+  SelectedItem: (props: ComboboxMultiselectSelectedItemProps) => <ComboboxMultiselectSelectedItem {...props} />,
+  Item: (props: ComboboxItemProps<any>) => <ComboboxMultiselectMenuItem {...props} />,
 }
 
 export type ComboboxItemProps<T> = ComboboxMenuItemProps &
@@ -60,6 +76,41 @@ export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
     <li className={css(classes.item, selected && classes.selected, style)} {...rest}>
       {children ?? itemToString(item)}
     </li>
+  )
+}
+
+export function ComboboxMultiselectMenuItem<T>(props: ComboboxItemProps<T>) {
+  const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
+  return (
+    <li css={style} {...rest}>
+      <HFlow hSpacing={0.5} alignItems='center'>
+        <Checkbox style={{ pointerEvents: 'none' }} checked={selected} tabIndex={-1} readOnly />
+        {children ?? itemToString(item)}
+      </HFlow>
+    </li>
+  )
+}
+
+export interface ComboboxMultiselectSelectedItemProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
+  style?: ExternalStyles
+  disabled?: boolean
+  onRemove(e: React.MouseEvent<HTMLSpanElement>): void
+}
+
+export function ComboboxMultiselectSelectedItem(props: ComboboxMultiselectSelectedItemProps) {
+  const { style, children, onRemove, disabled, ...rest } = props
+  const { classes, css } = useStyles(createStyles, props)
+  const locale = useLocale()
+
+  return (
+    <span className={css(classes.multiItemContainer, style)} {...rest}>
+      <span className={disabled ? classes.multiItemTextDisabled : classes.multiItemText}>{children}</span>
+      {!disabled && (
+        <span className={classes.multiItemButton} onClick={onRemove} title={locale.combobox.removeItem}>
+          <Times />
+        </span>
+      )}
+    </span>
   )
 }
 
@@ -142,4 +193,35 @@ const createStyles = (theme: Theme) => ({
     outline: 0,
     background: theme.pallete.surface.background,
   },
+
+  multiItemContainer: {
+    border: `1px solid ${theme.pallete.divider}`,
+    borderRadius: theme.radius.button,
+    display: 'inline-flex',
+    alignItems: 'center',
+    fontWeight: 'bold',
+  } as CSSProperties,
+
+  multiItemText: {
+    padding: 'calc(0.125rem - 1px) 0.25rem',
+  } as CSSProperties,
+
+  multiItemTextDisabled: {
+    padding: 'calc(0.25rem - 1px) 0.25rem',
+  } as CSSProperties,
+
+  multiItemButton: {
+    background: theme.pallete.surface.background,
+    cursor: 'pointer',
+    fontSize: '1.25rem',
+    display: 'inline-flex',
+    alignItems: 'center',
+    padding: 'calc(0.125rem - 1px) 0',
+    '&:hover': {
+      color: theme.pallete.status.danger.main,
+    },
+    svg: {
+      fill: 'currentColor',
+    },
+  } as CSSProperties,
 })

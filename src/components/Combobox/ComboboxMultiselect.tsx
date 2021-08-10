@@ -1,4 +1,4 @@
-import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
+import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions, useMultipleSelection } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
@@ -6,32 +6,20 @@ import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
-import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
-import { TextInput, TextInputProps } from '../TextField'
-import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
+import { useFormControl } from '../../hooks/useFormControl'
+import { TextInput } from '../TextField'
+import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
+import { ComboboxProps, DefaultComboboxItemType } from './Combobox'
 
-export interface DefaultComboboxItemType {
-  value: any
-  label: string
+export interface ComboboxMultiselectProps<T> extends Omit<ComboboxProps<T>, 'value' | 'onChange' | 'components'> {
+  value: T[]
+  onChange?: (newValue: T[]) => void
+  itemIsEqual(a: T, b: T): boolean
+  components: ComboboxMultiselectComponents<T>
 }
 
-export interface ComboboxProps<T> extends Omit<TextInputProps, 'value' | 'onChange' | 'multiple'>, UseFormControlProps {
-  value?: T
-  items: T[] | ((query: string) => Promise<T[]>)
-  itemToString(item: T): string
-  createNewItem?(inputValue: string): T
-  openOnFocus: boolean
-  loading: boolean
-  debounceMilliseconds: number
-  menuMinWidth?: number
-  filter?(items: T[], filter: string): T[]
-  onChange?: (newValue: T) => void
-  onFilterChange?: (newValue: string) => void
-  components?: Partial<ComboboxComponents<T>>
-}
-
-export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
+export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
   const {
     value,
     items,
@@ -46,10 +34,12 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
     onChange,
     onFocus,
     onFilterChange,
+    itemIsEqual,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     ...rest
   } = props
 
+  const [inputValue, setInputValue] = useState('')
   const [itemsLoaded, setItemsLoaded] = useState(false)
   const locale = useLocale()
   const { classes } = useStyles(createStyles)
@@ -67,9 +57,23 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
 
   // Reload items when changed
   useEffect(() => setItemsLoaded(false), [items])
+  useEffect(() => composeHandlers(loadItems, onFilterChange)(inputValue), [inputValue])
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
+
+  const {
+    getSelectedItemProps,
+    getDropdownProps,
+    addSelectedItem,
+    removeSelectedItem,
+    selectedItems,
+  } = useMultipleSelection({
+    initialSelectedItems: value,
+    onSelectedItemsChange: ({ selectedItems }) => {
+      onChange?.(selectedItems)
+    },
+  })
 
   const {
     isOpen,
@@ -81,18 +85,30 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
     getItemProps,
     openMenu,
     toggleMenu,
-    closeMenu,
     reset,
   } = useCombobox<T>({
-    selectedItem: value,
+    defaultHighlightedIndex: 0, // after selection, highlight the first item.
+    selectedItem: null,
     items: loadedItems,
 
-    stateReducer: comboboxStateReducer(createNewItem),
+    stateReducer: comboboxMultiselectStateReducer(createNewItem),
     itemToString,
-    onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
-    onSelectedItemChange: ({ selectedItem }) => {
-      closeMenu()
-      onChange?.(selectedItem)
+    onStateChange: ({ inputValue, type, selectedItem }) => {
+      switch (type) {
+        case useCombobox.stateChangeTypes.InputChange:
+          setInputValue(inputValue)
+          break
+        case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        case useCombobox.stateChangeTypes.ItemClick:
+        case useCombobox.stateChangeTypes.InputBlur:
+          if (selectedItem) {
+            setInputValue('')
+            addSelectedItem(selectedItem)
+          }
+          break
+        default:
+          break
+      }
     },
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
@@ -119,8 +135,8 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
-  const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem } = {
-    ...defaultComboboxComponents,
+  const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem, SelectedItem } = {
+    ...defaultComboboxMultiselectComponents,
     ...components,
   }
   return (
@@ -138,6 +154,9 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
           {...downshiftInputProps}
           {...rest}
         />
+        {selectedItems.map((selectedItem) => (
+          <SelectedItem onRemove={() => removeSelectedItem(selectedItem)}>{itemToString(selectedItem)}</SelectedItem>
+        ))}
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
@@ -160,7 +179,7 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
                   key={`${item}${index}`}
                   item={item}
                   index={index}
-                  selected={highlightedIndex === index}
+                  selected={selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem))}
                   {...getItemProps({ item, index })}
                   {...props}
                 />
@@ -174,22 +193,24 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
   )
 }
 
-Combobox.defaultProps = {
+ComboboxMultiselect.defaultProps = {
   openOnFocus: true,
   loading: false,
   debounceMilliseconds: 350,
+  itemIsEqual: (a, b) => a === b,
 } as Partial<ComboboxProps<any>>
 
-const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
+const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
   state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
 ): Partial<UseComboboxState<T>> => {
   const { type, changes } = actionAndChanges
   switch (type) {
-    case useCombobox.stateChangeTypes.InputChange:
+    case useCombobox.stateChangeTypes.InputKeyDownEnter:
+    case useCombobox.stateChangeTypes.ItemClick:
       return {
         ...changes,
-        selectedItem: undefined,
+        isOpen: true, // keep the menu open after selection.
       }
     case useCombobox.stateChangeTypes.InputBlur:
       return {

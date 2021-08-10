@@ -1,5 +1,5 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, number, select, text } from '@storybook/addon-knobs'
+import { boolean, number, optionsKnob, select, text } from '@storybook/addon-knobs'
 import matchSorter from 'match-sorter'
 import React from 'react'
 import { useTheme } from '../../styles'
@@ -8,6 +8,7 @@ import { HFlow } from '../HFlow'
 import { Text } from '../Text'
 import { Combobox } from './Combobox'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
+import { ComboboxMultiselect } from './ComboboxMultiselect'
 
 type Fruit = { value: number; label: string }
 
@@ -76,8 +77,6 @@ export const Default = () => (
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
-    //itemIsEqual={(a, b) => a.value === b.value}
-    //multiple={boolean('multiple', false)}
   />
 )
 
@@ -151,5 +150,31 @@ export const CustomComponents = () => (
         </CustomComponent>
       ),
     }}
+  />
+)
+
+export const MultiSelect = () => (
+  <ComboboxMultiselect<Fruit>
+    itemIsEqual={(a, b) => a.value === b.value}
+    value={fruits.filter(
+      (e) =>
+        optionsKnob<number>('values', Object.fromEntries(fruits.map((e) => [e.label, e.value])), [], {
+          display: 'multi-select',
+        }) === e.value
+    )}
+    label='Fruit'
+    name='fruit'
+    items={fruits}
+    error={text('error', '')}
+    menuMinWidth={number('menuMinWidth (px)', undefined)}
+    itemToString={(item) => item?.label}
+    placeholder={text('placeholder', 'Select the values...')}
+    clearable={boolean('clearable', true)}
+    disabled={boolean('disabled', false)}
+    openOnFocus={boolean('openOnFocus', true)}
+    onChange={action('changed')}
+    onFilterChange={action('filter changed')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
   />
 )
