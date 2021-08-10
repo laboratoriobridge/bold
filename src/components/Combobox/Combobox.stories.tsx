@@ -109,7 +109,6 @@ export const Async = () => (
     error={text('error', '')}
     itemToString={(item) => item && item.label}
     placeholder='Select a value...'
-    multiple={boolean('multiple', false)}
     clearable={boolean('clearable', true)}
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
@@ -155,12 +154,12 @@ export const CustomComponents = () => (
 
 export const MultiSelect = () => (
   <ComboboxMultiselect<Fruit>
-    itemIsEqual={(a, b) => a.value === b.value}
+    itemIsEqual={(a, b) => a.label === b.label}
     value={fruits.filter(
       (e) =>
-        optionsKnob<number>('values', Object.fromEntries(fruits.map((e) => [e.label, e.value])), [], {
+        optionsKnob('values', Object.fromEntries(fruits.map((e) => [e.label, e.label])), [], {
           display: 'multi-select',
-        }) === e.value
+        }) === e.label
     )}
     label='Fruit'
     name='fruit'

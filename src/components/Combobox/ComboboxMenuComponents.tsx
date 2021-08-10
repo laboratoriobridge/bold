@@ -6,6 +6,7 @@ import Times from '../Icon/generated/TimesDefault'
 import { HFlow } from '../HFlow'
 import { Checkbox } from '../Checkbox'
 import { ComboboxProps } from './Combobox'
+import { ComboboxMultiselectProps } from './ComboboxMultiselect'
 
 export interface ComboboxComponents<T> {
   /**
@@ -39,11 +40,15 @@ export interface ComboboxComponents<T> {
   AppendItem: React.ComponentType<ComboboxMenuItemProps>
 }
 
-export interface ComboboxMultiselectComponents<T> extends ComboboxComponents<T> {
+export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponents<T>, 'Item'> {
   /**
    * Component to display selected items in the input
    */
   SelectedItem: React.ComponentType<ComboboxMultiselectSelectedItemProps>
+  /**
+   * Default item component used for each element in `items` prop.
+   */
+  Item: React.ComponentType<ComboboxMultiselectItemProps<T>>
 }
 
 export const defaultComboboxComponents: ComboboxComponents<any> = {
@@ -58,15 +63,18 @@ export const defaultComboboxComponents: ComboboxComponents<any> = {
 export const defaultComboboxMultiselectComponents: ComboboxMultiselectComponents<any> = {
   ...defaultComboboxComponents,
   SelectedItem: (props: ComboboxMultiselectSelectedItemProps) => <ComboboxMultiselectSelectedItem {...props} />,
-  Item: (props: ComboboxItemProps<any>) => <ComboboxMultiselectMenuItem {...props} />,
+  Item: (props: ComboboxMultiselectItemProps<any>) => <ComboboxMultiselectMenuItem {...props} />,
+}
+
+export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
+  style?: ExternalStyles
 }
 
 export type ComboboxItemProps<T> = ComboboxMenuItemProps &
   ComboboxProps<T> & { item: T; index: number; selected?: boolean }
 
-export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
-  style?: ExternalStyles
-}
+export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
+  ComboboxMultiselectProps<T> & { item: T; index: number; selected?: boolean; highlighted?: boolean }
 
 export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
   const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
@@ -79,10 +87,12 @@ export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
   )
 }
 
-export function ComboboxMultiselectMenuItem<T>(props: ComboboxItemProps<T>) {
-  const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
+export function ComboboxMultiselectMenuItem<T>(props: ComboboxMultiselectItemProps<T>) {
+  const { children, item, style, selected, highlighted, itemToString, items, label, index, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
+
   return (
-    <li css={style} {...rest}>
+    <li className={css(classes.item, highlighted && classes.selected, style)} {...rest}>
       <HFlow hSpacing={0.5} alignItems='center'>
         <Checkbox style={{ pointerEvents: 'none' }} checked={selected} tabIndex={-1} readOnly />
         {children ?? itemToString(item)}

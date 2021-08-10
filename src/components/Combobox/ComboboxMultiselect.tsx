@@ -2,12 +2,12 @@ import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions, useMultip
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
-import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl } from '../../hooks/useFormControl'
 import { TextInput } from '../TextField'
+import { createStyleParts } from '../TextField/TextInputBase'
 import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { ComboboxProps, DefaultComboboxItemType } from './Combobox'
@@ -23,6 +23,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const {
     value,
     items,
+    disabled,
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
@@ -39,10 +40,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     ...rest
   } = props
 
-  const [inputValue, setInputValue] = useState('')
   const [itemsLoaded, setItemsLoaded] = useState(false)
-  const locale = useLocale()
-  const { classes } = useStyles(createStyles)
+  const { classes, css } = useStyles(createStyles, props)
 
   const isAsync = typeof items === 'function'
   const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
@@ -57,7 +56,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
 
   // Reload items when changed
   useEffect(() => setItemsLoaded(false), [items])
-  useEffect(() => composeHandlers(loadItems, onFilterChange)(inputValue), [inputValue])
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
@@ -84,7 +82,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getComboboxProps,
     getItemProps,
     openMenu,
-    toggleMenu,
     reset,
   } = useCombobox<T>({
     defaultHighlightedIndex: 0, // after selection, highlight the first item.
@@ -93,23 +90,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
 
     stateReducer: comboboxMultiselectStateReducer(createNewItem),
     itemToString,
-    onStateChange: ({ inputValue, type, selectedItem }) => {
-      switch (type) {
-        case useCombobox.stateChangeTypes.InputChange:
-          setInputValue(inputValue)
-          break
-        case useCombobox.stateChangeTypes.InputKeyDownEnter:
-        case useCombobox.stateChangeTypes.ItemClick:
-        case useCombobox.stateChangeTypes.InputBlur:
-          if (selectedItem) {
-            setInputValue('')
-            addSelectedItem(selectedItem)
-          }
-          break
-        default:
-          break
-      }
-    },
+    onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
       setItemsLoaded(true)
@@ -118,9 +99,11 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
 
   const downshiftComboboxProps = getComboboxProps()
   const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
-  const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
-    onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
-  })
+  const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps(
+    getDropdownProps({
+      onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
+    })
+  )
   const { id: labelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
 
@@ -135,6 +118,9 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
+  const handleWrapperClick = () => inputRef.current.focus()
+  const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
+
   const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem, SelectedItem } = {
     ...defaultComboboxMultiselectComponents,
     ...components,
@@ -142,21 +128,28 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
-        <TextInput
-          icon={isOpen ? 'angleUp' : 'angleDown'}
-          iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
-          iconPosition='right'
-          onIconClick={toggleMenu}
-          inputRef={composeRefs(inputRef, downshiftInputRef)}
-          onClear={composeHandlers(reset, onClear)}
-          invalid={invalid}
-          {...formControlInputProps}
-          {...downshiftInputProps}
-          {...rest}
-        />
-        {selectedItems.map((selectedItem) => (
-          <SelectedItem onRemove={() => removeSelectedItem(selectedItem)}>{itemToString(selectedItem)}</SelectedItem>
-        ))}
+        <div className={wrapperClasses} onClick={handleWrapperClick}>
+          {selectedItems.map((selectedItem, index) => (
+            <SelectedItem
+              style={classes.item}
+              onRemove={() => removeSelectedItem(selectedItem)}
+              disabled={disabled}
+              {...getSelectedItemProps({ selectedItem, index })}
+            >
+              {itemToString(selectedItem)}
+            </SelectedItem>
+          ))}
+          <TextInput
+            inputRef={composeRefs(inputRef, downshiftInputRef)}
+            className={classes.input}
+            disabled={disabled}
+            onClear={composeHandlers(reset, onClear)}
+            invalid={invalid}
+            {...formControlInputProps}
+            {...downshiftInputProps}
+            {...rest}
+          />
+        </div>
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
@@ -180,6 +173,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
                   item={item}
                   index={index}
                   selected={selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem))}
+                  highlighted={highlightedIndex === index}
+                  onClick={() => addSelectedItem(item)}
                   {...getItemProps({ item, index })}
                   {...props}
                 />
@@ -227,30 +222,67 @@ const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string)
   }
 }
 
-export const createStyles = (theme: Theme) => ({
-  menu: {
-    display: 'flex',
-    flexDirection: 'column',
-    zIndex: theme.zIndex.dropdown,
-    border: `1px solid ${theme.pallete.divider}`,
-    borderRadius: theme.radius.popper,
-    backgroundColor: theme.pallete.surface.main,
-    boxShadow: theme.shadows.outer['40'],
-    maxHeight: '20rem',
-  } as CSSProperties,
+export const createStyles = (theme: Theme, { items, disabled }: ComboboxMultiselectProps<any>) => {
+  const parts = createStyleParts(theme)
+  return {
+    wrapper: {
+      ...parts.base,
+      cursor: 'text',
 
-  list: {
-    zIndex: 'auto',
-    border: 0,
-    borderRadius: 0,
-    boxShadow: 'none',
-    maxHeight: 'auto',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-    backgroundColor: theme.pallete.surface.main,
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    width: '100%',
-  } as CSSProperties,
-})
+      display: 'flex',
+      flexWrap: 'wrap',
+      alignItems: 'center',
+
+      padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
+      '&:hover': !disabled && parts.hover,
+      '&:active': !disabled && parts.active,
+      '&:focus-within': !disabled && parts.focus,
+    } as CSSProperties,
+    disabled: parts.disabled,
+    invalid: {
+      ...parts.invalid,
+      '&:focus-within': parts.invalid[':not(:disabled):focus'],
+    } as CSSProperties,
+    item: {
+      marginRight: '0.25rem',
+    } as CSSProperties,
+    input: {
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.sizes.text,
+      color: theme.pallete.text.main,
+      lineHeight: '1rem',
+      background: theme.pallete.surface.main,
+      padding: 0,
+      flex: 1,
+      border: 0,
+      outline: 0,
+      '::placeholder': parts.placeholder,
+      ':disabled': parts.disabled,
+    } as CSSProperties,
+    menu: {
+      display: 'flex',
+      flexDirection: 'column',
+      zIndex: theme.zIndex.dropdown,
+      border: `1px solid ${theme.pallete.divider}`,
+      borderRadius: theme.radius.popper,
+      backgroundColor: theme.pallete.surface.main,
+      boxShadow: theme.shadows.outer['40'],
+      maxHeight: '20rem',
+    } as CSSProperties,
+
+    list: {
+      zIndex: 'auto',
+      border: 0,
+      borderRadius: 0,
+      boxShadow: 'none',
+      maxHeight: 'auto',
+      listStyle: 'none',
+      margin: 0,
+      padding: 0,
+      backgroundColor: theme.pallete.surface.main,
+      overflowY: 'auto',
+      overflowX: 'hidden',
+      width: '100%',
+    } as CSSProperties,
+  }
+}
