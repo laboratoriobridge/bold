@@ -101,7 +101,7 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
   })
 
   const downshiftComboboxProps = getComboboxProps()
-  const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
+  const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
     onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
   })
@@ -115,7 +115,7 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
     placement: 'bottom-start',
   })
 
-  const formControlInputProps = getFromControlInputProps()
+  const formControlInputProps = getFormControlInputProps()
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
@@ -161,8 +161,8 @@ export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
                   item={item}
                   index={index}
                   selected={highlightedIndex === index}
+                  itemToString={itemToString}
                   {...getItemProps({ item, index })}
-                  {...props}
                 />
               ))}
               {AppendItem && <AppendItem />}

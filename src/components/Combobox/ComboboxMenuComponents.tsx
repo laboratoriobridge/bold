@@ -71,13 +71,18 @@ export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLL
 }
 
 export type ComboboxItemProps<T> = ComboboxMenuItemProps &
-  ComboboxProps<T> & { item: T; index: number; selected?: boolean }
+  Pick<ComboboxProps<T>, 'itemToString'> & { item: T; index: number; selected?: boolean }
 
 export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
-  ComboboxMultiselectProps<T> & { item: T; index: number; selected?: boolean; highlighted?: boolean }
+  Pick<ComboboxMultiselectProps<T>, 'itemToString'> & {
+    item: T
+    index: number
+    selected?: boolean
+    highlighted?: boolean
+  }
 
 export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
-  const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
+  const { children, item, style, selected, itemToString, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (
@@ -88,7 +93,7 @@ export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
 }
 
 export function ComboboxMultiselectMenuItem<T>(props: ComboboxMultiselectItemProps<T>) {
-  const { children, item, style, selected, highlighted, itemToString, items, label, index, ...rest } = props
+  const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (

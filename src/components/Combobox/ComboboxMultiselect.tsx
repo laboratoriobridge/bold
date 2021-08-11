@@ -6,8 +6,8 @@ import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl } from '../../hooks/useFormControl'
-import { TextInput } from '../TextField'
-import { createStyleParts } from '../TextField/TextInputBase'
+import { createStyleParts, TextInputBase } from '../TextField/TextInputBase'
+import { InputWrapper } from '../TextField/InputWrapper'
 import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { ComboboxProps, DefaultComboboxItemType } from './Combobox'
@@ -24,6 +24,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     value,
     items,
     disabled,
+    clearable,
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
@@ -41,7 +42,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   } = props
 
   const [itemsLoaded, setItemsLoaded] = useState(false)
-  const { classes, css } = useStyles(createStyles, props)
 
   const isAsync = typeof items === 'function'
   const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
@@ -58,6 +58,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   useEffect(() => setItemsLoaded(false), [items])
 
   const inputRef = useRef<HTMLInputElement>()
+  const wrapperRef = useRef<HTMLDivElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
 
   const {
@@ -66,12 +67,15 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     addSelectedItem,
     removeSelectedItem,
     selectedItems,
+    reset,
   } = useMultipleSelection({
     initialSelectedItems: value,
     onSelectedItemsChange: ({ selectedItems }) => {
       onChange?.(selectedItems)
     },
   })
+
+  const { classes, css } = useStyles(createStyles, props, !!selectedItems?.length)
 
   const {
     isOpen,
@@ -82,7 +86,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getComboboxProps,
     getItemProps,
     openMenu,
-    reset,
   } = useCombobox<T>({
     defaultHighlightedIndex: 0, // after selection, highlight the first item.
     selectedItem: null,
@@ -98,10 +101,11 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   })
 
   const downshiftComboboxProps = getComboboxProps()
-  const { getFormControlProps, getInputProps: getFromControlInputProps } = useFormControl(props)
+  const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps(
     getDropdownProps({
       onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
+      preventKeyAction: isOpen,
     })
   )
   const { id: labelId, ...downshiftLabelProps } = getLabelProps()
@@ -110,11 +114,11 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const {
     styles: { popper: popperStyles },
     attributes: { popper: popperAttributes },
-  } = usePopper(inputRef.current, menuRef, {
+  } = usePopper(wrapperRef.current, menuRef, {
     placement: 'bottom-start',
   })
 
-  const formControlInputProps = getFromControlInputProps()
+  const formControlInputProps = getFormControlInputProps()
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
@@ -128,10 +132,17 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
-        <div className={wrapperClasses} onClick={handleWrapperClick}>
+        <InputWrapper
+          ref={wrapperRef}
+          className={wrapperClasses}
+          onClick={handleWrapperClick}
+          clearVisible={clearable && !!selectedItems?.length}
+          onClear={composeHandlers(reset, onClear)}
+        >
           {selectedItems.map((selectedItem, index) => (
             <SelectedItem
               style={classes.item}
+              key={`selected-item-${index}`}
               onRemove={() => removeSelectedItem(selectedItem)}
               disabled={disabled}
               {...getSelectedItemProps({ selectedItem, index })}
@@ -139,17 +150,17 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
               {itemToString(selectedItem)}
             </SelectedItem>
           ))}
-          <TextInput
+
+          <TextInputBase
             inputRef={composeRefs(inputRef, downshiftInputRef)}
             className={classes.input}
             disabled={disabled}
-            onClear={composeHandlers(reset, onClear)}
             invalid={invalid}
             {...formControlInputProps}
             {...downshiftInputProps}
             {...rest}
           />
-        </div>
+        </InputWrapper>
       </FormControl>
 
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
@@ -158,7 +169,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
           <div
             data-testid='menu'
             className={classes.menu}
-            style={{ ...popperStyles, width: inputRef.current?.clientWidth, minWidth: menuMinWidth }}
+            style={{ ...popperStyles, width: wrapperRef.current?.clientWidth, minWidth: menuMinWidth }}
             {...popperAttributes}
             ref={setMenuRef}
           >
@@ -167,18 +178,21 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
               {isLoading && <LoadingItem />}
               {!isLoading && createNewItem && !loadedItems?.length && <CreateItem />}
               {!isLoading && !createNewItem && !loadedItems?.length && <EmptyItem />}
-              {loadedItems.map((item, index) => (
-                <Item
-                  key={`${item}${index}`}
-                  item={item}
-                  index={index}
-                  selected={selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem))}
-                  highlighted={highlightedIndex === index}
-                  onClick={() => addSelectedItem(item)}
-                  {...getItemProps({ item, index })}
-                  {...props}
-                />
-              ))}
+              {loadedItems.map((item, index) => {
+                const isSelected = selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem))
+                return (
+                  <Item
+                    key={`${item}${index}`}
+                    item={item}
+                    index={index}
+                    selected={isSelected}
+                    highlighted={highlightedIndex === index}
+                    itemToString={itemToString}
+                    {...getItemProps({ item, index })}
+                    onClick={() => (isSelected ? removeSelectedItem(item) : addSelectedItem(item))}
+                  />
+                )
+              })}
               {AppendItem && <AppendItem />}
             </ul>
           </div>
@@ -222,7 +236,7 @@ const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string)
   }
 }
 
-export const createStyles = (theme: Theme, { items, disabled }: ComboboxMultiselectProps<any>) => {
+export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProps<any>, hasSelectedItems: boolean) => {
   const parts = createStyleParts(theme)
   return {
     wrapper: {
@@ -233,7 +247,7 @@ export const createStyles = (theme: Theme, { items, disabled }: ComboboxMultisel
       flexWrap: 'wrap',
       alignItems: 'center',
 
-      padding: items.length > 0 ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
+      padding: hasSelectedItems ? 'calc(0.25rem - 1px) 0.25rem' : 'calc(0.5rem - 1px) 0.5rem',
       '&:hover': !disabled && parts.hover,
       '&:active': !disabled && parts.active,
       '&:focus-within': !disabled && parts.focus,
@@ -259,6 +273,7 @@ export const createStyles = (theme: Theme, { items, disabled }: ComboboxMultisel
       '::placeholder': parts.placeholder,
       ':disabled': parts.disabled,
     } as CSSProperties,
+
     menu: {
       display: 'flex',
       flexDirection: 'column',
