@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Ref } from 'react'
 import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Spinner } from '../Spinner'
@@ -27,7 +27,7 @@ export interface ComboboxComponents<T> {
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item: React.ComponentType<ComboboxItemProps<T>>
+  Item: React.ForwardRefExoticComponent<ComboboxItemProps<T>>
 
   /**
    * A custom item to be included at the beginning of the select list.
@@ -48,22 +48,7 @@ export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponent
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item: React.ComponentType<ComboboxMultiselectItemProps<T>>
-}
-
-export const defaultComboboxComponents: ComboboxComponents<any> = {
-  AppendItem: () => null,
-  PrependItem: () => null,
-  CreateItem: () => <ComboboxCreateItem />,
-  LoadingItem: () => <ComboboxLoadingItem />,
-  EmptyItem: () => <ComboboxEmptyItem />,
-  Item: (props: ComboboxItemProps<any>) => <ComboboxMenuItem {...props} />,
-}
-
-export const defaultComboboxMultiselectComponents: ComboboxMultiselectComponents<any> = {
-  ...defaultComboboxComponents,
-  SelectedItem: (props: ComboboxMultiselectSelectedItemProps) => <ComboboxMultiselectSelectedItem {...props} />,
-  Item: (props: ComboboxMultiselectItemProps<any>) => <ComboboxMultiselectMenuItem {...props} />,
+  Item: React.ForwardRefExoticComponent<ComboboxMultiselectItemProps<T>>
 }
 
 export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
@@ -81,30 +66,32 @@ export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
     highlighted?: boolean
   }
 
-export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
+export const ComboboxMenuItem = React.forwardRef((props: ComboboxItemProps<any>, ref: Ref<HTMLLIElement>) => {
   const { children, item, style, selected, itemToString, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (
-    <li className={css(classes.item, selected && classes.selected, style)} {...rest}>
+    <li ref={ref} className={css(classes.item, selected && classes.selected, style)} {...rest}>
       {children ?? itemToString(item)}
     </li>
   )
-}
+})
 
-export function ComboboxMultiselectMenuItem<T>(props: ComboboxMultiselectItemProps<T>) {
-  const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
-  const { classes, css } = useStyles(createStyles)
+export const ComboboxMultiselectMenuItem = React.forwardRef(
+  (props: ComboboxMultiselectItemProps<any>, ref: Ref<HTMLLIElement>) => {
+    const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
+    const { classes, css } = useStyles(createStyles)
 
-  return (
-    <li className={css(classes.item, highlighted && classes.selected, style)} {...rest}>
-      <HFlow hSpacing={0.5} alignItems='center'>
-        <Checkbox style={{ pointerEvents: 'none' }} checked={selected} tabIndex={-1} readOnly />
-        {children ?? itemToString(item)}
-      </HFlow>
-    </li>
-  )
-}
+    return (
+      <li ref={ref} className={css(classes.item, highlighted && classes.selected, style)} {...rest}>
+        <HFlow hSpacing={0.5} alignItems='center'>
+          <Checkbox style={{ pointerEvents: 'none' }} checked={selected} tabIndex={-1} readOnly />
+          {children ?? itemToString(item)}
+        </HFlow>
+      </li>
+    )
+  }
+)
 
 export interface ComboboxMultiselectSelectedItemProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
   style?: ExternalStyles
@@ -167,6 +154,21 @@ export function ComboboxCreateItem(props: ComboboxMenuItemProps) {
       {locale.combobox.createItem}
     </li>
   )
+}
+
+export const defaultComboboxComponents: ComboboxComponents<any> = {
+  AppendItem: () => null,
+  PrependItem: () => null,
+  CreateItem: () => <ComboboxCreateItem />,
+  LoadingItem: () => <ComboboxLoadingItem />,
+  EmptyItem: () => <ComboboxEmptyItem />,
+  Item: ComboboxMenuItem,
+}
+
+export const defaultComboboxMultiselectComponents: ComboboxMultiselectComponents<any> = {
+  ...defaultComboboxComponents,
+  SelectedItem: ComboboxMultiselectSelectedItem,
+  Item: ComboboxMultiselectMenuItem,
 }
 
 const createStyles = (theme: Theme) => ({
