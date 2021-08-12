@@ -116,7 +116,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
               type={accept}
               name={key}
               filterItems={filterOptions}
-              selectedItems={filter.state.get(key)}
+              selectedItems={filter.state.get(key) || new Set<string>()}
               value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
               onFilterUpdate={filter.handleUpdate}
               origin={name}
