@@ -1,16 +1,17 @@
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
+import { DroppableProps } from '../Droppable/Droppable'
 import { InternalDraggable } from './InternalDraggable'
 
-export interface DraggableProps<T> {
+export interface DraggableProps<T> extends Pick<DroppableProps<T>, 'onKeyNav'> {
   /**
    * The name of the draggable, as an identifier
    */
   name: keyof T
 
   /**
-   * The type of droppables it belongs to
+   * The type of draggables it belongs to
    */
   type: string
 
@@ -29,12 +30,6 @@ export interface DraggableProps<T> {
    * You might want when the draggable is moved from one dropable to another
    */
   onDragEnd: () => void
-
-  /**
-   * Called when an arrow key is pressed
-   * You may want when the user presses an arrow key to move the draggable from one dropable to another
-   */
-  onKeyNav?: (dir: 'left' | 'right' | 'up' | 'down' | null, origin: string, key?: keyof T) => void
 }
 
 export function Draggable<T>(props: DraggableProps<T>) {

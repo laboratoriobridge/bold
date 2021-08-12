@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core'
+import { useMemo } from 'react'
 import { useDrop } from 'react-dnd'
-import { useLocale } from '../../..'
-import { useStyles } from '../../../styles'
+import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
 
 import { InternalFilterDraggable } from '../Draggable/InternalFilterDraggable'
 import { droppableCreateStyles } from './style'
+import { DroppableFilter } from './types/Filter'
 
 export interface DroppableProps<T> {
   /**
@@ -15,14 +16,9 @@ export interface DroppableProps<T> {
   name: string
 
   /**
-   * The name of the type of draggable it belongs. Items can be dragged between droppables of the same type
+   * The name of the type of draggable accepted by the droppable. Items can be dragged between droppables that accept the same type of draggables.
    */
-  type: string
-
-  /**
-   * Map of all the keys belonging to the same type with an array of filter options
-   */
-  keys: Map<keyof T, Array<string>>
+  accept: string
 
   /**
    * Map of all the keys to a display name of the key and a formatter and ordenator for the filter options
@@ -40,12 +36,12 @@ export interface DroppableProps<T> {
   /**
    * Map of keys to the state of their filters
    */
-  filterState?: Map<keyof T, Set<string>>
 
   /**
-   * Function that updates the filterState of a key
+   * Object that contains the keys and it's filter options,
+   * the filters chosen and a function that updates the chosen filters of a key
    */
-  handleFilterUpdate?: (key: keyof T, filtro: Set<string>) => void
+  filter?: DroppableFilter<T>
 
   /**
    * Function that updates the keyState of this component
@@ -76,22 +72,12 @@ export interface DragItem<T> {
 }
 
 export function Droppable<T>(props: DroppableProps<T>) {
-  const { name, keyState, keyMapping, type, filterState, keys, handleKeyUpdate, handleFilterUpdate, onKeyNav } = props
-
-  const keysWithFilters = Array.from(keys.keys()).filter((key) => keys.get(key).length > 0)
-
-  if (!filterState && keysWithFilters.length > 0) {
-    throw new Error(`The keys [${keysWithFilters}] has filters but the filterState prop is undefined`)
-  }
-
-  if ((filterState && !handleFilterUpdate) || (!filterState && handleFilterUpdate)) {
-    throw new Error('The filterState and handleFilterUpdate props must always be defined together')
-  }
+  const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
 
   const locale = useLocale()
 
   const [{ isOver }, drag] = useDrop({
-    accept: type,
+    accept: accept,
     drop(item: DragItem<T>) {
       if (!keyState.includes(item.name)) {
         const newKeys = [...keyState, item.name]
@@ -116,39 +102,45 @@ export function Droppable<T>(props: DroppableProps<T>) {
     let tempKeys = [...keyState]
     const index = tempKeys.indexOf(id)
     tempKeys.splice(index, 1)
-    handleKeyUpdate && handleKeyUpdate(tempKeys)
+    handleKeyUpdate?.(tempKeys)
   }
 
-  const draggableButtons = keyState.map((key) => {
-    if (filterState && props.keys.get(key).length > 0) {
-      return (
-        <InternalFilterDraggable<T>
-          key={key as string}
-          type={type}
-          name={key}
-          filterItems={props.keys.get(key)}
-          selectedItems={props.filterState.get(key) || new Set<string>()}
-          value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
-          onFilterUpdate={handleFilterUpdate}
-          origin={name}
-          onDragEnd={() => deleteByKey(key)}
-          onKeyNav={onKeyNav}
-        />
-      )
-    } else {
-      return (
-        <InternalDraggable<T>
-          key={key as string}
-          type={type}
-          name={key}
-          value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
-          origin={name}
-          onDragEnd={() => deleteByKey(key)}
-          onKeyNav={onKeyNav}
-        />
-      )
-    }
-  })
+  const draggableButtons = useMemo(
+    () =>
+      keyState.map((key) => {
+        const filterOptions = filter.keys.get(key)
+        if (filter?.state && filterOptions?.length > 0) {
+          return (
+            <InternalFilterDraggable<T>
+              key={key as string}
+              type={accept}
+              name={key}
+              filterItems={filterOptions}
+              selectedItems={filter.state.get(key)}
+              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
+              onFilterUpdate={filter.handleUpdate}
+              origin={name}
+              onDragEnd={() => deleteByKey(key)}
+              onKeyNav={onKeyNav}
+            />
+          )
+        } else {
+          return (
+            <InternalDraggable<T>
+              key={key as string}
+              type={accept}
+              name={key}
+              value={keyMapping.get(key) ? keyMapping.get(key).keyName : (key as string)}
+              origin={name}
+              onDragEnd={() => deleteByKey(key)}
+              onKeyNav={onKeyNav}
+            />
+          )
+        }
+      }),
+    [keyState, filter, accept, keyMapping, name, onKeyNav]
+  )
+
   const hasKeys = keyState.length > 0
 
   const { classes } = useStyles(droppableCreateStyles, hasKeys)

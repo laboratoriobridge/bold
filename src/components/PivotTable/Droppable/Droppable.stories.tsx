@@ -4,6 +4,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import { HFlow } from '../../HFlow'
 import { Box } from '../Box/Box'
 import { Droppable } from './Droppable'
+import { DroppableFilter } from './types/Filter'
 
 export default {
   title: 'Components/PivotTable/Droppable',
@@ -13,6 +14,7 @@ type Fruit = {
   name: string
   size?: string
 }
+
 type KeyMapping = {
   keyName: string
   formatter?: (value: string) => string
@@ -23,6 +25,7 @@ const keyMapping = new Map<keyof Fruit, KeyMapping>([
   ['name', { keyName: 'Name' }],
   ['size', { keyName: 'Size' }],
 ])
+
 const keys = new Map<keyof Fruit, string[]>([
   ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
   ['size', ['Medium', 'Small', 'Big']],
@@ -46,6 +49,13 @@ export const Default = () => {
     }
     setFilterState(new Map(filterState))
   }
+
+  const filter: DroppableFilter<Fruit> = {
+    handleUpdate: handleFilterUpdate,
+    keys: keys,
+    state: filterState,
+  }
+
   return (
     <DndProvider backend={HTML5Backend}>
       <HFlow>
@@ -53,24 +63,20 @@ export const Default = () => {
           <Droppable<Fruit>
             name='table1'
             keyState={defaultKeys}
-            filterState={filterState}
-            type={'fruit-table'}
+            accept={'fruit-table'}
             keyMapping={keyMapping}
-            keys={keys}
             handleKeyUpdate={setDefaultKeys}
-            handleFilterUpdate={handleFilterUpdate}
+            filter={filter}
           />
         </Box>
         <Box label='Table 2'>
           <Droppable<Fruit>
             name='table2'
             keyState={rowKeys}
-            filterState={filterState}
-            type={'fruit-table'}
+            accept={'fruit-table'}
             keyMapping={keyMapping}
-            keys={keys}
             handleKeyUpdate={setRowKeys}
-            handleFilterUpdate={handleFilterUpdate}
+            filter={filter}
           />
         </Box>
       </HFlow>

@@ -4,6 +4,7 @@ import { DndProvider } from 'react-dnd'
 import React from 'react'
 
 import { Droppable, DroppableProps } from './Droppable'
+import { DroppableFilter } from './types/Filter'
 type Fruit = {
   name: string
   size?: string
@@ -24,10 +25,11 @@ const keys = new Map<keyof Fruit, string[]>([
   ['size', ['Medium', 'Small', 'Big']],
 ])
 
-const defaultDroppableKeys = new Map<keyof Fruit, string[]>([
-  ['name', []],
-  ['size', []],
-])
+const filter: DroppableFilter<Fruit> = {
+  handleUpdate: () => {},
+  keys: keys,
+  state: new Map<keyof Fruit, Set<string>>(),
+}
 
 const filterState = new Map<keyof Fruit, Set<string>>()
 
@@ -38,18 +40,16 @@ const createDefaultComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
     <Droppable<Fruit>
       name={'droppable-1'}
       keyState={['name']}
-      type={'fruit-table'}
+      accept={'fruit-table'}
       keyMapping={keyMapping}
-      keys={defaultDroppableKeys}
       handleKeyUpdate={() => {}}
       {...props}
     />
     <Droppable<Fruit>
       name={'droppable-2'}
       keyState={[]}
-      type={'fruit-table'}
+      accept={'fruit-table'}
       keyMapping={new Map<keyof Fruit, KeyMapping>()}
-      keys={defaultDroppableKeys}
       handleKeyUpdate={() => {}}
       {...props}
     />
@@ -61,23 +61,19 @@ const createFilterComponent = (props: Partial<DroppableProps<Fruit>> = {}) => (
     <Droppable<Fruit>
       name={'droppable-1'}
       keyState={['name']}
-      filterState={filterState}
-      type={'fruit-table'}
+      accept={'fruit-table'}
       keyMapping={new Map<keyof Fruit, KeyMapping>()}
-      keys={keys}
       handleKeyUpdate={() => {}}
-      handleFilterUpdate={() => {}}
+      filter={filter}
       {...props}
     />
     <Droppable<Fruit>
       name={'droppable-2'}
       keyState={[]}
-      filterState={new Map<keyof Fruit, Set<string>>()}
-      type={'fruit-table'}
+      accept={'fruit-table'}
       keyMapping={keyMapping}
-      keys={keys}
       handleKeyUpdate={() => {}}
-      handleFilterUpdate={() => {}}
+      filter={filter}
       {...props}
     />
   </DndProvider>
@@ -92,43 +88,6 @@ describe('Droppable', () => {
     it('should render with filter options', () => {
       const { container } = render(createFilterComponent())
       expect(container).toMatchSnapshot()
-    })
-  })
-
-  describe('Checks', () => {
-    it('should throw an error when the filterState and handleFilterUpdate are not defined together', () => {
-      expect(() => {
-        render(
-          <DndProvider backend={HTML5Backend}>
-            <Droppable<Fruit>
-              name={'droppable'}
-              keyState={[]}
-              filterState={new Map<keyof Fruit, Set<string>>()}
-              type={'fruit-table'}
-              keyMapping={keyMapping}
-              keys={keys}
-              handleKeyUpdate={() => {}}
-            />
-          </DndProvider>
-        )
-      }).toThrowError()
-    })
-
-    it('shoudl throw an error when the filterState is undefined and one key has filters', () => {
-      expect(() => {
-        render(
-          <DndProvider backend={HTML5Backend}>
-            <Droppable<Fruit>
-              name={'droppable'}
-              keyState={[]}
-              type={'fruit-table'}
-              keyMapping={keyMapping}
-              keys={keys}
-              handleKeyUpdate={() => {}}
-            />
-          </DndProvider>
-        )
-      }).toThrowError()
     })
   })
 
