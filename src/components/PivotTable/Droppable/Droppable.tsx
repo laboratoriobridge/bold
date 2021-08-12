@@ -108,7 +108,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
   const draggableButtons = useMemo(
     () =>
       keyState.map((key) => {
-        const filterOptions = filter.keys.get(key)
+        const filterOptions = filter?.keys.get(key)
         if (filter?.state && filterOptions?.length > 0) {
           return (
             <InternalFilterDraggable<T>
