@@ -11,8 +11,10 @@ import { InputWrapper } from '../TextField/InputWrapper'
 import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { ComboboxProps, DefaultComboboxItemType } from './Combobox'
+import { ComboboxSingleselectProps } from './ComboboxSingleselect'
 
-export interface ComboboxMultiselectProps<T> extends Omit<ComboboxProps<T>, 'value' | 'onChange' | 'components'> {
+export interface ComboboxMultiselectProps<T>
+  extends Omit<ComboboxSingleselectProps<T>, 'value' | 'onChange' | 'components' | 'multiple'> {
   value: T[]
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean

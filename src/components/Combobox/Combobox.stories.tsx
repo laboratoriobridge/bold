@@ -8,7 +8,6 @@ import { HFlow } from '../HFlow'
 import { Text } from '../Text'
 import { Combobox } from './Combobox'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
-import { ComboboxMultiselect } from './ComboboxMultiselect'
 
 type Fruit = { value: number; label: string }
 
@@ -153,7 +152,7 @@ export const CustomComponents = () => (
 )
 
 export const MultiSelect = () => (
-  <ComboboxMultiselect<Fruit>
+  <Combobox<Fruit>
     itemIsEqual={(a, b) => a.label === b.label}
     value={fruits.filter(
       (e) =>
@@ -175,5 +174,6 @@ export const MultiSelect = () => (
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
+    multiple
   />
 )

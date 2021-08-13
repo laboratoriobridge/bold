@@ -7,7 +7,8 @@ import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
 import { Button } from '../Button'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
-import { Combobox, ComboboxProps } from './Combobox'
+import { Combobox } from './Combobox'
+import { ComboboxSingleselectProps } from './ComboboxSingleselect'
 
 interface Fruit {
   value: number
@@ -44,7 +45,7 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
 
 const itemToString = (item: Fruit) => item.label
 
-const ComboboxTest = (props: Partial<ComboboxProps<Fruit>> & { async?: boolean }) => (
+const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
   <Combobox<typeof fruits[0]>
     items={props.async ? loadFruitsAsync : fruits}
     itemToString={itemToString}
@@ -68,7 +69,9 @@ function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
   )
 }
 
-const ComboboxWithCutomComponentsTest = (props: Partial<ComboboxProps<Fruit>> & { action?: () => void }) => (
+const ComboboxWithCutomComponentsTest = (
+  props: Partial<ComboboxSingleselectProps<Fruit>> & { action?: () => void }
+) => (
   <Combobox<typeof fruits[0]>
     label='Fruit'
     name='fruit'

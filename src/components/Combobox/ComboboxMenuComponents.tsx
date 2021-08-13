@@ -27,7 +27,7 @@ export interface ComboboxComponents<T> {
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item: React.ForwardRefExoticComponent<ComboboxItemProps<T>>
+  Item: React.ForwardRefExoticComponent<ComboboxItemProps<T>> | React.ForwardRefRenderFunction<ComboboxItemProps<T>>
 
   /**
    * A custom item to be included at the beginning of the select list.
@@ -48,7 +48,9 @@ export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponent
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item: React.ForwardRefExoticComponent<ComboboxMultiselectItemProps<T>>
+  Item:
+    | React.ForwardRefExoticComponent<ComboboxMultiselectItemProps<T>>
+    | React.ForwardRefRenderFunction<ComboboxMultiselectItemProps<T>>
 }
 
 export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
