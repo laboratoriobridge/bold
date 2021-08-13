@@ -25,6 +25,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     items,
     disabled,
     clearable,
+    placeholder,
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
@@ -156,6 +157,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             className={classes.input}
             disabled={disabled}
             invalid={invalid}
+            placeholder={!selectedItems.length && placeholder}
             {...formControlInputProps}
             {...downshiftInputProps}
             {...rest}
