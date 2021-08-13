@@ -77,6 +77,10 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   })
 
   const { classes, css } = useStyles(createStyles, props, !!selectedItems?.length)
+  const isSelected = useCallback((item: T) => selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem)), [
+    selectedItems,
+    itemIsEqual,
+  ])
 
   const {
     isOpen,
@@ -87,14 +91,19 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getComboboxProps,
     getItemProps,
     openMenu,
+    setInputValue,
   } = useCombobox<T>({
-    defaultHighlightedIndex: 0, // after selection, highlight the first item.
+    defaultHighlightedIndex: 0,
     selectedItem: null,
     items: loadedItems,
 
     stateReducer: comboboxMultiselectStateReducer(createNewItem),
     itemToString,
     onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
+    onSelectedItemChange: ({ selectedItem }) => {
+      isSelected(selectedItem) ? removeSelectedItem(selectedItem) : addSelectedItem(selectedItem)
+      setInputValue('')
+    },
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
       setItemsLoaded(true)
@@ -181,17 +190,17 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
               {!isLoading && createNewItem && !loadedItems?.length && <CreateItem />}
               {!isLoading && !createNewItem && !loadedItems?.length && <EmptyItem />}
               {loadedItems.map((item, index) => {
-                const isSelected = selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem))
+                const isAlreadySelected = isSelected(item)
                 return (
                   <Item
                     key={`${item}${index}`}
                     item={item}
                     index={index}
-                    selected={isSelected}
+                    selected={isAlreadySelected}
                     highlighted={highlightedIndex === index}
                     itemToString={itemToString}
                     {...getItemProps({ item, index })}
-                    onClick={() => (isSelected ? removeSelectedItem(item) : addSelectedItem(item))}
+                    onClick={() => (isAlreadySelected ? removeSelectedItem(item) : addSelectedItem(item))}
                   />
                 )
               })}
