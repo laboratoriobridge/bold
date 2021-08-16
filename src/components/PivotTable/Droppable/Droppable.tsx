@@ -74,6 +74,20 @@ export interface DragItem<T> {
 export function Droppable<T>(props: DroppableProps<T>) {
   const { name, keyState, keyMapping, accept, filter, handleKeyUpdate, onKeyNav } = props
 
+  if (filter) {
+    if (filter.keys.size === 0)
+      throw new Error('The filter keys are empty, which must contain the keys and its options')
+
+    const keysWithoutFilters = Array.from(filter.keys.keys()).filter((key) => filter.keys.get(key).length === 0)
+
+    if (keysWithoutFilters.length > 0) {
+      if (keysWithoutFilters.length === 1)
+        throw new Error(`The key '${keysWithoutFilters.toString()}' is defined in filter keys but doesn't have options`)
+      else
+        throw new Error(`The keys [${keysWithoutFilters.toString()}] are defined in filter keys but don't have options`)
+    }
+  }
+
   const locale = useLocale()
 
   const [{ isOver }, drag] = useDrop({
@@ -138,7 +152,7 @@ export function Droppable<T>(props: DroppableProps<T>) {
           )
         }
       }),
-    [keyState, filter, accept, keyMapping, name, onKeyNav]
+    [keyState, filter, accept, keyMapping, name, onKeyNav, deleteByKey]
   )
 
   const hasKeys = keyState.length > 0

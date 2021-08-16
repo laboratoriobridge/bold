@@ -25,6 +25,22 @@ const keys = new Map<keyof Fruit, string[]>([
   ['size', ['Medium', 'Small', 'Big']],
 ])
 
+/**
+ * Filter keys which the key 'size' doesn't have options
+ */
+const keys2 = new Map<keyof Fruit, string[]>([
+  ['name', ['Apple', 'Banana', 'Blackberry', 'Lemon', 'Orange', 'Watermelon']],
+  ['size', []],
+])
+
+/**
+ * Filter keys which the key 'size' and 'name' don't have options
+ */
+const keys3 = new Map<keyof Fruit, string[]>([
+  ['name', []],
+  ['size', []],
+])
+
 const filter: DroppableFilter<Fruit> = {
   handleUpdate: () => {},
   keys: keys,
@@ -88,6 +104,26 @@ describe('Droppable', () => {
     it('should render with filter options', () => {
       const { container } = render(createFilterComponent())
       expect(container).toMatchSnapshot()
+    })
+  })
+
+  describe('Checks', () => {
+    it('should throw an error when the filter keys are empty', () => {
+      expect(() => {
+        render(createFilterComponent({ filter: { ...filter, keys: new Map<keyof Fruit, string[]>() } }))
+      }).toThrowError()
+    })
+
+    it('should throw an error when one key on filter keys has no options', () => {
+      expect(() => {
+        render(createFilterComponent({ filter: { ...filter, keys: keys2 } }))
+      }).toThrowError()
+    })
+
+    it('should throw an error when more than one keys on filter keys have no options', () => {
+      expect(() => {
+        render(createFilterComponent({ filter: { ...filter, keys: keys3 } }))
+      }).toThrowError()
     })
   })
 
