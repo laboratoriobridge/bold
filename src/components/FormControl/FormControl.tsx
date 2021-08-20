@@ -20,13 +20,15 @@ export function FormControl(props: FormControlProps) {
   const { children, htmlFor, error, label, labelId, errorId, inline, required } = props
   const { classes, css } = useStyles(createStyles)
 
+  const isInline = inline && label
+
   return (
-    <div className={css([classes.formControl, inline && classes.formControlInline])}>
+    <div className={css([classes.formControl, isInline && classes.formControlInline])}>
       {label && (
         <FormLabel
           id={labelId}
           required={required}
-          style={css(classes.label, inline && classes.labelInline)}
+          style={css(classes.label, isInline && classes.labelInline)}
           htmlFor={htmlFor}
           label={label}
         />
