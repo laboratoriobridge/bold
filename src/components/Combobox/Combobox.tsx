@@ -13,7 +13,7 @@ export type ComboboxProps<T> =
 
 export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
   if (props.multiple === true) return <ComboboxMultiselect {...props} />
-  if (props.multiple === false) return <ComboboxSingleselect {...props} />
+  else return <ComboboxSingleselect {...props} />
 }
 
 Combobox.defaultProps = {

@@ -30,6 +30,8 @@ const fruits: Fruit[] = [
   { value: 12, label: 'Pear' },
 ]
 
+const itemToString = (item: Fruit) => item.label
+
 const asyncDelay = 1000
 const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
   return new Promise((resolve) => {
@@ -42,8 +44,6 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
     )
   })
 }
-
-const itemToString = (item: Fruit) => item.label
 
 const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
   <Combobox<typeof fruits[0]>
@@ -69,7 +69,7 @@ function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
   )
 }
 
-const ComboboxWithCutomComponentsTest = (
+const ComboboxWithCustomComponentsTest = (
   props: Partial<ComboboxSingleselectProps<Fruit>> & { action?: () => void }
 ) => (
   <Combobox<typeof fruits[0]>
@@ -523,7 +523,7 @@ it('should accept actions inside children prop', async () => {
   let baseElement: RenderResult['baseElement']
   let findByTestId: RenderResult['findByTestId']
   await act(async () => {
-    const result = render(<ComboboxWithCutomComponentsTest action={click} />)
+    const result = render(<ComboboxWithCustomComponentsTest action={click} />)
     baseElement = result.baseElement
     findByTestId = result.findByTestId
   })
@@ -581,7 +581,7 @@ describe('rendering', () => {
   it('renders correcly with custom components correctly', async () => {
     let baseElement: RenderResult['baseElement']
     await act(async () => {
-      const result = render(<ComboboxWithCutomComponentsTest />)
+      const result = render(<ComboboxWithCustomComponentsTest />)
       baseElement = result.baseElement
     })
     const dropdownButton = baseElement.querySelector('button')

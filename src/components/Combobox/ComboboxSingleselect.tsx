@@ -10,11 +10,7 @@ import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
 import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
-
-export interface DefaultComboboxItemType {
-  value: any
-  label: string
-}
+import { DefaultComboboxItemType } from './Combobox'
 
 export interface ComboboxSingleselectProps<T>
   extends Omit<TextInputProps, 'value' | 'onChange' | 'multiple'>,
@@ -176,12 +172,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     </div>
   )
 }
-
-ComboboxSingleselect.defaultProps = {
-  openOnFocus: true,
-  loading: false,
-  debounceMilliseconds: 350,
-} as Partial<ComboboxSingleselectProps<any>>
 
 const comboboxStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
   state: UseComboboxState<T>,

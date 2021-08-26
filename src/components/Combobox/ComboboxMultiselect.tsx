@@ -10,7 +10,7 @@ import { createStyleParts, TextInputBase } from '../TextField/TextInputBase'
 import { InputWrapper } from '../TextField/InputWrapper'
 import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
-import { ComboboxProps, DefaultComboboxItemType } from './Combobox'
+import { DefaultComboboxItemType } from './Combobox'
 import { ComboboxSingleselectProps } from './ComboboxSingleselect'
 
 export interface ComboboxMultiselectProps<T>
@@ -214,13 +214,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     </div>
   )
 }
-
-ComboboxMultiselect.defaultProps = {
-  openOnFocus: true,
-  loading: false,
-  debounceMilliseconds: 350,
-  itemIsEqual: (a, b) => a === b,
-} as Partial<ComboboxProps<any>>
 
 const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
   state: UseComboboxState<T>,
