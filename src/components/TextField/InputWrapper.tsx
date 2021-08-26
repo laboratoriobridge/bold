@@ -17,15 +17,31 @@ export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref<HTMLDivElement>) => {
-  const { children, icon, iconDisabled, iconAriaLabel, onIconClick, clearVisible, onClear, className, ...rest } = props
-  const iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left')
-  const { classes, css } = useStyles(createStyles, { icon, iconPosition, clearVisible, onIconClick })
+  const {
+    children,
+    icon,
+    iconDisabled,
+    iconAriaLabel,
+    onIconClick,
+    clearVisible,
+    onClear,
+    className,
+    iconPosition,
+    ...rest
+  } = props
+  const internalIconPosition = iconPosition || (onIconClick ? 'right' : 'left')
+  const { classes, css } = useStyles(createStyles, {
+    icon,
+    iconPosition: internalIconPosition,
+    clearVisible,
+    onIconClick,
+  })
   const locale = useLocale()
 
   const iconBoxClasses = css(
     classes.iconWrapper,
-    iconPosition === 'left' && classes.iconLeft,
-    iconPosition === 'right' && classes.iconRight
+    internalIconPosition === 'left' && classes.iconLeft,
+    internalIconPosition === 'right' && classes.iconRight
   )
 
   return (
