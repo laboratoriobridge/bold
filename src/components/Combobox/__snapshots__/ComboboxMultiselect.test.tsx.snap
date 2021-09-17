@@ -1,0 +1,2241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering renders correcly closed 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-owns="downshift-215-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-215-input"
+          id="downshift-215-label"
+        >
+          Fruits
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-215-menu"
+            aria-labelledby="downshift-215-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-215-input"
+            label="Fruits"
+            multiple=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-labelledby="downshift-215-label"
+        id="downshift-215-menu"
+        role="listbox"
+      />
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-65 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-64 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-8 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-8:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-8:hover {
+  background: #F0F0F5;
+}
+
+.emotion-8:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-7 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-5 {
+  background-color: #FFFFFF;
+  border: 1px solid #8F8FA2;
+  border-radius: 2px;
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 24px;
+  min-width: 24px;
+}
+
+.emotion-4 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+.emotion-4:hover + .emotion-5 {
+  border-color: #7A7B8E;
+}
+
+.emotion-4:checked + .emotion-5 {
+  background-color: #0069D0;
+  border-color: #0069D0;
+}
+
+.emotion-4:checked + .emotion-5:after {
+  content: "";
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
+  opacity: 1;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-4:indeterminate + .emotion-5 {
+  background-color: #FFFFFF;
+  border-color: #0069D0;
+}
+
+.emotion-4:indeterminate + .emotion-5:after {
+  content: "";
+  border-bottom: 3px solid #0069D0;
+  position: absolute;
+  top: -1px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-4:focus + .emotion-5 {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-4:disabled + .emotion-5 {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-4:disabled + .emotion-5 + .css-1f2k2gl {
+  color: #AAAAB9;
+  cursor: not-allowed;
+}
+
+.emotion-6 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="downshift-217-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-217-input"
+          id="downshift-217-label"
+        >
+          Fruits
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-217-menu"
+            aria-labelledby="downshift-217-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-217-input"
+            label="Fruits"
+            multiple=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-labelledby="downshift-217-label"
+        id="downshift-217-menu"
+        role="listbox"
+      >
+        <div
+          class="emotion-65"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-64"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-0"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Apple
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-1"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Avocado
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-2"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Banana
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-3"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Blueberry
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-4"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Coconut
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-5"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Grape
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-6"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Lemon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-7"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Mango
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-8"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Melon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-9"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Orange
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-10"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Peach
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-217-item-11"
+              role="option"
+            >
+              <div
+                class="emotion-7"
+              >
+                <label
+                  class="emotion-6"
+                >
+                  <input
+                    class="emotion-4"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-5"
+                  />
+                </label>
+                Pear
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened and loading 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-67 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-66 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-10 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-10:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-10:hover {
+  background: #F0F0F5;
+}
+
+.emotion-10:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-5 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  cursor: initial;
+}
+
+.emotion-5:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-5:hover {
+  background: #F0F0F5;
+}
+
+.emotion-5:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-4 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0069D0;
+  float: right;
+}
+
+.emotion-4:after {
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.emotion-9 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-7 {
+  background-color: #FFFFFF;
+  border: 1px solid #8F8FA2;
+  border-radius: 2px;
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 24px;
+  min-width: 24px;
+}
+
+.emotion-6 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+.emotion-6:hover + .emotion-7 {
+  border-color: #7A7B8E;
+}
+
+.emotion-6:checked + .emotion-7 {
+  background-color: #0069D0;
+  border-color: #0069D0;
+}
+
+.emotion-6:checked + .emotion-7:after {
+  content: "";
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
+  opacity: 1;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-6:indeterminate + .emotion-7 {
+  background-color: #FFFFFF;
+  border-color: #0069D0;
+}
+
+.emotion-6:indeterminate + .emotion-7:after {
+  content: "";
+  border-bottom: 3px solid #0069D0;
+  position: absolute;
+  top: -1px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-6:focus + .emotion-7 {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-6:disabled + .emotion-7 {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-6:disabled + .emotion-7 + .css-1f2k2gl {
+  color: #AAAAB9;
+  cursor: not-allowed;
+}
+
+.emotion-8 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="downshift-225-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-225-input"
+          id="downshift-225-label"
+        >
+          Fruits
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-225-menu"
+            aria-labelledby="downshift-225-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-225-input"
+            label="Fruits"
+            multiple=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        aria-busy="true"
+        aria-labelledby="downshift-225-label"
+        id="downshift-225-menu"
+        role="listbox"
+      >
+        <div
+          class="emotion-67"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-66"
+          >
+            <li
+              class="emotion-5"
+            >
+              Loading...
+              <span
+                class="emotion-4"
+              />
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-0"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Apple
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-1"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Avocado
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-2"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Banana
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-3"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Blueberry
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-4"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Coconut
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-5"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Grape
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-6"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Lemon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-7"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Mango
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-8"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Melon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-9"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Orange
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-10"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Peach
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-10"
+              id="downshift-225-item-11"
+              role="option"
+            >
+              <div
+                class="emotion-9"
+              >
+                <label
+                  class="emotion-8"
+                >
+                  <input
+                    class="emotion-6"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-7"
+                  />
+                </label>
+                Pear
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened with add-item 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-5 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-4:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-4:hover {
+  background: #F0F0F5;
+}
+
+.emotion-4:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="downshift-241-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-241-input"
+          id="downshift-241-label"
+        >
+          Fruits
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-241-menu"
+            aria-labelledby="downshift-241-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-241-input"
+            label="Fruits"
+            multiple=""
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-labelledby="downshift-241-label"
+        id="downshift-241-menu"
+        role="listbox"
+      >
+        <div
+          class="emotion-6"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-5"
+          >
+            <li
+              class="emotion-4"
+            >
+              Select an item or type a new value
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly with custom components correctly 1`] = `
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-32 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-31 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-5 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-5:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-5:hover {
+  background: #F0F0F5;
+}
+
+.emotion-5:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-30 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-28 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+}
+
+.emotion-29 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #696979;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #0069D0;
+  color: #FFFFFF;
+  border: 1px solid #0069D0;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-29 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-29:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-29:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-29:not(:disabled):hover {
+  background-color: #F0F0F5;
+}
+
+.emotion-29:not(:disabled):hover {
+  background-color: #0051A2;
+}
+
+.emotion-4 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #217B00;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="downshift-233-menu"
+      role="combobox"
+    >
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="downshift-233-input"
+          id="downshift-233-label"
+        >
+          Fruit
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-autocomplete="list"
+            aria-controls="downshift-233-menu"
+            aria-labelledby="downshift-233-label"
+            autocomplete="off"
+            class="emotion-1"
+            id="downshift-233-input"
+            label="Fruit"
+            multiple=""
+            name="fruit"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-labelledby="downshift-233-label"
+        id="downshift-233-menu"
+        role="listbox"
+      >
+        <div
+          class="emotion-32"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-31"
+          >
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            >
+              Prepend item
+            </div>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-0"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Apple
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-1"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Avocado
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-2"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Banana
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-3"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Blueberry
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-4"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Coconut
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-5"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Grape
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-6"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Lemon
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-7"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Mango
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-8"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Melon
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-9"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Orange
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-10"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Peach
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-233-item-11"
+              role="option"
+            >
+              <span
+                class="emotion-4"
+              >
+                Custom 
+                Pear
+              </span>
+            </li>
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            >
+              <div
+                class="emotion-30"
+              >
+                <span
+                  class="emotion-28"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+                </span>
+                <button
+                  class="emotion-29"
+                  data-testid="action-btn"
+                  type="button"
+                >
+                  <span>
+                    New item
+                  </span>
+                </button>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -6,9 +6,9 @@ import { Text } from '../Text'
 import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
 import { Button } from '../Button'
-import { ComboboxMenuItem } from './ComboboxMenuComponents'
+import { ComboboxMenuItem, ComboboxMultiselectSelectedItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
-import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
+import { ComboboxMultiselect, ComboboxMultiselectProps } from './ComboboxMultiselect'
 
 interface Fruit {
   value: number
@@ -30,7 +30,7 @@ const fruits: Fruit[] = [
   { value: 12, label: 'Pear' },
 ]
 
-const itemToString = (item: Fruit) => item.label
+const itemToString = (item: Fruit) => item?.label
 
 const asyncDelay = 1000
 const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
@@ -38,21 +38,22 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
     setTimeout(
       () =>
         resolve(
-          matchSorter<Fruit>(fruits, query, { keys: [(item) => item.label] })
+          matchSorter<Fruit>(fruits, query, { keys: [(item) => item?.label] })
         ),
       asyncDelay
     )
   })
 }
 
-const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
-  <ComboboxSingleselect<typeof fruits[0]>
+const ComboboxTest = (props: Partial<ComboboxMultiselectProps<Fruit>> & { async?: boolean }) => (
+  <ComboboxMultiselect<typeof fruits[0]>
     items={props.async ? loadFruitsAsync : fruits}
     itemToString={itemToString}
     debounceMilliseconds={0}
+    itemIsEqual={(a, b) => a?.value === b?.value}
     openOnFocus
     loading={false}
-    multiple={false}
+    multiple
     {...props}
   />
 )
@@ -73,18 +74,22 @@ function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
 }
 
 const ComboboxWithCustomComponentsTest = (
-  props: Partial<ComboboxSingleselectProps<Fruit>> & { action?: () => void }
+  props: Partial<ComboboxMultiselectProps<Fruit>> & { action?: () => void; onRemove?: () => void }
 ) => (
-  <ComboboxSingleselect<typeof fruits[0]>
+  <ComboboxMultiselect<typeof fruits[0]>
     label='Fruit'
     name='fruit'
     items={fruits}
     itemToString={itemToString}
+    debounceMilliseconds={0}
+    itemIsEqual={(a, b) => a.value === b.value}
     openOnFocus
     loading={false}
-    multiple={false}
-    debounceMilliseconds={0}
+    multiple
     components={{
+      SelectedItem: (props) => (
+        <ComboboxMultiselectSelectedItem onRemove={props.onRemove}>Selected item</ComboboxMultiselectSelectedItem>
+      ),
       Item: (props) => (
         <ComboboxMenuItem {...props}>
           <Text color='success'>Custom {props.itemToString(props.item)}</Text>
@@ -127,7 +132,6 @@ test.each`
   const label = baseElement.querySelector('label')
   const input = baseElement.querySelector('input')
   const listbox = baseElement.querySelector('[role="listbox"]')
-  const dropdownButton = baseElement.querySelector('button')
 
   expect(combobox).toHaveAttribute('aria-owns', listbox.getAttribute('id'))
   expect(combobox).toHaveAttribute('aria-expanded', 'false')
@@ -142,14 +146,12 @@ test.each`
   expect(input).toHaveAttribute('aria-controls', listbox.getAttribute('id'))
   expect(input).toHaveAttribute('aria-labelledby', label.getAttribute('id'))
 
-  expect(dropdownButton).toHaveAttribute('tabindex', '-1')
-  expect(dropdownButton).toHaveAttribute('aria-label')
-
   expect(listbox).toHaveAttribute('id')
   expect(listbox).toHaveAttribute('aria-labelledby', label.getAttribute('id'))
 
+  //Opens menu
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
   await act(() => waait(asyncDelay))
@@ -228,11 +230,9 @@ it.each`
     baseElement = result.baseElement
   })
   const input = baseElement.querySelector('input')
-
-  const dropdownButton = baseElement.querySelector('button')
   //Opens menu
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   await act(() => waait(asyncDelay))
@@ -286,10 +286,10 @@ it('respects menu min-width', async () => {
     baseElement = result.baseElement
   })
 
-  const dropdownButton = baseElement.querySelector('button')
+  const input = baseElement.querySelector('input')
   //Opens menu
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   const menu = getByTestId(baseElement, 'menu')
@@ -313,10 +313,10 @@ it.each`
 
   expect(selection).toBeNull()
 
+  const input = baseElement.querySelector('input')
   //Opens menu
-  const dropdownButton = baseElement.querySelector('button')
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   await act(() => waait(asyncDelay))
@@ -420,10 +420,9 @@ it.each`
   })
   const input = baseElement.querySelector('input')
 
-  const dropdownButton = baseElement.querySelector('button')
   //Opens menu
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   await act(() => waait(asyncDelay))
@@ -517,7 +516,7 @@ it.each`
   let baseElement: RenderResult['baseElement']
 
   await act(async () => {
-    const result = render(<ComboboxTest value={fruits[1]} async={async} />)
+    const result = render(<ComboboxTest value={[fruits[1], fruits[3]]} async={async} />)
     baseElement = result.baseElement
   })
 
@@ -526,9 +525,8 @@ it.each`
   expect(input).toHaveValue(itemToString(fruits[1]))
 
   //Opens menu
-  const dropdownButton = baseElement.querySelector('button')
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   await act(() => waait(asyncDelay))
@@ -548,9 +546,10 @@ it('should accept actions inside children prop', async () => {
     findByTestId = result.findByTestId
   })
 
-  const dropdownButton = baseElement.querySelector('button')
+  const input = baseElement.querySelector('input')
+  //Opens menu
   await act(async () => {
-    fireEvent.click(dropdownButton)
+    fireEvent.focus(input)
   })
 
   await act(async () => {
@@ -576,9 +575,10 @@ describe('rendering', () => {
       const result = render(<ComboboxTest label='Fruits' />)
       baseElement = result.baseElement
     })
-    const dropdownButton = baseElement.querySelector('button')
+    const input = baseElement.querySelector('input')
+    //Opens menu
     await act(async () => {
-      fireEvent.click(dropdownButton)
+      fireEvent.focus(input)
     })
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -590,9 +590,10 @@ describe('rendering', () => {
       const result = render(<ComboboxTest label='Fruits' loading={true} />)
       baseElement = result.baseElement
     })
-    const dropdownButton = baseElement.querySelector('button')
+    const input = baseElement.querySelector('input')
+    //Opens menu
     await act(async () => {
-      fireEvent.click(dropdownButton)
+      fireEvent.focus(input)
     })
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -604,9 +605,10 @@ describe('rendering', () => {
       const result = render(<ComboboxWithCustomComponentsTest />)
       baseElement = result.baseElement
     })
-    const dropdownButton = baseElement.querySelector('button')
+    const input = baseElement.querySelector('input')
+    //Opens menu
     await act(async () => {
-      fireEvent.click(dropdownButton)
+      fireEvent.focus(input)
     })
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
@@ -618,9 +620,10 @@ describe('rendering', () => {
       const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem={() => ({ value: 1, label: '' })} />)
       baseElement = result.baseElement
     })
-    const dropdownButton = baseElement.querySelector('button')
+    const input = baseElement.querySelector('input')
+    //Opens menu
     await act(async () => {
-      fireEvent.click(dropdownButton)
+      fireEvent.focus(input)
     })
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()

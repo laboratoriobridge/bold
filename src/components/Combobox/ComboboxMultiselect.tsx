@@ -15,15 +15,16 @@ import { ComboboxSingleselectProps } from './ComboboxSingleselect'
 
 export interface ComboboxMultiselectProps<T>
   extends Omit<ComboboxSingleselectProps<T>, 'value' | 'onChange' | 'components' | 'multiple'> {
-  value: T[]
+  value?: T[]
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean
-  components: ComboboxMultiselectComponents<T>
+  components?: Partial<ComboboxMultiselectComponents<T>>
+  multiple: true
 }
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
   const {
-    value,
+    value = [],
     items,
     disabled,
     clearable,
@@ -69,7 +70,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getDropdownProps,
     addSelectedItem,
     removeSelectedItem,
-    selectedItems,
+    selectedItems = [],
     reset,
   } = useMultipleSelection({
     initialSelectedItems: value,
@@ -78,7 +79,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     },
   })
 
-  const { classes, css } = useStyles(createStyles, props, !!selectedItems?.length)
+  const { classes, css } = useStyles(createStyles, props, !!selectedItems.length)
   const isSelected = useCallback((item: T) => selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem)), [
     selectedItems,
     itemIsEqual,
@@ -148,7 +149,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
           ref={wrapperRef}
           className={wrapperClasses}
           onClick={handleWrapperClick}
-          clearVisible={clearable && !!selectedItems?.length}
+          clearVisible={clearable && !!selectedItems.length}
           onClear={composeHandlers(reset, onClear)}
         >
           {selectedItems.map((selectedItem, index) => (
