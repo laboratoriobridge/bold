@@ -61,6 +61,10 @@ const locale: LocaleConfiguration = {
     allItems: 'Todos os itens',
     all: 'todos',
   },
+  droppable: {
+    isOver: 'Solte o item aqui para inserir na tabela',
+    isNotOver: 'Arraste os itens para inserir na tabela',
+  },
 }
 
 export default locale
