@@ -391,7 +391,11 @@ it.each`
   const input = baseElement.querySelector('input')
   await act(async () => {
     fireEvent.focus(input)
+  })
+  await act(async () => {
     fireEvent.change(input, { target: { value: 'not a fruit' } })
+  })
+  await act(async () => {
     fireEvent.blur(input)
   })
   expect(input).not.toHaveValue()
@@ -428,7 +432,11 @@ it.each`
 
   await act(async () => {
     fireEvent.focus(input)
+  })
+  await act(async () => {
     fireEvent.change(input, { target: { value: 'not a fruit' } })
+  })
+  await act(async () => {
     fireEvent.blur(input)
   })
 
@@ -464,7 +472,11 @@ it.each`
     //Types item not in the list
     await act(async () => {
       fireEvent.focus(input)
+    })
+    await act(async () => {
       fireEvent.change(input, { target: { value: 'not a fruit in the list' } })
+    })
+    await act(async () => {
       fireEvent.blur(input)
     })
 
@@ -474,13 +486,14 @@ it.each`
     //Searches for first item
     await act(async () => {
       fireEvent.focus(input)
+    })
+    await act(async () => {
       fireEvent.change(input, { target: { value: fruits[0].label } })
     })
-
-    await act(() => waait(asyncDelay))
+    await act(() => waait(2 * asyncDelay))
 
     //Selects first item
-    const option = baseElement.querySelector('li').firstChild
+    const option = baseElement.querySelector('li')
     await act(async () => {
       fireEvent.click(option)
     })
