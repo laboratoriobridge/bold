@@ -8,7 +8,7 @@ import { HFlow } from '../HFlow'
 import { Button } from '../Button'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
-import { ComboboxSingleselectProps } from './ComboboxSingleselect'
+import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
 
 interface Fruit {
   value: number
@@ -46,10 +46,13 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
 }
 
 const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
-  <Combobox<typeof fruits[0]>
+  <ComboboxSingleselect<typeof fruits[0]>
     items={props.async ? loadFruitsAsync : fruits}
     itemToString={itemToString}
     debounceMilliseconds={0}
+    openOnFocus
+    loading={false}
+    multiple={false}
     {...props}
   />
 )
