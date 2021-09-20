@@ -188,7 +188,7 @@ exports[`rendering renders correcly closed 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-267-menu"
+      aria-owns="downshift-266-menu"
       role="combobox"
     >
       <div
@@ -196,8 +196,8 @@ exports[`rendering renders correcly closed 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-267-input"
-          id="downshift-267-label"
+          for="downshift-266-input"
+          id="downshift-266-label"
         >
           Fruits
         </label>
@@ -206,11 +206,11 @@ exports[`rendering renders correcly closed 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-267-menu"
-            aria-labelledby="downshift-267-label"
+            aria-controls="downshift-266-menu"
+            aria-labelledby="downshift-266-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-267-input"
+            id="downshift-266-input"
             label="Fruits"
             type="text"
             value=""
@@ -245,8 +245,8 @@ exports[`rendering renders correcly closed 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-267-label"
-        id="downshift-267-menu"
+        aria-labelledby="downshift-266-label"
+        id="downshift-266-menu"
         role="listbox"
       />
     </div>
@@ -499,7 +499,7 @@ exports[`rendering renders correcly opened 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-268-menu"
+      aria-owns="downshift-267-menu"
       role="combobox"
     >
       <div
@@ -507,8 +507,8 @@ exports[`rendering renders correcly opened 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-268-input"
-          id="downshift-268-label"
+          for="downshift-267-input"
+          id="downshift-267-label"
         >
           Fruits
         </label>
@@ -517,11 +517,11 @@ exports[`rendering renders correcly opened 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-268-menu"
-            aria-labelledby="downshift-268-label"
+            aria-controls="downshift-267-menu"
+            aria-labelledby="downshift-267-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-268-input"
+            id="downshift-267-input"
             label="Fruits"
             type="text"
             value=""
@@ -556,8 +556,8 @@ exports[`rendering renders correcly opened 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-268-label"
-        id="downshift-268-menu"
+        aria-labelledby="downshift-267-label"
+        id="downshift-267-menu"
         role="listbox"
       >
         <div
@@ -574,7 +574,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-0"
+              id="downshift-267-item-0"
               role="option"
             >
               Apple
@@ -582,7 +582,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-1"
+              id="downshift-267-item-1"
               role="option"
             >
               Avocado
@@ -590,7 +590,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-2"
+              id="downshift-267-item-2"
               role="option"
             >
               Banana
@@ -598,7 +598,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-3"
+              id="downshift-267-item-3"
               role="option"
             >
               Blueberry
@@ -606,7 +606,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-4"
+              id="downshift-267-item-4"
               role="option"
             >
               Coconut
@@ -614,7 +614,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-5"
+              id="downshift-267-item-5"
               role="option"
             >
               Grape
@@ -622,7 +622,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-6"
+              id="downshift-267-item-6"
               role="option"
             >
               Lemon
@@ -630,7 +630,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-7"
+              id="downshift-267-item-7"
               role="option"
             >
               Mango
@@ -638,7 +638,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-8"
+              id="downshift-267-item-8"
               role="option"
             >
               Melon
@@ -646,7 +646,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-9"
+              id="downshift-267-item-9"
               role="option"
             >
               Orange
@@ -654,7 +654,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-10"
+              id="downshift-267-item-10"
               role="option"
             >
               Peach
@@ -662,7 +662,7 @@ exports[`rendering renders correcly opened 1`] = `
             <li
               aria-selected="false"
               class="emotion-7"
-              id="downshift-268-item-11"
+              id="downshift-267-item-11"
               role="option"
             >
               Pear
@@ -984,7 +984,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-275-menu"
+      aria-owns="downshift-274-menu"
       role="combobox"
     >
       <div
@@ -992,8 +992,8 @@ exports[`rendering renders correcly opened and loading 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-275-input"
-          id="downshift-275-label"
+          for="downshift-274-input"
+          id="downshift-274-label"
         >
           Fruits
         </label>
@@ -1002,11 +1002,11 @@ exports[`rendering renders correcly opened and loading 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-275-menu"
-            aria-labelledby="downshift-275-label"
+            aria-controls="downshift-274-menu"
+            aria-labelledby="downshift-274-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-275-input"
+            id="downshift-274-input"
             label="Fruits"
             type="text"
             value=""
@@ -1041,8 +1041,8 @@ exports[`rendering renders correcly opened and loading 1`] = `
       </div>
       <div
         aria-busy="true"
-        aria-labelledby="downshift-275-label"
-        id="downshift-275-menu"
+        aria-labelledby="downshift-274-label"
+        id="downshift-274-menu"
         role="listbox"
       >
         <div
@@ -1067,7 +1067,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-0"
+              id="downshift-274-item-0"
               role="option"
             >
               Apple
@@ -1075,7 +1075,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-1"
+              id="downshift-274-item-1"
               role="option"
             >
               Avocado
@@ -1083,7 +1083,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-2"
+              id="downshift-274-item-2"
               role="option"
             >
               Banana
@@ -1091,7 +1091,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-3"
+              id="downshift-274-item-3"
               role="option"
             >
               Blueberry
@@ -1099,7 +1099,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-4"
+              id="downshift-274-item-4"
               role="option"
             >
               Coconut
@@ -1107,7 +1107,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-5"
+              id="downshift-274-item-5"
               role="option"
             >
               Grape
@@ -1115,7 +1115,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-6"
+              id="downshift-274-item-6"
               role="option"
             >
               Lemon
@@ -1123,7 +1123,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-7"
+              id="downshift-274-item-7"
               role="option"
             >
               Mango
@@ -1131,7 +1131,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-8"
+              id="downshift-274-item-8"
               role="option"
             >
               Melon
@@ -1139,7 +1139,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-9"
+              id="downshift-274-item-9"
               role="option"
             >
               Orange
@@ -1147,7 +1147,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-10"
+              id="downshift-274-item-10"
               role="option"
             >
               Peach
@@ -1155,7 +1155,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
             <li
               aria-selected="false"
               class="emotion-9"
-              id="downshift-275-item-11"
+              id="downshift-274-item-11"
               role="option"
             >
               Pear
@@ -1413,7 +1413,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-289-menu"
+      aria-owns="downshift-288-menu"
       role="combobox"
     >
       <div
@@ -1421,8 +1421,8 @@ exports[`rendering renders correcly opened with add-item 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-289-input"
-          id="downshift-289-label"
+          for="downshift-288-input"
+          id="downshift-288-label"
         >
           Fruits
         </label>
@@ -1431,11 +1431,11 @@ exports[`rendering renders correcly opened with add-item 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-289-menu"
-            aria-labelledby="downshift-289-label"
+            aria-controls="downshift-288-menu"
+            aria-labelledby="downshift-288-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-289-input"
+            id="downshift-288-input"
             label="Fruits"
             type="text"
             value=""
@@ -1470,8 +1470,8 @@ exports[`rendering renders correcly opened with add-item 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-289-label"
-        id="downshift-289-menu"
+        aria-labelledby="downshift-288-label"
+        id="downshift-288-menu"
         role="listbox"
       >
         <div
@@ -1836,7 +1836,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-282-menu"
+      aria-owns="downshift-281-menu"
       role="combobox"
     >
       <div
@@ -1844,8 +1844,8 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       >
         <label
           class="emotion-0"
-          for="downshift-282-input"
-          id="downshift-282-label"
+          for="downshift-281-input"
+          id="downshift-281-label"
         >
           Fruit
         </label>
@@ -1854,11 +1854,11 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-282-menu"
-            aria-labelledby="downshift-282-label"
+            aria-controls="downshift-281-menu"
+            aria-labelledby="downshift-281-label"
             autocomplete="off"
             class="emotion-1"
-            id="downshift-282-input"
+            id="downshift-281-input"
             label="Fruit"
             name="fruit"
             type="text"
@@ -1894,8 +1894,8 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-282-label"
-        id="downshift-282-menu"
+        aria-labelledby="downshift-281-label"
+        id="downshift-281-menu"
         role="listbox"
       >
         <div
@@ -1917,7 +1917,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-0"
+              id="downshift-281-item-0"
               role="option"
             >
               <span
@@ -1930,7 +1930,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-1"
+              id="downshift-281-item-1"
               role="option"
             >
               <span
@@ -1943,7 +1943,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-2"
+              id="downshift-281-item-2"
               role="option"
             >
               <span
@@ -1956,7 +1956,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-3"
+              id="downshift-281-item-3"
               role="option"
             >
               <span
@@ -1969,7 +1969,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-4"
+              id="downshift-281-item-4"
               role="option"
             >
               <span
@@ -1982,7 +1982,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-5"
+              id="downshift-281-item-5"
               role="option"
             >
               <span
@@ -1995,7 +1995,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-6"
+              id="downshift-281-item-6"
               role="option"
             >
               <span
@@ -2008,7 +2008,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-7"
+              id="downshift-281-item-7"
               role="option"
             >
               <span
@@ -2021,7 +2021,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-8"
+              id="downshift-281-item-8"
               role="option"
             >
               <span
@@ -2034,7 +2034,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-9"
+              id="downshift-281-item-9"
               role="option"
             >
               <span
@@ -2047,7 +2047,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-10"
+              id="downshift-281-item-10"
               role="option"
             >
               <span
@@ -2060,7 +2060,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             <li
               aria-selected="false"
               class="emotion-8"
-              id="downshift-282-item-11"
+              id="downshift-281-item-11"
               role="option"
             >
               <span

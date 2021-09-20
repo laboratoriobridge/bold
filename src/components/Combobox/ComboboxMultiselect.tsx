@@ -100,7 +100,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     selectedItem: null,
     items: loadedItems,
 
-    stateReducer: comboboxMultiselectStateReducer(createNewItem),
+    stateReducer: comboboxMultiselectStateReducer(createNewItem, addSelectedItem),
     itemToString,
     onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
@@ -216,7 +216,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   )
 }
 
-const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string) => T) => (
+const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string) => T, addItem: (item: T) => void) => (
   state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
 ): Partial<UseComboboxState<T>> => {
@@ -233,7 +233,7 @@ const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string)
         ...changes,
         ...(!changes.selectedItem &&
           (createNewItem
-            ? { selectedItem: createNewItem(state.inputValue) }
+            ? addItem(createNewItem(state.inputValue))
             : {
                 inputValue: '',
               })),

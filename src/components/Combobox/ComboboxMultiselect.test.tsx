@@ -54,6 +54,9 @@ const ComboboxTest = (props: Partial<ComboboxMultiselectProps<Fruit>> & { async?
     openOnFocus
     loading={false}
     multiple
+    components={{
+      SelectedItem: (props) => <ComboboxMultiselectSelectedItem {...props} data-testid={`${props.children}`} />,
+    }}
     {...props}
   />
 )
@@ -225,9 +228,11 @@ it.each`
   ${false}
 `('clears selection when "Clear" is clicked (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
+  let findByTestId: RenderResult['findByTestId']
   await act(async () => {
     const result = render(<ComboboxTest clearable={true} async={async} />)
     baseElement = result.baseElement
+    findByTestId = result.findByTestId
   })
   const input = baseElement.querySelector('input')
   //Opens menu
@@ -244,22 +249,22 @@ it.each`
     fireEvent.click(option)
   })
 
-  expect(input).toHaveValue(option.textContent)
+  const selected = await findByTestId(option.textContent)
+  expect(selected).toBeInTheDocument()
 
   const clearButton = baseElement.querySelector('[title="Clear"]')
+  expect(clearButton).toBeInTheDocument()
 
   //Clears value and focus out
   await act(async () => {
     fireEvent.click(clearButton)
   })
-  await act(async () => {
-    fireEvent.blur(input)
-  })
 
   await act(() => waait(asyncDelay))
 
   //Checks if cleared
-  expect(input).not.toHaveValue()
+  const cleared = baseElement.querySelector(`[data-testid="${option.textContent}"]`)
+  expect(cleared).toBeNull()
 })
 
 it('enters error state', async () => {
@@ -327,7 +332,7 @@ it.each`
     fireEvent.click(option)
   })
 
-  expect(selection).toBe(fruits[0])
+  expect(selection).toStrictEqual([fruits[0]])
 })
 
 it.each`
@@ -412,47 +417,6 @@ it.each`
   async
   ${true}
   ${false}
-`('should clear input if the value is not valid after select item (async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
-  await act(async () => {
-    const result = render(<ComboboxTest clearable={true} async={async} />)
-    baseElement = result.baseElement
-  })
-  const input = baseElement.querySelector('input')
-
-  //Opens menu
-  await act(async () => {
-    fireEvent.focus(input)
-  })
-
-  await act(() => waait(asyncDelay))
-
-  const option = baseElement.querySelector('li').firstChild
-
-  //Selects item
-  await act(async () => {
-    fireEvent.click(option)
-  })
-
-  expect(input).toHaveValue(option.textContent)
-
-  await act(async () => {
-    fireEvent.focus(input)
-  })
-  await act(async () => {
-    fireEvent.change(input, { target: { value: 'not a fruit' } })
-  })
-  await act(async () => {
-    fireEvent.blur(input)
-  })
-
-  expect(input).not.toHaveValue()
-})
-
-it.each`
-  async
-  ${true}
-  ${false}
 `(
   'should add item if the input value is not in the list and "createNewItem" is defined (async: $async)',
   async ({ async }) => {
@@ -465,8 +429,8 @@ it.each`
         <ComboboxTest
           clearable={true}
           createNewItem={createNewItem}
-          onChange={(item) => {
-            selection = item
+          onChange={(items) => {
+            selection = items
           }}
           async={async}
         />
@@ -486,8 +450,7 @@ it.each`
       fireEvent.blur(input)
     })
 
-    expect(selection).toStrictEqual({ value: 1, label: 'not a fruit in the list' })
-    expect(input).toHaveValue('not a fruit in the list')
+    expect(selection).toStrictEqual([{ value: 1, label: 'not a fruit in the list' }])
 
     //Searches for first item
     await act(async () => {
@@ -504,7 +467,7 @@ it.each`
       fireEvent.click(option)
     })
 
-    expect(selection).toBe(fruits[0])
+    expect(selection).toBe([fruits[0]])
   }
 )
 
@@ -513,27 +476,17 @@ it.each`
   ${true}
   ${false}
 `('should accept a value as parameter (async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
+  let findByTestId: RenderResult['findByTestId']
 
   await act(async () => {
     const result = render(<ComboboxTest value={[fruits[1], fruits[3]]} async={async} />)
-    baseElement = result.baseElement
+    findByTestId = result.findByTestId
   })
 
-  const input = baseElement.querySelector('input')
-
-  expect(input).toHaveValue(itemToString(fruits[1]))
-
-  //Opens menu
-  await act(async () => {
-    fireEvent.focus(input)
-  })
-
-  await act(() => waait(asyncDelay))
-
-  const option = baseElement.querySelector('li')
-
-  expect(option).toHaveTextContent(itemToString(fruits[1]))
+  const selected1 = await findByTestId(fruits[1].label)
+  const selected2 = await findByTestId(fruits[3].label)
+  expect(selected1).toBeInTheDocument()
+  expect(selected2).toBeInTheDocument()
 })
 
 it('should accept actions inside children prop', async () => {
