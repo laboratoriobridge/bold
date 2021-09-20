@@ -1,14 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
-.emotion-7 {
+.emotion-8 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -19,11 +17,19 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-10 {
+.emotion-11 {
   overflow: hidden;
+}
+
+.emotion-7 {
+  position: relative;
 }
 
 .emotion-6 {
@@ -33,6 +39,13 @@ exports[`should render correctly 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 520px;
@@ -68,9 +81,12 @@ exports[`should render correctly 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -104,6 +120,7 @@ exports[`should render correctly 1`] = `
 
 .emotion-2 {
   padding: 2.5rem;
+  overflow-y: auto;
 }
 
 .emotion-5 {
@@ -181,7 +198,7 @@ exports[`should render correctly 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-8 {
+.emotion-9 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -191,7 +208,7 @@ exports[`should render correctly 1`] = `
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-9 {
+.emotion-10 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -199,69 +216,73 @@ exports[`should render correctly 1`] = `
 }
 
 <body
-  class="emotion-10"
+  class="emotion-11"
 >
   <div />
   <div
-    class="emotion-9"
+    class="emotion-10"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
     >
       <div
         aria-modal="true"
-        class="emotion-6"
+        class="emotion-7"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
         <div
-          class="emotion-2"
+          class="emotion-6"
         >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
           >
-            <button
-              class="emotion-3"
-              type="button"
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div
+            class="emotion-2"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-4"
             >
-              <span>
-                Confirm
-              </span>
-            </button>
+              <button
+                class="emotion-3"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-8"
+      class="emotion-9"
       data-testid="backdrop"
     />
   </div>
@@ -269,8 +290,12 @@ exports[`should render correctly 1`] = `
 `;
 
 exports[`should render correctly with depth 1`] = `
-.emotion-10 {
+.emotion-11 {
   overflow: hidden;
+}
+
+.emotion-7 {
+  position: relative;
 }
 
 .emotion-1 {
@@ -303,9 +328,12 @@ exports[`should render correctly with depth 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -339,6 +367,7 @@ exports[`should render correctly with depth 1`] = `
 
 .emotion-2 {
   padding: 2.5rem;
+  overflow-y: auto;
 }
 
 .emotion-5 {
@@ -416,21 +445,19 @@ exports[`should render correctly with depth 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-9 {
+.emotion-10 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 0;
 }
 
-.emotion-7 {
+.emotion-8 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1500;
   display: -webkit-box;
@@ -441,6 +468,10 @@ exports[`should render correctly with depth 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -451,12 +482,19 @@ exports[`should render correctly with depth 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
 }
 
-.emotion-8 {
+.emotion-9 {
   position: fixed;
   z-index: 1450;
   top: 0;
@@ -467,69 +505,73 @@ exports[`should render correctly with depth 1`] = `
 }
 
 <body
-  class="emotion-10"
+  class="emotion-11"
 >
   <div />
   <div
-    class="emotion-9"
+    class="emotion-10"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
     >
       <div
         aria-modal="true"
-        class="emotion-6"
+        class="emotion-7"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
         <div
-          class="emotion-2"
+          class="emotion-6"
         >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
           >
-            <button
-              class="emotion-3"
-              type="button"
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div
+            class="emotion-2"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-4"
             >
-              <span>
-                Confirm
-              </span>
-            </button>
+              <button
+                class="emotion-3"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-8"
+      class="emotion-9"
       data-testid="backdrop"
     />
   </div>
@@ -537,14 +579,12 @@ exports[`should render correctly with depth 1`] = `
 `;
 
 exports[`should render correctly without 'overflow hidden' prop in document classList 1`] = `
-.emotion-7 {
+.emotion-8 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -555,7 +595,15 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
+}
+
+.emotion-7 {
+  position: relative;
 }
 
 .emotion-1 {
@@ -588,9 +636,12 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -624,6 +675,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
 
 .emotion-2 {
   padding: 2.5rem;
+  overflow-y: auto;
 }
 
 .emotion-5 {
@@ -701,7 +753,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background-color: #F0F0F5;
 }
 
-.emotion-8 {
+.emotion-9 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -711,7 +763,7 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background: rgba(211,212,221,0.7);
 }
 
-.emotion-9 {
+.emotion-10 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
@@ -725,6 +777,13 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -735,65 +794,69 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
 >
   <div />
   <div
-    class="emotion-9"
+    class="emotion-10"
   >
     <div
-      class="emotion-7"
+      class="emotion-8"
     >
       <div
         aria-modal="true"
-        class="emotion-6"
+        class="emotion-7"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
-        >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
         <div
-          class="emotion-2"
+          class="emotion-6"
         >
-          <span>
-            Body
-          </span>
-        </div>
-        <div
-          class="emotion-5"
-        >
-          <div
-            class="emotion-4"
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
           >
-            <button
-              class="emotion-3"
-              type="button"
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          <div
+            class="emotion-2"
+          >
+            <span>
+              Body
+            </span>
+          </div>
+          <div
+            class="emotion-5"
+          >
+            <div
+              class="emotion-4"
             >
-              <span>
-                Confirm
-              </span>
-            </button>
+              <button
+                class="emotion-3"
+                type="button"
+              >
+                <span>
+                  Confirm
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div
-      class="emotion-8"
+      class="emotion-9"
       data-testid="backdrop"
     />
   </div>

@@ -145,7 +145,7 @@ it('should have a focus on first element when opened', async () => {
   rerender(createComponent({ open: true }))
   const dialog = document.body.querySelector('[role="dialog"]')
   await waitFor(() => {
-    expect(document.activeElement).toEqual(dialog.firstElementChild)
+    expect(document.activeElement).toEqual(dialog.firstElementChild.firstElementChild)
   })
 })
 

@@ -1,15 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1`] = `
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-2 {
@@ -19,6 +23,13 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -54,9 +65,12 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -88,14 +102,12 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   font-size: 1.5rem;
 }
 
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1300;
   display: -webkit-box;
@@ -106,10 +118,14 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1250;
   top: 0;
@@ -120,47 +136,51 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -168,14 +188,12 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 `;
 
 exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -186,18 +204,26 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-1 {
@@ -230,9 +256,12 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -264,7 +293,7 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -281,6 +310,13 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -288,47 +324,51 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -342,14 +382,12 @@ exports[`Modal should render correctly when closed 1`] = `
 `;
 
 exports[`Modal should render correctly when opened 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -360,18 +398,26 @@ exports[`Modal should render correctly when opened 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-2 {
@@ -381,6 +427,13 @@ exports[`Modal should render correctly when opened 1`] = `
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -416,9 +469,12 @@ exports[`Modal should render correctly when opened 1`] = `
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -450,7 +506,7 @@ exports[`Modal should render correctly when opened 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -461,47 +517,51 @@ exports[`Modal should render correctly when opened 1`] = `
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -509,14 +569,12 @@ exports[`Modal should render correctly when opened 1`] = `
 `;
 
 exports[`Modal should'n add "overflow: hidden" property to document when manageOverflow is false 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -527,14 +585,22 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-2 {
@@ -544,6 +610,13 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -579,9 +652,12 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -613,7 +689,7 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -628,43 +704,47 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -672,14 +752,12 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
 `;
 
 exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -690,18 +768,26 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-1 {
@@ -734,9 +820,12 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -768,7 +857,7 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -785,53 +874,64 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   max-width: 100%;
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -839,14 +939,12 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
 `;
 
 exports[`Modal sizes should accept the "large" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -857,18 +955,26 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-2 {
@@ -878,6 +984,13 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 900px;
@@ -913,9 +1026,12 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -947,7 +1063,7 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -958,47 +1074,51 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>
@@ -1006,14 +1126,12 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 `;
 
 exports[`Modal sizes should accept the "small" size and render accordingly 1`] = `
-.emotion-3 {
+.emotion-4 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -1024,18 +1142,26 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
-.emotion-6 {
+.emotion-7 {
   overflow: hidden;
 }
 
-.emotion-5 {
+.emotion-6 {
   -webkit-transition: opacity 200ms ease-in-out;
   transition: opacity 200ms ease-in-out;
   opacity: 0;
   opacity: 1;
+}
+
+.emotion-3 {
+  position: relative;
 }
 
 .emotion-1 {
@@ -1068,9 +1194,12 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   text-decoration: none;
   font-size: 0.875rem;
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  float: right;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .emotion-1 > span {
@@ -1102,7 +1231,7 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   font-size: 1.5rem;
 }
 
-.emotion-4 {
+.emotion-5 {
   position: fixed;
   z-index: 1050;
   top: 0;
@@ -1119,53 +1248,64 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   background-color: #FFFFFF;
   min-width: 520px;
   pointer-events: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   max-height: 80vh;
   overflow: auto;
   width: 520px;
 }
 
 <body
-  class="emotion-6"
+  class="emotion-7"
 >
   <div />
   <div
-    class="emotion-5"
+    class="emotion-6"
   >
     <div
-      class="emotion-3"
+      class="emotion-4"
     >
       <div
         aria-modal="true"
-        class="emotion-2"
+        class="emotion-3"
         role="dialog"
       >
-        <button
-          aria-label="Close"
-          class="emotion-1"
-          title="Close"
-          type="button"
+        <div
+          class="emotion-2"
         >
-          <span>
-            <svg
-              aria-hidden="true"
-              class="emotion-0"
-              height="1em"
-              role="img"
-              viewBox="0 0 24 24"
-              width="1em"
-            >
-              <path
-                clip-rule="evenodd"
-                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-              />
-            </svg>
-          </span>
-        </button>
-        Testing.
+          <button
+            aria-label="Close"
+            class="emotion-1"
+            title="Close"
+            type="button"
+          >
+            <span>
+              <svg
+                aria-hidden="true"
+                class="emotion-0"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+          </button>
+          Testing.
+        </div>
       </div>
     </div>
     <div
-      class="emotion-4"
+      class="emotion-5"
       data-testid="backdrop"
     />
   </div>

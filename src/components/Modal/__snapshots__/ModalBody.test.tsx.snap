@@ -3,6 +3,7 @@
 exports[`should accept the "style" prop 1`] = `
 .emotion-0 {
   padding: 2.5rem;
+  overflow-y: auto;
   color: red;
 }
 
@@ -18,6 +19,7 @@ exports[`should accept the "style" prop 1`] = `
 exports[`should render correctly 1`] = `
 .emotion-0 {
   padding: 2.5rem;
+  overflow-y: auto;
 }
 
 <div>
