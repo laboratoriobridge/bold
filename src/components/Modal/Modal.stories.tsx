@@ -94,24 +94,6 @@ export const Default = () => (
           risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
           tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
         </p>
-
-        <p>
-          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
-          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
-          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
-          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
-          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
-          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
-        </p>
-
-        <p>
-          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
-          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
-          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
-          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
-          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
-          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
-        </p>
       </ModalBody>
       <ModalFooter>
         <HFlow justifyContent='flex-end'>

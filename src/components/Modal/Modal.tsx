@@ -34,7 +34,7 @@ export interface ModalProps extends ModalContainerProps {
   closeOnBackdropClick?: boolean
 
   /**
-   * documentar
+   * @description allows you to control if the ModalFooter is scrollable with the modal
    * @default true
    */
   fixedFooter?: boolean
