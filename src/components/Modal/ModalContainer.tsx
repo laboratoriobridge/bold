@@ -10,31 +10,35 @@ import { Tooltip } from '../Tooltip'
 export interface ModalContainerProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'style'> {
   style?: ExternalStyles
   hasCloseIcon?: boolean
+
+  fixedFooter?: boolean
   onClose?(): any
 }
 
 export const ModalContainer = forwardRef<HTMLDivElement, ModalContainerProps>((props, ref) => {
-  const { style, onClose, hasCloseIcon, children, ...rest } = props
-  const { classes, css } = useStyles(styles)
+  const { style, onClose, hasCloseIcon, children, fixedFooter, ...rest } = props
+  const { classes, css } = useStyles(styles, fixedFooter)
   const locale = useLocale()
 
   return (
-    <div role='dialog' aria-modal='true' ref={ref} className={css(classes.wrapper, style)} {...rest}>
-      {hasCloseIcon && (
-        <Tooltip text={locale.modal.close}>
-          <Button
-            aria-label={locale.modal.close}
-            size='small'
-            skin='ghost'
-            style={classes.closeButton}
-            onClick={onClose}
-          >
-            <Icon icon='timesDefault' />
-          </Button>
-        </Tooltip>
-      )}
+    <div role='dialog' aria-modal='true' ref={ref} className={classes.closeButtonWrapper} {...rest}>
+      <div className={css(classes.wrapper, style)}>
+        {hasCloseIcon && (
+          <Tooltip text={locale.modal.close}>
+            <Button
+              aria-label={locale.modal.close}
+              size='small'
+              skin='ghost'
+              style={classes.closeButton}
+              onClick={onClose}
+            >
+              <Icon icon='timesDefault' />
+            </Button>
+          </Tooltip>
+        )}
 
-      {children}
+        {children}
+      </div>
     </div>
   )
 })
@@ -44,7 +48,7 @@ ModalContainer.defaultProps = {
   onClose: () => null,
 } as Partial<ModalContainerProps>
 
-export const styles = (theme: Theme) => ({
+export const styles = (theme: Theme, fixedFooter: boolean) => ({
   wrapper: {
     border: `1px solid ${theme.pallete.divider}`,
     boxShadow: theme.shadows.outer['160'],
@@ -52,10 +56,17 @@ export const styles = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.main,
     minWidth: 520,
     pointerEvents: 'auto',
+
+    display: fixedFooter && 'flex',
+    flexDirection: fixedFooter && 'column',
+  } as React.CSSProperties,
+  closeButtonWrapper: {
+    position: 'relative',
   } as React.CSSProperties,
   closeButton: {
-    float: 'right',
-    marginTop: '0.5rem',
-    marginRight: '0.5rem',
+    position: 'absolute',
+    top: '0.5rem',
+    right: '0.5rem',
+    transform: 'translateX(-50%)',
   } as React.CSSProperties,
 })

@@ -24,7 +24,12 @@ export const Default = () => (
   <>
     <p>Default</p>
 
-    <Modal open={boolean('open', true)} size={select('size', sizes, 'large')} onClose={action('close')}>
+    <Modal
+      open={boolean('open', true)}
+      size={select('size', sizes, 'large')}
+      onClose={action('close')}
+      fixedFooter={boolean('fixedFooter', true)}
+    >
       <ModalBody>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer molestie, dui id luctus commodo, nunc enim
@@ -34,6 +39,69 @@ export const Default = () => (
           Suspendisse potenti. Nam porta urna vitae nibh pharetra eleifend. Nullam urna eros, auctor vitae maximus non,
           feugiat eget odio. Cras venenatis, lectus eget consectetur volutpat, urna felis efficitur enim, vitae viverra
           purus risus sed purus.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
+        </p>
+
+        <p>
+          Aliquam placerat eget massa vel congue. Suspendisse libero erat, auctor ac tristique et, ultrices quis dolor.
+          Suspendisse commodo lacinia lectus ut egestas. Cras in urna eget leo mollis luctus eu eget felis. Mauris vel
+          libero vel lectus cursus placerat. Nunc non ligula urna. Aliquam id quam at quam sodales gravida condimentum
+          quis eros. am dolor nisl, ullamcorper ac varius nec, vulputate sed metus. Cras lacus ante, dapibus facilisis
+          risus at, varius commodo nulla. Nunc volutpat pellentesque mauris et sodales. Suspendisse finibus, dui at
+          tristique mollis, felis mauris vulputate leo, sed vehicula lacus nibh ut dolor.
         </p>
 
         <p>

@@ -32,6 +32,12 @@ export interface ModalProps extends ModalContainerProps {
    * @default true
    */
   closeOnBackdropClick?: boolean
+
+  /**
+   * documentar
+   * @default true
+   */
+  fixedFooter?: boolean
 }
 
 export function Modal(props: ModalProps) {
@@ -45,6 +51,7 @@ export function Modal(props: ModalProps) {
     onClose,
     depthLevel,
     manageOverflow,
+    fixedFooter,
     ...rest
   } = props
   const { classes, css } = useStyles(createStyles, depthLevel)
@@ -90,6 +97,7 @@ export function Modal(props: ModalProps) {
                       ref={containerRef}
                       style={css(classes.container, classes[size], style)}
                       onClose={onClose}
+                      fixedFooter={fixedFooter}
                       {...rest}
                     >
                       {children}
@@ -110,6 +118,7 @@ export function Modal(props: ModalProps) {
 Modal.defaultProps = {
   size: 'large',
   closeOnBackdropClick: true,
+  fixedFooter: true,
   depthLevel: 1,
   manageOverflow: true,
 } as Partial<ModalProps>
@@ -117,14 +126,15 @@ Modal.defaultProps = {
 const createStyles = (theme: Theme, depthLevel: number) => ({
   modal: {
     position: 'fixed',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
+    left: '0',
+    top: '0',
     width: '100%',
+    height: '100vh',
     pointerEvents: 'none',
     zIndex: zIndexLevel[depthLevel].modalContainer,
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
     padding: '2rem',
   } as React.CSSProperties,
   container: {

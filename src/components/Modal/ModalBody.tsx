@@ -12,6 +12,7 @@ export function ModalBody(props: ModalBodyProps) {
   const { classes, css } = useStyles(() => ({
     body: {
       padding: '2.5rem',
+      overflowY: 'auto',
     },
   }))
 
