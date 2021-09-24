@@ -226,6 +226,54 @@ it.each`
   async
   ${true}
   ${false}
+`('shows/hides selection when they are clicked (async: $async)', async ({ async }) => {
+  let baseElement: RenderResult['baseElement']
+  let findByTestId: RenderResult['findByTestId']
+  await act(async () => {
+    const result = render(<ComboboxTest async={async} />)
+    baseElement = result.baseElement
+    findByTestId = result.findByTestId
+  })
+  const input = baseElement.querySelector('input')
+  //Opens menu
+  await act(async () => {
+    fireEvent.focus(input)
+  })
+
+  await act(() => waait(asyncDelay))
+
+  const options = baseElement.querySelectorAll('li')
+
+  //Selects items
+  await act(async () => {
+    fireEvent.click(options[0])
+  })
+
+  await act(async () => {
+    fireEvent.click(options[4])
+  })
+
+  const selected1 = await findByTestId(options[0].textContent)
+  expect(selected1).toBeInTheDocument()
+
+  const selected2 = await findByTestId(options[4].textContent)
+  expect(selected2).toBeInTheDocument()
+
+  await act(async () => {
+    fireEvent.click(options[0].firstChild)
+  })
+
+  //Checks if cleared
+  const notCleared = baseElement.querySelector(`[data-testid="${options[4].textContent}"]`)
+  expect(notCleared).not.toBeNull()
+  const cleared = baseElement.querySelector(`[data-testid="${options[0].textContent}"]`)
+  expect(cleared).toBeNull()
+})
+
+it.each`
+  async
+  ${true}
+  ${false}
 `('clears selection when "Clear" is clicked (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
   let findByTestId: RenderResult['findByTestId']
@@ -242,15 +290,22 @@ it.each`
 
   await act(() => waait(asyncDelay))
 
-  const option = baseElement.querySelector('li').firstChild
+  const options = baseElement.querySelectorAll('li')
 
-  //Selects item
+  //Selects items
   await act(async () => {
-    fireEvent.click(option)
+    fireEvent.click(options[0])
   })
 
-  const selected = await findByTestId(option.textContent)
-  expect(selected).toBeInTheDocument()
+  await act(async () => {
+    fireEvent.click(options[1])
+  })
+
+  const selected1 = await findByTestId(options[0].textContent)
+  expect(selected1).toBeInTheDocument()
+
+  const selected2 = await findByTestId(options[1].textContent)
+  expect(selected2).toBeInTheDocument()
 
   const clearButton = baseElement.querySelector('[title="Clear"]')
   expect(clearButton).toBeInTheDocument()
@@ -263,8 +318,10 @@ it.each`
   await act(() => waait(asyncDelay))
 
   //Checks if cleared
-  const cleared = baseElement.querySelector(`[data-testid="${option.textContent}"]`)
-  expect(cleared).toBeNull()
+  const cleared1 = baseElement.querySelector(`[data-testid="${options[0].textContent}"]`)
+  expect(cleared1).toBeNull()
+  const cleared2 = baseElement.querySelector(`[data-testid="${options[1].textContent}"]`)
+  expect(cleared2).toBeNull()
 })
 
 it('enters error state', async () => {
@@ -326,13 +383,16 @@ it.each`
 
   await act(() => waait(asyncDelay))
 
-  //Selects first item
-  const option = baseElement.querySelector('li').firstChild
+  //Selects first 2 items
+  const options = baseElement.querySelectorAll('li')
   await act(async () => {
-    fireEvent.click(option)
+    fireEvent.click(options[0])
+  })
+  await act(async () => {
+    fireEvent.click(options[2])
   })
 
-  expect(selection).toStrictEqual([fruits[0]])
+  expect(selection).toStrictEqual([fruits[0], fruits[2]])
 })
 
 it.each`
@@ -446,6 +506,7 @@ it.each`
     await act(async () => {
       fireEvent.change(input, { target: { value: 'not a fruit in the list' } })
     })
+    await act(() => waait(asyncDelay))
     await act(async () => {
       fireEvent.blur(input)
     })
