@@ -467,7 +467,7 @@ it.each`
       fireEvent.click(option)
     })
 
-    expect(selection).toBe([fruits[0]])
+    expect(selection).toStrictEqual([{ value: 1, label: 'not a fruit in the list' }])
   }
 )
 
