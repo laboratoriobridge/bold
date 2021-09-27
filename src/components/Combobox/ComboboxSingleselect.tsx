@@ -28,6 +28,11 @@ export interface ComboboxSingleselectProps<T>
   onFilterChange?: (newValue: string) => void
   components?: Partial<ComboboxComponents<T>>
   multiple: false
+
+  inputId?: string
+  labelId?: string
+  menuId?: string
+  getItemId?(idx: number): string
 }
 
 export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: ComboboxSingleselectProps<T>) {
@@ -46,6 +51,11 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     onFocus,
     onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    inputId,
+    labelId,
+    menuId,
+    getItemId,
+    multiple,
     ...rest
   } = props
 
@@ -97,6 +107,11 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
       isOpen && !itemsLoaded && loadItems(inputValue)
       setItemsLoaded(true)
     },
+
+    inputId,
+    labelId,
+    menuId,
+    getItemId,
   })
 
   const downshiftComboboxProps = getComboboxProps()
@@ -104,7 +119,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   const { ref: downshiftInputRef, ...downshiftInputProps } = getInputProps({
     onFocus: composeHandlers(onFocus, () => openOnFocus && openMenu()),
   })
-  const { id: labelId, ...downshiftLabelProps } = getLabelProps()
+  const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
 
   const {
@@ -124,7 +139,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   }
   return (
     <div {...downshiftComboboxProps}>
-      <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
+      <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}

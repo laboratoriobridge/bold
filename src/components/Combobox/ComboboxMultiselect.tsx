@@ -42,6 +42,12 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     onFilterChange,
     itemIsEqual,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+
+    inputId,
+    labelId,
+    menuId,
+    getItemId,
+    multiple,
     ...rest
   } = props
 
@@ -111,6 +117,11 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
       isOpen && !itemsLoaded && loadItems(inputValue)
       setItemsLoaded(true)
     },
+
+    inputId,
+    labelId,
+    menuId,
+    getItemId,
   })
 
   const downshiftComboboxProps = getComboboxProps()
@@ -121,7 +132,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
       preventKeyAction: isOpen,
     })
   )
-  const { id: labelId, ...downshiftLabelProps } = getLabelProps()
+  const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const downshiftMenuProps = getMenuProps()
 
   const {
@@ -144,7 +155,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   }
   return (
     <div {...downshiftComboboxProps}>
-      <FormControl {...formControlProps} labelId={labelId} {...downshiftLabelProps}>
+      <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <InputWrapper
           ref={wrapperRef}
           className={wrapperClasses}

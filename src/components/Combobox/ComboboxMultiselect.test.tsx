@@ -57,6 +57,10 @@ const ComboboxTest = (props: Partial<ComboboxMultiselectProps<Fruit>> & { async?
     components={{
       SelectedItem: (props) => <ComboboxMultiselectSelectedItem {...props} data-testid={`${props.children}`} />,
     }}
+    inputId={'test-input-id'}
+    labelId={'test-label-id'}
+    menuId={'test-menu-id'}
+    getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
 )
@@ -89,6 +93,10 @@ const ComboboxWithCustomComponentsTest = (
     openOnFocus
     loading={false}
     multiple
+    inputId={'test-input-id'}
+    labelId={'test-label-id'}
+    menuId={'test-menu-id'}
+    getItemId={(index) => `test-item-id-${index}`}
     components={{
       SelectedItem: (props) => (
         <ComboboxMultiselectSelectedItem onRemove={props.onRemove}>Selected item</ComboboxMultiselectSelectedItem>
