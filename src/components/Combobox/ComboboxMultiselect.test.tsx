@@ -32,7 +32,7 @@ const fruits: Fruit[] = [
 
 const itemToString = (item: Fruit) => item?.label
 
-const asyncDelay = 1000
+const asyncDelay = 10
 const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
   return new Promise((resolve) => {
     setTimeout(
@@ -510,6 +510,7 @@ it.each`
     await act(async () => {
       fireEvent.blur(input)
     })
+    await act(() => waait(asyncDelay))
 
     expect(selection).toStrictEqual([{ value: 1, label: 'not a fruit in the list' }])
 

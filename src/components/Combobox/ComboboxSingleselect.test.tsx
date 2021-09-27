@@ -32,7 +32,7 @@ const fruits: Fruit[] = [
 
 const itemToString = (item: Fruit) => item.label
 
-const asyncDelay = 1000
+const asyncDelay = 10
 const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
   return new Promise((resolve) => {
     setTimeout(
