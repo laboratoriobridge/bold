@@ -69,7 +69,7 @@ export type Icons =
   | 'cutleryFilled'
   | 'cutleryOutline'
   | 'dataCheckFilled'
-  | 'dataCheckOutlined'
+  | 'dataCheckOutline'
   | 'dataFilled'
   | 'dataOutline'
   | 'deaf'
@@ -321,7 +321,7 @@ export const IconMap: {
   cutleryFilled: Components.CutleryFilled,
   cutleryOutline: Components.CutleryOutline,
   dataCheckFilled: Components.DataCheckFilled,
-  dataCheckOutlined: Components.DataCheckOutlined,
+  dataCheckOutline: Components.DataCheckOutline,
   dataFilled: Components.DataFilled,
   dataOutline: Components.DataOutline,
   deaf: Components.Deaf,

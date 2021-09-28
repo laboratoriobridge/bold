@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgDataCheckOutlined = (props: React.SVGProps<SVGSVGElement>) => (
+const SvgDataCheckOutline = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path d='M5.293 6.707a1 1 0 101.414-1.414 1 1 0 00-1.414 1.414z' />
     <path
@@ -15,4 +15,4 @@ const SvgDataCheckOutlined = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export default SvgDataCheckOutlined
+export default SvgDataCheckOutline
