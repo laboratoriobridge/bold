@@ -28,7 +28,7 @@
     "gatsby-plugin-typescript": "2.1.26",
     "gatsby-remark-autolink-headers": "2.1.23",
     "gatsby-remark-prismjs": "3.3.30",
-    "prismjs": "1.19.0",
+    "prismjs": "1.25.0",
     "raw-loader": "4.0.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
