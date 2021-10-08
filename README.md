@@ -3,7 +3,7 @@
 React implementation of the **Bold Design System**.
 
 ![Build Status](https://github.com/laboratoriobridge/bold/actions/workflows/yarn.yml/badge.svg)
-[![codecov](https://codecov.io/gh/laboratoriobridge/bold/branch/master/graph/badge.svg)](https://codecov.io/gh/laboratoriobridge/bold)
+[![codecov](https://codecov.io/gh/laboratoriobridge/bold/branch/main/graph/badge.svg)](https://codecov.io/gh/laboratoriobridge/bold)
 
 https://bold.bridge.ufsc.br/
 
