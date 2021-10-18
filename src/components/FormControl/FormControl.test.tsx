@@ -16,6 +16,6 @@ it('should render correctly', () => {
 })
 
 it('should accept the style prop', () => {
-  const { container } = render(<FormControl style={{ color: 'pink' }}>Error</FormControl>)
+  const { container } = render(<FormControl style={{ color: 'pink' }}>Test</FormControl>)
   expect(container).toMatchSnapshot()
 })
