@@ -1696,7 +1696,7 @@ exports[`MonthRangePicker render should render correctly when opened 1`] = `
             class="emotion-16"
           >
             <button
-              class="emotion-38"
+              class="emotion-22"
               title="September"
               type="button"
             >
