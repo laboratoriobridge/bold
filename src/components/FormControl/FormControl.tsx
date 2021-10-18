@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useStyles } from '../../styles'
+import { ExternalStyles, useStyles } from '../../styles'
 
 import { FormError } from './FormError'
 import { FormLabel, FormLabelProps } from './FormLabel'
@@ -13,14 +13,15 @@ export interface FormControlProps {
   required?: FormLabelProps['required']
   error?: React.ReactNode
   children?: React.ReactNode
+  style?: ExternalStyles
 }
 
 export function FormControl(props: FormControlProps) {
-  const { children, htmlFor, error, label, labelId, errorId, required } = props
-  const { classes } = useStyles(createStyles)
+  const { children, htmlFor, error, label, labelId, errorId, required, style } = props
+  const { classes, css } = useStyles(createStyles)
 
   return (
-    <div className={classes.formControl}>
+    <div className={css(classes.formControl, style)}>
       {label && <FormLabel id={labelId} required={required} style={classes.label} htmlFor={htmlFor} label={label} />}
       {children}
       {error && (
