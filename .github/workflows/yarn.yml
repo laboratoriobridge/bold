@@ -2,13 +2,12 @@ name: Build CI
 
 on:
   push:
-    branches: master
+    branches: main
   pull_request:
     branches: '*'
 
 jobs:
   build:
-  
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +16,14 @@ jobs:
       - name: Set up node
         uses: actions/setup-node@v2.2.0
         with:
-          node-version: 'lts/*'
+          node-version: '14'
           cache: 'yarn'
 
       - name: Build
         run: |
           yarn install
           yarn build
-        
+
       - name: Run tests
         run: yarn test
 

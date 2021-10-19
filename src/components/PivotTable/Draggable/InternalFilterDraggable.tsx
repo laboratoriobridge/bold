@@ -1,19 +1,29 @@
 import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
 import matchSorter from 'match-sorter'
-import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField } from '..'
-import { useStyles } from '../../styles'
-import { useLocale } from '../../i18n'
+import { Button, Checkbox, Dropdown, DropdownItem, HFlow, Icon, TextField } from '../..'
+import { useStyles } from '../../../styles'
+import { useLocale } from '../../../i18n'
 import { FilterDraggableProps } from './FilterDraggable'
 import { ActualQuantity } from './types/ActualQuantity'
-import { DraggableItemTypes } from './types/ItemTypes'
 import { getKeyDirection, getQuantityValue } from './util'
 import { DraggableRow } from './DraggableRow'
 import { draggableCreateStyles } from './style'
 import { DraggableWrapper } from './DraggableWrapper'
 
 export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
-  const { name, origin, value, filterItems, selectedItems, onDragEnd, onFilterUpdate, formatter, onKeyNav } = props
+  const {
+    name,
+    origin,
+    value,
+    filterItems,
+    selectedItems,
+    onDragEnd,
+    onFilterUpdate,
+    formatter,
+    onKeyNav,
+    type,
+  } = props
 
   const [searchedFilterSet, setSearchedFilterSet] = useState<Array<string>>(filterItems)
 
@@ -26,9 +36,9 @@ export function InternalFilterDraggable<T>(props: FilterDraggableProps<T>) {
   const { classes } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
-    item: { type: DraggableItemTypes.FILTER, name: name, origin },
+    item: { type: type, name: name, origin },
     end: (_item, monitor) => {
-      if (monitor.getDropResult() != null) onDragEnd()
+      if (monitor.getDropResult()['result']) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
