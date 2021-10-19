@@ -1,22 +1,21 @@
 import React from 'react'
 import { useDrag } from 'react-dnd'
-import { Button, HFlow, Icon } from '..'
-import { useStyles } from '../../styles'
+import { Button, HFlow, Icon } from '../..'
+import { useStyles } from '../../../styles'
 import { DraggableProps } from './Draggable'
 import { DraggableWrapper } from './DraggableWrapper'
 import { draggableCreateStyles } from './style'
-import { DraggableItemTypes } from './types/ItemTypes'
 import { getKeyDirection } from './util'
 
 export function InternalDraggable<T>(props: DraggableProps<T>) {
-  const { name, origin, value, onDragEnd, onKeyNav } = props
+  const { name, origin, value, onDragEnd, onKeyNav, type } = props
 
   const { classes } = useStyles(draggableCreateStyles)
 
   const [{ isDragging }, drag] = useDrag({
-    item: { type: DraggableItemTypes.DEFAULT, name: name, origin },
+    item: { type: type, name: name, origin },
     end: (_item, monitor) => {
-      if (monitor.getDropResult() != null) onDragEnd()
+      if (monitor.getDropResult()['result']) onDragEnd()
     },
     collect: (monitor) => ({
       isDragging: !!monitor.isDragging(),
@@ -24,8 +23,10 @@ export function InternalDraggable<T>(props: DraggableProps<T>) {
   })
 
   const handleKeyDown = (event: any) => {
-    onKeyNav(getKeyDirection(event.nativeEvent.key), origin)
-    onDragEnd()
+    if (onKeyNav) {
+      onKeyNav(getKeyDirection(event.nativeEvent.key), origin)
+      onDragEnd()
+    }
   }
 
   return (
