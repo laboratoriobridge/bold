@@ -150,6 +150,7 @@ export type Icons =
   | 'microphoneOutline'
   | 'minimize'
   | 'minus'
+  | 'minusCircleFilled'
   | 'module'
   | 'mugFilled'
   | 'mugOutline'
@@ -402,6 +403,7 @@ export const IconMap: {
   microphoneOutline: Components.MicrophoneOutline,
   minimize: Components.Minimize,
   minus: Components.Minus,
+  minusCircleFilled: Components.MinusCircleFilled,
   module: Components.Module,
   mugFilled: Components.MugFilled,
   mugOutline: Components.MugOutline,
