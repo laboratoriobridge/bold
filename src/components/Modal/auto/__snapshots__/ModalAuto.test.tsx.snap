@@ -3,12 +3,10 @@
 exports[`should render correctly 1`] = `
 .emotion-7 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -19,6 +17,10 @@ exports[`should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -425,12 +427,10 @@ exports[`should render correctly with depth 1`] = `
 
 .emotion-7 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1500;
   display: -webkit-box;
@@ -441,6 +441,10 @@ exports[`should render correctly with depth 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -539,12 +543,10 @@ exports[`should render correctly with depth 1`] = `
 exports[`should render correctly without 'overflow hidden' prop in document classList 1`] = `
 .emotion-7 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -555,6 +557,10 @@ exports[`should render correctly without 'overflow hidden' prop in document clas
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
