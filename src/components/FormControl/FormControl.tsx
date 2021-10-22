@@ -1,6 +1,7 @@
 import React, { CSSProperties } from 'react'
 
 import { useStyles } from '../../styles'
+import { VFlow } from '../VFlow'
 
 import { FormError } from './FormError'
 import { FormLabel, FormLabelProps } from './FormLabel'
@@ -23,23 +24,26 @@ export function FormControl(props: FormControlProps) {
   const isInline = inline && label
 
   return (
-    <div className={css([classes.formControl, isInline && classes.formControlInline])}>
-      {label && (
-        <FormLabel
-          id={labelId}
-          required={required}
-          style={css(classes.label, isInline && classes.labelInline)}
-          htmlFor={htmlFor}
-          label={label}
-        />
-      )}
-      {children}
+    <VFlow vSpacing={0}>
+      <div className={css([classes.formControl, isInline && classes.formControlInline])}>
+        {label && (
+          <FormLabel
+            id={labelId}
+            required={required}
+            style={css(classes.label, isInline && classes.labelInline)}
+            markerStyle={isInline && classes.markerInline}
+            htmlFor={htmlFor}
+            label={label}
+          />
+        )}
+        {children}
+      </div>
       {error && (
         <FormError id={errorId} style={classes.error} role='alert'>
           {error}
         </FormError>
       )}
-    </div>
+    </VFlow>
   )
 }
 
@@ -50,7 +54,7 @@ const createStyles = () => ({
     gridAutoFlow: 'column',
     gridTemplateColumns: 'min-content',
     alignItems: 'baseline',
-    gridGap: '0.5rem',
+    gridGap: '1rem',
   } as CSSProperties,
   label: {
     display: 'block',
@@ -60,6 +64,9 @@ const createStyles = () => ({
   labelInline: {
     whiteSpace: 'nowrap',
     marginBottom: 0,
+  } as CSSProperties,
+  markerInline: {
+    position: 'absolute',
   } as CSSProperties,
   error: {
     marginTop: '0.25rem',
