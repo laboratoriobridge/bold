@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react'
 
-import { useStyles } from '../../styles'
 import { VFlow } from '../VFlow'
+import { ExternalStyles, useStyles } from '../../styles'
 
 import { FormError } from './FormError'
 import { FormLabel, FormLabelProps } from './FormLabel'
@@ -15,17 +15,18 @@ export interface FormControlProps {
   error?: React.ReactNode
   inline?: boolean
   children?: React.ReactNode
+  style?: ExternalStyles
 }
 
 export function FormControl(props: FormControlProps) {
-  const { children, htmlFor, error, label, labelId, errorId, inline, required } = props
+  const { children, htmlFor, error, label, labelId, errorId, inline, required, style } = props
   const { classes, css } = useStyles(createStyles)
 
   const isInline = inline && label
 
   return (
     <VFlow vSpacing={0}>
-      <div className={css([classes.formControl, isInline && classes.formControlInline])}>
+      <div className={css([classes.formControl, isInline && classes.formControlInline, style])}>
         {label && (
           <FormLabel
             id={labelId}
