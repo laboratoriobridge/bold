@@ -63,6 +63,7 @@ const createStyles = () => ({
     lineHeight: '20px',
   } as CSSProperties,
   labelInline: {
+    position: 'relative',
     whiteSpace: 'nowrap',
     marginBottom: 0,
   } as CSSProperties,
