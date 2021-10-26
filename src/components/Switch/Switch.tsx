@@ -1,10 +1,10 @@
 import React, { CSSProperties } from 'react'
 
-import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../styles'
+import { ClassNames, ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
 import { Input, InputProps } from '../Input'
 
-export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange'> {
+export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>, 'onChange' | 'style'> {
   label?: string
 
   // Inner input props
@@ -15,15 +15,16 @@ export interface SwitchProps extends Omit<React.HTMLAttributes<HTMLLabelElement>
   defaultValue?: InputProps['defaultValue']
   checked?: InputProps['checked']
   defaultChecked?: InputProps['defaultChecked']
+  style?: ExternalStyles
 }
 
 export function Switch(props: SwitchProps) {
-  const { label, name, disabled, onChange, value, defaultValue, checked, defaultChecked, ...rest } = props
-  const { classes } = useStyles(createStyles)
+  const { label, name, disabled, onChange, value, defaultValue, checked, defaultChecked, style, ...rest } = props
+  const { classes, css } = useStyles(createStyles)
   const { classes: inputClasses } = useStyles(createInputStyles, classes)
 
   return (
-    <label className={inputClasses.wrapper} {...rest}>
+    <label className={css([inputClasses.wrapper, style])} {...rest}>
       <Input
         type='checkbox'
         className={inputClasses.input}

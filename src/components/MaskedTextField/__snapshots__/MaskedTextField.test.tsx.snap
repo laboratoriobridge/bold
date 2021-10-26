@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept the style prop 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-3 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-3:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-3:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
 .emotion-1 {
   position: relative;
 }
@@ -80,22 +108,61 @@ exports[`should accept the style prop 1`] = `
 
 <div>
   <div
-    class="emotion-2"
+    class="emotion-5"
   >
     <div
-      class="emotion-1"
+      class="emotion-3"
     >
-      <input
-        class="emotion-0"
-        type="text"
-        value=""
-      />
+      <div
+        class="emotion-2"
+      >
+        <div
+          class="emotion-1"
+        >
+          <input
+            class="emotion-0"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
     </div>
+    <div
+      class="emotion-3"
+    />
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -181,29 +248,68 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-6"
   >
-    <label
-      class="emotion-0"
-      id="label-abc"
-    >
-      Masked
-    </label>
     <div
-      class="emotion-2"
+      class="emotion-4"
     >
-      <input
-        aria-labelledby="label-abc"
-        class="emotion-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          Masked
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-labelledby="label-abc"
+            class="emotion-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
     </div>
+    <div
+      class="emotion-4"
+    />
   </div>
 </div>
 `;
 
 exports[`should render correctly with error 1`] = `
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -293,7 +399,7 @@ exports[`should render correctly with error 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
 
-.emotion-3 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -309,32 +415,44 @@ exports[`should render correctly with error 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-7"
   >
-    <label
-      class="emotion-0"
-      id="label-abc"
-    >
-      Masked
-    </label>
     <div
-      class="emotion-2"
+      class="emotion-4"
     >
-      <input
-        aria-errormessage="error-abc"
-        aria-invalid="true"
-        aria-labelledby="label-abc"
-        class="emotion-1"
-        type="text"
-        value=""
-      />
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          Masked
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-errormessage="error-abc"
+            aria-invalid="true"
+            aria-labelledby="label-abc"
+            class="emotion-1"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
     </div>
     <div
-      class="emotion-3"
-      id="error-abc"
-      role="alert"
+      class="emotion-4"
     >
-      Some error
+      <div
+        class="emotion-5"
+        id="error-abc"
+        role="alert"
+      >
+        Some error
+      </div>
     </div>
   </div>
 </div>

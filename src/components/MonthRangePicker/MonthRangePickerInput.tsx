@@ -6,7 +6,7 @@ import { BaseMonthRangeInput, BaseMonthRangeInputProps } from './BaseMonthRangeI
 export interface MonthRangePickerInputProps extends BaseMonthRangeInputProps, UseFormControlProps {}
 
 export function MonthRangePickerInput(props: MonthRangePickerInputProps) {
-  const { label, error, ...rest } = props
+  const { label, error, inline, ...rest } = props
 
   const { getFormControlProps, getInputProps } = useFormControl(props)
   const inputProps = getInputProps()

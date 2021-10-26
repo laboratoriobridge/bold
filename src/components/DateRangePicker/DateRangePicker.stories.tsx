@@ -20,6 +20,7 @@ export const Default = () => (
     label={text('label', 'Text label')}
     disabled={boolean('disabled', false)}
     error={text('error', '')}
+    inline={boolean('inline', false)}
     required={boolean('required', true)}
     onChange={action('changed')}
     icon='calendarOutline'

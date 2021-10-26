@@ -17,6 +17,8 @@ export const Default = () => (
     label={text('label', 'Month Field')}
     error={text('error', '')}
     onChange={action('changed')}
+    inline={boolean('inline', false)}
+    required={boolean('required', false)}
     disabled={boolean('disabled', false)}
     value={range}
   />
