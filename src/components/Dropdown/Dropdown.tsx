@@ -4,7 +4,6 @@ import { usePopper } from 'react-popper'
 import { useClickOutside } from '../../hooks/useClickOutside'
 import { Theme, useStyles } from '../../styles'
 import { randomStr } from '../../util/string'
-import { Portal } from '../Portal'
 import { DropdownMenu, DropdownMenuProps } from './DropdownMenu'
 
 export interface DropdownProps extends DropdownMenuProps {
@@ -132,19 +131,17 @@ export function Dropdown(props: DropdownProps) {
 
   return (
     open && (
-      <Portal>
-        <DropdownMenu
-          id={dropdownIdRef.current}
-          innerRef={setMenuRef}
-          style={[popperStyle as any, classes.dropdown, style]}
-          data-placement={placement}
-          onClick={handleMenuClick}
-          onBlur={handleBlur}
-          {...rest}
-        >
-          {children}
-        </DropdownMenu>
-      </Portal>
+      <DropdownMenu
+        id={dropdownIdRef.current}
+        innerRef={setMenuRef}
+        style={[popperStyle as any, classes.dropdown, style]}
+        data-placement={placement}
+        onClick={handleMenuClick}
+        onBlur={handleBlur}
+        {...rest}
+      >
+        {children}
+      </DropdownMenu>
     )
   )
 }
