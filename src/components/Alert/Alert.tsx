@@ -1,5 +1,6 @@
 import { Interpolation } from 'emotion'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Fragment } from 'react'
+import { Grid, HFlow } from '..'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -17,6 +18,7 @@ export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   styles?: {
     wrapper?: Interpolation
     container?: Interpolation
+    inlineContainer?: Interpolation
   }
 }
 
@@ -26,12 +28,21 @@ export function Alert(props: AlertProps) {
   const typeStyle = createTypesStyles(theme)[type]
   const locale = useLocale()
 
+  const alertContent = (
+    <Fragment>
+      <Icon icon={typeStyle.icon} style={classes.icon} size={inline ? 1 : undefined} />
+      <div className={classes.content}>{children}</div>
+    </Fragment>
+  )
+
   return (
     <div className={css(classes.wrapper, typeStyle.style, styles && styles.wrapper)} role='alert' {...rest}>
       <div className={css(classes.container, styles && styles.container)}>
-        <Icon icon={typeStyle.icon} style={classes.icon} size={inline ? 1 : undefined} />
-
-        <div className={classes.content}>{children}</div>
+        {inline ? (
+          <div className={css(classes.inlineContainer, styles && styles.inlineContainer)}>{alertContent}</div>
+        ) : (
+          alertContent
+        )}
 
         {onCloseClick && (
           <span className={classes.closeButtonWrapper}>
@@ -70,7 +81,13 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
     alignItems: 'center',
     flex: 1,
   } as CSSProperties,
+  inlineContainer: {
+    display: 'flex',
+    flex: 1,
+    alignItems: 'top',
+  } as CSSProperties,
   icon: {
+    marginTop: inline && '0.125rem',
     marginRight: '0.5rem',
   } as CSSProperties,
   content: {
