@@ -1,7 +1,5 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties, Fragment } from 'react'
-import { Grid, HFlow } from '..'
-
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
