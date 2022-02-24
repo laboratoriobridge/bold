@@ -80,6 +80,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
   }
 
   const handleShowMonthsClick = () => setOpen(!open)
+
   const handleFocusOut = () => setOpen(false)
   useEffect(() => {
     open && popperRef?.focus()
@@ -135,7 +136,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
       </div>
       {open && (
         <MonthPicker
-          visibleMonth={{ month: month, year: year }}
+          visibleMonth={{ month: visibleMonth, year: visibleYear }}
           onVisibleMonthChange={onMonthClick}
           ref={setPopperRef}
           className={css(popup, popperStyle as any)}
