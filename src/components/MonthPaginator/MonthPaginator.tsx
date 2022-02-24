@@ -79,6 +79,8 @@ export function MonthPaginator(props: MonthPaginatorProps) {
     setOpen(!open)
   }
 
+  const onVisibleMonthChange = (month: ReferenceMonth) => updateStates(month)
+
   const handleShowMonthsClick = () => setOpen(!open)
 
   const handleFocusOut = () => setOpen(false)
@@ -110,7 +112,7 @@ export function MonthPaginator(props: MonthPaginatorProps) {
             <Button
               size='small'
               skin='ghost'
-              disabled={open}
+              disabled={false}
               onClick={handleShowMonthsClick}
               style={showMonth}
               data-testid='MonthPaginator.ShowMonthsButton'
@@ -137,7 +139,8 @@ export function MonthPaginator(props: MonthPaginatorProps) {
       {open && (
         <MonthPicker
           visibleMonth={{ month: visibleMonth, year: visibleYear }}
-          onVisibleMonthChange={onMonthClick}
+          onVisibleMonthChange={onVisibleMonthChange}
+          onMonthClick={onMonthClick}
           ref={setPopperRef}
           className={css(popup, popperStyle as any)}
           data-placement={placement}
