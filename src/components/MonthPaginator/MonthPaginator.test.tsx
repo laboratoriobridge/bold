@@ -52,7 +52,7 @@ describe('MonthPaginator', () => {
     expect(onChange).toHaveBeenCalledWith({ month: 0, year: now.getFullYear() })
   })
 
-  it('should disable buttons when, and only when, the month picker is visible', () => {
+  it('should disable arrow buttons when, and only when, the month picker is visible', () => {
     const onChange = jest.fn()
     const { getByTitle, getByTestId, getByText } = render(
       <MonthPaginator month={now.getMonth()} year={now.getFullYear()} onChange={onChange} />
@@ -69,7 +69,7 @@ describe('MonthPaginator', () => {
 
     expect(nextButton.hasAttribute('disabled')).toBeTruthy()
     expect(prevButton.hasAttribute('disabled')).toBeTruthy()
-    expect(openButton.hasAttribute('disabled')).toBeTruthy()
+    expect(openButton.hasAttribute('disabled')).toBeFalsy()
 
     fireEvent.click(getByText('Jan'))
 
