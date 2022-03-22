@@ -7,10 +7,11 @@ export interface UseFormControlProps {
   required?: boolean
   label?: React.ReactNode
   error?: React.ReactNode
+  inline?: boolean
 }
 
 export function useFormControl(props: UseFormControlProps) {
-  const { id, label, error, required } = props
+  const { id, label, error, required, inline } = props
 
   const labelIdRef = useRef(`label-${randomStr()}`)
   const errorIdRef = useRef(`error-${randomStr()}`)
@@ -26,6 +27,7 @@ export function useFormControl(props: UseFormControlProps) {
       labelId,
       errorId,
       required,
+      inline,
     }),
     getInputProps: () => ({
       'aria-labelledby': labelId,

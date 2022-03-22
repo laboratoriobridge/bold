@@ -41,6 +41,8 @@ export const Default = () => (
     name='fruit'
     items={fruits}
     error={text('error', '')}
+    required={boolean('required', false)}
+    inline={boolean('inline', false)}
     menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item && item.label}
     itemIsEqual={(a, b) => a.value === b.value}
