@@ -14,6 +14,7 @@ export const Default = () => (
     label={text('label', 'Text area')}
     error={text('error', '')}
     disabled={boolean('disabled', false)}
+    inline={boolean('inline', false)}
     placeholder='Nome'
     maxLength={number('maxLength', '' as any)}
     onChange={action('changed')}

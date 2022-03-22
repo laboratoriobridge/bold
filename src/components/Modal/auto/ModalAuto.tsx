@@ -23,6 +23,13 @@ export interface ModalAutoProps {
    * @default true
    */
   manageOverflow?: boolean
+
+  /**
+   * Specify whether the `onClose` prop should called when backdrop is clicked.
+   * @default true
+   */
+  closeOnBackdropClick?: boolean
+
   render(renderProps: ModalAutoRenderProps): React.ReactNode
   dispose(): void
   onClose?(): any
@@ -37,7 +44,7 @@ export interface ModalAutoRenderProps {
 }
 
 export const ModalAuto = memo((props: ModalAutoProps) => {
-  const { actions, size, render, dispose, onClose, ...rest } = props
+  const { actions, size, render, dispose, onClose, closeOnBackdropClick, ...rest } = props
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -59,7 +66,7 @@ export const ModalAuto = memo((props: ModalAutoProps) => {
   }
 
   return (
-    <Modal open={isOpen} size={size} onClose={close} {...rest}>
+    <Modal open={isOpen} size={size} onClose={close} closeOnBackdropClick={closeOnBackdropClick} {...rest}>
       <ModalBody>{render({ close })}</ModalBody>
       {actions && (
         <ModalFooter>
