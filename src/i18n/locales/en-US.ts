@@ -51,6 +51,10 @@ const locale = {
     allItems: 'All items',
     all: 'all',
   },
+  droppable: {
+    isOver: 'Drop the item here to insert into the table',
+    isNotOver: 'Drag items to insert into table',
+  },
 }
 
 export default locale

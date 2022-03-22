@@ -14,3 +14,8 @@ it('should render correctly', () => {
   )
   expect(container).toMatchSnapshot()
 })
+
+it('should accept the style prop', () => {
+  const { container } = render(<FormControl style={{ color: 'pink' }}>Test</FormControl>)
+  expect(container).toMatchSnapshot()
+})
