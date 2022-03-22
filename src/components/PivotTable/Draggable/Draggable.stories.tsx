@@ -26,6 +26,7 @@ export const Default = () => (
   <Draggable<Fruit>
     key={key as string}
     name={key}
+    type={'Fruit'}
     value={keyMapping.get(key).keyName || (key as string)}
     origin={origin}
     onDragEnd={action('onDragEnd')}
@@ -37,6 +38,7 @@ export const Filter = () => (
   <FilterDraggable<Fruit>
     key={key as string}
     name={key}
+    type={'Fruit'}
     value={keyMapping.get(key).keyName || (key as string)}
     formatter={keyMapping.get(key).formatter}
     origin={origin}

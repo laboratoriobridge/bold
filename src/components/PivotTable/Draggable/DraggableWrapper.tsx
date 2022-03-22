@@ -1,6 +1,6 @@
 import React from 'react'
 import { ConnectDragSource } from 'react-dnd'
-import { useStyles } from '../../styles'
+import { useStyles } from '../../../styles'
 import { draggableCreateStyles } from './style'
 
 export interface DraggableWrapperProps {

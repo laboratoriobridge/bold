@@ -10,10 +10,11 @@ export interface TextAreaProps
   extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'style'>,
     UseFormControlProps {
   style?: ExternalStyles
+  resize?: CSSProperties['resize']
 }
 
 export function TextArea(props: TextAreaProps) {
-  const { style, label, error, ...rest } = props
+  const { style, label, error, resize, ...rest } = props
 
   const valueLength = props.value && typeof props.value === 'string' && props.value.length
   const defaultValueLength = props.defaultValue && typeof props.defaultValue === 'string' && props.defaultValue.length
@@ -24,7 +25,7 @@ export function TextArea(props: TextAreaProps) {
   const invalid = inputProps['aria-invalid']
 
   const { classes, css } = useStyles(createStyles, { invalid })
-  const className = css(classes.input, invalid && classes.invalid, style)
+  const className = css(classes.input, invalid && classes.invalid, style, { resize })
 
   return (
     <FormControl {...getFormControlProps()}>
