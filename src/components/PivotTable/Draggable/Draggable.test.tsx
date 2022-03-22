@@ -2,7 +2,6 @@ import { fireEvent, render } from '@testing-library/react'
 import React from 'react'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
-import { DraggableItemTypes } from './types/ItemTypes'
 import { DropableDiv } from './FilterDraggable.test'
 import { KeyMapping } from './types/KeyMapping'
 import { Draggable, DraggableProps } from './Draggable'
@@ -22,6 +21,7 @@ const createDefaultComponent = (props: Partial<DraggableProps<Pet>> = {}) => (
   <Draggable<Pet>
     key={key}
     name={key}
+    type={'test'}
     onDragEnd={() => {}}
     value={petKeyMapping.get(key).keyName}
     onKeyNav={() => {}}
@@ -85,10 +85,8 @@ describe('Draggable', () => {
       const onDragEnd = jest.fn()
       const { container } = render(
         <DndProvider backend={HTML5Backend}>
-          <DropableDiv type={DraggableItemTypes.DEFAULT}>
-            {createDefaultComponent({ onDragEnd: onDragEnd })}
-          </DropableDiv>
-          <DropableDiv type={DraggableItemTypes.DEFAULT} />
+          <DropableDiv type={'test'}>{createDefaultComponent({ onDragEnd: onDragEnd })}</DropableDiv>
+          <DropableDiv type={'test'} />
         </DndProvider>
       )
 

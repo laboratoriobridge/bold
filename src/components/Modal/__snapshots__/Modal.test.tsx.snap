@@ -90,12 +90,10 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1300;
   display: -webkit-box;
@@ -106,6 +104,10 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -170,12 +172,10 @@ exports[`Modal should accept "depthLevel" prop and pass down to ModalContainer 1
 exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -186,6 +186,10 @@ exports[`Modal should accept "style" prop and pass down to ModalContainer 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -344,12 +348,10 @@ exports[`Modal should render correctly when closed 1`] = `
 exports[`Modal should render correctly when opened 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -360,6 +362,10 @@ exports[`Modal should render correctly when opened 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -511,12 +517,10 @@ exports[`Modal should render correctly when opened 1`] = `
 exports[`Modal should'n add "overflow: hidden" property to document when manageOverflow is false 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -527,6 +531,10 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -674,12 +682,10 @@ exports[`Modal should'n add "overflow: hidden" property to document when manageO
 exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -690,6 +696,10 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -841,12 +851,10 @@ exports[`Modal sizes should accept the "auto" size and render accordingly 1`] = 
 exports[`Modal sizes should accept the "large" size and render accordingly 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -857,6 +865,10 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
@@ -1008,12 +1020,10 @@ exports[`Modal sizes should accept the "large" size and render accordingly 1`] =
 exports[`Modal sizes should accept the "small" size and render accordingly 1`] = `
 .emotion-3 {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  left: 0;
+  top: 0;
   width: 100%;
+  height: 100vh;
   pointer-events: none;
   z-index: 1100;
   display: -webkit-box;
@@ -1024,6 +1034,10 @@ exports[`Modal sizes should accept the "small" size and render accordingly 1`] =
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 2rem;
 }
 
