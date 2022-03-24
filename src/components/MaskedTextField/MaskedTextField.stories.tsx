@@ -14,6 +14,8 @@ export const Default = () => (
     mask={['(', /\d/, /\d/, /\d/, ')']}
     placeholder='(___)'
     name='generic'
+    required={boolean('required', false)}
+    inline={boolean('inline', false)}
     disabled={boolean('disabled', false)}
     guide={boolean('guide', true)}
     keepCharPositions={boolean('keepCharPositions', false)}
