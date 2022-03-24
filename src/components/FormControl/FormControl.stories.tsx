@@ -14,6 +14,7 @@ export const Default = () => (
     label={text('label', 'Label')}
     htmlFor={text('id', 'input-id')}
     error={text('error', '')}
+    inline={boolean('inline', false)}
     required={boolean('required', true)}
   >
     <TextInput id={text('id', 'input-id')} />

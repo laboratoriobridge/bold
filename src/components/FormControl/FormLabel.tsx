@@ -8,10 +8,11 @@ export interface FormLabelProps extends Omit<React.LabelHTMLAttributes<HTMLLabel
   label: React.ReactNode
   required?: boolean
   style?: ExternalStyles
+  markerStyle?: ExternalStyles
 }
 
 export function FormLabel(props: FormLabelProps) {
-  const { label, required, style, ...rest } = props
+  const { label, required, style, markerStyle, ...rest } = props
   const { classes, css } = useStyles(createStyles)
   const locale = useLocale()
 
@@ -20,7 +21,7 @@ export function FormLabel(props: FormLabelProps) {
       {label}
 
       {required && (
-        <span title={locale.formControl.required} className={classes.marker}>
+        <span title={locale.formControl.required} className={css(classes.marker, markerStyle)}>
           &#42;
         </span>
       )}
