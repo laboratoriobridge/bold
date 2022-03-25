@@ -92,37 +92,37 @@ exports[`should accept popper props 1`] = `
     >
       Anchor
     </button>
+    <ul
+      class="emotion-3"
+      id="dropdown-abc"
+      role="menu"
+    >
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="0"
+      >
+        Item #1
+      </li>
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Item #2
+      </li>
+      <li
+        aria-disabled="true"
+        class="emotion-2"
+        role="menuitem"
+      >
+        Item #3
+      </li>
+    </ul>
     <input
       data-testid="outsideElement"
     />
   </div>
-  <ul
-    class="emotion-3"
-    id="dropdown-abc"
-    role="menu"
-  >
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="0"
-    >
-      Item #1
-    </li>
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="-1"
-    >
-      Item #2
-    </li>
-    <li
-      aria-disabled="true"
-      class="emotion-2"
-      role="menuitem"
-    >
-      Item #3
-    </li>
-  </ul>
 </body>
 `;
 
@@ -219,38 +219,38 @@ exports[`should extend DropdownMenu props 1`] = `
     >
       Anchor
     </button>
+    <ul
+      aria-label="test"
+      class="emotion-3"
+      id="dropdown-abc"
+      role="menu"
+    >
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="0"
+      >
+        Item #1
+      </li>
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Item #2
+      </li>
+      <li
+        aria-disabled="true"
+        class="emotion-2"
+        role="menuitem"
+      >
+        Item #3
+      </li>
+    </ul>
     <input
       data-testid="outsideElement"
     />
   </div>
-  <ul
-    aria-label="test"
-    class="emotion-3"
-    id="dropdown-abc"
-    role="menu"
-  >
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="0"
-    >
-      Item #1
-    </li>
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="-1"
-    >
-      Item #2
-    </li>
-    <li
-      aria-disabled="true"
-      class="emotion-2"
-      role="menuitem"
-    >
-      Item #3
-    </li>
-  </ul>
 </body>
 `;
 
@@ -361,36 +361,36 @@ exports[`should render correctly when open 1`] = `
     >
       Anchor
     </button>
+    <ul
+      class="emotion-3"
+      id="dropdown-abc"
+      role="menu"
+    >
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="0"
+      >
+        Item #1
+      </li>
+      <li
+        class="emotion-0"
+        role="menuitem"
+        tabindex="-1"
+      >
+        Item #2
+      </li>
+      <li
+        aria-disabled="true"
+        class="emotion-2"
+        role="menuitem"
+      >
+        Item #3
+      </li>
+    </ul>
     <input
       data-testid="outsideElement"
     />
   </div>
-  <ul
-    class="emotion-3"
-    id="dropdown-abc"
-    role="menu"
-  >
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="0"
-    >
-      Item #1
-    </li>
-    <li
-      class="emotion-0"
-      role="menuitem"
-      tabindex="-1"
-    >
-      Item #2
-    </li>
-    <li
-      aria-disabled="true"
-      class="emotion-2"
-      role="menuitem"
-    >
-      Item #3
-    </li>
-  </ul>
 </body>
 `;

@@ -1,11 +1,11 @@
 {
   "name": "bold-ui",
-  "version": "1.0.0-beta.44",
+  "version": "1.0.0-beta.49",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "homepage": "https://bold.bridge.ufsc.br",
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "keywords": [
     "react",
@@ -107,7 +107,7 @@
     "jest": "26.0.1",
     "jest-cli": "26.0.1",
     "jest-emotion": "10.0.32",
-    "lodash": "4.17.15",
+    "lodash": "4.17.21",
     "loki": "0.27.0",
     "mockdate": "3.0.2",
     "prettier": "2.0.5",
