@@ -57,6 +57,7 @@ export type Icons =
   | 'cloudFilled'
   | 'cloudOutline'
   | 'code'
+  | 'continuousMedicine'
   | 'contrast'
   | 'contrastActive'
   | 'copyFilled'
@@ -65,6 +66,10 @@ export type Icons =
   | 'creditCardOutline'
   | 'crossFilled'
   | 'crossOutline'
+  | 'cutleryFilled'
+  | 'cutleryOutline'
+  | 'dataCheckFilled'
+  | 'dataCheckOutline'
   | 'dataFilled'
   | 'dataOutline'
   | 'deaf'
@@ -123,6 +128,8 @@ export type Icons =
   | 'italic'
   | 'keyFilled'
   | 'keyOutline'
+  | 'leafFilled'
+  | 'leafOutline'
   | 'lightbulbFilled'
   | 'lightbulbOutline'
   | 'link'
@@ -143,6 +150,7 @@ export type Icons =
   | 'microphoneOutline'
   | 'minimize'
   | 'minus'
+  | 'minusCircleFilled'
   | 'module'
   | 'mugFilled'
   | 'mugOutline'
@@ -150,6 +158,8 @@ export type Icons =
   | 'multipleUsersOutline'
   | 'needleFilled'
   | 'needleOutline'
+  | 'noDataFilled'
+  | 'noDataOutline'
   | 'nurse'
   | 'nurseOutline'
   | 'nurseView'
@@ -160,6 +170,7 @@ export type Icons =
   | 'penFilled'
   | 'penOutline'
   | 'penTool'
+  | 'pessoaComDeficiencia'
   | 'petFilled'
   | 'petOutline'
   | 'phoneFilled'
@@ -173,6 +184,7 @@ export type Icons =
   | 'plus'
   | 'pollFilled'
   | 'pollOutline'
+  | 'pregnant'
   | 'presentationFilled'
   | 'presentationOutline'
   | 'printerFilled'
@@ -192,6 +204,7 @@ export type Icons =
   | 'shieldOutline'
   | 'signLanguage'
   | 'signOut'
+  | 'sixtyPlus'
   | 'sort'
   | 'starFilled'
   | 'starOutline'
@@ -201,6 +214,7 @@ export type Icons =
   | 'stopOutline'
   | 'strikethrough'
   | 'sync'
+  | 'teddyBear'
   | 'thermometerFilled'
   | 'thermometerOutline'
   | 'timerFilled'
@@ -296,6 +310,7 @@ export const IconMap: {
   cloudFilled: Components.CloudFilled,
   cloudOutline: Components.CloudOutline,
   code: Components.Code,
+  continuousMedicine: Components.ContinuousMedicine,
   contrast: Components.Contrast,
   contrastActive: Components.ContrastActive,
   copyFilled: Components.CopyFilled,
@@ -304,6 +319,10 @@ export const IconMap: {
   creditCardOutline: Components.CreditCardOutline,
   crossFilled: Components.CrossFilled,
   crossOutline: Components.CrossOutline,
+  cutleryFilled: Components.CutleryFilled,
+  cutleryOutline: Components.CutleryOutline,
+  dataCheckFilled: Components.DataCheckFilled,
+  dataCheckOutline: Components.DataCheckOutline,
   dataFilled: Components.DataFilled,
   dataOutline: Components.DataOutline,
   deaf: Components.Deaf,
@@ -362,6 +381,8 @@ export const IconMap: {
   italic: Components.Italic,
   keyFilled: Components.KeyFilled,
   keyOutline: Components.KeyOutline,
+  leafFilled: Components.LeafFilled,
+  leafOutline: Components.LeafOutline,
   lightbulbFilled: Components.LightbulbFilled,
   lightbulbOutline: Components.LightbulbOutline,
   link: Components.Link,
@@ -382,6 +403,7 @@ export const IconMap: {
   microphoneOutline: Components.MicrophoneOutline,
   minimize: Components.Minimize,
   minus: Components.Minus,
+  minusCircleFilled: Components.MinusCircleFilled,
   module: Components.Module,
   mugFilled: Components.MugFilled,
   mugOutline: Components.MugOutline,
@@ -389,6 +411,8 @@ export const IconMap: {
   multipleUsersOutline: Components.MultipleUsersOutline,
   needleFilled: Components.NeedleFilled,
   needleOutline: Components.NeedleOutline,
+  noDataFilled: Components.NoDataFilled,
+  noDataOutline: Components.NoDataOutline,
   nurse: Components.Nurse,
   nurseOutline: Components.NurseOutline,
   nurseView: Components.NurseView,
@@ -399,6 +423,7 @@ export const IconMap: {
   penFilled: Components.PenFilled,
   penOutline: Components.PenOutline,
   penTool: Components.PenTool,
+  pessoaComDeficiencia: Components.PessoaComDeficiencia,
   petFilled: Components.PetFilled,
   petOutline: Components.PetOutline,
   phoneFilled: Components.PhoneFilled,
@@ -412,6 +437,7 @@ export const IconMap: {
   plus: Components.Plus,
   pollFilled: Components.PollFilled,
   pollOutline: Components.PollOutline,
+  pregnant: Components.Pregnant,
   presentationFilled: Components.PresentationFilled,
   presentationOutline: Components.PresentationOutline,
   printerFilled: Components.PrinterFilled,
@@ -431,6 +457,7 @@ export const IconMap: {
   shieldOutline: Components.ShieldOutline,
   signLanguage: Components.SignLanguage,
   signOut: Components.SignOut,
+  sixtyPlus: Components.SixtyPlus,
   sort: Components.Sort,
   starFilled: Components.StarFilled,
   starOutline: Components.StarOutline,
@@ -440,6 +467,7 @@ export const IconMap: {
   stopOutline: Components.StopOutline,
   strikethrough: Components.Strikethrough,
   sync: Components.Sync,
+  teddyBear: Components.TeddyBear,
   thermometerFilled: Components.ThermometerFilled,
   thermometerOutline: Components.ThermometerOutline,
   timerFilled: Components.TimerFilled,

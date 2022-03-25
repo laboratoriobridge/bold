@@ -1,20 +1,21 @@
 import React, { CSSProperties } from 'react'
 
-import { ClassNames, focusBoxShadow, Theme, useStyles } from '../../styles'
+import { ClassNames, ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Input, InputProps } from '../Input'
 
-export interface RadioProps extends InputProps {
+export interface RadioProps extends Omit<InputProps, 'style'> {
   label: React.ReactNode
+  style?: ExternalStyles
 }
 
 export function Radio(props: RadioProps) {
-  const { label, ...rest } = props
+  const { label, style, ...rest } = props
   const { classes } = useStyles(createStyles)
-  const { classes: inputClasses } = useStyles(createInputStyles, classes)
+  const { classes: inputClasses, css } = useStyles(createInputStyles, classes)
 
   return (
     <label className={classes.wrapper}>
-      <Input {...rest} type='radio' className={inputClasses.input} />
+      <Input {...rest} type='radio' className={css(inputClasses.input, style)} />
       <span className={classes.radio} />
       <span className={classes.label}>{label}</span>
     </label>
