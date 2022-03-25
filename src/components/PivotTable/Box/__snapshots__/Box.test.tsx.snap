@@ -98,7 +98,7 @@ exports[`PivotTable - Box render should render correctly with children and its s
   border-bottom: 1px solid #D3D4DD;
 }
 
-.emotion-8 {
+.emotion-5 {
   border: 1px solid #D3D4DD;
 }
 
@@ -110,7 +110,7 @@ exports[`PivotTable - Box render should render correctly with children and its s
   transform: rotate(0deg);
 }
 
-.emotion-7 {
+.emotion-4 {
   min-height: 7.18rem;
   color: red;
   padding: 1rem;
@@ -118,7 +118,7 @@ exports[`PivotTable - Box render should render correctly with children and its s
   font-weight: bold;
 }
 
-.emotion-6 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -128,27 +128,27 @@ exports[`PivotTable - Box render should render correctly with children and its s
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
 <div>
   <div
-    class="emotion-8"
+    class="emotion-5"
   >
     <div
       class="emotion-2"
@@ -173,32 +173,20 @@ exports[`PivotTable - Box render should render correctly with children and its s
       </h4>
     </div>
     <div
-      class="emotion-7"
+      class="emotion-4"
     >
       <div
-        class="emotion-6"
+        class="emotion-3"
       >
-        <div
-          class="emotion-3"
-        >
-          <p>
-            Child #0
-          </p>
-        </div>
-        <div
-          class="emotion-3"
-        >
-          <p>
-            Child #1
-          </p>
-        </div>
-        <div
-          class="emotion-3"
-        >
-          <p>
-            Child #2
-          </p>
-        </div>
+        <p>
+          Child #0
+        </p>
+        <p>
+          Child #1
+        </p>
+        <p>
+          Child #2
+        </p>
       </div>
     </div>
   </div>

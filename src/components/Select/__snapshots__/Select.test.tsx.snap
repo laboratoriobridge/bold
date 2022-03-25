@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`emptyItem should render when items is empty 1`] = `
-.emotion-12 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,21 +11,21 @@ exports[`emptyItem should render when items is empty 1`] = `
   flex-direction: column;
 }
 
-.emotion-10 {
+.emotion-10 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-10:first-of-type {
+.emotion-10 > :first-child {
   margin-top: 0;
 }
 
-.emotion-10:last-of-type {
+.emotion-10 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-10:empty {
+.emotion-10 > *:empty {
   display: none;
 }
 
@@ -265,91 +265,84 @@ exports[`emptyItem should render when items is empty 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-10"
   >
     <div
-      class="emotion-10"
+      class="emotion-8"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-11-label"
+        aria-owns="downshift-11-menu"
         class="emotion-8"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-11-label"
-          aria-owns="downshift-11-menu"
-          class="emotion-8"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-4"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-11-menu"
-                class="emotion-0"
-                id="downshift-11-input"
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-3"
-              >
-                <button
-                  class="emotion-2"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-11-label"
-            class="emotion-7"
-            id="downshift-11-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-4"
           >
-            <ul
-              class="emotion-6"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-11-menu"
+              class="emotion-0"
+              id="downshift-11-input"
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-3"
             >
-              <li
-                aria-selected="false"
-                class="emotion-5"
+              <button
+                class="emotion-2"
+                tabindex="-1"
+                type="button"
               >
-                No results were found
-              </li>
-            </ul>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
+        </div>
+        <div
+          aria-labelledby="downshift-11-label"
+          class="emotion-7"
+          id="downshift-11-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; width: 0px;"
+        >
+          <ul
+            class="emotion-6"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-5"
+            >
+              No results were found
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-10"
-    />
   </div>
 </div>
 `;
 
 exports[`emptyItem should render when items is null 1`] = `
-.emotion-12 {
+.emotion-10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -359,21 +352,21 @@ exports[`emptyItem should render when items is null 1`] = `
   flex-direction: column;
 }
 
-.emotion-10 {
+.emotion-10 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-10:first-of-type {
+.emotion-10 > :first-child {
   margin-top: 0;
 }
 
-.emotion-10:last-of-type {
+.emotion-10 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-10:empty {
+.emotion-10 > *:empty {
   display: none;
 }
 
@@ -613,85 +606,78 @@ exports[`emptyItem should render when items is null 1`] = `
 
 <div>
   <div
-    class="emotion-12"
+    class="emotion-10"
   >
     <div
-      class="emotion-10"
+      class="emotion-8"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-12-label"
+        aria-owns="downshift-12-menu"
         class="emotion-8"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-12-label"
-          aria-owns="downshift-12-menu"
-          class="emotion-8"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-4"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-12-menu"
-                class="emotion-0"
-                id="downshift-12-input"
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-3"
-              >
-                <button
-                  class="emotion-2"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-12-label"
-            class="emotion-7"
-            id="downshift-12-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-4"
           >
-            <ul
-              class="emotion-6"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-12-menu"
+              class="emotion-0"
+              id="downshift-12-input"
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-3"
             >
-              <li
-                aria-selected="false"
-                class="emotion-5"
+              <button
+                class="emotion-2"
+                tabindex="-1"
+                type="button"
               >
-                No results were found
-              </li>
-            </ul>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
+        </div>
+        <div
+          aria-labelledby="downshift-12-label"
+          class="emotion-7"
+          id="downshift-12-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; width: 0px;"
+        >
+          <ul
+            class="emotion-6"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-5"
+            >
+              No results were found
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-10"
-    />
   </div>
 </div>
 `;
@@ -713,7 +699,7 @@ exports[`multiple should warn when value is NOT an array 1`] = `
 `;
 
 exports[`select custom components should accept actions inside AppendItem 1`] = `
-.emotion-19 {
+.emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -723,21 +709,21 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
   flex-direction: column;
 }
 
-.emotion-17 {
+.emotion-17 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-17:first-of-type {
+.emotion-17 > :first-child {
   margin-top: 0;
 }
 
-.emotion-17:last-of-type {
+.emotion-17 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-17:empty {
+.emotion-17 > *:empty {
   display: none;
 }
 
@@ -1064,158 +1050,151 @@ exports[`select custom components should accept actions inside AppendItem 1`] = 
 
 <div>
   <div
-    class="emotion-19"
+    class="emotion-17"
   >
     <div
-      class="emotion-17"
+      class="emotion-15"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-10-label"
+        aria-owns="downshift-10-menu"
         class="emotion-15"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-10-label"
-          aria-owns="downshift-10-menu"
-          class="emotion-15"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-6"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-10-menu"
-                class="emotion-0"
-                id="downshift-10-input"
-                type="text"
-                value="Apple"
-              />
-              <span
-                class="emotion-2"
-                role="button"
-                tabindex="-1"
-                title="Clear"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="emotion-5"
-              >
-                <button
-                  class="emotion-4"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-10-label"
-            class="emotion-14"
-            id="downshift-10-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-6"
           >
-            <ul
-              class="emotion-12"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-10-menu"
+              class="emotion-0"
+              id="downshift-10-input"
+              type="text"
+              value="Apple"
+            />
+            <span
+              class="emotion-2"
+              role="button"
+              tabindex="-1"
+              title="Clear"
             >
-              <li
-                aria-selected="false"
-                class="emotion-7"
-                id="downshift-10-item-0"
-                role="option"
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
               >
-                Apple
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-7"
-                id="downshift-10-item-1"
-                role="option"
-              >
-                Banana
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-7"
-                id="downshift-10-item-2"
-                role="option"
-              >
-                Grape
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-7"
-                id="downshift-10-item-3"
-                role="option"
-              >
-                Orange
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-7"
-                id="downshift-10-item-4"
-                role="option"
-              >
-                Pear
-              </li>
-            </ul>
-            <div
-              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+            <span
+              class="emotion-5"
             >
               <button
-                class="emotion-13"
-                data-testid="button"
+                class="emotion-4"
+                tabindex="-1"
                 type="button"
               >
                 <span>
-                  New item
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
                 </span>
               </button>
-            </div>
+            </span>
+          </div>
+        </div>
+        <div
+          aria-labelledby="downshift-10-label"
+          class="emotion-14"
+          id="downshift-10-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; width: 0px;"
+        >
+          <ul
+            class="emotion-12"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-7"
+              id="downshift-10-item-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-7"
+              id="downshift-10-item-1"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-7"
+              id="downshift-10-item-2"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-7"
+              id="downshift-10-item-3"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-7"
+              id="downshift-10-item-4"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+          <div
+            style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+          >
+            <button
+              class="emotion-13"
+              data-testid="button"
+              type="button"
+            >
+              <span>
+                New item
+              </span>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-17"
-    />
   </div>
 </div>
 `;
 
 exports[`select custom components should accept actions inside PrependItem 1`] = `
-.emotion-19 {
+.emotion-17 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1225,21 +1204,21 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
   flex-direction: column;
 }
 
-.emotion-17 {
+.emotion-17 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-17:first-of-type {
+.emotion-17 > :first-child {
   margin-top: 0;
 }
 
-.emotion-17:last-of-type {
+.emotion-17 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-17:empty {
+.emotion-17 > *:empty {
   display: none;
 }
 
@@ -1566,152 +1545,145 @@ exports[`select custom components should accept actions inside PrependItem 1`] =
 
 <div>
   <div
-    class="emotion-19"
+    class="emotion-17"
   >
     <div
-      class="emotion-17"
+      class="emotion-15"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-9-label"
+        aria-owns="downshift-9-menu"
         class="emotion-15"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-9-label"
-          aria-owns="downshift-9-menu"
-          class="emotion-15"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-6"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-9-menu"
-                class="emotion-0"
-                id="downshift-9-input"
-                type="text"
-                value="Apple"
-              />
-              <span
-                class="emotion-2"
-                role="button"
-                tabindex="-1"
-                title="Clear"
-              >
-                <svg
-                  aria-hidden="true"
-                  class="emotion-1"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                  />
-                </svg>
-              </span>
-              <span
-                class="emotion-5"
-              >
-                <button
-                  class="emotion-4"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-9-label"
-            class="emotion-14"
-            id="downshift-9-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-6"
           >
-            <div
-              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-9-menu"
+              class="emotion-0"
+              id="downshift-9-input"
+              type="text"
+              value="Apple"
+            />
+            <span
+              class="emotion-2"
+              role="button"
+              tabindex="-1"
+              title="Clear"
+            >
+              <svg
+                aria-hidden="true"
+                class="emotion-1"
+                height="1em"
+                role="img"
+                viewBox="0 0 24 24"
+                width="1em"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+                />
+              </svg>
+            </span>
+            <span
+              class="emotion-5"
             >
               <button
-                class="emotion-7"
-                data-testid="button"
+                class="emotion-4"
+                tabindex="-1"
                 type="button"
               >
                 <span>
-                  New item
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
                 </span>
               </button>
-            </div>
-            <ul
-              class="emotion-13"
-            >
-              <li
-                aria-selected="false"
-                class="emotion-8"
-                id="downshift-9-item-0"
-                role="option"
-              >
-                Apple
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-8"
-                id="downshift-9-item-1"
-                role="option"
-              >
-                Banana
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-8"
-                id="downshift-9-item-2"
-                role="option"
-              >
-                Grape
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-8"
-                id="downshift-9-item-3"
-                role="option"
-              >
-                Orange
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-8"
-                id="downshift-9-item-4"
-                role="option"
-              >
-                Pear
-              </li>
-            </ul>
+            </span>
           </div>
+        </div>
+        <div
+          aria-labelledby="downshift-9-label"
+          class="emotion-14"
+          id="downshift-9-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; width: 0px;"
+        >
+          <div
+            style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+          >
+            <button
+              class="emotion-7"
+              data-testid="button"
+              type="button"
+            >
+              <span>
+                New item
+              </span>
+            </button>
+          </div>
+          <ul
+            class="emotion-13"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-9-item-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-9-item-1"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-9-item-2"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-9-item-3"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-8"
+              id="downshift-9-item-4"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-17"
-    />
   </div>
 </div>
 `;

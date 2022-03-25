@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component presentation should render correctly when closed 1`] = `
-.emotion-10 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,21 +11,21 @@ exports[`Component presentation should render correctly when closed 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-8 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-8:first-of-type {
+.emotion-8 > :first-child {
   margin-top: 0;
 }
 
-.emotion-8:last-of-type {
+.emotion-8 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-8:empty {
+.emotion-8 > *:empty {
   display: none;
 }
 
@@ -228,80 +228,73 @@ exports[`Component presentation should render correctly when closed 1`] = `
 <div>
   <div>
     <div
-      class="emotion-10"
+      class="emotion-8"
     >
       <div
-        class="emotion-8"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-6"
         >
-          <div
-            class="emotion-6"
+          <input
+            class="emotion-0"
+            placeholder="mm/yyyy"
+            type="text"
+            value="02/2019"
+          />
+          <span
+            class="emotion-2"
+            role="button"
+            tabindex="-1"
+            title="Clear"
           >
-            <input
-              class="emotion-0"
-              placeholder="mm/yyyy"
-              type="text"
-              value="02/2019"
-            />
-            <span
-              class="emotion-2"
-              role="button"
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-5"
+          >
+            <button
+              class="emotion-4"
               tabindex="-1"
-              title="Clear"
+              type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="emotion-1"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                />
-              </svg>
-            </span>
-            <span
-              class="emotion-5"
-            >
-              <button
-                class="emotion-4"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-1"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      d="M6 4h1V3c-.002-.667.33-1 1-1 .67 0 1.004.333 1.004 1v1H15V2.941c0-.627.333-.941 1-.941s1 .314 1 .941V4h1c1.333 0 2 .667 2 2v14c0 1.333-.667 2-2 2H6c-1.333 0-2-.667-2-2V6.004C4 4.668 4.667 4 6 4zm0 16h12V10H6v10zM6 6v2h12V6H6zm3 8c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1zm-5 4c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M6 4h1V3c-.002-.667.33-1 1-1 .67 0 1.004.333 1.004 1v1H15V2.941c0-.627.333-.941 1-.941s1 .314 1 .941V4h1c1.333 0 2 .667 2 2v14c0 1.333-.667 2-2 2H6c-1.333 0-2-.667-2-2V6.004C4 4.668 4.667 4 6 4zm0 16h12V10H6v10zM6 6v2h12V6H6zm3 8c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1zm-5 4c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
-      <div
-        class="emotion-8"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Component presentation should render correctly when opened 1`] = `
-.emotion-10 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -311,21 +304,21 @@ exports[`Component presentation should render correctly when opened 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-8 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-8:first-of-type {
+.emotion-8 > :first-child {
   margin-top: 0;
 }
 
-.emotion-8:last-of-type {
+.emotion-8 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-8:empty {
+.emotion-8 > *:empty {
   display: none;
 }
 
@@ -525,14 +518,14 @@ exports[`Component presentation should render correctly when opened 1`] = `
   box-shadow: none;
 }
 
-.emotion-45 {
+.emotion-43 {
   z-index: 1200;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-.emotion-44 {
+.emotion-42 {
   background-color: #FFFFFF;
   display: inline-block;
   padding: 1rem;
@@ -541,7 +534,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   border-radius: 2px;
 }
 
-.emotion-43 {
+.emotion-41 {
   margin: -0.25rem -0.25rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -551,13 +544,13 @@ exports[`Component presentation should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-13 {
+.emotion-11 {
   text-align: center;
   margin: 0.25rem 0.25rem;
   border-radius: 0.25rem;
 }
 
-.emotion-12 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -589,7 +582,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-12 > span {
+.emotion-10 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -600,20 +593,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-10:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-10:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-10:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-14 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -622,7 +615,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   font-weight: bold;
 }
 
-.emotion-19 {
+.emotion-17 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -658,7 +651,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   min-width: 70px;
 }
 
-.emotion-19 > span {
+.emotion-17 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -669,20 +662,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-19:not(:disabled):active {
+.emotion-17:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-19:focus {
+.emotion-17:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-19:not(:disabled):hover {
+.emotion-17:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-21 {
+.emotion-19 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -720,7 +713,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   color: #FFFFFF;
 }
 
-.emotion-21 > span {
+.emotion-19 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -731,20 +724,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-21:not(:disabled):active {
+.emotion-19:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-21:focus {
+.emotion-19:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-21:not(:disabled):hover {
+.emotion-19:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-21:hover {
+.emotion-19:hover {
   background: #0069D0!important;
   color: #FFFFFF;
 }
@@ -752,89 +745,82 @@ exports[`Component presentation should render correctly when opened 1`] = `
 <div>
   <div>
     <div
-      class="emotion-10"
+      class="emotion-8"
     >
       <div
-        class="emotion-8"
+        class="emotion-7"
       >
         <div
-          class="emotion-7"
+          class="emotion-6"
         >
-          <div
-            class="emotion-6"
+          <input
+            class="emotion-0"
+            placeholder="mm/yyyy"
+            type="text"
+            value="02/2019"
+          />
+          <span
+            class="emotion-2"
+            role="button"
+            tabindex="-1"
+            title="Clear"
           >
-            <input
-              class="emotion-0"
-              placeholder="mm/yyyy"
-              type="text"
-              value="02/2019"
-            />
-            <span
-              class="emotion-2"
-              role="button"
+            <svg
+              aria-hidden="true"
+              class="emotion-1"
+              height="1em"
+              role="img"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
+              />
+            </svg>
+          </span>
+          <span
+            class="emotion-5"
+          >
+            <button
+              class="emotion-4"
               tabindex="-1"
-              title="Clear"
+              type="button"
             >
-              <svg
-                aria-hidden="true"
-                class="emotion-1"
-                height="1em"
-                role="img"
-                viewBox="0 0 24 24"
-                width="1em"
-              >
-                <path
-                  clip-rule="evenodd"
-                  d="M8.071 6.657l4.243 4.242 4.242-4.242c.464-.48.935-.48 1.415 0s.48.95 0 1.414l-4.243 4.243 4.243 4.242c.471.472.471.943 0 1.415-.472.471-.943.471-1.415 0l-4.242-4.243L8.07 17.97c-.46.482-.932.482-1.414 0-.482-.483-.482-.954 0-1.415l4.242-4.242L6.657 8.07c-.472-.47-.472-.942 0-1.414s.943-.472 1.414 0v.001z"
-                />
-              </svg>
-            </span>
-            <span
-              class="emotion-5"
-            >
-              <button
-                class="emotion-4"
-                tabindex="-1"
-                type="button"
-              >
-                <span>
-                  <svg
-                    aria-hidden="true"
-                    class="emotion-1"
-                    height="1em"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    width="1em"
-                  >
-                    <path
-                      d="M6 4h1V3c-.002-.667.33-1 1-1 .67 0 1.004.333 1.004 1v1H15V2.941c0-.627.333-.941 1-.941s1 .314 1 .941V4h1c1.333 0 2 .667 2 2v14c0 1.333-.667 2-2 2H6c-1.333 0-2-.667-2-2V6.004C4 4.668 4.667 4 6 4zm0 16h12V10H6v10zM6 6v2h12V6H6zm3 8c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1zm-5 4c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1z"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </span>
-          </div>
+              <span>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    d="M6 4h1V3c-.002-.667.33-1 1-1 .67 0 1.004.333 1.004 1v1H15V2.941c0-.627.333-.941 1-.941s1 .314 1 .941V4h1c1.333 0 2 .667 2 2v14c0 1.333-.667 2-2 2H6c-1.333 0-2-.667-2-2V6.004C4 4.668 4.667 4 6 4zm0 16h12V10H6v10zM6 6v2h12V6H6zm3 8c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1zm-5 4c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H10c.667 0 1 .333 1 1s-.333 1-1 1H9zm5 0c-.667.001-1-.332-1-1 0-.668.335-1.001 1.002-1H15c.667 0 1 .333 1 1s-.333 1-1 1h-1z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </span>
         </div>
       </div>
-      <div
-        class="emotion-8"
-      />
     </div>
     <div
-      class="emotion-45"
+      class="emotion-43"
       data-testid="MonthField.popup"
     >
       <div
-        class="emotion-44"
+        class="emotion-42"
       >
         <div
-          class="emotion-43"
+          class="emotion-41"
         >
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-12"
+              class="emotion-10"
               title="Previous year"
               type="button"
             >
@@ -856,19 +842,19 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <span
-              class="emotion-14"
+              class="emotion-12"
             >
               2019
             </span>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-12"
+              class="emotion-10"
               title="Next year"
               type="button"
             >
@@ -890,10 +876,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="January"
               type="button"
             >
@@ -903,10 +889,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-21"
+              class="emotion-19"
               title="February"
               type="button"
             >
@@ -916,10 +902,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="March"
               type="button"
             >
@@ -929,10 +915,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="April"
               type="button"
             >
@@ -942,10 +928,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="May"
               type="button"
             >
@@ -955,10 +941,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="June"
               type="button"
             >
@@ -968,10 +954,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="July"
               type="button"
             >
@@ -981,10 +967,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="August"
               type="button"
             >
@@ -994,10 +980,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="September"
               type="button"
             >
@@ -1007,10 +993,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="October"
               type="button"
             >
@@ -1020,10 +1006,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="November"
               type="button"
             >
@@ -1033,10 +1019,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-11"
           >
             <button
-              class="emotion-19"
+              class="emotion-17"
               title="December"
               type="button"
             >

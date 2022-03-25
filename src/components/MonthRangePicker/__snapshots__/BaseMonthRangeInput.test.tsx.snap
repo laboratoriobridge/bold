@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BaseMonthRangeInput customization should allow a custom string in range separator 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -15,25 +15,25 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -47,13 +47,13 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -72,7 +72,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -82,21 +82,21 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -197,7 +197,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -231,7 +231,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -242,24 +242,24 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -267,87 +267,73 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           separator
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -366,7 +352,7 @@ exports[`BaseMonthRangeInput customization should allow a custom string in range
 `;
 
 exports[`BaseMonthRangeInput customization should allow enUS placeholder customization via locale context 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -380,25 +366,25 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -412,13 +398,13 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -437,7 +423,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -447,21 +433,21 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -562,7 +548,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -596,7 +582,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -607,24 +593,24 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -632,87 +618,73 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           until
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -731,7 +703,7 @@ exports[`BaseMonthRangeInput customization should allow enUS placeholder customi
 `;
 
 exports[`BaseMonthRangeInput customization should allow enUs i18n in range separator 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -745,25 +717,25 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -777,13 +749,13 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -802,7 +774,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -812,21 +784,21 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -927,7 +899,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -961,7 +933,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -972,24 +944,24 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -997,87 +969,73 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           until
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -1096,7 +1054,7 @@ exports[`BaseMonthRangeInput customization should allow enUs i18n in range separ
 `;
 
 exports[`BaseMonthRangeInput customization should allow ptBR placeholder customization via locale context 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1110,25 +1068,25 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1142,13 +1100,13 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1167,7 +1125,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1177,21 +1135,21 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -1292,7 +1250,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1326,7 +1284,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1337,24 +1295,24 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -1362,87 +1320,73 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="dd/mm/aaaa"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="dd/mm/aaaa"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           até
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="dd/mm/aaaa"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="dd/mm/aaaa"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -1461,7 +1405,7 @@ exports[`BaseMonthRangeInput customization should allow ptBR placeholder customi
 `;
 
 exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separator 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1475,25 +1419,25 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1507,13 +1451,13 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1532,7 +1476,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1542,21 +1486,21 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -1657,7 +1601,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1691,7 +1635,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1702,24 +1646,24 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -1727,87 +1671,73 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="dd/mm/aaaa"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="dd/mm/aaaa"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           até
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="dd/mm/aaaa"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="dd/mm/aaaa"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -1826,7 +1756,7 @@ exports[`BaseMonthRangeInput customization should allow ptBr i18n in range separ
 `;
 
 exports[`BaseMonthRangeInput render should render correctly 1`] = `
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1840,25 +1770,25 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1872,13 +1802,13 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1897,7 +1827,7 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1907,21 +1837,21 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -2022,7 +1952,7 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2056,7 +1986,7 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2067,24 +1997,24 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -2092,87 +2022,73 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           until
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -2191,13 +2107,13 @@ exports[`BaseMonthRangeInput render should render correctly 1`] = `
 `;
 
 exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = `
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2216,7 +2132,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2226,21 +2142,21 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -2341,12 +2257,12 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   box-shadow: none !important;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -2361,25 +2277,25 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   background: #F0F0F5;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2394,7 +2310,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   position: relative;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2430,7 +2346,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2441,102 +2357,88 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  disabled=""
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                disabled=""
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           until
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  disabled=""
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                disabled=""
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           disabled=""
           tabindex="-1"
           type="button"
@@ -2544,7 +2446,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"
@@ -2563,7 +2465,7 @@ exports[`BaseMonthRangeInput render should render correctly when disabled 1`] = 
 `;
 
 exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
-.emotion-7 {
+.emotion-5 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2577,13 +2479,13 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-4 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-13 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2602,7 +2504,7 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   border-bottom-right-radius: 1px;
 }
 
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2612,21 +2514,21 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -2634,7 +2536,7 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   position: relative;
 }
 
-.emotion-16 {
+.emotion-12 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2668,7 +2570,7 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-12 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2679,29 +2581,29 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-12:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-12:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-12:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-11 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-18 {
+.emotion-14 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -2716,25 +2618,25 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
   border: solid 1px #D01E29;
 }
 
-.emotion-18:required {
+.emotion-14:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-14:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
@@ -2841,87 +2743,73 @@ exports[`BaseMonthRangeInput render should render correctly when invalid 1`] = `
 <div>
   <div>
     <div
-      class="emotion-18"
+      class="emotion-14"
     >
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="start"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="start"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-7"
+        class="emotion-5"
       >
         <strong>
           until
         </strong>
       </span>
       <div
-        class="emotion-6"
+        class="emotion-4"
       >
         <div
-          class="emotion-5"
+          class="emotion-3"
         >
           <div
-            class="emotion-3"
+            class="emotion-2"
           >
             <div
-              class="emotion-2"
+              class="emotion-1"
             >
-              <div
-                class="emotion-1"
-              >
-                <input
-                  class="emotion-0"
-                  name="end"
-                  placeholder="mm/dd/yyyy"
-                  type="text"
-                  value=""
-                />
-              </div>
+              <input
+                class="emotion-0"
+                name="end"
+                placeholder="mm/dd/yyyy"
+                type="text"
+                value=""
+              />
             </div>
           </div>
-          <div
-            class="emotion-3"
-          />
         </div>
       </div>
       <span
-        class="emotion-17"
+        class="emotion-13"
       >
         <button
-          class="emotion-16"
+          class="emotion-12"
           tabindex="-1"
           type="button"
         >
           <span>
             <svg
               aria-hidden="true"
-              class="emotion-15"
+              class="emotion-11"
               height="1em"
               role="img"
               viewBox="0 0 24 24"

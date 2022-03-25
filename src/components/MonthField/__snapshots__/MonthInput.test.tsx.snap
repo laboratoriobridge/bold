@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MonthInput should render correctly 1`] = `
-.emotion-5 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,21 +11,21 @@ exports[`MonthInput should render correctly 1`] = `
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-3 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-3 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-3 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-3 > *:empty {
   display: none;
 }
 
@@ -107,29 +107,22 @@ exports[`MonthInput should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-3"
   >
     <div
-      class="emotion-3"
+      class="emotion-2"
     >
       <div
-        class="emotion-2"
+        class="emotion-1"
       >
-        <div
-          class="emotion-1"
-        >
-          <input
-            class="emotion-0"
-            placeholder="mm/yyyy"
-            type="text"
-            value=""
-          />
-        </div>
+        <input
+          class="emotion-0"
+          placeholder="mm/yyyy"
+          type="text"
+          value=""
+        />
       </div>
     </div>
-    <div
-      class="emotion-3"
-    />
   </div>
 </div>
 `;

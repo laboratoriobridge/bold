@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept the style prop 1`] = `
-.emotion-3 {
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,21 +11,21 @@ exports[`should accept the style prop 1`] = `
   flex-direction: column;
 }
 
-.emotion-1 {
+.emotion-1 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-1:first-of-type {
+.emotion-1 > :first-child {
   margin-top: 0;
 }
 
-.emotion-1:last-of-type {
+.emotion-1 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-1:empty {
+.emotion-1 > *:empty {
   display: none;
 }
 
@@ -35,26 +35,19 @@ exports[`should accept the style prop 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-1"
   >
     <div
-      class="emotion-1"
+      class="emotion-0"
     >
-      <div
-        class="emotion-0"
-      >
-        Test
-      </div>
+      Test
     </div>
-    <div
-      class="emotion-1"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-3 {
+.emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,46 +57,39 @@ exports[`should render correctly 1`] = `
   flex-direction: column;
 }
 
-.emotion-1 {
+.emotion-1 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-1:first-of-type {
+.emotion-1 > :first-child {
   margin-top: 0;
 }
 
-.emotion-1:last-of-type {
+.emotion-1 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-1:empty {
+.emotion-1 > *:empty {
   display: none;
 }
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-1"
   >
     <div
-      class="emotion-1"
+      class="emotion-0"
     >
-      <div
-        class="emotion-0"
-      >
-        Test
-      </div>
+      Test
     </div>
-    <div
-      class="emotion-1"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly 2`] = `
-.emotion-6 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -113,21 +99,21 @@ exports[`should render correctly 2`] = `
   flex-direction: column;
 }
 
-.emotion-3 {
+.emotion-4 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-3:first-of-type {
+.emotion-4 > :first-child {
   margin-top: 0;
 }
 
-.emotion-3:last-of-type {
+.emotion-4 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-3:empty {
+.emotion-4 > *:empty {
   display: none;
 }
 
@@ -143,7 +129,7 @@ exports[`should render correctly 2`] = `
   line-height: 20px;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -159,38 +145,30 @@ exports[`should render correctly 2`] = `
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-4"
   >
     <div
-      class="emotion-3"
+      class="emotion-2"
     >
-      <div
-        class="emotion-2"
+      <label
+        class="emotion-1"
+        for="test"
       >
-        <label
-          class="emotion-1"
-          for="test"
+        Label
+        <span
+          class="emotion-0"
+          title="Required field"
         >
-          Label
-          <span
-            class="emotion-0"
-            title="Required field"
-          >
-            *
-          </span>
-        </label>
-        Test
-      </div>
+          *
+        </span>
+      </label>
+      Test
     </div>
     <div
       class="emotion-3"
+      role="alert"
     >
-      <div
-        class="emotion-4"
-        role="alert"
-      >
-        Error
-      </div>
+      Error
     </div>
   </div>
 </div>

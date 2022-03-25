@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`input label label should have a htmlFor prop equals to the used id 1`] = `
-.emotion-10 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -11,21 +11,21 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-8 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-8:first-of-type {
+.emotion-8 > :first-child {
   margin-top: 0;
 }
 
-.emotion-8:last-of-type {
+.emotion-8 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-8:empty {
+.emotion-8 > *:empty {
   display: none;
 }
 
@@ -206,78 +206,71 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-10"
+    class="emotion-8"
   >
     <div
-      class="emotion-8"
+      class="emotion-6"
     >
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-0"
+        for="foo"
       >
-        <label
-          class="emotion-0"
-          for="foo"
-        >
-          Foo
-        </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          class="emotion-6"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-5"
+        Foo
+      </label>
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-0-label"
+        class="emotion-6"
+        role="combobox"
+      >
+        <div>
+          <div
+            class="emotion-5"
+          >
+            <input
+              aria-autocomplete="list"
+              class="emotion-1"
+              id="downshift-0-input"
+              placeholder="Select a value..."
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-4"
             >
-              <input
-                aria-autocomplete="list"
-                class="emotion-1"
-                id="downshift-0-input"
-                placeholder="Select a value..."
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-4"
+              <button
+                class="emotion-3"
+                tabindex="-1"
+                type="button"
               >
-                <button
-                  class="emotion-3"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-2"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-2"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-8"
-    />
   </div>
 </div>
 `;
 
 exports[`input label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
-.emotion-10 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -287,21 +280,21 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-8 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-8:first-of-type {
+.emotion-8 > :first-child {
   margin-top: 0;
 }
 
-.emotion-8:last-of-type {
+.emotion-8 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-8:empty {
+.emotion-8 > *:empty {
   display: none;
 }
 
@@ -482,79 +475,72 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-10"
+    class="emotion-8"
   >
     <div
-      class="emotion-8"
+      class="emotion-6"
     >
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-0"
+        id="label-abc"
       >
-        <label
-          class="emotion-0"
-          id="label-abc"
-        >
-          test
-        </label>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="label-abc"
-          class="emotion-6"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-5"
+        test
+      </label>
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-labelledby="label-abc"
+        class="emotion-6"
+        role="combobox"
+      >
+        <div>
+          <div
+            class="emotion-5"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-labelledby="label-abc"
+              class="emotion-1"
+              id="downshift-0-input"
+              placeholder="Select a value..."
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-4"
             >
-              <input
-                aria-autocomplete="list"
-                aria-labelledby="label-abc"
-                class="emotion-1"
-                id="downshift-0-input"
-                placeholder="Select a value..."
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-4"
+              <button
+                class="emotion-3"
+                tabindex="-1"
+                type="button"
               >
-                <button
-                  class="emotion-3"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-2"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-2"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-8"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly when closed 1`] = `
-.emotion-9 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -564,21 +550,21 @@ exports[`should render correctly when closed 1`] = `
   flex-direction: column;
 }
 
-.emotion-7 {
+.emotion-7 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-7:first-of-type {
+.emotion-7 > :first-child {
   margin-top: 0;
 }
 
-.emotion-7:last-of-type {
+.emotion-7 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-7:empty {
+.emotion-7 > *:empty {
   display: none;
 }
 
@@ -752,72 +738,65 @@ exports[`should render correctly when closed 1`] = `
 
 <div>
   <div
-    class="emotion-9"
+    class="emotion-7"
   >
     <div
-      class="emotion-7"
+      class="emotion-5"
     >
       <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-0-label"
         class="emotion-5"
+        role="combobox"
       >
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          class="emotion-5"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-4"
+        <div>
+          <div
+            class="emotion-4"
+          >
+            <input
+              aria-autocomplete="list"
+              class="emotion-0"
+              id="downshift-0-input"
+              placeholder="Select a value..."
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-3"
             >
-              <input
-                aria-autocomplete="list"
-                class="emotion-0"
-                id="downshift-0-input"
-                placeholder="Select a value..."
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-3"
+              <button
+                class="emotion-2"
+                tabindex="-1"
+                type="button"
               >
-                <button
-                  class="emotion-2"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-7"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly when opened 1`] = `
-.emotion-16 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -827,21 +806,21 @@ exports[`should render correctly when opened 1`] = `
   flex-direction: column;
 }
 
-.emotion-14 {
+.emotion-14 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-14:first-of-type {
+.emotion-14 > :first-child {
   margin-top: 0;
 }
 
-.emotion-14:last-of-type {
+.emotion-14 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-14:empty {
+.emotion-14 > *:empty {
   display: none;
 }
 
@@ -1077,126 +1056,119 @@ exports[`should render correctly when opened 1`] = `
 
 <div>
   <div
-    class="emotion-16"
+    class="emotion-14"
   >
     <div
-      class="emotion-14"
+      class="emotion-12"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-0-label"
+        aria-owns="downshift-0-menu"
         class="emotion-12"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns="downshift-0-menu"
-          class="emotion-12"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-4"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-0-menu"
-                class="emotion-0"
-                id="downshift-0-input"
-                placeholder="Select a value..."
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-3"
-              >
-                <button
-                  class="emotion-2"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-0-label"
-            class="emotion-11"
-            id="downshift-0-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-4"
           >
-            <ul
-              class="emotion-10"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-0-menu"
+              class="emotion-0"
+              id="downshift-0-input"
+              placeholder="Select a value..."
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-3"
             >
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-0"
-                role="option"
+              <button
+                class="emotion-2"
+                tabindex="-1"
+                type="button"
               >
-                Apple
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-1"
-                role="option"
-              >
-                Banana
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-2"
-                role="option"
-              >
-                Grape
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-3"
-                role="option"
-              >
-                Orange
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-4"
-                role="option"
-              >
-                Pear
-              </li>
-            </ul>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
+        </div>
+        <div
+          aria-labelledby="downshift-0-label"
+          class="emotion-11"
+          id="downshift-0-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; width: 0px;"
+        >
+          <ul
+            class="emotion-10"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-1"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-2"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-3"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-4"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-14"
-    />
   </div>
 </div>
 `;
 
 exports[`should respect the specified menu min-width 1`] = `
-.emotion-16 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1206,21 +1178,21 @@ exports[`should respect the specified menu min-width 1`] = `
   flex-direction: column;
 }
 
-.emotion-14 {
+.emotion-14 > * {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-14:first-of-type {
+.emotion-14 > :first-child {
   margin-top: 0;
 }
 
-.emotion-14:last-of-type {
+.emotion-14 > :last-child {
   margin-bottom: 0;
 }
 
-.emotion-14:empty {
+.emotion-14 > *:empty {
   display: none;
 }
 
@@ -1456,120 +1428,113 @@ exports[`should respect the specified menu min-width 1`] = `
 
 <div>
   <div
-    class="emotion-16"
+    class="emotion-14"
   >
     <div
-      class="emotion-14"
+      class="emotion-12"
     >
       <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-labelledby="downshift-0-label"
+        aria-owns="downshift-0-menu"
         class="emotion-12"
+        role="combobox"
       >
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns="downshift-0-menu"
-          class="emotion-12"
-          role="combobox"
-        >
-          <div>
-            <div
-              class="emotion-4"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-0-menu"
-                class="emotion-0"
-                id="downshift-0-input"
-                placeholder="Select a value..."
-                type="text"
-                value=""
-              />
-              <span
-                class="emotion-3"
-              >
-                <button
-                  class="emotion-2"
-                  tabindex="-1"
-                  type="button"
-                >
-                  <span>
-                    <svg
-                      aria-hidden="true"
-                      class="emotion-1"
-                      height="1em"
-                      role="img"
-                      viewBox="0 0 24 24"
-                      width="1em"
-                    >
-                      <path
-                        clip-rule="evenodd"
-                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                      />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-            </div>
-          </div>
+        <div>
           <div
-            aria-labelledby="downshift-0-label"
-            class="emotion-11"
-            id="downshift-0-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; min-width: 577px; width: 0px;"
+            class="emotion-4"
           >
-            <ul
-              class="emotion-10"
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-0-menu"
+              class="emotion-0"
+              id="downshift-0-input"
+              placeholder="Select a value..."
+              type="text"
+              value=""
+            />
+            <span
+              class="emotion-3"
             >
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-0"
-                role="option"
+              <button
+                class="emotion-2"
+                tabindex="-1"
+                type="button"
               >
-                Apple
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-1"
-                role="option"
-              >
-                Banana
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-2"
-                role="option"
-              >
-                Grape
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-3"
-                role="option"
-              >
-                Orange
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-4"
-                role="option"
-              >
-                Pear
-              </li>
-            </ul>
+                <span>
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-1"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
           </div>
+        </div>
+        <div
+          aria-labelledby="downshift-0-label"
+          class="emotion-11"
+          id="downshift-0-menu"
+          role="listbox"
+          style="position: absolute; left: 0px; top: 0px; min-width: 577px; width: 0px;"
+        >
+          <ul
+            class="emotion-10"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-1"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-2"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-3"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-5"
+              id="downshift-0-item-4"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div
-      class="emotion-14"
-    />
   </div>
 </div>
 `;
