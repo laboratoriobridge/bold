@@ -8,7 +8,7 @@ import { BaseDateRangeInput, BaseDateRangeInputProps } from './BaseDateRangeInpu
 export interface DateRangePickerInputProps extends BaseDateRangeInputProps, UseFormControlProps {}
 
 export function DateRangePickerInput(props: DateRangePickerInputProps) {
-  const { label, error, ...rest } = props
+  const { label, error, inline, ...rest } = props
 
   const { getFormControlProps, getInputProps } = useFormControl(props)
   const inputProps = getInputProps()

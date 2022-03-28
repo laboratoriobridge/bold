@@ -156,69 +156,6 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-24 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  padding: calc(0.25rem - 1px) 1rem;
-  -webkit-transition-property: background;
-  transition-property: background;
-  min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-24 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-24:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-24:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-24:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
 <div>
   <div
     class="emotion-33"
@@ -393,7 +330,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-24"
+          class="emotion-8"
           title="September"
           type="button"
         >
@@ -602,69 +539,6 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-24 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.75rem - 1px) 1rem;
-  padding: calc(0.25rem - 1px) 1rem;
-  -webkit-transition-property: background;
-  transition-property: background;
-  min-width: 70px;
-  font-weight: bold;
-  -webkit-text-decoration: underline;
-  text-decoration: underline;
-}
-
-.emotion-24 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-24:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-24:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-24:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
 <div>
   <div
     class="emotion-33"
@@ -839,7 +713,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
         class="emotion-2"
       >
         <button
-          class="emotion-24"
+          class="emotion-8"
           title="September"
           type="button"
         >

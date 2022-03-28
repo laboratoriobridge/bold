@@ -18,6 +18,7 @@ export const Default = () => (
     onChange={action('changed')}
     error={text('error', '')}
     required={boolean('required', true)}
+    inline={boolean('inline', false)}
   />
 )
 
