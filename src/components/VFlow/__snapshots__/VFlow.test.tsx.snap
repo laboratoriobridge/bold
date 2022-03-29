@@ -93,3 +93,46 @@ exports[`should render correctly 1`] = `
   </div>
 </div>
 `;
+
+exports[`should render wrappers only for valid children 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-0 > * {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-0 > :first-child {
+  margin-top: 0;
+}
+
+.emotion-0 > :last-child {
+  margin-bottom: 0;
+}
+
+.emotion-0 > *:empty {
+  display: none;
+}
+
+<div>
+  <div
+    class="emotion-0"
+  >
+    <span>
+      testing vflow
+    </span>
+    <span>
+      testing vflow
+    </span>
+  </div>
+</div>
+`;

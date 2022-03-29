@@ -31,12 +31,12 @@ it('should render wrappers only for valid children', () => {
     <VFlow>
       {null}
       {undefined}
+      <span>testing vflow</span>
       {true}
       {false}
-      {0}
-      {1}
-      {''}
+      <span>testing vflow</span>
     </VFlow>
   )
-  expect(container.querySelectorAll('div')[0].childNodes.length).toEqual(3)
+  expect(container.querySelectorAll('div')[0].childNodes.length).toEqual(2)
+  expect(container).toMatchSnapshot()
 })
