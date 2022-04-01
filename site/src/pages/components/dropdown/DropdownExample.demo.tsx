@@ -1,19 +1,16 @@
 import { Button, Dropdown, DropdownDivider, DropdownItem, Tooltip } from 'bold-ui'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function DropdownExample() {
-  const buttonRef = useRef<HTMLButtonElement>()
-
+  const [buttonRef, setButtonRef] = useState<HTMLButtonElement>()
   const [open, setOpen] = useState(false)
+
   const handleClick = () => setOpen(true)
-  const handleClose = () => {
-    setOpen(false)
-    buttonRef.current.focus()
-  }
+  const handleClose = () => setOpen(false)
 
   return (
     <>
-      <Button innerRef={buttonRef} onClick={handleClick} size='small' kind='primary' skin='outline'>
+      <Button innerRef={setButtonRef} onClick={handleClick} size='small' kind='primary' skin='outline'>
         Options
       </Button>
 
