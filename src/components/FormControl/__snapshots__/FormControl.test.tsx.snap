@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should accept the style prop 1`] = `
-.emotion-3 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,7 +35,7 @@ exports[`should accept the style prop 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-2"
   >
     <div
       class="emotion-1"
@@ -46,15 +46,12 @@ exports[`should accept the style prop 1`] = `
         Test
       </div>
     </div>
-    <div
-      class="emotion-1"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
-.emotion-3 {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -84,7 +81,7 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-2"
   >
     <div
       class="emotion-1"
@@ -95,9 +92,6 @@ exports[`should render correctly 1`] = `
         Test
       </div>
     </div>
-    <div
-      class="emotion-1"
-    />
   </div>
 </div>
 `;

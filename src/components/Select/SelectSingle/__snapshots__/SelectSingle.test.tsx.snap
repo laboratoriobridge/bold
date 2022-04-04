@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`input label label should have a htmlFor prop equals to the used id 1`] = `
-.emotion-10 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -206,7 +206,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-10"
+    class="emotion-9"
   >
     <div
       class="emotion-8"
@@ -269,15 +269,12 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
         </div>
       </div>
     </div>
-    <div
-      class="emotion-8"
-    />
   </div>
 </div>
 `;
 
 exports[`input label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
-.emotion-10 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -482,7 +479,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-10"
+    class="emotion-9"
   >
     <div
       class="emotion-8"
@@ -546,15 +543,12 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
         </div>
       </div>
     </div>
-    <div
-      class="emotion-8"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly when closed 1`] = `
-.emotion-9 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -752,7 +746,7 @@ exports[`should render correctly when closed 1`] = `
 
 <div>
   <div
-    class="emotion-9"
+    class="emotion-8"
   >
     <div
       class="emotion-7"
@@ -809,15 +803,12 @@ exports[`should render correctly when closed 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="emotion-7"
-    />
   </div>
 </div>
 `;
 
 exports[`should render correctly when opened 1`] = `
-.emotion-16 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1077,7 +1068,7 @@ exports[`should render correctly when opened 1`] = `
 
 <div>
   <div
-    class="emotion-16"
+    class="emotion-15"
   >
     <div
       class="emotion-14"
@@ -1188,15 +1179,12 @@ exports[`should render correctly when opened 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="emotion-14"
-    />
   </div>
 </div>
 `;
 
 exports[`should respect the specified menu min-width 1`] = `
-.emotion-16 {
+.emotion-15 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1456,7 +1444,7 @@ exports[`should respect the specified menu min-width 1`] = `
 
 <div>
   <div
-    class="emotion-16"
+    class="emotion-15"
   >
     <div
       class="emotion-14"
@@ -1567,9 +1555,6 @@ exports[`should respect the specified menu min-width 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="emotion-14"
-    />
   </div>
 </div>
 `;

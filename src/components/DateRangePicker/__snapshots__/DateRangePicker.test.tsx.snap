@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DateRangePicker render should render correctly 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -29,7 +29,7 @@ exports[`DateRangePicker render should render correctly 1`] = `
   display: none;
 }
 
-.emotion-18 {
+.emotion-16 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -43,25 +43,25 @@ exports[`DateRangePicker render should render correctly 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-16:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -75,13 +75,13 @@ exports[`DateRangePicker render should render correctly 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-5 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-15 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -197,7 +197,7 @@ exports[`DateRangePicker render should render correctly 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -231,7 +231,7 @@ exports[`DateRangePicker render should render correctly 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -242,24 +242,24 @@ exports[`DateRangePicker render should render correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-13 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -267,7 +267,7 @@ exports[`DateRangePicker render should render correctly 1`] = `
 <div>
   <div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <div
         class="emotion-3"
@@ -277,13 +277,13 @@ exports[`DateRangePicker render should render correctly 1`] = `
         >
           <div>
             <div
-              class="emotion-18"
+              class="emotion-16"
             >
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -305,23 +305,20 @@ exports[`DateRangePicker render should render correctly 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-7"
+                class="emotion-6"
               >
                 <strong>
                   until
                 </strong>
               </span>
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -343,23 +340,20 @@ exports[`DateRangePicker render should render correctly 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-17"
+                class="emotion-15"
               >
                 <button
-                  class="emotion-16"
+                  class="emotion-14"
                   tabindex="-1"
                   type="button"
                 >
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-15"
+                      class="emotion-13"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -376,16 +370,13 @@ exports[`DateRangePicker render should render correctly 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`DateRangePicker render should render correctly when disabled 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -413,13 +404,13 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   display: none;
 }
 
-.emotion-6 {
+.emotion-5 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-15 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -535,12 +526,12 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-15 {
+.emotion-13 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-18 {
+.emotion-16 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -555,25 +546,25 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   background: #F0F0F5;
 }
 
-.emotion-18:required {
+.emotion-16:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -588,7 +579,7 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   position: relative;
 }
 
-.emotion-16 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -624,7 +615,7 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -635,27 +626,27 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   box-shadow: none;
 }
 
 <div>
   <div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <div
         class="emotion-3"
@@ -665,13 +656,13 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
         >
           <div>
             <div
-              class="emotion-18"
+              class="emotion-16"
             >
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -694,23 +685,20 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-7"
+                class="emotion-6"
               >
                 <strong>
                   until
                 </strong>
               </span>
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -733,16 +721,13 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-17"
+                class="emotion-15"
               >
                 <button
-                  class="emotion-16"
+                  class="emotion-14"
                   disabled=""
                   tabindex="-1"
                   type="button"
@@ -750,7 +735,7 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-15"
+                      class="emotion-13"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -767,16 +752,13 @@ exports[`DateRangePicker render should render correctly when disabled 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`DateRangePicker render should render correctly when invalid 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -804,7 +786,7 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   display: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -818,13 +800,13 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-5 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-15 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -847,7 +829,7 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   position: relative;
 }
 
-.emotion-16 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -881,7 +863,7 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -892,29 +874,29 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-13 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-18 {
+.emotion-16 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -929,25 +911,25 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
   border: solid 1px #D01E29;
 }
 
-.emotion-18:required {
+.emotion-16:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   border: solid 1px #D3D4DD;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
@@ -1054,7 +1036,7 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
 <div>
   <div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <div
         class="emotion-3"
@@ -1064,13 +1046,13 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
         >
           <div>
             <div
-              class="emotion-18"
+              class="emotion-16"
             >
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -1092,23 +1074,20 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-7"
+                class="emotion-6"
               >
                 <strong>
                   until
                 </strong>
               </span>
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -1130,23 +1109,20 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-17"
+                class="emotion-15"
               >
                 <button
-                  class="emotion-16"
+                  class="emotion-14"
                   tabindex="-1"
                   type="button"
                 >
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-15"
+                      class="emotion-13"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1163,16 +1139,13 @@ exports[`DateRangePicker render should render correctly when invalid 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`DateRangePicker render should render correctly when opened 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1200,7 +1173,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   display: none;
 }
 
-.emotion-18 {
+.emotion-16 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -1214,25 +1187,25 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-16:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1246,13 +1219,13 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-5 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-15 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1368,7 +1341,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1402,7 +1375,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1413,29 +1386,29 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-13 {
   fill: currentColor;
   font-size: 1.5rem;
 }
 
-.emotion-71 {
+.emotion-68 {
   z-index: 1200;
   background: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
@@ -1447,11 +1420,11 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   top: 0;
 }
 
-.emotion-70 {
+.emotion-67 {
   width: 288px;
 }
 
-.emotion-33 {
+.emotion-30 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1464,7 +1437,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   font-weight: bold;
 }
 
-.emotion-27 {
+.emotion-24 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1475,7 +1448,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-24 {
+.emotion-21 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1507,7 +1480,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-24 > span {
+.emotion-21 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1518,20 +1491,20 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-24:not(:disabled):active {
+.emotion-21:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-24:focus {
+.emotion-21:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-24:not(:disabled):hover {
+.emotion-21:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-69 {
+.emotion-66 {
   border-collapse: separate;
   text-align: center;
   line-height: 1.5rem;
@@ -1539,34 +1512,34 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   border-spacing: 0 0.25rem;
 }
 
-.emotion-69 th {
+.emotion-66 th {
   width: 2rem;
   padding: 0.25rem 0;
 }
 
-.emotion-69 tr td:first-child {
+.emotion-66 tr td:first-child {
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
 }
 
-.emotion-69 tr td:last-child {
+.emotion-66 tr td:last-child {
   border-top-right-radius: 10%;
   border-bottom-right-radius: 10%;
 }
 
-.emotion-35 {
+.emotion-32 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
   border-radius: 50%;
 }
 
-.emotion-35:hover {
+.emotion-32:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
 
-.emotion-34 {
+.emotion-31 {
   width: 2rem;
   padding: 0.25rem 0;
   display: inline-block;
@@ -1574,7 +1547,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
   color: #AAAAB9;
 }
 
-.emotion-34:hover {
+.emotion-31:hover {
   cursor: pointer;
   background: #F0F0F5;
 }
@@ -1582,7 +1555,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
 <div>
   <div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <div
         class="emotion-3"
@@ -1592,13 +1565,13 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
         >
           <div>
             <div
-              class="emotion-18"
+              class="emotion-16"
             >
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -1620,23 +1593,20 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-7"
+                class="emotion-6"
               >
                 <strong>
                   until
                 </strong>
               </span>
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -1658,23 +1628,20 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-17"
+                class="emotion-15"
               >
                 <button
-                  class="emotion-16"
+                  class="emotion-14"
                   tabindex="-1"
                   type="button"
                 >
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-15"
+                      class="emotion-13"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -1691,25 +1658,22 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
     <div
-      class="emotion-71"
+      class="emotion-68"
       tabindex="-1"
     >
       <div
-        class="emotion-70"
+        class="emotion-67"
       >
         <div
-          class="emotion-33"
+          class="emotion-30"
         >
           <div
-            class="emotion-27"
+            class="emotion-24"
           >
             <button
-              class="emotion-24"
+              class="emotion-21"
               tabindex="-1"
               title="Previous month"
               type="button"
@@ -1717,7 +1681,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-15"
+                  class="emotion-13"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1732,7 +1696,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
             </button>
             Oct
             <button
-              class="emotion-24"
+              class="emotion-21"
               tabindex="-1"
               title="Next month"
               type="button"
@@ -1740,7 +1704,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-15"
+                  class="emotion-13"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1755,10 +1719,10 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-27"
+            class="emotion-24"
           >
             <button
-              class="emotion-24"
+              class="emotion-21"
               tabindex="-1"
               title="Previous year"
               type="button"
@@ -1766,7 +1730,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-15"
+                  class="emotion-13"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1781,7 +1745,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
             </button>
             2018
             <button
-              class="emotion-24"
+              class="emotion-21"
               tabindex="-1"
               title="Next year"
               type="button"
@@ -1789,7 +1753,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               <span>
                 <svg
                   aria-hidden="true"
-                  class="emotion-15"
+                  class="emotion-13"
                   height="1em"
                   role="img"
                   viewBox="0 0 24 24"
@@ -1805,7 +1769,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
           </div>
         </div>
         <table
-          class="emotion-69"
+          class="emotion-66"
         >
           <thead>
             <tr>
@@ -1839,7 +1803,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-34"
+                  class="emotion-31"
                   role="button"
                 >
                   30
@@ -1850,7 +1814,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   01
@@ -1861,7 +1825,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   02
@@ -1872,7 +1836,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   03
@@ -1883,7 +1847,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   04
@@ -1894,7 +1858,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   05
@@ -1905,7 +1869,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   06
@@ -1918,7 +1882,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   07
@@ -1929,7 +1893,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   08
@@ -1940,7 +1904,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   09
@@ -1951,7 +1915,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   10
@@ -1962,7 +1926,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   11
@@ -1973,7 +1937,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   12
@@ -1984,7 +1948,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   13
@@ -1997,7 +1961,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   14
@@ -2008,7 +1972,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   15
@@ -2019,7 +1983,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   16
@@ -2030,7 +1994,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   17
@@ -2041,7 +2005,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   18
@@ -2052,7 +2016,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   19
@@ -2063,7 +2027,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   20
@@ -2076,7 +2040,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   21
@@ -2087,7 +2051,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   22
@@ -2098,7 +2062,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   23
@@ -2109,7 +2073,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   24
@@ -2120,7 +2084,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   25
@@ -2131,7 +2095,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   26
@@ -2142,7 +2106,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   27
@@ -2155,7 +2119,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   28
@@ -2166,7 +2130,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   29
@@ -2177,7 +2141,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   30
@@ -2188,7 +2152,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-35"
+                  class="emotion-32"
                   role="button"
                 >
                   31
@@ -2199,7 +2163,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-34"
+                  class="emotion-31"
                   role="button"
                 >
                   01
@@ -2210,7 +2174,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-34"
+                  class="emotion-31"
                   role="button"
                 >
                   02
@@ -2221,7 +2185,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
               >
                 <span
                   aria-selected="false"
-                  class="emotion-34"
+                  class="emotion-31"
                   role="button"
                 >
                   03
@@ -2237,7 +2201,7 @@ exports[`DateRangePicker render should render correctly when opened 1`] = `
 `;
 
 exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2265,7 +2229,7 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   display: none;
 }
 
-.emotion-18 {
+.emotion-16 {
   background-color: #FFFFFF;
   border: 1px solid#AAAAB9;
   border-radius: 2px;
@@ -2279,25 +2243,25 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   transition: box-shadow .2s ease;
 }
 
-.emotion-18:required {
+.emotion-16:required {
   box-shadow: none;
 }
 
-.emotion-18:not(:disabled):hover {
+.emotion-16:not(:disabled):hover {
   border-color: #8F8FA2;
 }
 
-.emotion-18:not(:disabled):active {
+.emotion-16:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-18:focus-within:not(:disabled) {
+.emotion-16:focus-within:not(:disabled) {
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
   outline: none;
 }
 
-.emotion-7 {
+.emotion-6 {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2311,13 +2275,13 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   position: relative;
 }
 
-.emotion-6 {
+.emotion-5 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
 
-.emotion-17 {
+.emotion-15 {
   background-color: #F0F0F5;
   display: -webkit-box;
   display: -webkit-flex;
@@ -2433,7 +2397,7 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   box-shadow: none !important;
 }
 
-.emotion-16 {
+.emotion-14 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -2467,7 +2431,7 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   border-radius: inherit;
 }
 
-.emotion-16 > span {
+.emotion-14 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2478,24 +2442,24 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
   display: inline-flex;
 }
 
-.emotion-16:not(:disabled):active {
+.emotion-14:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-16:not(:disabled):hover {
+.emotion-14:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-16:focus {
+.emotion-14:focus {
   box-shadow: none;
 }
 
-.emotion-15 {
+.emotion-13 {
   fill: currentColor;
   font-size: 1.5rem;
 }
@@ -2503,7 +2467,7 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
 <div>
   <div>
     <div
-      class="emotion-5"
+      class="emotion-4"
     >
       <div
         class="emotion-3"
@@ -2513,13 +2477,13 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
         >
           <div>
             <div
-              class="emotion-18"
+              class="emotion-16"
             >
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -2541,23 +2505,20 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-7"
+                class="emotion-6"
               >
                 <strong>
                   until
                 </strong>
               </span>
               <div
-                class="emotion-6"
+                class="emotion-5"
               >
                 <div
-                  class="emotion-5"
+                  class="emotion-4"
                 >
                   <div
                     class="emotion-3"
@@ -2579,23 +2540,20 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
                       </div>
                     </div>
                   </div>
-                  <div
-                    class="emotion-3"
-                  />
                 </div>
               </div>
               <span
-                class="emotion-17"
+                class="emotion-15"
               >
                 <button
-                  class="emotion-16"
+                  class="emotion-14"
                   tabindex="-1"
                   type="button"
                 >
                   <span>
                     <svg
                       aria-hidden="true"
-                      class="emotion-15"
+                      class="emotion-13"
                       height="1em"
                       role="img"
                       viewBox="0 0 24 24"
@@ -2612,9 +2570,6 @@ exports[`DateRangePicker render should render correctyly when onlyWeeks 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-3"
-      />
     </div>
   </div>
 </div>
