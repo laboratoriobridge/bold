@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`input label label should have a htmlFor prop equals to the used id 1`] = `
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -114,7 +114,7 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
     <div
       class="emotion-4"
@@ -139,15 +139,12 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
         </div>
       </div>
     </div>
-    <div
-      class="emotion-4"
-    />
   </div>
 </div>
 `;
 
 exports[`input label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -260,7 +257,7 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-6"
+    class="emotion-5"
   >
     <div
       class="emotion-4"
@@ -285,9 +282,6 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
         </div>
       </div>
     </div>
-    <div
-      class="emotion-4"
-    />
   </div>
 </div>
 `;
