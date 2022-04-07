@@ -14,8 +14,8 @@ export function Page(props: any) {
 
   const parent =
     typeof location !== 'undefined' &&
-    pages.find(page =>
-      page.children ? !!page.children.map(c => c.href).find(c => location.pathname.indexOf(c) >= 0) : false
+    pages.find((page) =>
+      page.children ? !!page.children.map((c) => c.href).find((c) => location.pathname.indexOf(c) >= 0) : false
     )
 
   return (
