@@ -169,7 +169,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-16 {
+.emotion-15 {
   z-index: 1200;
   border: 1px solid #D3D4DD;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
@@ -179,16 +179,16 @@ exports[`SelectInline should render correctly when opened 1`] = `
   top: 0;
 }
 
-.emotion-16 [role="combobox"] > div > div {
+.emotion-15 [role="combobox"] > div > div {
   margin: 0.5rem;
 }
 
-.emotion-16 ul > li:first-of-type {
+.emotion-15 ul > li:first-of-type {
   margin-top: 0.5rem;
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-16 ul {
+.emotion-15 ul {
   width: 100%;
   position: static;
   top: initial;
@@ -201,7 +201,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   border-radius: 0;
 }
 
-.emotion-15 {
+.emotion-14 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -395,10 +395,10 @@ exports[`SelectInline should render correctly when opened 1`] = `
       </span>
     </button>
     <div
-      class="emotion-16"
+      class="emotion-15"
     >
       <div
-        class="emotion-15"
+        class="emotion-14"
       >
         <div
           class="emotion-13"
@@ -476,9 +476,6 @@ exports[`SelectInline should render correctly when opened 1`] = `
             </div>
           </div>
         </div>
-        <div
-          class="emotion-13"
-        />
       </div>
     </div>
   </div>

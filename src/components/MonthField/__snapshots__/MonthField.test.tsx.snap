@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Component presentation should render correctly when closed 1`] = `
-.emotion-10 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -228,7 +228,7 @@ exports[`Component presentation should render correctly when closed 1`] = `
 <div>
   <div>
     <div
-      class="emotion-10"
+      class="emotion-9"
     >
       <div
         class="emotion-8"
@@ -292,16 +292,13 @@ exports[`Component presentation should render correctly when closed 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-8"
-      />
     </div>
   </div>
 </div>
 `;
 
 exports[`Component presentation should render correctly when opened 1`] = `
-.emotion-10 {
+.emotion-9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -525,14 +522,14 @@ exports[`Component presentation should render correctly when opened 1`] = `
   box-shadow: none;
 }
 
-.emotion-45 {
+.emotion-44 {
   z-index: 1200;
   position: absolute;
   left: 0;
   top: 0;
 }
 
-.emotion-44 {
+.emotion-43 {
   background-color: #FFFFFF;
   display: inline-block;
   padding: 1rem;
@@ -541,7 +538,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   border-radius: 2px;
 }
 
-.emotion-43 {
+.emotion-42 {
   margin: -0.25rem -0.25rem;
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -551,13 +548,13 @@ exports[`Component presentation should render correctly when opened 1`] = `
   align-items: center;
 }
 
-.emotion-13 {
+.emotion-12 {
   text-align: center;
   margin: 0.25rem 0.25rem;
   border-radius: 0.25rem;
 }
 
-.emotion-12 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -589,7 +586,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-12 > span {
+.emotion-11 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -600,20 +597,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-12:not(:disabled):active {
+.emotion-11:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-12:focus {
+.emotion-11:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-12:not(:disabled):hover {
+.emotion-11:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-14 {
+.emotion-13 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -622,7 +619,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   font-weight: bold;
 }
 
-.emotion-19 {
+.emotion-18 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -658,7 +655,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   min-width: 70px;
 }
 
-.emotion-19 > span {
+.emotion-18 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -669,20 +666,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-19:not(:disabled):active {
+.emotion-18:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-19:focus {
+.emotion-18:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-19:not(:disabled):hover {
+.emotion-18:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-21 {
+.emotion-20 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -720,7 +717,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
   color: #FFFFFF;
 }
 
-.emotion-21 > span {
+.emotion-20 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -731,20 +728,20 @@ exports[`Component presentation should render correctly when opened 1`] = `
   display: inline-flex;
 }
 
-.emotion-21:not(:disabled):active {
+.emotion-20:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-21:focus {
+.emotion-20:focus {
   outline: none;
   box-shadow: 0 0 0 2px #0069D0;
 }
 
-.emotion-21:not(:disabled):hover {
+.emotion-20:not(:disabled):hover {
   background-color: rgba(58,58,71,0.1);
 }
 
-.emotion-21:hover {
+.emotion-20:hover {
   background: #0069D0!important;
   color: #FFFFFF;
 }
@@ -752,7 +749,7 @@ exports[`Component presentation should render correctly when opened 1`] = `
 <div>
   <div>
     <div
-      class="emotion-10"
+      class="emotion-9"
     >
       <div
         class="emotion-8"
@@ -816,25 +813,22 @@ exports[`Component presentation should render correctly when opened 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="emotion-8"
-      />
     </div>
     <div
-      class="emotion-45"
+      class="emotion-44"
       data-testid="MonthField.popup"
     >
       <div
-        class="emotion-44"
+        class="emotion-43"
       >
         <div
-          class="emotion-43"
+          class="emotion-42"
         >
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-12"
+              class="emotion-11"
               title="Previous year"
               type="button"
             >
@@ -856,19 +850,19 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <span
-              class="emotion-14"
+              class="emotion-13"
             >
               2019
             </span>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-12"
+              class="emotion-11"
               title="Next year"
               type="button"
             >
@@ -890,10 +884,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="January"
               type="button"
             >
@@ -903,10 +897,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-21"
+              class="emotion-20"
               title="February"
               type="button"
             >
@@ -916,10 +910,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="March"
               type="button"
             >
@@ -929,10 +923,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="April"
               type="button"
             >
@@ -942,10 +936,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="May"
               type="button"
             >
@@ -955,10 +949,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="June"
               type="button"
             >
@@ -968,10 +962,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="July"
               type="button"
             >
@@ -981,10 +975,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="August"
               type="button"
             >
@@ -994,10 +988,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="September"
               type="button"
             >
@@ -1007,10 +1001,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="October"
               type="button"
             >
@@ -1020,10 +1014,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="November"
               type="button"
             >
@@ -1033,10 +1027,10 @@ exports[`Component presentation should render correctly when opened 1`] = `
             </button>
           </div>
           <div
-            class="emotion-13"
+            class="emotion-12"
           >
             <button
-              class="emotion-19"
+              class="emotion-18"
               title="December"
               type="button"
             >

@@ -25,3 +25,18 @@ it('should accept "style" prop', () => {
   )
   expect(container).toMatchSnapshot()
 })
+
+it('should render wrappers only for valid children', () => {
+  const { container } = render(
+    <VFlow>
+      {null}
+      {undefined}
+      <span>testing vflow</span>
+      {true}
+      {false}
+      <span>testing vflow</span>
+    </VFlow>
+  )
+  expect(container.querySelectorAll('div')[0].childNodes.length).toEqual(2)
+  expect(container).toMatchSnapshot()
+})

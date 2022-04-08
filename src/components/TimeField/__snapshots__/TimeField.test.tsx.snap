@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render should render correcly 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,7 +107,7 @@ exports[`render should render correcly 1`] = `
 
 <div>
   <div
-    class="emotion-5"
+    class="emotion-4"
   >
     <div
       class="emotion-3"
@@ -128,9 +128,6 @@ exports[`render should render correcly 1`] = `
         </div>
       </div>
     </div>
-    <div
-      class="emotion-3"
-    />
   </div>
 </div>
 `;
