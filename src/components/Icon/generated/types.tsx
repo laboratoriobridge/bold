@@ -20,8 +20,8 @@ export type Icons =
   | 'arrowUp'
   | 'balanceFilled'
   | 'balanceOutline'
-  | 'bandaidFilled'
-  | 'bandaidOutline'
+  | 'bandageFilled'
+  | 'bandageOutline'
   | 'banFilled'
   | 'banOutline'
   | 'batteryFull'
@@ -101,8 +101,8 @@ export type Icons =
   | 'fileEmptyOutline'
   | 'fileVisualizationFilled'
   | 'fileVisualizationOutline'
-  | 'fileWithItensFilled'
-  | 'fileWithItensOutline'
+  | 'fileWithItemsFilled'
+  | 'fileWithItemsOutline'
   | 'filterFilled'
   | 'filterOutline'
   | 'folderFilled'
@@ -273,8 +273,8 @@ export const IconMap: {
   arrowUp: Components.ArrowUp,
   balanceFilled: Components.BalanceFilled,
   balanceOutline: Components.BalanceOutline,
-  bandaidFilled: Components.BandaidFilled,
-  bandaidOutline: Components.BandaidOutline,
+  bandageFilled: Components.BandageFilled,
+  bandageOutline: Components.BandageOutline,
   banFilled: Components.BanFilled,
   banOutline: Components.BanOutline,
   batteryFull: Components.BatteryFull,
@@ -354,8 +354,8 @@ export const IconMap: {
   fileEmptyOutline: Components.FileEmptyOutline,
   fileVisualizationFilled: Components.FileVisualizationFilled,
   fileVisualizationOutline: Components.FileVisualizationOutline,
-  fileWithItensFilled: Components.FileWithItensFilled,
-  fileWithItensOutline: Components.FileWithItensOutline,
+  fileWithItemsFilled: Components.FileWithItemsFilled,
+  fileWithItemsOutline: Components.FileWithItemsOutline,
   filterFilled: Components.FilterFilled,
   filterOutline: Components.FilterOutline,
   folderFilled: Components.FolderFilled,
