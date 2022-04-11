@@ -15,12 +15,8 @@
 
   "resources-title": "Resources",
   "resources-description": "Here you can download some of the design resources and tools we consider will help you to build products experiences.",
-  "resources-sketch-description": "Sketch symbols, visual styles and patterns.",
-  "resources-sketch-download": "Download Sketch file",
   "resources-figma-description": "Figma symbols, visual styles and patterns.",
   "resources-figma-download": "Access Figma file",
-  "resources-sketchdata-description": "With Sketch’s Data feature you can quickly add real text data to your designs and update them, in an instant. We’re sharing the text files we use on our prototypes (in PT-BR). They include dates, addresses, female names, male names, social security number (CPF), emails, gender, phone numbers, among others.",
-  "resources-sketchdata-download": "Download Sketch's Data Suplies",
 
   "menu-getting-started": "Getting Started",
   "menu-about": "About",
@@ -30,7 +26,6 @@
   "menu-color": "Color",
   "menu-grid": "Grid",
   "menu-iconography": "Iconography",
-  "menu-illustrations": "Illustrations",
   "menu-typography": "Typography",
   "menu-usage": "Usage",
   "menu-styles": "Styles",
