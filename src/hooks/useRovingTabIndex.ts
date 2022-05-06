@@ -76,14 +76,14 @@ export function useRovingTabIndex(options: RovingTabIndexOptions) {
     const items = getItems(rootRef.current)
 
     const handleChildFocus = (event: FocusEvent) => {
-      items.forEach(item => item.setAttribute('tabindex', '-1'))
+      items.forEach((item) => item.setAttribute('tabindex', '-1'))
 
       const target = event.currentTarget as HTMLElement
       target.setAttribute('tabindex', '0')
     }
 
-    items.forEach(item => item.addEventListener('focus', handleChildFocus))
-    return () => items.forEach(item => item.removeEventListener('focus', handleChildFocus))
+    items.forEach((item) => item.addEventListener('focus', handleChildFocus))
+    return () => items.forEach((item) => item.removeEventListener('focus', handleChildFocus))
   }, [options])
 
   // Manage keydown event on root ref:

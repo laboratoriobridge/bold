@@ -1,4 +1,4 @@
-import { Color } from 'csstype'
+import { Color } from '../theme/createTheme'
 
 export * from './blue'
 export * from './gray'

@@ -1,11 +1,11 @@
-import { FontSizeProperty } from 'csstype'
+import { Property } from 'csstype'
 import { CSSProperties } from 'react'
 
 import { merge } from '../../util'
 
 import { Pallete } from './createPallete'
 
-export type FontSize = FontSizeProperty<string> | number
+export type FontSize = Property.FontSize
 
 export type TypographyVariant = 'main' | 'secondary' | 'disabled' | 'link' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 

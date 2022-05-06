@@ -1,7 +1,6 @@
-import { Color } from 'csstype'
-
 import { merge } from '../../util'
 import { blue, ColorScale, gray, green, orange, red, yellow } from '../colors'
+import { Color } from './createTheme'
 
 export interface StatusColorMap extends ColorScale {
   main: Color
@@ -105,13 +104,13 @@ export type TextColor =
   | 'alert'
 
 export const textColorMap: { [key in TextColor]: (pallete: Pallete) => Color } = {
-  inherit: pallete => 'inherit',
-  normal: pallete => pallete.text.main,
-  primary: pallete => pallete.primary.main,
-  danger: pallete => pallete.status.danger.main,
-  success: pallete => pallete.status.success.main,
-  info: pallete => pallete.status.info.main,
-  alert: pallete => pallete.status.alert.main,
-  secondary: pallete => pallete.text.secondary,
-  disabled: pallete => pallete.text.disabled,
+  inherit: (pallete) => 'inherit',
+  normal: (pallete) => pallete.text.main,
+  primary: (pallete) => pallete.primary.main,
+  danger: (pallete) => pallete.status.danger.main,
+  success: (pallete) => pallete.status.success.main,
+  info: (pallete) => pallete.status.info.main,
+  alert: (pallete) => pallete.status.alert.main,
+  secondary: (pallete) => pallete.text.secondary,
+  disabled: (pallete) => pallete.text.disabled,
 }

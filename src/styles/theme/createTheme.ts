@@ -1,5 +1,5 @@
-import { Color } from 'csstype'
-import { keyframes } from 'emotion'
+import { Property } from 'csstype'
+import { keyframes } from '@emotion/css'
 
 import { Breakpoints, createBreakpoints } from './createBreakpoints'
 import { createPallete, Pallete, PalleteConfig, TextColor, textColorMap } from './createPallete'
@@ -8,6 +8,7 @@ import { createTypography, Typography, TypographyConfig } from './createTypograp
 import { radius, Radius } from './radius'
 import { zIndex, ZIndex } from './zIndex'
 
+export type Color = Property.Color
 export interface Theme {
   pallete: Pallete
   typography: Typography

@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core'
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import { useDrop } from 'react-dnd'
 import { useLocale, useStyles } from '../../..'
 import { InternalDraggable } from '../Draggable/InternalDraggable'
