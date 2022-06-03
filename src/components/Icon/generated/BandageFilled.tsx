@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SvgBandaidFilled = (props: React.SVGProps<SVGSVGElement>) => (
+const SvgBandageFilled = (props: React.SVGProps<SVGSVGElement>) => (
   <svg width='1em' height='1em' viewBox='0 0 24 24' {...props}>
     <path
       clipRule='evenodd'
@@ -9,4 +9,4 @@ const SvgBandaidFilled = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-export default SvgBandaidFilled
+export default SvgBandageFilled

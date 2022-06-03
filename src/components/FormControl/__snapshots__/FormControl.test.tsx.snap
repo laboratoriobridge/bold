@@ -1,16 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correctly 1`] = `
+exports[`should accept the style prop 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+.emotion-0 {
+  color: pink;
+}
+
 <div>
   <div
-    class="emotion-0"
+    class="emotion-2"
   >
-    Test
+    <div
+      class="emotion-1"
+    >
+      <div
+        class="emotion-0"
+      >
+        Test
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`should render correctly 1`] = `
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-1 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-1:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-1:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-1:empty {
+  display: none;
+}
+
+<div>
+  <div
+    class="emotion-2"
+  >
+    <div
+      class="emotion-1"
+    >
+      <div
+        class="emotion-0"
+      >
+        Test
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly 2`] = `
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-3 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-3:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-3:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
 .emotion-0 {
   color: #D01E29;
   margin-left: 0.25rem;
@@ -23,7 +137,7 @@ exports[`should render correctly 2`] = `
   line-height: 20px;
 }
 
-.emotion-2 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,26 +153,38 @@ exports[`should render correctly 2`] = `
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-6"
   >
-    <label
-      class="emotion-1"
-      for="test"
-    >
-      Label
-      <span
-        class="emotion-0"
-        title="Required field"
-      >
-        *
-      </span>
-    </label>
-    Test
     <div
-      class="emotion-2"
-      role="alert"
+      class="emotion-3"
     >
-      Error
+      <div
+        class="emotion-2"
+      >
+        <label
+          class="emotion-1"
+          for="test"
+        >
+          Label
+          <span
+            class="emotion-0"
+            title="Required field"
+          >
+            *
+          </span>
+        </label>
+        Test
+      </div>
+    </div>
+    <div
+      class="emotion-3"
+    >
+      <div
+        class="emotion-4"
+        role="alert"
+      >
+        Error
+      </div>
     </div>
   </div>
 </div>

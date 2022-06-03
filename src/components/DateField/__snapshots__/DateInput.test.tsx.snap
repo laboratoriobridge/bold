@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render correctly 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-3 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-3:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-3:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-3:empty {
+  display: none;
+}
+
 .emotion-1 {
   position: relative;
 }
@@ -79,18 +107,26 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-2"
+    class="emotion-4"
   >
     <div
-      class="emotion-1"
+      class="emotion-3"
     >
-      <input
-        autocomplete="off"
-        class="emotion-0"
-        placeholder="mm/dd/yyyy"
-        type="text"
-        value=""
-      />
+      <div
+        class="emotion-2"
+      >
+        <div
+          class="emotion-1"
+        >
+          <input
+            autocomplete="off"
+            class="emotion-0"
+            placeholder="mm/dd/yyyy"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>

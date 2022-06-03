@@ -27,7 +27,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (children) {
       e.preventDefault()
-      setIsCollapsed(collapsed => !collapsed)
+      setIsCollapsed((collapsed) => !collapsed)
     } else {
       onNavigate()
     }
@@ -62,7 +62,7 @@ export const SideNavItem = (props: SideNavItemProps) => {
 
       {children && isCollapsed && (
         <ul className={classes.sublist}>
-          {children.map(sub => (
+          {children.map((sub) => (
             <li key={sub.href}>
               <LocaleLink
                 to={sub.href}

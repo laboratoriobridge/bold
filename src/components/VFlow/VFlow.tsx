@@ -14,9 +14,7 @@ export function VFlow(props: VFlowProps) {
 
   return (
     <div className={css(classes.container, style)} {...rest}>
-      {React.Children.map(children, child => (
-        <div className={classes.childWrapper}>{child}</div>
-      ))}
+      {React.Children.map(children, (child) => child && <div className={classes.childWrapper}>{child}</div>)}
     </div>
   )
 }

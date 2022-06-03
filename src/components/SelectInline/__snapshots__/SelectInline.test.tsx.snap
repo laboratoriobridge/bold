@@ -169,7 +169,7 @@ exports[`SelectInline should render correctly when opened 1`] = `
   margin-left: 0.5rem;
 }
 
-.emotion-13 {
+.emotion-15 {
   z-index: 1200;
   border: 1px solid #D3D4DD;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
@@ -179,16 +179,16 @@ exports[`SelectInline should render correctly when opened 1`] = `
   top: 0;
 }
 
-.emotion-13 [role="combobox"] > div > div {
+.emotion-15 [role="combobox"] > div > div {
   margin: 0.5rem;
 }
 
-.emotion-13 ul > li:first-of-type {
+.emotion-15 ul > li:first-of-type {
   margin-top: 0.5rem;
   border-top: 1px solid #D3D4DD;
 }
 
-.emotion-13 ul {
+.emotion-15 ul {
   width: 100%;
   position: static;
   top: initial;
@@ -199,6 +199,34 @@ exports[`SelectInline should render correctly when opened 1`] = `
   box-shadow: none;
   border: none;
   border-radius: 0;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-13 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-13:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-13:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-13:empty {
+  display: none;
 }
 
 .emotion-4 {
@@ -367,77 +395,85 @@ exports[`SelectInline should render correctly when opened 1`] = `
       </span>
     </button>
     <div
-      class="emotion-13"
+      class="emotion-15"
     >
       <div
-        class="emotion-11"
+        class="emotion-14"
       >
         <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-labelledby="downshift-0-label"
-          aria-owns="downshift-0-menu"
-          class="emotion-11"
-          role="combobox"
+          class="emotion-13"
         >
-          <div>
-            <div
-              class="emotion-4"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="downshift-0-menu"
-                class="emotion-3"
-                id="downshift-0-input"
-                placeholder="Search for a value"
-                type="text"
-                value=""
-              />
-            </div>
-          </div>
           <div
-            aria-labelledby="downshift-0-label"
-            class="emotion-10"
-            id="downshift-0-menu"
-            role="listbox"
-            style="position: absolute; left: 0px; top: 0px; width: 0px;"
+            class="emotion-11"
           >
-            <ul
-              class="emotion-9"
+            <div
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-0-label"
+              aria-owns="downshift-0-menu"
+              class="emotion-11"
+              role="combobox"
             >
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-0"
-                role="option"
+              <div>
+                <div
+                  class="emotion-4"
+                >
+                  <input
+                    aria-autocomplete="list"
+                    aria-controls="downshift-0-menu"
+                    class="emotion-3"
+                    id="downshift-0-input"
+                    placeholder="Search for a value"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                aria-labelledby="downshift-0-label"
+                class="emotion-10"
+                id="downshift-0-menu"
+                role="listbox"
+                style="position: absolute; left: 0px; top: 0px; width: 0px;"
               >
-                Value #001
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-1"
-                role="option"
-              >
-                Value #002
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-2"
-                role="option"
-              >
-                Value #003
-              </li>
-              <li
-                aria-selected="false"
-                class="emotion-5"
-                id="downshift-0-item-3"
-                role="option"
-              >
-                Value #004
-              </li>
-            </ul>
+                <ul
+                  class="emotion-9"
+                >
+                  <li
+                    aria-selected="false"
+                    class="emotion-5"
+                    id="downshift-0-item-0"
+                    role="option"
+                  >
+                    Value #001
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="emotion-5"
+                    id="downshift-0-item-1"
+                    role="option"
+                  >
+                    Value #002
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="emotion-5"
+                    id="downshift-0-item-2"
+                    role="option"
+                  >
+                    Value #003
+                  </li>
+                  <li
+                    aria-selected="false"
+                    class="emotion-5"
+                    id="downshift-0-item-3"
+                    role="option"
+                  >
+                    Value #004
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
