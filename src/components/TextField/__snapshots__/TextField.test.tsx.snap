@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`input label label should have a htmlFor prop equals to the used id 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -86,28 +114,64 @@ exports[`input label label should have a htmlFor prop equals to the used id 1`] 
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-5"
   >
-    <label
-      class="emotion-0"
-      for="foo"
-    >
-      Foo
-    </label>
     <div
-      class="emotion-2"
+      class="emotion-4"
     >
-      <input
-        class="emotion-1"
-        id="foo"
-        type="text"
-      />
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          for="foo"
+        >
+          Foo
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            class="emotion-1"
+            id="foo"
+            type="text"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`input label should use aria-labelledby equals to an auto-assigned label id, if "id" is not provided 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -193,28 +257,64 @@ exports[`input label should use aria-labelledby equals to an auto-assigned label
 
 <div>
   <div
-    class="emotion-3"
+    class="emotion-5"
   >
-    <label
-      class="emotion-0"
-      id="label-abc"
-    >
-      test
-    </label>
     <div
-      class="emotion-2"
+      class="emotion-4"
     >
-      <input
-        aria-labelledby="label-abc"
-        class="emotion-1"
-        type="text"
-      />
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          test
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-labelledby="label-abc"
+            class="emotion-1"
+            type="text"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
 exports[`should render correctly 1`] = `
+.emotion-7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -304,7 +404,7 @@ exports[`should render correctly 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #D01E29;
 }
 
-.emotion-3 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -320,31 +420,43 @@ exports[`should render correctly 1`] = `
 
 <div>
   <div
-    class="emotion-4"
+    class="emotion-7"
   >
-    <label
-      class="emotion-0"
-      id="label-abc"
-    >
-      Label
-    </label>
     <div
-      class="emotion-2"
+      class="emotion-4"
     >
-      <input
-        aria-errormessage="error-abc"
-        aria-invalid="true"
-        aria-labelledby="label-abc"
-        class="emotion-1"
-        type="text"
-      />
+      <div
+        class="emotion-3"
+      >
+        <label
+          class="emotion-0"
+          id="label-abc"
+        >
+          Label
+        </label>
+        <div
+          class="emotion-2"
+        >
+          <input
+            aria-errormessage="error-abc"
+            aria-invalid="true"
+            aria-labelledby="label-abc"
+            class="emotion-1"
+            type="text"
+          />
+        </div>
+      </div>
     </div>
     <div
-      class="emotion-3"
-      id="error-abc"
-      role="alert"
+      class="emotion-4"
     >
-      Some error
+      <div
+        class="emotion-5"
+        id="error-abc"
+        role="alert"
+      >
+        Some error
+      </div>
     </div>
   </div>
 </div>

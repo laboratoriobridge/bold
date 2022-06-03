@@ -117,14 +117,15 @@ Modal.defaultProps = {
 const createStyles = (theme: Theme, depthLevel: number) => ({
   modal: {
     position: 'fixed',
-    left: '50%',
-    top: '50%',
-    transform: 'translate(-50%, -50%)',
+    left: '0',
+    top: '0',
     width: '100%',
+    height: '100vh',
     pointerEvents: 'none',
     zIndex: zIndexLevel[depthLevel].modalContainer,
     display: 'flex',
     justifyContent: 'center',
+    alignItems: 'center',
     padding: '2rem',
   } as React.CSSProperties,
   container: {
