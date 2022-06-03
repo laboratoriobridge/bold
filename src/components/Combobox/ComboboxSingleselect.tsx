@@ -32,7 +32,7 @@ export interface ComboboxSingleselectProps<T>
   inputId?: string
   labelId?: string
   menuId?: string
-  getItemId?(idx: number): string
+  getItemId?(index: number): string
 }
 
 export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: ComboboxSingleselectProps<T>) {

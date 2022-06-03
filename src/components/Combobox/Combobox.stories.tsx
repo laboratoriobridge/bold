@@ -151,29 +151,30 @@ export const CustomComponents = () => (
   />
 )
 
-export const MultiSelect = () => (
-  <Combobox<Fruit>
-    itemIsEqual={(a, b) => a.label === b.label}
-    value={fruits.filter(
-      (e) =>
-        optionsKnob('values', Object.fromEntries(fruits.map((e) => [e.label, e.label])), [], {
-          display: 'multi-select',
-        }) === e.label
-    )}
-    label='Fruit'
-    name='fruit'
-    items={fruits}
-    error={text('error', '')}
-    menuMinWidth={number('menuMinWidth (px)', undefined)}
-    itemToString={(item) => item?.label}
-    placeholder={text('placeholder', 'Select the values...')}
-    clearable={boolean('clearable', true)}
-    disabled={boolean('disabled', false)}
-    openOnFocus={boolean('openOnFocus', true)}
-    onChange={action('changed')}
-    onFilterChange={action('filter changed')}
-    onBlur={action('blur')}
-    onFocus={action('focus')}
-    multiple
-  />
-)
+export const MultiSelect = () => {
+  const selectedValues = optionsKnob('values', Object.fromEntries(fruits.map((e) => [e.label, e.label])), [], {
+    display: 'multi-select',
+  })
+
+  return (
+    <Combobox<Fruit>
+      itemIsEqual={(a, b) => a.label === b.label}
+      value={fruits.filter((e) => selectedValues.includes(e.label))}
+      label='Fruit'
+      name='fruit'
+      items={fruits}
+      error={text('error', '')}
+      menuMinWidth={number('menuMinWidth (px)', undefined)}
+      itemToString={(item) => item?.label}
+      placeholder={text('placeholder', 'Select the values...')}
+      clearable={boolean('clearable', true)}
+      disabled={boolean('disabled', false)}
+      openOnFocus={boolean('openOnFocus', true)}
+      onChange={action('changed')}
+      onFilterChange={action('filter changed')}
+      onBlur={action('blur')}
+      onFocus={action('focus')}
+      multiple
+    />
+  )
+}

@@ -75,15 +75,19 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     getSelectedItemProps,
     getDropdownProps,
     addSelectedItem,
+    setSelectedItems,
     removeSelectedItem,
     selectedItems = [],
     reset,
-  } = useMultipleSelection({
-    initialSelectedItems: value,
+  } = useMultipleSelection<T>({
     onSelectedItemsChange: ({ selectedItems }) => {
       onChange?.(selectedItems)
     },
   })
+
+  useEffect(() => {
+    setSelectedItems(value)
+  }, [value, setSelectedItems])
 
   const { classes, css } = useStyles(createStyles, props, !!selectedItems.length)
   const isSelected = useCallback((item: T) => selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem)), [
