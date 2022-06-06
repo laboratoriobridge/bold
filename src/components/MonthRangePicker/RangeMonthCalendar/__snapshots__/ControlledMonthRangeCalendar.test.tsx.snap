@@ -330,7 +330,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly 1`] = `
         class="emotion-2"
       >
         <button
-          class="emotion-24"
+          class="emotion-8"
           title="September"
           type="button"
         >
@@ -713,7 +713,7 @@ exports[`ControlledMonthRangeCalendar render should render correctly without rec
         class="emotion-2"
       >
         <button
-          class="emotion-24"
+          class="emotion-8"
           title="September"
           type="button"
         >

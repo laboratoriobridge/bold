@@ -36,6 +36,34 @@ exports[`rendering renders correcly closed 1`] = `
   background-color: #F0F0F5;
 }
 
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -123,29 +151,37 @@ exports[`rendering renders correcly closed 1`] = `
       role="combobox"
     >
       <div
-        class="emotion-3"
+        class="emotion-5"
       >
-        <label
-          class="emotion-0"
-          for="test-input-id"
-          id="test-label-id"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-2"
+          class="emotion-4"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="test-menu-id"
-            aria-labelledby="test-label-id"
-            autocomplete="off"
-            class="emotion-1"
-            id="test-input-id"
-            label="Fruits"
-            type="text"
-            value=""
-          />
+          <div
+            class="emotion-3"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruits
+            </label>
+            <div
+              class="emotion-2"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -160,651 +196,6 @@ exports[`rendering renders correcly closed 1`] = `
 `;
 
 exports[`rendering renders correcly opened 1`] = `
-.emotion-1 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  color: #24252E;
-  line-height: 1rem;
-  background: #FFFFFF;
-  padding: 0;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
-  border: 0;
-  outline: 0;
-}
-
-.emotion-1::-webkit-input-placeholder {
-  color: #696979;
-}
-
-.emotion-1::-moz-placeholder {
-  color: #696979;
-}
-
-.emotion-1:-ms-input-placeholder {
-  color: #696979;
-}
-
-.emotion-1::placeholder {
-  color: #696979;
-}
-
-.emotion-1:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-65 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  z-index: 1300;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-}
-
-.emotion-64 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.emotion-0 {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.25rem;
-  line-height: 20px;
-}
-
-.emotion-2 {
-  position: relative;
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #24252E;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  margin: 0;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-  cursor: text;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-2[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-2[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-2[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-2[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-2:required {
-  box-shadow: none;
-}
-
-.emotion-2:hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-2:active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-2:focus-within {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-8 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-8:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-8:hover {
-  background: #F0F0F5;
-}
-
-.emotion-8:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-.emotion-7 {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(min-content,max-content);
-  grid-gap: 0.5rem;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.emotion-5 {
-  background-color: #FFFFFF;
-  border: 1px solid #8F8FA2;
-  border-radius: 2px;
-  display: inline-block;
-  height: 24px;
-  position: relative;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease;
-  vertical-align: middle;
-  width: 24px;
-  min-width: 24px;
-}
-
-.emotion-4 {
-  opacity: 0;
-  margin-right: -13px;
-}
-
-.emotion-4:hover + .emotion-5 {
-  border-color: #7A7B8E;
-}
-
-.emotion-4:checked + .emotion-5 {
-  background-color: #0069D0;
-  border-color: #0069D0;
-}
-
-.emotion-4:checked + .emotion-5:after {
-  content: "";
-  border-right: 2px solid #FFFFFF;
-  border-bottom: 2px solid #FFFFFF;
-  position: absolute;
-  width: 8px;
-  height: 16px;
-  top: 0;
-  left: 7px;
-  opacity: 1;
-  -webkit-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1);
-  -webkit-transition: opacity .2s ease;
-  transition: opacity .2s ease;
-}
-
-.emotion-4:indeterminate + .emotion-5 {
-  background-color: #FFFFFF;
-  border-color: #0069D0;
-}
-
-.emotion-4:indeterminate + .emotion-5:after {
-  content: "";
-  border-bottom: 3px solid #0069D0;
-  position: absolute;
-  top: -1px;
-  left: 4px;
-  width: 14px;
-  height: 14px;
-  opacity: 1;
-  -webkit-transition: opacity .2s ease;
-  transition: opacity .2s ease;
-}
-
-.emotion-4:focus + .emotion-5 {
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-4:disabled + .emotion-5 {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.emotion-4:disabled + .emotion-5 + .css-1f2k2gl {
-  color: #AAAAB9;
-  cursor: not-allowed;
-}
-
-.emotion-6 {
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-<body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
-  <div>
-    <div
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-owns="test-menu-id"
-      role="combobox"
-    >
-      <div
-        class="emotion-3"
-      >
-        <label
-          class="emotion-0"
-          for="test-input-id"
-          id="test-label-id"
-        >
-          Fruits
-        </label>
-        <div
-          class="emotion-2"
-        >
-          <input
-            aria-autocomplete="list"
-            aria-controls="test-menu-id"
-            aria-labelledby="test-label-id"
-            autocomplete="off"
-            class="emotion-1"
-            id="test-input-id"
-            label="Fruits"
-            type="text"
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        aria-busy="false"
-        aria-labelledby="test-label-id"
-        id="test-menu-id"
-        role="listbox"
-      >
-        <div
-          class="emotion-65"
-          data-popper-escaped="true"
-          data-popper-placement="bottom-start"
-          data-popper-reference-hidden="true"
-          data-testid="menu"
-          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
-        >
-          <ul
-            class="emotion-64"
-          >
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-0"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Apple
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-1"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Avocado
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-2"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Banana
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-3"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Blueberry
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-4"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Coconut
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-5"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Grape
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-6"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Lemon
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-7"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Mango
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-8"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Melon
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-9"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Orange
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-10"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Peach
-              </div>
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-8"
-              id="test-item-id-11"
-              role="option"
-            >
-              <div
-                class="emotion-7"
-              >
-                <label
-                  class="emotion-6"
-                >
-                  <input
-                    class="emotion-4"
-                    readonly=""
-                    tabindex="-1"
-                    type="checkbox"
-                  />
-                  <span
-                    class="emotion-5"
-                  />
-                </label>
-                Pear
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`rendering renders correcly opened and loading 1`] = `
-@keyframes animation-0 {
-  from {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(359deg);
-    -ms-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
 .emotion-1 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -869,6 +260,34 @@ exports[`rendering renders correcly opened and loading 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -966,56 +385,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-.emotion-5 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-  background: #F0F0F5;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  cursor: initial;
-}
-
-.emotion-5:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-5:hover {
-  background: #F0F0F5;
-}
-
-.emotion-5:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-.emotion-4 {
-  pointer-events: none;
-  font-size: 1rem;
-  line-height: 1;
-  color: #0069D0;
-  float: right;
-}
-
-.emotion-4:after {
-  -webkit-animation: animation-0 450ms infinite linear;
-  animation: animation-0 450ms infinite linear;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  border-right-color: transparent;
-  content: "";
-  display: inline-block;
-  height: 1rem;
-  width: 1rem;
 }
 
 .emotion-9 {
@@ -1135,33 +504,41 @@ exports[`rendering renders correcly opened and loading 1`] = `
       role="combobox"
     >
       <div
-        class="emotion-3"
+        class="emotion-5"
       >
-        <label
-          class="emotion-0"
-          for="test-input-id"
-          id="test-label-id"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-2"
+          class="emotion-4"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="test-menu-id"
-            aria-labelledby="test-label-id"
-            autocomplete="off"
-            class="emotion-1"
-            id="test-input-id"
-            label="Fruits"
-            type="text"
-            value=""
-          />
+          <div
+            class="emotion-3"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruits
+            </label>
+            <div
+              class="emotion-2"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
-        aria-busy="true"
+        aria-busy="false"
         aria-labelledby="test-label-id"
         id="test-menu-id"
         role="listbox"
@@ -1177,14 +554,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
           <ul
             class="emotion-66"
           >
-            <li
-              class="emotion-5"
-            >
-              Loading...
-              <span
-                class="emotion-4"
-              />
-            </li>
             <li
               aria-selected="false"
               class="emotion-10"
@@ -1480,6 +849,745 @@ exports[`rendering renders correcly opened and loading 1`] = `
                   />
                   <span
                     class="emotion-7"
+                  />
+                </label>
+                Pear
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened and loading 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-1 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  color: #24252E;
+  line-height: 1rem;
+  background: #FFFFFF;
+  padding: 0;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border: 0;
+  outline: 0;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-69 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-68 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-2 {
+  position: relative;
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+  cursor: text;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-2[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-2[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-2:required {
+  box-shadow: none;
+}
+
+.emotion-2:hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-2:active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-2:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-12:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-12:hover {
+  background: #F0F0F5;
+}
+
+.emotion-12:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-7 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  cursor: initial;
+}
+
+.emotion-7:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-7:hover {
+  background: #F0F0F5;
+}
+
+.emotion-7:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-6 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0069D0;
+  float: right;
+}
+
+.emotion-6:after {
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+.emotion-11 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 0.5rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.emotion-9 {
+  background-color: #FFFFFF;
+  border: 1px solid #8F8FA2;
+  border-radius: 2px;
+  display: inline-block;
+  height: 24px;
+  position: relative;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  vertical-align: middle;
+  width: 24px;
+  min-width: 24px;
+}
+
+.emotion-8 {
+  opacity: 0;
+  margin-right: -13px;
+}
+
+.emotion-8:hover + .emotion-9 {
+  border-color: #7A7B8E;
+}
+
+.emotion-8:checked + .emotion-9 {
+  background-color: #0069D0;
+  border-color: #0069D0;
+}
+
+.emotion-8:checked + .emotion-9:after {
+  content: "";
+  border-right: 2px solid #FFFFFF;
+  border-bottom: 2px solid #FFFFFF;
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  top: 0;
+  left: 7px;
+  opacity: 1;
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-8:indeterminate + .emotion-9 {
+  background-color: #FFFFFF;
+  border-color: #0069D0;
+}
+
+.emotion-8:indeterminate + .emotion-9:after {
+  content: "";
+  border-bottom: 3px solid #0069D0;
+  position: absolute;
+  top: -1px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  opacity: 1;
+  -webkit-transition: opacity .2s ease;
+  transition: opacity .2s ease;
+}
+
+.emotion-8:focus + .emotion-9 {
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-8:disabled + .emotion-9 {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.emotion-8:disabled + .emotion-9 + .css-1f2k2gl {
+  color: #AAAAB9;
+  cursor: not-allowed;
+}
+
+.emotion-10 {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="test-menu-id"
+      role="combobox"
+    >
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-4"
+        >
+          <div
+            class="emotion-3"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruits
+            </label>
+            <div
+              class="emotion-2"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-busy="true"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
+        role="listbox"
+      >
+        <div
+          class="emotion-69"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-68"
+          >
+            <li
+              class="emotion-7"
+            >
+              Loading...
+              <span
+                class="emotion-6"
+              />
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-0"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Apple
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-1"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Avocado
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-2"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Banana
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-3"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Blueberry
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-4"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Coconut
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-5"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Grape
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-6"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Lemon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-7"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Mango
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-8"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Melon
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-9"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Orange
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-10"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
+                  />
+                </label>
+                Peach
+              </div>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-11"
+              role="option"
+            >
+              <div
+                class="emotion-11"
+              >
+                <label
+                  class="emotion-10"
+                >
+                  <input
+                    class="emotion-8"
+                    readonly=""
+                    tabindex="-1"
+                    type="checkbox"
+                  />
+                  <span
+                    class="emotion-9"
                   />
                 </label>
                 Pear
@@ -1529,7 +1637,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-6 {
+.emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1545,7 +1653,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   max-height: 20rem;
 }
 
-.emotion-5 {
+.emotion-7 {
   z-index: auto;
   border: 0;
   border-radius: 0;
@@ -1558,6 +1666,34 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -1631,7 +1767,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-4 {
+.emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1643,15 +1779,15 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   transition: .1s ease;
 }
 
-.emotion-4:last-of-type {
+.emotion-6:last-of-type {
   border-bottom: none;
 }
 
-.emotion-4:hover {
+.emotion-6:hover {
   background: #F0F0F5;
 }
 
-.emotion-4:focus {
+.emotion-6:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
@@ -1673,29 +1809,37 @@ exports[`rendering renders correcly opened with add-item 1`] = `
       role="combobox"
     >
       <div
-        class="emotion-3"
+        class="emotion-5"
       >
-        <label
-          class="emotion-0"
-          for="test-input-id"
-          id="test-label-id"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-2"
+          class="emotion-4"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="test-menu-id"
-            aria-labelledby="test-label-id"
-            autocomplete="off"
-            class="emotion-1"
-            id="test-input-id"
-            label="Fruits"
-            type="text"
-            value=""
-          />
+          <div
+            class="emotion-3"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruits
+            </label>
+            <div
+              class="emotion-2"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -1705,7 +1849,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
         role="listbox"
       >
         <div
-          class="emotion-6"
+          class="emotion-8"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -1713,10 +1857,10 @@ exports[`rendering renders correcly opened with add-item 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-5"
+            class="emotion-7"
           >
             <li
-              class="emotion-4"
+              class="emotion-6"
             >
               Select an item or type a new value
             </li>
@@ -1764,7 +1908,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   background-color: #F0F0F5;
 }
 
-.emotion-32 {
+.emotion-34 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1780,7 +1924,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-31 {
+.emotion-33 {
   z-index: auto;
   border: 0;
   border-radius: 0;
@@ -1793,6 +1937,34 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -1866,7 +2038,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-5 {
+.emotion-7 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1878,21 +2050,21 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-5:last-of-type {
+.emotion-7:last-of-type {
   border-bottom: none;
 }
 
-.emotion-5:hover {
+.emotion-7:hover {
   background: #F0F0F5;
 }
 
-.emotion-5:focus {
+.emotion-7:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-30 {
+.emotion-32 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1907,14 +2079,14 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   justify-content: space-between;
 }
 
-.emotion-28 {
+.emotion-30 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
   color: #24252E;
 }
 
-.emotion-29 {
+.emotion-31 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1949,7 +2121,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-29 > span {
+.emotion-31 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1960,24 +2132,24 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-29:not(:disabled):active {
+.emotion-31:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-29:focus {
+.emotion-31:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-29:not(:disabled):hover {
+.emotion-31:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-29:not(:disabled):hover {
+.emotion-31:not(:disabled):hover {
   background-color: #0051A2;
 }
 
-.emotion-4 {
+.emotion-6 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -2001,30 +2173,38 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       role="combobox"
     >
       <div
-        class="emotion-3"
+        class="emotion-5"
       >
-        <label
-          class="emotion-0"
-          for="test-input-id"
-          id="test-label-id"
-        >
-          Fruit
-        </label>
         <div
-          class="emotion-2"
+          class="emotion-4"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="test-menu-id"
-            aria-labelledby="test-label-id"
-            autocomplete="off"
-            class="emotion-1"
-            id="test-input-id"
-            label="Fruit"
-            name="fruit"
-            type="text"
-            value=""
-          />
+          <div
+            class="emotion-3"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruit
+            </label>
+            <div
+              class="emotion-2"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruit"
+                name="fruit"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div
@@ -2034,7 +2214,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
         role="listbox"
       >
         <div
-          class="emotion-32"
+          class="emotion-34"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -2042,7 +2222,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-31"
+            class="emotion-33"
           >
             <div
               style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
@@ -2051,12 +2231,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </div>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-0"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Apple
@@ -2064,12 +2244,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-1"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Avocado
@@ -2077,12 +2257,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-2"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Banana
@@ -2090,12 +2270,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-3"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Blueberry
@@ -2103,12 +2283,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-4"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Coconut
@@ -2116,12 +2296,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-5"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Grape
@@ -2129,12 +2309,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-6"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Lemon
@@ -2142,12 +2322,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-7"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Mango
@@ -2155,12 +2335,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-8"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Melon
@@ -2168,12 +2348,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-9"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Orange
@@ -2181,12 +2361,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-10"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Peach
@@ -2194,12 +2374,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-5"
+              class="emotion-7"
               id="test-item-id-11"
               role="option"
             >
               <span
-                class="emotion-4"
+                class="emotion-6"
               >
                 Custom 
                 Pear
@@ -2209,15 +2389,15 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
               <div
-                class="emotion-30"
+                class="emotion-32"
               >
                 <span
-                  class="emotion-28"
+                  class="emotion-30"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
                 </span>
                 <button
-                  class="emotion-29"
+                  class="emotion-31"
                   data-testid="action-btn"
                   type="button"
                 >
