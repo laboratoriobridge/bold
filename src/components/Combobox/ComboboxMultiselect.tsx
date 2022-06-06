@@ -24,7 +24,7 @@ export interface ComboboxMultiselectProps<T>
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
   const {
-    value = [],
+    value,
     items,
     disabled,
     clearable,
@@ -86,7 +86,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   })
 
   useEffect(() => {
-    setSelectedItems(value)
+    setSelectedItems(value ?? [])
   }, [value, setSelectedItems])
 
   const { classes, css } = useStyles(createStyles, props, !!selectedItems.length)
