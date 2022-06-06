@@ -374,14 +374,14 @@ it.each`
 `('should trigger onChange (async: $async)', async ({ async }) => {
   let baseElement: RenderResult['baseElement']
 
-  let selection = null
+  let selection = []
 
   await act(async () => {
     const result = render(<ComboboxTest onChange={(nValue) => (selection = nValue)} async={async} />)
     baseElement = result.baseElement
   })
 
-  expect(selection).toBeNull()
+  expect(selection).toStrictEqual([])
 
   const input = baseElement.querySelector('input')
   //Opens menu
