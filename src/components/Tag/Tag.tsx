@@ -41,6 +41,7 @@ const createStyles = (theme: Theme) => ({
     borderRadius: theme.radius.tag,
     whiteSpace: 'nowrap',
     lineHeight: '1rem',
+    height: '1.5rem',
     fontSize: theme.typography.sizes.text,
   } as CSSProperties,
   icon: {
