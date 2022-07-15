@@ -10,16 +10,17 @@ export interface TagProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 's
   type?: TagType
   style?: ExternalStyles
   icon?: Icons
+  height?: String
   removable?: boolean
   onRemove?(): void
 }
 
 export function Tag(props: TagProps) {
-  const { type, style, children, icon, removable, onRemove, ...rest } = props
+  const { type, style, children, icon, height, removable, onRemove, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (
-    <span className={css(classes.tag, classes[type], style)} {...rest}>
+    <span className={css(classes.tag, classes[type], style, `height: ${height}`)} {...rest}>
       {icon && <Icon icon={icon} style={classes.icon} />}
       {children}
       {removable && <Icon icon='timesDefault' style={classes.removeIcon} onClick={onRemove} />}
@@ -28,6 +29,7 @@ export function Tag(props: TagProps) {
 }
 
 Tag.defaultProps = {
+  height: '1.5rem',
   type: 'normal',
   onRemove: () => null,
 } as Partial<TagProps>
@@ -41,7 +43,6 @@ const createStyles = (theme: Theme) => ({
     borderRadius: theme.radius.tag,
     whiteSpace: 'nowrap',
     lineHeight: '1rem',
-    height: '1.5rem',
     fontSize: theme.typography.sizes.text,
   } as CSSProperties,
   icon: {

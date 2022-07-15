@@ -17,7 +17,7 @@ it('should accept the style prop', () => {
 
 it('should accept HTML span element properties', () => {
   const { container } = render(<Tag id='test'>Normal</Tag>)
-  expect(container.querySelector('span').getAttribute('id')).toEqual('test')
+  expect(container.querySelector('span')?.getAttribute('id')).toEqual('test')
 })
 
 it('should accept "icon" prop', () => {
