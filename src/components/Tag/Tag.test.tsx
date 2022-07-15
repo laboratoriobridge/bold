@@ -25,6 +25,11 @@ it('should accept "icon" prop', () => {
   expect(container).toMatchSnapshot()
 })
 
+it('should accept "height" prop and render with custom height', () => {
+  const { container } = render(<Tag height={'2.0rem'}>Custom height</Tag>)
+  expect(container).toMatchSnapshot()
+})
+
 it('should accept "removable" prop and render remove icon', () => {
   const { container } = render(<Tag removable>Removable</Tag>)
   expect(container).toMatchSnapshot()
