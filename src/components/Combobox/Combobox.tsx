@@ -1,4 +1,5 @@
 import React from 'react'
+import { ComboboxInline, ComboboxInlineProps } from './ComboboxInline'
 import { ComboboxMultiselect, ComboboxMultiselectProps } from './ComboboxMultiselect'
 import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
 
@@ -8,11 +9,13 @@ export interface DefaultComboboxItemType {
 }
 
 export type ComboboxProps<T> =
-  | (ComboboxMultiselectProps<T> & { readonly multiple: true })
-  | (ComboboxSingleselectProps<T> & { readonly multiple: false })
+  | (ComboboxInlineProps<T> & { readonly multiple: false; readonly inline: true })
+  | (ComboboxMultiselectProps<T> & { readonly multiple: true; readonly inline: false })
+  | (ComboboxSingleselectProps<T> & { readonly multiple: false; readonly inline: false })
 
 export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
-  if (props.multiple === true) return <ComboboxMultiselect {...props} />
+  if (props.inline === true) return <ComboboxInline {...props} />
+  else if (props.multiple === true) return <ComboboxMultiselect {...props} />
   else return <ComboboxSingleselect {...props} />
 }
 
@@ -21,4 +24,5 @@ Combobox.defaultProps = {
   loading: false,
   debounceMilliseconds: 350,
   multiple: false,
+  inline: false,
 } as Partial<ComboboxProps<any>>
