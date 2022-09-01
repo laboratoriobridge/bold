@@ -1,5 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`should accept "height" prop and render with custom height 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-weight: bold;
+  border-radius: 12px;
+  white-space: nowrap;
+  line-height: 1rem;
+  font-size: 0.8125rem;
+  height: 2.0rem;
+  background: #D3D4DD;
+}
+
+<div>
+  <span
+    class="emotion-0"
+  >
+    Custom height
+  </span>
+</div>
+`;
+
 exports[`should accept "icon" prop 1`] = `
 .emotion-1 {
   display: -webkit-inline-box;
@@ -16,6 +45,7 @@ exports[`should accept "icon" prop 1`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #D3D4DD;
 }
 
@@ -63,6 +93,7 @@ exports[`should accept "removable" prop and render remove icon 1`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #D3D4DD;
 }
 
@@ -116,6 +147,7 @@ exports[`should accept the style prop 1`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #D3D4DD;
   color: green;
 }
@@ -145,6 +177,7 @@ exports[`should render correctly 1`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #D3D4DD;
 }
 
@@ -173,6 +206,7 @@ exports[`should render correctly 2`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #AD5000;
   color: #FFFFFF;
 }
@@ -202,6 +236,7 @@ exports[`should render correctly 3`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #D01E29;
   color: #FFFFFF;
 }
@@ -231,6 +266,7 @@ exports[`should render correctly 4`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #0069D0;
   color: #FFFFFF;
 }
@@ -260,6 +296,7 @@ exports[`should render correctly 5`] = `
   white-space: nowrap;
   line-height: 1rem;
   font-size: 0.8125rem;
+  height: 1.5rem;
   background: #217B00;
   color: #FFFFFF;
 }
