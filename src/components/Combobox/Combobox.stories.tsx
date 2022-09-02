@@ -178,3 +178,24 @@ export const MultiSelect = () => {
     />
   )
 }
+
+export const Inline = () => (
+  <Combobox<Fruit>
+    inline
+    defaultButtonText={text('defaultButtonText', 'Fruit')}
+    value={fruits.find((e) => e.label === select('value', ['', ...fruits.map((e) => e.label)], ''))}
+    name='fruit'
+    items={fruits}
+    error={text('error', '')}
+    menuMinWidth={number('menuMinWidth (px)', undefined)}
+    itemToString={(item) => item?.label}
+    searchInputPlaceholder={text('searchInputPlaceholder', 'Search...')}
+    disabled={boolean('disabled', false)}
+    openOnFocus={boolean('openOnFocus', true)}
+    loading={boolean('loading', false)}
+    onChange={action('changed')}
+    onFilterChange={action('filter changed')}
+    onBlur={action('blur')}
+    onFocus={action('focus')}
+  />
+)
