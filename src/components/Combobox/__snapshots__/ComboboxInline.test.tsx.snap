@@ -1,0 +1,508 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ComboboxInline should render correctly when closed 1`] = `
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #24252E;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+<div>
+  <button
+    class="emotion-2"
+    type="button"
+  >
+    <span>
+      <span
+        class="emotion-0"
+      >
+        Value #001
+      </span>
+      <svg
+        aria-hidden="true"
+        class="emotion-1"
+        height="1em"
+        role="img"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          clip-rule="evenodd"
+          d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`ComboboxInline should render correctly when opened 1`] = `
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #24252E;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-12 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-11 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-8 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-8:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-8:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-8:empty {
+  display: none;
+}
+
+.emotion-6 {
+  position: relative;
+}
+
+.emotion-6 input {
+  padding-left: 2.5rem;
+}
+
+.emotion-5 {
+  position: absolute;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+.emotion-3 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-3[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-3[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-3[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-3[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-3:required {
+  box-shadow: none;
+}
+
+.emotion-3::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-3::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-3:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-3::placeholder {
+  color: #696979;
+}
+
+.emotion-3:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-3:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-3:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-3:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-4 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  border-radius: inherit;
+}
+
+.emotion-4:focus {
+  box-shadow: none;
+}
+
+.emotion-10 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-10:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-10:hover {
+  background: #F0F0F5;
+}
+
+.emotion-10:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-13 {
+  z-index: 1200;
+  border: 1px solid #D3D4DD;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  background-color: #FFFFFF;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  position: absolute;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+}
+
+.emotion-13 [role=listbox] {
+  width: calc(100% + 1rem);
+  margin-left: -0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion-13 [role=listbox] > div {
+  border-width: 1px 0 0 0;
+  box-shadow: none;
+}
+
+<body>
+  <div>
+    <button
+      class="emotion-2"
+      type="button"
+    >
+      <span>
+        <span
+          class="emotion-0"
+        >
+          Value #001
+        </span>
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          height="1em"
+          role="img"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+          />
+        </svg>
+      </span>
+    </button>
+    <div
+      class="emotion-13"
+      data-popper-escaped="true"
+      data-popper-placement="bottom-start"
+      data-popper-reference-hidden="true"
+    >
+      <div
+        aria-expanded="true"
+        aria-haspopup="listbox"
+        aria-owns="downshift-0-menu"
+        role="combobox"
+      >
+        <div
+          class="emotion-9"
+        >
+          <div
+            class="emotion-8"
+          >
+            <div
+              class="emotion-7"
+            >
+              <div
+                class="emotion-6"
+              >
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="downshift-0-menu"
+                  aria-labelledby="downshift-0-label"
+                  autocomplete="off"
+                  class="emotion-3"
+                  id="downshift-0-input"
+                  placeholder="Search for a value"
+                  type="text"
+                  value=""
+                />
+                <span
+                  class="emotion-5"
+                >
+                  <svg
+                    aria-hidden="true"
+                    aria-label="Hide options"
+                    class="emotion-4"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          aria-busy="false"
+          aria-labelledby="downshift-0-label"
+          id="downshift-0-menu"
+          role="listbox"
+        >
+          <div
+            class="emotion-12"
+            data-testid="menu"
+          >
+            <ul
+              class="emotion-11"
+            >
+              <li
+                class="emotion-10"
+              >
+                No results were found
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

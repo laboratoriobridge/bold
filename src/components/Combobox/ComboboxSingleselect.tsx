@@ -149,7 +149,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     ...components,
   }
   return (
-    <div {...downshiftComboboxProps}>
+    <div {...downshiftComboboxProps} aria-expanded={(!!isOpen).toString()}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}

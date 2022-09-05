@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/react'
+import { act, fireEvent, render } from '@testing-library/react'
 import { resetIdCounter } from 'downshift'
 import React from 'react'
 
@@ -21,7 +21,7 @@ const ComboboxInlineTest = (props?: Partial<ComboboxInlineProps<DefaultItemType>
     items={items}
     itemToString={itemToString}
     defaultButtonText='ComboboxInline'
-    placeholder='Search for a value'
+    searchInputPlaceholder='Search for a value'
     openOnFocus
     loading={false}
     debounceMilliseconds={500}
@@ -36,28 +36,54 @@ describe('ComboboxInline', () => {
     const { container } = render(<ComboboxInlineTest />)
     expect(container).toMatchSnapshot()
   })
-  it('should render correctly when opened', () => {
-    const { container } = render(<ComboboxInlineTest />)
+  it('should render correctly when opened', async () => {
+    let container: HTMLElement
+    await act(async () => {
+      const result = render(<ComboboxInlineTest />)
+      container = result.container
+    })
     const button = container.querySelector('button')
-    fireEvent.click(button)
+    await act(async () => {
+      fireEvent.click(button)
+    })
     expect(document.body).toMatchSnapshot()
   })
   it('should make the popper content visible on click', async () => {
-    const { container } = render(<ComboboxInlineTest />)
+    let container: HTMLElement
+    await act(async () => {
+      const result = render(<ComboboxInlineTest />)
+      container = result.container
+    })
     const button = container.querySelector('button')
     expect(container.querySelector('ul')).toBeFalsy()
-    fireEvent.click(button)
+    await act(async () => {
+      fireEvent.click(button)
+    })
     expect(container.querySelector('ul')).toBeTruthy()
   })
 
   it('should focus the input field when opened', async () => {
-    const { container } = render(<ComboboxInlineTest />)
-    fireEvent.click(container.querySelector('button'))
+    let container: HTMLElement
+    await act(async () => {
+      const result = render(<ComboboxInlineTest />)
+      container = result.container
+    })
+    const button = container.querySelector('button')
+    await act(async () => {
+      fireEvent.click(button)
+    })
     expect(document.activeElement).toEqual(container.querySelector('input'))
   })
-  it('should contain search input box', () => {
-    const { container } = render(<ComboboxInlineTest />)
-    fireEvent.click(container.querySelector('button'))
+  it('should contain search input box', async () => {
+    let container: HTMLElement
+    await act(async () => {
+      const result = render(<ComboboxInlineTest />)
+      container = result.container
+    })
+    const button = container.querySelector('button')
+    await act(async () => {
+      fireEvent.click(button)
+    })
     expect(container.querySelector('input')).not.toBeNull()
   })
 })

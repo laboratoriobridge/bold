@@ -52,7 +52,6 @@ const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async
     debounceMilliseconds={0}
     openOnFocus
     loading={false}
-    multiple={false}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
     menuId={'test-menu-id'}
@@ -86,7 +85,6 @@ const ComboboxWithCustomComponentsTest = (
     itemToString={itemToString}
     openOnFocus
     loading={false}
-    multiple={false}
     debounceMilliseconds={0}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
