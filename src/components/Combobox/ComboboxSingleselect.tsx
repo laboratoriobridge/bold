@@ -19,9 +19,7 @@ export interface ComboboxSingleselectProps<T>
   items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
   createNewItem?(inputValue: string): T
-  popperMenu?: boolean
   openOnFocus: boolean
-  alwaysOpen?: boolean
   loading: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
@@ -47,8 +45,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     itemToString,
     menuMinWidth,
     openOnFocus,
-    alwaysOpen = false,
-    popperMenu = true,
     onClear,
     onChange,
     onFocus,
@@ -97,7 +93,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   } = useCombobox<T>({
     selectedItem: value,
     items: loadedItems,
-    isOpen: alwaysOpen || undefined,
 
     stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
@@ -116,14 +111,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     menuId,
     getItemId,
   })
-
-  //Load items if already open
-  useEffect(() => {
-    if (alwaysOpen && !itemsLoaded) {
-      loadItems(null)
-      setItemsLoaded(true)
-    }
-  }, [])
 
   const downshiftComboboxProps = getComboboxProps()
   const { getFormControlProps, getInputProps: getFormControlInputProps } = useFormControl(props)
@@ -172,11 +159,11 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
             data-testid='menu'
             className={classes.menu}
             style={{
-              ...(popperMenu ? popperStyles : {}),
+              ...popperStyles,
               width: inputRef.current?.clientWidth,
               minWidth: menuMinWidth,
             }}
-            {...(popperMenu ? popperAttributes : {})}
+            {...popperAttributes}
             ref={setMenuRef}
           >
             <ul className={classes.list}>
