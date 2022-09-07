@@ -13,14 +13,13 @@ export type ComboboxProps<T> =
   | (ComboboxMultiselectProps<T> & { readonly multiple: true; readonly inline: false })
   | (ComboboxSingleselectProps<T> & { readonly multiple: false; readonly inline: false })
 
-export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
-  if (props.inline === true) return <ComboboxInline {...props} />
-  else if (props.multiple === true) return <ComboboxMultiselect {...props} />
-  else return <ComboboxSingleselect {...props} />
+export function Combobox<T = DefaultComboboxItemType>({ inline, multiple, ...props }: ComboboxProps<T>) {
+  if (inline === true) return <ComboboxInline {...(props as ComboboxInlineProps<T>)} />
+  else if (multiple === true) return <ComboboxMultiselect {...(props as ComboboxMultiselectProps<T>)} />
+  else return <ComboboxSingleselect {...(props as ComboboxSingleselectProps<T>)} />
 }
 
 Combobox.defaultProps = {
-  openOnFocus: true,
   loading: false,
   debounceMilliseconds: 350,
   multiple: false,

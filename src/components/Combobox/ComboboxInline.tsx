@@ -32,6 +32,7 @@ export interface ComboboxInlineProps<T>
 
   defaultButtonText: string
   searchInputPlaceholder?: string
+  showSearchInput?: boolean
 }
 
 export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
@@ -46,11 +47,13 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     menuMinWidth = '12rem',
     onChange,
     onFocus,
+    onClick,
     onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     menuId,
     getItemId,
     searchInputPlaceholder,
+    showSearchInput = true,
     ...rest
   } = props
 
@@ -73,7 +76,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
 
   const toggleButtonRef = useRef<HTMLButtonElement>()
   const [searchInputRef, setSearchInputRef] = useState<HTMLInputElement>()
-  const [menuRef, setMenuRef] = useState<HTMLDivElement>()
+  const menuRef = useRef<HTMLDivElement>()
 
   const {
     selectedItem,
@@ -108,14 +111,14 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   )
 
   const { getFormControlProps } = useFormControl(props)
-  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
+  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({ onClick })
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
   const { onBlur, ...downshiftMenuProps } = getMenuProps()
 
   const {
     styles: { popper: popperStyles },
     attributes: { popper: popperAttributes },
-  } = usePopper(toggleButtonRef.current, menuRef, {
+  } = usePopper(toggleButtonRef.current, menuRef.current, {
     placement: 'bottom-start',
   })
 
@@ -167,18 +170,20 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
               minWidth: menuMinWidth,
             }}
             {...popperAttributes}
-            ref={setMenuRef}
+            ref={menuRef}
           >
             <ul className={classes.list}>
-              <div className={classes.searchInputContainer}>
-                <TextInput
-                  inputRef={setSearchInputRef}
-                  icon='zoomOutline'
-                  iconPosition='left'
-                  placeholder={searchInputPlaceholder}
-                  onChange={onSearchInputValueChange}
-                />
-              </div>
+              {showSearchInput && (
+                <div className={classes.searchInputContainer}>
+                  <TextInput
+                    inputRef={setSearchInputRef}
+                    icon='zoomOutline'
+                    iconPosition='left'
+                    placeholder={searchInputPlaceholder}
+                    onChange={onSearchInputValueChange}
+                  />
+                </div>
+              )}
               {PrependItem && <PrependItem />}
               {isLoading && <LoadingItem />}
               {!isLoading && !loadedItems?.length && <EmptyItem />}
