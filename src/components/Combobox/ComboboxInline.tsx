@@ -1,18 +1,36 @@
-import { Options as PopperOptions } from '@popperjs/core'
-import React, { useEffect, useRef, useState } from 'react'
+import { useSelect } from 'downshift'
+import matchSorter from 'match-sorter'
+import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
+import { FormControl } from '../FormControl'
+import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { Button, ButtonProps } from '../Button'
-import { FormError } from '../FormControl'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
+import { TextInput } from '../TextField'
+import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
+import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 
 export interface ComboboxInlineProps<T>
-  extends Omit<ComboboxSingleselectProps<T>, 'label' | 'alwaysOpen' | 'clearable' | 'placeholder'> {
-  buttonProps?: ButtonProps
-  popperProps?: PopperOptions
+  extends Omit<ButtonProps, 'value' | 'onChange'>,
+    Omit<UseFormControlProps, 'label'> {
+  value?: T
+  items: T[] | ((query: string) => Promise<T[]>)
+  itemToString(item: T): string
+  openOnFocus: boolean
+  loading: boolean
+  debounceMilliseconds: number
+  menuMinWidth?: number
+  filter?(items: T[], filter: string): T[]
+  onChange?: (newValue: T) => void
+  onFilterChange?: (newValue: string) => void
+  components?: Omit<Partial<ComboboxComponents<T>>, 'CreateItem'>
+
+  menuId?: string
+  getItemId?(index: number): string
+
   defaultButtonText: string
   searchInputPlaceholder?: string
 }
@@ -20,114 +38,201 @@ export interface ComboboxInlineProps<T>
 export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   const {
     value,
-    inputRef,
-    openOnFocus,
-    onFocus,
-    onChange,
-    buttonProps,
-    popperProps,
-    itemToString,
-    disabled,
     defaultButtonText,
+    items,
+    loading: externalLoading,
+    debounceMilliseconds,
+    components = {},
+    itemToString,
+    menuMinWidth = '12rem',
+    openOnFocus,
+    onChange,
+    onFocus,
+    onFilterChange,
+    filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    menuId,
+    getItemId,
     searchInputPlaceholder,
-    error,
     ...rest
   } = props
-  const { innerRef, ...buttonRest } = buttonProps || ({} as ButtonProps)
 
-  const { classes, css } = useStyles(createStyles)
+  const [itemsLoaded, setItemsLoaded] = useState(false)
+  const { classes } = useStyles(createStyles)
 
-  const [selectInputRef, setSelectInputRef] = useState<HTMLInputElement>()
-  const anchorRef = useRef<HTMLButtonElement>()
-  const [popperRef, setPopperRef] = useState<HTMLDivElement>()
+  const isAsync = typeof items === 'function'
+  const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
+    items,
+    filter,
+  ])
+  const { loading: loadingItems, items: loadedItems, loadItems } = useComboboxItemsLoader(
+    getItems,
+    debounceMilliseconds
+  )
+  const isLoading = externalLoading || (isAsync && loadingItems)
 
-  const [open, setOpen] = useState(false)
-  const [currentValue, setCurrentValue] = useState<T>()
+  // Reload items when changed
+  useEffect(() => setItemsLoaded(false), [items])
+
+  const toggleButtonRef = useRef<HTMLButtonElement>()
+  const [searchInputRef, setSearchInputRef] = useState<HTMLInputElement>()
+  const [menuRef, setMenuRef] = useState<HTMLDivElement>()
+
   const {
-    styles: { popper: popperStyle },
+    selectedItem,
+    isOpen,
+    highlightedIndex,
+    getLabelProps,
+    getMenuProps,
+    getToggleButtonProps,
+    getItemProps,
+    openMenu,
+    toggleMenu,
+    closeMenu,
+  } = useSelect<T>({
+    selectedItem: value,
+    items: loadedItems,
+
+    itemToString,
+    onSelectedItemChange: ({ selectedItem }) => {
+      closeMenu()
+      onChange?.(selectedItem)
+    },
+    onIsOpenChange: ({ isOpen }) => {
+      isOpen && !itemsLoaded && loadItems(searchInputRef?.value)
+      setItemsLoaded(true)
+    },
+
+    menuId,
+    getItemId,
+  })
+  const onSearchInputValueChange = useCallback(
+    ({ target: { value: inputValue } }: ChangeEvent<HTMLInputElement>) =>
+      composeHandlers(loadItems, onFilterChange)(inputValue),
+    [loadItems, onFilterChange]
+  )
+
+  const { getFormControlProps } = useFormControl(props)
+  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
+    onFocus: composeHandlers(onFocus, () => !selectedItem && openOnFocus && openMenu()),
+  })
+  const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
+  const downshiftMenuProps = getMenuProps()
+
+  const {
+    styles: { popper: popperStyles },
     attributes: { popper: popperAttributes },
-  } = usePopper(anchorRef.current, popperRef, { ...defaultPopperProps, ...popperProps })
+  } = usePopper(toggleButtonRef.current, menuRef, {
+    placement: 'bottom-start',
+  })
 
-  useEffect(() => {
-    if (open && selectInputRef) {
-      selectInputRef.focus()
-    }
-  }, [open, selectInputRef])
+  const formControlProps = getFormControlProps()
+  const invalid = !!formControlProps.error
 
-  const handleButtonClick = () => setOpen((state) => !state)
-  const handleChange = (newValue: T) => {
-    setCurrentValue(newValue)
-    setOpen(false)
+  const { AppendItem, EmptyItem, Item, LoadingItem, PrependItem } = {
+    ...defaultComboboxComponents,
+    ...components,
   }
-  const handleFocus = () => {
-    openOnFocus && setOpen(true)
-  }
-
-  useEffect(() => {
-    setCurrentValue(value)
-  }, [value])
-
   return (
-    <>
-      <Button
-        innerRef={composeRefs(anchorRef, innerRef)}
-        onClick={handleButtonClick}
-        onFocus={composeHandlers(handleFocus, onFocus)}
-        skin='ghost'
-        kind={error ? 'danger' : 'normal'}
-        size='small'
-        disabled={disabled}
-        {...buttonRest}
-      >
-        <Text color={error ? 'danger' : 'normal'}>{itemToString(currentValue) || defaultButtonText}</Text>
-        <Icon style={{ marginLeft: '0.5rem' }} icon={open ? 'angleUp' : 'angleDown'} />
-      </Button>
+    <div>
+      <FormControl {...formControlProps}>
+        <Button
+          innerRef={composeRefs(toggleButtonRef, downshiftToggleButtonRef)}
+          onClick={toggleMenu}
+          skin='ghost'
+          kind={invalid ? 'danger' : 'normal'}
+          size='small'
+          {...downshiftToggleButtonProps}
+          {...rest}
+        >
+          {/*By the ARIA definition, the label element is mandatory*/}
+          <Text
+            style={selectedItem != null && { display: 'none' }}
+            id={internalLabelId}
+            {...downshiftLabelProps}
+            color={invalid ? 'danger' : 'normal'}
+          >
+            {defaultButtonText}
+          </Text>
+          {selectedItem != null && <Text color={invalid ? 'danger' : 'normal'}>{itemToString(selectedItem)}</Text>}
+          <Icon style={{ marginLeft: '0.5rem' }} icon={isOpen ? 'angleUp' : 'angleDown'} />
+        </Button>
+      </FormControl>
 
-      {error && <FormError role='alert'>{error}</FormError>}
-
-      {open && (
-        <div className={css(classes.box, popperStyle as any)} {...popperAttributes} ref={setPopperRef}>
-          <ComboboxSingleselect<T>
-            placeholder={searchInputPlaceholder}
-            inputRef={composeRefs(setSelectInputRef, inputRef)}
-            itemToString={itemToString}
-            popperMenu={false}
-            onChange={composeHandlers(handleChange, onChange)}
-            icon='zoomOutline'
-            iconPosition='left'
-            onIconClick={undefined}
-            clearable={false}
-            alwaysOpen
-            openOnFocus
-            {...rest}
-          />
-        </div>
-      )}
-    </>
+      {/*By the ARIA definition, the menu element should always be in the DOM*/}
+      <div aria-busy={isLoading} {...downshiftMenuProps}>
+        {isOpen && (
+          <div
+            data-testid='menu'
+            className={classes.menu}
+            style={{
+              ...popperStyles,
+              width: toggleButtonRef.current?.clientWidth,
+              minWidth: menuMinWidth,
+            }}
+            {...popperAttributes}
+            ref={setMenuRef}
+          >
+            <ul className={classes.list}>
+              <div className={classes.searchInputContainer}>
+                <TextInput
+                  inputRef={setSearchInputRef}
+                  icon='zoomOutline'
+                  iconPosition='left'
+                  placeholder={searchInputPlaceholder}
+                  onChange={onSearchInputValueChange}
+                />
+              </div>
+              {PrependItem && <PrependItem />}
+              {isLoading && <LoadingItem />}
+              {!isLoading && !loadedItems?.length && <EmptyItem />}
+              {loadedItems.map((item, index) => (
+                <Item
+                  key={`${item}${index}`}
+                  item={item}
+                  index={index}
+                  selected={highlightedIndex === index}
+                  itemToString={itemToString}
+                  {...getItemProps({ item, index })}
+                />
+              ))}
+              {AppendItem && <AppendItem />}
+            </ul>
+          </div>
+        )}
+      </div>
+    </div>
   )
 }
 
-const defaultPopperProps: Partial<PopperOptions> = {
-  placement: 'bottom-start',
-}
-
-const createStyles = (theme: Theme) => ({
-  box: {
-    zIndex: theme.zIndex.popper,
-    border: `1px solid ${theme.pallete.divider}`,
-    boxShadow: theme.shadows.outer['40'],
-    backgroundColor: theme.pallete.surface.main,
+export const createStyles = (theme: Theme) => ({
+  searchInputContainer: {
     padding: '0.5rem',
-    paddingBottom: 0,
+    borderBottom: `1px solid ${theme.pallete.divider}`,
+  },
 
-    '& [role=listbox]': {
-      width: 'calc(100% + 1rem)',
-      marginLeft: '-0.5rem',
-      marginTop: '0.5rem',
-      '& > div': {
-        borderWidth: '1px 0 0 0',
-        boxShadow: 'none',
-      },
-    },
-  } as React.CSSProperties,
+  menu: {
+    display: 'flex',
+    flexDirection: 'column',
+    zIndex: theme.zIndex.dropdown,
+    border: `1px solid ${theme.pallete.divider}`,
+    borderRadius: theme.radius.popper,
+    backgroundColor: theme.pallete.surface.main,
+    boxShadow: theme.shadows.outer['40'],
+    maxHeight: '20rem',
+  } as CSSProperties,
+
+  list: {
+    zIndex: 'auto',
+    border: 0,
+    borderRadius: 0,
+    boxShadow: 'none',
+    maxHeight: 'auto',
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+    backgroundColor: theme.pallete.surface.main,
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    width: '100%',
+  } as CSSProperties,
 })
