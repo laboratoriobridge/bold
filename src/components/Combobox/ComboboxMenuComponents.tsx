@@ -1,4 +1,4 @@
-import React, { CSSProperties, Ref } from 'react'
+import React, { CSSProperties, forwardRef, Ref } from 'react'
 import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Spinner } from '../Spinner'
@@ -44,7 +44,7 @@ export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponent
   /**
    * Component to display selected items in the input
    */
-  SelectedItem: React.ComponentType<ComboboxMultiselectSelectedItemProps>
+  SelectedItem: React.ForwardRefExoticComponent<ComboboxMultiselectSelectedItemProps>
   /**
    * Default item component used for each element in `items` prop.
    */
@@ -101,22 +101,24 @@ export interface ComboboxMultiselectSelectedItemProps extends Omit<React.HTMLAtt
   onRemove(e: React.MouseEvent<HTMLSpanElement>): void
 }
 
-export function ComboboxMultiselectSelectedItem(props: ComboboxMultiselectSelectedItemProps) {
-  const { style, children, onRemove, disabled, ...rest } = props
-  const { classes, css } = useStyles(createStyles, props)
-  const locale = useLocale()
+export const ComboboxMultiselectSelectedItem = forwardRef(
+  (props: ComboboxMultiselectSelectedItemProps, ref: Ref<HTMLSpanElement>) => {
+    const { style, children, onRemove, disabled, ...rest } = props
+    const { classes, css } = useStyles(createStyles, props)
+    const locale = useLocale()
 
-  return (
-    <span className={css(classes.multiItemContainer, style)} {...rest}>
-      <span className={disabled ? classes.multiItemTextDisabled : classes.multiItemText}>{children}</span>
-      {!disabled && (
-        <span className={classes.multiItemButton} onClick={onRemove} title={locale.combobox.removeItem}>
-          <Times />
-        </span>
-      )}
-    </span>
-  )
-}
+    return (
+      <span ref={ref} className={css(classes.multiItemContainer, style)} {...rest}>
+        <span className={disabled ? classes.multiItemTextDisabled : classes.multiItemText}>{children}</span>
+        {!disabled && (
+          <span className={classes.multiItemButton} onClick={onRemove} title={locale.combobox.removeItem}>
+            <Times />
+          </span>
+        )}
+      </span>
+    )
+  }
+)
 
 export function ComboboxLoadingItem(props: ComboboxMenuItemProps) {
   const { style, ...rest } = props
