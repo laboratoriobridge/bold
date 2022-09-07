@@ -191,7 +191,6 @@ export const Inline = () => (
     itemToString={(item) => item?.label}
     searchInputPlaceholder={text('searchInputPlaceholder', 'Search...')}
     disabled={boolean('disabled', false)}
-    openOnFocus={boolean('openOnFocus', true)}
     loading={boolean('loading', false)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}

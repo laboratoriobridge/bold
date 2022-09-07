@@ -19,7 +19,6 @@ export interface ComboboxInlineProps<T>
   value?: T
   items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
-  openOnFocus: boolean
   loading: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
@@ -45,7 +44,6 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     components = {},
     itemToString,
     menuMinWidth = '12rem',
-    openOnFocus,
     onChange,
     onFocus,
     onFilterChange,
@@ -85,8 +83,6 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     getMenuProps,
     getToggleButtonProps,
     getItemProps,
-    openMenu,
-    toggleMenu,
     closeMenu,
   } = useSelect<T>({
     selectedItem: value,
@@ -98,8 +94,8 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
       onChange?.(selectedItem)
     },
     onIsOpenChange: ({ isOpen }) => {
-      isOpen && !itemsLoaded && loadItems(searchInputRef?.value)
-      setItemsLoaded(true)
+      isOpen && !itemsLoaded && loadItems(null)
+      setItemsLoaded(isOpen)
     },
 
     menuId,
@@ -112,11 +108,9 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   )
 
   const { getFormControlProps } = useFormControl(props)
-  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
-    onFocus: composeHandlers(onFocus, () => !selectedItem && openOnFocus && openMenu()),
-  })
+  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps()
   const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
-  const downshiftMenuProps = getMenuProps()
+  const { onBlur, ...downshiftMenuProps } = getMenuProps()
 
   const {
     styles: { popper: popperStyles },
@@ -128,6 +122,10 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
+  useEffect(() => {
+    isOpen && searchInputRef?.focus()
+  }, [isOpen, searchInputRef])
+
   const { AppendItem, EmptyItem, Item, LoadingItem, PrependItem } = {
     ...defaultComboboxComponents,
     ...components,
@@ -137,7 +135,6 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
       <FormControl {...formControlProps}>
         <Button
           innerRef={composeRefs(toggleButtonRef, downshiftToggleButtonRef)}
-          onClick={toggleMenu}
           skin='ghost'
           kind={invalid ? 'danger' : 'normal'}
           size='small'

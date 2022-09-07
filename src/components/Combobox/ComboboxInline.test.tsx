@@ -22,7 +22,6 @@ const ComboboxInlineTest = (props?: Partial<ComboboxInlineProps<DefaultItemType>
     itemToString={itemToString}
     defaultButtonText='ComboboxInline'
     searchInputPlaceholder='Search for a value'
-    openOnFocus
     loading={false}
     debounceMilliseconds={500}
     {...props}
