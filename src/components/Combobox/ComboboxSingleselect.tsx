@@ -27,7 +27,6 @@ export interface ComboboxSingleselectProps<T>
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Partial<ComboboxComponents<T>>
-  multiple: false
 
   inputId?: string
   labelId?: string
@@ -55,7 +54,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     labelId,
     menuId,
     getItemId,
-    multiple,
     ...rest
   } = props
 

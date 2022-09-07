@@ -19,7 +19,6 @@ export interface ComboboxMultiselectProps<T>
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean
   components?: Partial<ComboboxMultiselectComponents<T>>
-  multiple: true
 }
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
@@ -47,7 +46,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     labelId,
     menuId,
     getItemId,
-    multiple,
     ...rest
   } = props
 
