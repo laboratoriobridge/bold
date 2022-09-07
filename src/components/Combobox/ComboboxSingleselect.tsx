@@ -136,7 +136,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     ...components,
   }
   return (
-    <div {...downshiftComboboxProps} aria-expanded={(!!isOpen).toString()}>
+    <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
         <TextInput
           icon={isOpen ? 'angleUp' : 'angleDown'}
@@ -158,11 +158,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
           <div
             data-testid='menu'
             className={classes.menu}
-            style={{
-              ...popperStyles,
-              width: inputRef.current?.clientWidth,
-              minWidth: menuMinWidth,
-            }}
+            style={{ ...popperStyles, width: inputRef.current?.clientWidth, minWidth: menuMinWidth }}
             {...popperAttributes}
             ref={setMenuRef}
           >
