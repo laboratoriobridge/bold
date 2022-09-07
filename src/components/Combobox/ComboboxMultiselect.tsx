@@ -182,7 +182,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             className={classes.input}
             disabled={disabled}
             invalid={invalid}
-            placeholder={!selectedItems.length && placeholder}
+            placeholder={!selectedItems.length ? placeholder : null}
             {...formControlInputProps}
             {...downshiftInputProps}
             {...rest}
