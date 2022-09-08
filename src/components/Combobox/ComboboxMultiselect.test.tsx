@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
@@ -53,9 +53,10 @@ const ComboboxTest = (props: Partial<ComboboxMultiselectProps<Fruit>> & { async?
     itemIsEqual={(a, b) => a?.value === b?.value}
     openOnFocus
     loading={false}
-    multiple
     components={{
-      SelectedItem: (props) => <ComboboxMultiselectSelectedItem {...props} data-testid={`${props.children}`} />,
+      SelectedItem: forwardRef((props) => (
+        <ComboboxMultiselectSelectedItem {...props} data-testid={`${props.children}`} />
+      )),
     }}
     inputId={'test-input-id'}
     labelId={'test-label-id'}
@@ -92,15 +93,14 @@ const ComboboxWithCustomComponentsTest = (
     itemIsEqual={(a, b) => a.value === b.value}
     openOnFocus
     loading={false}
-    multiple
     inputId={'test-input-id'}
     labelId={'test-label-id'}
     menuId={'test-menu-id'}
     getItemId={(index) => `test-item-id-${index}`}
     components={{
-      SelectedItem: (props) => (
+      SelectedItem: forwardRef((props) => (
         <ComboboxMultiselectSelectedItem onRemove={props.onRemove}>Selected item</ComboboxMultiselectSelectedItem>
-      ),
+      )),
       Item: (props) => (
         <ComboboxMenuItem {...props}>
           <Text color='success'>Custom {props.itemToString(props.item)}</Text>

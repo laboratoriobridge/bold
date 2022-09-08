@@ -11,13 +11,12 @@ export type ComboboxProps<T> =
   | (ComboboxMultiselectProps<T> & { readonly multiple: true })
   | (ComboboxSingleselectProps<T> & { readonly multiple: false })
 
-export function Combobox<T = DefaultComboboxItemType>(props: ComboboxProps<T>) {
-  if (props.multiple === true) return <ComboboxMultiselect {...props} />
-  else return <ComboboxSingleselect {...props} />
+export function Combobox<T = DefaultComboboxItemType>({ multiple, ...props }: ComboboxProps<T>) {
+  if (multiple === true) return <ComboboxMultiselect {...(props as ComboboxMultiselectProps<T>)} />
+  else return <ComboboxSingleselect {...(props as ComboboxSingleselectProps<T>)} />
 }
 
 Combobox.defaultProps = {
-  openOnFocus: true,
   loading: false,
   debounceMilliseconds: 350,
   multiple: false,

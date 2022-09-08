@@ -34,7 +34,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     components = {},
     itemToString,
     menuMinWidth,
-    openOnFocus,
+    openOnFocus = true,
     onClear,
     onChange,
     onFocus,

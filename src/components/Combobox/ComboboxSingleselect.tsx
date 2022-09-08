@@ -19,7 +19,7 @@ export interface ComboboxSingleselectProps<T>
   items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
   createNewItem?(inputValue: string): T
-  openOnFocus: boolean
+  openOnFocus?: boolean
   loading: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
@@ -44,7 +44,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     components = {},
     itemToString,
     menuMinWidth,
-    openOnFocus,
+    openOnFocus = true,
     onClear,
     onChange,
     onFocus,
