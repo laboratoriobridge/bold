@@ -14,7 +14,7 @@ import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuCom
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 
 export interface ComboboxInlineProps<T>
-  extends Omit<ButtonProps, 'value' | 'onChange'>,
+  extends Omit<ButtonProps, 'value' | 'onChange' | 'placeholder'>,
     Omit<UseFormControlProps, 'label'> {
   value?: T
   items: T[] | ((query: string) => Promise<T[]>)
@@ -31,8 +31,8 @@ export interface ComboboxInlineProps<T>
   getItemId?(index: number): string
 
   defaultButtonText: string
-  searchInputPlaceholder?: string
-  showSearchInput?: boolean
+  searchBoxPlaceholder?: string
+  showSearchBox?: boolean
 }
 
 export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
@@ -48,12 +48,14 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     onChange,
     onFocus,
     onClick,
+    onBlur,
     onFilterChange,
     filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
     menuId,
     getItemId,
-    searchInputPlaceholder,
-    showSearchInput = true,
+    error,
+    searchBoxPlaceholder,
+    showSearchBox = true,
     ...rest
   } = props
 
@@ -75,7 +77,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   useEffect(() => setItemsLoaded(false), [items])
 
   const toggleButtonRef = useRef<HTMLButtonElement>()
-  const [searchInputRef, setSearchInputRef] = useState<HTMLInputElement>()
+  const [searchBoxRef, setSearchBoxRef] = useState<HTMLInputElement>()
   const menuRef = useRef<HTMLDivElement>()
 
   const {
@@ -104,16 +106,28 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     menuId,
     getItemId,
   })
-  const onSearchInputValueChange = useCallback(
+  const onSearchBoxValueChange = useCallback(
     ({ target: { value: inputValue } }: ChangeEvent<HTMLInputElement>) =>
       composeHandlers(loadItems, onFilterChange)(inputValue),
     [loadItems, onFilterChange]
   )
 
   const { getFormControlProps } = useFormControl(props)
-  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({ onClick })
-  const { id: internalLabelId, ...downshiftLabelProps } = getLabelProps()
-  const { onBlur, ...downshiftMenuProps } = getMenuProps()
+  const formControlProps = getFormControlProps()
+  const invalid = !!formControlProps.error
+  const { id: labelId, htmlFor, ...downshiftLabelProps } = getLabelProps()
+  const { onBlur: menuOnBlur, ...downshiftMenuProps } = getMenuProps({
+    tabIndex: -1,
+    'aria-invalid': invalid,
+    'aria-errormessage': formControlProps.errorId,
+  })
+  const { ref: downshiftToggleButtonRef, ...downshiftToggleButtonProps } = getToggleButtonProps({
+    onClick,
+    onFocus,
+    onBlur,
+    'aria-controls': downshiftMenuProps.id,
+    'aria-labelledby': labelId,
+  })
 
   const {
     styles: { popper: popperStyles },
@@ -122,12 +136,9 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     placement: 'bottom-start',
   })
 
-  const formControlProps = getFormControlProps()
-  const invalid = !!formControlProps.error
-
   useEffect(() => {
-    isOpen && searchInputRef?.focus()
-  }, [isOpen, searchInputRef])
+    isOpen && searchBoxRef?.focus()
+  }, [isOpen, searchBoxRef])
 
   const { AppendItem, EmptyItem, Item, LoadingItem, PrependItem } = {
     ...defaultComboboxComponents,
@@ -146,8 +157,9 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
         >
           {/*By the ARIA definition, the label element is mandatory*/}
           <Text
-            style={selectedItem != null && { display: 'none' }}
-            id={internalLabelId}
+            component='label'
+            style={selectedItem != null ? { display: 'none' } : { cursor: 'pointer' }}
+            id={labelId}
             {...downshiftLabelProps}
             color={invalid ? 'danger' : 'normal'}
           >
@@ -173,14 +185,16 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
             ref={menuRef}
           >
             <ul className={classes.list}>
-              {showSearchInput && (
-                <div className={classes.searchInputContainer}>
+              {showSearchBox && (
+                <div className={classes.searchBoxContainer}>
                   <TextInput
-                    inputRef={setSearchInputRef}
+                    type='search'
+                    role='searchbox'
+                    inputRef={setSearchBoxRef}
                     icon='zoomOutline'
                     iconPosition='left'
-                    placeholder={searchInputPlaceholder}
-                    onChange={onSearchInputValueChange}
+                    placeholder={searchBoxPlaceholder}
+                    onChange={onSearchBoxValueChange}
                   />
                 </div>
               )}
@@ -207,7 +221,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
 }
 
 export const createStyles = (theme: Theme) => ({
-  searchInputContainer: {
+  searchBoxContainer: {
     padding: '0.5rem',
     borderBottom: `1px solid ${theme.pallete.divider}`,
   },

@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ComboboxInline should render correctly when closed 1`] = `
+exports[`rendering renders correcly closed 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
 .emotion-2 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -63,6 +91,7 @@ exports[`ComboboxInline should render correctly when closed 1`] = `
   line-height: 1.5;
   color: #24252E;
   color: #24252E;
+  cursor: pointer;
 }
 
 .emotion-1 {
@@ -71,107 +100,79 @@ exports[`ComboboxInline should render correctly when closed 1`] = `
   margin-left: 0.5rem;
 }
 
-<div>
-  <button
-    class="emotion-2"
-    type="button"
-  >
-    <span>
-      <span
-        class="emotion-0"
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div>
+      <div
+        class="emotion-5"
       >
-        Value #001
-      </span>
-      <svg
-        aria-hidden="true"
-        class="emotion-1"
-        height="1em"
-        role="img"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          clip-rule="evenodd"
-          d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-        />
-      </svg>
-    </span>
-  </button>
-</div>
+        <div
+          class="emotion-4"
+        >
+          <div
+            class="emotion-3"
+          >
+            <button
+              aria-controls="test-menu-id"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-159-label"
+              class="emotion-2"
+              id="downshift-159-toggle-button"
+              type="button"
+            >
+              <span>
+                <label
+                  class="emotion-0"
+                  id="downshift-159-label"
+                >
+                  Fruits
+                </label>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-invalid="false"
+        aria-labelledby="downshift-159-label"
+        id="test-menu-id"
+        role="listbox"
+        tabindex="-1"
+      />
+    </div>
+  </div>
+</body>
 `;
 
-exports[`ComboboxInline should render correctly when opened 1`] = `
-.emotion-2 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+exports[`rendering renders correcly opened 1`] = `
+.emotion-10 {
+  padding: 0.5rem;
+  border-bottom: 1px solid #D3D4DD;
 }
 
-.emotion-2 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-2:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-2:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-2:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-0 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  color: #24252E;
-}
-
-.emotion-1 {
-  fill: currentColor;
-  font-size: 1.5rem;
-  margin-left: 0.5rem;
-}
-
-.emotion-12 {
+.emotion-24 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -187,7 +188,7 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   max-height: 20rem;
 }
 
-.emotion-11 {
+.emotion-23 {
   z-index: auto;
   border: 0;
   border-radius: 0;
@@ -202,7 +203,7 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   width: 100%;
 }
 
-.emotion-9 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -212,33 +213,104 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   flex-direction: column;
 }
 
-.emotion-8 {
+.emotion-4 {
   display: inline-block;
   margin-bottom: 0rem;
   margin-top: 0rem;
 }
 
-.emotion-8:first-of-type {
+.emotion-4:first-of-type {
   margin-top: 0;
 }
 
-.emotion-8:last-of-type {
+.emotion-4:last-of-type {
   margin-bottom: 0;
 }
 
-.emotion-8:empty {
+.emotion-4:empty {
   display: none;
 }
 
-.emotion-6 {
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #24252E;
+  cursor: pointer;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-9 {
   position: relative;
 }
 
-.emotion-6 input {
+.emotion-9 input {
   padding-left: 2.5rem;
 }
 
-.emotion-5 {
+.emotion-8 {
   position: absolute;
   background-color: transparent;
   display: -webkit-box;
@@ -260,7 +332,7 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   left: 1px;
 }
 
-.emotion-3 {
+.emotion-6 {
   background-color: #FFFFFF;
   border: solid 1px #8F8FA2;
   border-radius: 2px;
@@ -277,72 +349,72 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   transition-duration: .2s;
 }
 
-.emotion-3[type="search"]::-webkit-search-decoration {
+.emotion-6[type="search"]::-webkit-search-decoration {
   display: none;
 }
 
-.emotion-3[type="search"]::-webkit-search-cancel-button {
+.emotion-6[type="search"]::-webkit-search-cancel-button {
   display: none;
 }
 
-.emotion-3[type="search"]::-webkit-search-results-button {
+.emotion-6[type="search"]::-webkit-search-results-button {
   display: none;
 }
 
-.emotion-3[type="search"]::-webkit-search-results-decoration {
+.emotion-6[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.emotion-3:required {
+.emotion-6:required {
   box-shadow: none;
 }
 
-.emotion-3::-webkit-input-placeholder {
+.emotion-6::-webkit-input-placeholder {
   color: #696979;
 }
 
-.emotion-3::-moz-placeholder {
+.emotion-6::-moz-placeholder {
   color: #696979;
 }
 
-.emotion-3:-ms-input-placeholder {
+.emotion-6:-ms-input-placeholder {
   color: #696979;
 }
 
-.emotion-3::placeholder {
+.emotion-6::placeholder {
   color: #696979;
 }
 
-.emotion-3:disabled {
+.emotion-6:disabled {
   border-color: #D3D4DD;
   background-color: #F0F0F5;
 }
 
-.emotion-3:not(:disabled):hover {
+.emotion-6:not(:disabled):hover {
   border-color: #7A7B8E;
 }
 
-.emotion-3:not(:disabled):focus {
+.emotion-6:not(:disabled):focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-3:not(:disabled):active {
+.emotion-6:not(:disabled):active {
   border-color: #0069D0;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
 }
 
-.emotion-4 {
+.emotion-7 {
   fill: currentColor;
   font-size: 1.5rem;
   border-radius: inherit;
 }
 
-.emotion-4:focus {
+.emotion-7:focus {
   box-shadow: none;
 }
 
-.emotion-10 {
+.emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -354,117 +426,109 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
   transition: .1s ease;
 }
 
-.emotion-10:last-of-type {
+.emotion-11:last-of-type {
   border-bottom: none;
 }
 
-.emotion-10:hover {
+.emotion-11:hover {
   background: #F0F0F5;
 }
 
-.emotion-10:focus {
+.emotion-11:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-13 {
-  z-index: 1200;
-  border: 1px solid #D3D4DD;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  background-color: #FFFFFF;
-  padding: 0.5rem;
-  padding-bottom: 0;
-  position: absolute;
-  top: 0;
-  right: auto;
-  bottom: auto;
-  left: 0;
-  -webkit-transform: translate(0px,0px);
-  -ms-transform: translate(0px,0px);
-  transform: translate(0px,0px);
-}
-
-.emotion-13 [role=listbox] {
-  width: calc(100% + 1rem);
-  margin-left: -0.5rem;
-  margin-top: 0.5rem;
-}
-
-.emotion-13 [role=listbox] > div {
-  border-width: 1px 0 0 0;
-  box-shadow: none;
-}
-
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
-    <button
-      class="emotion-2"
-      type="button"
-    >
-      <span>
-        <span
-          class="emotion-0"
-        >
-          Value #001
-        </span>
-        <svg
-          aria-hidden="true"
-          class="emotion-1"
-          height="1em"
-          role="img"
-          viewBox="0 0 24 24"
-          width="1em"
-        >
-          <path
-            clip-rule="evenodd"
-            d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-          />
-        </svg>
-      </span>
-    </button>
-    <div
-      class="emotion-13"
-      data-popper-escaped="true"
-      data-popper-placement="bottom-start"
-      data-popper-reference-hidden="true"
-    >
+    <div>
       <div
-        aria-expanded="true"
-        aria-haspopup="listbox"
-        aria-owns="downshift-0-menu"
-        role="combobox"
+        class="emotion-5"
       >
         <div
-          class="emotion-9"
+          class="emotion-4"
         >
           <div
-            class="emotion-8"
+            class="emotion-3"
+          >
+            <button
+              aria-controls="test-menu-id"
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-160-label"
+              class="emotion-2"
+              id="downshift-160-toggle-button"
+              type="button"
+            >
+              <span>
+                <label
+                  class="emotion-0"
+                  id="downshift-160-label"
+                >
+                  Fruits
+                </label>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-invalid="false"
+        aria-labelledby="downshift-160-label"
+        id="test-menu-id"
+        role="listbox"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-24"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-23"
           >
             <div
-              class="emotion-7"
+              class="emotion-10"
             >
               <div
-                class="emotion-6"
+                class="emotion-9"
               >
                 <input
-                  aria-autocomplete="list"
-                  aria-controls="downshift-0-menu"
-                  aria-labelledby="downshift-0-label"
-                  autocomplete="off"
-                  class="emotion-3"
-                  id="downshift-0-input"
-                  placeholder="Search for a value"
-                  type="text"
-                  value=""
+                  class="emotion-6"
+                  role="searchbox"
+                  type="search"
                 />
                 <span
-                  class="emotion-5"
+                  class="emotion-8"
                 >
                   <svg
                     aria-hidden="true"
-                    aria-label="Hide options"
-                    class="emotion-4"
+                    class="emotion-7"
                     height="1em"
                     role="img"
                     viewBox="0 0 24 24"
@@ -478,28 +542,1316 @@ exports[`ComboboxInline should render correctly when opened 1`] = `
                 </span>
               </div>
             </div>
-          </div>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-11"
+              id="test-item-id-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
         </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened and loading 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-10 {
+  padding: 0.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-26 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-25 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #24252E;
+  cursor: pointer;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-9 {
+  position: relative;
+}
+
+.emotion-9 input {
+  padding-left: 2.5rem;
+}
+
+.emotion-8 {
+  position: absolute;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+.emotion-6 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-6[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-6:required {
+  box-shadow: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-6::placeholder {
+  color: #696979;
+}
+
+.emotion-6:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-6:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-6:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-6:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-7 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  border-radius: inherit;
+}
+
+.emotion-7:focus {
+  box-shadow: none;
+}
+
+.emotion-13 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-13:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-13:hover {
+  background: #F0F0F5;
+}
+
+.emotion-13:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  background: #F0F0F5;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  cursor: initial;
+}
+
+.emotion-12:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-12:hover {
+  background: #F0F0F5;
+}
+
+.emotion-12:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-11 {
+  pointer-events: none;
+  font-size: 1rem;
+  line-height: 1;
+  color: #0069D0;
+  float: right;
+}
+
+.emotion-11:after {
+  -webkit-animation: animation-0 450ms infinite linear;
+  animation: animation-0 450ms infinite linear;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div>
+      <div
+        class="emotion-5"
+      >
         <div
-          aria-busy="false"
-          aria-labelledby="downshift-0-label"
-          id="downshift-0-menu"
-          role="listbox"
+          class="emotion-4"
         >
           <div
-            class="emotion-12"
-            data-testid="menu"
+            class="emotion-3"
           >
-            <ul
-              class="emotion-11"
+            <button
+              aria-controls="test-menu-id"
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-172-label"
+              class="emotion-2"
+              id="downshift-172-toggle-button"
+              type="button"
             >
-              <li
-                class="emotion-10"
-              >
-                No results were found
-              </li>
-            </ul>
+              <span>
+                <label
+                  class="emotion-0"
+                  id="downshift-172-label"
+                >
+                  Button text
+                </label>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
           </div>
+        </div>
+      </div>
+      <div
+        aria-busy="true"
+        aria-invalid="false"
+        aria-labelledby="downshift-172-label"
+        id="test-menu-id"
+        role="listbox"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-26"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-25"
+          >
+            <div
+              class="emotion-10"
+            >
+              <div
+                class="emotion-9"
+              >
+                <input
+                  class="emotion-6"
+                  role="searchbox"
+                  type="search"
+                />
+                <span
+                  class="emotion-8"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-7"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <li
+              class="emotion-12"
+            >
+              Loading...
+              <span
+                class="emotion-11"
+              />
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-13"
+              id="test-item-id-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly with custom components correctly 1`] = `
+.emotion-10 {
+  padding: 0.5rem;
+  border-bottom: 1px solid #D3D4DD;
+}
+
+.emotion-39 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-38 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-4:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-4:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-4:empty {
+  display: none;
+}
+
+.emotion-2 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-2 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-2:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-2:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-2:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-35 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+}
+
+.emotion-0 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #24252E;
+  cursor: pointer;
+}
+
+.emotion-1 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.emotion-9 {
+  position: relative;
+}
+
+.emotion-9 input {
+  padding-left: 2.5rem;
+}
+
+.emotion-8 {
+  position: absolute;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  left: 1px;
+}
+
+.emotion-6 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-6[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-6[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-6:required {
+  box-shadow: none;
+}
+
+.emotion-6::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-6::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-6:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-6::placeholder {
+  color: #696979;
+}
+
+.emotion-6:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-6:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-6:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-6:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-7 {
+  fill: currentColor;
+  font-size: 1.5rem;
+  border-radius: inherit;
+}
+
+.emotion-7:focus {
+  box-shadow: none;
+}
+
+.emotion-12 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-12:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-12:hover {
+  background: #F0F0F5;
+}
+
+.emotion-12:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-37 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(min-content,max-content);
+  grid-gap: 1rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-36 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1px solid #696979;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background-color: #0069D0;
+  color: #FFFFFF;
+  border: 1px solid #0069D0;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+}
+
+.emotion-36 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-36:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-36:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-36:not(:disabled):hover {
+  background-color: #F0F0F5;
+}
+
+.emotion-36:not(:disabled):hover {
+  background-color: #0051A2;
+}
+
+.emotion-11 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  color: #217B00;
+}
+
+<body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
+  <div>
+    <div>
+      <div
+        class="emotion-5"
+      >
+        <div
+          class="emotion-4"
+        >
+          <div
+            class="emotion-3"
+          >
+            <button
+              aria-controls="downshift-184-menu"
+              aria-expanded="true"
+              aria-haspopup="listbox"
+              aria-labelledby="downshift-184-label"
+              class="emotion-2"
+              id="downshift-184-toggle-button"
+              name="fruit"
+              type="button"
+            >
+              <span>
+                <label
+                  class="emotion-0"
+                  id="downshift-184-label"
+                >
+                  Fruit
+                </label>
+                <svg
+                  aria-hidden="true"
+                  class="emotion-1"
+                  height="1em"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <path
+                    clip-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-invalid="false"
+        aria-labelledby="downshift-184-label"
+        id="downshift-184-menu"
+        role="listbox"
+        tabindex="-1"
+      >
+        <div
+          class="emotion-39"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; min-width: 12rem; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-38"
+          >
+            <div
+              class="emotion-10"
+            >
+              <div
+                class="emotion-9"
+              >
+                <input
+                  class="emotion-6"
+                  role="searchbox"
+                  type="search"
+                />
+                <span
+                  class="emotion-8"
+                >
+                  <svg
+                    aria-hidden="true"
+                    class="emotion-7"
+                    height="1em"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <path
+                      clip-rule="evenodd"
+                      d="M14.605 13.194l7 6.998a1 1 0 01-1.414 1.414h-.001l-6.997-7a7 7 0 111.412-1.412zM9 14A5 5 0 109 4a5 5 0 000 10z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            >
+              Prepend item
+            </div>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-0"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Apple
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-1"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Avocado
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-2"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Banana
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-3"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Blueberry
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-4"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Coconut
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-5"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Grape
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-6"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Lemon
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-7"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Mango
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-8"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Melon
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-9"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Orange
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-10"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Peach
+              </span>
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-12"
+              id="test-item-id-11"
+              role="option"
+            >
+              <span
+                class="emotion-11"
+              >
+                Custom 
+                Pear
+              </span>
+            </li>
+            <div
+              style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
+            >
+              <div
+                class="emotion-37"
+              >
+                <span
+                  class="emotion-35"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
+                </span>
+                <button
+                  class="emotion-36"
+                  data-testid="action-btn"
+                  type="button"
+                >
+                  <span>
+                    New item
+                  </span>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
     </div>

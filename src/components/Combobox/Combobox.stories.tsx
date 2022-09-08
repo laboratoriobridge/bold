@@ -189,9 +189,9 @@ export const Inline = () => (
     error={text('error', '')}
     menuMinWidth={number('menuMinWidth (px)', undefined)}
     itemToString={(item) => item?.label}
-    searchInputPlaceholder={text('searchInputPlaceholder', 'Search...')}
+    searchBoxPlaceholder={text('searchBoxPlaceholder', 'Search...')}
     disabled={boolean('disabled', false)}
-    showSearchInput={boolean('showSearchInput', true)}
+    showSearchBox={boolean('showSearchBox', true)}
     loading={boolean('loading', false)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}
