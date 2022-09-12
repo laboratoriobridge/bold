@@ -2,6 +2,7 @@ import { useSelect } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
+import { useMemo } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -9,9 +10,10 @@ import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { Button, ButtonProps } from '../Button'
 import { Icon } from '../Icon'
 import { Text } from '../Text'
-import { TextInput } from '../TextField'
-import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
+import { ComboboxComponents, ComboboxMenuItemProps, defaultComboboxComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
+import { SearchBox } from './SearchBox'
+import { ListBox } from './ListBox'
 
 export interface ComboboxInlineProps<T>
   extends Omit<ButtonProps, 'value' | 'onChange' | 'placeholder'>,
@@ -36,13 +38,17 @@ export interface ComboboxInlineProps<T>
 }
 
 export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
+  const defaultFilter = useCallback((items, filter) => matchSorter(items, filter, { keys: [props.itemToString] }), [
+    props.itemToString,
+  ])
+
   const {
     value,
     defaultButtonText,
     items,
     loading: externalLoading,
     debounceMilliseconds,
-    components = {},
+    components,
     itemToString,
     menuMinWidth = '12rem',
     onChange,
@@ -50,7 +56,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     onClick,
     onBlur,
     onFilterChange,
-    filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    filter = defaultFilter,
     menuId,
     getItemId,
     error,
@@ -140,10 +146,24 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     isOpen && searchBoxRef?.focus()
   }, [isOpen, searchBoxRef])
 
-  const { AppendItem, EmptyItem, Item, LoadingItem, PrependItem } = {
-    ...defaultComboboxComponents,
-    ...components,
-  }
+  const componentsInner = useMemo(
+    () => ({
+      ...defaultComboboxComponents,
+      ...(components ?? {}),
+      PrependItem: (props: ComboboxMenuItemProps) => (
+        <>
+          {showSearchBox && (
+            <div className={classes.searchBoxContainer}>
+              <SearchBox ref={setSearchBoxRef} placeholder={searchBoxPlaceholder} onChange={onSearchBoxValueChange} />
+            </div>
+          )}
+          {components?.PrependItem && <components.PrependItem {...props} />}
+        </>
+      ),
+    }),
+    [components, showSearchBox, searchBoxPlaceholder, onSearchBoxValueChange, classes.searchBoxContainer]
+  )
+
   return (
     <div>
       <FormControl {...formControlProps}>
@@ -173,7 +193,8 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
       <div aria-busy={isLoading} {...downshiftMenuProps}>
         {isOpen && (
-          <div
+          <ListBox<T>
+            ref={menuRef}
             data-testid='menu'
             className={classes.menu}
             style={{
@@ -182,38 +203,13 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
               minWidth: menuMinWidth,
             }}
             {...popperAttributes}
-            ref={menuRef}
-          >
-            <ul className={classes.list}>
-              {showSearchBox && (
-                <div className={classes.searchBoxContainer}>
-                  <TextInput
-                    type='search'
-                    role='searchbox'
-                    inputRef={setSearchBoxRef}
-                    icon='zoomOutline'
-                    iconPosition='left'
-                    placeholder={searchBoxPlaceholder}
-                    onChange={onSearchBoxValueChange}
-                  />
-                </div>
-              )}
-              {PrependItem && <PrependItem />}
-              {isLoading && <LoadingItem />}
-              {!isLoading && !loadedItems?.length && <EmptyItem />}
-              {loadedItems.map((item, index) => (
-                <Item
-                  key={`${item}${index}`}
-                  item={item}
-                  index={index}
-                  selected={highlightedIndex === index}
-                  itemToString={itemToString}
-                  {...getItemProps({ item, index })}
-                />
-              ))}
-              {AppendItem && <AppendItem />}
-            </ul>
-          </div>
+            components={componentsInner}
+            getItemProps={getItemProps}
+            highlightedIndex={highlightedIndex}
+            itemToString={itemToString}
+            items={loadedItems}
+            loading={isLoading}
+          />
         )}
       </div>
     </div>
@@ -235,20 +231,5 @@ export const createStyles = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.main,
     boxShadow: theme.shadows.outer['40'],
     maxHeight: '20rem',
-  } as CSSProperties,
-
-  list: {
-    zIndex: 'auto',
-    border: 0,
-    borderRadius: 0,
-    boxShadow: 'none',
-    maxHeight: 'auto',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-    backgroundColor: theme.pallete.surface.main,
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    width: '100%',
   } as CSSProperties,
 })

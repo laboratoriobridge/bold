@@ -142,7 +142,9 @@ exports[`rendering renders correcly closed 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    No results are available.
+  </div>
   <div>
     <div
       aria-expanded="false"
@@ -247,21 +249,6 @@ exports[`rendering renders correcly opened 1`] = `
   max-height: 20rem;
 }
 
-.emotion-66 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -359,6 +346,21 @@ exports[`rendering renders correcly opened 1`] = `
 .emotion-2:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-66 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-10 {
@@ -928,21 +930,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   max-height: 20rem;
 }
 
-.emotion-68 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1040,6 +1027,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
 .emotion-2:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-68 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-12 {
@@ -1653,21 +1655,6 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   max-height: 20rem;
 }
 
-.emotion-7 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1765,6 +1752,21 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 .emotion-2:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-7 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-6 {
@@ -1924,21 +1926,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-33 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2036,6 +2023,21 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 .emotion-2:focus-within {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-33 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-7 {

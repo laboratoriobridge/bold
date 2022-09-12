@@ -307,21 +307,6 @@ exports[`rendering renders correcly opened 1`] = `
   max-height: 20rem;
 }
 
-.emotion-21 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -523,6 +508,21 @@ exports[`rendering renders correcly opened 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-21 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-9 {
@@ -778,21 +778,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   max-height: 20rem;
 }
 
-.emotion-23 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -994,6 +979,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-23 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-11 {
@@ -1293,21 +1293,6 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   max-height: 20rem;
 }
 
-.emotion-10 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1509,6 +1494,21 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-10 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-9 {
@@ -1659,21 +1659,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-36 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1875,6 +1860,21 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-36 {
+  z-index: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-10 {

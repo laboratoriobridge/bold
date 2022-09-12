@@ -1,6 +1,6 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions, useMultipleSelection } from 'downshift'
 import matchSorter from 'match-sorter'
-import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
+import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
@@ -12,6 +12,7 @@ import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } f
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { DefaultComboboxItemType } from './Combobox'
 import { ComboboxSingleselectProps } from './ComboboxSingleselect'
+import { ListBox } from './ListBox'
 
 export interface ComboboxMultiselectProps<T>
   extends Omit<ComboboxSingleselectProps<T>, 'value' | 'onChange' | 'components' | 'multiple'> {
@@ -22,6 +23,10 @@ export interface ComboboxMultiselectProps<T>
 }
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
+  const defaultFilter = useCallback((items, filter) => matchSorter(items, filter, { keys: [props.itemToString] }), [
+    props.itemToString,
+  ])
+
   const {
     value,
     items,
@@ -31,7 +36,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
-    components = {},
+    components,
     itemToString,
     menuMinWidth,
     openOnFocus = true,
@@ -40,7 +45,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     onFocus,
     onFilterChange,
     itemIsEqual,
-    filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    filter = defaultFilter,
 
     inputId,
     labelId,
@@ -149,12 +154,20 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   const invalid = !!formControlProps.error
 
   const handleWrapperClick = () => inputRef.current.focus()
+  const handleItemClick = useCallback(
+    (item: T) => (isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)),
+    [isSelected, removeSelectedItem, addSelectedItem]
+  )
   const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
 
-  const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem, SelectedItem } = {
-    ...defaultComboboxMultiselectComponents,
-    ...components,
-  }
+  const { SelectedItem, ...componentsRest } = useMemo(
+    () => ({
+      ...defaultComboboxMultiselectComponents,
+      ...(components ?? {}),
+    }),
+    [components]
+  )
+
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
@@ -167,7 +180,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
         >
           {selectedItems.map((selectedItem, index) => (
             <SelectedItem
-              style={classes.item}
+              style={classes.selectedItem}
               key={`selected-item-${index}`}
               onRemove={() => removeSelectedItem(selectedItem)}
               disabled={disabled}
@@ -193,36 +206,22 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
       <div aria-busy={isLoading} {...downshiftMenuProps}>
         {isOpen && (
-          <div
+          <ListBox<T>
             data-testid='menu'
             className={classes.menu}
             style={{ ...popperStyles, width: wrapperRef.current?.clientWidth, minWidth: menuMinWidth }}
+            onItemClick={handleItemClick}
+            isItemSelected={isSelected}
             {...popperAttributes}
             ref={setMenuRef}
-          >
-            <ul className={classes.list}>
-              {PrependItem && <PrependItem />}
-              {isLoading && <LoadingItem />}
-              {!isLoading && createNewItem && !loadedItems?.length && <CreateItem />}
-              {!isLoading && !createNewItem && !loadedItems?.length && <EmptyItem />}
-              {loadedItems.map((item, index) => {
-                const isAlreadySelected = isSelected(item)
-                return (
-                  <Item
-                    key={`${item}${index}`}
-                    item={item}
-                    index={index}
-                    selected={isAlreadySelected}
-                    highlighted={highlightedIndex === index}
-                    itemToString={itemToString}
-                    {...getItemProps({ item, index })}
-                    onClick={() => (isAlreadySelected ? removeSelectedItem(item) : addSelectedItem(item))}
-                  />
-                )
-              })}
-              {AppendItem && <AppendItem />}
-            </ul>
-          </div>
+            createNewItem={createNewItem}
+            components={componentsRest}
+            getItemProps={getItemProps}
+            highlightedIndex={highlightedIndex}
+            itemToString={itemToString}
+            items={loadedItems}
+            loading={isLoading}
+          />
         )}
       </div>
     </div>
@@ -272,14 +271,18 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       '&:active': !disabled && parts.active,
       '&:focus-within': !disabled && parts.focus,
     } as CSSProperties,
+
     disabled: parts.disabled,
+
     invalid: {
       ...parts.invalid,
       '&:focus-within': parts.invalid[':not(:disabled):focus'],
     } as CSSProperties,
-    item: {
+
+    selectedItem: {
       marginRight: '0.25rem',
     } as CSSProperties,
+
     input: {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.sizes.text,
@@ -303,21 +306,6 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
       backgroundColor: theme.pallete.surface.main,
       boxShadow: theme.shadows.outer['40'],
       maxHeight: '20rem',
-    } as CSSProperties,
-
-    list: {
-      zIndex: 'auto',
-      border: 0,
-      borderRadius: 0,
-      boxShadow: 'none',
-      maxHeight: 'auto',
-      listStyle: 'none',
-      margin: 0,
-      padding: 0,
-      backgroundColor: theme.pallete.surface.main,
-      overflowY: 'auto',
-      overflowX: 'hidden',
-      width: '100%',
     } as CSSProperties,
   }
 }
