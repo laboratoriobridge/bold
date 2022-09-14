@@ -6,7 +6,6 @@ import Times from '../Icon/generated/TimesDefault'
 import { HFlow } from '../HFlow'
 import { Checkbox } from '../Checkbox'
 import { ComboboxProps } from './Combobox'
-import { ComboboxMultiselectProps } from './ComboboxMultiselect'
 
 export interface ComboboxComponents<T> {
   /**
@@ -48,9 +47,7 @@ export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponent
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item:
-    | React.ForwardRefExoticComponent<ComboboxMultiselectItemProps<T>>
-    | React.ForwardRefRenderFunction<ComboboxMultiselectItemProps<T>>
+  Item: React.ForwardRefExoticComponent<ComboboxItemProps<T>> | React.ForwardRefRenderFunction<ComboboxItemProps<T>>
 }
 
 export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
@@ -58,10 +55,7 @@ export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLL
 }
 
 export type ComboboxItemProps<T> = ComboboxMenuItemProps &
-  Pick<ComboboxProps<T>, 'itemToString'> & { item: T; index: number; selected?: boolean }
-
-export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
-  Pick<ComboboxMultiselectProps<T>, 'itemToString'> & {
+  Pick<ComboboxProps<T>, 'itemToString'> & {
     item: T
     index: number
     selected?: boolean
@@ -69,18 +63,18 @@ export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
   }
 
 export const ComboboxMenuItem = React.forwardRef((props: ComboboxItemProps<any>, ref: Ref<HTMLLIElement>) => {
-  const { children, item, style, selected, itemToString, index, ...rest } = props
+  const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (
-    <li ref={ref} className={css(classes.item, selected && classes.selected, style)} {...rest}>
+    <li ref={ref} className={css(classes.item, (selected || highlighted) && classes.selected, style)} {...rest}>
       {children ?? itemToString(item)}
     </li>
   )
 })
 
 export const ComboboxMultiselectMenuItem = React.forwardRef(
-  (props: ComboboxMultiselectItemProps<any>, ref: Ref<HTMLLIElement>) => {
+  (props: ComboboxItemProps<any>, ref: Ref<HTMLLIElement>) => {
     const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
     const { classes, css } = useStyles(createStyles)
 

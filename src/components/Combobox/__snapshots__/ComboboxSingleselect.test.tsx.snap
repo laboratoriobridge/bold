@@ -205,6 +205,13 @@ exports[`rendering renders correcly closed 1`] = `
 }
 
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
     <div
       aria-expanded="false"
@@ -298,20 +305,6 @@ exports[`rendering renders correcly opened 1`] = `
   background-color: #FFFFFF;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
   max-height: 20rem;
-}
-
-.emotion-21 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
 }
 
 .emotion-8 {
@@ -517,6 +510,20 @@ exports[`rendering renders correcly opened 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-21 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -544,6 +551,13 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
     <div
       aria-expanded="true"
@@ -763,20 +777,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
   max-height: 20rem;
 }
 
-.emotion-23 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -980,6 +980,20 @@ exports[`rendering renders correcly opened and loading 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-23 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .emotion-11 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -1057,6 +1071,13 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
     <div
       aria-expanded="true"
@@ -1270,20 +1291,6 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   max-height: 20rem;
 }
 
-.emotion-10 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1487,6 +1494,20 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   font-size: 1.5rem;
 }
 
+.emotion-10 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
@@ -1514,6 +1535,13 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 }
 
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
     <div
       aria-expanded="true"
@@ -1628,20 +1656,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-36 {
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
 .emotion-8 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1843,6 +1857,20 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 .emotion-2 {
   fill: currentColor;
   font-size: 1.5rem;
+}
+
+.emotion-36 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .emotion-10 {
@@ -1965,6 +1993,13 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 <body>
+  <div
+    aria-live="polite"
+    aria-relevant="additions text"
+    id="a11y-status-message"
+    role="status"
+    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
+  />
   <div>
     <div
       aria-expanded="true"

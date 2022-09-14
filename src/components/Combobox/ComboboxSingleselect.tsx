@@ -2,6 +2,7 @@ import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'do
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
+import { useMemo } from 'react'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
@@ -11,6 +12,7 @@ import { TextInput, TextInputProps } from '../TextField'
 import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { DefaultComboboxItemType } from './Combobox'
+import { ListBox } from './ListBox'
 
 export interface ComboboxSingleselectProps<T>
   extends Omit<TextInputProps, 'value' | 'onChange' | 'multiple'>,
@@ -35,13 +37,17 @@ export interface ComboboxSingleselectProps<T>
 }
 
 export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: ComboboxSingleselectProps<T>) {
+  const defaultFilter = useCallback((items, filter) => matchSorter(items, filter, { keys: [props.itemToString] }), [
+    props.itemToString,
+  ])
+
   const {
     value,
     items,
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
-    components = {},
+    components,
     itemToString,
     menuMinWidth,
     openOnFocus = true,
@@ -49,7 +55,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     onChange,
     onFocus,
     onFilterChange,
-    filter = (items, filter) => matchSorter(items, filter, { keys: [itemToString] }),
+    filter = defaultFilter,
     inputId,
     labelId,
     menuId,
@@ -131,10 +137,8 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   const formControlProps = getFormControlProps()
   const invalid = !!formControlProps.error
 
-  const { AppendItem, CreateItem, EmptyItem, Item, LoadingItem, PrependItem } = {
-    ...defaultComboboxComponents,
-    ...components,
-  }
+  const componentsInner = useMemo(() => ({ ...defaultComboboxComponents, ...(components ?? {}) }), [components])
+
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
@@ -155,31 +159,24 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
       {/*By the ARIA definition, the menu element should always be in the DOM*/}
       <div aria-busy={isLoading} {...downshiftMenuProps}>
         {isOpen && (
-          <div
+          <ListBox<T>
             data-testid='menu'
             className={classes.menu}
-            style={{ ...popperStyles, width: inputRef.current?.clientWidth, minWidth: menuMinWidth }}
+            style={{
+              ...popperStyles,
+              width: inputRef.current?.clientWidth,
+              minWidth: menuMinWidth,
+            }}
             {...popperAttributes}
             ref={setMenuRef}
-          >
-            <ul className={classes.list}>
-              {PrependItem && <PrependItem />}
-              {isLoading && <LoadingItem />}
-              {!isLoading && createNewItem && !loadedItems?.length && <CreateItem />}
-              {!isLoading && !createNewItem && !loadedItems?.length && <EmptyItem />}
-              {loadedItems.map((item, index) => (
-                <Item
-                  key={`${item}${index}`}
-                  item={item}
-                  index={index}
-                  selected={highlightedIndex === index}
-                  itemToString={itemToString}
-                  {...getItemProps({ item, index })}
-                />
-              ))}
-              {AppendItem && <AppendItem />}
-            </ul>
-          </div>
+            createNewItem={createNewItem}
+            components={componentsInner}
+            getItemProps={getItemProps}
+            highlightedIndex={highlightedIndex}
+            itemToString={itemToString}
+            items={loadedItems}
+            loading={isLoading}
+          />
         )}
       </div>
     </div>
@@ -222,19 +219,5 @@ export const createStyles = (theme: Theme) => ({
     backgroundColor: theme.pallete.surface.main,
     boxShadow: theme.shadows.outer['40'],
     maxHeight: '20rem',
-  } as CSSProperties,
-
-  list: {
-    border: 0,
-    borderRadius: 0,
-    boxShadow: 'none',
-    maxHeight: 'auto',
-    listStyle: 'none',
-    margin: 0,
-    padding: 0,
-    backgroundColor: theme.pallete.surface.main,
-    overflowY: 'auto',
-    overflowX: 'hidden',
-    width: '100%',
   } as CSSProperties,
 })
