@@ -306,7 +306,6 @@ export const createStyles = (theme: Theme, { disabled }: ComboboxMultiselectProp
     } as CSSProperties,
 
     list: {
-      zIndex: 'auto',
       border: 0,
       borderRadius: 0,
       boxShadow: 'none',

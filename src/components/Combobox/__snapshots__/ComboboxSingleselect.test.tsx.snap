@@ -205,13 +205,6 @@ exports[`rendering renders correcly closed 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="false"
@@ -308,7 +301,6 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 .emotion-21 {
-  z-index: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -552,13 +544,6 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
@@ -779,7 +764,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 .emotion-23 {
-  z-index: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1073,13 +1057,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
@@ -1294,7 +1271,6 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 }
 
 .emotion-10 {
-  z-index: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1538,13 +1514,6 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
@@ -1660,7 +1629,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 .emotion-36 {
-  z-index: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1997,13 +1965,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
