@@ -101,13 +101,6 @@ exports[`rendering renders correcly closed 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div>
       <div
@@ -440,13 +433,6 @@ exports[`rendering renders correcly opened 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div>
       <div
@@ -983,13 +969,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div>
       <div
@@ -1563,13 +1542,6 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div>
       <div
