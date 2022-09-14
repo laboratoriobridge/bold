@@ -1,6 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`rendering renders correcly closed 1`] = `
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-7 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-7:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-7:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-7:empty {
+  display: none;
+}
+
 .emotion-0 {
   font-weight: bold;
   display: block;
@@ -177,77 +205,77 @@ exports[`rendering renders correcly closed 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-423-menu"
+      aria-owns="test-menu-id"
       role="combobox"
     >
       <div
-        class="emotion-6"
+        class="emotion-8"
       >
-        <label
-          class="emotion-0"
-          for="downshift-422-input"
-          id="downshift-423-label"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-5"
+          class="emotion-7"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-423-menu"
-            aria-labelledby="downshift-423-label"
-            autocomplete="off"
-            class="emotion-1"
-            debounce="350"
-            id="downshift-422-input"
-            label="Fruits"
-            type="text"
-            value=""
-          />
-          <span
-            class="emotion-4"
+          <div
+            class="emotion-6"
           >
-            <button
-              aria-label="Show options"
-              class="emotion-3"
-              tabindex="-1"
-              type="button"
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-2"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
+              Fruits
+            </label>
+            <div
+              class="emotion-5"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-4"
+              >
+                <button
+                  aria-label="Show options"
+                  class="emotion-3"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
-                  />
-                </svg>
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-2"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M16.294 8.294a1 1 0 111.414 1.414l-5 5a1 1 0 01-1.414 0l-5.001-5a1 1 0 011.414-1.415l4.294 4.294 4.293-4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </span>
-            </button>
-          </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-423-label"
-        id="downshift-423-menu"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
         role="listbox"
       />
     </div>
@@ -256,466 +284,6 @@ exports[`rendering renders correcly closed 1`] = `
 `;
 
 exports[`rendering renders correcly opened 1`] = `
-.emotion-20 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  z-index: 1300;
-  border: 1px solid #D3D4DD;
-  border-radius: 2px;
-  background-color: #FFFFFF;
-  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
-  max-height: 20rem;
-}
-
-.emotion-19 {
-  z-index: auto;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  max-height: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #FFFFFF;
-  overflow-y: auto;
-  overflow-x: hidden;
-  width: 100%;
-}
-
-.emotion-0 {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.25rem;
-  line-height: 20px;
-}
-
-.emotion-5 {
-  position: relative;
-}
-
-.emotion-5 input {
-  padding-right: 3rem;
-}
-
-.emotion-4 {
-  position: absolute;
-  background-color: #F0F0F5;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 2.5rem;
-  top: 1px;
-  bottom: 1px;
-  right: 1px;
-}
-
-.emotion-1 {
-  background-color: #FFFFFF;
-  border: solid 1px #8F8FA2;
-  border-radius: 2px;
-  color: #24252E;
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  margin: 0;
-  padding: calc(0.5rem - 1px) 0.5rem;
-  width: 100%;
-  -webkit-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .2s;
-  transition-duration: .2s;
-}
-
-.emotion-1[type="search"]::-webkit-search-decoration {
-  display: none;
-}
-
-.emotion-1[type="search"]::-webkit-search-cancel-button {
-  display: none;
-}
-
-.emotion-1[type="search"]::-webkit-search-results-button {
-  display: none;
-}
-
-.emotion-1[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
-
-.emotion-1:required {
-  box-shadow: none;
-}
-
-.emotion-1::-webkit-input-placeholder {
-  color: #696979;
-}
-
-.emotion-1::-moz-placeholder {
-  color: #696979;
-}
-
-.emotion-1:-ms-input-placeholder {
-  color: #696979;
-}
-
-.emotion-1::placeholder {
-  color: #696979;
-}
-
-.emotion-1:disabled {
-  border-color: #D3D4DD;
-  background-color: #F0F0F5;
-}
-
-.emotion-1:not(:disabled):hover {
-  border-color: #7A7B8E;
-}
-
-.emotion-1:not(:disabled):focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
-}
-
-.emotion-1:not(:disabled):active {
-  border-color: #0069D0;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
-}
-
-.emotion-3 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5rem;
-  color: #24252E;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all .2s;
-  transition: all .2s;
-  font-weight: bold;
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #24252E;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  font-size: 0.875rem;
-  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
-  border-radius: inherit;
-}
-
-.emotion-3 > span {
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.emotion-3:not(:disabled):active {
-  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
-}
-
-.emotion-3:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #0069D0;
-}
-
-.emotion-3:not(:disabled):hover {
-  background-color: rgba(58,58,71,0.1);
-}
-
-.emotion-3:focus {
-  box-shadow: none;
-}
-
-.emotion-2 {
-  fill: currentColor;
-  font-size: 1.5rem;
-}
-
-.emotion-7 {
-  font-family: "IBM Plex Sans",sans-serif;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  color: #24252E;
-  border-bottom: 1px solid #D3D4DD;
-  cursor: pointer;
-  padding: 0.5rem 0.5rem;
-  -webkit-transition: .1s ease;
-  transition: .1s ease;
-}
-
-.emotion-7:last-of-type {
-  border-bottom: none;
-}
-
-.emotion-7:hover {
-  background: #F0F0F5;
-}
-
-.emotion-7:focus {
-  outline: 0;
-  border-radius: 3px;
-  box-shadow: inset 0 0 0 2px #0069D0;
-}
-
-<body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
-  <div>
-    <div
-      aria-expanded="true"
-      aria-haspopup="listbox"
-      aria-owns="downshift-425-menu"
-      role="combobox"
-    >
-      <div
-        class="emotion-6"
-      >
-        <label
-          class="emotion-0"
-          for="downshift-424-input"
-          id="downshift-425-label"
-        >
-          Fruits
-        </label>
-        <div
-          class="emotion-5"
-        >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-425-menu"
-            aria-labelledby="downshift-425-label"
-            autocomplete="off"
-            class="emotion-1"
-            debounce="350"
-            id="downshift-424-input"
-            label="Fruits"
-            type="text"
-            value=""
-          />
-          <span
-            class="emotion-4"
-          >
-            <button
-              aria-label="Hide options"
-              class="emotion-3"
-              tabindex="-1"
-              type="button"
-            >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-2"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
-                >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
-              </span>
-            </button>
-          </span>
-        </div>
-      </div>
-      <div
-        aria-busy="false"
-        aria-labelledby="downshift-425-label"
-        id="downshift-425-menu"
-        role="listbox"
-      >
-        <div
-          class="emotion-20"
-          data-popper-escaped="true"
-          data-popper-placement="bottom-start"
-          data-popper-reference-hidden="true"
-          data-testid="menu"
-          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
-        >
-          <ul
-            class="emotion-19"
-          >
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-0"
-              role="option"
-            >
-              Apple
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-1"
-              role="option"
-            >
-              Avocado
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-2"
-              role="option"
-            >
-              Banana
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-3"
-              role="option"
-            >
-              Blueberry
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-4"
-              role="option"
-            >
-              Coconut
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-5"
-              role="option"
-            >
-              Grape
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-6"
-              role="option"
-            >
-              Lemon
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-7"
-              role="option"
-            >
-              Mango
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-8"
-              role="option"
-            >
-              Melon
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-9"
-              role="option"
-            >
-              Orange
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-10"
-              role="option"
-            >
-              Peach
-            </li>
-            <li
-              aria-selected="false"
-              class="emotion-7"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-425-item-11"
-              role="option"
-            >
-              Pear
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
-exports[`rendering renders correcly opened and loading 1`] = `
-@keyframes animation-0 {
-  from {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(359deg);
-    -ms-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
 .emotion-22 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -733,7 +301,6 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 .emotion-21 {
-  z-index: auto;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -745,6 +312,34 @@ exports[`rendering renders correcly opened and loading 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-7 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-7:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-7:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-7:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -948,7 +543,470 @@ exports[`rendering renders correcly opened and loading 1`] = `
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
+<body>
+  <div>
+    <div
+      aria-expanded="true"
+      aria-haspopup="listbox"
+      aria-owns="test-menu-id"
+      role="combobox"
+    >
+      <div
+        class="emotion-8"
+      >
+        <div
+          class="emotion-7"
+        >
+          <div
+            class="emotion-6"
+          >
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
+            >
+              Fruits
+            </label>
+            <div
+              class="emotion-5"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-4"
+              >
+                <button
+                  aria-label="Hide options"
+                  class="emotion-3"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-2"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-busy="false"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
+        role="listbox"
+      >
+        <div
+          class="emotion-22"
+          data-popper-escaped="true"
+          data-popper-placement="bottom-start"
+          data-popper-reference-hidden="true"
+          data-testid="menu"
+          style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
+        >
+          <ul
+            class="emotion-21"
+          >
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-0"
+              role="option"
+            >
+              Apple
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-1"
+              role="option"
+            >
+              Avocado
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-2"
+              role="option"
+            >
+              Banana
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-3"
+              role="option"
+            >
+              Blueberry
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-4"
+              role="option"
+            >
+              Coconut
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-5"
+              role="option"
+            >
+              Grape
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-6"
+              role="option"
+            >
+              Lemon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-7"
+              role="option"
+            >
+              Mango
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-8"
+              role="option"
+            >
+              Melon
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-9"
+              role="option"
+            >
+              Orange
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-10"
+              role="option"
+            >
+              Peach
+            </li>
+            <li
+              aria-selected="false"
+              class="emotion-9"
+              id="test-item-id-11"
+              role="option"
+            >
+              Pear
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`rendering renders correcly opened and loading 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+    -ms-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.emotion-24 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  z-index: 1300;
+  border: 1px solid #D3D4DD;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2),0 1px 10px 0 rgba(0,0,0,0.12),0 4px 5px 0 rgba(0,0,0,0.14);
+  max-height: 20rem;
+}
+
+.emotion-23 {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  max-height: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-7 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-7:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-7:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-7:empty {
+  display: none;
+}
+
+.emotion-0 {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  line-height: 20px;
+}
+
+.emotion-5 {
+  position: relative;
+}
+
+.emotion-5 input {
+  padding-right: 3rem;
+}
+
+.emotion-4 {
+  position: absolute;
+  background-color: #F0F0F5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0.25rem;
+  width: 2.5rem;
+  top: 1px;
+  bottom: 1px;
+  right: 1px;
+}
+
+.emotion-1 {
+  background-color: #FFFFFF;
+  border: solid 1px #8F8FA2;
+  border-radius: 2px;
+  color: #24252E;
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1rem;
+  margin: 0;
+  padding: calc(0.5rem - 1px) 0.5rem;
+  width: 100%;
+  -webkit-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.emotion-1[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-button {
+  display: none;
+}
+
+.emotion-1[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.emotion-1:required {
+  box-shadow: none;
+}
+
+.emotion-1::-webkit-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::-moz-placeholder {
+  color: #696979;
+}
+
+.emotion-1:-ms-input-placeholder {
+  color: #696979;
+}
+
+.emotion-1::placeholder {
+  color: #696979;
+}
+
+.emotion-1:disabled {
+  border-color: #D3D4DD;
+  background-color: #F0F0F5;
+}
+
+.emotion-1:not(:disabled):hover {
+  border-color: #7A7B8E;
+}
+
+.emotion-1:not(:disabled):focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
+}
+
+.emotion-1:not(:disabled):active {
+  border-color: #0069D0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09);
+}
+
+.emotion-3 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5rem;
+  color: #24252E;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #24252E;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
+  border-radius: inherit;
+}
+
+.emotion-3 > span {
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-3:not(:disabled):active {
+  box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #0069D0;
+}
+
+.emotion-3:not(:disabled):hover {
+  background-color: rgba(58,58,71,0.1);
+}
+
+.emotion-3:focus {
+  box-shadow: none;
+}
+
+.emotion-2 {
+  fill: currentColor;
+  font-size: 1.5rem;
+}
+
+.emotion-11 {
+  font-family: "IBM Plex Sans",sans-serif;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #24252E;
+  border-bottom: 1px solid #D3D4DD;
+  cursor: pointer;
+  padding: 0.5rem 0.5rem;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.emotion-11:last-of-type {
+  border-bottom: none;
+}
+
+.emotion-11:hover {
+  background: #F0F0F5;
+}
+
+.emotion-11:focus {
+  outline: 0;
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 2px #0069D0;
+}
+
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -964,21 +1022,21 @@ exports[`rendering renders correcly opened and loading 1`] = `
   cursor: initial;
 }
 
-.emotion-8:last-of-type {
+.emotion-10:last-of-type {
   border-bottom: none;
 }
 
-.emotion-8:hover {
+.emotion-10:hover {
   background: #F0F0F5;
 }
 
-.emotion-8:focus {
+.emotion-10:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-7 {
+.emotion-9 {
   pointer-events: none;
   font-size: 1rem;
   line-height: 1;
@@ -986,7 +1044,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
   float: right;
 }
 
-.emotion-7:after {
+.emotion-9:after {
   -webkit-animation: animation-0 450ms infinite linear;
   animation: animation-0 450ms infinite linear;
   border: 2px solid currentColor;
@@ -999,81 +1057,81 @@ exports[`rendering renders correcly opened and loading 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-439-menu"
+      aria-owns="test-menu-id"
       role="combobox"
     >
       <div
-        class="emotion-6"
+        class="emotion-8"
       >
-        <label
-          class="emotion-0"
-          for="downshift-438-input"
-          id="downshift-439-label"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-5"
+          class="emotion-7"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-439-menu"
-            aria-labelledby="downshift-439-label"
-            autocomplete="off"
-            class="emotion-1"
-            debounce="350"
-            id="downshift-438-input"
-            label="Fruits"
-            type="text"
-            value=""
-          />
-          <span
-            class="emotion-4"
+          <div
+            class="emotion-6"
           >
-            <button
-              aria-label="Hide options"
-              class="emotion-3"
-              tabindex="-1"
-              type="button"
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-2"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
+              Fruits
+            </label>
+            <div
+              class="emotion-5"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-4"
+              >
+                <button
+                  aria-label="Hide options"
+                  class="emotion-3"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-2"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </span>
-            </button>
-          </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
         aria-busy="true"
-        aria-labelledby="downshift-439-label"
-        id="downshift-439-menu"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
         role="listbox"
       >
         <div
-          class="emotion-22"
+          class="emotion-24"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -1081,132 +1139,108 @@ exports[`rendering renders correcly opened and loading 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-21"
+            class="emotion-23"
           >
             <li
-              class="emotion-8"
+              class="emotion-10"
             >
               Loading...
               <span
-                class="emotion-7"
+                class="emotion-9"
               />
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-0"
+              class="emotion-11"
+              id="test-item-id-0"
               role="option"
             >
               Apple
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-1"
+              class="emotion-11"
+              id="test-item-id-1"
               role="option"
             >
               Avocado
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-2"
+              class="emotion-11"
+              id="test-item-id-2"
               role="option"
             >
               Banana
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-3"
+              class="emotion-11"
+              id="test-item-id-3"
               role="option"
             >
               Blueberry
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-4"
+              class="emotion-11"
+              id="test-item-id-4"
               role="option"
             >
               Coconut
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-5"
+              class="emotion-11"
+              id="test-item-id-5"
               role="option"
             >
               Grape
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-6"
+              class="emotion-11"
+              id="test-item-id-6"
               role="option"
             >
               Lemon
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-7"
+              class="emotion-11"
+              id="test-item-id-7"
               role="option"
             >
               Mango
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-8"
+              class="emotion-11"
+              id="test-item-id-8"
               role="option"
             >
               Melon
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-9"
+              class="emotion-11"
+              id="test-item-id-9"
               role="option"
             >
               Orange
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-10"
+              class="emotion-11"
+              id="test-item-id-10"
               role="option"
             >
               Peach
             </li>
             <li
               aria-selected="false"
-              class="emotion-9"
-              debounce="350"
-              debouncemilliseconds="0"
-              id="downshift-439-item-11"
+              class="emotion-11"
+              id="test-item-id-11"
               role="option"
             >
               Pear
@@ -1220,7 +1254,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
 `;
 
 exports[`rendering renders correcly opened with add-item 1`] = `
-.emotion-9 {
+.emotion-11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1236,8 +1270,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   max-height: 20rem;
 }
 
-.emotion-8 {
-  z-index: auto;
+.emotion-10 {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1249,6 +1282,34 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-7 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-7:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-7:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-7:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -1426,7 +1487,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-7 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1438,96 +1499,96 @@ exports[`rendering renders correcly opened with add-item 1`] = `
   transition: .1s ease;
 }
 
-.emotion-7:last-of-type {
+.emotion-9:last-of-type {
   border-bottom: none;
 }
 
-.emotion-7:hover {
+.emotion-9:hover {
   background: #F0F0F5;
 }
 
-.emotion-7:focus {
+.emotion-9:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-467-menu"
+      aria-owns="test-menu-id"
       role="combobox"
     >
       <div
-        class="emotion-6"
+        class="emotion-8"
       >
-        <label
-          class="emotion-0"
-          for="downshift-466-input"
-          id="downshift-467-label"
-        >
-          Fruits
-        </label>
         <div
-          class="emotion-5"
+          class="emotion-7"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-467-menu"
-            aria-labelledby="downshift-467-label"
-            autocomplete="off"
-            class="emotion-1"
-            debounce="350"
-            id="downshift-466-input"
-            label="Fruits"
-            type="text"
-            value=""
-          />
-          <span
-            class="emotion-4"
+          <div
+            class="emotion-6"
           >
-            <button
-              aria-label="Hide options"
-              class="emotion-3"
-              tabindex="-1"
-              type="button"
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-2"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
+              Fruits
+            </label>
+            <div
+              class="emotion-5"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruits"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-4"
+              >
+                <button
+                  aria-label="Hide options"
+                  class="emotion-3"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-2"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </span>
-            </button>
-          </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-467-label"
-        id="downshift-467-menu"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
         role="listbox"
       >
         <div
-          class="emotion-9"
+          class="emotion-11"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -1535,10 +1596,10 @@ exports[`rendering renders correcly opened with add-item 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-8"
+            class="emotion-10"
           >
             <li
-              class="emotion-7"
+              class="emotion-9"
             >
               Select an item or type a new value
             </li>
@@ -1551,7 +1612,7 @@ exports[`rendering renders correcly opened with add-item 1`] = `
 `;
 
 exports[`rendering renders correcly with custom components correctly 1`] = `
-.emotion-35 {
+.emotion-37 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1567,8 +1628,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   max-height: 20rem;
 }
 
-.emotion-34 {
-  z-index: auto;
+.emotion-36 {
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -1580,6 +1640,34 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-7 {
+  display: inline-block;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+
+.emotion-7:first-of-type {
+  margin-top: 0;
+}
+
+.emotion-7:last-of-type {
+  margin-bottom: 0;
+}
+
+.emotion-7:empty {
+  display: none;
 }
 
 .emotion-0 {
@@ -1757,7 +1845,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   font-size: 1.5rem;
 }
 
-.emotion-8 {
+.emotion-10 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1769,21 +1857,21 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   transition: .1s ease;
 }
 
-.emotion-8:last-of-type {
+.emotion-10:last-of-type {
   border-bottom: none;
 }
 
-.emotion-8:hover {
+.emotion-10:hover {
   background: #F0F0F5;
 }
 
-.emotion-8:focus {
+.emotion-10:focus {
   outline: 0;
   border-radius: 3px;
   box-shadow: inset 0 0 0 2px #0069D0;
 }
 
-.emotion-33 {
+.emotion-35 {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(min-content,max-content);
@@ -1798,14 +1886,14 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   justify-content: space-between;
 }
 
-.emotion-31 {
+.emotion-33 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
   color: #24252E;
 }
 
-.emotion-32 {
+.emotion-34 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5rem;
@@ -1840,7 +1928,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 }
 
-.emotion-32 > span {
+.emotion-34 > span {
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -1851,24 +1939,24 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
   display: inline-flex;
 }
 
-.emotion-32:not(:disabled):active {
+.emotion-34:not(:disabled):active {
   box-shadow: inset 0 2px 8px 0 rgba(0,0,0,0.1);
 }
 
-.emotion-32:focus {
+.emotion-34:focus {
   outline: none;
   box-shadow: 0 0 0 2px #F0F0F5,0 0 0 4px #0069D0;
 }
 
-.emotion-32:not(:disabled):hover {
+.emotion-34:not(:disabled):hover {
   background-color: #F0F0F5;
 }
 
-.emotion-32:not(:disabled):hover {
+.emotion-34:not(:disabled):hover {
   background-color: #0051A2;
 }
 
-.emotion-7 {
+.emotion-9 {
   font-family: "IBM Plex Sans",sans-serif;
   font-size: 0.8125rem;
   line-height: 1.5;
@@ -1877,82 +1965,82 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
 }
 
 <body>
-  <div
-    aria-live="polite"
-    aria-relevant="additions text"
-    id="a11y-status-message"
-    role="status"
-    style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
   <div>
     <div
       aria-expanded="true"
       aria-haspopup="listbox"
-      aria-owns="downshift-453-menu"
+      aria-owns="test-menu-id"
       role="combobox"
     >
       <div
-        class="emotion-6"
+        class="emotion-8"
       >
-        <label
-          class="emotion-0"
-          for="downshift-452-input"
-          id="downshift-453-label"
-        >
-          Fruit
-        </label>
         <div
-          class="emotion-5"
+          class="emotion-7"
         >
-          <input
-            aria-autocomplete="list"
-            aria-controls="downshift-453-menu"
-            aria-labelledby="downshift-453-label"
-            autocomplete="off"
-            class="emotion-1"
-            debounce="350"
-            id="downshift-452-input"
-            label="Fruit"
-            name="fruit"
-            type="text"
-            value=""
-          />
-          <span
-            class="emotion-4"
+          <div
+            class="emotion-6"
           >
-            <button
-              aria-label="Hide options"
-              class="emotion-3"
-              tabindex="-1"
-              type="button"
+            <label
+              class="emotion-0"
+              for="test-input-id"
+              id="test-label-id"
             >
-              <span>
-                <svg
-                  aria-hidden="true"
-                  class="emotion-2"
-                  height="1em"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  width="1em"
+              Fruit
+            </label>
+            <div
+              class="emotion-5"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="test-menu-id"
+                aria-labelledby="test-label-id"
+                autocomplete="off"
+                class="emotion-1"
+                id="test-input-id"
+                label="Fruit"
+                name="fruit"
+                type="text"
+                value=""
+              />
+              <span
+                class="emotion-4"
+              >
+                <button
+                  aria-label="Hide options"
+                  class="emotion-3"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <path
-                    clip-rule="evenodd"
-                    d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
-                  />
-                </svg>
+                  <span>
+                    <svg
+                      aria-hidden="true"
+                      class="emotion-2"
+                      height="1em"
+                      role="img"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                    >
+                      <path
+                        clip-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 11-1.414-1.414l5-5a1 1 0 011.414 0l5.001 5.001a1 1 0 01-1.414 1.414L12 10.414l-4.293 4.293z"
+                      />
+                    </svg>
+                  </span>
+                </button>
               </span>
-            </button>
-          </span>
+            </div>
+          </div>
         </div>
       </div>
       <div
         aria-busy="false"
-        aria-labelledby="downshift-453-label"
-        id="downshift-453-menu"
+        aria-labelledby="test-label-id"
+        id="test-menu-id"
         role="listbox"
       >
         <div
-          class="emotion-35"
+          class="emotion-37"
           data-popper-escaped="true"
           data-popper-placement="bottom-start"
           data-popper-reference-hidden="true"
@@ -1960,7 +2048,7 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
           style="position: absolute; left: 0px; top: 0px; width: 0px; transform: translate(0px, 0px);"
         >
           <ul
-            class="emotion-34"
+            class="emotion-36"
           >
             <div
               style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
@@ -1969,15 +2057,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </div>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-0"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-0"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Apple
@@ -1985,15 +2070,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-1"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-1"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Avocado
@@ -2001,15 +2083,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-2"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-2"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Banana
@@ -2017,15 +2096,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-3"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-3"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Blueberry
@@ -2033,15 +2109,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-4"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-4"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Coconut
@@ -2049,15 +2122,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-5"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-5"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Grape
@@ -2065,15 +2135,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-6"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-6"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Lemon
@@ -2081,15 +2148,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-7"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-7"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Mango
@@ -2097,15 +2161,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-8"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-8"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Melon
@@ -2113,15 +2174,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-9"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-9"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Orange
@@ -2129,15 +2187,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-10"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-10"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Peach
@@ -2145,15 +2200,12 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             </li>
             <li
               aria-selected="false"
-              class="emotion-8"
-              components="[object Object]"
-              debounce="350"
-              id="downshift-453-item-11"
-              name="fruit"
+              class="emotion-10"
+              id="test-item-id-11"
               role="option"
             >
               <span
-                class="emotion-7"
+                class="emotion-9"
               >
                 Custom 
                 Pear
@@ -2163,15 +2215,15 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
               style="background: rgb(240, 240, 245); padding: 0.25rem 0.5rem; cursor: initial;"
             >
               <div
-                class="emotion-33"
+                class="emotion-35"
               >
                 <span
-                  class="emotion-31"
+                  class="emotion-33"
                 >
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime quod modi, inventore quasi aut sed beatae corrupti repellendus minima voluptatem debitis, quibusdam repudiandae totam voluptatum odit.
                 </span>
                 <button
-                  class="emotion-32"
+                  class="emotion-34"
                   data-testid="action-btn"
                   type="button"
                 >

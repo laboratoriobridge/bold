@@ -7,7 +7,8 @@ import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
 import { Button } from '../Button'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
-import { Combobox, ComboboxProps } from './Combobox'
+import { Combobox } from './Combobox'
+import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
 
 interface Fruit {
   value: number
@@ -29,7 +30,9 @@ const fruits: Fruit[] = [
   { value: 12, label: 'Pear' },
 ]
 
-const asyncDelay = 1000
+const itemToString = (item: Fruit) => item.label
+
+const asyncDelay = 10
 const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
   return new Promise((resolve) => {
     setTimeout(
@@ -42,13 +45,17 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
   })
 }
 
-const itemToString = (item: Fruit) => item.label
-
-const ComboboxTest = (props: Partial<ComboboxProps<Fruit>> & { async?: boolean }) => (
-  <Combobox<typeof fruits[0]>
+const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
+  <ComboboxSingleselect<typeof fruits[0]>
     items={props.async ? loadFruitsAsync : fruits}
     itemToString={itemToString}
     debounceMilliseconds={0}
+    openOnFocus
+    loading={false}
+    inputId={'test-input-id'}
+    labelId={'test-label-id'}
+    menuId={'test-menu-id'}
+    getItemId={(index) => `test-item-id-${index}`}
     {...props}
   />
 )
@@ -68,12 +75,21 @@ function CustomComponent(props: React.HTMLAttributes<HTMLDivElement>) {
   )
 }
 
-const ComboboxWithCutomComponentsTest = (props: Partial<ComboboxProps<Fruit>> & { action?: () => void }) => (
-  <Combobox<typeof fruits[0]>
+const ComboboxWithCustomComponentsTest = (
+  props: Partial<ComboboxSingleselectProps<Fruit>> & { action?: () => void }
+) => (
+  <ComboboxSingleselect<typeof fruits[0]>
     label='Fruit'
     name='fruit'
     items={fruits}
     itemToString={itemToString}
+    openOnFocus
+    loading={false}
+    debounceMilliseconds={0}
+    inputId={'test-input-id'}
+    labelId={'test-label-id'}
+    menuId={'test-menu-id'}
+    getItemId={(index) => `test-item-id-${index}`}
     components={{
       Item: (props) => (
         <ComboboxMenuItem {...props}>
@@ -388,7 +404,11 @@ it.each`
   const input = baseElement.querySelector('input')
   await act(async () => {
     fireEvent.focus(input)
+  })
+  await act(async () => {
     fireEvent.change(input, { target: { value: 'not a fruit' } })
+  })
+  await act(async () => {
     fireEvent.blur(input)
   })
   expect(input).not.toHaveValue()
@@ -425,7 +445,11 @@ it.each`
 
   await act(async () => {
     fireEvent.focus(input)
+  })
+  await act(async () => {
     fireEvent.change(input, { target: { value: 'not a fruit' } })
+  })
+  await act(async () => {
     fireEvent.blur(input)
   })
 
@@ -461,7 +485,11 @@ it.each`
     //Types item not in the list
     await act(async () => {
       fireEvent.focus(input)
+    })
+    await act(async () => {
       fireEvent.change(input, { target: { value: 'not a fruit in the list' } })
+    })
+    await act(async () => {
       fireEvent.blur(input)
     })
 
@@ -471,13 +499,14 @@ it.each`
     //Searches for first item
     await act(async () => {
       fireEvent.focus(input)
+    })
+    await act(async () => {
       fireEvent.change(input, { target: { value: fruits[0].label } })
     })
-
-    await act(() => waait(asyncDelay))
+    await act(() => waait(2 * asyncDelay))
 
     //Selects first item
-    const option = baseElement.querySelector('li').firstChild
+    const option = baseElement.querySelector('li')
     await act(async () => {
       fireEvent.click(option)
     })
@@ -520,7 +549,7 @@ it('should accept actions inside children prop', async () => {
   let baseElement: RenderResult['baseElement']
   let findByTestId: RenderResult['findByTestId']
   await act(async () => {
-    const result = render(<ComboboxWithCutomComponentsTest action={click} />)
+    const result = render(<ComboboxWithCustomComponentsTest action={click} />)
     baseElement = result.baseElement
     findByTestId = result.findByTestId
   })
@@ -578,7 +607,7 @@ describe('rendering', () => {
   it('renders correcly with custom components correctly', async () => {
     let baseElement: RenderResult['baseElement']
     await act(async () => {
-      const result = render(<ComboboxWithCutomComponentsTest />)
+      const result = render(<ComboboxWithCustomComponentsTest />)
       baseElement = result.baseElement
     })
     const dropdownButton = baseElement.querySelector('button')

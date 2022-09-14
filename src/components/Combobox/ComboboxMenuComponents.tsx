@@ -1,8 +1,12 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, forwardRef, Ref } from 'react'
 import { useLocale } from '../../i18n'
 import { ExternalStyles, focusBoxShadow, Theme, useStyles } from '../../styles'
 import { Spinner } from '../Spinner'
+import Times from '../Icon/generated/TimesDefault'
+import { HFlow } from '../HFlow'
+import { Checkbox } from '../Checkbox'
 import { ComboboxProps } from './Combobox'
+import { ComboboxMultiselectProps } from './ComboboxMultiselect'
 
 export interface ComboboxComponents<T> {
   /**
@@ -23,7 +27,7 @@ export interface ComboboxComponents<T> {
   /**
    * Default item component used for each element in `items` prop.
    */
-  Item: React.ComponentType<ComboboxItemProps<T>>
+  Item: React.ForwardRefExoticComponent<ComboboxItemProps<T>> | React.ForwardRefRenderFunction<ComboboxItemProps<T>>
 
   /**
    * A custom item to be included at the beginning of the select list.
@@ -36,32 +40,85 @@ export interface ComboboxComponents<T> {
   AppendItem: React.ComponentType<ComboboxMenuItemProps>
 }
 
-export const defaultComboboxComponents: ComboboxComponents<any> = {
-  AppendItem: () => null,
-  PrependItem: () => null,
-  CreateItem: () => <ComboboxCreateItem />,
-  LoadingItem: () => <ComboboxLoadingItem />,
-  EmptyItem: () => <ComboboxEmptyItem />,
-  Item: (props: ComboboxItemProps<any>) => <ComboboxMenuItem {...props} />,
+export interface ComboboxMultiselectComponents<T> extends Omit<ComboboxComponents<T>, 'Item'> {
+  /**
+   * Component to display selected items in the input
+   */
+  SelectedItem: React.ForwardRefExoticComponent<ComboboxMultiselectSelectedItemProps>
+  /**
+   * Default item component used for each element in `items` prop.
+   */
+  Item:
+    | React.ForwardRefExoticComponent<ComboboxMultiselectItemProps<T>>
+    | React.ForwardRefRenderFunction<ComboboxMultiselectItemProps<T>>
 }
-
-export type ComboboxItemProps<T> = ComboboxMenuItemProps &
-  ComboboxProps<T> & { item: T; index: number; selected?: boolean }
 
 export interface ComboboxMenuItemProps extends Omit<React.LiHTMLAttributes<HTMLLIElement>, 'style'> {
   style?: ExternalStyles
 }
 
-export function ComboboxMenuItem<T>(props: ComboboxItemProps<T>) {
-  const { children, item, style, selected, itemToString, items, label, index, ...rest } = props
+export type ComboboxItemProps<T> = ComboboxMenuItemProps &
+  Pick<ComboboxProps<T>, 'itemToString'> & { item: T; index: number; selected?: boolean }
+
+export type ComboboxMultiselectItemProps<T> = ComboboxMenuItemProps &
+  Pick<ComboboxMultiselectProps<T>, 'itemToString'> & {
+    item: T
+    index: number
+    selected?: boolean
+    highlighted?: boolean
+  }
+
+export const ComboboxMenuItem = React.forwardRef((props: ComboboxItemProps<any>, ref: Ref<HTMLLIElement>) => {
+  const { children, item, style, selected, itemToString, index, ...rest } = props
   const { classes, css } = useStyles(createStyles)
 
   return (
-    <li className={css(classes.item, selected && classes.selected, style)} {...rest}>
+    <li ref={ref} className={css(classes.item, selected && classes.selected, style)} {...rest}>
       {children ?? itemToString(item)}
     </li>
   )
+})
+
+export const ComboboxMultiselectMenuItem = React.forwardRef(
+  (props: ComboboxMultiselectItemProps<any>, ref: Ref<HTMLLIElement>) => {
+    const { children, item, style, selected, highlighted, itemToString, index, ...rest } = props
+    const { classes, css } = useStyles(createStyles)
+
+    return (
+      <li ref={ref} className={css(classes.item, highlighted && classes.selected, style)} {...rest}>
+        <HFlow hSpacing={0.5} alignItems='center'>
+          <Checkbox style={{ pointerEvents: 'none' }} checked={selected} tabIndex={-1} readOnly />
+          {children ?? itemToString(item)}
+        </HFlow>
+      </li>
+    )
+  }
+)
+
+export interface ComboboxMultiselectSelectedItemProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
+  style?: ExternalStyles
+  disabled?: boolean
+  onRemove(e: React.MouseEvent<HTMLSpanElement>): void
 }
+
+export const ComboboxMultiselectSelectedItem = forwardRef(
+  (props: ComboboxMultiselectSelectedItemProps, ref: Ref<HTMLSpanElement>) => {
+    const { style, children, onRemove, disabled, ...rest } = props
+    const { classes, css } = useStyles(createStyles, props)
+    const locale = useLocale()
+
+    return (
+      <span ref={ref} className={css(classes.multiItemContainer, style)} {...rest}>
+        <span className={disabled ? classes.multiItemTextDisabled : classes.multiItemText}>{children}</span>
+        {!disabled && (
+          <span className={classes.multiItemButton} onClick={onRemove} title={locale.combobox.removeItem}>
+            <Times />
+          </span>
+        )}
+      </span>
+    )
+  }
+)
 
 export function ComboboxLoadingItem(props: ComboboxMenuItemProps) {
   const { style, ...rest } = props
@@ -103,6 +160,21 @@ export function ComboboxCreateItem(props: ComboboxMenuItemProps) {
   )
 }
 
+export const defaultComboboxComponents: ComboboxComponents<any> = {
+  AppendItem: () => null,
+  PrependItem: () => null,
+  CreateItem: () => <ComboboxCreateItem />,
+  LoadingItem: () => <ComboboxLoadingItem />,
+  EmptyItem: () => <ComboboxEmptyItem />,
+  Item: ComboboxMenuItem,
+}
+
+export const defaultComboboxMultiselectComponents: ComboboxMultiselectComponents<any> = {
+  ...defaultComboboxComponents,
+  SelectedItem: ComboboxMultiselectSelectedItem,
+  Item: ComboboxMultiselectMenuItem,
+}
+
 const createStyles = (theme: Theme) => ({
   item: {
     ...theme.typography.variant('main'),
@@ -142,4 +214,35 @@ const createStyles = (theme: Theme) => ({
     outline: 0,
     background: theme.pallete.surface.background,
   },
+
+  multiItemContainer: {
+    border: `1px solid ${theme.pallete.divider}`,
+    borderRadius: theme.radius.button,
+    display: 'inline-flex',
+    alignItems: 'center',
+    fontWeight: 'bold',
+  } as CSSProperties,
+
+  multiItemText: {
+    padding: 'calc(0.125rem - 1px) 0.25rem',
+  } as CSSProperties,
+
+  multiItemTextDisabled: {
+    padding: 'calc(0.25rem - 1px) 0.25rem',
+  } as CSSProperties,
+
+  multiItemButton: {
+    background: theme.pallete.surface.background,
+    cursor: 'pointer',
+    fontSize: '1.25rem',
+    display: 'inline-flex',
+    alignItems: 'center',
+    padding: 'calc(0.125rem - 1px) 0',
+    '&:hover': {
+      color: theme.pallete.status.danger.main,
+    },
+    svg: {
+      fill: 'currentColor',
+    },
+  } as CSSProperties,
 })

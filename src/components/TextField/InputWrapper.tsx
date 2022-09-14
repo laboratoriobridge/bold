@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Ref } from 'react'
 
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
@@ -6,31 +6,46 @@ import { Button, ButtonProps } from '../Button'
 import { Icons } from '../Icon/generated/types'
 import { Icon } from '../Icon/Icon'
 
-export interface InputWrapperProps {
+export interface InputWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   icon?: Icons
   iconPosition?: 'left' | 'right'
   iconAriaLabel?: string
   iconDisabled?: boolean
   clearVisible?: boolean
   onIconClick?: ButtonProps['onClick']
-  children?: React.ReactNode
   onClear?(e: React.MouseEvent<HTMLButtonElement>): any
 }
 
-export function InputWrapper(props: InputWrapperProps) {
-  const { children, icon, iconDisabled, iconAriaLabel, onIconClick, clearVisible, onClear } = props
-  const iconPosition = props.iconPosition || (props.onIconClick ? 'right' : 'left')
-  const { classes, css } = useStyles(createStyles, { icon, iconPosition, clearVisible, onIconClick })
+export const InputWrapper = React.forwardRef((props: InputWrapperProps, ref: Ref<HTMLDivElement>) => {
+  const {
+    children,
+    icon,
+    iconDisabled,
+    iconAriaLabel,
+    onIconClick,
+    clearVisible,
+    onClear,
+    className,
+    iconPosition,
+    ...rest
+  } = props
+  const internalIconPosition = iconPosition || (onIconClick ? 'right' : 'left')
+  const { classes, css } = useStyles(createStyles, {
+    icon,
+    iconPosition: internalIconPosition,
+    clearVisible,
+    onIconClick,
+  })
   const locale = useLocale()
 
   const iconBoxClasses = css(
     classes.iconWrapper,
-    iconPosition === 'left' && classes.iconLeft,
-    iconPosition === 'right' && classes.iconRight
+    internalIconPosition === 'left' && classes.iconLeft,
+    internalIconPosition === 'right' && classes.iconRight
   )
 
   return (
-    <div className={classes.wrapper}>
+    <div ref={ref} className={css(classes.wrapper, className)} {...rest}>
       {children}
 
       {clearVisible && (
@@ -67,7 +82,7 @@ export function InputWrapper(props: InputWrapperProps) {
       )}
     </div>
   )
-}
+})
 
 InputWrapper.defaultProps = {
   iconDisabled: false,
