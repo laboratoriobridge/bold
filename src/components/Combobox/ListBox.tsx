@@ -68,7 +68,6 @@ function ListBoxInner<T>(props: ListBoxProps<T>, ref: Ref<HTMLDivElement>) {
 
 export const createStyles = (theme: Theme) => ({
   list: {
-    zIndex: 'auto',
     border: 0,
     borderRadius: 0,
     boxShadow: 'none',
