@@ -19,7 +19,6 @@ export default [
       { href: '/design-guidelines/data-visualization/models', title: 'menu-data-visualization' },
       { href: '/design-guidelines/grid', title: 'menu-grid' },
       { href: '/design-guidelines/iconography', title: 'menu-iconography' },
-      { href: '/design-guidelines/illustrations', title: 'menu-illustrations' },
       { href: '/design-guidelines/typography', title: 'menu-typography' },
     ],
   },

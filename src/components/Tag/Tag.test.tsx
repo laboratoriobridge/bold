@@ -17,11 +17,16 @@ it('should accept the style prop', () => {
 
 it('should accept HTML span element properties', () => {
   const { container } = render(<Tag id='test'>Normal</Tag>)
-  expect(container.querySelector('span').getAttribute('id')).toEqual('test')
+  expect(container.querySelector('span')?.getAttribute('id')).toEqual('test')
 })
 
 it('should accept "icon" prop', () => {
   const { container } = render(<Tag icon='userFilled'>With icon</Tag>)
+  expect(container).toMatchSnapshot()
+})
+
+it('should accept "height" prop and render with custom height', () => {
+  const { container } = render(<Tag height={'2.0rem'}>Custom height</Tag>)
   expect(container).toMatchSnapshot()
 })
 

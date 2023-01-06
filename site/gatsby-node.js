@@ -28,7 +28,7 @@ exports.onCreatePage = ({ page, actions }) => {
     // Change '/pt/resources.pt/' and '/pt/accordion/index.pt/' paths to '/pt/resources/' and '/pt/accordion/', respectively
     if (page.path.startsWith(`/${lang}/`) && page.path.endsWith(`.${lang}/`)) {
       const pathLang = page.path.replace(`/index.${lang}/`, '/').replace(`.${lang}/`, '/')
-      createPage({ ...page, pathLang })
+      createPage({ ...page, path: pathLang })
       deletePage(page)
     }
   })

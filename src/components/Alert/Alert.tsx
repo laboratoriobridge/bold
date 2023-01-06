@@ -1,6 +1,5 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties } from 'react'
-
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { Button } from '../Button'
@@ -29,33 +28,31 @@ export function Alert(props: AlertProps) {
   return (
     <div className={css(classes.wrapper, typeStyle.style, styles && styles.wrapper)} role='alert' {...rest}>
       <div className={css(classes.container, styles && styles.container)}>
-        <Icon icon={typeStyle.icon} style={classes.icon} size={inline ? 1 : undefined} />
-
+        <Icon icon={typeStyle.icon} style={classes.icon} size={inline && 1} />
         <div className={classes.content}>{children}</div>
-
-        {onCloseClick && (
-          <span className={classes.closeButtonWrapper}>
-            <Tooltip text={locale.alert.close}>
-              <Button
-                aria-label={locale.alert.close}
-                size='small'
-                skin='ghost'
-                style={classes.closeButton}
-                onClick={onCloseClick}
-              >
-                <Icon icon='timesDefault' />
-              </Button>
-            </Tooltip>
-          </span>
-        )}
       </div>
+      {onCloseClick && (
+        <span className={classes.closeButtonWrapper}>
+          <Tooltip text={locale.alert.close}>
+            <Button
+              aria-label={locale.alert.close}
+              size='small'
+              skin='ghost'
+              style={classes.closeButton}
+              onClick={onCloseClick}
+            >
+              <Icon icon='timesDefault' />
+            </Button>
+          </Tooltip>
+        </span>
+      )}
     </div>
   )
 }
 
 export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
   wrapper: {
-    padding: inline ? '0.375rem 0.5rem' : '0 1rem',
+    padding: '0 1rem',
     minHeight: inline ? '2rem' : '2.5rem',
     borderRadius: '2px',
     borderStyle: 'solid',
@@ -67,20 +64,22 @@ export const createStyles = (theme: Theme, { inline }: AlertProps) => ({
   } as CSSProperties,
   container: {
     display: 'flex',
-    alignItems: 'center',
+    alignItems: inline ? 'start' : 'center',
     flex: 1,
   } as CSSProperties,
   icon: {
+    marginTop: inline && '0.125rem',
     marginRight: '0.5rem',
   } as CSSProperties,
   content: {
     flex: 1,
   } as CSSProperties,
   closeButtonWrapper: {
+    marginTop: inline && '0.125rem',
     marginLeft: 'auto',
     paddingLeft: '1rem',
     display: 'inline-flex',
-    alignItems: 'center',
+    alignSelf: inline ? 'start' : 'center',
   } as CSSProperties,
   closeButton: {
     padding: inline && 0,
