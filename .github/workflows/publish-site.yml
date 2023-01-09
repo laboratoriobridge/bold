@@ -1,6 +1,5 @@
 name: Publish site
 
-# TODO: POR TAG É O MELHOR? COMO É FEITO O RELEASE DO BOLD?
 on:
   workflow_dispatch:
     inputs:
@@ -8,12 +7,10 @@ on:
         description: 'Target tag'
         required: true
 
-# TODO: VERIFICAR QUESTÕES DE PERMISSÕES!
-
 jobs:
   build:
     name: Publish site
-    runs-on: ubuntu-latest # TODO: OU SELF-HOSTED?
+    runs-on: ubuntu-latest
 
     steps:
       - name: Set up node
