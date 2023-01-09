@@ -19,10 +19,13 @@ jobs:
           node-version: '14'
           cache: 'yarn'
 
-      - name: Build
+      - name: Build project
         run: |
           yarn install
           yarn build
+
+      - name: Build site
+        run: yarn site:build
 
       - name: Run tests
         run: yarn test
