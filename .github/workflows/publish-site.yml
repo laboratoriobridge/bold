@@ -1,0 +1,34 @@
+name: Publish site
+
+# TODO: POR TAG É O MELHOR? COMO É FEITO O RELEASE DO BOLD?
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Target tag'
+        required: true
+
+# TODO: VERIFICAR QUESTÕES DE PERMISSÕES!
+
+jobs:
+  build:
+    name: Publish site
+    runs-on: ubuntu-latest # TODO: OU SELF-HOSTED?
+
+    steps:
+      - name: Set up node
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - name: Build project
+        run: |
+          yarn install
+          yarn build
+
+      - name: Build site
+        run: yarn site:build
+
+      - name: Deploy site
+        run: yarn site:deploy
