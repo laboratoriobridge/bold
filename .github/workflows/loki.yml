@@ -13,7 +13,13 @@ jobs:
     name: loki test
     runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+
+      - name: Set up node
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: '14'
+          cache: 'yarn'
 
       - name: yarn install
         run: yarn install
