@@ -21,6 +21,10 @@ jobs:
           node-version: '14'
           cache: 'yarn'
 
+      - uses: browser-actions/setup-chrome@latest
+        with:
+          chrome-version: beta
+
       - name: yarn install
         run: yarn install
 
