@@ -26,7 +26,7 @@
     "build": "yarn clean && tsc && webpack --mode=production",
     "prepublishOnly": "yarn build",
     "test": "yarn lint && TZ=UTC jest",
-    "test:loki": "STORYBOOK_LOKI=true build-storybook && loki --requireReference --reactUri file:./storybook-static --chromeFlags=\"--no-sandbox --headless --disable-gpu --hide-scrollbars\"",
+    "test:loki": "STORYBOOK_LOKI=true build-storybook && loki --requireReference --reactUri file:./storybook-static",
     "test:watch": "TZ=UTC jest --watch --collectCoverage=false",
     "lint": "eslint 'src/**/*.tsx' 'src/**/*.ts'",
     "storybook": "start-storybook -p 6006",
