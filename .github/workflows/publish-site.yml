@@ -2,10 +2,6 @@ name: Publish site
 
 on:
   workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Target tag'
-        required: true
 
 jobs:
   build:
@@ -13,6 +9,8 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - uses: actions/checkout@v3
+
       - name: Set up node
         uses: actions/setup-node@v3
         with:
