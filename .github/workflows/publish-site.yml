@@ -25,5 +25,10 @@ jobs:
       - name: Build site
         run: yarn site:build
 
+      - name: Configure git
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
       - name: Deploy site
         run: yarn site:deploy
