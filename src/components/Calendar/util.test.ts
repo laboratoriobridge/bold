@@ -5,6 +5,7 @@ import {
   getLastDayOfMonth,
   isSameDay,
   isBelongingAWeek,
+  parseDateOrString,
 } from './util'
 
 describe('getFirstDayOfMonth', () => {
@@ -54,6 +55,13 @@ describe('isSameDay', () => {
     expect(isSameDay(new Date('2018-10-25'), new Date('2018-11-25'))).toEqual(false)
     expect(isSameDay(new Date('2018-10-25'), new Date('2017-10-25'))).toEqual(false)
     expect(isSameDay(new Date('2018-10-25T18:00:00'), new Date('2018-10-25T10:00:00'))).toEqual(true)
+  })
+})
+
+describe('parseDateOrString', () => {
+  it('should return aways a Date', () => {
+    expect(parseDateOrString(new Date('2018-10-25'))).toEqual(new Date('2018-10-25'))
+    expect(parseDateOrString('2018-10-25')).toEqual(new Date('2018-10-25'))
   })
 })
 

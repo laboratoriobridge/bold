@@ -18,17 +18,28 @@ export default {
   title: 'Components/Calendar',
 }
 
-export const Default = () => (
-  <Calendar
-    visibleDate={new Date(date('visibleDate', new Date()))}
-    onVisibleDateChange={action('onVisibleDateChange')}
-    onDayClick={action('onDayClick')}
-    onDayHover={action('onDayHover')}
-    modifiers={{
-      selected: isToday,
-    }}
-  />
-)
+export const Default = () => {
+  const visibleDate = new Date(date('visibleDate', new Date()))
+  return (
+    <Calendar
+      visibleDate={visibleDate}
+      onVisibleDateChange={action('onVisibleDateChange')}
+      onDayClick={action('onDayClick')}
+      onDayHover={action('onDayHover')}
+      modifiers={{
+        selected: isToday,
+      }}
+      highlightDates={{
+        dates: [
+          visibleDate,
+          new Date(visibleDate.getTime() + 86400000),
+          new Date(visibleDate.getTime() + 2 * 86400000),
+        ],
+        hint: 'Data disponível',
+      }}
+    />
+  )
+}
 
 export const DisabledDates = () => (
   <Calendar

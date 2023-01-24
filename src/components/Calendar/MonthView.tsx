@@ -1,11 +1,18 @@
 import { Interpolation } from 'emotion'
 import React, { CSSProperties, useCallback, useMemo } from 'react'
 
-import { Theme, useStyles } from '../../styles'
+import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { getUserLocale } from '../../util/locale'
 import { Week } from '../DateRangePicker/DateRangePicker'
+import { Tooltip } from '../Tooltip'
 
-import { createMonthMatrix } from './util'
+import { createMonthMatrix, isSameDay, parseDateOrString } from './util'
+
+export interface HighlightDate {
+  dates: Date[]
+  hint: string
+  highlightStyle?: ExternalStyles
+}
 
 export interface MonthViewProps {
   /**
@@ -26,6 +33,7 @@ export interface MonthViewProps {
   onWeekHover?(week: Week): void
 
   onlyWeeks?: boolean
+  highlightDates?: HighlightDate
 }
 
 export function MonthView(props: MonthViewProps) {
@@ -39,6 +47,7 @@ export function MonthView(props: MonthViewProps) {
     onWeekClick,
     onWeekHover,
     createDateStyles,
+    highlightDates,
   } = props
   const { classes, css } = useStyles(createStyles)
 
@@ -71,19 +80,39 @@ export function MonthView(props: MonthViewProps) {
               onlyWeeks ? `${week[0].toLocaleDateString('pt-BR')}-${week[6].toLocaleDateString('pt-BR')}` : undefined
             }
           >
-            {week.map((day, d) => (
-              <td key={d} data-date={onlyWeeks ? undefined : day.toISOString().slice(0, 10)}>
-                <span
-                  className={onlyWeeks ? undefined : css(classes.day, createDateStyles(day, props))}
-                  onClick={onlyWeeks ? undefined : handleDayClick(day)}
-                  onMouseOver={onlyWeeks ? undefined : handleDayHover(day)}
-                  role='button'
-                  aria-selected={onlyWeeks ? undefined : props.isDaySelected && props.isDaySelected(day)}
-                >
-                  {renderDay(day)}
-                </span>
-              </td>
-            ))}
+            {week.map((day, d) => {
+              const highlightDay =
+                highlightDates?.dates?.length > 0
+                  ? highlightDates?.dates?.some((highlightDate) => isSameDay(parseDateOrString(highlightDate), day))
+                  : null
+
+              return (
+                <td key={d} data-date={onlyWeeks ? undefined : day.toISOString().slice(0, 10)}>
+                  <Tooltip text={highlightDay && highlightDates?.hint}>
+                    <span
+                      className={
+                        onlyWeeks
+                          ? undefined
+                          : css(
+                              classes.day,
+                              createDateStyles(day, props),
+                              highlightDay &&
+                                (highlightDates?.highlightStyle
+                                  ? highlightDates.highlightStyle
+                                  : classes.defaultHighlightDay)
+                            )
+                      }
+                      onClick={onlyWeeks ? undefined : handleDayClick(day)}
+                      onMouseOver={onlyWeeks ? undefined : handleDayHover(day)}
+                      role='button'
+                      aria-selected={onlyWeeks ? undefined : props.isDaySelected && props.isDaySelected(day)}
+                    >
+                      {renderDay(day)}
+                    </span>
+                  </Tooltip>
+                </td>
+              )
+            })}
           </tr>
         ))}
       </tbody>
@@ -157,5 +186,11 @@ export const createStyles = (theme: Theme) => ({
   active: {
     background: theme.pallete.primary.main,
     color: theme.pallete.surface.main,
+  } as CSSProperties,
+  defaultHighlightDay: {
+    background: theme.pallete.status.success.background,
+    ':hover': {
+      background: theme.pallete.status.success.c80,
+    },
   } as CSSProperties,
 })

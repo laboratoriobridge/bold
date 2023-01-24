@@ -1,3 +1,4 @@
+import { parseISO } from 'date-fns'
 import { Week } from '../DateRangePicker/DateRangePicker'
 
 /**
@@ -74,9 +75,16 @@ export const createMonthMatrix = (target: Date): Date[][] => {
  * @param d2 Second date
  * @returns Whether the dates are the same day, month and year
  */
-export const isSameDay = (d1: Date, d2: Date): boolean => {
-  return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()
-}
+export const isSameDay = (d1: Date, d2: Date): boolean =>
+  d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear()
+
+/**
+ * Parse string or Date to Date
+ *
+ * @param d1 String or Date to parse
+ * @returns Aways a Date
+ */
+export const parseDateOrString = (date: Date | string) => (typeof date === 'string' ? parseISO(date) : date)
 
 /**
  * Check if the day belongs to the week
