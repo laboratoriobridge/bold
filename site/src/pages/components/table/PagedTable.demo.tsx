@@ -16,10 +16,10 @@ function PagedTableExample() {
     sort: ['id'],
   })
 
-  const handleSortChange = (sort: string[]) => setParams(state => ({ ...state, sort }))
-  const handlePageChange = (page: number) => setParams(state => ({ ...state, page }))
+  const handleSortChange = (sort: string[]) => setParams((state) => ({ ...state, sort }))
+  const handlePageChange = (page: number) => setParams((state) => ({ ...state, page }))
   const handleSizeChange = (size: number) =>
-    setParams(state => ({ ...state, size, totalPages: Math.max(1, state.totalElements / size) }))
+    setParams((state) => ({ ...state, size, totalPages: Math.max(1, Math.ceil(state.totalElements / size)) }))
 
   const rows = allRows
     // Naive sorting for example purposes:
@@ -52,22 +52,22 @@ function PagedTableExample() {
           name: 'id',
           header: 'ID',
           sortable: true,
-          render: item => item.id,
+          render: (item) => item.id,
         },
         {
           name: 'name',
           header: 'Name',
-          render: item => item.name,
+          render: (item) => item.name,
         },
         {
           name: 'age',
           header: 'Age',
-          render: item => item.age,
+          render: (item) => item.age,
         },
         {
           name: 'actions',
           align: 'right',
-          render: item => (
+          render: (item) => (
             <Button size='small' skin='ghost'>
               <Icon icon='penOutline' />
             </Button>
@@ -85,7 +85,7 @@ let id = 1
 const allRows: RowType[] = Array(30)
   .fill(true)
   .reduce(
-    curr => [
+    (curr) => [
       ...curr,
       { id: id++, name: 'MARIA MACHADO DE JESUS', age: 42 },
       { id: id++, name: 'JOSÉ DA SILVA MOREIRA', age: 34 },
