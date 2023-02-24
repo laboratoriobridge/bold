@@ -146,6 +146,7 @@ export type Icons =
   | 'mapOutline'
   | 'medicineBottleFilled'
   | 'medicineBottleOutline'
+  | 'microphoneBlocked'
   | 'microphoneFilled'
   | 'microphoneOutline'
   | 'minimize'
@@ -235,6 +236,7 @@ export type Icons =
   | 'userOutline'
   | 'userReturn'
   | 'userTimes'
+  | 'videoBlocked'
   | 'videoFilled'
   | 'videoOutline'
   | 'volumeFilled'
@@ -399,6 +401,7 @@ export const IconMap: {
   mapOutline: Components.MapOutline,
   medicineBottleFilled: Components.MedicineBottleFilled,
   medicineBottleOutline: Components.MedicineBottleOutline,
+  microphoneBlocked: Components.MicrophoneBlocked,
   microphoneFilled: Components.MicrophoneFilled,
   microphoneOutline: Components.MicrophoneOutline,
   minimize: Components.Minimize,
@@ -488,6 +491,7 @@ export const IconMap: {
   userOutline: Components.UserOutline,
   userReturn: Components.UserReturn,
   userTimes: Components.UserTimes,
+  videoBlocked: Components.VideoBlocked,
   videoFilled: Components.VideoFilled,
   videoOutline: Components.VideoOutline,
   volumeFilled: Components.VolumeFilled,
