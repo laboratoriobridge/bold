@@ -495,7 +495,7 @@ export const IconMap: {
   userReturn: Components.UserReturn,
   userTimes: Components.UserTimes,
   videoFilled: Components.VideoFilled,
-  videoOffFilled: Components.videoOffFilled,
+  videoOffFilled: Components.VideoOffFilled,
   videoOutline: Components.VideoOutline,
   videoOffOutline: Components.VideoOffOutline,
   volumeFilled: Components.VolumeFilled,
