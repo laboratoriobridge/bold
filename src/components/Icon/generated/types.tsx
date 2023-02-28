@@ -147,7 +147,9 @@ export type Icons =
   | 'medicineBottleFilled'
   | 'medicineBottleOutline'
   | 'microphoneFilled'
+  | 'microphoneOffFilled'
   | 'microphoneOutline'
+  | 'microphoneOffOutline'
   | 'minimize'
   | 'minus'
   | 'minusCircleFilled'
@@ -236,7 +238,9 @@ export type Icons =
   | 'userReturn'
   | 'userTimes'
   | 'videoFilled'
+  | 'videoOffFilled'
   | 'videoOutline'
+  | 'videoOffOutline'
   | 'volumeFilled'
   | 'volumeMuteFilled'
   | 'volumeMuteOutline'
@@ -400,7 +404,9 @@ export const IconMap: {
   medicineBottleFilled: Components.MedicineBottleFilled,
   medicineBottleOutline: Components.MedicineBottleOutline,
   microphoneFilled: Components.MicrophoneFilled,
+  microphoneOffFilled: Components.MicrophoneOffFilled,
   microphoneOutline: Components.MicrophoneOutline,
+  microphoneOffOutline: Components.MicrophoneOffOutline,
   minimize: Components.Minimize,
   minus: Components.Minus,
   minusCircleFilled: Components.MinusCircleFilled,
@@ -489,7 +495,9 @@ export const IconMap: {
   userReturn: Components.UserReturn,
   userTimes: Components.UserTimes,
   videoFilled: Components.VideoFilled,
+  videoOffFilled: Components.VideoOffFilled,
   videoOutline: Components.VideoOutline,
+  videoOffOutline: Components.VideoOffOutline,
   volumeFilled: Components.VolumeFilled,
   volumeMuteFilled: Components.VolumeMuteFilled,
   volumeMuteOutline: Components.VolumeMuteOutline,
