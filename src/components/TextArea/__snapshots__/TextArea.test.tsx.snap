@@ -6,10 +6,6 @@ exports[`should accept style prop 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-4 {
@@ -129,10 +125,7 @@ exports[`should accept style prop 1`] = `
         />
         <div
           class="emotion-1"
-        >
-          <div />
-          <div />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -217,10 +210,10 @@ exports[`should render character counter 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+}
+
+.emotion-1 {
+  margin-left: auto;
 }
 
 .emotion-5 {
@@ -259,7 +252,7 @@ exports[`should render character counter 1`] = `
       class="emotion-4"
     >
       <div
-        class="emotion-1"
+        class="emotion-3"
       >
         <textarea
           class="emotion-0"
@@ -271,16 +264,13 @@ exports[`should render character counter 1`] = `
         <div
           class="emotion-2"
         >
-          <div />
-          <div>
-            <div
-              class="emotion-1"
-            >
-              15
-              /
-              200
-               caracteres
-            </div>
+          <div
+            class="emotion-1"
+          >
+            15
+            /
+            200
+             caracteres
           </div>
         </div>
       </div>
@@ -367,10 +357,10 @@ exports[`should render character counter 2`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+}
+
+.emotion-1 {
+  margin-left: auto;
 }
 
 .emotion-5 {
@@ -409,7 +399,7 @@ exports[`should render character counter 2`] = `
       class="emotion-4"
     >
       <div
-        class="emotion-1"
+        class="emotion-3"
       >
         <textarea
           class="emotion-0"
@@ -421,16 +411,13 @@ exports[`should render character counter 2`] = `
         <div
           class="emotion-2"
         >
-          <div />
-          <div>
-            <div
-              class="emotion-1"
-            >
-              0
-              /
-              200
-               caracteres
-            </div>
+          <div
+            class="emotion-1"
+          >
+            0
+            /
+            200
+             caracteres
           </div>
         </div>
       </div>
@@ -517,10 +504,6 @@ exports[`should render correctly 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-5 {
@@ -584,10 +567,7 @@ exports[`should render correctly 1`] = `
         </textarea>
         <div
           class="emotion-2"
-        >
-          <div />
-          <div />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -672,10 +652,6 @@ exports[`should render correctly when disabled 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-4 {
@@ -723,10 +699,7 @@ exports[`should render correctly when disabled 1`] = `
         />
         <div
           class="emotion-1"
-        >
-          <div />
-          <div />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -739,10 +712,6 @@ exports[`should render correctly with error 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-5 {
@@ -883,16 +852,13 @@ exports[`should render correctly with error 1`] = `
         <div
           class="emotion-2"
         >
-          <div>
-            <div
-              class="emotion-1"
-              id="error-abc"
-              role="alert"
-            >
-              Some error
-            </div>
+          <div
+            class="emotion-1"
+            id="error-abc"
+            role="alert"
+          >
+            Some error
           </div>
-          <div />
         </div>
       </div>
     </div>
@@ -978,10 +944,6 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-5 {
@@ -1041,10 +1003,7 @@ exports[`textarea label label should have a htmlFor prop equals to the used id 1
         />
         <div
           class="emotion-2"
-        >
-          <div />
-          <div />
-        </div>
+        />
       </div>
     </div>
   </div>
@@ -1129,10 +1088,6 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
 }
 
 .emotion-5 {
@@ -1192,10 +1147,7 @@ exports[`textarea label should use aria-labelledby equals to an auto-assigned la
         />
         <div
           class="emotion-2"
-        >
-          <div />
-          <div />
-        </div>
+        />
       </div>
     </div>
   </div>
