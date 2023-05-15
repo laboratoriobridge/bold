@@ -36,21 +36,17 @@ export function TextArea(props: TextAreaProps) {
       <textarea className={className} {...inputProps} {...rest} />
 
       <div className={classes.footer}>
-        <div>
-          {error && (
-            <FormError id={errorId} role='alert'>
-              {error}
-            </FormError>
-          )}
-        </div>
+        {error && (
+          <FormError id={errorId} role='alert'>
+            {error}
+          </FormError>
+        )}
 
-        <div>
-          {props.maxLength && (
-            <div className={classes.counter}>
-              {currentLength}/{props.maxLength} caracteres
-            </div>
-          )}
-        </div>
+        {props.maxLength && (
+          <div className={classes.counter}>
+            {currentLength}/{props.maxLength} caracteres
+          </div>
+        )}
       </div>
     </FormControl>
   )
@@ -60,9 +56,9 @@ const createStyles = (theme: Theme, { invalid }) => ({
   ...createTextInputBaseStyles(theme),
   footer: {
     display: 'flex',
-    justifyContent: 'space-between',
   },
   counter: {
+    marginLeft: 'auto',
     color: invalid && theme.pallete.status.danger.main,
   } as CSSProperties,
 })
