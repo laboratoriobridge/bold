@@ -20,6 +20,9 @@ export const Default = () => (
       <Button size='small' disabled>
         Third
       </Button>
+      <Button size='small' disabled>
+        Fourth
+      </Button>
     </ButtonGroup>
     <ButtonGroup>
       <Button size='small'>
