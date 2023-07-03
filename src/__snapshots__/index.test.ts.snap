@@ -131,6 +131,7 @@ Array [
   "isEqual",
   "merge",
   "some",
+  "range",
   "isPromise",
   "Observable",
   "__types",
