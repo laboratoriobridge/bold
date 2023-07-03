@@ -3,6 +3,7 @@ import _isEmpty from 'lodash/isEmpty'
 import _isEqual from 'lodash/isEqual'
 import _merge from 'lodash/merge'
 import _some from 'lodash/some'
+import _range from 'lodash/range'
 
 export * from './Observable'
 export * from './types'
@@ -12,6 +13,7 @@ export const isEmpty = _isEmpty
 export const isEqual = _isEqual
 export const merge = _merge
 export const some = _some
+export const range = _range
 
 /**
  * Check whether the object is a promise.
