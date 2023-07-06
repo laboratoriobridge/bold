@@ -6,9 +6,9 @@ import { GridArea } from './classes/GridArea'
 import { PivotTableProvider, PivotTableContextType } from './PivotTableProvider'
 import { PivotTableCellType } from './model'
 
-const createComponent = ({ total, suffix }: PivotTableContextType, props: PivotTableCellProps) => {
+const createComponent = ({ maxValue, suffix }: PivotTableContextType, props: PivotTableCellProps) => {
   return (
-    <PivotTableProvider value={{ total, suffix }}>
+    <PivotTableProvider value={{ maxValue, suffix }}>
       <PivotTableCell {...props} />
     </PivotTableProvider>
   )
@@ -17,12 +17,12 @@ const createComponent = ({ total, suffix }: PivotTableContextType, props: PivotT
 describe('PivotTableCell', () => {
   const [rowStart, columnStart] = [0, 0]
   const gridArea = new GridArea(rowStart, columnStart)
-  const total = 1
+  const maxValue = 1
   const children = 1
 
   it('should render correctly', () => {
     const types = new Set([PivotTableCellType.VALUE])
-    const { container } = render(createComponent({ total }, { gridArea, types, children }))
+    const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
     expect(container).toMatchSnapshot()
   })
 
@@ -36,7 +36,7 @@ describe('PivotTableCell', () => {
       backgroundColor: expectedBackgroundColor,
     })
 
-    const { container } = render(createComponent({ total }, { gridArea, types, children }))
+    const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
     const { color, backgroundColor } = window.getComputedStyle(
       selectPivotTableCellElement(container, rowStart, columnStart)
     )
@@ -50,8 +50,8 @@ describe('PivotTableCell', () => {
     describe.each([PivotTableCellType.VALUE, PivotTableCellType.EMPTY])("when cell type includes '%s'", (typeValue) => {
       const types = new Set([typeValue])
 
-      it('should update bg color on mouse enter', () => {
-        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+      it('should update background color on mouse enter', () => {
+        const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
         const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 
         const { backgroundColor: bgColorBeforeMouseEnter } = window.getComputedStyle(cell)
@@ -62,7 +62,7 @@ describe('PivotTableCell', () => {
       })
 
       it('should return to original bg color on mouse leave', () => {
-        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+        const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
         const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 
         const { backgroundColor: initialBgColor } = window.getComputedStyle(cell)
@@ -74,9 +74,9 @@ describe('PivotTableCell', () => {
       })
     })
 
-    it("when cell types dont include 'value' or 'empty', shouldnt update bg color on mouse enter", () => {
+    it("when cell types dont include 'value' or 'empty', shouldnt update background color on mouse enter", () => {
       const types = new Set([PivotTableCellType.GRANDTOTAL])
-      const { container } = render(createComponent({ total }, { gridArea, types, children }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
       const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 
       const { backgroundColor: bgColorBeforeMouseEnter } = window.getComputedStyle(cell)
@@ -94,7 +94,7 @@ describe('PivotTableCell', () => {
     const suffix = 'os'
     const types = new Set([typeValue])
 
-    const { container } = render(createComponent({ total, suffix }, { gridArea, types, children }))
+    const { container } = render(createComponent({ maxValue, suffix }, { gridArea, types, children }))
     const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
     expect(result.endsWith(suffix)).toBe(shouldAddSuffix)
@@ -106,7 +106,7 @@ describe('PivotTableCell', () => {
       (typeValue) => {
         const types = new Set([typeValue])
 
-        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+        const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
         const { fontWeight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
         expect(fontWeight).toEqual('bold')
@@ -116,7 +116,7 @@ describe('PivotTableCell', () => {
     it("when cell types dont inclue 'header' or 'total', shouldnt bold its content", () => {
       const types = new Set([PivotTableCellType.GRANDTOTAL])
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
       const { fontWeight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
       expect(fontWeight).toEqual('normal')
@@ -129,7 +129,7 @@ describe('PivotTableCell', () => {
       (typeValue) => {
         const types = new Set([typeValue])
 
-        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+        const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
         const { justifyContent } = window.getComputedStyle(
           selectPivotTableCellElement(container, rowStart, columnStart)
         )
@@ -141,7 +141,7 @@ describe('PivotTableCell', () => {
     it("when cell types dont include 'value' or 'empty', should left-justify content", () => {
       const types = new Set([PivotTableCellType.GRANDTOTAL])
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
       const { justifyContent } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
       expect(justifyContent).toEqual('flex-start')
@@ -151,7 +151,7 @@ describe('PivotTableCell', () => {
   it.each([false, true])('should set border bottom only when is end row', (isEndRow) => {
     const types = new Set([PivotTableCellType.GRANDTOTAL])
 
-    const { container } = render(createComponent({ total }, { gridArea, types, children, isEndRow }))
+    const { container } = render(createComponent({ maxValue }, { gridArea, types, children, isEndRow }))
     const { borderBottom } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
     expect(borderBottom.startsWith('1px solid')).toBe(isEndRow)
@@ -160,7 +160,7 @@ describe('PivotTableCell', () => {
   it.each([false, true])('should set border right only when is end column', (isEndColumn) => {
     const types = new Set([PivotTableCellType.GRANDTOTAL])
 
-    const { container } = render(createComponent({ total }, { gridArea, types, children, isEndColumn }))
+    const { container } = render(createComponent({ maxValue }, { gridArea, types, children, isEndColumn }))
     const { borderRight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
     expect(borderRight.startsWith('1px solid')).toBe(isEndColumn)
@@ -179,7 +179,7 @@ describe('PivotTableCell', () => {
       const expected = '1,24'
       mockNumberFormatter.mockReturnValue(expected)
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children: input }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children: input }))
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(expected)
@@ -190,7 +190,7 @@ describe('PivotTableCell', () => {
       const types = new Set([PivotTableCellType.GRANDTOTAL])
       const input = '1.234'
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children: input }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children: input }))
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(input)
@@ -200,7 +200,7 @@ describe('PivotTableCell', () => {
     it.each(['Header text', 1.234])("when cell type includes 'header', souldnt format it", (input) => {
       const types = new Set([PivotTableCellType.HEADER])
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children: input }))
+      const { container } = render(createComponent({ maxValue }, { gridArea, types, children: input }))
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(input.toString())

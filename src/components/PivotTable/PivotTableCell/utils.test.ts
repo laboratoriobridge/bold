@@ -14,11 +14,11 @@ describe('numberFormatter', () => {
     const result = numberFormatter(1)
     expect(result).toEqual('1')
   })
-  it('when value has one decimal digit, should add a digit', () => {
+  it('when value has one decimal digit, should add a digit in pt-BR format', () => {
     const result = numberFormatter(1.2)
     expect(result).toEqual('1,20')
   })
-  it('when value has more than 2 decimal digits, should limit to two digits', () => {
+  it('when value has more than 2 decimal digits, should limit to two digits in pt-BR format', () => {
     const result = numberFormatter(1.234)
     expect(result).toEqual('1,23')
   })
@@ -86,7 +86,7 @@ describe('calculateCellColor', () => {
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is below 0%% of total value, should return same color user for up to 10%', () => {
+      it('when cell content is below 0%% of total value, should return same color used for up to 10%', () => {
         const cellContent = '-0.1'
         const expected = blue.c100
 
@@ -94,7 +94,7 @@ describe('calculateCellColor', () => {
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is above 100%% of total value, should return same color user for up to 100%', () => {
+      it('when cell content is above 100%% of total value, should return same color used for up to 100%', () => {
         const cellContent = '10.1'
         const expected = blue.c10
 

@@ -1,7 +1,13 @@
 import React from 'react'
 
 export interface PivotTableContextType {
-  total: number
+  /**
+   * The maximum expected value for all the table
+   */
+  maxValue: number
+  /**
+   * The suffix to append to the cell value
+   */
   suffix?: string
 }
 

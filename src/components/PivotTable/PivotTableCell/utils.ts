@@ -30,14 +30,14 @@ interface CellColorProps {
  * Calculates text and background colors based on cell type and its content
  * @param theme
  * @param isOnlyValue True if cell type includes only 'value'
- * @param totalValue The largest expected value for the cell's content
+ * @param maxValue The maximum expected value for all the table
  * @param cellContent The cell's content
  * @returns An object containing the text and background colors
  */
 export const calculateCellColor = (
   theme: Theme,
   isOnlyValue: boolean,
-  totalValue: number,
+  maxValue: number,
   cellContent?: number | string
 ): CellColorProps => {
   let color = theme.pallete.gray.c10
@@ -45,7 +45,7 @@ export const calculateCellColor = (
   const cellValue = Number(cellContent)
 
   if (isOnlyValue && cellValue) {
-    let colorIndex = 110 - Math.ceil((cellValue * 100) / totalValue / 10) * 10
+    let colorIndex = 110 - Math.ceil((cellValue * 100) / maxValue / 10) * 10
     colorIndex = colorIndex > 100 ? 100 : colorIndex < 10 ? 10 : colorIndex
     if (colorIndex < 70) {
       color = theme.pallete.gray.c100

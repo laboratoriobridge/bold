@@ -7,7 +7,7 @@ import { PivotTableCellType } from './model'
 export const pivotTableCellCreateStyles = (
   theme: Theme,
   key: string,
-  totalValue: number,
+  maxValue: number,
   { types, children }: PivotTableCellProps
 ) => {
   const isValue = types.has(PivotTableCellType.VALUE)
@@ -15,13 +15,13 @@ export const pivotTableCellCreateStyles = (
   const isHeaderOrTotal = types.has(PivotTableCellType.HEADER) || types.has(PivotTableCellType.TOTAL)
   const isOnlyValue = isValue && types.size === 1
 
-  const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, totalValue, children)
+  const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, children)
 
   return {
     root: {
       gridArea: key,
-      backgroundColor: backgroundColor,
-      color: color,
+      backgroundColor,
+      color,
       borderTop: `1px solid ${theme.pallete.divider}`,
       borderLeft: `1px solid ${theme.pallete.divider}`,
       display: 'flex',

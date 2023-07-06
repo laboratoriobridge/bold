@@ -35,8 +35,11 @@ export interface PivotTableCellProps {
   styles?: SerializedStyles
 }
 
+// improve name
+const someColorIDontKnow = 'rgba(240, 240, 245, 0.5)'
+
 export function PivotTableCell(props: PivotTableCellProps) {
-  const { types, gridArea, children, isEndColumn, isEndRow, styles } = props
+  const { types, gridArea, children, isEndColumn = false, isEndRow = false, styles } = props
 
   const isHeader = types.has(PivotTableCellType.HEADER)
   const isValue = types.has(PivotTableCellType.VALUE)
@@ -50,7 +53,7 @@ export function PivotTableCell(props: PivotTableCellProps) {
     classes: { root, endColumnBorder, endRowBorder },
     css,
     theme,
-  } = useStyles(pivotTableCellCreateStyles, key, context.total, props)
+  } = useStyles(pivotTableCellCreateStyles, key, context.maxValue, props)
 
   const handleMouseEnter = () => {
     if (isValueOrEmpty) {
@@ -58,7 +61,7 @@ export function PivotTableCell(props: PivotTableCellProps) {
         let rgbColor = window.getComputedStyle(element).getPropertyValue('background-color')
 
         if (hexToRGB(theme.pallete.surface.main) === rgbColor) {
-          element.setAttribute('style', `background-color: rgba(240, 240, 245, 0.5)`)
+          element.setAttribute('style', `background-color: ${someColorIDontKnow}`)
         } else {
           rgbColor = rgbColor.replace('rgb', 'rgba')
           rgbColor = rgbColor.replace(')', ', 0.5)')

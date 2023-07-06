@@ -1,5 +1,6 @@
 import React from 'react'
 import { times } from 'lodash'
+import { boolean, object, text } from '@storybook/addon-knobs'
 import { HFlow } from '../../HFlow'
 import { PivotTableCell } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
@@ -10,13 +11,18 @@ export default {
   title: 'Components/PivotTable/PivotTableCell',
 }
 
-export const Default = () => {
-  const total = 9
+interface CellTypeAndContent {
+  type: PivotTableCellType
+  content: number | string
+}
 
-  const cellsTypeAndContent = [
+export const Default = () => {
+  const maxValue = 9
+
+  const cellsTypeAndContent: CellTypeAndContent[] = [
     { type: PivotTableCellType.HEADER, content: 'Header' },
     { type: PivotTableCellType.EMPTY, content: 'empty' },
-    ...times(total + 1, (n) => ({
+    ...times(maxValue + 1, (n) => ({
       type: PivotTableCellType.VALUE,
       content: n,
     })),
@@ -25,19 +31,20 @@ export const Default = () => {
   ]
 
   return (
-    <PivotTableProvider value={{ total: total, suffix: '' }}>
+    <PivotTableProvider value={{ maxValue: maxValue, suffix: '' }}>
       <HFlow hSpacing={0}>
         {cellsTypeAndContent.map(({ type, content }, idx) => {
           const types = new Set([type])
           const gridArea = new GridArea(0, idx)
+          const idxStr = idx.toString()
 
           return (
             <PivotTableCell
-              types={types}
-              key={gridArea.toString()}
-              gridArea={gridArea}
-              isEndRow
-              isEndColumn={cellsTypeAndContent.length - 1 === idx}
+              types={object('types', types, idxStr)} // just shows an empty object, there's' a function to set of enum (maybe select works for enum)
+              key={text('key', gridArea.toString(), idxStr)}
+              gridArea={object<GridArea>('gridArea', gridArea, idxStr)}
+              isEndRow={boolean('isEndRow', true, idxStr)}
+              isEndColumn={boolean('isEndColumn', cellsTypeAndContent.length - 1 === idx, idxStr)}
             >
               {content}
             </PivotTableCell>
