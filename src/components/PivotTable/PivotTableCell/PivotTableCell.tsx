@@ -6,13 +6,13 @@ import { GridArea } from './classes/GridArea'
 import { numberFormatter, selectPivotTableCellElements } from './utils'
 import { pivotTableCellCreateStyles } from './styles'
 import { PivotTableContext } from './PivotTableProvider'
-import { PivotTableCellTypes } from './model'
+import { PivotTableCellType } from './model'
 
 export interface PivotTableCellProps {
   /**
    * Types that cell can assume
    */
-  types: PivotTableCellTypes
+  types: Set<PivotTableCellType>
   /**
    * Region of the table the cell refers to
    */
@@ -38,9 +38,9 @@ export interface PivotTableCellProps {
 export function PivotTableCell(props: PivotTableCellProps) {
   const { types, gridArea, children, isEndColumn, isEndRow, styles } = props
 
-  const isHeader = types.includes('header')
-  const isValue = types.includes('value')
-  const isValueOrEmpty = isValue || types.includes('empty')
+  const isHeader = types.has(PivotTableCellType.HEADER)
+  const isValue = types.has(PivotTableCellType.VALUE)
+  const isValueOrEmpty = isValue || types.has(PivotTableCellType.EMPTY)
 
   const { rowStart, rowEnd, columnStart, columnEnd } = gridArea
   const key = gridArea.toString()

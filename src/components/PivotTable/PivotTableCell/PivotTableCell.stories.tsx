@@ -4,7 +4,7 @@ import { HFlow } from '../../HFlow'
 import { PivotTableCell } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
 import { PivotTableProvider } from './PivotTableProvider'
-import { PivotTableCellTypes } from './model'
+import { PivotTableCellType } from './model'
 
 export default {
   title: 'Components/PivotTable/PivotTableCell',
@@ -14,21 +14,21 @@ export const Default = () => {
   const total = 9
 
   const cellsTypeAndContent = [
-    { type: 'header', content: 'Header' },
-    { type: 'empty', content: 'empty' },
+    { type: PivotTableCellType.HEADER, content: 'Header' },
+    { type: PivotTableCellType.EMPTY, content: 'empty' },
     ...times(total + 1, (n) => ({
-      type: 'value',
+      type: PivotTableCellType.VALUE,
       content: n,
     })),
-    { type: 'grandtotal', content: 45 },
-    { type: 'total', content: 45 },
+    { type: PivotTableCellType.GRANDTOTAL, content: 45 },
+    { type: PivotTableCellType.TOTAL, content: 45 },
   ]
 
   return (
     <PivotTableProvider value={{ total: total, suffix: '' }}>
       <HFlow hSpacing={0}>
         {cellsTypeAndContent.map(({ type, content }, idx) => {
-          const types = [type] as PivotTableCellTypes
+          const types = new Set([type])
           const gridArea = new GridArea(0, idx)
 
           return (

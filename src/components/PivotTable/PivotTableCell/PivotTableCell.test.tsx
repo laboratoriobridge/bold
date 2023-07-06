@@ -4,7 +4,7 @@ import * as utilsModule from './utils'
 import { PivotTableCell, PivotTableCellProps } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
 import { PivotTableProvider, PivotTableContextType } from './PivotTableProvider'
-import { PivotTableCellTypes } from './model'
+import { PivotTableCellType } from './model'
 
 const createComponent = ({ total, suffix }: PivotTableContextType, props: PivotTableCellProps) => {
   return (
@@ -21,13 +21,13 @@ describe('PivotTableCell', () => {
   const children = 1
 
   it('should render correctly', () => {
-    const types = ['value'] as PivotTableCellTypes
+    const types = new Set([PivotTableCellType.VALUE])
     const { container } = render(createComponent({ total }, { gridArea, types, children }))
     expect(container).toMatchSnapshot()
   })
 
   it('should color font and background correctly', () => {
-    const types = ['value'] as PivotTableCellTypes
+    const types = new Set([PivotTableCellType.VALUE])
     const expectedColor = 'rgb(0, 1, 2)'
     const expectedBackgroundColor = 'rgb(2, 1, 0)'
 
@@ -47,8 +47,8 @@ describe('PivotTableCell', () => {
   })
 
   describe('hover', () => {
-    describe.each(['value', 'empty'])("when cell type includes '%s'", (typeValue) => {
-      const types = [typeValue] as PivotTableCellTypes
+    describe.each([PivotTableCellType.VALUE, PivotTableCellType.EMPTY])("when cell type includes '%s'", (typeValue) => {
+      const types = new Set([typeValue])
 
       it('should update bg color on mouse enter', () => {
         const { container } = render(createComponent({ total }, { gridArea, types, children }))
@@ -75,7 +75,7 @@ describe('PivotTableCell', () => {
     })
 
     it("when cell types dont include 'value' or 'empty', shouldnt update bg color on mouse enter", () => {
-      const types = ['header'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.GRANDTOTAL])
       const { container } = render(createComponent({ total }, { gridArea, types, children }))
       const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 
@@ -88,11 +88,11 @@ describe('PivotTableCell', () => {
   })
 
   it.each([
-    ['grandtotal', false],
-    ['value', true],
+    [PivotTableCellType.GRANDTOTAL, false],
+    [PivotTableCellType.VALUE, true],
   ])("should add suffix only when cell type inclues 'value'", (typeValue, shouldAddSuffix) => {
     const suffix = 'os'
-    const types = [typeValue] as PivotTableCellTypes
+    const types = new Set([typeValue])
 
     const { container } = render(createComponent({ total, suffix }, { gridArea, types, children }))
     const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
@@ -101,17 +101,20 @@ describe('PivotTableCell', () => {
   })
 
   describe('font weight', () => {
-    it.each([['header'], ['total']])("when cell type inclues '%s', should bold its content", (typeValue) => {
-      const types = [typeValue] as PivotTableCellTypes
+    it.each([PivotTableCellType.HEADER, PivotTableCellType.TOTAL])(
+      "when cell type inclues '%s', should bold its content",
+      (typeValue) => {
+        const types = new Set([typeValue])
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children }))
-      const { fontWeight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
+        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+        const { fontWeight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
 
-      expect(fontWeight).toEqual('bold')
-    })
+        expect(fontWeight).toEqual('bold')
+      }
+    )
 
     it("when cell types dont inclue 'header' or 'total', shouldnt bold its content", () => {
-      const types = ['grandtotal'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.GRANDTOTAL])
 
       const { container } = render(createComponent({ total }, { gridArea, types, children }))
       const { fontWeight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
@@ -121,17 +124,22 @@ describe('PivotTableCell', () => {
   })
 
   describe('justify content', () => {
-    it.each(['value', 'empty'])("when cell type includes '%s', should right-justify its content", (typeValue) => {
-      const types = [typeValue] as PivotTableCellTypes
+    it.each([PivotTableCellType.VALUE, PivotTableCellType.EMPTY])(
+      "when cell type includes '%s', should right-justify its content",
+      (typeValue) => {
+        const types = new Set([typeValue])
 
-      const { container } = render(createComponent({ total }, { gridArea, types, children }))
-      const { justifyContent } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
+        const { container } = render(createComponent({ total }, { gridArea, types, children }))
+        const { justifyContent } = window.getComputedStyle(
+          selectPivotTableCellElement(container, rowStart, columnStart)
+        )
 
-      expect(justifyContent).toEqual('flex-end')
-    })
+        expect(justifyContent).toEqual('flex-end')
+      }
+    )
 
     it("when cell types dont include 'value' or 'empty', should left-justify content", () => {
-      const types = ['grandtotal'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.GRANDTOTAL])
 
       const { container } = render(createComponent({ total }, { gridArea, types, children }))
       const { justifyContent } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
@@ -141,7 +149,7 @@ describe('PivotTableCell', () => {
   })
 
   it.each([false, true])('should set border bottom only when is end row', (isEndRow) => {
-    const types = ['grandtotal'] as PivotTableCellTypes
+    const types = new Set([PivotTableCellType.GRANDTOTAL])
 
     const { container } = render(createComponent({ total }, { gridArea, types, children, isEndRow }))
     const { borderBottom } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
@@ -150,7 +158,7 @@ describe('PivotTableCell', () => {
   })
 
   it.each([false, true])('should set border right only when is end column', (isEndColumn) => {
-    const types = ['grandtotal'] as PivotTableCellTypes
+    const types = new Set([PivotTableCellType.GRANDTOTAL])
 
     const { container } = render(createComponent({ total }, { gridArea, types, children, isEndColumn }))
     const { borderRight } = window.getComputedStyle(selectPivotTableCellElement(container, rowStart, columnStart))
@@ -166,7 +174,7 @@ describe('PivotTableCell', () => {
     })
 
     it("when types dont include 'header' and its content is a number, should format it correctly", () => {
-      const types = ['value'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.GRANDTOTAL])
       const input = 1.234
       const expected = '1,24'
       mockNumberFormatter.mockReturnValue(expected)
@@ -179,7 +187,7 @@ describe('PivotTableCell', () => {
     })
 
     it("when types dont include 'header' but its content isnt a number, shouldnt format it", () => {
-      const types = ['value'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.GRANDTOTAL])
       const input = '1.234'
 
       const { container } = render(createComponent({ total }, { gridArea, types, children: input }))
@@ -190,7 +198,7 @@ describe('PivotTableCell', () => {
     })
 
     it.each(['Header text', 1.234])("when cell type includes 'header', souldnt format it", (input) => {
-      const types = ['header'] as PivotTableCellTypes
+      const types = new Set([PivotTableCellType.HEADER])
 
       const { container } = render(createComponent({ total }, { gridArea, types, children: input }))
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)

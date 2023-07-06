@@ -2,6 +2,7 @@ import { FontWeightProperty } from 'csstype'
 import { Theme } from '../../../styles'
 import { calculateCellColor } from './utils'
 import { PivotTableCellProps } from './PivotTableCell'
+import { PivotTableCellType } from './model'
 
 export const pivotTableCellCreateStyles = (
   theme: Theme,
@@ -9,10 +10,10 @@ export const pivotTableCellCreateStyles = (
   totalValue: number,
   { types, children }: PivotTableCellProps
 ) => {
-  const isValue = types.includes('value')
-  const isValueOrEmpty = isValue || types.includes('empty')
-  const isHeaderOrTotal = types.includes('header') || types.includes('total')
-  const isOnlyValue = isValue && types.length === 1
+  const isValue = types.has(PivotTableCellType.VALUE)
+  const isValueOrEmpty = isValue || types.has(PivotTableCellType.EMPTY)
+  const isHeaderOrTotal = types.has(PivotTableCellType.HEADER) || types.has(PivotTableCellType.TOTAL)
+  const isOnlyValue = isValue && types.size === 1
 
   const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, totalValue, children)
 
