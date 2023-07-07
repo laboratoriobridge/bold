@@ -1,5 +1,7 @@
 import { GridArea } from './GridArea'
 
+const errorMessage = 'End values must be greater than start values.'
+
 describe('GridArea', () => {
   it('should initialize it correctly', () => {
     const input = {
@@ -28,12 +30,25 @@ describe('GridArea', () => {
     const rowStart = 5
     const rowEnd = 0
 
-    expect(() => new GridArea(rowStart, 0, rowEnd, 0)).toThrowError()
+    expect(() => new GridArea(rowStart, 0, rowEnd, 0)).toThrowError(errorMessage)
   })
-  it('when column end is greater than clomun start, should throw an error', () => {
+
+  it('when column end is greater than column start, should throw an error', () => {
     const columnStart = 5
     const columnEnd = 0
 
-    expect(() => new GridArea(0, columnStart, 0, columnEnd)).toThrowError()
+    expect(() => new GridArea(0, columnStart, 0, columnEnd)).toThrowError(errorMessage)
+  })
+
+  it('should convert it to string correctly', () => {
+    const rowStart = 0
+    const columnStart = 5
+    const rowEnd = 1
+    const columnEnd = 6
+    const gridArea = new GridArea(rowStart, columnStart, rowEnd, columnEnd)
+
+    const result = gridArea.toString()
+
+    expect(result).toEqual('0/5/1/6')
   })
 })

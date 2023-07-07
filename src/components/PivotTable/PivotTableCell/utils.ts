@@ -1,4 +1,5 @@
 import { Theme } from '../../../styles'
+import { clamp } from '../../../util'
 import { format } from '../../../util/number'
 
 /**
@@ -26,8 +27,17 @@ interface CellColorProps {
   backgroundColor: string
 }
 
+const MIN_COLOR_INDEX_OF_LIGHT_BG = 70
+
 /**
- * Calculates text and background colors based on cell type and its content
+ * Calculates text and background colors based on cell type and its content.
+ *
+ * If cell type is only 'value' and its content is a number:
+ * - increase saturation of background color every 10% of maximum value
+ * - makes the text color lighter when background becames too dark
+ *
+ * Otherwise, keep the default background and text color.
+ *
  * @param theme
  * @param isOnlyValue True if cell type includes only 'value'
  * @param maxValue The maximum expected value for all the table
@@ -45,13 +55,14 @@ export const calculateCellColor = (
   const cellValue = Number(cellContent)
 
   if (isOnlyValue && cellValue) {
-    let colorIndex = 110 - Math.ceil((cellValue * 100) / maxValue / 10) * 10
-    colorIndex = colorIndex > 100 ? 100 : colorIndex < 10 ? 10 : colorIndex
-    if (colorIndex < 70) {
+    const percentageOfMaxValue = steppedPercentage(cellValue, maxValue, 10)
+    const bgColorIndex = clamp(110 - percentageOfMaxValue, 10, 100)
+
+    if (bgColorIndex < MIN_COLOR_INDEX_OF_LIGHT_BG) {
       color = theme.pallete.gray.c100
     }
 
-    backgroundColor = theme.pallete.primary[`c${colorIndex}`]
+    backgroundColor = theme.pallete.primary[`c${bgColorIndex}`]
   }
 
   return {
@@ -59,6 +70,9 @@ export const calculateCellColor = (
     backgroundColor,
   }
 }
+
+const steppedPercentage = (value: number, baseValue: number, step: number) =>
+  Math.ceil(((value / baseValue) * 100) / step) * step
 
 /**
  * Selects all the elements that has the given row and column numbers as its 'data-rownumber' and 'data-columnnumber' attributes

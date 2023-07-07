@@ -28,13 +28,13 @@ describe('calculateCellColor', () => {
   const theme = createTheme()
   const defaultColor = theme.pallete.gray.c10
   const defaultBgColor = theme.pallete.surface.main
-  const total = 10
+  const maxValue = 10
 
   it("when cell types dont include only 'value', should return default colors", () => {
     const isOnlyValue = false
     const cellContent = 1
 
-    const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+    const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
 
     expect(color).toEqual(defaultColor)
     expect(backgroundColor).toEqual(defaultBgColor)
@@ -44,7 +44,7 @@ describe('calculateCellColor', () => {
     const isOnlyValue = true
     const cellContent = 'Im not numeric'
 
-    const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+    const { color, backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
 
     expect(color).toEqual(defaultColor)
     expect(backgroundColor).toEqual(defaultBgColor)
@@ -54,17 +54,17 @@ describe('calculateCellColor', () => {
     const isOnlyValue = true
 
     describe('text color', () => {
-      it('when cell content is up to 40% of total value, should return default', () => {
+      it('when cell content is up to 40% of maximum value, should return default', () => {
         const cellContent = '4'
-        const { color } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+        const { color } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
         expect(color).toEqual(defaultColor)
       })
 
-      it('when cell content is above 40% of total value, should return correctly', () => {
+      it('when cell content is above 40% of maximum value, should return correctly', () => {
         const cellContent = '4.1'
         const expected = gray.c100
 
-        const { color } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+        const { color } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
         expect(color).toEqual(expected)
       })
     })
@@ -81,24 +81,24 @@ describe('calculateCellColor', () => {
         [8, blue.c30],
         [9, blue.c20],
         [10, blue.c10],
-      ])('when cell content is up to %s0%% of total value, should return %s', (cellContent, expected) => {
-        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+      ])('when cell content is up to %i0%% of maximum value, should return %s', (cellContent, expected) => {
+        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is below 0%% of total value, should return same color used for up to 10%', () => {
+      it('when cell content is below 0% of maximum value, should return same color used for up to 10%', () => {
         const cellContent = '-0.1'
         const expected = blue.c100
 
-        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is above 100%% of total value, should return same color used for up to 100%', () => {
+      it('when cell content is above 100% of maximum value, should return same color used for up to 100%', () => {
         const cellContent = '10.1'
         const expected = blue.c10
 
-        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, total, cellContent)
+        const { backgroundColor } = calculateCellColor(theme, isOnlyValue, maxValue, cellContent)
         expect(backgroundColor).toEqual(expected)
       })
     })
