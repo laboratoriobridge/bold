@@ -1,5 +1,5 @@
 import { SerializedStyles } from '@emotion/serialize'
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { hexToRGB, useStyles } from '../../../styles'
 import { range } from '../../../util'
 import { GridArea } from './classes/GridArea'
@@ -35,9 +35,6 @@ export interface PivotTableCellProps {
   styles?: SerializedStyles
 }
 
-// improve name
-const someColorIDontKnow = 'rgba(240, 240, 245, 0.5)'
-
 export function PivotTableCell(props: PivotTableCellProps) {
   const { types, gridArea, children, isEndColumn = false, isEndRow = false, styles } = props
 
@@ -58,15 +55,23 @@ export function PivotTableCell(props: PivotTableCellProps) {
   const handleMouseEnter = () => {
     if (isValueOrEmpty) {
       selectPivotTableCellElements(rowStart, columnStart).forEach((element) => {
+        // cor atual
         let rgbColor = window.getComputedStyle(element).getPropertyValue('background-color')
 
-        if (hexToRGB(theme.pallete.surface.main) === rgbColor) {
-          element.setAttribute('style', `background-color: ${someColorIDontKnow}`)
-        } else {
-          rgbColor = rgbColor.replace('rgb', 'rgba')
-          rgbColor = rgbColor.replace(')', ', 0.5)')
-          element.setAttribute('style', `background-color: ${rgbColor}`)
+        // when actual color is gray.c100 (white)
+        if (hexToRGB(theme.pallete.gray.c100) === rgbColor) {
+          rgbColor = hexToRGB(theme.pallete.gray.c90)
         }
+
+        rgbColor = rgbColor.replace('rgb', 'rgba')
+        rgbColor = rgbColor.replace(')', ', 0.5)')
+        element.setAttribute('style', `background-color: ${rgbColor}`)
+
+        /**
+         * TODO
+         * - use theme to set gray.c90
+         * - set aplha for any case
+         */
       })
     }
   }
@@ -77,8 +82,8 @@ export function PivotTableCell(props: PivotTableCellProps) {
     }
   }
 
-  const rowNumbers = range(rowStart, rowEnd).join(' ')
-  const columnNumbers = range(columnStart, columnEnd).join(' ')
+  const rowNumbers = useMemo(() => range(rowStart, rowEnd).join(' '), [rowStart, rowEnd])
+  const columnNumbers = useMemo(() => range(columnStart, columnEnd).join(' '), [columnStart, columnEnd])
   const className = css(root, isEndColumn && endColumnBorder, isEndRow && endRowBorder, styles)
 
   return (

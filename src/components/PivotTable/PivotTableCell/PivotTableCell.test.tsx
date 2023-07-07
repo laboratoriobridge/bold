@@ -1,5 +1,6 @@
 import React from 'react'
 import { fireEvent, getNodeText, render } from '@testing-library/react'
+import { createTheme, hexToRGB } from '../../../styles'
 import * as utilsModule from './utils'
 import { PivotTableCell, PivotTableCellProps } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
@@ -20,6 +21,16 @@ describe('PivotTableCell', () => {
   const maxValue = 1
   const children = 1
 
+  const mockCalculateCellColor = jest.spyOn(utilsModule, 'calculateCellColor')
+
+  afterEach(() => {
+    mockCalculateCellColor.mockClear()
+  })
+
+  afterAll(() => {
+    mockCalculateCellColor.mockRestore()
+  })
+
   it('should render correctly', () => {
     const types = new Set([PivotTableCellType.VALUE])
     const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
@@ -31,7 +42,7 @@ describe('PivotTableCell', () => {
     const expectedColor = 'rgb(0, 1, 2)'
     const expectedBackgroundColor = 'rgb(2, 1, 0)'
 
-    const mockCalculateCellColor = jest.spyOn(utilsModule, 'calculateCellColor').mockReturnValue({
+    mockCalculateCellColor.mockReturnValue({
       color: expectedColor,
       backgroundColor: expectedBackgroundColor,
     })
@@ -50,18 +61,42 @@ describe('PivotTableCell', () => {
     describe.each([PivotTableCellType.VALUE, PivotTableCellType.EMPTY])("when cell type includes '%s'", (typeValue) => {
       const types = new Set([typeValue])
 
-      it('should update background color on mouse enter', () => {
-        const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
-        const cell = selectPivotTableCellElement(container, rowStart, columnStart)
+      describe('on mouse enter', () => {
+        const theme = createTheme()
 
-        const { backgroundColor: bgColorBeforeMouseEnter } = window.getComputedStyle(cell)
-        fireEvent.mouseEnter(cell)
-        const { backgroundColor: bgColorAfterMouseEnter } = window.getComputedStyle(cell)
+        it('when background color is white, should update it correclty', () => {
+          mockCalculateCellColor.mockReturnValue({
+            color: '',
+            backgroundColor: theme.pallete.primary.c100,
+          })
+          const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
+          const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 
-        expect(bgColorAfterMouseEnter).not.toEqual(bgColorBeforeMouseEnter)
+          fireEvent.mouseEnter(cell)
+          const { backgroundColor } = window.getComputedStyle(cell)
+
+          expect(mockCalculateCellColor).toBeCalled()
+          expect(backgroundColor).toEqual('rgba(240, 240, 245, 0.5)')
+        })
+
+        it('when background color isnt white, should update it correcly', () => {
+          const bgColorBeforeMouseEnter = theme.pallete.primary.c50
+          mockCalculateCellColor.mockReturnValue({
+            color: '',
+            backgroundColor: bgColorBeforeMouseEnter,
+          })
+
+          const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
+          const cell = selectPivotTableCellElement(container, rowStart, columnStart)
+
+          fireEvent.mouseEnter(cell)
+          const { backgroundColor } = window.getComputedStyle(cell)
+
+          expect(backgroundColor).toEqual(hexToRGB(bgColorBeforeMouseEnter, 0.5))
+        })
       })
 
-      it('should return to original bg color on mouse leave', () => {
+      it('should return to original background color on mouse leave', () => {
         const { container } = render(createComponent({ maxValue }, { gridArea, types, children }))
         const cell = selectPivotTableCellElement(container, rowStart, columnStart)
 

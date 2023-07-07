@@ -86,7 +86,7 @@ describe('calculateCellColor', () => {
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is below 0% of maximum value, should return same color used for up to 10%', () => {
+      it('when cell content is below 0% of maximum value, should return same color used for 10%', () => {
         const cellContent = '-0.1'
         const expected = blue.c100
 
@@ -94,7 +94,7 @@ describe('calculateCellColor', () => {
         expect(backgroundColor).toEqual(expected)
       })
 
-      it('when cell content is above 100% of maximum value, should return same color used for up to 100%', () => {
+      it('when cell content is above 100% of maximum value, should return same color used for 100%', () => {
         const cellContent = '10.1'
         const expected = blue.c10
 
