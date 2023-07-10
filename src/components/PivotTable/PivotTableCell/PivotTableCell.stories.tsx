@@ -31,7 +31,7 @@ export const Default = () => {
   ]
 
   return (
-    <PivotTableProvider value={{ maxValue: maxValue, suffix: '' }}>
+    <PivotTableProvider value={{ maxValue, suffix: '' }}>
       <HFlow hSpacing={0}>
         {cellsTypeAndContent.map(({ type, content }, idx) => {
           const types = new Set([type])
@@ -40,7 +40,7 @@ export const Default = () => {
 
           return (
             <PivotTableCell
-              types={object('types', types, idxStr)} // just shows an empty object, there's' a function to set of enum (maybe select works for enum)
+              types={object('types', types, idxStr)}
               key={text('key', gridArea.toString(), idxStr)}
               gridArea={object<GridArea>('gridArea', gridArea, idxStr)}
               isEndRow={boolean('isEndRow', true, idxStr)}

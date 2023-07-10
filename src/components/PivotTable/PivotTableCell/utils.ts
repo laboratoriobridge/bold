@@ -51,7 +51,7 @@ export const calculateCellColor = (
   cellContent?: number | string
 ): CellColorProps => {
   let color = theme.pallete.gray.c10
-  let backgroundColor = theme.pallete.surface.main
+  let backgroundColor = theme.pallete.primary.c100
   const cellValue = Number(cellContent)
 
   if (isOnlyValue && cellValue) {

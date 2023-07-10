@@ -132,6 +132,7 @@ Array [
   "merge",
   "some",
   "range",
+  "clamp",
   "isPromise",
   "Observable",
   "__types",

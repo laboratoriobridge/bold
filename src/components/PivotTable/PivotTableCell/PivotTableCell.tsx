@@ -55,23 +55,14 @@ export function PivotTableCell(props: PivotTableCellProps) {
   const handleMouseEnter = () => {
     if (isValueOrEmpty) {
       selectPivotTableCellElements(rowStart, columnStart).forEach((element) => {
-        // cor atual
-        let rgbColor = window.getComputedStyle(element).getPropertyValue('background-color')
+        let backgroundColor = window.getComputedStyle(element).getPropertyValue('background-color')
 
-        // when actual color is gray.c100 (white)
-        if (hexToRGB(theme.pallete.gray.c100) === rgbColor) {
-          rgbColor = hexToRGB(theme.pallete.gray.c90)
+        if (backgroundColor === hexToRGB(theme.pallete.primary.c100)) {
+          backgroundColor = hexToRGB(theme.pallete.gray.c90)
         }
 
-        rgbColor = rgbColor.replace('rgb', 'rgba')
-        rgbColor = rgbColor.replace(')', ', 0.5)')
-        element.setAttribute('style', `background-color: ${rgbColor}`)
-
-        /**
-         * TODO
-         * - use theme to set gray.c90
-         * - set aplha for any case
-         */
+        backgroundColor = backgroundColor.replace('rgb', 'rgba').replace(')', ', 0.5)')
+        element.setAttribute('style', `background-color: ${backgroundColor}`)
       })
     }
   }
