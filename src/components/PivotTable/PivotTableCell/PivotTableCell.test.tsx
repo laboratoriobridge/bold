@@ -16,7 +16,7 @@ const createComponent = ({ maxValue, suffix }: PivotTableContextType, props: Piv
 }
 
 afterEach(() => {
-  jest.restoreAllMocks()
+  jest.clearAllMocks()
 })
 
 describe('PivotTableCell', () => {

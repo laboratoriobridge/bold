@@ -42,7 +42,7 @@ export const AllTypes = () => {
               types={types}
               key={gridArea.toString()}
               gridArea={gridArea}
-              isEndRow={true}
+              isEndRow
               isEndColumn={cellsTypeAndContent.length - 1 === idx}
             >
               {content}

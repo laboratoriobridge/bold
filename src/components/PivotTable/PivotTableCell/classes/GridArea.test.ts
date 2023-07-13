@@ -40,7 +40,7 @@ describe('GridArea', () => {
     expect(() => new GridArea(0, columnStart, 0, columnEnd)).toThrowError(errorMessage)
   })
 
-  it('should convert it to string correctly', () => {
+  it('should convert itself to string correctly', () => {
     const rowStart = 0
     const columnStart = 5
     const rowEnd = 1
