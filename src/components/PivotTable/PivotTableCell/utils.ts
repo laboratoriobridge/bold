@@ -1,26 +1,5 @@
 import { Theme } from '../../../styles'
 import { clamp } from '../../../util'
-import { format } from '../../../util/number'
-
-/**
- * Formats a numeric value to its local number format representation, using two digits when it is decimal
- * @param value Value to be formatted
- * @returns The formatted value
- */
-export const numberFormatter = (value: number): string => {
-  const isDecimal = value % 1 !== 0
-
-  const formatOptions: Intl.NumberFormatOptions = isDecimal
-    ? {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-      }
-    : {
-        maximumFractionDigits: 0,
-      }
-
-  return format(value, formatOptions)
-}
 
 interface CellColorProps {
   color: string

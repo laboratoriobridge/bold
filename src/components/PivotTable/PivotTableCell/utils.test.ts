@@ -1,28 +1,6 @@
 import { blue, gray } from '../../../styles/colors'
 import { createTheme } from '../../../styles'
-import * as localeModule from '../../../util/locale'
-import { calculateCellColor, numberFormatter } from './utils'
-
-afterAll(() => {
-  jest.clearAllMocks()
-})
-
-describe('numberFormatter', () => {
-  jest.spyOn(localeModule, 'getUserLocale').mockReturnValue('pt-BR')
-
-  it('when value is integer, should keep it with zero digits', () => {
-    const result = numberFormatter(1)
-    expect(result).toEqual('1')
-  })
-  it('when value has one decimal digit, should add a digit in pt-BR format', () => {
-    const result = numberFormatter(1.2)
-    expect(result).toEqual('1,20')
-  })
-  it('when value has more than 2 decimal digits, should limit to two digits in pt-BR format', () => {
-    const result = numberFormatter(1.234)
-    expect(result).toEqual('1,23')
-  })
-})
+import { calculateCellColor } from './utils'
 
 describe('calculateCellColor', () => {
   const theme = createTheme()

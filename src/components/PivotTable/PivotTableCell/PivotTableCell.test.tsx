@@ -1,7 +1,8 @@
 import React from 'react'
 import { fireEvent, getNodeText, render } from '@testing-library/react'
 import { createTheme, hexToRGB } from '../../../styles'
-import * as utilsModule from './utils'
+import * as numberUtilModule from '../../../util/number'
+import * as pivotTableUtilsModule from './utils'
 import { PivotTableCell, PivotTableCellProps } from './PivotTableCell'
 import { GridArea } from './classes/GridArea'
 import { PivotTableProvider, PivotTableContextType } from './PivotTableProvider'
@@ -31,7 +32,7 @@ describe('PivotTableCell', () => {
   let mockCalculateCellColor: jest.SpyInstance
 
   beforeEach(() => {
-    mockCalculateCellColor = jest.spyOn(utilsModule, 'calculateCellColor')
+    mockCalculateCellColor = jest.spyOn(pivotTableUtilsModule, 'calculateCellColor')
   })
 
   it('should render correctly', () => {
@@ -199,16 +200,16 @@ describe('PivotTableCell', () => {
   })
 
   describe('content format', () => {
-    let mockNumberFormatter: jest.SpyInstance
+    let mockFormatDecimalOrInteger: jest.SpyInstance
 
     beforeEach(() => {
-      mockNumberFormatter = jest.spyOn(utilsModule, 'numberFormatter')
+      mockFormatDecimalOrInteger = jest.spyOn(numberUtilModule, 'formatDecimalOrInteger')
     })
 
     it("when types dont include 'header' and its content is a number, should format it correctly", () => {
       const input = 1.234
       const expected = '1,24'
-      mockNumberFormatter.mockReturnValue(expected)
+      mockFormatDecimalOrInteger.mockReturnValue(expected)
 
       const { container } = render(
         createComponent({ maxValue }, { gridArea, types: typesWithGrandtotal, children: input })
@@ -216,7 +217,7 @@ describe('PivotTableCell', () => {
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(expected)
-      expect(mockNumberFormatter).toBeCalled()
+      expect(mockFormatDecimalOrInteger).toBeCalled()
     })
 
     it("when types dont include 'header' but its content isnt a number, shouldnt format it", () => {
@@ -228,17 +229,17 @@ describe('PivotTableCell', () => {
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(input)
-      expect(mockNumberFormatter).not.toBeCalled()
+      expect(mockFormatDecimalOrInteger).not.toBeCalled()
     })
 
-    it.each(['Header text', 1.234])("when cell type includes 'header', souldnt format it", (input) => {
+    it.each(['Header text', 1.234])("when cell type includes 'header', shouldnt format it", (input) => {
       const typesWithHeader = new Set([PivotTableCellType.HEADER])
 
       const { container } = render(createComponent({ maxValue }, { gridArea, types: typesWithHeader, children: input }))
       const result = getNodeText(selectPivotTableCellElement(container, rowStart, columnStart) as HTMLElement)
 
       expect(result).toEqual(input.toString())
-      expect(mockNumberFormatter).not.toBeCalled()
+      expect(mockFormatDecimalOrInteger).not.toBeCalled()
     })
   })
 })

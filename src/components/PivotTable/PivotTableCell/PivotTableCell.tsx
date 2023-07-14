@@ -1,9 +1,10 @@
 import { SerializedStyles } from '@emotion/serialize'
-import React, { useContext, useMemo } from 'react'
+import React, { useContext, useEffect, useMemo, useRef } from 'react'
 import { hexToRGB, useStyles } from '../../../styles'
 import { range } from '../../../util'
+import { formatDecimalOrInteger } from '../../../util/number'
 import { GridArea } from './classes/GridArea'
-import { numberFormatter, selectPivotTableCellElements } from './utils'
+import { selectPivotTableCellElements } from './utils'
 import { pivotTableCellCreateStyles } from './styles'
 import { PivotTableContext } from './PivotTableProvider'
 import { PivotTableCellType } from './model'
@@ -52,9 +53,15 @@ export function PivotTableCell(props: PivotTableCellProps) {
     theme,
   } = useStyles(pivotTableCellCreateStyles, key, context.maxValue, props)
 
+  const relatedPivotTableCells = useRef<NodeListOf<HTMLElement>>()
+
+  useEffect(() => {
+    relatedPivotTableCells.current = selectPivotTableCellElements(rowStart, columnStart)
+  }, [rowStart, columnStart])
+
   const handleMouseEnter = () => {
     if (isValueOrEmpty) {
-      selectPivotTableCellElements(rowStart, columnStart).forEach((element) => {
+      relatedPivotTableCells.current.forEach((element) => {
         let backgroundColor = window.getComputedStyle(element).getPropertyValue('background-color')
 
         if (backgroundColor === hexToRGB(theme.pallete.primary.c100)) {
@@ -69,7 +76,7 @@ export function PivotTableCell(props: PivotTableCellProps) {
 
   const handleMouseLeave = () => {
     if (isValueOrEmpty) {
-      selectPivotTableCellElements(rowStart, columnStart).forEach((element) => element.removeAttribute('style'))
+      relatedPivotTableCells.current.forEach((element) => element.removeAttribute('style'))
     }
   }
 
@@ -86,7 +93,7 @@ export function PivotTableCell(props: PivotTableCellProps) {
       data-columnnumber={columnNumbers}
       className={className}
     >
-      {!isHeader && typeof children === 'number' ? numberFormatter(children) : children}
+      {!isHeader && typeof children === 'number' ? formatDecimalOrInteger(children) : children}
       {isValue ? context.suffix : null}
     </div>
   )
