@@ -1,7 +1,12 @@
 import * as Components from './'
 
 export type Icons =
+  | 'abdominalMeasuresFilled'
+  | 'abdominalMeasuresOutline'
+  | 'addProfessionalFilled'
+  | 'addProfessionalOutline'
   | 'adjust'
+  | 'agile'
   | 'alignCenter'
   | 'alignJustify'
   | 'alignLeft'
@@ -12,6 +17,8 @@ export type Icons =
   | 'angleLeft'
   | 'angleRight'
   | 'angleUp'
+  | 'appleFilled'
+  | 'appleOutline'
   | 'archiveFilled'
   | 'archiveOutline'
   | 'arrowDown'
@@ -41,17 +48,22 @@ export type Icons =
   | 'bricksFilled'
   | 'bricksOutline'
   | 'bridge'
+  | 'brush'
   | 'calendarFilled'
   | 'calendarOutline'
   | 'cameraFilled'
   | 'cameraOutline'
   | 'chatFilled'
   | 'chatOutline'
+  | 'chatViewFilled'
+  | 'chatViewOutline'
   | 'checkCircleFilled'
   | 'checkCircleOutline'
   | 'checkDefault'
   | 'clearFormat'
   | 'clip'
+  | 'clockArrowFilled'
+  | 'clockArrowOutline'
   | 'clockFilled'
   | 'clockOutline'
   | 'cloudFilled'
@@ -60,6 +72,8 @@ export type Icons =
   | 'continuousMedicine'
   | 'contrast'
   | 'contrastActive'
+  | 'cookieFilled'
+  | 'cookieOutline'
   | 'copyFilled'
   | 'copyOutline'
   | 'creditCardFilled'
@@ -95,6 +109,8 @@ export type Icons =
   | 'eyeHiddenFilled'
   | 'eyeHiddenOutline'
   | 'eyeOutline'
+  | 'faqFilled'
+  | 'faqOutline'
   | 'faucetFilled'
   | 'faucetOutline'
   | 'fileEmptyFilled'
@@ -111,16 +127,20 @@ export type Icons =
   | 'gearOutline'
   | 'glucometer'
   | 'hamburguerMenu'
+  | 'headset'
   | 'heartFilled'
   | 'heartOutline'
   | 'heartRateFilled'
   | 'heartRateOutline'
+  | 'horus'
   | 'hospital'
   | 'houseFilled'
   | 'houseOutline'
   | 'imageFilled'
   | 'imageOutline'
   | 'imcFilled'
+  | 'inconsistentFileFilled'
+  | 'inconsistentFileOutline'
   | 'increaseFont'
   | 'infoCircleFilled'
   | 'infoCircleOutline'
@@ -148,12 +168,17 @@ export type Icons =
   | 'medicineBottleOutline'
   | 'microphoneFilled'
   | 'microphoneOffFilled'
-  | 'microphoneOutline'
   | 'microphoneOffOutline'
+  | 'microphoneOnFilled'
+  | 'microphoneOnOutline'
+  | 'microphoneOutline'
   | 'minimize'
   | 'minus'
   | 'minusCircleFilled'
   | 'module'
+  | 'moonFilled'
+  | 'moonOutline'
+  | 'mosquito'
   | 'mugFilled'
   | 'mugOutline'
   | 'multipleUsers'
@@ -168,15 +193,19 @@ export type Icons =
   | 'nurseVisualizationOutline'
   | 'o2Filled'
   | 'openDoor'
+  | 'paintBucket'
   | 'pause'
   | 'penFilled'
   | 'penOutline'
   | 'penTool'
+  | 'personExercising'
   | 'pessoaComDeficiencia'
   | 'petFilled'
   | 'petOutline'
   | 'phoneFilled'
   | 'phoneOutline'
+  | 'pictureInPictureFilled'
+  | 'pictureInPictureOutline'
   | 'pillFilled'
   | 'pillOutline'
   | 'pipeFilled'
@@ -189,8 +218,12 @@ export type Icons =
   | 'pregnant'
   | 'presentationFilled'
   | 'presentationOutline'
+  | 'priceTagReal'
   | 'printerFilled'
   | 'printerOutline'
+  | 'prison'
+  | 'professionalChatFilled'
+  | 'professionalChatOutline'
   | 'qrCode'
   | 'questionMarkFilled'
   | 'questionMarkOutline'
@@ -200,14 +233,22 @@ export type Icons =
   | 'roadFilled'
   | 'roadOutline'
   | 'rocket'
+  | 'rollerBrushFilled'
+  | 'rollerBrushOutline'
   | 'rulerFilled'
   | 'rulerOutline'
+  | 'screenShareFilled'
+  | 'screenShareOutline'
+  | 'sendFilled'
+  | 'sendOutline'
   | 'shieldFilled'
   | 'shieldOutline'
   | 'signLanguage'
   | 'signOut'
   | 'sixtyPlus'
   | 'sort'
+  | 'stampFilled'
+  | 'stampOutline'
   | 'starFilled'
   | 'starOutline'
   | 'stethoscopeFilled'
@@ -215,6 +256,9 @@ export type Icons =
   | 'stopFilled'
   | 'stopOutline'
   | 'strikethrough'
+  | 'sunFilled'
+  | 'sunOutline'
+  | 'sunrise'
   | 'sync'
   | 'teddyBear'
   | 'thermometerFilled'
@@ -224,6 +268,7 @@ export type Icons =
   | 'timesDefault'
   | 'timesFilled'
   | 'timesOutline'
+  | 'translate'
   | 'trashFilled'
   | 'trashOutline'
   | 'underline'
@@ -239,8 +284,8 @@ export type Icons =
   | 'userTimes'
   | 'videoFilled'
   | 'videoOffFilled'
-  | 'videoOutline'
   | 'videoOffOutline'
+  | 'videoOutline'
   | 'volumeFilled'
   | 'volumeMuteFilled'
   | 'volumeMuteOutline'
@@ -258,7 +303,12 @@ export type Icons =
 export const IconMap: {
   [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>
 } = {
+  abdominalMeasuresFilled: Components.AbdominalMeasuresFilled,
+  abdominalMeasuresOutline: Components.AbdominalMeasuresOutline,
+  addProfessionalFilled: Components.AddProfessionalFilled,
+  addProfessionalOutline: Components.AddProfessionalOutline,
   adjust: Components.Adjust,
+  agile: Components.Agile,
   alignCenter: Components.AlignCenter,
   alignJustify: Components.AlignJustify,
   alignLeft: Components.AlignLeft,
@@ -269,6 +319,8 @@ export const IconMap: {
   angleLeft: Components.AngleLeft,
   angleRight: Components.AngleRight,
   angleUp: Components.AngleUp,
+  appleFilled: Components.AppleFilled,
+  appleOutline: Components.AppleOutline,
   archiveFilled: Components.ArchiveFilled,
   archiveOutline: Components.ArchiveOutline,
   arrowDown: Components.ArrowDown,
@@ -298,17 +350,22 @@ export const IconMap: {
   bricksFilled: Components.BricksFilled,
   bricksOutline: Components.BricksOutline,
   bridge: Components.Bridge,
+  brush: Components.Brush,
   calendarFilled: Components.CalendarFilled,
   calendarOutline: Components.CalendarOutline,
   cameraFilled: Components.CameraFilled,
   cameraOutline: Components.CameraOutline,
   chatFilled: Components.ChatFilled,
   chatOutline: Components.ChatOutline,
+  chatViewFilled: Components.ChatViewFilled,
+  chatViewOutline: Components.ChatViewOutline,
   checkCircleFilled: Components.CheckCircleFilled,
   checkCircleOutline: Components.CheckCircleOutline,
   checkDefault: Components.CheckDefault,
   clearFormat: Components.ClearFormat,
   clip: Components.Clip,
+  clockArrowFilled: Components.ClockArrowFilled,
+  clockArrowOutline: Components.ClockArrowOutline,
   clockFilled: Components.ClockFilled,
   clockOutline: Components.ClockOutline,
   cloudFilled: Components.CloudFilled,
@@ -317,6 +374,8 @@ export const IconMap: {
   continuousMedicine: Components.ContinuousMedicine,
   contrast: Components.Contrast,
   contrastActive: Components.ContrastActive,
+  cookieFilled: Components.CookieFilled,
+  cookieOutline: Components.CookieOutline,
   copyFilled: Components.CopyFilled,
   copyOutline: Components.CopyOutline,
   creditCardFilled: Components.CreditCardFilled,
@@ -352,6 +411,8 @@ export const IconMap: {
   eyeHiddenFilled: Components.EyeHiddenFilled,
   eyeHiddenOutline: Components.EyeHiddenOutline,
   eyeOutline: Components.EyeOutline,
+  faqFilled: Components.FaqFilled,
+  faqOutline: Components.FaqOutline,
   faucetFilled: Components.FaucetFilled,
   faucetOutline: Components.FaucetOutline,
   fileEmptyFilled: Components.FileEmptyFilled,
@@ -368,16 +429,20 @@ export const IconMap: {
   gearOutline: Components.GearOutline,
   glucometer: Components.Glucometer,
   hamburguerMenu: Components.HamburguerMenu,
+  headset: Components.Headset,
   heartFilled: Components.HeartFilled,
   heartOutline: Components.HeartOutline,
   heartRateFilled: Components.HeartRateFilled,
   heartRateOutline: Components.HeartRateOutline,
+  horus: Components.Horus,
   hospital: Components.Hospital,
   houseFilled: Components.HouseFilled,
   houseOutline: Components.HouseOutline,
   imageFilled: Components.ImageFilled,
   imageOutline: Components.ImageOutline,
   imcFilled: Components.ImcFilled,
+  inconsistentFileFilled: Components.InconsistentFileFilled,
+  inconsistentFileOutline: Components.InconsistentFileOutline,
   increaseFont: Components.IncreaseFont,
   infoCircleFilled: Components.InfoCircleFilled,
   infoCircleOutline: Components.InfoCircleOutline,
@@ -405,12 +470,17 @@ export const IconMap: {
   medicineBottleOutline: Components.MedicineBottleOutline,
   microphoneFilled: Components.MicrophoneFilled,
   microphoneOffFilled: Components.MicrophoneOffFilled,
-  microphoneOutline: Components.MicrophoneOutline,
   microphoneOffOutline: Components.MicrophoneOffOutline,
+  microphoneOnFilled: Components.MicrophoneOnFilled,
+  microphoneOnOutline: Components.MicrophoneOnOutline,
+  microphoneOutline: Components.MicrophoneOutline,
   minimize: Components.Minimize,
   minus: Components.Minus,
   minusCircleFilled: Components.MinusCircleFilled,
   module: Components.Module,
+  moonFilled: Components.MoonFilled,
+  moonOutline: Components.MoonOutline,
+  mosquito: Components.Mosquito,
   mugFilled: Components.MugFilled,
   mugOutline: Components.MugOutline,
   multipleUsers: Components.MultipleUsers,
@@ -425,15 +495,19 @@ export const IconMap: {
   nurseVisualizationOutline: Components.NurseVisualizationOutline,
   o2Filled: Components.O2Filled,
   openDoor: Components.OpenDoor,
+  paintBucket: Components.PaintBucket,
   pause: Components.Pause,
   penFilled: Components.PenFilled,
   penOutline: Components.PenOutline,
   penTool: Components.PenTool,
+  personExercising: Components.PersonExercising,
   pessoaComDeficiencia: Components.PessoaComDeficiencia,
   petFilled: Components.PetFilled,
   petOutline: Components.PetOutline,
   phoneFilled: Components.PhoneFilled,
   phoneOutline: Components.PhoneOutline,
+  pictureInPictureFilled: Components.PictureInPictureFilled,
+  pictureInPictureOutline: Components.PictureInPictureOutline,
   pillFilled: Components.PillFilled,
   pillOutline: Components.PillOutline,
   pipeFilled: Components.PipeFilled,
@@ -446,8 +520,12 @@ export const IconMap: {
   pregnant: Components.Pregnant,
   presentationFilled: Components.PresentationFilled,
   presentationOutline: Components.PresentationOutline,
+  priceTagReal: Components.PriceTagReal,
   printerFilled: Components.PrinterFilled,
   printerOutline: Components.PrinterOutline,
+  prison: Components.Prison,
+  professionalChatFilled: Components.ProfessionalChatFilled,
+  professionalChatOutline: Components.ProfessionalChatOutline,
   qrCode: Components.QrCode,
   questionMarkFilled: Components.QuestionMarkFilled,
   questionMarkOutline: Components.QuestionMarkOutline,
@@ -457,14 +535,22 @@ export const IconMap: {
   roadFilled: Components.RoadFilled,
   roadOutline: Components.RoadOutline,
   rocket: Components.Rocket,
+  rollerBrushFilled: Components.RollerBrushFilled,
+  rollerBrushOutline: Components.RollerBrushOutline,
   rulerFilled: Components.RulerFilled,
   rulerOutline: Components.RulerOutline,
+  screenShareFilled: Components.ScreenShareFilled,
+  screenShareOutline: Components.ScreenShareOutline,
+  sendFilled: Components.SendFilled,
+  sendOutline: Components.SendOutline,
   shieldFilled: Components.ShieldFilled,
   shieldOutline: Components.ShieldOutline,
   signLanguage: Components.SignLanguage,
   signOut: Components.SignOut,
   sixtyPlus: Components.SixtyPlus,
   sort: Components.Sort,
+  stampFilled: Components.StampFilled,
+  stampOutline: Components.StampOutline,
   starFilled: Components.StarFilled,
   starOutline: Components.StarOutline,
   stethoscopeFilled: Components.StethoscopeFilled,
@@ -472,6 +558,9 @@ export const IconMap: {
   stopFilled: Components.StopFilled,
   stopOutline: Components.StopOutline,
   strikethrough: Components.Strikethrough,
+  sunFilled: Components.SunFilled,
+  sunOutline: Components.SunOutline,
+  sunrise: Components.Sunrise,
   sync: Components.Sync,
   teddyBear: Components.TeddyBear,
   thermometerFilled: Components.ThermometerFilled,
@@ -481,6 +570,7 @@ export const IconMap: {
   timesDefault: Components.TimesDefault,
   timesFilled: Components.TimesFilled,
   timesOutline: Components.TimesOutline,
+  translate: Components.Translate,
   trashFilled: Components.TrashFilled,
   trashOutline: Components.TrashOutline,
   underline: Components.Underline,
@@ -496,8 +586,8 @@ export const IconMap: {
   userTimes: Components.UserTimes,
   videoFilled: Components.VideoFilled,
   videoOffFilled: Components.VideoOffFilled,
-  videoOutline: Components.VideoOutline,
   videoOffOutline: Components.VideoOffOutline,
+  videoOutline: Components.VideoOutline,
   volumeFilled: Components.VolumeFilled,
   volumeMuteFilled: Components.VolumeMuteFilled,
   volumeMuteOutline: Components.VolumeMuteOutline,
