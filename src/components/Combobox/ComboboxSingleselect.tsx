@@ -23,6 +23,7 @@ export interface ComboboxSingleselectProps<T>
   createNewItem?(inputValue: string): T
   openOnFocus?: boolean
   loading: boolean
+  open?: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
@@ -60,6 +61,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     labelId,
     menuId,
     getItemId,
+    open,
     ...rest
   } = props
 
@@ -84,6 +86,13 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
 
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(inputRef.current?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems])
+
   const {
     isOpen,
     highlightedIndex,
@@ -99,6 +108,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   } = useCombobox<T>({
     selectedItem: value,
     items: loadedItems,
+    isOpen: open,
 
     stateReducer: comboboxStateReducer(createNewItem),
     itemToString,

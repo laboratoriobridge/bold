@@ -51,6 +51,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     labelId,
     menuId,
     getItemId,
+    open,
     ...rest
   } = props
 
@@ -98,6 +99,13 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     itemIsEqual,
   ])
 
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(inputRef.current?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems])
+
   const {
     isOpen,
     highlightedIndex,
@@ -112,6 +120,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     defaultHighlightedIndex: 0,
     selectedItem: null,
     items: loadedItems,
+    isOpen: open,
 
     stateReducer: comboboxMultiselectStateReducer(createNewItem, addSelectedItem),
     itemToString,

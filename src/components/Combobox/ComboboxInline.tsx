@@ -22,6 +22,7 @@ export interface ComboboxInlineProps<T>
   items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
   loading: boolean
+  open?: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
@@ -62,6 +63,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     error,
     searchBoxPlaceholder,
     showSearchBox = true,
+    open,
     ...rest
   } = props
 
@@ -86,6 +88,13 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   const [searchBoxRef, setSearchBoxRef] = useState<HTMLInputElement>()
   const menuRef = useRef<HTMLDivElement>()
 
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(searchBoxRef?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems, searchBoxRef])
+
   const {
     selectedItem,
     isOpen,
@@ -98,6 +107,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   } = useSelect<T>({
     selectedItem: value,
     items: loadedItems,
+    isOpen: open,
 
     itemToString,
     onSelectedItemChange: ({ selectedItem }) => {
