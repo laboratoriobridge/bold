@@ -566,6 +566,51 @@ it('should accept actions inside children prop', async () => {
   expect(click).toHaveBeenCalledTimes(1)
 })
 
+test.each`
+  async
+  ${true}
+  ${false}
+`('keeps menu open based on the `open` prop(async: $async)', async ({ async }) => {
+  let baseElement: RenderResult['baseElement']
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    const result = render(<ComboboxTest async={async} open />)
+    baseElement = result.baseElement
+    rerender = result.rerender
+  })
+  const input = baseElement.querySelector('input')
+
+  // initial state has open menu
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+  const dropdownButton = baseElement.querySelector('button')
+
+  // blur input
+  await act(async () => {
+    fireEvent.blur(input)
+  })
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+  //click dropdown button
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+
+  // rerenders switching prop
+  await act(async () => rerender(<ComboboxTest async={async} open={false} />))
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+
+  // focus input
+  await act(async () => {
+    fireEvent.focus(input)
+  })
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+  //click dropdown button
+  await act(async () => {
+    fireEvent.click(dropdownButton)
+  })
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+})
+
 describe('rendering', () => {
   it('renders correcly closed', async () => {
     let baseElement: RenderResult['baseElement']
