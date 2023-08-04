@@ -15,6 +15,26 @@ export function format(value: number, options?: Intl.NumberFormatOptions) {
 }
 
 /**
+ * Formats a numeric value to its local number format representation, using two digits when it is decimal and zero when it is integer
+ * @param value Value to be formatted
+ * @returns The formatted value
+ */
+export const formatDecimalOrInteger = (value: number): string => {
+  const isDecimal = value % 1 !== 0
+
+  const formatOptions: Intl.NumberFormatOptions = isDecimal
+    ? {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }
+    : {
+        maximumFractionDigits: 0,
+      }
+
+  return format(value, formatOptions)
+}
+
+/**
  * Abrreviates a number to its compact representation.
  * Example: 1000000 is abbreviated to '1m'
  *

@@ -1,6 +1,6 @@
 import { ColorScale } from './colors'
 
-export const hexToRGB = (hex, alpha) => {
+export const hexToRGB = (hex: string, alpha?: number) => {
   const r = parseInt(hex.slice(1, 3), 16)
   const g = parseInt(hex.slice(3, 5), 16)
   const b = parseInt(hex.slice(5, 7), 16)
@@ -8,7 +8,7 @@ export const hexToRGB = (hex, alpha) => {
   if (alpha) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`
   } else {
-    return `rgba(${r}, ${g}, ${b})`
+    return `rgb(${r}, ${g}, ${b})`
   }
 }
 

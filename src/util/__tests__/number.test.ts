@@ -1,4 +1,5 @@
-import { abbrev, format } from '../number'
+import { abbrev, format, formatDecimalOrInteger } from '../number'
+import * as localeModule from '../locale'
 
 describe('format', () => {
   it('should format integers', () => {
@@ -11,6 +12,28 @@ describe('format', () => {
     expect(format(1234.567)).toEqual('1,234.567')
     expect(format(1234.56789, { minimumFractionDigits: 5 })).toEqual('1,234.56789')
     expect(format(1234, { minimumFractionDigits: 3 })).toEqual('1,234.000')
+  })
+
+  it('should format correctly in pt-BR format', () => {
+    const getUserLocaleMock = jest.spyOn(localeModule, 'getUserLocale').mockReturnValue('pt-BR')
+    expect(format(1.2)).toEqual('1,2')
+    expect(format(1234.5)).toEqual('1.234,5')
+    getUserLocaleMock.mockRestore()
+  })
+})
+
+describe('formatDecimalOrInteger', () => {
+  it('when value is integer, should keep it with zero digits', () => {
+    const result = formatDecimalOrInteger(1)
+    expect(result).toEqual('1')
+  })
+  it('when value has one decimal digit, should add a digit', () => {
+    const result = formatDecimalOrInteger(1.2)
+    expect(result).toEqual('1.20')
+  })
+  it('when value has more than 2 decimal digits, should limit to two digits', () => {
+    const result = formatDecimalOrInteger(1.234)
+    expect(result).toEqual('1.23')
   })
 })
 

@@ -8,7 +8,7 @@ export const useThemeSwitch = (): [Theme, () => Theme] => {
 
   useEffect(() => {
     if (localStorage) {
-      const loadedTheme = loadTheme()
+      const loadedTheme = localStorage.getItem('currentTheme') === 'dark' ? darkTheme : lightTheme
       setCurrentTheme(loadedTheme)
     }
   }, [])
@@ -39,15 +39,4 @@ export const useThemeSwitch = (): [Theme, () => Theme] => {
   }
 
   return [currentTheme, toggleTheme]
-}
-
-const loadTheme = () => {
-  let loadedTheme = localStorage.getItem('currentTheme')
-
-  if (!loadedTheme) {
-    loadedTheme = Math.random() < 0.3 ? 'dark' : 'light'
-  }
-
-  localStorage.setItem('currentTheme', loadedTheme)
-  return loadedTheme === 'dark' ? darkTheme : lightTheme
 }
