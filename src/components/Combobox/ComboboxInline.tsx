@@ -3,6 +3,7 @@ import matchSorter from 'match-sorter'
 import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useMemo } from 'react'
+import { isNil } from 'lodash'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -107,7 +108,6 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   } = useSelect<T>({
     selectedItem: value,
     items: loadedItems,
-    isOpen: open,
 
     itemToString,
     onSelectedItemChange: ({ selectedItem }) => {
@@ -121,6 +121,8 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
 
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
   const onSearchBoxValueChange = useCallback(
     ({ target: { value: inputValue } }: ChangeEvent<HTMLInputElement>) =>

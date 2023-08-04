@@ -3,6 +3,7 @@ import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
 import { useMemo } from 'react'
+import { isNil } from 'lodash'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
@@ -108,7 +109,6 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   } = useCombobox<T>({
     selectedItem: value,
     items: loadedItems,
-    isOpen: open,
 
     stateReducer: comboboxStateReducer(createNewItem),
     itemToString,
@@ -126,6 +126,8 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     labelId,
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
 
   const downshiftComboboxProps = getComboboxProps()

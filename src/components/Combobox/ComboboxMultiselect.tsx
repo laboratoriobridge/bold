@@ -2,6 +2,7 @@ import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions, useMultip
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
+import { isNil } from 'lodash'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -120,7 +121,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     defaultHighlightedIndex: 0,
     selectedItem: null,
     items: loadedItems,
-    isOpen: open,
 
     stateReducer: comboboxMultiselectStateReducer(createNewItem, addSelectedItem),
     itemToString,
@@ -138,6 +138,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     labelId,
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
 
   const downshiftComboboxProps = getComboboxProps()
