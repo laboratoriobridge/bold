@@ -169,8 +169,6 @@ export type Icons =
   | 'microphoneFilled'
   | 'microphoneOffFilled'
   | 'microphoneOffOutline'
-  | 'microphoneOnFilled'
-  | 'microphoneOnOutline'
   | 'microphoneOutline'
   | 'minimize'
   | 'minus'
@@ -471,8 +469,6 @@ export const IconMap: {
   microphoneFilled: Components.MicrophoneFilled,
   microphoneOffFilled: Components.MicrophoneOffFilled,
   microphoneOffOutline: Components.MicrophoneOffOutline,
-  microphoneOnFilled: Components.MicrophoneOnFilled,
-  microphoneOnOutline: Components.MicrophoneOnOutline,
   microphoneOutline: Components.MicrophoneOutline,
   minimize: Components.Minimize,
   minus: Components.Minus,
