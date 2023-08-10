@@ -1,7 +1,6 @@
 import * as Components from './'
 
 export type Icons =
-  | 'abdominalMeasuresFilled'
   | 'abdominalMeasuresOutline'
   | 'addProfessionalFilled'
   | 'addProfessionalOutline'
@@ -62,7 +61,6 @@ export type Icons =
   | 'checkDefault'
   | 'clearFormat'
   | 'clip'
-  | 'clockArrowFilled'
   | 'clockArrowOutline'
   | 'clockFilled'
   | 'clockOutline'
@@ -72,7 +70,6 @@ export type Icons =
   | 'continuousMedicine'
   | 'contrast'
   | 'contrastActive'
-  | 'cookieFilled'
   | 'cookieOutline'
   | 'copyFilled'
   | 'copyOutline'
@@ -109,8 +106,6 @@ export type Icons =
   | 'eyeHiddenFilled'
   | 'eyeHiddenOutline'
   | 'eyeOutline'
-  | 'faqFilled'
-  | 'faqOutline'
   | 'faucetFilled'
   | 'faucetOutline'
   | 'fileEmptyFilled'
@@ -139,8 +134,6 @@ export type Icons =
   | 'imageFilled'
   | 'imageOutline'
   | 'imcFilled'
-  | 'inconsistentFileFilled'
-  | 'inconsistentFileOutline'
   | 'increaseFont'
   | 'infoCircleFilled'
   | 'infoCircleOutline'
@@ -203,7 +196,6 @@ export type Icons =
   | 'phoneFilled'
   | 'phoneOutline'
   | 'pictureInPictureFilled'
-  | 'pictureInPictureOutline'
   | 'pillFilled'
   | 'pillOutline'
   | 'pipeFilled'
@@ -216,12 +208,8 @@ export type Icons =
   | 'pregnant'
   | 'presentationFilled'
   | 'presentationOutline'
-  | 'priceTagReal'
   | 'printerFilled'
   | 'printerOutline'
-  | 'prison'
-  | 'professionalChatFilled'
-  | 'professionalChatOutline'
   | 'qrCode'
   | 'questionMarkFilled'
   | 'questionMarkOutline'
@@ -232,13 +220,10 @@ export type Icons =
   | 'roadOutline'
   | 'rocket'
   | 'rollerBrushFilled'
-  | 'rollerBrushOutline'
   | 'rulerFilled'
   | 'rulerOutline'
   | 'screenShareFilled'
-  | 'screenShareOutline'
   | 'sendFilled'
-  | 'sendOutline'
   | 'shieldFilled'
   | 'shieldOutline'
   | 'signLanguage'
@@ -246,7 +231,6 @@ export type Icons =
   | 'sixtyPlus'
   | 'sort'
   | 'stampFilled'
-  | 'stampOutline'
   | 'starFilled'
   | 'starOutline'
   | 'stethoscopeFilled'
@@ -255,7 +239,6 @@ export type Icons =
   | 'stopOutline'
   | 'strikethrough'
   | 'sunFilled'
-  | 'sunOutline'
   | 'sunrise'
   | 'sync'
   | 'teddyBear'
@@ -266,7 +249,6 @@ export type Icons =
   | 'timesDefault'
   | 'timesFilled'
   | 'timesOutline'
-  | 'translate'
   | 'trashFilled'
   | 'trashOutline'
   | 'underline'
@@ -301,7 +283,6 @@ export type Icons =
 export const IconMap: {
   [key in Icons]: React.ComponentType<React.SVGProps<SVGSVGElement>>
 } = {
-  abdominalMeasuresFilled: Components.AbdominalMeasuresFilled,
   abdominalMeasuresOutline: Components.AbdominalMeasuresOutline,
   addProfessionalFilled: Components.AddProfessionalFilled,
   addProfessionalOutline: Components.AddProfessionalOutline,
@@ -362,7 +343,6 @@ export const IconMap: {
   checkDefault: Components.CheckDefault,
   clearFormat: Components.ClearFormat,
   clip: Components.Clip,
-  clockArrowFilled: Components.ClockArrowFilled,
   clockArrowOutline: Components.ClockArrowOutline,
   clockFilled: Components.ClockFilled,
   clockOutline: Components.ClockOutline,
@@ -372,7 +352,6 @@ export const IconMap: {
   continuousMedicine: Components.ContinuousMedicine,
   contrast: Components.Contrast,
   contrastActive: Components.ContrastActive,
-  cookieFilled: Components.CookieFilled,
   cookieOutline: Components.CookieOutline,
   copyFilled: Components.CopyFilled,
   copyOutline: Components.CopyOutline,
@@ -409,8 +388,6 @@ export const IconMap: {
   eyeHiddenFilled: Components.EyeHiddenFilled,
   eyeHiddenOutline: Components.EyeHiddenOutline,
   eyeOutline: Components.EyeOutline,
-  faqFilled: Components.FaqFilled,
-  faqOutline: Components.FaqOutline,
   faucetFilled: Components.FaucetFilled,
   faucetOutline: Components.FaucetOutline,
   fileEmptyFilled: Components.FileEmptyFilled,
@@ -439,8 +416,6 @@ export const IconMap: {
   imageFilled: Components.ImageFilled,
   imageOutline: Components.ImageOutline,
   imcFilled: Components.ImcFilled,
-  inconsistentFileFilled: Components.InconsistentFileFilled,
-  inconsistentFileOutline: Components.InconsistentFileOutline,
   increaseFont: Components.IncreaseFont,
   infoCircleFilled: Components.InfoCircleFilled,
   infoCircleOutline: Components.InfoCircleOutline,
@@ -503,7 +478,6 @@ export const IconMap: {
   phoneFilled: Components.PhoneFilled,
   phoneOutline: Components.PhoneOutline,
   pictureInPictureFilled: Components.PictureInPictureFilled,
-  pictureInPictureOutline: Components.PictureInPictureOutline,
   pillFilled: Components.PillFilled,
   pillOutline: Components.PillOutline,
   pipeFilled: Components.PipeFilled,
@@ -516,12 +490,8 @@ export const IconMap: {
   pregnant: Components.Pregnant,
   presentationFilled: Components.PresentationFilled,
   presentationOutline: Components.PresentationOutline,
-  priceTagReal: Components.PriceTagReal,
   printerFilled: Components.PrinterFilled,
   printerOutline: Components.PrinterOutline,
-  prison: Components.Prison,
-  professionalChatFilled: Components.ProfessionalChatFilled,
-  professionalChatOutline: Components.ProfessionalChatOutline,
   qrCode: Components.QrCode,
   questionMarkFilled: Components.QuestionMarkFilled,
   questionMarkOutline: Components.QuestionMarkOutline,
@@ -532,13 +502,10 @@ export const IconMap: {
   roadOutline: Components.RoadOutline,
   rocket: Components.Rocket,
   rollerBrushFilled: Components.RollerBrushFilled,
-  rollerBrushOutline: Components.RollerBrushOutline,
   rulerFilled: Components.RulerFilled,
   rulerOutline: Components.RulerOutline,
   screenShareFilled: Components.ScreenShareFilled,
-  screenShareOutline: Components.ScreenShareOutline,
   sendFilled: Components.SendFilled,
-  sendOutline: Components.SendOutline,
   shieldFilled: Components.ShieldFilled,
   shieldOutline: Components.ShieldOutline,
   signLanguage: Components.SignLanguage,
@@ -546,7 +513,6 @@ export const IconMap: {
   sixtyPlus: Components.SixtyPlus,
   sort: Components.Sort,
   stampFilled: Components.StampFilled,
-  stampOutline: Components.StampOutline,
   starFilled: Components.StarFilled,
   starOutline: Components.StarOutline,
   stethoscopeFilled: Components.StethoscopeFilled,
@@ -555,7 +521,6 @@ export const IconMap: {
   stopOutline: Components.StopOutline,
   strikethrough: Components.Strikethrough,
   sunFilled: Components.SunFilled,
-  sunOutline: Components.SunOutline,
   sunrise: Components.Sunrise,
   sync: Components.Sync,
   teddyBear: Components.TeddyBear,
@@ -566,7 +531,6 @@ export const IconMap: {
   timesDefault: Components.TimesDefault,
   timesFilled: Components.TimesFilled,
   timesOutline: Components.TimesOutline,
-  translate: Components.Translate,
   trashFilled: Components.TrashFilled,
   trashOutline: Components.TrashOutline,
   underline: Components.Underline,
