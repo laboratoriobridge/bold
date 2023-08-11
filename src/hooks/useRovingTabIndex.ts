@@ -122,8 +122,9 @@ export function useRovingTabIndex(options: RovingTabIndexOptions) {
       }
     }
 
-    rootRef.current.addEventListener('keydown', handleKeyDown)
-    return () => rootRef.current.removeEventListener('keydown', handleKeyDown)
+    const localRef = rootRef.current
+    localRef.addEventListener('keydown', handleKeyDown)
+    return () => localRef.removeEventListener('keydown', handleKeyDown)
   }, [options])
 
   return rootRef
