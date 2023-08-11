@@ -1,7 +1,7 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
-import { usePopper } from 'react-popper'
+import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
 import { isNil } from 'lodash'
 import { useLocale } from '../../i18n'
@@ -31,6 +31,7 @@ export interface ComboboxSingleselectProps<T>
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Partial<ComboboxComponents<T>>
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   inputId?: string
   labelId?: string
@@ -63,6 +64,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     menuId,
     getItemId,
     open,
+    popperProps,
     ...rest
   } = props
 
@@ -143,6 +145,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     attributes: { popper: popperAttributes },
   } = usePopper(inputRef.current, menuRef, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   const formControlInputProps = getFormControlInputProps()

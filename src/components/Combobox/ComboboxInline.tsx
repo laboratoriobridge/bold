@@ -1,7 +1,7 @@
 import { useSelect } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
-import { usePopper } from 'react-popper'
+import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
 import { isNil } from 'lodash'
 import { Theme, useStyles } from '../../styles'
@@ -30,6 +30,7 @@ export interface ComboboxInlineProps<T>
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Omit<Partial<ComboboxComponents<T>>, 'CreateItem'>
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   menuId?: string
   getItemId?(index: number): string
@@ -65,6 +66,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     searchBoxPlaceholder,
     showSearchBox = true,
     open,
+    popperProps,
     ...rest
   } = props
 
@@ -152,6 +154,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     attributes: { popper: popperAttributes },
   } = usePopper(toggleButtonRef.current, menuRef.current, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   useEffect(() => {

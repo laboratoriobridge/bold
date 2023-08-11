@@ -53,6 +53,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     menuId,
     getItemId,
     open,
+    popperProps,
     ...rest
   } = props
 
@@ -158,6 +159,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     attributes: { popper: popperAttributes },
   } = usePopper(wrapperRef.current, menuRef, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   const formControlInputProps = getFormControlInputProps()
