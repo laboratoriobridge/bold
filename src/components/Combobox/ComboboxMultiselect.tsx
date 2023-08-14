@@ -2,6 +2,7 @@ import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions, useMultip
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { usePopper } from 'react-popper'
+import { isNil } from 'lodash'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -51,6 +52,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     labelId,
     menuId,
     getItemId,
+    open,
+    popperProps,
     ...rest
   } = props
 
@@ -98,6 +101,13 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     itemIsEqual,
   ])
 
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(inputRef.current?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems])
+
   const {
     isOpen,
     highlightedIndex,
@@ -129,6 +139,8 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     labelId,
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
 
   const downshiftComboboxProps = getComboboxProps()
@@ -147,6 +159,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     attributes: { popper: popperAttributes },
   } = usePopper(wrapperRef.current, menuRef, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   const formControlInputProps = getFormControlInputProps()

@@ -1,8 +1,9 @@
 import { useCombobox, UseComboboxState, UseComboboxStateChangeOptions } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
-import { usePopper } from 'react-popper'
+import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
+import { isNil } from 'lodash'
 import { useLocale } from '../../i18n'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
@@ -23,12 +24,14 @@ export interface ComboboxSingleselectProps<T>
   createNewItem?(inputValue: string): T
   openOnFocus?: boolean
   loading: boolean
+  open?: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Partial<ComboboxComponents<T>>
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   inputId?: string
   labelId?: string
@@ -60,6 +63,8 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     labelId,
     menuId,
     getItemId,
+    open,
+    popperProps,
     ...rest
   } = props
 
@@ -83,6 +88,13 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
 
   const inputRef = useRef<HTMLInputElement>()
   const [menuRef, setMenuRef] = useState<HTMLDivElement>()
+
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(inputRef.current?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems])
 
   const {
     isOpen,
@@ -116,6 +128,8 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     labelId,
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
 
   const downshiftComboboxProps = getComboboxProps()
@@ -131,6 +145,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
     attributes: { popper: popperAttributes },
   } = usePopper(inputRef.current, menuRef, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   const formControlInputProps = getFormControlInputProps()

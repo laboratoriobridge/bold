@@ -1,8 +1,9 @@
 import { useSelect } from 'downshift'
 import matchSorter from 'match-sorter'
 import React, { ChangeEvent, CSSProperties, useCallback, useEffect, useRef, useState } from 'react'
-import { usePopper } from 'react-popper'
+import { PopperProps, usePopper } from 'react-popper'
 import { useMemo } from 'react'
+import { isNil } from 'lodash'
 import { Theme, useStyles } from '../../styles'
 import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
@@ -22,12 +23,14 @@ export interface ComboboxInlineProps<T>
   items: T[] | ((query: string) => Promise<T[]>)
   itemToString(item: T): string
   loading: boolean
+  open?: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
   filter?(items: T[], filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Omit<Partial<ComboboxComponents<T>>, 'CreateItem'>
+  popperProps?: Omit<Partial<PopperProps<any>>, 'children'>
 
   menuId?: string
   getItemId?(index: number): string
@@ -62,6 +65,8 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     error,
     searchBoxPlaceholder,
     showSearchBox = true,
+    open,
+    popperProps,
     ...rest
   } = props
 
@@ -85,6 +90,13 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
   const toggleButtonRef = useRef<HTMLButtonElement>()
   const [searchBoxRef, setSearchBoxRef] = useState<HTMLInputElement>()
   const menuRef = useRef<HTMLDivElement>()
+
+  useEffect(() => {
+    if (open && !itemsLoaded) {
+      loadItems(searchBoxRef?.value)
+      setItemsLoaded(true)
+    }
+  }, [open, itemsLoaded, loadItems, searchBoxRef])
 
   const {
     selectedItem,
@@ -111,6 +123,8 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
 
     menuId,
     getItemId,
+
+    ...(isNil(open) ? {} : { isOpen: open }),
   })
   const onSearchBoxValueChange = useCallback(
     ({ target: { value: inputValue } }: ChangeEvent<HTMLInputElement>) =>
@@ -140,6 +154,7 @@ export function ComboboxInline<T>(props: ComboboxInlineProps<T>) {
     attributes: { popper: popperAttributes },
   } = usePopper(toggleButtonRef.current, menuRef.current, {
     placement: 'bottom-start',
+    ...popperProps,
   })
 
   useEffect(() => {

@@ -72,6 +72,7 @@ export const Default = () => (
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
     loading={boolean('loading', false)}
+    open={select('open', [undefined, true, false], undefined)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}
@@ -93,6 +94,7 @@ export const Suggestion = () => (
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', false)}
     loading={boolean('loading', false)}
+    open={select('open', [undefined, true, false], undefined)}
     onChange={action('changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
@@ -111,6 +113,8 @@ export const Async = () => (
     clearable={boolean('clearable', true)}
     disabled={boolean('disabled', false)}
     openOnFocus={boolean('openOnFocus', true)}
+    open={select('open', [undefined, true, false], undefined)}
+    loading={boolean('loading', false)}
     onChange={action('changed')}
     onBlur={action('blur')}
     onFocus={action('focus')}
@@ -170,6 +174,8 @@ export const MultiSelect = () => {
       clearable={boolean('clearable', true)}
       disabled={boolean('disabled', false)}
       openOnFocus={boolean('openOnFocus', true)}
+      open={select('open', [undefined, true, false], undefined)}
+      loading={boolean('loading', false)}
       onChange={action('changed')}
       onFilterChange={action('filter changed')}
       onBlur={action('blur')}
@@ -193,6 +199,7 @@ export const Inline = () => (
     disabled={boolean('disabled', false)}
     showSearchBox={boolean('showSearchBox', true)}
     loading={boolean('loading', false)}
+    open={select('open', [undefined, true, false], undefined)}
     onChange={action('changed')}
     onFilterChange={action('filter changed')}
     onBlur={action('blur')}

@@ -367,6 +367,44 @@ it('should accept actions inside children prop', async () => {
   expect(click).toHaveBeenCalledTimes(1)
 })
 
+test.each`
+  async
+  ${true}
+  ${false}
+`('keeps menu open based on the `open` prop(async: $async)', async ({ async }) => {
+  let baseElement: RenderResult['baseElement']
+  let rerender: RenderResult['rerender']
+  await act(async () => {
+    const result = render(<ComboboxInlineTest async={async} open />)
+    baseElement = result.baseElement
+    rerender = result.rerender
+  })
+
+  // initial state has open menu
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+
+  const button = baseElement.querySelector('button')
+  await act(async () => {
+    fireEvent.click(button)
+  })
+
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+  //click dropdown button
+  await act(async () => {
+    fireEvent.click(baseElement)
+  })
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+
+  // rerenders switching prop
+  await act(async () => rerender(<ComboboxInlineTest async={async} open={false} />))
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+
+  await act(async () => {
+    fireEvent.click(button)
+  })
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+})
+
 describe('rendering', () => {
   it('renders correcly closed', async () => {
     let baseElement: RenderResult['baseElement']
