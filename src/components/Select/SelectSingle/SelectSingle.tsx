@@ -54,6 +54,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
     label,
     error,
     inputRef,
+    onIconClick,
+    onClear,
     ...rest
   } = props
 
@@ -109,8 +111,8 @@ export function SelectSingle<T>(props: SelectSingleProps<T>) {
               <div>
                 <TextInput
                   icon={downshiftOpen ? 'angleUp' : 'angleDown'}
-                  onIconClick={composeHandlers(toggleMenu, handleInputIconClick(downshiftOpen), props.onIconClick)}
-                  onClear={composeHandlers(clearSelection, props.onClear)}
+                  onIconClick={composeHandlers(toggleMenu, handleInputIconClick(downshiftOpen), onIconClick)}
+                  onClear={composeHandlers(clearSelection, onClear)}
                   invalid={invalid}
                   {...rest}
                   {...downshiftInputProps}
