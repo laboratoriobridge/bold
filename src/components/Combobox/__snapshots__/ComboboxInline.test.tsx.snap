@@ -107,7 +107,9 @@ exports[`rendering renders correcly closed 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    12 results are available, use up and down arrow keys to navigate. Press Enter or Space Bar keys to select.
+  </div>
   <div>
     <div>
       <div
@@ -123,15 +125,15 @@ exports[`rendering renders correcly closed 1`] = `
               aria-controls="test-menu-id"
               aria-expanded="false"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-153-label"
+              aria-labelledby="downshift-195-label"
               class="emotion-2"
-              id="downshift-153-toggle-button"
+              id="downshift-195-toggle-button"
               type="button"
             >
               <span>
                 <label
                   class="emotion-0"
-                  id="downshift-153-label"
+                  id="downshift-195-label"
                 >
                   Fruits
                 </label>
@@ -156,7 +158,7 @@ exports[`rendering renders correcly closed 1`] = `
       <div
         aria-busy="false"
         aria-invalid="false"
-        aria-labelledby="downshift-153-label"
+        aria-labelledby="downshift-195-label"
         id="test-menu-id"
         role="listbox"
         tabindex="-1"
@@ -446,7 +448,9 @@ exports[`rendering renders correcly opened 1`] = `
     id="a11y-status-message"
     role="status"
     style="border: 0px; height: 1px; margin: -1px; overflow: hidden; padding: 0px; position: absolute; width: 1px;"
-  />
+  >
+    12 results are available, use up and down arrow keys to navigate. Press Enter or Space Bar keys to select.
+  </div>
   <div>
     <div>
       <div
@@ -462,15 +466,15 @@ exports[`rendering renders correcly opened 1`] = `
               aria-controls="test-menu-id"
               aria-expanded="true"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-154-label"
+              aria-labelledby="downshift-196-label"
               class="emotion-2"
-              id="downshift-154-toggle-button"
+              id="downshift-196-toggle-button"
               type="button"
             >
               <span>
                 <label
                   class="emotion-0"
-                  id="downshift-154-label"
+                  id="downshift-196-label"
                 >
                   Fruits
                 </label>
@@ -495,7 +499,7 @@ exports[`rendering renders correcly opened 1`] = `
       <div
         aria-busy="false"
         aria-invalid="false"
-        aria-labelledby="downshift-154-label"
+        aria-labelledby="downshift-196-label"
         id="test-menu-id"
         role="listbox"
         tabindex="-1"
@@ -1005,15 +1009,15 @@ exports[`rendering renders correcly opened and loading 1`] = `
               aria-controls="test-menu-id"
               aria-expanded="true"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-166-label"
+              aria-labelledby="downshift-208-label"
               class="emotion-2"
-              id="downshift-166-toggle-button"
+              id="downshift-208-toggle-button"
               type="button"
             >
               <span>
                 <label
                   class="emotion-0"
-                  id="downshift-166-label"
+                  id="downshift-208-label"
                 >
                   Button text
                 </label>
@@ -1038,7 +1042,7 @@ exports[`rendering renders correcly opened and loading 1`] = `
       <div
         aria-busy="true"
         aria-invalid="false"
-        aria-labelledby="downshift-166-label"
+        aria-labelledby="downshift-208-label"
         id="test-menu-id"
         role="listbox"
         tabindex="-1"
@@ -1582,19 +1586,19 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
             class="emotion-3"
           >
             <button
-              aria-controls="downshift-178-menu"
+              aria-controls="downshift-220-menu"
               aria-expanded="true"
               aria-haspopup="listbox"
-              aria-labelledby="downshift-178-label"
+              aria-labelledby="downshift-220-label"
               class="emotion-2"
-              id="downshift-178-toggle-button"
+              id="downshift-220-toggle-button"
               name="fruit"
               type="button"
             >
               <span>
                 <label
                   class="emotion-0"
-                  id="downshift-178-label"
+                  id="downshift-220-label"
                 >
                   Fruit
                 </label>
@@ -1619,8 +1623,8 @@ exports[`rendering renders correcly with custom components correctly 1`] = `
       <div
         aria-busy="false"
         aria-invalid="false"
-        aria-labelledby="downshift-178-label"
-        id="downshift-178-menu"
+        aria-labelledby="downshift-220-label"
+        id="downshift-220-menu"
         role="listbox"
         tabindex="-1"
       >
