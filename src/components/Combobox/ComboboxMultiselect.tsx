@@ -16,7 +16,7 @@ import { ComboboxSingleselectProps } from './ComboboxSingleselect'
 import { ListBox } from './ListBox'
 
 export interface ComboboxMultiselectProps<T>
-  extends Omit<ComboboxSingleselectProps<T>, 'value' | 'onChange' | 'components' | 'multiple'> {
+  extends Omit<ComboboxSingleselectProps<T>, 'value' | 'onChange' | 'components' | 'multiple' | 'createNewItem'> {
   value?: T[]
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean
@@ -36,7 +36,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     placeholder,
     loading: externalLoading,
     debounceMilliseconds,
-    createNewItem,
     components,
     itemToString,
     menuMinWidth,
@@ -123,7 +122,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     selectedItem: null,
     items: loadedItems,
 
-    stateReducer: comboboxMultiselectStateReducer(createNewItem, addSelectedItem),
+    stateReducer: comboboxMultiselectStateReducer,
     itemToString,
     onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
@@ -227,7 +226,6 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             isItemSelected={isSelected}
             {...popperAttributes}
             ref={setMenuRef}
-            createNewItem={createNewItem}
             components={componentsRest}
             getItemProps={getItemProps}
             highlightedIndex={highlightedIndex}
@@ -241,10 +239,10 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
   )
 }
 
-const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string) => T, addItem: (item: T) => void) => (
-  state: UseComboboxState<T>,
+function comboboxMultiselectStateReducer<T>(
+  _state: UseComboboxState<T>,
   actionAndChanges: UseComboboxStateChangeOptions<T>
-): Partial<UseComboboxState<T>> => {
+): Partial<UseComboboxState<T>> {
   const { type, changes } = actionAndChanges
   switch (type) {
     case useCombobox.stateChangeTypes.InputKeyDownEnter:
@@ -256,12 +254,9 @@ const comboboxMultiselectStateReducer = <T,>(createNewItem: (inputValue: string)
     case useCombobox.stateChangeTypes.InputBlur:
       return {
         ...changes,
-        ...(!changes.selectedItem &&
-          (createNewItem
-            ? addItem(createNewItem(state.inputValue))
-            : {
-                inputValue: '',
-              })),
+        ...(!changes.selectedItem && {
+          inputValue: '',
+        }),
       }
     default:
       return changes

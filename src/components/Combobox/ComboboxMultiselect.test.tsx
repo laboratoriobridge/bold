@@ -485,66 +485,6 @@ it.each`
   async
   ${true}
   ${false}
-`(
-  'should add item if the input value is not in the list and "createNewItem" is defined (async: $async)',
-  async ({ async }) => {
-    const createNewItem = (input: string) => ({ value: 1, label: input })
-
-    let baseElement: RenderResult['baseElement']
-    let selection = null
-    await act(async () => {
-      const result = render(
-        <ComboboxTest
-          clearable={true}
-          createNewItem={createNewItem}
-          onChange={(items) => {
-            selection = items
-          }}
-          async={async}
-        />
-      )
-      baseElement = result.baseElement
-    })
-    const input = baseElement.querySelector('input')
-
-    //Types item not in the list
-    await act(async () => {
-      fireEvent.focus(input)
-    })
-    await act(async () => {
-      fireEvent.change(input, { target: { value: 'not a fruit in the list' } })
-    })
-    await act(() => waait(asyncDelay))
-    await act(async () => {
-      fireEvent.blur(input)
-    })
-    await act(() => waait(asyncDelay))
-
-    expect(selection).toStrictEqual([{ value: 1, label: 'not a fruit in the list' }])
-
-    //Searches for first item
-    await act(async () => {
-      fireEvent.focus(input)
-    })
-    await act(async () => {
-      fireEvent.change(input, { target: { value: fruits[0].label } })
-    })
-    await act(() => waait(2 * asyncDelay))
-
-    //Selects first item
-    const option = baseElement.querySelector('li')
-    await act(async () => {
-      fireEvent.click(option)
-    })
-
-    expect(selection).toStrictEqual([{ value: 1, label: 'not a fruit in the list' }])
-  }
-)
-
-it.each`
-  async
-  ${true}
-  ${false}
 `('should accept a value as parameter (async: $async)', async ({ async }) => {
   let findByTestId: RenderResult['findByTestId']
 
@@ -660,21 +600,6 @@ describe('rendering', () => {
     let baseElement: RenderResult['baseElement']
     await act(async () => {
       const result = render(<ComboboxWithCustomComponentsTest />)
-      baseElement = result.baseElement
-    })
-    const input = baseElement.querySelector('input')
-    //Opens menu
-    await act(async () => {
-      fireEvent.focus(input)
-    })
-    await act(() => waait(asyncDelay))
-    expect(baseElement).toMatchSnapshot()
-  })
-
-  it('renders correcly opened with add-item', async () => {
-    let baseElement: RenderResult['baseElement']
-    await act(async () => {
-      const result = render(<ComboboxTest label='Fruits' items={[]} createNewItem={() => ({ value: 1, label: '' })} />)
       baseElement = result.baseElement
     })
     const input = baseElement.querySelector('input')
