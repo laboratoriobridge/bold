@@ -163,6 +163,28 @@ test.each`
   async
   ${true}
   ${false}
+`('opens/closes menu when input button is clicked (async: $async)', async ({ async }) => {
+  const { container } = render(<ComboboxTest async={async} />)
+
+  const iconButton = container.querySelector('button')!
+  const input = container.querySelector('input')
+
+  expect(document.activeElement).toEqual(document.body)
+
+  fireEvent.click(iconButton)
+
+  expect(container.querySelector('ul')).toBeTruthy()
+  expect(document.activeElement).toEqual(input)
+
+  fireEvent.click(iconButton)
+
+  expect(container.querySelector('ul')).toBeFalsy()
+})
+
+test.each`
+  async
+  ${true}
+  ${false}
 `('opens menu when input is focused and only when `openOnFocus` prop is true (async: $async)', async ({ async }) => {
   const { baseElement, rerender } = render(<ComboboxTest async={async} />)
 
@@ -207,7 +229,9 @@ it.each`
   ${true}
   ${false}
 `('clears selection when "Clear" is clicked (async: $async)', async ({ async }) => {
-  const { baseElement } = render(<ComboboxTest clearable={true} async={async} />)
+  const onChange = jest.fn()
+  const onClear = jest.fn()
+  const { baseElement } = render(<ComboboxTest clearable={true} async={async} onChange={onChange} onClear={onClear} />)
   const input = baseElement.querySelector('input')!
 
   const dropdownButton = baseElement.querySelector('button')!
@@ -223,6 +247,7 @@ it.each`
   fireEvent.click(option)
 
   expect(input).toHaveValue(option.textContent)
+  expect(onChange).toBeCalledWith(fruits[0])
 
   const clearButton = baseElement.querySelector('[title="Clear"]')!
 
@@ -234,6 +259,8 @@ it.each`
 
   //Checks if cleared
   expect(input).not.toHaveValue()
+  expect(onChange).toBeCalledWith(null)
+  expect(onClear).toBeCalledTimes(1)
 })
 
 it('enters error state', async () => {
@@ -504,12 +531,12 @@ describe('rendering', () => {
   })
 
   it.each`
-    emptyItems
+    items
     ${null}
     ${undefined}
     ${[]}
-  `('renders correcly when items is empty', ({ emptyItems }) => {
-    const { container, queryByText } = render(<ComboboxTest items={emptyItems} />)
+  `('renders correcly when items is empty (items: $items)', ({ items }) => {
+    const { container, queryByText } = render(<ComboboxTest items={items} />)
 
     const input = container.querySelector('input')!
     fireEvent.focus(input)
@@ -624,7 +651,7 @@ describe('emptyItem', () => {
     async
     ${true}
     ${false}
-  `('should NOT render when items is set', async ({ async }) => {
+  `('should NOT render when items is set (async: $async)', async ({ async }) => {
     const { container, queryByText } = render(<ComboboxTest items={fruits} async={async} />)
 
     const input = container.querySelector('input')!
