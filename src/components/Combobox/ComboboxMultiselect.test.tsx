@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
 import { Text } from '../Text'
@@ -208,6 +208,14 @@ it('does not show placeholder when not specified', async () => {
   expect(input).not.toHaveAttribute('placeholder')
 })
 
+it('does not show placeholder if any item is selected', async () => {
+  const { baseElement } = render(<ComboboxTest items={[fruits[0]]} />)
+
+  const input = baseElement.querySelector('input')
+
+  expect(input).not.toHaveAttribute('placeholder')
+})
+
 it.each`
   async
   ${true}
@@ -225,7 +233,6 @@ it.each`
 
   //Selects items
   fireEvent.click(options[0])
-
   fireEvent.click(options[4])
 
   const selected1 = await findByTestId(options[0].textContent!)
@@ -314,11 +321,8 @@ it.each`
   ${true}
   ${false}
 `('should trigger onChange (async: $async)', async ({ async }) => {
-  let selection: Fruit[] = []
-
-  const { baseElement } = render(<ComboboxTest onChange={(nValue) => (selection = nValue)} async={async} />)
-
-  expect(selection).toStrictEqual([])
+  const onChange = jest.fn()
+  const { baseElement } = render(<ComboboxTest onChange={onChange} async={async} />)
 
   const input = baseElement.querySelector('input')!
   //Opens menu
@@ -326,12 +330,30 @@ it.each`
 
   await act(() => waait(asyncDelay))
 
+  expect(onChange).not.toHaveBeenCalled()
+
   //Selects first 2 items
   const options = baseElement.querySelectorAll('li')
   fireEvent.click(options[0])
+
+  expect(onChange).toHaveBeenLastCalledWith([fruits[0]])
+
   fireEvent.click(options[2])
 
-  expect(selection).toStrictEqual([fruits[0], fruits[2]])
+  expect(onChange).toHaveBeenLastCalledWith([fruits[0], fruits[2]])
+  expect(onChange).toHaveBeenCalledTimes(2)
+})
+
+it('should not call onChange when filter is typed and cleared', () => {
+  const change = jest.fn()
+  const { container } = render(<ComboboxTest onChange={change} />)
+
+  const input = container.querySelector('input')!
+
+  fireEvent.change(input, { target: { value: 'app' } })
+  fireEvent.change(input, { target: { value: '' } })
+
+  expect(change).not.toHaveBeenCalled()
 })
 
 it.each`
@@ -493,5 +515,57 @@ describe('async loading', () => {
 
     await act(() => waait(300))
     expect(loadItems).toHaveBeenCalledWith('')
+  })
+})
+
+describe('filtering', () => {
+  it('should keep the current filter after an item is selected', async () => {
+    const { container } = render(<ComboboxTest />)
+    const input = container.querySelector('input')!
+
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+
+    expect(container.querySelectorAll('li').length).toEqual(3)
+
+    fireEvent.click(container.querySelectorAll('li')[0])
+
+    expect(input.value).toEqual('pe')
+    expect(container.querySelectorAll('li').length).toEqual(3)
+  })
+  it('should clear the current filter and the input value after menu is closed', async () => {
+    const { container } = render(<ComboboxTest />)
+    const input = container.querySelector('input')!
+
+    fireEvent.focus(input)
+    fireEvent.change(input, { target: { value: 'pe' } })
+    fireEvent.click(container.querySelectorAll('li')[0])
+    fireEvent.blur(input)
+
+    expect(container.querySelectorAll('li').length).toEqual(0)
+    expect(input.value).toEqual('')
+  })
+})
+
+describe('remove item', () => {
+  it('should call onChange with the new value', () => {
+    const onChange = jest.fn()
+    const { container } = render(<ComboboxTest onChange={onChange} open value={[fruits[0], fruits[1]]} />)
+
+    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
+
+    expect(onChange).toHaveBeenLastCalledWith([fruits[1]])
+  })
+
+  it('should not focus nor toggle the menu opened state', async () => {
+    const { container } = render(<ComboboxTest value={[fruits[0]]} />)
+    const input = container.querySelector('input')
+
+    expect(container.querySelector('ul')).toBeFalsy()
+    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
+    await act(() => waait(300))
+
+    expect(container.querySelector('ul')).toBeFalsy()
+    expect(document.activeElement).not.toEqual(input)
   })
 })
