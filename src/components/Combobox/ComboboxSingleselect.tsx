@@ -46,7 +46,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
 
   const {
     value,
-    items,
+    items = [],
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,

@@ -1,7 +1,8 @@
 import React from 'react'
-import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
+import en from '../../i18n/locales/en-US'
 import { Text } from '../Text'
 import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
@@ -96,11 +97,11 @@ const ComboboxWithCustomComponentsTest = (
           <Text color='success'>Custom {props.itemToString(props.item)}</Text>
         </ComboboxMenuItem>
       ),
-      PrependItem: (props) => <CustomComponent>Prepend item</CustomComponent>,
-      EmptyItem: (props) => <CustomComponent>Empty item</CustomComponent>,
-      CreateItem: (props) => <CustomComponent>Create item</CustomComponent>,
-      LoadingItem: (props) => <CustomComponent>Loading item...</CustomComponent>,
-      AppendItem: (propsItem) => (
+      PrependItem: () => <CustomComponent>Prepend item</CustomComponent>,
+      EmptyItem: () => <CustomComponent>Empty item</CustomComponent>,
+      CreateItem: () => <CustomComponent>Create item</CustomComponent>,
+      LoadingItem: () => <CustomComponent>Loading item...</CustomComponent>,
+      AppendItem: () => (
         <CustomComponent>
           <HFlow alignItems='center' justifyContent='space-between'>
             <Text>
@@ -427,7 +428,7 @@ it.each`
   expect(option).toHaveTextContent(itemToString(fruits[1]))
 })
 
-it('should accept actions inside children prop', async () => {
+it('should accept actions inside children component', async () => {
   const click = jest.fn()
   const { baseElement, findByTestId } = render(<ComboboxWithCustomComponentsTest action={click} />)
 
@@ -492,14 +493,6 @@ describe('rendering', () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  it('renders correcly with custom components correctly', async () => {
-    const { baseElement } = render(<ComboboxWithCustomComponentsTest />)
-    const dropdownButton = baseElement.querySelector('button')!
-    fireEvent.click(dropdownButton)
-    await act(() => waait(asyncDelay))
-    expect(baseElement).toMatchSnapshot()
-  })
-
   it('renders correcly opened with add-item', async () => {
     const { baseElement } = render(
       <ComboboxTest label='Fruits' items={[]} createNewItem={() => ({ value: 1, label: '' })} />
@@ -508,6 +501,21 @@ describe('rendering', () => {
     fireEvent.click(dropdownButton)
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
+  })
+
+  it.each`
+    emptyItems
+    ${null}
+    ${undefined}
+    ${[]}
+  `('renders correcly when items is empty', ({ emptyItems }) => {
+    const { container, queryByText } = render(<ComboboxTest items={emptyItems} />)
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    expect(queryByText(en.select.emptyItem)).toBeTruthy()
+    expect(container).toMatchSnapshot()
   })
 })
 
@@ -528,5 +536,116 @@ describe('async loading', () => {
 
     await act(() => waait(300))
     expect(loadItems).toHaveBeenCalledWith('')
+  })
+})
+
+describe('select custom components', () => {
+  it('renders correcly with custom components correctly', async () => {
+    const { baseElement } = render(<ComboboxWithCustomComponentsTest />)
+    const dropdownButton = baseElement.querySelector('button')!
+    fireEvent.click(dropdownButton)
+    await act(() => waait(asyncDelay))
+    expect(baseElement).toMatchSnapshot()
+  })
+
+  it('should render only the list', async () => {
+    const { container, findByTestId } = render(<ComboboxTest items={fruits} />)
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    const dropdown = await findByTestId('menu')
+    const ul = dropdown.firstElementChild!
+    expect(ul.childElementCount).toBe(fruits.length)
+  })
+
+  it('should render PrependItem component and list only', async () => {
+    const { container, findByTestId } = render(
+      <ComboboxWithCustomComponentsTest
+        items={fruits}
+        components={{
+          PrependItem: () => <CustomComponent data-testid='prepend-item'>Prepend item</CustomComponent>,
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    const dropdown = await findByTestId('menu')
+    const ul = dropdown.firstElementChild!
+    expect(ul.childElementCount).toBe(fruits.length + 1)
+    expect(ul.firstElementChild?.getAttribute('data-testid')).toEqual('prepend-item')
+  })
+
+  it('should render AppendItem component and list only', async () => {
+    const { container, findByTestId } = render(
+      <ComboboxWithCustomComponentsTest
+        items={fruits}
+        components={{
+          AppendItem: () => <CustomComponent data-testid='append-item'>Append item</CustomComponent>,
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    const dropdown = await findByTestId('menu')
+    const ul = dropdown.firstElementChild!
+    expect(ul.childElementCount).toBe(fruits.length + 1)
+    expect(ul.lastElementChild?.getAttribute('data-testid')).toEqual('append-item')
+  })
+
+  it('should render both AppendItem and PrependItem components and list', async () => {
+    const { container, findByTestId } = render(
+      <ComboboxWithCustomComponentsTest
+        items={fruits}
+        components={{
+          PrependItem: () => <CustomComponent data-testid='prepend-item'>Prepend item</CustomComponent>,
+          AppendItem: () => <CustomComponent data-testid='append-item'>Append item</CustomComponent>,
+        }}
+      />
+    )
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    const dropdown = await findByTestId('menu')
+    const ul = dropdown.firstElementChild!
+    expect(ul.childElementCount).toBe(fruits.length + 2)
+    expect(ul.firstElementChild?.getAttribute('data-testid')).toEqual('prepend-item')
+    expect(ul.lastElementChild?.getAttribute('data-testid')).toEqual('append-item')
+  })
+})
+
+describe('emptyItem', () => {
+  test.each`
+    async
+    ${true}
+    ${false}
+  `('should NOT render when items is set', async ({ async }) => {
+    const { container, queryByText } = render(<ComboboxTest items={fruits} async={async} />)
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    await act(() => waait(asyncDelay))
+
+    expect(queryByText(en.select.emptyItem)).toBeFalsy()
+  })
+  it('should NOT render when createNewItem is set', () => {
+    const createNewItem = jest.fn((text) => ({ value: -1, label: text }))
+    const { queryByText } = render(<ComboboxTest createNewItem={createNewItem} open />)
+
+    expect(queryByText(en.select.emptyItem)).toBeFalsy()
+  })
+  it('should NOT render when loading is true', () => {
+    const { container, queryByText } = render(<ComboboxTest loading />)
+
+    const input = container.querySelector('input')!
+    fireEvent.focus(input)
+
+    expect(queryByText(en.select.emptyItem)).toBeFalsy()
   })
 })
