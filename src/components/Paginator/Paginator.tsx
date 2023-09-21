@@ -22,10 +22,15 @@ export interface PaginatorProps {
    * Called when the current page is changed.
    */
   onChange?(page: number): void
+
+  /**
+   * Customize the maxLength prop of the paginator input.
+   */
+  maxLength?: number
 }
 
 export function Paginator(props: PaginatorProps) {
-  const { page, total, onChange } = props
+  const { page, total, onChange, maxLength } = props
   const locale = useLocale()
 
   const [inputValue, setInputValue] = useState<string>(`${page + 1}`)
@@ -86,7 +91,7 @@ export function Paginator(props: PaginatorProps) {
         onBlur={handleInputBlur}
         onKeyDown={handleInputKeyPress}
         clearable={false}
-        maxLength={4}
+        maxLength={maxLength ?? 4}
         title={locale.paginator.currentPage}
       />
 
