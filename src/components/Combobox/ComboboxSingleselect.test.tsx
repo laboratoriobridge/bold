@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, render, fireEvent, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId, waitFor } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
 import en from '../../i18n/locales/en-US'
@@ -7,6 +7,7 @@ import { Text } from '../Text'
 import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
 import { Button } from '../Button'
+import locale from '../../i18n/locales/en-US'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
 import { ComboboxSingleselect, ComboboxSingleselectProps } from './ComboboxSingleselect'
@@ -45,6 +46,18 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
     )
   })
 }
+
+const waitForOption = (baseElement: HTMLElement) =>
+  waitFor(() => {
+    const option = baseElement.querySelector('li')?.firstChild
+
+    expect(option).toBeTruthy()
+    expect(option?.textContent).not.toEqual(locale.select.emptyItem)
+    expect(option?.textContent).not.toEqual(locale.select.loadingItem)
+    expect(option?.textContent).not.toEqual(locale.select.createItem)
+
+    return option!
+  })
 
 const ComboboxTest = (props: Partial<ComboboxSingleselectProps<Fruit>> & { async?: boolean }) => (
   <ComboboxSingleselect<typeof fruits[0]>
@@ -155,8 +168,7 @@ test.each`
   fireEvent.click(dropdownButton)
 
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
-  await act(() => waait(asyncDelay))
-  expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
+  await waitFor(() => expect(listbox.querySelector('[aria-selected]')).toBeTruthy())
 })
 
 test.each`
@@ -164,21 +176,21 @@ test.each`
   ${true}
   ${false}
 `('opens/closes menu when input button is clicked (async: $async)', async ({ async }) => {
-  const { container } = render(<ComboboxTest async={async} />)
+  const { baseElement } = render(<ComboboxTest async={async} />)
 
-  const iconButton = container.querySelector('button')!
-  const input = container.querySelector('input')
+  const iconButton = baseElement.querySelector('button')!
+  const input = baseElement.querySelector('input')
 
-  expect(document.activeElement).toEqual(document.body)
-
-  fireEvent.click(iconButton)
-
-  expect(container.querySelector('ul')).toBeTruthy()
-  expect(document.activeElement).toEqual(input)
+  await waitFor(() => expect(document.activeElement).toEqual(document.body))
 
   fireEvent.click(iconButton)
 
-  expect(container.querySelector('ul')).toBeFalsy()
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+  await waitFor(() => expect(document.activeElement).toEqual(input))
+
+  fireEvent.click(iconButton)
+
+  expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
 test.each`
@@ -231,7 +243,9 @@ it.each`
 `('clears selection when "Clear" is clicked (async: $async)', async ({ async }) => {
   const onChange = jest.fn()
   const onClear = jest.fn()
-  const { baseElement } = render(<ComboboxTest clearable={true} async={async} onChange={onChange} onClear={onClear} />)
+  const { baseElement, findByTitle } = render(
+    <ComboboxTest clearable={true} async={async} onChange={onChange} onClear={onClear} />
+  )
   const input = baseElement.querySelector('input')!
 
   const dropdownButton = baseElement.querySelector('button')!
@@ -239,28 +253,26 @@ it.each`
   //Opens menu
   fireEvent.click(dropdownButton)
 
-  await act(() => waait(asyncDelay))
-
-  const option = baseElement.querySelector('li')!.firstChild!
+  const option = await waitForOption(baseElement)
 
   //Selects item
   fireEvent.click(option)
 
-  expect(input).toHaveValue(option.textContent)
+  await waitFor(() => expect(input).toHaveValue(option.textContent))
   expect(onChange).toBeCalledWith(fruits[0])
 
-  const clearButton = baseElement.querySelector('[title="Clear"]')!
+  const clearButton = await findByTitle('Clear')
 
   //Clears value and focus out
   fireEvent.click(clearButton)
   fireEvent.blur(input)
 
-  await act(() => waait(asyncDelay))
-
   //Checks if cleared
-  expect(input).not.toHaveValue()
-  expect(onChange).toBeCalledWith(null)
-  expect(onClear).toBeCalledTimes(1)
+  await waitFor(() => {
+    expect(input).not.toHaveValue()
+    expect(onChange).toBeCalledWith(null)
+    expect(onClear).toBeCalledTimes(1)
+  })
 })
 
 it('enters error state', async () => {
@@ -303,10 +315,8 @@ it.each`
   const dropdownButton = baseElement.querySelector('button')!
   fireEvent.click(dropdownButton)
 
-  await act(() => waait(asyncDelay))
-
   //Selects first item
-  const option = baseElement.querySelector('li')!.firstChild!
+  const option = await waitForOption(baseElement)
   fireEvent.click(option)
 
   expect(selection).toBe(fruits[0])
@@ -374,9 +384,7 @@ it.each`
   //Opens menu
   fireEvent.click(dropdownButton)
 
-  await act(() => waait(asyncDelay))
-
-  const option = baseElement.querySelector('li')!.firstChild!
+  const option = await waitForOption(baseElement)
 
   //Selects item
   fireEvent.click(option)
@@ -423,12 +431,11 @@ it.each`
     //Searches for first item
     fireEvent.focus(input)
     fireEvent.change(input, { target: { value: fruits[0].label } })
-    await act(() => waait(2 * asyncDelay))
+
+    const option = await waitForOption(baseElement)
 
     //Selects first item
-    const option = baseElement.querySelector('li')!
     fireEvent.click(option)
-
     expect(selection).toBe(fruits[0])
   }
 )
@@ -448,11 +455,9 @@ it.each`
   const dropdownButton = baseElement.querySelector('button')!
   fireEvent.click(dropdownButton)
 
-  await act(() => waait(asyncDelay))
+  const option = await waitForOption(baseElement)
 
-  const option = baseElement.querySelector('li')
-
-  expect(option).toHaveTextContent(itemToString(fruits[1]))
+  expect(option.textContent).toEqual(itemToString(fruits[1]))
 })
 
 it('should accept actions inside children component', async () => {
@@ -657,9 +662,7 @@ describe('emptyItem', () => {
     const input = container.querySelector('input')!
     fireEvent.focus(input)
 
-    await act(() => waait(asyncDelay))
-
-    expect(queryByText(en.select.emptyItem)).toBeFalsy()
+    await waitFor(() => expect(queryByText(en.select.emptyItem)).toBeFalsy())
   })
   it('should NOT render when createNewItem is set', () => {
     const createNewItem = jest.fn((text) => ({ value: -1, label: text }))

@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, render, fireEvent, RenderResult, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
 import { Text } from '../Text'
@@ -117,12 +117,10 @@ test.each`
   ${false}
 `('has aria-compliant attributes (async: $async)', async ({ async }) => {
   // From https://w3c.github.io/aria-practices/examples/combobox/combobox-select-only.html
-  let baseElement: RenderResult['baseElement']
-  await act(async () => {
-    const result = render(<ComboboxInlineTest async={async} defaultButtonText='Fruits' />)
-    baseElement = result.baseElement
-  })
-  const button = baseElement.querySelector('button')
+
+  const { baseElement } = render(<ComboboxInlineTest async={async} defaultButtonText='Fruits' />)
+
+  const button = baseElement.querySelector('button')!
   const label = baseElement.querySelector('label')
   const listbox = baseElement.querySelector('[role="listbox"]')
 
@@ -138,15 +136,12 @@ test.each`
   expect(listbox).toHaveAttribute('aria-labelledby', label?.getAttribute('id'))
   expect(listbox).toHaveAttribute('tabindex', '-1')
 
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  fireEvent.click(button)
+
   expect(button).toHaveAttribute('aria-expanded', 'true')
   await act(() => waait(asyncDelay))
 
-  await act(async () => {
-    fireEvent.keyDown(button, { key: 'ArrowDown' })
-  })
+  fireEvent.keyDown(button, { key: 'ArrowDown' })
 
   const activeItem = listbox?.querySelector('[aria-selected]')
   expect(activeItem).not.toBeNull()
@@ -154,15 +149,11 @@ test.each`
 })
 
 it('should focus the searchbox field when opened', async () => {
-  let baseElement: HTMLElement
-  await act(async () => {
-    const result = render(<ComboboxInlineTest />)
-    baseElement = result.container
-  })
-  const button = baseElement.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const { baseElement } = render(<ComboboxInlineTest />)
+
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
+
   expect(document.activeElement).toEqual(baseElement.querySelector('[role="searchbox"]'))
 })
 
@@ -171,29 +162,22 @@ test.each`
   ${true}
   ${false}
 `('should show the searchbox field only when showSearchBox is true', async ({ showSearchBox }) => {
-  let container: HTMLElement
-  await act(async () => {
-    const result = render(<ComboboxInlineTest showSearchBox={showSearchBox} />)
-    container = result.container
-  })
-  const button = container.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const { baseElement } = render(<ComboboxInlineTest showSearchBox={showSearchBox} />)
 
-  const searchBox = container.querySelector('[role="searchbox"]')
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
+
+  const searchBox = baseElement.querySelector('[role="searchbox"]')
   if (showSearchBox) expect(searchBox).toBeNull()
   else expect(searchBox).not.toBeNull()
 })
 
 it('enters error state', async () => {
-  let baseElement: RenderResult['baseElement']
   const errorMessage = 'error'
-  await act(async () => {
-    const result = render(<ComboboxInlineTest error={errorMessage} />)
-    baseElement = result.baseElement
-  })
-  const listbox = baseElement.querySelector('[role="listbox"]')
+
+  const { baseElement } = render(<ComboboxInlineTest error={errorMessage} />)
+
+  const listbox = baseElement.querySelector('[role="listbox"]')!
 
   expect(listbox).toHaveAttribute('aria-invalid', 'true')
   expect(listbox).toHaveAttribute('aria-errormessage')
@@ -203,18 +187,11 @@ it('enters error state', async () => {
 })
 
 it('respects menu min-width', async () => {
-  let baseElement: RenderResult['baseElement']
+  const { baseElement } = render(<ComboboxInlineTest menuMinWidth={1000} />)
 
-  await act(async () => {
-    const result = render(<ComboboxInlineTest menuMinWidth={1000} />)
-    baseElement = result.baseElement
-  })
-
-  const button = baseElement.querySelector('button')
+  const button = baseElement.querySelector('button')!
   //Opens menu
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  fireEvent.click(button)
 
   const menu = getByTestId(baseElement, 'menu')
 
@@ -226,30 +203,21 @@ it.each`
   ${true}
   ${false}
 `('should trigger onChange (async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
+  let selection: Fruit | null = null
 
-  let selection = null
-
-  await act(async () => {
-    const result = render(<ComboboxInlineTest onChange={(nValue) => (selection = nValue)} async={async} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest onChange={(nValue) => (selection = nValue)} async={async} />)
 
   expect(selection).toBeNull()
 
   //Opens menu
-  const button = baseElement.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
 
   await act(() => waait(asyncDelay))
 
   //Selects first item
-  const option = baseElement.querySelector('li').firstChild
-  await act(async () => {
-    fireEvent.click(option)
-  })
+  const option = baseElement.querySelector('li')!.firstChild!
+  fireEvent.click(option)
 
   expect(selection).toBe(fruits[0])
 })
@@ -259,72 +227,53 @@ it.each`
   ${true}
   ${false}
 `('should trigger onFilterChange (async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
-
   let filter = ''
 
-  await act(async () => {
-    const result = render(<ComboboxInlineTest onFilterChange={(nValue) => (filter = nValue)} async={async} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest onFilterChange={(nValue) => (filter = nValue)} async={async} />)
 
   //Opens menu
-  const button = baseElement.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
 
   expect(filter).toBe('')
 
-  const searchbox = baseElement.querySelector('[role="searchbox"]')
+  const searchbox = baseElement.querySelector('[role="searchbox"]')!
   fireEvent.change(searchbox, { target: { value: 'filter' } })
 
   expect(filter).toBe('filter')
 })
 
 it('should trigger onFocus', async () => {
-  let baseElement: RenderResult['baseElement']
-
   const onFocus = jest.fn()
 
-  await act(async () => {
-    const result = render(<ComboboxInlineTest onFocus={onFocus} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest onFocus={onFocus} />)
 
-  const button = baseElement.querySelector('button')
+  const button = baseElement.querySelector('button')!
   fireEvent.focus(button)
+
   expect(onFocus).toBeCalled()
 })
 
 it('should trigger onClick', async () => {
-  let baseElement: RenderResult['baseElement']
-
   const onClick = jest.fn()
 
-  await act(async () => {
-    const result = render(<ComboboxInlineTest onClick={onClick} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest onClick={onClick} />)
 
-  const button = baseElement.querySelector('button')
+  const button = baseElement.querySelector('button')!
   fireEvent.click(button)
+
   expect(onClick).toBeCalled()
 })
 
 it('should trigger onBlur', async () => {
-  let baseElement: RenderResult['baseElement']
-
   const onBlur = jest.fn()
 
-  await act(async () => {
-    const result = render(<ComboboxInlineTest onBlur={onBlur} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest onBlur={onBlur} />)
 
-  const button = baseElement.querySelector('button')
+  const button = baseElement.querySelector('button')!
   fireEvent.focus(button)
   fireEvent.blur(button)
+
   expect(onBlur).toBeCalled()
 })
 
@@ -333,12 +282,7 @@ it.each`
   ${true}
   ${false}
 `('should accept a value as parameter (async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
-
-  await act(async () => {
-    const result = render(<ComboboxInlineTest value={fruits[1]} async={async} />)
-    baseElement = result.baseElement
-  })
+  const { baseElement } = render(<ComboboxInlineTest value={fruits[1]} async={async} />)
 
   const button = baseElement.querySelector('button')
 
@@ -347,22 +291,13 @@ it.each`
 
 it('should accept actions inside children prop', async () => {
   const click = jest.fn()
-  let baseElement: RenderResult['baseElement']
-  let findByTestId: RenderResult['findByTestId']
-  await act(async () => {
-    const result = render(<ComboboxInlineWithCustomComponentsTest action={click} />)
-    baseElement = result.baseElement
-    findByTestId = result.findByTestId
-  })
 
-  const button = baseElement.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const { baseElement, findByTestId } = render(<ComboboxInlineWithCustomComponentsTest action={click} />)
 
-  await act(async () => {
-    fireEvent.click(await findByTestId('action-btn'))
-  })
+  const button = baseElement.querySelector('button')!
+
+  fireEvent.click(button)
+  fireEvent.click(await findByTestId('action-btn'))
 
   expect(click).toHaveBeenCalledTimes(1)
 })
@@ -372,87 +307,64 @@ test.each`
   ${true}
   ${false}
 `('keeps menu open based on the `open` prop(async: $async)', async ({ async }) => {
-  let baseElement: RenderResult['baseElement']
-  let rerender: RenderResult['rerender']
-  await act(async () => {
-    const result = render(<ComboboxInlineTest async={async} open />)
-    baseElement = result.baseElement
-    rerender = result.rerender
-  })
+  const { baseElement, rerender } = render(<ComboboxInlineTest async={async} open />)
 
   // initial state has open menu
   expect(baseElement.querySelector('ul')).toBeTruthy()
 
-  const button = baseElement.querySelector('button')
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
 
   expect(baseElement.querySelector('ul')).toBeTruthy()
+
   //click dropdown button
-  await act(async () => {
-    fireEvent.click(baseElement)
-  })
+  fireEvent.click(baseElement)
   expect(baseElement.querySelector('ul')).toBeTruthy()
 
   // rerenders switching prop
   await act(async () => rerender(<ComboboxInlineTest async={async} open={false} />))
   expect(baseElement.querySelector('ul')).toBeFalsy()
 
-  await act(async () => {
-    fireEvent.click(button)
-  })
+  fireEvent.click(button)
+
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
 describe('rendering', () => {
   it('renders correcly closed', async () => {
-    let baseElement: RenderResult['baseElement']
-    await act(async () => {
-      const result = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
-      baseElement = result.baseElement
-    })
+    const { baseElement } = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
+
     expect(baseElement).toMatchSnapshot()
   })
 
   it('renders correcly opened', async () => {
-    let baseElement: RenderResult['baseElement']
-    await act(async () => {
-      const result = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
-      baseElement = result.baseElement
-    })
-    const button = baseElement.querySelector('button')
-    await act(async () => {
-      fireEvent.click(button)
-    })
+    const { baseElement } = render(<ComboboxInlineTest defaultButtonText='Fruits' />)
+
+    const button = baseElement.querySelector('button')!
+
+    fireEvent.click(button)
+
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 
   it('renders correcly opened and loading', async () => {
-    let baseElement: RenderResult['baseElement']
-    await act(async () => {
-      const result = render(<ComboboxInlineTest loading={true} />)
-      baseElement = result.baseElement
-    })
-    const button = baseElement.querySelector('button')
-    await act(async () => {
-      fireEvent.click(button)
-    })
+    const { baseElement } = render(<ComboboxInlineTest loading={true} />)
+
+    const button = baseElement.querySelector('button')!
+    fireEvent.click(button)
+
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
 
   it('renders correcly with custom components correctly', async () => {
-    let baseElement: RenderResult['baseElement']
-    await act(async () => {
-      const result = render(<ComboboxInlineWithCustomComponentsTest />)
-      baseElement = result.baseElement
-    })
-    const button = baseElement.querySelector('button')
-    await act(async () => {
-      fireEvent.click(button)
-    })
+    const { baseElement } = render(<ComboboxInlineWithCustomComponentsTest />)
+
+    const button = baseElement.querySelector('button')!
+
+    fireEvent.click(button)
+
     await act(() => waait(asyncDelay))
     expect(baseElement).toMatchSnapshot()
   })
@@ -461,49 +373,39 @@ describe('rendering', () => {
 describe('async loading', () => {
   it('should NOT call "loadItems" when mounted', async () => {
     const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))
-    await act(async () => {
-      render(<Combobox inline defaultButtonText='Fruits' items={loadItems} />)
-    })
+
+    render(<Combobox inline defaultButtonText='Fruits' items={loadItems} />)
+
     expect(loadItems).not.toHaveBeenCalledWith()
   })
 
   it('should call "loadItems" when open', async () => {
     const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))
-    let baseElement = null
-    await act(async () => {
-      const { container } = render(
-        <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
-      )
-      baseElement = container
-    })
 
-    const button = baseElement.querySelector('button')
-    await act(async () => {
-      fireEvent.click(button)
-    })
+    const { baseElement } = render(
+      <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
+    )
+
+    const button = baseElement.querySelector('button')!
+    fireEvent.click(button)
+
     await act(() => waait(600))
     expect(loadItems).toHaveBeenCalledWith(null)
   })
 
   it('should call "loadItems" when the filter changes', async () => {
     const loadItems = jest.fn(() => Promise.resolve(['Item 1', 'Item 2']))
-    let baseElement = null
-    await act(async () => {
-      const { container } = render(
-        <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
-      )
-      baseElement = container
-    })
 
-    const button = baseElement.querySelector('button')
-    await act(async () => {
-      fireEvent.click(button)
-    })
+    const { baseElement } = render(
+      <Combobox inline defaultButtonText='Fruits' items={loadItems} itemToString={(item) => item} />
+    )
 
-    const searchbox = baseElement.querySelector('[role="searchbox"]')
-    await act(async () => {
-      fireEvent.change(searchbox, { target: { value: 'filter' } })
-    })
+    const button = baseElement.querySelector('button')!
+    fireEvent.click(button)
+
+    const searchbox = baseElement.querySelector('[role="searchbox"]')!
+    fireEvent.change(searchbox, { target: { value: 'filter' } })
+
     await act(() => waait(600))
     expect(loadItems).toHaveBeenCalledWith('filter')
   })

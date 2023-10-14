@@ -9,6 +9,7 @@ import { FormControl } from '../FormControl'
 import { useFormControl } from '../../hooks/useFormControl'
 import { createStyleParts, TextInputBase } from '../TextField/TextInputBase'
 import { InputWrapper } from '../TextField/InputWrapper'
+import { EMPTY_ARRAY } from '../../util'
 import { ComboboxMultiselectComponents, defaultComboboxMultiselectComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { DefaultComboboxItemType } from './Combobox'
@@ -82,17 +83,19 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     addSelectedItem,
     setSelectedItems,
     removeSelectedItem,
-    selectedItems = [],
+    selectedItems,
     reset,
   } = useMultipleSelection<T>({
+    defaultSelectedItems: EMPTY_ARRAY as [],
     onSelectedItemsChange: ({ selectedItems }) => {
       onChange?.(selectedItems)
     },
   })
 
+  const valueDiffsSelectedItems = value?.length && value !== selectedItems
   useEffect(() => {
-    setSelectedItems(value ?? [])
-  }, [value, setSelectedItems])
+    if (valueDiffsSelectedItems) setSelectedItems(value)
+  }, [value, valueDiffsSelectedItems, setSelectedItems])
 
   const { classes, css } = useStyles(createStyles, props, !!selectedItems.length)
   const isSelected = useCallback((item: T) => selectedItems.some((selectedItem) => itemIsEqual(item, selectedItem)), [
@@ -170,6 +173,13 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     (item: T) => (isSelected(item) ? removeSelectedItem(item) : addSelectedItem(item)),
     [isSelected, removeSelectedItem, addSelectedItem]
   )
+  const handleItemRemove = useCallback(
+    (item: T) => (e: React.MouseEvent<HTMLSpanElement>) => {
+      removeSelectedItem(item)
+      e.stopPropagation()
+    },
+    [removeSelectedItem]
+  )
   const wrapperClasses = css(classes.wrapper, invalid && classes.invalid, props.disabled && classes.disabled)
 
   const { SelectedItem, ...componentsRest } = useMemo(
@@ -194,7 +204,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
             <SelectedItem
               style={classes.selectedItem}
               key={`selected-item-${index}`}
-              onRemove={() => removeSelectedItem(selectedItem)}
+              onRemove={handleItemRemove(selectedItem)}
               disabled={disabled}
               {...getSelectedItemProps({ selectedItem, index })}
             >

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { act, render, fireEvent, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId, waitFor } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
 import { Text } from '../Text'
@@ -44,6 +44,13 @@ const loadFruitsAsync = (query: string): Promise<Fruit[]> => {
     )
   })
 }
+
+const waitForOptions = (baseElement: HTMLElement) =>
+  waitFor(() => {
+    const options = baseElement.querySelectorAll('li')
+    expect(options).toHaveLength(fruits.length)
+    return options
+  })
 
 const ComboboxTest = (props: Partial<ComboboxMultiselectProps<Fruit>> & { async?: boolean }) => (
   <ComboboxMultiselect<typeof fruits[0]>
@@ -160,8 +167,7 @@ test.each`
   //Opens menu
   fireEvent.focus(input)
   expect(combobox).toHaveAttribute('aria-expanded', 'true')
-  await act(() => waait(asyncDelay))
-  expect(listbox.querySelector('[aria-selected]')).toBeTruthy()
+  await waitFor(() => expect(listbox.querySelector('[aria-selected]')).toBeTruthy())
 })
 
 test.each`
@@ -227,9 +233,7 @@ it.each`
   //Opens menu
   fireEvent.focus(input)
 
-  await act(() => waait(asyncDelay))
-
-  const options = baseElement.querySelectorAll('li')
+  const options = await waitForOptions(baseElement)
 
   //Selects items
   fireEvent.click(options[0])
@@ -261,9 +265,7 @@ it.each`
   //Opens menu
   fireEvent.focus(input)
 
-  await act(() => waait(asyncDelay))
-
-  const options = baseElement.querySelectorAll('li')
+  const options = await waitForOptions(baseElement)
 
   //Selects items
   fireEvent.click(options[0])
@@ -282,13 +284,13 @@ it.each`
   //Clears value and focus out
   fireEvent.click(clearButton!)
 
-  await act(() => waait(asyncDelay))
-
   //Checks if cleared
-  const cleared1 = baseElement.querySelector(`[data-testid="${options[0].textContent}"]`)
-  expect(cleared1).toBeNull()
-  const cleared2 = baseElement.querySelector(`[data-testid="${options[1].textContent}"]`)
-  expect(cleared2).toBeNull()
+  await waitFor(() => {
+    const cleared1 = baseElement.querySelector(`[data-testid="${options[0].textContent}"]`)
+    expect(cleared1).toBeNull()
+    const cleared2 = baseElement.querySelector(`[data-testid="${options[1].textContent}"]`)
+    expect(cleared2).toBeNull()
+  })
 })
 
 it('enters error state', async () => {
@@ -328,12 +330,11 @@ it.each`
   //Opens menu
   fireEvent.focus(input)
 
-  await act(() => waait(asyncDelay))
+  const options = await waitForOptions(baseElement)
 
   expect(onChange).not.toHaveBeenCalled()
 
   //Selects first 2 items
-  const options = baseElement.querySelectorAll('li')
   fireEvent.click(options[0])
 
   expect(onChange).toHaveBeenLastCalledWith([fruits[0]])
@@ -344,7 +345,7 @@ it.each`
   expect(onChange).toHaveBeenCalledTimes(2)
 })
 
-it('should not call onChange when filter is typed and cleared', () => {
+it('should not call onChange when filter is typed and cleared - no selected values', () => {
   const change = jest.fn()
   const { container } = render(<ComboboxTest onChange={change} />)
 
@@ -354,6 +355,29 @@ it('should not call onChange when filter is typed and cleared', () => {
   fireEvent.change(input, { target: { value: '' } })
 
   expect(change).not.toHaveBeenCalled()
+})
+
+it('should not call onChange when filter is typed and cleared - with selected values', async () => {
+  const onChange = jest.fn()
+  const { baseElement } = render(<ComboboxTest onChange={onChange} />)
+
+  const input = baseElement.querySelector('input')!
+  //Opens menu
+  fireEvent.focus(input)
+
+  const options = await waitForOptions(baseElement)
+
+  expect(onChange).not.toHaveBeenCalled()
+
+  //Selects first 2 items
+  fireEvent.click(options[0])
+  fireEvent.click(options[2])
+
+  fireEvent.change(input, { target: { value: 'app' } })
+  fireEvent.change(input, { target: { value: '' } })
+
+  expect(onChange).toHaveBeenLastCalledWith([fruits[0], fruits[2]])
+  expect(onChange).toHaveBeenCalledTimes(2)
 })
 
 it.each`
@@ -510,11 +534,11 @@ describe('async loading', () => {
     const { container } = render(<Combobox items={loadItems} itemToString={(item) => item} />)
 
     container.querySelector('input')?.focus()
-    await act(() => waait(300))
-    expect(loadItems).not.toHaveBeenCalledWith()
 
-    await act(() => waait(300))
-    expect(loadItems).toHaveBeenCalledWith('')
+    await waitFor(() => {
+      expect(loadItems).not.toHaveBeenCalledWith()
+      expect(loadItems).toHaveBeenCalledWith('')
+    })
   })
 })
 
@@ -526,12 +550,12 @@ describe('filtering', () => {
     fireEvent.focus(input)
     fireEvent.change(input, { target: { value: 'pe' } })
 
-    expect(container.querySelectorAll('li').length).toEqual(3)
+    await waitFor(() => expect(container.querySelectorAll('li')).toHaveLength(4))
 
     fireEvent.click(container.querySelectorAll('li')[0])
 
     expect(input.value).toEqual('pe')
-    expect(container.querySelectorAll('li').length).toEqual(3)
+    expect(container.querySelectorAll('li')).toHaveLength(4)
   })
   it('should clear the current filter and the input value after menu is closed', async () => {
     const { container } = render(<ComboboxTest />)
@@ -542,30 +566,39 @@ describe('filtering', () => {
     fireEvent.click(container.querySelectorAll('li')[0])
     fireEvent.blur(input)
 
-    expect(container.querySelectorAll('li').length).toEqual(0)
+    expect(container.querySelectorAll('li')).toHaveLength(0)
     expect(input.value).toEqual('')
   })
 })
 
 describe('remove item', () => {
-  it('should call onChange with the new value', () => {
+  it('should call onChange with the new value', async () => {
     const onChange = jest.fn()
-    const { container } = render(<ComboboxTest onChange={onChange} open value={[fruits[0], fruits[1]]} />)
+    const { baseElement, findAllByTitle } = render(<ComboboxTest onChange={onChange} open />)
 
-    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
+    const options = await waitForOptions(baseElement)
+
+    //Selects first 2 items
+    fireEvent.click(options[0])
+    fireEvent.click(options[1])
+
+    const removeFirstElementButton = (await findAllByTitle('Remove'))[0]
+    fireEvent.click(removeFirstElementButton)
 
     expect(onChange).toHaveBeenLastCalledWith([fruits[1]])
   })
 
   it('should not focus nor toggle the menu opened state', async () => {
-    const { container } = render(<ComboboxTest value={[fruits[0]]} />)
-    const input = container.querySelector('input')
+    const value = [fruits[0]]
+    const { baseElement, findByTitle } = render(<ComboboxTest value={value} />)
+    const input = baseElement.querySelector('input')
 
-    expect(container.querySelector('ul')).toBeFalsy()
-    fireEvent.click(container.querySelectorAll('span[title="Remove"]')[0])
-    await act(() => waait(300))
+    expect(baseElement.querySelector('ul')).toBeFalsy()
 
-    expect(container.querySelector('ul')).toBeFalsy()
+    const removeFirstElementButton = await findByTitle('Remove')
+    fireEvent.click(removeFirstElementButton)
+
+    expect(baseElement.querySelector('ul')).toBeFalsy()
     expect(document.activeElement).not.toEqual(input)
   })
 })

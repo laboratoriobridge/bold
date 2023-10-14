@@ -10,6 +10,7 @@ import { composeHandlers, composeRefs } from '../../util/react'
 import { FormControl } from '../FormControl'
 import { useFormControl, UseFormControlProps } from '../../hooks/useFormControl'
 import { TextInput, TextInputProps } from '../TextField'
+import { EMPTY_ARRAY } from '../../util'
 import { ComboboxComponents, defaultComboboxComponents } from './ComboboxMenuComponents'
 import { useComboboxItemsLoader } from './useComboboxItemsLoader'
 import { DefaultComboboxItemType } from './Combobox'
@@ -27,7 +28,7 @@ export interface ComboboxSingleselectProps<T>
   open?: boolean
   debounceMilliseconds: number
   menuMinWidth?: number
-  filter?(items: T[], filter: string): T[]
+  filter?(items: ReadonlyArray<T>, filter: string): T[]
   onChange?: (newValue: T) => void
   onFilterChange?: (newValue: string) => void
   components?: Partial<ComboboxComponents<T>>
@@ -46,7 +47,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
 
   const {
     value,
-    items = [],
+    items,
     loading: externalLoading,
     debounceMilliseconds,
     createNewItem,
@@ -73,10 +74,10 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
   const { classes } = useStyles(createStyles)
 
   const isAsync = typeof items === 'function'
-  const getItems = useCallback((query: string) => (typeof items === 'function' ? items(query) : filter(items, query)), [
-    items,
-    filter,
-  ])
+  const getItems = useCallback(
+    (query: string) => (typeof items === 'function' ? items(query) : filter(items ?? EMPTY_ARRAY, query)),
+    [items, filter]
+  )
   const { loading: loadingItems, items: loadedItems, loadItems } = useComboboxItemsLoader(
     getItems,
     debounceMilliseconds
@@ -154,6 +155,11 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
 
   const componentsInner = useMemo(() => ({ ...defaultComboboxComponents, ...(components ?? {}) }), [components])
 
+  const handleIconClick = useCallback(() => {
+    toggleMenu()
+    inputRef.current?.focus()
+  }, [toggleMenu])
+
   return (
     <div {...downshiftComboboxProps}>
       <FormControl {...formControlProps} labelId={internalLabelId} {...downshiftLabelProps}>
@@ -161,7 +167,7 @@ export function ComboboxSingleselect<T = DefaultComboboxItemType>(props: Combobo
           icon={isOpen ? 'angleUp' : 'angleDown'}
           iconAriaLabel={isOpen ? locale.combobox.hideOptions : locale.combobox.showOptions}
           iconPosition='right'
-          onIconClick={toggleMenu}
+          onIconClick={handleIconClick}
           inputRef={composeRefs(inputRef, downshiftInputRef)}
           onClear={composeHandlers(reset, onClear)}
           invalid={invalid}
