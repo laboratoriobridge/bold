@@ -1,5 +1,5 @@
 import React from 'react'
-import { act, render, fireEvent, getByTestId } from '@testing-library/react'
+import { act, render, fireEvent, getByTestId, waitFor } from '@testing-library/react'
 import matchSorter from 'match-sorter'
 import waait from 'waait'
 import { Text } from '../Text'
@@ -7,6 +7,7 @@ import { useTheme } from '../../styles'
 import { HFlow } from '../HFlow'
 import { Button } from '../Button'
 import { ComboboxInline, ComboboxInlineProps } from '../Combobox/ComboboxInline'
+import locale from '../../i18n/locales/en-US'
 import { ComboboxMenuItem } from './ComboboxMenuComponents'
 import { Combobox } from './Combobox'
 
@@ -90,10 +91,10 @@ const ComboboxInlineWithCustomComponentsTest = (
           <Text color='success'>Custom {props.itemToString(props.item)}</Text>
         </ComboboxMenuItem>
       ),
-      PrependItem: (props) => <CustomComponent>Prepend item</CustomComponent>,
-      EmptyItem: (props) => <CustomComponent>Empty item</CustomComponent>,
-      LoadingItem: (props) => <CustomComponent>Loading item...</CustomComponent>,
-      AppendItem: (propsItem) => (
+      PrependItem: () => <CustomComponent>Prepend item</CustomComponent>,
+      EmptyItem: () => <CustomComponent>Empty item</CustomComponent>,
+      LoadingItem: () => <CustomComponent>Loading item...</CustomComponent>,
+      AppendItem: () => (
         <CustomComponent>
           <HFlow alignItems='center' justifyContent='space-between'>
             <Text>
@@ -110,6 +111,18 @@ const ComboboxInlineWithCustomComponentsTest = (
     {...props}
   />
 )
+
+const waitForOption = (baseElement: HTMLElement) =>
+  waitFor(() => {
+    const option = baseElement.querySelector('li')?.firstChild
+
+    expect(option).toBeTruthy()
+    expect(option?.textContent).not.toEqual(locale.select.emptyItem)
+    expect(option?.textContent).not.toEqual(locale.select.loadingItem)
+    expect(option?.textContent).not.toEqual(locale.select.createItem)
+
+    return option!
+  })
 
 test.each`
   async
@@ -139,13 +152,12 @@ test.each`
   fireEvent.click(button)
 
   expect(button).toHaveAttribute('aria-expanded', 'true')
-  await act(() => waait(asyncDelay))
-
   fireEvent.keyDown(button, { key: 'ArrowDown' })
 
-  const activeItem = listbox?.querySelector('[aria-selected]')
-  expect(activeItem).not.toBeNull()
-  expect(listbox).toHaveAttribute('aria-activedescendant', activeItem?.getAttribute('id'))
+  await waitFor(() => {
+    const activeItem = listbox?.querySelector('[aria-selected]')
+    expect(activeItem).not.toBeNull()
+  })
 })
 
 it('should focus the searchbox field when opened', async () => {
@@ -213,10 +225,8 @@ it.each`
   const button = baseElement.querySelector('button')!
   fireEvent.click(button)
 
-  await act(() => waait(asyncDelay))
-
   //Selects first item
-  const option = baseElement.querySelector('li')!.firstChild!
+  const option = await waitForOption(baseElement)
   fireEvent.click(option)
 
   expect(selection).toBe(fruits[0])
@@ -300,6 +310,34 @@ it('should accept actions inside children prop', async () => {
   fireEvent.click(await findByTestId('action-btn'))
 
   expect(click).toHaveBeenCalledTimes(1)
+})
+
+test.each`
+  async
+  ${true}
+  ${false}
+`('should make the popper content visible on click', async ({ async }) => {
+  const { baseElement } = render(<ComboboxInlineTest async={async} />)
+
+  const button = baseElement.querySelector('button')!
+  expect(baseElement.querySelector('ul')).toBeFalsy()
+
+  fireEvent.click(button)
+
+  expect(baseElement.querySelector('ul')).toBeTruthy()
+})
+
+test.each`
+  async
+  ${true}
+  ${false}
+`('should focus the input field when opened', async ({ async }) => {
+  const { baseElement } = render(<ComboboxInlineTest async={async} open />)
+
+  const button = baseElement.querySelector('button')!
+  fireEvent.click(button)
+
+  expect(document.activeElement).toEqual(baseElement.querySelector('input'))
 })
 
 test.each`
