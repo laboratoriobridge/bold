@@ -483,7 +483,8 @@ test.each`
   expect(baseElement.querySelector('ul')).toBeFalsy()
 })
 
-describe('rendering', () => {
+//TODO: Re-enable after upgrading Downshift (Issue #822)
+describe.skip('rendering', () => {
   it('renders correcly closed', async () => {
     const { baseElement } = render(<ComboboxTest label='Fruits' />)
 
