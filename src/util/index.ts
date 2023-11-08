@@ -6,6 +6,7 @@ import _some from 'lodash/some'
 import _range from 'lodash/range'
 import _clamp from 'lodash/clamp'
 
+export * from './array'
 export * from './Observable'
 export * from './types'
 

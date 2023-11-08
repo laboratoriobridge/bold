@@ -9,7 +9,7 @@ interface ListBoxProps<T> extends HTMLAttributes<HTMLDivElement> {
   highlightedIndex: number
   itemToString(item: T): string
   createNewItem?(inputValue: string): T
-  getItemProps({ index: number, item: T }): ComboboxItemProps<T>
+  getItemProps(options: { index: number; item: T }): ComboboxItemProps<T>
   isItemSelected?(item: T): boolean
   onItemClick?(item: T, ev: MouseEvent<HTMLLIElement>): void
 }
