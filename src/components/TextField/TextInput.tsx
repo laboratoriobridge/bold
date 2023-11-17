@@ -5,7 +5,10 @@ import { composeRefs, setNativeValue } from '../../util/react'
 import { InputWrapper, InputWrapperProps } from './InputWrapper'
 import { TextInputBase, TextInputBaseProps } from './TextInputBase'
 
-export type PublicInputWrapperProps = Pick<InputWrapperProps, 'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick'>
+export type PublicInputWrapperProps = Pick<
+  InputWrapperProps,
+  'icon' | 'iconPosition' | 'iconDisabled' | 'onIconClick' | 'iconAriaLabel'
+>
 
 export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperProps {
   /**
@@ -16,7 +19,7 @@ export interface TextInputProps extends TextInputBaseProps, PublicInputWrapperPr
 }
 
 export function TextInput(props: TextInputProps) {
-  const { icon, iconPosition, iconDisabled, onIconClick, clearable, onClear, inputRef, ...rest } = props
+  const { icon, iconPosition, iconDisabled, iconAriaLabel, onIconClick, clearable, onClear, inputRef, ...rest } = props
 
   const internalRef = useRef<HTMLInputElement>(null)
 
@@ -27,13 +30,14 @@ export function TextInput(props: TextInputProps) {
   }
 
   const isIconDisabled = props.iconDisabled !== undefined ? props.iconDisabled : props.disabled
-  const isClearVisible = clearable && (!props.disabled && (!!props.value || !!props.defaultValue))
+  const isClearVisible = clearable && !props.disabled && (!!props.value || !!props.defaultValue)
 
   return (
     <InputWrapper
       icon={icon}
       iconPosition={iconPosition}
       iconDisabled={isIconDisabled}
+      iconAriaLabel={iconAriaLabel}
       onIconClick={onIconClick}
       clearVisible={isClearVisible}
       onClear={onClear ? onClear : handleClear}
