@@ -23,6 +23,7 @@ export interface ComboboxMultiselectProps<T>
   onChange?: (newValue: T[]) => void
   itemIsEqual(a: T, b: T): boolean
   components?: Partial<ComboboxMultiselectComponents<T>>
+  clearFilterOnSelect?: boolean
 }
 
 export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: ComboboxMultiselectProps<T>) {
@@ -42,6 +43,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     itemToString,
     menuMinWidth,
     openOnFocus = true,
+    clearFilterOnSelect = true,
     onClear,
     onChange,
     onFocus,
@@ -133,7 +135,7 @@ export function ComboboxMultiselect<T = DefaultComboboxItemType>(props: Combobox
     onInputValueChange: ({ inputValue }) => composeHandlers(loadItems, onFilterChange)(inputValue),
     onSelectedItemChange: ({ selectedItem }) => {
       isSelected(selectedItem) ? removeSelectedItem(selectedItem) : addSelectedItem(selectedItem)
-      setInputValue('')
+      clearFilterOnSelect && setInputValue('')
     },
     onIsOpenChange: ({ isOpen, inputValue }) => {
       isOpen && !itemsLoaded && loadItems(inputValue)
@@ -323,6 +325,7 @@ export const createStyles = (
       background: theme.pallete.surface.main,
       padding: 0,
       paddingRight: '0 !important',
+      minWidth: '5rem',
       flex: 1,
       border: 0,
       outline: 0,
