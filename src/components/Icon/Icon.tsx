@@ -7,9 +7,10 @@ import { Omit } from '../../util/types'
 import { IconMap, Icons } from './generated/types'
 
 export type IconColor = TextColor | 'none'
+export type IconImage = Icons | React.ComponentType<React.SVGProps<SVGSVGElement>>
 
 export interface IconProps extends Omit<React.SVGAttributes<SVGElement>, 'style'> {
-  icon: Icons
+  icon: IconImage
   fill?: IconColor
   stroke?: IconColor
   size?: number
@@ -22,9 +23,9 @@ export const getIconColor = (theme: Theme, color: IconColor) => {
 
 export function Icon(props: IconProps) {
   const { style, icon, fill, stroke, size, ...rest } = props
-  const SelectedIcon = IconMap[icon]
+  const SelectedIcon = typeof icon === 'string' ? IconMap[icon] : icon
 
-  const { classes, css } = useStyles(theme => ({
+  const { classes, css } = useStyles((theme) => ({
     icon: {
       fill: fill ? getIconColor(theme, fill) : 'currentColor',
       stroke: stroke && getIconColor(theme, stroke),
@@ -32,7 +33,16 @@ export function Icon(props: IconProps) {
     },
   }))
 
-  return <SelectedIcon role='img' aria-hidden='true' className={css(classes.icon, style)} {...rest} />
+  return (
+    <SelectedIcon
+      role='img'
+      aria-hidden='true'
+      height='1em'
+      width='1em'
+      className={css(classes.icon, style)}
+      {...rest}
+    />
+  )
 }
 
 Icon.defaultProps = {

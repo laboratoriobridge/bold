@@ -2,14 +2,14 @@ import React, { CSSProperties } from 'react'
 
 import { ExternalStyles, Theme, useStyles } from '../../styles'
 import { Omit } from '../../util'
-import { Icon, Icons } from '../Icon'
+import { Icon, IconImage } from '../Icon'
 
 export type TagType = 'normal' | 'danger' | 'info' | 'success' | 'alert'
 
 export interface TagProps extends Omit<React.HTMLAttributes<HTMLSpanElement>, 'style'> {
   type?: TagType
   style?: ExternalStyles
-  icon?: Icons
+  icon?: IconImage
   height?: String
   removable?: boolean
   onRemove?(): void
