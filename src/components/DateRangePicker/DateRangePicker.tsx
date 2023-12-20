@@ -6,7 +6,7 @@ import { Theme, useStyles } from '../../styles'
 
 import { disableByRange } from '../DateField/DateField'
 import { FocusManagerContainer } from '../FocusManagerContainer'
-import { Icons } from '../Icon'
+import { IconImage } from '../Icon'
 
 import {
   ControlledDateRangeCalendarProps,
@@ -18,7 +18,7 @@ import { DateRangePickerInput, DateRangePickerInputProps } from './DateRangePick
 export interface DateRangePickerProps extends DateRangePickerInputProps {
   minDate?: Date
   maxDate?: Date
-  icon?: Icons
+  icon?: IconImage
   calendarProps?: Partial<ControlledDateRangeCalendarProps>
   popperProps?: PopperOptions
   onFocus?(e: React.FocusEvent<HTMLDivElement>): void
@@ -81,7 +81,7 @@ export function DateRangePicker(props: DateRangePickerProps) {
 
   const handleInputFocus = (inputOnFocus: number) => setDateRangeInputFocus(inputOnFocus)
 
-  const handleOnDayClick = (dayClicked: Date) => finalInputRef.current.focus()
+  const handleOnDayClick = () => finalInputRef.current.focus()
 
   const handleFocusIn = (event: React.FocusEvent<HTMLDivElement>) => {
     onFocus && onFocus(event)

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should accept fill prop 1`] = `
+exports[`Icon should accept fill prop 1`] = `
 .emotion-0 {
   fill: #D01E29;
   font-size: 1.5rem;
@@ -22,7 +22,7 @@ exports[`should accept fill prop 1`] = `
 </div>
 `;
 
-exports[`should accept size prop 1`] = `
+exports[`Icon should accept size prop 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 3rem;
@@ -44,7 +44,7 @@ exports[`should accept size prop 1`] = `
 </div>
 `;
 
-exports[`should accept stroke prop 1`] = `
+exports[`Icon should accept stroke prop 1`] = `
 .emotion-0 {
   fill: currentColor;
   stroke: #AD5000;
@@ -67,7 +67,7 @@ exports[`should accept stroke prop 1`] = `
 </div>
 `;
 
-exports[`should accept style prop 1`] = `
+exports[`Icon should accept style prop 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
@@ -90,7 +90,7 @@ exports[`should accept style prop 1`] = `
 </div>
 `;
 
-exports[`should render correctly 1`] = `
+exports[`Icon should render correctly 1`] = `
 .emotion-0 {
   fill: currentColor;
   font-size: 1.5rem;
