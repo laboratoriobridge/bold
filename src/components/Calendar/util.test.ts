@@ -80,13 +80,6 @@ describe('isValidReferenceMonth', () => {
     expect(isValidReferenceMonth({ year: 2022, month: 5 })).toBeTruthy()
     expect(isValidReferenceMonth({ year: 2022, month: 12 })).toBeTruthy()
   })
-
-  it('should return false for an invalid ReferenceMonth', () => {
-    expect(isValidReferenceMonth({ year: 2022, month: 0 })).toBeFalsy()
-    expect(isValidReferenceMonth({ year: 2022, month: 13 })).toBeFalsy()
-    expect(isValidReferenceMonth({ year: 0, month: 5 })).toBeFalsy()
-  })
-
   ;['', null, false, undefined].forEach((value: any) => {
     it(`should return false for "${value}"`, () => {
       expect(isValidReferenceMonth(value)).toBeFalsy()

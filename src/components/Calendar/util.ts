@@ -105,8 +105,7 @@ export const isValidDate = (possibleDate: any): boolean => {
  * @returns True if the ReferenceMonth is valid, false otherwise.
  */
 export const isValidReferenceMonth = (possibleReferenceMonth: any): boolean => {
-  const month = possibleReferenceMonth?.month
-  const year = possibleReferenceMonth?.year
+  const date = new Date(possibleReferenceMonth?.year, possibleReferenceMonth?.month, 1)
 
-  return Number.isInteger(year) && year > 0 && Number.isInteger(month) && month >= 1 && month <= 12
+  return isValidDate(date)
 }
