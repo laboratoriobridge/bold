@@ -1,8 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { boolean, text } from '@storybook/addon-knobs'
-import React, { useState } from 'react'
+import React from 'react'
 
-import { ReferenceMonth } from '../MonthPicker'
 import { MonthField } from './MonthField'
 import { MonthInput } from './MonthInput'
 
@@ -13,20 +12,15 @@ export default {
   title: 'Components/MonthField',
 }
 
-export const Default = () => {
-  const [value, setValue] = useState<ReferenceMonth>()
-  const handleChange = (selectedMonth: ReferenceMonth) => setValue(selectedMonth)
-
-  return (
-    <MonthField
-      label={text('label', 'Month Field')}
-      error={text('error', '')}
-      onChange={handleChange}
-      disabled={boolean('disabled', false)}
-      value={value}
-    />
-  )
-}
+export const Default = () => (
+  <MonthField
+    label={text('label', 'Month Field')}
+    error={text('error', '')}
+    onChange={action('changed')}
+    disabled={boolean('disabled', false)}
+    value={{ month: 0, year: 2019 }}
+  />
+)
 
 export const MinMax = () => (
   <MonthField
