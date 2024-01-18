@@ -98,3 +98,15 @@ export const isValidDate = (possibleDate: any): boolean => {
   // eslint-disable-next-line no-self-compare
   return possibleDate && possibleDate.getTime() === possibleDate.getTime()
 }
+
+/**
+ * Check if the parameter is a valid ReferenceMonth.
+ * @param possibleReferenceMonth - The ReferenceMonth object to be validated.
+ * @returns True if the ReferenceMonth is valid, false otherwise.
+ */
+export const isValidReferenceMonth = (possibleReferenceMonth: any): boolean => {
+  const month = possibleReferenceMonth?.month
+  const year = possibleReferenceMonth?.year
+
+  return Number.isInteger(year) && year > 0 && Number.isInteger(month) && month >= 1 && month <= 12
+}

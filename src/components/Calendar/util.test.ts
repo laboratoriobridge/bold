@@ -5,6 +5,7 @@ import {
   getLastDayOfMonth,
   isSameDay,
   isBelongingAWeek,
+  isValidReferenceMonth,
 } from './util'
 
 describe('getFirstDayOfMonth', () => {
@@ -71,6 +72,25 @@ describe('isBelongingAWeek', () => {
     expect(
       isBelongingAWeek(new Date('2020-01-21'), { start: new Date('2021-01-17'), end: new Date('2021-01-23') })
     ).toBeFalsy()
+  })
+})
+
+describe('isValidReferenceMonth', () => {
+  it('should return true for a valid ReferenceMonth', () => {
+    expect(isValidReferenceMonth({ year: 2022, month: 5 })).toBeTruthy()
+    expect(isValidReferenceMonth({ year: 2022, month: 12 })).toBeTruthy()
+  })
+
+  it('should return false for an invalid ReferenceMonth', () => {
+    expect(isValidReferenceMonth({ year: 2022, month: 0 })).toBeFalsy()
+    expect(isValidReferenceMonth({ year: 2022, month: 13 })).toBeFalsy()
+    expect(isValidReferenceMonth({ year: 0, month: 5 })).toBeFalsy()
+  })
+
+  ;['', null, false, undefined].forEach((value: any) => {
+    it(`should return false for "${value}"`, () => {
+      expect(isValidReferenceMonth(value)).toBeFalsy()
+    })
   })
 })
 
