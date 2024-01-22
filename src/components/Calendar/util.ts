@@ -1,4 +1,5 @@
 import { Week } from '../DateRangePicker/DateRangePicker'
+import { ReferenceMonth } from '../MonthPicker'
 
 /**
  * Calculate the first day of a month.
@@ -104,7 +105,7 @@ export const isValidDate = (possibleDate: any): boolean => {
  * @param possibleReferenceMonth - The ReferenceMonth object to be validated.
  * @returns True if the ReferenceMonth is valid, false otherwise.
  */
-export const isValidReferenceMonth = (possibleReferenceMonth: any): boolean => {
+export const isValidReferenceMonth = (possibleReferenceMonth: ReferenceMonth): boolean => {
   const date = new Date(possibleReferenceMonth?.year, possibleReferenceMonth?.month, 1)
 
   return isValidDate(date)
