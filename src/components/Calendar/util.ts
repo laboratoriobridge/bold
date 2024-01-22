@@ -1,4 +1,5 @@
 import { Week } from '../DateRangePicker/DateRangePicker'
+import { ReferenceMonth } from '../MonthPicker'
 
 /**
  * Calculate the first day of a month.
@@ -97,4 +98,15 @@ export const isValidDate = (possibleDate: any): boolean => {
   // If possibleDate is not a valid date, getTime() will return NaN, and NaN is never equal to itself.
   // eslint-disable-next-line no-self-compare
   return possibleDate && possibleDate.getTime() === possibleDate.getTime()
+}
+
+/**
+ * Check if the parameter is a valid ReferenceMonth.
+ * @param possibleReferenceMonth - The ReferenceMonth object to be validated.
+ * @returns True if the ReferenceMonth is valid, false otherwise.
+ */
+export const isValidReferenceMonth = (possibleReferenceMonth: ReferenceMonth): boolean => {
+  const date = new Date(possibleReferenceMonth?.year, possibleReferenceMonth?.month, 1)
+
+  return isValidDate(date)
 }
