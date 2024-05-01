@@ -64,6 +64,7 @@
     "react-popper": "2.2.4",
     "react-text-mask": "5.4.3",
     "react-transition-group": "4.4.1",
+    "recharts": "^2.12.6",
     "text-mask-addons": "3.8.0"
   },
   "devDependencies": {
