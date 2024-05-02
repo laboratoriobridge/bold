@@ -1,16 +1,16 @@
-import { DateRange, UnitOfTime } from './model'
+import { DateRangeStep, UnitOfTime } from './model'
 
 const MULTIPLIERS: Record<UnitOfTime, number> = {
-  year: 3156000000,
-  month: 2628000000,
-  week: 604800000,
-  day: 86400000,
-  hour: 3600000,
-  minute: 60000,
+  year: 8760 * 60 * 60 * 1000,
+  month: 43800 * 60 * 1000,
+  week: 7 * 24 * 60 * 60 * 1000,
+  day: 24 * 60 * 60 * 1000,
+  hour: 60 * 60 * 1000,
+  minute: 60 * 1000,
   second: 1000,
   millisecond: 1,
 }
 
-export function dateRangeStepToMillis(step: DateRange['step']): number {
+export function dateRangeStepToMillis(step: DateRangeStep): number {
   return step.amount * MULTIPLIERS[step.unit]
 }

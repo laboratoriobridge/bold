@@ -13,11 +13,12 @@ const CHART_COLOR_SCHEMES = {
 export type ChartColorScheme = keyof typeof CHART_COLOR_SCHEMES | Color[]
 export type ValueRange = { init: number; end: number; step?: number }
 export type UnitOfTime = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute' | 'second' | 'millisecond'
+export type DateRangeStep = { amount: number; unit: UnitOfTime }
 export type DateRange = {
   init: Date
   end: Date
   format?: (date: Date) => string
-  step?: { amount: number; unit: UnitOfTime }
+  step?: DateRangeStep
 }
 export type SeriesDataPoint = number | Date | DataPoint<number> | DataPoint<Date>
 export type ReferenceAreaDataPoint = number | DataPoint<number>

@@ -1,5 +1,5 @@
 import { dateRangeStepToMillis } from './dateRangeStepToMillis'
-import { AxisDomain, DateRange, isValueRange, ValueRange } from './model'
+import { AxisDomain, DateRange, DateRangeStep, isValueRange, ValueRange } from './model'
 
 export function getDomainPoints<XDomain>(domain: AxisDomain): XDomain[] {
   if (!domain || Array.isArray(domain)) return domain as any[]
@@ -22,8 +22,23 @@ function getDateRangeDomainPoints(domain: DateRange): any[] {
   let currValue = +domain.init
   do {
     points.push(currValue.valueOf())
-    currValue = currValue + dateRangeStepToMillis(step)
+    currValue = addStepToDate(currValue, step)
   } while (currValue < endMillis)
   if (!points.includes(endMillis)) points.push(domain.end.valueOf())
   return points
+}
+
+function addStepToDate(dateMillis: number, step: DateRangeStep): number {
+  switch (step.unit) {
+    case 'year':
+      const newDateY = new Date(dateMillis)
+      newDateY.setFullYear(newDateY.getFullYear() + step.amount)
+      return +newDateY
+    case 'month':
+      const newDateM = new Date(dateMillis)
+      newDateM.setMonth(newDateM.getMonth() + step.amount)
+      return +newDateM
+    default:
+      return dateMillis + dateRangeStepToMillis(step)
+  }
 }
