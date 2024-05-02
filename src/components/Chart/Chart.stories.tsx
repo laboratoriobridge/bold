@@ -1,4 +1,4 @@
-import { array, boolean, date, number, object, radios, text, withKnobs } from '@storybook/addon-knobs'
+import { array, boolean, date, number, object, radios, text } from '@storybook/addon-knobs'
 import React, { useState } from 'react'
 import { Text } from '../Text'
 
@@ -21,9 +21,7 @@ import {
 import { PieChart } from './PieChart'
 
 export default {
-  component: Chart,
-  title: 'Chart',
-  decorators: [withKnobs],
+  title: 'Components/Chart',
 }
 
 const lineSeries: ChartSeries<string>[] = [
@@ -177,10 +175,10 @@ export const lineChart = () => {
   const showTooltip = boolean('Show Tooltip', true, 'Description')
   const caption = text(
     'Caption',
-    'Descrição do gráfico. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
     'Description'
   )
-  const footer = text('Footer', 'Rodapé do gráfico', 'Description')
+  const footer = text('Footer', 'Chart footer', 'Description')
   const showLegend = boolean('Show Legend', true, 'Description')
   const colorScheme = radios(
     'Color Scheme',
@@ -188,8 +186,8 @@ export const lineChart = () => {
     'default',
     'Description'
   )
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array(
     'X Axis Domain',
     ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
@@ -219,15 +217,15 @@ export const lineChart = () => {
 export const areaChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
   const series = object('Series', lineSeries, 'Data')
 
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={700} height={500}>
+      <ChartBody height={500}>
         <Chart
           type={SeriesType.Area}
           series={series}
@@ -243,15 +241,15 @@ export const areaChart = () => {
 export const columnChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
   const series = object('Series', lineSeries, 'Data')
 
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={800} height={500}>
+      <ChartBody height={500}>
         <Chart
           type={SeriesType.Column}
           series={series}
@@ -267,15 +265,15 @@ export const columnChart = () => {
 export const barChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const stacked = boolean('Stacked', false, 'Description')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
   const yAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
   const series = object('Series', barSeries, 'Data')
 
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={800} height={500}>
+      <ChartBody height={500}>
         <BarChart
           series={series}
           yAxis={{ title: yAxisTitle, domain: yAxisDomain }}
@@ -290,15 +288,15 @@ export const barChart = () => {
 export const composedChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const stacked = boolean('Stacked', false, 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array('X Axis Domain', ['Page A', 'Page B', 'Page C', 'Page D'], ',', 'Axes')
   const series = object('Series', composedSeries, 'Data')
 
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={800} height={500}>
+      <ChartBody height={500}>
         <Chart
           series={series}
           xAxis={{ title: xAxisTitle, domain: xAxisDomain }}
@@ -314,7 +312,7 @@ export const pieChart = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const caption = text(
     'Caption',
-    'Descrição do gráfico. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
     'Description'
   )
   const data = object('Series', pieData, 'Data')
@@ -322,7 +320,7 @@ export const pieChart = () => {
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={800} height={500} caption={caption}>
+      <ChartBody height={500} caption={caption}>
         <PieChart height={500} width={800} data={data} />
       </ChartBody>
     </ChartContainer>
@@ -333,14 +331,13 @@ export const referenceArea = () => {
   const title = text('Title', 'Chart Title', 'Description')
   const caption = text(
     'Caption',
-    'Descrição do gráfico. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
+    'Chart description. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.',
     'Description'
   )
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
 
   const height = number('Height', 500)
-  const width = number('Width', 500)
 
   const series = object('Series', lineSeriesDP, 'Data')
   const reference = object('Reference', referenceAreas, 'Data')
@@ -348,7 +345,7 @@ export const referenceArea = () => {
   return (
     <ChartContainer>
       <ChartHeader title={title} />
-      <ChartBody width={width} height={height} caption={caption}>
+      <ChartBody height={height} caption={caption}>
         <Chart
           series={series}
           referenceAreas={reference}
@@ -375,7 +372,7 @@ export const xDateTime = () => {
 
   return (
     <ChartContainer>
-      <ChartBody width={800} height={500}>
+      <ChartBody height={500}>
         <Chart
           height={500}
           width={500}
@@ -418,7 +415,7 @@ export const rangeSelector = () => {
     const xDomain = {
       init: new Date(2020, 0),
       end: new Date(2020, 11),
-      format: 'MM/YY',
+      format: Intl.DateTimeFormat('pt-BR', { month: '2-digit', year: '2-digit' }).format,
       step: { amount: 1, unit: 'month' },
     } as AxisDomain
     const xAxis = {
@@ -445,7 +442,7 @@ export const rangeSelector = () => {
               }}
               onRangeChange={setXRange}
             />
-            <ChartBody width={800} height={500}>
+            <ChartBody height={500}>
               <Chart
                 height={500}
                 width={1000}
@@ -469,7 +466,7 @@ export const rangeArea = () => {
     [
       { name: 'Area 1 Area 1-2 Area 1-3 Area 1-4', init: 'Page A', end: 'Page C' },
       {
-        name: 'Area 2 Linha 2',
+        name: 'Area 2 Stroke 2',
         init: 'Page E',
         end: 'Page F',
         tickColor: green.c60,
@@ -484,13 +481,13 @@ export const rangeArea = () => {
   return (
     <ChartContainer>
       <ChartHeader title='Chart Title' />
-      <ChartBody width={750} height={500}>
+      <ChartBody height={500}>
         <Chart<string>
           type={SeriesType.Line}
           series={series}
           rangeAreas={ranges}
-          xAxis={{ title: 'Eixo X', domain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'] }}
-          yAxis={{ title: 'Eixo Y', domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
+          xAxis={{ title: 'X Axis', domain: ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'] }}
+          yAxis={{ title: 'Y Axis', domain: { init: 3000, end: 10000, step: 5500 }, unit: 'unit' }}
         />
       </ChartBody>
     </ChartContainer>
@@ -499,8 +496,8 @@ export const rangeArea = () => {
 
 export const customTooltip = () => {
   const tooltipType = radios('Tooltip Type', { point: 'point', line: 'line' }, 'line', 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array(
     'X Axis Domain',
     ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
@@ -512,7 +509,7 @@ export const customTooltip = () => {
   return (
     <ChartContainer>
       <ChartHeader title='Chart Title' />
-      <ChartBody width={750} height={500}>
+      <ChartBody height={500}>
         <Chart
           type={SeriesType.Line}
           series={series}
@@ -535,8 +532,8 @@ export const customTooltip = () => {
 
 export const customHeader = () => {
   const title = text('Title', 'Chart Title', 'Description')
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array(
     'X Axis Domain',
     ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
@@ -551,7 +548,7 @@ export const customHeader = () => {
         <input type='checkbox' />
         {title}
       </h1>
-      <ChartBody width={750} height={500}>
+      <ChartBody height={500}>
         <Chart
           type={SeriesType.Line}
           series={series}
@@ -575,11 +572,11 @@ export const customDot = () => {
       star: 'star',
       triangle: 'triangle',
     },
-    'circle',
+    'star',
     'Dot'
   )
-  const yAxisTitle = text('Y Axis Title', 'Eixo Y', 'Axes')
-  const xAxisTitle = text('X Axis Title', 'Eixo X', 'Axes')
+  const yAxisTitle = text('Y Axis Title', 'Y Axis', 'Axes')
+  const xAxisTitle = text('X Axis Title', 'X Axis', 'Axes')
   const xAxisDomain = array(
     'X Axis Domain',
     ['Page A', 'Page B', 'Page C', 'Page D', 'Page E', 'Page F', 'Page G'],
@@ -589,7 +586,7 @@ export const customDot = () => {
 
   return (
     <ChartContainer>
-      <ChartBody height={500} width={700}>
+      <ChartBody height={500}>
         <Chart
           series={[
             {

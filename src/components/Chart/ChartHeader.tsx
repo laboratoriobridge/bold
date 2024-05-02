@@ -6,13 +6,13 @@ import { Theme, useStyles } from '../../styles'
 import { ChartRangeSelector } from './selector'
 import { AxisDomain, RangeSelectorOptions } from './model'
 
-export interface ChartHeaderProps<XDomain> {
+export interface ChartHeaderProps {
   title?: string
   rangeSelector?: RangeSelectorOptions
   onRangeChange?: (newRange: Partial<AxisDomain>) => void
 }
 
-export function ChartHeader<XDomain>(props: ChartHeaderProps<XDomain>) {
+export function ChartHeader(props: ChartHeaderProps) {
   const { title, rangeSelector, onRangeChange } = props
   const { classes } = useStyles(createStyles)
 

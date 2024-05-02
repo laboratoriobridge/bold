@@ -2,8 +2,7 @@ import React from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
-import { AxisDomain, isValueRange, TooltipRenderer } from './model'
-import { defaultChartTooltipFormatter } from './renderTooltip'
+import { AxisDomain, defaultChartDateFormatter, isValueRange, TooltipRenderer } from './model'
 
 export interface ChartTooltipProps<XDomain> {
   children: React.ReactElement
@@ -40,7 +39,7 @@ ChartTooltip.defaultProps = {
 function getTooltipLabelFormatter(domain: AxisDomain): (x: number) => React.ReactNode {
   if (Array.isArray(domain)) return (x) => x
   if (isValueRange(domain)) return (x) => x
-  else return (x: number) => (domain.format ?? defaultChartTooltipFormatter)(new Date(x))
+  else return (x: number) => (domain.format ?? defaultChartDateFormatter)(new Date(x))
 }
 
 const createStyles = (theme: Theme) => ({

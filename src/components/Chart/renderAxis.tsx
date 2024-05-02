@@ -115,7 +115,7 @@ function getAxisProps(axisDomain: AxisDomain, domainPoints: any[], axisOptions: 
       domain: [axisDomain.init.valueOf(), axisDomain.end.valueOf()],
       ticks: domainPoints,
       interval: 0,
-      tickFormatter: (x) => typeof (axisDomain.format ?? defaultChartDateFormatter)(new Date(x)),
+      tickFormatter: (x) => (axisDomain.format ?? defaultChartDateFormatter)(new Date(x)),
       tick: axisOptions.tickRenderer ? (props) => axisOptions.tickRenderer(convertTickProps(props)) : true,
     }
 }
