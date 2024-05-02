@@ -52,7 +52,7 @@ export function BarChart<YDomain>(props: BarChartProps<YDomain>) {
         align='left'
         iconSize={11}
       />
-      {/*Caso o Legend seja retirado, o título do eixo X não é exibido*/}
+      {/*Legend must be present for the X axis title to be shown*/}
 
       {renderAxis('y', yAxis, yAxis.domain, domainPoints, true)}
       {renderAxis('x', xAxis, adaptedXDomain, getDomainPoints(adaptedXDomain), true)}
