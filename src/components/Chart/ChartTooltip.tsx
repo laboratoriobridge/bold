@@ -2,7 +2,8 @@ import React from 'react'
 
 import { Theme, useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
-import { AxisDomain, defaultChartDateFormatter, isValueRange, TooltipRenderer } from './model'
+import { AxisDomain, isValueRange, TooltipRenderer } from './model'
+import { defaultChartDateFormatter } from './util'
 
 export interface ChartTooltipProps<XDomain> {
   children: React.ReactElement

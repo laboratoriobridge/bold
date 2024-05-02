@@ -1,5 +1,6 @@
 import { dateRangeStepToMillis } from './dateRangeStepToMillis'
-import { AxisDomain, ChartSeries, DateRange, getDataPointValue, isValueRange, ValueRange } from './model'
+import { AxisDomain, ChartSeries, DateRange, isValueRange, ValueRange } from './model'
+import { getDataPointValue } from './util'
 
 export function adaptDomainToSeriesRange<XDomain>(domain: AxisDomain, series: ChartSeries<XDomain>[]): AxisDomain {
   const dataValues = series.flatMap((s) => (s.data as []).map((d) => getDataPointValue(d)))

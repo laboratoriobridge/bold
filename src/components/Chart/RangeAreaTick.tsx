@@ -2,7 +2,7 @@ import React from 'react'
 import { Rectangle } from 'recharts'
 import { blue } from '../../styles/colors'
 
-import { convertToLines } from './convertToLines'
+import { splitIntoLines } from '../../util/string'
 import { RangeArea } from './model'
 
 export interface RangeAreaTickProps<XDomain> {
@@ -16,7 +16,7 @@ export function RangeAreaTick<XDomain>(props: RangeAreaTickProps<XDomain>) {
     referenceArea,
   } = props
 
-  const nameLines = convertToLines(referenceArea.name, Math.floor(width / 10))
+  const nameLines = splitIntoLines(referenceArea.name, Math.floor(width / 10))
   const fill = (referenceArea.tickColor ?? referenceArea.fillColor ?? blue.c60) || 'none'
 
   return (

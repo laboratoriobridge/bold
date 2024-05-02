@@ -3,7 +3,8 @@ import { Tooltip } from 'recharts'
 
 import { Theme, useStyles, useTheme } from '../../styles'
 import { Text } from '../Text'
-import { AxisOptions, DataPoint, defaultChartDateFormatter, isDateRange, TooltipRenderer } from './model'
+import { AxisOptions, DataPoint, isDateRange, TooltipRenderer } from './model'
+import { defaultChartDateFormatter } from './util'
 
 export function renderTooltip<XDomain>(
   xAxis: AxisOptions,

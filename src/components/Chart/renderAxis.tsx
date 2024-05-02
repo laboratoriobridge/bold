@@ -1,15 +1,9 @@
 import React from 'react'
 import { Label, XAxis, XAxisProps, YAxis, YAxisProps } from 'recharts'
 
-import {
-  AxisDomain,
-  AxisOptions,
-  defaultChartDateFormatter,
-  isValueRange,
-  ReferenceAreaWithPercents,
-  TickProps,
-} from './model'
+import { AxisDomain, AxisOptions, isValueRange, ReferenceAreaWithPercents, TickProps } from './model'
 import { ReferenceAreaTick } from './ReferenceAreaTick'
+import { defaultChartDateFormatter } from './util'
 
 export function renderAxis(
   axis: 'x' | 'y',

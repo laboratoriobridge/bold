@@ -1,5 +1,6 @@
 import createMonotoneCubicInterpolator from './createMonotoneCubicInterpolator'
-import { ChartSeries, DataPoint, getDataPointValue, ReferenceAreaWithPercents } from './model'
+import { ChartSeries, DataPoint, ReferenceAreaWithPercents } from './model'
+import { getDataPointValue } from './util'
 
 export function convertSeries<XDomain>(
   series: ChartSeries<XDomain>[],
@@ -32,9 +33,9 @@ export function convertSeries<XDomain>(
     }, new Map())
 
   /*
-   * É preciso interpolar os valores pois o Recharts considera valores vazios como 0
-   * e a área de referência acaba desconfigurando quando existe um X ou Y sem um valor
-   * de área correspondente
+   * The values must be interpolated because Recharts considers empty values as 0
+   * and the reference area crashes when there are X or Y points without a corresponding
+   * reference area point.
    */
   const refValueNames = new Set(refs.flatMap((v) => Object.keys(v)))
   return interpolateValues(Array.from(data.values()), refValueNames)

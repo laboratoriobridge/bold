@@ -12,9 +12,6 @@ import {
   AxisOptions,
   ChartColorScheme,
   ChartSeries,
-  getAxisDomainEnd,
-  getAxisDomainInit,
-  isInsideDomain,
   RangeArea,
   ReferenceArea,
   SeriesType,
@@ -25,6 +22,7 @@ import { RangeAreaTick } from './RangeAreaTick'
 import { renderAxis, renderReferenceAxis } from './renderAxis'
 import { renderReferenceAreas, renderSeries } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
+import { getAxisDomainEnd, getAxisDomainInit, isInsideDomain } from './util'
 
 export interface ChartProps<XDomain> {
   type?: SeriesType
@@ -84,7 +82,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
         align='left'
         iconSize={11}
       />
-      {/*Caso o Legend seja retirado, o título do eixo X não é exibido*/}
+      {/*Legend must be present for the X axis title to be shown*/}
 
       {renderAxis('x', xAxis, xAxis.domain, domainPoints, false)}
       {renderAxis('y', yAxis, adaptedYDomain, getDomainPoints(adaptedYDomain), false)}

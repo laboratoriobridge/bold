@@ -5,18 +5,11 @@ import { useTheme } from '../../styles'
 import { adaptDomainToSeriesRange } from './adaptDomainToData'
 import { convertSeries } from './convertSeries'
 import { getDomainPoints } from './getDomainPoints'
-import {
-  AxisDomain,
-  AxisOptions,
-  BarChartSeries,
-  ChartColorScheme,
-  ChartSeries,
-  isInsideDomain,
-  TooltipOptions,
-} from './model'
+import { AxisDomain, AxisOptions, BarChartSeries, ChartColorScheme, ChartSeries, TooltipOptions } from './model'
 import { renderAxis } from './renderAxis'
 import { renderBar } from './renderSeries'
 import { renderTooltip } from './renderTooltip'
+import { isInsideDomain } from './util'
 
 export interface BarChartProps<YDomain> {
   series: BarChartSeries<YDomain>[]

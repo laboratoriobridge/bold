@@ -1,4 +1,4 @@
-//Adaptado de https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
+//Adapted from https://en.wikipedia.org/wiki/Monotone_cubic_interpolation
 export default function (xs: number[], ys: number[]): (x: number) => number {
   let i: number,
     length: number = xs.length

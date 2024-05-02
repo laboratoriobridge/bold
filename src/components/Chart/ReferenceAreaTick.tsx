@@ -2,7 +2,7 @@ import React from 'react'
 import { Rectangle } from 'recharts'
 
 import { useTheme } from '../../styles'
-import { convertToLines } from './convertToLines'
+import { splitIntoLines } from '../../util/string'
 import { ReferenceAreaWithPercents, TickProps } from './model'
 
 const MAX_CHARS_PER_LINE = 8
@@ -19,7 +19,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
 
   const theme = useTheme()
 
-  const nameLines = convertToLines(ref.name, MAX_CHARS_PER_LINE)
+  const nameLines = splitIntoLines(ref.name, MAX_CHARS_PER_LINE)
 
   return (
     <>
@@ -50,7 +50,7 @@ export function ReferenceAreaTick(props: ReferenceTickProps) {
           textAnchor='start'
           fill={theme.pallete.text.main}
         >
-          {convertToLines(ref.description, MAX_CHARS_PER_LINE).map(
+          {splitIntoLines(ref.description, MAX_CHARS_PER_LINE).map(
             (descriptionPart, i) =>
               descriptionPart && (
                 <tspan key={descriptionPart} dx={15} dy={(i + 1) * 15} x={x} y={y + 5 + nameLines.length * 15}>
