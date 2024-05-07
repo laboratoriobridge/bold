@@ -1,7 +1,7 @@
 import { convertSeries } from './convertSeries'
 import { ChartSeries, ReferenceAreaWithPercents } from './model'
 
-describe('convet series to Recharts format', () => {
+describe('convert series to Recharts format', () => {
   it('should convert categories correctly', () => {
     const series: ChartSeries<string>[] = [
       {

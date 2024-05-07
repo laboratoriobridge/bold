@@ -38,7 +38,7 @@ export function ChartMonthSelector(props: ChartMonthSelectorProps) {
       <MonthPaginator
         onChange={onClick}
         formatter={(date, month) => month.format(date).replace('.', '')}
-        ghost={true}
+        ghost
         popperPlacement='bottom-end'
       />
     </HFlow>

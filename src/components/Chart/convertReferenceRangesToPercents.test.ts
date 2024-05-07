@@ -1,7 +1,7 @@
 import { convertReferenceRangesToPercents } from './convertReferenceRangesToPercents'
 import { ReferenceArea, ValueRange } from './model'
 
-describe('convet reference areas ranges to percents', () => {
+describe('convert reference areas ranges to percents', () => {
   it('should convert reference areas ranges to percents correctly', () => {
     const referenceAreas: ReferenceArea<string>[] = [
       {

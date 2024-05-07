@@ -1,5 +1,5 @@
 import React from 'react'
-import { Area, Bar, LegendType, LabelList, Line, Rectangle } from 'recharts'
+import { Area, Bar, LegendType, LabelList, Line, Rectangle, RectangleProps } from 'recharts'
 
 import { ChartTooltip } from './ChartTooltip'
 import { LineDot } from './LineDot'
@@ -127,6 +127,11 @@ function renderArea<XDomain>(
   )
 }
 
+interface BarShapeProps<XDomain> extends RectangleProps {
+  payload?: { x: XDomain }
+  value?: number
+}
+
 function renderColumn<XDomain>(
   index: number,
   series: ChartSeries<XDomain>,
@@ -145,11 +150,11 @@ function renderColumn<XDomain>(
       {...getDefaultRenderProps(name, color)}
       stackId={stacked && 'stackId'}
       yAxisId='data'
-      shape={(props) => (
+      shape={(props: BarShapeProps<XDomain>) => (
         <ChartTooltip
           labelDomain={xDomain}
-          label={(props as any).payload.x}
-          value={(props as any).value}
+          label={props.payload?.x}
+          value={props.value}
           showTooltip={showTooltip}
           renderer={tooltipRenderer}
         >

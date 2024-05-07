@@ -75,7 +75,7 @@ export function Chart<XDomain>(props: ChartProps<XDomain>) {
         color: theme.pallete.gray.c20,
       }}
     >
-      <CartesianGrid vertical={false} horizontal={true} />
+      <CartesianGrid vertical={false} horizontal />
       <Legend
         wrapperStyle={{ padding: showLegend ? '2rem 2rem 1.5rem 3.5rem' : '1rem', fontSize: '0.8rem' }}
         content={showLegend ? undefined : () => false}

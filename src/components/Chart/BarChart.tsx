@@ -45,7 +45,7 @@ export function BarChart<YDomain>(props: BarChartProps<YDomain>) {
         color: theme.pallete.gray.c20,
       }}
     >
-      <CartesianGrid vertical={true} horizontal={false} />
+      <CartesianGrid vertical horizontal={false} />
       <Legend
         wrapperStyle={{ padding: showLegend ? '2rem 2rem 1.5rem 3.5rem' : '1rem', fontSize: '0.8rem' }}
         content={showLegend ? undefined : () => false}
@@ -66,16 +66,17 @@ export function BarChart<YDomain>(props: BarChartProps<YDomain>) {
   )
 }
 
+const isNumberArray = (array: any[]): array is number[] => typeof array[0] === 'number'
 function adaptSeriesDataToRange<YDomain>(
   series: BarChartSeries<YDomain>[],
   rangeDomain: AxisDomain,
   rangeDomainPoints: YDomain[]
 ): ChartSeries<YDomain>[] {
-  return series.map((s) => ({
-    ...s,
-    data: (s.data as any[])
-      .filter((d, i) => (d.y ? isInsideDomain(d.y, rangeDomain) : i < rangeDomainPoints.length))
-      .map((d) => (d.y ? { x: d.y, y: d.x } : d)),
+  return series.map(({ data, ...rest }) => ({
+    ...rest,
+    data: isNumberArray(data)
+      ? data.filter((_, i) => i < rangeDomainPoints.length)
+      : data.filter((d) => isInsideDomain(d.y, rangeDomain)).map((d) => ({ x: d.y, y: d.x })),
   }))
 }
 
