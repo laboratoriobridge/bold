@@ -49,4 +49,22 @@ describe('adapt domain to data', () => {
       step: step,
     })
   })
+
+  it.each([
+    { init: 11, end: 10, step: 5 },
+    { init: 10, end: 10, step: 5 },
+  ])('should throw error if start is greater or equal to end for value range', (domain: ValueRange) => {
+    const data = [18, 8]
+
+    expect(() => adaptDomainToDataRange(domain, data)).toThrow('Domain init must be less than domain end')
+  })
+
+  it.each([
+    { init: new Date('2020-04-16'), end: new Date('2020-04-11'), step: { unit: 'day', amount: 5 } } as DateRange,
+    { init: new Date('2020-04-11'), end: new Date('2020-04-11'), step: { unit: 'day', amount: 5 } } as DateRange,
+  ])('should throw error if start is greater or equal to end for date range', (domain: DateRange) => {
+    const data = [new Date('2020-04-10'), new Date('2020-04-17')]
+
+    expect(() => adaptDomainToDataRange(domain, data)).toThrow('Domain init must be less than domain end')
+  })
 })
