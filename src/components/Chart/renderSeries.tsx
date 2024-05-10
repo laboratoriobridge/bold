@@ -28,11 +28,11 @@ export function renderSeries<XDomain>(
 ) {
   switch (series.type ?? chartType ?? SeriesType.Line) {
     case SeriesType.Line:
-      return renderLine(index, series, showTooltip, xAxis?.domain, colorScheme, tooltipRenderer)
+      return renderLine(index, series, showTooltip, xAxis.domain, colorScheme, tooltipRenderer)
     case SeriesType.Column:
-      return renderColumn(index, series, stacked, showTooltip, xAxis?.domain, colorScheme, tooltipRenderer)
+      return renderColumn(index, series, stacked, showTooltip, xAxis.domain, colorScheme, tooltipRenderer)
     case SeriesType.Area:
-      return renderArea(index, series, showTooltip, xAxis?.domain, stacked, colorScheme, tooltipRenderer)
+      return renderArea(index, series, showTooltip, xAxis.domain, stacked, colorScheme, tooltipRenderer)
   }
 }
 

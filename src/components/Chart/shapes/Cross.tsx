@@ -15,11 +15,14 @@ export const Cross = (props: CustomDotProps) => {
         viewBox='0 0 1024 1024'
         className='hover-circle'
       >
-        <path d='M40 12 L26 12 L26 24 L14 24 L14 38 L26 38 L26 50 L40 50 L40 38 L52 38 L52 24 L40 24 Z' />
+        <CrossStrike />
       </svg>
       <svg x={cx - 10} y={cy - 10} width={315} height={315} {...{ fill: stroke }} viewBox='0 0 1024 1024'>
-        <path d='M40 12 L26 12 L26 24 L14 24 L14 38 L26 38 L26 50 L40 50 L40 38 L52 38 L52 24 L40 24 Z' />
+        <CrossStrike />
       </svg>
     </>
   )
 }
+const CrossStrike = () => (
+  <path d='M40 12 L26 12 L26 24 L14 24 L14 38 L26 38 L26 50 L40 50 L40 38 L52 38 L52 24 L40 24 Z' />
+)
