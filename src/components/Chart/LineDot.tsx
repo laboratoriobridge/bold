@@ -39,10 +39,10 @@ export function LineDot<XDomain>(props: LineDotProps<XDomain>) {
 
 const createStyles = () => ({
   container: {
-    '.hover-circle': {
+    '.hover-shape': {
       visibility: 'hidden',
     },
-    '&:hover .hover-circle': {
+    '&:hover .hover-shape': {
       visibility: 'visible',
     },
   } as CSSProperties,

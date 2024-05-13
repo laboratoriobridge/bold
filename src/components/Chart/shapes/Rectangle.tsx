@@ -13,13 +13,15 @@ export const Rectangle = (props: CustomDotProps) => {
         height={490}
         {...{ fill: stroke, opacity: 0.3 }}
         viewBox='0 0 1024 1024'
-        className='hover-circle'
+        className='hover-shape'
       >
-        <path d='M8 22 L8 42 L56 42 L56 22 Z' />
+        <RectangleSvgPath />
       </svg>
       <svg x={cx - 10} y={cy - 10} width={315} height={315} {...{ fill: stroke }} viewBox='0 0 1024 1024'>
-        <path d='M8 22 L8 42 L56 42 L56 22 Z' />
+        <RectangleSvgPath />
       </svg>
     </>
   )
 }
+
+const RectangleSvgPath = () => <path d='M8 22 L8 42 L56 42 L56 22 Z' />
