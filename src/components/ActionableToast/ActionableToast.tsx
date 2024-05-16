@@ -5,7 +5,7 @@ import { useLocale } from '../../i18n'
 import { Icon } from '../Icon'
 import { useStyles } from '../../styles'
 
-export interface ActionableToastProps {
+interface ActionableToastProps {
   message: string
   onClose?(): any
   hasCloseIcon?: boolean
@@ -27,7 +27,7 @@ export function ActionableToast(props: ActionableToastProps) {
   }, [duration])
 
   return visible ? (
-    <>
+    <div>
       {hasCloseIcon && (
         <Tooltip text={locale.modal.close}>
           <Button
@@ -42,11 +42,11 @@ export function ActionableToast(props: ActionableToastProps) {
         </Tooltip>
       )}
       <div className='toast'>{message}</div>{' '}
-    </>
+    </div>
   ) : null
 }
 
-export const styles = () => ({
+const styles = () => ({
   closeButton: {
     float: 'right',
     marginTop: '0.5rem',
