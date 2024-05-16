@@ -5,7 +5,7 @@ import { useLocale } from '../../i18n'
 import { Icon } from '../Icon'
 import { useStyles } from '../../styles'
 
-interface ActionableToastProps {
+export interface ActionableToastProps {
   message: string
   onClose?(): any
   hasCloseIcon?: boolean

@@ -1,1 +1,1 @@
-export { ActionableToast } from './ActionableToast'
+export { ActionableToast, ActionableToastProps } from './ActionableToast'
