@@ -1,5 +1,4 @@
 import React, { CSSProperties } from 'react'
-import PropTypes from 'prop-types'
 import { useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
@@ -7,6 +6,7 @@ import { Icon } from '../Icon'
 import { useLocale } from '../../i18n'
 
 export interface ActionableToastProps {
+  id: string
   message: string
   onClose?: () => void
 }
@@ -36,17 +36,6 @@ export function ActionableToast(props: ActionableToastProps) {
       </span>
     </div>
   )
-}
-
-ActionableToast.defaultProps = {
-  type: 'success',
-  message: 'Add a meaningful toast message here.',
-}
-
-ActionableToast.propTypes = {
-  type: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
 }
 
 const createStyles = () => ({
