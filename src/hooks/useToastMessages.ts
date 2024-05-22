@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import { ActionableToastProps } from '../components/ActionableToast'
 
-export function useToastMessages(): [
-  ActionableToastProps[],
-  Dispatch<SetStateAction<ActionableToastProps[]>>,
-  (message: any) => void
-] {
+export function useToastMessages(): {
+  toastMessages: ActionableToastProps[]
+  setToastMessages: Dispatch<SetStateAction<ActionableToastProps[]>>
+  showToast: (message: string) => void
+} {
   const [toastMessages, setToastMessages] = useState<ActionableToastProps[]>([])
-  const showToast = (message: string) => {
+  function showToast(message: string) {
     const removeToast = (id: string) => {
       setToastMessages((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
     }
@@ -24,5 +24,5 @@ export function useToastMessages(): [
     }, 3 * 1000)
   }
 
-  return [toastMessages, setToastMessages, showToast]
+  return { toastMessages, setToastMessages, showToast }
 }
