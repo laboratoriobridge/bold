@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { Theme, useStyles, useTheme } from '../../styles'
+import { Theme, useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -11,36 +11,43 @@ export interface ActionableToastProps {
   title?: string
   buttonLabel?: string
   onClose?: () => void
+  displayText?: boolean
+  newToast?: boolean
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const { message, onClose, title = 'Title', buttonLabel = 'Button' } = props
+  const { message, onClose, title = 'Title', buttonLabel = 'Button', displayText = false, newToast = true } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
   return (
     <div className={classes.container}>
-      <span className={classes.closeButtonWrapper}>
-        <Tooltip text={locale.alert.close}>
-          <Button
-            aria-label={locale.alert.close}
-            size='small'
-            skin='ghost'
-            style={classes.closeButton}
-            onClick={onClose}
-          >
-            <Icon icon='timesDefault' />
-          </Button>
-        </Tooltip>
-      </span>
-      <div className={classes.title}>
-        <p>{title}</p>
+      <div className={classes.headerWrapper}>
+        {newToast && <div className={classes.marker} />}
+        <span className={classes.title}>
+          <p>{title}</p>
+        </span>
+        <span className={classes.closeButtonWrapper}>
+          <Tooltip text={locale.alert.close}>
+            <Button
+              aria-label={locale.alert.close}
+              size='small'
+              skin='ghost'
+              style={classes.closeButton}
+              onClick={onClose}
+            >
+              <Icon icon='timesDefault' />
+            </Button>
+          </Tooltip>
+        </span>
       </div>
       <div className={classes.toastMessage}>
-        <p>{message}</p>
+        <h5>{displayText ? message : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '}</h5>
       </div>
-      <div>
-        <Button size='small'>{buttonLabel}</Button>
+      <div className={classes.actionButtonWrapper}>
+        <Button style={classes.actionButton} size='small'>
+          {buttonLabel}
+        </Button>
       </div>
     </div>
   )
@@ -48,24 +55,30 @@ export function ActionableToast(props: ActionableToastProps) {
 
 const createStyles = (theme: Theme) => ({
   container: {
-    borderRadius: '1rem',
+    borderRadius: '2px',
+    border: '1px',
+    display: 'flex',
+    flexDirection: 'column',
     position: 'relative',
     marginTop: '0.25rem',
     bottom: '1.25rem',
     minHeight: '5rem',
-    minWidth: '8.25rem',
-    border: '3px solid black',
+    minWidth: '16rem',
     backgroundColor: 'white',
+    padding: '0 0.5rem 0.5rem 0',
+    boxShadow: theme.shadows.outer[80],
   } as CSSProperties,
   toastMessage: {
     display: 'flex',
-    gap: '1rem',
     alignItems: 'top',
+    padding: '0 1rem 0.5rem 1rem',
   } as CSSProperties,
   closeButtonWrapper: {
     position: 'absolute',
-    right: '0.625rem',
-    top: '0.625rem',
+    width: '1.5rem',
+    height: '1.5rem',
+    right: '0.5rem',
+    top: '0.5rem',
   } as CSSProperties,
   closeButton: {
     padding: 0,
@@ -73,5 +86,27 @@ const createStyles = (theme: Theme) => ({
   title: {
     fontWeight: 'bold',
     color: theme.pallete.primary.main,
+  } as CSSProperties,
+  actionButtonWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+  } as CSSProperties,
+  actionButton: {
+    border: `1 px solid ${theme.pallete.gray.c40}`,
+    borderRadius: '0.25rem',
+  } as CSSProperties,
+  headerWrapper: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    padding: '0 1rem 0.5rem 1rem',
+    marginTop: '0.5rem',
+  } as CSSProperties,
+  marker: {
+    borderRadius: '50%',
+    height: '0.5rem',
+    width: '0.5rem',
+    backgroundColor: theme.pallete.status.danger.c40,
+    marginRight: '0.5rem',
   } as CSSProperties,
 })

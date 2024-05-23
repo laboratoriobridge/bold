@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { useStyles, zIndex } from '../../styles'
+import { useStyles } from '../../styles'
 import { ActionableToast, ActionableToastProps } from './ActionableToast'
 
 export interface ActionableToastListProps {
@@ -25,12 +25,13 @@ const createStyles = () => ({
   container: {
     position: 'fixed',
     padding: '0',
+    paddingTop: '1rem',
     width: '100%',
-    maxWidth: '15rem',
+    maxWidth: '17rem',
     maxHeight: '100vh',
-    overflow: 'hidden auto',
+    overflow: 'hidden',
     top: '1rem',
-    right: 0,
+    right: '1.5rem',
     zIndex: 20,
   } as CSSProperties,
 })
