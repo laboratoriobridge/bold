@@ -1,5 +1,5 @@
 import React, { CSSProperties } from 'react'
-import { useStyles } from '../../styles'
+import { Theme, useStyles, useTheme } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -8,19 +8,18 @@ import { useLocale } from '../../i18n'
 export interface ActionableToastProps {
   id: string
   message: string
+  title?: string
+  buttonLabel?: string
   onClose?: () => void
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const { message, onClose } = props
+  const { message, onClose, title = 'Title', buttonLabel = 'Button' } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
   return (
     <div className={classes.container}>
-      <div className={classes.toastMessage}>
-        <p>{message}</p>
-      </div>
       <span className={classes.closeButtonWrapper}>
         <Tooltip text={locale.alert.close}>
           <Button
@@ -34,15 +33,29 @@ export function ActionableToast(props: ActionableToastProps) {
           </Button>
         </Tooltip>
       </span>
+      <div className={classes.title}>
+        <p>{title}</p>
+      </div>
+      <div className={classes.toastMessage}>
+        <p>{message}</p>
+      </div>
+      <div>
+        <Button size='small'>{buttonLabel}</Button>
+      </div>
     </div>
   )
 }
 
-const createStyles = () => ({
+const createStyles = (theme: Theme) => ({
   container: {
-    borderRadius: 0.5,
+    borderRadius: '1rem',
     position: 'relative',
-    marginTop: '1rem',
+    marginTop: '0.25rem',
+    bottom: '1.25rem',
+    minHeight: '5rem',
+    minWidth: '8.25rem',
+    border: '3px solid black',
+    backgroundColor: 'white',
   } as CSSProperties,
   toastMessage: {
     display: 'flex',
@@ -50,13 +63,15 @@ const createStyles = () => ({
     alignItems: 'top',
   } as CSSProperties,
   closeButtonWrapper: {
-    marginTop: '0.125rem',
-    marginLeft: 'auto',
-    paddingLeft: '1rem',
-    display: 'inline-flex',
-    alignSelf: 'center',
+    position: 'absolute',
+    right: '0.625rem',
+    top: '0.625rem',
   } as CSSProperties,
   closeButton: {
     padding: 0,
+  } as CSSProperties,
+  title: {
+    fontWeight: 'bold',
+    color: theme.pallete.primary.main,
   } as CSSProperties,
 })
