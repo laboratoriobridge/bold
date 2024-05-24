@@ -25,7 +25,7 @@ export function ActionableToast(props: ActionableToastProps) {
       <div className={classes.headerWrapper}>
         {newToast && <div className={classes.marker} />}
         <span className={classes.title}>
-          <p>{title}</p>
+          <h5>{title}</h5>
         </span>
         <span className={classes.closeButtonWrapper}>
           <Tooltip text={locale.alert.close}>
@@ -69,6 +69,7 @@ const createStyles = (theme: Theme) => ({
     boxShadow: theme.shadows.outer[80],
   } as CSSProperties,
   toastMessage: {
+    fontWeight: 'normal',
     display: 'flex',
     alignItems: 'top',
     padding: '0 1rem 0.5rem 1rem',
@@ -77,7 +78,7 @@ const createStyles = (theme: Theme) => ({
     position: 'absolute',
     width: '1.5rem',
     height: '1.5rem',
-    right: '0.5rem',
+    right: '1rem',
     top: '0.5rem',
   } as CSSProperties,
   closeButton: {
@@ -100,7 +101,7 @@ const createStyles = (theme: Theme) => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     padding: '0 1rem 0.5rem 1rem',
-    marginTop: '0.5rem',
+    marginTop: '1rem',
   } as CSSProperties,
   marker: {
     borderRadius: '50%',
