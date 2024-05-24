@@ -2,14 +2,20 @@ import { Dispatch, SetStateAction, useState } from 'react'
 import { ActionableToastProps } from '../components/ActionableToast'
 
 export function useToastMessages(
-  erase: boolean = false
+  erase: boolean = true
 ): {
   toastMessages: ActionableToastProps[]
   setToastMessages: Dispatch<SetStateAction<ActionableToastProps[]>>
   showToast: (message: string) => void
 } {
   const [toastMessages, setToastMessages] = useState<ActionableToastProps[]>([])
-  function showToast(message: string) {
+  function showToast(
+    message: string,
+    newToast: boolean = true,
+    buttonLabel?: string,
+    action?: () => void,
+    timeoutTimer: number = 5
+  ) {
     const removeToast = (id: string) => {
       setToastMessages((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
     }
@@ -17,6 +23,9 @@ export function useToastMessages(
     const toast = {
       id: Date.now().toString(),
       message,
+      action,
+      newToast,
+      buttonLabel,
     }
 
     setToastMessages((prevToasts) => [...prevToasts, toast])
@@ -24,7 +33,7 @@ export function useToastMessages(
     erase &&
       setTimeout(() => {
         removeToast(toast.id)
-      }, 3 * 1000)
+      }, timeoutTimer * 1000)
   }
 
   return { toastMessages, setToastMessages, showToast }
