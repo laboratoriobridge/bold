@@ -4,23 +4,23 @@ import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { useLocale } from '../../i18n'
-import { useToastMessages } from '../../hooks'
 
 export interface ActionableToastProps {
-  id: string
+  id: number
   message: string
   title?: string
   buttonLabel?: string
   onClose?: () => void
   newToast?: boolean
   action?: () => void
+  removeToast: (id: number) => void
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const { id, message, onClose, title, buttonLabel = 'Button', newToast, action } = props
+  const { id, message, onClose = () => {}, title, buttonLabel = 'Button', newToast, removeToast, action } = props
+
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
-  const { removeToast } = useToastMessages()
 
   const handleCloseClick = () => {
     onClose()
