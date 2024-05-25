@@ -4,6 +4,7 @@ import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { useLocale } from '../../i18n'
+import { useToastMessages } from '../../hooks'
 
 export interface ActionableToastProps {
   id: string
@@ -16,14 +17,20 @@ export interface ActionableToastProps {
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const { message, onClose, title, buttonLabel = 'Button', newToast, action } = props
+  const { id, message, onClose, title, buttonLabel = 'Button', newToast, action } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
+  const { removeToast } = useToastMessages()
+
+  const handleCloseClick = () => {
+    onClose()
+    removeToast(id)
+  }
 
   return (
     <div className={classes.container}>
       <div className={classes.headerWrapper}>
-        {!!newToast && <div className={classes.marker} />}
+        {!!newToast && <div aria-hidden='true' className={classes.marker} />}
         <span className={classes.title}>
           <h5>{title}</h5>
         </span>
@@ -34,7 +41,7 @@ export function ActionableToast(props: ActionableToastProps) {
               size='small'
               skin='ghost'
               style={classes.closeButton}
-              onClick={onClose}
+              onClick={handleCloseClick}
             >
               <Icon icon='timesDefault' />
             </Button>

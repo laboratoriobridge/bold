@@ -7,37 +7,37 @@ export interface ToastMessagesInterface {
   buttonLabel?: string
   action?: () => void
   timeoutTimer?: number
+  timeSensitive?: boolean
 }
-export function useToastMessages(
-  erase: boolean = true
-): {
+export function useToastMessages(): {
   toastMessages: ActionableToastProps[]
   setToastMessages: Dispatch<SetStateAction<ActionableToastProps[]>>
   showToast: (variables: ToastMessagesInterface) => void
+  removeToast: (id: string) => void
 } {
   const [toastMessages, setToastMessages] = useState<ActionableToastProps[]>([])
+  const removeToast = (id: string) => {
+    setToastMessages((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
+  }
   function showToast(variables: ToastMessagesInterface) {
-    const removeToast = (id: string) => {
-      setToastMessages((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
-    }
-    console.log(variables)
+    const { message, newToast = false, title, buttonLabel, action, timeoutTimer = 5, timeSensitive = true } = variables
 
     const toast = {
       id: Date.now().toString(),
-      message: variables.message,
-      action: variables.action,
-      title: variables.title,
-      newToast: variables.newToast,
-      buttonLabel: variables.buttonLabel,
+      message: message,
+      action: action,
+      title: title,
+      newToast: newToast,
+      buttonLabel: buttonLabel,
     }
 
     setToastMessages((prevToasts) => [...prevToasts, toast])
 
-    erase &&
+    timeSensitive &&
       setTimeout(() => {
         removeToast(toast.id)
-      }, variables.timeoutTimer * 1000)
+      }, timeoutTimer * 1000)
   }
 
-  return { toastMessages, setToastMessages, showToast }
+  return { toastMessages, setToastMessages, showToast, removeToast }
 }
