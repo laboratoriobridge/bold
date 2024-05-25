@@ -11,28 +11,19 @@ export interface ActionableToastProps {
   title?: string
   buttonLabel?: string
   onClose?: () => void
-  displayText?: boolean
   newToast?: boolean
   action?: () => void
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const {
-    message,
-    onClose,
-    title = 'Title',
-    buttonLabel = 'Button',
-    displayText = false,
-    newToast = true,
-    action,
-  } = props
+  const { message, onClose, title, buttonLabel = 'Button', newToast, action } = props
   const { classes } = useStyles(createStyles)
   const locale = useLocale()
 
   return (
     <div className={classes.container}>
       <div className={classes.headerWrapper}>
-        {newToast && <div className={classes.marker} />}
+        {!!newToast && <div className={classes.marker} />}
         <span className={classes.title}>
           <h5>{title}</h5>
         </span>
@@ -51,7 +42,7 @@ export function ActionableToast(props: ActionableToastProps) {
         </span>
       </div>
       <div className={classes.toastMessage}>
-        <h5>{displayText ? message : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '}</h5>
+        <h5>{message}</h5>
       </div>
       {!!action && (
         <div className={classes.actionButtonWrapper}>

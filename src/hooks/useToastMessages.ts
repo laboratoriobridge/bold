@@ -3,6 +3,7 @@ import { ActionableToastProps } from '../components/ActionableToast'
 export interface ToastMessagesInterface {
   message: string
   newToast?: boolean
+  title: string
   buttonLabel?: string
   action?: () => void
   timeoutTimer?: number
@@ -19,11 +20,13 @@ export function useToastMessages(
     const removeToast = (id: string) => {
       setToastMessages((prevToasts) => prevToasts.filter((toast) => toast.id !== id))
     }
+    console.log(variables)
 
     const toast = {
       id: Date.now().toString(),
       message: variables.message,
       action: variables.action,
+      title: variables.title,
       newToast: variables.newToast,
       buttonLabel: variables.buttonLabel,
     }

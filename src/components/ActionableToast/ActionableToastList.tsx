@@ -14,7 +14,15 @@ export function ActionableToastList(props: ActionableToastListProps) {
     data.length > 0 && (
       <div className={classes.container}>
         {data.map((toast: ActionableToastProps) => (
-          <ActionableToast id={Date.now().toString()} message={toast.message} onClose={() => {}} />
+          <ActionableToast
+            id={Date.now().toString()}
+            message={toast.message}
+            title={toast.title}
+            buttonLabel={toast.buttonLabel}
+            onClose={toast.onClose}
+            newToast={toast.newToast}
+            action={toast.action}
+          />
         ))}
       </div>
     )
