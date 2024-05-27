@@ -24,6 +24,8 @@ export function ActionableToastList(props: ActionableToastListProps) {
             newToast={toast.newToast}
             action={toast.action}
             removeToast={toast.removeToast}
+            timeSensitive={toast.timeSensitive}
+            timeoutTimer={toast.timeoutTimer}
           />
         ))}
       </div>

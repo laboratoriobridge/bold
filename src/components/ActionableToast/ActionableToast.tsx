@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, useRef, useEffect, useCallback } from 'react'
 import { Theme, useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
@@ -7,28 +7,61 @@ import { useLocale } from '../../i18n'
 
 export interface ActionableToastProps {
   id: number
+  timeoutTimer: number
   message: string
   title?: string
   buttonLabel?: string
-  onClose?: () => void
   newToast?: boolean
+  timeSensitive: boolean
   action?: () => void
+  onClose?: () => void
   removeToast: (id: number) => void
 }
 
 export function ActionableToast(props: ActionableToastProps) {
-  const { id, message, onClose = () => {}, title, buttonLabel = 'Button', newToast, removeToast, action } = props
+  const {
+    id,
+    message,
+    onClose = () => {},
+    title,
+    buttonLabel = 'Button',
+    newToast,
+    removeToast,
+    action,
+    timeSensitive,
+    timeoutTimer,
+  } = props
 
-  const { classes } = useStyles(createStyles)
   const locale = useLocale()
+  const timeoutRef = useRef<number | undefined>(undefined)
+  const { classes } = useStyles(createStyles)
 
   const handleCloseClick = () => {
     onClose()
     removeToast(id)
   }
 
+  const clearTimer = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current)
+      timeoutRef.current = undefined
+    }
+  }
+
+  const startTimer = useCallback(() => {
+    timeSensitive &&
+      (timeoutRef.current = window.setTimeout(() => {
+        removeToast(id)
+      }, timeoutTimer * 1000))
+  }, [id, removeToast, timeSensitive, timeoutTimer])
+
+  useEffect(() => {
+    startTimer()
+    return () => clearTimer()
+  }, [timeSensitive, timeoutTimer, id, startTimer])
+
   return (
-    <div className={classes.container}>
+    <div className={classes.container} onMouseEnter={clearTimer} onMouseLeave={startTimer}>
       <div className={classes.headerWrapper}>
         {!!newToast && <div aria-hidden='true' className={classes.marker} />}
         <span className={classes.title}>
