@@ -1,5 +1,7 @@
-import React, { CSSProperties, useRef, useEffect, useCallback } from 'react'
-import { Theme, useStyles } from '../../styles'
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core'
+import { CSSProperties, useRef, useEffect, useCallback } from 'react'
+import { Theme, useStyles, useTheme } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -12,7 +14,6 @@ export interface ActionableToastProps {
   title?: string
   buttonLabel?: string
   newToast?: boolean
-  timeSensitive: boolean
   action?: () => void
   onClose?: () => void
   removeToast: (id: number) => void
@@ -28,13 +29,13 @@ export function ActionableToast(props: ActionableToastProps) {
     newToast,
     removeToast,
     action,
-    timeSensitive,
     timeoutTimer,
   } = props
 
   const locale = useLocale()
   const timeoutRef = useRef<number | undefined>(undefined)
   const { classes } = useStyles(createStyles)
+  const theme = useTheme()
 
   const handleCloseClick = () => {
     onClose()
@@ -49,24 +50,32 @@ export function ActionableToast(props: ActionableToastProps) {
   }
 
   const startTimer = useCallback(() => {
-    timeSensitive &&
-      (timeoutRef.current = window.setTimeout(() => {
-        removeToast(id)
-      }, timeoutTimer * 1000))
-  }, [id, removeToast, timeSensitive, timeoutTimer])
+    timeoutRef.current = window.setTimeout(() => {
+      removeToast(id)
+    }, timeoutTimer * 1000)
+  }, [id, removeToast, timeoutTimer])
 
   useEffect(() => {
     startTimer()
     return () => clearTimer()
-  }, [timeSensitive, timeoutTimer, id, startTimer])
+  }, [timeoutTimer, id, startTimer])
 
   return (
     <div className={classes.container} onMouseEnter={clearTimer} onMouseLeave={startTimer}>
       <div className={classes.headerWrapper}>
         {!!newToast && <div aria-hidden='true' className={classes.marker} />}
-        <span className={classes.title}>
+        <div
+          css={css`
+            font-weight: bold;
+            color: ${theme.pallete.primary.main};
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+          `}
+        >
           <h5>{title}</h5>
-        </span>
+        </div>
         <span className={classes.closeButtonWrapper}>
           <Tooltip text={locale.alert.close}>
             <Button
@@ -125,10 +134,6 @@ const createStyles = (theme: Theme) => ({
   } as CSSProperties,
   closeButton: {
     padding: 0,
-  } as CSSProperties,
-  title: {
-    fontWeight: 'bold',
-    color: theme.pallete.primary.main,
   } as CSSProperties,
   actionButtonWrapper: {
     display: 'flex',

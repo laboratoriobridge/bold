@@ -8,7 +8,6 @@ export interface ToastMessagesInterface {
   buttonLabel?: string
   action?: () => void
   timeoutTimer?: number
-  timeSensitive?: boolean
 }
 
 export function useToastMessages(): {
@@ -22,7 +21,7 @@ export function useToastMessages(): {
   }
 
   const showToast = (variables: ToastMessagesInterface) => {
-    const { message, newToast = false, title, buttonLabel, action, timeoutTimer = 5, timeSensitive = true } = variables
+    const { message, newToast = false, title, buttonLabel, action, timeoutTimer = 5 } = variables
 
     const toast = {
       id: Date.now(),
@@ -32,7 +31,6 @@ export function useToastMessages(): {
       newToast: newToast,
       buttonLabel: buttonLabel,
       removeToast,
-      timeSensitive,
       timeoutTimer,
     }
 
