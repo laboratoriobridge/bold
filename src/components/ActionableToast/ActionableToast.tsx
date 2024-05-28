@@ -4,7 +4,7 @@ import { CSSProperties, useRef, useEffect, useCallback } from 'react'
 import { Theme, useStyles, useTheme } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
-import { Icon } from '../Icon'
+import { Icon, Icons } from '../Icon'
 import { useLocale } from '../../i18n'
 
 export interface ActionableToastProps {
@@ -14,6 +14,7 @@ export interface ActionableToastProps {
   title?: string
   buttonLabel?: string
   newToast?: boolean
+  buttonIcon?: Icons
   action?: () => void
   onClose?: () => void
   removeToast: (id: number) => void
@@ -30,6 +31,7 @@ export function ActionableToast(props: ActionableToastProps) {
     removeToast,
     action,
     timeoutTimer,
+    buttonIcon,
   } = props
 
   const locale = useLocale()
@@ -96,6 +98,14 @@ export function ActionableToast(props: ActionableToastProps) {
       {!!action && (
         <div className={classes.actionButtonWrapper}>
           <Button style={classes.actionButton} size='small' onClick={action}>
+            {buttonIcon && (
+              <Icon
+                style={css`
+                  margin-right: 0.5rem;
+                `}
+                icon={buttonIcon}
+              />
+            )}
             {buttonLabel}
           </Button>
         </div>
