@@ -33,7 +33,7 @@ export function ActionableToast(props: ActionableToastProps) {
   const locale = useLocale()
   const timeoutRef = useRef<number | undefined>(undefined)
   const { classes } = useStyles(createStyles)
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
 
   const handleCloseClick = () => {
     onClose()
@@ -57,6 +57,7 @@ export function ActionableToast(props: ActionableToastProps) {
   }, [id, removeToast, secondsVisible])
 
   useEffect(() => {
+    setIsVisible(true)
     startTimer()
     return () => clearTimer()
   }, [secondsVisible, id, startTimer])
@@ -102,7 +103,6 @@ export function ActionableToast(props: ActionableToastProps) {
 
 const createStyles = (theme: Theme) => ({
   container: {
-    transition: 'opacity 0.5s ease-out, transform 0.5s ease-out',
     borderRadius: '2px',
     border: '1px',
     display: 'flex',
@@ -114,9 +114,11 @@ const createStyles = (theme: Theme) => ({
     minWidth: '16rem',
     backgroundColor: 'white',
     padding: '0 0.5rem 0.5rem 0',
-    boxShadow: theme.shadows.outer[80],
-    [`&.hidden`]: { opacity: 0, transform: 'translateY(-1.25rem)' },
-    [`&.visible`]: { opacity: 1, transform: 'translateY(0)' },
+    boxShadow: theme.shadows.outer[40],
+    transition: 'transform 0.5s ease-in-out',
+    transform: 'translateX(-100%)',
+    [`&.visible`]: { transform: 'translateX(0%)' },
+    [`&.hidden`]: { transform: 'translateX(100%)' },
   } as CSSProperties,
   toastMessage: {
     fontWeight: 'normal',
