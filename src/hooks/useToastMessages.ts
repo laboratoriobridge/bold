@@ -1,15 +1,13 @@
 import { Dispatch, SetStateAction, useState } from 'react'
 import { ActionableToastProps } from '../components/ActionableToast'
-import { Icons } from '../components/Icon'
 
 export interface ToastMessagesInterface {
-  message: string
+  message: React.ReactNode
   newToast?: boolean
   title: string
-  buttonLabel?: string
+  buttonLabel?: React.ReactNode
   action?: () => void
-  timeoutTimer?: number
-  buttonIcon: Icons
+  secondsVisible?: number
 }
 
 export function useToastMessages(): {
@@ -23,7 +21,7 @@ export function useToastMessages(): {
   }
 
   const showToast = (props: ToastMessagesInterface) => {
-    const { message, newToast = false, title, buttonLabel, action, timeoutTimer = 5, buttonIcon } = props
+    const { message, newToast = false, title, buttonLabel, action, secondsVisible = 5 } = props
 
     const toast = {
       id: Date.now(),
@@ -33,8 +31,7 @@ export function useToastMessages(): {
       newToast: newToast,
       buttonLabel: buttonLabel,
       removeToast,
-      timeoutTimer,
-      buttonIcon,
+      secondsVisible,
     }
 
     setToastMessages((prevToasts) => [...prevToasts, toast])

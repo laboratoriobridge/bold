@@ -9,12 +9,11 @@ import { useLocale } from '../../i18n'
 
 export interface ActionableToastProps {
   id: number
-  timeoutTimer: number
-  message: string
+  secondsVisible: number
   title?: string
-  buttonLabel?: string
+  message: React.ReactNode
+  buttonLabel?: React.ReactNode
   newToast?: boolean
-  buttonIcon?: Icons
   action?: () => void
   onClose?: () => void
   removeToast: (id: number) => void
@@ -30,8 +29,7 @@ export function ActionableToast(props: ActionableToastProps) {
     newToast,
     removeToast,
     action,
-    timeoutTimer,
-    buttonIcon,
+    secondsVisible,
   } = props
 
   const locale = useLocale()
@@ -54,13 +52,13 @@ export function ActionableToast(props: ActionableToastProps) {
   const startTimer = useCallback(() => {
     timeoutRef.current = window.setTimeout(() => {
       removeToast(id)
-    }, timeoutTimer * 1000)
-  }, [id, removeToast, timeoutTimer])
+    }, secondsVisible * 1000)
+  }, [id, removeToast, secondsVisible])
 
   useEffect(() => {
     startTimer()
     return () => clearTimer()
-  }, [timeoutTimer, id, startTimer])
+  }, [secondsVisible, id, startTimer])
 
   return (
     <div className={classes.container} onMouseEnter={clearTimer} onMouseLeave={startTimer}>
@@ -98,14 +96,6 @@ export function ActionableToast(props: ActionableToastProps) {
       {!!action && (
         <div className={classes.actionButtonWrapper}>
           <Button style={classes.actionButton} size='small' onClick={action}>
-            {buttonIcon && (
-              <Icon
-                style={css`
-                  margin-right: 0.5rem;
-                `}
-                icon={buttonIcon}
-              />
-            )}
             {buttonLabel}
           </Button>
         </div>
@@ -116,6 +106,7 @@ export function ActionableToast(props: ActionableToastProps) {
 
 const createStyles = (theme: Theme) => ({
   container: {
+    transition: 'opacity 0.5s ease-out',
     borderRadius: '2px',
     border: '1px',
     display: 'flex',
