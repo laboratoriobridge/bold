@@ -2,12 +2,12 @@ import { Dispatch, SetStateAction, useState } from 'react'
 import { ActionableToastProps } from '../components/ActionableToast'
 
 export interface ToastMessagesInterface {
-  message: React.ReactNode
+  secondsVisible?: number
   newToast?: boolean
   title: string
+  message: React.ReactNode
   buttonLabel?: React.ReactNode
   action?: () => void
-  secondsVisible?: number
 }
 
 export function useToastMessages(): {

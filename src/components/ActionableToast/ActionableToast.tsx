@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import { CSSProperties, useRef, useEffect, useCallback, useState } from 'react'
-import { Theme, useStyles, useTheme } from '../../styles'
+import React, { CSSProperties, useRef, useEffect, useCallback, useState } from 'react'
+import { Theme, useStyles } from '../../styles'
 import { Tooltip } from '../Tooltip'
 import { Button } from '../Button'
 import { Icon } from '../Icon'
@@ -35,7 +33,6 @@ export function ActionableToast(props: ActionableToastProps) {
   const locale = useLocale()
   const timeoutRef = useRef<number | undefined>(undefined)
   const { classes } = useStyles(createStyles)
-  const theme = useTheme()
   const [isVisible, setIsVisible] = useState(true)
 
   const handleCloseClick = () => {
@@ -72,16 +69,7 @@ export function ActionableToast(props: ActionableToastProps) {
     >
       <div className={classes.headerWrapper}>
         {!!newToast && <div aria-hidden='true' className={classes.marker} />}
-        <div
-          css={css`
-            font-weight: bold;
-            color: ${theme.pallete.primary.main};
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            overflow: hidden;
-          `}
-        >
+        <div className={classes.title}>
           <h5>{title}</h5>
         </div>
         <span className={classes.closeButtonWrapper}>
@@ -167,5 +155,8 @@ const createStyles = (theme: Theme) => ({
     width: '0.5rem',
     backgroundColor: theme.pallete.status.danger.c40,
     marginRight: '0.5rem',
+  } as CSSProperties,
+  title: {
+    color: theme.pallete.primary.main,
   } as CSSProperties,
 })
